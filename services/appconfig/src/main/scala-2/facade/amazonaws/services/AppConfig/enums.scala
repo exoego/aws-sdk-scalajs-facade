@@ -77,3 +77,4 @@ object ValidatorType {
 
   @inline def values = js.Array(JSON_SCHEMA, LAMBDA)
 }
+

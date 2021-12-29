@@ -32,3 +32,4 @@ object MethodName {
 
   @inline def values = js.Array(PUT, GET, DELETE, HEAD)
 }
+

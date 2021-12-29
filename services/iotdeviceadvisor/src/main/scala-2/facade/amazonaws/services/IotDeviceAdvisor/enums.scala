@@ -30,3 +30,4 @@ object SuiteRunStatus {
 
   @inline def values = js.Array(PASS, FAIL, CANCELED, PENDING, RUNNING, PASS_WITH_WARNINGS, ERROR)
 }
+

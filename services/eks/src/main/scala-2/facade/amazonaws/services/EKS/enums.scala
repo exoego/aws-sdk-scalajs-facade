@@ -80,23 +80,7 @@ object ErrorCode {
   val ConfigurationConflict = "ConfigurationConflict".asInstanceOf[ErrorCode]
   val AdmissionRequestDenied = "AdmissionRequestDenied".asInstanceOf[ErrorCode]
 
-  @inline def values = js.Array(
-    SubnetNotFound,
-    SecurityGroupNotFound,
-    EniLimitReached,
-    IpNotAvailable,
-    AccessDenied,
-    OperationNotPermitted,
-    VpcIdNotFound,
-    Unknown,
-    NodeCreationFailure,
-    PodEvictionFailure,
-    InsufficientFreeAddresses,
-    ClusterUnreachable,
-    InsufficientNumberOfReplicas,
-    ConfigurationConflict,
-    AdmissionRequestDenied
-  )
+  @inline def values = js.Array(SubnetNotFound, SecurityGroupNotFound, EniLimitReached, IpNotAvailable, AccessDenied, OperationNotPermitted, VpcIdNotFound, Unknown, NodeCreationFailure, PodEvictionFailure, InsufficientFreeAddresses, ClusterUnreachable, InsufficientNumberOfReplicas, ConfigurationConflict, AdmissionRequestDenied)
 }
 
 @js.native
@@ -145,26 +129,7 @@ object NodegroupIssueCode {
   val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
   val ClusterUnreachable = "ClusterUnreachable".asInstanceOf[NodegroupIssueCode]
 
-  @inline def values = js.Array(
-    AutoScalingGroupNotFound,
-    AutoScalingGroupInvalidConfiguration,
-    Ec2SecurityGroupNotFound,
-    Ec2SecurityGroupDeletionFailure,
-    Ec2LaunchTemplateNotFound,
-    Ec2LaunchTemplateVersionMismatch,
-    Ec2SubnetNotFound,
-    Ec2SubnetInvalidConfiguration,
-    IamInstanceProfileNotFound,
-    IamLimitExceeded,
-    IamNodeRoleNotFound,
-    NodeCreationFailure,
-    AsgInstanceLaunchFailures,
-    InstanceLimitExceeded,
-    InsufficientFreeAddresses,
-    AccessDenied,
-    InternalFailure,
-    ClusterUnreachable
-  )
+  @inline def values = js.Array(AutoScalingGroupNotFound, AutoScalingGroupInvalidConfiguration, Ec2SecurityGroupNotFound, Ec2SecurityGroupDeletionFailure, Ec2LaunchTemplateNotFound, Ec2LaunchTemplateVersionMismatch, Ec2SubnetNotFound, Ec2SubnetInvalidConfiguration, IamInstanceProfileNotFound, IamLimitExceeded, IamNodeRoleNotFound, NodeCreationFailure, AsgInstanceLaunchFailures, InstanceLimitExceeded, InsufficientFreeAddresses, AccessDenied, InternalFailure, ClusterUnreachable)
 }
 
 @js.native
@@ -211,25 +176,7 @@ object UpdateParamType {
   val ServiceAccountRoleArn = "ServiceAccountRoleArn".asInstanceOf[UpdateParamType]
   val ResolveConflicts = "ResolveConflicts".asInstanceOf[UpdateParamType]
 
-  @inline def values = js.Array(
-    Version,
-    PlatformVersion,
-    EndpointPrivateAccess,
-    EndpointPublicAccess,
-    ClusterLogging,
-    DesiredSize,
-    LabelsToAdd,
-    LabelsToRemove,
-    MaxSize,
-    MinSize,
-    ReleaseVersion,
-    PublicAccessCidrs,
-    IdentityProviderConfig,
-    EncryptionConfig,
-    AddonVersion,
-    ServiceAccountRoleArn,
-    ResolveConflicts
-  )
+  @inline def values = js.Array(Version, PlatformVersion, EndpointPrivateAccess, EndpointPublicAccess, ClusterLogging, DesiredSize, LabelsToAdd, LabelsToRemove, MaxSize, MinSize, ReleaseVersion, PublicAccessCidrs, IdentityProviderConfig, EncryptionConfig, AddonVersion, ServiceAccountRoleArn, ResolveConflicts)
 }
 
 @js.native
@@ -255,16 +202,7 @@ object UpdateType {
   val AssociateEncryptionConfig = "AssociateEncryptionConfig".asInstanceOf[UpdateType]
   val AddonUpdate = "AddonUpdate".asInstanceOf[UpdateType]
 
-  @inline def values = js.Array(
-    VersionUpdate,
-    EndpointAccessUpdate,
-    LoggingUpdate,
-    ConfigUpdate,
-    AssociateIdentityProviderConfig,
-    DisassociateIdentityProviderConfig,
-    AssociateEncryptionConfig,
-    AddonUpdate
-  )
+  @inline def values = js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate, AssociateIdentityProviderConfig, DisassociateIdentityProviderConfig, AssociateEncryptionConfig, AddonUpdate)
 }
 
 @js.native
@@ -276,3 +214,4 @@ object configStatus {
 
   @inline def values = js.Array(CREATING, DELETING, ACTIVE)
 }
+

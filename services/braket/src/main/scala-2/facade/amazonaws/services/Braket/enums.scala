@@ -56,3 +56,4 @@ object SearchQuantumTasksFilterOperator {
 
   @inline def values = js.Array(LT, LTE, EQUAL, GT, GTE, BETWEEN)
 }
+

@@ -1,70 +1,62 @@
 package facade.amazonaws.services.signer
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait Category extends js.Any
+type Category = "AWSIoT"
 object Category {
-  val AWSIoT = "AWSIoT".asInstanceOf[Category]
+  val AWSIoT: "AWSIoT" = "AWSIoT"
 
-  @inline def values = js.Array(AWSIoT)
+  @inline def values = js.Array[Category](AWSIoT)
 }
 
-@js.native
-sealed trait EncryptionAlgorithm extends js.Any
+type EncryptionAlgorithm = "RSA" | "ECDSA"
 object EncryptionAlgorithm {
-  val RSA = "RSA".asInstanceOf[EncryptionAlgorithm]
-  val ECDSA = "ECDSA".asInstanceOf[EncryptionAlgorithm]
+  val RSA: "RSA" = "RSA"
+  val ECDSA: "ECDSA" = "ECDSA"
 
-  @inline def values = js.Array(RSA, ECDSA)
+  @inline def values = js.Array[EncryptionAlgorithm](RSA, ECDSA)
 }
 
-@js.native
-sealed trait HashAlgorithm extends js.Any
+type HashAlgorithm = "SHA1" | "SHA256"
 object HashAlgorithm {
-  val SHA1 = "SHA1".asInstanceOf[HashAlgorithm]
-  val SHA256 = "SHA256".asInstanceOf[HashAlgorithm]
+  val SHA1: "SHA1" = "SHA1"
+  val SHA256: "SHA256" = "SHA256"
 
-  @inline def values = js.Array(SHA1, SHA256)
+  @inline def values = js.Array[HashAlgorithm](SHA1, SHA256)
 }
 
-@js.native
-sealed trait ImageFormat extends js.Any
+type ImageFormat = "JSON" | "JSONEmbedded" | "JSONDetached"
 object ImageFormat {
-  val JSON = "JSON".asInstanceOf[ImageFormat]
-  val JSONEmbedded = "JSONEmbedded".asInstanceOf[ImageFormat]
-  val JSONDetached = "JSONDetached".asInstanceOf[ImageFormat]
+  val JSON: "JSON" = "JSON"
+  val JSONEmbedded: "JSONEmbedded" = "JSONEmbedded"
+  val JSONDetached: "JSONDetached" = "JSONDetached"
 
-  @inline def values = js.Array(JSON, JSONEmbedded, JSONDetached)
+  @inline def values = js.Array[ImageFormat](JSON, JSONEmbedded, JSONDetached)
 }
 
-@js.native
-sealed trait SigningProfileStatus extends js.Any
+type SigningProfileStatus = "Active" | "Canceled" | "Revoked"
 object SigningProfileStatus {
-  val Active = "Active".asInstanceOf[SigningProfileStatus]
-  val Canceled = "Canceled".asInstanceOf[SigningProfileStatus]
-  val Revoked = "Revoked".asInstanceOf[SigningProfileStatus]
+  val Active: "Active" = "Active"
+  val Canceled: "Canceled" = "Canceled"
+  val Revoked: "Revoked" = "Revoked"
 
-  @inline def values = js.Array(Active, Canceled, Revoked)
+  @inline def values = js.Array[SigningProfileStatus](Active, Canceled, Revoked)
 }
 
-@js.native
-sealed trait SigningStatus extends js.Any
+type SigningStatus = "InProgress" | "Failed" | "Succeeded"
 object SigningStatus {
-  val InProgress = "InProgress".asInstanceOf[SigningStatus]
-  val Failed = "Failed".asInstanceOf[SigningStatus]
-  val Succeeded = "Succeeded".asInstanceOf[SigningStatus]
+  val InProgress: "InProgress" = "InProgress"
+  val Failed: "Failed" = "Failed"
+  val Succeeded: "Succeeded" = "Succeeded"
 
-  @inline def values = js.Array(InProgress, Failed, Succeeded)
+  @inline def values = js.Array[SigningStatus](InProgress, Failed, Succeeded)
 }
 
-@js.native
-sealed trait ValidityType extends js.Any
+type ValidityType = "DAYS" | "MONTHS" | "YEARS"
 object ValidityType {
-  val DAYS = "DAYS".asInstanceOf[ValidityType]
-  val MONTHS = "MONTHS".asInstanceOf[ValidityType]
-  val YEARS = "YEARS".asInstanceOf[ValidityType]
+  val DAYS: "DAYS" = "DAYS"
+  val MONTHS: "MONTHS" = "MONTHS"
+  val YEARS: "YEARS" = "YEARS"
 
-  @inline def values = js.Array(DAYS, MONTHS, YEARS)
+  @inline def values = js.Array[ValidityType](DAYS, MONTHS, YEARS)
 }

@@ -14,3 +14,4 @@ object ErrorCode {
 
   @inline def values = js.Array(ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException)
 }
+

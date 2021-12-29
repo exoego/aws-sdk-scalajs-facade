@@ -1,46 +1,41 @@
 package facade.amazonaws.services.ecrpublic
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ImageFailureCode extends js.Any
+type ImageFailureCode = "InvalidImageDigest" | "InvalidImageTag" | "ImageTagDoesNotMatchDigest" | "ImageNotFound" | "MissingDigestAndTag" | "ImageReferencedByManifestList" | "KmsError"
 object ImageFailureCode {
-  val InvalidImageDigest = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
-  val InvalidImageTag = "InvalidImageTag".asInstanceOf[ImageFailureCode]
-  val ImageTagDoesNotMatchDigest = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
-  val ImageNotFound = "ImageNotFound".asInstanceOf[ImageFailureCode]
-  val MissingDigestAndTag = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
-  val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
-  val KmsError = "KmsError".asInstanceOf[ImageFailureCode]
+  val InvalidImageDigest: "InvalidImageDigest" = "InvalidImageDigest"
+  val InvalidImageTag: "InvalidImageTag" = "InvalidImageTag"
+  val ImageTagDoesNotMatchDigest: "ImageTagDoesNotMatchDigest" = "ImageTagDoesNotMatchDigest"
+  val ImageNotFound: "ImageNotFound" = "ImageNotFound"
+  val MissingDigestAndTag: "MissingDigestAndTag" = "MissingDigestAndTag"
+  val ImageReferencedByManifestList: "ImageReferencedByManifestList" = "ImageReferencedByManifestList"
+  val KmsError: "KmsError" = "KmsError"
 
-  @inline def values = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
+  @inline def values = js.Array[ImageFailureCode](InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
 }
 
-@js.native
-sealed trait LayerAvailability extends js.Any
+type LayerAvailability = "AVAILABLE" | "UNAVAILABLE"
 object LayerAvailability {
-  val AVAILABLE = "AVAILABLE".asInstanceOf[LayerAvailability]
-  val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val UNAVAILABLE: "UNAVAILABLE" = "UNAVAILABLE"
 
-  @inline def values = js.Array(AVAILABLE, UNAVAILABLE)
+  @inline def values = js.Array[LayerAvailability](AVAILABLE, UNAVAILABLE)
 }
 
-@js.native
-sealed trait LayerFailureCode extends js.Any
+type LayerFailureCode = "InvalidLayerDigest" | "MissingLayerDigest"
 object LayerFailureCode {
-  val InvalidLayerDigest = "InvalidLayerDigest".asInstanceOf[LayerFailureCode]
-  val MissingLayerDigest = "MissingLayerDigest".asInstanceOf[LayerFailureCode]
+  val InvalidLayerDigest: "InvalidLayerDigest" = "InvalidLayerDigest"
+  val MissingLayerDigest: "MissingLayerDigest" = "MissingLayerDigest"
 
-  @inline def values = js.Array(InvalidLayerDigest, MissingLayerDigest)
+  @inline def values = js.Array[LayerFailureCode](InvalidLayerDigest, MissingLayerDigest)
 }
 
-@js.native
-sealed trait RegistryAliasStatus extends js.Any
+type RegistryAliasStatus = "ACTIVE" | "PENDING" | "REJECTED"
 object RegistryAliasStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[RegistryAliasStatus]
-  val PENDING = "PENDING".asInstanceOf[RegistryAliasStatus]
-  val REJECTED = "REJECTED".asInstanceOf[RegistryAliasStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val PENDING: "PENDING" = "PENDING"
+  val REJECTED: "REJECTED" = "REJECTED"
 
-  @inline def values = js.Array(ACTIVE, PENDING, REJECTED)
+  @inline def values = js.Array[RegistryAliasStatus](ACTIVE, PENDING, REJECTED)
 }

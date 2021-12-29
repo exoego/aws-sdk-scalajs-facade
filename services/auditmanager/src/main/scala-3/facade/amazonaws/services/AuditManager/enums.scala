@@ -1,187 +1,168 @@
 package facade.amazonaws.services.auditmanager
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccountStatus extends js.Any
+type AccountStatus = "ACTIVE" | "INACTIVE" | "PENDING_ACTIVATION"
 object AccountStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[AccountStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[AccountStatus]
-  val PENDING_ACTIVATION = "PENDING_ACTIVATION".asInstanceOf[AccountStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val INACTIVE: "INACTIVE" = "INACTIVE"
+  val PENDING_ACTIVATION: "PENDING_ACTIVATION" = "PENDING_ACTIVATION"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, PENDING_ACTIVATION)
+  @inline def values = js.Array[AccountStatus](ACTIVE, INACTIVE, PENDING_ACTIVATION)
 }
 
-@js.native
-sealed trait ActionEnum extends js.Any
+type ActionEnum = "CREATE" | "UPDATE_METADATA" | "ACTIVE" | "INACTIVE" | "DELETE" | "UNDER_REVIEW" | "REVIEWED" | "IMPORT_EVIDENCE"
 object ActionEnum {
-  val CREATE = "CREATE".asInstanceOf[ActionEnum]
-  val UPDATE_METADATA = "UPDATE_METADATA".asInstanceOf[ActionEnum]
-  val ACTIVE = "ACTIVE".asInstanceOf[ActionEnum]
-  val INACTIVE = "INACTIVE".asInstanceOf[ActionEnum]
-  val DELETE = "DELETE".asInstanceOf[ActionEnum]
-  val UNDER_REVIEW = "UNDER_REVIEW".asInstanceOf[ActionEnum]
-  val REVIEWED = "REVIEWED".asInstanceOf[ActionEnum]
-  val IMPORT_EVIDENCE = "IMPORT_EVIDENCE".asInstanceOf[ActionEnum]
+  val CREATE: "CREATE" = "CREATE"
+  val UPDATE_METADATA: "UPDATE_METADATA" = "UPDATE_METADATA"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val INACTIVE: "INACTIVE" = "INACTIVE"
+  val DELETE: "DELETE" = "DELETE"
+  val UNDER_REVIEW: "UNDER_REVIEW" = "UNDER_REVIEW"
+  val REVIEWED: "REVIEWED" = "REVIEWED"
+  val IMPORT_EVIDENCE: "IMPORT_EVIDENCE" = "IMPORT_EVIDENCE"
 
-  @inline def values = js.Array(CREATE, UPDATE_METADATA, ACTIVE, INACTIVE, DELETE, UNDER_REVIEW, REVIEWED, IMPORT_EVIDENCE)
+  @inline def values = js.Array[ActionEnum](CREATE, UPDATE_METADATA, ACTIVE, INACTIVE, DELETE, UNDER_REVIEW, REVIEWED, IMPORT_EVIDENCE)
 }
 
-@js.native
-sealed trait AssessmentReportDestinationType extends js.Any
+type AssessmentReportDestinationType = "S3"
 object AssessmentReportDestinationType {
-  val S3 = "S3".asInstanceOf[AssessmentReportDestinationType]
+  val S3: "S3" = "S3"
 
-  @inline def values = js.Array(S3)
+  @inline def values = js.Array[AssessmentReportDestinationType](S3)
 }
 
-@js.native
-sealed trait AssessmentReportStatus extends js.Any
+type AssessmentReportStatus = "COMPLETE" | "IN_PROGRESS" | "FAILED"
 object AssessmentReportStatus {
-  val COMPLETE = "COMPLETE".asInstanceOf[AssessmentReportStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AssessmentReportStatus]
-  val FAILED = "FAILED".asInstanceOf[AssessmentReportStatus]
+  val COMPLETE: "COMPLETE" = "COMPLETE"
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(COMPLETE, IN_PROGRESS, FAILED)
+  @inline def values = js.Array[AssessmentReportStatus](COMPLETE, IN_PROGRESS, FAILED)
 }
 
-@js.native
-sealed trait AssessmentStatus extends js.Any
+type AssessmentStatus = "ACTIVE" | "INACTIVE"
 object AssessmentStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[AssessmentStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[AssessmentStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values = js.Array[AssessmentStatus](ACTIVE, INACTIVE)
 }
 
-@js.native
-sealed trait ControlResponse extends js.Any
+type ControlResponse = "MANUAL" | "AUTOMATE" | "DEFER" | "IGNORE"
 object ControlResponse {
-  val MANUAL = "MANUAL".asInstanceOf[ControlResponse]
-  val AUTOMATE = "AUTOMATE".asInstanceOf[ControlResponse]
-  val DEFER = "DEFER".asInstanceOf[ControlResponse]
-  val IGNORE = "IGNORE".asInstanceOf[ControlResponse]
+  val MANUAL: "MANUAL" = "MANUAL"
+  val AUTOMATE: "AUTOMATE" = "AUTOMATE"
+  val DEFER: "DEFER" = "DEFER"
+  val IGNORE: "IGNORE" = "IGNORE"
 
-  @inline def values = js.Array(MANUAL, AUTOMATE, DEFER, IGNORE)
+  @inline def values = js.Array[ControlResponse](MANUAL, AUTOMATE, DEFER, IGNORE)
 }
 
-@js.native
-sealed trait ControlSetStatus extends js.Any
+type ControlSetStatus = "ACTIVE" | "UNDER_REVIEW" | "REVIEWED"
 object ControlSetStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[ControlSetStatus]
-  val UNDER_REVIEW = "UNDER_REVIEW".asInstanceOf[ControlSetStatus]
-  val REVIEWED = "REVIEWED".asInstanceOf[ControlSetStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val UNDER_REVIEW: "UNDER_REVIEW" = "UNDER_REVIEW"
+  val REVIEWED: "REVIEWED" = "REVIEWED"
 
-  @inline def values = js.Array(ACTIVE, UNDER_REVIEW, REVIEWED)
+  @inline def values = js.Array[ControlSetStatus](ACTIVE, UNDER_REVIEW, REVIEWED)
 }
 
-@js.native
-sealed trait ControlStatus extends js.Any
+type ControlStatus = "UNDER_REVIEW" | "REVIEWED" | "INACTIVE"
 object ControlStatus {
-  val UNDER_REVIEW = "UNDER_REVIEW".asInstanceOf[ControlStatus]
-  val REVIEWED = "REVIEWED".asInstanceOf[ControlStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[ControlStatus]
+  val UNDER_REVIEW: "UNDER_REVIEW" = "UNDER_REVIEW"
+  val REVIEWED: "REVIEWED" = "REVIEWED"
+  val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(UNDER_REVIEW, REVIEWED, INACTIVE)
+  @inline def values = js.Array[ControlStatus](UNDER_REVIEW, REVIEWED, INACTIVE)
 }
 
-@js.native
-sealed trait ControlType extends js.Any
+type ControlType = "Standard" | "Custom"
 object ControlType {
-  val Standard = "Standard".asInstanceOf[ControlType]
-  val Custom = "Custom".asInstanceOf[ControlType]
+  val Standard: "Standard" = "Standard"
+  val Custom: "Custom" = "Custom"
 
-  @inline def values = js.Array(Standard, Custom)
+  @inline def values = js.Array[ControlType](Standard, Custom)
 }
 
-@js.native
-sealed trait DelegationStatus extends js.Any
+type DelegationStatus = "IN_PROGRESS" | "UNDER_REVIEW" | "COMPLETE"
 object DelegationStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DelegationStatus]
-  val UNDER_REVIEW = "UNDER_REVIEW".asInstanceOf[DelegationStatus]
-  val COMPLETE = "COMPLETE".asInstanceOf[DelegationStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val UNDER_REVIEW: "UNDER_REVIEW" = "UNDER_REVIEW"
+  val COMPLETE: "COMPLETE" = "COMPLETE"
 
-  @inline def values = js.Array(IN_PROGRESS, UNDER_REVIEW, COMPLETE)
+  @inline def values = js.Array[DelegationStatus](IN_PROGRESS, UNDER_REVIEW, COMPLETE)
 }
 
-@js.native
-sealed trait FrameworkType extends js.Any
+type FrameworkType = "Standard" | "Custom"
 object FrameworkType {
-  val Standard = "Standard".asInstanceOf[FrameworkType]
-  val Custom = "Custom".asInstanceOf[FrameworkType]
+  val Standard: "Standard" = "Standard"
+  val Custom: "Custom" = "Custom"
 
-  @inline def values = js.Array(Standard, Custom)
+  @inline def values = js.Array[FrameworkType](Standard, Custom)
 }
 
-@js.native
-sealed trait KeywordInputType extends js.Any
+type KeywordInputType = "SELECT_FROM_LIST"
 object KeywordInputType {
-  val SELECT_FROM_LIST = "SELECT_FROM_LIST".asInstanceOf[KeywordInputType]
+  val SELECT_FROM_LIST: "SELECT_FROM_LIST" = "SELECT_FROM_LIST"
 
-  @inline def values = js.Array(SELECT_FROM_LIST)
+  @inline def values = js.Array[KeywordInputType](SELECT_FROM_LIST)
 }
 
-@js.native
-sealed trait ObjectTypeEnum extends js.Any
+type ObjectTypeEnum = "ASSESSMENT" | "CONTROL_SET" | "CONTROL" | "DELEGATION" | "ASSESSMENT_REPORT"
 object ObjectTypeEnum {
-  val ASSESSMENT = "ASSESSMENT".asInstanceOf[ObjectTypeEnum]
-  val CONTROL_SET = "CONTROL_SET".asInstanceOf[ObjectTypeEnum]
-  val CONTROL = "CONTROL".asInstanceOf[ObjectTypeEnum]
-  val DELEGATION = "DELEGATION".asInstanceOf[ObjectTypeEnum]
-  val ASSESSMENT_REPORT = "ASSESSMENT_REPORT".asInstanceOf[ObjectTypeEnum]
+  val ASSESSMENT: "ASSESSMENT" = "ASSESSMENT"
+  val CONTROL_SET: "CONTROL_SET" = "CONTROL_SET"
+  val CONTROL: "CONTROL" = "CONTROL"
+  val DELEGATION: "DELEGATION" = "DELEGATION"
+  val ASSESSMENT_REPORT: "ASSESSMENT_REPORT" = "ASSESSMENT_REPORT"
 
-  @inline def values = js.Array(ASSESSMENT, CONTROL_SET, CONTROL, DELEGATION, ASSESSMENT_REPORT)
+  @inline def values = js.Array[ObjectTypeEnum](ASSESSMENT, CONTROL_SET, CONTROL, DELEGATION, ASSESSMENT_REPORT)
 }
 
-@js.native
-sealed trait RoleType extends js.Any
+type RoleType = "PROCESS_OWNER" | "RESOURCE_OWNER"
 object RoleType {
-  val PROCESS_OWNER = "PROCESS_OWNER".asInstanceOf[RoleType]
-  val RESOURCE_OWNER = "RESOURCE_OWNER".asInstanceOf[RoleType]
+  val PROCESS_OWNER: "PROCESS_OWNER" = "PROCESS_OWNER"
+  val RESOURCE_OWNER: "RESOURCE_OWNER" = "RESOURCE_OWNER"
 
-  @inline def values = js.Array(PROCESS_OWNER, RESOURCE_OWNER)
+  @inline def values = js.Array[RoleType](PROCESS_OWNER, RESOURCE_OWNER)
 }
 
-@js.native
-sealed trait SettingAttribute extends js.Any
+type SettingAttribute = "ALL" | "IS_AWS_ORG_ENABLED" | "SNS_TOPIC" | "DEFAULT_ASSESSMENT_REPORTS_DESTINATION" | "DEFAULT_PROCESS_OWNERS"
 object SettingAttribute {
-  val ALL = "ALL".asInstanceOf[SettingAttribute]
-  val IS_AWS_ORG_ENABLED = "IS_AWS_ORG_ENABLED".asInstanceOf[SettingAttribute]
-  val SNS_TOPIC = "SNS_TOPIC".asInstanceOf[SettingAttribute]
-  val DEFAULT_ASSESSMENT_REPORTS_DESTINATION = "DEFAULT_ASSESSMENT_REPORTS_DESTINATION".asInstanceOf[SettingAttribute]
-  val DEFAULT_PROCESS_OWNERS = "DEFAULT_PROCESS_OWNERS".asInstanceOf[SettingAttribute]
+  val ALL: "ALL" = "ALL"
+  val IS_AWS_ORG_ENABLED: "IS_AWS_ORG_ENABLED" = "IS_AWS_ORG_ENABLED"
+  val SNS_TOPIC: "SNS_TOPIC" = "SNS_TOPIC"
+  val DEFAULT_ASSESSMENT_REPORTS_DESTINATION: "DEFAULT_ASSESSMENT_REPORTS_DESTINATION" = "DEFAULT_ASSESSMENT_REPORTS_DESTINATION"
+  val DEFAULT_PROCESS_OWNERS: "DEFAULT_PROCESS_OWNERS" = "DEFAULT_PROCESS_OWNERS"
 
-  @inline def values = js.Array(ALL, IS_AWS_ORG_ENABLED, SNS_TOPIC, DEFAULT_ASSESSMENT_REPORTS_DESTINATION, DEFAULT_PROCESS_OWNERS)
+  @inline def values = js.Array[SettingAttribute](ALL, IS_AWS_ORG_ENABLED, SNS_TOPIC, DEFAULT_ASSESSMENT_REPORTS_DESTINATION, DEFAULT_PROCESS_OWNERS)
 }
 
-@js.native
-sealed trait SourceFrequency extends js.Any
+type SourceFrequency = "DAILY" | "WEEKLY" | "MONTHLY"
 object SourceFrequency {
-  val DAILY = "DAILY".asInstanceOf[SourceFrequency]
-  val WEEKLY = "WEEKLY".asInstanceOf[SourceFrequency]
-  val MONTHLY = "MONTHLY".asInstanceOf[SourceFrequency]
+  val DAILY: "DAILY" = "DAILY"
+  val WEEKLY: "WEEKLY" = "WEEKLY"
+  val MONTHLY: "MONTHLY" = "MONTHLY"
 
-  @inline def values = js.Array(DAILY, WEEKLY, MONTHLY)
+  @inline def values = js.Array[SourceFrequency](DAILY, WEEKLY, MONTHLY)
 }
 
-@js.native
-sealed trait SourceSetUpOption extends js.Any
+type SourceSetUpOption = "System_Controls_Mapping" | "Procedural_Controls_Mapping"
 object SourceSetUpOption {
-  val System_Controls_Mapping = "System_Controls_Mapping".asInstanceOf[SourceSetUpOption]
-  val Procedural_Controls_Mapping = "Procedural_Controls_Mapping".asInstanceOf[SourceSetUpOption]
+  val System_Controls_Mapping: "System_Controls_Mapping" = "System_Controls_Mapping"
+  val Procedural_Controls_Mapping: "Procedural_Controls_Mapping" = "Procedural_Controls_Mapping"
 
-  @inline def values = js.Array(System_Controls_Mapping, Procedural_Controls_Mapping)
+  @inline def values = js.Array[SourceSetUpOption](System_Controls_Mapping, Procedural_Controls_Mapping)
 }
 
-@js.native
-sealed trait SourceType extends js.Any
+type SourceType = "AWS_Cloudtrail" | "AWS_Config" | "AWS_Security_Hub" | "AWS_API_Call" | "MANUAL"
 object SourceType {
-  val AWS_Cloudtrail = "AWS_Cloudtrail".asInstanceOf[SourceType]
-  val AWS_Config = "AWS_Config".asInstanceOf[SourceType]
-  val AWS_Security_Hub = "AWS_Security_Hub".asInstanceOf[SourceType]
-  val AWS_API_Call = "AWS_API_Call".asInstanceOf[SourceType]
-  val MANUAL = "MANUAL".asInstanceOf[SourceType]
+  val AWS_Cloudtrail: "AWS_Cloudtrail" = "AWS_Cloudtrail"
+  val AWS_Config: "AWS_Config" = "AWS_Config"
+  val AWS_Security_Hub: "AWS_Security_Hub" = "AWS_Security_Hub"
+  val AWS_API_Call: "AWS_API_Call" = "AWS_API_Call"
+  val MANUAL: "MANUAL" = "MANUAL"
 
-  @inline def values = js.Array(AWS_Cloudtrail, AWS_Config, AWS_Security_Hub, AWS_API_Call, MANUAL)
+  @inline def values = js.Array[SourceType](AWS_Cloudtrail, AWS_Config, AWS_Security_Hub, AWS_API_Call, MANUAL)
 }

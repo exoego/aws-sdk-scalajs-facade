@@ -111,3 +111,4 @@ object Status {
 
   @inline def values = js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR)
 }
+

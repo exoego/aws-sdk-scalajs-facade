@@ -49,3 +49,4 @@ object StreamState {
 
   @inline def values = js.Array(LIVE, OFFLINE)
 }
+

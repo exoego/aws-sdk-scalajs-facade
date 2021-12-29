@@ -1,52 +1,48 @@
 package facade.amazonaws.services.mturk
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AssignmentStatus extends js.Any
+type AssignmentStatus = "Submitted" | "Approved" | "Rejected"
 object AssignmentStatus {
-  val Submitted = "Submitted".asInstanceOf[AssignmentStatus]
-  val Approved = "Approved".asInstanceOf[AssignmentStatus]
-  val Rejected = "Rejected".asInstanceOf[AssignmentStatus]
+  val Submitted: "Submitted" = "Submitted"
+  val Approved: "Approved" = "Approved"
+  val Rejected: "Rejected" = "Rejected"
 
-  @inline def values = js.Array(Submitted, Approved, Rejected)
+  @inline def values = js.Array[AssignmentStatus](Submitted, Approved, Rejected)
 }
 
-@js.native
-sealed trait Comparator extends js.Any
+type Comparator = "LessThan" | "LessThanOrEqualTo" | "GreaterThan" | "GreaterThanOrEqualTo" | "EqualTo" | "NotEqualTo" | "Exists" | "DoesNotExist" | "In" | "NotIn"
 object Comparator {
-  val LessThan = "LessThan".asInstanceOf[Comparator]
-  val LessThanOrEqualTo = "LessThanOrEqualTo".asInstanceOf[Comparator]
-  val GreaterThan = "GreaterThan".asInstanceOf[Comparator]
-  val GreaterThanOrEqualTo = "GreaterThanOrEqualTo".asInstanceOf[Comparator]
-  val EqualTo = "EqualTo".asInstanceOf[Comparator]
-  val NotEqualTo = "NotEqualTo".asInstanceOf[Comparator]
-  val Exists = "Exists".asInstanceOf[Comparator]
-  val DoesNotExist = "DoesNotExist".asInstanceOf[Comparator]
-  val In = "In".asInstanceOf[Comparator]
-  val NotIn = "NotIn".asInstanceOf[Comparator]
+  val LessThan: "LessThan" = "LessThan"
+  val LessThanOrEqualTo: "LessThanOrEqualTo" = "LessThanOrEqualTo"
+  val GreaterThan: "GreaterThan" = "GreaterThan"
+  val GreaterThanOrEqualTo: "GreaterThanOrEqualTo" = "GreaterThanOrEqualTo"
+  val EqualTo: "EqualTo" = "EqualTo"
+  val NotEqualTo: "NotEqualTo" = "NotEqualTo"
+  val Exists: "Exists" = "Exists"
+  val DoesNotExist: "DoesNotExist" = "DoesNotExist"
+  val In: "In" = "In"
+  val NotIn: "NotIn" = "NotIn"
 
-  @inline def values = js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn)
+  @inline def values = js.Array[Comparator](LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn)
 }
 
-@js.native
-sealed trait EventType extends js.Any
+type EventType = "AssignmentAccepted" | "AssignmentAbandoned" | "AssignmentReturned" | "AssignmentSubmitted" | "AssignmentRejected" | "AssignmentApproved" | "HITCreated" | "HITExpired" | "HITReviewable" | "HITExtended" | "HITDisposed" | "Ping"
 object EventType {
-  val AssignmentAccepted = "AssignmentAccepted".asInstanceOf[EventType]
-  val AssignmentAbandoned = "AssignmentAbandoned".asInstanceOf[EventType]
-  val AssignmentReturned = "AssignmentReturned".asInstanceOf[EventType]
-  val AssignmentSubmitted = "AssignmentSubmitted".asInstanceOf[EventType]
-  val AssignmentRejected = "AssignmentRejected".asInstanceOf[EventType]
-  val AssignmentApproved = "AssignmentApproved".asInstanceOf[EventType]
-  val HITCreated = "HITCreated".asInstanceOf[EventType]
-  val HITExpired = "HITExpired".asInstanceOf[EventType]
-  val HITReviewable = "HITReviewable".asInstanceOf[EventType]
-  val HITExtended = "HITExtended".asInstanceOf[EventType]
-  val HITDisposed = "HITDisposed".asInstanceOf[EventType]
-  val Ping = "Ping".asInstanceOf[EventType]
+  val AssignmentAccepted: "AssignmentAccepted" = "AssignmentAccepted"
+  val AssignmentAbandoned: "AssignmentAbandoned" = "AssignmentAbandoned"
+  val AssignmentReturned: "AssignmentReturned" = "AssignmentReturned"
+  val AssignmentSubmitted: "AssignmentSubmitted" = "AssignmentSubmitted"
+  val AssignmentRejected: "AssignmentRejected" = "AssignmentRejected"
+  val AssignmentApproved: "AssignmentApproved" = "AssignmentApproved"
+  val HITCreated: "HITCreated" = "HITCreated"
+  val HITExpired: "HITExpired" = "HITExpired"
+  val HITReviewable: "HITReviewable" = "HITReviewable"
+  val HITExtended: "HITExtended" = "HITExtended"
+  val HITDisposed: "HITDisposed" = "HITDisposed"
+  val Ping: "Ping" = "Ping"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[EventType](
     AssignmentAccepted,
     AssignmentAbandoned,
     AssignmentReturned,
@@ -62,101 +58,91 @@ object EventType {
   )
 }
 
-@js.native
-sealed trait HITAccessActions extends js.Any
+type HITAccessActions = "Accept" | "PreviewAndAccept" | "DiscoverPreviewAndAccept"
 object HITAccessActions {
-  val Accept = "Accept".asInstanceOf[HITAccessActions]
-  val PreviewAndAccept = "PreviewAndAccept".asInstanceOf[HITAccessActions]
-  val DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept".asInstanceOf[HITAccessActions]
+  val Accept: "Accept" = "Accept"
+  val PreviewAndAccept: "PreviewAndAccept" = "PreviewAndAccept"
+  val DiscoverPreviewAndAccept: "DiscoverPreviewAndAccept" = "DiscoverPreviewAndAccept"
 
-  @inline def values = js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
+  @inline def values = js.Array[HITAccessActions](Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
 }
 
-@js.native
-sealed trait HITReviewStatus extends js.Any
+type HITReviewStatus = "NotReviewed" | "MarkedForReview" | "ReviewedAppropriate" | "ReviewedInappropriate"
 object HITReviewStatus {
-  val NotReviewed = "NotReviewed".asInstanceOf[HITReviewStatus]
-  val MarkedForReview = "MarkedForReview".asInstanceOf[HITReviewStatus]
-  val ReviewedAppropriate = "ReviewedAppropriate".asInstanceOf[HITReviewStatus]
-  val ReviewedInappropriate = "ReviewedInappropriate".asInstanceOf[HITReviewStatus]
+  val NotReviewed: "NotReviewed" = "NotReviewed"
+  val MarkedForReview: "MarkedForReview" = "MarkedForReview"
+  val ReviewedAppropriate: "ReviewedAppropriate" = "ReviewedAppropriate"
+  val ReviewedInappropriate: "ReviewedInappropriate" = "ReviewedInappropriate"
 
-  @inline def values = js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate)
+  @inline def values = js.Array[HITReviewStatus](NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate)
 }
 
-@js.native
-sealed trait HITStatus extends js.Any
+type HITStatus = "Assignable" | "Unassignable" | "Reviewable" | "Reviewing" | "Disposed"
 object HITStatus {
-  val Assignable = "Assignable".asInstanceOf[HITStatus]
-  val Unassignable = "Unassignable".asInstanceOf[HITStatus]
-  val Reviewable = "Reviewable".asInstanceOf[HITStatus]
-  val Reviewing = "Reviewing".asInstanceOf[HITStatus]
-  val Disposed = "Disposed".asInstanceOf[HITStatus]
+  val Assignable: "Assignable" = "Assignable"
+  val Unassignable: "Unassignable" = "Unassignable"
+  val Reviewable: "Reviewable" = "Reviewable"
+  val Reviewing: "Reviewing" = "Reviewing"
+  val Disposed: "Disposed" = "Disposed"
 
-  @inline def values = js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed)
+  @inline def values = js.Array[HITStatus](Assignable, Unassignable, Reviewable, Reviewing, Disposed)
 }
 
-@js.native
-sealed trait NotificationTransport extends js.Any
+type NotificationTransport = "Email" | "SQS" | "SNS"
 object NotificationTransport {
-  val Email = "Email".asInstanceOf[NotificationTransport]
-  val SQS = "SQS".asInstanceOf[NotificationTransport]
-  val SNS = "SNS".asInstanceOf[NotificationTransport]
+  val Email: "Email" = "Email"
+  val SQS: "SQS" = "SQS"
+  val SNS: "SNS" = "SNS"
 
-  @inline def values = js.Array(Email, SQS, SNS)
+  @inline def values = js.Array[NotificationTransport](Email, SQS, SNS)
 }
 
-@js.native
-sealed trait NotifyWorkersFailureCode extends js.Any
+type NotifyWorkersFailureCode = "SoftFailure" | "HardFailure"
 object NotifyWorkersFailureCode {
-  val SoftFailure = "SoftFailure".asInstanceOf[NotifyWorkersFailureCode]
-  val HardFailure = "HardFailure".asInstanceOf[NotifyWorkersFailureCode]
+  val SoftFailure: "SoftFailure" = "SoftFailure"
+  val HardFailure: "HardFailure" = "HardFailure"
 
-  @inline def values = js.Array(SoftFailure, HardFailure)
+  @inline def values = js.Array[NotifyWorkersFailureCode](SoftFailure, HardFailure)
 }
 
-@js.native
-sealed trait QualificationStatus extends js.Any
+type QualificationStatus = "Granted" | "Revoked"
 object QualificationStatus {
-  val Granted = "Granted".asInstanceOf[QualificationStatus]
-  val Revoked = "Revoked".asInstanceOf[QualificationStatus]
+  val Granted: "Granted" = "Granted"
+  val Revoked: "Revoked" = "Revoked"
 
-  @inline def values = js.Array(Granted, Revoked)
+  @inline def values = js.Array[QualificationStatus](Granted, Revoked)
 }
 
-@js.native
-sealed trait QualificationTypeStatus extends js.Any
+type QualificationTypeStatus = "Active" | "Inactive"
 object QualificationTypeStatus {
-  val Active = "Active".asInstanceOf[QualificationTypeStatus]
-  val Inactive = "Inactive".asInstanceOf[QualificationTypeStatus]
+  val Active: "Active" = "Active"
+  val Inactive: "Inactive" = "Inactive"
 
-  @inline def values = js.Array(Active, Inactive)
+  @inline def values = js.Array[QualificationTypeStatus](Active, Inactive)
 }
 
-@js.native
-sealed trait ReviewActionStatus extends js.Any
+type ReviewActionStatus = "Intended" | "Succeeded" | "Failed" | "Cancelled"
 object ReviewActionStatus {
-  val Intended = "Intended".asInstanceOf[ReviewActionStatus]
-  val Succeeded = "Succeeded".asInstanceOf[ReviewActionStatus]
-  val Failed = "Failed".asInstanceOf[ReviewActionStatus]
-  val Cancelled = "Cancelled".asInstanceOf[ReviewActionStatus]
+  val Intended: "Intended" = "Intended"
+  val Succeeded: "Succeeded" = "Succeeded"
+  val Failed: "Failed" = "Failed"
+  val Cancelled: "Cancelled" = "Cancelled"
 
-  @inline def values = js.Array(Intended, Succeeded, Failed, Cancelled)
+  @inline def values = js.Array[ReviewActionStatus](Intended, Succeeded, Failed, Cancelled)
 }
 
-@js.native
-sealed trait ReviewPolicyLevel extends js.Any
+type ReviewPolicyLevel = "Assignment" | "HIT"
 object ReviewPolicyLevel {
-  val Assignment = "Assignment".asInstanceOf[ReviewPolicyLevel]
-  val HIT = "HIT".asInstanceOf[ReviewPolicyLevel]
+  val Assignment: "Assignment" = "Assignment"
+  val HIT: "HIT" = "HIT"
 
-  @inline def values = js.Array(Assignment, HIT)
+  @inline def values = js.Array[ReviewPolicyLevel](Assignment, HIT)
 }
 
-@js.native
-sealed trait ReviewableHITStatus extends js.Any
+type ReviewableHITStatus = "Reviewable" | "Reviewing"
 object ReviewableHITStatus {
-  val Reviewable = "Reviewable".asInstanceOf[ReviewableHITStatus]
-  val Reviewing = "Reviewing".asInstanceOf[ReviewableHITStatus]
+  val Reviewable: "Reviewable" = "Reviewable"
+  val Reviewing: "Reviewing" = "Reviewing"
 
-  @inline def values = js.Array(Reviewable, Reviewing)
+  @inline def values = js.Array[ReviewableHITStatus](Reviewable, Reviewing)
 }

@@ -1,106 +1,95 @@
 package facade.amazonaws.services.ecr
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait EncryptionType extends js.Any
+type EncryptionType = "AES256" | "KMS"
 object EncryptionType {
-  val AES256 = "AES256".asInstanceOf[EncryptionType]
-  val KMS = "KMS".asInstanceOf[EncryptionType]
+  val AES256: "AES256" = "AES256"
+  val KMS: "KMS" = "KMS"
 
-  @inline def values = js.Array(AES256, KMS)
+  @inline def values = js.Array[EncryptionType](AES256, KMS)
 }
 
-@js.native
-sealed trait FindingSeverity extends js.Any
+type FindingSeverity = "INFORMATIONAL" | "LOW" | "MEDIUM" | "HIGH" | "CRITICAL" | "UNDEFINED"
 object FindingSeverity {
-  val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[FindingSeverity]
-  val LOW = "LOW".asInstanceOf[FindingSeverity]
-  val MEDIUM = "MEDIUM".asInstanceOf[FindingSeverity]
-  val HIGH = "HIGH".asInstanceOf[FindingSeverity]
-  val CRITICAL = "CRITICAL".asInstanceOf[FindingSeverity]
-  val UNDEFINED = "UNDEFINED".asInstanceOf[FindingSeverity]
+  val INFORMATIONAL: "INFORMATIONAL" = "INFORMATIONAL"
+  val LOW: "LOW" = "LOW"
+  val MEDIUM: "MEDIUM" = "MEDIUM"
+  val HIGH: "HIGH" = "HIGH"
+  val CRITICAL: "CRITICAL" = "CRITICAL"
+  val UNDEFINED: "UNDEFINED" = "UNDEFINED"
 
-  @inline def values = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED)
+  @inline def values = js.Array[FindingSeverity](INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED)
 }
 
-@js.native
-sealed trait ImageActionType extends js.Any
+type ImageActionType = "EXPIRE"
 object ImageActionType {
-  val EXPIRE = "EXPIRE".asInstanceOf[ImageActionType]
+  val EXPIRE: "EXPIRE" = "EXPIRE"
 
-  @inline def values = js.Array(EXPIRE)
+  @inline def values = js.Array[ImageActionType](EXPIRE)
 }
 
-@js.native
-sealed trait ImageFailureCode extends js.Any
+type ImageFailureCode = "InvalidImageDigest" | "InvalidImageTag" | "ImageTagDoesNotMatchDigest" | "ImageNotFound" | "MissingDigestAndTag" | "ImageReferencedByManifestList" | "KmsError"
 object ImageFailureCode {
-  val InvalidImageDigest = "InvalidImageDigest".asInstanceOf[ImageFailureCode]
-  val InvalidImageTag = "InvalidImageTag".asInstanceOf[ImageFailureCode]
-  val ImageTagDoesNotMatchDigest = "ImageTagDoesNotMatchDigest".asInstanceOf[ImageFailureCode]
-  val ImageNotFound = "ImageNotFound".asInstanceOf[ImageFailureCode]
-  val MissingDigestAndTag = "MissingDigestAndTag".asInstanceOf[ImageFailureCode]
-  val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
-  val KmsError = "KmsError".asInstanceOf[ImageFailureCode]
+  val InvalidImageDigest: "InvalidImageDigest" = "InvalidImageDigest"
+  val InvalidImageTag: "InvalidImageTag" = "InvalidImageTag"
+  val ImageTagDoesNotMatchDigest: "ImageTagDoesNotMatchDigest" = "ImageTagDoesNotMatchDigest"
+  val ImageNotFound: "ImageNotFound" = "ImageNotFound"
+  val MissingDigestAndTag: "MissingDigestAndTag" = "MissingDigestAndTag"
+  val ImageReferencedByManifestList: "ImageReferencedByManifestList" = "ImageReferencedByManifestList"
+  val KmsError: "KmsError" = "KmsError"
 
-  @inline def values = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
+  @inline def values = js.Array[ImageFailureCode](InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
 }
 
-@js.native
-sealed trait ImageTagMutability extends js.Any
+type ImageTagMutability = "MUTABLE" | "IMMUTABLE"
 object ImageTagMutability {
-  val MUTABLE = "MUTABLE".asInstanceOf[ImageTagMutability]
-  val IMMUTABLE = "IMMUTABLE".asInstanceOf[ImageTagMutability]
+  val MUTABLE: "MUTABLE" = "MUTABLE"
+  val IMMUTABLE: "IMMUTABLE" = "IMMUTABLE"
 
-  @inline def values = js.Array(MUTABLE, IMMUTABLE)
+  @inline def values = js.Array[ImageTagMutability](MUTABLE, IMMUTABLE)
 }
 
-@js.native
-sealed trait LayerAvailability extends js.Any
+type LayerAvailability = "AVAILABLE" | "UNAVAILABLE"
 object LayerAvailability {
-  val AVAILABLE = "AVAILABLE".asInstanceOf[LayerAvailability]
-  val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val UNAVAILABLE: "UNAVAILABLE" = "UNAVAILABLE"
 
-  @inline def values = js.Array(AVAILABLE, UNAVAILABLE)
+  @inline def values = js.Array[LayerAvailability](AVAILABLE, UNAVAILABLE)
 }
 
-@js.native
-sealed trait LayerFailureCode extends js.Any
+type LayerFailureCode = "InvalidLayerDigest" | "MissingLayerDigest"
 object LayerFailureCode {
-  val InvalidLayerDigest = "InvalidLayerDigest".asInstanceOf[LayerFailureCode]
-  val MissingLayerDigest = "MissingLayerDigest".asInstanceOf[LayerFailureCode]
+  val InvalidLayerDigest: "InvalidLayerDigest" = "InvalidLayerDigest"
+  val MissingLayerDigest: "MissingLayerDigest" = "MissingLayerDigest"
 
-  @inline def values = js.Array(InvalidLayerDigest, MissingLayerDigest)
+  @inline def values = js.Array[LayerFailureCode](InvalidLayerDigest, MissingLayerDigest)
 }
 
-@js.native
-sealed trait LifecyclePolicyPreviewStatus extends js.Any
+type LifecyclePolicyPreviewStatus = "IN_PROGRESS" | "COMPLETE" | "EXPIRED" | "FAILED"
 object LifecyclePolicyPreviewStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[LifecyclePolicyPreviewStatus]
-  val COMPLETE = "COMPLETE".asInstanceOf[LifecyclePolicyPreviewStatus]
-  val EXPIRED = "EXPIRED".asInstanceOf[LifecyclePolicyPreviewStatus]
-  val FAILED = "FAILED".asInstanceOf[LifecyclePolicyPreviewStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val COMPLETE: "COMPLETE" = "COMPLETE"
+  val EXPIRED: "EXPIRED" = "EXPIRED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
+  @inline def values = js.Array[LifecyclePolicyPreviewStatus](IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
 }
 
-@js.native
-sealed trait ScanStatus extends js.Any
+type ScanStatus = "IN_PROGRESS" | "COMPLETE" | "FAILED"
 object ScanStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ScanStatus]
-  val COMPLETE = "COMPLETE".asInstanceOf[ScanStatus]
-  val FAILED = "FAILED".asInstanceOf[ScanStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val COMPLETE: "COMPLETE" = "COMPLETE"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETE, FAILED)
+  @inline def values = js.Array[ScanStatus](IN_PROGRESS, COMPLETE, FAILED)
 }
 
-@js.native
-sealed trait TagStatus extends js.Any
+type TagStatus = "TAGGED" | "UNTAGGED" | "ANY"
 object TagStatus {
-  val TAGGED = "TAGGED".asInstanceOf[TagStatus]
-  val UNTAGGED = "UNTAGGED".asInstanceOf[TagStatus]
-  val ANY = "ANY".asInstanceOf[TagStatus]
+  val TAGGED: "TAGGED" = "TAGGED"
+  val UNTAGGED: "UNTAGGED" = "UNTAGGED"
+  val ANY: "ANY" = "ANY"
 
-  @inline def values = js.Array(TAGGED, UNTAGGED, ANY)
+  @inline def values = js.Array[TagStatus](TAGGED, UNTAGGED, ANY)
 }

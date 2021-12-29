@@ -82,3 +82,4 @@ object TextType {
 
   @inline def values = js.Array(HANDWRITING, PRINTED)
 }
+

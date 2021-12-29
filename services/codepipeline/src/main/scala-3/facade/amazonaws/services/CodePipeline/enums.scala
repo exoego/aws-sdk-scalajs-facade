@@ -1,192 +1,173 @@
 package facade.amazonaws.services.codepipeline
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ActionCategory extends js.Any
+type ActionCategory = "Source" | "Build" | "Deploy" | "Test" | "Invoke" | "Approval"
 object ActionCategory {
-  val Source = "Source".asInstanceOf[ActionCategory]
-  val Build = "Build".asInstanceOf[ActionCategory]
-  val Deploy = "Deploy".asInstanceOf[ActionCategory]
-  val Test = "Test".asInstanceOf[ActionCategory]
-  val Invoke = "Invoke".asInstanceOf[ActionCategory]
-  val Approval = "Approval".asInstanceOf[ActionCategory]
+  val Source: "Source" = "Source"
+  val Build: "Build" = "Build"
+  val Deploy: "Deploy" = "Deploy"
+  val Test: "Test" = "Test"
+  val Invoke: "Invoke" = "Invoke"
+  val Approval: "Approval" = "Approval"
 
-  @inline def values = js.Array(Source, Build, Deploy, Test, Invoke, Approval)
+  @inline def values = js.Array[ActionCategory](Source, Build, Deploy, Test, Invoke, Approval)
 }
 
-@js.native
-sealed trait ActionConfigurationPropertyType extends js.Any
+type ActionConfigurationPropertyType = "String" | "Number" | "Boolean"
 object ActionConfigurationPropertyType {
-  val String = "String".asInstanceOf[ActionConfigurationPropertyType]
-  val Number = "Number".asInstanceOf[ActionConfigurationPropertyType]
-  val Boolean = "Boolean".asInstanceOf[ActionConfigurationPropertyType]
+  val String: "String" = "String"
+  val Number: "Number" = "Number"
+  val Boolean: "Boolean" = "Boolean"
 
-  @inline def values = js.Array(String, Number, Boolean)
+  @inline def values = js.Array[ActionConfigurationPropertyType](String, Number, Boolean)
 }
 
-@js.native
-sealed trait ActionExecutionStatus extends js.Any
+type ActionExecutionStatus = "InProgress" | "Abandoned" | "Succeeded" | "Failed"
 object ActionExecutionStatus {
-  val InProgress = "InProgress".asInstanceOf[ActionExecutionStatus]
-  val Abandoned = "Abandoned".asInstanceOf[ActionExecutionStatus]
-  val Succeeded = "Succeeded".asInstanceOf[ActionExecutionStatus]
-  val Failed = "Failed".asInstanceOf[ActionExecutionStatus]
+  val InProgress: "InProgress" = "InProgress"
+  val Abandoned: "Abandoned" = "Abandoned"
+  val Succeeded: "Succeeded" = "Succeeded"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(InProgress, Abandoned, Succeeded, Failed)
+  @inline def values = js.Array[ActionExecutionStatus](InProgress, Abandoned, Succeeded, Failed)
 }
 
-@js.native
-sealed trait ActionOwner extends js.Any
+type ActionOwner = "AWS" | "ThirdParty" | "Custom"
 object ActionOwner {
-  val AWS = "AWS".asInstanceOf[ActionOwner]
-  val ThirdParty = "ThirdParty".asInstanceOf[ActionOwner]
-  val Custom = "Custom".asInstanceOf[ActionOwner]
+  val AWS: "AWS" = "AWS"
+  val ThirdParty: "ThirdParty" = "ThirdParty"
+  val Custom: "Custom" = "Custom"
 
-  @inline def values = js.Array(AWS, ThirdParty, Custom)
+  @inline def values = js.Array[ActionOwner](AWS, ThirdParty, Custom)
 }
 
-@js.native
-sealed trait ApprovalStatus extends js.Any
+type ApprovalStatus = "Approved" | "Rejected"
 object ApprovalStatus {
-  val Approved = "Approved".asInstanceOf[ApprovalStatus]
-  val Rejected = "Rejected".asInstanceOf[ApprovalStatus]
+  val Approved: "Approved" = "Approved"
+  val Rejected: "Rejected" = "Rejected"
 
-  @inline def values = js.Array(Approved, Rejected)
+  @inline def values = js.Array[ApprovalStatus](Approved, Rejected)
 }
 
-@js.native
-sealed trait ArtifactLocationType extends js.Any
+type ArtifactLocationType = "S3"
 object ArtifactLocationType {
-  val S3 = "S3".asInstanceOf[ArtifactLocationType]
+  val S3: "S3" = "S3"
 
-  @inline def values = js.Array(S3)
+  @inline def values = js.Array[ArtifactLocationType](S3)
 }
 
-@js.native
-sealed trait ArtifactStoreType extends js.Any
+type ArtifactStoreType = "S3"
 object ArtifactStoreType {
-  val S3 = "S3".asInstanceOf[ArtifactStoreType]
+  val S3: "S3" = "S3"
 
-  @inline def values = js.Array(S3)
+  @inline def values = js.Array[ArtifactStoreType](S3)
 }
 
-@js.native
-sealed trait BlockerType extends js.Any
+type BlockerType = "Schedule"
 object BlockerType {
-  val Schedule = "Schedule".asInstanceOf[BlockerType]
+  val Schedule: "Schedule" = "Schedule"
 
-  @inline def values = js.Array(Schedule)
+  @inline def values = js.Array[BlockerType](Schedule)
 }
 
-@js.native
-sealed trait EncryptionKeyType extends js.Any
+type EncryptionKeyType = "KMS"
 object EncryptionKeyType {
-  val KMS = "KMS".asInstanceOf[EncryptionKeyType]
+  val KMS: "KMS" = "KMS"
 
-  @inline def values = js.Array(KMS)
+  @inline def values = js.Array[EncryptionKeyType](KMS)
 }
 
-@js.native
-sealed trait ExecutorType extends js.Any
+type ExecutorType = "JobWorker" | "Lambda"
 object ExecutorType {
-  val JobWorker = "JobWorker".asInstanceOf[ExecutorType]
-  val Lambda = "Lambda".asInstanceOf[ExecutorType]
+  val JobWorker: "JobWorker" = "JobWorker"
+  val Lambda: "Lambda" = "Lambda"
 
-  @inline def values = js.Array(JobWorker, Lambda)
+  @inline def values = js.Array[ExecutorType](JobWorker, Lambda)
 }
 
-@js.native
-sealed trait FailureType extends js.Any
+type FailureType = "JobFailed" | "ConfigurationError" | "PermissionError" | "RevisionOutOfSync" | "RevisionUnavailable" | "SystemUnavailable"
 object FailureType {
-  val JobFailed = "JobFailed".asInstanceOf[FailureType]
-  val ConfigurationError = "ConfigurationError".asInstanceOf[FailureType]
-  val PermissionError = "PermissionError".asInstanceOf[FailureType]
-  val RevisionOutOfSync = "RevisionOutOfSync".asInstanceOf[FailureType]
-  val RevisionUnavailable = "RevisionUnavailable".asInstanceOf[FailureType]
-  val SystemUnavailable = "SystemUnavailable".asInstanceOf[FailureType]
+  val JobFailed: "JobFailed" = "JobFailed"
+  val ConfigurationError: "ConfigurationError" = "ConfigurationError"
+  val PermissionError: "PermissionError" = "PermissionError"
+  val RevisionOutOfSync: "RevisionOutOfSync" = "RevisionOutOfSync"
+  val RevisionUnavailable: "RevisionUnavailable" = "RevisionUnavailable"
+  val SystemUnavailable: "SystemUnavailable" = "SystemUnavailable"
 
-  @inline def values = js.Array(JobFailed, ConfigurationError, PermissionError, RevisionOutOfSync, RevisionUnavailable, SystemUnavailable)
+  @inline def values = js.Array[FailureType](JobFailed, ConfigurationError, PermissionError, RevisionOutOfSync, RevisionUnavailable, SystemUnavailable)
 }
 
-@js.native
-sealed trait JobStatus extends js.Any
+type JobStatus = "Created" | "Queued" | "Dispatched" | "InProgress" | "TimedOut" | "Succeeded" | "Failed"
 object JobStatus {
-  val Created = "Created".asInstanceOf[JobStatus]
-  val Queued = "Queued".asInstanceOf[JobStatus]
-  val Dispatched = "Dispatched".asInstanceOf[JobStatus]
-  val InProgress = "InProgress".asInstanceOf[JobStatus]
-  val TimedOut = "TimedOut".asInstanceOf[JobStatus]
-  val Succeeded = "Succeeded".asInstanceOf[JobStatus]
-  val Failed = "Failed".asInstanceOf[JobStatus]
+  val Created: "Created" = "Created"
+  val Queued: "Queued" = "Queued"
+  val Dispatched: "Dispatched" = "Dispatched"
+  val InProgress: "InProgress" = "InProgress"
+  val TimedOut: "TimedOut" = "TimedOut"
+  val Succeeded: "Succeeded" = "Succeeded"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed)
+  @inline def values = js.Array[JobStatus](Created, Queued, Dispatched, InProgress, TimedOut, Succeeded, Failed)
 }
 
-@js.native
-sealed trait PipelineExecutionStatus extends js.Any
+type PipelineExecutionStatus = "Cancelled" | "InProgress" | "Stopped" | "Stopping" | "Succeeded" | "Superseded" | "Failed"
 object PipelineExecutionStatus {
-  val Cancelled = "Cancelled".asInstanceOf[PipelineExecutionStatus]
-  val InProgress = "InProgress".asInstanceOf[PipelineExecutionStatus]
-  val Stopped = "Stopped".asInstanceOf[PipelineExecutionStatus]
-  val Stopping = "Stopping".asInstanceOf[PipelineExecutionStatus]
-  val Succeeded = "Succeeded".asInstanceOf[PipelineExecutionStatus]
-  val Superseded = "Superseded".asInstanceOf[PipelineExecutionStatus]
-  val Failed = "Failed".asInstanceOf[PipelineExecutionStatus]
+  val Cancelled: "Cancelled" = "Cancelled"
+  val InProgress: "InProgress" = "InProgress"
+  val Stopped: "Stopped" = "Stopped"
+  val Stopping: "Stopping" = "Stopping"
+  val Succeeded: "Succeeded" = "Succeeded"
+  val Superseded: "Superseded" = "Superseded"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Cancelled, InProgress, Stopped, Stopping, Succeeded, Superseded, Failed)
+  @inline def values = js.Array[PipelineExecutionStatus](Cancelled, InProgress, Stopped, Stopping, Succeeded, Superseded, Failed)
 }
 
-@js.native
-sealed trait StageExecutionStatus extends js.Any
+type StageExecutionStatus = "Cancelled" | "InProgress" | "Failed" | "Stopped" | "Stopping" | "Succeeded"
 object StageExecutionStatus {
-  val Cancelled = "Cancelled".asInstanceOf[StageExecutionStatus]
-  val InProgress = "InProgress".asInstanceOf[StageExecutionStatus]
-  val Failed = "Failed".asInstanceOf[StageExecutionStatus]
-  val Stopped = "Stopped".asInstanceOf[StageExecutionStatus]
-  val Stopping = "Stopping".asInstanceOf[StageExecutionStatus]
-  val Succeeded = "Succeeded".asInstanceOf[StageExecutionStatus]
+  val Cancelled: "Cancelled" = "Cancelled"
+  val InProgress: "InProgress" = "InProgress"
+  val Failed: "Failed" = "Failed"
+  val Stopped: "Stopped" = "Stopped"
+  val Stopping: "Stopping" = "Stopping"
+  val Succeeded: "Succeeded" = "Succeeded"
 
-  @inline def values = js.Array(Cancelled, InProgress, Failed, Stopped, Stopping, Succeeded)
+  @inline def values = js.Array[StageExecutionStatus](Cancelled, InProgress, Failed, Stopped, Stopping, Succeeded)
 }
 
-@js.native
-sealed trait StageRetryMode extends js.Any
+type StageRetryMode = "FAILED_ACTIONS"
 object StageRetryMode {
-  val FAILED_ACTIONS = "FAILED_ACTIONS".asInstanceOf[StageRetryMode]
+  val FAILED_ACTIONS: "FAILED_ACTIONS" = "FAILED_ACTIONS"
 
-  @inline def values = js.Array(FAILED_ACTIONS)
+  @inline def values = js.Array[StageRetryMode](FAILED_ACTIONS)
 }
 
-@js.native
-sealed trait StageTransitionType extends js.Any
+type StageTransitionType = "Inbound" | "Outbound"
 object StageTransitionType {
-  val Inbound = "Inbound".asInstanceOf[StageTransitionType]
-  val Outbound = "Outbound".asInstanceOf[StageTransitionType]
+  val Inbound: "Inbound" = "Inbound"
+  val Outbound: "Outbound" = "Outbound"
 
-  @inline def values = js.Array(Inbound, Outbound)
+  @inline def values = js.Array[StageTransitionType](Inbound, Outbound)
 }
 
-@js.native
-sealed trait TriggerType extends js.Any
+type TriggerType = "CreatePipeline" | "StartPipelineExecution" | "PollForSourceChanges" | "Webhook" | "CloudWatchEvent" | "PutActionRevision"
 object TriggerType {
-  val CreatePipeline = "CreatePipeline".asInstanceOf[TriggerType]
-  val StartPipelineExecution = "StartPipelineExecution".asInstanceOf[TriggerType]
-  val PollForSourceChanges = "PollForSourceChanges".asInstanceOf[TriggerType]
-  val Webhook = "Webhook".asInstanceOf[TriggerType]
-  val CloudWatchEvent = "CloudWatchEvent".asInstanceOf[TriggerType]
-  val PutActionRevision = "PutActionRevision".asInstanceOf[TriggerType]
+  val CreatePipeline: "CreatePipeline" = "CreatePipeline"
+  val StartPipelineExecution: "StartPipelineExecution" = "StartPipelineExecution"
+  val PollForSourceChanges: "PollForSourceChanges" = "PollForSourceChanges"
+  val Webhook: "Webhook" = "Webhook"
+  val CloudWatchEvent: "CloudWatchEvent" = "CloudWatchEvent"
+  val PutActionRevision: "PutActionRevision" = "PutActionRevision"
 
-  @inline def values = js.Array(CreatePipeline, StartPipelineExecution, PollForSourceChanges, Webhook, CloudWatchEvent, PutActionRevision)
+  @inline def values = js.Array[TriggerType](CreatePipeline, StartPipelineExecution, PollForSourceChanges, Webhook, CloudWatchEvent, PutActionRevision)
 }
 
-@js.native
-sealed trait WebhookAuthenticationType extends js.Any
+type WebhookAuthenticationType = "GITHUB_HMAC" | "IP" | "UNAUTHENTICATED"
 object WebhookAuthenticationType {
-  val GITHUB_HMAC = "GITHUB_HMAC".asInstanceOf[WebhookAuthenticationType]
-  val IP = "IP".asInstanceOf[WebhookAuthenticationType]
-  val UNAUTHENTICATED = "UNAUTHENTICATED".asInstanceOf[WebhookAuthenticationType]
+  val GITHUB_HMAC: "GITHUB_HMAC" = "GITHUB_HMAC"
+  val IP: "IP" = "IP"
+  val UNAUTHENTICATED: "UNAUTHENTICATED" = "UNAUTHENTICATED"
 
-  @inline def values = js.Array(GITHUB_HMAC, IP, UNAUTHENTICATED)
+  @inline def values = js.Array[WebhookAuthenticationType](GITHUB_HMAC, IP, UNAUTHENTICATED)
 }

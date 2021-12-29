@@ -32,21 +32,7 @@ object JobState {
   val Listing = "Listing".asInstanceOf[JobState]
   val Pending = "Pending".asInstanceOf[JobState]
 
-  @inline def values = js.Array(
-    New,
-    PreparingAppliance,
-    PreparingShipment,
-    InTransitToCustomer,
-    WithCustomer,
-    InTransitToAWS,
-    WithAWSSortingFacility,
-    WithAWS,
-    InProgress,
-    Complete,
-    Cancelled,
-    Listing,
-    Pending
-  )
+  @inline def values = js.Array(New, PreparingAppliance, PreparingShipment, InTransitToCustomer, WithCustomer, InTransitToAWS, WithAWSSortingFacility, WithAWS, InProgress, Complete, Cancelled, Listing, Pending)
 }
 
 @js.native
@@ -116,3 +102,4 @@ object SnowballType {
 
   @inline def values = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD)
 }
+

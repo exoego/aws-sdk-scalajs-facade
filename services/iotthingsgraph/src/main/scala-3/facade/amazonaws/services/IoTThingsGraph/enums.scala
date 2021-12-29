@@ -1,75 +1,69 @@
 package facade.amazonaws.services.iotthingsgraph
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DefinitionLanguage extends js.Any
+type DefinitionLanguage = "GRAPHQL"
 object DefinitionLanguage {
-  val GRAPHQL = "GRAPHQL".asInstanceOf[DefinitionLanguage]
+  val GRAPHQL: "GRAPHQL" = "GRAPHQL"
 
-  @inline def values = js.Array(GRAPHQL)
+  @inline def values = js.Array[DefinitionLanguage](GRAPHQL)
 }
 
-@js.native
-sealed trait DeploymentTarget extends js.Any
+type DeploymentTarget = "GREENGRASS" | "CLOUD"
 object DeploymentTarget {
-  val GREENGRASS = "GREENGRASS".asInstanceOf[DeploymentTarget]
-  val CLOUD = "CLOUD".asInstanceOf[DeploymentTarget]
+  val GREENGRASS: "GREENGRASS" = "GREENGRASS"
+  val CLOUD: "CLOUD" = "CLOUD"
 
-  @inline def values = js.Array(GREENGRASS, CLOUD)
+  @inline def values = js.Array[DeploymentTarget](GREENGRASS, CLOUD)
 }
 
-@js.native
-sealed trait EntityFilterName extends js.Any
+type EntityFilterName = "NAME" | "NAMESPACE" | "SEMANTIC_TYPE_PATH" | "REFERENCED_ENTITY_ID"
 object EntityFilterName {
-  val NAME = "NAME".asInstanceOf[EntityFilterName]
-  val NAMESPACE = "NAMESPACE".asInstanceOf[EntityFilterName]
-  val SEMANTIC_TYPE_PATH = "SEMANTIC_TYPE_PATH".asInstanceOf[EntityFilterName]
-  val REFERENCED_ENTITY_ID = "REFERENCED_ENTITY_ID".asInstanceOf[EntityFilterName]
+  val NAME: "NAME" = "NAME"
+  val NAMESPACE: "NAMESPACE" = "NAMESPACE"
+  val SEMANTIC_TYPE_PATH: "SEMANTIC_TYPE_PATH" = "SEMANTIC_TYPE_PATH"
+  val REFERENCED_ENTITY_ID: "REFERENCED_ENTITY_ID" = "REFERENCED_ENTITY_ID"
 
-  @inline def values = js.Array(NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID)
+  @inline def values = js.Array[EntityFilterName](NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID)
 }
 
-@js.native
-sealed trait EntityType extends js.Any
+type EntityType = "DEVICE" | "SERVICE" | "DEVICE_MODEL" | "CAPABILITY" | "STATE" | "ACTION" | "EVENT" | "PROPERTY" | "MAPPING" | "ENUM"
 object EntityType {
-  val DEVICE = "DEVICE".asInstanceOf[EntityType]
-  val SERVICE = "SERVICE".asInstanceOf[EntityType]
-  val DEVICE_MODEL = "DEVICE_MODEL".asInstanceOf[EntityType]
-  val CAPABILITY = "CAPABILITY".asInstanceOf[EntityType]
-  val STATE = "STATE".asInstanceOf[EntityType]
-  val ACTION = "ACTION".asInstanceOf[EntityType]
-  val EVENT = "EVENT".asInstanceOf[EntityType]
-  val PROPERTY = "PROPERTY".asInstanceOf[EntityType]
-  val MAPPING = "MAPPING".asInstanceOf[EntityType]
-  val ENUM = "ENUM".asInstanceOf[EntityType]
+  val DEVICE: "DEVICE" = "DEVICE"
+  val SERVICE: "SERVICE" = "SERVICE"
+  val DEVICE_MODEL: "DEVICE_MODEL" = "DEVICE_MODEL"
+  val CAPABILITY: "CAPABILITY" = "CAPABILITY"
+  val STATE: "STATE" = "STATE"
+  val ACTION: "ACTION" = "ACTION"
+  val EVENT: "EVENT" = "EVENT"
+  val PROPERTY: "PROPERTY" = "PROPERTY"
+  val MAPPING: "MAPPING" = "MAPPING"
+  val ENUM: "ENUM" = "ENUM"
 
-  @inline def values = js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
+  @inline def values = js.Array[EntityType](DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
 }
 
-@js.native
-sealed trait FlowExecutionEventType extends js.Any
+type FlowExecutionEventType = "EXECUTION_STARTED" | "EXECUTION_FAILED" | "EXECUTION_ABORTED" | "EXECUTION_SUCCEEDED" | "STEP_STARTED" | "STEP_FAILED" | "STEP_SUCCEEDED" | "ACTIVITY_SCHEDULED" | "ACTIVITY_STARTED" | "ACTIVITY_FAILED" | "ACTIVITY_SUCCEEDED" | "START_FLOW_EXECUTION_TASK" | "SCHEDULE_NEXT_READY_STEPS_TASK" | "THING_ACTION_TASK" | "THING_ACTION_TASK_FAILED" | "THING_ACTION_TASK_SUCCEEDED" | "ACKNOWLEDGE_TASK_MESSAGE"
 object FlowExecutionEventType {
-  val EXECUTION_STARTED = "EXECUTION_STARTED".asInstanceOf[FlowExecutionEventType]
-  val EXECUTION_FAILED = "EXECUTION_FAILED".asInstanceOf[FlowExecutionEventType]
-  val EXECUTION_ABORTED = "EXECUTION_ABORTED".asInstanceOf[FlowExecutionEventType]
-  val EXECUTION_SUCCEEDED = "EXECUTION_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
-  val STEP_STARTED = "STEP_STARTED".asInstanceOf[FlowExecutionEventType]
-  val STEP_FAILED = "STEP_FAILED".asInstanceOf[FlowExecutionEventType]
-  val STEP_SUCCEEDED = "STEP_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
-  val ACTIVITY_SCHEDULED = "ACTIVITY_SCHEDULED".asInstanceOf[FlowExecutionEventType]
-  val ACTIVITY_STARTED = "ACTIVITY_STARTED".asInstanceOf[FlowExecutionEventType]
-  val ACTIVITY_FAILED = "ACTIVITY_FAILED".asInstanceOf[FlowExecutionEventType]
-  val ACTIVITY_SUCCEEDED = "ACTIVITY_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
-  val START_FLOW_EXECUTION_TASK = "START_FLOW_EXECUTION_TASK".asInstanceOf[FlowExecutionEventType]
-  val SCHEDULE_NEXT_READY_STEPS_TASK = "SCHEDULE_NEXT_READY_STEPS_TASK".asInstanceOf[FlowExecutionEventType]
-  val THING_ACTION_TASK = "THING_ACTION_TASK".asInstanceOf[FlowExecutionEventType]
-  val THING_ACTION_TASK_FAILED = "THING_ACTION_TASK_FAILED".asInstanceOf[FlowExecutionEventType]
-  val THING_ACTION_TASK_SUCCEEDED = "THING_ACTION_TASK_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
-  val ACKNOWLEDGE_TASK_MESSAGE = "ACKNOWLEDGE_TASK_MESSAGE".asInstanceOf[FlowExecutionEventType]
+  val EXECUTION_STARTED: "EXECUTION_STARTED" = "EXECUTION_STARTED"
+  val EXECUTION_FAILED: "EXECUTION_FAILED" = "EXECUTION_FAILED"
+  val EXECUTION_ABORTED: "EXECUTION_ABORTED" = "EXECUTION_ABORTED"
+  val EXECUTION_SUCCEEDED: "EXECUTION_SUCCEEDED" = "EXECUTION_SUCCEEDED"
+  val STEP_STARTED: "STEP_STARTED" = "STEP_STARTED"
+  val STEP_FAILED: "STEP_FAILED" = "STEP_FAILED"
+  val STEP_SUCCEEDED: "STEP_SUCCEEDED" = "STEP_SUCCEEDED"
+  val ACTIVITY_SCHEDULED: "ACTIVITY_SCHEDULED" = "ACTIVITY_SCHEDULED"
+  val ACTIVITY_STARTED: "ACTIVITY_STARTED" = "ACTIVITY_STARTED"
+  val ACTIVITY_FAILED: "ACTIVITY_FAILED" = "ACTIVITY_FAILED"
+  val ACTIVITY_SUCCEEDED: "ACTIVITY_SUCCEEDED" = "ACTIVITY_SUCCEEDED"
+  val START_FLOW_EXECUTION_TASK: "START_FLOW_EXECUTION_TASK" = "START_FLOW_EXECUTION_TASK"
+  val SCHEDULE_NEXT_READY_STEPS_TASK: "SCHEDULE_NEXT_READY_STEPS_TASK" = "SCHEDULE_NEXT_READY_STEPS_TASK"
+  val THING_ACTION_TASK: "THING_ACTION_TASK" = "THING_ACTION_TASK"
+  val THING_ACTION_TASK_FAILED: "THING_ACTION_TASK_FAILED" = "THING_ACTION_TASK_FAILED"
+  val THING_ACTION_TASK_SUCCEEDED: "THING_ACTION_TASK_SUCCEEDED" = "THING_ACTION_TASK_SUCCEEDED"
+  val ACKNOWLEDGE_TASK_MESSAGE: "ACKNOWLEDGE_TASK_MESSAGE" = "ACKNOWLEDGE_TASK_MESSAGE"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[FlowExecutionEventType](
     EXECUTION_STARTED,
     EXECUTION_FAILED,
     EXECUTION_ABORTED,
@@ -90,82 +84,74 @@ object FlowExecutionEventType {
   )
 }
 
-@js.native
-sealed trait FlowExecutionStatus extends js.Any
+type FlowExecutionStatus = "RUNNING" | "ABORTED" | "SUCCEEDED" | "FAILED"
 object FlowExecutionStatus {
-  val RUNNING = "RUNNING".asInstanceOf[FlowExecutionStatus]
-  val ABORTED = "ABORTED".asInstanceOf[FlowExecutionStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[FlowExecutionStatus]
-  val FAILED = "FAILED".asInstanceOf[FlowExecutionStatus]
+  val RUNNING: "RUNNING" = "RUNNING"
+  val ABORTED: "ABORTED" = "ABORTED"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(RUNNING, ABORTED, SUCCEEDED, FAILED)
+  @inline def values = js.Array[FlowExecutionStatus](RUNNING, ABORTED, SUCCEEDED, FAILED)
 }
 
-@js.native
-sealed trait FlowTemplateFilterName extends js.Any
+type FlowTemplateFilterName = "DEVICE_MODEL_ID"
 object FlowTemplateFilterName {
-  val DEVICE_MODEL_ID = "DEVICE_MODEL_ID".asInstanceOf[FlowTemplateFilterName]
+  val DEVICE_MODEL_ID: "DEVICE_MODEL_ID" = "DEVICE_MODEL_ID"
 
-  @inline def values = js.Array(DEVICE_MODEL_ID)
+  @inline def values = js.Array[FlowTemplateFilterName](DEVICE_MODEL_ID)
 }
 
-@js.native
-sealed trait NamespaceDeletionStatus extends js.Any
+type NamespaceDeletionStatus = "IN_PROGRESS" | "SUCCEEDED" | "FAILED"
 object NamespaceDeletionStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[NamespaceDeletionStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[NamespaceDeletionStatus]
-  val FAILED = "FAILED".asInstanceOf[NamespaceDeletionStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
+  @inline def values = js.Array[NamespaceDeletionStatus](IN_PROGRESS, SUCCEEDED, FAILED)
 }
 
-@js.native
-sealed trait NamespaceDeletionStatusErrorCodes extends js.Any
+type NamespaceDeletionStatusErrorCodes = "VALIDATION_FAILED"
 object NamespaceDeletionStatusErrorCodes {
-  val VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[NamespaceDeletionStatusErrorCodes]
+  val VALIDATION_FAILED: "VALIDATION_FAILED" = "VALIDATION_FAILED"
 
-  @inline def values = js.Array(VALIDATION_FAILED)
+  @inline def values = js.Array[NamespaceDeletionStatusErrorCodes](VALIDATION_FAILED)
 }
 
-@js.native
-sealed trait SystemInstanceDeploymentStatus extends js.Any
+type SystemInstanceDeploymentStatus = "NOT_DEPLOYED" | "BOOTSTRAP" | "DEPLOY_IN_PROGRESS" | "DEPLOYED_IN_TARGET" | "UNDEPLOY_IN_PROGRESS" | "FAILED" | "PENDING_DELETE" | "DELETED_IN_TARGET"
 object SystemInstanceDeploymentStatus {
-  val NOT_DEPLOYED = "NOT_DEPLOYED".asInstanceOf[SystemInstanceDeploymentStatus]
-  val BOOTSTRAP = "BOOTSTRAP".asInstanceOf[SystemInstanceDeploymentStatus]
-  val DEPLOY_IN_PROGRESS = "DEPLOY_IN_PROGRESS".asInstanceOf[SystemInstanceDeploymentStatus]
-  val DEPLOYED_IN_TARGET = "DEPLOYED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
-  val UNDEPLOY_IN_PROGRESS = "UNDEPLOY_IN_PROGRESS".asInstanceOf[SystemInstanceDeploymentStatus]
-  val FAILED = "FAILED".asInstanceOf[SystemInstanceDeploymentStatus]
-  val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[SystemInstanceDeploymentStatus]
-  val DELETED_IN_TARGET = "DELETED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
+  val NOT_DEPLOYED: "NOT_DEPLOYED" = "NOT_DEPLOYED"
+  val BOOTSTRAP: "BOOTSTRAP" = "BOOTSTRAP"
+  val DEPLOY_IN_PROGRESS: "DEPLOY_IN_PROGRESS" = "DEPLOY_IN_PROGRESS"
+  val DEPLOYED_IN_TARGET: "DEPLOYED_IN_TARGET" = "DEPLOYED_IN_TARGET"
+  val UNDEPLOY_IN_PROGRESS: "UNDEPLOY_IN_PROGRESS" = "UNDEPLOY_IN_PROGRESS"
+  val FAILED: "FAILED" = "FAILED"
+  val PENDING_DELETE: "PENDING_DELETE" = "PENDING_DELETE"
+  val DELETED_IN_TARGET: "DELETED_IN_TARGET" = "DELETED_IN_TARGET"
 
-  @inline def values = js.Array(NOT_DEPLOYED, BOOTSTRAP, DEPLOY_IN_PROGRESS, DEPLOYED_IN_TARGET, UNDEPLOY_IN_PROGRESS, FAILED, PENDING_DELETE, DELETED_IN_TARGET)
+  @inline def values = js.Array[SystemInstanceDeploymentStatus](NOT_DEPLOYED, BOOTSTRAP, DEPLOY_IN_PROGRESS, DEPLOYED_IN_TARGET, UNDEPLOY_IN_PROGRESS, FAILED, PENDING_DELETE, DELETED_IN_TARGET)
 }
 
-@js.native
-sealed trait SystemInstanceFilterName extends js.Any
+type SystemInstanceFilterName = "SYSTEM_TEMPLATE_ID" | "STATUS" | "GREENGRASS_GROUP_NAME"
 object SystemInstanceFilterName {
-  val SYSTEM_TEMPLATE_ID = "SYSTEM_TEMPLATE_ID".asInstanceOf[SystemInstanceFilterName]
-  val STATUS = "STATUS".asInstanceOf[SystemInstanceFilterName]
-  val GREENGRASS_GROUP_NAME = "GREENGRASS_GROUP_NAME".asInstanceOf[SystemInstanceFilterName]
+  val SYSTEM_TEMPLATE_ID: "SYSTEM_TEMPLATE_ID" = "SYSTEM_TEMPLATE_ID"
+  val STATUS: "STATUS" = "STATUS"
+  val GREENGRASS_GROUP_NAME: "GREENGRASS_GROUP_NAME" = "GREENGRASS_GROUP_NAME"
 
-  @inline def values = js.Array(SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME)
+  @inline def values = js.Array[SystemInstanceFilterName](SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME)
 }
 
-@js.native
-sealed trait SystemTemplateFilterName extends js.Any
+type SystemTemplateFilterName = "FLOW_TEMPLATE_ID"
 object SystemTemplateFilterName {
-  val FLOW_TEMPLATE_ID = "FLOW_TEMPLATE_ID".asInstanceOf[SystemTemplateFilterName]
+  val FLOW_TEMPLATE_ID: "FLOW_TEMPLATE_ID" = "FLOW_TEMPLATE_ID"
 
-  @inline def values = js.Array(FLOW_TEMPLATE_ID)
+  @inline def values = js.Array[SystemTemplateFilterName](FLOW_TEMPLATE_ID)
 }
 
-@js.native
-sealed trait UploadStatus extends js.Any
+type UploadStatus = "IN_PROGRESS" | "SUCCEEDED" | "FAILED"
 object UploadStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[UploadStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[UploadStatus]
-  val FAILED = "FAILED".asInstanceOf[UploadStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
+  @inline def values = js.Array[UploadStatus](IN_PROGRESS, SUCCEEDED, FAILED)
 }

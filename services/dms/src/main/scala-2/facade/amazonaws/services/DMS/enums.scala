@@ -234,3 +234,4 @@ object TargetDbType {
 
   @inline def values = js.Array(`specific-database`, `multiple-databases`)
 }
+

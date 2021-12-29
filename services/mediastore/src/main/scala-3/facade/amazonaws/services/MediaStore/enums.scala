@@ -1,34 +1,30 @@
 package facade.amazonaws.services.mediastore
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ContainerLevelMetrics extends js.Any
+type ContainerLevelMetrics = "ENABLED" | "DISABLED"
 object ContainerLevelMetrics {
-  val ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
-  val DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[ContainerLevelMetrics](ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait ContainerStatus extends js.Any
+type ContainerStatus = "ACTIVE" | "CREATING" | "DELETING"
 object ContainerStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[ContainerStatus]
-  val CREATING = "CREATING".asInstanceOf[ContainerStatus]
-  val DELETING = "DELETING".asInstanceOf[ContainerStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val CREATING: "CREATING" = "CREATING"
+  val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(ACTIVE, CREATING, DELETING)
+  @inline def values = js.Array[ContainerStatus](ACTIVE, CREATING, DELETING)
 }
 
-@js.native
-sealed trait MethodName extends js.Any
+type MethodName = "PUT" | "GET" | "DELETE" | "HEAD"
 object MethodName {
-  val PUT = "PUT".asInstanceOf[MethodName]
-  val GET = "GET".asInstanceOf[MethodName]
-  val DELETE = "DELETE".asInstanceOf[MethodName]
-  val HEAD = "HEAD".asInstanceOf[MethodName]
+  val PUT: "PUT" = "PUT"
+  val GET: "GET" = "GET"
+  val DELETE: "DELETE" = "DELETE"
+  val HEAD: "HEAD" = "HEAD"
 
-  @inline def values = js.Array(PUT, GET, DELETE, HEAD)
+  @inline def values = js.Array[MethodName](PUT, GET, DELETE, HEAD)
 }

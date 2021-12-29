@@ -1,38 +1,35 @@
 package facade.amazonaws.services.snowball
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ClusterState extends js.Any
+type ClusterState = "AwaitingQuorum" | "Pending" | "InUse" | "Complete" | "Cancelled"
 object ClusterState {
-  val AwaitingQuorum = "AwaitingQuorum".asInstanceOf[ClusterState]
-  val Pending = "Pending".asInstanceOf[ClusterState]
-  val InUse = "InUse".asInstanceOf[ClusterState]
-  val Complete = "Complete".asInstanceOf[ClusterState]
-  val Cancelled = "Cancelled".asInstanceOf[ClusterState]
+  val AwaitingQuorum: "AwaitingQuorum" = "AwaitingQuorum"
+  val Pending: "Pending" = "Pending"
+  val InUse: "InUse" = "InUse"
+  val Complete: "Complete" = "Complete"
+  val Cancelled: "Cancelled" = "Cancelled"
 
-  @inline def values = js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled)
+  @inline def values = js.Array[ClusterState](AwaitingQuorum, Pending, InUse, Complete, Cancelled)
 }
 
-@js.native
-sealed trait JobState extends js.Any
+type JobState = "New" | "PreparingAppliance" | "PreparingShipment" | "InTransitToCustomer" | "WithCustomer" | "InTransitToAWS" | "WithAWSSortingFacility" | "WithAWS" | "InProgress" | "Complete" | "Cancelled" | "Listing" | "Pending"
 object JobState {
-  val New = "New".asInstanceOf[JobState]
-  val PreparingAppliance = "PreparingAppliance".asInstanceOf[JobState]
-  val PreparingShipment = "PreparingShipment".asInstanceOf[JobState]
-  val InTransitToCustomer = "InTransitToCustomer".asInstanceOf[JobState]
-  val WithCustomer = "WithCustomer".asInstanceOf[JobState]
-  val InTransitToAWS = "InTransitToAWS".asInstanceOf[JobState]
-  val WithAWSSortingFacility = "WithAWSSortingFacility".asInstanceOf[JobState]
-  val WithAWS = "WithAWS".asInstanceOf[JobState]
-  val InProgress = "InProgress".asInstanceOf[JobState]
-  val Complete = "Complete".asInstanceOf[JobState]
-  val Cancelled = "Cancelled".asInstanceOf[JobState]
-  val Listing = "Listing".asInstanceOf[JobState]
-  val Pending = "Pending".asInstanceOf[JobState]
+  val New: "New" = "New"
+  val PreparingAppliance: "PreparingAppliance" = "PreparingAppliance"
+  val PreparingShipment: "PreparingShipment" = "PreparingShipment"
+  val InTransitToCustomer: "InTransitToCustomer" = "InTransitToCustomer"
+  val WithCustomer: "WithCustomer" = "WithCustomer"
+  val InTransitToAWS: "InTransitToAWS" = "InTransitToAWS"
+  val WithAWSSortingFacility: "WithAWSSortingFacility" = "WithAWSSortingFacility"
+  val WithAWS: "WithAWS" = "WithAWS"
+  val InProgress: "InProgress" = "InProgress"
+  val Complete: "Complete" = "Complete"
+  val Cancelled: "Cancelled" = "Cancelled"
+  val Listing: "Listing" = "Listing"
+  val Pending: "Pending" = "Pending"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[JobState](
     New,
     PreparingAppliance,
     PreparingShipment,
@@ -49,70 +46,64 @@ object JobState {
   )
 }
 
-@js.native
-sealed trait JobType extends js.Any
+type JobType = "IMPORT" | "EXPORT" | "LOCAL_USE"
 object JobType {
-  val IMPORT = "IMPORT".asInstanceOf[JobType]
-  val EXPORT = "EXPORT".asInstanceOf[JobType]
-  val LOCAL_USE = "LOCAL_USE".asInstanceOf[JobType]
+  val IMPORT: "IMPORT" = "IMPORT"
+  val EXPORT: "EXPORT" = "EXPORT"
+  val LOCAL_USE: "LOCAL_USE" = "LOCAL_USE"
 
-  @inline def values = js.Array(IMPORT, EXPORT, LOCAL_USE)
+  @inline def values = js.Array[JobType](IMPORT, EXPORT, LOCAL_USE)
 }
 
-@js.native
-sealed trait ShipmentState extends js.Any
+type ShipmentState = "RECEIVED" | "RETURNED"
 object ShipmentState {
-  val RECEIVED = "RECEIVED".asInstanceOf[ShipmentState]
-  val RETURNED = "RETURNED".asInstanceOf[ShipmentState]
+  val RECEIVED: "RECEIVED" = "RECEIVED"
+  val RETURNED: "RETURNED" = "RETURNED"
 
-  @inline def values = js.Array(RECEIVED, RETURNED)
+  @inline def values = js.Array[ShipmentState](RECEIVED, RETURNED)
 }
 
-@js.native
-sealed trait ShippingLabelStatus extends js.Any
+type ShippingLabelStatus = "InProgress" | "TimedOut" | "Succeeded" | "Failed"
 object ShippingLabelStatus {
-  val InProgress = "InProgress".asInstanceOf[ShippingLabelStatus]
-  val TimedOut = "TimedOut".asInstanceOf[ShippingLabelStatus]
-  val Succeeded = "Succeeded".asInstanceOf[ShippingLabelStatus]
-  val Failed = "Failed".asInstanceOf[ShippingLabelStatus]
+  val InProgress: "InProgress" = "InProgress"
+  val TimedOut: "TimedOut" = "TimedOut"
+  val Succeeded: "Succeeded" = "Succeeded"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(InProgress, TimedOut, Succeeded, Failed)
+  @inline def values = js.Array[ShippingLabelStatus](InProgress, TimedOut, Succeeded, Failed)
 }
 
-@js.native
-sealed trait ShippingOption extends js.Any
+type ShippingOption = "SECOND_DAY" | "NEXT_DAY" | "EXPRESS" | "STANDARD"
 object ShippingOption {
-  val SECOND_DAY = "SECOND_DAY".asInstanceOf[ShippingOption]
-  val NEXT_DAY = "NEXT_DAY".asInstanceOf[ShippingOption]
-  val EXPRESS = "EXPRESS".asInstanceOf[ShippingOption]
-  val STANDARD = "STANDARD".asInstanceOf[ShippingOption]
+  val SECOND_DAY: "SECOND_DAY" = "SECOND_DAY"
+  val NEXT_DAY: "NEXT_DAY" = "NEXT_DAY"
+  val EXPRESS: "EXPRESS" = "EXPRESS"
+  val STANDARD: "STANDARD" = "STANDARD"
 
-  @inline def values = js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD)
+  @inline def values = js.Array[ShippingOption](SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD)
 }
 
-@js.native
-sealed trait SnowballCapacity extends js.Any
+type SnowballCapacity = "T50" | "T80" | "T100" | "T42" | "T98" | "T8" | "NoPreference"
 object SnowballCapacity {
-  val T50 = "T50".asInstanceOf[SnowballCapacity]
-  val T80 = "T80".asInstanceOf[SnowballCapacity]
-  val T100 = "T100".asInstanceOf[SnowballCapacity]
-  val T42 = "T42".asInstanceOf[SnowballCapacity]
-  val T98 = "T98".asInstanceOf[SnowballCapacity]
-  val T8 = "T8".asInstanceOf[SnowballCapacity]
-  val NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
+  val T50: "T50" = "T50"
+  val T80: "T80" = "T80"
+  val T100: "T100" = "T100"
+  val T42: "T42" = "T42"
+  val T98: "T98" = "T98"
+  val T8: "T8" = "T8"
+  val NoPreference: "NoPreference" = "NoPreference"
 
-  @inline def values = js.Array(T50, T80, T100, T42, T98, T8, NoPreference)
+  @inline def values = js.Array[SnowballCapacity](T50, T80, T100, T42, T98, T8, NoPreference)
 }
 
-@js.native
-sealed trait SnowballType extends js.Any
+type SnowballType = "STANDARD" | "EDGE" | "EDGE_C" | "EDGE_CG" | "EDGE_S" | "SNC1_HDD"
 object SnowballType {
-  val STANDARD = "STANDARD".asInstanceOf[SnowballType]
-  val EDGE = "EDGE".asInstanceOf[SnowballType]
-  val EDGE_C = "EDGE_C".asInstanceOf[SnowballType]
-  val EDGE_CG = "EDGE_CG".asInstanceOf[SnowballType]
-  val EDGE_S = "EDGE_S".asInstanceOf[SnowballType]
-  val SNC1_HDD = "SNC1_HDD".asInstanceOf[SnowballType]
+  val STANDARD: "STANDARD" = "STANDARD"
+  val EDGE: "EDGE" = "EDGE"
+  val EDGE_C: "EDGE_C" = "EDGE_C"
+  val EDGE_CG: "EDGE_CG" = "EDGE_CG"
+  val EDGE_S: "EDGE_S" = "EDGE_S"
+  val SNC1_HDD: "SNC1_HDD" = "SNC1_HDD"
 
-  @inline def values = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD)
+  @inline def values = js.Array[SnowballType](STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD)
 }

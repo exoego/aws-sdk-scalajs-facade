@@ -104,25 +104,7 @@ object RequiredSignUpAttributesElement {
   val WEBSITE = "WEBSITE".asInstanceOf[RequiredSignUpAttributesElement]
   val ZONE_INFO = "ZONE_INFO".asInstanceOf[RequiredSignUpAttributesElement]
 
-  @inline def values = js.Array(
-    ADDRESS,
-    BIRTHDATE,
-    EMAIL,
-    FAMILY_NAME,
-    GENDER,
-    GIVEN_NAME,
-    LOCALE,
-    MIDDLE_NAME,
-    NAME,
-    NICKNAME,
-    PHONE_NUMBER,
-    PICTURE,
-    PREFERRED_USERNAME,
-    PROFILE,
-    UPDATED_AT,
-    WEBSITE,
-    ZONE_INFO
-  )
+  @inline def values = js.Array(ADDRESS, BIRTHDATE, EMAIL, FAMILY_NAME, GENDER, GIVEN_NAME, LOCALE, MIDDLE_NAME, NAME, NICKNAME, PHONE_NUMBER, PICTURE, PREFERRED_USERNAME, PROFILE, UPDATED_AT, WEBSITE, ZONE_INFO)
 }
 
 @js.native
@@ -163,3 +145,4 @@ object Status {
 
   @inline def values = js.Array(LATEST, STALE)
 }
+

@@ -1,175 +1,159 @@
 package facade.amazonaws.services.directconnect
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AddressFamily extends js.Any
+type AddressFamily = "ipv4" | "ipv6"
 object AddressFamily {
-  val ipv4 = "ipv4".asInstanceOf[AddressFamily]
-  val ipv6 = "ipv6".asInstanceOf[AddressFamily]
+  val ipv4: "ipv4" = "ipv4"
+  val ipv6: "ipv6" = "ipv6"
 
-  @inline def values = js.Array(ipv4, ipv6)
+  @inline def values = js.Array[AddressFamily](ipv4, ipv6)
 }
 
-@js.native
-sealed trait BGPPeerState extends js.Any
+type BGPPeerState = "verifying" | "pending" | "available" | "deleting" | "deleted"
 object BGPPeerState {
-  val verifying = "verifying".asInstanceOf[BGPPeerState]
-  val pending = "pending".asInstanceOf[BGPPeerState]
-  val available = "available".asInstanceOf[BGPPeerState]
-  val deleting = "deleting".asInstanceOf[BGPPeerState]
-  val deleted = "deleted".asInstanceOf[BGPPeerState]
+  val verifying: "verifying" = "verifying"
+  val pending: "pending" = "pending"
+  val available: "available" = "available"
+  val deleting: "deleting" = "deleting"
+  val deleted: "deleted" = "deleted"
 
-  @inline def values = js.Array(verifying, pending, available, deleting, deleted)
+  @inline def values = js.Array[BGPPeerState](verifying, pending, available, deleting, deleted)
 }
 
-@js.native
-sealed trait BGPStatus extends js.Any
+type BGPStatus = "up" | "down" | "unknown"
 object BGPStatus {
-  val up = "up".asInstanceOf[BGPStatus]
-  val down = "down".asInstanceOf[BGPStatus]
-  val unknown = "unknown".asInstanceOf[BGPStatus]
+  val up: "up" = "up"
+  val down: "down" = "down"
+  val unknown: "unknown" = "unknown"
 
-  @inline def values = js.Array(up, down, unknown)
+  @inline def values = js.Array[BGPStatus](up, down, unknown)
 }
 
-@js.native
-sealed trait ConnectionState extends js.Any
+type ConnectionState = "ordering" | "requested" | "pending" | "available" | "down" | "deleting" | "deleted" | "rejected" | "unknown"
 object ConnectionState {
-  val ordering = "ordering".asInstanceOf[ConnectionState]
-  val requested = "requested".asInstanceOf[ConnectionState]
-  val pending = "pending".asInstanceOf[ConnectionState]
-  val available = "available".asInstanceOf[ConnectionState]
-  val down = "down".asInstanceOf[ConnectionState]
-  val deleting = "deleting".asInstanceOf[ConnectionState]
-  val deleted = "deleted".asInstanceOf[ConnectionState]
-  val rejected = "rejected".asInstanceOf[ConnectionState]
-  val unknown = "unknown".asInstanceOf[ConnectionState]
+  val ordering: "ordering" = "ordering"
+  val requested: "requested" = "requested"
+  val pending: "pending" = "pending"
+  val available: "available" = "available"
+  val down: "down" = "down"
+  val deleting: "deleting" = "deleting"
+  val deleted: "deleted" = "deleted"
+  val rejected: "rejected" = "rejected"
+  val unknown: "unknown" = "unknown"
 
-  @inline def values = js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown)
+  @inline def values = js.Array[ConnectionState](ordering, requested, pending, available, down, deleting, deleted, rejected, unknown)
 }
 
-@js.native
-sealed trait DirectConnectGatewayAssociationProposalState extends js.Any
+type DirectConnectGatewayAssociationProposalState = "requested" | "accepted" | "deleted"
 object DirectConnectGatewayAssociationProposalState {
-  val requested = "requested".asInstanceOf[DirectConnectGatewayAssociationProposalState]
-  val accepted = "accepted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
-  val deleted = "deleted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
+  val requested: "requested" = "requested"
+  val accepted: "accepted" = "accepted"
+  val deleted: "deleted" = "deleted"
 
-  @inline def values = js.Array(requested, accepted, deleted)
+  @inline def values = js.Array[DirectConnectGatewayAssociationProposalState](requested, accepted, deleted)
 }
 
-@js.native
-sealed trait DirectConnectGatewayAssociationState extends js.Any
+type DirectConnectGatewayAssociationState = "associating" | "associated" | "disassociating" | "disassociated" | "updating"
 object DirectConnectGatewayAssociationState {
-  val associating = "associating".asInstanceOf[DirectConnectGatewayAssociationState]
-  val associated = "associated".asInstanceOf[DirectConnectGatewayAssociationState]
-  val disassociating = "disassociating".asInstanceOf[DirectConnectGatewayAssociationState]
-  val disassociated = "disassociated".asInstanceOf[DirectConnectGatewayAssociationState]
-  val updating = "updating".asInstanceOf[DirectConnectGatewayAssociationState]
+  val associating: "associating" = "associating"
+  val associated: "associated" = "associated"
+  val disassociating: "disassociating" = "disassociating"
+  val disassociated: "disassociated" = "disassociated"
+  val updating: "updating" = "updating"
 
-  @inline def values = js.Array(associating, associated, disassociating, disassociated, updating)
+  @inline def values = js.Array[DirectConnectGatewayAssociationState](associating, associated, disassociating, disassociated, updating)
 }
 
-@js.native
-sealed trait DirectConnectGatewayAttachmentState extends js.Any
+type DirectConnectGatewayAttachmentState = "attaching" | "attached" | "detaching" | "detached"
 object DirectConnectGatewayAttachmentState {
-  val attaching = "attaching".asInstanceOf[DirectConnectGatewayAttachmentState]
-  val attached = "attached".asInstanceOf[DirectConnectGatewayAttachmentState]
-  val detaching = "detaching".asInstanceOf[DirectConnectGatewayAttachmentState]
-  val detached = "detached".asInstanceOf[DirectConnectGatewayAttachmentState]
+  val attaching: "attaching" = "attaching"
+  val attached: "attached" = "attached"
+  val detaching: "detaching" = "detaching"
+  val detached: "detached" = "detached"
 
-  @inline def values = js.Array(attaching, attached, detaching, detached)
+  @inline def values = js.Array[DirectConnectGatewayAttachmentState](attaching, attached, detaching, detached)
 }
 
-@js.native
-sealed trait DirectConnectGatewayAttachmentType extends js.Any
+type DirectConnectGatewayAttachmentType = "TransitVirtualInterface" | "PrivateVirtualInterface"
 object DirectConnectGatewayAttachmentType {
-  val TransitVirtualInterface = "TransitVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
-  val PrivateVirtualInterface = "PrivateVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
+  val TransitVirtualInterface: "TransitVirtualInterface" = "TransitVirtualInterface"
+  val PrivateVirtualInterface: "PrivateVirtualInterface" = "PrivateVirtualInterface"
 
-  @inline def values = js.Array(TransitVirtualInterface, PrivateVirtualInterface)
+  @inline def values = js.Array[DirectConnectGatewayAttachmentType](TransitVirtualInterface, PrivateVirtualInterface)
 }
 
-@js.native
-sealed trait DirectConnectGatewayState extends js.Any
+type DirectConnectGatewayState = "pending" | "available" | "deleting" | "deleted"
 object DirectConnectGatewayState {
-  val pending = "pending".asInstanceOf[DirectConnectGatewayState]
-  val available = "available".asInstanceOf[DirectConnectGatewayState]
-  val deleting = "deleting".asInstanceOf[DirectConnectGatewayState]
-  val deleted = "deleted".asInstanceOf[DirectConnectGatewayState]
+  val pending: "pending" = "pending"
+  val available: "available" = "available"
+  val deleting: "deleting" = "deleting"
+  val deleted: "deleted" = "deleted"
 
-  @inline def values = js.Array(pending, available, deleting, deleted)
+  @inline def values = js.Array[DirectConnectGatewayState](pending, available, deleting, deleted)
 }
 
-@js.native
-sealed trait GatewayType extends js.Any
+type GatewayType = "virtualPrivateGateway" | "transitGateway"
 object GatewayType {
-  val virtualPrivateGateway = "virtualPrivateGateway".asInstanceOf[GatewayType]
-  val transitGateway = "transitGateway".asInstanceOf[GatewayType]
+  val virtualPrivateGateway: "virtualPrivateGateway" = "virtualPrivateGateway"
+  val transitGateway: "transitGateway" = "transitGateway"
 
-  @inline def values = js.Array(virtualPrivateGateway, transitGateway)
+  @inline def values = js.Array[GatewayType](virtualPrivateGateway, transitGateway)
 }
 
-@js.native
-sealed trait HasLogicalRedundancy extends js.Any
+type HasLogicalRedundancy = "unknown" | "yes" | "no"
 object HasLogicalRedundancy {
-  val unknown = "unknown".asInstanceOf[HasLogicalRedundancy]
-  val yes = "yes".asInstanceOf[HasLogicalRedundancy]
-  val no = "no".asInstanceOf[HasLogicalRedundancy]
+  val unknown: "unknown" = "unknown"
+  val yes: "yes" = "yes"
+  val no: "no" = "no"
 
-  @inline def values = js.Array(unknown, yes, no)
+  @inline def values = js.Array[HasLogicalRedundancy](unknown, yes, no)
 }
 
-@js.native
-sealed trait InterconnectState extends js.Any
+type InterconnectState = "requested" | "pending" | "available" | "down" | "deleting" | "deleted" | "unknown"
 object InterconnectState {
-  val requested = "requested".asInstanceOf[InterconnectState]
-  val pending = "pending".asInstanceOf[InterconnectState]
-  val available = "available".asInstanceOf[InterconnectState]
-  val down = "down".asInstanceOf[InterconnectState]
-  val deleting = "deleting".asInstanceOf[InterconnectState]
-  val deleted = "deleted".asInstanceOf[InterconnectState]
-  val unknown = "unknown".asInstanceOf[InterconnectState]
+  val requested: "requested" = "requested"
+  val pending: "pending" = "pending"
+  val available: "available" = "available"
+  val down: "down" = "down"
+  val deleting: "deleting" = "deleting"
+  val deleted: "deleted" = "deleted"
+  val unknown: "unknown" = "unknown"
 
-  @inline def values = js.Array(requested, pending, available, down, deleting, deleted, unknown)
+  @inline def values = js.Array[InterconnectState](requested, pending, available, down, deleting, deleted, unknown)
 }
 
-@js.native
-sealed trait LagState extends js.Any
+type LagState = "requested" | "pending" | "available" | "down" | "deleting" | "deleted" | "unknown"
 object LagState {
-  val requested = "requested".asInstanceOf[LagState]
-  val pending = "pending".asInstanceOf[LagState]
-  val available = "available".asInstanceOf[LagState]
-  val down = "down".asInstanceOf[LagState]
-  val deleting = "deleting".asInstanceOf[LagState]
-  val deleted = "deleted".asInstanceOf[LagState]
-  val unknown = "unknown".asInstanceOf[LagState]
+  val requested: "requested" = "requested"
+  val pending: "pending" = "pending"
+  val available: "available" = "available"
+  val down: "down" = "down"
+  val deleting: "deleting" = "deleting"
+  val deleted: "deleted" = "deleted"
+  val unknown: "unknown" = "unknown"
 
-  @inline def values = js.Array(requested, pending, available, down, deleting, deleted, unknown)
+  @inline def values = js.Array[LagState](requested, pending, available, down, deleting, deleted, unknown)
 }
 
-@js.native
-sealed trait LoaContentType extends js.Any
+type LoaContentType = "application/pdf"
 object LoaContentType {
-  val `application/pdf` = "application/pdf".asInstanceOf[LoaContentType]
+  val `application/pdf`: "application/pdf" = "application/pdf"
 
-  @inline def values = js.Array(`application/pdf`)
+  @inline def values = js.Array[LoaContentType](`application/pdf`)
 }
 
-@js.native
-sealed trait VirtualInterfaceState extends js.Any
+type VirtualInterfaceState = "confirming" | "verifying" | "pending" | "available" | "down" | "deleting" | "deleted" | "rejected" | "unknown"
 object VirtualInterfaceState {
-  val confirming = "confirming".asInstanceOf[VirtualInterfaceState]
-  val verifying = "verifying".asInstanceOf[VirtualInterfaceState]
-  val pending = "pending".asInstanceOf[VirtualInterfaceState]
-  val available = "available".asInstanceOf[VirtualInterfaceState]
-  val down = "down".asInstanceOf[VirtualInterfaceState]
-  val deleting = "deleting".asInstanceOf[VirtualInterfaceState]
-  val deleted = "deleted".asInstanceOf[VirtualInterfaceState]
-  val rejected = "rejected".asInstanceOf[VirtualInterfaceState]
-  val unknown = "unknown".asInstanceOf[VirtualInterfaceState]
+  val confirming: "confirming" = "confirming"
+  val verifying: "verifying" = "verifying"
+  val pending: "pending" = "pending"
+  val available: "available" = "available"
+  val down: "down" = "down"
+  val deleting: "deleting" = "deleting"
+  val deleted: "deleted" = "deleted"
+  val rejected: "rejected" = "rejected"
+  val unknown: "unknown" = "unknown"
 
-  @inline def values = js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown)
+  @inline def values = js.Array[VirtualInterfaceState](confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown)
 }

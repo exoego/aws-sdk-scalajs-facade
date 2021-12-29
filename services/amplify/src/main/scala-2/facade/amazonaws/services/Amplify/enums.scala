@@ -62,3 +62,4 @@ object Stage {
 
   @inline def values = js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST)
 }
+

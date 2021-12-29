@@ -1,12 +1,10 @@
 package facade.amazonaws.services.pricing
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait FilterType extends js.Any
+type FilterType = "TERM_MATCH"
 object FilterType {
-  val TERM_MATCH = "TERM_MATCH".asInstanceOf[FilterType]
+  val TERM_MATCH: "TERM_MATCH" = "TERM_MATCH"
 
-  @inline def values = js.Array(TERM_MATCH)
+  @inline def values = js.Array[FilterType](TERM_MATCH)
 }

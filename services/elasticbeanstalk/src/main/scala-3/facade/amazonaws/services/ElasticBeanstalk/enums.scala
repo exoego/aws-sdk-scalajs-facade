@@ -1,226 +1,206 @@
 package facade.amazonaws.services.elasticbeanstalk
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ActionHistoryStatus extends js.Any
+type ActionHistoryStatus = "Completed" | "Failed" | "Unknown"
 object ActionHistoryStatus {
-  val Completed = "Completed".asInstanceOf[ActionHistoryStatus]
-  val Failed = "Failed".asInstanceOf[ActionHistoryStatus]
-  val Unknown = "Unknown".asInstanceOf[ActionHistoryStatus]
+  val Completed: "Completed" = "Completed"
+  val Failed: "Failed" = "Failed"
+  val Unknown: "Unknown" = "Unknown"
 
-  @inline def values = js.Array(Completed, Failed, Unknown)
+  @inline def values = js.Array[ActionHistoryStatus](Completed, Failed, Unknown)
 }
 
-@js.native
-sealed trait ActionStatus extends js.Any
+type ActionStatus = "Scheduled" | "Pending" | "Running" | "Unknown"
 object ActionStatus {
-  val Scheduled = "Scheduled".asInstanceOf[ActionStatus]
-  val Pending = "Pending".asInstanceOf[ActionStatus]
-  val Running = "Running".asInstanceOf[ActionStatus]
-  val Unknown = "Unknown".asInstanceOf[ActionStatus]
+  val Scheduled: "Scheduled" = "Scheduled"
+  val Pending: "Pending" = "Pending"
+  val Running: "Running" = "Running"
+  val Unknown: "Unknown" = "Unknown"
 
-  @inline def values = js.Array(Scheduled, Pending, Running, Unknown)
+  @inline def values = js.Array[ActionStatus](Scheduled, Pending, Running, Unknown)
 }
 
-@js.native
-sealed trait ActionType extends js.Any
+type ActionType = "InstanceRefresh" | "PlatformUpdate" | "Unknown"
 object ActionType {
-  val InstanceRefresh = "InstanceRefresh".asInstanceOf[ActionType]
-  val PlatformUpdate = "PlatformUpdate".asInstanceOf[ActionType]
-  val Unknown = "Unknown".asInstanceOf[ActionType]
+  val InstanceRefresh: "InstanceRefresh" = "InstanceRefresh"
+  val PlatformUpdate: "PlatformUpdate" = "PlatformUpdate"
+  val Unknown: "Unknown" = "Unknown"
 
-  @inline def values = js.Array(InstanceRefresh, PlatformUpdate, Unknown)
+  @inline def values = js.Array[ActionType](InstanceRefresh, PlatformUpdate, Unknown)
 }
 
-@js.native
-sealed trait ApplicationVersionStatus extends js.Any
+type ApplicationVersionStatus = "Processed" | "Unprocessed" | "Failed" | "Processing" | "Building"
 object ApplicationVersionStatus {
-  val Processed = "Processed".asInstanceOf[ApplicationVersionStatus]
-  val Unprocessed = "Unprocessed".asInstanceOf[ApplicationVersionStatus]
-  val Failed = "Failed".asInstanceOf[ApplicationVersionStatus]
-  val Processing = "Processing".asInstanceOf[ApplicationVersionStatus]
-  val Building = "Building".asInstanceOf[ApplicationVersionStatus]
+  val Processed: "Processed" = "Processed"
+  val Unprocessed: "Unprocessed" = "Unprocessed"
+  val Failed: "Failed" = "Failed"
+  val Processing: "Processing" = "Processing"
+  val Building: "Building" = "Building"
 
-  @inline def values = js.Array(Processed, Unprocessed, Failed, Processing, Building)
+  @inline def values = js.Array[ApplicationVersionStatus](Processed, Unprocessed, Failed, Processing, Building)
 }
 
-@js.native
-sealed trait ComputeType extends js.Any
+type ComputeType = "BUILD_GENERAL1_SMALL" | "BUILD_GENERAL1_MEDIUM" | "BUILD_GENERAL1_LARGE"
 object ComputeType {
-  val BUILD_GENERAL1_SMALL = "BUILD_GENERAL1_SMALL".asInstanceOf[ComputeType]
-  val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM".asInstanceOf[ComputeType]
-  val BUILD_GENERAL1_LARGE = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
+  val BUILD_GENERAL1_SMALL: "BUILD_GENERAL1_SMALL" = "BUILD_GENERAL1_SMALL"
+  val BUILD_GENERAL1_MEDIUM: "BUILD_GENERAL1_MEDIUM" = "BUILD_GENERAL1_MEDIUM"
+  val BUILD_GENERAL1_LARGE: "BUILD_GENERAL1_LARGE" = "BUILD_GENERAL1_LARGE"
 
-  @inline def values = js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE)
+  @inline def values = js.Array[ComputeType](BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE)
 }
 
-@js.native
-sealed trait ConfigurationDeploymentStatus extends js.Any
+type ConfigurationDeploymentStatus = "deployed" | "pending" | "failed"
 object ConfigurationDeploymentStatus {
-  val deployed = "deployed".asInstanceOf[ConfigurationDeploymentStatus]
-  val pending = "pending".asInstanceOf[ConfigurationDeploymentStatus]
-  val failed = "failed".asInstanceOf[ConfigurationDeploymentStatus]
+  val deployed: "deployed" = "deployed"
+  val pending: "pending" = "pending"
+  val failed: "failed" = "failed"
 
-  @inline def values = js.Array(deployed, pending, failed)
+  @inline def values = js.Array[ConfigurationDeploymentStatus](deployed, pending, failed)
 }
 
-@js.native
-sealed trait ConfigurationOptionValueType extends js.Any
+type ConfigurationOptionValueType = "Scalar" | "List"
 object ConfigurationOptionValueType {
-  val Scalar = "Scalar".asInstanceOf[ConfigurationOptionValueType]
-  val List = "List".asInstanceOf[ConfigurationOptionValueType]
+  val Scalar: "Scalar" = "Scalar"
+  val List: "List" = "List"
 
-  @inline def values = js.Array(Scalar, List)
+  @inline def values = js.Array[ConfigurationOptionValueType](Scalar, List)
 }
 
-@js.native
-sealed trait EnvironmentHealth extends js.Any
+type EnvironmentHealth = "Green" | "Yellow" | "Red" | "Grey"
 object EnvironmentHealth {
-  val Green = "Green".asInstanceOf[EnvironmentHealth]
-  val Yellow = "Yellow".asInstanceOf[EnvironmentHealth]
-  val Red = "Red".asInstanceOf[EnvironmentHealth]
-  val Grey = "Grey".asInstanceOf[EnvironmentHealth]
+  val Green: "Green" = "Green"
+  val Yellow: "Yellow" = "Yellow"
+  val Red: "Red" = "Red"
+  val Grey: "Grey" = "Grey"
 
-  @inline def values = js.Array(Green, Yellow, Red, Grey)
+  @inline def values = js.Array[EnvironmentHealth](Green, Yellow, Red, Grey)
 }
 
-@js.native
-sealed trait EnvironmentHealthAttribute extends js.Any
+type EnvironmentHealthAttribute = "Status" | "Color" | "Causes" | "ApplicationMetrics" | "InstancesHealth" | "All" | "HealthStatus" | "RefreshedAt"
 object EnvironmentHealthAttribute {
-  val Status = "Status".asInstanceOf[EnvironmentHealthAttribute]
-  val Color = "Color".asInstanceOf[EnvironmentHealthAttribute]
-  val Causes = "Causes".asInstanceOf[EnvironmentHealthAttribute]
-  val ApplicationMetrics = "ApplicationMetrics".asInstanceOf[EnvironmentHealthAttribute]
-  val InstancesHealth = "InstancesHealth".asInstanceOf[EnvironmentHealthAttribute]
-  val All = "All".asInstanceOf[EnvironmentHealthAttribute]
-  val HealthStatus = "HealthStatus".asInstanceOf[EnvironmentHealthAttribute]
-  val RefreshedAt = "RefreshedAt".asInstanceOf[EnvironmentHealthAttribute]
+  val Status: "Status" = "Status"
+  val Color: "Color" = "Color"
+  val Causes: "Causes" = "Causes"
+  val ApplicationMetrics: "ApplicationMetrics" = "ApplicationMetrics"
+  val InstancesHealth: "InstancesHealth" = "InstancesHealth"
+  val All: "All" = "All"
+  val HealthStatus: "HealthStatus" = "HealthStatus"
+  val RefreshedAt: "RefreshedAt" = "RefreshedAt"
 
-  @inline def values = js.Array(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt)
+  @inline def values = js.Array[EnvironmentHealthAttribute](Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt)
 }
 
-@js.native
-sealed trait EnvironmentHealthStatus extends js.Any
+type EnvironmentHealthStatus = "NoData" | "Unknown" | "Pending" | "Ok" | "Info" | "Warning" | "Degraded" | "Severe" | "Suspended"
 object EnvironmentHealthStatus {
-  val NoData = "NoData".asInstanceOf[EnvironmentHealthStatus]
-  val Unknown = "Unknown".asInstanceOf[EnvironmentHealthStatus]
-  val Pending = "Pending".asInstanceOf[EnvironmentHealthStatus]
-  val Ok = "Ok".asInstanceOf[EnvironmentHealthStatus]
-  val Info = "Info".asInstanceOf[EnvironmentHealthStatus]
-  val Warning = "Warning".asInstanceOf[EnvironmentHealthStatus]
-  val Degraded = "Degraded".asInstanceOf[EnvironmentHealthStatus]
-  val Severe = "Severe".asInstanceOf[EnvironmentHealthStatus]
-  val Suspended = "Suspended".asInstanceOf[EnvironmentHealthStatus]
+  val NoData: "NoData" = "NoData"
+  val Unknown: "Unknown" = "Unknown"
+  val Pending: "Pending" = "Pending"
+  val Ok: "Ok" = "Ok"
+  val Info: "Info" = "Info"
+  val Warning: "Warning" = "Warning"
+  val Degraded: "Degraded" = "Degraded"
+  val Severe: "Severe" = "Severe"
+  val Suspended: "Suspended" = "Suspended"
 
-  @inline def values = js.Array(NoData, Unknown, Pending, Ok, Info, Warning, Degraded, Severe, Suspended)
+  @inline def values = js.Array[EnvironmentHealthStatus](NoData, Unknown, Pending, Ok, Info, Warning, Degraded, Severe, Suspended)
 }
 
-@js.native
-sealed trait EnvironmentInfoType extends js.Any
+type EnvironmentInfoType = "tail" | "bundle"
 object EnvironmentInfoType {
-  val tail = "tail".asInstanceOf[EnvironmentInfoType]
-  val bundle = "bundle".asInstanceOf[EnvironmentInfoType]
+  val tail: "tail" = "tail"
+  val bundle: "bundle" = "bundle"
 
-  @inline def values = js.Array(tail, bundle)
+  @inline def values = js.Array[EnvironmentInfoType](tail, bundle)
 }
 
-@js.native
-sealed trait EnvironmentStatus extends js.Any
+type EnvironmentStatus = "Aborting" | "Launching" | "Updating" | "LinkingFrom" | "LinkingTo" | "Ready" | "Terminating" | "Terminated"
 object EnvironmentStatus {
-  val Aborting = "Aborting".asInstanceOf[EnvironmentStatus]
-  val Launching = "Launching".asInstanceOf[EnvironmentStatus]
-  val Updating = "Updating".asInstanceOf[EnvironmentStatus]
-  val LinkingFrom = "LinkingFrom".asInstanceOf[EnvironmentStatus]
-  val LinkingTo = "LinkingTo".asInstanceOf[EnvironmentStatus]
-  val Ready = "Ready".asInstanceOf[EnvironmentStatus]
-  val Terminating = "Terminating".asInstanceOf[EnvironmentStatus]
-  val Terminated = "Terminated".asInstanceOf[EnvironmentStatus]
+  val Aborting: "Aborting" = "Aborting"
+  val Launching: "Launching" = "Launching"
+  val Updating: "Updating" = "Updating"
+  val LinkingFrom: "LinkingFrom" = "LinkingFrom"
+  val LinkingTo: "LinkingTo" = "LinkingTo"
+  val Ready: "Ready" = "Ready"
+  val Terminating: "Terminating" = "Terminating"
+  val Terminated: "Terminated" = "Terminated"
 
-  @inline def values = js.Array(Aborting, Launching, Updating, LinkingFrom, LinkingTo, Ready, Terminating, Terminated)
+  @inline def values = js.Array[EnvironmentStatus](Aborting, Launching, Updating, LinkingFrom, LinkingTo, Ready, Terminating, Terminated)
 }
 
-@js.native
-sealed trait EventSeverity extends js.Any
+type EventSeverity = "TRACE" | "DEBUG" | "INFO" | "WARN" | "ERROR" | "FATAL"
 object EventSeverity {
-  val TRACE = "TRACE".asInstanceOf[EventSeverity]
-  val DEBUG = "DEBUG".asInstanceOf[EventSeverity]
-  val INFO = "INFO".asInstanceOf[EventSeverity]
-  val WARN = "WARN".asInstanceOf[EventSeverity]
-  val ERROR = "ERROR".asInstanceOf[EventSeverity]
-  val FATAL = "FATAL".asInstanceOf[EventSeverity]
+  val TRACE: "TRACE" = "TRACE"
+  val DEBUG: "DEBUG" = "DEBUG"
+  val INFO: "INFO" = "INFO"
+  val WARN: "WARN" = "WARN"
+  val ERROR: "ERROR" = "ERROR"
+  val FATAL: "FATAL" = "FATAL"
 
-  @inline def values = js.Array(TRACE, DEBUG, INFO, WARN, ERROR, FATAL)
+  @inline def values = js.Array[EventSeverity](TRACE, DEBUG, INFO, WARN, ERROR, FATAL)
 }
 
-@js.native
-sealed trait FailureType extends js.Any
+type FailureType = "UpdateCancelled" | "CancellationFailed" | "RollbackFailed" | "RollbackSuccessful" | "InternalFailure" | "InvalidEnvironmentState" | "PermissionsError"
 object FailureType {
-  val UpdateCancelled = "UpdateCancelled".asInstanceOf[FailureType]
-  val CancellationFailed = "CancellationFailed".asInstanceOf[FailureType]
-  val RollbackFailed = "RollbackFailed".asInstanceOf[FailureType]
-  val RollbackSuccessful = "RollbackSuccessful".asInstanceOf[FailureType]
-  val InternalFailure = "InternalFailure".asInstanceOf[FailureType]
-  val InvalidEnvironmentState = "InvalidEnvironmentState".asInstanceOf[FailureType]
-  val PermissionsError = "PermissionsError".asInstanceOf[FailureType]
+  val UpdateCancelled: "UpdateCancelled" = "UpdateCancelled"
+  val CancellationFailed: "CancellationFailed" = "CancellationFailed"
+  val RollbackFailed: "RollbackFailed" = "RollbackFailed"
+  val RollbackSuccessful: "RollbackSuccessful" = "RollbackSuccessful"
+  val InternalFailure: "InternalFailure" = "InternalFailure"
+  val InvalidEnvironmentState: "InvalidEnvironmentState" = "InvalidEnvironmentState"
+  val PermissionsError: "PermissionsError" = "PermissionsError"
 
-  @inline def values = js.Array(UpdateCancelled, CancellationFailed, RollbackFailed, RollbackSuccessful, InternalFailure, InvalidEnvironmentState, PermissionsError)
+  @inline def values = js.Array[FailureType](UpdateCancelled, CancellationFailed, RollbackFailed, RollbackSuccessful, InternalFailure, InvalidEnvironmentState, PermissionsError)
 }
 
-@js.native
-sealed trait InstancesHealthAttribute extends js.Any
+type InstancesHealthAttribute = "HealthStatus" | "Color" | "Causes" | "ApplicationMetrics" | "RefreshedAt" | "LaunchedAt" | "System" | "Deployment" | "AvailabilityZone" | "InstanceType" | "All"
 object InstancesHealthAttribute {
-  val HealthStatus = "HealthStatus".asInstanceOf[InstancesHealthAttribute]
-  val Color = "Color".asInstanceOf[InstancesHealthAttribute]
-  val Causes = "Causes".asInstanceOf[InstancesHealthAttribute]
-  val ApplicationMetrics = "ApplicationMetrics".asInstanceOf[InstancesHealthAttribute]
-  val RefreshedAt = "RefreshedAt".asInstanceOf[InstancesHealthAttribute]
-  val LaunchedAt = "LaunchedAt".asInstanceOf[InstancesHealthAttribute]
-  val System = "System".asInstanceOf[InstancesHealthAttribute]
-  val Deployment = "Deployment".asInstanceOf[InstancesHealthAttribute]
-  val AvailabilityZone = "AvailabilityZone".asInstanceOf[InstancesHealthAttribute]
-  val InstanceType = "InstanceType".asInstanceOf[InstancesHealthAttribute]
-  val All = "All".asInstanceOf[InstancesHealthAttribute]
+  val HealthStatus: "HealthStatus" = "HealthStatus"
+  val Color: "Color" = "Color"
+  val Causes: "Causes" = "Causes"
+  val ApplicationMetrics: "ApplicationMetrics" = "ApplicationMetrics"
+  val RefreshedAt: "RefreshedAt" = "RefreshedAt"
+  val LaunchedAt: "LaunchedAt" = "LaunchedAt"
+  val System: "System" = "System"
+  val Deployment: "Deployment" = "Deployment"
+  val AvailabilityZone: "AvailabilityZone" = "AvailabilityZone"
+  val InstanceType: "InstanceType" = "InstanceType"
+  val All: "All" = "All"
 
-  @inline def values = js.Array(HealthStatus, Color, Causes, ApplicationMetrics, RefreshedAt, LaunchedAt, System, Deployment, AvailabilityZone, InstanceType, All)
+  @inline def values = js.Array[InstancesHealthAttribute](HealthStatus, Color, Causes, ApplicationMetrics, RefreshedAt, LaunchedAt, System, Deployment, AvailabilityZone, InstanceType, All)
 }
 
-@js.native
-sealed trait PlatformStatus extends js.Any
+type PlatformStatus = "Creating" | "Failed" | "Ready" | "Deleting" | "Deleted"
 object PlatformStatus {
-  val Creating = "Creating".asInstanceOf[PlatformStatus]
-  val Failed = "Failed".asInstanceOf[PlatformStatus]
-  val Ready = "Ready".asInstanceOf[PlatformStatus]
-  val Deleting = "Deleting".asInstanceOf[PlatformStatus]
-  val Deleted = "Deleted".asInstanceOf[PlatformStatus]
+  val Creating: "Creating" = "Creating"
+  val Failed: "Failed" = "Failed"
+  val Ready: "Ready" = "Ready"
+  val Deleting: "Deleting" = "Deleting"
+  val Deleted: "Deleted" = "Deleted"
 
-  @inline def values = js.Array(Creating, Failed, Ready, Deleting, Deleted)
+  @inline def values = js.Array[PlatformStatus](Creating, Failed, Ready, Deleting, Deleted)
 }
 
-@js.native
-sealed trait SourceRepository extends js.Any
+type SourceRepository = "CodeCommit" | "S3"
 object SourceRepository {
-  val CodeCommit = "CodeCommit".asInstanceOf[SourceRepository]
-  val S3 = "S3".asInstanceOf[SourceRepository]
+  val CodeCommit: "CodeCommit" = "CodeCommit"
+  val S3: "S3" = "S3"
 
-  @inline def values = js.Array(CodeCommit, S3)
+  @inline def values = js.Array[SourceRepository](CodeCommit, S3)
 }
 
-@js.native
-sealed trait SourceType extends js.Any
+type SourceType = "Git" | "Zip"
 object SourceType {
-  val Git = "Git".asInstanceOf[SourceType]
-  val Zip = "Zip".asInstanceOf[SourceType]
+  val Git: "Git" = "Git"
+  val Zip: "Zip" = "Zip"
 
-  @inline def values = js.Array(Git, Zip)
+  @inline def values = js.Array[SourceType](Git, Zip)
 }
 
-@js.native
-sealed trait ValidationSeverity extends js.Any
+type ValidationSeverity = "error" | "warning"
 object ValidationSeverity {
-  val error = "error".asInstanceOf[ValidationSeverity]
-  val warning = "warning".asInstanceOf[ValidationSeverity]
+  val error: "error" = "error"
+  val warning: "warning" = "warning"
 
-  @inline def values = js.Array(error, warning)
+  @inline def values = js.Array[ValidationSeverity](error, warning)
 }

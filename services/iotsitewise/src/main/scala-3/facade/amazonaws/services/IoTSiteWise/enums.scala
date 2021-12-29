@@ -1,85 +1,77 @@
 package facade.amazonaws.services.iotsitewise
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AggregateType extends js.Any
+type AggregateType = "AVERAGE" | "COUNT" | "MAXIMUM" | "MINIMUM" | "SUM" | "STANDARD_DEVIATION"
 object AggregateType {
-  val AVERAGE = "AVERAGE".asInstanceOf[AggregateType]
-  val COUNT = "COUNT".asInstanceOf[AggregateType]
-  val MAXIMUM = "MAXIMUM".asInstanceOf[AggregateType]
-  val MINIMUM = "MINIMUM".asInstanceOf[AggregateType]
-  val SUM = "SUM".asInstanceOf[AggregateType]
-  val STANDARD_DEVIATION = "STANDARD_DEVIATION".asInstanceOf[AggregateType]
+  val AVERAGE: "AVERAGE" = "AVERAGE"
+  val COUNT: "COUNT" = "COUNT"
+  val MAXIMUM: "MAXIMUM" = "MAXIMUM"
+  val MINIMUM: "MINIMUM" = "MINIMUM"
+  val SUM: "SUM" = "SUM"
+  val STANDARD_DEVIATION: "STANDARD_DEVIATION" = "STANDARD_DEVIATION"
 
-  @inline def values = js.Array(AVERAGE, COUNT, MAXIMUM, MINIMUM, SUM, STANDARD_DEVIATION)
+  @inline def values = js.Array[AggregateType](AVERAGE, COUNT, MAXIMUM, MINIMUM, SUM, STANDARD_DEVIATION)
 }
 
-@js.native
-sealed trait AssetErrorCode extends js.Any
+type AssetErrorCode = "INTERNAL_FAILURE"
 object AssetErrorCode {
-  val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[AssetErrorCode]
+  val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
 
-  @inline def values = js.Array(INTERNAL_FAILURE)
+  @inline def values = js.Array[AssetErrorCode](INTERNAL_FAILURE)
 }
 
-@js.native
-sealed trait AssetModelState extends js.Any
+type AssetModelState = "CREATING" | "ACTIVE" | "UPDATING" | "PROPAGATING" | "DELETING" | "FAILED"
 object AssetModelState {
-  val CREATING = "CREATING".asInstanceOf[AssetModelState]
-  val ACTIVE = "ACTIVE".asInstanceOf[AssetModelState]
-  val UPDATING = "UPDATING".asInstanceOf[AssetModelState]
-  val PROPAGATING = "PROPAGATING".asInstanceOf[AssetModelState]
-  val DELETING = "DELETING".asInstanceOf[AssetModelState]
-  val FAILED = "FAILED".asInstanceOf[AssetModelState]
+  val CREATING: "CREATING" = "CREATING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val PROPAGATING: "PROPAGATING" = "PROPAGATING"
+  val DELETING: "DELETING" = "DELETING"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, ACTIVE, UPDATING, PROPAGATING, DELETING, FAILED)
+  @inline def values = js.Array[AssetModelState](CREATING, ACTIVE, UPDATING, PROPAGATING, DELETING, FAILED)
 }
 
-@js.native
-sealed trait AssetRelationshipType extends js.Any
+type AssetRelationshipType = "HIERARCHY"
 object AssetRelationshipType {
-  val HIERARCHY = "HIERARCHY".asInstanceOf[AssetRelationshipType]
+  val HIERARCHY: "HIERARCHY" = "HIERARCHY"
 
-  @inline def values = js.Array(HIERARCHY)
+  @inline def values = js.Array[AssetRelationshipType](HIERARCHY)
 }
 
-@js.native
-sealed trait AssetState extends js.Any
+type AssetState = "CREATING" | "ACTIVE" | "UPDATING" | "DELETING" | "FAILED"
 object AssetState {
-  val CREATING = "CREATING".asInstanceOf[AssetState]
-  val ACTIVE = "ACTIVE".asInstanceOf[AssetState]
-  val UPDATING = "UPDATING".asInstanceOf[AssetState]
-  val DELETING = "DELETING".asInstanceOf[AssetState]
-  val FAILED = "FAILED".asInstanceOf[AssetState]
+  val CREATING: "CREATING" = "CREATING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val DELETING: "DELETING" = "DELETING"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, FAILED)
+  @inline def values = js.Array[AssetState](CREATING, ACTIVE, UPDATING, DELETING, FAILED)
 }
 
-@js.native
-sealed trait AuthMode extends js.Any
+type AuthMode = "IAM" | "SSO"
 object AuthMode {
-  val IAM = "IAM".asInstanceOf[AuthMode]
-  val SSO = "SSO".asInstanceOf[AuthMode]
+  val IAM: "IAM" = "IAM"
+  val SSO: "SSO" = "SSO"
 
-  @inline def values = js.Array(IAM, SSO)
+  @inline def values = js.Array[AuthMode](IAM, SSO)
 }
 
-@js.native
-sealed trait BatchPutAssetPropertyValueErrorCode extends js.Any
+type BatchPutAssetPropertyValueErrorCode = "ResourceNotFoundException" | "InvalidRequestException" | "InternalFailureException" | "ServiceUnavailableException" | "ThrottlingException" | "LimitExceededException" | "ConflictingOperationException" | "TimestampOutOfRangeException" | "AccessDeniedException"
 object BatchPutAssetPropertyValueErrorCode {
-  val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-  val InvalidRequestException = "InvalidRequestException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-  val InternalFailureException = "InternalFailureException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-  val ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-  val ThrottlingException = "ThrottlingException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-  val LimitExceededException = "LimitExceededException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-  val ConflictingOperationException = "ConflictingOperationException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-  val TimestampOutOfRangeException = "TimestampOutOfRangeException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
-  val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
+  val ResourceNotFoundException: "ResourceNotFoundException" = "ResourceNotFoundException"
+  val InvalidRequestException: "InvalidRequestException" = "InvalidRequestException"
+  val InternalFailureException: "InternalFailureException" = "InternalFailureException"
+  val ServiceUnavailableException: "ServiceUnavailableException" = "ServiceUnavailableException"
+  val ThrottlingException: "ThrottlingException" = "ThrottlingException"
+  val LimitExceededException: "LimitExceededException" = "LimitExceededException"
+  val ConflictingOperationException: "ConflictingOperationException" = "ConflictingOperationException"
+  val TimestampOutOfRangeException: "TimestampOutOfRangeException" = "TimestampOutOfRangeException"
+  val AccessDeniedException: "AccessDeniedException" = "AccessDeniedException"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[BatchPutAssetPropertyValueErrorCode](
     ResourceNotFoundException,
     InvalidRequestException,
     InternalFailureException,
@@ -92,174 +84,156 @@ object BatchPutAssetPropertyValueErrorCode {
   )
 }
 
-@js.native
-sealed trait CapabilitySyncStatus extends js.Any
+type CapabilitySyncStatus = "IN_SYNC" | "OUT_OF_SYNC" | "SYNC_FAILED"
 object CapabilitySyncStatus {
-  val IN_SYNC = "IN_SYNC".asInstanceOf[CapabilitySyncStatus]
-  val OUT_OF_SYNC = "OUT_OF_SYNC".asInstanceOf[CapabilitySyncStatus]
-  val SYNC_FAILED = "SYNC_FAILED".asInstanceOf[CapabilitySyncStatus]
+  val IN_SYNC: "IN_SYNC" = "IN_SYNC"
+  val OUT_OF_SYNC: "OUT_OF_SYNC" = "OUT_OF_SYNC"
+  val SYNC_FAILED: "SYNC_FAILED" = "SYNC_FAILED"
 
-  @inline def values = js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED)
+  @inline def values = js.Array[CapabilitySyncStatus](IN_SYNC, OUT_OF_SYNC, SYNC_FAILED)
 }
 
-@js.native
-sealed trait ConfigurationState extends js.Any
+type ConfigurationState = "ACTIVE" | "UPDATE_IN_PROGRESS" | "UPDATE_FAILED"
 object ConfigurationState {
-  val ACTIVE = "ACTIVE".asInstanceOf[ConfigurationState]
-  val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ConfigurationState]
-  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ConfigurationState]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+  val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
 
-  @inline def values = js.Array(ACTIVE, UPDATE_IN_PROGRESS, UPDATE_FAILED)
+  @inline def values = js.Array[ConfigurationState](ACTIVE, UPDATE_IN_PROGRESS, UPDATE_FAILED)
 }
 
-@js.native
-sealed trait EncryptionType extends js.Any
+type EncryptionType = "SITEWISE_DEFAULT_ENCRYPTION" | "KMS_BASED_ENCRYPTION"
 object EncryptionType {
-  val SITEWISE_DEFAULT_ENCRYPTION = "SITEWISE_DEFAULT_ENCRYPTION".asInstanceOf[EncryptionType]
-  val KMS_BASED_ENCRYPTION = "KMS_BASED_ENCRYPTION".asInstanceOf[EncryptionType]
+  val SITEWISE_DEFAULT_ENCRYPTION: "SITEWISE_DEFAULT_ENCRYPTION" = "SITEWISE_DEFAULT_ENCRYPTION"
+  val KMS_BASED_ENCRYPTION: "KMS_BASED_ENCRYPTION" = "KMS_BASED_ENCRYPTION"
 
-  @inline def values = js.Array(SITEWISE_DEFAULT_ENCRYPTION, KMS_BASED_ENCRYPTION)
+  @inline def values = js.Array[EncryptionType](SITEWISE_DEFAULT_ENCRYPTION, KMS_BASED_ENCRYPTION)
 }
 
-@js.native
-sealed trait ErrorCode extends js.Any
+type ErrorCode = "VALIDATION_ERROR" | "INTERNAL_FAILURE"
 object ErrorCode {
-  val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[ErrorCode]
-  val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ErrorCode]
+  val VALIDATION_ERROR: "VALIDATION_ERROR" = "VALIDATION_ERROR"
+  val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
 
-  @inline def values = js.Array(VALIDATION_ERROR, INTERNAL_FAILURE)
+  @inline def values = js.Array[ErrorCode](VALIDATION_ERROR, INTERNAL_FAILURE)
 }
 
-@js.native
-sealed trait IdentityType extends js.Any
+type IdentityType = "USER" | "GROUP" | "IAM"
 object IdentityType {
-  val USER = "USER".asInstanceOf[IdentityType]
-  val GROUP = "GROUP".asInstanceOf[IdentityType]
-  val IAM = "IAM".asInstanceOf[IdentityType]
+  val USER: "USER" = "USER"
+  val GROUP: "GROUP" = "GROUP"
+  val IAM: "IAM" = "IAM"
 
-  @inline def values = js.Array(USER, GROUP, IAM)
+  @inline def values = js.Array[IdentityType](USER, GROUP, IAM)
 }
 
-@js.native
-sealed trait ImageFileType extends js.Any
+type ImageFileType = "PNG"
 object ImageFileType {
-  val PNG = "PNG".asInstanceOf[ImageFileType]
+  val PNG: "PNG" = "PNG"
 
-  @inline def values = js.Array(PNG)
+  @inline def values = js.Array[ImageFileType](PNG)
 }
 
-@js.native
-sealed trait ListAssetsFilter extends js.Any
+type ListAssetsFilter = "ALL" | "TOP_LEVEL"
 object ListAssetsFilter {
-  val ALL = "ALL".asInstanceOf[ListAssetsFilter]
-  val TOP_LEVEL = "TOP_LEVEL".asInstanceOf[ListAssetsFilter]
+  val ALL: "ALL" = "ALL"
+  val TOP_LEVEL: "TOP_LEVEL" = "TOP_LEVEL"
 
-  @inline def values = js.Array(ALL, TOP_LEVEL)
+  @inline def values = js.Array[ListAssetsFilter](ALL, TOP_LEVEL)
 }
 
-@js.native
-sealed trait LoggingLevel extends js.Any
+type LoggingLevel = "ERROR" | "INFO" | "OFF"
 object LoggingLevel {
-  val ERROR = "ERROR".asInstanceOf[LoggingLevel]
-  val INFO = "INFO".asInstanceOf[LoggingLevel]
-  val OFF = "OFF".asInstanceOf[LoggingLevel]
+  val ERROR: "ERROR" = "ERROR"
+  val INFO: "INFO" = "INFO"
+  val OFF: "OFF" = "OFF"
 
-  @inline def values = js.Array(ERROR, INFO, OFF)
+  @inline def values = js.Array[LoggingLevel](ERROR, INFO, OFF)
 }
 
-@js.native
-sealed trait MonitorErrorCode extends js.Any
+type MonitorErrorCode = "INTERNAL_FAILURE" | "VALIDATION_ERROR" | "LIMIT_EXCEEDED"
 object MonitorErrorCode {
-  val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[MonitorErrorCode]
-  val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[MonitorErrorCode]
-  val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[MonitorErrorCode]
+  val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
+  val VALIDATION_ERROR: "VALIDATION_ERROR" = "VALIDATION_ERROR"
+  val LIMIT_EXCEEDED: "LIMIT_EXCEEDED" = "LIMIT_EXCEEDED"
 
-  @inline def values = js.Array(INTERNAL_FAILURE, VALIDATION_ERROR, LIMIT_EXCEEDED)
+  @inline def values = js.Array[MonitorErrorCode](INTERNAL_FAILURE, VALIDATION_ERROR, LIMIT_EXCEEDED)
 }
 
-@js.native
-sealed trait Permission extends js.Any
+type Permission = "ADMINISTRATOR" | "VIEWER"
 object Permission {
-  val ADMINISTRATOR = "ADMINISTRATOR".asInstanceOf[Permission]
-  val VIEWER = "VIEWER".asInstanceOf[Permission]
+  val ADMINISTRATOR: "ADMINISTRATOR" = "ADMINISTRATOR"
+  val VIEWER: "VIEWER" = "VIEWER"
 
-  @inline def values = js.Array(ADMINISTRATOR, VIEWER)
+  @inline def values = js.Array[Permission](ADMINISTRATOR, VIEWER)
 }
 
-@js.native
-sealed trait PortalState extends js.Any
+type PortalState = "CREATING" | "UPDATING" | "DELETING" | "ACTIVE" | "FAILED"
 object PortalState {
-  val CREATING = "CREATING".asInstanceOf[PortalState]
-  val UPDATING = "UPDATING".asInstanceOf[PortalState]
-  val DELETING = "DELETING".asInstanceOf[PortalState]
-  val ACTIVE = "ACTIVE".asInstanceOf[PortalState]
-  val FAILED = "FAILED".asInstanceOf[PortalState]
+  val CREATING: "CREATING" = "CREATING"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val DELETING: "DELETING" = "DELETING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE, FAILED)
+  @inline def values = js.Array[PortalState](CREATING, UPDATING, DELETING, ACTIVE, FAILED)
 }
 
-@js.native
-sealed trait PropertyDataType extends js.Any
+type PropertyDataType = "STRING" | "INTEGER" | "DOUBLE" | "BOOLEAN" | "STRUCT"
 object PropertyDataType {
-  val STRING = "STRING".asInstanceOf[PropertyDataType]
-  val INTEGER = "INTEGER".asInstanceOf[PropertyDataType]
-  val DOUBLE = "DOUBLE".asInstanceOf[PropertyDataType]
-  val BOOLEAN = "BOOLEAN".asInstanceOf[PropertyDataType]
-  val STRUCT = "STRUCT".asInstanceOf[PropertyDataType]
+  val STRING: "STRING" = "STRING"
+  val INTEGER: "INTEGER" = "INTEGER"
+  val DOUBLE: "DOUBLE" = "DOUBLE"
+  val BOOLEAN: "BOOLEAN" = "BOOLEAN"
+  val STRUCT: "STRUCT" = "STRUCT"
 
-  @inline def values = js.Array(STRING, INTEGER, DOUBLE, BOOLEAN, STRUCT)
+  @inline def values = js.Array[PropertyDataType](STRING, INTEGER, DOUBLE, BOOLEAN, STRUCT)
 }
 
-@js.native
-sealed trait PropertyNotificationState extends js.Any
+type PropertyNotificationState = "ENABLED" | "DISABLED"
 object PropertyNotificationState {
-  val ENABLED = "ENABLED".asInstanceOf[PropertyNotificationState]
-  val DISABLED = "DISABLED".asInstanceOf[PropertyNotificationState]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[PropertyNotificationState](ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait Quality extends js.Any
+type Quality = "GOOD" | "BAD" | "UNCERTAIN"
 object Quality {
-  val GOOD = "GOOD".asInstanceOf[Quality]
-  val BAD = "BAD".asInstanceOf[Quality]
-  val UNCERTAIN = "UNCERTAIN".asInstanceOf[Quality]
+  val GOOD: "GOOD" = "GOOD"
+  val BAD: "BAD" = "BAD"
+  val UNCERTAIN: "UNCERTAIN" = "UNCERTAIN"
 
-  @inline def values = js.Array(GOOD, BAD, UNCERTAIN)
+  @inline def values = js.Array[Quality](GOOD, BAD, UNCERTAIN)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "PORTAL" | "PROJECT"
 object ResourceType {
-  val PORTAL = "PORTAL".asInstanceOf[ResourceType]
-  val PROJECT = "PROJECT".asInstanceOf[ResourceType]
+  val PORTAL: "PORTAL" = "PORTAL"
+  val PROJECT: "PROJECT" = "PROJECT"
 
-  @inline def values = js.Array(PORTAL, PROJECT)
+  @inline def values = js.Array[ResourceType](PORTAL, PROJECT)
 }
 
-@js.native
-sealed trait TimeOrdering extends js.Any
+type TimeOrdering = "ASCENDING" | "DESCENDING"
 object TimeOrdering {
-  val ASCENDING = "ASCENDING".asInstanceOf[TimeOrdering]
-  val DESCENDING = "DESCENDING".asInstanceOf[TimeOrdering]
+  val ASCENDING: "ASCENDING" = "ASCENDING"
+  val DESCENDING: "DESCENDING" = "DESCENDING"
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values = js.Array[TimeOrdering](ASCENDING, DESCENDING)
 }
 
-@js.native
-sealed trait TraversalDirection extends js.Any
+type TraversalDirection = "PARENT" | "CHILD"
 object TraversalDirection {
-  val PARENT = "PARENT".asInstanceOf[TraversalDirection]
-  val CHILD = "CHILD".asInstanceOf[TraversalDirection]
+  val PARENT: "PARENT" = "PARENT"
+  val CHILD: "CHILD" = "CHILD"
 
-  @inline def values = js.Array(PARENT, CHILD)
+  @inline def values = js.Array[TraversalDirection](PARENT, CHILD)
 }
 
-@js.native
-sealed trait TraversalType extends js.Any
+type TraversalType = "PATH_TO_ROOT"
 object TraversalType {
-  val PATH_TO_ROOT = "PATH_TO_ROOT".asInstanceOf[TraversalType]
+  val PATH_TO_ROOT: "PATH_TO_ROOT" = "PATH_TO_ROOT"
 
-  @inline def values = js.Array(PATH_TO_ROOT)
+  @inline def values = js.Array[TraversalType](PATH_TO_ROOT)
 }

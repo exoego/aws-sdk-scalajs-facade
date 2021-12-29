@@ -259,3 +259,4 @@ object VerifyMode {
 
   @inline def values = js.Array(POINT_IN_TIME_CONSISTENT, ONLY_FILES_TRANSFERRED, NONE)
 }
+

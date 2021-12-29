@@ -146,28 +146,7 @@ object GatewayResponseType {
   val THROTTLED = "THROTTLED".asInstanceOf[GatewayResponseType]
   val QUOTA_EXCEEDED = "QUOTA_EXCEEDED".asInstanceOf[GatewayResponseType]
 
-  @inline def values = js.Array(
-    DEFAULT_4XX,
-    DEFAULT_5XX,
-    RESOURCE_NOT_FOUND,
-    UNAUTHORIZED,
-    INVALID_API_KEY,
-    ACCESS_DENIED,
-    AUTHORIZER_FAILURE,
-    AUTHORIZER_CONFIGURATION_ERROR,
-    INVALID_SIGNATURE,
-    EXPIRED_TOKEN,
-    MISSING_AUTHENTICATION_TOKEN,
-    INTEGRATION_FAILURE,
-    INTEGRATION_TIMEOUT,
-    API_CONFIGURATION_ERROR,
-    UNSUPPORTED_MEDIA_TYPE,
-    BAD_REQUEST_PARAMETERS,
-    BAD_REQUEST_BODY,
-    REQUEST_TOO_LARGE,
-    THROTTLED,
-    QUOTA_EXCEEDED
-  )
+  @inline def values = js.Array(DEFAULT_4XX, DEFAULT_5XX, RESOURCE_NOT_FOUND, UNAUTHORIZED, INVALID_API_KEY, ACCESS_DENIED, AUTHORIZER_FAILURE, AUTHORIZER_CONFIGURATION_ERROR, INVALID_SIGNATURE, EXPIRED_TOKEN, MISSING_AUTHENTICATION_TOKEN, INTEGRATION_FAILURE, INTEGRATION_TIMEOUT, API_CONFIGURATION_ERROR, UNSUPPORTED_MEDIA_TYPE, BAD_REQUEST_PARAMETERS, BAD_REQUEST_BODY, REQUEST_TOO_LARGE, THROTTLED, QUOTA_EXCEEDED)
 }
 
 /** The integration type. The valid value is <code>HTTP</code> for integrating an API method with an HTTP backend; <code>AWS</code> with any AWS service endpoints; <code>MOCK</code> for testing without actually invoking the backend; <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration; <code>AWS_PROXY</code> for integrating with the Lambda proxy integration.
@@ -254,3 +233,4 @@ object VpcLinkStatus {
 
   @inline def values = js.Array(AVAILABLE, PENDING, DELETING, FAILED)
 }
+

@@ -1,43 +1,40 @@
 package facade.amazonaws.services.backup
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait BackupJobState extends js.Any
+type BackupJobState = "CREATED" | "PENDING" | "RUNNING" | "ABORTING" | "ABORTED" | "COMPLETED" | "FAILED" | "EXPIRED"
 object BackupJobState {
-  val CREATED = "CREATED".asInstanceOf[BackupJobState]
-  val PENDING = "PENDING".asInstanceOf[BackupJobState]
-  val RUNNING = "RUNNING".asInstanceOf[BackupJobState]
-  val ABORTING = "ABORTING".asInstanceOf[BackupJobState]
-  val ABORTED = "ABORTED".asInstanceOf[BackupJobState]
-  val COMPLETED = "COMPLETED".asInstanceOf[BackupJobState]
-  val FAILED = "FAILED".asInstanceOf[BackupJobState]
-  val EXPIRED = "EXPIRED".asInstanceOf[BackupJobState]
+  val CREATED: "CREATED" = "CREATED"
+  val PENDING: "PENDING" = "PENDING"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val ABORTING: "ABORTING" = "ABORTING"
+  val ABORTED: "ABORTED" = "ABORTED"
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val FAILED: "FAILED" = "FAILED"
+  val EXPIRED: "EXPIRED" = "EXPIRED"
 
-  @inline def values = js.Array(CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED)
+  @inline def values = js.Array[BackupJobState](CREATED, PENDING, RUNNING, ABORTING, ABORTED, COMPLETED, FAILED, EXPIRED)
 }
 
-@js.native
-sealed trait BackupVaultEvent extends js.Any
+type BackupVaultEvent = "BACKUP_JOB_STARTED" | "BACKUP_JOB_COMPLETED" | "BACKUP_JOB_SUCCESSFUL" | "BACKUP_JOB_FAILED" | "BACKUP_JOB_EXPIRED" | "RESTORE_JOB_STARTED" | "RESTORE_JOB_COMPLETED" | "RESTORE_JOB_SUCCESSFUL" | "RESTORE_JOB_FAILED" | "COPY_JOB_STARTED" | "COPY_JOB_SUCCESSFUL" | "COPY_JOB_FAILED" | "RECOVERY_POINT_MODIFIED" | "BACKUP_PLAN_CREATED" | "BACKUP_PLAN_MODIFIED"
 object BackupVaultEvent {
-  val BACKUP_JOB_STARTED = "BACKUP_JOB_STARTED".asInstanceOf[BackupVaultEvent]
-  val BACKUP_JOB_COMPLETED = "BACKUP_JOB_COMPLETED".asInstanceOf[BackupVaultEvent]
-  val BACKUP_JOB_SUCCESSFUL = "BACKUP_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
-  val BACKUP_JOB_FAILED = "BACKUP_JOB_FAILED".asInstanceOf[BackupVaultEvent]
-  val BACKUP_JOB_EXPIRED = "BACKUP_JOB_EXPIRED".asInstanceOf[BackupVaultEvent]
-  val RESTORE_JOB_STARTED = "RESTORE_JOB_STARTED".asInstanceOf[BackupVaultEvent]
-  val RESTORE_JOB_COMPLETED = "RESTORE_JOB_COMPLETED".asInstanceOf[BackupVaultEvent]
-  val RESTORE_JOB_SUCCESSFUL = "RESTORE_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
-  val RESTORE_JOB_FAILED = "RESTORE_JOB_FAILED".asInstanceOf[BackupVaultEvent]
-  val COPY_JOB_STARTED = "COPY_JOB_STARTED".asInstanceOf[BackupVaultEvent]
-  val COPY_JOB_SUCCESSFUL = "COPY_JOB_SUCCESSFUL".asInstanceOf[BackupVaultEvent]
-  val COPY_JOB_FAILED = "COPY_JOB_FAILED".asInstanceOf[BackupVaultEvent]
-  val RECOVERY_POINT_MODIFIED = "RECOVERY_POINT_MODIFIED".asInstanceOf[BackupVaultEvent]
-  val BACKUP_PLAN_CREATED = "BACKUP_PLAN_CREATED".asInstanceOf[BackupVaultEvent]
-  val BACKUP_PLAN_MODIFIED = "BACKUP_PLAN_MODIFIED".asInstanceOf[BackupVaultEvent]
+  val BACKUP_JOB_STARTED: "BACKUP_JOB_STARTED" = "BACKUP_JOB_STARTED"
+  val BACKUP_JOB_COMPLETED: "BACKUP_JOB_COMPLETED" = "BACKUP_JOB_COMPLETED"
+  val BACKUP_JOB_SUCCESSFUL: "BACKUP_JOB_SUCCESSFUL" = "BACKUP_JOB_SUCCESSFUL"
+  val BACKUP_JOB_FAILED: "BACKUP_JOB_FAILED" = "BACKUP_JOB_FAILED"
+  val BACKUP_JOB_EXPIRED: "BACKUP_JOB_EXPIRED" = "BACKUP_JOB_EXPIRED"
+  val RESTORE_JOB_STARTED: "RESTORE_JOB_STARTED" = "RESTORE_JOB_STARTED"
+  val RESTORE_JOB_COMPLETED: "RESTORE_JOB_COMPLETED" = "RESTORE_JOB_COMPLETED"
+  val RESTORE_JOB_SUCCESSFUL: "RESTORE_JOB_SUCCESSFUL" = "RESTORE_JOB_SUCCESSFUL"
+  val RESTORE_JOB_FAILED: "RESTORE_JOB_FAILED" = "RESTORE_JOB_FAILED"
+  val COPY_JOB_STARTED: "COPY_JOB_STARTED" = "COPY_JOB_STARTED"
+  val COPY_JOB_SUCCESSFUL: "COPY_JOB_SUCCESSFUL" = "COPY_JOB_SUCCESSFUL"
+  val COPY_JOB_FAILED: "COPY_JOB_FAILED" = "COPY_JOB_FAILED"
+  val RECOVERY_POINT_MODIFIED: "RECOVERY_POINT_MODIFIED" = "RECOVERY_POINT_MODIFIED"
+  val BACKUP_PLAN_CREATED: "BACKUP_PLAN_CREATED" = "BACKUP_PLAN_CREATED"
+  val BACKUP_PLAN_MODIFIED: "BACKUP_PLAN_MODIFIED" = "BACKUP_PLAN_MODIFIED"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[BackupVaultEvent](
     BACKUP_JOB_STARTED,
     BACKUP_JOB_COMPLETED,
     BACKUP_JOB_SUCCESSFUL,
@@ -56,54 +53,49 @@ object BackupVaultEvent {
   )
 }
 
-@js.native
-sealed trait ConditionType extends js.Any
+type ConditionType = "STRINGEQUALS"
 object ConditionType {
-  val STRINGEQUALS = "STRINGEQUALS".asInstanceOf[ConditionType]
+  val STRINGEQUALS: "STRINGEQUALS" = "STRINGEQUALS"
 
-  @inline def values = js.Array(STRINGEQUALS)
+  @inline def values = js.Array[ConditionType](STRINGEQUALS)
 }
 
-@js.native
-sealed trait CopyJobState extends js.Any
+type CopyJobState = "CREATED" | "RUNNING" | "COMPLETED" | "FAILED"
 object CopyJobState {
-  val CREATED = "CREATED".asInstanceOf[CopyJobState]
-  val RUNNING = "RUNNING".asInstanceOf[CopyJobState]
-  val COMPLETED = "COMPLETED".asInstanceOf[CopyJobState]
-  val FAILED = "FAILED".asInstanceOf[CopyJobState]
+  val CREATED: "CREATED" = "CREATED"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATED, RUNNING, COMPLETED, FAILED)
+  @inline def values = js.Array[CopyJobState](CREATED, RUNNING, COMPLETED, FAILED)
 }
 
-@js.native
-sealed trait RecoveryPointStatus extends js.Any
+type RecoveryPointStatus = "COMPLETED" | "PARTIAL" | "DELETING" | "EXPIRED"
 object RecoveryPointStatus {
-  val COMPLETED = "COMPLETED".asInstanceOf[RecoveryPointStatus]
-  val PARTIAL = "PARTIAL".asInstanceOf[RecoveryPointStatus]
-  val DELETING = "DELETING".asInstanceOf[RecoveryPointStatus]
-  val EXPIRED = "EXPIRED".asInstanceOf[RecoveryPointStatus]
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val PARTIAL: "PARTIAL" = "PARTIAL"
+  val DELETING: "DELETING" = "DELETING"
+  val EXPIRED: "EXPIRED" = "EXPIRED"
 
-  @inline def values = js.Array(COMPLETED, PARTIAL, DELETING, EXPIRED)
+  @inline def values = js.Array[RecoveryPointStatus](COMPLETED, PARTIAL, DELETING, EXPIRED)
 }
 
-@js.native
-sealed trait RestoreJobStatus extends js.Any
+type RestoreJobStatus = "PENDING" | "RUNNING" | "COMPLETED" | "ABORTED" | "FAILED"
 object RestoreJobStatus {
-  val PENDING = "PENDING".asInstanceOf[RestoreJobStatus]
-  val RUNNING = "RUNNING".asInstanceOf[RestoreJobStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[RestoreJobStatus]
-  val ABORTED = "ABORTED".asInstanceOf[RestoreJobStatus]
-  val FAILED = "FAILED".asInstanceOf[RestoreJobStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val ABORTED: "ABORTED" = "ABORTED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(PENDING, RUNNING, COMPLETED, ABORTED, FAILED)
+  @inline def values = js.Array[RestoreJobStatus](PENDING, RUNNING, COMPLETED, ABORTED, FAILED)
 }
 
-@js.native
-sealed trait StorageClass extends js.Any
+type StorageClass = "WARM" | "COLD" | "DELETED"
 object StorageClass {
-  val WARM = "WARM".asInstanceOf[StorageClass]
-  val COLD = "COLD".asInstanceOf[StorageClass]
-  val DELETED = "DELETED".asInstanceOf[StorageClass]
+  val WARM: "WARM" = "WARM"
+  val COLD: "COLD" = "COLD"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(WARM, COLD, DELETED)
+  @inline def values = js.Array[StorageClass](WARM, COLD, DELETED)
 }

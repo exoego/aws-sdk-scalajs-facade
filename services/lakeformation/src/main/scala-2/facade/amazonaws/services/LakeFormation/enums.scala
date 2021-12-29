@@ -58,3 +58,4 @@ object Permission {
 
   @inline def values = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
 }
+

@@ -58,3 +58,4 @@ object SentimentType {
 
   @inline def values = js.Array(MIXED, NEGATIVE, NEUTRAL, POSITIVE)
 }
+

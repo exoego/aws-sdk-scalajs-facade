@@ -69,33 +69,7 @@ object BucketLocationConstraint {
   val `us-west-1` = "us-west-1".asInstanceOf[BucketLocationConstraint]
   val `us-west-2` = "us-west-2".asInstanceOf[BucketLocationConstraint]
 
-  @inline def values = js.Array(
-    `af-south-1`,
-    `ap-east-1`,
-    `ap-northeast-1`,
-    `ap-northeast-2`,
-    `ap-northeast-3`,
-    `ap-south-1`,
-    `ap-southeast-1`,
-    `ap-southeast-2`,
-    `ca-central-1`,
-    `cn-north-1`,
-    `cn-northwest-1`,
-    EU,
-    `eu-central-1`,
-    `eu-north-1`,
-    `eu-south-1`,
-    `eu-west-1`,
-    `eu-west-2`,
-    `eu-west-3`,
-    `me-south-1`,
-    `sa-east-1`,
-    `us-east-2`,
-    `us-gov-east-1`,
-    `us-gov-west-1`,
-    `us-west-1`,
-    `us-west-2`
-  )
+  @inline def values = js.Array(`af-south-1`, `ap-east-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ca-central-1`, `cn-north-1`, `cn-northwest-1`, EU, `eu-central-1`, `eu-north-1`, `eu-south-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `me-south-1`, `sa-east-1`, `us-east-2`, `us-gov-east-1`, `us-gov-west-1`, `us-west-1`, `us-west-2`)
 }
 
 @js.native
@@ -169,25 +143,7 @@ object Event {
   val `s3:Replication:OperationMissedThreshold` = "s3:Replication:OperationMissedThreshold".asInstanceOf[Event]
   val `s3:Replication:OperationReplicatedAfterThreshold` = "s3:Replication:OperationReplicatedAfterThreshold".asInstanceOf[Event]
 
-  @inline def values = js.Array(
-    `s3:ReducedRedundancyLostObject`,
-    `s3:ObjectCreated:*`,
-    `s3:ObjectCreated:Put`,
-    `s3:ObjectCreated:Post`,
-    `s3:ObjectCreated:Copy`,
-    `s3:ObjectCreated:CompleteMultipartUpload`,
-    `s3:ObjectRemoved:*`,
-    `s3:ObjectRemoved:Delete`,
-    `s3:ObjectRemoved:DeleteMarkerCreated`,
-    `s3:ObjectRestore:*`,
-    `s3:ObjectRestore:Post`,
-    `s3:ObjectRestore:Completed`,
-    `s3:Replication:*`,
-    `s3:Replication:OperationFailedReplication`,
-    `s3:Replication:OperationNotTracked`,
-    `s3:Replication:OperationMissedThreshold`,
-    `s3:Replication:OperationReplicatedAfterThreshold`
-  )
+  @inline def values = js.Array(`s3:ReducedRedundancyLostObject`, `s3:ObjectCreated:*`, `s3:ObjectCreated:Put`, `s3:ObjectCreated:Post`, `s3:ObjectCreated:Copy`, `s3:ObjectCreated:CompleteMultipartUpload`, `s3:ObjectRemoved:*`, `s3:ObjectRemoved:Delete`, `s3:ObjectRemoved:DeleteMarkerCreated`, `s3:ObjectRestore:*`, `s3:ObjectRestore:Post`, `s3:ObjectRestore:Completed`, `s3:Replication:*`, `s3:Replication:OperationFailedReplication`, `s3:Replication:OperationNotTracked`, `s3:Replication:OperationMissedThreshold`, `s3:Replication:OperationReplicatedAfterThreshold`)
 }
 
 @js.native
@@ -296,19 +252,7 @@ object InventoryOptionalField {
   val ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus".asInstanceOf[InventoryOptionalField]
   val IntelligentTieringAccessTier = "IntelligentTieringAccessTier".asInstanceOf[InventoryOptionalField]
 
-  @inline def values = js.Array(
-    Size,
-    LastModifiedDate,
-    StorageClass,
-    ETag,
-    IsMultipartUploaded,
-    ReplicationStatus,
-    EncryptionStatus,
-    ObjectLockRetainUntilDate,
-    ObjectLockMode,
-    ObjectLockLegalHoldStatus,
-    IntelligentTieringAccessTier
-  )
+  @inline def values = js.Array(Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, ReplicationStatus, EncryptionStatus, ObjectLockRetainUntilDate, ObjectLockMode, ObjectLockLegalHoldStatus, IntelligentTieringAccessTier)
 }
 
 @js.native
@@ -405,7 +349,9 @@ object ObjectLockRetentionMode {
   @inline def values = js.Array(GOVERNANCE, COMPLIANCE)
 }
 
-/** The container element for object ownership for a bucket's ownership controls. BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL. ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.
+/** The container element for object ownership for a bucket's ownership controls.
+  * BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.
+  * ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.
   */
 @js.native
 sealed trait ObjectOwnership extends js.Any
@@ -633,3 +579,4 @@ object Type {
 
   @inline def values = js.Array(CanonicalUser, AmazonCustomerByEmail, Group)
 }
+

@@ -10,3 +10,4 @@ object TargetType {
 
   @inline def values = js.Array(ACCOUNT)
 }
+

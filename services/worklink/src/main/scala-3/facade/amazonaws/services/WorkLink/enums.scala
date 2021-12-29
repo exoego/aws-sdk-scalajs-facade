@@ -1,57 +1,51 @@
 package facade.amazonaws.services.worklink
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AuthorizationProviderType extends js.Any
+type AuthorizationProviderType = "SAML"
 object AuthorizationProviderType {
-  val SAML = "SAML".asInstanceOf[AuthorizationProviderType]
+  val SAML: "SAML" = "SAML"
 
-  @inline def values = js.Array(SAML)
+  @inline def values = js.Array[AuthorizationProviderType](SAML)
 }
 
-@js.native
-sealed trait DeviceStatus extends js.Any
+type DeviceStatus = "ACTIVE" | "SIGNED_OUT"
 object DeviceStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[DeviceStatus]
-  val SIGNED_OUT = "SIGNED_OUT".asInstanceOf[DeviceStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val SIGNED_OUT: "SIGNED_OUT" = "SIGNED_OUT"
 
-  @inline def values = js.Array(ACTIVE, SIGNED_OUT)
+  @inline def values = js.Array[DeviceStatus](ACTIVE, SIGNED_OUT)
 }
 
-@js.native
-sealed trait DomainStatus extends js.Any
+type DomainStatus = "PENDING_VALIDATION" | "ASSOCIATING" | "ACTIVE" | "INACTIVE" | "DISASSOCIATING" | "DISASSOCIATED" | "FAILED_TO_ASSOCIATE" | "FAILED_TO_DISASSOCIATE"
 object DomainStatus {
-  val PENDING_VALIDATION = "PENDING_VALIDATION".asInstanceOf[DomainStatus]
-  val ASSOCIATING = "ASSOCIATING".asInstanceOf[DomainStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[DomainStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[DomainStatus]
-  val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[DomainStatus]
-  val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[DomainStatus]
-  val FAILED_TO_ASSOCIATE = "FAILED_TO_ASSOCIATE".asInstanceOf[DomainStatus]
-  val FAILED_TO_DISASSOCIATE = "FAILED_TO_DISASSOCIATE".asInstanceOf[DomainStatus]
+  val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
+  val ASSOCIATING: "ASSOCIATING" = "ASSOCIATING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val INACTIVE: "INACTIVE" = "INACTIVE"
+  val DISASSOCIATING: "DISASSOCIATING" = "DISASSOCIATING"
+  val DISASSOCIATED: "DISASSOCIATED" = "DISASSOCIATED"
+  val FAILED_TO_ASSOCIATE: "FAILED_TO_ASSOCIATE" = "FAILED_TO_ASSOCIATE"
+  val FAILED_TO_DISASSOCIATE: "FAILED_TO_DISASSOCIATE" = "FAILED_TO_DISASSOCIATE"
 
-  @inline def values = js.Array(PENDING_VALIDATION, ASSOCIATING, ACTIVE, INACTIVE, DISASSOCIATING, DISASSOCIATED, FAILED_TO_ASSOCIATE, FAILED_TO_DISASSOCIATE)
+  @inline def values = js.Array[DomainStatus](PENDING_VALIDATION, ASSOCIATING, ACTIVE, INACTIVE, DISASSOCIATING, DISASSOCIATED, FAILED_TO_ASSOCIATE, FAILED_TO_DISASSOCIATE)
 }
 
-@js.native
-sealed trait FleetStatus extends js.Any
+type FleetStatus = "CREATING" | "ACTIVE" | "DELETING" | "DELETED" | "FAILED_TO_CREATE" | "FAILED_TO_DELETE"
 object FleetStatus {
-  val CREATING = "CREATING".asInstanceOf[FleetStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[FleetStatus]
-  val DELETING = "DELETING".asInstanceOf[FleetStatus]
-  val DELETED = "DELETED".asInstanceOf[FleetStatus]
-  val FAILED_TO_CREATE = "FAILED_TO_CREATE".asInstanceOf[FleetStatus]
-  val FAILED_TO_DELETE = "FAILED_TO_DELETE".asInstanceOf[FleetStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETING: "DELETING" = "DELETING"
+  val DELETED: "DELETED" = "DELETED"
+  val FAILED_TO_CREATE: "FAILED_TO_CREATE" = "FAILED_TO_CREATE"
+  val FAILED_TO_DELETE: "FAILED_TO_DELETE" = "FAILED_TO_DELETE"
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, DELETED, FAILED_TO_CREATE, FAILED_TO_DELETE)
+  @inline def values = js.Array[FleetStatus](CREATING, ACTIVE, DELETING, DELETED, FAILED_TO_CREATE, FAILED_TO_DELETE)
 }
 
-@js.native
-sealed trait IdentityProviderType extends js.Any
+type IdentityProviderType = "SAML"
 object IdentityProviderType {
-  val SAML = "SAML".asInstanceOf[IdentityProviderType]
+  val SAML: "SAML" = "SAML"
 
-  @inline def values = js.Array(SAML)
+  @inline def values = js.Array[IdentityProviderType](SAML)
 }

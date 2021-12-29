@@ -1,126 +1,115 @@
 package facade.amazonaws.services.alexaforbusiness
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait BusinessReportFailureCode extends js.Any
+type BusinessReportFailureCode = "ACCESS_DENIED" | "NO_SUCH_BUCKET" | "INTERNAL_FAILURE"
 object BusinessReportFailureCode {
-  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[BusinessReportFailureCode]
-  val NO_SUCH_BUCKET = "NO_SUCH_BUCKET".asInstanceOf[BusinessReportFailureCode]
-  val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[BusinessReportFailureCode]
+  val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  val NO_SUCH_BUCKET: "NO_SUCH_BUCKET" = "NO_SUCH_BUCKET"
+  val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
 
-  @inline def values = js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE)
+  @inline def values = js.Array[BusinessReportFailureCode](ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE)
 }
 
-@js.native
-sealed trait BusinessReportFormat extends js.Any
+type BusinessReportFormat = "CSV" | "CSV_ZIP"
 object BusinessReportFormat {
-  val CSV = "CSV".asInstanceOf[BusinessReportFormat]
-  val CSV_ZIP = "CSV_ZIP".asInstanceOf[BusinessReportFormat]
+  val CSV: "CSV" = "CSV"
+  val CSV_ZIP: "CSV_ZIP" = "CSV_ZIP"
 
-  @inline def values = js.Array(CSV, CSV_ZIP)
+  @inline def values = js.Array[BusinessReportFormat](CSV, CSV_ZIP)
 }
 
-@js.native
-sealed trait BusinessReportInterval extends js.Any
+type BusinessReportInterval = "ONE_DAY" | "ONE_WEEK" | "THIRTY_DAYS"
 object BusinessReportInterval {
-  val ONE_DAY = "ONE_DAY".asInstanceOf[BusinessReportInterval]
-  val ONE_WEEK = "ONE_WEEK".asInstanceOf[BusinessReportInterval]
-  val THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[BusinessReportInterval]
+  val ONE_DAY: "ONE_DAY" = "ONE_DAY"
+  val ONE_WEEK: "ONE_WEEK" = "ONE_WEEK"
+  val THIRTY_DAYS: "THIRTY_DAYS" = "THIRTY_DAYS"
 
-  @inline def values = js.Array(ONE_DAY, ONE_WEEK, THIRTY_DAYS)
+  @inline def values = js.Array[BusinessReportInterval](ONE_DAY, ONE_WEEK, THIRTY_DAYS)
 }
 
-@js.native
-sealed trait BusinessReportStatus extends js.Any
+type BusinessReportStatus = "RUNNING" | "SUCCEEDED" | "FAILED"
 object BusinessReportStatus {
-  val RUNNING = "RUNNING".asInstanceOf[BusinessReportStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[BusinessReportStatus]
-  val FAILED = "FAILED".asInstanceOf[BusinessReportStatus]
+  val RUNNING: "RUNNING" = "RUNNING"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED)
+  @inline def values = js.Array[BusinessReportStatus](RUNNING, SUCCEEDED, FAILED)
 }
 
-@js.native
-sealed trait CommsProtocol extends js.Any
+type CommsProtocol = "SIP" | "SIPS" | "H323"
 object CommsProtocol {
-  val SIP = "SIP".asInstanceOf[CommsProtocol]
-  val SIPS = "SIPS".asInstanceOf[CommsProtocol]
-  val H323 = "H323".asInstanceOf[CommsProtocol]
+  val SIP: "SIP" = "SIP"
+  val SIPS: "SIPS" = "SIPS"
+  val H323: "H323" = "H323"
 
-  @inline def values = js.Array(SIP, SIPS, H323)
+  @inline def values = js.Array[CommsProtocol](SIP, SIPS, H323)
 }
 
-@js.native
-sealed trait ConferenceProviderType extends js.Any
+type ConferenceProviderType = "CHIME" | "BLUEJEANS" | "FUZE" | "GOOGLE_HANGOUTS" | "POLYCOM" | "RINGCENTRAL" | "SKYPE_FOR_BUSINESS" | "WEBEX" | "ZOOM" | "CUSTOM"
 object ConferenceProviderType {
-  val CHIME = "CHIME".asInstanceOf[ConferenceProviderType]
-  val BLUEJEANS = "BLUEJEANS".asInstanceOf[ConferenceProviderType]
-  val FUZE = "FUZE".asInstanceOf[ConferenceProviderType]
-  val GOOGLE_HANGOUTS = "GOOGLE_HANGOUTS".asInstanceOf[ConferenceProviderType]
-  val POLYCOM = "POLYCOM".asInstanceOf[ConferenceProviderType]
-  val RINGCENTRAL = "RINGCENTRAL".asInstanceOf[ConferenceProviderType]
-  val SKYPE_FOR_BUSINESS = "SKYPE_FOR_BUSINESS".asInstanceOf[ConferenceProviderType]
-  val WEBEX = "WEBEX".asInstanceOf[ConferenceProviderType]
-  val ZOOM = "ZOOM".asInstanceOf[ConferenceProviderType]
-  val CUSTOM = "CUSTOM".asInstanceOf[ConferenceProviderType]
+  val CHIME: "CHIME" = "CHIME"
+  val BLUEJEANS: "BLUEJEANS" = "BLUEJEANS"
+  val FUZE: "FUZE" = "FUZE"
+  val GOOGLE_HANGOUTS: "GOOGLE_HANGOUTS" = "GOOGLE_HANGOUTS"
+  val POLYCOM: "POLYCOM" = "POLYCOM"
+  val RINGCENTRAL: "RINGCENTRAL" = "RINGCENTRAL"
+  val SKYPE_FOR_BUSINESS: "SKYPE_FOR_BUSINESS" = "SKYPE_FOR_BUSINESS"
+  val WEBEX: "WEBEX" = "WEBEX"
+  val ZOOM: "ZOOM" = "ZOOM"
+  val CUSTOM: "CUSTOM" = "CUSTOM"
 
-  @inline def values = js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
+  @inline def values = js.Array[ConferenceProviderType](CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
 }
 
-@js.native
-sealed trait ConnectionStatus extends js.Any
+type ConnectionStatus = "ONLINE" | "OFFLINE"
 object ConnectionStatus {
-  val ONLINE = "ONLINE".asInstanceOf[ConnectionStatus]
-  val OFFLINE = "OFFLINE".asInstanceOf[ConnectionStatus]
+  val ONLINE: "ONLINE" = "ONLINE"
+  val OFFLINE: "OFFLINE" = "OFFLINE"
 
-  @inline def values = js.Array(ONLINE, OFFLINE)
+  @inline def values = js.Array[ConnectionStatus](ONLINE, OFFLINE)
 }
 
-@js.native
-sealed trait DeviceEventType extends js.Any
+type DeviceEventType = "CONNECTION_STATUS" | "DEVICE_STATUS"
 object DeviceEventType {
-  val CONNECTION_STATUS = "CONNECTION_STATUS".asInstanceOf[DeviceEventType]
-  val DEVICE_STATUS = "DEVICE_STATUS".asInstanceOf[DeviceEventType]
+  val CONNECTION_STATUS: "CONNECTION_STATUS" = "CONNECTION_STATUS"
+  val DEVICE_STATUS: "DEVICE_STATUS" = "DEVICE_STATUS"
 
-  @inline def values = js.Array(CONNECTION_STATUS, DEVICE_STATUS)
+  @inline def values = js.Array[DeviceEventType](CONNECTION_STATUS, DEVICE_STATUS)
 }
 
-@js.native
-sealed trait DeviceStatus extends js.Any
+type DeviceStatus = "READY" | "PENDING" | "WAS_OFFLINE" | "DEREGISTERED" | "FAILED"
 object DeviceStatus {
-  val READY = "READY".asInstanceOf[DeviceStatus]
-  val PENDING = "PENDING".asInstanceOf[DeviceStatus]
-  val WAS_OFFLINE = "WAS_OFFLINE".asInstanceOf[DeviceStatus]
-  val DEREGISTERED = "DEREGISTERED".asInstanceOf[DeviceStatus]
-  val FAILED = "FAILED".asInstanceOf[DeviceStatus]
+  val READY: "READY" = "READY"
+  val PENDING: "PENDING" = "PENDING"
+  val WAS_OFFLINE: "WAS_OFFLINE" = "WAS_OFFLINE"
+  val DEREGISTERED: "DEREGISTERED" = "DEREGISTERED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED)
+  @inline def values = js.Array[DeviceStatus](READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED)
 }
 
-@js.native
-sealed trait DeviceStatusDetailCode extends js.Any
+type DeviceStatusDetailCode = "DEVICE_SOFTWARE_UPDATE_NEEDED" | "DEVICE_WAS_OFFLINE" | "CREDENTIALS_ACCESS_FAILURE" | "TLS_VERSION_MISMATCH" | "ASSOCIATION_REJECTION" | "AUTHENTICATION_FAILURE" | "DHCP_FAILURE" | "INTERNET_UNAVAILABLE" | "DNS_FAILURE" | "UNKNOWN_FAILURE" | "CERTIFICATE_ISSUING_LIMIT_EXCEEDED" | "INVALID_CERTIFICATE_AUTHORITY" | "NETWORK_PROFILE_NOT_FOUND" | "INVALID_PASSWORD_STATE" | "PASSWORD_NOT_FOUND" | "PASSWORD_MANAGER_ACCESS_DENIED" | "CERTIFICATE_AUTHORITY_ACCESS_DENIED"
 object DeviceStatusDetailCode {
-  val DEVICE_SOFTWARE_UPDATE_NEEDED = "DEVICE_SOFTWARE_UPDATE_NEEDED".asInstanceOf[DeviceStatusDetailCode]
-  val DEVICE_WAS_OFFLINE = "DEVICE_WAS_OFFLINE".asInstanceOf[DeviceStatusDetailCode]
-  val CREDENTIALS_ACCESS_FAILURE = "CREDENTIALS_ACCESS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-  val TLS_VERSION_MISMATCH = "TLS_VERSION_MISMATCH".asInstanceOf[DeviceStatusDetailCode]
-  val ASSOCIATION_REJECTION = "ASSOCIATION_REJECTION".asInstanceOf[DeviceStatusDetailCode]
-  val AUTHENTICATION_FAILURE = "AUTHENTICATION_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-  val DHCP_FAILURE = "DHCP_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-  val INTERNET_UNAVAILABLE = "INTERNET_UNAVAILABLE".asInstanceOf[DeviceStatusDetailCode]
-  val DNS_FAILURE = "DNS_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-  val UNKNOWN_FAILURE = "UNKNOWN_FAILURE".asInstanceOf[DeviceStatusDetailCode]
-  val CERTIFICATE_ISSUING_LIMIT_EXCEEDED = "CERTIFICATE_ISSUING_LIMIT_EXCEEDED".asInstanceOf[DeviceStatusDetailCode]
-  val INVALID_CERTIFICATE_AUTHORITY = "INVALID_CERTIFICATE_AUTHORITY".asInstanceOf[DeviceStatusDetailCode]
-  val NETWORK_PROFILE_NOT_FOUND = "NETWORK_PROFILE_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
-  val INVALID_PASSWORD_STATE = "INVALID_PASSWORD_STATE".asInstanceOf[DeviceStatusDetailCode]
-  val PASSWORD_NOT_FOUND = "PASSWORD_NOT_FOUND".asInstanceOf[DeviceStatusDetailCode]
-  val PASSWORD_MANAGER_ACCESS_DENIED = "PASSWORD_MANAGER_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
-  val CERTIFICATE_AUTHORITY_ACCESS_DENIED = "CERTIFICATE_AUTHORITY_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
+  val DEVICE_SOFTWARE_UPDATE_NEEDED: "DEVICE_SOFTWARE_UPDATE_NEEDED" = "DEVICE_SOFTWARE_UPDATE_NEEDED"
+  val DEVICE_WAS_OFFLINE: "DEVICE_WAS_OFFLINE" = "DEVICE_WAS_OFFLINE"
+  val CREDENTIALS_ACCESS_FAILURE: "CREDENTIALS_ACCESS_FAILURE" = "CREDENTIALS_ACCESS_FAILURE"
+  val TLS_VERSION_MISMATCH: "TLS_VERSION_MISMATCH" = "TLS_VERSION_MISMATCH"
+  val ASSOCIATION_REJECTION: "ASSOCIATION_REJECTION" = "ASSOCIATION_REJECTION"
+  val AUTHENTICATION_FAILURE: "AUTHENTICATION_FAILURE" = "AUTHENTICATION_FAILURE"
+  val DHCP_FAILURE: "DHCP_FAILURE" = "DHCP_FAILURE"
+  val INTERNET_UNAVAILABLE: "INTERNET_UNAVAILABLE" = "INTERNET_UNAVAILABLE"
+  val DNS_FAILURE: "DNS_FAILURE" = "DNS_FAILURE"
+  val UNKNOWN_FAILURE: "UNKNOWN_FAILURE" = "UNKNOWN_FAILURE"
+  val CERTIFICATE_ISSUING_LIMIT_EXCEEDED: "CERTIFICATE_ISSUING_LIMIT_EXCEEDED" = "CERTIFICATE_ISSUING_LIMIT_EXCEEDED"
+  val INVALID_CERTIFICATE_AUTHORITY: "INVALID_CERTIFICATE_AUTHORITY" = "INVALID_CERTIFICATE_AUTHORITY"
+  val NETWORK_PROFILE_NOT_FOUND: "NETWORK_PROFILE_NOT_FOUND" = "NETWORK_PROFILE_NOT_FOUND"
+  val INVALID_PASSWORD_STATE: "INVALID_PASSWORD_STATE" = "INVALID_PASSWORD_STATE"
+  val PASSWORD_NOT_FOUND: "PASSWORD_NOT_FOUND" = "PASSWORD_NOT_FOUND"
+  val PASSWORD_MANAGER_ACCESS_DENIED: "PASSWORD_MANAGER_ACCESS_DENIED" = "PASSWORD_MANAGER_ACCESS_DENIED"
+  val CERTIFICATE_AUTHORITY_ACCESS_DENIED: "CERTIFICATE_AUTHORITY_ACCESS_DENIED" = "CERTIFICATE_AUTHORITY_ACCESS_DENIED"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[DeviceStatusDetailCode](
     DEVICE_SOFTWARE_UPDATE_NEEDED,
     DEVICE_WAS_OFFLINE,
     CREDENTIALS_ACCESS_FAILURE,
@@ -141,179 +130,161 @@ object DeviceStatusDetailCode {
   )
 }
 
-@js.native
-sealed trait DeviceUsageType extends js.Any
+type DeviceUsageType = "VOICE"
 object DeviceUsageType {
-  val VOICE = "VOICE".asInstanceOf[DeviceUsageType]
+  val VOICE: "VOICE" = "VOICE"
 
-  @inline def values = js.Array(VOICE)
+  @inline def values = js.Array[DeviceUsageType](VOICE)
 }
 
-@js.native
-sealed trait DistanceUnit extends js.Any
+type DistanceUnit = "METRIC" | "IMPERIAL"
 object DistanceUnit {
-  val METRIC = "METRIC".asInstanceOf[DistanceUnit]
-  val IMPERIAL = "IMPERIAL".asInstanceOf[DistanceUnit]
+  val METRIC: "METRIC" = "METRIC"
+  val IMPERIAL: "IMPERIAL" = "IMPERIAL"
 
-  @inline def values = js.Array(METRIC, IMPERIAL)
+  @inline def values = js.Array[DistanceUnit](METRIC, IMPERIAL)
 }
 
-@js.native
-sealed trait EnablementType extends js.Any
+type EnablementType = "ENABLED" | "PENDING"
 object EnablementType {
-  val ENABLED = "ENABLED".asInstanceOf[EnablementType]
-  val PENDING = "PENDING".asInstanceOf[EnablementType]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val PENDING: "PENDING" = "PENDING"
 
-  @inline def values = js.Array(ENABLED, PENDING)
+  @inline def values = js.Array[EnablementType](ENABLED, PENDING)
 }
 
-@js.native
-sealed trait EnablementTypeFilter extends js.Any
+type EnablementTypeFilter = "ENABLED" | "PENDING"
 object EnablementTypeFilter {
-  val ENABLED = "ENABLED".asInstanceOf[EnablementTypeFilter]
-  val PENDING = "PENDING".asInstanceOf[EnablementTypeFilter]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val PENDING: "PENDING" = "PENDING"
 
-  @inline def values = js.Array(ENABLED, PENDING)
+  @inline def values = js.Array[EnablementTypeFilter](ENABLED, PENDING)
 }
 
-@js.native
-sealed trait EndOfMeetingReminderType extends js.Any
+type EndOfMeetingReminderType = "ANNOUNCEMENT_TIME_CHECK" | "ANNOUNCEMENT_VARIABLE_TIME_LEFT" | "CHIME" | "KNOCK"
 object EndOfMeetingReminderType {
-  val ANNOUNCEMENT_TIME_CHECK = "ANNOUNCEMENT_TIME_CHECK".asInstanceOf[EndOfMeetingReminderType]
-  val ANNOUNCEMENT_VARIABLE_TIME_LEFT = "ANNOUNCEMENT_VARIABLE_TIME_LEFT".asInstanceOf[EndOfMeetingReminderType]
-  val CHIME = "CHIME".asInstanceOf[EndOfMeetingReminderType]
-  val KNOCK = "KNOCK".asInstanceOf[EndOfMeetingReminderType]
+  val ANNOUNCEMENT_TIME_CHECK: "ANNOUNCEMENT_TIME_CHECK" = "ANNOUNCEMENT_TIME_CHECK"
+  val ANNOUNCEMENT_VARIABLE_TIME_LEFT: "ANNOUNCEMENT_VARIABLE_TIME_LEFT" = "ANNOUNCEMENT_VARIABLE_TIME_LEFT"
+  val CHIME: "CHIME" = "CHIME"
+  val KNOCK: "KNOCK" = "KNOCK"
 
-  @inline def values = js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK)
+  @inline def values = js.Array[EndOfMeetingReminderType](ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK)
 }
 
-@js.native
-sealed trait EnrollmentStatus extends js.Any
+type EnrollmentStatus = "INITIALIZED" | "PENDING" | "REGISTERED" | "DISASSOCIATING" | "DEREGISTERING"
 object EnrollmentStatus {
-  val INITIALIZED = "INITIALIZED".asInstanceOf[EnrollmentStatus]
-  val PENDING = "PENDING".asInstanceOf[EnrollmentStatus]
-  val REGISTERED = "REGISTERED".asInstanceOf[EnrollmentStatus]
-  val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[EnrollmentStatus]
-  val DEREGISTERING = "DEREGISTERING".asInstanceOf[EnrollmentStatus]
+  val INITIALIZED: "INITIALIZED" = "INITIALIZED"
+  val PENDING: "PENDING" = "PENDING"
+  val REGISTERED: "REGISTERED" = "REGISTERED"
+  val DISASSOCIATING: "DISASSOCIATING" = "DISASSOCIATING"
+  val DEREGISTERING: "DEREGISTERING" = "DEREGISTERING"
 
-  @inline def values = js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING)
+  @inline def values = js.Array[EnrollmentStatus](INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING)
 }
 
-@js.native
-sealed trait Feature extends js.Any
+type Feature = "BLUETOOTH" | "VOLUME" | "NOTIFICATIONS" | "LISTS" | "SKILLS" | "NETWORK_PROFILE" | "SETTINGS" | "ALL"
 object Feature {
-  val BLUETOOTH = "BLUETOOTH".asInstanceOf[Feature]
-  val VOLUME = "VOLUME".asInstanceOf[Feature]
-  val NOTIFICATIONS = "NOTIFICATIONS".asInstanceOf[Feature]
-  val LISTS = "LISTS".asInstanceOf[Feature]
-  val SKILLS = "SKILLS".asInstanceOf[Feature]
-  val NETWORK_PROFILE = "NETWORK_PROFILE".asInstanceOf[Feature]
-  val SETTINGS = "SETTINGS".asInstanceOf[Feature]
-  val ALL = "ALL".asInstanceOf[Feature]
+  val BLUETOOTH: "BLUETOOTH" = "BLUETOOTH"
+  val VOLUME: "VOLUME" = "VOLUME"
+  val NOTIFICATIONS: "NOTIFICATIONS" = "NOTIFICATIONS"
+  val LISTS: "LISTS" = "LISTS"
+  val SKILLS: "SKILLS" = "SKILLS"
+  val NETWORK_PROFILE: "NETWORK_PROFILE" = "NETWORK_PROFILE"
+  val SETTINGS: "SETTINGS" = "SETTINGS"
+  val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL)
+  @inline def values = js.Array[Feature](BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL)
 }
 
-@js.native
-sealed trait Locale extends js.Any
+type Locale = "en-US"
 object Locale {
-  val `en-US` = "en-US".asInstanceOf[Locale]
+  val `en-US`: "en-US" = "en-US"
 
-  @inline def values = js.Array(`en-US`)
+  @inline def values = js.Array[Locale](`en-US`)
 }
 
-@js.native
-sealed trait NetworkEapMethod extends js.Any
+type NetworkEapMethod = "EAP_TLS"
 object NetworkEapMethod {
-  val EAP_TLS = "EAP_TLS".asInstanceOf[NetworkEapMethod]
+  val EAP_TLS: "EAP_TLS" = "EAP_TLS"
 
-  @inline def values = js.Array(EAP_TLS)
+  @inline def values = js.Array[NetworkEapMethod](EAP_TLS)
 }
 
-@js.native
-sealed trait NetworkSecurityType extends js.Any
+type NetworkSecurityType = "OPEN" | "WEP" | "WPA_PSK" | "WPA2_PSK" | "WPA2_ENTERPRISE"
 object NetworkSecurityType {
-  val OPEN = "OPEN".asInstanceOf[NetworkSecurityType]
-  val WEP = "WEP".asInstanceOf[NetworkSecurityType]
-  val WPA_PSK = "WPA_PSK".asInstanceOf[NetworkSecurityType]
-  val WPA2_PSK = "WPA2_PSK".asInstanceOf[NetworkSecurityType]
-  val WPA2_ENTERPRISE = "WPA2_ENTERPRISE".asInstanceOf[NetworkSecurityType]
+  val OPEN: "OPEN" = "OPEN"
+  val WEP: "WEP" = "WEP"
+  val WPA_PSK: "WPA_PSK" = "WPA_PSK"
+  val WPA2_PSK: "WPA2_PSK" = "WPA2_PSK"
+  val WPA2_ENTERPRISE: "WPA2_ENTERPRISE" = "WPA2_ENTERPRISE"
 
-  @inline def values = js.Array(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE)
+  @inline def values = js.Array[NetworkSecurityType](OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE)
 }
 
-@js.native
-sealed trait PhoneNumberType extends js.Any
+type PhoneNumberType = "MOBILE" | "WORK" | "HOME"
 object PhoneNumberType {
-  val MOBILE = "MOBILE".asInstanceOf[PhoneNumberType]
-  val WORK = "WORK".asInstanceOf[PhoneNumberType]
-  val HOME = "HOME".asInstanceOf[PhoneNumberType]
+  val MOBILE: "MOBILE" = "MOBILE"
+  val WORK: "WORK" = "WORK"
+  val HOME: "HOME" = "HOME"
 
-  @inline def values = js.Array(MOBILE, WORK, HOME)
+  @inline def values = js.Array[PhoneNumberType](MOBILE, WORK, HOME)
 }
 
-@js.native
-sealed trait RequirePin extends js.Any
+type RequirePin = "YES" | "NO" | "OPTIONAL"
 object RequirePin {
-  val YES = "YES".asInstanceOf[RequirePin]
-  val NO = "NO".asInstanceOf[RequirePin]
-  val OPTIONAL = "OPTIONAL".asInstanceOf[RequirePin]
+  val YES: "YES" = "YES"
+  val NO: "NO" = "NO"
+  val OPTIONAL: "OPTIONAL" = "OPTIONAL"
 
-  @inline def values = js.Array(YES, NO, OPTIONAL)
+  @inline def values = js.Array[RequirePin](YES, NO, OPTIONAL)
 }
 
-@js.native
-sealed trait SipType extends js.Any
+type SipType = "WORK"
 object SipType {
-  val WORK = "WORK".asInstanceOf[SipType]
+  val WORK: "WORK" = "WORK"
 
-  @inline def values = js.Array(WORK)
+  @inline def values = js.Array[SipType](WORK)
 }
 
-@js.native
-sealed trait SkillType extends js.Any
+type SkillType = "PUBLIC" | "PRIVATE"
 object SkillType {
-  val PUBLIC = "PUBLIC".asInstanceOf[SkillType]
-  val PRIVATE = "PRIVATE".asInstanceOf[SkillType]
+  val PUBLIC: "PUBLIC" = "PUBLIC"
+  val PRIVATE: "PRIVATE" = "PRIVATE"
 
-  @inline def values = js.Array(PUBLIC, PRIVATE)
+  @inline def values = js.Array[SkillType](PUBLIC, PRIVATE)
 }
 
-@js.native
-sealed trait SkillTypeFilter extends js.Any
+type SkillTypeFilter = "PUBLIC" | "PRIVATE" | "ALL"
 object SkillTypeFilter {
-  val PUBLIC = "PUBLIC".asInstanceOf[SkillTypeFilter]
-  val PRIVATE = "PRIVATE".asInstanceOf[SkillTypeFilter]
-  val ALL = "ALL".asInstanceOf[SkillTypeFilter]
+  val PUBLIC: "PUBLIC" = "PUBLIC"
+  val PRIVATE: "PRIVATE" = "PRIVATE"
+  val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(PUBLIC, PRIVATE, ALL)
+  @inline def values = js.Array[SkillTypeFilter](PUBLIC, PRIVATE, ALL)
 }
 
-@js.native
-sealed trait SortValue extends js.Any
+type SortValue = "ASC" | "DESC"
 object SortValue {
-  val ASC = "ASC".asInstanceOf[SortValue]
-  val DESC = "DESC".asInstanceOf[SortValue]
+  val ASC: "ASC" = "ASC"
+  val DESC: "DESC" = "DESC"
 
-  @inline def values = js.Array(ASC, DESC)
+  @inline def values = js.Array[SortValue](ASC, DESC)
 }
 
-@js.native
-sealed trait TemperatureUnit extends js.Any
+type TemperatureUnit = "FAHRENHEIT" | "CELSIUS"
 object TemperatureUnit {
-  val FAHRENHEIT = "FAHRENHEIT".asInstanceOf[TemperatureUnit]
-  val CELSIUS = "CELSIUS".asInstanceOf[TemperatureUnit]
+  val FAHRENHEIT: "FAHRENHEIT" = "FAHRENHEIT"
+  val CELSIUS: "CELSIUS" = "CELSIUS"
 
-  @inline def values = js.Array(FAHRENHEIT, CELSIUS)
+  @inline def values = js.Array[TemperatureUnit](FAHRENHEIT, CELSIUS)
 }
 
-@js.native
-sealed trait WakeWord extends js.Any
+type WakeWord = "ALEXA" | "AMAZON" | "ECHO" | "COMPUTER"
 object WakeWord {
-  val ALEXA = "ALEXA".asInstanceOf[WakeWord]
-  val AMAZON = "AMAZON".asInstanceOf[WakeWord]
-  val ECHO = "ECHO".asInstanceOf[WakeWord]
-  val COMPUTER = "COMPUTER".asInstanceOf[WakeWord]
+  val ALEXA: "ALEXA" = "ALEXA"
+  val AMAZON: "AMAZON" = "AMAZON"
+  val ECHO: "ECHO" = "ECHO"
+  val COMPUTER: "COMPUTER" = "COMPUTER"
 
-  @inline def values = js.Array(ALEXA, AMAZON, ECHO, COMPUTER)
+  @inline def values = js.Array[WakeWord](ALEXA, AMAZON, ECHO, COMPUTER)
 }

@@ -1,53 +1,47 @@
 package facade.amazonaws.services.dax
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ChangeType extends js.Any
+type ChangeType = "IMMEDIATE" | "REQUIRES_REBOOT"
 object ChangeType {
-  val IMMEDIATE = "IMMEDIATE".asInstanceOf[ChangeType]
-  val REQUIRES_REBOOT = "REQUIRES_REBOOT".asInstanceOf[ChangeType]
+  val IMMEDIATE: "IMMEDIATE" = "IMMEDIATE"
+  val REQUIRES_REBOOT: "REQUIRES_REBOOT" = "REQUIRES_REBOOT"
 
-  @inline def values = js.Array(IMMEDIATE, REQUIRES_REBOOT)
+  @inline def values = js.Array[ChangeType](IMMEDIATE, REQUIRES_REBOOT)
 }
 
-@js.native
-sealed trait IsModifiable extends js.Any
+type IsModifiable = "TRUE" | "FALSE" | "CONDITIONAL"
 object IsModifiable {
-  val TRUE = "TRUE".asInstanceOf[IsModifiable]
-  val FALSE = "FALSE".asInstanceOf[IsModifiable]
-  val CONDITIONAL = "CONDITIONAL".asInstanceOf[IsModifiable]
+  val TRUE: "TRUE" = "TRUE"
+  val FALSE: "FALSE" = "FALSE"
+  val CONDITIONAL: "CONDITIONAL" = "CONDITIONAL"
 
-  @inline def values = js.Array(TRUE, FALSE, CONDITIONAL)
+  @inline def values = js.Array[IsModifiable](TRUE, FALSE, CONDITIONAL)
 }
 
-@js.native
-sealed trait ParameterType extends js.Any
+type ParameterType = "DEFAULT" | "NODE_TYPE_SPECIFIC"
 object ParameterType {
-  val DEFAULT = "DEFAULT".asInstanceOf[ParameterType]
-  val NODE_TYPE_SPECIFIC = "NODE_TYPE_SPECIFIC".asInstanceOf[ParameterType]
+  val DEFAULT: "DEFAULT" = "DEFAULT"
+  val NODE_TYPE_SPECIFIC: "NODE_TYPE_SPECIFIC" = "NODE_TYPE_SPECIFIC"
 
-  @inline def values = js.Array(DEFAULT, NODE_TYPE_SPECIFIC)
+  @inline def values = js.Array[ParameterType](DEFAULT, NODE_TYPE_SPECIFIC)
 }
 
-@js.native
-sealed trait SSEStatus extends js.Any
+type SSEStatus = "ENABLING" | "ENABLED" | "DISABLING" | "DISABLED"
 object SSEStatus {
-  val ENABLING = "ENABLING".asInstanceOf[SSEStatus]
-  val ENABLED = "ENABLED".asInstanceOf[SSEStatus]
-  val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
-  val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
+  val ENABLING: "ENABLING" = "ENABLING"
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLING: "DISABLING" = "DISABLING"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
+  @inline def values = js.Array[SSEStatus](ENABLING, ENABLED, DISABLING, DISABLED)
 }
 
-@js.native
-sealed trait SourceType extends js.Any
+type SourceType = "CLUSTER" | "PARAMETER_GROUP" | "SUBNET_GROUP"
 object SourceType {
-  val CLUSTER = "CLUSTER".asInstanceOf[SourceType]
-  val PARAMETER_GROUP = "PARAMETER_GROUP".asInstanceOf[SourceType]
-  val SUBNET_GROUP = "SUBNET_GROUP".asInstanceOf[SourceType]
+  val CLUSTER: "CLUSTER" = "CLUSTER"
+  val PARAMETER_GROUP: "PARAMETER_GROUP" = "PARAMETER_GROUP"
+  val SUBNET_GROUP: "SUBNET_GROUP" = "SUBNET_GROUP"
 
-  @inline def values = js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP)
+  @inline def values = js.Array[SourceType](CLUSTER, PARAMETER_GROUP, SUBNET_GROUP)
 }

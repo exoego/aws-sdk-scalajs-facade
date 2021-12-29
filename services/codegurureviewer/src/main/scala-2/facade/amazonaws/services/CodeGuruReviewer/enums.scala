@@ -54,3 +54,4 @@ object Type {
 
   @inline def values = js.Array(PullRequest, RepositoryAnalysis)
 }
+

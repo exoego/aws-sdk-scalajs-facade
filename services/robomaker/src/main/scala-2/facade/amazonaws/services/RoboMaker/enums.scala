@@ -41,32 +41,7 @@ object DeploymentJobErrorCode {
   val DeploymentFleetDoesNotExist = "DeploymentFleetDoesNotExist".asInstanceOf[DeploymentJobErrorCode]
   val FleetDeploymentTimeout = "FleetDeploymentTimeout".asInstanceOf[DeploymentJobErrorCode]
 
-  @inline def values = js.Array(
-    ResourceNotFound,
-    EnvironmentSetupError,
-    EtagMismatch,
-    FailureThresholdBreached,
-    RobotDeploymentAborted,
-    RobotDeploymentNoResponse,
-    RobotAgentConnectionTimeout,
-    GreengrassDeploymentFailed,
-    InvalidGreengrassGroup,
-    MissingRobotArchitecture,
-    MissingRobotApplicationArchitecture,
-    MissingRobotDeploymentResource,
-    GreengrassGroupVersionDoesNotExist,
-    LambdaDeleted,
-    ExtractingBundleFailure,
-    PreLaunchFileFailure,
-    PostLaunchFileFailure,
-    BadPermissionError,
-    DownloadConditionFailed,
-    BadLambdaAssociated,
-    InternalServerError,
-    RobotApplicationDoesNotExist,
-    DeploymentFleetDoesNotExist,
-    FleetDeploymentTimeout
-  )
+  @inline def values = js.Array(ResourceNotFound, EnvironmentSetupError, EtagMismatch, FailureThresholdBreached, RobotDeploymentAborted, RobotDeploymentNoResponse, RobotAgentConnectionTimeout, GreengrassDeploymentFailed, InvalidGreengrassGroup, MissingRobotArchitecture, MissingRobotApplicationArchitecture, MissingRobotDeploymentResource, GreengrassGroupVersionDoesNotExist, LambdaDeleted, ExtractingBundleFailure, PreLaunchFileFailure, PostLaunchFileFailure, BadPermissionError, DownloadConditionFailed, BadLambdaAssociated, InternalServerError, RobotApplicationDoesNotExist, DeploymentFleetDoesNotExist, FleetDeploymentTimeout)
 }
 
 @js.native
@@ -214,39 +189,7 @@ object SimulationJobErrorCode {
   val WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
   val UploadContentMismatchError = "UploadContentMismatchError".asInstanceOf[SimulationJobErrorCode]
 
-  @inline def values = js.Array(
-    InternalServiceError,
-    RobotApplicationCrash,
-    SimulationApplicationCrash,
-    RobotApplicationHealthCheckFailure,
-    SimulationApplicationHealthCheckFailure,
-    BadPermissionsRobotApplication,
-    BadPermissionsSimulationApplication,
-    BadPermissionsS3Object,
-    BadPermissionsS3Output,
-    BadPermissionsCloudwatchLogs,
-    SubnetIpLimitExceeded,
-    ENILimitExceeded,
-    BadPermissionsUserCredentials,
-    InvalidBundleRobotApplication,
-    InvalidBundleSimulationApplication,
-    InvalidS3Resource,
-    ThrottlingError,
-    LimitExceeded,
-    MismatchedEtag,
-    RobotApplicationVersionMismatchedEtag,
-    SimulationApplicationVersionMismatchedEtag,
-    ResourceNotFound,
-    RequestThrottled,
-    BatchTimedOut,
-    BatchCanceled,
-    InvalidInput,
-    WrongRegionS3Bucket,
-    WrongRegionS3Output,
-    WrongRegionRobotApplication,
-    WrongRegionSimulationApplication,
-    UploadContentMismatchError
-  )
+  @inline def values = js.Array(InternalServiceError, RobotApplicationCrash, SimulationApplicationCrash, RobotApplicationHealthCheckFailure, SimulationApplicationHealthCheckFailure, BadPermissionsRobotApplication, BadPermissionsSimulationApplication, BadPermissionsS3Object, BadPermissionsS3Output, BadPermissionsCloudwatchLogs, SubnetIpLimitExceeded, ENILimitExceeded, BadPermissionsUserCredentials, InvalidBundleRobotApplication, InvalidBundleSimulationApplication, InvalidS3Resource, ThrottlingError, LimitExceeded, MismatchedEtag, RobotApplicationVersionMismatchedEtag, SimulationApplicationVersionMismatchedEtag, ResourceNotFound, RequestThrottled, BatchTimedOut, BatchCanceled, InvalidInput, WrongRegionS3Bucket, WrongRegionS3Output, WrongRegionRobotApplication, WrongRegionSimulationApplication, UploadContentMismatchError)
 }
 
 @js.native
@@ -336,3 +279,4 @@ object WorldGenerationJobStatus {
 
   @inline def values = js.Array(Pending, Running, Completed, Failed, PartialFailed, Canceling, Canceled)
 }
+

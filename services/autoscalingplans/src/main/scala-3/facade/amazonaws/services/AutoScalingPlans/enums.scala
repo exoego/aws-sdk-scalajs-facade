@@ -1,82 +1,74 @@
 package facade.amazonaws.services.autoscalingplans
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ForecastDataType extends js.Any
+type ForecastDataType = "CapacityForecast" | "LoadForecast" | "ScheduledActionMinCapacity" | "ScheduledActionMaxCapacity"
 object ForecastDataType {
-  val CapacityForecast = "CapacityForecast".asInstanceOf[ForecastDataType]
-  val LoadForecast = "LoadForecast".asInstanceOf[ForecastDataType]
-  val ScheduledActionMinCapacity = "ScheduledActionMinCapacity".asInstanceOf[ForecastDataType]
-  val ScheduledActionMaxCapacity = "ScheduledActionMaxCapacity".asInstanceOf[ForecastDataType]
+  val CapacityForecast: "CapacityForecast" = "CapacityForecast"
+  val LoadForecast: "LoadForecast" = "LoadForecast"
+  val ScheduledActionMinCapacity: "ScheduledActionMinCapacity" = "ScheduledActionMinCapacity"
+  val ScheduledActionMaxCapacity: "ScheduledActionMaxCapacity" = "ScheduledActionMaxCapacity"
 
-  @inline def values = js.Array(CapacityForecast, LoadForecast, ScheduledActionMinCapacity, ScheduledActionMaxCapacity)
+  @inline def values = js.Array[ForecastDataType](CapacityForecast, LoadForecast, ScheduledActionMinCapacity, ScheduledActionMaxCapacity)
 }
 
-@js.native
-sealed trait LoadMetricType extends js.Any
+type LoadMetricType = "ASGTotalCPUUtilization" | "ASGTotalNetworkIn" | "ASGTotalNetworkOut" | "ALBTargetGroupRequestCount"
 object LoadMetricType {
-  val ASGTotalCPUUtilization = "ASGTotalCPUUtilization".asInstanceOf[LoadMetricType]
-  val ASGTotalNetworkIn = "ASGTotalNetworkIn".asInstanceOf[LoadMetricType]
-  val ASGTotalNetworkOut = "ASGTotalNetworkOut".asInstanceOf[LoadMetricType]
-  val ALBTargetGroupRequestCount = "ALBTargetGroupRequestCount".asInstanceOf[LoadMetricType]
+  val ASGTotalCPUUtilization: "ASGTotalCPUUtilization" = "ASGTotalCPUUtilization"
+  val ASGTotalNetworkIn: "ASGTotalNetworkIn" = "ASGTotalNetworkIn"
+  val ASGTotalNetworkOut: "ASGTotalNetworkOut" = "ASGTotalNetworkOut"
+  val ALBTargetGroupRequestCount: "ALBTargetGroupRequestCount" = "ALBTargetGroupRequestCount"
 
-  @inline def values = js.Array(ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount)
+  @inline def values = js.Array[LoadMetricType](ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount)
 }
 
-@js.native
-sealed trait MetricStatistic extends js.Any
+type MetricStatistic = "Average" | "Minimum" | "Maximum" | "SampleCount" | "Sum"
 object MetricStatistic {
-  val Average = "Average".asInstanceOf[MetricStatistic]
-  val Minimum = "Minimum".asInstanceOf[MetricStatistic]
-  val Maximum = "Maximum".asInstanceOf[MetricStatistic]
-  val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-  val Sum = "Sum".asInstanceOf[MetricStatistic]
+  val Average: "Average" = "Average"
+  val Minimum: "Minimum" = "Minimum"
+  val Maximum: "Maximum" = "Maximum"
+  val SampleCount: "SampleCount" = "SampleCount"
+  val Sum: "Sum" = "Sum"
 
-  @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
+  @inline def values = js.Array[MetricStatistic](Average, Minimum, Maximum, SampleCount, Sum)
 }
 
-@js.native
-sealed trait PolicyType extends js.Any
+type PolicyType = "TargetTrackingScaling"
 object PolicyType {
-  val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
+  val TargetTrackingScaling: "TargetTrackingScaling" = "TargetTrackingScaling"
 
-  @inline def values = js.Array(TargetTrackingScaling)
+  @inline def values = js.Array[PolicyType](TargetTrackingScaling)
 }
 
-@js.native
-sealed trait PredictiveScalingMaxCapacityBehavior extends js.Any
+type PredictiveScalingMaxCapacityBehavior = "SetForecastCapacityToMaxCapacity" | "SetMaxCapacityToForecastCapacity" | "SetMaxCapacityAboveForecastCapacity"
 object PredictiveScalingMaxCapacityBehavior {
-  val SetForecastCapacityToMaxCapacity = "SetForecastCapacityToMaxCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
-  val SetMaxCapacityToForecastCapacity = "SetMaxCapacityToForecastCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
-  val SetMaxCapacityAboveForecastCapacity = "SetMaxCapacityAboveForecastCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
+  val SetForecastCapacityToMaxCapacity: "SetForecastCapacityToMaxCapacity" = "SetForecastCapacityToMaxCapacity"
+  val SetMaxCapacityToForecastCapacity: "SetMaxCapacityToForecastCapacity" = "SetMaxCapacityToForecastCapacity"
+  val SetMaxCapacityAboveForecastCapacity: "SetMaxCapacityAboveForecastCapacity" = "SetMaxCapacityAboveForecastCapacity"
 
-  @inline def values = js.Array(SetForecastCapacityToMaxCapacity, SetMaxCapacityToForecastCapacity, SetMaxCapacityAboveForecastCapacity)
+  @inline def values = js.Array[PredictiveScalingMaxCapacityBehavior](SetForecastCapacityToMaxCapacity, SetMaxCapacityToForecastCapacity, SetMaxCapacityAboveForecastCapacity)
 }
 
-@js.native
-sealed trait PredictiveScalingMode extends js.Any
+type PredictiveScalingMode = "ForecastAndScale" | "ForecastOnly"
 object PredictiveScalingMode {
-  val ForecastAndScale = "ForecastAndScale".asInstanceOf[PredictiveScalingMode]
-  val ForecastOnly = "ForecastOnly".asInstanceOf[PredictiveScalingMode]
+  val ForecastAndScale: "ForecastAndScale" = "ForecastAndScale"
+  val ForecastOnly: "ForecastOnly" = "ForecastOnly"
 
-  @inline def values = js.Array(ForecastAndScale, ForecastOnly)
+  @inline def values = js.Array[PredictiveScalingMode](ForecastAndScale, ForecastOnly)
 }
 
-@js.native
-sealed trait ScalableDimension extends js.Any
+type ScalableDimension = "autoscaling:autoScalingGroup:DesiredCapacity" | "ecs:service:DesiredCount" | "ec2:spot-fleet-request:TargetCapacity" | "rds:cluster:ReadReplicaCount" | "dynamodb:table:ReadCapacityUnits" | "dynamodb:table:WriteCapacityUnits" | "dynamodb:index:ReadCapacityUnits" | "dynamodb:index:WriteCapacityUnits"
 object ScalableDimension {
-  val `autoscaling:autoScalingGroup:DesiredCapacity` = "autoscaling:autoScalingGroup:DesiredCapacity".asInstanceOf[ScalableDimension]
-  val `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
-  val `ec2:spot-fleet-request:TargetCapacity` = "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
-  val `rds:cluster:ReadReplicaCount` = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
-  val `dynamodb:table:ReadCapacityUnits` = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-  val `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-  val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-  val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
+  val `autoscaling:autoScalingGroup:DesiredCapacity`: "autoscaling:autoScalingGroup:DesiredCapacity" = "autoscaling:autoScalingGroup:DesiredCapacity"
+  val `ecs:service:DesiredCount`: "ecs:service:DesiredCount" = "ecs:service:DesiredCount"
+  val `ec2:spot-fleet-request:TargetCapacity`: "ec2:spot-fleet-request:TargetCapacity" = "ec2:spot-fleet-request:TargetCapacity"
+  val `rds:cluster:ReadReplicaCount`: "rds:cluster:ReadReplicaCount" = "rds:cluster:ReadReplicaCount"
+  val `dynamodb:table:ReadCapacityUnits`: "dynamodb:table:ReadCapacityUnits" = "dynamodb:table:ReadCapacityUnits"
+  val `dynamodb:table:WriteCapacityUnits`: "dynamodb:table:WriteCapacityUnits" = "dynamodb:table:WriteCapacityUnits"
+  val `dynamodb:index:ReadCapacityUnits`: "dynamodb:index:ReadCapacityUnits" = "dynamodb:index:ReadCapacityUnits"
+  val `dynamodb:index:WriteCapacityUnits`: "dynamodb:index:WriteCapacityUnits" = "dynamodb:index:WriteCapacityUnits"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[ScalableDimension](
     `autoscaling:autoScalingGroup:DesiredCapacity`,
     `ecs:service:DesiredCount`,
     `ec2:spot-fleet-request:TargetCapacity`,
@@ -88,24 +80,23 @@ object ScalableDimension {
   )
 }
 
-@js.native
-sealed trait ScalingMetricType extends js.Any
+type ScalingMetricType = "ASGAverageCPUUtilization" | "ASGAverageNetworkIn" | "ASGAverageNetworkOut" | "DynamoDBReadCapacityUtilization" | "DynamoDBWriteCapacityUtilization" | "ECSServiceAverageCPUUtilization" | "ECSServiceAverageMemoryUtilization" | "ALBRequestCountPerTarget" | "RDSReaderAverageCPUUtilization" | "RDSReaderAverageDatabaseConnections" | "EC2SpotFleetRequestAverageCPUUtilization" | "EC2SpotFleetRequestAverageNetworkIn" | "EC2SpotFleetRequestAverageNetworkOut"
 object ScalingMetricType {
-  val ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-  val ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[ScalingMetricType]
-  val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[ScalingMetricType]
-  val DynamoDBReadCapacityUtilization = "DynamoDBReadCapacityUtilization".asInstanceOf[ScalingMetricType]
-  val DynamoDBWriteCapacityUtilization = "DynamoDBWriteCapacityUtilization".asInstanceOf[ScalingMetricType]
-  val ECSServiceAverageCPUUtilization = "ECSServiceAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-  val ECSServiceAverageMemoryUtilization = "ECSServiceAverageMemoryUtilization".asInstanceOf[ScalingMetricType]
-  val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[ScalingMetricType]
-  val RDSReaderAverageCPUUtilization = "RDSReaderAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-  val RDSReaderAverageDatabaseConnections = "RDSReaderAverageDatabaseConnections".asInstanceOf[ScalingMetricType]
-  val EC2SpotFleetRequestAverageCPUUtilization = "EC2SpotFleetRequestAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-  val EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[ScalingMetricType]
-  val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[ScalingMetricType]
+  val ASGAverageCPUUtilization: "ASGAverageCPUUtilization" = "ASGAverageCPUUtilization"
+  val ASGAverageNetworkIn: "ASGAverageNetworkIn" = "ASGAverageNetworkIn"
+  val ASGAverageNetworkOut: "ASGAverageNetworkOut" = "ASGAverageNetworkOut"
+  val DynamoDBReadCapacityUtilization: "DynamoDBReadCapacityUtilization" = "DynamoDBReadCapacityUtilization"
+  val DynamoDBWriteCapacityUtilization: "DynamoDBWriteCapacityUtilization" = "DynamoDBWriteCapacityUtilization"
+  val ECSServiceAverageCPUUtilization: "ECSServiceAverageCPUUtilization" = "ECSServiceAverageCPUUtilization"
+  val ECSServiceAverageMemoryUtilization: "ECSServiceAverageMemoryUtilization" = "ECSServiceAverageMemoryUtilization"
+  val ALBRequestCountPerTarget: "ALBRequestCountPerTarget" = "ALBRequestCountPerTarget"
+  val RDSReaderAverageCPUUtilization: "RDSReaderAverageCPUUtilization" = "RDSReaderAverageCPUUtilization"
+  val RDSReaderAverageDatabaseConnections: "RDSReaderAverageDatabaseConnections" = "RDSReaderAverageDatabaseConnections"
+  val EC2SpotFleetRequestAverageCPUUtilization: "EC2SpotFleetRequestAverageCPUUtilization" = "EC2SpotFleetRequestAverageCPUUtilization"
+  val EC2SpotFleetRequestAverageNetworkIn: "EC2SpotFleetRequestAverageNetworkIn" = "EC2SpotFleetRequestAverageNetworkIn"
+  val EC2SpotFleetRequestAverageNetworkOut: "EC2SpotFleetRequestAverageNetworkOut" = "EC2SpotFleetRequestAverageNetworkOut"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[ScalingMetricType](
     ASGAverageCPUUtilization,
     ASGAverageNetworkIn,
     ASGAverageNetworkOut,
@@ -122,48 +113,44 @@ object ScalingMetricType {
   )
 }
 
-@js.native
-sealed trait ScalingPlanStatusCode extends js.Any
+type ScalingPlanStatusCode = "Active" | "ActiveWithProblems" | "CreationInProgress" | "CreationFailed" | "DeletionInProgress" | "DeletionFailed" | "UpdateInProgress" | "UpdateFailed"
 object ScalingPlanStatusCode {
-  val Active = "Active".asInstanceOf[ScalingPlanStatusCode]
-  val ActiveWithProblems = "ActiveWithProblems".asInstanceOf[ScalingPlanStatusCode]
-  val CreationInProgress = "CreationInProgress".asInstanceOf[ScalingPlanStatusCode]
-  val CreationFailed = "CreationFailed".asInstanceOf[ScalingPlanStatusCode]
-  val DeletionInProgress = "DeletionInProgress".asInstanceOf[ScalingPlanStatusCode]
-  val DeletionFailed = "DeletionFailed".asInstanceOf[ScalingPlanStatusCode]
-  val UpdateInProgress = "UpdateInProgress".asInstanceOf[ScalingPlanStatusCode]
-  val UpdateFailed = "UpdateFailed".asInstanceOf[ScalingPlanStatusCode]
+  val Active: "Active" = "Active"
+  val ActiveWithProblems: "ActiveWithProblems" = "ActiveWithProblems"
+  val CreationInProgress: "CreationInProgress" = "CreationInProgress"
+  val CreationFailed: "CreationFailed" = "CreationFailed"
+  val DeletionInProgress: "DeletionInProgress" = "DeletionInProgress"
+  val DeletionFailed: "DeletionFailed" = "DeletionFailed"
+  val UpdateInProgress: "UpdateInProgress" = "UpdateInProgress"
+  val UpdateFailed: "UpdateFailed" = "UpdateFailed"
 
-  @inline def values = js.Array(Active, ActiveWithProblems, CreationInProgress, CreationFailed, DeletionInProgress, DeletionFailed, UpdateInProgress, UpdateFailed)
+  @inline def values = js.Array[ScalingPlanStatusCode](Active, ActiveWithProblems, CreationInProgress, CreationFailed, DeletionInProgress, DeletionFailed, UpdateInProgress, UpdateFailed)
 }
 
-@js.native
-sealed trait ScalingPolicyUpdateBehavior extends js.Any
+type ScalingPolicyUpdateBehavior = "KeepExternalPolicies" | "ReplaceExternalPolicies"
 object ScalingPolicyUpdateBehavior {
-  val KeepExternalPolicies = "KeepExternalPolicies".asInstanceOf[ScalingPolicyUpdateBehavior]
-  val ReplaceExternalPolicies = "ReplaceExternalPolicies".asInstanceOf[ScalingPolicyUpdateBehavior]
+  val KeepExternalPolicies: "KeepExternalPolicies" = "KeepExternalPolicies"
+  val ReplaceExternalPolicies: "ReplaceExternalPolicies" = "ReplaceExternalPolicies"
 
-  @inline def values = js.Array(KeepExternalPolicies, ReplaceExternalPolicies)
+  @inline def values = js.Array[ScalingPolicyUpdateBehavior](KeepExternalPolicies, ReplaceExternalPolicies)
 }
 
-@js.native
-sealed trait ScalingStatusCode extends js.Any
+type ScalingStatusCode = "Inactive" | "PartiallyActive" | "Active"
 object ScalingStatusCode {
-  val Inactive = "Inactive".asInstanceOf[ScalingStatusCode]
-  val PartiallyActive = "PartiallyActive".asInstanceOf[ScalingStatusCode]
-  val Active = "Active".asInstanceOf[ScalingStatusCode]
+  val Inactive: "Inactive" = "Inactive"
+  val PartiallyActive: "PartiallyActive" = "PartiallyActive"
+  val Active: "Active" = "Active"
 
-  @inline def values = js.Array(Inactive, PartiallyActive, Active)
+  @inline def values = js.Array[ScalingStatusCode](Inactive, PartiallyActive, Active)
 }
 
-@js.native
-sealed trait ServiceNamespace extends js.Any
+type ServiceNamespace = "autoscaling" | "ecs" | "ec2" | "rds" | "dynamodb"
 object ServiceNamespace {
-  val autoscaling = "autoscaling".asInstanceOf[ServiceNamespace]
-  val ecs = "ecs".asInstanceOf[ServiceNamespace]
-  val ec2 = "ec2".asInstanceOf[ServiceNamespace]
-  val rds = "rds".asInstanceOf[ServiceNamespace]
-  val dynamodb = "dynamodb".asInstanceOf[ServiceNamespace]
+  val autoscaling: "autoscaling" = "autoscaling"
+  val ecs: "ecs" = "ecs"
+  val ec2: "ec2" = "ec2"
+  val rds: "rds" = "rds"
+  val dynamodb: "dynamodb" = "dynamodb"
 
-  @inline def values = js.Array(autoscaling, ecs, ec2, rds, dynamodb)
+  @inline def values = js.Array[ServiceNamespace](autoscaling, ecs, ec2, rds, dynamodb)
 }

@@ -1,95 +1,84 @@
 package facade.amazonaws.services.dlm
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait EventSourceValues extends js.Any
+type EventSourceValues = "MANAGED_CWE"
 object EventSourceValues {
-  val MANAGED_CWE = "MANAGED_CWE".asInstanceOf[EventSourceValues]
+  val MANAGED_CWE: "MANAGED_CWE" = "MANAGED_CWE"
 
-  @inline def values = js.Array(MANAGED_CWE)
+  @inline def values = js.Array[EventSourceValues](MANAGED_CWE)
 }
 
-@js.native
-sealed trait EventTypeValues extends js.Any
+type EventTypeValues = "shareSnapshot"
 object EventTypeValues {
-  val shareSnapshot = "shareSnapshot".asInstanceOf[EventTypeValues]
+  val shareSnapshot: "shareSnapshot" = "shareSnapshot"
 
-  @inline def values = js.Array(shareSnapshot)
+  @inline def values = js.Array[EventTypeValues](shareSnapshot)
 }
 
-@js.native
-sealed trait GettablePolicyStateValues extends js.Any
+type GettablePolicyStateValues = "ENABLED" | "DISABLED" | "ERROR"
 object GettablePolicyStateValues {
-  val ENABLED = "ENABLED".asInstanceOf[GettablePolicyStateValues]
-  val DISABLED = "DISABLED".asInstanceOf[GettablePolicyStateValues]
-  val ERROR = "ERROR".asInstanceOf[GettablePolicyStateValues]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
+  val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(ENABLED, DISABLED, ERROR)
+  @inline def values = js.Array[GettablePolicyStateValues](ENABLED, DISABLED, ERROR)
 }
 
-@js.native
-sealed trait IntervalUnitValues extends js.Any
+type IntervalUnitValues = "HOURS"
 object IntervalUnitValues {
-  val HOURS = "HOURS".asInstanceOf[IntervalUnitValues]
+  val HOURS: "HOURS" = "HOURS"
 
-  @inline def values = js.Array(HOURS)
+  @inline def values = js.Array[IntervalUnitValues](HOURS)
 }
 
-@js.native
-sealed trait LocationValues extends js.Any
+type LocationValues = "CLOUD" | "OUTPOST_LOCAL"
 object LocationValues {
-  val CLOUD = "CLOUD".asInstanceOf[LocationValues]
-  val OUTPOST_LOCAL = "OUTPOST_LOCAL".asInstanceOf[LocationValues]
+  val CLOUD: "CLOUD" = "CLOUD"
+  val OUTPOST_LOCAL: "OUTPOST_LOCAL" = "OUTPOST_LOCAL"
 
-  @inline def values = js.Array(CLOUD, OUTPOST_LOCAL)
+  @inline def values = js.Array[LocationValues](CLOUD, OUTPOST_LOCAL)
 }
 
-@js.native
-sealed trait PolicyTypeValues extends js.Any
+type PolicyTypeValues = "EBS_SNAPSHOT_MANAGEMENT" | "IMAGE_MANAGEMENT" | "EVENT_BASED_POLICY"
 object PolicyTypeValues {
-  val EBS_SNAPSHOT_MANAGEMENT = "EBS_SNAPSHOT_MANAGEMENT".asInstanceOf[PolicyTypeValues]
-  val IMAGE_MANAGEMENT = "IMAGE_MANAGEMENT".asInstanceOf[PolicyTypeValues]
-  val EVENT_BASED_POLICY = "EVENT_BASED_POLICY".asInstanceOf[PolicyTypeValues]
+  val EBS_SNAPSHOT_MANAGEMENT: "EBS_SNAPSHOT_MANAGEMENT" = "EBS_SNAPSHOT_MANAGEMENT"
+  val IMAGE_MANAGEMENT: "IMAGE_MANAGEMENT" = "IMAGE_MANAGEMENT"
+  val EVENT_BASED_POLICY: "EVENT_BASED_POLICY" = "EVENT_BASED_POLICY"
 
-  @inline def values = js.Array(EBS_SNAPSHOT_MANAGEMENT, IMAGE_MANAGEMENT, EVENT_BASED_POLICY)
+  @inline def values = js.Array[PolicyTypeValues](EBS_SNAPSHOT_MANAGEMENT, IMAGE_MANAGEMENT, EVENT_BASED_POLICY)
 }
 
-@js.native
-sealed trait ResourceLocationValues extends js.Any
+type ResourceLocationValues = "CLOUD" | "OUTPOST"
 object ResourceLocationValues {
-  val CLOUD = "CLOUD".asInstanceOf[ResourceLocationValues]
-  val OUTPOST = "OUTPOST".asInstanceOf[ResourceLocationValues]
+  val CLOUD: "CLOUD" = "CLOUD"
+  val OUTPOST: "OUTPOST" = "OUTPOST"
 
-  @inline def values = js.Array(CLOUD, OUTPOST)
+  @inline def values = js.Array[ResourceLocationValues](CLOUD, OUTPOST)
 }
 
-@js.native
-sealed trait ResourceTypeValues extends js.Any
+type ResourceTypeValues = "VOLUME" | "INSTANCE"
 object ResourceTypeValues {
-  val VOLUME = "VOLUME".asInstanceOf[ResourceTypeValues]
-  val INSTANCE = "INSTANCE".asInstanceOf[ResourceTypeValues]
+  val VOLUME: "VOLUME" = "VOLUME"
+  val INSTANCE: "INSTANCE" = "INSTANCE"
 
-  @inline def values = js.Array(VOLUME, INSTANCE)
+  @inline def values = js.Array[ResourceTypeValues](VOLUME, INSTANCE)
 }
 
-@js.native
-sealed trait RetentionIntervalUnitValues extends js.Any
+type RetentionIntervalUnitValues = "DAYS" | "WEEKS" | "MONTHS" | "YEARS"
 object RetentionIntervalUnitValues {
-  val DAYS = "DAYS".asInstanceOf[RetentionIntervalUnitValues]
-  val WEEKS = "WEEKS".asInstanceOf[RetentionIntervalUnitValues]
-  val MONTHS = "MONTHS".asInstanceOf[RetentionIntervalUnitValues]
-  val YEARS = "YEARS".asInstanceOf[RetentionIntervalUnitValues]
+  val DAYS: "DAYS" = "DAYS"
+  val WEEKS: "WEEKS" = "WEEKS"
+  val MONTHS: "MONTHS" = "MONTHS"
+  val YEARS: "YEARS" = "YEARS"
 
-  @inline def values = js.Array(DAYS, WEEKS, MONTHS, YEARS)
+  @inline def values = js.Array[RetentionIntervalUnitValues](DAYS, WEEKS, MONTHS, YEARS)
 }
 
-@js.native
-sealed trait SettablePolicyStateValues extends js.Any
+type SettablePolicyStateValues = "ENABLED" | "DISABLED"
 object SettablePolicyStateValues {
-  val ENABLED = "ENABLED".asInstanceOf[SettablePolicyStateValues]
-  val DISABLED = "DISABLED".asInstanceOf[SettablePolicyStateValues]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[SettablePolicyStateValues](ENABLED, DISABLED)
 }

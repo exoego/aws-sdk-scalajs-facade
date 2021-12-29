@@ -12,3 +12,4 @@ object UsageRecordResultStatus {
 
   @inline def values = js.Array(Success, CustomerNotSubscribed, DuplicateRecord)
 }
+

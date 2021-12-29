@@ -1,113 +1,102 @@
 package facade.amazonaws.services.managedblockchain
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait Edition extends js.Any
+type Edition = "STARTER" | "STANDARD"
 object Edition {
-  val STARTER = "STARTER".asInstanceOf[Edition]
-  val STANDARD = "STANDARD".asInstanceOf[Edition]
+  val STARTER: "STARTER" = "STARTER"
+  val STANDARD: "STANDARD" = "STANDARD"
 
-  @inline def values = js.Array(STARTER, STANDARD)
+  @inline def values = js.Array[Edition](STARTER, STANDARD)
 }
 
-@js.native
-sealed trait Framework extends js.Any
+type Framework = "HYPERLEDGER_FABRIC" | "ETHEREUM"
 object Framework {
-  val HYPERLEDGER_FABRIC = "HYPERLEDGER_FABRIC".asInstanceOf[Framework]
-  val ETHEREUM = "ETHEREUM".asInstanceOf[Framework]
+  val HYPERLEDGER_FABRIC: "HYPERLEDGER_FABRIC" = "HYPERLEDGER_FABRIC"
+  val ETHEREUM: "ETHEREUM" = "ETHEREUM"
 
-  @inline def values = js.Array(HYPERLEDGER_FABRIC, ETHEREUM)
+  @inline def values = js.Array[Framework](HYPERLEDGER_FABRIC, ETHEREUM)
 }
 
-@js.native
-sealed trait InvitationStatus extends js.Any
+type InvitationStatus = "PENDING" | "ACCEPTED" | "ACCEPTING" | "REJECTED" | "EXPIRED"
 object InvitationStatus {
-  val PENDING = "PENDING".asInstanceOf[InvitationStatus]
-  val ACCEPTED = "ACCEPTED".asInstanceOf[InvitationStatus]
-  val ACCEPTING = "ACCEPTING".asInstanceOf[InvitationStatus]
-  val REJECTED = "REJECTED".asInstanceOf[InvitationStatus]
-  val EXPIRED = "EXPIRED".asInstanceOf[InvitationStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val ACCEPTED: "ACCEPTED" = "ACCEPTED"
+  val ACCEPTING: "ACCEPTING" = "ACCEPTING"
+  val REJECTED: "REJECTED" = "REJECTED"
+  val EXPIRED: "EXPIRED" = "EXPIRED"
 
-  @inline def values = js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
+  @inline def values = js.Array[InvitationStatus](PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
 }
 
-@js.native
-sealed trait MemberStatus extends js.Any
+type MemberStatus = "CREATING" | "AVAILABLE" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETED"
 object MemberStatus {
-  val CREATING = "CREATING".asInstanceOf[MemberStatus]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[MemberStatus]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[MemberStatus]
-  val UPDATING = "UPDATING".asInstanceOf[MemberStatus]
-  val DELETING = "DELETING".asInstanceOf[MemberStatus]
-  val DELETED = "DELETED".asInstanceOf[MemberStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val DELETING: "DELETING" = "DELETING"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
+  @inline def values = js.Array[MemberStatus](CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
 }
 
-@js.native
-sealed trait NetworkStatus extends js.Any
+type NetworkStatus = "CREATING" | "AVAILABLE" | "CREATE_FAILED" | "DELETING" | "DELETED"
 object NetworkStatus {
-  val CREATING = "CREATING".asInstanceOf[NetworkStatus]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[NetworkStatus]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NetworkStatus]
-  val DELETING = "DELETING".asInstanceOf[NetworkStatus]
-  val DELETED = "DELETED".asInstanceOf[NetworkStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  val DELETING: "DELETING" = "DELETING"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
+  @inline def values = js.Array[NetworkStatus](CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
 }
 
-@js.native
-sealed trait NodeStatus extends js.Any
+type NodeStatus = "CREATING" | "AVAILABLE" | "UNHEALTHY" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETED" | "FAILED"
 object NodeStatus {
-  val CREATING = "CREATING".asInstanceOf[NodeStatus]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[NodeStatus]
-  val UNHEALTHY = "UNHEALTHY".asInstanceOf[NodeStatus]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[NodeStatus]
-  val UPDATING = "UPDATING".asInstanceOf[NodeStatus]
-  val DELETING = "DELETING".asInstanceOf[NodeStatus]
-  val DELETED = "DELETED".asInstanceOf[NodeStatus]
-  val FAILED = "FAILED".asInstanceOf[NodeStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val DELETING: "DELETING" = "DELETING"
+  val DELETED: "DELETED" = "DELETED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
+  @inline def values = js.Array[NodeStatus](CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
 }
 
-@js.native
-sealed trait ProposalStatus extends js.Any
+type ProposalStatus = "IN_PROGRESS" | "APPROVED" | "REJECTED" | "EXPIRED" | "ACTION_FAILED"
 object ProposalStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ProposalStatus]
-  val APPROVED = "APPROVED".asInstanceOf[ProposalStatus]
-  val REJECTED = "REJECTED".asInstanceOf[ProposalStatus]
-  val EXPIRED = "EXPIRED".asInstanceOf[ProposalStatus]
-  val ACTION_FAILED = "ACTION_FAILED".asInstanceOf[ProposalStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val APPROVED: "APPROVED" = "APPROVED"
+  val REJECTED: "REJECTED" = "REJECTED"
+  val EXPIRED: "EXPIRED" = "EXPIRED"
+  val ACTION_FAILED: "ACTION_FAILED" = "ACTION_FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED)
+  @inline def values = js.Array[ProposalStatus](IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED)
 }
 
-@js.native
-sealed trait StateDBType extends js.Any
+type StateDBType = "LevelDB" | "CouchDB"
 object StateDBType {
-  val LevelDB = "LevelDB".asInstanceOf[StateDBType]
-  val CouchDB = "CouchDB".asInstanceOf[StateDBType]
+  val LevelDB: "LevelDB" = "LevelDB"
+  val CouchDB: "CouchDB" = "CouchDB"
 
-  @inline def values = js.Array(LevelDB, CouchDB)
+  @inline def values = js.Array[StateDBType](LevelDB, CouchDB)
 }
 
-@js.native
-sealed trait ThresholdComparator extends js.Any
+type ThresholdComparator = "GREATER_THAN" | "GREATER_THAN_OR_EQUAL_TO"
 object ThresholdComparator {
-  val GREATER_THAN = "GREATER_THAN".asInstanceOf[ThresholdComparator]
-  val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[ThresholdComparator]
+  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
 
-  @inline def values = js.Array(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO)
+  @inline def values = js.Array[ThresholdComparator](GREATER_THAN, GREATER_THAN_OR_EQUAL_TO)
 }
 
-@js.native
-sealed trait VoteValue extends js.Any
+type VoteValue = "YES" | "NO"
 object VoteValue {
-  val YES = "YES".asInstanceOf[VoteValue]
-  val NO = "NO".asInstanceOf[VoteValue]
+  val YES: "YES" = "YES"
+  val NO: "NO" = "NO"
 
-  @inline def values = js.Array(YES, NO)
+  @inline def values = js.Array[VoteValue](YES, NO)
 }

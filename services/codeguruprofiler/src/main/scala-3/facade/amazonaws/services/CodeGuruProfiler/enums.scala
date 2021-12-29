@@ -1,78 +1,70 @@
 package facade.amazonaws.services.codeguruprofiler
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ActionGroup extends js.Any
+type ActionGroup = "agentPermissions"
 object ActionGroup {
-  val agentPermissions = "agentPermissions".asInstanceOf[ActionGroup]
+  val agentPermissions: "agentPermissions" = "agentPermissions"
 
-  @inline def values = js.Array(agentPermissions)
+  @inline def values = js.Array[ActionGroup](agentPermissions)
 }
 
-@js.native
-sealed trait AgentParameterField extends js.Any
+type AgentParameterField = "SamplingIntervalInMilliseconds" | "ReportingIntervalInMilliseconds" | "MinimumTimeForReportingInMilliseconds" | "MemoryUsageLimitPercent" | "MaxStackDepth"
 object AgentParameterField {
-  val SamplingIntervalInMilliseconds = "SamplingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
-  val ReportingIntervalInMilliseconds = "ReportingIntervalInMilliseconds".asInstanceOf[AgentParameterField]
-  val MinimumTimeForReportingInMilliseconds = "MinimumTimeForReportingInMilliseconds".asInstanceOf[AgentParameterField]
-  val MemoryUsageLimitPercent = "MemoryUsageLimitPercent".asInstanceOf[AgentParameterField]
-  val MaxStackDepth = "MaxStackDepth".asInstanceOf[AgentParameterField]
+  val SamplingIntervalInMilliseconds: "SamplingIntervalInMilliseconds" = "SamplingIntervalInMilliseconds"
+  val ReportingIntervalInMilliseconds: "ReportingIntervalInMilliseconds" = "ReportingIntervalInMilliseconds"
+  val MinimumTimeForReportingInMilliseconds: "MinimumTimeForReportingInMilliseconds" = "MinimumTimeForReportingInMilliseconds"
+  val MemoryUsageLimitPercent: "MemoryUsageLimitPercent" = "MemoryUsageLimitPercent"
+  val MaxStackDepth: "MaxStackDepth" = "MaxStackDepth"
 
-  @inline def values = js.Array(SamplingIntervalInMilliseconds, ReportingIntervalInMilliseconds, MinimumTimeForReportingInMilliseconds, MemoryUsageLimitPercent, MaxStackDepth)
+  @inline def values = js.Array[AgentParameterField](SamplingIntervalInMilliseconds, ReportingIntervalInMilliseconds, MinimumTimeForReportingInMilliseconds, MemoryUsageLimitPercent, MaxStackDepth)
 }
 
-@js.native
-sealed trait AggregationPeriod extends js.Any
+type AggregationPeriod = "PT5M" | "PT1H" | "P1D"
 object AggregationPeriod {
-  val PT5M = "PT5M".asInstanceOf[AggregationPeriod]
-  val PT1H = "PT1H".asInstanceOf[AggregationPeriod]
-  val P1D = "P1D".asInstanceOf[AggregationPeriod]
+  val PT5M: "PT5M" = "PT5M"
+  val PT1H: "PT1H" = "PT1H"
+  val P1D: "P1D" = "P1D"
 
-  @inline def values = js.Array(PT5M, PT1H, P1D)
+  @inline def values = js.Array[AggregationPeriod](PT5M, PT1H, P1D)
 }
 
-@js.native
-sealed trait ComputePlatform extends js.Any
+type ComputePlatform = "Default" | "AWSLambda"
 object ComputePlatform {
-  val Default = "Default".asInstanceOf[ComputePlatform]
-  val AWSLambda = "AWSLambda".asInstanceOf[ComputePlatform]
+  val Default: "Default" = "Default"
+  val AWSLambda: "AWSLambda" = "AWSLambda"
 
-  @inline def values = js.Array(Default, AWSLambda)
+  @inline def values = js.Array[ComputePlatform](Default, AWSLambda)
 }
 
-@js.native
-sealed trait EventPublisher extends js.Any
+type EventPublisher = "AnomalyDetection"
 object EventPublisher {
-  val AnomalyDetection = "AnomalyDetection".asInstanceOf[EventPublisher]
+  val AnomalyDetection: "AnomalyDetection" = "AnomalyDetection"
 
-  @inline def values = js.Array(AnomalyDetection)
+  @inline def values = js.Array[EventPublisher](AnomalyDetection)
 }
 
-@js.native
-sealed trait FeedbackType extends js.Any
+type FeedbackType = "Positive" | "Negative"
 object FeedbackType {
-  val Positive = "Positive".asInstanceOf[FeedbackType]
-  val Negative = "Negative".asInstanceOf[FeedbackType]
+  val Positive: "Positive" = "Positive"
+  val Negative: "Negative" = "Negative"
 
-  @inline def values = js.Array(Positive, Negative)
+  @inline def values = js.Array[FeedbackType](Positive, Negative)
 }
 
-@js.native
-sealed trait MetadataField extends js.Any
+type MetadataField = "ComputePlatform" | "AgentId" | "AwsRequestId" | "ExecutionEnvironment" | "LambdaFunctionArn" | "LambdaMemoryLimitInMB" | "LambdaRemainingTimeInMilliseconds" | "LambdaTimeGapBetweenInvokesInMilliseconds" | "LambdaPreviousExecutionTimeInMilliseconds"
 object MetadataField {
-  val ComputePlatform = "ComputePlatform".asInstanceOf[MetadataField]
-  val AgentId = "AgentId".asInstanceOf[MetadataField]
-  val AwsRequestId = "AwsRequestId".asInstanceOf[MetadataField]
-  val ExecutionEnvironment = "ExecutionEnvironment".asInstanceOf[MetadataField]
-  val LambdaFunctionArn = "LambdaFunctionArn".asInstanceOf[MetadataField]
-  val LambdaMemoryLimitInMB = "LambdaMemoryLimitInMB".asInstanceOf[MetadataField]
-  val LambdaRemainingTimeInMilliseconds = "LambdaRemainingTimeInMilliseconds".asInstanceOf[MetadataField]
-  val LambdaTimeGapBetweenInvokesInMilliseconds = "LambdaTimeGapBetweenInvokesInMilliseconds".asInstanceOf[MetadataField]
-  val LambdaPreviousExecutionTimeInMilliseconds = "LambdaPreviousExecutionTimeInMilliseconds".asInstanceOf[MetadataField]
+  val ComputePlatform: "ComputePlatform" = "ComputePlatform"
+  val AgentId: "AgentId" = "AgentId"
+  val AwsRequestId: "AwsRequestId" = "AwsRequestId"
+  val ExecutionEnvironment: "ExecutionEnvironment" = "ExecutionEnvironment"
+  val LambdaFunctionArn: "LambdaFunctionArn" = "LambdaFunctionArn"
+  val LambdaMemoryLimitInMB: "LambdaMemoryLimitInMB" = "LambdaMemoryLimitInMB"
+  val LambdaRemainingTimeInMilliseconds: "LambdaRemainingTimeInMilliseconds" = "LambdaRemainingTimeInMilliseconds"
+  val LambdaTimeGapBetweenInvokesInMilliseconds: "LambdaTimeGapBetweenInvokesInMilliseconds" = "LambdaTimeGapBetweenInvokesInMilliseconds"
+  val LambdaPreviousExecutionTimeInMilliseconds: "LambdaPreviousExecutionTimeInMilliseconds" = "LambdaPreviousExecutionTimeInMilliseconds"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[MetadataField](
     ComputePlatform,
     AgentId,
     AwsRequestId,
@@ -85,19 +77,17 @@ object MetadataField {
   )
 }
 
-@js.native
-sealed trait MetricType extends js.Any
+type MetricType = "AggregatedRelativeTotalTime"
 object MetricType {
-  val AggregatedRelativeTotalTime = "AggregatedRelativeTotalTime".asInstanceOf[MetricType]
+  val AggregatedRelativeTotalTime: "AggregatedRelativeTotalTime" = "AggregatedRelativeTotalTime"
 
-  @inline def values = js.Array(AggregatedRelativeTotalTime)
+  @inline def values = js.Array[MetricType](AggregatedRelativeTotalTime)
 }
 
-@js.native
-sealed trait OrderBy extends js.Any
+type OrderBy = "TimestampDescending" | "TimestampAscending"
 object OrderBy {
-  val TimestampDescending = "TimestampDescending".asInstanceOf[OrderBy]
-  val TimestampAscending = "TimestampAscending".asInstanceOf[OrderBy]
+  val TimestampDescending: "TimestampDescending" = "TimestampDescending"
+  val TimestampAscending: "TimestampAscending" = "TimestampAscending"
 
-  @inline def values = js.Array(TimestampDescending, TimestampAscending)
+  @inline def values = js.Array[OrderBy](TimestampDescending, TimestampAscending)
 }

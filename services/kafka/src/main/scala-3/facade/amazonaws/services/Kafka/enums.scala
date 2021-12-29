@@ -1,87 +1,79 @@
 package facade.amazonaws.services.kafka
 
 import scalajs._
-import scala.scalajs.js.|
 
 /** The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed. Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.
   */
-@js.native
-sealed trait BrokerAZDistribution extends js.Any
+type BrokerAZDistribution = "DEFAULT"
 object BrokerAZDistribution {
-  val DEFAULT = "DEFAULT".asInstanceOf[BrokerAZDistribution]
+  val DEFAULT: "DEFAULT" = "DEFAULT"
 
-  @inline def values = js.Array(DEFAULT)
+  @inline def values = js.Array[BrokerAZDistribution](DEFAULT)
 }
 
 /** Client-broker encryption in transit setting.
   */
-@js.native
-sealed trait ClientBroker extends js.Any
+type ClientBroker = "TLS" | "TLS_PLAINTEXT" | "PLAINTEXT"
 object ClientBroker {
-  val TLS = "TLS".asInstanceOf[ClientBroker]
-  val TLS_PLAINTEXT = "TLS_PLAINTEXT".asInstanceOf[ClientBroker]
-  val PLAINTEXT = "PLAINTEXT".asInstanceOf[ClientBroker]
+  val TLS: "TLS" = "TLS"
+  val TLS_PLAINTEXT: "TLS_PLAINTEXT" = "TLS_PLAINTEXT"
+  val PLAINTEXT: "PLAINTEXT" = "PLAINTEXT"
 
-  @inline def values = js.Array(TLS, TLS_PLAINTEXT, PLAINTEXT)
+  @inline def values = js.Array[ClientBroker](TLS, TLS_PLAINTEXT, PLAINTEXT)
 }
 
 /** The state of a Kafka cluster.
   */
-@js.native
-sealed trait ClusterState extends js.Any
+type ClusterState = "ACTIVE" | "CREATING" | "DELETING" | "FAILED" | "HEALING" | "MAINTENANCE" | "REBOOTING_BROKER" | "UPDATING"
 object ClusterState {
-  val ACTIVE = "ACTIVE".asInstanceOf[ClusterState]
-  val CREATING = "CREATING".asInstanceOf[ClusterState]
-  val DELETING = "DELETING".asInstanceOf[ClusterState]
-  val FAILED = "FAILED".asInstanceOf[ClusterState]
-  val HEALING = "HEALING".asInstanceOf[ClusterState]
-  val MAINTENANCE = "MAINTENANCE".asInstanceOf[ClusterState]
-  val REBOOTING_BROKER = "REBOOTING_BROKER".asInstanceOf[ClusterState]
-  val UPDATING = "UPDATING".asInstanceOf[ClusterState]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val CREATING: "CREATING" = "CREATING"
+  val DELETING: "DELETING" = "DELETING"
+  val FAILED: "FAILED" = "FAILED"
+  val HEALING: "HEALING" = "HEALING"
+  val MAINTENANCE: "MAINTENANCE" = "MAINTENANCE"
+  val REBOOTING_BROKER: "REBOOTING_BROKER" = "REBOOTING_BROKER"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, UPDATING)
+  @inline def values = js.Array[ClusterState](ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, UPDATING)
 }
 
 /** The state of a configuration.
   */
-@js.native
-sealed trait ConfigurationState extends js.Any
+type ConfigurationState = "ACTIVE" | "DELETING" | "DELETE_FAILED"
 object ConfigurationState {
-  val ACTIVE = "ACTIVE".asInstanceOf[ConfigurationState]
-  val DELETING = "DELETING".asInstanceOf[ConfigurationState]
-  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ConfigurationState]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETING: "DELETING" = "DELETING"
+  val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
 
-  @inline def values = js.Array(ACTIVE, DELETING, DELETE_FAILED)
+  @inline def values = js.Array[ConfigurationState](ACTIVE, DELETING, DELETE_FAILED)
 }
 
 /** Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of these levels of monitoring, see [[https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html|Monitoring]].
   */
-@js.native
-sealed trait EnhancedMonitoring extends js.Any
+type EnhancedMonitoring = "DEFAULT" | "PER_BROKER" | "PER_TOPIC_PER_BROKER" | "PER_TOPIC_PER_PARTITION"
 object EnhancedMonitoring {
-  val DEFAULT = "DEFAULT".asInstanceOf[EnhancedMonitoring]
-  val PER_BROKER = "PER_BROKER".asInstanceOf[EnhancedMonitoring]
-  val PER_TOPIC_PER_BROKER = "PER_TOPIC_PER_BROKER".asInstanceOf[EnhancedMonitoring]
-  val PER_TOPIC_PER_PARTITION = "PER_TOPIC_PER_PARTITION".asInstanceOf[EnhancedMonitoring]
+  val DEFAULT: "DEFAULT" = "DEFAULT"
+  val PER_BROKER: "PER_BROKER" = "PER_BROKER"
+  val PER_TOPIC_PER_BROKER: "PER_TOPIC_PER_BROKER" = "PER_TOPIC_PER_BROKER"
+  val PER_TOPIC_PER_PARTITION: "PER_TOPIC_PER_PARTITION" = "PER_TOPIC_PER_PARTITION"
 
-  @inline def values = js.Array(DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, PER_TOPIC_PER_PARTITION)
+  @inline def values = js.Array[EnhancedMonitoring](DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, PER_TOPIC_PER_PARTITION)
 }
 
-@js.native
-sealed trait KafkaVersionStatus extends js.Any
+type KafkaVersionStatus = "ACTIVE" | "DEPRECATED"
 object KafkaVersionStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[KafkaVersionStatus]
-  val DEPRECATED = "DEPRECATED".asInstanceOf[KafkaVersionStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DEPRECATED: "DEPRECATED" = "DEPRECATED"
 
-  @inline def values = js.Array(ACTIVE, DEPRECATED)
+  @inline def values = js.Array[KafkaVersionStatus](ACTIVE, DEPRECATED)
 }
 
 /** The broker or Zookeeper node.
   */
-@js.native
-sealed trait NodeType extends js.Any
+type NodeType = "BROKER"
 object NodeType {
-  val BROKER = "BROKER".asInstanceOf[NodeType]
+  val BROKER: "BROKER" = "BROKER"
 
-  @inline def values = js.Array(BROKER)
+  @inline def values = js.Array[NodeType](BROKER)
 }

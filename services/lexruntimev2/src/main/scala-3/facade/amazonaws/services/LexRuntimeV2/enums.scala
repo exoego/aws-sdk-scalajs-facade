@@ -1,60 +1,54 @@
 package facade.amazonaws.services.lexruntimev2
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ConfirmationState extends js.Any
+type ConfirmationState = "Confirmed" | "Denied" | "None"
 object ConfirmationState {
-  val Confirmed = "Confirmed".asInstanceOf[ConfirmationState]
-  val Denied = "Denied".asInstanceOf[ConfirmationState]
-  val None = "None".asInstanceOf[ConfirmationState]
+  val Confirmed: "Confirmed" = "Confirmed"
+  val Denied: "Denied" = "Denied"
+  val None: "None" = "None"
 
-  @inline def values = js.Array(Confirmed, Denied, None)
+  @inline def values = js.Array[ConfirmationState](Confirmed, Denied, None)
 }
 
-@js.native
-sealed trait DialogActionType extends js.Any
+type DialogActionType = "Close" | "ConfirmIntent" | "Delegate" | "ElicitIntent" | "ElicitSlot"
 object DialogActionType {
-  val Close = "Close".asInstanceOf[DialogActionType]
-  val ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogActionType]
-  val Delegate = "Delegate".asInstanceOf[DialogActionType]
-  val ElicitIntent = "ElicitIntent".asInstanceOf[DialogActionType]
-  val ElicitSlot = "ElicitSlot".asInstanceOf[DialogActionType]
+  val Close: "Close" = "Close"
+  val ConfirmIntent: "ConfirmIntent" = "ConfirmIntent"
+  val Delegate: "Delegate" = "Delegate"
+  val ElicitIntent: "ElicitIntent" = "ElicitIntent"
+  val ElicitSlot: "ElicitSlot" = "ElicitSlot"
 
-  @inline def values = js.Array(Close, ConfirmIntent, Delegate, ElicitIntent, ElicitSlot)
+  @inline def values = js.Array[DialogActionType](Close, ConfirmIntent, Delegate, ElicitIntent, ElicitSlot)
 }
 
-@js.native
-sealed trait IntentState extends js.Any
+type IntentState = "Failed" | "Fulfilled" | "InProgress" | "ReadyForFulfillment" | "Waiting"
 object IntentState {
-  val Failed = "Failed".asInstanceOf[IntentState]
-  val Fulfilled = "Fulfilled".asInstanceOf[IntentState]
-  val InProgress = "InProgress".asInstanceOf[IntentState]
-  val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[IntentState]
-  val Waiting = "Waiting".asInstanceOf[IntentState]
+  val Failed: "Failed" = "Failed"
+  val Fulfilled: "Fulfilled" = "Fulfilled"
+  val InProgress: "InProgress" = "InProgress"
+  val ReadyForFulfillment: "ReadyForFulfillment" = "ReadyForFulfillment"
+  val Waiting: "Waiting" = "Waiting"
 
-  @inline def values = js.Array(Failed, Fulfilled, InProgress, ReadyForFulfillment, Waiting)
+  @inline def values = js.Array[IntentState](Failed, Fulfilled, InProgress, ReadyForFulfillment, Waiting)
 }
 
-@js.native
-sealed trait MessageContentType extends js.Any
+type MessageContentType = "CustomPayload" | "ImageResponseCard" | "PlainText" | "SSML"
 object MessageContentType {
-  val CustomPayload = "CustomPayload".asInstanceOf[MessageContentType]
-  val ImageResponseCard = "ImageResponseCard".asInstanceOf[MessageContentType]
-  val PlainText = "PlainText".asInstanceOf[MessageContentType]
-  val SSML = "SSML".asInstanceOf[MessageContentType]
+  val CustomPayload: "CustomPayload" = "CustomPayload"
+  val ImageResponseCard: "ImageResponseCard" = "ImageResponseCard"
+  val PlainText: "PlainText" = "PlainText"
+  val SSML: "SSML" = "SSML"
 
-  @inline def values = js.Array(CustomPayload, ImageResponseCard, PlainText, SSML)
+  @inline def values = js.Array[MessageContentType](CustomPayload, ImageResponseCard, PlainText, SSML)
 }
 
-@js.native
-sealed trait SentimentType extends js.Any
+type SentimentType = "MIXED" | "NEGATIVE" | "NEUTRAL" | "POSITIVE"
 object SentimentType {
-  val MIXED = "MIXED".asInstanceOf[SentimentType]
-  val NEGATIVE = "NEGATIVE".asInstanceOf[SentimentType]
-  val NEUTRAL = "NEUTRAL".asInstanceOf[SentimentType]
-  val POSITIVE = "POSITIVE".asInstanceOf[SentimentType]
+  val MIXED: "MIXED" = "MIXED"
+  val NEGATIVE: "NEGATIVE" = "NEGATIVE"
+  val NEUTRAL: "NEUTRAL" = "NEUTRAL"
+  val POSITIVE: "POSITIVE" = "POSITIVE"
 
-  @inline def values = js.Array(MIXED, NEGATIVE, NEUTRAL, POSITIVE)
+  @inline def values = js.Array[SentimentType](MIXED, NEGATIVE, NEUTRAL, POSITIVE)
 }

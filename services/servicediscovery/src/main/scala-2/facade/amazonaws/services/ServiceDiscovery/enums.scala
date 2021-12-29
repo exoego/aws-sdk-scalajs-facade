@@ -160,3 +160,4 @@ object ServiceTypeOption {
 
   @inline def values = js.Array(HTTP)
 }
+

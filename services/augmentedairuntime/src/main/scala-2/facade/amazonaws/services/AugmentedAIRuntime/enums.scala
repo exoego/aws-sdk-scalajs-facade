@@ -32,3 +32,4 @@ object SortOrder {
 
   @inline def values = js.Array(Ascending, Descending)
 }
+

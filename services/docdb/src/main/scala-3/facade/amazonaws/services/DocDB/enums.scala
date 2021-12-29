@@ -1,26 +1,23 @@
 package facade.amazonaws.services.docdb
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ApplyMethod extends js.Any
+type ApplyMethod = "immediate" | "pending-reboot"
 object ApplyMethod {
-  val immediate = "immediate".asInstanceOf[ApplyMethod]
-  val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
+  val immediate: "immediate" = "immediate"
+  val `pending-reboot`: "pending-reboot" = "pending-reboot"
 
-  @inline def values = js.Array(immediate, `pending-reboot`)
+  @inline def values = js.Array[ApplyMethod](immediate, `pending-reboot`)
 }
 
-@js.native
-sealed trait SourceType extends js.Any
+type SourceType = "db-instance" | "db-parameter-group" | "db-security-group" | "db-snapshot" | "db-cluster" | "db-cluster-snapshot"
 object SourceType {
-  val `db-instance` = "db-instance".asInstanceOf[SourceType]
-  val `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
-  val `db-security-group` = "db-security-group".asInstanceOf[SourceType]
-  val `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
-  val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
-  val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
+  val `db-instance`: "db-instance" = "db-instance"
+  val `db-parameter-group`: "db-parameter-group" = "db-parameter-group"
+  val `db-security-group`: "db-security-group" = "db-security-group"
+  val `db-snapshot`: "db-snapshot" = "db-snapshot"
+  val `db-cluster`: "db-cluster" = "db-cluster"
+  val `db-cluster-snapshot`: "db-cluster-snapshot" = "db-cluster-snapshot"
 
-  @inline def values = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
+  @inline def values = js.Array[SourceType](`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
 }

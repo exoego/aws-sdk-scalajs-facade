@@ -164,3 +164,4 @@ object TypeDefinitionFormat {
 
   @inline def values = js.Array(SDL, JSON)
 }
+

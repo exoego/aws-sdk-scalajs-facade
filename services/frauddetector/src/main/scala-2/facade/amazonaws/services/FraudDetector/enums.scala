@@ -124,3 +124,4 @@ object TrainingDataSourceEnum {
 
   @inline def values = js.Array(EXTERNAL_EVENTS)
 }
+

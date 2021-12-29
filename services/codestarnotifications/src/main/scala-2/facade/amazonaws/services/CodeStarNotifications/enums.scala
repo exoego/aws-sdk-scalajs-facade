@@ -62,3 +62,4 @@ object TargetStatus {
 
   @inline def values = js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED)
 }
+

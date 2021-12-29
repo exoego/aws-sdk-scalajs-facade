@@ -156,3 +156,4 @@ object TargetType {
 
   @inline def values = js.Array(TLS_SNI, HTTP_HOST)
 }
+

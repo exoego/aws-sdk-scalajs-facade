@@ -1,64 +1,58 @@
 package facade.amazonaws.services.amplify
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DomainStatus extends js.Any
+type DomainStatus = "PENDING_VERIFICATION" | "IN_PROGRESS" | "AVAILABLE" | "PENDING_DEPLOYMENT" | "FAILED" | "CREATING" | "REQUESTING_CERTIFICATE" | "UPDATING"
 object DomainStatus {
-  val PENDING_VERIFICATION = "PENDING_VERIFICATION".asInstanceOf[DomainStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DomainStatus]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[DomainStatus]
-  val PENDING_DEPLOYMENT = "PENDING_DEPLOYMENT".asInstanceOf[DomainStatus]
-  val FAILED = "FAILED".asInstanceOf[DomainStatus]
-  val CREATING = "CREATING".asInstanceOf[DomainStatus]
-  val REQUESTING_CERTIFICATE = "REQUESTING_CERTIFICATE".asInstanceOf[DomainStatus]
-  val UPDATING = "UPDATING".asInstanceOf[DomainStatus]
+  val PENDING_VERIFICATION: "PENDING_VERIFICATION" = "PENDING_VERIFICATION"
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val PENDING_DEPLOYMENT: "PENDING_DEPLOYMENT" = "PENDING_DEPLOYMENT"
+  val FAILED: "FAILED" = "FAILED"
+  val CREATING: "CREATING" = "CREATING"
+  val REQUESTING_CERTIFICATE: "REQUESTING_CERTIFICATE" = "REQUESTING_CERTIFICATE"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING)
+  @inline def values = js.Array[DomainStatus](PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING)
 }
 
-@js.native
-sealed trait JobStatus extends js.Any
+type JobStatus = "PENDING" | "PROVISIONING" | "RUNNING" | "FAILED" | "SUCCEED" | "CANCELLING" | "CANCELLED"
 object JobStatus {
-  val PENDING = "PENDING".asInstanceOf[JobStatus]
-  val PROVISIONING = "PROVISIONING".asInstanceOf[JobStatus]
-  val RUNNING = "RUNNING".asInstanceOf[JobStatus]
-  val FAILED = "FAILED".asInstanceOf[JobStatus]
-  val SUCCEED = "SUCCEED".asInstanceOf[JobStatus]
-  val CANCELLING = "CANCELLING".asInstanceOf[JobStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[JobStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val PROVISIONING: "PROVISIONING" = "PROVISIONING"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val FAILED: "FAILED" = "FAILED"
+  val SUCCEED: "SUCCEED" = "SUCCEED"
+  val CANCELLING: "CANCELLING" = "CANCELLING"
+  val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED)
+  @inline def values = js.Array[JobStatus](PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED)
 }
 
-@js.native
-sealed trait JobType extends js.Any
+type JobType = "RELEASE" | "RETRY" | "MANUAL" | "WEB_HOOK"
 object JobType {
-  val RELEASE = "RELEASE".asInstanceOf[JobType]
-  val RETRY = "RETRY".asInstanceOf[JobType]
-  val MANUAL = "MANUAL".asInstanceOf[JobType]
-  val WEB_HOOK = "WEB_HOOK".asInstanceOf[JobType]
+  val RELEASE: "RELEASE" = "RELEASE"
+  val RETRY: "RETRY" = "RETRY"
+  val MANUAL: "MANUAL" = "MANUAL"
+  val WEB_HOOK: "WEB_HOOK" = "WEB_HOOK"
 
-  @inline def values = js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK)
+  @inline def values = js.Array[JobType](RELEASE, RETRY, MANUAL, WEB_HOOK)
 }
 
-@js.native
-sealed trait Platform extends js.Any
+type Platform = "WEB"
 object Platform {
-  val WEB = "WEB".asInstanceOf[Platform]
+  val WEB: "WEB" = "WEB"
 
-  @inline def values = js.Array(WEB)
+  @inline def values = js.Array[Platform](WEB)
 }
 
-@js.native
-sealed trait Stage extends js.Any
+type Stage = "PRODUCTION" | "BETA" | "DEVELOPMENT" | "EXPERIMENTAL" | "PULL_REQUEST"
 object Stage {
-  val PRODUCTION = "PRODUCTION".asInstanceOf[Stage]
-  val BETA = "BETA".asInstanceOf[Stage]
-  val DEVELOPMENT = "DEVELOPMENT".asInstanceOf[Stage]
-  val EXPERIMENTAL = "EXPERIMENTAL".asInstanceOf[Stage]
-  val PULL_REQUEST = "PULL_REQUEST".asInstanceOf[Stage]
+  val PRODUCTION: "PRODUCTION" = "PRODUCTION"
+  val BETA: "BETA" = "BETA"
+  val DEVELOPMENT: "DEVELOPMENT" = "DEVELOPMENT"
+  val EXPERIMENTAL: "EXPERIMENTAL" = "EXPERIMENTAL"
+  val PULL_REQUEST: "PULL_REQUEST" = "PULL_REQUEST"
 
-  @inline def values = js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST)
+  @inline def values = js.Array[Stage](PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST)
 }

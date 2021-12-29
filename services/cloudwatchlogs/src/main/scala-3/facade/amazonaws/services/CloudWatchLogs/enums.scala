@@ -1,49 +1,44 @@
 package facade.amazonaws.services.cloudwatchlogs
 
 import scalajs._
-import scala.scalajs.js.|
 
 /** The method used to distribute log data to the destination, which can be either random or grouped by log stream.
   */
-@js.native
-sealed trait Distribution extends js.Any
+type Distribution = "Random" | "ByLogStream"
 object Distribution {
-  val Random = "Random".asInstanceOf[Distribution]
-  val ByLogStream = "ByLogStream".asInstanceOf[Distribution]
+  val Random: "Random" = "Random"
+  val ByLogStream: "ByLogStream" = "ByLogStream"
 
-  @inline def values = js.Array(Random, ByLogStream)
+  @inline def values = js.Array[Distribution](Random, ByLogStream)
 }
 
-@js.native
-sealed trait ExportTaskStatusCode extends js.Any
+type ExportTaskStatusCode = "CANCELLED" | "COMPLETED" | "FAILED" | "PENDING" | "PENDING_CANCEL" | "RUNNING"
 object ExportTaskStatusCode {
-  val CANCELLED = "CANCELLED".asInstanceOf[ExportTaskStatusCode]
-  val COMPLETED = "COMPLETED".asInstanceOf[ExportTaskStatusCode]
-  val FAILED = "FAILED".asInstanceOf[ExportTaskStatusCode]
-  val PENDING = "PENDING".asInstanceOf[ExportTaskStatusCode]
-  val PENDING_CANCEL = "PENDING_CANCEL".asInstanceOf[ExportTaskStatusCode]
-  val RUNNING = "RUNNING".asInstanceOf[ExportTaskStatusCode]
+  val CANCELLED: "CANCELLED" = "CANCELLED"
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val FAILED: "FAILED" = "FAILED"
+  val PENDING: "PENDING" = "PENDING"
+  val PENDING_CANCEL: "PENDING_CANCEL" = "PENDING_CANCEL"
+  val RUNNING: "RUNNING" = "RUNNING"
 
-  @inline def values = js.Array(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING)
+  @inline def values = js.Array[ExportTaskStatusCode](CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING)
 }
 
-@js.native
-sealed trait OrderBy extends js.Any
+type OrderBy = "LogStreamName" | "LastEventTime"
 object OrderBy {
-  val LogStreamName = "LogStreamName".asInstanceOf[OrderBy]
-  val LastEventTime = "LastEventTime".asInstanceOf[OrderBy]
+  val LogStreamName: "LogStreamName" = "LogStreamName"
+  val LastEventTime: "LastEventTime" = "LastEventTime"
 
-  @inline def values = js.Array(LogStreamName, LastEventTime)
+  @inline def values = js.Array[OrderBy](LogStreamName, LastEventTime)
 }
 
-@js.native
-sealed trait QueryStatus extends js.Any
+type QueryStatus = "Scheduled" | "Running" | "Complete" | "Failed" | "Cancelled"
 object QueryStatus {
-  val Scheduled = "Scheduled".asInstanceOf[QueryStatus]
-  val Running = "Running".asInstanceOf[QueryStatus]
-  val Complete = "Complete".asInstanceOf[QueryStatus]
-  val Failed = "Failed".asInstanceOf[QueryStatus]
-  val Cancelled = "Cancelled".asInstanceOf[QueryStatus]
+  val Scheduled: "Scheduled" = "Scheduled"
+  val Running: "Running" = "Running"
+  val Complete: "Complete" = "Complete"
+  val Failed: "Failed" = "Failed"
+  val Cancelled: "Cancelled" = "Cancelled"
 
-  @inline def values = js.Array(Scheduled, Running, Complete, Failed, Cancelled)
+  @inline def values = js.Array[QueryStatus](Scheduled, Running, Complete, Failed, Cancelled)
 }

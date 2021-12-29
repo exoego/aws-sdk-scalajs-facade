@@ -43,3 +43,4 @@ object ReadWriteType {
 
   @inline def values = js.Array(ReadOnly, WriteOnly, All)
 }
+

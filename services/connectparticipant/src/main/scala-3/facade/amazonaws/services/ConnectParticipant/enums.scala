@@ -1,68 +1,61 @@
 package facade.amazonaws.services.connectparticipant
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ArtifactStatus extends js.Any
+type ArtifactStatus = "APPROVED" | "REJECTED" | "IN_PROGRESS"
 object ArtifactStatus {
-  val APPROVED = "APPROVED".asInstanceOf[ArtifactStatus]
-  val REJECTED = "REJECTED".asInstanceOf[ArtifactStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ArtifactStatus]
+  val APPROVED: "APPROVED" = "APPROVED"
+  val REJECTED: "REJECTED" = "REJECTED"
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
 
-  @inline def values = js.Array(APPROVED, REJECTED, IN_PROGRESS)
+  @inline def values = js.Array[ArtifactStatus](APPROVED, REJECTED, IN_PROGRESS)
 }
 
-@js.native
-sealed trait ChatItemType extends js.Any
+type ChatItemType = "TYPING" | "PARTICIPANT_JOINED" | "PARTICIPANT_LEFT" | "CHAT_ENDED" | "TRANSFER_SUCCEEDED" | "TRANSFER_FAILED" | "MESSAGE" | "EVENT" | "ATTACHMENT" | "CONNECTION_ACK"
 object ChatItemType {
-  val TYPING = "TYPING".asInstanceOf[ChatItemType]
-  val PARTICIPANT_JOINED = "PARTICIPANT_JOINED".asInstanceOf[ChatItemType]
-  val PARTICIPANT_LEFT = "PARTICIPANT_LEFT".asInstanceOf[ChatItemType]
-  val CHAT_ENDED = "CHAT_ENDED".asInstanceOf[ChatItemType]
-  val TRANSFER_SUCCEEDED = "TRANSFER_SUCCEEDED".asInstanceOf[ChatItemType]
-  val TRANSFER_FAILED = "TRANSFER_FAILED".asInstanceOf[ChatItemType]
-  val MESSAGE = "MESSAGE".asInstanceOf[ChatItemType]
-  val EVENT = "EVENT".asInstanceOf[ChatItemType]
-  val ATTACHMENT = "ATTACHMENT".asInstanceOf[ChatItemType]
-  val CONNECTION_ACK = "CONNECTION_ACK".asInstanceOf[ChatItemType]
+  val TYPING: "TYPING" = "TYPING"
+  val PARTICIPANT_JOINED: "PARTICIPANT_JOINED" = "PARTICIPANT_JOINED"
+  val PARTICIPANT_LEFT: "PARTICIPANT_LEFT" = "PARTICIPANT_LEFT"
+  val CHAT_ENDED: "CHAT_ENDED" = "CHAT_ENDED"
+  val TRANSFER_SUCCEEDED: "TRANSFER_SUCCEEDED" = "TRANSFER_SUCCEEDED"
+  val TRANSFER_FAILED: "TRANSFER_FAILED" = "TRANSFER_FAILED"
+  val MESSAGE: "MESSAGE" = "MESSAGE"
+  val EVENT: "EVENT" = "EVENT"
+  val ATTACHMENT: "ATTACHMENT" = "ATTACHMENT"
+  val CONNECTION_ACK: "CONNECTION_ACK" = "CONNECTION_ACK"
 
-  @inline def values = js.Array(TYPING, PARTICIPANT_JOINED, PARTICIPANT_LEFT, CHAT_ENDED, TRANSFER_SUCCEEDED, TRANSFER_FAILED, MESSAGE, EVENT, ATTACHMENT, CONNECTION_ACK)
+  @inline def values = js.Array[ChatItemType](TYPING, PARTICIPANT_JOINED, PARTICIPANT_LEFT, CHAT_ENDED, TRANSFER_SUCCEEDED, TRANSFER_FAILED, MESSAGE, EVENT, ATTACHMENT, CONNECTION_ACK)
 }
 
-@js.native
-sealed trait ConnectionType extends js.Any
+type ConnectionType = "WEBSOCKET" | "CONNECTION_CREDENTIALS"
 object ConnectionType {
-  val WEBSOCKET = "WEBSOCKET".asInstanceOf[ConnectionType]
-  val CONNECTION_CREDENTIALS = "CONNECTION_CREDENTIALS".asInstanceOf[ConnectionType]
+  val WEBSOCKET: "WEBSOCKET" = "WEBSOCKET"
+  val CONNECTION_CREDENTIALS: "CONNECTION_CREDENTIALS" = "CONNECTION_CREDENTIALS"
 
-  @inline def values = js.Array(WEBSOCKET, CONNECTION_CREDENTIALS)
+  @inline def values = js.Array[ConnectionType](WEBSOCKET, CONNECTION_CREDENTIALS)
 }
 
-@js.native
-sealed trait ParticipantRole extends js.Any
+type ParticipantRole = "AGENT" | "CUSTOMER" | "SYSTEM"
 object ParticipantRole {
-  val AGENT = "AGENT".asInstanceOf[ParticipantRole]
-  val CUSTOMER = "CUSTOMER".asInstanceOf[ParticipantRole]
-  val SYSTEM = "SYSTEM".asInstanceOf[ParticipantRole]
+  val AGENT: "AGENT" = "AGENT"
+  val CUSTOMER: "CUSTOMER" = "CUSTOMER"
+  val SYSTEM: "SYSTEM" = "SYSTEM"
 
-  @inline def values = js.Array(AGENT, CUSTOMER, SYSTEM)
+  @inline def values = js.Array[ParticipantRole](AGENT, CUSTOMER, SYSTEM)
 }
 
-@js.native
-sealed trait ScanDirection extends js.Any
+type ScanDirection = "FORWARD" | "BACKWARD"
 object ScanDirection {
-  val FORWARD = "FORWARD".asInstanceOf[ScanDirection]
-  val BACKWARD = "BACKWARD".asInstanceOf[ScanDirection]
+  val FORWARD: "FORWARD" = "FORWARD"
+  val BACKWARD: "BACKWARD" = "BACKWARD"
 
-  @inline def values = js.Array(FORWARD, BACKWARD)
+  @inline def values = js.Array[ScanDirection](FORWARD, BACKWARD)
 }
 
-@js.native
-sealed trait SortKey extends js.Any
+type SortKey = "DESCENDING" | "ASCENDING"
 object SortKey {
-  val DESCENDING = "DESCENDING".asInstanceOf[SortKey]
-  val ASCENDING = "ASCENDING".asInstanceOf[SortKey]
+  val DESCENDING: "DESCENDING" = "DESCENDING"
+  val ASCENDING: "ASCENDING" = "ASCENDING"
 
-  @inline def values = js.Array(DESCENDING, ASCENDING)
+  @inline def values = js.Array[SortKey](DESCENDING, ASCENDING)
 }

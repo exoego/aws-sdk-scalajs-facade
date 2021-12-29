@@ -1,32 +1,29 @@
 package facade.amazonaws.services.iotdeviceadvisor
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait Status extends js.Any
+type Status = "PASS" | "FAIL" | "CANCELED" | "PENDING" | "RUNNING" | "PASS_WITH_WARNINGS" | "ERROR"
 object Status {
-  val PASS = "PASS".asInstanceOf[Status]
-  val FAIL = "FAIL".asInstanceOf[Status]
-  val CANCELED = "CANCELED".asInstanceOf[Status]
-  val PENDING = "PENDING".asInstanceOf[Status]
-  val RUNNING = "RUNNING".asInstanceOf[Status]
-  val PASS_WITH_WARNINGS = "PASS_WITH_WARNINGS".asInstanceOf[Status]
-  val ERROR = "ERROR".asInstanceOf[Status]
+  val PASS: "PASS" = "PASS"
+  val FAIL: "FAIL" = "FAIL"
+  val CANCELED: "CANCELED" = "CANCELED"
+  val PENDING: "PENDING" = "PENDING"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val PASS_WITH_WARNINGS: "PASS_WITH_WARNINGS" = "PASS_WITH_WARNINGS"
+  val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(PASS, FAIL, CANCELED, PENDING, RUNNING, PASS_WITH_WARNINGS, ERROR)
+  @inline def values = js.Array[Status](PASS, FAIL, CANCELED, PENDING, RUNNING, PASS_WITH_WARNINGS, ERROR)
 }
 
-@js.native
-sealed trait SuiteRunStatus extends js.Any
+type SuiteRunStatus = "PASS" | "FAIL" | "CANCELED" | "PENDING" | "RUNNING" | "PASS_WITH_WARNINGS" | "ERROR"
 object SuiteRunStatus {
-  val PASS = "PASS".asInstanceOf[SuiteRunStatus]
-  val FAIL = "FAIL".asInstanceOf[SuiteRunStatus]
-  val CANCELED = "CANCELED".asInstanceOf[SuiteRunStatus]
-  val PENDING = "PENDING".asInstanceOf[SuiteRunStatus]
-  val RUNNING = "RUNNING".asInstanceOf[SuiteRunStatus]
-  val PASS_WITH_WARNINGS = "PASS_WITH_WARNINGS".asInstanceOf[SuiteRunStatus]
-  val ERROR = "ERROR".asInstanceOf[SuiteRunStatus]
+  val PASS: "PASS" = "PASS"
+  val FAIL: "FAIL" = "FAIL"
+  val CANCELED: "CANCELED" = "CANCELED"
+  val PENDING: "PENDING" = "PENDING"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val PASS_WITH_WARNINGS: "PASS_WITH_WARNINGS" = "PASS_WITH_WARNINGS"
+  val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(PASS, FAIL, CANCELED, PENDING, RUNNING, PASS_WITH_WARNINGS, ERROR)
+  @inline def values = js.Array[SuiteRunStatus](PASS, FAIL, CANCELED, PENDING, RUNNING, PASS_WITH_WARNINGS, ERROR)
 }

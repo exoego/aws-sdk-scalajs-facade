@@ -88,23 +88,7 @@ object MalwareType {
   val VIRUS = "VIRUS".asInstanceOf[MalwareType]
   val WORM = "WORM".asInstanceOf[MalwareType]
 
-  @inline def values = js.Array(
-    ADWARE,
-    BLENDED_THREAT,
-    BOTNET_AGENT,
-    COIN_MINER,
-    EXPLOIT_KIT,
-    KEYLOGGER,
-    MACRO,
-    POTENTIALLY_UNWANTED,
-    SPYWARE,
-    RANSOMWARE,
-    REMOTE_ACCESS,
-    ROOTKIT,
-    TROJAN,
-    VIRUS,
-    WORM
-  )
+  @inline def values = js.Array(ADWARE, BLENDED_THREAT, BOTNET_AGENT, COIN_MINER, EXPLOIT_KIT, KEYLOGGER, MACRO, POTENTIALLY_UNWANTED, SPYWARE, RANSOMWARE, REMOTE_ACCESS, ROOTKIT, TROJAN, VIRUS, WORM)
 }
 
 @js.native
@@ -264,3 +248,4 @@ object WorkflowStatus {
 
   @inline def values = js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED)
 }
+

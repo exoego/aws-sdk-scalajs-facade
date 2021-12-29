@@ -515,3 +515,4 @@ object UlimitName {
 
   @inline def values = js.Array(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack)
 }
+

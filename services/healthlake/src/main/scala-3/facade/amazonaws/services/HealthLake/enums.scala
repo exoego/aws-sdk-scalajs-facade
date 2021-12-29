@@ -1,42 +1,37 @@
 package facade.amazonaws.services.healthlake
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DatastoreStatus extends js.Any
+type DatastoreStatus = "CREATING" | "ACTIVE" | "DELETING" | "DELETED"
 object DatastoreStatus {
-  val CREATING = "CREATING".asInstanceOf[DatastoreStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[DatastoreStatus]
-  val DELETING = "DELETING".asInstanceOf[DatastoreStatus]
-  val DELETED = "DELETED".asInstanceOf[DatastoreStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETING: "DELETING" = "DELETING"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, DELETED)
+  @inline def values = js.Array[DatastoreStatus](CREATING, ACTIVE, DELETING, DELETED)
 }
 
-@js.native
-sealed trait FHIRVersion extends js.Any
+type FHIRVersion = "R4"
 object FHIRVersion {
-  val R4 = "R4".asInstanceOf[FHIRVersion]
+  val R4: "R4" = "R4"
 
-  @inline def values = js.Array(R4)
+  @inline def values = js.Array[FHIRVersion](R4)
 }
 
-@js.native
-sealed trait JobStatus extends js.Any
+type JobStatus = "SUBMITTED" | "IN_PROGRESS" | "COMPLETED" | "FAILED"
 object JobStatus {
-  val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
-  val FAILED = "FAILED".asInstanceOf[JobStatus]
+  val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
+  @inline def values = js.Array[JobStatus](SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
 }
 
-@js.native
-sealed trait PreloadDataType extends js.Any
+type PreloadDataType = "SYNTHEA"
 object PreloadDataType {
-  val SYNTHEA = "SYNTHEA".asInstanceOf[PreloadDataType]
+  val SYNTHEA: "SYNTHEA" = "SYNTHEA"
 
-  @inline def values = js.Array(SYNTHEA)
+  @inline def values = js.Array[PreloadDataType](SYNTHEA)
 }

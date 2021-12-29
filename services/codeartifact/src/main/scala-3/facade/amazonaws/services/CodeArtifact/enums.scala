@@ -1,77 +1,69 @@
 package facade.amazonaws.services.codeartifact
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DomainStatus extends js.Any
+type DomainStatus = "Active" | "Deleted"
 object DomainStatus {
-  val Active = "Active".asInstanceOf[DomainStatus]
-  val Deleted = "Deleted".asInstanceOf[DomainStatus]
+  val Active: "Active" = "Active"
+  val Deleted: "Deleted" = "Deleted"
 
-  @inline def values = js.Array(Active, Deleted)
+  @inline def values = js.Array[DomainStatus](Active, Deleted)
 }
 
-@js.native
-sealed trait ExternalConnectionStatus extends js.Any
+type ExternalConnectionStatus = "Available"
 object ExternalConnectionStatus {
-  val Available = "Available".asInstanceOf[ExternalConnectionStatus]
+  val Available: "Available" = "Available"
 
-  @inline def values = js.Array(Available)
+  @inline def values = js.Array[ExternalConnectionStatus](Available)
 }
 
-@js.native
-sealed trait HashAlgorithm extends js.Any
+type HashAlgorithm = "MD5" | "SHA-1" | "SHA-256" | "SHA-512"
 object HashAlgorithm {
-  val MD5 = "MD5".asInstanceOf[HashAlgorithm]
-  val `SHA-1` = "SHA-1".asInstanceOf[HashAlgorithm]
-  val `SHA-256` = "SHA-256".asInstanceOf[HashAlgorithm]
-  val `SHA-512` = "SHA-512".asInstanceOf[HashAlgorithm]
+  val MD5: "MD5" = "MD5"
+  val `SHA-1`: "SHA-1" = "SHA-1"
+  val `SHA-256`: "SHA-256" = "SHA-256"
+  val `SHA-512`: "SHA-512" = "SHA-512"
 
-  @inline def values = js.Array(MD5, `SHA-1`, `SHA-256`, `SHA-512`)
+  @inline def values = js.Array[HashAlgorithm](MD5, `SHA-1`, `SHA-256`, `SHA-512`)
 }
 
-@js.native
-sealed trait PackageFormat extends js.Any
+type PackageFormat = "npm" | "pypi" | "maven" | "nuget"
 object PackageFormat {
-  val npm = "npm".asInstanceOf[PackageFormat]
-  val pypi = "pypi".asInstanceOf[PackageFormat]
-  val maven = "maven".asInstanceOf[PackageFormat]
-  val nuget = "nuget".asInstanceOf[PackageFormat]
+  val npm: "npm" = "npm"
+  val pypi: "pypi" = "pypi"
+  val maven: "maven" = "maven"
+  val nuget: "nuget" = "nuget"
 
-  @inline def values = js.Array(npm, pypi, maven, nuget)
+  @inline def values = js.Array[PackageFormat](npm, pypi, maven, nuget)
 }
 
-@js.native
-sealed trait PackageVersionErrorCode extends js.Any
+type PackageVersionErrorCode = "ALREADY_EXISTS" | "MISMATCHED_REVISION" | "MISMATCHED_STATUS" | "NOT_ALLOWED" | "NOT_FOUND" | "SKIPPED"
 object PackageVersionErrorCode {
-  val ALREADY_EXISTS = "ALREADY_EXISTS".asInstanceOf[PackageVersionErrorCode]
-  val MISMATCHED_REVISION = "MISMATCHED_REVISION".asInstanceOf[PackageVersionErrorCode]
-  val MISMATCHED_STATUS = "MISMATCHED_STATUS".asInstanceOf[PackageVersionErrorCode]
-  val NOT_ALLOWED = "NOT_ALLOWED".asInstanceOf[PackageVersionErrorCode]
-  val NOT_FOUND = "NOT_FOUND".asInstanceOf[PackageVersionErrorCode]
-  val SKIPPED = "SKIPPED".asInstanceOf[PackageVersionErrorCode]
+  val ALREADY_EXISTS: "ALREADY_EXISTS" = "ALREADY_EXISTS"
+  val MISMATCHED_REVISION: "MISMATCHED_REVISION" = "MISMATCHED_REVISION"
+  val MISMATCHED_STATUS: "MISMATCHED_STATUS" = "MISMATCHED_STATUS"
+  val NOT_ALLOWED: "NOT_ALLOWED" = "NOT_ALLOWED"
+  val NOT_FOUND: "NOT_FOUND" = "NOT_FOUND"
+  val SKIPPED: "SKIPPED" = "SKIPPED"
 
-  @inline def values = js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED)
+  @inline def values = js.Array[PackageVersionErrorCode](ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED)
 }
 
-@js.native
-sealed trait PackageVersionSortType extends js.Any
+type PackageVersionSortType = "PUBLISHED_TIME"
 object PackageVersionSortType {
-  val PUBLISHED_TIME = "PUBLISHED_TIME".asInstanceOf[PackageVersionSortType]
+  val PUBLISHED_TIME: "PUBLISHED_TIME" = "PUBLISHED_TIME"
 
-  @inline def values = js.Array(PUBLISHED_TIME)
+  @inline def values = js.Array[PackageVersionSortType](PUBLISHED_TIME)
 }
 
-@js.native
-sealed trait PackageVersionStatus extends js.Any
+type PackageVersionStatus = "Published" | "Unfinished" | "Unlisted" | "Archived" | "Disposed" | "Deleted"
 object PackageVersionStatus {
-  val Published = "Published".asInstanceOf[PackageVersionStatus]
-  val Unfinished = "Unfinished".asInstanceOf[PackageVersionStatus]
-  val Unlisted = "Unlisted".asInstanceOf[PackageVersionStatus]
-  val Archived = "Archived".asInstanceOf[PackageVersionStatus]
-  val Disposed = "Disposed".asInstanceOf[PackageVersionStatus]
-  val Deleted = "Deleted".asInstanceOf[PackageVersionStatus]
+  val Published: "Published" = "Published"
+  val Unfinished: "Unfinished" = "Unfinished"
+  val Unlisted: "Unlisted" = "Unlisted"
+  val Archived: "Archived" = "Archived"
+  val Disposed: "Disposed" = "Disposed"
+  val Deleted: "Deleted" = "Deleted"
 
-  @inline def values = js.Array(Published, Unfinished, Unlisted, Archived, Disposed, Deleted)
+  @inline def values = js.Array[PackageVersionStatus](Published, Unfinished, Unlisted, Archived, Disposed, Deleted)
 }

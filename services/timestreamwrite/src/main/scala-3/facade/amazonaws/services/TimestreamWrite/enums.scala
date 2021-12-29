@@ -1,43 +1,38 @@
 package facade.amazonaws.services.timestreamwrite
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DimensionValueType extends js.Any
+type DimensionValueType = "VARCHAR"
 object DimensionValueType {
-  val VARCHAR = "VARCHAR".asInstanceOf[DimensionValueType]
+  val VARCHAR: "VARCHAR" = "VARCHAR"
 
-  @inline def values = js.Array(VARCHAR)
+  @inline def values = js.Array[DimensionValueType](VARCHAR)
 }
 
-@js.native
-sealed trait MeasureValueType extends js.Any
+type MeasureValueType = "DOUBLE" | "BIGINT" | "VARCHAR" | "BOOLEAN"
 object MeasureValueType {
-  val DOUBLE = "DOUBLE".asInstanceOf[MeasureValueType]
-  val BIGINT = "BIGINT".asInstanceOf[MeasureValueType]
-  val VARCHAR = "VARCHAR".asInstanceOf[MeasureValueType]
-  val BOOLEAN = "BOOLEAN".asInstanceOf[MeasureValueType]
+  val DOUBLE: "DOUBLE" = "DOUBLE"
+  val BIGINT: "BIGINT" = "BIGINT"
+  val VARCHAR: "VARCHAR" = "VARCHAR"
+  val BOOLEAN: "BOOLEAN" = "BOOLEAN"
 
-  @inline def values = js.Array(DOUBLE, BIGINT, VARCHAR, BOOLEAN)
+  @inline def values = js.Array[MeasureValueType](DOUBLE, BIGINT, VARCHAR, BOOLEAN)
 }
 
-@js.native
-sealed trait TableStatus extends js.Any
+type TableStatus = "ACTIVE" | "DELETING"
 object TableStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[TableStatus]
-  val DELETING = "DELETING".asInstanceOf[TableStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(ACTIVE, DELETING)
+  @inline def values = js.Array[TableStatus](ACTIVE, DELETING)
 }
 
-@js.native
-sealed trait TimeUnit extends js.Any
+type TimeUnit = "MILLISECONDS" | "SECONDS" | "MICROSECONDS" | "NANOSECONDS"
 object TimeUnit {
-  val MILLISECONDS = "MILLISECONDS".asInstanceOf[TimeUnit]
-  val SECONDS = "SECONDS".asInstanceOf[TimeUnit]
-  val MICROSECONDS = "MICROSECONDS".asInstanceOf[TimeUnit]
-  val NANOSECONDS = "NANOSECONDS".asInstanceOf[TimeUnit]
+  val MILLISECONDS: "MILLISECONDS" = "MILLISECONDS"
+  val SECONDS: "SECONDS" = "SECONDS"
+  val MICROSECONDS: "MICROSECONDS" = "MICROSECONDS"
+  val NANOSECONDS: "NANOSECONDS" = "NANOSECONDS"
 
-  @inline def values = js.Array(MILLISECONDS, SECONDS, MICROSECONDS, NANOSECONDS)
+  @inline def values = js.Array[TimeUnit](MILLISECONDS, SECONDS, MICROSECONDS, NANOSECONDS)
 }

@@ -54,3 +54,4 @@ object StreamViewType {
 
   @inline def values = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
 }
+

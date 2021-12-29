@@ -1,21 +1,18 @@
 package facade.amazonaws.services.personalize
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait RecipeProvider extends js.Any
+type RecipeProvider = "SERVICE"
 object RecipeProvider {
-  val SERVICE = "SERVICE".asInstanceOf[RecipeProvider]
+  val SERVICE: "SERVICE" = "SERVICE"
 
-  @inline def values = js.Array(SERVICE)
+  @inline def values = js.Array[RecipeProvider](SERVICE)
 }
 
-@js.native
-sealed trait TrainingMode extends js.Any
+type TrainingMode = "FULL" | "UPDATE"
 object TrainingMode {
-  val FULL = "FULL".asInstanceOf[TrainingMode]
-  val UPDATE = "UPDATE".asInstanceOf[TrainingMode]
+  val FULL: "FULL" = "FULL"
+  val UPDATE: "UPDATE" = "UPDATE"
 
-  @inline def values = js.Array(FULL, UPDATE)
+  @inline def values = js.Array[TrainingMode](FULL, UPDATE)
 }

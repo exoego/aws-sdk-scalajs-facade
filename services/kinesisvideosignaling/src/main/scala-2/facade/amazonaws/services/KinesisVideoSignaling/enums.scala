@@ -10,3 +10,4 @@ object Service {
 
   @inline def values = js.Array(TURN)
 }
+

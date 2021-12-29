@@ -398,3 +398,4 @@ object UserContextPolicy {
 
   @inline def values = js.Array(ATTRIBUTE_FILTER, USER_TOKEN)
 }
+

@@ -1,58 +1,52 @@
 package facade.amazonaws.services.efs
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait LifeCycleState extends js.Any
+type LifeCycleState = "creating" | "available" | "updating" | "deleting" | "deleted" | "error"
 object LifeCycleState {
-  val creating = "creating".asInstanceOf[LifeCycleState]
-  val available = "available".asInstanceOf[LifeCycleState]
-  val updating = "updating".asInstanceOf[LifeCycleState]
-  val deleting = "deleting".asInstanceOf[LifeCycleState]
-  val deleted = "deleted".asInstanceOf[LifeCycleState]
-  val error = "error".asInstanceOf[LifeCycleState]
+  val creating: "creating" = "creating"
+  val available: "available" = "available"
+  val updating: "updating" = "updating"
+  val deleting: "deleting" = "deleting"
+  val deleted: "deleted" = "deleted"
+  val error: "error" = "error"
 
-  @inline def values = js.Array(creating, available, updating, deleting, deleted, error)
+  @inline def values = js.Array[LifeCycleState](creating, available, updating, deleting, deleted, error)
 }
 
-@js.native
-sealed trait PerformanceMode extends js.Any
+type PerformanceMode = "generalPurpose" | "maxIO"
 object PerformanceMode {
-  val generalPurpose = "generalPurpose".asInstanceOf[PerformanceMode]
-  val maxIO = "maxIO".asInstanceOf[PerformanceMode]
+  val generalPurpose: "generalPurpose" = "generalPurpose"
+  val maxIO: "maxIO" = "maxIO"
 
-  @inline def values = js.Array(generalPurpose, maxIO)
+  @inline def values = js.Array[PerformanceMode](generalPurpose, maxIO)
 }
 
-@js.native
-sealed trait Status extends js.Any
+type Status = "ENABLED" | "ENABLING" | "DISABLED" | "DISABLING"
 object Status {
-  val ENABLED = "ENABLED".asInstanceOf[Status]
-  val ENABLING = "ENABLING".asInstanceOf[Status]
-  val DISABLED = "DISABLED".asInstanceOf[Status]
-  val DISABLING = "DISABLING".asInstanceOf[Status]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val ENABLING: "ENABLING" = "ENABLING"
+  val DISABLED: "DISABLED" = "DISABLED"
+  val DISABLING: "DISABLING" = "DISABLING"
 
-  @inline def values = js.Array(ENABLED, ENABLING, DISABLED, DISABLING)
+  @inline def values = js.Array[Status](ENABLED, ENABLING, DISABLED, DISABLING)
 }
 
-@js.native
-sealed trait ThroughputMode extends js.Any
+type ThroughputMode = "bursting" | "provisioned"
 object ThroughputMode {
-  val bursting = "bursting".asInstanceOf[ThroughputMode]
-  val provisioned = "provisioned".asInstanceOf[ThroughputMode]
+  val bursting: "bursting" = "bursting"
+  val provisioned: "provisioned" = "provisioned"
 
-  @inline def values = js.Array(bursting, provisioned)
+  @inline def values = js.Array[ThroughputMode](bursting, provisioned)
 }
 
-@js.native
-sealed trait TransitionToIARules extends js.Any
+type TransitionToIARules = "AFTER_7_DAYS" | "AFTER_14_DAYS" | "AFTER_30_DAYS" | "AFTER_60_DAYS" | "AFTER_90_DAYS"
 object TransitionToIARules {
-  val AFTER_7_DAYS = "AFTER_7_DAYS".asInstanceOf[TransitionToIARules]
-  val AFTER_14_DAYS = "AFTER_14_DAYS".asInstanceOf[TransitionToIARules]
-  val AFTER_30_DAYS = "AFTER_30_DAYS".asInstanceOf[TransitionToIARules]
-  val AFTER_60_DAYS = "AFTER_60_DAYS".asInstanceOf[TransitionToIARules]
-  val AFTER_90_DAYS = "AFTER_90_DAYS".asInstanceOf[TransitionToIARules]
+  val AFTER_7_DAYS: "AFTER_7_DAYS" = "AFTER_7_DAYS"
+  val AFTER_14_DAYS: "AFTER_14_DAYS" = "AFTER_14_DAYS"
+  val AFTER_30_DAYS: "AFTER_30_DAYS" = "AFTER_30_DAYS"
+  val AFTER_60_DAYS: "AFTER_60_DAYS" = "AFTER_60_DAYS"
+  val AFTER_90_DAYS: "AFTER_90_DAYS" = "AFTER_90_DAYS"
 
-  @inline def values = js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
+  @inline def values = js.Array[TransitionToIARules](AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
 }

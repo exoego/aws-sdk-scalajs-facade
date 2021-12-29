@@ -1,185 +1,166 @@
 package facade.amazonaws.services.lexmodelbuildingservice
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ChannelStatus extends js.Any
+type ChannelStatus = "IN_PROGRESS" | "CREATED" | "FAILED"
 object ChannelStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ChannelStatus]
-  val CREATED = "CREATED".asInstanceOf[ChannelStatus]
-  val FAILED = "FAILED".asInstanceOf[ChannelStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val CREATED: "CREATED" = "CREATED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, CREATED, FAILED)
+  @inline def values = js.Array[ChannelStatus](IN_PROGRESS, CREATED, FAILED)
 }
 
-@js.native
-sealed trait ChannelType extends js.Any
+type ChannelType = "Facebook" | "Slack" | "Twilio-Sms" | "Kik"
 object ChannelType {
-  val Facebook = "Facebook".asInstanceOf[ChannelType]
-  val Slack = "Slack".asInstanceOf[ChannelType]
-  val `Twilio-Sms` = "Twilio-Sms".asInstanceOf[ChannelType]
-  val Kik = "Kik".asInstanceOf[ChannelType]
+  val Facebook: "Facebook" = "Facebook"
+  val Slack: "Slack" = "Slack"
+  val `Twilio-Sms`: "Twilio-Sms" = "Twilio-Sms"
+  val Kik: "Kik" = "Kik"
 
-  @inline def values = js.Array(Facebook, Slack, `Twilio-Sms`, Kik)
+  @inline def values = js.Array[ChannelType](Facebook, Slack, `Twilio-Sms`, Kik)
 }
 
-@js.native
-sealed trait ContentType extends js.Any
+type ContentType = "PlainText" | "SSML" | "CustomPayload"
 object ContentType {
-  val PlainText = "PlainText".asInstanceOf[ContentType]
-  val SSML = "SSML".asInstanceOf[ContentType]
-  val CustomPayload = "CustomPayload".asInstanceOf[ContentType]
+  val PlainText: "PlainText" = "PlainText"
+  val SSML: "SSML" = "SSML"
+  val CustomPayload: "CustomPayload" = "CustomPayload"
 
-  @inline def values = js.Array(PlainText, SSML, CustomPayload)
+  @inline def values = js.Array[ContentType](PlainText, SSML, CustomPayload)
 }
 
-@js.native
-sealed trait Destination extends js.Any
+type Destination = "CLOUDWATCH_LOGS" | "S3"
 object Destination {
-  val CLOUDWATCH_LOGS = "CLOUDWATCH_LOGS".asInstanceOf[Destination]
-  val S3 = "S3".asInstanceOf[Destination]
+  val CLOUDWATCH_LOGS: "CLOUDWATCH_LOGS" = "CLOUDWATCH_LOGS"
+  val S3: "S3" = "S3"
 
-  @inline def values = js.Array(CLOUDWATCH_LOGS, S3)
+  @inline def values = js.Array[Destination](CLOUDWATCH_LOGS, S3)
 }
 
-@js.native
-sealed trait ExportStatus extends js.Any
+type ExportStatus = "IN_PROGRESS" | "READY" | "FAILED"
 object ExportStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
-  val READY = "READY".asInstanceOf[ExportStatus]
-  val FAILED = "FAILED".asInstanceOf[ExportStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val READY: "READY" = "READY"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, READY, FAILED)
+  @inline def values = js.Array[ExportStatus](IN_PROGRESS, READY, FAILED)
 }
 
-@js.native
-sealed trait ExportType extends js.Any
+type ExportType = "ALEXA_SKILLS_KIT" | "LEX"
 object ExportType {
-  val ALEXA_SKILLS_KIT = "ALEXA_SKILLS_KIT".asInstanceOf[ExportType]
-  val LEX = "LEX".asInstanceOf[ExportType]
+  val ALEXA_SKILLS_KIT: "ALEXA_SKILLS_KIT" = "ALEXA_SKILLS_KIT"
+  val LEX: "LEX" = "LEX"
 
-  @inline def values = js.Array(ALEXA_SKILLS_KIT, LEX)
+  @inline def values = js.Array[ExportType](ALEXA_SKILLS_KIT, LEX)
 }
 
-@js.native
-sealed trait FulfillmentActivityType extends js.Any
+type FulfillmentActivityType = "ReturnIntent" | "CodeHook"
 object FulfillmentActivityType {
-  val ReturnIntent = "ReturnIntent".asInstanceOf[FulfillmentActivityType]
-  val CodeHook = "CodeHook".asInstanceOf[FulfillmentActivityType]
+  val ReturnIntent: "ReturnIntent" = "ReturnIntent"
+  val CodeHook: "CodeHook" = "CodeHook"
 
-  @inline def values = js.Array(ReturnIntent, CodeHook)
+  @inline def values = js.Array[FulfillmentActivityType](ReturnIntent, CodeHook)
 }
 
-@js.native
-sealed trait ImportStatus extends js.Any
+type ImportStatus = "IN_PROGRESS" | "COMPLETE" | "FAILED"
 object ImportStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ImportStatus]
-  val COMPLETE = "COMPLETE".asInstanceOf[ImportStatus]
-  val FAILED = "FAILED".asInstanceOf[ImportStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val COMPLETE: "COMPLETE" = "COMPLETE"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETE, FAILED)
+  @inline def values = js.Array[ImportStatus](IN_PROGRESS, COMPLETE, FAILED)
 }
 
-@js.native
-sealed trait Locale extends js.Any
+type Locale = "de-DE" | "en-AU" | "en-GB" | "en-US" | "es-419" | "es-ES" | "es-US" | "fr-FR" | "fr-CA" | "it-IT" | "ja-JP"
 object Locale {
-  val `de-DE` = "de-DE".asInstanceOf[Locale]
-  val `en-AU` = "en-AU".asInstanceOf[Locale]
-  val `en-GB` = "en-GB".asInstanceOf[Locale]
-  val `en-US` = "en-US".asInstanceOf[Locale]
-  val `es-419` = "es-419".asInstanceOf[Locale]
-  val `es-ES` = "es-ES".asInstanceOf[Locale]
-  val `es-US` = "es-US".asInstanceOf[Locale]
-  val `fr-FR` = "fr-FR".asInstanceOf[Locale]
-  val `fr-CA` = "fr-CA".asInstanceOf[Locale]
-  val `it-IT` = "it-IT".asInstanceOf[Locale]
-  val `ja-JP` = "ja-JP".asInstanceOf[Locale]
+  val `de-DE`: "de-DE" = "de-DE"
+  val `en-AU`: "en-AU" = "en-AU"
+  val `en-GB`: "en-GB" = "en-GB"
+  val `en-US`: "en-US" = "en-US"
+  val `es-419`: "es-419" = "es-419"
+  val `es-ES`: "es-ES" = "es-ES"
+  val `es-US`: "es-US" = "es-US"
+  val `fr-FR`: "fr-FR" = "fr-FR"
+  val `fr-CA`: "fr-CA" = "fr-CA"
+  val `it-IT`: "it-IT" = "it-IT"
+  val `ja-JP`: "ja-JP" = "ja-JP"
 
-  @inline def values = js.Array(`de-DE`, `en-AU`, `en-GB`, `en-US`, `es-419`, `es-ES`, `es-US`, `fr-FR`, `fr-CA`, `it-IT`, `ja-JP`)
+  @inline def values = js.Array[Locale](`de-DE`, `en-AU`, `en-GB`, `en-US`, `es-419`, `es-ES`, `es-US`, `fr-FR`, `fr-CA`, `it-IT`, `ja-JP`)
 }
 
-@js.native
-sealed trait LogType extends js.Any
+type LogType = "AUDIO" | "TEXT"
 object LogType {
-  val AUDIO = "AUDIO".asInstanceOf[LogType]
-  val TEXT = "TEXT".asInstanceOf[LogType]
+  val AUDIO: "AUDIO" = "AUDIO"
+  val TEXT: "TEXT" = "TEXT"
 
-  @inline def values = js.Array(AUDIO, TEXT)
+  @inline def values = js.Array[LogType](AUDIO, TEXT)
 }
 
-@js.native
-sealed trait MergeStrategy extends js.Any
+type MergeStrategy = "OVERWRITE_LATEST" | "FAIL_ON_CONFLICT"
 object MergeStrategy {
-  val OVERWRITE_LATEST = "OVERWRITE_LATEST".asInstanceOf[MergeStrategy]
-  val FAIL_ON_CONFLICT = "FAIL_ON_CONFLICT".asInstanceOf[MergeStrategy]
+  val OVERWRITE_LATEST: "OVERWRITE_LATEST" = "OVERWRITE_LATEST"
+  val FAIL_ON_CONFLICT: "FAIL_ON_CONFLICT" = "FAIL_ON_CONFLICT"
 
-  @inline def values = js.Array(OVERWRITE_LATEST, FAIL_ON_CONFLICT)
+  @inline def values = js.Array[MergeStrategy](OVERWRITE_LATEST, FAIL_ON_CONFLICT)
 }
 
-@js.native
-sealed trait ObfuscationSetting extends js.Any
+type ObfuscationSetting = "NONE" | "DEFAULT_OBFUSCATION"
 object ObfuscationSetting {
-  val NONE = "NONE".asInstanceOf[ObfuscationSetting]
-  val DEFAULT_OBFUSCATION = "DEFAULT_OBFUSCATION".asInstanceOf[ObfuscationSetting]
+  val NONE: "NONE" = "NONE"
+  val DEFAULT_OBFUSCATION: "DEFAULT_OBFUSCATION" = "DEFAULT_OBFUSCATION"
 
-  @inline def values = js.Array(NONE, DEFAULT_OBFUSCATION)
+  @inline def values = js.Array[ObfuscationSetting](NONE, DEFAULT_OBFUSCATION)
 }
 
-@js.native
-sealed trait ProcessBehavior extends js.Any
+type ProcessBehavior = "SAVE" | "BUILD"
 object ProcessBehavior {
-  val SAVE = "SAVE".asInstanceOf[ProcessBehavior]
-  val BUILD = "BUILD".asInstanceOf[ProcessBehavior]
+  val SAVE: "SAVE" = "SAVE"
+  val BUILD: "BUILD" = "BUILD"
 
-  @inline def values = js.Array(SAVE, BUILD)
+  @inline def values = js.Array[ProcessBehavior](SAVE, BUILD)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "BOT" | "INTENT" | "SLOT_TYPE"
 object ResourceType {
-  val BOT = "BOT".asInstanceOf[ResourceType]
-  val INTENT = "INTENT".asInstanceOf[ResourceType]
-  val SLOT_TYPE = "SLOT_TYPE".asInstanceOf[ResourceType]
+  val BOT: "BOT" = "BOT"
+  val INTENT: "INTENT" = "INTENT"
+  val SLOT_TYPE: "SLOT_TYPE" = "SLOT_TYPE"
 
-  @inline def values = js.Array(BOT, INTENT, SLOT_TYPE)
+  @inline def values = js.Array[ResourceType](BOT, INTENT, SLOT_TYPE)
 }
 
-@js.native
-sealed trait SlotConstraint extends js.Any
+type SlotConstraint = "Required" | "Optional"
 object SlotConstraint {
-  val Required = "Required".asInstanceOf[SlotConstraint]
-  val Optional = "Optional".asInstanceOf[SlotConstraint]
+  val Required: "Required" = "Required"
+  val Optional: "Optional" = "Optional"
 
-  @inline def values = js.Array(Required, Optional)
+  @inline def values = js.Array[SlotConstraint](Required, Optional)
 }
 
-@js.native
-sealed trait SlotValueSelectionStrategy extends js.Any
+type SlotValueSelectionStrategy = "ORIGINAL_VALUE" | "TOP_RESOLUTION"
 object SlotValueSelectionStrategy {
-  val ORIGINAL_VALUE = "ORIGINAL_VALUE".asInstanceOf[SlotValueSelectionStrategy]
-  val TOP_RESOLUTION = "TOP_RESOLUTION".asInstanceOf[SlotValueSelectionStrategy]
+  val ORIGINAL_VALUE: "ORIGINAL_VALUE" = "ORIGINAL_VALUE"
+  val TOP_RESOLUTION: "TOP_RESOLUTION" = "TOP_RESOLUTION"
 
-  @inline def values = js.Array(ORIGINAL_VALUE, TOP_RESOLUTION)
+  @inline def values = js.Array[SlotValueSelectionStrategy](ORIGINAL_VALUE, TOP_RESOLUTION)
 }
 
-@js.native
-sealed trait Status extends js.Any
+type Status = "BUILDING" | "READY" | "READY_BASIC_TESTING" | "FAILED" | "NOT_BUILT"
 object Status {
-  val BUILDING = "BUILDING".asInstanceOf[Status]
-  val READY = "READY".asInstanceOf[Status]
-  val READY_BASIC_TESTING = "READY_BASIC_TESTING".asInstanceOf[Status]
-  val FAILED = "FAILED".asInstanceOf[Status]
-  val NOT_BUILT = "NOT_BUILT".asInstanceOf[Status]
+  val BUILDING: "BUILDING" = "BUILDING"
+  val READY: "READY" = "READY"
+  val READY_BASIC_TESTING: "READY_BASIC_TESTING" = "READY_BASIC_TESTING"
+  val FAILED: "FAILED" = "FAILED"
+  val NOT_BUILT: "NOT_BUILT" = "NOT_BUILT"
 
-  @inline def values = js.Array(BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT)
+  @inline def values = js.Array[Status](BUILDING, READY, READY_BASIC_TESTING, FAILED, NOT_BUILT)
 }
 
-@js.native
-sealed trait StatusType extends js.Any
+type StatusType = "Detected" | "Missed"
 object StatusType {
-  val Detected = "Detected".asInstanceOf[StatusType]
-  val Missed = "Missed".asInstanceOf[StatusType]
+  val Detected: "Detected" = "Detected"
+  val Missed: "Missed" = "Missed"
 
-  @inline def values = js.Array(Detected, Missed)
+  @inline def values = js.Array[StatusType](Detected, Missed)
 }

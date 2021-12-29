@@ -1,101 +1,92 @@
 package facade.amazonaws.services.mq
 
 import scalajs._
-import scala.scalajs.js.|
 
 /** The authentication strategy used to secure the broker.
   */
-@js.native
-sealed trait AuthenticationStrategy extends js.Any
+type AuthenticationStrategy = "SIMPLE" | "LDAP"
 object AuthenticationStrategy {
-  val SIMPLE = "SIMPLE".asInstanceOf[AuthenticationStrategy]
-  val LDAP = "LDAP".asInstanceOf[AuthenticationStrategy]
+  val SIMPLE: "SIMPLE" = "SIMPLE"
+  val LDAP: "LDAP" = "LDAP"
 
-  @inline def values = js.Array(SIMPLE, LDAP)
+  @inline def values = js.Array[AuthenticationStrategy](SIMPLE, LDAP)
 }
 
 /** The status of the broker.
   */
-@js.native
-sealed trait BrokerState extends js.Any
+type BrokerState = "CREATION_IN_PROGRESS" | "CREATION_FAILED" | "DELETION_IN_PROGRESS" | "RUNNING" | "REBOOT_IN_PROGRESS"
 object BrokerState {
-  val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[BrokerState]
-  val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[BrokerState]
-  val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[BrokerState]
-  val RUNNING = "RUNNING".asInstanceOf[BrokerState]
-  val REBOOT_IN_PROGRESS = "REBOOT_IN_PROGRESS".asInstanceOf[BrokerState]
+  val CREATION_IN_PROGRESS: "CREATION_IN_PROGRESS" = "CREATION_IN_PROGRESS"
+  val CREATION_FAILED: "CREATION_FAILED" = "CREATION_FAILED"
+  val DELETION_IN_PROGRESS: "DELETION_IN_PROGRESS" = "DELETION_IN_PROGRESS"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val REBOOT_IN_PROGRESS: "REBOOT_IN_PROGRESS" = "REBOOT_IN_PROGRESS"
 
-  @inline def values = js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
+  @inline def values = js.Array[BrokerState](CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
 }
 
 /** The broker's storage type. <important>EFS is currently not Supported for RabbitMQ engine type.</important>
   */
-@js.native
-sealed trait BrokerStorageType extends js.Any
+type BrokerStorageType = "EBS" | "EFS"
 object BrokerStorageType {
-  val EBS = "EBS".asInstanceOf[BrokerStorageType]
-  val EFS = "EFS".asInstanceOf[BrokerStorageType]
+  val EBS: "EBS" = "EBS"
+  val EFS: "EFS" = "EFS"
 
-  @inline def values = js.Array(EBS, EFS)
+  @inline def values = js.Array[BrokerStorageType](EBS, EFS)
 }
 
 /** The type of change pending for the ActiveMQ user.
   */
-@js.native
-sealed trait ChangeType extends js.Any
+type ChangeType = "CREATE" | "UPDATE" | "DELETE"
 object ChangeType {
-  val CREATE = "CREATE".asInstanceOf[ChangeType]
-  val UPDATE = "UPDATE".asInstanceOf[ChangeType]
-  val DELETE = "DELETE".asInstanceOf[ChangeType]
+  val CREATE: "CREATE" = "CREATE"
+  val UPDATE: "UPDATE" = "UPDATE"
+  val DELETE: "DELETE" = "DELETE"
 
-  @inline def values = js.Array(CREATE, UPDATE, DELETE)
+  @inline def values = js.Array[ChangeType](CREATE, UPDATE, DELETE)
 }
 
-@js.native
-sealed trait DayOfWeek extends js.Any
+type DayOfWeek = "MONDAY" | "TUESDAY" | "WEDNESDAY" | "THURSDAY" | "FRIDAY" | "SATURDAY" | "SUNDAY"
 object DayOfWeek {
-  val MONDAY = "MONDAY".asInstanceOf[DayOfWeek]
-  val TUESDAY = "TUESDAY".asInstanceOf[DayOfWeek]
-  val WEDNESDAY = "WEDNESDAY".asInstanceOf[DayOfWeek]
-  val THURSDAY = "THURSDAY".asInstanceOf[DayOfWeek]
-  val FRIDAY = "FRIDAY".asInstanceOf[DayOfWeek]
-  val SATURDAY = "SATURDAY".asInstanceOf[DayOfWeek]
-  val SUNDAY = "SUNDAY".asInstanceOf[DayOfWeek]
+  val MONDAY: "MONDAY" = "MONDAY"
+  val TUESDAY: "TUESDAY" = "TUESDAY"
+  val WEDNESDAY: "WEDNESDAY" = "WEDNESDAY"
+  val THURSDAY: "THURSDAY" = "THURSDAY"
+  val FRIDAY: "FRIDAY" = "FRIDAY"
+  val SATURDAY: "SATURDAY" = "SATURDAY"
+  val SUNDAY: "SUNDAY" = "SUNDAY"
 
-  @inline def values = js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
+  @inline def values = js.Array[DayOfWeek](MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
 }
 
 /** The deployment mode of the broker.
   */
-@js.native
-sealed trait DeploymentMode extends js.Any
+type DeploymentMode = "SINGLE_INSTANCE" | "ACTIVE_STANDBY_MULTI_AZ" | "CLUSTER_MULTI_AZ"
 object DeploymentMode {
-  val SINGLE_INSTANCE = "SINGLE_INSTANCE".asInstanceOf[DeploymentMode]
-  val ACTIVE_STANDBY_MULTI_AZ = "ACTIVE_STANDBY_MULTI_AZ".asInstanceOf[DeploymentMode]
-  val CLUSTER_MULTI_AZ = "CLUSTER_MULTI_AZ".asInstanceOf[DeploymentMode]
+  val SINGLE_INSTANCE: "SINGLE_INSTANCE" = "SINGLE_INSTANCE"
+  val ACTIVE_STANDBY_MULTI_AZ: "ACTIVE_STANDBY_MULTI_AZ" = "ACTIVE_STANDBY_MULTI_AZ"
+  val CLUSTER_MULTI_AZ: "CLUSTER_MULTI_AZ" = "CLUSTER_MULTI_AZ"
 
-  @inline def values = js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ, CLUSTER_MULTI_AZ)
+  @inline def values = js.Array[DeploymentMode](SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ, CLUSTER_MULTI_AZ)
 }
 
 /** The type of broker engine. Note: Currently, Amazon MQ supports ActiveMQ and RabbitMQ.
   */
-@js.native
-sealed trait EngineType extends js.Any
+type EngineType = "ACTIVEMQ" | "RABBITMQ"
 object EngineType {
-  val ACTIVEMQ = "ACTIVEMQ".asInstanceOf[EngineType]
-  val RABBITMQ = "RABBITMQ".asInstanceOf[EngineType]
+  val ACTIVEMQ: "ACTIVEMQ" = "ACTIVEMQ"
+  val RABBITMQ: "RABBITMQ" = "RABBITMQ"
 
-  @inline def values = js.Array(ACTIVEMQ, RABBITMQ)
+  @inline def values = js.Array[EngineType](ACTIVEMQ, RABBITMQ)
 }
 
 /** The reason for which the XML elements or attributes were sanitized.
   */
-@js.native
-sealed trait SanitizationWarningReason extends js.Any
+type SanitizationWarningReason = "DISALLOWED_ELEMENT_REMOVED" | "DISALLOWED_ATTRIBUTE_REMOVED" | "INVALID_ATTRIBUTE_VALUE_REMOVED"
 object SanitizationWarningReason {
-  val DISALLOWED_ELEMENT_REMOVED = "DISALLOWED_ELEMENT_REMOVED".asInstanceOf[SanitizationWarningReason]
-  val DISALLOWED_ATTRIBUTE_REMOVED = "DISALLOWED_ATTRIBUTE_REMOVED".asInstanceOf[SanitizationWarningReason]
-  val INVALID_ATTRIBUTE_VALUE_REMOVED = "INVALID_ATTRIBUTE_VALUE_REMOVED".asInstanceOf[SanitizationWarningReason]
+  val DISALLOWED_ELEMENT_REMOVED: "DISALLOWED_ELEMENT_REMOVED" = "DISALLOWED_ELEMENT_REMOVED"
+  val DISALLOWED_ATTRIBUTE_REMOVED: "DISALLOWED_ATTRIBUTE_REMOVED" = "DISALLOWED_ATTRIBUTE_REMOVED"
+  val INVALID_ATTRIBUTE_VALUE_REMOVED: "INVALID_ATTRIBUTE_VALUE_REMOVED" = "INVALID_ATTRIBUTE_VALUE_REMOVED"
 
-  @inline def values = js.Array(DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED)
+  @inline def values = js.Array[SanitizationWarningReason](DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED)
 }

@@ -1,115 +1,103 @@
 package facade.amazonaws.services.imagebuilder
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ComponentFormat extends js.Any
+type ComponentFormat = "SHELL"
 object ComponentFormat {
-  val SHELL = "SHELL".asInstanceOf[ComponentFormat]
+  val SHELL: "SHELL" = "SHELL"
 
-  @inline def values = js.Array(SHELL)
+  @inline def values = js.Array[ComponentFormat](SHELL)
 }
 
-@js.native
-sealed trait ComponentType extends js.Any
+type ComponentType = "BUILD" | "TEST"
 object ComponentType {
-  val BUILD = "BUILD".asInstanceOf[ComponentType]
-  val TEST = "TEST".asInstanceOf[ComponentType]
+  val BUILD: "BUILD" = "BUILD"
+  val TEST: "TEST" = "TEST"
 
-  @inline def values = js.Array(BUILD, TEST)
+  @inline def values = js.Array[ComponentType](BUILD, TEST)
 }
 
-@js.native
-sealed trait ContainerRepositoryService extends js.Any
+type ContainerRepositoryService = "ECR"
 object ContainerRepositoryService {
-  val ECR = "ECR".asInstanceOf[ContainerRepositoryService]
+  val ECR: "ECR" = "ECR"
 
-  @inline def values = js.Array(ECR)
+  @inline def values = js.Array[ContainerRepositoryService](ECR)
 }
 
-@js.native
-sealed trait ContainerType extends js.Any
+type ContainerType = "DOCKER"
 object ContainerType {
-  val DOCKER = "DOCKER".asInstanceOf[ContainerType]
+  val DOCKER: "DOCKER" = "DOCKER"
 
-  @inline def values = js.Array(DOCKER)
+  @inline def values = js.Array[ContainerType](DOCKER)
 }
 
-@js.native
-sealed trait EbsVolumeType extends js.Any
+type EbsVolumeType = "standard" | "io1" | "io2" | "gp2" | "gp3" | "sc1" | "st1"
 object EbsVolumeType {
-  val standard = "standard".asInstanceOf[EbsVolumeType]
-  val io1 = "io1".asInstanceOf[EbsVolumeType]
-  val io2 = "io2".asInstanceOf[EbsVolumeType]
-  val gp2 = "gp2".asInstanceOf[EbsVolumeType]
-  val gp3 = "gp3".asInstanceOf[EbsVolumeType]
-  val sc1 = "sc1".asInstanceOf[EbsVolumeType]
-  val st1 = "st1".asInstanceOf[EbsVolumeType]
+  val standard: "standard" = "standard"
+  val io1: "io1" = "io1"
+  val io2: "io2" = "io2"
+  val gp2: "gp2" = "gp2"
+  val gp3: "gp3" = "gp3"
+  val sc1: "sc1" = "sc1"
+  val st1: "st1" = "st1"
 
-  @inline def values = js.Array(standard, io1, io2, gp2, gp3, sc1, st1)
+  @inline def values = js.Array[EbsVolumeType](standard, io1, io2, gp2, gp3, sc1, st1)
 }
 
-@js.native
-sealed trait ImageStatus extends js.Any
+type ImageStatus = "PENDING" | "CREATING" | "BUILDING" | "TESTING" | "DISTRIBUTING" | "INTEGRATING" | "AVAILABLE" | "CANCELLED" | "FAILED" | "DEPRECATED" | "DELETED"
 object ImageStatus {
-  val PENDING = "PENDING".asInstanceOf[ImageStatus]
-  val CREATING = "CREATING".asInstanceOf[ImageStatus]
-  val BUILDING = "BUILDING".asInstanceOf[ImageStatus]
-  val TESTING = "TESTING".asInstanceOf[ImageStatus]
-  val DISTRIBUTING = "DISTRIBUTING".asInstanceOf[ImageStatus]
-  val INTEGRATING = "INTEGRATING".asInstanceOf[ImageStatus]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[ImageStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[ImageStatus]
-  val FAILED = "FAILED".asInstanceOf[ImageStatus]
-  val DEPRECATED = "DEPRECATED".asInstanceOf[ImageStatus]
-  val DELETED = "DELETED".asInstanceOf[ImageStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val CREATING: "CREATING" = "CREATING"
+  val BUILDING: "BUILDING" = "BUILDING"
+  val TESTING: "TESTING" = "TESTING"
+  val DISTRIBUTING: "DISTRIBUTING" = "DISTRIBUTING"
+  val INTEGRATING: "INTEGRATING" = "INTEGRATING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val CANCELLED: "CANCELLED" = "CANCELLED"
+  val FAILED: "FAILED" = "FAILED"
+  val DEPRECATED: "DEPRECATED" = "DEPRECATED"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED)
+  @inline def values = js.Array[ImageStatus](PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED)
 }
 
-@js.native
-sealed trait ImageType extends js.Any
+type ImageType = "AMI" | "DOCKER"
 object ImageType {
-  val AMI = "AMI".asInstanceOf[ImageType]
-  val DOCKER = "DOCKER".asInstanceOf[ImageType]
+  val AMI: "AMI" = "AMI"
+  val DOCKER: "DOCKER" = "DOCKER"
 
-  @inline def values = js.Array(AMI, DOCKER)
+  @inline def values = js.Array[ImageType](AMI, DOCKER)
 }
 
-@js.native
-sealed trait Ownership extends js.Any
+type Ownership = "Self" | "Shared" | "Amazon"
 object Ownership {
-  val Self = "Self".asInstanceOf[Ownership]
-  val Shared = "Shared".asInstanceOf[Ownership]
-  val Amazon = "Amazon".asInstanceOf[Ownership]
+  val Self: "Self" = "Self"
+  val Shared: "Shared" = "Shared"
+  val Amazon: "Amazon" = "Amazon"
 
-  @inline def values = js.Array(Self, Shared, Amazon)
+  @inline def values = js.Array[Ownership](Self, Shared, Amazon)
 }
 
-@js.native
-sealed trait PipelineExecutionStartCondition extends js.Any
+type PipelineExecutionStartCondition = "EXPRESSION_MATCH_ONLY" | "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE"
 object PipelineExecutionStartCondition {
-  val EXPRESSION_MATCH_ONLY = "EXPRESSION_MATCH_ONLY".asInstanceOf[PipelineExecutionStartCondition]
-  val EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE".asInstanceOf[PipelineExecutionStartCondition]
+  val EXPRESSION_MATCH_ONLY: "EXPRESSION_MATCH_ONLY" = "EXPRESSION_MATCH_ONLY"
+  val EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE: "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE" = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE"
 
-  @inline def values = js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE)
+  @inline def values = js.Array[PipelineExecutionStartCondition](EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE)
 }
 
-@js.native
-sealed trait PipelineStatus extends js.Any
+type PipelineStatus = "DISABLED" | "ENABLED"
 object PipelineStatus {
-  val DISABLED = "DISABLED".asInstanceOf[PipelineStatus]
-  val ENABLED = "ENABLED".asInstanceOf[PipelineStatus]
+  val DISABLED: "DISABLED" = "DISABLED"
+  val ENABLED: "ENABLED" = "ENABLED"
 
-  @inline def values = js.Array(DISABLED, ENABLED)
+  @inline def values = js.Array[PipelineStatus](DISABLED, ENABLED)
 }
 
-@js.native
-sealed trait Platform extends js.Any
+type Platform = "Windows" | "Linux"
 object Platform {
-  val Windows = "Windows".asInstanceOf[Platform]
-  val Linux = "Linux".asInstanceOf[Platform]
+  val Windows: "Windows" = "Windows"
+  val Linux: "Linux" = "Linux"
 
-  @inline def values = js.Array(Windows, Linux)
+  @inline def values = js.Array[Platform](Windows, Linux)
 }

@@ -1,119 +1,108 @@
 package facade.amazonaws.services.ssm
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AssociationComplianceSeverity extends js.Any
+type AssociationComplianceSeverity = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW" | "UNSPECIFIED"
 object AssociationComplianceSeverity {
-  val CRITICAL = "CRITICAL".asInstanceOf[AssociationComplianceSeverity]
-  val HIGH = "HIGH".asInstanceOf[AssociationComplianceSeverity]
-  val MEDIUM = "MEDIUM".asInstanceOf[AssociationComplianceSeverity]
-  val LOW = "LOW".asInstanceOf[AssociationComplianceSeverity]
-  val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[AssociationComplianceSeverity]
+  val CRITICAL: "CRITICAL" = "CRITICAL"
+  val HIGH: "HIGH" = "HIGH"
+  val MEDIUM: "MEDIUM" = "MEDIUM"
+  val LOW: "LOW" = "LOW"
+  val UNSPECIFIED: "UNSPECIFIED" = "UNSPECIFIED"
 
-  @inline def values = js.Array(CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED)
+  @inline def values = js.Array[AssociationComplianceSeverity](CRITICAL, HIGH, MEDIUM, LOW, UNSPECIFIED)
 }
 
-@js.native
-sealed trait AssociationExecutionFilterKey extends js.Any
+type AssociationExecutionFilterKey = "ExecutionId" | "Status" | "CreatedTime"
 object AssociationExecutionFilterKey {
-  val ExecutionId = "ExecutionId".asInstanceOf[AssociationExecutionFilterKey]
-  val Status = "Status".asInstanceOf[AssociationExecutionFilterKey]
-  val CreatedTime = "CreatedTime".asInstanceOf[AssociationExecutionFilterKey]
+  val ExecutionId: "ExecutionId" = "ExecutionId"
+  val Status: "Status" = "Status"
+  val CreatedTime: "CreatedTime" = "CreatedTime"
 
-  @inline def values = js.Array(ExecutionId, Status, CreatedTime)
+  @inline def values = js.Array[AssociationExecutionFilterKey](ExecutionId, Status, CreatedTime)
 }
 
-@js.native
-sealed trait AssociationExecutionTargetsFilterKey extends js.Any
+type AssociationExecutionTargetsFilterKey = "Status" | "ResourceId" | "ResourceType"
 object AssociationExecutionTargetsFilterKey {
-  val Status = "Status".asInstanceOf[AssociationExecutionTargetsFilterKey]
-  val ResourceId = "ResourceId".asInstanceOf[AssociationExecutionTargetsFilterKey]
-  val ResourceType = "ResourceType".asInstanceOf[AssociationExecutionTargetsFilterKey]
+  val Status: "Status" = "Status"
+  val ResourceId: "ResourceId" = "ResourceId"
+  val ResourceType: "ResourceType" = "ResourceType"
 
-  @inline def values = js.Array(Status, ResourceId, ResourceType)
+  @inline def values = js.Array[AssociationExecutionTargetsFilterKey](Status, ResourceId, ResourceType)
 }
 
-@js.native
-sealed trait AssociationFilterKey extends js.Any
+type AssociationFilterKey = "InstanceId" | "Name" | "AssociationId" | "AssociationStatusName" | "LastExecutedBefore" | "LastExecutedAfter" | "AssociationName" | "ResourceGroupName"
 object AssociationFilterKey {
-  val InstanceId = "InstanceId".asInstanceOf[AssociationFilterKey]
-  val Name = "Name".asInstanceOf[AssociationFilterKey]
-  val AssociationId = "AssociationId".asInstanceOf[AssociationFilterKey]
-  val AssociationStatusName = "AssociationStatusName".asInstanceOf[AssociationFilterKey]
-  val LastExecutedBefore = "LastExecutedBefore".asInstanceOf[AssociationFilterKey]
-  val LastExecutedAfter = "LastExecutedAfter".asInstanceOf[AssociationFilterKey]
-  val AssociationName = "AssociationName".asInstanceOf[AssociationFilterKey]
-  val ResourceGroupName = "ResourceGroupName".asInstanceOf[AssociationFilterKey]
+  val InstanceId: "InstanceId" = "InstanceId"
+  val Name: "Name" = "Name"
+  val AssociationId: "AssociationId" = "AssociationId"
+  val AssociationStatusName: "AssociationStatusName" = "AssociationStatusName"
+  val LastExecutedBefore: "LastExecutedBefore" = "LastExecutedBefore"
+  val LastExecutedAfter: "LastExecutedAfter" = "LastExecutedAfter"
+  val AssociationName: "AssociationName" = "AssociationName"
+  val ResourceGroupName: "ResourceGroupName" = "ResourceGroupName"
 
-  @inline def values = js.Array(InstanceId, Name, AssociationId, AssociationStatusName, LastExecutedBefore, LastExecutedAfter, AssociationName, ResourceGroupName)
+  @inline def values = js.Array[AssociationFilterKey](InstanceId, Name, AssociationId, AssociationStatusName, LastExecutedBefore, LastExecutedAfter, AssociationName, ResourceGroupName)
 }
 
-@js.native
-sealed trait AssociationFilterOperatorType extends js.Any
+type AssociationFilterOperatorType = "EQUAL" | "LESS_THAN" | "GREATER_THAN"
 object AssociationFilterOperatorType {
-  val EQUAL = "EQUAL".asInstanceOf[AssociationFilterOperatorType]
-  val LESS_THAN = "LESS_THAN".asInstanceOf[AssociationFilterOperatorType]
-  val GREATER_THAN = "GREATER_THAN".asInstanceOf[AssociationFilterOperatorType]
+  val EQUAL: "EQUAL" = "EQUAL"
+  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
 
-  @inline def values = js.Array(EQUAL, LESS_THAN, GREATER_THAN)
+  @inline def values = js.Array[AssociationFilterOperatorType](EQUAL, LESS_THAN, GREATER_THAN)
 }
 
-@js.native
-sealed trait AssociationStatusName extends js.Any
+type AssociationStatusName = "Pending" | "Success" | "Failed"
 object AssociationStatusName {
-  val Pending = "Pending".asInstanceOf[AssociationStatusName]
-  val Success = "Success".asInstanceOf[AssociationStatusName]
-  val Failed = "Failed".asInstanceOf[AssociationStatusName]
+  val Pending: "Pending" = "Pending"
+  val Success: "Success" = "Success"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Pending, Success, Failed)
+  @inline def values = js.Array[AssociationStatusName](Pending, Success, Failed)
 }
 
-@js.native
-sealed trait AssociationSyncCompliance extends js.Any
+type AssociationSyncCompliance = "AUTO" | "MANUAL"
 object AssociationSyncCompliance {
-  val AUTO = "AUTO".asInstanceOf[AssociationSyncCompliance]
-  val MANUAL = "MANUAL".asInstanceOf[AssociationSyncCompliance]
+  val AUTO: "AUTO" = "AUTO"
+  val MANUAL: "MANUAL" = "MANUAL"
 
-  @inline def values = js.Array(AUTO, MANUAL)
+  @inline def values = js.Array[AssociationSyncCompliance](AUTO, MANUAL)
 }
 
-@js.native
-sealed trait AttachmentHashType extends js.Any
+type AttachmentHashType = "Sha256"
 object AttachmentHashType {
-  val Sha256 = "Sha256".asInstanceOf[AttachmentHashType]
+  val Sha256: "Sha256" = "Sha256"
 
-  @inline def values = js.Array(Sha256)
+  @inline def values = js.Array[AttachmentHashType](Sha256)
 }
 
-@js.native
-sealed trait AttachmentsSourceKey extends js.Any
+type AttachmentsSourceKey = "SourceUrl" | "S3FileUrl" | "AttachmentReference"
 object AttachmentsSourceKey {
-  val SourceUrl = "SourceUrl".asInstanceOf[AttachmentsSourceKey]
-  val S3FileUrl = "S3FileUrl".asInstanceOf[AttachmentsSourceKey]
-  val AttachmentReference = "AttachmentReference".asInstanceOf[AttachmentsSourceKey]
+  val SourceUrl: "SourceUrl" = "SourceUrl"
+  val S3FileUrl: "S3FileUrl" = "S3FileUrl"
+  val AttachmentReference: "AttachmentReference" = "AttachmentReference"
 
-  @inline def values = js.Array(SourceUrl, S3FileUrl, AttachmentReference)
+  @inline def values = js.Array[AttachmentsSourceKey](SourceUrl, S3FileUrl, AttachmentReference)
 }
 
-@js.native
-sealed trait AutomationExecutionFilterKey extends js.Any
+type AutomationExecutionFilterKey = "DocumentNamePrefix" | "ExecutionStatus" | "ExecutionId" | "ParentExecutionId" | "CurrentAction" | "StartTimeBefore" | "StartTimeAfter" | "AutomationType" | "TagKey" | "TargetResourceGroup" | "AutomationSubtype" | "OpsItemId"
 object AutomationExecutionFilterKey {
-  val DocumentNamePrefix = "DocumentNamePrefix".asInstanceOf[AutomationExecutionFilterKey]
-  val ExecutionStatus = "ExecutionStatus".asInstanceOf[AutomationExecutionFilterKey]
-  val ExecutionId = "ExecutionId".asInstanceOf[AutomationExecutionFilterKey]
-  val ParentExecutionId = "ParentExecutionId".asInstanceOf[AutomationExecutionFilterKey]
-  val CurrentAction = "CurrentAction".asInstanceOf[AutomationExecutionFilterKey]
-  val StartTimeBefore = "StartTimeBefore".asInstanceOf[AutomationExecutionFilterKey]
-  val StartTimeAfter = "StartTimeAfter".asInstanceOf[AutomationExecutionFilterKey]
-  val AutomationType = "AutomationType".asInstanceOf[AutomationExecutionFilterKey]
-  val TagKey = "TagKey".asInstanceOf[AutomationExecutionFilterKey]
-  val TargetResourceGroup = "TargetResourceGroup".asInstanceOf[AutomationExecutionFilterKey]
-  val AutomationSubtype = "AutomationSubtype".asInstanceOf[AutomationExecutionFilterKey]
-  val OpsItemId = "OpsItemId".asInstanceOf[AutomationExecutionFilterKey]
+  val DocumentNamePrefix: "DocumentNamePrefix" = "DocumentNamePrefix"
+  val ExecutionStatus: "ExecutionStatus" = "ExecutionStatus"
+  val ExecutionId: "ExecutionId" = "ExecutionId"
+  val ParentExecutionId: "ParentExecutionId" = "ParentExecutionId"
+  val CurrentAction: "CurrentAction" = "CurrentAction"
+  val StartTimeBefore: "StartTimeBefore" = "StartTimeBefore"
+  val StartTimeAfter: "StartTimeAfter" = "StartTimeAfter"
+  val AutomationType: "AutomationType" = "AutomationType"
+  val TagKey: "TagKey" = "TagKey"
+  val TargetResourceGroup: "TargetResourceGroup" = "TargetResourceGroup"
+  val AutomationSubtype: "AutomationSubtype" = "AutomationSubtype"
+  val OpsItemId: "OpsItemId" = "OpsItemId"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[AutomationExecutionFilterKey](
     DocumentNamePrefix,
     ExecutionStatus,
     ExecutionId,
@@ -129,29 +118,28 @@ object AutomationExecutionFilterKey {
   )
 }
 
-@js.native
-sealed trait AutomationExecutionStatus extends js.Any
+type AutomationExecutionStatus = "Pending" | "InProgress" | "Waiting" | "Success" | "TimedOut" | "Cancelling" | "Cancelled" | "Failed" | "PendingApproval" | "Approved" | "Rejected" | "Scheduled" | "RunbookInProgress" | "PendingChangeCalendarOverride" | "ChangeCalendarOverrideApproved" | "ChangeCalendarOverrideRejected" | "CompletedWithSuccess" | "CompletedWithFailure"
 object AutomationExecutionStatus {
-  val Pending = "Pending".asInstanceOf[AutomationExecutionStatus]
-  val InProgress = "InProgress".asInstanceOf[AutomationExecutionStatus]
-  val Waiting = "Waiting".asInstanceOf[AutomationExecutionStatus]
-  val Success = "Success".asInstanceOf[AutomationExecutionStatus]
-  val TimedOut = "TimedOut".asInstanceOf[AutomationExecutionStatus]
-  val Cancelling = "Cancelling".asInstanceOf[AutomationExecutionStatus]
-  val Cancelled = "Cancelled".asInstanceOf[AutomationExecutionStatus]
-  val Failed = "Failed".asInstanceOf[AutomationExecutionStatus]
-  val PendingApproval = "PendingApproval".asInstanceOf[AutomationExecutionStatus]
-  val Approved = "Approved".asInstanceOf[AutomationExecutionStatus]
-  val Rejected = "Rejected".asInstanceOf[AutomationExecutionStatus]
-  val Scheduled = "Scheduled".asInstanceOf[AutomationExecutionStatus]
-  val RunbookInProgress = "RunbookInProgress".asInstanceOf[AutomationExecutionStatus]
-  val PendingChangeCalendarOverride = "PendingChangeCalendarOverride".asInstanceOf[AutomationExecutionStatus]
-  val ChangeCalendarOverrideApproved = "ChangeCalendarOverrideApproved".asInstanceOf[AutomationExecutionStatus]
-  val ChangeCalendarOverrideRejected = "ChangeCalendarOverrideRejected".asInstanceOf[AutomationExecutionStatus]
-  val CompletedWithSuccess = "CompletedWithSuccess".asInstanceOf[AutomationExecutionStatus]
-  val CompletedWithFailure = "CompletedWithFailure".asInstanceOf[AutomationExecutionStatus]
+  val Pending: "Pending" = "Pending"
+  val InProgress: "InProgress" = "InProgress"
+  val Waiting: "Waiting" = "Waiting"
+  val Success: "Success" = "Success"
+  val TimedOut: "TimedOut" = "TimedOut"
+  val Cancelling: "Cancelling" = "Cancelling"
+  val Cancelled: "Cancelled" = "Cancelled"
+  val Failed: "Failed" = "Failed"
+  val PendingApproval: "PendingApproval" = "PendingApproval"
+  val Approved: "Approved" = "Approved"
+  val Rejected: "Rejected" = "Rejected"
+  val Scheduled: "Scheduled" = "Scheduled"
+  val RunbookInProgress: "RunbookInProgress" = "RunbookInProgress"
+  val PendingChangeCalendarOverride: "PendingChangeCalendarOverride" = "PendingChangeCalendarOverride"
+  val ChangeCalendarOverrideApproved: "ChangeCalendarOverrideApproved" = "ChangeCalendarOverrideApproved"
+  val ChangeCalendarOverrideRejected: "ChangeCalendarOverrideRejected" = "ChangeCalendarOverrideRejected"
+  val CompletedWithSuccess: "CompletedWithSuccess" = "CompletedWithSuccess"
+  val CompletedWithFailure: "CompletedWithFailure" = "CompletedWithFailure"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[AutomationExecutionStatus](
     Pending,
     InProgress,
     Waiting,
@@ -173,251 +161,228 @@ object AutomationExecutionStatus {
   )
 }
 
-@js.native
-sealed trait AutomationSubtype extends js.Any
+type AutomationSubtype = "ChangeRequest"
 object AutomationSubtype {
-  val ChangeRequest = "ChangeRequest".asInstanceOf[AutomationSubtype]
+  val ChangeRequest: "ChangeRequest" = "ChangeRequest"
 
-  @inline def values = js.Array(ChangeRequest)
+  @inline def values = js.Array[AutomationSubtype](ChangeRequest)
 }
 
-@js.native
-sealed trait AutomationType extends js.Any
+type AutomationType = "CrossAccount" | "Local"
 object AutomationType {
-  val CrossAccount = "CrossAccount".asInstanceOf[AutomationType]
-  val Local = "Local".asInstanceOf[AutomationType]
+  val CrossAccount: "CrossAccount" = "CrossAccount"
+  val Local: "Local" = "Local"
 
-  @inline def values = js.Array(CrossAccount, Local)
+  @inline def values = js.Array[AutomationType](CrossAccount, Local)
 }
 
-@js.native
-sealed trait CalendarState extends js.Any
+type CalendarState = "OPEN" | "CLOSED"
 object CalendarState {
-  val OPEN = "OPEN".asInstanceOf[CalendarState]
-  val CLOSED = "CLOSED".asInstanceOf[CalendarState]
+  val OPEN: "OPEN" = "OPEN"
+  val CLOSED: "CLOSED" = "CLOSED"
 
-  @inline def values = js.Array(OPEN, CLOSED)
+  @inline def values = js.Array[CalendarState](OPEN, CLOSED)
 }
 
-@js.native
-sealed trait CommandFilterKey extends js.Any
+type CommandFilterKey = "InvokedAfter" | "InvokedBefore" | "Status" | "ExecutionStage" | "DocumentName"
 object CommandFilterKey {
-  val InvokedAfter = "InvokedAfter".asInstanceOf[CommandFilterKey]
-  val InvokedBefore = "InvokedBefore".asInstanceOf[CommandFilterKey]
-  val Status = "Status".asInstanceOf[CommandFilterKey]
-  val ExecutionStage = "ExecutionStage".asInstanceOf[CommandFilterKey]
-  val DocumentName = "DocumentName".asInstanceOf[CommandFilterKey]
+  val InvokedAfter: "InvokedAfter" = "InvokedAfter"
+  val InvokedBefore: "InvokedBefore" = "InvokedBefore"
+  val Status: "Status" = "Status"
+  val ExecutionStage: "ExecutionStage" = "ExecutionStage"
+  val DocumentName: "DocumentName" = "DocumentName"
 
-  @inline def values = js.Array(InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName)
+  @inline def values = js.Array[CommandFilterKey](InvokedAfter, InvokedBefore, Status, ExecutionStage, DocumentName)
 }
 
-@js.native
-sealed trait CommandInvocationStatus extends js.Any
+type CommandInvocationStatus = "Pending" | "InProgress" | "Delayed" | "Success" | "Cancelled" | "TimedOut" | "Failed" | "Cancelling"
 object CommandInvocationStatus {
-  val Pending = "Pending".asInstanceOf[CommandInvocationStatus]
-  val InProgress = "InProgress".asInstanceOf[CommandInvocationStatus]
-  val Delayed = "Delayed".asInstanceOf[CommandInvocationStatus]
-  val Success = "Success".asInstanceOf[CommandInvocationStatus]
-  val Cancelled = "Cancelled".asInstanceOf[CommandInvocationStatus]
-  val TimedOut = "TimedOut".asInstanceOf[CommandInvocationStatus]
-  val Failed = "Failed".asInstanceOf[CommandInvocationStatus]
-  val Cancelling = "Cancelling".asInstanceOf[CommandInvocationStatus]
+  val Pending: "Pending" = "Pending"
+  val InProgress: "InProgress" = "InProgress"
+  val Delayed: "Delayed" = "Delayed"
+  val Success: "Success" = "Success"
+  val Cancelled: "Cancelled" = "Cancelled"
+  val TimedOut: "TimedOut" = "TimedOut"
+  val Failed: "Failed" = "Failed"
+  val Cancelling: "Cancelling" = "Cancelling"
 
-  @inline def values = js.Array(Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling)
+  @inline def values = js.Array[CommandInvocationStatus](Pending, InProgress, Delayed, Success, Cancelled, TimedOut, Failed, Cancelling)
 }
 
-@js.native
-sealed trait CommandPluginStatus extends js.Any
+type CommandPluginStatus = "Pending" | "InProgress" | "Success" | "TimedOut" | "Cancelled" | "Failed"
 object CommandPluginStatus {
-  val Pending = "Pending".asInstanceOf[CommandPluginStatus]
-  val InProgress = "InProgress".asInstanceOf[CommandPluginStatus]
-  val Success = "Success".asInstanceOf[CommandPluginStatus]
-  val TimedOut = "TimedOut".asInstanceOf[CommandPluginStatus]
-  val Cancelled = "Cancelled".asInstanceOf[CommandPluginStatus]
-  val Failed = "Failed".asInstanceOf[CommandPluginStatus]
+  val Pending: "Pending" = "Pending"
+  val InProgress: "InProgress" = "InProgress"
+  val Success: "Success" = "Success"
+  val TimedOut: "TimedOut" = "TimedOut"
+  val Cancelled: "Cancelled" = "Cancelled"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Pending, InProgress, Success, TimedOut, Cancelled, Failed)
+  @inline def values = js.Array[CommandPluginStatus](Pending, InProgress, Success, TimedOut, Cancelled, Failed)
 }
 
-@js.native
-sealed trait CommandStatus extends js.Any
+type CommandStatus = "Pending" | "InProgress" | "Success" | "Cancelled" | "Failed" | "TimedOut" | "Cancelling"
 object CommandStatus {
-  val Pending = "Pending".asInstanceOf[CommandStatus]
-  val InProgress = "InProgress".asInstanceOf[CommandStatus]
-  val Success = "Success".asInstanceOf[CommandStatus]
-  val Cancelled = "Cancelled".asInstanceOf[CommandStatus]
-  val Failed = "Failed".asInstanceOf[CommandStatus]
-  val TimedOut = "TimedOut".asInstanceOf[CommandStatus]
-  val Cancelling = "Cancelling".asInstanceOf[CommandStatus]
+  val Pending: "Pending" = "Pending"
+  val InProgress: "InProgress" = "InProgress"
+  val Success: "Success" = "Success"
+  val Cancelled: "Cancelled" = "Cancelled"
+  val Failed: "Failed" = "Failed"
+  val TimedOut: "TimedOut" = "TimedOut"
+  val Cancelling: "Cancelling" = "Cancelling"
 
-  @inline def values = js.Array(Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling)
+  @inline def values = js.Array[CommandStatus](Pending, InProgress, Success, Cancelled, Failed, TimedOut, Cancelling)
 }
 
-@js.native
-sealed trait ComplianceQueryOperatorType extends js.Any
+type ComplianceQueryOperatorType = "EQUAL" | "NOT_EQUAL" | "BEGIN_WITH" | "LESS_THAN" | "GREATER_THAN"
 object ComplianceQueryOperatorType {
-  val EQUAL = "EQUAL".asInstanceOf[ComplianceQueryOperatorType]
-  val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[ComplianceQueryOperatorType]
-  val BEGIN_WITH = "BEGIN_WITH".asInstanceOf[ComplianceQueryOperatorType]
-  val LESS_THAN = "LESS_THAN".asInstanceOf[ComplianceQueryOperatorType]
-  val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComplianceQueryOperatorType]
+  val EQUAL: "EQUAL" = "EQUAL"
+  val NOT_EQUAL: "NOT_EQUAL" = "NOT_EQUAL"
+  val BEGIN_WITH: "BEGIN_WITH" = "BEGIN_WITH"
+  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
 
-  @inline def values = js.Array(EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN)
+  @inline def values = js.Array[ComplianceQueryOperatorType](EQUAL, NOT_EQUAL, BEGIN_WITH, LESS_THAN, GREATER_THAN)
 }
 
-@js.native
-sealed trait ComplianceSeverity extends js.Any
+type ComplianceSeverity = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW" | "INFORMATIONAL" | "UNSPECIFIED"
 object ComplianceSeverity {
-  val CRITICAL = "CRITICAL".asInstanceOf[ComplianceSeverity]
-  val HIGH = "HIGH".asInstanceOf[ComplianceSeverity]
-  val MEDIUM = "MEDIUM".asInstanceOf[ComplianceSeverity]
-  val LOW = "LOW".asInstanceOf[ComplianceSeverity]
-  val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[ComplianceSeverity]
-  val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[ComplianceSeverity]
+  val CRITICAL: "CRITICAL" = "CRITICAL"
+  val HIGH: "HIGH" = "HIGH"
+  val MEDIUM: "MEDIUM" = "MEDIUM"
+  val LOW: "LOW" = "LOW"
+  val INFORMATIONAL: "INFORMATIONAL" = "INFORMATIONAL"
+  val UNSPECIFIED: "UNSPECIFIED" = "UNSPECIFIED"
 
-  @inline def values = js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED)
+  @inline def values = js.Array[ComplianceSeverity](CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED)
 }
 
-@js.native
-sealed trait ComplianceStatus extends js.Any
+type ComplianceStatus = "COMPLIANT" | "NON_COMPLIANT"
 object ComplianceStatus {
-  val COMPLIANT = "COMPLIANT".asInstanceOf[ComplianceStatus]
-  val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ComplianceStatus]
+  val COMPLIANT: "COMPLIANT" = "COMPLIANT"
+  val NON_COMPLIANT: "NON_COMPLIANT" = "NON_COMPLIANT"
 
-  @inline def values = js.Array(COMPLIANT, NON_COMPLIANT)
+  @inline def values = js.Array[ComplianceStatus](COMPLIANT, NON_COMPLIANT)
 }
 
-@js.native
-sealed trait ComplianceUploadType extends js.Any
+type ComplianceUploadType = "COMPLETE" | "PARTIAL"
 object ComplianceUploadType {
-  val COMPLETE = "COMPLETE".asInstanceOf[ComplianceUploadType]
-  val PARTIAL = "PARTIAL".asInstanceOf[ComplianceUploadType]
+  val COMPLETE: "COMPLETE" = "COMPLETE"
+  val PARTIAL: "PARTIAL" = "PARTIAL"
 
-  @inline def values = js.Array(COMPLETE, PARTIAL)
+  @inline def values = js.Array[ComplianceUploadType](COMPLETE, PARTIAL)
 }
 
-@js.native
-sealed trait ConnectionStatus extends js.Any
+type ConnectionStatus = "Connected" | "NotConnected"
 object ConnectionStatus {
-  val Connected = "Connected".asInstanceOf[ConnectionStatus]
-  val NotConnected = "NotConnected".asInstanceOf[ConnectionStatus]
+  val Connected: "Connected" = "Connected"
+  val NotConnected: "NotConnected" = "NotConnected"
 
-  @inline def values = js.Array(Connected, NotConnected)
+  @inline def values = js.Array[ConnectionStatus](Connected, NotConnected)
 }
 
-@js.native
-sealed trait DescribeActivationsFilterKeys extends js.Any
+type DescribeActivationsFilterKeys = "ActivationIds" | "DefaultInstanceName" | "IamRole"
 object DescribeActivationsFilterKeys {
-  val ActivationIds = "ActivationIds".asInstanceOf[DescribeActivationsFilterKeys]
-  val DefaultInstanceName = "DefaultInstanceName".asInstanceOf[DescribeActivationsFilterKeys]
-  val IamRole = "IamRole".asInstanceOf[DescribeActivationsFilterKeys]
+  val ActivationIds: "ActivationIds" = "ActivationIds"
+  val DefaultInstanceName: "DefaultInstanceName" = "DefaultInstanceName"
+  val IamRole: "IamRole" = "IamRole"
 
-  @inline def values = js.Array(ActivationIds, DefaultInstanceName, IamRole)
+  @inline def values = js.Array[DescribeActivationsFilterKeys](ActivationIds, DefaultInstanceName, IamRole)
 }
 
-@js.native
-sealed trait DocumentFilterKey extends js.Any
+type DocumentFilterKey = "Name" | "Owner" | "PlatformTypes" | "DocumentType"
 object DocumentFilterKey {
-  val Name = "Name".asInstanceOf[DocumentFilterKey]
-  val Owner = "Owner".asInstanceOf[DocumentFilterKey]
-  val PlatformTypes = "PlatformTypes".asInstanceOf[DocumentFilterKey]
-  val DocumentType = "DocumentType".asInstanceOf[DocumentFilterKey]
+  val Name: "Name" = "Name"
+  val Owner: "Owner" = "Owner"
+  val PlatformTypes: "PlatformTypes" = "PlatformTypes"
+  val DocumentType: "DocumentType" = "DocumentType"
 
-  @inline def values = js.Array(Name, Owner, PlatformTypes, DocumentType)
+  @inline def values = js.Array[DocumentFilterKey](Name, Owner, PlatformTypes, DocumentType)
 }
 
-@js.native
-sealed trait DocumentFormat extends js.Any
+type DocumentFormat = "YAML" | "JSON" | "TEXT"
 object DocumentFormat {
-  val YAML = "YAML".asInstanceOf[DocumentFormat]
-  val JSON = "JSON".asInstanceOf[DocumentFormat]
-  val TEXT = "TEXT".asInstanceOf[DocumentFormat]
+  val YAML: "YAML" = "YAML"
+  val JSON: "JSON" = "JSON"
+  val TEXT: "TEXT" = "TEXT"
 
-  @inline def values = js.Array(YAML, JSON, TEXT)
+  @inline def values = js.Array[DocumentFormat](YAML, JSON, TEXT)
 }
 
-@js.native
-sealed trait DocumentHashType extends js.Any
+type DocumentHashType = "Sha256" | "Sha1"
 object DocumentHashType {
-  val Sha256 = "Sha256".asInstanceOf[DocumentHashType]
-  val Sha1 = "Sha1".asInstanceOf[DocumentHashType]
+  val Sha256: "Sha256" = "Sha256"
+  val Sha1: "Sha1" = "Sha1"
 
-  @inline def values = js.Array(Sha256, Sha1)
+  @inline def values = js.Array[DocumentHashType](Sha256, Sha1)
 }
 
-@js.native
-sealed trait DocumentMetadataEnum extends js.Any
+type DocumentMetadataEnum = "DocumentReviews"
 object DocumentMetadataEnum {
-  val DocumentReviews = "DocumentReviews".asInstanceOf[DocumentMetadataEnum]
+  val DocumentReviews: "DocumentReviews" = "DocumentReviews"
 
-  @inline def values = js.Array(DocumentReviews)
+  @inline def values = js.Array[DocumentMetadataEnum](DocumentReviews)
 }
 
-@js.native
-sealed trait DocumentParameterType extends js.Any
+type DocumentParameterType = "String" | "StringList"
 object DocumentParameterType {
-  val String = "String".asInstanceOf[DocumentParameterType]
-  val StringList = "StringList".asInstanceOf[DocumentParameterType]
+  val String: "String" = "String"
+  val StringList: "StringList" = "StringList"
 
-  @inline def values = js.Array(String, StringList)
+  @inline def values = js.Array[DocumentParameterType](String, StringList)
 }
 
-@js.native
-sealed trait DocumentPermissionType extends js.Any
+type DocumentPermissionType = "Share"
 object DocumentPermissionType {
-  val Share = "Share".asInstanceOf[DocumentPermissionType]
+  val Share: "Share" = "Share"
 
-  @inline def values = js.Array(Share)
+  @inline def values = js.Array[DocumentPermissionType](Share)
 }
 
-@js.native
-sealed trait DocumentReviewAction extends js.Any
+type DocumentReviewAction = "SendForReview" | "UpdateReview" | "Approve" | "Reject"
 object DocumentReviewAction {
-  val SendForReview = "SendForReview".asInstanceOf[DocumentReviewAction]
-  val UpdateReview = "UpdateReview".asInstanceOf[DocumentReviewAction]
-  val Approve = "Approve".asInstanceOf[DocumentReviewAction]
-  val Reject = "Reject".asInstanceOf[DocumentReviewAction]
+  val SendForReview: "SendForReview" = "SendForReview"
+  val UpdateReview: "UpdateReview" = "UpdateReview"
+  val Approve: "Approve" = "Approve"
+  val Reject: "Reject" = "Reject"
 
-  @inline def values = js.Array(SendForReview, UpdateReview, Approve, Reject)
+  @inline def values = js.Array[DocumentReviewAction](SendForReview, UpdateReview, Approve, Reject)
 }
 
-@js.native
-sealed trait DocumentReviewCommentType extends js.Any
+type DocumentReviewCommentType = "Comment"
 object DocumentReviewCommentType {
-  val Comment = "Comment".asInstanceOf[DocumentReviewCommentType]
+  val Comment: "Comment" = "Comment"
 
-  @inline def values = js.Array(Comment)
+  @inline def values = js.Array[DocumentReviewCommentType](Comment)
 }
 
 /** The status of a document.
   */
-@js.native
-sealed trait DocumentStatus extends js.Any
+type DocumentStatus = "Creating" | "Active" | "Updating" | "Deleting" | "Failed"
 object DocumentStatus {
-  val Creating = "Creating".asInstanceOf[DocumentStatus]
-  val Active = "Active".asInstanceOf[DocumentStatus]
-  val Updating = "Updating".asInstanceOf[DocumentStatus]
-  val Deleting = "Deleting".asInstanceOf[DocumentStatus]
-  val Failed = "Failed".asInstanceOf[DocumentStatus]
+  val Creating: "Creating" = "Creating"
+  val Active: "Active" = "Active"
+  val Updating: "Updating" = "Updating"
+  val Deleting: "Deleting" = "Deleting"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Creating, Active, Updating, Deleting, Failed)
+  @inline def values = js.Array[DocumentStatus](Creating, Active, Updating, Deleting, Failed)
 }
 
-@js.native
-sealed trait DocumentType extends js.Any
+type DocumentType = "Command" | "Policy" | "Automation" | "Session" | "Package" | "ApplicationConfiguration" | "ApplicationConfigurationSchema" | "DeploymentStrategy" | "ChangeCalendar" | "Automation.ChangeTemplate"
 object DocumentType {
-  val Command = "Command".asInstanceOf[DocumentType]
-  val Policy = "Policy".asInstanceOf[DocumentType]
-  val Automation = "Automation".asInstanceOf[DocumentType]
-  val Session = "Session".asInstanceOf[DocumentType]
-  val Package = "Package".asInstanceOf[DocumentType]
-  val ApplicationConfiguration = "ApplicationConfiguration".asInstanceOf[DocumentType]
-  val ApplicationConfigurationSchema = "ApplicationConfigurationSchema".asInstanceOf[DocumentType]
-  val DeploymentStrategy = "DeploymentStrategy".asInstanceOf[DocumentType]
-  val ChangeCalendar = "ChangeCalendar".asInstanceOf[DocumentType]
-  val `Automation.ChangeTemplate` = "Automation.ChangeTemplate".asInstanceOf[DocumentType]
+  val Command: "Command" = "Command"
+  val Policy: "Policy" = "Policy"
+  val Automation: "Automation" = "Automation"
+  val Session: "Session" = "Session"
+  val Package: "Package" = "Package"
+  val ApplicationConfiguration: "ApplicationConfiguration" = "ApplicationConfiguration"
+  val ApplicationConfigurationSchema: "ApplicationConfigurationSchema" = "ApplicationConfigurationSchema"
+  val DeploymentStrategy: "DeploymentStrategy" = "DeploymentStrategy"
+  val ChangeCalendar: "ChangeCalendar" = "ChangeCalendar"
+  val `Automation.ChangeTemplate`: "Automation.ChangeTemplate" = "Automation.ChangeTemplate"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[DocumentType](
     Command,
     Policy,
     Automation,
@@ -431,244 +396,224 @@ object DocumentType {
   )
 }
 
-@js.native
-sealed trait ExecutionMode extends js.Any
+type ExecutionMode = "Auto" | "Interactive"
 object ExecutionMode {
-  val Auto = "Auto".asInstanceOf[ExecutionMode]
-  val Interactive = "Interactive".asInstanceOf[ExecutionMode]
+  val Auto: "Auto" = "Auto"
+  val Interactive: "Interactive" = "Interactive"
 
-  @inline def values = js.Array(Auto, Interactive)
+  @inline def values = js.Array[ExecutionMode](Auto, Interactive)
 }
 
-@js.native
-sealed trait Fault extends js.Any
+type Fault = "Client" | "Server" | "Unknown"
 object Fault {
-  val Client = "Client".asInstanceOf[Fault]
-  val Server = "Server".asInstanceOf[Fault]
-  val Unknown = "Unknown".asInstanceOf[Fault]
+  val Client: "Client" = "Client"
+  val Server: "Server" = "Server"
+  val Unknown: "Unknown" = "Unknown"
 
-  @inline def values = js.Array(Client, Server, Unknown)
+  @inline def values = js.Array[Fault](Client, Server, Unknown)
 }
 
-@js.native
-sealed trait InstanceInformationFilterKey extends js.Any
+type InstanceInformationFilterKey = "InstanceIds" | "AgentVersion" | "PingStatus" | "PlatformTypes" | "ActivationIds" | "IamRole" | "ResourceType" | "AssociationStatus"
 object InstanceInformationFilterKey {
-  val InstanceIds = "InstanceIds".asInstanceOf[InstanceInformationFilterKey]
-  val AgentVersion = "AgentVersion".asInstanceOf[InstanceInformationFilterKey]
-  val PingStatus = "PingStatus".asInstanceOf[InstanceInformationFilterKey]
-  val PlatformTypes = "PlatformTypes".asInstanceOf[InstanceInformationFilterKey]
-  val ActivationIds = "ActivationIds".asInstanceOf[InstanceInformationFilterKey]
-  val IamRole = "IamRole".asInstanceOf[InstanceInformationFilterKey]
-  val ResourceType = "ResourceType".asInstanceOf[InstanceInformationFilterKey]
-  val AssociationStatus = "AssociationStatus".asInstanceOf[InstanceInformationFilterKey]
+  val InstanceIds: "InstanceIds" = "InstanceIds"
+  val AgentVersion: "AgentVersion" = "AgentVersion"
+  val PingStatus: "PingStatus" = "PingStatus"
+  val PlatformTypes: "PlatformTypes" = "PlatformTypes"
+  val ActivationIds: "ActivationIds" = "ActivationIds"
+  val IamRole: "IamRole" = "IamRole"
+  val ResourceType: "ResourceType" = "ResourceType"
+  val AssociationStatus: "AssociationStatus" = "AssociationStatus"
 
-  @inline def values = js.Array(InstanceIds, AgentVersion, PingStatus, PlatformTypes, ActivationIds, IamRole, ResourceType, AssociationStatus)
+  @inline def values = js.Array[InstanceInformationFilterKey](InstanceIds, AgentVersion, PingStatus, PlatformTypes, ActivationIds, IamRole, ResourceType, AssociationStatus)
 }
 
-@js.native
-sealed trait InstancePatchStateOperatorType extends js.Any
+type InstancePatchStateOperatorType = "Equal" | "NotEqual" | "LessThan" | "GreaterThan"
 object InstancePatchStateOperatorType {
-  val Equal = "Equal".asInstanceOf[InstancePatchStateOperatorType]
-  val NotEqual = "NotEqual".asInstanceOf[InstancePatchStateOperatorType]
-  val LessThan = "LessThan".asInstanceOf[InstancePatchStateOperatorType]
-  val GreaterThan = "GreaterThan".asInstanceOf[InstancePatchStateOperatorType]
+  val Equal: "Equal" = "Equal"
+  val NotEqual: "NotEqual" = "NotEqual"
+  val LessThan: "LessThan" = "LessThan"
+  val GreaterThan: "GreaterThan" = "GreaterThan"
 
-  @inline def values = js.Array(Equal, NotEqual, LessThan, GreaterThan)
+  @inline def values = js.Array[InstancePatchStateOperatorType](Equal, NotEqual, LessThan, GreaterThan)
 }
 
-@js.native
-sealed trait InventoryAttributeDataType extends js.Any
+type InventoryAttributeDataType = "string" | "number"
 object InventoryAttributeDataType {
-  val string = "string".asInstanceOf[InventoryAttributeDataType]
-  val number = "number".asInstanceOf[InventoryAttributeDataType]
+  val string: "string" = "string"
+  val number: "number" = "number"
 
-  @inline def values = js.Array(string, number)
+  @inline def values = js.Array[InventoryAttributeDataType](string, number)
 }
 
-@js.native
-sealed trait InventoryDeletionStatus extends js.Any
+type InventoryDeletionStatus = "InProgress" | "Complete"
 object InventoryDeletionStatus {
-  val InProgress = "InProgress".asInstanceOf[InventoryDeletionStatus]
-  val Complete = "Complete".asInstanceOf[InventoryDeletionStatus]
+  val InProgress: "InProgress" = "InProgress"
+  val Complete: "Complete" = "Complete"
 
-  @inline def values = js.Array(InProgress, Complete)
+  @inline def values = js.Array[InventoryDeletionStatus](InProgress, Complete)
 }
 
-@js.native
-sealed trait InventoryQueryOperatorType extends js.Any
+type InventoryQueryOperatorType = "Equal" | "NotEqual" | "BeginWith" | "LessThan" | "GreaterThan" | "Exists"
 object InventoryQueryOperatorType {
-  val Equal = "Equal".asInstanceOf[InventoryQueryOperatorType]
-  val NotEqual = "NotEqual".asInstanceOf[InventoryQueryOperatorType]
-  val BeginWith = "BeginWith".asInstanceOf[InventoryQueryOperatorType]
-  val LessThan = "LessThan".asInstanceOf[InventoryQueryOperatorType]
-  val GreaterThan = "GreaterThan".asInstanceOf[InventoryQueryOperatorType]
-  val Exists = "Exists".asInstanceOf[InventoryQueryOperatorType]
+  val Equal: "Equal" = "Equal"
+  val NotEqual: "NotEqual" = "NotEqual"
+  val BeginWith: "BeginWith" = "BeginWith"
+  val LessThan: "LessThan" = "LessThan"
+  val GreaterThan: "GreaterThan" = "GreaterThan"
+  val Exists: "Exists" = "Exists"
 
-  @inline def values = js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
+  @inline def values = js.Array[InventoryQueryOperatorType](Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
 }
 
-@js.native
-sealed trait InventorySchemaDeleteOption extends js.Any
+type InventorySchemaDeleteOption = "DisableSchema" | "DeleteSchema"
 object InventorySchemaDeleteOption {
-  val DisableSchema = "DisableSchema".asInstanceOf[InventorySchemaDeleteOption]
-  val DeleteSchema = "DeleteSchema".asInstanceOf[InventorySchemaDeleteOption]
+  val DisableSchema: "DisableSchema" = "DisableSchema"
+  val DeleteSchema: "DeleteSchema" = "DeleteSchema"
 
-  @inline def values = js.Array(DisableSchema, DeleteSchema)
+  @inline def values = js.Array[InventorySchemaDeleteOption](DisableSchema, DeleteSchema)
 }
 
-@js.native
-sealed trait LastResourceDataSyncStatus extends js.Any
+type LastResourceDataSyncStatus = "Successful" | "Failed" | "InProgress"
 object LastResourceDataSyncStatus {
-  val Successful = "Successful".asInstanceOf[LastResourceDataSyncStatus]
-  val Failed = "Failed".asInstanceOf[LastResourceDataSyncStatus]
-  val InProgress = "InProgress".asInstanceOf[LastResourceDataSyncStatus]
+  val Successful: "Successful" = "Successful"
+  val Failed: "Failed" = "Failed"
+  val InProgress: "InProgress" = "InProgress"
 
-  @inline def values = js.Array(Successful, Failed, InProgress)
+  @inline def values = js.Array[LastResourceDataSyncStatus](Successful, Failed, InProgress)
 }
 
-@js.native
-sealed trait MaintenanceWindowExecutionStatus extends js.Any
+type MaintenanceWindowExecutionStatus = "PENDING" | "IN_PROGRESS" | "SUCCESS" | "FAILED" | "TIMED_OUT" | "CANCELLING" | "CANCELLED" | "SKIPPED_OVERLAPPING"
 object MaintenanceWindowExecutionStatus {
-  val PENDING = "PENDING".asInstanceOf[MaintenanceWindowExecutionStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[MaintenanceWindowExecutionStatus]
-  val SUCCESS = "SUCCESS".asInstanceOf[MaintenanceWindowExecutionStatus]
-  val FAILED = "FAILED".asInstanceOf[MaintenanceWindowExecutionStatus]
-  val TIMED_OUT = "TIMED_OUT".asInstanceOf[MaintenanceWindowExecutionStatus]
-  val CANCELLING = "CANCELLING".asInstanceOf[MaintenanceWindowExecutionStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[MaintenanceWindowExecutionStatus]
-  val SKIPPED_OVERLAPPING = "SKIPPED_OVERLAPPING".asInstanceOf[MaintenanceWindowExecutionStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val SUCCESS: "SUCCESS" = "SUCCESS"
+  val FAILED: "FAILED" = "FAILED"
+  val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  val CANCELLING: "CANCELLING" = "CANCELLING"
+  val CANCELLED: "CANCELLED" = "CANCELLED"
+  val SKIPPED_OVERLAPPING: "SKIPPED_OVERLAPPING" = "SKIPPED_OVERLAPPING"
 
-  @inline def values = js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING)
+  @inline def values = js.Array[MaintenanceWindowExecutionStatus](PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, CANCELLED, SKIPPED_OVERLAPPING)
 }
 
-@js.native
-sealed trait MaintenanceWindowResourceType extends js.Any
+type MaintenanceWindowResourceType = "INSTANCE" | "RESOURCE_GROUP"
 object MaintenanceWindowResourceType {
-  val INSTANCE = "INSTANCE".asInstanceOf[MaintenanceWindowResourceType]
-  val RESOURCE_GROUP = "RESOURCE_GROUP".asInstanceOf[MaintenanceWindowResourceType]
+  val INSTANCE: "INSTANCE" = "INSTANCE"
+  val RESOURCE_GROUP: "RESOURCE_GROUP" = "RESOURCE_GROUP"
 
-  @inline def values = js.Array(INSTANCE, RESOURCE_GROUP)
+  @inline def values = js.Array[MaintenanceWindowResourceType](INSTANCE, RESOURCE_GROUP)
 }
 
-@js.native
-sealed trait MaintenanceWindowTaskType extends js.Any
+type MaintenanceWindowTaskType = "RUN_COMMAND" | "AUTOMATION" | "STEP_FUNCTIONS" | "LAMBDA"
 object MaintenanceWindowTaskType {
-  val RUN_COMMAND = "RUN_COMMAND".asInstanceOf[MaintenanceWindowTaskType]
-  val AUTOMATION = "AUTOMATION".asInstanceOf[MaintenanceWindowTaskType]
-  val STEP_FUNCTIONS = "STEP_FUNCTIONS".asInstanceOf[MaintenanceWindowTaskType]
-  val LAMBDA = "LAMBDA".asInstanceOf[MaintenanceWindowTaskType]
+  val RUN_COMMAND: "RUN_COMMAND" = "RUN_COMMAND"
+  val AUTOMATION: "AUTOMATION" = "AUTOMATION"
+  val STEP_FUNCTIONS: "STEP_FUNCTIONS" = "STEP_FUNCTIONS"
+  val LAMBDA: "LAMBDA" = "LAMBDA"
 
-  @inline def values = js.Array(RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA)
+  @inline def values = js.Array[MaintenanceWindowTaskType](RUN_COMMAND, AUTOMATION, STEP_FUNCTIONS, LAMBDA)
 }
 
-@js.native
-sealed trait NotificationEvent extends js.Any
+type NotificationEvent = "All" | "InProgress" | "Success" | "TimedOut" | "Cancelled" | "Failed"
 object NotificationEvent {
-  val All = "All".asInstanceOf[NotificationEvent]
-  val InProgress = "InProgress".asInstanceOf[NotificationEvent]
-  val Success = "Success".asInstanceOf[NotificationEvent]
-  val TimedOut = "TimedOut".asInstanceOf[NotificationEvent]
-  val Cancelled = "Cancelled".asInstanceOf[NotificationEvent]
-  val Failed = "Failed".asInstanceOf[NotificationEvent]
+  val All: "All" = "All"
+  val InProgress: "InProgress" = "InProgress"
+  val Success: "Success" = "Success"
+  val TimedOut: "TimedOut" = "TimedOut"
+  val Cancelled: "Cancelled" = "Cancelled"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(All, InProgress, Success, TimedOut, Cancelled, Failed)
+  @inline def values = js.Array[NotificationEvent](All, InProgress, Success, TimedOut, Cancelled, Failed)
 }
 
-@js.native
-sealed trait NotificationType extends js.Any
+type NotificationType = "Command" | "Invocation"
 object NotificationType {
-  val Command = "Command".asInstanceOf[NotificationType]
-  val Invocation = "Invocation".asInstanceOf[NotificationType]
+  val Command: "Command" = "Command"
+  val Invocation: "Invocation" = "Invocation"
 
-  @inline def values = js.Array(Command, Invocation)
+  @inline def values = js.Array[NotificationType](Command, Invocation)
 }
 
-@js.native
-sealed trait OperatingSystem extends js.Any
+type OperatingSystem = "WINDOWS" | "AMAZON_LINUX" | "AMAZON_LINUX_2" | "UBUNTU" | "REDHAT_ENTERPRISE_LINUX" | "SUSE" | "CENTOS" | "ORACLE_LINUX" | "DEBIAN" | "MACOS"
 object OperatingSystem {
-  val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystem]
-  val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
-  val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
-  val UBUNTU = "UBUNTU".asInstanceOf[OperatingSystem]
-  val REDHAT_ENTERPRISE_LINUX = "REDHAT_ENTERPRISE_LINUX".asInstanceOf[OperatingSystem]
-  val SUSE = "SUSE".asInstanceOf[OperatingSystem]
-  val CENTOS = "CENTOS".asInstanceOf[OperatingSystem]
-  val ORACLE_LINUX = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
-  val DEBIAN = "DEBIAN".asInstanceOf[OperatingSystem]
-  val MACOS = "MACOS".asInstanceOf[OperatingSystem]
+  val WINDOWS: "WINDOWS" = "WINDOWS"
+  val AMAZON_LINUX: "AMAZON_LINUX" = "AMAZON_LINUX"
+  val AMAZON_LINUX_2: "AMAZON_LINUX_2" = "AMAZON_LINUX_2"
+  val UBUNTU: "UBUNTU" = "UBUNTU"
+  val REDHAT_ENTERPRISE_LINUX: "REDHAT_ENTERPRISE_LINUX" = "REDHAT_ENTERPRISE_LINUX"
+  val SUSE: "SUSE" = "SUSE"
+  val CENTOS: "CENTOS" = "CENTOS"
+  val ORACLE_LINUX: "ORACLE_LINUX" = "ORACLE_LINUX"
+  val DEBIAN: "DEBIAN" = "DEBIAN"
+  val MACOS: "MACOS" = "MACOS"
 
-  @inline def values = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS)
+  @inline def values = js.Array[OperatingSystem](WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS)
 }
 
-@js.native
-sealed trait OpsFilterOperatorType extends js.Any
+type OpsFilterOperatorType = "Equal" | "NotEqual" | "BeginWith" | "LessThan" | "GreaterThan" | "Exists"
 object OpsFilterOperatorType {
-  val Equal = "Equal".asInstanceOf[OpsFilterOperatorType]
-  val NotEqual = "NotEqual".asInstanceOf[OpsFilterOperatorType]
-  val BeginWith = "BeginWith".asInstanceOf[OpsFilterOperatorType]
-  val LessThan = "LessThan".asInstanceOf[OpsFilterOperatorType]
-  val GreaterThan = "GreaterThan".asInstanceOf[OpsFilterOperatorType]
-  val Exists = "Exists".asInstanceOf[OpsFilterOperatorType]
+  val Equal: "Equal" = "Equal"
+  val NotEqual: "NotEqual" = "NotEqual"
+  val BeginWith: "BeginWith" = "BeginWith"
+  val LessThan: "LessThan" = "LessThan"
+  val GreaterThan: "GreaterThan" = "GreaterThan"
+  val Exists: "Exists" = "Exists"
 
-  @inline def values = js.Array(Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
+  @inline def values = js.Array[OpsFilterOperatorType](Equal, NotEqual, BeginWith, LessThan, GreaterThan, Exists)
 }
 
-@js.native
-sealed trait OpsItemDataType extends js.Any
+type OpsItemDataType = "SearchableString" | "String"
 object OpsItemDataType {
-  val SearchableString = "SearchableString".asInstanceOf[OpsItemDataType]
-  val String = "String".asInstanceOf[OpsItemDataType]
+  val SearchableString: "SearchableString" = "SearchableString"
+  val String: "String" = "String"
 
-  @inline def values = js.Array(SearchableString, String)
+  @inline def values = js.Array[OpsItemDataType](SearchableString, String)
 }
 
-@js.native
-sealed trait OpsItemEventFilterKey extends js.Any
+type OpsItemEventFilterKey = "OpsItemId"
 object OpsItemEventFilterKey {
-  val OpsItemId = "OpsItemId".asInstanceOf[OpsItemEventFilterKey]
+  val OpsItemId: "OpsItemId" = "OpsItemId"
 
-  @inline def values = js.Array(OpsItemId)
+  @inline def values = js.Array[OpsItemEventFilterKey](OpsItemId)
 }
 
-@js.native
-sealed trait OpsItemEventFilterOperator extends js.Any
+type OpsItemEventFilterOperator = "Equal"
 object OpsItemEventFilterOperator {
-  val Equal = "Equal".asInstanceOf[OpsItemEventFilterOperator]
+  val Equal: "Equal" = "Equal"
 
-  @inline def values = js.Array(Equal)
+  @inline def values = js.Array[OpsItemEventFilterOperator](Equal)
 }
 
-@js.native
-sealed trait OpsItemFilterKey extends js.Any
+type OpsItemFilterKey = "Status" | "CreatedBy" | "Source" | "Priority" | "Title" | "OpsItemId" | "CreatedTime" | "LastModifiedTime" | "ActualStartTime" | "ActualEndTime" | "PlannedStartTime" | "PlannedEndTime" | "OperationalData" | "OperationalDataKey" | "OperationalDataValue" | "ResourceId" | "AutomationId" | "Category" | "Severity" | "OpsItemType" | "ChangeRequestByRequesterArn" | "ChangeRequestByRequesterName" | "ChangeRequestByApproverArn" | "ChangeRequestByApproverName" | "ChangeRequestByTemplate" | "ChangeRequestByTargetsResourceGroup"
 object OpsItemFilterKey {
-  val Status = "Status".asInstanceOf[OpsItemFilterKey]
-  val CreatedBy = "CreatedBy".asInstanceOf[OpsItemFilterKey]
-  val Source = "Source".asInstanceOf[OpsItemFilterKey]
-  val Priority = "Priority".asInstanceOf[OpsItemFilterKey]
-  val Title = "Title".asInstanceOf[OpsItemFilterKey]
-  val OpsItemId = "OpsItemId".asInstanceOf[OpsItemFilterKey]
-  val CreatedTime = "CreatedTime".asInstanceOf[OpsItemFilterKey]
-  val LastModifiedTime = "LastModifiedTime".asInstanceOf[OpsItemFilterKey]
-  val ActualStartTime = "ActualStartTime".asInstanceOf[OpsItemFilterKey]
-  val ActualEndTime = "ActualEndTime".asInstanceOf[OpsItemFilterKey]
-  val PlannedStartTime = "PlannedStartTime".asInstanceOf[OpsItemFilterKey]
-  val PlannedEndTime = "PlannedEndTime".asInstanceOf[OpsItemFilterKey]
-  val OperationalData = "OperationalData".asInstanceOf[OpsItemFilterKey]
-  val OperationalDataKey = "OperationalDataKey".asInstanceOf[OpsItemFilterKey]
-  val OperationalDataValue = "OperationalDataValue".asInstanceOf[OpsItemFilterKey]
-  val ResourceId = "ResourceId".asInstanceOf[OpsItemFilterKey]
-  val AutomationId = "AutomationId".asInstanceOf[OpsItemFilterKey]
-  val Category = "Category".asInstanceOf[OpsItemFilterKey]
-  val Severity = "Severity".asInstanceOf[OpsItemFilterKey]
-  val OpsItemType = "OpsItemType".asInstanceOf[OpsItemFilterKey]
-  val ChangeRequestByRequesterArn = "ChangeRequestByRequesterArn".asInstanceOf[OpsItemFilterKey]
-  val ChangeRequestByRequesterName = "ChangeRequestByRequesterName".asInstanceOf[OpsItemFilterKey]
-  val ChangeRequestByApproverArn = "ChangeRequestByApproverArn".asInstanceOf[OpsItemFilterKey]
-  val ChangeRequestByApproverName = "ChangeRequestByApproverName".asInstanceOf[OpsItemFilterKey]
-  val ChangeRequestByTemplate = "ChangeRequestByTemplate".asInstanceOf[OpsItemFilterKey]
-  val ChangeRequestByTargetsResourceGroup = "ChangeRequestByTargetsResourceGroup".asInstanceOf[OpsItemFilterKey]
+  val Status: "Status" = "Status"
+  val CreatedBy: "CreatedBy" = "CreatedBy"
+  val Source: "Source" = "Source"
+  val Priority: "Priority" = "Priority"
+  val Title: "Title" = "Title"
+  val OpsItemId: "OpsItemId" = "OpsItemId"
+  val CreatedTime: "CreatedTime" = "CreatedTime"
+  val LastModifiedTime: "LastModifiedTime" = "LastModifiedTime"
+  val ActualStartTime: "ActualStartTime" = "ActualStartTime"
+  val ActualEndTime: "ActualEndTime" = "ActualEndTime"
+  val PlannedStartTime: "PlannedStartTime" = "PlannedStartTime"
+  val PlannedEndTime: "PlannedEndTime" = "PlannedEndTime"
+  val OperationalData: "OperationalData" = "OperationalData"
+  val OperationalDataKey: "OperationalDataKey" = "OperationalDataKey"
+  val OperationalDataValue: "OperationalDataValue" = "OperationalDataValue"
+  val ResourceId: "ResourceId" = "ResourceId"
+  val AutomationId: "AutomationId" = "AutomationId"
+  val Category: "Category" = "Category"
+  val Severity: "Severity" = "Severity"
+  val OpsItemType: "OpsItemType" = "OpsItemType"
+  val ChangeRequestByRequesterArn: "ChangeRequestByRequesterArn" = "ChangeRequestByRequesterArn"
+  val ChangeRequestByRequesterName: "ChangeRequestByRequesterName" = "ChangeRequestByRequesterName"
+  val ChangeRequestByApproverArn: "ChangeRequestByApproverArn" = "ChangeRequestByApproverArn"
+  val ChangeRequestByApproverName: "ChangeRequestByApproverName" = "ChangeRequestByApproverName"
+  val ChangeRequestByTemplate: "ChangeRequestByTemplate" = "ChangeRequestByTemplate"
+  val ChangeRequestByTargetsResourceGroup: "ChangeRequestByTargetsResourceGroup" = "ChangeRequestByTargetsResourceGroup"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[OpsItemFilterKey](
     Status,
     CreatedBy,
     Source,
@@ -698,40 +643,38 @@ object OpsItemFilterKey {
   )
 }
 
-@js.native
-sealed trait OpsItemFilterOperator extends js.Any
+type OpsItemFilterOperator = "Equal" | "Contains" | "GreaterThan" | "LessThan"
 object OpsItemFilterOperator {
-  val Equal = "Equal".asInstanceOf[OpsItemFilterOperator]
-  val Contains = "Contains".asInstanceOf[OpsItemFilterOperator]
-  val GreaterThan = "GreaterThan".asInstanceOf[OpsItemFilterOperator]
-  val LessThan = "LessThan".asInstanceOf[OpsItemFilterOperator]
+  val Equal: "Equal" = "Equal"
+  val Contains: "Contains" = "Contains"
+  val GreaterThan: "GreaterThan" = "GreaterThan"
+  val LessThan: "LessThan" = "LessThan"
 
-  @inline def values = js.Array(Equal, Contains, GreaterThan, LessThan)
+  @inline def values = js.Array[OpsItemFilterOperator](Equal, Contains, GreaterThan, LessThan)
 }
 
-@js.native
-sealed trait OpsItemStatus extends js.Any
+type OpsItemStatus = "Open" | "InProgress" | "Resolved" | "Pending" | "TimedOut" | "Cancelling" | "Cancelled" | "Failed" | "CompletedWithSuccess" | "CompletedWithFailure" | "Scheduled" | "RunbookInProgress" | "PendingChangeCalendarOverride" | "ChangeCalendarOverrideApproved" | "ChangeCalendarOverrideRejected" | "PendingApproval" | "Approved" | "Rejected"
 object OpsItemStatus {
-  val Open = "Open".asInstanceOf[OpsItemStatus]
-  val InProgress = "InProgress".asInstanceOf[OpsItemStatus]
-  val Resolved = "Resolved".asInstanceOf[OpsItemStatus]
-  val Pending = "Pending".asInstanceOf[OpsItemStatus]
-  val TimedOut = "TimedOut".asInstanceOf[OpsItemStatus]
-  val Cancelling = "Cancelling".asInstanceOf[OpsItemStatus]
-  val Cancelled = "Cancelled".asInstanceOf[OpsItemStatus]
-  val Failed = "Failed".asInstanceOf[OpsItemStatus]
-  val CompletedWithSuccess = "CompletedWithSuccess".asInstanceOf[OpsItemStatus]
-  val CompletedWithFailure = "CompletedWithFailure".asInstanceOf[OpsItemStatus]
-  val Scheduled = "Scheduled".asInstanceOf[OpsItemStatus]
-  val RunbookInProgress = "RunbookInProgress".asInstanceOf[OpsItemStatus]
-  val PendingChangeCalendarOverride = "PendingChangeCalendarOverride".asInstanceOf[OpsItemStatus]
-  val ChangeCalendarOverrideApproved = "ChangeCalendarOverrideApproved".asInstanceOf[OpsItemStatus]
-  val ChangeCalendarOverrideRejected = "ChangeCalendarOverrideRejected".asInstanceOf[OpsItemStatus]
-  val PendingApproval = "PendingApproval".asInstanceOf[OpsItemStatus]
-  val Approved = "Approved".asInstanceOf[OpsItemStatus]
-  val Rejected = "Rejected".asInstanceOf[OpsItemStatus]
+  val Open: "Open" = "Open"
+  val InProgress: "InProgress" = "InProgress"
+  val Resolved: "Resolved" = "Resolved"
+  val Pending: "Pending" = "Pending"
+  val TimedOut: "TimedOut" = "TimedOut"
+  val Cancelling: "Cancelling" = "Cancelling"
+  val Cancelled: "Cancelled" = "Cancelled"
+  val Failed: "Failed" = "Failed"
+  val CompletedWithSuccess: "CompletedWithSuccess" = "CompletedWithSuccess"
+  val CompletedWithFailure: "CompletedWithFailure" = "CompletedWithFailure"
+  val Scheduled: "Scheduled" = "Scheduled"
+  val RunbookInProgress: "RunbookInProgress" = "RunbookInProgress"
+  val PendingChangeCalendarOverride: "PendingChangeCalendarOverride" = "PendingChangeCalendarOverride"
+  val ChangeCalendarOverrideApproved: "ChangeCalendarOverrideApproved" = "ChangeCalendarOverrideApproved"
+  val ChangeCalendarOverrideRejected: "ChangeCalendarOverrideRejected" = "ChangeCalendarOverrideRejected"
+  val PendingApproval: "PendingApproval" = "PendingApproval"
+  val Approved: "Approved" = "Approved"
+  val Rejected: "Rejected" = "Rejected"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[OpsItemStatus](
     Open,
     InProgress,
     Resolved,
@@ -753,107 +696,99 @@ object OpsItemStatus {
   )
 }
 
-@js.native
-sealed trait ParameterTier extends js.Any
+type ParameterTier = "Standard" | "Advanced" | "Intelligent-Tiering"
 object ParameterTier {
-  val Standard = "Standard".asInstanceOf[ParameterTier]
-  val Advanced = "Advanced".asInstanceOf[ParameterTier]
-  val `Intelligent-Tiering` = "Intelligent-Tiering".asInstanceOf[ParameterTier]
+  val Standard: "Standard" = "Standard"
+  val Advanced: "Advanced" = "Advanced"
+  val `Intelligent-Tiering`: "Intelligent-Tiering" = "Intelligent-Tiering"
 
-  @inline def values = js.Array(Standard, Advanced, `Intelligent-Tiering`)
+  @inline def values = js.Array[ParameterTier](Standard, Advanced, `Intelligent-Tiering`)
 }
 
-@js.native
-sealed trait ParameterType extends js.Any
+type ParameterType = "String" | "StringList" | "SecureString"
 object ParameterType {
-  val String = "String".asInstanceOf[ParameterType]
-  val StringList = "StringList".asInstanceOf[ParameterType]
-  val SecureString = "SecureString".asInstanceOf[ParameterType]
+  val String: "String" = "String"
+  val StringList: "StringList" = "StringList"
+  val SecureString: "SecureString" = "SecureString"
 
-  @inline def values = js.Array(String, StringList, SecureString)
+  @inline def values = js.Array[ParameterType](String, StringList, SecureString)
 }
 
-@js.native
-sealed trait ParametersFilterKey extends js.Any
+type ParametersFilterKey = "Name" | "Type" | "KeyId"
 object ParametersFilterKey {
-  val Name = "Name".asInstanceOf[ParametersFilterKey]
-  val Type = "Type".asInstanceOf[ParametersFilterKey]
-  val KeyId = "KeyId".asInstanceOf[ParametersFilterKey]
+  val Name: "Name" = "Name"
+  val Type: "Type" = "Type"
+  val KeyId: "KeyId" = "KeyId"
 
-  @inline def values = js.Array(Name, Type, KeyId)
+  @inline def values = js.Array[ParametersFilterKey](Name, Type, KeyId)
 }
 
-@js.native
-sealed trait PatchAction extends js.Any
+type PatchAction = "ALLOW_AS_DEPENDENCY" | "BLOCK"
 object PatchAction {
-  val ALLOW_AS_DEPENDENCY = "ALLOW_AS_DEPENDENCY".asInstanceOf[PatchAction]
-  val BLOCK = "BLOCK".asInstanceOf[PatchAction]
+  val ALLOW_AS_DEPENDENCY: "ALLOW_AS_DEPENDENCY" = "ALLOW_AS_DEPENDENCY"
+  val BLOCK: "BLOCK" = "BLOCK"
 
-  @inline def values = js.Array(ALLOW_AS_DEPENDENCY, BLOCK)
+  @inline def values = js.Array[PatchAction](ALLOW_AS_DEPENDENCY, BLOCK)
 }
 
-@js.native
-sealed trait PatchComplianceDataState extends js.Any
+type PatchComplianceDataState = "INSTALLED" | "INSTALLED_OTHER" | "INSTALLED_PENDING_REBOOT" | "INSTALLED_REJECTED" | "MISSING" | "NOT_APPLICABLE" | "FAILED"
 object PatchComplianceDataState {
-  val INSTALLED = "INSTALLED".asInstanceOf[PatchComplianceDataState]
-  val INSTALLED_OTHER = "INSTALLED_OTHER".asInstanceOf[PatchComplianceDataState]
-  val INSTALLED_PENDING_REBOOT = "INSTALLED_PENDING_REBOOT".asInstanceOf[PatchComplianceDataState]
-  val INSTALLED_REJECTED = "INSTALLED_REJECTED".asInstanceOf[PatchComplianceDataState]
-  val MISSING = "MISSING".asInstanceOf[PatchComplianceDataState]
-  val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[PatchComplianceDataState]
-  val FAILED = "FAILED".asInstanceOf[PatchComplianceDataState]
+  val INSTALLED: "INSTALLED" = "INSTALLED"
+  val INSTALLED_OTHER: "INSTALLED_OTHER" = "INSTALLED_OTHER"
+  val INSTALLED_PENDING_REBOOT: "INSTALLED_PENDING_REBOOT" = "INSTALLED_PENDING_REBOOT"
+  val INSTALLED_REJECTED: "INSTALLED_REJECTED" = "INSTALLED_REJECTED"
+  val MISSING: "MISSING" = "MISSING"
+  val NOT_APPLICABLE: "NOT_APPLICABLE" = "NOT_APPLICABLE"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(INSTALLED, INSTALLED_OTHER, INSTALLED_PENDING_REBOOT, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED)
+  @inline def values = js.Array[PatchComplianceDataState](INSTALLED, INSTALLED_OTHER, INSTALLED_PENDING_REBOOT, INSTALLED_REJECTED, MISSING, NOT_APPLICABLE, FAILED)
 }
 
-@js.native
-sealed trait PatchComplianceLevel extends js.Any
+type PatchComplianceLevel = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW" | "INFORMATIONAL" | "UNSPECIFIED"
 object PatchComplianceLevel {
-  val CRITICAL = "CRITICAL".asInstanceOf[PatchComplianceLevel]
-  val HIGH = "HIGH".asInstanceOf[PatchComplianceLevel]
-  val MEDIUM = "MEDIUM".asInstanceOf[PatchComplianceLevel]
-  val LOW = "LOW".asInstanceOf[PatchComplianceLevel]
-  val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[PatchComplianceLevel]
-  val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[PatchComplianceLevel]
+  val CRITICAL: "CRITICAL" = "CRITICAL"
+  val HIGH: "HIGH" = "HIGH"
+  val MEDIUM: "MEDIUM" = "MEDIUM"
+  val LOW: "LOW" = "LOW"
+  val INFORMATIONAL: "INFORMATIONAL" = "INFORMATIONAL"
+  val UNSPECIFIED: "UNSPECIFIED" = "UNSPECIFIED"
 
-  @inline def values = js.Array(CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED)
+  @inline def values = js.Array[PatchComplianceLevel](CRITICAL, HIGH, MEDIUM, LOW, INFORMATIONAL, UNSPECIFIED)
 }
 
-@js.native
-sealed trait PatchDeploymentStatus extends js.Any
+type PatchDeploymentStatus = "APPROVED" | "PENDING_APPROVAL" | "EXPLICIT_APPROVED" | "EXPLICIT_REJECTED"
 object PatchDeploymentStatus {
-  val APPROVED = "APPROVED".asInstanceOf[PatchDeploymentStatus]
-  val PENDING_APPROVAL = "PENDING_APPROVAL".asInstanceOf[PatchDeploymentStatus]
-  val EXPLICIT_APPROVED = "EXPLICIT_APPROVED".asInstanceOf[PatchDeploymentStatus]
-  val EXPLICIT_REJECTED = "EXPLICIT_REJECTED".asInstanceOf[PatchDeploymentStatus]
+  val APPROVED: "APPROVED" = "APPROVED"
+  val PENDING_APPROVAL: "PENDING_APPROVAL" = "PENDING_APPROVAL"
+  val EXPLICIT_APPROVED: "EXPLICIT_APPROVED" = "EXPLICIT_APPROVED"
+  val EXPLICIT_REJECTED: "EXPLICIT_REJECTED" = "EXPLICIT_REJECTED"
 
-  @inline def values = js.Array(APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED)
+  @inline def values = js.Array[PatchDeploymentStatus](APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED, EXPLICIT_REJECTED)
 }
 
-@js.native
-sealed trait PatchFilterKey extends js.Any
+type PatchFilterKey = "ARCH" | "ADVISORY_ID" | "BUGZILLA_ID" | "PATCH_SET" | "PRODUCT" | "PRODUCT_FAMILY" | "CLASSIFICATION" | "CVE_ID" | "EPOCH" | "MSRC_SEVERITY" | "NAME" | "PATCH_ID" | "SECTION" | "PRIORITY" | "REPOSITORY" | "RELEASE" | "SEVERITY" | "SECURITY" | "VERSION"
 object PatchFilterKey {
-  val ARCH = "ARCH".asInstanceOf[PatchFilterKey]
-  val ADVISORY_ID = "ADVISORY_ID".asInstanceOf[PatchFilterKey]
-  val BUGZILLA_ID = "BUGZILLA_ID".asInstanceOf[PatchFilterKey]
-  val PATCH_SET = "PATCH_SET".asInstanceOf[PatchFilterKey]
-  val PRODUCT = "PRODUCT".asInstanceOf[PatchFilterKey]
-  val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchFilterKey]
-  val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchFilterKey]
-  val CVE_ID = "CVE_ID".asInstanceOf[PatchFilterKey]
-  val EPOCH = "EPOCH".asInstanceOf[PatchFilterKey]
-  val MSRC_SEVERITY = "MSRC_SEVERITY".asInstanceOf[PatchFilterKey]
-  val NAME = "NAME".asInstanceOf[PatchFilterKey]
-  val PATCH_ID = "PATCH_ID".asInstanceOf[PatchFilterKey]
-  val SECTION = "SECTION".asInstanceOf[PatchFilterKey]
-  val PRIORITY = "PRIORITY".asInstanceOf[PatchFilterKey]
-  val REPOSITORY = "REPOSITORY".asInstanceOf[PatchFilterKey]
-  val RELEASE = "RELEASE".asInstanceOf[PatchFilterKey]
-  val SEVERITY = "SEVERITY".asInstanceOf[PatchFilterKey]
-  val SECURITY = "SECURITY".asInstanceOf[PatchFilterKey]
-  val VERSION = "VERSION".asInstanceOf[PatchFilterKey]
+  val ARCH: "ARCH" = "ARCH"
+  val ADVISORY_ID: "ADVISORY_ID" = "ADVISORY_ID"
+  val BUGZILLA_ID: "BUGZILLA_ID" = "BUGZILLA_ID"
+  val PATCH_SET: "PATCH_SET" = "PATCH_SET"
+  val PRODUCT: "PRODUCT" = "PRODUCT"
+  val PRODUCT_FAMILY: "PRODUCT_FAMILY" = "PRODUCT_FAMILY"
+  val CLASSIFICATION: "CLASSIFICATION" = "CLASSIFICATION"
+  val CVE_ID: "CVE_ID" = "CVE_ID"
+  val EPOCH: "EPOCH" = "EPOCH"
+  val MSRC_SEVERITY: "MSRC_SEVERITY" = "MSRC_SEVERITY"
+  val NAME: "NAME" = "NAME"
+  val PATCH_ID: "PATCH_ID" = "PATCH_ID"
+  val SECTION: "SECTION" = "SECTION"
+  val PRIORITY: "PRIORITY" = "PRIORITY"
+  val REPOSITORY: "REPOSITORY" = "REPOSITORY"
+  val RELEASE: "RELEASE" = "RELEASE"
+  val SEVERITY: "SEVERITY" = "SEVERITY"
+  val SECURITY: "SECURITY" = "SECURITY"
+  val VERSION: "VERSION" = "VERSION"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[PatchFilterKey](
     ARCH,
     ADVISORY_ID,
     BUGZILLA_ID,
@@ -876,173 +811,157 @@ object PatchFilterKey {
   )
 }
 
-@js.native
-sealed trait PatchOperationType extends js.Any
+type PatchOperationType = "Scan" | "Install"
 object PatchOperationType {
-  val Scan = "Scan".asInstanceOf[PatchOperationType]
-  val Install = "Install".asInstanceOf[PatchOperationType]
+  val Scan: "Scan" = "Scan"
+  val Install: "Install" = "Install"
 
-  @inline def values = js.Array(Scan, Install)
+  @inline def values = js.Array[PatchOperationType](Scan, Install)
 }
 
-@js.native
-sealed trait PatchProperty extends js.Any
+type PatchProperty = "PRODUCT" | "PRODUCT_FAMILY" | "CLASSIFICATION" | "MSRC_SEVERITY" | "PRIORITY" | "SEVERITY"
 object PatchProperty {
-  val PRODUCT = "PRODUCT".asInstanceOf[PatchProperty]
-  val PRODUCT_FAMILY = "PRODUCT_FAMILY".asInstanceOf[PatchProperty]
-  val CLASSIFICATION = "CLASSIFICATION".asInstanceOf[PatchProperty]
-  val MSRC_SEVERITY = "MSRC_SEVERITY".asInstanceOf[PatchProperty]
-  val PRIORITY = "PRIORITY".asInstanceOf[PatchProperty]
-  val SEVERITY = "SEVERITY".asInstanceOf[PatchProperty]
+  val PRODUCT: "PRODUCT" = "PRODUCT"
+  val PRODUCT_FAMILY: "PRODUCT_FAMILY" = "PRODUCT_FAMILY"
+  val CLASSIFICATION: "CLASSIFICATION" = "CLASSIFICATION"
+  val MSRC_SEVERITY: "MSRC_SEVERITY" = "MSRC_SEVERITY"
+  val PRIORITY: "PRIORITY" = "PRIORITY"
+  val SEVERITY: "SEVERITY" = "SEVERITY"
 
-  @inline def values = js.Array(PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY)
+  @inline def values = js.Array[PatchProperty](PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY, PRIORITY, SEVERITY)
 }
 
-@js.native
-sealed trait PatchSet extends js.Any
+type PatchSet = "OS" | "APPLICATION"
 object PatchSet {
-  val OS = "OS".asInstanceOf[PatchSet]
-  val APPLICATION = "APPLICATION".asInstanceOf[PatchSet]
+  val OS: "OS" = "OS"
+  val APPLICATION: "APPLICATION" = "APPLICATION"
 
-  @inline def values = js.Array(OS, APPLICATION)
+  @inline def values = js.Array[PatchSet](OS, APPLICATION)
 }
 
-@js.native
-sealed trait PingStatus extends js.Any
+type PingStatus = "Online" | "ConnectionLost" | "Inactive"
 object PingStatus {
-  val Online = "Online".asInstanceOf[PingStatus]
-  val ConnectionLost = "ConnectionLost".asInstanceOf[PingStatus]
-  val Inactive = "Inactive".asInstanceOf[PingStatus]
+  val Online: "Online" = "Online"
+  val ConnectionLost: "ConnectionLost" = "ConnectionLost"
+  val Inactive: "Inactive" = "Inactive"
 
-  @inline def values = js.Array(Online, ConnectionLost, Inactive)
+  @inline def values = js.Array[PingStatus](Online, ConnectionLost, Inactive)
 }
 
-@js.native
-sealed trait PlatformType extends js.Any
+type PlatformType = "Windows" | "Linux"
 object PlatformType {
-  val Windows = "Windows".asInstanceOf[PlatformType]
-  val Linux = "Linux".asInstanceOf[PlatformType]
+  val Windows: "Windows" = "Windows"
+  val Linux: "Linux" = "Linux"
 
-  @inline def values = js.Array(Windows, Linux)
+  @inline def values = js.Array[PlatformType](Windows, Linux)
 }
 
-@js.native
-sealed trait RebootOption extends js.Any
+type RebootOption = "RebootIfNeeded" | "NoReboot"
 object RebootOption {
-  val RebootIfNeeded = "RebootIfNeeded".asInstanceOf[RebootOption]
-  val NoReboot = "NoReboot".asInstanceOf[RebootOption]
+  val RebootIfNeeded: "RebootIfNeeded" = "RebootIfNeeded"
+  val NoReboot: "NoReboot" = "NoReboot"
 
-  @inline def values = js.Array(RebootIfNeeded, NoReboot)
+  @inline def values = js.Array[RebootOption](RebootIfNeeded, NoReboot)
 }
 
-@js.native
-sealed trait ResourceDataSyncS3Format extends js.Any
+type ResourceDataSyncS3Format = "JsonSerDe"
 object ResourceDataSyncS3Format {
-  val JsonSerDe = "JsonSerDe".asInstanceOf[ResourceDataSyncS3Format]
+  val JsonSerDe: "JsonSerDe" = "JsonSerDe"
 
-  @inline def values = js.Array(JsonSerDe)
+  @inline def values = js.Array[ResourceDataSyncS3Format](JsonSerDe)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "ManagedInstance" | "Document" | "EC2Instance"
 object ResourceType {
-  val ManagedInstance = "ManagedInstance".asInstanceOf[ResourceType]
-  val Document = "Document".asInstanceOf[ResourceType]
-  val EC2Instance = "EC2Instance".asInstanceOf[ResourceType]
+  val ManagedInstance: "ManagedInstance" = "ManagedInstance"
+  val Document: "Document" = "Document"
+  val EC2Instance: "EC2Instance" = "EC2Instance"
 
-  @inline def values = js.Array(ManagedInstance, Document, EC2Instance)
+  @inline def values = js.Array[ResourceType](ManagedInstance, Document, EC2Instance)
 }
 
-@js.native
-sealed trait ResourceTypeForTagging extends js.Any
+type ResourceTypeForTagging = "Document" | "ManagedInstance" | "MaintenanceWindow" | "Parameter" | "PatchBaseline" | "OpsItem" | "OpsMetadata"
 object ResourceTypeForTagging {
-  val Document = "Document".asInstanceOf[ResourceTypeForTagging]
-  val ManagedInstance = "ManagedInstance".asInstanceOf[ResourceTypeForTagging]
-  val MaintenanceWindow = "MaintenanceWindow".asInstanceOf[ResourceTypeForTagging]
-  val Parameter = "Parameter".asInstanceOf[ResourceTypeForTagging]
-  val PatchBaseline = "PatchBaseline".asInstanceOf[ResourceTypeForTagging]
-  val OpsItem = "OpsItem".asInstanceOf[ResourceTypeForTagging]
-  val OpsMetadata = "OpsMetadata".asInstanceOf[ResourceTypeForTagging]
+  val Document: "Document" = "Document"
+  val ManagedInstance: "ManagedInstance" = "ManagedInstance"
+  val MaintenanceWindow: "MaintenanceWindow" = "MaintenanceWindow"
+  val Parameter: "Parameter" = "Parameter"
+  val PatchBaseline: "PatchBaseline" = "PatchBaseline"
+  val OpsItem: "OpsItem" = "OpsItem"
+  val OpsMetadata: "OpsMetadata" = "OpsMetadata"
 
-  @inline def values = js.Array(Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem, OpsMetadata)
+  @inline def values = js.Array[ResourceTypeForTagging](Document, ManagedInstance, MaintenanceWindow, Parameter, PatchBaseline, OpsItem, OpsMetadata)
 }
 
-@js.native
-sealed trait ReviewStatus extends js.Any
+type ReviewStatus = "APPROVED" | "NOT_REVIEWED" | "PENDING" | "REJECTED"
 object ReviewStatus {
-  val APPROVED = "APPROVED".asInstanceOf[ReviewStatus]
-  val NOT_REVIEWED = "NOT_REVIEWED".asInstanceOf[ReviewStatus]
-  val PENDING = "PENDING".asInstanceOf[ReviewStatus]
-  val REJECTED = "REJECTED".asInstanceOf[ReviewStatus]
+  val APPROVED: "APPROVED" = "APPROVED"
+  val NOT_REVIEWED: "NOT_REVIEWED" = "NOT_REVIEWED"
+  val PENDING: "PENDING" = "PENDING"
+  val REJECTED: "REJECTED" = "REJECTED"
 
-  @inline def values = js.Array(APPROVED, NOT_REVIEWED, PENDING, REJECTED)
+  @inline def values = js.Array[ReviewStatus](APPROVED, NOT_REVIEWED, PENDING, REJECTED)
 }
 
-@js.native
-sealed trait SessionFilterKey extends js.Any
+type SessionFilterKey = "InvokedAfter" | "InvokedBefore" | "Target" | "Owner" | "Status" | "SessionId"
 object SessionFilterKey {
-  val InvokedAfter = "InvokedAfter".asInstanceOf[SessionFilterKey]
-  val InvokedBefore = "InvokedBefore".asInstanceOf[SessionFilterKey]
-  val Target = "Target".asInstanceOf[SessionFilterKey]
-  val Owner = "Owner".asInstanceOf[SessionFilterKey]
-  val Status = "Status".asInstanceOf[SessionFilterKey]
-  val SessionId = "SessionId".asInstanceOf[SessionFilterKey]
+  val InvokedAfter: "InvokedAfter" = "InvokedAfter"
+  val InvokedBefore: "InvokedBefore" = "InvokedBefore"
+  val Target: "Target" = "Target"
+  val Owner: "Owner" = "Owner"
+  val Status: "Status" = "Status"
+  val SessionId: "SessionId" = "SessionId"
 
-  @inline def values = js.Array(InvokedAfter, InvokedBefore, Target, Owner, Status, SessionId)
+  @inline def values = js.Array[SessionFilterKey](InvokedAfter, InvokedBefore, Target, Owner, Status, SessionId)
 }
 
-@js.native
-sealed trait SessionState extends js.Any
+type SessionState = "Active" | "History"
 object SessionState {
-  val Active = "Active".asInstanceOf[SessionState]
-  val History = "History".asInstanceOf[SessionState]
+  val Active: "Active" = "Active"
+  val History: "History" = "History"
 
-  @inline def values = js.Array(Active, History)
+  @inline def values = js.Array[SessionState](Active, History)
 }
 
-@js.native
-sealed trait SessionStatus extends js.Any
+type SessionStatus = "Connected" | "Connecting" | "Disconnected" | "Terminated" | "Terminating" | "Failed"
 object SessionStatus {
-  val Connected = "Connected".asInstanceOf[SessionStatus]
-  val Connecting = "Connecting".asInstanceOf[SessionStatus]
-  val Disconnected = "Disconnected".asInstanceOf[SessionStatus]
-  val Terminated = "Terminated".asInstanceOf[SessionStatus]
-  val Terminating = "Terminating".asInstanceOf[SessionStatus]
-  val Failed = "Failed".asInstanceOf[SessionStatus]
+  val Connected: "Connected" = "Connected"
+  val Connecting: "Connecting" = "Connecting"
+  val Disconnected: "Disconnected" = "Disconnected"
+  val Terminated: "Terminated" = "Terminated"
+  val Terminating: "Terminating" = "Terminating"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Connected, Connecting, Disconnected, Terminated, Terminating, Failed)
+  @inline def values = js.Array[SessionStatus](Connected, Connecting, Disconnected, Terminated, Terminating, Failed)
 }
 
-@js.native
-sealed trait SignalType extends js.Any
+type SignalType = "Approve" | "Reject" | "StartStep" | "StopStep" | "Resume"
 object SignalType {
-  val Approve = "Approve".asInstanceOf[SignalType]
-  val Reject = "Reject".asInstanceOf[SignalType]
-  val StartStep = "StartStep".asInstanceOf[SignalType]
-  val StopStep = "StopStep".asInstanceOf[SignalType]
-  val Resume = "Resume".asInstanceOf[SignalType]
+  val Approve: "Approve" = "Approve"
+  val Reject: "Reject" = "Reject"
+  val StartStep: "StartStep" = "StartStep"
+  val StopStep: "StopStep" = "StopStep"
+  val Resume: "Resume" = "Resume"
 
-  @inline def values = js.Array(Approve, Reject, StartStep, StopStep, Resume)
+  @inline def values = js.Array[SignalType](Approve, Reject, StartStep, StopStep, Resume)
 }
 
-@js.native
-sealed trait StepExecutionFilterKey extends js.Any
+type StepExecutionFilterKey = "StartTimeBefore" | "StartTimeAfter" | "StepExecutionStatus" | "StepExecutionId" | "StepName" | "Action"
 object StepExecutionFilterKey {
-  val StartTimeBefore = "StartTimeBefore".asInstanceOf[StepExecutionFilterKey]
-  val StartTimeAfter = "StartTimeAfter".asInstanceOf[StepExecutionFilterKey]
-  val StepExecutionStatus = "StepExecutionStatus".asInstanceOf[StepExecutionFilterKey]
-  val StepExecutionId = "StepExecutionId".asInstanceOf[StepExecutionFilterKey]
-  val StepName = "StepName".asInstanceOf[StepExecutionFilterKey]
-  val Action = "Action".asInstanceOf[StepExecutionFilterKey]
+  val StartTimeBefore: "StartTimeBefore" = "StartTimeBefore"
+  val StartTimeAfter: "StartTimeAfter" = "StartTimeAfter"
+  val StepExecutionStatus: "StepExecutionStatus" = "StepExecutionStatus"
+  val StepExecutionId: "StepExecutionId" = "StepExecutionId"
+  val StepName: "StepName" = "StepName"
+  val Action: "Action" = "Action"
 
-  @inline def values = js.Array(StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action)
+  @inline def values = js.Array[StepExecutionFilterKey](StartTimeBefore, StartTimeAfter, StepExecutionStatus, StepExecutionId, StepName, Action)
 }
 
-@js.native
-sealed trait StopType extends js.Any
+type StopType = "Complete" | "Cancel"
 object StopType {
-  val Complete = "Complete".asInstanceOf[StopType]
-  val Cancel = "Cancel".asInstanceOf[StopType]
+  val Complete: "Complete" = "Complete"
+  val Cancel: "Cancel" = "Cancel"
 
-  @inline def values = js.Array(Complete, Cancel)
+  @inline def values = js.Array[StopType](Complete, Cancel)
 }

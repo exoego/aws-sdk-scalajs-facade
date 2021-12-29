@@ -1,34 +1,30 @@
 package facade.amazonaws.services.marketplacecatalog
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ChangeStatus extends js.Any
+type ChangeStatus = "PREPARING" | "APPLYING" | "SUCCEEDED" | "CANCELLED" | "FAILED"
 object ChangeStatus {
-  val PREPARING = "PREPARING".asInstanceOf[ChangeStatus]
-  val APPLYING = "APPLYING".asInstanceOf[ChangeStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[ChangeStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[ChangeStatus]
-  val FAILED = "FAILED".asInstanceOf[ChangeStatus]
+  val PREPARING: "PREPARING" = "PREPARING"
+  val APPLYING: "APPLYING" = "APPLYING"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val CANCELLED: "CANCELLED" = "CANCELLED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED)
+  @inline def values = js.Array[ChangeStatus](PREPARING, APPLYING, SUCCEEDED, CANCELLED, FAILED)
 }
 
-@js.native
-sealed trait FailureCode extends js.Any
+type FailureCode = "CLIENT_ERROR" | "SERVER_FAULT"
 object FailureCode {
-  val CLIENT_ERROR = "CLIENT_ERROR".asInstanceOf[FailureCode]
-  val SERVER_FAULT = "SERVER_FAULT".asInstanceOf[FailureCode]
+  val CLIENT_ERROR: "CLIENT_ERROR" = "CLIENT_ERROR"
+  val SERVER_FAULT: "SERVER_FAULT" = "SERVER_FAULT"
 
-  @inline def values = js.Array(CLIENT_ERROR, SERVER_FAULT)
+  @inline def values = js.Array[FailureCode](CLIENT_ERROR, SERVER_FAULT)
 }
 
-@js.native
-sealed trait SortOrder extends js.Any
+type SortOrder = "ASCENDING" | "DESCENDING"
 object SortOrder {
-  val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-  val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+  val ASCENDING: "ASCENDING" = "ASCENDING"
+  val DESCENDING: "DESCENDING" = "DESCENDING"
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values = js.Array[SortOrder](ASCENDING, DESCENDING)
 }

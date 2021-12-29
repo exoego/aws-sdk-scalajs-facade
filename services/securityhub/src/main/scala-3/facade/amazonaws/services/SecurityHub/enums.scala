@@ -1,94 +1,85 @@
 package facade.amazonaws.services.securityhub
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AdminStatus extends js.Any
+type AdminStatus = "ENABLED" | "DISABLE_IN_PROGRESS"
 object AdminStatus {
-  val ENABLED = "ENABLED".asInstanceOf[AdminStatus]
-  val DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[AdminStatus]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLE_IN_PROGRESS: "DISABLE_IN_PROGRESS" = "DISABLE_IN_PROGRESS"
 
-  @inline def values = js.Array(ENABLED, DISABLE_IN_PROGRESS)
+  @inline def values = js.Array[AdminStatus](ENABLED, DISABLE_IN_PROGRESS)
 }
 
-@js.native
-sealed trait AwsIamAccessKeyStatus extends js.Any
+type AwsIamAccessKeyStatus = "Active" | "Inactive"
 object AwsIamAccessKeyStatus {
-  val Active = "Active".asInstanceOf[AwsIamAccessKeyStatus]
-  val Inactive = "Inactive".asInstanceOf[AwsIamAccessKeyStatus]
+  val Active: "Active" = "Active"
+  val Inactive: "Inactive" = "Inactive"
 
-  @inline def values = js.Array(Active, Inactive)
+  @inline def values = js.Array[AwsIamAccessKeyStatus](Active, Inactive)
 }
 
-@js.native
-sealed trait ComplianceStatus extends js.Any
+type ComplianceStatus = "PASSED" | "WARNING" | "FAILED" | "NOT_AVAILABLE"
 object ComplianceStatus {
-  val PASSED = "PASSED".asInstanceOf[ComplianceStatus]
-  val WARNING = "WARNING".asInstanceOf[ComplianceStatus]
-  val FAILED = "FAILED".asInstanceOf[ComplianceStatus]
-  val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[ComplianceStatus]
+  val PASSED: "PASSED" = "PASSED"
+  val WARNING: "WARNING" = "WARNING"
+  val FAILED: "FAILED" = "FAILED"
+  val NOT_AVAILABLE: "NOT_AVAILABLE" = "NOT_AVAILABLE"
 
-  @inline def values = js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE)
+  @inline def values = js.Array[ComplianceStatus](PASSED, WARNING, FAILED, NOT_AVAILABLE)
 }
 
-@js.native
-sealed trait ControlStatus extends js.Any
+type ControlStatus = "ENABLED" | "DISABLED"
 object ControlStatus {
-  val ENABLED = "ENABLED".asInstanceOf[ControlStatus]
-  val DISABLED = "DISABLED".asInstanceOf[ControlStatus]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[ControlStatus](ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait DateRangeUnit extends js.Any
+type DateRangeUnit = "DAYS"
 object DateRangeUnit {
-  val DAYS = "DAYS".asInstanceOf[DateRangeUnit]
+  val DAYS: "DAYS" = "DAYS"
 
-  @inline def values = js.Array(DAYS)
+  @inline def values = js.Array[DateRangeUnit](DAYS)
 }
 
-@js.native
-sealed trait IntegrationType extends js.Any
+type IntegrationType = "SEND_FINDINGS_TO_SECURITY_HUB" | "RECEIVE_FINDINGS_FROM_SECURITY_HUB" | "UPDATE_FINDINGS_IN_SECURITY_HUB"
 object IntegrationType {
-  val SEND_FINDINGS_TO_SECURITY_HUB = "SEND_FINDINGS_TO_SECURITY_HUB".asInstanceOf[IntegrationType]
-  val RECEIVE_FINDINGS_FROM_SECURITY_HUB = "RECEIVE_FINDINGS_FROM_SECURITY_HUB".asInstanceOf[IntegrationType]
-  val UPDATE_FINDINGS_IN_SECURITY_HUB = "UPDATE_FINDINGS_IN_SECURITY_HUB".asInstanceOf[IntegrationType]
+  val SEND_FINDINGS_TO_SECURITY_HUB: "SEND_FINDINGS_TO_SECURITY_HUB" = "SEND_FINDINGS_TO_SECURITY_HUB"
+  val RECEIVE_FINDINGS_FROM_SECURITY_HUB: "RECEIVE_FINDINGS_FROM_SECURITY_HUB" = "RECEIVE_FINDINGS_FROM_SECURITY_HUB"
+  val UPDATE_FINDINGS_IN_SECURITY_HUB: "UPDATE_FINDINGS_IN_SECURITY_HUB" = "UPDATE_FINDINGS_IN_SECURITY_HUB"
 
-  @inline def values = js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB, UPDATE_FINDINGS_IN_SECURITY_HUB)
+  @inline def values = js.Array[IntegrationType](SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB, UPDATE_FINDINGS_IN_SECURITY_HUB)
 }
 
-@js.native
-sealed trait MalwareState extends js.Any
+type MalwareState = "OBSERVED" | "REMOVAL_FAILED" | "REMOVED"
 object MalwareState {
-  val OBSERVED = "OBSERVED".asInstanceOf[MalwareState]
-  val REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[MalwareState]
-  val REMOVED = "REMOVED".asInstanceOf[MalwareState]
+  val OBSERVED: "OBSERVED" = "OBSERVED"
+  val REMOVAL_FAILED: "REMOVAL_FAILED" = "REMOVAL_FAILED"
+  val REMOVED: "REMOVED" = "REMOVED"
 
-  @inline def values = js.Array(OBSERVED, REMOVAL_FAILED, REMOVED)
+  @inline def values = js.Array[MalwareState](OBSERVED, REMOVAL_FAILED, REMOVED)
 }
 
-@js.native
-sealed trait MalwareType extends js.Any
+type MalwareType = "ADWARE" | "BLENDED_THREAT" | "BOTNET_AGENT" | "COIN_MINER" | "EXPLOIT_KIT" | "KEYLOGGER" | "MACRO" | "POTENTIALLY_UNWANTED" | "SPYWARE" | "RANSOMWARE" | "REMOTE_ACCESS" | "ROOTKIT" | "TROJAN" | "VIRUS" | "WORM"
 object MalwareType {
-  val ADWARE = "ADWARE".asInstanceOf[MalwareType]
-  val BLENDED_THREAT = "BLENDED_THREAT".asInstanceOf[MalwareType]
-  val BOTNET_AGENT = "BOTNET_AGENT".asInstanceOf[MalwareType]
-  val COIN_MINER = "COIN_MINER".asInstanceOf[MalwareType]
-  val EXPLOIT_KIT = "EXPLOIT_KIT".asInstanceOf[MalwareType]
-  val KEYLOGGER = "KEYLOGGER".asInstanceOf[MalwareType]
-  val MACRO = "MACRO".asInstanceOf[MalwareType]
-  val POTENTIALLY_UNWANTED = "POTENTIALLY_UNWANTED".asInstanceOf[MalwareType]
-  val SPYWARE = "SPYWARE".asInstanceOf[MalwareType]
-  val RANSOMWARE = "RANSOMWARE".asInstanceOf[MalwareType]
-  val REMOTE_ACCESS = "REMOTE_ACCESS".asInstanceOf[MalwareType]
-  val ROOTKIT = "ROOTKIT".asInstanceOf[MalwareType]
-  val TROJAN = "TROJAN".asInstanceOf[MalwareType]
-  val VIRUS = "VIRUS".asInstanceOf[MalwareType]
-  val WORM = "WORM".asInstanceOf[MalwareType]
+  val ADWARE: "ADWARE" = "ADWARE"
+  val BLENDED_THREAT: "BLENDED_THREAT" = "BLENDED_THREAT"
+  val BOTNET_AGENT: "BOTNET_AGENT" = "BOTNET_AGENT"
+  val COIN_MINER: "COIN_MINER" = "COIN_MINER"
+  val EXPLOIT_KIT: "EXPLOIT_KIT" = "EXPLOIT_KIT"
+  val KEYLOGGER: "KEYLOGGER" = "KEYLOGGER"
+  val MACRO: "MACRO" = "MACRO"
+  val POTENTIALLY_UNWANTED: "POTENTIALLY_UNWANTED" = "POTENTIALLY_UNWANTED"
+  val SPYWARE: "SPYWARE" = "SPYWARE"
+  val RANSOMWARE: "RANSOMWARE" = "RANSOMWARE"
+  val REMOTE_ACCESS: "REMOTE_ACCESS" = "REMOTE_ACCESS"
+  val ROOTKIT: "ROOTKIT" = "ROOTKIT"
+  val TROJAN: "TROJAN" = "TROJAN"
+  val VIRUS: "VIRUS" = "VIRUS"
+  val WORM: "WORM" = "WORM"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[MalwareType](
     ADWARE,
     BLENDED_THREAT,
     BOTNET_AGENT,
@@ -107,160 +98,146 @@ object MalwareType {
   )
 }
 
-@js.native
-sealed trait MapFilterComparison extends js.Any
+type MapFilterComparison = "EQUALS" | "NOT_EQUALS"
 object MapFilterComparison {
-  val EQUALS = "EQUALS".asInstanceOf[MapFilterComparison]
-  val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[MapFilterComparison]
+  val EQUALS: "EQUALS" = "EQUALS"
+  val NOT_EQUALS: "NOT_EQUALS" = "NOT_EQUALS"
 
-  @inline def values = js.Array(EQUALS, NOT_EQUALS)
+  @inline def values = js.Array[MapFilterComparison](EQUALS, NOT_EQUALS)
 }
 
-@js.native
-sealed trait NetworkDirection extends js.Any
+type NetworkDirection = "IN" | "OUT"
 object NetworkDirection {
-  val IN = "IN".asInstanceOf[NetworkDirection]
-  val OUT = "OUT".asInstanceOf[NetworkDirection]
+  val IN: "IN" = "IN"
+  val OUT: "OUT" = "OUT"
 
-  @inline def values = js.Array(IN, OUT)
+  @inline def values = js.Array[NetworkDirection](IN, OUT)
 }
 
-@js.native
-sealed trait Partition extends js.Any
+type Partition = "aws" | "aws-cn" | "aws-us-gov"
 object Partition {
-  val aws = "aws".asInstanceOf[Partition]
-  val `aws-cn` = "aws-cn".asInstanceOf[Partition]
-  val `aws-us-gov` = "aws-us-gov".asInstanceOf[Partition]
+  val aws: "aws" = "aws"
+  val `aws-cn`: "aws-cn" = "aws-cn"
+  val `aws-us-gov`: "aws-us-gov" = "aws-us-gov"
 
-  @inline def values = js.Array(aws, `aws-cn`, `aws-us-gov`)
+  @inline def values = js.Array[Partition](aws, `aws-cn`, `aws-us-gov`)
 }
 
-@js.native
-sealed trait RecordState extends js.Any
+type RecordState = "ACTIVE" | "ARCHIVED"
 object RecordState {
-  val ACTIVE = "ACTIVE".asInstanceOf[RecordState]
-  val ARCHIVED = "ARCHIVED".asInstanceOf[RecordState]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val ARCHIVED: "ARCHIVED" = "ARCHIVED"
 
-  @inline def values = js.Array(ACTIVE, ARCHIVED)
+  @inline def values = js.Array[RecordState](ACTIVE, ARCHIVED)
 }
 
-@js.native
-sealed trait SeverityLabel extends js.Any
+type SeverityLabel = "INFORMATIONAL" | "LOW" | "MEDIUM" | "HIGH" | "CRITICAL"
 object SeverityLabel {
-  val INFORMATIONAL = "INFORMATIONAL".asInstanceOf[SeverityLabel]
-  val LOW = "LOW".asInstanceOf[SeverityLabel]
-  val MEDIUM = "MEDIUM".asInstanceOf[SeverityLabel]
-  val HIGH = "HIGH".asInstanceOf[SeverityLabel]
-  val CRITICAL = "CRITICAL".asInstanceOf[SeverityLabel]
+  val INFORMATIONAL: "INFORMATIONAL" = "INFORMATIONAL"
+  val LOW: "LOW" = "LOW"
+  val MEDIUM: "MEDIUM" = "MEDIUM"
+  val HIGH: "HIGH" = "HIGH"
+  val CRITICAL: "CRITICAL" = "CRITICAL"
 
-  @inline def values = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL)
+  @inline def values = js.Array[SeverityLabel](INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL)
 }
 
-@js.native
-sealed trait SeverityRating extends js.Any
+type SeverityRating = "LOW" | "MEDIUM" | "HIGH" | "CRITICAL"
 object SeverityRating {
-  val LOW = "LOW".asInstanceOf[SeverityRating]
-  val MEDIUM = "MEDIUM".asInstanceOf[SeverityRating]
-  val HIGH = "HIGH".asInstanceOf[SeverityRating]
-  val CRITICAL = "CRITICAL".asInstanceOf[SeverityRating]
+  val LOW: "LOW" = "LOW"
+  val MEDIUM: "MEDIUM" = "MEDIUM"
+  val HIGH: "HIGH" = "HIGH"
+  val CRITICAL: "CRITICAL" = "CRITICAL"
 
-  @inline def values = js.Array(LOW, MEDIUM, HIGH, CRITICAL)
+  @inline def values = js.Array[SeverityRating](LOW, MEDIUM, HIGH, CRITICAL)
 }
 
-@js.native
-sealed trait SortOrder extends js.Any
+type SortOrder = "asc" | "desc"
 object SortOrder {
-  val asc = "asc".asInstanceOf[SortOrder]
-  val desc = "desc".asInstanceOf[SortOrder]
+  val asc: "asc" = "asc"
+  val desc: "desc" = "desc"
 
-  @inline def values = js.Array(asc, desc)
+  @inline def values = js.Array[SortOrder](asc, desc)
 }
 
-@js.native
-sealed trait StandardsStatus extends js.Any
+type StandardsStatus = "PENDING" | "READY" | "FAILED" | "DELETING" | "INCOMPLETE"
 object StandardsStatus {
-  val PENDING = "PENDING".asInstanceOf[StandardsStatus]
-  val READY = "READY".asInstanceOf[StandardsStatus]
-  val FAILED = "FAILED".asInstanceOf[StandardsStatus]
-  val DELETING = "DELETING".asInstanceOf[StandardsStatus]
-  val INCOMPLETE = "INCOMPLETE".asInstanceOf[StandardsStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val READY: "READY" = "READY"
+  val FAILED: "FAILED" = "FAILED"
+  val DELETING: "DELETING" = "DELETING"
+  val INCOMPLETE: "INCOMPLETE" = "INCOMPLETE"
 
-  @inline def values = js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE)
+  @inline def values = js.Array[StandardsStatus](PENDING, READY, FAILED, DELETING, INCOMPLETE)
 }
 
-@js.native
-sealed trait StringFilterComparison extends js.Any
+type StringFilterComparison = "EQUALS" | "PREFIX" | "NOT_EQUALS" | "PREFIX_NOT_EQUALS"
 object StringFilterComparison {
-  val EQUALS = "EQUALS".asInstanceOf[StringFilterComparison]
-  val PREFIX = "PREFIX".asInstanceOf[StringFilterComparison]
-  val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[StringFilterComparison]
-  val PREFIX_NOT_EQUALS = "PREFIX_NOT_EQUALS".asInstanceOf[StringFilterComparison]
+  val EQUALS: "EQUALS" = "EQUALS"
+  val PREFIX: "PREFIX" = "PREFIX"
+  val NOT_EQUALS: "NOT_EQUALS" = "NOT_EQUALS"
+  val PREFIX_NOT_EQUALS: "PREFIX_NOT_EQUALS" = "PREFIX_NOT_EQUALS"
 
-  @inline def values = js.Array(EQUALS, PREFIX, NOT_EQUALS, PREFIX_NOT_EQUALS)
+  @inline def values = js.Array[StringFilterComparison](EQUALS, PREFIX, NOT_EQUALS, PREFIX_NOT_EQUALS)
 }
 
-@js.native
-sealed trait ThreatIntelIndicatorCategory extends js.Any
+type ThreatIntelIndicatorCategory = "BACKDOOR" | "CARD_STEALER" | "COMMAND_AND_CONTROL" | "DROP_SITE" | "EXPLOIT_SITE" | "KEYLOGGER"
 object ThreatIntelIndicatorCategory {
-  val BACKDOOR = "BACKDOOR".asInstanceOf[ThreatIntelIndicatorCategory]
-  val CARD_STEALER = "CARD_STEALER".asInstanceOf[ThreatIntelIndicatorCategory]
-  val COMMAND_AND_CONTROL = "COMMAND_AND_CONTROL".asInstanceOf[ThreatIntelIndicatorCategory]
-  val DROP_SITE = "DROP_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
-  val EXPLOIT_SITE = "EXPLOIT_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
-  val KEYLOGGER = "KEYLOGGER".asInstanceOf[ThreatIntelIndicatorCategory]
+  val BACKDOOR: "BACKDOOR" = "BACKDOOR"
+  val CARD_STEALER: "CARD_STEALER" = "CARD_STEALER"
+  val COMMAND_AND_CONTROL: "COMMAND_AND_CONTROL" = "COMMAND_AND_CONTROL"
+  val DROP_SITE: "DROP_SITE" = "DROP_SITE"
+  val EXPLOIT_SITE: "EXPLOIT_SITE" = "EXPLOIT_SITE"
+  val KEYLOGGER: "KEYLOGGER" = "KEYLOGGER"
 
-  @inline def values = js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER)
+  @inline def values = js.Array[ThreatIntelIndicatorCategory](BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER)
 }
 
-@js.native
-sealed trait ThreatIntelIndicatorType extends js.Any
+type ThreatIntelIndicatorType = "DOMAIN" | "EMAIL_ADDRESS" | "HASH_MD5" | "HASH_SHA1" | "HASH_SHA256" | "HASH_SHA512" | "IPV4_ADDRESS" | "IPV6_ADDRESS" | "MUTEX" | "PROCESS" | "URL"
 object ThreatIntelIndicatorType {
-  val DOMAIN = "DOMAIN".asInstanceOf[ThreatIntelIndicatorType]
-  val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-  val HASH_MD5 = "HASH_MD5".asInstanceOf[ThreatIntelIndicatorType]
-  val HASH_SHA1 = "HASH_SHA1".asInstanceOf[ThreatIntelIndicatorType]
-  val HASH_SHA256 = "HASH_SHA256".asInstanceOf[ThreatIntelIndicatorType]
-  val HASH_SHA512 = "HASH_SHA512".asInstanceOf[ThreatIntelIndicatorType]
-  val IPV4_ADDRESS = "IPV4_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-  val IPV6_ADDRESS = "IPV6_ADDRESS".asInstanceOf[ThreatIntelIndicatorType]
-  val MUTEX = "MUTEX".asInstanceOf[ThreatIntelIndicatorType]
-  val PROCESS = "PROCESS".asInstanceOf[ThreatIntelIndicatorType]
-  val URL = "URL".asInstanceOf[ThreatIntelIndicatorType]
+  val DOMAIN: "DOMAIN" = "DOMAIN"
+  val EMAIL_ADDRESS: "EMAIL_ADDRESS" = "EMAIL_ADDRESS"
+  val HASH_MD5: "HASH_MD5" = "HASH_MD5"
+  val HASH_SHA1: "HASH_SHA1" = "HASH_SHA1"
+  val HASH_SHA256: "HASH_SHA256" = "HASH_SHA256"
+  val HASH_SHA512: "HASH_SHA512" = "HASH_SHA512"
+  val IPV4_ADDRESS: "IPV4_ADDRESS" = "IPV4_ADDRESS"
+  val IPV6_ADDRESS: "IPV6_ADDRESS" = "IPV6_ADDRESS"
+  val MUTEX: "MUTEX" = "MUTEX"
+  val PROCESS: "PROCESS" = "PROCESS"
+  val URL: "URL" = "URL"
 
-  @inline def values = js.Array(DOMAIN, EMAIL_ADDRESS, HASH_MD5, HASH_SHA1, HASH_SHA256, HASH_SHA512, IPV4_ADDRESS, IPV6_ADDRESS, MUTEX, PROCESS, URL)
+  @inline def values = js.Array[ThreatIntelIndicatorType](DOMAIN, EMAIL_ADDRESS, HASH_MD5, HASH_SHA1, HASH_SHA256, HASH_SHA512, IPV4_ADDRESS, IPV6_ADDRESS, MUTEX, PROCESS, URL)
 }
 
-@js.native
-sealed trait VerificationState extends js.Any
+type VerificationState = "UNKNOWN" | "TRUE_POSITIVE" | "FALSE_POSITIVE" | "BENIGN_POSITIVE"
 object VerificationState {
-  val UNKNOWN = "UNKNOWN".asInstanceOf[VerificationState]
-  val TRUE_POSITIVE = "TRUE_POSITIVE".asInstanceOf[VerificationState]
-  val FALSE_POSITIVE = "FALSE_POSITIVE".asInstanceOf[VerificationState]
-  val BENIGN_POSITIVE = "BENIGN_POSITIVE".asInstanceOf[VerificationState]
+  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  val TRUE_POSITIVE: "TRUE_POSITIVE" = "TRUE_POSITIVE"
+  val FALSE_POSITIVE: "FALSE_POSITIVE" = "FALSE_POSITIVE"
+  val BENIGN_POSITIVE: "BENIGN_POSITIVE" = "BENIGN_POSITIVE"
 
-  @inline def values = js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
+  @inline def values = js.Array[VerificationState](UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
 }
 
 @deprecated("This field is deprecated, use Workflow.Status instead.", "forever")
-@js.native
-sealed trait WorkflowState extends js.Any
+type WorkflowState = "NEW" | "ASSIGNED" | "IN_PROGRESS" | "DEFERRED" | "RESOLVED"
 object WorkflowState {
-  val NEW = "NEW".asInstanceOf[WorkflowState]
-  val ASSIGNED = "ASSIGNED".asInstanceOf[WorkflowState]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WorkflowState]
-  val DEFERRED = "DEFERRED".asInstanceOf[WorkflowState]
-  val RESOLVED = "RESOLVED".asInstanceOf[WorkflowState]
+  val NEW: "NEW" = "NEW"
+  val ASSIGNED: "ASSIGNED" = "ASSIGNED"
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val DEFERRED: "DEFERRED" = "DEFERRED"
+  val RESOLVED: "RESOLVED" = "RESOLVED"
 
-  @inline def values = js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED)
+  @inline def values = js.Array[WorkflowState](NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED)
 }
 
-@js.native
-sealed trait WorkflowStatus extends js.Any
+type WorkflowStatus = "NEW" | "NOTIFIED" | "RESOLVED" | "SUPPRESSED"
 object WorkflowStatus {
-  val NEW = "NEW".asInstanceOf[WorkflowStatus]
-  val NOTIFIED = "NOTIFIED".asInstanceOf[WorkflowStatus]
-  val RESOLVED = "RESOLVED".asInstanceOf[WorkflowStatus]
-  val SUPPRESSED = "SUPPRESSED".asInstanceOf[WorkflowStatus]
+  val NEW: "NEW" = "NEW"
+  val NOTIFIED: "NOTIFIED" = "NOTIFIED"
+  val RESOLVED: "RESOLVED" = "RESOLVED"
+  val SUPPRESSED: "SUPPRESSED" = "SUPPRESSED"
 
-  @inline def values = js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED)
+  @inline def values = js.Array[WorkflowStatus](NEW, NOTIFIED, RESOLVED, SUPPRESSED)
 }

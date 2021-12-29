@@ -1,40 +1,36 @@
 package facade.amazonaws.services.kinesis
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ConsumerStatus extends js.Any
+type ConsumerStatus = "CREATING" | "DELETING" | "ACTIVE"
 object ConsumerStatus {
-  val CREATING = "CREATING".asInstanceOf[ConsumerStatus]
-  val DELETING = "DELETING".asInstanceOf[ConsumerStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[ConsumerStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val DELETING: "DELETING" = "DELETING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
 
-  @inline def values = js.Array(CREATING, DELETING, ACTIVE)
+  @inline def values = js.Array[ConsumerStatus](CREATING, DELETING, ACTIVE)
 }
 
-@js.native
-sealed trait EncryptionType extends js.Any
+type EncryptionType = "NONE" | "KMS"
 object EncryptionType {
-  val NONE = "NONE".asInstanceOf[EncryptionType]
-  val KMS = "KMS".asInstanceOf[EncryptionType]
+  val NONE: "NONE" = "NONE"
+  val KMS: "KMS" = "KMS"
 
-  @inline def values = js.Array(NONE, KMS)
+  @inline def values = js.Array[EncryptionType](NONE, KMS)
 }
 
-@js.native
-sealed trait MetricsName extends js.Any
+type MetricsName = "IncomingBytes" | "IncomingRecords" | "OutgoingBytes" | "OutgoingRecords" | "WriteProvisionedThroughputExceeded" | "ReadProvisionedThroughputExceeded" | "IteratorAgeMilliseconds" | "ALL"
 object MetricsName {
-  val IncomingBytes = "IncomingBytes".asInstanceOf[MetricsName]
-  val IncomingRecords = "IncomingRecords".asInstanceOf[MetricsName]
-  val OutgoingBytes = "OutgoingBytes".asInstanceOf[MetricsName]
-  val OutgoingRecords = "OutgoingRecords".asInstanceOf[MetricsName]
-  val WriteProvisionedThroughputExceeded = "WriteProvisionedThroughputExceeded".asInstanceOf[MetricsName]
-  val ReadProvisionedThroughputExceeded = "ReadProvisionedThroughputExceeded".asInstanceOf[MetricsName]
-  val IteratorAgeMilliseconds = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
-  val ALL = "ALL".asInstanceOf[MetricsName]
+  val IncomingBytes: "IncomingBytes" = "IncomingBytes"
+  val IncomingRecords: "IncomingRecords" = "IncomingRecords"
+  val OutgoingBytes: "OutgoingBytes" = "OutgoingBytes"
+  val OutgoingRecords: "OutgoingRecords" = "OutgoingRecords"
+  val WriteProvisionedThroughputExceeded: "WriteProvisionedThroughputExceeded" = "WriteProvisionedThroughputExceeded"
+  val ReadProvisionedThroughputExceeded: "ReadProvisionedThroughputExceeded" = "ReadProvisionedThroughputExceeded"
+  val IteratorAgeMilliseconds: "IteratorAgeMilliseconds" = "IteratorAgeMilliseconds"
+  val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[MetricsName](
     IncomingBytes,
     IncomingRecords,
     OutgoingBytes,
@@ -46,46 +42,42 @@ object MetricsName {
   )
 }
 
-@js.native
-sealed trait ScalingType extends js.Any
+type ScalingType = "UNIFORM_SCALING"
 object ScalingType {
-  val UNIFORM_SCALING = "UNIFORM_SCALING".asInstanceOf[ScalingType]
+  val UNIFORM_SCALING: "UNIFORM_SCALING" = "UNIFORM_SCALING"
 
-  @inline def values = js.Array(UNIFORM_SCALING)
+  @inline def values = js.Array[ScalingType](UNIFORM_SCALING)
 }
 
-@js.native
-sealed trait ShardFilterType extends js.Any
+type ShardFilterType = "AFTER_SHARD_ID" | "AT_TRIM_HORIZON" | "FROM_TRIM_HORIZON" | "AT_LATEST" | "AT_TIMESTAMP" | "FROM_TIMESTAMP"
 object ShardFilterType {
-  val AFTER_SHARD_ID = "AFTER_SHARD_ID".asInstanceOf[ShardFilterType]
-  val AT_TRIM_HORIZON = "AT_TRIM_HORIZON".asInstanceOf[ShardFilterType]
-  val FROM_TRIM_HORIZON = "FROM_TRIM_HORIZON".asInstanceOf[ShardFilterType]
-  val AT_LATEST = "AT_LATEST".asInstanceOf[ShardFilterType]
-  val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardFilterType]
-  val FROM_TIMESTAMP = "FROM_TIMESTAMP".asInstanceOf[ShardFilterType]
+  val AFTER_SHARD_ID: "AFTER_SHARD_ID" = "AFTER_SHARD_ID"
+  val AT_TRIM_HORIZON: "AT_TRIM_HORIZON" = "AT_TRIM_HORIZON"
+  val FROM_TRIM_HORIZON: "FROM_TRIM_HORIZON" = "FROM_TRIM_HORIZON"
+  val AT_LATEST: "AT_LATEST" = "AT_LATEST"
+  val AT_TIMESTAMP: "AT_TIMESTAMP" = "AT_TIMESTAMP"
+  val FROM_TIMESTAMP: "FROM_TIMESTAMP" = "FROM_TIMESTAMP"
 
-  @inline def values = js.Array(AFTER_SHARD_ID, AT_TRIM_HORIZON, FROM_TRIM_HORIZON, AT_LATEST, AT_TIMESTAMP, FROM_TIMESTAMP)
+  @inline def values = js.Array[ShardFilterType](AFTER_SHARD_ID, AT_TRIM_HORIZON, FROM_TRIM_HORIZON, AT_LATEST, AT_TIMESTAMP, FROM_TIMESTAMP)
 }
 
-@js.native
-sealed trait ShardIteratorType extends js.Any
+type ShardIteratorType = "AT_SEQUENCE_NUMBER" | "AFTER_SEQUENCE_NUMBER" | "TRIM_HORIZON" | "LATEST" | "AT_TIMESTAMP"
 object ShardIteratorType {
-  val AT_SEQUENCE_NUMBER = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
-  val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
-  val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[ShardIteratorType]
-  val LATEST = "LATEST".asInstanceOf[ShardIteratorType]
-  val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardIteratorType]
+  val AT_SEQUENCE_NUMBER: "AT_SEQUENCE_NUMBER" = "AT_SEQUENCE_NUMBER"
+  val AFTER_SEQUENCE_NUMBER: "AFTER_SEQUENCE_NUMBER" = "AFTER_SEQUENCE_NUMBER"
+  val TRIM_HORIZON: "TRIM_HORIZON" = "TRIM_HORIZON"
+  val LATEST: "LATEST" = "LATEST"
+  val AT_TIMESTAMP: "AT_TIMESTAMP" = "AT_TIMESTAMP"
 
-  @inline def values = js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP)
+  @inline def values = js.Array[ShardIteratorType](AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP)
 }
 
-@js.native
-sealed trait StreamStatus extends js.Any
+type StreamStatus = "CREATING" | "DELETING" | "ACTIVE" | "UPDATING"
 object StreamStatus {
-  val CREATING = "CREATING".asInstanceOf[StreamStatus]
-  val DELETING = "DELETING".asInstanceOf[StreamStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[StreamStatus]
-  val UPDATING = "UPDATING".asInstanceOf[StreamStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val DELETING: "DELETING" = "DELETING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(CREATING, DELETING, ACTIVE, UPDATING)
+  @inline def values = js.Array[StreamStatus](CREATING, DELETING, ACTIVE, UPDATING)
 }

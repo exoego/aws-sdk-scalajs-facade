@@ -41,3 +41,4 @@ object TimeUnit {
 
   @inline def values = js.Array(MILLISECONDS, SECONDS, MICROSECONDS, NANOSECONDS)
 }
+

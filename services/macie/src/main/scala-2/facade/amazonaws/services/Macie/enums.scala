@@ -19,3 +19,4 @@ object S3OneTimeClassificationType {
 
   @inline def values = js.Array(FULL, NONE)
 }
+

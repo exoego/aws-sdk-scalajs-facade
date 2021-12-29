@@ -102,3 +102,4 @@ object TransitGatewayRegistrationState {
 
   @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED)
 }
+

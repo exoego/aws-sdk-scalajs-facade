@@ -1,130 +1,118 @@
 package facade.amazonaws.services.accessanalyzer
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccessPreviewStatus extends js.Any
+type AccessPreviewStatus = "COMPLETED" | "CREATING" | "FAILED"
 object AccessPreviewStatus {
-  val COMPLETED = "COMPLETED".asInstanceOf[AccessPreviewStatus]
-  val CREATING = "CREATING".asInstanceOf[AccessPreviewStatus]
-  val FAILED = "FAILED".asInstanceOf[AccessPreviewStatus]
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val CREATING: "CREATING" = "CREATING"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(COMPLETED, CREATING, FAILED)
+  @inline def values = js.Array[AccessPreviewStatus](COMPLETED, CREATING, FAILED)
 }
 
-@js.native
-sealed trait AccessPreviewStatusReasonCode extends js.Any
+type AccessPreviewStatusReasonCode = "INTERNAL_ERROR" | "INVALID_CONFIGURATION"
 object AccessPreviewStatusReasonCode {
-  val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[AccessPreviewStatusReasonCode]
-  val INVALID_CONFIGURATION = "INVALID_CONFIGURATION".asInstanceOf[AccessPreviewStatusReasonCode]
+  val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
+  val INVALID_CONFIGURATION: "INVALID_CONFIGURATION" = "INVALID_CONFIGURATION"
 
-  @inline def values = js.Array(INTERNAL_ERROR, INVALID_CONFIGURATION)
+  @inline def values = js.Array[AccessPreviewStatusReasonCode](INTERNAL_ERROR, INVALID_CONFIGURATION)
 }
 
-@js.native
-sealed trait AclPermission extends js.Any
+type AclPermission = "READ" | "WRITE" | "READ_ACP" | "WRITE_ACP" | "FULL_CONTROL"
 object AclPermission {
-  val READ = "READ".asInstanceOf[AclPermission]
-  val WRITE = "WRITE".asInstanceOf[AclPermission]
-  val READ_ACP = "READ_ACP".asInstanceOf[AclPermission]
-  val WRITE_ACP = "WRITE_ACP".asInstanceOf[AclPermission]
-  val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[AclPermission]
+  val READ: "READ" = "READ"
+  val WRITE: "WRITE" = "WRITE"
+  val READ_ACP: "READ_ACP" = "READ_ACP"
+  val WRITE_ACP: "WRITE_ACP" = "WRITE_ACP"
+  val FULL_CONTROL: "FULL_CONTROL" = "FULL_CONTROL"
 
-  @inline def values = js.Array(READ, WRITE, READ_ACP, WRITE_ACP, FULL_CONTROL)
+  @inline def values = js.Array[AclPermission](READ, WRITE, READ_ACP, WRITE_ACP, FULL_CONTROL)
 }
 
-@js.native
-sealed trait AnalyzerStatus extends js.Any
+type AnalyzerStatus = "ACTIVE" | "CREATING" | "DISABLED" | "FAILED"
 object AnalyzerStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[AnalyzerStatus]
-  val CREATING = "CREATING".asInstanceOf[AnalyzerStatus]
-  val DISABLED = "DISABLED".asInstanceOf[AnalyzerStatus]
-  val FAILED = "FAILED".asInstanceOf[AnalyzerStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val CREATING: "CREATING" = "CREATING"
+  val DISABLED: "DISABLED" = "DISABLED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(ACTIVE, CREATING, DISABLED, FAILED)
+  @inline def values = js.Array[AnalyzerStatus](ACTIVE, CREATING, DISABLED, FAILED)
 }
 
-@js.native
-sealed trait FindingChangeType extends js.Any
+type FindingChangeType = "CHANGED" | "NEW" | "UNCHANGED"
 object FindingChangeType {
-  val CHANGED = "CHANGED".asInstanceOf[FindingChangeType]
-  val NEW = "NEW".asInstanceOf[FindingChangeType]
-  val UNCHANGED = "UNCHANGED".asInstanceOf[FindingChangeType]
+  val CHANGED: "CHANGED" = "CHANGED"
+  val NEW: "NEW" = "NEW"
+  val UNCHANGED: "UNCHANGED" = "UNCHANGED"
 
-  @inline def values = js.Array(CHANGED, NEW, UNCHANGED)
+  @inline def values = js.Array[FindingChangeType](CHANGED, NEW, UNCHANGED)
 }
 
-@js.native
-sealed trait FindingSourceType extends js.Any
+type FindingSourceType = "POLICY" | "BUCKET_ACL" | "S3_ACCESS_POINT"
 object FindingSourceType {
-  val POLICY = "POLICY".asInstanceOf[FindingSourceType]
-  val BUCKET_ACL = "BUCKET_ACL".asInstanceOf[FindingSourceType]
-  val S3_ACCESS_POINT = "S3_ACCESS_POINT".asInstanceOf[FindingSourceType]
+  val POLICY: "POLICY" = "POLICY"
+  val BUCKET_ACL: "BUCKET_ACL" = "BUCKET_ACL"
+  val S3_ACCESS_POINT: "S3_ACCESS_POINT" = "S3_ACCESS_POINT"
 
-  @inline def values = js.Array(POLICY, BUCKET_ACL, S3_ACCESS_POINT)
+  @inline def values = js.Array[FindingSourceType](POLICY, BUCKET_ACL, S3_ACCESS_POINT)
 }
 
-@js.native
-sealed trait FindingStatus extends js.Any
+type FindingStatus = "ACTIVE" | "ARCHIVED" | "RESOLVED"
 object FindingStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[FindingStatus]
-  val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatus]
-  val RESOLVED = "RESOLVED".asInstanceOf[FindingStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val ARCHIVED: "ARCHIVED" = "ARCHIVED"
+  val RESOLVED: "RESOLVED" = "RESOLVED"
 
-  @inline def values = js.Array(ACTIVE, ARCHIVED, RESOLVED)
+  @inline def values = js.Array[FindingStatus](ACTIVE, ARCHIVED, RESOLVED)
 }
 
-@js.native
-sealed trait FindingStatusUpdate extends js.Any
+type FindingStatusUpdate = "ACTIVE" | "ARCHIVED"
 object FindingStatusUpdate {
-  val ACTIVE = "ACTIVE".asInstanceOf[FindingStatusUpdate]
-  val ARCHIVED = "ARCHIVED".asInstanceOf[FindingStatusUpdate]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val ARCHIVED: "ARCHIVED" = "ARCHIVED"
 
-  @inline def values = js.Array(ACTIVE, ARCHIVED)
+  @inline def values = js.Array[FindingStatusUpdate](ACTIVE, ARCHIVED)
 }
 
-@js.native
-sealed trait JobErrorCode extends js.Any
+type JobErrorCode = "AUTHORIZATION_ERROR" | "RESOURCE_NOT_FOUND_ERROR" | "SERVICE_QUOTA_EXCEEDED_ERROR" | "SERVICE_ERROR"
 object JobErrorCode {
-  val AUTHORIZATION_ERROR = "AUTHORIZATION_ERROR".asInstanceOf[JobErrorCode]
-  val RESOURCE_NOT_FOUND_ERROR = "RESOURCE_NOT_FOUND_ERROR".asInstanceOf[JobErrorCode]
-  val SERVICE_QUOTA_EXCEEDED_ERROR = "SERVICE_QUOTA_EXCEEDED_ERROR".asInstanceOf[JobErrorCode]
-  val SERVICE_ERROR = "SERVICE_ERROR".asInstanceOf[JobErrorCode]
+  val AUTHORIZATION_ERROR: "AUTHORIZATION_ERROR" = "AUTHORIZATION_ERROR"
+  val RESOURCE_NOT_FOUND_ERROR: "RESOURCE_NOT_FOUND_ERROR" = "RESOURCE_NOT_FOUND_ERROR"
+  val SERVICE_QUOTA_EXCEEDED_ERROR: "SERVICE_QUOTA_EXCEEDED_ERROR" = "SERVICE_QUOTA_EXCEEDED_ERROR"
+  val SERVICE_ERROR: "SERVICE_ERROR" = "SERVICE_ERROR"
 
-  @inline def values = js.Array(AUTHORIZATION_ERROR, RESOURCE_NOT_FOUND_ERROR, SERVICE_QUOTA_EXCEEDED_ERROR, SERVICE_ERROR)
+  @inline def values = js.Array[JobErrorCode](AUTHORIZATION_ERROR, RESOURCE_NOT_FOUND_ERROR, SERVICE_QUOTA_EXCEEDED_ERROR, SERVICE_ERROR)
 }
 
-@js.native
-sealed trait JobStatus extends js.Any
+type JobStatus = "IN_PROGRESS" | "SUCCEEDED" | "FAILED" | "CANCELED"
 object JobStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
-  val FAILED = "FAILED".asInstanceOf[JobStatus]
-  val CANCELED = "CANCELED".asInstanceOf[JobStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val FAILED: "FAILED" = "FAILED"
+  val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
+  @inline def values = js.Array[JobStatus](IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
 }
 
-@js.native
-sealed trait KmsGrantOperation extends js.Any
+type KmsGrantOperation = "CreateGrant" | "Decrypt" | "DescribeKey" | "Encrypt" | "GenerateDataKey" | "GenerateDataKeyPair" | "GenerateDataKeyPairWithoutPlaintext" | "GenerateDataKeyWithoutPlaintext" | "GetPublicKey" | "ReEncryptFrom" | "ReEncryptTo" | "RetireGrant" | "Sign" | "Verify"
 object KmsGrantOperation {
-  val CreateGrant = "CreateGrant".asInstanceOf[KmsGrantOperation]
-  val Decrypt = "Decrypt".asInstanceOf[KmsGrantOperation]
-  val DescribeKey = "DescribeKey".asInstanceOf[KmsGrantOperation]
-  val Encrypt = "Encrypt".asInstanceOf[KmsGrantOperation]
-  val GenerateDataKey = "GenerateDataKey".asInstanceOf[KmsGrantOperation]
-  val GenerateDataKeyPair = "GenerateDataKeyPair".asInstanceOf[KmsGrantOperation]
-  val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext".asInstanceOf[KmsGrantOperation]
-  val GenerateDataKeyWithoutPlaintext = "GenerateDataKeyWithoutPlaintext".asInstanceOf[KmsGrantOperation]
-  val GetPublicKey = "GetPublicKey".asInstanceOf[KmsGrantOperation]
-  val ReEncryptFrom = "ReEncryptFrom".asInstanceOf[KmsGrantOperation]
-  val ReEncryptTo = "ReEncryptTo".asInstanceOf[KmsGrantOperation]
-  val RetireGrant = "RetireGrant".asInstanceOf[KmsGrantOperation]
-  val Sign = "Sign".asInstanceOf[KmsGrantOperation]
-  val Verify = "Verify".asInstanceOf[KmsGrantOperation]
+  val CreateGrant: "CreateGrant" = "CreateGrant"
+  val Decrypt: "Decrypt" = "Decrypt"
+  val DescribeKey: "DescribeKey" = "DescribeKey"
+  val Encrypt: "Encrypt" = "Encrypt"
+  val GenerateDataKey: "GenerateDataKey" = "GenerateDataKey"
+  val GenerateDataKeyPair: "GenerateDataKeyPair" = "GenerateDataKeyPair"
+  val GenerateDataKeyPairWithoutPlaintext: "GenerateDataKeyPairWithoutPlaintext" = "GenerateDataKeyPairWithoutPlaintext"
+  val GenerateDataKeyWithoutPlaintext: "GenerateDataKeyWithoutPlaintext" = "GenerateDataKeyWithoutPlaintext"
+  val GetPublicKey: "GetPublicKey" = "GetPublicKey"
+  val ReEncryptFrom: "ReEncryptFrom" = "ReEncryptFrom"
+  val ReEncryptTo: "ReEncryptTo" = "ReEncryptTo"
+  val RetireGrant: "RetireGrant" = "RetireGrant"
+  val Sign: "Sign" = "Sign"
+  val Verify: "Verify" = "Verify"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[KmsGrantOperation](
     CreateGrant,
     Decrypt,
     DescribeKey,
@@ -142,65 +130,60 @@ object KmsGrantOperation {
   )
 }
 
-@js.native
-sealed trait Locale extends js.Any
+type Locale = "DE" | "EN" | "ES" | "FR" | "IT" | "JA" | "KO" | "PT_BR" | "ZH_CN" | "ZH_TW"
 object Locale {
-  val DE = "DE".asInstanceOf[Locale]
-  val EN = "EN".asInstanceOf[Locale]
-  val ES = "ES".asInstanceOf[Locale]
-  val FR = "FR".asInstanceOf[Locale]
-  val IT = "IT".asInstanceOf[Locale]
-  val JA = "JA".asInstanceOf[Locale]
-  val KO = "KO".asInstanceOf[Locale]
-  val PT_BR = "PT_BR".asInstanceOf[Locale]
-  val ZH_CN = "ZH_CN".asInstanceOf[Locale]
-  val ZH_TW = "ZH_TW".asInstanceOf[Locale]
+  val DE: "DE" = "DE"
+  val EN: "EN" = "EN"
+  val ES: "ES" = "ES"
+  val FR: "FR" = "FR"
+  val IT: "IT" = "IT"
+  val JA: "JA" = "JA"
+  val KO: "KO" = "KO"
+  val PT_BR: "PT_BR" = "PT_BR"
+  val ZH_CN: "ZH_CN" = "ZH_CN"
+  val ZH_TW: "ZH_TW" = "ZH_TW"
 
-  @inline def values = js.Array(DE, EN, ES, FR, IT, JA, KO, PT_BR, ZH_CN, ZH_TW)
+  @inline def values = js.Array[Locale](DE, EN, ES, FR, IT, JA, KO, PT_BR, ZH_CN, ZH_TW)
 }
 
-@js.native
-sealed trait OrderBy extends js.Any
+type OrderBy = "ASC" | "DESC"
 object OrderBy {
-  val ASC = "ASC".asInstanceOf[OrderBy]
-  val DESC = "DESC".asInstanceOf[OrderBy]
+  val ASC: "ASC" = "ASC"
+  val DESC: "DESC" = "DESC"
 
-  @inline def values = js.Array(ASC, DESC)
+  @inline def values = js.Array[OrderBy](ASC, DESC)
 }
 
-@js.native
-sealed trait PolicyType extends js.Any
+type PolicyType = "IDENTITY_POLICY" | "RESOURCE_POLICY" | "SERVICE_CONTROL_POLICY"
 object PolicyType {
-  val IDENTITY_POLICY = "IDENTITY_POLICY".asInstanceOf[PolicyType]
-  val RESOURCE_POLICY = "RESOURCE_POLICY".asInstanceOf[PolicyType]
-  val SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY".asInstanceOf[PolicyType]
+  val IDENTITY_POLICY: "IDENTITY_POLICY" = "IDENTITY_POLICY"
+  val RESOURCE_POLICY: "RESOURCE_POLICY" = "RESOURCE_POLICY"
+  val SERVICE_CONTROL_POLICY: "SERVICE_CONTROL_POLICY" = "SERVICE_CONTROL_POLICY"
 
-  @inline def values = js.Array(IDENTITY_POLICY, RESOURCE_POLICY, SERVICE_CONTROL_POLICY)
+  @inline def values = js.Array[PolicyType](IDENTITY_POLICY, RESOURCE_POLICY, SERVICE_CONTROL_POLICY)
 }
 
-@js.native
-sealed trait ReasonCode extends js.Any
+type ReasonCode = "AWS_SERVICE_ACCESS_DISABLED" | "DELEGATED_ADMINISTRATOR_DEREGISTERED" | "ORGANIZATION_DELETED" | "SERVICE_LINKED_ROLE_CREATION_FAILED"
 object ReasonCode {
-  val AWS_SERVICE_ACCESS_DISABLED = "AWS_SERVICE_ACCESS_DISABLED".asInstanceOf[ReasonCode]
-  val DELEGATED_ADMINISTRATOR_DEREGISTERED = "DELEGATED_ADMINISTRATOR_DEREGISTERED".asInstanceOf[ReasonCode]
-  val ORGANIZATION_DELETED = "ORGANIZATION_DELETED".asInstanceOf[ReasonCode]
-  val SERVICE_LINKED_ROLE_CREATION_FAILED = "SERVICE_LINKED_ROLE_CREATION_FAILED".asInstanceOf[ReasonCode]
+  val AWS_SERVICE_ACCESS_DISABLED: "AWS_SERVICE_ACCESS_DISABLED" = "AWS_SERVICE_ACCESS_DISABLED"
+  val DELEGATED_ADMINISTRATOR_DEREGISTERED: "DELEGATED_ADMINISTRATOR_DEREGISTERED" = "DELEGATED_ADMINISTRATOR_DEREGISTERED"
+  val ORGANIZATION_DELETED: "ORGANIZATION_DELETED" = "ORGANIZATION_DELETED"
+  val SERVICE_LINKED_ROLE_CREATION_FAILED: "SERVICE_LINKED_ROLE_CREATION_FAILED" = "SERVICE_LINKED_ROLE_CREATION_FAILED"
 
-  @inline def values = js.Array(AWS_SERVICE_ACCESS_DISABLED, DELEGATED_ADMINISTRATOR_DEREGISTERED, ORGANIZATION_DELETED, SERVICE_LINKED_ROLE_CREATION_FAILED)
+  @inline def values = js.Array[ReasonCode](AWS_SERVICE_ACCESS_DISABLED, DELEGATED_ADMINISTRATOR_DEREGISTERED, ORGANIZATION_DELETED, SERVICE_LINKED_ROLE_CREATION_FAILED)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "AWS::S3::Bucket" | "AWS::IAM::Role" | "AWS::SQS::Queue" | "AWS::Lambda::Function" | "AWS::Lambda::LayerVersion" | "AWS::KMS::Key" | "AWS::SecretsManager::Secret"
 object ResourceType {
-  val `AWS::S3::Bucket` = "AWS::S3::Bucket".asInstanceOf[ResourceType]
-  val `AWS::IAM::Role` = "AWS::IAM::Role".asInstanceOf[ResourceType]
-  val `AWS::SQS::Queue` = "AWS::SQS::Queue".asInstanceOf[ResourceType]
-  val `AWS::Lambda::Function` = "AWS::Lambda::Function".asInstanceOf[ResourceType]
-  val `AWS::Lambda::LayerVersion` = "AWS::Lambda::LayerVersion".asInstanceOf[ResourceType]
-  val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
-  val `AWS::SecretsManager::Secret` = "AWS::SecretsManager::Secret".asInstanceOf[ResourceType]
+  val `AWS::S3::Bucket`: "AWS::S3::Bucket" = "AWS::S3::Bucket"
+  val `AWS::IAM::Role`: "AWS::IAM::Role" = "AWS::IAM::Role"
+  val `AWS::SQS::Queue`: "AWS::SQS::Queue" = "AWS::SQS::Queue"
+  val `AWS::Lambda::Function`: "AWS::Lambda::Function" = "AWS::Lambda::Function"
+  val `AWS::Lambda::LayerVersion`: "AWS::Lambda::LayerVersion" = "AWS::Lambda::LayerVersion"
+  val `AWS::KMS::Key`: "AWS::KMS::Key" = "AWS::KMS::Key"
+  val `AWS::SecretsManager::Secret`: "AWS::SecretsManager::Secret" = "AWS::SecretsManager::Secret"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[ResourceType](
     `AWS::S3::Bucket`,
     `AWS::IAM::Role`,
     `AWS::SQS::Queue`,
@@ -211,22 +194,20 @@ object ResourceType {
   )
 }
 
-@js.native
-sealed trait Type extends js.Any
+type Type = "ACCOUNT" | "ORGANIZATION"
 object Type {
-  val ACCOUNT = "ACCOUNT".asInstanceOf[Type]
-  val ORGANIZATION = "ORGANIZATION".asInstanceOf[Type]
+  val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  val ORGANIZATION: "ORGANIZATION" = "ORGANIZATION"
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATION)
+  @inline def values = js.Array[Type](ACCOUNT, ORGANIZATION)
 }
 
-@js.native
-sealed trait ValidatePolicyFindingType extends js.Any
+type ValidatePolicyFindingType = "ERROR" | "SECURITY_WARNING" | "SUGGESTION" | "WARNING"
 object ValidatePolicyFindingType {
-  val ERROR = "ERROR".asInstanceOf[ValidatePolicyFindingType]
-  val SECURITY_WARNING = "SECURITY_WARNING".asInstanceOf[ValidatePolicyFindingType]
-  val SUGGESTION = "SUGGESTION".asInstanceOf[ValidatePolicyFindingType]
-  val WARNING = "WARNING".asInstanceOf[ValidatePolicyFindingType]
+  val ERROR: "ERROR" = "ERROR"
+  val SECURITY_WARNING: "SECURITY_WARNING" = "SECURITY_WARNING"
+  val SUGGESTION: "SUGGESTION" = "SUGGESTION"
+  val WARNING: "WARNING" = "WARNING"
 
-  @inline def values = js.Array(ERROR, SECURITY_WARNING, SUGGESTION, WARNING)
+  @inline def values = js.Array[ValidatePolicyFindingType](ERROR, SECURITY_WARNING, SUGGESTION, WARNING)
 }

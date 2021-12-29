@@ -1,56 +1,50 @@
 package facade.amazonaws.services.dynamodbstreams
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait KeyType extends js.Any
+type KeyType = "HASH" | "RANGE"
 object KeyType {
-  val HASH = "HASH".asInstanceOf[KeyType]
-  val RANGE = "RANGE".asInstanceOf[KeyType]
+  val HASH: "HASH" = "HASH"
+  val RANGE: "RANGE" = "RANGE"
 
-  @inline def values = js.Array(HASH, RANGE)
+  @inline def values = js.Array[KeyType](HASH, RANGE)
 }
 
-@js.native
-sealed trait OperationType extends js.Any
+type OperationType = "INSERT" | "MODIFY" | "REMOVE"
 object OperationType {
-  val INSERT = "INSERT".asInstanceOf[OperationType]
-  val MODIFY = "MODIFY".asInstanceOf[OperationType]
-  val REMOVE = "REMOVE".asInstanceOf[OperationType]
+  val INSERT: "INSERT" = "INSERT"
+  val MODIFY: "MODIFY" = "MODIFY"
+  val REMOVE: "REMOVE" = "REMOVE"
 
-  @inline def values = js.Array(INSERT, MODIFY, REMOVE)
+  @inline def values = js.Array[OperationType](INSERT, MODIFY, REMOVE)
 }
 
-@js.native
-sealed trait ShardIteratorType extends js.Any
+type ShardIteratorType = "TRIM_HORIZON" | "LATEST" | "AT_SEQUENCE_NUMBER" | "AFTER_SEQUENCE_NUMBER"
 object ShardIteratorType {
-  val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[ShardIteratorType]
-  val LATEST = "LATEST".asInstanceOf[ShardIteratorType]
-  val AT_SEQUENCE_NUMBER = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
-  val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
+  val TRIM_HORIZON: "TRIM_HORIZON" = "TRIM_HORIZON"
+  val LATEST: "LATEST" = "LATEST"
+  val AT_SEQUENCE_NUMBER: "AT_SEQUENCE_NUMBER" = "AT_SEQUENCE_NUMBER"
+  val AFTER_SEQUENCE_NUMBER: "AFTER_SEQUENCE_NUMBER" = "AFTER_SEQUENCE_NUMBER"
 
-  @inline def values = js.Array(TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER)
+  @inline def values = js.Array[ShardIteratorType](TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER)
 }
 
-@js.native
-sealed trait StreamStatus extends js.Any
+type StreamStatus = "ENABLING" | "ENABLED" | "DISABLING" | "DISABLED"
 object StreamStatus {
-  val ENABLING = "ENABLING".asInstanceOf[StreamStatus]
-  val ENABLED = "ENABLED".asInstanceOf[StreamStatus]
-  val DISABLING = "DISABLING".asInstanceOf[StreamStatus]
-  val DISABLED = "DISABLED".asInstanceOf[StreamStatus]
+  val ENABLING: "ENABLING" = "ENABLING"
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLING: "DISABLING" = "DISABLING"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
+  @inline def values = js.Array[StreamStatus](ENABLING, ENABLED, DISABLING, DISABLED)
 }
 
-@js.native
-sealed trait StreamViewType extends js.Any
+type StreamViewType = "NEW_IMAGE" | "OLD_IMAGE" | "NEW_AND_OLD_IMAGES" | "KEYS_ONLY"
 object StreamViewType {
-  val NEW_IMAGE = "NEW_IMAGE".asInstanceOf[StreamViewType]
-  val OLD_IMAGE = "OLD_IMAGE".asInstanceOf[StreamViewType]
-  val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
-  val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
+  val NEW_IMAGE: "NEW_IMAGE" = "NEW_IMAGE"
+  val OLD_IMAGE: "OLD_IMAGE" = "OLD_IMAGE"
+  val NEW_AND_OLD_IMAGES: "NEW_AND_OLD_IMAGES" = "NEW_AND_OLD_IMAGES"
+  val KEYS_ONLY: "KEYS_ONLY" = "KEYS_ONLY"
 
-  @inline def values = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
+  @inline def values = js.Array[StreamViewType](NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
 }

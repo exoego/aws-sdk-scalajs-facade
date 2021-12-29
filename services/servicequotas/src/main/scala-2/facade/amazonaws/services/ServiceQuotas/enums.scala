@@ -48,3 +48,4 @@ object ServiceQuotaTemplateAssociationStatus {
 
   @inline def values = js.Array(ASSOCIATED, DISASSOCIATED)
 }
+

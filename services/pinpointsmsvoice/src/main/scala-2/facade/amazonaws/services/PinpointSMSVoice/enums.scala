@@ -18,3 +18,4 @@ object EventType {
 
   @inline def values = js.Array(INITIATED_CALL, RINGING, ANSWERED, COMPLETED_CALL, BUSY, FAILED, NO_ANSWER)
 }
+

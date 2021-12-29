@@ -107,3 +107,4 @@ object Unit {
 
   @inline def values = js.Array(BITS, BYTES, PACKETS, REQUESTS)
 }
+

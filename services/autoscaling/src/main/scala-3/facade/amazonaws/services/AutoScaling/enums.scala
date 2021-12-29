@@ -1,66 +1,61 @@
 package facade.amazonaws.services.autoscaling
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait InstanceMetadataEndpointState extends js.Any
+type InstanceMetadataEndpointState = "disabled" | "enabled"
 object InstanceMetadataEndpointState {
-  val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
-  val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
+  val disabled: "disabled" = "disabled"
+  val enabled: "enabled" = "enabled"
 
-  @inline def values = js.Array(disabled, enabled)
+  @inline def values = js.Array[InstanceMetadataEndpointState](disabled, enabled)
 }
 
-@js.native
-sealed trait InstanceMetadataHttpTokensState extends js.Any
+type InstanceMetadataHttpTokensState = "optional" | "required"
 object InstanceMetadataHttpTokensState {
-  val optional = "optional".asInstanceOf[InstanceMetadataHttpTokensState]
-  val required = "required".asInstanceOf[InstanceMetadataHttpTokensState]
+  val optional: "optional" = "optional"
+  val required: "required" = "required"
 
-  @inline def values = js.Array(optional, required)
+  @inline def values = js.Array[InstanceMetadataHttpTokensState](optional, required)
 }
 
-@js.native
-sealed trait InstanceRefreshStatus extends js.Any
+type InstanceRefreshStatus = "Pending" | "InProgress" | "Successful" | "Failed" | "Cancelling" | "Cancelled"
 object InstanceRefreshStatus {
-  val Pending = "Pending".asInstanceOf[InstanceRefreshStatus]
-  val InProgress = "InProgress".asInstanceOf[InstanceRefreshStatus]
-  val Successful = "Successful".asInstanceOf[InstanceRefreshStatus]
-  val Failed = "Failed".asInstanceOf[InstanceRefreshStatus]
-  val Cancelling = "Cancelling".asInstanceOf[InstanceRefreshStatus]
-  val Cancelled = "Cancelled".asInstanceOf[InstanceRefreshStatus]
+  val Pending: "Pending" = "Pending"
+  val InProgress: "InProgress" = "InProgress"
+  val Successful: "Successful" = "Successful"
+  val Failed: "Failed" = "Failed"
+  val Cancelling: "Cancelling" = "Cancelling"
+  val Cancelled: "Cancelled" = "Cancelled"
 
-  @inline def values = js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled)
+  @inline def values = js.Array[InstanceRefreshStatus](Pending, InProgress, Successful, Failed, Cancelling, Cancelled)
 }
 
-@js.native
-sealed trait LifecycleState extends js.Any
+type LifecycleState = "Pending" | "Pending:Wait" | "Pending:Proceed" | "Quarantined" | "InService" | "Terminating" | "Terminating:Wait" | "Terminating:Proceed" | "Terminated" | "Detaching" | "Detached" | "EnteringStandby" | "Standby" | "Warmed:Pending" | "Warmed:Pending:Wait" | "Warmed:Pending:Proceed" | "Warmed:Terminating" | "Warmed:Terminating:Wait" | "Warmed:Terminating:Proceed" | "Warmed:Terminated" | "Warmed:Stopped" | "Warmed:Running"
 object LifecycleState {
-  val Pending = "Pending".asInstanceOf[LifecycleState]
-  val `Pending:Wait` = "Pending:Wait".asInstanceOf[LifecycleState]
-  val `Pending:Proceed` = "Pending:Proceed".asInstanceOf[LifecycleState]
-  val Quarantined = "Quarantined".asInstanceOf[LifecycleState]
-  val InService = "InService".asInstanceOf[LifecycleState]
-  val Terminating = "Terminating".asInstanceOf[LifecycleState]
-  val `Terminating:Wait` = "Terminating:Wait".asInstanceOf[LifecycleState]
-  val `Terminating:Proceed` = "Terminating:Proceed".asInstanceOf[LifecycleState]
-  val Terminated = "Terminated".asInstanceOf[LifecycleState]
-  val Detaching = "Detaching".asInstanceOf[LifecycleState]
-  val Detached = "Detached".asInstanceOf[LifecycleState]
-  val EnteringStandby = "EnteringStandby".asInstanceOf[LifecycleState]
-  val Standby = "Standby".asInstanceOf[LifecycleState]
-  val `Warmed:Pending` = "Warmed:Pending".asInstanceOf[LifecycleState]
-  val `Warmed:Pending:Wait` = "Warmed:Pending:Wait".asInstanceOf[LifecycleState]
-  val `Warmed:Pending:Proceed` = "Warmed:Pending:Proceed".asInstanceOf[LifecycleState]
-  val `Warmed:Terminating` = "Warmed:Terminating".asInstanceOf[LifecycleState]
-  val `Warmed:Terminating:Wait` = "Warmed:Terminating:Wait".asInstanceOf[LifecycleState]
-  val `Warmed:Terminating:Proceed` = "Warmed:Terminating:Proceed".asInstanceOf[LifecycleState]
-  val `Warmed:Terminated` = "Warmed:Terminated".asInstanceOf[LifecycleState]
-  val `Warmed:Stopped` = "Warmed:Stopped".asInstanceOf[LifecycleState]
-  val `Warmed:Running` = "Warmed:Running".asInstanceOf[LifecycleState]
+  val Pending: "Pending" = "Pending"
+  val `Pending:Wait`: "Pending:Wait" = "Pending:Wait"
+  val `Pending:Proceed`: "Pending:Proceed" = "Pending:Proceed"
+  val Quarantined: "Quarantined" = "Quarantined"
+  val InService: "InService" = "InService"
+  val Terminating: "Terminating" = "Terminating"
+  val `Terminating:Wait`: "Terminating:Wait" = "Terminating:Wait"
+  val `Terminating:Proceed`: "Terminating:Proceed" = "Terminating:Proceed"
+  val Terminated: "Terminated" = "Terminated"
+  val Detaching: "Detaching" = "Detaching"
+  val Detached: "Detached" = "Detached"
+  val EnteringStandby: "EnteringStandby" = "EnteringStandby"
+  val Standby: "Standby" = "Standby"
+  val `Warmed:Pending`: "Warmed:Pending" = "Warmed:Pending"
+  val `Warmed:Pending:Wait`: "Warmed:Pending:Wait" = "Warmed:Pending:Wait"
+  val `Warmed:Pending:Proceed`: "Warmed:Pending:Proceed" = "Warmed:Pending:Proceed"
+  val `Warmed:Terminating`: "Warmed:Terminating" = "Warmed:Terminating"
+  val `Warmed:Terminating:Wait`: "Warmed:Terminating:Wait" = "Warmed:Terminating:Wait"
+  val `Warmed:Terminating:Proceed`: "Warmed:Terminating:Proceed" = "Warmed:Terminating:Proceed"
+  val `Warmed:Terminated`: "Warmed:Terminated" = "Warmed:Terminated"
+  val `Warmed:Stopped`: "Warmed:Stopped" = "Warmed:Stopped"
+  val `Warmed:Running`: "Warmed:Running" = "Warmed:Running"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[LifecycleState](
     Pending,
     `Pending:Wait`,
     `Pending:Proceed`,
@@ -86,54 +81,50 @@ object LifecycleState {
   )
 }
 
-@js.native
-sealed trait MetricStatistic extends js.Any
+type MetricStatistic = "Average" | "Minimum" | "Maximum" | "SampleCount" | "Sum"
 object MetricStatistic {
-  val Average = "Average".asInstanceOf[MetricStatistic]
-  val Minimum = "Minimum".asInstanceOf[MetricStatistic]
-  val Maximum = "Maximum".asInstanceOf[MetricStatistic]
-  val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-  val Sum = "Sum".asInstanceOf[MetricStatistic]
+  val Average: "Average" = "Average"
+  val Minimum: "Minimum" = "Minimum"
+  val Maximum: "Maximum" = "Maximum"
+  val SampleCount: "SampleCount" = "SampleCount"
+  val Sum: "Sum" = "Sum"
 
-  @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
+  @inline def values = js.Array[MetricStatistic](Average, Minimum, Maximum, SampleCount, Sum)
 }
 
-@js.native
-sealed trait MetricType extends js.Any
+type MetricType = "ASGAverageCPUUtilization" | "ASGAverageNetworkIn" | "ASGAverageNetworkOut" | "ALBRequestCountPerTarget"
 object MetricType {
-  val ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[MetricType]
-  val ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[MetricType]
-  val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[MetricType]
-  val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
+  val ASGAverageCPUUtilization: "ASGAverageCPUUtilization" = "ASGAverageCPUUtilization"
+  val ASGAverageNetworkIn: "ASGAverageNetworkIn" = "ASGAverageNetworkIn"
+  val ASGAverageNetworkOut: "ASGAverageNetworkOut" = "ASGAverageNetworkOut"
+  val ALBRequestCountPerTarget: "ALBRequestCountPerTarget" = "ALBRequestCountPerTarget"
 
-  @inline def values = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
+  @inline def values = js.Array[MetricType](ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
 }
 
-@js.native
-sealed trait RefreshStrategy extends js.Any
+type RefreshStrategy = "Rolling"
 object RefreshStrategy {
-  val Rolling = "Rolling".asInstanceOf[RefreshStrategy]
+  val Rolling: "Rolling" = "Rolling"
 
-  @inline def values = js.Array(Rolling)
+  @inline def values = js.Array[RefreshStrategy](Rolling)
 }
 
-@js.native
-sealed trait ScalingActivityStatusCode extends js.Any
+type ScalingActivityStatusCode = "PendingSpotBidPlacement" | "WaitingForSpotInstanceRequestId" | "WaitingForSpotInstanceId" | "WaitingForInstanceId" | "PreInService" | "InProgress" | "WaitingForELBConnectionDraining" | "MidLifecycleAction" | "WaitingForInstanceWarmup" | "Successful" | "Failed" | "Cancelled"
 object ScalingActivityStatusCode {
-  val PendingSpotBidPlacement = "PendingSpotBidPlacement".asInstanceOf[ScalingActivityStatusCode]
-  val WaitingForSpotInstanceRequestId = "WaitingForSpotInstanceRequestId".asInstanceOf[ScalingActivityStatusCode]
-  val WaitingForSpotInstanceId = "WaitingForSpotInstanceId".asInstanceOf[ScalingActivityStatusCode]
-  val WaitingForInstanceId = "WaitingForInstanceId".asInstanceOf[ScalingActivityStatusCode]
-  val PreInService = "PreInService".asInstanceOf[ScalingActivityStatusCode]
-  val InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
-  val WaitingForELBConnectionDraining = "WaitingForELBConnectionDraining".asInstanceOf[ScalingActivityStatusCode]
-  val MidLifecycleAction = "MidLifecycleAction".asInstanceOf[ScalingActivityStatusCode]
-  val WaitingForInstanceWarmup = "WaitingForInstanceWarmup".asInstanceOf[ScalingActivityStatusCode]
-  val Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
-  val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
-  val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
+  val PendingSpotBidPlacement: "PendingSpotBidPlacement" = "PendingSpotBidPlacement"
+  val WaitingForSpotInstanceRequestId: "WaitingForSpotInstanceRequestId" = "WaitingForSpotInstanceRequestId"
+  val WaitingForSpotInstanceId: "WaitingForSpotInstanceId" = "WaitingForSpotInstanceId"
+  val WaitingForInstanceId: "WaitingForInstanceId" = "WaitingForInstanceId"
+  val PreInService: "PreInService" = "PreInService"
+  val InProgress: "InProgress" = "InProgress"
+  val WaitingForELBConnectionDraining: "WaitingForELBConnectionDraining" = "WaitingForELBConnectionDraining"
+  val MidLifecycleAction: "MidLifecycleAction" = "MidLifecycleAction"
+  val WaitingForInstanceWarmup: "WaitingForInstanceWarmup" = "WaitingForInstanceWarmup"
+  val Successful: "Successful" = "Successful"
+  val Failed: "Failed" = "Failed"
+  val Cancelled: "Cancelled" = "Cancelled"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[ScalingActivityStatusCode](
     PendingSpotBidPlacement,
     WaitingForSpotInstanceRequestId,
     WaitingForSpotInstanceId,
@@ -149,19 +140,17 @@ object ScalingActivityStatusCode {
   )
 }
 
-@js.native
-sealed trait WarmPoolState extends js.Any
+type WarmPoolState = "Stopped" | "Running"
 object WarmPoolState {
-  val Stopped = "Stopped".asInstanceOf[WarmPoolState]
-  val Running = "Running".asInstanceOf[WarmPoolState]
+  val Stopped: "Stopped" = "Stopped"
+  val Running: "Running" = "Running"
 
-  @inline def values = js.Array(Stopped, Running)
+  @inline def values = js.Array[WarmPoolState](Stopped, Running)
 }
 
-@js.native
-sealed trait WarmPoolStatus extends js.Any
+type WarmPoolStatus = "PendingDelete"
 object WarmPoolStatus {
-  val PendingDelete = "PendingDelete".asInstanceOf[WarmPoolStatus]
+  val PendingDelete: "PendingDelete" = "PendingDelete"
 
-  @inline def values = js.Array(PendingDelete)
+  @inline def values = js.Array[WarmPoolStatus](PendingDelete)
 }

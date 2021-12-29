@@ -83,40 +83,7 @@ object AppInstanceType {
   val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[AppInstanceType]
   val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[AppInstanceType]
 
-  @inline def values = js.Array(
-    system,
-    `ml.t3.micro`,
-    `ml.t3.small`,
-    `ml.t3.medium`,
-    `ml.t3.large`,
-    `ml.t3.xlarge`,
-    `ml.t3.2xlarge`,
-    `ml.m5.large`,
-    `ml.m5.xlarge`,
-    `ml.m5.2xlarge`,
-    `ml.m5.4xlarge`,
-    `ml.m5.8xlarge`,
-    `ml.m5.12xlarge`,
-    `ml.m5.16xlarge`,
-    `ml.m5.24xlarge`,
-    `ml.c5.large`,
-    `ml.c5.xlarge`,
-    `ml.c5.2xlarge`,
-    `ml.c5.4xlarge`,
-    `ml.c5.9xlarge`,
-    `ml.c5.12xlarge`,
-    `ml.c5.18xlarge`,
-    `ml.c5.24xlarge`,
-    `ml.p3.2xlarge`,
-    `ml.p3.8xlarge`,
-    `ml.p3.16xlarge`,
-    `ml.g4dn.xlarge`,
-    `ml.g4dn.2xlarge`,
-    `ml.g4dn.4xlarge`,
-    `ml.g4dn.8xlarge`,
-    `ml.g4dn.12xlarge`,
-    `ml.g4dn.16xlarge`
-  )
+  @inline def values = js.Array(system, `ml.t3.micro`, `ml.t3.small`, `ml.t3.medium`, `ml.t3.large`, `ml.t3.xlarge`, `ml.t3.2xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.8xlarge`, `ml.m5.12xlarge`, `ml.m5.16xlarge`, `ml.m5.24xlarge`, `ml.c5.large`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.12xlarge`, `ml.c5.18xlarge`, `ml.c5.24xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.g4dn.xlarge`, `ml.g4dn.2xlarge`, `ml.g4dn.4xlarge`, `ml.g4dn.8xlarge`, `ml.g4dn.12xlarge`, `ml.g4dn.16xlarge`)
 }
 
 @js.native
@@ -250,21 +217,7 @@ object AutoMLJobSecondaryStatus {
   val Completed = "Completed".asInstanceOf[AutoMLJobSecondaryStatus]
   val ExplainabilityError = "ExplainabilityError".asInstanceOf[AutoMLJobSecondaryStatus]
 
-  @inline def values = js.Array(
-    Starting,
-    AnalyzingData,
-    FeatureEngineering,
-    ModelTuning,
-    MaxCandidatesReached,
-    Failed,
-    Stopped,
-    MaxAutoMLJobRuntimeReached,
-    Stopping,
-    CandidateDefinitionsGenerated,
-    GeneratingExplainabilityReport,
-    Completed,
-    ExplainabilityError
-  )
+  @inline def values = js.Array(Starting, AnalyzingData, FeatureEngineering, ModelTuning, MaxCandidatesReached, Failed, Stopped, MaxAutoMLJobRuntimeReached, Stopping, CandidateDefinitionsGenerated, GeneratingExplainabilityReport, Completed, ExplainabilityError)
 }
 
 @js.native
@@ -870,46 +823,7 @@ object InstanceType {
   val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[InstanceType]
   val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[InstanceType]
 
-  @inline def values = js.Array(
-    `ml.t2.medium`,
-    `ml.t2.large`,
-    `ml.t2.xlarge`,
-    `ml.t2.2xlarge`,
-    `ml.t3.medium`,
-    `ml.t3.large`,
-    `ml.t3.xlarge`,
-    `ml.t3.2xlarge`,
-    `ml.m4.xlarge`,
-    `ml.m4.2xlarge`,
-    `ml.m4.4xlarge`,
-    `ml.m4.10xlarge`,
-    `ml.m4.16xlarge`,
-    `ml.m5.xlarge`,
-    `ml.m5.2xlarge`,
-    `ml.m5.4xlarge`,
-    `ml.m5.12xlarge`,
-    `ml.m5.24xlarge`,
-    `ml.c4.xlarge`,
-    `ml.c4.2xlarge`,
-    `ml.c4.4xlarge`,
-    `ml.c4.8xlarge`,
-    `ml.c5.xlarge`,
-    `ml.c5.2xlarge`,
-    `ml.c5.4xlarge`,
-    `ml.c5.9xlarge`,
-    `ml.c5.18xlarge`,
-    `ml.c5d.xlarge`,
-    `ml.c5d.2xlarge`,
-    `ml.c5d.4xlarge`,
-    `ml.c5d.9xlarge`,
-    `ml.c5d.18xlarge`,
-    `ml.p2.xlarge`,
-    `ml.p2.8xlarge`,
-    `ml.p2.16xlarge`,
-    `ml.p3.2xlarge`,
-    `ml.p3.8xlarge`,
-    `ml.p3.16xlarge`
-  )
+  @inline def values = js.Array(`ml.t2.medium`, `ml.t2.large`, `ml.t2.xlarge`, `ml.t2.2xlarge`, `ml.t3.medium`, `ml.t3.large`, `ml.t3.xlarge`, `ml.t3.2xlarge`, `ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.c5d.xlarge`, `ml.c5d.2xlarge`, `ml.c5d.4xlarge`, `ml.c5d.9xlarge`, `ml.c5d.18xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`)
 }
 
 @js.native
@@ -1326,46 +1240,7 @@ object ProcessingInstanceType {
   val `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[ProcessingInstanceType]
   val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProcessingInstanceType]
 
-  @inline def values = js.Array(
-    `ml.t3.medium`,
-    `ml.t3.large`,
-    `ml.t3.xlarge`,
-    `ml.t3.2xlarge`,
-    `ml.m4.xlarge`,
-    `ml.m4.2xlarge`,
-    `ml.m4.4xlarge`,
-    `ml.m4.10xlarge`,
-    `ml.m4.16xlarge`,
-    `ml.c4.xlarge`,
-    `ml.c4.2xlarge`,
-    `ml.c4.4xlarge`,
-    `ml.c4.8xlarge`,
-    `ml.p2.xlarge`,
-    `ml.p2.8xlarge`,
-    `ml.p2.16xlarge`,
-    `ml.p3.2xlarge`,
-    `ml.p3.8xlarge`,
-    `ml.p3.16xlarge`,
-    `ml.c5.xlarge`,
-    `ml.c5.2xlarge`,
-    `ml.c5.4xlarge`,
-    `ml.c5.9xlarge`,
-    `ml.c5.18xlarge`,
-    `ml.m5.large`,
-    `ml.m5.xlarge`,
-    `ml.m5.2xlarge`,
-    `ml.m5.4xlarge`,
-    `ml.m5.12xlarge`,
-    `ml.m5.24xlarge`,
-    `ml.r5.large`,
-    `ml.r5.xlarge`,
-    `ml.r5.2xlarge`,
-    `ml.r5.4xlarge`,
-    `ml.r5.8xlarge`,
-    `ml.r5.12xlarge`,
-    `ml.r5.16xlarge`,
-    `ml.r5.24xlarge`
-  )
+  @inline def values = js.Array(`ml.t3.medium`, `ml.t3.large`, `ml.t3.xlarge`, `ml.t3.2xlarge`, `ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.r5.large`, `ml.r5.xlarge`, `ml.r5.2xlarge`, `ml.r5.4xlarge`, `ml.r5.8xlarge`, `ml.r5.12xlarge`, `ml.r5.16xlarge`, `ml.r5.24xlarge`)
 }
 
 @js.native
@@ -1508,74 +1383,7 @@ object ProductionVariantInstanceType {
   val `ml.inf1.6xlarge` = "ml.inf1.6xlarge".asInstanceOf[ProductionVariantInstanceType]
   val `ml.inf1.24xlarge` = "ml.inf1.24xlarge".asInstanceOf[ProductionVariantInstanceType]
 
-  @inline def values = js.Array(
-    `ml.t2.medium`,
-    `ml.t2.large`,
-    `ml.t2.xlarge`,
-    `ml.t2.2xlarge`,
-    `ml.m4.xlarge`,
-    `ml.m4.2xlarge`,
-    `ml.m4.4xlarge`,
-    `ml.m4.10xlarge`,
-    `ml.m4.16xlarge`,
-    `ml.m5.large`,
-    `ml.m5.xlarge`,
-    `ml.m5.2xlarge`,
-    `ml.m5.4xlarge`,
-    `ml.m5.12xlarge`,
-    `ml.m5.24xlarge`,
-    `ml.m5d.large`,
-    `ml.m5d.xlarge`,
-    `ml.m5d.2xlarge`,
-    `ml.m5d.4xlarge`,
-    `ml.m5d.12xlarge`,
-    `ml.m5d.24xlarge`,
-    `ml.c4.large`,
-    `ml.c4.xlarge`,
-    `ml.c4.2xlarge`,
-    `ml.c4.4xlarge`,
-    `ml.c4.8xlarge`,
-    `ml.p2.xlarge`,
-    `ml.p2.8xlarge`,
-    `ml.p2.16xlarge`,
-    `ml.p3.2xlarge`,
-    `ml.p3.8xlarge`,
-    `ml.p3.16xlarge`,
-    `ml.c5.large`,
-    `ml.c5.xlarge`,
-    `ml.c5.2xlarge`,
-    `ml.c5.4xlarge`,
-    `ml.c5.9xlarge`,
-    `ml.c5.18xlarge`,
-    `ml.c5d.large`,
-    `ml.c5d.xlarge`,
-    `ml.c5d.2xlarge`,
-    `ml.c5d.4xlarge`,
-    `ml.c5d.9xlarge`,
-    `ml.c5d.18xlarge`,
-    `ml.g4dn.xlarge`,
-    `ml.g4dn.2xlarge`,
-    `ml.g4dn.4xlarge`,
-    `ml.g4dn.8xlarge`,
-    `ml.g4dn.12xlarge`,
-    `ml.g4dn.16xlarge`,
-    `ml.r5.large`,
-    `ml.r5.xlarge`,
-    `ml.r5.2xlarge`,
-    `ml.r5.4xlarge`,
-    `ml.r5.12xlarge`,
-    `ml.r5.24xlarge`,
-    `ml.r5d.large`,
-    `ml.r5d.xlarge`,
-    `ml.r5d.2xlarge`,
-    `ml.r5d.4xlarge`,
-    `ml.r5d.12xlarge`,
-    `ml.r5d.24xlarge`,
-    `ml.inf1.xlarge`,
-    `ml.inf1.2xlarge`,
-    `ml.inf1.6xlarge`,
-    `ml.inf1.24xlarge`
-  )
+  @inline def values = js.Array(`ml.t2.medium`, `ml.t2.large`, `ml.t2.xlarge`, `ml.t2.2xlarge`, `ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.m5d.large`, `ml.m5d.xlarge`, `ml.m5d.2xlarge`, `ml.m5d.4xlarge`, `ml.m5d.12xlarge`, `ml.m5d.24xlarge`, `ml.c4.large`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.c5.large`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.c5d.large`, `ml.c5d.xlarge`, `ml.c5d.2xlarge`, `ml.c5d.4xlarge`, `ml.c5d.9xlarge`, `ml.c5d.18xlarge`, `ml.g4dn.xlarge`, `ml.g4dn.2xlarge`, `ml.g4dn.4xlarge`, `ml.g4dn.8xlarge`, `ml.g4dn.12xlarge`, `ml.g4dn.16xlarge`, `ml.r5.large`, `ml.r5.xlarge`, `ml.r5.2xlarge`, `ml.r5.4xlarge`, `ml.r5.12xlarge`, `ml.r5.24xlarge`, `ml.r5d.large`, `ml.r5d.xlarge`, `ml.r5d.2xlarge`, `ml.r5d.4xlarge`, `ml.r5d.12xlarge`, `ml.r5d.24xlarge`, `ml.inf1.xlarge`, `ml.inf1.2xlarge`, `ml.inf1.6xlarge`, `ml.inf1.24xlarge`)
 }
 
 @js.native
@@ -1777,23 +1585,7 @@ object SecondaryStatus {
   val MaxWaitTimeExceeded = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
   val Updating = "Updating".asInstanceOf[SecondaryStatus]
 
-  @inline def values = js.Array(
-    Starting,
-    LaunchingMLInstances,
-    PreparingTrainingStack,
-    Downloading,
-    DownloadingTrainingImage,
-    Training,
-    Uploading,
-    Stopping,
-    Stopped,
-    MaxRuntimeExceeded,
-    Completed,
-    Failed,
-    Interrupted,
-    MaxWaitTimeExceeded,
-    Updating
-  )
+  @inline def values = js.Array(Starting, LaunchingMLInstances, PreparingTrainingStack, Downloading, DownloadingTrainingImage, Training, Uploading, Stopping, Stopped, MaxRuntimeExceeded, Completed, Failed, Interrupted, MaxWaitTimeExceeded, Updating)
 }
 
 @js.native
@@ -1955,37 +1747,7 @@ object TargetDevice {
   val coreml = "coreml".asInstanceOf[TargetDevice]
   val jacinto_tda4vm = "jacinto_tda4vm".asInstanceOf[TargetDevice]
 
-  @inline def values = js.Array(
-    lambda,
-    ml_m4,
-    ml_m5,
-    ml_c4,
-    ml_c5,
-    ml_p2,
-    ml_p3,
-    ml_g4dn,
-    ml_inf1,
-    ml_eia2,
-    jetson_tx1,
-    jetson_tx2,
-    jetson_nano,
-    jetson_xavier,
-    rasp3b,
-    imx8qm,
-    deeplens,
-    rk3399,
-    rk3288,
-    aisage,
-    sbe_c,
-    qcs605,
-    qcs603,
-    sitara_am57x,
-    amba_cv22,
-    x86_win32,
-    x86_win64,
-    coreml,
-    jacinto_tda4vm
-  )
+  @inline def values = js.Array(lambda, ml_m4, ml_m5, ml_c4, ml_c5, ml_p2, ml_p3, ml_g4dn, ml_inf1, ml_eia2, jetson_tx1, jetson_tx2, jetson_nano, jetson_xavier, rasp3b, imx8qm, deeplens, rk3399, rk3288, aisage, sbe_c, qcs605, qcs603, sitara_am57x, amba_cv22, x86_win32, x86_win64, coreml, jacinto_tda4vm)
 }
 
 @js.native
@@ -2080,47 +1842,7 @@ object TrainingInstanceType {
   val `ml.c5n.9xlarge` = "ml.c5n.9xlarge".asInstanceOf[TrainingInstanceType]
   val `ml.c5n.18xlarge` = "ml.c5n.18xlarge".asInstanceOf[TrainingInstanceType]
 
-  @inline def values = js.Array(
-    `ml.m4.xlarge`,
-    `ml.m4.2xlarge`,
-    `ml.m4.4xlarge`,
-    `ml.m4.10xlarge`,
-    `ml.m4.16xlarge`,
-    `ml.g4dn.xlarge`,
-    `ml.g4dn.2xlarge`,
-    `ml.g4dn.4xlarge`,
-    `ml.g4dn.8xlarge`,
-    `ml.g4dn.12xlarge`,
-    `ml.g4dn.16xlarge`,
-    `ml.m5.large`,
-    `ml.m5.xlarge`,
-    `ml.m5.2xlarge`,
-    `ml.m5.4xlarge`,
-    `ml.m5.12xlarge`,
-    `ml.m5.24xlarge`,
-    `ml.c4.xlarge`,
-    `ml.c4.2xlarge`,
-    `ml.c4.4xlarge`,
-    `ml.c4.8xlarge`,
-    `ml.p2.xlarge`,
-    `ml.p2.8xlarge`,
-    `ml.p2.16xlarge`,
-    `ml.p3.2xlarge`,
-    `ml.p3.8xlarge`,
-    `ml.p3.16xlarge`,
-    `ml.p3dn.24xlarge`,
-    `ml.p4d.24xlarge`,
-    `ml.c5.xlarge`,
-    `ml.c5.2xlarge`,
-    `ml.c5.4xlarge`,
-    `ml.c5.9xlarge`,
-    `ml.c5.18xlarge`,
-    `ml.c5n.xlarge`,
-    `ml.c5n.2xlarge`,
-    `ml.c5n.4xlarge`,
-    `ml.c5n.9xlarge`,
-    `ml.c5n.18xlarge`
-  )
+  @inline def values = js.Array(`ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.g4dn.xlarge`, `ml.g4dn.2xlarge`, `ml.g4dn.4xlarge`, `ml.g4dn.8xlarge`, `ml.g4dn.12xlarge`, `ml.g4dn.16xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.p3dn.24xlarge`, `ml.p4d.24xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.c5n.xlarge`, `ml.c5n.2xlarge`, `ml.c5n.4xlarge`, `ml.c5n.9xlarge`, `ml.c5n.18xlarge`)
 }
 
 @js.native
@@ -2185,34 +1907,7 @@ object TransformInstanceType {
   val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TransformInstanceType]
   val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TransformInstanceType]
 
-  @inline def values = js.Array(
-    `ml.m4.xlarge`,
-    `ml.m4.2xlarge`,
-    `ml.m4.4xlarge`,
-    `ml.m4.10xlarge`,
-    `ml.m4.16xlarge`,
-    `ml.c4.xlarge`,
-    `ml.c4.2xlarge`,
-    `ml.c4.4xlarge`,
-    `ml.c4.8xlarge`,
-    `ml.p2.xlarge`,
-    `ml.p2.8xlarge`,
-    `ml.p2.16xlarge`,
-    `ml.p3.2xlarge`,
-    `ml.p3.8xlarge`,
-    `ml.p3.16xlarge`,
-    `ml.c5.xlarge`,
-    `ml.c5.2xlarge`,
-    `ml.c5.4xlarge`,
-    `ml.c5.9xlarge`,
-    `ml.c5.18xlarge`,
-    `ml.m5.large`,
-    `ml.m5.xlarge`,
-    `ml.m5.2xlarge`,
-    `ml.m5.4xlarge`,
-    `ml.m5.12xlarge`,
-    `ml.m5.24xlarge`
-  )
+  @inline def values = js.Array(`ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`)
 }
 
 @js.native
@@ -2271,3 +1966,4 @@ object VariantPropertyType {
 
   @inline def values = js.Array(DesiredInstanceCount, DesiredWeight, DataCaptureConfig)
 }
+

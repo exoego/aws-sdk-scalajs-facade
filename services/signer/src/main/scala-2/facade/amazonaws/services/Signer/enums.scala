@@ -68,3 +68,4 @@ object ValidityType {
 
   @inline def values = js.Array(DAYS, MONTHS, YEARS)
 }
+

@@ -1,106 +1,94 @@
 package facade.amazonaws.services.kinesisvideoarchivedmedia
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ClipFragmentSelectorType extends js.Any
+type ClipFragmentSelectorType = "PRODUCER_TIMESTAMP" | "SERVER_TIMESTAMP"
 object ClipFragmentSelectorType {
-  val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
-  val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
+  val PRODUCER_TIMESTAMP: "PRODUCER_TIMESTAMP" = "PRODUCER_TIMESTAMP"
+  val SERVER_TIMESTAMP: "SERVER_TIMESTAMP" = "SERVER_TIMESTAMP"
 
-  @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+  @inline def values = js.Array[ClipFragmentSelectorType](PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
 }
 
-@js.native
-sealed trait ContainerFormat extends js.Any
+type ContainerFormat = "FRAGMENTED_MP4" | "MPEG_TS"
 object ContainerFormat {
-  val FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[ContainerFormat]
-  val MPEG_TS = "MPEG_TS".asInstanceOf[ContainerFormat]
+  val FRAGMENTED_MP4: "FRAGMENTED_MP4" = "FRAGMENTED_MP4"
+  val MPEG_TS: "MPEG_TS" = "MPEG_TS"
 
-  @inline def values = js.Array(FRAGMENTED_MP4, MPEG_TS)
+  @inline def values = js.Array[ContainerFormat](FRAGMENTED_MP4, MPEG_TS)
 }
 
-@js.native
-sealed trait DASHDisplayFragmentNumber extends js.Any
+type DASHDisplayFragmentNumber = "ALWAYS" | "NEVER"
 object DASHDisplayFragmentNumber {
-  val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentNumber]
-  val NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentNumber]
+  val ALWAYS: "ALWAYS" = "ALWAYS"
+  val NEVER: "NEVER" = "NEVER"
 
-  @inline def values = js.Array(ALWAYS, NEVER)
+  @inline def values = js.Array[DASHDisplayFragmentNumber](ALWAYS, NEVER)
 }
 
-@js.native
-sealed trait DASHDisplayFragmentTimestamp extends js.Any
+type DASHDisplayFragmentTimestamp = "ALWAYS" | "NEVER"
 object DASHDisplayFragmentTimestamp {
-  val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentTimestamp]
-  val NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentTimestamp]
+  val ALWAYS: "ALWAYS" = "ALWAYS"
+  val NEVER: "NEVER" = "NEVER"
 
-  @inline def values = js.Array(ALWAYS, NEVER)
+  @inline def values = js.Array[DASHDisplayFragmentTimestamp](ALWAYS, NEVER)
 }
 
-@js.native
-sealed trait DASHFragmentSelectorType extends js.Any
+type DASHFragmentSelectorType = "PRODUCER_TIMESTAMP" | "SERVER_TIMESTAMP"
 object DASHFragmentSelectorType {
-  val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
-  val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
+  val PRODUCER_TIMESTAMP: "PRODUCER_TIMESTAMP" = "PRODUCER_TIMESTAMP"
+  val SERVER_TIMESTAMP: "SERVER_TIMESTAMP" = "SERVER_TIMESTAMP"
 
-  @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+  @inline def values = js.Array[DASHFragmentSelectorType](PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
 }
 
-@js.native
-sealed trait DASHPlaybackMode extends js.Any
+type DASHPlaybackMode = "LIVE" | "LIVE_REPLAY" | "ON_DEMAND"
 object DASHPlaybackMode {
-  val LIVE = "LIVE".asInstanceOf[DASHPlaybackMode]
-  val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[DASHPlaybackMode]
-  val ON_DEMAND = "ON_DEMAND".asInstanceOf[DASHPlaybackMode]
+  val LIVE: "LIVE" = "LIVE"
+  val LIVE_REPLAY: "LIVE_REPLAY" = "LIVE_REPLAY"
+  val ON_DEMAND: "ON_DEMAND" = "ON_DEMAND"
 
-  @inline def values = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
+  @inline def values = js.Array[DASHPlaybackMode](LIVE, LIVE_REPLAY, ON_DEMAND)
 }
 
-@js.native
-sealed trait FragmentSelectorType extends js.Any
+type FragmentSelectorType = "PRODUCER_TIMESTAMP" | "SERVER_TIMESTAMP"
 object FragmentSelectorType {
-  val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
-  val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
+  val PRODUCER_TIMESTAMP: "PRODUCER_TIMESTAMP" = "PRODUCER_TIMESTAMP"
+  val SERVER_TIMESTAMP: "SERVER_TIMESTAMP" = "SERVER_TIMESTAMP"
 
-  @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+  @inline def values = js.Array[FragmentSelectorType](PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
 }
 
-@js.native
-sealed trait HLSDiscontinuityMode extends js.Any
+type HLSDiscontinuityMode = "ALWAYS" | "NEVER" | "ON_DISCONTINUITY"
 object HLSDiscontinuityMode {
-  val ALWAYS = "ALWAYS".asInstanceOf[HLSDiscontinuityMode]
-  val NEVER = "NEVER".asInstanceOf[HLSDiscontinuityMode]
-  val ON_DISCONTINUITY = "ON_DISCONTINUITY".asInstanceOf[HLSDiscontinuityMode]
+  val ALWAYS: "ALWAYS" = "ALWAYS"
+  val NEVER: "NEVER" = "NEVER"
+  val ON_DISCONTINUITY: "ON_DISCONTINUITY" = "ON_DISCONTINUITY"
 
-  @inline def values = js.Array(ALWAYS, NEVER, ON_DISCONTINUITY)
+  @inline def values = js.Array[HLSDiscontinuityMode](ALWAYS, NEVER, ON_DISCONTINUITY)
 }
 
-@js.native
-sealed trait HLSDisplayFragmentTimestamp extends js.Any
+type HLSDisplayFragmentTimestamp = "ALWAYS" | "NEVER"
 object HLSDisplayFragmentTimestamp {
-  val ALWAYS = "ALWAYS".asInstanceOf[HLSDisplayFragmentTimestamp]
-  val NEVER = "NEVER".asInstanceOf[HLSDisplayFragmentTimestamp]
+  val ALWAYS: "ALWAYS" = "ALWAYS"
+  val NEVER: "NEVER" = "NEVER"
 
-  @inline def values = js.Array(ALWAYS, NEVER)
+  @inline def values = js.Array[HLSDisplayFragmentTimestamp](ALWAYS, NEVER)
 }
 
-@js.native
-sealed trait HLSFragmentSelectorType extends js.Any
+type HLSFragmentSelectorType = "PRODUCER_TIMESTAMP" | "SERVER_TIMESTAMP"
 object HLSFragmentSelectorType {
-  val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
-  val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
+  val PRODUCER_TIMESTAMP: "PRODUCER_TIMESTAMP" = "PRODUCER_TIMESTAMP"
+  val SERVER_TIMESTAMP: "SERVER_TIMESTAMP" = "SERVER_TIMESTAMP"
 
-  @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+  @inline def values = js.Array[HLSFragmentSelectorType](PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
 }
 
-@js.native
-sealed trait HLSPlaybackMode extends js.Any
+type HLSPlaybackMode = "LIVE" | "LIVE_REPLAY" | "ON_DEMAND"
 object HLSPlaybackMode {
-  val LIVE = "LIVE".asInstanceOf[HLSPlaybackMode]
-  val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[HLSPlaybackMode]
-  val ON_DEMAND = "ON_DEMAND".asInstanceOf[HLSPlaybackMode]
+  val LIVE: "LIVE" = "LIVE"
+  val LIVE_REPLAY: "LIVE_REPLAY" = "LIVE_REPLAY"
+  val ON_DEMAND: "ON_DEMAND" = "ON_DEMAND"
 
-  @inline def values = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
+  @inline def values = js.Array[HLSPlaybackMode](LIVE, LIVE_REPLAY, ON_DEMAND)
 }

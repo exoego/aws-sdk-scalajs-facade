@@ -1,49 +1,45 @@
 package facade.amazonaws.services.ses
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait BehaviorOnMXFailure extends js.Any
+type BehaviorOnMXFailure = "UseDefaultValue" | "RejectMessage"
 object BehaviorOnMXFailure {
-  val UseDefaultValue = "UseDefaultValue".asInstanceOf[BehaviorOnMXFailure]
-  val RejectMessage = "RejectMessage".asInstanceOf[BehaviorOnMXFailure]
+  val UseDefaultValue: "UseDefaultValue" = "UseDefaultValue"
+  val RejectMessage: "RejectMessage" = "RejectMessage"
 
-  @inline def values = js.Array(UseDefaultValue, RejectMessage)
+  @inline def values = js.Array[BehaviorOnMXFailure](UseDefaultValue, RejectMessage)
 }
 
-@js.native
-sealed trait BounceType extends js.Any
+type BounceType = "DoesNotExist" | "MessageTooLarge" | "ExceededQuota" | "ContentRejected" | "Undefined" | "TemporaryFailure"
 object BounceType {
-  val DoesNotExist = "DoesNotExist".asInstanceOf[BounceType]
-  val MessageTooLarge = "MessageTooLarge".asInstanceOf[BounceType]
-  val ExceededQuota = "ExceededQuota".asInstanceOf[BounceType]
-  val ContentRejected = "ContentRejected".asInstanceOf[BounceType]
-  val Undefined = "Undefined".asInstanceOf[BounceType]
-  val TemporaryFailure = "TemporaryFailure".asInstanceOf[BounceType]
+  val DoesNotExist: "DoesNotExist" = "DoesNotExist"
+  val MessageTooLarge: "MessageTooLarge" = "MessageTooLarge"
+  val ExceededQuota: "ExceededQuota" = "ExceededQuota"
+  val ContentRejected: "ContentRejected" = "ContentRejected"
+  val Undefined: "Undefined" = "Undefined"
+  val TemporaryFailure: "TemporaryFailure" = "TemporaryFailure"
 
-  @inline def values = js.Array(DoesNotExist, MessageTooLarge, ExceededQuota, ContentRejected, Undefined, TemporaryFailure)
+  @inline def values = js.Array[BounceType](DoesNotExist, MessageTooLarge, ExceededQuota, ContentRejected, Undefined, TemporaryFailure)
 }
 
-@js.native
-sealed trait BulkEmailStatus extends js.Any
+type BulkEmailStatus = "Success" | "MessageRejected" | "MailFromDomainNotVerified" | "ConfigurationSetDoesNotExist" | "TemplateDoesNotExist" | "AccountSuspended" | "AccountThrottled" | "AccountDailyQuotaExceeded" | "InvalidSendingPoolName" | "AccountSendingPaused" | "ConfigurationSetSendingPaused" | "InvalidParameterValue" | "TransientFailure" | "Failed"
 object BulkEmailStatus {
-  val Success = "Success".asInstanceOf[BulkEmailStatus]
-  val MessageRejected = "MessageRejected".asInstanceOf[BulkEmailStatus]
-  val MailFromDomainNotVerified = "MailFromDomainNotVerified".asInstanceOf[BulkEmailStatus]
-  val ConfigurationSetDoesNotExist = "ConfigurationSetDoesNotExist".asInstanceOf[BulkEmailStatus]
-  val TemplateDoesNotExist = "TemplateDoesNotExist".asInstanceOf[BulkEmailStatus]
-  val AccountSuspended = "AccountSuspended".asInstanceOf[BulkEmailStatus]
-  val AccountThrottled = "AccountThrottled".asInstanceOf[BulkEmailStatus]
-  val AccountDailyQuotaExceeded = "AccountDailyQuotaExceeded".asInstanceOf[BulkEmailStatus]
-  val InvalidSendingPoolName = "InvalidSendingPoolName".asInstanceOf[BulkEmailStatus]
-  val AccountSendingPaused = "AccountSendingPaused".asInstanceOf[BulkEmailStatus]
-  val ConfigurationSetSendingPaused = "ConfigurationSetSendingPaused".asInstanceOf[BulkEmailStatus]
-  val InvalidParameterValue = "InvalidParameterValue".asInstanceOf[BulkEmailStatus]
-  val TransientFailure = "TransientFailure".asInstanceOf[BulkEmailStatus]
-  val Failed = "Failed".asInstanceOf[BulkEmailStatus]
+  val Success: "Success" = "Success"
+  val MessageRejected: "MessageRejected" = "MessageRejected"
+  val MailFromDomainNotVerified: "MailFromDomainNotVerified" = "MailFromDomainNotVerified"
+  val ConfigurationSetDoesNotExist: "ConfigurationSetDoesNotExist" = "ConfigurationSetDoesNotExist"
+  val TemplateDoesNotExist: "TemplateDoesNotExist" = "TemplateDoesNotExist"
+  val AccountSuspended: "AccountSuspended" = "AccountSuspended"
+  val AccountThrottled: "AccountThrottled" = "AccountThrottled"
+  val AccountDailyQuotaExceeded: "AccountDailyQuotaExceeded" = "AccountDailyQuotaExceeded"
+  val InvalidSendingPoolName: "InvalidSendingPoolName" = "InvalidSendingPoolName"
+  val AccountSendingPaused: "AccountSendingPaused" = "AccountSendingPaused"
+  val ConfigurationSetSendingPaused: "ConfigurationSetSendingPaused" = "ConfigurationSetSendingPaused"
+  val InvalidParameterValue: "InvalidParameterValue" = "InvalidParameterValue"
+  val TransientFailure: "TransientFailure" = "TransientFailure"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[BulkEmailStatus](
     Success,
     MessageRejected,
     MailFromDomainNotVerified,
@@ -61,136 +57,123 @@ object BulkEmailStatus {
   )
 }
 
-@js.native
-sealed trait ConfigurationSetAttribute extends js.Any
+type ConfigurationSetAttribute = "eventDestinations" | "trackingOptions" | "deliveryOptions" | "reputationOptions"
 object ConfigurationSetAttribute {
-  val eventDestinations = "eventDestinations".asInstanceOf[ConfigurationSetAttribute]
-  val trackingOptions = "trackingOptions".asInstanceOf[ConfigurationSetAttribute]
-  val deliveryOptions = "deliveryOptions".asInstanceOf[ConfigurationSetAttribute]
-  val reputationOptions = "reputationOptions".asInstanceOf[ConfigurationSetAttribute]
+  val eventDestinations: "eventDestinations" = "eventDestinations"
+  val trackingOptions: "trackingOptions" = "trackingOptions"
+  val deliveryOptions: "deliveryOptions" = "deliveryOptions"
+  val reputationOptions: "reputationOptions" = "reputationOptions"
 
-  @inline def values = js.Array(eventDestinations, trackingOptions, deliveryOptions, reputationOptions)
+  @inline def values = js.Array[ConfigurationSetAttribute](eventDestinations, trackingOptions, deliveryOptions, reputationOptions)
 }
 
-@js.native
-sealed trait CustomMailFromStatus extends js.Any
+type CustomMailFromStatus = "Pending" | "Success" | "Failed" | "TemporaryFailure"
 object CustomMailFromStatus {
-  val Pending = "Pending".asInstanceOf[CustomMailFromStatus]
-  val Success = "Success".asInstanceOf[CustomMailFromStatus]
-  val Failed = "Failed".asInstanceOf[CustomMailFromStatus]
-  val TemporaryFailure = "TemporaryFailure".asInstanceOf[CustomMailFromStatus]
+  val Pending: "Pending" = "Pending"
+  val Success: "Success" = "Success"
+  val Failed: "Failed" = "Failed"
+  val TemporaryFailure: "TemporaryFailure" = "TemporaryFailure"
 
-  @inline def values = js.Array(Pending, Success, Failed, TemporaryFailure)
+  @inline def values = js.Array[CustomMailFromStatus](Pending, Success, Failed, TemporaryFailure)
 }
 
-@js.native
-sealed trait DimensionValueSource extends js.Any
+type DimensionValueSource = "messageTag" | "emailHeader" | "linkTag"
 object DimensionValueSource {
-  val messageTag = "messageTag".asInstanceOf[DimensionValueSource]
-  val emailHeader = "emailHeader".asInstanceOf[DimensionValueSource]
-  val linkTag = "linkTag".asInstanceOf[DimensionValueSource]
+  val messageTag: "messageTag" = "messageTag"
+  val emailHeader: "emailHeader" = "emailHeader"
+  val linkTag: "linkTag" = "linkTag"
 
-  @inline def values = js.Array(messageTag, emailHeader, linkTag)
+  @inline def values = js.Array[DimensionValueSource](messageTag, emailHeader, linkTag)
 }
 
-@js.native
-sealed trait DsnAction extends js.Any
+type DsnAction = "failed" | "delayed" | "delivered" | "relayed" | "expanded"
 object DsnAction {
-  val failed = "failed".asInstanceOf[DsnAction]
-  val delayed = "delayed".asInstanceOf[DsnAction]
-  val delivered = "delivered".asInstanceOf[DsnAction]
-  val relayed = "relayed".asInstanceOf[DsnAction]
-  val expanded = "expanded".asInstanceOf[DsnAction]
+  val failed: "failed" = "failed"
+  val delayed: "delayed" = "delayed"
+  val delivered: "delivered" = "delivered"
+  val relayed: "relayed" = "relayed"
+  val expanded: "expanded" = "expanded"
 
-  @inline def values = js.Array(failed, delayed, delivered, relayed, expanded)
+  @inline def values = js.Array[DsnAction](failed, delayed, delivered, relayed, expanded)
 }
 
-@js.native
-sealed trait EventType extends js.Any
+type EventType = "send" | "reject" | "bounce" | "complaint" | "delivery" | "open" | "click" | "renderingFailure"
 object EventType {
-  val send = "send".asInstanceOf[EventType]
-  val reject = "reject".asInstanceOf[EventType]
-  val bounce = "bounce".asInstanceOf[EventType]
-  val complaint = "complaint".asInstanceOf[EventType]
-  val delivery = "delivery".asInstanceOf[EventType]
-  val open = "open".asInstanceOf[EventType]
-  val click = "click".asInstanceOf[EventType]
-  val renderingFailure = "renderingFailure".asInstanceOf[EventType]
+  val send: "send" = "send"
+  val reject: "reject" = "reject"
+  val bounce: "bounce" = "bounce"
+  val complaint: "complaint" = "complaint"
+  val delivery: "delivery" = "delivery"
+  val open: "open" = "open"
+  val click: "click" = "click"
+  val renderingFailure: "renderingFailure" = "renderingFailure"
 
-  @inline def values = js.Array(send, reject, bounce, complaint, delivery, open, click, renderingFailure)
+  @inline def values = js.Array[EventType](send, reject, bounce, complaint, delivery, open, click, renderingFailure)
 }
 
-@js.native
-sealed trait IdentityType extends js.Any
+type IdentityType = "EmailAddress" | "Domain"
 object IdentityType {
-  val EmailAddress = "EmailAddress".asInstanceOf[IdentityType]
-  val Domain = "Domain".asInstanceOf[IdentityType]
+  val EmailAddress: "EmailAddress" = "EmailAddress"
+  val Domain: "Domain" = "Domain"
 
-  @inline def values = js.Array(EmailAddress, Domain)
+  @inline def values = js.Array[IdentityType](EmailAddress, Domain)
 }
 
-@js.native
-sealed trait InvocationType extends js.Any
+type InvocationType = "Event" | "RequestResponse"
 object InvocationType {
-  val Event = "Event".asInstanceOf[InvocationType]
-  val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
+  val Event: "Event" = "Event"
+  val RequestResponse: "RequestResponse" = "RequestResponse"
 
-  @inline def values = js.Array(Event, RequestResponse)
+  @inline def values = js.Array[InvocationType](Event, RequestResponse)
 }
 
-@js.native
-sealed trait NotificationType extends js.Any
+type NotificationType = "Bounce" | "Complaint" | "Delivery"
 object NotificationType {
-  val Bounce = "Bounce".asInstanceOf[NotificationType]
-  val Complaint = "Complaint".asInstanceOf[NotificationType]
-  val Delivery = "Delivery".asInstanceOf[NotificationType]
+  val Bounce: "Bounce" = "Bounce"
+  val Complaint: "Complaint" = "Complaint"
+  val Delivery: "Delivery" = "Delivery"
 
-  @inline def values = js.Array(Bounce, Complaint, Delivery)
+  @inline def values = js.Array[NotificationType](Bounce, Complaint, Delivery)
 }
 
-@js.native
-sealed trait ReceiptFilterPolicy extends js.Any
+type ReceiptFilterPolicy = "Block" | "Allow"
 object ReceiptFilterPolicy {
-  val Block = "Block".asInstanceOf[ReceiptFilterPolicy]
-  val Allow = "Allow".asInstanceOf[ReceiptFilterPolicy]
+  val Block: "Block" = "Block"
+  val Allow: "Allow" = "Allow"
 
-  @inline def values = js.Array(Block, Allow)
+  @inline def values = js.Array[ReceiptFilterPolicy](Block, Allow)
 }
 
-@js.native
-sealed trait SNSActionEncoding extends js.Any
+type SNSActionEncoding = "UTF-8" | "Base64"
 object SNSActionEncoding {
-  val `UTF-8` = "UTF-8".asInstanceOf[SNSActionEncoding]
-  val Base64 = "Base64".asInstanceOf[SNSActionEncoding]
+  val `UTF-8`: "UTF-8" = "UTF-8"
+  val Base64: "Base64" = "Base64"
 
-  @inline def values = js.Array(`UTF-8`, Base64)
+  @inline def values = js.Array[SNSActionEncoding](`UTF-8`, Base64)
 }
 
-@js.native
-sealed trait StopScope extends js.Any
+type StopScope = "RuleSet"
 object StopScope {
-  val RuleSet = "RuleSet".asInstanceOf[StopScope]
+  val RuleSet: "RuleSet" = "RuleSet"
 
-  @inline def values = js.Array(RuleSet)
+  @inline def values = js.Array[StopScope](RuleSet)
 }
 
-@js.native
-sealed trait TlsPolicy extends js.Any
+type TlsPolicy = "Require" | "Optional"
 object TlsPolicy {
-  val Require = "Require".asInstanceOf[TlsPolicy]
-  val Optional = "Optional".asInstanceOf[TlsPolicy]
+  val Require: "Require" = "Require"
+  val Optional: "Optional" = "Optional"
 
-  @inline def values = js.Array(Require, Optional)
+  @inline def values = js.Array[TlsPolicy](Require, Optional)
 }
 
-@js.native
-sealed trait VerificationStatus extends js.Any
+type VerificationStatus = "Pending" | "Success" | "Failed" | "TemporaryFailure" | "NotStarted"
 object VerificationStatus {
-  val Pending = "Pending".asInstanceOf[VerificationStatus]
-  val Success = "Success".asInstanceOf[VerificationStatus]
-  val Failed = "Failed".asInstanceOf[VerificationStatus]
-  val TemporaryFailure = "TemporaryFailure".asInstanceOf[VerificationStatus]
-  val NotStarted = "NotStarted".asInstanceOf[VerificationStatus]
+  val Pending: "Pending" = "Pending"
+  val Success: "Success" = "Success"
+  val Failed: "Failed" = "Failed"
+  val TemporaryFailure: "TemporaryFailure" = "TemporaryFailure"
+  val NotStarted: "NotStarted" = "NotStarted"
 
-  @inline def values = js.Array(Pending, Success, Failed, TemporaryFailure, NotStarted)
+  @inline def values = js.Array[VerificationStatus](Pending, Success, Failed, TemporaryFailure, NotStarted)
 }

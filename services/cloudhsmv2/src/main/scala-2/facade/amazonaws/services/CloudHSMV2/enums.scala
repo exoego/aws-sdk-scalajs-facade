@@ -57,3 +57,4 @@ object HsmState {
 
   @inline def values = js.Array(CREATE_IN_PROGRESS, ACTIVE, DEGRADED, DELETE_IN_PROGRESS, DELETED)
 }
+

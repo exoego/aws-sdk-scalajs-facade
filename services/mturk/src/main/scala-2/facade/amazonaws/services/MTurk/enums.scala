@@ -46,20 +46,7 @@ object EventType {
   val HITDisposed = "HITDisposed".asInstanceOf[EventType]
   val Ping = "Ping".asInstanceOf[EventType]
 
-  @inline def values = js.Array(
-    AssignmentAccepted,
-    AssignmentAbandoned,
-    AssignmentReturned,
-    AssignmentSubmitted,
-    AssignmentRejected,
-    AssignmentApproved,
-    HITCreated,
-    HITExpired,
-    HITReviewable,
-    HITExtended,
-    HITDisposed,
-    Ping
-  )
+  @inline def values = js.Array(AssignmentAccepted, AssignmentAbandoned, AssignmentReturned, AssignmentSubmitted, AssignmentRejected, AssignmentApproved, HITCreated, HITExpired, HITReviewable, HITExtended, HITDisposed, Ping)
 }
 
 @js.native
@@ -160,3 +147,4 @@ object ReviewableHITStatus {
 
   @inline def values = js.Array(Reviewable, Reviewing)
 }
+

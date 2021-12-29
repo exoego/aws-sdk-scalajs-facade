@@ -3,7 +3,8 @@ package facade.amazonaws.services.pinpointemail
 import scalajs._
 import scala.scalajs.js.|
 
-/** The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email. These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
+/** The action that you want Amazon Pinpoint to take if it can't read the required MX record for a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>, Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
+  * These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
   */
 @js.native
 sealed trait BehaviorOnMxFailure extends js.Any
@@ -49,7 +50,12 @@ object DimensionValueSource {
   @inline def values = js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG)
 }
 
-/** The DKIM authentication status of the identity. The status can be one of the following: * <code>PENDING</code> – The DKIM verification process was initiated, and Amazon Pinpoint is still waiting for the required CNAME records to appear in the DNS configuration for the domain. * <code>SUCCESS</code> – The DKIM authentication process completed successfully. * <code>FAILED</code> – The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain. * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain. * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
+/** The DKIM authentication status of the identity. The status can be one of the following:
+  * * <code>PENDING</code> – The DKIM verification process was initiated, and Amazon Pinpoint is still waiting for the required CNAME records to appear in the DNS configuration for the domain.
+  * * <code>SUCCESS</code> – The DKIM authentication process completed successfully.
+  * * <code>FAILED</code> – The DKIM authentication process failed. This can happen when Amazon Pinpoint fails to find the required CNAME records in the DNS configuration of the domain.
+  * * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon Pinpoint from determining the DKIM authentication status of the domain.
+  * * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
   */
 @js.native
 sealed trait DkimStatus extends js.Any
@@ -80,7 +86,9 @@ object EventType {
   @inline def values = js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE)
 }
 
-/** The email identity type. The identity type can be one of the following: * <code>EMAIL_ADDRESS</code> – The identity is an email address. * <code>DOMAIN</code> – The identity is a domain.
+/** The email identity type. The identity type can be one of the following:
+  * * <code>EMAIL_ADDRESS</code> – The identity is an email address.
+  * * <code>DOMAIN</code> – The identity is a domain.
   */
 @js.native
 sealed trait IdentityType extends js.Any
@@ -92,7 +100,11 @@ object IdentityType {
   @inline def values = js.Array(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN)
 }
 
-/** The status of the MAIL FROM domain. This status can have the following values: * <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet. * <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain. * <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists. * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.
+/** The status of the MAIL FROM domain. This status can have the following values:
+  * * <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record yet.
+  * * <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL FROM domain.
+  * * <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record no longer exists.
+  * * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon Pinpoint from determining the status of the MAIL FROM domain.
   */
 @js.native
 sealed trait MailFromDomainStatus extends js.Any
@@ -126,3 +138,4 @@ object WarmupStatus {
 
   @inline def values = js.Array(IN_PROGRESS, DONE)
 }
+

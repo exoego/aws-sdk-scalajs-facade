@@ -1,131 +1,118 @@
 package facade.amazonaws.services.chime
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccountType extends js.Any
+type AccountType = "Team" | "EnterpriseDirectory" | "EnterpriseLWA" | "EnterpriseOIDC"
 object AccountType {
-  val Team = "Team".asInstanceOf[AccountType]
-  val EnterpriseDirectory = "EnterpriseDirectory".asInstanceOf[AccountType]
-  val EnterpriseLWA = "EnterpriseLWA".asInstanceOf[AccountType]
-  val EnterpriseOIDC = "EnterpriseOIDC".asInstanceOf[AccountType]
+  val Team: "Team" = "Team"
+  val EnterpriseDirectory: "EnterpriseDirectory" = "EnterpriseDirectory"
+  val EnterpriseLWA: "EnterpriseLWA" = "EnterpriseLWA"
+  val EnterpriseOIDC: "EnterpriseOIDC" = "EnterpriseOIDC"
 
-  @inline def values = js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC)
+  @inline def values = js.Array[AccountType](Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC)
 }
 
-@js.native
-sealed trait AppInstanceDataType extends js.Any
+type AppInstanceDataType = "Channel" | "ChannelMessage"
 object AppInstanceDataType {
-  val Channel = "Channel".asInstanceOf[AppInstanceDataType]
-  val ChannelMessage = "ChannelMessage".asInstanceOf[AppInstanceDataType]
+  val Channel: "Channel" = "Channel"
+  val ChannelMessage: "ChannelMessage" = "ChannelMessage"
 
-  @inline def values = js.Array(Channel, ChannelMessage)
+  @inline def values = js.Array[AppInstanceDataType](Channel, ChannelMessage)
 }
 
-@js.native
-sealed trait BotType extends js.Any
+type BotType = "ChatBot"
 object BotType {
-  val ChatBot = "ChatBot".asInstanceOf[BotType]
+  val ChatBot: "ChatBot" = "ChatBot"
 
-  @inline def values = js.Array(ChatBot)
+  @inline def values = js.Array[BotType](ChatBot)
 }
 
-@js.native
-sealed trait CallingNameStatus extends js.Any
+type CallingNameStatus = "Unassigned" | "UpdateInProgress" | "UpdateSucceeded" | "UpdateFailed"
 object CallingNameStatus {
-  val Unassigned = "Unassigned".asInstanceOf[CallingNameStatus]
-  val UpdateInProgress = "UpdateInProgress".asInstanceOf[CallingNameStatus]
-  val UpdateSucceeded = "UpdateSucceeded".asInstanceOf[CallingNameStatus]
-  val UpdateFailed = "UpdateFailed".asInstanceOf[CallingNameStatus]
+  val Unassigned: "Unassigned" = "Unassigned"
+  val UpdateInProgress: "UpdateInProgress" = "UpdateInProgress"
+  val UpdateSucceeded: "UpdateSucceeded" = "UpdateSucceeded"
+  val UpdateFailed: "UpdateFailed" = "UpdateFailed"
 
-  @inline def values = js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed)
+  @inline def values = js.Array[CallingNameStatus](Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed)
 }
 
-@js.native
-sealed trait Capability extends js.Any
+type Capability = "Voice" | "SMS"
 object Capability {
-  val Voice = "Voice".asInstanceOf[Capability]
-  val SMS = "SMS".asInstanceOf[Capability]
+  val Voice: "Voice" = "Voice"
+  val SMS: "SMS" = "SMS"
 
-  @inline def values = js.Array(Voice, SMS)
+  @inline def values = js.Array[Capability](Voice, SMS)
 }
 
-@js.native
-sealed trait ChannelMembershipType extends js.Any
+type ChannelMembershipType = "DEFAULT" | "HIDDEN"
 object ChannelMembershipType {
-  val DEFAULT = "DEFAULT".asInstanceOf[ChannelMembershipType]
-  val HIDDEN = "HIDDEN".asInstanceOf[ChannelMembershipType]
+  val DEFAULT: "DEFAULT" = "DEFAULT"
+  val HIDDEN: "HIDDEN" = "HIDDEN"
 
-  @inline def values = js.Array(DEFAULT, HIDDEN)
+  @inline def values = js.Array[ChannelMembershipType](DEFAULT, HIDDEN)
 }
 
-@js.native
-sealed trait ChannelMessagePersistenceType extends js.Any
+type ChannelMessagePersistenceType = "PERSISTENT" | "NON_PERSISTENT"
 object ChannelMessagePersistenceType {
-  val PERSISTENT = "PERSISTENT".asInstanceOf[ChannelMessagePersistenceType]
-  val NON_PERSISTENT = "NON_PERSISTENT".asInstanceOf[ChannelMessagePersistenceType]
+  val PERSISTENT: "PERSISTENT" = "PERSISTENT"
+  val NON_PERSISTENT: "NON_PERSISTENT" = "NON_PERSISTENT"
 
-  @inline def values = js.Array(PERSISTENT, NON_PERSISTENT)
+  @inline def values = js.Array[ChannelMessagePersistenceType](PERSISTENT, NON_PERSISTENT)
 }
 
-@js.native
-sealed trait ChannelMessageType extends js.Any
+type ChannelMessageType = "STANDARD" | "CONTROL"
 object ChannelMessageType {
-  val STANDARD = "STANDARD".asInstanceOf[ChannelMessageType]
-  val CONTROL = "CONTROL".asInstanceOf[ChannelMessageType]
+  val STANDARD: "STANDARD" = "STANDARD"
+  val CONTROL: "CONTROL" = "CONTROL"
 
-  @inline def values = js.Array(STANDARD, CONTROL)
+  @inline def values = js.Array[ChannelMessageType](STANDARD, CONTROL)
 }
 
-@js.native
-sealed trait ChannelMode extends js.Any
+type ChannelMode = "UNRESTRICTED" | "RESTRICTED"
 object ChannelMode {
-  val UNRESTRICTED = "UNRESTRICTED".asInstanceOf[ChannelMode]
-  val RESTRICTED = "RESTRICTED".asInstanceOf[ChannelMode]
+  val UNRESTRICTED: "UNRESTRICTED" = "UNRESTRICTED"
+  val RESTRICTED: "RESTRICTED" = "RESTRICTED"
 
-  @inline def values = js.Array(UNRESTRICTED, RESTRICTED)
+  @inline def values = js.Array[ChannelMode](UNRESTRICTED, RESTRICTED)
 }
 
-@js.native
-sealed trait ChannelPrivacy extends js.Any
+type ChannelPrivacy = "PUBLIC" | "PRIVATE"
 object ChannelPrivacy {
-  val PUBLIC = "PUBLIC".asInstanceOf[ChannelPrivacy]
-  val PRIVATE = "PRIVATE".asInstanceOf[ChannelPrivacy]
+  val PUBLIC: "PUBLIC" = "PUBLIC"
+  val PRIVATE: "PRIVATE" = "PRIVATE"
 
-  @inline def values = js.Array(PUBLIC, PRIVATE)
+  @inline def values = js.Array[ChannelPrivacy](PUBLIC, PRIVATE)
 }
 
-@js.native
-sealed trait EmailStatus extends js.Any
+type EmailStatus = "NotSent" | "Sent" | "Failed"
 object EmailStatus {
-  val NotSent = "NotSent".asInstanceOf[EmailStatus]
-  val Sent = "Sent".asInstanceOf[EmailStatus]
-  val Failed = "Failed".asInstanceOf[EmailStatus]
+  val NotSent: "NotSent" = "NotSent"
+  val Sent: "Sent" = "Sent"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(NotSent, Sent, Failed)
+  @inline def values = js.Array[EmailStatus](NotSent, Sent, Failed)
 }
 
-@js.native
-sealed trait ErrorCode extends js.Any
+type ErrorCode = "BadRequest" | "Conflict" | "Forbidden" | "NotFound" | "PreconditionFailed" | "ResourceLimitExceeded" | "ServiceFailure" | "AccessDenied" | "ServiceUnavailable" | "Throttled" | "Throttling" | "Unauthorized" | "Unprocessable" | "VoiceConnectorGroupAssociationsExist" | "PhoneNumberAssociationsExist"
 object ErrorCode {
-  val BadRequest = "BadRequest".asInstanceOf[ErrorCode]
-  val Conflict = "Conflict".asInstanceOf[ErrorCode]
-  val Forbidden = "Forbidden".asInstanceOf[ErrorCode]
-  val NotFound = "NotFound".asInstanceOf[ErrorCode]
-  val PreconditionFailed = "PreconditionFailed".asInstanceOf[ErrorCode]
-  val ResourceLimitExceeded = "ResourceLimitExceeded".asInstanceOf[ErrorCode]
-  val ServiceFailure = "ServiceFailure".asInstanceOf[ErrorCode]
-  val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
-  val ServiceUnavailable = "ServiceUnavailable".asInstanceOf[ErrorCode]
-  val Throttled = "Throttled".asInstanceOf[ErrorCode]
-  val Throttling = "Throttling".asInstanceOf[ErrorCode]
-  val Unauthorized = "Unauthorized".asInstanceOf[ErrorCode]
-  val Unprocessable = "Unprocessable".asInstanceOf[ErrorCode]
-  val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
-  val PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
+  val BadRequest: "BadRequest" = "BadRequest"
+  val Conflict: "Conflict" = "Conflict"
+  val Forbidden: "Forbidden" = "Forbidden"
+  val NotFound: "NotFound" = "NotFound"
+  val PreconditionFailed: "PreconditionFailed" = "PreconditionFailed"
+  val ResourceLimitExceeded: "ResourceLimitExceeded" = "ResourceLimitExceeded"
+  val ServiceFailure: "ServiceFailure" = "ServiceFailure"
+  val AccessDenied: "AccessDenied" = "AccessDenied"
+  val ServiceUnavailable: "ServiceUnavailable" = "ServiceUnavailable"
+  val Throttled: "Throttled" = "Throttled"
+  val Throttling: "Throttling" = "Throttling"
+  val Unauthorized: "Unauthorized" = "Unauthorized"
+  val Unprocessable: "Unprocessable" = "Unprocessable"
+  val VoiceConnectorGroupAssociationsExist: "VoiceConnectorGroupAssociationsExist" = "VoiceConnectorGroupAssociationsExist"
+  val PhoneNumberAssociationsExist: "PhoneNumberAssociationsExist" = "PhoneNumberAssociationsExist"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[ErrorCode](
     BadRequest,
     Conflict,
     Forbidden,
@@ -144,201 +131,181 @@ object ErrorCode {
   )
 }
 
-@js.native
-sealed trait GeoMatchLevel extends js.Any
+type GeoMatchLevel = "Country" | "AreaCode"
 object GeoMatchLevel {
-  val Country = "Country".asInstanceOf[GeoMatchLevel]
-  val AreaCode = "AreaCode".asInstanceOf[GeoMatchLevel]
+  val Country: "Country" = "Country"
+  val AreaCode: "AreaCode" = "AreaCode"
 
-  @inline def values = js.Array(Country, AreaCode)
+  @inline def values = js.Array[GeoMatchLevel](Country, AreaCode)
 }
 
-@js.native
-sealed trait InviteStatus extends js.Any
+type InviteStatus = "Pending" | "Accepted" | "Failed"
 object InviteStatus {
-  val Pending = "Pending".asInstanceOf[InviteStatus]
-  val Accepted = "Accepted".asInstanceOf[InviteStatus]
-  val Failed = "Failed".asInstanceOf[InviteStatus]
+  val Pending: "Pending" = "Pending"
+  val Accepted: "Accepted" = "Accepted"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Pending, Accepted, Failed)
+  @inline def values = js.Array[InviteStatus](Pending, Accepted, Failed)
 }
 
-@js.native
-sealed trait License extends js.Any
+type License = "Basic" | "Plus" | "Pro" | "ProTrial"
 object License {
-  val Basic = "Basic".asInstanceOf[License]
-  val Plus = "Plus".asInstanceOf[License]
-  val Pro = "Pro".asInstanceOf[License]
-  val ProTrial = "ProTrial".asInstanceOf[License]
+  val Basic: "Basic" = "Basic"
+  val Plus: "Plus" = "Plus"
+  val Pro: "Pro" = "Pro"
+  val ProTrial: "ProTrial" = "ProTrial"
 
-  @inline def values = js.Array(Basic, Plus, Pro, ProTrial)
+  @inline def values = js.Array[License](Basic, Plus, Pro, ProTrial)
 }
 
-@js.native
-sealed trait MemberType extends js.Any
+type MemberType = "User" | "Bot" | "Webhook"
 object MemberType {
-  val User = "User".asInstanceOf[MemberType]
-  val Bot = "Bot".asInstanceOf[MemberType]
-  val Webhook = "Webhook".asInstanceOf[MemberType]
+  val User: "User" = "User"
+  val Bot: "Bot" = "Bot"
+  val Webhook: "Webhook" = "Webhook"
 
-  @inline def values = js.Array(User, Bot, Webhook)
+  @inline def values = js.Array[MemberType](User, Bot, Webhook)
 }
 
-@js.native
-sealed trait NotificationTarget extends js.Any
+type NotificationTarget = "EventBridge" | "SNS" | "SQS"
 object NotificationTarget {
-  val EventBridge = "EventBridge".asInstanceOf[NotificationTarget]
-  val SNS = "SNS".asInstanceOf[NotificationTarget]
-  val SQS = "SQS".asInstanceOf[NotificationTarget]
+  val EventBridge: "EventBridge" = "EventBridge"
+  val SNS: "SNS" = "SNS"
+  val SQS: "SQS" = "SQS"
 
-  @inline def values = js.Array(EventBridge, SNS, SQS)
+  @inline def values = js.Array[NotificationTarget](EventBridge, SNS, SQS)
 }
 
-@js.native
-sealed trait NumberSelectionBehavior extends js.Any
+type NumberSelectionBehavior = "PreferSticky" | "AvoidSticky"
 object NumberSelectionBehavior {
-  val PreferSticky = "PreferSticky".asInstanceOf[NumberSelectionBehavior]
-  val AvoidSticky = "AvoidSticky".asInstanceOf[NumberSelectionBehavior]
+  val PreferSticky: "PreferSticky" = "PreferSticky"
+  val AvoidSticky: "AvoidSticky" = "AvoidSticky"
 
-  @inline def values = js.Array(PreferSticky, AvoidSticky)
+  @inline def values = js.Array[NumberSelectionBehavior](PreferSticky, AvoidSticky)
 }
 
-@js.native
-sealed trait OrderedPhoneNumberStatus extends js.Any
+type OrderedPhoneNumberStatus = "Processing" | "Acquired" | "Failed"
 object OrderedPhoneNumberStatus {
-  val Processing = "Processing".asInstanceOf[OrderedPhoneNumberStatus]
-  val Acquired = "Acquired".asInstanceOf[OrderedPhoneNumberStatus]
-  val Failed = "Failed".asInstanceOf[OrderedPhoneNumberStatus]
+  val Processing: "Processing" = "Processing"
+  val Acquired: "Acquired" = "Acquired"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Processing, Acquired, Failed)
+  @inline def values = js.Array[OrderedPhoneNumberStatus](Processing, Acquired, Failed)
 }
 
-@js.native
-sealed trait OriginationRouteProtocol extends js.Any
+type OriginationRouteProtocol = "TCP" | "UDP"
 object OriginationRouteProtocol {
-  val TCP = "TCP".asInstanceOf[OriginationRouteProtocol]
-  val UDP = "UDP".asInstanceOf[OriginationRouteProtocol]
+  val TCP: "TCP" = "TCP"
+  val UDP: "UDP" = "UDP"
 
-  @inline def values = js.Array(TCP, UDP)
+  @inline def values = js.Array[OriginationRouteProtocol](TCP, UDP)
 }
 
-@js.native
-sealed trait PhoneNumberAssociationName extends js.Any
+type PhoneNumberAssociationName = "AccountId" | "UserId" | "VoiceConnectorId" | "VoiceConnectorGroupId" | "SipRuleId"
 object PhoneNumberAssociationName {
-  val AccountId = "AccountId".asInstanceOf[PhoneNumberAssociationName]
-  val UserId = "UserId".asInstanceOf[PhoneNumberAssociationName]
-  val VoiceConnectorId = "VoiceConnectorId".asInstanceOf[PhoneNumberAssociationName]
-  val VoiceConnectorGroupId = "VoiceConnectorGroupId".asInstanceOf[PhoneNumberAssociationName]
-  val SipRuleId = "SipRuleId".asInstanceOf[PhoneNumberAssociationName]
+  val AccountId: "AccountId" = "AccountId"
+  val UserId: "UserId" = "UserId"
+  val VoiceConnectorId: "VoiceConnectorId" = "VoiceConnectorId"
+  val VoiceConnectorGroupId: "VoiceConnectorGroupId" = "VoiceConnectorGroupId"
+  val SipRuleId: "SipRuleId" = "SipRuleId"
 
-  @inline def values = js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId, SipRuleId)
+  @inline def values = js.Array[PhoneNumberAssociationName](AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId, SipRuleId)
 }
 
-@js.native
-sealed trait PhoneNumberOrderStatus extends js.Any
+type PhoneNumberOrderStatus = "Processing" | "Successful" | "Failed" | "Partial"
 object PhoneNumberOrderStatus {
-  val Processing = "Processing".asInstanceOf[PhoneNumberOrderStatus]
-  val Successful = "Successful".asInstanceOf[PhoneNumberOrderStatus]
-  val Failed = "Failed".asInstanceOf[PhoneNumberOrderStatus]
-  val Partial = "Partial".asInstanceOf[PhoneNumberOrderStatus]
+  val Processing: "Processing" = "Processing"
+  val Successful: "Successful" = "Successful"
+  val Failed: "Failed" = "Failed"
+  val Partial: "Partial" = "Partial"
 
-  @inline def values = js.Array(Processing, Successful, Failed, Partial)
+  @inline def values = js.Array[PhoneNumberOrderStatus](Processing, Successful, Failed, Partial)
 }
 
-@js.native
-sealed trait PhoneNumberProductType extends js.Any
+type PhoneNumberProductType = "BusinessCalling" | "VoiceConnector"
 object PhoneNumberProductType {
-  val BusinessCalling = "BusinessCalling".asInstanceOf[PhoneNumberProductType]
-  val VoiceConnector = "VoiceConnector".asInstanceOf[PhoneNumberProductType]
+  val BusinessCalling: "BusinessCalling" = "BusinessCalling"
+  val VoiceConnector: "VoiceConnector" = "VoiceConnector"
 
-  @inline def values = js.Array(BusinessCalling, VoiceConnector)
+  @inline def values = js.Array[PhoneNumberProductType](BusinessCalling, VoiceConnector)
 }
 
-@js.native
-sealed trait PhoneNumberStatus extends js.Any
+type PhoneNumberStatus = "AcquireInProgress" | "AcquireFailed" | "Unassigned" | "Assigned" | "ReleaseInProgress" | "DeleteInProgress" | "ReleaseFailed" | "DeleteFailed"
 object PhoneNumberStatus {
-  val AcquireInProgress = "AcquireInProgress".asInstanceOf[PhoneNumberStatus]
-  val AcquireFailed = "AcquireFailed".asInstanceOf[PhoneNumberStatus]
-  val Unassigned = "Unassigned".asInstanceOf[PhoneNumberStatus]
-  val Assigned = "Assigned".asInstanceOf[PhoneNumberStatus]
-  val ReleaseInProgress = "ReleaseInProgress".asInstanceOf[PhoneNumberStatus]
-  val DeleteInProgress = "DeleteInProgress".asInstanceOf[PhoneNumberStatus]
-  val ReleaseFailed = "ReleaseFailed".asInstanceOf[PhoneNumberStatus]
-  val DeleteFailed = "DeleteFailed".asInstanceOf[PhoneNumberStatus]
+  val AcquireInProgress: "AcquireInProgress" = "AcquireInProgress"
+  val AcquireFailed: "AcquireFailed" = "AcquireFailed"
+  val Unassigned: "Unassigned" = "Unassigned"
+  val Assigned: "Assigned" = "Assigned"
+  val ReleaseInProgress: "ReleaseInProgress" = "ReleaseInProgress"
+  val DeleteInProgress: "DeleteInProgress" = "DeleteInProgress"
+  val ReleaseFailed: "ReleaseFailed" = "ReleaseFailed"
+  val DeleteFailed: "DeleteFailed" = "DeleteFailed"
 
-  @inline def values = js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed)
+  @inline def values = js.Array[PhoneNumberStatus](AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed)
 }
 
-@js.native
-sealed trait PhoneNumberType extends js.Any
+type PhoneNumberType = "Local" | "TollFree"
 object PhoneNumberType {
-  val Local = "Local".asInstanceOf[PhoneNumberType]
-  val TollFree = "TollFree".asInstanceOf[PhoneNumberType]
+  val Local: "Local" = "Local"
+  val TollFree: "TollFree" = "TollFree"
 
-  @inline def values = js.Array(Local, TollFree)
+  @inline def values = js.Array[PhoneNumberType](Local, TollFree)
 }
 
-@js.native
-sealed trait ProxySessionStatus extends js.Any
+type ProxySessionStatus = "Open" | "InProgress" | "Closed"
 object ProxySessionStatus {
-  val Open = "Open".asInstanceOf[ProxySessionStatus]
-  val InProgress = "InProgress".asInstanceOf[ProxySessionStatus]
-  val Closed = "Closed".asInstanceOf[ProxySessionStatus]
+  val Open: "Open" = "Open"
+  val InProgress: "InProgress" = "InProgress"
+  val Closed: "Closed" = "Closed"
 
-  @inline def values = js.Array(Open, InProgress, Closed)
+  @inline def values = js.Array[ProxySessionStatus](Open, InProgress, Closed)
 }
 
-@js.native
-sealed trait RegistrationStatus extends js.Any
+type RegistrationStatus = "Unregistered" | "Registered" | "Suspended"
 object RegistrationStatus {
-  val Unregistered = "Unregistered".asInstanceOf[RegistrationStatus]
-  val Registered = "Registered".asInstanceOf[RegistrationStatus]
-  val Suspended = "Suspended".asInstanceOf[RegistrationStatus]
+  val Unregistered: "Unregistered" = "Unregistered"
+  val Registered: "Registered" = "Registered"
+  val Suspended: "Suspended" = "Suspended"
 
-  @inline def values = js.Array(Unregistered, Registered, Suspended)
+  @inline def values = js.Array[RegistrationStatus](Unregistered, Registered, Suspended)
 }
 
-@js.native
-sealed trait RoomMembershipRole extends js.Any
+type RoomMembershipRole = "Administrator" | "Member"
 object RoomMembershipRole {
-  val Administrator = "Administrator".asInstanceOf[RoomMembershipRole]
-  val Member = "Member".asInstanceOf[RoomMembershipRole]
+  val Administrator: "Administrator" = "Administrator"
+  val Member: "Member" = "Member"
 
-  @inline def values = js.Array(Administrator, Member)
+  @inline def values = js.Array[RoomMembershipRole](Administrator, Member)
 }
 
-@js.native
-sealed trait SipRuleTriggerType extends js.Any
+type SipRuleTriggerType = "ToPhoneNumber" | "RequestUriHostname"
 object SipRuleTriggerType {
-  val ToPhoneNumber = "ToPhoneNumber".asInstanceOf[SipRuleTriggerType]
-  val RequestUriHostname = "RequestUriHostname".asInstanceOf[SipRuleTriggerType]
+  val ToPhoneNumber: "ToPhoneNumber" = "ToPhoneNumber"
+  val RequestUriHostname: "RequestUriHostname" = "RequestUriHostname"
 
-  @inline def values = js.Array(ToPhoneNumber, RequestUriHostname)
+  @inline def values = js.Array[SipRuleTriggerType](ToPhoneNumber, RequestUriHostname)
 }
 
-@js.native
-sealed trait SortOrder extends js.Any
+type SortOrder = "ASCENDING" | "DESCENDING"
 object SortOrder {
-  val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-  val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+  val ASCENDING: "ASCENDING" = "ASCENDING"
+  val DESCENDING: "DESCENDING" = "DESCENDING"
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values = js.Array[SortOrder](ASCENDING, DESCENDING)
 }
 
-@js.native
-sealed trait UserType extends js.Any
+type UserType = "PrivateUser" | "SharedDevice"
 object UserType {
-  val PrivateUser = "PrivateUser".asInstanceOf[UserType]
-  val SharedDevice = "SharedDevice".asInstanceOf[UserType]
+  val PrivateUser: "PrivateUser" = "PrivateUser"
+  val SharedDevice: "SharedDevice" = "SharedDevice"
 
-  @inline def values = js.Array(PrivateUser, SharedDevice)
+  @inline def values = js.Array[UserType](PrivateUser, SharedDevice)
 }
 
-@js.native
-sealed trait VoiceConnectorAwsRegion extends js.Any
+type VoiceConnectorAwsRegion = "us-east-1" | "us-west-2"
 object VoiceConnectorAwsRegion {
-  val `us-east-1` = "us-east-1".asInstanceOf[VoiceConnectorAwsRegion]
-  val `us-west-2` = "us-west-2".asInstanceOf[VoiceConnectorAwsRegion]
+  val `us-east-1`: "us-east-1" = "us-east-1"
+  val `us-west-2`: "us-west-2" = "us-west-2"
 
-  @inline def values = js.Array(`us-east-1`, `us-west-2`)
+  @inline def values = js.Array[VoiceConnectorAwsRegion](`us-east-1`, `us-west-2`)
 }

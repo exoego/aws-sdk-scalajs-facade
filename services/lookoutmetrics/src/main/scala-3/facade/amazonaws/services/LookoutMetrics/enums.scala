@@ -1,87 +1,78 @@
 package facade.amazonaws.services.lookoutmetrics
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AggregationFunction extends js.Any
+type AggregationFunction = "AVG" | "SUM"
 object AggregationFunction {
-  val AVG = "AVG".asInstanceOf[AggregationFunction]
-  val SUM = "SUM".asInstanceOf[AggregationFunction]
+  val AVG: "AVG" = "AVG"
+  val SUM: "SUM" = "SUM"
 
-  @inline def values = js.Array(AVG, SUM)
+  @inline def values = js.Array[AggregationFunction](AVG, SUM)
 }
 
-@js.native
-sealed trait AlertStatus extends js.Any
+type AlertStatus = "ACTIVE" | "INACTIVE"
 object AlertStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[AlertStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[AlertStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values = js.Array[AlertStatus](ACTIVE, INACTIVE)
 }
 
-@js.native
-sealed trait AlertType extends js.Any
+type AlertType = "SNS" | "LAMBDA"
 object AlertType {
-  val SNS = "SNS".asInstanceOf[AlertType]
-  val LAMBDA = "LAMBDA".asInstanceOf[AlertType]
+  val SNS: "SNS" = "SNS"
+  val LAMBDA: "LAMBDA" = "LAMBDA"
 
-  @inline def values = js.Array(SNS, LAMBDA)
+  @inline def values = js.Array[AlertType](SNS, LAMBDA)
 }
 
-@js.native
-sealed trait AnomalyDetectionTaskStatus extends js.Any
+type AnomalyDetectionTaskStatus = "PENDING" | "IN_PROGRESS" | "COMPLETED" | "FAILED" | "FAILED_TO_SCHEDULE"
 object AnomalyDetectionTaskStatus {
-  val PENDING = "PENDING".asInstanceOf[AnomalyDetectionTaskStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AnomalyDetectionTaskStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[AnomalyDetectionTaskStatus]
-  val FAILED = "FAILED".asInstanceOf[AnomalyDetectionTaskStatus]
-  val FAILED_TO_SCHEDULE = "FAILED_TO_SCHEDULE".asInstanceOf[AnomalyDetectionTaskStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val FAILED: "FAILED" = "FAILED"
+  val FAILED_TO_SCHEDULE: "FAILED_TO_SCHEDULE" = "FAILED_TO_SCHEDULE"
 
-  @inline def values = js.Array(PENDING, IN_PROGRESS, COMPLETED, FAILED, FAILED_TO_SCHEDULE)
+  @inline def values = js.Array[AnomalyDetectionTaskStatus](PENDING, IN_PROGRESS, COMPLETED, FAILED, FAILED_TO_SCHEDULE)
 }
 
-@js.native
-sealed trait AnomalyDetectorStatus extends js.Any
+type AnomalyDetectorStatus = "ACTIVE" | "ACTIVATING" | "DELETING" | "FAILED" | "INACTIVE" | "BACK_TEST_ACTIVATING" | "BACK_TEST_ACTIVE" | "BACK_TEST_COMPLETE"
 object AnomalyDetectorStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[AnomalyDetectorStatus]
-  val ACTIVATING = "ACTIVATING".asInstanceOf[AnomalyDetectorStatus]
-  val DELETING = "DELETING".asInstanceOf[AnomalyDetectorStatus]
-  val FAILED = "FAILED".asInstanceOf[AnomalyDetectorStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[AnomalyDetectorStatus]
-  val BACK_TEST_ACTIVATING = "BACK_TEST_ACTIVATING".asInstanceOf[AnomalyDetectorStatus]
-  val BACK_TEST_ACTIVE = "BACK_TEST_ACTIVE".asInstanceOf[AnomalyDetectorStatus]
-  val BACK_TEST_COMPLETE = "BACK_TEST_COMPLETE".asInstanceOf[AnomalyDetectorStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val ACTIVATING: "ACTIVATING" = "ACTIVATING"
+  val DELETING: "DELETING" = "DELETING"
+  val FAILED: "FAILED" = "FAILED"
+  val INACTIVE: "INACTIVE" = "INACTIVE"
+  val BACK_TEST_ACTIVATING: "BACK_TEST_ACTIVATING" = "BACK_TEST_ACTIVATING"
+  val BACK_TEST_ACTIVE: "BACK_TEST_ACTIVE" = "BACK_TEST_ACTIVE"
+  val BACK_TEST_COMPLETE: "BACK_TEST_COMPLETE" = "BACK_TEST_COMPLETE"
 
-  @inline def values = js.Array(ACTIVE, ACTIVATING, DELETING, FAILED, INACTIVE, BACK_TEST_ACTIVATING, BACK_TEST_ACTIVE, BACK_TEST_COMPLETE)
+  @inline def values = js.Array[AnomalyDetectorStatus](ACTIVE, ACTIVATING, DELETING, FAILED, INACTIVE, BACK_TEST_ACTIVATING, BACK_TEST_ACTIVE, BACK_TEST_COMPLETE)
 }
 
-@js.native
-sealed trait CSVFileCompression extends js.Any
+type CSVFileCompression = "NONE" | "GZIP"
 object CSVFileCompression {
-  val NONE = "NONE".asInstanceOf[CSVFileCompression]
-  val GZIP = "GZIP".asInstanceOf[CSVFileCompression]
+  val NONE: "NONE" = "NONE"
+  val GZIP: "GZIP" = "GZIP"
 
-  @inline def values = js.Array(NONE, GZIP)
+  @inline def values = js.Array[CSVFileCompression](NONE, GZIP)
 }
 
-@js.native
-sealed trait Frequency extends js.Any
+type Frequency = "P1D" | "PT1H" | "PT10M" | "PT5M"
 object Frequency {
-  val P1D = "P1D".asInstanceOf[Frequency]
-  val PT1H = "PT1H".asInstanceOf[Frequency]
-  val PT10M = "PT10M".asInstanceOf[Frequency]
-  val PT5M = "PT5M".asInstanceOf[Frequency]
+  val P1D: "P1D" = "P1D"
+  val PT1H: "PT1H" = "PT1H"
+  val PT10M: "PT10M" = "PT10M"
+  val PT5M: "PT5M" = "PT5M"
 
-  @inline def values = js.Array(P1D, PT1H, PT10M, PT5M)
+  @inline def values = js.Array[Frequency](P1D, PT1H, PT10M, PT5M)
 }
 
-@js.native
-sealed trait JsonFileCompression extends js.Any
+type JsonFileCompression = "NONE" | "GZIP"
 object JsonFileCompression {
-  val NONE = "NONE".asInstanceOf[JsonFileCompression]
-  val GZIP = "GZIP".asInstanceOf[JsonFileCompression]
+  val NONE: "NONE" = "NONE"
+  val GZIP: "GZIP" = "GZIP"
 
-  @inline def values = js.Array(NONE, GZIP)
+  @inline def values = js.Array[JsonFileCompression](NONE, GZIP)
 }

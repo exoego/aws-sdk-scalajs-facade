@@ -1,39 +1,35 @@
 package facade.amazonaws.services.cloudwatch
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AlarmType extends js.Any
+type AlarmType = "CompositeAlarm" | "MetricAlarm"
 object AlarmType {
-  val CompositeAlarm = "CompositeAlarm".asInstanceOf[AlarmType]
-  val MetricAlarm = "MetricAlarm".asInstanceOf[AlarmType]
+  val CompositeAlarm: "CompositeAlarm" = "CompositeAlarm"
+  val MetricAlarm: "MetricAlarm" = "MetricAlarm"
 
-  @inline def values = js.Array(CompositeAlarm, MetricAlarm)
+  @inline def values = js.Array[AlarmType](CompositeAlarm, MetricAlarm)
 }
 
-@js.native
-sealed trait AnomalyDetectorStateValue extends js.Any
+type AnomalyDetectorStateValue = "PENDING_TRAINING" | "TRAINED_INSUFFICIENT_DATA" | "TRAINED"
 object AnomalyDetectorStateValue {
-  val PENDING_TRAINING = "PENDING_TRAINING".asInstanceOf[AnomalyDetectorStateValue]
-  val TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA".asInstanceOf[AnomalyDetectorStateValue]
-  val TRAINED = "TRAINED".asInstanceOf[AnomalyDetectorStateValue]
+  val PENDING_TRAINING: "PENDING_TRAINING" = "PENDING_TRAINING"
+  val TRAINED_INSUFFICIENT_DATA: "TRAINED_INSUFFICIENT_DATA" = "TRAINED_INSUFFICIENT_DATA"
+  val TRAINED: "TRAINED" = "TRAINED"
 
-  @inline def values = js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED)
+  @inline def values = js.Array[AnomalyDetectorStateValue](PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED)
 }
 
-@js.native
-sealed trait ComparisonOperator extends js.Any
+type ComparisonOperator = "GreaterThanOrEqualToThreshold" | "GreaterThanThreshold" | "LessThanThreshold" | "LessThanOrEqualToThreshold" | "LessThanLowerOrGreaterThanUpperThreshold" | "LessThanLowerThreshold" | "GreaterThanUpperThreshold"
 object ComparisonOperator {
-  val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
-  val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
-  val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
-  val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
-  val LessThanLowerOrGreaterThanUpperThreshold = "LessThanLowerOrGreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
-  val LessThanLowerThreshold = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
-  val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
+  val GreaterThanOrEqualToThreshold: "GreaterThanOrEqualToThreshold" = "GreaterThanOrEqualToThreshold"
+  val GreaterThanThreshold: "GreaterThanThreshold" = "GreaterThanThreshold"
+  val LessThanThreshold: "LessThanThreshold" = "LessThanThreshold"
+  val LessThanOrEqualToThreshold: "LessThanOrEqualToThreshold" = "LessThanOrEqualToThreshold"
+  val LessThanLowerOrGreaterThanUpperThreshold: "LessThanLowerOrGreaterThanUpperThreshold" = "LessThanLowerOrGreaterThanUpperThreshold"
+  val LessThanLowerThreshold: "LessThanLowerThreshold" = "LessThanLowerThreshold"
+  val GreaterThanUpperThreshold: "GreaterThanUpperThreshold" = "GreaterThanUpperThreshold"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[ComparisonOperator](
     GreaterThanOrEqualToThreshold,
     GreaterThanThreshold,
     LessThanThreshold,
@@ -44,74 +40,69 @@ object ComparisonOperator {
   )
 }
 
-@js.native
-sealed trait HistoryItemType extends js.Any
+type HistoryItemType = "ConfigurationUpdate" | "StateUpdate" | "Action"
 object HistoryItemType {
-  val ConfigurationUpdate = "ConfigurationUpdate".asInstanceOf[HistoryItemType]
-  val StateUpdate = "StateUpdate".asInstanceOf[HistoryItemType]
-  val Action = "Action".asInstanceOf[HistoryItemType]
+  val ConfigurationUpdate: "ConfigurationUpdate" = "ConfigurationUpdate"
+  val StateUpdate: "StateUpdate" = "StateUpdate"
+  val Action: "Action" = "Action"
 
-  @inline def values = js.Array(ConfigurationUpdate, StateUpdate, Action)
+  @inline def values = js.Array[HistoryItemType](ConfigurationUpdate, StateUpdate, Action)
 }
 
-@js.native
-sealed trait MetricStreamOutputFormat extends js.Any
+type MetricStreamOutputFormat = "json" | "opentelemetry0.7"
 object MetricStreamOutputFormat {
-  val json = "json".asInstanceOf[MetricStreamOutputFormat]
-  val `opentelemetry0.7` = "opentelemetry0.7".asInstanceOf[MetricStreamOutputFormat]
+  val json: "json" = "json"
+  val `opentelemetry0.7`: "opentelemetry0.7" = "opentelemetry0.7"
 
-  @inline def values = js.Array(json, `opentelemetry0.7`)
+  @inline def values = js.Array[MetricStreamOutputFormat](json, `opentelemetry0.7`)
 }
 
-@js.native
-sealed trait RecentlyActive extends js.Any
+type RecentlyActive = "PT3H"
 object RecentlyActive {
-  val PT3H = "PT3H".asInstanceOf[RecentlyActive]
+  val PT3H: "PT3H" = "PT3H"
 
-  @inline def values = js.Array(PT3H)
+  @inline def values = js.Array[RecentlyActive](PT3H)
 }
 
-@js.native
-sealed trait ScanBy extends js.Any
+type ScanBy = "TimestampDescending" | "TimestampAscending"
 object ScanBy {
-  val TimestampDescending = "TimestampDescending".asInstanceOf[ScanBy]
-  val TimestampAscending = "TimestampAscending".asInstanceOf[ScanBy]
+  val TimestampDescending: "TimestampDescending" = "TimestampDescending"
+  val TimestampAscending: "TimestampAscending" = "TimestampAscending"
 
-  @inline def values = js.Array(TimestampDescending, TimestampAscending)
+  @inline def values = js.Array[ScanBy](TimestampDescending, TimestampAscending)
 }
 
-@js.native
-sealed trait StandardUnit extends js.Any
+type StandardUnit = "Seconds" | "Microseconds" | "Milliseconds" | "Bytes" | "Kilobytes" | "Megabytes" | "Gigabytes" | "Terabytes" | "Bits" | "Kilobits" | "Megabits" | "Gigabits" | "Terabits" | "Percent" | "Count" | "Bytes/Second" | "Kilobytes/Second" | "Megabytes/Second" | "Gigabytes/Second" | "Terabytes/Second" | "Bits/Second" | "Kilobits/Second" | "Megabits/Second" | "Gigabits/Second" | "Terabits/Second" | "Count/Second" | "None"
 object StandardUnit {
-  val Seconds = "Seconds".asInstanceOf[StandardUnit]
-  val Microseconds = "Microseconds".asInstanceOf[StandardUnit]
-  val Milliseconds = "Milliseconds".asInstanceOf[StandardUnit]
-  val Bytes = "Bytes".asInstanceOf[StandardUnit]
-  val Kilobytes = "Kilobytes".asInstanceOf[StandardUnit]
-  val Megabytes = "Megabytes".asInstanceOf[StandardUnit]
-  val Gigabytes = "Gigabytes".asInstanceOf[StandardUnit]
-  val Terabytes = "Terabytes".asInstanceOf[StandardUnit]
-  val Bits = "Bits".asInstanceOf[StandardUnit]
-  val Kilobits = "Kilobits".asInstanceOf[StandardUnit]
-  val Megabits = "Megabits".asInstanceOf[StandardUnit]
-  val Gigabits = "Gigabits".asInstanceOf[StandardUnit]
-  val Terabits = "Terabits".asInstanceOf[StandardUnit]
-  val Percent = "Percent".asInstanceOf[StandardUnit]
-  val Count = "Count".asInstanceOf[StandardUnit]
-  val `Bytes/Second` = "Bytes/Second".asInstanceOf[StandardUnit]
-  val `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[StandardUnit]
-  val `Megabytes/Second` = "Megabytes/Second".asInstanceOf[StandardUnit]
-  val `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[StandardUnit]
-  val `Terabytes/Second` = "Terabytes/Second".asInstanceOf[StandardUnit]
-  val `Bits/Second` = "Bits/Second".asInstanceOf[StandardUnit]
-  val `Kilobits/Second` = "Kilobits/Second".asInstanceOf[StandardUnit]
-  val `Megabits/Second` = "Megabits/Second".asInstanceOf[StandardUnit]
-  val `Gigabits/Second` = "Gigabits/Second".asInstanceOf[StandardUnit]
-  val `Terabits/Second` = "Terabits/Second".asInstanceOf[StandardUnit]
-  val `Count/Second` = "Count/Second".asInstanceOf[StandardUnit]
-  val None = "None".asInstanceOf[StandardUnit]
+  val Seconds: "Seconds" = "Seconds"
+  val Microseconds: "Microseconds" = "Microseconds"
+  val Milliseconds: "Milliseconds" = "Milliseconds"
+  val Bytes: "Bytes" = "Bytes"
+  val Kilobytes: "Kilobytes" = "Kilobytes"
+  val Megabytes: "Megabytes" = "Megabytes"
+  val Gigabytes: "Gigabytes" = "Gigabytes"
+  val Terabytes: "Terabytes" = "Terabytes"
+  val Bits: "Bits" = "Bits"
+  val Kilobits: "Kilobits" = "Kilobits"
+  val Megabits: "Megabits" = "Megabits"
+  val Gigabits: "Gigabits" = "Gigabits"
+  val Terabits: "Terabits" = "Terabits"
+  val Percent: "Percent" = "Percent"
+  val Count: "Count" = "Count"
+  val `Bytes/Second`: "Bytes/Second" = "Bytes/Second"
+  val `Kilobytes/Second`: "Kilobytes/Second" = "Kilobytes/Second"
+  val `Megabytes/Second`: "Megabytes/Second" = "Megabytes/Second"
+  val `Gigabytes/Second`: "Gigabytes/Second" = "Gigabytes/Second"
+  val `Terabytes/Second`: "Terabytes/Second" = "Terabytes/Second"
+  val `Bits/Second`: "Bits/Second" = "Bits/Second"
+  val `Kilobits/Second`: "Kilobits/Second" = "Kilobits/Second"
+  val `Megabits/Second`: "Megabits/Second" = "Megabits/Second"
+  val `Gigabits/Second`: "Gigabits/Second" = "Gigabits/Second"
+  val `Terabits/Second`: "Terabits/Second" = "Terabits/Second"
+  val `Count/Second`: "Count/Second" = "Count/Second"
+  val None: "None" = "None"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[StandardUnit](
     Seconds,
     Microseconds,
     Milliseconds,
@@ -142,34 +133,31 @@ object StandardUnit {
   )
 }
 
-@js.native
-sealed trait StateValue extends js.Any
+type StateValue = "OK" | "ALARM" | "INSUFFICIENT_DATA"
 object StateValue {
-  val OK = "OK".asInstanceOf[StateValue]
-  val ALARM = "ALARM".asInstanceOf[StateValue]
-  val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[StateValue]
+  val OK: "OK" = "OK"
+  val ALARM: "ALARM" = "ALARM"
+  val INSUFFICIENT_DATA: "INSUFFICIENT_DATA" = "INSUFFICIENT_DATA"
 
-  @inline def values = js.Array(OK, ALARM, INSUFFICIENT_DATA)
+  @inline def values = js.Array[StateValue](OK, ALARM, INSUFFICIENT_DATA)
 }
 
-@js.native
-sealed trait Statistic extends js.Any
+type Statistic = "SampleCount" | "Average" | "Sum" | "Minimum" | "Maximum"
 object Statistic {
-  val SampleCount = "SampleCount".asInstanceOf[Statistic]
-  val Average = "Average".asInstanceOf[Statistic]
-  val Sum = "Sum".asInstanceOf[Statistic]
-  val Minimum = "Minimum".asInstanceOf[Statistic]
-  val Maximum = "Maximum".asInstanceOf[Statistic]
+  val SampleCount: "SampleCount" = "SampleCount"
+  val Average: "Average" = "Average"
+  val Sum: "Sum" = "Sum"
+  val Minimum: "Minimum" = "Minimum"
+  val Maximum: "Maximum" = "Maximum"
 
-  @inline def values = js.Array(SampleCount, Average, Sum, Minimum, Maximum)
+  @inline def values = js.Array[Statistic](SampleCount, Average, Sum, Minimum, Maximum)
 }
 
-@js.native
-sealed trait StatusCode extends js.Any
+type StatusCode = "Complete" | "InternalError" | "PartialData"
 object StatusCode {
-  val Complete = "Complete".asInstanceOf[StatusCode]
-  val InternalError = "InternalError".asInstanceOf[StatusCode]
-  val PartialData = "PartialData".asInstanceOf[StatusCode]
+  val Complete: "Complete" = "Complete"
+  val InternalError: "InternalError" = "InternalError"
+  val PartialData: "PartialData" = "PartialData"
 
-  @inline def values = js.Array(Complete, InternalError, PartialData)
+  @inline def values = js.Array[StatusCode](Complete, InternalError, PartialData)
 }

@@ -1,158 +1,143 @@
 package facade.amazonaws.services.networkfirewall
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AttachmentStatus extends js.Any
+type AttachmentStatus = "CREATING" | "DELETING" | "SCALING" | "READY"
 object AttachmentStatus {
-  val CREATING = "CREATING".asInstanceOf[AttachmentStatus]
-  val DELETING = "DELETING".asInstanceOf[AttachmentStatus]
-  val SCALING = "SCALING".asInstanceOf[AttachmentStatus]
-  val READY = "READY".asInstanceOf[AttachmentStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val DELETING: "DELETING" = "DELETING"
+  val SCALING: "SCALING" = "SCALING"
+  val READY: "READY" = "READY"
 
-  @inline def values = js.Array(CREATING, DELETING, SCALING, READY)
+  @inline def values = js.Array[AttachmentStatus](CREATING, DELETING, SCALING, READY)
 }
 
-@js.native
-sealed trait ConfigurationSyncState extends js.Any
+type ConfigurationSyncState = "PENDING" | "IN_SYNC"
 object ConfigurationSyncState {
-  val PENDING = "PENDING".asInstanceOf[ConfigurationSyncState]
-  val IN_SYNC = "IN_SYNC".asInstanceOf[ConfigurationSyncState]
+  val PENDING: "PENDING" = "PENDING"
+  val IN_SYNC: "IN_SYNC" = "IN_SYNC"
 
-  @inline def values = js.Array(PENDING, IN_SYNC)
+  @inline def values = js.Array[ConfigurationSyncState](PENDING, IN_SYNC)
 }
 
-@js.native
-sealed trait FirewallStatusValue extends js.Any
+type FirewallStatusValue = "PROVISIONING" | "DELETING" | "READY"
 object FirewallStatusValue {
-  val PROVISIONING = "PROVISIONING".asInstanceOf[FirewallStatusValue]
-  val DELETING = "DELETING".asInstanceOf[FirewallStatusValue]
-  val READY = "READY".asInstanceOf[FirewallStatusValue]
+  val PROVISIONING: "PROVISIONING" = "PROVISIONING"
+  val DELETING: "DELETING" = "DELETING"
+  val READY: "READY" = "READY"
 
-  @inline def values = js.Array(PROVISIONING, DELETING, READY)
+  @inline def values = js.Array[FirewallStatusValue](PROVISIONING, DELETING, READY)
 }
 
-@js.native
-sealed trait GeneratedRulesType extends js.Any
+type GeneratedRulesType = "ALLOWLIST" | "DENYLIST"
 object GeneratedRulesType {
-  val ALLOWLIST = "ALLOWLIST".asInstanceOf[GeneratedRulesType]
-  val DENYLIST = "DENYLIST".asInstanceOf[GeneratedRulesType]
+  val ALLOWLIST: "ALLOWLIST" = "ALLOWLIST"
+  val DENYLIST: "DENYLIST" = "DENYLIST"
 
-  @inline def values = js.Array(ALLOWLIST, DENYLIST)
+  @inline def values = js.Array[GeneratedRulesType](ALLOWLIST, DENYLIST)
 }
 
-@js.native
-sealed trait LogDestinationType extends js.Any
+type LogDestinationType = "S3" | "CloudWatchLogs" | "KinesisDataFirehose"
 object LogDestinationType {
-  val S3 = "S3".asInstanceOf[LogDestinationType]
-  val CloudWatchLogs = "CloudWatchLogs".asInstanceOf[LogDestinationType]
-  val KinesisDataFirehose = "KinesisDataFirehose".asInstanceOf[LogDestinationType]
+  val S3: "S3" = "S3"
+  val CloudWatchLogs: "CloudWatchLogs" = "CloudWatchLogs"
+  val KinesisDataFirehose: "KinesisDataFirehose" = "KinesisDataFirehose"
 
-  @inline def values = js.Array(S3, CloudWatchLogs, KinesisDataFirehose)
+  @inline def values = js.Array[LogDestinationType](S3, CloudWatchLogs, KinesisDataFirehose)
 }
 
-@js.native
-sealed trait LogType extends js.Any
+type LogType = "ALERT" | "FLOW"
 object LogType {
-  val ALERT = "ALERT".asInstanceOf[LogType]
-  val FLOW = "FLOW".asInstanceOf[LogType]
+  val ALERT: "ALERT" = "ALERT"
+  val FLOW: "FLOW" = "FLOW"
 
-  @inline def values = js.Array(ALERT, FLOW)
+  @inline def values = js.Array[LogType](ALERT, FLOW)
 }
 
-@js.native
-sealed trait PerObjectSyncStatus extends js.Any
+type PerObjectSyncStatus = "PENDING" | "IN_SYNC"
 object PerObjectSyncStatus {
-  val PENDING = "PENDING".asInstanceOf[PerObjectSyncStatus]
-  val IN_SYNC = "IN_SYNC".asInstanceOf[PerObjectSyncStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val IN_SYNC: "IN_SYNC" = "IN_SYNC"
 
-  @inline def values = js.Array(PENDING, IN_SYNC)
+  @inline def values = js.Array[PerObjectSyncStatus](PENDING, IN_SYNC)
 }
 
-@js.native
-sealed trait ResourceStatus extends js.Any
+type ResourceStatus = "ACTIVE" | "DELETING"
 object ResourceStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[ResourceStatus]
-  val DELETING = "DELETING".asInstanceOf[ResourceStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(ACTIVE, DELETING)
+  @inline def values = js.Array[ResourceStatus](ACTIVE, DELETING)
 }
 
-@js.native
-sealed trait RuleGroupType extends js.Any
+type RuleGroupType = "STATELESS" | "STATEFUL"
 object RuleGroupType {
-  val STATELESS = "STATELESS".asInstanceOf[RuleGroupType]
-  val STATEFUL = "STATEFUL".asInstanceOf[RuleGroupType]
+  val STATELESS: "STATELESS" = "STATELESS"
+  val STATEFUL: "STATEFUL" = "STATEFUL"
 
-  @inline def values = js.Array(STATELESS, STATEFUL)
+  @inline def values = js.Array[RuleGroupType](STATELESS, STATEFUL)
 }
 
-@js.native
-sealed trait StatefulAction extends js.Any
+type StatefulAction = "PASS" | "DROP" | "ALERT"
 object StatefulAction {
-  val PASS = "PASS".asInstanceOf[StatefulAction]
-  val DROP = "DROP".asInstanceOf[StatefulAction]
-  val ALERT = "ALERT".asInstanceOf[StatefulAction]
+  val PASS: "PASS" = "PASS"
+  val DROP: "DROP" = "DROP"
+  val ALERT: "ALERT" = "ALERT"
 
-  @inline def values = js.Array(PASS, DROP, ALERT)
+  @inline def values = js.Array[StatefulAction](PASS, DROP, ALERT)
 }
 
-@js.native
-sealed trait StatefulRuleDirection extends js.Any
+type StatefulRuleDirection = "FORWARD" | "ANY"
 object StatefulRuleDirection {
-  val FORWARD = "FORWARD".asInstanceOf[StatefulRuleDirection]
-  val ANY = "ANY".asInstanceOf[StatefulRuleDirection]
+  val FORWARD: "FORWARD" = "FORWARD"
+  val ANY: "ANY" = "ANY"
 
-  @inline def values = js.Array(FORWARD, ANY)
+  @inline def values = js.Array[StatefulRuleDirection](FORWARD, ANY)
 }
 
-@js.native
-sealed trait StatefulRuleProtocol extends js.Any
+type StatefulRuleProtocol = "IP" | "TCP" | "UDP" | "ICMP" | "HTTP" | "FTP" | "TLS" | "SMB" | "DNS" | "DCERPC" | "SSH" | "SMTP" | "IMAP" | "MSN" | "KRB5" | "IKEV2" | "TFTP" | "NTP" | "DHCP"
 object StatefulRuleProtocol {
-  val IP = "IP".asInstanceOf[StatefulRuleProtocol]
-  val TCP = "TCP".asInstanceOf[StatefulRuleProtocol]
-  val UDP = "UDP".asInstanceOf[StatefulRuleProtocol]
-  val ICMP = "ICMP".asInstanceOf[StatefulRuleProtocol]
-  val HTTP = "HTTP".asInstanceOf[StatefulRuleProtocol]
-  val FTP = "FTP".asInstanceOf[StatefulRuleProtocol]
-  val TLS = "TLS".asInstanceOf[StatefulRuleProtocol]
-  val SMB = "SMB".asInstanceOf[StatefulRuleProtocol]
-  val DNS = "DNS".asInstanceOf[StatefulRuleProtocol]
-  val DCERPC = "DCERPC".asInstanceOf[StatefulRuleProtocol]
-  val SSH = "SSH".asInstanceOf[StatefulRuleProtocol]
-  val SMTP = "SMTP".asInstanceOf[StatefulRuleProtocol]
-  val IMAP = "IMAP".asInstanceOf[StatefulRuleProtocol]
-  val MSN = "MSN".asInstanceOf[StatefulRuleProtocol]
-  val KRB5 = "KRB5".asInstanceOf[StatefulRuleProtocol]
-  val IKEV2 = "IKEV2".asInstanceOf[StatefulRuleProtocol]
-  val TFTP = "TFTP".asInstanceOf[StatefulRuleProtocol]
-  val NTP = "NTP".asInstanceOf[StatefulRuleProtocol]
-  val DHCP = "DHCP".asInstanceOf[StatefulRuleProtocol]
+  val IP: "IP" = "IP"
+  val TCP: "TCP" = "TCP"
+  val UDP: "UDP" = "UDP"
+  val ICMP: "ICMP" = "ICMP"
+  val HTTP: "HTTP" = "HTTP"
+  val FTP: "FTP" = "FTP"
+  val TLS: "TLS" = "TLS"
+  val SMB: "SMB" = "SMB"
+  val DNS: "DNS" = "DNS"
+  val DCERPC: "DCERPC" = "DCERPC"
+  val SSH: "SSH" = "SSH"
+  val SMTP: "SMTP" = "SMTP"
+  val IMAP: "IMAP" = "IMAP"
+  val MSN: "MSN" = "MSN"
+  val KRB5: "KRB5" = "KRB5"
+  val IKEV2: "IKEV2" = "IKEV2"
+  val TFTP: "TFTP" = "TFTP"
+  val NTP: "NTP" = "NTP"
+  val DHCP: "DHCP" = "DHCP"
 
-  @inline def values = js.Array(IP, TCP, UDP, ICMP, HTTP, FTP, TLS, SMB, DNS, DCERPC, SSH, SMTP, IMAP, MSN, KRB5, IKEV2, TFTP, NTP, DHCP)
+  @inline def values = js.Array[StatefulRuleProtocol](IP, TCP, UDP, ICMP, HTTP, FTP, TLS, SMB, DNS, DCERPC, SSH, SMTP, IMAP, MSN, KRB5, IKEV2, TFTP, NTP, DHCP)
 }
 
-@js.native
-sealed trait TCPFlag extends js.Any
+type TCPFlag = "FIN" | "SYN" | "RST" | "PSH" | "ACK" | "URG" | "ECE" | "CWR"
 object TCPFlag {
-  val FIN = "FIN".asInstanceOf[TCPFlag]
-  val SYN = "SYN".asInstanceOf[TCPFlag]
-  val RST = "RST".asInstanceOf[TCPFlag]
-  val PSH = "PSH".asInstanceOf[TCPFlag]
-  val ACK = "ACK".asInstanceOf[TCPFlag]
-  val URG = "URG".asInstanceOf[TCPFlag]
-  val ECE = "ECE".asInstanceOf[TCPFlag]
-  val CWR = "CWR".asInstanceOf[TCPFlag]
+  val FIN: "FIN" = "FIN"
+  val SYN: "SYN" = "SYN"
+  val RST: "RST" = "RST"
+  val PSH: "PSH" = "PSH"
+  val ACK: "ACK" = "ACK"
+  val URG: "URG" = "URG"
+  val ECE: "ECE" = "ECE"
+  val CWR: "CWR" = "CWR"
 
-  @inline def values = js.Array(FIN, SYN, RST, PSH, ACK, URG, ECE, CWR)
+  @inline def values = js.Array[TCPFlag](FIN, SYN, RST, PSH, ACK, URG, ECE, CWR)
 }
 
-@js.native
-sealed trait TargetType extends js.Any
+type TargetType = "TLS_SNI" | "HTTP_HOST"
 object TargetType {
-  val TLS_SNI = "TLS_SNI".asInstanceOf[TargetType]
-  val HTTP_HOST = "HTTP_HOST".asInstanceOf[TargetType]
+  val TLS_SNI: "TLS_SNI" = "TLS_SNI"
+  val HTTP_HOST: "HTTP_HOST" = "HTTP_HOST"
 
-  @inline def values = js.Array(TLS_SNI, HTTP_HOST)
+  @inline def values = js.Array[TargetType](TLS_SNI, HTTP_HOST)
 }

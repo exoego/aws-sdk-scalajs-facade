@@ -190,17 +190,7 @@ object ContainerServiceStateDetailCode {
   val CERTIFICATE_LIMIT_EXCEEDED = "CERTIFICATE_LIMIT_EXCEEDED".asInstanceOf[ContainerServiceStateDetailCode]
   val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ContainerServiceStateDetailCode]
 
-  @inline def values = js.Array(
-    CREATING_SYSTEM_RESOURCES,
-    CREATING_NETWORK_INFRASTRUCTURE,
-    PROVISIONING_CERTIFICATE,
-    PROVISIONING_SERVICE,
-    CREATING_DEPLOYMENT,
-    EVALUATING_HEALTH_CHECK,
-    ACTIVATING_DEPLOYMENT,
-    CERTIFICATE_LIMIT_EXCEEDED,
-    UNKNOWN_ERROR
-  )
+  @inline def values = js.Array(CREATING_SYSTEM_RESOURCES, CREATING_NETWORK_INFRASTRUCTURE, PROVISIONING_CERTIFICATE, PROVISIONING_SERVICE, CREATING_DEPLOYMENT, EVALUATING_HEALTH_CHECK, ACTIVATING_DEPLOYMENT, CERTIFICATE_LIMIT_EXCEEDED, UNKNOWN_ERROR)
 }
 
 @js.native
@@ -277,23 +267,7 @@ object HeaderEnum {
   val Origin = "Origin".asInstanceOf[HeaderEnum]
   val Referer = "Referer".asInstanceOf[HeaderEnum]
 
-  @inline def values = js.Array(
-    Accept,
-    `Accept-Charset`,
-    `Accept-Datetime`,
-    `Accept-Encoding`,
-    `Accept-Language`,
-    Authorization,
-    `CloudFront-Forwarded-Proto`,
-    `CloudFront-Is-Desktop-Viewer`,
-    `CloudFront-Is-Mobile-Viewer`,
-    `CloudFront-Is-SmartTV-Viewer`,
-    `CloudFront-Is-Tablet-Viewer`,
-    `CloudFront-Viewer-Country`,
-    Host,
-    Origin,
-    Referer
-  )
+  @inline def values = js.Array(Accept, `Accept-Charset`, `Accept-Datetime`, `Accept-Encoding`, `Accept-Language`, Authorization, `CloudFront-Forwarded-Proto`, `CloudFront-Is-Desktop-Viewer`, `CloudFront-Is-Mobile-Viewer`, `CloudFront-Is-SmartTV-Viewer`, `CloudFront-Is-Tablet-Viewer`, `CloudFront-Viewer-Country`, Host, Origin, Referer)
 }
 
 @js.native
@@ -320,19 +294,7 @@ object InstanceHealthReason {
   val `Instance.InvalidState` = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
   val `Instance.IpUnusable` = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
 
-  @inline def values = js.Array(
-    `Lb.RegistrationInProgress`,
-    `Lb.InitialHealthChecking`,
-    `Lb.InternalError`,
-    `Instance.ResponseCodeMismatch`,
-    `Instance.Timeout`,
-    `Instance.FailedHealthChecks`,
-    `Instance.NotRegistered`,
-    `Instance.NotInUse`,
-    `Instance.DeregistrationInProgress`,
-    `Instance.InvalidState`,
-    `Instance.IpUnusable`
-  )
+  @inline def values = js.Array(`Lb.RegistrationInProgress`, `Lb.InitialHealthChecking`, `Lb.InternalError`, `Instance.ResponseCodeMismatch`, `Instance.Timeout`, `Instance.FailedHealthChecks`, `Instance.NotRegistered`, `Instance.NotInUse`, `Instance.DeregistrationInProgress`, `Instance.InvalidState`, `Instance.IpUnusable`)
 }
 
 @js.native
@@ -417,20 +379,7 @@ object LoadBalancerMetricName {
   val RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
   val RequestCount = "RequestCount".asInstanceOf[LoadBalancerMetricName]
 
-  @inline def values = js.Array(
-    ClientTLSNegotiationErrorCount,
-    HealthyHostCount,
-    UnhealthyHostCount,
-    HTTPCode_LB_4XX_Count,
-    HTTPCode_LB_5XX_Count,
-    HTTPCode_Instance_2XX_Count,
-    HTTPCode_Instance_3XX_Count,
-    HTTPCode_Instance_4XX_Count,
-    HTTPCode_Instance_5XX_Count,
-    InstanceResponseTime,
-    RejectedConnectionCount,
-    RequestCount
-  )
+  @inline def values = js.Array(ClientTLSNegotiationErrorCount, HealthyHostCount, UnhealthyHostCount, HTTPCode_LB_4XX_Count, HTTPCode_LB_5XX_Count, HTTPCode_Instance_2XX_Count, HTTPCode_Instance_3XX_Count, HTTPCode_Instance_4XX_Count, HTTPCode_Instance_5XX_Count, InstanceResponseTime, RejectedConnectionCount, RequestCount)
 }
 
 @js.native
@@ -501,18 +450,7 @@ object LoadBalancerTlsCertificateRevocationReason {
   val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
   val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
 
-  @inline def values = js.Array(
-    UNSPECIFIED,
-    KEY_COMPROMISE,
-    CA_COMPROMISE,
-    AFFILIATION_CHANGED,
-    SUPERCEDED,
-    CESSATION_OF_OPERATION,
-    CERTIFICATE_HOLD,
-    REMOVE_FROM_CRL,
-    PRIVILEGE_WITHDRAWN,
-    A_A_COMPROMISE
-  )
+  @inline def values = js.Array(UNSPECIFIED, KEY_COMPROMISE, CA_COMPROMISE, AFFILIATION_CHANGED, SUPERCEDED, CESSATION_OF_OPERATION, CERTIFICATE_HOLD, REMOVE_FROM_CRL, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE)
 }
 
 @js.native
@@ -559,33 +497,7 @@ object MetricName {
   val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[MetricName]
   val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[MetricName]
 
-  @inline def values = js.Array(
-    CPUUtilization,
-    NetworkIn,
-    NetworkOut,
-    StatusCheckFailed,
-    StatusCheckFailed_Instance,
-    StatusCheckFailed_System,
-    ClientTLSNegotiationErrorCount,
-    HealthyHostCount,
-    UnhealthyHostCount,
-    HTTPCode_LB_4XX_Count,
-    HTTPCode_LB_5XX_Count,
-    HTTPCode_Instance_2XX_Count,
-    HTTPCode_Instance_3XX_Count,
-    HTTPCode_Instance_4XX_Count,
-    HTTPCode_Instance_5XX_Count,
-    InstanceResponseTime,
-    RejectedConnectionCount,
-    RequestCount,
-    DatabaseConnections,
-    DiskQueueDepth,
-    FreeStorageSpace,
-    NetworkReceiveThroughput,
-    NetworkTransmitThroughput,
-    BurstCapacityTime,
-    BurstCapacityPercentage
-  )
+  @inline def values = js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, ClientTLSNegotiationErrorCount, HealthyHostCount, UnhealthyHostCount, HTTPCode_LB_4XX_Count, HTTPCode_LB_5XX_Count, HTTPCode_Instance_2XX_Count, HTTPCode_Instance_3XX_Count, HTTPCode_Instance_4XX_Count, HTTPCode_Instance_5XX_Count, InstanceResponseTime, RejectedConnectionCount, RequestCount, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput, BurstCapacityTime, BurstCapacityPercentage)
 }
 
 @js.native
@@ -631,35 +543,7 @@ object MetricUnit {
   val `Count/Second` = "Count/Second".asInstanceOf[MetricUnit]
   val None = "None".asInstanceOf[MetricUnit]
 
-  @inline def values = js.Array(
-    Seconds,
-    Microseconds,
-    Milliseconds,
-    Bytes,
-    Kilobytes,
-    Megabytes,
-    Gigabytes,
-    Terabytes,
-    Bits,
-    Kilobits,
-    Megabits,
-    Gigabits,
-    Terabits,
-    Percent,
-    Count,
-    `Bytes/Second`,
-    `Kilobytes/Second`,
-    `Megabytes/Second`,
-    `Gigabytes/Second`,
-    `Terabytes/Second`,
-    `Bits/Second`,
-    `Kilobits/Second`,
-    `Megabits/Second`,
-    `Gigabits/Second`,
-    `Terabits/Second`,
-    `Count/Second`,
-    None
-  )
+  @inline def values = js.Array(Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, `Bytes/Second`, `Kilobytes/Second`, `Megabytes/Second`, `Gigabytes/Second`, `Terabytes/Second`, `Bits/Second`, `Kilobits/Second`, `Megabits/Second`, `Gigabits/Second`, `Terabits/Second`, `Count/Second`, None)
 }
 
 @js.native
@@ -761,80 +645,7 @@ object OperationType {
   val RegisterContainerImage = "RegisterContainerImage".asInstanceOf[OperationType]
   val DeleteContainerImage = "DeleteContainerImage".asInstanceOf[OperationType]
 
-  @inline def values = js.Array(
-    DeleteKnownHostKeys,
-    DeleteInstance,
-    CreateInstance,
-    StopInstance,
-    StartInstance,
-    RebootInstance,
-    OpenInstancePublicPorts,
-    PutInstancePublicPorts,
-    CloseInstancePublicPorts,
-    AllocateStaticIp,
-    ReleaseStaticIp,
-    AttachStaticIp,
-    DetachStaticIp,
-    UpdateDomainEntry,
-    DeleteDomainEntry,
-    CreateDomain,
-    DeleteDomain,
-    CreateInstanceSnapshot,
-    DeleteInstanceSnapshot,
-    CreateInstancesFromSnapshot,
-    CreateLoadBalancer,
-    DeleteLoadBalancer,
-    AttachInstancesToLoadBalancer,
-    DetachInstancesFromLoadBalancer,
-    UpdateLoadBalancerAttribute,
-    CreateLoadBalancerTlsCertificate,
-    DeleteLoadBalancerTlsCertificate,
-    AttachLoadBalancerTlsCertificate,
-    CreateDisk,
-    DeleteDisk,
-    AttachDisk,
-    DetachDisk,
-    CreateDiskSnapshot,
-    DeleteDiskSnapshot,
-    CreateDiskFromSnapshot,
-    CreateRelationalDatabase,
-    UpdateRelationalDatabase,
-    DeleteRelationalDatabase,
-    CreateRelationalDatabaseFromSnapshot,
-    CreateRelationalDatabaseSnapshot,
-    DeleteRelationalDatabaseSnapshot,
-    UpdateRelationalDatabaseParameters,
-    StartRelationalDatabase,
-    RebootRelationalDatabase,
-    StopRelationalDatabase,
-    EnableAddOn,
-    DisableAddOn,
-    PutAlarm,
-    GetAlarms,
-    DeleteAlarm,
-    TestAlarm,
-    CreateContactMethod,
-    GetContactMethods,
-    SendContactMethodVerification,
-    DeleteContactMethod,
-    CreateDistribution,
-    UpdateDistribution,
-    DeleteDistribution,
-    ResetDistributionCache,
-    AttachCertificateToDistribution,
-    DetachCertificateFromDistribution,
-    UpdateDistributionBundle,
-    SetIpAddressType,
-    CreateCertificate,
-    DeleteCertificate,
-    CreateContainerService,
-    UpdateContainerService,
-    DeleteContainerService,
-    CreateContainerServiceDeployment,
-    CreateContainerServiceRegistryLogin,
-    RegisterContainerImage,
-    DeleteContainerImage
-  )
+  @inline def values = js.Array(DeleteKnownHostKeys, DeleteInstance, CreateInstance, StopInstance, StartInstance, RebootInstance, OpenInstancePublicPorts, PutInstancePublicPorts, CloseInstancePublicPorts, AllocateStaticIp, ReleaseStaticIp, AttachStaticIp, DetachStaticIp, UpdateDomainEntry, DeleteDomainEntry, CreateDomain, DeleteDomain, CreateInstanceSnapshot, DeleteInstanceSnapshot, CreateInstancesFromSnapshot, CreateLoadBalancer, DeleteLoadBalancer, AttachInstancesToLoadBalancer, DetachInstancesFromLoadBalancer, UpdateLoadBalancerAttribute, CreateLoadBalancerTlsCertificate, DeleteLoadBalancerTlsCertificate, AttachLoadBalancerTlsCertificate, CreateDisk, DeleteDisk, AttachDisk, DetachDisk, CreateDiskSnapshot, DeleteDiskSnapshot, CreateDiskFromSnapshot, CreateRelationalDatabase, UpdateRelationalDatabase, DeleteRelationalDatabase, CreateRelationalDatabaseFromSnapshot, CreateRelationalDatabaseSnapshot, DeleteRelationalDatabaseSnapshot, UpdateRelationalDatabaseParameters, StartRelationalDatabase, RebootRelationalDatabase, StopRelationalDatabase, EnableAddOn, DisableAddOn, PutAlarm, GetAlarms, DeleteAlarm, TestAlarm, CreateContactMethod, GetContactMethods, SendContactMethodVerification, DeleteContactMethod, CreateDistribution, UpdateDistribution, DeleteDistribution, ResetDistributionCache, AttachCertificateToDistribution, DetachCertificateFromDistribution, UpdateDistributionBundle, SetIpAddressType, CreateCertificate, DeleteCertificate, CreateContainerService, UpdateContainerService, DeleteContainerService, CreateContainerServiceDeployment, CreateContainerServiceRegistryLogin, RegisterContainerImage, DeleteContainerImage)
 }
 
 @js.native
@@ -903,22 +714,7 @@ object RegionName {
   val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
   val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[RegionName]
 
-  @inline def values = js.Array(
-    `us-east-1`,
-    `us-east-2`,
-    `us-west-1`,
-    `us-west-2`,
-    `eu-west-1`,
-    `eu-west-2`,
-    `eu-west-3`,
-    `eu-central-1`,
-    `ca-central-1`,
-    `ap-south-1`,
-    `ap-southeast-1`,
-    `ap-southeast-2`,
-    `ap-northeast-1`,
-    `ap-northeast-2`
-  )
+  @inline def values = js.Array(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-central-1`, `ca-central-1`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ap-northeast-2`)
 }
 
 @js.native
@@ -986,27 +782,7 @@ object ResourceType {
   val Distribution = "Distribution".asInstanceOf[ResourceType]
   val Certificate = "Certificate".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(
-    ContainerService,
-    Instance,
-    StaticIp,
-    KeyPair,
-    InstanceSnapshot,
-    Domain,
-    PeeredVpc,
-    LoadBalancer,
-    LoadBalancerTlsCertificate,
-    Disk,
-    DiskSnapshot,
-    RelationalDatabase,
-    RelationalDatabaseSnapshot,
-    ExportSnapshotRecord,
-    CloudFormationStackRecord,
-    Alarm,
-    ContactMethod,
-    Distribution,
-    Certificate
-  )
+  @inline def values = js.Array(ContainerService, Instance, StaticIp, KeyPair, InstanceSnapshot, Domain, PeeredVpc, LoadBalancer, LoadBalancerTlsCertificate, Disk, DiskSnapshot, RelationalDatabase, RelationalDatabaseSnapshot, ExportSnapshotRecord, CloudFormationStackRecord, Alarm, ContactMethod, Distribution, Certificate)
 }
 
 @js.native
@@ -1019,3 +795,4 @@ object TreatMissingData {
 
   @inline def values = js.Array(breaching, notBreaching, ignore, missing)
 }
+

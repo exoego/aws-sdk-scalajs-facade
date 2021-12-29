@@ -183,31 +183,7 @@ object PiiEntityType {
   val MAC_ADDRESS = "MAC_ADDRESS".asInstanceOf[PiiEntityType]
   val ALL = "ALL".asInstanceOf[PiiEntityType]
 
-  @inline def values = js.Array(
-    BANK_ACCOUNT_NUMBER,
-    BANK_ROUTING,
-    CREDIT_DEBIT_NUMBER,
-    CREDIT_DEBIT_CVV,
-    CREDIT_DEBIT_EXPIRY,
-    PIN,
-    EMAIL,
-    ADDRESS,
-    NAME,
-    PHONE,
-    SSN,
-    DATE_TIME,
-    PASSPORT_NUMBER,
-    DRIVER_ID,
-    URL,
-    AGE,
-    USERNAME,
-    PASSWORD,
-    AWS_ACCESS_KEY,
-    AWS_SECRET_KEY,
-    IP_ADDRESS,
-    MAC_ADDRESS,
-    ALL
-  )
+  @inline def values = js.Array(BANK_ACCOUNT_NUMBER, BANK_ROUTING, CREDIT_DEBIT_NUMBER, CREDIT_DEBIT_CVV, CREDIT_DEBIT_EXPIRY, PIN, EMAIL, ADDRESS, NAME, PHONE, SSN, DATE_TIME, PASSPORT_NUMBER, DRIVER_ID, URL, AGE, USERNAME, PASSWORD, AWS_ACCESS_KEY, AWS_SECRET_KEY, IP_ADDRESS, MAC_ADDRESS, ALL)
 }
 
 @js.native
@@ -233,3 +209,4 @@ object SyntaxLanguageCode {
 
   @inline def values = js.Array(en, es, fr, de, it, pt)
 }
+

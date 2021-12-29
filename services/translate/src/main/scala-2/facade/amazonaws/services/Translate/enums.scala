@@ -63,3 +63,4 @@ object TerminologyDataFormat {
 
   @inline def values = js.Array(CSV, TMX)
 }
+

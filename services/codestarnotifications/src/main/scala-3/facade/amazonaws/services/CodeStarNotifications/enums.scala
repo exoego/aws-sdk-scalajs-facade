@@ -1,64 +1,57 @@
 package facade.amazonaws.services.codestarnotifications
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DetailType extends js.Any
+type DetailType = "BASIC" | "FULL"
 object DetailType {
-  val BASIC = "BASIC".asInstanceOf[DetailType]
-  val FULL = "FULL".asInstanceOf[DetailType]
+  val BASIC: "BASIC" = "BASIC"
+  val FULL: "FULL" = "FULL"
 
-  @inline def values = js.Array(BASIC, FULL)
+  @inline def values = js.Array[DetailType](BASIC, FULL)
 }
 
-@js.native
-sealed trait ListEventTypesFilterName extends js.Any
+type ListEventTypesFilterName = "RESOURCE_TYPE" | "SERVICE_NAME"
 object ListEventTypesFilterName {
-  val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[ListEventTypesFilterName]
-  val SERVICE_NAME = "SERVICE_NAME".asInstanceOf[ListEventTypesFilterName]
+  val RESOURCE_TYPE: "RESOURCE_TYPE" = "RESOURCE_TYPE"
+  val SERVICE_NAME: "SERVICE_NAME" = "SERVICE_NAME"
 
-  @inline def values = js.Array(RESOURCE_TYPE, SERVICE_NAME)
+  @inline def values = js.Array[ListEventTypesFilterName](RESOURCE_TYPE, SERVICE_NAME)
 }
 
-@js.native
-sealed trait ListNotificationRulesFilterName extends js.Any
+type ListNotificationRulesFilterName = "EVENT_TYPE_ID" | "CREATED_BY" | "RESOURCE" | "TARGET_ADDRESS"
 object ListNotificationRulesFilterName {
-  val EVENT_TYPE_ID = "EVENT_TYPE_ID".asInstanceOf[ListNotificationRulesFilterName]
-  val CREATED_BY = "CREATED_BY".asInstanceOf[ListNotificationRulesFilterName]
-  val RESOURCE = "RESOURCE".asInstanceOf[ListNotificationRulesFilterName]
-  val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListNotificationRulesFilterName]
+  val EVENT_TYPE_ID: "EVENT_TYPE_ID" = "EVENT_TYPE_ID"
+  val CREATED_BY: "CREATED_BY" = "CREATED_BY"
+  val RESOURCE: "RESOURCE" = "RESOURCE"
+  val TARGET_ADDRESS: "TARGET_ADDRESS" = "TARGET_ADDRESS"
 
-  @inline def values = js.Array(EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS)
+  @inline def values = js.Array[ListNotificationRulesFilterName](EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS)
 }
 
-@js.native
-sealed trait ListTargetsFilterName extends js.Any
+type ListTargetsFilterName = "TARGET_TYPE" | "TARGET_ADDRESS" | "TARGET_STATUS"
 object ListTargetsFilterName {
-  val TARGET_TYPE = "TARGET_TYPE".asInstanceOf[ListTargetsFilterName]
-  val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListTargetsFilterName]
-  val TARGET_STATUS = "TARGET_STATUS".asInstanceOf[ListTargetsFilterName]
+  val TARGET_TYPE: "TARGET_TYPE" = "TARGET_TYPE"
+  val TARGET_ADDRESS: "TARGET_ADDRESS" = "TARGET_ADDRESS"
+  val TARGET_STATUS: "TARGET_STATUS" = "TARGET_STATUS"
 
-  @inline def values = js.Array(TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS)
+  @inline def values = js.Array[ListTargetsFilterName](TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS)
 }
 
-@js.native
-sealed trait NotificationRuleStatus extends js.Any
+type NotificationRuleStatus = "ENABLED" | "DISABLED"
 object NotificationRuleStatus {
-  val ENABLED = "ENABLED".asInstanceOf[NotificationRuleStatus]
-  val DISABLED = "DISABLED".asInstanceOf[NotificationRuleStatus]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[NotificationRuleStatus](ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait TargetStatus extends js.Any
+type TargetStatus = "PENDING" | "ACTIVE" | "UNREACHABLE" | "INACTIVE" | "DEACTIVATED"
 object TargetStatus {
-  val PENDING = "PENDING".asInstanceOf[TargetStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[TargetStatus]
-  val UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[TargetStatus]
-  val DEACTIVATED = "DEACTIVATED".asInstanceOf[TargetStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val UNREACHABLE: "UNREACHABLE" = "UNREACHABLE"
+  val INACTIVE: "INACTIVE" = "INACTIVE"
+  val DEACTIVATED: "DEACTIVATED" = "DEACTIVATED"
 
-  @inline def values = js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED)
+  @inline def values = js.Array[TargetStatus](PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED)
 }

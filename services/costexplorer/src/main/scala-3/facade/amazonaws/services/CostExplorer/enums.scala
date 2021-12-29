@@ -1,128 +1,117 @@
 package facade.amazonaws.services.costexplorer
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccountScope extends js.Any
+type AccountScope = "PAYER" | "LINKED"
 object AccountScope {
-  val PAYER = "PAYER".asInstanceOf[AccountScope]
-  val LINKED = "LINKED".asInstanceOf[AccountScope]
+  val PAYER: "PAYER" = "PAYER"
+  val LINKED: "LINKED" = "LINKED"
 
-  @inline def values = js.Array(PAYER, LINKED)
+  @inline def values = js.Array[AccountScope](PAYER, LINKED)
 }
 
-@js.native
-sealed trait AnomalyFeedbackType extends js.Any
+type AnomalyFeedbackType = "YES" | "NO" | "PLANNED_ACTIVITY"
 object AnomalyFeedbackType {
-  val YES = "YES".asInstanceOf[AnomalyFeedbackType]
-  val NO = "NO".asInstanceOf[AnomalyFeedbackType]
-  val PLANNED_ACTIVITY = "PLANNED_ACTIVITY".asInstanceOf[AnomalyFeedbackType]
+  val YES: "YES" = "YES"
+  val NO: "NO" = "NO"
+  val PLANNED_ACTIVITY: "PLANNED_ACTIVITY" = "PLANNED_ACTIVITY"
 
-  @inline def values = js.Array(YES, NO, PLANNED_ACTIVITY)
+  @inline def values = js.Array[AnomalyFeedbackType](YES, NO, PLANNED_ACTIVITY)
 }
 
-@js.native
-sealed trait AnomalySubscriptionFrequency extends js.Any
+type AnomalySubscriptionFrequency = "DAILY" | "IMMEDIATE" | "WEEKLY"
 object AnomalySubscriptionFrequency {
-  val DAILY = "DAILY".asInstanceOf[AnomalySubscriptionFrequency]
-  val IMMEDIATE = "IMMEDIATE".asInstanceOf[AnomalySubscriptionFrequency]
-  val WEEKLY = "WEEKLY".asInstanceOf[AnomalySubscriptionFrequency]
+  val DAILY: "DAILY" = "DAILY"
+  val IMMEDIATE: "IMMEDIATE" = "IMMEDIATE"
+  val WEEKLY: "WEEKLY" = "WEEKLY"
 
-  @inline def values = js.Array(DAILY, IMMEDIATE, WEEKLY)
+  @inline def values = js.Array[AnomalySubscriptionFrequency](DAILY, IMMEDIATE, WEEKLY)
 }
 
-@js.native
-sealed trait Context extends js.Any
+type Context = "COST_AND_USAGE" | "RESERVATIONS" | "SAVINGS_PLANS"
 object Context {
-  val COST_AND_USAGE = "COST_AND_USAGE".asInstanceOf[Context]
-  val RESERVATIONS = "RESERVATIONS".asInstanceOf[Context]
-  val SAVINGS_PLANS = "SAVINGS_PLANS".asInstanceOf[Context]
+  val COST_AND_USAGE: "COST_AND_USAGE" = "COST_AND_USAGE"
+  val RESERVATIONS: "RESERVATIONS" = "RESERVATIONS"
+  val SAVINGS_PLANS: "SAVINGS_PLANS" = "SAVINGS_PLANS"
 
-  @inline def values = js.Array(COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS)
+  @inline def values = js.Array[Context](COST_AND_USAGE, RESERVATIONS, SAVINGS_PLANS)
 }
 
-@js.native
-sealed trait CostCategoryInheritedValueDimensionName extends js.Any
+type CostCategoryInheritedValueDimensionName = "LINKED_ACCOUNT_NAME" | "TAG"
 object CostCategoryInheritedValueDimensionName {
-  val LINKED_ACCOUNT_NAME = "LINKED_ACCOUNT_NAME".asInstanceOf[CostCategoryInheritedValueDimensionName]
-  val TAG = "TAG".asInstanceOf[CostCategoryInheritedValueDimensionName]
+  val LINKED_ACCOUNT_NAME: "LINKED_ACCOUNT_NAME" = "LINKED_ACCOUNT_NAME"
+  val TAG: "TAG" = "TAG"
 
-  @inline def values = js.Array(LINKED_ACCOUNT_NAME, TAG)
+  @inline def values = js.Array[CostCategoryInheritedValueDimensionName](LINKED_ACCOUNT_NAME, TAG)
 }
 
-@js.native
-sealed trait CostCategoryRuleType extends js.Any
+type CostCategoryRuleType = "REGULAR" | "INHERITED_VALUE"
 object CostCategoryRuleType {
-  val REGULAR = "REGULAR".asInstanceOf[CostCategoryRuleType]
-  val INHERITED_VALUE = "INHERITED_VALUE".asInstanceOf[CostCategoryRuleType]
+  val REGULAR: "REGULAR" = "REGULAR"
+  val INHERITED_VALUE: "INHERITED_VALUE" = "INHERITED_VALUE"
 
-  @inline def values = js.Array(REGULAR, INHERITED_VALUE)
+  @inline def values = js.Array[CostCategoryRuleType](REGULAR, INHERITED_VALUE)
 }
 
 /** The rule schema version in this particular Cost Category.
   */
-@js.native
-sealed trait CostCategoryRuleVersion extends js.Any
+type CostCategoryRuleVersion = "CostCategoryExpression.v1"
 object CostCategoryRuleVersion {
-  val `CostCategoryExpression.v1` = "CostCategoryExpression.v1".asInstanceOf[CostCategoryRuleVersion]
+  val `CostCategoryExpression.v1`: "CostCategoryExpression.v1" = "CostCategoryExpression.v1"
 
-  @inline def values = js.Array(`CostCategoryExpression.v1`)
+  @inline def values = js.Array[CostCategoryRuleVersion](`CostCategoryExpression.v1`)
 }
 
-@js.native
-sealed trait CostCategoryStatus extends js.Any
+type CostCategoryStatus = "PROCESSING" | "APPLIED"
 object CostCategoryStatus {
-  val PROCESSING = "PROCESSING".asInstanceOf[CostCategoryStatus]
-  val APPLIED = "APPLIED".asInstanceOf[CostCategoryStatus]
+  val PROCESSING: "PROCESSING" = "PROCESSING"
+  val APPLIED: "APPLIED" = "APPLIED"
 
-  @inline def values = js.Array(PROCESSING, APPLIED)
+  @inline def values = js.Array[CostCategoryStatus](PROCESSING, APPLIED)
 }
 
-@js.native
-sealed trait CostCategoryStatusComponent extends js.Any
+type CostCategoryStatusComponent = "COST_EXPLORER"
 object CostCategoryStatusComponent {
-  val COST_EXPLORER = "COST_EXPLORER".asInstanceOf[CostCategoryStatusComponent]
+  val COST_EXPLORER: "COST_EXPLORER" = "COST_EXPLORER"
 
-  @inline def values = js.Array(COST_EXPLORER)
+  @inline def values = js.Array[CostCategoryStatusComponent](COST_EXPLORER)
 }
 
-@js.native
-sealed trait Dimension extends js.Any
+type Dimension = "AZ" | "INSTANCE_TYPE" | "LINKED_ACCOUNT" | "LINKED_ACCOUNT_NAME" | "OPERATION" | "PURCHASE_TYPE" | "REGION" | "SERVICE" | "SERVICE_CODE" | "USAGE_TYPE" | "USAGE_TYPE_GROUP" | "RECORD_TYPE" | "OPERATING_SYSTEM" | "TENANCY" | "SCOPE" | "PLATFORM" | "SUBSCRIPTION_ID" | "LEGAL_ENTITY_NAME" | "DEPLOYMENT_OPTION" | "DATABASE_ENGINE" | "CACHE_ENGINE" | "INSTANCE_TYPE_FAMILY" | "BILLING_ENTITY" | "RESERVATION_ID" | "RESOURCE_ID" | "RIGHTSIZING_TYPE" | "SAVINGS_PLANS_TYPE" | "SAVINGS_PLAN_ARN" | "PAYMENT_OPTION" | "AGREEMENT_END_DATE_TIME_AFTER" | "AGREEMENT_END_DATE_TIME_BEFORE"
 object Dimension {
-  val AZ = "AZ".asInstanceOf[Dimension]
-  val INSTANCE_TYPE = "INSTANCE_TYPE".asInstanceOf[Dimension]
-  val LINKED_ACCOUNT = "LINKED_ACCOUNT".asInstanceOf[Dimension]
-  val LINKED_ACCOUNT_NAME = "LINKED_ACCOUNT_NAME".asInstanceOf[Dimension]
-  val OPERATION = "OPERATION".asInstanceOf[Dimension]
-  val PURCHASE_TYPE = "PURCHASE_TYPE".asInstanceOf[Dimension]
-  val REGION = "REGION".asInstanceOf[Dimension]
-  val SERVICE = "SERVICE".asInstanceOf[Dimension]
-  val SERVICE_CODE = "SERVICE_CODE".asInstanceOf[Dimension]
-  val USAGE_TYPE = "USAGE_TYPE".asInstanceOf[Dimension]
-  val USAGE_TYPE_GROUP = "USAGE_TYPE_GROUP".asInstanceOf[Dimension]
-  val RECORD_TYPE = "RECORD_TYPE".asInstanceOf[Dimension]
-  val OPERATING_SYSTEM = "OPERATING_SYSTEM".asInstanceOf[Dimension]
-  val TENANCY = "TENANCY".asInstanceOf[Dimension]
-  val SCOPE = "SCOPE".asInstanceOf[Dimension]
-  val PLATFORM = "PLATFORM".asInstanceOf[Dimension]
-  val SUBSCRIPTION_ID = "SUBSCRIPTION_ID".asInstanceOf[Dimension]
-  val LEGAL_ENTITY_NAME = "LEGAL_ENTITY_NAME".asInstanceOf[Dimension]
-  val DEPLOYMENT_OPTION = "DEPLOYMENT_OPTION".asInstanceOf[Dimension]
-  val DATABASE_ENGINE = "DATABASE_ENGINE".asInstanceOf[Dimension]
-  val CACHE_ENGINE = "CACHE_ENGINE".asInstanceOf[Dimension]
-  val INSTANCE_TYPE_FAMILY = "INSTANCE_TYPE_FAMILY".asInstanceOf[Dimension]
-  val BILLING_ENTITY = "BILLING_ENTITY".asInstanceOf[Dimension]
-  val RESERVATION_ID = "RESERVATION_ID".asInstanceOf[Dimension]
-  val RESOURCE_ID = "RESOURCE_ID".asInstanceOf[Dimension]
-  val RIGHTSIZING_TYPE = "RIGHTSIZING_TYPE".asInstanceOf[Dimension]
-  val SAVINGS_PLANS_TYPE = "SAVINGS_PLANS_TYPE".asInstanceOf[Dimension]
-  val SAVINGS_PLAN_ARN = "SAVINGS_PLAN_ARN".asInstanceOf[Dimension]
-  val PAYMENT_OPTION = "PAYMENT_OPTION".asInstanceOf[Dimension]
-  val AGREEMENT_END_DATE_TIME_AFTER = "AGREEMENT_END_DATE_TIME_AFTER".asInstanceOf[Dimension]
-  val AGREEMENT_END_DATE_TIME_BEFORE = "AGREEMENT_END_DATE_TIME_BEFORE".asInstanceOf[Dimension]
+  val AZ: "AZ" = "AZ"
+  val INSTANCE_TYPE: "INSTANCE_TYPE" = "INSTANCE_TYPE"
+  val LINKED_ACCOUNT: "LINKED_ACCOUNT" = "LINKED_ACCOUNT"
+  val LINKED_ACCOUNT_NAME: "LINKED_ACCOUNT_NAME" = "LINKED_ACCOUNT_NAME"
+  val OPERATION: "OPERATION" = "OPERATION"
+  val PURCHASE_TYPE: "PURCHASE_TYPE" = "PURCHASE_TYPE"
+  val REGION: "REGION" = "REGION"
+  val SERVICE: "SERVICE" = "SERVICE"
+  val SERVICE_CODE: "SERVICE_CODE" = "SERVICE_CODE"
+  val USAGE_TYPE: "USAGE_TYPE" = "USAGE_TYPE"
+  val USAGE_TYPE_GROUP: "USAGE_TYPE_GROUP" = "USAGE_TYPE_GROUP"
+  val RECORD_TYPE: "RECORD_TYPE" = "RECORD_TYPE"
+  val OPERATING_SYSTEM: "OPERATING_SYSTEM" = "OPERATING_SYSTEM"
+  val TENANCY: "TENANCY" = "TENANCY"
+  val SCOPE: "SCOPE" = "SCOPE"
+  val PLATFORM: "PLATFORM" = "PLATFORM"
+  val SUBSCRIPTION_ID: "SUBSCRIPTION_ID" = "SUBSCRIPTION_ID"
+  val LEGAL_ENTITY_NAME: "LEGAL_ENTITY_NAME" = "LEGAL_ENTITY_NAME"
+  val DEPLOYMENT_OPTION: "DEPLOYMENT_OPTION" = "DEPLOYMENT_OPTION"
+  val DATABASE_ENGINE: "DATABASE_ENGINE" = "DATABASE_ENGINE"
+  val CACHE_ENGINE: "CACHE_ENGINE" = "CACHE_ENGINE"
+  val INSTANCE_TYPE_FAMILY: "INSTANCE_TYPE_FAMILY" = "INSTANCE_TYPE_FAMILY"
+  val BILLING_ENTITY: "BILLING_ENTITY" = "BILLING_ENTITY"
+  val RESERVATION_ID: "RESERVATION_ID" = "RESERVATION_ID"
+  val RESOURCE_ID: "RESOURCE_ID" = "RESOURCE_ID"
+  val RIGHTSIZING_TYPE: "RIGHTSIZING_TYPE" = "RIGHTSIZING_TYPE"
+  val SAVINGS_PLANS_TYPE: "SAVINGS_PLANS_TYPE" = "SAVINGS_PLANS_TYPE"
+  val SAVINGS_PLAN_ARN: "SAVINGS_PLAN_ARN" = "SAVINGS_PLAN_ARN"
+  val PAYMENT_OPTION: "PAYMENT_OPTION" = "PAYMENT_OPTION"
+  val AGREEMENT_END_DATE_TIME_AFTER: "AGREEMENT_END_DATE_TIME_AFTER" = "AGREEMENT_END_DATE_TIME_AFTER"
+  val AGREEMENT_END_DATE_TIME_BEFORE: "AGREEMENT_END_DATE_TIME_BEFORE" = "AGREEMENT_END_DATE_TIME_BEFORE"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[Dimension](
     AZ,
     INSTANCE_TYPE,
     LINKED_ACCOUNT,
@@ -157,187 +146,169 @@ object Dimension {
   )
 }
 
-@js.native
-sealed trait Granularity extends js.Any
+type Granularity = "DAILY" | "MONTHLY" | "HOURLY"
 object Granularity {
-  val DAILY = "DAILY".asInstanceOf[Granularity]
-  val MONTHLY = "MONTHLY".asInstanceOf[Granularity]
-  val HOURLY = "HOURLY".asInstanceOf[Granularity]
+  val DAILY: "DAILY" = "DAILY"
+  val MONTHLY: "MONTHLY" = "MONTHLY"
+  val HOURLY: "HOURLY" = "HOURLY"
 
-  @inline def values = js.Array(DAILY, MONTHLY, HOURLY)
+  @inline def values = js.Array[Granularity](DAILY, MONTHLY, HOURLY)
 }
 
-@js.native
-sealed trait GroupDefinitionType extends js.Any
+type GroupDefinitionType = "DIMENSION" | "TAG" | "COST_CATEGORY"
 object GroupDefinitionType {
-  val DIMENSION = "DIMENSION".asInstanceOf[GroupDefinitionType]
-  val TAG = "TAG".asInstanceOf[GroupDefinitionType]
-  val COST_CATEGORY = "COST_CATEGORY".asInstanceOf[GroupDefinitionType]
+  val DIMENSION: "DIMENSION" = "DIMENSION"
+  val TAG: "TAG" = "TAG"
+  val COST_CATEGORY: "COST_CATEGORY" = "COST_CATEGORY"
 
-  @inline def values = js.Array(DIMENSION, TAG, COST_CATEGORY)
+  @inline def values = js.Array[GroupDefinitionType](DIMENSION, TAG, COST_CATEGORY)
 }
 
-@js.native
-sealed trait LookbackPeriodInDays extends js.Any
+type LookbackPeriodInDays = "SEVEN_DAYS" | "THIRTY_DAYS" | "SIXTY_DAYS"
 object LookbackPeriodInDays {
-  val SEVEN_DAYS = "SEVEN_DAYS".asInstanceOf[LookbackPeriodInDays]
-  val THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[LookbackPeriodInDays]
-  val SIXTY_DAYS = "SIXTY_DAYS".asInstanceOf[LookbackPeriodInDays]
+  val SEVEN_DAYS: "SEVEN_DAYS" = "SEVEN_DAYS"
+  val THIRTY_DAYS: "THIRTY_DAYS" = "THIRTY_DAYS"
+  val SIXTY_DAYS: "SIXTY_DAYS" = "SIXTY_DAYS"
 
-  @inline def values = js.Array(SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS)
+  @inline def values = js.Array[LookbackPeriodInDays](SEVEN_DAYS, THIRTY_DAYS, SIXTY_DAYS)
 }
 
-@js.native
-sealed trait MatchOption extends js.Any
+type MatchOption = "EQUALS" | "ABSENT" | "STARTS_WITH" | "ENDS_WITH" | "CONTAINS" | "CASE_SENSITIVE" | "CASE_INSENSITIVE"
 object MatchOption {
-  val EQUALS = "EQUALS".asInstanceOf[MatchOption]
-  val ABSENT = "ABSENT".asInstanceOf[MatchOption]
-  val STARTS_WITH = "STARTS_WITH".asInstanceOf[MatchOption]
-  val ENDS_WITH = "ENDS_WITH".asInstanceOf[MatchOption]
-  val CONTAINS = "CONTAINS".asInstanceOf[MatchOption]
-  val CASE_SENSITIVE = "CASE_SENSITIVE".asInstanceOf[MatchOption]
-  val CASE_INSENSITIVE = "CASE_INSENSITIVE".asInstanceOf[MatchOption]
+  val EQUALS: "EQUALS" = "EQUALS"
+  val ABSENT: "ABSENT" = "ABSENT"
+  val STARTS_WITH: "STARTS_WITH" = "STARTS_WITH"
+  val ENDS_WITH: "ENDS_WITH" = "ENDS_WITH"
+  val CONTAINS: "CONTAINS" = "CONTAINS"
+  val CASE_SENSITIVE: "CASE_SENSITIVE" = "CASE_SENSITIVE"
+  val CASE_INSENSITIVE: "CASE_INSENSITIVE" = "CASE_INSENSITIVE"
 
-  @inline def values = js.Array(EQUALS, ABSENT, STARTS_WITH, ENDS_WITH, CONTAINS, CASE_SENSITIVE, CASE_INSENSITIVE)
+  @inline def values = js.Array[MatchOption](EQUALS, ABSENT, STARTS_WITH, ENDS_WITH, CONTAINS, CASE_SENSITIVE, CASE_INSENSITIVE)
 }
 
-@js.native
-sealed trait Metric extends js.Any
+type Metric = "BLENDED_COST" | "UNBLENDED_COST" | "AMORTIZED_COST" | "NET_UNBLENDED_COST" | "NET_AMORTIZED_COST" | "USAGE_QUANTITY" | "NORMALIZED_USAGE_AMOUNT"
 object Metric {
-  val BLENDED_COST = "BLENDED_COST".asInstanceOf[Metric]
-  val UNBLENDED_COST = "UNBLENDED_COST".asInstanceOf[Metric]
-  val AMORTIZED_COST = "AMORTIZED_COST".asInstanceOf[Metric]
-  val NET_UNBLENDED_COST = "NET_UNBLENDED_COST".asInstanceOf[Metric]
-  val NET_AMORTIZED_COST = "NET_AMORTIZED_COST".asInstanceOf[Metric]
-  val USAGE_QUANTITY = "USAGE_QUANTITY".asInstanceOf[Metric]
-  val NORMALIZED_USAGE_AMOUNT = "NORMALIZED_USAGE_AMOUNT".asInstanceOf[Metric]
+  val BLENDED_COST: "BLENDED_COST" = "BLENDED_COST"
+  val UNBLENDED_COST: "UNBLENDED_COST" = "UNBLENDED_COST"
+  val AMORTIZED_COST: "AMORTIZED_COST" = "AMORTIZED_COST"
+  val NET_UNBLENDED_COST: "NET_UNBLENDED_COST" = "NET_UNBLENDED_COST"
+  val NET_AMORTIZED_COST: "NET_AMORTIZED_COST" = "NET_AMORTIZED_COST"
+  val USAGE_QUANTITY: "USAGE_QUANTITY" = "USAGE_QUANTITY"
+  val NORMALIZED_USAGE_AMOUNT: "NORMALIZED_USAGE_AMOUNT" = "NORMALIZED_USAGE_AMOUNT"
 
-  @inline def values = js.Array(BLENDED_COST, UNBLENDED_COST, AMORTIZED_COST, NET_UNBLENDED_COST, NET_AMORTIZED_COST, USAGE_QUANTITY, NORMALIZED_USAGE_AMOUNT)
+  @inline def values = js.Array[Metric](BLENDED_COST, UNBLENDED_COST, AMORTIZED_COST, NET_UNBLENDED_COST, NET_AMORTIZED_COST, USAGE_QUANTITY, NORMALIZED_USAGE_AMOUNT)
 }
 
-@js.native
-sealed trait MonitorDimension extends js.Any
+type MonitorDimension = "SERVICE"
 object MonitorDimension {
-  val SERVICE = "SERVICE".asInstanceOf[MonitorDimension]
+  val SERVICE: "SERVICE" = "SERVICE"
 
-  @inline def values = js.Array(SERVICE)
+  @inline def values = js.Array[MonitorDimension](SERVICE)
 }
 
-@js.native
-sealed trait MonitorType extends js.Any
+type MonitorType = "DIMENSIONAL" | "CUSTOM"
 object MonitorType {
-  val DIMENSIONAL = "DIMENSIONAL".asInstanceOf[MonitorType]
-  val CUSTOM = "CUSTOM".asInstanceOf[MonitorType]
+  val DIMENSIONAL: "DIMENSIONAL" = "DIMENSIONAL"
+  val CUSTOM: "CUSTOM" = "CUSTOM"
 
-  @inline def values = js.Array(DIMENSIONAL, CUSTOM)
+  @inline def values = js.Array[MonitorType](DIMENSIONAL, CUSTOM)
 }
 
-@js.native
-sealed trait NumericOperator extends js.Any
+type NumericOperator = "EQUAL" | "GREATER_THAN_OR_EQUAL" | "LESS_THAN_OR_EQUAL" | "GREATER_THAN" | "LESS_THAN" | "BETWEEN"
 object NumericOperator {
-  val EQUAL = "EQUAL".asInstanceOf[NumericOperator]
-  val GREATER_THAN_OR_EQUAL = "GREATER_THAN_OR_EQUAL".asInstanceOf[NumericOperator]
-  val LESS_THAN_OR_EQUAL = "LESS_THAN_OR_EQUAL".asInstanceOf[NumericOperator]
-  val GREATER_THAN = "GREATER_THAN".asInstanceOf[NumericOperator]
-  val LESS_THAN = "LESS_THAN".asInstanceOf[NumericOperator]
-  val BETWEEN = "BETWEEN".asInstanceOf[NumericOperator]
+  val EQUAL: "EQUAL" = "EQUAL"
+  val GREATER_THAN_OR_EQUAL: "GREATER_THAN_OR_EQUAL" = "GREATER_THAN_OR_EQUAL"
+  val LESS_THAN_OR_EQUAL: "LESS_THAN_OR_EQUAL" = "LESS_THAN_OR_EQUAL"
+  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  val BETWEEN: "BETWEEN" = "BETWEEN"
 
-  @inline def values = js.Array(EQUAL, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, BETWEEN)
+  @inline def values = js.Array[NumericOperator](EQUAL, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, BETWEEN)
 }
 
-@js.native
-sealed trait OfferingClass extends js.Any
+type OfferingClass = "STANDARD" | "CONVERTIBLE"
 object OfferingClass {
-  val STANDARD = "STANDARD".asInstanceOf[OfferingClass]
-  val CONVERTIBLE = "CONVERTIBLE".asInstanceOf[OfferingClass]
+  val STANDARD: "STANDARD" = "STANDARD"
+  val CONVERTIBLE: "CONVERTIBLE" = "CONVERTIBLE"
 
-  @inline def values = js.Array(STANDARD, CONVERTIBLE)
+  @inline def values = js.Array[OfferingClass](STANDARD, CONVERTIBLE)
 }
 
-@js.native
-sealed trait PaymentOption extends js.Any
+type PaymentOption = "NO_UPFRONT" | "PARTIAL_UPFRONT" | "ALL_UPFRONT" | "LIGHT_UTILIZATION" | "MEDIUM_UTILIZATION" | "HEAVY_UTILIZATION"
 object PaymentOption {
-  val NO_UPFRONT = "NO_UPFRONT".asInstanceOf[PaymentOption]
-  val PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[PaymentOption]
-  val ALL_UPFRONT = "ALL_UPFRONT".asInstanceOf[PaymentOption]
-  val LIGHT_UTILIZATION = "LIGHT_UTILIZATION".asInstanceOf[PaymentOption]
-  val MEDIUM_UTILIZATION = "MEDIUM_UTILIZATION".asInstanceOf[PaymentOption]
-  val HEAVY_UTILIZATION = "HEAVY_UTILIZATION".asInstanceOf[PaymentOption]
+  val NO_UPFRONT: "NO_UPFRONT" = "NO_UPFRONT"
+  val PARTIAL_UPFRONT: "PARTIAL_UPFRONT" = "PARTIAL_UPFRONT"
+  val ALL_UPFRONT: "ALL_UPFRONT" = "ALL_UPFRONT"
+  val LIGHT_UTILIZATION: "LIGHT_UTILIZATION" = "LIGHT_UTILIZATION"
+  val MEDIUM_UTILIZATION: "MEDIUM_UTILIZATION" = "MEDIUM_UTILIZATION"
+  val HEAVY_UTILIZATION: "HEAVY_UTILIZATION" = "HEAVY_UTILIZATION"
 
-  @inline def values = js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION)
+  @inline def values = js.Array[PaymentOption](NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION)
 }
 
-@js.native
-sealed trait RecommendationTarget extends js.Any
+type RecommendationTarget = "SAME_INSTANCE_FAMILY" | "CROSS_INSTANCE_FAMILY"
 object RecommendationTarget {
-  val SAME_INSTANCE_FAMILY = "SAME_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
-  val CROSS_INSTANCE_FAMILY = "CROSS_INSTANCE_FAMILY".asInstanceOf[RecommendationTarget]
+  val SAME_INSTANCE_FAMILY: "SAME_INSTANCE_FAMILY" = "SAME_INSTANCE_FAMILY"
+  val CROSS_INSTANCE_FAMILY: "CROSS_INSTANCE_FAMILY" = "CROSS_INSTANCE_FAMILY"
 
-  @inline def values = js.Array(SAME_INSTANCE_FAMILY, CROSS_INSTANCE_FAMILY)
+  @inline def values = js.Array[RecommendationTarget](SAME_INSTANCE_FAMILY, CROSS_INSTANCE_FAMILY)
 }
 
-@js.native
-sealed trait RightsizingType extends js.Any
+type RightsizingType = "TERMINATE" | "MODIFY"
 object RightsizingType {
-  val TERMINATE = "TERMINATE".asInstanceOf[RightsizingType]
-  val MODIFY = "MODIFY".asInstanceOf[RightsizingType]
+  val TERMINATE: "TERMINATE" = "TERMINATE"
+  val MODIFY: "MODIFY" = "MODIFY"
 
-  @inline def values = js.Array(TERMINATE, MODIFY)
+  @inline def values = js.Array[RightsizingType](TERMINATE, MODIFY)
 }
 
-@js.native
-sealed trait SavingsPlansDataType extends js.Any
+type SavingsPlansDataType = "ATTRIBUTES" | "UTILIZATION" | "AMORTIZED_COMMITMENT" | "SAVINGS"
 object SavingsPlansDataType {
-  val ATTRIBUTES = "ATTRIBUTES".asInstanceOf[SavingsPlansDataType]
-  val UTILIZATION = "UTILIZATION".asInstanceOf[SavingsPlansDataType]
-  val AMORTIZED_COMMITMENT = "AMORTIZED_COMMITMENT".asInstanceOf[SavingsPlansDataType]
-  val SAVINGS = "SAVINGS".asInstanceOf[SavingsPlansDataType]
+  val ATTRIBUTES: "ATTRIBUTES" = "ATTRIBUTES"
+  val UTILIZATION: "UTILIZATION" = "UTILIZATION"
+  val AMORTIZED_COMMITMENT: "AMORTIZED_COMMITMENT" = "AMORTIZED_COMMITMENT"
+  val SAVINGS: "SAVINGS" = "SAVINGS"
 
-  @inline def values = js.Array(ATTRIBUTES, UTILIZATION, AMORTIZED_COMMITMENT, SAVINGS)
+  @inline def values = js.Array[SavingsPlansDataType](ATTRIBUTES, UTILIZATION, AMORTIZED_COMMITMENT, SAVINGS)
 }
 
-@js.native
-sealed trait SortOrder extends js.Any
+type SortOrder = "ASCENDING" | "DESCENDING"
 object SortOrder {
-  val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-  val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+  val ASCENDING: "ASCENDING" = "ASCENDING"
+  val DESCENDING: "DESCENDING" = "DESCENDING"
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values = js.Array[SortOrder](ASCENDING, DESCENDING)
 }
 
-@js.native
-sealed trait SubscriberStatus extends js.Any
+type SubscriberStatus = "CONFIRMED" | "DECLINED"
 object SubscriberStatus {
-  val CONFIRMED = "CONFIRMED".asInstanceOf[SubscriberStatus]
-  val DECLINED = "DECLINED".asInstanceOf[SubscriberStatus]
+  val CONFIRMED: "CONFIRMED" = "CONFIRMED"
+  val DECLINED: "DECLINED" = "DECLINED"
 
-  @inline def values = js.Array(CONFIRMED, DECLINED)
+  @inline def values = js.Array[SubscriberStatus](CONFIRMED, DECLINED)
 }
 
-@js.native
-sealed trait SubscriberType extends js.Any
+type SubscriberType = "EMAIL" | "SNS"
 object SubscriberType {
-  val EMAIL = "EMAIL".asInstanceOf[SubscriberType]
-  val SNS = "SNS".asInstanceOf[SubscriberType]
+  val EMAIL: "EMAIL" = "EMAIL"
+  val SNS: "SNS" = "SNS"
 
-  @inline def values = js.Array(EMAIL, SNS)
+  @inline def values = js.Array[SubscriberType](EMAIL, SNS)
 }
 
-@js.native
-sealed trait SupportedSavingsPlansType extends js.Any
+type SupportedSavingsPlansType = "COMPUTE_SP" | "EC2_INSTANCE_SP" | "SAGEMAKER_SP"
 object SupportedSavingsPlansType {
-  val COMPUTE_SP = "COMPUTE_SP".asInstanceOf[SupportedSavingsPlansType]
-  val EC2_INSTANCE_SP = "EC2_INSTANCE_SP".asInstanceOf[SupportedSavingsPlansType]
-  val SAGEMAKER_SP = "SAGEMAKER_SP".asInstanceOf[SupportedSavingsPlansType]
+  val COMPUTE_SP: "COMPUTE_SP" = "COMPUTE_SP"
+  val EC2_INSTANCE_SP: "EC2_INSTANCE_SP" = "EC2_INSTANCE_SP"
+  val SAGEMAKER_SP: "SAGEMAKER_SP" = "SAGEMAKER_SP"
 
-  @inline def values = js.Array(COMPUTE_SP, EC2_INSTANCE_SP, SAGEMAKER_SP)
+  @inline def values = js.Array[SupportedSavingsPlansType](COMPUTE_SP, EC2_INSTANCE_SP, SAGEMAKER_SP)
 }
 
-@js.native
-sealed trait TermInYears extends js.Any
+type TermInYears = "ONE_YEAR" | "THREE_YEARS"
 object TermInYears {
-  val ONE_YEAR = "ONE_YEAR".asInstanceOf[TermInYears]
-  val THREE_YEARS = "THREE_YEARS".asInstanceOf[TermInYears]
+  val ONE_YEAR: "ONE_YEAR" = "ONE_YEAR"
+  val THREE_YEARS: "THREE_YEARS" = "THREE_YEARS"
 
-  @inline def values = js.Array(ONE_YEAR, THREE_YEARS)
+  @inline def values = js.Array[TermInYears](ONE_YEAR, THREE_YEARS)
 }

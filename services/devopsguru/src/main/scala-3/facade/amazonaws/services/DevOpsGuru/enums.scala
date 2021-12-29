@@ -1,127 +1,114 @@
 package facade.amazonaws.services.devopsguru
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AnomalySeverity extends js.Any
+type AnomalySeverity = "LOW" | "MEDIUM" | "HIGH"
 object AnomalySeverity {
-  val LOW = "LOW".asInstanceOf[AnomalySeverity]
-  val MEDIUM = "MEDIUM".asInstanceOf[AnomalySeverity]
-  val HIGH = "HIGH".asInstanceOf[AnomalySeverity]
+  val LOW: "LOW" = "LOW"
+  val MEDIUM: "MEDIUM" = "MEDIUM"
+  val HIGH: "HIGH" = "HIGH"
 
-  @inline def values = js.Array(LOW, MEDIUM, HIGH)
+  @inline def values = js.Array[AnomalySeverity](LOW, MEDIUM, HIGH)
 }
 
-@js.native
-sealed trait AnomalyStatus extends js.Any
+type AnomalyStatus = "ONGOING" | "CLOSED"
 object AnomalyStatus {
-  val ONGOING = "ONGOING".asInstanceOf[AnomalyStatus]
-  val CLOSED = "CLOSED".asInstanceOf[AnomalyStatus]
+  val ONGOING: "ONGOING" = "ONGOING"
+  val CLOSED: "CLOSED" = "CLOSED"
 
-  @inline def values = js.Array(ONGOING, CLOSED)
+  @inline def values = js.Array[AnomalyStatus](ONGOING, CLOSED)
 }
 
-@js.native
-sealed trait CloudWatchMetricsStat extends js.Any
+type CloudWatchMetricsStat = "Sum" | "Average" | "SampleCount" | "Minimum" | "Maximum" | "p99" | "p90" | "p50"
 object CloudWatchMetricsStat {
-  val Sum = "Sum".asInstanceOf[CloudWatchMetricsStat]
-  val Average = "Average".asInstanceOf[CloudWatchMetricsStat]
-  val SampleCount = "SampleCount".asInstanceOf[CloudWatchMetricsStat]
-  val Minimum = "Minimum".asInstanceOf[CloudWatchMetricsStat]
-  val Maximum = "Maximum".asInstanceOf[CloudWatchMetricsStat]
-  val p99 = "p99".asInstanceOf[CloudWatchMetricsStat]
-  val p90 = "p90".asInstanceOf[CloudWatchMetricsStat]
-  val p50 = "p50".asInstanceOf[CloudWatchMetricsStat]
+  val Sum: "Sum" = "Sum"
+  val Average: "Average" = "Average"
+  val SampleCount: "SampleCount" = "SampleCount"
+  val Minimum: "Minimum" = "Minimum"
+  val Maximum: "Maximum" = "Maximum"
+  val p99: "p99" = "p99"
+  val p90: "p90" = "p90"
+  val p50: "p50" = "p50"
 
-  @inline def values = js.Array(Sum, Average, SampleCount, Minimum, Maximum, p99, p90, p50)
+  @inline def values = js.Array[CloudWatchMetricsStat](Sum, Average, SampleCount, Minimum, Maximum, p99, p90, p50)
 }
 
-@js.native
-sealed trait EventClass extends js.Any
+type EventClass = "INFRASTRUCTURE" | "DEPLOYMENT" | "SECURITY_CHANGE" | "CONFIG_CHANGE" | "SCHEMA_CHANGE"
 object EventClass {
-  val INFRASTRUCTURE = "INFRASTRUCTURE".asInstanceOf[EventClass]
-  val DEPLOYMENT = "DEPLOYMENT".asInstanceOf[EventClass]
-  val SECURITY_CHANGE = "SECURITY_CHANGE".asInstanceOf[EventClass]
-  val CONFIG_CHANGE = "CONFIG_CHANGE".asInstanceOf[EventClass]
-  val SCHEMA_CHANGE = "SCHEMA_CHANGE".asInstanceOf[EventClass]
+  val INFRASTRUCTURE: "INFRASTRUCTURE" = "INFRASTRUCTURE"
+  val DEPLOYMENT: "DEPLOYMENT" = "DEPLOYMENT"
+  val SECURITY_CHANGE: "SECURITY_CHANGE" = "SECURITY_CHANGE"
+  val CONFIG_CHANGE: "CONFIG_CHANGE" = "CONFIG_CHANGE"
+  val SCHEMA_CHANGE: "SCHEMA_CHANGE" = "SCHEMA_CHANGE"
 
-  @inline def values = js.Array(INFRASTRUCTURE, DEPLOYMENT, SECURITY_CHANGE, CONFIG_CHANGE, SCHEMA_CHANGE)
+  @inline def values = js.Array[EventClass](INFRASTRUCTURE, DEPLOYMENT, SECURITY_CHANGE, CONFIG_CHANGE, SCHEMA_CHANGE)
 }
 
-@js.native
-sealed trait EventDataSource extends js.Any
+type EventDataSource = "AWS_CLOUD_TRAIL" | "AWS_CODE_DEPLOY"
 object EventDataSource {
-  val AWS_CLOUD_TRAIL = "AWS_CLOUD_TRAIL".asInstanceOf[EventDataSource]
-  val AWS_CODE_DEPLOY = "AWS_CODE_DEPLOY".asInstanceOf[EventDataSource]
+  val AWS_CLOUD_TRAIL: "AWS_CLOUD_TRAIL" = "AWS_CLOUD_TRAIL"
+  val AWS_CODE_DEPLOY: "AWS_CODE_DEPLOY" = "AWS_CODE_DEPLOY"
 
-  @inline def values = js.Array(AWS_CLOUD_TRAIL, AWS_CODE_DEPLOY)
+  @inline def values = js.Array[EventDataSource](AWS_CLOUD_TRAIL, AWS_CODE_DEPLOY)
 }
 
-@js.native
-sealed trait InsightFeedbackOption extends js.Any
+type InsightFeedbackOption = "VALID_COLLECTION" | "RECOMMENDATION_USEFUL" | "ALERT_TOO_SENSITIVE" | "DATA_NOISY_ANOMALY" | "DATA_INCORRECT"
 object InsightFeedbackOption {
-  val VALID_COLLECTION = "VALID_COLLECTION".asInstanceOf[InsightFeedbackOption]
-  val RECOMMENDATION_USEFUL = "RECOMMENDATION_USEFUL".asInstanceOf[InsightFeedbackOption]
-  val ALERT_TOO_SENSITIVE = "ALERT_TOO_SENSITIVE".asInstanceOf[InsightFeedbackOption]
-  val DATA_NOISY_ANOMALY = "DATA_NOISY_ANOMALY".asInstanceOf[InsightFeedbackOption]
-  val DATA_INCORRECT = "DATA_INCORRECT".asInstanceOf[InsightFeedbackOption]
+  val VALID_COLLECTION: "VALID_COLLECTION" = "VALID_COLLECTION"
+  val RECOMMENDATION_USEFUL: "RECOMMENDATION_USEFUL" = "RECOMMENDATION_USEFUL"
+  val ALERT_TOO_SENSITIVE: "ALERT_TOO_SENSITIVE" = "ALERT_TOO_SENSITIVE"
+  val DATA_NOISY_ANOMALY: "DATA_NOISY_ANOMALY" = "DATA_NOISY_ANOMALY"
+  val DATA_INCORRECT: "DATA_INCORRECT" = "DATA_INCORRECT"
 
-  @inline def values = js.Array(VALID_COLLECTION, RECOMMENDATION_USEFUL, ALERT_TOO_SENSITIVE, DATA_NOISY_ANOMALY, DATA_INCORRECT)
+  @inline def values = js.Array[InsightFeedbackOption](VALID_COLLECTION, RECOMMENDATION_USEFUL, ALERT_TOO_SENSITIVE, DATA_NOISY_ANOMALY, DATA_INCORRECT)
 }
 
-@js.native
-sealed trait InsightSeverity extends js.Any
+type InsightSeverity = "LOW" | "MEDIUM" | "HIGH"
 object InsightSeverity {
-  val LOW = "LOW".asInstanceOf[InsightSeverity]
-  val MEDIUM = "MEDIUM".asInstanceOf[InsightSeverity]
-  val HIGH = "HIGH".asInstanceOf[InsightSeverity]
+  val LOW: "LOW" = "LOW"
+  val MEDIUM: "MEDIUM" = "MEDIUM"
+  val HIGH: "HIGH" = "HIGH"
 
-  @inline def values = js.Array(LOW, MEDIUM, HIGH)
+  @inline def values = js.Array[InsightSeverity](LOW, MEDIUM, HIGH)
 }
 
-@js.native
-sealed trait InsightStatus extends js.Any
+type InsightStatus = "ONGOING" | "CLOSED"
 object InsightStatus {
-  val ONGOING = "ONGOING".asInstanceOf[InsightStatus]
-  val CLOSED = "CLOSED".asInstanceOf[InsightStatus]
+  val ONGOING: "ONGOING" = "ONGOING"
+  val CLOSED: "CLOSED" = "CLOSED"
 
-  @inline def values = js.Array(ONGOING, CLOSED)
+  @inline def values = js.Array[InsightStatus](ONGOING, CLOSED)
 }
 
-@js.native
-sealed trait InsightType extends js.Any
+type InsightType = "REACTIVE" | "PROACTIVE"
 object InsightType {
-  val REACTIVE = "REACTIVE".asInstanceOf[InsightType]
-  val PROACTIVE = "PROACTIVE".asInstanceOf[InsightType]
+  val REACTIVE: "REACTIVE" = "REACTIVE"
+  val PROACTIVE: "PROACTIVE" = "PROACTIVE"
 
-  @inline def values = js.Array(REACTIVE, PROACTIVE)
+  @inline def values = js.Array[InsightType](REACTIVE, PROACTIVE)
 }
 
 /** Specifies if DevOps Guru is enabled to create an AWS Systems Manager OpsItem for each created insight.
   */
-@js.native
-sealed trait OptInStatus extends js.Any
+type OptInStatus = "ENABLED" | "DISABLED"
 object OptInStatus {
-  val ENABLED = "ENABLED".asInstanceOf[OptInStatus]
-  val DISABLED = "DISABLED".asInstanceOf[OptInStatus]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[OptInStatus](ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait ResourceCollectionType extends js.Any
+type ResourceCollectionType = "AWS_CLOUD_FORMATION"
 object ResourceCollectionType {
-  val AWS_CLOUD_FORMATION = "AWS_CLOUD_FORMATION".asInstanceOf[ResourceCollectionType]
+  val AWS_CLOUD_FORMATION: "AWS_CLOUD_FORMATION" = "AWS_CLOUD_FORMATION"
 
-  @inline def values = js.Array(AWS_CLOUD_FORMATION)
+  @inline def values = js.Array[ResourceCollectionType](AWS_CLOUD_FORMATION)
 }
 
-@js.native
-sealed trait UpdateResourceCollectionAction extends js.Any
+type UpdateResourceCollectionAction = "ADD" | "REMOVE"
 object UpdateResourceCollectionAction {
-  val ADD = "ADD".asInstanceOf[UpdateResourceCollectionAction]
-  val REMOVE = "REMOVE".asInstanceOf[UpdateResourceCollectionAction]
+  val ADD: "ADD" = "ADD"
+  val REMOVE: "REMOVE" = "REMOVE"
 
-  @inline def values = js.Array(ADD, REMOVE)
+  @inline def values = js.Array[UpdateResourceCollectionAction](ADD, REMOVE)
 }

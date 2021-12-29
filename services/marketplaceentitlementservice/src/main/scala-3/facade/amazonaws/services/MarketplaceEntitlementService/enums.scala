@@ -1,13 +1,11 @@
 package facade.amazonaws.services.marketplaceentitlementservice
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait GetEntitlementFilterName extends js.Any
+type GetEntitlementFilterName = "CUSTOMER_IDENTIFIER" | "DIMENSION"
 object GetEntitlementFilterName {
-  val CUSTOMER_IDENTIFIER = "CUSTOMER_IDENTIFIER".asInstanceOf[GetEntitlementFilterName]
-  val DIMENSION = "DIMENSION".asInstanceOf[GetEntitlementFilterName]
+  val CUSTOMER_IDENTIFIER: "CUSTOMER_IDENTIFIER" = "CUSTOMER_IDENTIFIER"
+  val DIMENSION: "DIMENSION" = "DIMENSION"
 
-  @inline def values = js.Array(CUSTOMER_IDENTIFIER, DIMENSION)
+  @inline def values = js.Array[GetEntitlementFilterName](CUSTOMER_IDENTIFIER, DIMENSION)
 }

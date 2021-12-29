@@ -60,30 +60,7 @@ object LifecycleState {
   val `Warmed:Stopped` = "Warmed:Stopped".asInstanceOf[LifecycleState]
   val `Warmed:Running` = "Warmed:Running".asInstanceOf[LifecycleState]
 
-  @inline def values = js.Array(
-    Pending,
-    `Pending:Wait`,
-    `Pending:Proceed`,
-    Quarantined,
-    InService,
-    Terminating,
-    `Terminating:Wait`,
-    `Terminating:Proceed`,
-    Terminated,
-    Detaching,
-    Detached,
-    EnteringStandby,
-    Standby,
-    `Warmed:Pending`,
-    `Warmed:Pending:Wait`,
-    `Warmed:Pending:Proceed`,
-    `Warmed:Terminating`,
-    `Warmed:Terminating:Wait`,
-    `Warmed:Terminating:Proceed`,
-    `Warmed:Terminated`,
-    `Warmed:Stopped`,
-    `Warmed:Running`
-  )
+  @inline def values = js.Array(Pending, `Pending:Wait`, `Pending:Proceed`, Quarantined, InService, Terminating, `Terminating:Wait`, `Terminating:Proceed`, Terminated, Detaching, Detached, EnteringStandby, Standby, `Warmed:Pending`, `Warmed:Pending:Wait`, `Warmed:Pending:Proceed`, `Warmed:Terminating`, `Warmed:Terminating:Wait`, `Warmed:Terminating:Proceed`, `Warmed:Terminated`, `Warmed:Stopped`, `Warmed:Running`)
 }
 
 @js.native
@@ -133,20 +110,7 @@ object ScalingActivityStatusCode {
   val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
   val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
 
-  @inline def values = js.Array(
-    PendingSpotBidPlacement,
-    WaitingForSpotInstanceRequestId,
-    WaitingForSpotInstanceId,
-    WaitingForInstanceId,
-    PreInService,
-    InProgress,
-    WaitingForELBConnectionDraining,
-    MidLifecycleAction,
-    WaitingForInstanceWarmup,
-    Successful,
-    Failed,
-    Cancelled
-  )
+  @inline def values = js.Array(PendingSpotBidPlacement, WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, WaitingForELBConnectionDraining, MidLifecycleAction, WaitingForInstanceWarmup, Successful, Failed, Cancelled)
 }
 
 @js.native
@@ -165,3 +129,4 @@ object WarmPoolStatus {
 
   @inline def values = js.Array(PendingDelete)
 }
+

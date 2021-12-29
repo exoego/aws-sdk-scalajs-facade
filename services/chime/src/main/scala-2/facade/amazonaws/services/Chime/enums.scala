@@ -125,23 +125,7 @@ object ErrorCode {
   val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
   val PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
 
-  @inline def values = js.Array(
-    BadRequest,
-    Conflict,
-    Forbidden,
-    NotFound,
-    PreconditionFailed,
-    ResourceLimitExceeded,
-    ServiceFailure,
-    AccessDenied,
-    ServiceUnavailable,
-    Throttled,
-    Throttling,
-    Unauthorized,
-    Unprocessable,
-    VoiceConnectorGroupAssociationsExist,
-    PhoneNumberAssociationsExist
-  )
+  @inline def values = js.Array(BadRequest, Conflict, Forbidden, NotFound, PreconditionFailed, ResourceLimitExceeded, ServiceFailure, AccessDenied, ServiceUnavailable, Throttled, Throttling, Unauthorized, Unprocessable, VoiceConnectorGroupAssociationsExist, PhoneNumberAssociationsExist)
 }
 
 @js.native
@@ -342,3 +326,4 @@ object VoiceConnectorAwsRegion {
 
   @inline def values = js.Array(`us-east-1`, `us-west-2`)
 }
+

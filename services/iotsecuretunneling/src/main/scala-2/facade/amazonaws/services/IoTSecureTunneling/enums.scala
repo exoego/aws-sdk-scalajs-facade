@@ -20,3 +20,4 @@ object TunnelStatus {
 
   @inline def values = js.Array(OPEN, CLOSED)
 }
+

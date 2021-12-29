@@ -74,63 +74,7 @@ object HistoryEventType {
   val WaitStateEntered = "WaitStateEntered".asInstanceOf[HistoryEventType]
   val WaitStateExited = "WaitStateExited".asInstanceOf[HistoryEventType]
 
-  @inline def values = js.Array(
-    ActivityFailed,
-    ActivityScheduled,
-    ActivityScheduleFailed,
-    ActivityStarted,
-    ActivitySucceeded,
-    ActivityTimedOut,
-    ChoiceStateEntered,
-    ChoiceStateExited,
-    ExecutionAborted,
-    ExecutionFailed,
-    ExecutionStarted,
-    ExecutionSucceeded,
-    ExecutionTimedOut,
-    FailStateEntered,
-    LambdaFunctionFailed,
-    LambdaFunctionScheduled,
-    LambdaFunctionScheduleFailed,
-    LambdaFunctionStarted,
-    LambdaFunctionStartFailed,
-    LambdaFunctionSucceeded,
-    LambdaFunctionTimedOut,
-    MapIterationAborted,
-    MapIterationFailed,
-    MapIterationStarted,
-    MapIterationSucceeded,
-    MapStateAborted,
-    MapStateEntered,
-    MapStateExited,
-    MapStateFailed,
-    MapStateStarted,
-    MapStateSucceeded,
-    ParallelStateAborted,
-    ParallelStateEntered,
-    ParallelStateExited,
-    ParallelStateFailed,
-    ParallelStateStarted,
-    ParallelStateSucceeded,
-    PassStateEntered,
-    PassStateExited,
-    SucceedStateEntered,
-    SucceedStateExited,
-    TaskFailed,
-    TaskScheduled,
-    TaskStarted,
-    TaskStartFailed,
-    TaskStateAborted,
-    TaskStateEntered,
-    TaskStateExited,
-    TaskSubmitFailed,
-    TaskSubmitted,
-    TaskSucceeded,
-    TaskTimedOut,
-    WaitStateAborted,
-    WaitStateEntered,
-    WaitStateExited
-  )
+  @inline def values = js.Array(ActivityFailed, ActivityScheduled, ActivityScheduleFailed, ActivityStarted, ActivitySucceeded, ActivityTimedOut, ChoiceStateEntered, ChoiceStateExited, ExecutionAborted, ExecutionFailed, ExecutionStarted, ExecutionSucceeded, ExecutionTimedOut, FailStateEntered, LambdaFunctionFailed, LambdaFunctionScheduled, LambdaFunctionScheduleFailed, LambdaFunctionStarted, LambdaFunctionStartFailed, LambdaFunctionSucceeded, LambdaFunctionTimedOut, MapIterationAborted, MapIterationFailed, MapIterationStarted, MapIterationSucceeded, MapStateAborted, MapStateEntered, MapStateExited, MapStateFailed, MapStateStarted, MapStateSucceeded, ParallelStateAborted, ParallelStateEntered, ParallelStateExited, ParallelStateFailed, ParallelStateStarted, ParallelStateSucceeded, PassStateEntered, PassStateExited, SucceedStateEntered, SucceedStateExited, TaskFailed, TaskScheduled, TaskStarted, TaskStartFailed, TaskStateAborted, TaskStateEntered, TaskStateExited, TaskSubmitFailed, TaskSubmitted, TaskSucceeded, TaskTimedOut, WaitStateAborted, WaitStateEntered, WaitStateExited)
 }
 
 @js.native
@@ -171,3 +115,4 @@ object SyncExecutionStatus {
 
   @inline def values = js.Array(SUCCEEDED, FAILED, TIMED_OUT)
 }
+

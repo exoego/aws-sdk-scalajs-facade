@@ -1,183 +1,165 @@
 package facade.amazonaws.services.rds
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ActivityStreamMode extends js.Any
+type ActivityStreamMode = "sync" | "async"
 object ActivityStreamMode {
-  val sync = "sync".asInstanceOf[ActivityStreamMode]
-  val async = "async".asInstanceOf[ActivityStreamMode]
+  val sync: "sync" = "sync"
+  val async: "async" = "async"
 
-  @inline def values = js.Array(sync, async)
+  @inline def values = js.Array[ActivityStreamMode](sync, async)
 }
 
-@js.native
-sealed trait ActivityStreamStatus extends js.Any
+type ActivityStreamStatus = "stopped" | "starting" | "started" | "stopping"
 object ActivityStreamStatus {
-  val stopped = "stopped".asInstanceOf[ActivityStreamStatus]
-  val starting = "starting".asInstanceOf[ActivityStreamStatus]
-  val started = "started".asInstanceOf[ActivityStreamStatus]
-  val stopping = "stopping".asInstanceOf[ActivityStreamStatus]
+  val stopped: "stopped" = "stopped"
+  val starting: "starting" = "starting"
+  val started: "started" = "started"
+  val stopping: "stopping" = "stopping"
 
-  @inline def values = js.Array(stopped, starting, started, stopping)
+  @inline def values = js.Array[ActivityStreamStatus](stopped, starting, started, stopping)
 }
 
-@js.native
-sealed trait ApplyMethod extends js.Any
+type ApplyMethod = "immediate" | "pending-reboot"
 object ApplyMethod {
-  val immediate = "immediate".asInstanceOf[ApplyMethod]
-  val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
+  val immediate: "immediate" = "immediate"
+  val `pending-reboot`: "pending-reboot" = "pending-reboot"
 
-  @inline def values = js.Array(immediate, `pending-reboot`)
+  @inline def values = js.Array[ApplyMethod](immediate, `pending-reboot`)
 }
 
-@js.native
-sealed trait AuthScheme extends js.Any
+type AuthScheme = "SECRETS"
 object AuthScheme {
-  val SECRETS = "SECRETS".asInstanceOf[AuthScheme]
+  val SECRETS: "SECRETS" = "SECRETS"
 
-  @inline def values = js.Array(SECRETS)
+  @inline def values = js.Array[AuthScheme](SECRETS)
 }
 
-@js.native
-sealed trait DBProxyEndpointStatus extends js.Any
+type DBProxyEndpointStatus = "available" | "modifying" | "incompatible-network" | "insufficient-resource-limits" | "creating" | "deleting"
 object DBProxyEndpointStatus {
-  val available = "available".asInstanceOf[DBProxyEndpointStatus]
-  val modifying = "modifying".asInstanceOf[DBProxyEndpointStatus]
-  val `incompatible-network` = "incompatible-network".asInstanceOf[DBProxyEndpointStatus]
-  val `insufficient-resource-limits` = "insufficient-resource-limits".asInstanceOf[DBProxyEndpointStatus]
-  val creating = "creating".asInstanceOf[DBProxyEndpointStatus]
-  val deleting = "deleting".asInstanceOf[DBProxyEndpointStatus]
+  val available: "available" = "available"
+  val modifying: "modifying" = "modifying"
+  val `incompatible-network`: "incompatible-network" = "incompatible-network"
+  val `insufficient-resource-limits`: "insufficient-resource-limits" = "insufficient-resource-limits"
+  val creating: "creating" = "creating"
+  val deleting: "deleting" = "deleting"
 
-  @inline def values = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting)
+  @inline def values = js.Array[DBProxyEndpointStatus](available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting)
 }
 
-@js.native
-sealed trait DBProxyEndpointTargetRole extends js.Any
+type DBProxyEndpointTargetRole = "READ_WRITE" | "READ_ONLY"
 object DBProxyEndpointTargetRole {
-  val READ_WRITE = "READ_WRITE".asInstanceOf[DBProxyEndpointTargetRole]
-  val READ_ONLY = "READ_ONLY".asInstanceOf[DBProxyEndpointTargetRole]
+  val READ_WRITE: "READ_WRITE" = "READ_WRITE"
+  val READ_ONLY: "READ_ONLY" = "READ_ONLY"
 
-  @inline def values = js.Array(READ_WRITE, READ_ONLY)
+  @inline def values = js.Array[DBProxyEndpointTargetRole](READ_WRITE, READ_ONLY)
 }
 
-@js.native
-sealed trait DBProxyStatus extends js.Any
+type DBProxyStatus = "available" | "modifying" | "incompatible-network" | "insufficient-resource-limits" | "creating" | "deleting" | "suspended" | "suspending" | "reactivating"
 object DBProxyStatus {
-  val available = "available".asInstanceOf[DBProxyStatus]
-  val modifying = "modifying".asInstanceOf[DBProxyStatus]
-  val `incompatible-network` = "incompatible-network".asInstanceOf[DBProxyStatus]
-  val `insufficient-resource-limits` = "insufficient-resource-limits".asInstanceOf[DBProxyStatus]
-  val creating = "creating".asInstanceOf[DBProxyStatus]
-  val deleting = "deleting".asInstanceOf[DBProxyStatus]
-  val suspended = "suspended".asInstanceOf[DBProxyStatus]
-  val suspending = "suspending".asInstanceOf[DBProxyStatus]
-  val reactivating = "reactivating".asInstanceOf[DBProxyStatus]
+  val available: "available" = "available"
+  val modifying: "modifying" = "modifying"
+  val `incompatible-network`: "incompatible-network" = "incompatible-network"
+  val `insufficient-resource-limits`: "insufficient-resource-limits" = "insufficient-resource-limits"
+  val creating: "creating" = "creating"
+  val deleting: "deleting" = "deleting"
+  val suspended: "suspended" = "suspended"
+  val suspending: "suspending" = "suspending"
+  val reactivating: "reactivating" = "reactivating"
 
-  @inline def values = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating)
+  @inline def values = js.Array[DBProxyStatus](available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating)
 }
 
-@js.native
-sealed trait EngineFamily extends js.Any
+type EngineFamily = "MYSQL" | "POSTGRESQL"
 object EngineFamily {
-  val MYSQL = "MYSQL".asInstanceOf[EngineFamily]
-  val POSTGRESQL = "POSTGRESQL".asInstanceOf[EngineFamily]
+  val MYSQL: "MYSQL" = "MYSQL"
+  val POSTGRESQL: "POSTGRESQL" = "POSTGRESQL"
 
-  @inline def values = js.Array(MYSQL, POSTGRESQL)
+  @inline def values = js.Array[EngineFamily](MYSQL, POSTGRESQL)
 }
 
-@js.native
-sealed trait FailoverStatus extends js.Any
+type FailoverStatus = "pending" | "failing-over" | "cancelling"
 object FailoverStatus {
-  val pending = "pending".asInstanceOf[FailoverStatus]
-  val `failing-over` = "failing-over".asInstanceOf[FailoverStatus]
-  val cancelling = "cancelling".asInstanceOf[FailoverStatus]
+  val pending: "pending" = "pending"
+  val `failing-over`: "failing-over" = "failing-over"
+  val cancelling: "cancelling" = "cancelling"
 
-  @inline def values = js.Array(pending, `failing-over`, cancelling)
+  @inline def values = js.Array[FailoverStatus](pending, `failing-over`, cancelling)
 }
 
-@js.native
-sealed trait IAMAuthMode extends js.Any
+type IAMAuthMode = "DISABLED" | "REQUIRED"
 object IAMAuthMode {
-  val DISABLED = "DISABLED".asInstanceOf[IAMAuthMode]
-  val REQUIRED = "REQUIRED".asInstanceOf[IAMAuthMode]
+  val DISABLED: "DISABLED" = "DISABLED"
+  val REQUIRED: "REQUIRED" = "REQUIRED"
 
-  @inline def values = js.Array(DISABLED, REQUIRED)
+  @inline def values = js.Array[IAMAuthMode](DISABLED, REQUIRED)
 }
 
-@js.native
-sealed trait ReplicaMode extends js.Any
+type ReplicaMode = "open-read-only" | "mounted"
 object ReplicaMode {
-  val `open-read-only` = "open-read-only".asInstanceOf[ReplicaMode]
-  val mounted = "mounted".asInstanceOf[ReplicaMode]
+  val `open-read-only`: "open-read-only" = "open-read-only"
+  val mounted: "mounted" = "mounted"
 
-  @inline def values = js.Array(`open-read-only`, mounted)
+  @inline def values = js.Array[ReplicaMode](`open-read-only`, mounted)
 }
 
-@js.native
-sealed trait SourceType extends js.Any
+type SourceType = "db-instance" | "db-parameter-group" | "db-security-group" | "db-snapshot" | "db-cluster" | "db-cluster-snapshot"
 object SourceType {
-  val `db-instance` = "db-instance".asInstanceOf[SourceType]
-  val `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
-  val `db-security-group` = "db-security-group".asInstanceOf[SourceType]
-  val `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
-  val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
-  val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
+  val `db-instance`: "db-instance" = "db-instance"
+  val `db-parameter-group`: "db-parameter-group" = "db-parameter-group"
+  val `db-security-group`: "db-security-group" = "db-security-group"
+  val `db-snapshot`: "db-snapshot" = "db-snapshot"
+  val `db-cluster`: "db-cluster" = "db-cluster"
+  val `db-cluster-snapshot`: "db-cluster-snapshot" = "db-cluster-snapshot"
 
-  @inline def values = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
+  @inline def values = js.Array[SourceType](`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
 }
 
-@js.native
-sealed trait TargetHealthReason extends js.Any
+type TargetHealthReason = "UNREACHABLE" | "CONNECTION_FAILED" | "AUTH_FAILURE" | "PENDING_PROXY_CAPACITY" | "INVALID_REPLICATION_STATE"
 object TargetHealthReason {
-  val UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetHealthReason]
-  val CONNECTION_FAILED = "CONNECTION_FAILED".asInstanceOf[TargetHealthReason]
-  val AUTH_FAILURE = "AUTH_FAILURE".asInstanceOf[TargetHealthReason]
-  val PENDING_PROXY_CAPACITY = "PENDING_PROXY_CAPACITY".asInstanceOf[TargetHealthReason]
-  val INVALID_REPLICATION_STATE = "INVALID_REPLICATION_STATE".asInstanceOf[TargetHealthReason]
+  val UNREACHABLE: "UNREACHABLE" = "UNREACHABLE"
+  val CONNECTION_FAILED: "CONNECTION_FAILED" = "CONNECTION_FAILED"
+  val AUTH_FAILURE: "AUTH_FAILURE" = "AUTH_FAILURE"
+  val PENDING_PROXY_CAPACITY: "PENDING_PROXY_CAPACITY" = "PENDING_PROXY_CAPACITY"
+  val INVALID_REPLICATION_STATE: "INVALID_REPLICATION_STATE" = "INVALID_REPLICATION_STATE"
 
-  @inline def values = js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY, INVALID_REPLICATION_STATE)
+  @inline def values = js.Array[TargetHealthReason](UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY, INVALID_REPLICATION_STATE)
 }
 
-@js.native
-sealed trait TargetRole extends js.Any
+type TargetRole = "READ_WRITE" | "READ_ONLY" | "UNKNOWN"
 object TargetRole {
-  val READ_WRITE = "READ_WRITE".asInstanceOf[TargetRole]
-  val READ_ONLY = "READ_ONLY".asInstanceOf[TargetRole]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[TargetRole]
+  val READ_WRITE: "READ_WRITE" = "READ_WRITE"
+  val READ_ONLY: "READ_ONLY" = "READ_ONLY"
+  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array(READ_WRITE, READ_ONLY, UNKNOWN)
+  @inline def values = js.Array[TargetRole](READ_WRITE, READ_ONLY, UNKNOWN)
 }
 
-@js.native
-sealed trait TargetState extends js.Any
+type TargetState = "REGISTERING" | "AVAILABLE" | "UNAVAILABLE"
 object TargetState {
-  val REGISTERING = "REGISTERING".asInstanceOf[TargetState]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[TargetState]
-  val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TargetState]
+  val REGISTERING: "REGISTERING" = "REGISTERING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val UNAVAILABLE: "UNAVAILABLE" = "UNAVAILABLE"
 
-  @inline def values = js.Array(REGISTERING, AVAILABLE, UNAVAILABLE)
+  @inline def values = js.Array[TargetState](REGISTERING, AVAILABLE, UNAVAILABLE)
 }
 
-@js.native
-sealed trait TargetType extends js.Any
+type TargetType = "RDS_INSTANCE" | "RDS_SERVERLESS_ENDPOINT" | "TRACKED_CLUSTER"
 object TargetType {
-  val RDS_INSTANCE = "RDS_INSTANCE".asInstanceOf[TargetType]
-  val RDS_SERVERLESS_ENDPOINT = "RDS_SERVERLESS_ENDPOINT".asInstanceOf[TargetType]
-  val TRACKED_CLUSTER = "TRACKED_CLUSTER".asInstanceOf[TargetType]
+  val RDS_INSTANCE: "RDS_INSTANCE" = "RDS_INSTANCE"
+  val RDS_SERVERLESS_ENDPOINT: "RDS_SERVERLESS_ENDPOINT" = "RDS_SERVERLESS_ENDPOINT"
+  val TRACKED_CLUSTER: "TRACKED_CLUSTER" = "TRACKED_CLUSTER"
 
-  @inline def values = js.Array(RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER)
+  @inline def values = js.Array[TargetType](RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER)
 }
 
-@js.native
-sealed trait WriteForwardingStatus extends js.Any
+type WriteForwardingStatus = "enabled" | "disabled" | "enabling" | "disabling" | "unknown"
 object WriteForwardingStatus {
-  val enabled = "enabled".asInstanceOf[WriteForwardingStatus]
-  val disabled = "disabled".asInstanceOf[WriteForwardingStatus]
-  val enabling = "enabling".asInstanceOf[WriteForwardingStatus]
-  val disabling = "disabling".asInstanceOf[WriteForwardingStatus]
-  val unknown = "unknown".asInstanceOf[WriteForwardingStatus]
+  val enabled: "enabled" = "enabled"
+  val disabled: "disabled" = "disabled"
+  val enabling: "enabling" = "enabling"
+  val disabling: "disabling" = "disabling"
+  val unknown: "unknown" = "unknown"
 
-  @inline def values = js.Array(enabled, disabled, enabling, disabling, unknown)
+  @inline def values = js.Array[WriteForwardingStatus](enabled, disabled, enabling, disabling, unknown)
 }

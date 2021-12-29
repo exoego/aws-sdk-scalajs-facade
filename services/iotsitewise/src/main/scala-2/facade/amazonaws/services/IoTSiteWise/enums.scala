@@ -79,17 +79,7 @@ object BatchPutAssetPropertyValueErrorCode {
   val TimestampOutOfRangeException = "TimestampOutOfRangeException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
   val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchPutAssetPropertyValueErrorCode]
 
-  @inline def values = js.Array(
-    ResourceNotFoundException,
-    InvalidRequestException,
-    InternalFailureException,
-    ServiceUnavailableException,
-    ThrottlingException,
-    LimitExceededException,
-    ConflictingOperationException,
-    TimestampOutOfRangeException,
-    AccessDeniedException
-  )
+  @inline def values = js.Array(ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException, LimitExceededException, ConflictingOperationException, TimestampOutOfRangeException, AccessDeniedException)
 }
 
 @js.native
@@ -263,3 +253,4 @@ object TraversalType {
 
   @inline def values = js.Array(PATH_TO_ROOT)
 }
+

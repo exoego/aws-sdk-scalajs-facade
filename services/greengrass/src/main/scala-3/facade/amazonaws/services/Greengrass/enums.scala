@@ -1,165 +1,150 @@
 package facade.amazonaws.services.greengrass
 
 import scalajs._
-import scala.scalajs.js.|
 
 /** The current status of the bulk deployment.
   */
-@js.native
-sealed trait BulkDeploymentStatus extends js.Any
+type BulkDeploymentStatus = "Initializing" | "Running" | "Completed" | "Stopping" | "Stopped" | "Failed"
 object BulkDeploymentStatus {
-  val Initializing = "Initializing".asInstanceOf[BulkDeploymentStatus]
-  val Running = "Running".asInstanceOf[BulkDeploymentStatus]
-  val Completed = "Completed".asInstanceOf[BulkDeploymentStatus]
-  val Stopping = "Stopping".asInstanceOf[BulkDeploymentStatus]
-  val Stopped = "Stopped".asInstanceOf[BulkDeploymentStatus]
-  val Failed = "Failed".asInstanceOf[BulkDeploymentStatus]
+  val Initializing: "Initializing" = "Initializing"
+  val Running: "Running" = "Running"
+  val Completed: "Completed" = "Completed"
+  val Stopping: "Stopping" = "Stopping"
+  val Stopped: "Stopped" = "Stopped"
+  val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Initializing, Running, Completed, Stopping, Stopped, Failed)
+  @inline def values = js.Array[BulkDeploymentStatus](Initializing, Running, Completed, Stopping, Stopped, Failed)
 }
 
-@js.native
-sealed trait ConfigurationSyncStatus extends js.Any
+type ConfigurationSyncStatus = "InSync" | "OutOfSync"
 object ConfigurationSyncStatus {
-  val InSync = "InSync".asInstanceOf[ConfigurationSyncStatus]
-  val OutOfSync = "OutOfSync".asInstanceOf[ConfigurationSyncStatus]
+  val InSync: "InSync" = "InSync"
+  val OutOfSync: "OutOfSync" = "OutOfSync"
 
-  @inline def values = js.Array(InSync, OutOfSync)
+  @inline def values = js.Array[ConfigurationSyncStatus](InSync, OutOfSync)
 }
 
 /** The type of deployment. When used for ''CreateDeployment'', only ''NewDeployment'' and ''Redeployment'' are valid.
   */
-@js.native
-sealed trait DeploymentType extends js.Any
+type DeploymentType = "NewDeployment" | "Redeployment" | "ResetDeployment" | "ForceResetDeployment"
 object DeploymentType {
-  val NewDeployment = "NewDeployment".asInstanceOf[DeploymentType]
-  val Redeployment = "Redeployment".asInstanceOf[DeploymentType]
-  val ResetDeployment = "ResetDeployment".asInstanceOf[DeploymentType]
-  val ForceResetDeployment = "ForceResetDeployment".asInstanceOf[DeploymentType]
+  val NewDeployment: "NewDeployment" = "NewDeployment"
+  val Redeployment: "Redeployment" = "Redeployment"
+  val ResetDeployment: "ResetDeployment" = "ResetDeployment"
+  val ForceResetDeployment: "ForceResetDeployment" = "ForceResetDeployment"
 
-  @inline def values = js.Array(NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment)
+  @inline def values = js.Array[DeploymentType](NewDeployment, Redeployment, ResetDeployment, ForceResetDeployment)
 }
 
-@js.native
-sealed trait EncodingType extends js.Any
+type EncodingType = "binary" | "json"
 object EncodingType {
-  val binary = "binary".asInstanceOf[EncodingType]
-  val json = "json".asInstanceOf[EncodingType]
+  val binary: "binary" = "binary"
+  val json: "json" = "json"
 
-  @inline def values = js.Array(binary, json)
+  @inline def values = js.Array[EncodingType](binary, json)
 }
 
 /** Specifies whether the Lambda function runs in a Greengrass container (default) or without containerization. Unless your scenario requires that you run without containerization, we recommend that you run in a Greengrass container. Omit this value to run the Lambda function with the default containerization for the group.
   */
-@js.native
-sealed trait FunctionIsolationMode extends js.Any
+type FunctionIsolationMode = "GreengrassContainer" | "NoContainer"
 object FunctionIsolationMode {
-  val GreengrassContainer = "GreengrassContainer".asInstanceOf[FunctionIsolationMode]
-  val NoContainer = "NoContainer".asInstanceOf[FunctionIsolationMode]
+  val GreengrassContainer: "GreengrassContainer" = "GreengrassContainer"
+  val NoContainer: "NoContainer" = "NoContainer"
 
-  @inline def values = js.Array(GreengrassContainer, NoContainer)
+  @inline def values = js.Array[FunctionIsolationMode](GreengrassContainer, NoContainer)
 }
 
-@js.native
-sealed trait LoggerComponent extends js.Any
+type LoggerComponent = "GreengrassSystem" | "Lambda"
 object LoggerComponent {
-  val GreengrassSystem = "GreengrassSystem".asInstanceOf[LoggerComponent]
-  val Lambda = "Lambda".asInstanceOf[LoggerComponent]
+  val GreengrassSystem: "GreengrassSystem" = "GreengrassSystem"
+  val Lambda: "Lambda" = "Lambda"
 
-  @inline def values = js.Array(GreengrassSystem, Lambda)
+  @inline def values = js.Array[LoggerComponent](GreengrassSystem, Lambda)
 }
 
-@js.native
-sealed trait LoggerLevel extends js.Any
+type LoggerLevel = "DEBUG" | "INFO" | "WARN" | "ERROR" | "FATAL"
 object LoggerLevel {
-  val DEBUG = "DEBUG".asInstanceOf[LoggerLevel]
-  val INFO = "INFO".asInstanceOf[LoggerLevel]
-  val WARN = "WARN".asInstanceOf[LoggerLevel]
-  val ERROR = "ERROR".asInstanceOf[LoggerLevel]
-  val FATAL = "FATAL".asInstanceOf[LoggerLevel]
+  val DEBUG: "DEBUG" = "DEBUG"
+  val INFO: "INFO" = "INFO"
+  val WARN: "WARN" = "WARN"
+  val ERROR: "ERROR" = "ERROR"
+  val FATAL: "FATAL" = "FATAL"
 
-  @inline def values = js.Array(DEBUG, INFO, WARN, ERROR, FATAL)
+  @inline def values = js.Array[LoggerLevel](DEBUG, INFO, WARN, ERROR, FATAL)
 }
 
-@js.native
-sealed trait LoggerType extends js.Any
+type LoggerType = "FileSystem" | "AWSCloudWatch"
 object LoggerType {
-  val FileSystem = "FileSystem".asInstanceOf[LoggerType]
-  val AWSCloudWatch = "AWSCloudWatch".asInstanceOf[LoggerType]
+  val FileSystem: "FileSystem" = "FileSystem"
+  val AWSCloudWatch: "AWSCloudWatch" = "AWSCloudWatch"
 
-  @inline def values = js.Array(FileSystem, AWSCloudWatch)
+  @inline def values = js.Array[LoggerType](FileSystem, AWSCloudWatch)
 }
 
 /** The type of permission a function has to access a resource.
   */
-@js.native
-sealed trait Permission extends js.Any
+type Permission = "ro" | "rw"
 object Permission {
-  val ro = "ro".asInstanceOf[Permission]
-  val rw = "rw".asInstanceOf[Permission]
+  val ro: "ro" = "ro"
+  val rw: "rw" = "rw"
 
-  @inline def values = js.Array(ro, rw)
+  @inline def values = js.Array[Permission](ro, rw)
 }
 
 /** The piece of software on the Greengrass core that will be updated.
   */
-@js.native
-sealed trait SoftwareToUpdate extends js.Any
+type SoftwareToUpdate = "core" | "ota_agent"
 object SoftwareToUpdate {
-  val core = "core".asInstanceOf[SoftwareToUpdate]
-  val ota_agent = "ota_agent".asInstanceOf[SoftwareToUpdate]
+  val core: "core" = "core"
+  val ota_agent: "ota_agent" = "ota_agent"
 
-  @inline def values = js.Array(core, ota_agent)
+  @inline def values = js.Array[SoftwareToUpdate](core, ota_agent)
 }
 
-@js.native
-sealed trait Telemetry extends js.Any
+type Telemetry = "On" | "Off"
 object Telemetry {
-  val On = "On".asInstanceOf[Telemetry]
-  val Off = "Off".asInstanceOf[Telemetry]
+  val On: "On" = "On"
+  val Off: "Off" = "Off"
 
-  @inline def values = js.Array(On, Off)
+  @inline def values = js.Array[Telemetry](On, Off)
 }
 
 /** The minimum level of log statements that should be logged by the OTA Agent during an update.
   */
-@js.native
-sealed trait UpdateAgentLogLevel extends js.Any
+type UpdateAgentLogLevel = "NONE" | "TRACE" | "DEBUG" | "VERBOSE" | "INFO" | "WARN" | "ERROR" | "FATAL"
 object UpdateAgentLogLevel {
-  val NONE = "NONE".asInstanceOf[UpdateAgentLogLevel]
-  val TRACE = "TRACE".asInstanceOf[UpdateAgentLogLevel]
-  val DEBUG = "DEBUG".asInstanceOf[UpdateAgentLogLevel]
-  val VERBOSE = "VERBOSE".asInstanceOf[UpdateAgentLogLevel]
-  val INFO = "INFO".asInstanceOf[UpdateAgentLogLevel]
-  val WARN = "WARN".asInstanceOf[UpdateAgentLogLevel]
-  val ERROR = "ERROR".asInstanceOf[UpdateAgentLogLevel]
-  val FATAL = "FATAL".asInstanceOf[UpdateAgentLogLevel]
+  val NONE: "NONE" = "NONE"
+  val TRACE: "TRACE" = "TRACE"
+  val DEBUG: "DEBUG" = "DEBUG"
+  val VERBOSE: "VERBOSE" = "VERBOSE"
+  val INFO: "INFO" = "INFO"
+  val WARN: "WARN" = "WARN"
+  val ERROR: "ERROR" = "ERROR"
+  val FATAL: "FATAL" = "FATAL"
 
-  @inline def values = js.Array(NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL)
+  @inline def values = js.Array[UpdateAgentLogLevel](NONE, TRACE, DEBUG, VERBOSE, INFO, WARN, ERROR, FATAL)
 }
 
 /** The architecture of the cores which are the targets of an update.
   */
-@js.native
-sealed trait UpdateTargetsArchitecture extends js.Any
+type UpdateTargetsArchitecture = "armv6l" | "armv7l" | "x86_64" | "aarch64"
 object UpdateTargetsArchitecture {
-  val armv6l = "armv6l".asInstanceOf[UpdateTargetsArchitecture]
-  val armv7l = "armv7l".asInstanceOf[UpdateTargetsArchitecture]
-  val x86_64 = "x86_64".asInstanceOf[UpdateTargetsArchitecture]
-  val aarch64 = "aarch64".asInstanceOf[UpdateTargetsArchitecture]
+  val armv6l: "armv6l" = "armv6l"
+  val armv7l: "armv7l" = "armv7l"
+  val x86_64: "x86_64" = "x86_64"
+  val aarch64: "aarch64" = "aarch64"
 
-  @inline def values = js.Array(armv6l, armv7l, x86_64, aarch64)
+  @inline def values = js.Array[UpdateTargetsArchitecture](armv6l, armv7l, x86_64, aarch64)
 }
 
 /** The operating system of the cores which are the targets of an update.
   */
-@js.native
-sealed trait UpdateTargetsOperatingSystem extends js.Any
+type UpdateTargetsOperatingSystem = "ubuntu" | "raspbian" | "amazon_linux" | "openwrt"
 object UpdateTargetsOperatingSystem {
-  val ubuntu = "ubuntu".asInstanceOf[UpdateTargetsOperatingSystem]
-  val raspbian = "raspbian".asInstanceOf[UpdateTargetsOperatingSystem]
-  val amazon_linux = "amazon_linux".asInstanceOf[UpdateTargetsOperatingSystem]
-  val openwrt = "openwrt".asInstanceOf[UpdateTargetsOperatingSystem]
+  val ubuntu: "ubuntu" = "ubuntu"
+  val raspbian: "raspbian" = "raspbian"
+  val amazon_linux: "amazon_linux" = "amazon_linux"
+  val openwrt: "openwrt" = "openwrt"
 
-  @inline def values = js.Array(ubuntu, raspbian, amazon_linux, openwrt)
+  @inline def values = js.Array[UpdateTargetsOperatingSystem](ubuntu, raspbian, amazon_linux, openwrt)
 }

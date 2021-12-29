@@ -34,3 +34,4 @@ object StatusType {
 
   @inline def values = js.Array(InSync, Failed, InProgress)
 }
+

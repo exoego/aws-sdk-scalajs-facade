@@ -1,65 +1,59 @@
 package facade.amazonaws.services.dynamodb
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AttributeAction extends js.Any
+type AttributeAction = "ADD" | "PUT" | "DELETE"
 object AttributeAction {
-  val ADD = "ADD".asInstanceOf[AttributeAction]
-  val PUT = "PUT".asInstanceOf[AttributeAction]
-  val DELETE = "DELETE".asInstanceOf[AttributeAction]
+  val ADD: "ADD" = "ADD"
+  val PUT: "PUT" = "PUT"
+  val DELETE: "DELETE" = "DELETE"
 
-  @inline def values = js.Array(ADD, PUT, DELETE)
+  @inline def values = js.Array[AttributeAction](ADD, PUT, DELETE)
 }
 
-@js.native
-sealed trait BackupStatus extends js.Any
+type BackupStatus = "CREATING" | "DELETED" | "AVAILABLE"
 object BackupStatus {
-  val CREATING = "CREATING".asInstanceOf[BackupStatus]
-  val DELETED = "DELETED".asInstanceOf[BackupStatus]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[BackupStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val DELETED: "DELETED" = "DELETED"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
 
-  @inline def values = js.Array(CREATING, DELETED, AVAILABLE)
+  @inline def values = js.Array[BackupStatus](CREATING, DELETED, AVAILABLE)
 }
 
-@js.native
-sealed trait BackupType extends js.Any
+type BackupType = "USER" | "SYSTEM" | "AWS_BACKUP"
 object BackupType {
-  val USER = "USER".asInstanceOf[BackupType]
-  val SYSTEM = "SYSTEM".asInstanceOf[BackupType]
-  val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupType]
+  val USER: "USER" = "USER"
+  val SYSTEM: "SYSTEM" = "SYSTEM"
+  val AWS_BACKUP: "AWS_BACKUP" = "AWS_BACKUP"
 
-  @inline def values = js.Array(USER, SYSTEM, AWS_BACKUP)
+  @inline def values = js.Array[BackupType](USER, SYSTEM, AWS_BACKUP)
 }
 
-@js.native
-sealed trait BackupTypeFilter extends js.Any
+type BackupTypeFilter = "USER" | "SYSTEM" | "AWS_BACKUP" | "ALL"
 object BackupTypeFilter {
-  val USER = "USER".asInstanceOf[BackupTypeFilter]
-  val SYSTEM = "SYSTEM".asInstanceOf[BackupTypeFilter]
-  val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupTypeFilter]
-  val ALL = "ALL".asInstanceOf[BackupTypeFilter]
+  val USER: "USER" = "USER"
+  val SYSTEM: "SYSTEM" = "SYSTEM"
+  val AWS_BACKUP: "AWS_BACKUP" = "AWS_BACKUP"
+  val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(USER, SYSTEM, AWS_BACKUP, ALL)
+  @inline def values = js.Array[BackupTypeFilter](USER, SYSTEM, AWS_BACKUP, ALL)
 }
 
-@js.native
-sealed trait BatchStatementErrorCodeEnum extends js.Any
+type BatchStatementErrorCodeEnum = "ConditionalCheckFailed" | "ItemCollectionSizeLimitExceeded" | "RequestLimitExceeded" | "ValidationError" | "ProvisionedThroughputExceeded" | "TransactionConflict" | "ThrottlingError" | "InternalServerError" | "ResourceNotFound" | "AccessDenied" | "DuplicateItem"
 object BatchStatementErrorCodeEnum {
-  val ConditionalCheckFailed = "ConditionalCheckFailed".asInstanceOf[BatchStatementErrorCodeEnum]
-  val ItemCollectionSizeLimitExceeded = "ItemCollectionSizeLimitExceeded".asInstanceOf[BatchStatementErrorCodeEnum]
-  val RequestLimitExceeded = "RequestLimitExceeded".asInstanceOf[BatchStatementErrorCodeEnum]
-  val ValidationError = "ValidationError".asInstanceOf[BatchStatementErrorCodeEnum]
-  val ProvisionedThroughputExceeded = "ProvisionedThroughputExceeded".asInstanceOf[BatchStatementErrorCodeEnum]
-  val TransactionConflict = "TransactionConflict".asInstanceOf[BatchStatementErrorCodeEnum]
-  val ThrottlingError = "ThrottlingError".asInstanceOf[BatchStatementErrorCodeEnum]
-  val InternalServerError = "InternalServerError".asInstanceOf[BatchStatementErrorCodeEnum]
-  val ResourceNotFound = "ResourceNotFound".asInstanceOf[BatchStatementErrorCodeEnum]
-  val AccessDenied = "AccessDenied".asInstanceOf[BatchStatementErrorCodeEnum]
-  val DuplicateItem = "DuplicateItem".asInstanceOf[BatchStatementErrorCodeEnum]
+  val ConditionalCheckFailed: "ConditionalCheckFailed" = "ConditionalCheckFailed"
+  val ItemCollectionSizeLimitExceeded: "ItemCollectionSizeLimitExceeded" = "ItemCollectionSizeLimitExceeded"
+  val RequestLimitExceeded: "RequestLimitExceeded" = "RequestLimitExceeded"
+  val ValidationError: "ValidationError" = "ValidationError"
+  val ProvisionedThroughputExceeded: "ProvisionedThroughputExceeded" = "ProvisionedThroughputExceeded"
+  val TransactionConflict: "TransactionConflict" = "TransactionConflict"
+  val ThrottlingError: "ThrottlingError" = "ThrottlingError"
+  val InternalServerError: "InternalServerError" = "InternalServerError"
+  val ResourceNotFound: "ResourceNotFound" = "ResourceNotFound"
+  val AccessDenied: "AccessDenied" = "AccessDenied"
+  val DuplicateItem: "DuplicateItem" = "DuplicateItem"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[BatchStatementErrorCodeEnum](
     ConditionalCheckFailed,
     ItemCollectionSizeLimitExceeded,
     RequestLimitExceeded,
@@ -74,294 +68,267 @@ object BatchStatementErrorCodeEnum {
   )
 }
 
-@js.native
-sealed trait BillingMode extends js.Any
+type BillingMode = "PROVISIONED" | "PAY_PER_REQUEST"
 object BillingMode {
-  val PROVISIONED = "PROVISIONED".asInstanceOf[BillingMode]
-  val PAY_PER_REQUEST = "PAY_PER_REQUEST".asInstanceOf[BillingMode]
+  val PROVISIONED: "PROVISIONED" = "PROVISIONED"
+  val PAY_PER_REQUEST: "PAY_PER_REQUEST" = "PAY_PER_REQUEST"
 
-  @inline def values = js.Array(PROVISIONED, PAY_PER_REQUEST)
+  @inline def values = js.Array[BillingMode](PROVISIONED, PAY_PER_REQUEST)
 }
 
-@js.native
-sealed trait ComparisonOperator extends js.Any
+type ComparisonOperator = "EQ" | "NE" | "IN" | "LE" | "LT" | "GE" | "GT" | "BETWEEN" | "NOT_NULL" | "NULL" | "CONTAINS" | "NOT_CONTAINS" | "BEGINS_WITH"
 object ComparisonOperator {
-  val EQ = "EQ".asInstanceOf[ComparisonOperator]
-  val NE = "NE".asInstanceOf[ComparisonOperator]
-  val IN = "IN".asInstanceOf[ComparisonOperator]
-  val LE = "LE".asInstanceOf[ComparisonOperator]
-  val LT = "LT".asInstanceOf[ComparisonOperator]
-  val GE = "GE".asInstanceOf[ComparisonOperator]
-  val GT = "GT".asInstanceOf[ComparisonOperator]
-  val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
-  val NOT_NULL = "NOT_NULL".asInstanceOf[ComparisonOperator]
-  val NULL = "NULL".asInstanceOf[ComparisonOperator]
-  val CONTAINS = "CONTAINS".asInstanceOf[ComparisonOperator]
-  val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
-  val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
+  val EQ: "EQ" = "EQ"
+  val NE: "NE" = "NE"
+  val IN: "IN" = "IN"
+  val LE: "LE" = "LE"
+  val LT: "LT" = "LT"
+  val GE: "GE" = "GE"
+  val GT: "GT" = "GT"
+  val BETWEEN: "BETWEEN" = "BETWEEN"
+  val NOT_NULL: "NOT_NULL" = "NOT_NULL"
+  val NULL: "NULL" = "NULL"
+  val CONTAINS: "CONTAINS" = "CONTAINS"
+  val NOT_CONTAINS: "NOT_CONTAINS" = "NOT_CONTAINS"
+  val BEGINS_WITH: "BEGINS_WITH" = "BEGINS_WITH"
 
-  @inline def values = js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
+  @inline def values = js.Array[ComparisonOperator](EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
 }
 
-@js.native
-sealed trait ConditionalOperator extends js.Any
+type ConditionalOperator = "AND" | "OR"
 object ConditionalOperator {
-  val AND = "AND".asInstanceOf[ConditionalOperator]
-  val OR = "OR".asInstanceOf[ConditionalOperator]
+  val AND: "AND" = "AND"
+  val OR: "OR" = "OR"
 
-  @inline def values = js.Array(AND, OR)
+  @inline def values = js.Array[ConditionalOperator](AND, OR)
 }
 
-@js.native
-sealed trait ContinuousBackupsStatus extends js.Any
+type ContinuousBackupsStatus = "ENABLED" | "DISABLED"
 object ContinuousBackupsStatus {
-  val ENABLED = "ENABLED".asInstanceOf[ContinuousBackupsStatus]
-  val DISABLED = "DISABLED".asInstanceOf[ContinuousBackupsStatus]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[ContinuousBackupsStatus](ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait ContributorInsightsAction extends js.Any
+type ContributorInsightsAction = "ENABLE" | "DISABLE"
 object ContributorInsightsAction {
-  val ENABLE = "ENABLE".asInstanceOf[ContributorInsightsAction]
-  val DISABLE = "DISABLE".asInstanceOf[ContributorInsightsAction]
+  val ENABLE: "ENABLE" = "ENABLE"
+  val DISABLE: "DISABLE" = "DISABLE"
 
-  @inline def values = js.Array(ENABLE, DISABLE)
+  @inline def values = js.Array[ContributorInsightsAction](ENABLE, DISABLE)
 }
 
-@js.native
-sealed trait ContributorInsightsStatus extends js.Any
+type ContributorInsightsStatus = "ENABLING" | "ENABLED" | "DISABLING" | "DISABLED" | "FAILED"
 object ContributorInsightsStatus {
-  val ENABLING = "ENABLING".asInstanceOf[ContributorInsightsStatus]
-  val ENABLED = "ENABLED".asInstanceOf[ContributorInsightsStatus]
-  val DISABLING = "DISABLING".asInstanceOf[ContributorInsightsStatus]
-  val DISABLED = "DISABLED".asInstanceOf[ContributorInsightsStatus]
-  val FAILED = "FAILED".asInstanceOf[ContributorInsightsStatus]
+  val ENABLING: "ENABLING" = "ENABLING"
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLING: "DISABLING" = "DISABLING"
+  val DISABLED: "DISABLED" = "DISABLED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED)
+  @inline def values = js.Array[ContributorInsightsStatus](ENABLING, ENABLED, DISABLING, DISABLED, FAILED)
 }
 
-@js.native
-sealed trait DestinationStatus extends js.Any
+type DestinationStatus = "ENABLING" | "ACTIVE" | "DISABLING" | "DISABLED" | "ENABLE_FAILED"
 object DestinationStatus {
-  val ENABLING = "ENABLING".asInstanceOf[DestinationStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[DestinationStatus]
-  val DISABLING = "DISABLING".asInstanceOf[DestinationStatus]
-  val DISABLED = "DISABLED".asInstanceOf[DestinationStatus]
-  val ENABLE_FAILED = "ENABLE_FAILED".asInstanceOf[DestinationStatus]
+  val ENABLING: "ENABLING" = "ENABLING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DISABLING: "DISABLING" = "DISABLING"
+  val DISABLED: "DISABLED" = "DISABLED"
+  val ENABLE_FAILED: "ENABLE_FAILED" = "ENABLE_FAILED"
 
-  @inline def values = js.Array(ENABLING, ACTIVE, DISABLING, DISABLED, ENABLE_FAILED)
+  @inline def values = js.Array[DestinationStatus](ENABLING, ACTIVE, DISABLING, DISABLED, ENABLE_FAILED)
 }
 
-@js.native
-sealed trait ExportFormat extends js.Any
+type ExportFormat = "DYNAMODB_JSON" | "ION"
 object ExportFormat {
-  val DYNAMODB_JSON = "DYNAMODB_JSON".asInstanceOf[ExportFormat]
-  val ION = "ION".asInstanceOf[ExportFormat]
+  val DYNAMODB_JSON: "DYNAMODB_JSON" = "DYNAMODB_JSON"
+  val ION: "ION" = "ION"
 
-  @inline def values = js.Array(DYNAMODB_JSON, ION)
+  @inline def values = js.Array[ExportFormat](DYNAMODB_JSON, ION)
 }
 
-@js.native
-sealed trait ExportStatus extends js.Any
+type ExportStatus = "IN_PROGRESS" | "COMPLETED" | "FAILED"
 object ExportStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[ExportStatus]
-  val FAILED = "FAILED".asInstanceOf[ExportStatus]
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED)
+  @inline def values = js.Array[ExportStatus](IN_PROGRESS, COMPLETED, FAILED)
 }
 
-@js.native
-sealed trait GlobalTableStatus extends js.Any
+type GlobalTableStatus = "CREATING" | "ACTIVE" | "DELETING" | "UPDATING"
 object GlobalTableStatus {
-  val CREATING = "CREATING".asInstanceOf[GlobalTableStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[GlobalTableStatus]
-  val DELETING = "DELETING".asInstanceOf[GlobalTableStatus]
-  val UPDATING = "UPDATING".asInstanceOf[GlobalTableStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETING: "DELETING" = "DELETING"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, UPDATING)
+  @inline def values = js.Array[GlobalTableStatus](CREATING, ACTIVE, DELETING, UPDATING)
 }
 
-@js.native
-sealed trait IndexStatus extends js.Any
+type IndexStatus = "CREATING" | "UPDATING" | "DELETING" | "ACTIVE"
 object IndexStatus {
-  val CREATING = "CREATING".asInstanceOf[IndexStatus]
-  val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
-  val DELETING = "DELETING".asInstanceOf[IndexStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val DELETING: "DELETING" = "DELETING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
 
-  @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE)
+  @inline def values = js.Array[IndexStatus](CREATING, UPDATING, DELETING, ACTIVE)
 }
 
-@js.native
-sealed trait KeyType extends js.Any
+type KeyType = "HASH" | "RANGE"
 object KeyType {
-  val HASH = "HASH".asInstanceOf[KeyType]
-  val RANGE = "RANGE".asInstanceOf[KeyType]
+  val HASH: "HASH" = "HASH"
+  val RANGE: "RANGE" = "RANGE"
 
-  @inline def values = js.Array(HASH, RANGE)
+  @inline def values = js.Array[KeyType](HASH, RANGE)
 }
 
-@js.native
-sealed trait PointInTimeRecoveryStatus extends js.Any
+type PointInTimeRecoveryStatus = "ENABLED" | "DISABLED"
 object PointInTimeRecoveryStatus {
-  val ENABLED = "ENABLED".asInstanceOf[PointInTimeRecoveryStatus]
-  val DISABLED = "DISABLED".asInstanceOf[PointInTimeRecoveryStatus]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[PointInTimeRecoveryStatus](ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait ProjectionType extends js.Any
+type ProjectionType = "ALL" | "KEYS_ONLY" | "INCLUDE"
 object ProjectionType {
-  val ALL = "ALL".asInstanceOf[ProjectionType]
-  val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[ProjectionType]
-  val INCLUDE = "INCLUDE".asInstanceOf[ProjectionType]
+  val ALL: "ALL" = "ALL"
+  val KEYS_ONLY: "KEYS_ONLY" = "KEYS_ONLY"
+  val INCLUDE: "INCLUDE" = "INCLUDE"
 
-  @inline def values = js.Array(ALL, KEYS_ONLY, INCLUDE)
+  @inline def values = js.Array[ProjectionType](ALL, KEYS_ONLY, INCLUDE)
 }
 
-@js.native
-sealed trait ReplicaStatus extends js.Any
+type ReplicaStatus = "CREATING" | "CREATION_FAILED" | "UPDATING" | "DELETING" | "ACTIVE" | "REGION_DISABLED" | "INACCESSIBLE_ENCRYPTION_CREDENTIALS"
 object ReplicaStatus {
-  val CREATING = "CREATING".asInstanceOf[ReplicaStatus]
-  val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[ReplicaStatus]
-  val UPDATING = "UPDATING".asInstanceOf[ReplicaStatus]
-  val DELETING = "DELETING".asInstanceOf[ReplicaStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[ReplicaStatus]
-  val REGION_DISABLED = "REGION_DISABLED".asInstanceOf[ReplicaStatus]
-  val INACCESSIBLE_ENCRYPTION_CREDENTIALS = "INACCESSIBLE_ENCRYPTION_CREDENTIALS".asInstanceOf[ReplicaStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val CREATION_FAILED: "CREATION_FAILED" = "CREATION_FAILED"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val DELETING: "DELETING" = "DELETING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val REGION_DISABLED: "REGION_DISABLED" = "REGION_DISABLED"
+  val INACCESSIBLE_ENCRYPTION_CREDENTIALS: "INACCESSIBLE_ENCRYPTION_CREDENTIALS" = "INACCESSIBLE_ENCRYPTION_CREDENTIALS"
 
-  @inline def values = js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE, REGION_DISABLED, INACCESSIBLE_ENCRYPTION_CREDENTIALS)
+  @inline def values = js.Array[ReplicaStatus](CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE, REGION_DISABLED, INACCESSIBLE_ENCRYPTION_CREDENTIALS)
 }
 
 /** Determines the level of detail about provisioned throughput consumption that is returned in the response: * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed. Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s). * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation. * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
   */
-@js.native
-sealed trait ReturnConsumedCapacity extends js.Any
+type ReturnConsumedCapacity = "INDEXES" | "TOTAL" | "NONE"
 object ReturnConsumedCapacity {
-  val INDEXES = "INDEXES".asInstanceOf[ReturnConsumedCapacity]
-  val TOTAL = "TOTAL".asInstanceOf[ReturnConsumedCapacity]
-  val NONE = "NONE".asInstanceOf[ReturnConsumedCapacity]
+  val INDEXES: "INDEXES" = "INDEXES"
+  val TOTAL: "TOTAL" = "TOTAL"
+  val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array(INDEXES, TOTAL, NONE)
+  @inline def values = js.Array[ReturnConsumedCapacity](INDEXES, TOTAL, NONE)
 }
 
-@js.native
-sealed trait ReturnItemCollectionMetrics extends js.Any
+type ReturnItemCollectionMetrics = "SIZE" | "NONE"
 object ReturnItemCollectionMetrics {
-  val SIZE = "SIZE".asInstanceOf[ReturnItemCollectionMetrics]
-  val NONE = "NONE".asInstanceOf[ReturnItemCollectionMetrics]
+  val SIZE: "SIZE" = "SIZE"
+  val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array(SIZE, NONE)
+  @inline def values = js.Array[ReturnItemCollectionMetrics](SIZE, NONE)
 }
 
-@js.native
-sealed trait ReturnValue extends js.Any
+type ReturnValue = "NONE" | "ALL_OLD" | "UPDATED_OLD" | "ALL_NEW" | "UPDATED_NEW"
 object ReturnValue {
-  val NONE = "NONE".asInstanceOf[ReturnValue]
-  val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValue]
-  val UPDATED_OLD = "UPDATED_OLD".asInstanceOf[ReturnValue]
-  val ALL_NEW = "ALL_NEW".asInstanceOf[ReturnValue]
-  val UPDATED_NEW = "UPDATED_NEW".asInstanceOf[ReturnValue]
+  val NONE: "NONE" = "NONE"
+  val ALL_OLD: "ALL_OLD" = "ALL_OLD"
+  val UPDATED_OLD: "UPDATED_OLD" = "UPDATED_OLD"
+  val ALL_NEW: "ALL_NEW" = "ALL_NEW"
+  val UPDATED_NEW: "UPDATED_NEW" = "UPDATED_NEW"
 
-  @inline def values = js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW)
+  @inline def values = js.Array[ReturnValue](NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW)
 }
 
-@js.native
-sealed trait ReturnValuesOnConditionCheckFailure extends js.Any
+type ReturnValuesOnConditionCheckFailure = "ALL_OLD" | "NONE"
 object ReturnValuesOnConditionCheckFailure {
-  val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValuesOnConditionCheckFailure]
-  val NONE = "NONE".asInstanceOf[ReturnValuesOnConditionCheckFailure]
+  val ALL_OLD: "ALL_OLD" = "ALL_OLD"
+  val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array(ALL_OLD, NONE)
+  @inline def values = js.Array[ReturnValuesOnConditionCheckFailure](ALL_OLD, NONE)
 }
 
-@js.native
-sealed trait S3SseAlgorithm extends js.Any
+type S3SseAlgorithm = "AES256" | "KMS"
 object S3SseAlgorithm {
-  val AES256 = "AES256".asInstanceOf[S3SseAlgorithm]
-  val KMS = "KMS".asInstanceOf[S3SseAlgorithm]
+  val AES256: "AES256" = "AES256"
+  val KMS: "KMS" = "KMS"
 
-  @inline def values = js.Array(AES256, KMS)
+  @inline def values = js.Array[S3SseAlgorithm](AES256, KMS)
 }
 
-@js.native
-sealed trait SSEStatus extends js.Any
+type SSEStatus = "ENABLING" | "ENABLED" | "DISABLING" | "DISABLED" | "UPDATING"
 object SSEStatus {
-  val ENABLING = "ENABLING".asInstanceOf[SSEStatus]
-  val ENABLED = "ENABLED".asInstanceOf[SSEStatus]
-  val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
-  val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
-  val UPDATING = "UPDATING".asInstanceOf[SSEStatus]
+  val ENABLING: "ENABLING" = "ENABLING"
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLING: "DISABLING" = "DISABLING"
+  val DISABLED: "DISABLED" = "DISABLED"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING)
+  @inline def values = js.Array[SSEStatus](ENABLING, ENABLED, DISABLING, DISABLED, UPDATING)
 }
 
-@js.native
-sealed trait SSEType extends js.Any
+type SSEType = "AES256" | "KMS"
 object SSEType {
-  val AES256 = "AES256".asInstanceOf[SSEType]
-  val KMS = "KMS".asInstanceOf[SSEType]
+  val AES256: "AES256" = "AES256"
+  val KMS: "KMS" = "KMS"
 
-  @inline def values = js.Array(AES256, KMS)
+  @inline def values = js.Array[SSEType](AES256, KMS)
 }
 
-@js.native
-sealed trait ScalarAttributeType extends js.Any
+type ScalarAttributeType = "S" | "N" | "B"
 object ScalarAttributeType {
-  val S = "S".asInstanceOf[ScalarAttributeType]
-  val N = "N".asInstanceOf[ScalarAttributeType]
-  val B = "B".asInstanceOf[ScalarAttributeType]
+  val S: "S" = "S"
+  val N: "N" = "N"
+  val B: "B" = "B"
 
-  @inline def values = js.Array(S, N, B)
+  @inline def values = js.Array[ScalarAttributeType](S, N, B)
 }
 
-@js.native
-sealed trait Select extends js.Any
+type Select = "ALL_ATTRIBUTES" | "ALL_PROJECTED_ATTRIBUTES" | "SPECIFIC_ATTRIBUTES" | "COUNT"
 object Select {
-  val ALL_ATTRIBUTES = "ALL_ATTRIBUTES".asInstanceOf[Select]
-  val ALL_PROJECTED_ATTRIBUTES = "ALL_PROJECTED_ATTRIBUTES".asInstanceOf[Select]
-  val SPECIFIC_ATTRIBUTES = "SPECIFIC_ATTRIBUTES".asInstanceOf[Select]
-  val COUNT = "COUNT".asInstanceOf[Select]
+  val ALL_ATTRIBUTES: "ALL_ATTRIBUTES" = "ALL_ATTRIBUTES"
+  val ALL_PROJECTED_ATTRIBUTES: "ALL_PROJECTED_ATTRIBUTES" = "ALL_PROJECTED_ATTRIBUTES"
+  val SPECIFIC_ATTRIBUTES: "SPECIFIC_ATTRIBUTES" = "SPECIFIC_ATTRIBUTES"
+  val COUNT: "COUNT" = "COUNT"
 
-  @inline def values = js.Array(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT)
+  @inline def values = js.Array[Select](ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT)
 }
 
-@js.native
-sealed trait StreamViewType extends js.Any
+type StreamViewType = "NEW_IMAGE" | "OLD_IMAGE" | "NEW_AND_OLD_IMAGES" | "KEYS_ONLY"
 object StreamViewType {
-  val NEW_IMAGE = "NEW_IMAGE".asInstanceOf[StreamViewType]
-  val OLD_IMAGE = "OLD_IMAGE".asInstanceOf[StreamViewType]
-  val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
-  val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
+  val NEW_IMAGE: "NEW_IMAGE" = "NEW_IMAGE"
+  val OLD_IMAGE: "OLD_IMAGE" = "OLD_IMAGE"
+  val NEW_AND_OLD_IMAGES: "NEW_AND_OLD_IMAGES" = "NEW_AND_OLD_IMAGES"
+  val KEYS_ONLY: "KEYS_ONLY" = "KEYS_ONLY"
 
-  @inline def values = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
+  @inline def values = js.Array[StreamViewType](NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
 }
 
-@js.native
-sealed trait TableStatus extends js.Any
+type TableStatus = "CREATING" | "UPDATING" | "DELETING" | "ACTIVE" | "INACCESSIBLE_ENCRYPTION_CREDENTIALS" | "ARCHIVING" | "ARCHIVED"
 object TableStatus {
-  val CREATING = "CREATING".asInstanceOf[TableStatus]
-  val UPDATING = "UPDATING".asInstanceOf[TableStatus]
-  val DELETING = "DELETING".asInstanceOf[TableStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[TableStatus]
-  val INACCESSIBLE_ENCRYPTION_CREDENTIALS = "INACCESSIBLE_ENCRYPTION_CREDENTIALS".asInstanceOf[TableStatus]
-  val ARCHIVING = "ARCHIVING".asInstanceOf[TableStatus]
-  val ARCHIVED = "ARCHIVED".asInstanceOf[TableStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val DELETING: "DELETING" = "DELETING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val INACCESSIBLE_ENCRYPTION_CREDENTIALS: "INACCESSIBLE_ENCRYPTION_CREDENTIALS" = "INACCESSIBLE_ENCRYPTION_CREDENTIALS"
+  val ARCHIVING: "ARCHIVING" = "ARCHIVING"
+  val ARCHIVED: "ARCHIVED" = "ARCHIVED"
 
-  @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED)
+  @inline def values = js.Array[TableStatus](CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED)
 }
 
-@js.native
-sealed trait TimeToLiveStatus extends js.Any
+type TimeToLiveStatus = "ENABLING" | "DISABLING" | "ENABLED" | "DISABLED"
 object TimeToLiveStatus {
-  val ENABLING = "ENABLING".asInstanceOf[TimeToLiveStatus]
-  val DISABLING = "DISABLING".asInstanceOf[TimeToLiveStatus]
-  val ENABLED = "ENABLED".asInstanceOf[TimeToLiveStatus]
-  val DISABLED = "DISABLED".asInstanceOf[TimeToLiveStatus]
+  val ENABLING: "ENABLING" = "ENABLING"
+  val DISABLING: "DISABLING" = "DISABLING"
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLING, DISABLING, ENABLED, DISABLED)
+  @inline def values = js.Array[TimeToLiveStatus](ENABLING, DISABLING, ENABLED, DISABLED)
 }

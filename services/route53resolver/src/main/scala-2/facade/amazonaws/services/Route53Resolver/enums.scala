@@ -243,3 +243,4 @@ object Validation {
 
   @inline def values = js.Array(ENABLE, DISABLE)
 }
+

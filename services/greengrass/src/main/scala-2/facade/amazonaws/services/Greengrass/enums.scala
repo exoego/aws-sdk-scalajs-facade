@@ -163,3 +163,4 @@ object UpdateTargetsOperatingSystem {
 
   @inline def values = js.Array(ubuntu, raspbian, amazon_linux, openwrt)
 }
+

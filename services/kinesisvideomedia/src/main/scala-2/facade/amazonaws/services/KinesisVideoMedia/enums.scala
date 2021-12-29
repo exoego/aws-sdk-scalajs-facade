@@ -15,3 +15,4 @@ object StartSelectorType {
 
   @inline def values = js.Array(FRAGMENT_NUMBER, SERVER_TIMESTAMP, PRODUCER_TIMESTAMP, NOW, EARLIEST, CONTINUATION_TOKEN)
 }
+

@@ -1,12 +1,10 @@
 package facade.amazonaws.services.pi
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ServiceType extends js.Any
+type ServiceType = "RDS"
 object ServiceType {
-  val RDS = "RDS".asInstanceOf[ServiceType]
+  val RDS: "RDS" = "RDS"
 
-  @inline def values = js.Array(RDS)
+  @inline def values = js.Array[ServiceType](RDS)
 }

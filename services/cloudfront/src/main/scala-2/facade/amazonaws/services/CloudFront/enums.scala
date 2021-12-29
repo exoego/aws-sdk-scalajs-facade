@@ -237,3 +237,4 @@ object ViewerProtocolPolicy {
 
   @inline def values = js.Array(`allow-all`, `https-only`, `redirect-to-https`)
 }
+

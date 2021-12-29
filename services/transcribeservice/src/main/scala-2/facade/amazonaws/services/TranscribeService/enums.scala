@@ -64,44 +64,7 @@ object LanguageCode {
   val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
   val `zh-CN` = "zh-CN".asInstanceOf[LanguageCode]
 
-  @inline def values = js.Array(
-    `af-ZA`,
-    `ar-AE`,
-    `ar-SA`,
-    `cy-GB`,
-    `da-DK`,
-    `de-CH`,
-    `de-DE`,
-    `en-AB`,
-    `en-AU`,
-    `en-GB`,
-    `en-IE`,
-    `en-IN`,
-    `en-US`,
-    `en-WL`,
-    `es-ES`,
-    `es-US`,
-    `fa-IR`,
-    `fr-CA`,
-    `fr-FR`,
-    `ga-IE`,
-    `gd-GB`,
-    `he-IL`,
-    `hi-IN`,
-    `id-ID`,
-    `it-IT`,
-    `ja-JP`,
-    `ko-KR`,
-    `ms-MY`,
-    `nl-NL`,
-    `pt-BR`,
-    `pt-PT`,
-    `ru-RU`,
-    `ta-IN`,
-    `te-IN`,
-    `tr-TR`,
-    `zh-CN`
-  )
+  @inline def values = js.Array(`af-ZA`, `ar-AE`, `ar-SA`, `cy-GB`, `da-DK`, `de-CH`, `de-DE`, `en-AB`, `en-AU`, `en-GB`, `en-IE`, `en-IN`, `en-US`, `en-WL`, `es-ES`, `es-US`, `fa-IR`, `fr-CA`, `fr-FR`, `ga-IE`, `gd-GB`, `he-IL`, `hi-IN`, `id-ID`, `it-IT`, `ja-JP`, `ko-KR`, `ms-MY`, `nl-NL`, `pt-BR`, `pt-PT`, `ru-RU`, `ta-IN`, `te-IN`, `tr-TR`, `zh-CN`)
 }
 
 @js.native
@@ -201,3 +164,4 @@ object VocabularyState {
 
   @inline def values = js.Array(PENDING, READY, FAILED)
 }
+

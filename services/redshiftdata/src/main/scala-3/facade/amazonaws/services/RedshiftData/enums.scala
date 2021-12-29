@@ -1,18 +1,16 @@
 package facade.amazonaws.services.redshiftdata
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait StatusString extends js.Any
+type StatusString = "SUBMITTED" | "PICKED" | "STARTED" | "FINISHED" | "ABORTED" | "FAILED" | "ALL"
 object StatusString {
-  val SUBMITTED = "SUBMITTED".asInstanceOf[StatusString]
-  val PICKED = "PICKED".asInstanceOf[StatusString]
-  val STARTED = "STARTED".asInstanceOf[StatusString]
-  val FINISHED = "FINISHED".asInstanceOf[StatusString]
-  val ABORTED = "ABORTED".asInstanceOf[StatusString]
-  val FAILED = "FAILED".asInstanceOf[StatusString]
-  val ALL = "ALL".asInstanceOf[StatusString]
+  val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  val PICKED: "PICKED" = "PICKED"
+  val STARTED: "STARTED" = "STARTED"
+  val FINISHED: "FINISHED" = "FINISHED"
+  val ABORTED: "ABORTED" = "ABORTED"
+  val FAILED: "FAILED" = "FAILED"
+  val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(SUBMITTED, PICKED, STARTED, FINISHED, ABORTED, FAILED, ALL)
+  @inline def values = js.Array[StatusString](SUBMITTED, PICKED, STARTED, FINISHED, ABORTED, FAILED, ALL)
 }

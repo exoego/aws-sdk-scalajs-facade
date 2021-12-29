@@ -288,3 +288,4 @@ object TrustType {
 
   @inline def values = js.Array(Forest, External)
 }
+

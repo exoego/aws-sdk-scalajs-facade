@@ -28,3 +28,4 @@ object Status {
 
   @inline def values = js.Array(completed, pending, error)
 }
+

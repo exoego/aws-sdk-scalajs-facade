@@ -71,3 +71,4 @@ object Type {
 
   @inline def values = js.Array(DASH, HLS)
 }
+

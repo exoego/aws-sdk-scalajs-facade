@@ -1,24 +1,21 @@
 package facade.amazonaws.services.codestarconnections
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ConnectionStatus extends js.Any
+type ConnectionStatus = "PENDING" | "AVAILABLE" | "ERROR"
 object ConnectionStatus {
-  val PENDING = "PENDING".asInstanceOf[ConnectionStatus]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionStatus]
-  val ERROR = "ERROR".asInstanceOf[ConnectionStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(PENDING, AVAILABLE, ERROR)
+  @inline def values = js.Array[ConnectionStatus](PENDING, AVAILABLE, ERROR)
 }
 
-@js.native
-sealed trait ProviderType extends js.Any
+type ProviderType = "Bitbucket" | "GitHub" | "GitHubEnterpriseServer"
 object ProviderType {
-  val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
-  val GitHub = "GitHub".asInstanceOf[ProviderType]
-  val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
+  val Bitbucket: "Bitbucket" = "Bitbucket"
+  val GitHub: "GitHub" = "GitHub"
+  val GitHubEnterpriseServer: "GitHubEnterpriseServer" = "GitHubEnterpriseServer"
 
-  @inline def values = js.Array(Bitbucket, GitHub, GitHubEnterpriseServer)
+  @inline def values = js.Array[ProviderType](Bitbucket, GitHub, GitHubEnterpriseServer)
 }

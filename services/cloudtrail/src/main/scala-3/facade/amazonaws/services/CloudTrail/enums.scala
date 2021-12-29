@@ -1,45 +1,40 @@
 package facade.amazonaws.services.cloudtrail
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait EventCategory extends js.Any
+type EventCategory = "insight"
 object EventCategory {
-  val insight = "insight".asInstanceOf[EventCategory]
+  val insight: "insight" = "insight"
 
-  @inline def values = js.Array(insight)
+  @inline def values = js.Array[EventCategory](insight)
 }
 
-@js.native
-sealed trait InsightType extends js.Any
+type InsightType = "ApiCallRateInsight"
 object InsightType {
-  val ApiCallRateInsight = "ApiCallRateInsight".asInstanceOf[InsightType]
+  val ApiCallRateInsight: "ApiCallRateInsight" = "ApiCallRateInsight"
 
-  @inline def values = js.Array(ApiCallRateInsight)
+  @inline def values = js.Array[InsightType](ApiCallRateInsight)
 }
 
-@js.native
-sealed trait LookupAttributeKey extends js.Any
+type LookupAttributeKey = "EventId" | "EventName" | "ReadOnly" | "Username" | "ResourceType" | "ResourceName" | "EventSource" | "AccessKeyId"
 object LookupAttributeKey {
-  val EventId = "EventId".asInstanceOf[LookupAttributeKey]
-  val EventName = "EventName".asInstanceOf[LookupAttributeKey]
-  val ReadOnly = "ReadOnly".asInstanceOf[LookupAttributeKey]
-  val Username = "Username".asInstanceOf[LookupAttributeKey]
-  val ResourceType = "ResourceType".asInstanceOf[LookupAttributeKey]
-  val ResourceName = "ResourceName".asInstanceOf[LookupAttributeKey]
-  val EventSource = "EventSource".asInstanceOf[LookupAttributeKey]
-  val AccessKeyId = "AccessKeyId".asInstanceOf[LookupAttributeKey]
+  val EventId: "EventId" = "EventId"
+  val EventName: "EventName" = "EventName"
+  val ReadOnly: "ReadOnly" = "ReadOnly"
+  val Username: "Username" = "Username"
+  val ResourceType: "ResourceType" = "ResourceType"
+  val ResourceName: "ResourceName" = "ResourceName"
+  val EventSource: "EventSource" = "EventSource"
+  val AccessKeyId: "AccessKeyId" = "AccessKeyId"
 
-  @inline def values = js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
+  @inline def values = js.Array[LookupAttributeKey](EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
 }
 
-@js.native
-sealed trait ReadWriteType extends js.Any
+type ReadWriteType = "ReadOnly" | "WriteOnly" | "All"
 object ReadWriteType {
-  val ReadOnly = "ReadOnly".asInstanceOf[ReadWriteType]
-  val WriteOnly = "WriteOnly".asInstanceOf[ReadWriteType]
-  val All = "All".asInstanceOf[ReadWriteType]
+  val ReadOnly: "ReadOnly" = "ReadOnly"
+  val WriteOnly: "WriteOnly" = "WriteOnly"
+  val All: "All" = "All"
 
-  @inline def values = js.Array(ReadOnly, WriteOnly, All)
+  @inline def values = js.Array[ReadWriteType](ReadOnly, WriteOnly, All)
 }

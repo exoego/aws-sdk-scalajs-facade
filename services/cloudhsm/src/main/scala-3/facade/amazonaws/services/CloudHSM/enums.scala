@@ -1,47 +1,42 @@
 package facade.amazonaws.services.cloudhsm
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ClientVersion extends js.Any
+type ClientVersion = "5.1" | "5.3"
 object ClientVersion {
-  val `5.1` = "5.1".asInstanceOf[ClientVersion]
-  val `5.3` = "5.3".asInstanceOf[ClientVersion]
+  val `5.1`: "5.1" = "5.1"
+  val `5.3`: "5.3" = "5.3"
 
-  @inline def values = js.Array(`5.1`, `5.3`)
+  @inline def values = js.Array[ClientVersion](`5.1`, `5.3`)
 }
 
-@js.native
-sealed trait CloudHsmObjectState extends js.Any
+type CloudHsmObjectState = "READY" | "UPDATING" | "DEGRADED"
 object CloudHsmObjectState {
-  val READY = "READY".asInstanceOf[CloudHsmObjectState]
-  val UPDATING = "UPDATING".asInstanceOf[CloudHsmObjectState]
-  val DEGRADED = "DEGRADED".asInstanceOf[CloudHsmObjectState]
+  val READY: "READY" = "READY"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val DEGRADED: "DEGRADED" = "DEGRADED"
 
-  @inline def values = js.Array(READY, UPDATING, DEGRADED)
+  @inline def values = js.Array[CloudHsmObjectState](READY, UPDATING, DEGRADED)
 }
 
-@js.native
-sealed trait HsmStatus extends js.Any
+type HsmStatus = "PENDING" | "RUNNING" | "UPDATING" | "SUSPENDED" | "TERMINATING" | "TERMINATED" | "DEGRADED"
 object HsmStatus {
-  val PENDING = "PENDING".asInstanceOf[HsmStatus]
-  val RUNNING = "RUNNING".asInstanceOf[HsmStatus]
-  val UPDATING = "UPDATING".asInstanceOf[HsmStatus]
-  val SUSPENDED = "SUSPENDED".asInstanceOf[HsmStatus]
-  val TERMINATING = "TERMINATING".asInstanceOf[HsmStatus]
-  val TERMINATED = "TERMINATED".asInstanceOf[HsmStatus]
-  val DEGRADED = "DEGRADED".asInstanceOf[HsmStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val SUSPENDED: "SUSPENDED" = "SUSPENDED"
+  val TERMINATING: "TERMINATING" = "TERMINATING"
+  val TERMINATED: "TERMINATED" = "TERMINATED"
+  val DEGRADED: "DEGRADED" = "DEGRADED"
 
-  @inline def values = js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED)
+  @inline def values = js.Array[HsmStatus](PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED)
 }
 
 /** Specifies the type of subscription for the HSM. * ```PRODUCTION``` - The HSM is being used in a production environment. * ```TRIAL``` - The HSM is being used in a product trial.
   */
-@js.native
-sealed trait SubscriptionType extends js.Any
+type SubscriptionType = "PRODUCTION"
 object SubscriptionType {
-  val PRODUCTION = "PRODUCTION".asInstanceOf[SubscriptionType]
+  val PRODUCTION: "PRODUCTION" = "PRODUCTION"
 
-  @inline def values = js.Array(PRODUCTION)
+  @inline def values = js.Array[SubscriptionType](PRODUCTION)
 }

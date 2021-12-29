@@ -64,35 +64,7 @@ object EntitlementDataUnit {
   val `Terabits/Second` = "Terabits/Second".asInstanceOf[EntitlementDataUnit]
   val `Count/Second` = "Count/Second".asInstanceOf[EntitlementDataUnit]
 
-  @inline def values = js.Array(
-    Count,
-    None,
-    Seconds,
-    Microseconds,
-    Milliseconds,
-    Bytes,
-    Kilobytes,
-    Megabytes,
-    Gigabytes,
-    Terabytes,
-    Bits,
-    Kilobits,
-    Megabits,
-    Gigabits,
-    Terabits,
-    Percent,
-    `Bytes/Second`,
-    `Kilobytes/Second`,
-    `Megabytes/Second`,
-    `Gigabytes/Second`,
-    `Terabytes/Second`,
-    `Bits/Second`,
-    `Kilobits/Second`,
-    `Megabits/Second`,
-    `Gigabits/Second`,
-    `Terabits/Second`,
-    `Count/Second`
-  )
+  @inline def values = js.Array(Count, None, Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, `Bytes/Second`, `Kilobytes/Second`, `Megabytes/Second`, `Gigabytes/Second`, `Terabytes/Second`, `Bits/Second`, `Kilobits/Second`, `Megabits/Second`, `Gigabits/Second`, `Terabits/Second`, `Count/Second`)
 }
 
 @js.native
@@ -126,35 +98,7 @@ object EntitlementUnit {
   val `Terabits/Second` = "Terabits/Second".asInstanceOf[EntitlementUnit]
   val `Count/Second` = "Count/Second".asInstanceOf[EntitlementUnit]
 
-  @inline def values = js.Array(
-    Count,
-    None,
-    Seconds,
-    Microseconds,
-    Milliseconds,
-    Bytes,
-    Kilobytes,
-    Megabytes,
-    Gigabytes,
-    Terabytes,
-    Bits,
-    Kilobits,
-    Megabits,
-    Gigabits,
-    Terabits,
-    Percent,
-    `Bytes/Second`,
-    `Kilobytes/Second`,
-    `Megabytes/Second`,
-    `Gigabytes/Second`,
-    `Terabytes/Second`,
-    `Bits/Second`,
-    `Kilobits/Second`,
-    `Megabits/Second`,
-    `Gigabits/Second`,
-    `Terabits/Second`,
-    `Count/Second`
-  )
+  @inline def values = js.Array(Count, None, Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, `Bytes/Second`, `Kilobytes/Second`, `Megabytes/Second`, `Gigabytes/Second`, `Terabytes/Second`, `Bits/Second`, `Kilobits/Second`, `Megabits/Second`, `Gigabits/Second`, `Terabits/Second`, `Count/Second`)
 }
 
 @js.native
@@ -269,3 +213,4 @@ object TokenType {
 
   @inline def values = js.Array(REFRESH_TOKEN)
 }
+

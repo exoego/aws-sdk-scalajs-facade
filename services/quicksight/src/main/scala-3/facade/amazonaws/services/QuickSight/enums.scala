@@ -1,23 +1,21 @@
 package facade.amazonaws.services.quicksight
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AnalysisErrorType extends js.Any
+type AnalysisErrorType = "ACCESS_DENIED" | "SOURCE_NOT_FOUND" | "DATA_SET_NOT_FOUND" | "INTERNAL_FAILURE" | "PARAMETER_VALUE_INCOMPATIBLE" | "PARAMETER_TYPE_INVALID" | "PARAMETER_NOT_FOUND" | "COLUMN_TYPE_MISMATCH" | "COLUMN_GEOGRAPHIC_ROLE_MISMATCH" | "COLUMN_REPLACEMENT_MISSING"
 object AnalysisErrorType {
-  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[AnalysisErrorType]
-  val SOURCE_NOT_FOUND = "SOURCE_NOT_FOUND".asInstanceOf[AnalysisErrorType]
-  val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND".asInstanceOf[AnalysisErrorType]
-  val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[AnalysisErrorType]
-  val PARAMETER_VALUE_INCOMPATIBLE = "PARAMETER_VALUE_INCOMPATIBLE".asInstanceOf[AnalysisErrorType]
-  val PARAMETER_TYPE_INVALID = "PARAMETER_TYPE_INVALID".asInstanceOf[AnalysisErrorType]
-  val PARAMETER_NOT_FOUND = "PARAMETER_NOT_FOUND".asInstanceOf[AnalysisErrorType]
-  val COLUMN_TYPE_MISMATCH = "COLUMN_TYPE_MISMATCH".asInstanceOf[AnalysisErrorType]
-  val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH".asInstanceOf[AnalysisErrorType]
-  val COLUMN_REPLACEMENT_MISSING = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[AnalysisErrorType]
+  val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  val SOURCE_NOT_FOUND: "SOURCE_NOT_FOUND" = "SOURCE_NOT_FOUND"
+  val DATA_SET_NOT_FOUND: "DATA_SET_NOT_FOUND" = "DATA_SET_NOT_FOUND"
+  val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
+  val PARAMETER_VALUE_INCOMPATIBLE: "PARAMETER_VALUE_INCOMPATIBLE" = "PARAMETER_VALUE_INCOMPATIBLE"
+  val PARAMETER_TYPE_INVALID: "PARAMETER_TYPE_INVALID" = "PARAMETER_TYPE_INVALID"
+  val PARAMETER_NOT_FOUND: "PARAMETER_NOT_FOUND" = "PARAMETER_NOT_FOUND"
+  val COLUMN_TYPE_MISMATCH: "COLUMN_TYPE_MISMATCH" = "COLUMN_TYPE_MISMATCH"
+  val COLUMN_GEOGRAPHIC_ROLE_MISMATCH: "COLUMN_GEOGRAPHIC_ROLE_MISMATCH" = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH"
+  val COLUMN_REPLACEMENT_MISSING: "COLUMN_REPLACEMENT_MISSING" = "COLUMN_REPLACEMENT_MISSING"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[AnalysisErrorType](
     ACCESS_DENIED,
     SOURCE_NOT_FOUND,
     DATA_SET_NOT_FOUND,
@@ -31,59 +29,54 @@ object AnalysisErrorType {
   )
 }
 
-@js.native
-sealed trait AnalysisFilterAttribute extends js.Any
+type AnalysisFilterAttribute = "QUICKSIGHT_USER"
 object AnalysisFilterAttribute {
-  val QUICKSIGHT_USER = "QUICKSIGHT_USER".asInstanceOf[AnalysisFilterAttribute]
+  val QUICKSIGHT_USER: "QUICKSIGHT_USER" = "QUICKSIGHT_USER"
 
-  @inline def values = js.Array(QUICKSIGHT_USER)
+  @inline def values = js.Array[AnalysisFilterAttribute](QUICKSIGHT_USER)
 }
 
-@js.native
-sealed trait AssignmentStatus extends js.Any
+type AssignmentStatus = "ENABLED" | "DRAFT" | "DISABLED"
 object AssignmentStatus {
-  val ENABLED = "ENABLED".asInstanceOf[AssignmentStatus]
-  val DRAFT = "DRAFT".asInstanceOf[AssignmentStatus]
-  val DISABLED = "DISABLED".asInstanceOf[AssignmentStatus]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DRAFT: "DRAFT" = "DRAFT"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DRAFT, DISABLED)
+  @inline def values = js.Array[AssignmentStatus](ENABLED, DRAFT, DISABLED)
 }
 
-@js.native
-sealed trait ColumnDataType extends js.Any
+type ColumnDataType = "STRING" | "INTEGER" | "DECIMAL" | "DATETIME"
 object ColumnDataType {
-  val STRING = "STRING".asInstanceOf[ColumnDataType]
-  val INTEGER = "INTEGER".asInstanceOf[ColumnDataType]
-  val DECIMAL = "DECIMAL".asInstanceOf[ColumnDataType]
-  val DATETIME = "DATETIME".asInstanceOf[ColumnDataType]
+  val STRING: "STRING" = "STRING"
+  val INTEGER: "INTEGER" = "INTEGER"
+  val DECIMAL: "DECIMAL" = "DECIMAL"
+  val DATETIME: "DATETIME" = "DATETIME"
 
-  @inline def values = js.Array(STRING, INTEGER, DECIMAL, DATETIME)
+  @inline def values = js.Array[ColumnDataType](STRING, INTEGER, DECIMAL, DATETIME)
 }
 
-@js.native
-sealed trait DashboardBehavior extends js.Any
+type DashboardBehavior = "ENABLED" | "DISABLED"
 object DashboardBehavior {
-  val ENABLED = "ENABLED".asInstanceOf[DashboardBehavior]
-  val DISABLED = "DISABLED".asInstanceOf[DashboardBehavior]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[DashboardBehavior](ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait DashboardErrorType extends js.Any
+type DashboardErrorType = "ACCESS_DENIED" | "SOURCE_NOT_FOUND" | "DATA_SET_NOT_FOUND" | "INTERNAL_FAILURE" | "PARAMETER_VALUE_INCOMPATIBLE" | "PARAMETER_TYPE_INVALID" | "PARAMETER_NOT_FOUND" | "COLUMN_TYPE_MISMATCH" | "COLUMN_GEOGRAPHIC_ROLE_MISMATCH" | "COLUMN_REPLACEMENT_MISSING"
 object DashboardErrorType {
-  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[DashboardErrorType]
-  val SOURCE_NOT_FOUND = "SOURCE_NOT_FOUND".asInstanceOf[DashboardErrorType]
-  val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND".asInstanceOf[DashboardErrorType]
-  val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[DashboardErrorType]
-  val PARAMETER_VALUE_INCOMPATIBLE = "PARAMETER_VALUE_INCOMPATIBLE".asInstanceOf[DashboardErrorType]
-  val PARAMETER_TYPE_INVALID = "PARAMETER_TYPE_INVALID".asInstanceOf[DashboardErrorType]
-  val PARAMETER_NOT_FOUND = "PARAMETER_NOT_FOUND".asInstanceOf[DashboardErrorType]
-  val COLUMN_TYPE_MISMATCH = "COLUMN_TYPE_MISMATCH".asInstanceOf[DashboardErrorType]
-  val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH".asInstanceOf[DashboardErrorType]
-  val COLUMN_REPLACEMENT_MISSING = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[DashboardErrorType]
+  val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  val SOURCE_NOT_FOUND: "SOURCE_NOT_FOUND" = "SOURCE_NOT_FOUND"
+  val DATA_SET_NOT_FOUND: "DATA_SET_NOT_FOUND" = "DATA_SET_NOT_FOUND"
+  val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
+  val PARAMETER_VALUE_INCOMPATIBLE: "PARAMETER_VALUE_INCOMPATIBLE" = "PARAMETER_VALUE_INCOMPATIBLE"
+  val PARAMETER_TYPE_INVALID: "PARAMETER_TYPE_INVALID" = "PARAMETER_TYPE_INVALID"
+  val PARAMETER_NOT_FOUND: "PARAMETER_NOT_FOUND" = "PARAMETER_NOT_FOUND"
+  val COLUMN_TYPE_MISMATCH: "COLUMN_TYPE_MISMATCH" = "COLUMN_TYPE_MISMATCH"
+  val COLUMN_GEOGRAPHIC_ROLE_MISMATCH: "COLUMN_GEOGRAPHIC_ROLE_MISMATCH" = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH"
+  val COLUMN_REPLACEMENT_MISSING: "COLUMN_REPLACEMENT_MISSING" = "COLUMN_REPLACEMENT_MISSING"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[DashboardErrorType](
     ACCESS_DENIED,
     SOURCE_NOT_FOUND,
     DATA_SET_NOT_FOUND,
@@ -97,75 +90,70 @@ object DashboardErrorType {
   )
 }
 
-@js.native
-sealed trait DashboardFilterAttribute extends js.Any
+type DashboardFilterAttribute = "QUICKSIGHT_USER"
 object DashboardFilterAttribute {
-  val QUICKSIGHT_USER = "QUICKSIGHT_USER".asInstanceOf[DashboardFilterAttribute]
+  val QUICKSIGHT_USER: "QUICKSIGHT_USER" = "QUICKSIGHT_USER"
 
-  @inline def values = js.Array(QUICKSIGHT_USER)
+  @inline def values = js.Array[DashboardFilterAttribute](QUICKSIGHT_USER)
 }
 
-@js.native
-sealed trait DashboardUIState extends js.Any
+type DashboardUIState = "EXPANDED" | "COLLAPSED"
 object DashboardUIState {
-  val EXPANDED = "EXPANDED".asInstanceOf[DashboardUIState]
-  val COLLAPSED = "COLLAPSED".asInstanceOf[DashboardUIState]
+  val EXPANDED: "EXPANDED" = "EXPANDED"
+  val COLLAPSED: "COLLAPSED" = "COLLAPSED"
 
-  @inline def values = js.Array(EXPANDED, COLLAPSED)
+  @inline def values = js.Array[DashboardUIState](EXPANDED, COLLAPSED)
 }
 
-@js.native
-sealed trait DataSetImportMode extends js.Any
+type DataSetImportMode = "SPICE" | "DIRECT_QUERY"
 object DataSetImportMode {
-  val SPICE = "SPICE".asInstanceOf[DataSetImportMode]
-  val DIRECT_QUERY = "DIRECT_QUERY".asInstanceOf[DataSetImportMode]
+  val SPICE: "SPICE" = "SPICE"
+  val DIRECT_QUERY: "DIRECT_QUERY" = "DIRECT_QUERY"
 
-  @inline def values = js.Array(SPICE, DIRECT_QUERY)
+  @inline def values = js.Array[DataSetImportMode](SPICE, DIRECT_QUERY)
 }
 
-@js.native
-sealed trait DataSourceErrorInfoType extends js.Any
+type DataSourceErrorInfoType = "ACCESS_DENIED" | "COPY_SOURCE_NOT_FOUND" | "TIMEOUT" | "ENGINE_VERSION_NOT_SUPPORTED" | "UNKNOWN_HOST" | "GENERIC_SQL_FAILURE" | "CONFLICT" | "UNKNOWN"
 object DataSourceErrorInfoType {
-  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[DataSourceErrorInfoType]
-  val COPY_SOURCE_NOT_FOUND = "COPY_SOURCE_NOT_FOUND".asInstanceOf[DataSourceErrorInfoType]
-  val TIMEOUT = "TIMEOUT".asInstanceOf[DataSourceErrorInfoType]
-  val ENGINE_VERSION_NOT_SUPPORTED = "ENGINE_VERSION_NOT_SUPPORTED".asInstanceOf[DataSourceErrorInfoType]
-  val UNKNOWN_HOST = "UNKNOWN_HOST".asInstanceOf[DataSourceErrorInfoType]
-  val GENERIC_SQL_FAILURE = "GENERIC_SQL_FAILURE".asInstanceOf[DataSourceErrorInfoType]
-  val CONFLICT = "CONFLICT".asInstanceOf[DataSourceErrorInfoType]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[DataSourceErrorInfoType]
+  val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  val COPY_SOURCE_NOT_FOUND: "COPY_SOURCE_NOT_FOUND" = "COPY_SOURCE_NOT_FOUND"
+  val TIMEOUT: "TIMEOUT" = "TIMEOUT"
+  val ENGINE_VERSION_NOT_SUPPORTED: "ENGINE_VERSION_NOT_SUPPORTED" = "ENGINE_VERSION_NOT_SUPPORTED"
+  val UNKNOWN_HOST: "UNKNOWN_HOST" = "UNKNOWN_HOST"
+  val GENERIC_SQL_FAILURE: "GENERIC_SQL_FAILURE" = "GENERIC_SQL_FAILURE"
+  val CONFLICT: "CONFLICT" = "CONFLICT"
+  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array(ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN)
+  @inline def values = js.Array[DataSourceErrorInfoType](ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN)
 }
 
-@js.native
-sealed trait DataSourceType extends js.Any
+type DataSourceType = "ADOBE_ANALYTICS" | "AMAZON_ELASTICSEARCH" | "ATHENA" | "AURORA" | "AURORA_POSTGRESQL" | "AWS_IOT_ANALYTICS" | "GITHUB" | "JIRA" | "MARIADB" | "MYSQL" | "ORACLE" | "POSTGRESQL" | "PRESTO" | "REDSHIFT" | "S3" | "SALESFORCE" | "SERVICENOW" | "SNOWFLAKE" | "SPARK" | "SQLSERVER" | "TERADATA" | "TWITTER" | "TIMESTREAM"
 object DataSourceType {
-  val ADOBE_ANALYTICS = "ADOBE_ANALYTICS".asInstanceOf[DataSourceType]
-  val AMAZON_ELASTICSEARCH = "AMAZON_ELASTICSEARCH".asInstanceOf[DataSourceType]
-  val ATHENA = "ATHENA".asInstanceOf[DataSourceType]
-  val AURORA = "AURORA".asInstanceOf[DataSourceType]
-  val AURORA_POSTGRESQL = "AURORA_POSTGRESQL".asInstanceOf[DataSourceType]
-  val AWS_IOT_ANALYTICS = "AWS_IOT_ANALYTICS".asInstanceOf[DataSourceType]
-  val GITHUB = "GITHUB".asInstanceOf[DataSourceType]
-  val JIRA = "JIRA".asInstanceOf[DataSourceType]
-  val MARIADB = "MARIADB".asInstanceOf[DataSourceType]
-  val MYSQL = "MYSQL".asInstanceOf[DataSourceType]
-  val ORACLE = "ORACLE".asInstanceOf[DataSourceType]
-  val POSTGRESQL = "POSTGRESQL".asInstanceOf[DataSourceType]
-  val PRESTO = "PRESTO".asInstanceOf[DataSourceType]
-  val REDSHIFT = "REDSHIFT".asInstanceOf[DataSourceType]
-  val S3 = "S3".asInstanceOf[DataSourceType]
-  val SALESFORCE = "SALESFORCE".asInstanceOf[DataSourceType]
-  val SERVICENOW = "SERVICENOW".asInstanceOf[DataSourceType]
-  val SNOWFLAKE = "SNOWFLAKE".asInstanceOf[DataSourceType]
-  val SPARK = "SPARK".asInstanceOf[DataSourceType]
-  val SQLSERVER = "SQLSERVER".asInstanceOf[DataSourceType]
-  val TERADATA = "TERADATA".asInstanceOf[DataSourceType]
-  val TWITTER = "TWITTER".asInstanceOf[DataSourceType]
-  val TIMESTREAM = "TIMESTREAM".asInstanceOf[DataSourceType]
+  val ADOBE_ANALYTICS: "ADOBE_ANALYTICS" = "ADOBE_ANALYTICS"
+  val AMAZON_ELASTICSEARCH: "AMAZON_ELASTICSEARCH" = "AMAZON_ELASTICSEARCH"
+  val ATHENA: "ATHENA" = "ATHENA"
+  val AURORA: "AURORA" = "AURORA"
+  val AURORA_POSTGRESQL: "AURORA_POSTGRESQL" = "AURORA_POSTGRESQL"
+  val AWS_IOT_ANALYTICS: "AWS_IOT_ANALYTICS" = "AWS_IOT_ANALYTICS"
+  val GITHUB: "GITHUB" = "GITHUB"
+  val JIRA: "JIRA" = "JIRA"
+  val MARIADB: "MARIADB" = "MARIADB"
+  val MYSQL: "MYSQL" = "MYSQL"
+  val ORACLE: "ORACLE" = "ORACLE"
+  val POSTGRESQL: "POSTGRESQL" = "POSTGRESQL"
+  val PRESTO: "PRESTO" = "PRESTO"
+  val REDSHIFT: "REDSHIFT" = "REDSHIFT"
+  val S3: "S3" = "S3"
+  val SALESFORCE: "SALESFORCE" = "SALESFORCE"
+  val SERVICENOW: "SERVICENOW" = "SERVICENOW"
+  val SNOWFLAKE: "SNOWFLAKE" = "SNOWFLAKE"
+  val SPARK: "SPARK" = "SPARK"
+  val SQLSERVER: "SQLSERVER" = "SQLSERVER"
+  val TERADATA: "TERADATA" = "TERADATA"
+  val TWITTER: "TWITTER" = "TWITTER"
+  val TIMESTREAM: "TIMESTREAM" = "TIMESTREAM"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[DataSourceType](
     ADOBE_ANALYTICS,
     AMAZON_ELASTICSEARCH,
     ATHENA,
@@ -192,130 +180,122 @@ object DataSourceType {
   )
 }
 
-@js.native
-sealed trait Edition extends js.Any
+type Edition = "STANDARD" | "ENTERPRISE"
 object Edition {
-  val STANDARD = "STANDARD".asInstanceOf[Edition]
-  val ENTERPRISE = "ENTERPRISE".asInstanceOf[Edition]
+  val STANDARD: "STANDARD" = "STANDARD"
+  val ENTERPRISE: "ENTERPRISE" = "ENTERPRISE"
 
-  @inline def values = js.Array(STANDARD, ENTERPRISE)
+  @inline def values = js.Array[Edition](STANDARD, ENTERPRISE)
 }
 
-@js.native
-sealed trait EmbeddingIdentityType extends js.Any
+type EmbeddingIdentityType = "IAM" | "QUICKSIGHT" | "ANONYMOUS"
 object EmbeddingIdentityType {
-  val IAM = "IAM".asInstanceOf[EmbeddingIdentityType]
-  val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[EmbeddingIdentityType]
-  val ANONYMOUS = "ANONYMOUS".asInstanceOf[EmbeddingIdentityType]
+  val IAM: "IAM" = "IAM"
+  val QUICKSIGHT: "QUICKSIGHT" = "QUICKSIGHT"
+  val ANONYMOUS: "ANONYMOUS" = "ANONYMOUS"
 
-  @inline def values = js.Array(IAM, QUICKSIGHT, ANONYMOUS)
+  @inline def values = js.Array[EmbeddingIdentityType](IAM, QUICKSIGHT, ANONYMOUS)
 }
 
-@js.native
-sealed trait FileFormat extends js.Any
+type FileFormat = "CSV" | "TSV" | "CLF" | "ELF" | "XLSX" | "JSON"
 object FileFormat {
-  val CSV = "CSV".asInstanceOf[FileFormat]
-  val TSV = "TSV".asInstanceOf[FileFormat]
-  val CLF = "CLF".asInstanceOf[FileFormat]
-  val ELF = "ELF".asInstanceOf[FileFormat]
-  val XLSX = "XLSX".asInstanceOf[FileFormat]
-  val JSON = "JSON".asInstanceOf[FileFormat]
+  val CSV: "CSV" = "CSV"
+  val TSV: "TSV" = "TSV"
+  val CLF: "CLF" = "CLF"
+  val ELF: "ELF" = "ELF"
+  val XLSX: "XLSX" = "XLSX"
+  val JSON: "JSON" = "JSON"
 
-  @inline def values = js.Array(CSV, TSV, CLF, ELF, XLSX, JSON)
+  @inline def values = js.Array[FileFormat](CSV, TSV, CLF, ELF, XLSX, JSON)
 }
 
-@js.native
-sealed trait FilterOperator extends js.Any
+type FilterOperator = "StringEquals"
 object FilterOperator {
-  val StringEquals = "StringEquals".asInstanceOf[FilterOperator]
+  val StringEquals: "StringEquals" = "StringEquals"
 
-  @inline def values = js.Array(StringEquals)
+  @inline def values = js.Array[FilterOperator](StringEquals)
 }
 
-@js.native
-sealed trait GeoSpatialCountryCode extends js.Any
+type GeoSpatialCountryCode = "US"
 object GeoSpatialCountryCode {
-  val US = "US".asInstanceOf[GeoSpatialCountryCode]
+  val US: "US" = "US"
 
-  @inline def values = js.Array(US)
+  @inline def values = js.Array[GeoSpatialCountryCode](US)
 }
 
-@js.native
-sealed trait GeoSpatialDataRole extends js.Any
+type GeoSpatialDataRole = "COUNTRY" | "STATE" | "COUNTY" | "CITY" | "POSTCODE" | "LONGITUDE" | "LATITUDE"
 object GeoSpatialDataRole {
-  val COUNTRY = "COUNTRY".asInstanceOf[GeoSpatialDataRole]
-  val STATE = "STATE".asInstanceOf[GeoSpatialDataRole]
-  val COUNTY = "COUNTY".asInstanceOf[GeoSpatialDataRole]
-  val CITY = "CITY".asInstanceOf[GeoSpatialDataRole]
-  val POSTCODE = "POSTCODE".asInstanceOf[GeoSpatialDataRole]
-  val LONGITUDE = "LONGITUDE".asInstanceOf[GeoSpatialDataRole]
-  val LATITUDE = "LATITUDE".asInstanceOf[GeoSpatialDataRole]
+  val COUNTRY: "COUNTRY" = "COUNTRY"
+  val STATE: "STATE" = "STATE"
+  val COUNTY: "COUNTY" = "COUNTY"
+  val CITY: "CITY" = "CITY"
+  val POSTCODE: "POSTCODE" = "POSTCODE"
+  val LONGITUDE: "LONGITUDE" = "LONGITUDE"
+  val LATITUDE: "LATITUDE" = "LATITUDE"
 
-  @inline def values = js.Array(COUNTRY, STATE, COUNTY, CITY, POSTCODE, LONGITUDE, LATITUDE)
+  @inline def values = js.Array[GeoSpatialDataRole](COUNTRY, STATE, COUNTY, CITY, POSTCODE, LONGITUDE, LATITUDE)
 }
 
-@js.native
-sealed trait IdentityStore extends js.Any
+type IdentityStore = "QUICKSIGHT"
 object IdentityStore {
-  val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityStore]
+  val QUICKSIGHT: "QUICKSIGHT" = "QUICKSIGHT"
 
-  @inline def values = js.Array(QUICKSIGHT)
+  @inline def values = js.Array[IdentityStore](QUICKSIGHT)
 }
 
-@js.native
-sealed trait IdentityType extends js.Any
+type IdentityType = "IAM" | "QUICKSIGHT"
 object IdentityType {
-  val IAM = "IAM".asInstanceOf[IdentityType]
-  val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityType]
+  val IAM: "IAM" = "IAM"
+  val QUICKSIGHT: "QUICKSIGHT" = "QUICKSIGHT"
 
-  @inline def values = js.Array(IAM, QUICKSIGHT)
+  @inline def values = js.Array[IdentityType](IAM, QUICKSIGHT)
 }
 
-@js.native
-sealed trait IngestionErrorType extends js.Any
+type IngestionErrorType = "FAILURE_TO_ASSUME_ROLE" | "INGESTION_SUPERSEDED" | "INGESTION_CANCELED" | "DATA_SET_DELETED" | "DATA_SET_NOT_SPICE" | "S3_UPLOADED_FILE_DELETED" | "S3_MANIFEST_ERROR" | "DATA_TOLERANCE_EXCEPTION" | "SPICE_TABLE_NOT_FOUND" | "DATA_SET_SIZE_LIMIT_EXCEEDED" | "ROW_SIZE_LIMIT_EXCEEDED" | "ACCOUNT_CAPACITY_LIMIT_EXCEEDED" | "CUSTOMER_ERROR" | "DATA_SOURCE_NOT_FOUND" | "IAM_ROLE_NOT_AVAILABLE" | "CONNECTION_FAILURE" | "SQL_TABLE_NOT_FOUND" | "PERMISSION_DENIED" | "SSL_CERTIFICATE_VALIDATION_FAILURE" | "OAUTH_TOKEN_FAILURE" | "SOURCE_API_LIMIT_EXCEEDED_FAILURE" | "PASSWORD_AUTHENTICATION_FAILURE" | "SQL_SCHEMA_MISMATCH_ERROR" | "INVALID_DATE_FORMAT" | "INVALID_DATAPREP_SYNTAX" | "SOURCE_RESOURCE_LIMIT_EXCEEDED" | "SQL_INVALID_PARAMETER_VALUE" | "QUERY_TIMEOUT" | "SQL_NUMERIC_OVERFLOW" | "UNRESOLVABLE_HOST" | "UNROUTABLE_HOST" | "SQL_EXCEPTION" | "S3_FILE_INACCESSIBLE" | "IOT_FILE_NOT_FOUND" | "IOT_DATA_SET_FILE_EMPTY" | "INVALID_DATA_SOURCE_CONFIG" |
+  "DATA_SOURCE_AUTH_FAILED" | "DATA_SOURCE_CONNECTION_FAILED" | "FAILURE_TO_PROCESS_JSON_FILE" | "INTERNAL_SERVICE_ERROR"
 object IngestionErrorType {
-  val FAILURE_TO_ASSUME_ROLE = "FAILURE_TO_ASSUME_ROLE".asInstanceOf[IngestionErrorType]
-  val INGESTION_SUPERSEDED = "INGESTION_SUPERSEDED".asInstanceOf[IngestionErrorType]
-  val INGESTION_CANCELED = "INGESTION_CANCELED".asInstanceOf[IngestionErrorType]
-  val DATA_SET_DELETED = "DATA_SET_DELETED".asInstanceOf[IngestionErrorType]
-  val DATA_SET_NOT_SPICE = "DATA_SET_NOT_SPICE".asInstanceOf[IngestionErrorType]
-  val S3_UPLOADED_FILE_DELETED = "S3_UPLOADED_FILE_DELETED".asInstanceOf[IngestionErrorType]
-  val S3_MANIFEST_ERROR = "S3_MANIFEST_ERROR".asInstanceOf[IngestionErrorType]
-  val DATA_TOLERANCE_EXCEPTION = "DATA_TOLERANCE_EXCEPTION".asInstanceOf[IngestionErrorType]
-  val SPICE_TABLE_NOT_FOUND = "SPICE_TABLE_NOT_FOUND".asInstanceOf[IngestionErrorType]
-  val DATA_SET_SIZE_LIMIT_EXCEEDED = "DATA_SET_SIZE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
-  val ROW_SIZE_LIMIT_EXCEEDED = "ROW_SIZE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
-  val ACCOUNT_CAPACITY_LIMIT_EXCEEDED = "ACCOUNT_CAPACITY_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
-  val CUSTOMER_ERROR = "CUSTOMER_ERROR".asInstanceOf[IngestionErrorType]
-  val DATA_SOURCE_NOT_FOUND = "DATA_SOURCE_NOT_FOUND".asInstanceOf[IngestionErrorType]
-  val IAM_ROLE_NOT_AVAILABLE = "IAM_ROLE_NOT_AVAILABLE".asInstanceOf[IngestionErrorType]
-  val CONNECTION_FAILURE = "CONNECTION_FAILURE".asInstanceOf[IngestionErrorType]
-  val SQL_TABLE_NOT_FOUND = "SQL_TABLE_NOT_FOUND".asInstanceOf[IngestionErrorType]
-  val PERMISSION_DENIED = "PERMISSION_DENIED".asInstanceOf[IngestionErrorType]
-  val SSL_CERTIFICATE_VALIDATION_FAILURE = "SSL_CERTIFICATE_VALIDATION_FAILURE".asInstanceOf[IngestionErrorType]
-  val OAUTH_TOKEN_FAILURE = "OAUTH_TOKEN_FAILURE".asInstanceOf[IngestionErrorType]
-  val SOURCE_API_LIMIT_EXCEEDED_FAILURE = "SOURCE_API_LIMIT_EXCEEDED_FAILURE".asInstanceOf[IngestionErrorType]
-  val PASSWORD_AUTHENTICATION_FAILURE = "PASSWORD_AUTHENTICATION_FAILURE".asInstanceOf[IngestionErrorType]
-  val SQL_SCHEMA_MISMATCH_ERROR = "SQL_SCHEMA_MISMATCH_ERROR".asInstanceOf[IngestionErrorType]
-  val INVALID_DATE_FORMAT = "INVALID_DATE_FORMAT".asInstanceOf[IngestionErrorType]
-  val INVALID_DATAPREP_SYNTAX = "INVALID_DATAPREP_SYNTAX".asInstanceOf[IngestionErrorType]
-  val SOURCE_RESOURCE_LIMIT_EXCEEDED = "SOURCE_RESOURCE_LIMIT_EXCEEDED".asInstanceOf[IngestionErrorType]
-  val SQL_INVALID_PARAMETER_VALUE = "SQL_INVALID_PARAMETER_VALUE".asInstanceOf[IngestionErrorType]
-  val QUERY_TIMEOUT = "QUERY_TIMEOUT".asInstanceOf[IngestionErrorType]
-  val SQL_NUMERIC_OVERFLOW = "SQL_NUMERIC_OVERFLOW".asInstanceOf[IngestionErrorType]
-  val UNRESOLVABLE_HOST = "UNRESOLVABLE_HOST".asInstanceOf[IngestionErrorType]
-  val UNROUTABLE_HOST = "UNROUTABLE_HOST".asInstanceOf[IngestionErrorType]
-  val SQL_EXCEPTION = "SQL_EXCEPTION".asInstanceOf[IngestionErrorType]
-  val S3_FILE_INACCESSIBLE = "S3_FILE_INACCESSIBLE".asInstanceOf[IngestionErrorType]
-  val IOT_FILE_NOT_FOUND = "IOT_FILE_NOT_FOUND".asInstanceOf[IngestionErrorType]
-  val IOT_DATA_SET_FILE_EMPTY = "IOT_DATA_SET_FILE_EMPTY".asInstanceOf[IngestionErrorType]
-  val INVALID_DATA_SOURCE_CONFIG = "INVALID_DATA_SOURCE_CONFIG".asInstanceOf[IngestionErrorType]
-  val DATA_SOURCE_AUTH_FAILED = "DATA_SOURCE_AUTH_FAILED".asInstanceOf[IngestionErrorType]
-  val DATA_SOURCE_CONNECTION_FAILED = "DATA_SOURCE_CONNECTION_FAILED".asInstanceOf[IngestionErrorType]
-  val FAILURE_TO_PROCESS_JSON_FILE = "FAILURE_TO_PROCESS_JSON_FILE".asInstanceOf[IngestionErrorType]
-  val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[IngestionErrorType]
+  val FAILURE_TO_ASSUME_ROLE: "FAILURE_TO_ASSUME_ROLE" = "FAILURE_TO_ASSUME_ROLE"
+  val INGESTION_SUPERSEDED: "INGESTION_SUPERSEDED" = "INGESTION_SUPERSEDED"
+  val INGESTION_CANCELED: "INGESTION_CANCELED" = "INGESTION_CANCELED"
+  val DATA_SET_DELETED: "DATA_SET_DELETED" = "DATA_SET_DELETED"
+  val DATA_SET_NOT_SPICE: "DATA_SET_NOT_SPICE" = "DATA_SET_NOT_SPICE"
+  val S3_UPLOADED_FILE_DELETED: "S3_UPLOADED_FILE_DELETED" = "S3_UPLOADED_FILE_DELETED"
+  val S3_MANIFEST_ERROR: "S3_MANIFEST_ERROR" = "S3_MANIFEST_ERROR"
+  val DATA_TOLERANCE_EXCEPTION: "DATA_TOLERANCE_EXCEPTION" = "DATA_TOLERANCE_EXCEPTION"
+  val SPICE_TABLE_NOT_FOUND: "SPICE_TABLE_NOT_FOUND" = "SPICE_TABLE_NOT_FOUND"
+  val DATA_SET_SIZE_LIMIT_EXCEEDED: "DATA_SET_SIZE_LIMIT_EXCEEDED" = "DATA_SET_SIZE_LIMIT_EXCEEDED"
+  val ROW_SIZE_LIMIT_EXCEEDED: "ROW_SIZE_LIMIT_EXCEEDED" = "ROW_SIZE_LIMIT_EXCEEDED"
+  val ACCOUNT_CAPACITY_LIMIT_EXCEEDED: "ACCOUNT_CAPACITY_LIMIT_EXCEEDED" = "ACCOUNT_CAPACITY_LIMIT_EXCEEDED"
+  val CUSTOMER_ERROR: "CUSTOMER_ERROR" = "CUSTOMER_ERROR"
+  val DATA_SOURCE_NOT_FOUND: "DATA_SOURCE_NOT_FOUND" = "DATA_SOURCE_NOT_FOUND"
+  val IAM_ROLE_NOT_AVAILABLE: "IAM_ROLE_NOT_AVAILABLE" = "IAM_ROLE_NOT_AVAILABLE"
+  val CONNECTION_FAILURE: "CONNECTION_FAILURE" = "CONNECTION_FAILURE"
+  val SQL_TABLE_NOT_FOUND: "SQL_TABLE_NOT_FOUND" = "SQL_TABLE_NOT_FOUND"
+  val PERMISSION_DENIED: "PERMISSION_DENIED" = "PERMISSION_DENIED"
+  val SSL_CERTIFICATE_VALIDATION_FAILURE: "SSL_CERTIFICATE_VALIDATION_FAILURE" = "SSL_CERTIFICATE_VALIDATION_FAILURE"
+  val OAUTH_TOKEN_FAILURE: "OAUTH_TOKEN_FAILURE" = "OAUTH_TOKEN_FAILURE"
+  val SOURCE_API_LIMIT_EXCEEDED_FAILURE: "SOURCE_API_LIMIT_EXCEEDED_FAILURE" = "SOURCE_API_LIMIT_EXCEEDED_FAILURE"
+  val PASSWORD_AUTHENTICATION_FAILURE: "PASSWORD_AUTHENTICATION_FAILURE" = "PASSWORD_AUTHENTICATION_FAILURE"
+  val SQL_SCHEMA_MISMATCH_ERROR: "SQL_SCHEMA_MISMATCH_ERROR" = "SQL_SCHEMA_MISMATCH_ERROR"
+  val INVALID_DATE_FORMAT: "INVALID_DATE_FORMAT" = "INVALID_DATE_FORMAT"
+  val INVALID_DATAPREP_SYNTAX: "INVALID_DATAPREP_SYNTAX" = "INVALID_DATAPREP_SYNTAX"
+  val SOURCE_RESOURCE_LIMIT_EXCEEDED: "SOURCE_RESOURCE_LIMIT_EXCEEDED" = "SOURCE_RESOURCE_LIMIT_EXCEEDED"
+  val SQL_INVALID_PARAMETER_VALUE: "SQL_INVALID_PARAMETER_VALUE" = "SQL_INVALID_PARAMETER_VALUE"
+  val QUERY_TIMEOUT: "QUERY_TIMEOUT" = "QUERY_TIMEOUT"
+  val SQL_NUMERIC_OVERFLOW: "SQL_NUMERIC_OVERFLOW" = "SQL_NUMERIC_OVERFLOW"
+  val UNRESOLVABLE_HOST: "UNRESOLVABLE_HOST" = "UNRESOLVABLE_HOST"
+  val UNROUTABLE_HOST: "UNROUTABLE_HOST" = "UNROUTABLE_HOST"
+  val SQL_EXCEPTION: "SQL_EXCEPTION" = "SQL_EXCEPTION"
+  val S3_FILE_INACCESSIBLE: "S3_FILE_INACCESSIBLE" = "S3_FILE_INACCESSIBLE"
+  val IOT_FILE_NOT_FOUND: "IOT_FILE_NOT_FOUND" = "IOT_FILE_NOT_FOUND"
+  val IOT_DATA_SET_FILE_EMPTY: "IOT_DATA_SET_FILE_EMPTY" = "IOT_DATA_SET_FILE_EMPTY"
+  val INVALID_DATA_SOURCE_CONFIG: "INVALID_DATA_SOURCE_CONFIG" = "INVALID_DATA_SOURCE_CONFIG"
+  val DATA_SOURCE_AUTH_FAILED: "DATA_SOURCE_AUTH_FAILED" = "DATA_SOURCE_AUTH_FAILED"
+  val DATA_SOURCE_CONNECTION_FAILED: "DATA_SOURCE_CONNECTION_FAILED" = "DATA_SOURCE_CONNECTION_FAILED"
+  val FAILURE_TO_PROCESS_JSON_FILE: "FAILURE_TO_PROCESS_JSON_FILE" = "FAILURE_TO_PROCESS_JSON_FILE"
+  val INTERNAL_SERVICE_ERROR: "INTERNAL_SERVICE_ERROR" = "INTERNAL_SERVICE_ERROR"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[IngestionErrorType](
     FAILURE_TO_ASSUME_ROLE,
     INGESTION_SUPERSEDED,
     INGESTION_CANCELED,
@@ -359,154 +339,140 @@ object IngestionErrorType {
   )
 }
 
-@js.native
-sealed trait IngestionRequestSource extends js.Any
+type IngestionRequestSource = "MANUAL" | "SCHEDULED"
 object IngestionRequestSource {
-  val MANUAL = "MANUAL".asInstanceOf[IngestionRequestSource]
-  val SCHEDULED = "SCHEDULED".asInstanceOf[IngestionRequestSource]
+  val MANUAL: "MANUAL" = "MANUAL"
+  val SCHEDULED: "SCHEDULED" = "SCHEDULED"
 
-  @inline def values = js.Array(MANUAL, SCHEDULED)
+  @inline def values = js.Array[IngestionRequestSource](MANUAL, SCHEDULED)
 }
 
-@js.native
-sealed trait IngestionRequestType extends js.Any
+type IngestionRequestType = "INITIAL_INGESTION" | "EDIT" | "INCREMENTAL_REFRESH" | "FULL_REFRESH"
 object IngestionRequestType {
-  val INITIAL_INGESTION = "INITIAL_INGESTION".asInstanceOf[IngestionRequestType]
-  val EDIT = "EDIT".asInstanceOf[IngestionRequestType]
-  val INCREMENTAL_REFRESH = "INCREMENTAL_REFRESH".asInstanceOf[IngestionRequestType]
-  val FULL_REFRESH = "FULL_REFRESH".asInstanceOf[IngestionRequestType]
+  val INITIAL_INGESTION: "INITIAL_INGESTION" = "INITIAL_INGESTION"
+  val EDIT: "EDIT" = "EDIT"
+  val INCREMENTAL_REFRESH: "INCREMENTAL_REFRESH" = "INCREMENTAL_REFRESH"
+  val FULL_REFRESH: "FULL_REFRESH" = "FULL_REFRESH"
 
-  @inline def values = js.Array(INITIAL_INGESTION, EDIT, INCREMENTAL_REFRESH, FULL_REFRESH)
+  @inline def values = js.Array[IngestionRequestType](INITIAL_INGESTION, EDIT, INCREMENTAL_REFRESH, FULL_REFRESH)
 }
 
-@js.native
-sealed trait IngestionStatus extends js.Any
+type IngestionStatus = "INITIALIZED" | "QUEUED" | "RUNNING" | "FAILED" | "COMPLETED" | "CANCELLED"
 object IngestionStatus {
-  val INITIALIZED = "INITIALIZED".asInstanceOf[IngestionStatus]
-  val QUEUED = "QUEUED".asInstanceOf[IngestionStatus]
-  val RUNNING = "RUNNING".asInstanceOf[IngestionStatus]
-  val FAILED = "FAILED".asInstanceOf[IngestionStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[IngestionStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[IngestionStatus]
+  val INITIALIZED: "INITIALIZED" = "INITIALIZED"
+  val QUEUED: "QUEUED" = "QUEUED"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val FAILED: "FAILED" = "FAILED"
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED)
+  @inline def values = js.Array[IngestionStatus](INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED)
 }
 
-@js.native
-sealed trait InputColumnDataType extends js.Any
+type InputColumnDataType = "STRING" | "INTEGER" | "DECIMAL" | "DATETIME" | "BIT" | "BOOLEAN" | "JSON"
 object InputColumnDataType {
-  val STRING = "STRING".asInstanceOf[InputColumnDataType]
-  val INTEGER = "INTEGER".asInstanceOf[InputColumnDataType]
-  val DECIMAL = "DECIMAL".asInstanceOf[InputColumnDataType]
-  val DATETIME = "DATETIME".asInstanceOf[InputColumnDataType]
-  val BIT = "BIT".asInstanceOf[InputColumnDataType]
-  val BOOLEAN = "BOOLEAN".asInstanceOf[InputColumnDataType]
-  val JSON = "JSON".asInstanceOf[InputColumnDataType]
+  val STRING: "STRING" = "STRING"
+  val INTEGER: "INTEGER" = "INTEGER"
+  val DECIMAL: "DECIMAL" = "DECIMAL"
+  val DATETIME: "DATETIME" = "DATETIME"
+  val BIT: "BIT" = "BIT"
+  val BOOLEAN: "BOOLEAN" = "BOOLEAN"
+  val JSON: "JSON" = "JSON"
 
-  @inline def values = js.Array(STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON)
+  @inline def values = js.Array[InputColumnDataType](STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON)
 }
 
-@js.native
-sealed trait JoinType extends js.Any
+type JoinType = "INNER" | "OUTER" | "LEFT" | "RIGHT"
 object JoinType {
-  val INNER = "INNER".asInstanceOf[JoinType]
-  val OUTER = "OUTER".asInstanceOf[JoinType]
-  val LEFT = "LEFT".asInstanceOf[JoinType]
-  val RIGHT = "RIGHT".asInstanceOf[JoinType]
+  val INNER: "INNER" = "INNER"
+  val OUTER: "OUTER" = "OUTER"
+  val LEFT: "LEFT" = "LEFT"
+  val RIGHT: "RIGHT" = "RIGHT"
 
-  @inline def values = js.Array(INNER, OUTER, LEFT, RIGHT)
+  @inline def values = js.Array[JoinType](INNER, OUTER, LEFT, RIGHT)
 }
 
-@js.native
-sealed trait NamespaceErrorType extends js.Any
+type NamespaceErrorType = "PERMISSION_DENIED" | "INTERNAL_SERVICE_ERROR"
 object NamespaceErrorType {
-  val PERMISSION_DENIED = "PERMISSION_DENIED".asInstanceOf[NamespaceErrorType]
-  val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[NamespaceErrorType]
+  val PERMISSION_DENIED: "PERMISSION_DENIED" = "PERMISSION_DENIED"
+  val INTERNAL_SERVICE_ERROR: "INTERNAL_SERVICE_ERROR" = "INTERNAL_SERVICE_ERROR"
 
-  @inline def values = js.Array(PERMISSION_DENIED, INTERNAL_SERVICE_ERROR)
+  @inline def values = js.Array[NamespaceErrorType](PERMISSION_DENIED, INTERNAL_SERVICE_ERROR)
 }
 
-@js.native
-sealed trait NamespaceStatus extends js.Any
+type NamespaceStatus = "CREATED" | "CREATING" | "DELETING" | "RETRYABLE_FAILURE" | "NON_RETRYABLE_FAILURE"
 object NamespaceStatus {
-  val CREATED = "CREATED".asInstanceOf[NamespaceStatus]
-  val CREATING = "CREATING".asInstanceOf[NamespaceStatus]
-  val DELETING = "DELETING".asInstanceOf[NamespaceStatus]
-  val RETRYABLE_FAILURE = "RETRYABLE_FAILURE".asInstanceOf[NamespaceStatus]
-  val NON_RETRYABLE_FAILURE = "NON_RETRYABLE_FAILURE".asInstanceOf[NamespaceStatus]
+  val CREATED: "CREATED" = "CREATED"
+  val CREATING: "CREATING" = "CREATING"
+  val DELETING: "DELETING" = "DELETING"
+  val RETRYABLE_FAILURE: "RETRYABLE_FAILURE" = "RETRYABLE_FAILURE"
+  val NON_RETRYABLE_FAILURE: "NON_RETRYABLE_FAILURE" = "NON_RETRYABLE_FAILURE"
 
-  @inline def values = js.Array(CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE)
+  @inline def values = js.Array[NamespaceStatus](CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE)
 }
 
-@js.native
-sealed trait ResourceStatus extends js.Any
+type ResourceStatus = "CREATION_IN_PROGRESS" | "CREATION_SUCCESSFUL" | "CREATION_FAILED" | "UPDATE_IN_PROGRESS" | "UPDATE_SUCCESSFUL" | "UPDATE_FAILED" | "DELETED"
 object ResourceStatus {
-  val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[ResourceStatus]
-  val CREATION_SUCCESSFUL = "CREATION_SUCCESSFUL".asInstanceOf[ResourceStatus]
-  val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[ResourceStatus]
-  val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-  val UPDATE_SUCCESSFUL = "UPDATE_SUCCESSFUL".asInstanceOf[ResourceStatus]
-  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
-  val DELETED = "DELETED".asInstanceOf[ResourceStatus]
+  val CREATION_IN_PROGRESS: "CREATION_IN_PROGRESS" = "CREATION_IN_PROGRESS"
+  val CREATION_SUCCESSFUL: "CREATION_SUCCESSFUL" = "CREATION_SUCCESSFUL"
+  val CREATION_FAILED: "CREATION_FAILED" = "CREATION_FAILED"
+  val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+  val UPDATE_SUCCESSFUL: "UPDATE_SUCCESSFUL" = "UPDATE_SUCCESSFUL"
+  val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED, DELETED)
+  @inline def values = js.Array[ResourceStatus](CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED, DELETED)
 }
 
-@js.native
-sealed trait RowLevelPermissionPolicy extends js.Any
+type RowLevelPermissionPolicy = "GRANT_ACCESS" | "DENY_ACCESS"
 object RowLevelPermissionPolicy {
-  val GRANT_ACCESS = "GRANT_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
-  val DENY_ACCESS = "DENY_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
+  val GRANT_ACCESS: "GRANT_ACCESS" = "GRANT_ACCESS"
+  val DENY_ACCESS: "DENY_ACCESS" = "DENY_ACCESS"
 
-  @inline def values = js.Array(GRANT_ACCESS, DENY_ACCESS)
+  @inline def values = js.Array[RowLevelPermissionPolicy](GRANT_ACCESS, DENY_ACCESS)
 }
 
-@js.native
-sealed trait TemplateErrorType extends js.Any
+type TemplateErrorType = "SOURCE_NOT_FOUND" | "DATA_SET_NOT_FOUND" | "INTERNAL_FAILURE" | "ACCESS_DENIED"
 object TemplateErrorType {
-  val SOURCE_NOT_FOUND = "SOURCE_NOT_FOUND".asInstanceOf[TemplateErrorType]
-  val DATA_SET_NOT_FOUND = "DATA_SET_NOT_FOUND".asInstanceOf[TemplateErrorType]
-  val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[TemplateErrorType]
-  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[TemplateErrorType]
+  val SOURCE_NOT_FOUND: "SOURCE_NOT_FOUND" = "SOURCE_NOT_FOUND"
+  val DATA_SET_NOT_FOUND: "DATA_SET_NOT_FOUND" = "DATA_SET_NOT_FOUND"
+  val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
+  val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
 
-  @inline def values = js.Array(SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE, ACCESS_DENIED)
+  @inline def values = js.Array[TemplateErrorType](SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE, ACCESS_DENIED)
 }
 
-@js.native
-sealed trait TextQualifier extends js.Any
+type TextQualifier = "DOUBLE_QUOTE" | "SINGLE_QUOTE"
 object TextQualifier {
-  val DOUBLE_QUOTE = "DOUBLE_QUOTE".asInstanceOf[TextQualifier]
-  val SINGLE_QUOTE = "SINGLE_QUOTE".asInstanceOf[TextQualifier]
+  val DOUBLE_QUOTE: "DOUBLE_QUOTE" = "DOUBLE_QUOTE"
+  val SINGLE_QUOTE: "SINGLE_QUOTE" = "SINGLE_QUOTE"
 
-  @inline def values = js.Array(DOUBLE_QUOTE, SINGLE_QUOTE)
+  @inline def values = js.Array[TextQualifier](DOUBLE_QUOTE, SINGLE_QUOTE)
 }
 
-@js.native
-sealed trait ThemeErrorType extends js.Any
+type ThemeErrorType = "INTERNAL_FAILURE"
 object ThemeErrorType {
-  val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ThemeErrorType]
+  val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
 
-  @inline def values = js.Array(INTERNAL_FAILURE)
+  @inline def values = js.Array[ThemeErrorType](INTERNAL_FAILURE)
 }
 
-@js.native
-sealed trait ThemeType extends js.Any
+type ThemeType = "QUICKSIGHT" | "CUSTOM" | "ALL"
 object ThemeType {
-  val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[ThemeType]
-  val CUSTOM = "CUSTOM".asInstanceOf[ThemeType]
-  val ALL = "ALL".asInstanceOf[ThemeType]
+  val QUICKSIGHT: "QUICKSIGHT" = "QUICKSIGHT"
+  val CUSTOM: "CUSTOM" = "CUSTOM"
+  val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(QUICKSIGHT, CUSTOM, ALL)
+  @inline def values = js.Array[ThemeType](QUICKSIGHT, CUSTOM, ALL)
 }
 
-@js.native
-sealed trait UserRole extends js.Any
+type UserRole = "ADMIN" | "AUTHOR" | "READER" | "RESTRICTED_AUTHOR" | "RESTRICTED_READER"
 object UserRole {
-  val ADMIN = "ADMIN".asInstanceOf[UserRole]
-  val AUTHOR = "AUTHOR".asInstanceOf[UserRole]
-  val READER = "READER".asInstanceOf[UserRole]
-  val RESTRICTED_AUTHOR = "RESTRICTED_AUTHOR".asInstanceOf[UserRole]
-  val RESTRICTED_READER = "RESTRICTED_READER".asInstanceOf[UserRole]
+  val ADMIN: "ADMIN" = "ADMIN"
+  val AUTHOR: "AUTHOR" = "AUTHOR"
+  val READER: "READER" = "READER"
+  val RESTRICTED_AUTHOR: "RESTRICTED_AUTHOR" = "RESTRICTED_AUTHOR"
+  val RESTRICTED_READER: "RESTRICTED_READER" = "RESTRICTED_READER"
 
-  @inline def values = js.Array(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER)
+  @inline def values = js.Array[UserRole](ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER)
 }

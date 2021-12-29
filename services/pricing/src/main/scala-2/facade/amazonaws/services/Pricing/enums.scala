@@ -10,3 +10,4 @@ object FilterType {
 
   @inline def values = js.Array(TERM_MATCH)
 }
+

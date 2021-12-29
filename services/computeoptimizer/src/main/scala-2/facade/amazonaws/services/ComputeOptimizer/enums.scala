@@ -72,45 +72,7 @@ object ExportableAutoScalingGroupField {
   val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableAutoScalingGroupField]
   val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
 
-  @inline def values = js.Array(
-    AccountId,
-    AutoScalingGroupArn,
-    AutoScalingGroupName,
-    Finding,
-    UtilizationMetricsCpuMaximum,
-    UtilizationMetricsMemoryMaximum,
-    UtilizationMetricsEbsReadOpsPerSecondMaximum,
-    UtilizationMetricsEbsWriteOpsPerSecondMaximum,
-    UtilizationMetricsEbsReadBytesPerSecondMaximum,
-    UtilizationMetricsEbsWriteBytesPerSecondMaximum,
-    LookbackPeriodInDays,
-    CurrentConfigurationInstanceType,
-    CurrentConfigurationDesiredCapacity,
-    CurrentConfigurationMinSize,
-    CurrentConfigurationMaxSize,
-    CurrentOnDemandPrice,
-    CurrentStandardOneYearNoUpfrontReservedPrice,
-    CurrentStandardThreeYearNoUpfrontReservedPrice,
-    CurrentVCpus,
-    CurrentMemory,
-    CurrentStorage,
-    CurrentNetwork,
-    RecommendationOptionsConfigurationInstanceType,
-    RecommendationOptionsConfigurationDesiredCapacity,
-    RecommendationOptionsConfigurationMinSize,
-    RecommendationOptionsConfigurationMaxSize,
-    RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-    RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-    RecommendationOptionsPerformanceRisk,
-    RecommendationOptionsOnDemandPrice,
-    RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
-    RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
-    RecommendationOptionsVcpus,
-    RecommendationOptionsMemory,
-    RecommendationOptionsStorage,
-    RecommendationOptionsNetwork,
-    LastRefreshTimestamp
-  )
+  @inline def values = js.Array(AccountId, AutoScalingGroupArn, AutoScalingGroupName, Finding, UtilizationMetricsCpuMaximum, UtilizationMetricsMemoryMaximum, UtilizationMetricsEbsReadOpsPerSecondMaximum, UtilizationMetricsEbsWriteOpsPerSecondMaximum, UtilizationMetricsEbsReadBytesPerSecondMaximum, UtilizationMetricsEbsWriteBytesPerSecondMaximum, LookbackPeriodInDays, CurrentConfigurationInstanceType, CurrentConfigurationDesiredCapacity, CurrentConfigurationMinSize, CurrentConfigurationMaxSize, CurrentOnDemandPrice, CurrentStandardOneYearNoUpfrontReservedPrice, CurrentStandardThreeYearNoUpfrontReservedPrice, CurrentVCpus, CurrentMemory, CurrentStorage, CurrentNetwork, RecommendationOptionsConfigurationInstanceType, RecommendationOptionsConfigurationDesiredCapacity, RecommendationOptionsConfigurationMinSize, RecommendationOptionsConfigurationMaxSize, RecommendationOptionsProjectedUtilizationMetricsCpuMaximum, RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum, RecommendationOptionsPerformanceRisk, RecommendationOptionsOnDemandPrice, RecommendationOptionsStandardOneYearNoUpfrontReservedPrice, RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice, RecommendationOptionsVcpus, RecommendationOptionsMemory, RecommendationOptionsStorage, RecommendationOptionsNetwork, LastRefreshTimestamp)
 }
 
 @js.native
@@ -150,41 +112,7 @@ object ExportableInstanceField {
   val RecommendationsSourcesRecommendationSourceType = "RecommendationsSourcesRecommendationSourceType".asInstanceOf[ExportableInstanceField]
   val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableInstanceField]
 
-  @inline def values = js.Array(
-    AccountId,
-    InstanceArn,
-    InstanceName,
-    Finding,
-    LookbackPeriodInDays,
-    CurrentInstanceType,
-    UtilizationMetricsCpuMaximum,
-    UtilizationMetricsMemoryMaximum,
-    UtilizationMetricsEbsReadOpsPerSecondMaximum,
-    UtilizationMetricsEbsWriteOpsPerSecondMaximum,
-    UtilizationMetricsEbsReadBytesPerSecondMaximum,
-    UtilizationMetricsEbsWriteBytesPerSecondMaximum,
-    CurrentOnDemandPrice,
-    CurrentStandardOneYearNoUpfrontReservedPrice,
-    CurrentStandardThreeYearNoUpfrontReservedPrice,
-    CurrentVCpus,
-    CurrentMemory,
-    CurrentStorage,
-    CurrentNetwork,
-    RecommendationOptionsInstanceType,
-    RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
-    RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
-    RecommendationOptionsPerformanceRisk,
-    RecommendationOptionsVcpus,
-    RecommendationOptionsMemory,
-    RecommendationOptionsStorage,
-    RecommendationOptionsNetwork,
-    RecommendationOptionsOnDemandPrice,
-    RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
-    RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
-    RecommendationsSourcesRecommendationSourceArn,
-    RecommendationsSourcesRecommendationSourceType,
-    LastRefreshTimestamp
-  )
+  @inline def values = js.Array(AccountId, InstanceArn, InstanceName, Finding, LookbackPeriodInDays, CurrentInstanceType, UtilizationMetricsCpuMaximum, UtilizationMetricsMemoryMaximum, UtilizationMetricsEbsReadOpsPerSecondMaximum, UtilizationMetricsEbsWriteOpsPerSecondMaximum, UtilizationMetricsEbsReadBytesPerSecondMaximum, UtilizationMetricsEbsWriteBytesPerSecondMaximum, CurrentOnDemandPrice, CurrentStandardOneYearNoUpfrontReservedPrice, CurrentStandardThreeYearNoUpfrontReservedPrice, CurrentVCpus, CurrentMemory, CurrentStorage, CurrentNetwork, RecommendationOptionsInstanceType, RecommendationOptionsProjectedUtilizationMetricsCpuMaximum, RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum, RecommendationOptionsPerformanceRisk, RecommendationOptionsVcpus, RecommendationOptionsMemory, RecommendationOptionsStorage, RecommendationOptionsNetwork, RecommendationOptionsOnDemandPrice, RecommendationOptionsStandardOneYearNoUpfrontReservedPrice, RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice, RecommendationsSourcesRecommendationSourceArn, RecommendationsSourcesRecommendationSourceType, LastRefreshTimestamp)
 }
 
 @js.native
@@ -362,3 +290,4 @@ object Status {
 
   @inline def values = js.Array(Active, Inactive, Pending, Failed)
 }
+

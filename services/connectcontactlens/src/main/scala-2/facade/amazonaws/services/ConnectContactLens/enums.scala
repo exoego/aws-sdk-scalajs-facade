@@ -12,3 +12,4 @@ object SentimentValue {
 
   @inline def values = js.Array(POSITIVE, NEUTRAL, NEGATIVE)
 }
+

@@ -136,38 +136,7 @@ object LandmarkType {
   val midJawlineRight = "midJawlineRight".asInstanceOf[LandmarkType]
   val upperJawlineRight = "upperJawlineRight".asInstanceOf[LandmarkType]
 
-  @inline def values = js.Array(
-    eyeLeft,
-    eyeRight,
-    nose,
-    mouthLeft,
-    mouthRight,
-    leftEyeBrowLeft,
-    leftEyeBrowRight,
-    leftEyeBrowUp,
-    rightEyeBrowLeft,
-    rightEyeBrowRight,
-    rightEyeBrowUp,
-    leftEyeLeft,
-    leftEyeRight,
-    leftEyeUp,
-    leftEyeDown,
-    rightEyeLeft,
-    rightEyeRight,
-    rightEyeUp,
-    rightEyeDown,
-    noseLeft,
-    noseRight,
-    mouthUp,
-    mouthDown,
-    leftPupil,
-    rightPupil,
-    upperJawlineLeft,
-    midJawlineLeft,
-    chinBottom,
-    midJawlineRight,
-    upperJawlineRight
-  )
+  @inline def values = js.Array(eyeLeft, eyeRight, nose, mouthLeft, mouthRight, leftEyeBrowLeft, leftEyeBrowRight, leftEyeBrowUp, rightEyeBrowLeft, rightEyeBrowRight, rightEyeBrowUp, leftEyeLeft, leftEyeRight, leftEyeUp, leftEyeDown, rightEyeLeft, rightEyeRight, rightEyeUp, rightEyeDown, noseLeft, noseRight, mouthUp, mouthDown, leftPupil, rightPupil, upperJawlineLeft, midJawlineLeft, chinBottom, midJawlineRight, upperJawlineRight)
 }
 
 @js.native
@@ -301,3 +270,4 @@ object VideoJobStatus {
 
   @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
 }
+

@@ -166,3 +166,4 @@ object VpcLinkVersion {
 
   @inline def values = js.Array(V2)
 }
+

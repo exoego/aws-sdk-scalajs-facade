@@ -19,3 +19,4 @@ object TrainingMode {
 
   @inline def values = js.Array(FULL, UPDATE)
 }
+

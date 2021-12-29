@@ -104,3 +104,4 @@ object TagStatus {
 
   @inline def values = js.Array(TAGGED, UNTAGGED, ANY)
 }
+

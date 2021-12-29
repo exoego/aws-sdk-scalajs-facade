@@ -34,3 +34,4 @@ object RecordFormatType {
 
   @inline def values = js.Array(JSON, CSV)
 }
+

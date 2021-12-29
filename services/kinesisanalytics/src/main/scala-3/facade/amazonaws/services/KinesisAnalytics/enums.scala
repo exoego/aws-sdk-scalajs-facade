@@ -1,36 +1,32 @@
 package facade.amazonaws.services.kinesisanalytics
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ApplicationStatus extends js.Any
+type ApplicationStatus = "DELETING" | "STARTING" | "STOPPING" | "READY" | "RUNNING" | "UPDATING"
 object ApplicationStatus {
-  val DELETING = "DELETING".asInstanceOf[ApplicationStatus]
-  val STARTING = "STARTING".asInstanceOf[ApplicationStatus]
-  val STOPPING = "STOPPING".asInstanceOf[ApplicationStatus]
-  val READY = "READY".asInstanceOf[ApplicationStatus]
-  val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
-  val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
+  val DELETING: "DELETING" = "DELETING"
+  val STARTING: "STARTING" = "STARTING"
+  val STOPPING: "STOPPING" = "STOPPING"
+  val READY: "READY" = "READY"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
+  @inline def values = js.Array[ApplicationStatus](DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
 }
 
-@js.native
-sealed trait InputStartingPosition extends js.Any
+type InputStartingPosition = "NOW" | "TRIM_HORIZON" | "LAST_STOPPED_POINT"
 object InputStartingPosition {
-  val NOW = "NOW".asInstanceOf[InputStartingPosition]
-  val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
-  val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
+  val NOW: "NOW" = "NOW"
+  val TRIM_HORIZON: "TRIM_HORIZON" = "TRIM_HORIZON"
+  val LAST_STOPPED_POINT: "LAST_STOPPED_POINT" = "LAST_STOPPED_POINT"
 
-  @inline def values = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
+  @inline def values = js.Array[InputStartingPosition](NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
 }
 
-@js.native
-sealed trait RecordFormatType extends js.Any
+type RecordFormatType = "JSON" | "CSV"
 object RecordFormatType {
-  val JSON = "JSON".asInstanceOf[RecordFormatType]
-  val CSV = "CSV".asInstanceOf[RecordFormatType]
+  val JSON: "JSON" = "JSON"
+  val CSV: "CSV" = "CSV"
 
-  @inline def values = js.Array(JSON, CSV)
+  @inline def values = js.Array[RecordFormatType](JSON, CSV)
 }

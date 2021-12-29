@@ -124,22 +124,7 @@ object KmsGrantOperation {
   val Sign = "Sign".asInstanceOf[KmsGrantOperation]
   val Verify = "Verify".asInstanceOf[KmsGrantOperation]
 
-  @inline def values = js.Array(
-    CreateGrant,
-    Decrypt,
-    DescribeKey,
-    Encrypt,
-    GenerateDataKey,
-    GenerateDataKeyPair,
-    GenerateDataKeyPairWithoutPlaintext,
-    GenerateDataKeyWithoutPlaintext,
-    GetPublicKey,
-    ReEncryptFrom,
-    ReEncryptTo,
-    RetireGrant,
-    Sign,
-    Verify
-  )
+  @inline def values = js.Array(CreateGrant, Decrypt, DescribeKey, Encrypt, GenerateDataKey, GenerateDataKeyPair, GenerateDataKeyPairWithoutPlaintext, GenerateDataKeyWithoutPlaintext, GetPublicKey, ReEncryptFrom, ReEncryptTo, RetireGrant, Sign, Verify)
 }
 
 @js.native
@@ -200,15 +185,7 @@ object ResourceType {
   val `AWS::KMS::Key` = "AWS::KMS::Key".asInstanceOf[ResourceType]
   val `AWS::SecretsManager::Secret` = "AWS::SecretsManager::Secret".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(
-    `AWS::S3::Bucket`,
-    `AWS::IAM::Role`,
-    `AWS::SQS::Queue`,
-    `AWS::Lambda::Function`,
-    `AWS::Lambda::LayerVersion`,
-    `AWS::KMS::Key`,
-    `AWS::SecretsManager::Secret`
-  )
+  @inline def values = js.Array(`AWS::S3::Bucket`, `AWS::IAM::Role`, `AWS::SQS::Queue`, `AWS::Lambda::Function`, `AWS::Lambda::LayerVersion`, `AWS::KMS::Key`, `AWS::SecretsManager::Secret`)
 }
 
 @js.native
@@ -230,3 +207,4 @@ object ValidatePolicyFindingType {
 
   @inline def values = js.Array(ERROR, SECURITY_WARNING, SUGGESTION, WARNING)
 }
+

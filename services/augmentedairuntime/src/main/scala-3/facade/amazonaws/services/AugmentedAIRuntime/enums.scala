@@ -1,34 +1,30 @@
 package facade.amazonaws.services.augmentedairuntime
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ContentClassifier extends js.Any
+type ContentClassifier = "FreeOfPersonallyIdentifiableInformation" | "FreeOfAdultContent"
 object ContentClassifier {
-  val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
-  val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
+  val FreeOfPersonallyIdentifiableInformation: "FreeOfPersonallyIdentifiableInformation" = "FreeOfPersonallyIdentifiableInformation"
+  val FreeOfAdultContent: "FreeOfAdultContent" = "FreeOfAdultContent"
 
-  @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
+  @inline def values = js.Array[ContentClassifier](FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
 }
 
-@js.native
-sealed trait HumanLoopStatus extends js.Any
+type HumanLoopStatus = "InProgress" | "Failed" | "Completed" | "Stopped" | "Stopping"
 object HumanLoopStatus {
-  val InProgress = "InProgress".asInstanceOf[HumanLoopStatus]
-  val Failed = "Failed".asInstanceOf[HumanLoopStatus]
-  val Completed = "Completed".asInstanceOf[HumanLoopStatus]
-  val Stopped = "Stopped".asInstanceOf[HumanLoopStatus]
-  val Stopping = "Stopping".asInstanceOf[HumanLoopStatus]
+  val InProgress: "InProgress" = "InProgress"
+  val Failed: "Failed" = "Failed"
+  val Completed: "Completed" = "Completed"
+  val Stopped: "Stopped" = "Stopped"
+  val Stopping: "Stopping" = "Stopping"
 
-  @inline def values = js.Array(InProgress, Failed, Completed, Stopped, Stopping)
+  @inline def values = js.Array[HumanLoopStatus](InProgress, Failed, Completed, Stopped, Stopping)
 }
 
-@js.native
-sealed trait SortOrder extends js.Any
+type SortOrder = "Ascending" | "Descending"
 object SortOrder {
-  val Ascending = "Ascending".asInstanceOf[SortOrder]
-  val Descending = "Descending".asInstanceOf[SortOrder]
+  val Ascending: "Ascending" = "Ascending"
+  val Descending: "Descending" = "Descending"
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values = js.Array[SortOrder](Ascending, Descending)
 }

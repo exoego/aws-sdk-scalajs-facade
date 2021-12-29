@@ -1,53 +1,47 @@
 package facade.amazonaws.services.health
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait entityStatusCode extends js.Any
+type entityStatusCode = "IMPAIRED" | "UNIMPAIRED" | "UNKNOWN"
 object entityStatusCode {
-  val IMPAIRED = "IMPAIRED".asInstanceOf[entityStatusCode]
-  val UNIMPAIRED = "UNIMPAIRED".asInstanceOf[entityStatusCode]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[entityStatusCode]
+  val IMPAIRED: "IMPAIRED" = "IMPAIRED"
+  val UNIMPAIRED: "UNIMPAIRED" = "UNIMPAIRED"
+  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN)
+  @inline def values = js.Array[entityStatusCode](IMPAIRED, UNIMPAIRED, UNKNOWN)
 }
 
-@js.native
-sealed trait eventAggregateField extends js.Any
+type eventAggregateField = "eventTypeCategory"
 object eventAggregateField {
-  val eventTypeCategory = "eventTypeCategory".asInstanceOf[eventAggregateField]
+  val eventTypeCategory: "eventTypeCategory" = "eventTypeCategory"
 
-  @inline def values = js.Array(eventTypeCategory)
+  @inline def values = js.Array[eventAggregateField](eventTypeCategory)
 }
 
-@js.native
-sealed trait eventScopeCode extends js.Any
+type eventScopeCode = "PUBLIC" | "ACCOUNT_SPECIFIC" | "NONE"
 object eventScopeCode {
-  val PUBLIC = "PUBLIC".asInstanceOf[eventScopeCode]
-  val ACCOUNT_SPECIFIC = "ACCOUNT_SPECIFIC".asInstanceOf[eventScopeCode]
-  val NONE = "NONE".asInstanceOf[eventScopeCode]
+  val PUBLIC: "PUBLIC" = "PUBLIC"
+  val ACCOUNT_SPECIFIC: "ACCOUNT_SPECIFIC" = "ACCOUNT_SPECIFIC"
+  val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array(PUBLIC, ACCOUNT_SPECIFIC, NONE)
+  @inline def values = js.Array[eventScopeCode](PUBLIC, ACCOUNT_SPECIFIC, NONE)
 }
 
-@js.native
-sealed trait eventStatusCode extends js.Any
+type eventStatusCode = "open" | "closed" | "upcoming"
 object eventStatusCode {
-  val open = "open".asInstanceOf[eventStatusCode]
-  val closed = "closed".asInstanceOf[eventStatusCode]
-  val upcoming = "upcoming".asInstanceOf[eventStatusCode]
+  val open: "open" = "open"
+  val closed: "closed" = "closed"
+  val upcoming: "upcoming" = "upcoming"
 
-  @inline def values = js.Array(open, closed, upcoming)
+  @inline def values = js.Array[eventStatusCode](open, closed, upcoming)
 }
 
-@js.native
-sealed trait eventTypeCategory extends js.Any
+type eventTypeCategory = "issue" | "accountNotification" | "scheduledChange" | "investigation"
 object eventTypeCategory {
-  val issue = "issue".asInstanceOf[eventTypeCategory]
-  val accountNotification = "accountNotification".asInstanceOf[eventTypeCategory]
-  val scheduledChange = "scheduledChange".asInstanceOf[eventTypeCategory]
-  val investigation = "investigation".asInstanceOf[eventTypeCategory]
+  val issue: "issue" = "issue"
+  val accountNotification: "accountNotification" = "accountNotification"
+  val scheduledChange: "scheduledChange" = "scheduledChange"
+  val investigation: "investigation" = "investigation"
 
-  @inline def values = js.Array(issue, accountNotification, scheduledChange, investigation)
+  @inline def values = js.Array[eventTypeCategory](issue, accountNotification, scheduledChange, investigation)
 }

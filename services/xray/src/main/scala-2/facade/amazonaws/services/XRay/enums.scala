@@ -55,3 +55,4 @@ object TimeRangeType {
 
   @inline def values = js.Array(TraceId, Event)
 }
+

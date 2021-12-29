@@ -99,3 +99,4 @@ object SanitizationWarningReason {
 
   @inline def values = js.Array(DISALLOWED_ELEMENT_REMOVED, DISALLOWED_ATTRIBUTE_REMOVED, INVALID_ATTRIBUTE_VALUE_REMOVED)
 }
+

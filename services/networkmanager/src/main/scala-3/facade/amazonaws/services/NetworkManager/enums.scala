@@ -1,104 +1,94 @@
 package facade.amazonaws.services.networkmanager
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ConnectionState extends js.Any
+type ConnectionState = "PENDING" | "AVAILABLE" | "DELETING" | "UPDATING"
 object ConnectionState {
-  val PENDING = "PENDING".asInstanceOf[ConnectionState]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionState]
-  val DELETING = "DELETING".asInstanceOf[ConnectionState]
-  val UPDATING = "UPDATING".asInstanceOf[ConnectionState]
+  val PENDING: "PENDING" = "PENDING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val DELETING: "DELETING" = "DELETING"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  @inline def values = js.Array[ConnectionState](PENDING, AVAILABLE, DELETING, UPDATING)
 }
 
-@js.native
-sealed trait CustomerGatewayAssociationState extends js.Any
+type CustomerGatewayAssociationState = "PENDING" | "AVAILABLE" | "DELETING" | "DELETED"
 object CustomerGatewayAssociationState {
-  val PENDING = "PENDING".asInstanceOf[CustomerGatewayAssociationState]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[CustomerGatewayAssociationState]
-  val DELETING = "DELETING".asInstanceOf[CustomerGatewayAssociationState]
-  val DELETED = "DELETED".asInstanceOf[CustomerGatewayAssociationState]
+  val PENDING: "PENDING" = "PENDING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val DELETING: "DELETING" = "DELETING"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
+  @inline def values = js.Array[CustomerGatewayAssociationState](PENDING, AVAILABLE, DELETING, DELETED)
 }
 
-@js.native
-sealed trait DeviceState extends js.Any
+type DeviceState = "PENDING" | "AVAILABLE" | "DELETING" | "UPDATING"
 object DeviceState {
-  val PENDING = "PENDING".asInstanceOf[DeviceState]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[DeviceState]
-  val DELETING = "DELETING".asInstanceOf[DeviceState]
-  val UPDATING = "UPDATING".asInstanceOf[DeviceState]
+  val PENDING: "PENDING" = "PENDING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val DELETING: "DELETING" = "DELETING"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  @inline def values = js.Array[DeviceState](PENDING, AVAILABLE, DELETING, UPDATING)
 }
 
-@js.native
-sealed trait GlobalNetworkState extends js.Any
+type GlobalNetworkState = "PENDING" | "AVAILABLE" | "DELETING" | "UPDATING"
 object GlobalNetworkState {
-  val PENDING = "PENDING".asInstanceOf[GlobalNetworkState]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[GlobalNetworkState]
-  val DELETING = "DELETING".asInstanceOf[GlobalNetworkState]
-  val UPDATING = "UPDATING".asInstanceOf[GlobalNetworkState]
+  val PENDING: "PENDING" = "PENDING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val DELETING: "DELETING" = "DELETING"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  @inline def values = js.Array[GlobalNetworkState](PENDING, AVAILABLE, DELETING, UPDATING)
 }
 
-@js.native
-sealed trait LinkAssociationState extends js.Any
+type LinkAssociationState = "PENDING" | "AVAILABLE" | "DELETING" | "DELETED"
 object LinkAssociationState {
-  val PENDING = "PENDING".asInstanceOf[LinkAssociationState]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[LinkAssociationState]
-  val DELETING = "DELETING".asInstanceOf[LinkAssociationState]
-  val DELETED = "DELETED".asInstanceOf[LinkAssociationState]
+  val PENDING: "PENDING" = "PENDING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val DELETING: "DELETING" = "DELETING"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
+  @inline def values = js.Array[LinkAssociationState](PENDING, AVAILABLE, DELETING, DELETED)
 }
 
-@js.native
-sealed trait LinkState extends js.Any
+type LinkState = "PENDING" | "AVAILABLE" | "DELETING" | "UPDATING"
 object LinkState {
-  val PENDING = "PENDING".asInstanceOf[LinkState]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[LinkState]
-  val DELETING = "DELETING".asInstanceOf[LinkState]
-  val UPDATING = "UPDATING".asInstanceOf[LinkState]
+  val PENDING: "PENDING" = "PENDING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val DELETING: "DELETING" = "DELETING"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  @inline def values = js.Array[LinkState](PENDING, AVAILABLE, DELETING, UPDATING)
 }
 
-@js.native
-sealed trait SiteState extends js.Any
+type SiteState = "PENDING" | "AVAILABLE" | "DELETING" | "UPDATING"
 object SiteState {
-  val PENDING = "PENDING".asInstanceOf[SiteState]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[SiteState]
-  val DELETING = "DELETING".asInstanceOf[SiteState]
-  val UPDATING = "UPDATING".asInstanceOf[SiteState]
+  val PENDING: "PENDING" = "PENDING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val DELETING: "DELETING" = "DELETING"
+  val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  @inline def values = js.Array[SiteState](PENDING, AVAILABLE, DELETING, UPDATING)
 }
 
-@js.native
-sealed trait TransitGatewayConnectPeerAssociationState extends js.Any
+type TransitGatewayConnectPeerAssociationState = "PENDING" | "AVAILABLE" | "DELETING" | "DELETED"
 object TransitGatewayConnectPeerAssociationState {
-  val PENDING = "PENDING".asInstanceOf[TransitGatewayConnectPeerAssociationState]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[TransitGatewayConnectPeerAssociationState]
-  val DELETING = "DELETING".asInstanceOf[TransitGatewayConnectPeerAssociationState]
-  val DELETED = "DELETED".asInstanceOf[TransitGatewayConnectPeerAssociationState]
+  val PENDING: "PENDING" = "PENDING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val DELETING: "DELETING" = "DELETING"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
+  @inline def values = js.Array[TransitGatewayConnectPeerAssociationState](PENDING, AVAILABLE, DELETING, DELETED)
 }
 
-@js.native
-sealed trait TransitGatewayRegistrationState extends js.Any
+type TransitGatewayRegistrationState = "PENDING" | "AVAILABLE" | "DELETING" | "DELETED" | "FAILED"
 object TransitGatewayRegistrationState {
-  val PENDING = "PENDING".asInstanceOf[TransitGatewayRegistrationState]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[TransitGatewayRegistrationState]
-  val DELETING = "DELETING".asInstanceOf[TransitGatewayRegistrationState]
-  val DELETED = "DELETED".asInstanceOf[TransitGatewayRegistrationState]
-  val FAILED = "FAILED".asInstanceOf[TransitGatewayRegistrationState]
+  val PENDING: "PENDING" = "PENDING"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val DELETING: "DELETING" = "DELETING"
+  val DELETED: "DELETED" = "DELETED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED)
+  @inline def values = js.Array[TransitGatewayRegistrationState](PENDING, AVAILABLE, DELETING, DELETED, FAILED)
 }

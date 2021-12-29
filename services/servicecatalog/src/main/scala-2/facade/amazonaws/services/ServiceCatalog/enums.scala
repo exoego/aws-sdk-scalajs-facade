@@ -340,3 +340,4 @@ object Status {
 
   @inline def values = js.Array(AVAILABLE, CREATING, FAILED)
 }
+

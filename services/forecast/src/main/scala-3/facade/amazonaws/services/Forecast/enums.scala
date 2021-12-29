@@ -1,77 +1,69 @@
 package facade.amazonaws.services.forecast
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AttributeType extends js.Any
+type AttributeType = "string" | "integer" | "float" | "timestamp" | "geolocation"
 object AttributeType {
-  val string = "string".asInstanceOf[AttributeType]
-  val integer = "integer".asInstanceOf[AttributeType]
-  val float = "float".asInstanceOf[AttributeType]
-  val timestamp = "timestamp".asInstanceOf[AttributeType]
-  val geolocation = "geolocation".asInstanceOf[AttributeType]
+  val string: "string" = "string"
+  val integer: "integer" = "integer"
+  val float: "float" = "float"
+  val timestamp: "timestamp" = "timestamp"
+  val geolocation: "geolocation" = "geolocation"
 
-  @inline def values = js.Array(string, integer, float, timestamp, geolocation)
+  @inline def values = js.Array[AttributeType](string, integer, float, timestamp, geolocation)
 }
 
-@js.native
-sealed trait DatasetType extends js.Any
+type DatasetType = "TARGET_TIME_SERIES" | "RELATED_TIME_SERIES" | "ITEM_METADATA"
 object DatasetType {
-  val TARGET_TIME_SERIES = "TARGET_TIME_SERIES".asInstanceOf[DatasetType]
-  val RELATED_TIME_SERIES = "RELATED_TIME_SERIES".asInstanceOf[DatasetType]
-  val ITEM_METADATA = "ITEM_METADATA".asInstanceOf[DatasetType]
+  val TARGET_TIME_SERIES: "TARGET_TIME_SERIES" = "TARGET_TIME_SERIES"
+  val RELATED_TIME_SERIES: "RELATED_TIME_SERIES" = "RELATED_TIME_SERIES"
+  val ITEM_METADATA: "ITEM_METADATA" = "ITEM_METADATA"
 
-  @inline def values = js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA)
+  @inline def values = js.Array[DatasetType](TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA)
 }
 
-@js.native
-sealed trait Domain extends js.Any
+type Domain = "RETAIL" | "CUSTOM" | "INVENTORY_PLANNING" | "EC2_CAPACITY" | "WORK_FORCE" | "WEB_TRAFFIC" | "METRICS"
 object Domain {
-  val RETAIL = "RETAIL".asInstanceOf[Domain]
-  val CUSTOM = "CUSTOM".asInstanceOf[Domain]
-  val INVENTORY_PLANNING = "INVENTORY_PLANNING".asInstanceOf[Domain]
-  val EC2_CAPACITY = "EC2_CAPACITY".asInstanceOf[Domain]
-  val WORK_FORCE = "WORK_FORCE".asInstanceOf[Domain]
-  val WEB_TRAFFIC = "WEB_TRAFFIC".asInstanceOf[Domain]
-  val METRICS = "METRICS".asInstanceOf[Domain]
+  val RETAIL: "RETAIL" = "RETAIL"
+  val CUSTOM: "CUSTOM" = "CUSTOM"
+  val INVENTORY_PLANNING: "INVENTORY_PLANNING" = "INVENTORY_PLANNING"
+  val EC2_CAPACITY: "EC2_CAPACITY" = "EC2_CAPACITY"
+  val WORK_FORCE: "WORK_FORCE" = "WORK_FORCE"
+  val WEB_TRAFFIC: "WEB_TRAFFIC" = "WEB_TRAFFIC"
+  val METRICS: "METRICS" = "METRICS"
 
-  @inline def values = js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS)
+  @inline def values = js.Array[Domain](RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS)
 }
 
-@js.native
-sealed trait EvaluationType extends js.Any
+type EvaluationType = "SUMMARY" | "COMPUTED"
 object EvaluationType {
-  val SUMMARY = "SUMMARY".asInstanceOf[EvaluationType]
-  val COMPUTED = "COMPUTED".asInstanceOf[EvaluationType]
+  val SUMMARY: "SUMMARY" = "SUMMARY"
+  val COMPUTED: "COMPUTED" = "COMPUTED"
 
-  @inline def values = js.Array(SUMMARY, COMPUTED)
+  @inline def values = js.Array[EvaluationType](SUMMARY, COMPUTED)
 }
 
-@js.native
-sealed trait FeaturizationMethodName extends js.Any
+type FeaturizationMethodName = "filling"
 object FeaturizationMethodName {
-  val filling = "filling".asInstanceOf[FeaturizationMethodName]
+  val filling: "filling" = "filling"
 
-  @inline def values = js.Array(filling)
+  @inline def values = js.Array[FeaturizationMethodName](filling)
 }
 
-@js.native
-sealed trait FilterConditionString extends js.Any
+type FilterConditionString = "IS" | "IS_NOT"
 object FilterConditionString {
-  val IS = "IS".asInstanceOf[FilterConditionString]
-  val IS_NOT = "IS_NOT".asInstanceOf[FilterConditionString]
+  val IS: "IS" = "IS"
+  val IS_NOT: "IS_NOT" = "IS_NOT"
 
-  @inline def values = js.Array(IS, IS_NOT)
+  @inline def values = js.Array[FilterConditionString](IS, IS_NOT)
 }
 
-@js.native
-sealed trait ScalingType extends js.Any
+type ScalingType = "Auto" | "Linear" | "Logarithmic" | "ReverseLogarithmic"
 object ScalingType {
-  val Auto = "Auto".asInstanceOf[ScalingType]
-  val Linear = "Linear".asInstanceOf[ScalingType]
-  val Logarithmic = "Logarithmic".asInstanceOf[ScalingType]
-  val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[ScalingType]
+  val Auto: "Auto" = "Auto"
+  val Linear: "Linear" = "Linear"
+  val Logarithmic: "Logarithmic" = "Logarithmic"
+  val ReverseLogarithmic: "ReverseLogarithmic" = "ReverseLogarithmic"
 
-  @inline def values = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
+  @inline def values = js.Array[ScalingType](Auto, Linear, Logarithmic, ReverseLogarithmic)
 }

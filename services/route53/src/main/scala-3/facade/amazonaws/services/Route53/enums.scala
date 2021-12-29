@@ -1,18 +1,16 @@
 package facade.amazonaws.services.route53
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccountLimitType extends js.Any
+type AccountLimitType = "MAX_HEALTH_CHECKS_BY_OWNER" | "MAX_HOSTED_ZONES_BY_OWNER" | "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" | "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" | "MAX_TRAFFIC_POLICIES_BY_OWNER"
 object AccountLimitType {
-  val MAX_HEALTH_CHECKS_BY_OWNER = "MAX_HEALTH_CHECKS_BY_OWNER".asInstanceOf[AccountLimitType]
-  val MAX_HOSTED_ZONES_BY_OWNER = "MAX_HOSTED_ZONES_BY_OWNER".asInstanceOf[AccountLimitType]
-  val MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER = "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER".asInstanceOf[AccountLimitType]
-  val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER".asInstanceOf[AccountLimitType]
-  val MAX_TRAFFIC_POLICIES_BY_OWNER = "MAX_TRAFFIC_POLICIES_BY_OWNER".asInstanceOf[AccountLimitType]
+  val MAX_HEALTH_CHECKS_BY_OWNER: "MAX_HEALTH_CHECKS_BY_OWNER" = "MAX_HEALTH_CHECKS_BY_OWNER"
+  val MAX_HOSTED_ZONES_BY_OWNER: "MAX_HOSTED_ZONES_BY_OWNER" = "MAX_HOSTED_ZONES_BY_OWNER"
+  val MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER: "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" = "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER"
+  val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER: "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER"
+  val MAX_TRAFFIC_POLICIES_BY_OWNER: "MAX_TRAFFIC_POLICIES_BY_OWNER" = "MAX_TRAFFIC_POLICIES_BY_OWNER"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[AccountLimitType](
     MAX_HEALTH_CHECKS_BY_OWNER,
     MAX_HOSTED_ZONES_BY_OWNER,
     MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER,
@@ -21,57 +19,54 @@ object AccountLimitType {
   )
 }
 
-@js.native
-sealed trait ChangeAction extends js.Any
+type ChangeAction = "CREATE" | "DELETE" | "UPSERT"
 object ChangeAction {
-  val CREATE = "CREATE".asInstanceOf[ChangeAction]
-  val DELETE = "DELETE".asInstanceOf[ChangeAction]
-  val UPSERT = "UPSERT".asInstanceOf[ChangeAction]
+  val CREATE: "CREATE" = "CREATE"
+  val DELETE: "DELETE" = "DELETE"
+  val UPSERT: "UPSERT" = "UPSERT"
 
-  @inline def values = js.Array(CREATE, DELETE, UPSERT)
+  @inline def values = js.Array[ChangeAction](CREATE, DELETE, UPSERT)
 }
 
-@js.native
-sealed trait ChangeStatus extends js.Any
+type ChangeStatus = "PENDING" | "INSYNC"
 object ChangeStatus {
-  val PENDING = "PENDING".asInstanceOf[ChangeStatus]
-  val INSYNC = "INSYNC".asInstanceOf[ChangeStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val INSYNC: "INSYNC" = "INSYNC"
 
-  @inline def values = js.Array(PENDING, INSYNC)
+  @inline def values = js.Array[ChangeStatus](PENDING, INSYNC)
 }
 
-@js.native
-sealed trait CloudWatchRegion extends js.Any
+type CloudWatchRegion = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "ca-central-1" | "eu-central-1" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "ap-east-1" | "me-south-1" | "ap-south-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "eu-north-1" | "sa-east-1" | "cn-northwest-1" | "cn-north-1" | "af-south-1" | "eu-south-1" | "us-gov-west-1" | "us-gov-east-1" | "us-iso-east-1" | "us-isob-east-1"
 object CloudWatchRegion {
-  val `us-east-1` = "us-east-1".asInstanceOf[CloudWatchRegion]
-  val `us-east-2` = "us-east-2".asInstanceOf[CloudWatchRegion]
-  val `us-west-1` = "us-west-1".asInstanceOf[CloudWatchRegion]
-  val `us-west-2` = "us-west-2".asInstanceOf[CloudWatchRegion]
-  val `ca-central-1` = "ca-central-1".asInstanceOf[CloudWatchRegion]
-  val `eu-central-1` = "eu-central-1".asInstanceOf[CloudWatchRegion]
-  val `eu-west-1` = "eu-west-1".asInstanceOf[CloudWatchRegion]
-  val `eu-west-2` = "eu-west-2".asInstanceOf[CloudWatchRegion]
-  val `eu-west-3` = "eu-west-3".asInstanceOf[CloudWatchRegion]
-  val `ap-east-1` = "ap-east-1".asInstanceOf[CloudWatchRegion]
-  val `me-south-1` = "me-south-1".asInstanceOf[CloudWatchRegion]
-  val `ap-south-1` = "ap-south-1".asInstanceOf[CloudWatchRegion]
-  val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[CloudWatchRegion]
-  val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[CloudWatchRegion]
-  val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[CloudWatchRegion]
-  val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[CloudWatchRegion]
-  val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[CloudWatchRegion]
-  val `eu-north-1` = "eu-north-1".asInstanceOf[CloudWatchRegion]
-  val `sa-east-1` = "sa-east-1".asInstanceOf[CloudWatchRegion]
-  val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[CloudWatchRegion]
-  val `cn-north-1` = "cn-north-1".asInstanceOf[CloudWatchRegion]
-  val `af-south-1` = "af-south-1".asInstanceOf[CloudWatchRegion]
-  val `eu-south-1` = "eu-south-1".asInstanceOf[CloudWatchRegion]
-  val `us-gov-west-1` = "us-gov-west-1".asInstanceOf[CloudWatchRegion]
-  val `us-gov-east-1` = "us-gov-east-1".asInstanceOf[CloudWatchRegion]
-  val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
-  val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[CloudWatchRegion]
+  val `us-east-1`: "us-east-1" = "us-east-1"
+  val `us-east-2`: "us-east-2" = "us-east-2"
+  val `us-west-1`: "us-west-1" = "us-west-1"
+  val `us-west-2`: "us-west-2" = "us-west-2"
+  val `ca-central-1`: "ca-central-1" = "ca-central-1"
+  val `eu-central-1`: "eu-central-1" = "eu-central-1"
+  val `eu-west-1`: "eu-west-1" = "eu-west-1"
+  val `eu-west-2`: "eu-west-2" = "eu-west-2"
+  val `eu-west-3`: "eu-west-3" = "eu-west-3"
+  val `ap-east-1`: "ap-east-1" = "ap-east-1"
+  val `me-south-1`: "me-south-1" = "me-south-1"
+  val `ap-south-1`: "ap-south-1" = "ap-south-1"
+  val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
+  val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
+  val `ap-northeast-1`: "ap-northeast-1" = "ap-northeast-1"
+  val `ap-northeast-2`: "ap-northeast-2" = "ap-northeast-2"
+  val `ap-northeast-3`: "ap-northeast-3" = "ap-northeast-3"
+  val `eu-north-1`: "eu-north-1" = "eu-north-1"
+  val `sa-east-1`: "sa-east-1" = "sa-east-1"
+  val `cn-northwest-1`: "cn-northwest-1" = "cn-northwest-1"
+  val `cn-north-1`: "cn-north-1" = "cn-north-1"
+  val `af-south-1`: "af-south-1" = "af-south-1"
+  val `eu-south-1`: "eu-south-1" = "eu-south-1"
+  val `us-gov-west-1`: "us-gov-west-1" = "us-gov-west-1"
+  val `us-gov-east-1`: "us-gov-east-1" = "us-gov-east-1"
+  val `us-iso-east-1`: "us-iso-east-1" = "us-iso-east-1"
+  val `us-isob-east-1`: "us-isob-east-1" = "us-isob-east-1"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[CloudWatchRegion](
     `us-east-1`,
     `us-east-2`,
     `us-west-1`,
@@ -102,133 +97,124 @@ object CloudWatchRegion {
   )
 }
 
-@js.native
-sealed trait ComparisonOperator extends js.Any
+type ComparisonOperator = "GreaterThanOrEqualToThreshold" | "GreaterThanThreshold" | "LessThanThreshold" | "LessThanOrEqualToThreshold"
 object ComparisonOperator {
-  val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
-  val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperator]
-  val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
-  val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
+  val GreaterThanOrEqualToThreshold: "GreaterThanOrEqualToThreshold" = "GreaterThanOrEqualToThreshold"
+  val GreaterThanThreshold: "GreaterThanThreshold" = "GreaterThanThreshold"
+  val LessThanThreshold: "LessThanThreshold" = "LessThanThreshold"
+  val LessThanOrEqualToThreshold: "LessThanOrEqualToThreshold" = "LessThanOrEqualToThreshold"
 
-  @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+  @inline def values = js.Array[ComparisonOperator](GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
 }
 
-@js.native
-sealed trait HealthCheckRegion extends js.Any
+type HealthCheckRegion = "us-east-1" | "us-west-1" | "us-west-2" | "eu-west-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-northeast-1" | "sa-east-1"
 object HealthCheckRegion {
-  val `us-east-1` = "us-east-1".asInstanceOf[HealthCheckRegion]
-  val `us-west-1` = "us-west-1".asInstanceOf[HealthCheckRegion]
-  val `us-west-2` = "us-west-2".asInstanceOf[HealthCheckRegion]
-  val `eu-west-1` = "eu-west-1".asInstanceOf[HealthCheckRegion]
-  val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[HealthCheckRegion]
-  val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[HealthCheckRegion]
-  val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[HealthCheckRegion]
-  val `sa-east-1` = "sa-east-1".asInstanceOf[HealthCheckRegion]
+  val `us-east-1`: "us-east-1" = "us-east-1"
+  val `us-west-1`: "us-west-1" = "us-west-1"
+  val `us-west-2`: "us-west-2" = "us-west-2"
+  val `eu-west-1`: "eu-west-1" = "eu-west-1"
+  val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
+  val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
+  val `ap-northeast-1`: "ap-northeast-1" = "ap-northeast-1"
+  val `sa-east-1`: "sa-east-1" = "sa-east-1"
 
-  @inline def values = js.Array(`us-east-1`, `us-west-1`, `us-west-2`, `eu-west-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`)
+  @inline def values = js.Array[HealthCheckRegion](`us-east-1`, `us-west-1`, `us-west-2`, `eu-west-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`)
 }
 
-@js.native
-sealed trait HealthCheckType extends js.Any
+type HealthCheckType = "HTTP" | "HTTPS" | "HTTP_STR_MATCH" | "HTTPS_STR_MATCH" | "TCP" | "CALCULATED" | "CLOUDWATCH_METRIC"
 object HealthCheckType {
-  val HTTP = "HTTP".asInstanceOf[HealthCheckType]
-  val HTTPS = "HTTPS".asInstanceOf[HealthCheckType]
-  val HTTP_STR_MATCH = "HTTP_STR_MATCH".asInstanceOf[HealthCheckType]
-  val HTTPS_STR_MATCH = "HTTPS_STR_MATCH".asInstanceOf[HealthCheckType]
-  val TCP = "TCP".asInstanceOf[HealthCheckType]
-  val CALCULATED = "CALCULATED".asInstanceOf[HealthCheckType]
-  val CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC".asInstanceOf[HealthCheckType]
+  val HTTP: "HTTP" = "HTTP"
+  val HTTPS: "HTTPS" = "HTTPS"
+  val HTTP_STR_MATCH: "HTTP_STR_MATCH" = "HTTP_STR_MATCH"
+  val HTTPS_STR_MATCH: "HTTPS_STR_MATCH" = "HTTPS_STR_MATCH"
+  val TCP: "TCP" = "TCP"
+  val CALCULATED: "CALCULATED" = "CALCULATED"
+  val CLOUDWATCH_METRIC: "CLOUDWATCH_METRIC" = "CLOUDWATCH_METRIC"
 
-  @inline def values = js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC)
+  @inline def values = js.Array[HealthCheckType](HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC)
 }
 
-@js.native
-sealed trait HostedZoneLimitType extends js.Any
+type HostedZoneLimitType = "MAX_RRSETS_BY_ZONE" | "MAX_VPCS_ASSOCIATED_BY_ZONE"
 object HostedZoneLimitType {
-  val MAX_RRSETS_BY_ZONE = "MAX_RRSETS_BY_ZONE".asInstanceOf[HostedZoneLimitType]
-  val MAX_VPCS_ASSOCIATED_BY_ZONE = "MAX_VPCS_ASSOCIATED_BY_ZONE".asInstanceOf[HostedZoneLimitType]
+  val MAX_RRSETS_BY_ZONE: "MAX_RRSETS_BY_ZONE" = "MAX_RRSETS_BY_ZONE"
+  val MAX_VPCS_ASSOCIATED_BY_ZONE: "MAX_VPCS_ASSOCIATED_BY_ZONE" = "MAX_VPCS_ASSOCIATED_BY_ZONE"
 
-  @inline def values = js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE)
+  @inline def values = js.Array[HostedZoneLimitType](MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE)
 }
 
-@js.native
-sealed trait InsufficientDataHealthStatus extends js.Any
+type InsufficientDataHealthStatus = "Healthy" | "Unhealthy" | "LastKnownStatus"
 object InsufficientDataHealthStatus {
-  val Healthy = "Healthy".asInstanceOf[InsufficientDataHealthStatus]
-  val Unhealthy = "Unhealthy".asInstanceOf[InsufficientDataHealthStatus]
-  val LastKnownStatus = "LastKnownStatus".asInstanceOf[InsufficientDataHealthStatus]
+  val Healthy: "Healthy" = "Healthy"
+  val Unhealthy: "Unhealthy" = "Unhealthy"
+  val LastKnownStatus: "LastKnownStatus" = "LastKnownStatus"
 
-  @inline def values = js.Array(Healthy, Unhealthy, LastKnownStatus)
+  @inline def values = js.Array[InsufficientDataHealthStatus](Healthy, Unhealthy, LastKnownStatus)
 }
 
-@js.native
-sealed trait RRType extends js.Any
+type RRType = "SOA" | "A" | "TXT" | "NS" | "CNAME" | "MX" | "NAPTR" | "PTR" | "SRV" | "SPF" | "AAAA" | "CAA" | "DS"
 object RRType {
-  val SOA = "SOA".asInstanceOf[RRType]
-  val A = "A".asInstanceOf[RRType]
-  val TXT = "TXT".asInstanceOf[RRType]
-  val NS = "NS".asInstanceOf[RRType]
-  val CNAME = "CNAME".asInstanceOf[RRType]
-  val MX = "MX".asInstanceOf[RRType]
-  val NAPTR = "NAPTR".asInstanceOf[RRType]
-  val PTR = "PTR".asInstanceOf[RRType]
-  val SRV = "SRV".asInstanceOf[RRType]
-  val SPF = "SPF".asInstanceOf[RRType]
-  val AAAA = "AAAA".asInstanceOf[RRType]
-  val CAA = "CAA".asInstanceOf[RRType]
-  val DS = "DS".asInstanceOf[RRType]
+  val SOA: "SOA" = "SOA"
+  val A: "A" = "A"
+  val TXT: "TXT" = "TXT"
+  val NS: "NS" = "NS"
+  val CNAME: "CNAME" = "CNAME"
+  val MX: "MX" = "MX"
+  val NAPTR: "NAPTR" = "NAPTR"
+  val PTR: "PTR" = "PTR"
+  val SRV: "SRV" = "SRV"
+  val SPF: "SPF" = "SPF"
+  val AAAA: "AAAA" = "AAAA"
+  val CAA: "CAA" = "CAA"
+  val DS: "DS" = "DS"
 
-  @inline def values = js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA, DS)
+  @inline def values = js.Array[RRType](SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA, DS)
 }
 
-@js.native
-sealed trait ResettableElementName extends js.Any
+type ResettableElementName = "FullyQualifiedDomainName" | "Regions" | "ResourcePath" | "ChildHealthChecks"
 object ResettableElementName {
-  val FullyQualifiedDomainName = "FullyQualifiedDomainName".asInstanceOf[ResettableElementName]
-  val Regions = "Regions".asInstanceOf[ResettableElementName]
-  val ResourcePath = "ResourcePath".asInstanceOf[ResettableElementName]
-  val ChildHealthChecks = "ChildHealthChecks".asInstanceOf[ResettableElementName]
+  val FullyQualifiedDomainName: "FullyQualifiedDomainName" = "FullyQualifiedDomainName"
+  val Regions: "Regions" = "Regions"
+  val ResourcePath: "ResourcePath" = "ResourcePath"
+  val ChildHealthChecks: "ChildHealthChecks" = "ChildHealthChecks"
 
-  @inline def values = js.Array(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks)
+  @inline def values = js.Array[ResettableElementName](FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks)
 }
 
-@js.native
-sealed trait ResourceRecordSetFailover extends js.Any
+type ResourceRecordSetFailover = "PRIMARY" | "SECONDARY"
 object ResourceRecordSetFailover {
-  val PRIMARY = "PRIMARY".asInstanceOf[ResourceRecordSetFailover]
-  val SECONDARY = "SECONDARY".asInstanceOf[ResourceRecordSetFailover]
+  val PRIMARY: "PRIMARY" = "PRIMARY"
+  val SECONDARY: "SECONDARY" = "SECONDARY"
 
-  @inline def values = js.Array(PRIMARY, SECONDARY)
+  @inline def values = js.Array[ResourceRecordSetFailover](PRIMARY, SECONDARY)
 }
 
-@js.native
-sealed trait ResourceRecordSetRegion extends js.Any
+type ResourceRecordSetRegion = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "ca-central-1" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-central-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "eu-north-1" | "sa-east-1" | "cn-north-1" | "cn-northwest-1" | "ap-east-1" | "me-south-1" | "ap-south-1" | "af-south-1" | "eu-south-1"
 object ResourceRecordSetRegion {
-  val `us-east-1` = "us-east-1".asInstanceOf[ResourceRecordSetRegion]
-  val `us-east-2` = "us-east-2".asInstanceOf[ResourceRecordSetRegion]
-  val `us-west-1` = "us-west-1".asInstanceOf[ResourceRecordSetRegion]
-  val `us-west-2` = "us-west-2".asInstanceOf[ResourceRecordSetRegion]
-  val `ca-central-1` = "ca-central-1".asInstanceOf[ResourceRecordSetRegion]
-  val `eu-west-1` = "eu-west-1".asInstanceOf[ResourceRecordSetRegion]
-  val `eu-west-2` = "eu-west-2".asInstanceOf[ResourceRecordSetRegion]
-  val `eu-west-3` = "eu-west-3".asInstanceOf[ResourceRecordSetRegion]
-  val `eu-central-1` = "eu-central-1".asInstanceOf[ResourceRecordSetRegion]
-  val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[ResourceRecordSetRegion]
-  val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[ResourceRecordSetRegion]
-  val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[ResourceRecordSetRegion]
-  val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[ResourceRecordSetRegion]
-  val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[ResourceRecordSetRegion]
-  val `eu-north-1` = "eu-north-1".asInstanceOf[ResourceRecordSetRegion]
-  val `sa-east-1` = "sa-east-1".asInstanceOf[ResourceRecordSetRegion]
-  val `cn-north-1` = "cn-north-1".asInstanceOf[ResourceRecordSetRegion]
-  val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[ResourceRecordSetRegion]
-  val `ap-east-1` = "ap-east-1".asInstanceOf[ResourceRecordSetRegion]
-  val `me-south-1` = "me-south-1".asInstanceOf[ResourceRecordSetRegion]
-  val `ap-south-1` = "ap-south-1".asInstanceOf[ResourceRecordSetRegion]
-  val `af-south-1` = "af-south-1".asInstanceOf[ResourceRecordSetRegion]
-  val `eu-south-1` = "eu-south-1".asInstanceOf[ResourceRecordSetRegion]
+  val `us-east-1`: "us-east-1" = "us-east-1"
+  val `us-east-2`: "us-east-2" = "us-east-2"
+  val `us-west-1`: "us-west-1" = "us-west-1"
+  val `us-west-2`: "us-west-2" = "us-west-2"
+  val `ca-central-1`: "ca-central-1" = "ca-central-1"
+  val `eu-west-1`: "eu-west-1" = "eu-west-1"
+  val `eu-west-2`: "eu-west-2" = "eu-west-2"
+  val `eu-west-3`: "eu-west-3" = "eu-west-3"
+  val `eu-central-1`: "eu-central-1" = "eu-central-1"
+  val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
+  val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
+  val `ap-northeast-1`: "ap-northeast-1" = "ap-northeast-1"
+  val `ap-northeast-2`: "ap-northeast-2" = "ap-northeast-2"
+  val `ap-northeast-3`: "ap-northeast-3" = "ap-northeast-3"
+  val `eu-north-1`: "eu-north-1" = "eu-north-1"
+  val `sa-east-1`: "sa-east-1" = "sa-east-1"
+  val `cn-north-1`: "cn-north-1" = "cn-north-1"
+  val `cn-northwest-1`: "cn-northwest-1" = "cn-northwest-1"
+  val `ap-east-1`: "ap-east-1" = "ap-east-1"
+  val `me-south-1`: "me-south-1" = "me-south-1"
+  val `ap-south-1`: "ap-south-1" = "ap-south-1"
+  val `af-south-1`: "af-south-1" = "af-south-1"
+  val `eu-south-1`: "eu-south-1" = "eu-south-1"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[ResourceRecordSetRegion](
     `us-east-1`,
     `us-east-2`,
     `us-west-1`,
@@ -255,66 +241,62 @@ object ResourceRecordSetRegion {
   )
 }
 
-@js.native
-sealed trait ReusableDelegationSetLimitType extends js.Any
+type ReusableDelegationSetLimitType = "MAX_ZONES_BY_REUSABLE_DELEGATION_SET"
 object ReusableDelegationSetLimitType {
-  val MAX_ZONES_BY_REUSABLE_DELEGATION_SET = "MAX_ZONES_BY_REUSABLE_DELEGATION_SET".asInstanceOf[ReusableDelegationSetLimitType]
+  val MAX_ZONES_BY_REUSABLE_DELEGATION_SET: "MAX_ZONES_BY_REUSABLE_DELEGATION_SET" = "MAX_ZONES_BY_REUSABLE_DELEGATION_SET"
 
-  @inline def values = js.Array(MAX_ZONES_BY_REUSABLE_DELEGATION_SET)
+  @inline def values = js.Array[ReusableDelegationSetLimitType](MAX_ZONES_BY_REUSABLE_DELEGATION_SET)
 }
 
-@js.native
-sealed trait Statistic extends js.Any
+type Statistic = "Average" | "Sum" | "SampleCount" | "Maximum" | "Minimum"
 object Statistic {
-  val Average = "Average".asInstanceOf[Statistic]
-  val Sum = "Sum".asInstanceOf[Statistic]
-  val SampleCount = "SampleCount".asInstanceOf[Statistic]
-  val Maximum = "Maximum".asInstanceOf[Statistic]
-  val Minimum = "Minimum".asInstanceOf[Statistic]
+  val Average: "Average" = "Average"
+  val Sum: "Sum" = "Sum"
+  val SampleCount: "SampleCount" = "SampleCount"
+  val Maximum: "Maximum" = "Maximum"
+  val Minimum: "Minimum" = "Minimum"
 
-  @inline def values = js.Array(Average, Sum, SampleCount, Maximum, Minimum)
+  @inline def values = js.Array[Statistic](Average, Sum, SampleCount, Maximum, Minimum)
 }
 
-@js.native
-sealed trait TagResourceType extends js.Any
+type TagResourceType = "healthcheck" | "hostedzone"
 object TagResourceType {
-  val healthcheck = "healthcheck".asInstanceOf[TagResourceType]
-  val hostedzone = "hostedzone".asInstanceOf[TagResourceType]
+  val healthcheck: "healthcheck" = "healthcheck"
+  val hostedzone: "hostedzone" = "hostedzone"
 
-  @inline def values = js.Array(healthcheck, hostedzone)
+  @inline def values = js.Array[TagResourceType](healthcheck, hostedzone)
 }
 
-@js.native
-sealed trait VPCRegion extends js.Any
+type VPCRegion = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-central-1" | "ap-east-1" | "me-south-1" | "us-gov-west-1" | "us-gov-east-1" | "us-iso-east-1" | "us-isob-east-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-south-1" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "eu-north-1" | "sa-east-1" | "ca-central-1" | "cn-north-1" | "af-south-1" | "eu-south-1"
 object VPCRegion {
-  val `us-east-1` = "us-east-1".asInstanceOf[VPCRegion]
-  val `us-east-2` = "us-east-2".asInstanceOf[VPCRegion]
-  val `us-west-1` = "us-west-1".asInstanceOf[VPCRegion]
-  val `us-west-2` = "us-west-2".asInstanceOf[VPCRegion]
-  val `eu-west-1` = "eu-west-1".asInstanceOf[VPCRegion]
-  val `eu-west-2` = "eu-west-2".asInstanceOf[VPCRegion]
-  val `eu-west-3` = "eu-west-3".asInstanceOf[VPCRegion]
-  val `eu-central-1` = "eu-central-1".asInstanceOf[VPCRegion]
-  val `ap-east-1` = "ap-east-1".asInstanceOf[VPCRegion]
-  val `me-south-1` = "me-south-1".asInstanceOf[VPCRegion]
-  val `us-gov-west-1` = "us-gov-west-1".asInstanceOf[VPCRegion]
-  val `us-gov-east-1` = "us-gov-east-1".asInstanceOf[VPCRegion]
-  val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[VPCRegion]
-  val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[VPCRegion]
-  val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[VPCRegion]
-  val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[VPCRegion]
-  val `ap-south-1` = "ap-south-1".asInstanceOf[VPCRegion]
-  val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[VPCRegion]
-  val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[VPCRegion]
-  val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[VPCRegion]
-  val `eu-north-1` = "eu-north-1".asInstanceOf[VPCRegion]
-  val `sa-east-1` = "sa-east-1".asInstanceOf[VPCRegion]
-  val `ca-central-1` = "ca-central-1".asInstanceOf[VPCRegion]
-  val `cn-north-1` = "cn-north-1".asInstanceOf[VPCRegion]
-  val `af-south-1` = "af-south-1".asInstanceOf[VPCRegion]
-  val `eu-south-1` = "eu-south-1".asInstanceOf[VPCRegion]
+  val `us-east-1`: "us-east-1" = "us-east-1"
+  val `us-east-2`: "us-east-2" = "us-east-2"
+  val `us-west-1`: "us-west-1" = "us-west-1"
+  val `us-west-2`: "us-west-2" = "us-west-2"
+  val `eu-west-1`: "eu-west-1" = "eu-west-1"
+  val `eu-west-2`: "eu-west-2" = "eu-west-2"
+  val `eu-west-3`: "eu-west-3" = "eu-west-3"
+  val `eu-central-1`: "eu-central-1" = "eu-central-1"
+  val `ap-east-1`: "ap-east-1" = "ap-east-1"
+  val `me-south-1`: "me-south-1" = "me-south-1"
+  val `us-gov-west-1`: "us-gov-west-1" = "us-gov-west-1"
+  val `us-gov-east-1`: "us-gov-east-1" = "us-gov-east-1"
+  val `us-iso-east-1`: "us-iso-east-1" = "us-iso-east-1"
+  val `us-isob-east-1`: "us-isob-east-1" = "us-isob-east-1"
+  val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
+  val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
+  val `ap-south-1`: "ap-south-1" = "ap-south-1"
+  val `ap-northeast-1`: "ap-northeast-1" = "ap-northeast-1"
+  val `ap-northeast-2`: "ap-northeast-2" = "ap-northeast-2"
+  val `ap-northeast-3`: "ap-northeast-3" = "ap-northeast-3"
+  val `eu-north-1`: "eu-north-1" = "eu-north-1"
+  val `sa-east-1`: "sa-east-1" = "sa-east-1"
+  val `ca-central-1`: "ca-central-1" = "ca-central-1"
+  val `cn-north-1`: "cn-north-1" = "cn-north-1"
+  val `af-south-1`: "af-south-1" = "af-south-1"
+  val `eu-south-1`: "eu-south-1" = "eu-south-1"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[VPCRegion](
     `us-east-1`,
     `us-east-2`,
     `us-west-1`,

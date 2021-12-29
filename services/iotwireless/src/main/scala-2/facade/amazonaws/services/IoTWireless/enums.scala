@@ -137,3 +137,4 @@ object WirelessGatewayTaskStatus {
 
   @inline def values = js.Array(PENDING, IN_PROGRESS, FIRST_RETRY, SECOND_RETRY, COMPLETED, FAILED)
 }
+

@@ -1,153 +1,139 @@
 package facade.amazonaws.services.savingsplans
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait CurrencyCode extends js.Any
+type CurrencyCode = "CNY" | "USD"
 object CurrencyCode {
-  val CNY = "CNY".asInstanceOf[CurrencyCode]
-  val USD = "USD".asInstanceOf[CurrencyCode]
+  val CNY: "CNY" = "CNY"
+  val USD: "USD" = "USD"
 
-  @inline def values = js.Array(CNY, USD)
+  @inline def values = js.Array[CurrencyCode](CNY, USD)
 }
 
-@js.native
-sealed trait SavingsPlanOfferingFilterAttribute extends js.Any
+type SavingsPlanOfferingFilterAttribute = "region" | "instanceFamily"
 object SavingsPlanOfferingFilterAttribute {
-  val region = "region".asInstanceOf[SavingsPlanOfferingFilterAttribute]
-  val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingFilterAttribute]
+  val region: "region" = "region"
+  val instanceFamily: "instanceFamily" = "instanceFamily"
 
-  @inline def values = js.Array(region, instanceFamily)
+  @inline def values = js.Array[SavingsPlanOfferingFilterAttribute](region, instanceFamily)
 }
 
-@js.native
-sealed trait SavingsPlanOfferingPropertyKey extends js.Any
+type SavingsPlanOfferingPropertyKey = "region" | "instanceFamily"
 object SavingsPlanOfferingPropertyKey {
-  val region = "region".asInstanceOf[SavingsPlanOfferingPropertyKey]
-  val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingPropertyKey]
+  val region: "region" = "region"
+  val instanceFamily: "instanceFamily" = "instanceFamily"
 
-  @inline def values = js.Array(region, instanceFamily)
+  @inline def values = js.Array[SavingsPlanOfferingPropertyKey](region, instanceFamily)
 }
 
-@js.native
-sealed trait SavingsPlanPaymentOption extends js.Any
+type SavingsPlanPaymentOption = "All Upfront" | "Partial Upfront" | "No Upfront"
 object SavingsPlanPaymentOption {
-  val `All Upfront` = "All Upfront".asInstanceOf[SavingsPlanPaymentOption]
-  val `Partial Upfront` = "Partial Upfront".asInstanceOf[SavingsPlanPaymentOption]
-  val `No Upfront` = "No Upfront".asInstanceOf[SavingsPlanPaymentOption]
+  val `All Upfront`: "All Upfront" = "All Upfront"
+  val `Partial Upfront`: "Partial Upfront" = "Partial Upfront"
+  val `No Upfront`: "No Upfront" = "No Upfront"
 
-  @inline def values = js.Array(`All Upfront`, `Partial Upfront`, `No Upfront`)
+  @inline def values = js.Array[SavingsPlanPaymentOption](`All Upfront`, `Partial Upfront`, `No Upfront`)
 }
 
-@js.native
-sealed trait SavingsPlanProductType extends js.Any
+type SavingsPlanProductType = "EC2" | "Fargate" | "Lambda" | "SageMaker"
 object SavingsPlanProductType {
-  val EC2 = "EC2".asInstanceOf[SavingsPlanProductType]
-  val Fargate = "Fargate".asInstanceOf[SavingsPlanProductType]
-  val Lambda = "Lambda".asInstanceOf[SavingsPlanProductType]
-  val SageMaker = "SageMaker".asInstanceOf[SavingsPlanProductType]
+  val EC2: "EC2" = "EC2"
+  val Fargate: "Fargate" = "Fargate"
+  val Lambda: "Lambda" = "Lambda"
+  val SageMaker: "SageMaker" = "SageMaker"
 
-  @inline def values = js.Array(EC2, Fargate, Lambda, SageMaker)
+  @inline def values = js.Array[SavingsPlanProductType](EC2, Fargate, Lambda, SageMaker)
 }
 
-@js.native
-sealed trait SavingsPlanRateFilterAttribute extends js.Any
+type SavingsPlanRateFilterAttribute = "region" | "instanceFamily" | "instanceType" | "productDescription" | "tenancy" | "productId"
 object SavingsPlanRateFilterAttribute {
-  val region = "region".asInstanceOf[SavingsPlanRateFilterAttribute]
-  val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanRateFilterAttribute]
-  val instanceType = "instanceType".asInstanceOf[SavingsPlanRateFilterAttribute]
-  val productDescription = "productDescription".asInstanceOf[SavingsPlanRateFilterAttribute]
-  val tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterAttribute]
-  val productId = "productId".asInstanceOf[SavingsPlanRateFilterAttribute]
+  val region: "region" = "region"
+  val instanceFamily: "instanceFamily" = "instanceFamily"
+  val instanceType: "instanceType" = "instanceType"
+  val productDescription: "productDescription" = "productDescription"
+  val tenancy: "tenancy" = "tenancy"
+  val productId: "productId" = "productId"
 
-  @inline def values = js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId)
+  @inline def values = js.Array[SavingsPlanRateFilterAttribute](region, instanceFamily, instanceType, productDescription, tenancy, productId)
 }
 
-@js.native
-sealed trait SavingsPlanRateFilterName extends js.Any
+type SavingsPlanRateFilterName = "region" | "instanceType" | "productDescription" | "tenancy" | "productType" | "serviceCode" | "usageType" | "operation"
 object SavingsPlanRateFilterName {
-  val region = "region".asInstanceOf[SavingsPlanRateFilterName]
-  val instanceType = "instanceType".asInstanceOf[SavingsPlanRateFilterName]
-  val productDescription = "productDescription".asInstanceOf[SavingsPlanRateFilterName]
-  val tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterName]
-  val productType = "productType".asInstanceOf[SavingsPlanRateFilterName]
-  val serviceCode = "serviceCode".asInstanceOf[SavingsPlanRateFilterName]
-  val usageType = "usageType".asInstanceOf[SavingsPlanRateFilterName]
-  val operation = "operation".asInstanceOf[SavingsPlanRateFilterName]
+  val region: "region" = "region"
+  val instanceType: "instanceType" = "instanceType"
+  val productDescription: "productDescription" = "productDescription"
+  val tenancy: "tenancy" = "tenancy"
+  val productType: "productType" = "productType"
+  val serviceCode: "serviceCode" = "serviceCode"
+  val usageType: "usageType" = "usageType"
+  val operation: "operation" = "operation"
 
-  @inline def values = js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation)
+  @inline def values = js.Array[SavingsPlanRateFilterName](region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation)
 }
 
-@js.native
-sealed trait SavingsPlanRatePropertyKey extends js.Any
+type SavingsPlanRatePropertyKey = "region" | "instanceType" | "instanceFamily" | "productDescription" | "tenancy"
 object SavingsPlanRatePropertyKey {
-  val region = "region".asInstanceOf[SavingsPlanRatePropertyKey]
-  val instanceType = "instanceType".asInstanceOf[SavingsPlanRatePropertyKey]
-  val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanRatePropertyKey]
-  val productDescription = "productDescription".asInstanceOf[SavingsPlanRatePropertyKey]
-  val tenancy = "tenancy".asInstanceOf[SavingsPlanRatePropertyKey]
+  val region: "region" = "region"
+  val instanceType: "instanceType" = "instanceType"
+  val instanceFamily: "instanceFamily" = "instanceFamily"
+  val productDescription: "productDescription" = "productDescription"
+  val tenancy: "tenancy" = "tenancy"
 
-  @inline def values = js.Array(region, instanceType, instanceFamily, productDescription, tenancy)
+  @inline def values = js.Array[SavingsPlanRatePropertyKey](region, instanceType, instanceFamily, productDescription, tenancy)
 }
 
-@js.native
-sealed trait SavingsPlanRateServiceCode extends js.Any
+type SavingsPlanRateServiceCode = "AmazonEC2" | "AmazonECS" | "AmazonEKS" | "AWSLambda" | "AmazonSageMaker"
 object SavingsPlanRateServiceCode {
-  val AmazonEC2 = "AmazonEC2".asInstanceOf[SavingsPlanRateServiceCode]
-  val AmazonECS = "AmazonECS".asInstanceOf[SavingsPlanRateServiceCode]
-  val AmazonEKS = "AmazonEKS".asInstanceOf[SavingsPlanRateServiceCode]
-  val AWSLambda = "AWSLambda".asInstanceOf[SavingsPlanRateServiceCode]
-  val AmazonSageMaker = "AmazonSageMaker".asInstanceOf[SavingsPlanRateServiceCode]
+  val AmazonEC2: "AmazonEC2" = "AmazonEC2"
+  val AmazonECS: "AmazonECS" = "AmazonECS"
+  val AmazonEKS: "AmazonEKS" = "AmazonEKS"
+  val AWSLambda: "AWSLambda" = "AWSLambda"
+  val AmazonSageMaker: "AmazonSageMaker" = "AmazonSageMaker"
 
-  @inline def values = js.Array(AmazonEC2, AmazonECS, AmazonEKS, AWSLambda, AmazonSageMaker)
+  @inline def values = js.Array[SavingsPlanRateServiceCode](AmazonEC2, AmazonECS, AmazonEKS, AWSLambda, AmazonSageMaker)
 }
 
-@js.native
-sealed trait SavingsPlanRateUnit extends js.Any
+type SavingsPlanRateUnit = "Hrs" | "Lambda-GB-Second" | "Request"
 object SavingsPlanRateUnit {
-  val Hrs = "Hrs".asInstanceOf[SavingsPlanRateUnit]
-  val `Lambda-GB-Second` = "Lambda-GB-Second".asInstanceOf[SavingsPlanRateUnit]
-  val Request = "Request".asInstanceOf[SavingsPlanRateUnit]
+  val Hrs: "Hrs" = "Hrs"
+  val `Lambda-GB-Second`: "Lambda-GB-Second" = "Lambda-GB-Second"
+  val Request: "Request" = "Request"
 
-  @inline def values = js.Array(Hrs, `Lambda-GB-Second`, Request)
+  @inline def values = js.Array[SavingsPlanRateUnit](Hrs, `Lambda-GB-Second`, Request)
 }
 
-@js.native
-sealed trait SavingsPlanState extends js.Any
+type SavingsPlanState = "payment-pending" | "payment-failed" | "active" | "retired" | "queued" | "queued-deleted"
 object SavingsPlanState {
-  val `payment-pending` = "payment-pending".asInstanceOf[SavingsPlanState]
-  val `payment-failed` = "payment-failed".asInstanceOf[SavingsPlanState]
-  val active = "active".asInstanceOf[SavingsPlanState]
-  val retired = "retired".asInstanceOf[SavingsPlanState]
-  val queued = "queued".asInstanceOf[SavingsPlanState]
-  val `queued-deleted` = "queued-deleted".asInstanceOf[SavingsPlanState]
+  val `payment-pending`: "payment-pending" = "payment-pending"
+  val `payment-failed`: "payment-failed" = "payment-failed"
+  val active: "active" = "active"
+  val retired: "retired" = "retired"
+  val queued: "queued" = "queued"
+  val `queued-deleted`: "queued-deleted" = "queued-deleted"
 
-  @inline def values = js.Array(`payment-pending`, `payment-failed`, active, retired, queued, `queued-deleted`)
+  @inline def values = js.Array[SavingsPlanState](`payment-pending`, `payment-failed`, active, retired, queued, `queued-deleted`)
 }
 
-@js.native
-sealed trait SavingsPlanType extends js.Any
+type SavingsPlanType = "Compute" | "EC2Instance" | "SageMaker"
 object SavingsPlanType {
-  val Compute = "Compute".asInstanceOf[SavingsPlanType]
-  val EC2Instance = "EC2Instance".asInstanceOf[SavingsPlanType]
-  val SageMaker = "SageMaker".asInstanceOf[SavingsPlanType]
+  val Compute: "Compute" = "Compute"
+  val EC2Instance: "EC2Instance" = "EC2Instance"
+  val SageMaker: "SageMaker" = "SageMaker"
 
-  @inline def values = js.Array(Compute, EC2Instance, SageMaker)
+  @inline def values = js.Array[SavingsPlanType](Compute, EC2Instance, SageMaker)
 }
 
-@js.native
-sealed trait SavingsPlansFilterName extends js.Any
+type SavingsPlansFilterName = "region" | "ec2-instance-family" | "commitment" | "upfront" | "term" | "savings-plan-type" | "payment-option" | "start" | "end"
 object SavingsPlansFilterName {
-  val region = "region".asInstanceOf[SavingsPlansFilterName]
-  val `ec2-instance-family` = "ec2-instance-family".asInstanceOf[SavingsPlansFilterName]
-  val commitment = "commitment".asInstanceOf[SavingsPlansFilterName]
-  val upfront = "upfront".asInstanceOf[SavingsPlansFilterName]
-  val term = "term".asInstanceOf[SavingsPlansFilterName]
-  val `savings-plan-type` = "savings-plan-type".asInstanceOf[SavingsPlansFilterName]
-  val `payment-option` = "payment-option".asInstanceOf[SavingsPlansFilterName]
-  val start = "start".asInstanceOf[SavingsPlansFilterName]
-  val end = "end".asInstanceOf[SavingsPlansFilterName]
+  val region: "region" = "region"
+  val `ec2-instance-family`: "ec2-instance-family" = "ec2-instance-family"
+  val commitment: "commitment" = "commitment"
+  val upfront: "upfront" = "upfront"
+  val term: "term" = "term"
+  val `savings-plan-type`: "savings-plan-type" = "savings-plan-type"
+  val `payment-option`: "payment-option" = "payment-option"
+  val start: "start" = "start"
+  val end: "end" = "end"
 
-  @inline def values = js.Array(region, `ec2-instance-family`, commitment, upfront, term, `savings-plan-type`, `payment-option`, start, end)
+  @inline def values = js.Array[SavingsPlansFilterName](region, `ec2-instance-family`, commitment, upfront, term, `savings-plan-type`, `payment-option`, start, end)
 }

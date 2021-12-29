@@ -147,90 +147,7 @@ object EC2InstanceType {
   val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[EC2InstanceType]
   val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[EC2InstanceType]
 
-  @inline def values = js.Array(
-    `t2.micro`,
-    `t2.small`,
-    `t2.medium`,
-    `t2.large`,
-    `c3.large`,
-    `c3.xlarge`,
-    `c3.2xlarge`,
-    `c3.4xlarge`,
-    `c3.8xlarge`,
-    `c4.large`,
-    `c4.xlarge`,
-    `c4.2xlarge`,
-    `c4.4xlarge`,
-    `c4.8xlarge`,
-    `c5.large`,
-    `c5.xlarge`,
-    `c5.2xlarge`,
-    `c5.4xlarge`,
-    `c5.9xlarge`,
-    `c5.12xlarge`,
-    `c5.18xlarge`,
-    `c5.24xlarge`,
-    `c5a.large`,
-    `c5a.xlarge`,
-    `c5a.2xlarge`,
-    `c5a.4xlarge`,
-    `c5a.8xlarge`,
-    `c5a.12xlarge`,
-    `c5a.16xlarge`,
-    `c5a.24xlarge`,
-    `r3.large`,
-    `r3.xlarge`,
-    `r3.2xlarge`,
-    `r3.4xlarge`,
-    `r3.8xlarge`,
-    `r4.large`,
-    `r4.xlarge`,
-    `r4.2xlarge`,
-    `r4.4xlarge`,
-    `r4.8xlarge`,
-    `r4.16xlarge`,
-    `r5.large`,
-    `r5.xlarge`,
-    `r5.2xlarge`,
-    `r5.4xlarge`,
-    `r5.8xlarge`,
-    `r5.12xlarge`,
-    `r5.16xlarge`,
-    `r5.24xlarge`,
-    `r5a.large`,
-    `r5a.xlarge`,
-    `r5a.2xlarge`,
-    `r5a.4xlarge`,
-    `r5a.8xlarge`,
-    `r5a.12xlarge`,
-    `r5a.16xlarge`,
-    `r5a.24xlarge`,
-    `m3.medium`,
-    `m3.large`,
-    `m3.xlarge`,
-    `m3.2xlarge`,
-    `m4.large`,
-    `m4.xlarge`,
-    `m4.2xlarge`,
-    `m4.4xlarge`,
-    `m4.10xlarge`,
-    `m5.large`,
-    `m5.xlarge`,
-    `m5.2xlarge`,
-    `m5.4xlarge`,
-    `m5.8xlarge`,
-    `m5.12xlarge`,
-    `m5.16xlarge`,
-    `m5.24xlarge`,
-    `m5a.large`,
-    `m5a.xlarge`,
-    `m5a.2xlarge`,
-    `m5a.4xlarge`,
-    `m5a.8xlarge`,
-    `m5a.12xlarge`,
-    `m5a.16xlarge`,
-    `m5a.24xlarge`
-  )
+  @inline def values = js.Array(`t2.micro`, `t2.small`, `t2.medium`, `t2.large`, `c3.large`, `c3.xlarge`, `c3.2xlarge`, `c3.4xlarge`, `c3.8xlarge`, `c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `c5.large`, `c5.xlarge`, `c5.2xlarge`, `c5.4xlarge`, `c5.9xlarge`, `c5.12xlarge`, `c5.18xlarge`, `c5.24xlarge`, `c5a.large`, `c5a.xlarge`, `c5a.2xlarge`, `c5a.4xlarge`, `c5a.8xlarge`, `c5a.12xlarge`, `c5a.16xlarge`, `c5a.24xlarge`, `r3.large`, `r3.xlarge`, `r3.2xlarge`, `r3.4xlarge`, `r3.8xlarge`, `r4.large`, `r4.xlarge`, `r4.2xlarge`, `r4.4xlarge`, `r4.8xlarge`, `r4.16xlarge`, `r5.large`, `r5.xlarge`, `r5.2xlarge`, `r5.4xlarge`, `r5.8xlarge`, `r5.12xlarge`, `r5.16xlarge`, `r5.24xlarge`, `r5a.large`, `r5a.xlarge`, `r5a.2xlarge`, `r5a.4xlarge`, `r5a.8xlarge`, `r5a.12xlarge`, `r5a.16xlarge`, `r5a.24xlarge`, `m3.medium`, `m3.large`, `m3.xlarge`, `m3.2xlarge`, `m4.large`, `m4.xlarge`, `m4.2xlarge`, `m4.4xlarge`, `m4.10xlarge`, `m5.large`, `m5.xlarge`, `m5.2xlarge`, `m5.4xlarge`, `m5.8xlarge`, `m5.12xlarge`, `m5.16xlarge`, `m5.24xlarge`, `m5a.large`, `m5a.xlarge`, `m5a.2xlarge`, `m5a.4xlarge`, `m5a.8xlarge`, `m5a.12xlarge`, `m5a.16xlarge`, `m5a.24xlarge`)
 }
 
 @js.native
@@ -270,41 +187,7 @@ object EventCode {
   val FLEET_VPC_PEERING_DELETED = "FLEET_VPC_PEERING_DELETED".asInstanceOf[EventCode]
   val INSTANCE_INTERRUPTED = "INSTANCE_INTERRUPTED".asInstanceOf[EventCode]
 
-  @inline def values = js.Array(
-    GENERIC_EVENT,
-    FLEET_CREATED,
-    FLEET_DELETED,
-    FLEET_SCALING_EVENT,
-    FLEET_STATE_DOWNLOADING,
-    FLEET_STATE_VALIDATING,
-    FLEET_STATE_BUILDING,
-    FLEET_STATE_ACTIVATING,
-    FLEET_STATE_ACTIVE,
-    FLEET_STATE_ERROR,
-    FLEET_INITIALIZATION_FAILED,
-    FLEET_BINARY_DOWNLOAD_FAILED,
-    FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND,
-    FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE,
-    FLEET_VALIDATION_TIMED_OUT,
-    FLEET_ACTIVATION_FAILED,
-    FLEET_ACTIVATION_FAILED_NO_INSTANCES,
-    FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED,
-    SERVER_PROCESS_INVALID_PATH,
-    SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT,
-    SERVER_PROCESS_PROCESS_READY_TIMEOUT,
-    SERVER_PROCESS_CRASHED,
-    SERVER_PROCESS_TERMINATED_UNHEALTHY,
-    SERVER_PROCESS_FORCE_TERMINATED,
-    SERVER_PROCESS_PROCESS_EXIT_TIMEOUT,
-    GAME_SESSION_ACTIVATION_TIMEOUT,
-    FLEET_CREATION_EXTRACTING_BUILD,
-    FLEET_CREATION_RUNNING_INSTALLER,
-    FLEET_CREATION_VALIDATING_RUNTIME_CONFIG,
-    FLEET_VPC_PEERING_SUCCEEDED,
-    FLEET_VPC_PEERING_FAILED,
-    FLEET_VPC_PEERING_DELETED,
-    INSTANCE_INTERRUPTED
-  )
+  @inline def values = js.Array(GENERIC_EVENT, FLEET_CREATED, FLEET_DELETED, FLEET_SCALING_EVENT, FLEET_STATE_DOWNLOADING, FLEET_STATE_VALIDATING, FLEET_STATE_BUILDING, FLEET_STATE_ACTIVATING, FLEET_STATE_ACTIVE, FLEET_STATE_ERROR, FLEET_INITIALIZATION_FAILED, FLEET_BINARY_DOWNLOAD_FAILED, FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND, FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE, FLEET_VALIDATION_TIMED_OUT, FLEET_ACTIVATION_FAILED, FLEET_ACTIVATION_FAILED_NO_INSTANCES, FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED, SERVER_PROCESS_INVALID_PATH, SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT, SERVER_PROCESS_PROCESS_READY_TIMEOUT, SERVER_PROCESS_CRASHED, SERVER_PROCESS_TERMINATED_UNHEALTHY, SERVER_PROCESS_FORCE_TERMINATED, SERVER_PROCESS_PROCESS_EXIT_TIMEOUT, GAME_SESSION_ACTIVATION_TIMEOUT, FLEET_CREATION_EXTRACTING_BUILD, FLEET_CREATION_RUNNING_INSTALLER, FLEET_CREATION_VALIDATING_RUNTIME_CONFIG, FLEET_VPC_PEERING_SUCCEEDED, FLEET_VPC_PEERING_FAILED, FLEET_VPC_PEERING_DELETED, INSTANCE_INTERRUPTED)
 }
 
 @js.native
@@ -443,72 +326,7 @@ object GameServerGroupInstanceType {
   val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
 
-  @inline def values = js.Array(
-    `c4.large`,
-    `c4.xlarge`,
-    `c4.2xlarge`,
-    `c4.4xlarge`,
-    `c4.8xlarge`,
-    `c5.large`,
-    `c5.xlarge`,
-    `c5.2xlarge`,
-    `c5.4xlarge`,
-    `c5.9xlarge`,
-    `c5.12xlarge`,
-    `c5.18xlarge`,
-    `c5.24xlarge`,
-    `c5a.large`,
-    `c5a.xlarge`,
-    `c5a.2xlarge`,
-    `c5a.4xlarge`,
-    `c5a.8xlarge`,
-    `c5a.12xlarge`,
-    `c5a.16xlarge`,
-    `c5a.24xlarge`,
-    `r4.large`,
-    `r4.xlarge`,
-    `r4.2xlarge`,
-    `r4.4xlarge`,
-    `r4.8xlarge`,
-    `r4.16xlarge`,
-    `r5.large`,
-    `r5.xlarge`,
-    `r5.2xlarge`,
-    `r5.4xlarge`,
-    `r5.8xlarge`,
-    `r5.12xlarge`,
-    `r5.16xlarge`,
-    `r5.24xlarge`,
-    `r5a.large`,
-    `r5a.xlarge`,
-    `r5a.2xlarge`,
-    `r5a.4xlarge`,
-    `r5a.8xlarge`,
-    `r5a.12xlarge`,
-    `r5a.16xlarge`,
-    `r5a.24xlarge`,
-    `m4.large`,
-    `m4.xlarge`,
-    `m4.2xlarge`,
-    `m4.4xlarge`,
-    `m4.10xlarge`,
-    `m5.large`,
-    `m5.xlarge`,
-    `m5.2xlarge`,
-    `m5.4xlarge`,
-    `m5.8xlarge`,
-    `m5.12xlarge`,
-    `m5.16xlarge`,
-    `m5.24xlarge`,
-    `m5a.large`,
-    `m5a.xlarge`,
-    `m5a.2xlarge`,
-    `m5a.4xlarge`,
-    `m5a.8xlarge`,
-    `m5a.12xlarge`,
-    `m5a.16xlarge`,
-    `m5a.24xlarge`
-  )
+  @inline def values = js.Array(`c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `c5.large`, `c5.xlarge`, `c5.2xlarge`, `c5.4xlarge`, `c5.9xlarge`, `c5.12xlarge`, `c5.18xlarge`, `c5.24xlarge`, `c5a.large`, `c5a.xlarge`, `c5a.2xlarge`, `c5a.4xlarge`, `c5a.8xlarge`, `c5a.12xlarge`, `c5a.16xlarge`, `c5a.24xlarge`, `r4.large`, `r4.xlarge`, `r4.2xlarge`, `r4.4xlarge`, `r4.8xlarge`, `r4.16xlarge`, `r5.large`, `r5.xlarge`, `r5.2xlarge`, `r5.4xlarge`, `r5.8xlarge`, `r5.12xlarge`, `r5.16xlarge`, `r5.24xlarge`, `r5a.large`, `r5a.xlarge`, `r5a.2xlarge`, `r5a.4xlarge`, `r5a.8xlarge`, `r5a.12xlarge`, `r5a.16xlarge`, `r5a.24xlarge`, `m4.large`, `m4.xlarge`, `m4.2xlarge`, `m4.4xlarge`, `m4.10xlarge`, `m5.large`, `m5.xlarge`, `m5.2xlarge`, `m5.4xlarge`, `m5.8xlarge`, `m5.12xlarge`, `m5.16xlarge`, `m5.24xlarge`, `m5a.large`, `m5a.xlarge`, `m5a.2xlarge`, `m5a.4xlarge`, `m5a.8xlarge`, `m5a.12xlarge`, `m5a.16xlarge`, `m5a.24xlarge`)
 }
 
 @js.native
@@ -650,19 +468,7 @@ object MetricName {
   val QueueDepth = "QueueDepth".asInstanceOf[MetricName]
   val WaitTime = "WaitTime".asInstanceOf[MetricName]
 
-  @inline def values = js.Array(
-    ActivatingGameSessions,
-    ActiveGameSessions,
-    ActiveInstances,
-    AvailableGameSessions,
-    AvailablePlayerSessions,
-    CurrentPlayerSessions,
-    IdleInstances,
-    PercentAvailableGameSessions,
-    PercentIdleInstances,
-    QueueDepth,
-    WaitTime
-  )
+  @inline def values = js.Array(ActivatingGameSessions, ActiveGameSessions, ActiveInstances, AvailableGameSessions, AvailablePlayerSessions, CurrentPlayerSessions, IdleInstances, PercentAvailableGameSessions, PercentIdleInstances, QueueDepth, WaitTime)
 }
 
 @js.native
@@ -765,3 +571,4 @@ object SortOrder {
 
   @inline def values = js.Array(ASCENDING, DESCENDING)
 }
+

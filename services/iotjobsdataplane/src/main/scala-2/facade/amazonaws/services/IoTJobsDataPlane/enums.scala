@@ -17,3 +17,4 @@ object JobExecutionStatus {
 
   @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
 }
+

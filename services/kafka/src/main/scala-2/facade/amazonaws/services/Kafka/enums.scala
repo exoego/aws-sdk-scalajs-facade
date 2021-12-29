@@ -3,7 +3,9 @@ package facade.amazonaws.services.kafka
 import scalajs._
 import scala.scalajs.js.|
 
-/** The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed. Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.
+/** The distribution of broker nodes across Availability Zones. This is an optional parameter. If you don't specify it, Amazon MSK gives it the value DEFAULT. You can also explicitly set this parameter to the value DEFAULT. No other values are currently allowed.
+  * Amazon MSK distributes the broker nodes evenly across the Availability Zones that correspond to the subnets you provide when you create the cluster.
+  * 
   */
 @js.native
 sealed trait BrokerAZDistribution extends js.Any
@@ -14,6 +16,7 @@ object BrokerAZDistribution {
 }
 
 /** Client-broker encryption in transit setting.
+  * 
   */
 @js.native
 sealed trait ClientBroker extends js.Any
@@ -26,6 +29,7 @@ object ClientBroker {
 }
 
 /** The state of a Kafka cluster.
+  * 
   */
 @js.native
 sealed trait ClusterState extends js.Any
@@ -43,6 +47,7 @@ object ClusterState {
 }
 
 /** The state of a configuration.
+  * 
   */
 @js.native
 sealed trait ConfigurationState extends js.Any
@@ -55,6 +60,7 @@ object ConfigurationState {
 }
 
 /** Specifies which metrics are gathered for the MSK cluster. This property has the following possible values: DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION. For a list of the metrics associated with each of these levels of monitoring, see [[https://docs.aws.amazon.com/msk/latest/developerguide/monitoring.html|Monitoring]].
+  * 
   */
 @js.native
 sealed trait EnhancedMonitoring extends js.Any
@@ -77,6 +83,7 @@ object KafkaVersionStatus {
 }
 
 /** The broker or Zookeeper node.
+  * 
   */
 @js.native
 sealed trait NodeType extends js.Any
@@ -85,3 +92,4 @@ object NodeType {
 
   @inline def values = js.Array(BROKER)
 }
+

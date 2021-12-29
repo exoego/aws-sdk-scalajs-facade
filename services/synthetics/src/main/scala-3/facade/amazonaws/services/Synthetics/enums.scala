@@ -1,47 +1,42 @@
 package facade.amazonaws.services.synthetics
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait CanaryRunState extends js.Any
+type CanaryRunState = "RUNNING" | "PASSED" | "FAILED"
 object CanaryRunState {
-  val RUNNING = "RUNNING".asInstanceOf[CanaryRunState]
-  val PASSED = "PASSED".asInstanceOf[CanaryRunState]
-  val FAILED = "FAILED".asInstanceOf[CanaryRunState]
+  val RUNNING: "RUNNING" = "RUNNING"
+  val PASSED: "PASSED" = "PASSED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(RUNNING, PASSED, FAILED)
+  @inline def values = js.Array[CanaryRunState](RUNNING, PASSED, FAILED)
 }
 
-@js.native
-sealed trait CanaryRunStateReasonCode extends js.Any
+type CanaryRunStateReasonCode = "CANARY_FAILURE" | "EXECUTION_FAILURE"
 object CanaryRunStateReasonCode {
-  val CANARY_FAILURE = "CANARY_FAILURE".asInstanceOf[CanaryRunStateReasonCode]
-  val EXECUTION_FAILURE = "EXECUTION_FAILURE".asInstanceOf[CanaryRunStateReasonCode]
+  val CANARY_FAILURE: "CANARY_FAILURE" = "CANARY_FAILURE"
+  val EXECUTION_FAILURE: "EXECUTION_FAILURE" = "EXECUTION_FAILURE"
 
-  @inline def values = js.Array(CANARY_FAILURE, EXECUTION_FAILURE)
+  @inline def values = js.Array[CanaryRunStateReasonCode](CANARY_FAILURE, EXECUTION_FAILURE)
 }
 
-@js.native
-sealed trait CanaryState extends js.Any
+type CanaryState = "CREATING" | "READY" | "STARTING" | "RUNNING" | "UPDATING" | "STOPPING" | "STOPPED" | "ERROR" | "DELETING"
 object CanaryState {
-  val CREATING = "CREATING".asInstanceOf[CanaryState]
-  val READY = "READY".asInstanceOf[CanaryState]
-  val STARTING = "STARTING".asInstanceOf[CanaryState]
-  val RUNNING = "RUNNING".asInstanceOf[CanaryState]
-  val UPDATING = "UPDATING".asInstanceOf[CanaryState]
-  val STOPPING = "STOPPING".asInstanceOf[CanaryState]
-  val STOPPED = "STOPPED".asInstanceOf[CanaryState]
-  val ERROR = "ERROR".asInstanceOf[CanaryState]
-  val DELETING = "DELETING".asInstanceOf[CanaryState]
+  val CREATING: "CREATING" = "CREATING"
+  val READY: "READY" = "READY"
+  val STARTING: "STARTING" = "STARTING"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val STOPPING: "STOPPING" = "STOPPING"
+  val STOPPED: "STOPPED" = "STOPPED"
+  val ERROR: "ERROR" = "ERROR"
+  val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(CREATING, READY, STARTING, RUNNING, UPDATING, STOPPING, STOPPED, ERROR, DELETING)
+  @inline def values = js.Array[CanaryState](CREATING, READY, STARTING, RUNNING, UPDATING, STOPPING, STOPPED, ERROR, DELETING)
 }
 
-@js.native
-sealed trait CanaryStateReasonCode extends js.Any
+type CanaryStateReasonCode = "INVALID_PERMISSIONS"
 object CanaryStateReasonCode {
-  val INVALID_PERMISSIONS = "INVALID_PERMISSIONS".asInstanceOf[CanaryStateReasonCode]
+  val INVALID_PERMISSIONS: "INVALID_PERMISSIONS" = "INVALID_PERMISSIONS"
 
-  @inline def values = js.Array(INVALID_PERMISSIONS)
+  @inline def values = js.Array[CanaryStateReasonCode](INVALID_PERMISSIONS)
 }

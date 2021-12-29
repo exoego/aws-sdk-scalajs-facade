@@ -1,30 +1,26 @@
 package facade.amazonaws.services.ebs
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ChecksumAggregationMethod extends js.Any
+type ChecksumAggregationMethod = "LINEAR"
 object ChecksumAggregationMethod {
-  val LINEAR = "LINEAR".asInstanceOf[ChecksumAggregationMethod]
+  val LINEAR: "LINEAR" = "LINEAR"
 
-  @inline def values = js.Array(LINEAR)
+  @inline def values = js.Array[ChecksumAggregationMethod](LINEAR)
 }
 
-@js.native
-sealed trait ChecksumAlgorithm extends js.Any
+type ChecksumAlgorithm = "SHA256"
 object ChecksumAlgorithm {
-  val SHA256 = "SHA256".asInstanceOf[ChecksumAlgorithm]
+  val SHA256: "SHA256" = "SHA256"
 
-  @inline def values = js.Array(SHA256)
+  @inline def values = js.Array[ChecksumAlgorithm](SHA256)
 }
 
-@js.native
-sealed trait Status extends js.Any
+type Status = "completed" | "pending" | "error"
 object Status {
-  val completed = "completed".asInstanceOf[Status]
-  val pending = "pending".asInstanceOf[Status]
-  val error = "error".asInstanceOf[Status]
+  val completed: "completed" = "completed"
+  val pending: "pending" = "pending"
+  val error: "error" = "error"
 
-  @inline def values = js.Array(completed, pending, error)
+  @inline def values = js.Array[Status](completed, pending, error)
 }

@@ -42,3 +42,4 @@ object StreamingStatus {
 
   @inline def values = js.Array(ENABLED, DISABLED)
 }
+

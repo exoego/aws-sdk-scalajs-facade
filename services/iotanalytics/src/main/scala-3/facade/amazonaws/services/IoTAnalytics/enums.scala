@@ -1,90 +1,80 @@
 package facade.amazonaws.services.iotanalytics
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ChannelStatus extends js.Any
+type ChannelStatus = "CREATING" | "ACTIVE" | "DELETING"
 object ChannelStatus {
-  val CREATING = "CREATING".asInstanceOf[ChannelStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[ChannelStatus]
-  val DELETING = "DELETING".asInstanceOf[ChannelStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING)
+  @inline def values = js.Array[ChannelStatus](CREATING, ACTIVE, DELETING)
 }
 
-@js.native
-sealed trait ComputeType extends js.Any
+type ComputeType = "ACU_1" | "ACU_2"
 object ComputeType {
-  val ACU_1 = "ACU_1".asInstanceOf[ComputeType]
-  val ACU_2 = "ACU_2".asInstanceOf[ComputeType]
+  val ACU_1: "ACU_1" = "ACU_1"
+  val ACU_2: "ACU_2" = "ACU_2"
 
-  @inline def values = js.Array(ACU_1, ACU_2)
+  @inline def values = js.Array[ComputeType](ACU_1, ACU_2)
 }
 
-@js.native
-sealed trait DatasetActionType extends js.Any
+type DatasetActionType = "QUERY" | "CONTAINER"
 object DatasetActionType {
-  val QUERY = "QUERY".asInstanceOf[DatasetActionType]
-  val CONTAINER = "CONTAINER".asInstanceOf[DatasetActionType]
+  val QUERY: "QUERY" = "QUERY"
+  val CONTAINER: "CONTAINER" = "CONTAINER"
 
-  @inline def values = js.Array(QUERY, CONTAINER)
+  @inline def values = js.Array[DatasetActionType](QUERY, CONTAINER)
 }
 
-@js.native
-sealed trait DatasetContentState extends js.Any
+type DatasetContentState = "CREATING" | "SUCCEEDED" | "FAILED"
 object DatasetContentState {
-  val CREATING = "CREATING".asInstanceOf[DatasetContentState]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[DatasetContentState]
-  val FAILED = "FAILED".asInstanceOf[DatasetContentState]
+  val CREATING: "CREATING" = "CREATING"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, SUCCEEDED, FAILED)
+  @inline def values = js.Array[DatasetContentState](CREATING, SUCCEEDED, FAILED)
 }
 
-@js.native
-sealed trait DatasetStatus extends js.Any
+type DatasetStatus = "CREATING" | "ACTIVE" | "DELETING"
 object DatasetStatus {
-  val CREATING = "CREATING".asInstanceOf[DatasetStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[DatasetStatus]
-  val DELETING = "DELETING".asInstanceOf[DatasetStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING)
+  @inline def values = js.Array[DatasetStatus](CREATING, ACTIVE, DELETING)
 }
 
-@js.native
-sealed trait DatastoreStatus extends js.Any
+type DatastoreStatus = "CREATING" | "ACTIVE" | "DELETING"
 object DatastoreStatus {
-  val CREATING = "CREATING".asInstanceOf[DatastoreStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[DatastoreStatus]
-  val DELETING = "DELETING".asInstanceOf[DatastoreStatus]
+  val CREATING: "CREATING" = "CREATING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING)
+  @inline def values = js.Array[DatastoreStatus](CREATING, ACTIVE, DELETING)
 }
 
-@js.native
-sealed trait FileFormatType extends js.Any
+type FileFormatType = "JSON" | "PARQUET"
 object FileFormatType {
-  val JSON = "JSON".asInstanceOf[FileFormatType]
-  val PARQUET = "PARQUET".asInstanceOf[FileFormatType]
+  val JSON: "JSON" = "JSON"
+  val PARQUET: "PARQUET" = "PARQUET"
 
-  @inline def values = js.Array(JSON, PARQUET)
+  @inline def values = js.Array[FileFormatType](JSON, PARQUET)
 }
 
-@js.native
-sealed trait LoggingLevel extends js.Any
+type LoggingLevel = "ERROR"
 object LoggingLevel {
-  val ERROR = "ERROR".asInstanceOf[LoggingLevel]
+  val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(ERROR)
+  @inline def values = js.Array[LoggingLevel](ERROR)
 }
 
-@js.native
-sealed trait ReprocessingStatus extends js.Any
+type ReprocessingStatus = "RUNNING" | "SUCCEEDED" | "CANCELLED" | "FAILED"
 object ReprocessingStatus {
-  val RUNNING = "RUNNING".asInstanceOf[ReprocessingStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[ReprocessingStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[ReprocessingStatus]
-  val FAILED = "FAILED".asInstanceOf[ReprocessingStatus]
+  val RUNNING: "RUNNING" = "RUNNING"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val CANCELLED: "CANCELLED" = "CANCELLED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED)
+  @inline def values = js.Array[ReprocessingStatus](RUNNING, SUCCEEDED, CANCELLED, FAILED)
 }

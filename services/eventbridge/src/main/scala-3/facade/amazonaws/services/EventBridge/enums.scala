@@ -1,124 +1,112 @@
 package facade.amazonaws.services.eventbridge
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ApiDestinationHttpMethod extends js.Any
+type ApiDestinationHttpMethod = "POST" | "GET" | "HEAD" | "OPTIONS" | "PUT" | "PATCH" | "DELETE"
 object ApiDestinationHttpMethod {
-  val POST = "POST".asInstanceOf[ApiDestinationHttpMethod]
-  val GET = "GET".asInstanceOf[ApiDestinationHttpMethod]
-  val HEAD = "HEAD".asInstanceOf[ApiDestinationHttpMethod]
-  val OPTIONS = "OPTIONS".asInstanceOf[ApiDestinationHttpMethod]
-  val PUT = "PUT".asInstanceOf[ApiDestinationHttpMethod]
-  val PATCH = "PATCH".asInstanceOf[ApiDestinationHttpMethod]
-  val DELETE = "DELETE".asInstanceOf[ApiDestinationHttpMethod]
+  val POST: "POST" = "POST"
+  val GET: "GET" = "GET"
+  val HEAD: "HEAD" = "HEAD"
+  val OPTIONS: "OPTIONS" = "OPTIONS"
+  val PUT: "PUT" = "PUT"
+  val PATCH: "PATCH" = "PATCH"
+  val DELETE: "DELETE" = "DELETE"
 
-  @inline def values = js.Array(POST, GET, HEAD, OPTIONS, PUT, PATCH, DELETE)
+  @inline def values = js.Array[ApiDestinationHttpMethod](POST, GET, HEAD, OPTIONS, PUT, PATCH, DELETE)
 }
 
-@js.native
-sealed trait ApiDestinationState extends js.Any
+type ApiDestinationState = "ACTIVE" | "INACTIVE"
 object ApiDestinationState {
-  val ACTIVE = "ACTIVE".asInstanceOf[ApiDestinationState]
-  val INACTIVE = "INACTIVE".asInstanceOf[ApiDestinationState]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values = js.Array[ApiDestinationState](ACTIVE, INACTIVE)
 }
 
-@js.native
-sealed trait ArchiveState extends js.Any
+type ArchiveState = "ENABLED" | "DISABLED" | "CREATING" | "UPDATING" | "CREATE_FAILED" | "UPDATE_FAILED"
 object ArchiveState {
-  val ENABLED = "ENABLED".asInstanceOf[ArchiveState]
-  val DISABLED = "DISABLED".asInstanceOf[ArchiveState]
-  val CREATING = "CREATING".asInstanceOf[ArchiveState]
-  val UPDATING = "UPDATING".asInstanceOf[ArchiveState]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ArchiveState]
-  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ArchiveState]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
+  val CREATING: "CREATING" = "CREATING"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
 
-  @inline def values = js.Array(ENABLED, DISABLED, CREATING, UPDATING, CREATE_FAILED, UPDATE_FAILED)
+  @inline def values = js.Array[ArchiveState](ENABLED, DISABLED, CREATING, UPDATING, CREATE_FAILED, UPDATE_FAILED)
 }
 
-@js.native
-sealed trait AssignPublicIp extends js.Any
+type AssignPublicIp = "ENABLED" | "DISABLED"
 object AssignPublicIp {
-  val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
-  val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[AssignPublicIp](ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait ConnectionAuthorizationType extends js.Any
+type ConnectionAuthorizationType = "BASIC" | "OAUTH_CLIENT_CREDENTIALS" | "API_KEY"
 object ConnectionAuthorizationType {
-  val BASIC = "BASIC".asInstanceOf[ConnectionAuthorizationType]
-  val OAUTH_CLIENT_CREDENTIALS = "OAUTH_CLIENT_CREDENTIALS".asInstanceOf[ConnectionAuthorizationType]
-  val API_KEY = "API_KEY".asInstanceOf[ConnectionAuthorizationType]
+  val BASIC: "BASIC" = "BASIC"
+  val OAUTH_CLIENT_CREDENTIALS: "OAUTH_CLIENT_CREDENTIALS" = "OAUTH_CLIENT_CREDENTIALS"
+  val API_KEY: "API_KEY" = "API_KEY"
 
-  @inline def values = js.Array(BASIC, OAUTH_CLIENT_CREDENTIALS, API_KEY)
+  @inline def values = js.Array[ConnectionAuthorizationType](BASIC, OAUTH_CLIENT_CREDENTIALS, API_KEY)
 }
 
-@js.native
-sealed trait ConnectionOAuthHttpMethod extends js.Any
+type ConnectionOAuthHttpMethod = "GET" | "POST" | "PUT"
 object ConnectionOAuthHttpMethod {
-  val GET = "GET".asInstanceOf[ConnectionOAuthHttpMethod]
-  val POST = "POST".asInstanceOf[ConnectionOAuthHttpMethod]
-  val PUT = "PUT".asInstanceOf[ConnectionOAuthHttpMethod]
+  val GET: "GET" = "GET"
+  val POST: "POST" = "POST"
+  val PUT: "PUT" = "PUT"
 
-  @inline def values = js.Array(GET, POST, PUT)
+  @inline def values = js.Array[ConnectionOAuthHttpMethod](GET, POST, PUT)
 }
 
-@js.native
-sealed trait ConnectionState extends js.Any
+type ConnectionState = "CREATING" | "UPDATING" | "DELETING" | "AUTHORIZED" | "DEAUTHORIZED" | "AUTHORIZING" | "DEAUTHORIZING"
 object ConnectionState {
-  val CREATING = "CREATING".asInstanceOf[ConnectionState]
-  val UPDATING = "UPDATING".asInstanceOf[ConnectionState]
-  val DELETING = "DELETING".asInstanceOf[ConnectionState]
-  val AUTHORIZED = "AUTHORIZED".asInstanceOf[ConnectionState]
-  val DEAUTHORIZED = "DEAUTHORIZED".asInstanceOf[ConnectionState]
-  val AUTHORIZING = "AUTHORIZING".asInstanceOf[ConnectionState]
-  val DEAUTHORIZING = "DEAUTHORIZING".asInstanceOf[ConnectionState]
+  val CREATING: "CREATING" = "CREATING"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val DELETING: "DELETING" = "DELETING"
+  val AUTHORIZED: "AUTHORIZED" = "AUTHORIZED"
+  val DEAUTHORIZED: "DEAUTHORIZED" = "DEAUTHORIZED"
+  val AUTHORIZING: "AUTHORIZING" = "AUTHORIZING"
+  val DEAUTHORIZING: "DEAUTHORIZING" = "DEAUTHORIZING"
 
-  @inline def values = js.Array(CREATING, UPDATING, DELETING, AUTHORIZED, DEAUTHORIZED, AUTHORIZING, DEAUTHORIZING)
+  @inline def values = js.Array[ConnectionState](CREATING, UPDATING, DELETING, AUTHORIZED, DEAUTHORIZED, AUTHORIZING, DEAUTHORIZING)
 }
 
-@js.native
-sealed trait EventSourceState extends js.Any
+type EventSourceState = "PENDING" | "ACTIVE" | "DELETED"
 object EventSourceState {
-  val PENDING = "PENDING".asInstanceOf[EventSourceState]
-  val ACTIVE = "ACTIVE".asInstanceOf[EventSourceState]
-  val DELETED = "DELETED".asInstanceOf[EventSourceState]
+  val PENDING: "PENDING" = "PENDING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(PENDING, ACTIVE, DELETED)
+  @inline def values = js.Array[EventSourceState](PENDING, ACTIVE, DELETED)
 }
 
-@js.native
-sealed trait LaunchType extends js.Any
+type LaunchType = "EC2" | "FARGATE"
 object LaunchType {
-  val EC2 = "EC2".asInstanceOf[LaunchType]
-  val FARGATE = "FARGATE".asInstanceOf[LaunchType]
+  val EC2: "EC2" = "EC2"
+  val FARGATE: "FARGATE" = "FARGATE"
 
-  @inline def values = js.Array(EC2, FARGATE)
+  @inline def values = js.Array[LaunchType](EC2, FARGATE)
 }
 
-@js.native
-sealed trait ReplayState extends js.Any
+type ReplayState = "STARTING" | "RUNNING" | "CANCELLING" | "COMPLETED" | "CANCELLED" | "FAILED"
 object ReplayState {
-  val STARTING = "STARTING".asInstanceOf[ReplayState]
-  val RUNNING = "RUNNING".asInstanceOf[ReplayState]
-  val CANCELLING = "CANCELLING".asInstanceOf[ReplayState]
-  val COMPLETED = "COMPLETED".asInstanceOf[ReplayState]
-  val CANCELLED = "CANCELLED".asInstanceOf[ReplayState]
-  val FAILED = "FAILED".asInstanceOf[ReplayState]
+  val STARTING: "STARTING" = "STARTING"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val CANCELLING: "CANCELLING" = "CANCELLING"
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val CANCELLED: "CANCELLED" = "CANCELLED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(STARTING, RUNNING, CANCELLING, COMPLETED, CANCELLED, FAILED)
+  @inline def values = js.Array[ReplayState](STARTING, RUNNING, CANCELLING, COMPLETED, CANCELLED, FAILED)
 }
 
-@js.native
-sealed trait RuleState extends js.Any
+type RuleState = "ENABLED" | "DISABLED"
 object RuleState {
-  val ENABLED = "ENABLED".asInstanceOf[RuleState]
-  val DISABLED = "DISABLED".asInstanceOf[RuleState]
+  val ENABLED: "ENABLED" = "ENABLED"
+  val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values = js.Array[RuleState](ENABLED, DISABLED)
 }

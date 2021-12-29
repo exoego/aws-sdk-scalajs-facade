@@ -1,154 +1,140 @@
 package facade.amazonaws.services.cloudformation
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccountGateStatus extends js.Any
+type AccountGateStatus = "SUCCEEDED" | "FAILED" | "SKIPPED"
 object AccountGateStatus {
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[AccountGateStatus]
-  val FAILED = "FAILED".asInstanceOf[AccountGateStatus]
-  val SKIPPED = "SKIPPED".asInstanceOf[AccountGateStatus]
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val FAILED: "FAILED" = "FAILED"
+  val SKIPPED: "SKIPPED" = "SKIPPED"
 
-  @inline def values = js.Array(SUCCEEDED, FAILED, SKIPPED)
+  @inline def values = js.Array[AccountGateStatus](SUCCEEDED, FAILED, SKIPPED)
 }
 
-@js.native
-sealed trait CallAs extends js.Any
+type CallAs = "SELF" | "DELEGATED_ADMIN"
 object CallAs {
-  val SELF = "SELF".asInstanceOf[CallAs]
-  val DELEGATED_ADMIN = "DELEGATED_ADMIN".asInstanceOf[CallAs]
+  val SELF: "SELF" = "SELF"
+  val DELEGATED_ADMIN: "DELEGATED_ADMIN" = "DELEGATED_ADMIN"
 
-  @inline def values = js.Array(SELF, DELEGATED_ADMIN)
+  @inline def values = js.Array[CallAs](SELF, DELEGATED_ADMIN)
 }
 
-@js.native
-sealed trait Capability extends js.Any
+type Capability = "CAPABILITY_IAM" | "CAPABILITY_NAMED_IAM" | "CAPABILITY_AUTO_EXPAND"
 object Capability {
-  val CAPABILITY_IAM = "CAPABILITY_IAM".asInstanceOf[Capability]
-  val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
-  val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
+  val CAPABILITY_IAM: "CAPABILITY_IAM" = "CAPABILITY_IAM"
+  val CAPABILITY_NAMED_IAM: "CAPABILITY_NAMED_IAM" = "CAPABILITY_NAMED_IAM"
+  val CAPABILITY_AUTO_EXPAND: "CAPABILITY_AUTO_EXPAND" = "CAPABILITY_AUTO_EXPAND"
 
-  @inline def values = js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND)
+  @inline def values = js.Array[Capability](CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND)
 }
 
-@js.native
-sealed trait ChangeAction extends js.Any
+type ChangeAction = "Add" | "Modify" | "Remove" | "Import" | "Dynamic"
 object ChangeAction {
-  val Add = "Add".asInstanceOf[ChangeAction]
-  val Modify = "Modify".asInstanceOf[ChangeAction]
-  val Remove = "Remove".asInstanceOf[ChangeAction]
-  val Import = "Import".asInstanceOf[ChangeAction]
-  val Dynamic = "Dynamic".asInstanceOf[ChangeAction]
+  val Add: "Add" = "Add"
+  val Modify: "Modify" = "Modify"
+  val Remove: "Remove" = "Remove"
+  val Import: "Import" = "Import"
+  val Dynamic: "Dynamic" = "Dynamic"
 
-  @inline def values = js.Array(Add, Modify, Remove, Import, Dynamic)
+  @inline def values = js.Array[ChangeAction](Add, Modify, Remove, Import, Dynamic)
 }
 
-@js.native
-sealed trait ChangeSetStatus extends js.Any
+type ChangeSetStatus = "CREATE_PENDING" | "CREATE_IN_PROGRESS" | "CREATE_COMPLETE" | "DELETE_PENDING" | "DELETE_IN_PROGRESS" | "DELETE_COMPLETE" | "DELETE_FAILED" | "FAILED"
 object ChangeSetStatus {
-  val CREATE_PENDING = "CREATE_PENDING".asInstanceOf[ChangeSetStatus]
-  val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ChangeSetStatus]
-  val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ChangeSetStatus]
-  val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[ChangeSetStatus]
-  val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ChangeSetStatus]
-  val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ChangeSetStatus]
-  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ChangeSetStatus]
-  val FAILED = "FAILED".asInstanceOf[ChangeSetStatus]
+  val CREATE_PENDING: "CREATE_PENDING" = "CREATE_PENDING"
+  val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
+  val DELETE_PENDING: "DELETE_PENDING" = "DELETE_PENDING"
+  val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+  val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
+  val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_PENDING, DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, FAILED)
+  @inline def values = js.Array[ChangeSetStatus](CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_PENDING, DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, FAILED)
 }
 
-@js.native
-sealed trait ChangeSetType extends js.Any
+type ChangeSetType = "CREATE" | "UPDATE" | "IMPORT"
 object ChangeSetType {
-  val CREATE = "CREATE".asInstanceOf[ChangeSetType]
-  val UPDATE = "UPDATE".asInstanceOf[ChangeSetType]
-  val IMPORT = "IMPORT".asInstanceOf[ChangeSetType]
+  val CREATE: "CREATE" = "CREATE"
+  val UPDATE: "UPDATE" = "UPDATE"
+  val IMPORT: "IMPORT" = "IMPORT"
 
-  @inline def values = js.Array(CREATE, UPDATE, IMPORT)
+  @inline def values = js.Array[ChangeSetType](CREATE, UPDATE, IMPORT)
 }
 
-@js.native
-sealed trait ChangeSource extends js.Any
+type ChangeSource = "ResourceReference" | "ParameterReference" | "ResourceAttribute" | "DirectModification" | "Automatic"
 object ChangeSource {
-  val ResourceReference = "ResourceReference".asInstanceOf[ChangeSource]
-  val ParameterReference = "ParameterReference".asInstanceOf[ChangeSource]
-  val ResourceAttribute = "ResourceAttribute".asInstanceOf[ChangeSource]
-  val DirectModification = "DirectModification".asInstanceOf[ChangeSource]
-  val Automatic = "Automatic".asInstanceOf[ChangeSource]
+  val ResourceReference: "ResourceReference" = "ResourceReference"
+  val ParameterReference: "ParameterReference" = "ParameterReference"
+  val ResourceAttribute: "ResourceAttribute" = "ResourceAttribute"
+  val DirectModification: "DirectModification" = "DirectModification"
+  val Automatic: "Automatic" = "Automatic"
 
-  @inline def values = js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
+  @inline def values = js.Array[ChangeSource](ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
 }
 
-@js.native
-sealed trait ChangeType extends js.Any
+type ChangeType = "Resource"
 object ChangeType {
-  val Resource = "Resource".asInstanceOf[ChangeType]
+  val Resource: "Resource" = "Resource"
 
-  @inline def values = js.Array(Resource)
+  @inline def values = js.Array[ChangeType](Resource)
 }
 
-@js.native
-sealed trait DeprecatedStatus extends js.Any
+type DeprecatedStatus = "LIVE" | "DEPRECATED"
 object DeprecatedStatus {
-  val LIVE = "LIVE".asInstanceOf[DeprecatedStatus]
-  val DEPRECATED = "DEPRECATED".asInstanceOf[DeprecatedStatus]
+  val LIVE: "LIVE" = "LIVE"
+  val DEPRECATED: "DEPRECATED" = "DEPRECATED"
 
-  @inline def values = js.Array(LIVE, DEPRECATED)
+  @inline def values = js.Array[DeprecatedStatus](LIVE, DEPRECATED)
 }
 
-@js.native
-sealed trait DifferenceType extends js.Any
+type DifferenceType = "ADD" | "REMOVE" | "NOT_EQUAL"
 object DifferenceType {
-  val ADD = "ADD".asInstanceOf[DifferenceType]
-  val REMOVE = "REMOVE".asInstanceOf[DifferenceType]
-  val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[DifferenceType]
+  val ADD: "ADD" = "ADD"
+  val REMOVE: "REMOVE" = "REMOVE"
+  val NOT_EQUAL: "NOT_EQUAL" = "NOT_EQUAL"
 
-  @inline def values = js.Array(ADD, REMOVE, NOT_EQUAL)
+  @inline def values = js.Array[DifferenceType](ADD, REMOVE, NOT_EQUAL)
 }
 
-@js.native
-sealed trait EvaluationType extends js.Any
+type EvaluationType = "Static" | "Dynamic"
 object EvaluationType {
-  val Static = "Static".asInstanceOf[EvaluationType]
-  val Dynamic = "Dynamic".asInstanceOf[EvaluationType]
+  val Static: "Static" = "Static"
+  val Dynamic: "Dynamic" = "Dynamic"
 
-  @inline def values = js.Array(Static, Dynamic)
+  @inline def values = js.Array[EvaluationType](Static, Dynamic)
 }
 
-@js.native
-sealed trait ExecutionStatus extends js.Any
+type ExecutionStatus = "UNAVAILABLE" | "AVAILABLE" | "EXECUTE_IN_PROGRESS" | "EXECUTE_COMPLETE" | "EXECUTE_FAILED" | "OBSOLETE"
 object ExecutionStatus {
-  val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ExecutionStatus]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[ExecutionStatus]
-  val EXECUTE_IN_PROGRESS = "EXECUTE_IN_PROGRESS".asInstanceOf[ExecutionStatus]
-  val EXECUTE_COMPLETE = "EXECUTE_COMPLETE".asInstanceOf[ExecutionStatus]
-  val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ExecutionStatus]
-  val OBSOLETE = "OBSOLETE".asInstanceOf[ExecutionStatus]
+  val UNAVAILABLE: "UNAVAILABLE" = "UNAVAILABLE"
+  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  val EXECUTE_IN_PROGRESS: "EXECUTE_IN_PROGRESS" = "EXECUTE_IN_PROGRESS"
+  val EXECUTE_COMPLETE: "EXECUTE_COMPLETE" = "EXECUTE_COMPLETE"
+  val EXECUTE_FAILED: "EXECUTE_FAILED" = "EXECUTE_FAILED"
+  val OBSOLETE: "OBSOLETE" = "OBSOLETE"
 
-  @inline def values = js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
+  @inline def values = js.Array[ExecutionStatus](UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
 }
 
-@js.native
-sealed trait HandlerErrorCode extends js.Any
+type HandlerErrorCode = "NotUpdatable" | "InvalidRequest" | "AccessDenied" | "InvalidCredentials" | "AlreadyExists" | "NotFound" | "ResourceConflict" | "Throttling" | "ServiceLimitExceeded" | "NotStabilized" | "GeneralServiceException" | "ServiceInternalError" | "NetworkFailure" | "InternalFailure"
 object HandlerErrorCode {
-  val NotUpdatable = "NotUpdatable".asInstanceOf[HandlerErrorCode]
-  val InvalidRequest = "InvalidRequest".asInstanceOf[HandlerErrorCode]
-  val AccessDenied = "AccessDenied".asInstanceOf[HandlerErrorCode]
-  val InvalidCredentials = "InvalidCredentials".asInstanceOf[HandlerErrorCode]
-  val AlreadyExists = "AlreadyExists".asInstanceOf[HandlerErrorCode]
-  val NotFound = "NotFound".asInstanceOf[HandlerErrorCode]
-  val ResourceConflict = "ResourceConflict".asInstanceOf[HandlerErrorCode]
-  val Throttling = "Throttling".asInstanceOf[HandlerErrorCode]
-  val ServiceLimitExceeded = "ServiceLimitExceeded".asInstanceOf[HandlerErrorCode]
-  val NotStabilized = "NotStabilized".asInstanceOf[HandlerErrorCode]
-  val GeneralServiceException = "GeneralServiceException".asInstanceOf[HandlerErrorCode]
-  val ServiceInternalError = "ServiceInternalError".asInstanceOf[HandlerErrorCode]
-  val NetworkFailure = "NetworkFailure".asInstanceOf[HandlerErrorCode]
-  val InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
+  val NotUpdatable: "NotUpdatable" = "NotUpdatable"
+  val InvalidRequest: "InvalidRequest" = "InvalidRequest"
+  val AccessDenied: "AccessDenied" = "AccessDenied"
+  val InvalidCredentials: "InvalidCredentials" = "InvalidCredentials"
+  val AlreadyExists: "AlreadyExists" = "AlreadyExists"
+  val NotFound: "NotFound" = "NotFound"
+  val ResourceConflict: "ResourceConflict" = "ResourceConflict"
+  val Throttling: "Throttling" = "Throttling"
+  val ServiceLimitExceeded: "ServiceLimitExceeded" = "ServiceLimitExceeded"
+  val NotStabilized: "NotStabilized" = "NotStabilized"
+  val GeneralServiceException: "GeneralServiceException" = "GeneralServiceException"
+  val ServiceInternalError: "ServiceInternalError" = "ServiceInternalError"
+  val NetworkFailure: "NetworkFailure" = "NetworkFailure"
+  val InternalFailure: "InternalFailure" = "InternalFailure"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[HandlerErrorCode](
     NotUpdatable,
     InvalidRequest,
     AccessDenied,
@@ -166,137 +152,125 @@ object HandlerErrorCode {
   )
 }
 
-@js.native
-sealed trait OnFailure extends js.Any
+type OnFailure = "DO_NOTHING" | "ROLLBACK" | "DELETE"
 object OnFailure {
-  val DO_NOTHING = "DO_NOTHING".asInstanceOf[OnFailure]
-  val ROLLBACK = "ROLLBACK".asInstanceOf[OnFailure]
-  val DELETE = "DELETE".asInstanceOf[OnFailure]
+  val DO_NOTHING: "DO_NOTHING" = "DO_NOTHING"
+  val ROLLBACK: "ROLLBACK" = "ROLLBACK"
+  val DELETE: "DELETE" = "DELETE"
 
-  @inline def values = js.Array(DO_NOTHING, ROLLBACK, DELETE)
+  @inline def values = js.Array[OnFailure](DO_NOTHING, ROLLBACK, DELETE)
 }
 
-@js.native
-sealed trait OperationStatus extends js.Any
+type OperationStatus = "PENDING" | "IN_PROGRESS" | "SUCCESS" | "FAILED"
 object OperationStatus {
-  val PENDING = "PENDING".asInstanceOf[OperationStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[OperationStatus]
-  val SUCCESS = "SUCCESS".asInstanceOf[OperationStatus]
-  val FAILED = "FAILED".asInstanceOf[OperationStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val SUCCESS: "SUCCESS" = "SUCCESS"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED)
+  @inline def values = js.Array[OperationStatus](PENDING, IN_PROGRESS, SUCCESS, FAILED)
 }
 
-@js.native
-sealed trait PermissionModels extends js.Any
+type PermissionModels = "SERVICE_MANAGED" | "SELF_MANAGED"
 object PermissionModels {
-  val SERVICE_MANAGED = "SERVICE_MANAGED".asInstanceOf[PermissionModels]
-  val SELF_MANAGED = "SELF_MANAGED".asInstanceOf[PermissionModels]
+  val SERVICE_MANAGED: "SERVICE_MANAGED" = "SERVICE_MANAGED"
+  val SELF_MANAGED: "SELF_MANAGED" = "SELF_MANAGED"
 
-  @inline def values = js.Array(SERVICE_MANAGED, SELF_MANAGED)
+  @inline def values = js.Array[PermissionModels](SERVICE_MANAGED, SELF_MANAGED)
 }
 
-@js.native
-sealed trait ProvisioningType extends js.Any
+type ProvisioningType = "NON_PROVISIONABLE" | "IMMUTABLE" | "FULLY_MUTABLE"
 object ProvisioningType {
-  val NON_PROVISIONABLE = "NON_PROVISIONABLE".asInstanceOf[ProvisioningType]
-  val IMMUTABLE = "IMMUTABLE".asInstanceOf[ProvisioningType]
-  val FULLY_MUTABLE = "FULLY_MUTABLE".asInstanceOf[ProvisioningType]
+  val NON_PROVISIONABLE: "NON_PROVISIONABLE" = "NON_PROVISIONABLE"
+  val IMMUTABLE: "IMMUTABLE" = "IMMUTABLE"
+  val FULLY_MUTABLE: "FULLY_MUTABLE" = "FULLY_MUTABLE"
 
-  @inline def values = js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE)
+  @inline def values = js.Array[ProvisioningType](NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE)
 }
 
-@js.native
-sealed trait RegionConcurrencyType extends js.Any
+type RegionConcurrencyType = "SEQUENTIAL" | "PARALLEL"
 object RegionConcurrencyType {
-  val SEQUENTIAL = "SEQUENTIAL".asInstanceOf[RegionConcurrencyType]
-  val PARALLEL = "PARALLEL".asInstanceOf[RegionConcurrencyType]
+  val SEQUENTIAL: "SEQUENTIAL" = "SEQUENTIAL"
+  val PARALLEL: "PARALLEL" = "PARALLEL"
 
-  @inline def values = js.Array(SEQUENTIAL, PARALLEL)
+  @inline def values = js.Array[RegionConcurrencyType](SEQUENTIAL, PARALLEL)
 }
 
-@js.native
-sealed trait RegistrationStatus extends js.Any
+type RegistrationStatus = "COMPLETE" | "IN_PROGRESS" | "FAILED"
 object RegistrationStatus {
-  val COMPLETE = "COMPLETE".asInstanceOf[RegistrationStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RegistrationStatus]
-  val FAILED = "FAILED".asInstanceOf[RegistrationStatus]
+  val COMPLETE: "COMPLETE" = "COMPLETE"
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(COMPLETE, IN_PROGRESS, FAILED)
+  @inline def values = js.Array[RegistrationStatus](COMPLETE, IN_PROGRESS, FAILED)
 }
 
-@js.native
-sealed trait RegistryType extends js.Any
+type RegistryType = "RESOURCE" | "MODULE"
 object RegistryType {
-  val RESOURCE = "RESOURCE".asInstanceOf[RegistryType]
-  val MODULE = "MODULE".asInstanceOf[RegistryType]
+  val RESOURCE: "RESOURCE" = "RESOURCE"
+  val MODULE: "MODULE" = "MODULE"
 
-  @inline def values = js.Array(RESOURCE, MODULE)
+  @inline def values = js.Array[RegistryType](RESOURCE, MODULE)
 }
 
-@js.native
-sealed trait Replacement extends js.Any
+type Replacement = "True" | "False" | "Conditional"
 object Replacement {
-  val True = "True".asInstanceOf[Replacement]
-  val False = "False".asInstanceOf[Replacement]
-  val Conditional = "Conditional".asInstanceOf[Replacement]
+  val True: "True" = "True"
+  val False: "False" = "False"
+  val Conditional: "Conditional" = "Conditional"
 
-  @inline def values = js.Array(True, False, Conditional)
+  @inline def values = js.Array[Replacement](True, False, Conditional)
 }
 
-@js.native
-sealed trait RequiresRecreation extends js.Any
+type RequiresRecreation = "Never" | "Conditionally" | "Always"
 object RequiresRecreation {
-  val Never = "Never".asInstanceOf[RequiresRecreation]
-  val Conditionally = "Conditionally".asInstanceOf[RequiresRecreation]
-  val Always = "Always".asInstanceOf[RequiresRecreation]
+  val Never: "Never" = "Never"
+  val Conditionally: "Conditionally" = "Conditionally"
+  val Always: "Always" = "Always"
 
-  @inline def values = js.Array(Never, Conditionally, Always)
+  @inline def values = js.Array[RequiresRecreation](Never, Conditionally, Always)
 }
 
-@js.native
-sealed trait ResourceAttribute extends js.Any
+type ResourceAttribute = "Properties" | "Metadata" | "CreationPolicy" | "UpdatePolicy" | "DeletionPolicy" | "Tags"
 object ResourceAttribute {
-  val Properties = "Properties".asInstanceOf[ResourceAttribute]
-  val Metadata = "Metadata".asInstanceOf[ResourceAttribute]
-  val CreationPolicy = "CreationPolicy".asInstanceOf[ResourceAttribute]
-  val UpdatePolicy = "UpdatePolicy".asInstanceOf[ResourceAttribute]
-  val DeletionPolicy = "DeletionPolicy".asInstanceOf[ResourceAttribute]
-  val Tags = "Tags".asInstanceOf[ResourceAttribute]
+  val Properties: "Properties" = "Properties"
+  val Metadata: "Metadata" = "Metadata"
+  val CreationPolicy: "CreationPolicy" = "CreationPolicy"
+  val UpdatePolicy: "UpdatePolicy" = "UpdatePolicy"
+  val DeletionPolicy: "DeletionPolicy" = "DeletionPolicy"
+  val Tags: "Tags" = "Tags"
 
-  @inline def values = js.Array(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags)
+  @inline def values = js.Array[ResourceAttribute](Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags)
 }
 
-@js.native
-sealed trait ResourceSignalStatus extends js.Any
+type ResourceSignalStatus = "SUCCESS" | "FAILURE"
 object ResourceSignalStatus {
-  val SUCCESS = "SUCCESS".asInstanceOf[ResourceSignalStatus]
-  val FAILURE = "FAILURE".asInstanceOf[ResourceSignalStatus]
+  val SUCCESS: "SUCCESS" = "SUCCESS"
+  val FAILURE: "FAILURE" = "FAILURE"
 
-  @inline def values = js.Array(SUCCESS, FAILURE)
+  @inline def values = js.Array[ResourceSignalStatus](SUCCESS, FAILURE)
 }
 
-@js.native
-sealed trait ResourceStatus extends js.Any
+type ResourceStatus = "CREATE_IN_PROGRESS" | "CREATE_FAILED" | "CREATE_COMPLETE" | "DELETE_IN_PROGRESS" | "DELETE_FAILED" | "DELETE_COMPLETE" | "DELETE_SKIPPED" | "UPDATE_IN_PROGRESS" | "UPDATE_FAILED" | "UPDATE_COMPLETE" | "IMPORT_FAILED" | "IMPORT_COMPLETE" | "IMPORT_IN_PROGRESS" | "IMPORT_ROLLBACK_IN_PROGRESS" | "IMPORT_ROLLBACK_FAILED" | "IMPORT_ROLLBACK_COMPLETE"
 object ResourceStatus {
-  val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ResourceStatus]
-  val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[ResourceStatus]
-  val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ResourceStatus]
-  val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ResourceStatus]
-  val DELETE_SKIPPED = "DELETE_SKIPPED".asInstanceOf[ResourceStatus]
-  val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ResourceStatus]
-  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
-  val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[ResourceStatus]
-  val IMPORT_FAILED = "IMPORT_FAILED".asInstanceOf[ResourceStatus]
-  val IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[ResourceStatus]
-  val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[ResourceStatus]
-  val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[ResourceStatus]
-  val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
-  val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
+  val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
+  val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+  val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+  val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
+  val DELETE_SKIPPED: "DELETE_SKIPPED" = "DELETE_SKIPPED"
+  val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+  val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
+  val UPDATE_COMPLETE: "UPDATE_COMPLETE" = "UPDATE_COMPLETE"
+  val IMPORT_FAILED: "IMPORT_FAILED" = "IMPORT_FAILED"
+  val IMPORT_COMPLETE: "IMPORT_COMPLETE" = "IMPORT_COMPLETE"
+  val IMPORT_IN_PROGRESS: "IMPORT_IN_PROGRESS" = "IMPORT_IN_PROGRESS"
+  val IMPORT_ROLLBACK_IN_PROGRESS: "IMPORT_ROLLBACK_IN_PROGRESS" = "IMPORT_ROLLBACK_IN_PROGRESS"
+  val IMPORT_ROLLBACK_FAILED: "IMPORT_ROLLBACK_FAILED" = "IMPORT_ROLLBACK_FAILED"
+  val IMPORT_ROLLBACK_COMPLETE: "IMPORT_ROLLBACK_COMPLETE" = "IMPORT_ROLLBACK_COMPLETE"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[ResourceStatus](
     CREATE_IN_PROGRESS,
     CREATE_FAILED,
     CREATE_COMPLETE,
@@ -316,163 +290,150 @@ object ResourceStatus {
   )
 }
 
-@js.native
-sealed trait StackDriftDetectionStatus extends js.Any
+type StackDriftDetectionStatus = "DETECTION_IN_PROGRESS" | "DETECTION_FAILED" | "DETECTION_COMPLETE"
 object StackDriftDetectionStatus {
-  val DETECTION_IN_PROGRESS = "DETECTION_IN_PROGRESS".asInstanceOf[StackDriftDetectionStatus]
-  val DETECTION_FAILED = "DETECTION_FAILED".asInstanceOf[StackDriftDetectionStatus]
-  val DETECTION_COMPLETE = "DETECTION_COMPLETE".asInstanceOf[StackDriftDetectionStatus]
+  val DETECTION_IN_PROGRESS: "DETECTION_IN_PROGRESS" = "DETECTION_IN_PROGRESS"
+  val DETECTION_FAILED: "DETECTION_FAILED" = "DETECTION_FAILED"
+  val DETECTION_COMPLETE: "DETECTION_COMPLETE" = "DETECTION_COMPLETE"
 
-  @inline def values = js.Array(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE)
+  @inline def values = js.Array[StackDriftDetectionStatus](DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE)
 }
 
-@js.native
-sealed trait StackDriftStatus extends js.Any
+type StackDriftStatus = "DRIFTED" | "IN_SYNC" | "UNKNOWN" | "NOT_CHECKED"
 object StackDriftStatus {
-  val DRIFTED = "DRIFTED".asInstanceOf[StackDriftStatus]
-  val IN_SYNC = "IN_SYNC".asInstanceOf[StackDriftStatus]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[StackDriftStatus]
-  val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackDriftStatus]
+  val DRIFTED: "DRIFTED" = "DRIFTED"
+  val IN_SYNC: "IN_SYNC" = "IN_SYNC"
+  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  val NOT_CHECKED: "NOT_CHECKED" = "NOT_CHECKED"
 
-  @inline def values = js.Array(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED)
+  @inline def values = js.Array[StackDriftStatus](DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED)
 }
 
-@js.native
-sealed trait StackInstanceDetailedStatus extends js.Any
+type StackInstanceDetailedStatus = "PENDING" | "RUNNING" | "SUCCEEDED" | "FAILED" | "CANCELLED" | "INOPERABLE"
 object StackInstanceDetailedStatus {
-  val PENDING = "PENDING".asInstanceOf[StackInstanceDetailedStatus]
-  val RUNNING = "RUNNING".asInstanceOf[StackInstanceDetailedStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackInstanceDetailedStatus]
-  val FAILED = "FAILED".asInstanceOf[StackInstanceDetailedStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[StackInstanceDetailedStatus]
-  val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceDetailedStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val FAILED: "FAILED" = "FAILED"
+  val CANCELLED: "CANCELLED" = "CANCELLED"
+  val INOPERABLE: "INOPERABLE" = "INOPERABLE"
 
-  @inline def values = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE)
+  @inline def values = js.Array[StackInstanceDetailedStatus](PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE)
 }
 
-@js.native
-sealed trait StackInstanceFilterName extends js.Any
+type StackInstanceFilterName = "DETAILED_STATUS"
 object StackInstanceFilterName {
-  val DETAILED_STATUS = "DETAILED_STATUS".asInstanceOf[StackInstanceFilterName]
+  val DETAILED_STATUS: "DETAILED_STATUS" = "DETAILED_STATUS"
 
-  @inline def values = js.Array(DETAILED_STATUS)
+  @inline def values = js.Array[StackInstanceFilterName](DETAILED_STATUS)
 }
 
-@js.native
-sealed trait StackInstanceStatus extends js.Any
+type StackInstanceStatus = "CURRENT" | "OUTDATED" | "INOPERABLE"
 object StackInstanceStatus {
-  val CURRENT = "CURRENT".asInstanceOf[StackInstanceStatus]
-  val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
-  val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
+  val CURRENT: "CURRENT" = "CURRENT"
+  val OUTDATED: "OUTDATED" = "OUTDATED"
+  val INOPERABLE: "INOPERABLE" = "INOPERABLE"
 
-  @inline def values = js.Array(CURRENT, OUTDATED, INOPERABLE)
+  @inline def values = js.Array[StackInstanceStatus](CURRENT, OUTDATED, INOPERABLE)
 }
 
-@js.native
-sealed trait StackResourceDriftStatus extends js.Any
+type StackResourceDriftStatus = "IN_SYNC" | "MODIFIED" | "DELETED" | "NOT_CHECKED"
 object StackResourceDriftStatus {
-  val IN_SYNC = "IN_SYNC".asInstanceOf[StackResourceDriftStatus]
-  val MODIFIED = "MODIFIED".asInstanceOf[StackResourceDriftStatus]
-  val DELETED = "DELETED".asInstanceOf[StackResourceDriftStatus]
-  val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackResourceDriftStatus]
+  val IN_SYNC: "IN_SYNC" = "IN_SYNC"
+  val MODIFIED: "MODIFIED" = "MODIFIED"
+  val DELETED: "DELETED" = "DELETED"
+  val NOT_CHECKED: "NOT_CHECKED" = "NOT_CHECKED"
 
-  @inline def values = js.Array(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED)
+  @inline def values = js.Array[StackResourceDriftStatus](IN_SYNC, MODIFIED, DELETED, NOT_CHECKED)
 }
 
-@js.native
-sealed trait StackSetDriftDetectionStatus extends js.Any
+type StackSetDriftDetectionStatus = "COMPLETED" | "FAILED" | "PARTIAL_SUCCESS" | "IN_PROGRESS" | "STOPPED"
 object StackSetDriftDetectionStatus {
-  val COMPLETED = "COMPLETED".asInstanceOf[StackSetDriftDetectionStatus]
-  val FAILED = "FAILED".asInstanceOf[StackSetDriftDetectionStatus]
-  val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[StackSetDriftDetectionStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StackSetDriftDetectionStatus]
-  val STOPPED = "STOPPED".asInstanceOf[StackSetDriftDetectionStatus]
+  val COMPLETED: "COMPLETED" = "COMPLETED"
+  val FAILED: "FAILED" = "FAILED"
+  val PARTIAL_SUCCESS: "PARTIAL_SUCCESS" = "PARTIAL_SUCCESS"
+  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array(COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED)
+  @inline def values = js.Array[StackSetDriftDetectionStatus](COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED)
 }
 
-@js.native
-sealed trait StackSetDriftStatus extends js.Any
+type StackSetDriftStatus = "DRIFTED" | "IN_SYNC" | "NOT_CHECKED"
 object StackSetDriftStatus {
-  val DRIFTED = "DRIFTED".asInstanceOf[StackSetDriftStatus]
-  val IN_SYNC = "IN_SYNC".asInstanceOf[StackSetDriftStatus]
-  val NOT_CHECKED = "NOT_CHECKED".asInstanceOf[StackSetDriftStatus]
+  val DRIFTED: "DRIFTED" = "DRIFTED"
+  val IN_SYNC: "IN_SYNC" = "IN_SYNC"
+  val NOT_CHECKED: "NOT_CHECKED" = "NOT_CHECKED"
 
-  @inline def values = js.Array(DRIFTED, IN_SYNC, NOT_CHECKED)
+  @inline def values = js.Array[StackSetDriftStatus](DRIFTED, IN_SYNC, NOT_CHECKED)
 }
 
-@js.native
-sealed trait StackSetOperationAction extends js.Any
+type StackSetOperationAction = "CREATE" | "UPDATE" | "DELETE" | "DETECT_DRIFT"
 object StackSetOperationAction {
-  val CREATE = "CREATE".asInstanceOf[StackSetOperationAction]
-  val UPDATE = "UPDATE".asInstanceOf[StackSetOperationAction]
-  val DELETE = "DELETE".asInstanceOf[StackSetOperationAction]
-  val DETECT_DRIFT = "DETECT_DRIFT".asInstanceOf[StackSetOperationAction]
+  val CREATE: "CREATE" = "CREATE"
+  val UPDATE: "UPDATE" = "UPDATE"
+  val DELETE: "DELETE" = "DELETE"
+  val DETECT_DRIFT: "DETECT_DRIFT" = "DETECT_DRIFT"
 
-  @inline def values = js.Array(CREATE, UPDATE, DELETE, DETECT_DRIFT)
+  @inline def values = js.Array[StackSetOperationAction](CREATE, UPDATE, DELETE, DETECT_DRIFT)
 }
 
-@js.native
-sealed trait StackSetOperationResultStatus extends js.Any
+type StackSetOperationResultStatus = "PENDING" | "RUNNING" | "SUCCEEDED" | "FAILED" | "CANCELLED"
 object StackSetOperationResultStatus {
-  val PENDING = "PENDING".asInstanceOf[StackSetOperationResultStatus]
-  val RUNNING = "RUNNING".asInstanceOf[StackSetOperationResultStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationResultStatus]
-  val FAILED = "FAILED".asInstanceOf[StackSetOperationResultStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[StackSetOperationResultStatus]
+  val PENDING: "PENDING" = "PENDING"
+  val RUNNING: "RUNNING" = "RUNNING"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val FAILED: "FAILED" = "FAILED"
+  val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED)
+  @inline def values = js.Array[StackSetOperationResultStatus](PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED)
 }
 
-@js.native
-sealed trait StackSetOperationStatus extends js.Any
+type StackSetOperationStatus = "RUNNING" | "SUCCEEDED" | "FAILED" | "STOPPING" | "STOPPED" | "QUEUED"
 object StackSetOperationStatus {
-  val RUNNING = "RUNNING".asInstanceOf[StackSetOperationStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[StackSetOperationStatus]
-  val FAILED = "FAILED".asInstanceOf[StackSetOperationStatus]
-  val STOPPING = "STOPPING".asInstanceOf[StackSetOperationStatus]
-  val STOPPED = "STOPPED".asInstanceOf[StackSetOperationStatus]
-  val QUEUED = "QUEUED".asInstanceOf[StackSetOperationStatus]
+  val RUNNING: "RUNNING" = "RUNNING"
+  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  val FAILED: "FAILED" = "FAILED"
+  val STOPPING: "STOPPING" = "STOPPING"
+  val STOPPED: "STOPPED" = "STOPPED"
+  val QUEUED: "QUEUED" = "QUEUED"
 
-  @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED)
+  @inline def values = js.Array[StackSetOperationStatus](RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED)
 }
 
-@js.native
-sealed trait StackSetStatus extends js.Any
+type StackSetStatus = "ACTIVE" | "DELETED"
 object StackSetStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[StackSetStatus]
-  val DELETED = "DELETED".asInstanceOf[StackSetStatus]
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(ACTIVE, DELETED)
+  @inline def values = js.Array[StackSetStatus](ACTIVE, DELETED)
 }
 
-@js.native
-sealed trait StackStatus extends js.Any
+type StackStatus = "CREATE_IN_PROGRESS" | "CREATE_FAILED" | "CREATE_COMPLETE" | "ROLLBACK_IN_PROGRESS" | "ROLLBACK_FAILED" | "ROLLBACK_COMPLETE" | "DELETE_IN_PROGRESS" | "DELETE_FAILED" | "DELETE_COMPLETE" | "UPDATE_IN_PROGRESS" | "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS" | "UPDATE_COMPLETE" | "UPDATE_ROLLBACK_IN_PROGRESS" | "UPDATE_ROLLBACK_FAILED" | "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" | "UPDATE_ROLLBACK_COMPLETE" | "REVIEW_IN_PROGRESS" | "IMPORT_IN_PROGRESS" | "IMPORT_COMPLETE" | "IMPORT_ROLLBACK_IN_PROGRESS" | "IMPORT_ROLLBACK_FAILED" | "IMPORT_ROLLBACK_COMPLETE"
 object StackStatus {
-  val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[StackStatus]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[StackStatus]
-  val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[StackStatus]
-  val ROLLBACK_IN_PROGRESS = "ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
-  val ROLLBACK_FAILED = "ROLLBACK_FAILED".asInstanceOf[StackStatus]
-  val ROLLBACK_COMPLETE = "ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
-  val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[StackStatus]
-  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[StackStatus]
-  val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[StackStatus]
-  val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[StackStatus]
-  val UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
-  val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[StackStatus]
-  val UPDATE_ROLLBACK_IN_PROGRESS = "UPDATE_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
-  val UPDATE_ROLLBACK_FAILED = "UPDATE_ROLLBACK_FAILED".asInstanceOf[StackStatus]
-  val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
-  val UPDATE_ROLLBACK_COMPLETE = "UPDATE_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
-  val REVIEW_IN_PROGRESS = "REVIEW_IN_PROGRESS".asInstanceOf[StackStatus]
-  val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[StackStatus]
-  val IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[StackStatus]
-  val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
-  val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[StackStatus]
-  val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[StackStatus]
+  val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
+  val ROLLBACK_IN_PROGRESS: "ROLLBACK_IN_PROGRESS" = "ROLLBACK_IN_PROGRESS"
+  val ROLLBACK_FAILED: "ROLLBACK_FAILED" = "ROLLBACK_FAILED"
+  val ROLLBACK_COMPLETE: "ROLLBACK_COMPLETE" = "ROLLBACK_COMPLETE"
+  val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+  val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+  val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
+  val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+  val UPDATE_COMPLETE_CLEANUP_IN_PROGRESS: "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS" = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS"
+  val UPDATE_COMPLETE: "UPDATE_COMPLETE" = "UPDATE_COMPLETE"
+  val UPDATE_ROLLBACK_IN_PROGRESS: "UPDATE_ROLLBACK_IN_PROGRESS" = "UPDATE_ROLLBACK_IN_PROGRESS"
+  val UPDATE_ROLLBACK_FAILED: "UPDATE_ROLLBACK_FAILED" = "UPDATE_ROLLBACK_FAILED"
+  val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS: "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"
+  val UPDATE_ROLLBACK_COMPLETE: "UPDATE_ROLLBACK_COMPLETE" = "UPDATE_ROLLBACK_COMPLETE"
+  val REVIEW_IN_PROGRESS: "REVIEW_IN_PROGRESS" = "REVIEW_IN_PROGRESS"
+  val IMPORT_IN_PROGRESS: "IMPORT_IN_PROGRESS" = "IMPORT_IN_PROGRESS"
+  val IMPORT_COMPLETE: "IMPORT_COMPLETE" = "IMPORT_COMPLETE"
+  val IMPORT_ROLLBACK_IN_PROGRESS: "IMPORT_ROLLBACK_IN_PROGRESS" = "IMPORT_ROLLBACK_IN_PROGRESS"
+  val IMPORT_ROLLBACK_FAILED: "IMPORT_ROLLBACK_FAILED" = "IMPORT_ROLLBACK_FAILED"
+  val IMPORT_ROLLBACK_COMPLETE: "IMPORT_ROLLBACK_COMPLETE" = "IMPORT_ROLLBACK_COMPLETE"
 
-  @inline def values = js.Array(
+  @inline def values = js.Array[StackStatus](
     CREATE_IN_PROGRESS,
     CREATE_FAILED,
     CREATE_COMPLETE,
@@ -498,20 +459,18 @@ object StackStatus {
   )
 }
 
-@js.native
-sealed trait TemplateStage extends js.Any
+type TemplateStage = "Original" | "Processed"
 object TemplateStage {
-  val Original = "Original".asInstanceOf[TemplateStage]
-  val Processed = "Processed".asInstanceOf[TemplateStage]
+  val Original: "Original" = "Original"
+  val Processed: "Processed" = "Processed"
 
-  @inline def values = js.Array(Original, Processed)
+  @inline def values = js.Array[TemplateStage](Original, Processed)
 }
 
-@js.native
-sealed trait Visibility extends js.Any
+type Visibility = "PUBLIC" | "PRIVATE"
 object Visibility {
-  val PUBLIC = "PUBLIC".asInstanceOf[Visibility]
-  val PRIVATE = "PRIVATE".asInstanceOf[Visibility]
+  val PUBLIC: "PUBLIC" = "PUBLIC"
+  val PRIVATE: "PRIVATE" = "PRIVATE"
 
-  @inline def values = js.Array(PUBLIC, PRIVATE)
+  @inline def values = js.Array[Visibility](PUBLIC, PRIVATE)
 }

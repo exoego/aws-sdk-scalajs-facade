@@ -1,72 +1,64 @@
 package facade.amazonaws.services.kinesisvideo
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait APIName extends js.Any
+type APIName = "PUT_MEDIA" | "GET_MEDIA" | "LIST_FRAGMENTS" | "GET_MEDIA_FOR_FRAGMENT_LIST" | "GET_HLS_STREAMING_SESSION_URL" | "GET_DASH_STREAMING_SESSION_URL" | "GET_CLIP"
 object APIName {
-  val PUT_MEDIA = "PUT_MEDIA".asInstanceOf[APIName]
-  val GET_MEDIA = "GET_MEDIA".asInstanceOf[APIName]
-  val LIST_FRAGMENTS = "LIST_FRAGMENTS".asInstanceOf[APIName]
-  val GET_MEDIA_FOR_FRAGMENT_LIST = "GET_MEDIA_FOR_FRAGMENT_LIST".asInstanceOf[APIName]
-  val GET_HLS_STREAMING_SESSION_URL = "GET_HLS_STREAMING_SESSION_URL".asInstanceOf[APIName]
-  val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
-  val GET_CLIP = "GET_CLIP".asInstanceOf[APIName]
+  val PUT_MEDIA: "PUT_MEDIA" = "PUT_MEDIA"
+  val GET_MEDIA: "GET_MEDIA" = "GET_MEDIA"
+  val LIST_FRAGMENTS: "LIST_FRAGMENTS" = "LIST_FRAGMENTS"
+  val GET_MEDIA_FOR_FRAGMENT_LIST: "GET_MEDIA_FOR_FRAGMENT_LIST" = "GET_MEDIA_FOR_FRAGMENT_LIST"
+  val GET_HLS_STREAMING_SESSION_URL: "GET_HLS_STREAMING_SESSION_URL" = "GET_HLS_STREAMING_SESSION_URL"
+  val GET_DASH_STREAMING_SESSION_URL: "GET_DASH_STREAMING_SESSION_URL" = "GET_DASH_STREAMING_SESSION_URL"
+  val GET_CLIP: "GET_CLIP" = "GET_CLIP"
 
-  @inline def values = js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP)
+  @inline def values = js.Array[APIName](PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP)
 }
 
-@js.native
-sealed trait ChannelProtocol extends js.Any
+type ChannelProtocol = "WSS" | "HTTPS"
 object ChannelProtocol {
-  val WSS = "WSS".asInstanceOf[ChannelProtocol]
-  val HTTPS = "HTTPS".asInstanceOf[ChannelProtocol]
+  val WSS: "WSS" = "WSS"
+  val HTTPS: "HTTPS" = "HTTPS"
 
-  @inline def values = js.Array(WSS, HTTPS)
+  @inline def values = js.Array[ChannelProtocol](WSS, HTTPS)
 }
 
-@js.native
-sealed trait ChannelRole extends js.Any
+type ChannelRole = "MASTER" | "VIEWER"
 object ChannelRole {
-  val MASTER = "MASTER".asInstanceOf[ChannelRole]
-  val VIEWER = "VIEWER".asInstanceOf[ChannelRole]
+  val MASTER: "MASTER" = "MASTER"
+  val VIEWER: "VIEWER" = "VIEWER"
 
-  @inline def values = js.Array(MASTER, VIEWER)
+  @inline def values = js.Array[ChannelRole](MASTER, VIEWER)
 }
 
-@js.native
-sealed trait ChannelType extends js.Any
+type ChannelType = "SINGLE_MASTER"
 object ChannelType {
-  val SINGLE_MASTER = "SINGLE_MASTER".asInstanceOf[ChannelType]
+  val SINGLE_MASTER: "SINGLE_MASTER" = "SINGLE_MASTER"
 
-  @inline def values = js.Array(SINGLE_MASTER)
+  @inline def values = js.Array[ChannelType](SINGLE_MASTER)
 }
 
-@js.native
-sealed trait ComparisonOperator extends js.Any
+type ComparisonOperator = "BEGINS_WITH"
 object ComparisonOperator {
-  val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
+  val BEGINS_WITH: "BEGINS_WITH" = "BEGINS_WITH"
 
-  @inline def values = js.Array(BEGINS_WITH)
+  @inline def values = js.Array[ComparisonOperator](BEGINS_WITH)
 }
 
-@js.native
-sealed trait Status extends js.Any
+type Status = "CREATING" | "ACTIVE" | "UPDATING" | "DELETING"
 object Status {
-  val CREATING = "CREATING".asInstanceOf[Status]
-  val ACTIVE = "ACTIVE".asInstanceOf[Status]
-  val UPDATING = "UPDATING".asInstanceOf[Status]
-  val DELETING = "DELETING".asInstanceOf[Status]
+  val CREATING: "CREATING" = "CREATING"
+  val ACTIVE: "ACTIVE" = "ACTIVE"
+  val UPDATING: "UPDATING" = "UPDATING"
+  val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING)
+  @inline def values = js.Array[Status](CREATING, ACTIVE, UPDATING, DELETING)
 }
 
-@js.native
-sealed trait UpdateDataRetentionOperation extends js.Any
+type UpdateDataRetentionOperation = "INCREASE_DATA_RETENTION" | "DECREASE_DATA_RETENTION"
 object UpdateDataRetentionOperation {
-  val INCREASE_DATA_RETENTION = "INCREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
-  val DECREASE_DATA_RETENTION = "DECREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
+  val INCREASE_DATA_RETENTION: "INCREASE_DATA_RETENTION" = "INCREASE_DATA_RETENTION"
+  val DECREASE_DATA_RETENTION: "DECREASE_DATA_RETENTION" = "DECREASE_DATA_RETENTION"
 
-  @inline def values = js.Array(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION)
+  @inline def values = js.Array[UpdateDataRetentionOperation](INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION)
 }

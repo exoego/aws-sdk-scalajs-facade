@@ -173,3 +173,4 @@ object RecipeOutputFormat {
 
   @inline def values = js.Array(JSON, YAML)
 }
+

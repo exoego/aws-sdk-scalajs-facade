@@ -50,26 +50,6 @@ object QueueAttributeName {
   val DeduplicationScope = "DeduplicationScope".asInstanceOf[QueueAttributeName]
   val FifoThroughputLimit = "FifoThroughputLimit".asInstanceOf[QueueAttributeName]
 
-  @inline def values = js.Array(
-    All,
-    Policy,
-    VisibilityTimeout,
-    MaximumMessageSize,
-    MessageRetentionPeriod,
-    ApproximateNumberOfMessages,
-    ApproximateNumberOfMessagesNotVisible,
-    CreatedTimestamp,
-    LastModifiedTimestamp,
-    QueueArn,
-    ApproximateNumberOfMessagesDelayed,
-    DelaySeconds,
-    ReceiveMessageWaitTimeSeconds,
-    RedrivePolicy,
-    FifoQueue,
-    ContentBasedDeduplication,
-    KmsMasterKeyId,
-    KmsDataKeyReusePeriodSeconds,
-    DeduplicationScope,
-    FifoThroughputLimit
-  )
+  @inline def values = js.Array(All, Policy, VisibilityTimeout, MaximumMessageSize, MessageRetentionPeriod, ApproximateNumberOfMessages, ApproximateNumberOfMessagesNotVisible, CreatedTimestamp, LastModifiedTimestamp, QueueArn, ApproximateNumberOfMessagesDelayed, DelaySeconds, ReceiveMessageWaitTimeSeconds, RedrivePolicy, FifoQueue, ContentBasedDeduplication, KmsMasterKeyId, KmsDataKeyReusePeriodSeconds, DeduplicationScope, FifoThroughputLimit)
 }
+

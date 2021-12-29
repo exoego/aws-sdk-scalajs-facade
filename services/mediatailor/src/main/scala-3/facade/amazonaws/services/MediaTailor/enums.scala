@@ -1,73 +1,64 @@
 package facade.amazonaws.services.mediatailor
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccessType extends js.Any
+type AccessType = "S3_SIGV4"
 object AccessType {
-  val S3_SIGV4 = "S3_SIGV4".asInstanceOf[AccessType]
+  val S3_SIGV4: "S3_SIGV4" = "S3_SIGV4"
 
-  @inline def values = js.Array(S3_SIGV4)
+  @inline def values = js.Array[AccessType](S3_SIGV4)
 }
 
-@js.native
-sealed trait ChannelState extends js.Any
+type ChannelState = "RUNNING" | "STOPPED"
 object ChannelState {
-  val RUNNING = "RUNNING".asInstanceOf[ChannelState]
-  val STOPPED = "STOPPED".asInstanceOf[ChannelState]
+  val RUNNING: "RUNNING" = "RUNNING"
+  val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array(RUNNING, STOPPED)
+  @inline def values = js.Array[ChannelState](RUNNING, STOPPED)
 }
 
-@js.native
-sealed trait MessageType extends js.Any
+type MessageType = "SPLICE_INSERT"
 object MessageType {
-  val SPLICE_INSERT = "SPLICE_INSERT".asInstanceOf[MessageType]
+  val SPLICE_INSERT: "SPLICE_INSERT" = "SPLICE_INSERT"
 
-  @inline def values = js.Array(SPLICE_INSERT)
+  @inline def values = js.Array[MessageType](SPLICE_INSERT)
 }
 
-@js.native
-sealed trait Mode extends js.Any
+type Mode = "OFF" | "BEHIND_LIVE_EDGE"
 object Mode {
-  val OFF = "OFF".asInstanceOf[Mode]
-  val BEHIND_LIVE_EDGE = "BEHIND_LIVE_EDGE".asInstanceOf[Mode]
+  val OFF: "OFF" = "OFF"
+  val BEHIND_LIVE_EDGE: "BEHIND_LIVE_EDGE" = "BEHIND_LIVE_EDGE"
 
-  @inline def values = js.Array(OFF, BEHIND_LIVE_EDGE)
+  @inline def values = js.Array[Mode](OFF, BEHIND_LIVE_EDGE)
 }
 
-@js.native
-sealed trait OriginManifestType extends js.Any
+type OriginManifestType = "SINGLE_PERIOD" | "MULTI_PERIOD"
 object OriginManifestType {
-  val SINGLE_PERIOD = "SINGLE_PERIOD".asInstanceOf[OriginManifestType]
-  val MULTI_PERIOD = "MULTI_PERIOD".asInstanceOf[OriginManifestType]
+  val SINGLE_PERIOD: "SINGLE_PERIOD" = "SINGLE_PERIOD"
+  val MULTI_PERIOD: "MULTI_PERIOD" = "MULTI_PERIOD"
 
-  @inline def values = js.Array(SINGLE_PERIOD, MULTI_PERIOD)
+  @inline def values = js.Array[OriginManifestType](SINGLE_PERIOD, MULTI_PERIOD)
 }
 
-@js.native
-sealed trait PlaybackMode extends js.Any
+type PlaybackMode = "LOOP"
 object PlaybackMode {
-  val LOOP = "LOOP".asInstanceOf[PlaybackMode]
+  val LOOP: "LOOP" = "LOOP"
 
-  @inline def values = js.Array(LOOP)
+  @inline def values = js.Array[PlaybackMode](LOOP)
 }
 
-@js.native
-sealed trait RelativePosition extends js.Any
+type RelativePosition = "BEFORE_PROGRAM" | "AFTER_PROGRAM"
 object RelativePosition {
-  val BEFORE_PROGRAM = "BEFORE_PROGRAM".asInstanceOf[RelativePosition]
-  val AFTER_PROGRAM = "AFTER_PROGRAM".asInstanceOf[RelativePosition]
+  val BEFORE_PROGRAM: "BEFORE_PROGRAM" = "BEFORE_PROGRAM"
+  val AFTER_PROGRAM: "AFTER_PROGRAM" = "AFTER_PROGRAM"
 
-  @inline def values = js.Array(BEFORE_PROGRAM, AFTER_PROGRAM)
+  @inline def values = js.Array[RelativePosition](BEFORE_PROGRAM, AFTER_PROGRAM)
 }
 
-@js.native
-sealed trait Type extends js.Any
+type Type = "DASH" | "HLS"
 object Type {
-  val DASH = "DASH".asInstanceOf[Type]
-  val HLS = "HLS".asInstanceOf[Type]
+  val DASH: "DASH" = "DASH"
+  val HLS: "HLS" = "HLS"
 
-  @inline def values = js.Array(DASH, HLS)
+  @inline def values = js.Array[Type](DASH, HLS)
 }

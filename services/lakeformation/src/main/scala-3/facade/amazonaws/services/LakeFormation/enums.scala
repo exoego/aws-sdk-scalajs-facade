@@ -1,60 +1,55 @@
 package facade.amazonaws.services.lakeformation
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ComparisonOperator extends js.Any
+type ComparisonOperator = "EQ" | "NE" | "LE" | "LT" | "GE" | "GT" | "CONTAINS" | "NOT_CONTAINS" | "BEGINS_WITH" | "IN" | "BETWEEN"
 object ComparisonOperator {
-  val EQ = "EQ".asInstanceOf[ComparisonOperator]
-  val NE = "NE".asInstanceOf[ComparisonOperator]
-  val LE = "LE".asInstanceOf[ComparisonOperator]
-  val LT = "LT".asInstanceOf[ComparisonOperator]
-  val GE = "GE".asInstanceOf[ComparisonOperator]
-  val GT = "GT".asInstanceOf[ComparisonOperator]
-  val CONTAINS = "CONTAINS".asInstanceOf[ComparisonOperator]
-  val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
-  val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
-  val IN = "IN".asInstanceOf[ComparisonOperator]
-  val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
+  val EQ: "EQ" = "EQ"
+  val NE: "NE" = "NE"
+  val LE: "LE" = "LE"
+  val LT: "LT" = "LT"
+  val GE: "GE" = "GE"
+  val GT: "GT" = "GT"
+  val CONTAINS: "CONTAINS" = "CONTAINS"
+  val NOT_CONTAINS: "NOT_CONTAINS" = "NOT_CONTAINS"
+  val BEGINS_WITH: "BEGINS_WITH" = "BEGINS_WITH"
+  val IN: "IN" = "IN"
+  val BETWEEN: "BETWEEN" = "BETWEEN"
 
-  @inline def values = js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN)
+  @inline def values = js.Array[ComparisonOperator](EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN)
 }
 
-@js.native
-sealed trait DataLakeResourceType extends js.Any
+type DataLakeResourceType = "CATALOG" | "DATABASE" | "TABLE" | "DATA_LOCATION"
 object DataLakeResourceType {
-  val CATALOG = "CATALOG".asInstanceOf[DataLakeResourceType]
-  val DATABASE = "DATABASE".asInstanceOf[DataLakeResourceType]
-  val TABLE = "TABLE".asInstanceOf[DataLakeResourceType]
-  val DATA_LOCATION = "DATA_LOCATION".asInstanceOf[DataLakeResourceType]
+  val CATALOG: "CATALOG" = "CATALOG"
+  val DATABASE: "DATABASE" = "DATABASE"
+  val TABLE: "TABLE" = "TABLE"
+  val DATA_LOCATION: "DATA_LOCATION" = "DATA_LOCATION"
 
-  @inline def values = js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION)
+  @inline def values = js.Array[DataLakeResourceType](CATALOG, DATABASE, TABLE, DATA_LOCATION)
 }
 
-@js.native
-sealed trait FieldNameString extends js.Any
+type FieldNameString = "RESOURCE_ARN" | "ROLE_ARN" | "LAST_MODIFIED"
 object FieldNameString {
-  val RESOURCE_ARN = "RESOURCE_ARN".asInstanceOf[FieldNameString]
-  val ROLE_ARN = "ROLE_ARN".asInstanceOf[FieldNameString]
-  val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[FieldNameString]
+  val RESOURCE_ARN: "RESOURCE_ARN" = "RESOURCE_ARN"
+  val ROLE_ARN: "ROLE_ARN" = "ROLE_ARN"
+  val LAST_MODIFIED: "LAST_MODIFIED" = "LAST_MODIFIED"
 
-  @inline def values = js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED)
+  @inline def values = js.Array[FieldNameString](RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED)
 }
 
-@js.native
-sealed trait Permission extends js.Any
+type Permission = "ALL" | "SELECT" | "ALTER" | "DROP" | "DELETE" | "INSERT" | "DESCRIBE" | "CREATE_DATABASE" | "CREATE_TABLE" | "DATA_LOCATION_ACCESS"
 object Permission {
-  val ALL = "ALL".asInstanceOf[Permission]
-  val SELECT = "SELECT".asInstanceOf[Permission]
-  val ALTER = "ALTER".asInstanceOf[Permission]
-  val DROP = "DROP".asInstanceOf[Permission]
-  val DELETE = "DELETE".asInstanceOf[Permission]
-  val INSERT = "INSERT".asInstanceOf[Permission]
-  val DESCRIBE = "DESCRIBE".asInstanceOf[Permission]
-  val CREATE_DATABASE = "CREATE_DATABASE".asInstanceOf[Permission]
-  val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
-  val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
+  val ALL: "ALL" = "ALL"
+  val SELECT: "SELECT" = "SELECT"
+  val ALTER: "ALTER" = "ALTER"
+  val DROP: "DROP" = "DROP"
+  val DELETE: "DELETE" = "DELETE"
+  val INSERT: "INSERT" = "INSERT"
+  val DESCRIBE: "DESCRIBE" = "DESCRIBE"
+  val CREATE_DATABASE: "CREATE_DATABASE" = "CREATE_DATABASE"
+  val CREATE_TABLE: "CREATE_TABLE" = "CREATE_TABLE"
+  val DATA_LOCATION_ACCESS: "DATA_LOCATION_ACCESS" = "DATA_LOCATION_ACCESS"
 
-  @inline def values = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
+  @inline def values = js.Array[Permission](ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
 }

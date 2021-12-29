@@ -1,36 +1,32 @@
 package facade.amazonaws.services.location
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait BatchItemErrorCode extends js.Any
+type BatchItemErrorCode = "AccessDeniedError" | "ConflictError" | "InternalServerError" | "ResourceNotFoundError" | "ThrottlingError" | "ValidationError"
 object BatchItemErrorCode {
-  val AccessDeniedError = "AccessDeniedError".asInstanceOf[BatchItemErrorCode]
-  val ConflictError = "ConflictError".asInstanceOf[BatchItemErrorCode]
-  val InternalServerError = "InternalServerError".asInstanceOf[BatchItemErrorCode]
-  val ResourceNotFoundError = "ResourceNotFoundError".asInstanceOf[BatchItemErrorCode]
-  val ThrottlingError = "ThrottlingError".asInstanceOf[BatchItemErrorCode]
-  val ValidationError = "ValidationError".asInstanceOf[BatchItemErrorCode]
+  val AccessDeniedError: "AccessDeniedError" = "AccessDeniedError"
+  val ConflictError: "ConflictError" = "ConflictError"
+  val InternalServerError: "InternalServerError" = "InternalServerError"
+  val ResourceNotFoundError: "ResourceNotFoundError" = "ResourceNotFoundError"
+  val ThrottlingError: "ThrottlingError" = "ThrottlingError"
+  val ValidationError: "ValidationError" = "ValidationError"
 
-  @inline def values = js.Array(AccessDeniedError, ConflictError, InternalServerError, ResourceNotFoundError, ThrottlingError, ValidationError)
+  @inline def values = js.Array[BatchItemErrorCode](AccessDeniedError, ConflictError, InternalServerError, ResourceNotFoundError, ThrottlingError, ValidationError)
 }
 
-@js.native
-sealed trait IntendedUse extends js.Any
+type IntendedUse = "SingleUse" | "Storage"
 object IntendedUse {
-  val SingleUse = "SingleUse".asInstanceOf[IntendedUse]
-  val Storage = "Storage".asInstanceOf[IntendedUse]
+  val SingleUse: "SingleUse" = "SingleUse"
+  val Storage: "Storage" = "Storage"
 
-  @inline def values = js.Array(SingleUse, Storage)
+  @inline def values = js.Array[IntendedUse](SingleUse, Storage)
 }
 
-@js.native
-sealed trait PricingPlan extends js.Any
+type PricingPlan = "RequestBasedUsage" | "MobileAssetTracking" | "MobileAssetManagement"
 object PricingPlan {
-  val RequestBasedUsage = "RequestBasedUsage".asInstanceOf[PricingPlan]
-  val MobileAssetTracking = "MobileAssetTracking".asInstanceOf[PricingPlan]
-  val MobileAssetManagement = "MobileAssetManagement".asInstanceOf[PricingPlan]
+  val RequestBasedUsage: "RequestBasedUsage" = "RequestBasedUsage"
+  val MobileAssetTracking: "MobileAssetTracking" = "MobileAssetTracking"
+  val MobileAssetManagement: "MobileAssetManagement" = "MobileAssetManagement"
 
-  @inline def values = js.Array(RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
+  @inline def values = js.Array[PricingPlan](RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
 }

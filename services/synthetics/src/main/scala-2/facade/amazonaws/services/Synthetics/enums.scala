@@ -45,3 +45,4 @@ object CanaryStateReasonCode {
 
   @inline def values = js.Array(INVALID_PERMISSIONS)
 }
+

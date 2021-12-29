@@ -30,3 +30,4 @@ object ProjectState {
 
   @inline def values = js.Array(NORMAL, SYNCING, IMPORTING)
 }
+
