@@ -378,19 +378,6 @@ package object location {
     }
   }
 
-  @js.native
-  sealed trait BatchItemErrorCode extends js.Any
-  object BatchItemErrorCode {
-    val AccessDeniedError = "AccessDeniedError".asInstanceOf[BatchItemErrorCode]
-    val ConflictError = "ConflictError".asInstanceOf[BatchItemErrorCode]
-    val InternalServerError = "InternalServerError".asInstanceOf[BatchItemErrorCode]
-    val ResourceNotFoundError = "ResourceNotFoundError".asInstanceOf[BatchItemErrorCode]
-    val ThrottlingError = "ThrottlingError".asInstanceOf[BatchItemErrorCode]
-    val ValidationError = "ValidationError".asInstanceOf[BatchItemErrorCode]
-
-    @inline def values = js.Array(AccessDeniedError, ConflictError, InternalServerError, ResourceNotFoundError, ThrottlingError, ValidationError)
-  }
-
   /** Contains error details for each geofence that failed to be stored in a given geofence collection.
     */
   @js.native
@@ -1528,15 +1515,6 @@ package object location {
   }
 
   @js.native
-  sealed trait IntendedUse extends js.Any
-  object IntendedUse {
-    val SingleUse = "SingleUse".asInstanceOf[IntendedUse]
-    val Storage = "Storage".asInstanceOf[IntendedUse]
-
-    @inline def values = js.Array(SingleUse, Storage)
-  }
-
-  @js.native
   trait ListGeofenceCollectionsRequest extends js.Object {
     var MaxResults: js.UndefOr[ListGeofenceCollectionsRequestMaxResultsInteger]
     var NextToken: js.UndefOr[Token]
@@ -2034,16 +2012,6 @@ package object location {
       Point.foreach(__v => __obj.updateDynamic("Point")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlaceGeometry]
     }
-  }
-
-  @js.native
-  sealed trait PricingPlan extends js.Any
-  object PricingPlan {
-    val RequestBasedUsage = "RequestBasedUsage".asInstanceOf[PricingPlan]
-    val MobileAssetTracking = "MobileAssetTracking".asInstanceOf[PricingPlan]
-    val MobileAssetManagement = "MobileAssetManagement".asInstanceOf[PricingPlan]
-
-    @inline def values = js.Array(RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
   }
 
   @js.native

@@ -162,14 +162,6 @@ package object signer {
   }
 
   @js.native
-  sealed trait Category extends js.Any
-  object Category {
-    val AWSIoT = "AWSIoT".asInstanceOf[Category]
-
-    @inline def values = js.Array(AWSIoT)
-  }
-
-  @js.native
   trait DescribeSigningJobRequest extends js.Object {
     var jobId: JobId
   }
@@ -272,15 +264,6 @@ package object signer {
       s3.foreach(__v => __obj.updateDynamic("s3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Destination]
     }
-  }
-
-  @js.native
-  sealed trait EncryptionAlgorithm extends js.Any
-  object EncryptionAlgorithm {
-    val RSA = "RSA".asInstanceOf[EncryptionAlgorithm]
-    val ECDSA = "ECDSA".asInstanceOf[EncryptionAlgorithm]
-
-    @inline def values = js.Array(RSA, ECDSA)
   }
 
   /** The encryption algorithm options that are available to a code signing job.
@@ -438,15 +421,6 @@ package object signer {
     }
   }
 
-  @js.native
-  sealed trait HashAlgorithm extends js.Any
-  object HashAlgorithm {
-    val SHA1 = "SHA1".asInstanceOf[HashAlgorithm]
-    val SHA256 = "SHA256".asInstanceOf[HashAlgorithm]
-
-    @inline def values = js.Array(SHA1, SHA256)
-  }
-
   /** The hash algorithms that are available to a code signing job.
     */
   @js.native
@@ -467,16 +441,6 @@ package object signer {
       )
       __obj.asInstanceOf[HashAlgorithmOptions]
     }
-  }
-
-  @js.native
-  sealed trait ImageFormat extends js.Any
-  object ImageFormat {
-    val JSON = "JSON".asInstanceOf[ImageFormat]
-    val JSONEmbedded = "JSONEmbedded".asInstanceOf[ImageFormat]
-    val JSONDetached = "JSONDetached".asInstanceOf[ImageFormat]
-
-    @inline def values = js.Array(JSON, JSONEmbedded, JSONDetached)
   }
 
   @js.native
@@ -1291,26 +1255,6 @@ package object signer {
     }
   }
 
-  @js.native
-  sealed trait SigningProfileStatus extends js.Any
-  object SigningProfileStatus {
-    val Active = "Active".asInstanceOf[SigningProfileStatus]
-    val Canceled = "Canceled".asInstanceOf[SigningProfileStatus]
-    val Revoked = "Revoked".asInstanceOf[SigningProfileStatus]
-
-    @inline def values = js.Array(Active, Canceled, Revoked)
-  }
-
-  @js.native
-  sealed trait SigningStatus extends js.Any
-  object SigningStatus {
-    val InProgress = "InProgress".asInstanceOf[SigningStatus]
-    val Failed = "Failed".asInstanceOf[SigningStatus]
-    val Succeeded = "Succeeded".asInstanceOf[SigningStatus]
-
-    @inline def values = js.Array(InProgress, Failed, Succeeded)
-  }
-
   /** An <code>S3Source</code> object that contains information about the S3 bucket where you saved your unsigned code.
     */
   @js.native
@@ -1438,15 +1382,5 @@ package object signer {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
     }
-  }
-
-  @js.native
-  sealed trait ValidityType extends js.Any
-  object ValidityType {
-    val DAYS = "DAYS".asInstanceOf[ValidityType]
-    val MONTHS = "MONTHS".asInstanceOf[ValidityType]
-    val YEARS = "YEARS".asInstanceOf[ValidityType]
-
-    @inline def values = js.Array(DAYS, MONTHS, YEARS)
   }
 }

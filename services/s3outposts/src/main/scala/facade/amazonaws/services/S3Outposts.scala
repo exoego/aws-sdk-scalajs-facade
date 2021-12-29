@@ -136,15 +136,6 @@ package object s3outposts {
   }
 
   @js.native
-  sealed trait EndpointStatus extends js.Any
-  object EndpointStatus {
-    val PENDING = "PENDING".asInstanceOf[EndpointStatus]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[EndpointStatus]
-
-    @inline def values = js.Array(PENDING, AVAILABLE)
-  }
-
-  @js.native
   trait ListEndpointsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]

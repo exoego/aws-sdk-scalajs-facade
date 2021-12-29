@@ -346,12 +346,4 @@ package object pi {
       __obj.asInstanceOf[ResponseResourceMetricKey]
     }
   }
-
-  @js.native
-  sealed trait ServiceType extends js.Any
-  object ServiceType {
-    val RDS = "RDS".asInstanceOf[ServiceType]
-
-    @inline def values = js.Array(RDS)
-  }
 }

@@ -927,17 +927,6 @@ package object cloudwatchlogs {
     }
   }
 
-  /** The method used to distribute log data to the destination, which can be either random or grouped by log stream.
-    */
-  @js.native
-  sealed trait Distribution extends js.Any
-  object Distribution {
-    val Random = "Random".asInstanceOf[Distribution]
-    val ByLogStream = "ByLogStream".asInstanceOf[Distribution]
-
-    @inline def values = js.Array(Random, ByLogStream)
-  }
-
   /** Represents an export task.
     */
   @js.native
@@ -1020,19 +1009,6 @@ package object cloudwatchlogs {
       message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportTaskStatus]
     }
-  }
-
-  @js.native
-  sealed trait ExportTaskStatusCode extends js.Any
-  object ExportTaskStatusCode {
-    val CANCELLED = "CANCELLED".asInstanceOf[ExportTaskStatusCode]
-    val COMPLETED = "COMPLETED".asInstanceOf[ExportTaskStatusCode]
-    val FAILED = "FAILED".asInstanceOf[ExportTaskStatusCode]
-    val PENDING = "PENDING".asInstanceOf[ExportTaskStatusCode]
-    val PENDING_CANCEL = "PENDING_CANCEL".asInstanceOf[ExportTaskStatusCode]
-    val RUNNING = "RUNNING".asInstanceOf[ExportTaskStatusCode]
-
-    @inline def values = js.Array(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING)
   }
 
   @js.native
@@ -1530,15 +1506,6 @@ package object cloudwatchlogs {
     }
   }
 
-  @js.native
-  sealed trait OrderBy extends js.Any
-  object OrderBy {
-    val LogStreamName = "LogStreamName".asInstanceOf[OrderBy]
-    val LastEventTime = "LastEventTime".asInstanceOf[OrderBy]
-
-    @inline def values = js.Array(LogStreamName, LastEventTime)
-  }
-
   /** Represents a log event.
     */
   @js.native
@@ -1907,18 +1874,6 @@ package object cloudwatchlogs {
       recordsScanned.foreach(__v => __obj.updateDynamic("recordsScanned")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[QueryStatistics]
     }
-  }
-
-  @js.native
-  sealed trait QueryStatus extends js.Any
-  object QueryStatus {
-    val Scheduled = "Scheduled".asInstanceOf[QueryStatus]
-    val Running = "Running".asInstanceOf[QueryStatus]
-    val Complete = "Complete".asInstanceOf[QueryStatus]
-    val Failed = "Failed".asInstanceOf[QueryStatus]
-    val Cancelled = "Cancelled".asInstanceOf[QueryStatus]
-
-    @inline def values = js.Array(Scheduled, Running, Complete, Failed, Cancelled)
   }
 
   /** Represents the rejected events.

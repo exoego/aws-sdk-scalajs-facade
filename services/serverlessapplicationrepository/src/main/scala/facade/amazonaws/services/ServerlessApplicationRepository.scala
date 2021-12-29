@@ -159,19 +159,6 @@ package object serverlessapplicationrepository {
     }
   }
 
-  /** Values that must be specified in order to deploy some applications.
-    */
-  @js.native
-  sealed trait Capability extends js.Any
-  object Capability {
-    val CAPABILITY_IAM = "CAPABILITY_IAM".asInstanceOf[Capability]
-    val CAPABILITY_NAMED_IAM = "CAPABILITY_NAMED_IAM".asInstanceOf[Capability]
-    val CAPABILITY_AUTO_EXPAND = "CAPABILITY_AUTO_EXPAND".asInstanceOf[Capability]
-    val CAPABILITY_RESOURCE_POLICY = "CAPABILITY_RESOURCE_POLICY".asInstanceOf[Capability]
-
-    @inline def values = js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND, CAPABILITY_RESOURCE_POLICY)
-  }
-
   @js.native
   trait CreateApplicationRequest extends js.Object {
     var Author: __string
@@ -950,16 +937,6 @@ package object serverlessapplicationrepository {
       )
       __obj.asInstanceOf[RollbackTrigger]
     }
-  }
-
-  @js.native
-  sealed trait Status extends js.Any
-  object Status {
-    val PREPARING = "PREPARING".asInstanceOf[Status]
-    val ACTIVE = "ACTIVE".asInstanceOf[Status]
-    val EXPIRED = "EXPIRED".asInstanceOf[Status]
-
-    @inline def values = js.Array(PREPARING, ACTIVE, EXPIRED)
   }
 
   /** <p>This property corresponds to the <i>AWS CloudFormation [[https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/Tag|Tag]] </i> Data Type.</p>

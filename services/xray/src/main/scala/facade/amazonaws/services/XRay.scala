@@ -563,24 +563,6 @@ package object xray {
     }
   }
 
-  @js.native
-  sealed trait EncryptionStatus extends js.Any
-  object EncryptionStatus {
-    val UPDATING = "UPDATING".asInstanceOf[EncryptionStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[EncryptionStatus]
-
-    @inline def values = js.Array(UPDATING, ACTIVE)
-  }
-
-  @js.native
-  sealed trait EncryptionType extends js.Any
-  object EncryptionType {
-    val NONE = "NONE".asInstanceOf[EncryptionType]
-    val KMS = "KMS".asInstanceOf[EncryptionType]
-
-    @inline def values = js.Array(NONE, KMS)
-  }
-
   /** The root cause of a trace summary error.
     */
   @js.native
@@ -1577,14 +1559,6 @@ package object xray {
     }
   }
 
-  @js.native
-  sealed trait InsightCategory extends js.Any
-  object InsightCategory {
-    val FAULT = "FAULT".asInstanceOf[InsightCategory]
-
-    @inline def values = js.Array(FAULT)
-  }
-
   /** X-Ray reevaluates insights periodically until they are resolved, and records each intermediate state in an event. You can review incident events in the Impact Timeline on the Inspect page in the X-Ray console.
     */
   @js.native
@@ -1664,15 +1638,6 @@ package object xray {
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InsightImpactGraphService]
     }
-  }
-
-  @js.native
-  sealed trait InsightState extends js.Any
-  object InsightState {
-    val ACTIVE = "ACTIVE".asInstanceOf[InsightState]
-    val CLOSED = "CLOSED".asInstanceOf[InsightState]
-
-    @inline def values = js.Array(ACTIVE, CLOSED)
   }
 
   /** Information that describes an insight.
@@ -2274,15 +2239,6 @@ package object xray {
     }
   }
 
-  @js.native
-  sealed trait SamplingStrategyName extends js.Any
-  object SamplingStrategyName {
-    val PartialScan = "PartialScan".asInstanceOf[SamplingStrategyName]
-    val FixedRate = "FixedRate".asInstanceOf[SamplingStrategyName]
-
-    @inline def values = js.Array(PartialScan, FixedRate)
-  }
-
   /** Temporary changes to a sampling rule configuration. To meet the global sampling target for a rule, X-Ray calculates a new reservoir for each service based on the recent sampling results of all services that called <a>GetSamplingTargets</a>.
     */
   @js.native
@@ -2531,15 +2487,6 @@ package object xray {
       SegmentsSpilloverCount.foreach(__v => __obj.updateDynamic("SegmentsSpilloverCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TelemetryRecord]
     }
-  }
-
-  @js.native
-  sealed trait TimeRangeType extends js.Any
-  object TimeRangeType {
-    val TraceId = "TraceId".asInstanceOf[TimeRangeType]
-    val Event = "Event".asInstanceOf[TimeRangeType]
-
-    @inline def values = js.Array(TraceId, Event)
   }
 
   /** A list of TimeSeriesStatistic structures.

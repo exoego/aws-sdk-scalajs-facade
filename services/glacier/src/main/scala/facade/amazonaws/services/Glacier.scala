@@ -156,16 +156,6 @@ package object glacier {
     }
   }
 
-  @js.native
-  sealed trait ActionCode extends js.Any
-  object ActionCode {
-    val ArchiveRetrieval = "ArchiveRetrieval".asInstanceOf[ActionCode]
-    val InventoryRetrieval = "InventoryRetrieval".asInstanceOf[ActionCode]
-    val Select = "Select".asInstanceOf[ActionCode]
-
-    @inline def values = js.Array(ArchiveRetrieval, InventoryRetrieval, Select)
-  }
-
   /** The input values for <code>AddTagsToVault</code>.
     */
   @js.native
@@ -277,20 +267,6 @@ package object glacier {
       RecordDelimiter.foreach(__v => __obj.updateDynamic("RecordDelimiter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CSVOutput]
     }
-  }
-
-  @js.native
-  sealed trait CannedACL extends js.Any
-  object CannedACL {
-    val `private` = "private".asInstanceOf[CannedACL]
-    val `public-read` = "public-read".asInstanceOf[CannedACL]
-    val `public-read-write` = "public-read-write".asInstanceOf[CannedACL]
-    val `aws-exec-read` = "aws-exec-read".asInstanceOf[CannedACL]
-    val `authenticated-read` = "authenticated-read".asInstanceOf[CannedACL]
-    val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[CannedACL]
-    val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedACL]
-
-    @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`)
   }
 
   /** Provides options to complete a multipart upload operation. This informs Amazon Glacier that all the archive parts have been uploaded and Amazon S3 Glacier (Glacier) can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource.
@@ -622,33 +598,6 @@ package object glacier {
       KMSKeyId.foreach(__v => __obj.updateDynamic("KMSKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Encryption]
     }
-  }
-
-  @js.native
-  sealed trait EncryptionType extends js.Any
-  object EncryptionType {
-    val `aws:kms` = "aws:kms".asInstanceOf[EncryptionType]
-    val AES256 = "AES256".asInstanceOf[EncryptionType]
-
-    @inline def values = js.Array(`aws:kms`, AES256)
-  }
-
-  @js.native
-  sealed trait ExpressionType extends js.Any
-  object ExpressionType {
-    val SQL = "SQL".asInstanceOf[ExpressionType]
-
-    @inline def values = js.Array(SQL)
-  }
-
-  @js.native
-  sealed trait FileHeaderInfo extends js.Any
-  object FileHeaderInfo {
-    val USE = "USE".asInstanceOf[FileHeaderInfo]
-    val IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
-    val NONE = "NONE".asInstanceOf[FileHeaderInfo]
-
-    @inline def values = js.Array(USE, IGNORE, NONE)
   }
 
   /** Input for GetDataRetrievalPolicy.
@@ -1628,18 +1577,6 @@ package object glacier {
     }
   }
 
-  @js.native
-  sealed trait Permission extends js.Any
-  object Permission {
-    val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[Permission]
-    val WRITE = "WRITE".asInstanceOf[Permission]
-    val WRITE_ACP = "WRITE_ACP".asInstanceOf[Permission]
-    val READ = "READ".asInstanceOf[Permission]
-    val READ_ACP = "READ_ACP".asInstanceOf[Permission]
-
-    @inline def values = js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP)
-  }
-
   /** The definition for a provisioned capacity unit.
     */
   @js.native
@@ -1695,15 +1632,6 @@ package object glacier {
       capacityId.foreach(__v => __obj.updateDynamic("capacityId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PurchaseProvisionedCapacityOutput]
     }
-  }
-
-  @js.native
-  sealed trait QuoteFields extends js.Any
-  object QuoteFields {
-    val ALWAYS = "ALWAYS".asInstanceOf[QuoteFields]
-    val ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
-
-    @inline def values = js.Array(ALWAYS, ASNEEDED)
   }
 
   /** The input value for <code>RemoveTagsFromVaultInput</code>.
@@ -1871,36 +1799,6 @@ package object glacier {
       vaultNotificationConfig.foreach(__v => __obj.updateDynamic("vaultNotificationConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetVaultNotificationsInput]
     }
-  }
-
-  @js.native
-  sealed trait StatusCode extends js.Any
-  object StatusCode {
-    val InProgress = "InProgress".asInstanceOf[StatusCode]
-    val Succeeded = "Succeeded".asInstanceOf[StatusCode]
-    val Failed = "Failed".asInstanceOf[StatusCode]
-
-    @inline def values = js.Array(InProgress, Succeeded, Failed)
-  }
-
-  @js.native
-  sealed trait StorageClass extends js.Any
-  object StorageClass {
-    val STANDARD = "STANDARD".asInstanceOf[StorageClass]
-    val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
-    val STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
-
-    @inline def values = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA)
-  }
-
-  @js.native
-  sealed trait Type extends js.Any
-  object Type {
-    val AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
-    val CanonicalUser = "CanonicalUser".asInstanceOf[Type]
-    val Group = "Group".asInstanceOf[Type]
-
-    @inline def values = js.Array(AmazonCustomerByEmail, CanonicalUser, Group)
   }
 
   /** Provides options to add an archive to a vault.

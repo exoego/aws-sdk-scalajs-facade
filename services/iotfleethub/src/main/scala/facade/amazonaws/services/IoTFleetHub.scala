@@ -57,18 +57,6 @@ package object iotfleethub {
     }
   }
 
-  @js.native
-  sealed trait ApplicationState extends js.Any
-  object ApplicationState {
-    val CREATING = "CREATING".asInstanceOf[ApplicationState]
-    val DELETING = "DELETING".asInstanceOf[ApplicationState]
-    val ACTIVE = "ACTIVE".asInstanceOf[ApplicationState]
-    val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ApplicationState]
-    val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ApplicationState]
-
-    @inline def values = js.Array(CREATING, DELETING, ACTIVE, CREATE_FAILED, DELETE_FAILED)
-  }
-
   /** A summary of information about a AWS IoT Device Management web application.
     *
     * '''Note:'''Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.

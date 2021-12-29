@@ -175,20 +175,6 @@ package object textract {
     }
   }
 
-  @js.native
-  sealed trait BlockType extends js.Any
-  object BlockType {
-    val KEY_VALUE_SET = "KEY_VALUE_SET".asInstanceOf[BlockType]
-    val PAGE = "PAGE".asInstanceOf[BlockType]
-    val LINE = "LINE".asInstanceOf[BlockType]
-    val WORD = "WORD".asInstanceOf[BlockType]
-    val TABLE = "TABLE".asInstanceOf[BlockType]
-    val CELL = "CELL".asInstanceOf[BlockType]
-    val SELECTION_ELEMENT = "SELECTION_ELEMENT".asInstanceOf[BlockType]
-
-    @inline def values = js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT)
-  }
-
   /** The bounding box around the detected page, text, key-value pair, table, table cell, or selection element on a document page. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates that represent the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). The <code>top</code> and <code>left</code> values returned are ratios of the overall document page size. For example, if the input image is 700 x 200 pixels, and the top-left coordinate of the bounding box is 350 x 50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200). The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall document page dimension. For example, if the document page size is 700 x 200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
     */
   @js.native
@@ -214,15 +200,6 @@ package object textract {
       Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BoundingBox]
     }
-  }
-
-  @js.native
-  sealed trait ContentClassifier extends js.Any
-  object ContentClassifier {
-    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
-    val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
-
-    @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
   }
 
   @js.native
@@ -320,24 +297,6 @@ package object textract {
       Pages.foreach(__v => __obj.updateDynamic("Pages")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DocumentMetadata]
     }
-  }
-
-  @js.native
-  sealed trait EntityType extends js.Any
-  object EntityType {
-    val KEY = "KEY".asInstanceOf[EntityType]
-    val VALUE = "VALUE".asInstanceOf[EntityType]
-
-    @inline def values = js.Array(KEY, VALUE)
-  }
-
-  @js.native
-  sealed trait FeatureType extends js.Any
-  object FeatureType {
-    val TABLES = "TABLES".asInstanceOf[FeatureType]
-    val FORMS = "FORMS".asInstanceOf[FeatureType]
-
-    @inline def values = js.Array(TABLES, FORMS)
   }
 
   /** Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.
@@ -545,17 +504,6 @@ package object textract {
     }
   }
 
-  @js.native
-  sealed trait JobStatus extends js.Any
-  object JobStatus {
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
-    val FAILED = "FAILED".asInstanceOf[JobStatus]
-    val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[JobStatus]
-
-    @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS)
-  }
-
   /** The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation, such as <a>StartDocumentTextDetection</a>.
     */
   @js.native
@@ -643,16 +591,6 @@ package object textract {
     }
   }
 
-  @js.native
-  sealed trait RelationshipType extends js.Any
-  object RelationshipType {
-    val VALUE = "VALUE".asInstanceOf[RelationshipType]
-    val CHILD = "CHILD".asInstanceOf[RelationshipType]
-    val COMPLEX_FEATURES = "COMPLEX_FEATURES".asInstanceOf[RelationshipType]
-
-    @inline def values = js.Array(VALUE, CHILD, COMPLEX_FEATURES)
-  }
-
   /** The S3 bucket name and file name that identifies the document. The AWS Region for the S3 bucket that contains the document must match the Region that you use for Amazon Textract operations. For Amazon Textract to process a file in an S3 bucket, the user must have permission to access the S3 bucket and file.
     */
   @js.native
@@ -675,15 +613,6 @@ package object textract {
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Object]
     }
-  }
-
-  @js.native
-  sealed trait SelectionStatus extends js.Any
-  object SelectionStatus {
-    val SELECTED = "SELECTED".asInstanceOf[SelectionStatus]
-    val NOT_SELECTED = "NOT_SELECTED".asInstanceOf[SelectionStatus]
-
-    @inline def values = js.Array(SELECTED, NOT_SELECTED)
   }
 
   @js.native
@@ -785,15 +714,6 @@ package object textract {
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentTextDetectionResponse]
     }
-  }
-
-  @js.native
-  sealed trait TextType extends js.Any
-  object TextType {
-    val HANDWRITING = "HANDWRITING".asInstanceOf[TextType]
-    val PRINTED = "PRINTED".asInstanceOf[TextType]
-
-    @inline def values = js.Array(HANDWRITING, PRINTED)
   }
 
   /** A warning about an issue that occurred during asynchronous text analysis (<a>StartDocumentAnalysis</a>) or asynchronous document text detection (<a>StartDocumentTextDetection</a>).

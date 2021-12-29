@@ -451,26 +451,6 @@ package object rds {
   }
 
   @js.native
-  sealed trait ActivityStreamMode extends js.Any
-  object ActivityStreamMode {
-    val sync = "sync".asInstanceOf[ActivityStreamMode]
-    val async = "async".asInstanceOf[ActivityStreamMode]
-
-    @inline def values = js.Array(sync, async)
-  }
-
-  @js.native
-  sealed trait ActivityStreamStatus extends js.Any
-  object ActivityStreamStatus {
-    val stopped = "stopped".asInstanceOf[ActivityStreamStatus]
-    val starting = "starting".asInstanceOf[ActivityStreamStatus]
-    val started = "started".asInstanceOf[ActivityStreamStatus]
-    val stopping = "stopping".asInstanceOf[ActivityStreamStatus]
-
-    @inline def values = js.Array(stopped, starting, started, stopping)
-  }
-
-  @js.native
   trait AddRoleToDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
     var RoleArn: String
@@ -577,15 +557,6 @@ package object rds {
     }
   }
 
-  @js.native
-  sealed trait ApplyMethod extends js.Any
-  object ApplyMethod {
-    val immediate = "immediate".asInstanceOf[ApplyMethod]
-    val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
-
-    @inline def values = js.Array(immediate, `pending-reboot`)
-  }
-
   /** <p/>
     */
   @js.native
@@ -625,14 +596,6 @@ package object rds {
       ResourcePendingMaintenanceActions.foreach(__v => __obj.updateDynamic("ResourcePendingMaintenanceActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplyPendingMaintenanceActionResult]
     }
-  }
-
-  @js.native
-  sealed trait AuthScheme extends js.Any
-  object AuthScheme {
-    val SECRETS = "SECRETS".asInstanceOf[AuthScheme]
-
-    @inline def values = js.Array(SECRETS)
   }
 
   /** <p/>
@@ -3669,44 +3632,6 @@ package object rds {
     }
   }
 
-  @js.native
-  sealed trait DBProxyEndpointStatus extends js.Any
-  object DBProxyEndpointStatus {
-    val available = "available".asInstanceOf[DBProxyEndpointStatus]
-    val modifying = "modifying".asInstanceOf[DBProxyEndpointStatus]
-    val `incompatible-network` = "incompatible-network".asInstanceOf[DBProxyEndpointStatus]
-    val `insufficient-resource-limits` = "insufficient-resource-limits".asInstanceOf[DBProxyEndpointStatus]
-    val creating = "creating".asInstanceOf[DBProxyEndpointStatus]
-    val deleting = "deleting".asInstanceOf[DBProxyEndpointStatus]
-
-    @inline def values = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting)
-  }
-
-  @js.native
-  sealed trait DBProxyEndpointTargetRole extends js.Any
-  object DBProxyEndpointTargetRole {
-    val READ_WRITE = "READ_WRITE".asInstanceOf[DBProxyEndpointTargetRole]
-    val READ_ONLY = "READ_ONLY".asInstanceOf[DBProxyEndpointTargetRole]
-
-    @inline def values = js.Array(READ_WRITE, READ_ONLY)
-  }
-
-  @js.native
-  sealed trait DBProxyStatus extends js.Any
-  object DBProxyStatus {
-    val available = "available".asInstanceOf[DBProxyStatus]
-    val modifying = "modifying".asInstanceOf[DBProxyStatus]
-    val `incompatible-network` = "incompatible-network".asInstanceOf[DBProxyStatus]
-    val `insufficient-resource-limits` = "insufficient-resource-limits".asInstanceOf[DBProxyStatus]
-    val creating = "creating".asInstanceOf[DBProxyStatus]
-    val deleting = "deleting".asInstanceOf[DBProxyStatus]
-    val suspended = "suspended".asInstanceOf[DBProxyStatus]
-    val suspending = "suspending".asInstanceOf[DBProxyStatus]
-    val reactivating = "reactivating".asInstanceOf[DBProxyStatus]
-
-    @inline def values = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating)
-  }
-
   /** Contains the details for an RDS Proxy target. It represents an RDS DB instance or Aurora DB cluster that the proxy can connect to. One or more targets are associated with an RDS Proxy target group. This data type is used as a response element in the <code>DescribeDBProxyTargets</code> action.
     */
   @js.native
@@ -6183,15 +6108,6 @@ package object rds {
     }
   }
 
-  @js.native
-  sealed trait EngineFamily extends js.Any
-  object EngineFamily {
-    val MYSQL = "MYSQL".asInstanceOf[EngineFamily]
-    val POSTGRESQL = "POSTGRESQL".asInstanceOf[EngineFamily]
-
-    @inline def values = js.Array(MYSQL, POSTGRESQL)
-  }
-
   /** This data type is used as a response element in the <code>DescribeEvents</code> action.
     */
   @js.native
@@ -6529,16 +6445,6 @@ package object rds {
     }
   }
 
-  @js.native
-  sealed trait FailoverStatus extends js.Any
-  object FailoverStatus {
-    val pending = "pending".asInstanceOf[FailoverStatus]
-    val `failing-over` = "failing-over".asInstanceOf[FailoverStatus]
-    val cancelling = "cancelling".asInstanceOf[FailoverStatus]
-
-    @inline def values = js.Array(pending, `failing-over`, cancelling)
-  }
-
   /** A filter name and value pair that is used to return a more specific list of results from a describe operation. Filters can be used to match a set of resources by specific criteria, such as IDs. The filters supported by a describe operation are documented with the describe operation.
     *
     * '''Note:'''Currently, wildcards are not supported in filters. The following actions can be filtered: * <code>DescribeDBClusterBacktracks</code> * <code>DescribeDBClusterEndpoints</code> * <code>DescribeDBClusters</code> * <code>DescribeDBInstances</code> * <code>DescribePendingMaintenanceActions</code>
@@ -6655,15 +6561,6 @@ package object rds {
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GlobalClustersMessage]
     }
-  }
-
-  @js.native
-  sealed trait IAMAuthMode extends js.Any
-  object IAMAuthMode {
-    val DISABLED = "DISABLED".asInstanceOf[IAMAuthMode]
-    val REQUIRED = "REQUIRED".asInstanceOf[IAMAuthMode]
-
-    @inline def values = js.Array(DISABLED, REQUIRED)
   }
 
   /** This data type is used as a response element in the <code>DescribeDBSecurityGroups</code> action.
@@ -8767,15 +8664,6 @@ package object rds {
     }
   }
 
-  @js.native
-  sealed trait ReplicaMode extends js.Any
-  object ReplicaMode {
-    val `open-read-only` = "open-read-only".asInstanceOf[ReplicaMode]
-    val mounted = "mounted".asInstanceOf[ReplicaMode]
-
-    @inline def values = js.Array(`open-read-only`, mounted)
-  }
-
   /** This data type is used as a response element in the <code>DescribeReservedDBInstances</code> and <code>PurchaseReservedDBInstancesOffering</code> actions.
     */
   @js.native
@@ -9908,19 +9796,6 @@ package object rds {
   }
 
   @js.native
-  sealed trait SourceType extends js.Any
-  object SourceType {
-    val `db-instance` = "db-instance".asInstanceOf[SourceType]
-    val `db-parameter-group` = "db-parameter-group".asInstanceOf[SourceType]
-    val `db-security-group` = "db-security-group".asInstanceOf[SourceType]
-    val `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
-    val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
-    val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
-
-    @inline def values = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
-  }
-
-  @js.native
   trait StartActivityStreamRequest extends js.Object {
     var KmsKeyId: String
     var Mode: ActivityStreamMode
@@ -10356,48 +10231,6 @@ package object rds {
     }
   }
 
-  @js.native
-  sealed trait TargetHealthReason extends js.Any
-  object TargetHealthReason {
-    val UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetHealthReason]
-    val CONNECTION_FAILED = "CONNECTION_FAILED".asInstanceOf[TargetHealthReason]
-    val AUTH_FAILURE = "AUTH_FAILURE".asInstanceOf[TargetHealthReason]
-    val PENDING_PROXY_CAPACITY = "PENDING_PROXY_CAPACITY".asInstanceOf[TargetHealthReason]
-    val INVALID_REPLICATION_STATE = "INVALID_REPLICATION_STATE".asInstanceOf[TargetHealthReason]
-
-    @inline def values = js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY, INVALID_REPLICATION_STATE)
-  }
-
-  @js.native
-  sealed trait TargetRole extends js.Any
-  object TargetRole {
-    val READ_WRITE = "READ_WRITE".asInstanceOf[TargetRole]
-    val READ_ONLY = "READ_ONLY".asInstanceOf[TargetRole]
-    val UNKNOWN = "UNKNOWN".asInstanceOf[TargetRole]
-
-    @inline def values = js.Array(READ_WRITE, READ_ONLY, UNKNOWN)
-  }
-
-  @js.native
-  sealed trait TargetState extends js.Any
-  object TargetState {
-    val REGISTERING = "REGISTERING".asInstanceOf[TargetState]
-    val AVAILABLE = "AVAILABLE".asInstanceOf[TargetState]
-    val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TargetState]
-
-    @inline def values = js.Array(REGISTERING, AVAILABLE, UNAVAILABLE)
-  }
-
-  @js.native
-  sealed trait TargetType extends js.Any
-  object TargetType {
-    val RDS_INSTANCE = "RDS_INSTANCE".asInstanceOf[TargetType]
-    val RDS_SERVERLESS_ENDPOINT = "RDS_SERVERLESS_ENDPOINT".asInstanceOf[TargetType]
-    val TRACKED_CLUSTER = "TRACKED_CLUSTER".asInstanceOf[TargetType]
-
-    @inline def values = js.Array(RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER)
-  }
-
   /** A time zone associated with a <code>DBInstance</code> or a <code>DBSnapshot</code>. This data type is an element in the response to the <code>DescribeDBInstances</code>, the <code>DescribeDBSnapshots</code>, and the <code>DescribeDBEngineVersions</code> actions.
     */
   @js.native
@@ -10618,17 +10451,5 @@ package object rds {
       VpnTunnelOriginatorIP.foreach(__v => __obj.updateDynamic("VpnTunnelOriginatorIP")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpnDetails]
     }
-  }
-
-  @js.native
-  sealed trait WriteForwardingStatus extends js.Any
-  object WriteForwardingStatus {
-    val enabled = "enabled".asInstanceOf[WriteForwardingStatus]
-    val disabled = "disabled".asInstanceOf[WriteForwardingStatus]
-    val enabling = "enabling".asInstanceOf[WriteForwardingStatus]
-    val disabling = "disabling".asInstanceOf[WriteForwardingStatus]
-    val unknown = "unknown".asInstanceOf[WriteForwardingStatus]
-
-    @inline def values = js.Array(enabled, disabled, enabling, disabling, unknown)
   }
 }

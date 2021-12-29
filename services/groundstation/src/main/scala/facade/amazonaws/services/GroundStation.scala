@@ -105,15 +105,6 @@ package object groundstation {
     }
   }
 
-  @js.native
-  sealed trait AngleUnits extends js.Any
-  object AngleUnits {
-    val DEGREE_ANGLE = "DEGREE_ANGLE".asInstanceOf[AngleUnits]
-    val RADIAN = "RADIAN".asInstanceOf[AngleUnits]
-
-    @inline def values = js.Array(DEGREE_ANGLE, RADIAN)
-  }
-
   /** Details about an antenna demod decode <code>Config</code> used in a contact.
     */
   @js.native
@@ -202,16 +193,6 @@ package object groundstation {
     }
   }
 
-  @js.native
-  sealed trait BandwidthUnits extends js.Any
-  object BandwidthUnits {
-    val GHz = "GHz".asInstanceOf[BandwidthUnits]
-    val MHz = "MHz".asInstanceOf[BandwidthUnits]
-    val kHz = "kHz".asInstanceOf[BandwidthUnits]
-
-    @inline def values = js.Array(GHz, MHz, kHz)
-  }
-
   /** <p/>
     */
   @js.native
@@ -229,20 +210,6 @@ package object groundstation {
       )
       __obj.asInstanceOf[CancelContactRequest]
     }
-  }
-
-  @js.native
-  sealed trait ConfigCapabilityType extends js.Any
-  object ConfigCapabilityType {
-    val `antenna-downlink` = "antenna-downlink".asInstanceOf[ConfigCapabilityType]
-    val `antenna-downlink-demod-decode` = "antenna-downlink-demod-decode".asInstanceOf[ConfigCapabilityType]
-    val `antenna-uplink` = "antenna-uplink".asInstanceOf[ConfigCapabilityType]
-    val `dataflow-endpoint` = "dataflow-endpoint".asInstanceOf[ConfigCapabilityType]
-    val tracking = "tracking".asInstanceOf[ConfigCapabilityType]
-    val `uplink-echo` = "uplink-echo".asInstanceOf[ConfigCapabilityType]
-    val `s3-recording` = "s3-recording".asInstanceOf[ConfigCapabilityType]
-
-    @inline def values = js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`, `s3-recording`)
   }
 
   /** Details for certain <code>Config</code> object types in a contact.
@@ -428,26 +395,6 @@ package object groundstation {
     }
   }
 
-  @js.native
-  sealed trait ContactStatus extends js.Any
-  object ContactStatus {
-    val AVAILABLE = "AVAILABLE".asInstanceOf[ContactStatus]
-    val AWS_CANCELLED = "AWS_CANCELLED".asInstanceOf[ContactStatus]
-    val AWS_FAILED = "AWS_FAILED".asInstanceOf[ContactStatus]
-    val CANCELLED = "CANCELLED".asInstanceOf[ContactStatus]
-    val CANCELLING = "CANCELLING".asInstanceOf[ContactStatus]
-    val COMPLETED = "COMPLETED".asInstanceOf[ContactStatus]
-    val FAILED = "FAILED".asInstanceOf[ContactStatus]
-    val FAILED_TO_SCHEDULE = "FAILED_TO_SCHEDULE".asInstanceOf[ContactStatus]
-    val PASS = "PASS".asInstanceOf[ContactStatus]
-    val POSTPASS = "POSTPASS".asInstanceOf[ContactStatus]
-    val PREPASS = "PREPASS".asInstanceOf[ContactStatus]
-    val SCHEDULED = "SCHEDULED".asInstanceOf[ContactStatus]
-    val SCHEDULING = "SCHEDULING".asInstanceOf[ContactStatus]
-
-    @inline def values = js.Array(AVAILABLE, AWS_CANCELLED, AWS_FAILED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING)
-  }
-
   /** <p/>
     */
   @js.native
@@ -533,16 +480,6 @@ package object groundstation {
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMissionProfileRequest]
     }
-  }
-
-  @js.native
-  sealed trait Criticality extends js.Any
-  object Criticality {
-    val PREFERRED = "PREFERRED".asInstanceOf[Criticality]
-    val REMOVED = "REMOVED".asInstanceOf[Criticality]
-    val REQUIRED = "REQUIRED".asInstanceOf[Criticality]
-
-    @inline def values = js.Array(PREFERRED, REMOVED, REQUIRED)
   }
 
   /** Information about a dataflow edge used in a contact.
@@ -881,14 +818,6 @@ package object groundstation {
     }
   }
 
-  @js.native
-  sealed trait EirpUnits extends js.Any
-  object EirpUnits {
-    val dBW = "dBW".asInstanceOf[EirpUnits]
-
-    @inline def values = js.Array(dBW)
-  }
-
   /** Elevation angle of the satellite in the sky during a contact.
     */
   @js.native
@@ -930,18 +859,6 @@ package object groundstation {
       securityDetails.foreach(__v => __obj.updateDynamic("securityDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointDetails]
     }
-  }
-
-  @js.native
-  sealed trait EndpointStatus extends js.Any
-  object EndpointStatus {
-    val created = "created".asInstanceOf[EndpointStatus]
-    val creating = "creating".asInstanceOf[EndpointStatus]
-    val deleted = "deleted".asInstanceOf[EndpointStatus]
-    val deleting = "deleting".asInstanceOf[EndpointStatus]
-    val failed = "failed".asInstanceOf[EndpointStatus]
-
-    @inline def values = js.Array(created, creating, deleted, deleting, failed)
   }
 
   /** Object that describes the frequency.
@@ -986,16 +903,6 @@ package object groundstation {
       )
       __obj.asInstanceOf[FrequencyBandwidth]
     }
-  }
-
-  @js.native
-  sealed trait FrequencyUnits extends js.Any
-  object FrequencyUnits {
-    val GHz = "GHz".asInstanceOf[FrequencyUnits]
-    val MHz = "MHz".asInstanceOf[FrequencyUnits]
-    val kHz = "kHz".asInstanceOf[FrequencyUnits]
-
-    @inline def values = js.Array(GHz, MHz, kHz)
   }
 
   /** <p/>
@@ -1642,16 +1549,6 @@ package object groundstation {
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MissionProfileListItem]
     }
-  }
-
-  @js.native
-  sealed trait Polarization extends js.Any
-  object Polarization {
-    val LEFT_HAND = "LEFT_HAND".asInstanceOf[Polarization]
-    val NONE = "NONE".asInstanceOf[Polarization]
-    val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[Polarization]
-
-    @inline def values = js.Array(LEFT_HAND, NONE, RIGHT_HAND)
   }
 
   /** <p/>

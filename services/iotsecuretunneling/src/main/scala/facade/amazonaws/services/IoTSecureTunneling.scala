@@ -111,15 +111,6 @@ package object iotsecuretunneling {
   }
 
   @js.native
-  sealed trait ConnectionStatus extends js.Any
-  object ConnectionStatus {
-    val CONNECTED = "CONNECTED".asInstanceOf[ConnectionStatus]
-    val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionStatus]
-
-    @inline def values = js.Array(CONNECTED, DISCONNECTED)
-  }
-
-  @js.native
   trait DescribeTunnelRequest extends js.Object {
     var tunnelId: TunnelId
   }
@@ -416,15 +407,6 @@ package object iotsecuretunneling {
       tunnelId.foreach(__v => __obj.updateDynamic("tunnelId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tunnel]
     }
-  }
-
-  @js.native
-  sealed trait TunnelStatus extends js.Any
-  object TunnelStatus {
-    val OPEN = "OPEN".asInstanceOf[TunnelStatus]
-    val CLOSED = "CLOSED".asInstanceOf[TunnelStatus]
-
-    @inline def values = js.Array(OPEN, CLOSED)
   }
 
   /** Information about the tunnel.

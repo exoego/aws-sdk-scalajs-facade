@@ -708,29 +708,6 @@ package object sqs {
     }
   }
 
-  @js.native
-  sealed trait MessageSystemAttributeName extends js.Any
-  object MessageSystemAttributeName {
-    val SenderId = "SenderId".asInstanceOf[MessageSystemAttributeName]
-    val SentTimestamp = "SentTimestamp".asInstanceOf[MessageSystemAttributeName]
-    val ApproximateReceiveCount = "ApproximateReceiveCount".asInstanceOf[MessageSystemAttributeName]
-    val ApproximateFirstReceiveTimestamp = "ApproximateFirstReceiveTimestamp".asInstanceOf[MessageSystemAttributeName]
-    val SequenceNumber = "SequenceNumber".asInstanceOf[MessageSystemAttributeName]
-    val MessageDeduplicationId = "MessageDeduplicationId".asInstanceOf[MessageSystemAttributeName]
-    val MessageGroupId = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
-    val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
-
-    @inline def values = js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader)
-  }
-
-  @js.native
-  sealed trait MessageSystemAttributeNameForSends extends js.Any
-  object MessageSystemAttributeNameForSends {
-    val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeNameForSends]
-
-    @inline def values = js.Array(AWSTraceHeader)
-  }
-
   /** The user-specified message system attribute value. For string data types, the <code>Value</code> attribute has the same restrictions on the content as the message body. For more information, see <code> <a>SendMessage</a>.</code> <code>Name</code>, <code>type</code>, <code>value</code> and the message body must not be empty or null.
     */
   @js.native
@@ -780,54 +757,6 @@ package object sqs {
       )
       __obj.asInstanceOf[PurgeQueueRequest]
     }
-  }
-
-  @js.native
-  sealed trait QueueAttributeName extends js.Any
-  object QueueAttributeName {
-    val All = "All".asInstanceOf[QueueAttributeName]
-    val Policy = "Policy".asInstanceOf[QueueAttributeName]
-    val VisibilityTimeout = "VisibilityTimeout".asInstanceOf[QueueAttributeName]
-    val MaximumMessageSize = "MaximumMessageSize".asInstanceOf[QueueAttributeName]
-    val MessageRetentionPeriod = "MessageRetentionPeriod".asInstanceOf[QueueAttributeName]
-    val ApproximateNumberOfMessages = "ApproximateNumberOfMessages".asInstanceOf[QueueAttributeName]
-    val ApproximateNumberOfMessagesNotVisible = "ApproximateNumberOfMessagesNotVisible".asInstanceOf[QueueAttributeName]
-    val CreatedTimestamp = "CreatedTimestamp".asInstanceOf[QueueAttributeName]
-    val LastModifiedTimestamp = "LastModifiedTimestamp".asInstanceOf[QueueAttributeName]
-    val QueueArn = "QueueArn".asInstanceOf[QueueAttributeName]
-    val ApproximateNumberOfMessagesDelayed = "ApproximateNumberOfMessagesDelayed".asInstanceOf[QueueAttributeName]
-    val DelaySeconds = "DelaySeconds".asInstanceOf[QueueAttributeName]
-    val ReceiveMessageWaitTimeSeconds = "ReceiveMessageWaitTimeSeconds".asInstanceOf[QueueAttributeName]
-    val RedrivePolicy = "RedrivePolicy".asInstanceOf[QueueAttributeName]
-    val FifoQueue = "FifoQueue".asInstanceOf[QueueAttributeName]
-    val ContentBasedDeduplication = "ContentBasedDeduplication".asInstanceOf[QueueAttributeName]
-    val KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
-    val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
-    val DeduplicationScope = "DeduplicationScope".asInstanceOf[QueueAttributeName]
-    val FifoThroughputLimit = "FifoThroughputLimit".asInstanceOf[QueueAttributeName]
-
-    @inline def values = js.Array(
-      All,
-      Policy,
-      VisibilityTimeout,
-      MaximumMessageSize,
-      MessageRetentionPeriod,
-      ApproximateNumberOfMessages,
-      ApproximateNumberOfMessagesNotVisible,
-      CreatedTimestamp,
-      LastModifiedTimestamp,
-      QueueArn,
-      ApproximateNumberOfMessagesDelayed,
-      DelaySeconds,
-      ReceiveMessageWaitTimeSeconds,
-      RedrivePolicy,
-      FifoQueue,
-      ContentBasedDeduplication,
-      KmsMasterKeyId,
-      KmsDataKeyReusePeriodSeconds,
-      DeduplicationScope,
-      FifoThroughputLimit
-    )
   }
 
   /** <p/>

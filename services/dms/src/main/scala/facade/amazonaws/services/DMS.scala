@@ -281,25 +281,6 @@ package object dms {
     }
   }
 
-  @js.native
-  sealed trait AuthMechanismValue extends js.Any
-  object AuthMechanismValue {
-    val default = "default".asInstanceOf[AuthMechanismValue]
-    val mongodb_cr = "mongodb_cr".asInstanceOf[AuthMechanismValue]
-    val scram_sha_1 = "scram_sha_1".asInstanceOf[AuthMechanismValue]
-
-    @inline def values = js.Array(default, mongodb_cr, scram_sha_1)
-  }
-
-  @js.native
-  sealed trait AuthTypeValue extends js.Any
-  object AuthTypeValue {
-    val no = "no".asInstanceOf[AuthTypeValue]
-    val password = "password".asInstanceOf[AuthTypeValue]
-
-    @inline def values = js.Array(no, password)
-  }
-
   /** The name of an Availability Zone for use during database migration. <code>AvailabilityZone</code> is an optional parameter to the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html"> <code>CreateReplicationInstance</code> </a> operation, and it’s value relates to the AWS Region of an endpoint. For example, the availability zone of an endpoint in the us-east-1 region might be us-east-1a, us-east-1b, us-east-1c, or us-east-1d.
     */
   @js.native
@@ -398,25 +379,6 @@ package object dms {
       ValidToDate.foreach(__v => __obj.updateDynamic("ValidToDate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Certificate]
     }
-  }
-
-  @js.native
-  sealed trait CharLengthSemantics extends js.Any
-  object CharLengthSemantics {
-    val default = "default".asInstanceOf[CharLengthSemantics]
-    val char = "char".asInstanceOf[CharLengthSemantics]
-    val byte = "byte".asInstanceOf[CharLengthSemantics]
-
-    @inline def values = js.Array(default, char, byte)
-  }
-
-  @js.native
-  sealed trait CompressionTypeValue extends js.Any
-  object CompressionTypeValue {
-    val none = "none".asInstanceOf[CompressionTypeValue]
-    val gzip = "gzip".asInstanceOf[CompressionTypeValue]
-
-    @inline def values = js.Array(none, gzip)
   }
 
   /** Status of the connection between an endpoint and a replication instance, including Amazon Resource Names (ARNs) and the last error message issued.
@@ -838,38 +800,6 @@ package object dms {
       ReplicationTask.foreach(__v => __obj.updateDynamic("ReplicationTask")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateReplicationTaskResponse]
     }
-  }
-
-  @js.native
-  sealed trait DataFormatValue extends js.Any
-  object DataFormatValue {
-    val csv = "csv".asInstanceOf[DataFormatValue]
-    val parquet = "parquet".asInstanceOf[DataFormatValue]
-
-    @inline def values = js.Array(csv, parquet)
-  }
-
-  @js.native
-  sealed trait DatePartitionDelimiterValue extends js.Any
-  object DatePartitionDelimiterValue {
-    val SLASH = "SLASH".asInstanceOf[DatePartitionDelimiterValue]
-    val UNDERSCORE = "UNDERSCORE".asInstanceOf[DatePartitionDelimiterValue]
-    val DASH = "DASH".asInstanceOf[DatePartitionDelimiterValue]
-    val NONE = "NONE".asInstanceOf[DatePartitionDelimiterValue]
-
-    @inline def values = js.Array(SLASH, UNDERSCORE, DASH, NONE)
-  }
-
-  @js.native
-  sealed trait DatePartitionSequenceValue extends js.Any
-  object DatePartitionSequenceValue {
-    val YYYYMMDD = "YYYYMMDD".asInstanceOf[DatePartitionSequenceValue]
-    val YYYYMMDDHH = "YYYYMMDDHH".asInstanceOf[DatePartitionSequenceValue]
-    val YYYYMM = "YYYYMM".asInstanceOf[DatePartitionSequenceValue]
-    val MMYYYYDD = "MMYYYYDD".asInstanceOf[DatePartitionSequenceValue]
-    val DDMMYYYY = "DDMMYYYY".asInstanceOf[DatePartitionSequenceValue]
-
-    @inline def values = js.Array(YYYYMMDD, YYYYMMDDHH, YYYYMM, MMYYYYDD, DDMMYYYY)
   }
 
   @js.native
@@ -2171,17 +2101,6 @@ package object dms {
     }
   }
 
-  @js.native
-  sealed trait DmsSslModeValue extends js.Any
-  object DmsSslModeValue {
-    val none = "none".asInstanceOf[DmsSslModeValue]
-    val require = "require".asInstanceOf[DmsSslModeValue]
-    val `verify-ca` = "verify-ca".asInstanceOf[DmsSslModeValue]
-    val `verify-full` = "verify-full".asInstanceOf[DmsSslModeValue]
-
-    @inline def values = js.Array(none, require, `verify-ca`, `verify-full`)
-  }
-
   /** The settings in JSON format for the DMS Transfer type source endpoint.
     */
   @js.native
@@ -2297,25 +2216,6 @@ package object dms {
       FullLoadErrorPercentage.foreach(__v => __obj.updateDynamic("FullLoadErrorPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ElasticsearchSettings]
     }
-  }
-
-  @js.native
-  sealed trait EncodingTypeValue extends js.Any
-  object EncodingTypeValue {
-    val plain = "plain".asInstanceOf[EncodingTypeValue]
-    val `plain-dictionary` = "plain-dictionary".asInstanceOf[EncodingTypeValue]
-    val `rle-dictionary` = "rle-dictionary".asInstanceOf[EncodingTypeValue]
-
-    @inline def values = js.Array(plain, `plain-dictionary`, `rle-dictionary`)
-  }
-
-  @js.native
-  sealed trait EncryptionModeValue extends js.Any
-  object EncryptionModeValue {
-    val `sse-s3` = "sse-s3".asInstanceOf[EncryptionModeValue]
-    val `sse-kms` = "sse-kms".asInstanceOf[EncryptionModeValue]
-
-    @inline def values = js.Array(`sse-s3`, `sse-kms`)
   }
 
   /** Describes an endpoint of a database instance in response to operations such as the following: * <code>CreateEndpoint</code> * <code>DescribeEndpoint</code> * <code>DescribeEndpointTypes</code> * <code>ModifyEndpoint</code>
@@ -2469,17 +2369,6 @@ package object dms {
       Units.foreach(__v => __obj.updateDynamic("Units")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EndpointSetting]
     }
-  }
-
-  @js.native
-  sealed trait EndpointSettingTypeValue extends js.Any
-  object EndpointSettingTypeValue {
-    val string = "string".asInstanceOf[EndpointSettingTypeValue]
-    val boolean = "boolean".asInstanceOf[EndpointSettingTypeValue]
-    val integer = "integer".asInstanceOf[EndpointSettingTypeValue]
-    val `enum` = "enum".asInstanceOf[EndpointSettingTypeValue]
-
-    @inline def values = js.Array(string, boolean, integer, `enum`)
   }
 
   /** Describes an identifiable significant activity that affects a replication instance or task. This object can provide the message, the available event categories, the date and source of the event, and the AWS DMS resource type.
@@ -2685,17 +2574,6 @@ package object dms {
     }
   }
 
-  @js.native
-  sealed trait KafkaSecurityProtocol extends js.Any
-  object KafkaSecurityProtocol {
-    val plaintext = "plaintext".asInstanceOf[KafkaSecurityProtocol]
-    val `ssl-authentication` = "ssl-authentication".asInstanceOf[KafkaSecurityProtocol]
-    val `ssl-encryption` = "ssl-encryption".asInstanceOf[KafkaSecurityProtocol]
-    val `sasl-ssl` = "sasl-ssl".asInstanceOf[KafkaSecurityProtocol]
-
-    @inline def values = js.Array(plaintext, `ssl-authentication`, `ssl-encryption`, `sasl-ssl`)
-  }
-
   /** Provides information that describes an Apache Kafka endpoint. This information includes the output format of records applied to the endpoint and details of transaction and control table data information.
     */
   @js.native
@@ -2841,15 +2719,6 @@ package object dms {
     }
   }
 
-  @js.native
-  sealed trait MessageFormatValue extends js.Any
-  object MessageFormatValue {
-    val json = "json".asInstanceOf[MessageFormatValue]
-    val `json-unformatted` = "json-unformatted".asInstanceOf[MessageFormatValue]
-
-    @inline def values = js.Array(json, `json-unformatted`)
-  }
-
   /** Provides information that defines a Microsoft SQL Server endpoint.
     */
   @js.native
@@ -2905,16 +2774,6 @@ package object dms {
       Username.foreach(__v => __obj.updateDynamic("Username")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MicrosoftSQLServerSettings]
     }
-  }
-
-  @js.native
-  sealed trait MigrationTypeValue extends js.Any
-  object MigrationTypeValue {
-    val `full-load` = "full-load".asInstanceOf[MigrationTypeValue]
-    val cdc = "cdc".asInstanceOf[MigrationTypeValue]
-    val `full-load-and-cdc` = "full-load-and-cdc".asInstanceOf[MigrationTypeValue]
-
-    @inline def values = js.Array(`full-load`, cdc, `full-load-and-cdc`)
   }
 
   /** <p/>
@@ -3458,15 +3317,6 @@ package object dms {
     }
   }
 
-  @js.native
-  sealed trait NestingLevelValue extends js.Any
-  object NestingLevelValue {
-    val none = "none".asInstanceOf[NestingLevelValue]
-    val one = "one".asInstanceOf[NestingLevelValue]
-
-    @inline def values = js.Array(none, one)
-  }
-
   /** Provides information that defines an Oracle endpoint.
     */
   @js.native
@@ -3627,15 +3477,6 @@ package object dms {
       StorageType.foreach(__v => __obj.updateDynamic("StorageType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OrderableReplicationInstance]
     }
-  }
-
-  @js.native
-  sealed trait ParquetVersionValue extends js.Any
-  object ParquetVersionValue {
-    val `parquet-1-0` = "parquet-1-0".asInstanceOf[ParquetVersionValue]
-    val `parquet-2-0` = "parquet-2-0".asInstanceOf[ParquetVersionValue]
-
-    @inline def values = js.Array(`parquet-1-0`, `parquet-2-0`)
   }
 
   /** Describes a maintenance action pending for an AWS DMS resource, including when and how it will be applied. This data type is a response element to the <code>DescribePendingMaintenanceActions</code> operation.
@@ -3941,33 +3782,6 @@ package object dms {
   }
 
   @js.native
-  sealed trait RefreshSchemasStatusTypeValue extends js.Any
-  object RefreshSchemasStatusTypeValue {
-    val successful = "successful".asInstanceOf[RefreshSchemasStatusTypeValue]
-    val failed = "failed".asInstanceOf[RefreshSchemasStatusTypeValue]
-    val refreshing = "refreshing".asInstanceOf[RefreshSchemasStatusTypeValue]
-
-    @inline def values = js.Array(successful, failed, refreshing)
-  }
-
-  @js.native
-  sealed trait ReleaseStatusValues extends js.Any
-  object ReleaseStatusValues {
-    val beta = "beta".asInstanceOf[ReleaseStatusValues]
-
-    @inline def values = js.Array(beta)
-  }
-
-  @js.native
-  sealed trait ReloadOptionValue extends js.Any
-  object ReloadOptionValue {
-    val `data-reload` = "data-reload".asInstanceOf[ReloadOptionValue]
-    val `validate-only` = "validate-only".asInstanceOf[ReloadOptionValue]
-
-    @inline def values = js.Array(`data-reload`, `validate-only`)
-  }
-
-  @js.native
   trait ReloadTablesMessage extends js.Object {
     var ReplicationTaskArn: String
     var TablesToReload: TableListToReload
@@ -4040,15 +3854,6 @@ package object dms {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RemoveTagsFromResourceResponse]
     }
-  }
-
-  @js.native
-  sealed trait ReplicationEndpointTypeValue extends js.Any
-  object ReplicationEndpointTypeValue {
-    val source = "source".asInstanceOf[ReplicationEndpointTypeValue]
-    val target = "target".asInstanceOf[ReplicationEndpointTypeValue]
-
-    @inline def values = js.Array(source, target)
   }
 
   /** Provides information that defines a replication instance.
@@ -4594,24 +4399,6 @@ package object dms {
     }
   }
 
-  @js.native
-  sealed trait SafeguardPolicy extends js.Any
-  object SafeguardPolicy {
-    val `rely-on-sql-server-replication-agent` = "rely-on-sql-server-replication-agent".asInstanceOf[SafeguardPolicy]
-    val `exclusive-automatic-truncation` = "exclusive-automatic-truncation".asInstanceOf[SafeguardPolicy]
-    val `shared-automatic-truncation` = "shared-automatic-truncation".asInstanceOf[SafeguardPolicy]
-
-    @inline def values = js.Array(`rely-on-sql-server-replication-agent`, `exclusive-automatic-truncation`, `shared-automatic-truncation`)
-  }
-
-  @js.native
-  sealed trait SourceType extends js.Any
-  object SourceType {
-    val `replication-instance` = "replication-instance".asInstanceOf[SourceType]
-
-    @inline def values = js.Array(`replication-instance`)
-  }
-
   /** <p/>
     */
   @js.native
@@ -4759,16 +4546,6 @@ package object dms {
       ReplicationTask.foreach(__v => __obj.updateDynamic("ReplicationTask")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartReplicationTaskResponse]
     }
-  }
-
-  @js.native
-  sealed trait StartReplicationTaskTypeValue extends js.Any
-  object StartReplicationTaskTypeValue {
-    val `start-replication` = "start-replication".asInstanceOf[StartReplicationTaskTypeValue]
-    val `resume-processing` = "resume-processing".asInstanceOf[StartReplicationTaskTypeValue]
-    val `reload-target` = "reload-target".asInstanceOf[StartReplicationTaskTypeValue]
-
-    @inline def values = js.Array(`start-replication`, `resume-processing`, `reload-target`)
   }
 
   /** <p/>
@@ -5011,15 +4788,6 @@ package object dms {
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Tag]
     }
-  }
-
-  @js.native
-  sealed trait TargetDbType extends js.Any
-  object TargetDbType {
-    val `specific-database` = "specific-database".asInstanceOf[TargetDbType]
-    val `multiple-databases` = "multiple-databases".asInstanceOf[TargetDbType]
-
-    @inline def values = js.Array(`specific-database`, `multiple-databases`)
   }
 
   /** <p/>

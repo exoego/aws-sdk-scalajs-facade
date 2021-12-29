@@ -2137,24 +2137,6 @@ package object autoscaling {
     }
   }
 
-  @js.native
-  sealed trait InstanceMetadataEndpointState extends js.Any
-  object InstanceMetadataEndpointState {
-    val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
-    val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
-
-    @inline def values = js.Array(disabled, enabled)
-  }
-
-  @js.native
-  sealed trait InstanceMetadataHttpTokensState extends js.Any
-  object InstanceMetadataHttpTokensState {
-    val optional = "optional".asInstanceOf[InstanceMetadataHttpTokensState]
-    val required = "required".asInstanceOf[InstanceMetadataHttpTokensState]
-
-    @inline def values = js.Array(optional, required)
-  }
-
   /** The metadata options for the instances. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-config.html#launch-configurations-imds|Configuring the Instance Metadata Options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
@@ -2279,19 +2261,6 @@ package object autoscaling {
       WarmPoolProgress.foreach(__v => __obj.updateDynamic("WarmPoolProgress")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceRefreshProgressDetails]
     }
-  }
-
-  @js.native
-  sealed trait InstanceRefreshStatus extends js.Any
-  object InstanceRefreshStatus {
-    val Pending = "Pending".asInstanceOf[InstanceRefreshStatus]
-    val InProgress = "InProgress".asInstanceOf[InstanceRefreshStatus]
-    val Successful = "Successful".asInstanceOf[InstanceRefreshStatus]
-    val Failed = "Failed".asInstanceOf[InstanceRefreshStatus]
-    val Cancelling = "Cancelling".asInstanceOf[InstanceRefreshStatus]
-    val Cancelled = "Cancelled".asInstanceOf[InstanceRefreshStatus]
-
-    @inline def values = js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled)
   }
 
   /** Reports the progress of an instance fresh on instances that are in the warm pool.
@@ -2635,58 +2604,6 @@ package object autoscaling {
     }
   }
 
-  @js.native
-  sealed trait LifecycleState extends js.Any
-  object LifecycleState {
-    val Pending = "Pending".asInstanceOf[LifecycleState]
-    val `Pending:Wait` = "Pending:Wait".asInstanceOf[LifecycleState]
-    val `Pending:Proceed` = "Pending:Proceed".asInstanceOf[LifecycleState]
-    val Quarantined = "Quarantined".asInstanceOf[LifecycleState]
-    val InService = "InService".asInstanceOf[LifecycleState]
-    val Terminating = "Terminating".asInstanceOf[LifecycleState]
-    val `Terminating:Wait` = "Terminating:Wait".asInstanceOf[LifecycleState]
-    val `Terminating:Proceed` = "Terminating:Proceed".asInstanceOf[LifecycleState]
-    val Terminated = "Terminated".asInstanceOf[LifecycleState]
-    val Detaching = "Detaching".asInstanceOf[LifecycleState]
-    val Detached = "Detached".asInstanceOf[LifecycleState]
-    val EnteringStandby = "EnteringStandby".asInstanceOf[LifecycleState]
-    val Standby = "Standby".asInstanceOf[LifecycleState]
-    val `Warmed:Pending` = "Warmed:Pending".asInstanceOf[LifecycleState]
-    val `Warmed:Pending:Wait` = "Warmed:Pending:Wait".asInstanceOf[LifecycleState]
-    val `Warmed:Pending:Proceed` = "Warmed:Pending:Proceed".asInstanceOf[LifecycleState]
-    val `Warmed:Terminating` = "Warmed:Terminating".asInstanceOf[LifecycleState]
-    val `Warmed:Terminating:Wait` = "Warmed:Terminating:Wait".asInstanceOf[LifecycleState]
-    val `Warmed:Terminating:Proceed` = "Warmed:Terminating:Proceed".asInstanceOf[LifecycleState]
-    val `Warmed:Terminated` = "Warmed:Terminated".asInstanceOf[LifecycleState]
-    val `Warmed:Stopped` = "Warmed:Stopped".asInstanceOf[LifecycleState]
-    val `Warmed:Running` = "Warmed:Running".asInstanceOf[LifecycleState]
-
-    @inline def values = js.Array(
-      Pending,
-      `Pending:Wait`,
-      `Pending:Proceed`,
-      Quarantined,
-      InService,
-      Terminating,
-      `Terminating:Wait`,
-      `Terminating:Proceed`,
-      Terminated,
-      Detaching,
-      Detached,
-      EnteringStandby,
-      Standby,
-      `Warmed:Pending`,
-      `Warmed:Pending:Wait`,
-      `Warmed:Pending:Proceed`,
-      `Warmed:Terminating`,
-      `Warmed:Terminating:Wait`,
-      `Warmed:Terminating:Proceed`,
-      `Warmed:Terminated`,
-      `Warmed:Stopped`,
-      `Warmed:Running`
-    )
-  }
-
   /** Describes the state of a Classic Load Balancer. If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is <code>InService</code>. If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If Elastic Load Balancing health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in the <code>Added</code> state.
     */
   @js.native
@@ -2785,29 +2702,6 @@ package object autoscaling {
       Granularity.foreach(__v => __obj.updateDynamic("Granularity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricGranularityType]
     }
-  }
-
-  @js.native
-  sealed trait MetricStatistic extends js.Any
-  object MetricStatistic {
-    val Average = "Average".asInstanceOf[MetricStatistic]
-    val Minimum = "Minimum".asInstanceOf[MetricStatistic]
-    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
-    val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-    val Sum = "Sum".asInstanceOf[MetricStatistic]
-
-    @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
-  }
-
-  @js.native
-  sealed trait MetricType extends js.Any
-  object MetricType {
-    val ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[MetricType]
-    val ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[MetricType]
-    val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[MetricType]
-    val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
-
-    @inline def values = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
   }
 
   /** Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html|Auto Scaling groups with multiple instance types and purchase options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>. You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level property instead of a launch configuration or launch template.
@@ -3226,46 +3120,6 @@ package object autoscaling {
       MinHealthyPercentage.foreach(__v => __obj.updateDynamic("MinHealthyPercentage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RefreshPreferences]
     }
-  }
-
-  @js.native
-  sealed trait RefreshStrategy extends js.Any
-  object RefreshStrategy {
-    val Rolling = "Rolling".asInstanceOf[RefreshStrategy]
-
-    @inline def values = js.Array(Rolling)
-  }
-
-  @js.native
-  sealed trait ScalingActivityStatusCode extends js.Any
-  object ScalingActivityStatusCode {
-    val PendingSpotBidPlacement = "PendingSpotBidPlacement".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForSpotInstanceRequestId = "WaitingForSpotInstanceRequestId".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForSpotInstanceId = "WaitingForSpotInstanceId".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForInstanceId = "WaitingForInstanceId".asInstanceOf[ScalingActivityStatusCode]
-    val PreInService = "PreInService".asInstanceOf[ScalingActivityStatusCode]
-    val InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForELBConnectionDraining = "WaitingForELBConnectionDraining".asInstanceOf[ScalingActivityStatusCode]
-    val MidLifecycleAction = "MidLifecycleAction".asInstanceOf[ScalingActivityStatusCode]
-    val WaitingForInstanceWarmup = "WaitingForInstanceWarmup".asInstanceOf[ScalingActivityStatusCode]
-    val Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
-    val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
-    val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
-
-    @inline def values = js.Array(
-      PendingSpotBidPlacement,
-      WaitingForSpotInstanceRequestId,
-      WaitingForSpotInstanceId,
-      WaitingForInstanceId,
-      PreInService,
-      InProgress,
-      WaitingForELBConnectionDraining,
-      MidLifecycleAction,
-      WaitingForInstanceWarmup,
-      Successful,
-      Failed,
-      Cancelled
-    )
   }
 
   /** Describes a scaling policy.
@@ -3851,22 +3705,5 @@ package object autoscaling {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WarmPoolConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait WarmPoolState extends js.Any
-  object WarmPoolState {
-    val Stopped = "Stopped".asInstanceOf[WarmPoolState]
-    val Running = "Running".asInstanceOf[WarmPoolState]
-
-    @inline def values = js.Array(Stopped, Running)
-  }
-
-  @js.native
-  sealed trait WarmPoolStatus extends js.Any
-  object WarmPoolStatus {
-    val PendingDelete = "PendingDelete".asInstanceOf[WarmPoolStatus]
-
-    @inline def values = js.Array(PendingDelete)
   }
 }

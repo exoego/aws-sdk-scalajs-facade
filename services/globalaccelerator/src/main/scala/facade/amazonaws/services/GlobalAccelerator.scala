@@ -231,15 +231,6 @@ package object globalaccelerator {
   }
 
   @js.native
-  sealed trait AcceleratorStatus extends js.Any
-  object AcceleratorStatus {
-    val DEPLOYED = "DEPLOYED".asInstanceOf[AcceleratorStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AcceleratorStatus]
-
-    @inline def values = js.Array(DEPLOYED, IN_PROGRESS)
-  }
-
-  @js.native
   trait AddCustomRoutingEndpointsRequest extends js.Object {
     var EndpointConfigurations: CustomRoutingEndpointConfigurations
     var EndpointGroupArn: GenericString
@@ -388,36 +379,6 @@ package object globalaccelerator {
     }
   }
 
-  @js.native
-  sealed trait ByoipCidrState extends js.Any
-  object ByoipCidrState {
-    val PENDING_PROVISIONING = "PENDING_PROVISIONING".asInstanceOf[ByoipCidrState]
-    val READY = "READY".asInstanceOf[ByoipCidrState]
-    val PENDING_ADVERTISING = "PENDING_ADVERTISING".asInstanceOf[ByoipCidrState]
-    val ADVERTISING = "ADVERTISING".asInstanceOf[ByoipCidrState]
-    val PENDING_WITHDRAWING = "PENDING_WITHDRAWING".asInstanceOf[ByoipCidrState]
-    val PENDING_DEPROVISIONING = "PENDING_DEPROVISIONING".asInstanceOf[ByoipCidrState]
-    val DEPROVISIONED = "DEPROVISIONED".asInstanceOf[ByoipCidrState]
-    val FAILED_PROVISION = "FAILED_PROVISION".asInstanceOf[ByoipCidrState]
-    val FAILED_ADVERTISING = "FAILED_ADVERTISING".asInstanceOf[ByoipCidrState]
-    val FAILED_WITHDRAW = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
-    val FAILED_DEPROVISION = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
-
-    @inline def values = js.Array(
-      PENDING_PROVISIONING,
-      READY,
-      PENDING_ADVERTISING,
-      ADVERTISING,
-      PENDING_WITHDRAWING,
-      PENDING_DEPROVISIONING,
-      DEPROVISIONED,
-      FAILED_PROVISION,
-      FAILED_ADVERTISING,
-      FAILED_WITHDRAW,
-      FAILED_DEPROVISION
-    )
-  }
-
   /** Provides authorization for Amazon to bring a specific IP address range to a specific AWS account using bring your own IP addresses (BYOIP). For more information, see [[https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html|Bring Your Own IP Addresses (BYOIP)]] in the <i>AWS Global Accelerator Developer Guide</i>.
     */
   @js.native
@@ -438,15 +399,6 @@ package object globalaccelerator {
       )
       __obj.asInstanceOf[CidrAuthorizationContext]
     }
-  }
-
-  @js.native
-  sealed trait ClientAffinity extends js.Any
-  object ClientAffinity {
-    val NONE = "NONE".asInstanceOf[ClientAffinity]
-    val SOURCE_IP = "SOURCE_IP".asInstanceOf[ClientAffinity]
-
-    @inline def values = js.Array(NONE, SOURCE_IP)
   }
 
   @js.native
@@ -804,15 +756,6 @@ package object globalaccelerator {
     }
   }
 
-  @js.native
-  sealed trait CustomRoutingAcceleratorStatus extends js.Any
-  object CustomRoutingAcceleratorStatus {
-    val DEPLOYED = "DEPLOYED".asInstanceOf[CustomRoutingAcceleratorStatus]
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CustomRoutingAcceleratorStatus]
-
-    @inline def values = js.Array(DEPLOYED, IN_PROGRESS)
-  }
-
   /** For a custom routing accelerator, sets the port range and protocol for all endpoints (virtual private cloud subnets) in an endpoint group to accept client traffic on.
     */
   @js.native
@@ -860,15 +803,6 @@ package object globalaccelerator {
       ToPort.foreach(__v => __obj.updateDynamic("ToPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomRoutingDestinationDescription]
     }
-  }
-
-  @js.native
-  sealed trait CustomRoutingDestinationTrafficState extends js.Any
-  object CustomRoutingDestinationTrafficState {
-    val ALLOW = "ALLOW".asInstanceOf[CustomRoutingDestinationTrafficState]
-    val DENY = "DENY".asInstanceOf[CustomRoutingDestinationTrafficState]
-
-    @inline def values = js.Array(ALLOW, DENY)
   }
 
   /** The list of endpoint objects. For custom routing, this is a list of virtual private cloud (VPC) subnet IDs.
@@ -953,15 +887,6 @@ package object globalaccelerator {
       PortRanges.foreach(__v => __obj.updateDynamic("PortRanges")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomRoutingListener]
     }
-  }
-
-  @js.native
-  sealed trait CustomRoutingProtocol extends js.Any
-  object CustomRoutingProtocol {
-    val TCP = "TCP".asInstanceOf[CustomRoutingProtocol]
-    val UDP = "UDP".asInstanceOf[CustomRoutingProtocol]
-
-    @inline def values = js.Array(TCP, UDP)
   }
 
   @js.native
@@ -1531,34 +1456,6 @@ package object globalaccelerator {
     }
   }
 
-  @js.native
-  sealed trait HealthCheckProtocol extends js.Any
-  object HealthCheckProtocol {
-    val TCP = "TCP".asInstanceOf[HealthCheckProtocol]
-    val HTTP = "HTTP".asInstanceOf[HealthCheckProtocol]
-    val HTTPS = "HTTPS".asInstanceOf[HealthCheckProtocol]
-
-    @inline def values = js.Array(TCP, HTTP, HTTPS)
-  }
-
-  @js.native
-  sealed trait HealthState extends js.Any
-  object HealthState {
-    val INITIAL = "INITIAL".asInstanceOf[HealthState]
-    val HEALTHY = "HEALTHY".asInstanceOf[HealthState]
-    val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthState]
-
-    @inline def values = js.Array(INITIAL, HEALTHY, UNHEALTHY)
-  }
-
-  @js.native
-  sealed trait IpAddressType extends js.Any
-  object IpAddressType {
-    val IPV4 = "IPV4".asInstanceOf[IpAddressType]
-
-    @inline def values = js.Array(IPV4)
-  }
-
   /** A complex type for the set of IP addresses for an accelerator.
     */
   @js.native
@@ -2091,15 +1988,6 @@ package object globalaccelerator {
       ToPort.foreach(__v => __obj.updateDynamic("ToPort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PortRange]
     }
-  }
-
-  @js.native
-  sealed trait Protocol extends js.Any
-  object Protocol {
-    val TCP = "TCP".asInstanceOf[Protocol]
-    val UDP = "UDP".asInstanceOf[Protocol]
-
-    @inline def values = js.Array(TCP, UDP)
   }
 
   @js.native

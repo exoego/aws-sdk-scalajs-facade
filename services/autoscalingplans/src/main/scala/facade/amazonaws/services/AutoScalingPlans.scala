@@ -343,17 +343,6 @@ package object autoscalingplans {
   }
 
   @js.native
-  sealed trait ForecastDataType extends js.Any
-  object ForecastDataType {
-    val CapacityForecast = "CapacityForecast".asInstanceOf[ForecastDataType]
-    val LoadForecast = "LoadForecast".asInstanceOf[ForecastDataType]
-    val ScheduledActionMinCapacity = "ScheduledActionMinCapacity".asInstanceOf[ForecastDataType]
-    val ScheduledActionMaxCapacity = "ScheduledActionMaxCapacity".asInstanceOf[ForecastDataType]
-
-    @inline def values = js.Array(CapacityForecast, LoadForecast, ScheduledActionMinCapacity, ScheduledActionMaxCapacity)
-  }
-
-  @js.native
   trait GetScalingPlanResourceForecastDataRequest extends js.Object {
     var EndTime: TimestampType
     var ForecastDataType: ForecastDataType
@@ -408,17 +397,6 @@ package object autoscalingplans {
     }
   }
 
-  @js.native
-  sealed trait LoadMetricType extends js.Any
-  object LoadMetricType {
-    val ASGTotalCPUUtilization = "ASGTotalCPUUtilization".asInstanceOf[LoadMetricType]
-    val ASGTotalNetworkIn = "ASGTotalNetworkIn".asInstanceOf[LoadMetricType]
-    val ASGTotalNetworkOut = "ASGTotalNetworkOut".asInstanceOf[LoadMetricType]
-    val ALBTargetGroupRequestCount = "ALBTargetGroupRequestCount".asInstanceOf[LoadMetricType]
-
-    @inline def values = js.Array(ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount)
-  }
-
   /** Represents a dimension for a customized metric.
     */
   @js.native
@@ -439,26 +417,6 @@ package object autoscalingplans {
       )
       __obj.asInstanceOf[MetricDimension]
     }
-  }
-
-  @js.native
-  sealed trait MetricStatistic extends js.Any
-  object MetricStatistic {
-    val Average = "Average".asInstanceOf[MetricStatistic]
-    val Minimum = "Minimum".asInstanceOf[MetricStatistic]
-    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
-    val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-    val Sum = "Sum".asInstanceOf[MetricStatistic]
-
-    @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
-  }
-
-  @js.native
-  sealed trait PolicyType extends js.Any
-  object PolicyType {
-    val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
-
-    @inline def values = js.Array(TargetTrackingScaling)
   }
 
   /** Represents a predefined metric that can be used for predictive scaling. After creating your scaling plan, you can use the AWS Auto Scaling console to visualize forecasts for the specified metric. For more information, see [[https://docs.aws.amazon.com/autoscaling/plans/userguide/gs-create-scaling-plan.html#gs-view-resource|View Scaling Information for a Resource]] in the <i>AWS Auto Scaling User Guide</i>.
@@ -505,49 +463,6 @@ package object autoscalingplans {
       ResourceLabel.foreach(__v => __obj.updateDynamic("ResourceLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PredefinedScalingMetricSpecification]
     }
-  }
-
-  @js.native
-  sealed trait PredictiveScalingMaxCapacityBehavior extends js.Any
-  object PredictiveScalingMaxCapacityBehavior {
-    val SetForecastCapacityToMaxCapacity = "SetForecastCapacityToMaxCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
-    val SetMaxCapacityToForecastCapacity = "SetMaxCapacityToForecastCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
-    val SetMaxCapacityAboveForecastCapacity = "SetMaxCapacityAboveForecastCapacity".asInstanceOf[PredictiveScalingMaxCapacityBehavior]
-
-    @inline def values = js.Array(SetForecastCapacityToMaxCapacity, SetMaxCapacityToForecastCapacity, SetMaxCapacityAboveForecastCapacity)
-  }
-
-  @js.native
-  sealed trait PredictiveScalingMode extends js.Any
-  object PredictiveScalingMode {
-    val ForecastAndScale = "ForecastAndScale".asInstanceOf[PredictiveScalingMode]
-    val ForecastOnly = "ForecastOnly".asInstanceOf[PredictiveScalingMode]
-
-    @inline def values = js.Array(ForecastAndScale, ForecastOnly)
-  }
-
-  @js.native
-  sealed trait ScalableDimension extends js.Any
-  object ScalableDimension {
-    val `autoscaling:autoScalingGroup:DesiredCapacity` = "autoscaling:autoScalingGroup:DesiredCapacity".asInstanceOf[ScalableDimension]
-    val `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
-    val `ec2:spot-fleet-request:TargetCapacity` = "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
-    val `rds:cluster:ReadReplicaCount` = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
-    val `dynamodb:table:ReadCapacityUnits` = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-    val `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-    val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-    val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-
-    @inline def values = js.Array(
-      `autoscaling:autoScalingGroup:DesiredCapacity`,
-      `ecs:service:DesiredCount`,
-      `ec2:spot-fleet-request:TargetCapacity`,
-      `rds:cluster:ReadReplicaCount`,
-      `dynamodb:table:ReadCapacityUnits`,
-      `dynamodb:table:WriteCapacityUnits`,
-      `dynamodb:index:ReadCapacityUnits`,
-      `dynamodb:index:WriteCapacityUnits`
-    )
   }
 
   /** Describes a scaling instruction for a scalable resource in a scaling plan. Each scaling instruction applies to one resource. AWS Auto Scaling creates target tracking scaling policies based on the scaling instructions. Target tracking scaling policies adjust the capacity of your scalable resource as required to maintain resource utilization at the target value that you specified. AWS Auto Scaling also configures predictive scaling for your Amazon EC2 Auto Scaling groups using a subset of parameters, including the load metric, the scaling metric, the target value for the scaling metric, the predictive scaling mode (forecast and scale or forecast only), and the desired behavior when the forecast capacity exceeds the maximum capacity of the resource. With predictive scaling, AWS Auto Scaling generates forecasts with traffic predictions for the two days ahead and schedules scaling actions that proactively add and remove resource capacity to match the forecast. <important> We recommend
@@ -608,40 +523,6 @@ package object autoscalingplans {
       ScheduledActionBufferTime.foreach(__v => __obj.updateDynamic("ScheduledActionBufferTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingInstruction]
     }
-  }
-
-  @js.native
-  sealed trait ScalingMetricType extends js.Any
-  object ScalingMetricType {
-    val ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-    val ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[ScalingMetricType]
-    val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[ScalingMetricType]
-    val DynamoDBReadCapacityUtilization = "DynamoDBReadCapacityUtilization".asInstanceOf[ScalingMetricType]
-    val DynamoDBWriteCapacityUtilization = "DynamoDBWriteCapacityUtilization".asInstanceOf[ScalingMetricType]
-    val ECSServiceAverageCPUUtilization = "ECSServiceAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-    val ECSServiceAverageMemoryUtilization = "ECSServiceAverageMemoryUtilization".asInstanceOf[ScalingMetricType]
-    val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[ScalingMetricType]
-    val RDSReaderAverageCPUUtilization = "RDSReaderAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-    val RDSReaderAverageDatabaseConnections = "RDSReaderAverageDatabaseConnections".asInstanceOf[ScalingMetricType]
-    val EC2SpotFleetRequestAverageCPUUtilization = "EC2SpotFleetRequestAverageCPUUtilization".asInstanceOf[ScalingMetricType]
-    val EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[ScalingMetricType]
-    val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[ScalingMetricType]
-
-    @inline def values = js.Array(
-      ASGAverageCPUUtilization,
-      ASGAverageNetworkIn,
-      ASGAverageNetworkOut,
-      DynamoDBReadCapacityUtilization,
-      DynamoDBWriteCapacityUtilization,
-      ECSServiceAverageCPUUtilization,
-      ECSServiceAverageMemoryUtilization,
-      ALBRequestCountPerTarget,
-      RDSReaderAverageCPUUtilization,
-      RDSReaderAverageDatabaseConnections,
-      EC2SpotFleetRequestAverageCPUUtilization,
-      EC2SpotFleetRequestAverageNetworkIn,
-      EC2SpotFleetRequestAverageNetworkOut
-    )
   }
 
   /** Represents a scaling plan.
@@ -726,21 +607,6 @@ package object autoscalingplans {
     }
   }
 
-  @js.native
-  sealed trait ScalingPlanStatusCode extends js.Any
-  object ScalingPlanStatusCode {
-    val Active = "Active".asInstanceOf[ScalingPlanStatusCode]
-    val ActiveWithProblems = "ActiveWithProblems".asInstanceOf[ScalingPlanStatusCode]
-    val CreationInProgress = "CreationInProgress".asInstanceOf[ScalingPlanStatusCode]
-    val CreationFailed = "CreationFailed".asInstanceOf[ScalingPlanStatusCode]
-    val DeletionInProgress = "DeletionInProgress".asInstanceOf[ScalingPlanStatusCode]
-    val DeletionFailed = "DeletionFailed".asInstanceOf[ScalingPlanStatusCode]
-    val UpdateInProgress = "UpdateInProgress".asInstanceOf[ScalingPlanStatusCode]
-    val UpdateFailed = "UpdateFailed".asInstanceOf[ScalingPlanStatusCode]
-
-    @inline def values = js.Array(Active, ActiveWithProblems, CreationInProgress, CreationFailed, DeletionInProgress, DeletionFailed, UpdateInProgress, UpdateFailed)
-  }
-
   /** Represents a scaling policy.
     */
   @js.native
@@ -765,37 +631,6 @@ package object autoscalingplans {
       TargetTrackingConfiguration.foreach(__v => __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScalingPolicy]
     }
-  }
-
-  @js.native
-  sealed trait ScalingPolicyUpdateBehavior extends js.Any
-  object ScalingPolicyUpdateBehavior {
-    val KeepExternalPolicies = "KeepExternalPolicies".asInstanceOf[ScalingPolicyUpdateBehavior]
-    val ReplaceExternalPolicies = "ReplaceExternalPolicies".asInstanceOf[ScalingPolicyUpdateBehavior]
-
-    @inline def values = js.Array(KeepExternalPolicies, ReplaceExternalPolicies)
-  }
-
-  @js.native
-  sealed trait ScalingStatusCode extends js.Any
-  object ScalingStatusCode {
-    val Inactive = "Inactive".asInstanceOf[ScalingStatusCode]
-    val PartiallyActive = "PartiallyActive".asInstanceOf[ScalingStatusCode]
-    val Active = "Active".asInstanceOf[ScalingStatusCode]
-
-    @inline def values = js.Array(Inactive, PartiallyActive, Active)
-  }
-
-  @js.native
-  sealed trait ServiceNamespace extends js.Any
-  object ServiceNamespace {
-    val autoscaling = "autoscaling".asInstanceOf[ServiceNamespace]
-    val ecs = "ecs".asInstanceOf[ServiceNamespace]
-    val ec2 = "ec2".asInstanceOf[ServiceNamespace]
-    val rds = "rds".asInstanceOf[ServiceNamespace]
-    val dynamodb = "dynamodb".asInstanceOf[ServiceNamespace]
-
-    @inline def values = js.Array(autoscaling, ecs, ec2, rds, dynamodb)
   }
 
   /** Represents a tag.

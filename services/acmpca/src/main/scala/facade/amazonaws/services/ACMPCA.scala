@@ -215,26 +215,6 @@ package object acmpca {
     }
   }
 
-  @js.native
-  sealed trait AccessMethodType extends js.Any
-  object AccessMethodType {
-    val CA_REPOSITORY = "CA_REPOSITORY".asInstanceOf[AccessMethodType]
-    val RESOURCE_PKI_MANIFEST = "RESOURCE_PKI_MANIFEST".asInstanceOf[AccessMethodType]
-    val RESOURCE_PKI_NOTIFY = "RESOURCE_PKI_NOTIFY".asInstanceOf[AccessMethodType]
-
-    @inline def values = js.Array(CA_REPOSITORY, RESOURCE_PKI_MANIFEST, RESOURCE_PKI_NOTIFY)
-  }
-
-  @js.native
-  sealed trait ActionType extends js.Any
-  object ActionType {
-    val IssueCertificate = "IssueCertificate".asInstanceOf[ActionType]
-    val GetCertificate = "GetCertificate".asInstanceOf[ActionType]
-    val ListPermissions = "ListPermissions".asInstanceOf[ActionType]
-
-    @inline def values = js.Array(IssueCertificate, GetCertificate, ListPermissions)
-  }
-
   /** Contains X.509 certificate information to be placed in an issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. If conflicting or duplicate certificate information is supplied from other sources, ACM Private CA applies [[xxxxx|order of operation rules]] to determine what information is used.
     */
   @js.native
@@ -254,25 +234,6 @@ package object acmpca {
       Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApiPassthrough]
     }
-  }
-
-  @js.native
-  sealed trait AuditReportResponseFormat extends js.Any
-  object AuditReportResponseFormat {
-    val JSON = "JSON".asInstanceOf[AuditReportResponseFormat]
-    val CSV = "CSV".asInstanceOf[AuditReportResponseFormat]
-
-    @inline def values = js.Array(JSON, CSV)
-  }
-
-  @js.native
-  sealed trait AuditReportStatus extends js.Any
-  object AuditReportStatus {
-    val CREATING = "CREATING".asInstanceOf[AuditReportStatus]
-    val SUCCESS = "SUCCESS".asInstanceOf[AuditReportStatus]
-    val FAILED = "FAILED".asInstanceOf[AuditReportStatus]
-
-    @inline def values = js.Array(CREATING, SUCCESS, FAILED)
   }
 
   /** Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509 digital certificates. Digital certificates verify that the entity named in the certificate ```Subject``` field owns or controls the public key contained in the ```Subject Public Key Info``` field. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] action to create your private CA. You must then call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html|GetCertificateAuthorityCertificate]] action to retrieve a private CA certificate signing request (CSR). Sign the CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html|ImportCertificateAuthorityCertificate]] action to import the signed certificate
@@ -357,29 +318,6 @@ package object acmpca {
       CsrExtensions.foreach(__v => __obj.updateDynamic("CsrExtensions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CertificateAuthorityConfiguration]
     }
-  }
-
-  @js.native
-  sealed trait CertificateAuthorityStatus extends js.Any
-  object CertificateAuthorityStatus {
-    val CREATING = "CREATING".asInstanceOf[CertificateAuthorityStatus]
-    val PENDING_CERTIFICATE = "PENDING_CERTIFICATE".asInstanceOf[CertificateAuthorityStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[CertificateAuthorityStatus]
-    val DELETED = "DELETED".asInstanceOf[CertificateAuthorityStatus]
-    val DISABLED = "DISABLED".asInstanceOf[CertificateAuthorityStatus]
-    val EXPIRED = "EXPIRED".asInstanceOf[CertificateAuthorityStatus]
-    val FAILED = "FAILED".asInstanceOf[CertificateAuthorityStatus]
-
-    @inline def values = js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED)
-  }
-
-  @js.native
-  sealed trait CertificateAuthorityType extends js.Any
-  object CertificateAuthorityType {
-    val ROOT = "ROOT".asInstanceOf[CertificateAuthorityType]
-    val SUBORDINATE = "SUBORDINATE".asInstanceOf[CertificateAuthorityType]
-
-    @inline def values = js.Array(ROOT, SUBORDINATE)
   }
 
   @js.native
@@ -733,22 +671,6 @@ package object acmpca {
     }
   }
 
-  @js.native
-  sealed trait ExtendedKeyUsageType extends js.Any
-  object ExtendedKeyUsageType {
-    val SERVER_AUTH = "SERVER_AUTH".asInstanceOf[ExtendedKeyUsageType]
-    val CLIENT_AUTH = "CLIENT_AUTH".asInstanceOf[ExtendedKeyUsageType]
-    val CODE_SIGNING = "CODE_SIGNING".asInstanceOf[ExtendedKeyUsageType]
-    val EMAIL_PROTECTION = "EMAIL_PROTECTION".asInstanceOf[ExtendedKeyUsageType]
-    val TIME_STAMPING = "TIME_STAMPING".asInstanceOf[ExtendedKeyUsageType]
-    val OCSP_SIGNING = "OCSP_SIGNING".asInstanceOf[ExtendedKeyUsageType]
-    val SMART_CARD_LOGIN = "SMART_CARD_LOGIN".asInstanceOf[ExtendedKeyUsageType]
-    val DOCUMENT_SIGNING = "DOCUMENT_SIGNING".asInstanceOf[ExtendedKeyUsageType]
-    val CERTIFICATE_TRANSPARENCY = "CERTIFICATE_TRANSPARENCY".asInstanceOf[ExtendedKeyUsageType]
-
-    @inline def values = js.Array(SERVER_AUTH, CLIENT_AUTH, CODE_SIGNING, EMAIL_PROTECTION, TIME_STAMPING, OCSP_SIGNING, SMART_CARD_LOGIN, DOCUMENT_SIGNING, CERTIFICATE_TRANSPARENCY)
-  }
-
   /** Contains X.509 extension information for a certificate.
     */
   @js.native
@@ -774,16 +696,6 @@ package object acmpca {
       SubjectAlternativeNames.foreach(__v => __obj.updateDynamic("SubjectAlternativeNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Extensions]
     }
-  }
-
-  @js.native
-  sealed trait FailureReason extends js.Any
-  object FailureReason {
-    val REQUEST_TIMED_OUT = "REQUEST_TIMED_OUT".asInstanceOf[FailureReason]
-    val UNSUPPORTED_ALGORITHM = "UNSUPPORTED_ALGORITHM".asInstanceOf[FailureReason]
-    val OTHER = "OTHER".asInstanceOf[FailureReason]
-
-    @inline def values = js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER)
   }
 
   /** Describes an ASN.1 X.400 <code>GeneralName</code> as defined in [[https://tools.ietf.org/html/rfc5280|RFC 5280]]. Only one of the following naming options should be provided. Providing more than one option results in an <code>InvalidArgsException</code> error.
@@ -1045,17 +957,6 @@ package object acmpca {
     }
   }
 
-  @js.native
-  sealed trait KeyAlgorithm extends js.Any
-  object KeyAlgorithm {
-    val RSA_2048 = "RSA_2048".asInstanceOf[KeyAlgorithm]
-    val RSA_4096 = "RSA_4096".asInstanceOf[KeyAlgorithm]
-    val EC_prime256v1 = "EC_prime256v1".asInstanceOf[KeyAlgorithm]
-    val EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
-
-    @inline def values = js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1)
-  }
-
   /** Defines one or more purposes for which the key contained in the certificate can be used. Default value for each option is false.
     */
   @js.native
@@ -1303,14 +1204,6 @@ package object acmpca {
     }
   }
 
-  @js.native
-  sealed trait PolicyQualifierId extends js.Any
-  object PolicyQualifierId {
-    val CPS = "CPS".asInstanceOf[PolicyQualifierId]
-
-    @inline def values = js.Array(CPS)
-  }
-
   /** Modifies the <code>CertPolicyId</code> of a <code>PolicyInformation</code> object with a qualifier. ACM Private CA supports the certification practice statement (CPS) qualifier.
     */
   @js.native
@@ -1373,15 +1266,6 @@ package object acmpca {
   }
 
   @js.native
-  sealed trait ResourceOwner extends js.Any
-  object ResourceOwner {
-    val SELF = "SELF".asInstanceOf[ResourceOwner]
-    val OTHER_ACCOUNTS = "OTHER_ACCOUNTS".asInstanceOf[ResourceOwner]
-
-    @inline def values = js.Array(SELF, OTHER_ACCOUNTS)
-  }
-
-  @js.native
   trait RestoreCertificateAuthorityRequest extends js.Object {
     var CertificateAuthorityArn: Arn
   }
@@ -1417,21 +1301,6 @@ package object acmpca {
   }
 
   @js.native
-  sealed trait RevocationReason extends js.Any
-  object RevocationReason {
-    val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[RevocationReason]
-    val KEY_COMPROMISE = "KEY_COMPROMISE".asInstanceOf[RevocationReason]
-    val CERTIFICATE_AUTHORITY_COMPROMISE = "CERTIFICATE_AUTHORITY_COMPROMISE".asInstanceOf[RevocationReason]
-    val AFFILIATION_CHANGED = "AFFILIATION_CHANGED".asInstanceOf[RevocationReason]
-    val SUPERSEDED = "SUPERSEDED".asInstanceOf[RevocationReason]
-    val CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION".asInstanceOf[RevocationReason]
-    val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
-    val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
-
-    @inline def values = js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE)
-  }
-
-  @js.native
   trait RevokeCertificateRequest extends js.Object {
     var CertificateAuthorityArn: Arn
     var CertificateSerial: String128
@@ -1452,19 +1321,6 @@ package object acmpca {
       )
       __obj.asInstanceOf[RevokeCertificateRequest]
     }
-  }
-
-  @js.native
-  sealed trait SigningAlgorithm extends js.Any
-  object SigningAlgorithm {
-    val SHA256WITHECDSA = "SHA256WITHECDSA".asInstanceOf[SigningAlgorithm]
-    val SHA384WITHECDSA = "SHA384WITHECDSA".asInstanceOf[SigningAlgorithm]
-    val SHA512WITHECDSA = "SHA512WITHECDSA".asInstanceOf[SigningAlgorithm]
-    val SHA256WITHRSA = "SHA256WITHRSA".asInstanceOf[SigningAlgorithm]
-    val SHA384WITHRSA = "SHA384WITHRSA".asInstanceOf[SigningAlgorithm]
-    val SHA512WITHRSA = "SHA512WITHRSA".asInstanceOf[SigningAlgorithm]
-
-    @inline def values = js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
   }
 
   /** Tags are labels that you can use to identify and organize your private CAs. Each tag consists of a key and an optional value. You can associate up to 50 tags with a private CA. To add one or more tags to a private CA, call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_TagCertificateAuthority.html|TagCertificateAuthority]] action. To remove a tag, call the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UntagCertificateAuthority.html|UntagCertificateAuthority]] action.
@@ -1574,17 +1430,5 @@ package object acmpca {
       )
       __obj.asInstanceOf[Validity]
     }
-  }
-
-  @js.native
-  sealed trait ValidityPeriodType extends js.Any
-  object ValidityPeriodType {
-    val END_DATE = "END_DATE".asInstanceOf[ValidityPeriodType]
-    val ABSOLUTE = "ABSOLUTE".asInstanceOf[ValidityPeriodType]
-    val DAYS = "DAYS".asInstanceOf[ValidityPeriodType]
-    val MONTHS = "MONTHS".asInstanceOf[ValidityPeriodType]
-    val YEARS = "YEARS".asInstanceOf[ValidityPeriodType]
-
-    @inline def values = js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS)
   }
 }

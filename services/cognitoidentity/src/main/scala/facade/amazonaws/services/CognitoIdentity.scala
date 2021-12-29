@@ -120,15 +120,6 @@ package object cognitoidentity {
     }
   }
 
-  @js.native
-  sealed trait AmbiguousRoleResolutionType extends js.Any
-  object AmbiguousRoleResolutionType {
-    val AuthenticatedRole = "AuthenticatedRole".asInstanceOf[AmbiguousRoleResolutionType]
-    val Deny = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
-
-    @inline def values = js.Array(AuthenticatedRole, Deny)
-  }
-
   /** A provider representing an Amazon Cognito user pool and its client ID.
     */
   @js.native
@@ -316,15 +307,6 @@ package object cognitoidentity {
       )
       __obj.asInstanceOf[DescribeIdentityPoolInput]
     }
-  }
-
-  @js.native
-  sealed trait ErrorCode extends js.Any
-  object ErrorCode {
-    val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
-    val InternalServerError = "InternalServerError".asInstanceOf[ErrorCode]
-
-    @inline def values = js.Array(AccessDenied, InternalServerError)
   }
 
   /** Input to the <code>GetCredentialsForIdentity</code> action.
@@ -912,17 +894,6 @@ package object cognitoidentity {
     }
   }
 
-  @js.native
-  sealed trait MappingRuleMatchType extends js.Any
-  object MappingRuleMatchType {
-    val Equals = "Equals".asInstanceOf[MappingRuleMatchType]
-    val Contains = "Contains".asInstanceOf[MappingRuleMatchType]
-    val StartsWith = "StartsWith".asInstanceOf[MappingRuleMatchType]
-    val NotEqual = "NotEqual".asInstanceOf[MappingRuleMatchType]
-
-    @inline def values = js.Array(Equals, Contains, StartsWith, NotEqual)
-  }
-
   /** Input to the <code>MergeDeveloperIdentities</code> action.
     */
   @js.native
@@ -993,15 +964,6 @@ package object cognitoidentity {
       RulesConfiguration.foreach(__v => __obj.updateDynamic("RulesConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RoleMapping]
     }
-  }
-
-  @js.native
-  sealed trait RoleMappingType extends js.Any
-  object RoleMappingType {
-    val Token = "Token".asInstanceOf[RoleMappingType]
-    val Rules = "Rules".asInstanceOf[RoleMappingType]
-
-    @inline def values = js.Array(Token, Rules)
   }
 
   /** A container for rules.

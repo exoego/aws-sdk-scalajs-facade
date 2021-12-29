@@ -1,0 +1,279 @@
+package facade.amazonaws.services.sesv2
+
+import scalajs._
+import scala.scalajs.js.|
+
+/** The action that you want to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email. These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
+  */
+@js.native
+sealed trait BehaviorOnMxFailure extends js.Any
+object BehaviorOnMxFailure {
+  val USE_DEFAULT_VALUE = "USE_DEFAULT_VALUE".asInstanceOf[BehaviorOnMxFailure]
+  val REJECT_MESSAGE = "REJECT_MESSAGE".asInstanceOf[BehaviorOnMxFailure]
+
+  @inline def values = js.Array(USE_DEFAULT_VALUE, REJECT_MESSAGE)
+}
+
+@js.native
+sealed trait BulkEmailStatus extends js.Any
+object BulkEmailStatus {
+  val SUCCESS = "SUCCESS".asInstanceOf[BulkEmailStatus]
+  val MESSAGE_REJECTED = "MESSAGE_REJECTED".asInstanceOf[BulkEmailStatus]
+  val MAIL_FROM_DOMAIN_NOT_VERIFIED = "MAIL_FROM_DOMAIN_NOT_VERIFIED".asInstanceOf[BulkEmailStatus]
+  val CONFIGURATION_SET_NOT_FOUND = "CONFIGURATION_SET_NOT_FOUND".asInstanceOf[BulkEmailStatus]
+  val TEMPLATE_NOT_FOUND = "TEMPLATE_NOT_FOUND".asInstanceOf[BulkEmailStatus]
+  val ACCOUNT_SUSPENDED = "ACCOUNT_SUSPENDED".asInstanceOf[BulkEmailStatus]
+  val ACCOUNT_THROTTLED = "ACCOUNT_THROTTLED".asInstanceOf[BulkEmailStatus]
+  val ACCOUNT_DAILY_QUOTA_EXCEEDED = "ACCOUNT_DAILY_QUOTA_EXCEEDED".asInstanceOf[BulkEmailStatus]
+  val INVALID_SENDING_POOL_NAME = "INVALID_SENDING_POOL_NAME".asInstanceOf[BulkEmailStatus]
+  val ACCOUNT_SENDING_PAUSED = "ACCOUNT_SENDING_PAUSED".asInstanceOf[BulkEmailStatus]
+  val CONFIGURATION_SET_SENDING_PAUSED = "CONFIGURATION_SET_SENDING_PAUSED".asInstanceOf[BulkEmailStatus]
+  val INVALID_PARAMETER = "INVALID_PARAMETER".asInstanceOf[BulkEmailStatus]
+  val TRANSIENT_FAILURE = "TRANSIENT_FAILURE".asInstanceOf[BulkEmailStatus]
+  val FAILED = "FAILED".asInstanceOf[BulkEmailStatus]
+
+  @inline def values = js.Array(
+    SUCCESS,
+    MESSAGE_REJECTED,
+    MAIL_FROM_DOMAIN_NOT_VERIFIED,
+    CONFIGURATION_SET_NOT_FOUND,
+    TEMPLATE_NOT_FOUND,
+    ACCOUNT_SUSPENDED,
+    ACCOUNT_THROTTLED,
+    ACCOUNT_DAILY_QUOTA_EXCEEDED,
+    INVALID_SENDING_POOL_NAME,
+    ACCOUNT_SENDING_PAUSED,
+    CONFIGURATION_SET_SENDING_PAUSED,
+    INVALID_PARAMETER,
+    TRANSIENT_FAILURE,
+    FAILED
+  )
+}
+
+@js.native
+sealed trait ContactLanguage extends js.Any
+object ContactLanguage {
+  val EN = "EN".asInstanceOf[ContactLanguage]
+  val JA = "JA".asInstanceOf[ContactLanguage]
+
+  @inline def values = js.Array(EN, JA)
+}
+
+@js.native
+sealed trait ContactListImportAction extends js.Any
+object ContactListImportAction {
+  val DELETE = "DELETE".asInstanceOf[ContactListImportAction]
+  val PUT = "PUT".asInstanceOf[ContactListImportAction]
+
+  @inline def values = js.Array(DELETE, PUT)
+}
+
+/** The data format of the import job's data source.
+  */
+@js.native
+sealed trait DataFormat extends js.Any
+object DataFormat {
+  val CSV = "CSV".asInstanceOf[DataFormat]
+  val JSON = "JSON".asInstanceOf[DataFormat]
+
+  @inline def values = js.Array(CSV, JSON)
+}
+
+/** The current status of your Deliverability dashboard subscription. If this value is <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end of the current calendar month.
+  */
+@js.native
+sealed trait DeliverabilityDashboardAccountStatus extends js.Any
+object DeliverabilityDashboardAccountStatus {
+  val ACTIVE = "ACTIVE".asInstanceOf[DeliverabilityDashboardAccountStatus]
+  val PENDING_EXPIRATION = "PENDING_EXPIRATION".asInstanceOf[DeliverabilityDashboardAccountStatus]
+  val DISABLED = "DISABLED".asInstanceOf[DeliverabilityDashboardAccountStatus]
+
+  @inline def values = js.Array(ACTIVE, PENDING_EXPIRATION, DISABLED)
+}
+
+/** The status of a predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.
+  */
+@js.native
+sealed trait DeliverabilityTestStatus extends js.Any
+object DeliverabilityTestStatus {
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeliverabilityTestStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[DeliverabilityTestStatus]
+
+  @inline def values = js.Array(IN_PROGRESS, COMPLETED)
+}
+
+/** The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. If you want to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want to use your own email headers, choose <code>emailHeader</code>. If you want to use link tags, choose <code>linkTags</code>.
+  */
+@js.native
+sealed trait DimensionValueSource extends js.Any
+object DimensionValueSource {
+  val MESSAGE_TAG = "MESSAGE_TAG".asInstanceOf[DimensionValueSource]
+  val EMAIL_HEADER = "EMAIL_HEADER".asInstanceOf[DimensionValueSource]
+  val LINK_TAG = "LINK_TAG".asInstanceOf[DimensionValueSource]
+
+  @inline def values = js.Array(MESSAGE_TAG, EMAIL_HEADER, LINK_TAG)
+}
+
+@js.native
+sealed trait DkimSigningAttributesOrigin extends js.Any
+object DkimSigningAttributesOrigin {
+  val AWS_SES = "AWS_SES".asInstanceOf[DkimSigningAttributesOrigin]
+  val EXTERNAL = "EXTERNAL".asInstanceOf[DkimSigningAttributesOrigin]
+
+  @inline def values = js.Array(AWS_SES, EXTERNAL)
+}
+
+/** The DKIM authentication status of the identity. The status can be one of the following: * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain. * <code>SUCCESS</code> – The verification process completed successfully. * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain. * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain. * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
+  */
+@js.native
+sealed trait DkimStatus extends js.Any
+object DkimStatus {
+  val PENDING = "PENDING".asInstanceOf[DkimStatus]
+  val SUCCESS = "SUCCESS".asInstanceOf[DkimStatus]
+  val FAILED = "FAILED".asInstanceOf[DkimStatus]
+  val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[DkimStatus]
+  val NOT_STARTED = "NOT_STARTED".asInstanceOf[DkimStatus]
+
+  @inline def values = js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE, NOT_STARTED)
+}
+
+/** An email sending event type. For example, email sends, opens, and bounces are all email events.
+  */
+@js.native
+sealed trait EventType extends js.Any
+object EventType {
+  val SEND = "SEND".asInstanceOf[EventType]
+  val REJECT = "REJECT".asInstanceOf[EventType]
+  val BOUNCE = "BOUNCE".asInstanceOf[EventType]
+  val COMPLAINT = "COMPLAINT".asInstanceOf[EventType]
+  val DELIVERY = "DELIVERY".asInstanceOf[EventType]
+  val OPEN = "OPEN".asInstanceOf[EventType]
+  val CLICK = "CLICK".asInstanceOf[EventType]
+  val RENDERING_FAILURE = "RENDERING_FAILURE".asInstanceOf[EventType]
+  val DELIVERY_DELAY = "DELIVERY_DELAY".asInstanceOf[EventType]
+  val SUBSCRIPTION = "SUBSCRIPTION".asInstanceOf[EventType]
+
+  @inline def values = js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE, DELIVERY_DELAY, SUBSCRIPTION)
+}
+
+/** The email identity type. The identity type can be one of the following: * <code>EMAIL_ADDRESS</code> – The identity is an email address. * <code>DOMAIN</code> – The identity is a domain.
+  */
+@js.native
+sealed trait IdentityType extends js.Any
+object IdentityType {
+  val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[IdentityType]
+  val DOMAIN = "DOMAIN".asInstanceOf[IdentityType]
+  val MANAGED_DOMAIN = "MANAGED_DOMAIN".asInstanceOf[IdentityType]
+
+  @inline def values = js.Array(EMAIL_ADDRESS, DOMAIN, MANAGED_DOMAIN)
+}
+
+/** The destination of the import job, which can be used to list import jobs that have a certain <code>ImportDestinationType</code>.
+  */
+@js.native
+sealed trait ImportDestinationType extends js.Any
+object ImportDestinationType {
+  val SUPPRESSION_LIST = "SUPPRESSION_LIST".asInstanceOf[ImportDestinationType]
+  val CONTACT_LIST = "CONTACT_LIST".asInstanceOf[ImportDestinationType]
+
+  @inline def values = js.Array(SUPPRESSION_LIST, CONTACT_LIST)
+}
+
+/** The status of the import job.
+  */
+@js.native
+sealed trait JobStatus extends js.Any
+object JobStatus {
+  val CREATED = "CREATED".asInstanceOf[JobStatus]
+  val PROCESSING = "PROCESSING".asInstanceOf[JobStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
+  val FAILED = "FAILED".asInstanceOf[JobStatus]
+
+  @inline def values = js.Array(CREATED, PROCESSING, COMPLETED, FAILED)
+}
+
+/** The status of the MAIL FROM domain. This status can have the following values: * <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet. * <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain. * <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists. * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.
+  */
+@js.native
+sealed trait MailFromDomainStatus extends js.Any
+object MailFromDomainStatus {
+  val PENDING = "PENDING".asInstanceOf[MailFromDomainStatus]
+  val SUCCESS = "SUCCESS".asInstanceOf[MailFromDomainStatus]
+  val FAILED = "FAILED".asInstanceOf[MailFromDomainStatus]
+  val TEMPORARY_FAILURE = "TEMPORARY_FAILURE".asInstanceOf[MailFromDomainStatus]
+
+  @inline def values = js.Array(PENDING, SUCCESS, FAILED, TEMPORARY_FAILURE)
+}
+
+@js.native
+sealed trait MailType extends js.Any
+object MailType {
+  val MARKETING = "MARKETING".asInstanceOf[MailType]
+  val TRANSACTIONAL = "TRANSACTIONAL".asInstanceOf[MailType]
+
+  @inline def values = js.Array(MARKETING, TRANSACTIONAL)
+}
+
+@js.native
+sealed trait ReviewStatus extends js.Any
+object ReviewStatus {
+  val PENDING = "PENDING".asInstanceOf[ReviewStatus]
+  val FAILED = "FAILED".asInstanceOf[ReviewStatus]
+  val GRANTED = "GRANTED".asInstanceOf[ReviewStatus]
+  val DENIED = "DENIED".asInstanceOf[ReviewStatus]
+
+  @inline def values = js.Array(PENDING, FAILED, GRANTED, DENIED)
+}
+
+@js.native
+sealed trait SubscriptionStatus extends js.Any
+object SubscriptionStatus {
+  val OPT_IN = "OPT_IN".asInstanceOf[SubscriptionStatus]
+  val OPT_OUT = "OPT_OUT".asInstanceOf[SubscriptionStatus]
+
+  @inline def values = js.Array(OPT_IN, OPT_OUT)
+}
+
+/** The type of action that you want to perform on the address. Acceptable values: * PUT: add the addresses to the suppression list. * DELETE: remove the address from the suppression list.
+  */
+@js.native
+sealed trait SuppressionListImportAction extends js.Any
+object SuppressionListImportAction {
+  val DELETE = "DELETE".asInstanceOf[SuppressionListImportAction]
+  val PUT = "PUT".asInstanceOf[SuppressionListImportAction]
+
+  @inline def values = js.Array(DELETE, PUT)
+}
+
+/** The reason that the address was added to the suppression list for your account. The value can be one of the following: * <code>COMPLAINT</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a complaint. * <code>BOUNCE</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a hard bounce.
+  */
+@js.native
+sealed trait SuppressionListReason extends js.Any
+object SuppressionListReason {
+  val BOUNCE = "BOUNCE".asInstanceOf[SuppressionListReason]
+  val COMPLAINT = "COMPLAINT".asInstanceOf[SuppressionListReason]
+
+  @inline def values = js.Array(BOUNCE, COMPLAINT)
+}
+
+/** Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered if a TLS connection can be established. If the value is <code>Optional</code>, messages can be delivered in plain text if a TLS connection can't be established.
+  */
+@js.native
+sealed trait TlsPolicy extends js.Any
+object TlsPolicy {
+  val REQUIRE = "REQUIRE".asInstanceOf[TlsPolicy]
+  val OPTIONAL = "OPTIONAL".asInstanceOf[TlsPolicy]
+
+  @inline def values = js.Array(REQUIRE, OPTIONAL)
+}
+
+/** The warmup status of a dedicated IP.
+  */
+@js.native
+sealed trait WarmupStatus extends js.Any
+object WarmupStatus {
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WarmupStatus]
+  val DONE = "DONE".asInstanceOf[WarmupStatus]
+
+  @inline def values = js.Array(IN_PROGRESS, DONE)
+}

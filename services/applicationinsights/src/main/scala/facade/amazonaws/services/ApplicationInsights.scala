@@ -236,17 +236,6 @@ package object applicationinsights {
     }
   }
 
-  @js.native
-  sealed trait CloudWatchEventSource extends js.Any
-  object CloudWatchEventSource {
-    val EC2 = "EC2".asInstanceOf[CloudWatchEventSource]
-    val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[CloudWatchEventSource]
-    val HEALTH = "HEALTH".asInstanceOf[CloudWatchEventSource]
-    val RDS = "RDS".asInstanceOf[CloudWatchEventSource]
-
-    @inline def values = js.Array(EC2, CODE_DEPLOY, HEALTH, RDS)
-  }
-
   /** The event information.
     */
   @js.native
@@ -278,27 +267,6 @@ package object applicationinsights {
       MonitoredResourceARN.foreach(__v => __obj.updateDynamic("MonitoredResourceARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationEvent]
     }
-  }
-
-  @js.native
-  sealed trait ConfigurationEventResourceType extends js.Any
-  object ConfigurationEventResourceType {
-    val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[ConfigurationEventResourceType]
-    val CLOUDWATCH_LOG = "CLOUDWATCH_LOG".asInstanceOf[ConfigurationEventResourceType]
-    val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
-    val SSM_ASSOCIATION = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
-
-    @inline def values = js.Array(CLOUDWATCH_ALARM, CLOUDWATCH_LOG, CLOUDFORMATION, SSM_ASSOCIATION)
-  }
-
-  @js.native
-  sealed trait ConfigurationEventStatus extends js.Any
-  object ConfigurationEventStatus {
-    val INFO = "INFO".asInstanceOf[ConfigurationEventStatus]
-    val WARN = "WARN".asInstanceOf[ConfigurationEventStatus]
-    val ERROR = "ERROR".asInstanceOf[ConfigurationEventStatus]
-
-    @inline def values = js.Array(INFO, WARN, ERROR)
   }
 
   @js.native
@@ -817,24 +785,6 @@ package object applicationinsights {
   }
 
   @js.native
-  sealed trait FeedbackKey extends js.Any
-  object FeedbackKey {
-    val INSIGHTS_FEEDBACK = "INSIGHTS_FEEDBACK".asInstanceOf[FeedbackKey]
-
-    @inline def values = js.Array(INSIGHTS_FEEDBACK)
-  }
-
-  @js.native
-  sealed trait FeedbackValue extends js.Any
-  object FeedbackValue {
-    val NOT_SPECIFIED = "NOT_SPECIFIED".asInstanceOf[FeedbackValue]
-    val USEFUL = "USEFUL".asInstanceOf[FeedbackValue]
-    val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[FeedbackValue]
-
-    @inline def values = js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL)
-  }
-
-  @js.native
   trait ListApplicationsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxEntities]
     var NextToken: js.UndefOr[PaginationToken]
@@ -1140,16 +1090,6 @@ package object applicationinsights {
     }
   }
 
-  @js.native
-  sealed trait LogFilter extends js.Any
-  object LogFilter {
-    val ERROR = "ERROR".asInstanceOf[LogFilter]
-    val WARN = "WARN".asInstanceOf[LogFilter]
-    val INFO = "INFO".asInstanceOf[LogFilter]
-
-    @inline def values = js.Array(ERROR, WARN, INFO)
-  }
-
   /** An object that defines the log patterns that belongs to a <code>LogPatternSet</code>.
     */
   @js.native
@@ -1327,15 +1267,6 @@ package object applicationinsights {
     }
   }
 
-  @js.native
-  sealed trait OsType extends js.Any
-  object OsType {
-    val WINDOWS = "WINDOWS".asInstanceOf[OsType]
-    val LINUX = "LINUX".asInstanceOf[OsType]
-
-    @inline def values = js.Array(WINDOWS, LINUX)
-  }
-
   /** Describes a problem that is detected by correlating observations.
     */
   @js.native
@@ -1399,26 +1330,6 @@ package object applicationinsights {
     }
   }
 
-  @js.native
-  sealed trait SeverityLevel extends js.Any
-  object SeverityLevel {
-    val Low = "Low".asInstanceOf[SeverityLevel]
-    val Medium = "Medium".asInstanceOf[SeverityLevel]
-    val High = "High".asInstanceOf[SeverityLevel]
-
-    @inline def values = js.Array(Low, Medium, High)
-  }
-
-  @js.native
-  sealed trait Status extends js.Any
-  object Status {
-    val IGNORE = "IGNORE".asInstanceOf[Status]
-    val RESOLVED = "RESOLVED".asInstanceOf[Status]
-    val PENDING = "PENDING".asInstanceOf[Status]
-
-    @inline def values = js.Array(IGNORE, RESOLVED, PENDING)
-  }
-
   /** An object that defines the tags associated with an application. A <i>tag</i> is a label that you optionally define and associate with an application. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags: * Tag keys and values are case sensitive. * For each associated resource, each tag key must be unique and it can have only one value. * The <code>aws:</code> prefix is reserved for use by AWS; you can’t use it
     * in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix.
     */
@@ -1471,38 +1382,6 @@ package object applicationinsights {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
     }
-  }
-
-  @js.native
-  sealed trait Tier extends js.Any
-  object Tier {
-    val CUSTOM = "CUSTOM".asInstanceOf[Tier]
-    val DEFAULT = "DEFAULT".asInstanceOf[Tier]
-    val DOT_NET_CORE = "DOT_NET_CORE".asInstanceOf[Tier]
-    val DOT_NET_WORKER = "DOT_NET_WORKER".asInstanceOf[Tier]
-    val DOT_NET_WEB_TIER = "DOT_NET_WEB_TIER".asInstanceOf[Tier]
-    val DOT_NET_WEB = "DOT_NET_WEB".asInstanceOf[Tier]
-    val SQL_SERVER = "SQL_SERVER".asInstanceOf[Tier]
-    val SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP = "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP".asInstanceOf[Tier]
-    val MYSQL = "MYSQL".asInstanceOf[Tier]
-    val POSTGRESQL = "POSTGRESQL".asInstanceOf[Tier]
-    val JAVA_JMX = "JAVA_JMX".asInstanceOf[Tier]
-    val ORACLE = "ORACLE".asInstanceOf[Tier]
-
-    @inline def values = js.Array(
-      CUSTOM,
-      DEFAULT,
-      DOT_NET_CORE,
-      DOT_NET_WORKER,
-      DOT_NET_WEB_TIER,
-      DOT_NET_WEB,
-      SQL_SERVER,
-      SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP,
-      MYSQL,
-      POSTGRESQL,
-      JAVA_JMX,
-      ORACLE
-    )
   }
 
   @js.native

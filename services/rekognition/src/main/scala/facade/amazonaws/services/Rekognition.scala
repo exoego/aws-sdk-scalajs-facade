@@ -270,15 +270,6 @@ package object rekognition {
     }
   }
 
-  @js.native
-  sealed trait Attribute extends js.Any
-  object Attribute {
-    val DEFAULT = "DEFAULT".asInstanceOf[Attribute]
-    val ALL = "ALL".asInstanceOf[Attribute]
-
-    @inline def values = js.Array(DEFAULT, ALL)
-  }
-
   /** Metadata information about an audio stream. An array of <code>AudioMetadata</code> objects for the audio streams found in a stored video is returned by <a>GetSegmentDetection</a>.
     */
   @js.native
@@ -325,17 +316,6 @@ package object rekognition {
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Beard]
     }
-  }
-
-  @js.native
-  sealed trait BodyPart extends js.Any
-  object BodyPart {
-    val FACE = "FACE".asInstanceOf[BodyPart]
-    val HEAD = "HEAD".asInstanceOf[BodyPart]
-    val LEFT_HAND = "LEFT_HAND".asInstanceOf[BodyPart]
-    val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[BodyPart]
-
-    @inline def values = js.Array(FACE, HEAD, LEFT_HAND, RIGHT_HAND)
   }
 
   /** Identifies the bounding box around the label, face, text or personal protective equipment. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200). The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
@@ -449,15 +429,6 @@ package object rekognition {
       Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CelebrityRecognition]
     }
-  }
-
-  @js.native
-  sealed trait CelebrityRecognitionSortBy extends js.Any
-  object CelebrityRecognitionSortBy {
-    val ID = "ID".asInstanceOf[CelebrityRecognitionSortBy]
-    val TIMESTAMP = "TIMESTAMP".asInstanceOf[CelebrityRecognitionSortBy]
-
-    @inline def values = js.Array(ID, TIMESTAMP)
   }
 
   /** Provides information about a face in a target image that matches the source image face analyzed by <code>CompareFaces</code>. The <code>Face</code> property contains the bounding box of the face in the target image. The <code>Similarity</code> property is the confidence that the source image face matches the face in the bounding box.
@@ -587,15 +558,6 @@ package object rekognition {
     }
   }
 
-  @js.native
-  sealed trait ContentClassifier extends js.Any
-  object ContentClassifier {
-    val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
-    val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
-
-    @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
-  }
-
   /** Information about an unsafe content label detection in a stored video.
     */
   @js.native
@@ -615,15 +577,6 @@ package object rekognition {
       Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContentModerationDetection]
     }
-  }
-
-  @js.native
-  sealed trait ContentModerationSortBy extends js.Any
-  object ContentModerationSortBy {
-    val NAME = "NAME".asInstanceOf[ContentModerationSortBy]
-    val TIMESTAMP = "TIMESTAMP".asInstanceOf[ContentModerationSortBy]
-
-    @inline def values = js.Array(NAME, TIMESTAMP)
   }
 
   /** Information about an item of Personal Protective Equipment covering a corresponding body part. For more information, see <a>DetectProtectiveEquipment</a>.
@@ -1518,22 +1471,6 @@ package object rekognition {
     }
   }
 
-  @js.native
-  sealed trait EmotionName extends js.Any
-  object EmotionName {
-    val HAPPY = "HAPPY".asInstanceOf[EmotionName]
-    val SAD = "SAD".asInstanceOf[EmotionName]
-    val ANGRY = "ANGRY".asInstanceOf[EmotionName]
-    val CONFUSED = "CONFUSED".asInstanceOf[EmotionName]
-    val DISGUSTED = "DISGUSTED".asInstanceOf[EmotionName]
-    val SURPRISED = "SURPRISED".asInstanceOf[EmotionName]
-    val CALM = "CALM".asInstanceOf[EmotionName]
-    val UNKNOWN = "UNKNOWN".asInstanceOf[EmotionName]
-    val FEAR = "FEAR".asInstanceOf[EmotionName]
-
-    @inline def values = js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR)
-  }
-
   /** Information about an item of Personal Protective Equipment (PPE) detected by <a>DetectProtectiveEquipment</a>. For more information, see <a>DetectProtectiveEquipment</a>.
     */
   @js.native
@@ -1652,15 +1589,6 @@ package object rekognition {
       ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Face]
     }
-  }
-
-  @js.native
-  sealed trait FaceAttributes extends js.Any
-  object FaceAttributes {
-    val DEFAULT = "DEFAULT".asInstanceOf[FaceAttributes]
-    val ALL = "ALL".asInstanceOf[FaceAttributes]
-
-    @inline def values = js.Array(DEFAULT, ALL)
   }
 
   /** Structure containing attributes of the face that the algorithm detected. A <code>FaceDetail</code> object contains either the default facial attributes or all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>. <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation that can return a <code>FaceDetail</code> object with all attributes. To specify which attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations return only the default attributes. The corresponding Start operations don't have a <code>FaceAttributes</code> input parameter. * GetCelebrityRecognition * GetPersonTracking * GetFaceSearch The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial attributes. To specify which attributes to
@@ -1808,15 +1736,6 @@ package object rekognition {
     }
   }
 
-  @js.native
-  sealed trait FaceSearchSortBy extends js.Any
-  object FaceSearchSortBy {
-    val INDEX = "INDEX".asInstanceOf[FaceSearchSortBy]
-    val TIMESTAMP = "TIMESTAMP".asInstanceOf[FaceSearchSortBy]
-
-    @inline def values = js.Array(INDEX, TIMESTAMP)
-  }
-
   /** The predicted gender of a detected face. Amazon Rekognition makes gender binary (male/female) predictions based on the physical appearance of a face in a particular image. This kind of prediction is not designed to categorize a person’s gender identity, and you shouldn't use Amazon Rekognition to make such a determination. For example, a male actor wearing a long-haired wig and earrings for a role might be predicted as female. Using Amazon Rekognition to make gender binary predictions is best suited for use cases where aggregate gender distribution statistics need to be analyzed without identifying specific users. For example, the percentage of female users compared to male users on a social media platform. We don't recommend using gender binary predictions to make decisions that impact&#x2028; an individual's rights, privacy, or access to services.
     */
   @js.native
@@ -1836,15 +1755,6 @@ package object rekognition {
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Gender]
     }
-  }
-
-  @js.native
-  sealed trait GenderType extends js.Any
-  object GenderType {
-    val Male = "Male".asInstanceOf[GenderType]
-    val Female = "Female".asInstanceOf[GenderType]
-
-    @inline def values = js.Array(Male, Female)
   }
 
   /** Information about where an object (<a>DetectCustomLabels</a>) or text (<a>DetectText</a>) is located on an image.
@@ -2642,15 +2552,6 @@ package object rekognition {
     }
   }
 
-  @js.native
-  sealed trait LabelDetectionSortBy extends js.Any
-  object LabelDetectionSortBy {
-    val NAME = "NAME".asInstanceOf[LabelDetectionSortBy]
-    val TIMESTAMP = "TIMESTAMP".asInstanceOf[LabelDetectionSortBy]
-
-    @inline def values = js.Array(NAME, TIMESTAMP)
-  }
-
   /** Indicates the location of the landmark on the face.
     */
   @js.native
@@ -2673,74 +2574,6 @@ package object rekognition {
       Y.foreach(__v => __obj.updateDynamic("Y")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Landmark]
     }
-  }
-
-  @js.native
-  sealed trait LandmarkType extends js.Any
-  object LandmarkType {
-    val eyeLeft = "eyeLeft".asInstanceOf[LandmarkType]
-    val eyeRight = "eyeRight".asInstanceOf[LandmarkType]
-    val nose = "nose".asInstanceOf[LandmarkType]
-    val mouthLeft = "mouthLeft".asInstanceOf[LandmarkType]
-    val mouthRight = "mouthRight".asInstanceOf[LandmarkType]
-    val leftEyeBrowLeft = "leftEyeBrowLeft".asInstanceOf[LandmarkType]
-    val leftEyeBrowRight = "leftEyeBrowRight".asInstanceOf[LandmarkType]
-    val leftEyeBrowUp = "leftEyeBrowUp".asInstanceOf[LandmarkType]
-    val rightEyeBrowLeft = "rightEyeBrowLeft".asInstanceOf[LandmarkType]
-    val rightEyeBrowRight = "rightEyeBrowRight".asInstanceOf[LandmarkType]
-    val rightEyeBrowUp = "rightEyeBrowUp".asInstanceOf[LandmarkType]
-    val leftEyeLeft = "leftEyeLeft".asInstanceOf[LandmarkType]
-    val leftEyeRight = "leftEyeRight".asInstanceOf[LandmarkType]
-    val leftEyeUp = "leftEyeUp".asInstanceOf[LandmarkType]
-    val leftEyeDown = "leftEyeDown".asInstanceOf[LandmarkType]
-    val rightEyeLeft = "rightEyeLeft".asInstanceOf[LandmarkType]
-    val rightEyeRight = "rightEyeRight".asInstanceOf[LandmarkType]
-    val rightEyeUp = "rightEyeUp".asInstanceOf[LandmarkType]
-    val rightEyeDown = "rightEyeDown".asInstanceOf[LandmarkType]
-    val noseLeft = "noseLeft".asInstanceOf[LandmarkType]
-    val noseRight = "noseRight".asInstanceOf[LandmarkType]
-    val mouthUp = "mouthUp".asInstanceOf[LandmarkType]
-    val mouthDown = "mouthDown".asInstanceOf[LandmarkType]
-    val leftPupil = "leftPupil".asInstanceOf[LandmarkType]
-    val rightPupil = "rightPupil".asInstanceOf[LandmarkType]
-    val upperJawlineLeft = "upperJawlineLeft".asInstanceOf[LandmarkType]
-    val midJawlineLeft = "midJawlineLeft".asInstanceOf[LandmarkType]
-    val chinBottom = "chinBottom".asInstanceOf[LandmarkType]
-    val midJawlineRight = "midJawlineRight".asInstanceOf[LandmarkType]
-    val upperJawlineRight = "upperJawlineRight".asInstanceOf[LandmarkType]
-
-    @inline def values = js.Array(
-      eyeLeft,
-      eyeRight,
-      nose,
-      mouthLeft,
-      mouthRight,
-      leftEyeBrowLeft,
-      leftEyeBrowRight,
-      leftEyeBrowUp,
-      rightEyeBrowLeft,
-      rightEyeBrowRight,
-      rightEyeBrowUp,
-      leftEyeLeft,
-      leftEyeRight,
-      leftEyeUp,
-      leftEyeDown,
-      rightEyeLeft,
-      rightEyeRight,
-      rightEyeUp,
-      rightEyeDown,
-      noseLeft,
-      noseRight,
-      mouthUp,
-      mouthDown,
-      leftPupil,
-      rightPupil,
-      upperJawlineLeft,
-      midJawlineLeft,
-      chinBottom,
-      midJawlineRight,
-      upperJawlineRight
-    )
   }
 
   @js.native
@@ -2989,17 +2822,6 @@ package object rekognition {
     }
   }
 
-  @js.native
-  sealed trait OrientationCorrection extends js.Any
-  object OrientationCorrection {
-    val ROTATE_0 = "ROTATE_0".asInstanceOf[OrientationCorrection]
-    val ROTATE_90 = "ROTATE_90".asInstanceOf[OrientationCorrection]
-    val ROTATE_180 = "ROTATE_180".asInstanceOf[OrientationCorrection]
-    val ROTATE_270 = "ROTATE_270".asInstanceOf[OrientationCorrection]
-
-    @inline def values = js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270)
-  }
-
   /** The S3 bucket and folder location where training output is placed.
     */
   @js.native
@@ -3108,15 +2930,6 @@ package object rekognition {
     }
   }
 
-  @js.native
-  sealed trait PersonTrackingSortBy extends js.Any
-  object PersonTrackingSortBy {
-    val INDEX = "INDEX".asInstanceOf[PersonTrackingSortBy]
-    val TIMESTAMP = "TIMESTAMP".asInstanceOf[PersonTrackingSortBy]
-
-    @inline def values = js.Array(INDEX, TIMESTAMP)
-  }
-
   /** The X and Y coordinates of a point on an image. The X and Y values returned are ratios of the overall image size. For example, if the input image is 700x200 and the operation returns X=0.5 and Y=0.25, then the point is at the (350,50) pixel coordinate on the image. An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a>. <code>Polygon</code> represents a fine-grained polygon around a detected item. For more information, see Geometry in the Amazon Rekognition Developer Guide.
     */
   @js.native
@@ -3186,16 +2999,6 @@ package object rekognition {
     }
   }
 
-  @js.native
-  sealed trait ProjectStatus extends js.Any
-  object ProjectStatus {
-    val CREATING = "CREATING".asInstanceOf[ProjectStatus]
-    val CREATED = "CREATED".asInstanceOf[ProjectStatus]
-    val DELETING = "DELETING".asInstanceOf[ProjectStatus]
-
-    @inline def values = js.Array(CREATING, CREATED, DELETING)
-  }
-
   /** The description of a version of a model.
     */
   @js.native
@@ -3245,22 +3048,6 @@ package object rekognition {
       TrainingEndTimestamp.foreach(__v => __obj.updateDynamic("TrainingEndTimestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectVersionDescription]
     }
-  }
-
-  @js.native
-  sealed trait ProjectVersionStatus extends js.Any
-  object ProjectVersionStatus {
-    val TRAINING_IN_PROGRESS = "TRAINING_IN_PROGRESS".asInstanceOf[ProjectVersionStatus]
-    val TRAINING_COMPLETED = "TRAINING_COMPLETED".asInstanceOf[ProjectVersionStatus]
-    val TRAINING_FAILED = "TRAINING_FAILED".asInstanceOf[ProjectVersionStatus]
-    val STARTING = "STARTING".asInstanceOf[ProjectVersionStatus]
-    val RUNNING = "RUNNING".asInstanceOf[ProjectVersionStatus]
-    val FAILED = "FAILED".asInstanceOf[ProjectVersionStatus]
-    val STOPPING = "STOPPING".asInstanceOf[ProjectVersionStatus]
-    val STOPPED = "STOPPED".asInstanceOf[ProjectVersionStatus]
-    val DELETING = "DELETING".asInstanceOf[ProjectVersionStatus]
-
-    @inline def values = js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING)
   }
 
   /** Information about a body part detected by <a>DetectProtectiveEquipment</a> that contains PPE. An array of <code>ProtectiveEquipmentBodyPart</code> objects is returned for each person detected by <code>DetectProtectiveEquipment</code>.
@@ -3359,42 +3146,6 @@ package object rekognition {
       PersonsWithoutRequiredEquipment.foreach(__v => __obj.updateDynamic("PersonsWithoutRequiredEquipment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProtectiveEquipmentSummary]
     }
-  }
-
-  @js.native
-  sealed trait ProtectiveEquipmentType extends js.Any
-  object ProtectiveEquipmentType {
-    val FACE_COVER = "FACE_COVER".asInstanceOf[ProtectiveEquipmentType]
-    val HAND_COVER = "HAND_COVER".asInstanceOf[ProtectiveEquipmentType]
-    val HEAD_COVER = "HEAD_COVER".asInstanceOf[ProtectiveEquipmentType]
-
-    @inline def values = js.Array(FACE_COVER, HAND_COVER, HEAD_COVER)
-  }
-
-  @js.native
-  sealed trait QualityFilter extends js.Any
-  object QualityFilter {
-    val NONE = "NONE".asInstanceOf[QualityFilter]
-    val AUTO = "AUTO".asInstanceOf[QualityFilter]
-    val LOW = "LOW".asInstanceOf[QualityFilter]
-    val MEDIUM = "MEDIUM".asInstanceOf[QualityFilter]
-    val HIGH = "HIGH".asInstanceOf[QualityFilter]
-
-    @inline def values = js.Array(NONE, AUTO, LOW, MEDIUM, HIGH)
-  }
-
-  @js.native
-  sealed trait Reason extends js.Any
-  object Reason {
-    val EXCEEDS_MAX_FACES = "EXCEEDS_MAX_FACES".asInstanceOf[Reason]
-    val EXTREME_POSE = "EXTREME_POSE".asInstanceOf[Reason]
-    val LOW_BRIGHTNESS = "LOW_BRIGHTNESS".asInstanceOf[Reason]
-    val LOW_SHARPNESS = "LOW_SHARPNESS".asInstanceOf[Reason]
-    val LOW_CONFIDENCE = "LOW_CONFIDENCE".asInstanceOf[Reason]
-    val SMALL_BOUNDING_BOX = "SMALL_BOUNDING_BOX".asInstanceOf[Reason]
-    val LOW_FACE_QUALITY = "LOW_FACE_QUALITY".asInstanceOf[Reason]
-
-    @inline def values = js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX, LOW_FACE_QUALITY)
   }
 
   @js.native
@@ -3622,15 +3373,6 @@ package object rekognition {
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SegmentDetection]
     }
-  }
-
-  @js.native
-  sealed trait SegmentType extends js.Any
-  object SegmentType {
-    val TECHNICAL_CUE = "TECHNICAL_CUE".asInstanceOf[SegmentType]
-    val SHOT = "SHOT".asInstanceOf[SegmentType]
-
-    @inline def values = js.Array(TECHNICAL_CUE, SHOT)
   }
 
   /** Information about the type of a segment requested in a call to <a>StartSegmentDetection</a>. An array of <code>SegmentTypeInfo</code> objects is returned by the response from <a>GetSegmentDetection</a>.
@@ -4342,18 +4084,6 @@ package object rekognition {
     }
   }
 
-  @js.native
-  sealed trait StreamProcessorStatus extends js.Any
-  object StreamProcessorStatus {
-    val STOPPED = "STOPPED".asInstanceOf[StreamProcessorStatus]
-    val STARTING = "STARTING".asInstanceOf[StreamProcessorStatus]
-    val RUNNING = "RUNNING".asInstanceOf[StreamProcessorStatus]
-    val FAILED = "FAILED".asInstanceOf[StreamProcessorStatus]
-    val STOPPING = "STOPPING".asInstanceOf[StreamProcessorStatus]
-
-    @inline def values = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
-  }
-
   /** The S3 bucket that contains the training summary. The training summary includes aggregated evaluation metrics for the entire testing dataset and metrics for each individual label. You get the training summary S3 bucket location by calling <a>DescribeProjectVersions</a>.
     */
   @js.native
@@ -4443,16 +4173,6 @@ package object rekognition {
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TechnicalCueSegment]
     }
-  }
-
-  @js.native
-  sealed trait TechnicalCueType extends js.Any
-  object TechnicalCueType {
-    val ColorBars = "ColorBars".asInstanceOf[TechnicalCueType]
-    val EndCredits = "EndCredits".asInstanceOf[TechnicalCueType]
-    val BlackFrames = "BlackFrames".asInstanceOf[TechnicalCueType]
-
-    @inline def values = js.Array(ColorBars, EndCredits, BlackFrames)
   }
 
   /** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset.
@@ -4552,15 +4272,6 @@ package object rekognition {
       Timestamp.foreach(__v => __obj.updateDynamic("Timestamp")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TextDetectionResult]
     }
-  }
-
-  @js.native
-  sealed trait TextTypes extends js.Any
-  object TextTypes {
-    val LINE = "LINE".asInstanceOf[TextTypes]
-    val WORD = "WORD".asInstanceOf[TextTypes]
-
-    @inline def values = js.Array(LINE, WORD)
   }
 
   /** The dataset used for training.
@@ -4691,16 +4402,6 @@ package object rekognition {
       S3Object.foreach(__v => __obj.updateDynamic("S3Object")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Video]
     }
-  }
-
-  @js.native
-  sealed trait VideoJobStatus extends js.Any
-  object VideoJobStatus {
-    val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[VideoJobStatus]
-    val SUCCEEDED = "SUCCEEDED".asInstanceOf[VideoJobStatus]
-    val FAILED = "FAILED".asInstanceOf[VideoJobStatus]
-
-    @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
   }
 
   /** Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code> is returned in every page of paginated responses from a Amazon Rekognition video operation.

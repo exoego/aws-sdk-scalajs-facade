@@ -72,15 +72,6 @@ package object kinesisvideoarchivedmedia {
     }
   }
 
-  @js.native
-  sealed trait ClipFragmentSelectorType extends js.Any
-  object ClipFragmentSelectorType {
-    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
-    val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
-
-    @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
-  }
-
   /** The range of timestamps for which to return fragments.
     */
   @js.native
@@ -103,33 +94,6 @@ package object kinesisvideoarchivedmedia {
     }
   }
 
-  @js.native
-  sealed trait ContainerFormat extends js.Any
-  object ContainerFormat {
-    val FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[ContainerFormat]
-    val MPEG_TS = "MPEG_TS".asInstanceOf[ContainerFormat]
-
-    @inline def values = js.Array(FRAGMENTED_MP4, MPEG_TS)
-  }
-
-  @js.native
-  sealed trait DASHDisplayFragmentNumber extends js.Any
-  object DASHDisplayFragmentNumber {
-    val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentNumber]
-    val NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentNumber]
-
-    @inline def values = js.Array(ALWAYS, NEVER)
-  }
-
-  @js.native
-  sealed trait DASHDisplayFragmentTimestamp extends js.Any
-  object DASHDisplayFragmentTimestamp {
-    val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentTimestamp]
-    val NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentTimestamp]
-
-    @inline def values = js.Array(ALWAYS, NEVER)
-  }
-
   /** Contains the range of timestamps for the requested media, and the source of the timestamps.
     */
   @js.native
@@ -149,25 +113,6 @@ package object kinesisvideoarchivedmedia {
       TimestampRange.foreach(__v => __obj.updateDynamic("TimestampRange")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DASHFragmentSelector]
     }
-  }
-
-  @js.native
-  sealed trait DASHFragmentSelectorType extends js.Any
-  object DASHFragmentSelectorType {
-    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
-    val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
-
-    @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
-  }
-
-  @js.native
-  sealed trait DASHPlaybackMode extends js.Any
-  object DASHPlaybackMode {
-    val LIVE = "LIVE".asInstanceOf[DASHPlaybackMode]
-    val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[DASHPlaybackMode]
-    val ON_DEMAND = "ON_DEMAND".asInstanceOf[DASHPlaybackMode]
-
-    @inline def values = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
   }
 
   /** The start and end of the timestamp range for the requested media. This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>. The values in <code>DASHimestampRange</code> are inclusive. Fragments that start exactly at or after the start time are included in the session. Fragments that start before the start time and continue past it are not included in the session.
@@ -241,15 +186,6 @@ package object kinesisvideoarchivedmedia {
       )
       __obj.asInstanceOf[FragmentSelector]
     }
-  }
-
-  @js.native
-  sealed trait FragmentSelectorType extends js.Any
-  object FragmentSelectorType {
-    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
-    val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
-
-    @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
   }
 
   @js.native
@@ -447,25 +383,6 @@ package object kinesisvideoarchivedmedia {
     }
   }
 
-  @js.native
-  sealed trait HLSDiscontinuityMode extends js.Any
-  object HLSDiscontinuityMode {
-    val ALWAYS = "ALWAYS".asInstanceOf[HLSDiscontinuityMode]
-    val NEVER = "NEVER".asInstanceOf[HLSDiscontinuityMode]
-    val ON_DISCONTINUITY = "ON_DISCONTINUITY".asInstanceOf[HLSDiscontinuityMode]
-
-    @inline def values = js.Array(ALWAYS, NEVER, ON_DISCONTINUITY)
-  }
-
-  @js.native
-  sealed trait HLSDisplayFragmentTimestamp extends js.Any
-  object HLSDisplayFragmentTimestamp {
-    val ALWAYS = "ALWAYS".asInstanceOf[HLSDisplayFragmentTimestamp]
-    val NEVER = "NEVER".asInstanceOf[HLSDisplayFragmentTimestamp]
-
-    @inline def values = js.Array(ALWAYS, NEVER)
-  }
-
   /** Contains the range of timestamps for the requested media, and the source of the timestamps.
     */
   @js.native
@@ -485,25 +402,6 @@ package object kinesisvideoarchivedmedia {
       TimestampRange.foreach(__v => __obj.updateDynamic("TimestampRange")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HLSFragmentSelector]
     }
-  }
-
-  @js.native
-  sealed trait HLSFragmentSelectorType extends js.Any
-  object HLSFragmentSelectorType {
-    val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
-    val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
-
-    @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
-  }
-
-  @js.native
-  sealed trait HLSPlaybackMode extends js.Any
-  object HLSPlaybackMode {
-    val LIVE = "LIVE".asInstanceOf[HLSPlaybackMode]
-    val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[HLSPlaybackMode]
-    val ON_DEMAND = "ON_DEMAND".asInstanceOf[HLSPlaybackMode]
-
-    @inline def values = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
   }
 
   /** The start and end of the timestamp range for the requested media. This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.

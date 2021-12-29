@@ -472,17 +472,6 @@ package object importexport {
     }
   }
 
-  /** Specifies whether the job to initiate is an import or export job.
-    */
-  @js.native
-  sealed trait JobType extends js.Any
-  object JobType {
-    val Import = "Import".asInstanceOf[JobType]
-    val Export = "Export".asInstanceOf[JobType]
-
-    @inline def values = js.Array(Import, Export)
-  }
-
   /** Input structure for the ListJobs operation.
     */
   @js.native

@@ -200,43 +200,6 @@ package object budgetsservice {
     }
   }
 
-  @js.native
-  sealed trait ActionStatus extends js.Any
-  object ActionStatus {
-    val STANDBY = "STANDBY".asInstanceOf[ActionStatus]
-    val PENDING = "PENDING".asInstanceOf[ActionStatus]
-    val EXECUTION_IN_PROGRESS = "EXECUTION_IN_PROGRESS".asInstanceOf[ActionStatus]
-    val EXECUTION_SUCCESS = "EXECUTION_SUCCESS".asInstanceOf[ActionStatus]
-    val EXECUTION_FAILURE = "EXECUTION_FAILURE".asInstanceOf[ActionStatus]
-    val REVERSE_IN_PROGRESS = "REVERSE_IN_PROGRESS".asInstanceOf[ActionStatus]
-    val REVERSE_SUCCESS = "REVERSE_SUCCESS".asInstanceOf[ActionStatus]
-    val REVERSE_FAILURE = "REVERSE_FAILURE".asInstanceOf[ActionStatus]
-    val RESET_IN_PROGRESS = "RESET_IN_PROGRESS".asInstanceOf[ActionStatus]
-    val RESET_FAILURE = "RESET_FAILURE".asInstanceOf[ActionStatus]
-
-    @inline def values = js.Array(
-      STANDBY,
-      PENDING,
-      EXECUTION_IN_PROGRESS,
-      EXECUTION_SUCCESS,
-      EXECUTION_FAILURE,
-      REVERSE_IN_PROGRESS,
-      REVERSE_SUCCESS,
-      REVERSE_FAILURE,
-      RESET_IN_PROGRESS,
-      RESET_FAILURE
-    )
-  }
-
-  @js.native
-  sealed trait ActionSubType extends js.Any
-  object ActionSubType {
-    val STOP_EC2_INSTANCES = "STOP_EC2_INSTANCES".asInstanceOf[ActionSubType]
-    val STOP_RDS_INSTANCES = "STOP_RDS_INSTANCES".asInstanceOf[ActionSubType]
-
-    @inline def values = js.Array(STOP_EC2_INSTANCES, STOP_RDS_INSTANCES)
-  }
-
   /** The trigger threshold of the action.
     */
   @js.native
@@ -257,25 +220,6 @@ package object budgetsservice {
       )
       __obj.asInstanceOf[ActionThreshold]
     }
-  }
-
-  @js.native
-  sealed trait ActionType extends js.Any
-  object ActionType {
-    val APPLY_IAM_POLICY = "APPLY_IAM_POLICY".asInstanceOf[ActionType]
-    val APPLY_SCP_POLICY = "APPLY_SCP_POLICY".asInstanceOf[ActionType]
-    val RUN_SSM_DOCUMENTS = "RUN_SSM_DOCUMENTS".asInstanceOf[ActionType]
-
-    @inline def values = js.Array(APPLY_IAM_POLICY, APPLY_SCP_POLICY, RUN_SSM_DOCUMENTS)
-  }
-
-  @js.native
-  sealed trait ApprovalModel extends js.Any
-  object ApprovalModel {
-    val AUTOMATIC = "AUTOMATIC".asInstanceOf[ApprovalModel]
-    val MANUAL = "MANUAL".asInstanceOf[ApprovalModel]
-
-    @inline def values = js.Array(AUTOMATIC, MANUAL)
   }
 
   /** Represents the output of the <code>CreateBudget</code> operation. The content consists of the detailed metadata and data file information, and the current status of the <code>budget</code> object. This is the ARN pattern for a budget: <code>arn:aws:budgets::AccountId:budget/budgetName</code>
@@ -358,21 +302,6 @@ package object budgetsservice {
     }
   }
 
-  /** The type of a budget. It must be one of the following types: <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.
-    */
-  @js.native
-  sealed trait BudgetType extends js.Any
-  object BudgetType {
-    val USAGE = "USAGE".asInstanceOf[BudgetType]
-    val COST = "COST".asInstanceOf[BudgetType]
-    val RI_UTILIZATION = "RI_UTILIZATION".asInstanceOf[BudgetType]
-    val RI_COVERAGE = "RI_COVERAGE".asInstanceOf[BudgetType]
-    val SAVINGS_PLANS_UTILIZATION = "SAVINGS_PLANS_UTILIZATION".asInstanceOf[BudgetType]
-    val SAVINGS_PLANS_COVERAGE = "SAVINGS_PLANS_COVERAGE".asInstanceOf[BudgetType]
-
-    @inline def values = js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
-  }
-
   /** The amount of cost or usage that you created the budget for, compared to your actual costs or usage.
     */
   @js.native
@@ -418,18 +347,6 @@ package object budgetsservice {
       ForecastedSpend.foreach(__v => __obj.updateDynamic("ForecastedSpend")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CalculatedSpend]
     }
-  }
-
-  /** The comparison operator of a notification. Currently the service supports the following operators: <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
-    */
-  @js.native
-  sealed trait ComparisonOperator extends js.Any
-  object ComparisonOperator {
-    val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
-    val LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
-    val EQUAL_TO = "EQUAL_TO".asInstanceOf[ComparisonOperator]
-
-    @inline def values = js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO)
   }
 
   /** The types of cost that are included in a <code>COST</code> budget, such as tax and subscriptions. <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, and <code>SAVINGS_PLANS_COVERAGE</code> budgets do not have <code>CostTypes</code>.
@@ -1282,18 +1199,6 @@ package object budgetsservice {
   }
 
   @js.native
-  sealed trait EventType extends js.Any
-  object EventType {
-    val SYSTEM = "SYSTEM".asInstanceOf[EventType]
-    val CREATE_ACTION = "CREATE_ACTION".asInstanceOf[EventType]
-    val DELETE_ACTION = "DELETE_ACTION".asInstanceOf[EventType]
-    val UPDATE_ACTION = "UPDATE_ACTION".asInstanceOf[EventType]
-    val EXECUTE_ACTION = "EXECUTE_ACTION".asInstanceOf[EventType]
-
-    @inline def values = js.Array(SYSTEM, CREATE_ACTION, DELETE_ACTION, UPDATE_ACTION, EXECUTE_ACTION)
-  }
-
-  @js.native
   trait ExecuteBudgetActionRequest extends js.Object {
     var AccountId: AccountId
     var ActionId: ActionId
@@ -1343,17 +1248,6 @@ package object budgetsservice {
       )
       __obj.asInstanceOf[ExecuteBudgetActionResponse]
     }
-  }
-
-  @js.native
-  sealed trait ExecutionType extends js.Any
-  object ExecutionType {
-    val APPROVE_BUDGET_ACTION = "APPROVE_BUDGET_ACTION".asInstanceOf[ExecutionType]
-    val RETRY_BUDGET_ACTION = "RETRY_BUDGET_ACTION".asInstanceOf[ExecutionType]
-    val REVERSE_BUDGET_ACTION = "REVERSE_BUDGET_ACTION".asInstanceOf[ExecutionType]
-    val RESET_BUDGET_ACTION = "RESET_BUDGET_ACTION".asInstanceOf[ExecutionType]
-
-    @inline def values = js.Array(APPROVE_BUDGET_ACTION, RETRY_BUDGET_ACTION, REVERSE_BUDGET_ACTION, RESET_BUDGET_ACTION)
   }
 
   /** The AWS Identity and Access Management (IAM) action definition details.
@@ -1415,26 +1309,6 @@ package object budgetsservice {
       ThresholdType.foreach(__v => __obj.updateDynamic("ThresholdType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Notification]
     }
-  }
-
-  @js.native
-  sealed trait NotificationState extends js.Any
-  object NotificationState {
-    val OK = "OK".asInstanceOf[NotificationState]
-    val ALARM = "ALARM".asInstanceOf[NotificationState]
-
-    @inline def values = js.Array(OK, ALARM)
-  }
-
-  /** The type of a notification. It must be ACTUAL or FORECASTED.
-    */
-  @js.native
-  sealed trait NotificationType extends js.Any
-  object NotificationType {
-    val ACTUAL = "ACTUAL".asInstanceOf[NotificationType]
-    val FORECASTED = "FORECASTED".asInstanceOf[NotificationType]
-
-    @inline def values = js.Array(ACTUAL, FORECASTED)
   }
 
   /** A notification with subscribers. A notification can have one SNS subscriber and up to 10 email subscribers, for a total of 11 subscribers.
@@ -1550,28 +1424,6 @@ package object budgetsservice {
     }
   }
 
-  /** The subscription type of the subscriber. It can be SMS or EMAIL.
-    */
-  @js.native
-  sealed trait SubscriptionType extends js.Any
-  object SubscriptionType {
-    val SNS = "SNS".asInstanceOf[SubscriptionType]
-    val EMAIL = "EMAIL".asInstanceOf[SubscriptionType]
-
-    @inline def values = js.Array(SNS, EMAIL)
-  }
-
-  /** The type of threshold for a notification.
-    */
-  @js.native
-  sealed trait ThresholdType extends js.Any
-  object ThresholdType {
-    val PERCENTAGE = "PERCENTAGE".asInstanceOf[ThresholdType]
-    val ABSOLUTE_VALUE = "ABSOLUTE_VALUE".asInstanceOf[ThresholdType]
-
-    @inline def values = js.Array(PERCENTAGE, ABSOLUTE_VALUE)
-  }
-
   /** The period of time that is covered by a budget. The period has a start date and an end date. The start date must come before the end date. There are no restrictions on the end date.
     */
   @js.native
@@ -1591,19 +1443,6 @@ package object budgetsservice {
       Start.foreach(__v => __obj.updateDynamic("Start")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TimePeriod]
     }
-  }
-
-  /** The time unit of the budget, such as MONTHLY or QUARTERLY.
-    */
-  @js.native
-  sealed trait TimeUnit extends js.Any
-  object TimeUnit {
-    val DAILY = "DAILY".asInstanceOf[TimeUnit]
-    val MONTHLY = "MONTHLY".asInstanceOf[TimeUnit]
-    val QUARTERLY = "QUARTERLY".asInstanceOf[TimeUnit]
-    val ANNUALLY = "ANNUALLY".asInstanceOf[TimeUnit]
-
-    @inline def values = js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY)
   }
 
   @js.native

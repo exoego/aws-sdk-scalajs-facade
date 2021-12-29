@@ -207,16 +207,6 @@ package object iotevents {
     }
   }
 
-  @js.native
-  sealed trait AnalysisResultLevel extends js.Any
-  object AnalysisResultLevel {
-    val INFO = "INFO".asInstanceOf[AnalysisResultLevel]
-    val WARNING = "WARNING".asInstanceOf[AnalysisResultLevel]
-    val ERROR = "ERROR".asInstanceOf[AnalysisResultLevel]
-
-    @inline def values = js.Array(INFO, WARNING, ERROR)
-  }
-
   /** Contains information that you can use to locate the field in your detector model that the analysis result references.
     */
   @js.native
@@ -233,16 +223,6 @@ package object iotevents {
       path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalysisResultLocation]
     }
-  }
-
-  @js.native
-  sealed trait AnalysisStatus extends js.Any
-  object AnalysisStatus {
-    val RUNNING = "RUNNING".asInstanceOf[AnalysisStatus]
-    val COMPLETE = "COMPLETE".asInstanceOf[AnalysisStatus]
-    val FAILED = "FAILED".asInstanceOf[AnalysisStatus]
-
-    @inline def values = js.Array(RUNNING, COMPLETE, FAILED)
   }
 
   /** A structure that contains timestamp information. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_TimeInNanos.html|TimeInNanos]] in the <i>AWS IoT SiteWise API Reference</i>. You must use expressions for all parameters in <code>AssetPropertyTimestamp</code>. The expressions accept literals, operators, functions, references, and substitution templates. <p class="title"> ```Examples``` </p>* For literal values, the expressions must contain single quotes. For example, the value for the <code>timeInSeconds</code> parameter can be <code>'1586400675'</code>. * For references, you must specify either variables or input values. For example, the value for the <code>offsetInNanos</code> parameter can be <code>variable.time</code>. * For a substitution template, you must use <code>{}</code>, and the template must be in single quotes. A substitution template can also contain a combination of literals, operators, functions, references, and
@@ -777,20 +757,6 @@ package object iotevents {
     }
   }
 
-  @js.native
-  sealed trait DetectorModelVersionStatus extends js.Any
-  object DetectorModelVersionStatus {
-    val ACTIVE = "ACTIVE".asInstanceOf[DetectorModelVersionStatus]
-    val ACTIVATING = "ACTIVATING".asInstanceOf[DetectorModelVersionStatus]
-    val INACTIVE = "INACTIVE".asInstanceOf[DetectorModelVersionStatus]
-    val DEPRECATED = "DEPRECATED".asInstanceOf[DetectorModelVersionStatus]
-    val DRAFT = "DRAFT".asInstanceOf[DetectorModelVersionStatus]
-    val PAUSED = "PAUSED".asInstanceOf[DetectorModelVersionStatus]
-    val FAILED = "FAILED".asInstanceOf[DetectorModelVersionStatus]
-
-    @inline def values = js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED)
-  }
-
   /** Information about the detector model version.
     */
   @js.native
@@ -902,15 +868,6 @@ package object iotevents {
       payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DynamoDBv2Action]
     }
-  }
-
-  @js.native
-  sealed trait EvaluationMethod extends js.Any
-  object EvaluationMethod {
-    val BATCH = "BATCH".asInstanceOf[EvaluationMethod]
-    val SERIAL = "SERIAL".asInstanceOf[EvaluationMethod]
-
-    @inline def values = js.Array(BATCH, SERIAL)
   }
 
   /** Specifies the <code>actions</code> to be performed when the <code>condition</code> evaluates to TRUE.
@@ -1081,17 +1038,6 @@ package object iotevents {
       )
       __obj.asInstanceOf[InputDefinition]
     }
-  }
-
-  @js.native
-  sealed trait InputStatus extends js.Any
-  object InputStatus {
-    val CREATING = "CREATING".asInstanceOf[InputStatus]
-    val UPDATING = "UPDATING".asInstanceOf[InputStatus]
-    val ACTIVE = "ACTIVE".asInstanceOf[InputStatus]
-    val DELETING = "DELETING".asInstanceOf[InputStatus]
-
-    @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING)
   }
 
   /** Information about the input.
@@ -1381,16 +1327,6 @@ package object iotevents {
     }
   }
 
-  @js.native
-  sealed trait LoggingLevel extends js.Any
-  object LoggingLevel {
-    val ERROR = "ERROR".asInstanceOf[LoggingLevel]
-    val INFO = "INFO".asInstanceOf[LoggingLevel]
-    val DEBUG = "DEBUG".asInstanceOf[LoggingLevel]
-
-    @inline def values = js.Array(ERROR, INFO, DEBUG)
-  }
-
   /** The values of the AWS IoT Events logging options.
     */
   @js.native
@@ -1497,15 +1433,6 @@ package object iotevents {
       )
       __obj.asInstanceOf[Payload]
     }
-  }
-
-  @js.native
-  sealed trait PayloadType extends js.Any
-  object PayloadType {
-    val STRING = "STRING".asInstanceOf[PayloadType]
-    val JSON = "JSON".asInstanceOf[PayloadType]
-
-    @inline def values = js.Array(STRING, JSON)
   }
 
   @js.native

@@ -1368,15 +1368,6 @@ package object appmesh {
     }
   }
 
-  @js.native
-  sealed trait DurationUnit extends js.Any
-  object DurationUnit {
-    val s = "s".asInstanceOf[DurationUnit]
-    val ms = "ms".asInstanceOf[DurationUnit]
-
-    @inline def values = js.Array(s, ms)
-  }
-
   /** An object that represents the egress filter rules for a service mesh.
     */
   @js.native
@@ -1394,15 +1385,6 @@ package object appmesh {
       )
       __obj.asInstanceOf[EgressFilter]
     }
-  }
-
-  @js.native
-  sealed trait EgressFilterType extends js.Any
-  object EgressFilterType {
-    val ALLOW_ALL = "ALLOW_ALL".asInstanceOf[EgressFilterType]
-    val DROP_ALL = "DROP_ALL".asInstanceOf[EgressFilterType]
-
-    @inline def values = js.Array(ALLOW_ALL, DROP_ALL)
   }
 
   /** An object that represents an access log file.
@@ -1544,16 +1526,6 @@ package object appmesh {
     }
   }
 
-  @js.native
-  sealed trait GatewayRouteStatusCode extends js.Any
-  object GatewayRouteStatusCode {
-    val ACTIVE = "ACTIVE".asInstanceOf[GatewayRouteStatusCode]
-    val INACTIVE = "INACTIVE".asInstanceOf[GatewayRouteStatusCode]
-    val DELETED = "DELETED".asInstanceOf[GatewayRouteStatusCode]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
-  }
-
   /** An object that represents a gateway route target.
     */
   @js.native
@@ -1681,18 +1653,6 @@ package object appmesh {
       tcpRetryEvents.foreach(__v => __obj.updateDynamic("tcpRetryEvents")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrpcRetryPolicy]
     }
-  }
-
-  @js.native
-  sealed trait GrpcRetryPolicyEvent extends js.Any
-  object GrpcRetryPolicyEvent {
-    val cancelled = "cancelled".asInstanceOf[GrpcRetryPolicyEvent]
-    val `deadline-exceeded` = "deadline-exceeded".asInstanceOf[GrpcRetryPolicyEvent]
-    val internal = "internal".asInstanceOf[GrpcRetryPolicyEvent]
-    val `resource-exhausted` = "resource-exhausted".asInstanceOf[GrpcRetryPolicyEvent]
-    val unavailable = "unavailable".asInstanceOf[GrpcRetryPolicyEvent]
-
-    @inline def values = js.Array(cancelled, `deadline-exceeded`, internal, `resource-exhausted`, unavailable)
   }
 
   /** An object that represents a gRPC route type.
@@ -1972,22 +1932,6 @@ package object appmesh {
     }
   }
 
-  @js.native
-  sealed trait HttpMethod extends js.Any
-  object HttpMethod {
-    val GET = "GET".asInstanceOf[HttpMethod]
-    val HEAD = "HEAD".asInstanceOf[HttpMethod]
-    val POST = "POST".asInstanceOf[HttpMethod]
-    val PUT = "PUT".asInstanceOf[HttpMethod]
-    val DELETE = "DELETE".asInstanceOf[HttpMethod]
-    val CONNECT = "CONNECT".asInstanceOf[HttpMethod]
-    val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
-    val TRACE = "TRACE".asInstanceOf[HttpMethod]
-    val PATCH = "PATCH".asInstanceOf[HttpMethod]
-
-    @inline def values = js.Array(GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH)
-  }
-
   /** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
     */
   @js.native
@@ -2118,15 +2062,6 @@ package object appmesh {
       scheme.foreach(__v => __obj.updateDynamic("scheme")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpRouteMatch]
     }
-  }
-
-  @js.native
-  sealed trait HttpScheme extends js.Any
-  object HttpScheme {
-    val http = "http".asInstanceOf[HttpScheme]
-    val https = "https".asInstanceOf[HttpScheme]
-
-    @inline def values = js.Array(http, https)
   }
 
   /** An object that represents types of timeouts.
@@ -2706,16 +2641,6 @@ package object appmesh {
     }
   }
 
-  @js.native
-  sealed trait ListenerTlsMode extends js.Any
-  object ListenerTlsMode {
-    val STRICT = "STRICT".asInstanceOf[ListenerTlsMode]
-    val PERMISSIVE = "PERMISSIVE".asInstanceOf[ListenerTlsMode]
-    val DISABLED = "DISABLED".asInstanceOf[ListenerTlsMode]
-
-    @inline def values = js.Array(STRICT, PERMISSIVE, DISABLED)
-  }
-
   /** An object that represents the listener's Secret Discovery Service certificate. The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html|TLS documentation]] for more info.
     */
   @js.native
@@ -2920,16 +2845,6 @@ package object appmesh {
     }
   }
 
-  @js.native
-  sealed trait MeshStatusCode extends js.Any
-  object MeshStatusCode {
-    val ACTIVE = "ACTIVE".asInstanceOf[MeshStatusCode]
-    val INACTIVE = "INACTIVE".asInstanceOf[MeshStatusCode]
-    val DELETED = "DELETED".asInstanceOf[MeshStatusCode]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
-  }
-
   /** An object that represents the outlier detection for a virtual node's listener.
     */
   @js.native
@@ -2978,17 +2893,6 @@ package object appmesh {
       )
       __obj.asInstanceOf[PortMapping]
     }
-  }
-
-  @js.native
-  sealed trait PortProtocol extends js.Any
-  object PortProtocol {
-    val http = "http".asInstanceOf[PortProtocol]
-    val tcp = "tcp".asInstanceOf[PortProtocol]
-    val http2 = "http2".asInstanceOf[PortProtocol]
-    val grpc = "grpc".asInstanceOf[PortProtocol]
-
-    @inline def values = js.Array(http, tcp, http2, grpc)
   }
 
   /** An object that represents metadata for a resource.
@@ -3154,16 +3058,6 @@ package object appmesh {
     }
   }
 
-  @js.native
-  sealed trait RouteStatusCode extends js.Any
-  object RouteStatusCode {
-    val ACTIVE = "ACTIVE".asInstanceOf[RouteStatusCode]
-    val INACTIVE = "INACTIVE".asInstanceOf[RouteStatusCode]
-    val DELETED = "DELETED".asInstanceOf[RouteStatusCode]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
-  }
-
   /** An object that represents the service discovery information for a virtual node.
     */
   @js.native
@@ -3278,14 +3172,6 @@ package object appmesh {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceOutput]
     }
-  }
-
-  @js.native
-  sealed trait TcpRetryPolicyEvent extends js.Any
-  object TcpRetryPolicyEvent {
-    val `connection-error` = "connection-error".asInstanceOf[TcpRetryPolicyEvent]
-
-    @inline def values = js.Array(`connection-error`)
   }
 
   /** An object that represents a TCP route type.
@@ -4233,16 +4119,6 @@ package object appmesh {
     }
   }
 
-  @js.native
-  sealed trait VirtualGatewayListenerTlsMode extends js.Any
-  object VirtualGatewayListenerTlsMode {
-    val STRICT = "STRICT".asInstanceOf[VirtualGatewayListenerTlsMode]
-    val PERMISSIVE = "PERMISSIVE".asInstanceOf[VirtualGatewayListenerTlsMode]
-    val DISABLED = "DISABLED".asInstanceOf[VirtualGatewayListenerTlsMode]
-
-    @inline def values = js.Array(STRICT, PERMISSIVE, DISABLED)
-  }
-
   /** An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html|TLS documentation]] for more info.
     */
   @js.native
@@ -4346,16 +4222,6 @@ package object appmesh {
     }
   }
 
-  @js.native
-  sealed trait VirtualGatewayPortProtocol extends js.Any
-  object VirtualGatewayPortProtocol {
-    val http = "http".asInstanceOf[VirtualGatewayPortProtocol]
-    val http2 = "http2".asInstanceOf[VirtualGatewayPortProtocol]
-    val grpc = "grpc".asInstanceOf[VirtualGatewayPortProtocol]
-
-    @inline def values = js.Array(http, http2, grpc)
-  }
-
   /** An object that represents a virtual gateway returned by a list operation.
     */
   @js.native
@@ -4439,16 +4305,6 @@ package object appmesh {
       )
       __obj.asInstanceOf[VirtualGatewayStatus]
     }
-  }
-
-  @js.native
-  sealed trait VirtualGatewayStatusCode extends js.Any
-  object VirtualGatewayStatusCode {
-    val ACTIVE = "ACTIVE".asInstanceOf[VirtualGatewayStatusCode]
-    val INACTIVE = "INACTIVE".asInstanceOf[VirtualGatewayStatusCode]
-    val DELETED = "DELETED".asInstanceOf[VirtualGatewayStatusCode]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
   }
 
   /** An object that represents a Transport Layer Security (TLS) validation context.
@@ -4782,16 +4638,6 @@ package object appmesh {
     }
   }
 
-  @js.native
-  sealed trait VirtualNodeStatusCode extends js.Any
-  object VirtualNodeStatusCode {
-    val ACTIVE = "ACTIVE".asInstanceOf[VirtualNodeStatusCode]
-    val INACTIVE = "INACTIVE".asInstanceOf[VirtualNodeStatusCode]
-    val DELETED = "DELETED".asInstanceOf[VirtualNodeStatusCode]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
-  }
-
   /** An object that represents a type of connection pool.
     */
   @js.native
@@ -4957,16 +4803,6 @@ package object appmesh {
     }
   }
 
-  @js.native
-  sealed trait VirtualRouterStatusCode extends js.Any
-  object VirtualRouterStatusCode {
-    val ACTIVE = "ACTIVE".asInstanceOf[VirtualRouterStatusCode]
-    val INACTIVE = "INACTIVE".asInstanceOf[VirtualRouterStatusCode]
-    val DELETED = "DELETED".asInstanceOf[VirtualRouterStatusCode]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
-  }
-
   /** An object that represents a virtual service backend for a virtual node.
     */
   @js.native
@@ -5117,16 +4953,6 @@ package object appmesh {
       )
       __obj.asInstanceOf[VirtualServiceStatus]
     }
-  }
-
-  @js.native
-  sealed trait VirtualServiceStatusCode extends js.Any
-  object VirtualServiceStatusCode {
-    val ACTIVE = "ACTIVE".asInstanceOf[VirtualServiceStatusCode]
-    val INACTIVE = "INACTIVE".asInstanceOf[VirtualServiceStatusCode]
-    val DELETED = "DELETED".asInstanceOf[VirtualServiceStatusCode]
-
-    @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
   }
 
   /** An object that represents a target and its relative weight. Traffic is distributed across targets according to their relative weight. For example, a weighted target with a relative weight of 50 receives five times as much traffic as one with a relative weight of 10. The total weight for all targets combined must be less than or equal to 100.

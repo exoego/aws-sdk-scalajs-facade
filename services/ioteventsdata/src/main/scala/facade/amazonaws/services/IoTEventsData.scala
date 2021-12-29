@@ -343,18 +343,6 @@ package object ioteventsdata {
   }
 
   @js.native
-  sealed trait ErrorCode extends js.Any
-  object ErrorCode {
-    val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[ErrorCode]
-    val InvalidRequestException = "InvalidRequestException".asInstanceOf[ErrorCode]
-    val InternalFailureException = "InternalFailureException".asInstanceOf[ErrorCode]
-    val ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[ErrorCode]
-    val ThrottlingException = "ThrottlingException".asInstanceOf[ErrorCode]
-
-    @inline def values = js.Array(ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException)
-  }
-
-  @js.native
   trait ListDetectorsRequest extends js.Object {
     var detectorModelName: DetectorModelName
     var maxResults: js.UndefOr[MaxResults]

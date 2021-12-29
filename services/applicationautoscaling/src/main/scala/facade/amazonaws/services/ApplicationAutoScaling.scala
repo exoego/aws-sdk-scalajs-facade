@@ -73,16 +73,6 @@ package object applicationautoscaling {
     }
   }
 
-  @js.native
-  sealed trait AdjustmentType extends js.Any
-  object AdjustmentType {
-    val ChangeInCapacity = "ChangeInCapacity".asInstanceOf[AdjustmentType]
-    val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[AdjustmentType]
-    val ExactCapacity = "ExactCapacity".asInstanceOf[AdjustmentType]
-
-    @inline def values = js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity)
-  }
-
   /** Represents a CloudWatch alarm associated with a scaling policy.
     */
   @js.native
@@ -448,16 +438,6 @@ package object applicationautoscaling {
     }
   }
 
-  @js.native
-  sealed trait MetricAggregationType extends js.Any
-  object MetricAggregationType {
-    val Average = "Average".asInstanceOf[MetricAggregationType]
-    val Minimum = "Minimum".asInstanceOf[MetricAggregationType]
-    val Maximum = "Maximum".asInstanceOf[MetricAggregationType]
-
-    @inline def values = js.Array(Average, Minimum, Maximum)
-  }
-
   /** Describes the dimension names and values associated with a metric.
     */
   @js.native
@@ -478,69 +458,6 @@ package object applicationautoscaling {
       )
       __obj.asInstanceOf[MetricDimension]
     }
-  }
-
-  @js.native
-  sealed trait MetricStatistic extends js.Any
-  object MetricStatistic {
-    val Average = "Average".asInstanceOf[MetricStatistic]
-    val Minimum = "Minimum".asInstanceOf[MetricStatistic]
-    val Maximum = "Maximum".asInstanceOf[MetricStatistic]
-    val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-    val Sum = "Sum".asInstanceOf[MetricStatistic]
-
-    @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
-  }
-
-  @js.native
-  sealed trait MetricType extends js.Any
-  object MetricType {
-    val DynamoDBReadCapacityUtilization = "DynamoDBReadCapacityUtilization".asInstanceOf[MetricType]
-    val DynamoDBWriteCapacityUtilization = "DynamoDBWriteCapacityUtilization".asInstanceOf[MetricType]
-    val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
-    val RDSReaderAverageCPUUtilization = "RDSReaderAverageCPUUtilization".asInstanceOf[MetricType]
-    val RDSReaderAverageDatabaseConnections = "RDSReaderAverageDatabaseConnections".asInstanceOf[MetricType]
-    val EC2SpotFleetRequestAverageCPUUtilization = "EC2SpotFleetRequestAverageCPUUtilization".asInstanceOf[MetricType]
-    val EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[MetricType]
-    val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[MetricType]
-    val SageMakerVariantInvocationsPerInstance = "SageMakerVariantInvocationsPerInstance".asInstanceOf[MetricType]
-    val ECSServiceAverageCPUUtilization = "ECSServiceAverageCPUUtilization".asInstanceOf[MetricType]
-    val ECSServiceAverageMemoryUtilization = "ECSServiceAverageMemoryUtilization".asInstanceOf[MetricType]
-    val AppStreamAverageCapacityUtilization = "AppStreamAverageCapacityUtilization".asInstanceOf[MetricType]
-    val ComprehendInferenceUtilization = "ComprehendInferenceUtilization".asInstanceOf[MetricType]
-    val LambdaProvisionedConcurrencyUtilization = "LambdaProvisionedConcurrencyUtilization".asInstanceOf[MetricType]
-    val CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
-    val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
-    val KafkaBrokerStorageUtilization = "KafkaBrokerStorageUtilization".asInstanceOf[MetricType]
-
-    @inline def values = js.Array(
-      DynamoDBReadCapacityUtilization,
-      DynamoDBWriteCapacityUtilization,
-      ALBRequestCountPerTarget,
-      RDSReaderAverageCPUUtilization,
-      RDSReaderAverageDatabaseConnections,
-      EC2SpotFleetRequestAverageCPUUtilization,
-      EC2SpotFleetRequestAverageNetworkIn,
-      EC2SpotFleetRequestAverageNetworkOut,
-      SageMakerVariantInvocationsPerInstance,
-      ECSServiceAverageCPUUtilization,
-      ECSServiceAverageMemoryUtilization,
-      AppStreamAverageCapacityUtilization,
-      ComprehendInferenceUtilization,
-      LambdaProvisionedConcurrencyUtilization,
-      CassandraReadCapacityUtilization,
-      CassandraWriteCapacityUtilization,
-      KafkaBrokerStorageUtilization
-    )
-  }
-
-  @js.native
-  sealed trait PolicyType extends js.Any
-  object PolicyType {
-    val StepScaling = "StepScaling".asInstanceOf[PolicyType]
-    val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
-
-    @inline def values = js.Array(StepScaling, TargetTrackingScaling)
   }
 
   /** Represents a predefined metric for a target tracking scaling policy to use with Application Auto Scaling. Only the AWS services that you're using send metrics to Amazon CloudWatch. To determine whether a desired metric already exists by looking up its namespace and dimension using the CloudWatch metrics dashboard in the console, follow the procedure in [[https://docs.aws.amazon.com/autoscaling/application/userguide/monitoring-cloudwatch.html|Building dashboards with CloudWatch]] in the <i>Application Auto Scaling User Guide</i>.
@@ -723,48 +640,6 @@ package object applicationautoscaling {
     }
   }
 
-  @js.native
-  sealed trait ScalableDimension extends js.Any
-  object ScalableDimension {
-    val `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
-    val `ec2:spot-fleet-request:TargetCapacity` = "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
-    val `elasticmapreduce:instancegroup:InstanceCount` = "elasticmapreduce:instancegroup:InstanceCount".asInstanceOf[ScalableDimension]
-    val `appstream:fleet:DesiredCapacity` = "appstream:fleet:DesiredCapacity".asInstanceOf[ScalableDimension]
-    val `dynamodb:table:ReadCapacityUnits` = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-    val `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-    val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-    val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-    val `rds:cluster:ReadReplicaCount` = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
-    val `sagemaker:variant:DesiredInstanceCount` = "sagemaker:variant:DesiredInstanceCount".asInstanceOf[ScalableDimension]
-    val `custom-resource:ResourceType:Property` = "custom-resource:ResourceType:Property".asInstanceOf[ScalableDimension]
-    val `comprehend:document-classifier-endpoint:DesiredInferenceUnits` = "comprehend:document-classifier-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
-    val `comprehend:entity-recognizer-endpoint:DesiredInferenceUnits` = "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
-    val `lambda:function:ProvisionedConcurrency` = "lambda:function:ProvisionedConcurrency".asInstanceOf[ScalableDimension]
-    val `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-    val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-    val `kafka:broker-storage:VolumeSize` = "kafka:broker-storage:VolumeSize".asInstanceOf[ScalableDimension]
-
-    @inline def values = js.Array(
-      `ecs:service:DesiredCount`,
-      `ec2:spot-fleet-request:TargetCapacity`,
-      `elasticmapreduce:instancegroup:InstanceCount`,
-      `appstream:fleet:DesiredCapacity`,
-      `dynamodb:table:ReadCapacityUnits`,
-      `dynamodb:table:WriteCapacityUnits`,
-      `dynamodb:index:ReadCapacityUnits`,
-      `dynamodb:index:WriteCapacityUnits`,
-      `rds:cluster:ReadReplicaCount`,
-      `sagemaker:variant:DesiredInstanceCount`,
-      `custom-resource:ResourceType:Property`,
-      `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
-      `comprehend:entity-recognizer-endpoint:DesiredInferenceUnits`,
-      `lambda:function:ProvisionedConcurrency`,
-      `cassandra:table:ReadCapacityUnits`,
-      `cassandra:table:WriteCapacityUnits`,
-      `kafka:broker-storage:VolumeSize`
-    )
-  }
-
   /** Represents a scalable target.
     */
   @js.native
@@ -877,19 +752,6 @@ package object applicationautoscaling {
     }
   }
 
-  @js.native
-  sealed trait ScalingActivityStatusCode extends js.Any
-  object ScalingActivityStatusCode {
-    val Pending = "Pending".asInstanceOf[ScalingActivityStatusCode]
-    val InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
-    val Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
-    val Overridden = "Overridden".asInstanceOf[ScalingActivityStatusCode]
-    val Unfulfilled = "Unfulfilled".asInstanceOf[ScalingActivityStatusCode]
-    val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
-
-    @inline def values = js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed)
-  }
-
   /** Represents a scaling policy to use with Application Auto Scaling. For more information about configuring scaling policies for a specific service, see [[https://docs.aws.amazon.com/autoscaling/application/userguide/getting-started.html|Getting started with Application Auto Scaling]] in the <i>Application Auto Scaling User Guide</i>.
     */
   @js.native
@@ -985,25 +847,6 @@ package object applicationautoscaling {
       Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduledAction]
     }
-  }
-
-  @js.native
-  sealed trait ServiceNamespace extends js.Any
-  object ServiceNamespace {
-    val ecs = "ecs".asInstanceOf[ServiceNamespace]
-    val elasticmapreduce = "elasticmapreduce".asInstanceOf[ServiceNamespace]
-    val ec2 = "ec2".asInstanceOf[ServiceNamespace]
-    val appstream = "appstream".asInstanceOf[ServiceNamespace]
-    val dynamodb = "dynamodb".asInstanceOf[ServiceNamespace]
-    val rds = "rds".asInstanceOf[ServiceNamespace]
-    val sagemaker = "sagemaker".asInstanceOf[ServiceNamespace]
-    val `custom-resource` = "custom-resource".asInstanceOf[ServiceNamespace]
-    val comprehend = "comprehend".asInstanceOf[ServiceNamespace]
-    val lambda = "lambda".asInstanceOf[ServiceNamespace]
-    val cassandra = "cassandra".asInstanceOf[ServiceNamespace]
-    val kafka = "kafka".asInstanceOf[ServiceNamespace]
-
-    @inline def values = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka)
   }
 
   /** Represents a step adjustment for a [[https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepScalingPolicyConfiguration.html|StepScalingPolicyConfiguration]]. Describes an adjustment based on the difference between the value of the aggregated CloudWatch metric and the breach threshold that you've defined for the alarm. For the following examples, suppose that you have an alarm with a breach threshold of 50: * To trigger the adjustment when the metric is greater than or equal to 50 and less than 60, specify a lower bound of 0 and an upper bound of 10. * To trigger the adjustment when the metric is greater than 40 and less than or equal to 50, specify a lower bound of -10 and an upper bound of 0. There are a few rules for the step adjustments for your step policy: * The ranges of your step adjustments can't overlap or have a gap. * At most one step adjustment can have a null lower bound. If one step adjustment has a negative lower bound, then there must be a step

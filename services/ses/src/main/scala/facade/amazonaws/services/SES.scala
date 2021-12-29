@@ -280,15 +280,6 @@ package object ses {
     }
   }
 
-  @js.native
-  sealed trait BehaviorOnMXFailure extends js.Any
-  object BehaviorOnMXFailure {
-    val UseDefaultValue = "UseDefaultValue".asInstanceOf[BehaviorOnMXFailure]
-    val RejectMessage = "RejectMessage".asInstanceOf[BehaviorOnMXFailure]
-
-    @inline def values = js.Array(UseDefaultValue, RejectMessage)
-  }
-
   /** Represents the body of the message. You can specify text, HTML, or both. If you use both, then the message should display correctly in the widest variety of email clients.
     */
   @js.native
@@ -340,19 +331,6 @@ package object ses {
       TopicArn.foreach(__v => __obj.updateDynamic("TopicArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BounceAction]
     }
-  }
-
-  @js.native
-  sealed trait BounceType extends js.Any
-  object BounceType {
-    val DoesNotExist = "DoesNotExist".asInstanceOf[BounceType]
-    val MessageTooLarge = "MessageTooLarge".asInstanceOf[BounceType]
-    val ExceededQuota = "ExceededQuota".asInstanceOf[BounceType]
-    val ContentRejected = "ContentRejected".asInstanceOf[BounceType]
-    val Undefined = "Undefined".asInstanceOf[BounceType]
-    val TemporaryFailure = "TemporaryFailure".asInstanceOf[BounceType]
-
-    @inline def values = js.Array(DoesNotExist, MessageTooLarge, ExceededQuota, ContentRejected, Undefined, TemporaryFailure)
   }
 
   /** Recipient-related information to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces. For information about receiving email through Amazon SES, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html|Amazon SES Developer Guide]].
@@ -432,42 +410,6 @@ package object ses {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BulkEmailDestinationStatus]
     }
-  }
-
-  @js.native
-  sealed trait BulkEmailStatus extends js.Any
-  object BulkEmailStatus {
-    val Success = "Success".asInstanceOf[BulkEmailStatus]
-    val MessageRejected = "MessageRejected".asInstanceOf[BulkEmailStatus]
-    val MailFromDomainNotVerified = "MailFromDomainNotVerified".asInstanceOf[BulkEmailStatus]
-    val ConfigurationSetDoesNotExist = "ConfigurationSetDoesNotExist".asInstanceOf[BulkEmailStatus]
-    val TemplateDoesNotExist = "TemplateDoesNotExist".asInstanceOf[BulkEmailStatus]
-    val AccountSuspended = "AccountSuspended".asInstanceOf[BulkEmailStatus]
-    val AccountThrottled = "AccountThrottled".asInstanceOf[BulkEmailStatus]
-    val AccountDailyQuotaExceeded = "AccountDailyQuotaExceeded".asInstanceOf[BulkEmailStatus]
-    val InvalidSendingPoolName = "InvalidSendingPoolName".asInstanceOf[BulkEmailStatus]
-    val AccountSendingPaused = "AccountSendingPaused".asInstanceOf[BulkEmailStatus]
-    val ConfigurationSetSendingPaused = "ConfigurationSetSendingPaused".asInstanceOf[BulkEmailStatus]
-    val InvalidParameterValue = "InvalidParameterValue".asInstanceOf[BulkEmailStatus]
-    val TransientFailure = "TransientFailure".asInstanceOf[BulkEmailStatus]
-    val Failed = "Failed".asInstanceOf[BulkEmailStatus]
-
-    @inline def values = js.Array(
-      Success,
-      MessageRejected,
-      MailFromDomainNotVerified,
-      ConfigurationSetDoesNotExist,
-      TemplateDoesNotExist,
-      AccountSuspended,
-      AccountThrottled,
-      AccountDailyQuotaExceeded,
-      InvalidSendingPoolName,
-      AccountSendingPaused,
-      ConfigurationSetSendingPaused,
-      InvalidParameterValue,
-      TransientFailure,
-      Failed
-    )
   }
 
   /** Represents a request to create a receipt rule set by cloning an existing one. You use receipt rule sets to receive email with Amazon SES. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-concepts.html|Amazon SES Developer Guide]].
@@ -566,17 +508,6 @@ package object ses {
       )
       __obj.asInstanceOf[ConfigurationSet]
     }
-  }
-
-  @js.native
-  sealed trait ConfigurationSetAttribute extends js.Any
-  object ConfigurationSetAttribute {
-    val eventDestinations = "eventDestinations".asInstanceOf[ConfigurationSetAttribute]
-    val trackingOptions = "trackingOptions".asInstanceOf[ConfigurationSetAttribute]
-    val deliveryOptions = "deliveryOptions".asInstanceOf[ConfigurationSetAttribute]
-    val reputationOptions = "reputationOptions".asInstanceOf[ConfigurationSetAttribute]
-
-    @inline def values = js.Array(eventDestinations, trackingOptions, deliveryOptions, reputationOptions)
   }
 
   /** Represents textual data, plus an optional character set specification. By default, the text must be 7-bit ASCII, due to the constraints of the SMTP protocol. If the text must contain any other characters, then you must also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.
@@ -869,17 +800,6 @@ package object ses {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateTemplateResponse]
     }
-  }
-
-  @js.native
-  sealed trait CustomMailFromStatus extends js.Any
-  object CustomMailFromStatus {
-    val Pending = "Pending".asInstanceOf[CustomMailFromStatus]
-    val Success = "Success".asInstanceOf[CustomMailFromStatus]
-    val Failed = "Failed".asInstanceOf[CustomMailFromStatus]
-    val TemporaryFailure = "TemporaryFailure".asInstanceOf[CustomMailFromStatus]
-
-    @inline def values = js.Array(Pending, Success, Failed, TemporaryFailure)
   }
 
   /** Contains information about a custom verification email template.
@@ -1456,28 +1376,6 @@ package object ses {
     }
   }
 
-  @js.native
-  sealed trait DimensionValueSource extends js.Any
-  object DimensionValueSource {
-    val messageTag = "messageTag".asInstanceOf[DimensionValueSource]
-    val emailHeader = "emailHeader".asInstanceOf[DimensionValueSource]
-    val linkTag = "linkTag".asInstanceOf[DimensionValueSource]
-
-    @inline def values = js.Array(messageTag, emailHeader, linkTag)
-  }
-
-  @js.native
-  sealed trait DsnAction extends js.Any
-  object DsnAction {
-    val failed = "failed".asInstanceOf[DsnAction]
-    val delayed = "delayed".asInstanceOf[DsnAction]
-    val delivered = "delivered".asInstanceOf[DsnAction]
-    val relayed = "relayed".asInstanceOf[DsnAction]
-    val expanded = "expanded".asInstanceOf[DsnAction]
-
-    @inline def values = js.Array(failed, delayed, delivered, relayed, expanded)
-  }
-
   /** Contains information about the event destination that the specified email sending events will be published to.
     *
     * '''Note:'''When you create or update an event destination, you must provide one, and only one, destination. The destination can be Amazon CloudWatch, Amazon Kinesis Firehose or Amazon Simple Notification Service (Amazon SNS). Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
@@ -1513,21 +1411,6 @@ package object ses {
       SNSDestination.foreach(__v => __obj.updateDynamic("SNSDestination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EventDestination]
     }
-  }
-
-  @js.native
-  sealed trait EventType extends js.Any
-  object EventType {
-    val send = "send".asInstanceOf[EventType]
-    val reject = "reject".asInstanceOf[EventType]
-    val bounce = "bounce".asInstanceOf[EventType]
-    val complaint = "complaint".asInstanceOf[EventType]
-    val delivery = "delivery".asInstanceOf[EventType]
-    val open = "open".asInstanceOf[EventType]
-    val click = "click".asInstanceOf[EventType]
-    val renderingFailure = "renderingFailure".asInstanceOf[EventType]
-
-    @inline def values = js.Array(send, reject, bounce, complaint, delivery, open, click, renderingFailure)
   }
 
   /** Additional X-headers to include in the Delivery Status Notification (DSN) when an email that Amazon SES receives on your behalf bounces. For information about receiving email through Amazon SES, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email.html|Amazon SES Developer Guide]].
@@ -1979,15 +1862,6 @@ package object ses {
     }
   }
 
-  @js.native
-  sealed trait IdentityType extends js.Any
-  object IdentityType {
-    val EmailAddress = "EmailAddress".asInstanceOf[IdentityType]
-    val Domain = "Domain".asInstanceOf[IdentityType]
-
-    @inline def values = js.Array(EmailAddress, Domain)
-  }
-
   /** Represents the verification attributes of a single identity.
     */
   @js.native
@@ -2009,15 +1883,6 @@ package object ses {
       VerificationToken.foreach(__v => __obj.updateDynamic("VerificationToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentityVerificationAttributes]
     }
-  }
-
-  @js.native
-  sealed trait InvocationType extends js.Any
-  object InvocationType {
-    val Event = "Event".asInstanceOf[InvocationType]
-    val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
-
-    @inline def values = js.Array(Event, RequestResponse)
   }
 
   /** Contains the delivery stream ARN and the IAM role ARN associated with an Amazon Kinesis Firehose event destination. Event destinations, such as Amazon Kinesis Firehose, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
@@ -2433,16 +2298,6 @@ package object ses {
     }
   }
 
-  @js.native
-  sealed trait NotificationType extends js.Any
-  object NotificationType {
-    val Bounce = "Bounce".asInstanceOf[NotificationType]
-    val Complaint = "Complaint".asInstanceOf[NotificationType]
-    val Delivery = "Delivery".asInstanceOf[NotificationType]
-
-    @inline def values = js.Array(Bounce, Complaint, Delivery)
-  }
-
   /** A request to modify the delivery options for a configuration set.
     */
   @js.native
@@ -2592,15 +2447,6 @@ package object ses {
       )
       __obj.asInstanceOf[ReceiptFilter]
     }
-  }
-
-  @js.native
-  sealed trait ReceiptFilterPolicy extends js.Any
-  object ReceiptFilterPolicy {
-    val Block = "Block".asInstanceOf[ReceiptFilterPolicy]
-    val Allow = "Allow".asInstanceOf[ReceiptFilterPolicy]
-
-    @inline def values = js.Array(Block, Allow)
   }
 
   /** A receipt IP address filter enables you to specify whether to accept or reject mail originating from an IP address or range of IP addresses. For information about setting up IP address filters, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/receiving-email-ip-filters.html|Amazon SES Developer Guide]].
@@ -2831,15 +2677,6 @@ package object ses {
       Encoding.foreach(__v => __obj.updateDynamic("Encoding")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SNSAction]
     }
-  }
-
-  @js.native
-  sealed trait SNSActionEncoding extends js.Any
-  object SNSActionEncoding {
-    val `UTF-8` = "UTF-8".asInstanceOf[SNSActionEncoding]
-    val Base64 = "Base64".asInstanceOf[SNSActionEncoding]
-
-    @inline def values = js.Array(`UTF-8`, Base64)
   }
 
   /** Contains the topic ARN associated with an Amazon Simple Notification Service (Amazon SNS) event destination. Event destinations, such as Amazon SNS, are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html|Amazon SES Developer Guide]].
@@ -3524,14 +3361,6 @@ package object ses {
     }
   }
 
-  @js.native
-  sealed trait StopScope extends js.Any
-  object StopScope {
-    val RuleSet = "RuleSet".asInstanceOf[StopScope]
-
-    @inline def values = js.Array(RuleSet)
-  }
-
   /** The content of the email, composed of a subject line, an HTML part, and a text-only part.
     */
   @js.native
@@ -3616,15 +3445,6 @@ package object ses {
       RenderedTemplate.foreach(__v => __obj.updateDynamic("RenderedTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestRenderTemplateResponse]
     }
-  }
-
-  @js.native
-  sealed trait TlsPolicy extends js.Any
-  object TlsPolicy {
-    val Require = "Require".asInstanceOf[TlsPolicy]
-    val Optional = "Optional".asInstanceOf[TlsPolicy]
-
-    @inline def values = js.Array(Require, Optional)
   }
 
   /** A domain that is used to redirect email recipients to an Amazon SES-operated domain. This domain captures open and click events generated by Amazon SES emails. For more information, see [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-custom-open-click-domains.html|Configuring Custom Domains to Handle Open and Click Tracking]] in the <i>Amazon SES Developer Guide</i>.
@@ -3873,18 +3693,6 @@ package object ses {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateTemplateResponse]
     }
-  }
-
-  @js.native
-  sealed trait VerificationStatus extends js.Any
-  object VerificationStatus {
-    val Pending = "Pending".asInstanceOf[VerificationStatus]
-    val Success = "Success".asInstanceOf[VerificationStatus]
-    val Failed = "Failed".asInstanceOf[VerificationStatus]
-    val TemporaryFailure = "TemporaryFailure".asInstanceOf[VerificationStatus]
-    val NotStarted = "NotStarted".asInstanceOf[VerificationStatus]
-
-    @inline def values = js.Array(Pending, Success, Failed, TemporaryFailure, NotStarted)
   }
 
   /** Represents a request to generate the CNAME records needed to set up Easy DKIM with Amazon SES. For more information about setting up Easy DKIM, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html|Amazon SES Developer Guide]].
