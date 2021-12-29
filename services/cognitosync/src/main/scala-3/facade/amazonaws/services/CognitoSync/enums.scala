@@ -4,36 +4,36 @@ import scalajs._
 
 type BulkPublishStatus = "NOT_STARTED" | "IN_PROGRESS" | "FAILED" | "SUCCEEDED"
 object BulkPublishStatus {
-  val NOT_STARTED: "NOT_STARTED" = "NOT_STARTED"
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val FAILED: "FAILED" = "FAILED"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val NOT_STARTED: "NOT_STARTED" = "NOT_STARTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
 
-  @inline def values = js.Array[BulkPublishStatus](NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED)
+  inline def values: js.Array[BulkPublishStatus] = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED)
 }
 
 type Operation = "replace" | "remove"
 object Operation {
-  val replace: "replace" = "replace"
-  val remove: "remove" = "remove"
+  inline val replace: "replace" = "replace"
+  inline val remove: "remove" = "remove"
 
-  @inline def values = js.Array[Operation](replace, remove)
+  inline def values: js.Array[Operation] = js.Array(replace, remove)
 }
 
 type Platform = "APNS" | "APNS_SANDBOX" | "GCM" | "ADM"
 object Platform {
-  val APNS: "APNS" = "APNS"
-  val APNS_SANDBOX: "APNS_SANDBOX" = "APNS_SANDBOX"
-  val GCM: "GCM" = "GCM"
-  val ADM: "ADM" = "ADM"
+  inline val APNS: "APNS" = "APNS"
+  inline val APNS_SANDBOX: "APNS_SANDBOX" = "APNS_SANDBOX"
+  inline val GCM: "GCM" = "GCM"
+  inline val ADM: "ADM" = "ADM"
 
-  @inline def values = js.Array[Platform](APNS, APNS_SANDBOX, GCM, ADM)
+  inline def values: js.Array[Platform] = js.Array(APNS, APNS_SANDBOX, GCM, ADM)
 }
 
 type StreamingStatus = "ENABLED" | "DISABLED"
 object StreamingStatus {
-  val ENABLED: "ENABLED" = "ENABLED"
-  val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array[StreamingStatus](ENABLED, DISABLED)
+  inline def values: js.Array[StreamingStatus] = js.Array(ENABLED, DISABLED)
 }

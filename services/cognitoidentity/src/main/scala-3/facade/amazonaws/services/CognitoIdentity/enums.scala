@@ -4,34 +4,34 @@ import scalajs._
 
 type AmbiguousRoleResolutionType = "AuthenticatedRole" | "Deny"
 object AmbiguousRoleResolutionType {
-  val AuthenticatedRole: "AuthenticatedRole" = "AuthenticatedRole"
-  val Deny: "Deny" = "Deny"
+  inline val AuthenticatedRole: "AuthenticatedRole" = "AuthenticatedRole"
+  inline val Deny: "Deny" = "Deny"
 
-  @inline def values = js.Array[AmbiguousRoleResolutionType](AuthenticatedRole, Deny)
+  inline def values: js.Array[AmbiguousRoleResolutionType] = js.Array(AuthenticatedRole, Deny)
 }
 
 type ErrorCode = "AccessDenied" | "InternalServerError"
 object ErrorCode {
-  val AccessDenied: "AccessDenied" = "AccessDenied"
-  val InternalServerError: "InternalServerError" = "InternalServerError"
+  inline val AccessDenied: "AccessDenied" = "AccessDenied"
+  inline val InternalServerError: "InternalServerError" = "InternalServerError"
 
-  @inline def values = js.Array[ErrorCode](AccessDenied, InternalServerError)
+  inline def values: js.Array[ErrorCode] = js.Array(AccessDenied, InternalServerError)
 }
 
 type MappingRuleMatchType = "Equals" | "Contains" | "StartsWith" | "NotEqual"
 object MappingRuleMatchType {
-  val Equals: "Equals" = "Equals"
-  val Contains: "Contains" = "Contains"
-  val StartsWith: "StartsWith" = "StartsWith"
-  val NotEqual: "NotEqual" = "NotEqual"
+  inline val Equals: "Equals" = "Equals"
+  inline val Contains: "Contains" = "Contains"
+  inline val StartsWith: "StartsWith" = "StartsWith"
+  inline val NotEqual: "NotEqual" = "NotEqual"
 
-  @inline def values = js.Array[MappingRuleMatchType](Equals, Contains, StartsWith, NotEqual)
+  inline def values: js.Array[MappingRuleMatchType] = js.Array(Equals, Contains, StartsWith, NotEqual)
 }
 
 type RoleMappingType = "Token" | "Rules"
 object RoleMappingType {
-  val Token: "Token" = "Token"
-  val Rules: "Rules" = "Rules"
+  inline val Token: "Token" = "Token"
+  inline val Rules: "Rules" = "Rules"
 
-  @inline def values = js.Array[RoleMappingType](Token, Rules)
+  inline def values: js.Array[RoleMappingType] = js.Array(Token, Rules)
 }

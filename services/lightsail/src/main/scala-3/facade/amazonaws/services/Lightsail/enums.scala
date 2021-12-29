@@ -4,174 +4,174 @@ import scalajs._
 
 type AccessDirection = "inbound" | "outbound"
 object AccessDirection {
-  val inbound: "inbound" = "inbound"
-  val outbound: "outbound" = "outbound"
+  inline val inbound: "inbound" = "inbound"
+  inline val outbound: "outbound" = "outbound"
 
-  @inline def values = js.Array[AccessDirection](inbound, outbound)
+  inline def values: js.Array[AccessDirection] = js.Array(inbound, outbound)
 }
 
 type AddOnType = "AutoSnapshot"
 object AddOnType {
-  val AutoSnapshot: "AutoSnapshot" = "AutoSnapshot"
+  inline val AutoSnapshot: "AutoSnapshot" = "AutoSnapshot"
 
-  @inline def values = js.Array[AddOnType](AutoSnapshot)
+  inline def values: js.Array[AddOnType] = js.Array(AutoSnapshot)
 }
 
 type AlarmState = "OK" | "ALARM" | "INSUFFICIENT_DATA"
 object AlarmState {
-  val OK: "OK" = "OK"
-  val ALARM: "ALARM" = "ALARM"
-  val INSUFFICIENT_DATA: "INSUFFICIENT_DATA" = "INSUFFICIENT_DATA"
+  inline val OK: "OK" = "OK"
+  inline val ALARM: "ALARM" = "ALARM"
+  inline val INSUFFICIENT_DATA: "INSUFFICIENT_DATA" = "INSUFFICIENT_DATA"
 
-  @inline def values = js.Array[AlarmState](OK, ALARM, INSUFFICIENT_DATA)
+  inline def values: js.Array[AlarmState] = js.Array(OK, ALARM, INSUFFICIENT_DATA)
 }
 
 type AutoSnapshotStatus = "Success" | "Failed" | "InProgress" | "NotFound"
 object AutoSnapshotStatus {
-  val Success: "Success" = "Success"
-  val Failed: "Failed" = "Failed"
-  val InProgress: "InProgress" = "InProgress"
-  val NotFound: "NotFound" = "NotFound"
+  inline val Success: "Success" = "Success"
+  inline val Failed: "Failed" = "Failed"
+  inline val InProgress: "InProgress" = "InProgress"
+  inline val NotFound: "NotFound" = "NotFound"
 
-  @inline def values = js.Array[AutoSnapshotStatus](Success, Failed, InProgress, NotFound)
+  inline def values: js.Array[AutoSnapshotStatus] = js.Array(Success, Failed, InProgress, NotFound)
 }
 
 type BehaviorEnum = "dont-cache" | "cache"
 object BehaviorEnum {
-  val `dont-cache`: "dont-cache" = "dont-cache"
-  val cache: "cache" = "cache"
+  inline val `dont-cache`: "dont-cache" = "dont-cache"
+  inline val cache: "cache" = "cache"
 
-  @inline def values = js.Array[BehaviorEnum](`dont-cache`, cache)
+  inline def values: js.Array[BehaviorEnum] = js.Array(`dont-cache`, cache)
 }
 
 type BlueprintType = "os" | "app"
 object BlueprintType {
-  val os: "os" = "os"
-  val app: "app" = "app"
+  inline val os: "os" = "os"
+  inline val app: "app" = "app"
 
-  @inline def values = js.Array[BlueprintType](os, app)
+  inline def values: js.Array[BlueprintType] = js.Array(os, app)
 }
 
 type CertificateStatus = "PENDING_VALIDATION" | "ISSUED" | "INACTIVE" | "EXPIRED" | "VALIDATION_TIMED_OUT" | "REVOKED" | "FAILED"
 object CertificateStatus {
-  val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
-  val ISSUED: "ISSUED" = "ISSUED"
-  val INACTIVE: "INACTIVE" = "INACTIVE"
-  val EXPIRED: "EXPIRED" = "EXPIRED"
-  val VALIDATION_TIMED_OUT: "VALIDATION_TIMED_OUT" = "VALIDATION_TIMED_OUT"
-  val REVOKED: "REVOKED" = "REVOKED"
-  val FAILED: "FAILED" = "FAILED"
+  inline val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
+  inline val ISSUED: "ISSUED" = "ISSUED"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val VALIDATION_TIMED_OUT: "VALIDATION_TIMED_OUT" = "VALIDATION_TIMED_OUT"
+  inline val REVOKED: "REVOKED" = "REVOKED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[CertificateStatus](PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED)
+  inline def values: js.Array[CertificateStatus] = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED)
 }
 
 type CloudFormationStackRecordSourceType = "ExportSnapshotRecord"
 object CloudFormationStackRecordSourceType {
-  val ExportSnapshotRecord: "ExportSnapshotRecord" = "ExportSnapshotRecord"
+  inline val ExportSnapshotRecord: "ExportSnapshotRecord" = "ExportSnapshotRecord"
 
-  @inline def values = js.Array[CloudFormationStackRecordSourceType](ExportSnapshotRecord)
+  inline def values: js.Array[CloudFormationStackRecordSourceType] = js.Array(ExportSnapshotRecord)
 }
 
 type ComparisonOperator = "GreaterThanOrEqualToThreshold" | "GreaterThanThreshold" | "LessThanThreshold" | "LessThanOrEqualToThreshold"
 object ComparisonOperator {
-  val GreaterThanOrEqualToThreshold: "GreaterThanOrEqualToThreshold" = "GreaterThanOrEqualToThreshold"
-  val GreaterThanThreshold: "GreaterThanThreshold" = "GreaterThanThreshold"
-  val LessThanThreshold: "LessThanThreshold" = "LessThanThreshold"
-  val LessThanOrEqualToThreshold: "LessThanOrEqualToThreshold" = "LessThanOrEqualToThreshold"
+  inline val GreaterThanOrEqualToThreshold: "GreaterThanOrEqualToThreshold" = "GreaterThanOrEqualToThreshold"
+  inline val GreaterThanThreshold: "GreaterThanThreshold" = "GreaterThanThreshold"
+  inline val LessThanThreshold: "LessThanThreshold" = "LessThanThreshold"
+  inline val LessThanOrEqualToThreshold: "LessThanOrEqualToThreshold" = "LessThanOrEqualToThreshold"
 
-  @inline def values = js.Array[ComparisonOperator](GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+  inline def values: js.Array[ComparisonOperator] = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
 }
 
 type ContactMethodStatus = "PendingVerification" | "Valid" | "Invalid"
 object ContactMethodStatus {
-  val PendingVerification: "PendingVerification" = "PendingVerification"
-  val Valid: "Valid" = "Valid"
-  val Invalid: "Invalid" = "Invalid"
+  inline val PendingVerification: "PendingVerification" = "PendingVerification"
+  inline val Valid: "Valid" = "Valid"
+  inline val Invalid: "Invalid" = "Invalid"
 
-  @inline def values = js.Array[ContactMethodStatus](PendingVerification, Valid, Invalid)
+  inline def values: js.Array[ContactMethodStatus] = js.Array(PendingVerification, Valid, Invalid)
 }
 
 type ContactMethodVerificationProtocol = "Email"
 object ContactMethodVerificationProtocol {
-  val Email: "Email" = "Email"
+  inline val Email: "Email" = "Email"
 
-  @inline def values = js.Array[ContactMethodVerificationProtocol](Email)
+  inline def values: js.Array[ContactMethodVerificationProtocol] = js.Array(Email)
 }
 
 type ContactProtocol = "Email" | "SMS"
 object ContactProtocol {
-  val Email: "Email" = "Email"
-  val SMS: "SMS" = "SMS"
+  inline val Email: "Email" = "Email"
+  inline val SMS: "SMS" = "SMS"
 
-  @inline def values = js.Array[ContactProtocol](Email, SMS)
+  inline def values: js.Array[ContactProtocol] = js.Array(Email, SMS)
 }
 
 type ContainerServiceDeploymentState = "ACTIVATING" | "ACTIVE" | "INACTIVE" | "FAILED"
 object ContainerServiceDeploymentState {
-  val ACTIVATING: "ACTIVATING" = "ACTIVATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val INACTIVE: "INACTIVE" = "INACTIVE"
-  val FAILED: "FAILED" = "FAILED"
+  inline val ACTIVATING: "ACTIVATING" = "ACTIVATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[ContainerServiceDeploymentState](ACTIVATING, ACTIVE, INACTIVE, FAILED)
+  inline def values: js.Array[ContainerServiceDeploymentState] = js.Array(ACTIVATING, ACTIVE, INACTIVE, FAILED)
 }
 
 type ContainerServiceMetricName = "CPUUtilization" | "MemoryUtilization"
 object ContainerServiceMetricName {
-  val CPUUtilization: "CPUUtilization" = "CPUUtilization"
-  val MemoryUtilization: "MemoryUtilization" = "MemoryUtilization"
+  inline val CPUUtilization: "CPUUtilization" = "CPUUtilization"
+  inline val MemoryUtilization: "MemoryUtilization" = "MemoryUtilization"
 
-  @inline def values = js.Array[ContainerServiceMetricName](CPUUtilization, MemoryUtilization)
+  inline def values: js.Array[ContainerServiceMetricName] = js.Array(CPUUtilization, MemoryUtilization)
 }
 
 type ContainerServicePowerName = "nano" | "micro" | "small" | "medium" | "large" | "xlarge"
 object ContainerServicePowerName {
-  val nano: "nano" = "nano"
-  val micro: "micro" = "micro"
-  val small: "small" = "small"
-  val medium: "medium" = "medium"
-  val large: "large" = "large"
-  val xlarge: "xlarge" = "xlarge"
+  inline val nano: "nano" = "nano"
+  inline val micro: "micro" = "micro"
+  inline val small: "small" = "small"
+  inline val medium: "medium" = "medium"
+  inline val large: "large" = "large"
+  inline val xlarge: "xlarge" = "xlarge"
 
-  @inline def values = js.Array[ContainerServicePowerName](nano, micro, small, medium, large, xlarge)
+  inline def values: js.Array[ContainerServicePowerName] = js.Array(nano, micro, small, medium, large, xlarge)
 }
 
 type ContainerServiceProtocol = "HTTP" | "HTTPS" | "TCP" | "UDP"
 object ContainerServiceProtocol {
-  val HTTP: "HTTP" = "HTTP"
-  val HTTPS: "HTTPS" = "HTTPS"
-  val TCP: "TCP" = "TCP"
-  val UDP: "UDP" = "UDP"
+  inline val HTTP: "HTTP" = "HTTP"
+  inline val HTTPS: "HTTPS" = "HTTPS"
+  inline val TCP: "TCP" = "TCP"
+  inline val UDP: "UDP" = "UDP"
 
-  @inline def values = js.Array[ContainerServiceProtocol](HTTP, HTTPS, TCP, UDP)
+  inline def values: js.Array[ContainerServiceProtocol] = js.Array(HTTP, HTTPS, TCP, UDP)
 }
 
 type ContainerServiceState = "PENDING" | "READY" | "RUNNING" | "UPDATING" | "DELETING" | "DISABLED" | "DEPLOYING"
 object ContainerServiceState {
-  val PENDING: "PENDING" = "PENDING"
-  val READY: "READY" = "READY"
-  val RUNNING: "RUNNING" = "RUNNING"
-  val UPDATING: "UPDATING" = "UPDATING"
-  val DELETING: "DELETING" = "DELETING"
-  val DISABLED: "DISABLED" = "DISABLED"
-  val DEPLOYING: "DEPLOYING" = "DEPLOYING"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val READY: "READY" = "READY"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val DEPLOYING: "DEPLOYING" = "DEPLOYING"
 
-  @inline def values = js.Array[ContainerServiceState](PENDING, READY, RUNNING, UPDATING, DELETING, DISABLED, DEPLOYING)
+  inline def values: js.Array[ContainerServiceState] = js.Array(PENDING, READY, RUNNING, UPDATING, DELETING, DISABLED, DEPLOYING)
 }
 
 type ContainerServiceStateDetailCode = "CREATING_SYSTEM_RESOURCES" | "CREATING_NETWORK_INFRASTRUCTURE" | "PROVISIONING_CERTIFICATE" | "PROVISIONING_SERVICE" | "CREATING_DEPLOYMENT" | "EVALUATING_HEALTH_CHECK" | "ACTIVATING_DEPLOYMENT" | "CERTIFICATE_LIMIT_EXCEEDED" | "UNKNOWN_ERROR"
 object ContainerServiceStateDetailCode {
-  val CREATING_SYSTEM_RESOURCES: "CREATING_SYSTEM_RESOURCES" = "CREATING_SYSTEM_RESOURCES"
-  val CREATING_NETWORK_INFRASTRUCTURE: "CREATING_NETWORK_INFRASTRUCTURE" = "CREATING_NETWORK_INFRASTRUCTURE"
-  val PROVISIONING_CERTIFICATE: "PROVISIONING_CERTIFICATE" = "PROVISIONING_CERTIFICATE"
-  val PROVISIONING_SERVICE: "PROVISIONING_SERVICE" = "PROVISIONING_SERVICE"
-  val CREATING_DEPLOYMENT: "CREATING_DEPLOYMENT" = "CREATING_DEPLOYMENT"
-  val EVALUATING_HEALTH_CHECK: "EVALUATING_HEALTH_CHECK" = "EVALUATING_HEALTH_CHECK"
-  val ACTIVATING_DEPLOYMENT: "ACTIVATING_DEPLOYMENT" = "ACTIVATING_DEPLOYMENT"
-  val CERTIFICATE_LIMIT_EXCEEDED: "CERTIFICATE_LIMIT_EXCEEDED" = "CERTIFICATE_LIMIT_EXCEEDED"
-  val UNKNOWN_ERROR: "UNKNOWN_ERROR" = "UNKNOWN_ERROR"
+  inline val CREATING_SYSTEM_RESOURCES: "CREATING_SYSTEM_RESOURCES" = "CREATING_SYSTEM_RESOURCES"
+  inline val CREATING_NETWORK_INFRASTRUCTURE: "CREATING_NETWORK_INFRASTRUCTURE" = "CREATING_NETWORK_INFRASTRUCTURE"
+  inline val PROVISIONING_CERTIFICATE: "PROVISIONING_CERTIFICATE" = "PROVISIONING_CERTIFICATE"
+  inline val PROVISIONING_SERVICE: "PROVISIONING_SERVICE" = "PROVISIONING_SERVICE"
+  inline val CREATING_DEPLOYMENT: "CREATING_DEPLOYMENT" = "CREATING_DEPLOYMENT"
+  inline val EVALUATING_HEALTH_CHECK: "EVALUATING_HEALTH_CHECK" = "EVALUATING_HEALTH_CHECK"
+  inline val ACTIVATING_DEPLOYMENT: "ACTIVATING_DEPLOYMENT" = "ACTIVATING_DEPLOYMENT"
+  inline val CERTIFICATE_LIMIT_EXCEEDED: "CERTIFICATE_LIMIT_EXCEEDED" = "CERTIFICATE_LIMIT_EXCEEDED"
+  inline val UNKNOWN_ERROR: "UNKNOWN_ERROR" = "UNKNOWN_ERROR"
 
-  @inline def values = js.Array[ContainerServiceStateDetailCode](
+  inline def values: js.Array[ContainerServiceStateDetailCode] = js.Array(
     CREATING_SYSTEM_RESOURCES,
     CREATING_NETWORK_INFRASTRUCTURE,
     PROVISIONING_CERTIFICATE,
@@ -186,73 +186,73 @@ object ContainerServiceStateDetailCode {
 
 type DiskSnapshotState = "pending" | "completed" | "error" | "unknown"
 object DiskSnapshotState {
-  val pending: "pending" = "pending"
-  val completed: "completed" = "completed"
-  val error: "error" = "error"
-  val unknown: "unknown" = "unknown"
+  inline val pending: "pending" = "pending"
+  inline val completed: "completed" = "completed"
+  inline val error: "error" = "error"
+  inline val unknown: "unknown" = "unknown"
 
-  @inline def values = js.Array[DiskSnapshotState](pending, completed, error, unknown)
+  inline def values: js.Array[DiskSnapshotState] = js.Array(pending, completed, error, unknown)
 }
 
 type DiskState = "pending" | "error" | "available" | "in-use" | "unknown"
 object DiskState {
-  val pending: "pending" = "pending"
-  val error: "error" = "error"
-  val available: "available" = "available"
-  val `in-use`: "in-use" = "in-use"
-  val unknown: "unknown" = "unknown"
+  inline val pending: "pending" = "pending"
+  inline val error: "error" = "error"
+  inline val available: "available" = "available"
+  inline val `in-use`: "in-use" = "in-use"
+  inline val unknown: "unknown" = "unknown"
 
-  @inline def values = js.Array[DiskState](pending, error, available, `in-use`, unknown)
+  inline def values: js.Array[DiskState] = js.Array(pending, error, available, `in-use`, unknown)
 }
 
 type DistributionMetricName = "Requests" | "BytesDownloaded" | "BytesUploaded" | "TotalErrorRate" | "Http4xxErrorRate" | "Http5xxErrorRate"
 object DistributionMetricName {
-  val Requests: "Requests" = "Requests"
-  val BytesDownloaded: "BytesDownloaded" = "BytesDownloaded"
-  val BytesUploaded: "BytesUploaded" = "BytesUploaded"
-  val TotalErrorRate: "TotalErrorRate" = "TotalErrorRate"
-  val Http4xxErrorRate: "Http4xxErrorRate" = "Http4xxErrorRate"
-  val Http5xxErrorRate: "Http5xxErrorRate" = "Http5xxErrorRate"
+  inline val Requests: "Requests" = "Requests"
+  inline val BytesDownloaded: "BytesDownloaded" = "BytesDownloaded"
+  inline val BytesUploaded: "BytesUploaded" = "BytesUploaded"
+  inline val TotalErrorRate: "TotalErrorRate" = "TotalErrorRate"
+  inline val Http4xxErrorRate: "Http4xxErrorRate" = "Http4xxErrorRate"
+  inline val Http5xxErrorRate: "Http5xxErrorRate" = "Http5xxErrorRate"
 
-  @inline def values = js.Array[DistributionMetricName](Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate)
+  inline def values: js.Array[DistributionMetricName] = js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate)
 }
 
 type ExportSnapshotRecordSourceType = "InstanceSnapshot" | "DiskSnapshot"
 object ExportSnapshotRecordSourceType {
-  val InstanceSnapshot: "InstanceSnapshot" = "InstanceSnapshot"
-  val DiskSnapshot: "DiskSnapshot" = "DiskSnapshot"
+  inline val InstanceSnapshot: "InstanceSnapshot" = "InstanceSnapshot"
+  inline val DiskSnapshot: "DiskSnapshot" = "DiskSnapshot"
 
-  @inline def values = js.Array[ExportSnapshotRecordSourceType](InstanceSnapshot, DiskSnapshot)
+  inline def values: js.Array[ExportSnapshotRecordSourceType] = js.Array(InstanceSnapshot, DiskSnapshot)
 }
 
 type ForwardValues = "none" | "allow-list" | "all"
 object ForwardValues {
-  val none: "none" = "none"
-  val `allow-list`: "allow-list" = "allow-list"
-  val all: "all" = "all"
+  inline val none: "none" = "none"
+  inline val `allow-list`: "allow-list" = "allow-list"
+  inline val all: "all" = "all"
 
-  @inline def values = js.Array[ForwardValues](none, `allow-list`, all)
+  inline def values: js.Array[ForwardValues] = js.Array(none, `allow-list`, all)
 }
 
 type HeaderEnum = "Accept" | "Accept-Charset" | "Accept-Datetime" | "Accept-Encoding" | "Accept-Language" | "Authorization" | "CloudFront-Forwarded-Proto" | "CloudFront-Is-Desktop-Viewer" | "CloudFront-Is-Mobile-Viewer" | "CloudFront-Is-SmartTV-Viewer" | "CloudFront-Is-Tablet-Viewer" | "CloudFront-Viewer-Country" | "Host" | "Origin" | "Referer"
 object HeaderEnum {
-  val Accept: "Accept" = "Accept"
-  val `Accept-Charset`: "Accept-Charset" = "Accept-Charset"
-  val `Accept-Datetime`: "Accept-Datetime" = "Accept-Datetime"
-  val `Accept-Encoding`: "Accept-Encoding" = "Accept-Encoding"
-  val `Accept-Language`: "Accept-Language" = "Accept-Language"
-  val Authorization: "Authorization" = "Authorization"
-  val `CloudFront-Forwarded-Proto`: "CloudFront-Forwarded-Proto" = "CloudFront-Forwarded-Proto"
-  val `CloudFront-Is-Desktop-Viewer`: "CloudFront-Is-Desktop-Viewer" = "CloudFront-Is-Desktop-Viewer"
-  val `CloudFront-Is-Mobile-Viewer`: "CloudFront-Is-Mobile-Viewer" = "CloudFront-Is-Mobile-Viewer"
-  val `CloudFront-Is-SmartTV-Viewer`: "CloudFront-Is-SmartTV-Viewer" = "CloudFront-Is-SmartTV-Viewer"
-  val `CloudFront-Is-Tablet-Viewer`: "CloudFront-Is-Tablet-Viewer" = "CloudFront-Is-Tablet-Viewer"
-  val `CloudFront-Viewer-Country`: "CloudFront-Viewer-Country" = "CloudFront-Viewer-Country"
-  val Host: "Host" = "Host"
-  val Origin: "Origin" = "Origin"
-  val Referer: "Referer" = "Referer"
+  inline val Accept: "Accept" = "Accept"
+  inline val `Accept-Charset`: "Accept-Charset" = "Accept-Charset"
+  inline val `Accept-Datetime`: "Accept-Datetime" = "Accept-Datetime"
+  inline val `Accept-Encoding`: "Accept-Encoding" = "Accept-Encoding"
+  inline val `Accept-Language`: "Accept-Language" = "Accept-Language"
+  inline val Authorization: "Authorization" = "Authorization"
+  inline val `CloudFront-Forwarded-Proto`: "CloudFront-Forwarded-Proto" = "CloudFront-Forwarded-Proto"
+  inline val `CloudFront-Is-Desktop-Viewer`: "CloudFront-Is-Desktop-Viewer" = "CloudFront-Is-Desktop-Viewer"
+  inline val `CloudFront-Is-Mobile-Viewer`: "CloudFront-Is-Mobile-Viewer" = "CloudFront-Is-Mobile-Viewer"
+  inline val `CloudFront-Is-SmartTV-Viewer`: "CloudFront-Is-SmartTV-Viewer" = "CloudFront-Is-SmartTV-Viewer"
+  inline val `CloudFront-Is-Tablet-Viewer`: "CloudFront-Is-Tablet-Viewer" = "CloudFront-Is-Tablet-Viewer"
+  inline val `CloudFront-Viewer-Country`: "CloudFront-Viewer-Country" = "CloudFront-Viewer-Country"
+  inline val Host: "Host" = "Host"
+  inline val Origin: "Origin" = "Origin"
+  inline val Referer: "Referer" = "Referer"
 
-  @inline def values = js.Array[HeaderEnum](
+  inline def values: js.Array[HeaderEnum] = js.Array(
     Accept,
     `Accept-Charset`,
     `Accept-Datetime`,
@@ -273,27 +273,27 @@ object HeaderEnum {
 
 type InstanceAccessProtocol = "ssh" | "rdp"
 object InstanceAccessProtocol {
-  val ssh: "ssh" = "ssh"
-  val rdp: "rdp" = "rdp"
+  inline val ssh: "ssh" = "ssh"
+  inline val rdp: "rdp" = "rdp"
 
-  @inline def values = js.Array[InstanceAccessProtocol](ssh, rdp)
+  inline def values: js.Array[InstanceAccessProtocol] = js.Array(ssh, rdp)
 }
 
 type InstanceHealthReason = "Lb.RegistrationInProgress" | "Lb.InitialHealthChecking" | "Lb.InternalError" | "Instance.ResponseCodeMismatch" | "Instance.Timeout" | "Instance.FailedHealthChecks" | "Instance.NotRegistered" | "Instance.NotInUse" | "Instance.DeregistrationInProgress" | "Instance.InvalidState" | "Instance.IpUnusable"
 object InstanceHealthReason {
-  val `Lb.RegistrationInProgress`: "Lb.RegistrationInProgress" = "Lb.RegistrationInProgress"
-  val `Lb.InitialHealthChecking`: "Lb.InitialHealthChecking" = "Lb.InitialHealthChecking"
-  val `Lb.InternalError`: "Lb.InternalError" = "Lb.InternalError"
-  val `Instance.ResponseCodeMismatch`: "Instance.ResponseCodeMismatch" = "Instance.ResponseCodeMismatch"
-  val `Instance.Timeout`: "Instance.Timeout" = "Instance.Timeout"
-  val `Instance.FailedHealthChecks`: "Instance.FailedHealthChecks" = "Instance.FailedHealthChecks"
-  val `Instance.NotRegistered`: "Instance.NotRegistered" = "Instance.NotRegistered"
-  val `Instance.NotInUse`: "Instance.NotInUse" = "Instance.NotInUse"
-  val `Instance.DeregistrationInProgress`: "Instance.DeregistrationInProgress" = "Instance.DeregistrationInProgress"
-  val `Instance.InvalidState`: "Instance.InvalidState" = "Instance.InvalidState"
-  val `Instance.IpUnusable`: "Instance.IpUnusable" = "Instance.IpUnusable"
+  inline val `Lb.RegistrationInProgress`: "Lb.RegistrationInProgress" = "Lb.RegistrationInProgress"
+  inline val `Lb.InitialHealthChecking`: "Lb.InitialHealthChecking" = "Lb.InitialHealthChecking"
+  inline val `Lb.InternalError`: "Lb.InternalError" = "Lb.InternalError"
+  inline val `Instance.ResponseCodeMismatch`: "Instance.ResponseCodeMismatch" = "Instance.ResponseCodeMismatch"
+  inline val `Instance.Timeout`: "Instance.Timeout" = "Instance.Timeout"
+  inline val `Instance.FailedHealthChecks`: "Instance.FailedHealthChecks" = "Instance.FailedHealthChecks"
+  inline val `Instance.NotRegistered`: "Instance.NotRegistered" = "Instance.NotRegistered"
+  inline val `Instance.NotInUse`: "Instance.NotInUse" = "Instance.NotInUse"
+  inline val `Instance.DeregistrationInProgress`: "Instance.DeregistrationInProgress" = "Instance.DeregistrationInProgress"
+  inline val `Instance.InvalidState`: "Instance.InvalidState" = "Instance.InvalidState"
+  inline val `Instance.IpUnusable`: "Instance.IpUnusable" = "Instance.IpUnusable"
 
-  @inline def values = js.Array[InstanceHealthReason](
+  inline def values: js.Array[InstanceHealthReason] = js.Array(
     `Lb.RegistrationInProgress`,
     `Lb.InitialHealthChecking`,
     `Lb.InternalError`,
@@ -310,80 +310,80 @@ object InstanceHealthReason {
 
 type InstanceHealthState = "initial" | "healthy" | "unhealthy" | "unused" | "draining" | "unavailable"
 object InstanceHealthState {
-  val initial: "initial" = "initial"
-  val healthy: "healthy" = "healthy"
-  val unhealthy: "unhealthy" = "unhealthy"
-  val unused: "unused" = "unused"
-  val draining: "draining" = "draining"
-  val unavailable: "unavailable" = "unavailable"
+  inline val initial: "initial" = "initial"
+  inline val healthy: "healthy" = "healthy"
+  inline val unhealthy: "unhealthy" = "unhealthy"
+  inline val unused: "unused" = "unused"
+  inline val draining: "draining" = "draining"
+  inline val unavailable: "unavailable" = "unavailable"
 
-  @inline def values = js.Array[InstanceHealthState](initial, healthy, unhealthy, unused, draining, unavailable)
+  inline def values: js.Array[InstanceHealthState] = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
 }
 
 type InstanceMetricName = "CPUUtilization" | "NetworkIn" | "NetworkOut" | "StatusCheckFailed" | "StatusCheckFailed_Instance" | "StatusCheckFailed_System" | "BurstCapacityTime" | "BurstCapacityPercentage"
 object InstanceMetricName {
-  val CPUUtilization: "CPUUtilization" = "CPUUtilization"
-  val NetworkIn: "NetworkIn" = "NetworkIn"
-  val NetworkOut: "NetworkOut" = "NetworkOut"
-  val StatusCheckFailed: "StatusCheckFailed" = "StatusCheckFailed"
-  val StatusCheckFailed_Instance: "StatusCheckFailed_Instance" = "StatusCheckFailed_Instance"
-  val StatusCheckFailed_System: "StatusCheckFailed_System" = "StatusCheckFailed_System"
-  val BurstCapacityTime: "BurstCapacityTime" = "BurstCapacityTime"
-  val BurstCapacityPercentage: "BurstCapacityPercentage" = "BurstCapacityPercentage"
+  inline val CPUUtilization: "CPUUtilization" = "CPUUtilization"
+  inline val NetworkIn: "NetworkIn" = "NetworkIn"
+  inline val NetworkOut: "NetworkOut" = "NetworkOut"
+  inline val StatusCheckFailed: "StatusCheckFailed" = "StatusCheckFailed"
+  inline val StatusCheckFailed_Instance: "StatusCheckFailed_Instance" = "StatusCheckFailed_Instance"
+  inline val StatusCheckFailed_System: "StatusCheckFailed_System" = "StatusCheckFailed_System"
+  inline val BurstCapacityTime: "BurstCapacityTime" = "BurstCapacityTime"
+  inline val BurstCapacityPercentage: "BurstCapacityPercentage" = "BurstCapacityPercentage"
 
-  @inline def values = js.Array[InstanceMetricName](CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage)
+  inline def values: js.Array[InstanceMetricName] = js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage)
 }
 
 type InstancePlatform = "LINUX_UNIX" | "WINDOWS"
 object InstancePlatform {
-  val LINUX_UNIX: "LINUX_UNIX" = "LINUX_UNIX"
-  val WINDOWS: "WINDOWS" = "WINDOWS"
+  inline val LINUX_UNIX: "LINUX_UNIX" = "LINUX_UNIX"
+  inline val WINDOWS: "WINDOWS" = "WINDOWS"
 
-  @inline def values = js.Array[InstancePlatform](LINUX_UNIX, WINDOWS)
+  inline def values: js.Array[InstancePlatform] = js.Array(LINUX_UNIX, WINDOWS)
 }
 
 type InstanceSnapshotState = "pending" | "error" | "available"
 object InstanceSnapshotState {
-  val pending: "pending" = "pending"
-  val error: "error" = "error"
-  val available: "available" = "available"
+  inline val pending: "pending" = "pending"
+  inline val error: "error" = "error"
+  inline val available: "available" = "available"
 
-  @inline def values = js.Array[InstanceSnapshotState](pending, error, available)
+  inline def values: js.Array[InstanceSnapshotState] = js.Array(pending, error, available)
 }
 
 type IpAddressType = "dualstack" | "ipv4"
 object IpAddressType {
-  val dualstack: "dualstack" = "dualstack"
-  val ipv4: "ipv4" = "ipv4"
+  inline val dualstack: "dualstack" = "dualstack"
+  inline val ipv4: "ipv4" = "ipv4"
 
-  @inline def values = js.Array[IpAddressType](dualstack, ipv4)
+  inline def values: js.Array[IpAddressType] = js.Array(dualstack, ipv4)
 }
 
 type LoadBalancerAttributeName = "HealthCheckPath" | "SessionStickinessEnabled" | "SessionStickiness_LB_CookieDurationSeconds"
 object LoadBalancerAttributeName {
-  val HealthCheckPath: "HealthCheckPath" = "HealthCheckPath"
-  val SessionStickinessEnabled: "SessionStickinessEnabled" = "SessionStickinessEnabled"
-  val SessionStickiness_LB_CookieDurationSeconds: "SessionStickiness_LB_CookieDurationSeconds" = "SessionStickiness_LB_CookieDurationSeconds"
+  inline val HealthCheckPath: "HealthCheckPath" = "HealthCheckPath"
+  inline val SessionStickinessEnabled: "SessionStickinessEnabled" = "SessionStickinessEnabled"
+  inline val SessionStickiness_LB_CookieDurationSeconds: "SessionStickiness_LB_CookieDurationSeconds" = "SessionStickiness_LB_CookieDurationSeconds"
 
-  @inline def values = js.Array[LoadBalancerAttributeName](HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds)
+  inline def values: js.Array[LoadBalancerAttributeName] = js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds)
 }
 
 type LoadBalancerMetricName = "ClientTLSNegotiationErrorCount" | "HealthyHostCount" | "UnhealthyHostCount" | "HTTPCode_LB_4XX_Count" | "HTTPCode_LB_5XX_Count" | "HTTPCode_Instance_2XX_Count" | "HTTPCode_Instance_3XX_Count" | "HTTPCode_Instance_4XX_Count" | "HTTPCode_Instance_5XX_Count" | "InstanceResponseTime" | "RejectedConnectionCount" | "RequestCount"
 object LoadBalancerMetricName {
-  val ClientTLSNegotiationErrorCount: "ClientTLSNegotiationErrorCount" = "ClientTLSNegotiationErrorCount"
-  val HealthyHostCount: "HealthyHostCount" = "HealthyHostCount"
-  val UnhealthyHostCount: "UnhealthyHostCount" = "UnhealthyHostCount"
-  val HTTPCode_LB_4XX_Count: "HTTPCode_LB_4XX_Count" = "HTTPCode_LB_4XX_Count"
-  val HTTPCode_LB_5XX_Count: "HTTPCode_LB_5XX_Count" = "HTTPCode_LB_5XX_Count"
-  val HTTPCode_Instance_2XX_Count: "HTTPCode_Instance_2XX_Count" = "HTTPCode_Instance_2XX_Count"
-  val HTTPCode_Instance_3XX_Count: "HTTPCode_Instance_3XX_Count" = "HTTPCode_Instance_3XX_Count"
-  val HTTPCode_Instance_4XX_Count: "HTTPCode_Instance_4XX_Count" = "HTTPCode_Instance_4XX_Count"
-  val HTTPCode_Instance_5XX_Count: "HTTPCode_Instance_5XX_Count" = "HTTPCode_Instance_5XX_Count"
-  val InstanceResponseTime: "InstanceResponseTime" = "InstanceResponseTime"
-  val RejectedConnectionCount: "RejectedConnectionCount" = "RejectedConnectionCount"
-  val RequestCount: "RequestCount" = "RequestCount"
+  inline val ClientTLSNegotiationErrorCount: "ClientTLSNegotiationErrorCount" = "ClientTLSNegotiationErrorCount"
+  inline val HealthyHostCount: "HealthyHostCount" = "HealthyHostCount"
+  inline val UnhealthyHostCount: "UnhealthyHostCount" = "UnhealthyHostCount"
+  inline val HTTPCode_LB_4XX_Count: "HTTPCode_LB_4XX_Count" = "HTTPCode_LB_4XX_Count"
+  inline val HTTPCode_LB_5XX_Count: "HTTPCode_LB_5XX_Count" = "HTTPCode_LB_5XX_Count"
+  inline val HTTPCode_Instance_2XX_Count: "HTTPCode_Instance_2XX_Count" = "HTTPCode_Instance_2XX_Count"
+  inline val HTTPCode_Instance_3XX_Count: "HTTPCode_Instance_3XX_Count" = "HTTPCode_Instance_3XX_Count"
+  inline val HTTPCode_Instance_4XX_Count: "HTTPCode_Instance_4XX_Count" = "HTTPCode_Instance_4XX_Count"
+  inline val HTTPCode_Instance_5XX_Count: "HTTPCode_Instance_5XX_Count" = "HTTPCode_Instance_5XX_Count"
+  inline val InstanceResponseTime: "InstanceResponseTime" = "InstanceResponseTime"
+  inline val RejectedConnectionCount: "RejectedConnectionCount" = "RejectedConnectionCount"
+  inline val RequestCount: "RequestCount" = "RequestCount"
 
-  @inline def values = js.Array[LoadBalancerMetricName](
+  inline def values: js.Array[LoadBalancerMetricName] = js.Array(
     ClientTLSNegotiationErrorCount,
     HealthyHostCount,
     UnhealthyHostCount,
@@ -401,67 +401,67 @@ object LoadBalancerMetricName {
 
 type LoadBalancerProtocol = "HTTP_HTTPS" | "HTTP"
 object LoadBalancerProtocol {
-  val HTTP_HTTPS: "HTTP_HTTPS" = "HTTP_HTTPS"
-  val HTTP: "HTTP" = "HTTP"
+  inline val HTTP_HTTPS: "HTTP_HTTPS" = "HTTP_HTTPS"
+  inline val HTTP: "HTTP" = "HTTP"
 
-  @inline def values = js.Array[LoadBalancerProtocol](HTTP_HTTPS, HTTP)
+  inline def values: js.Array[LoadBalancerProtocol] = js.Array(HTTP_HTTPS, HTTP)
 }
 
 type LoadBalancerState = "active" | "provisioning" | "active_impaired" | "failed" | "unknown"
 object LoadBalancerState {
-  val active: "active" = "active"
-  val provisioning: "provisioning" = "provisioning"
-  val active_impaired: "active_impaired" = "active_impaired"
-  val failed: "failed" = "failed"
-  val unknown: "unknown" = "unknown"
+  inline val active: "active" = "active"
+  inline val provisioning: "provisioning" = "provisioning"
+  inline val active_impaired: "active_impaired" = "active_impaired"
+  inline val failed: "failed" = "failed"
+  inline val unknown: "unknown" = "unknown"
 
-  @inline def values = js.Array[LoadBalancerState](active, provisioning, active_impaired, failed, unknown)
+  inline def values: js.Array[LoadBalancerState] = js.Array(active, provisioning, active_impaired, failed, unknown)
 }
 
 type LoadBalancerTlsCertificateDomainStatus = "PENDING_VALIDATION" | "FAILED" | "SUCCESS"
 object LoadBalancerTlsCertificateDomainStatus {
-  val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
-  val FAILED: "FAILED" = "FAILED"
-  val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
 
-  @inline def values = js.Array[LoadBalancerTlsCertificateDomainStatus](PENDING_VALIDATION, FAILED, SUCCESS)
+  inline def values: js.Array[LoadBalancerTlsCertificateDomainStatus] = js.Array(PENDING_VALIDATION, FAILED, SUCCESS)
 }
 
 type LoadBalancerTlsCertificateFailureReason = "NO_AVAILABLE_CONTACTS" | "ADDITIONAL_VERIFICATION_REQUIRED" | "DOMAIN_NOT_ALLOWED" | "INVALID_PUBLIC_DOMAIN" | "OTHER"
 object LoadBalancerTlsCertificateFailureReason {
-  val NO_AVAILABLE_CONTACTS: "NO_AVAILABLE_CONTACTS" = "NO_AVAILABLE_CONTACTS"
-  val ADDITIONAL_VERIFICATION_REQUIRED: "ADDITIONAL_VERIFICATION_REQUIRED" = "ADDITIONAL_VERIFICATION_REQUIRED"
-  val DOMAIN_NOT_ALLOWED: "DOMAIN_NOT_ALLOWED" = "DOMAIN_NOT_ALLOWED"
-  val INVALID_PUBLIC_DOMAIN: "INVALID_PUBLIC_DOMAIN" = "INVALID_PUBLIC_DOMAIN"
-  val OTHER: "OTHER" = "OTHER"
+  inline val NO_AVAILABLE_CONTACTS: "NO_AVAILABLE_CONTACTS" = "NO_AVAILABLE_CONTACTS"
+  inline val ADDITIONAL_VERIFICATION_REQUIRED: "ADDITIONAL_VERIFICATION_REQUIRED" = "ADDITIONAL_VERIFICATION_REQUIRED"
+  inline val DOMAIN_NOT_ALLOWED: "DOMAIN_NOT_ALLOWED" = "DOMAIN_NOT_ALLOWED"
+  inline val INVALID_PUBLIC_DOMAIN: "INVALID_PUBLIC_DOMAIN" = "INVALID_PUBLIC_DOMAIN"
+  inline val OTHER: "OTHER" = "OTHER"
 
-  @inline def values = js.Array[LoadBalancerTlsCertificateFailureReason](NO_AVAILABLE_CONTACTS, ADDITIONAL_VERIFICATION_REQUIRED, DOMAIN_NOT_ALLOWED, INVALID_PUBLIC_DOMAIN, OTHER)
+  inline def values: js.Array[LoadBalancerTlsCertificateFailureReason] = js.Array(NO_AVAILABLE_CONTACTS, ADDITIONAL_VERIFICATION_REQUIRED, DOMAIN_NOT_ALLOWED, INVALID_PUBLIC_DOMAIN, OTHER)
 }
 
 type LoadBalancerTlsCertificateRenewalStatus = "PENDING_AUTO_RENEWAL" | "PENDING_VALIDATION" | "SUCCESS" | "FAILED"
 object LoadBalancerTlsCertificateRenewalStatus {
-  val PENDING_AUTO_RENEWAL: "PENDING_AUTO_RENEWAL" = "PENDING_AUTO_RENEWAL"
-  val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
-  val SUCCESS: "SUCCESS" = "SUCCESS"
-  val FAILED: "FAILED" = "FAILED"
+  inline val PENDING_AUTO_RENEWAL: "PENDING_AUTO_RENEWAL" = "PENDING_AUTO_RENEWAL"
+  inline val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[LoadBalancerTlsCertificateRenewalStatus](PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED)
+  inline def values: js.Array[LoadBalancerTlsCertificateRenewalStatus] = js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED)
 }
 
 type LoadBalancerTlsCertificateRevocationReason = "UNSPECIFIED" | "KEY_COMPROMISE" | "CA_COMPROMISE" | "AFFILIATION_CHANGED" | "SUPERCEDED" | "CESSATION_OF_OPERATION" | "CERTIFICATE_HOLD" | "REMOVE_FROM_CRL" | "PRIVILEGE_WITHDRAWN" | "A_A_COMPROMISE"
 object LoadBalancerTlsCertificateRevocationReason {
-  val UNSPECIFIED: "UNSPECIFIED" = "UNSPECIFIED"
-  val KEY_COMPROMISE: "KEY_COMPROMISE" = "KEY_COMPROMISE"
-  val CA_COMPROMISE: "CA_COMPROMISE" = "CA_COMPROMISE"
-  val AFFILIATION_CHANGED: "AFFILIATION_CHANGED" = "AFFILIATION_CHANGED"
-  val SUPERCEDED: "SUPERCEDED" = "SUPERCEDED"
-  val CESSATION_OF_OPERATION: "CESSATION_OF_OPERATION" = "CESSATION_OF_OPERATION"
-  val CERTIFICATE_HOLD: "CERTIFICATE_HOLD" = "CERTIFICATE_HOLD"
-  val REMOVE_FROM_CRL: "REMOVE_FROM_CRL" = "REMOVE_FROM_CRL"
-  val PRIVILEGE_WITHDRAWN: "PRIVILEGE_WITHDRAWN" = "PRIVILEGE_WITHDRAWN"
-  val A_A_COMPROMISE: "A_A_COMPROMISE" = "A_A_COMPROMISE"
+  inline val UNSPECIFIED: "UNSPECIFIED" = "UNSPECIFIED"
+  inline val KEY_COMPROMISE: "KEY_COMPROMISE" = "KEY_COMPROMISE"
+  inline val CA_COMPROMISE: "CA_COMPROMISE" = "CA_COMPROMISE"
+  inline val AFFILIATION_CHANGED: "AFFILIATION_CHANGED" = "AFFILIATION_CHANGED"
+  inline val SUPERCEDED: "SUPERCEDED" = "SUPERCEDED"
+  inline val CESSATION_OF_OPERATION: "CESSATION_OF_OPERATION" = "CESSATION_OF_OPERATION"
+  inline val CERTIFICATE_HOLD: "CERTIFICATE_HOLD" = "CERTIFICATE_HOLD"
+  inline val REMOVE_FROM_CRL: "REMOVE_FROM_CRL" = "REMOVE_FROM_CRL"
+  inline val PRIVILEGE_WITHDRAWN: "PRIVILEGE_WITHDRAWN" = "PRIVILEGE_WITHDRAWN"
+  inline val A_A_COMPROMISE: "A_A_COMPROMISE" = "A_A_COMPROMISE"
 
-  @inline def values = js.Array[LoadBalancerTlsCertificateRevocationReason](
+  inline def values: js.Array[LoadBalancerTlsCertificateRevocationReason] = js.Array(
     UNSPECIFIED,
     KEY_COMPROMISE,
     CA_COMPROMISE,
@@ -477,47 +477,47 @@ object LoadBalancerTlsCertificateRevocationReason {
 
 type LoadBalancerTlsCertificateStatus = "PENDING_VALIDATION" | "ISSUED" | "INACTIVE" | "EXPIRED" | "VALIDATION_TIMED_OUT" | "REVOKED" | "FAILED" | "UNKNOWN"
 object LoadBalancerTlsCertificateStatus {
-  val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
-  val ISSUED: "ISSUED" = "ISSUED"
-  val INACTIVE: "INACTIVE" = "INACTIVE"
-  val EXPIRED: "EXPIRED" = "EXPIRED"
-  val VALIDATION_TIMED_OUT: "VALIDATION_TIMED_OUT" = "VALIDATION_TIMED_OUT"
-  val REVOKED: "REVOKED" = "REVOKED"
-  val FAILED: "FAILED" = "FAILED"
-  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
+  inline val ISSUED: "ISSUED" = "ISSUED"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val VALIDATION_TIMED_OUT: "VALIDATION_TIMED_OUT" = "VALIDATION_TIMED_OUT"
+  inline val REVOKED: "REVOKED" = "REVOKED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array[LoadBalancerTlsCertificateStatus](PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
+  inline def values: js.Array[LoadBalancerTlsCertificateStatus] = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
 }
 
 type MetricName = "CPUUtilization" | "NetworkIn" | "NetworkOut" | "StatusCheckFailed" | "StatusCheckFailed_Instance" | "StatusCheckFailed_System" | "ClientTLSNegotiationErrorCount" | "HealthyHostCount" | "UnhealthyHostCount" | "HTTPCode_LB_4XX_Count" | "HTTPCode_LB_5XX_Count" | "HTTPCode_Instance_2XX_Count" | "HTTPCode_Instance_3XX_Count" | "HTTPCode_Instance_4XX_Count" | "HTTPCode_Instance_5XX_Count" | "InstanceResponseTime" | "RejectedConnectionCount" | "RequestCount" | "DatabaseConnections" | "DiskQueueDepth" | "FreeStorageSpace" | "NetworkReceiveThroughput" | "NetworkTransmitThroughput" | "BurstCapacityTime" | "BurstCapacityPercentage"
 object MetricName {
-  val CPUUtilization: "CPUUtilization" = "CPUUtilization"
-  val NetworkIn: "NetworkIn" = "NetworkIn"
-  val NetworkOut: "NetworkOut" = "NetworkOut"
-  val StatusCheckFailed: "StatusCheckFailed" = "StatusCheckFailed"
-  val StatusCheckFailed_Instance: "StatusCheckFailed_Instance" = "StatusCheckFailed_Instance"
-  val StatusCheckFailed_System: "StatusCheckFailed_System" = "StatusCheckFailed_System"
-  val ClientTLSNegotiationErrorCount: "ClientTLSNegotiationErrorCount" = "ClientTLSNegotiationErrorCount"
-  val HealthyHostCount: "HealthyHostCount" = "HealthyHostCount"
-  val UnhealthyHostCount: "UnhealthyHostCount" = "UnhealthyHostCount"
-  val HTTPCode_LB_4XX_Count: "HTTPCode_LB_4XX_Count" = "HTTPCode_LB_4XX_Count"
-  val HTTPCode_LB_5XX_Count: "HTTPCode_LB_5XX_Count" = "HTTPCode_LB_5XX_Count"
-  val HTTPCode_Instance_2XX_Count: "HTTPCode_Instance_2XX_Count" = "HTTPCode_Instance_2XX_Count"
-  val HTTPCode_Instance_3XX_Count: "HTTPCode_Instance_3XX_Count" = "HTTPCode_Instance_3XX_Count"
-  val HTTPCode_Instance_4XX_Count: "HTTPCode_Instance_4XX_Count" = "HTTPCode_Instance_4XX_Count"
-  val HTTPCode_Instance_5XX_Count: "HTTPCode_Instance_5XX_Count" = "HTTPCode_Instance_5XX_Count"
-  val InstanceResponseTime: "InstanceResponseTime" = "InstanceResponseTime"
-  val RejectedConnectionCount: "RejectedConnectionCount" = "RejectedConnectionCount"
-  val RequestCount: "RequestCount" = "RequestCount"
-  val DatabaseConnections: "DatabaseConnections" = "DatabaseConnections"
-  val DiskQueueDepth: "DiskQueueDepth" = "DiskQueueDepth"
-  val FreeStorageSpace: "FreeStorageSpace" = "FreeStorageSpace"
-  val NetworkReceiveThroughput: "NetworkReceiveThroughput" = "NetworkReceiveThroughput"
-  val NetworkTransmitThroughput: "NetworkTransmitThroughput" = "NetworkTransmitThroughput"
-  val BurstCapacityTime: "BurstCapacityTime" = "BurstCapacityTime"
-  val BurstCapacityPercentage: "BurstCapacityPercentage" = "BurstCapacityPercentage"
+  inline val CPUUtilization: "CPUUtilization" = "CPUUtilization"
+  inline val NetworkIn: "NetworkIn" = "NetworkIn"
+  inline val NetworkOut: "NetworkOut" = "NetworkOut"
+  inline val StatusCheckFailed: "StatusCheckFailed" = "StatusCheckFailed"
+  inline val StatusCheckFailed_Instance: "StatusCheckFailed_Instance" = "StatusCheckFailed_Instance"
+  inline val StatusCheckFailed_System: "StatusCheckFailed_System" = "StatusCheckFailed_System"
+  inline val ClientTLSNegotiationErrorCount: "ClientTLSNegotiationErrorCount" = "ClientTLSNegotiationErrorCount"
+  inline val HealthyHostCount: "HealthyHostCount" = "HealthyHostCount"
+  inline val UnhealthyHostCount: "UnhealthyHostCount" = "UnhealthyHostCount"
+  inline val HTTPCode_LB_4XX_Count: "HTTPCode_LB_4XX_Count" = "HTTPCode_LB_4XX_Count"
+  inline val HTTPCode_LB_5XX_Count: "HTTPCode_LB_5XX_Count" = "HTTPCode_LB_5XX_Count"
+  inline val HTTPCode_Instance_2XX_Count: "HTTPCode_Instance_2XX_Count" = "HTTPCode_Instance_2XX_Count"
+  inline val HTTPCode_Instance_3XX_Count: "HTTPCode_Instance_3XX_Count" = "HTTPCode_Instance_3XX_Count"
+  inline val HTTPCode_Instance_4XX_Count: "HTTPCode_Instance_4XX_Count" = "HTTPCode_Instance_4XX_Count"
+  inline val HTTPCode_Instance_5XX_Count: "HTTPCode_Instance_5XX_Count" = "HTTPCode_Instance_5XX_Count"
+  inline val InstanceResponseTime: "InstanceResponseTime" = "InstanceResponseTime"
+  inline val RejectedConnectionCount: "RejectedConnectionCount" = "RejectedConnectionCount"
+  inline val RequestCount: "RequestCount" = "RequestCount"
+  inline val DatabaseConnections: "DatabaseConnections" = "DatabaseConnections"
+  inline val DiskQueueDepth: "DiskQueueDepth" = "DiskQueueDepth"
+  inline val FreeStorageSpace: "FreeStorageSpace" = "FreeStorageSpace"
+  inline val NetworkReceiveThroughput: "NetworkReceiveThroughput" = "NetworkReceiveThroughput"
+  inline val NetworkTransmitThroughput: "NetworkTransmitThroughput" = "NetworkTransmitThroughput"
+  inline val BurstCapacityTime: "BurstCapacityTime" = "BurstCapacityTime"
+  inline val BurstCapacityPercentage: "BurstCapacityPercentage" = "BurstCapacityPercentage"
 
-  @inline def values = js.Array[MetricName](
+  inline def values: js.Array[MetricName] = js.Array(
     CPUUtilization,
     NetworkIn,
     NetworkOut,
@@ -548,46 +548,46 @@ object MetricName {
 
 type MetricStatistic = "Minimum" | "Maximum" | "Sum" | "Average" | "SampleCount"
 object MetricStatistic {
-  val Minimum: "Minimum" = "Minimum"
-  val Maximum: "Maximum" = "Maximum"
-  val Sum: "Sum" = "Sum"
-  val Average: "Average" = "Average"
-  val SampleCount: "SampleCount" = "SampleCount"
+  inline val Minimum: "Minimum" = "Minimum"
+  inline val Maximum: "Maximum" = "Maximum"
+  inline val Sum: "Sum" = "Sum"
+  inline val Average: "Average" = "Average"
+  inline val SampleCount: "SampleCount" = "SampleCount"
 
-  @inline def values = js.Array[MetricStatistic](Minimum, Maximum, Sum, Average, SampleCount)
+  inline def values: js.Array[MetricStatistic] = js.Array(Minimum, Maximum, Sum, Average, SampleCount)
 }
 
 type MetricUnit = "Seconds" | "Microseconds" | "Milliseconds" | "Bytes" | "Kilobytes" | "Megabytes" | "Gigabytes" | "Terabytes" | "Bits" | "Kilobits" | "Megabits" | "Gigabits" | "Terabits" | "Percent" | "Count" | "Bytes/Second" | "Kilobytes/Second" | "Megabytes/Second" | "Gigabytes/Second" | "Terabytes/Second" | "Bits/Second" | "Kilobits/Second" | "Megabits/Second" | "Gigabits/Second" | "Terabits/Second" | "Count/Second" | "None"
 object MetricUnit {
-  val Seconds: "Seconds" = "Seconds"
-  val Microseconds: "Microseconds" = "Microseconds"
-  val Milliseconds: "Milliseconds" = "Milliseconds"
-  val Bytes: "Bytes" = "Bytes"
-  val Kilobytes: "Kilobytes" = "Kilobytes"
-  val Megabytes: "Megabytes" = "Megabytes"
-  val Gigabytes: "Gigabytes" = "Gigabytes"
-  val Terabytes: "Terabytes" = "Terabytes"
-  val Bits: "Bits" = "Bits"
-  val Kilobits: "Kilobits" = "Kilobits"
-  val Megabits: "Megabits" = "Megabits"
-  val Gigabits: "Gigabits" = "Gigabits"
-  val Terabits: "Terabits" = "Terabits"
-  val Percent: "Percent" = "Percent"
-  val Count: "Count" = "Count"
-  val `Bytes/Second`: "Bytes/Second" = "Bytes/Second"
-  val `Kilobytes/Second`: "Kilobytes/Second" = "Kilobytes/Second"
-  val `Megabytes/Second`: "Megabytes/Second" = "Megabytes/Second"
-  val `Gigabytes/Second`: "Gigabytes/Second" = "Gigabytes/Second"
-  val `Terabytes/Second`: "Terabytes/Second" = "Terabytes/Second"
-  val `Bits/Second`: "Bits/Second" = "Bits/Second"
-  val `Kilobits/Second`: "Kilobits/Second" = "Kilobits/Second"
-  val `Megabits/Second`: "Megabits/Second" = "Megabits/Second"
-  val `Gigabits/Second`: "Gigabits/Second" = "Gigabits/Second"
-  val `Terabits/Second`: "Terabits/Second" = "Terabits/Second"
-  val `Count/Second`: "Count/Second" = "Count/Second"
-  val None: "None" = "None"
+  inline val Seconds: "Seconds" = "Seconds"
+  inline val Microseconds: "Microseconds" = "Microseconds"
+  inline val Milliseconds: "Milliseconds" = "Milliseconds"
+  inline val Bytes: "Bytes" = "Bytes"
+  inline val Kilobytes: "Kilobytes" = "Kilobytes"
+  inline val Megabytes: "Megabytes" = "Megabytes"
+  inline val Gigabytes: "Gigabytes" = "Gigabytes"
+  inline val Terabytes: "Terabytes" = "Terabytes"
+  inline val Bits: "Bits" = "Bits"
+  inline val Kilobits: "Kilobits" = "Kilobits"
+  inline val Megabits: "Megabits" = "Megabits"
+  inline val Gigabits: "Gigabits" = "Gigabits"
+  inline val Terabits: "Terabits" = "Terabits"
+  inline val Percent: "Percent" = "Percent"
+  inline val Count: "Count" = "Count"
+  inline val `Bytes/Second`: "Bytes/Second" = "Bytes/Second"
+  inline val `Kilobytes/Second`: "Kilobytes/Second" = "Kilobytes/Second"
+  inline val `Megabytes/Second`: "Megabytes/Second" = "Megabytes/Second"
+  inline val `Gigabytes/Second`: "Gigabytes/Second" = "Gigabytes/Second"
+  inline val `Terabytes/Second`: "Terabytes/Second" = "Terabytes/Second"
+  inline val `Bits/Second`: "Bits/Second" = "Bits/Second"
+  inline val `Kilobits/Second`: "Kilobits/Second" = "Kilobits/Second"
+  inline val `Megabits/Second`: "Megabits/Second" = "Megabits/Second"
+  inline val `Gigabits/Second`: "Gigabits/Second" = "Gigabits/Second"
+  inline val `Terabits/Second`: "Terabits/Second" = "Terabits/Second"
+  inline val `Count/Second`: "Count/Second" = "Count/Second"
+  inline val None: "None" = "None"
 
-  @inline def values = js.Array[MetricUnit](
+  inline def values: js.Array[MetricUnit] = js.Array(
     Seconds,
     Microseconds,
     Milliseconds,
@@ -620,102 +620,102 @@ object MetricUnit {
 
 type NetworkProtocol = "tcp" | "all" | "udp" | "icmp"
 object NetworkProtocol {
-  val tcp: "tcp" = "tcp"
-  val all: "all" = "all"
-  val udp: "udp" = "udp"
-  val icmp: "icmp" = "icmp"
+  inline val tcp: "tcp" = "tcp"
+  inline val all: "all" = "all"
+  inline val udp: "udp" = "udp"
+  inline val icmp: "icmp" = "icmp"
 
-  @inline def values = js.Array[NetworkProtocol](tcp, all, udp, icmp)
+  inline def values: js.Array[NetworkProtocol] = js.Array(tcp, all, udp, icmp)
 }
 
 type OperationStatus = "NotStarted" | "Started" | "Failed" | "Completed" | "Succeeded"
 object OperationStatus {
-  val NotStarted: "NotStarted" = "NotStarted"
-  val Started: "Started" = "Started"
-  val Failed: "Failed" = "Failed"
-  val Completed: "Completed" = "Completed"
-  val Succeeded: "Succeeded" = "Succeeded"
+  inline val NotStarted: "NotStarted" = "NotStarted"
+  inline val Started: "Started" = "Started"
+  inline val Failed: "Failed" = "Failed"
+  inline val Completed: "Completed" = "Completed"
+  inline val Succeeded: "Succeeded" = "Succeeded"
 
-  @inline def values = js.Array[OperationStatus](NotStarted, Started, Failed, Completed, Succeeded)
+  inline def values: js.Array[OperationStatus] = js.Array(NotStarted, Started, Failed, Completed, Succeeded)
 }
 
 type OperationType = "DeleteKnownHostKeys" | "DeleteInstance" | "CreateInstance" | "StopInstance" | "StartInstance" | "RebootInstance" | "OpenInstancePublicPorts" | "PutInstancePublicPorts" | "CloseInstancePublicPorts" | "AllocateStaticIp" | "ReleaseStaticIp" | "AttachStaticIp" | "DetachStaticIp" | "UpdateDomainEntry" | "DeleteDomainEntry" | "CreateDomain" | "DeleteDomain" | "CreateInstanceSnapshot" | "DeleteInstanceSnapshot" | "CreateInstancesFromSnapshot" | "CreateLoadBalancer" | "DeleteLoadBalancer" | "AttachInstancesToLoadBalancer" | "DetachInstancesFromLoadBalancer" | "UpdateLoadBalancerAttribute" | "CreateLoadBalancerTlsCertificate" | "DeleteLoadBalancerTlsCertificate" | "AttachLoadBalancerTlsCertificate" | "CreateDisk" | "DeleteDisk" | "AttachDisk" | "DetachDisk" | "CreateDiskSnapshot" | "DeleteDiskSnapshot" | "CreateDiskFromSnapshot" | "CreateRelationalDatabase" | "UpdateRelationalDatabase" | "DeleteRelationalDatabase" | "CreateRelationalDatabaseFromSnapshot" |
   "CreateRelationalDatabaseSnapshot" | "DeleteRelationalDatabaseSnapshot" | "UpdateRelationalDatabaseParameters" | "StartRelationalDatabase" | "RebootRelationalDatabase" | "StopRelationalDatabase" | "EnableAddOn" | "DisableAddOn" | "PutAlarm" | "GetAlarms" | "DeleteAlarm" | "TestAlarm" | "CreateContactMethod" | "GetContactMethods" | "SendContactMethodVerification" | "DeleteContactMethod" | "CreateDistribution" | "UpdateDistribution" | "DeleteDistribution" | "ResetDistributionCache" | "AttachCertificateToDistribution" | "DetachCertificateFromDistribution" | "UpdateDistributionBundle" | "SetIpAddressType" | "CreateCertificate" | "DeleteCertificate" | "CreateContainerService" | "UpdateContainerService" | "DeleteContainerService" | "CreateContainerServiceDeployment" | "CreateContainerServiceRegistryLogin" | "RegisterContainerImage" | "DeleteContainerImage"
 object OperationType {
-  val DeleteKnownHostKeys: "DeleteKnownHostKeys" = "DeleteKnownHostKeys"
-  val DeleteInstance: "DeleteInstance" = "DeleteInstance"
-  val CreateInstance: "CreateInstance" = "CreateInstance"
-  val StopInstance: "StopInstance" = "StopInstance"
-  val StartInstance: "StartInstance" = "StartInstance"
-  val RebootInstance: "RebootInstance" = "RebootInstance"
-  val OpenInstancePublicPorts: "OpenInstancePublicPorts" = "OpenInstancePublicPorts"
-  val PutInstancePublicPorts: "PutInstancePublicPorts" = "PutInstancePublicPorts"
-  val CloseInstancePublicPorts: "CloseInstancePublicPorts" = "CloseInstancePublicPorts"
-  val AllocateStaticIp: "AllocateStaticIp" = "AllocateStaticIp"
-  val ReleaseStaticIp: "ReleaseStaticIp" = "ReleaseStaticIp"
-  val AttachStaticIp: "AttachStaticIp" = "AttachStaticIp"
-  val DetachStaticIp: "DetachStaticIp" = "DetachStaticIp"
-  val UpdateDomainEntry: "UpdateDomainEntry" = "UpdateDomainEntry"
-  val DeleteDomainEntry: "DeleteDomainEntry" = "DeleteDomainEntry"
-  val CreateDomain: "CreateDomain" = "CreateDomain"
-  val DeleteDomain: "DeleteDomain" = "DeleteDomain"
-  val CreateInstanceSnapshot: "CreateInstanceSnapshot" = "CreateInstanceSnapshot"
-  val DeleteInstanceSnapshot: "DeleteInstanceSnapshot" = "DeleteInstanceSnapshot"
-  val CreateInstancesFromSnapshot: "CreateInstancesFromSnapshot" = "CreateInstancesFromSnapshot"
-  val CreateLoadBalancer: "CreateLoadBalancer" = "CreateLoadBalancer"
-  val DeleteLoadBalancer: "DeleteLoadBalancer" = "DeleteLoadBalancer"
-  val AttachInstancesToLoadBalancer: "AttachInstancesToLoadBalancer" = "AttachInstancesToLoadBalancer"
-  val DetachInstancesFromLoadBalancer: "DetachInstancesFromLoadBalancer" = "DetachInstancesFromLoadBalancer"
-  val UpdateLoadBalancerAttribute: "UpdateLoadBalancerAttribute" = "UpdateLoadBalancerAttribute"
-  val CreateLoadBalancerTlsCertificate: "CreateLoadBalancerTlsCertificate" = "CreateLoadBalancerTlsCertificate"
-  val DeleteLoadBalancerTlsCertificate: "DeleteLoadBalancerTlsCertificate" = "DeleteLoadBalancerTlsCertificate"
-  val AttachLoadBalancerTlsCertificate: "AttachLoadBalancerTlsCertificate" = "AttachLoadBalancerTlsCertificate"
-  val CreateDisk: "CreateDisk" = "CreateDisk"
-  val DeleteDisk: "DeleteDisk" = "DeleteDisk"
-  val AttachDisk: "AttachDisk" = "AttachDisk"
-  val DetachDisk: "DetachDisk" = "DetachDisk"
-  val CreateDiskSnapshot: "CreateDiskSnapshot" = "CreateDiskSnapshot"
-  val DeleteDiskSnapshot: "DeleteDiskSnapshot" = "DeleteDiskSnapshot"
-  val CreateDiskFromSnapshot: "CreateDiskFromSnapshot" = "CreateDiskFromSnapshot"
-  val CreateRelationalDatabase: "CreateRelationalDatabase" = "CreateRelationalDatabase"
-  val UpdateRelationalDatabase: "UpdateRelationalDatabase" = "UpdateRelationalDatabase"
-  val DeleteRelationalDatabase: "DeleteRelationalDatabase" = "DeleteRelationalDatabase"
-  val CreateRelationalDatabaseFromSnapshot: "CreateRelationalDatabaseFromSnapshot" = "CreateRelationalDatabaseFromSnapshot"
-  val CreateRelationalDatabaseSnapshot: "CreateRelationalDatabaseSnapshot" = "CreateRelationalDatabaseSnapshot"
-  val DeleteRelationalDatabaseSnapshot: "DeleteRelationalDatabaseSnapshot" = "DeleteRelationalDatabaseSnapshot"
-  val UpdateRelationalDatabaseParameters: "UpdateRelationalDatabaseParameters" = "UpdateRelationalDatabaseParameters"
-  val StartRelationalDatabase: "StartRelationalDatabase" = "StartRelationalDatabase"
-  val RebootRelationalDatabase: "RebootRelationalDatabase" = "RebootRelationalDatabase"
-  val StopRelationalDatabase: "StopRelationalDatabase" = "StopRelationalDatabase"
-  val EnableAddOn: "EnableAddOn" = "EnableAddOn"
-  val DisableAddOn: "DisableAddOn" = "DisableAddOn"
-  val PutAlarm: "PutAlarm" = "PutAlarm"
-  val GetAlarms: "GetAlarms" = "GetAlarms"
-  val DeleteAlarm: "DeleteAlarm" = "DeleteAlarm"
-  val TestAlarm: "TestAlarm" = "TestAlarm"
-  val CreateContactMethod: "CreateContactMethod" = "CreateContactMethod"
-  val GetContactMethods: "GetContactMethods" = "GetContactMethods"
-  val SendContactMethodVerification: "SendContactMethodVerification" = "SendContactMethodVerification"
-  val DeleteContactMethod: "DeleteContactMethod" = "DeleteContactMethod"
-  val CreateDistribution: "CreateDistribution" = "CreateDistribution"
-  val UpdateDistribution: "UpdateDistribution" = "UpdateDistribution"
-  val DeleteDistribution: "DeleteDistribution" = "DeleteDistribution"
-  val ResetDistributionCache: "ResetDistributionCache" = "ResetDistributionCache"
-  val AttachCertificateToDistribution: "AttachCertificateToDistribution" = "AttachCertificateToDistribution"
-  val DetachCertificateFromDistribution: "DetachCertificateFromDistribution" = "DetachCertificateFromDistribution"
-  val UpdateDistributionBundle: "UpdateDistributionBundle" = "UpdateDistributionBundle"
-  val SetIpAddressType: "SetIpAddressType" = "SetIpAddressType"
-  val CreateCertificate: "CreateCertificate" = "CreateCertificate"
-  val DeleteCertificate: "DeleteCertificate" = "DeleteCertificate"
-  val CreateContainerService: "CreateContainerService" = "CreateContainerService"
-  val UpdateContainerService: "UpdateContainerService" = "UpdateContainerService"
-  val DeleteContainerService: "DeleteContainerService" = "DeleteContainerService"
-  val CreateContainerServiceDeployment: "CreateContainerServiceDeployment" = "CreateContainerServiceDeployment"
-  val CreateContainerServiceRegistryLogin: "CreateContainerServiceRegistryLogin" = "CreateContainerServiceRegistryLogin"
-  val RegisterContainerImage: "RegisterContainerImage" = "RegisterContainerImage"
-  val DeleteContainerImage: "DeleteContainerImage" = "DeleteContainerImage"
+  inline val DeleteKnownHostKeys: "DeleteKnownHostKeys" = "DeleteKnownHostKeys"
+  inline val DeleteInstance: "DeleteInstance" = "DeleteInstance"
+  inline val CreateInstance: "CreateInstance" = "CreateInstance"
+  inline val StopInstance: "StopInstance" = "StopInstance"
+  inline val StartInstance: "StartInstance" = "StartInstance"
+  inline val RebootInstance: "RebootInstance" = "RebootInstance"
+  inline val OpenInstancePublicPorts: "OpenInstancePublicPorts" = "OpenInstancePublicPorts"
+  inline val PutInstancePublicPorts: "PutInstancePublicPorts" = "PutInstancePublicPorts"
+  inline val CloseInstancePublicPorts: "CloseInstancePublicPorts" = "CloseInstancePublicPorts"
+  inline val AllocateStaticIp: "AllocateStaticIp" = "AllocateStaticIp"
+  inline val ReleaseStaticIp: "ReleaseStaticIp" = "ReleaseStaticIp"
+  inline val AttachStaticIp: "AttachStaticIp" = "AttachStaticIp"
+  inline val DetachStaticIp: "DetachStaticIp" = "DetachStaticIp"
+  inline val UpdateDomainEntry: "UpdateDomainEntry" = "UpdateDomainEntry"
+  inline val DeleteDomainEntry: "DeleteDomainEntry" = "DeleteDomainEntry"
+  inline val CreateDomain: "CreateDomain" = "CreateDomain"
+  inline val DeleteDomain: "DeleteDomain" = "DeleteDomain"
+  inline val CreateInstanceSnapshot: "CreateInstanceSnapshot" = "CreateInstanceSnapshot"
+  inline val DeleteInstanceSnapshot: "DeleteInstanceSnapshot" = "DeleteInstanceSnapshot"
+  inline val CreateInstancesFromSnapshot: "CreateInstancesFromSnapshot" = "CreateInstancesFromSnapshot"
+  inline val CreateLoadBalancer: "CreateLoadBalancer" = "CreateLoadBalancer"
+  inline val DeleteLoadBalancer: "DeleteLoadBalancer" = "DeleteLoadBalancer"
+  inline val AttachInstancesToLoadBalancer: "AttachInstancesToLoadBalancer" = "AttachInstancesToLoadBalancer"
+  inline val DetachInstancesFromLoadBalancer: "DetachInstancesFromLoadBalancer" = "DetachInstancesFromLoadBalancer"
+  inline val UpdateLoadBalancerAttribute: "UpdateLoadBalancerAttribute" = "UpdateLoadBalancerAttribute"
+  inline val CreateLoadBalancerTlsCertificate: "CreateLoadBalancerTlsCertificate" = "CreateLoadBalancerTlsCertificate"
+  inline val DeleteLoadBalancerTlsCertificate: "DeleteLoadBalancerTlsCertificate" = "DeleteLoadBalancerTlsCertificate"
+  inline val AttachLoadBalancerTlsCertificate: "AttachLoadBalancerTlsCertificate" = "AttachLoadBalancerTlsCertificate"
+  inline val CreateDisk: "CreateDisk" = "CreateDisk"
+  inline val DeleteDisk: "DeleteDisk" = "DeleteDisk"
+  inline val AttachDisk: "AttachDisk" = "AttachDisk"
+  inline val DetachDisk: "DetachDisk" = "DetachDisk"
+  inline val CreateDiskSnapshot: "CreateDiskSnapshot" = "CreateDiskSnapshot"
+  inline val DeleteDiskSnapshot: "DeleteDiskSnapshot" = "DeleteDiskSnapshot"
+  inline val CreateDiskFromSnapshot: "CreateDiskFromSnapshot" = "CreateDiskFromSnapshot"
+  inline val CreateRelationalDatabase: "CreateRelationalDatabase" = "CreateRelationalDatabase"
+  inline val UpdateRelationalDatabase: "UpdateRelationalDatabase" = "UpdateRelationalDatabase"
+  inline val DeleteRelationalDatabase: "DeleteRelationalDatabase" = "DeleteRelationalDatabase"
+  inline val CreateRelationalDatabaseFromSnapshot: "CreateRelationalDatabaseFromSnapshot" = "CreateRelationalDatabaseFromSnapshot"
+  inline val CreateRelationalDatabaseSnapshot: "CreateRelationalDatabaseSnapshot" = "CreateRelationalDatabaseSnapshot"
+  inline val DeleteRelationalDatabaseSnapshot: "DeleteRelationalDatabaseSnapshot" = "DeleteRelationalDatabaseSnapshot"
+  inline val UpdateRelationalDatabaseParameters: "UpdateRelationalDatabaseParameters" = "UpdateRelationalDatabaseParameters"
+  inline val StartRelationalDatabase: "StartRelationalDatabase" = "StartRelationalDatabase"
+  inline val RebootRelationalDatabase: "RebootRelationalDatabase" = "RebootRelationalDatabase"
+  inline val StopRelationalDatabase: "StopRelationalDatabase" = "StopRelationalDatabase"
+  inline val EnableAddOn: "EnableAddOn" = "EnableAddOn"
+  inline val DisableAddOn: "DisableAddOn" = "DisableAddOn"
+  inline val PutAlarm: "PutAlarm" = "PutAlarm"
+  inline val GetAlarms: "GetAlarms" = "GetAlarms"
+  inline val DeleteAlarm: "DeleteAlarm" = "DeleteAlarm"
+  inline val TestAlarm: "TestAlarm" = "TestAlarm"
+  inline val CreateContactMethod: "CreateContactMethod" = "CreateContactMethod"
+  inline val GetContactMethods: "GetContactMethods" = "GetContactMethods"
+  inline val SendContactMethodVerification: "SendContactMethodVerification" = "SendContactMethodVerification"
+  inline val DeleteContactMethod: "DeleteContactMethod" = "DeleteContactMethod"
+  inline val CreateDistribution: "CreateDistribution" = "CreateDistribution"
+  inline val UpdateDistribution: "UpdateDistribution" = "UpdateDistribution"
+  inline val DeleteDistribution: "DeleteDistribution" = "DeleteDistribution"
+  inline val ResetDistributionCache: "ResetDistributionCache" = "ResetDistributionCache"
+  inline val AttachCertificateToDistribution: "AttachCertificateToDistribution" = "AttachCertificateToDistribution"
+  inline val DetachCertificateFromDistribution: "DetachCertificateFromDistribution" = "DetachCertificateFromDistribution"
+  inline val UpdateDistributionBundle: "UpdateDistributionBundle" = "UpdateDistributionBundle"
+  inline val SetIpAddressType: "SetIpAddressType" = "SetIpAddressType"
+  inline val CreateCertificate: "CreateCertificate" = "CreateCertificate"
+  inline val DeleteCertificate: "DeleteCertificate" = "DeleteCertificate"
+  inline val CreateContainerService: "CreateContainerService" = "CreateContainerService"
+  inline val UpdateContainerService: "UpdateContainerService" = "UpdateContainerService"
+  inline val DeleteContainerService: "DeleteContainerService" = "DeleteContainerService"
+  inline val CreateContainerServiceDeployment: "CreateContainerServiceDeployment" = "CreateContainerServiceDeployment"
+  inline val CreateContainerServiceRegistryLogin: "CreateContainerServiceRegistryLogin" = "CreateContainerServiceRegistryLogin"
+  inline val RegisterContainerImage: "RegisterContainerImage" = "RegisterContainerImage"
+  inline val DeleteContainerImage: "DeleteContainerImage" = "DeleteContainerImage"
 
-  @inline def values = js.Array[OperationType](
+  inline def values: js.Array[OperationType] = js.Array(
     DeleteKnownHostKeys,
     DeleteInstance,
     CreateInstance,
@@ -793,65 +793,65 @@ object OperationType {
 
 type OriginProtocolPolicyEnum = "http-only" | "https-only"
 object OriginProtocolPolicyEnum {
-  val `http-only`: "http-only" = "http-only"
-  val `https-only`: "https-only" = "https-only"
+  inline val `http-only`: "http-only" = "http-only"
+  inline val `https-only`: "https-only" = "https-only"
 
-  @inline def values = js.Array[OriginProtocolPolicyEnum](`http-only`, `https-only`)
+  inline def values: js.Array[OriginProtocolPolicyEnum] = js.Array(`http-only`, `https-only`)
 }
 
 type PortAccessType = "Public" | "Private"
 object PortAccessType {
-  val Public: "Public" = "Public"
-  val Private: "Private" = "Private"
+  inline val Public: "Public" = "Public"
+  inline val Private: "Private" = "Private"
 
-  @inline def values = js.Array[PortAccessType](Public, Private)
+  inline def values: js.Array[PortAccessType] = js.Array(Public, Private)
 }
 
 type PortInfoSourceType = "DEFAULT" | "INSTANCE" | "NONE" | "CLOSED"
 object PortInfoSourceType {
-  val DEFAULT: "DEFAULT" = "DEFAULT"
-  val INSTANCE: "INSTANCE" = "INSTANCE"
-  val NONE: "NONE" = "NONE"
-  val CLOSED: "CLOSED" = "CLOSED"
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+  inline val INSTANCE: "INSTANCE" = "INSTANCE"
+  inline val NONE: "NONE" = "NONE"
+  inline val CLOSED: "CLOSED" = "CLOSED"
 
-  @inline def values = js.Array[PortInfoSourceType](DEFAULT, INSTANCE, NONE, CLOSED)
+  inline def values: js.Array[PortInfoSourceType] = js.Array(DEFAULT, INSTANCE, NONE, CLOSED)
 }
 
 type PortState = "open" | "closed"
 object PortState {
-  val open: "open" = "open"
-  val closed: "closed" = "closed"
+  inline val open: "open" = "open"
+  inline val closed: "closed" = "closed"
 
-  @inline def values = js.Array[PortState](open, closed)
+  inline def values: js.Array[PortState] = js.Array(open, closed)
 }
 
 type RecordState = "Started" | "Succeeded" | "Failed"
 object RecordState {
-  val Started: "Started" = "Started"
-  val Succeeded: "Succeeded" = "Succeeded"
-  val Failed: "Failed" = "Failed"
+  inline val Started: "Started" = "Started"
+  inline val Succeeded: "Succeeded" = "Succeeded"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array[RecordState](Started, Succeeded, Failed)
+  inline def values: js.Array[RecordState] = js.Array(Started, Succeeded, Failed)
 }
 
 type RegionName = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-central-1" | "ca-central-1" | "ap-south-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-northeast-1" | "ap-northeast-2"
 object RegionName {
-  val `us-east-1`: "us-east-1" = "us-east-1"
-  val `us-east-2`: "us-east-2" = "us-east-2"
-  val `us-west-1`: "us-west-1" = "us-west-1"
-  val `us-west-2`: "us-west-2" = "us-west-2"
-  val `eu-west-1`: "eu-west-1" = "eu-west-1"
-  val `eu-west-2`: "eu-west-2" = "eu-west-2"
-  val `eu-west-3`: "eu-west-3" = "eu-west-3"
-  val `eu-central-1`: "eu-central-1" = "eu-central-1"
-  val `ca-central-1`: "ca-central-1" = "ca-central-1"
-  val `ap-south-1`: "ap-south-1" = "ap-south-1"
-  val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
-  val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
-  val `ap-northeast-1`: "ap-northeast-1" = "ap-northeast-1"
-  val `ap-northeast-2`: "ap-northeast-2" = "ap-northeast-2"
+  inline val `us-east-1`: "us-east-1" = "us-east-1"
+  inline val `us-east-2`: "us-east-2" = "us-east-2"
+  inline val `us-west-1`: "us-west-1" = "us-west-1"
+  inline val `us-west-2`: "us-west-2" = "us-west-2"
+  inline val `eu-west-1`: "eu-west-1" = "eu-west-1"
+  inline val `eu-west-2`: "eu-west-2" = "eu-west-2"
+  inline val `eu-west-3`: "eu-west-3" = "eu-west-3"
+  inline val `eu-central-1`: "eu-central-1" = "eu-central-1"
+  inline val `ca-central-1`: "ca-central-1" = "ca-central-1"
+  inline val `ap-south-1`: "ap-south-1" = "ap-south-1"
+  inline val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
+  inline val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
+  inline val `ap-northeast-1`: "ap-northeast-1" = "ap-northeast-1"
+  inline val `ap-northeast-2`: "ap-northeast-2" = "ap-northeast-2"
 
-  @inline def values = js.Array[RegionName](
+  inline def values: js.Array[RegionName] = js.Array(
     `us-east-1`,
     `us-east-2`,
     `us-west-1`,
@@ -871,65 +871,65 @@ object RegionName {
 
 type RelationalDatabaseEngine = "mysql"
 object RelationalDatabaseEngine {
-  val mysql: "mysql" = "mysql"
+  inline val mysql: "mysql" = "mysql"
 
-  @inline def values = js.Array[RelationalDatabaseEngine](mysql)
+  inline def values: js.Array[RelationalDatabaseEngine] = js.Array(mysql)
 }
 
 type RelationalDatabaseMetricName = "CPUUtilization" | "DatabaseConnections" | "DiskQueueDepth" | "FreeStorageSpace" | "NetworkReceiveThroughput" | "NetworkTransmitThroughput"
 object RelationalDatabaseMetricName {
-  val CPUUtilization: "CPUUtilization" = "CPUUtilization"
-  val DatabaseConnections: "DatabaseConnections" = "DatabaseConnections"
-  val DiskQueueDepth: "DiskQueueDepth" = "DiskQueueDepth"
-  val FreeStorageSpace: "FreeStorageSpace" = "FreeStorageSpace"
-  val NetworkReceiveThroughput: "NetworkReceiveThroughput" = "NetworkReceiveThroughput"
-  val NetworkTransmitThroughput: "NetworkTransmitThroughput" = "NetworkTransmitThroughput"
+  inline val CPUUtilization: "CPUUtilization" = "CPUUtilization"
+  inline val DatabaseConnections: "DatabaseConnections" = "DatabaseConnections"
+  inline val DiskQueueDepth: "DiskQueueDepth" = "DiskQueueDepth"
+  inline val FreeStorageSpace: "FreeStorageSpace" = "FreeStorageSpace"
+  inline val NetworkReceiveThroughput: "NetworkReceiveThroughput" = "NetworkReceiveThroughput"
+  inline val NetworkTransmitThroughput: "NetworkTransmitThroughput" = "NetworkTransmitThroughput"
 
-  @inline def values = js.Array[RelationalDatabaseMetricName](CPUUtilization, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput)
+  inline def values: js.Array[RelationalDatabaseMetricName] = js.Array(CPUUtilization, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput)
 }
 
 type RelationalDatabasePasswordVersion = "CURRENT" | "PREVIOUS" | "PENDING"
 object RelationalDatabasePasswordVersion {
-  val CURRENT: "CURRENT" = "CURRENT"
-  val PREVIOUS: "PREVIOUS" = "PREVIOUS"
-  val PENDING: "PENDING" = "PENDING"
+  inline val CURRENT: "CURRENT" = "CURRENT"
+  inline val PREVIOUS: "PREVIOUS" = "PREVIOUS"
+  inline val PENDING: "PENDING" = "PENDING"
 
-  @inline def values = js.Array[RelationalDatabasePasswordVersion](CURRENT, PREVIOUS, PENDING)
+  inline def values: js.Array[RelationalDatabasePasswordVersion] = js.Array(CURRENT, PREVIOUS, PENDING)
 }
 
 type RenewalStatus = "PendingAutoRenewal" | "PendingValidation" | "Success" | "Failed"
 object RenewalStatus {
-  val PendingAutoRenewal: "PendingAutoRenewal" = "PendingAutoRenewal"
-  val PendingValidation: "PendingValidation" = "PendingValidation"
-  val Success: "Success" = "Success"
-  val Failed: "Failed" = "Failed"
+  inline val PendingAutoRenewal: "PendingAutoRenewal" = "PendingAutoRenewal"
+  inline val PendingValidation: "PendingValidation" = "PendingValidation"
+  inline val Success: "Success" = "Success"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array[RenewalStatus](PendingAutoRenewal, PendingValidation, Success, Failed)
+  inline def values: js.Array[RenewalStatus] = js.Array(PendingAutoRenewal, PendingValidation, Success, Failed)
 }
 
 type ResourceType = "ContainerService" | "Instance" | "StaticIp" | "KeyPair" | "InstanceSnapshot" | "Domain" | "PeeredVpc" | "LoadBalancer" | "LoadBalancerTlsCertificate" | "Disk" | "DiskSnapshot" | "RelationalDatabase" | "RelationalDatabaseSnapshot" | "ExportSnapshotRecord" | "CloudFormationStackRecord" | "Alarm" | "ContactMethod" | "Distribution" | "Certificate"
 object ResourceType {
-  val ContainerService: "ContainerService" = "ContainerService"
-  val Instance: "Instance" = "Instance"
-  val StaticIp: "StaticIp" = "StaticIp"
-  val KeyPair: "KeyPair" = "KeyPair"
-  val InstanceSnapshot: "InstanceSnapshot" = "InstanceSnapshot"
-  val Domain: "Domain" = "Domain"
-  val PeeredVpc: "PeeredVpc" = "PeeredVpc"
-  val LoadBalancer: "LoadBalancer" = "LoadBalancer"
-  val LoadBalancerTlsCertificate: "LoadBalancerTlsCertificate" = "LoadBalancerTlsCertificate"
-  val Disk: "Disk" = "Disk"
-  val DiskSnapshot: "DiskSnapshot" = "DiskSnapshot"
-  val RelationalDatabase: "RelationalDatabase" = "RelationalDatabase"
-  val RelationalDatabaseSnapshot: "RelationalDatabaseSnapshot" = "RelationalDatabaseSnapshot"
-  val ExportSnapshotRecord: "ExportSnapshotRecord" = "ExportSnapshotRecord"
-  val CloudFormationStackRecord: "CloudFormationStackRecord" = "CloudFormationStackRecord"
-  val Alarm: "Alarm" = "Alarm"
-  val ContactMethod: "ContactMethod" = "ContactMethod"
-  val Distribution: "Distribution" = "Distribution"
-  val Certificate: "Certificate" = "Certificate"
+  inline val ContainerService: "ContainerService" = "ContainerService"
+  inline val Instance: "Instance" = "Instance"
+  inline val StaticIp: "StaticIp" = "StaticIp"
+  inline val KeyPair: "KeyPair" = "KeyPair"
+  inline val InstanceSnapshot: "InstanceSnapshot" = "InstanceSnapshot"
+  inline val Domain: "Domain" = "Domain"
+  inline val PeeredVpc: "PeeredVpc" = "PeeredVpc"
+  inline val LoadBalancer: "LoadBalancer" = "LoadBalancer"
+  inline val LoadBalancerTlsCertificate: "LoadBalancerTlsCertificate" = "LoadBalancerTlsCertificate"
+  inline val Disk: "Disk" = "Disk"
+  inline val DiskSnapshot: "DiskSnapshot" = "DiskSnapshot"
+  inline val RelationalDatabase: "RelationalDatabase" = "RelationalDatabase"
+  inline val RelationalDatabaseSnapshot: "RelationalDatabaseSnapshot" = "RelationalDatabaseSnapshot"
+  inline val ExportSnapshotRecord: "ExportSnapshotRecord" = "ExportSnapshotRecord"
+  inline val CloudFormationStackRecord: "CloudFormationStackRecord" = "CloudFormationStackRecord"
+  inline val Alarm: "Alarm" = "Alarm"
+  inline val ContactMethod: "ContactMethod" = "ContactMethod"
+  inline val Distribution: "Distribution" = "Distribution"
+  inline val Certificate: "Certificate" = "Certificate"
 
-  @inline def values = js.Array[ResourceType](
+  inline def values: js.Array[ResourceType] = js.Array(
     ContainerService,
     Instance,
     StaticIp,
@@ -954,10 +954,10 @@ object ResourceType {
 
 type TreatMissingData = "breaching" | "notBreaching" | "ignore" | "missing"
 object TreatMissingData {
-  val breaching: "breaching" = "breaching"
-  val notBreaching: "notBreaching" = "notBreaching"
-  val ignore: "ignore" = "ignore"
-  val missing: "missing" = "missing"
+  inline val breaching: "breaching" = "breaching"
+  inline val notBreaching: "notBreaching" = "notBreaching"
+  inline val ignore: "ignore" = "ignore"
+  inline val missing: "missing" = "missing"
 
-  @inline def values = js.Array[TreatMissingData](breaching, notBreaching, ignore, missing)
+  inline def values: js.Array[TreatMissingData] = js.Array(breaching, notBreaching, ignore, missing)
 }

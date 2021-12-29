@@ -4,52 +4,52 @@ import scalajs._
 
 type AggregationType = "None" | "SingleFile"
 object AggregationType {
-  val None: "None" = "None"
-  val SingleFile: "SingleFile" = "SingleFile"
+  inline val None: "None" = "None"
+  inline val SingleFile: "SingleFile" = "SingleFile"
 
-  @inline def values = js.Array[AggregationType](None, SingleFile)
+  inline def values: js.Array[AggregationType] = js.Array(None, SingleFile)
 }
 
 type AmplitudeConnectorOperator = "BETWEEN"
 object AmplitudeConnectorOperator {
-  val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
 
-  @inline def values = js.Array[AmplitudeConnectorOperator](BETWEEN)
+  inline def values: js.Array[AmplitudeConnectorOperator] = js.Array(BETWEEN)
 }
 
 type ConnectionMode = "Public" | "Private"
 object ConnectionMode {
-  val Public: "Public" = "Public"
-  val Private: "Private" = "Private"
+  inline val Public: "Public" = "Public"
+  inline val Private: "Private" = "Private"
 
-  @inline def values = js.Array[ConnectionMode](Public, Private)
+  inline def values: js.Array[ConnectionMode] = js.Array(Public, Private)
 }
 
 type ConnectorType = "Salesforce" | "Singular" | "Slack" | "Redshift" | "S3" | "Marketo" | "Googleanalytics" | "Zendesk" | "Servicenow" | "Datadog" | "Trendmicro" | "Snowflake" | "Dynatrace" | "Infornexus" | "Amplitude" | "Veeva" | "EventBridge" | "LookoutMetrics" | "Upsolver" | "Honeycode" | "CustomerProfiles"
 object ConnectorType {
-  val Salesforce: "Salesforce" = "Salesforce"
-  val Singular: "Singular" = "Singular"
-  val Slack: "Slack" = "Slack"
-  val Redshift: "Redshift" = "Redshift"
-  val S3: "S3" = "S3"
-  val Marketo: "Marketo" = "Marketo"
-  val Googleanalytics: "Googleanalytics" = "Googleanalytics"
-  val Zendesk: "Zendesk" = "Zendesk"
-  val Servicenow: "Servicenow" = "Servicenow"
-  val Datadog: "Datadog" = "Datadog"
-  val Trendmicro: "Trendmicro" = "Trendmicro"
-  val Snowflake: "Snowflake" = "Snowflake"
-  val Dynatrace: "Dynatrace" = "Dynatrace"
-  val Infornexus: "Infornexus" = "Infornexus"
-  val Amplitude: "Amplitude" = "Amplitude"
-  val Veeva: "Veeva" = "Veeva"
-  val EventBridge: "EventBridge" = "EventBridge"
-  val LookoutMetrics: "LookoutMetrics" = "LookoutMetrics"
-  val Upsolver: "Upsolver" = "Upsolver"
-  val Honeycode: "Honeycode" = "Honeycode"
-  val CustomerProfiles: "CustomerProfiles" = "CustomerProfiles"
+  inline val Salesforce: "Salesforce" = "Salesforce"
+  inline val Singular: "Singular" = "Singular"
+  inline val Slack: "Slack" = "Slack"
+  inline val Redshift: "Redshift" = "Redshift"
+  inline val S3: "S3" = "S3"
+  inline val Marketo: "Marketo" = "Marketo"
+  inline val Googleanalytics: "Googleanalytics" = "Googleanalytics"
+  inline val Zendesk: "Zendesk" = "Zendesk"
+  inline val Servicenow: "Servicenow" = "Servicenow"
+  inline val Datadog: "Datadog" = "Datadog"
+  inline val Trendmicro: "Trendmicro" = "Trendmicro"
+  inline val Snowflake: "Snowflake" = "Snowflake"
+  inline val Dynatrace: "Dynatrace" = "Dynatrace"
+  inline val Infornexus: "Infornexus" = "Infornexus"
+  inline val Amplitude: "Amplitude" = "Amplitude"
+  inline val Veeva: "Veeva" = "Veeva"
+  inline val EventBridge: "EventBridge" = "EventBridge"
+  inline val LookoutMetrics: "LookoutMetrics" = "LookoutMetrics"
+  inline val Upsolver: "Upsolver" = "Upsolver"
+  inline val Honeycode: "Honeycode" = "Honeycode"
+  inline val CustomerProfiles: "CustomerProfiles" = "CustomerProfiles"
 
-  @inline def values = js.Array[ConnectorType](
+  inline def values: js.Array[ConnectorType] = js.Array(
     Salesforce,
     Singular,
     Slack,
@@ -76,31 +76,31 @@ object ConnectorType {
 
 type DataPullMode = "Incremental" | "Complete"
 object DataPullMode {
-  val Incremental: "Incremental" = "Incremental"
-  val Complete: "Complete" = "Complete"
+  inline val Incremental: "Incremental" = "Incremental"
+  inline val Complete: "Complete" = "Complete"
 
-  @inline def values = js.Array[DataPullMode](Incremental, Complete)
+  inline def values: js.Array[DataPullMode] = js.Array(Incremental, Complete)
 }
 
 type DatadogConnectorOperator = "PROJECTION" | "BETWEEN" | "EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object DatadogConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[DatadogConnectorOperator](
+  inline def values: js.Array[DatadogConnectorOperator] = js.Array(
     PROJECTION,
     BETWEEN,
     EQUAL_TO,
@@ -121,23 +121,23 @@ object DatadogConnectorOperator {
 
 type DynatraceConnectorOperator = "PROJECTION" | "BETWEEN" | "EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object DynatraceConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[DynatraceConnectorOperator](
+  inline def values: js.Array[DynatraceConnectorOperator] = js.Array(
     PROJECTION,
     BETWEEN,
     EQUAL_TO,
@@ -158,61 +158,61 @@ object DynatraceConnectorOperator {
 
 type ExecutionStatus = "InProgress" | "Successful" | "Error"
 object ExecutionStatus {
-  val InProgress: "InProgress" = "InProgress"
-  val Successful: "Successful" = "Successful"
-  val Error: "Error" = "Error"
+  inline val InProgress: "InProgress" = "InProgress"
+  inline val Successful: "Successful" = "Successful"
+  inline val Error: "Error" = "Error"
 
-  @inline def values = js.Array[ExecutionStatus](InProgress, Successful, Error)
+  inline def values: js.Array[ExecutionStatus] = js.Array(InProgress, Successful, Error)
 }
 
 type FileType = "CSV" | "JSON" | "PARQUET"
 object FileType {
-  val CSV: "CSV" = "CSV"
-  val JSON: "JSON" = "JSON"
-  val PARQUET: "PARQUET" = "PARQUET"
+  inline val CSV: "CSV" = "CSV"
+  inline val JSON: "JSON" = "JSON"
+  inline val PARQUET: "PARQUET" = "PARQUET"
 
-  @inline def values = js.Array[FileType](CSV, JSON, PARQUET)
+  inline def values: js.Array[FileType] = js.Array(CSV, JSON, PARQUET)
 }
 
 type FlowStatus = "Active" | "Deprecated" | "Deleted" | "Draft" | "Errored" | "Suspended"
 object FlowStatus {
-  val Active: "Active" = "Active"
-  val Deprecated: "Deprecated" = "Deprecated"
-  val Deleted: "Deleted" = "Deleted"
-  val Draft: "Draft" = "Draft"
-  val Errored: "Errored" = "Errored"
-  val Suspended: "Suspended" = "Suspended"
+  inline val Active: "Active" = "Active"
+  inline val Deprecated: "Deprecated" = "Deprecated"
+  inline val Deleted: "Deleted" = "Deleted"
+  inline val Draft: "Draft" = "Draft"
+  inline val Errored: "Errored" = "Errored"
+  inline val Suspended: "Suspended" = "Suspended"
 
-  @inline def values = js.Array[FlowStatus](Active, Deprecated, Deleted, Draft, Errored, Suspended)
+  inline def values: js.Array[FlowStatus] = js.Array(Active, Deprecated, Deleted, Draft, Errored, Suspended)
 }
 
 type GoogleAnalyticsConnectorOperator = "PROJECTION" | "BETWEEN"
 object GoogleAnalyticsConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
 
-  @inline def values = js.Array[GoogleAnalyticsConnectorOperator](PROJECTION, BETWEEN)
+  inline def values: js.Array[GoogleAnalyticsConnectorOperator] = js.Array(PROJECTION, BETWEEN)
 }
 
 type InforNexusConnectorOperator = "PROJECTION" | "BETWEEN" | "EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object InforNexusConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[InforNexusConnectorOperator](
+  inline def values: js.Array[InforNexusConnectorOperator] = js.Array(
     PROJECTION,
     BETWEEN,
     EQUAL_TO,
@@ -233,24 +233,24 @@ object InforNexusConnectorOperator {
 
 type MarketoConnectorOperator = "PROJECTION" | "LESS_THAN" | "GREATER_THAN" | "BETWEEN" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object MarketoConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
-  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[MarketoConnectorOperator](
+  inline def values: js.Array[MarketoConnectorOperator] = js.Array(
     PROJECTION,
     LESS_THAN,
     GREATER_THAN,
@@ -272,29 +272,29 @@ object MarketoConnectorOperator {
 
 type Operator = "PROJECTION" | "LESS_THAN" | "GREATER_THAN" | "CONTAINS" | "BETWEEN" | "LESS_THAN_OR_EQUAL_TO" | "GREATER_THAN_OR_EQUAL_TO" | "EQUAL_TO" | "NOT_EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object Operator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
-  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
-  val CONTAINS: "CONTAINS" = "CONTAINS"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
-  val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
-  val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
+  inline val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[Operator](
+  inline def values: js.Array[Operator] = js.Array(
     PROJECTION,
     LESS_THAN,
     GREATER_THAN,
@@ -321,22 +321,22 @@ object Operator {
 
 type OperatorPropertiesKeys = "VALUE" | "VALUES" | "DATA_TYPE" | "UPPER_BOUND" | "LOWER_BOUND" | "SOURCE_DATA_TYPE" | "DESTINATION_DATA_TYPE" | "VALIDATION_ACTION" | "MASK_VALUE" | "MASK_LENGTH" | "TRUNCATE_LENGTH" | "MATH_OPERATION_FIELDS_ORDER" | "CONCAT_FORMAT" | "SUBFIELD_CATEGORY_MAP"
 object OperatorPropertiesKeys {
-  val VALUE: "VALUE" = "VALUE"
-  val VALUES: "VALUES" = "VALUES"
-  val DATA_TYPE: "DATA_TYPE" = "DATA_TYPE"
-  val UPPER_BOUND: "UPPER_BOUND" = "UPPER_BOUND"
-  val LOWER_BOUND: "LOWER_BOUND" = "LOWER_BOUND"
-  val SOURCE_DATA_TYPE: "SOURCE_DATA_TYPE" = "SOURCE_DATA_TYPE"
-  val DESTINATION_DATA_TYPE: "DESTINATION_DATA_TYPE" = "DESTINATION_DATA_TYPE"
-  val VALIDATION_ACTION: "VALIDATION_ACTION" = "VALIDATION_ACTION"
-  val MASK_VALUE: "MASK_VALUE" = "MASK_VALUE"
-  val MASK_LENGTH: "MASK_LENGTH" = "MASK_LENGTH"
-  val TRUNCATE_LENGTH: "TRUNCATE_LENGTH" = "TRUNCATE_LENGTH"
-  val MATH_OPERATION_FIELDS_ORDER: "MATH_OPERATION_FIELDS_ORDER" = "MATH_OPERATION_FIELDS_ORDER"
-  val CONCAT_FORMAT: "CONCAT_FORMAT" = "CONCAT_FORMAT"
-  val SUBFIELD_CATEGORY_MAP: "SUBFIELD_CATEGORY_MAP" = "SUBFIELD_CATEGORY_MAP"
+  inline val VALUE: "VALUE" = "VALUE"
+  inline val VALUES: "VALUES" = "VALUES"
+  inline val DATA_TYPE: "DATA_TYPE" = "DATA_TYPE"
+  inline val UPPER_BOUND: "UPPER_BOUND" = "UPPER_BOUND"
+  inline val LOWER_BOUND: "LOWER_BOUND" = "LOWER_BOUND"
+  inline val SOURCE_DATA_TYPE: "SOURCE_DATA_TYPE" = "SOURCE_DATA_TYPE"
+  inline val DESTINATION_DATA_TYPE: "DESTINATION_DATA_TYPE" = "DESTINATION_DATA_TYPE"
+  inline val VALIDATION_ACTION: "VALIDATION_ACTION" = "VALIDATION_ACTION"
+  inline val MASK_VALUE: "MASK_VALUE" = "MASK_VALUE"
+  inline val MASK_LENGTH: "MASK_LENGTH" = "MASK_LENGTH"
+  inline val TRUNCATE_LENGTH: "TRUNCATE_LENGTH" = "TRUNCATE_LENGTH"
+  inline val MATH_OPERATION_FIELDS_ORDER: "MATH_OPERATION_FIELDS_ORDER" = "MATH_OPERATION_FIELDS_ORDER"
+  inline val CONCAT_FORMAT: "CONCAT_FORMAT" = "CONCAT_FORMAT"
+  inline val SUBFIELD_CATEGORY_MAP: "SUBFIELD_CATEGORY_MAP" = "SUBFIELD_CATEGORY_MAP"
 
-  @inline def values = js.Array[OperatorPropertiesKeys](
+  inline def values: js.Array[OperatorPropertiesKeys] = js.Array(
     VALUE,
     VALUES,
     DATA_TYPE,
@@ -356,48 +356,48 @@ object OperatorPropertiesKeys {
 
 type PrefixFormat = "YEAR" | "MONTH" | "DAY" | "HOUR" | "MINUTE"
 object PrefixFormat {
-  val YEAR: "YEAR" = "YEAR"
-  val MONTH: "MONTH" = "MONTH"
-  val DAY: "DAY" = "DAY"
-  val HOUR: "HOUR" = "HOUR"
-  val MINUTE: "MINUTE" = "MINUTE"
+  inline val YEAR: "YEAR" = "YEAR"
+  inline val MONTH: "MONTH" = "MONTH"
+  inline val DAY: "DAY" = "DAY"
+  inline val HOUR: "HOUR" = "HOUR"
+  inline val MINUTE: "MINUTE" = "MINUTE"
 
-  @inline def values = js.Array[PrefixFormat](YEAR, MONTH, DAY, HOUR, MINUTE)
+  inline def values: js.Array[PrefixFormat] = js.Array(YEAR, MONTH, DAY, HOUR, MINUTE)
 }
 
 type PrefixType = "FILENAME" | "PATH" | "PATH_AND_FILENAME"
 object PrefixType {
-  val FILENAME: "FILENAME" = "FILENAME"
-  val PATH: "PATH" = "PATH"
-  val PATH_AND_FILENAME: "PATH_AND_FILENAME" = "PATH_AND_FILENAME"
+  inline val FILENAME: "FILENAME" = "FILENAME"
+  inline val PATH: "PATH" = "PATH"
+  inline val PATH_AND_FILENAME: "PATH_AND_FILENAME" = "PATH_AND_FILENAME"
 
-  @inline def values = js.Array[PrefixType](FILENAME, PATH, PATH_AND_FILENAME)
+  inline def values: js.Array[PrefixType] = js.Array(FILENAME, PATH, PATH_AND_FILENAME)
 }
 
 type S3ConnectorOperator = "PROJECTION" | "LESS_THAN" | "GREATER_THAN" | "BETWEEN" | "LESS_THAN_OR_EQUAL_TO" | "GREATER_THAN_OR_EQUAL_TO" | "EQUAL_TO" | "NOT_EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object S3ConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
-  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
-  val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
-  val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
+  inline val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[S3ConnectorOperator](
+  inline def values: js.Array[S3ConnectorOperator] = js.Array(
     PROJECTION,
     LESS_THAN,
     GREATER_THAN,
@@ -423,29 +423,29 @@ object S3ConnectorOperator {
 
 type SalesforceConnectorOperator = "PROJECTION" | "LESS_THAN" | "CONTAINS" | "GREATER_THAN" | "BETWEEN" | "LESS_THAN_OR_EQUAL_TO" | "GREATER_THAN_OR_EQUAL_TO" | "EQUAL_TO" | "NOT_EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object SalesforceConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
-  val CONTAINS: "CONTAINS" = "CONTAINS"
-  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
-  val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
-  val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
+  inline val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[SalesforceConnectorOperator](
+  inline def values: js.Array[SalesforceConnectorOperator] = js.Array(
     PROJECTION,
     LESS_THAN,
     CONTAINS,
@@ -472,41 +472,41 @@ object SalesforceConnectorOperator {
 
 type ScheduleFrequencyType = "BYMINUTE" | "HOURLY" | "DAILY" | "WEEKLY" | "MONTHLY" | "ONCE"
 object ScheduleFrequencyType {
-  val BYMINUTE: "BYMINUTE" = "BYMINUTE"
-  val HOURLY: "HOURLY" = "HOURLY"
-  val DAILY: "DAILY" = "DAILY"
-  val WEEKLY: "WEEKLY" = "WEEKLY"
-  val MONTHLY: "MONTHLY" = "MONTHLY"
-  val ONCE: "ONCE" = "ONCE"
+  inline val BYMINUTE: "BYMINUTE" = "BYMINUTE"
+  inline val HOURLY: "HOURLY" = "HOURLY"
+  inline val DAILY: "DAILY" = "DAILY"
+  inline val WEEKLY: "WEEKLY" = "WEEKLY"
+  inline val MONTHLY: "MONTHLY" = "MONTHLY"
+  inline val ONCE: "ONCE" = "ONCE"
 
-  @inline def values = js.Array[ScheduleFrequencyType](BYMINUTE, HOURLY, DAILY, WEEKLY, MONTHLY, ONCE)
+  inline def values: js.Array[ScheduleFrequencyType] = js.Array(BYMINUTE, HOURLY, DAILY, WEEKLY, MONTHLY, ONCE)
 }
 
 type ServiceNowConnectorOperator = "PROJECTION" | "CONTAINS" | "LESS_THAN" | "GREATER_THAN" | "BETWEEN" | "LESS_THAN_OR_EQUAL_TO" | "GREATER_THAN_OR_EQUAL_TO" | "EQUAL_TO" | "NOT_EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object ServiceNowConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val CONTAINS: "CONTAINS" = "CONTAINS"
-  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
-  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
-  val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
-  val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
+  inline val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[ServiceNowConnectorOperator](
+  inline def values: js.Array[ServiceNowConnectorOperator] = js.Array(
     PROJECTION,
     CONTAINS,
     LESS_THAN,
@@ -533,22 +533,22 @@ object ServiceNowConnectorOperator {
 
 type SingularConnectorOperator = "PROJECTION" | "EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object SingularConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[SingularConnectorOperator](
+  inline def values: js.Array[SingularConnectorOperator] = js.Array(
     PROJECTION,
     EQUAL_TO,
     ADDITION,
@@ -568,27 +568,27 @@ object SingularConnectorOperator {
 
 type SlackConnectorOperator = "PROJECTION" | "LESS_THAN" | "GREATER_THAN" | "BETWEEN" | "LESS_THAN_OR_EQUAL_TO" | "GREATER_THAN_OR_EQUAL_TO" | "EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object SlackConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
-  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
-  val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
-  val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
+  inline val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[SlackConnectorOperator](
+  inline def values: js.Array[SlackConnectorOperator] = js.Array(
     PROJECTION,
     LESS_THAN,
     GREATER_THAN,
@@ -613,35 +613,35 @@ object SlackConnectorOperator {
 
 type TaskType = "Arithmetic" | "Filter" | "Map" | "Mask" | "Merge" | "Truncate" | "Validate"
 object TaskType {
-  val Arithmetic: "Arithmetic" = "Arithmetic"
-  val Filter: "Filter" = "Filter"
-  val Map: "Map" = "Map"
-  val Mask: "Mask" = "Mask"
-  val Merge: "Merge" = "Merge"
-  val Truncate: "Truncate" = "Truncate"
-  val Validate: "Validate" = "Validate"
+  inline val Arithmetic: "Arithmetic" = "Arithmetic"
+  inline val Filter: "Filter" = "Filter"
+  inline val Map: "Map" = "Map"
+  inline val Mask: "Mask" = "Mask"
+  inline val Merge: "Merge" = "Merge"
+  inline val Truncate: "Truncate" = "Truncate"
+  inline val Validate: "Validate" = "Validate"
 
-  @inline def values = js.Array[TaskType](Arithmetic, Filter, Map, Mask, Merge, Truncate, Validate)
+  inline def values: js.Array[TaskType] = js.Array(Arithmetic, Filter, Map, Mask, Merge, Truncate, Validate)
 }
 
 type TrendmicroConnectorOperator = "PROJECTION" | "EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object TrendmicroConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[TrendmicroConnectorOperator](
+  inline def values: js.Array[TrendmicroConnectorOperator] = js.Array(
     PROJECTION,
     EQUAL_TO,
     ADDITION,
@@ -661,38 +661,38 @@ object TrendmicroConnectorOperator {
 
 type TriggerType = "Scheduled" | "Event" | "OnDemand"
 object TriggerType {
-  val Scheduled: "Scheduled" = "Scheduled"
-  val Event: "Event" = "Event"
-  val OnDemand: "OnDemand" = "OnDemand"
+  inline val Scheduled: "Scheduled" = "Scheduled"
+  inline val Event: "Event" = "Event"
+  inline val OnDemand: "OnDemand" = "OnDemand"
 
-  @inline def values = js.Array[TriggerType](Scheduled, Event, OnDemand)
+  inline def values: js.Array[TriggerType] = js.Array(Scheduled, Event, OnDemand)
 }
 
 type VeevaConnectorOperator = "PROJECTION" | "LESS_THAN" | "GREATER_THAN" | "CONTAINS" | "BETWEEN" | "LESS_THAN_OR_EQUAL_TO" | "GREATER_THAN_OR_EQUAL_TO" | "EQUAL_TO" | "NOT_EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object VeevaConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
-  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
-  val CONTAINS: "CONTAINS" = "CONTAINS"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
-  val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
-  val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
-  val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
+  inline val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[VeevaConnectorOperator](
+  inline def values: js.Array[VeevaConnectorOperator] = js.Array(
     PROJECTION,
     LESS_THAN,
     GREATER_THAN,
@@ -721,31 +721,31 @@ object VeevaConnectorOperator {
   */
 type WriteOperationType = "INSERT" | "UPSERT" | "UPDATE"
 object WriteOperationType {
-  val INSERT: "INSERT" = "INSERT"
-  val UPSERT: "UPSERT" = "UPSERT"
-  val UPDATE: "UPDATE" = "UPDATE"
+  inline val INSERT: "INSERT" = "INSERT"
+  inline val UPSERT: "UPSERT" = "UPSERT"
+  inline val UPDATE: "UPDATE" = "UPDATE"
 
-  @inline def values = js.Array[WriteOperationType](INSERT, UPSERT, UPDATE)
+  inline def values: js.Array[WriteOperationType] = js.Array(INSERT, UPSERT, UPDATE)
 }
 
 type ZendeskConnectorOperator = "PROJECTION" | "GREATER_THAN" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
 object ZendeskConnectorOperator {
-  val PROJECTION: "PROJECTION" = "PROJECTION"
-  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
-  val ADDITION: "ADDITION" = "ADDITION"
-  val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
-  val DIVISION: "DIVISION" = "DIVISION"
-  val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
-  val MASK_ALL: "MASK_ALL" = "MASK_ALL"
-  val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
-  val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
-  val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
-  val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
-  val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
-  val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
-  val NO_OP: "NO_OP" = "NO_OP"
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
 
-  @inline def values = js.Array[ZendeskConnectorOperator](
+  inline def values: js.Array[ZendeskConnectorOperator] = js.Array(
     PROJECTION,
     GREATER_THAN,
     ADDITION,

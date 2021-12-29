@@ -4,23 +4,23 @@ import scalajs._
 
 type ChecksumAggregationMethod = "LINEAR"
 object ChecksumAggregationMethod {
-  val LINEAR: "LINEAR" = "LINEAR"
+  inline val LINEAR: "LINEAR" = "LINEAR"
 
-  @inline def values = js.Array[ChecksumAggregationMethod](LINEAR)
+  inline def values: js.Array[ChecksumAggregationMethod] = js.Array(LINEAR)
 }
 
 type ChecksumAlgorithm = "SHA256"
 object ChecksumAlgorithm {
-  val SHA256: "SHA256" = "SHA256"
+  inline val SHA256: "SHA256" = "SHA256"
 
-  @inline def values = js.Array[ChecksumAlgorithm](SHA256)
+  inline def values: js.Array[ChecksumAlgorithm] = js.Array(SHA256)
 }
 
 type Status = "completed" | "pending" | "error"
 object Status {
-  val completed: "completed" = "completed"
-  val pending: "pending" = "pending"
-  val error: "error" = "error"
+  inline val completed: "completed" = "completed"
+  inline val pending: "pending" = "pending"
+  inline val error: "error" = "error"
 
-  @inline def values = js.Array[Status](completed, pending, error)
+  inline def values: js.Array[Status] = js.Array(completed, pending, error)
 }

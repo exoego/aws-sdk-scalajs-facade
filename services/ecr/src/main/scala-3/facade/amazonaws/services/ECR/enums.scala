@@ -4,92 +4,92 @@ import scalajs._
 
 type EncryptionType = "AES256" | "KMS"
 object EncryptionType {
-  val AES256: "AES256" = "AES256"
-  val KMS: "KMS" = "KMS"
+  inline val AES256: "AES256" = "AES256"
+  inline val KMS: "KMS" = "KMS"
 
-  @inline def values = js.Array[EncryptionType](AES256, KMS)
+  inline def values: js.Array[EncryptionType] = js.Array(AES256, KMS)
 }
 
 type FindingSeverity = "INFORMATIONAL" | "LOW" | "MEDIUM" | "HIGH" | "CRITICAL" | "UNDEFINED"
 object FindingSeverity {
-  val INFORMATIONAL: "INFORMATIONAL" = "INFORMATIONAL"
-  val LOW: "LOW" = "LOW"
-  val MEDIUM: "MEDIUM" = "MEDIUM"
-  val HIGH: "HIGH" = "HIGH"
-  val CRITICAL: "CRITICAL" = "CRITICAL"
-  val UNDEFINED: "UNDEFINED" = "UNDEFINED"
+  inline val INFORMATIONAL: "INFORMATIONAL" = "INFORMATIONAL"
+  inline val LOW: "LOW" = "LOW"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val HIGH: "HIGH" = "HIGH"
+  inline val CRITICAL: "CRITICAL" = "CRITICAL"
+  inline val UNDEFINED: "UNDEFINED" = "UNDEFINED"
 
-  @inline def values = js.Array[FindingSeverity](INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED)
+  inline def values: js.Array[FindingSeverity] = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED)
 }
 
 type ImageActionType = "EXPIRE"
 object ImageActionType {
-  val EXPIRE: "EXPIRE" = "EXPIRE"
+  inline val EXPIRE: "EXPIRE" = "EXPIRE"
 
-  @inline def values = js.Array[ImageActionType](EXPIRE)
+  inline def values: js.Array[ImageActionType] = js.Array(EXPIRE)
 }
 
 type ImageFailureCode = "InvalidImageDigest" | "InvalidImageTag" | "ImageTagDoesNotMatchDigest" | "ImageNotFound" | "MissingDigestAndTag" | "ImageReferencedByManifestList" | "KmsError"
 object ImageFailureCode {
-  val InvalidImageDigest: "InvalidImageDigest" = "InvalidImageDigest"
-  val InvalidImageTag: "InvalidImageTag" = "InvalidImageTag"
-  val ImageTagDoesNotMatchDigest: "ImageTagDoesNotMatchDigest" = "ImageTagDoesNotMatchDigest"
-  val ImageNotFound: "ImageNotFound" = "ImageNotFound"
-  val MissingDigestAndTag: "MissingDigestAndTag" = "MissingDigestAndTag"
-  val ImageReferencedByManifestList: "ImageReferencedByManifestList" = "ImageReferencedByManifestList"
-  val KmsError: "KmsError" = "KmsError"
+  inline val InvalidImageDigest: "InvalidImageDigest" = "InvalidImageDigest"
+  inline val InvalidImageTag: "InvalidImageTag" = "InvalidImageTag"
+  inline val ImageTagDoesNotMatchDigest: "ImageTagDoesNotMatchDigest" = "ImageTagDoesNotMatchDigest"
+  inline val ImageNotFound: "ImageNotFound" = "ImageNotFound"
+  inline val MissingDigestAndTag: "MissingDigestAndTag" = "MissingDigestAndTag"
+  inline val ImageReferencedByManifestList: "ImageReferencedByManifestList" = "ImageReferencedByManifestList"
+  inline val KmsError: "KmsError" = "KmsError"
 
-  @inline def values = js.Array[ImageFailureCode](InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
+  inline def values: js.Array[ImageFailureCode] = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
 }
 
 type ImageTagMutability = "MUTABLE" | "IMMUTABLE"
 object ImageTagMutability {
-  val MUTABLE: "MUTABLE" = "MUTABLE"
-  val IMMUTABLE: "IMMUTABLE" = "IMMUTABLE"
+  inline val MUTABLE: "MUTABLE" = "MUTABLE"
+  inline val IMMUTABLE: "IMMUTABLE" = "IMMUTABLE"
 
-  @inline def values = js.Array[ImageTagMutability](MUTABLE, IMMUTABLE)
+  inline def values: js.Array[ImageTagMutability] = js.Array(MUTABLE, IMMUTABLE)
 }
 
 type LayerAvailability = "AVAILABLE" | "UNAVAILABLE"
 object LayerAvailability {
-  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
-  val UNAVAILABLE: "UNAVAILABLE" = "UNAVAILABLE"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val UNAVAILABLE: "UNAVAILABLE" = "UNAVAILABLE"
 
-  @inline def values = js.Array[LayerAvailability](AVAILABLE, UNAVAILABLE)
+  inline def values: js.Array[LayerAvailability] = js.Array(AVAILABLE, UNAVAILABLE)
 }
 
 type LayerFailureCode = "InvalidLayerDigest" | "MissingLayerDigest"
 object LayerFailureCode {
-  val InvalidLayerDigest: "InvalidLayerDigest" = "InvalidLayerDigest"
-  val MissingLayerDigest: "MissingLayerDigest" = "MissingLayerDigest"
+  inline val InvalidLayerDigest: "InvalidLayerDigest" = "InvalidLayerDigest"
+  inline val MissingLayerDigest: "MissingLayerDigest" = "MissingLayerDigest"
 
-  @inline def values = js.Array[LayerFailureCode](InvalidLayerDigest, MissingLayerDigest)
+  inline def values: js.Array[LayerFailureCode] = js.Array(InvalidLayerDigest, MissingLayerDigest)
 }
 
 type LifecyclePolicyPreviewStatus = "IN_PROGRESS" | "COMPLETE" | "EXPIRED" | "FAILED"
 object LifecyclePolicyPreviewStatus {
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val COMPLETE: "COMPLETE" = "COMPLETE"
-  val EXPIRED: "EXPIRED" = "EXPIRED"
-  val FAILED: "FAILED" = "FAILED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[LifecyclePolicyPreviewStatus](IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
+  inline def values: js.Array[LifecyclePolicyPreviewStatus] = js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
 }
 
 type ScanStatus = "IN_PROGRESS" | "COMPLETE" | "FAILED"
 object ScanStatus {
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val COMPLETE: "COMPLETE" = "COMPLETE"
-  val FAILED: "FAILED" = "FAILED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[ScanStatus](IN_PROGRESS, COMPLETE, FAILED)
+  inline def values: js.Array[ScanStatus] = js.Array(IN_PROGRESS, COMPLETE, FAILED)
 }
 
 type TagStatus = "TAGGED" | "UNTAGGED" | "ANY"
 object TagStatus {
-  val TAGGED: "TAGGED" = "TAGGED"
-  val UNTAGGED: "UNTAGGED" = "UNTAGGED"
-  val ANY: "ANY" = "ANY"
+  inline val TAGGED: "TAGGED" = "TAGGED"
+  inline val UNTAGGED: "UNTAGGED" = "UNTAGGED"
+  inline val ANY: "ANY" = "ANY"
 
-  @inline def values = js.Array[TagStatus](TAGGED, UNTAGGED, ANY)
+  inline def values: js.Array[TagStatus] = js.Array(TAGGED, UNTAGGED, ANY)
 }

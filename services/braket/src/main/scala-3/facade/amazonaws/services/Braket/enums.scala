@@ -4,49 +4,49 @@ import scalajs._
 
 type CancellationStatus = "CANCELLING" | "CANCELLED"
 object CancellationStatus {
-  val CANCELLING: "CANCELLING" = "CANCELLING"
-  val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val CANCELLING: "CANCELLING" = "CANCELLING"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array[CancellationStatus](CANCELLING, CANCELLED)
+  inline def values: js.Array[CancellationStatus] = js.Array(CANCELLING, CANCELLED)
 }
 
 type DeviceStatus = "ONLINE" | "OFFLINE"
 object DeviceStatus {
-  val ONLINE: "ONLINE" = "ONLINE"
-  val OFFLINE: "OFFLINE" = "OFFLINE"
+  inline val ONLINE: "ONLINE" = "ONLINE"
+  inline val OFFLINE: "OFFLINE" = "OFFLINE"
 
-  @inline def values = js.Array[DeviceStatus](ONLINE, OFFLINE)
+  inline def values: js.Array[DeviceStatus] = js.Array(ONLINE, OFFLINE)
 }
 
 type DeviceType = "QPU" | "SIMULATOR"
 object DeviceType {
-  val QPU: "QPU" = "QPU"
-  val SIMULATOR: "SIMULATOR" = "SIMULATOR"
+  inline val QPU: "QPU" = "QPU"
+  inline val SIMULATOR: "SIMULATOR" = "SIMULATOR"
 
-  @inline def values = js.Array[DeviceType](QPU, SIMULATOR)
+  inline def values: js.Array[DeviceType] = js.Array(QPU, SIMULATOR)
 }
 
 type QuantumTaskStatus = "CREATED" | "QUEUED" | "RUNNING" | "COMPLETED" | "FAILED" | "CANCELLING" | "CANCELLED"
 object QuantumTaskStatus {
-  val CREATED: "CREATED" = "CREATED"
-  val QUEUED: "QUEUED" = "QUEUED"
-  val RUNNING: "RUNNING" = "RUNNING"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val FAILED: "FAILED" = "FAILED"
-  val CANCELLING: "CANCELLING" = "CANCELLING"
-  val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val CREATED: "CREATED" = "CREATED"
+  inline val QUEUED: "QUEUED" = "QUEUED"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELLING: "CANCELLING" = "CANCELLING"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array[QuantumTaskStatus](CREATED, QUEUED, RUNNING, COMPLETED, FAILED, CANCELLING, CANCELLED)
+  inline def values: js.Array[QuantumTaskStatus] = js.Array(CREATED, QUEUED, RUNNING, COMPLETED, FAILED, CANCELLING, CANCELLED)
 }
 
 type SearchQuantumTasksFilterOperator = "LT" | "LTE" | "EQUAL" | "GT" | "GTE" | "BETWEEN"
 object SearchQuantumTasksFilterOperator {
-  val LT: "LT" = "LT"
-  val LTE: "LTE" = "LTE"
-  val EQUAL: "EQUAL" = "EQUAL"
-  val GT: "GT" = "GT"
-  val GTE: "GTE" = "GTE"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val LT: "LT" = "LT"
+  inline val LTE: "LTE" = "LTE"
+  inline val EQUAL: "EQUAL" = "EQUAL"
+  inline val GT: "GT" = "GT"
+  inline val GTE: "GTE" = "GTE"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
 
-  @inline def values = js.Array[SearchQuantumTasksFilterOperator](LT, LTE, EQUAL, GT, GTE, BETWEEN)
+  inline def values: js.Array[SearchQuantumTasksFilterOperator] = js.Array(LT, LTE, EQUAL, GT, GTE, BETWEEN)
 }

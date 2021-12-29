@@ -4,234 +4,234 @@ import scalajs._
 
 type Action = "OPEN_APP" | "DEEP_LINK" | "URL"
 object Action {
-  val OPEN_APP: "OPEN_APP" = "OPEN_APP"
-  val DEEP_LINK: "DEEP_LINK" = "DEEP_LINK"
-  val URL: "URL" = "URL"
+  inline val OPEN_APP: "OPEN_APP" = "OPEN_APP"
+  inline val DEEP_LINK: "DEEP_LINK" = "DEEP_LINK"
+  inline val URL: "URL" = "URL"
 
-  @inline def values = js.Array[Action](OPEN_APP, DEEP_LINK, URL)
+  inline def values: js.Array[Action] = js.Array(OPEN_APP, DEEP_LINK, URL)
 }
 
 type AttributeType = "INCLUSIVE" | "EXCLUSIVE" | "CONTAINS" | "BEFORE" | "AFTER" | "ON" | "BETWEEN"
 object AttributeType {
-  val INCLUSIVE: "INCLUSIVE" = "INCLUSIVE"
-  val EXCLUSIVE: "EXCLUSIVE" = "EXCLUSIVE"
-  val CONTAINS: "CONTAINS" = "CONTAINS"
-  val BEFORE: "BEFORE" = "BEFORE"
-  val AFTER: "AFTER" = "AFTER"
-  val ON: "ON" = "ON"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val INCLUSIVE: "INCLUSIVE" = "INCLUSIVE"
+  inline val EXCLUSIVE: "EXCLUSIVE" = "EXCLUSIVE"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
+  inline val BEFORE: "BEFORE" = "BEFORE"
+  inline val AFTER: "AFTER" = "AFTER"
+  inline val ON: "ON" = "ON"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
 
-  @inline def values = js.Array[AttributeType](INCLUSIVE, EXCLUSIVE, CONTAINS, BEFORE, AFTER, ON, BETWEEN)
+  inline def values: js.Array[AttributeType] = js.Array(INCLUSIVE, EXCLUSIVE, CONTAINS, BEFORE, AFTER, ON, BETWEEN)
 }
 
 type CampaignStatus = "SCHEDULED" | "EXECUTING" | "PENDING_NEXT_RUN" | "COMPLETED" | "PAUSED" | "DELETED" | "INVALID"
 object CampaignStatus {
-  val SCHEDULED: "SCHEDULED" = "SCHEDULED"
-  val EXECUTING: "EXECUTING" = "EXECUTING"
-  val PENDING_NEXT_RUN: "PENDING_NEXT_RUN" = "PENDING_NEXT_RUN"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val PAUSED: "PAUSED" = "PAUSED"
-  val DELETED: "DELETED" = "DELETED"
-  val INVALID: "INVALID" = "INVALID"
+  inline val SCHEDULED: "SCHEDULED" = "SCHEDULED"
+  inline val EXECUTING: "EXECUTING" = "EXECUTING"
+  inline val PENDING_NEXT_RUN: "PENDING_NEXT_RUN" = "PENDING_NEXT_RUN"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val PAUSED: "PAUSED" = "PAUSED"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val INVALID: "INVALID" = "INVALID"
 
-  @inline def values = js.Array[CampaignStatus](SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED, INVALID)
+  inline def values: js.Array[CampaignStatus] = js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED, INVALID)
 }
 
 type ChannelType = "PUSH" | "GCM" | "APNS" | "APNS_SANDBOX" | "APNS_VOIP" | "APNS_VOIP_SANDBOX" | "ADM" | "SMS" | "VOICE" | "EMAIL" | "BAIDU" | "CUSTOM"
 object ChannelType {
-  val PUSH: "PUSH" = "PUSH"
-  val GCM: "GCM" = "GCM"
-  val APNS: "APNS" = "APNS"
-  val APNS_SANDBOX: "APNS_SANDBOX" = "APNS_SANDBOX"
-  val APNS_VOIP: "APNS_VOIP" = "APNS_VOIP"
-  val APNS_VOIP_SANDBOX: "APNS_VOIP_SANDBOX" = "APNS_VOIP_SANDBOX"
-  val ADM: "ADM" = "ADM"
-  val SMS: "SMS" = "SMS"
-  val VOICE: "VOICE" = "VOICE"
-  val EMAIL: "EMAIL" = "EMAIL"
-  val BAIDU: "BAIDU" = "BAIDU"
-  val CUSTOM: "CUSTOM" = "CUSTOM"
+  inline val PUSH: "PUSH" = "PUSH"
+  inline val GCM: "GCM" = "GCM"
+  inline val APNS: "APNS" = "APNS"
+  inline val APNS_SANDBOX: "APNS_SANDBOX" = "APNS_SANDBOX"
+  inline val APNS_VOIP: "APNS_VOIP" = "APNS_VOIP"
+  inline val APNS_VOIP_SANDBOX: "APNS_VOIP_SANDBOX" = "APNS_VOIP_SANDBOX"
+  inline val ADM: "ADM" = "ADM"
+  inline val SMS: "SMS" = "SMS"
+  inline val VOICE: "VOICE" = "VOICE"
+  inline val EMAIL: "EMAIL" = "EMAIL"
+  inline val BAIDU: "BAIDU" = "BAIDU"
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
 
-  @inline def values = js.Array[ChannelType](PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+  inline def values: js.Array[ChannelType] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
 }
 
 type DeliveryStatus = "SUCCESSFUL" | "THROTTLED" | "TEMPORARY_FAILURE" | "PERMANENT_FAILURE" | "UNKNOWN_FAILURE" | "OPT_OUT" | "DUPLICATE"
 object DeliveryStatus {
-  val SUCCESSFUL: "SUCCESSFUL" = "SUCCESSFUL"
-  val THROTTLED: "THROTTLED" = "THROTTLED"
-  val TEMPORARY_FAILURE: "TEMPORARY_FAILURE" = "TEMPORARY_FAILURE"
-  val PERMANENT_FAILURE: "PERMANENT_FAILURE" = "PERMANENT_FAILURE"
-  val UNKNOWN_FAILURE: "UNKNOWN_FAILURE" = "UNKNOWN_FAILURE"
-  val OPT_OUT: "OPT_OUT" = "OPT_OUT"
-  val DUPLICATE: "DUPLICATE" = "DUPLICATE"
+  inline val SUCCESSFUL: "SUCCESSFUL" = "SUCCESSFUL"
+  inline val THROTTLED: "THROTTLED" = "THROTTLED"
+  inline val TEMPORARY_FAILURE: "TEMPORARY_FAILURE" = "TEMPORARY_FAILURE"
+  inline val PERMANENT_FAILURE: "PERMANENT_FAILURE" = "PERMANENT_FAILURE"
+  inline val UNKNOWN_FAILURE: "UNKNOWN_FAILURE" = "UNKNOWN_FAILURE"
+  inline val OPT_OUT: "OPT_OUT" = "OPT_OUT"
+  inline val DUPLICATE: "DUPLICATE" = "DUPLICATE"
 
-  @inline def values = js.Array[DeliveryStatus](SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
+  inline def values: js.Array[DeliveryStatus] = js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
 }
 
 type DimensionType = "INCLUSIVE" | "EXCLUSIVE"
 object DimensionType {
-  val INCLUSIVE: "INCLUSIVE" = "INCLUSIVE"
-  val EXCLUSIVE: "EXCLUSIVE" = "EXCLUSIVE"
+  inline val INCLUSIVE: "INCLUSIVE" = "INCLUSIVE"
+  inline val EXCLUSIVE: "EXCLUSIVE" = "EXCLUSIVE"
 
-  @inline def values = js.Array[DimensionType](INCLUSIVE, EXCLUSIVE)
+  inline def values: js.Array[DimensionType] = js.Array(INCLUSIVE, EXCLUSIVE)
 }
 
 type Duration = "HR_24" | "DAY_7" | "DAY_14" | "DAY_30"
 object Duration {
-  val HR_24: "HR_24" = "HR_24"
-  val DAY_7: "DAY_7" = "DAY_7"
-  val DAY_14: "DAY_14" = "DAY_14"
-  val DAY_30: "DAY_30" = "DAY_30"
+  inline val HR_24: "HR_24" = "HR_24"
+  inline val DAY_7: "DAY_7" = "DAY_7"
+  inline val DAY_14: "DAY_14" = "DAY_14"
+  inline val DAY_30: "DAY_30" = "DAY_30"
 
-  @inline def values = js.Array[Duration](HR_24, DAY_7, DAY_14, DAY_30)
+  inline def values: js.Array[Duration] = js.Array(HR_24, DAY_7, DAY_14, DAY_30)
 }
 
 type FilterType = "SYSTEM" | "ENDPOINT"
 object FilterType {
-  val SYSTEM: "SYSTEM" = "SYSTEM"
-  val ENDPOINT: "ENDPOINT" = "ENDPOINT"
+  inline val SYSTEM: "SYSTEM" = "SYSTEM"
+  inline val ENDPOINT: "ENDPOINT" = "ENDPOINT"
 
-  @inline def values = js.Array[FilterType](SYSTEM, ENDPOINT)
+  inline def values: js.Array[FilterType] = js.Array(SYSTEM, ENDPOINT)
 }
 
 type Format = "CSV" | "JSON"
 object Format {
-  val CSV: "CSV" = "CSV"
-  val JSON: "JSON" = "JSON"
+  inline val CSV: "CSV" = "CSV"
+  inline val JSON: "JSON" = "JSON"
 
-  @inline def values = js.Array[Format](CSV, JSON)
+  inline def values: js.Array[Format] = js.Array(CSV, JSON)
 }
 
 type Frequency = "ONCE" | "HOURLY" | "DAILY" | "WEEKLY" | "MONTHLY" | "EVENT"
 object Frequency {
-  val ONCE: "ONCE" = "ONCE"
-  val HOURLY: "HOURLY" = "HOURLY"
-  val DAILY: "DAILY" = "DAILY"
-  val WEEKLY: "WEEKLY" = "WEEKLY"
-  val MONTHLY: "MONTHLY" = "MONTHLY"
-  val EVENT: "EVENT" = "EVENT"
+  inline val ONCE: "ONCE" = "ONCE"
+  inline val HOURLY: "HOURLY" = "HOURLY"
+  inline val DAILY: "DAILY" = "DAILY"
+  inline val WEEKLY: "WEEKLY" = "WEEKLY"
+  inline val MONTHLY: "MONTHLY" = "MONTHLY"
+  inline val EVENT: "EVENT" = "EVENT"
 
-  @inline def values = js.Array[Frequency](ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT)
+  inline def values: js.Array[Frequency] = js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT)
 }
 
 type Include = "ALL" | "ANY" | "NONE"
 object Include {
-  val ALL: "ALL" = "ALL"
-  val ANY: "ANY" = "ANY"
-  val NONE: "NONE" = "NONE"
+  inline val ALL: "ALL" = "ALL"
+  inline val ANY: "ANY" = "ANY"
+  inline val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array[Include](ALL, ANY, NONE)
+  inline def values: js.Array[Include] = js.Array(ALL, ANY, NONE)
 }
 
 type JobStatus = "CREATED" | "PREPARING_FOR_INITIALIZATION" | "INITIALIZING" | "PROCESSING" | "PENDING_JOB" | "COMPLETING" | "COMPLETED" | "FAILING" | "FAILED"
 object JobStatus {
-  val CREATED: "CREATED" = "CREATED"
-  val PREPARING_FOR_INITIALIZATION: "PREPARING_FOR_INITIALIZATION" = "PREPARING_FOR_INITIALIZATION"
-  val INITIALIZING: "INITIALIZING" = "INITIALIZING"
-  val PROCESSING: "PROCESSING" = "PROCESSING"
-  val PENDING_JOB: "PENDING_JOB" = "PENDING_JOB"
-  val COMPLETING: "COMPLETING" = "COMPLETING"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val FAILING: "FAILING" = "FAILING"
-  val FAILED: "FAILED" = "FAILED"
+  inline val CREATED: "CREATED" = "CREATED"
+  inline val PREPARING_FOR_INITIALIZATION: "PREPARING_FOR_INITIALIZATION" = "PREPARING_FOR_INITIALIZATION"
+  inline val INITIALIZING: "INITIALIZING" = "INITIALIZING"
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val PENDING_JOB: "PENDING_JOB" = "PENDING_JOB"
+  inline val COMPLETING: "COMPLETING" = "COMPLETING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILING: "FAILING" = "FAILING"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[JobStatus](CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED)
+  inline def values: js.Array[JobStatus] = js.Array(CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED)
 }
 
 type MessageType = "TRANSACTIONAL" | "PROMOTIONAL"
 object MessageType {
-  val TRANSACTIONAL: "TRANSACTIONAL" = "TRANSACTIONAL"
-  val PROMOTIONAL: "PROMOTIONAL" = "PROMOTIONAL"
+  inline val TRANSACTIONAL: "TRANSACTIONAL" = "TRANSACTIONAL"
+  inline val PROMOTIONAL: "PROMOTIONAL" = "PROMOTIONAL"
 
-  @inline def values = js.Array[MessageType](TRANSACTIONAL, PROMOTIONAL)
+  inline def values: js.Array[MessageType] = js.Array(TRANSACTIONAL, PROMOTIONAL)
 }
 
 type Mode = "DELIVERY" | "FILTER"
 object Mode {
-  val DELIVERY: "DELIVERY" = "DELIVERY"
-  val FILTER: "FILTER" = "FILTER"
+  inline val DELIVERY: "DELIVERY" = "DELIVERY"
+  inline val FILTER: "FILTER" = "FILTER"
 
-  @inline def values = js.Array[Mode](DELIVERY, FILTER)
+  inline def values: js.Array[Mode] = js.Array(DELIVERY, FILTER)
 }
 
 type Operator = "ALL" | "ANY"
 object Operator {
-  val ALL: "ALL" = "ALL"
-  val ANY: "ANY" = "ANY"
+  inline val ALL: "ALL" = "ALL"
+  inline val ANY: "ANY" = "ANY"
 
-  @inline def values = js.Array[Operator](ALL, ANY)
+  inline def values: js.Array[Operator] = js.Array(ALL, ANY)
 }
 
 type RecencyType = "ACTIVE" | "INACTIVE"
 object RecencyType {
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array[RecencyType](ACTIVE, INACTIVE)
+  inline def values: js.Array[RecencyType] = js.Array(ACTIVE, INACTIVE)
 }
 
 type SegmentType = "DIMENSIONAL" | "IMPORT"
 object SegmentType {
-  val DIMENSIONAL: "DIMENSIONAL" = "DIMENSIONAL"
-  val IMPORT: "IMPORT" = "IMPORT"
+  inline val DIMENSIONAL: "DIMENSIONAL" = "DIMENSIONAL"
+  inline val IMPORT: "IMPORT" = "IMPORT"
 
-  @inline def values = js.Array[SegmentType](DIMENSIONAL, IMPORT)
+  inline def values: js.Array[SegmentType] = js.Array(DIMENSIONAL, IMPORT)
 }
 
 type SourceType = "ALL" | "ANY" | "NONE"
 object SourceType {
-  val ALL: "ALL" = "ALL"
-  val ANY: "ANY" = "ANY"
-  val NONE: "NONE" = "NONE"
+  inline val ALL: "ALL" = "ALL"
+  inline val ANY: "ANY" = "ANY"
+  inline val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array[SourceType](ALL, ANY, NONE)
+  inline def values: js.Array[SourceType] = js.Array(ALL, ANY, NONE)
 }
 
 type State = "DRAFT" | "ACTIVE" | "COMPLETED" | "CANCELLED" | "CLOSED" | "PAUSED"
 object State {
-  val DRAFT: "DRAFT" = "DRAFT"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val CANCELLED: "CANCELLED" = "CANCELLED"
-  val CLOSED: "CLOSED" = "CLOSED"
-  val PAUSED: "PAUSED" = "PAUSED"
+  inline val DRAFT: "DRAFT" = "DRAFT"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val CLOSED: "CLOSED" = "CLOSED"
+  inline val PAUSED: "PAUSED" = "PAUSED"
 
-  @inline def values = js.Array[State](DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED, PAUSED)
+  inline def values: js.Array[State] = js.Array(DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED, PAUSED)
 }
 
 type TemplateType = "EMAIL" | "SMS" | "VOICE" | "PUSH"
 object TemplateType {
-  val EMAIL: "EMAIL" = "EMAIL"
-  val SMS: "SMS" = "SMS"
-  val VOICE: "VOICE" = "VOICE"
-  val PUSH: "PUSH" = "PUSH"
+  inline val EMAIL: "EMAIL" = "EMAIL"
+  inline val SMS: "SMS" = "SMS"
+  inline val VOICE: "VOICE" = "VOICE"
+  inline val PUSH: "PUSH" = "PUSH"
 
-  @inline def values = js.Array[TemplateType](EMAIL, SMS, VOICE, PUSH)
+  inline def values: js.Array[TemplateType] = js.Array(EMAIL, SMS, VOICE, PUSH)
 }
 
 type Type = "ALL" | "ANY" | "NONE"
 object Type {
-  val ALL: "ALL" = "ALL"
-  val ANY: "ANY" = "ANY"
-  val NONE: "NONE" = "NONE"
+  inline val ALL: "ALL" = "ALL"
+  inline val ANY: "ANY" = "ANY"
+  inline val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array[Type](ALL, ANY, NONE)
+  inline def values: js.Array[Type] = js.Array(ALL, ANY, NONE)
 }
 
 type __EndpointTypesElement = "PUSH" | "GCM" | "APNS" | "APNS_SANDBOX" | "APNS_VOIP" | "APNS_VOIP_SANDBOX" | "ADM" | "SMS" | "VOICE" | "EMAIL" | "BAIDU" | "CUSTOM"
 object __EndpointTypesElement {
-  val PUSH: "PUSH" = "PUSH"
-  val GCM: "GCM" = "GCM"
-  val APNS: "APNS" = "APNS"
-  val APNS_SANDBOX: "APNS_SANDBOX" = "APNS_SANDBOX"
-  val APNS_VOIP: "APNS_VOIP" = "APNS_VOIP"
-  val APNS_VOIP_SANDBOX: "APNS_VOIP_SANDBOX" = "APNS_VOIP_SANDBOX"
-  val ADM: "ADM" = "ADM"
-  val SMS: "SMS" = "SMS"
-  val VOICE: "VOICE" = "VOICE"
-  val EMAIL: "EMAIL" = "EMAIL"
-  val BAIDU: "BAIDU" = "BAIDU"
-  val CUSTOM: "CUSTOM" = "CUSTOM"
+  inline val PUSH: "PUSH" = "PUSH"
+  inline val GCM: "GCM" = "GCM"
+  inline val APNS: "APNS" = "APNS"
+  inline val APNS_SANDBOX: "APNS_SANDBOX" = "APNS_SANDBOX"
+  inline val APNS_VOIP: "APNS_VOIP" = "APNS_VOIP"
+  inline val APNS_VOIP_SANDBOX: "APNS_VOIP_SANDBOX" = "APNS_VOIP_SANDBOX"
+  inline val ADM: "ADM" = "ADM"
+  inline val SMS: "SMS" = "SMS"
+  inline val VOICE: "VOICE" = "VOICE"
+  inline val EMAIL: "EMAIL" = "EMAIL"
+  inline val BAIDU: "BAIDU" = "BAIDU"
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
 
-  @inline def values = js.Array[__EndpointTypesElement](PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+  inline def values: js.Array[__EndpointTypesElement] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
 }

@@ -4,26 +4,26 @@ import scalajs._
 
 type ErrorCode = "InternalServiceException" | "InvalidParameterException"
 object ErrorCode {
-  val InternalServiceException: "InternalServiceException" = "InternalServiceException"
-  val InvalidParameterException: "InvalidParameterException" = "InvalidParameterException"
+  inline val InternalServiceException: "InternalServiceException" = "InternalServiceException"
+  inline val InvalidParameterException: "InvalidParameterException" = "InvalidParameterException"
 
-  @inline def values = js.Array[ErrorCode](InternalServiceException, InvalidParameterException)
+  inline def values: js.Array[ErrorCode] = js.Array(InternalServiceException, InvalidParameterException)
 }
 
 type GroupByAttribute = "TARGET_ID" | "REGION" | "RESOURCE_TYPE"
 object GroupByAttribute {
-  val TARGET_ID: "TARGET_ID" = "TARGET_ID"
-  val REGION: "REGION" = "REGION"
-  val RESOURCE_TYPE: "RESOURCE_TYPE" = "RESOURCE_TYPE"
+  inline val TARGET_ID: "TARGET_ID" = "TARGET_ID"
+  inline val REGION: "REGION" = "REGION"
+  inline val RESOURCE_TYPE: "RESOURCE_TYPE" = "RESOURCE_TYPE"
 
-  @inline def values = js.Array[GroupByAttribute](TARGET_ID, REGION, RESOURCE_TYPE)
+  inline def values: js.Array[GroupByAttribute] = js.Array(TARGET_ID, REGION, RESOURCE_TYPE)
 }
 
 type TargetIdType = "ACCOUNT" | "OU" | "ROOT"
 object TargetIdType {
-  val ACCOUNT: "ACCOUNT" = "ACCOUNT"
-  val OU: "OU" = "OU"
-  val ROOT: "ROOT" = "ROOT"
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val OU: "OU" = "OU"
+  inline val ROOT: "ROOT" = "ROOT"
 
-  @inline def values = js.Array[TargetIdType](ACCOUNT, OU, ROOT)
+  inline def values: js.Array[TargetIdType] = js.Array(ACCOUNT, OU, ROOT)
 }

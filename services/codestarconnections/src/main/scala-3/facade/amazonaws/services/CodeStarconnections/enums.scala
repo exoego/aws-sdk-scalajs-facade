@@ -4,18 +4,18 @@ import scalajs._
 
 type ConnectionStatus = "PENDING" | "AVAILABLE" | "ERROR"
 object ConnectionStatus {
-  val PENDING: "PENDING" = "PENDING"
-  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
-  val ERROR: "ERROR" = "ERROR"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array[ConnectionStatus](PENDING, AVAILABLE, ERROR)
+  inline def values: js.Array[ConnectionStatus] = js.Array(PENDING, AVAILABLE, ERROR)
 }
 
 type ProviderType = "Bitbucket" | "GitHub" | "GitHubEnterpriseServer"
 object ProviderType {
-  val Bitbucket: "Bitbucket" = "Bitbucket"
-  val GitHub: "GitHub" = "GitHub"
-  val GitHubEnterpriseServer: "GitHubEnterpriseServer" = "GitHubEnterpriseServer"
+  inline val Bitbucket: "Bitbucket" = "Bitbucket"
+  inline val GitHub: "GitHub" = "GitHub"
+  inline val GitHubEnterpriseServer: "GitHubEnterpriseServer" = "GitHubEnterpriseServer"
 
-  @inline def values = js.Array[ProviderType](Bitbucket, GitHub, GitHubEnterpriseServer)
+  inline def values: js.Array[ProviderType] = js.Array(Bitbucket, GitHub, GitHubEnterpriseServer)
 }

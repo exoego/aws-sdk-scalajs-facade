@@ -4,27 +4,27 @@ import scalajs._
 
 type ContentClassifier = "FreeOfPersonallyIdentifiableInformation" | "FreeOfAdultContent"
 object ContentClassifier {
-  val FreeOfPersonallyIdentifiableInformation: "FreeOfPersonallyIdentifiableInformation" = "FreeOfPersonallyIdentifiableInformation"
-  val FreeOfAdultContent: "FreeOfAdultContent" = "FreeOfAdultContent"
+  inline val FreeOfPersonallyIdentifiableInformation: "FreeOfPersonallyIdentifiableInformation" = "FreeOfPersonallyIdentifiableInformation"
+  inline val FreeOfAdultContent: "FreeOfAdultContent" = "FreeOfAdultContent"
 
-  @inline def values = js.Array[ContentClassifier](FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
+  inline def values: js.Array[ContentClassifier] = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
 }
 
 type HumanLoopStatus = "InProgress" | "Failed" | "Completed" | "Stopped" | "Stopping"
 object HumanLoopStatus {
-  val InProgress: "InProgress" = "InProgress"
-  val Failed: "Failed" = "Failed"
-  val Completed: "Completed" = "Completed"
-  val Stopped: "Stopped" = "Stopped"
-  val Stopping: "Stopping" = "Stopping"
+  inline val InProgress: "InProgress" = "InProgress"
+  inline val Failed: "Failed" = "Failed"
+  inline val Completed: "Completed" = "Completed"
+  inline val Stopped: "Stopped" = "Stopped"
+  inline val Stopping: "Stopping" = "Stopping"
 
-  @inline def values = js.Array[HumanLoopStatus](InProgress, Failed, Completed, Stopped, Stopping)
+  inline def values: js.Array[HumanLoopStatus] = js.Array(InProgress, Failed, Completed, Stopped, Stopping)
 }
 
 type SortOrder = "Ascending" | "Descending"
 object SortOrder {
-  val Ascending: "Ascending" = "Ascending"
-  val Descending: "Descending" = "Descending"
+  inline val Ascending: "Ascending" = "Ascending"
+  inline val Descending: "Descending" = "Descending"
 
-  @inline def values = js.Array[SortOrder](Ascending, Descending)
+  inline def values: js.Array[SortOrder] = js.Array(Ascending, Descending)
 }

@@ -4,52 +4,52 @@ import scalajs._
 
 type AgentHealth = "HEALTHY" | "UNHEALTHY" | "UNKNOWN"
 object AgentHealth {
-  val HEALTHY: "HEALTHY" = "HEALTHY"
-  val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
-  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array[AgentHealth](HEALTHY, UNHEALTHY, UNKNOWN)
+  inline def values: js.Array[AgentHealth] = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
 }
 
 type AgentHealthCode = "IDLE" | "RUNNING" | "SHUTDOWN" | "UNHEALTHY" | "THROTTLED" | "UNKNOWN"
 object AgentHealthCode {
-  val IDLE: "IDLE" = "IDLE"
-  val RUNNING: "RUNNING" = "RUNNING"
-  val SHUTDOWN: "SHUTDOWN" = "SHUTDOWN"
-  val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
-  val THROTTLED: "THROTTLED" = "THROTTLED"
-  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val IDLE: "IDLE" = "IDLE"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SHUTDOWN: "SHUTDOWN" = "SHUTDOWN"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  inline val THROTTLED: "THROTTLED" = "THROTTLED"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array[AgentHealthCode](IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN)
+  inline def values: js.Array[AgentHealthCode] = js.Array(IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN)
 }
 
 type AssessmentRunNotificationSnsStatusCode = "SUCCESS" | "TOPIC_DOES_NOT_EXIST" | "ACCESS_DENIED" | "INTERNAL_ERROR"
 object AssessmentRunNotificationSnsStatusCode {
-  val SUCCESS: "SUCCESS" = "SUCCESS"
-  val TOPIC_DOES_NOT_EXIST: "TOPIC_DOES_NOT_EXIST" = "TOPIC_DOES_NOT_EXIST"
-  val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
-  val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val TOPIC_DOES_NOT_EXIST: "TOPIC_DOES_NOT_EXIST" = "TOPIC_DOES_NOT_EXIST"
+  inline val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
 
-  @inline def values = js.Array[AssessmentRunNotificationSnsStatusCode](SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR)
+  inline def values: js.Array[AssessmentRunNotificationSnsStatusCode] = js.Array(SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR)
 }
 
 type AssessmentRunState = "CREATED" | "START_DATA_COLLECTION_PENDING" | "START_DATA_COLLECTION_IN_PROGRESS" | "COLLECTING_DATA" | "STOP_DATA_COLLECTION_PENDING" | "DATA_COLLECTED" | "START_EVALUATING_RULES_PENDING" | "EVALUATING_RULES" | "FAILED" | "ERROR" | "COMPLETED" | "COMPLETED_WITH_ERRORS" | "CANCELED"
 object AssessmentRunState {
-  val CREATED: "CREATED" = "CREATED"
-  val START_DATA_COLLECTION_PENDING: "START_DATA_COLLECTION_PENDING" = "START_DATA_COLLECTION_PENDING"
-  val START_DATA_COLLECTION_IN_PROGRESS: "START_DATA_COLLECTION_IN_PROGRESS" = "START_DATA_COLLECTION_IN_PROGRESS"
-  val COLLECTING_DATA: "COLLECTING_DATA" = "COLLECTING_DATA"
-  val STOP_DATA_COLLECTION_PENDING: "STOP_DATA_COLLECTION_PENDING" = "STOP_DATA_COLLECTION_PENDING"
-  val DATA_COLLECTED: "DATA_COLLECTED" = "DATA_COLLECTED"
-  val START_EVALUATING_RULES_PENDING: "START_EVALUATING_RULES_PENDING" = "START_EVALUATING_RULES_PENDING"
-  val EVALUATING_RULES: "EVALUATING_RULES" = "EVALUATING_RULES"
-  val FAILED: "FAILED" = "FAILED"
-  val ERROR: "ERROR" = "ERROR"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val COMPLETED_WITH_ERRORS: "COMPLETED_WITH_ERRORS" = "COMPLETED_WITH_ERRORS"
-  val CANCELED: "CANCELED" = "CANCELED"
+  inline val CREATED: "CREATED" = "CREATED"
+  inline val START_DATA_COLLECTION_PENDING: "START_DATA_COLLECTION_PENDING" = "START_DATA_COLLECTION_PENDING"
+  inline val START_DATA_COLLECTION_IN_PROGRESS: "START_DATA_COLLECTION_IN_PROGRESS" = "START_DATA_COLLECTION_IN_PROGRESS"
+  inline val COLLECTING_DATA: "COLLECTING_DATA" = "COLLECTING_DATA"
+  inline val STOP_DATA_COLLECTION_PENDING: "STOP_DATA_COLLECTION_PENDING" = "STOP_DATA_COLLECTION_PENDING"
+  inline val DATA_COLLECTED: "DATA_COLLECTED" = "DATA_COLLECTED"
+  inline val START_EVALUATING_RULES_PENDING: "START_EVALUATING_RULES_PENDING" = "START_EVALUATING_RULES_PENDING"
+  inline val EVALUATING_RULES: "EVALUATING_RULES" = "EVALUATING_RULES"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val COMPLETED_WITH_ERRORS: "COMPLETED_WITH_ERRORS" = "COMPLETED_WITH_ERRORS"
+  inline val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array[AssessmentRunState](
+  inline def values: js.Array[AssessmentRunState] = js.Array(
     CREATED,
     START_DATA_COLLECTION_PENDING,
     START_DATA_COLLECTION_IN_PROGRESS,
@@ -68,97 +68,97 @@ object AssessmentRunState {
 
 type AssetType = "ec2-instance"
 object AssetType {
-  val `ec2-instance`: "ec2-instance" = "ec2-instance"
+  inline val `ec2-instance`: "ec2-instance" = "ec2-instance"
 
-  @inline def values = js.Array[AssetType](`ec2-instance`)
+  inline def values: js.Array[AssetType] = js.Array(`ec2-instance`)
 }
 
 type FailedItemErrorCode = "INVALID_ARN" | "DUPLICATE_ARN" | "ITEM_DOES_NOT_EXIST" | "ACCESS_DENIED" | "LIMIT_EXCEEDED" | "INTERNAL_ERROR"
 object FailedItemErrorCode {
-  val INVALID_ARN: "INVALID_ARN" = "INVALID_ARN"
-  val DUPLICATE_ARN: "DUPLICATE_ARN" = "DUPLICATE_ARN"
-  val ITEM_DOES_NOT_EXIST: "ITEM_DOES_NOT_EXIST" = "ITEM_DOES_NOT_EXIST"
-  val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
-  val LIMIT_EXCEEDED: "LIMIT_EXCEEDED" = "LIMIT_EXCEEDED"
-  val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
+  inline val INVALID_ARN: "INVALID_ARN" = "INVALID_ARN"
+  inline val DUPLICATE_ARN: "DUPLICATE_ARN" = "DUPLICATE_ARN"
+  inline val ITEM_DOES_NOT_EXIST: "ITEM_DOES_NOT_EXIST" = "ITEM_DOES_NOT_EXIST"
+  inline val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  inline val LIMIT_EXCEEDED: "LIMIT_EXCEEDED" = "LIMIT_EXCEEDED"
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
 
-  @inline def values = js.Array[FailedItemErrorCode](INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR)
+  inline def values: js.Array[FailedItemErrorCode] = js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR)
 }
 
 type InspectorEvent = "ASSESSMENT_RUN_STARTED" | "ASSESSMENT_RUN_COMPLETED" | "ASSESSMENT_RUN_STATE_CHANGED" | "FINDING_REPORTED" | "OTHER"
 object InspectorEvent {
-  val ASSESSMENT_RUN_STARTED: "ASSESSMENT_RUN_STARTED" = "ASSESSMENT_RUN_STARTED"
-  val ASSESSMENT_RUN_COMPLETED: "ASSESSMENT_RUN_COMPLETED" = "ASSESSMENT_RUN_COMPLETED"
-  val ASSESSMENT_RUN_STATE_CHANGED: "ASSESSMENT_RUN_STATE_CHANGED" = "ASSESSMENT_RUN_STATE_CHANGED"
-  val FINDING_REPORTED: "FINDING_REPORTED" = "FINDING_REPORTED"
-  val OTHER: "OTHER" = "OTHER"
+  inline val ASSESSMENT_RUN_STARTED: "ASSESSMENT_RUN_STARTED" = "ASSESSMENT_RUN_STARTED"
+  inline val ASSESSMENT_RUN_COMPLETED: "ASSESSMENT_RUN_COMPLETED" = "ASSESSMENT_RUN_COMPLETED"
+  inline val ASSESSMENT_RUN_STATE_CHANGED: "ASSESSMENT_RUN_STATE_CHANGED" = "ASSESSMENT_RUN_STATE_CHANGED"
+  inline val FINDING_REPORTED: "FINDING_REPORTED" = "FINDING_REPORTED"
+  inline val OTHER: "OTHER" = "OTHER"
 
-  @inline def values = js.Array[InspectorEvent](ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER)
+  inline def values: js.Array[InspectorEvent] = js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER)
 }
 
 type Locale = "EN_US"
 object Locale {
-  val EN_US: "EN_US" = "EN_US"
+  inline val EN_US: "EN_US" = "EN_US"
 
-  @inline def values = js.Array[Locale](EN_US)
+  inline def values: js.Array[Locale] = js.Array(EN_US)
 }
 
 type PreviewStatus = "WORK_IN_PROGRESS" | "COMPLETED"
 object PreviewStatus {
-  val WORK_IN_PROGRESS: "WORK_IN_PROGRESS" = "WORK_IN_PROGRESS"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val WORK_IN_PROGRESS: "WORK_IN_PROGRESS" = "WORK_IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
 
-  @inline def values = js.Array[PreviewStatus](WORK_IN_PROGRESS, COMPLETED)
+  inline def values: js.Array[PreviewStatus] = js.Array(WORK_IN_PROGRESS, COMPLETED)
 }
 
 type ReportFileFormat = "HTML" | "PDF"
 object ReportFileFormat {
-  val HTML: "HTML" = "HTML"
-  val PDF: "PDF" = "PDF"
+  inline val HTML: "HTML" = "HTML"
+  inline val PDF: "PDF" = "PDF"
 
-  @inline def values = js.Array[ReportFileFormat](HTML, PDF)
+  inline def values: js.Array[ReportFileFormat] = js.Array(HTML, PDF)
 }
 
 type ReportStatus = "WORK_IN_PROGRESS" | "FAILED" | "COMPLETED"
 object ReportStatus {
-  val WORK_IN_PROGRESS: "WORK_IN_PROGRESS" = "WORK_IN_PROGRESS"
-  val FAILED: "FAILED" = "FAILED"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val WORK_IN_PROGRESS: "WORK_IN_PROGRESS" = "WORK_IN_PROGRESS"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
 
-  @inline def values = js.Array[ReportStatus](WORK_IN_PROGRESS, FAILED, COMPLETED)
+  inline def values: js.Array[ReportStatus] = js.Array(WORK_IN_PROGRESS, FAILED, COMPLETED)
 }
 
 type ReportType = "FINDING" | "FULL"
 object ReportType {
-  val FINDING: "FINDING" = "FINDING"
-  val FULL: "FULL" = "FULL"
+  inline val FINDING: "FINDING" = "FINDING"
+  inline val FULL: "FULL" = "FULL"
 
-  @inline def values = js.Array[ReportType](FINDING, FULL)
+  inline def values: js.Array[ReportType] = js.Array(FINDING, FULL)
 }
 
 type ScopeType = "INSTANCE_ID" | "RULES_PACKAGE_ARN"
 object ScopeType {
-  val INSTANCE_ID: "INSTANCE_ID" = "INSTANCE_ID"
-  val RULES_PACKAGE_ARN: "RULES_PACKAGE_ARN" = "RULES_PACKAGE_ARN"
+  inline val INSTANCE_ID: "INSTANCE_ID" = "INSTANCE_ID"
+  inline val RULES_PACKAGE_ARN: "RULES_PACKAGE_ARN" = "RULES_PACKAGE_ARN"
 
-  @inline def values = js.Array[ScopeType](INSTANCE_ID, RULES_PACKAGE_ARN)
+  inline def values: js.Array[ScopeType] = js.Array(INSTANCE_ID, RULES_PACKAGE_ARN)
 }
 
 type Severity = "Low" | "Medium" | "High" | "Informational" | "Undefined"
 object Severity {
-  val Low: "Low" = "Low"
-  val Medium: "Medium" = "Medium"
-  val High: "High" = "High"
-  val Informational: "Informational" = "Informational"
-  val Undefined: "Undefined" = "Undefined"
+  inline val Low: "Low" = "Low"
+  inline val Medium: "Medium" = "Medium"
+  inline val High: "High" = "High"
+  inline val Informational: "Informational" = "Informational"
+  inline val Undefined: "Undefined" = "Undefined"
 
-  @inline def values = js.Array[Severity](Low, Medium, High, Informational, Undefined)
+  inline def values: js.Array[Severity] = js.Array(Low, Medium, High, Informational, Undefined)
 }
 
 type StopAction = "START_EVALUATION" | "SKIP_EVALUATION"
 object StopAction {
-  val START_EVALUATION: "START_EVALUATION" = "START_EVALUATION"
-  val SKIP_EVALUATION: "SKIP_EVALUATION" = "SKIP_EVALUATION"
+  inline val START_EVALUATION: "START_EVALUATION" = "START_EVALUATION"
+  inline val SKIP_EVALUATION: "SKIP_EVALUATION" = "SKIP_EVALUATION"
 
-  @inline def values = js.Array[StopAction](START_EVALUATION, SKIP_EVALUATION)
+  inline def values: js.Array[StopAction] = js.Array(START_EVALUATION, SKIP_EVALUATION)
 }

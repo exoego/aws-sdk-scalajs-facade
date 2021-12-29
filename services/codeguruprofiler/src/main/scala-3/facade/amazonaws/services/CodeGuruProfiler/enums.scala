@@ -4,67 +4,67 @@ import scalajs._
 
 type ActionGroup = "agentPermissions"
 object ActionGroup {
-  val agentPermissions: "agentPermissions" = "agentPermissions"
+  inline val agentPermissions: "agentPermissions" = "agentPermissions"
 
-  @inline def values = js.Array[ActionGroup](agentPermissions)
+  inline def values: js.Array[ActionGroup] = js.Array(agentPermissions)
 }
 
 type AgentParameterField = "SamplingIntervalInMilliseconds" | "ReportingIntervalInMilliseconds" | "MinimumTimeForReportingInMilliseconds" | "MemoryUsageLimitPercent" | "MaxStackDepth"
 object AgentParameterField {
-  val SamplingIntervalInMilliseconds: "SamplingIntervalInMilliseconds" = "SamplingIntervalInMilliseconds"
-  val ReportingIntervalInMilliseconds: "ReportingIntervalInMilliseconds" = "ReportingIntervalInMilliseconds"
-  val MinimumTimeForReportingInMilliseconds: "MinimumTimeForReportingInMilliseconds" = "MinimumTimeForReportingInMilliseconds"
-  val MemoryUsageLimitPercent: "MemoryUsageLimitPercent" = "MemoryUsageLimitPercent"
-  val MaxStackDepth: "MaxStackDepth" = "MaxStackDepth"
+  inline val SamplingIntervalInMilliseconds: "SamplingIntervalInMilliseconds" = "SamplingIntervalInMilliseconds"
+  inline val ReportingIntervalInMilliseconds: "ReportingIntervalInMilliseconds" = "ReportingIntervalInMilliseconds"
+  inline val MinimumTimeForReportingInMilliseconds: "MinimumTimeForReportingInMilliseconds" = "MinimumTimeForReportingInMilliseconds"
+  inline val MemoryUsageLimitPercent: "MemoryUsageLimitPercent" = "MemoryUsageLimitPercent"
+  inline val MaxStackDepth: "MaxStackDepth" = "MaxStackDepth"
 
-  @inline def values = js.Array[AgentParameterField](SamplingIntervalInMilliseconds, ReportingIntervalInMilliseconds, MinimumTimeForReportingInMilliseconds, MemoryUsageLimitPercent, MaxStackDepth)
+  inline def values: js.Array[AgentParameterField] = js.Array(SamplingIntervalInMilliseconds, ReportingIntervalInMilliseconds, MinimumTimeForReportingInMilliseconds, MemoryUsageLimitPercent, MaxStackDepth)
 }
 
 type AggregationPeriod = "PT5M" | "PT1H" | "P1D"
 object AggregationPeriod {
-  val PT5M: "PT5M" = "PT5M"
-  val PT1H: "PT1H" = "PT1H"
-  val P1D: "P1D" = "P1D"
+  inline val PT5M: "PT5M" = "PT5M"
+  inline val PT1H: "PT1H" = "PT1H"
+  inline val P1D: "P1D" = "P1D"
 
-  @inline def values = js.Array[AggregationPeriod](PT5M, PT1H, P1D)
+  inline def values: js.Array[AggregationPeriod] = js.Array(PT5M, PT1H, P1D)
 }
 
 type ComputePlatform = "Default" | "AWSLambda"
 object ComputePlatform {
-  val Default: "Default" = "Default"
-  val AWSLambda: "AWSLambda" = "AWSLambda"
+  inline val Default: "Default" = "Default"
+  inline val AWSLambda: "AWSLambda" = "AWSLambda"
 
-  @inline def values = js.Array[ComputePlatform](Default, AWSLambda)
+  inline def values: js.Array[ComputePlatform] = js.Array(Default, AWSLambda)
 }
 
 type EventPublisher = "AnomalyDetection"
 object EventPublisher {
-  val AnomalyDetection: "AnomalyDetection" = "AnomalyDetection"
+  inline val AnomalyDetection: "AnomalyDetection" = "AnomalyDetection"
 
-  @inline def values = js.Array[EventPublisher](AnomalyDetection)
+  inline def values: js.Array[EventPublisher] = js.Array(AnomalyDetection)
 }
 
 type FeedbackType = "Positive" | "Negative"
 object FeedbackType {
-  val Positive: "Positive" = "Positive"
-  val Negative: "Negative" = "Negative"
+  inline val Positive: "Positive" = "Positive"
+  inline val Negative: "Negative" = "Negative"
 
-  @inline def values = js.Array[FeedbackType](Positive, Negative)
+  inline def values: js.Array[FeedbackType] = js.Array(Positive, Negative)
 }
 
 type MetadataField = "ComputePlatform" | "AgentId" | "AwsRequestId" | "ExecutionEnvironment" | "LambdaFunctionArn" | "LambdaMemoryLimitInMB" | "LambdaRemainingTimeInMilliseconds" | "LambdaTimeGapBetweenInvokesInMilliseconds" | "LambdaPreviousExecutionTimeInMilliseconds"
 object MetadataField {
-  val ComputePlatform: "ComputePlatform" = "ComputePlatform"
-  val AgentId: "AgentId" = "AgentId"
-  val AwsRequestId: "AwsRequestId" = "AwsRequestId"
-  val ExecutionEnvironment: "ExecutionEnvironment" = "ExecutionEnvironment"
-  val LambdaFunctionArn: "LambdaFunctionArn" = "LambdaFunctionArn"
-  val LambdaMemoryLimitInMB: "LambdaMemoryLimitInMB" = "LambdaMemoryLimitInMB"
-  val LambdaRemainingTimeInMilliseconds: "LambdaRemainingTimeInMilliseconds" = "LambdaRemainingTimeInMilliseconds"
-  val LambdaTimeGapBetweenInvokesInMilliseconds: "LambdaTimeGapBetweenInvokesInMilliseconds" = "LambdaTimeGapBetweenInvokesInMilliseconds"
-  val LambdaPreviousExecutionTimeInMilliseconds: "LambdaPreviousExecutionTimeInMilliseconds" = "LambdaPreviousExecutionTimeInMilliseconds"
+  inline val ComputePlatform: "ComputePlatform" = "ComputePlatform"
+  inline val AgentId: "AgentId" = "AgentId"
+  inline val AwsRequestId: "AwsRequestId" = "AwsRequestId"
+  inline val ExecutionEnvironment: "ExecutionEnvironment" = "ExecutionEnvironment"
+  inline val LambdaFunctionArn: "LambdaFunctionArn" = "LambdaFunctionArn"
+  inline val LambdaMemoryLimitInMB: "LambdaMemoryLimitInMB" = "LambdaMemoryLimitInMB"
+  inline val LambdaRemainingTimeInMilliseconds: "LambdaRemainingTimeInMilliseconds" = "LambdaRemainingTimeInMilliseconds"
+  inline val LambdaTimeGapBetweenInvokesInMilliseconds: "LambdaTimeGapBetweenInvokesInMilliseconds" = "LambdaTimeGapBetweenInvokesInMilliseconds"
+  inline val LambdaPreviousExecutionTimeInMilliseconds: "LambdaPreviousExecutionTimeInMilliseconds" = "LambdaPreviousExecutionTimeInMilliseconds"
 
-  @inline def values = js.Array[MetadataField](
+  inline def values: js.Array[MetadataField] = js.Array(
     ComputePlatform,
     AgentId,
     AwsRequestId,
@@ -79,15 +79,15 @@ object MetadataField {
 
 type MetricType = "AggregatedRelativeTotalTime"
 object MetricType {
-  val AggregatedRelativeTotalTime: "AggregatedRelativeTotalTime" = "AggregatedRelativeTotalTime"
+  inline val AggregatedRelativeTotalTime: "AggregatedRelativeTotalTime" = "AggregatedRelativeTotalTime"
 
-  @inline def values = js.Array[MetricType](AggregatedRelativeTotalTime)
+  inline def values: js.Array[MetricType] = js.Array(AggregatedRelativeTotalTime)
 }
 
 type OrderBy = "TimestampDescending" | "TimestampAscending"
 object OrderBy {
-  val TimestampDescending: "TimestampDescending" = "TimestampDescending"
-  val TimestampAscending: "TimestampAscending" = "TimestampAscending"
+  inline val TimestampDescending: "TimestampDescending" = "TimestampDescending"
+  inline val TimestampAscending: "TimestampAscending" = "TimestampAscending"
 
-  @inline def values = js.Array[OrderBy](TimestampDescending, TimestampAscending)
+  inline def values: js.Array[OrderBy] = js.Array(TimestampDescending, TimestampAscending)
 }

@@ -4,11 +4,11 @@ import scalajs._
 
 type ErrorCode = "ResourceNotFoundException" | "InvalidRequestException" | "InternalFailureException" | "ServiceUnavailableException" | "ThrottlingException"
 object ErrorCode {
-  val ResourceNotFoundException: "ResourceNotFoundException" = "ResourceNotFoundException"
-  val InvalidRequestException: "InvalidRequestException" = "InvalidRequestException"
-  val InternalFailureException: "InternalFailureException" = "InternalFailureException"
-  val ServiceUnavailableException: "ServiceUnavailableException" = "ServiceUnavailableException"
-  val ThrottlingException: "ThrottlingException" = "ThrottlingException"
+  inline val ResourceNotFoundException: "ResourceNotFoundException" = "ResourceNotFoundException"
+  inline val InvalidRequestException: "InvalidRequestException" = "InvalidRequestException"
+  inline val InternalFailureException: "InternalFailureException" = "InternalFailureException"
+  inline val ServiceUnavailableException: "ServiceUnavailableException" = "ServiceUnavailableException"
+  inline val ThrottlingException: "ThrottlingException" = "ThrottlingException"
 
-  @inline def values = js.Array[ErrorCode](ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException)
+  inline def values: js.Array[ErrorCode] = js.Array(ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException)
 }

@@ -4,16 +4,16 @@ import scalajs._
 
 type ConnectionStatus = "CONNECTED" | "DISCONNECTED"
 object ConnectionStatus {
-  val CONNECTED: "CONNECTED" = "CONNECTED"
-  val DISCONNECTED: "DISCONNECTED" = "DISCONNECTED"
+  inline val CONNECTED: "CONNECTED" = "CONNECTED"
+  inline val DISCONNECTED: "DISCONNECTED" = "DISCONNECTED"
 
-  @inline def values = js.Array[ConnectionStatus](CONNECTED, DISCONNECTED)
+  inline def values: js.Array[ConnectionStatus] = js.Array(CONNECTED, DISCONNECTED)
 }
 
 type TunnelStatus = "OPEN" | "CLOSED"
 object TunnelStatus {
-  val OPEN: "OPEN" = "OPEN"
-  val CLOSED: "CLOSED" = "CLOSED"
+  inline val OPEN: "OPEN" = "OPEN"
+  inline val CLOSED: "CLOSED" = "CLOSED"
 
-  @inline def values = js.Array[TunnelStatus](OPEN, CLOSED)
+  inline def values: js.Array[TunnelStatus] = js.Array(OPEN, CLOSED)
 }

@@ -4,115 +4,115 @@ import scalajs._
 
 type AccessPreviewStatus = "COMPLETED" | "CREATING" | "FAILED"
 object AccessPreviewStatus {
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val CREATING: "CREATING" = "CREATING"
-  val FAILED: "FAILED" = "FAILED"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[AccessPreviewStatus](COMPLETED, CREATING, FAILED)
+  inline def values: js.Array[AccessPreviewStatus] = js.Array(COMPLETED, CREATING, FAILED)
 }
 
 type AccessPreviewStatusReasonCode = "INTERNAL_ERROR" | "INVALID_CONFIGURATION"
 object AccessPreviewStatusReasonCode {
-  val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
-  val INVALID_CONFIGURATION: "INVALID_CONFIGURATION" = "INVALID_CONFIGURATION"
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
+  inline val INVALID_CONFIGURATION: "INVALID_CONFIGURATION" = "INVALID_CONFIGURATION"
 
-  @inline def values = js.Array[AccessPreviewStatusReasonCode](INTERNAL_ERROR, INVALID_CONFIGURATION)
+  inline def values: js.Array[AccessPreviewStatusReasonCode] = js.Array(INTERNAL_ERROR, INVALID_CONFIGURATION)
 }
 
 type AclPermission = "READ" | "WRITE" | "READ_ACP" | "WRITE_ACP" | "FULL_CONTROL"
 object AclPermission {
-  val READ: "READ" = "READ"
-  val WRITE: "WRITE" = "WRITE"
-  val READ_ACP: "READ_ACP" = "READ_ACP"
-  val WRITE_ACP: "WRITE_ACP" = "WRITE_ACP"
-  val FULL_CONTROL: "FULL_CONTROL" = "FULL_CONTROL"
+  inline val READ: "READ" = "READ"
+  inline val WRITE: "WRITE" = "WRITE"
+  inline val READ_ACP: "READ_ACP" = "READ_ACP"
+  inline val WRITE_ACP: "WRITE_ACP" = "WRITE_ACP"
+  inline val FULL_CONTROL: "FULL_CONTROL" = "FULL_CONTROL"
 
-  @inline def values = js.Array[AclPermission](READ, WRITE, READ_ACP, WRITE_ACP, FULL_CONTROL)
+  inline def values: js.Array[AclPermission] = js.Array(READ, WRITE, READ_ACP, WRITE_ACP, FULL_CONTROL)
 }
 
 type AnalyzerStatus = "ACTIVE" | "CREATING" | "DISABLED" | "FAILED"
 object AnalyzerStatus {
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val CREATING: "CREATING" = "CREATING"
-  val DISABLED: "DISABLED" = "DISABLED"
-  val FAILED: "FAILED" = "FAILED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[AnalyzerStatus](ACTIVE, CREATING, DISABLED, FAILED)
+  inline def values: js.Array[AnalyzerStatus] = js.Array(ACTIVE, CREATING, DISABLED, FAILED)
 }
 
 type FindingChangeType = "CHANGED" | "NEW" | "UNCHANGED"
 object FindingChangeType {
-  val CHANGED: "CHANGED" = "CHANGED"
-  val NEW: "NEW" = "NEW"
-  val UNCHANGED: "UNCHANGED" = "UNCHANGED"
+  inline val CHANGED: "CHANGED" = "CHANGED"
+  inline val NEW: "NEW" = "NEW"
+  inline val UNCHANGED: "UNCHANGED" = "UNCHANGED"
 
-  @inline def values = js.Array[FindingChangeType](CHANGED, NEW, UNCHANGED)
+  inline def values: js.Array[FindingChangeType] = js.Array(CHANGED, NEW, UNCHANGED)
 }
 
 type FindingSourceType = "POLICY" | "BUCKET_ACL" | "S3_ACCESS_POINT"
 object FindingSourceType {
-  val POLICY: "POLICY" = "POLICY"
-  val BUCKET_ACL: "BUCKET_ACL" = "BUCKET_ACL"
-  val S3_ACCESS_POINT: "S3_ACCESS_POINT" = "S3_ACCESS_POINT"
+  inline val POLICY: "POLICY" = "POLICY"
+  inline val BUCKET_ACL: "BUCKET_ACL" = "BUCKET_ACL"
+  inline val S3_ACCESS_POINT: "S3_ACCESS_POINT" = "S3_ACCESS_POINT"
 
-  @inline def values = js.Array[FindingSourceType](POLICY, BUCKET_ACL, S3_ACCESS_POINT)
+  inline def values: js.Array[FindingSourceType] = js.Array(POLICY, BUCKET_ACL, S3_ACCESS_POINT)
 }
 
 type FindingStatus = "ACTIVE" | "ARCHIVED" | "RESOLVED"
 object FindingStatus {
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val ARCHIVED: "ARCHIVED" = "ARCHIVED"
-  val RESOLVED: "RESOLVED" = "RESOLVED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val ARCHIVED: "ARCHIVED" = "ARCHIVED"
+  inline val RESOLVED: "RESOLVED" = "RESOLVED"
 
-  @inline def values = js.Array[FindingStatus](ACTIVE, ARCHIVED, RESOLVED)
+  inline def values: js.Array[FindingStatus] = js.Array(ACTIVE, ARCHIVED, RESOLVED)
 }
 
 type FindingStatusUpdate = "ACTIVE" | "ARCHIVED"
 object FindingStatusUpdate {
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val ARCHIVED: "ARCHIVED" = "ARCHIVED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val ARCHIVED: "ARCHIVED" = "ARCHIVED"
 
-  @inline def values = js.Array[FindingStatusUpdate](ACTIVE, ARCHIVED)
+  inline def values: js.Array[FindingStatusUpdate] = js.Array(ACTIVE, ARCHIVED)
 }
 
 type JobErrorCode = "AUTHORIZATION_ERROR" | "RESOURCE_NOT_FOUND_ERROR" | "SERVICE_QUOTA_EXCEEDED_ERROR" | "SERVICE_ERROR"
 object JobErrorCode {
-  val AUTHORIZATION_ERROR: "AUTHORIZATION_ERROR" = "AUTHORIZATION_ERROR"
-  val RESOURCE_NOT_FOUND_ERROR: "RESOURCE_NOT_FOUND_ERROR" = "RESOURCE_NOT_FOUND_ERROR"
-  val SERVICE_QUOTA_EXCEEDED_ERROR: "SERVICE_QUOTA_EXCEEDED_ERROR" = "SERVICE_QUOTA_EXCEEDED_ERROR"
-  val SERVICE_ERROR: "SERVICE_ERROR" = "SERVICE_ERROR"
+  inline val AUTHORIZATION_ERROR: "AUTHORIZATION_ERROR" = "AUTHORIZATION_ERROR"
+  inline val RESOURCE_NOT_FOUND_ERROR: "RESOURCE_NOT_FOUND_ERROR" = "RESOURCE_NOT_FOUND_ERROR"
+  inline val SERVICE_QUOTA_EXCEEDED_ERROR: "SERVICE_QUOTA_EXCEEDED_ERROR" = "SERVICE_QUOTA_EXCEEDED_ERROR"
+  inline val SERVICE_ERROR: "SERVICE_ERROR" = "SERVICE_ERROR"
 
-  @inline def values = js.Array[JobErrorCode](AUTHORIZATION_ERROR, RESOURCE_NOT_FOUND_ERROR, SERVICE_QUOTA_EXCEEDED_ERROR, SERVICE_ERROR)
+  inline def values: js.Array[JobErrorCode] = js.Array(AUTHORIZATION_ERROR, RESOURCE_NOT_FOUND_ERROR, SERVICE_QUOTA_EXCEEDED_ERROR, SERVICE_ERROR)
 }
 
 type JobStatus = "IN_PROGRESS" | "SUCCEEDED" | "FAILED" | "CANCELED"
 object JobStatus {
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
-  val CANCELED: "CANCELED" = "CANCELED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array[JobStatus](IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
+  inline def values: js.Array[JobStatus] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
 }
 
 type KmsGrantOperation = "CreateGrant" | "Decrypt" | "DescribeKey" | "Encrypt" | "GenerateDataKey" | "GenerateDataKeyPair" | "GenerateDataKeyPairWithoutPlaintext" | "GenerateDataKeyWithoutPlaintext" | "GetPublicKey" | "ReEncryptFrom" | "ReEncryptTo" | "RetireGrant" | "Sign" | "Verify"
 object KmsGrantOperation {
-  val CreateGrant: "CreateGrant" = "CreateGrant"
-  val Decrypt: "Decrypt" = "Decrypt"
-  val DescribeKey: "DescribeKey" = "DescribeKey"
-  val Encrypt: "Encrypt" = "Encrypt"
-  val GenerateDataKey: "GenerateDataKey" = "GenerateDataKey"
-  val GenerateDataKeyPair: "GenerateDataKeyPair" = "GenerateDataKeyPair"
-  val GenerateDataKeyPairWithoutPlaintext: "GenerateDataKeyPairWithoutPlaintext" = "GenerateDataKeyPairWithoutPlaintext"
-  val GenerateDataKeyWithoutPlaintext: "GenerateDataKeyWithoutPlaintext" = "GenerateDataKeyWithoutPlaintext"
-  val GetPublicKey: "GetPublicKey" = "GetPublicKey"
-  val ReEncryptFrom: "ReEncryptFrom" = "ReEncryptFrom"
-  val ReEncryptTo: "ReEncryptTo" = "ReEncryptTo"
-  val RetireGrant: "RetireGrant" = "RetireGrant"
-  val Sign: "Sign" = "Sign"
-  val Verify: "Verify" = "Verify"
+  inline val CreateGrant: "CreateGrant" = "CreateGrant"
+  inline val Decrypt: "Decrypt" = "Decrypt"
+  inline val DescribeKey: "DescribeKey" = "DescribeKey"
+  inline val Encrypt: "Encrypt" = "Encrypt"
+  inline val GenerateDataKey: "GenerateDataKey" = "GenerateDataKey"
+  inline val GenerateDataKeyPair: "GenerateDataKeyPair" = "GenerateDataKeyPair"
+  inline val GenerateDataKeyPairWithoutPlaintext: "GenerateDataKeyPairWithoutPlaintext" = "GenerateDataKeyPairWithoutPlaintext"
+  inline val GenerateDataKeyWithoutPlaintext: "GenerateDataKeyWithoutPlaintext" = "GenerateDataKeyWithoutPlaintext"
+  inline val GetPublicKey: "GetPublicKey" = "GetPublicKey"
+  inline val ReEncryptFrom: "ReEncryptFrom" = "ReEncryptFrom"
+  inline val ReEncryptTo: "ReEncryptTo" = "ReEncryptTo"
+  inline val RetireGrant: "RetireGrant" = "RetireGrant"
+  inline val Sign: "Sign" = "Sign"
+  inline val Verify: "Verify" = "Verify"
 
-  @inline def values = js.Array[KmsGrantOperation](
+  inline def values: js.Array[KmsGrantOperation] = js.Array(
     CreateGrant,
     Decrypt,
     DescribeKey,
@@ -132,58 +132,58 @@ object KmsGrantOperation {
 
 type Locale = "DE" | "EN" | "ES" | "FR" | "IT" | "JA" | "KO" | "PT_BR" | "ZH_CN" | "ZH_TW"
 object Locale {
-  val DE: "DE" = "DE"
-  val EN: "EN" = "EN"
-  val ES: "ES" = "ES"
-  val FR: "FR" = "FR"
-  val IT: "IT" = "IT"
-  val JA: "JA" = "JA"
-  val KO: "KO" = "KO"
-  val PT_BR: "PT_BR" = "PT_BR"
-  val ZH_CN: "ZH_CN" = "ZH_CN"
-  val ZH_TW: "ZH_TW" = "ZH_TW"
+  inline val DE: "DE" = "DE"
+  inline val EN: "EN" = "EN"
+  inline val ES: "ES" = "ES"
+  inline val FR: "FR" = "FR"
+  inline val IT: "IT" = "IT"
+  inline val JA: "JA" = "JA"
+  inline val KO: "KO" = "KO"
+  inline val PT_BR: "PT_BR" = "PT_BR"
+  inline val ZH_CN: "ZH_CN" = "ZH_CN"
+  inline val ZH_TW: "ZH_TW" = "ZH_TW"
 
-  @inline def values = js.Array[Locale](DE, EN, ES, FR, IT, JA, KO, PT_BR, ZH_CN, ZH_TW)
+  inline def values: js.Array[Locale] = js.Array(DE, EN, ES, FR, IT, JA, KO, PT_BR, ZH_CN, ZH_TW)
 }
 
 type OrderBy = "ASC" | "DESC"
 object OrderBy {
-  val ASC: "ASC" = "ASC"
-  val DESC: "DESC" = "DESC"
+  inline val ASC: "ASC" = "ASC"
+  inline val DESC: "DESC" = "DESC"
 
-  @inline def values = js.Array[OrderBy](ASC, DESC)
+  inline def values: js.Array[OrderBy] = js.Array(ASC, DESC)
 }
 
 type PolicyType = "IDENTITY_POLICY" | "RESOURCE_POLICY" | "SERVICE_CONTROL_POLICY"
 object PolicyType {
-  val IDENTITY_POLICY: "IDENTITY_POLICY" = "IDENTITY_POLICY"
-  val RESOURCE_POLICY: "RESOURCE_POLICY" = "RESOURCE_POLICY"
-  val SERVICE_CONTROL_POLICY: "SERVICE_CONTROL_POLICY" = "SERVICE_CONTROL_POLICY"
+  inline val IDENTITY_POLICY: "IDENTITY_POLICY" = "IDENTITY_POLICY"
+  inline val RESOURCE_POLICY: "RESOURCE_POLICY" = "RESOURCE_POLICY"
+  inline val SERVICE_CONTROL_POLICY: "SERVICE_CONTROL_POLICY" = "SERVICE_CONTROL_POLICY"
 
-  @inline def values = js.Array[PolicyType](IDENTITY_POLICY, RESOURCE_POLICY, SERVICE_CONTROL_POLICY)
+  inline def values: js.Array[PolicyType] = js.Array(IDENTITY_POLICY, RESOURCE_POLICY, SERVICE_CONTROL_POLICY)
 }
 
 type ReasonCode = "AWS_SERVICE_ACCESS_DISABLED" | "DELEGATED_ADMINISTRATOR_DEREGISTERED" | "ORGANIZATION_DELETED" | "SERVICE_LINKED_ROLE_CREATION_FAILED"
 object ReasonCode {
-  val AWS_SERVICE_ACCESS_DISABLED: "AWS_SERVICE_ACCESS_DISABLED" = "AWS_SERVICE_ACCESS_DISABLED"
-  val DELEGATED_ADMINISTRATOR_DEREGISTERED: "DELEGATED_ADMINISTRATOR_DEREGISTERED" = "DELEGATED_ADMINISTRATOR_DEREGISTERED"
-  val ORGANIZATION_DELETED: "ORGANIZATION_DELETED" = "ORGANIZATION_DELETED"
-  val SERVICE_LINKED_ROLE_CREATION_FAILED: "SERVICE_LINKED_ROLE_CREATION_FAILED" = "SERVICE_LINKED_ROLE_CREATION_FAILED"
+  inline val AWS_SERVICE_ACCESS_DISABLED: "AWS_SERVICE_ACCESS_DISABLED" = "AWS_SERVICE_ACCESS_DISABLED"
+  inline val DELEGATED_ADMINISTRATOR_DEREGISTERED: "DELEGATED_ADMINISTRATOR_DEREGISTERED" = "DELEGATED_ADMINISTRATOR_DEREGISTERED"
+  inline val ORGANIZATION_DELETED: "ORGANIZATION_DELETED" = "ORGANIZATION_DELETED"
+  inline val SERVICE_LINKED_ROLE_CREATION_FAILED: "SERVICE_LINKED_ROLE_CREATION_FAILED" = "SERVICE_LINKED_ROLE_CREATION_FAILED"
 
-  @inline def values = js.Array[ReasonCode](AWS_SERVICE_ACCESS_DISABLED, DELEGATED_ADMINISTRATOR_DEREGISTERED, ORGANIZATION_DELETED, SERVICE_LINKED_ROLE_CREATION_FAILED)
+  inline def values: js.Array[ReasonCode] = js.Array(AWS_SERVICE_ACCESS_DISABLED, DELEGATED_ADMINISTRATOR_DEREGISTERED, ORGANIZATION_DELETED, SERVICE_LINKED_ROLE_CREATION_FAILED)
 }
 
 type ResourceType = "AWS::S3::Bucket" | "AWS::IAM::Role" | "AWS::SQS::Queue" | "AWS::Lambda::Function" | "AWS::Lambda::LayerVersion" | "AWS::KMS::Key" | "AWS::SecretsManager::Secret"
 object ResourceType {
-  val `AWS::S3::Bucket`: "AWS::S3::Bucket" = "AWS::S3::Bucket"
-  val `AWS::IAM::Role`: "AWS::IAM::Role" = "AWS::IAM::Role"
-  val `AWS::SQS::Queue`: "AWS::SQS::Queue" = "AWS::SQS::Queue"
-  val `AWS::Lambda::Function`: "AWS::Lambda::Function" = "AWS::Lambda::Function"
-  val `AWS::Lambda::LayerVersion`: "AWS::Lambda::LayerVersion" = "AWS::Lambda::LayerVersion"
-  val `AWS::KMS::Key`: "AWS::KMS::Key" = "AWS::KMS::Key"
-  val `AWS::SecretsManager::Secret`: "AWS::SecretsManager::Secret" = "AWS::SecretsManager::Secret"
+  inline val `AWS::S3::Bucket`: "AWS::S3::Bucket" = "AWS::S3::Bucket"
+  inline val `AWS::IAM::Role`: "AWS::IAM::Role" = "AWS::IAM::Role"
+  inline val `AWS::SQS::Queue`: "AWS::SQS::Queue" = "AWS::SQS::Queue"
+  inline val `AWS::Lambda::Function`: "AWS::Lambda::Function" = "AWS::Lambda::Function"
+  inline val `AWS::Lambda::LayerVersion`: "AWS::Lambda::LayerVersion" = "AWS::Lambda::LayerVersion"
+  inline val `AWS::KMS::Key`: "AWS::KMS::Key" = "AWS::KMS::Key"
+  inline val `AWS::SecretsManager::Secret`: "AWS::SecretsManager::Secret" = "AWS::SecretsManager::Secret"
 
-  @inline def values = js.Array[ResourceType](
+  inline def values: js.Array[ResourceType] = js.Array(
     `AWS::S3::Bucket`,
     `AWS::IAM::Role`,
     `AWS::SQS::Queue`,
@@ -196,18 +196,18 @@ object ResourceType {
 
 type Type = "ACCOUNT" | "ORGANIZATION"
 object Type {
-  val ACCOUNT: "ACCOUNT" = "ACCOUNT"
-  val ORGANIZATION: "ORGANIZATION" = "ORGANIZATION"
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val ORGANIZATION: "ORGANIZATION" = "ORGANIZATION"
 
-  @inline def values = js.Array[Type](ACCOUNT, ORGANIZATION)
+  inline def values: js.Array[Type] = js.Array(ACCOUNT, ORGANIZATION)
 }
 
 type ValidatePolicyFindingType = "ERROR" | "SECURITY_WARNING" | "SUGGESTION" | "WARNING"
 object ValidatePolicyFindingType {
-  val ERROR: "ERROR" = "ERROR"
-  val SECURITY_WARNING: "SECURITY_WARNING" = "SECURITY_WARNING"
-  val SUGGESTION: "SUGGESTION" = "SUGGESTION"
-  val WARNING: "WARNING" = "WARNING"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val SECURITY_WARNING: "SECURITY_WARNING" = "SECURITY_WARNING"
+  inline val SUGGESTION: "SUGGESTION" = "SUGGESTION"
+  inline val WARNING: "WARNING" = "WARNING"
 
-  @inline def values = js.Array[ValidatePolicyFindingType](ERROR, SECURITY_WARNING, SUGGESTION, WARNING)
+  inline def values: js.Array[ValidatePolicyFindingType] = js.Array(ERROR, SECURITY_WARNING, SUGGESTION, WARNING)
 }

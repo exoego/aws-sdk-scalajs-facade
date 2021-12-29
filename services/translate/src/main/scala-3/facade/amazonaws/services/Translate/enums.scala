@@ -4,55 +4,55 @@ import scalajs._
 
 type EncryptionKeyType = "KMS"
 object EncryptionKeyType {
-  val KMS: "KMS" = "KMS"
+  inline val KMS: "KMS" = "KMS"
 
-  @inline def values = js.Array[EncryptionKeyType](KMS)
+  inline def values: js.Array[EncryptionKeyType] = js.Array(KMS)
 }
 
 type JobStatus = "SUBMITTED" | "IN_PROGRESS" | "COMPLETED" | "COMPLETED_WITH_ERROR" | "FAILED" | "STOP_REQUESTED" | "STOPPED"
 object JobStatus {
-  val SUBMITTED: "SUBMITTED" = "SUBMITTED"
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val COMPLETED_WITH_ERROR: "COMPLETED_WITH_ERROR" = "COMPLETED_WITH_ERROR"
-  val FAILED: "FAILED" = "FAILED"
-  val STOP_REQUESTED: "STOP_REQUESTED" = "STOP_REQUESTED"
-  val STOPPED: "STOPPED" = "STOPPED"
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val COMPLETED_WITH_ERROR: "COMPLETED_WITH_ERROR" = "COMPLETED_WITH_ERROR"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOP_REQUESTED: "STOP_REQUESTED" = "STOP_REQUESTED"
+  inline val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array[JobStatus](SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED)
+  inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED)
 }
 
 type MergeStrategy = "OVERWRITE"
 object MergeStrategy {
-  val OVERWRITE: "OVERWRITE" = "OVERWRITE"
+  inline val OVERWRITE: "OVERWRITE" = "OVERWRITE"
 
-  @inline def values = js.Array[MergeStrategy](OVERWRITE)
+  inline def values: js.Array[MergeStrategy] = js.Array(OVERWRITE)
 }
 
 type ParallelDataFormat = "TSV" | "CSV" | "TMX"
 object ParallelDataFormat {
-  val TSV: "TSV" = "TSV"
-  val CSV: "CSV" = "CSV"
-  val TMX: "TMX" = "TMX"
+  inline val TSV: "TSV" = "TSV"
+  inline val CSV: "CSV" = "CSV"
+  inline val TMX: "TMX" = "TMX"
 
-  @inline def values = js.Array[ParallelDataFormat](TSV, CSV, TMX)
+  inline def values: js.Array[ParallelDataFormat] = js.Array(TSV, CSV, TMX)
 }
 
 type ParallelDataStatus = "CREATING" | "UPDATING" | "ACTIVE" | "DELETING" | "FAILED"
 object ParallelDataStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val UPDATING: "UPDATING" = "UPDATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETING: "DELETING" = "DELETING"
-  val FAILED: "FAILED" = "FAILED"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[ParallelDataStatus](CREATING, UPDATING, ACTIVE, DELETING, FAILED)
+  inline def values: js.Array[ParallelDataStatus] = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
 }
 
 type TerminologyDataFormat = "CSV" | "TMX"
 object TerminologyDataFormat {
-  val CSV: "CSV" = "CSV"
-  val TMX: "TMX" = "TMX"
+  inline val CSV: "CSV" = "CSV"
+  inline val TMX: "TMX" = "TMX"
 
-  @inline def values = js.Array[TerminologyDataFormat](CSV, TMX)
+  inline def values: js.Array[TerminologyDataFormat] = js.Array(CSV, TMX)
 }

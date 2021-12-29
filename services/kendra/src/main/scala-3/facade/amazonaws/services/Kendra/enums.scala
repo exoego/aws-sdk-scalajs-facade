@@ -4,361 +4,361 @@ import scalajs._
 
 type AdditionalResultAttributeValueType = "TEXT_WITH_HIGHLIGHTS_VALUE"
 object AdditionalResultAttributeValueType {
-  val TEXT_WITH_HIGHLIGHTS_VALUE: "TEXT_WITH_HIGHLIGHTS_VALUE" = "TEXT_WITH_HIGHLIGHTS_VALUE"
+  inline val TEXT_WITH_HIGHLIGHTS_VALUE: "TEXT_WITH_HIGHLIGHTS_VALUE" = "TEXT_WITH_HIGHLIGHTS_VALUE"
 
-  @inline def values = js.Array[AdditionalResultAttributeValueType](TEXT_WITH_HIGHLIGHTS_VALUE)
+  inline def values: js.Array[AdditionalResultAttributeValueType] = js.Array(TEXT_WITH_HIGHLIGHTS_VALUE)
 }
 
 type ConfluenceAttachmentFieldName = "AUTHOR" | "CONTENT_TYPE" | "CREATED_DATE" | "DISPLAY_URL" | "FILE_SIZE" | "ITEM_TYPE" | "PARENT_ID" | "SPACE_KEY" | "SPACE_NAME" | "URL" | "VERSION"
 object ConfluenceAttachmentFieldName {
-  val AUTHOR: "AUTHOR" = "AUTHOR"
-  val CONTENT_TYPE: "CONTENT_TYPE" = "CONTENT_TYPE"
-  val CREATED_DATE: "CREATED_DATE" = "CREATED_DATE"
-  val DISPLAY_URL: "DISPLAY_URL" = "DISPLAY_URL"
-  val FILE_SIZE: "FILE_SIZE" = "FILE_SIZE"
-  val ITEM_TYPE: "ITEM_TYPE" = "ITEM_TYPE"
-  val PARENT_ID: "PARENT_ID" = "PARENT_ID"
-  val SPACE_KEY: "SPACE_KEY" = "SPACE_KEY"
-  val SPACE_NAME: "SPACE_NAME" = "SPACE_NAME"
-  val URL: "URL" = "URL"
-  val VERSION: "VERSION" = "VERSION"
+  inline val AUTHOR: "AUTHOR" = "AUTHOR"
+  inline val CONTENT_TYPE: "CONTENT_TYPE" = "CONTENT_TYPE"
+  inline val CREATED_DATE: "CREATED_DATE" = "CREATED_DATE"
+  inline val DISPLAY_URL: "DISPLAY_URL" = "DISPLAY_URL"
+  inline val FILE_SIZE: "FILE_SIZE" = "FILE_SIZE"
+  inline val ITEM_TYPE: "ITEM_TYPE" = "ITEM_TYPE"
+  inline val PARENT_ID: "PARENT_ID" = "PARENT_ID"
+  inline val SPACE_KEY: "SPACE_KEY" = "SPACE_KEY"
+  inline val SPACE_NAME: "SPACE_NAME" = "SPACE_NAME"
+  inline val URL: "URL" = "URL"
+  inline val VERSION: "VERSION" = "VERSION"
 
-  @inline def values = js.Array[ConfluenceAttachmentFieldName](AUTHOR, CONTENT_TYPE, CREATED_DATE, DISPLAY_URL, FILE_SIZE, ITEM_TYPE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
+  inline def values: js.Array[ConfluenceAttachmentFieldName] = js.Array(AUTHOR, CONTENT_TYPE, CREATED_DATE, DISPLAY_URL, FILE_SIZE, ITEM_TYPE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
 }
 
 type ConfluenceBlogFieldName = "AUTHOR" | "DISPLAY_URL" | "ITEM_TYPE" | "LABELS" | "PUBLISH_DATE" | "SPACE_KEY" | "SPACE_NAME" | "URL" | "VERSION"
 object ConfluenceBlogFieldName {
-  val AUTHOR: "AUTHOR" = "AUTHOR"
-  val DISPLAY_URL: "DISPLAY_URL" = "DISPLAY_URL"
-  val ITEM_TYPE: "ITEM_TYPE" = "ITEM_TYPE"
-  val LABELS: "LABELS" = "LABELS"
-  val PUBLISH_DATE: "PUBLISH_DATE" = "PUBLISH_DATE"
-  val SPACE_KEY: "SPACE_KEY" = "SPACE_KEY"
-  val SPACE_NAME: "SPACE_NAME" = "SPACE_NAME"
-  val URL: "URL" = "URL"
-  val VERSION: "VERSION" = "VERSION"
+  inline val AUTHOR: "AUTHOR" = "AUTHOR"
+  inline val DISPLAY_URL: "DISPLAY_URL" = "DISPLAY_URL"
+  inline val ITEM_TYPE: "ITEM_TYPE" = "ITEM_TYPE"
+  inline val LABELS: "LABELS" = "LABELS"
+  inline val PUBLISH_DATE: "PUBLISH_DATE" = "PUBLISH_DATE"
+  inline val SPACE_KEY: "SPACE_KEY" = "SPACE_KEY"
+  inline val SPACE_NAME: "SPACE_NAME" = "SPACE_NAME"
+  inline val URL: "URL" = "URL"
+  inline val VERSION: "VERSION" = "VERSION"
 
-  @inline def values = js.Array[ConfluenceBlogFieldName](AUTHOR, DISPLAY_URL, ITEM_TYPE, LABELS, PUBLISH_DATE, SPACE_KEY, SPACE_NAME, URL, VERSION)
+  inline def values: js.Array[ConfluenceBlogFieldName] = js.Array(AUTHOR, DISPLAY_URL, ITEM_TYPE, LABELS, PUBLISH_DATE, SPACE_KEY, SPACE_NAME, URL, VERSION)
 }
 
 type ConfluencePageFieldName = "AUTHOR" | "CONTENT_STATUS" | "CREATED_DATE" | "DISPLAY_URL" | "ITEM_TYPE" | "LABELS" | "MODIFIED_DATE" | "PARENT_ID" | "SPACE_KEY" | "SPACE_NAME" | "URL" | "VERSION"
 object ConfluencePageFieldName {
-  val AUTHOR: "AUTHOR" = "AUTHOR"
-  val CONTENT_STATUS: "CONTENT_STATUS" = "CONTENT_STATUS"
-  val CREATED_DATE: "CREATED_DATE" = "CREATED_DATE"
-  val DISPLAY_URL: "DISPLAY_URL" = "DISPLAY_URL"
-  val ITEM_TYPE: "ITEM_TYPE" = "ITEM_TYPE"
-  val LABELS: "LABELS" = "LABELS"
-  val MODIFIED_DATE: "MODIFIED_DATE" = "MODIFIED_DATE"
-  val PARENT_ID: "PARENT_ID" = "PARENT_ID"
-  val SPACE_KEY: "SPACE_KEY" = "SPACE_KEY"
-  val SPACE_NAME: "SPACE_NAME" = "SPACE_NAME"
-  val URL: "URL" = "URL"
-  val VERSION: "VERSION" = "VERSION"
+  inline val AUTHOR: "AUTHOR" = "AUTHOR"
+  inline val CONTENT_STATUS: "CONTENT_STATUS" = "CONTENT_STATUS"
+  inline val CREATED_DATE: "CREATED_DATE" = "CREATED_DATE"
+  inline val DISPLAY_URL: "DISPLAY_URL" = "DISPLAY_URL"
+  inline val ITEM_TYPE: "ITEM_TYPE" = "ITEM_TYPE"
+  inline val LABELS: "LABELS" = "LABELS"
+  inline val MODIFIED_DATE: "MODIFIED_DATE" = "MODIFIED_DATE"
+  inline val PARENT_ID: "PARENT_ID" = "PARENT_ID"
+  inline val SPACE_KEY: "SPACE_KEY" = "SPACE_KEY"
+  inline val SPACE_NAME: "SPACE_NAME" = "SPACE_NAME"
+  inline val URL: "URL" = "URL"
+  inline val VERSION: "VERSION" = "VERSION"
 
-  @inline def values = js.Array[ConfluencePageFieldName](AUTHOR, CONTENT_STATUS, CREATED_DATE, DISPLAY_URL, ITEM_TYPE, LABELS, MODIFIED_DATE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
+  inline def values: js.Array[ConfluencePageFieldName] = js.Array(AUTHOR, CONTENT_STATUS, CREATED_DATE, DISPLAY_URL, ITEM_TYPE, LABELS, MODIFIED_DATE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
 }
 
 type ConfluenceSpaceFieldName = "DISPLAY_URL" | "ITEM_TYPE" | "SPACE_KEY" | "URL"
 object ConfluenceSpaceFieldName {
-  val DISPLAY_URL: "DISPLAY_URL" = "DISPLAY_URL"
-  val ITEM_TYPE: "ITEM_TYPE" = "ITEM_TYPE"
-  val SPACE_KEY: "SPACE_KEY" = "SPACE_KEY"
-  val URL: "URL" = "URL"
+  inline val DISPLAY_URL: "DISPLAY_URL" = "DISPLAY_URL"
+  inline val ITEM_TYPE: "ITEM_TYPE" = "ITEM_TYPE"
+  inline val SPACE_KEY: "SPACE_KEY" = "SPACE_KEY"
+  inline val URL: "URL" = "URL"
 
-  @inline def values = js.Array[ConfluenceSpaceFieldName](DISPLAY_URL, ITEM_TYPE, SPACE_KEY, URL)
+  inline def values: js.Array[ConfluenceSpaceFieldName] = js.Array(DISPLAY_URL, ITEM_TYPE, SPACE_KEY, URL)
 }
 
 type ConfluenceVersion = "CLOUD" | "SERVER"
 object ConfluenceVersion {
-  val CLOUD: "CLOUD" = "CLOUD"
-  val SERVER: "SERVER" = "SERVER"
+  inline val CLOUD: "CLOUD" = "CLOUD"
+  inline val SERVER: "SERVER" = "SERVER"
 
-  @inline def values = js.Array[ConfluenceVersion](CLOUD, SERVER)
+  inline def values: js.Array[ConfluenceVersion] = js.Array(CLOUD, SERVER)
 }
 
 type ContentType = "PDF" | "HTML" | "MS_WORD" | "PLAIN_TEXT" | "PPT"
 object ContentType {
-  val PDF: "PDF" = "PDF"
-  val HTML: "HTML" = "HTML"
-  val MS_WORD: "MS_WORD" = "MS_WORD"
-  val PLAIN_TEXT: "PLAIN_TEXT" = "PLAIN_TEXT"
-  val PPT: "PPT" = "PPT"
+  inline val PDF: "PDF" = "PDF"
+  inline val HTML: "HTML" = "HTML"
+  inline val MS_WORD: "MS_WORD" = "MS_WORD"
+  inline val PLAIN_TEXT: "PLAIN_TEXT" = "PLAIN_TEXT"
+  inline val PPT: "PPT" = "PPT"
 
-  @inline def values = js.Array[ContentType](PDF, HTML, MS_WORD, PLAIN_TEXT, PPT)
+  inline def values: js.Array[ContentType] = js.Array(PDF, HTML, MS_WORD, PLAIN_TEXT, PPT)
 }
 
 type DataSourceStatus = "CREATING" | "DELETING" | "FAILED" | "UPDATING" | "ACTIVE"
 object DataSourceStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val DELETING: "DELETING" = "DELETING"
-  val FAILED: "FAILED" = "FAILED"
-  val UPDATING: "UPDATING" = "UPDATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
 
-  @inline def values = js.Array[DataSourceStatus](CREATING, DELETING, FAILED, UPDATING, ACTIVE)
+  inline def values: js.Array[DataSourceStatus] = js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE)
 }
 
 type DataSourceSyncJobStatus = "FAILED" | "SUCCEEDED" | "SYNCING" | "INCOMPLETE" | "STOPPING" | "ABORTED" | "SYNCING_INDEXING"
 object DataSourceSyncJobStatus {
-  val FAILED: "FAILED" = "FAILED"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val SYNCING: "SYNCING" = "SYNCING"
-  val INCOMPLETE: "INCOMPLETE" = "INCOMPLETE"
-  val STOPPING: "STOPPING" = "STOPPING"
-  val ABORTED: "ABORTED" = "ABORTED"
-  val SYNCING_INDEXING: "SYNCING_INDEXING" = "SYNCING_INDEXING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val SYNCING: "SYNCING" = "SYNCING"
+  inline val INCOMPLETE: "INCOMPLETE" = "INCOMPLETE"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val ABORTED: "ABORTED" = "ABORTED"
+  inline val SYNCING_INDEXING: "SYNCING_INDEXING" = "SYNCING_INDEXING"
 
-  @inline def values = js.Array[DataSourceSyncJobStatus](FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING)
+  inline def values: js.Array[DataSourceSyncJobStatus] = js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING)
 }
 
 type DataSourceType = "S3" | "SHAREPOINT" | "DATABASE" | "SALESFORCE" | "ONEDRIVE" | "SERVICENOW" | "CUSTOM" | "CONFLUENCE" | "GOOGLEDRIVE"
 object DataSourceType {
-  val S3: "S3" = "S3"
-  val SHAREPOINT: "SHAREPOINT" = "SHAREPOINT"
-  val DATABASE: "DATABASE" = "DATABASE"
-  val SALESFORCE: "SALESFORCE" = "SALESFORCE"
-  val ONEDRIVE: "ONEDRIVE" = "ONEDRIVE"
-  val SERVICENOW: "SERVICENOW" = "SERVICENOW"
-  val CUSTOM: "CUSTOM" = "CUSTOM"
-  val CONFLUENCE: "CONFLUENCE" = "CONFLUENCE"
-  val GOOGLEDRIVE: "GOOGLEDRIVE" = "GOOGLEDRIVE"
+  inline val S3: "S3" = "S3"
+  inline val SHAREPOINT: "SHAREPOINT" = "SHAREPOINT"
+  inline val DATABASE: "DATABASE" = "DATABASE"
+  inline val SALESFORCE: "SALESFORCE" = "SALESFORCE"
+  inline val ONEDRIVE: "ONEDRIVE" = "ONEDRIVE"
+  inline val SERVICENOW: "SERVICENOW" = "SERVICENOW"
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
+  inline val CONFLUENCE: "CONFLUENCE" = "CONFLUENCE"
+  inline val GOOGLEDRIVE: "GOOGLEDRIVE" = "GOOGLEDRIVE"
 
-  @inline def values = js.Array[DataSourceType](S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE)
+  inline def values: js.Array[DataSourceType] = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE)
 }
 
 type DatabaseEngineType = "RDS_AURORA_MYSQL" | "RDS_AURORA_POSTGRESQL" | "RDS_MYSQL" | "RDS_POSTGRESQL"
 object DatabaseEngineType {
-  val RDS_AURORA_MYSQL: "RDS_AURORA_MYSQL" = "RDS_AURORA_MYSQL"
-  val RDS_AURORA_POSTGRESQL: "RDS_AURORA_POSTGRESQL" = "RDS_AURORA_POSTGRESQL"
-  val RDS_MYSQL: "RDS_MYSQL" = "RDS_MYSQL"
-  val RDS_POSTGRESQL: "RDS_POSTGRESQL" = "RDS_POSTGRESQL"
+  inline val RDS_AURORA_MYSQL: "RDS_AURORA_MYSQL" = "RDS_AURORA_MYSQL"
+  inline val RDS_AURORA_POSTGRESQL: "RDS_AURORA_POSTGRESQL" = "RDS_AURORA_POSTGRESQL"
+  inline val RDS_MYSQL: "RDS_MYSQL" = "RDS_MYSQL"
+  inline val RDS_POSTGRESQL: "RDS_POSTGRESQL" = "RDS_POSTGRESQL"
 
-  @inline def values = js.Array[DatabaseEngineType](RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL)
+  inline def values: js.Array[DatabaseEngineType] = js.Array(RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL)
 }
 
 type DocumentAttributeValueType = "STRING_VALUE" | "STRING_LIST_VALUE" | "LONG_VALUE" | "DATE_VALUE"
 object DocumentAttributeValueType {
-  val STRING_VALUE: "STRING_VALUE" = "STRING_VALUE"
-  val STRING_LIST_VALUE: "STRING_LIST_VALUE" = "STRING_LIST_VALUE"
-  val LONG_VALUE: "LONG_VALUE" = "LONG_VALUE"
-  val DATE_VALUE: "DATE_VALUE" = "DATE_VALUE"
+  inline val STRING_VALUE: "STRING_VALUE" = "STRING_VALUE"
+  inline val STRING_LIST_VALUE: "STRING_LIST_VALUE" = "STRING_LIST_VALUE"
+  inline val LONG_VALUE: "LONG_VALUE" = "LONG_VALUE"
+  inline val DATE_VALUE: "DATE_VALUE" = "DATE_VALUE"
 
-  @inline def values = js.Array[DocumentAttributeValueType](STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE)
+  inline def values: js.Array[DocumentAttributeValueType] = js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE)
 }
 
 type ErrorCode = "InternalError" | "InvalidRequest"
 object ErrorCode {
-  val InternalError: "InternalError" = "InternalError"
-  val InvalidRequest: "InvalidRequest" = "InvalidRequest"
+  inline val InternalError: "InternalError" = "InternalError"
+  inline val InvalidRequest: "InvalidRequest" = "InvalidRequest"
 
-  @inline def values = js.Array[ErrorCode](InternalError, InvalidRequest)
+  inline def values: js.Array[ErrorCode] = js.Array(InternalError, InvalidRequest)
 }
 
 type FaqFileFormat = "CSV" | "CSV_WITH_HEADER" | "JSON"
 object FaqFileFormat {
-  val CSV: "CSV" = "CSV"
-  val CSV_WITH_HEADER: "CSV_WITH_HEADER" = "CSV_WITH_HEADER"
-  val JSON: "JSON" = "JSON"
+  inline val CSV: "CSV" = "CSV"
+  inline val CSV_WITH_HEADER: "CSV_WITH_HEADER" = "CSV_WITH_HEADER"
+  inline val JSON: "JSON" = "JSON"
 
-  @inline def values = js.Array[FaqFileFormat](CSV, CSV_WITH_HEADER, JSON)
+  inline def values: js.Array[FaqFileFormat] = js.Array(CSV, CSV_WITH_HEADER, JSON)
 }
 
 type FaqStatus = "CREATING" | "UPDATING" | "ACTIVE" | "DELETING" | "FAILED"
 object FaqStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val UPDATING: "UPDATING" = "UPDATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETING: "DELETING" = "DELETING"
-  val FAILED: "FAILED" = "FAILED"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[FaqStatus](CREATING, UPDATING, ACTIVE, DELETING, FAILED)
+  inline def values: js.Array[FaqStatus] = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
 }
 
 type HighlightType = "STANDARD" | "THESAURUS_SYNONYM"
 object HighlightType {
-  val STANDARD: "STANDARD" = "STANDARD"
-  val THESAURUS_SYNONYM: "THESAURUS_SYNONYM" = "THESAURUS_SYNONYM"
+  inline val STANDARD: "STANDARD" = "STANDARD"
+  inline val THESAURUS_SYNONYM: "THESAURUS_SYNONYM" = "THESAURUS_SYNONYM"
 
-  @inline def values = js.Array[HighlightType](STANDARD, THESAURUS_SYNONYM)
+  inline def values: js.Array[HighlightType] = js.Array(STANDARD, THESAURUS_SYNONYM)
 }
 
 type IndexEdition = "DEVELOPER_EDITION" | "ENTERPRISE_EDITION"
 object IndexEdition {
-  val DEVELOPER_EDITION: "DEVELOPER_EDITION" = "DEVELOPER_EDITION"
-  val ENTERPRISE_EDITION: "ENTERPRISE_EDITION" = "ENTERPRISE_EDITION"
+  inline val DEVELOPER_EDITION: "DEVELOPER_EDITION" = "DEVELOPER_EDITION"
+  inline val ENTERPRISE_EDITION: "ENTERPRISE_EDITION" = "ENTERPRISE_EDITION"
 
-  @inline def values = js.Array[IndexEdition](DEVELOPER_EDITION, ENTERPRISE_EDITION)
+  inline def values: js.Array[IndexEdition] = js.Array(DEVELOPER_EDITION, ENTERPRISE_EDITION)
 }
 
 type IndexStatus = "CREATING" | "ACTIVE" | "DELETING" | "FAILED" | "UPDATING" | "SYSTEM_UPDATING"
 object IndexStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETING: "DELETING" = "DELETING"
-  val FAILED: "FAILED" = "FAILED"
-  val UPDATING: "UPDATING" = "UPDATING"
-  val SYSTEM_UPDATING: "SYSTEM_UPDATING" = "SYSTEM_UPDATING"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val SYSTEM_UPDATING: "SYSTEM_UPDATING" = "SYSTEM_UPDATING"
 
-  @inline def values = js.Array[IndexStatus](CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING)
+  inline def values: js.Array[IndexStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING)
 }
 
 type KeyLocation = "URL" | "SECRET_MANAGER"
 object KeyLocation {
-  val URL: "URL" = "URL"
-  val SECRET_MANAGER: "SECRET_MANAGER" = "SECRET_MANAGER"
+  inline val URL: "URL" = "URL"
+  inline val SECRET_MANAGER: "SECRET_MANAGER" = "SECRET_MANAGER"
 
-  @inline def values = js.Array[KeyLocation](URL, SECRET_MANAGER)
+  inline def values: js.Array[KeyLocation] = js.Array(URL, SECRET_MANAGER)
 }
 
 type Order = "ASCENDING" | "DESCENDING"
 object Order {
-  val ASCENDING: "ASCENDING" = "ASCENDING"
-  val DESCENDING: "DESCENDING" = "DESCENDING"
+  inline val ASCENDING: "ASCENDING" = "ASCENDING"
+  inline val DESCENDING: "DESCENDING" = "DESCENDING"
 
-  @inline def values = js.Array[Order](ASCENDING, DESCENDING)
+  inline def values: js.Array[Order] = js.Array(ASCENDING, DESCENDING)
 }
 
 type PrincipalType = "USER" | "GROUP"
 object PrincipalType {
-  val USER: "USER" = "USER"
-  val GROUP: "GROUP" = "GROUP"
+  inline val USER: "USER" = "USER"
+  inline val GROUP: "GROUP" = "GROUP"
 
-  @inline def values = js.Array[PrincipalType](USER, GROUP)
+  inline def values: js.Array[PrincipalType] = js.Array(USER, GROUP)
 }
 
 type QueryIdentifiersEnclosingOption = "DOUBLE_QUOTES" | "NONE"
 object QueryIdentifiersEnclosingOption {
-  val DOUBLE_QUOTES: "DOUBLE_QUOTES" = "DOUBLE_QUOTES"
-  val NONE: "NONE" = "NONE"
+  inline val DOUBLE_QUOTES: "DOUBLE_QUOTES" = "DOUBLE_QUOTES"
+  inline val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array[QueryIdentifiersEnclosingOption](DOUBLE_QUOTES, NONE)
+  inline def values: js.Array[QueryIdentifiersEnclosingOption] = js.Array(DOUBLE_QUOTES, NONE)
 }
 
 type QueryResultType = "DOCUMENT" | "QUESTION_ANSWER" | "ANSWER"
 object QueryResultType {
-  val DOCUMENT: "DOCUMENT" = "DOCUMENT"
-  val QUESTION_ANSWER: "QUESTION_ANSWER" = "QUESTION_ANSWER"
-  val ANSWER: "ANSWER" = "ANSWER"
+  inline val DOCUMENT: "DOCUMENT" = "DOCUMENT"
+  inline val QUESTION_ANSWER: "QUESTION_ANSWER" = "QUESTION_ANSWER"
+  inline val ANSWER: "ANSWER" = "ANSWER"
 
-  @inline def values = js.Array[QueryResultType](DOCUMENT, QUESTION_ANSWER, ANSWER)
+  inline def values: js.Array[QueryResultType] = js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER)
 }
 
 type ReadAccessType = "ALLOW" | "DENY"
 object ReadAccessType {
-  val ALLOW: "ALLOW" = "ALLOW"
-  val DENY: "DENY" = "DENY"
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val DENY: "DENY" = "DENY"
 
-  @inline def values = js.Array[ReadAccessType](ALLOW, DENY)
+  inline def values: js.Array[ReadAccessType] = js.Array(ALLOW, DENY)
 }
 
 type RelevanceType = "RELEVANT" | "NOT_RELEVANT"
 object RelevanceType {
-  val RELEVANT: "RELEVANT" = "RELEVANT"
-  val NOT_RELEVANT: "NOT_RELEVANT" = "NOT_RELEVANT"
+  inline val RELEVANT: "RELEVANT" = "RELEVANT"
+  inline val NOT_RELEVANT: "NOT_RELEVANT" = "NOT_RELEVANT"
 
-  @inline def values = js.Array[RelevanceType](RELEVANT, NOT_RELEVANT)
+  inline def values: js.Array[RelevanceType] = js.Array(RELEVANT, NOT_RELEVANT)
 }
 
 type SalesforceChatterFeedIncludeFilterType = "ACTIVE_USER" | "STANDARD_USER"
 object SalesforceChatterFeedIncludeFilterType {
-  val ACTIVE_USER: "ACTIVE_USER" = "ACTIVE_USER"
-  val STANDARD_USER: "STANDARD_USER" = "STANDARD_USER"
+  inline val ACTIVE_USER: "ACTIVE_USER" = "ACTIVE_USER"
+  inline val STANDARD_USER: "STANDARD_USER" = "STANDARD_USER"
 
-  @inline def values = js.Array[SalesforceChatterFeedIncludeFilterType](ACTIVE_USER, STANDARD_USER)
+  inline def values: js.Array[SalesforceChatterFeedIncludeFilterType] = js.Array(ACTIVE_USER, STANDARD_USER)
 }
 
 type SalesforceKnowledgeArticleState = "DRAFT" | "PUBLISHED" | "ARCHIVED"
 object SalesforceKnowledgeArticleState {
-  val DRAFT: "DRAFT" = "DRAFT"
-  val PUBLISHED: "PUBLISHED" = "PUBLISHED"
-  val ARCHIVED: "ARCHIVED" = "ARCHIVED"
+  inline val DRAFT: "DRAFT" = "DRAFT"
+  inline val PUBLISHED: "PUBLISHED" = "PUBLISHED"
+  inline val ARCHIVED: "ARCHIVED" = "ARCHIVED"
 
-  @inline def values = js.Array[SalesforceKnowledgeArticleState](DRAFT, PUBLISHED, ARCHIVED)
+  inline def values: js.Array[SalesforceKnowledgeArticleState] = js.Array(DRAFT, PUBLISHED, ARCHIVED)
 }
 
 type SalesforceStandardObjectName = "ACCOUNT" | "CAMPAIGN" | "CASE" | "CONTACT" | "CONTRACT" | "DOCUMENT" | "GROUP" | "IDEA" | "LEAD" | "OPPORTUNITY" | "PARTNER" | "PRICEBOOK" | "PRODUCT" | "PROFILE" | "SOLUTION" | "TASK" | "USER"
 object SalesforceStandardObjectName {
-  val ACCOUNT: "ACCOUNT" = "ACCOUNT"
-  val CAMPAIGN: "CAMPAIGN" = "CAMPAIGN"
-  val CASE: "CASE" = "CASE"
-  val CONTACT: "CONTACT" = "CONTACT"
-  val CONTRACT: "CONTRACT" = "CONTRACT"
-  val DOCUMENT: "DOCUMENT" = "DOCUMENT"
-  val GROUP: "GROUP" = "GROUP"
-  val IDEA: "IDEA" = "IDEA"
-  val LEAD: "LEAD" = "LEAD"
-  val OPPORTUNITY: "OPPORTUNITY" = "OPPORTUNITY"
-  val PARTNER: "PARTNER" = "PARTNER"
-  val PRICEBOOK: "PRICEBOOK" = "PRICEBOOK"
-  val PRODUCT: "PRODUCT" = "PRODUCT"
-  val PROFILE: "PROFILE" = "PROFILE"
-  val SOLUTION: "SOLUTION" = "SOLUTION"
-  val TASK: "TASK" = "TASK"
-  val USER: "USER" = "USER"
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val CAMPAIGN: "CAMPAIGN" = "CAMPAIGN"
+  inline val CASE: "CASE" = "CASE"
+  inline val CONTACT: "CONTACT" = "CONTACT"
+  inline val CONTRACT: "CONTRACT" = "CONTRACT"
+  inline val DOCUMENT: "DOCUMENT" = "DOCUMENT"
+  inline val GROUP: "GROUP" = "GROUP"
+  inline val IDEA: "IDEA" = "IDEA"
+  inline val LEAD: "LEAD" = "LEAD"
+  inline val OPPORTUNITY: "OPPORTUNITY" = "OPPORTUNITY"
+  inline val PARTNER: "PARTNER" = "PARTNER"
+  inline val PRICEBOOK: "PRICEBOOK" = "PRICEBOOK"
+  inline val PRODUCT: "PRODUCT" = "PRODUCT"
+  inline val PROFILE: "PROFILE" = "PROFILE"
+  inline val SOLUTION: "SOLUTION" = "SOLUTION"
+  inline val TASK: "TASK" = "TASK"
+  inline val USER: "USER" = "USER"
 
-  @inline def values = js.Array[SalesforceStandardObjectName](ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER)
+  inline def values: js.Array[SalesforceStandardObjectName] = js.Array(ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER)
 }
 
 /** Enumeration for query score confidence.
   */
 type ScoreConfidence = "VERY_HIGH" | "HIGH" | "MEDIUM" | "LOW"
 object ScoreConfidence {
-  val VERY_HIGH: "VERY_HIGH" = "VERY_HIGH"
-  val HIGH: "HIGH" = "HIGH"
-  val MEDIUM: "MEDIUM" = "MEDIUM"
-  val LOW: "LOW" = "LOW"
+  inline val VERY_HIGH: "VERY_HIGH" = "VERY_HIGH"
+  inline val HIGH: "HIGH" = "HIGH"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val LOW: "LOW" = "LOW"
 
-  @inline def values = js.Array[ScoreConfidence](VERY_HIGH, HIGH, MEDIUM, LOW)
+  inline def values: js.Array[ScoreConfidence] = js.Array(VERY_HIGH, HIGH, MEDIUM, LOW)
 }
 
 type ServiceNowAuthenticationType = "HTTP_BASIC" | "OAUTH2"
 object ServiceNowAuthenticationType {
-  val HTTP_BASIC: "HTTP_BASIC" = "HTTP_BASIC"
-  val OAUTH2: "OAUTH2" = "OAUTH2"
+  inline val HTTP_BASIC: "HTTP_BASIC" = "HTTP_BASIC"
+  inline val OAUTH2: "OAUTH2" = "OAUTH2"
 
-  @inline def values = js.Array[ServiceNowAuthenticationType](HTTP_BASIC, OAUTH2)
+  inline def values: js.Array[ServiceNowAuthenticationType] = js.Array(HTTP_BASIC, OAUTH2)
 }
 
 type ServiceNowBuildVersionType = "LONDON" | "OTHERS"
 object ServiceNowBuildVersionType {
-  val LONDON: "LONDON" = "LONDON"
-  val OTHERS: "OTHERS" = "OTHERS"
+  inline val LONDON: "LONDON" = "LONDON"
+  inline val OTHERS: "OTHERS" = "OTHERS"
 
-  @inline def values = js.Array[ServiceNowBuildVersionType](LONDON, OTHERS)
+  inline def values: js.Array[ServiceNowBuildVersionType] = js.Array(LONDON, OTHERS)
 }
 
 type SharePointVersion = "SHAREPOINT_ONLINE"
 object SharePointVersion {
-  val SHAREPOINT_ONLINE: "SHAREPOINT_ONLINE" = "SHAREPOINT_ONLINE"
+  inline val SHAREPOINT_ONLINE: "SHAREPOINT_ONLINE" = "SHAREPOINT_ONLINE"
 
-  @inline def values = js.Array[SharePointVersion](SHAREPOINT_ONLINE)
+  inline def values: js.Array[SharePointVersion] = js.Array(SHAREPOINT_ONLINE)
 }
 
 type SortOrder = "DESC" | "ASC"
 object SortOrder {
-  val DESC: "DESC" = "DESC"
-  val ASC: "ASC" = "ASC"
+  inline val DESC: "DESC" = "DESC"
+  inline val ASC: "ASC" = "ASC"
 
-  @inline def values = js.Array[SortOrder](DESC, ASC)
+  inline def values: js.Array[SortOrder] = js.Array(DESC, ASC)
 }
 
 type ThesaurusStatus = "CREATING" | "ACTIVE" | "DELETING" | "UPDATING" | "ACTIVE_BUT_UPDATE_FAILED" | "FAILED"
 object ThesaurusStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETING: "DELETING" = "DELETING"
-  val UPDATING: "UPDATING" = "UPDATING"
-  val ACTIVE_BUT_UPDATE_FAILED: "ACTIVE_BUT_UPDATE_FAILED" = "ACTIVE_BUT_UPDATE_FAILED"
-  val FAILED: "FAILED" = "FAILED"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val ACTIVE_BUT_UPDATE_FAILED: "ACTIVE_BUT_UPDATE_FAILED" = "ACTIVE_BUT_UPDATE_FAILED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[ThesaurusStatus](CREATING, ACTIVE, DELETING, UPDATING, ACTIVE_BUT_UPDATE_FAILED, FAILED)
+  inline def values: js.Array[ThesaurusStatus] = js.Array(CREATING, ACTIVE, DELETING, UPDATING, ACTIVE_BUT_UPDATE_FAILED, FAILED)
 }
 
 type UserContextPolicy = "ATTRIBUTE_FILTER" | "USER_TOKEN"
 object UserContextPolicy {
-  val ATTRIBUTE_FILTER: "ATTRIBUTE_FILTER" = "ATTRIBUTE_FILTER"
-  val USER_TOKEN: "USER_TOKEN" = "USER_TOKEN"
+  inline val ATTRIBUTE_FILTER: "ATTRIBUTE_FILTER" = "ATTRIBUTE_FILTER"
+  inline val USER_TOKEN: "USER_TOKEN" = "USER_TOKEN"
 
-  @inline def values = js.Array[UserContextPolicy](ATTRIBUTE_FILTER, USER_TOKEN)
+  inline def values: js.Array[UserContextPolicy] = js.Array(ATTRIBUTE_FILTER, USER_TOKEN)
 }

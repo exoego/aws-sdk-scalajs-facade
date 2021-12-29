@@ -4,141 +4,141 @@ import scalajs._
 
 type CompressionFormat = "GZIP" | "LZ4" | "SNAPPY" | "BZIP2" | "DEFLATE" | "LZO" | "BROTLI" | "ZSTD" | "ZLIB"
 object CompressionFormat {
-  val GZIP: "GZIP" = "GZIP"
-  val LZ4: "LZ4" = "LZ4"
-  val SNAPPY: "SNAPPY" = "SNAPPY"
-  val BZIP2: "BZIP2" = "BZIP2"
-  val DEFLATE: "DEFLATE" = "DEFLATE"
-  val LZO: "LZO" = "LZO"
-  val BROTLI: "BROTLI" = "BROTLI"
-  val ZSTD: "ZSTD" = "ZSTD"
-  val ZLIB: "ZLIB" = "ZLIB"
+  inline val GZIP: "GZIP" = "GZIP"
+  inline val LZ4: "LZ4" = "LZ4"
+  inline val SNAPPY: "SNAPPY" = "SNAPPY"
+  inline val BZIP2: "BZIP2" = "BZIP2"
+  inline val DEFLATE: "DEFLATE" = "DEFLATE"
+  inline val LZO: "LZO" = "LZO"
+  inline val BROTLI: "BROTLI" = "BROTLI"
+  inline val ZSTD: "ZSTD" = "ZSTD"
+  inline val ZLIB: "ZLIB" = "ZLIB"
 
-  @inline def values = js.Array[CompressionFormat](GZIP, LZ4, SNAPPY, BZIP2, DEFLATE, LZO, BROTLI, ZSTD, ZLIB)
+  inline def values: js.Array[CompressionFormat] = js.Array(GZIP, LZ4, SNAPPY, BZIP2, DEFLATE, LZO, BROTLI, ZSTD, ZLIB)
 }
 
 type EncryptionMode = "SSE-KMS" | "SSE-S3"
 object EncryptionMode {
-  val `SSE-KMS`: "SSE-KMS" = "SSE-KMS"
-  val `SSE-S3`: "SSE-S3" = "SSE-S3"
+  inline val `SSE-KMS`: "SSE-KMS" = "SSE-KMS"
+  inline val `SSE-S3`: "SSE-S3" = "SSE-S3"
 
-  @inline def values = js.Array[EncryptionMode](`SSE-KMS`, `SSE-S3`)
+  inline def values: js.Array[EncryptionMode] = js.Array(`SSE-KMS`, `SSE-S3`)
 }
 
 type InputFormat = "CSV" | "JSON" | "PARQUET" | "EXCEL"
 object InputFormat {
-  val CSV: "CSV" = "CSV"
-  val JSON: "JSON" = "JSON"
-  val PARQUET: "PARQUET" = "PARQUET"
-  val EXCEL: "EXCEL" = "EXCEL"
+  inline val CSV: "CSV" = "CSV"
+  inline val JSON: "JSON" = "JSON"
+  inline val PARQUET: "PARQUET" = "PARQUET"
+  inline val EXCEL: "EXCEL" = "EXCEL"
 
-  @inline def values = js.Array[InputFormat](CSV, JSON, PARQUET, EXCEL)
+  inline def values: js.Array[InputFormat] = js.Array(CSV, JSON, PARQUET, EXCEL)
 }
 
 type JobRunState = "STARTING" | "RUNNING" | "STOPPING" | "STOPPED" | "SUCCEEDED" | "FAILED" | "TIMEOUT"
 object JobRunState {
-  val STARTING: "STARTING" = "STARTING"
-  val RUNNING: "RUNNING" = "RUNNING"
-  val STOPPING: "STOPPING" = "STOPPING"
-  val STOPPED: "STOPPED" = "STOPPED"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
-  val TIMEOUT: "TIMEOUT" = "TIMEOUT"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val STOPPED: "STOPPED" = "STOPPED"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val TIMEOUT: "TIMEOUT" = "TIMEOUT"
 
-  @inline def values = js.Array[JobRunState](STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
+  inline def values: js.Array[JobRunState] = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
 }
 
 type JobType = "PROFILE" | "RECIPE"
 object JobType {
-  val PROFILE: "PROFILE" = "PROFILE"
-  val RECIPE: "RECIPE" = "RECIPE"
+  inline val PROFILE: "PROFILE" = "PROFILE"
+  inline val RECIPE: "RECIPE" = "RECIPE"
 
-  @inline def values = js.Array[JobType](PROFILE, RECIPE)
+  inline def values: js.Array[JobType] = js.Array(PROFILE, RECIPE)
 }
 
 type LogSubscription = "ENABLE" | "DISABLE"
 object LogSubscription {
-  val ENABLE: "ENABLE" = "ENABLE"
-  val DISABLE: "DISABLE" = "DISABLE"
+  inline val ENABLE: "ENABLE" = "ENABLE"
+  inline val DISABLE: "DISABLE" = "DISABLE"
 
-  @inline def values = js.Array[LogSubscription](ENABLE, DISABLE)
+  inline def values: js.Array[LogSubscription] = js.Array(ENABLE, DISABLE)
 }
 
 type Order = "DESCENDING" | "ASCENDING"
 object Order {
-  val DESCENDING: "DESCENDING" = "DESCENDING"
-  val ASCENDING: "ASCENDING" = "ASCENDING"
+  inline val DESCENDING: "DESCENDING" = "DESCENDING"
+  inline val ASCENDING: "ASCENDING" = "ASCENDING"
 
-  @inline def values = js.Array[Order](DESCENDING, ASCENDING)
+  inline def values: js.Array[Order] = js.Array(DESCENDING, ASCENDING)
 }
 
 type OrderedBy = "LAST_MODIFIED_DATE"
 object OrderedBy {
-  val LAST_MODIFIED_DATE: "LAST_MODIFIED_DATE" = "LAST_MODIFIED_DATE"
+  inline val LAST_MODIFIED_DATE: "LAST_MODIFIED_DATE" = "LAST_MODIFIED_DATE"
 
-  @inline def values = js.Array[OrderedBy](LAST_MODIFIED_DATE)
+  inline def values: js.Array[OrderedBy] = js.Array(LAST_MODIFIED_DATE)
 }
 
 type OutputFormat = "CSV" | "JSON" | "PARQUET" | "GLUEPARQUET" | "AVRO" | "ORC" | "XML"
 object OutputFormat {
-  val CSV: "CSV" = "CSV"
-  val JSON: "JSON" = "JSON"
-  val PARQUET: "PARQUET" = "PARQUET"
-  val GLUEPARQUET: "GLUEPARQUET" = "GLUEPARQUET"
-  val AVRO: "AVRO" = "AVRO"
-  val ORC: "ORC" = "ORC"
-  val XML: "XML" = "XML"
+  inline val CSV: "CSV" = "CSV"
+  inline val JSON: "JSON" = "JSON"
+  inline val PARQUET: "PARQUET" = "PARQUET"
+  inline val GLUEPARQUET: "GLUEPARQUET" = "GLUEPARQUET"
+  inline val AVRO: "AVRO" = "AVRO"
+  inline val ORC: "ORC" = "ORC"
+  inline val XML: "XML" = "XML"
 
-  @inline def values = js.Array[OutputFormat](CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML)
+  inline def values: js.Array[OutputFormat] = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML)
 }
 
 type ParameterType = "Datetime" | "Number" | "String"
 object ParameterType {
-  val Datetime: "Datetime" = "Datetime"
-  val Number: "Number" = "Number"
-  val String: "String" = "String"
+  inline val Datetime: "Datetime" = "Datetime"
+  inline val Number: "Number" = "Number"
+  inline val String: "String" = "String"
 
-  @inline def values = js.Array[ParameterType](Datetime, Number, String)
+  inline def values: js.Array[ParameterType] = js.Array(Datetime, Number, String)
 }
 
 type SampleMode = "FULL_DATASET" | "CUSTOM_ROWS"
 object SampleMode {
-  val FULL_DATASET: "FULL_DATASET" = "FULL_DATASET"
-  val CUSTOM_ROWS: "CUSTOM_ROWS" = "CUSTOM_ROWS"
+  inline val FULL_DATASET: "FULL_DATASET" = "FULL_DATASET"
+  inline val CUSTOM_ROWS: "CUSTOM_ROWS" = "CUSTOM_ROWS"
 
-  @inline def values = js.Array[SampleMode](FULL_DATASET, CUSTOM_ROWS)
+  inline def values: js.Array[SampleMode] = js.Array(FULL_DATASET, CUSTOM_ROWS)
 }
 
 type SampleType = "FIRST_N" | "LAST_N" | "RANDOM"
 object SampleType {
-  val FIRST_N: "FIRST_N" = "FIRST_N"
-  val LAST_N: "LAST_N" = "LAST_N"
-  val RANDOM: "RANDOM" = "RANDOM"
+  inline val FIRST_N: "FIRST_N" = "FIRST_N"
+  inline val LAST_N: "LAST_N" = "LAST_N"
+  inline val RANDOM: "RANDOM" = "RANDOM"
 
-  @inline def values = js.Array[SampleType](FIRST_N, LAST_N, RANDOM)
+  inline def values: js.Array[SampleType] = js.Array(FIRST_N, LAST_N, RANDOM)
 }
 
 type SessionStatus = "ASSIGNED" | "FAILED" | "INITIALIZING" | "PROVISIONING" | "READY" | "RECYCLING" | "ROTATING" | "TERMINATED" | "TERMINATING" | "UPDATING"
 object SessionStatus {
-  val ASSIGNED: "ASSIGNED" = "ASSIGNED"
-  val FAILED: "FAILED" = "FAILED"
-  val INITIALIZING: "INITIALIZING" = "INITIALIZING"
-  val PROVISIONING: "PROVISIONING" = "PROVISIONING"
-  val READY: "READY" = "READY"
-  val RECYCLING: "RECYCLING" = "RECYCLING"
-  val ROTATING: "ROTATING" = "ROTATING"
-  val TERMINATED: "TERMINATED" = "TERMINATED"
-  val TERMINATING: "TERMINATING" = "TERMINATING"
-  val UPDATING: "UPDATING" = "UPDATING"
+  inline val ASSIGNED: "ASSIGNED" = "ASSIGNED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val INITIALIZING: "INITIALIZING" = "INITIALIZING"
+  inline val PROVISIONING: "PROVISIONING" = "PROVISIONING"
+  inline val READY: "READY" = "READY"
+  inline val RECYCLING: "RECYCLING" = "RECYCLING"
+  inline val ROTATING: "ROTATING" = "ROTATING"
+  inline val TERMINATED: "TERMINATED" = "TERMINATED"
+  inline val TERMINATING: "TERMINATING" = "TERMINATING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array[SessionStatus](ASSIGNED, FAILED, INITIALIZING, PROVISIONING, READY, RECYCLING, ROTATING, TERMINATED, TERMINATING, UPDATING)
+  inline def values: js.Array[SessionStatus] = js.Array(ASSIGNED, FAILED, INITIALIZING, PROVISIONING, READY, RECYCLING, ROTATING, TERMINATED, TERMINATING, UPDATING)
 }
 
 type Source = "S3" | "DATA-CATALOG" | "DATABASE"
 object Source {
-  val S3: "S3" = "S3"
-  val `DATA-CATALOG`: "DATA-CATALOG" = "DATA-CATALOG"
-  val DATABASE: "DATABASE" = "DATABASE"
+  inline val S3: "S3" = "S3"
+  inline val `DATA-CATALOG`: "DATA-CATALOG" = "DATA-CATALOG"
+  inline val DATABASE: "DATABASE" = "DATABASE"
 
-  @inline def values = js.Array[Source](S3, `DATA-CATALOG`, DATABASE)
+  inline def values: js.Array[Source] = js.Array(S3, `DATA-CATALOG`, DATABASE)
 }

@@ -4,21 +4,21 @@ import scalajs._
 
 type BatchReadExceptionType = "ValidationException" | "InvalidArnException" | "ResourceNotFoundException" | "InvalidNextTokenException" | "AccessDeniedException" | "NotNodeException" | "FacetValidationException" | "CannotListParentOfRootException" | "NotIndexException" | "NotPolicyException" | "DirectoryNotEnabledException" | "LimitExceededException" | "InternalServiceException"
 object BatchReadExceptionType {
-  val ValidationException: "ValidationException" = "ValidationException"
-  val InvalidArnException: "InvalidArnException" = "InvalidArnException"
-  val ResourceNotFoundException: "ResourceNotFoundException" = "ResourceNotFoundException"
-  val InvalidNextTokenException: "InvalidNextTokenException" = "InvalidNextTokenException"
-  val AccessDeniedException: "AccessDeniedException" = "AccessDeniedException"
-  val NotNodeException: "NotNodeException" = "NotNodeException"
-  val FacetValidationException: "FacetValidationException" = "FacetValidationException"
-  val CannotListParentOfRootException: "CannotListParentOfRootException" = "CannotListParentOfRootException"
-  val NotIndexException: "NotIndexException" = "NotIndexException"
-  val NotPolicyException: "NotPolicyException" = "NotPolicyException"
-  val DirectoryNotEnabledException: "DirectoryNotEnabledException" = "DirectoryNotEnabledException"
-  val LimitExceededException: "LimitExceededException" = "LimitExceededException"
-  val InternalServiceException: "InternalServiceException" = "InternalServiceException"
+  inline val ValidationException: "ValidationException" = "ValidationException"
+  inline val InvalidArnException: "InvalidArnException" = "InvalidArnException"
+  inline val ResourceNotFoundException: "ResourceNotFoundException" = "ResourceNotFoundException"
+  inline val InvalidNextTokenException: "InvalidNextTokenException" = "InvalidNextTokenException"
+  inline val AccessDeniedException: "AccessDeniedException" = "AccessDeniedException"
+  inline val NotNodeException: "NotNodeException" = "NotNodeException"
+  inline val FacetValidationException: "FacetValidationException" = "FacetValidationException"
+  inline val CannotListParentOfRootException: "CannotListParentOfRootException" = "CannotListParentOfRootException"
+  inline val NotIndexException: "NotIndexException" = "NotIndexException"
+  inline val NotPolicyException: "NotPolicyException" = "NotPolicyException"
+  inline val DirectoryNotEnabledException: "DirectoryNotEnabledException" = "DirectoryNotEnabledException"
+  inline val LimitExceededException: "LimitExceededException" = "LimitExceededException"
+  inline val InternalServiceException: "InternalServiceException" = "InternalServiceException"
 
-  @inline def values = js.Array[BatchReadExceptionType](
+  inline def values: js.Array[BatchReadExceptionType] = js.Array(
     ValidationException,
     InvalidArnException,
     ResourceNotFoundException,
@@ -37,84 +37,84 @@ object BatchReadExceptionType {
 
 type ConsistencyLevel = "SERIALIZABLE" | "EVENTUAL"
 object ConsistencyLevel {
-  val SERIALIZABLE: "SERIALIZABLE" = "SERIALIZABLE"
-  val EVENTUAL: "EVENTUAL" = "EVENTUAL"
+  inline val SERIALIZABLE: "SERIALIZABLE" = "SERIALIZABLE"
+  inline val EVENTUAL: "EVENTUAL" = "EVENTUAL"
 
-  @inline def values = js.Array[ConsistencyLevel](SERIALIZABLE, EVENTUAL)
+  inline def values: js.Array[ConsistencyLevel] = js.Array(SERIALIZABLE, EVENTUAL)
 }
 
 type DirectoryState = "ENABLED" | "DISABLED" | "DELETED"
 object DirectoryState {
-  val ENABLED: "ENABLED" = "ENABLED"
-  val DISABLED: "DISABLED" = "DISABLED"
-  val DELETED: "DELETED" = "DELETED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array[DirectoryState](ENABLED, DISABLED, DELETED)
+  inline def values: js.Array[DirectoryState] = js.Array(ENABLED, DISABLED, DELETED)
 }
 
 type FacetAttributeType = "STRING" | "BINARY" | "BOOLEAN" | "NUMBER" | "DATETIME" | "VARIANT"
 object FacetAttributeType {
-  val STRING: "STRING" = "STRING"
-  val BINARY: "BINARY" = "BINARY"
-  val BOOLEAN: "BOOLEAN" = "BOOLEAN"
-  val NUMBER: "NUMBER" = "NUMBER"
-  val DATETIME: "DATETIME" = "DATETIME"
-  val VARIANT: "VARIANT" = "VARIANT"
+  inline val STRING: "STRING" = "STRING"
+  inline val BINARY: "BINARY" = "BINARY"
+  inline val BOOLEAN: "BOOLEAN" = "BOOLEAN"
+  inline val NUMBER: "NUMBER" = "NUMBER"
+  inline val DATETIME: "DATETIME" = "DATETIME"
+  inline val VARIANT: "VARIANT" = "VARIANT"
 
-  @inline def values = js.Array[FacetAttributeType](STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT)
+  inline def values: js.Array[FacetAttributeType] = js.Array(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT)
 }
 
 type FacetStyle = "STATIC" | "DYNAMIC"
 object FacetStyle {
-  val STATIC: "STATIC" = "STATIC"
-  val DYNAMIC: "DYNAMIC" = "DYNAMIC"
+  inline val STATIC: "STATIC" = "STATIC"
+  inline val DYNAMIC: "DYNAMIC" = "DYNAMIC"
 
-  @inline def values = js.Array[FacetStyle](STATIC, DYNAMIC)
+  inline def values: js.Array[FacetStyle] = js.Array(STATIC, DYNAMIC)
 }
 
 type ObjectType = "NODE" | "LEAF_NODE" | "POLICY" | "INDEX"
 object ObjectType {
-  val NODE: "NODE" = "NODE"
-  val LEAF_NODE: "LEAF_NODE" = "LEAF_NODE"
-  val POLICY: "POLICY" = "POLICY"
-  val INDEX: "INDEX" = "INDEX"
+  inline val NODE: "NODE" = "NODE"
+  inline val LEAF_NODE: "LEAF_NODE" = "LEAF_NODE"
+  inline val POLICY: "POLICY" = "POLICY"
+  inline val INDEX: "INDEX" = "INDEX"
 
-  @inline def values = js.Array[ObjectType](NODE, LEAF_NODE, POLICY, INDEX)
+  inline def values: js.Array[ObjectType] = js.Array(NODE, LEAF_NODE, POLICY, INDEX)
 }
 
 type RangeMode = "FIRST" | "LAST" | "LAST_BEFORE_MISSING_VALUES" | "INCLUSIVE" | "EXCLUSIVE"
 object RangeMode {
-  val FIRST: "FIRST" = "FIRST"
-  val LAST: "LAST" = "LAST"
-  val LAST_BEFORE_MISSING_VALUES: "LAST_BEFORE_MISSING_VALUES" = "LAST_BEFORE_MISSING_VALUES"
-  val INCLUSIVE: "INCLUSIVE" = "INCLUSIVE"
-  val EXCLUSIVE: "EXCLUSIVE" = "EXCLUSIVE"
+  inline val FIRST: "FIRST" = "FIRST"
+  inline val LAST: "LAST" = "LAST"
+  inline val LAST_BEFORE_MISSING_VALUES: "LAST_BEFORE_MISSING_VALUES" = "LAST_BEFORE_MISSING_VALUES"
+  inline val INCLUSIVE: "INCLUSIVE" = "INCLUSIVE"
+  inline val EXCLUSIVE: "EXCLUSIVE" = "EXCLUSIVE"
 
-  @inline def values = js.Array[RangeMode](FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE)
+  inline def values: js.Array[RangeMode] = js.Array(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE)
 }
 
 type RequiredAttributeBehavior = "REQUIRED_ALWAYS" | "NOT_REQUIRED"
 object RequiredAttributeBehavior {
-  val REQUIRED_ALWAYS: "REQUIRED_ALWAYS" = "REQUIRED_ALWAYS"
-  val NOT_REQUIRED: "NOT_REQUIRED" = "NOT_REQUIRED"
+  inline val REQUIRED_ALWAYS: "REQUIRED_ALWAYS" = "REQUIRED_ALWAYS"
+  inline val NOT_REQUIRED: "NOT_REQUIRED" = "NOT_REQUIRED"
 
-  @inline def values = js.Array[RequiredAttributeBehavior](REQUIRED_ALWAYS, NOT_REQUIRED)
+  inline def values: js.Array[RequiredAttributeBehavior] = js.Array(REQUIRED_ALWAYS, NOT_REQUIRED)
 }
 
 type RuleType = "BINARY_LENGTH" | "NUMBER_COMPARISON" | "STRING_FROM_SET" | "STRING_LENGTH"
 object RuleType {
-  val BINARY_LENGTH: "BINARY_LENGTH" = "BINARY_LENGTH"
-  val NUMBER_COMPARISON: "NUMBER_COMPARISON" = "NUMBER_COMPARISON"
-  val STRING_FROM_SET: "STRING_FROM_SET" = "STRING_FROM_SET"
-  val STRING_LENGTH: "STRING_LENGTH" = "STRING_LENGTH"
+  inline val BINARY_LENGTH: "BINARY_LENGTH" = "BINARY_LENGTH"
+  inline val NUMBER_COMPARISON: "NUMBER_COMPARISON" = "NUMBER_COMPARISON"
+  inline val STRING_FROM_SET: "STRING_FROM_SET" = "STRING_FROM_SET"
+  inline val STRING_LENGTH: "STRING_LENGTH" = "STRING_LENGTH"
 
-  @inline def values = js.Array[RuleType](BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH)
+  inline def values: js.Array[RuleType] = js.Array(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH)
 }
 
 type UpdateActionType = "CREATE_OR_UPDATE" | "DELETE"
 object UpdateActionType {
-  val CREATE_OR_UPDATE: "CREATE_OR_UPDATE" = "CREATE_OR_UPDATE"
-  val DELETE: "DELETE" = "DELETE"
+  inline val CREATE_OR_UPDATE: "CREATE_OR_UPDATE" = "CREATE_OR_UPDATE"
+  inline val DELETE: "DELETE" = "DELETE"
 
-  @inline def values = js.Array[UpdateActionType](CREATE_OR_UPDATE, DELETE)
+  inline def values: js.Array[UpdateActionType] = js.Array(CREATE_OR_UPDATE, DELETE)
 }

@@ -6,39 +6,39 @@ import scalajs._
   */
 type Distribution = "Random" | "ByLogStream"
 object Distribution {
-  val Random: "Random" = "Random"
-  val ByLogStream: "ByLogStream" = "ByLogStream"
+  inline val Random: "Random" = "Random"
+  inline val ByLogStream: "ByLogStream" = "ByLogStream"
 
-  @inline def values = js.Array[Distribution](Random, ByLogStream)
+  inline def values: js.Array[Distribution] = js.Array(Random, ByLogStream)
 }
 
 type ExportTaskStatusCode = "CANCELLED" | "COMPLETED" | "FAILED" | "PENDING" | "PENDING_CANCEL" | "RUNNING"
 object ExportTaskStatusCode {
-  val CANCELLED: "CANCELLED" = "CANCELLED"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val FAILED: "FAILED" = "FAILED"
-  val PENDING: "PENDING" = "PENDING"
-  val PENDING_CANCEL: "PENDING_CANCEL" = "PENDING_CANCEL"
-  val RUNNING: "RUNNING" = "RUNNING"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val PENDING_CANCEL: "PENDING_CANCEL" = "PENDING_CANCEL"
+  inline val RUNNING: "RUNNING" = "RUNNING"
 
-  @inline def values = js.Array[ExportTaskStatusCode](CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING)
+  inline def values: js.Array[ExportTaskStatusCode] = js.Array(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING)
 }
 
 type OrderBy = "LogStreamName" | "LastEventTime"
 object OrderBy {
-  val LogStreamName: "LogStreamName" = "LogStreamName"
-  val LastEventTime: "LastEventTime" = "LastEventTime"
+  inline val LogStreamName: "LogStreamName" = "LogStreamName"
+  inline val LastEventTime: "LastEventTime" = "LastEventTime"
 
-  @inline def values = js.Array[OrderBy](LogStreamName, LastEventTime)
+  inline def values: js.Array[OrderBy] = js.Array(LogStreamName, LastEventTime)
 }
 
 type QueryStatus = "Scheduled" | "Running" | "Complete" | "Failed" | "Cancelled"
 object QueryStatus {
-  val Scheduled: "Scheduled" = "Scheduled"
-  val Running: "Running" = "Running"
-  val Complete: "Complete" = "Complete"
-  val Failed: "Failed" = "Failed"
-  val Cancelled: "Cancelled" = "Cancelled"
+  inline val Scheduled: "Scheduled" = "Scheduled"
+  inline val Running: "Running" = "Running"
+  inline val Complete: "Complete" = "Complete"
+  inline val Failed: "Failed" = "Failed"
+  inline val Cancelled: "Cancelled" = "Cancelled"
 
-  @inline def values = js.Array[QueryStatus](Scheduled, Running, Complete, Failed, Cancelled)
+  inline def values: js.Array[QueryStatus] = js.Array(Scheduled, Running, Complete, Failed, Cancelled)
 }

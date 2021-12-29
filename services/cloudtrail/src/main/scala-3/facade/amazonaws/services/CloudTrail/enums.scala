@@ -4,37 +4,37 @@ import scalajs._
 
 type EventCategory = "insight"
 object EventCategory {
-  val insight: "insight" = "insight"
+  inline val insight: "insight" = "insight"
 
-  @inline def values = js.Array[EventCategory](insight)
+  inline def values: js.Array[EventCategory] = js.Array(insight)
 }
 
 type InsightType = "ApiCallRateInsight"
 object InsightType {
-  val ApiCallRateInsight: "ApiCallRateInsight" = "ApiCallRateInsight"
+  inline val ApiCallRateInsight: "ApiCallRateInsight" = "ApiCallRateInsight"
 
-  @inline def values = js.Array[InsightType](ApiCallRateInsight)
+  inline def values: js.Array[InsightType] = js.Array(ApiCallRateInsight)
 }
 
 type LookupAttributeKey = "EventId" | "EventName" | "ReadOnly" | "Username" | "ResourceType" | "ResourceName" | "EventSource" | "AccessKeyId"
 object LookupAttributeKey {
-  val EventId: "EventId" = "EventId"
-  val EventName: "EventName" = "EventName"
-  val ReadOnly: "ReadOnly" = "ReadOnly"
-  val Username: "Username" = "Username"
-  val ResourceType: "ResourceType" = "ResourceType"
-  val ResourceName: "ResourceName" = "ResourceName"
-  val EventSource: "EventSource" = "EventSource"
-  val AccessKeyId: "AccessKeyId" = "AccessKeyId"
+  inline val EventId: "EventId" = "EventId"
+  inline val EventName: "EventName" = "EventName"
+  inline val ReadOnly: "ReadOnly" = "ReadOnly"
+  inline val Username: "Username" = "Username"
+  inline val ResourceType: "ResourceType" = "ResourceType"
+  inline val ResourceName: "ResourceName" = "ResourceName"
+  inline val EventSource: "EventSource" = "EventSource"
+  inline val AccessKeyId: "AccessKeyId" = "AccessKeyId"
 
-  @inline def values = js.Array[LookupAttributeKey](EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
+  inline def values: js.Array[LookupAttributeKey] = js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
 }
 
 type ReadWriteType = "ReadOnly" | "WriteOnly" | "All"
 object ReadWriteType {
-  val ReadOnly: "ReadOnly" = "ReadOnly"
-  val WriteOnly: "WriteOnly" = "WriteOnly"
-  val All: "All" = "All"
+  inline val ReadOnly: "ReadOnly" = "ReadOnly"
+  inline val WriteOnly: "WriteOnly" = "WriteOnly"
+  inline val All: "All" = "All"
 
-  @inline def values = js.Array[ReadWriteType](ReadOnly, WriteOnly, All)
+  inline def values: js.Array[ReadWriteType] = js.Array(ReadOnly, WriteOnly, All)
 }

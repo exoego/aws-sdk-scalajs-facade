@@ -4,44 +4,44 @@ import scalajs._
 
 type entityStatusCode = "IMPAIRED" | "UNIMPAIRED" | "UNKNOWN"
 object entityStatusCode {
-  val IMPAIRED: "IMPAIRED" = "IMPAIRED"
-  val UNIMPAIRED: "UNIMPAIRED" = "UNIMPAIRED"
-  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val IMPAIRED: "IMPAIRED" = "IMPAIRED"
+  inline val UNIMPAIRED: "UNIMPAIRED" = "UNIMPAIRED"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array[entityStatusCode](IMPAIRED, UNIMPAIRED, UNKNOWN)
+  inline def values: js.Array[entityStatusCode] = js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN)
 }
 
 type eventAggregateField = "eventTypeCategory"
 object eventAggregateField {
-  val eventTypeCategory: "eventTypeCategory" = "eventTypeCategory"
+  inline val eventTypeCategory: "eventTypeCategory" = "eventTypeCategory"
 
-  @inline def values = js.Array[eventAggregateField](eventTypeCategory)
+  inline def values: js.Array[eventAggregateField] = js.Array(eventTypeCategory)
 }
 
 type eventScopeCode = "PUBLIC" | "ACCOUNT_SPECIFIC" | "NONE"
 object eventScopeCode {
-  val PUBLIC: "PUBLIC" = "PUBLIC"
-  val ACCOUNT_SPECIFIC: "ACCOUNT_SPECIFIC" = "ACCOUNT_SPECIFIC"
-  val NONE: "NONE" = "NONE"
+  inline val PUBLIC: "PUBLIC" = "PUBLIC"
+  inline val ACCOUNT_SPECIFIC: "ACCOUNT_SPECIFIC" = "ACCOUNT_SPECIFIC"
+  inline val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array[eventScopeCode](PUBLIC, ACCOUNT_SPECIFIC, NONE)
+  inline def values: js.Array[eventScopeCode] = js.Array(PUBLIC, ACCOUNT_SPECIFIC, NONE)
 }
 
 type eventStatusCode = "open" | "closed" | "upcoming"
 object eventStatusCode {
-  val open: "open" = "open"
-  val closed: "closed" = "closed"
-  val upcoming: "upcoming" = "upcoming"
+  inline val open: "open" = "open"
+  inline val closed: "closed" = "closed"
+  inline val upcoming: "upcoming" = "upcoming"
 
-  @inline def values = js.Array[eventStatusCode](open, closed, upcoming)
+  inline def values: js.Array[eventStatusCode] = js.Array(open, closed, upcoming)
 }
 
 type eventTypeCategory = "issue" | "accountNotification" | "scheduledChange" | "investigation"
 object eventTypeCategory {
-  val issue: "issue" = "issue"
-  val accountNotification: "accountNotification" = "accountNotification"
-  val scheduledChange: "scheduledChange" = "scheduledChange"
-  val investigation: "investigation" = "investigation"
+  inline val issue: "issue" = "issue"
+  inline val accountNotification: "accountNotification" = "accountNotification"
+  inline val scheduledChange: "scheduledChange" = "scheduledChange"
+  inline val investigation: "investigation" = "investigation"
 
-  @inline def values = js.Array[eventTypeCategory](issue, accountNotification, scheduledChange, investigation)
+  inline def values: js.Array[eventTypeCategory] = js.Array(issue, accountNotification, scheduledChange, investigation)
 }

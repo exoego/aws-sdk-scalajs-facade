@@ -4,77 +4,77 @@ import scalajs._
 
 type ChannelStatus = "CREATING" | "ACTIVE" | "DELETING"
 object ChannelStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETING: "DELETING" = "DELETING"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array[ChannelStatus](CREATING, ACTIVE, DELETING)
+  inline def values: js.Array[ChannelStatus] = js.Array(CREATING, ACTIVE, DELETING)
 }
 
 type ComputeType = "ACU_1" | "ACU_2"
 object ComputeType {
-  val ACU_1: "ACU_1" = "ACU_1"
-  val ACU_2: "ACU_2" = "ACU_2"
+  inline val ACU_1: "ACU_1" = "ACU_1"
+  inline val ACU_2: "ACU_2" = "ACU_2"
 
-  @inline def values = js.Array[ComputeType](ACU_1, ACU_2)
+  inline def values: js.Array[ComputeType] = js.Array(ACU_1, ACU_2)
 }
 
 type DatasetActionType = "QUERY" | "CONTAINER"
 object DatasetActionType {
-  val QUERY: "QUERY" = "QUERY"
-  val CONTAINER: "CONTAINER" = "CONTAINER"
+  inline val QUERY: "QUERY" = "QUERY"
+  inline val CONTAINER: "CONTAINER" = "CONTAINER"
 
-  @inline def values = js.Array[DatasetActionType](QUERY, CONTAINER)
+  inline def values: js.Array[DatasetActionType] = js.Array(QUERY, CONTAINER)
 }
 
 type DatasetContentState = "CREATING" | "SUCCEEDED" | "FAILED"
 object DatasetContentState {
-  val CREATING: "CREATING" = "CREATING"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[DatasetContentState](CREATING, SUCCEEDED, FAILED)
+  inline def values: js.Array[DatasetContentState] = js.Array(CREATING, SUCCEEDED, FAILED)
 }
 
 type DatasetStatus = "CREATING" | "ACTIVE" | "DELETING"
 object DatasetStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETING: "DELETING" = "DELETING"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array[DatasetStatus](CREATING, ACTIVE, DELETING)
+  inline def values: js.Array[DatasetStatus] = js.Array(CREATING, ACTIVE, DELETING)
 }
 
 type DatastoreStatus = "CREATING" | "ACTIVE" | "DELETING"
 object DatastoreStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETING: "DELETING" = "DELETING"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array[DatastoreStatus](CREATING, ACTIVE, DELETING)
+  inline def values: js.Array[DatastoreStatus] = js.Array(CREATING, ACTIVE, DELETING)
 }
 
 type FileFormatType = "JSON" | "PARQUET"
 object FileFormatType {
-  val JSON: "JSON" = "JSON"
-  val PARQUET: "PARQUET" = "PARQUET"
+  inline val JSON: "JSON" = "JSON"
+  inline val PARQUET: "PARQUET" = "PARQUET"
 
-  @inline def values = js.Array[FileFormatType](JSON, PARQUET)
+  inline def values: js.Array[FileFormatType] = js.Array(JSON, PARQUET)
 }
 
 type LoggingLevel = "ERROR"
 object LoggingLevel {
-  val ERROR: "ERROR" = "ERROR"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array[LoggingLevel](ERROR)
+  inline def values: js.Array[LoggingLevel] = js.Array(ERROR)
 }
 
 type ReprocessingStatus = "RUNNING" | "SUCCEEDED" | "CANCELLED" | "FAILED"
 object ReprocessingStatus {
-  val RUNNING: "RUNNING" = "RUNNING"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val CANCELLED: "CANCELLED" = "CANCELLED"
-  val FAILED: "FAILED" = "FAILED"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[ReprocessingStatus](RUNNING, SUCCEEDED, CANCELLED, FAILED)
+  inline def values: js.Array[ReprocessingStatus] = js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED)
 }

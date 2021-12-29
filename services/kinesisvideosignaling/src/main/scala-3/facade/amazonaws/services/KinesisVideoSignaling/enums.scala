@@ -4,7 +4,7 @@ import scalajs._
 
 type Service = "TURN"
 object Service {
-  val TURN: "TURN" = "TURN"
+  inline val TURN: "TURN" = "TURN"
 
-  @inline def values = js.Array[Service](TURN)
+  inline def values: js.Array[Service] = js.Array(TURN)
 }

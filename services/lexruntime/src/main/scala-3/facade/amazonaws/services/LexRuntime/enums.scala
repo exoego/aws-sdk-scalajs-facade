@@ -4,58 +4,58 @@ import scalajs._
 
 type ConfirmationStatus = "None" | "Confirmed" | "Denied"
 object ConfirmationStatus {
-  val None: "None" = "None"
-  val Confirmed: "Confirmed" = "Confirmed"
-  val Denied: "Denied" = "Denied"
+  inline val None: "None" = "None"
+  inline val Confirmed: "Confirmed" = "Confirmed"
+  inline val Denied: "Denied" = "Denied"
 
-  @inline def values = js.Array[ConfirmationStatus](None, Confirmed, Denied)
+  inline def values: js.Array[ConfirmationStatus] = js.Array(None, Confirmed, Denied)
 }
 
 type ContentType = "application/vnd.amazonaws.card.generic"
 object ContentType {
-  val `application/vnd.amazonaws.card.generic`: "application/vnd.amazonaws.card.generic" = "application/vnd.amazonaws.card.generic"
+  inline val `application/vnd.amazonaws.card.generic`: "application/vnd.amazonaws.card.generic" = "application/vnd.amazonaws.card.generic"
 
-  @inline def values = js.Array[ContentType](`application/vnd.amazonaws.card.generic`)
+  inline def values: js.Array[ContentType] = js.Array(`application/vnd.amazonaws.card.generic`)
 }
 
 type DialogActionType = "ElicitIntent" | "ConfirmIntent" | "ElicitSlot" | "Close" | "Delegate"
 object DialogActionType {
-  val ElicitIntent: "ElicitIntent" = "ElicitIntent"
-  val ConfirmIntent: "ConfirmIntent" = "ConfirmIntent"
-  val ElicitSlot: "ElicitSlot" = "ElicitSlot"
-  val Close: "Close" = "Close"
-  val Delegate: "Delegate" = "Delegate"
+  inline val ElicitIntent: "ElicitIntent" = "ElicitIntent"
+  inline val ConfirmIntent: "ConfirmIntent" = "ConfirmIntent"
+  inline val ElicitSlot: "ElicitSlot" = "ElicitSlot"
+  inline val Close: "Close" = "Close"
+  inline val Delegate: "Delegate" = "Delegate"
 
-  @inline def values = js.Array[DialogActionType](ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate)
+  inline def values: js.Array[DialogActionType] = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate)
 }
 
 type DialogState = "ElicitIntent" | "ConfirmIntent" | "ElicitSlot" | "Fulfilled" | "ReadyForFulfillment" | "Failed"
 object DialogState {
-  val ElicitIntent: "ElicitIntent" = "ElicitIntent"
-  val ConfirmIntent: "ConfirmIntent" = "ConfirmIntent"
-  val ElicitSlot: "ElicitSlot" = "ElicitSlot"
-  val Fulfilled: "Fulfilled" = "Fulfilled"
-  val ReadyForFulfillment: "ReadyForFulfillment" = "ReadyForFulfillment"
-  val Failed: "Failed" = "Failed"
+  inline val ElicitIntent: "ElicitIntent" = "ElicitIntent"
+  inline val ConfirmIntent: "ConfirmIntent" = "ConfirmIntent"
+  inline val ElicitSlot: "ElicitSlot" = "ElicitSlot"
+  inline val Fulfilled: "Fulfilled" = "Fulfilled"
+  inline val ReadyForFulfillment: "ReadyForFulfillment" = "ReadyForFulfillment"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array[DialogState](ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed)
+  inline def values: js.Array[DialogState] = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed)
 }
 
 type FulfillmentState = "Fulfilled" | "Failed" | "ReadyForFulfillment"
 object FulfillmentState {
-  val Fulfilled: "Fulfilled" = "Fulfilled"
-  val Failed: "Failed" = "Failed"
-  val ReadyForFulfillment: "ReadyForFulfillment" = "ReadyForFulfillment"
+  inline val Fulfilled: "Fulfilled" = "Fulfilled"
+  inline val Failed: "Failed" = "Failed"
+  inline val ReadyForFulfillment: "ReadyForFulfillment" = "ReadyForFulfillment"
 
-  @inline def values = js.Array[FulfillmentState](Fulfilled, Failed, ReadyForFulfillment)
+  inline def values: js.Array[FulfillmentState] = js.Array(Fulfilled, Failed, ReadyForFulfillment)
 }
 
 type MessageFormatType = "PlainText" | "CustomPayload" | "SSML" | "Composite"
 object MessageFormatType {
-  val PlainText: "PlainText" = "PlainText"
-  val CustomPayload: "CustomPayload" = "CustomPayload"
-  val SSML: "SSML" = "SSML"
-  val Composite: "Composite" = "Composite"
+  inline val PlainText: "PlainText" = "PlainText"
+  inline val CustomPayload: "CustomPayload" = "CustomPayload"
+  inline val SSML: "SSML" = "SSML"
+  inline val Composite: "Composite" = "Composite"
 
-  @inline def values = js.Array[MessageFormatType](PlainText, CustomPayload, SSML, Composite)
+  inline def values: js.Array[MessageFormatType] = js.Array(PlainText, CustomPayload, SSML, Composite)
 }

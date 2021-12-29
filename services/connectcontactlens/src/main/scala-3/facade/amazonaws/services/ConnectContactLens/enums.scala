@@ -4,9 +4,9 @@ import scalajs._
 
 type SentimentValue = "POSITIVE" | "NEUTRAL" | "NEGATIVE"
 object SentimentValue {
-  val POSITIVE: "POSITIVE" = "POSITIVE"
-  val NEUTRAL: "NEUTRAL" = "NEUTRAL"
-  val NEGATIVE: "NEGATIVE" = "NEGATIVE"
+  inline val POSITIVE: "POSITIVE" = "POSITIVE"
+  inline val NEUTRAL: "NEUTRAL" = "NEUTRAL"
+  inline val NEGATIVE: "NEGATIVE" = "NEGATIVE"
 
-  @inline def values = js.Array[SentimentValue](POSITIVE, NEUTRAL, NEGATIVE)
+  inline def values: js.Array[SentimentValue] = js.Array(POSITIVE, NEUTRAL, NEGATIVE)
 }

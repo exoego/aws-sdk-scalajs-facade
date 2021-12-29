@@ -4,137 +4,137 @@ import scalajs._
 
 type AccountGateStatus = "SUCCEEDED" | "FAILED" | "SKIPPED"
 object AccountGateStatus {
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
-  val SKIPPED: "SKIPPED" = "SKIPPED"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SKIPPED: "SKIPPED" = "SKIPPED"
 
-  @inline def values = js.Array[AccountGateStatus](SUCCEEDED, FAILED, SKIPPED)
+  inline def values: js.Array[AccountGateStatus] = js.Array(SUCCEEDED, FAILED, SKIPPED)
 }
 
 type CallAs = "SELF" | "DELEGATED_ADMIN"
 object CallAs {
-  val SELF: "SELF" = "SELF"
-  val DELEGATED_ADMIN: "DELEGATED_ADMIN" = "DELEGATED_ADMIN"
+  inline val SELF: "SELF" = "SELF"
+  inline val DELEGATED_ADMIN: "DELEGATED_ADMIN" = "DELEGATED_ADMIN"
 
-  @inline def values = js.Array[CallAs](SELF, DELEGATED_ADMIN)
+  inline def values: js.Array[CallAs] = js.Array(SELF, DELEGATED_ADMIN)
 }
 
 type Capability = "CAPABILITY_IAM" | "CAPABILITY_NAMED_IAM" | "CAPABILITY_AUTO_EXPAND"
 object Capability {
-  val CAPABILITY_IAM: "CAPABILITY_IAM" = "CAPABILITY_IAM"
-  val CAPABILITY_NAMED_IAM: "CAPABILITY_NAMED_IAM" = "CAPABILITY_NAMED_IAM"
-  val CAPABILITY_AUTO_EXPAND: "CAPABILITY_AUTO_EXPAND" = "CAPABILITY_AUTO_EXPAND"
+  inline val CAPABILITY_IAM: "CAPABILITY_IAM" = "CAPABILITY_IAM"
+  inline val CAPABILITY_NAMED_IAM: "CAPABILITY_NAMED_IAM" = "CAPABILITY_NAMED_IAM"
+  inline val CAPABILITY_AUTO_EXPAND: "CAPABILITY_AUTO_EXPAND" = "CAPABILITY_AUTO_EXPAND"
 
-  @inline def values = js.Array[Capability](CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND)
+  inline def values: js.Array[Capability] = js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND)
 }
 
 type ChangeAction = "Add" | "Modify" | "Remove" | "Import" | "Dynamic"
 object ChangeAction {
-  val Add: "Add" = "Add"
-  val Modify: "Modify" = "Modify"
-  val Remove: "Remove" = "Remove"
-  val Import: "Import" = "Import"
-  val Dynamic: "Dynamic" = "Dynamic"
+  inline val Add: "Add" = "Add"
+  inline val Modify: "Modify" = "Modify"
+  inline val Remove: "Remove" = "Remove"
+  inline val Import: "Import" = "Import"
+  inline val Dynamic: "Dynamic" = "Dynamic"
 
-  @inline def values = js.Array[ChangeAction](Add, Modify, Remove, Import, Dynamic)
+  inline def values: js.Array[ChangeAction] = js.Array(Add, Modify, Remove, Import, Dynamic)
 }
 
 type ChangeSetStatus = "CREATE_PENDING" | "CREATE_IN_PROGRESS" | "CREATE_COMPLETE" | "DELETE_PENDING" | "DELETE_IN_PROGRESS" | "DELETE_COMPLETE" | "DELETE_FAILED" | "FAILED"
 object ChangeSetStatus {
-  val CREATE_PENDING: "CREATE_PENDING" = "CREATE_PENDING"
-  val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
-  val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
-  val DELETE_PENDING: "DELETE_PENDING" = "DELETE_PENDING"
-  val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
-  val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
-  val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
-  val FAILED: "FAILED" = "FAILED"
+  inline val CREATE_PENDING: "CREATE_PENDING" = "CREATE_PENDING"
+  inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  inline val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
+  inline val DELETE_PENDING: "DELETE_PENDING" = "DELETE_PENDING"
+  inline val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+  inline val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
+  inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[ChangeSetStatus](CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_PENDING, DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, FAILED)
+  inline def values: js.Array[ChangeSetStatus] = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, DELETE_PENDING, DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, FAILED)
 }
 
 type ChangeSetType = "CREATE" | "UPDATE" | "IMPORT"
 object ChangeSetType {
-  val CREATE: "CREATE" = "CREATE"
-  val UPDATE: "UPDATE" = "UPDATE"
-  val IMPORT: "IMPORT" = "IMPORT"
+  inline val CREATE: "CREATE" = "CREATE"
+  inline val UPDATE: "UPDATE" = "UPDATE"
+  inline val IMPORT: "IMPORT" = "IMPORT"
 
-  @inline def values = js.Array[ChangeSetType](CREATE, UPDATE, IMPORT)
+  inline def values: js.Array[ChangeSetType] = js.Array(CREATE, UPDATE, IMPORT)
 }
 
 type ChangeSource = "ResourceReference" | "ParameterReference" | "ResourceAttribute" | "DirectModification" | "Automatic"
 object ChangeSource {
-  val ResourceReference: "ResourceReference" = "ResourceReference"
-  val ParameterReference: "ParameterReference" = "ParameterReference"
-  val ResourceAttribute: "ResourceAttribute" = "ResourceAttribute"
-  val DirectModification: "DirectModification" = "DirectModification"
-  val Automatic: "Automatic" = "Automatic"
+  inline val ResourceReference: "ResourceReference" = "ResourceReference"
+  inline val ParameterReference: "ParameterReference" = "ParameterReference"
+  inline val ResourceAttribute: "ResourceAttribute" = "ResourceAttribute"
+  inline val DirectModification: "DirectModification" = "DirectModification"
+  inline val Automatic: "Automatic" = "Automatic"
 
-  @inline def values = js.Array[ChangeSource](ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
+  inline def values: js.Array[ChangeSource] = js.Array(ResourceReference, ParameterReference, ResourceAttribute, DirectModification, Automatic)
 }
 
 type ChangeType = "Resource"
 object ChangeType {
-  val Resource: "Resource" = "Resource"
+  inline val Resource: "Resource" = "Resource"
 
-  @inline def values = js.Array[ChangeType](Resource)
+  inline def values: js.Array[ChangeType] = js.Array(Resource)
 }
 
 type DeprecatedStatus = "LIVE" | "DEPRECATED"
 object DeprecatedStatus {
-  val LIVE: "LIVE" = "LIVE"
-  val DEPRECATED: "DEPRECATED" = "DEPRECATED"
+  inline val LIVE: "LIVE" = "LIVE"
+  inline val DEPRECATED: "DEPRECATED" = "DEPRECATED"
 
-  @inline def values = js.Array[DeprecatedStatus](LIVE, DEPRECATED)
+  inline def values: js.Array[DeprecatedStatus] = js.Array(LIVE, DEPRECATED)
 }
 
 type DifferenceType = "ADD" | "REMOVE" | "NOT_EQUAL"
 object DifferenceType {
-  val ADD: "ADD" = "ADD"
-  val REMOVE: "REMOVE" = "REMOVE"
-  val NOT_EQUAL: "NOT_EQUAL" = "NOT_EQUAL"
+  inline val ADD: "ADD" = "ADD"
+  inline val REMOVE: "REMOVE" = "REMOVE"
+  inline val NOT_EQUAL: "NOT_EQUAL" = "NOT_EQUAL"
 
-  @inline def values = js.Array[DifferenceType](ADD, REMOVE, NOT_EQUAL)
+  inline def values: js.Array[DifferenceType] = js.Array(ADD, REMOVE, NOT_EQUAL)
 }
 
 type EvaluationType = "Static" | "Dynamic"
 object EvaluationType {
-  val Static: "Static" = "Static"
-  val Dynamic: "Dynamic" = "Dynamic"
+  inline val Static: "Static" = "Static"
+  inline val Dynamic: "Dynamic" = "Dynamic"
 
-  @inline def values = js.Array[EvaluationType](Static, Dynamic)
+  inline def values: js.Array[EvaluationType] = js.Array(Static, Dynamic)
 }
 
 type ExecutionStatus = "UNAVAILABLE" | "AVAILABLE" | "EXECUTE_IN_PROGRESS" | "EXECUTE_COMPLETE" | "EXECUTE_FAILED" | "OBSOLETE"
 object ExecutionStatus {
-  val UNAVAILABLE: "UNAVAILABLE" = "UNAVAILABLE"
-  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
-  val EXECUTE_IN_PROGRESS: "EXECUTE_IN_PROGRESS" = "EXECUTE_IN_PROGRESS"
-  val EXECUTE_COMPLETE: "EXECUTE_COMPLETE" = "EXECUTE_COMPLETE"
-  val EXECUTE_FAILED: "EXECUTE_FAILED" = "EXECUTE_FAILED"
-  val OBSOLETE: "OBSOLETE" = "OBSOLETE"
+  inline val UNAVAILABLE: "UNAVAILABLE" = "UNAVAILABLE"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val EXECUTE_IN_PROGRESS: "EXECUTE_IN_PROGRESS" = "EXECUTE_IN_PROGRESS"
+  inline val EXECUTE_COMPLETE: "EXECUTE_COMPLETE" = "EXECUTE_COMPLETE"
+  inline val EXECUTE_FAILED: "EXECUTE_FAILED" = "EXECUTE_FAILED"
+  inline val OBSOLETE: "OBSOLETE" = "OBSOLETE"
 
-  @inline def values = js.Array[ExecutionStatus](UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
+  inline def values: js.Array[ExecutionStatus] = js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
 }
 
 type HandlerErrorCode = "NotUpdatable" | "InvalidRequest" | "AccessDenied" | "InvalidCredentials" | "AlreadyExists" | "NotFound" | "ResourceConflict" | "Throttling" | "ServiceLimitExceeded" | "NotStabilized" | "GeneralServiceException" | "ServiceInternalError" | "NetworkFailure" | "InternalFailure"
 object HandlerErrorCode {
-  val NotUpdatable: "NotUpdatable" = "NotUpdatable"
-  val InvalidRequest: "InvalidRequest" = "InvalidRequest"
-  val AccessDenied: "AccessDenied" = "AccessDenied"
-  val InvalidCredentials: "InvalidCredentials" = "InvalidCredentials"
-  val AlreadyExists: "AlreadyExists" = "AlreadyExists"
-  val NotFound: "NotFound" = "NotFound"
-  val ResourceConflict: "ResourceConflict" = "ResourceConflict"
-  val Throttling: "Throttling" = "Throttling"
-  val ServiceLimitExceeded: "ServiceLimitExceeded" = "ServiceLimitExceeded"
-  val NotStabilized: "NotStabilized" = "NotStabilized"
-  val GeneralServiceException: "GeneralServiceException" = "GeneralServiceException"
-  val ServiceInternalError: "ServiceInternalError" = "ServiceInternalError"
-  val NetworkFailure: "NetworkFailure" = "NetworkFailure"
-  val InternalFailure: "InternalFailure" = "InternalFailure"
+  inline val NotUpdatable: "NotUpdatable" = "NotUpdatable"
+  inline val InvalidRequest: "InvalidRequest" = "InvalidRequest"
+  inline val AccessDenied: "AccessDenied" = "AccessDenied"
+  inline val InvalidCredentials: "InvalidCredentials" = "InvalidCredentials"
+  inline val AlreadyExists: "AlreadyExists" = "AlreadyExists"
+  inline val NotFound: "NotFound" = "NotFound"
+  inline val ResourceConflict: "ResourceConflict" = "ResourceConflict"
+  inline val Throttling: "Throttling" = "Throttling"
+  inline val ServiceLimitExceeded: "ServiceLimitExceeded" = "ServiceLimitExceeded"
+  inline val NotStabilized: "NotStabilized" = "NotStabilized"
+  inline val GeneralServiceException: "GeneralServiceException" = "GeneralServiceException"
+  inline val ServiceInternalError: "ServiceInternalError" = "ServiceInternalError"
+  inline val NetworkFailure: "NetworkFailure" = "NetworkFailure"
+  inline val InternalFailure: "InternalFailure" = "InternalFailure"
 
-  @inline def values = js.Array[HandlerErrorCode](
+  inline def values: js.Array[HandlerErrorCode] = js.Array(
     NotUpdatable,
     InvalidRequest,
     AccessDenied,
@@ -154,123 +154,123 @@ object HandlerErrorCode {
 
 type OnFailure = "DO_NOTHING" | "ROLLBACK" | "DELETE"
 object OnFailure {
-  val DO_NOTHING: "DO_NOTHING" = "DO_NOTHING"
-  val ROLLBACK: "ROLLBACK" = "ROLLBACK"
-  val DELETE: "DELETE" = "DELETE"
+  inline val DO_NOTHING: "DO_NOTHING" = "DO_NOTHING"
+  inline val ROLLBACK: "ROLLBACK" = "ROLLBACK"
+  inline val DELETE: "DELETE" = "DELETE"
 
-  @inline def values = js.Array[OnFailure](DO_NOTHING, ROLLBACK, DELETE)
+  inline def values: js.Array[OnFailure] = js.Array(DO_NOTHING, ROLLBACK, DELETE)
 }
 
 type OperationStatus = "PENDING" | "IN_PROGRESS" | "SUCCESS" | "FAILED"
 object OperationStatus {
-  val PENDING: "PENDING" = "PENDING"
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val SUCCESS: "SUCCESS" = "SUCCESS"
-  val FAILED: "FAILED" = "FAILED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[OperationStatus](PENDING, IN_PROGRESS, SUCCESS, FAILED)
+  inline def values: js.Array[OperationStatus] = js.Array(PENDING, IN_PROGRESS, SUCCESS, FAILED)
 }
 
 type PermissionModels = "SERVICE_MANAGED" | "SELF_MANAGED"
 object PermissionModels {
-  val SERVICE_MANAGED: "SERVICE_MANAGED" = "SERVICE_MANAGED"
-  val SELF_MANAGED: "SELF_MANAGED" = "SELF_MANAGED"
+  inline val SERVICE_MANAGED: "SERVICE_MANAGED" = "SERVICE_MANAGED"
+  inline val SELF_MANAGED: "SELF_MANAGED" = "SELF_MANAGED"
 
-  @inline def values = js.Array[PermissionModels](SERVICE_MANAGED, SELF_MANAGED)
+  inline def values: js.Array[PermissionModels] = js.Array(SERVICE_MANAGED, SELF_MANAGED)
 }
 
 type ProvisioningType = "NON_PROVISIONABLE" | "IMMUTABLE" | "FULLY_MUTABLE"
 object ProvisioningType {
-  val NON_PROVISIONABLE: "NON_PROVISIONABLE" = "NON_PROVISIONABLE"
-  val IMMUTABLE: "IMMUTABLE" = "IMMUTABLE"
-  val FULLY_MUTABLE: "FULLY_MUTABLE" = "FULLY_MUTABLE"
+  inline val NON_PROVISIONABLE: "NON_PROVISIONABLE" = "NON_PROVISIONABLE"
+  inline val IMMUTABLE: "IMMUTABLE" = "IMMUTABLE"
+  inline val FULLY_MUTABLE: "FULLY_MUTABLE" = "FULLY_MUTABLE"
 
-  @inline def values = js.Array[ProvisioningType](NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE)
+  inline def values: js.Array[ProvisioningType] = js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE)
 }
 
 type RegionConcurrencyType = "SEQUENTIAL" | "PARALLEL"
 object RegionConcurrencyType {
-  val SEQUENTIAL: "SEQUENTIAL" = "SEQUENTIAL"
-  val PARALLEL: "PARALLEL" = "PARALLEL"
+  inline val SEQUENTIAL: "SEQUENTIAL" = "SEQUENTIAL"
+  inline val PARALLEL: "PARALLEL" = "PARALLEL"
 
-  @inline def values = js.Array[RegionConcurrencyType](SEQUENTIAL, PARALLEL)
+  inline def values: js.Array[RegionConcurrencyType] = js.Array(SEQUENTIAL, PARALLEL)
 }
 
 type RegistrationStatus = "COMPLETE" | "IN_PROGRESS" | "FAILED"
 object RegistrationStatus {
-  val COMPLETE: "COMPLETE" = "COMPLETE"
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val FAILED: "FAILED" = "FAILED"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[RegistrationStatus](COMPLETE, IN_PROGRESS, FAILED)
+  inline def values: js.Array[RegistrationStatus] = js.Array(COMPLETE, IN_PROGRESS, FAILED)
 }
 
 type RegistryType = "RESOURCE" | "MODULE"
 object RegistryType {
-  val RESOURCE: "RESOURCE" = "RESOURCE"
-  val MODULE: "MODULE" = "MODULE"
+  inline val RESOURCE: "RESOURCE" = "RESOURCE"
+  inline val MODULE: "MODULE" = "MODULE"
 
-  @inline def values = js.Array[RegistryType](RESOURCE, MODULE)
+  inline def values: js.Array[RegistryType] = js.Array(RESOURCE, MODULE)
 }
 
 type Replacement = "True" | "False" | "Conditional"
 object Replacement {
-  val True: "True" = "True"
-  val False: "False" = "False"
-  val Conditional: "Conditional" = "Conditional"
+  inline val True: "True" = "True"
+  inline val False: "False" = "False"
+  inline val Conditional: "Conditional" = "Conditional"
 
-  @inline def values = js.Array[Replacement](True, False, Conditional)
+  inline def values: js.Array[Replacement] = js.Array(True, False, Conditional)
 }
 
 type RequiresRecreation = "Never" | "Conditionally" | "Always"
 object RequiresRecreation {
-  val Never: "Never" = "Never"
-  val Conditionally: "Conditionally" = "Conditionally"
-  val Always: "Always" = "Always"
+  inline val Never: "Never" = "Never"
+  inline val Conditionally: "Conditionally" = "Conditionally"
+  inline val Always: "Always" = "Always"
 
-  @inline def values = js.Array[RequiresRecreation](Never, Conditionally, Always)
+  inline def values: js.Array[RequiresRecreation] = js.Array(Never, Conditionally, Always)
 }
 
 type ResourceAttribute = "Properties" | "Metadata" | "CreationPolicy" | "UpdatePolicy" | "DeletionPolicy" | "Tags"
 object ResourceAttribute {
-  val Properties: "Properties" = "Properties"
-  val Metadata: "Metadata" = "Metadata"
-  val CreationPolicy: "CreationPolicy" = "CreationPolicy"
-  val UpdatePolicy: "UpdatePolicy" = "UpdatePolicy"
-  val DeletionPolicy: "DeletionPolicy" = "DeletionPolicy"
-  val Tags: "Tags" = "Tags"
+  inline val Properties: "Properties" = "Properties"
+  inline val Metadata: "Metadata" = "Metadata"
+  inline val CreationPolicy: "CreationPolicy" = "CreationPolicy"
+  inline val UpdatePolicy: "UpdatePolicy" = "UpdatePolicy"
+  inline val DeletionPolicy: "DeletionPolicy" = "DeletionPolicy"
+  inline val Tags: "Tags" = "Tags"
 
-  @inline def values = js.Array[ResourceAttribute](Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags)
+  inline def values: js.Array[ResourceAttribute] = js.Array(Properties, Metadata, CreationPolicy, UpdatePolicy, DeletionPolicy, Tags)
 }
 
 type ResourceSignalStatus = "SUCCESS" | "FAILURE"
 object ResourceSignalStatus {
-  val SUCCESS: "SUCCESS" = "SUCCESS"
-  val FAILURE: "FAILURE" = "FAILURE"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val FAILURE: "FAILURE" = "FAILURE"
 
-  @inline def values = js.Array[ResourceSignalStatus](SUCCESS, FAILURE)
+  inline def values: js.Array[ResourceSignalStatus] = js.Array(SUCCESS, FAILURE)
 }
 
 type ResourceStatus = "CREATE_IN_PROGRESS" | "CREATE_FAILED" | "CREATE_COMPLETE" | "DELETE_IN_PROGRESS" | "DELETE_FAILED" | "DELETE_COMPLETE" | "DELETE_SKIPPED" | "UPDATE_IN_PROGRESS" | "UPDATE_FAILED" | "UPDATE_COMPLETE" | "IMPORT_FAILED" | "IMPORT_COMPLETE" | "IMPORT_IN_PROGRESS" | "IMPORT_ROLLBACK_IN_PROGRESS" | "IMPORT_ROLLBACK_FAILED" | "IMPORT_ROLLBACK_COMPLETE"
 object ResourceStatus {
-  val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
-  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
-  val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
-  val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
-  val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
-  val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
-  val DELETE_SKIPPED: "DELETE_SKIPPED" = "DELETE_SKIPPED"
-  val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
-  val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
-  val UPDATE_COMPLETE: "UPDATE_COMPLETE" = "UPDATE_COMPLETE"
-  val IMPORT_FAILED: "IMPORT_FAILED" = "IMPORT_FAILED"
-  val IMPORT_COMPLETE: "IMPORT_COMPLETE" = "IMPORT_COMPLETE"
-  val IMPORT_IN_PROGRESS: "IMPORT_IN_PROGRESS" = "IMPORT_IN_PROGRESS"
-  val IMPORT_ROLLBACK_IN_PROGRESS: "IMPORT_ROLLBACK_IN_PROGRESS" = "IMPORT_ROLLBACK_IN_PROGRESS"
-  val IMPORT_ROLLBACK_FAILED: "IMPORT_ROLLBACK_FAILED" = "IMPORT_ROLLBACK_FAILED"
-  val IMPORT_ROLLBACK_COMPLETE: "IMPORT_ROLLBACK_COMPLETE" = "IMPORT_ROLLBACK_COMPLETE"
+  inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
+  inline val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+  inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+  inline val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
+  inline val DELETE_SKIPPED: "DELETE_SKIPPED" = "DELETE_SKIPPED"
+  inline val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+  inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
+  inline val UPDATE_COMPLETE: "UPDATE_COMPLETE" = "UPDATE_COMPLETE"
+  inline val IMPORT_FAILED: "IMPORT_FAILED" = "IMPORT_FAILED"
+  inline val IMPORT_COMPLETE: "IMPORT_COMPLETE" = "IMPORT_COMPLETE"
+  inline val IMPORT_IN_PROGRESS: "IMPORT_IN_PROGRESS" = "IMPORT_IN_PROGRESS"
+  inline val IMPORT_ROLLBACK_IN_PROGRESS: "IMPORT_ROLLBACK_IN_PROGRESS" = "IMPORT_ROLLBACK_IN_PROGRESS"
+  inline val IMPORT_ROLLBACK_FAILED: "IMPORT_ROLLBACK_FAILED" = "IMPORT_ROLLBACK_FAILED"
+  inline val IMPORT_ROLLBACK_COMPLETE: "IMPORT_ROLLBACK_COMPLETE" = "IMPORT_ROLLBACK_COMPLETE"
 
-  @inline def values = js.Array[ResourceStatus](
+  inline def values: js.Array[ResourceStatus] = js.Array(
     CREATE_IN_PROGRESS,
     CREATE_FAILED,
     CREATE_COMPLETE,
@@ -292,148 +292,148 @@ object ResourceStatus {
 
 type StackDriftDetectionStatus = "DETECTION_IN_PROGRESS" | "DETECTION_FAILED" | "DETECTION_COMPLETE"
 object StackDriftDetectionStatus {
-  val DETECTION_IN_PROGRESS: "DETECTION_IN_PROGRESS" = "DETECTION_IN_PROGRESS"
-  val DETECTION_FAILED: "DETECTION_FAILED" = "DETECTION_FAILED"
-  val DETECTION_COMPLETE: "DETECTION_COMPLETE" = "DETECTION_COMPLETE"
+  inline val DETECTION_IN_PROGRESS: "DETECTION_IN_PROGRESS" = "DETECTION_IN_PROGRESS"
+  inline val DETECTION_FAILED: "DETECTION_FAILED" = "DETECTION_FAILED"
+  inline val DETECTION_COMPLETE: "DETECTION_COMPLETE" = "DETECTION_COMPLETE"
 
-  @inline def values = js.Array[StackDriftDetectionStatus](DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE)
+  inline def values: js.Array[StackDriftDetectionStatus] = js.Array(DETECTION_IN_PROGRESS, DETECTION_FAILED, DETECTION_COMPLETE)
 }
 
 type StackDriftStatus = "DRIFTED" | "IN_SYNC" | "UNKNOWN" | "NOT_CHECKED"
 object StackDriftStatus {
-  val DRIFTED: "DRIFTED" = "DRIFTED"
-  val IN_SYNC: "IN_SYNC" = "IN_SYNC"
-  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
-  val NOT_CHECKED: "NOT_CHECKED" = "NOT_CHECKED"
+  inline val DRIFTED: "DRIFTED" = "DRIFTED"
+  inline val IN_SYNC: "IN_SYNC" = "IN_SYNC"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val NOT_CHECKED: "NOT_CHECKED" = "NOT_CHECKED"
 
-  @inline def values = js.Array[StackDriftStatus](DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED)
+  inline def values: js.Array[StackDriftStatus] = js.Array(DRIFTED, IN_SYNC, UNKNOWN, NOT_CHECKED)
 }
 
 type StackInstanceDetailedStatus = "PENDING" | "RUNNING" | "SUCCEEDED" | "FAILED" | "CANCELLED" | "INOPERABLE"
 object StackInstanceDetailedStatus {
-  val PENDING: "PENDING" = "PENDING"
-  val RUNNING: "RUNNING" = "RUNNING"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
-  val CANCELLED: "CANCELLED" = "CANCELLED"
-  val INOPERABLE: "INOPERABLE" = "INOPERABLE"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val INOPERABLE: "INOPERABLE" = "INOPERABLE"
 
-  @inline def values = js.Array[StackInstanceDetailedStatus](PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE)
+  inline def values: js.Array[StackInstanceDetailedStatus] = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED, INOPERABLE)
 }
 
 type StackInstanceFilterName = "DETAILED_STATUS"
 object StackInstanceFilterName {
-  val DETAILED_STATUS: "DETAILED_STATUS" = "DETAILED_STATUS"
+  inline val DETAILED_STATUS: "DETAILED_STATUS" = "DETAILED_STATUS"
 
-  @inline def values = js.Array[StackInstanceFilterName](DETAILED_STATUS)
+  inline def values: js.Array[StackInstanceFilterName] = js.Array(DETAILED_STATUS)
 }
 
 type StackInstanceStatus = "CURRENT" | "OUTDATED" | "INOPERABLE"
 object StackInstanceStatus {
-  val CURRENT: "CURRENT" = "CURRENT"
-  val OUTDATED: "OUTDATED" = "OUTDATED"
-  val INOPERABLE: "INOPERABLE" = "INOPERABLE"
+  inline val CURRENT: "CURRENT" = "CURRENT"
+  inline val OUTDATED: "OUTDATED" = "OUTDATED"
+  inline val INOPERABLE: "INOPERABLE" = "INOPERABLE"
 
-  @inline def values = js.Array[StackInstanceStatus](CURRENT, OUTDATED, INOPERABLE)
+  inline def values: js.Array[StackInstanceStatus] = js.Array(CURRENT, OUTDATED, INOPERABLE)
 }
 
 type StackResourceDriftStatus = "IN_SYNC" | "MODIFIED" | "DELETED" | "NOT_CHECKED"
 object StackResourceDriftStatus {
-  val IN_SYNC: "IN_SYNC" = "IN_SYNC"
-  val MODIFIED: "MODIFIED" = "MODIFIED"
-  val DELETED: "DELETED" = "DELETED"
-  val NOT_CHECKED: "NOT_CHECKED" = "NOT_CHECKED"
+  inline val IN_SYNC: "IN_SYNC" = "IN_SYNC"
+  inline val MODIFIED: "MODIFIED" = "MODIFIED"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val NOT_CHECKED: "NOT_CHECKED" = "NOT_CHECKED"
 
-  @inline def values = js.Array[StackResourceDriftStatus](IN_SYNC, MODIFIED, DELETED, NOT_CHECKED)
+  inline def values: js.Array[StackResourceDriftStatus] = js.Array(IN_SYNC, MODIFIED, DELETED, NOT_CHECKED)
 }
 
 type StackSetDriftDetectionStatus = "COMPLETED" | "FAILED" | "PARTIAL_SUCCESS" | "IN_PROGRESS" | "STOPPED"
 object StackSetDriftDetectionStatus {
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val FAILED: "FAILED" = "FAILED"
-  val PARTIAL_SUCCESS: "PARTIAL_SUCCESS" = "PARTIAL_SUCCESS"
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val STOPPED: "STOPPED" = "STOPPED"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val PARTIAL_SUCCESS: "PARTIAL_SUCCESS" = "PARTIAL_SUCCESS"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array[StackSetDriftDetectionStatus](COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED)
+  inline def values: js.Array[StackSetDriftDetectionStatus] = js.Array(COMPLETED, FAILED, PARTIAL_SUCCESS, IN_PROGRESS, STOPPED)
 }
 
 type StackSetDriftStatus = "DRIFTED" | "IN_SYNC" | "NOT_CHECKED"
 object StackSetDriftStatus {
-  val DRIFTED: "DRIFTED" = "DRIFTED"
-  val IN_SYNC: "IN_SYNC" = "IN_SYNC"
-  val NOT_CHECKED: "NOT_CHECKED" = "NOT_CHECKED"
+  inline val DRIFTED: "DRIFTED" = "DRIFTED"
+  inline val IN_SYNC: "IN_SYNC" = "IN_SYNC"
+  inline val NOT_CHECKED: "NOT_CHECKED" = "NOT_CHECKED"
 
-  @inline def values = js.Array[StackSetDriftStatus](DRIFTED, IN_SYNC, NOT_CHECKED)
+  inline def values: js.Array[StackSetDriftStatus] = js.Array(DRIFTED, IN_SYNC, NOT_CHECKED)
 }
 
 type StackSetOperationAction = "CREATE" | "UPDATE" | "DELETE" | "DETECT_DRIFT"
 object StackSetOperationAction {
-  val CREATE: "CREATE" = "CREATE"
-  val UPDATE: "UPDATE" = "UPDATE"
-  val DELETE: "DELETE" = "DELETE"
-  val DETECT_DRIFT: "DETECT_DRIFT" = "DETECT_DRIFT"
+  inline val CREATE: "CREATE" = "CREATE"
+  inline val UPDATE: "UPDATE" = "UPDATE"
+  inline val DELETE: "DELETE" = "DELETE"
+  inline val DETECT_DRIFT: "DETECT_DRIFT" = "DETECT_DRIFT"
 
-  @inline def values = js.Array[StackSetOperationAction](CREATE, UPDATE, DELETE, DETECT_DRIFT)
+  inline def values: js.Array[StackSetOperationAction] = js.Array(CREATE, UPDATE, DELETE, DETECT_DRIFT)
 }
 
 type StackSetOperationResultStatus = "PENDING" | "RUNNING" | "SUCCEEDED" | "FAILED" | "CANCELLED"
 object StackSetOperationResultStatus {
-  val PENDING: "PENDING" = "PENDING"
-  val RUNNING: "RUNNING" = "RUNNING"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
-  val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array[StackSetOperationResultStatus](PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED)
+  inline def values: js.Array[StackSetOperationResultStatus] = js.Array(PENDING, RUNNING, SUCCEEDED, FAILED, CANCELLED)
 }
 
 type StackSetOperationStatus = "RUNNING" | "SUCCEEDED" | "FAILED" | "STOPPING" | "STOPPED" | "QUEUED"
 object StackSetOperationStatus {
-  val RUNNING: "RUNNING" = "RUNNING"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
-  val STOPPING: "STOPPING" = "STOPPING"
-  val STOPPED: "STOPPED" = "STOPPED"
-  val QUEUED: "QUEUED" = "QUEUED"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val STOPPED: "STOPPED" = "STOPPED"
+  inline val QUEUED: "QUEUED" = "QUEUED"
 
-  @inline def values = js.Array[StackSetOperationStatus](RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED)
+  inline def values: js.Array[StackSetOperationStatus] = js.Array(RUNNING, SUCCEEDED, FAILED, STOPPING, STOPPED, QUEUED)
 }
 
 type StackSetStatus = "ACTIVE" | "DELETED"
 object StackSetStatus {
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETED: "DELETED" = "DELETED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array[StackSetStatus](ACTIVE, DELETED)
+  inline def values: js.Array[StackSetStatus] = js.Array(ACTIVE, DELETED)
 }
 
 type StackStatus = "CREATE_IN_PROGRESS" | "CREATE_FAILED" | "CREATE_COMPLETE" | "ROLLBACK_IN_PROGRESS" | "ROLLBACK_FAILED" | "ROLLBACK_COMPLETE" | "DELETE_IN_PROGRESS" | "DELETE_FAILED" | "DELETE_COMPLETE" | "UPDATE_IN_PROGRESS" | "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS" | "UPDATE_COMPLETE" | "UPDATE_ROLLBACK_IN_PROGRESS" | "UPDATE_ROLLBACK_FAILED" | "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" | "UPDATE_ROLLBACK_COMPLETE" | "REVIEW_IN_PROGRESS" | "IMPORT_IN_PROGRESS" | "IMPORT_COMPLETE" | "IMPORT_ROLLBACK_IN_PROGRESS" | "IMPORT_ROLLBACK_FAILED" | "IMPORT_ROLLBACK_COMPLETE"
 object StackStatus {
-  val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
-  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
-  val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
-  val ROLLBACK_IN_PROGRESS: "ROLLBACK_IN_PROGRESS" = "ROLLBACK_IN_PROGRESS"
-  val ROLLBACK_FAILED: "ROLLBACK_FAILED" = "ROLLBACK_FAILED"
-  val ROLLBACK_COMPLETE: "ROLLBACK_COMPLETE" = "ROLLBACK_COMPLETE"
-  val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
-  val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
-  val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
-  val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
-  val UPDATE_COMPLETE_CLEANUP_IN_PROGRESS: "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS" = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS"
-  val UPDATE_COMPLETE: "UPDATE_COMPLETE" = "UPDATE_COMPLETE"
-  val UPDATE_ROLLBACK_IN_PROGRESS: "UPDATE_ROLLBACK_IN_PROGRESS" = "UPDATE_ROLLBACK_IN_PROGRESS"
-  val UPDATE_ROLLBACK_FAILED: "UPDATE_ROLLBACK_FAILED" = "UPDATE_ROLLBACK_FAILED"
-  val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS: "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"
-  val UPDATE_ROLLBACK_COMPLETE: "UPDATE_ROLLBACK_COMPLETE" = "UPDATE_ROLLBACK_COMPLETE"
-  val REVIEW_IN_PROGRESS: "REVIEW_IN_PROGRESS" = "REVIEW_IN_PROGRESS"
-  val IMPORT_IN_PROGRESS: "IMPORT_IN_PROGRESS" = "IMPORT_IN_PROGRESS"
-  val IMPORT_COMPLETE: "IMPORT_COMPLETE" = "IMPORT_COMPLETE"
-  val IMPORT_ROLLBACK_IN_PROGRESS: "IMPORT_ROLLBACK_IN_PROGRESS" = "IMPORT_ROLLBACK_IN_PROGRESS"
-  val IMPORT_ROLLBACK_FAILED: "IMPORT_ROLLBACK_FAILED" = "IMPORT_ROLLBACK_FAILED"
-  val IMPORT_ROLLBACK_COMPLETE: "IMPORT_ROLLBACK_COMPLETE" = "IMPORT_ROLLBACK_COMPLETE"
+  inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
+  inline val ROLLBACK_IN_PROGRESS: "ROLLBACK_IN_PROGRESS" = "ROLLBACK_IN_PROGRESS"
+  inline val ROLLBACK_FAILED: "ROLLBACK_FAILED" = "ROLLBACK_FAILED"
+  inline val ROLLBACK_COMPLETE: "ROLLBACK_COMPLETE" = "ROLLBACK_COMPLETE"
+  inline val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+  inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+  inline val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
+  inline val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+  inline val UPDATE_COMPLETE_CLEANUP_IN_PROGRESS: "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS" = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS"
+  inline val UPDATE_COMPLETE: "UPDATE_COMPLETE" = "UPDATE_COMPLETE"
+  inline val UPDATE_ROLLBACK_IN_PROGRESS: "UPDATE_ROLLBACK_IN_PROGRESS" = "UPDATE_ROLLBACK_IN_PROGRESS"
+  inline val UPDATE_ROLLBACK_FAILED: "UPDATE_ROLLBACK_FAILED" = "UPDATE_ROLLBACK_FAILED"
+  inline val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS: "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"
+  inline val UPDATE_ROLLBACK_COMPLETE: "UPDATE_ROLLBACK_COMPLETE" = "UPDATE_ROLLBACK_COMPLETE"
+  inline val REVIEW_IN_PROGRESS: "REVIEW_IN_PROGRESS" = "REVIEW_IN_PROGRESS"
+  inline val IMPORT_IN_PROGRESS: "IMPORT_IN_PROGRESS" = "IMPORT_IN_PROGRESS"
+  inline val IMPORT_COMPLETE: "IMPORT_COMPLETE" = "IMPORT_COMPLETE"
+  inline val IMPORT_ROLLBACK_IN_PROGRESS: "IMPORT_ROLLBACK_IN_PROGRESS" = "IMPORT_ROLLBACK_IN_PROGRESS"
+  inline val IMPORT_ROLLBACK_FAILED: "IMPORT_ROLLBACK_FAILED" = "IMPORT_ROLLBACK_FAILED"
+  inline val IMPORT_ROLLBACK_COMPLETE: "IMPORT_ROLLBACK_COMPLETE" = "IMPORT_ROLLBACK_COMPLETE"
 
-  @inline def values = js.Array[StackStatus](
+  inline def values: js.Array[StackStatus] = js.Array(
     CREATE_IN_PROGRESS,
     CREATE_FAILED,
     CREATE_COMPLETE,
@@ -461,16 +461,16 @@ object StackStatus {
 
 type TemplateStage = "Original" | "Processed"
 object TemplateStage {
-  val Original: "Original" = "Original"
-  val Processed: "Processed" = "Processed"
+  inline val Original: "Original" = "Original"
+  inline val Processed: "Processed" = "Processed"
 
-  @inline def values = js.Array[TemplateStage](Original, Processed)
+  inline def values: js.Array[TemplateStage] = js.Array(Original, Processed)
 }
 
 type Visibility = "PUBLIC" | "PRIVATE"
 object Visibility {
-  val PUBLIC: "PUBLIC" = "PUBLIC"
-  val PRIVATE: "PRIVATE" = "PRIVATE"
+  inline val PUBLIC: "PUBLIC" = "PUBLIC"
+  inline val PRIVATE: "PRIVATE" = "PRIVATE"
 
-  @inline def values = js.Array[Visibility](PUBLIC, PRIVATE)
+  inline def values: js.Array[Visibility] = js.Array(PUBLIC, PRIVATE)
 }

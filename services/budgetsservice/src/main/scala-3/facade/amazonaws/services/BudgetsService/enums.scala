@@ -4,18 +4,18 @@ import scalajs._
 
 type ActionStatus = "STANDBY" | "PENDING" | "EXECUTION_IN_PROGRESS" | "EXECUTION_SUCCESS" | "EXECUTION_FAILURE" | "REVERSE_IN_PROGRESS" | "REVERSE_SUCCESS" | "REVERSE_FAILURE" | "RESET_IN_PROGRESS" | "RESET_FAILURE"
 object ActionStatus {
-  val STANDBY: "STANDBY" = "STANDBY"
-  val PENDING: "PENDING" = "PENDING"
-  val EXECUTION_IN_PROGRESS: "EXECUTION_IN_PROGRESS" = "EXECUTION_IN_PROGRESS"
-  val EXECUTION_SUCCESS: "EXECUTION_SUCCESS" = "EXECUTION_SUCCESS"
-  val EXECUTION_FAILURE: "EXECUTION_FAILURE" = "EXECUTION_FAILURE"
-  val REVERSE_IN_PROGRESS: "REVERSE_IN_PROGRESS" = "REVERSE_IN_PROGRESS"
-  val REVERSE_SUCCESS: "REVERSE_SUCCESS" = "REVERSE_SUCCESS"
-  val REVERSE_FAILURE: "REVERSE_FAILURE" = "REVERSE_FAILURE"
-  val RESET_IN_PROGRESS: "RESET_IN_PROGRESS" = "RESET_IN_PROGRESS"
-  val RESET_FAILURE: "RESET_FAILURE" = "RESET_FAILURE"
+  inline val STANDBY: "STANDBY" = "STANDBY"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val EXECUTION_IN_PROGRESS: "EXECUTION_IN_PROGRESS" = "EXECUTION_IN_PROGRESS"
+  inline val EXECUTION_SUCCESS: "EXECUTION_SUCCESS" = "EXECUTION_SUCCESS"
+  inline val EXECUTION_FAILURE: "EXECUTION_FAILURE" = "EXECUTION_FAILURE"
+  inline val REVERSE_IN_PROGRESS: "REVERSE_IN_PROGRESS" = "REVERSE_IN_PROGRESS"
+  inline val REVERSE_SUCCESS: "REVERSE_SUCCESS" = "REVERSE_SUCCESS"
+  inline val REVERSE_FAILURE: "REVERSE_FAILURE" = "REVERSE_FAILURE"
+  inline val RESET_IN_PROGRESS: "RESET_IN_PROGRESS" = "RESET_IN_PROGRESS"
+  inline val RESET_FAILURE: "RESET_FAILURE" = "RESET_FAILURE"
 
-  @inline def values = js.Array[ActionStatus](
+  inline def values: js.Array[ActionStatus] = js.Array(
     STANDBY,
     PENDING,
     EXECUTION_IN_PROGRESS,
@@ -31,121 +31,121 @@ object ActionStatus {
 
 type ActionSubType = "STOP_EC2_INSTANCES" | "STOP_RDS_INSTANCES"
 object ActionSubType {
-  val STOP_EC2_INSTANCES: "STOP_EC2_INSTANCES" = "STOP_EC2_INSTANCES"
-  val STOP_RDS_INSTANCES: "STOP_RDS_INSTANCES" = "STOP_RDS_INSTANCES"
+  inline val STOP_EC2_INSTANCES: "STOP_EC2_INSTANCES" = "STOP_EC2_INSTANCES"
+  inline val STOP_RDS_INSTANCES: "STOP_RDS_INSTANCES" = "STOP_RDS_INSTANCES"
 
-  @inline def values = js.Array[ActionSubType](STOP_EC2_INSTANCES, STOP_RDS_INSTANCES)
+  inline def values: js.Array[ActionSubType] = js.Array(STOP_EC2_INSTANCES, STOP_RDS_INSTANCES)
 }
 
 type ActionType = "APPLY_IAM_POLICY" | "APPLY_SCP_POLICY" | "RUN_SSM_DOCUMENTS"
 object ActionType {
-  val APPLY_IAM_POLICY: "APPLY_IAM_POLICY" = "APPLY_IAM_POLICY"
-  val APPLY_SCP_POLICY: "APPLY_SCP_POLICY" = "APPLY_SCP_POLICY"
-  val RUN_SSM_DOCUMENTS: "RUN_SSM_DOCUMENTS" = "RUN_SSM_DOCUMENTS"
+  inline val APPLY_IAM_POLICY: "APPLY_IAM_POLICY" = "APPLY_IAM_POLICY"
+  inline val APPLY_SCP_POLICY: "APPLY_SCP_POLICY" = "APPLY_SCP_POLICY"
+  inline val RUN_SSM_DOCUMENTS: "RUN_SSM_DOCUMENTS" = "RUN_SSM_DOCUMENTS"
 
-  @inline def values = js.Array[ActionType](APPLY_IAM_POLICY, APPLY_SCP_POLICY, RUN_SSM_DOCUMENTS)
+  inline def values: js.Array[ActionType] = js.Array(APPLY_IAM_POLICY, APPLY_SCP_POLICY, RUN_SSM_DOCUMENTS)
 }
 
 type ApprovalModel = "AUTOMATIC" | "MANUAL"
 object ApprovalModel {
-  val AUTOMATIC: "AUTOMATIC" = "AUTOMATIC"
-  val MANUAL: "MANUAL" = "MANUAL"
+  inline val AUTOMATIC: "AUTOMATIC" = "AUTOMATIC"
+  inline val MANUAL: "MANUAL" = "MANUAL"
 
-  @inline def values = js.Array[ApprovalModel](AUTOMATIC, MANUAL)
+  inline def values: js.Array[ApprovalModel] = js.Array(AUTOMATIC, MANUAL)
 }
 
 /** The type of a budget. It must be one of the following types: <code>COST</code>, <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>, or <code>SAVINGS_PLANS_COVERAGE</code>.
   */
 type BudgetType = "USAGE" | "COST" | "RI_UTILIZATION" | "RI_COVERAGE" | "SAVINGS_PLANS_UTILIZATION" | "SAVINGS_PLANS_COVERAGE"
 object BudgetType {
-  val USAGE: "USAGE" = "USAGE"
-  val COST: "COST" = "COST"
-  val RI_UTILIZATION: "RI_UTILIZATION" = "RI_UTILIZATION"
-  val RI_COVERAGE: "RI_COVERAGE" = "RI_COVERAGE"
-  val SAVINGS_PLANS_UTILIZATION: "SAVINGS_PLANS_UTILIZATION" = "SAVINGS_PLANS_UTILIZATION"
-  val SAVINGS_PLANS_COVERAGE: "SAVINGS_PLANS_COVERAGE" = "SAVINGS_PLANS_COVERAGE"
+  inline val USAGE: "USAGE" = "USAGE"
+  inline val COST: "COST" = "COST"
+  inline val RI_UTILIZATION: "RI_UTILIZATION" = "RI_UTILIZATION"
+  inline val RI_COVERAGE: "RI_COVERAGE" = "RI_COVERAGE"
+  inline val SAVINGS_PLANS_UTILIZATION: "SAVINGS_PLANS_UTILIZATION" = "SAVINGS_PLANS_UTILIZATION"
+  inline val SAVINGS_PLANS_COVERAGE: "SAVINGS_PLANS_COVERAGE" = "SAVINGS_PLANS_COVERAGE"
 
-  @inline def values = js.Array[BudgetType](USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
+  inline def values: js.Array[BudgetType] = js.Array(USAGE, COST, RI_UTILIZATION, RI_COVERAGE, SAVINGS_PLANS_UTILIZATION, SAVINGS_PLANS_COVERAGE)
 }
 
 /** The comparison operator of a notification. Currently the service supports the following operators: <code>GREATER_THAN</code>, <code>LESS_THAN</code>, <code>EQUAL_TO</code>
   */
 type ComparisonOperator = "GREATER_THAN" | "LESS_THAN" | "EQUAL_TO"
 object ComparisonOperator {
-  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
-  val LESS_THAN: "LESS_THAN" = "LESS_THAN"
-  val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
 
-  @inline def values = js.Array[ComparisonOperator](GREATER_THAN, LESS_THAN, EQUAL_TO)
+  inline def values: js.Array[ComparisonOperator] = js.Array(GREATER_THAN, LESS_THAN, EQUAL_TO)
 }
 
 type EventType = "SYSTEM" | "CREATE_ACTION" | "DELETE_ACTION" | "UPDATE_ACTION" | "EXECUTE_ACTION"
 object EventType {
-  val SYSTEM: "SYSTEM" = "SYSTEM"
-  val CREATE_ACTION: "CREATE_ACTION" = "CREATE_ACTION"
-  val DELETE_ACTION: "DELETE_ACTION" = "DELETE_ACTION"
-  val UPDATE_ACTION: "UPDATE_ACTION" = "UPDATE_ACTION"
-  val EXECUTE_ACTION: "EXECUTE_ACTION" = "EXECUTE_ACTION"
+  inline val SYSTEM: "SYSTEM" = "SYSTEM"
+  inline val CREATE_ACTION: "CREATE_ACTION" = "CREATE_ACTION"
+  inline val DELETE_ACTION: "DELETE_ACTION" = "DELETE_ACTION"
+  inline val UPDATE_ACTION: "UPDATE_ACTION" = "UPDATE_ACTION"
+  inline val EXECUTE_ACTION: "EXECUTE_ACTION" = "EXECUTE_ACTION"
 
-  @inline def values = js.Array[EventType](SYSTEM, CREATE_ACTION, DELETE_ACTION, UPDATE_ACTION, EXECUTE_ACTION)
+  inline def values: js.Array[EventType] = js.Array(SYSTEM, CREATE_ACTION, DELETE_ACTION, UPDATE_ACTION, EXECUTE_ACTION)
 }
 
 type ExecutionType = "APPROVE_BUDGET_ACTION" | "RETRY_BUDGET_ACTION" | "REVERSE_BUDGET_ACTION" | "RESET_BUDGET_ACTION"
 object ExecutionType {
-  val APPROVE_BUDGET_ACTION: "APPROVE_BUDGET_ACTION" = "APPROVE_BUDGET_ACTION"
-  val RETRY_BUDGET_ACTION: "RETRY_BUDGET_ACTION" = "RETRY_BUDGET_ACTION"
-  val REVERSE_BUDGET_ACTION: "REVERSE_BUDGET_ACTION" = "REVERSE_BUDGET_ACTION"
-  val RESET_BUDGET_ACTION: "RESET_BUDGET_ACTION" = "RESET_BUDGET_ACTION"
+  inline val APPROVE_BUDGET_ACTION: "APPROVE_BUDGET_ACTION" = "APPROVE_BUDGET_ACTION"
+  inline val RETRY_BUDGET_ACTION: "RETRY_BUDGET_ACTION" = "RETRY_BUDGET_ACTION"
+  inline val REVERSE_BUDGET_ACTION: "REVERSE_BUDGET_ACTION" = "REVERSE_BUDGET_ACTION"
+  inline val RESET_BUDGET_ACTION: "RESET_BUDGET_ACTION" = "RESET_BUDGET_ACTION"
 
-  @inline def values = js.Array[ExecutionType](APPROVE_BUDGET_ACTION, RETRY_BUDGET_ACTION, REVERSE_BUDGET_ACTION, RESET_BUDGET_ACTION)
+  inline def values: js.Array[ExecutionType] = js.Array(APPROVE_BUDGET_ACTION, RETRY_BUDGET_ACTION, REVERSE_BUDGET_ACTION, RESET_BUDGET_ACTION)
 }
 
 type NotificationState = "OK" | "ALARM"
 object NotificationState {
-  val OK: "OK" = "OK"
-  val ALARM: "ALARM" = "ALARM"
+  inline val OK: "OK" = "OK"
+  inline val ALARM: "ALARM" = "ALARM"
 
-  @inline def values = js.Array[NotificationState](OK, ALARM)
+  inline def values: js.Array[NotificationState] = js.Array(OK, ALARM)
 }
 
 /** The type of a notification. It must be ACTUAL or FORECASTED.
   */
 type NotificationType = "ACTUAL" | "FORECASTED"
 object NotificationType {
-  val ACTUAL: "ACTUAL" = "ACTUAL"
-  val FORECASTED: "FORECASTED" = "FORECASTED"
+  inline val ACTUAL: "ACTUAL" = "ACTUAL"
+  inline val FORECASTED: "FORECASTED" = "FORECASTED"
 
-  @inline def values = js.Array[NotificationType](ACTUAL, FORECASTED)
+  inline def values: js.Array[NotificationType] = js.Array(ACTUAL, FORECASTED)
 }
 
 /** The subscription type of the subscriber. It can be SMS or EMAIL.
   */
 type SubscriptionType = "SNS" | "EMAIL"
 object SubscriptionType {
-  val SNS: "SNS" = "SNS"
-  val EMAIL: "EMAIL" = "EMAIL"
+  inline val SNS: "SNS" = "SNS"
+  inline val EMAIL: "EMAIL" = "EMAIL"
 
-  @inline def values = js.Array[SubscriptionType](SNS, EMAIL)
+  inline def values: js.Array[SubscriptionType] = js.Array(SNS, EMAIL)
 }
 
 /** The type of threshold for a notification.
   */
 type ThresholdType = "PERCENTAGE" | "ABSOLUTE_VALUE"
 object ThresholdType {
-  val PERCENTAGE: "PERCENTAGE" = "PERCENTAGE"
-  val ABSOLUTE_VALUE: "ABSOLUTE_VALUE" = "ABSOLUTE_VALUE"
+  inline val PERCENTAGE: "PERCENTAGE" = "PERCENTAGE"
+  inline val ABSOLUTE_VALUE: "ABSOLUTE_VALUE" = "ABSOLUTE_VALUE"
 
-  @inline def values = js.Array[ThresholdType](PERCENTAGE, ABSOLUTE_VALUE)
+  inline def values: js.Array[ThresholdType] = js.Array(PERCENTAGE, ABSOLUTE_VALUE)
 }
 
 /** The time unit of the budget, such as MONTHLY or QUARTERLY.
   */
 type TimeUnit = "DAILY" | "MONTHLY" | "QUARTERLY" | "ANNUALLY"
 object TimeUnit {
-  val DAILY: "DAILY" = "DAILY"
-  val MONTHLY: "MONTHLY" = "MONTHLY"
-  val QUARTERLY: "QUARTERLY" = "QUARTERLY"
-  val ANNUALLY: "ANNUALLY" = "ANNUALLY"
+  inline val DAILY: "DAILY" = "DAILY"
+  inline val MONTHLY: "MONTHLY" = "MONTHLY"
+  inline val QUARTERLY: "QUARTERLY" = "QUARTERLY"
+  inline val ANNUALLY: "ANNUALLY" = "ANNUALLY"
 
-  @inline def values = js.Array[TimeUnit](DAILY, MONTHLY, QUARTERLY, ANNUALLY)
+  inline def values: js.Array[TimeUnit] = js.Array(DAILY, MONTHLY, QUARTERLY, ANNUALLY)
 }

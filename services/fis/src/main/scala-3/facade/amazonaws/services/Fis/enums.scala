@@ -4,27 +4,27 @@ import scalajs._
 
 type ExperimentActionStatus = "pending" | "initiating" | "running" | "completed" | "cancelled" | "stopping" | "stopped" | "failed"
 object ExperimentActionStatus {
-  val pending: "pending" = "pending"
-  val initiating: "initiating" = "initiating"
-  val running: "running" = "running"
-  val completed: "completed" = "completed"
-  val cancelled: "cancelled" = "cancelled"
-  val stopping: "stopping" = "stopping"
-  val stopped: "stopped" = "stopped"
-  val failed: "failed" = "failed"
+  inline val pending: "pending" = "pending"
+  inline val initiating: "initiating" = "initiating"
+  inline val running: "running" = "running"
+  inline val completed: "completed" = "completed"
+  inline val cancelled: "cancelled" = "cancelled"
+  inline val stopping: "stopping" = "stopping"
+  inline val stopped: "stopped" = "stopped"
+  inline val failed: "failed" = "failed"
 
-  @inline def values = js.Array[ExperimentActionStatus](pending, initiating, running, completed, cancelled, stopping, stopped, failed)
+  inline def values: js.Array[ExperimentActionStatus] = js.Array(pending, initiating, running, completed, cancelled, stopping, stopped, failed)
 }
 
 type ExperimentStatus = "pending" | "initiating" | "running" | "completed" | "stopping" | "stopped" | "failed"
 object ExperimentStatus {
-  val pending: "pending" = "pending"
-  val initiating: "initiating" = "initiating"
-  val running: "running" = "running"
-  val completed: "completed" = "completed"
-  val stopping: "stopping" = "stopping"
-  val stopped: "stopped" = "stopped"
-  val failed: "failed" = "failed"
+  inline val pending: "pending" = "pending"
+  inline val initiating: "initiating" = "initiating"
+  inline val running: "running" = "running"
+  inline val completed: "completed" = "completed"
+  inline val stopping: "stopping" = "stopping"
+  inline val stopped: "stopped" = "stopped"
+  inline val failed: "failed" = "failed"
 
-  @inline def values = js.Array[ExperimentStatus](pending, initiating, running, completed, stopping, stopped, failed)
+  inline def values: js.Array[ExperimentStatus] = js.Array(pending, initiating, running, completed, stopping, stopped, failed)
 }

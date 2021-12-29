@@ -4,8 +4,8 @@ import scalajs._
 
 type EndpointStatus = "PENDING" | "AVAILABLE"
 object EndpointStatus {
-  val PENDING: "PENDING" = "PENDING"
-  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
 
-  @inline def values = js.Array[EndpointStatus](PENDING, AVAILABLE)
+  inline def values: js.Array[EndpointStatus] = js.Array(PENDING, AVAILABLE)
 }

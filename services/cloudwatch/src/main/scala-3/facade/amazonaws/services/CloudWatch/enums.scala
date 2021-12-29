@@ -4,32 +4,32 @@ import scalajs._
 
 type AlarmType = "CompositeAlarm" | "MetricAlarm"
 object AlarmType {
-  val CompositeAlarm: "CompositeAlarm" = "CompositeAlarm"
-  val MetricAlarm: "MetricAlarm" = "MetricAlarm"
+  inline val CompositeAlarm: "CompositeAlarm" = "CompositeAlarm"
+  inline val MetricAlarm: "MetricAlarm" = "MetricAlarm"
 
-  @inline def values = js.Array[AlarmType](CompositeAlarm, MetricAlarm)
+  inline def values: js.Array[AlarmType] = js.Array(CompositeAlarm, MetricAlarm)
 }
 
 type AnomalyDetectorStateValue = "PENDING_TRAINING" | "TRAINED_INSUFFICIENT_DATA" | "TRAINED"
 object AnomalyDetectorStateValue {
-  val PENDING_TRAINING: "PENDING_TRAINING" = "PENDING_TRAINING"
-  val TRAINED_INSUFFICIENT_DATA: "TRAINED_INSUFFICIENT_DATA" = "TRAINED_INSUFFICIENT_DATA"
-  val TRAINED: "TRAINED" = "TRAINED"
+  inline val PENDING_TRAINING: "PENDING_TRAINING" = "PENDING_TRAINING"
+  inline val TRAINED_INSUFFICIENT_DATA: "TRAINED_INSUFFICIENT_DATA" = "TRAINED_INSUFFICIENT_DATA"
+  inline val TRAINED: "TRAINED" = "TRAINED"
 
-  @inline def values = js.Array[AnomalyDetectorStateValue](PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED)
+  inline def values: js.Array[AnomalyDetectorStateValue] = js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED)
 }
 
 type ComparisonOperator = "GreaterThanOrEqualToThreshold" | "GreaterThanThreshold" | "LessThanThreshold" | "LessThanOrEqualToThreshold" | "LessThanLowerOrGreaterThanUpperThreshold" | "LessThanLowerThreshold" | "GreaterThanUpperThreshold"
 object ComparisonOperator {
-  val GreaterThanOrEqualToThreshold: "GreaterThanOrEqualToThreshold" = "GreaterThanOrEqualToThreshold"
-  val GreaterThanThreshold: "GreaterThanThreshold" = "GreaterThanThreshold"
-  val LessThanThreshold: "LessThanThreshold" = "LessThanThreshold"
-  val LessThanOrEqualToThreshold: "LessThanOrEqualToThreshold" = "LessThanOrEqualToThreshold"
-  val LessThanLowerOrGreaterThanUpperThreshold: "LessThanLowerOrGreaterThanUpperThreshold" = "LessThanLowerOrGreaterThanUpperThreshold"
-  val LessThanLowerThreshold: "LessThanLowerThreshold" = "LessThanLowerThreshold"
-  val GreaterThanUpperThreshold: "GreaterThanUpperThreshold" = "GreaterThanUpperThreshold"
+  inline val GreaterThanOrEqualToThreshold: "GreaterThanOrEqualToThreshold" = "GreaterThanOrEqualToThreshold"
+  inline val GreaterThanThreshold: "GreaterThanThreshold" = "GreaterThanThreshold"
+  inline val LessThanThreshold: "LessThanThreshold" = "LessThanThreshold"
+  inline val LessThanOrEqualToThreshold: "LessThanOrEqualToThreshold" = "LessThanOrEqualToThreshold"
+  inline val LessThanLowerOrGreaterThanUpperThreshold: "LessThanLowerOrGreaterThanUpperThreshold" = "LessThanLowerOrGreaterThanUpperThreshold"
+  inline val LessThanLowerThreshold: "LessThanLowerThreshold" = "LessThanLowerThreshold"
+  inline val GreaterThanUpperThreshold: "GreaterThanUpperThreshold" = "GreaterThanUpperThreshold"
 
-  @inline def values = js.Array[ComparisonOperator](
+  inline def values: js.Array[ComparisonOperator] = js.Array(
     GreaterThanOrEqualToThreshold,
     GreaterThanThreshold,
     LessThanThreshold,
@@ -42,67 +42,67 @@ object ComparisonOperator {
 
 type HistoryItemType = "ConfigurationUpdate" | "StateUpdate" | "Action"
 object HistoryItemType {
-  val ConfigurationUpdate: "ConfigurationUpdate" = "ConfigurationUpdate"
-  val StateUpdate: "StateUpdate" = "StateUpdate"
-  val Action: "Action" = "Action"
+  inline val ConfigurationUpdate: "ConfigurationUpdate" = "ConfigurationUpdate"
+  inline val StateUpdate: "StateUpdate" = "StateUpdate"
+  inline val Action: "Action" = "Action"
 
-  @inline def values = js.Array[HistoryItemType](ConfigurationUpdate, StateUpdate, Action)
+  inline def values: js.Array[HistoryItemType] = js.Array(ConfigurationUpdate, StateUpdate, Action)
 }
 
 type MetricStreamOutputFormat = "json" | "opentelemetry0.7"
 object MetricStreamOutputFormat {
-  val json: "json" = "json"
-  val `opentelemetry0.7`: "opentelemetry0.7" = "opentelemetry0.7"
+  inline val json: "json" = "json"
+  inline val `opentelemetry0.7`: "opentelemetry0.7" = "opentelemetry0.7"
 
-  @inline def values = js.Array[MetricStreamOutputFormat](json, `opentelemetry0.7`)
+  inline def values: js.Array[MetricStreamOutputFormat] = js.Array(json, `opentelemetry0.7`)
 }
 
 type RecentlyActive = "PT3H"
 object RecentlyActive {
-  val PT3H: "PT3H" = "PT3H"
+  inline val PT3H: "PT3H" = "PT3H"
 
-  @inline def values = js.Array[RecentlyActive](PT3H)
+  inline def values: js.Array[RecentlyActive] = js.Array(PT3H)
 }
 
 type ScanBy = "TimestampDescending" | "TimestampAscending"
 object ScanBy {
-  val TimestampDescending: "TimestampDescending" = "TimestampDescending"
-  val TimestampAscending: "TimestampAscending" = "TimestampAscending"
+  inline val TimestampDescending: "TimestampDescending" = "TimestampDescending"
+  inline val TimestampAscending: "TimestampAscending" = "TimestampAscending"
 
-  @inline def values = js.Array[ScanBy](TimestampDescending, TimestampAscending)
+  inline def values: js.Array[ScanBy] = js.Array(TimestampDescending, TimestampAscending)
 }
 
 type StandardUnit = "Seconds" | "Microseconds" | "Milliseconds" | "Bytes" | "Kilobytes" | "Megabytes" | "Gigabytes" | "Terabytes" | "Bits" | "Kilobits" | "Megabits" | "Gigabits" | "Terabits" | "Percent" | "Count" | "Bytes/Second" | "Kilobytes/Second" | "Megabytes/Second" | "Gigabytes/Second" | "Terabytes/Second" | "Bits/Second" | "Kilobits/Second" | "Megabits/Second" | "Gigabits/Second" | "Terabits/Second" | "Count/Second" | "None"
 object StandardUnit {
-  val Seconds: "Seconds" = "Seconds"
-  val Microseconds: "Microseconds" = "Microseconds"
-  val Milliseconds: "Milliseconds" = "Milliseconds"
-  val Bytes: "Bytes" = "Bytes"
-  val Kilobytes: "Kilobytes" = "Kilobytes"
-  val Megabytes: "Megabytes" = "Megabytes"
-  val Gigabytes: "Gigabytes" = "Gigabytes"
-  val Terabytes: "Terabytes" = "Terabytes"
-  val Bits: "Bits" = "Bits"
-  val Kilobits: "Kilobits" = "Kilobits"
-  val Megabits: "Megabits" = "Megabits"
-  val Gigabits: "Gigabits" = "Gigabits"
-  val Terabits: "Terabits" = "Terabits"
-  val Percent: "Percent" = "Percent"
-  val Count: "Count" = "Count"
-  val `Bytes/Second`: "Bytes/Second" = "Bytes/Second"
-  val `Kilobytes/Second`: "Kilobytes/Second" = "Kilobytes/Second"
-  val `Megabytes/Second`: "Megabytes/Second" = "Megabytes/Second"
-  val `Gigabytes/Second`: "Gigabytes/Second" = "Gigabytes/Second"
-  val `Terabytes/Second`: "Terabytes/Second" = "Terabytes/Second"
-  val `Bits/Second`: "Bits/Second" = "Bits/Second"
-  val `Kilobits/Second`: "Kilobits/Second" = "Kilobits/Second"
-  val `Megabits/Second`: "Megabits/Second" = "Megabits/Second"
-  val `Gigabits/Second`: "Gigabits/Second" = "Gigabits/Second"
-  val `Terabits/Second`: "Terabits/Second" = "Terabits/Second"
-  val `Count/Second`: "Count/Second" = "Count/Second"
-  val None: "None" = "None"
+  inline val Seconds: "Seconds" = "Seconds"
+  inline val Microseconds: "Microseconds" = "Microseconds"
+  inline val Milliseconds: "Milliseconds" = "Milliseconds"
+  inline val Bytes: "Bytes" = "Bytes"
+  inline val Kilobytes: "Kilobytes" = "Kilobytes"
+  inline val Megabytes: "Megabytes" = "Megabytes"
+  inline val Gigabytes: "Gigabytes" = "Gigabytes"
+  inline val Terabytes: "Terabytes" = "Terabytes"
+  inline val Bits: "Bits" = "Bits"
+  inline val Kilobits: "Kilobits" = "Kilobits"
+  inline val Megabits: "Megabits" = "Megabits"
+  inline val Gigabits: "Gigabits" = "Gigabits"
+  inline val Terabits: "Terabits" = "Terabits"
+  inline val Percent: "Percent" = "Percent"
+  inline val Count: "Count" = "Count"
+  inline val `Bytes/Second`: "Bytes/Second" = "Bytes/Second"
+  inline val `Kilobytes/Second`: "Kilobytes/Second" = "Kilobytes/Second"
+  inline val `Megabytes/Second`: "Megabytes/Second" = "Megabytes/Second"
+  inline val `Gigabytes/Second`: "Gigabytes/Second" = "Gigabytes/Second"
+  inline val `Terabytes/Second`: "Terabytes/Second" = "Terabytes/Second"
+  inline val `Bits/Second`: "Bits/Second" = "Bits/Second"
+  inline val `Kilobits/Second`: "Kilobits/Second" = "Kilobits/Second"
+  inline val `Megabits/Second`: "Megabits/Second" = "Megabits/Second"
+  inline val `Gigabits/Second`: "Gigabits/Second" = "Gigabits/Second"
+  inline val `Terabits/Second`: "Terabits/Second" = "Terabits/Second"
+  inline val `Count/Second`: "Count/Second" = "Count/Second"
+  inline val None: "None" = "None"
 
-  @inline def values = js.Array[StandardUnit](
+  inline def values: js.Array[StandardUnit] = js.Array(
     Seconds,
     Microseconds,
     Milliseconds,
@@ -135,29 +135,29 @@ object StandardUnit {
 
 type StateValue = "OK" | "ALARM" | "INSUFFICIENT_DATA"
 object StateValue {
-  val OK: "OK" = "OK"
-  val ALARM: "ALARM" = "ALARM"
-  val INSUFFICIENT_DATA: "INSUFFICIENT_DATA" = "INSUFFICIENT_DATA"
+  inline val OK: "OK" = "OK"
+  inline val ALARM: "ALARM" = "ALARM"
+  inline val INSUFFICIENT_DATA: "INSUFFICIENT_DATA" = "INSUFFICIENT_DATA"
 
-  @inline def values = js.Array[StateValue](OK, ALARM, INSUFFICIENT_DATA)
+  inline def values: js.Array[StateValue] = js.Array(OK, ALARM, INSUFFICIENT_DATA)
 }
 
 type Statistic = "SampleCount" | "Average" | "Sum" | "Minimum" | "Maximum"
 object Statistic {
-  val SampleCount: "SampleCount" = "SampleCount"
-  val Average: "Average" = "Average"
-  val Sum: "Sum" = "Sum"
-  val Minimum: "Minimum" = "Minimum"
-  val Maximum: "Maximum" = "Maximum"
+  inline val SampleCount: "SampleCount" = "SampleCount"
+  inline val Average: "Average" = "Average"
+  inline val Sum: "Sum" = "Sum"
+  inline val Minimum: "Minimum" = "Minimum"
+  inline val Maximum: "Maximum" = "Maximum"
 
-  @inline def values = js.Array[Statistic](SampleCount, Average, Sum, Minimum, Maximum)
+  inline def values: js.Array[Statistic] = js.Array(SampleCount, Average, Sum, Minimum, Maximum)
 }
 
 type StatusCode = "Complete" | "InternalError" | "PartialData"
 object StatusCode {
-  val Complete: "Complete" = "Complete"
-  val InternalError: "InternalError" = "InternalError"
-  val PartialData: "PartialData" = "PartialData"
+  inline val Complete: "Complete" = "Complete"
+  inline val InternalError: "InternalError" = "InternalError"
+  inline val PartialData: "PartialData" = "PartialData"
 
-  @inline def values = js.Array[StatusCode](Complete, InternalError, PartialData)
+  inline def values: js.Array[StatusCode] = js.Array(Complete, InternalError, PartialData)
 }

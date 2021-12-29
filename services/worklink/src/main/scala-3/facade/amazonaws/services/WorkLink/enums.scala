@@ -4,48 +4,48 @@ import scalajs._
 
 type AuthorizationProviderType = "SAML"
 object AuthorizationProviderType {
-  val SAML: "SAML" = "SAML"
+  inline val SAML: "SAML" = "SAML"
 
-  @inline def values = js.Array[AuthorizationProviderType](SAML)
+  inline def values: js.Array[AuthorizationProviderType] = js.Array(SAML)
 }
 
 type DeviceStatus = "ACTIVE" | "SIGNED_OUT"
 object DeviceStatus {
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val SIGNED_OUT: "SIGNED_OUT" = "SIGNED_OUT"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val SIGNED_OUT: "SIGNED_OUT" = "SIGNED_OUT"
 
-  @inline def values = js.Array[DeviceStatus](ACTIVE, SIGNED_OUT)
+  inline def values: js.Array[DeviceStatus] = js.Array(ACTIVE, SIGNED_OUT)
 }
 
 type DomainStatus = "PENDING_VALIDATION" | "ASSOCIATING" | "ACTIVE" | "INACTIVE" | "DISASSOCIATING" | "DISASSOCIATED" | "FAILED_TO_ASSOCIATE" | "FAILED_TO_DISASSOCIATE"
 object DomainStatus {
-  val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
-  val ASSOCIATING: "ASSOCIATING" = "ASSOCIATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val INACTIVE: "INACTIVE" = "INACTIVE"
-  val DISASSOCIATING: "DISASSOCIATING" = "DISASSOCIATING"
-  val DISASSOCIATED: "DISASSOCIATED" = "DISASSOCIATED"
-  val FAILED_TO_ASSOCIATE: "FAILED_TO_ASSOCIATE" = "FAILED_TO_ASSOCIATE"
-  val FAILED_TO_DISASSOCIATE: "FAILED_TO_DISASSOCIATE" = "FAILED_TO_DISASSOCIATE"
+  inline val PENDING_VALIDATION: "PENDING_VALIDATION" = "PENDING_VALIDATION"
+  inline val ASSOCIATING: "ASSOCIATING" = "ASSOCIATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val DISASSOCIATING: "DISASSOCIATING" = "DISASSOCIATING"
+  inline val DISASSOCIATED: "DISASSOCIATED" = "DISASSOCIATED"
+  inline val FAILED_TO_ASSOCIATE: "FAILED_TO_ASSOCIATE" = "FAILED_TO_ASSOCIATE"
+  inline val FAILED_TO_DISASSOCIATE: "FAILED_TO_DISASSOCIATE" = "FAILED_TO_DISASSOCIATE"
 
-  @inline def values = js.Array[DomainStatus](PENDING_VALIDATION, ASSOCIATING, ACTIVE, INACTIVE, DISASSOCIATING, DISASSOCIATED, FAILED_TO_ASSOCIATE, FAILED_TO_DISASSOCIATE)
+  inline def values: js.Array[DomainStatus] = js.Array(PENDING_VALIDATION, ASSOCIATING, ACTIVE, INACTIVE, DISASSOCIATING, DISASSOCIATED, FAILED_TO_ASSOCIATE, FAILED_TO_DISASSOCIATE)
 }
 
 type FleetStatus = "CREATING" | "ACTIVE" | "DELETING" | "DELETED" | "FAILED_TO_CREATE" | "FAILED_TO_DELETE"
 object FleetStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETING: "DELETING" = "DELETING"
-  val DELETED: "DELETED" = "DELETED"
-  val FAILED_TO_CREATE: "FAILED_TO_CREATE" = "FAILED_TO_CREATE"
-  val FAILED_TO_DELETE: "FAILED_TO_DELETE" = "FAILED_TO_DELETE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val FAILED_TO_CREATE: "FAILED_TO_CREATE" = "FAILED_TO_CREATE"
+  inline val FAILED_TO_DELETE: "FAILED_TO_DELETE" = "FAILED_TO_DELETE"
 
-  @inline def values = js.Array[FleetStatus](CREATING, ACTIVE, DELETING, DELETED, FAILED_TO_CREATE, FAILED_TO_DELETE)
+  inline def values: js.Array[FleetStatus] = js.Array(CREATING, ACTIVE, DELETING, DELETED, FAILED_TO_CREATE, FAILED_TO_DELETE)
 }
 
 type IdentityProviderType = "SAML"
 object IdentityProviderType {
-  val SAML: "SAML" = "SAML"
+  inline val SAML: "SAML" = "SAML"
 
-  @inline def values = js.Array[IdentityProviderType](SAML)
+  inline def values: js.Array[IdentityProviderType] = js.Array(SAML)
 }

@@ -4,7 +4,7 @@ import scalajs._
 
 type TargetType = "ACCOUNT"
 object TargetType {
-  val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
 
-  @inline def values = js.Array[TargetType](ACCOUNT)
+  inline def values: js.Array[TargetType] = js.Array(ACCOUNT)
 }

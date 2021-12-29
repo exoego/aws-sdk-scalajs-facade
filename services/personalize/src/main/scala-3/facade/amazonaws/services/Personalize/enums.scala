@@ -4,15 +4,15 @@ import scalajs._
 
 type RecipeProvider = "SERVICE"
 object RecipeProvider {
-  val SERVICE: "SERVICE" = "SERVICE"
+  inline val SERVICE: "SERVICE" = "SERVICE"
 
-  @inline def values = js.Array[RecipeProvider](SERVICE)
+  inline def values: js.Array[RecipeProvider] = js.Array(SERVICE)
 }
 
 type TrainingMode = "FULL" | "UPDATE"
 object TrainingMode {
-  val FULL: "FULL" = "FULL"
-  val UPDATE: "UPDATE" = "UPDATE"
+  inline val FULL: "FULL" = "FULL"
+  inline val UPDATE: "UPDATE" = "UPDATE"
 
-  @inline def values = js.Array[TrainingMode](FULL, UPDATE)
+  inline def values: js.Array[TrainingMode] = js.Array(FULL, UPDATE)
 }

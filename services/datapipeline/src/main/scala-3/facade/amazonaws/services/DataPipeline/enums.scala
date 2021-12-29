@@ -4,20 +4,20 @@ import scalajs._
 
 type OperatorType = "EQ" | "REF_EQ" | "LE" | "GE" | "BETWEEN"
 object OperatorType {
-  val EQ: "EQ" = "EQ"
-  val REF_EQ: "REF_EQ" = "REF_EQ"
-  val LE: "LE" = "LE"
-  val GE: "GE" = "GE"
-  val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val EQ: "EQ" = "EQ"
+  inline val REF_EQ: "REF_EQ" = "REF_EQ"
+  inline val LE: "LE" = "LE"
+  inline val GE: "GE" = "GE"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
 
-  @inline def values = js.Array[OperatorType](EQ, REF_EQ, LE, GE, BETWEEN)
+  inline def values: js.Array[OperatorType] = js.Array(EQ, REF_EQ, LE, GE, BETWEEN)
 }
 
 type TaskStatus = "FINISHED" | "FAILED" | "FALSE"
 object TaskStatus {
-  val FINISHED: "FINISHED" = "FINISHED"
-  val FAILED: "FAILED" = "FAILED"
-  val FALSE: "FALSE" = "FALSE"
+  inline val FINISHED: "FINISHED" = "FINISHED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val FALSE: "FALSE" = "FALSE"
 
-  @inline def values = js.Array[TaskStatus](FINISHED, FAILED, FALSE)
+  inline def values: js.Array[TaskStatus] = js.Array(FINISHED, FAILED, FALSE)
 }

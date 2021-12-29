@@ -6,8 +6,8 @@ import scalajs._
   */
 type JobType = "Import" | "Export"
 object JobType {
-  val Import: "Import" = "Import"
-  val Export: "Export" = "Export"
+  inline val Import: "Import" = "Import"
+  inline val Export: "Export" = "Export"
 
-  @inline def values = js.Array[JobType](Import, Export)
+  inline def values: js.Array[JobType] = js.Array(Import, Export)
 }

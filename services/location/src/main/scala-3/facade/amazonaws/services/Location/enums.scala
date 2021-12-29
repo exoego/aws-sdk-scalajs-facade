@@ -4,29 +4,29 @@ import scalajs._
 
 type BatchItemErrorCode = "AccessDeniedError" | "ConflictError" | "InternalServerError" | "ResourceNotFoundError" | "ThrottlingError" | "ValidationError"
 object BatchItemErrorCode {
-  val AccessDeniedError: "AccessDeniedError" = "AccessDeniedError"
-  val ConflictError: "ConflictError" = "ConflictError"
-  val InternalServerError: "InternalServerError" = "InternalServerError"
-  val ResourceNotFoundError: "ResourceNotFoundError" = "ResourceNotFoundError"
-  val ThrottlingError: "ThrottlingError" = "ThrottlingError"
-  val ValidationError: "ValidationError" = "ValidationError"
+  inline val AccessDeniedError: "AccessDeniedError" = "AccessDeniedError"
+  inline val ConflictError: "ConflictError" = "ConflictError"
+  inline val InternalServerError: "InternalServerError" = "InternalServerError"
+  inline val ResourceNotFoundError: "ResourceNotFoundError" = "ResourceNotFoundError"
+  inline val ThrottlingError: "ThrottlingError" = "ThrottlingError"
+  inline val ValidationError: "ValidationError" = "ValidationError"
 
-  @inline def values = js.Array[BatchItemErrorCode](AccessDeniedError, ConflictError, InternalServerError, ResourceNotFoundError, ThrottlingError, ValidationError)
+  inline def values: js.Array[BatchItemErrorCode] = js.Array(AccessDeniedError, ConflictError, InternalServerError, ResourceNotFoundError, ThrottlingError, ValidationError)
 }
 
 type IntendedUse = "SingleUse" | "Storage"
 object IntendedUse {
-  val SingleUse: "SingleUse" = "SingleUse"
-  val Storage: "Storage" = "Storage"
+  inline val SingleUse: "SingleUse" = "SingleUse"
+  inline val Storage: "Storage" = "Storage"
 
-  @inline def values = js.Array[IntendedUse](SingleUse, Storage)
+  inline def values: js.Array[IntendedUse] = js.Array(SingleUse, Storage)
 }
 
 type PricingPlan = "RequestBasedUsage" | "MobileAssetTracking" | "MobileAssetManagement"
 object PricingPlan {
-  val RequestBasedUsage: "RequestBasedUsage" = "RequestBasedUsage"
-  val MobileAssetTracking: "MobileAssetTracking" = "MobileAssetTracking"
-  val MobileAssetManagement: "MobileAssetManagement" = "MobileAssetManagement"
+  inline val RequestBasedUsage: "RequestBasedUsage" = "RequestBasedUsage"
+  inline val MobileAssetTracking: "MobileAssetTracking" = "MobileAssetTracking"
+  inline val MobileAssetManagement: "MobileAssetManagement" = "MobileAssetManagement"
 
-  @inline def values = js.Array[PricingPlan](RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
+  inline def values: js.Array[PricingPlan] = js.Array(RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
 }

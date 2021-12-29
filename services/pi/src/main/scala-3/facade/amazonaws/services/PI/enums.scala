@@ -4,7 +4,7 @@ import scalajs._
 
 type ServiceType = "RDS"
 object ServiceType {
-  val RDS: "RDS" = "RDS"
+  inline val RDS: "RDS" = "RDS"
 
-  @inline def values = js.Array[ServiceType](RDS)
+  inline def values: js.Array[ServiceType] = js.Array(RDS)
 }

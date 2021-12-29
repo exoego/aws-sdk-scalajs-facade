@@ -4,27 +4,27 @@ import scalajs._
 
 type ContainerLevelMetrics = "ENABLED" | "DISABLED"
 object ContainerLevelMetrics {
-  val ENABLED: "ENABLED" = "ENABLED"
-  val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array[ContainerLevelMetrics](ENABLED, DISABLED)
+  inline def values: js.Array[ContainerLevelMetrics] = js.Array(ENABLED, DISABLED)
 }
 
 type ContainerStatus = "ACTIVE" | "CREATING" | "DELETING"
 object ContainerStatus {
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val CREATING: "CREATING" = "CREATING"
-  val DELETING: "DELETING" = "DELETING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array[ContainerStatus](ACTIVE, CREATING, DELETING)
+  inline def values: js.Array[ContainerStatus] = js.Array(ACTIVE, CREATING, DELETING)
 }
 
 type MethodName = "PUT" | "GET" | "DELETE" | "HEAD"
 object MethodName {
-  val PUT: "PUT" = "PUT"
-  val GET: "GET" = "GET"
-  val DELETE: "DELETE" = "DELETE"
-  val HEAD: "HEAD" = "HEAD"
+  inline val PUT: "PUT" = "PUT"
+  inline val GET: "GET" = "GET"
+  inline val DELETE: "DELETE" = "DELETE"
+  inline val HEAD: "HEAD" = "HEAD"
 
-  @inline def values = js.Array[MethodName](PUT, GET, DELETE, HEAD)
+  inline def values: js.Array[MethodName] = js.Array(PUT, GET, DELETE, HEAD)
 }

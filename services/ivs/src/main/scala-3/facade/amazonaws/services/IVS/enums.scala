@@ -4,42 +4,42 @@ import scalajs._
 
 type ChannelLatencyMode = "NORMAL" | "LOW"
 object ChannelLatencyMode {
-  val NORMAL: "NORMAL" = "NORMAL"
-  val LOW: "LOW" = "LOW"
+  inline val NORMAL: "NORMAL" = "NORMAL"
+  inline val LOW: "LOW" = "LOW"
 
-  @inline def values = js.Array[ChannelLatencyMode](NORMAL, LOW)
+  inline def values: js.Array[ChannelLatencyMode] = js.Array(NORMAL, LOW)
 }
 
 type ChannelType = "BASIC" | "STANDARD"
 object ChannelType {
-  val BASIC: "BASIC" = "BASIC"
-  val STANDARD: "STANDARD" = "STANDARD"
+  inline val BASIC: "BASIC" = "BASIC"
+  inline val STANDARD: "STANDARD" = "STANDARD"
 
-  @inline def values = js.Array[ChannelType](BASIC, STANDARD)
+  inline def values: js.Array[ChannelType] = js.Array(BASIC, STANDARD)
 }
 
 type RecordingConfigurationState = "CREATING" | "CREATE_FAILED" | "ACTIVE"
 object RecordingConfigurationState {
-  val CREATING: "CREATING" = "CREATING"
-  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
 
-  @inline def values = js.Array[RecordingConfigurationState](CREATING, CREATE_FAILED, ACTIVE)
+  inline def values: js.Array[RecordingConfigurationState] = js.Array(CREATING, CREATE_FAILED, ACTIVE)
 }
 
 type StreamHealth = "HEALTHY" | "STARVING" | "UNKNOWN"
 object StreamHealth {
-  val HEALTHY: "HEALTHY" = "HEALTHY"
-  val STARVING: "STARVING" = "STARVING"
-  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val STARVING: "STARVING" = "STARVING"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array[StreamHealth](HEALTHY, STARVING, UNKNOWN)
+  inline def values: js.Array[StreamHealth] = js.Array(HEALTHY, STARVING, UNKNOWN)
 }
 
 type StreamState = "LIVE" | "OFFLINE"
 object StreamState {
-  val LIVE: "LIVE" = "LIVE"
-  val OFFLINE: "OFFLINE" = "OFFLINE"
+  inline val LIVE: "LIVE" = "LIVE"
+  inline val OFFLINE: "OFFLINE" = "OFFLINE"
 
-  @inline def values = js.Array[StreamState](LIVE, OFFLINE)
+  inline def values: js.Array[StreamState] = js.Array(LIVE, OFFLINE)
 }

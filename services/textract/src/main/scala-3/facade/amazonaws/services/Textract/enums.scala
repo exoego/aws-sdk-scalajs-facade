@@ -4,72 +4,72 @@ import scalajs._
 
 type BlockType = "KEY_VALUE_SET" | "PAGE" | "LINE" | "WORD" | "TABLE" | "CELL" | "SELECTION_ELEMENT"
 object BlockType {
-  val KEY_VALUE_SET: "KEY_VALUE_SET" = "KEY_VALUE_SET"
-  val PAGE: "PAGE" = "PAGE"
-  val LINE: "LINE" = "LINE"
-  val WORD: "WORD" = "WORD"
-  val TABLE: "TABLE" = "TABLE"
-  val CELL: "CELL" = "CELL"
-  val SELECTION_ELEMENT: "SELECTION_ELEMENT" = "SELECTION_ELEMENT"
+  inline val KEY_VALUE_SET: "KEY_VALUE_SET" = "KEY_VALUE_SET"
+  inline val PAGE: "PAGE" = "PAGE"
+  inline val LINE: "LINE" = "LINE"
+  inline val WORD: "WORD" = "WORD"
+  inline val TABLE: "TABLE" = "TABLE"
+  inline val CELL: "CELL" = "CELL"
+  inline val SELECTION_ELEMENT: "SELECTION_ELEMENT" = "SELECTION_ELEMENT"
 
-  @inline def values = js.Array[BlockType](KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT)
+  inline def values: js.Array[BlockType] = js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT)
 }
 
 type ContentClassifier = "FreeOfPersonallyIdentifiableInformation" | "FreeOfAdultContent"
 object ContentClassifier {
-  val FreeOfPersonallyIdentifiableInformation: "FreeOfPersonallyIdentifiableInformation" = "FreeOfPersonallyIdentifiableInformation"
-  val FreeOfAdultContent: "FreeOfAdultContent" = "FreeOfAdultContent"
+  inline val FreeOfPersonallyIdentifiableInformation: "FreeOfPersonallyIdentifiableInformation" = "FreeOfPersonallyIdentifiableInformation"
+  inline val FreeOfAdultContent: "FreeOfAdultContent" = "FreeOfAdultContent"
 
-  @inline def values = js.Array[ContentClassifier](FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
+  inline def values: js.Array[ContentClassifier] = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
 }
 
 type EntityType = "KEY" | "VALUE"
 object EntityType {
-  val KEY: "KEY" = "KEY"
-  val VALUE: "VALUE" = "VALUE"
+  inline val KEY: "KEY" = "KEY"
+  inline val VALUE: "VALUE" = "VALUE"
 
-  @inline def values = js.Array[EntityType](KEY, VALUE)
+  inline def values: js.Array[EntityType] = js.Array(KEY, VALUE)
 }
 
 type FeatureType = "TABLES" | "FORMS"
 object FeatureType {
-  val TABLES: "TABLES" = "TABLES"
-  val FORMS: "FORMS" = "FORMS"
+  inline val TABLES: "TABLES" = "TABLES"
+  inline val FORMS: "FORMS" = "FORMS"
 
-  @inline def values = js.Array[FeatureType](TABLES, FORMS)
+  inline def values: js.Array[FeatureType] = js.Array(TABLES, FORMS)
 }
 
 type JobStatus = "IN_PROGRESS" | "SUCCEEDED" | "FAILED" | "PARTIAL_SUCCESS"
 object JobStatus {
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
-  val PARTIAL_SUCCESS: "PARTIAL_SUCCESS" = "PARTIAL_SUCCESS"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val PARTIAL_SUCCESS: "PARTIAL_SUCCESS" = "PARTIAL_SUCCESS"
 
-  @inline def values = js.Array[JobStatus](IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS)
+  inline def values: js.Array[JobStatus] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS)
 }
 
 type RelationshipType = "VALUE" | "CHILD" | "COMPLEX_FEATURES"
 object RelationshipType {
-  val VALUE: "VALUE" = "VALUE"
-  val CHILD: "CHILD" = "CHILD"
-  val COMPLEX_FEATURES: "COMPLEX_FEATURES" = "COMPLEX_FEATURES"
+  inline val VALUE: "VALUE" = "VALUE"
+  inline val CHILD: "CHILD" = "CHILD"
+  inline val COMPLEX_FEATURES: "COMPLEX_FEATURES" = "COMPLEX_FEATURES"
 
-  @inline def values = js.Array[RelationshipType](VALUE, CHILD, COMPLEX_FEATURES)
+  inline def values: js.Array[RelationshipType] = js.Array(VALUE, CHILD, COMPLEX_FEATURES)
 }
 
 type SelectionStatus = "SELECTED" | "NOT_SELECTED"
 object SelectionStatus {
-  val SELECTED: "SELECTED" = "SELECTED"
-  val NOT_SELECTED: "NOT_SELECTED" = "NOT_SELECTED"
+  inline val SELECTED: "SELECTED" = "SELECTED"
+  inline val NOT_SELECTED: "NOT_SELECTED" = "NOT_SELECTED"
 
-  @inline def values = js.Array[SelectionStatus](SELECTED, NOT_SELECTED)
+  inline def values: js.Array[SelectionStatus] = js.Array(SELECTED, NOT_SELECTED)
 }
 
 type TextType = "HANDWRITING" | "PRINTED"
 object TextType {
-  val HANDWRITING: "HANDWRITING" = "HANDWRITING"
-  val PRINTED: "PRINTED" = "PRINTED"
+  inline val HANDWRITING: "HANDWRITING" = "HANDWRITING"
+  inline val PRINTED: "PRINTED" = "PRINTED"
 
-  @inline def values = js.Array[TextType](HANDWRITING, PRINTED)
+  inline def values: js.Array[TextType] = js.Array(HANDWRITING, PRINTED)
 }

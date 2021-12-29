@@ -4,89 +4,89 @@ import scalajs._
 
 type AccessControlRuleEffect = "ALLOW" | "DENY"
 object AccessControlRuleEffect {
-  val ALLOW: "ALLOW" = "ALLOW"
-  val DENY: "DENY" = "DENY"
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val DENY: "DENY" = "DENY"
 
-  @inline def values = js.Array[AccessControlRuleEffect](ALLOW, DENY)
+  inline def values: js.Array[AccessControlRuleEffect] = js.Array(ALLOW, DENY)
 }
 
 type EntityState = "ENABLED" | "DISABLED" | "DELETED"
 object EntityState {
-  val ENABLED: "ENABLED" = "ENABLED"
-  val DISABLED: "DISABLED" = "DISABLED"
-  val DELETED: "DELETED" = "DELETED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array[EntityState](ENABLED, DISABLED, DELETED)
+  inline def values: js.Array[EntityState] = js.Array(ENABLED, DISABLED, DELETED)
 }
 
 type FolderName = "INBOX" | "DELETED_ITEMS" | "SENT_ITEMS" | "DRAFTS" | "JUNK_EMAIL"
 object FolderName {
-  val INBOX: "INBOX" = "INBOX"
-  val DELETED_ITEMS: "DELETED_ITEMS" = "DELETED_ITEMS"
-  val SENT_ITEMS: "SENT_ITEMS" = "SENT_ITEMS"
-  val DRAFTS: "DRAFTS" = "DRAFTS"
-  val JUNK_EMAIL: "JUNK_EMAIL" = "JUNK_EMAIL"
+  inline val INBOX: "INBOX" = "INBOX"
+  inline val DELETED_ITEMS: "DELETED_ITEMS" = "DELETED_ITEMS"
+  inline val SENT_ITEMS: "SENT_ITEMS" = "SENT_ITEMS"
+  inline val DRAFTS: "DRAFTS" = "DRAFTS"
+  inline val JUNK_EMAIL: "JUNK_EMAIL" = "JUNK_EMAIL"
 
-  @inline def values = js.Array[FolderName](INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL)
+  inline def values: js.Array[FolderName] = js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL)
 }
 
 type MailboxExportJobState = "RUNNING" | "COMPLETED" | "FAILED" | "CANCELLED"
 object MailboxExportJobState {
-  val RUNNING: "RUNNING" = "RUNNING"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val FAILED: "FAILED" = "FAILED"
-  val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array[MailboxExportJobState](RUNNING, COMPLETED, FAILED, CANCELLED)
+  inline def values: js.Array[MailboxExportJobState] = js.Array(RUNNING, COMPLETED, FAILED, CANCELLED)
 }
 
 type MemberType = "GROUP" | "USER"
 object MemberType {
-  val GROUP: "GROUP" = "GROUP"
-  val USER: "USER" = "USER"
+  inline val GROUP: "GROUP" = "GROUP"
+  inline val USER: "USER" = "USER"
 
-  @inline def values = js.Array[MemberType](GROUP, USER)
+  inline def values: js.Array[MemberType] = js.Array(GROUP, USER)
 }
 
 type MobileDeviceAccessRuleEffect = "ALLOW" | "DENY"
 object MobileDeviceAccessRuleEffect {
-  val ALLOW: "ALLOW" = "ALLOW"
-  val DENY: "DENY" = "DENY"
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val DENY: "DENY" = "DENY"
 
-  @inline def values = js.Array[MobileDeviceAccessRuleEffect](ALLOW, DENY)
+  inline def values: js.Array[MobileDeviceAccessRuleEffect] = js.Array(ALLOW, DENY)
 }
 
 type PermissionType = "FULL_ACCESS" | "SEND_AS" | "SEND_ON_BEHALF"
 object PermissionType {
-  val FULL_ACCESS: "FULL_ACCESS" = "FULL_ACCESS"
-  val SEND_AS: "SEND_AS" = "SEND_AS"
-  val SEND_ON_BEHALF: "SEND_ON_BEHALF" = "SEND_ON_BEHALF"
+  inline val FULL_ACCESS: "FULL_ACCESS" = "FULL_ACCESS"
+  inline val SEND_AS: "SEND_AS" = "SEND_AS"
+  inline val SEND_ON_BEHALF: "SEND_ON_BEHALF" = "SEND_ON_BEHALF"
 
-  @inline def values = js.Array[PermissionType](FULL_ACCESS, SEND_AS, SEND_ON_BEHALF)
+  inline def values: js.Array[PermissionType] = js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF)
 }
 
 type ResourceType = "ROOM" | "EQUIPMENT"
 object ResourceType {
-  val ROOM: "ROOM" = "ROOM"
-  val EQUIPMENT: "EQUIPMENT" = "EQUIPMENT"
+  inline val ROOM: "ROOM" = "ROOM"
+  inline val EQUIPMENT: "EQUIPMENT" = "EQUIPMENT"
 
-  @inline def values = js.Array[ResourceType](ROOM, EQUIPMENT)
+  inline def values: js.Array[ResourceType] = js.Array(ROOM, EQUIPMENT)
 }
 
 type RetentionAction = "NONE" | "DELETE" | "PERMANENTLY_DELETE"
 object RetentionAction {
-  val NONE: "NONE" = "NONE"
-  val DELETE: "DELETE" = "DELETE"
-  val PERMANENTLY_DELETE: "PERMANENTLY_DELETE" = "PERMANENTLY_DELETE"
+  inline val NONE: "NONE" = "NONE"
+  inline val DELETE: "DELETE" = "DELETE"
+  inline val PERMANENTLY_DELETE: "PERMANENTLY_DELETE" = "PERMANENTLY_DELETE"
 
-  @inline def values = js.Array[RetentionAction](NONE, DELETE, PERMANENTLY_DELETE)
+  inline def values: js.Array[RetentionAction] = js.Array(NONE, DELETE, PERMANENTLY_DELETE)
 }
 
 type UserRole = "USER" | "RESOURCE" | "SYSTEM_USER"
 object UserRole {
-  val USER: "USER" = "USER"
-  val RESOURCE: "RESOURCE" = "RESOURCE"
-  val SYSTEM_USER: "SYSTEM_USER" = "SYSTEM_USER"
+  inline val USER: "USER" = "USER"
+  inline val RESOURCE: "RESOURCE" = "RESOURCE"
+  inline val SYSTEM_USER: "SYSTEM_USER" = "SYSTEM_USER"
 
-  @inline def values = js.Array[UserRole](USER, RESOURCE, SYSTEM_USER)
+  inline def values: js.Array[UserRole] = js.Array(USER, RESOURCE, SYSTEM_USER)
 }

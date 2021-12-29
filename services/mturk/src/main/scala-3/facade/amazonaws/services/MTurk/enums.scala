@@ -4,45 +4,45 @@ import scalajs._
 
 type AssignmentStatus = "Submitted" | "Approved" | "Rejected"
 object AssignmentStatus {
-  val Submitted: "Submitted" = "Submitted"
-  val Approved: "Approved" = "Approved"
-  val Rejected: "Rejected" = "Rejected"
+  inline val Submitted: "Submitted" = "Submitted"
+  inline val Approved: "Approved" = "Approved"
+  inline val Rejected: "Rejected" = "Rejected"
 
-  @inline def values = js.Array[AssignmentStatus](Submitted, Approved, Rejected)
+  inline def values: js.Array[AssignmentStatus] = js.Array(Submitted, Approved, Rejected)
 }
 
 type Comparator = "LessThan" | "LessThanOrEqualTo" | "GreaterThan" | "GreaterThanOrEqualTo" | "EqualTo" | "NotEqualTo" | "Exists" | "DoesNotExist" | "In" | "NotIn"
 object Comparator {
-  val LessThan: "LessThan" = "LessThan"
-  val LessThanOrEqualTo: "LessThanOrEqualTo" = "LessThanOrEqualTo"
-  val GreaterThan: "GreaterThan" = "GreaterThan"
-  val GreaterThanOrEqualTo: "GreaterThanOrEqualTo" = "GreaterThanOrEqualTo"
-  val EqualTo: "EqualTo" = "EqualTo"
-  val NotEqualTo: "NotEqualTo" = "NotEqualTo"
-  val Exists: "Exists" = "Exists"
-  val DoesNotExist: "DoesNotExist" = "DoesNotExist"
-  val In: "In" = "In"
-  val NotIn: "NotIn" = "NotIn"
+  inline val LessThan: "LessThan" = "LessThan"
+  inline val LessThanOrEqualTo: "LessThanOrEqualTo" = "LessThanOrEqualTo"
+  inline val GreaterThan: "GreaterThan" = "GreaterThan"
+  inline val GreaterThanOrEqualTo: "GreaterThanOrEqualTo" = "GreaterThanOrEqualTo"
+  inline val EqualTo: "EqualTo" = "EqualTo"
+  inline val NotEqualTo: "NotEqualTo" = "NotEqualTo"
+  inline val Exists: "Exists" = "Exists"
+  inline val DoesNotExist: "DoesNotExist" = "DoesNotExist"
+  inline val In: "In" = "In"
+  inline val NotIn: "NotIn" = "NotIn"
 
-  @inline def values = js.Array[Comparator](LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn)
+  inline def values: js.Array[Comparator] = js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn)
 }
 
 type EventType = "AssignmentAccepted" | "AssignmentAbandoned" | "AssignmentReturned" | "AssignmentSubmitted" | "AssignmentRejected" | "AssignmentApproved" | "HITCreated" | "HITExpired" | "HITReviewable" | "HITExtended" | "HITDisposed" | "Ping"
 object EventType {
-  val AssignmentAccepted: "AssignmentAccepted" = "AssignmentAccepted"
-  val AssignmentAbandoned: "AssignmentAbandoned" = "AssignmentAbandoned"
-  val AssignmentReturned: "AssignmentReturned" = "AssignmentReturned"
-  val AssignmentSubmitted: "AssignmentSubmitted" = "AssignmentSubmitted"
-  val AssignmentRejected: "AssignmentRejected" = "AssignmentRejected"
-  val AssignmentApproved: "AssignmentApproved" = "AssignmentApproved"
-  val HITCreated: "HITCreated" = "HITCreated"
-  val HITExpired: "HITExpired" = "HITExpired"
-  val HITReviewable: "HITReviewable" = "HITReviewable"
-  val HITExtended: "HITExtended" = "HITExtended"
-  val HITDisposed: "HITDisposed" = "HITDisposed"
-  val Ping: "Ping" = "Ping"
+  inline val AssignmentAccepted: "AssignmentAccepted" = "AssignmentAccepted"
+  inline val AssignmentAbandoned: "AssignmentAbandoned" = "AssignmentAbandoned"
+  inline val AssignmentReturned: "AssignmentReturned" = "AssignmentReturned"
+  inline val AssignmentSubmitted: "AssignmentSubmitted" = "AssignmentSubmitted"
+  inline val AssignmentRejected: "AssignmentRejected" = "AssignmentRejected"
+  inline val AssignmentApproved: "AssignmentApproved" = "AssignmentApproved"
+  inline val HITCreated: "HITCreated" = "HITCreated"
+  inline val HITExpired: "HITExpired" = "HITExpired"
+  inline val HITReviewable: "HITReviewable" = "HITReviewable"
+  inline val HITExtended: "HITExtended" = "HITExtended"
+  inline val HITDisposed: "HITDisposed" = "HITDisposed"
+  inline val Ping: "Ping" = "Ping"
 
-  @inline def values = js.Array[EventType](
+  inline def values: js.Array[EventType] = js.Array(
     AssignmentAccepted,
     AssignmentAbandoned,
     AssignmentReturned,
@@ -60,89 +60,89 @@ object EventType {
 
 type HITAccessActions = "Accept" | "PreviewAndAccept" | "DiscoverPreviewAndAccept"
 object HITAccessActions {
-  val Accept: "Accept" = "Accept"
-  val PreviewAndAccept: "PreviewAndAccept" = "PreviewAndAccept"
-  val DiscoverPreviewAndAccept: "DiscoverPreviewAndAccept" = "DiscoverPreviewAndAccept"
+  inline val Accept: "Accept" = "Accept"
+  inline val PreviewAndAccept: "PreviewAndAccept" = "PreviewAndAccept"
+  inline val DiscoverPreviewAndAccept: "DiscoverPreviewAndAccept" = "DiscoverPreviewAndAccept"
 
-  @inline def values = js.Array[HITAccessActions](Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
+  inline def values: js.Array[HITAccessActions] = js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
 }
 
 type HITReviewStatus = "NotReviewed" | "MarkedForReview" | "ReviewedAppropriate" | "ReviewedInappropriate"
 object HITReviewStatus {
-  val NotReviewed: "NotReviewed" = "NotReviewed"
-  val MarkedForReview: "MarkedForReview" = "MarkedForReview"
-  val ReviewedAppropriate: "ReviewedAppropriate" = "ReviewedAppropriate"
-  val ReviewedInappropriate: "ReviewedInappropriate" = "ReviewedInappropriate"
+  inline val NotReviewed: "NotReviewed" = "NotReviewed"
+  inline val MarkedForReview: "MarkedForReview" = "MarkedForReview"
+  inline val ReviewedAppropriate: "ReviewedAppropriate" = "ReviewedAppropriate"
+  inline val ReviewedInappropriate: "ReviewedInappropriate" = "ReviewedInappropriate"
 
-  @inline def values = js.Array[HITReviewStatus](NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate)
+  inline def values: js.Array[HITReviewStatus] = js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate)
 }
 
 type HITStatus = "Assignable" | "Unassignable" | "Reviewable" | "Reviewing" | "Disposed"
 object HITStatus {
-  val Assignable: "Assignable" = "Assignable"
-  val Unassignable: "Unassignable" = "Unassignable"
-  val Reviewable: "Reviewable" = "Reviewable"
-  val Reviewing: "Reviewing" = "Reviewing"
-  val Disposed: "Disposed" = "Disposed"
+  inline val Assignable: "Assignable" = "Assignable"
+  inline val Unassignable: "Unassignable" = "Unassignable"
+  inline val Reviewable: "Reviewable" = "Reviewable"
+  inline val Reviewing: "Reviewing" = "Reviewing"
+  inline val Disposed: "Disposed" = "Disposed"
 
-  @inline def values = js.Array[HITStatus](Assignable, Unassignable, Reviewable, Reviewing, Disposed)
+  inline def values: js.Array[HITStatus] = js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed)
 }
 
 type NotificationTransport = "Email" | "SQS" | "SNS"
 object NotificationTransport {
-  val Email: "Email" = "Email"
-  val SQS: "SQS" = "SQS"
-  val SNS: "SNS" = "SNS"
+  inline val Email: "Email" = "Email"
+  inline val SQS: "SQS" = "SQS"
+  inline val SNS: "SNS" = "SNS"
 
-  @inline def values = js.Array[NotificationTransport](Email, SQS, SNS)
+  inline def values: js.Array[NotificationTransport] = js.Array(Email, SQS, SNS)
 }
 
 type NotifyWorkersFailureCode = "SoftFailure" | "HardFailure"
 object NotifyWorkersFailureCode {
-  val SoftFailure: "SoftFailure" = "SoftFailure"
-  val HardFailure: "HardFailure" = "HardFailure"
+  inline val SoftFailure: "SoftFailure" = "SoftFailure"
+  inline val HardFailure: "HardFailure" = "HardFailure"
 
-  @inline def values = js.Array[NotifyWorkersFailureCode](SoftFailure, HardFailure)
+  inline def values: js.Array[NotifyWorkersFailureCode] = js.Array(SoftFailure, HardFailure)
 }
 
 type QualificationStatus = "Granted" | "Revoked"
 object QualificationStatus {
-  val Granted: "Granted" = "Granted"
-  val Revoked: "Revoked" = "Revoked"
+  inline val Granted: "Granted" = "Granted"
+  inline val Revoked: "Revoked" = "Revoked"
 
-  @inline def values = js.Array[QualificationStatus](Granted, Revoked)
+  inline def values: js.Array[QualificationStatus] = js.Array(Granted, Revoked)
 }
 
 type QualificationTypeStatus = "Active" | "Inactive"
 object QualificationTypeStatus {
-  val Active: "Active" = "Active"
-  val Inactive: "Inactive" = "Inactive"
+  inline val Active: "Active" = "Active"
+  inline val Inactive: "Inactive" = "Inactive"
 
-  @inline def values = js.Array[QualificationTypeStatus](Active, Inactive)
+  inline def values: js.Array[QualificationTypeStatus] = js.Array(Active, Inactive)
 }
 
 type ReviewActionStatus = "Intended" | "Succeeded" | "Failed" | "Cancelled"
 object ReviewActionStatus {
-  val Intended: "Intended" = "Intended"
-  val Succeeded: "Succeeded" = "Succeeded"
-  val Failed: "Failed" = "Failed"
-  val Cancelled: "Cancelled" = "Cancelled"
+  inline val Intended: "Intended" = "Intended"
+  inline val Succeeded: "Succeeded" = "Succeeded"
+  inline val Failed: "Failed" = "Failed"
+  inline val Cancelled: "Cancelled" = "Cancelled"
 
-  @inline def values = js.Array[ReviewActionStatus](Intended, Succeeded, Failed, Cancelled)
+  inline def values: js.Array[ReviewActionStatus] = js.Array(Intended, Succeeded, Failed, Cancelled)
 }
 
 type ReviewPolicyLevel = "Assignment" | "HIT"
 object ReviewPolicyLevel {
-  val Assignment: "Assignment" = "Assignment"
-  val HIT: "HIT" = "HIT"
+  inline val Assignment: "Assignment" = "Assignment"
+  inline val HIT: "HIT" = "HIT"
 
-  @inline def values = js.Array[ReviewPolicyLevel](Assignment, HIT)
+  inline def values: js.Array[ReviewPolicyLevel] = js.Array(Assignment, HIT)
 }
 
 type ReviewableHITStatus = "Reviewable" | "Reviewing"
 object ReviewableHITStatus {
-  val Reviewable: "Reviewable" = "Reviewable"
-  val Reviewing: "Reviewing" = "Reviewing"
+  inline val Reviewable: "Reviewable" = "Reviewable"
+  inline val Reviewing: "Reviewing" = "Reviewing"
 
-  @inline def values = js.Array[ReviewableHITStatus](Reviewable, Reviewing)
+  inline def values: js.Array[ReviewableHITStatus] = js.Array(Reviewable, Reviewing)
 }

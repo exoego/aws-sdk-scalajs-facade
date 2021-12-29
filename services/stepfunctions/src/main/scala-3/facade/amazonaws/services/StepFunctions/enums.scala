@@ -4,75 +4,75 @@ import scalajs._
 
 type ExecutionStatus = "RUNNING" | "SUCCEEDED" | "FAILED" | "TIMED_OUT" | "ABORTED"
 object ExecutionStatus {
-  val RUNNING: "RUNNING" = "RUNNING"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
-  val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
-  val ABORTED: "ABORTED" = "ABORTED"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  inline val ABORTED: "ABORTED" = "ABORTED"
 
-  @inline def values = js.Array[ExecutionStatus](RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED)
+  inline def values: js.Array[ExecutionStatus] = js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED)
 }
 
 type HistoryEventType = "ActivityFailed" | "ActivityScheduled" | "ActivityScheduleFailed" | "ActivityStarted" | "ActivitySucceeded" | "ActivityTimedOut" | "ChoiceStateEntered" | "ChoiceStateExited" | "ExecutionAborted" | "ExecutionFailed" | "ExecutionStarted" | "ExecutionSucceeded" | "ExecutionTimedOut" | "FailStateEntered" | "LambdaFunctionFailed" | "LambdaFunctionScheduled" | "LambdaFunctionScheduleFailed" | "LambdaFunctionStarted" | "LambdaFunctionStartFailed" | "LambdaFunctionSucceeded" | "LambdaFunctionTimedOut" | "MapIterationAborted" | "MapIterationFailed" | "MapIterationStarted" | "MapIterationSucceeded" | "MapStateAborted" | "MapStateEntered" | "MapStateExited" | "MapStateFailed" | "MapStateStarted" | "MapStateSucceeded" | "ParallelStateAborted" | "ParallelStateEntered" | "ParallelStateExited" | "ParallelStateFailed" | "ParallelStateStarted" | "ParallelStateSucceeded" | "PassStateEntered" | "PassStateExited" | "SucceedStateEntered" | "SucceedStateExited" | "TaskFailed" |
   "TaskScheduled" | "TaskStarted" | "TaskStartFailed" | "TaskStateAborted" | "TaskStateEntered" | "TaskStateExited" | "TaskSubmitFailed" | "TaskSubmitted" | "TaskSucceeded" | "TaskTimedOut" | "WaitStateAborted" | "WaitStateEntered" | "WaitStateExited"
 object HistoryEventType {
-  val ActivityFailed: "ActivityFailed" = "ActivityFailed"
-  val ActivityScheduled: "ActivityScheduled" = "ActivityScheduled"
-  val ActivityScheduleFailed: "ActivityScheduleFailed" = "ActivityScheduleFailed"
-  val ActivityStarted: "ActivityStarted" = "ActivityStarted"
-  val ActivitySucceeded: "ActivitySucceeded" = "ActivitySucceeded"
-  val ActivityTimedOut: "ActivityTimedOut" = "ActivityTimedOut"
-  val ChoiceStateEntered: "ChoiceStateEntered" = "ChoiceStateEntered"
-  val ChoiceStateExited: "ChoiceStateExited" = "ChoiceStateExited"
-  val ExecutionAborted: "ExecutionAborted" = "ExecutionAborted"
-  val ExecutionFailed: "ExecutionFailed" = "ExecutionFailed"
-  val ExecutionStarted: "ExecutionStarted" = "ExecutionStarted"
-  val ExecutionSucceeded: "ExecutionSucceeded" = "ExecutionSucceeded"
-  val ExecutionTimedOut: "ExecutionTimedOut" = "ExecutionTimedOut"
-  val FailStateEntered: "FailStateEntered" = "FailStateEntered"
-  val LambdaFunctionFailed: "LambdaFunctionFailed" = "LambdaFunctionFailed"
-  val LambdaFunctionScheduled: "LambdaFunctionScheduled" = "LambdaFunctionScheduled"
-  val LambdaFunctionScheduleFailed: "LambdaFunctionScheduleFailed" = "LambdaFunctionScheduleFailed"
-  val LambdaFunctionStarted: "LambdaFunctionStarted" = "LambdaFunctionStarted"
-  val LambdaFunctionStartFailed: "LambdaFunctionStartFailed" = "LambdaFunctionStartFailed"
-  val LambdaFunctionSucceeded: "LambdaFunctionSucceeded" = "LambdaFunctionSucceeded"
-  val LambdaFunctionTimedOut: "LambdaFunctionTimedOut" = "LambdaFunctionTimedOut"
-  val MapIterationAborted: "MapIterationAborted" = "MapIterationAborted"
-  val MapIterationFailed: "MapIterationFailed" = "MapIterationFailed"
-  val MapIterationStarted: "MapIterationStarted" = "MapIterationStarted"
-  val MapIterationSucceeded: "MapIterationSucceeded" = "MapIterationSucceeded"
-  val MapStateAborted: "MapStateAborted" = "MapStateAborted"
-  val MapStateEntered: "MapStateEntered" = "MapStateEntered"
-  val MapStateExited: "MapStateExited" = "MapStateExited"
-  val MapStateFailed: "MapStateFailed" = "MapStateFailed"
-  val MapStateStarted: "MapStateStarted" = "MapStateStarted"
-  val MapStateSucceeded: "MapStateSucceeded" = "MapStateSucceeded"
-  val ParallelStateAborted: "ParallelStateAborted" = "ParallelStateAborted"
-  val ParallelStateEntered: "ParallelStateEntered" = "ParallelStateEntered"
-  val ParallelStateExited: "ParallelStateExited" = "ParallelStateExited"
-  val ParallelStateFailed: "ParallelStateFailed" = "ParallelStateFailed"
-  val ParallelStateStarted: "ParallelStateStarted" = "ParallelStateStarted"
-  val ParallelStateSucceeded: "ParallelStateSucceeded" = "ParallelStateSucceeded"
-  val PassStateEntered: "PassStateEntered" = "PassStateEntered"
-  val PassStateExited: "PassStateExited" = "PassStateExited"
-  val SucceedStateEntered: "SucceedStateEntered" = "SucceedStateEntered"
-  val SucceedStateExited: "SucceedStateExited" = "SucceedStateExited"
-  val TaskFailed: "TaskFailed" = "TaskFailed"
-  val TaskScheduled: "TaskScheduled" = "TaskScheduled"
-  val TaskStarted: "TaskStarted" = "TaskStarted"
-  val TaskStartFailed: "TaskStartFailed" = "TaskStartFailed"
-  val TaskStateAborted: "TaskStateAborted" = "TaskStateAborted"
-  val TaskStateEntered: "TaskStateEntered" = "TaskStateEntered"
-  val TaskStateExited: "TaskStateExited" = "TaskStateExited"
-  val TaskSubmitFailed: "TaskSubmitFailed" = "TaskSubmitFailed"
-  val TaskSubmitted: "TaskSubmitted" = "TaskSubmitted"
-  val TaskSucceeded: "TaskSucceeded" = "TaskSucceeded"
-  val TaskTimedOut: "TaskTimedOut" = "TaskTimedOut"
-  val WaitStateAborted: "WaitStateAborted" = "WaitStateAborted"
-  val WaitStateEntered: "WaitStateEntered" = "WaitStateEntered"
-  val WaitStateExited: "WaitStateExited" = "WaitStateExited"
+  inline val ActivityFailed: "ActivityFailed" = "ActivityFailed"
+  inline val ActivityScheduled: "ActivityScheduled" = "ActivityScheduled"
+  inline val ActivityScheduleFailed: "ActivityScheduleFailed" = "ActivityScheduleFailed"
+  inline val ActivityStarted: "ActivityStarted" = "ActivityStarted"
+  inline val ActivitySucceeded: "ActivitySucceeded" = "ActivitySucceeded"
+  inline val ActivityTimedOut: "ActivityTimedOut" = "ActivityTimedOut"
+  inline val ChoiceStateEntered: "ChoiceStateEntered" = "ChoiceStateEntered"
+  inline val ChoiceStateExited: "ChoiceStateExited" = "ChoiceStateExited"
+  inline val ExecutionAborted: "ExecutionAborted" = "ExecutionAborted"
+  inline val ExecutionFailed: "ExecutionFailed" = "ExecutionFailed"
+  inline val ExecutionStarted: "ExecutionStarted" = "ExecutionStarted"
+  inline val ExecutionSucceeded: "ExecutionSucceeded" = "ExecutionSucceeded"
+  inline val ExecutionTimedOut: "ExecutionTimedOut" = "ExecutionTimedOut"
+  inline val FailStateEntered: "FailStateEntered" = "FailStateEntered"
+  inline val LambdaFunctionFailed: "LambdaFunctionFailed" = "LambdaFunctionFailed"
+  inline val LambdaFunctionScheduled: "LambdaFunctionScheduled" = "LambdaFunctionScheduled"
+  inline val LambdaFunctionScheduleFailed: "LambdaFunctionScheduleFailed" = "LambdaFunctionScheduleFailed"
+  inline val LambdaFunctionStarted: "LambdaFunctionStarted" = "LambdaFunctionStarted"
+  inline val LambdaFunctionStartFailed: "LambdaFunctionStartFailed" = "LambdaFunctionStartFailed"
+  inline val LambdaFunctionSucceeded: "LambdaFunctionSucceeded" = "LambdaFunctionSucceeded"
+  inline val LambdaFunctionTimedOut: "LambdaFunctionTimedOut" = "LambdaFunctionTimedOut"
+  inline val MapIterationAborted: "MapIterationAborted" = "MapIterationAborted"
+  inline val MapIterationFailed: "MapIterationFailed" = "MapIterationFailed"
+  inline val MapIterationStarted: "MapIterationStarted" = "MapIterationStarted"
+  inline val MapIterationSucceeded: "MapIterationSucceeded" = "MapIterationSucceeded"
+  inline val MapStateAborted: "MapStateAborted" = "MapStateAborted"
+  inline val MapStateEntered: "MapStateEntered" = "MapStateEntered"
+  inline val MapStateExited: "MapStateExited" = "MapStateExited"
+  inline val MapStateFailed: "MapStateFailed" = "MapStateFailed"
+  inline val MapStateStarted: "MapStateStarted" = "MapStateStarted"
+  inline val MapStateSucceeded: "MapStateSucceeded" = "MapStateSucceeded"
+  inline val ParallelStateAborted: "ParallelStateAborted" = "ParallelStateAborted"
+  inline val ParallelStateEntered: "ParallelStateEntered" = "ParallelStateEntered"
+  inline val ParallelStateExited: "ParallelStateExited" = "ParallelStateExited"
+  inline val ParallelStateFailed: "ParallelStateFailed" = "ParallelStateFailed"
+  inline val ParallelStateStarted: "ParallelStateStarted" = "ParallelStateStarted"
+  inline val ParallelStateSucceeded: "ParallelStateSucceeded" = "ParallelStateSucceeded"
+  inline val PassStateEntered: "PassStateEntered" = "PassStateEntered"
+  inline val PassStateExited: "PassStateExited" = "PassStateExited"
+  inline val SucceedStateEntered: "SucceedStateEntered" = "SucceedStateEntered"
+  inline val SucceedStateExited: "SucceedStateExited" = "SucceedStateExited"
+  inline val TaskFailed: "TaskFailed" = "TaskFailed"
+  inline val TaskScheduled: "TaskScheduled" = "TaskScheduled"
+  inline val TaskStarted: "TaskStarted" = "TaskStarted"
+  inline val TaskStartFailed: "TaskStartFailed" = "TaskStartFailed"
+  inline val TaskStateAborted: "TaskStateAborted" = "TaskStateAborted"
+  inline val TaskStateEntered: "TaskStateEntered" = "TaskStateEntered"
+  inline val TaskStateExited: "TaskStateExited" = "TaskStateExited"
+  inline val TaskSubmitFailed: "TaskSubmitFailed" = "TaskSubmitFailed"
+  inline val TaskSubmitted: "TaskSubmitted" = "TaskSubmitted"
+  inline val TaskSucceeded: "TaskSucceeded" = "TaskSucceeded"
+  inline val TaskTimedOut: "TaskTimedOut" = "TaskTimedOut"
+  inline val WaitStateAborted: "WaitStateAborted" = "WaitStateAborted"
+  inline val WaitStateEntered: "WaitStateEntered" = "WaitStateEntered"
+  inline val WaitStateExited: "WaitStateExited" = "WaitStateExited"
 
-  @inline def values = js.Array[HistoryEventType](
+  inline def values: js.Array[HistoryEventType] = js.Array(
     ActivityFailed,
     ActivityScheduled,
     ActivityScheduleFailed,
@@ -133,35 +133,35 @@ object HistoryEventType {
 
 type LogLevel = "ALL" | "ERROR" | "FATAL" | "OFF"
 object LogLevel {
-  val ALL: "ALL" = "ALL"
-  val ERROR: "ERROR" = "ERROR"
-  val FATAL: "FATAL" = "FATAL"
-  val OFF: "OFF" = "OFF"
+  inline val ALL: "ALL" = "ALL"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val FATAL: "FATAL" = "FATAL"
+  inline val OFF: "OFF" = "OFF"
 
-  @inline def values = js.Array[LogLevel](ALL, ERROR, FATAL, OFF)
+  inline def values: js.Array[LogLevel] = js.Array(ALL, ERROR, FATAL, OFF)
 }
 
 type StateMachineStatus = "ACTIVE" | "DELETING"
 object StateMachineStatus {
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETING: "DELETING" = "DELETING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array[StateMachineStatus](ACTIVE, DELETING)
+  inline def values: js.Array[StateMachineStatus] = js.Array(ACTIVE, DELETING)
 }
 
 type StateMachineType = "STANDARD" | "EXPRESS"
 object StateMachineType {
-  val STANDARD: "STANDARD" = "STANDARD"
-  val EXPRESS: "EXPRESS" = "EXPRESS"
+  inline val STANDARD: "STANDARD" = "STANDARD"
+  inline val EXPRESS: "EXPRESS" = "EXPRESS"
 
-  @inline def values = js.Array[StateMachineType](STANDARD, EXPRESS)
+  inline def values: js.Array[StateMachineType] = js.Array(STANDARD, EXPRESS)
 }
 
 type SyncExecutionStatus = "SUCCEEDED" | "FAILED" | "TIMED_OUT"
 object SyncExecutionStatus {
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
-  val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
 
-  @inline def values = js.Array[SyncExecutionStatus](SUCCEEDED, FAILED, TIMED_OUT)
+  inline def values: js.Array[SyncExecutionStatus] = js.Array(SUCCEEDED, FAILED, TIMED_OUT)
 }

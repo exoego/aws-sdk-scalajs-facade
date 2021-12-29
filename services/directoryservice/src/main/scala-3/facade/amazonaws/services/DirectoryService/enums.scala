@@ -4,260 +4,260 @@ import scalajs._
 
 type CertificateState = "Registering" | "Registered" | "RegisterFailed" | "Deregistering" | "Deregistered" | "DeregisterFailed"
 object CertificateState {
-  val Registering: "Registering" = "Registering"
-  val Registered: "Registered" = "Registered"
-  val RegisterFailed: "RegisterFailed" = "RegisterFailed"
-  val Deregistering: "Deregistering" = "Deregistering"
-  val Deregistered: "Deregistered" = "Deregistered"
-  val DeregisterFailed: "DeregisterFailed" = "DeregisterFailed"
+  inline val Registering: "Registering" = "Registering"
+  inline val Registered: "Registered" = "Registered"
+  inline val RegisterFailed: "RegisterFailed" = "RegisterFailed"
+  inline val Deregistering: "Deregistering" = "Deregistering"
+  inline val Deregistered: "Deregistered" = "Deregistered"
+  inline val DeregisterFailed: "DeregisterFailed" = "DeregisterFailed"
 
-  @inline def values = js.Array[CertificateState](Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed)
+  inline def values: js.Array[CertificateState] = js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed)
 }
 
 type CertificateType = "ClientCertAuth" | "ClientLDAPS"
 object CertificateType {
-  val ClientCertAuth: "ClientCertAuth" = "ClientCertAuth"
-  val ClientLDAPS: "ClientLDAPS" = "ClientLDAPS"
+  inline val ClientCertAuth: "ClientCertAuth" = "ClientCertAuth"
+  inline val ClientLDAPS: "ClientLDAPS" = "ClientLDAPS"
 
-  @inline def values = js.Array[CertificateType](ClientCertAuth, ClientLDAPS)
+  inline def values: js.Array[CertificateType] = js.Array(ClientCertAuth, ClientLDAPS)
 }
 
 type ClientAuthenticationType = "SmartCard"
 object ClientAuthenticationType {
-  val SmartCard: "SmartCard" = "SmartCard"
+  inline val SmartCard: "SmartCard" = "SmartCard"
 
-  @inline def values = js.Array[ClientAuthenticationType](SmartCard)
+  inline def values: js.Array[ClientAuthenticationType] = js.Array(SmartCard)
 }
 
 type DirectoryEdition = "Enterprise" | "Standard"
 object DirectoryEdition {
-  val Enterprise: "Enterprise" = "Enterprise"
-  val Standard: "Standard" = "Standard"
+  inline val Enterprise: "Enterprise" = "Enterprise"
+  inline val Standard: "Standard" = "Standard"
 
-  @inline def values = js.Array[DirectoryEdition](Enterprise, Standard)
+  inline def values: js.Array[DirectoryEdition] = js.Array(Enterprise, Standard)
 }
 
 type DirectorySize = "Small" | "Large"
 object DirectorySize {
-  val Small: "Small" = "Small"
-  val Large: "Large" = "Large"
+  inline val Small: "Small" = "Small"
+  inline val Large: "Large" = "Large"
 
-  @inline def values = js.Array[DirectorySize](Small, Large)
+  inline def values: js.Array[DirectorySize] = js.Array(Small, Large)
 }
 
 type DirectoryStage = "Requested" | "Creating" | "Created" | "Active" | "Inoperable" | "Impaired" | "Restoring" | "RestoreFailed" | "Deleting" | "Deleted" | "Failed"
 object DirectoryStage {
-  val Requested: "Requested" = "Requested"
-  val Creating: "Creating" = "Creating"
-  val Created: "Created" = "Created"
-  val Active: "Active" = "Active"
-  val Inoperable: "Inoperable" = "Inoperable"
-  val Impaired: "Impaired" = "Impaired"
-  val Restoring: "Restoring" = "Restoring"
-  val RestoreFailed: "RestoreFailed" = "RestoreFailed"
-  val Deleting: "Deleting" = "Deleting"
-  val Deleted: "Deleted" = "Deleted"
-  val Failed: "Failed" = "Failed"
+  inline val Requested: "Requested" = "Requested"
+  inline val Creating: "Creating" = "Creating"
+  inline val Created: "Created" = "Created"
+  inline val Active: "Active" = "Active"
+  inline val Inoperable: "Inoperable" = "Inoperable"
+  inline val Impaired: "Impaired" = "Impaired"
+  inline val Restoring: "Restoring" = "Restoring"
+  inline val RestoreFailed: "RestoreFailed" = "RestoreFailed"
+  inline val Deleting: "Deleting" = "Deleting"
+  inline val Deleted: "Deleted" = "Deleted"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array[DirectoryStage](Requested, Creating, Created, Active, Inoperable, Impaired, Restoring, RestoreFailed, Deleting, Deleted, Failed)
+  inline def values: js.Array[DirectoryStage] = js.Array(Requested, Creating, Created, Active, Inoperable, Impaired, Restoring, RestoreFailed, Deleting, Deleted, Failed)
 }
 
 type DirectoryType = "SimpleAD" | "ADConnector" | "MicrosoftAD" | "SharedMicrosoftAD"
 object DirectoryType {
-  val SimpleAD: "SimpleAD" = "SimpleAD"
-  val ADConnector: "ADConnector" = "ADConnector"
-  val MicrosoftAD: "MicrosoftAD" = "MicrosoftAD"
-  val SharedMicrosoftAD: "SharedMicrosoftAD" = "SharedMicrosoftAD"
+  inline val SimpleAD: "SimpleAD" = "SimpleAD"
+  inline val ADConnector: "ADConnector" = "ADConnector"
+  inline val MicrosoftAD: "MicrosoftAD" = "MicrosoftAD"
+  inline val SharedMicrosoftAD: "SharedMicrosoftAD" = "SharedMicrosoftAD"
 
-  @inline def values = js.Array[DirectoryType](SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD)
+  inline def values: js.Array[DirectoryType] = js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD)
 }
 
 type DomainControllerStatus = "Creating" | "Active" | "Impaired" | "Restoring" | "Deleting" | "Deleted" | "Failed"
 object DomainControllerStatus {
-  val Creating: "Creating" = "Creating"
-  val Active: "Active" = "Active"
-  val Impaired: "Impaired" = "Impaired"
-  val Restoring: "Restoring" = "Restoring"
-  val Deleting: "Deleting" = "Deleting"
-  val Deleted: "Deleted" = "Deleted"
-  val Failed: "Failed" = "Failed"
+  inline val Creating: "Creating" = "Creating"
+  inline val Active: "Active" = "Active"
+  inline val Impaired: "Impaired" = "Impaired"
+  inline val Restoring: "Restoring" = "Restoring"
+  inline val Deleting: "Deleting" = "Deleting"
+  inline val Deleted: "Deleted" = "Deleted"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array[DomainControllerStatus](Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed)
+  inline def values: js.Array[DomainControllerStatus] = js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed)
 }
 
 type IpRouteStatusMsg = "Adding" | "Added" | "Removing" | "Removed" | "AddFailed" | "RemoveFailed"
 object IpRouteStatusMsg {
-  val Adding: "Adding" = "Adding"
-  val Added: "Added" = "Added"
-  val Removing: "Removing" = "Removing"
-  val Removed: "Removed" = "Removed"
-  val AddFailed: "AddFailed" = "AddFailed"
-  val RemoveFailed: "RemoveFailed" = "RemoveFailed"
+  inline val Adding: "Adding" = "Adding"
+  inline val Added: "Added" = "Added"
+  inline val Removing: "Removing" = "Removing"
+  inline val Removed: "Removed" = "Removed"
+  inline val AddFailed: "AddFailed" = "AddFailed"
+  inline val RemoveFailed: "RemoveFailed" = "RemoveFailed"
 
-  @inline def values = js.Array[IpRouteStatusMsg](Adding, Added, Removing, Removed, AddFailed, RemoveFailed)
+  inline def values: js.Array[IpRouteStatusMsg] = js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed)
 }
 
 type LDAPSStatus = "Enabling" | "Enabled" | "EnableFailed" | "Disabled"
 object LDAPSStatus {
-  val Enabling: "Enabling" = "Enabling"
-  val Enabled: "Enabled" = "Enabled"
-  val EnableFailed: "EnableFailed" = "EnableFailed"
-  val Disabled: "Disabled" = "Disabled"
+  inline val Enabling: "Enabling" = "Enabling"
+  inline val Enabled: "Enabled" = "Enabled"
+  inline val EnableFailed: "EnableFailed" = "EnableFailed"
+  inline val Disabled: "Disabled" = "Disabled"
 
-  @inline def values = js.Array[LDAPSStatus](Enabling, Enabled, EnableFailed, Disabled)
+  inline def values: js.Array[LDAPSStatus] = js.Array(Enabling, Enabled, EnableFailed, Disabled)
 }
 
 type LDAPSType = "Client"
 object LDAPSType {
-  val Client: "Client" = "Client"
+  inline val Client: "Client" = "Client"
 
-  @inline def values = js.Array[LDAPSType](Client)
+  inline def values: js.Array[LDAPSType] = js.Array(Client)
 }
 
 type RadiusAuthenticationProtocol = "PAP" | "CHAP" | "MS-CHAPv1" | "MS-CHAPv2"
 object RadiusAuthenticationProtocol {
-  val PAP: "PAP" = "PAP"
-  val CHAP: "CHAP" = "CHAP"
-  val `MS-CHAPv1`: "MS-CHAPv1" = "MS-CHAPv1"
-  val `MS-CHAPv2`: "MS-CHAPv2" = "MS-CHAPv2"
+  inline val PAP: "PAP" = "PAP"
+  inline val CHAP: "CHAP" = "CHAP"
+  inline val `MS-CHAPv1`: "MS-CHAPv1" = "MS-CHAPv1"
+  inline val `MS-CHAPv2`: "MS-CHAPv2" = "MS-CHAPv2"
 
-  @inline def values = js.Array[RadiusAuthenticationProtocol](PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`)
+  inline def values: js.Array[RadiusAuthenticationProtocol] = js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`)
 }
 
 type RadiusStatus = "Creating" | "Completed" | "Failed"
 object RadiusStatus {
-  val Creating: "Creating" = "Creating"
-  val Completed: "Completed" = "Completed"
-  val Failed: "Failed" = "Failed"
+  inline val Creating: "Creating" = "Creating"
+  inline val Completed: "Completed" = "Completed"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array[RadiusStatus](Creating, Completed, Failed)
+  inline def values: js.Array[RadiusStatus] = js.Array(Creating, Completed, Failed)
 }
 
 type RegionType = "Primary" | "Additional"
 object RegionType {
-  val Primary: "Primary" = "Primary"
-  val Additional: "Additional" = "Additional"
+  inline val Primary: "Primary" = "Primary"
+  inline val Additional: "Additional" = "Additional"
 
-  @inline def values = js.Array[RegionType](Primary, Additional)
+  inline def values: js.Array[RegionType] = js.Array(Primary, Additional)
 }
 
 type ReplicationScope = "Domain"
 object ReplicationScope {
-  val Domain: "Domain" = "Domain"
+  inline val Domain: "Domain" = "Domain"
 
-  @inline def values = js.Array[ReplicationScope](Domain)
+  inline def values: js.Array[ReplicationScope] = js.Array(Domain)
 }
 
 type SchemaExtensionStatus = "Initializing" | "CreatingSnapshot" | "UpdatingSchema" | "Replicating" | "CancelInProgress" | "RollbackInProgress" | "Cancelled" | "Failed" | "Completed"
 object SchemaExtensionStatus {
-  val Initializing: "Initializing" = "Initializing"
-  val CreatingSnapshot: "CreatingSnapshot" = "CreatingSnapshot"
-  val UpdatingSchema: "UpdatingSchema" = "UpdatingSchema"
-  val Replicating: "Replicating" = "Replicating"
-  val CancelInProgress: "CancelInProgress" = "CancelInProgress"
-  val RollbackInProgress: "RollbackInProgress" = "RollbackInProgress"
-  val Cancelled: "Cancelled" = "Cancelled"
-  val Failed: "Failed" = "Failed"
-  val Completed: "Completed" = "Completed"
+  inline val Initializing: "Initializing" = "Initializing"
+  inline val CreatingSnapshot: "CreatingSnapshot" = "CreatingSnapshot"
+  inline val UpdatingSchema: "UpdatingSchema" = "UpdatingSchema"
+  inline val Replicating: "Replicating" = "Replicating"
+  inline val CancelInProgress: "CancelInProgress" = "CancelInProgress"
+  inline val RollbackInProgress: "RollbackInProgress" = "RollbackInProgress"
+  inline val Cancelled: "Cancelled" = "Cancelled"
+  inline val Failed: "Failed" = "Failed"
+  inline val Completed: "Completed" = "Completed"
 
-  @inline def values = js.Array[SchemaExtensionStatus](Initializing, CreatingSnapshot, UpdatingSchema, Replicating, CancelInProgress, RollbackInProgress, Cancelled, Failed, Completed)
+  inline def values: js.Array[SchemaExtensionStatus] = js.Array(Initializing, CreatingSnapshot, UpdatingSchema, Replicating, CancelInProgress, RollbackInProgress, Cancelled, Failed, Completed)
 }
 
 type SelectiveAuth = "Enabled" | "Disabled"
 object SelectiveAuth {
-  val Enabled: "Enabled" = "Enabled"
-  val Disabled: "Disabled" = "Disabled"
+  inline val Enabled: "Enabled" = "Enabled"
+  inline val Disabled: "Disabled" = "Disabled"
 
-  @inline def values = js.Array[SelectiveAuth](Enabled, Disabled)
+  inline def values: js.Array[SelectiveAuth] = js.Array(Enabled, Disabled)
 }
 
 type ShareMethod = "ORGANIZATIONS" | "HANDSHAKE"
 object ShareMethod {
-  val ORGANIZATIONS: "ORGANIZATIONS" = "ORGANIZATIONS"
-  val HANDSHAKE: "HANDSHAKE" = "HANDSHAKE"
+  inline val ORGANIZATIONS: "ORGANIZATIONS" = "ORGANIZATIONS"
+  inline val HANDSHAKE: "HANDSHAKE" = "HANDSHAKE"
 
-  @inline def values = js.Array[ShareMethod](ORGANIZATIONS, HANDSHAKE)
+  inline def values: js.Array[ShareMethod] = js.Array(ORGANIZATIONS, HANDSHAKE)
 }
 
 type ShareStatus = "Shared" | "PendingAcceptance" | "Rejected" | "Rejecting" | "RejectFailed" | "Sharing" | "ShareFailed" | "Deleted" | "Deleting"
 object ShareStatus {
-  val Shared: "Shared" = "Shared"
-  val PendingAcceptance: "PendingAcceptance" = "PendingAcceptance"
-  val Rejected: "Rejected" = "Rejected"
-  val Rejecting: "Rejecting" = "Rejecting"
-  val RejectFailed: "RejectFailed" = "RejectFailed"
-  val Sharing: "Sharing" = "Sharing"
-  val ShareFailed: "ShareFailed" = "ShareFailed"
-  val Deleted: "Deleted" = "Deleted"
-  val Deleting: "Deleting" = "Deleting"
+  inline val Shared: "Shared" = "Shared"
+  inline val PendingAcceptance: "PendingAcceptance" = "PendingAcceptance"
+  inline val Rejected: "Rejected" = "Rejected"
+  inline val Rejecting: "Rejecting" = "Rejecting"
+  inline val RejectFailed: "RejectFailed" = "RejectFailed"
+  inline val Sharing: "Sharing" = "Sharing"
+  inline val ShareFailed: "ShareFailed" = "ShareFailed"
+  inline val Deleted: "Deleted" = "Deleted"
+  inline val Deleting: "Deleting" = "Deleting"
 
-  @inline def values = js.Array[ShareStatus](Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
+  inline def values: js.Array[ShareStatus] = js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
 }
 
 type SnapshotStatus = "Creating" | "Completed" | "Failed"
 object SnapshotStatus {
-  val Creating: "Creating" = "Creating"
-  val Completed: "Completed" = "Completed"
-  val Failed: "Failed" = "Failed"
+  inline val Creating: "Creating" = "Creating"
+  inline val Completed: "Completed" = "Completed"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array[SnapshotStatus](Creating, Completed, Failed)
+  inline def values: js.Array[SnapshotStatus] = js.Array(Creating, Completed, Failed)
 }
 
 type SnapshotType = "Auto" | "Manual"
 object SnapshotType {
-  val Auto: "Auto" = "Auto"
-  val Manual: "Manual" = "Manual"
+  inline val Auto: "Auto" = "Auto"
+  inline val Manual: "Manual" = "Manual"
 
-  @inline def values = js.Array[SnapshotType](Auto, Manual)
+  inline def values: js.Array[SnapshotType] = js.Array(Auto, Manual)
 }
 
 type TargetType = "ACCOUNT"
 object TargetType {
-  val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
 
-  @inline def values = js.Array[TargetType](ACCOUNT)
+  inline def values: js.Array[TargetType] = js.Array(ACCOUNT)
 }
 
 type TopicStatus = "Registered" | "Topic not found" | "Failed" | "Deleted"
 object TopicStatus {
-  val Registered: "Registered" = "Registered"
-  val `Topic not found`: "Topic not found" = "Topic not found"
-  val Failed: "Failed" = "Failed"
-  val Deleted: "Deleted" = "Deleted"
+  inline val Registered: "Registered" = "Registered"
+  inline val `Topic not found`: "Topic not found" = "Topic not found"
+  inline val Failed: "Failed" = "Failed"
+  inline val Deleted: "Deleted" = "Deleted"
 
-  @inline def values = js.Array[TopicStatus](Registered, `Topic not found`, Failed, Deleted)
+  inline def values: js.Array[TopicStatus] = js.Array(Registered, `Topic not found`, Failed, Deleted)
 }
 
 type TrustDirection = "One-Way: Outgoing" | "One-Way: Incoming" | "Two-Way"
 object TrustDirection {
-  val `One-Way: Outgoing`: "One-Way: Outgoing" = "One-Way: Outgoing"
-  val `One-Way: Incoming`: "One-Way: Incoming" = "One-Way: Incoming"
-  val `Two-Way`: "Two-Way" = "Two-Way"
+  inline val `One-Way: Outgoing`: "One-Way: Outgoing" = "One-Way: Outgoing"
+  inline val `One-Way: Incoming`: "One-Way: Incoming" = "One-Way: Incoming"
+  inline val `Two-Way`: "Two-Way" = "Two-Way"
 
-  @inline def values = js.Array[TrustDirection](`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`)
+  inline def values: js.Array[TrustDirection] = js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`)
 }
 
 type TrustState = "Creating" | "Created" | "Verifying" | "VerifyFailed" | "Verified" | "Updating" | "UpdateFailed" | "Updated" | "Deleting" | "Deleted" | "Failed"
 object TrustState {
-  val Creating: "Creating" = "Creating"
-  val Created: "Created" = "Created"
-  val Verifying: "Verifying" = "Verifying"
-  val VerifyFailed: "VerifyFailed" = "VerifyFailed"
-  val Verified: "Verified" = "Verified"
-  val Updating: "Updating" = "Updating"
-  val UpdateFailed: "UpdateFailed" = "UpdateFailed"
-  val Updated: "Updated" = "Updated"
-  val Deleting: "Deleting" = "Deleting"
-  val Deleted: "Deleted" = "Deleted"
-  val Failed: "Failed" = "Failed"
+  inline val Creating: "Creating" = "Creating"
+  inline val Created: "Created" = "Created"
+  inline val Verifying: "Verifying" = "Verifying"
+  inline val VerifyFailed: "VerifyFailed" = "VerifyFailed"
+  inline val Verified: "Verified" = "Verified"
+  inline val Updating: "Updating" = "Updating"
+  inline val UpdateFailed: "UpdateFailed" = "UpdateFailed"
+  inline val Updated: "Updated" = "Updated"
+  inline val Deleting: "Deleting" = "Deleting"
+  inline val Deleted: "Deleted" = "Deleted"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array[TrustState](Creating, Created, Verifying, VerifyFailed, Verified, Updating, UpdateFailed, Updated, Deleting, Deleted, Failed)
+  inline def values: js.Array[TrustState] = js.Array(Creating, Created, Verifying, VerifyFailed, Verified, Updating, UpdateFailed, Updated, Deleting, Deleted, Failed)
 }
 
 type TrustType = "Forest" | "External"
 object TrustType {
-  val Forest: "Forest" = "Forest"
-  val External: "External" = "External"
+  inline val Forest: "Forest" = "Forest"
+  inline val External: "External" = "External"
 
-  @inline def values = js.Array[TrustType](Forest, External)
+  inline def values: js.Array[TrustType] = js.Array(Forest, External)
 }

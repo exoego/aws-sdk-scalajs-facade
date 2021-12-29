@@ -4,34 +4,34 @@ import scalajs._
 
 type DatastoreStatus = "CREATING" | "ACTIVE" | "DELETING" | "DELETED"
 object DatastoreStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DELETING: "DELETING" = "DELETING"
-  val DELETED: "DELETED" = "DELETED"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array[DatastoreStatus](CREATING, ACTIVE, DELETING, DELETED)
+  inline def values: js.Array[DatastoreStatus] = js.Array(CREATING, ACTIVE, DELETING, DELETED)
 }
 
 type FHIRVersion = "R4"
 object FHIRVersion {
-  val R4: "R4" = "R4"
+  inline val R4: "R4" = "R4"
 
-  @inline def values = js.Array[FHIRVersion](R4)
+  inline def values: js.Array[FHIRVersion] = js.Array(R4)
 }
 
 type JobStatus = "SUBMITTED" | "IN_PROGRESS" | "COMPLETED" | "FAILED"
 object JobStatus {
-  val SUBMITTED: "SUBMITTED" = "SUBMITTED"
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val FAILED: "FAILED" = "FAILED"
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[JobStatus](SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
+  inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
 }
 
 type PreloadDataType = "SYNTHEA"
 object PreloadDataType {
-  val SYNTHEA: "SYNTHEA" = "SYNTHEA"
+  inline val SYNTHEA: "SYNTHEA" = "SYNTHEA"
 
-  @inline def values = js.Array[PreloadDataType](SYNTHEA)
+  inline def values: js.Array[PreloadDataType] = js.Array(SYNTHEA)
 }

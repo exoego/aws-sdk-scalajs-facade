@@ -4,13 +4,13 @@ import scalajs._
 
 type StatusString = "SUBMITTED" | "PICKED" | "STARTED" | "FINISHED" | "ABORTED" | "FAILED" | "ALL"
 object StatusString {
-  val SUBMITTED: "SUBMITTED" = "SUBMITTED"
-  val PICKED: "PICKED" = "PICKED"
-  val STARTED: "STARTED" = "STARTED"
-  val FINISHED: "FINISHED" = "FINISHED"
-  val ABORTED: "ABORTED" = "ABORTED"
-  val FAILED: "FAILED" = "FAILED"
-  val ALL: "ALL" = "ALL"
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val PICKED: "PICKED" = "PICKED"
+  inline val STARTED: "STARTED" = "STARTED"
+  inline val FINISHED: "FINISHED" = "FINISHED"
+  inline val ABORTED: "ABORTED" = "ABORTED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array[StatusString](SUBMITTED, PICKED, STARTED, FINISHED, ABORTED, FAILED, ALL)
+  inline def values: js.Array[StatusString] = js.Array(SUBMITTED, PICKED, STARTED, FINISHED, ABORTED, FAILED, ALL)
 }

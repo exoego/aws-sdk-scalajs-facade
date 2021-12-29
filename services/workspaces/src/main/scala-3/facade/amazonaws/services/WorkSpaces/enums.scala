@@ -4,218 +4,218 @@ import scalajs._
 
 type AccessPropertyValue = "ALLOW" | "DENY"
 object AccessPropertyValue {
-  val ALLOW: "ALLOW" = "ALLOW"
-  val DENY: "DENY" = "DENY"
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val DENY: "DENY" = "DENY"
 
-  @inline def values = js.Array[AccessPropertyValue](ALLOW, DENY)
+  inline def values: js.Array[AccessPropertyValue] = js.Array(ALLOW, DENY)
 }
 
 type Application = "Microsoft_Office_2016" | "Microsoft_Office_2019"
 object Application {
-  val Microsoft_Office_2016: "Microsoft_Office_2016" = "Microsoft_Office_2016"
-  val Microsoft_Office_2019: "Microsoft_Office_2019" = "Microsoft_Office_2019"
+  inline val Microsoft_Office_2016: "Microsoft_Office_2016" = "Microsoft_Office_2016"
+  inline val Microsoft_Office_2019: "Microsoft_Office_2019" = "Microsoft_Office_2019"
 
-  @inline def values = js.Array[Application](Microsoft_Office_2016, Microsoft_Office_2019)
+  inline def values: js.Array[Application] = js.Array(Microsoft_Office_2016, Microsoft_Office_2019)
 }
 
 type AssociationStatus = "NOT_ASSOCIATED" | "ASSOCIATED_WITH_OWNER_ACCOUNT" | "ASSOCIATED_WITH_SHARED_ACCOUNT" | "PENDING_ASSOCIATION" | "PENDING_DISASSOCIATION"
 object AssociationStatus {
-  val NOT_ASSOCIATED: "NOT_ASSOCIATED" = "NOT_ASSOCIATED"
-  val ASSOCIATED_WITH_OWNER_ACCOUNT: "ASSOCIATED_WITH_OWNER_ACCOUNT" = "ASSOCIATED_WITH_OWNER_ACCOUNT"
-  val ASSOCIATED_WITH_SHARED_ACCOUNT: "ASSOCIATED_WITH_SHARED_ACCOUNT" = "ASSOCIATED_WITH_SHARED_ACCOUNT"
-  val PENDING_ASSOCIATION: "PENDING_ASSOCIATION" = "PENDING_ASSOCIATION"
-  val PENDING_DISASSOCIATION: "PENDING_DISASSOCIATION" = "PENDING_DISASSOCIATION"
+  inline val NOT_ASSOCIATED: "NOT_ASSOCIATED" = "NOT_ASSOCIATED"
+  inline val ASSOCIATED_WITH_OWNER_ACCOUNT: "ASSOCIATED_WITH_OWNER_ACCOUNT" = "ASSOCIATED_WITH_OWNER_ACCOUNT"
+  inline val ASSOCIATED_WITH_SHARED_ACCOUNT: "ASSOCIATED_WITH_SHARED_ACCOUNT" = "ASSOCIATED_WITH_SHARED_ACCOUNT"
+  inline val PENDING_ASSOCIATION: "PENDING_ASSOCIATION" = "PENDING_ASSOCIATION"
+  inline val PENDING_DISASSOCIATION: "PENDING_DISASSOCIATION" = "PENDING_DISASSOCIATION"
 
-  @inline def values = js.Array[AssociationStatus](NOT_ASSOCIATED, ASSOCIATED_WITH_OWNER_ACCOUNT, ASSOCIATED_WITH_SHARED_ACCOUNT, PENDING_ASSOCIATION, PENDING_DISASSOCIATION)
+  inline def values: js.Array[AssociationStatus] = js.Array(NOT_ASSOCIATED, ASSOCIATED_WITH_OWNER_ACCOUNT, ASSOCIATED_WITH_SHARED_ACCOUNT, PENDING_ASSOCIATION, PENDING_DISASSOCIATION)
 }
 
 type Compute = "VALUE" | "STANDARD" | "PERFORMANCE" | "POWER" | "GRAPHICS" | "POWERPRO" | "GRAPHICSPRO"
 object Compute {
-  val VALUE: "VALUE" = "VALUE"
-  val STANDARD: "STANDARD" = "STANDARD"
-  val PERFORMANCE: "PERFORMANCE" = "PERFORMANCE"
-  val POWER: "POWER" = "POWER"
-  val GRAPHICS: "GRAPHICS" = "GRAPHICS"
-  val POWERPRO: "POWERPRO" = "POWERPRO"
-  val GRAPHICSPRO: "GRAPHICSPRO" = "GRAPHICSPRO"
+  inline val VALUE: "VALUE" = "VALUE"
+  inline val STANDARD: "STANDARD" = "STANDARD"
+  inline val PERFORMANCE: "PERFORMANCE" = "PERFORMANCE"
+  inline val POWER: "POWER" = "POWER"
+  inline val GRAPHICS: "GRAPHICS" = "GRAPHICS"
+  inline val POWERPRO: "POWERPRO" = "POWERPRO"
+  inline val GRAPHICSPRO: "GRAPHICSPRO" = "GRAPHICSPRO"
 
-  @inline def values = js.Array[Compute](VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO)
+  inline def values: js.Array[Compute] = js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO)
 }
 
 type ConnectionAliasState = "CREATING" | "CREATED" | "DELETING"
 object ConnectionAliasState {
-  val CREATING: "CREATING" = "CREATING"
-  val CREATED: "CREATED" = "CREATED"
-  val DELETING: "DELETING" = "DELETING"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val CREATED: "CREATED" = "CREATED"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array[ConnectionAliasState](CREATING, CREATED, DELETING)
+  inline def values: js.Array[ConnectionAliasState] = js.Array(CREATING, CREATED, DELETING)
 }
 
 type ConnectionState = "CONNECTED" | "DISCONNECTED" | "UNKNOWN"
 object ConnectionState {
-  val CONNECTED: "CONNECTED" = "CONNECTED"
-  val DISCONNECTED: "DISCONNECTED" = "DISCONNECTED"
-  val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val CONNECTED: "CONNECTED" = "CONNECTED"
+  inline val DISCONNECTED: "DISCONNECTED" = "DISCONNECTED"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array[ConnectionState](CONNECTED, DISCONNECTED, UNKNOWN)
+  inline def values: js.Array[ConnectionState] = js.Array(CONNECTED, DISCONNECTED, UNKNOWN)
 }
 
 type DedicatedTenancyModificationStateEnum = "PENDING" | "COMPLETED" | "FAILED"
 object DedicatedTenancyModificationStateEnum {
-  val PENDING: "PENDING" = "PENDING"
-  val COMPLETED: "COMPLETED" = "COMPLETED"
-  val FAILED: "FAILED" = "FAILED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[DedicatedTenancyModificationStateEnum](PENDING, COMPLETED, FAILED)
+  inline def values: js.Array[DedicatedTenancyModificationStateEnum] = js.Array(PENDING, COMPLETED, FAILED)
 }
 
 type DedicatedTenancySupportEnum = "ENABLED"
 object DedicatedTenancySupportEnum {
-  val ENABLED: "ENABLED" = "ENABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
 
-  @inline def values = js.Array[DedicatedTenancySupportEnum](ENABLED)
+  inline def values: js.Array[DedicatedTenancySupportEnum] = js.Array(ENABLED)
 }
 
 type DedicatedTenancySupportResultEnum = "ENABLED" | "DISABLED"
 object DedicatedTenancySupportResultEnum {
-  val ENABLED: "ENABLED" = "ENABLED"
-  val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array[DedicatedTenancySupportResultEnum](ENABLED, DISABLED)
+  inline def values: js.Array[DedicatedTenancySupportResultEnum] = js.Array(ENABLED, DISABLED)
 }
 
 type ImageType = "OWNED" | "SHARED"
 object ImageType {
-  val OWNED: "OWNED" = "OWNED"
-  val SHARED: "SHARED" = "SHARED"
+  inline val OWNED: "OWNED" = "OWNED"
+  inline val SHARED: "SHARED" = "SHARED"
 
-  @inline def values = js.Array[ImageType](OWNED, SHARED)
+  inline def values: js.Array[ImageType] = js.Array(OWNED, SHARED)
 }
 
 type ModificationResourceEnum = "ROOT_VOLUME" | "USER_VOLUME" | "COMPUTE_TYPE"
 object ModificationResourceEnum {
-  val ROOT_VOLUME: "ROOT_VOLUME" = "ROOT_VOLUME"
-  val USER_VOLUME: "USER_VOLUME" = "USER_VOLUME"
-  val COMPUTE_TYPE: "COMPUTE_TYPE" = "COMPUTE_TYPE"
+  inline val ROOT_VOLUME: "ROOT_VOLUME" = "ROOT_VOLUME"
+  inline val USER_VOLUME: "USER_VOLUME" = "USER_VOLUME"
+  inline val COMPUTE_TYPE: "COMPUTE_TYPE" = "COMPUTE_TYPE"
 
-  @inline def values = js.Array[ModificationResourceEnum](ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE)
+  inline def values: js.Array[ModificationResourceEnum] = js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE)
 }
 
 type ModificationStateEnum = "UPDATE_INITIATED" | "UPDATE_IN_PROGRESS"
 object ModificationStateEnum {
-  val UPDATE_INITIATED: "UPDATE_INITIATED" = "UPDATE_INITIATED"
-  val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+  inline val UPDATE_INITIATED: "UPDATE_INITIATED" = "UPDATE_INITIATED"
+  inline val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
 
-  @inline def values = js.Array[ModificationStateEnum](UPDATE_INITIATED, UPDATE_IN_PROGRESS)
+  inline def values: js.Array[ModificationStateEnum] = js.Array(UPDATE_INITIATED, UPDATE_IN_PROGRESS)
 }
 
 type OperatingSystemType = "WINDOWS" | "LINUX"
 object OperatingSystemType {
-  val WINDOWS: "WINDOWS" = "WINDOWS"
-  val LINUX: "LINUX" = "LINUX"
+  inline val WINDOWS: "WINDOWS" = "WINDOWS"
+  inline val LINUX: "LINUX" = "LINUX"
 
-  @inline def values = js.Array[OperatingSystemType](WINDOWS, LINUX)
+  inline def values: js.Array[OperatingSystemType] = js.Array(WINDOWS, LINUX)
 }
 
 type ReconnectEnum = "ENABLED" | "DISABLED"
 object ReconnectEnum {
-  val ENABLED: "ENABLED" = "ENABLED"
-  val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array[ReconnectEnum](ENABLED, DISABLED)
+  inline def values: js.Array[ReconnectEnum] = js.Array(ENABLED, DISABLED)
 }
 
 type RunningMode = "AUTO_STOP" | "ALWAYS_ON"
 object RunningMode {
-  val AUTO_STOP: "AUTO_STOP" = "AUTO_STOP"
-  val ALWAYS_ON: "ALWAYS_ON" = "ALWAYS_ON"
+  inline val AUTO_STOP: "AUTO_STOP" = "AUTO_STOP"
+  inline val ALWAYS_ON: "ALWAYS_ON" = "ALWAYS_ON"
 
-  @inline def values = js.Array[RunningMode](AUTO_STOP, ALWAYS_ON)
+  inline def values: js.Array[RunningMode] = js.Array(AUTO_STOP, ALWAYS_ON)
 }
 
 type TargetWorkspaceState = "AVAILABLE" | "ADMIN_MAINTENANCE"
 object TargetWorkspaceState {
-  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
-  val ADMIN_MAINTENANCE: "ADMIN_MAINTENANCE" = "ADMIN_MAINTENANCE"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val ADMIN_MAINTENANCE: "ADMIN_MAINTENANCE" = "ADMIN_MAINTENANCE"
 
-  @inline def values = js.Array[TargetWorkspaceState](AVAILABLE, ADMIN_MAINTENANCE)
+  inline def values: js.Array[TargetWorkspaceState] = js.Array(AVAILABLE, ADMIN_MAINTENANCE)
 }
 
 type Tenancy = "DEDICATED" | "SHARED"
 object Tenancy {
-  val DEDICATED: "DEDICATED" = "DEDICATED"
-  val SHARED: "SHARED" = "SHARED"
+  inline val DEDICATED: "DEDICATED" = "DEDICATED"
+  inline val SHARED: "SHARED" = "SHARED"
 
-  @inline def values = js.Array[Tenancy](DEDICATED, SHARED)
+  inline def values: js.Array[Tenancy] = js.Array(DEDICATED, SHARED)
 }
 
 type WorkspaceDirectoryState = "REGISTERING" | "REGISTERED" | "DEREGISTERING" | "DEREGISTERED" | "ERROR"
 object WorkspaceDirectoryState {
-  val REGISTERING: "REGISTERING" = "REGISTERING"
-  val REGISTERED: "REGISTERED" = "REGISTERED"
-  val DEREGISTERING: "DEREGISTERING" = "DEREGISTERING"
-  val DEREGISTERED: "DEREGISTERED" = "DEREGISTERED"
-  val ERROR: "ERROR" = "ERROR"
+  inline val REGISTERING: "REGISTERING" = "REGISTERING"
+  inline val REGISTERED: "REGISTERED" = "REGISTERED"
+  inline val DEREGISTERING: "DEREGISTERING" = "DEREGISTERING"
+  inline val DEREGISTERED: "DEREGISTERED" = "DEREGISTERED"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array[WorkspaceDirectoryState](REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR)
+  inline def values: js.Array[WorkspaceDirectoryState] = js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR)
 }
 
 type WorkspaceDirectoryType = "SIMPLE_AD" | "AD_CONNECTOR"
 object WorkspaceDirectoryType {
-  val SIMPLE_AD: "SIMPLE_AD" = "SIMPLE_AD"
-  val AD_CONNECTOR: "AD_CONNECTOR" = "AD_CONNECTOR"
+  inline val SIMPLE_AD: "SIMPLE_AD" = "SIMPLE_AD"
+  inline val AD_CONNECTOR: "AD_CONNECTOR" = "AD_CONNECTOR"
 
-  @inline def values = js.Array[WorkspaceDirectoryType](SIMPLE_AD, AD_CONNECTOR)
+  inline def values: js.Array[WorkspaceDirectoryType] = js.Array(SIMPLE_AD, AD_CONNECTOR)
 }
 
 type WorkspaceImageIngestionProcess = "BYOL_REGULAR" | "BYOL_GRAPHICS" | "BYOL_GRAPHICSPRO" | "BYOL_REGULAR_WSP"
 object WorkspaceImageIngestionProcess {
-  val BYOL_REGULAR: "BYOL_REGULAR" = "BYOL_REGULAR"
-  val BYOL_GRAPHICS: "BYOL_GRAPHICS" = "BYOL_GRAPHICS"
-  val BYOL_GRAPHICSPRO: "BYOL_GRAPHICSPRO" = "BYOL_GRAPHICSPRO"
-  val BYOL_REGULAR_WSP: "BYOL_REGULAR_WSP" = "BYOL_REGULAR_WSP"
+  inline val BYOL_REGULAR: "BYOL_REGULAR" = "BYOL_REGULAR"
+  inline val BYOL_GRAPHICS: "BYOL_GRAPHICS" = "BYOL_GRAPHICS"
+  inline val BYOL_GRAPHICSPRO: "BYOL_GRAPHICSPRO" = "BYOL_GRAPHICSPRO"
+  inline val BYOL_REGULAR_WSP: "BYOL_REGULAR_WSP" = "BYOL_REGULAR_WSP"
 
-  @inline def values = js.Array[WorkspaceImageIngestionProcess](BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO, BYOL_REGULAR_WSP)
+  inline def values: js.Array[WorkspaceImageIngestionProcess] = js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO, BYOL_REGULAR_WSP)
 }
 
 type WorkspaceImageRequiredTenancy = "DEFAULT" | "DEDICATED"
 object WorkspaceImageRequiredTenancy {
-  val DEFAULT: "DEFAULT" = "DEFAULT"
-  val DEDICATED: "DEDICATED" = "DEDICATED"
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+  inline val DEDICATED: "DEDICATED" = "DEDICATED"
 
-  @inline def values = js.Array[WorkspaceImageRequiredTenancy](DEFAULT, DEDICATED)
+  inline def values: js.Array[WorkspaceImageRequiredTenancy] = js.Array(DEFAULT, DEDICATED)
 }
 
 type WorkspaceImageState = "AVAILABLE" | "PENDING" | "ERROR"
 object WorkspaceImageState {
-  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
-  val PENDING: "PENDING" = "PENDING"
-  val ERROR: "ERROR" = "ERROR"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array[WorkspaceImageState](AVAILABLE, PENDING, ERROR)
+  inline def values: js.Array[WorkspaceImageState] = js.Array(AVAILABLE, PENDING, ERROR)
 }
 
 type WorkspaceState = "PENDING" | "AVAILABLE" | "IMPAIRED" | "UNHEALTHY" | "REBOOTING" | "STARTING" | "REBUILDING" | "RESTORING" | "MAINTENANCE" | "ADMIN_MAINTENANCE" | "TERMINATING" | "TERMINATED" | "SUSPENDED" | "UPDATING" | "STOPPING" | "STOPPED" | "ERROR"
 object WorkspaceState {
-  val PENDING: "PENDING" = "PENDING"
-  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
-  val IMPAIRED: "IMPAIRED" = "IMPAIRED"
-  val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
-  val REBOOTING: "REBOOTING" = "REBOOTING"
-  val STARTING: "STARTING" = "STARTING"
-  val REBUILDING: "REBUILDING" = "REBUILDING"
-  val RESTORING: "RESTORING" = "RESTORING"
-  val MAINTENANCE: "MAINTENANCE" = "MAINTENANCE"
-  val ADMIN_MAINTENANCE: "ADMIN_MAINTENANCE" = "ADMIN_MAINTENANCE"
-  val TERMINATING: "TERMINATING" = "TERMINATING"
-  val TERMINATED: "TERMINATED" = "TERMINATED"
-  val SUSPENDED: "SUSPENDED" = "SUSPENDED"
-  val UPDATING: "UPDATING" = "UPDATING"
-  val STOPPING: "STOPPING" = "STOPPING"
-  val STOPPED: "STOPPED" = "STOPPED"
-  val ERROR: "ERROR" = "ERROR"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val IMPAIRED: "IMPAIRED" = "IMPAIRED"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  inline val REBOOTING: "REBOOTING" = "REBOOTING"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val REBUILDING: "REBUILDING" = "REBUILDING"
+  inline val RESTORING: "RESTORING" = "RESTORING"
+  inline val MAINTENANCE: "MAINTENANCE" = "MAINTENANCE"
+  inline val ADMIN_MAINTENANCE: "ADMIN_MAINTENANCE" = "ADMIN_MAINTENANCE"
+  inline val TERMINATING: "TERMINATING" = "TERMINATING"
+  inline val TERMINATED: "TERMINATED" = "TERMINATED"
+  inline val SUSPENDED: "SUSPENDED" = "SUSPENDED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val STOPPED: "STOPPED" = "STOPPED"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array[WorkspaceState](
+  inline def values: js.Array[WorkspaceState] = js.Array(
     PENDING,
     AVAILABLE,
     IMPAIRED,

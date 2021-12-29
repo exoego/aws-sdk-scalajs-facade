@@ -4,99 +4,99 @@ import scalajs._
 
 type Edition = "STARTER" | "STANDARD"
 object Edition {
-  val STARTER: "STARTER" = "STARTER"
-  val STANDARD: "STANDARD" = "STANDARD"
+  inline val STARTER: "STARTER" = "STARTER"
+  inline val STANDARD: "STANDARD" = "STANDARD"
 
-  @inline def values = js.Array[Edition](STARTER, STANDARD)
+  inline def values: js.Array[Edition] = js.Array(STARTER, STANDARD)
 }
 
 type Framework = "HYPERLEDGER_FABRIC" | "ETHEREUM"
 object Framework {
-  val HYPERLEDGER_FABRIC: "HYPERLEDGER_FABRIC" = "HYPERLEDGER_FABRIC"
-  val ETHEREUM: "ETHEREUM" = "ETHEREUM"
+  inline val HYPERLEDGER_FABRIC: "HYPERLEDGER_FABRIC" = "HYPERLEDGER_FABRIC"
+  inline val ETHEREUM: "ETHEREUM" = "ETHEREUM"
 
-  @inline def values = js.Array[Framework](HYPERLEDGER_FABRIC, ETHEREUM)
+  inline def values: js.Array[Framework] = js.Array(HYPERLEDGER_FABRIC, ETHEREUM)
 }
 
 type InvitationStatus = "PENDING" | "ACCEPTED" | "ACCEPTING" | "REJECTED" | "EXPIRED"
 object InvitationStatus {
-  val PENDING: "PENDING" = "PENDING"
-  val ACCEPTED: "ACCEPTED" = "ACCEPTED"
-  val ACCEPTING: "ACCEPTING" = "ACCEPTING"
-  val REJECTED: "REJECTED" = "REJECTED"
-  val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val ACCEPTED: "ACCEPTED" = "ACCEPTED"
+  inline val ACCEPTING: "ACCEPTING" = "ACCEPTING"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
 
-  @inline def values = js.Array[InvitationStatus](PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
+  inline def values: js.Array[InvitationStatus] = js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
 }
 
 type MemberStatus = "CREATING" | "AVAILABLE" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETED"
 object MemberStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
-  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
-  val UPDATING: "UPDATING" = "UPDATING"
-  val DELETING: "DELETING" = "DELETING"
-  val DELETED: "DELETED" = "DELETED"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array[MemberStatus](CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
+  inline def values: js.Array[MemberStatus] = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
 }
 
 type NetworkStatus = "CREATING" | "AVAILABLE" | "CREATE_FAILED" | "DELETING" | "DELETED"
 object NetworkStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
-  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
-  val DELETING: "DELETING" = "DELETING"
-  val DELETED: "DELETED" = "DELETED"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array[NetworkStatus](CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
+  inline def values: js.Array[NetworkStatus] = js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
 }
 
 type NodeStatus = "CREATING" | "AVAILABLE" | "UNHEALTHY" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETED" | "FAILED"
 object NodeStatus {
-  val CREATING: "CREATING" = "CREATING"
-  val AVAILABLE: "AVAILABLE" = "AVAILABLE"
-  val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
-  val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
-  val UPDATING: "UPDATING" = "UPDATING"
-  val DELETING: "DELETING" = "DELETING"
-  val DELETED: "DELETED" = "DELETED"
-  val FAILED: "FAILED" = "FAILED"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[NodeStatus](CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
+  inline def values: js.Array[NodeStatus] = js.Array(CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
 }
 
 type ProposalStatus = "IN_PROGRESS" | "APPROVED" | "REJECTED" | "EXPIRED" | "ACTION_FAILED"
 object ProposalStatus {
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val APPROVED: "APPROVED" = "APPROVED"
-  val REJECTED: "REJECTED" = "REJECTED"
-  val EXPIRED: "EXPIRED" = "EXPIRED"
-  val ACTION_FAILED: "ACTION_FAILED" = "ACTION_FAILED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val APPROVED: "APPROVED" = "APPROVED"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val ACTION_FAILED: "ACTION_FAILED" = "ACTION_FAILED"
 
-  @inline def values = js.Array[ProposalStatus](IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED)
+  inline def values: js.Array[ProposalStatus] = js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED)
 }
 
 type StateDBType = "LevelDB" | "CouchDB"
 object StateDBType {
-  val LevelDB: "LevelDB" = "LevelDB"
-  val CouchDB: "CouchDB" = "CouchDB"
+  inline val LevelDB: "LevelDB" = "LevelDB"
+  inline val CouchDB: "CouchDB" = "CouchDB"
 
-  @inline def values = js.Array[StateDBType](LevelDB, CouchDB)
+  inline def values: js.Array[StateDBType] = js.Array(LevelDB, CouchDB)
 }
 
 type ThresholdComparator = "GREATER_THAN" | "GREATER_THAN_OR_EQUAL_TO"
 object ThresholdComparator {
-  val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
-  val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
 
-  @inline def values = js.Array[ThresholdComparator](GREATER_THAN, GREATER_THAN_OR_EQUAL_TO)
+  inline def values: js.Array[ThresholdComparator] = js.Array(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO)
 }
 
 type VoteValue = "YES" | "NO"
 object VoteValue {
-  val YES: "YES" = "YES"
-  val NO: "NO" = "NO"
+  inline val YES: "YES" = "YES"
+  inline val NO: "NO" = "NO"
 
-  @inline def values = js.Array[VoteValue](YES, NO)
+  inline def values: js.Array[VoteValue] = js.Array(YES, NO)
 }

@@ -4,98 +4,98 @@ import scalajs._
 
 type Algorithm = "aes128" | "aes192" | "aes256"
 object Algorithm {
-  val aes128: "aes128" = "aes128"
-  val aes192: "aes192" = "aes192"
-  val aes256: "aes256" = "aes256"
+  inline val aes128: "aes128" = "aes128"
+  inline val aes192: "aes192" = "aes192"
+  inline val aes256: "aes256" = "aes256"
 
-  @inline def values = js.Array[Algorithm](aes128, aes192, aes256)
+  inline def values: js.Array[Algorithm] = js.Array(aes128, aes192, aes256)
 }
 
 type DurationUnits = "MONTHS"
 object DurationUnits {
-  val MONTHS: "MONTHS" = "MONTHS"
+  inline val MONTHS: "MONTHS" = "MONTHS"
 
-  @inline def values = js.Array[DurationUnits](MONTHS)
+  inline def values: js.Array[DurationUnits] = js.Array(MONTHS)
 }
 
 type EntitlementStatus = "ENABLED" | "DISABLED"
 object EntitlementStatus {
-  val ENABLED: "ENABLED" = "ENABLED"
-  val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array[EntitlementStatus](ENABLED, DISABLED)
+  inline def values: js.Array[EntitlementStatus] = js.Array(ENABLED, DISABLED)
 }
 
 type KeyType = "speke" | "static-key" | "srt-password"
 object KeyType {
-  val speke: "speke" = "speke"
-  val `static-key`: "static-key" = "static-key"
-  val `srt-password`: "srt-password" = "srt-password"
+  inline val speke: "speke" = "speke"
+  inline val `static-key`: "static-key" = "static-key"
+  inline val `srt-password`: "srt-password" = "srt-password"
 
-  @inline def values = js.Array[KeyType](speke, `static-key`, `srt-password`)
+  inline def values: js.Array[KeyType] = js.Array(speke, `static-key`, `srt-password`)
 }
 
 type PriceUnits = "HOURLY"
 object PriceUnits {
-  val HOURLY: "HOURLY" = "HOURLY"
+  inline val HOURLY: "HOURLY" = "HOURLY"
 
-  @inline def values = js.Array[PriceUnits](HOURLY)
+  inline def values: js.Array[PriceUnits] = js.Array(HOURLY)
 }
 
 type Protocol = "zixi-push" | "rtp-fec" | "rtp" | "zixi-pull" | "rist" | "srt-listener"
 object Protocol {
-  val `zixi-push`: "zixi-push" = "zixi-push"
-  val `rtp-fec`: "rtp-fec" = "rtp-fec"
-  val rtp: "rtp" = "rtp"
-  val `zixi-pull`: "zixi-pull" = "zixi-pull"
-  val rist: "rist" = "rist"
-  val `srt-listener`: "srt-listener" = "srt-listener"
+  inline val `zixi-push`: "zixi-push" = "zixi-push"
+  inline val `rtp-fec`: "rtp-fec" = "rtp-fec"
+  inline val rtp: "rtp" = "rtp"
+  inline val `zixi-pull`: "zixi-pull" = "zixi-pull"
+  inline val rist: "rist" = "rist"
+  inline val `srt-listener`: "srt-listener" = "srt-listener"
 
-  @inline def values = js.Array[Protocol](`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist, `srt-listener`)
+  inline def values: js.Array[Protocol] = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist, `srt-listener`)
 }
 
 type ReservationState = "ACTIVE" | "EXPIRED" | "PROCESSING" | "CANCELED"
 object ReservationState {
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val EXPIRED: "EXPIRED" = "EXPIRED"
-  val PROCESSING: "PROCESSING" = "PROCESSING"
-  val CANCELED: "CANCELED" = "CANCELED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array[ReservationState](ACTIVE, EXPIRED, PROCESSING, CANCELED)
+  inline def values: js.Array[ReservationState] = js.Array(ACTIVE, EXPIRED, PROCESSING, CANCELED)
 }
 
 type ResourceType = "Mbps_Outbound_Bandwidth"
 object ResourceType {
-  val Mbps_Outbound_Bandwidth: "Mbps_Outbound_Bandwidth" = "Mbps_Outbound_Bandwidth"
+  inline val Mbps_Outbound_Bandwidth: "Mbps_Outbound_Bandwidth" = "Mbps_Outbound_Bandwidth"
 
-  @inline def values = js.Array[ResourceType](Mbps_Outbound_Bandwidth)
+  inline def values: js.Array[ResourceType] = js.Array(Mbps_Outbound_Bandwidth)
 }
 
 type SourceType = "OWNED" | "ENTITLED"
 object SourceType {
-  val OWNED: "OWNED" = "OWNED"
-  val ENTITLED: "ENTITLED" = "ENTITLED"
+  inline val OWNED: "OWNED" = "OWNED"
+  inline val ENTITLED: "ENTITLED" = "ENTITLED"
 
-  @inline def values = js.Array[SourceType](OWNED, ENTITLED)
+  inline def values: js.Array[SourceType] = js.Array(OWNED, ENTITLED)
 }
 
 type State = "ENABLED" | "DISABLED"
 object State {
-  val ENABLED: "ENABLED" = "ENABLED"
-  val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array[State](ENABLED, DISABLED)
+  inline def values: js.Array[State] = js.Array(ENABLED, DISABLED)
 }
 
 type Status = "STANDBY" | "ACTIVE" | "UPDATING" | "DELETING" | "STARTING" | "STOPPING" | "ERROR"
 object Status {
-  val STANDBY: "STANDBY" = "STANDBY"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val UPDATING: "UPDATING" = "UPDATING"
-  val DELETING: "DELETING" = "DELETING"
-  val STARTING: "STARTING" = "STARTING"
-  val STOPPING: "STOPPING" = "STOPPING"
-  val ERROR: "ERROR" = "ERROR"
+  inline val STANDBY: "STANDBY" = "STANDBY"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array[Status](STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR)
+  inline def values: js.Array[Status] = js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR)
 }

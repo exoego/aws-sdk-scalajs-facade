@@ -4,20 +4,20 @@ import scalajs._
 
 type DecimalReturnType = "STRING" | "DOUBLE_OR_LONG"
 object DecimalReturnType {
-  val STRING: "STRING" = "STRING"
-  val DOUBLE_OR_LONG: "DOUBLE_OR_LONG" = "DOUBLE_OR_LONG"
+  inline val STRING: "STRING" = "STRING"
+  inline val DOUBLE_OR_LONG: "DOUBLE_OR_LONG" = "DOUBLE_OR_LONG"
 
-  @inline def values = js.Array[DecimalReturnType](STRING, DOUBLE_OR_LONG)
+  inline def values: js.Array[DecimalReturnType] = js.Array(STRING, DOUBLE_OR_LONG)
 }
 
 type TypeHint = "JSON" | "UUID" | "TIMESTAMP" | "DATE" | "TIME" | "DECIMAL"
 object TypeHint {
-  val JSON: "JSON" = "JSON"
-  val UUID: "UUID" = "UUID"
-  val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
-  val DATE: "DATE" = "DATE"
-  val TIME: "TIME" = "TIME"
-  val DECIMAL: "DECIMAL" = "DECIMAL"
+  inline val JSON: "JSON" = "JSON"
+  inline val UUID: "UUID" = "UUID"
+  inline val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
+  inline val DATE: "DATE" = "DATE"
+  inline val TIME: "TIME" = "TIME"
+  inline val DECIMAL: "DECIMAL" = "DECIMAL"
 
-  @inline def values = js.Array[TypeHint](JSON, UUID, TIMESTAMP, DATE, TIME, DECIMAL)
+  inline def values: js.Array[TypeHint] = js.Array(JSON, UUID, TIMESTAMP, DATE, TIME, DECIMAL)
 }

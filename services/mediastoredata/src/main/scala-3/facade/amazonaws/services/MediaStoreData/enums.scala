@@ -4,23 +4,23 @@ import scalajs._
 
 type ItemType = "OBJECT" | "FOLDER"
 object ItemType {
-  val OBJECT: "OBJECT" = "OBJECT"
-  val FOLDER: "FOLDER" = "FOLDER"
+  inline val OBJECT: "OBJECT" = "OBJECT"
+  inline val FOLDER: "FOLDER" = "FOLDER"
 
-  @inline def values = js.Array[ItemType](OBJECT, FOLDER)
+  inline def values: js.Array[ItemType] = js.Array(OBJECT, FOLDER)
 }
 
 type StorageClass = "TEMPORAL"
 object StorageClass {
-  val TEMPORAL: "TEMPORAL" = "TEMPORAL"
+  inline val TEMPORAL: "TEMPORAL" = "TEMPORAL"
 
-  @inline def values = js.Array[StorageClass](TEMPORAL)
+  inline def values: js.Array[StorageClass] = js.Array(TEMPORAL)
 }
 
 type UploadAvailability = "STANDARD" | "STREAMING"
 object UploadAvailability {
-  val STANDARD: "STANDARD" = "STANDARD"
-  val STREAMING: "STREAMING" = "STREAMING"
+  inline val STANDARD: "STANDARD" = "STANDARD"
+  inline val STREAMING: "STREAMING" = "STREAMING"
 
-  @inline def values = js.Array[UploadAvailability](STANDARD, STREAMING)
+  inline def values: js.Array[UploadAvailability] = js.Array(STANDARD, STREAMING)
 }

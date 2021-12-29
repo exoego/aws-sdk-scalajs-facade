@@ -4,199 +4,199 @@ import scalajs._
 
 type ActionType = "restore-cluster" | "recommend-node-config" | "resize-cluster"
 object ActionType {
-  val `restore-cluster`: "restore-cluster" = "restore-cluster"
-  val `recommend-node-config`: "recommend-node-config" = "recommend-node-config"
-  val `resize-cluster`: "resize-cluster" = "resize-cluster"
+  inline val `restore-cluster`: "restore-cluster" = "restore-cluster"
+  inline val `recommend-node-config`: "recommend-node-config" = "recommend-node-config"
+  inline val `resize-cluster`: "resize-cluster" = "resize-cluster"
 
-  @inline def values = js.Array[ActionType](`restore-cluster`, `recommend-node-config`, `resize-cluster`)
+  inline def values: js.Array[ActionType] = js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`)
 }
 
 type AquaConfigurationStatus = "enabled" | "disabled" | "auto"
 object AquaConfigurationStatus {
-  val enabled: "enabled" = "enabled"
-  val disabled: "disabled" = "disabled"
-  val auto: "auto" = "auto"
+  inline val enabled: "enabled" = "enabled"
+  inline val disabled: "disabled" = "disabled"
+  inline val auto: "auto" = "auto"
 
-  @inline def values = js.Array[AquaConfigurationStatus](enabled, disabled, auto)
+  inline def values: js.Array[AquaConfigurationStatus] = js.Array(enabled, disabled, auto)
 }
 
 type AquaStatus = "enabled" | "disabled" | "applying"
 object AquaStatus {
-  val enabled: "enabled" = "enabled"
-  val disabled: "disabled" = "disabled"
-  val applying: "applying" = "applying"
+  inline val enabled: "enabled" = "enabled"
+  inline val disabled: "disabled" = "disabled"
+  inline val applying: "applying" = "applying"
 
-  @inline def values = js.Array[AquaStatus](enabled, disabled, applying)
+  inline def values: js.Array[AquaStatus] = js.Array(enabled, disabled, applying)
 }
 
 type AuthorizationStatus = "Authorized" | "Revoking"
 object AuthorizationStatus {
-  val Authorized: "Authorized" = "Authorized"
-  val Revoking: "Revoking" = "Revoking"
+  inline val Authorized: "Authorized" = "Authorized"
+  inline val Revoking: "Revoking" = "Revoking"
 
-  @inline def values = js.Array[AuthorizationStatus](Authorized, Revoking)
+  inline def values: js.Array[AuthorizationStatus] = js.Array(Authorized, Revoking)
 }
 
 type Mode = "standard" | "high-performance"
 object Mode {
-  val standard: "standard" = "standard"
-  val `high-performance`: "high-performance" = "high-performance"
+  inline val standard: "standard" = "standard"
+  inline val `high-performance`: "high-performance" = "high-performance"
 
-  @inline def values = js.Array[Mode](standard, `high-performance`)
+  inline def values: js.Array[Mode] = js.Array(standard, `high-performance`)
 }
 
 type NodeConfigurationOptionsFilterName = "NodeType" | "NumberOfNodes" | "EstimatedDiskUtilizationPercent" | "Mode"
 object NodeConfigurationOptionsFilterName {
-  val NodeType: "NodeType" = "NodeType"
-  val NumberOfNodes: "NumberOfNodes" = "NumberOfNodes"
-  val EstimatedDiskUtilizationPercent: "EstimatedDiskUtilizationPercent" = "EstimatedDiskUtilizationPercent"
-  val Mode: "Mode" = "Mode"
+  inline val NodeType: "NodeType" = "NodeType"
+  inline val NumberOfNodes: "NumberOfNodes" = "NumberOfNodes"
+  inline val EstimatedDiskUtilizationPercent: "EstimatedDiskUtilizationPercent" = "EstimatedDiskUtilizationPercent"
+  inline val Mode: "Mode" = "Mode"
 
-  @inline def values = js.Array[NodeConfigurationOptionsFilterName](NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode)
+  inline def values: js.Array[NodeConfigurationOptionsFilterName] = js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode)
 }
 
 type OperatorType = "eq" | "lt" | "gt" | "le" | "ge" | "in" | "between"
 object OperatorType {
-  val eq: "eq" = "eq"
-  val lt: "lt" = "lt"
-  val gt: "gt" = "gt"
-  val le: "le" = "le"
-  val ge: "ge" = "ge"
-  val in: "in" = "in"
-  val between: "between" = "between"
+  inline val eq: "eq" = "eq"
+  inline val lt: "lt" = "lt"
+  inline val gt: "gt" = "gt"
+  inline val le: "le" = "le"
+  inline val ge: "ge" = "ge"
+  inline val in: "in" = "in"
+  inline val between: "between" = "between"
 
-  @inline def values = js.Array[OperatorType](eq, lt, gt, le, ge, in, between)
+  inline def values: js.Array[OperatorType] = js.Array(eq, lt, gt, le, ge, in, between)
 }
 
 type ParameterApplyType = "static" | "dynamic"
 object ParameterApplyType {
-  val static: "static" = "static"
-  val dynamic: "dynamic" = "dynamic"
+  inline val static: "static" = "static"
+  inline val dynamic: "dynamic" = "dynamic"
 
-  @inline def values = js.Array[ParameterApplyType](static, dynamic)
+  inline def values: js.Array[ParameterApplyType] = js.Array(static, dynamic)
 }
 
 type PartnerIntegrationStatus = "Active" | "Inactive" | "RuntimeFailure" | "ConnectionFailure"
 object PartnerIntegrationStatus {
-  val Active: "Active" = "Active"
-  val Inactive: "Inactive" = "Inactive"
-  val RuntimeFailure: "RuntimeFailure" = "RuntimeFailure"
-  val ConnectionFailure: "ConnectionFailure" = "ConnectionFailure"
+  inline val Active: "Active" = "Active"
+  inline val Inactive: "Inactive" = "Inactive"
+  inline val RuntimeFailure: "RuntimeFailure" = "RuntimeFailure"
+  inline val ConnectionFailure: "ConnectionFailure" = "ConnectionFailure"
 
-  @inline def values = js.Array[PartnerIntegrationStatus](Active, Inactive, RuntimeFailure, ConnectionFailure)
+  inline def values: js.Array[PartnerIntegrationStatus] = js.Array(Active, Inactive, RuntimeFailure, ConnectionFailure)
 }
 
 type ReservedNodeOfferingType = "Regular" | "Upgradable"
 object ReservedNodeOfferingType {
-  val Regular: "Regular" = "Regular"
-  val Upgradable: "Upgradable" = "Upgradable"
+  inline val Regular: "Regular" = "Regular"
+  inline val Upgradable: "Upgradable" = "Upgradable"
 
-  @inline def values = js.Array[ReservedNodeOfferingType](Regular, Upgradable)
+  inline def values: js.Array[ReservedNodeOfferingType] = js.Array(Regular, Upgradable)
 }
 
 type ScheduleState = "MODIFYING" | "ACTIVE" | "FAILED"
 object ScheduleState {
-  val MODIFYING: "MODIFYING" = "MODIFYING"
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val FAILED: "FAILED" = "FAILED"
+  inline val MODIFYING: "MODIFYING" = "MODIFYING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array[ScheduleState](MODIFYING, ACTIVE, FAILED)
+  inline def values: js.Array[ScheduleState] = js.Array(MODIFYING, ACTIVE, FAILED)
 }
 
 type ScheduledActionFilterName = "cluster-identifier" | "iam-role"
 object ScheduledActionFilterName {
-  val `cluster-identifier`: "cluster-identifier" = "cluster-identifier"
-  val `iam-role`: "iam-role" = "iam-role"
+  inline val `cluster-identifier`: "cluster-identifier" = "cluster-identifier"
+  inline val `iam-role`: "iam-role" = "iam-role"
 
-  @inline def values = js.Array[ScheduledActionFilterName](`cluster-identifier`, `iam-role`)
+  inline def values: js.Array[ScheduledActionFilterName] = js.Array(`cluster-identifier`, `iam-role`)
 }
 
 type ScheduledActionState = "ACTIVE" | "DISABLED"
 object ScheduledActionState {
-  val ACTIVE: "ACTIVE" = "ACTIVE"
-  val DISABLED: "DISABLED" = "DISABLED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array[ScheduledActionState](ACTIVE, DISABLED)
+  inline def values: js.Array[ScheduledActionState] = js.Array(ACTIVE, DISABLED)
 }
 
 type ScheduledActionTypeValues = "ResizeCluster" | "PauseCluster" | "ResumeCluster"
 object ScheduledActionTypeValues {
-  val ResizeCluster: "ResizeCluster" = "ResizeCluster"
-  val PauseCluster: "PauseCluster" = "PauseCluster"
-  val ResumeCluster: "ResumeCluster" = "ResumeCluster"
+  inline val ResizeCluster: "ResizeCluster" = "ResizeCluster"
+  inline val PauseCluster: "PauseCluster" = "PauseCluster"
+  inline val ResumeCluster: "ResumeCluster" = "ResumeCluster"
 
-  @inline def values = js.Array[ScheduledActionTypeValues](ResizeCluster, PauseCluster, ResumeCluster)
+  inline def values: js.Array[ScheduledActionTypeValues] = js.Array(ResizeCluster, PauseCluster, ResumeCluster)
 }
 
 type SnapshotAttributeToSortBy = "SOURCE_TYPE" | "TOTAL_SIZE" | "CREATE_TIME"
 object SnapshotAttributeToSortBy {
-  val SOURCE_TYPE: "SOURCE_TYPE" = "SOURCE_TYPE"
-  val TOTAL_SIZE: "TOTAL_SIZE" = "TOTAL_SIZE"
-  val CREATE_TIME: "CREATE_TIME" = "CREATE_TIME"
+  inline val SOURCE_TYPE: "SOURCE_TYPE" = "SOURCE_TYPE"
+  inline val TOTAL_SIZE: "TOTAL_SIZE" = "TOTAL_SIZE"
+  inline val CREATE_TIME: "CREATE_TIME" = "CREATE_TIME"
 
-  @inline def values = js.Array[SnapshotAttributeToSortBy](SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME)
+  inline def values: js.Array[SnapshotAttributeToSortBy] = js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME)
 }
 
 type SortByOrder = "ASC" | "DESC"
 object SortByOrder {
-  val ASC: "ASC" = "ASC"
-  val DESC: "DESC" = "DESC"
+  inline val ASC: "ASC" = "ASC"
+  inline val DESC: "DESC" = "DESC"
 
-  @inline def values = js.Array[SortByOrder](ASC, DESC)
+  inline def values: js.Array[SortByOrder] = js.Array(ASC, DESC)
 }
 
 type SourceType = "cluster" | "cluster-parameter-group" | "cluster-security-group" | "cluster-snapshot" | "scheduled-action"
 object SourceType {
-  val cluster: "cluster" = "cluster"
-  val `cluster-parameter-group`: "cluster-parameter-group" = "cluster-parameter-group"
-  val `cluster-security-group`: "cluster-security-group" = "cluster-security-group"
-  val `cluster-snapshot`: "cluster-snapshot" = "cluster-snapshot"
-  val `scheduled-action`: "scheduled-action" = "scheduled-action"
+  inline val cluster: "cluster" = "cluster"
+  inline val `cluster-parameter-group`: "cluster-parameter-group" = "cluster-parameter-group"
+  inline val `cluster-security-group`: "cluster-security-group" = "cluster-security-group"
+  inline val `cluster-snapshot`: "cluster-snapshot" = "cluster-snapshot"
+  inline val `scheduled-action`: "scheduled-action" = "scheduled-action"
 
-  @inline def values = js.Array[SourceType](cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
+  inline def values: js.Array[SourceType] = js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
 }
 
 type TableRestoreStatusType = "PENDING" | "IN_PROGRESS" | "SUCCEEDED" | "FAILED" | "CANCELED"
 object TableRestoreStatusType {
-  val PENDING: "PENDING" = "PENDING"
-  val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
-  val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
-  val FAILED: "FAILED" = "FAILED"
-  val CANCELED: "CANCELED" = "CANCELED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array[TableRestoreStatusType](PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
+  inline def values: js.Array[TableRestoreStatusType] = js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
 }
 
 type UsageLimitBreachAction = "log" | "emit-metric" | "disable"
 object UsageLimitBreachAction {
-  val log: "log" = "log"
-  val `emit-metric`: "emit-metric" = "emit-metric"
-  val disable: "disable" = "disable"
+  inline val log: "log" = "log"
+  inline val `emit-metric`: "emit-metric" = "emit-metric"
+  inline val disable: "disable" = "disable"
 
-  @inline def values = js.Array[UsageLimitBreachAction](log, `emit-metric`, disable)
+  inline def values: js.Array[UsageLimitBreachAction] = js.Array(log, `emit-metric`, disable)
 }
 
 type UsageLimitFeatureType = "spectrum" | "concurrency-scaling"
 object UsageLimitFeatureType {
-  val spectrum: "spectrum" = "spectrum"
-  val `concurrency-scaling`: "concurrency-scaling" = "concurrency-scaling"
+  inline val spectrum: "spectrum" = "spectrum"
+  inline val `concurrency-scaling`: "concurrency-scaling" = "concurrency-scaling"
 
-  @inline def values = js.Array[UsageLimitFeatureType](spectrum, `concurrency-scaling`)
+  inline def values: js.Array[UsageLimitFeatureType] = js.Array(spectrum, `concurrency-scaling`)
 }
 
 type UsageLimitLimitType = "time" | "data-scanned"
 object UsageLimitLimitType {
-  val time: "time" = "time"
-  val `data-scanned`: "data-scanned" = "data-scanned"
+  inline val time: "time" = "time"
+  inline val `data-scanned`: "data-scanned" = "data-scanned"
 
-  @inline def values = js.Array[UsageLimitLimitType](time, `data-scanned`)
+  inline def values: js.Array[UsageLimitLimitType] = js.Array(time, `data-scanned`)
 }
 
 type UsageLimitPeriod = "daily" | "weekly" | "monthly"
 object UsageLimitPeriod {
-  val daily: "daily" = "daily"
-  val weekly: "weekly" = "weekly"
-  val monthly: "monthly" = "monthly"
+  inline val daily: "daily" = "daily"
+  inline val weekly: "weekly" = "weekly"
+  inline val monthly: "monthly" = "monthly"
 
-  @inline def values = js.Array[UsageLimitPeriod](daily, weekly, monthly)
+  inline def values: js.Array[UsageLimitPeriod] = js.Array(daily, weekly, monthly)
 }
