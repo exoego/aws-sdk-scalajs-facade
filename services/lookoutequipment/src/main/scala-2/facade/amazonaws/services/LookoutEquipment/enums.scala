@@ -83,3 +83,4 @@ object TargetSamplingRate {
 
   @inline def values = js.Array(PT1S, PT5S, PT10S, PT15S, PT30S, PT1M, PT5M, PT10M, PT15M, PT30M, PT1H)
 }
+

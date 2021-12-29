@@ -106,3 +106,4 @@ object WorkloadImprovementStatus {
 
   @inline def values = js.Array(NOT_APPLICABLE, NOT_STARTED, IN_PROGRESS, COMPLETE, RISK_ACKNOWLEDGED)
 }
+

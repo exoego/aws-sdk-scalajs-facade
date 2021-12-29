@@ -75,3 +75,4 @@ object ScalingType {
 
   @inline def values = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
 }
+

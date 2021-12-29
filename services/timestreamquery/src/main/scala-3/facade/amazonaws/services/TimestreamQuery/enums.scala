@@ -1,22 +1,20 @@
 package facade.amazonaws.services.timestreamquery
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ScalarType extends js.Any
+type ScalarType = "VARCHAR" | "BOOLEAN" | "BIGINT" | "DOUBLE" | "TIMESTAMP" | "DATE" | "TIME" | "INTERVAL_DAY_TO_SECOND" | "INTERVAL_YEAR_TO_MONTH" | "UNKNOWN" | "INTEGER"
 object ScalarType {
-  val VARCHAR = "VARCHAR".asInstanceOf[ScalarType]
-  val BOOLEAN = "BOOLEAN".asInstanceOf[ScalarType]
-  val BIGINT = "BIGINT".asInstanceOf[ScalarType]
-  val DOUBLE = "DOUBLE".asInstanceOf[ScalarType]
-  val TIMESTAMP = "TIMESTAMP".asInstanceOf[ScalarType]
-  val DATE = "DATE".asInstanceOf[ScalarType]
-  val TIME = "TIME".asInstanceOf[ScalarType]
-  val INTERVAL_DAY_TO_SECOND = "INTERVAL_DAY_TO_SECOND".asInstanceOf[ScalarType]
-  val INTERVAL_YEAR_TO_MONTH = "INTERVAL_YEAR_TO_MONTH".asInstanceOf[ScalarType]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[ScalarType]
-  val INTEGER = "INTEGER".asInstanceOf[ScalarType]
+  inline val VARCHAR: "VARCHAR" = "VARCHAR"
+  inline val BOOLEAN: "BOOLEAN" = "BOOLEAN"
+  inline val BIGINT: "BIGINT" = "BIGINT"
+  inline val DOUBLE: "DOUBLE" = "DOUBLE"
+  inline val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
+  inline val DATE: "DATE" = "DATE"
+  inline val TIME: "TIME" = "TIME"
+  inline val INTERVAL_DAY_TO_SECOND: "INTERVAL_DAY_TO_SECOND" = "INTERVAL_DAY_TO_SECOND"
+  inline val INTERVAL_YEAR_TO_MONTH: "INTERVAL_YEAR_TO_MONTH" = "INTERVAL_YEAR_TO_MONTH"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val INTEGER: "INTEGER" = "INTEGER"
 
-  @inline def values = js.Array(VARCHAR, BOOLEAN, BIGINT, DOUBLE, TIMESTAMP, DATE, TIME, INTERVAL_DAY_TO_SECOND, INTERVAL_YEAR_TO_MONTH, UNKNOWN, INTEGER)
+  inline def values: js.Array[ScalarType] = js.Array(VARCHAR, BOOLEAN, BIGINT, DOUBLE, TIMESTAMP, DATE, TIME, INTERVAL_DAY_TO_SECOND, INTERVAL_YEAR_TO_MONTH, UNKNOWN, INTEGER)
 }

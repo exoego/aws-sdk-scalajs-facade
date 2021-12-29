@@ -1,142 +1,130 @@
 package facade.amazonaws.services.rekognition
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait Attribute extends js.Any
+type Attribute = "DEFAULT" | "ALL"
 object Attribute {
-  val DEFAULT = "DEFAULT".asInstanceOf[Attribute]
-  val ALL = "ALL".asInstanceOf[Attribute]
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+  inline val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(DEFAULT, ALL)
+  inline def values: js.Array[Attribute] = js.Array(DEFAULT, ALL)
 }
 
-@js.native
-sealed trait BodyPart extends js.Any
+type BodyPart = "FACE" | "HEAD" | "LEFT_HAND" | "RIGHT_HAND"
 object BodyPart {
-  val FACE = "FACE".asInstanceOf[BodyPart]
-  val HEAD = "HEAD".asInstanceOf[BodyPart]
-  val LEFT_HAND = "LEFT_HAND".asInstanceOf[BodyPart]
-  val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[BodyPart]
+  inline val FACE: "FACE" = "FACE"
+  inline val HEAD: "HEAD" = "HEAD"
+  inline val LEFT_HAND: "LEFT_HAND" = "LEFT_HAND"
+  inline val RIGHT_HAND: "RIGHT_HAND" = "RIGHT_HAND"
 
-  @inline def values = js.Array(FACE, HEAD, LEFT_HAND, RIGHT_HAND)
+  inline def values: js.Array[BodyPart] = js.Array(FACE, HEAD, LEFT_HAND, RIGHT_HAND)
 }
 
-@js.native
-sealed trait CelebrityRecognitionSortBy extends js.Any
+type CelebrityRecognitionSortBy = "ID" | "TIMESTAMP"
 object CelebrityRecognitionSortBy {
-  val ID = "ID".asInstanceOf[CelebrityRecognitionSortBy]
-  val TIMESTAMP = "TIMESTAMP".asInstanceOf[CelebrityRecognitionSortBy]
+  inline val ID: "ID" = "ID"
+  inline val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
 
-  @inline def values = js.Array(ID, TIMESTAMP)
+  inline def values: js.Array[CelebrityRecognitionSortBy] = js.Array(ID, TIMESTAMP)
 }
 
-@js.native
-sealed trait ContentClassifier extends js.Any
+type ContentClassifier = "FreeOfPersonallyIdentifiableInformation" | "FreeOfAdultContent"
 object ContentClassifier {
-  val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
-  val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
+  inline val FreeOfPersonallyIdentifiableInformation: "FreeOfPersonallyIdentifiableInformation" = "FreeOfPersonallyIdentifiableInformation"
+  inline val FreeOfAdultContent: "FreeOfAdultContent" = "FreeOfAdultContent"
 
-  @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
+  inline def values: js.Array[ContentClassifier] = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
 }
 
-@js.native
-sealed trait ContentModerationSortBy extends js.Any
+type ContentModerationSortBy = "NAME" | "TIMESTAMP"
 object ContentModerationSortBy {
-  val NAME = "NAME".asInstanceOf[ContentModerationSortBy]
-  val TIMESTAMP = "TIMESTAMP".asInstanceOf[ContentModerationSortBy]
+  inline val NAME: "NAME" = "NAME"
+  inline val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
 
-  @inline def values = js.Array(NAME, TIMESTAMP)
+  inline def values: js.Array[ContentModerationSortBy] = js.Array(NAME, TIMESTAMP)
 }
 
-@js.native
-sealed trait EmotionName extends js.Any
+type EmotionName = "HAPPY" | "SAD" | "ANGRY" | "CONFUSED" | "DISGUSTED" | "SURPRISED" | "CALM" | "UNKNOWN" | "FEAR"
 object EmotionName {
-  val HAPPY = "HAPPY".asInstanceOf[EmotionName]
-  val SAD = "SAD".asInstanceOf[EmotionName]
-  val ANGRY = "ANGRY".asInstanceOf[EmotionName]
-  val CONFUSED = "CONFUSED".asInstanceOf[EmotionName]
-  val DISGUSTED = "DISGUSTED".asInstanceOf[EmotionName]
-  val SURPRISED = "SURPRISED".asInstanceOf[EmotionName]
-  val CALM = "CALM".asInstanceOf[EmotionName]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[EmotionName]
-  val FEAR = "FEAR".asInstanceOf[EmotionName]
+  inline val HAPPY: "HAPPY" = "HAPPY"
+  inline val SAD: "SAD" = "SAD"
+  inline val ANGRY: "ANGRY" = "ANGRY"
+  inline val CONFUSED: "CONFUSED" = "CONFUSED"
+  inline val DISGUSTED: "DISGUSTED" = "DISGUSTED"
+  inline val SURPRISED: "SURPRISED" = "SURPRISED"
+  inline val CALM: "CALM" = "CALM"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val FEAR: "FEAR" = "FEAR"
 
-  @inline def values = js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR)
+  inline def values: js.Array[EmotionName] = js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR)
 }
 
-@js.native
-sealed trait FaceAttributes extends js.Any
+type FaceAttributes = "DEFAULT" | "ALL"
 object FaceAttributes {
-  val DEFAULT = "DEFAULT".asInstanceOf[FaceAttributes]
-  val ALL = "ALL".asInstanceOf[FaceAttributes]
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+  inline val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(DEFAULT, ALL)
+  inline def values: js.Array[FaceAttributes] = js.Array(DEFAULT, ALL)
 }
 
-@js.native
-sealed trait FaceSearchSortBy extends js.Any
+type FaceSearchSortBy = "INDEX" | "TIMESTAMP"
 object FaceSearchSortBy {
-  val INDEX = "INDEX".asInstanceOf[FaceSearchSortBy]
-  val TIMESTAMP = "TIMESTAMP".asInstanceOf[FaceSearchSortBy]
+  inline val INDEX: "INDEX" = "INDEX"
+  inline val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
 
-  @inline def values = js.Array(INDEX, TIMESTAMP)
+  inline def values: js.Array[FaceSearchSortBy] = js.Array(INDEX, TIMESTAMP)
 }
 
-@js.native
-sealed trait GenderType extends js.Any
+type GenderType = "Male" | "Female"
 object GenderType {
-  val Male = "Male".asInstanceOf[GenderType]
-  val Female = "Female".asInstanceOf[GenderType]
+  inline val Male: "Male" = "Male"
+  inline val Female: "Female" = "Female"
 
-  @inline def values = js.Array(Male, Female)
+  inline def values: js.Array[GenderType] = js.Array(Male, Female)
 }
 
-@js.native
-sealed trait LabelDetectionSortBy extends js.Any
+type LabelDetectionSortBy = "NAME" | "TIMESTAMP"
 object LabelDetectionSortBy {
-  val NAME = "NAME".asInstanceOf[LabelDetectionSortBy]
-  val TIMESTAMP = "TIMESTAMP".asInstanceOf[LabelDetectionSortBy]
+  inline val NAME: "NAME" = "NAME"
+  inline val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
 
-  @inline def values = js.Array(NAME, TIMESTAMP)
+  inline def values: js.Array[LabelDetectionSortBy] = js.Array(NAME, TIMESTAMP)
 }
 
-@js.native
-sealed trait LandmarkType extends js.Any
+type LandmarkType = "eyeLeft" | "eyeRight" | "nose" | "mouthLeft" | "mouthRight" | "leftEyeBrowLeft" | "leftEyeBrowRight" | "leftEyeBrowUp" | "rightEyeBrowLeft" | "rightEyeBrowRight" | "rightEyeBrowUp" | "leftEyeLeft" | "leftEyeRight" | "leftEyeUp" | "leftEyeDown" | "rightEyeLeft" | "rightEyeRight" | "rightEyeUp" | "rightEyeDown" | "noseLeft" | "noseRight" | "mouthUp" | "mouthDown" | "leftPupil" | "rightPupil" | "upperJawlineLeft" | "midJawlineLeft" | "chinBottom" | "midJawlineRight" | "upperJawlineRight"
 object LandmarkType {
-  val eyeLeft = "eyeLeft".asInstanceOf[LandmarkType]
-  val eyeRight = "eyeRight".asInstanceOf[LandmarkType]
-  val nose = "nose".asInstanceOf[LandmarkType]
-  val mouthLeft = "mouthLeft".asInstanceOf[LandmarkType]
-  val mouthRight = "mouthRight".asInstanceOf[LandmarkType]
-  val leftEyeBrowLeft = "leftEyeBrowLeft".asInstanceOf[LandmarkType]
-  val leftEyeBrowRight = "leftEyeBrowRight".asInstanceOf[LandmarkType]
-  val leftEyeBrowUp = "leftEyeBrowUp".asInstanceOf[LandmarkType]
-  val rightEyeBrowLeft = "rightEyeBrowLeft".asInstanceOf[LandmarkType]
-  val rightEyeBrowRight = "rightEyeBrowRight".asInstanceOf[LandmarkType]
-  val rightEyeBrowUp = "rightEyeBrowUp".asInstanceOf[LandmarkType]
-  val leftEyeLeft = "leftEyeLeft".asInstanceOf[LandmarkType]
-  val leftEyeRight = "leftEyeRight".asInstanceOf[LandmarkType]
-  val leftEyeUp = "leftEyeUp".asInstanceOf[LandmarkType]
-  val leftEyeDown = "leftEyeDown".asInstanceOf[LandmarkType]
-  val rightEyeLeft = "rightEyeLeft".asInstanceOf[LandmarkType]
-  val rightEyeRight = "rightEyeRight".asInstanceOf[LandmarkType]
-  val rightEyeUp = "rightEyeUp".asInstanceOf[LandmarkType]
-  val rightEyeDown = "rightEyeDown".asInstanceOf[LandmarkType]
-  val noseLeft = "noseLeft".asInstanceOf[LandmarkType]
-  val noseRight = "noseRight".asInstanceOf[LandmarkType]
-  val mouthUp = "mouthUp".asInstanceOf[LandmarkType]
-  val mouthDown = "mouthDown".asInstanceOf[LandmarkType]
-  val leftPupil = "leftPupil".asInstanceOf[LandmarkType]
-  val rightPupil = "rightPupil".asInstanceOf[LandmarkType]
-  val upperJawlineLeft = "upperJawlineLeft".asInstanceOf[LandmarkType]
-  val midJawlineLeft = "midJawlineLeft".asInstanceOf[LandmarkType]
-  val chinBottom = "chinBottom".asInstanceOf[LandmarkType]
-  val midJawlineRight = "midJawlineRight".asInstanceOf[LandmarkType]
-  val upperJawlineRight = "upperJawlineRight".asInstanceOf[LandmarkType]
+  inline val eyeLeft: "eyeLeft" = "eyeLeft"
+  inline val eyeRight: "eyeRight" = "eyeRight"
+  inline val nose: "nose" = "nose"
+  inline val mouthLeft: "mouthLeft" = "mouthLeft"
+  inline val mouthRight: "mouthRight" = "mouthRight"
+  inline val leftEyeBrowLeft: "leftEyeBrowLeft" = "leftEyeBrowLeft"
+  inline val leftEyeBrowRight: "leftEyeBrowRight" = "leftEyeBrowRight"
+  inline val leftEyeBrowUp: "leftEyeBrowUp" = "leftEyeBrowUp"
+  inline val rightEyeBrowLeft: "rightEyeBrowLeft" = "rightEyeBrowLeft"
+  inline val rightEyeBrowRight: "rightEyeBrowRight" = "rightEyeBrowRight"
+  inline val rightEyeBrowUp: "rightEyeBrowUp" = "rightEyeBrowUp"
+  inline val leftEyeLeft: "leftEyeLeft" = "leftEyeLeft"
+  inline val leftEyeRight: "leftEyeRight" = "leftEyeRight"
+  inline val leftEyeUp: "leftEyeUp" = "leftEyeUp"
+  inline val leftEyeDown: "leftEyeDown" = "leftEyeDown"
+  inline val rightEyeLeft: "rightEyeLeft" = "rightEyeLeft"
+  inline val rightEyeRight: "rightEyeRight" = "rightEyeRight"
+  inline val rightEyeUp: "rightEyeUp" = "rightEyeUp"
+  inline val rightEyeDown: "rightEyeDown" = "rightEyeDown"
+  inline val noseLeft: "noseLeft" = "noseLeft"
+  inline val noseRight: "noseRight" = "noseRight"
+  inline val mouthUp: "mouthUp" = "mouthUp"
+  inline val mouthDown: "mouthDown" = "mouthDown"
+  inline val leftPupil: "leftPupil" = "leftPupil"
+  inline val rightPupil: "rightPupil" = "rightPupil"
+  inline val upperJawlineLeft: "upperJawlineLeft" = "upperJawlineLeft"
+  inline val midJawlineLeft: "midJawlineLeft" = "midJawlineLeft"
+  inline val chinBottom: "chinBottom" = "chinBottom"
+  inline val midJawlineRight: "midJawlineRight" = "midJawlineRight"
+  inline val upperJawlineRight: "upperJawlineRight" = "upperJawlineRight"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[LandmarkType] = js.Array(
     eyeLeft,
     eyeRight,
     nose,
@@ -170,134 +158,122 @@ object LandmarkType {
   )
 }
 
-@js.native
-sealed trait OrientationCorrection extends js.Any
+type OrientationCorrection = "ROTATE_0" | "ROTATE_90" | "ROTATE_180" | "ROTATE_270"
 object OrientationCorrection {
-  val ROTATE_0 = "ROTATE_0".asInstanceOf[OrientationCorrection]
-  val ROTATE_90 = "ROTATE_90".asInstanceOf[OrientationCorrection]
-  val ROTATE_180 = "ROTATE_180".asInstanceOf[OrientationCorrection]
-  val ROTATE_270 = "ROTATE_270".asInstanceOf[OrientationCorrection]
+  inline val ROTATE_0: "ROTATE_0" = "ROTATE_0"
+  inline val ROTATE_90: "ROTATE_90" = "ROTATE_90"
+  inline val ROTATE_180: "ROTATE_180" = "ROTATE_180"
+  inline val ROTATE_270: "ROTATE_270" = "ROTATE_270"
 
-  @inline def values = js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270)
+  inline def values: js.Array[OrientationCorrection] = js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270)
 }
 
-@js.native
-sealed trait PersonTrackingSortBy extends js.Any
+type PersonTrackingSortBy = "INDEX" | "TIMESTAMP"
 object PersonTrackingSortBy {
-  val INDEX = "INDEX".asInstanceOf[PersonTrackingSortBy]
-  val TIMESTAMP = "TIMESTAMP".asInstanceOf[PersonTrackingSortBy]
+  inline val INDEX: "INDEX" = "INDEX"
+  inline val TIMESTAMP: "TIMESTAMP" = "TIMESTAMP"
 
-  @inline def values = js.Array(INDEX, TIMESTAMP)
+  inline def values: js.Array[PersonTrackingSortBy] = js.Array(INDEX, TIMESTAMP)
 }
 
-@js.native
-sealed trait ProjectStatus extends js.Any
+type ProjectStatus = "CREATING" | "CREATED" | "DELETING"
 object ProjectStatus {
-  val CREATING = "CREATING".asInstanceOf[ProjectStatus]
-  val CREATED = "CREATED".asInstanceOf[ProjectStatus]
-  val DELETING = "DELETING".asInstanceOf[ProjectStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val CREATED: "CREATED" = "CREATED"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(CREATING, CREATED, DELETING)
+  inline def values: js.Array[ProjectStatus] = js.Array(CREATING, CREATED, DELETING)
 }
 
-@js.native
-sealed trait ProjectVersionStatus extends js.Any
+type ProjectVersionStatus = "TRAINING_IN_PROGRESS" | "TRAINING_COMPLETED" | "TRAINING_FAILED" | "STARTING" | "RUNNING" | "FAILED" | "STOPPING" | "STOPPED" | "DELETING"
 object ProjectVersionStatus {
-  val TRAINING_IN_PROGRESS = "TRAINING_IN_PROGRESS".asInstanceOf[ProjectVersionStatus]
-  val TRAINING_COMPLETED = "TRAINING_COMPLETED".asInstanceOf[ProjectVersionStatus]
-  val TRAINING_FAILED = "TRAINING_FAILED".asInstanceOf[ProjectVersionStatus]
-  val STARTING = "STARTING".asInstanceOf[ProjectVersionStatus]
-  val RUNNING = "RUNNING".asInstanceOf[ProjectVersionStatus]
-  val FAILED = "FAILED".asInstanceOf[ProjectVersionStatus]
-  val STOPPING = "STOPPING".asInstanceOf[ProjectVersionStatus]
-  val STOPPED = "STOPPED".asInstanceOf[ProjectVersionStatus]
-  val DELETING = "DELETING".asInstanceOf[ProjectVersionStatus]
+  inline val TRAINING_IN_PROGRESS: "TRAINING_IN_PROGRESS" = "TRAINING_IN_PROGRESS"
+  inline val TRAINING_COMPLETED: "TRAINING_COMPLETED" = "TRAINING_COMPLETED"
+  inline val TRAINING_FAILED: "TRAINING_FAILED" = "TRAINING_FAILED"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val STOPPED: "STOPPED" = "STOPPED"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING)
+  inline def values: js.Array[ProjectVersionStatus] = js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING)
 }
 
-@js.native
-sealed trait ProtectiveEquipmentType extends js.Any
+type ProtectiveEquipmentType = "FACE_COVER" | "HAND_COVER" | "HEAD_COVER"
 object ProtectiveEquipmentType {
-  val FACE_COVER = "FACE_COVER".asInstanceOf[ProtectiveEquipmentType]
-  val HAND_COVER = "HAND_COVER".asInstanceOf[ProtectiveEquipmentType]
-  val HEAD_COVER = "HEAD_COVER".asInstanceOf[ProtectiveEquipmentType]
+  inline val FACE_COVER: "FACE_COVER" = "FACE_COVER"
+  inline val HAND_COVER: "HAND_COVER" = "HAND_COVER"
+  inline val HEAD_COVER: "HEAD_COVER" = "HEAD_COVER"
 
-  @inline def values = js.Array(FACE_COVER, HAND_COVER, HEAD_COVER)
+  inline def values: js.Array[ProtectiveEquipmentType] = js.Array(FACE_COVER, HAND_COVER, HEAD_COVER)
 }
 
-@js.native
-sealed trait QualityFilter extends js.Any
+type QualityFilter = "NONE" | "AUTO" | "LOW" | "MEDIUM" | "HIGH"
 object QualityFilter {
-  val NONE = "NONE".asInstanceOf[QualityFilter]
-  val AUTO = "AUTO".asInstanceOf[QualityFilter]
-  val LOW = "LOW".asInstanceOf[QualityFilter]
-  val MEDIUM = "MEDIUM".asInstanceOf[QualityFilter]
-  val HIGH = "HIGH".asInstanceOf[QualityFilter]
+  inline val NONE: "NONE" = "NONE"
+  inline val AUTO: "AUTO" = "AUTO"
+  inline val LOW: "LOW" = "LOW"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val HIGH: "HIGH" = "HIGH"
 
-  @inline def values = js.Array(NONE, AUTO, LOW, MEDIUM, HIGH)
+  inline def values: js.Array[QualityFilter] = js.Array(NONE, AUTO, LOW, MEDIUM, HIGH)
 }
 
-@js.native
-sealed trait Reason extends js.Any
+type Reason = "EXCEEDS_MAX_FACES" | "EXTREME_POSE" | "LOW_BRIGHTNESS" | "LOW_SHARPNESS" | "LOW_CONFIDENCE" | "SMALL_BOUNDING_BOX" | "LOW_FACE_QUALITY"
 object Reason {
-  val EXCEEDS_MAX_FACES = "EXCEEDS_MAX_FACES".asInstanceOf[Reason]
-  val EXTREME_POSE = "EXTREME_POSE".asInstanceOf[Reason]
-  val LOW_BRIGHTNESS = "LOW_BRIGHTNESS".asInstanceOf[Reason]
-  val LOW_SHARPNESS = "LOW_SHARPNESS".asInstanceOf[Reason]
-  val LOW_CONFIDENCE = "LOW_CONFIDENCE".asInstanceOf[Reason]
-  val SMALL_BOUNDING_BOX = "SMALL_BOUNDING_BOX".asInstanceOf[Reason]
-  val LOW_FACE_QUALITY = "LOW_FACE_QUALITY".asInstanceOf[Reason]
+  inline val EXCEEDS_MAX_FACES: "EXCEEDS_MAX_FACES" = "EXCEEDS_MAX_FACES"
+  inline val EXTREME_POSE: "EXTREME_POSE" = "EXTREME_POSE"
+  inline val LOW_BRIGHTNESS: "LOW_BRIGHTNESS" = "LOW_BRIGHTNESS"
+  inline val LOW_SHARPNESS: "LOW_SHARPNESS" = "LOW_SHARPNESS"
+  inline val LOW_CONFIDENCE: "LOW_CONFIDENCE" = "LOW_CONFIDENCE"
+  inline val SMALL_BOUNDING_BOX: "SMALL_BOUNDING_BOX" = "SMALL_BOUNDING_BOX"
+  inline val LOW_FACE_QUALITY: "LOW_FACE_QUALITY" = "LOW_FACE_QUALITY"
 
-  @inline def values = js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX, LOW_FACE_QUALITY)
+  inline def values: js.Array[Reason] = js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX, LOW_FACE_QUALITY)
 }
 
-@js.native
-sealed trait SegmentType extends js.Any
+type SegmentType = "TECHNICAL_CUE" | "SHOT"
 object SegmentType {
-  val TECHNICAL_CUE = "TECHNICAL_CUE".asInstanceOf[SegmentType]
-  val SHOT = "SHOT".asInstanceOf[SegmentType]
+  inline val TECHNICAL_CUE: "TECHNICAL_CUE" = "TECHNICAL_CUE"
+  inline val SHOT: "SHOT" = "SHOT"
 
-  @inline def values = js.Array(TECHNICAL_CUE, SHOT)
+  inline def values: js.Array[SegmentType] = js.Array(TECHNICAL_CUE, SHOT)
 }
 
-@js.native
-sealed trait StreamProcessorStatus extends js.Any
+type StreamProcessorStatus = "STOPPED" | "STARTING" | "RUNNING" | "FAILED" | "STOPPING"
 object StreamProcessorStatus {
-  val STOPPED = "STOPPED".asInstanceOf[StreamProcessorStatus]
-  val STARTING = "STARTING".asInstanceOf[StreamProcessorStatus]
-  val RUNNING = "RUNNING".asInstanceOf[StreamProcessorStatus]
-  val FAILED = "FAILED".asInstanceOf[StreamProcessorStatus]
-  val STOPPING = "STOPPING".asInstanceOf[StreamProcessorStatus]
+  inline val STOPPED: "STOPPED" = "STOPPED"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOPPING: "STOPPING" = "STOPPING"
 
-  @inline def values = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
+  inline def values: js.Array[StreamProcessorStatus] = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
 }
 
-@js.native
-sealed trait TechnicalCueType extends js.Any
+type TechnicalCueType = "ColorBars" | "EndCredits" | "BlackFrames"
 object TechnicalCueType {
-  val ColorBars = "ColorBars".asInstanceOf[TechnicalCueType]
-  val EndCredits = "EndCredits".asInstanceOf[TechnicalCueType]
-  val BlackFrames = "BlackFrames".asInstanceOf[TechnicalCueType]
+  inline val ColorBars: "ColorBars" = "ColorBars"
+  inline val EndCredits: "EndCredits" = "EndCredits"
+  inline val BlackFrames: "BlackFrames" = "BlackFrames"
 
-  @inline def values = js.Array(ColorBars, EndCredits, BlackFrames)
+  inline def values: js.Array[TechnicalCueType] = js.Array(ColorBars, EndCredits, BlackFrames)
 }
 
-@js.native
-sealed trait TextTypes extends js.Any
+type TextTypes = "LINE" | "WORD"
 object TextTypes {
-  val LINE = "LINE".asInstanceOf[TextTypes]
-  val WORD = "WORD".asInstanceOf[TextTypes]
+  inline val LINE: "LINE" = "LINE"
+  inline val WORD: "WORD" = "WORD"
 
-  @inline def values = js.Array(LINE, WORD)
+  inline def values: js.Array[TextTypes] = js.Array(LINE, WORD)
 }
 
-@js.native
-sealed trait VideoJobStatus extends js.Any
+type VideoJobStatus = "IN_PROGRESS" | "SUCCEEDED" | "FAILED"
 object VideoJobStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[VideoJobStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[VideoJobStatus]
-  val FAILED = "FAILED".asInstanceOf[VideoJobStatus]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
+  inline def values: js.Array[VideoJobStatus] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
 }

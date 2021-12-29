@@ -1,30 +1,26 @@
 package facade.amazonaws.services.mediastoredata
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ItemType extends js.Any
+type ItemType = "OBJECT" | "FOLDER"
 object ItemType {
-  val OBJECT = "OBJECT".asInstanceOf[ItemType]
-  val FOLDER = "FOLDER".asInstanceOf[ItemType]
+  inline val OBJECT: "OBJECT" = "OBJECT"
+  inline val FOLDER: "FOLDER" = "FOLDER"
 
-  @inline def values = js.Array(OBJECT, FOLDER)
+  inline def values: js.Array[ItemType] = js.Array(OBJECT, FOLDER)
 }
 
-@js.native
-sealed trait StorageClass extends js.Any
+type StorageClass = "TEMPORAL"
 object StorageClass {
-  val TEMPORAL = "TEMPORAL".asInstanceOf[StorageClass]
+  inline val TEMPORAL: "TEMPORAL" = "TEMPORAL"
 
-  @inline def values = js.Array(TEMPORAL)
+  inline def values: js.Array[StorageClass] = js.Array(TEMPORAL)
 }
 
-@js.native
-sealed trait UploadAvailability extends js.Any
+type UploadAvailability = "STANDARD" | "STREAMING"
 object UploadAvailability {
-  val STANDARD = "STANDARD".asInstanceOf[UploadAvailability]
-  val STREAMING = "STREAMING".asInstanceOf[UploadAvailability]
+  inline val STANDARD: "STANDARD" = "STANDARD"
+  inline val STREAMING: "STREAMING" = "STREAMING"
 
-  @inline def values = js.Array(STANDARD, STREAMING)
+  inline def values: js.Array[UploadAvailability] = js.Array(STANDARD, STREAMING)
 }

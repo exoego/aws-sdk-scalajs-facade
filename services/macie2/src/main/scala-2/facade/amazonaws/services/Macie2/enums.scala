@@ -132,18 +132,7 @@ object FindingType {
   val `Policy:IAMUser/S3BucketEncryptionDisabled` = "Policy:IAMUser/S3BucketEncryptionDisabled".asInstanceOf[FindingType]
   val `Policy:IAMUser/S3BlockPublicAccessDisabled` = "Policy:IAMUser/S3BlockPublicAccessDisabled".asInstanceOf[FindingType]
 
-  @inline def values = js.Array(
-    `SensitiveData:S3Object/Multiple`,
-    `SensitiveData:S3Object/Financial`,
-    `SensitiveData:S3Object/Personal`,
-    `SensitiveData:S3Object/Credentials`,
-    `SensitiveData:S3Object/CustomIdentifier`,
-    `Policy:IAMUser/S3BucketPublic`,
-    `Policy:IAMUser/S3BucketSharedExternally`,
-    `Policy:IAMUser/S3BucketReplicatedExternally`,
-    `Policy:IAMUser/S3BucketEncryptionDisabled`,
-    `Policy:IAMUser/S3BlockPublicAccessDisabled`
-  )
+  @inline def values = js.Array(`SensitiveData:S3Object/Multiple`, `SensitiveData:S3Object/Financial`, `SensitiveData:S3Object/Personal`, `SensitiveData:S3Object/Credentials`, `SensitiveData:S3Object/CustomIdentifier`, `Policy:IAMUser/S3BucketPublic`, `Policy:IAMUser/S3BucketSharedExternally`, `Policy:IAMUser/S3BucketReplicatedExternally`, `Policy:IAMUser/S3BucketEncryptionDisabled`, `Policy:IAMUser/S3BlockPublicAccessDisabled`)
 }
 
 /** The action to perform on findings that meet the filter criteria. To suppress (automatically archive) findings that meet the criteria, set this value to ARCHIVE. Valid values are:
@@ -480,3 +469,4 @@ object UserIdentityType {
 
   @inline def values = js.Array(AssumedRole, IAMUser, FederatedUser, Root, AWSAccount, AWSService)
 }
+

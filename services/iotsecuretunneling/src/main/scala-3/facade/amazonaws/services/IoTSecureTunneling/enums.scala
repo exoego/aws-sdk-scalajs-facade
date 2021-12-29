@@ -1,22 +1,19 @@
 package facade.amazonaws.services.iotsecuretunneling
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ConnectionStatus extends js.Any
+type ConnectionStatus = "CONNECTED" | "DISCONNECTED"
 object ConnectionStatus {
-  val CONNECTED = "CONNECTED".asInstanceOf[ConnectionStatus]
-  val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionStatus]
+  inline val CONNECTED: "CONNECTED" = "CONNECTED"
+  inline val DISCONNECTED: "DISCONNECTED" = "DISCONNECTED"
 
-  @inline def values = js.Array(CONNECTED, DISCONNECTED)
+  inline def values: js.Array[ConnectionStatus] = js.Array(CONNECTED, DISCONNECTED)
 }
 
-@js.native
-sealed trait TunnelStatus extends js.Any
+type TunnelStatus = "OPEN" | "CLOSED"
 object TunnelStatus {
-  val OPEN = "OPEN".asInstanceOf[TunnelStatus]
-  val CLOSED = "CLOSED".asInstanceOf[TunnelStatus]
+  inline val OPEN: "OPEN" = "OPEN"
+  inline val CLOSED: "CLOSED" = "CLOSED"
 
-  @inline def values = js.Array(OPEN, CLOSED)
+  inline def values: js.Array[TunnelStatus] = js.Array(OPEN, CLOSED)
 }

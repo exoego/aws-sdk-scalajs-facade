@@ -34,16 +34,7 @@ object MetricsName {
   val IteratorAgeMilliseconds = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
   val ALL = "ALL".asInstanceOf[MetricsName]
 
-  @inline def values = js.Array(
-    IncomingBytes,
-    IncomingRecords,
-    OutgoingBytes,
-    OutgoingRecords,
-    WriteProvisionedThroughputExceeded,
-    ReadProvisionedThroughputExceeded,
-    IteratorAgeMilliseconds,
-    ALL
-  )
+  @inline def values = js.Array(IncomingBytes, IncomingRecords, OutgoingBytes, OutgoingRecords, WriteProvisionedThroughputExceeded, ReadProvisionedThroughputExceeded, IteratorAgeMilliseconds, ALL)
 }
 
 @js.native
@@ -89,3 +80,4 @@ object StreamStatus {
 
   @inline def values = js.Array(CREATING, DELETING, ACTIVE, UPDATING)
 }
+

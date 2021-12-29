@@ -1,153 +1,146 @@
 package facade.amazonaws.services.gamelift
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AcceptanceType extends js.Any
+type AcceptanceType = "ACCEPT" | "REJECT"
 object AcceptanceType {
-  val ACCEPT = "ACCEPT".asInstanceOf[AcceptanceType]
-  val REJECT = "REJECT".asInstanceOf[AcceptanceType]
+  inline val ACCEPT: "ACCEPT" = "ACCEPT"
+  inline val REJECT: "REJECT" = "REJECT"
 
-  @inline def values = js.Array(ACCEPT, REJECT)
+  inline def values: js.Array[AcceptanceType] = js.Array(ACCEPT, REJECT)
 }
 
-@js.native
-sealed trait BackfillMode extends js.Any
+type BackfillMode = "AUTOMATIC" | "MANUAL"
 object BackfillMode {
-  val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackfillMode]
-  val MANUAL = "MANUAL".asInstanceOf[BackfillMode]
+  inline val AUTOMATIC: "AUTOMATIC" = "AUTOMATIC"
+  inline val MANUAL: "MANUAL" = "MANUAL"
 
-  @inline def values = js.Array(AUTOMATIC, MANUAL)
+  inline def values: js.Array[BackfillMode] = js.Array(AUTOMATIC, MANUAL)
 }
 
-@js.native
-sealed trait BalancingStrategy extends js.Any
+type BalancingStrategy = "SPOT_ONLY" | "SPOT_PREFERRED" | "ON_DEMAND_ONLY"
 object BalancingStrategy {
-  val SPOT_ONLY = "SPOT_ONLY".asInstanceOf[BalancingStrategy]
-  val SPOT_PREFERRED = "SPOT_PREFERRED".asInstanceOf[BalancingStrategy]
-  val ON_DEMAND_ONLY = "ON_DEMAND_ONLY".asInstanceOf[BalancingStrategy]
+  inline val SPOT_ONLY: "SPOT_ONLY" = "SPOT_ONLY"
+  inline val SPOT_PREFERRED: "SPOT_PREFERRED" = "SPOT_PREFERRED"
+  inline val ON_DEMAND_ONLY: "ON_DEMAND_ONLY" = "ON_DEMAND_ONLY"
 
-  @inline def values = js.Array(SPOT_ONLY, SPOT_PREFERRED, ON_DEMAND_ONLY)
+  inline def values: js.Array[BalancingStrategy] = js.Array(SPOT_ONLY, SPOT_PREFERRED, ON_DEMAND_ONLY)
 }
 
-@js.native
-sealed trait BuildStatus extends js.Any
+type BuildStatus = "INITIALIZED" | "READY" | "FAILED"
 object BuildStatus {
-  val INITIALIZED = "INITIALIZED".asInstanceOf[BuildStatus]
-  val READY = "READY".asInstanceOf[BuildStatus]
-  val FAILED = "FAILED".asInstanceOf[BuildStatus]
+  inline val INITIALIZED: "INITIALIZED" = "INITIALIZED"
+  inline val READY: "READY" = "READY"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(INITIALIZED, READY, FAILED)
+  inline def values: js.Array[BuildStatus] = js.Array(INITIALIZED, READY, FAILED)
 }
 
-@js.native
-sealed trait CertificateType extends js.Any
+type CertificateType = "DISABLED" | "GENERATED"
 object CertificateType {
-  val DISABLED = "DISABLED".asInstanceOf[CertificateType]
-  val GENERATED = "GENERATED".asInstanceOf[CertificateType]
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val GENERATED: "GENERATED" = "GENERATED"
 
-  @inline def values = js.Array(DISABLED, GENERATED)
+  inline def values: js.Array[CertificateType] = js.Array(DISABLED, GENERATED)
 }
 
-@js.native
-sealed trait ComparisonOperatorType extends js.Any
+type ComparisonOperatorType = "GreaterThanOrEqualToThreshold" | "GreaterThanThreshold" | "LessThanThreshold" | "LessThanOrEqualToThreshold"
 object ComparisonOperatorType {
-  val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
-  val GreaterThanThreshold = "GreaterThanThreshold".asInstanceOf[ComparisonOperatorType]
-  val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperatorType]
-  val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
+  inline val GreaterThanOrEqualToThreshold: "GreaterThanOrEqualToThreshold" = "GreaterThanOrEqualToThreshold"
+  inline val GreaterThanThreshold: "GreaterThanThreshold" = "GreaterThanThreshold"
+  inline val LessThanThreshold: "LessThanThreshold" = "LessThanThreshold"
+  inline val LessThanOrEqualToThreshold: "LessThanOrEqualToThreshold" = "LessThanOrEqualToThreshold"
 
-  @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+  inline def values: js.Array[ComparisonOperatorType] = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
 }
 
-@js.native
-sealed trait EC2InstanceType extends js.Any
+type EC2InstanceType = "t2.micro" | "t2.small" | "t2.medium" | "t2.large" | "c3.large" | "c3.xlarge" | "c3.2xlarge" | "c3.4xlarge" | "c3.8xlarge" | "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "c5.large" | "c5.xlarge" | "c5.2xlarge" | "c5.4xlarge" | "c5.9xlarge" | "c5.12xlarge" | "c5.18xlarge" | "c5.24xlarge" | "c5a.large" | "c5a.xlarge" | "c5a.2xlarge" | "c5a.4xlarge" | "c5a.8xlarge" | "c5a.12xlarge" | "c5a.16xlarge" | "c5a.24xlarge" | "r3.large" | "r3.xlarge" | "r3.2xlarge" | "r3.4xlarge" | "r3.8xlarge" | "r4.large" | "r4.xlarge" | "r4.2xlarge" | "r4.4xlarge" | "r4.8xlarge" | "r4.16xlarge" | "r5.large" | "r5.xlarge" | "r5.2xlarge" | "r5.4xlarge" | "r5.8xlarge" | "r5.12xlarge" | "r5.16xlarge" | "r5.24xlarge" | "r5a.large" | "r5a.xlarge" | "r5a.2xlarge" | "r5a.4xlarge" | "r5a.8xlarge" | "r5a.12xlarge" | "r5a.16xlarge" | "r5a.24xlarge" | "m3.medium" | "m3.large" | "m3.xlarge" | "m3.2xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" |
+  "m4.10xlarge" | "m5.large" | "m5.xlarge" | "m5.2xlarge" | "m5.4xlarge" | "m5.8xlarge" | "m5.12xlarge" | "m5.16xlarge" | "m5.24xlarge" | "m5a.large" | "m5a.xlarge" | "m5a.2xlarge" | "m5a.4xlarge" | "m5a.8xlarge" | "m5a.12xlarge" | "m5a.16xlarge" | "m5a.24xlarge"
 object EC2InstanceType {
-  val `t2.micro` = "t2.micro".asInstanceOf[EC2InstanceType]
-  val `t2.small` = "t2.small".asInstanceOf[EC2InstanceType]
-  val `t2.medium` = "t2.medium".asInstanceOf[EC2InstanceType]
-  val `t2.large` = "t2.large".asInstanceOf[EC2InstanceType]
-  val `c3.large` = "c3.large".asInstanceOf[EC2InstanceType]
-  val `c3.xlarge` = "c3.xlarge".asInstanceOf[EC2InstanceType]
-  val `c3.2xlarge` = "c3.2xlarge".asInstanceOf[EC2InstanceType]
-  val `c3.4xlarge` = "c3.4xlarge".asInstanceOf[EC2InstanceType]
-  val `c3.8xlarge` = "c3.8xlarge".asInstanceOf[EC2InstanceType]
-  val `c4.large` = "c4.large".asInstanceOf[EC2InstanceType]
-  val `c4.xlarge` = "c4.xlarge".asInstanceOf[EC2InstanceType]
-  val `c4.2xlarge` = "c4.2xlarge".asInstanceOf[EC2InstanceType]
-  val `c4.4xlarge` = "c4.4xlarge".asInstanceOf[EC2InstanceType]
-  val `c4.8xlarge` = "c4.8xlarge".asInstanceOf[EC2InstanceType]
-  val `c5.large` = "c5.large".asInstanceOf[EC2InstanceType]
-  val `c5.xlarge` = "c5.xlarge".asInstanceOf[EC2InstanceType]
-  val `c5.2xlarge` = "c5.2xlarge".asInstanceOf[EC2InstanceType]
-  val `c5.4xlarge` = "c5.4xlarge".asInstanceOf[EC2InstanceType]
-  val `c5.9xlarge` = "c5.9xlarge".asInstanceOf[EC2InstanceType]
-  val `c5.12xlarge` = "c5.12xlarge".asInstanceOf[EC2InstanceType]
-  val `c5.18xlarge` = "c5.18xlarge".asInstanceOf[EC2InstanceType]
-  val `c5.24xlarge` = "c5.24xlarge".asInstanceOf[EC2InstanceType]
-  val `c5a.large` = "c5a.large".asInstanceOf[EC2InstanceType]
-  val `c5a.xlarge` = "c5a.xlarge".asInstanceOf[EC2InstanceType]
-  val `c5a.2xlarge` = "c5a.2xlarge".asInstanceOf[EC2InstanceType]
-  val `c5a.4xlarge` = "c5a.4xlarge".asInstanceOf[EC2InstanceType]
-  val `c5a.8xlarge` = "c5a.8xlarge".asInstanceOf[EC2InstanceType]
-  val `c5a.12xlarge` = "c5a.12xlarge".asInstanceOf[EC2InstanceType]
-  val `c5a.16xlarge` = "c5a.16xlarge".asInstanceOf[EC2InstanceType]
-  val `c5a.24xlarge` = "c5a.24xlarge".asInstanceOf[EC2InstanceType]
-  val `r3.large` = "r3.large".asInstanceOf[EC2InstanceType]
-  val `r3.xlarge` = "r3.xlarge".asInstanceOf[EC2InstanceType]
-  val `r3.2xlarge` = "r3.2xlarge".asInstanceOf[EC2InstanceType]
-  val `r3.4xlarge` = "r3.4xlarge".asInstanceOf[EC2InstanceType]
-  val `r3.8xlarge` = "r3.8xlarge".asInstanceOf[EC2InstanceType]
-  val `r4.large` = "r4.large".asInstanceOf[EC2InstanceType]
-  val `r4.xlarge` = "r4.xlarge".asInstanceOf[EC2InstanceType]
-  val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[EC2InstanceType]
-  val `r4.4xlarge` = "r4.4xlarge".asInstanceOf[EC2InstanceType]
-  val `r4.8xlarge` = "r4.8xlarge".asInstanceOf[EC2InstanceType]
-  val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[EC2InstanceType]
-  val `r5.large` = "r5.large".asInstanceOf[EC2InstanceType]
-  val `r5.xlarge` = "r5.xlarge".asInstanceOf[EC2InstanceType]
-  val `r5.2xlarge` = "r5.2xlarge".asInstanceOf[EC2InstanceType]
-  val `r5.4xlarge` = "r5.4xlarge".asInstanceOf[EC2InstanceType]
-  val `r5.8xlarge` = "r5.8xlarge".asInstanceOf[EC2InstanceType]
-  val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[EC2InstanceType]
-  val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[EC2InstanceType]
-  val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[EC2InstanceType]
-  val `r5a.large` = "r5a.large".asInstanceOf[EC2InstanceType]
-  val `r5a.xlarge` = "r5a.xlarge".asInstanceOf[EC2InstanceType]
-  val `r5a.2xlarge` = "r5a.2xlarge".asInstanceOf[EC2InstanceType]
-  val `r5a.4xlarge` = "r5a.4xlarge".asInstanceOf[EC2InstanceType]
-  val `r5a.8xlarge` = "r5a.8xlarge".asInstanceOf[EC2InstanceType]
-  val `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[EC2InstanceType]
-  val `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[EC2InstanceType]
-  val `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[EC2InstanceType]
-  val `m3.medium` = "m3.medium".asInstanceOf[EC2InstanceType]
-  val `m3.large` = "m3.large".asInstanceOf[EC2InstanceType]
-  val `m3.xlarge` = "m3.xlarge".asInstanceOf[EC2InstanceType]
-  val `m3.2xlarge` = "m3.2xlarge".asInstanceOf[EC2InstanceType]
-  val `m4.large` = "m4.large".asInstanceOf[EC2InstanceType]
-  val `m4.xlarge` = "m4.xlarge".asInstanceOf[EC2InstanceType]
-  val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[EC2InstanceType]
-  val `m4.4xlarge` = "m4.4xlarge".asInstanceOf[EC2InstanceType]
-  val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[EC2InstanceType]
-  val `m5.large` = "m5.large".asInstanceOf[EC2InstanceType]
-  val `m5.xlarge` = "m5.xlarge".asInstanceOf[EC2InstanceType]
-  val `m5.2xlarge` = "m5.2xlarge".asInstanceOf[EC2InstanceType]
-  val `m5.4xlarge` = "m5.4xlarge".asInstanceOf[EC2InstanceType]
-  val `m5.8xlarge` = "m5.8xlarge".asInstanceOf[EC2InstanceType]
-  val `m5.12xlarge` = "m5.12xlarge".asInstanceOf[EC2InstanceType]
-  val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[EC2InstanceType]
-  val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[EC2InstanceType]
-  val `m5a.large` = "m5a.large".asInstanceOf[EC2InstanceType]
-  val `m5a.xlarge` = "m5a.xlarge".asInstanceOf[EC2InstanceType]
-  val `m5a.2xlarge` = "m5a.2xlarge".asInstanceOf[EC2InstanceType]
-  val `m5a.4xlarge` = "m5a.4xlarge".asInstanceOf[EC2InstanceType]
-  val `m5a.8xlarge` = "m5a.8xlarge".asInstanceOf[EC2InstanceType]
-  val `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[EC2InstanceType]
-  val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[EC2InstanceType]
-  val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[EC2InstanceType]
+  inline val `t2.micro`: "t2.micro" = "t2.micro"
+  inline val `t2.small`: "t2.small" = "t2.small"
+  inline val `t2.medium`: "t2.medium" = "t2.medium"
+  inline val `t2.large`: "t2.large" = "t2.large"
+  inline val `c3.large`: "c3.large" = "c3.large"
+  inline val `c3.xlarge`: "c3.xlarge" = "c3.xlarge"
+  inline val `c3.2xlarge`: "c3.2xlarge" = "c3.2xlarge"
+  inline val `c3.4xlarge`: "c3.4xlarge" = "c3.4xlarge"
+  inline val `c3.8xlarge`: "c3.8xlarge" = "c3.8xlarge"
+  inline val `c4.large`: "c4.large" = "c4.large"
+  inline val `c4.xlarge`: "c4.xlarge" = "c4.xlarge"
+  inline val `c4.2xlarge`: "c4.2xlarge" = "c4.2xlarge"
+  inline val `c4.4xlarge`: "c4.4xlarge" = "c4.4xlarge"
+  inline val `c4.8xlarge`: "c4.8xlarge" = "c4.8xlarge"
+  inline val `c5.large`: "c5.large" = "c5.large"
+  inline val `c5.xlarge`: "c5.xlarge" = "c5.xlarge"
+  inline val `c5.2xlarge`: "c5.2xlarge" = "c5.2xlarge"
+  inline val `c5.4xlarge`: "c5.4xlarge" = "c5.4xlarge"
+  inline val `c5.9xlarge`: "c5.9xlarge" = "c5.9xlarge"
+  inline val `c5.12xlarge`: "c5.12xlarge" = "c5.12xlarge"
+  inline val `c5.18xlarge`: "c5.18xlarge" = "c5.18xlarge"
+  inline val `c5.24xlarge`: "c5.24xlarge" = "c5.24xlarge"
+  inline val `c5a.large`: "c5a.large" = "c5a.large"
+  inline val `c5a.xlarge`: "c5a.xlarge" = "c5a.xlarge"
+  inline val `c5a.2xlarge`: "c5a.2xlarge" = "c5a.2xlarge"
+  inline val `c5a.4xlarge`: "c5a.4xlarge" = "c5a.4xlarge"
+  inline val `c5a.8xlarge`: "c5a.8xlarge" = "c5a.8xlarge"
+  inline val `c5a.12xlarge`: "c5a.12xlarge" = "c5a.12xlarge"
+  inline val `c5a.16xlarge`: "c5a.16xlarge" = "c5a.16xlarge"
+  inline val `c5a.24xlarge`: "c5a.24xlarge" = "c5a.24xlarge"
+  inline val `r3.large`: "r3.large" = "r3.large"
+  inline val `r3.xlarge`: "r3.xlarge" = "r3.xlarge"
+  inline val `r3.2xlarge`: "r3.2xlarge" = "r3.2xlarge"
+  inline val `r3.4xlarge`: "r3.4xlarge" = "r3.4xlarge"
+  inline val `r3.8xlarge`: "r3.8xlarge" = "r3.8xlarge"
+  inline val `r4.large`: "r4.large" = "r4.large"
+  inline val `r4.xlarge`: "r4.xlarge" = "r4.xlarge"
+  inline val `r4.2xlarge`: "r4.2xlarge" = "r4.2xlarge"
+  inline val `r4.4xlarge`: "r4.4xlarge" = "r4.4xlarge"
+  inline val `r4.8xlarge`: "r4.8xlarge" = "r4.8xlarge"
+  inline val `r4.16xlarge`: "r4.16xlarge" = "r4.16xlarge"
+  inline val `r5.large`: "r5.large" = "r5.large"
+  inline val `r5.xlarge`: "r5.xlarge" = "r5.xlarge"
+  inline val `r5.2xlarge`: "r5.2xlarge" = "r5.2xlarge"
+  inline val `r5.4xlarge`: "r5.4xlarge" = "r5.4xlarge"
+  inline val `r5.8xlarge`: "r5.8xlarge" = "r5.8xlarge"
+  inline val `r5.12xlarge`: "r5.12xlarge" = "r5.12xlarge"
+  inline val `r5.16xlarge`: "r5.16xlarge" = "r5.16xlarge"
+  inline val `r5.24xlarge`: "r5.24xlarge" = "r5.24xlarge"
+  inline val `r5a.large`: "r5a.large" = "r5a.large"
+  inline val `r5a.xlarge`: "r5a.xlarge" = "r5a.xlarge"
+  inline val `r5a.2xlarge`: "r5a.2xlarge" = "r5a.2xlarge"
+  inline val `r5a.4xlarge`: "r5a.4xlarge" = "r5a.4xlarge"
+  inline val `r5a.8xlarge`: "r5a.8xlarge" = "r5a.8xlarge"
+  inline val `r5a.12xlarge`: "r5a.12xlarge" = "r5a.12xlarge"
+  inline val `r5a.16xlarge`: "r5a.16xlarge" = "r5a.16xlarge"
+  inline val `r5a.24xlarge`: "r5a.24xlarge" = "r5a.24xlarge"
+  inline val `m3.medium`: "m3.medium" = "m3.medium"
+  inline val `m3.large`: "m3.large" = "m3.large"
+  inline val `m3.xlarge`: "m3.xlarge" = "m3.xlarge"
+  inline val `m3.2xlarge`: "m3.2xlarge" = "m3.2xlarge"
+  inline val `m4.large`: "m4.large" = "m4.large"
+  inline val `m4.xlarge`: "m4.xlarge" = "m4.xlarge"
+  inline val `m4.2xlarge`: "m4.2xlarge" = "m4.2xlarge"
+  inline val `m4.4xlarge`: "m4.4xlarge" = "m4.4xlarge"
+  inline val `m4.10xlarge`: "m4.10xlarge" = "m4.10xlarge"
+  inline val `m5.large`: "m5.large" = "m5.large"
+  inline val `m5.xlarge`: "m5.xlarge" = "m5.xlarge"
+  inline val `m5.2xlarge`: "m5.2xlarge" = "m5.2xlarge"
+  inline val `m5.4xlarge`: "m5.4xlarge" = "m5.4xlarge"
+  inline val `m5.8xlarge`: "m5.8xlarge" = "m5.8xlarge"
+  inline val `m5.12xlarge`: "m5.12xlarge" = "m5.12xlarge"
+  inline val `m5.16xlarge`: "m5.16xlarge" = "m5.16xlarge"
+  inline val `m5.24xlarge`: "m5.24xlarge" = "m5.24xlarge"
+  inline val `m5a.large`: "m5a.large" = "m5a.large"
+  inline val `m5a.xlarge`: "m5a.xlarge" = "m5a.xlarge"
+  inline val `m5a.2xlarge`: "m5a.2xlarge" = "m5a.2xlarge"
+  inline val `m5a.4xlarge`: "m5a.4xlarge" = "m5a.4xlarge"
+  inline val `m5a.8xlarge`: "m5a.8xlarge" = "m5a.8xlarge"
+  inline val `m5a.12xlarge`: "m5a.12xlarge" = "m5a.12xlarge"
+  inline val `m5a.16xlarge`: "m5a.16xlarge" = "m5a.16xlarge"
+  inline val `m5a.24xlarge`: "m5a.24xlarge" = "m5a.24xlarge"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[EC2InstanceType] = js.Array(
     `t2.micro`,
     `t2.small`,
     `t2.medium`,
@@ -233,44 +226,44 @@ object EC2InstanceType {
   )
 }
 
-@js.native
-sealed trait EventCode extends js.Any
+type EventCode = "GENERIC_EVENT" | "FLEET_CREATED" | "FLEET_DELETED" | "FLEET_SCALING_EVENT" | "FLEET_STATE_DOWNLOADING" | "FLEET_STATE_VALIDATING" | "FLEET_STATE_BUILDING" | "FLEET_STATE_ACTIVATING" | "FLEET_STATE_ACTIVE" | "FLEET_STATE_ERROR" | "FLEET_INITIALIZATION_FAILED" | "FLEET_BINARY_DOWNLOAD_FAILED" | "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND" | "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE" | "FLEET_VALIDATION_TIMED_OUT" | "FLEET_ACTIVATION_FAILED" | "FLEET_ACTIVATION_FAILED_NO_INSTANCES" | "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED" | "SERVER_PROCESS_INVALID_PATH" | "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT" | "SERVER_PROCESS_PROCESS_READY_TIMEOUT" | "SERVER_PROCESS_CRASHED" | "SERVER_PROCESS_TERMINATED_UNHEALTHY" | "SERVER_PROCESS_FORCE_TERMINATED" | "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT" | "GAME_SESSION_ACTIVATION_TIMEOUT" | "FLEET_CREATION_EXTRACTING_BUILD" | "FLEET_CREATION_RUNNING_INSTALLER" | "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG" |
+  "FLEET_VPC_PEERING_SUCCEEDED" | "FLEET_VPC_PEERING_FAILED" | "FLEET_VPC_PEERING_DELETED" | "INSTANCE_INTERRUPTED"
 object EventCode {
-  val GENERIC_EVENT = "GENERIC_EVENT".asInstanceOf[EventCode]
-  val FLEET_CREATED = "FLEET_CREATED".asInstanceOf[EventCode]
-  val FLEET_DELETED = "FLEET_DELETED".asInstanceOf[EventCode]
-  val FLEET_SCALING_EVENT = "FLEET_SCALING_EVENT".asInstanceOf[EventCode]
-  val FLEET_STATE_DOWNLOADING = "FLEET_STATE_DOWNLOADING".asInstanceOf[EventCode]
-  val FLEET_STATE_VALIDATING = "FLEET_STATE_VALIDATING".asInstanceOf[EventCode]
-  val FLEET_STATE_BUILDING = "FLEET_STATE_BUILDING".asInstanceOf[EventCode]
-  val FLEET_STATE_ACTIVATING = "FLEET_STATE_ACTIVATING".asInstanceOf[EventCode]
-  val FLEET_STATE_ACTIVE = "FLEET_STATE_ACTIVE".asInstanceOf[EventCode]
-  val FLEET_STATE_ERROR = "FLEET_STATE_ERROR".asInstanceOf[EventCode]
-  val FLEET_INITIALIZATION_FAILED = "FLEET_INITIALIZATION_FAILED".asInstanceOf[EventCode]
-  val FLEET_BINARY_DOWNLOAD_FAILED = "FLEET_BINARY_DOWNLOAD_FAILED".asInstanceOf[EventCode]
-  val FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND = "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND".asInstanceOf[EventCode]
-  val FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE = "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE".asInstanceOf[EventCode]
-  val FLEET_VALIDATION_TIMED_OUT = "FLEET_VALIDATION_TIMED_OUT".asInstanceOf[EventCode]
-  val FLEET_ACTIVATION_FAILED = "FLEET_ACTIVATION_FAILED".asInstanceOf[EventCode]
-  val FLEET_ACTIVATION_FAILED_NO_INSTANCES = "FLEET_ACTIVATION_FAILED_NO_INSTANCES".asInstanceOf[EventCode]
-  val FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED = "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED".asInstanceOf[EventCode]
-  val SERVER_PROCESS_INVALID_PATH = "SERVER_PROCESS_INVALID_PATH".asInstanceOf[EventCode]
-  val SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT = "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT".asInstanceOf[EventCode]
-  val SERVER_PROCESS_PROCESS_READY_TIMEOUT = "SERVER_PROCESS_PROCESS_READY_TIMEOUT".asInstanceOf[EventCode]
-  val SERVER_PROCESS_CRASHED = "SERVER_PROCESS_CRASHED".asInstanceOf[EventCode]
-  val SERVER_PROCESS_TERMINATED_UNHEALTHY = "SERVER_PROCESS_TERMINATED_UNHEALTHY".asInstanceOf[EventCode]
-  val SERVER_PROCESS_FORCE_TERMINATED = "SERVER_PROCESS_FORCE_TERMINATED".asInstanceOf[EventCode]
-  val SERVER_PROCESS_PROCESS_EXIT_TIMEOUT = "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT".asInstanceOf[EventCode]
-  val GAME_SESSION_ACTIVATION_TIMEOUT = "GAME_SESSION_ACTIVATION_TIMEOUT".asInstanceOf[EventCode]
-  val FLEET_CREATION_EXTRACTING_BUILD = "FLEET_CREATION_EXTRACTING_BUILD".asInstanceOf[EventCode]
-  val FLEET_CREATION_RUNNING_INSTALLER = "FLEET_CREATION_RUNNING_INSTALLER".asInstanceOf[EventCode]
-  val FLEET_CREATION_VALIDATING_RUNTIME_CONFIG = "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG".asInstanceOf[EventCode]
-  val FLEET_VPC_PEERING_SUCCEEDED = "FLEET_VPC_PEERING_SUCCEEDED".asInstanceOf[EventCode]
-  val FLEET_VPC_PEERING_FAILED = "FLEET_VPC_PEERING_FAILED".asInstanceOf[EventCode]
-  val FLEET_VPC_PEERING_DELETED = "FLEET_VPC_PEERING_DELETED".asInstanceOf[EventCode]
-  val INSTANCE_INTERRUPTED = "INSTANCE_INTERRUPTED".asInstanceOf[EventCode]
+  inline val GENERIC_EVENT: "GENERIC_EVENT" = "GENERIC_EVENT"
+  inline val FLEET_CREATED: "FLEET_CREATED" = "FLEET_CREATED"
+  inline val FLEET_DELETED: "FLEET_DELETED" = "FLEET_DELETED"
+  inline val FLEET_SCALING_EVENT: "FLEET_SCALING_EVENT" = "FLEET_SCALING_EVENT"
+  inline val FLEET_STATE_DOWNLOADING: "FLEET_STATE_DOWNLOADING" = "FLEET_STATE_DOWNLOADING"
+  inline val FLEET_STATE_VALIDATING: "FLEET_STATE_VALIDATING" = "FLEET_STATE_VALIDATING"
+  inline val FLEET_STATE_BUILDING: "FLEET_STATE_BUILDING" = "FLEET_STATE_BUILDING"
+  inline val FLEET_STATE_ACTIVATING: "FLEET_STATE_ACTIVATING" = "FLEET_STATE_ACTIVATING"
+  inline val FLEET_STATE_ACTIVE: "FLEET_STATE_ACTIVE" = "FLEET_STATE_ACTIVE"
+  inline val FLEET_STATE_ERROR: "FLEET_STATE_ERROR" = "FLEET_STATE_ERROR"
+  inline val FLEET_INITIALIZATION_FAILED: "FLEET_INITIALIZATION_FAILED" = "FLEET_INITIALIZATION_FAILED"
+  inline val FLEET_BINARY_DOWNLOAD_FAILED: "FLEET_BINARY_DOWNLOAD_FAILED" = "FLEET_BINARY_DOWNLOAD_FAILED"
+  inline val FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND: "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND" = "FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND"
+  inline val FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE: "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE" = "FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE"
+  inline val FLEET_VALIDATION_TIMED_OUT: "FLEET_VALIDATION_TIMED_OUT" = "FLEET_VALIDATION_TIMED_OUT"
+  inline val FLEET_ACTIVATION_FAILED: "FLEET_ACTIVATION_FAILED" = "FLEET_ACTIVATION_FAILED"
+  inline val FLEET_ACTIVATION_FAILED_NO_INSTANCES: "FLEET_ACTIVATION_FAILED_NO_INSTANCES" = "FLEET_ACTIVATION_FAILED_NO_INSTANCES"
+  inline val FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED: "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED" = "FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED"
+  inline val SERVER_PROCESS_INVALID_PATH: "SERVER_PROCESS_INVALID_PATH" = "SERVER_PROCESS_INVALID_PATH"
+  inline val SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT: "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT" = "SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT"
+  inline val SERVER_PROCESS_PROCESS_READY_TIMEOUT: "SERVER_PROCESS_PROCESS_READY_TIMEOUT" = "SERVER_PROCESS_PROCESS_READY_TIMEOUT"
+  inline val SERVER_PROCESS_CRASHED: "SERVER_PROCESS_CRASHED" = "SERVER_PROCESS_CRASHED"
+  inline val SERVER_PROCESS_TERMINATED_UNHEALTHY: "SERVER_PROCESS_TERMINATED_UNHEALTHY" = "SERVER_PROCESS_TERMINATED_UNHEALTHY"
+  inline val SERVER_PROCESS_FORCE_TERMINATED: "SERVER_PROCESS_FORCE_TERMINATED" = "SERVER_PROCESS_FORCE_TERMINATED"
+  inline val SERVER_PROCESS_PROCESS_EXIT_TIMEOUT: "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT" = "SERVER_PROCESS_PROCESS_EXIT_TIMEOUT"
+  inline val GAME_SESSION_ACTIVATION_TIMEOUT: "GAME_SESSION_ACTIVATION_TIMEOUT" = "GAME_SESSION_ACTIVATION_TIMEOUT"
+  inline val FLEET_CREATION_EXTRACTING_BUILD: "FLEET_CREATION_EXTRACTING_BUILD" = "FLEET_CREATION_EXTRACTING_BUILD"
+  inline val FLEET_CREATION_RUNNING_INSTALLER: "FLEET_CREATION_RUNNING_INSTALLER" = "FLEET_CREATION_RUNNING_INSTALLER"
+  inline val FLEET_CREATION_VALIDATING_RUNTIME_CONFIG: "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG" = "FLEET_CREATION_VALIDATING_RUNTIME_CONFIG"
+  inline val FLEET_VPC_PEERING_SUCCEEDED: "FLEET_VPC_PEERING_SUCCEEDED" = "FLEET_VPC_PEERING_SUCCEEDED"
+  inline val FLEET_VPC_PEERING_FAILED: "FLEET_VPC_PEERING_FAILED" = "FLEET_VPC_PEERING_FAILED"
+  inline val FLEET_VPC_PEERING_DELETED: "FLEET_VPC_PEERING_DELETED" = "FLEET_VPC_PEERING_DELETED"
+  inline val INSTANCE_INTERRUPTED: "INSTANCE_INTERRUPTED" = "INSTANCE_INTERRUPTED"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[EventCode] = js.Array(
     GENERIC_EVENT,
     FLEET_CREATED,
     FLEET_DELETED,
@@ -307,143 +300,136 @@ object EventCode {
   )
 }
 
-@js.native
-sealed trait FleetAction extends js.Any
+type FleetAction = "AUTO_SCALING"
 object FleetAction {
-  val AUTO_SCALING = "AUTO_SCALING".asInstanceOf[FleetAction]
+  inline val AUTO_SCALING: "AUTO_SCALING" = "AUTO_SCALING"
 
-  @inline def values = js.Array(AUTO_SCALING)
+  inline def values: js.Array[FleetAction] = js.Array(AUTO_SCALING)
 }
 
-@js.native
-sealed trait FleetStatus extends js.Any
+type FleetStatus = "NEW" | "DOWNLOADING" | "VALIDATING" | "BUILDING" | "ACTIVATING" | "ACTIVE" | "DELETING" | "ERROR" | "TERMINATED"
 object FleetStatus {
-  val NEW = "NEW".asInstanceOf[FleetStatus]
-  val DOWNLOADING = "DOWNLOADING".asInstanceOf[FleetStatus]
-  val VALIDATING = "VALIDATING".asInstanceOf[FleetStatus]
-  val BUILDING = "BUILDING".asInstanceOf[FleetStatus]
-  val ACTIVATING = "ACTIVATING".asInstanceOf[FleetStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[FleetStatus]
-  val DELETING = "DELETING".asInstanceOf[FleetStatus]
-  val ERROR = "ERROR".asInstanceOf[FleetStatus]
-  val TERMINATED = "TERMINATED".asInstanceOf[FleetStatus]
+  inline val NEW: "NEW" = "NEW"
+  inline val DOWNLOADING: "DOWNLOADING" = "DOWNLOADING"
+  inline val VALIDATING: "VALIDATING" = "VALIDATING"
+  inline val BUILDING: "BUILDING" = "BUILDING"
+  inline val ACTIVATING: "ACTIVATING" = "ACTIVATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val TERMINATED: "TERMINATED" = "TERMINATED"
 
-  @inline def values = js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
+  inline def values: js.Array[FleetStatus] = js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
 }
 
-@js.native
-sealed trait FleetType extends js.Any
+type FleetType = "ON_DEMAND" | "SPOT"
 object FleetType {
-  val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
-  val SPOT = "SPOT".asInstanceOf[FleetType]
+  inline val ON_DEMAND: "ON_DEMAND" = "ON_DEMAND"
+  inline val SPOT: "SPOT" = "SPOT"
 
-  @inline def values = js.Array(ON_DEMAND, SPOT)
+  inline def values: js.Array[FleetType] = js.Array(ON_DEMAND, SPOT)
 }
 
-@js.native
-sealed trait FlexMatchMode extends js.Any
+type FlexMatchMode = "STANDALONE" | "WITH_QUEUE"
 object FlexMatchMode {
-  val STANDALONE = "STANDALONE".asInstanceOf[FlexMatchMode]
-  val WITH_QUEUE = "WITH_QUEUE".asInstanceOf[FlexMatchMode]
+  inline val STANDALONE: "STANDALONE" = "STANDALONE"
+  inline val WITH_QUEUE: "WITH_QUEUE" = "WITH_QUEUE"
 
-  @inline def values = js.Array(STANDALONE, WITH_QUEUE)
+  inline def values: js.Array[FlexMatchMode] = js.Array(STANDALONE, WITH_QUEUE)
 }
 
-@js.native
-sealed trait GameServerClaimStatus extends js.Any
+type GameServerClaimStatus = "CLAIMED"
 object GameServerClaimStatus {
-  val CLAIMED = "CLAIMED".asInstanceOf[GameServerClaimStatus]
+  inline val CLAIMED: "CLAIMED" = "CLAIMED"
 
-  @inline def values = js.Array(CLAIMED)
+  inline def values: js.Array[GameServerClaimStatus] = js.Array(CLAIMED)
 }
 
-@js.native
-sealed trait GameServerGroupAction extends js.Any
+type GameServerGroupAction = "REPLACE_INSTANCE_TYPES"
 object GameServerGroupAction {
-  val REPLACE_INSTANCE_TYPES = "REPLACE_INSTANCE_TYPES".asInstanceOf[GameServerGroupAction]
+  inline val REPLACE_INSTANCE_TYPES: "REPLACE_INSTANCE_TYPES" = "REPLACE_INSTANCE_TYPES"
 
-  @inline def values = js.Array(REPLACE_INSTANCE_TYPES)
+  inline def values: js.Array[GameServerGroupAction] = js.Array(REPLACE_INSTANCE_TYPES)
 }
 
-@js.native
-sealed trait GameServerGroupDeleteOption extends js.Any
+type GameServerGroupDeleteOption = "SAFE_DELETE" | "FORCE_DELETE" | "RETAIN"
 object GameServerGroupDeleteOption {
-  val SAFE_DELETE = "SAFE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
-  val FORCE_DELETE = "FORCE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
-  val RETAIN = "RETAIN".asInstanceOf[GameServerGroupDeleteOption]
+  inline val SAFE_DELETE: "SAFE_DELETE" = "SAFE_DELETE"
+  inline val FORCE_DELETE: "FORCE_DELETE" = "FORCE_DELETE"
+  inline val RETAIN: "RETAIN" = "RETAIN"
 
-  @inline def values = js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN)
+  inline def values: js.Array[GameServerGroupDeleteOption] = js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN)
 }
 
-@js.native
-sealed trait GameServerGroupInstanceType extends js.Any
+type GameServerGroupInstanceType =
+  "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "c5.large" | "c5.xlarge" | "c5.2xlarge" | "c5.4xlarge" | "c5.9xlarge" | "c5.12xlarge" | "c5.18xlarge" | "c5.24xlarge" | "c5a.large" | "c5a.xlarge" | "c5a.2xlarge" | "c5a.4xlarge" | "c5a.8xlarge" | "c5a.12xlarge" | "c5a.16xlarge" | "c5a.24xlarge" | "r4.large" | "r4.xlarge" | "r4.2xlarge" | "r4.4xlarge" | "r4.8xlarge" | "r4.16xlarge" | "r5.large" | "r5.xlarge" | "r5.2xlarge" | "r5.4xlarge" | "r5.8xlarge" | "r5.12xlarge" | "r5.16xlarge" | "r5.24xlarge" | "r5a.large" | "r5a.xlarge" | "r5a.2xlarge" | "r5a.4xlarge" | "r5a.8xlarge" | "r5a.12xlarge" | "r5a.16xlarge" | "r5a.24xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" | "m4.10xlarge" | "m5.large" | "m5.xlarge" | "m5.2xlarge" | "m5.4xlarge" | "m5.8xlarge" | "m5.12xlarge" | "m5.16xlarge" | "m5.24xlarge" | "m5a.large" | "m5a.xlarge" | "m5a.2xlarge" | "m5a.4xlarge" | "m5a.8xlarge" | "m5a.12xlarge" | "m5a.16xlarge" | "m5a.24xlarge"
 object GameServerGroupInstanceType {
-  val `c4.large` = "c4.large".asInstanceOf[GameServerGroupInstanceType]
-  val `c4.xlarge` = "c4.xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c4.2xlarge` = "c4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c4.4xlarge` = "c4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c4.8xlarge` = "c4.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5.large` = "c5.large".asInstanceOf[GameServerGroupInstanceType]
-  val `c5.xlarge` = "c5.xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5.2xlarge` = "c5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5.4xlarge` = "c5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5.9xlarge` = "c5.9xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5.12xlarge` = "c5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5.18xlarge` = "c5.18xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5.24xlarge` = "c5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5a.large` = "c5a.large".asInstanceOf[GameServerGroupInstanceType]
-  val `c5a.xlarge` = "c5a.xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5a.2xlarge` = "c5a.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5a.4xlarge` = "c5a.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5a.8xlarge` = "c5a.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5a.12xlarge` = "c5a.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5a.16xlarge` = "c5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `c5a.24xlarge` = "c5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r4.large` = "r4.large".asInstanceOf[GameServerGroupInstanceType]
-  val `r4.xlarge` = "r4.xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r4.4xlarge` = "r4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r4.8xlarge` = "r4.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r4.16xlarge` = "r4.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5.large` = "r5.large".asInstanceOf[GameServerGroupInstanceType]
-  val `r5.xlarge` = "r5.xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5.2xlarge` = "r5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5.4xlarge` = "r5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5.8xlarge` = "r5.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5.12xlarge` = "r5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5.16xlarge` = "r5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5.24xlarge` = "r5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5a.large` = "r5a.large".asInstanceOf[GameServerGroupInstanceType]
-  val `r5a.xlarge` = "r5a.xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5a.2xlarge` = "r5a.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5a.4xlarge` = "r5a.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5a.8xlarge` = "r5a.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m4.large` = "m4.large".asInstanceOf[GameServerGroupInstanceType]
-  val `m4.xlarge` = "m4.xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m4.4xlarge` = "m4.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m4.10xlarge` = "m4.10xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5.large` = "m5.large".asInstanceOf[GameServerGroupInstanceType]
-  val `m5.xlarge` = "m5.xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5.2xlarge` = "m5.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5.4xlarge` = "m5.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5.8xlarge` = "m5.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5.12xlarge` = "m5.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5.16xlarge` = "m5.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5.24xlarge` = "m5.24xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5a.large` = "m5a.large".asInstanceOf[GameServerGroupInstanceType]
-  val `m5a.xlarge` = "m5a.xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5a.2xlarge` = "m5a.2xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5a.4xlarge` = "m5a.4xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5a.8xlarge` = "m5a.8xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
-  val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
+  inline val `c4.large`: "c4.large" = "c4.large"
+  inline val `c4.xlarge`: "c4.xlarge" = "c4.xlarge"
+  inline val `c4.2xlarge`: "c4.2xlarge" = "c4.2xlarge"
+  inline val `c4.4xlarge`: "c4.4xlarge" = "c4.4xlarge"
+  inline val `c4.8xlarge`: "c4.8xlarge" = "c4.8xlarge"
+  inline val `c5.large`: "c5.large" = "c5.large"
+  inline val `c5.xlarge`: "c5.xlarge" = "c5.xlarge"
+  inline val `c5.2xlarge`: "c5.2xlarge" = "c5.2xlarge"
+  inline val `c5.4xlarge`: "c5.4xlarge" = "c5.4xlarge"
+  inline val `c5.9xlarge`: "c5.9xlarge" = "c5.9xlarge"
+  inline val `c5.12xlarge`: "c5.12xlarge" = "c5.12xlarge"
+  inline val `c5.18xlarge`: "c5.18xlarge" = "c5.18xlarge"
+  inline val `c5.24xlarge`: "c5.24xlarge" = "c5.24xlarge"
+  inline val `c5a.large`: "c5a.large" = "c5a.large"
+  inline val `c5a.xlarge`: "c5a.xlarge" = "c5a.xlarge"
+  inline val `c5a.2xlarge`: "c5a.2xlarge" = "c5a.2xlarge"
+  inline val `c5a.4xlarge`: "c5a.4xlarge" = "c5a.4xlarge"
+  inline val `c5a.8xlarge`: "c5a.8xlarge" = "c5a.8xlarge"
+  inline val `c5a.12xlarge`: "c5a.12xlarge" = "c5a.12xlarge"
+  inline val `c5a.16xlarge`: "c5a.16xlarge" = "c5a.16xlarge"
+  inline val `c5a.24xlarge`: "c5a.24xlarge" = "c5a.24xlarge"
+  inline val `r4.large`: "r4.large" = "r4.large"
+  inline val `r4.xlarge`: "r4.xlarge" = "r4.xlarge"
+  inline val `r4.2xlarge`: "r4.2xlarge" = "r4.2xlarge"
+  inline val `r4.4xlarge`: "r4.4xlarge" = "r4.4xlarge"
+  inline val `r4.8xlarge`: "r4.8xlarge" = "r4.8xlarge"
+  inline val `r4.16xlarge`: "r4.16xlarge" = "r4.16xlarge"
+  inline val `r5.large`: "r5.large" = "r5.large"
+  inline val `r5.xlarge`: "r5.xlarge" = "r5.xlarge"
+  inline val `r5.2xlarge`: "r5.2xlarge" = "r5.2xlarge"
+  inline val `r5.4xlarge`: "r5.4xlarge" = "r5.4xlarge"
+  inline val `r5.8xlarge`: "r5.8xlarge" = "r5.8xlarge"
+  inline val `r5.12xlarge`: "r5.12xlarge" = "r5.12xlarge"
+  inline val `r5.16xlarge`: "r5.16xlarge" = "r5.16xlarge"
+  inline val `r5.24xlarge`: "r5.24xlarge" = "r5.24xlarge"
+  inline val `r5a.large`: "r5a.large" = "r5a.large"
+  inline val `r5a.xlarge`: "r5a.xlarge" = "r5a.xlarge"
+  inline val `r5a.2xlarge`: "r5a.2xlarge" = "r5a.2xlarge"
+  inline val `r5a.4xlarge`: "r5a.4xlarge" = "r5a.4xlarge"
+  inline val `r5a.8xlarge`: "r5a.8xlarge" = "r5a.8xlarge"
+  inline val `r5a.12xlarge`: "r5a.12xlarge" = "r5a.12xlarge"
+  inline val `r5a.16xlarge`: "r5a.16xlarge" = "r5a.16xlarge"
+  inline val `r5a.24xlarge`: "r5a.24xlarge" = "r5a.24xlarge"
+  inline val `m4.large`: "m4.large" = "m4.large"
+  inline val `m4.xlarge`: "m4.xlarge" = "m4.xlarge"
+  inline val `m4.2xlarge`: "m4.2xlarge" = "m4.2xlarge"
+  inline val `m4.4xlarge`: "m4.4xlarge" = "m4.4xlarge"
+  inline val `m4.10xlarge`: "m4.10xlarge" = "m4.10xlarge"
+  inline val `m5.large`: "m5.large" = "m5.large"
+  inline val `m5.xlarge`: "m5.xlarge" = "m5.xlarge"
+  inline val `m5.2xlarge`: "m5.2xlarge" = "m5.2xlarge"
+  inline val `m5.4xlarge`: "m5.4xlarge" = "m5.4xlarge"
+  inline val `m5.8xlarge`: "m5.8xlarge" = "m5.8xlarge"
+  inline val `m5.12xlarge`: "m5.12xlarge" = "m5.12xlarge"
+  inline val `m5.16xlarge`: "m5.16xlarge" = "m5.16xlarge"
+  inline val `m5.24xlarge`: "m5.24xlarge" = "m5.24xlarge"
+  inline val `m5a.large`: "m5a.large" = "m5a.large"
+  inline val `m5a.xlarge`: "m5a.xlarge" = "m5a.xlarge"
+  inline val `m5a.2xlarge`: "m5a.2xlarge" = "m5a.2xlarge"
+  inline val `m5a.4xlarge`: "m5a.4xlarge" = "m5a.4xlarge"
+  inline val `m5a.8xlarge`: "m5a.8xlarge" = "m5a.8xlarge"
+  inline val `m5a.12xlarge`: "m5a.12xlarge" = "m5a.12xlarge"
+  inline val `m5a.16xlarge`: "m5a.16xlarge" = "m5a.16xlarge"
+  inline val `m5a.24xlarge`: "m5a.24xlarge" = "m5a.24xlarge"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[GameServerGroupInstanceType] = js.Array(
     `c4.large`,
     `c4.xlarge`,
     `c4.2xlarge`,
@@ -511,146 +497,133 @@ object GameServerGroupInstanceType {
   )
 }
 
-@js.native
-sealed trait GameServerGroupStatus extends js.Any
+type GameServerGroupStatus = "NEW" | "ACTIVATING" | "ACTIVE" | "DELETE_SCHEDULED" | "DELETING" | "DELETED" | "ERROR"
 object GameServerGroupStatus {
-  val NEW = "NEW".asInstanceOf[GameServerGroupStatus]
-  val ACTIVATING = "ACTIVATING".asInstanceOf[GameServerGroupStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[GameServerGroupStatus]
-  val DELETE_SCHEDULED = "DELETE_SCHEDULED".asInstanceOf[GameServerGroupStatus]
-  val DELETING = "DELETING".asInstanceOf[GameServerGroupStatus]
-  val DELETED = "DELETED".asInstanceOf[GameServerGroupStatus]
-  val ERROR = "ERROR".asInstanceOf[GameServerGroupStatus]
+  inline val NEW: "NEW" = "NEW"
+  inline val ACTIVATING: "ACTIVATING" = "ACTIVATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETE_SCHEDULED: "DELETE_SCHEDULED" = "DELETE_SCHEDULED"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(NEW, ACTIVATING, ACTIVE, DELETE_SCHEDULED, DELETING, DELETED, ERROR)
+  inline def values: js.Array[GameServerGroupStatus] = js.Array(NEW, ACTIVATING, ACTIVE, DELETE_SCHEDULED, DELETING, DELETED, ERROR)
 }
 
-@js.native
-sealed trait GameServerHealthCheck extends js.Any
+type GameServerHealthCheck = "HEALTHY"
 object GameServerHealthCheck {
-  val HEALTHY = "HEALTHY".asInstanceOf[GameServerHealthCheck]
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
 
-  @inline def values = js.Array(HEALTHY)
+  inline def values: js.Array[GameServerHealthCheck] = js.Array(HEALTHY)
 }
 
-@js.native
-sealed trait GameServerInstanceStatus extends js.Any
+type GameServerInstanceStatus = "ACTIVE" | "DRAINING" | "SPOT_TERMINATING"
 object GameServerInstanceStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[GameServerInstanceStatus]
-  val DRAINING = "DRAINING".asInstanceOf[GameServerInstanceStatus]
-  val SPOT_TERMINATING = "SPOT_TERMINATING".asInstanceOf[GameServerInstanceStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DRAINING: "DRAINING" = "DRAINING"
+  inline val SPOT_TERMINATING: "SPOT_TERMINATING" = "SPOT_TERMINATING"
 
-  @inline def values = js.Array(ACTIVE, DRAINING, SPOT_TERMINATING)
+  inline def values: js.Array[GameServerInstanceStatus] = js.Array(ACTIVE, DRAINING, SPOT_TERMINATING)
 }
 
-@js.native
-sealed trait GameServerProtectionPolicy extends js.Any
+type GameServerProtectionPolicy = "NO_PROTECTION" | "FULL_PROTECTION"
 object GameServerProtectionPolicy {
-  val NO_PROTECTION = "NO_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
-  val FULL_PROTECTION = "FULL_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
+  inline val NO_PROTECTION: "NO_PROTECTION" = "NO_PROTECTION"
+  inline val FULL_PROTECTION: "FULL_PROTECTION" = "FULL_PROTECTION"
 
-  @inline def values = js.Array(NO_PROTECTION, FULL_PROTECTION)
+  inline def values: js.Array[GameServerProtectionPolicy] = js.Array(NO_PROTECTION, FULL_PROTECTION)
 }
 
-@js.native
-sealed trait GameServerUtilizationStatus extends js.Any
+type GameServerUtilizationStatus = "AVAILABLE" | "UTILIZED"
 object GameServerUtilizationStatus {
-  val AVAILABLE = "AVAILABLE".asInstanceOf[GameServerUtilizationStatus]
-  val UTILIZED = "UTILIZED".asInstanceOf[GameServerUtilizationStatus]
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val UTILIZED: "UTILIZED" = "UTILIZED"
 
-  @inline def values = js.Array(AVAILABLE, UTILIZED)
+  inline def values: js.Array[GameServerUtilizationStatus] = js.Array(AVAILABLE, UTILIZED)
 }
 
-@js.native
-sealed trait GameSessionPlacementState extends js.Any
+type GameSessionPlacementState = "PENDING" | "FULFILLED" | "CANCELLED" | "TIMED_OUT" | "FAILED"
 object GameSessionPlacementState {
-  val PENDING = "PENDING".asInstanceOf[GameSessionPlacementState]
-  val FULFILLED = "FULFILLED".asInstanceOf[GameSessionPlacementState]
-  val CANCELLED = "CANCELLED".asInstanceOf[GameSessionPlacementState]
-  val TIMED_OUT = "TIMED_OUT".asInstanceOf[GameSessionPlacementState]
-  val FAILED = "FAILED".asInstanceOf[GameSessionPlacementState]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val FULFILLED: "FULFILLED" = "FULFILLED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT, FAILED)
+  inline def values: js.Array[GameSessionPlacementState] = js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT, FAILED)
 }
 
-@js.native
-sealed trait GameSessionStatus extends js.Any
+type GameSessionStatus = "ACTIVE" | "ACTIVATING" | "TERMINATED" | "TERMINATING" | "ERROR"
 object GameSessionStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[GameSessionStatus]
-  val ACTIVATING = "ACTIVATING".asInstanceOf[GameSessionStatus]
-  val TERMINATED = "TERMINATED".asInstanceOf[GameSessionStatus]
-  val TERMINATING = "TERMINATING".asInstanceOf[GameSessionStatus]
-  val ERROR = "ERROR".asInstanceOf[GameSessionStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val ACTIVATING: "ACTIVATING" = "ACTIVATING"
+  inline val TERMINATED: "TERMINATED" = "TERMINATED"
+  inline val TERMINATING: "TERMINATING" = "TERMINATING"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR)
+  inline def values: js.Array[GameSessionStatus] = js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR)
 }
 
-@js.native
-sealed trait GameSessionStatusReason extends js.Any
+type GameSessionStatusReason = "INTERRUPTED"
 object GameSessionStatusReason {
-  val INTERRUPTED = "INTERRUPTED".asInstanceOf[GameSessionStatusReason]
+  inline val INTERRUPTED: "INTERRUPTED" = "INTERRUPTED"
 
-  @inline def values = js.Array(INTERRUPTED)
+  inline def values: js.Array[GameSessionStatusReason] = js.Array(INTERRUPTED)
 }
 
-@js.native
-sealed trait InstanceStatus extends js.Any
+type InstanceStatus = "PENDING" | "ACTIVE" | "TERMINATING"
 object InstanceStatus {
-  val PENDING = "PENDING".asInstanceOf[InstanceStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[InstanceStatus]
-  val TERMINATING = "TERMINATING".asInstanceOf[InstanceStatus]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val TERMINATING: "TERMINATING" = "TERMINATING"
 
-  @inline def values = js.Array(PENDING, ACTIVE, TERMINATING)
+  inline def values: js.Array[InstanceStatus] = js.Array(PENDING, ACTIVE, TERMINATING)
 }
 
-@js.native
-sealed trait IpProtocol extends js.Any
+type IpProtocol = "TCP" | "UDP"
 object IpProtocol {
-  val TCP = "TCP".asInstanceOf[IpProtocol]
-  val UDP = "UDP".asInstanceOf[IpProtocol]
+  inline val TCP: "TCP" = "TCP"
+  inline val UDP: "UDP" = "UDP"
 
-  @inline def values = js.Array(TCP, UDP)
+  inline def values: js.Array[IpProtocol] = js.Array(TCP, UDP)
 }
 
-@js.native
-sealed trait LocationUpdateStatus extends js.Any
+type LocationUpdateStatus = "PENDING_UPDATE"
 object LocationUpdateStatus {
-  val PENDING_UPDATE = "PENDING_UPDATE".asInstanceOf[LocationUpdateStatus]
+  inline val PENDING_UPDATE: "PENDING_UPDATE" = "PENDING_UPDATE"
 
-  @inline def values = js.Array(PENDING_UPDATE)
+  inline def values: js.Array[LocationUpdateStatus] = js.Array(PENDING_UPDATE)
 }
 
-@js.native
-sealed trait MatchmakingConfigurationStatus extends js.Any
+type MatchmakingConfigurationStatus = "CANCELLED" | "COMPLETED" | "FAILED" | "PLACING" | "QUEUED" | "REQUIRES_ACCEPTANCE" | "SEARCHING" | "TIMED_OUT"
 object MatchmakingConfigurationStatus {
-  val CANCELLED = "CANCELLED".asInstanceOf[MatchmakingConfigurationStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[MatchmakingConfigurationStatus]
-  val FAILED = "FAILED".asInstanceOf[MatchmakingConfigurationStatus]
-  val PLACING = "PLACING".asInstanceOf[MatchmakingConfigurationStatus]
-  val QUEUED = "QUEUED".asInstanceOf[MatchmakingConfigurationStatus]
-  val REQUIRES_ACCEPTANCE = "REQUIRES_ACCEPTANCE".asInstanceOf[MatchmakingConfigurationStatus]
-  val SEARCHING = "SEARCHING".asInstanceOf[MatchmakingConfigurationStatus]
-  val TIMED_OUT = "TIMED_OUT".asInstanceOf[MatchmakingConfigurationStatus]
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val PLACING: "PLACING" = "PLACING"
+  inline val QUEUED: "QUEUED" = "QUEUED"
+  inline val REQUIRES_ACCEPTANCE: "REQUIRES_ACCEPTANCE" = "REQUIRES_ACCEPTANCE"
+  inline val SEARCHING: "SEARCHING" = "SEARCHING"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
 
-  @inline def values = js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT)
+  inline def values: js.Array[MatchmakingConfigurationStatus] = js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT)
 }
 
-@js.native
-sealed trait MetricName extends js.Any
+type MetricName = "ActivatingGameSessions" | "ActiveGameSessions" | "ActiveInstances" | "AvailableGameSessions" | "AvailablePlayerSessions" | "CurrentPlayerSessions" | "IdleInstances" | "PercentAvailableGameSessions" | "PercentIdleInstances" | "QueueDepth" | "WaitTime"
 object MetricName {
-  val ActivatingGameSessions = "ActivatingGameSessions".asInstanceOf[MetricName]
-  val ActiveGameSessions = "ActiveGameSessions".asInstanceOf[MetricName]
-  val ActiveInstances = "ActiveInstances".asInstanceOf[MetricName]
-  val AvailableGameSessions = "AvailableGameSessions".asInstanceOf[MetricName]
-  val AvailablePlayerSessions = "AvailablePlayerSessions".asInstanceOf[MetricName]
-  val CurrentPlayerSessions = "CurrentPlayerSessions".asInstanceOf[MetricName]
-  val IdleInstances = "IdleInstances".asInstanceOf[MetricName]
-  val PercentAvailableGameSessions = "PercentAvailableGameSessions".asInstanceOf[MetricName]
-  val PercentIdleInstances = "PercentIdleInstances".asInstanceOf[MetricName]
-  val QueueDepth = "QueueDepth".asInstanceOf[MetricName]
-  val WaitTime = "WaitTime".asInstanceOf[MetricName]
+  inline val ActivatingGameSessions: "ActivatingGameSessions" = "ActivatingGameSessions"
+  inline val ActiveGameSessions: "ActiveGameSessions" = "ActiveGameSessions"
+  inline val ActiveInstances: "ActiveInstances" = "ActiveInstances"
+  inline val AvailableGameSessions: "AvailableGameSessions" = "AvailableGameSessions"
+  inline val AvailablePlayerSessions: "AvailablePlayerSessions" = "AvailablePlayerSessions"
+  inline val CurrentPlayerSessions: "CurrentPlayerSessions" = "CurrentPlayerSessions"
+  inline val IdleInstances: "IdleInstances" = "IdleInstances"
+  inline val PercentAvailableGameSessions: "PercentAvailableGameSessions" = "PercentAvailableGameSessions"
+  inline val PercentIdleInstances: "PercentIdleInstances" = "PercentIdleInstances"
+  inline val QueueDepth: "QueueDepth" = "QueueDepth"
+  inline val WaitTime: "WaitTime" = "WaitTime"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[MetricName] = js.Array(
     ActivatingGameSessions,
     ActiveGameSessions,
     ActiveInstances,
@@ -665,103 +638,93 @@ object MetricName {
   )
 }
 
-@js.native
-sealed trait OperatingSystem extends js.Any
+type OperatingSystem = "WINDOWS_2012" | "AMAZON_LINUX" | "AMAZON_LINUX_2"
 object OperatingSystem {
-  val WINDOWS_2012 = "WINDOWS_2012".asInstanceOf[OperatingSystem]
-  val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
-  val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
+  inline val WINDOWS_2012: "WINDOWS_2012" = "WINDOWS_2012"
+  inline val AMAZON_LINUX: "AMAZON_LINUX" = "AMAZON_LINUX"
+  inline val AMAZON_LINUX_2: "AMAZON_LINUX_2" = "AMAZON_LINUX_2"
 
-  @inline def values = js.Array(WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2)
+  inline def values: js.Array[OperatingSystem] = js.Array(WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2)
 }
 
-@js.native
-sealed trait PlayerSessionCreationPolicy extends js.Any
+type PlayerSessionCreationPolicy = "ACCEPT_ALL" | "DENY_ALL"
 object PlayerSessionCreationPolicy {
-  val ACCEPT_ALL = "ACCEPT_ALL".asInstanceOf[PlayerSessionCreationPolicy]
-  val DENY_ALL = "DENY_ALL".asInstanceOf[PlayerSessionCreationPolicy]
+  inline val ACCEPT_ALL: "ACCEPT_ALL" = "ACCEPT_ALL"
+  inline val DENY_ALL: "DENY_ALL" = "DENY_ALL"
 
-  @inline def values = js.Array(ACCEPT_ALL, DENY_ALL)
+  inline def values: js.Array[PlayerSessionCreationPolicy] = js.Array(ACCEPT_ALL, DENY_ALL)
 }
 
-@js.native
-sealed trait PlayerSessionStatus extends js.Any
+type PlayerSessionStatus = "RESERVED" | "ACTIVE" | "COMPLETED" | "TIMEDOUT"
 object PlayerSessionStatus {
-  val RESERVED = "RESERVED".asInstanceOf[PlayerSessionStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[PlayerSessionStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[PlayerSessionStatus]
-  val TIMEDOUT = "TIMEDOUT".asInstanceOf[PlayerSessionStatus]
+  inline val RESERVED: "RESERVED" = "RESERVED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val TIMEDOUT: "TIMEDOUT" = "TIMEDOUT"
 
-  @inline def values = js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT)
+  inline def values: js.Array[PlayerSessionStatus] = js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT)
 }
 
-@js.native
-sealed trait PolicyType extends js.Any
+type PolicyType = "RuleBased" | "TargetBased"
 object PolicyType {
-  val RuleBased = "RuleBased".asInstanceOf[PolicyType]
-  val TargetBased = "TargetBased".asInstanceOf[PolicyType]
+  inline val RuleBased: "RuleBased" = "RuleBased"
+  inline val TargetBased: "TargetBased" = "TargetBased"
 
-  @inline def values = js.Array(RuleBased, TargetBased)
+  inline def values: js.Array[PolicyType] = js.Array(RuleBased, TargetBased)
 }
 
-@js.native
-sealed trait PriorityType extends js.Any
+type PriorityType = "LATENCY" | "COST" | "DESTINATION" | "LOCATION"
 object PriorityType {
-  val LATENCY = "LATENCY".asInstanceOf[PriorityType]
-  val COST = "COST".asInstanceOf[PriorityType]
-  val DESTINATION = "DESTINATION".asInstanceOf[PriorityType]
-  val LOCATION = "LOCATION".asInstanceOf[PriorityType]
+  inline val LATENCY: "LATENCY" = "LATENCY"
+  inline val COST: "COST" = "COST"
+  inline val DESTINATION: "DESTINATION" = "DESTINATION"
+  inline val LOCATION: "LOCATION" = "LOCATION"
 
-  @inline def values = js.Array(LATENCY, COST, DESTINATION, LOCATION)
+  inline def values: js.Array[PriorityType] = js.Array(LATENCY, COST, DESTINATION, LOCATION)
 }
 
-@js.native
-sealed trait ProtectionPolicy extends js.Any
+type ProtectionPolicy = "NoProtection" | "FullProtection"
 object ProtectionPolicy {
-  val NoProtection = "NoProtection".asInstanceOf[ProtectionPolicy]
-  val FullProtection = "FullProtection".asInstanceOf[ProtectionPolicy]
+  inline val NoProtection: "NoProtection" = "NoProtection"
+  inline val FullProtection: "FullProtection" = "FullProtection"
 
-  @inline def values = js.Array(NoProtection, FullProtection)
+  inline def values: js.Array[ProtectionPolicy] = js.Array(NoProtection, FullProtection)
 }
 
-@js.native
-sealed trait RoutingStrategyType extends js.Any
+type RoutingStrategyType = "SIMPLE" | "TERMINAL"
 object RoutingStrategyType {
-  val SIMPLE = "SIMPLE".asInstanceOf[RoutingStrategyType]
-  val TERMINAL = "TERMINAL".asInstanceOf[RoutingStrategyType]
+  inline val SIMPLE: "SIMPLE" = "SIMPLE"
+  inline val TERMINAL: "TERMINAL" = "TERMINAL"
 
-  @inline def values = js.Array(SIMPLE, TERMINAL)
+  inline def values: js.Array[RoutingStrategyType] = js.Array(SIMPLE, TERMINAL)
 }
 
-@js.native
-sealed trait ScalingAdjustmentType extends js.Any
+type ScalingAdjustmentType = "ChangeInCapacity" | "ExactCapacity" | "PercentChangeInCapacity"
 object ScalingAdjustmentType {
-  val ChangeInCapacity = "ChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
-  val ExactCapacity = "ExactCapacity".asInstanceOf[ScalingAdjustmentType]
-  val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
+  inline val ChangeInCapacity: "ChangeInCapacity" = "ChangeInCapacity"
+  inline val ExactCapacity: "ExactCapacity" = "ExactCapacity"
+  inline val PercentChangeInCapacity: "PercentChangeInCapacity" = "PercentChangeInCapacity"
 
-  @inline def values = js.Array(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity)
+  inline def values: js.Array[ScalingAdjustmentType] = js.Array(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity)
 }
 
-@js.native
-sealed trait ScalingStatusType extends js.Any
+type ScalingStatusType = "ACTIVE" | "UPDATE_REQUESTED" | "UPDATING" | "DELETE_REQUESTED" | "DELETING" | "DELETED" | "ERROR"
 object ScalingStatusType {
-  val ACTIVE = "ACTIVE".asInstanceOf[ScalingStatusType]
-  val UPDATE_REQUESTED = "UPDATE_REQUESTED".asInstanceOf[ScalingStatusType]
-  val UPDATING = "UPDATING".asInstanceOf[ScalingStatusType]
-  val DELETE_REQUESTED = "DELETE_REQUESTED".asInstanceOf[ScalingStatusType]
-  val DELETING = "DELETING".asInstanceOf[ScalingStatusType]
-  val DELETED = "DELETED".asInstanceOf[ScalingStatusType]
-  val ERROR = "ERROR".asInstanceOf[ScalingStatusType]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val UPDATE_REQUESTED: "UPDATE_REQUESTED" = "UPDATE_REQUESTED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val DELETE_REQUESTED: "DELETE_REQUESTED" = "DELETE_REQUESTED"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR)
+  inline def values: js.Array[ScalingStatusType] = js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR)
 }
 
-@js.native
-sealed trait SortOrder extends js.Any
+type SortOrder = "ASCENDING" | "DESCENDING"
 object SortOrder {
-  val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-  val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+  inline val ASCENDING: "ASCENDING" = "ASCENDING"
+  inline val DESCENDING: "DESCENDING" = "DESCENDING"
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }

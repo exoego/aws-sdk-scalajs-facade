@@ -67,3 +67,4 @@ object __PeriodTriggersElement {
 
   @inline def values = js.Array(ADS)
 }
+

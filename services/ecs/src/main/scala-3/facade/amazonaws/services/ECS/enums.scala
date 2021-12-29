@@ -1,517 +1,463 @@
 package facade.amazonaws.services.ecs
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AgentUpdateStatus extends js.Any
+type AgentUpdateStatus = "PENDING" | "STAGING" | "STAGED" | "UPDATING" | "UPDATED" | "FAILED"
 object AgentUpdateStatus {
-  val PENDING = "PENDING".asInstanceOf[AgentUpdateStatus]
-  val STAGING = "STAGING".asInstanceOf[AgentUpdateStatus]
-  val STAGED = "STAGED".asInstanceOf[AgentUpdateStatus]
-  val UPDATING = "UPDATING".asInstanceOf[AgentUpdateStatus]
-  val UPDATED = "UPDATED".asInstanceOf[AgentUpdateStatus]
-  val FAILED = "FAILED".asInstanceOf[AgentUpdateStatus]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val STAGING: "STAGING" = "STAGING"
+  inline val STAGED: "STAGED" = "STAGED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val UPDATED: "UPDATED" = "UPDATED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED)
+  inline def values: js.Array[AgentUpdateStatus] = js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED)
 }
 
-@js.native
-sealed trait AssignPublicIp extends js.Any
+type AssignPublicIp = "ENABLED" | "DISABLED"
 object AssignPublicIp {
-  val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
-  val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[AssignPublicIp] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait CapacityProviderField extends js.Any
+type CapacityProviderField = "TAGS"
 object CapacityProviderField {
-  val TAGS = "TAGS".asInstanceOf[CapacityProviderField]
+  inline val TAGS: "TAGS" = "TAGS"
 
-  @inline def values = js.Array(TAGS)
+  inline def values: js.Array[CapacityProviderField] = js.Array(TAGS)
 }
 
-@js.native
-sealed trait CapacityProviderStatus extends js.Any
+type CapacityProviderStatus = "ACTIVE" | "INACTIVE"
 object CapacityProviderStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[CapacityProviderStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[CapacityProviderStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  inline def values: js.Array[CapacityProviderStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
-@js.native
-sealed trait CapacityProviderUpdateStatus extends js.Any
+type CapacityProviderUpdateStatus = "DELETE_IN_PROGRESS" | "DELETE_COMPLETE" | "DELETE_FAILED" | "UPDATE_IN_PROGRESS" | "UPDATE_COMPLETE" | "UPDATE_FAILED"
 object CapacityProviderUpdateStatus {
-  val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[CapacityProviderUpdateStatus]
-  val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
-  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
-  val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[CapacityProviderUpdateStatus]
-  val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
-  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
+  inline val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+  inline val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
+  inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+  inline val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+  inline val UPDATE_COMPLETE: "UPDATE_COMPLETE" = "UPDATE_COMPLETE"
+  inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
 
-  @inline def values = js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, UPDATE_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_FAILED)
+  inline def values: js.Array[CapacityProviderUpdateStatus] = js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, UPDATE_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_FAILED)
 }
 
-@js.native
-sealed trait ClusterField extends js.Any
+type ClusterField = "ATTACHMENTS" | "CONFIGURATIONS" | "SETTINGS" | "STATISTICS" | "TAGS"
 object ClusterField {
-  val ATTACHMENTS = "ATTACHMENTS".asInstanceOf[ClusterField]
-  val CONFIGURATIONS = "CONFIGURATIONS".asInstanceOf[ClusterField]
-  val SETTINGS = "SETTINGS".asInstanceOf[ClusterField]
-  val STATISTICS = "STATISTICS".asInstanceOf[ClusterField]
-  val TAGS = "TAGS".asInstanceOf[ClusterField]
+  inline val ATTACHMENTS: "ATTACHMENTS" = "ATTACHMENTS"
+  inline val CONFIGURATIONS: "CONFIGURATIONS" = "CONFIGURATIONS"
+  inline val SETTINGS: "SETTINGS" = "SETTINGS"
+  inline val STATISTICS: "STATISTICS" = "STATISTICS"
+  inline val TAGS: "TAGS" = "TAGS"
 
-  @inline def values = js.Array(ATTACHMENTS, CONFIGURATIONS, SETTINGS, STATISTICS, TAGS)
+  inline def values: js.Array[ClusterField] = js.Array(ATTACHMENTS, CONFIGURATIONS, SETTINGS, STATISTICS, TAGS)
 }
 
-@js.native
-sealed trait ClusterSettingName extends js.Any
+type ClusterSettingName = "containerInsights"
 object ClusterSettingName {
-  val containerInsights = "containerInsights".asInstanceOf[ClusterSettingName]
+  inline val containerInsights: "containerInsights" = "containerInsights"
 
-  @inline def values = js.Array(containerInsights)
+  inline def values: js.Array[ClusterSettingName] = js.Array(containerInsights)
 }
 
-@js.native
-sealed trait Compatibility extends js.Any
+type Compatibility = "EC2" | "FARGATE"
 object Compatibility {
-  val EC2 = "EC2".asInstanceOf[Compatibility]
-  val FARGATE = "FARGATE".asInstanceOf[Compatibility]
+  inline val EC2: "EC2" = "EC2"
+  inline val FARGATE: "FARGATE" = "FARGATE"
 
-  @inline def values = js.Array(EC2, FARGATE)
+  inline def values: js.Array[Compatibility] = js.Array(EC2, FARGATE)
 }
 
-@js.native
-sealed trait Connectivity extends js.Any
+type Connectivity = "CONNECTED" | "DISCONNECTED"
 object Connectivity {
-  val CONNECTED = "CONNECTED".asInstanceOf[Connectivity]
-  val DISCONNECTED = "DISCONNECTED".asInstanceOf[Connectivity]
+  inline val CONNECTED: "CONNECTED" = "CONNECTED"
+  inline val DISCONNECTED: "DISCONNECTED" = "DISCONNECTED"
 
-  @inline def values = js.Array(CONNECTED, DISCONNECTED)
+  inline def values: js.Array[Connectivity] = js.Array(CONNECTED, DISCONNECTED)
 }
 
-@js.native
-sealed trait ContainerCondition extends js.Any
+type ContainerCondition = "START" | "COMPLETE" | "SUCCESS" | "HEALTHY"
 object ContainerCondition {
-  val START = "START".asInstanceOf[ContainerCondition]
-  val COMPLETE = "COMPLETE".asInstanceOf[ContainerCondition]
-  val SUCCESS = "SUCCESS".asInstanceOf[ContainerCondition]
-  val HEALTHY = "HEALTHY".asInstanceOf[ContainerCondition]
+  inline val START: "START" = "START"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
 
-  @inline def values = js.Array(START, COMPLETE, SUCCESS, HEALTHY)
+  inline def values: js.Array[ContainerCondition] = js.Array(START, COMPLETE, SUCCESS, HEALTHY)
 }
 
-@js.native
-sealed trait ContainerInstanceField extends js.Any
+type ContainerInstanceField = "TAGS"
 object ContainerInstanceField {
-  val TAGS = "TAGS".asInstanceOf[ContainerInstanceField]
+  inline val TAGS: "TAGS" = "TAGS"
 
-  @inline def values = js.Array(TAGS)
+  inline def values: js.Array[ContainerInstanceField] = js.Array(TAGS)
 }
 
-@js.native
-sealed trait ContainerInstanceStatus extends js.Any
+type ContainerInstanceStatus = "ACTIVE" | "DRAINING" | "REGISTERING" | "DEREGISTERING" | "REGISTRATION_FAILED"
 object ContainerInstanceStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[ContainerInstanceStatus]
-  val DRAINING = "DRAINING".asInstanceOf[ContainerInstanceStatus]
-  val REGISTERING = "REGISTERING".asInstanceOf[ContainerInstanceStatus]
-  val DEREGISTERING = "DEREGISTERING".asInstanceOf[ContainerInstanceStatus]
-  val REGISTRATION_FAILED = "REGISTRATION_FAILED".asInstanceOf[ContainerInstanceStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DRAINING: "DRAINING" = "DRAINING"
+  inline val REGISTERING: "REGISTERING" = "REGISTERING"
+  inline val DEREGISTERING: "DEREGISTERING" = "DEREGISTERING"
+  inline val REGISTRATION_FAILED: "REGISTRATION_FAILED" = "REGISTRATION_FAILED"
 
-  @inline def values = js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED)
+  inline def values: js.Array[ContainerInstanceStatus] = js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED)
 }
 
-@js.native
-sealed trait DeploymentControllerType extends js.Any
+type DeploymentControllerType = "ECS" | "CODE_DEPLOY" | "EXTERNAL"
 object DeploymentControllerType {
-  val ECS = "ECS".asInstanceOf[DeploymentControllerType]
-  val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[DeploymentControllerType]
-  val EXTERNAL = "EXTERNAL".asInstanceOf[DeploymentControllerType]
+  inline val ECS: "ECS" = "ECS"
+  inline val CODE_DEPLOY: "CODE_DEPLOY" = "CODE_DEPLOY"
+  inline val EXTERNAL: "EXTERNAL" = "EXTERNAL"
 
-  @inline def values = js.Array(ECS, CODE_DEPLOY, EXTERNAL)
+  inline def values: js.Array[DeploymentControllerType] = js.Array(ECS, CODE_DEPLOY, EXTERNAL)
 }
 
-@js.native
-sealed trait DeploymentRolloutState extends js.Any
+type DeploymentRolloutState = "COMPLETED" | "FAILED" | "IN_PROGRESS"
 object DeploymentRolloutState {
-  val COMPLETED = "COMPLETED".asInstanceOf[DeploymentRolloutState]
-  val FAILED = "FAILED".asInstanceOf[DeploymentRolloutState]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeploymentRolloutState]
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
 
-  @inline def values = js.Array(COMPLETED, FAILED, IN_PROGRESS)
+  inline def values: js.Array[DeploymentRolloutState] = js.Array(COMPLETED, FAILED, IN_PROGRESS)
 }
 
-@js.native
-sealed trait DesiredStatus extends js.Any
+type DesiredStatus = "RUNNING" | "PENDING" | "STOPPED"
 object DesiredStatus {
-  val RUNNING = "RUNNING".asInstanceOf[DesiredStatus]
-  val PENDING = "PENDING".asInstanceOf[DesiredStatus]
-  val STOPPED = "STOPPED".asInstanceOf[DesiredStatus]
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array(RUNNING, PENDING, STOPPED)
+  inline def values: js.Array[DesiredStatus] = js.Array(RUNNING, PENDING, STOPPED)
 }
 
-@js.native
-sealed trait DeviceCgroupPermission extends js.Any
+type DeviceCgroupPermission = "read" | "write" | "mknod"
 object DeviceCgroupPermission {
-  val read = "read".asInstanceOf[DeviceCgroupPermission]
-  val write = "write".asInstanceOf[DeviceCgroupPermission]
-  val mknod = "mknod".asInstanceOf[DeviceCgroupPermission]
+  inline val read: "read" = "read"
+  inline val write: "write" = "write"
+  inline val mknod: "mknod" = "mknod"
 
-  @inline def values = js.Array(read, write, mknod)
+  inline def values: js.Array[DeviceCgroupPermission] = js.Array(read, write, mknod)
 }
 
-@js.native
-sealed trait EFSAuthorizationConfigIAM extends js.Any
+type EFSAuthorizationConfigIAM = "ENABLED" | "DISABLED"
 object EFSAuthorizationConfigIAM {
-  val ENABLED = "ENABLED".asInstanceOf[EFSAuthorizationConfigIAM]
-  val DISABLED = "DISABLED".asInstanceOf[EFSAuthorizationConfigIAM]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[EFSAuthorizationConfigIAM] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait EFSTransitEncryption extends js.Any
+type EFSTransitEncryption = "ENABLED" | "DISABLED"
 object EFSTransitEncryption {
-  val ENABLED = "ENABLED".asInstanceOf[EFSTransitEncryption]
-  val DISABLED = "DISABLED".asInstanceOf[EFSTransitEncryption]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[EFSTransitEncryption] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait EnvironmentFileType extends js.Any
+type EnvironmentFileType = "s3"
 object EnvironmentFileType {
-  val s3 = "s3".asInstanceOf[EnvironmentFileType]
+  inline val s3: "s3" = "s3"
 
-  @inline def values = js.Array(s3)
+  inline def values: js.Array[EnvironmentFileType] = js.Array(s3)
 }
 
-@js.native
-sealed trait ExecuteCommandLogging extends js.Any
+type ExecuteCommandLogging = "NONE" | "DEFAULT" | "OVERRIDE"
 object ExecuteCommandLogging {
-  val NONE = "NONE".asInstanceOf[ExecuteCommandLogging]
-  val DEFAULT = "DEFAULT".asInstanceOf[ExecuteCommandLogging]
-  val OVERRIDE = "OVERRIDE".asInstanceOf[ExecuteCommandLogging]
+  inline val NONE: "NONE" = "NONE"
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+  inline val OVERRIDE: "OVERRIDE" = "OVERRIDE"
 
-  @inline def values = js.Array(NONE, DEFAULT, OVERRIDE)
+  inline def values: js.Array[ExecuteCommandLogging] = js.Array(NONE, DEFAULT, OVERRIDE)
 }
 
-@js.native
-sealed trait FirelensConfigurationType extends js.Any
+type FirelensConfigurationType = "fluentd" | "fluentbit"
 object FirelensConfigurationType {
-  val fluentd = "fluentd".asInstanceOf[FirelensConfigurationType]
-  val fluentbit = "fluentbit".asInstanceOf[FirelensConfigurationType]
+  inline val fluentd: "fluentd" = "fluentd"
+  inline val fluentbit: "fluentbit" = "fluentbit"
 
-  @inline def values = js.Array(fluentd, fluentbit)
+  inline def values: js.Array[FirelensConfigurationType] = js.Array(fluentd, fluentbit)
 }
 
-@js.native
-sealed trait HealthStatus extends js.Any
+type HealthStatus = "HEALTHY" | "UNHEALTHY" | "UNKNOWN"
 object HealthStatus {
-  val HEALTHY = "HEALTHY".asInstanceOf[HealthStatus]
-  val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[HealthStatus]
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
+  inline def values: js.Array[HealthStatus] = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
 }
 
-@js.native
-sealed trait IpcMode extends js.Any
+type IpcMode = "host" | "task" | "none"
 object IpcMode {
-  val host = "host".asInstanceOf[IpcMode]
-  val task = "task".asInstanceOf[IpcMode]
-  val none = "none".asInstanceOf[IpcMode]
+  inline val host: "host" = "host"
+  inline val task: "task" = "task"
+  inline val none: "none" = "none"
 
-  @inline def values = js.Array(host, task, none)
+  inline def values: js.Array[IpcMode] = js.Array(host, task, none)
 }
 
-@js.native
-sealed trait LaunchType extends js.Any
+type LaunchType = "EC2" | "FARGATE"
 object LaunchType {
-  val EC2 = "EC2".asInstanceOf[LaunchType]
-  val FARGATE = "FARGATE".asInstanceOf[LaunchType]
+  inline val EC2: "EC2" = "EC2"
+  inline val FARGATE: "FARGATE" = "FARGATE"
 
-  @inline def values = js.Array(EC2, FARGATE)
+  inline def values: js.Array[LaunchType] = js.Array(EC2, FARGATE)
 }
 
-@js.native
-sealed trait LogDriver extends js.Any
+type LogDriver = "json-file" | "syslog" | "journald" | "gelf" | "fluentd" | "awslogs" | "splunk" | "awsfirelens"
 object LogDriver {
-  val `json-file` = "json-file".asInstanceOf[LogDriver]
-  val syslog = "syslog".asInstanceOf[LogDriver]
-  val journald = "journald".asInstanceOf[LogDriver]
-  val gelf = "gelf".asInstanceOf[LogDriver]
-  val fluentd = "fluentd".asInstanceOf[LogDriver]
-  val awslogs = "awslogs".asInstanceOf[LogDriver]
-  val splunk = "splunk".asInstanceOf[LogDriver]
-  val awsfirelens = "awsfirelens".asInstanceOf[LogDriver]
+  inline val `json-file`: "json-file" = "json-file"
+  inline val syslog: "syslog" = "syslog"
+  inline val journald: "journald" = "journald"
+  inline val gelf: "gelf" = "gelf"
+  inline val fluentd: "fluentd" = "fluentd"
+  inline val awslogs: "awslogs" = "awslogs"
+  inline val splunk: "splunk" = "splunk"
+  inline val awsfirelens: "awsfirelens" = "awsfirelens"
 
-  @inline def values = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens)
+  inline def values: js.Array[LogDriver] = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens)
 }
 
-@js.native
-sealed trait ManagedAgentName extends js.Any
+type ManagedAgentName = "ExecuteCommandAgent"
 object ManagedAgentName {
-  val ExecuteCommandAgent = "ExecuteCommandAgent".asInstanceOf[ManagedAgentName]
+  inline val ExecuteCommandAgent: "ExecuteCommandAgent" = "ExecuteCommandAgent"
 
-  @inline def values = js.Array(ExecuteCommandAgent)
+  inline def values: js.Array[ManagedAgentName] = js.Array(ExecuteCommandAgent)
 }
 
-@js.native
-sealed trait ManagedScalingStatus extends js.Any
+type ManagedScalingStatus = "ENABLED" | "DISABLED"
 object ManagedScalingStatus {
-  val ENABLED = "ENABLED".asInstanceOf[ManagedScalingStatus]
-  val DISABLED = "DISABLED".asInstanceOf[ManagedScalingStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[ManagedScalingStatus] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait ManagedTerminationProtection extends js.Any
+type ManagedTerminationProtection = "ENABLED" | "DISABLED"
 object ManagedTerminationProtection {
-  val ENABLED = "ENABLED".asInstanceOf[ManagedTerminationProtection]
-  val DISABLED = "DISABLED".asInstanceOf[ManagedTerminationProtection]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[ManagedTerminationProtection] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait NetworkMode extends js.Any
+type NetworkMode = "bridge" | "host" | "awsvpc" | "none"
 object NetworkMode {
-  val bridge = "bridge".asInstanceOf[NetworkMode]
-  val host = "host".asInstanceOf[NetworkMode]
-  val awsvpc = "awsvpc".asInstanceOf[NetworkMode]
-  val none = "none".asInstanceOf[NetworkMode]
+  inline val bridge: "bridge" = "bridge"
+  inline val host: "host" = "host"
+  inline val awsvpc: "awsvpc" = "awsvpc"
+  inline val none: "none" = "none"
 
-  @inline def values = js.Array(bridge, host, awsvpc, none)
+  inline def values: js.Array[NetworkMode] = js.Array(bridge, host, awsvpc, none)
 }
 
-@js.native
-sealed trait PidMode extends js.Any
+type PidMode = "host" | "task"
 object PidMode {
-  val host = "host".asInstanceOf[PidMode]
-  val task = "task".asInstanceOf[PidMode]
+  inline val host: "host" = "host"
+  inline val task: "task" = "task"
 
-  @inline def values = js.Array(host, task)
+  inline def values: js.Array[PidMode] = js.Array(host, task)
 }
 
-@js.native
-sealed trait PlacementConstraintType extends js.Any
+type PlacementConstraintType = "distinctInstance" | "memberOf"
 object PlacementConstraintType {
-  val distinctInstance = "distinctInstance".asInstanceOf[PlacementConstraintType]
-  val memberOf = "memberOf".asInstanceOf[PlacementConstraintType]
+  inline val distinctInstance: "distinctInstance" = "distinctInstance"
+  inline val memberOf: "memberOf" = "memberOf"
 
-  @inline def values = js.Array(distinctInstance, memberOf)
+  inline def values: js.Array[PlacementConstraintType] = js.Array(distinctInstance, memberOf)
 }
 
-@js.native
-sealed trait PlacementStrategyType extends js.Any
+type PlacementStrategyType = "random" | "spread" | "binpack"
 object PlacementStrategyType {
-  val random = "random".asInstanceOf[PlacementStrategyType]
-  val spread = "spread".asInstanceOf[PlacementStrategyType]
-  val binpack = "binpack".asInstanceOf[PlacementStrategyType]
+  inline val random: "random" = "random"
+  inline val spread: "spread" = "spread"
+  inline val binpack: "binpack" = "binpack"
 
-  @inline def values = js.Array(random, spread, binpack)
+  inline def values: js.Array[PlacementStrategyType] = js.Array(random, spread, binpack)
 }
 
-@js.native
-sealed trait PlatformDeviceType extends js.Any
+type PlatformDeviceType = "GPU"
 object PlatformDeviceType {
-  val GPU = "GPU".asInstanceOf[PlatformDeviceType]
+  inline val GPU: "GPU" = "GPU"
 
-  @inline def values = js.Array(GPU)
+  inline def values: js.Array[PlatformDeviceType] = js.Array(GPU)
 }
 
-@js.native
-sealed trait PropagateTags extends js.Any
+type PropagateTags = "TASK_DEFINITION" | "SERVICE"
 object PropagateTags {
-  val TASK_DEFINITION = "TASK_DEFINITION".asInstanceOf[PropagateTags]
-  val SERVICE = "SERVICE".asInstanceOf[PropagateTags]
+  inline val TASK_DEFINITION: "TASK_DEFINITION" = "TASK_DEFINITION"
+  inline val SERVICE: "SERVICE" = "SERVICE"
 
-  @inline def values = js.Array(TASK_DEFINITION, SERVICE)
+  inline def values: js.Array[PropagateTags] = js.Array(TASK_DEFINITION, SERVICE)
 }
 
-@js.native
-sealed trait ProxyConfigurationType extends js.Any
+type ProxyConfigurationType = "APPMESH"
 object ProxyConfigurationType {
-  val APPMESH = "APPMESH".asInstanceOf[ProxyConfigurationType]
+  inline val APPMESH: "APPMESH" = "APPMESH"
 
-  @inline def values = js.Array(APPMESH)
+  inline def values: js.Array[ProxyConfigurationType] = js.Array(APPMESH)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "GPU" | "InferenceAccelerator"
 object ResourceType {
-  val GPU = "GPU".asInstanceOf[ResourceType]
-  val InferenceAccelerator = "InferenceAccelerator".asInstanceOf[ResourceType]
+  inline val GPU: "GPU" = "GPU"
+  inline val InferenceAccelerator: "InferenceAccelerator" = "InferenceAccelerator"
 
-  @inline def values = js.Array(GPU, InferenceAccelerator)
+  inline def values: js.Array[ResourceType] = js.Array(GPU, InferenceAccelerator)
 }
 
-@js.native
-sealed trait ScaleUnit extends js.Any
+type ScaleUnit = "PERCENT"
 object ScaleUnit {
-  val PERCENT = "PERCENT".asInstanceOf[ScaleUnit]
+  inline val PERCENT: "PERCENT" = "PERCENT"
 
-  @inline def values = js.Array(PERCENT)
+  inline def values: js.Array[ScaleUnit] = js.Array(PERCENT)
 }
 
-@js.native
-sealed trait SchedulingStrategy extends js.Any
+type SchedulingStrategy = "REPLICA" | "DAEMON"
 object SchedulingStrategy {
-  val REPLICA = "REPLICA".asInstanceOf[SchedulingStrategy]
-  val DAEMON = "DAEMON".asInstanceOf[SchedulingStrategy]
+  inline val REPLICA: "REPLICA" = "REPLICA"
+  inline val DAEMON: "DAEMON" = "DAEMON"
 
-  @inline def values = js.Array(REPLICA, DAEMON)
+  inline def values: js.Array[SchedulingStrategy] = js.Array(REPLICA, DAEMON)
 }
 
-@js.native
-sealed trait Scope extends js.Any
+type Scope = "task" | "shared"
 object Scope {
-  val task = "task".asInstanceOf[Scope]
-  val shared = "shared".asInstanceOf[Scope]
+  inline val task: "task" = "task"
+  inline val shared: "shared" = "shared"
 
-  @inline def values = js.Array(task, shared)
+  inline def values: js.Array[Scope] = js.Array(task, shared)
 }
 
-@js.native
-sealed trait ServiceField extends js.Any
+type ServiceField = "TAGS"
 object ServiceField {
-  val TAGS = "TAGS".asInstanceOf[ServiceField]
+  inline val TAGS: "TAGS" = "TAGS"
 
-  @inline def values = js.Array(TAGS)
+  inline def values: js.Array[ServiceField] = js.Array(TAGS)
 }
 
-@js.native
-sealed trait SettingName extends js.Any
+type SettingName = "serviceLongArnFormat" | "taskLongArnFormat" | "containerInstanceLongArnFormat" | "awsvpcTrunking" | "containerInsights"
 object SettingName {
-  val serviceLongArnFormat = "serviceLongArnFormat".asInstanceOf[SettingName]
-  val taskLongArnFormat = "taskLongArnFormat".asInstanceOf[SettingName]
-  val containerInstanceLongArnFormat = "containerInstanceLongArnFormat".asInstanceOf[SettingName]
-  val awsvpcTrunking = "awsvpcTrunking".asInstanceOf[SettingName]
-  val containerInsights = "containerInsights".asInstanceOf[SettingName]
+  inline val serviceLongArnFormat: "serviceLongArnFormat" = "serviceLongArnFormat"
+  inline val taskLongArnFormat: "taskLongArnFormat" = "taskLongArnFormat"
+  inline val containerInstanceLongArnFormat: "containerInstanceLongArnFormat" = "containerInstanceLongArnFormat"
+  inline val awsvpcTrunking: "awsvpcTrunking" = "awsvpcTrunking"
+  inline val containerInsights: "containerInsights" = "containerInsights"
 
-  @inline def values = js.Array(serviceLongArnFormat, taskLongArnFormat, containerInstanceLongArnFormat, awsvpcTrunking, containerInsights)
+  inline def values: js.Array[SettingName] = js.Array(serviceLongArnFormat, taskLongArnFormat, containerInstanceLongArnFormat, awsvpcTrunking, containerInsights)
 }
 
-@js.native
-sealed trait SortOrder extends js.Any
+type SortOrder = "ASC" | "DESC"
 object SortOrder {
-  val ASC = "ASC".asInstanceOf[SortOrder]
-  val DESC = "DESC".asInstanceOf[SortOrder]
+  inline val ASC: "ASC" = "ASC"
+  inline val DESC: "DESC" = "DESC"
 
-  @inline def values = js.Array(ASC, DESC)
+  inline def values: js.Array[SortOrder] = js.Array(ASC, DESC)
 }
 
-@js.native
-sealed trait StabilityStatus extends js.Any
+type StabilityStatus = "STEADY_STATE" | "STABILIZING"
 object StabilityStatus {
-  val STEADY_STATE = "STEADY_STATE".asInstanceOf[StabilityStatus]
-  val STABILIZING = "STABILIZING".asInstanceOf[StabilityStatus]
+  inline val STEADY_STATE: "STEADY_STATE" = "STEADY_STATE"
+  inline val STABILIZING: "STABILIZING" = "STABILIZING"
 
-  @inline def values = js.Array(STEADY_STATE, STABILIZING)
+  inline def values: js.Array[StabilityStatus] = js.Array(STEADY_STATE, STABILIZING)
 }
 
-@js.native
-sealed trait TargetType extends js.Any
+type TargetType = "container-instance"
 object TargetType {
-  val `container-instance` = "container-instance".asInstanceOf[TargetType]
+  inline val `container-instance`: "container-instance" = "container-instance"
 
-  @inline def values = js.Array(`container-instance`)
+  inline def values: js.Array[TargetType] = js.Array(`container-instance`)
 }
 
-@js.native
-sealed trait TaskDefinitionFamilyStatus extends js.Any
+type TaskDefinitionFamilyStatus = "ACTIVE" | "INACTIVE" | "ALL"
 object TaskDefinitionFamilyStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
-  val ALL = "ALL".asInstanceOf[TaskDefinitionFamilyStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, ALL)
+  inline def values: js.Array[TaskDefinitionFamilyStatus] = js.Array(ACTIVE, INACTIVE, ALL)
 }
 
-@js.native
-sealed trait TaskDefinitionField extends js.Any
+type TaskDefinitionField = "TAGS"
 object TaskDefinitionField {
-  val TAGS = "TAGS".asInstanceOf[TaskDefinitionField]
+  inline val TAGS: "TAGS" = "TAGS"
 
-  @inline def values = js.Array(TAGS)
+  inline def values: js.Array[TaskDefinitionField] = js.Array(TAGS)
 }
 
-@js.native
-sealed trait TaskDefinitionPlacementConstraintType extends js.Any
+type TaskDefinitionPlacementConstraintType = "memberOf"
 object TaskDefinitionPlacementConstraintType {
-  val memberOf = "memberOf".asInstanceOf[TaskDefinitionPlacementConstraintType]
+  inline val memberOf: "memberOf" = "memberOf"
 
-  @inline def values = js.Array(memberOf)
+  inline def values: js.Array[TaskDefinitionPlacementConstraintType] = js.Array(memberOf)
 }
 
-@js.native
-sealed trait TaskDefinitionStatus extends js.Any
+type TaskDefinitionStatus = "ACTIVE" | "INACTIVE"
 object TaskDefinitionStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[TaskDefinitionStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  inline def values: js.Array[TaskDefinitionStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
-@js.native
-sealed trait TaskField extends js.Any
+type TaskField = "TAGS"
 object TaskField {
-  val TAGS = "TAGS".asInstanceOf[TaskField]
+  inline val TAGS: "TAGS" = "TAGS"
 
-  @inline def values = js.Array(TAGS)
+  inline def values: js.Array[TaskField] = js.Array(TAGS)
 }
 
-@js.native
-sealed trait TaskSetField extends js.Any
+type TaskSetField = "TAGS"
 object TaskSetField {
-  val TAGS = "TAGS".asInstanceOf[TaskSetField]
+  inline val TAGS: "TAGS" = "TAGS"
 
-  @inline def values = js.Array(TAGS)
+  inline def values: js.Array[TaskSetField] = js.Array(TAGS)
 }
 
-@js.native
-sealed trait TaskStopCode extends js.Any
+type TaskStopCode = "TaskFailedToStart" | "EssentialContainerExited" | "UserInitiated"
 object TaskStopCode {
-  val TaskFailedToStart = "TaskFailedToStart".asInstanceOf[TaskStopCode]
-  val EssentialContainerExited = "EssentialContainerExited".asInstanceOf[TaskStopCode]
-  val UserInitiated = "UserInitiated".asInstanceOf[TaskStopCode]
+  inline val TaskFailedToStart: "TaskFailedToStart" = "TaskFailedToStart"
+  inline val EssentialContainerExited: "EssentialContainerExited" = "EssentialContainerExited"
+  inline val UserInitiated: "UserInitiated" = "UserInitiated"
 
-  @inline def values = js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated)
+  inline def values: js.Array[TaskStopCode] = js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated)
 }
 
-@js.native
-sealed trait TransportProtocol extends js.Any
+type TransportProtocol = "tcp" | "udp"
 object TransportProtocol {
-  val tcp = "tcp".asInstanceOf[TransportProtocol]
-  val udp = "udp".asInstanceOf[TransportProtocol]
+  inline val tcp: "tcp" = "tcp"
+  inline val udp: "udp" = "udp"
 
-  @inline def values = js.Array(tcp, udp)
+  inline def values: js.Array[TransportProtocol] = js.Array(tcp, udp)
 }
 
-@js.native
-sealed trait UlimitName extends js.Any
+type UlimitName = "core" | "cpu" | "data" | "fsize" | "locks" | "memlock" | "msgqueue" | "nice" | "nofile" | "nproc" | "rss" | "rtprio" | "rttime" | "sigpending" | "stack"
 object UlimitName {
-  val core = "core".asInstanceOf[UlimitName]
-  val cpu = "cpu".asInstanceOf[UlimitName]
-  val data = "data".asInstanceOf[UlimitName]
-  val fsize = "fsize".asInstanceOf[UlimitName]
-  val locks = "locks".asInstanceOf[UlimitName]
-  val memlock = "memlock".asInstanceOf[UlimitName]
-  val msgqueue = "msgqueue".asInstanceOf[UlimitName]
-  val nice = "nice".asInstanceOf[UlimitName]
-  val nofile = "nofile".asInstanceOf[UlimitName]
-  val nproc = "nproc".asInstanceOf[UlimitName]
-  val rss = "rss".asInstanceOf[UlimitName]
-  val rtprio = "rtprio".asInstanceOf[UlimitName]
-  val rttime = "rttime".asInstanceOf[UlimitName]
-  val sigpending = "sigpending".asInstanceOf[UlimitName]
-  val stack = "stack".asInstanceOf[UlimitName]
+  inline val core: "core" = "core"
+  inline val cpu: "cpu" = "cpu"
+  inline val data: "data" = "data"
+  inline val fsize: "fsize" = "fsize"
+  inline val locks: "locks" = "locks"
+  inline val memlock: "memlock" = "memlock"
+  inline val msgqueue: "msgqueue" = "msgqueue"
+  inline val nice: "nice" = "nice"
+  inline val nofile: "nofile" = "nofile"
+  inline val nproc: "nproc" = "nproc"
+  inline val rss: "rss" = "rss"
+  inline val rtprio: "rtprio" = "rtprio"
+  inline val rttime: "rttime" = "rttime"
+  inline val sigpending: "sigpending" = "sigpending"
+  inline val stack: "stack" = "stack"
 
-  @inline def values = js.Array(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack)
+  inline def values: js.Array[UlimitName] = js.Array(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack)
 }

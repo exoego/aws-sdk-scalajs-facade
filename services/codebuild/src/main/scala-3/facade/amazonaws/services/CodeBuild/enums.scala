@@ -1,389 +1,352 @@
 package facade.amazonaws.services.codebuild
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ArtifactNamespace extends js.Any
+type ArtifactNamespace = "NONE" | "BUILD_ID"
 object ArtifactNamespace {
-  val NONE = "NONE".asInstanceOf[ArtifactNamespace]
-  val BUILD_ID = "BUILD_ID".asInstanceOf[ArtifactNamespace]
+  inline val NONE: "NONE" = "NONE"
+  inline val BUILD_ID: "BUILD_ID" = "BUILD_ID"
 
-  @inline def values = js.Array(NONE, BUILD_ID)
+  inline def values: js.Array[ArtifactNamespace] = js.Array(NONE, BUILD_ID)
 }
 
-@js.native
-sealed trait ArtifactPackaging extends js.Any
+type ArtifactPackaging = "NONE" | "ZIP"
 object ArtifactPackaging {
-  val NONE = "NONE".asInstanceOf[ArtifactPackaging]
-  val ZIP = "ZIP".asInstanceOf[ArtifactPackaging]
+  inline val NONE: "NONE" = "NONE"
+  inline val ZIP: "ZIP" = "ZIP"
 
-  @inline def values = js.Array(NONE, ZIP)
+  inline def values: js.Array[ArtifactPackaging] = js.Array(NONE, ZIP)
 }
 
-@js.native
-sealed trait ArtifactsType extends js.Any
+type ArtifactsType = "CODEPIPELINE" | "S3" | "NO_ARTIFACTS"
 object ArtifactsType {
-  val CODEPIPELINE = "CODEPIPELINE".asInstanceOf[ArtifactsType]
-  val S3 = "S3".asInstanceOf[ArtifactsType]
-  val NO_ARTIFACTS = "NO_ARTIFACTS".asInstanceOf[ArtifactsType]
+  inline val CODEPIPELINE: "CODEPIPELINE" = "CODEPIPELINE"
+  inline val S3: "S3" = "S3"
+  inline val NO_ARTIFACTS: "NO_ARTIFACTS" = "NO_ARTIFACTS"
 
-  @inline def values = js.Array(CODEPIPELINE, S3, NO_ARTIFACTS)
+  inline def values: js.Array[ArtifactsType] = js.Array(CODEPIPELINE, S3, NO_ARTIFACTS)
 }
 
-@js.native
-sealed trait AuthType extends js.Any
+type AuthType = "OAUTH" | "BASIC_AUTH" | "PERSONAL_ACCESS_TOKEN"
 object AuthType {
-  val OAUTH = "OAUTH".asInstanceOf[AuthType]
-  val BASIC_AUTH = "BASIC_AUTH".asInstanceOf[AuthType]
-  val PERSONAL_ACCESS_TOKEN = "PERSONAL_ACCESS_TOKEN".asInstanceOf[AuthType]
+  inline val OAUTH: "OAUTH" = "OAUTH"
+  inline val BASIC_AUTH: "BASIC_AUTH" = "BASIC_AUTH"
+  inline val PERSONAL_ACCESS_TOKEN: "PERSONAL_ACCESS_TOKEN" = "PERSONAL_ACCESS_TOKEN"
 
-  @inline def values = js.Array(OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN)
+  inline def values: js.Array[AuthType] = js.Array(OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN)
 }
 
 /** Specifies the access for objects that are uploaded to an Amazon S3 bucket that is owned by another account. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects. <dl> <dt>NONE</dt> <dd> The bucket owner does not have access to the objects. This is the default. </dd> <dt>READ_ONLY</dt> <dd> The bucket owner has read only access to the objects. The uploading account retains ownership of the objects. </dd> <dt>FULL</dt> <dd> The bucket owner has full access to the objects. Object ownership is determined by the following criteria: * If the bucket is configured with the ```Bucket owner preferred``` setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy. * Otherwise, the uploading account retains ownership of the objects. For more information about Amazon S3 object ownership, see
   * [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html|Controlling ownership of uploaded objects using S3 Object Ownership]] in the <i>Amazon Simple Storage Service User Guide</i>. </dd> </dl>
   */
-@js.native
-sealed trait BucketOwnerAccess extends js.Any
+type BucketOwnerAccess = "NONE" | "READ_ONLY" | "FULL"
 object BucketOwnerAccess {
-  val NONE = "NONE".asInstanceOf[BucketOwnerAccess]
-  val READ_ONLY = "READ_ONLY".asInstanceOf[BucketOwnerAccess]
-  val FULL = "FULL".asInstanceOf[BucketOwnerAccess]
+  inline val NONE: "NONE" = "NONE"
+  inline val READ_ONLY: "READ_ONLY" = "READ_ONLY"
+  inline val FULL: "FULL" = "FULL"
 
-  @inline def values = js.Array(NONE, READ_ONLY, FULL)
+  inline def values: js.Array[BucketOwnerAccess] = js.Array(NONE, READ_ONLY, FULL)
 }
 
-@js.native
-sealed trait BuildBatchPhaseType extends js.Any
+type BuildBatchPhaseType = "SUBMITTED" | "DOWNLOAD_BATCHSPEC" | "IN_PROGRESS" | "COMBINE_ARTIFACTS" | "SUCCEEDED" | "FAILED" | "STOPPED"
 object BuildBatchPhaseType {
-  val SUBMITTED = "SUBMITTED".asInstanceOf[BuildBatchPhaseType]
-  val DOWNLOAD_BATCHSPEC = "DOWNLOAD_BATCHSPEC".asInstanceOf[BuildBatchPhaseType]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BuildBatchPhaseType]
-  val COMBINE_ARTIFACTS = "COMBINE_ARTIFACTS".asInstanceOf[BuildBatchPhaseType]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[BuildBatchPhaseType]
-  val FAILED = "FAILED".asInstanceOf[BuildBatchPhaseType]
-  val STOPPED = "STOPPED".asInstanceOf[BuildBatchPhaseType]
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val DOWNLOAD_BATCHSPEC: "DOWNLOAD_BATCHSPEC" = "DOWNLOAD_BATCHSPEC"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMBINE_ARTIFACTS: "COMBINE_ARTIFACTS" = "COMBINE_ARTIFACTS"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array(SUBMITTED, DOWNLOAD_BATCHSPEC, IN_PROGRESS, COMBINE_ARTIFACTS, SUCCEEDED, FAILED, STOPPED)
+  inline def values: js.Array[BuildBatchPhaseType] = js.Array(SUBMITTED, DOWNLOAD_BATCHSPEC, IN_PROGRESS, COMBINE_ARTIFACTS, SUCCEEDED, FAILED, STOPPED)
 }
 
-@js.native
-sealed trait BuildPhaseType extends js.Any
+type BuildPhaseType = "SUBMITTED" | "QUEUED" | "PROVISIONING" | "DOWNLOAD_SOURCE" | "INSTALL" | "PRE_BUILD" | "BUILD" | "POST_BUILD" | "UPLOAD_ARTIFACTS" | "FINALIZING" | "COMPLETED"
 object BuildPhaseType {
-  val SUBMITTED = "SUBMITTED".asInstanceOf[BuildPhaseType]
-  val QUEUED = "QUEUED".asInstanceOf[BuildPhaseType]
-  val PROVISIONING = "PROVISIONING".asInstanceOf[BuildPhaseType]
-  val DOWNLOAD_SOURCE = "DOWNLOAD_SOURCE".asInstanceOf[BuildPhaseType]
-  val INSTALL = "INSTALL".asInstanceOf[BuildPhaseType]
-  val PRE_BUILD = "PRE_BUILD".asInstanceOf[BuildPhaseType]
-  val BUILD = "BUILD".asInstanceOf[BuildPhaseType]
-  val POST_BUILD = "POST_BUILD".asInstanceOf[BuildPhaseType]
-  val UPLOAD_ARTIFACTS = "UPLOAD_ARTIFACTS".asInstanceOf[BuildPhaseType]
-  val FINALIZING = "FINALIZING".asInstanceOf[BuildPhaseType]
-  val COMPLETED = "COMPLETED".asInstanceOf[BuildPhaseType]
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val QUEUED: "QUEUED" = "QUEUED"
+  inline val PROVISIONING: "PROVISIONING" = "PROVISIONING"
+  inline val DOWNLOAD_SOURCE: "DOWNLOAD_SOURCE" = "DOWNLOAD_SOURCE"
+  inline val INSTALL: "INSTALL" = "INSTALL"
+  inline val PRE_BUILD: "PRE_BUILD" = "PRE_BUILD"
+  inline val BUILD: "BUILD" = "BUILD"
+  inline val POST_BUILD: "POST_BUILD" = "POST_BUILD"
+  inline val UPLOAD_ARTIFACTS: "UPLOAD_ARTIFACTS" = "UPLOAD_ARTIFACTS"
+  inline val FINALIZING: "FINALIZING" = "FINALIZING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
 
-  @inline def values = js.Array(SUBMITTED, QUEUED, PROVISIONING, DOWNLOAD_SOURCE, INSTALL, PRE_BUILD, BUILD, POST_BUILD, UPLOAD_ARTIFACTS, FINALIZING, COMPLETED)
+  inline def values: js.Array[BuildPhaseType] = js.Array(SUBMITTED, QUEUED, PROVISIONING, DOWNLOAD_SOURCE, INSTALL, PRE_BUILD, BUILD, POST_BUILD, UPLOAD_ARTIFACTS, FINALIZING, COMPLETED)
 }
 
-@js.native
-sealed trait CacheMode extends js.Any
+type CacheMode = "LOCAL_DOCKER_LAYER_CACHE" | "LOCAL_SOURCE_CACHE" | "LOCAL_CUSTOM_CACHE"
 object CacheMode {
-  val LOCAL_DOCKER_LAYER_CACHE = "LOCAL_DOCKER_LAYER_CACHE".asInstanceOf[CacheMode]
-  val LOCAL_SOURCE_CACHE = "LOCAL_SOURCE_CACHE".asInstanceOf[CacheMode]
-  val LOCAL_CUSTOM_CACHE = "LOCAL_CUSTOM_CACHE".asInstanceOf[CacheMode]
+  inline val LOCAL_DOCKER_LAYER_CACHE: "LOCAL_DOCKER_LAYER_CACHE" = "LOCAL_DOCKER_LAYER_CACHE"
+  inline val LOCAL_SOURCE_CACHE: "LOCAL_SOURCE_CACHE" = "LOCAL_SOURCE_CACHE"
+  inline val LOCAL_CUSTOM_CACHE: "LOCAL_CUSTOM_CACHE" = "LOCAL_CUSTOM_CACHE"
 
-  @inline def values = js.Array(LOCAL_DOCKER_LAYER_CACHE, LOCAL_SOURCE_CACHE, LOCAL_CUSTOM_CACHE)
+  inline def values: js.Array[CacheMode] = js.Array(LOCAL_DOCKER_LAYER_CACHE, LOCAL_SOURCE_CACHE, LOCAL_CUSTOM_CACHE)
 }
 
-@js.native
-sealed trait CacheType extends js.Any
+type CacheType = "NO_CACHE" | "S3" | "LOCAL"
 object CacheType {
-  val NO_CACHE = "NO_CACHE".asInstanceOf[CacheType]
-  val S3 = "S3".asInstanceOf[CacheType]
-  val LOCAL = "LOCAL".asInstanceOf[CacheType]
+  inline val NO_CACHE: "NO_CACHE" = "NO_CACHE"
+  inline val S3: "S3" = "S3"
+  inline val LOCAL: "LOCAL" = "LOCAL"
 
-  @inline def values = js.Array(NO_CACHE, S3, LOCAL)
+  inline def values: js.Array[CacheType] = js.Array(NO_CACHE, S3, LOCAL)
 }
 
-@js.native
-sealed trait ComputeType extends js.Any
+type ComputeType = "BUILD_GENERAL1_SMALL" | "BUILD_GENERAL1_MEDIUM" | "BUILD_GENERAL1_LARGE" | "BUILD_GENERAL1_2XLARGE"
 object ComputeType {
-  val BUILD_GENERAL1_SMALL = "BUILD_GENERAL1_SMALL".asInstanceOf[ComputeType]
-  val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM".asInstanceOf[ComputeType]
-  val BUILD_GENERAL1_LARGE = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
-  val BUILD_GENERAL1_2XLARGE = "BUILD_GENERAL1_2XLARGE".asInstanceOf[ComputeType]
+  inline val BUILD_GENERAL1_SMALL: "BUILD_GENERAL1_SMALL" = "BUILD_GENERAL1_SMALL"
+  inline val BUILD_GENERAL1_MEDIUM: "BUILD_GENERAL1_MEDIUM" = "BUILD_GENERAL1_MEDIUM"
+  inline val BUILD_GENERAL1_LARGE: "BUILD_GENERAL1_LARGE" = "BUILD_GENERAL1_LARGE"
+  inline val BUILD_GENERAL1_2XLARGE: "BUILD_GENERAL1_2XLARGE" = "BUILD_GENERAL1_2XLARGE"
 
-  @inline def values = js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE, BUILD_GENERAL1_2XLARGE)
+  inline def values: js.Array[ComputeType] = js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE, BUILD_GENERAL1_2XLARGE)
 }
 
-@js.native
-sealed trait CredentialProviderType extends js.Any
+type CredentialProviderType = "SECRETS_MANAGER"
 object CredentialProviderType {
-  val SECRETS_MANAGER = "SECRETS_MANAGER".asInstanceOf[CredentialProviderType]
+  inline val SECRETS_MANAGER: "SECRETS_MANAGER" = "SECRETS_MANAGER"
 
-  @inline def values = js.Array(SECRETS_MANAGER)
+  inline def values: js.Array[CredentialProviderType] = js.Array(SECRETS_MANAGER)
 }
 
-@js.native
-sealed trait EnvironmentType extends js.Any
+type EnvironmentType = "WINDOWS_CONTAINER" | "LINUX_CONTAINER" | "LINUX_GPU_CONTAINER" | "ARM_CONTAINER" | "WINDOWS_SERVER_2019_CONTAINER"
 object EnvironmentType {
-  val WINDOWS_CONTAINER = "WINDOWS_CONTAINER".asInstanceOf[EnvironmentType]
-  val LINUX_CONTAINER = "LINUX_CONTAINER".asInstanceOf[EnvironmentType]
-  val LINUX_GPU_CONTAINER = "LINUX_GPU_CONTAINER".asInstanceOf[EnvironmentType]
-  val ARM_CONTAINER = "ARM_CONTAINER".asInstanceOf[EnvironmentType]
-  val WINDOWS_SERVER_2019_CONTAINER = "WINDOWS_SERVER_2019_CONTAINER".asInstanceOf[EnvironmentType]
+  inline val WINDOWS_CONTAINER: "WINDOWS_CONTAINER" = "WINDOWS_CONTAINER"
+  inline val LINUX_CONTAINER: "LINUX_CONTAINER" = "LINUX_CONTAINER"
+  inline val LINUX_GPU_CONTAINER: "LINUX_GPU_CONTAINER" = "LINUX_GPU_CONTAINER"
+  inline val ARM_CONTAINER: "ARM_CONTAINER" = "ARM_CONTAINER"
+  inline val WINDOWS_SERVER_2019_CONTAINER: "WINDOWS_SERVER_2019_CONTAINER" = "WINDOWS_SERVER_2019_CONTAINER"
 
-  @inline def values = js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER)
+  inline def values: js.Array[EnvironmentType] = js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER)
 }
 
-@js.native
-sealed trait EnvironmentVariableType extends js.Any
+type EnvironmentVariableType = "PLAINTEXT" | "PARAMETER_STORE" | "SECRETS_MANAGER"
 object EnvironmentVariableType {
-  val PLAINTEXT = "PLAINTEXT".asInstanceOf[EnvironmentVariableType]
-  val PARAMETER_STORE = "PARAMETER_STORE".asInstanceOf[EnvironmentVariableType]
-  val SECRETS_MANAGER = "SECRETS_MANAGER".asInstanceOf[EnvironmentVariableType]
+  inline val PLAINTEXT: "PLAINTEXT" = "PLAINTEXT"
+  inline val PARAMETER_STORE: "PARAMETER_STORE" = "PARAMETER_STORE"
+  inline val SECRETS_MANAGER: "SECRETS_MANAGER" = "SECRETS_MANAGER"
 
-  @inline def values = js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER)
+  inline def values: js.Array[EnvironmentVariableType] = js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER)
 }
 
-@js.native
-sealed trait FileSystemType extends js.Any
+type FileSystemType = "EFS"
 object FileSystemType {
-  val EFS = "EFS".asInstanceOf[FileSystemType]
+  inline val EFS: "EFS" = "EFS"
 
-  @inline def values = js.Array(EFS)
+  inline def values: js.Array[FileSystemType] = js.Array(EFS)
 }
 
-@js.native
-sealed trait ImagePullCredentialsType extends js.Any
+type ImagePullCredentialsType = "CODEBUILD" | "SERVICE_ROLE"
 object ImagePullCredentialsType {
-  val CODEBUILD = "CODEBUILD".asInstanceOf[ImagePullCredentialsType]
-  val SERVICE_ROLE = "SERVICE_ROLE".asInstanceOf[ImagePullCredentialsType]
+  inline val CODEBUILD: "CODEBUILD" = "CODEBUILD"
+  inline val SERVICE_ROLE: "SERVICE_ROLE" = "SERVICE_ROLE"
 
-  @inline def values = js.Array(CODEBUILD, SERVICE_ROLE)
+  inline def values: js.Array[ImagePullCredentialsType] = js.Array(CODEBUILD, SERVICE_ROLE)
 }
 
-@js.native
-sealed trait LanguageType extends js.Any
+type LanguageType = "JAVA" | "PYTHON" | "NODE_JS" | "RUBY" | "GOLANG" | "DOCKER" | "ANDROID" | "DOTNET" | "BASE" | "PHP"
 object LanguageType {
-  val JAVA = "JAVA".asInstanceOf[LanguageType]
-  val PYTHON = "PYTHON".asInstanceOf[LanguageType]
-  val NODE_JS = "NODE_JS".asInstanceOf[LanguageType]
-  val RUBY = "RUBY".asInstanceOf[LanguageType]
-  val GOLANG = "GOLANG".asInstanceOf[LanguageType]
-  val DOCKER = "DOCKER".asInstanceOf[LanguageType]
-  val ANDROID = "ANDROID".asInstanceOf[LanguageType]
-  val DOTNET = "DOTNET".asInstanceOf[LanguageType]
-  val BASE = "BASE".asInstanceOf[LanguageType]
-  val PHP = "PHP".asInstanceOf[LanguageType]
+  inline val JAVA: "JAVA" = "JAVA"
+  inline val PYTHON: "PYTHON" = "PYTHON"
+  inline val NODE_JS: "NODE_JS" = "NODE_JS"
+  inline val RUBY: "RUBY" = "RUBY"
+  inline val GOLANG: "GOLANG" = "GOLANG"
+  inline val DOCKER: "DOCKER" = "DOCKER"
+  inline val ANDROID: "ANDROID" = "ANDROID"
+  inline val DOTNET: "DOTNET" = "DOTNET"
+  inline val BASE: "BASE" = "BASE"
+  inline val PHP: "PHP" = "PHP"
 
-  @inline def values = js.Array(JAVA, PYTHON, NODE_JS, RUBY, GOLANG, DOCKER, ANDROID, DOTNET, BASE, PHP)
+  inline def values: js.Array[LanguageType] = js.Array(JAVA, PYTHON, NODE_JS, RUBY, GOLANG, DOCKER, ANDROID, DOTNET, BASE, PHP)
 }
 
-@js.native
-sealed trait LogsConfigStatusType extends js.Any
+type LogsConfigStatusType = "ENABLED" | "DISABLED"
 object LogsConfigStatusType {
-  val ENABLED = "ENABLED".asInstanceOf[LogsConfigStatusType]
-  val DISABLED = "DISABLED".asInstanceOf[LogsConfigStatusType]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[LogsConfigStatusType] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait PlatformType extends js.Any
+type PlatformType = "DEBIAN" | "AMAZON_LINUX" | "UBUNTU" | "WINDOWS_SERVER"
 object PlatformType {
-  val DEBIAN = "DEBIAN".asInstanceOf[PlatformType]
-  val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[PlatformType]
-  val UBUNTU = "UBUNTU".asInstanceOf[PlatformType]
-  val WINDOWS_SERVER = "WINDOWS_SERVER".asInstanceOf[PlatformType]
+  inline val DEBIAN: "DEBIAN" = "DEBIAN"
+  inline val AMAZON_LINUX: "AMAZON_LINUX" = "AMAZON_LINUX"
+  inline val UBUNTU: "UBUNTU" = "UBUNTU"
+  inline val WINDOWS_SERVER: "WINDOWS_SERVER" = "WINDOWS_SERVER"
 
-  @inline def values = js.Array(DEBIAN, AMAZON_LINUX, UBUNTU, WINDOWS_SERVER)
+  inline def values: js.Array[PlatformType] = js.Array(DEBIAN, AMAZON_LINUX, UBUNTU, WINDOWS_SERVER)
 }
 
-@js.native
-sealed trait ProjectSortByType extends js.Any
+type ProjectSortByType = "NAME" | "CREATED_TIME" | "LAST_MODIFIED_TIME"
 object ProjectSortByType {
-  val NAME = "NAME".asInstanceOf[ProjectSortByType]
-  val CREATED_TIME = "CREATED_TIME".asInstanceOf[ProjectSortByType]
-  val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ProjectSortByType]
+  inline val NAME: "NAME" = "NAME"
+  inline val CREATED_TIME: "CREATED_TIME" = "CREATED_TIME"
+  inline val LAST_MODIFIED_TIME: "LAST_MODIFIED_TIME" = "LAST_MODIFIED_TIME"
 
-  @inline def values = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
+  inline def values: js.Array[ProjectSortByType] = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
 }
 
-@js.native
-sealed trait ReportCodeCoverageSortByType extends js.Any
+type ReportCodeCoverageSortByType = "LINE_COVERAGE_PERCENTAGE" | "FILE_PATH"
 object ReportCodeCoverageSortByType {
-  val LINE_COVERAGE_PERCENTAGE = "LINE_COVERAGE_PERCENTAGE".asInstanceOf[ReportCodeCoverageSortByType]
-  val FILE_PATH = "FILE_PATH".asInstanceOf[ReportCodeCoverageSortByType]
+  inline val LINE_COVERAGE_PERCENTAGE: "LINE_COVERAGE_PERCENTAGE" = "LINE_COVERAGE_PERCENTAGE"
+  inline val FILE_PATH: "FILE_PATH" = "FILE_PATH"
 
-  @inline def values = js.Array(LINE_COVERAGE_PERCENTAGE, FILE_PATH)
+  inline def values: js.Array[ReportCodeCoverageSortByType] = js.Array(LINE_COVERAGE_PERCENTAGE, FILE_PATH)
 }
 
-@js.native
-sealed trait ReportExportConfigType extends js.Any
+type ReportExportConfigType = "S3" | "NO_EXPORT"
 object ReportExportConfigType {
-  val S3 = "S3".asInstanceOf[ReportExportConfigType]
-  val NO_EXPORT = "NO_EXPORT".asInstanceOf[ReportExportConfigType]
+  inline val S3: "S3" = "S3"
+  inline val NO_EXPORT: "NO_EXPORT" = "NO_EXPORT"
 
-  @inline def values = js.Array(S3, NO_EXPORT)
+  inline def values: js.Array[ReportExportConfigType] = js.Array(S3, NO_EXPORT)
 }
 
-@js.native
-sealed trait ReportGroupSortByType extends js.Any
+type ReportGroupSortByType = "NAME" | "CREATED_TIME" | "LAST_MODIFIED_TIME"
 object ReportGroupSortByType {
-  val NAME = "NAME".asInstanceOf[ReportGroupSortByType]
-  val CREATED_TIME = "CREATED_TIME".asInstanceOf[ReportGroupSortByType]
-  val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ReportGroupSortByType]
+  inline val NAME: "NAME" = "NAME"
+  inline val CREATED_TIME: "CREATED_TIME" = "CREATED_TIME"
+  inline val LAST_MODIFIED_TIME: "LAST_MODIFIED_TIME" = "LAST_MODIFIED_TIME"
 
-  @inline def values = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
+  inline def values: js.Array[ReportGroupSortByType] = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
 }
 
-@js.native
-sealed trait ReportGroupStatusType extends js.Any
+type ReportGroupStatusType = "ACTIVE" | "DELETING"
 object ReportGroupStatusType {
-  val ACTIVE = "ACTIVE".asInstanceOf[ReportGroupStatusType]
-  val DELETING = "DELETING".asInstanceOf[ReportGroupStatusType]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(ACTIVE, DELETING)
+  inline def values: js.Array[ReportGroupStatusType] = js.Array(ACTIVE, DELETING)
 }
 
-@js.native
-sealed trait ReportGroupTrendFieldType extends js.Any
+type ReportGroupTrendFieldType = "PASS_RATE" | "DURATION" | "TOTAL" | "LINE_COVERAGE" | "LINES_COVERED" | "LINES_MISSED" | "BRANCH_COVERAGE" | "BRANCHES_COVERED" | "BRANCHES_MISSED"
 object ReportGroupTrendFieldType {
-  val PASS_RATE = "PASS_RATE".asInstanceOf[ReportGroupTrendFieldType]
-  val DURATION = "DURATION".asInstanceOf[ReportGroupTrendFieldType]
-  val TOTAL = "TOTAL".asInstanceOf[ReportGroupTrendFieldType]
-  val LINE_COVERAGE = "LINE_COVERAGE".asInstanceOf[ReportGroupTrendFieldType]
-  val LINES_COVERED = "LINES_COVERED".asInstanceOf[ReportGroupTrendFieldType]
-  val LINES_MISSED = "LINES_MISSED".asInstanceOf[ReportGroupTrendFieldType]
-  val BRANCH_COVERAGE = "BRANCH_COVERAGE".asInstanceOf[ReportGroupTrendFieldType]
-  val BRANCHES_COVERED = "BRANCHES_COVERED".asInstanceOf[ReportGroupTrendFieldType]
-  val BRANCHES_MISSED = "BRANCHES_MISSED".asInstanceOf[ReportGroupTrendFieldType]
+  inline val PASS_RATE: "PASS_RATE" = "PASS_RATE"
+  inline val DURATION: "DURATION" = "DURATION"
+  inline val TOTAL: "TOTAL" = "TOTAL"
+  inline val LINE_COVERAGE: "LINE_COVERAGE" = "LINE_COVERAGE"
+  inline val LINES_COVERED: "LINES_COVERED" = "LINES_COVERED"
+  inline val LINES_MISSED: "LINES_MISSED" = "LINES_MISSED"
+  inline val BRANCH_COVERAGE: "BRANCH_COVERAGE" = "BRANCH_COVERAGE"
+  inline val BRANCHES_COVERED: "BRANCHES_COVERED" = "BRANCHES_COVERED"
+  inline val BRANCHES_MISSED: "BRANCHES_MISSED" = "BRANCHES_MISSED"
 
-  @inline def values = js.Array(PASS_RATE, DURATION, TOTAL, LINE_COVERAGE, LINES_COVERED, LINES_MISSED, BRANCH_COVERAGE, BRANCHES_COVERED, BRANCHES_MISSED)
+  inline def values: js.Array[ReportGroupTrendFieldType] = js.Array(PASS_RATE, DURATION, TOTAL, LINE_COVERAGE, LINES_COVERED, LINES_MISSED, BRANCH_COVERAGE, BRANCHES_COVERED, BRANCHES_MISSED)
 }
 
-@js.native
-sealed trait ReportPackagingType extends js.Any
+type ReportPackagingType = "ZIP" | "NONE"
 object ReportPackagingType {
-  val ZIP = "ZIP".asInstanceOf[ReportPackagingType]
-  val NONE = "NONE".asInstanceOf[ReportPackagingType]
+  inline val ZIP: "ZIP" = "ZIP"
+  inline val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array(ZIP, NONE)
+  inline def values: js.Array[ReportPackagingType] = js.Array(ZIP, NONE)
 }
 
-@js.native
-sealed trait ReportStatusType extends js.Any
+type ReportStatusType = "GENERATING" | "SUCCEEDED" | "FAILED" | "INCOMPLETE" | "DELETING"
 object ReportStatusType {
-  val GENERATING = "GENERATING".asInstanceOf[ReportStatusType]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[ReportStatusType]
-  val FAILED = "FAILED".asInstanceOf[ReportStatusType]
-  val INCOMPLETE = "INCOMPLETE".asInstanceOf[ReportStatusType]
-  val DELETING = "DELETING".asInstanceOf[ReportStatusType]
+  inline val GENERATING: "GENERATING" = "GENERATING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val INCOMPLETE: "INCOMPLETE" = "INCOMPLETE"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(GENERATING, SUCCEEDED, FAILED, INCOMPLETE, DELETING)
+  inline def values: js.Array[ReportStatusType] = js.Array(GENERATING, SUCCEEDED, FAILED, INCOMPLETE, DELETING)
 }
 
-@js.native
-sealed trait ReportType extends js.Any
+type ReportType = "TEST" | "CODE_COVERAGE"
 object ReportType {
-  val TEST = "TEST".asInstanceOf[ReportType]
-  val CODE_COVERAGE = "CODE_COVERAGE".asInstanceOf[ReportType]
+  inline val TEST: "TEST" = "TEST"
+  inline val CODE_COVERAGE: "CODE_COVERAGE" = "CODE_COVERAGE"
 
-  @inline def values = js.Array(TEST, CODE_COVERAGE)
+  inline def values: js.Array[ReportType] = js.Array(TEST, CODE_COVERAGE)
 }
 
-@js.native
-sealed trait RetryBuildBatchType extends js.Any
+type RetryBuildBatchType = "RETRY_ALL_BUILDS" | "RETRY_FAILED_BUILDS"
 object RetryBuildBatchType {
-  val RETRY_ALL_BUILDS = "RETRY_ALL_BUILDS".asInstanceOf[RetryBuildBatchType]
-  val RETRY_FAILED_BUILDS = "RETRY_FAILED_BUILDS".asInstanceOf[RetryBuildBatchType]
+  inline val RETRY_ALL_BUILDS: "RETRY_ALL_BUILDS" = "RETRY_ALL_BUILDS"
+  inline val RETRY_FAILED_BUILDS: "RETRY_FAILED_BUILDS" = "RETRY_FAILED_BUILDS"
 
-  @inline def values = js.Array(RETRY_ALL_BUILDS, RETRY_FAILED_BUILDS)
+  inline def values: js.Array[RetryBuildBatchType] = js.Array(RETRY_ALL_BUILDS, RETRY_FAILED_BUILDS)
 }
 
-@js.native
-sealed trait ServerType extends js.Any
+type ServerType = "GITHUB" | "BITBUCKET" | "GITHUB_ENTERPRISE"
 object ServerType {
-  val GITHUB = "GITHUB".asInstanceOf[ServerType]
-  val BITBUCKET = "BITBUCKET".asInstanceOf[ServerType]
-  val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[ServerType]
+  inline val GITHUB: "GITHUB" = "GITHUB"
+  inline val BITBUCKET: "BITBUCKET" = "BITBUCKET"
+  inline val GITHUB_ENTERPRISE: "GITHUB_ENTERPRISE" = "GITHUB_ENTERPRISE"
 
-  @inline def values = js.Array(GITHUB, BITBUCKET, GITHUB_ENTERPRISE)
+  inline def values: js.Array[ServerType] = js.Array(GITHUB, BITBUCKET, GITHUB_ENTERPRISE)
 }
 
-@js.native
-sealed trait SharedResourceSortByType extends js.Any
+type SharedResourceSortByType = "ARN" | "MODIFIED_TIME"
 object SharedResourceSortByType {
-  val ARN = "ARN".asInstanceOf[SharedResourceSortByType]
-  val MODIFIED_TIME = "MODIFIED_TIME".asInstanceOf[SharedResourceSortByType]
+  inline val ARN: "ARN" = "ARN"
+  inline val MODIFIED_TIME: "MODIFIED_TIME" = "MODIFIED_TIME"
 
-  @inline def values = js.Array(ARN, MODIFIED_TIME)
+  inline def values: js.Array[SharedResourceSortByType] = js.Array(ARN, MODIFIED_TIME)
 }
 
-@js.native
-sealed trait SortOrderType extends js.Any
+type SortOrderType = "ASCENDING" | "DESCENDING"
 object SortOrderType {
-  val ASCENDING = "ASCENDING".asInstanceOf[SortOrderType]
-  val DESCENDING = "DESCENDING".asInstanceOf[SortOrderType]
+  inline val ASCENDING: "ASCENDING" = "ASCENDING"
+  inline val DESCENDING: "DESCENDING" = "DESCENDING"
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  inline def values: js.Array[SortOrderType] = js.Array(ASCENDING, DESCENDING)
 }
 
-@js.native
-sealed trait SourceAuthType extends js.Any
+type SourceAuthType = "OAUTH"
 object SourceAuthType {
-  val OAUTH = "OAUTH".asInstanceOf[SourceAuthType]
+  inline val OAUTH: "OAUTH" = "OAUTH"
 
-  @inline def values = js.Array(OAUTH)
+  inline def values: js.Array[SourceAuthType] = js.Array(OAUTH)
 }
 
-@js.native
-sealed trait SourceType extends js.Any
+type SourceType = "CODECOMMIT" | "CODEPIPELINE" | "GITHUB" | "S3" | "BITBUCKET" | "GITHUB_ENTERPRISE" | "NO_SOURCE"
 object SourceType {
-  val CODECOMMIT = "CODECOMMIT".asInstanceOf[SourceType]
-  val CODEPIPELINE = "CODEPIPELINE".asInstanceOf[SourceType]
-  val GITHUB = "GITHUB".asInstanceOf[SourceType]
-  val S3 = "S3".asInstanceOf[SourceType]
-  val BITBUCKET = "BITBUCKET".asInstanceOf[SourceType]
-  val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[SourceType]
-  val NO_SOURCE = "NO_SOURCE".asInstanceOf[SourceType]
+  inline val CODECOMMIT: "CODECOMMIT" = "CODECOMMIT"
+  inline val CODEPIPELINE: "CODEPIPELINE" = "CODEPIPELINE"
+  inline val GITHUB: "GITHUB" = "GITHUB"
+  inline val S3: "S3" = "S3"
+  inline val BITBUCKET: "BITBUCKET" = "BITBUCKET"
+  inline val GITHUB_ENTERPRISE: "GITHUB_ENTERPRISE" = "GITHUB_ENTERPRISE"
+  inline val NO_SOURCE: "NO_SOURCE" = "NO_SOURCE"
 
-  @inline def values = js.Array(CODECOMMIT, CODEPIPELINE, GITHUB, S3, BITBUCKET, GITHUB_ENTERPRISE, NO_SOURCE)
+  inline def values: js.Array[SourceType] = js.Array(CODECOMMIT, CODEPIPELINE, GITHUB, S3, BITBUCKET, GITHUB_ENTERPRISE, NO_SOURCE)
 }
 
-@js.native
-sealed trait StatusType extends js.Any
+type StatusType = "SUCCEEDED" | "FAILED" | "FAULT" | "TIMED_OUT" | "IN_PROGRESS" | "STOPPED"
 object StatusType {
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[StatusType]
-  val FAILED = "FAILED".asInstanceOf[StatusType]
-  val FAULT = "FAULT".asInstanceOf[StatusType]
-  val TIMED_OUT = "TIMED_OUT".asInstanceOf[StatusType]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StatusType]
-  val STOPPED = "STOPPED".asInstanceOf[StatusType]
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val FAULT: "FAULT" = "FAULT"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array(SUCCEEDED, FAILED, FAULT, TIMED_OUT, IN_PROGRESS, STOPPED)
+  inline def values: js.Array[StatusType] = js.Array(SUCCEEDED, FAILED, FAULT, TIMED_OUT, IN_PROGRESS, STOPPED)
 }
 
-@js.native
-sealed trait WebhookBuildType extends js.Any
+type WebhookBuildType = "BUILD" | "BUILD_BATCH"
 object WebhookBuildType {
-  val BUILD = "BUILD".asInstanceOf[WebhookBuildType]
-  val BUILD_BATCH = "BUILD_BATCH".asInstanceOf[WebhookBuildType]
+  inline val BUILD: "BUILD" = "BUILD"
+  inline val BUILD_BATCH: "BUILD_BATCH" = "BUILD_BATCH"
 
-  @inline def values = js.Array(BUILD, BUILD_BATCH)
+  inline def values: js.Array[WebhookBuildType] = js.Array(BUILD, BUILD_BATCH)
 }
 
-@js.native
-sealed trait WebhookFilterType extends js.Any
+type WebhookFilterType = "EVENT" | "BASE_REF" | "HEAD_REF" | "ACTOR_ACCOUNT_ID" | "FILE_PATH" | "COMMIT_MESSAGE"
 object WebhookFilterType {
-  val EVENT = "EVENT".asInstanceOf[WebhookFilterType]
-  val BASE_REF = "BASE_REF".asInstanceOf[WebhookFilterType]
-  val HEAD_REF = "HEAD_REF".asInstanceOf[WebhookFilterType]
-  val ACTOR_ACCOUNT_ID = "ACTOR_ACCOUNT_ID".asInstanceOf[WebhookFilterType]
-  val FILE_PATH = "FILE_PATH".asInstanceOf[WebhookFilterType]
-  val COMMIT_MESSAGE = "COMMIT_MESSAGE".asInstanceOf[WebhookFilterType]
+  inline val EVENT: "EVENT" = "EVENT"
+  inline val BASE_REF: "BASE_REF" = "BASE_REF"
+  inline val HEAD_REF: "HEAD_REF" = "HEAD_REF"
+  inline val ACTOR_ACCOUNT_ID: "ACTOR_ACCOUNT_ID" = "ACTOR_ACCOUNT_ID"
+  inline val FILE_PATH: "FILE_PATH" = "FILE_PATH"
+  inline val COMMIT_MESSAGE: "COMMIT_MESSAGE" = "COMMIT_MESSAGE"
 
-  @inline def values = js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH, COMMIT_MESSAGE)
+  inline def values: js.Array[WebhookFilterType] = js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH, COMMIT_MESSAGE)
 }

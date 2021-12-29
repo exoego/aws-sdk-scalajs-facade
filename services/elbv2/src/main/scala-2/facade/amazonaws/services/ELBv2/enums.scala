@@ -113,20 +113,7 @@ object TargetHealthReasonEnum {
   val `Target.HealthCheckDisabled` = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
   val `Elb.InternalError` = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
 
-  @inline def values = js.Array(
-    `Elb.RegistrationInProgress`,
-    `Elb.InitialHealthChecking`,
-    `Target.ResponseCodeMismatch`,
-    `Target.Timeout`,
-    `Target.FailedHealthChecks`,
-    `Target.NotRegistered`,
-    `Target.NotInUse`,
-    `Target.DeregistrationInProgress`,
-    `Target.InvalidState`,
-    `Target.IpUnusable`,
-    `Target.HealthCheckDisabled`,
-    `Elb.InternalError`
-  )
+  @inline def values = js.Array(`Elb.RegistrationInProgress`, `Elb.InitialHealthChecking`, `Target.ResponseCodeMismatch`, `Target.Timeout`, `Target.FailedHealthChecks`, `Target.NotRegistered`, `Target.NotInUse`, `Target.DeregistrationInProgress`, `Target.InvalidState`, `Target.IpUnusable`, `Target.HealthCheckDisabled`, `Elb.InternalError`)
 }
 
 @js.native
@@ -151,3 +138,4 @@ object TargetTypeEnum {
 
   @inline def values = js.Array(instance, ip, lambda)
 }
+

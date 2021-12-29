@@ -85,3 +85,4 @@ object JsonFileCompression {
 
   @inline def values = js.Array(NONE, GZIP)
 }
+

@@ -31,3 +31,4 @@ object TargetIdType {
 
   @inline def values = js.Array(ACCOUNT, OU, ROOT)
 }
+

@@ -1,33 +1,29 @@
 package facade.amazonaws.services.resourcegroupstaggingapi
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ErrorCode extends js.Any
+type ErrorCode = "InternalServiceException" | "InvalidParameterException"
 object ErrorCode {
-  val InternalServiceException = "InternalServiceException".asInstanceOf[ErrorCode]
-  val InvalidParameterException = "InvalidParameterException".asInstanceOf[ErrorCode]
+  inline val InternalServiceException: "InternalServiceException" = "InternalServiceException"
+  inline val InvalidParameterException: "InvalidParameterException" = "InvalidParameterException"
 
-  @inline def values = js.Array(InternalServiceException, InvalidParameterException)
+  inline def values: js.Array[ErrorCode] = js.Array(InternalServiceException, InvalidParameterException)
 }
 
-@js.native
-sealed trait GroupByAttribute extends js.Any
+type GroupByAttribute = "TARGET_ID" | "REGION" | "RESOURCE_TYPE"
 object GroupByAttribute {
-  val TARGET_ID = "TARGET_ID".asInstanceOf[GroupByAttribute]
-  val REGION = "REGION".asInstanceOf[GroupByAttribute]
-  val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[GroupByAttribute]
+  inline val TARGET_ID: "TARGET_ID" = "TARGET_ID"
+  inline val REGION: "REGION" = "REGION"
+  inline val RESOURCE_TYPE: "RESOURCE_TYPE" = "RESOURCE_TYPE"
 
-  @inline def values = js.Array(TARGET_ID, REGION, RESOURCE_TYPE)
+  inline def values: js.Array[GroupByAttribute] = js.Array(TARGET_ID, REGION, RESOURCE_TYPE)
 }
 
-@js.native
-sealed trait TargetIdType extends js.Any
+type TargetIdType = "ACCOUNT" | "OU" | "ROOT"
 object TargetIdType {
-  val ACCOUNT = "ACCOUNT".asInstanceOf[TargetIdType]
-  val OU = "OU".asInstanceOf[TargetIdType]
-  val ROOT = "ROOT".asInstanceOf[TargetIdType]
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val OU: "OU" = "OU"
+  inline val ROOT: "ROOT" = "ROOT"
 
-  @inline def values = js.Array(ACCOUNT, OU, ROOT)
+  inline def values: js.Array[TargetIdType] = js.Array(ACCOUNT, OU, ROOT)
 }

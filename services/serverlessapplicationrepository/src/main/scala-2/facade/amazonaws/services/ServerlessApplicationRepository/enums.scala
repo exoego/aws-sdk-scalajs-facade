@@ -25,3 +25,4 @@ object Status {
 
   @inline def values = js.Array(PREPARING, ACTIVE, EXPIRED)
 }
+

@@ -105,3 +105,4 @@ object Polarization {
 
   @inline def values = js.Array(LEFT_HAND, NONE, RIGHT_HAND)
 }
+

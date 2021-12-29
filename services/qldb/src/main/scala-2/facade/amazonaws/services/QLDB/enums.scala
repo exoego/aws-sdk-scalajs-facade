@@ -62,3 +62,4 @@ object StreamStatus {
 
   @inline def values = js.Array(ACTIVE, COMPLETED, CANCELED, FAILED, IMPAIRED)
 }
+

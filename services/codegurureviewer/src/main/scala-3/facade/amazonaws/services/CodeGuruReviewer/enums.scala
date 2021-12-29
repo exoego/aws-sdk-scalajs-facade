@@ -1,56 +1,50 @@
 package facade.amazonaws.services.codegurureviewer
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait JobState extends js.Any
+type JobState = "Completed" | "Pending" | "Failed" | "Deleting"
 object JobState {
-  val Completed = "Completed".asInstanceOf[JobState]
-  val Pending = "Pending".asInstanceOf[JobState]
-  val Failed = "Failed".asInstanceOf[JobState]
-  val Deleting = "Deleting".asInstanceOf[JobState]
+  inline val Completed: "Completed" = "Completed"
+  inline val Pending: "Pending" = "Pending"
+  inline val Failed: "Failed" = "Failed"
+  inline val Deleting: "Deleting" = "Deleting"
 
-  @inline def values = js.Array(Completed, Pending, Failed, Deleting)
+  inline def values: js.Array[JobState] = js.Array(Completed, Pending, Failed, Deleting)
 }
 
-@js.native
-sealed trait ProviderType extends js.Any
+type ProviderType = "CodeCommit" | "GitHub" | "Bitbucket" | "GitHubEnterpriseServer"
 object ProviderType {
-  val CodeCommit = "CodeCommit".asInstanceOf[ProviderType]
-  val GitHub = "GitHub".asInstanceOf[ProviderType]
-  val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
-  val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
+  inline val CodeCommit: "CodeCommit" = "CodeCommit"
+  inline val GitHub: "GitHub" = "GitHub"
+  inline val Bitbucket: "Bitbucket" = "Bitbucket"
+  inline val GitHubEnterpriseServer: "GitHubEnterpriseServer" = "GitHubEnterpriseServer"
 
-  @inline def values = js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer)
+  inline def values: js.Array[ProviderType] = js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer)
 }
 
-@js.native
-sealed trait Reaction extends js.Any
+type Reaction = "ThumbsUp" | "ThumbsDown"
 object Reaction {
-  val ThumbsUp = "ThumbsUp".asInstanceOf[Reaction]
-  val ThumbsDown = "ThumbsDown".asInstanceOf[Reaction]
+  inline val ThumbsUp: "ThumbsUp" = "ThumbsUp"
+  inline val ThumbsDown: "ThumbsDown" = "ThumbsDown"
 
-  @inline def values = js.Array(ThumbsUp, ThumbsDown)
+  inline def values: js.Array[Reaction] = js.Array(ThumbsUp, ThumbsDown)
 }
 
-@js.native
-sealed trait RepositoryAssociationState extends js.Any
+type RepositoryAssociationState = "Associated" | "Associating" | "Failed" | "Disassociating" | "Disassociated"
 object RepositoryAssociationState {
-  val Associated = "Associated".asInstanceOf[RepositoryAssociationState]
-  val Associating = "Associating".asInstanceOf[RepositoryAssociationState]
-  val Failed = "Failed".asInstanceOf[RepositoryAssociationState]
-  val Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
-  val Disassociated = "Disassociated".asInstanceOf[RepositoryAssociationState]
+  inline val Associated: "Associated" = "Associated"
+  inline val Associating: "Associating" = "Associating"
+  inline val Failed: "Failed" = "Failed"
+  inline val Disassociating: "Disassociating" = "Disassociating"
+  inline val Disassociated: "Disassociated" = "Disassociated"
 
-  @inline def values = js.Array(Associated, Associating, Failed, Disassociating, Disassociated)
+  inline def values: js.Array[RepositoryAssociationState] = js.Array(Associated, Associating, Failed, Disassociating, Disassociated)
 }
 
-@js.native
-sealed trait Type extends js.Any
+type Type = "PullRequest" | "RepositoryAnalysis"
 object Type {
-  val PullRequest = "PullRequest".asInstanceOf[Type]
-  val RepositoryAnalysis = "RepositoryAnalysis".asInstanceOf[Type]
+  inline val PullRequest: "PullRequest" = "PullRequest"
+  inline val RepositoryAnalysis: "RepositoryAnalysis" = "RepositoryAnalysis"
 
-  @inline def values = js.Array(PullRequest, RepositoryAnalysis)
+  inline def values: js.Array[Type] = js.Array(PullRequest, RepositoryAnalysis)
 }

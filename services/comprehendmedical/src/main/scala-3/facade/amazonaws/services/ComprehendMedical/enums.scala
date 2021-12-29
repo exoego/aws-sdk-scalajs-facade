@@ -1,58 +1,55 @@
 package facade.amazonaws.services.comprehendmedical
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AttributeName extends js.Any
+type AttributeName = "SIGN" | "SYMPTOM" | "DIAGNOSIS" | "NEGATION"
 object AttributeName {
-  val SIGN = "SIGN".asInstanceOf[AttributeName]
-  val SYMPTOM = "SYMPTOM".asInstanceOf[AttributeName]
-  val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[AttributeName]
-  val NEGATION = "NEGATION".asInstanceOf[AttributeName]
+  inline val SIGN: "SIGN" = "SIGN"
+  inline val SYMPTOM: "SYMPTOM" = "SYMPTOM"
+  inline val DIAGNOSIS: "DIAGNOSIS" = "DIAGNOSIS"
+  inline val NEGATION: "NEGATION" = "NEGATION"
 
-  @inline def values = js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION)
+  inline def values: js.Array[AttributeName] = js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION)
 }
 
-@js.native
-sealed trait EntitySubType extends js.Any
+type EntitySubType = "NAME" | "DOSAGE" | "ROUTE_OR_MODE" | "FORM" | "FREQUENCY" | "DURATION" | "GENERIC_NAME" | "BRAND_NAME" | "STRENGTH" | "RATE" | "ACUITY" | "TEST_NAME" | "TEST_VALUE" | "TEST_UNITS" | "PROCEDURE_NAME" | "TREATMENT_NAME" | "DATE" | "AGE" | "CONTACT_POINT" | "EMAIL" | "IDENTIFIER" | "URL" | "ADDRESS" | "PROFESSION" | "SYSTEM_ORGAN_SITE" | "DIRECTION" | "QUALITY" | "QUANTITY" | "TIME_EXPRESSION" | "TIME_TO_MEDICATION_NAME" | "TIME_TO_DX_NAME" | "TIME_TO_TEST_NAME" | "TIME_TO_PROCEDURE_NAME" | "TIME_TO_TREATMENT_NAME"
 object EntitySubType {
-  val NAME = "NAME".asInstanceOf[EntitySubType]
-  val DOSAGE = "DOSAGE".asInstanceOf[EntitySubType]
-  val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[EntitySubType]
-  val FORM = "FORM".asInstanceOf[EntitySubType]
-  val FREQUENCY = "FREQUENCY".asInstanceOf[EntitySubType]
-  val DURATION = "DURATION".asInstanceOf[EntitySubType]
-  val GENERIC_NAME = "GENERIC_NAME".asInstanceOf[EntitySubType]
-  val BRAND_NAME = "BRAND_NAME".asInstanceOf[EntitySubType]
-  val STRENGTH = "STRENGTH".asInstanceOf[EntitySubType]
-  val RATE = "RATE".asInstanceOf[EntitySubType]
-  val ACUITY = "ACUITY".asInstanceOf[EntitySubType]
-  val TEST_NAME = "TEST_NAME".asInstanceOf[EntitySubType]
-  val TEST_VALUE = "TEST_VALUE".asInstanceOf[EntitySubType]
-  val TEST_UNITS = "TEST_UNITS".asInstanceOf[EntitySubType]
-  val PROCEDURE_NAME = "PROCEDURE_NAME".asInstanceOf[EntitySubType]
-  val TREATMENT_NAME = "TREATMENT_NAME".asInstanceOf[EntitySubType]
-  val DATE = "DATE".asInstanceOf[EntitySubType]
-  val AGE = "AGE".asInstanceOf[EntitySubType]
-  val CONTACT_POINT = "CONTACT_POINT".asInstanceOf[EntitySubType]
-  val EMAIL = "EMAIL".asInstanceOf[EntitySubType]
-  val IDENTIFIER = "IDENTIFIER".asInstanceOf[EntitySubType]
-  val URL = "URL".asInstanceOf[EntitySubType]
-  val ADDRESS = "ADDRESS".asInstanceOf[EntitySubType]
-  val PROFESSION = "PROFESSION".asInstanceOf[EntitySubType]
-  val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[EntitySubType]
-  val DIRECTION = "DIRECTION".asInstanceOf[EntitySubType]
-  val QUALITY = "QUALITY".asInstanceOf[EntitySubType]
-  val QUANTITY = "QUANTITY".asInstanceOf[EntitySubType]
-  val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntitySubType]
-  val TIME_TO_MEDICATION_NAME = "TIME_TO_MEDICATION_NAME".asInstanceOf[EntitySubType]
-  val TIME_TO_DX_NAME = "TIME_TO_DX_NAME".asInstanceOf[EntitySubType]
-  val TIME_TO_TEST_NAME = "TIME_TO_TEST_NAME".asInstanceOf[EntitySubType]
-  val TIME_TO_PROCEDURE_NAME = "TIME_TO_PROCEDURE_NAME".asInstanceOf[EntitySubType]
-  val TIME_TO_TREATMENT_NAME = "TIME_TO_TREATMENT_NAME".asInstanceOf[EntitySubType]
+  inline val NAME: "NAME" = "NAME"
+  inline val DOSAGE: "DOSAGE" = "DOSAGE"
+  inline val ROUTE_OR_MODE: "ROUTE_OR_MODE" = "ROUTE_OR_MODE"
+  inline val FORM: "FORM" = "FORM"
+  inline val FREQUENCY: "FREQUENCY" = "FREQUENCY"
+  inline val DURATION: "DURATION" = "DURATION"
+  inline val GENERIC_NAME: "GENERIC_NAME" = "GENERIC_NAME"
+  inline val BRAND_NAME: "BRAND_NAME" = "BRAND_NAME"
+  inline val STRENGTH: "STRENGTH" = "STRENGTH"
+  inline val RATE: "RATE" = "RATE"
+  inline val ACUITY: "ACUITY" = "ACUITY"
+  inline val TEST_NAME: "TEST_NAME" = "TEST_NAME"
+  inline val TEST_VALUE: "TEST_VALUE" = "TEST_VALUE"
+  inline val TEST_UNITS: "TEST_UNITS" = "TEST_UNITS"
+  inline val PROCEDURE_NAME: "PROCEDURE_NAME" = "PROCEDURE_NAME"
+  inline val TREATMENT_NAME: "TREATMENT_NAME" = "TREATMENT_NAME"
+  inline val DATE: "DATE" = "DATE"
+  inline val AGE: "AGE" = "AGE"
+  inline val CONTACT_POINT: "CONTACT_POINT" = "CONTACT_POINT"
+  inline val EMAIL: "EMAIL" = "EMAIL"
+  inline val IDENTIFIER: "IDENTIFIER" = "IDENTIFIER"
+  inline val URL: "URL" = "URL"
+  inline val ADDRESS: "ADDRESS" = "ADDRESS"
+  inline val PROFESSION: "PROFESSION" = "PROFESSION"
+  inline val SYSTEM_ORGAN_SITE: "SYSTEM_ORGAN_SITE" = "SYSTEM_ORGAN_SITE"
+  inline val DIRECTION: "DIRECTION" = "DIRECTION"
+  inline val QUALITY: "QUALITY" = "QUALITY"
+  inline val QUANTITY: "QUANTITY" = "QUANTITY"
+  inline val TIME_EXPRESSION: "TIME_EXPRESSION" = "TIME_EXPRESSION"
+  inline val TIME_TO_MEDICATION_NAME: "TIME_TO_MEDICATION_NAME" = "TIME_TO_MEDICATION_NAME"
+  inline val TIME_TO_DX_NAME: "TIME_TO_DX_NAME" = "TIME_TO_DX_NAME"
+  inline val TIME_TO_TEST_NAME: "TIME_TO_TEST_NAME" = "TIME_TO_TEST_NAME"
+  inline val TIME_TO_PROCEDURE_NAME: "TIME_TO_PROCEDURE_NAME" = "TIME_TO_PROCEDURE_NAME"
+  inline val TIME_TO_TREATMENT_NAME: "TIME_TO_TREATMENT_NAME" = "TIME_TO_TREATMENT_NAME"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[EntitySubType] = js.Array(
     NAME,
     DOSAGE,
     ROUTE_OR_MODE,
@@ -90,115 +87,106 @@ object EntitySubType {
   )
 }
 
-@js.native
-sealed trait EntityType extends js.Any
+type EntityType = "MEDICATION" | "MEDICAL_CONDITION" | "PROTECTED_HEALTH_INFORMATION" | "TEST_TREATMENT_PROCEDURE" | "ANATOMY" | "TIME_EXPRESSION"
 object EntityType {
-  val MEDICATION = "MEDICATION".asInstanceOf[EntityType]
-  val MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[EntityType]
-  val PROTECTED_HEALTH_INFORMATION = "PROTECTED_HEALTH_INFORMATION".asInstanceOf[EntityType]
-  val TEST_TREATMENT_PROCEDURE = "TEST_TREATMENT_PROCEDURE".asInstanceOf[EntityType]
-  val ANATOMY = "ANATOMY".asInstanceOf[EntityType]
-  val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntityType]
+  inline val MEDICATION: "MEDICATION" = "MEDICATION"
+  inline val MEDICAL_CONDITION: "MEDICAL_CONDITION" = "MEDICAL_CONDITION"
+  inline val PROTECTED_HEALTH_INFORMATION: "PROTECTED_HEALTH_INFORMATION" = "PROTECTED_HEALTH_INFORMATION"
+  inline val TEST_TREATMENT_PROCEDURE: "TEST_TREATMENT_PROCEDURE" = "TEST_TREATMENT_PROCEDURE"
+  inline val ANATOMY: "ANATOMY" = "ANATOMY"
+  inline val TIME_EXPRESSION: "TIME_EXPRESSION" = "TIME_EXPRESSION"
 
-  @inline def values = js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION)
+  inline def values: js.Array[EntityType] = js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION)
 }
 
-@js.native
-sealed trait ICD10CMAttributeType extends js.Any
+type ICD10CMAttributeType = "ACUITY" | "DIRECTION" | "SYSTEM_ORGAN_SITE" | "QUALITY" | "QUANTITY" | "TIME_TO_DX_NAME" | "TIME_EXPRESSION"
 object ICD10CMAttributeType {
-  val ACUITY = "ACUITY".asInstanceOf[ICD10CMAttributeType]
-  val DIRECTION = "DIRECTION".asInstanceOf[ICD10CMAttributeType]
-  val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[ICD10CMAttributeType]
-  val QUALITY = "QUALITY".asInstanceOf[ICD10CMAttributeType]
-  val QUANTITY = "QUANTITY".asInstanceOf[ICD10CMAttributeType]
-  val TIME_TO_DX_NAME = "TIME_TO_DX_NAME".asInstanceOf[ICD10CMAttributeType]
-  val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[ICD10CMAttributeType]
+  inline val ACUITY: "ACUITY" = "ACUITY"
+  inline val DIRECTION: "DIRECTION" = "DIRECTION"
+  inline val SYSTEM_ORGAN_SITE: "SYSTEM_ORGAN_SITE" = "SYSTEM_ORGAN_SITE"
+  inline val QUALITY: "QUALITY" = "QUALITY"
+  inline val QUANTITY: "QUANTITY" = "QUANTITY"
+  inline val TIME_TO_DX_NAME: "TIME_TO_DX_NAME" = "TIME_TO_DX_NAME"
+  inline val TIME_EXPRESSION: "TIME_EXPRESSION" = "TIME_EXPRESSION"
 
-  @inline def values = js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY, TIME_TO_DX_NAME, TIME_EXPRESSION)
+  inline def values: js.Array[ICD10CMAttributeType] = js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY, TIME_TO_DX_NAME, TIME_EXPRESSION)
 }
 
-@js.native
-sealed trait ICD10CMEntityCategory extends js.Any
+type ICD10CMEntityCategory = "MEDICAL_CONDITION"
 object ICD10CMEntityCategory {
-  val MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[ICD10CMEntityCategory]
+  inline val MEDICAL_CONDITION: "MEDICAL_CONDITION" = "MEDICAL_CONDITION"
 
-  @inline def values = js.Array(MEDICAL_CONDITION)
+  inline def values: js.Array[ICD10CMEntityCategory] = js.Array(MEDICAL_CONDITION)
 }
 
-@js.native
-sealed trait ICD10CMEntityType extends js.Any
+type ICD10CMEntityType = "DX_NAME" | "TIME_EXPRESSION"
 object ICD10CMEntityType {
-  val DX_NAME = "DX_NAME".asInstanceOf[ICD10CMEntityType]
-  val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[ICD10CMEntityType]
+  inline val DX_NAME: "DX_NAME" = "DX_NAME"
+  inline val TIME_EXPRESSION: "TIME_EXPRESSION" = "TIME_EXPRESSION"
 
-  @inline def values = js.Array(DX_NAME, TIME_EXPRESSION)
+  inline def values: js.Array[ICD10CMEntityType] = js.Array(DX_NAME, TIME_EXPRESSION)
 }
 
-@js.native
-sealed trait ICD10CMRelationshipType extends js.Any
+type ICD10CMRelationshipType = "OVERLAP" | "SYSTEM_ORGAN_SITE"
 object ICD10CMRelationshipType {
-  val OVERLAP = "OVERLAP".asInstanceOf[ICD10CMRelationshipType]
-  val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[ICD10CMRelationshipType]
+  inline val OVERLAP: "OVERLAP" = "OVERLAP"
+  inline val SYSTEM_ORGAN_SITE: "SYSTEM_ORGAN_SITE" = "SYSTEM_ORGAN_SITE"
 
-  @inline def values = js.Array(OVERLAP, SYSTEM_ORGAN_SITE)
+  inline def values: js.Array[ICD10CMRelationshipType] = js.Array(OVERLAP, SYSTEM_ORGAN_SITE)
 }
 
-@js.native
-sealed trait ICD10CMTraitName extends js.Any
+type ICD10CMTraitName = "NEGATION" | "DIAGNOSIS" | "SIGN" | "SYMPTOM"
 object ICD10CMTraitName {
-  val NEGATION = "NEGATION".asInstanceOf[ICD10CMTraitName]
-  val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[ICD10CMTraitName]
-  val SIGN = "SIGN".asInstanceOf[ICD10CMTraitName]
-  val SYMPTOM = "SYMPTOM".asInstanceOf[ICD10CMTraitName]
+  inline val NEGATION: "NEGATION" = "NEGATION"
+  inline val DIAGNOSIS: "DIAGNOSIS" = "DIAGNOSIS"
+  inline val SIGN: "SIGN" = "SIGN"
+  inline val SYMPTOM: "SYMPTOM" = "SYMPTOM"
 
-  @inline def values = js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM)
+  inline def values: js.Array[ICD10CMTraitName] = js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM)
 }
 
-@js.native
-sealed trait JobStatus extends js.Any
+type JobStatus = "SUBMITTED" | "IN_PROGRESS" | "COMPLETED" | "PARTIAL_SUCCESS" | "FAILED" | "STOP_REQUESTED" | "STOPPED"
 object JobStatus {
-  val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
-  val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[JobStatus]
-  val FAILED = "FAILED".asInstanceOf[JobStatus]
-  val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
-  val STOPPED = "STOPPED".asInstanceOf[JobStatus]
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val PARTIAL_SUCCESS: "PARTIAL_SUCCESS" = "PARTIAL_SUCCESS"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOP_REQUESTED: "STOP_REQUESTED" = "STOP_REQUESTED"
+  inline val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED)
+  inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED)
 }
 
-@js.native
-sealed trait LanguageCode extends js.Any
+type LanguageCode = "en"
 object LanguageCode {
-  val en = "en".asInstanceOf[LanguageCode]
+  inline val en: "en" = "en"
 
-  @inline def values = js.Array(en)
+  inline def values: js.Array[LanguageCode] = js.Array(en)
 }
 
-@js.native
-sealed trait RelationshipType extends js.Any
+type RelationshipType = "EVERY" | "WITH_DOSAGE" | "ADMINISTERED_VIA" | "FOR" | "NEGATIVE" | "OVERLAP" | "DOSAGE" | "ROUTE_OR_MODE" | "FORM" | "FREQUENCY" | "DURATION" | "STRENGTH" | "RATE" | "ACUITY" | "TEST_VALUE" | "TEST_UNITS" | "DIRECTION" | "SYSTEM_ORGAN_SITE"
 object RelationshipType {
-  val EVERY = "EVERY".asInstanceOf[RelationshipType]
-  val WITH_DOSAGE = "WITH_DOSAGE".asInstanceOf[RelationshipType]
-  val ADMINISTERED_VIA = "ADMINISTERED_VIA".asInstanceOf[RelationshipType]
-  val FOR = "FOR".asInstanceOf[RelationshipType]
-  val NEGATIVE = "NEGATIVE".asInstanceOf[RelationshipType]
-  val OVERLAP = "OVERLAP".asInstanceOf[RelationshipType]
-  val DOSAGE = "DOSAGE".asInstanceOf[RelationshipType]
-  val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[RelationshipType]
-  val FORM = "FORM".asInstanceOf[RelationshipType]
-  val FREQUENCY = "FREQUENCY".asInstanceOf[RelationshipType]
-  val DURATION = "DURATION".asInstanceOf[RelationshipType]
-  val STRENGTH = "STRENGTH".asInstanceOf[RelationshipType]
-  val RATE = "RATE".asInstanceOf[RelationshipType]
-  val ACUITY = "ACUITY".asInstanceOf[RelationshipType]
-  val TEST_VALUE = "TEST_VALUE".asInstanceOf[RelationshipType]
-  val TEST_UNITS = "TEST_UNITS".asInstanceOf[RelationshipType]
-  val DIRECTION = "DIRECTION".asInstanceOf[RelationshipType]
-  val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
+  inline val EVERY: "EVERY" = "EVERY"
+  inline val WITH_DOSAGE: "WITH_DOSAGE" = "WITH_DOSAGE"
+  inline val ADMINISTERED_VIA: "ADMINISTERED_VIA" = "ADMINISTERED_VIA"
+  inline val FOR: "FOR" = "FOR"
+  inline val NEGATIVE: "NEGATIVE" = "NEGATIVE"
+  inline val OVERLAP: "OVERLAP" = "OVERLAP"
+  inline val DOSAGE: "DOSAGE" = "DOSAGE"
+  inline val ROUTE_OR_MODE: "ROUTE_OR_MODE" = "ROUTE_OR_MODE"
+  inline val FORM: "FORM" = "FORM"
+  inline val FREQUENCY: "FREQUENCY" = "FREQUENCY"
+  inline val DURATION: "DURATION" = "DURATION"
+  inline val STRENGTH: "STRENGTH" = "STRENGTH"
+  inline val RATE: "RATE" = "RATE"
+  inline val ACUITY: "ACUITY" = "ACUITY"
+  inline val TEST_VALUE: "TEST_VALUE" = "TEST_VALUE"
+  inline val TEST_UNITS: "TEST_UNITS" = "TEST_UNITS"
+  inline val DIRECTION: "DIRECTION" = "DIRECTION"
+  inline val SYSTEM_ORGAN_SITE: "SYSTEM_ORGAN_SITE" = "SYSTEM_ORGAN_SITE"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[RelationshipType] = js.Array(
     EVERY,
     WITH_DOSAGE,
     ADMINISTERED_VIA,
@@ -220,41 +208,37 @@ object RelationshipType {
   )
 }
 
-@js.native
-sealed trait RxNormAttributeType extends js.Any
+type RxNormAttributeType = "DOSAGE" | "DURATION" | "FORM" | "FREQUENCY" | "RATE" | "ROUTE_OR_MODE" | "STRENGTH"
 object RxNormAttributeType {
-  val DOSAGE = "DOSAGE".asInstanceOf[RxNormAttributeType]
-  val DURATION = "DURATION".asInstanceOf[RxNormAttributeType]
-  val FORM = "FORM".asInstanceOf[RxNormAttributeType]
-  val FREQUENCY = "FREQUENCY".asInstanceOf[RxNormAttributeType]
-  val RATE = "RATE".asInstanceOf[RxNormAttributeType]
-  val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[RxNormAttributeType]
-  val STRENGTH = "STRENGTH".asInstanceOf[RxNormAttributeType]
+  inline val DOSAGE: "DOSAGE" = "DOSAGE"
+  inline val DURATION: "DURATION" = "DURATION"
+  inline val FORM: "FORM" = "FORM"
+  inline val FREQUENCY: "FREQUENCY" = "FREQUENCY"
+  inline val RATE: "RATE" = "RATE"
+  inline val ROUTE_OR_MODE: "ROUTE_OR_MODE" = "ROUTE_OR_MODE"
+  inline val STRENGTH: "STRENGTH" = "STRENGTH"
 
-  @inline def values = js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH)
+  inline def values: js.Array[RxNormAttributeType] = js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH)
 }
 
-@js.native
-sealed trait RxNormEntityCategory extends js.Any
+type RxNormEntityCategory = "MEDICATION"
 object RxNormEntityCategory {
-  val MEDICATION = "MEDICATION".asInstanceOf[RxNormEntityCategory]
+  inline val MEDICATION: "MEDICATION" = "MEDICATION"
 
-  @inline def values = js.Array(MEDICATION)
+  inline def values: js.Array[RxNormEntityCategory] = js.Array(MEDICATION)
 }
 
-@js.native
-sealed trait RxNormEntityType extends js.Any
+type RxNormEntityType = "BRAND_NAME" | "GENERIC_NAME"
 object RxNormEntityType {
-  val BRAND_NAME = "BRAND_NAME".asInstanceOf[RxNormEntityType]
-  val GENERIC_NAME = "GENERIC_NAME".asInstanceOf[RxNormEntityType]
+  inline val BRAND_NAME: "BRAND_NAME" = "BRAND_NAME"
+  inline val GENERIC_NAME: "GENERIC_NAME" = "GENERIC_NAME"
 
-  @inline def values = js.Array(BRAND_NAME, GENERIC_NAME)
+  inline def values: js.Array[RxNormEntityType] = js.Array(BRAND_NAME, GENERIC_NAME)
 }
 
-@js.native
-sealed trait RxNormTraitName extends js.Any
+type RxNormTraitName = "NEGATION"
 object RxNormTraitName {
-  val NEGATION = "NEGATION".asInstanceOf[RxNormTraitName]
+  inline val NEGATION: "NEGATION" = "NEGATION"
 
-  @inline def values = js.Array(NEGATION)
+  inline def values: js.Array[RxNormTraitName] = js.Array(NEGATION)
 }

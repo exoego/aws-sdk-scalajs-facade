@@ -67,3 +67,4 @@ object VirtualClusterState {
 
   @inline def values = js.Array(RUNNING, TERMINATING, TERMINATED, ARRESTED)
 }
+

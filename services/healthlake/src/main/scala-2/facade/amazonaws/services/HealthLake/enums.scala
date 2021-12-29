@@ -40,3 +40,4 @@ object PreloadDataType {
 
   @inline def values = js.Array(SYNTHEA)
 }
+

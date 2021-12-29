@@ -101,3 +101,4 @@ object UserRole {
 
   @inline def values = js.Array(USER, RESOURCE, SYSTEM_USER)
 }
+

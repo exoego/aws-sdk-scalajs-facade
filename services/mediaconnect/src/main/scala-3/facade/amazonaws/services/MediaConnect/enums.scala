@@ -1,113 +1,101 @@
 package facade.amazonaws.services.mediaconnect
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait Algorithm extends js.Any
+type Algorithm = "aes128" | "aes192" | "aes256"
 object Algorithm {
-  val aes128 = "aes128".asInstanceOf[Algorithm]
-  val aes192 = "aes192".asInstanceOf[Algorithm]
-  val aes256 = "aes256".asInstanceOf[Algorithm]
+  inline val aes128: "aes128" = "aes128"
+  inline val aes192: "aes192" = "aes192"
+  inline val aes256: "aes256" = "aes256"
 
-  @inline def values = js.Array(aes128, aes192, aes256)
+  inline def values: js.Array[Algorithm] = js.Array(aes128, aes192, aes256)
 }
 
-@js.native
-sealed trait DurationUnits extends js.Any
+type DurationUnits = "MONTHS"
 object DurationUnits {
-  val MONTHS = "MONTHS".asInstanceOf[DurationUnits]
+  inline val MONTHS: "MONTHS" = "MONTHS"
 
-  @inline def values = js.Array(MONTHS)
+  inline def values: js.Array[DurationUnits] = js.Array(MONTHS)
 }
 
-@js.native
-sealed trait EntitlementStatus extends js.Any
+type EntitlementStatus = "ENABLED" | "DISABLED"
 object EntitlementStatus {
-  val ENABLED = "ENABLED".asInstanceOf[EntitlementStatus]
-  val DISABLED = "DISABLED".asInstanceOf[EntitlementStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[EntitlementStatus] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait KeyType extends js.Any
+type KeyType = "speke" | "static-key" | "srt-password"
 object KeyType {
-  val speke = "speke".asInstanceOf[KeyType]
-  val `static-key` = "static-key".asInstanceOf[KeyType]
-  val `srt-password` = "srt-password".asInstanceOf[KeyType]
+  inline val speke: "speke" = "speke"
+  inline val `static-key`: "static-key" = "static-key"
+  inline val `srt-password`: "srt-password" = "srt-password"
 
-  @inline def values = js.Array(speke, `static-key`, `srt-password`)
+  inline def values: js.Array[KeyType] = js.Array(speke, `static-key`, `srt-password`)
 }
 
-@js.native
-sealed trait PriceUnits extends js.Any
+type PriceUnits = "HOURLY"
 object PriceUnits {
-  val HOURLY = "HOURLY".asInstanceOf[PriceUnits]
+  inline val HOURLY: "HOURLY" = "HOURLY"
 
-  @inline def values = js.Array(HOURLY)
+  inline def values: js.Array[PriceUnits] = js.Array(HOURLY)
 }
 
-@js.native
-sealed trait Protocol extends js.Any
+type Protocol = "zixi-push" | "rtp-fec" | "rtp" | "zixi-pull" | "rist" | "srt-listener"
 object Protocol {
-  val `zixi-push` = "zixi-push".asInstanceOf[Protocol]
-  val `rtp-fec` = "rtp-fec".asInstanceOf[Protocol]
-  val rtp = "rtp".asInstanceOf[Protocol]
-  val `zixi-pull` = "zixi-pull".asInstanceOf[Protocol]
-  val rist = "rist".asInstanceOf[Protocol]
-  val `srt-listener` = "srt-listener".asInstanceOf[Protocol]
+  inline val `zixi-push`: "zixi-push" = "zixi-push"
+  inline val `rtp-fec`: "rtp-fec" = "rtp-fec"
+  inline val rtp: "rtp" = "rtp"
+  inline val `zixi-pull`: "zixi-pull" = "zixi-pull"
+  inline val rist: "rist" = "rist"
+  inline val `srt-listener`: "srt-listener" = "srt-listener"
 
-  @inline def values = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist, `srt-listener`)
+  inline def values: js.Array[Protocol] = js.Array(`zixi-push`, `rtp-fec`, rtp, `zixi-pull`, rist, `srt-listener`)
 }
 
-@js.native
-sealed trait ReservationState extends js.Any
+type ReservationState = "ACTIVE" | "EXPIRED" | "PROCESSING" | "CANCELED"
 object ReservationState {
-  val ACTIVE = "ACTIVE".asInstanceOf[ReservationState]
-  val EXPIRED = "EXPIRED".asInstanceOf[ReservationState]
-  val PROCESSING = "PROCESSING".asInstanceOf[ReservationState]
-  val CANCELED = "CANCELED".asInstanceOf[ReservationState]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array(ACTIVE, EXPIRED, PROCESSING, CANCELED)
+  inline def values: js.Array[ReservationState] = js.Array(ACTIVE, EXPIRED, PROCESSING, CANCELED)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "Mbps_Outbound_Bandwidth"
 object ResourceType {
-  val Mbps_Outbound_Bandwidth = "Mbps_Outbound_Bandwidth".asInstanceOf[ResourceType]
+  inline val Mbps_Outbound_Bandwidth: "Mbps_Outbound_Bandwidth" = "Mbps_Outbound_Bandwidth"
 
-  @inline def values = js.Array(Mbps_Outbound_Bandwidth)
+  inline def values: js.Array[ResourceType] = js.Array(Mbps_Outbound_Bandwidth)
 }
 
-@js.native
-sealed trait SourceType extends js.Any
+type SourceType = "OWNED" | "ENTITLED"
 object SourceType {
-  val OWNED = "OWNED".asInstanceOf[SourceType]
-  val ENTITLED = "ENTITLED".asInstanceOf[SourceType]
+  inline val OWNED: "OWNED" = "OWNED"
+  inline val ENTITLED: "ENTITLED" = "ENTITLED"
 
-  @inline def values = js.Array(OWNED, ENTITLED)
+  inline def values: js.Array[SourceType] = js.Array(OWNED, ENTITLED)
 }
 
-@js.native
-sealed trait State extends js.Any
+type State = "ENABLED" | "DISABLED"
 object State {
-  val ENABLED = "ENABLED".asInstanceOf[State]
-  val DISABLED = "DISABLED".asInstanceOf[State]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[State] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait Status extends js.Any
+type Status = "STANDBY" | "ACTIVE" | "UPDATING" | "DELETING" | "STARTING" | "STOPPING" | "ERROR"
 object Status {
-  val STANDBY = "STANDBY".asInstanceOf[Status]
-  val ACTIVE = "ACTIVE".asInstanceOf[Status]
-  val UPDATING = "UPDATING".asInstanceOf[Status]
-  val DELETING = "DELETING".asInstanceOf[Status]
-  val STARTING = "STARTING".asInstanceOf[Status]
-  val STOPPING = "STOPPING".asInstanceOf[Status]
-  val ERROR = "ERROR".asInstanceOf[Status]
+  inline val STANDBY: "STANDBY" = "STANDBY"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR)
+  inline def values: js.Array[Status] = js.Array(STANDBY, ACTIVE, UPDATING, DELETING, STARTING, STOPPING, ERROR)
 }

@@ -1,99 +1,90 @@
 package facade.amazonaws.services.applicationdiscovery
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AgentStatus extends js.Any
+type AgentStatus = "HEALTHY" | "UNHEALTHY" | "RUNNING" | "UNKNOWN" | "BLACKLISTED" | "SHUTDOWN"
 object AgentStatus {
-  val HEALTHY = "HEALTHY".asInstanceOf[AgentStatus]
-  val UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentStatus]
-  val RUNNING = "RUNNING".asInstanceOf[AgentStatus]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[AgentStatus]
-  val BLACKLISTED = "BLACKLISTED".asInstanceOf[AgentStatus]
-  val SHUTDOWN = "SHUTDOWN".asInstanceOf[AgentStatus]
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val BLACKLISTED: "BLACKLISTED" = "BLACKLISTED"
+  inline val SHUTDOWN: "SHUTDOWN" = "SHUTDOWN"
 
-  @inline def values = js.Array(HEALTHY, UNHEALTHY, RUNNING, UNKNOWN, BLACKLISTED, SHUTDOWN)
+  inline def values: js.Array[AgentStatus] = js.Array(HEALTHY, UNHEALTHY, RUNNING, UNKNOWN, BLACKLISTED, SHUTDOWN)
 }
 
-@js.native
-sealed trait BatchDeleteImportDataErrorCode extends js.Any
+type BatchDeleteImportDataErrorCode = "NOT_FOUND" | "INTERNAL_SERVER_ERROR" | "OVER_LIMIT"
 object BatchDeleteImportDataErrorCode {
-  val NOT_FOUND = "NOT_FOUND".asInstanceOf[BatchDeleteImportDataErrorCode]
-  val INTERNAL_SERVER_ERROR = "INTERNAL_SERVER_ERROR".asInstanceOf[BatchDeleteImportDataErrorCode]
-  val OVER_LIMIT = "OVER_LIMIT".asInstanceOf[BatchDeleteImportDataErrorCode]
+  inline val NOT_FOUND: "NOT_FOUND" = "NOT_FOUND"
+  inline val INTERNAL_SERVER_ERROR: "INTERNAL_SERVER_ERROR" = "INTERNAL_SERVER_ERROR"
+  inline val OVER_LIMIT: "OVER_LIMIT" = "OVER_LIMIT"
 
-  @inline def values = js.Array(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT)
+  inline def values: js.Array[BatchDeleteImportDataErrorCode] = js.Array(NOT_FOUND, INTERNAL_SERVER_ERROR, OVER_LIMIT)
 }
 
-@js.native
-sealed trait ConfigurationItemType extends js.Any
+type ConfigurationItemType = "SERVER" | "PROCESS" | "CONNECTION" | "APPLICATION"
 object ConfigurationItemType {
-  val SERVER = "SERVER".asInstanceOf[ConfigurationItemType]
-  val PROCESS = "PROCESS".asInstanceOf[ConfigurationItemType]
-  val CONNECTION = "CONNECTION".asInstanceOf[ConfigurationItemType]
-  val APPLICATION = "APPLICATION".asInstanceOf[ConfigurationItemType]
+  inline val SERVER: "SERVER" = "SERVER"
+  inline val PROCESS: "PROCESS" = "PROCESS"
+  inline val CONNECTION: "CONNECTION" = "CONNECTION"
+  inline val APPLICATION: "APPLICATION" = "APPLICATION"
 
-  @inline def values = js.Array(SERVER, PROCESS, CONNECTION, APPLICATION)
+  inline def values: js.Array[ConfigurationItemType] = js.Array(SERVER, PROCESS, CONNECTION, APPLICATION)
 }
 
-@js.native
-sealed trait ContinuousExportStatus extends js.Any
+type ContinuousExportStatus = "START_IN_PROGRESS" | "START_FAILED" | "ACTIVE" | "ERROR" | "STOP_IN_PROGRESS" | "STOP_FAILED" | "INACTIVE"
 object ContinuousExportStatus {
-  val START_IN_PROGRESS = "START_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
-  val START_FAILED = "START_FAILED".asInstanceOf[ContinuousExportStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[ContinuousExportStatus]
-  val ERROR = "ERROR".asInstanceOf[ContinuousExportStatus]
-  val STOP_IN_PROGRESS = "STOP_IN_PROGRESS".asInstanceOf[ContinuousExportStatus]
-  val STOP_FAILED = "STOP_FAILED".asInstanceOf[ContinuousExportStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[ContinuousExportStatus]
+  inline val START_IN_PROGRESS: "START_IN_PROGRESS" = "START_IN_PROGRESS"
+  inline val START_FAILED: "START_FAILED" = "START_FAILED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val STOP_IN_PROGRESS: "STOP_IN_PROGRESS" = "STOP_IN_PROGRESS"
+  inline val STOP_FAILED: "STOP_FAILED" = "STOP_FAILED"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE)
+  inline def values: js.Array[ContinuousExportStatus] = js.Array(START_IN_PROGRESS, START_FAILED, ACTIVE, ERROR, STOP_IN_PROGRESS, STOP_FAILED, INACTIVE)
 }
 
-@js.native
-sealed trait DataSource extends js.Any
+type DataSource = "AGENT"
 object DataSource {
-  val AGENT = "AGENT".asInstanceOf[DataSource]
+  inline val AGENT: "AGENT" = "AGENT"
 
-  @inline def values = js.Array(AGENT)
+  inline def values: js.Array[DataSource] = js.Array(AGENT)
 }
 
-@js.native
-sealed trait ExportDataFormat extends js.Any
+type ExportDataFormat = "CSV" | "GRAPHML"
 object ExportDataFormat {
-  val CSV = "CSV".asInstanceOf[ExportDataFormat]
-  val GRAPHML = "GRAPHML".asInstanceOf[ExportDataFormat]
+  inline val CSV: "CSV" = "CSV"
+  inline val GRAPHML: "GRAPHML" = "GRAPHML"
 
-  @inline def values = js.Array(CSV, GRAPHML)
+  inline def values: js.Array[ExportDataFormat] = js.Array(CSV, GRAPHML)
 }
 
-@js.native
-sealed trait ExportStatus extends js.Any
+type ExportStatus = "FAILED" | "SUCCEEDED" | "IN_PROGRESS"
 object ExportStatus {
-  val FAILED = "FAILED".asInstanceOf[ExportStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[ExportStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ExportStatus]
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
 
-  @inline def values = js.Array(FAILED, SUCCEEDED, IN_PROGRESS)
+  inline def values: js.Array[ExportStatus] = js.Array(FAILED, SUCCEEDED, IN_PROGRESS)
 }
 
-@js.native
-sealed trait ImportStatus extends js.Any
+type ImportStatus = "IMPORT_IN_PROGRESS" | "IMPORT_COMPLETE" | "IMPORT_COMPLETE_WITH_ERRORS" | "IMPORT_FAILED" | "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED" | "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED" | "DELETE_IN_PROGRESS" | "DELETE_COMPLETE" | "DELETE_FAILED" | "DELETE_FAILED_LIMIT_EXCEEDED" | "INTERNAL_ERROR"
 object ImportStatus {
-  val IMPORT_IN_PROGRESS = "IMPORT_IN_PROGRESS".asInstanceOf[ImportStatus]
-  val IMPORT_COMPLETE = "IMPORT_COMPLETE".asInstanceOf[ImportStatus]
-  val IMPORT_COMPLETE_WITH_ERRORS = "IMPORT_COMPLETE_WITH_ERRORS".asInstanceOf[ImportStatus]
-  val IMPORT_FAILED = "IMPORT_FAILED".asInstanceOf[ImportStatus]
-  val IMPORT_FAILED_SERVER_LIMIT_EXCEEDED = "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
-  val IMPORT_FAILED_RECORD_LIMIT_EXCEEDED = "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
-  val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ImportStatus]
-  val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[ImportStatus]
-  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ImportStatus]
-  val DELETE_FAILED_LIMIT_EXCEEDED = "DELETE_FAILED_LIMIT_EXCEEDED".asInstanceOf[ImportStatus]
-  val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ImportStatus]
+  inline val IMPORT_IN_PROGRESS: "IMPORT_IN_PROGRESS" = "IMPORT_IN_PROGRESS"
+  inline val IMPORT_COMPLETE: "IMPORT_COMPLETE" = "IMPORT_COMPLETE"
+  inline val IMPORT_COMPLETE_WITH_ERRORS: "IMPORT_COMPLETE_WITH_ERRORS" = "IMPORT_COMPLETE_WITH_ERRORS"
+  inline val IMPORT_FAILED: "IMPORT_FAILED" = "IMPORT_FAILED"
+  inline val IMPORT_FAILED_SERVER_LIMIT_EXCEEDED: "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED" = "IMPORT_FAILED_SERVER_LIMIT_EXCEEDED"
+  inline val IMPORT_FAILED_RECORD_LIMIT_EXCEEDED: "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED" = "IMPORT_FAILED_RECORD_LIMIT_EXCEEDED"
+  inline val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+  inline val DELETE_COMPLETE: "DELETE_COMPLETE" = "DELETE_COMPLETE"
+  inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
+  inline val DELETE_FAILED_LIMIT_EXCEEDED: "DELETE_FAILED_LIMIT_EXCEEDED" = "DELETE_FAILED_LIMIT_EXCEEDED"
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[ImportStatus] = js.Array(
     IMPORT_IN_PROGRESS,
     IMPORT_COMPLETE,
     IMPORT_COMPLETE_WITH_ERRORS,
@@ -108,21 +99,19 @@ object ImportStatus {
   )
 }
 
-@js.native
-sealed trait ImportTaskFilterName extends js.Any
+type ImportTaskFilterName = "IMPORT_TASK_ID" | "STATUS" | "NAME"
 object ImportTaskFilterName {
-  val IMPORT_TASK_ID = "IMPORT_TASK_ID".asInstanceOf[ImportTaskFilterName]
-  val STATUS = "STATUS".asInstanceOf[ImportTaskFilterName]
-  val NAME = "NAME".asInstanceOf[ImportTaskFilterName]
+  inline val IMPORT_TASK_ID: "IMPORT_TASK_ID" = "IMPORT_TASK_ID"
+  inline val STATUS: "STATUS" = "STATUS"
+  inline val NAME: "NAME" = "NAME"
 
-  @inline def values = js.Array(IMPORT_TASK_ID, STATUS, NAME)
+  inline def values: js.Array[ImportTaskFilterName] = js.Array(IMPORT_TASK_ID, STATUS, NAME)
 }
 
-@js.native
-sealed trait orderString extends js.Any
+type orderString = "ASC" | "DESC"
 object orderString {
-  val ASC = "ASC".asInstanceOf[orderString]
-  val DESC = "DESC".asInstanceOf[orderString]
+  inline val ASC: "ASC" = "ASC"
+  inline val DESC: "DESC" = "DESC"
 
-  @inline def values = js.Array(ASC, DESC)
+  inline def values: js.Array[orderString] = js.Array(ASC, DESC)
 }

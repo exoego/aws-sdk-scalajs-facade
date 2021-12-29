@@ -1,38 +1,36 @@
 package facade.amazonaws.services.cur
 
 import scalajs._
-import scala.scalajs.js.|
 
 /** The region of the S3 bucket that AWS delivers the report into.
   */
-@js.native
-sealed trait AWSRegion extends js.Any
+type AWSRegion = "af-south-1" | "ap-east-1" | "ap-south-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-northeast-1" | "ap-northeast-2" | "ap-northeast-3" | "ca-central-1" | "eu-central-1" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-north-1" | "eu-south-1" | "me-south-1" | "sa-east-1" | "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "cn-north-1" | "cn-northwest-1"
 object AWSRegion {
-  val `af-south-1` = "af-south-1".asInstanceOf[AWSRegion]
-  val `ap-east-1` = "ap-east-1".asInstanceOf[AWSRegion]
-  val `ap-south-1` = "ap-south-1".asInstanceOf[AWSRegion]
-  val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[AWSRegion]
-  val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[AWSRegion]
-  val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[AWSRegion]
-  val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[AWSRegion]
-  val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[AWSRegion]
-  val `ca-central-1` = "ca-central-1".asInstanceOf[AWSRegion]
-  val `eu-central-1` = "eu-central-1".asInstanceOf[AWSRegion]
-  val `eu-west-1` = "eu-west-1".asInstanceOf[AWSRegion]
-  val `eu-west-2` = "eu-west-2".asInstanceOf[AWSRegion]
-  val `eu-west-3` = "eu-west-3".asInstanceOf[AWSRegion]
-  val `eu-north-1` = "eu-north-1".asInstanceOf[AWSRegion]
-  val `eu-south-1` = "eu-south-1".asInstanceOf[AWSRegion]
-  val `me-south-1` = "me-south-1".asInstanceOf[AWSRegion]
-  val `sa-east-1` = "sa-east-1".asInstanceOf[AWSRegion]
-  val `us-east-1` = "us-east-1".asInstanceOf[AWSRegion]
-  val `us-east-2` = "us-east-2".asInstanceOf[AWSRegion]
-  val `us-west-1` = "us-west-1".asInstanceOf[AWSRegion]
-  val `us-west-2` = "us-west-2".asInstanceOf[AWSRegion]
-  val `cn-north-1` = "cn-north-1".asInstanceOf[AWSRegion]
-  val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[AWSRegion]
+  inline val `af-south-1`: "af-south-1" = "af-south-1"
+  inline val `ap-east-1`: "ap-east-1" = "ap-east-1"
+  inline val `ap-south-1`: "ap-south-1" = "ap-south-1"
+  inline val `ap-southeast-1`: "ap-southeast-1" = "ap-southeast-1"
+  inline val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
+  inline val `ap-northeast-1`: "ap-northeast-1" = "ap-northeast-1"
+  inline val `ap-northeast-2`: "ap-northeast-2" = "ap-northeast-2"
+  inline val `ap-northeast-3`: "ap-northeast-3" = "ap-northeast-3"
+  inline val `ca-central-1`: "ca-central-1" = "ca-central-1"
+  inline val `eu-central-1`: "eu-central-1" = "eu-central-1"
+  inline val `eu-west-1`: "eu-west-1" = "eu-west-1"
+  inline val `eu-west-2`: "eu-west-2" = "eu-west-2"
+  inline val `eu-west-3`: "eu-west-3" = "eu-west-3"
+  inline val `eu-north-1`: "eu-north-1" = "eu-north-1"
+  inline val `eu-south-1`: "eu-south-1" = "eu-south-1"
+  inline val `me-south-1`: "me-south-1" = "me-south-1"
+  inline val `sa-east-1`: "sa-east-1" = "sa-east-1"
+  inline val `us-east-1`: "us-east-1" = "us-east-1"
+  inline val `us-east-2`: "us-east-2" = "us-east-2"
+  inline val `us-west-1`: "us-west-1" = "us-west-1"
+  inline val `us-west-2`: "us-west-2" = "us-west-2"
+  inline val `cn-north-1`: "cn-north-1" = "cn-north-1"
+  inline val `cn-northwest-1`: "cn-northwest-1" = "cn-northwest-1"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[AWSRegion] = js.Array(
     `af-south-1`,
     `ap-east-1`,
     `ap-south-1`,
@@ -61,66 +59,60 @@ object AWSRegion {
 
 /** The types of manifest that you want AWS to create for this report.
   */
-@js.native
-sealed trait AdditionalArtifact extends js.Any
+type AdditionalArtifact = "REDSHIFT" | "QUICKSIGHT" | "ATHENA"
 object AdditionalArtifact {
-  val REDSHIFT = "REDSHIFT".asInstanceOf[AdditionalArtifact]
-  val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[AdditionalArtifact]
-  val ATHENA = "ATHENA".asInstanceOf[AdditionalArtifact]
+  inline val REDSHIFT: "REDSHIFT" = "REDSHIFT"
+  inline val QUICKSIGHT: "QUICKSIGHT" = "QUICKSIGHT"
+  inline val ATHENA: "ATHENA" = "ATHENA"
 
-  @inline def values = js.Array(REDSHIFT, QUICKSIGHT, ATHENA)
+  inline def values: js.Array[AdditionalArtifact] = js.Array(REDSHIFT, QUICKSIGHT, ATHENA)
 }
 
 /** The compression format that AWS uses for the report.
   */
-@js.native
-sealed trait CompressionFormat extends js.Any
+type CompressionFormat = "ZIP" | "GZIP" | "Parquet"
 object CompressionFormat {
-  val ZIP = "ZIP".asInstanceOf[CompressionFormat]
-  val GZIP = "GZIP".asInstanceOf[CompressionFormat]
-  val Parquet = "Parquet".asInstanceOf[CompressionFormat]
+  inline val ZIP: "ZIP" = "ZIP"
+  inline val GZIP: "GZIP" = "GZIP"
+  inline val Parquet: "Parquet" = "Parquet"
 
-  @inline def values = js.Array(ZIP, GZIP, Parquet)
+  inline def values: js.Array[CompressionFormat] = js.Array(ZIP, GZIP, Parquet)
 }
 
 /** The format that AWS saves the report in.
   */
-@js.native
-sealed trait ReportFormat extends js.Any
+type ReportFormat = "textORcsv" | "Parquet"
 object ReportFormat {
-  val textORcsv = "textORcsv".asInstanceOf[ReportFormat]
-  val Parquet = "Parquet".asInstanceOf[ReportFormat]
+  inline val textORcsv: "textORcsv" = "textORcsv"
+  inline val Parquet: "Parquet" = "Parquet"
 
-  @inline def values = js.Array(textORcsv, Parquet)
+  inline def values: js.Array[ReportFormat] = js.Array(textORcsv, Parquet)
 }
 
-@js.native
-sealed trait ReportVersioning extends js.Any
+type ReportVersioning = "CREATE_NEW_REPORT" | "OVERWRITE_REPORT"
 object ReportVersioning {
-  val CREATE_NEW_REPORT = "CREATE_NEW_REPORT".asInstanceOf[ReportVersioning]
-  val OVERWRITE_REPORT = "OVERWRITE_REPORT".asInstanceOf[ReportVersioning]
+  inline val CREATE_NEW_REPORT: "CREATE_NEW_REPORT" = "CREATE_NEW_REPORT"
+  inline val OVERWRITE_REPORT: "OVERWRITE_REPORT" = "OVERWRITE_REPORT"
 
-  @inline def values = js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT)
+  inline def values: js.Array[ReportVersioning] = js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT)
 }
 
 /** Whether or not AWS includes resource IDs in the report.
   */
-@js.native
-sealed trait SchemaElement extends js.Any
+type SchemaElement = "RESOURCES"
 object SchemaElement {
-  val RESOURCES = "RESOURCES".asInstanceOf[SchemaElement]
+  inline val RESOURCES: "RESOURCES" = "RESOURCES"
 
-  @inline def values = js.Array(RESOURCES)
+  inline def values: js.Array[SchemaElement] = js.Array(RESOURCES)
 }
 
 /** The length of time covered by the report.
   */
-@js.native
-sealed trait TimeUnit extends js.Any
+type TimeUnit = "HOURLY" | "DAILY" | "MONTHLY"
 object TimeUnit {
-  val HOURLY = "HOURLY".asInstanceOf[TimeUnit]
-  val DAILY = "DAILY".asInstanceOf[TimeUnit]
-  val MONTHLY = "MONTHLY".asInstanceOf[TimeUnit]
+  inline val HOURLY: "HOURLY" = "HOURLY"
+  inline val DAILY: "DAILY" = "DAILY"
+  inline val MONTHLY: "MONTHLY" = "MONTHLY"
 
-  @inline def values = js.Array(HOURLY, DAILY, MONTHLY)
+  inline def values: js.Array[TimeUnit] = js.Array(HOURLY, DAILY, MONTHLY)
 }

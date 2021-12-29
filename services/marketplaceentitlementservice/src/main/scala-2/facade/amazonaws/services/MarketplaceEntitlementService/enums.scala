@@ -11,3 +11,4 @@ object GetEntitlementFilterName {
 
   @inline def values = js.Array(CUSTOMER_IDENTIFIER, DIMENSION)
 }
+

@@ -51,3 +51,4 @@ object SourceType {
 
   @inline def values = js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP)
 }
+

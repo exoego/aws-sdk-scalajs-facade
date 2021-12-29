@@ -44,3 +44,4 @@ object RegistryAliasStatus {
 
   @inline def values = js.Array(ACTIVE, PENDING, REJECTED)
 }
+

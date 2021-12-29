@@ -24,3 +24,4 @@ object TaskStatus {
 
   @inline def values = js.Array(FINISHED, FAILED, FALSE)
 }
+

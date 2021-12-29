@@ -187,3 +187,4 @@ object RetryAction {
 
   @inline def values = js.Array(RETRY, EXIT)
 }
+

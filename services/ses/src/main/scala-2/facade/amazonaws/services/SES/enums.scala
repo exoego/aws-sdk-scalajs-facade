@@ -43,22 +43,7 @@ object BulkEmailStatus {
   val TransientFailure = "TransientFailure".asInstanceOf[BulkEmailStatus]
   val Failed = "Failed".asInstanceOf[BulkEmailStatus]
 
-  @inline def values = js.Array(
-    Success,
-    MessageRejected,
-    MailFromDomainNotVerified,
-    ConfigurationSetDoesNotExist,
-    TemplateDoesNotExist,
-    AccountSuspended,
-    AccountThrottled,
-    AccountDailyQuotaExceeded,
-    InvalidSendingPoolName,
-    AccountSendingPaused,
-    ConfigurationSetSendingPaused,
-    InvalidParameterValue,
-    TransientFailure,
-    Failed
-  )
+  @inline def values = js.Array(Success, MessageRejected, MailFromDomainNotVerified, ConfigurationSetDoesNotExist, TemplateDoesNotExist, AccountSuspended, AccountThrottled, AccountDailyQuotaExceeded, InvalidSendingPoolName, AccountSendingPaused, ConfigurationSetSendingPaused, InvalidParameterValue, TransientFailure, Failed)
 }
 
 @js.native
@@ -194,3 +179,4 @@ object VerificationStatus {
 
   @inline def values = js.Array(Pending, Success, Failed, TemporaryFailure, NotStarted)
 }
+

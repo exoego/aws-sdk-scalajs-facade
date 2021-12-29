@@ -1,68 +1,62 @@
 package facade.amazonaws.services.cloud9
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ConnectionType extends js.Any
+type ConnectionType = "CONNECT_SSH" | "CONNECT_SSM"
 object ConnectionType {
-  val CONNECT_SSH = "CONNECT_SSH".asInstanceOf[ConnectionType]
-  val CONNECT_SSM = "CONNECT_SSM".asInstanceOf[ConnectionType]
+  inline val CONNECT_SSH: "CONNECT_SSH" = "CONNECT_SSH"
+  inline val CONNECT_SSM: "CONNECT_SSM" = "CONNECT_SSM"
 
-  @inline def values = js.Array(CONNECT_SSH, CONNECT_SSM)
+  inline def values: js.Array[ConnectionType] = js.Array(CONNECT_SSH, CONNECT_SSM)
 }
 
-@js.native
-sealed trait EnvironmentLifecycleStatus extends js.Any
+type EnvironmentLifecycleStatus = "CREATING" | "CREATED" | "CREATE_FAILED" | "DELETING" | "DELETE_FAILED"
 object EnvironmentLifecycleStatus {
-  val CREATING = "CREATING".asInstanceOf[EnvironmentLifecycleStatus]
-  val CREATED = "CREATED".asInstanceOf[EnvironmentLifecycleStatus]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
-  val DELETING = "DELETING".asInstanceOf[EnvironmentLifecycleStatus]
-  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val CREATED: "CREATED" = "CREATED"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
 
-  @inline def values = js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED)
+  inline def values: js.Array[EnvironmentLifecycleStatus] = js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED)
 }
 
-@js.native
-sealed trait EnvironmentStatus extends js.Any
+type EnvironmentStatus = "error" | "creating" | "connecting" | "ready" | "stopping" | "stopped" | "deleting"
 object EnvironmentStatus {
-  val error = "error".asInstanceOf[EnvironmentStatus]
-  val creating = "creating".asInstanceOf[EnvironmentStatus]
-  val connecting = "connecting".asInstanceOf[EnvironmentStatus]
-  val ready = "ready".asInstanceOf[EnvironmentStatus]
-  val stopping = "stopping".asInstanceOf[EnvironmentStatus]
-  val stopped = "stopped".asInstanceOf[EnvironmentStatus]
-  val deleting = "deleting".asInstanceOf[EnvironmentStatus]
+  inline val error: "error" = "error"
+  inline val creating: "creating" = "creating"
+  inline val connecting: "connecting" = "connecting"
+  inline val ready: "ready" = "ready"
+  inline val stopping: "stopping" = "stopping"
+  inline val stopped: "stopped" = "stopped"
+  inline val deleting: "deleting" = "deleting"
 
-  @inline def values = js.Array(error, creating, connecting, ready, stopping, stopped, deleting)
+  inline def values: js.Array[EnvironmentStatus] = js.Array(error, creating, connecting, ready, stopping, stopped, deleting)
 }
 
-@js.native
-sealed trait EnvironmentType extends js.Any
+type EnvironmentType = "ssh" | "ec2"
 object EnvironmentType {
-  val ssh = "ssh".asInstanceOf[EnvironmentType]
-  val ec2 = "ec2".asInstanceOf[EnvironmentType]
+  inline val ssh: "ssh" = "ssh"
+  inline val ec2: "ec2" = "ec2"
 
-  @inline def values = js.Array(ssh, ec2)
+  inline def values: js.Array[EnvironmentType] = js.Array(ssh, ec2)
 }
 
-@js.native
-sealed trait ManagedCredentialsStatus extends js.Any
+type ManagedCredentialsStatus = "ENABLED_ON_CREATE" | "ENABLED_BY_OWNER" | "DISABLED_BY_DEFAULT" | "DISABLED_BY_OWNER" | "DISABLED_BY_COLLABORATOR" | "PENDING_REMOVAL_BY_COLLABORATOR" | "PENDING_START_REMOVAL_BY_COLLABORATOR" | "PENDING_REMOVAL_BY_OWNER" | "PENDING_START_REMOVAL_BY_OWNER" | "FAILED_REMOVAL_BY_COLLABORATOR" | "FAILED_REMOVAL_BY_OWNER"
 object ManagedCredentialsStatus {
-  val ENABLED_ON_CREATE = "ENABLED_ON_CREATE".asInstanceOf[ManagedCredentialsStatus]
-  val ENABLED_BY_OWNER = "ENABLED_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
-  val DISABLED_BY_DEFAULT = "DISABLED_BY_DEFAULT".asInstanceOf[ManagedCredentialsStatus]
-  val DISABLED_BY_OWNER = "DISABLED_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
-  val DISABLED_BY_COLLABORATOR = "DISABLED_BY_COLLABORATOR".asInstanceOf[ManagedCredentialsStatus]
-  val PENDING_REMOVAL_BY_COLLABORATOR = "PENDING_REMOVAL_BY_COLLABORATOR".asInstanceOf[ManagedCredentialsStatus]
-  val PENDING_START_REMOVAL_BY_COLLABORATOR = "PENDING_START_REMOVAL_BY_COLLABORATOR".asInstanceOf[ManagedCredentialsStatus]
-  val PENDING_REMOVAL_BY_OWNER = "PENDING_REMOVAL_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
-  val PENDING_START_REMOVAL_BY_OWNER = "PENDING_START_REMOVAL_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
-  val FAILED_REMOVAL_BY_COLLABORATOR = "FAILED_REMOVAL_BY_COLLABORATOR".asInstanceOf[ManagedCredentialsStatus]
-  val FAILED_REMOVAL_BY_OWNER = "FAILED_REMOVAL_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
+  inline val ENABLED_ON_CREATE: "ENABLED_ON_CREATE" = "ENABLED_ON_CREATE"
+  inline val ENABLED_BY_OWNER: "ENABLED_BY_OWNER" = "ENABLED_BY_OWNER"
+  inline val DISABLED_BY_DEFAULT: "DISABLED_BY_DEFAULT" = "DISABLED_BY_DEFAULT"
+  inline val DISABLED_BY_OWNER: "DISABLED_BY_OWNER" = "DISABLED_BY_OWNER"
+  inline val DISABLED_BY_COLLABORATOR: "DISABLED_BY_COLLABORATOR" = "DISABLED_BY_COLLABORATOR"
+  inline val PENDING_REMOVAL_BY_COLLABORATOR: "PENDING_REMOVAL_BY_COLLABORATOR" = "PENDING_REMOVAL_BY_COLLABORATOR"
+  inline val PENDING_START_REMOVAL_BY_COLLABORATOR: "PENDING_START_REMOVAL_BY_COLLABORATOR" = "PENDING_START_REMOVAL_BY_COLLABORATOR"
+  inline val PENDING_REMOVAL_BY_OWNER: "PENDING_REMOVAL_BY_OWNER" = "PENDING_REMOVAL_BY_OWNER"
+  inline val PENDING_START_REMOVAL_BY_OWNER: "PENDING_START_REMOVAL_BY_OWNER" = "PENDING_START_REMOVAL_BY_OWNER"
+  inline val FAILED_REMOVAL_BY_COLLABORATOR: "FAILED_REMOVAL_BY_COLLABORATOR" = "FAILED_REMOVAL_BY_COLLABORATOR"
+  inline val FAILED_REMOVAL_BY_OWNER: "FAILED_REMOVAL_BY_OWNER" = "FAILED_REMOVAL_BY_OWNER"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[ManagedCredentialsStatus] = js.Array(
     ENABLED_ON_CREATE,
     ENABLED_BY_OWNER,
     DISABLED_BY_DEFAULT,
@@ -77,21 +71,19 @@ object ManagedCredentialsStatus {
   )
 }
 
-@js.native
-sealed trait MemberPermissions extends js.Any
+type MemberPermissions = "read-write" | "read-only"
 object MemberPermissions {
-  val `read-write` = "read-write".asInstanceOf[MemberPermissions]
-  val `read-only` = "read-only".asInstanceOf[MemberPermissions]
+  inline val `read-write`: "read-write" = "read-write"
+  inline val `read-only`: "read-only" = "read-only"
 
-  @inline def values = js.Array(`read-write`, `read-only`)
+  inline def values: js.Array[MemberPermissions] = js.Array(`read-write`, `read-only`)
 }
 
-@js.native
-sealed trait Permissions extends js.Any
+type Permissions = "owner" | "read-write" | "read-only"
 object Permissions {
-  val owner = "owner".asInstanceOf[Permissions]
-  val `read-write` = "read-write".asInstanceOf[Permissions]
-  val `read-only` = "read-only".asInstanceOf[Permissions]
+  inline val owner: "owner" = "owner"
+  inline val `read-write`: "read-write" = "read-write"
+  inline val `read-only`: "read-only" = "read-only"
 
-  @inline def values = js.Array(owner, `read-write`, `read-only`)
+  inline def values: js.Array[Permissions] = js.Array(owner, `read-write`, `read-only`)
 }

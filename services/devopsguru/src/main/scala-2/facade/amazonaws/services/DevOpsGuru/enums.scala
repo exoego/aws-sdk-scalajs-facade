@@ -125,3 +125,4 @@ object UpdateResourceCollectionAction {
 
   @inline def values = js.Array(ADD, REMOVE)
 }
+

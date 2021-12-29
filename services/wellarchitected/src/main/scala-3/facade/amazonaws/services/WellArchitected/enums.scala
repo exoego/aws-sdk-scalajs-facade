@@ -1,108 +1,98 @@
 package facade.amazonaws.services.wellarchitected
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DifferenceStatus extends js.Any
+type DifferenceStatus = "UPDATED" | "NEW" | "DELETED"
 object DifferenceStatus {
-  val UPDATED = "UPDATED".asInstanceOf[DifferenceStatus]
-  val NEW = "NEW".asInstanceOf[DifferenceStatus]
-  val DELETED = "DELETED".asInstanceOf[DifferenceStatus]
+  inline val UPDATED: "UPDATED" = "UPDATED"
+  inline val NEW: "NEW" = "NEW"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(UPDATED, NEW, DELETED)
+  inline def values: js.Array[DifferenceStatus] = js.Array(UPDATED, NEW, DELETED)
 }
 
-@js.native
-sealed trait LensStatus extends js.Any
+type LensStatus = "CURRENT" | "NOT_CURRENT" | "DEPRECATED"
 object LensStatus {
-  val CURRENT = "CURRENT".asInstanceOf[LensStatus]
-  val NOT_CURRENT = "NOT_CURRENT".asInstanceOf[LensStatus]
-  val DEPRECATED = "DEPRECATED".asInstanceOf[LensStatus]
+  inline val CURRENT: "CURRENT" = "CURRENT"
+  inline val NOT_CURRENT: "NOT_CURRENT" = "NOT_CURRENT"
+  inline val DEPRECATED: "DEPRECATED" = "DEPRECATED"
 
-  @inline def values = js.Array(CURRENT, NOT_CURRENT, DEPRECATED)
+  inline def values: js.Array[LensStatus] = js.Array(CURRENT, NOT_CURRENT, DEPRECATED)
 }
 
-@js.native
-sealed trait NotificationType extends js.Any
+type NotificationType = "LENS_VERSION_UPGRADED" | "LENS_VERSION_DEPRECATED"
 object NotificationType {
-  val LENS_VERSION_UPGRADED = "LENS_VERSION_UPGRADED".asInstanceOf[NotificationType]
-  val LENS_VERSION_DEPRECATED = "LENS_VERSION_DEPRECATED".asInstanceOf[NotificationType]
+  inline val LENS_VERSION_UPGRADED: "LENS_VERSION_UPGRADED" = "LENS_VERSION_UPGRADED"
+  inline val LENS_VERSION_DEPRECATED: "LENS_VERSION_DEPRECATED" = "LENS_VERSION_DEPRECATED"
 
-  @inline def values = js.Array(LENS_VERSION_UPGRADED, LENS_VERSION_DEPRECATED)
+  inline def values: js.Array[NotificationType] = js.Array(LENS_VERSION_UPGRADED, LENS_VERSION_DEPRECATED)
 }
 
 /** Permission granted on a workload share.
   */
-@js.native
-sealed trait PermissionType extends js.Any
+type PermissionType = "READONLY" | "CONTRIBUTOR"
 object PermissionType {
-  val READONLY = "READONLY".asInstanceOf[PermissionType]
-  val CONTRIBUTOR = "CONTRIBUTOR".asInstanceOf[PermissionType]
+  inline val READONLY: "READONLY" = "READONLY"
+  inline val CONTRIBUTOR: "CONTRIBUTOR" = "CONTRIBUTOR"
 
-  @inline def values = js.Array(READONLY, CONTRIBUTOR)
+  inline def values: js.Array[PermissionType] = js.Array(READONLY, CONTRIBUTOR)
 }
 
 /** The risk for a given workload, lens review, pillar, or question.
   */
-@js.native
-sealed trait Risk extends js.Any
+type Risk = "UNANSWERED" | "HIGH" | "MEDIUM" | "NONE" | "NOT_APPLICABLE"
 object Risk {
-  val UNANSWERED = "UNANSWERED".asInstanceOf[Risk]
-  val HIGH = "HIGH".asInstanceOf[Risk]
-  val MEDIUM = "MEDIUM".asInstanceOf[Risk]
-  val NONE = "NONE".asInstanceOf[Risk]
-  val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[Risk]
+  inline val UNANSWERED: "UNANSWERED" = "UNANSWERED"
+  inline val HIGH: "HIGH" = "HIGH"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val NONE: "NONE" = "NONE"
+  inline val NOT_APPLICABLE: "NOT_APPLICABLE" = "NOT_APPLICABLE"
 
-  @inline def values = js.Array(UNANSWERED, HIGH, MEDIUM, NONE, NOT_APPLICABLE)
+  inline def values: js.Array[Risk] = js.Array(UNANSWERED, HIGH, MEDIUM, NONE, NOT_APPLICABLE)
 }
 
 /** Share invitation action taken by contributor.
   */
-@js.native
-sealed trait ShareInvitationAction extends js.Any
+type ShareInvitationAction = "ACCEPT" | "REJECT"
 object ShareInvitationAction {
-  val ACCEPT = "ACCEPT".asInstanceOf[ShareInvitationAction]
-  val REJECT = "REJECT".asInstanceOf[ShareInvitationAction]
+  inline val ACCEPT: "ACCEPT" = "ACCEPT"
+  inline val REJECT: "REJECT" = "REJECT"
 
-  @inline def values = js.Array(ACCEPT, REJECT)
+  inline def values: js.Array[ShareInvitationAction] = js.Array(ACCEPT, REJECT)
 }
 
 /** The status of a workload share.
   */
-@js.native
-sealed trait ShareStatus extends js.Any
+type ShareStatus = "ACCEPTED" | "REJECTED" | "PENDING" | "REVOKED" | "EXPIRED"
 object ShareStatus {
-  val ACCEPTED = "ACCEPTED".asInstanceOf[ShareStatus]
-  val REJECTED = "REJECTED".asInstanceOf[ShareStatus]
-  val PENDING = "PENDING".asInstanceOf[ShareStatus]
-  val REVOKED = "REVOKED".asInstanceOf[ShareStatus]
-  val EXPIRED = "EXPIRED".asInstanceOf[ShareStatus]
+  inline val ACCEPTED: "ACCEPTED" = "ACCEPTED"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val REVOKED: "REVOKED" = "REVOKED"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
 
-  @inline def values = js.Array(ACCEPTED, REJECTED, PENDING, REVOKED, EXPIRED)
+  inline def values: js.Array[ShareStatus] = js.Array(ACCEPTED, REJECTED, PENDING, REVOKED, EXPIRED)
 }
 
 /** The environment for the workload.
   */
-@js.native
-sealed trait WorkloadEnvironment extends js.Any
+type WorkloadEnvironment = "PRODUCTION" | "PREPRODUCTION"
 object WorkloadEnvironment {
-  val PRODUCTION = "PRODUCTION".asInstanceOf[WorkloadEnvironment]
-  val PREPRODUCTION = "PREPRODUCTION".asInstanceOf[WorkloadEnvironment]
+  inline val PRODUCTION: "PRODUCTION" = "PRODUCTION"
+  inline val PREPRODUCTION: "PREPRODUCTION" = "PREPRODUCTION"
 
-  @inline def values = js.Array(PRODUCTION, PREPRODUCTION)
+  inline def values: js.Array[WorkloadEnvironment] = js.Array(PRODUCTION, PREPRODUCTION)
 }
 
 /** The improvement status for a workload.
   */
-@js.native
-sealed trait WorkloadImprovementStatus extends js.Any
+type WorkloadImprovementStatus = "NOT_APPLICABLE" | "NOT_STARTED" | "IN_PROGRESS" | "COMPLETE" | "RISK_ACKNOWLEDGED"
 object WorkloadImprovementStatus {
-  val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[WorkloadImprovementStatus]
-  val NOT_STARTED = "NOT_STARTED".asInstanceOf[WorkloadImprovementStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WorkloadImprovementStatus]
-  val COMPLETE = "COMPLETE".asInstanceOf[WorkloadImprovementStatus]
-  val RISK_ACKNOWLEDGED = "RISK_ACKNOWLEDGED".asInstanceOf[WorkloadImprovementStatus]
+  inline val NOT_APPLICABLE: "NOT_APPLICABLE" = "NOT_APPLICABLE"
+  inline val NOT_STARTED: "NOT_STARTED" = "NOT_STARTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val RISK_ACKNOWLEDGED: "RISK_ACKNOWLEDGED" = "RISK_ACKNOWLEDGED"
 
-  @inline def values = js.Array(NOT_APPLICABLE, NOT_STARTED, IN_PROGRESS, COMPLETE, RISK_ACKNOWLEDGED)
+  inline def values: js.Array[WorkloadImprovementStatus] = js.Array(NOT_APPLICABLE, NOT_STARTED, IN_PROGRESS, COMPLETE, RISK_ACKNOWLEDGED)
 }

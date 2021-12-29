@@ -70,3 +70,4 @@ object UpdateDataRetentionOperation {
 
   @inline def values = js.Array(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION)
 }
+

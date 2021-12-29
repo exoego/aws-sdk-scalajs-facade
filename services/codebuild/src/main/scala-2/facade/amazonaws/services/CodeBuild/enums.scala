@@ -41,8 +41,15 @@ object AuthType {
   @inline def values = js.Array(OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN)
 }
 
-/** Specifies the access for objects that are uploaded to an Amazon S3 bucket that is owned by another account. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects. <dl> <dt>NONE</dt> <dd> The bucket owner does not have access to the objects. This is the default. </dd> <dt>READ_ONLY</dt> <dd> The bucket owner has read only access to the objects. The uploading account retains ownership of the objects. </dd> <dt>FULL</dt> <dd> The bucket owner has full access to the objects. Object ownership is determined by the following criteria: * If the bucket is configured with the ```Bucket owner preferred``` setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy. * Otherwise, the uploading account retains ownership of the objects. For more information about Amazon S3 object ownership, see
-  * [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html|Controlling ownership of uploaded objects using S3 Object Ownership]] in the <i>Amazon Simple Storage Service User Guide</i>. </dd> </dl>
+/** Specifies the access for objects that are uploaded to an Amazon S3 bucket that is owned by another account.
+  * By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.
+  * <dl> <dt>NONE</dt> <dd> The bucket owner does not have access to the objects. This is the default.
+  * </dd> <dt>READ_ONLY</dt> <dd> The bucket owner has read only access to the objects. The uploading account retains ownership of the objects.
+  * </dd> <dt>FULL</dt> <dd> The bucket owner has full access to the objects. Object ownership is determined by the following criteria:
+  * * If the bucket is configured with the ```Bucket owner preferred``` setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.
+  * * Otherwise, the uploading account retains ownership of the objects.
+  * For more information about Amazon S3 object ownership, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html|Controlling ownership of uploaded objects using S3 Object Ownership]] in the <i>Amazon Simple Storage Service User Guide</i>.
+  * </dd> </dl>
   */
 @js.native
 sealed trait BucketOwnerAccess extends js.Any
@@ -387,3 +394,4 @@ object WebhookFilterType {
 
   @inline def values = js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH, COMMIT_MESSAGE)
 }
+

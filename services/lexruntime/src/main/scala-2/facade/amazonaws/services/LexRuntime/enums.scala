@@ -66,3 +66,4 @@ object MessageFormatType {
 
   @inline def values = js.Array(PlainText, CustomPayload, SSML, Composite)
 }
+

@@ -3,7 +3,7 @@ package facade.amazonaws.services.mediaconvert
 import scalajs._
 import scala.scalajs.js.|
 
-/** Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
+/** Choose BROADCASTER_MIXED_AD when the input contains pre-mixed main audio + audio description (AD) as a stereo pair. The value for AudioType will be set to 3, which signals to downstream systems that this stream contains "broadcaster mixed AD". Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. When you choose BROADCASTER_MIXED_AD, the encoder ignores any values you provide in AudioType and  FollowInputAudioType. Choose NORMAL when the input does not contain pre-mixed audio + audio description (AD). In this case, the encoder will use any values you provide for AudioType and FollowInputAudioType.
   */
 @js.native
 sealed trait AacAudioDescriptionBroadcasterMix extends js.Any
@@ -260,7 +260,7 @@ object AntiAlias {
   @inline def values = js.Array(DISABLED, ENABLED)
 }
 
-/** You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout. For example, if this track is the left surround channel, choose Left surround (LS).
+/** You can add a tag for this mono-channel audio track to mimic its placement in a multi-channel layout.  For example, if this track is the left surround channel, choose Left surround (LS).
   */
 @js.native
 sealed trait AudioChannelTag extends js.Any
@@ -443,8 +443,7 @@ object Av1RateControlMode {
   @inline def values = js.Array(QVBR)
 }
 
-/** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video
-  * games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
+/** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
   */
 @js.native
 sealed trait Av1SpatialAdaptiveQuantization extends js.Any
@@ -573,7 +572,8 @@ object BurninSubtitleAlignment {
   @inline def values = js.Array(CENTERED, LEFT)
 }
 
-/** Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+/** Specifies the color of the rectangle behind the captions.
+  * All burn-in and DVB-Sub font settings must match.
   */
 @js.native
 sealed trait BurninSubtitleBackgroundColor extends js.Any
@@ -615,7 +615,8 @@ object BurninSubtitleOutlineColor {
   @inline def values = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
 }
 
-/** Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+/** Specifies the color of the shadow cast by the captions.
+  * All burn-in and DVB-Sub font settings must match.
   */
 @js.native
 sealed trait BurninSubtitleShadowColor extends js.Any
@@ -659,7 +660,7 @@ object CaptionDestinationType {
   @inline def values = js.Array(BURN_IN, DVB_SUB, EMBEDDED, EMBEDDED_PLUS_SCTE20, IMSC, SCTE20_PLUS_EMBEDDED, SCC, SRT, SMI, TELETEXT, TTML, WEBVTT)
 }
 
-/** Use Source (SourceType) to identify the format of your input captions. The service cannot auto-detect caption format.
+/** Use Source (SourceType) to identify the format of your input captions.  The service cannot auto-detect caption format.
   */
 @js.native
 sealed trait CaptionSourceType extends js.Any
@@ -759,7 +760,7 @@ object CmafManifestDurationFormat {
   @inline def values = js.Array(FLOATING_POINT, INTEGER)
 }
 
-/** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+/** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
   */
 @js.native
 sealed trait CmafMpdProfile extends js.Any
@@ -847,8 +848,7 @@ object CmfcAudioDuration {
   @inline def values = js.Array(DEFAULT_CODEC_DURATION, MATCH_VIDEO_DURATION)
 }
 
-/** Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the client player selects which audio track to play. The other options for this setting determine the values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For more information about these attributes, see the Apple documentation article https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert
-  * defaults to Alternate audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose a value for this setting.
+/** Use this setting to control the values that MediaConvert puts in your HLS parent playlist to control how the client player selects which audio track to play. The other options for this setting determine the values that MediaConvert writes for the DEFAULT and AUTOSELECT attributes of the EXT-X-MEDIA entry for the audio variant. For more information about these attributes, see the Apple documentation article https://developer.apple.com/documentation/http_live_streaming/example_playlists_for_http_live_streaming/adding_alternate_media_to_a_playlist. Choose Alternate audio, auto select, default (ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT) to set DEFAULT=YES and AUTOSELECT=YES. Choose this value for only one variant in your output group. Choose Alternate audio, auto select, not default (ALTERNATE_AUDIO_AUTO_SELECT) to set DEFAULT=NO and AUTOSELECT=YES. Choose Alternate Audio, Not Auto Select to set DEFAULT=NO and AUTOSELECT=NO. When you don't specify a value for this setting, MediaConvert defaults to Alternate audio, auto select, default. When there is more than one variant in your output group, you must explicitly choose a value for this setting.
   */
 @js.native
 sealed trait CmfcAudioTrackType extends js.Any
@@ -1006,7 +1006,7 @@ object DashIsoHbbtvCompliance {
   @inline def values = js.Array(HBBTV_1_5, NONE)
 }
 
-/** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
+/** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals  urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
   */
 @js.native
 sealed trait DashIsoMpdProfile extends js.Any
@@ -1086,7 +1086,7 @@ object DeinterlaceAlgorithm {
   @inline def values = js.Array(INTERPOLATE, INTERPOLATE_TICKER, BLEND, BLEND_TICKER)
 }
 
-/**   - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is a good chance that the metadata has tagged frames as progressive when they are not progressive. Do not turn on otherwise; processing frames that are already progressive into progressive will probably result in lower quality video.
+/** - When set to NORMAL (default), the deinterlacer does not convert frames that are tagged  in metadata as progressive. It will only convert those that are tagged as some other type. - When set to FORCE_ALL_FRAMES, the deinterlacer converts every frame to progressive - even those that are already tagged as progressive. Turn Force mode on only if there is  a good chance that the metadata has tagged frames as progressive when they are not  progressive. Do not turn on otherwise; processing frames that are already progressive  into progressive will probably result in lower quality video.
   */
 @js.native
 sealed trait DeinterlacerControl extends js.Any
@@ -1164,7 +1164,8 @@ object DvbSubtitleAlignment {
   @inline def values = js.Array(CENTERED, LEFT)
 }
 
-/** Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+/** Specifies the color of the rectangle behind the captions.
+  * All burn-in and DVB-Sub font settings must match.
   */
 @js.native
 sealed trait DvbSubtitleBackgroundColor extends js.Any
@@ -1206,7 +1207,8 @@ object DvbSubtitleOutlineColor {
   @inline def values = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
 }
 
-/** Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+/** Specifies the color of the shadow cast by the captions.
+  * All burn-in and DVB-Sub font settings must match.
   */
 @js.native
 sealed trait DvbSubtitleShadowColor extends js.Any
@@ -1605,25 +1607,7 @@ object H264CodecLevel {
   val LEVEL_5_1 = "LEVEL_5_1".asInstanceOf[H264CodecLevel]
   val LEVEL_5_2 = "LEVEL_5_2".asInstanceOf[H264CodecLevel]
 
-  @inline def values = js.Array(
-    AUTO,
-    LEVEL_1,
-    LEVEL_1_1,
-    LEVEL_1_2,
-    LEVEL_1_3,
-    LEVEL_2,
-    LEVEL_2_1,
-    LEVEL_2_2,
-    LEVEL_3,
-    LEVEL_3_1,
-    LEVEL_3_2,
-    LEVEL_4,
-    LEVEL_4_1,
-    LEVEL_4_2,
-    LEVEL_5,
-    LEVEL_5_1,
-    LEVEL_5_2
-  )
+  @inline def values = js.Array(AUTO, LEVEL_1, LEVEL_1_1, LEVEL_1_2, LEVEL_1_3, LEVEL_2, LEVEL_2_1, LEVEL_2_2, LEVEL_3, LEVEL_3_1, LEVEL_3_2, LEVEL_4, LEVEL_4_1, LEVEL_4_2, LEVEL_5, LEVEL_5_1, LEVEL_5_2)
 }
 
 /** H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I License.
@@ -1824,8 +1808,7 @@ object H264SlowPal {
   @inline def values = js.Array(DISABLED, ENABLED)
 }
 
-/** Only use this setting when you change the default value, Auto (AUTO), for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality.
-  * Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to set H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
+/** Only use this setting when you change the default value, Auto (AUTO), for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to set H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
   */
 @js.native
 sealed trait H264SpatialAdaptiveQuantization extends js.Any
@@ -1859,8 +1842,7 @@ object H264Telecine {
   @inline def values = js.Array(NONE, SOFT, HARD)
 }
 
-/** Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into
-  * account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization). To manually enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
+/** Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization). To manually enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
   */
 @js.native
 sealed trait H264TemporalAdaptiveQuantization extends js.Any
@@ -2064,7 +2046,7 @@ object H265RateControlMode {
   @inline def values = js.Array(VBR, CBR, QVBR)
 }
 
-/** Specify Sample Adaptive Offset (SAO) filter strength. Adaptive mode dynamically selects best strength based on content
+/** Specify Sample Adaptive Offset (SAO) filter strength.  Adaptive mode dynamically selects best strength based on content
   */
 @js.native
 sealed trait H265SampleAdaptiveOffsetFilterMode extends js.Any
@@ -2110,8 +2092,7 @@ object H265SlowPal {
   @inline def values = js.Array(DISABLED, ENABLED)
 }
 
-/** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video
-  * games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
+/** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
   */
 @js.native
 sealed trait H265SpatialAdaptiveQuantization extends js.Any
@@ -2122,7 +2103,7 @@ object H265SpatialAdaptiveQuantization {
   @inline def values = js.Array(DISABLED, ENABLED)
 }
 
-/** This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
+/** This field applies only if the Streams > Advanced > Framerate (framerate) field  is set to 29.970. This field works with the Streams > Advanced > Preprocessors > Deinterlacer  field (deinterlace_mode) and the Streams > Advanced > Interlaced Mode field (interlace_mode)  to identify the scan type for the output: Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces 23.976; the player converts this output to 29.97i.
   */
 @js.native
 sealed trait H265Telecine extends js.Any
@@ -2444,7 +2425,7 @@ object InputDeblockFilter {
   @inline def values = js.Array(ENABLED, DISABLED)
 }
 
-/** Enable Denoise (InputDenoiseFilter) to filter noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
+/** Enable Denoise (InputDenoiseFilter) to filter noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265, and uncompressed video inputs.
   */
 @js.native
 sealed trait InputDenoiseFilter extends js.Any
@@ -2750,199 +2731,7 @@ object LanguageCode {
   val QPC = "QPC".asInstanceOf[LanguageCode]
   val TNG = "TNG".asInstanceOf[LanguageCode]
 
-  @inline def values = js.Array(
-    ENG,
-    SPA,
-    FRA,
-    DEU,
-    GER,
-    ZHO,
-    ARA,
-    HIN,
-    JPN,
-    RUS,
-    POR,
-    ITA,
-    URD,
-    VIE,
-    KOR,
-    PAN,
-    ABK,
-    AAR,
-    AFR,
-    AKA,
-    SQI,
-    AMH,
-    ARG,
-    HYE,
-    ASM,
-    AVA,
-    AVE,
-    AYM,
-    AZE,
-    BAM,
-    BAK,
-    EUS,
-    BEL,
-    BEN,
-    BIH,
-    BIS,
-    BOS,
-    BRE,
-    BUL,
-    MYA,
-    CAT,
-    KHM,
-    CHA,
-    CHE,
-    NYA,
-    CHU,
-    CHV,
-    COR,
-    COS,
-    CRE,
-    HRV,
-    CES,
-    DAN,
-    DIV,
-    NLD,
-    DZO,
-    ENM,
-    EPO,
-    EST,
-    EWE,
-    FAO,
-    FIJ,
-    FIN,
-    FRM,
-    FUL,
-    GLA,
-    GLG,
-    LUG,
-    KAT,
-    ELL,
-    GRN,
-    GUJ,
-    HAT,
-    HAU,
-    HEB,
-    HER,
-    HMO,
-    HUN,
-    ISL,
-    IDO,
-    IBO,
-    IND,
-    INA,
-    ILE,
-    IKU,
-    IPK,
-    GLE,
-    JAV,
-    KAL,
-    KAN,
-    KAU,
-    KAS,
-    KAZ,
-    KIK,
-    KIN,
-    KIR,
-    KOM,
-    KON,
-    KUA,
-    KUR,
-    LAO,
-    LAT,
-    LAV,
-    LIM,
-    LIN,
-    LIT,
-    LUB,
-    LTZ,
-    MKD,
-    MLG,
-    MSA,
-    MAL,
-    MLT,
-    GLV,
-    MRI,
-    MAR,
-    MAH,
-    MON,
-    NAU,
-    NAV,
-    NDE,
-    NBL,
-    NDO,
-    NEP,
-    SME,
-    NOR,
-    NOB,
-    NNO,
-    OCI,
-    OJI,
-    ORI,
-    ORM,
-    OSS,
-    PLI,
-    FAS,
-    POL,
-    PUS,
-    QUE,
-    QAA,
-    RON,
-    ROH,
-    RUN,
-    SMO,
-    SAG,
-    SAN,
-    SRD,
-    SRB,
-    SNA,
-    III,
-    SND,
-    SIN,
-    SLK,
-    SLV,
-    SOM,
-    SOT,
-    SUN,
-    SWA,
-    SSW,
-    SWE,
-    TGL,
-    TAH,
-    TGK,
-    TAM,
-    TAT,
-    TEL,
-    THA,
-    BOD,
-    TIR,
-    TON,
-    TSO,
-    TSN,
-    TUR,
-    TUK,
-    TWI,
-    UIG,
-    UKR,
-    UZB,
-    VEN,
-    VOL,
-    WLN,
-    CYM,
-    FRY,
-    WOL,
-    XHO,
-    YID,
-    YOR,
-    ZHA,
-    ZUL,
-    ORJ,
-    QPC,
-    TNG
-  )
+  @inline def values = js.Array(ENG, SPA, FRA, DEU, GER, ZHO, ARA, HIN, JPN, RUS, POR, ITA, URD, VIE, KOR, PAN, ABK, AAR, AFR, AKA, SQI, AMH, ARG, HYE, ASM, AVA, AVE, AYM, AZE, BAM, BAK, EUS, BEL, BEN, BIH, BIS, BOS, BRE, BUL, MYA, CAT, KHM, CHA, CHE, NYA, CHU, CHV, COR, COS, CRE, HRV, CES, DAN, DIV, NLD, DZO, ENM, EPO, EST, EWE, FAO, FIJ, FIN, FRM, FUL, GLA, GLG, LUG, KAT, ELL, GRN, GUJ, HAT, HAU, HEB, HER, HMO, HUN, ISL, IDO, IBO, IND, INA, ILE, IKU, IPK, GLE, JAV, KAL, KAN, KAU, KAS, KAZ, KIK, KIN, KIR, KOM, KON, KUA, KUR, LAO, LAT, LAV, LIM, LIN, LIT, LUB, LTZ, MKD, MLG, MSA, MAL, MLT, GLV, MRI, MAR, MAH, MON, NAU, NAV, NDE, NBL, NDO, NEP, SME, NOR, NOB, NNO, OCI, OJI, ORI, ORM, OSS, PLI, FAS, POL, PUS, QUE, QAA, RON, ROH, RUN, SMO, SAG, SAN, SRD, SRB, SNA, III, SND, SIN, SLK, SLV, SOM, SOT, SUN, SWA, SSW, SWE, TGL, TAH, TGK, TAM, TAT, TEL, THA, BOD, TIR, TON, TSO, TSN, TUR, TUK, TWI, UIG, UKR, UZB, VEN, VOL, WLN, CYM, FRY, WOL, XHO, YID, YOR, ZHA, ZUL, ORJ, QPC, TNG)
 }
 
 /** Selects between the DVB and ATSC buffer models for Dolby Digital audio.
@@ -2967,7 +2756,7 @@ object M2tsAudioDuration {
   @inline def values = js.Array(DEFAULT_CODEC_DURATION, MATCH_VIDEO_DURATION)
 }
 
-/** Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+/** Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
   */
 @js.native
 sealed trait M2tsBufferModel extends js.Any
@@ -3279,7 +3068,7 @@ object MpdAudioDuration {
   @inline def values = js.Array(DEFAULT_CODEC_DURATION, MATCH_VIDEO_DURATION)
 }
 
-/** Use this setting only in DASH output groups that include sidecar TTML or IMSC captions. You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
+/** Use this setting only in DASH output groups that include sidecar TTML or IMSC captions.  You specify sidecar captions in a separate output from your audio and video. Choose Raw (RAW) for captions in a single XML file in a raw container. Choose Fragmented MPEG-4 (FRAGMENTED_MP4) for captions in XML format contained within fragmented MP4 files. This set of fragmented MP4 files is separate from your video and audio fragmented MP4 files.
   */
 @js.native
 sealed trait MpdCaptionContainerType extends js.Any
@@ -3489,8 +3278,7 @@ object Mpeg2SlowPal {
   @inline def values = js.Array(DISABLED, ENABLED)
 }
 
-/** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video
-  * games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
+/** Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
   */
 @js.native
 sealed trait Mpeg2SpatialAdaptiveQuantization extends js.Any
@@ -3501,7 +3289,7 @@ object Mpeg2SpatialAdaptiveQuantization {
   @inline def values = js.Array(DISABLED, ENABLED)
 }
 
-/** Specify whether this output's video uses the D10 syntax. Keep the default value to not use the syntax. Related settings: When you choose D10 (D_10) for your MXF profile (profile), you must also set this value to to D10 (D_10).
+/** Specify whether this output's video uses the D10 syntax. Keep the default value to  not use the syntax. Related settings: When you choose D10 (D_10) for your MXF  profile (profile), you must also set this value to to D10 (D_10).
   */
 @js.native
 sealed trait Mpeg2Syntax extends js.Any
@@ -3592,7 +3380,7 @@ object NielsenActiveWatermarkProcessType {
   @inline def values = js.Array(NAES2_AND_NW, CBET, NAES2_AND_NW_AND_CBET)
 }
 
-/** Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already have non-linear Nielsen watermarks.
+/** Required. Specify whether your source content already contains Nielsen non-linear watermarks. When you set this value to Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add non-linear watermarking to only clean content that doesn't already  have non-linear Nielsen watermarks.
   */
 @js.native
 sealed trait NielsenSourceWatermarkStatusType extends js.Any
@@ -3668,7 +3456,7 @@ object OutputGroupType {
   @inline def values = js.Array(HLS_GROUP_SETTINGS, DASH_ISO_GROUP_SETTINGS, FILE_GROUP_SETTINGS, MS_SMOOTH_GROUP_SETTINGS, CMAF_GROUP_SETTINGS)
 }
 
-/** Selects method of inserting SDT information into output stream. "Follow input SDT" copies SDT information from input stream to output stream. "Follow input SDT if present" copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT Manually" means user will enter the SDT information. "No SDT" means output stream will not contain SDT information.
+/** Selects method of inserting SDT information into output stream.  "Follow input SDT" copies SDT information from input stream to  output stream. "Follow input SDT if present" copies SDT information from  input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. Enter "SDT  Manually" means user will enter the SDT information. "No SDT" means output  stream will not contain SDT information.
   */
 @js.native
 sealed trait OutputSdt extends js.Any
@@ -3867,7 +3655,7 @@ object S3ObjectCannedAcl {
   @inline def values = js.Array(PUBLIC_READ, AUTHENTICATED_READ, BUCKET_OWNER_READ, BUCKET_OWNER_FULL_CONTROL)
 }
 
-/** Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting KMS ARN (kmsKeyArn).
+/** Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
   */
 @js.native
 sealed trait S3ServerSideEncryptionType extends js.Any
@@ -3935,23 +3723,7 @@ object StatusUpdateInterval {
   val SECONDS_540 = "SECONDS_540".asInstanceOf[StatusUpdateInterval]
   val SECONDS_600 = "SECONDS_600".asInstanceOf[StatusUpdateInterval]
 
-  @inline def values = js.Array(
-    SECONDS_10,
-    SECONDS_12,
-    SECONDS_15,
-    SECONDS_20,
-    SECONDS_30,
-    SECONDS_60,
-    SECONDS_120,
-    SECONDS_180,
-    SECONDS_240,
-    SECONDS_300,
-    SECONDS_360,
-    SECONDS_420,
-    SECONDS_480,
-    SECONDS_540,
-    SECONDS_600
-  )
+  @inline def values = js.Array(SECONDS_10, SECONDS_12, SECONDS_15, SECONDS_20, SECONDS_30, SECONDS_60, SECONDS_120, SECONDS_180, SECONDS_240, SECONDS_300, SECONDS_360, SECONDS_420, SECONDS_480, SECONDS_540, SECONDS_600)
 }
 
 /** A page type as defined in the standard ETSI EN 300 468, Table 94
@@ -4283,3 +4055,4 @@ object WebvttStylePassthrough {
 
   @inline def values = js.Array(ENABLED, DISABLED)
 }
+

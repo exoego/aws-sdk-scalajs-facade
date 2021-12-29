@@ -1,139 +1,125 @@
 package facade.amazonaws.services.iotwireless
 
 import scalajs._
-import scala.scalajs.js.|
 
 /** Sidewalk device battery level.
   */
-@js.native
-sealed trait BatteryLevel extends js.Any
+type BatteryLevel = "normal" | "low" | "critical"
 object BatteryLevel {
-  val normal = "normal".asInstanceOf[BatteryLevel]
-  val low = "low".asInstanceOf[BatteryLevel]
-  val critical = "critical".asInstanceOf[BatteryLevel]
+  inline val normal: "normal" = "normal"
+  inline val low: "low" = "low"
+  inline val critical: "critical" = "critical"
 
-  @inline def values = js.Array(normal, low, critical)
+  inline def values: js.Array[BatteryLevel] = js.Array(normal, low, critical)
 }
 
-@js.native
-sealed trait ConnectionStatus extends js.Any
+type ConnectionStatus = "Connected" | "Disconnected"
 object ConnectionStatus {
-  val Connected = "Connected".asInstanceOf[ConnectionStatus]
-  val Disconnected = "Disconnected".asInstanceOf[ConnectionStatus]
+  inline val Connected: "Connected" = "Connected"
+  inline val Disconnected: "Disconnected" = "Disconnected"
 
-  @inline def values = js.Array(Connected, Disconnected)
+  inline def values: js.Array[ConnectionStatus] = js.Array(Connected, Disconnected)
 }
 
 /** Device state defines the device status of sidewalk device.
   */
-@js.native
-sealed trait DeviceState extends js.Any
+type DeviceState = "Provisioned" | "RegisteredNotSeen" | "RegisteredReachable" | "RegisteredUnreachable"
 object DeviceState {
-  val Provisioned = "Provisioned".asInstanceOf[DeviceState]
-  val RegisteredNotSeen = "RegisteredNotSeen".asInstanceOf[DeviceState]
-  val RegisteredReachable = "RegisteredReachable".asInstanceOf[DeviceState]
-  val RegisteredUnreachable = "RegisteredUnreachable".asInstanceOf[DeviceState]
+  inline val Provisioned: "Provisioned" = "Provisioned"
+  inline val RegisteredNotSeen: "RegisteredNotSeen" = "RegisteredNotSeen"
+  inline val RegisteredReachable: "RegisteredReachable" = "RegisteredReachable"
+  inline val RegisteredUnreachable: "RegisteredUnreachable" = "RegisteredUnreachable"
 
-  @inline def values = js.Array(Provisioned, RegisteredNotSeen, RegisteredReachable, RegisteredUnreachable)
+  inline def values: js.Array[DeviceState] = js.Array(Provisioned, RegisteredNotSeen, RegisteredReachable, RegisteredUnreachable)
 }
 
 /** Sidewalk device status notification.
   */
-@js.native
-sealed trait Event extends js.Any
+type Event = "discovered" | "lost" | "ack" | "nack" | "passthrough"
 object Event {
-  val discovered = "discovered".asInstanceOf[Event]
-  val lost = "lost".asInstanceOf[Event]
-  val ack = "ack".asInstanceOf[Event]
-  val nack = "nack".asInstanceOf[Event]
-  val passthrough = "passthrough".asInstanceOf[Event]
+  inline val discovered: "discovered" = "discovered"
+  inline val lost: "lost" = "lost"
+  inline val ack: "ack" = "ack"
+  inline val nack: "nack" = "nack"
+  inline val passthrough: "passthrough" = "passthrough"
 
-  @inline def values = js.Array(discovered, lost, ack, nack, passthrough)
+  inline def values: js.Array[Event] = js.Array(discovered, lost, ack, nack, passthrough)
 }
 
-@js.native
-sealed trait ExpressionType extends js.Any
+type ExpressionType = "RuleName" | "MqttTopic"
 object ExpressionType {
-  val RuleName = "RuleName".asInstanceOf[ExpressionType]
-  val MqttTopic = "MqttTopic".asInstanceOf[ExpressionType]
+  inline val RuleName: "RuleName" = "RuleName"
+  inline val MqttTopic: "MqttTopic" = "MqttTopic"
 
-  @inline def values = js.Array(RuleName, MqttTopic)
+  inline def values: js.Array[ExpressionType] = js.Array(RuleName, MqttTopic)
 }
 
-@js.native
-sealed trait PartnerType extends js.Any
+type PartnerType = "Sidewalk"
 object PartnerType {
-  val Sidewalk = "Sidewalk".asInstanceOf[PartnerType]
+  inline val Sidewalk: "Sidewalk" = "Sidewalk"
 
-  @inline def values = js.Array(Sidewalk)
+  inline def values: js.Array[PartnerType] = js.Array(Sidewalk)
 }
 
 /** The certificate chain algorithm provided by sidewalk.
   */
-@js.native
-sealed trait SigningAlg extends js.Any
+type SigningAlg = "Ed25519" | "P256r1"
 object SigningAlg {
-  val Ed25519 = "Ed25519".asInstanceOf[SigningAlg]
-  val P256r1 = "P256r1".asInstanceOf[SigningAlg]
+  inline val Ed25519: "Ed25519" = "Ed25519"
+  inline val P256r1: "P256r1" = "P256r1"
 
-  @inline def values = js.Array(Ed25519, P256r1)
+  inline def values: js.Array[SigningAlg] = js.Array(Ed25519, P256r1)
 }
 
-@js.native
-sealed trait WirelessDeviceIdType extends js.Any
+type WirelessDeviceIdType = "WirelessDeviceId" | "DevEui" | "ThingName"
 object WirelessDeviceIdType {
-  val WirelessDeviceId = "WirelessDeviceId".asInstanceOf[WirelessDeviceIdType]
-  val DevEui = "DevEui".asInstanceOf[WirelessDeviceIdType]
-  val ThingName = "ThingName".asInstanceOf[WirelessDeviceIdType]
+  inline val WirelessDeviceId: "WirelessDeviceId" = "WirelessDeviceId"
+  inline val DevEui: "DevEui" = "DevEui"
+  inline val ThingName: "ThingName" = "ThingName"
 
-  @inline def values = js.Array(WirelessDeviceId, DevEui, ThingName)
+  inline def values: js.Array[WirelessDeviceIdType] = js.Array(WirelessDeviceId, DevEui, ThingName)
 }
 
-@js.native
-sealed trait WirelessDeviceType extends js.Any
+type WirelessDeviceType = "Sidewalk" | "LoRaWAN"
 object WirelessDeviceType {
-  val Sidewalk = "Sidewalk".asInstanceOf[WirelessDeviceType]
-  val LoRaWAN = "LoRaWAN".asInstanceOf[WirelessDeviceType]
+  inline val Sidewalk: "Sidewalk" = "Sidewalk"
+  inline val LoRaWAN: "LoRaWAN" = "LoRaWAN"
 
-  @inline def values = js.Array(Sidewalk, LoRaWAN)
+  inline def values: js.Array[WirelessDeviceType] = js.Array(Sidewalk, LoRaWAN)
 }
 
-@js.native
-sealed trait WirelessGatewayIdType extends js.Any
+type WirelessGatewayIdType = "GatewayEui" | "WirelessGatewayId" | "ThingName"
 object WirelessGatewayIdType {
-  val GatewayEui = "GatewayEui".asInstanceOf[WirelessGatewayIdType]
-  val WirelessGatewayId = "WirelessGatewayId".asInstanceOf[WirelessGatewayIdType]
-  val ThingName = "ThingName".asInstanceOf[WirelessGatewayIdType]
+  inline val GatewayEui: "GatewayEui" = "GatewayEui"
+  inline val WirelessGatewayId: "WirelessGatewayId" = "WirelessGatewayId"
+  inline val ThingName: "ThingName" = "ThingName"
 
-  @inline def values = js.Array(GatewayEui, WirelessGatewayId, ThingName)
+  inline def values: js.Array[WirelessGatewayIdType] = js.Array(GatewayEui, WirelessGatewayId, ThingName)
 }
 
-@js.native
-sealed trait WirelessGatewayServiceType extends js.Any
+type WirelessGatewayServiceType = "CUPS" | "LNS"
 object WirelessGatewayServiceType {
-  val CUPS = "CUPS".asInstanceOf[WirelessGatewayServiceType]
-  val LNS = "LNS".asInstanceOf[WirelessGatewayServiceType]
+  inline val CUPS: "CUPS" = "CUPS"
+  inline val LNS: "LNS" = "LNS"
 
-  @inline def values = js.Array(CUPS, LNS)
+  inline def values: js.Array[WirelessGatewayServiceType] = js.Array(CUPS, LNS)
 }
 
-@js.native
-sealed trait WirelessGatewayTaskDefinitionType extends js.Any
+type WirelessGatewayTaskDefinitionType = "UPDATE"
 object WirelessGatewayTaskDefinitionType {
-  val UPDATE = "UPDATE".asInstanceOf[WirelessGatewayTaskDefinitionType]
+  inline val UPDATE: "UPDATE" = "UPDATE"
 
-  @inline def values = js.Array(UPDATE)
+  inline def values: js.Array[WirelessGatewayTaskDefinitionType] = js.Array(UPDATE)
 }
 
-@js.native
-sealed trait WirelessGatewayTaskStatus extends js.Any
+type WirelessGatewayTaskStatus = "PENDING" | "IN_PROGRESS" | "FIRST_RETRY" | "SECOND_RETRY" | "COMPLETED" | "FAILED"
 object WirelessGatewayTaskStatus {
-  val PENDING = "PENDING".asInstanceOf[WirelessGatewayTaskStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[WirelessGatewayTaskStatus]
-  val FIRST_RETRY = "FIRST_RETRY".asInstanceOf[WirelessGatewayTaskStatus]
-  val SECOND_RETRY = "SECOND_RETRY".asInstanceOf[WirelessGatewayTaskStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[WirelessGatewayTaskStatus]
-  val FAILED = "FAILED".asInstanceOf[WirelessGatewayTaskStatus]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val FIRST_RETRY: "FIRST_RETRY" = "FIRST_RETRY"
+  inline val SECOND_RETRY: "SECOND_RETRY" = "SECOND_RETRY"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(PENDING, IN_PROGRESS, FIRST_RETRY, SECOND_RETRY, COMPLETED, FAILED)
+  inline def values: js.Array[WirelessGatewayTaskStatus] = js.Array(PENDING, IN_PROGRESS, FIRST_RETRY, SECOND_RETRY, COMPLETED, FAILED)
 }

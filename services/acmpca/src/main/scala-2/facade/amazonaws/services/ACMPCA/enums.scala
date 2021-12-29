@@ -158,3 +158,4 @@ object ValidityPeriodType {
 
   @inline def values = js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS)
 }
+

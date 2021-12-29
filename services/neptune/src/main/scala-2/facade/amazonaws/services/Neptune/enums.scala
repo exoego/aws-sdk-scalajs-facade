@@ -24,3 +24,4 @@ object SourceType {
 
   @inline def values = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
 }
+

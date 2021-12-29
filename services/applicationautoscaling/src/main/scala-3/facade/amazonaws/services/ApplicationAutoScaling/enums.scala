@@ -1,62 +1,57 @@
 package facade.amazonaws.services.applicationautoscaling
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AdjustmentType extends js.Any
+type AdjustmentType = "ChangeInCapacity" | "PercentChangeInCapacity" | "ExactCapacity"
 object AdjustmentType {
-  val ChangeInCapacity = "ChangeInCapacity".asInstanceOf[AdjustmentType]
-  val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[AdjustmentType]
-  val ExactCapacity = "ExactCapacity".asInstanceOf[AdjustmentType]
+  inline val ChangeInCapacity: "ChangeInCapacity" = "ChangeInCapacity"
+  inline val PercentChangeInCapacity: "PercentChangeInCapacity" = "PercentChangeInCapacity"
+  inline val ExactCapacity: "ExactCapacity" = "ExactCapacity"
 
-  @inline def values = js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity)
+  inline def values: js.Array[AdjustmentType] = js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity)
 }
 
-@js.native
-sealed trait MetricAggregationType extends js.Any
+type MetricAggregationType = "Average" | "Minimum" | "Maximum"
 object MetricAggregationType {
-  val Average = "Average".asInstanceOf[MetricAggregationType]
-  val Minimum = "Minimum".asInstanceOf[MetricAggregationType]
-  val Maximum = "Maximum".asInstanceOf[MetricAggregationType]
+  inline val Average: "Average" = "Average"
+  inline val Minimum: "Minimum" = "Minimum"
+  inline val Maximum: "Maximum" = "Maximum"
 
-  @inline def values = js.Array(Average, Minimum, Maximum)
+  inline def values: js.Array[MetricAggregationType] = js.Array(Average, Minimum, Maximum)
 }
 
-@js.native
-sealed trait MetricStatistic extends js.Any
+type MetricStatistic = "Average" | "Minimum" | "Maximum" | "SampleCount" | "Sum"
 object MetricStatistic {
-  val Average = "Average".asInstanceOf[MetricStatistic]
-  val Minimum = "Minimum".asInstanceOf[MetricStatistic]
-  val Maximum = "Maximum".asInstanceOf[MetricStatistic]
-  val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
-  val Sum = "Sum".asInstanceOf[MetricStatistic]
+  inline val Average: "Average" = "Average"
+  inline val Minimum: "Minimum" = "Minimum"
+  inline val Maximum: "Maximum" = "Maximum"
+  inline val SampleCount: "SampleCount" = "SampleCount"
+  inline val Sum: "Sum" = "Sum"
 
-  @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
+  inline def values: js.Array[MetricStatistic] = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
 }
 
-@js.native
-sealed trait MetricType extends js.Any
+type MetricType = "DynamoDBReadCapacityUtilization" | "DynamoDBWriteCapacityUtilization" | "ALBRequestCountPerTarget" | "RDSReaderAverageCPUUtilization" | "RDSReaderAverageDatabaseConnections" | "EC2SpotFleetRequestAverageCPUUtilization" | "EC2SpotFleetRequestAverageNetworkIn" | "EC2SpotFleetRequestAverageNetworkOut" | "SageMakerVariantInvocationsPerInstance" | "ECSServiceAverageCPUUtilization" | "ECSServiceAverageMemoryUtilization" | "AppStreamAverageCapacityUtilization" | "ComprehendInferenceUtilization" | "LambdaProvisionedConcurrencyUtilization" | "CassandraReadCapacityUtilization" | "CassandraWriteCapacityUtilization" | "KafkaBrokerStorageUtilization"
 object MetricType {
-  val DynamoDBReadCapacityUtilization = "DynamoDBReadCapacityUtilization".asInstanceOf[MetricType]
-  val DynamoDBWriteCapacityUtilization = "DynamoDBWriteCapacityUtilization".asInstanceOf[MetricType]
-  val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
-  val RDSReaderAverageCPUUtilization = "RDSReaderAverageCPUUtilization".asInstanceOf[MetricType]
-  val RDSReaderAverageDatabaseConnections = "RDSReaderAverageDatabaseConnections".asInstanceOf[MetricType]
-  val EC2SpotFleetRequestAverageCPUUtilization = "EC2SpotFleetRequestAverageCPUUtilization".asInstanceOf[MetricType]
-  val EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[MetricType]
-  val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[MetricType]
-  val SageMakerVariantInvocationsPerInstance = "SageMakerVariantInvocationsPerInstance".asInstanceOf[MetricType]
-  val ECSServiceAverageCPUUtilization = "ECSServiceAverageCPUUtilization".asInstanceOf[MetricType]
-  val ECSServiceAverageMemoryUtilization = "ECSServiceAverageMemoryUtilization".asInstanceOf[MetricType]
-  val AppStreamAverageCapacityUtilization = "AppStreamAverageCapacityUtilization".asInstanceOf[MetricType]
-  val ComprehendInferenceUtilization = "ComprehendInferenceUtilization".asInstanceOf[MetricType]
-  val LambdaProvisionedConcurrencyUtilization = "LambdaProvisionedConcurrencyUtilization".asInstanceOf[MetricType]
-  val CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
-  val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
-  val KafkaBrokerStorageUtilization = "KafkaBrokerStorageUtilization".asInstanceOf[MetricType]
+  inline val DynamoDBReadCapacityUtilization: "DynamoDBReadCapacityUtilization" = "DynamoDBReadCapacityUtilization"
+  inline val DynamoDBWriteCapacityUtilization: "DynamoDBWriteCapacityUtilization" = "DynamoDBWriteCapacityUtilization"
+  inline val ALBRequestCountPerTarget: "ALBRequestCountPerTarget" = "ALBRequestCountPerTarget"
+  inline val RDSReaderAverageCPUUtilization: "RDSReaderAverageCPUUtilization" = "RDSReaderAverageCPUUtilization"
+  inline val RDSReaderAverageDatabaseConnections: "RDSReaderAverageDatabaseConnections" = "RDSReaderAverageDatabaseConnections"
+  inline val EC2SpotFleetRequestAverageCPUUtilization: "EC2SpotFleetRequestAverageCPUUtilization" = "EC2SpotFleetRequestAverageCPUUtilization"
+  inline val EC2SpotFleetRequestAverageNetworkIn: "EC2SpotFleetRequestAverageNetworkIn" = "EC2SpotFleetRequestAverageNetworkIn"
+  inline val EC2SpotFleetRequestAverageNetworkOut: "EC2SpotFleetRequestAverageNetworkOut" = "EC2SpotFleetRequestAverageNetworkOut"
+  inline val SageMakerVariantInvocationsPerInstance: "SageMakerVariantInvocationsPerInstance" = "SageMakerVariantInvocationsPerInstance"
+  inline val ECSServiceAverageCPUUtilization: "ECSServiceAverageCPUUtilization" = "ECSServiceAverageCPUUtilization"
+  inline val ECSServiceAverageMemoryUtilization: "ECSServiceAverageMemoryUtilization" = "ECSServiceAverageMemoryUtilization"
+  inline val AppStreamAverageCapacityUtilization: "AppStreamAverageCapacityUtilization" = "AppStreamAverageCapacityUtilization"
+  inline val ComprehendInferenceUtilization: "ComprehendInferenceUtilization" = "ComprehendInferenceUtilization"
+  inline val LambdaProvisionedConcurrencyUtilization: "LambdaProvisionedConcurrencyUtilization" = "LambdaProvisionedConcurrencyUtilization"
+  inline val CassandraReadCapacityUtilization: "CassandraReadCapacityUtilization" = "CassandraReadCapacityUtilization"
+  inline val CassandraWriteCapacityUtilization: "CassandraWriteCapacityUtilization" = "CassandraWriteCapacityUtilization"
+  inline val KafkaBrokerStorageUtilization: "KafkaBrokerStorageUtilization" = "KafkaBrokerStorageUtilization"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[MetricType] = js.Array(
     DynamoDBReadCapacityUtilization,
     DynamoDBWriteCapacityUtilization,
     ALBRequestCountPerTarget,
@@ -77,37 +72,35 @@ object MetricType {
   )
 }
 
-@js.native
-sealed trait PolicyType extends js.Any
+type PolicyType = "StepScaling" | "TargetTrackingScaling"
 object PolicyType {
-  val StepScaling = "StepScaling".asInstanceOf[PolicyType]
-  val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
+  inline val StepScaling: "StepScaling" = "StepScaling"
+  inline val TargetTrackingScaling: "TargetTrackingScaling" = "TargetTrackingScaling"
 
-  @inline def values = js.Array(StepScaling, TargetTrackingScaling)
+  inline def values: js.Array[PolicyType] = js.Array(StepScaling, TargetTrackingScaling)
 }
 
-@js.native
-sealed trait ScalableDimension extends js.Any
+type ScalableDimension = "ecs:service:DesiredCount" | "ec2:spot-fleet-request:TargetCapacity" | "elasticmapreduce:instancegroup:InstanceCount" | "appstream:fleet:DesiredCapacity" | "dynamodb:table:ReadCapacityUnits" | "dynamodb:table:WriteCapacityUnits" | "dynamodb:index:ReadCapacityUnits" | "dynamodb:index:WriteCapacityUnits" | "rds:cluster:ReadReplicaCount" | "sagemaker:variant:DesiredInstanceCount" | "custom-resource:ResourceType:Property" | "comprehend:document-classifier-endpoint:DesiredInferenceUnits" | "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits" | "lambda:function:ProvisionedConcurrency" | "cassandra:table:ReadCapacityUnits" | "cassandra:table:WriteCapacityUnits" | "kafka:broker-storage:VolumeSize"
 object ScalableDimension {
-  val `ecs:service:DesiredCount` = "ecs:service:DesiredCount".asInstanceOf[ScalableDimension]
-  val `ec2:spot-fleet-request:TargetCapacity` = "ec2:spot-fleet-request:TargetCapacity".asInstanceOf[ScalableDimension]
-  val `elasticmapreduce:instancegroup:InstanceCount` = "elasticmapreduce:instancegroup:InstanceCount".asInstanceOf[ScalableDimension]
-  val `appstream:fleet:DesiredCapacity` = "appstream:fleet:DesiredCapacity".asInstanceOf[ScalableDimension]
-  val `dynamodb:table:ReadCapacityUnits` = "dynamodb:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-  val `dynamodb:table:WriteCapacityUnits` = "dynamodb:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-  val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-  val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-  val `rds:cluster:ReadReplicaCount` = "rds:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
-  val `sagemaker:variant:DesiredInstanceCount` = "sagemaker:variant:DesiredInstanceCount".asInstanceOf[ScalableDimension]
-  val `custom-resource:ResourceType:Property` = "custom-resource:ResourceType:Property".asInstanceOf[ScalableDimension]
-  val `comprehend:document-classifier-endpoint:DesiredInferenceUnits` = "comprehend:document-classifier-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
-  val `comprehend:entity-recognizer-endpoint:DesiredInferenceUnits` = "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits".asInstanceOf[ScalableDimension]
-  val `lambda:function:ProvisionedConcurrency` = "lambda:function:ProvisionedConcurrency".asInstanceOf[ScalableDimension]
-  val `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
-  val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
-  val `kafka:broker-storage:VolumeSize` = "kafka:broker-storage:VolumeSize".asInstanceOf[ScalableDimension]
+  inline val `ecs:service:DesiredCount`: "ecs:service:DesiredCount" = "ecs:service:DesiredCount"
+  inline val `ec2:spot-fleet-request:TargetCapacity`: "ec2:spot-fleet-request:TargetCapacity" = "ec2:spot-fleet-request:TargetCapacity"
+  inline val `elasticmapreduce:instancegroup:InstanceCount`: "elasticmapreduce:instancegroup:InstanceCount" = "elasticmapreduce:instancegroup:InstanceCount"
+  inline val `appstream:fleet:DesiredCapacity`: "appstream:fleet:DesiredCapacity" = "appstream:fleet:DesiredCapacity"
+  inline val `dynamodb:table:ReadCapacityUnits`: "dynamodb:table:ReadCapacityUnits" = "dynamodb:table:ReadCapacityUnits"
+  inline val `dynamodb:table:WriteCapacityUnits`: "dynamodb:table:WriteCapacityUnits" = "dynamodb:table:WriteCapacityUnits"
+  inline val `dynamodb:index:ReadCapacityUnits`: "dynamodb:index:ReadCapacityUnits" = "dynamodb:index:ReadCapacityUnits"
+  inline val `dynamodb:index:WriteCapacityUnits`: "dynamodb:index:WriteCapacityUnits" = "dynamodb:index:WriteCapacityUnits"
+  inline val `rds:cluster:ReadReplicaCount`: "rds:cluster:ReadReplicaCount" = "rds:cluster:ReadReplicaCount"
+  inline val `sagemaker:variant:DesiredInstanceCount`: "sagemaker:variant:DesiredInstanceCount" = "sagemaker:variant:DesiredInstanceCount"
+  inline val `custom-resource:ResourceType:Property`: "custom-resource:ResourceType:Property" = "custom-resource:ResourceType:Property"
+  inline val `comprehend:document-classifier-endpoint:DesiredInferenceUnits`: "comprehend:document-classifier-endpoint:DesiredInferenceUnits" = "comprehend:document-classifier-endpoint:DesiredInferenceUnits"
+  inline val `comprehend:entity-recognizer-endpoint:DesiredInferenceUnits`: "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits" = "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits"
+  inline val `lambda:function:ProvisionedConcurrency`: "lambda:function:ProvisionedConcurrency" = "lambda:function:ProvisionedConcurrency"
+  inline val `cassandra:table:ReadCapacityUnits`: "cassandra:table:ReadCapacityUnits" = "cassandra:table:ReadCapacityUnits"
+  inline val `cassandra:table:WriteCapacityUnits`: "cassandra:table:WriteCapacityUnits" = "cassandra:table:WriteCapacityUnits"
+  inline val `kafka:broker-storage:VolumeSize`: "kafka:broker-storage:VolumeSize" = "kafka:broker-storage:VolumeSize"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[ScalableDimension] = js.Array(
     `ecs:service:DesiredCount`,
     `ec2:spot-fleet-request:TargetCapacity`,
     `elasticmapreduce:instancegroup:InstanceCount`,
@@ -128,34 +121,32 @@ object ScalableDimension {
   )
 }
 
-@js.native
-sealed trait ScalingActivityStatusCode extends js.Any
+type ScalingActivityStatusCode = "Pending" | "InProgress" | "Successful" | "Overridden" | "Unfulfilled" | "Failed"
 object ScalingActivityStatusCode {
-  val Pending = "Pending".asInstanceOf[ScalingActivityStatusCode]
-  val InProgress = "InProgress".asInstanceOf[ScalingActivityStatusCode]
-  val Successful = "Successful".asInstanceOf[ScalingActivityStatusCode]
-  val Overridden = "Overridden".asInstanceOf[ScalingActivityStatusCode]
-  val Unfulfilled = "Unfulfilled".asInstanceOf[ScalingActivityStatusCode]
-  val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
+  inline val Pending: "Pending" = "Pending"
+  inline val InProgress: "InProgress" = "InProgress"
+  inline val Successful: "Successful" = "Successful"
+  inline val Overridden: "Overridden" = "Overridden"
+  inline val Unfulfilled: "Unfulfilled" = "Unfulfilled"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed)
+  inline def values: js.Array[ScalingActivityStatusCode] = js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed)
 }
 
-@js.native
-sealed trait ServiceNamespace extends js.Any
+type ServiceNamespace = "ecs" | "elasticmapreduce" | "ec2" | "appstream" | "dynamodb" | "rds" | "sagemaker" | "custom-resource" | "comprehend" | "lambda" | "cassandra" | "kafka"
 object ServiceNamespace {
-  val ecs = "ecs".asInstanceOf[ServiceNamespace]
-  val elasticmapreduce = "elasticmapreduce".asInstanceOf[ServiceNamespace]
-  val ec2 = "ec2".asInstanceOf[ServiceNamespace]
-  val appstream = "appstream".asInstanceOf[ServiceNamespace]
-  val dynamodb = "dynamodb".asInstanceOf[ServiceNamespace]
-  val rds = "rds".asInstanceOf[ServiceNamespace]
-  val sagemaker = "sagemaker".asInstanceOf[ServiceNamespace]
-  val `custom-resource` = "custom-resource".asInstanceOf[ServiceNamespace]
-  val comprehend = "comprehend".asInstanceOf[ServiceNamespace]
-  val lambda = "lambda".asInstanceOf[ServiceNamespace]
-  val cassandra = "cassandra".asInstanceOf[ServiceNamespace]
-  val kafka = "kafka".asInstanceOf[ServiceNamespace]
+  inline val ecs: "ecs" = "ecs"
+  inline val elasticmapreduce: "elasticmapreduce" = "elasticmapreduce"
+  inline val ec2: "ec2" = "ec2"
+  inline val appstream: "appstream" = "appstream"
+  inline val dynamodb: "dynamodb" = "dynamodb"
+  inline val rds: "rds" = "rds"
+  inline val sagemaker: "sagemaker" = "sagemaker"
+  inline val `custom-resource`: "custom-resource" = "custom-resource"
+  inline val comprehend: "comprehend" = "comprehend"
+  inline val lambda: "lambda" = "lambda"
+  inline val cassandra: "cassandra" = "cassandra"
+  inline val kafka: "kafka" = "kafka"
 
-  @inline def values = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka)
+  inline def values: js.Array[ServiceNamespace] = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka)
 }

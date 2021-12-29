@@ -1,33 +1,30 @@
 package facade.amazonaws.services.fis
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ExperimentActionStatus extends js.Any
+type ExperimentActionStatus = "pending" | "initiating" | "running" | "completed" | "cancelled" | "stopping" | "stopped" | "failed"
 object ExperimentActionStatus {
-  val pending = "pending".asInstanceOf[ExperimentActionStatus]
-  val initiating = "initiating".asInstanceOf[ExperimentActionStatus]
-  val running = "running".asInstanceOf[ExperimentActionStatus]
-  val completed = "completed".asInstanceOf[ExperimentActionStatus]
-  val cancelled = "cancelled".asInstanceOf[ExperimentActionStatus]
-  val stopping = "stopping".asInstanceOf[ExperimentActionStatus]
-  val stopped = "stopped".asInstanceOf[ExperimentActionStatus]
-  val failed = "failed".asInstanceOf[ExperimentActionStatus]
+  inline val pending: "pending" = "pending"
+  inline val initiating: "initiating" = "initiating"
+  inline val running: "running" = "running"
+  inline val completed: "completed" = "completed"
+  inline val cancelled: "cancelled" = "cancelled"
+  inline val stopping: "stopping" = "stopping"
+  inline val stopped: "stopped" = "stopped"
+  inline val failed: "failed" = "failed"
 
-  @inline def values = js.Array(pending, initiating, running, completed, cancelled, stopping, stopped, failed)
+  inline def values: js.Array[ExperimentActionStatus] = js.Array(pending, initiating, running, completed, cancelled, stopping, stopped, failed)
 }
 
-@js.native
-sealed trait ExperimentStatus extends js.Any
+type ExperimentStatus = "pending" | "initiating" | "running" | "completed" | "stopping" | "stopped" | "failed"
 object ExperimentStatus {
-  val pending = "pending".asInstanceOf[ExperimentStatus]
-  val initiating = "initiating".asInstanceOf[ExperimentStatus]
-  val running = "running".asInstanceOf[ExperimentStatus]
-  val completed = "completed".asInstanceOf[ExperimentStatus]
-  val stopping = "stopping".asInstanceOf[ExperimentStatus]
-  val stopped = "stopped".asInstanceOf[ExperimentStatus]
-  val failed = "failed".asInstanceOf[ExperimentStatus]
+  inline val pending: "pending" = "pending"
+  inline val initiating: "initiating" = "initiating"
+  inline val running: "running" = "running"
+  inline val completed: "completed" = "completed"
+  inline val stopping: "stopping" = "stopping"
+  inline val stopped: "stopped" = "stopped"
+  inline val failed: "failed" = "failed"
 
-  @inline def values = js.Array(pending, initiating, running, completed, stopping, stopped, failed)
+  inline def values: js.Array[ExperimentStatus] = js.Array(pending, initiating, running, completed, stopping, stopped, failed)
 }

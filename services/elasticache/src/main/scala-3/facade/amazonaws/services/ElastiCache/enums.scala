@@ -1,217 +1,195 @@
 package facade.amazonaws.services.elasticache
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AZMode extends js.Any
+type AZMode = "single-az" | "cross-az"
 object AZMode {
-  val `single-az` = "single-az".asInstanceOf[AZMode]
-  val `cross-az` = "cross-az".asInstanceOf[AZMode]
+  inline val `single-az`: "single-az" = "single-az"
+  inline val `cross-az`: "cross-az" = "cross-az"
 
-  @inline def values = js.Array(`single-az`, `cross-az`)
+  inline def values: js.Array[AZMode] = js.Array(`single-az`, `cross-az`)
 }
 
-@js.native
-sealed trait AuthTokenUpdateStatus extends js.Any
+type AuthTokenUpdateStatus = "SETTING" | "ROTATING"
 object AuthTokenUpdateStatus {
-  val SETTING = "SETTING".asInstanceOf[AuthTokenUpdateStatus]
-  val ROTATING = "ROTATING".asInstanceOf[AuthTokenUpdateStatus]
+  inline val SETTING: "SETTING" = "SETTING"
+  inline val ROTATING: "ROTATING" = "ROTATING"
 
-  @inline def values = js.Array(SETTING, ROTATING)
+  inline def values: js.Array[AuthTokenUpdateStatus] = js.Array(SETTING, ROTATING)
 }
 
-@js.native
-sealed trait AuthTokenUpdateStrategyType extends js.Any
+type AuthTokenUpdateStrategyType = "SET" | "ROTATE" | "DELETE"
 object AuthTokenUpdateStrategyType {
-  val SET = "SET".asInstanceOf[AuthTokenUpdateStrategyType]
-  val ROTATE = "ROTATE".asInstanceOf[AuthTokenUpdateStrategyType]
-  val DELETE = "DELETE".asInstanceOf[AuthTokenUpdateStrategyType]
+  inline val SET: "SET" = "SET"
+  inline val ROTATE: "ROTATE" = "ROTATE"
+  inline val DELETE: "DELETE" = "DELETE"
 
-  @inline def values = js.Array(SET, ROTATE, DELETE)
+  inline def values: js.Array[AuthTokenUpdateStrategyType] = js.Array(SET, ROTATE, DELETE)
 }
 
-@js.native
-sealed trait AuthenticationType extends js.Any
+type AuthenticationType = "password" | "no-password"
 object AuthenticationType {
-  val password = "password".asInstanceOf[AuthenticationType]
-  val `no-password` = "no-password".asInstanceOf[AuthenticationType]
+  inline val password: "password" = "password"
+  inline val `no-password`: "no-password" = "no-password"
 
-  @inline def values = js.Array(password, `no-password`)
+  inline def values: js.Array[AuthenticationType] = js.Array(password, `no-password`)
 }
 
-@js.native
-sealed trait AutomaticFailoverStatus extends js.Any
+type AutomaticFailoverStatus = "enabled" | "disabled" | "enabling" | "disabling"
 object AutomaticFailoverStatus {
-  val enabled = "enabled".asInstanceOf[AutomaticFailoverStatus]
-  val disabled = "disabled".asInstanceOf[AutomaticFailoverStatus]
-  val enabling = "enabling".asInstanceOf[AutomaticFailoverStatus]
-  val disabling = "disabling".asInstanceOf[AutomaticFailoverStatus]
+  inline val enabled: "enabled" = "enabled"
+  inline val disabled: "disabled" = "disabled"
+  inline val enabling: "enabling" = "enabling"
+  inline val disabling: "disabling" = "disabling"
 
-  @inline def values = js.Array(enabled, disabled, enabling, disabling)
+  inline def values: js.Array[AutomaticFailoverStatus] = js.Array(enabled, disabled, enabling, disabling)
 }
 
-@js.native
-sealed trait ChangeType extends js.Any
+type ChangeType = "immediate" | "requires-reboot"
 object ChangeType {
-  val immediate = "immediate".asInstanceOf[ChangeType]
-  val `requires-reboot` = "requires-reboot".asInstanceOf[ChangeType]
+  inline val immediate: "immediate" = "immediate"
+  inline val `requires-reboot`: "requires-reboot" = "requires-reboot"
 
-  @inline def values = js.Array(immediate, `requires-reboot`)
+  inline def values: js.Array[ChangeType] = js.Array(immediate, `requires-reboot`)
 }
 
-@js.native
-sealed trait DestinationType extends js.Any
+type DestinationType = "cloudwatch-logs" | "kinesis-firehose"
 object DestinationType {
-  val `cloudwatch-logs` = "cloudwatch-logs".asInstanceOf[DestinationType]
-  val `kinesis-firehose` = "kinesis-firehose".asInstanceOf[DestinationType]
+  inline val `cloudwatch-logs`: "cloudwatch-logs" = "cloudwatch-logs"
+  inline val `kinesis-firehose`: "kinesis-firehose" = "kinesis-firehose"
 
-  @inline def values = js.Array(`cloudwatch-logs`, `kinesis-firehose`)
+  inline def values: js.Array[DestinationType] = js.Array(`cloudwatch-logs`, `kinesis-firehose`)
 }
 
-@js.native
-sealed trait LogDeliveryConfigurationStatus extends js.Any
+type LogDeliveryConfigurationStatus = "active" | "enabling" | "modifying" | "disabling" | "error"
 object LogDeliveryConfigurationStatus {
-  val active = "active".asInstanceOf[LogDeliveryConfigurationStatus]
-  val enabling = "enabling".asInstanceOf[LogDeliveryConfigurationStatus]
-  val modifying = "modifying".asInstanceOf[LogDeliveryConfigurationStatus]
-  val disabling = "disabling".asInstanceOf[LogDeliveryConfigurationStatus]
-  val error = "error".asInstanceOf[LogDeliveryConfigurationStatus]
+  inline val active: "active" = "active"
+  inline val enabling: "enabling" = "enabling"
+  inline val modifying: "modifying" = "modifying"
+  inline val disabling: "disabling" = "disabling"
+  inline val error: "error" = "error"
 
-  @inline def values = js.Array(active, enabling, modifying, disabling, error)
+  inline def values: js.Array[LogDeliveryConfigurationStatus] = js.Array(active, enabling, modifying, disabling, error)
 }
 
-@js.native
-sealed trait LogFormat extends js.Any
+type LogFormat = "text" | "json"
 object LogFormat {
-  val text = "text".asInstanceOf[LogFormat]
-  val json = "json".asInstanceOf[LogFormat]
+  inline val text: "text" = "text"
+  inline val json: "json" = "json"
 
-  @inline def values = js.Array(text, json)
+  inline def values: js.Array[LogFormat] = js.Array(text, json)
 }
 
-@js.native
-sealed trait LogType extends js.Any
+type LogType = "slow-log"
 object LogType {
-  val `slow-log` = "slow-log".asInstanceOf[LogType]
+  inline val `slow-log`: "slow-log" = "slow-log"
 
-  @inline def values = js.Array(`slow-log`)
+  inline def values: js.Array[LogType] = js.Array(`slow-log`)
 }
 
-@js.native
-sealed trait MultiAZStatus extends js.Any
+type MultiAZStatus = "enabled" | "disabled"
 object MultiAZStatus {
-  val enabled = "enabled".asInstanceOf[MultiAZStatus]
-  val disabled = "disabled".asInstanceOf[MultiAZStatus]
+  inline val enabled: "enabled" = "enabled"
+  inline val disabled: "disabled" = "disabled"
 
-  @inline def values = js.Array(enabled, disabled)
+  inline def values: js.Array[MultiAZStatus] = js.Array(enabled, disabled)
 }
 
-@js.native
-sealed trait NodeUpdateInitiatedBy extends js.Any
+type NodeUpdateInitiatedBy = "system" | "customer"
 object NodeUpdateInitiatedBy {
-  val system = "system".asInstanceOf[NodeUpdateInitiatedBy]
-  val customer = "customer".asInstanceOf[NodeUpdateInitiatedBy]
+  inline val system: "system" = "system"
+  inline val customer: "customer" = "customer"
 
-  @inline def values = js.Array(system, customer)
+  inline def values: js.Array[NodeUpdateInitiatedBy] = js.Array(system, customer)
 }
 
-@js.native
-sealed trait NodeUpdateStatus extends js.Any
+type NodeUpdateStatus = "not-applied" | "waiting-to-start" | "in-progress" | "stopping" | "stopped" | "complete"
 object NodeUpdateStatus {
-  val `not-applied` = "not-applied".asInstanceOf[NodeUpdateStatus]
-  val `waiting-to-start` = "waiting-to-start".asInstanceOf[NodeUpdateStatus]
-  val `in-progress` = "in-progress".asInstanceOf[NodeUpdateStatus]
-  val stopping = "stopping".asInstanceOf[NodeUpdateStatus]
-  val stopped = "stopped".asInstanceOf[NodeUpdateStatus]
-  val complete = "complete".asInstanceOf[NodeUpdateStatus]
+  inline val `not-applied`: "not-applied" = "not-applied"
+  inline val `waiting-to-start`: "waiting-to-start" = "waiting-to-start"
+  inline val `in-progress`: "in-progress" = "in-progress"
+  inline val stopping: "stopping" = "stopping"
+  inline val stopped: "stopped" = "stopped"
+  inline val complete: "complete" = "complete"
 
-  @inline def values = js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete)
+  inline def values: js.Array[NodeUpdateStatus] = js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete)
 }
 
-@js.native
-sealed trait OutpostMode extends js.Any
+type OutpostMode = "single-outpost" | "cross-outpost"
 object OutpostMode {
-  val `single-outpost` = "single-outpost".asInstanceOf[OutpostMode]
-  val `cross-outpost` = "cross-outpost".asInstanceOf[OutpostMode]
+  inline val `single-outpost`: "single-outpost" = "single-outpost"
+  inline val `cross-outpost`: "cross-outpost" = "cross-outpost"
 
-  @inline def values = js.Array(`single-outpost`, `cross-outpost`)
+  inline def values: js.Array[OutpostMode] = js.Array(`single-outpost`, `cross-outpost`)
 }
 
-@js.native
-sealed trait PendingAutomaticFailoverStatus extends js.Any
+type PendingAutomaticFailoverStatus = "enabled" | "disabled"
 object PendingAutomaticFailoverStatus {
-  val enabled = "enabled".asInstanceOf[PendingAutomaticFailoverStatus]
-  val disabled = "disabled".asInstanceOf[PendingAutomaticFailoverStatus]
+  inline val enabled: "enabled" = "enabled"
+  inline val disabled: "disabled" = "disabled"
 
-  @inline def values = js.Array(enabled, disabled)
+  inline def values: js.Array[PendingAutomaticFailoverStatus] = js.Array(enabled, disabled)
 }
 
-@js.native
-sealed trait ServiceUpdateSeverity extends js.Any
+type ServiceUpdateSeverity = "critical" | "important" | "medium" | "low"
 object ServiceUpdateSeverity {
-  val critical = "critical".asInstanceOf[ServiceUpdateSeverity]
-  val important = "important".asInstanceOf[ServiceUpdateSeverity]
-  val medium = "medium".asInstanceOf[ServiceUpdateSeverity]
-  val low = "low".asInstanceOf[ServiceUpdateSeverity]
+  inline val critical: "critical" = "critical"
+  inline val important: "important" = "important"
+  inline val medium: "medium" = "medium"
+  inline val low: "low" = "low"
 
-  @inline def values = js.Array(critical, important, medium, low)
+  inline def values: js.Array[ServiceUpdateSeverity] = js.Array(critical, important, medium, low)
 }
 
-@js.native
-sealed trait ServiceUpdateStatus extends js.Any
+type ServiceUpdateStatus = "available" | "cancelled" | "expired"
 object ServiceUpdateStatus {
-  val available = "available".asInstanceOf[ServiceUpdateStatus]
-  val cancelled = "cancelled".asInstanceOf[ServiceUpdateStatus]
-  val expired = "expired".asInstanceOf[ServiceUpdateStatus]
+  inline val available: "available" = "available"
+  inline val cancelled: "cancelled" = "cancelled"
+  inline val expired: "expired" = "expired"
 
-  @inline def values = js.Array(available, cancelled, expired)
+  inline def values: js.Array[ServiceUpdateStatus] = js.Array(available, cancelled, expired)
 }
 
-@js.native
-sealed trait ServiceUpdateType extends js.Any
+type ServiceUpdateType = "security-update"
 object ServiceUpdateType {
-  val `security-update` = "security-update".asInstanceOf[ServiceUpdateType]
+  inline val `security-update`: "security-update" = "security-update"
 
-  @inline def values = js.Array(`security-update`)
+  inline def values: js.Array[ServiceUpdateType] = js.Array(`security-update`)
 }
 
-@js.native
-sealed trait SlaMet extends js.Any
+type SlaMet = "yes" | "no" | "n/a"
 object SlaMet {
-  val yes = "yes".asInstanceOf[SlaMet]
-  val no = "no".asInstanceOf[SlaMet]
-  val `n/a` = "n/a".asInstanceOf[SlaMet]
+  inline val yes: "yes" = "yes"
+  inline val no: "no" = "no"
+  inline val `n/a`: "n/a" = "n/a"
 
-  @inline def values = js.Array(yes, no, `n/a`)
+  inline def values: js.Array[SlaMet] = js.Array(yes, no, `n/a`)
 }
 
-@js.native
-sealed trait SourceType extends js.Any
+type SourceType = "cache-cluster" | "cache-parameter-group" | "cache-security-group" | "cache-subnet-group" | "replication-group" | "user" | "user-group"
 object SourceType {
-  val `cache-cluster` = "cache-cluster".asInstanceOf[SourceType]
-  val `cache-parameter-group` = "cache-parameter-group".asInstanceOf[SourceType]
-  val `cache-security-group` = "cache-security-group".asInstanceOf[SourceType]
-  val `cache-subnet-group` = "cache-subnet-group".asInstanceOf[SourceType]
-  val `replication-group` = "replication-group".asInstanceOf[SourceType]
-  val user = "user".asInstanceOf[SourceType]
-  val `user-group` = "user-group".asInstanceOf[SourceType]
+  inline val `cache-cluster`: "cache-cluster" = "cache-cluster"
+  inline val `cache-parameter-group`: "cache-parameter-group" = "cache-parameter-group"
+  inline val `cache-security-group`: "cache-security-group" = "cache-security-group"
+  inline val `cache-subnet-group`: "cache-subnet-group" = "cache-subnet-group"
+  inline val `replication-group`: "replication-group" = "replication-group"
+  inline val user: "user" = "user"
+  inline val `user-group`: "user-group" = "user-group"
 
-  @inline def values = js.Array(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`, user, `user-group`)
+  inline def values: js.Array[SourceType] = js.Array(`cache-cluster`, `cache-parameter-group`, `cache-security-group`, `cache-subnet-group`, `replication-group`, user, `user-group`)
 }
 
-@js.native
-sealed trait UpdateActionStatus extends js.Any
+type UpdateActionStatus = "not-applied" | "waiting-to-start" | "in-progress" | "stopping" | "stopped" | "complete" | "scheduling" | "scheduled" | "not-applicable"
 object UpdateActionStatus {
-  val `not-applied` = "not-applied".asInstanceOf[UpdateActionStatus]
-  val `waiting-to-start` = "waiting-to-start".asInstanceOf[UpdateActionStatus]
-  val `in-progress` = "in-progress".asInstanceOf[UpdateActionStatus]
-  val stopping = "stopping".asInstanceOf[UpdateActionStatus]
-  val stopped = "stopped".asInstanceOf[UpdateActionStatus]
-  val complete = "complete".asInstanceOf[UpdateActionStatus]
-  val scheduling = "scheduling".asInstanceOf[UpdateActionStatus]
-  val scheduled = "scheduled".asInstanceOf[UpdateActionStatus]
-  val `not-applicable` = "not-applicable".asInstanceOf[UpdateActionStatus]
+  inline val `not-applied`: "not-applied" = "not-applied"
+  inline val `waiting-to-start`: "waiting-to-start" = "waiting-to-start"
+  inline val `in-progress`: "in-progress" = "in-progress"
+  inline val stopping: "stopping" = "stopping"
+  inline val stopped: "stopped" = "stopped"
+  inline val complete: "complete" = "complete"
+  inline val scheduling: "scheduling" = "scheduling"
+  inline val scheduled: "scheduled" = "scheduled"
+  inline val `not-applicable`: "not-applicable" = "not-applicable"
 
-  @inline def values = js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete, scheduling, scheduled, `not-applicable`)
+  inline def values: js.Array[UpdateActionStatus] = js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete, scheduling, scheduled, `not-applicable`)
 }

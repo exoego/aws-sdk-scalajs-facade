@@ -61,35 +61,7 @@ object Unit {
   val `Count/Second` = "Count/Second".asInstanceOf[Unit]
   val None = "None".asInstanceOf[Unit]
 
-  @inline def values = js.Array(
-    Seconds,
-    Microseconds,
-    Milliseconds,
-    Bytes,
-    Kilobytes,
-    Megabytes,
-    Gigabytes,
-    Terabytes,
-    Bits,
-    Kilobits,
-    Megabits,
-    Gigabits,
-    Terabits,
-    Percent,
-    Count,
-    `Bytes/Second`,
-    `Kilobytes/Second`,
-    `Megabytes/Second`,
-    `Gigabytes/Second`,
-    `Terabytes/Second`,
-    `Bits/Second`,
-    `Kilobits/Second`,
-    `Megabits/Second`,
-    `Gigabits/Second`,
-    `Terabits/Second`,
-    `Count/Second`,
-    None
-  )
+  @inline def values = js.Array(Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, `Bytes/Second`, `Kilobytes/Second`, `Megabytes/Second`, `Gigabytes/Second`, `Terabytes/Second`, `Bits/Second`, `Kilobits/Second`, `Megabits/Second`, `Gigabits/Second`, `Terabits/Second`, `Count/Second`, None)
 }
 
 @js.native
@@ -110,3 +82,4 @@ object WebserverAccessMode {
 
   @inline def values = js.Array(PRIVATE_ONLY, PUBLIC_ONLY)
 }
+

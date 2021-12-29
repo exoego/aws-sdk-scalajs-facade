@@ -176,3 +176,4 @@ object VirtualServiceStatusCode {
 
   @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
 }
+

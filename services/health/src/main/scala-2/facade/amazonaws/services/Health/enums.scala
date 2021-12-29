@@ -51,3 +51,4 @@ object eventTypeCategory {
 
   @inline def values = js.Array(issue, accountNotification, scheduledChange, investigation)
 }
+

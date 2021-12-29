@@ -59,19 +59,7 @@ object BatchStatementErrorCodeEnum {
   val AccessDenied = "AccessDenied".asInstanceOf[BatchStatementErrorCodeEnum]
   val DuplicateItem = "DuplicateItem".asInstanceOf[BatchStatementErrorCodeEnum]
 
-  @inline def values = js.Array(
-    ConditionalCheckFailed,
-    ItemCollectionSizeLimitExceeded,
-    RequestLimitExceeded,
-    ValidationError,
-    ProvisionedThroughputExceeded,
-    TransactionConflict,
-    ThrottlingError,
-    InternalServerError,
-    ResourceNotFound,
-    AccessDenied,
-    DuplicateItem
-  )
+  @inline def values = js.Array(ConditionalCheckFailed, ItemCollectionSizeLimitExceeded, RequestLimitExceeded, ValidationError, ProvisionedThroughputExceeded, TransactionConflict, ThrottlingError, InternalServerError, ResourceNotFound, AccessDenied, DuplicateItem)
 }
 
 @js.native
@@ -237,7 +225,11 @@ object ReplicaStatus {
   @inline def values = js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE, REGION_DISABLED, INACCESSIBLE_ENCRYPTION_CREDENTIALS)
 }
 
-/** Determines the level of detail about provisioned throughput consumption that is returned in the response: * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed. Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s). * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation. * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
+/** Determines the level of detail about provisioned throughput consumption that is returned in the response:
+  * * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.
+  * Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).
+  * * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.
+  * * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
   */
 @js.native
 sealed trait ReturnConsumedCapacity extends js.Any
@@ -365,3 +357,4 @@ object TimeToLiveStatus {
 
   @inline def values = js.Array(ENABLING, DISABLING, ENABLED, DISABLED)
 }
+

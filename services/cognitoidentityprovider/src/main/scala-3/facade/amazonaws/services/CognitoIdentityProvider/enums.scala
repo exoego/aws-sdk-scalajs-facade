@@ -1,88 +1,80 @@
 package facade.amazonaws.services.cognitoidentityprovider
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccountTakeoverEventActionType extends js.Any
+type AccountTakeoverEventActionType = "BLOCK" | "MFA_IF_CONFIGURED" | "MFA_REQUIRED" | "NO_ACTION"
 object AccountTakeoverEventActionType {
-  val BLOCK = "BLOCK".asInstanceOf[AccountTakeoverEventActionType]
-  val MFA_IF_CONFIGURED = "MFA_IF_CONFIGURED".asInstanceOf[AccountTakeoverEventActionType]
-  val MFA_REQUIRED = "MFA_REQUIRED".asInstanceOf[AccountTakeoverEventActionType]
-  val NO_ACTION = "NO_ACTION".asInstanceOf[AccountTakeoverEventActionType]
+  inline val BLOCK: "BLOCK" = "BLOCK"
+  inline val MFA_IF_CONFIGURED: "MFA_IF_CONFIGURED" = "MFA_IF_CONFIGURED"
+  inline val MFA_REQUIRED: "MFA_REQUIRED" = "MFA_REQUIRED"
+  inline val NO_ACTION: "NO_ACTION" = "NO_ACTION"
 
-  @inline def values = js.Array(BLOCK, MFA_IF_CONFIGURED, MFA_REQUIRED, NO_ACTION)
+  inline def values: js.Array[AccountTakeoverEventActionType] = js.Array(BLOCK, MFA_IF_CONFIGURED, MFA_REQUIRED, NO_ACTION)
 }
 
-@js.native
-sealed trait AdvancedSecurityModeType extends js.Any
+type AdvancedSecurityModeType = "OFF" | "AUDIT" | "ENFORCED"
 object AdvancedSecurityModeType {
-  val OFF = "OFF".asInstanceOf[AdvancedSecurityModeType]
-  val AUDIT = "AUDIT".asInstanceOf[AdvancedSecurityModeType]
-  val ENFORCED = "ENFORCED".asInstanceOf[AdvancedSecurityModeType]
+  inline val OFF: "OFF" = "OFF"
+  inline val AUDIT: "AUDIT" = "AUDIT"
+  inline val ENFORCED: "ENFORCED" = "ENFORCED"
 
-  @inline def values = js.Array(OFF, AUDIT, ENFORCED)
+  inline def values: js.Array[AdvancedSecurityModeType] = js.Array(OFF, AUDIT, ENFORCED)
 }
 
-@js.native
-sealed trait AliasAttributeType extends js.Any
+type AliasAttributeType = "phone_number" | "email" | "preferred_username"
 object AliasAttributeType {
-  val phone_number = "phone_number".asInstanceOf[AliasAttributeType]
-  val email = "email".asInstanceOf[AliasAttributeType]
-  val preferred_username = "preferred_username".asInstanceOf[AliasAttributeType]
+  inline val phone_number: "phone_number" = "phone_number"
+  inline val email: "email" = "email"
+  inline val preferred_username: "preferred_username" = "preferred_username"
 
-  @inline def values = js.Array(phone_number, email, preferred_username)
+  inline def values: js.Array[AliasAttributeType] = js.Array(phone_number, email, preferred_username)
 }
 
-@js.native
-sealed trait AttributeDataType extends js.Any
+type AttributeDataType = "String" | "Number" | "DateTime" | "Boolean"
 object AttributeDataType {
-  val String = "String".asInstanceOf[AttributeDataType]
-  val Number = "Number".asInstanceOf[AttributeDataType]
-  val DateTime = "DateTime".asInstanceOf[AttributeDataType]
-  val Boolean = "Boolean".asInstanceOf[AttributeDataType]
+  inline val String: "String" = "String"
+  inline val Number: "Number" = "Number"
+  inline val DateTime: "DateTime" = "DateTime"
+  inline val Boolean: "Boolean" = "Boolean"
 
-  @inline def values = js.Array(String, Number, DateTime, Boolean)
+  inline def values: js.Array[AttributeDataType] = js.Array(String, Number, DateTime, Boolean)
 }
 
-@js.native
-sealed trait AuthFlowType extends js.Any
+type AuthFlowType = "USER_SRP_AUTH" | "REFRESH_TOKEN_AUTH" | "REFRESH_TOKEN" | "CUSTOM_AUTH" | "ADMIN_NO_SRP_AUTH" | "USER_PASSWORD_AUTH" | "ADMIN_USER_PASSWORD_AUTH"
 object AuthFlowType {
-  val USER_SRP_AUTH = "USER_SRP_AUTH".asInstanceOf[AuthFlowType]
-  val REFRESH_TOKEN_AUTH = "REFRESH_TOKEN_AUTH".asInstanceOf[AuthFlowType]
-  val REFRESH_TOKEN = "REFRESH_TOKEN".asInstanceOf[AuthFlowType]
-  val CUSTOM_AUTH = "CUSTOM_AUTH".asInstanceOf[AuthFlowType]
-  val ADMIN_NO_SRP_AUTH = "ADMIN_NO_SRP_AUTH".asInstanceOf[AuthFlowType]
-  val USER_PASSWORD_AUTH = "USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
-  val ADMIN_USER_PASSWORD_AUTH = "ADMIN_USER_PASSWORD_AUTH".asInstanceOf[AuthFlowType]
+  inline val USER_SRP_AUTH: "USER_SRP_AUTH" = "USER_SRP_AUTH"
+  inline val REFRESH_TOKEN_AUTH: "REFRESH_TOKEN_AUTH" = "REFRESH_TOKEN_AUTH"
+  inline val REFRESH_TOKEN: "REFRESH_TOKEN" = "REFRESH_TOKEN"
+  inline val CUSTOM_AUTH: "CUSTOM_AUTH" = "CUSTOM_AUTH"
+  inline val ADMIN_NO_SRP_AUTH: "ADMIN_NO_SRP_AUTH" = "ADMIN_NO_SRP_AUTH"
+  inline val USER_PASSWORD_AUTH: "USER_PASSWORD_AUTH" = "USER_PASSWORD_AUTH"
+  inline val ADMIN_USER_PASSWORD_AUTH: "ADMIN_USER_PASSWORD_AUTH" = "ADMIN_USER_PASSWORD_AUTH"
 
-  @inline def values = js.Array(USER_SRP_AUTH, REFRESH_TOKEN_AUTH, REFRESH_TOKEN, CUSTOM_AUTH, ADMIN_NO_SRP_AUTH, USER_PASSWORD_AUTH, ADMIN_USER_PASSWORD_AUTH)
+  inline def values: js.Array[AuthFlowType] = js.Array(USER_SRP_AUTH, REFRESH_TOKEN_AUTH, REFRESH_TOKEN, CUSTOM_AUTH, ADMIN_NO_SRP_AUTH, USER_PASSWORD_AUTH, ADMIN_USER_PASSWORD_AUTH)
 }
 
-@js.native
-sealed trait ChallengeName extends js.Any
+type ChallengeName = "Password" | "Mfa"
 object ChallengeName {
-  val Password = "Password".asInstanceOf[ChallengeName]
-  val Mfa = "Mfa".asInstanceOf[ChallengeName]
+  inline val Password: "Password" = "Password"
+  inline val Mfa: "Mfa" = "Mfa"
 
-  @inline def values = js.Array(Password, Mfa)
+  inline def values: js.Array[ChallengeName] = js.Array(Password, Mfa)
 }
 
-@js.native
-sealed trait ChallengeNameType extends js.Any
+type ChallengeNameType = "SMS_MFA" | "SOFTWARE_TOKEN_MFA" | "SELECT_MFA_TYPE" | "MFA_SETUP" | "PASSWORD_VERIFIER" | "CUSTOM_CHALLENGE" | "DEVICE_SRP_AUTH" | "DEVICE_PASSWORD_VERIFIER" | "ADMIN_NO_SRP_AUTH" | "NEW_PASSWORD_REQUIRED"
 object ChallengeNameType {
-  val SMS_MFA = "SMS_MFA".asInstanceOf[ChallengeNameType]
-  val SOFTWARE_TOKEN_MFA = "SOFTWARE_TOKEN_MFA".asInstanceOf[ChallengeNameType]
-  val SELECT_MFA_TYPE = "SELECT_MFA_TYPE".asInstanceOf[ChallengeNameType]
-  val MFA_SETUP = "MFA_SETUP".asInstanceOf[ChallengeNameType]
-  val PASSWORD_VERIFIER = "PASSWORD_VERIFIER".asInstanceOf[ChallengeNameType]
-  val CUSTOM_CHALLENGE = "CUSTOM_CHALLENGE".asInstanceOf[ChallengeNameType]
-  val DEVICE_SRP_AUTH = "DEVICE_SRP_AUTH".asInstanceOf[ChallengeNameType]
-  val DEVICE_PASSWORD_VERIFIER = "DEVICE_PASSWORD_VERIFIER".asInstanceOf[ChallengeNameType]
-  val ADMIN_NO_SRP_AUTH = "ADMIN_NO_SRP_AUTH".asInstanceOf[ChallengeNameType]
-  val NEW_PASSWORD_REQUIRED = "NEW_PASSWORD_REQUIRED".asInstanceOf[ChallengeNameType]
+  inline val SMS_MFA: "SMS_MFA" = "SMS_MFA"
+  inline val SOFTWARE_TOKEN_MFA: "SOFTWARE_TOKEN_MFA" = "SOFTWARE_TOKEN_MFA"
+  inline val SELECT_MFA_TYPE: "SELECT_MFA_TYPE" = "SELECT_MFA_TYPE"
+  inline val MFA_SETUP: "MFA_SETUP" = "MFA_SETUP"
+  inline val PASSWORD_VERIFIER: "PASSWORD_VERIFIER" = "PASSWORD_VERIFIER"
+  inline val CUSTOM_CHALLENGE: "CUSTOM_CHALLENGE" = "CUSTOM_CHALLENGE"
+  inline val DEVICE_SRP_AUTH: "DEVICE_SRP_AUTH" = "DEVICE_SRP_AUTH"
+  inline val DEVICE_PASSWORD_VERIFIER: "DEVICE_PASSWORD_VERIFIER" = "DEVICE_PASSWORD_VERIFIER"
+  inline val ADMIN_NO_SRP_AUTH: "ADMIN_NO_SRP_AUTH" = "ADMIN_NO_SRP_AUTH"
+  inline val NEW_PASSWORD_REQUIRED: "NEW_PASSWORD_REQUIRED" = "NEW_PASSWORD_REQUIRED"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[ChallengeNameType] = js.Array(
     SMS_MFA,
     SOFTWARE_TOKEN_MFA,
     SELECT_MFA_TYPE,
@@ -96,130 +88,117 @@ object ChallengeNameType {
   )
 }
 
-@js.native
-sealed trait ChallengeResponse extends js.Any
+type ChallengeResponse = "Success" | "Failure"
 object ChallengeResponse {
-  val Success = "Success".asInstanceOf[ChallengeResponse]
-  val Failure = "Failure".asInstanceOf[ChallengeResponse]
+  inline val Success: "Success" = "Success"
+  inline val Failure: "Failure" = "Failure"
 
-  @inline def values = js.Array(Success, Failure)
+  inline def values: js.Array[ChallengeResponse] = js.Array(Success, Failure)
 }
 
-@js.native
-sealed trait CompromisedCredentialsEventActionType extends js.Any
+type CompromisedCredentialsEventActionType = "BLOCK" | "NO_ACTION"
 object CompromisedCredentialsEventActionType {
-  val BLOCK = "BLOCK".asInstanceOf[CompromisedCredentialsEventActionType]
-  val NO_ACTION = "NO_ACTION".asInstanceOf[CompromisedCredentialsEventActionType]
+  inline val BLOCK: "BLOCK" = "BLOCK"
+  inline val NO_ACTION: "NO_ACTION" = "NO_ACTION"
 
-  @inline def values = js.Array(BLOCK, NO_ACTION)
+  inline def values: js.Array[CompromisedCredentialsEventActionType] = js.Array(BLOCK, NO_ACTION)
 }
 
-@js.native
-sealed trait CustomEmailSenderLambdaVersionType extends js.Any
+type CustomEmailSenderLambdaVersionType = "V1_0"
 object CustomEmailSenderLambdaVersionType {
-  val V1_0 = "V1_0".asInstanceOf[CustomEmailSenderLambdaVersionType]
+  inline val V1_0: "V1_0" = "V1_0"
 
-  @inline def values = js.Array(V1_0)
+  inline def values: js.Array[CustomEmailSenderLambdaVersionType] = js.Array(V1_0)
 }
 
-@js.native
-sealed trait CustomSMSSenderLambdaVersionType extends js.Any
+type CustomSMSSenderLambdaVersionType = "V1_0"
 object CustomSMSSenderLambdaVersionType {
-  val V1_0 = "V1_0".asInstanceOf[CustomSMSSenderLambdaVersionType]
+  inline val V1_0: "V1_0" = "V1_0"
 
-  @inline def values = js.Array(V1_0)
+  inline def values: js.Array[CustomSMSSenderLambdaVersionType] = js.Array(V1_0)
 }
 
-@js.native
-sealed trait DefaultEmailOptionType extends js.Any
+type DefaultEmailOptionType = "CONFIRM_WITH_LINK" | "CONFIRM_WITH_CODE"
 object DefaultEmailOptionType {
-  val CONFIRM_WITH_LINK = "CONFIRM_WITH_LINK".asInstanceOf[DefaultEmailOptionType]
-  val CONFIRM_WITH_CODE = "CONFIRM_WITH_CODE".asInstanceOf[DefaultEmailOptionType]
+  inline val CONFIRM_WITH_LINK: "CONFIRM_WITH_LINK" = "CONFIRM_WITH_LINK"
+  inline val CONFIRM_WITH_CODE: "CONFIRM_WITH_CODE" = "CONFIRM_WITH_CODE"
 
-  @inline def values = js.Array(CONFIRM_WITH_LINK, CONFIRM_WITH_CODE)
+  inline def values: js.Array[DefaultEmailOptionType] = js.Array(CONFIRM_WITH_LINK, CONFIRM_WITH_CODE)
 }
 
-@js.native
-sealed trait DeliveryMediumType extends js.Any
+type DeliveryMediumType = "SMS" | "EMAIL"
 object DeliveryMediumType {
-  val SMS = "SMS".asInstanceOf[DeliveryMediumType]
-  val EMAIL = "EMAIL".asInstanceOf[DeliveryMediumType]
+  inline val SMS: "SMS" = "SMS"
+  inline val EMAIL: "EMAIL" = "EMAIL"
 
-  @inline def values = js.Array(SMS, EMAIL)
+  inline def values: js.Array[DeliveryMediumType] = js.Array(SMS, EMAIL)
 }
 
-@js.native
-sealed trait DeviceRememberedStatusType extends js.Any
+type DeviceRememberedStatusType = "remembered" | "not_remembered"
 object DeviceRememberedStatusType {
-  val remembered = "remembered".asInstanceOf[DeviceRememberedStatusType]
-  val not_remembered = "not_remembered".asInstanceOf[DeviceRememberedStatusType]
+  inline val remembered: "remembered" = "remembered"
+  inline val not_remembered: "not_remembered" = "not_remembered"
 
-  @inline def values = js.Array(remembered, not_remembered)
+  inline def values: js.Array[DeviceRememberedStatusType] = js.Array(remembered, not_remembered)
 }
 
-@js.native
-sealed trait DomainStatusType extends js.Any
+type DomainStatusType = "CREATING" | "DELETING" | "UPDATING" | "ACTIVE" | "FAILED"
 object DomainStatusType {
-  val CREATING = "CREATING".asInstanceOf[DomainStatusType]
-  val DELETING = "DELETING".asInstanceOf[DomainStatusType]
-  val UPDATING = "UPDATING".asInstanceOf[DomainStatusType]
-  val ACTIVE = "ACTIVE".asInstanceOf[DomainStatusType]
-  val FAILED = "FAILED".asInstanceOf[DomainStatusType]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, DELETING, UPDATING, ACTIVE, FAILED)
+  inline def values: js.Array[DomainStatusType] = js.Array(CREATING, DELETING, UPDATING, ACTIVE, FAILED)
 }
 
-@js.native
-sealed trait EmailSendingAccountType extends js.Any
+type EmailSendingAccountType = "COGNITO_DEFAULT" | "DEVELOPER"
 object EmailSendingAccountType {
-  val COGNITO_DEFAULT = "COGNITO_DEFAULT".asInstanceOf[EmailSendingAccountType]
-  val DEVELOPER = "DEVELOPER".asInstanceOf[EmailSendingAccountType]
+  inline val COGNITO_DEFAULT: "COGNITO_DEFAULT" = "COGNITO_DEFAULT"
+  inline val DEVELOPER: "DEVELOPER" = "DEVELOPER"
 
-  @inline def values = js.Array(COGNITO_DEFAULT, DEVELOPER)
+  inline def values: js.Array[EmailSendingAccountType] = js.Array(COGNITO_DEFAULT, DEVELOPER)
 }
 
-@js.native
-sealed trait EventFilterType extends js.Any
+type EventFilterType = "SIGN_IN" | "PASSWORD_CHANGE" | "SIGN_UP"
 object EventFilterType {
-  val SIGN_IN = "SIGN_IN".asInstanceOf[EventFilterType]
-  val PASSWORD_CHANGE = "PASSWORD_CHANGE".asInstanceOf[EventFilterType]
-  val SIGN_UP = "SIGN_UP".asInstanceOf[EventFilterType]
+  inline val SIGN_IN: "SIGN_IN" = "SIGN_IN"
+  inline val PASSWORD_CHANGE: "PASSWORD_CHANGE" = "PASSWORD_CHANGE"
+  inline val SIGN_UP: "SIGN_UP" = "SIGN_UP"
 
-  @inline def values = js.Array(SIGN_IN, PASSWORD_CHANGE, SIGN_UP)
+  inline def values: js.Array[EventFilterType] = js.Array(SIGN_IN, PASSWORD_CHANGE, SIGN_UP)
 }
 
-@js.native
-sealed trait EventResponseType extends js.Any
+type EventResponseType = "Success" | "Failure"
 object EventResponseType {
-  val Success = "Success".asInstanceOf[EventResponseType]
-  val Failure = "Failure".asInstanceOf[EventResponseType]
+  inline val Success: "Success" = "Success"
+  inline val Failure: "Failure" = "Failure"
 
-  @inline def values = js.Array(Success, Failure)
+  inline def values: js.Array[EventResponseType] = js.Array(Success, Failure)
 }
 
-@js.native
-sealed trait EventType extends js.Any
+type EventType = "SignIn" | "SignUp" | "ForgotPassword"
 object EventType {
-  val SignIn = "SignIn".asInstanceOf[EventType]
-  val SignUp = "SignUp".asInstanceOf[EventType]
-  val ForgotPassword = "ForgotPassword".asInstanceOf[EventType]
+  inline val SignIn: "SignIn" = "SignIn"
+  inline val SignUp: "SignUp" = "SignUp"
+  inline val ForgotPassword: "ForgotPassword" = "ForgotPassword"
 
-  @inline def values = js.Array(SignIn, SignUp, ForgotPassword)
+  inline def values: js.Array[EventType] = js.Array(SignIn, SignUp, ForgotPassword)
 }
 
-@js.native
-sealed trait ExplicitAuthFlowsType extends js.Any
+type ExplicitAuthFlowsType = "ADMIN_NO_SRP_AUTH" | "CUSTOM_AUTH_FLOW_ONLY" | "USER_PASSWORD_AUTH" | "ALLOW_ADMIN_USER_PASSWORD_AUTH" | "ALLOW_CUSTOM_AUTH" | "ALLOW_USER_PASSWORD_AUTH" | "ALLOW_USER_SRP_AUTH" | "ALLOW_REFRESH_TOKEN_AUTH"
 object ExplicitAuthFlowsType {
-  val ADMIN_NO_SRP_AUTH = "ADMIN_NO_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-  val CUSTOM_AUTH_FLOW_ONLY = "CUSTOM_AUTH_FLOW_ONLY".asInstanceOf[ExplicitAuthFlowsType]
-  val USER_PASSWORD_AUTH = "USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-  val ALLOW_ADMIN_USER_PASSWORD_AUTH = "ALLOW_ADMIN_USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-  val ALLOW_CUSTOM_AUTH = "ALLOW_CUSTOM_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-  val ALLOW_USER_PASSWORD_AUTH = "ALLOW_USER_PASSWORD_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-  val ALLOW_USER_SRP_AUTH = "ALLOW_USER_SRP_AUTH".asInstanceOf[ExplicitAuthFlowsType]
-  val ALLOW_REFRESH_TOKEN_AUTH = "ALLOW_REFRESH_TOKEN_AUTH".asInstanceOf[ExplicitAuthFlowsType]
+  inline val ADMIN_NO_SRP_AUTH: "ADMIN_NO_SRP_AUTH" = "ADMIN_NO_SRP_AUTH"
+  inline val CUSTOM_AUTH_FLOW_ONLY: "CUSTOM_AUTH_FLOW_ONLY" = "CUSTOM_AUTH_FLOW_ONLY"
+  inline val USER_PASSWORD_AUTH: "USER_PASSWORD_AUTH" = "USER_PASSWORD_AUTH"
+  inline val ALLOW_ADMIN_USER_PASSWORD_AUTH: "ALLOW_ADMIN_USER_PASSWORD_AUTH" = "ALLOW_ADMIN_USER_PASSWORD_AUTH"
+  inline val ALLOW_CUSTOM_AUTH: "ALLOW_CUSTOM_AUTH" = "ALLOW_CUSTOM_AUTH"
+  inline val ALLOW_USER_PASSWORD_AUTH: "ALLOW_USER_PASSWORD_AUTH" = "ALLOW_USER_PASSWORD_AUTH"
+  inline val ALLOW_USER_SRP_AUTH: "ALLOW_USER_SRP_AUTH" = "ALLOW_USER_SRP_AUTH"
+  inline val ALLOW_REFRESH_TOKEN_AUTH: "ALLOW_REFRESH_TOKEN_AUTH" = "ALLOW_REFRESH_TOKEN_AUTH"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[ExplicitAuthFlowsType] = js.Array(
     ADMIN_NO_SRP_AUTH,
     CUSTOM_AUTH_FLOW_ONLY,
     USER_PASSWORD_AUTH,
@@ -231,168 +210,152 @@ object ExplicitAuthFlowsType {
   )
 }
 
-@js.native
-sealed trait FeedbackValueType extends js.Any
+type FeedbackValueType = "Valid" | "Invalid"
 object FeedbackValueType {
-  val Valid = "Valid".asInstanceOf[FeedbackValueType]
-  val Invalid = "Invalid".asInstanceOf[FeedbackValueType]
+  inline val Valid: "Valid" = "Valid"
+  inline val Invalid: "Invalid" = "Invalid"
 
-  @inline def values = js.Array(Valid, Invalid)
+  inline def values: js.Array[FeedbackValueType] = js.Array(Valid, Invalid)
 }
 
-@js.native
-sealed trait IdentityProviderTypeType extends js.Any
+type IdentityProviderTypeType = "SAML" | "Facebook" | "Google" | "LoginWithAmazon" | "SignInWithApple" | "OIDC"
 object IdentityProviderTypeType {
-  val SAML = "SAML".asInstanceOf[IdentityProviderTypeType]
-  val Facebook = "Facebook".asInstanceOf[IdentityProviderTypeType]
-  val Google = "Google".asInstanceOf[IdentityProviderTypeType]
-  val LoginWithAmazon = "LoginWithAmazon".asInstanceOf[IdentityProviderTypeType]
-  val SignInWithApple = "SignInWithApple".asInstanceOf[IdentityProviderTypeType]
-  val OIDC = "OIDC".asInstanceOf[IdentityProviderTypeType]
+  inline val SAML: "SAML" = "SAML"
+  inline val Facebook: "Facebook" = "Facebook"
+  inline val Google: "Google" = "Google"
+  inline val LoginWithAmazon: "LoginWithAmazon" = "LoginWithAmazon"
+  inline val SignInWithApple: "SignInWithApple" = "SignInWithApple"
+  inline val OIDC: "OIDC" = "OIDC"
 
-  @inline def values = js.Array(SAML, Facebook, Google, LoginWithAmazon, SignInWithApple, OIDC)
+  inline def values: js.Array[IdentityProviderTypeType] = js.Array(SAML, Facebook, Google, LoginWithAmazon, SignInWithApple, OIDC)
 }
 
-@js.native
-sealed trait MessageActionType extends js.Any
+type MessageActionType = "RESEND" | "SUPPRESS"
 object MessageActionType {
-  val RESEND = "RESEND".asInstanceOf[MessageActionType]
-  val SUPPRESS = "SUPPRESS".asInstanceOf[MessageActionType]
+  inline val RESEND: "RESEND" = "RESEND"
+  inline val SUPPRESS: "SUPPRESS" = "SUPPRESS"
 
-  @inline def values = js.Array(RESEND, SUPPRESS)
+  inline def values: js.Array[MessageActionType] = js.Array(RESEND, SUPPRESS)
 }
 
-@js.native
-sealed trait OAuthFlowType extends js.Any
+type OAuthFlowType = "code" | "implicit" | "client_credentials"
 object OAuthFlowType {
-  val code = "code".asInstanceOf[OAuthFlowType]
-  val `implicit` = "implicit".asInstanceOf[OAuthFlowType]
-  val client_credentials = "client_credentials".asInstanceOf[OAuthFlowType]
+  inline val code: "code" = "code"
+  inline val `implicit`: "implicit" = "implicit"
+  inline val client_credentials: "client_credentials" = "client_credentials"
 
-  @inline def values = js.Array(code, `implicit`, client_credentials)
+  inline def values: js.Array[OAuthFlowType] = js.Array(code, `implicit`, client_credentials)
 }
 
-@js.native
-sealed trait PreventUserExistenceErrorTypes extends js.Any
+type PreventUserExistenceErrorTypes = "LEGACY" | "ENABLED"
 object PreventUserExistenceErrorTypes {
-  val LEGACY = "LEGACY".asInstanceOf[PreventUserExistenceErrorTypes]
-  val ENABLED = "ENABLED".asInstanceOf[PreventUserExistenceErrorTypes]
+  inline val LEGACY: "LEGACY" = "LEGACY"
+  inline val ENABLED: "ENABLED" = "ENABLED"
 
-  @inline def values = js.Array(LEGACY, ENABLED)
+  inline def values: js.Array[PreventUserExistenceErrorTypes] = js.Array(LEGACY, ENABLED)
 }
 
-@js.native
-sealed trait RecoveryOptionNameType extends js.Any
+type RecoveryOptionNameType = "verified_email" | "verified_phone_number" | "admin_only"
 object RecoveryOptionNameType {
-  val verified_email = "verified_email".asInstanceOf[RecoveryOptionNameType]
-  val verified_phone_number = "verified_phone_number".asInstanceOf[RecoveryOptionNameType]
-  val admin_only = "admin_only".asInstanceOf[RecoveryOptionNameType]
+  inline val verified_email: "verified_email" = "verified_email"
+  inline val verified_phone_number: "verified_phone_number" = "verified_phone_number"
+  inline val admin_only: "admin_only" = "admin_only"
 
-  @inline def values = js.Array(verified_email, verified_phone_number, admin_only)
+  inline def values: js.Array[RecoveryOptionNameType] = js.Array(verified_email, verified_phone_number, admin_only)
 }
 
-@js.native
-sealed trait RiskDecisionType extends js.Any
+type RiskDecisionType = "NoRisk" | "AccountTakeover" | "Block"
 object RiskDecisionType {
-  val NoRisk = "NoRisk".asInstanceOf[RiskDecisionType]
-  val AccountTakeover = "AccountTakeover".asInstanceOf[RiskDecisionType]
-  val Block = "Block".asInstanceOf[RiskDecisionType]
+  inline val NoRisk: "NoRisk" = "NoRisk"
+  inline val AccountTakeover: "AccountTakeover" = "AccountTakeover"
+  inline val Block: "Block" = "Block"
 
-  @inline def values = js.Array(NoRisk, AccountTakeover, Block)
+  inline def values: js.Array[RiskDecisionType] = js.Array(NoRisk, AccountTakeover, Block)
 }
 
-@js.native
-sealed trait RiskLevelType extends js.Any
+type RiskLevelType = "Low" | "Medium" | "High"
 object RiskLevelType {
-  val Low = "Low".asInstanceOf[RiskLevelType]
-  val Medium = "Medium".asInstanceOf[RiskLevelType]
-  val High = "High".asInstanceOf[RiskLevelType]
+  inline val Low: "Low" = "Low"
+  inline val Medium: "Medium" = "Medium"
+  inline val High: "High" = "High"
 
-  @inline def values = js.Array(Low, Medium, High)
+  inline def values: js.Array[RiskLevelType] = js.Array(Low, Medium, High)
 }
 
-@js.native
-sealed trait StatusType extends js.Any
+type StatusType = "Enabled" | "Disabled"
 object StatusType {
-  val Enabled = "Enabled".asInstanceOf[StatusType]
-  val Disabled = "Disabled".asInstanceOf[StatusType]
+  inline val Enabled: "Enabled" = "Enabled"
+  inline val Disabled: "Disabled" = "Disabled"
 
-  @inline def values = js.Array(Enabled, Disabled)
+  inline def values: js.Array[StatusType] = js.Array(Enabled, Disabled)
 }
 
-@js.native
-sealed trait TimeUnitsType extends js.Any
+type TimeUnitsType = "seconds" | "minutes" | "hours" | "days"
 object TimeUnitsType {
-  val seconds = "seconds".asInstanceOf[TimeUnitsType]
-  val minutes = "minutes".asInstanceOf[TimeUnitsType]
-  val hours = "hours".asInstanceOf[TimeUnitsType]
-  val days = "days".asInstanceOf[TimeUnitsType]
+  inline val seconds: "seconds" = "seconds"
+  inline val minutes: "minutes" = "minutes"
+  inline val hours: "hours" = "hours"
+  inline val days: "days" = "days"
 
-  @inline def values = js.Array(seconds, minutes, hours, days)
+  inline def values: js.Array[TimeUnitsType] = js.Array(seconds, minutes, hours, days)
 }
 
-@js.native
-sealed trait UserImportJobStatusType extends js.Any
+type UserImportJobStatusType = "Created" | "Pending" | "InProgress" | "Stopping" | "Expired" | "Stopped" | "Failed" | "Succeeded"
 object UserImportJobStatusType {
-  val Created = "Created".asInstanceOf[UserImportJobStatusType]
-  val Pending = "Pending".asInstanceOf[UserImportJobStatusType]
-  val InProgress = "InProgress".asInstanceOf[UserImportJobStatusType]
-  val Stopping = "Stopping".asInstanceOf[UserImportJobStatusType]
-  val Expired = "Expired".asInstanceOf[UserImportJobStatusType]
-  val Stopped = "Stopped".asInstanceOf[UserImportJobStatusType]
-  val Failed = "Failed".asInstanceOf[UserImportJobStatusType]
-  val Succeeded = "Succeeded".asInstanceOf[UserImportJobStatusType]
+  inline val Created: "Created" = "Created"
+  inline val Pending: "Pending" = "Pending"
+  inline val InProgress: "InProgress" = "InProgress"
+  inline val Stopping: "Stopping" = "Stopping"
+  inline val Expired: "Expired" = "Expired"
+  inline val Stopped: "Stopped" = "Stopped"
+  inline val Failed: "Failed" = "Failed"
+  inline val Succeeded: "Succeeded" = "Succeeded"
 
-  @inline def values = js.Array(Created, Pending, InProgress, Stopping, Expired, Stopped, Failed, Succeeded)
+  inline def values: js.Array[UserImportJobStatusType] = js.Array(Created, Pending, InProgress, Stopping, Expired, Stopped, Failed, Succeeded)
 }
 
-@js.native
-sealed trait UserPoolMfaType extends js.Any
+type UserPoolMfaType = "OFF" | "ON" | "OPTIONAL"
 object UserPoolMfaType {
-  val OFF = "OFF".asInstanceOf[UserPoolMfaType]
-  val ON = "ON".asInstanceOf[UserPoolMfaType]
-  val OPTIONAL = "OPTIONAL".asInstanceOf[UserPoolMfaType]
+  inline val OFF: "OFF" = "OFF"
+  inline val ON: "ON" = "ON"
+  inline val OPTIONAL: "OPTIONAL" = "OPTIONAL"
 
-  @inline def values = js.Array(OFF, ON, OPTIONAL)
+  inline def values: js.Array[UserPoolMfaType] = js.Array(OFF, ON, OPTIONAL)
 }
 
-@js.native
-sealed trait UserStatusType extends js.Any
+type UserStatusType = "UNCONFIRMED" | "CONFIRMED" | "ARCHIVED" | "COMPROMISED" | "UNKNOWN" | "RESET_REQUIRED" | "FORCE_CHANGE_PASSWORD"
 object UserStatusType {
-  val UNCONFIRMED = "UNCONFIRMED".asInstanceOf[UserStatusType]
-  val CONFIRMED = "CONFIRMED".asInstanceOf[UserStatusType]
-  val ARCHIVED = "ARCHIVED".asInstanceOf[UserStatusType]
-  val COMPROMISED = "COMPROMISED".asInstanceOf[UserStatusType]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[UserStatusType]
-  val RESET_REQUIRED = "RESET_REQUIRED".asInstanceOf[UserStatusType]
-  val FORCE_CHANGE_PASSWORD = "FORCE_CHANGE_PASSWORD".asInstanceOf[UserStatusType]
+  inline val UNCONFIRMED: "UNCONFIRMED" = "UNCONFIRMED"
+  inline val CONFIRMED: "CONFIRMED" = "CONFIRMED"
+  inline val ARCHIVED: "ARCHIVED" = "ARCHIVED"
+  inline val COMPROMISED: "COMPROMISED" = "COMPROMISED"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val RESET_REQUIRED: "RESET_REQUIRED" = "RESET_REQUIRED"
+  inline val FORCE_CHANGE_PASSWORD: "FORCE_CHANGE_PASSWORD" = "FORCE_CHANGE_PASSWORD"
 
-  @inline def values = js.Array(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD)
+  inline def values: js.Array[UserStatusType] = js.Array(UNCONFIRMED, CONFIRMED, ARCHIVED, COMPROMISED, UNKNOWN, RESET_REQUIRED, FORCE_CHANGE_PASSWORD)
 }
 
-@js.native
-sealed trait UsernameAttributeType extends js.Any
+type UsernameAttributeType = "phone_number" | "email"
 object UsernameAttributeType {
-  val phone_number = "phone_number".asInstanceOf[UsernameAttributeType]
-  val email = "email".asInstanceOf[UsernameAttributeType]
+  inline val phone_number: "phone_number" = "phone_number"
+  inline val email: "email" = "email"
 
-  @inline def values = js.Array(phone_number, email)
+  inline def values: js.Array[UsernameAttributeType] = js.Array(phone_number, email)
 }
 
-@js.native
-sealed trait VerifiedAttributeType extends js.Any
+type VerifiedAttributeType = "phone_number" | "email"
 object VerifiedAttributeType {
-  val phone_number = "phone_number".asInstanceOf[VerifiedAttributeType]
-  val email = "email".asInstanceOf[VerifiedAttributeType]
+  inline val phone_number: "phone_number" = "phone_number"
+  inline val email: "email" = "email"
 
-  @inline def values = js.Array(phone_number, email)
+  inline def values: js.Array[VerifiedAttributeType] = js.Array(phone_number, email)
 }
 
-@js.native
-sealed trait VerifySoftwareTokenResponseType extends js.Any
+type VerifySoftwareTokenResponseType = "SUCCESS" | "ERROR"
 object VerifySoftwareTokenResponseType {
-  val SUCCESS = "SUCCESS".asInstanceOf[VerifySoftwareTokenResponseType]
-  val ERROR = "ERROR".asInstanceOf[VerifySoftwareTokenResponseType]
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(SUCCESS, ERROR)
+  inline def values: js.Array[VerifySoftwareTokenResponseType] = js.Array(SUCCESS, ERROR)
 }

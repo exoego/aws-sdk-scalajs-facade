@@ -1,57 +1,50 @@
 package facade.amazonaws.services.xray
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait EncryptionStatus extends js.Any
+type EncryptionStatus = "UPDATING" | "ACTIVE"
 object EncryptionStatus {
-  val UPDATING = "UPDATING".asInstanceOf[EncryptionStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[EncryptionStatus]
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
 
-  @inline def values = js.Array(UPDATING, ACTIVE)
+  inline def values: js.Array[EncryptionStatus] = js.Array(UPDATING, ACTIVE)
 }
 
-@js.native
-sealed trait EncryptionType extends js.Any
+type EncryptionType = "NONE" | "KMS"
 object EncryptionType {
-  val NONE = "NONE".asInstanceOf[EncryptionType]
-  val KMS = "KMS".asInstanceOf[EncryptionType]
+  inline val NONE: "NONE" = "NONE"
+  inline val KMS: "KMS" = "KMS"
 
-  @inline def values = js.Array(NONE, KMS)
+  inline def values: js.Array[EncryptionType] = js.Array(NONE, KMS)
 }
 
-@js.native
-sealed trait InsightCategory extends js.Any
+type InsightCategory = "FAULT"
 object InsightCategory {
-  val FAULT = "FAULT".asInstanceOf[InsightCategory]
+  inline val FAULT: "FAULT" = "FAULT"
 
-  @inline def values = js.Array(FAULT)
+  inline def values: js.Array[InsightCategory] = js.Array(FAULT)
 }
 
-@js.native
-sealed trait InsightState extends js.Any
+type InsightState = "ACTIVE" | "CLOSED"
 object InsightState {
-  val ACTIVE = "ACTIVE".asInstanceOf[InsightState]
-  val CLOSED = "CLOSED".asInstanceOf[InsightState]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val CLOSED: "CLOSED" = "CLOSED"
 
-  @inline def values = js.Array(ACTIVE, CLOSED)
+  inline def values: js.Array[InsightState] = js.Array(ACTIVE, CLOSED)
 }
 
-@js.native
-sealed trait SamplingStrategyName extends js.Any
+type SamplingStrategyName = "PartialScan" | "FixedRate"
 object SamplingStrategyName {
-  val PartialScan = "PartialScan".asInstanceOf[SamplingStrategyName]
-  val FixedRate = "FixedRate".asInstanceOf[SamplingStrategyName]
+  inline val PartialScan: "PartialScan" = "PartialScan"
+  inline val FixedRate: "FixedRate" = "FixedRate"
 
-  @inline def values = js.Array(PartialScan, FixedRate)
+  inline def values: js.Array[SamplingStrategyName] = js.Array(PartialScan, FixedRate)
 }
 
-@js.native
-sealed trait TimeRangeType extends js.Any
+type TimeRangeType = "TraceId" | "Event"
 object TimeRangeType {
-  val TraceId = "TraceId".asInstanceOf[TimeRangeType]
-  val Event = "Event".asInstanceOf[TimeRangeType]
+  inline val TraceId: "TraceId" = "TraceId"
+  inline val Event: "Event" = "Event"
 
-  @inline def values = js.Array(TraceId, Event)
+  inline def values: js.Array[TimeRangeType] = js.Array(TraceId, Event)
 }

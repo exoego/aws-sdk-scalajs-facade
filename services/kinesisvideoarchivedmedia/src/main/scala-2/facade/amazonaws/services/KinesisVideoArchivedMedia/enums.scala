@@ -104,3 +104,4 @@ object HLSPlaybackMode {
 
   @inline def values = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
 }
+

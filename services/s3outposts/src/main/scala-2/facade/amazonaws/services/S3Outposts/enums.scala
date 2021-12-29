@@ -11,3 +11,4 @@ object EndpointStatus {
 
   @inline def values = js.Array(PENDING, AVAILABLE)
 }
+

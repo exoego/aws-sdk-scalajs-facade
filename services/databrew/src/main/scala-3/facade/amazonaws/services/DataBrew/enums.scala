@@ -1,159 +1,144 @@
 package facade.amazonaws.services.databrew
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait CompressionFormat extends js.Any
+type CompressionFormat = "GZIP" | "LZ4" | "SNAPPY" | "BZIP2" | "DEFLATE" | "LZO" | "BROTLI" | "ZSTD" | "ZLIB"
 object CompressionFormat {
-  val GZIP = "GZIP".asInstanceOf[CompressionFormat]
-  val LZ4 = "LZ4".asInstanceOf[CompressionFormat]
-  val SNAPPY = "SNAPPY".asInstanceOf[CompressionFormat]
-  val BZIP2 = "BZIP2".asInstanceOf[CompressionFormat]
-  val DEFLATE = "DEFLATE".asInstanceOf[CompressionFormat]
-  val LZO = "LZO".asInstanceOf[CompressionFormat]
-  val BROTLI = "BROTLI".asInstanceOf[CompressionFormat]
-  val ZSTD = "ZSTD".asInstanceOf[CompressionFormat]
-  val ZLIB = "ZLIB".asInstanceOf[CompressionFormat]
+  inline val GZIP: "GZIP" = "GZIP"
+  inline val LZ4: "LZ4" = "LZ4"
+  inline val SNAPPY: "SNAPPY" = "SNAPPY"
+  inline val BZIP2: "BZIP2" = "BZIP2"
+  inline val DEFLATE: "DEFLATE" = "DEFLATE"
+  inline val LZO: "LZO" = "LZO"
+  inline val BROTLI: "BROTLI" = "BROTLI"
+  inline val ZSTD: "ZSTD" = "ZSTD"
+  inline val ZLIB: "ZLIB" = "ZLIB"
 
-  @inline def values = js.Array(GZIP, LZ4, SNAPPY, BZIP2, DEFLATE, LZO, BROTLI, ZSTD, ZLIB)
+  inline def values: js.Array[CompressionFormat] = js.Array(GZIP, LZ4, SNAPPY, BZIP2, DEFLATE, LZO, BROTLI, ZSTD, ZLIB)
 }
 
-@js.native
-sealed trait EncryptionMode extends js.Any
+type EncryptionMode = "SSE-KMS" | "SSE-S3"
 object EncryptionMode {
-  val `SSE-KMS` = "SSE-KMS".asInstanceOf[EncryptionMode]
-  val `SSE-S3` = "SSE-S3".asInstanceOf[EncryptionMode]
+  inline val `SSE-KMS`: "SSE-KMS" = "SSE-KMS"
+  inline val `SSE-S3`: "SSE-S3" = "SSE-S3"
 
-  @inline def values = js.Array(`SSE-KMS`, `SSE-S3`)
+  inline def values: js.Array[EncryptionMode] = js.Array(`SSE-KMS`, `SSE-S3`)
 }
 
-@js.native
-sealed trait InputFormat extends js.Any
+type InputFormat = "CSV" | "JSON" | "PARQUET" | "EXCEL"
 object InputFormat {
-  val CSV = "CSV".asInstanceOf[InputFormat]
-  val JSON = "JSON".asInstanceOf[InputFormat]
-  val PARQUET = "PARQUET".asInstanceOf[InputFormat]
-  val EXCEL = "EXCEL".asInstanceOf[InputFormat]
+  inline val CSV: "CSV" = "CSV"
+  inline val JSON: "JSON" = "JSON"
+  inline val PARQUET: "PARQUET" = "PARQUET"
+  inline val EXCEL: "EXCEL" = "EXCEL"
 
-  @inline def values = js.Array(CSV, JSON, PARQUET, EXCEL)
+  inline def values: js.Array[InputFormat] = js.Array(CSV, JSON, PARQUET, EXCEL)
 }
 
-@js.native
-sealed trait JobRunState extends js.Any
+type JobRunState = "STARTING" | "RUNNING" | "STOPPING" | "STOPPED" | "SUCCEEDED" | "FAILED" | "TIMEOUT"
 object JobRunState {
-  val STARTING = "STARTING".asInstanceOf[JobRunState]
-  val RUNNING = "RUNNING".asInstanceOf[JobRunState]
-  val STOPPING = "STOPPING".asInstanceOf[JobRunState]
-  val STOPPED = "STOPPED".asInstanceOf[JobRunState]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobRunState]
-  val FAILED = "FAILED".asInstanceOf[JobRunState]
-  val TIMEOUT = "TIMEOUT".asInstanceOf[JobRunState]
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val STOPPED: "STOPPED" = "STOPPED"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val TIMEOUT: "TIMEOUT" = "TIMEOUT"
 
-  @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
+  inline def values: js.Array[JobRunState] = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
 }
 
-@js.native
-sealed trait JobType extends js.Any
+type JobType = "PROFILE" | "RECIPE"
 object JobType {
-  val PROFILE = "PROFILE".asInstanceOf[JobType]
-  val RECIPE = "RECIPE".asInstanceOf[JobType]
+  inline val PROFILE: "PROFILE" = "PROFILE"
+  inline val RECIPE: "RECIPE" = "RECIPE"
 
-  @inline def values = js.Array(PROFILE, RECIPE)
+  inline def values: js.Array[JobType] = js.Array(PROFILE, RECIPE)
 }
 
-@js.native
-sealed trait LogSubscription extends js.Any
+type LogSubscription = "ENABLE" | "DISABLE"
 object LogSubscription {
-  val ENABLE = "ENABLE".asInstanceOf[LogSubscription]
-  val DISABLE = "DISABLE".asInstanceOf[LogSubscription]
+  inline val ENABLE: "ENABLE" = "ENABLE"
+  inline val DISABLE: "DISABLE" = "DISABLE"
 
-  @inline def values = js.Array(ENABLE, DISABLE)
+  inline def values: js.Array[LogSubscription] = js.Array(ENABLE, DISABLE)
 }
 
-@js.native
-sealed trait Order extends js.Any
+type Order = "DESCENDING" | "ASCENDING"
 object Order {
-  val DESCENDING = "DESCENDING".asInstanceOf[Order]
-  val ASCENDING = "ASCENDING".asInstanceOf[Order]
+  inline val DESCENDING: "DESCENDING" = "DESCENDING"
+  inline val ASCENDING: "ASCENDING" = "ASCENDING"
 
-  @inline def values = js.Array(DESCENDING, ASCENDING)
+  inline def values: js.Array[Order] = js.Array(DESCENDING, ASCENDING)
 }
 
-@js.native
-sealed trait OrderedBy extends js.Any
+type OrderedBy = "LAST_MODIFIED_DATE"
 object OrderedBy {
-  val LAST_MODIFIED_DATE = "LAST_MODIFIED_DATE".asInstanceOf[OrderedBy]
+  inline val LAST_MODIFIED_DATE: "LAST_MODIFIED_DATE" = "LAST_MODIFIED_DATE"
 
-  @inline def values = js.Array(LAST_MODIFIED_DATE)
+  inline def values: js.Array[OrderedBy] = js.Array(LAST_MODIFIED_DATE)
 }
 
-@js.native
-sealed trait OutputFormat extends js.Any
+type OutputFormat = "CSV" | "JSON" | "PARQUET" | "GLUEPARQUET" | "AVRO" | "ORC" | "XML"
 object OutputFormat {
-  val CSV = "CSV".asInstanceOf[OutputFormat]
-  val JSON = "JSON".asInstanceOf[OutputFormat]
-  val PARQUET = "PARQUET".asInstanceOf[OutputFormat]
-  val GLUEPARQUET = "GLUEPARQUET".asInstanceOf[OutputFormat]
-  val AVRO = "AVRO".asInstanceOf[OutputFormat]
-  val ORC = "ORC".asInstanceOf[OutputFormat]
-  val XML = "XML".asInstanceOf[OutputFormat]
+  inline val CSV: "CSV" = "CSV"
+  inline val JSON: "JSON" = "JSON"
+  inline val PARQUET: "PARQUET" = "PARQUET"
+  inline val GLUEPARQUET: "GLUEPARQUET" = "GLUEPARQUET"
+  inline val AVRO: "AVRO" = "AVRO"
+  inline val ORC: "ORC" = "ORC"
+  inline val XML: "XML" = "XML"
 
-  @inline def values = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML)
+  inline def values: js.Array[OutputFormat] = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML)
 }
 
-@js.native
-sealed trait ParameterType extends js.Any
+type ParameterType = "Datetime" | "Number" | "String"
 object ParameterType {
-  val Datetime = "Datetime".asInstanceOf[ParameterType]
-  val Number = "Number".asInstanceOf[ParameterType]
-  val String = "String".asInstanceOf[ParameterType]
+  inline val Datetime: "Datetime" = "Datetime"
+  inline val Number: "Number" = "Number"
+  inline val String: "String" = "String"
 
-  @inline def values = js.Array(Datetime, Number, String)
+  inline def values: js.Array[ParameterType] = js.Array(Datetime, Number, String)
 }
 
-@js.native
-sealed trait SampleMode extends js.Any
+type SampleMode = "FULL_DATASET" | "CUSTOM_ROWS"
 object SampleMode {
-  val FULL_DATASET = "FULL_DATASET".asInstanceOf[SampleMode]
-  val CUSTOM_ROWS = "CUSTOM_ROWS".asInstanceOf[SampleMode]
+  inline val FULL_DATASET: "FULL_DATASET" = "FULL_DATASET"
+  inline val CUSTOM_ROWS: "CUSTOM_ROWS" = "CUSTOM_ROWS"
 
-  @inline def values = js.Array(FULL_DATASET, CUSTOM_ROWS)
+  inline def values: js.Array[SampleMode] = js.Array(FULL_DATASET, CUSTOM_ROWS)
 }
 
-@js.native
-sealed trait SampleType extends js.Any
+type SampleType = "FIRST_N" | "LAST_N" | "RANDOM"
 object SampleType {
-  val FIRST_N = "FIRST_N".asInstanceOf[SampleType]
-  val LAST_N = "LAST_N".asInstanceOf[SampleType]
-  val RANDOM = "RANDOM".asInstanceOf[SampleType]
+  inline val FIRST_N: "FIRST_N" = "FIRST_N"
+  inline val LAST_N: "LAST_N" = "LAST_N"
+  inline val RANDOM: "RANDOM" = "RANDOM"
 
-  @inline def values = js.Array(FIRST_N, LAST_N, RANDOM)
+  inline def values: js.Array[SampleType] = js.Array(FIRST_N, LAST_N, RANDOM)
 }
 
-@js.native
-sealed trait SessionStatus extends js.Any
+type SessionStatus = "ASSIGNED" | "FAILED" | "INITIALIZING" | "PROVISIONING" | "READY" | "RECYCLING" | "ROTATING" | "TERMINATED" | "TERMINATING" | "UPDATING"
 object SessionStatus {
-  val ASSIGNED = "ASSIGNED".asInstanceOf[SessionStatus]
-  val FAILED = "FAILED".asInstanceOf[SessionStatus]
-  val INITIALIZING = "INITIALIZING".asInstanceOf[SessionStatus]
-  val PROVISIONING = "PROVISIONING".asInstanceOf[SessionStatus]
-  val READY = "READY".asInstanceOf[SessionStatus]
-  val RECYCLING = "RECYCLING".asInstanceOf[SessionStatus]
-  val ROTATING = "ROTATING".asInstanceOf[SessionStatus]
-  val TERMINATED = "TERMINATED".asInstanceOf[SessionStatus]
-  val TERMINATING = "TERMINATING".asInstanceOf[SessionStatus]
-  val UPDATING = "UPDATING".asInstanceOf[SessionStatus]
+  inline val ASSIGNED: "ASSIGNED" = "ASSIGNED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val INITIALIZING: "INITIALIZING" = "INITIALIZING"
+  inline val PROVISIONING: "PROVISIONING" = "PROVISIONING"
+  inline val READY: "READY" = "READY"
+  inline val RECYCLING: "RECYCLING" = "RECYCLING"
+  inline val ROTATING: "ROTATING" = "ROTATING"
+  inline val TERMINATED: "TERMINATED" = "TERMINATED"
+  inline val TERMINATING: "TERMINATING" = "TERMINATING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(ASSIGNED, FAILED, INITIALIZING, PROVISIONING, READY, RECYCLING, ROTATING, TERMINATED, TERMINATING, UPDATING)
+  inline def values: js.Array[SessionStatus] = js.Array(ASSIGNED, FAILED, INITIALIZING, PROVISIONING, READY, RECYCLING, ROTATING, TERMINATED, TERMINATING, UPDATING)
 }
 
-@js.native
-sealed trait Source extends js.Any
+type Source = "S3" | "DATA-CATALOG" | "DATABASE"
 object Source {
-  val S3 = "S3".asInstanceOf[Source]
-  val `DATA-CATALOG` = "DATA-CATALOG".asInstanceOf[Source]
-  val DATABASE = "DATABASE".asInstanceOf[Source]
+  inline val S3: "S3" = "S3"
+  inline val `DATA-CATALOG`: "DATA-CATALOG" = "DATA-CATALOG"
+  inline val DATABASE: "DATABASE" = "DATABASE"
 
-  @inline def values = js.Array(S3, `DATA-CATALOG`, DATABASE)
+  inline def values: js.Array[Source] = js.Array(S3, `DATA-CATALOG`, DATABASE)
 }

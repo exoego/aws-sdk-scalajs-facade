@@ -1,32 +1,28 @@
 package facade.amazonaws.services.schemas
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait CodeGenerationStatus extends js.Any
+type CodeGenerationStatus = "CREATE_IN_PROGRESS" | "CREATE_COMPLETE" | "CREATE_FAILED"
 object CodeGenerationStatus {
-  val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[CodeGenerationStatus]
-  val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[CodeGenerationStatus]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[CodeGenerationStatus]
+  inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  inline val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
 
-  @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
+  inline def values: js.Array[CodeGenerationStatus] = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
 }
 
-@js.native
-sealed trait DiscovererState extends js.Any
+type DiscovererState = "STARTED" | "STOPPED"
 object DiscovererState {
-  val STARTED = "STARTED".asInstanceOf[DiscovererState]
-  val STOPPED = "STOPPED".asInstanceOf[DiscovererState]
+  inline val STARTED: "STARTED" = "STARTED"
+  inline val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array(STARTED, STOPPED)
+  inline def values: js.Array[DiscovererState] = js.Array(STARTED, STOPPED)
 }
 
-@js.native
-sealed trait Type extends js.Any
+type Type = "OpenApi3" | "JSONSchemaDraft4"
 object Type {
-  val OpenApi3 = "OpenApi3".asInstanceOf[Type]
-  val JSONSchemaDraft4 = "JSONSchemaDraft4".asInstanceOf[Type]
+  inline val OpenApi3: "OpenApi3" = "OpenApi3"
+  inline val JSONSchemaDraft4: "JSONSchemaDraft4" = "JSONSchemaDraft4"
 
-  @inline def values = js.Array(OpenApi3, JSONSchemaDraft4)
+  inline def values: js.Array[Type] = js.Array(OpenApi3, JSONSchemaDraft4)
 }

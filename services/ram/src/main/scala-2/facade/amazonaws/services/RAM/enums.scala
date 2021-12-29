@@ -77,3 +77,4 @@ object ResourceStatus {
 
   @inline def values = js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING)
 }
+

@@ -1,65 +1,58 @@
 package facade.amazonaws.services.translate
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait EncryptionKeyType extends js.Any
+type EncryptionKeyType = "KMS"
 object EncryptionKeyType {
-  val KMS = "KMS".asInstanceOf[EncryptionKeyType]
+  inline val KMS: "KMS" = "KMS"
 
-  @inline def values = js.Array(KMS)
+  inline def values: js.Array[EncryptionKeyType] = js.Array(KMS)
 }
 
-@js.native
-sealed trait JobStatus extends js.Any
+type JobStatus = "SUBMITTED" | "IN_PROGRESS" | "COMPLETED" | "COMPLETED_WITH_ERROR" | "FAILED" | "STOP_REQUESTED" | "STOPPED"
 object JobStatus {
-  val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
-  val COMPLETED_WITH_ERROR = "COMPLETED_WITH_ERROR".asInstanceOf[JobStatus]
-  val FAILED = "FAILED".asInstanceOf[JobStatus]
-  val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
-  val STOPPED = "STOPPED".asInstanceOf[JobStatus]
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val COMPLETED_WITH_ERROR: "COMPLETED_WITH_ERROR" = "COMPLETED_WITH_ERROR"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOP_REQUESTED: "STOP_REQUESTED" = "STOP_REQUESTED"
+  inline val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED)
+  inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED)
 }
 
-@js.native
-sealed trait MergeStrategy extends js.Any
+type MergeStrategy = "OVERWRITE"
 object MergeStrategy {
-  val OVERWRITE = "OVERWRITE".asInstanceOf[MergeStrategy]
+  inline val OVERWRITE: "OVERWRITE" = "OVERWRITE"
 
-  @inline def values = js.Array(OVERWRITE)
+  inline def values: js.Array[MergeStrategy] = js.Array(OVERWRITE)
 }
 
-@js.native
-sealed trait ParallelDataFormat extends js.Any
+type ParallelDataFormat = "TSV" | "CSV" | "TMX"
 object ParallelDataFormat {
-  val TSV = "TSV".asInstanceOf[ParallelDataFormat]
-  val CSV = "CSV".asInstanceOf[ParallelDataFormat]
-  val TMX = "TMX".asInstanceOf[ParallelDataFormat]
+  inline val TSV: "TSV" = "TSV"
+  inline val CSV: "CSV" = "CSV"
+  inline val TMX: "TMX" = "TMX"
 
-  @inline def values = js.Array(TSV, CSV, TMX)
+  inline def values: js.Array[ParallelDataFormat] = js.Array(TSV, CSV, TMX)
 }
 
-@js.native
-sealed trait ParallelDataStatus extends js.Any
+type ParallelDataStatus = "CREATING" | "UPDATING" | "ACTIVE" | "DELETING" | "FAILED"
 object ParallelDataStatus {
-  val CREATING = "CREATING".asInstanceOf[ParallelDataStatus]
-  val UPDATING = "UPDATING".asInstanceOf[ParallelDataStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[ParallelDataStatus]
-  val DELETING = "DELETING".asInstanceOf[ParallelDataStatus]
-  val FAILED = "FAILED".asInstanceOf[ParallelDataStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
+  inline def values: js.Array[ParallelDataStatus] = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
 }
 
-@js.native
-sealed trait TerminologyDataFormat extends js.Any
+type TerminologyDataFormat = "CSV" | "TMX"
 object TerminologyDataFormat {
-  val CSV = "CSV".asInstanceOf[TerminologyDataFormat]
-  val TMX = "TMX".asInstanceOf[TerminologyDataFormat]
+  inline val CSV: "CSV" = "CSV"
+  inline val TMX: "TMX" = "TMX"
 
-  @inline def values = js.Array(CSV, TMX)
+  inline def values: js.Array[TerminologyDataFormat] = js.Array(CSV, TMX)
 }

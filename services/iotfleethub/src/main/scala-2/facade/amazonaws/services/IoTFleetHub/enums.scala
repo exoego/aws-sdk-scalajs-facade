@@ -14,3 +14,4 @@ object ApplicationState {
 
   @inline def values = js.Array(CREATING, DELETING, ACTIVE, CREATE_FAILED, DELETE_FAILED)
 }
+

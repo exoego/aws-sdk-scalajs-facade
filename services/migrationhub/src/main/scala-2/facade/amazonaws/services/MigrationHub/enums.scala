@@ -40,3 +40,4 @@ object Status {
 
   @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, COMPLETED)
 }
+

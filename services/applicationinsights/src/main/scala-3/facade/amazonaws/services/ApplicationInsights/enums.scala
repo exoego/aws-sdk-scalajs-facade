@@ -1,114 +1,103 @@
 package facade.amazonaws.services.applicationinsights
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait CloudWatchEventSource extends js.Any
+type CloudWatchEventSource = "EC2" | "CODE_DEPLOY" | "HEALTH" | "RDS"
 object CloudWatchEventSource {
-  val EC2 = "EC2".asInstanceOf[CloudWatchEventSource]
-  val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[CloudWatchEventSource]
-  val HEALTH = "HEALTH".asInstanceOf[CloudWatchEventSource]
-  val RDS = "RDS".asInstanceOf[CloudWatchEventSource]
+  inline val EC2: "EC2" = "EC2"
+  inline val CODE_DEPLOY: "CODE_DEPLOY" = "CODE_DEPLOY"
+  inline val HEALTH: "HEALTH" = "HEALTH"
+  inline val RDS: "RDS" = "RDS"
 
-  @inline def values = js.Array(EC2, CODE_DEPLOY, HEALTH, RDS)
+  inline def values: js.Array[CloudWatchEventSource] = js.Array(EC2, CODE_DEPLOY, HEALTH, RDS)
 }
 
-@js.native
-sealed trait ConfigurationEventResourceType extends js.Any
+type ConfigurationEventResourceType = "CLOUDWATCH_ALARM" | "CLOUDWATCH_LOG" | "CLOUDFORMATION" | "SSM_ASSOCIATION"
 object ConfigurationEventResourceType {
-  val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[ConfigurationEventResourceType]
-  val CLOUDWATCH_LOG = "CLOUDWATCH_LOG".asInstanceOf[ConfigurationEventResourceType]
-  val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
-  val SSM_ASSOCIATION = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
+  inline val CLOUDWATCH_ALARM: "CLOUDWATCH_ALARM" = "CLOUDWATCH_ALARM"
+  inline val CLOUDWATCH_LOG: "CLOUDWATCH_LOG" = "CLOUDWATCH_LOG"
+  inline val CLOUDFORMATION: "CLOUDFORMATION" = "CLOUDFORMATION"
+  inline val SSM_ASSOCIATION: "SSM_ASSOCIATION" = "SSM_ASSOCIATION"
 
-  @inline def values = js.Array(CLOUDWATCH_ALARM, CLOUDWATCH_LOG, CLOUDFORMATION, SSM_ASSOCIATION)
+  inline def values: js.Array[ConfigurationEventResourceType] = js.Array(CLOUDWATCH_ALARM, CLOUDWATCH_LOG, CLOUDFORMATION, SSM_ASSOCIATION)
 }
 
-@js.native
-sealed trait ConfigurationEventStatus extends js.Any
+type ConfigurationEventStatus = "INFO" | "WARN" | "ERROR"
 object ConfigurationEventStatus {
-  val INFO = "INFO".asInstanceOf[ConfigurationEventStatus]
-  val WARN = "WARN".asInstanceOf[ConfigurationEventStatus]
-  val ERROR = "ERROR".asInstanceOf[ConfigurationEventStatus]
+  inline val INFO: "INFO" = "INFO"
+  inline val WARN: "WARN" = "WARN"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(INFO, WARN, ERROR)
+  inline def values: js.Array[ConfigurationEventStatus] = js.Array(INFO, WARN, ERROR)
 }
 
-@js.native
-sealed trait FeedbackKey extends js.Any
+type FeedbackKey = "INSIGHTS_FEEDBACK"
 object FeedbackKey {
-  val INSIGHTS_FEEDBACK = "INSIGHTS_FEEDBACK".asInstanceOf[FeedbackKey]
+  inline val INSIGHTS_FEEDBACK: "INSIGHTS_FEEDBACK" = "INSIGHTS_FEEDBACK"
 
-  @inline def values = js.Array(INSIGHTS_FEEDBACK)
+  inline def values: js.Array[FeedbackKey] = js.Array(INSIGHTS_FEEDBACK)
 }
 
-@js.native
-sealed trait FeedbackValue extends js.Any
+type FeedbackValue = "NOT_SPECIFIED" | "USEFUL" | "NOT_USEFUL"
 object FeedbackValue {
-  val NOT_SPECIFIED = "NOT_SPECIFIED".asInstanceOf[FeedbackValue]
-  val USEFUL = "USEFUL".asInstanceOf[FeedbackValue]
-  val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[FeedbackValue]
+  inline val NOT_SPECIFIED: "NOT_SPECIFIED" = "NOT_SPECIFIED"
+  inline val USEFUL: "USEFUL" = "USEFUL"
+  inline val NOT_USEFUL: "NOT_USEFUL" = "NOT_USEFUL"
 
-  @inline def values = js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL)
+  inline def values: js.Array[FeedbackValue] = js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL)
 }
 
-@js.native
-sealed trait LogFilter extends js.Any
+type LogFilter = "ERROR" | "WARN" | "INFO"
 object LogFilter {
-  val ERROR = "ERROR".asInstanceOf[LogFilter]
-  val WARN = "WARN".asInstanceOf[LogFilter]
-  val INFO = "INFO".asInstanceOf[LogFilter]
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val WARN: "WARN" = "WARN"
+  inline val INFO: "INFO" = "INFO"
 
-  @inline def values = js.Array(ERROR, WARN, INFO)
+  inline def values: js.Array[LogFilter] = js.Array(ERROR, WARN, INFO)
 }
 
-@js.native
-sealed trait OsType extends js.Any
+type OsType = "WINDOWS" | "LINUX"
 object OsType {
-  val WINDOWS = "WINDOWS".asInstanceOf[OsType]
-  val LINUX = "LINUX".asInstanceOf[OsType]
+  inline val WINDOWS: "WINDOWS" = "WINDOWS"
+  inline val LINUX: "LINUX" = "LINUX"
 
-  @inline def values = js.Array(WINDOWS, LINUX)
+  inline def values: js.Array[OsType] = js.Array(WINDOWS, LINUX)
 }
 
-@js.native
-sealed trait SeverityLevel extends js.Any
+type SeverityLevel = "Low" | "Medium" | "High"
 object SeverityLevel {
-  val Low = "Low".asInstanceOf[SeverityLevel]
-  val Medium = "Medium".asInstanceOf[SeverityLevel]
-  val High = "High".asInstanceOf[SeverityLevel]
+  inline val Low: "Low" = "Low"
+  inline val Medium: "Medium" = "Medium"
+  inline val High: "High" = "High"
 
-  @inline def values = js.Array(Low, Medium, High)
+  inline def values: js.Array[SeverityLevel] = js.Array(Low, Medium, High)
 }
 
-@js.native
-sealed trait Status extends js.Any
+type Status = "IGNORE" | "RESOLVED" | "PENDING"
 object Status {
-  val IGNORE = "IGNORE".asInstanceOf[Status]
-  val RESOLVED = "RESOLVED".asInstanceOf[Status]
-  val PENDING = "PENDING".asInstanceOf[Status]
+  inline val IGNORE: "IGNORE" = "IGNORE"
+  inline val RESOLVED: "RESOLVED" = "RESOLVED"
+  inline val PENDING: "PENDING" = "PENDING"
 
-  @inline def values = js.Array(IGNORE, RESOLVED, PENDING)
+  inline def values: js.Array[Status] = js.Array(IGNORE, RESOLVED, PENDING)
 }
 
-@js.native
-sealed trait Tier extends js.Any
+type Tier = "CUSTOM" | "DEFAULT" | "DOT_NET_CORE" | "DOT_NET_WORKER" | "DOT_NET_WEB_TIER" | "DOT_NET_WEB" | "SQL_SERVER" | "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" | "MYSQL" | "POSTGRESQL" | "JAVA_JMX" | "ORACLE"
 object Tier {
-  val CUSTOM = "CUSTOM".asInstanceOf[Tier]
-  val DEFAULT = "DEFAULT".asInstanceOf[Tier]
-  val DOT_NET_CORE = "DOT_NET_CORE".asInstanceOf[Tier]
-  val DOT_NET_WORKER = "DOT_NET_WORKER".asInstanceOf[Tier]
-  val DOT_NET_WEB_TIER = "DOT_NET_WEB_TIER".asInstanceOf[Tier]
-  val DOT_NET_WEB = "DOT_NET_WEB".asInstanceOf[Tier]
-  val SQL_SERVER = "SQL_SERVER".asInstanceOf[Tier]
-  val SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP = "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP".asInstanceOf[Tier]
-  val MYSQL = "MYSQL".asInstanceOf[Tier]
-  val POSTGRESQL = "POSTGRESQL".asInstanceOf[Tier]
-  val JAVA_JMX = "JAVA_JMX".asInstanceOf[Tier]
-  val ORACLE = "ORACLE".asInstanceOf[Tier]
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+  inline val DOT_NET_CORE: "DOT_NET_CORE" = "DOT_NET_CORE"
+  inline val DOT_NET_WORKER: "DOT_NET_WORKER" = "DOT_NET_WORKER"
+  inline val DOT_NET_WEB_TIER: "DOT_NET_WEB_TIER" = "DOT_NET_WEB_TIER"
+  inline val DOT_NET_WEB: "DOT_NET_WEB" = "DOT_NET_WEB"
+  inline val SQL_SERVER: "SQL_SERVER" = "SQL_SERVER"
+  inline val SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP: "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" = "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP"
+  inline val MYSQL: "MYSQL" = "MYSQL"
+  inline val POSTGRESQL: "POSTGRESQL" = "POSTGRESQL"
+  inline val JAVA_JMX: "JAVA_JMX" = "JAVA_JMX"
+  inline val ORACLE: "ORACLE" = "ORACLE"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[Tier] = js.Array(
     CUSTOM,
     DEFAULT,
     DOT_NET_CORE,

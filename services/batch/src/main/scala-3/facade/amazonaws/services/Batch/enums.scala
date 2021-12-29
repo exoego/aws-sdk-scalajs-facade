@@ -1,189 +1,170 @@
 package facade.amazonaws.services.batch
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ArrayJobDependency extends js.Any
+type ArrayJobDependency = "N_TO_N" | "SEQUENTIAL"
 object ArrayJobDependency {
-  val N_TO_N = "N_TO_N".asInstanceOf[ArrayJobDependency]
-  val SEQUENTIAL = "SEQUENTIAL".asInstanceOf[ArrayJobDependency]
+  inline val N_TO_N: "N_TO_N" = "N_TO_N"
+  inline val SEQUENTIAL: "SEQUENTIAL" = "SEQUENTIAL"
 
-  @inline def values = js.Array(N_TO_N, SEQUENTIAL)
+  inline def values: js.Array[ArrayJobDependency] = js.Array(N_TO_N, SEQUENTIAL)
 }
 
-@js.native
-sealed trait AssignPublicIp extends js.Any
+type AssignPublicIp = "ENABLED" | "DISABLED"
 object AssignPublicIp {
-  val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
-  val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[AssignPublicIp] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait CEState extends js.Any
+type CEState = "ENABLED" | "DISABLED"
 object CEState {
-  val ENABLED = "ENABLED".asInstanceOf[CEState]
-  val DISABLED = "DISABLED".asInstanceOf[CEState]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[CEState] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait CEStatus extends js.Any
+type CEStatus = "CREATING" | "UPDATING" | "DELETING" | "DELETED" | "VALID" | "INVALID"
 object CEStatus {
-  val CREATING = "CREATING".asInstanceOf[CEStatus]
-  val UPDATING = "UPDATING".asInstanceOf[CEStatus]
-  val DELETING = "DELETING".asInstanceOf[CEStatus]
-  val DELETED = "DELETED".asInstanceOf[CEStatus]
-  val VALID = "VALID".asInstanceOf[CEStatus]
-  val INVALID = "INVALID".asInstanceOf[CEStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val VALID: "VALID" = "VALID"
+  inline val INVALID: "INVALID" = "INVALID"
 
-  @inline def values = js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID)
+  inline def values: js.Array[CEStatus] = js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID)
 }
 
-@js.native
-sealed trait CEType extends js.Any
+type CEType = "MANAGED" | "UNMANAGED"
 object CEType {
-  val MANAGED = "MANAGED".asInstanceOf[CEType]
-  val UNMANAGED = "UNMANAGED".asInstanceOf[CEType]
+  inline val MANAGED: "MANAGED" = "MANAGED"
+  inline val UNMANAGED: "UNMANAGED" = "UNMANAGED"
 
-  @inline def values = js.Array(MANAGED, UNMANAGED)
+  inline def values: js.Array[CEType] = js.Array(MANAGED, UNMANAGED)
 }
 
-@js.native
-sealed trait CRAllocationStrategy extends js.Any
+type CRAllocationStrategy = "BEST_FIT" | "BEST_FIT_PROGRESSIVE" | "SPOT_CAPACITY_OPTIMIZED"
 object CRAllocationStrategy {
-  val BEST_FIT = "BEST_FIT".asInstanceOf[CRAllocationStrategy]
-  val BEST_FIT_PROGRESSIVE = "BEST_FIT_PROGRESSIVE".asInstanceOf[CRAllocationStrategy]
-  val SPOT_CAPACITY_OPTIMIZED = "SPOT_CAPACITY_OPTIMIZED".asInstanceOf[CRAllocationStrategy]
+  inline val BEST_FIT: "BEST_FIT" = "BEST_FIT"
+  inline val BEST_FIT_PROGRESSIVE: "BEST_FIT_PROGRESSIVE" = "BEST_FIT_PROGRESSIVE"
+  inline val SPOT_CAPACITY_OPTIMIZED: "SPOT_CAPACITY_OPTIMIZED" = "SPOT_CAPACITY_OPTIMIZED"
 
-  @inline def values = js.Array(BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED)
+  inline def values: js.Array[CRAllocationStrategy] = js.Array(BEST_FIT, BEST_FIT_PROGRESSIVE, SPOT_CAPACITY_OPTIMIZED)
 }
 
-@js.native
-sealed trait CRType extends js.Any
+type CRType = "EC2" | "SPOT" | "FARGATE" | "FARGATE_SPOT"
 object CRType {
-  val EC2 = "EC2".asInstanceOf[CRType]
-  val SPOT = "SPOT".asInstanceOf[CRType]
-  val FARGATE = "FARGATE".asInstanceOf[CRType]
-  val FARGATE_SPOT = "FARGATE_SPOT".asInstanceOf[CRType]
+  inline val EC2: "EC2" = "EC2"
+  inline val SPOT: "SPOT" = "SPOT"
+  inline val FARGATE: "FARGATE" = "FARGATE"
+  inline val FARGATE_SPOT: "FARGATE_SPOT" = "FARGATE_SPOT"
 
-  @inline def values = js.Array(EC2, SPOT, FARGATE, FARGATE_SPOT)
+  inline def values: js.Array[CRType] = js.Array(EC2, SPOT, FARGATE, FARGATE_SPOT)
 }
 
-@js.native
-sealed trait DeviceCgroupPermission extends js.Any
+type DeviceCgroupPermission = "READ" | "WRITE" | "MKNOD"
 object DeviceCgroupPermission {
-  val READ = "READ".asInstanceOf[DeviceCgroupPermission]
-  val WRITE = "WRITE".asInstanceOf[DeviceCgroupPermission]
-  val MKNOD = "MKNOD".asInstanceOf[DeviceCgroupPermission]
+  inline val READ: "READ" = "READ"
+  inline val WRITE: "WRITE" = "WRITE"
+  inline val MKNOD: "MKNOD" = "MKNOD"
 
-  @inline def values = js.Array(READ, WRITE, MKNOD)
+  inline def values: js.Array[DeviceCgroupPermission] = js.Array(READ, WRITE, MKNOD)
 }
 
-@js.native
-sealed trait EFSAuthorizationConfigIAM extends js.Any
+type EFSAuthorizationConfigIAM = "ENABLED" | "DISABLED"
 object EFSAuthorizationConfigIAM {
-  val ENABLED = "ENABLED".asInstanceOf[EFSAuthorizationConfigIAM]
-  val DISABLED = "DISABLED".asInstanceOf[EFSAuthorizationConfigIAM]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[EFSAuthorizationConfigIAM] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait EFSTransitEncryption extends js.Any
+type EFSTransitEncryption = "ENABLED" | "DISABLED"
 object EFSTransitEncryption {
-  val ENABLED = "ENABLED".asInstanceOf[EFSTransitEncryption]
-  val DISABLED = "DISABLED".asInstanceOf[EFSTransitEncryption]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[EFSTransitEncryption] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait JQState extends js.Any
+type JQState = "ENABLED" | "DISABLED"
 object JQState {
-  val ENABLED = "ENABLED".asInstanceOf[JQState]
-  val DISABLED = "DISABLED".asInstanceOf[JQState]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[JQState] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait JQStatus extends js.Any
+type JQStatus = "CREATING" | "UPDATING" | "DELETING" | "DELETED" | "VALID" | "INVALID"
 object JQStatus {
-  val CREATING = "CREATING".asInstanceOf[JQStatus]
-  val UPDATING = "UPDATING".asInstanceOf[JQStatus]
-  val DELETING = "DELETING".asInstanceOf[JQStatus]
-  val DELETED = "DELETED".asInstanceOf[JQStatus]
-  val VALID = "VALID".asInstanceOf[JQStatus]
-  val INVALID = "INVALID".asInstanceOf[JQStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val VALID: "VALID" = "VALID"
+  inline val INVALID: "INVALID" = "INVALID"
 
-  @inline def values = js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID)
+  inline def values: js.Array[JQStatus] = js.Array(CREATING, UPDATING, DELETING, DELETED, VALID, INVALID)
 }
 
-@js.native
-sealed trait JobDefinitionType extends js.Any
+type JobDefinitionType = "container" | "multinode"
 object JobDefinitionType {
-  val container = "container".asInstanceOf[JobDefinitionType]
-  val multinode = "multinode".asInstanceOf[JobDefinitionType]
+  inline val container: "container" = "container"
+  inline val multinode: "multinode" = "multinode"
 
-  @inline def values = js.Array(container, multinode)
+  inline def values: js.Array[JobDefinitionType] = js.Array(container, multinode)
 }
 
-@js.native
-sealed trait JobStatus extends js.Any
+type JobStatus = "SUBMITTED" | "PENDING" | "RUNNABLE" | "STARTING" | "RUNNING" | "SUCCEEDED" | "FAILED"
 object JobStatus {
-  val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-  val PENDING = "PENDING".asInstanceOf[JobStatus]
-  val RUNNABLE = "RUNNABLE".asInstanceOf[JobStatus]
-  val STARTING = "STARTING".asInstanceOf[JobStatus]
-  val RUNNING = "RUNNING".asInstanceOf[JobStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobStatus]
-  val FAILED = "FAILED".asInstanceOf[JobStatus]
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val RUNNABLE: "RUNNABLE" = "RUNNABLE"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED)
+  inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, PENDING, RUNNABLE, STARTING, RUNNING, SUCCEEDED, FAILED)
 }
 
-@js.native
-sealed trait LogDriver extends js.Any
+type LogDriver = "json-file" | "syslog" | "journald" | "gelf" | "fluentd" | "awslogs" | "splunk"
 object LogDriver {
-  val `json-file` = "json-file".asInstanceOf[LogDriver]
-  val syslog = "syslog".asInstanceOf[LogDriver]
-  val journald = "journald".asInstanceOf[LogDriver]
-  val gelf = "gelf".asInstanceOf[LogDriver]
-  val fluentd = "fluentd".asInstanceOf[LogDriver]
-  val awslogs = "awslogs".asInstanceOf[LogDriver]
-  val splunk = "splunk".asInstanceOf[LogDriver]
+  inline val `json-file`: "json-file" = "json-file"
+  inline val syslog: "syslog" = "syslog"
+  inline val journald: "journald" = "journald"
+  inline val gelf: "gelf" = "gelf"
+  inline val fluentd: "fluentd" = "fluentd"
+  inline val awslogs: "awslogs" = "awslogs"
+  inline val splunk: "splunk" = "splunk"
 
-  @inline def values = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk)
+  inline def values: js.Array[LogDriver] = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk)
 }
 
-@js.native
-sealed trait PlatformCapability extends js.Any
+type PlatformCapability = "EC2" | "FARGATE"
 object PlatformCapability {
-  val EC2 = "EC2".asInstanceOf[PlatformCapability]
-  val FARGATE = "FARGATE".asInstanceOf[PlatformCapability]
+  inline val EC2: "EC2" = "EC2"
+  inline val FARGATE: "FARGATE" = "FARGATE"
 
-  @inline def values = js.Array(EC2, FARGATE)
+  inline def values: js.Array[PlatformCapability] = js.Array(EC2, FARGATE)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "GPU" | "VCPU" | "MEMORY"
 object ResourceType {
-  val GPU = "GPU".asInstanceOf[ResourceType]
-  val VCPU = "VCPU".asInstanceOf[ResourceType]
-  val MEMORY = "MEMORY".asInstanceOf[ResourceType]
+  inline val GPU: "GPU" = "GPU"
+  inline val VCPU: "VCPU" = "VCPU"
+  inline val MEMORY: "MEMORY" = "MEMORY"
 
-  @inline def values = js.Array(GPU, VCPU, MEMORY)
+  inline def values: js.Array[ResourceType] = js.Array(GPU, VCPU, MEMORY)
 }
 
-@js.native
-sealed trait RetryAction extends js.Any
+type RetryAction = "RETRY" | "EXIT"
 object RetryAction {
-  val RETRY = "RETRY".asInstanceOf[RetryAction]
-  val EXIT = "EXIT".asInstanceOf[RetryAction]
+  inline val RETRY: "RETRY" = "RETRY"
+  inline val EXIT: "EXIT" = "EXIT"
 
-  @inline def values = js.Array(RETRY, EXIT)
+  inline def values: js.Array[RetryAction] = js.Array(RETRY, EXIT)
 }

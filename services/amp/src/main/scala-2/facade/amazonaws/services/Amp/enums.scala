@@ -16,3 +16,4 @@ object WorkspaceStatusCode {
 
   @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATION_FAILED)
 }
+

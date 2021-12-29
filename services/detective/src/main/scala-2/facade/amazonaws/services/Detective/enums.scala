@@ -23,3 +23,4 @@ object MemberStatus {
 
   @inline def values = js.Array(INVITED, VERIFICATION_IN_PROGRESS, VERIFICATION_FAILED, ENABLED, ACCEPTED_BUT_DISABLED)
 }
+

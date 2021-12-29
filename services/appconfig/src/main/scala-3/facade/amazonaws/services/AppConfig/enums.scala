@@ -1,79 +1,71 @@
 package facade.amazonaws.services.appconfig
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DeploymentEventType extends js.Any
+type DeploymentEventType = "PERCENTAGE_UPDATED" | "ROLLBACK_STARTED" | "ROLLBACK_COMPLETED" | "BAKE_TIME_STARTED" | "DEPLOYMENT_STARTED" | "DEPLOYMENT_COMPLETED"
 object DeploymentEventType {
-  val PERCENTAGE_UPDATED = "PERCENTAGE_UPDATED".asInstanceOf[DeploymentEventType]
-  val ROLLBACK_STARTED = "ROLLBACK_STARTED".asInstanceOf[DeploymentEventType]
-  val ROLLBACK_COMPLETED = "ROLLBACK_COMPLETED".asInstanceOf[DeploymentEventType]
-  val BAKE_TIME_STARTED = "BAKE_TIME_STARTED".asInstanceOf[DeploymentEventType]
-  val DEPLOYMENT_STARTED = "DEPLOYMENT_STARTED".asInstanceOf[DeploymentEventType]
-  val DEPLOYMENT_COMPLETED = "DEPLOYMENT_COMPLETED".asInstanceOf[DeploymentEventType]
+  inline val PERCENTAGE_UPDATED: "PERCENTAGE_UPDATED" = "PERCENTAGE_UPDATED"
+  inline val ROLLBACK_STARTED: "ROLLBACK_STARTED" = "ROLLBACK_STARTED"
+  inline val ROLLBACK_COMPLETED: "ROLLBACK_COMPLETED" = "ROLLBACK_COMPLETED"
+  inline val BAKE_TIME_STARTED: "BAKE_TIME_STARTED" = "BAKE_TIME_STARTED"
+  inline val DEPLOYMENT_STARTED: "DEPLOYMENT_STARTED" = "DEPLOYMENT_STARTED"
+  inline val DEPLOYMENT_COMPLETED: "DEPLOYMENT_COMPLETED" = "DEPLOYMENT_COMPLETED"
 
-  @inline def values = js.Array(PERCENTAGE_UPDATED, ROLLBACK_STARTED, ROLLBACK_COMPLETED, BAKE_TIME_STARTED, DEPLOYMENT_STARTED, DEPLOYMENT_COMPLETED)
+  inline def values: js.Array[DeploymentEventType] = js.Array(PERCENTAGE_UPDATED, ROLLBACK_STARTED, ROLLBACK_COMPLETED, BAKE_TIME_STARTED, DEPLOYMENT_STARTED, DEPLOYMENT_COMPLETED)
 }
 
-@js.native
-sealed trait DeploymentState extends js.Any
+type DeploymentState = "BAKING" | "VALIDATING" | "DEPLOYING" | "COMPLETE" | "ROLLING_BACK" | "ROLLED_BACK"
 object DeploymentState {
-  val BAKING = "BAKING".asInstanceOf[DeploymentState]
-  val VALIDATING = "VALIDATING".asInstanceOf[DeploymentState]
-  val DEPLOYING = "DEPLOYING".asInstanceOf[DeploymentState]
-  val COMPLETE = "COMPLETE".asInstanceOf[DeploymentState]
-  val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[DeploymentState]
-  val ROLLED_BACK = "ROLLED_BACK".asInstanceOf[DeploymentState]
+  inline val BAKING: "BAKING" = "BAKING"
+  inline val VALIDATING: "VALIDATING" = "VALIDATING"
+  inline val DEPLOYING: "DEPLOYING" = "DEPLOYING"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val ROLLING_BACK: "ROLLING_BACK" = "ROLLING_BACK"
+  inline val ROLLED_BACK: "ROLLED_BACK" = "ROLLED_BACK"
 
-  @inline def values = js.Array(BAKING, VALIDATING, DEPLOYING, COMPLETE, ROLLING_BACK, ROLLED_BACK)
+  inline def values: js.Array[DeploymentState] = js.Array(BAKING, VALIDATING, DEPLOYING, COMPLETE, ROLLING_BACK, ROLLED_BACK)
 }
 
-@js.native
-sealed trait EnvironmentState extends js.Any
+type EnvironmentState = "READY_FOR_DEPLOYMENT" | "DEPLOYING" | "ROLLING_BACK" | "ROLLED_BACK"
 object EnvironmentState {
-  val READY_FOR_DEPLOYMENT = "READY_FOR_DEPLOYMENT".asInstanceOf[EnvironmentState]
-  val DEPLOYING = "DEPLOYING".asInstanceOf[EnvironmentState]
-  val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[EnvironmentState]
-  val ROLLED_BACK = "ROLLED_BACK".asInstanceOf[EnvironmentState]
+  inline val READY_FOR_DEPLOYMENT: "READY_FOR_DEPLOYMENT" = "READY_FOR_DEPLOYMENT"
+  inline val DEPLOYING: "DEPLOYING" = "DEPLOYING"
+  inline val ROLLING_BACK: "ROLLING_BACK" = "ROLLING_BACK"
+  inline val ROLLED_BACK: "ROLLED_BACK" = "ROLLED_BACK"
 
-  @inline def values = js.Array(READY_FOR_DEPLOYMENT, DEPLOYING, ROLLING_BACK, ROLLED_BACK)
+  inline def values: js.Array[EnvironmentState] = js.Array(READY_FOR_DEPLOYMENT, DEPLOYING, ROLLING_BACK, ROLLED_BACK)
 }
 
-@js.native
-sealed trait GrowthType extends js.Any
+type GrowthType = "LINEAR" | "EXPONENTIAL"
 object GrowthType {
-  val LINEAR = "LINEAR".asInstanceOf[GrowthType]
-  val EXPONENTIAL = "EXPONENTIAL".asInstanceOf[GrowthType]
+  inline val LINEAR: "LINEAR" = "LINEAR"
+  inline val EXPONENTIAL: "EXPONENTIAL" = "EXPONENTIAL"
 
-  @inline def values = js.Array(LINEAR, EXPONENTIAL)
+  inline def values: js.Array[GrowthType] = js.Array(LINEAR, EXPONENTIAL)
 }
 
-@js.native
-sealed trait ReplicateTo extends js.Any
+type ReplicateTo = "NONE" | "SSM_DOCUMENT"
 object ReplicateTo {
-  val NONE = "NONE".asInstanceOf[ReplicateTo]
-  val SSM_DOCUMENT = "SSM_DOCUMENT".asInstanceOf[ReplicateTo]
+  inline val NONE: "NONE" = "NONE"
+  inline val SSM_DOCUMENT: "SSM_DOCUMENT" = "SSM_DOCUMENT"
 
-  @inline def values = js.Array(NONE, SSM_DOCUMENT)
+  inline def values: js.Array[ReplicateTo] = js.Array(NONE, SSM_DOCUMENT)
 }
 
-@js.native
-sealed trait TriggeredBy extends js.Any
+type TriggeredBy = "USER" | "APPCONFIG" | "CLOUDWATCH_ALARM" | "INTERNAL_ERROR"
 object TriggeredBy {
-  val USER = "USER".asInstanceOf[TriggeredBy]
-  val APPCONFIG = "APPCONFIG".asInstanceOf[TriggeredBy]
-  val CLOUDWATCH_ALARM = "CLOUDWATCH_ALARM".asInstanceOf[TriggeredBy]
-  val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[TriggeredBy]
+  inline val USER: "USER" = "USER"
+  inline val APPCONFIG: "APPCONFIG" = "APPCONFIG"
+  inline val CLOUDWATCH_ALARM: "CLOUDWATCH_ALARM" = "CLOUDWATCH_ALARM"
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
 
-  @inline def values = js.Array(USER, APPCONFIG, CLOUDWATCH_ALARM, INTERNAL_ERROR)
+  inline def values: js.Array[TriggeredBy] = js.Array(USER, APPCONFIG, CLOUDWATCH_ALARM, INTERNAL_ERROR)
 }
 
-@js.native
-sealed trait ValidatorType extends js.Any
+type ValidatorType = "JSON_SCHEMA" | "LAMBDA"
 object ValidatorType {
-  val JSON_SCHEMA = "JSON_SCHEMA".asInstanceOf[ValidatorType]
-  val LAMBDA = "LAMBDA".asInstanceOf[ValidatorType]
+  inline val JSON_SCHEMA: "JSON_SCHEMA" = "JSON_SCHEMA"
+  inline val LAMBDA: "LAMBDA" = "LAMBDA"
 
-  @inline def values = js.Array(JSON_SCHEMA, LAMBDA)
+  inline def values: js.Array[ValidatorType] = js.Array(JSON_SCHEMA, LAMBDA)
 }

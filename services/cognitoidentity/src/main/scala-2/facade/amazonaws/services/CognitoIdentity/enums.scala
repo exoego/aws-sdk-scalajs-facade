@@ -40,3 +40,4 @@ object RoleMappingType {
 
   @inline def values = js.Array(Token, Rules)
 }
+

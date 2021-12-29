@@ -181,3 +181,4 @@ object WriteForwardingStatus {
 
   @inline def values = js.Array(enabled, disabled, enabling, disabling, unknown)
 }
+

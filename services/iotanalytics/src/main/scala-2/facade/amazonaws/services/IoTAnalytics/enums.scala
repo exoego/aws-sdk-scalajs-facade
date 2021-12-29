@@ -88,3 +88,4 @@ object ReprocessingStatus {
 
   @inline def values = js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED)
 }
+

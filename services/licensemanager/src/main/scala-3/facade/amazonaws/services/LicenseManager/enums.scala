@@ -1,70 +1,65 @@
 package facade.amazonaws.services.licensemanager
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AllowedOperation extends js.Any
+type AllowedOperation = "CreateGrant" | "CheckoutLicense" | "CheckoutBorrowLicense" | "CheckInLicense" | "ExtendConsumptionLicense" | "ListPurchasedLicenses" | "CreateToken"
 object AllowedOperation {
-  val CreateGrant = "CreateGrant".asInstanceOf[AllowedOperation]
-  val CheckoutLicense = "CheckoutLicense".asInstanceOf[AllowedOperation]
-  val CheckoutBorrowLicense = "CheckoutBorrowLicense".asInstanceOf[AllowedOperation]
-  val CheckInLicense = "CheckInLicense".asInstanceOf[AllowedOperation]
-  val ExtendConsumptionLicense = "ExtendConsumptionLicense".asInstanceOf[AllowedOperation]
-  val ListPurchasedLicenses = "ListPurchasedLicenses".asInstanceOf[AllowedOperation]
-  val CreateToken = "CreateToken".asInstanceOf[AllowedOperation]
+  inline val CreateGrant: "CreateGrant" = "CreateGrant"
+  inline val CheckoutLicense: "CheckoutLicense" = "CheckoutLicense"
+  inline val CheckoutBorrowLicense: "CheckoutBorrowLicense" = "CheckoutBorrowLicense"
+  inline val CheckInLicense: "CheckInLicense" = "CheckInLicense"
+  inline val ExtendConsumptionLicense: "ExtendConsumptionLicense" = "ExtendConsumptionLicense"
+  inline val ListPurchasedLicenses: "ListPurchasedLicenses" = "ListPurchasedLicenses"
+  inline val CreateToken: "CreateToken" = "CreateToken"
 
-  @inline def values = js.Array(CreateGrant, CheckoutLicense, CheckoutBorrowLicense, CheckInLicense, ExtendConsumptionLicense, ListPurchasedLicenses, CreateToken)
+  inline def values: js.Array[AllowedOperation] = js.Array(CreateGrant, CheckoutLicense, CheckoutBorrowLicense, CheckInLicense, ExtendConsumptionLicense, ListPurchasedLicenses, CreateToken)
 }
 
-@js.native
-sealed trait CheckoutType extends js.Any
+type CheckoutType = "PROVISIONAL"
 object CheckoutType {
-  val PROVISIONAL = "PROVISIONAL".asInstanceOf[CheckoutType]
+  inline val PROVISIONAL: "PROVISIONAL" = "PROVISIONAL"
 
-  @inline def values = js.Array(PROVISIONAL)
+  inline def values: js.Array[CheckoutType] = js.Array(PROVISIONAL)
 }
 
-@js.native
-sealed trait DigitalSignatureMethod extends js.Any
+type DigitalSignatureMethod = "JWT_PS384"
 object DigitalSignatureMethod {
-  val JWT_PS384 = "JWT_PS384".asInstanceOf[DigitalSignatureMethod]
+  inline val JWT_PS384: "JWT_PS384" = "JWT_PS384"
 
-  @inline def values = js.Array(JWT_PS384)
+  inline def values: js.Array[DigitalSignatureMethod] = js.Array(JWT_PS384)
 }
 
-@js.native
-sealed trait EntitlementDataUnit extends js.Any
+type EntitlementDataUnit = "Count" | "None" | "Seconds" | "Microseconds" | "Milliseconds" | "Bytes" | "Kilobytes" | "Megabytes" | "Gigabytes" | "Terabytes" | "Bits" | "Kilobits" | "Megabits" | "Gigabits" | "Terabits" | "Percent" | "Bytes/Second" | "Kilobytes/Second" | "Megabytes/Second" | "Gigabytes/Second" | "Terabytes/Second" | "Bits/Second" | "Kilobits/Second" | "Megabits/Second" | "Gigabits/Second" | "Terabits/Second" | "Count/Second"
 object EntitlementDataUnit {
-  val Count = "Count".asInstanceOf[EntitlementDataUnit]
-  val None = "None".asInstanceOf[EntitlementDataUnit]
-  val Seconds = "Seconds".asInstanceOf[EntitlementDataUnit]
-  val Microseconds = "Microseconds".asInstanceOf[EntitlementDataUnit]
-  val Milliseconds = "Milliseconds".asInstanceOf[EntitlementDataUnit]
-  val Bytes = "Bytes".asInstanceOf[EntitlementDataUnit]
-  val Kilobytes = "Kilobytes".asInstanceOf[EntitlementDataUnit]
-  val Megabytes = "Megabytes".asInstanceOf[EntitlementDataUnit]
-  val Gigabytes = "Gigabytes".asInstanceOf[EntitlementDataUnit]
-  val Terabytes = "Terabytes".asInstanceOf[EntitlementDataUnit]
-  val Bits = "Bits".asInstanceOf[EntitlementDataUnit]
-  val Kilobits = "Kilobits".asInstanceOf[EntitlementDataUnit]
-  val Megabits = "Megabits".asInstanceOf[EntitlementDataUnit]
-  val Gigabits = "Gigabits".asInstanceOf[EntitlementDataUnit]
-  val Terabits = "Terabits".asInstanceOf[EntitlementDataUnit]
-  val Percent = "Percent".asInstanceOf[EntitlementDataUnit]
-  val `Bytes/Second` = "Bytes/Second".asInstanceOf[EntitlementDataUnit]
-  val `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[EntitlementDataUnit]
-  val `Megabytes/Second` = "Megabytes/Second".asInstanceOf[EntitlementDataUnit]
-  val `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[EntitlementDataUnit]
-  val `Terabytes/Second` = "Terabytes/Second".asInstanceOf[EntitlementDataUnit]
-  val `Bits/Second` = "Bits/Second".asInstanceOf[EntitlementDataUnit]
-  val `Kilobits/Second` = "Kilobits/Second".asInstanceOf[EntitlementDataUnit]
-  val `Megabits/Second` = "Megabits/Second".asInstanceOf[EntitlementDataUnit]
-  val `Gigabits/Second` = "Gigabits/Second".asInstanceOf[EntitlementDataUnit]
-  val `Terabits/Second` = "Terabits/Second".asInstanceOf[EntitlementDataUnit]
-  val `Count/Second` = "Count/Second".asInstanceOf[EntitlementDataUnit]
+  inline val Count: "Count" = "Count"
+  inline val None: "None" = "None"
+  inline val Seconds: "Seconds" = "Seconds"
+  inline val Microseconds: "Microseconds" = "Microseconds"
+  inline val Milliseconds: "Milliseconds" = "Milliseconds"
+  inline val Bytes: "Bytes" = "Bytes"
+  inline val Kilobytes: "Kilobytes" = "Kilobytes"
+  inline val Megabytes: "Megabytes" = "Megabytes"
+  inline val Gigabytes: "Gigabytes" = "Gigabytes"
+  inline val Terabytes: "Terabytes" = "Terabytes"
+  inline val Bits: "Bits" = "Bits"
+  inline val Kilobits: "Kilobits" = "Kilobits"
+  inline val Megabits: "Megabits" = "Megabits"
+  inline val Gigabits: "Gigabits" = "Gigabits"
+  inline val Terabits: "Terabits" = "Terabits"
+  inline val Percent: "Percent" = "Percent"
+  inline val `Bytes/Second`: "Bytes/Second" = "Bytes/Second"
+  inline val `Kilobytes/Second`: "Kilobytes/Second" = "Kilobytes/Second"
+  inline val `Megabytes/Second`: "Megabytes/Second" = "Megabytes/Second"
+  inline val `Gigabytes/Second`: "Gigabytes/Second" = "Gigabytes/Second"
+  inline val `Terabytes/Second`: "Terabytes/Second" = "Terabytes/Second"
+  inline val `Bits/Second`: "Bits/Second" = "Bits/Second"
+  inline val `Kilobits/Second`: "Kilobits/Second" = "Kilobits/Second"
+  inline val `Megabits/Second`: "Megabits/Second" = "Megabits/Second"
+  inline val `Gigabits/Second`: "Gigabits/Second" = "Gigabits/Second"
+  inline val `Terabits/Second`: "Terabits/Second" = "Terabits/Second"
+  inline val `Count/Second`: "Count/Second" = "Count/Second"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[EntitlementDataUnit] = js.Array(
     Count,
     None,
     Seconds,
@@ -95,38 +90,37 @@ object EntitlementDataUnit {
   )
 }
 
-@js.native
-sealed trait EntitlementUnit extends js.Any
+type EntitlementUnit = "Count" | "None" | "Seconds" | "Microseconds" | "Milliseconds" | "Bytes" | "Kilobytes" | "Megabytes" | "Gigabytes" | "Terabytes" | "Bits" | "Kilobits" | "Megabits" | "Gigabits" | "Terabits" | "Percent" | "Bytes/Second" | "Kilobytes/Second" | "Megabytes/Second" | "Gigabytes/Second" | "Terabytes/Second" | "Bits/Second" | "Kilobits/Second" | "Megabits/Second" | "Gigabits/Second" | "Terabits/Second" | "Count/Second"
 object EntitlementUnit {
-  val Count = "Count".asInstanceOf[EntitlementUnit]
-  val None = "None".asInstanceOf[EntitlementUnit]
-  val Seconds = "Seconds".asInstanceOf[EntitlementUnit]
-  val Microseconds = "Microseconds".asInstanceOf[EntitlementUnit]
-  val Milliseconds = "Milliseconds".asInstanceOf[EntitlementUnit]
-  val Bytes = "Bytes".asInstanceOf[EntitlementUnit]
-  val Kilobytes = "Kilobytes".asInstanceOf[EntitlementUnit]
-  val Megabytes = "Megabytes".asInstanceOf[EntitlementUnit]
-  val Gigabytes = "Gigabytes".asInstanceOf[EntitlementUnit]
-  val Terabytes = "Terabytes".asInstanceOf[EntitlementUnit]
-  val Bits = "Bits".asInstanceOf[EntitlementUnit]
-  val Kilobits = "Kilobits".asInstanceOf[EntitlementUnit]
-  val Megabits = "Megabits".asInstanceOf[EntitlementUnit]
-  val Gigabits = "Gigabits".asInstanceOf[EntitlementUnit]
-  val Terabits = "Terabits".asInstanceOf[EntitlementUnit]
-  val Percent = "Percent".asInstanceOf[EntitlementUnit]
-  val `Bytes/Second` = "Bytes/Second".asInstanceOf[EntitlementUnit]
-  val `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[EntitlementUnit]
-  val `Megabytes/Second` = "Megabytes/Second".asInstanceOf[EntitlementUnit]
-  val `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[EntitlementUnit]
-  val `Terabytes/Second` = "Terabytes/Second".asInstanceOf[EntitlementUnit]
-  val `Bits/Second` = "Bits/Second".asInstanceOf[EntitlementUnit]
-  val `Kilobits/Second` = "Kilobits/Second".asInstanceOf[EntitlementUnit]
-  val `Megabits/Second` = "Megabits/Second".asInstanceOf[EntitlementUnit]
-  val `Gigabits/Second` = "Gigabits/Second".asInstanceOf[EntitlementUnit]
-  val `Terabits/Second` = "Terabits/Second".asInstanceOf[EntitlementUnit]
-  val `Count/Second` = "Count/Second".asInstanceOf[EntitlementUnit]
+  inline val Count: "Count" = "Count"
+  inline val None: "None" = "None"
+  inline val Seconds: "Seconds" = "Seconds"
+  inline val Microseconds: "Microseconds" = "Microseconds"
+  inline val Milliseconds: "Milliseconds" = "Milliseconds"
+  inline val Bytes: "Bytes" = "Bytes"
+  inline val Kilobytes: "Kilobytes" = "Kilobytes"
+  inline val Megabytes: "Megabytes" = "Megabytes"
+  inline val Gigabytes: "Gigabytes" = "Gigabytes"
+  inline val Terabytes: "Terabytes" = "Terabytes"
+  inline val Bits: "Bits" = "Bits"
+  inline val Kilobits: "Kilobits" = "Kilobits"
+  inline val Megabits: "Megabits" = "Megabits"
+  inline val Gigabits: "Gigabits" = "Gigabits"
+  inline val Terabits: "Terabits" = "Terabits"
+  inline val Percent: "Percent" = "Percent"
+  inline val `Bytes/Second`: "Bytes/Second" = "Bytes/Second"
+  inline val `Kilobytes/Second`: "Kilobytes/Second" = "Kilobytes/Second"
+  inline val `Megabytes/Second`: "Megabytes/Second" = "Megabytes/Second"
+  inline val `Gigabytes/Second`: "Gigabytes/Second" = "Gigabytes/Second"
+  inline val `Terabytes/Second`: "Terabytes/Second" = "Terabytes/Second"
+  inline val `Bits/Second`: "Bits/Second" = "Bits/Second"
+  inline val `Kilobits/Second`: "Kilobits/Second" = "Kilobits/Second"
+  inline val `Megabits/Second`: "Megabits/Second" = "Megabits/Second"
+  inline val `Gigabits/Second`: "Gigabits/Second" = "Gigabits/Second"
+  inline val `Terabits/Second`: "Terabits/Second" = "Terabits/Second"
+  inline val `Count/Second`: "Count/Second" = "Count/Second"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[EntitlementUnit] = js.Array(
     Count,
     None,
     Seconds,
@@ -157,115 +151,105 @@ object EntitlementUnit {
   )
 }
 
-@js.native
-sealed trait GrantStatus extends js.Any
+type GrantStatus = "PENDING_WORKFLOW" | "PENDING_ACCEPT" | "REJECTED" | "ACTIVE" | "FAILED_WORKFLOW" | "DELETED" | "PENDING_DELETE" | "DISABLED"
 object GrantStatus {
-  val PENDING_WORKFLOW = "PENDING_WORKFLOW".asInstanceOf[GrantStatus]
-  val PENDING_ACCEPT = "PENDING_ACCEPT".asInstanceOf[GrantStatus]
-  val REJECTED = "REJECTED".asInstanceOf[GrantStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[GrantStatus]
-  val FAILED_WORKFLOW = "FAILED_WORKFLOW".asInstanceOf[GrantStatus]
-  val DELETED = "DELETED".asInstanceOf[GrantStatus]
-  val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[GrantStatus]
-  val DISABLED = "DISABLED".asInstanceOf[GrantStatus]
+  inline val PENDING_WORKFLOW: "PENDING_WORKFLOW" = "PENDING_WORKFLOW"
+  inline val PENDING_ACCEPT: "PENDING_ACCEPT" = "PENDING_ACCEPT"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val FAILED_WORKFLOW: "FAILED_WORKFLOW" = "FAILED_WORKFLOW"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val PENDING_DELETE: "PENDING_DELETE" = "PENDING_DELETE"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, PENDING_DELETE, DISABLED)
+  inline def values: js.Array[GrantStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, PENDING_DELETE, DISABLED)
 }
 
-@js.native
-sealed trait InventoryFilterCondition extends js.Any
+type InventoryFilterCondition = "EQUALS" | "NOT_EQUALS" | "BEGINS_WITH" | "CONTAINS"
 object InventoryFilterCondition {
-  val EQUALS = "EQUALS".asInstanceOf[InventoryFilterCondition]
-  val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[InventoryFilterCondition]
-  val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[InventoryFilterCondition]
-  val CONTAINS = "CONTAINS".asInstanceOf[InventoryFilterCondition]
+  inline val EQUALS: "EQUALS" = "EQUALS"
+  inline val NOT_EQUALS: "NOT_EQUALS" = "NOT_EQUALS"
+  inline val BEGINS_WITH: "BEGINS_WITH" = "BEGINS_WITH"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
 
-  @inline def values = js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS)
+  inline def values: js.Array[InventoryFilterCondition] = js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS)
 }
 
-@js.native
-sealed trait LicenseConfigurationStatus extends js.Any
+type LicenseConfigurationStatus = "AVAILABLE" | "DISABLED"
 object LicenseConfigurationStatus {
-  val AVAILABLE = "AVAILABLE".asInstanceOf[LicenseConfigurationStatus]
-  val DISABLED = "DISABLED".asInstanceOf[LicenseConfigurationStatus]
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(AVAILABLE, DISABLED)
+  inline def values: js.Array[LicenseConfigurationStatus] = js.Array(AVAILABLE, DISABLED)
 }
 
-@js.native
-sealed trait LicenseCountingType extends js.Any
+type LicenseCountingType = "vCPU" | "Instance" | "Core" | "Socket"
 object LicenseCountingType {
-  val vCPU = "vCPU".asInstanceOf[LicenseCountingType]
-  val Instance = "Instance".asInstanceOf[LicenseCountingType]
-  val Core = "Core".asInstanceOf[LicenseCountingType]
-  val Socket = "Socket".asInstanceOf[LicenseCountingType]
+  inline val vCPU: "vCPU" = "vCPU"
+  inline val Instance: "Instance" = "Instance"
+  inline val Core: "Core" = "Core"
+  inline val Socket: "Socket" = "Socket"
 
-  @inline def values = js.Array(vCPU, Instance, Core, Socket)
+  inline def values: js.Array[LicenseCountingType] = js.Array(vCPU, Instance, Core, Socket)
 }
 
-@js.native
-sealed trait LicenseDeletionStatus extends js.Any
+type LicenseDeletionStatus = "PENDING_DELETE" | "DELETED"
 object LicenseDeletionStatus {
-  val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[LicenseDeletionStatus]
-  val DELETED = "DELETED".asInstanceOf[LicenseDeletionStatus]
+  inline val PENDING_DELETE: "PENDING_DELETE" = "PENDING_DELETE"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(PENDING_DELETE, DELETED)
+  inline def values: js.Array[LicenseDeletionStatus] = js.Array(PENDING_DELETE, DELETED)
 }
 
-@js.native
-sealed trait LicenseStatus extends js.Any
+type LicenseStatus = "AVAILABLE" | "PENDING_AVAILABLE" | "DEACTIVATED" | "SUSPENDED" | "EXPIRED" | "PENDING_DELETE" | "DELETED"
 object LicenseStatus {
-  val AVAILABLE = "AVAILABLE".asInstanceOf[LicenseStatus]
-  val PENDING_AVAILABLE = "PENDING_AVAILABLE".asInstanceOf[LicenseStatus]
-  val DEACTIVATED = "DEACTIVATED".asInstanceOf[LicenseStatus]
-  val SUSPENDED = "SUSPENDED".asInstanceOf[LicenseStatus]
-  val EXPIRED = "EXPIRED".asInstanceOf[LicenseStatus]
-  val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[LicenseStatus]
-  val DELETED = "DELETED".asInstanceOf[LicenseStatus]
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val PENDING_AVAILABLE: "PENDING_AVAILABLE" = "PENDING_AVAILABLE"
+  inline val DEACTIVATED: "DEACTIVATED" = "DEACTIVATED"
+  inline val SUSPENDED: "SUSPENDED" = "SUSPENDED"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val PENDING_DELETE: "PENDING_DELETE" = "PENDING_DELETE"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(AVAILABLE, PENDING_AVAILABLE, DEACTIVATED, SUSPENDED, EXPIRED, PENDING_DELETE, DELETED)
+  inline def values: js.Array[LicenseStatus] = js.Array(AVAILABLE, PENDING_AVAILABLE, DEACTIVATED, SUSPENDED, EXPIRED, PENDING_DELETE, DELETED)
 }
 
-@js.native
-sealed trait ReceivedStatus extends js.Any
+type ReceivedStatus = "PENDING_WORKFLOW" | "PENDING_ACCEPT" | "REJECTED" | "ACTIVE" | "FAILED_WORKFLOW" | "DELETED" | "DISABLED"
 object ReceivedStatus {
-  val PENDING_WORKFLOW = "PENDING_WORKFLOW".asInstanceOf[ReceivedStatus]
-  val PENDING_ACCEPT = "PENDING_ACCEPT".asInstanceOf[ReceivedStatus]
-  val REJECTED = "REJECTED".asInstanceOf[ReceivedStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[ReceivedStatus]
-  val FAILED_WORKFLOW = "FAILED_WORKFLOW".asInstanceOf[ReceivedStatus]
-  val DELETED = "DELETED".asInstanceOf[ReceivedStatus]
-  val DISABLED = "DISABLED".asInstanceOf[ReceivedStatus]
+  inline val PENDING_WORKFLOW: "PENDING_WORKFLOW" = "PENDING_WORKFLOW"
+  inline val PENDING_ACCEPT: "PENDING_ACCEPT" = "PENDING_ACCEPT"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val FAILED_WORKFLOW: "FAILED_WORKFLOW" = "FAILED_WORKFLOW"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, DISABLED)
+  inline def values: js.Array[ReceivedStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, DISABLED)
 }
 
-@js.native
-sealed trait RenewType extends js.Any
+type RenewType = "None" | "Weekly" | "Monthly"
 object RenewType {
-  val None = "None".asInstanceOf[RenewType]
-  val Weekly = "Weekly".asInstanceOf[RenewType]
-  val Monthly = "Monthly".asInstanceOf[RenewType]
+  inline val None: "None" = "None"
+  inline val Weekly: "Weekly" = "Weekly"
+  inline val Monthly: "Monthly" = "Monthly"
 
-  @inline def values = js.Array(None, Weekly, Monthly)
+  inline def values: js.Array[RenewType] = js.Array(None, Weekly, Monthly)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "EC2_INSTANCE" | "EC2_HOST" | "EC2_AMI" | "RDS" | "SYSTEMS_MANAGER_MANAGED_INSTANCE"
 object ResourceType {
-  val EC2_INSTANCE = "EC2_INSTANCE".asInstanceOf[ResourceType]
-  val EC2_HOST = "EC2_HOST".asInstanceOf[ResourceType]
-  val EC2_AMI = "EC2_AMI".asInstanceOf[ResourceType]
-  val RDS = "RDS".asInstanceOf[ResourceType]
-  val SYSTEMS_MANAGER_MANAGED_INSTANCE = "SYSTEMS_MANAGER_MANAGED_INSTANCE".asInstanceOf[ResourceType]
+  inline val EC2_INSTANCE: "EC2_INSTANCE" = "EC2_INSTANCE"
+  inline val EC2_HOST: "EC2_HOST" = "EC2_HOST"
+  inline val EC2_AMI: "EC2_AMI" = "EC2_AMI"
+  inline val RDS: "RDS" = "RDS"
+  inline val SYSTEMS_MANAGER_MANAGED_INSTANCE: "SYSTEMS_MANAGER_MANAGED_INSTANCE" = "SYSTEMS_MANAGER_MANAGED_INSTANCE"
 
-  @inline def values = js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE)
+  inline def values: js.Array[ResourceType] = js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE)
 }
 
-@js.native
-sealed trait TokenType extends js.Any
+type TokenType = "REFRESH_TOKEN"
 object TokenType {
-  val REFRESH_TOKEN = "REFRESH_TOKEN".asInstanceOf[TokenType]
+  inline val REFRESH_TOKEN: "REFRESH_TOKEN" = "REFRESH_TOKEN"
 
-  @inline def values = js.Array(REFRESH_TOKEN)
+  inline def values: js.Array[TokenType] = js.Array(REFRESH_TOKEN)
 }

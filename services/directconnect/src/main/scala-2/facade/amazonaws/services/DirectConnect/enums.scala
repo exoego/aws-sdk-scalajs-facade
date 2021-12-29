@@ -173,3 +173,4 @@ object VirtualInterfaceState {
 
   @inline def values = js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown)
 }
+

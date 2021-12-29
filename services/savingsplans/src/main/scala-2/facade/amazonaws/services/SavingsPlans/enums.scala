@@ -151,3 +151,4 @@ object SavingsPlansFilterName {
 
   @inline def values = js.Array(region, `ec2-instance-family`, commitment, upfront, term, `savings-plan-type`, `payment-option`, start, end)
 }
+

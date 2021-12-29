@@ -66,3 +66,4 @@ object SortKey {
 
   @inline def values = js.Array(DESCENDING, ASCENDING)
 }
+

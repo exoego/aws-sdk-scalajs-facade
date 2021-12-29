@@ -169,3 +169,4 @@ object UsageStatisticType {
 
   @inline def values = js.Array(SUM_BY_ACCOUNT, SUM_BY_DATA_SOURCE, SUM_BY_RESOURCE, TOP_RESOURCES)
 }
+

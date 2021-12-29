@@ -190,3 +190,4 @@ object WebhookAuthenticationType {
 
   @inline def values = js.Array(GITHUB_HMAC, IP, UNAUTHENTICATED)
 }
+

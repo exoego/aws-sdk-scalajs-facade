@@ -1,107 +1,97 @@
 package facade.amazonaws.services.groundstation
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AngleUnits extends js.Any
+type AngleUnits = "DEGREE_ANGLE" | "RADIAN"
 object AngleUnits {
-  val DEGREE_ANGLE = "DEGREE_ANGLE".asInstanceOf[AngleUnits]
-  val RADIAN = "RADIAN".asInstanceOf[AngleUnits]
+  inline val DEGREE_ANGLE: "DEGREE_ANGLE" = "DEGREE_ANGLE"
+  inline val RADIAN: "RADIAN" = "RADIAN"
 
-  @inline def values = js.Array(DEGREE_ANGLE, RADIAN)
+  inline def values: js.Array[AngleUnits] = js.Array(DEGREE_ANGLE, RADIAN)
 }
 
-@js.native
-sealed trait BandwidthUnits extends js.Any
+type BandwidthUnits = "GHz" | "MHz" | "kHz"
 object BandwidthUnits {
-  val GHz = "GHz".asInstanceOf[BandwidthUnits]
-  val MHz = "MHz".asInstanceOf[BandwidthUnits]
-  val kHz = "kHz".asInstanceOf[BandwidthUnits]
+  inline val GHz: "GHz" = "GHz"
+  inline val MHz: "MHz" = "MHz"
+  inline val kHz: "kHz" = "kHz"
 
-  @inline def values = js.Array(GHz, MHz, kHz)
+  inline def values: js.Array[BandwidthUnits] = js.Array(GHz, MHz, kHz)
 }
 
-@js.native
-sealed trait ConfigCapabilityType extends js.Any
+type ConfigCapabilityType = "antenna-downlink" | "antenna-downlink-demod-decode" | "antenna-uplink" | "dataflow-endpoint" | "tracking" | "uplink-echo" | "s3-recording"
 object ConfigCapabilityType {
-  val `antenna-downlink` = "antenna-downlink".asInstanceOf[ConfigCapabilityType]
-  val `antenna-downlink-demod-decode` = "antenna-downlink-demod-decode".asInstanceOf[ConfigCapabilityType]
-  val `antenna-uplink` = "antenna-uplink".asInstanceOf[ConfigCapabilityType]
-  val `dataflow-endpoint` = "dataflow-endpoint".asInstanceOf[ConfigCapabilityType]
-  val tracking = "tracking".asInstanceOf[ConfigCapabilityType]
-  val `uplink-echo` = "uplink-echo".asInstanceOf[ConfigCapabilityType]
-  val `s3-recording` = "s3-recording".asInstanceOf[ConfigCapabilityType]
+  inline val `antenna-downlink`: "antenna-downlink" = "antenna-downlink"
+  inline val `antenna-downlink-demod-decode`: "antenna-downlink-demod-decode" = "antenna-downlink-demod-decode"
+  inline val `antenna-uplink`: "antenna-uplink" = "antenna-uplink"
+  inline val `dataflow-endpoint`: "dataflow-endpoint" = "dataflow-endpoint"
+  inline val tracking: "tracking" = "tracking"
+  inline val `uplink-echo`: "uplink-echo" = "uplink-echo"
+  inline val `s3-recording`: "s3-recording" = "s3-recording"
 
-  @inline def values = js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`, `s3-recording`)
+  inline def values: js.Array[ConfigCapabilityType] = js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`, `s3-recording`)
 }
 
-@js.native
-sealed trait ContactStatus extends js.Any
+type ContactStatus = "AVAILABLE" | "AWS_CANCELLED" | "AWS_FAILED" | "CANCELLED" | "CANCELLING" | "COMPLETED" | "FAILED" | "FAILED_TO_SCHEDULE" | "PASS" | "POSTPASS" | "PREPASS" | "SCHEDULED" | "SCHEDULING"
 object ContactStatus {
-  val AVAILABLE = "AVAILABLE".asInstanceOf[ContactStatus]
-  val AWS_CANCELLED = "AWS_CANCELLED".asInstanceOf[ContactStatus]
-  val AWS_FAILED = "AWS_FAILED".asInstanceOf[ContactStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[ContactStatus]
-  val CANCELLING = "CANCELLING".asInstanceOf[ContactStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[ContactStatus]
-  val FAILED = "FAILED".asInstanceOf[ContactStatus]
-  val FAILED_TO_SCHEDULE = "FAILED_TO_SCHEDULE".asInstanceOf[ContactStatus]
-  val PASS = "PASS".asInstanceOf[ContactStatus]
-  val POSTPASS = "POSTPASS".asInstanceOf[ContactStatus]
-  val PREPASS = "PREPASS".asInstanceOf[ContactStatus]
-  val SCHEDULED = "SCHEDULED".asInstanceOf[ContactStatus]
-  val SCHEDULING = "SCHEDULING".asInstanceOf[ContactStatus]
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val AWS_CANCELLED: "AWS_CANCELLED" = "AWS_CANCELLED"
+  inline val AWS_FAILED: "AWS_FAILED" = "AWS_FAILED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val CANCELLING: "CANCELLING" = "CANCELLING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val FAILED_TO_SCHEDULE: "FAILED_TO_SCHEDULE" = "FAILED_TO_SCHEDULE"
+  inline val PASS: "PASS" = "PASS"
+  inline val POSTPASS: "POSTPASS" = "POSTPASS"
+  inline val PREPASS: "PREPASS" = "PREPASS"
+  inline val SCHEDULED: "SCHEDULED" = "SCHEDULED"
+  inline val SCHEDULING: "SCHEDULING" = "SCHEDULING"
 
-  @inline def values = js.Array(AVAILABLE, AWS_CANCELLED, AWS_FAILED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING)
+  inline def values: js.Array[ContactStatus] = js.Array(AVAILABLE, AWS_CANCELLED, AWS_FAILED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING)
 }
 
-@js.native
-sealed trait Criticality extends js.Any
+type Criticality = "PREFERRED" | "REMOVED" | "REQUIRED"
 object Criticality {
-  val PREFERRED = "PREFERRED".asInstanceOf[Criticality]
-  val REMOVED = "REMOVED".asInstanceOf[Criticality]
-  val REQUIRED = "REQUIRED".asInstanceOf[Criticality]
+  inline val PREFERRED: "PREFERRED" = "PREFERRED"
+  inline val REMOVED: "REMOVED" = "REMOVED"
+  inline val REQUIRED: "REQUIRED" = "REQUIRED"
 
-  @inline def values = js.Array(PREFERRED, REMOVED, REQUIRED)
+  inline def values: js.Array[Criticality] = js.Array(PREFERRED, REMOVED, REQUIRED)
 }
 
-@js.native
-sealed trait EirpUnits extends js.Any
+type EirpUnits = "dBW"
 object EirpUnits {
-  val dBW = "dBW".asInstanceOf[EirpUnits]
+  inline val dBW: "dBW" = "dBW"
 
-  @inline def values = js.Array(dBW)
+  inline def values: js.Array[EirpUnits] = js.Array(dBW)
 }
 
-@js.native
-sealed trait EndpointStatus extends js.Any
+type EndpointStatus = "created" | "creating" | "deleted" | "deleting" | "failed"
 object EndpointStatus {
-  val created = "created".asInstanceOf[EndpointStatus]
-  val creating = "creating".asInstanceOf[EndpointStatus]
-  val deleted = "deleted".asInstanceOf[EndpointStatus]
-  val deleting = "deleting".asInstanceOf[EndpointStatus]
-  val failed = "failed".asInstanceOf[EndpointStatus]
+  inline val created: "created" = "created"
+  inline val creating: "creating" = "creating"
+  inline val deleted: "deleted" = "deleted"
+  inline val deleting: "deleting" = "deleting"
+  inline val failed: "failed" = "failed"
 
-  @inline def values = js.Array(created, creating, deleted, deleting, failed)
+  inline def values: js.Array[EndpointStatus] = js.Array(created, creating, deleted, deleting, failed)
 }
 
-@js.native
-sealed trait FrequencyUnits extends js.Any
+type FrequencyUnits = "GHz" | "MHz" | "kHz"
 object FrequencyUnits {
-  val GHz = "GHz".asInstanceOf[FrequencyUnits]
-  val MHz = "MHz".asInstanceOf[FrequencyUnits]
-  val kHz = "kHz".asInstanceOf[FrequencyUnits]
+  inline val GHz: "GHz" = "GHz"
+  inline val MHz: "MHz" = "MHz"
+  inline val kHz: "kHz" = "kHz"
 
-  @inline def values = js.Array(GHz, MHz, kHz)
+  inline def values: js.Array[FrequencyUnits] = js.Array(GHz, MHz, kHz)
 }
 
-@js.native
-sealed trait Polarization extends js.Any
+type Polarization = "LEFT_HAND" | "NONE" | "RIGHT_HAND"
 object Polarization {
-  val LEFT_HAND = "LEFT_HAND".asInstanceOf[Polarization]
-  val NONE = "NONE".asInstanceOf[Polarization]
-  val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[Polarization]
+  inline val LEFT_HAND: "LEFT_HAND" = "LEFT_HAND"
+  inline val NONE: "NONE" = "NONE"
+  inline val RIGHT_HAND: "RIGHT_HAND" = "RIGHT_HAND"
 
-  @inline def values = js.Array(LEFT_HAND, NONE, RIGHT_HAND)
+  inline def values: js.Array[Polarization] = js.Array(LEFT_HAND, NONE, RIGHT_HAND)
 }

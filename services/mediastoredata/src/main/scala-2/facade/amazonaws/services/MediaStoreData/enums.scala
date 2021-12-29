@@ -28,3 +28,4 @@ object UploadAvailability {
 
   @inline def values = js.Array(STANDARD, STREAMING)
 }
+

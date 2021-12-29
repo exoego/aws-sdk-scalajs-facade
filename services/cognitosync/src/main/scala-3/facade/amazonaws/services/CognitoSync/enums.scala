@@ -1,44 +1,39 @@
 package facade.amazonaws.services.cognitosync
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait BulkPublishStatus extends js.Any
+type BulkPublishStatus = "NOT_STARTED" | "IN_PROGRESS" | "FAILED" | "SUCCEEDED"
 object BulkPublishStatus {
-  val NOT_STARTED = "NOT_STARTED".asInstanceOf[BulkPublishStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[BulkPublishStatus]
-  val FAILED = "FAILED".asInstanceOf[BulkPublishStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[BulkPublishStatus]
+  inline val NOT_STARTED: "NOT_STARTED" = "NOT_STARTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
 
-  @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED)
+  inline def values: js.Array[BulkPublishStatus] = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED)
 }
 
-@js.native
-sealed trait Operation extends js.Any
+type Operation = "replace" | "remove"
 object Operation {
-  val replace = "replace".asInstanceOf[Operation]
-  val remove = "remove".asInstanceOf[Operation]
+  inline val replace: "replace" = "replace"
+  inline val remove: "remove" = "remove"
 
-  @inline def values = js.Array(replace, remove)
+  inline def values: js.Array[Operation] = js.Array(replace, remove)
 }
 
-@js.native
-sealed trait Platform extends js.Any
+type Platform = "APNS" | "APNS_SANDBOX" | "GCM" | "ADM"
 object Platform {
-  val APNS = "APNS".asInstanceOf[Platform]
-  val APNS_SANDBOX = "APNS_SANDBOX".asInstanceOf[Platform]
-  val GCM = "GCM".asInstanceOf[Platform]
-  val ADM = "ADM".asInstanceOf[Platform]
+  inline val APNS: "APNS" = "APNS"
+  inline val APNS_SANDBOX: "APNS_SANDBOX" = "APNS_SANDBOX"
+  inline val GCM: "GCM" = "GCM"
+  inline val ADM: "ADM" = "ADM"
 
-  @inline def values = js.Array(APNS, APNS_SANDBOX, GCM, ADM)
+  inline def values: js.Array[Platform] = js.Array(APNS, APNS_SANDBOX, GCM, ADM)
 }
 
-@js.native
-sealed trait StreamingStatus extends js.Any
+type StreamingStatus = "ENABLED" | "DISABLED"
 object StreamingStatus {
-  val ENABLED = "ENABLED".asInstanceOf[StreamingStatus]
-  val DISABLED = "DISABLED".asInstanceOf[StreamingStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[StreamingStatus] = js.Array(ENABLED, DISABLED)
 }

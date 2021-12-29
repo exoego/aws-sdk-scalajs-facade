@@ -1,60 +1,55 @@
 package facade.amazonaws.services.inspector
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AgentHealth extends js.Any
+type AgentHealth = "HEALTHY" | "UNHEALTHY" | "UNKNOWN"
 object AgentHealth {
-  val HEALTHY = "HEALTHY".asInstanceOf[AgentHealth]
-  val UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentHealth]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[AgentHealth]
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
+  inline def values: js.Array[AgentHealth] = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
 }
 
-@js.native
-sealed trait AgentHealthCode extends js.Any
+type AgentHealthCode = "IDLE" | "RUNNING" | "SHUTDOWN" | "UNHEALTHY" | "THROTTLED" | "UNKNOWN"
 object AgentHealthCode {
-  val IDLE = "IDLE".asInstanceOf[AgentHealthCode]
-  val RUNNING = "RUNNING".asInstanceOf[AgentHealthCode]
-  val SHUTDOWN = "SHUTDOWN".asInstanceOf[AgentHealthCode]
-  val UNHEALTHY = "UNHEALTHY".asInstanceOf[AgentHealthCode]
-  val THROTTLED = "THROTTLED".asInstanceOf[AgentHealthCode]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[AgentHealthCode]
+  inline val IDLE: "IDLE" = "IDLE"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SHUTDOWN: "SHUTDOWN" = "SHUTDOWN"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  inline val THROTTLED: "THROTTLED" = "THROTTLED"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array(IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN)
+  inline def values: js.Array[AgentHealthCode] = js.Array(IDLE, RUNNING, SHUTDOWN, UNHEALTHY, THROTTLED, UNKNOWN)
 }
 
-@js.native
-sealed trait AssessmentRunNotificationSnsStatusCode extends js.Any
+type AssessmentRunNotificationSnsStatusCode = "SUCCESS" | "TOPIC_DOES_NOT_EXIST" | "ACCESS_DENIED" | "INTERNAL_ERROR"
 object AssessmentRunNotificationSnsStatusCode {
-  val SUCCESS = "SUCCESS".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
-  val TOPIC_DOES_NOT_EXIST = "TOPIC_DOES_NOT_EXIST".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
-  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
-  val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[AssessmentRunNotificationSnsStatusCode]
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val TOPIC_DOES_NOT_EXIST: "TOPIC_DOES_NOT_EXIST" = "TOPIC_DOES_NOT_EXIST"
+  inline val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
 
-  @inline def values = js.Array(SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR)
+  inline def values: js.Array[AssessmentRunNotificationSnsStatusCode] = js.Array(SUCCESS, TOPIC_DOES_NOT_EXIST, ACCESS_DENIED, INTERNAL_ERROR)
 }
 
-@js.native
-sealed trait AssessmentRunState extends js.Any
+type AssessmentRunState = "CREATED" | "START_DATA_COLLECTION_PENDING" | "START_DATA_COLLECTION_IN_PROGRESS" | "COLLECTING_DATA" | "STOP_DATA_COLLECTION_PENDING" | "DATA_COLLECTED" | "START_EVALUATING_RULES_PENDING" | "EVALUATING_RULES" | "FAILED" | "ERROR" | "COMPLETED" | "COMPLETED_WITH_ERRORS" | "CANCELED"
 object AssessmentRunState {
-  val CREATED = "CREATED".asInstanceOf[AssessmentRunState]
-  val START_DATA_COLLECTION_PENDING = "START_DATA_COLLECTION_PENDING".asInstanceOf[AssessmentRunState]
-  val START_DATA_COLLECTION_IN_PROGRESS = "START_DATA_COLLECTION_IN_PROGRESS".asInstanceOf[AssessmentRunState]
-  val COLLECTING_DATA = "COLLECTING_DATA".asInstanceOf[AssessmentRunState]
-  val STOP_DATA_COLLECTION_PENDING = "STOP_DATA_COLLECTION_PENDING".asInstanceOf[AssessmentRunState]
-  val DATA_COLLECTED = "DATA_COLLECTED".asInstanceOf[AssessmentRunState]
-  val START_EVALUATING_RULES_PENDING = "START_EVALUATING_RULES_PENDING".asInstanceOf[AssessmentRunState]
-  val EVALUATING_RULES = "EVALUATING_RULES".asInstanceOf[AssessmentRunState]
-  val FAILED = "FAILED".asInstanceOf[AssessmentRunState]
-  val ERROR = "ERROR".asInstanceOf[AssessmentRunState]
-  val COMPLETED = "COMPLETED".asInstanceOf[AssessmentRunState]
-  val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[AssessmentRunState]
-  val CANCELED = "CANCELED".asInstanceOf[AssessmentRunState]
+  inline val CREATED: "CREATED" = "CREATED"
+  inline val START_DATA_COLLECTION_PENDING: "START_DATA_COLLECTION_PENDING" = "START_DATA_COLLECTION_PENDING"
+  inline val START_DATA_COLLECTION_IN_PROGRESS: "START_DATA_COLLECTION_IN_PROGRESS" = "START_DATA_COLLECTION_IN_PROGRESS"
+  inline val COLLECTING_DATA: "COLLECTING_DATA" = "COLLECTING_DATA"
+  inline val STOP_DATA_COLLECTION_PENDING: "STOP_DATA_COLLECTION_PENDING" = "STOP_DATA_COLLECTION_PENDING"
+  inline val DATA_COLLECTED: "DATA_COLLECTED" = "DATA_COLLECTED"
+  inline val START_EVALUATING_RULES_PENDING: "START_EVALUATING_RULES_PENDING" = "START_EVALUATING_RULES_PENDING"
+  inline val EVALUATING_RULES: "EVALUATING_RULES" = "EVALUATING_RULES"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val COMPLETED_WITH_ERRORS: "COMPLETED_WITH_ERRORS" = "COMPLETED_WITH_ERRORS"
+  inline val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[AssessmentRunState] = js.Array(
     CREATED,
     START_DATA_COLLECTION_PENDING,
     START_DATA_COLLECTION_IN_PROGRESS,
@@ -71,110 +66,99 @@ object AssessmentRunState {
   )
 }
 
-@js.native
-sealed trait AssetType extends js.Any
+type AssetType = "ec2-instance"
 object AssetType {
-  val `ec2-instance` = "ec2-instance".asInstanceOf[AssetType]
+  inline val `ec2-instance`: "ec2-instance" = "ec2-instance"
 
-  @inline def values = js.Array(`ec2-instance`)
+  inline def values: js.Array[AssetType] = js.Array(`ec2-instance`)
 }
 
-@js.native
-sealed trait FailedItemErrorCode extends js.Any
+type FailedItemErrorCode = "INVALID_ARN" | "DUPLICATE_ARN" | "ITEM_DOES_NOT_EXIST" | "ACCESS_DENIED" | "LIMIT_EXCEEDED" | "INTERNAL_ERROR"
 object FailedItemErrorCode {
-  val INVALID_ARN = "INVALID_ARN".asInstanceOf[FailedItemErrorCode]
-  val DUPLICATE_ARN = "DUPLICATE_ARN".asInstanceOf[FailedItemErrorCode]
-  val ITEM_DOES_NOT_EXIST = "ITEM_DOES_NOT_EXIST".asInstanceOf[FailedItemErrorCode]
-  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[FailedItemErrorCode]
-  val LIMIT_EXCEEDED = "LIMIT_EXCEEDED".asInstanceOf[FailedItemErrorCode]
-  val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[FailedItemErrorCode]
+  inline val INVALID_ARN: "INVALID_ARN" = "INVALID_ARN"
+  inline val DUPLICATE_ARN: "DUPLICATE_ARN" = "DUPLICATE_ARN"
+  inline val ITEM_DOES_NOT_EXIST: "ITEM_DOES_NOT_EXIST" = "ITEM_DOES_NOT_EXIST"
+  inline val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  inline val LIMIT_EXCEEDED: "LIMIT_EXCEEDED" = "LIMIT_EXCEEDED"
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
 
-  @inline def values = js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR)
+  inline def values: js.Array[FailedItemErrorCode] = js.Array(INVALID_ARN, DUPLICATE_ARN, ITEM_DOES_NOT_EXIST, ACCESS_DENIED, LIMIT_EXCEEDED, INTERNAL_ERROR)
 }
 
-@js.native
-sealed trait InspectorEvent extends js.Any
+type InspectorEvent = "ASSESSMENT_RUN_STARTED" | "ASSESSMENT_RUN_COMPLETED" | "ASSESSMENT_RUN_STATE_CHANGED" | "FINDING_REPORTED" | "OTHER"
 object InspectorEvent {
-  val ASSESSMENT_RUN_STARTED = "ASSESSMENT_RUN_STARTED".asInstanceOf[InspectorEvent]
-  val ASSESSMENT_RUN_COMPLETED = "ASSESSMENT_RUN_COMPLETED".asInstanceOf[InspectorEvent]
-  val ASSESSMENT_RUN_STATE_CHANGED = "ASSESSMENT_RUN_STATE_CHANGED".asInstanceOf[InspectorEvent]
-  val FINDING_REPORTED = "FINDING_REPORTED".asInstanceOf[InspectorEvent]
-  val OTHER = "OTHER".asInstanceOf[InspectorEvent]
+  inline val ASSESSMENT_RUN_STARTED: "ASSESSMENT_RUN_STARTED" = "ASSESSMENT_RUN_STARTED"
+  inline val ASSESSMENT_RUN_COMPLETED: "ASSESSMENT_RUN_COMPLETED" = "ASSESSMENT_RUN_COMPLETED"
+  inline val ASSESSMENT_RUN_STATE_CHANGED: "ASSESSMENT_RUN_STATE_CHANGED" = "ASSESSMENT_RUN_STATE_CHANGED"
+  inline val FINDING_REPORTED: "FINDING_REPORTED" = "FINDING_REPORTED"
+  inline val OTHER: "OTHER" = "OTHER"
 
-  @inline def values = js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER)
+  inline def values: js.Array[InspectorEvent] = js.Array(ASSESSMENT_RUN_STARTED, ASSESSMENT_RUN_COMPLETED, ASSESSMENT_RUN_STATE_CHANGED, FINDING_REPORTED, OTHER)
 }
 
-@js.native
-sealed trait Locale extends js.Any
+type Locale = "EN_US"
 object Locale {
-  val EN_US = "EN_US".asInstanceOf[Locale]
+  inline val EN_US: "EN_US" = "EN_US"
 
-  @inline def values = js.Array(EN_US)
+  inline def values: js.Array[Locale] = js.Array(EN_US)
 }
 
-@js.native
-sealed trait PreviewStatus extends js.Any
+type PreviewStatus = "WORK_IN_PROGRESS" | "COMPLETED"
 object PreviewStatus {
-  val WORK_IN_PROGRESS = "WORK_IN_PROGRESS".asInstanceOf[PreviewStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[PreviewStatus]
+  inline val WORK_IN_PROGRESS: "WORK_IN_PROGRESS" = "WORK_IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
 
-  @inline def values = js.Array(WORK_IN_PROGRESS, COMPLETED)
+  inline def values: js.Array[PreviewStatus] = js.Array(WORK_IN_PROGRESS, COMPLETED)
 }
 
-@js.native
-sealed trait ReportFileFormat extends js.Any
+type ReportFileFormat = "HTML" | "PDF"
 object ReportFileFormat {
-  val HTML = "HTML".asInstanceOf[ReportFileFormat]
-  val PDF = "PDF".asInstanceOf[ReportFileFormat]
+  inline val HTML: "HTML" = "HTML"
+  inline val PDF: "PDF" = "PDF"
 
-  @inline def values = js.Array(HTML, PDF)
+  inline def values: js.Array[ReportFileFormat] = js.Array(HTML, PDF)
 }
 
-@js.native
-sealed trait ReportStatus extends js.Any
+type ReportStatus = "WORK_IN_PROGRESS" | "FAILED" | "COMPLETED"
 object ReportStatus {
-  val WORK_IN_PROGRESS = "WORK_IN_PROGRESS".asInstanceOf[ReportStatus]
-  val FAILED = "FAILED".asInstanceOf[ReportStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[ReportStatus]
+  inline val WORK_IN_PROGRESS: "WORK_IN_PROGRESS" = "WORK_IN_PROGRESS"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
 
-  @inline def values = js.Array(WORK_IN_PROGRESS, FAILED, COMPLETED)
+  inline def values: js.Array[ReportStatus] = js.Array(WORK_IN_PROGRESS, FAILED, COMPLETED)
 }
 
-@js.native
-sealed trait ReportType extends js.Any
+type ReportType = "FINDING" | "FULL"
 object ReportType {
-  val FINDING = "FINDING".asInstanceOf[ReportType]
-  val FULL = "FULL".asInstanceOf[ReportType]
+  inline val FINDING: "FINDING" = "FINDING"
+  inline val FULL: "FULL" = "FULL"
 
-  @inline def values = js.Array(FINDING, FULL)
+  inline def values: js.Array[ReportType] = js.Array(FINDING, FULL)
 }
 
-@js.native
-sealed trait ScopeType extends js.Any
+type ScopeType = "INSTANCE_ID" | "RULES_PACKAGE_ARN"
 object ScopeType {
-  val INSTANCE_ID = "INSTANCE_ID".asInstanceOf[ScopeType]
-  val RULES_PACKAGE_ARN = "RULES_PACKAGE_ARN".asInstanceOf[ScopeType]
+  inline val INSTANCE_ID: "INSTANCE_ID" = "INSTANCE_ID"
+  inline val RULES_PACKAGE_ARN: "RULES_PACKAGE_ARN" = "RULES_PACKAGE_ARN"
 
-  @inline def values = js.Array(INSTANCE_ID, RULES_PACKAGE_ARN)
+  inline def values: js.Array[ScopeType] = js.Array(INSTANCE_ID, RULES_PACKAGE_ARN)
 }
 
-@js.native
-sealed trait Severity extends js.Any
+type Severity = "Low" | "Medium" | "High" | "Informational" | "Undefined"
 object Severity {
-  val Low = "Low".asInstanceOf[Severity]
-  val Medium = "Medium".asInstanceOf[Severity]
-  val High = "High".asInstanceOf[Severity]
-  val Informational = "Informational".asInstanceOf[Severity]
-  val Undefined = "Undefined".asInstanceOf[Severity]
+  inline val Low: "Low" = "Low"
+  inline val Medium: "Medium" = "Medium"
+  inline val High: "High" = "High"
+  inline val Informational: "Informational" = "Informational"
+  inline val Undefined: "Undefined" = "Undefined"
 
-  @inline def values = js.Array(Low, Medium, High, Informational, Undefined)
+  inline def values: js.Array[Severity] = js.Array(Low, Medium, High, Informational, Undefined)
 }
 
-@js.native
-sealed trait StopAction extends js.Any
+type StopAction = "START_EVALUATION" | "SKIP_EVALUATION"
 object StopAction {
-  val START_EVALUATION = "START_EVALUATION".asInstanceOf[StopAction]
-  val SKIP_EVALUATION = "SKIP_EVALUATION".asInstanceOf[StopAction]
+  inline val START_EVALUATION: "START_EVALUATION" = "START_EVALUATION"
+  inline val SKIP_EVALUATION: "SKIP_EVALUATION" = "SKIP_EVALUATION"
 
-  @inline def values = js.Array(START_EVALUATION, SKIP_EVALUATION)
+  inline def values: js.Array[StopAction] = js.Array(START_EVALUATION, SKIP_EVALUATION)
 }

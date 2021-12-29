@@ -185,3 +185,4 @@ object SourceType {
 
   @inline def values = js.Array(AWS_Cloudtrail, AWS_Config, AWS_Security_Hub, AWS_API_Call, MANUAL)
 }
+

@@ -1,51 +1,45 @@
 package facade.amazonaws.services.ivs
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ChannelLatencyMode extends js.Any
+type ChannelLatencyMode = "NORMAL" | "LOW"
 object ChannelLatencyMode {
-  val NORMAL = "NORMAL".asInstanceOf[ChannelLatencyMode]
-  val LOW = "LOW".asInstanceOf[ChannelLatencyMode]
+  inline val NORMAL: "NORMAL" = "NORMAL"
+  inline val LOW: "LOW" = "LOW"
 
-  @inline def values = js.Array(NORMAL, LOW)
+  inline def values: js.Array[ChannelLatencyMode] = js.Array(NORMAL, LOW)
 }
 
-@js.native
-sealed trait ChannelType extends js.Any
+type ChannelType = "BASIC" | "STANDARD"
 object ChannelType {
-  val BASIC = "BASIC".asInstanceOf[ChannelType]
-  val STANDARD = "STANDARD".asInstanceOf[ChannelType]
+  inline val BASIC: "BASIC" = "BASIC"
+  inline val STANDARD: "STANDARD" = "STANDARD"
 
-  @inline def values = js.Array(BASIC, STANDARD)
+  inline def values: js.Array[ChannelType] = js.Array(BASIC, STANDARD)
 }
 
-@js.native
-sealed trait RecordingConfigurationState extends js.Any
+type RecordingConfigurationState = "CREATING" | "CREATE_FAILED" | "ACTIVE"
 object RecordingConfigurationState {
-  val CREATING = "CREATING".asInstanceOf[RecordingConfigurationState]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[RecordingConfigurationState]
-  val ACTIVE = "ACTIVE".asInstanceOf[RecordingConfigurationState]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
 
-  @inline def values = js.Array(CREATING, CREATE_FAILED, ACTIVE)
+  inline def values: js.Array[RecordingConfigurationState] = js.Array(CREATING, CREATE_FAILED, ACTIVE)
 }
 
-@js.native
-sealed trait StreamHealth extends js.Any
+type StreamHealth = "HEALTHY" | "STARVING" | "UNKNOWN"
 object StreamHealth {
-  val HEALTHY = "HEALTHY".asInstanceOf[StreamHealth]
-  val STARVING = "STARVING".asInstanceOf[StreamHealth]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[StreamHealth]
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val STARVING: "STARVING" = "STARVING"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array(HEALTHY, STARVING, UNKNOWN)
+  inline def values: js.Array[StreamHealth] = js.Array(HEALTHY, STARVING, UNKNOWN)
 }
 
-@js.native
-sealed trait StreamState extends js.Any
+type StreamState = "LIVE" | "OFFLINE"
 object StreamState {
-  val LIVE = "LIVE".asInstanceOf[StreamState]
-  val OFFLINE = "OFFLINE".asInstanceOf[StreamState]
+  inline val LIVE: "LIVE" = "LIVE"
+  inline val OFFLINE: "OFFLINE" = "OFFLINE"
 
-  @inline def values = js.Array(LIVE, OFFLINE)
+  inline def values: js.Array[StreamState] = js.Array(LIVE, OFFLINE)
 }

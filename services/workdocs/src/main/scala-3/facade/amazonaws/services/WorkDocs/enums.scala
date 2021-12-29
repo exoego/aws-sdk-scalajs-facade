@@ -1,46 +1,44 @@
 package facade.amazonaws.services.workdocs
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ActivityType extends js.Any
+type ActivityType = "DOCUMENT_CHECKED_IN" | "DOCUMENT_CHECKED_OUT" | "DOCUMENT_RENAMED" | "DOCUMENT_VERSION_UPLOADED" | "DOCUMENT_VERSION_DELETED" | "DOCUMENT_VERSION_VIEWED" | "DOCUMENT_VERSION_DOWNLOADED" | "DOCUMENT_RECYCLED" | "DOCUMENT_RESTORED" | "DOCUMENT_REVERTED" | "DOCUMENT_SHARED" | "DOCUMENT_UNSHARED" | "DOCUMENT_SHARE_PERMISSION_CHANGED" | "DOCUMENT_SHAREABLE_LINK_CREATED" | "DOCUMENT_SHAREABLE_LINK_REMOVED" | "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED" | "DOCUMENT_MOVED" | "DOCUMENT_COMMENT_ADDED" | "DOCUMENT_COMMENT_DELETED" | "DOCUMENT_ANNOTATION_ADDED" | "DOCUMENT_ANNOTATION_DELETED" | "FOLDER_CREATED" | "FOLDER_DELETED" | "FOLDER_RENAMED" | "FOLDER_RECYCLED" | "FOLDER_RESTORED" | "FOLDER_SHARED" | "FOLDER_UNSHARED" | "FOLDER_SHARE_PERMISSION_CHANGED" | "FOLDER_SHAREABLE_LINK_CREATED" | "FOLDER_SHAREABLE_LINK_REMOVED" | "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED" | "FOLDER_MOVED"
 object ActivityType {
-  val DOCUMENT_CHECKED_IN = "DOCUMENT_CHECKED_IN".asInstanceOf[ActivityType]
-  val DOCUMENT_CHECKED_OUT = "DOCUMENT_CHECKED_OUT".asInstanceOf[ActivityType]
-  val DOCUMENT_RENAMED = "DOCUMENT_RENAMED".asInstanceOf[ActivityType]
-  val DOCUMENT_VERSION_UPLOADED = "DOCUMENT_VERSION_UPLOADED".asInstanceOf[ActivityType]
-  val DOCUMENT_VERSION_DELETED = "DOCUMENT_VERSION_DELETED".asInstanceOf[ActivityType]
-  val DOCUMENT_VERSION_VIEWED = "DOCUMENT_VERSION_VIEWED".asInstanceOf[ActivityType]
-  val DOCUMENT_VERSION_DOWNLOADED = "DOCUMENT_VERSION_DOWNLOADED".asInstanceOf[ActivityType]
-  val DOCUMENT_RECYCLED = "DOCUMENT_RECYCLED".asInstanceOf[ActivityType]
-  val DOCUMENT_RESTORED = "DOCUMENT_RESTORED".asInstanceOf[ActivityType]
-  val DOCUMENT_REVERTED = "DOCUMENT_REVERTED".asInstanceOf[ActivityType]
-  val DOCUMENT_SHARED = "DOCUMENT_SHARED".asInstanceOf[ActivityType]
-  val DOCUMENT_UNSHARED = "DOCUMENT_UNSHARED".asInstanceOf[ActivityType]
-  val DOCUMENT_SHARE_PERMISSION_CHANGED = "DOCUMENT_SHARE_PERMISSION_CHANGED".asInstanceOf[ActivityType]
-  val DOCUMENT_SHAREABLE_LINK_CREATED = "DOCUMENT_SHAREABLE_LINK_CREATED".asInstanceOf[ActivityType]
-  val DOCUMENT_SHAREABLE_LINK_REMOVED = "DOCUMENT_SHAREABLE_LINK_REMOVED".asInstanceOf[ActivityType]
-  val DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED = "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED".asInstanceOf[ActivityType]
-  val DOCUMENT_MOVED = "DOCUMENT_MOVED".asInstanceOf[ActivityType]
-  val DOCUMENT_COMMENT_ADDED = "DOCUMENT_COMMENT_ADDED".asInstanceOf[ActivityType]
-  val DOCUMENT_COMMENT_DELETED = "DOCUMENT_COMMENT_DELETED".asInstanceOf[ActivityType]
-  val DOCUMENT_ANNOTATION_ADDED = "DOCUMENT_ANNOTATION_ADDED".asInstanceOf[ActivityType]
-  val DOCUMENT_ANNOTATION_DELETED = "DOCUMENT_ANNOTATION_DELETED".asInstanceOf[ActivityType]
-  val FOLDER_CREATED = "FOLDER_CREATED".asInstanceOf[ActivityType]
-  val FOLDER_DELETED = "FOLDER_DELETED".asInstanceOf[ActivityType]
-  val FOLDER_RENAMED = "FOLDER_RENAMED".asInstanceOf[ActivityType]
-  val FOLDER_RECYCLED = "FOLDER_RECYCLED".asInstanceOf[ActivityType]
-  val FOLDER_RESTORED = "FOLDER_RESTORED".asInstanceOf[ActivityType]
-  val FOLDER_SHARED = "FOLDER_SHARED".asInstanceOf[ActivityType]
-  val FOLDER_UNSHARED = "FOLDER_UNSHARED".asInstanceOf[ActivityType]
-  val FOLDER_SHARE_PERMISSION_CHANGED = "FOLDER_SHARE_PERMISSION_CHANGED".asInstanceOf[ActivityType]
-  val FOLDER_SHAREABLE_LINK_CREATED = "FOLDER_SHAREABLE_LINK_CREATED".asInstanceOf[ActivityType]
-  val FOLDER_SHAREABLE_LINK_REMOVED = "FOLDER_SHAREABLE_LINK_REMOVED".asInstanceOf[ActivityType]
-  val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED".asInstanceOf[ActivityType]
-  val FOLDER_MOVED = "FOLDER_MOVED".asInstanceOf[ActivityType]
+  inline val DOCUMENT_CHECKED_IN: "DOCUMENT_CHECKED_IN" = "DOCUMENT_CHECKED_IN"
+  inline val DOCUMENT_CHECKED_OUT: "DOCUMENT_CHECKED_OUT" = "DOCUMENT_CHECKED_OUT"
+  inline val DOCUMENT_RENAMED: "DOCUMENT_RENAMED" = "DOCUMENT_RENAMED"
+  inline val DOCUMENT_VERSION_UPLOADED: "DOCUMENT_VERSION_UPLOADED" = "DOCUMENT_VERSION_UPLOADED"
+  inline val DOCUMENT_VERSION_DELETED: "DOCUMENT_VERSION_DELETED" = "DOCUMENT_VERSION_DELETED"
+  inline val DOCUMENT_VERSION_VIEWED: "DOCUMENT_VERSION_VIEWED" = "DOCUMENT_VERSION_VIEWED"
+  inline val DOCUMENT_VERSION_DOWNLOADED: "DOCUMENT_VERSION_DOWNLOADED" = "DOCUMENT_VERSION_DOWNLOADED"
+  inline val DOCUMENT_RECYCLED: "DOCUMENT_RECYCLED" = "DOCUMENT_RECYCLED"
+  inline val DOCUMENT_RESTORED: "DOCUMENT_RESTORED" = "DOCUMENT_RESTORED"
+  inline val DOCUMENT_REVERTED: "DOCUMENT_REVERTED" = "DOCUMENT_REVERTED"
+  inline val DOCUMENT_SHARED: "DOCUMENT_SHARED" = "DOCUMENT_SHARED"
+  inline val DOCUMENT_UNSHARED: "DOCUMENT_UNSHARED" = "DOCUMENT_UNSHARED"
+  inline val DOCUMENT_SHARE_PERMISSION_CHANGED: "DOCUMENT_SHARE_PERMISSION_CHANGED" = "DOCUMENT_SHARE_PERMISSION_CHANGED"
+  inline val DOCUMENT_SHAREABLE_LINK_CREATED: "DOCUMENT_SHAREABLE_LINK_CREATED" = "DOCUMENT_SHAREABLE_LINK_CREATED"
+  inline val DOCUMENT_SHAREABLE_LINK_REMOVED: "DOCUMENT_SHAREABLE_LINK_REMOVED" = "DOCUMENT_SHAREABLE_LINK_REMOVED"
+  inline val DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED: "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED" = "DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED"
+  inline val DOCUMENT_MOVED: "DOCUMENT_MOVED" = "DOCUMENT_MOVED"
+  inline val DOCUMENT_COMMENT_ADDED: "DOCUMENT_COMMENT_ADDED" = "DOCUMENT_COMMENT_ADDED"
+  inline val DOCUMENT_COMMENT_DELETED: "DOCUMENT_COMMENT_DELETED" = "DOCUMENT_COMMENT_DELETED"
+  inline val DOCUMENT_ANNOTATION_ADDED: "DOCUMENT_ANNOTATION_ADDED" = "DOCUMENT_ANNOTATION_ADDED"
+  inline val DOCUMENT_ANNOTATION_DELETED: "DOCUMENT_ANNOTATION_DELETED" = "DOCUMENT_ANNOTATION_DELETED"
+  inline val FOLDER_CREATED: "FOLDER_CREATED" = "FOLDER_CREATED"
+  inline val FOLDER_DELETED: "FOLDER_DELETED" = "FOLDER_DELETED"
+  inline val FOLDER_RENAMED: "FOLDER_RENAMED" = "FOLDER_RENAMED"
+  inline val FOLDER_RECYCLED: "FOLDER_RECYCLED" = "FOLDER_RECYCLED"
+  inline val FOLDER_RESTORED: "FOLDER_RESTORED" = "FOLDER_RESTORED"
+  inline val FOLDER_SHARED: "FOLDER_SHARED" = "FOLDER_SHARED"
+  inline val FOLDER_UNSHARED: "FOLDER_UNSHARED" = "FOLDER_UNSHARED"
+  inline val FOLDER_SHARE_PERMISSION_CHANGED: "FOLDER_SHARE_PERMISSION_CHANGED" = "FOLDER_SHARE_PERMISSION_CHANGED"
+  inline val FOLDER_SHAREABLE_LINK_CREATED: "FOLDER_SHAREABLE_LINK_CREATED" = "FOLDER_SHAREABLE_LINK_CREATED"
+  inline val FOLDER_SHAREABLE_LINK_REMOVED: "FOLDER_SHAREABLE_LINK_REMOVED" = "FOLDER_SHAREABLE_LINK_REMOVED"
+  inline val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED: "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED" = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED"
+  inline val FOLDER_MOVED: "FOLDER_MOVED" = "FOLDER_MOVED"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[ActivityType] = js.Array(
     DOCUMENT_CHECKED_IN,
     DOCUMENT_CHECKED_OUT,
     DOCUMENT_RENAMED,
@@ -77,249 +75,224 @@ object ActivityType {
   )
 }
 
-@js.native
-sealed trait BooleanEnumType extends js.Any
+type BooleanEnumType = "TRUE" | "FALSE"
 object BooleanEnumType {
-  val TRUE = "TRUE".asInstanceOf[BooleanEnumType]
-  val FALSE = "FALSE".asInstanceOf[BooleanEnumType]
+  inline val TRUE: "TRUE" = "TRUE"
+  inline val FALSE: "FALSE" = "FALSE"
 
-  @inline def values = js.Array(TRUE, FALSE)
+  inline def values: js.Array[BooleanEnumType] = js.Array(TRUE, FALSE)
 }
 
-@js.native
-sealed trait CommentStatusType extends js.Any
+type CommentStatusType = "DRAFT" | "PUBLISHED" | "DELETED"
 object CommentStatusType {
-  val DRAFT = "DRAFT".asInstanceOf[CommentStatusType]
-  val PUBLISHED = "PUBLISHED".asInstanceOf[CommentStatusType]
-  val DELETED = "DELETED".asInstanceOf[CommentStatusType]
+  inline val DRAFT: "DRAFT" = "DRAFT"
+  inline val PUBLISHED: "PUBLISHED" = "PUBLISHED"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(DRAFT, PUBLISHED, DELETED)
+  inline def values: js.Array[CommentStatusType] = js.Array(DRAFT, PUBLISHED, DELETED)
 }
 
-@js.native
-sealed trait CommentVisibilityType extends js.Any
+type CommentVisibilityType = "PUBLIC" | "PRIVATE"
 object CommentVisibilityType {
-  val PUBLIC = "PUBLIC".asInstanceOf[CommentVisibilityType]
-  val PRIVATE = "PRIVATE".asInstanceOf[CommentVisibilityType]
+  inline val PUBLIC: "PUBLIC" = "PUBLIC"
+  inline val PRIVATE: "PRIVATE" = "PRIVATE"
 
-  @inline def values = js.Array(PUBLIC, PRIVATE)
+  inline def values: js.Array[CommentVisibilityType] = js.Array(PUBLIC, PRIVATE)
 }
 
-@js.native
-sealed trait DocumentSourceType extends js.Any
+type DocumentSourceType = "ORIGINAL" | "WITH_COMMENTS"
 object DocumentSourceType {
-  val ORIGINAL = "ORIGINAL".asInstanceOf[DocumentSourceType]
-  val WITH_COMMENTS = "WITH_COMMENTS".asInstanceOf[DocumentSourceType]
+  inline val ORIGINAL: "ORIGINAL" = "ORIGINAL"
+  inline val WITH_COMMENTS: "WITH_COMMENTS" = "WITH_COMMENTS"
 
-  @inline def values = js.Array(ORIGINAL, WITH_COMMENTS)
+  inline def values: js.Array[DocumentSourceType] = js.Array(ORIGINAL, WITH_COMMENTS)
 }
 
-@js.native
-sealed trait DocumentStatusType extends js.Any
+type DocumentStatusType = "INITIALIZED" | "ACTIVE"
 object DocumentStatusType {
-  val INITIALIZED = "INITIALIZED".asInstanceOf[DocumentStatusType]
-  val ACTIVE = "ACTIVE".asInstanceOf[DocumentStatusType]
+  inline val INITIALIZED: "INITIALIZED" = "INITIALIZED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
 
-  @inline def values = js.Array(INITIALIZED, ACTIVE)
+  inline def values: js.Array[DocumentStatusType] = js.Array(INITIALIZED, ACTIVE)
 }
 
-@js.native
-sealed trait DocumentThumbnailType extends js.Any
+type DocumentThumbnailType = "SMALL" | "SMALL_HQ" | "LARGE"
 object DocumentThumbnailType {
-  val SMALL = "SMALL".asInstanceOf[DocumentThumbnailType]
-  val SMALL_HQ = "SMALL_HQ".asInstanceOf[DocumentThumbnailType]
-  val LARGE = "LARGE".asInstanceOf[DocumentThumbnailType]
+  inline val SMALL: "SMALL" = "SMALL"
+  inline val SMALL_HQ: "SMALL_HQ" = "SMALL_HQ"
+  inline val LARGE: "LARGE" = "LARGE"
 
-  @inline def values = js.Array(SMALL, SMALL_HQ, LARGE)
+  inline def values: js.Array[DocumentThumbnailType] = js.Array(SMALL, SMALL_HQ, LARGE)
 }
 
-@js.native
-sealed trait DocumentVersionStatus extends js.Any
+type DocumentVersionStatus = "ACTIVE"
 object DocumentVersionStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[DocumentVersionStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
 
-  @inline def values = js.Array(ACTIVE)
+  inline def values: js.Array[DocumentVersionStatus] = js.Array(ACTIVE)
 }
 
-@js.native
-sealed trait FolderContentType extends js.Any
+type FolderContentType = "ALL" | "DOCUMENT" | "FOLDER"
 object FolderContentType {
-  val ALL = "ALL".asInstanceOf[FolderContentType]
-  val DOCUMENT = "DOCUMENT".asInstanceOf[FolderContentType]
-  val FOLDER = "FOLDER".asInstanceOf[FolderContentType]
+  inline val ALL: "ALL" = "ALL"
+  inline val DOCUMENT: "DOCUMENT" = "DOCUMENT"
+  inline val FOLDER: "FOLDER" = "FOLDER"
 
-  @inline def values = js.Array(ALL, DOCUMENT, FOLDER)
+  inline def values: js.Array[FolderContentType] = js.Array(ALL, DOCUMENT, FOLDER)
 }
 
-@js.native
-sealed trait LocaleType extends js.Any
+type LocaleType = "en" | "fr" | "ko" | "de" | "es" | "ja" | "ru" | "zh_CN" | "zh_TW" | "pt_BR" | "default"
 object LocaleType {
-  val en = "en".asInstanceOf[LocaleType]
-  val fr = "fr".asInstanceOf[LocaleType]
-  val ko = "ko".asInstanceOf[LocaleType]
-  val de = "de".asInstanceOf[LocaleType]
-  val es = "es".asInstanceOf[LocaleType]
-  val ja = "ja".asInstanceOf[LocaleType]
-  val ru = "ru".asInstanceOf[LocaleType]
-  val zh_CN = "zh_CN".asInstanceOf[LocaleType]
-  val zh_TW = "zh_TW".asInstanceOf[LocaleType]
-  val pt_BR = "pt_BR".asInstanceOf[LocaleType]
-  val default = "default".asInstanceOf[LocaleType]
+  inline val en: "en" = "en"
+  inline val fr: "fr" = "fr"
+  inline val ko: "ko" = "ko"
+  inline val de: "de" = "de"
+  inline val es: "es" = "es"
+  inline val ja: "ja" = "ja"
+  inline val ru: "ru" = "ru"
+  inline val zh_CN: "zh_CN" = "zh_CN"
+  inline val zh_TW: "zh_TW" = "zh_TW"
+  inline val pt_BR: "pt_BR" = "pt_BR"
+  inline val default: "default" = "default"
 
-  @inline def values = js.Array(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default)
+  inline def values: js.Array[LocaleType] = js.Array(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default)
 }
 
-@js.native
-sealed trait OrderType extends js.Any
+type OrderType = "ASCENDING" | "DESCENDING"
 object OrderType {
-  val ASCENDING = "ASCENDING".asInstanceOf[OrderType]
-  val DESCENDING = "DESCENDING".asInstanceOf[OrderType]
+  inline val ASCENDING: "ASCENDING" = "ASCENDING"
+  inline val DESCENDING: "DESCENDING" = "DESCENDING"
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  inline def values: js.Array[OrderType] = js.Array(ASCENDING, DESCENDING)
 }
 
-@js.native
-sealed trait PrincipalType extends js.Any
+type PrincipalType = "USER" | "GROUP" | "INVITE" | "ANONYMOUS" | "ORGANIZATION"
 object PrincipalType {
-  val USER = "USER".asInstanceOf[PrincipalType]
-  val GROUP = "GROUP".asInstanceOf[PrincipalType]
-  val INVITE = "INVITE".asInstanceOf[PrincipalType]
-  val ANONYMOUS = "ANONYMOUS".asInstanceOf[PrincipalType]
-  val ORGANIZATION = "ORGANIZATION".asInstanceOf[PrincipalType]
+  inline val USER: "USER" = "USER"
+  inline val GROUP: "GROUP" = "GROUP"
+  inline val INVITE: "INVITE" = "INVITE"
+  inline val ANONYMOUS: "ANONYMOUS" = "ANONYMOUS"
+  inline val ORGANIZATION: "ORGANIZATION" = "ORGANIZATION"
 
-  @inline def values = js.Array(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION)
+  inline def values: js.Array[PrincipalType] = js.Array(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION)
 }
 
-@js.native
-sealed trait ResourceCollectionType extends js.Any
+type ResourceCollectionType = "SHARED_WITH_ME"
 object ResourceCollectionType {
-  val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ResourceCollectionType]
+  inline val SHARED_WITH_ME: "SHARED_WITH_ME" = "SHARED_WITH_ME"
 
-  @inline def values = js.Array(SHARED_WITH_ME)
+  inline def values: js.Array[ResourceCollectionType] = js.Array(SHARED_WITH_ME)
 }
 
-@js.native
-sealed trait ResourceSortType extends js.Any
+type ResourceSortType = "DATE" | "NAME"
 object ResourceSortType {
-  val DATE = "DATE".asInstanceOf[ResourceSortType]
-  val NAME = "NAME".asInstanceOf[ResourceSortType]
+  inline val DATE: "DATE" = "DATE"
+  inline val NAME: "NAME" = "NAME"
 
-  @inline def values = js.Array(DATE, NAME)
+  inline def values: js.Array[ResourceSortType] = js.Array(DATE, NAME)
 }
 
-@js.native
-sealed trait ResourceStateType extends js.Any
+type ResourceStateType = "ACTIVE" | "RESTORING" | "RECYCLING" | "RECYCLED"
 object ResourceStateType {
-  val ACTIVE = "ACTIVE".asInstanceOf[ResourceStateType]
-  val RESTORING = "RESTORING".asInstanceOf[ResourceStateType]
-  val RECYCLING = "RECYCLING".asInstanceOf[ResourceStateType]
-  val RECYCLED = "RECYCLED".asInstanceOf[ResourceStateType]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val RESTORING: "RESTORING" = "RESTORING"
+  inline val RECYCLING: "RECYCLING" = "RECYCLING"
+  inline val RECYCLED: "RECYCLED" = "RECYCLED"
 
-  @inline def values = js.Array(ACTIVE, RESTORING, RECYCLING, RECYCLED)
+  inline def values: js.Array[ResourceStateType] = js.Array(ACTIVE, RESTORING, RECYCLING, RECYCLED)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "FOLDER" | "DOCUMENT"
 object ResourceType {
-  val FOLDER = "FOLDER".asInstanceOf[ResourceType]
-  val DOCUMENT = "DOCUMENT".asInstanceOf[ResourceType]
+  inline val FOLDER: "FOLDER" = "FOLDER"
+  inline val DOCUMENT: "DOCUMENT" = "DOCUMENT"
 
-  @inline def values = js.Array(FOLDER, DOCUMENT)
+  inline def values: js.Array[ResourceType] = js.Array(FOLDER, DOCUMENT)
 }
 
-@js.native
-sealed trait RolePermissionType extends js.Any
+type RolePermissionType = "DIRECT" | "INHERITED"
 object RolePermissionType {
-  val DIRECT = "DIRECT".asInstanceOf[RolePermissionType]
-  val INHERITED = "INHERITED".asInstanceOf[RolePermissionType]
+  inline val DIRECT: "DIRECT" = "DIRECT"
+  inline val INHERITED: "INHERITED" = "INHERITED"
 
-  @inline def values = js.Array(DIRECT, INHERITED)
+  inline def values: js.Array[RolePermissionType] = js.Array(DIRECT, INHERITED)
 }
 
-@js.native
-sealed trait RoleType extends js.Any
+type RoleType = "VIEWER" | "CONTRIBUTOR" | "OWNER" | "COOWNER"
 object RoleType {
-  val VIEWER = "VIEWER".asInstanceOf[RoleType]
-  val CONTRIBUTOR = "CONTRIBUTOR".asInstanceOf[RoleType]
-  val OWNER = "OWNER".asInstanceOf[RoleType]
-  val COOWNER = "COOWNER".asInstanceOf[RoleType]
+  inline val VIEWER: "VIEWER" = "VIEWER"
+  inline val CONTRIBUTOR: "CONTRIBUTOR" = "CONTRIBUTOR"
+  inline val OWNER: "OWNER" = "OWNER"
+  inline val COOWNER: "COOWNER" = "COOWNER"
 
-  @inline def values = js.Array(VIEWER, CONTRIBUTOR, OWNER, COOWNER)
+  inline def values: js.Array[RoleType] = js.Array(VIEWER, CONTRIBUTOR, OWNER, COOWNER)
 }
 
-@js.native
-sealed trait ShareStatusType extends js.Any
+type ShareStatusType = "SUCCESS" | "FAILURE"
 object ShareStatusType {
-  val SUCCESS = "SUCCESS".asInstanceOf[ShareStatusType]
-  val FAILURE = "FAILURE".asInstanceOf[ShareStatusType]
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val FAILURE: "FAILURE" = "FAILURE"
 
-  @inline def values = js.Array(SUCCESS, FAILURE)
+  inline def values: js.Array[ShareStatusType] = js.Array(SUCCESS, FAILURE)
 }
 
-@js.native
-sealed trait StorageType extends js.Any
+type StorageType = "UNLIMITED" | "QUOTA"
 object StorageType {
-  val UNLIMITED = "UNLIMITED".asInstanceOf[StorageType]
-  val QUOTA = "QUOTA".asInstanceOf[StorageType]
+  inline val UNLIMITED: "UNLIMITED" = "UNLIMITED"
+  inline val QUOTA: "QUOTA" = "QUOTA"
 
-  @inline def values = js.Array(UNLIMITED, QUOTA)
+  inline def values: js.Array[StorageType] = js.Array(UNLIMITED, QUOTA)
 }
 
-@js.native
-sealed trait SubscriptionProtocolType extends js.Any
+type SubscriptionProtocolType = "HTTPS"
 object SubscriptionProtocolType {
-  val HTTPS = "HTTPS".asInstanceOf[SubscriptionProtocolType]
+  inline val HTTPS: "HTTPS" = "HTTPS"
 
-  @inline def values = js.Array(HTTPS)
+  inline def values: js.Array[SubscriptionProtocolType] = js.Array(HTTPS)
 }
 
-@js.native
-sealed trait SubscriptionType extends js.Any
+type SubscriptionType = "ALL"
 object SubscriptionType {
-  val ALL = "ALL".asInstanceOf[SubscriptionType]
+  inline val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(ALL)
+  inline def values: js.Array[SubscriptionType] = js.Array(ALL)
 }
 
-@js.native
-sealed trait UserFilterType extends js.Any
+type UserFilterType = "ALL" | "ACTIVE_PENDING"
 object UserFilterType {
-  val ALL = "ALL".asInstanceOf[UserFilterType]
-  val ACTIVE_PENDING = "ACTIVE_PENDING".asInstanceOf[UserFilterType]
+  inline val ALL: "ALL" = "ALL"
+  inline val ACTIVE_PENDING: "ACTIVE_PENDING" = "ACTIVE_PENDING"
 
-  @inline def values = js.Array(ALL, ACTIVE_PENDING)
+  inline def values: js.Array[UserFilterType] = js.Array(ALL, ACTIVE_PENDING)
 }
 
-@js.native
-sealed trait UserSortType extends js.Any
+type UserSortType = "USER_NAME" | "FULL_NAME" | "STORAGE_LIMIT" | "USER_STATUS" | "STORAGE_USED"
 object UserSortType {
-  val USER_NAME = "USER_NAME".asInstanceOf[UserSortType]
-  val FULL_NAME = "FULL_NAME".asInstanceOf[UserSortType]
-  val STORAGE_LIMIT = "STORAGE_LIMIT".asInstanceOf[UserSortType]
-  val USER_STATUS = "USER_STATUS".asInstanceOf[UserSortType]
-  val STORAGE_USED = "STORAGE_USED".asInstanceOf[UserSortType]
+  inline val USER_NAME: "USER_NAME" = "USER_NAME"
+  inline val FULL_NAME: "FULL_NAME" = "FULL_NAME"
+  inline val STORAGE_LIMIT: "STORAGE_LIMIT" = "STORAGE_LIMIT"
+  inline val USER_STATUS: "USER_STATUS" = "USER_STATUS"
+  inline val STORAGE_USED: "STORAGE_USED" = "STORAGE_USED"
 
-  @inline def values = js.Array(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED)
+  inline def values: js.Array[UserSortType] = js.Array(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED)
 }
 
-@js.native
-sealed trait UserStatusType extends js.Any
+type UserStatusType = "ACTIVE" | "INACTIVE" | "PENDING"
 object UserStatusType {
-  val ACTIVE = "ACTIVE".asInstanceOf[UserStatusType]
-  val INACTIVE = "INACTIVE".asInstanceOf[UserStatusType]
-  val PENDING = "PENDING".asInstanceOf[UserStatusType]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val PENDING: "PENDING" = "PENDING"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, PENDING)
+  inline def values: js.Array[UserStatusType] = js.Array(ACTIVE, INACTIVE, PENDING)
 }
 
-@js.native
-sealed trait UserType extends js.Any
+type UserType = "USER" | "ADMIN" | "POWERUSER" | "MINIMALUSER" | "WORKSPACESUSER"
 object UserType {
-  val USER = "USER".asInstanceOf[UserType]
-  val ADMIN = "ADMIN".asInstanceOf[UserType]
-  val POWERUSER = "POWERUSER".asInstanceOf[UserType]
-  val MINIMALUSER = "MINIMALUSER".asInstanceOf[UserType]
-  val WORKSPACESUSER = "WORKSPACESUSER".asInstanceOf[UserType]
+  inline val USER: "USER" = "USER"
+  inline val ADMIN: "ADMIN" = "ADMIN"
+  inline val POWERUSER: "POWERUSER" = "POWERUSER"
+  inline val MINIMALUSER: "MINIMALUSER" = "MINIMALUSER"
+  inline val WORKSPACESUSER: "WORKSPACESUSER" = "WORKSPACESUSER"
 
-  @inline def values = js.Array(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER)
+  inline def values: js.Array[UserType] = js.Array(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER)
 }

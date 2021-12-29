@@ -34,3 +34,4 @@ object PricingPlan {
 
   @inline def values = js.Array(RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
 }
+

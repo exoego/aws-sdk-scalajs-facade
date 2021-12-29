@@ -12,3 +12,4 @@ object LocationType {
 
   @inline def values = js.Array(region, `availability-zone`, `availability-zone-id`)
 }
+

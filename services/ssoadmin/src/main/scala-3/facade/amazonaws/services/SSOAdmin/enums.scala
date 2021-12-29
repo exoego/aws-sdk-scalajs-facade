@@ -1,59 +1,52 @@
 package facade.amazonaws.services.ssoadmin
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait InstanceAccessControlAttributeConfigurationStatus extends js.Any
+type InstanceAccessControlAttributeConfigurationStatus = "ENABLED" | "CREATION_IN_PROGRESS" | "CREATION_FAILED"
 object InstanceAccessControlAttributeConfigurationStatus {
-  val ENABLED = "ENABLED".asInstanceOf[InstanceAccessControlAttributeConfigurationStatus]
-  val CREATION_IN_PROGRESS = "CREATION_IN_PROGRESS".asInstanceOf[InstanceAccessControlAttributeConfigurationStatus]
-  val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[InstanceAccessControlAttributeConfigurationStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val CREATION_IN_PROGRESS: "CREATION_IN_PROGRESS" = "CREATION_IN_PROGRESS"
+  inline val CREATION_FAILED: "CREATION_FAILED" = "CREATION_FAILED"
 
-  @inline def values = js.Array(ENABLED, CREATION_IN_PROGRESS, CREATION_FAILED)
+  inline def values: js.Array[InstanceAccessControlAttributeConfigurationStatus] = js.Array(ENABLED, CREATION_IN_PROGRESS, CREATION_FAILED)
 }
 
-@js.native
-sealed trait PrincipalType extends js.Any
+type PrincipalType = "USER" | "GROUP"
 object PrincipalType {
-  val USER = "USER".asInstanceOf[PrincipalType]
-  val GROUP = "GROUP".asInstanceOf[PrincipalType]
+  inline val USER: "USER" = "USER"
+  inline val GROUP: "GROUP" = "GROUP"
 
-  @inline def values = js.Array(USER, GROUP)
+  inline def values: js.Array[PrincipalType] = js.Array(USER, GROUP)
 }
 
-@js.native
-sealed trait ProvisionTargetType extends js.Any
+type ProvisionTargetType = "AWS_ACCOUNT" | "ALL_PROVISIONED_ACCOUNTS"
 object ProvisionTargetType {
-  val AWS_ACCOUNT = "AWS_ACCOUNT".asInstanceOf[ProvisionTargetType]
-  val ALL_PROVISIONED_ACCOUNTS = "ALL_PROVISIONED_ACCOUNTS".asInstanceOf[ProvisionTargetType]
+  inline val AWS_ACCOUNT: "AWS_ACCOUNT" = "AWS_ACCOUNT"
+  inline val ALL_PROVISIONED_ACCOUNTS: "ALL_PROVISIONED_ACCOUNTS" = "ALL_PROVISIONED_ACCOUNTS"
 
-  @inline def values = js.Array(AWS_ACCOUNT, ALL_PROVISIONED_ACCOUNTS)
+  inline def values: js.Array[ProvisionTargetType] = js.Array(AWS_ACCOUNT, ALL_PROVISIONED_ACCOUNTS)
 }
 
-@js.native
-sealed trait ProvisioningStatus extends js.Any
+type ProvisioningStatus = "LATEST_PERMISSION_SET_PROVISIONED" | "LATEST_PERMISSION_SET_NOT_PROVISIONED"
 object ProvisioningStatus {
-  val LATEST_PERMISSION_SET_PROVISIONED = "LATEST_PERMISSION_SET_PROVISIONED".asInstanceOf[ProvisioningStatus]
-  val LATEST_PERMISSION_SET_NOT_PROVISIONED = "LATEST_PERMISSION_SET_NOT_PROVISIONED".asInstanceOf[ProvisioningStatus]
+  inline val LATEST_PERMISSION_SET_PROVISIONED: "LATEST_PERMISSION_SET_PROVISIONED" = "LATEST_PERMISSION_SET_PROVISIONED"
+  inline val LATEST_PERMISSION_SET_NOT_PROVISIONED: "LATEST_PERMISSION_SET_NOT_PROVISIONED" = "LATEST_PERMISSION_SET_NOT_PROVISIONED"
 
-  @inline def values = js.Array(LATEST_PERMISSION_SET_PROVISIONED, LATEST_PERMISSION_SET_NOT_PROVISIONED)
+  inline def values: js.Array[ProvisioningStatus] = js.Array(LATEST_PERMISSION_SET_PROVISIONED, LATEST_PERMISSION_SET_NOT_PROVISIONED)
 }
 
-@js.native
-sealed trait StatusValues extends js.Any
+type StatusValues = "IN_PROGRESS" | "FAILED" | "SUCCEEDED"
 object StatusValues {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StatusValues]
-  val FAILED = "FAILED".asInstanceOf[StatusValues]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[StatusValues]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
 
-  @inline def values = js.Array(IN_PROGRESS, FAILED, SUCCEEDED)
+  inline def values: js.Array[StatusValues] = js.Array(IN_PROGRESS, FAILED, SUCCEEDED)
 }
 
-@js.native
-sealed trait TargetType extends js.Any
+type TargetType = "AWS_ACCOUNT"
 object TargetType {
-  val AWS_ACCOUNT = "AWS_ACCOUNT".asInstanceOf[TargetType]
+  inline val AWS_ACCOUNT: "AWS_ACCOUNT" = "AWS_ACCOUNT"
 
-  @inline def values = js.Array(AWS_ACCOUNT)
+  inline def values: js.Array[TargetType] = js.Array(AWS_ACCOUNT)
 }

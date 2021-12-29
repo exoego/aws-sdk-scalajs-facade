@@ -1,106 +1,95 @@
 package facade.amazonaws.services.glacier
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ActionCode extends js.Any
+type ActionCode = "ArchiveRetrieval" | "InventoryRetrieval" | "Select"
 object ActionCode {
-  val ArchiveRetrieval = "ArchiveRetrieval".asInstanceOf[ActionCode]
-  val InventoryRetrieval = "InventoryRetrieval".asInstanceOf[ActionCode]
-  val Select = "Select".asInstanceOf[ActionCode]
+  inline val ArchiveRetrieval: "ArchiveRetrieval" = "ArchiveRetrieval"
+  inline val InventoryRetrieval: "InventoryRetrieval" = "InventoryRetrieval"
+  inline val Select: "Select" = "Select"
 
-  @inline def values = js.Array(ArchiveRetrieval, InventoryRetrieval, Select)
+  inline def values: js.Array[ActionCode] = js.Array(ArchiveRetrieval, InventoryRetrieval, Select)
 }
 
-@js.native
-sealed trait CannedACL extends js.Any
+type CannedACL = "private" | "public-read" | "public-read-write" | "aws-exec-read" | "authenticated-read" | "bucket-owner-read" | "bucket-owner-full-control"
 object CannedACL {
-  val `private` = "private".asInstanceOf[CannedACL]
-  val `public-read` = "public-read".asInstanceOf[CannedACL]
-  val `public-read-write` = "public-read-write".asInstanceOf[CannedACL]
-  val `aws-exec-read` = "aws-exec-read".asInstanceOf[CannedACL]
-  val `authenticated-read` = "authenticated-read".asInstanceOf[CannedACL]
-  val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[CannedACL]
-  val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedACL]
+  inline val `private`: "private" = "private"
+  inline val `public-read`: "public-read" = "public-read"
+  inline val `public-read-write`: "public-read-write" = "public-read-write"
+  inline val `aws-exec-read`: "aws-exec-read" = "aws-exec-read"
+  inline val `authenticated-read`: "authenticated-read" = "authenticated-read"
+  inline val `bucket-owner-read`: "bucket-owner-read" = "bucket-owner-read"
+  inline val `bucket-owner-full-control`: "bucket-owner-full-control" = "bucket-owner-full-control"
 
-  @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`)
+  inline def values: js.Array[CannedACL] = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`)
 }
 
-@js.native
-sealed trait EncryptionType extends js.Any
+type EncryptionType = "aws:kms" | "AES256"
 object EncryptionType {
-  val `aws:kms` = "aws:kms".asInstanceOf[EncryptionType]
-  val AES256 = "AES256".asInstanceOf[EncryptionType]
+  inline val `aws:kms`: "aws:kms" = "aws:kms"
+  inline val AES256: "AES256" = "AES256"
 
-  @inline def values = js.Array(`aws:kms`, AES256)
+  inline def values: js.Array[EncryptionType] = js.Array(`aws:kms`, AES256)
 }
 
-@js.native
-sealed trait ExpressionType extends js.Any
+type ExpressionType = "SQL"
 object ExpressionType {
-  val SQL = "SQL".asInstanceOf[ExpressionType]
+  inline val SQL: "SQL" = "SQL"
 
-  @inline def values = js.Array(SQL)
+  inline def values: js.Array[ExpressionType] = js.Array(SQL)
 }
 
-@js.native
-sealed trait FileHeaderInfo extends js.Any
+type FileHeaderInfo = "USE" | "IGNORE" | "NONE"
 object FileHeaderInfo {
-  val USE = "USE".asInstanceOf[FileHeaderInfo]
-  val IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
-  val NONE = "NONE".asInstanceOf[FileHeaderInfo]
+  inline val USE: "USE" = "USE"
+  inline val IGNORE: "IGNORE" = "IGNORE"
+  inline val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array(USE, IGNORE, NONE)
+  inline def values: js.Array[FileHeaderInfo] = js.Array(USE, IGNORE, NONE)
 }
 
-@js.native
-sealed trait Permission extends js.Any
+type Permission = "FULL_CONTROL" | "WRITE" | "WRITE_ACP" | "READ" | "READ_ACP"
 object Permission {
-  val FULL_CONTROL = "FULL_CONTROL".asInstanceOf[Permission]
-  val WRITE = "WRITE".asInstanceOf[Permission]
-  val WRITE_ACP = "WRITE_ACP".asInstanceOf[Permission]
-  val READ = "READ".asInstanceOf[Permission]
-  val READ_ACP = "READ_ACP".asInstanceOf[Permission]
+  inline val FULL_CONTROL: "FULL_CONTROL" = "FULL_CONTROL"
+  inline val WRITE: "WRITE" = "WRITE"
+  inline val WRITE_ACP: "WRITE_ACP" = "WRITE_ACP"
+  inline val READ: "READ" = "READ"
+  inline val READ_ACP: "READ_ACP" = "READ_ACP"
 
-  @inline def values = js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP)
+  inline def values: js.Array[Permission] = js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP)
 }
 
-@js.native
-sealed trait QuoteFields extends js.Any
+type QuoteFields = "ALWAYS" | "ASNEEDED"
 object QuoteFields {
-  val ALWAYS = "ALWAYS".asInstanceOf[QuoteFields]
-  val ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
+  inline val ALWAYS: "ALWAYS" = "ALWAYS"
+  inline val ASNEEDED: "ASNEEDED" = "ASNEEDED"
 
-  @inline def values = js.Array(ALWAYS, ASNEEDED)
+  inline def values: js.Array[QuoteFields] = js.Array(ALWAYS, ASNEEDED)
 }
 
-@js.native
-sealed trait StatusCode extends js.Any
+type StatusCode = "InProgress" | "Succeeded" | "Failed"
 object StatusCode {
-  val InProgress = "InProgress".asInstanceOf[StatusCode]
-  val Succeeded = "Succeeded".asInstanceOf[StatusCode]
-  val Failed = "Failed".asInstanceOf[StatusCode]
+  inline val InProgress: "InProgress" = "InProgress"
+  inline val Succeeded: "Succeeded" = "Succeeded"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(InProgress, Succeeded, Failed)
+  inline def values: js.Array[StatusCode] = js.Array(InProgress, Succeeded, Failed)
 }
 
-@js.native
-sealed trait StorageClass extends js.Any
+type StorageClass = "STANDARD" | "REDUCED_REDUNDANCY" | "STANDARD_IA"
 object StorageClass {
-  val STANDARD = "STANDARD".asInstanceOf[StorageClass]
-  val REDUCED_REDUNDANCY = "REDUCED_REDUNDANCY".asInstanceOf[StorageClass]
-  val STANDARD_IA = "STANDARD_IA".asInstanceOf[StorageClass]
+  inline val STANDARD: "STANDARD" = "STANDARD"
+  inline val REDUCED_REDUNDANCY: "REDUCED_REDUNDANCY" = "REDUCED_REDUNDANCY"
+  inline val STANDARD_IA: "STANDARD_IA" = "STANDARD_IA"
 
-  @inline def values = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA)
+  inline def values: js.Array[StorageClass] = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA)
 }
 
-@js.native
-sealed trait Type extends js.Any
+type Type = "AmazonCustomerByEmail" | "CanonicalUser" | "Group"
 object Type {
-  val AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
-  val CanonicalUser = "CanonicalUser".asInstanceOf[Type]
-  val Group = "Group".asInstanceOf[Type]
+  inline val AmazonCustomerByEmail: "AmazonCustomerByEmail" = "AmazonCustomerByEmail"
+  inline val CanonicalUser: "CanonicalUser" = "CanonicalUser"
+  inline val Group: "Group" = "Group"
 
-  @inline def values = js.Array(AmazonCustomerByEmail, CanonicalUser, Group)
+  inline def values: js.Array[Type] = js.Array(AmazonCustomerByEmail, CanonicalUser, Group)
 }

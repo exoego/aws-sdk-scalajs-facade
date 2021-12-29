@@ -215,3 +215,4 @@ object UpdateActionStatus {
 
   @inline def values = js.Array(`not-applied`, `waiting-to-start`, `in-progress`, stopping, stopped, complete, scheduling, scheduled, `not-applicable`)
 }
+

@@ -1,65 +1,58 @@
 package facade.amazonaws.services.athena
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ColumnNullable extends js.Any
+type ColumnNullable = "NOT_NULL" | "NULLABLE" | "UNKNOWN"
 object ColumnNullable {
-  val NOT_NULL = "NOT_NULL".asInstanceOf[ColumnNullable]
-  val NULLABLE = "NULLABLE".asInstanceOf[ColumnNullable]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[ColumnNullable]
+  inline val NOT_NULL: "NOT_NULL" = "NOT_NULL"
+  inline val NULLABLE: "NULLABLE" = "NULLABLE"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array(NOT_NULL, NULLABLE, UNKNOWN)
+  inline def values: js.Array[ColumnNullable] = js.Array(NOT_NULL, NULLABLE, UNKNOWN)
 }
 
-@js.native
-sealed trait DataCatalogType extends js.Any
+type DataCatalogType = "LAMBDA" | "GLUE" | "HIVE"
 object DataCatalogType {
-  val LAMBDA = "LAMBDA".asInstanceOf[DataCatalogType]
-  val GLUE = "GLUE".asInstanceOf[DataCatalogType]
-  val HIVE = "HIVE".asInstanceOf[DataCatalogType]
+  inline val LAMBDA: "LAMBDA" = "LAMBDA"
+  inline val GLUE: "GLUE" = "GLUE"
+  inline val HIVE: "HIVE" = "HIVE"
 
-  @inline def values = js.Array(LAMBDA, GLUE, HIVE)
+  inline def values: js.Array[DataCatalogType] = js.Array(LAMBDA, GLUE, HIVE)
 }
 
-@js.native
-sealed trait EncryptionOption extends js.Any
+type EncryptionOption = "SSE_S3" | "SSE_KMS" | "CSE_KMS"
 object EncryptionOption {
-  val SSE_S3 = "SSE_S3".asInstanceOf[EncryptionOption]
-  val SSE_KMS = "SSE_KMS".asInstanceOf[EncryptionOption]
-  val CSE_KMS = "CSE_KMS".asInstanceOf[EncryptionOption]
+  inline val SSE_S3: "SSE_S3" = "SSE_S3"
+  inline val SSE_KMS: "SSE_KMS" = "SSE_KMS"
+  inline val CSE_KMS: "CSE_KMS" = "CSE_KMS"
 
-  @inline def values = js.Array(SSE_S3, SSE_KMS, CSE_KMS)
+  inline def values: js.Array[EncryptionOption] = js.Array(SSE_S3, SSE_KMS, CSE_KMS)
 }
 
-@js.native
-sealed trait QueryExecutionState extends js.Any
+type QueryExecutionState = "QUEUED" | "RUNNING" | "SUCCEEDED" | "FAILED" | "CANCELLED"
 object QueryExecutionState {
-  val QUEUED = "QUEUED".asInstanceOf[QueryExecutionState]
-  val RUNNING = "RUNNING".asInstanceOf[QueryExecutionState]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[QueryExecutionState]
-  val FAILED = "FAILED".asInstanceOf[QueryExecutionState]
-  val CANCELLED = "CANCELLED".asInstanceOf[QueryExecutionState]
+  inline val QUEUED: "QUEUED" = "QUEUED"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED)
+  inline def values: js.Array[QueryExecutionState] = js.Array(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED)
 }
 
-@js.native
-sealed trait StatementType extends js.Any
+type StatementType = "DDL" | "DML" | "UTILITY"
 object StatementType {
-  val DDL = "DDL".asInstanceOf[StatementType]
-  val DML = "DML".asInstanceOf[StatementType]
-  val UTILITY = "UTILITY".asInstanceOf[StatementType]
+  inline val DDL: "DDL" = "DDL"
+  inline val DML: "DML" = "DML"
+  inline val UTILITY: "UTILITY" = "UTILITY"
 
-  @inline def values = js.Array(DDL, DML, UTILITY)
+  inline def values: js.Array[StatementType] = js.Array(DDL, DML, UTILITY)
 }
 
-@js.native
-sealed trait WorkGroupState extends js.Any
+type WorkGroupState = "ENABLED" | "DISABLED"
 object WorkGroupState {
-  val ENABLED = "ENABLED".asInstanceOf[WorkGroupState]
-  val DISABLED = "DISABLED".asInstanceOf[WorkGroupState]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[WorkGroupState] = js.Array(ENABLED, DISABLED)
 }

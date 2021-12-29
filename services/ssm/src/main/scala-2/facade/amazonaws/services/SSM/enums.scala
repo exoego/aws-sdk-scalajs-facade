@@ -113,20 +113,7 @@ object AutomationExecutionFilterKey {
   val AutomationSubtype = "AutomationSubtype".asInstanceOf[AutomationExecutionFilterKey]
   val OpsItemId = "OpsItemId".asInstanceOf[AutomationExecutionFilterKey]
 
-  @inline def values = js.Array(
-    DocumentNamePrefix,
-    ExecutionStatus,
-    ExecutionId,
-    ParentExecutionId,
-    CurrentAction,
-    StartTimeBefore,
-    StartTimeAfter,
-    AutomationType,
-    TagKey,
-    TargetResourceGroup,
-    AutomationSubtype,
-    OpsItemId
-  )
+  @inline def values = js.Array(DocumentNamePrefix, ExecutionStatus, ExecutionId, ParentExecutionId, CurrentAction, StartTimeBefore, StartTimeAfter, AutomationType, TagKey, TargetResourceGroup, AutomationSubtype, OpsItemId)
 }
 
 @js.native
@@ -151,26 +138,7 @@ object AutomationExecutionStatus {
   val CompletedWithSuccess = "CompletedWithSuccess".asInstanceOf[AutomationExecutionStatus]
   val CompletedWithFailure = "CompletedWithFailure".asInstanceOf[AutomationExecutionStatus]
 
-  @inline def values = js.Array(
-    Pending,
-    InProgress,
-    Waiting,
-    Success,
-    TimedOut,
-    Cancelling,
-    Cancelled,
-    Failed,
-    PendingApproval,
-    Approved,
-    Rejected,
-    Scheduled,
-    RunbookInProgress,
-    PendingChangeCalendarOverride,
-    ChangeCalendarOverrideApproved,
-    ChangeCalendarOverrideRejected,
-    CompletedWithSuccess,
-    CompletedWithFailure
-  )
+  @inline def values = js.Array(Pending, InProgress, Waiting, Success, TimedOut, Cancelling, Cancelled, Failed, PendingApproval, Approved, Rejected, Scheduled, RunbookInProgress, PendingChangeCalendarOverride, ChangeCalendarOverrideApproved, ChangeCalendarOverrideRejected, CompletedWithSuccess, CompletedWithFailure)
 }
 
 @js.native
@@ -417,18 +385,7 @@ object DocumentType {
   val ChangeCalendar = "ChangeCalendar".asInstanceOf[DocumentType]
   val `Automation.ChangeTemplate` = "Automation.ChangeTemplate".asInstanceOf[DocumentType]
 
-  @inline def values = js.Array(
-    Command,
-    Policy,
-    Automation,
-    Session,
-    Package,
-    ApplicationConfiguration,
-    ApplicationConfigurationSchema,
-    DeploymentStrategy,
-    ChangeCalendar,
-    `Automation.ChangeTemplate`
-  )
+  @inline def values = js.Array(Command, Policy, Automation, Session, Package, ApplicationConfiguration, ApplicationConfigurationSchema, DeploymentStrategy, ChangeCalendar, `Automation.ChangeTemplate`)
 }
 
 @js.native
@@ -668,34 +625,7 @@ object OpsItemFilterKey {
   val ChangeRequestByTemplate = "ChangeRequestByTemplate".asInstanceOf[OpsItemFilterKey]
   val ChangeRequestByTargetsResourceGroup = "ChangeRequestByTargetsResourceGroup".asInstanceOf[OpsItemFilterKey]
 
-  @inline def values = js.Array(
-    Status,
-    CreatedBy,
-    Source,
-    Priority,
-    Title,
-    OpsItemId,
-    CreatedTime,
-    LastModifiedTime,
-    ActualStartTime,
-    ActualEndTime,
-    PlannedStartTime,
-    PlannedEndTime,
-    OperationalData,
-    OperationalDataKey,
-    OperationalDataValue,
-    ResourceId,
-    AutomationId,
-    Category,
-    Severity,
-    OpsItemType,
-    ChangeRequestByRequesterArn,
-    ChangeRequestByRequesterName,
-    ChangeRequestByApproverArn,
-    ChangeRequestByApproverName,
-    ChangeRequestByTemplate,
-    ChangeRequestByTargetsResourceGroup
-  )
+  @inline def values = js.Array(Status, CreatedBy, Source, Priority, Title, OpsItemId, CreatedTime, LastModifiedTime, ActualStartTime, ActualEndTime, PlannedStartTime, PlannedEndTime, OperationalData, OperationalDataKey, OperationalDataValue, ResourceId, AutomationId, Category, Severity, OpsItemType, ChangeRequestByRequesterArn, ChangeRequestByRequesterName, ChangeRequestByApproverArn, ChangeRequestByApproverName, ChangeRequestByTemplate, ChangeRequestByTargetsResourceGroup)
 }
 
 @js.native
@@ -731,26 +661,7 @@ object OpsItemStatus {
   val Approved = "Approved".asInstanceOf[OpsItemStatus]
   val Rejected = "Rejected".asInstanceOf[OpsItemStatus]
 
-  @inline def values = js.Array(
-    Open,
-    InProgress,
-    Resolved,
-    Pending,
-    TimedOut,
-    Cancelling,
-    Cancelled,
-    Failed,
-    CompletedWithSuccess,
-    CompletedWithFailure,
-    Scheduled,
-    RunbookInProgress,
-    PendingChangeCalendarOverride,
-    ChangeCalendarOverrideApproved,
-    ChangeCalendarOverrideRejected,
-    PendingApproval,
-    Approved,
-    Rejected
-  )
+  @inline def values = js.Array(Open, InProgress, Resolved, Pending, TimedOut, Cancelling, Cancelled, Failed, CompletedWithSuccess, CompletedWithFailure, Scheduled, RunbookInProgress, PendingChangeCalendarOverride, ChangeCalendarOverrideApproved, ChangeCalendarOverrideRejected, PendingApproval, Approved, Rejected)
 }
 
 @js.native
@@ -853,27 +764,7 @@ object PatchFilterKey {
   val SECURITY = "SECURITY".asInstanceOf[PatchFilterKey]
   val VERSION = "VERSION".asInstanceOf[PatchFilterKey]
 
-  @inline def values = js.Array(
-    ARCH,
-    ADVISORY_ID,
-    BUGZILLA_ID,
-    PATCH_SET,
-    PRODUCT,
-    PRODUCT_FAMILY,
-    CLASSIFICATION,
-    CVE_ID,
-    EPOCH,
-    MSRC_SEVERITY,
-    NAME,
-    PATCH_ID,
-    SECTION,
-    PRIORITY,
-    REPOSITORY,
-    RELEASE,
-    SEVERITY,
-    SECURITY,
-    VERSION
-  )
+  @inline def values = js.Array(ARCH, ADVISORY_ID, BUGZILLA_ID, PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, CVE_ID, EPOCH, MSRC_SEVERITY, NAME, PATCH_ID, SECTION, PRIORITY, REPOSITORY, RELEASE, SEVERITY, SECURITY, VERSION)
 }
 
 @js.native
@@ -1046,3 +937,4 @@ object StopType {
 
   @inline def values = js.Array(Complete, Cancel)
 }
+

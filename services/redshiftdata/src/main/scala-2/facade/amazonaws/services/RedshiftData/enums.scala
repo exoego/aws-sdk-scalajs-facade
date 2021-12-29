@@ -16,3 +16,4 @@ object StatusString {
 
   @inline def values = js.Array(SUBMITTED, PICKED, STARTED, FINISHED, ABORTED, FAILED, ALL)
 }
+

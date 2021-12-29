@@ -57,3 +57,4 @@ object TargetType {
 
   @inline def values = js.Array(AWS_ACCOUNT)
 }
+

@@ -72,17 +72,7 @@ object MetadataField {
   val LambdaTimeGapBetweenInvokesInMilliseconds = "LambdaTimeGapBetweenInvokesInMilliseconds".asInstanceOf[MetadataField]
   val LambdaPreviousExecutionTimeInMilliseconds = "LambdaPreviousExecutionTimeInMilliseconds".asInstanceOf[MetadataField]
 
-  @inline def values = js.Array(
-    ComputePlatform,
-    AgentId,
-    AwsRequestId,
-    ExecutionEnvironment,
-    LambdaFunctionArn,
-    LambdaMemoryLimitInMB,
-    LambdaRemainingTimeInMilliseconds,
-    LambdaTimeGapBetweenInvokesInMilliseconds,
-    LambdaPreviousExecutionTimeInMilliseconds
-  )
+  @inline def values = js.Array(ComputePlatform, AgentId, AwsRequestId, ExecutionEnvironment, LambdaFunctionArn, LambdaMemoryLimitInMB, LambdaRemainingTimeInMilliseconds, LambdaTimeGapBetweenInvokesInMilliseconds, LambdaPreviousExecutionTimeInMilliseconds)
 }
 
 @js.native
@@ -101,3 +91,4 @@ object OrderBy {
 
   @inline def values = js.Array(TimestampDescending, TimestampAscending)
 }
+

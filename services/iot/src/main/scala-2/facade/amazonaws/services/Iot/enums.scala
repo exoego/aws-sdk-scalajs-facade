@@ -244,18 +244,7 @@ object ComparisonOperator {
   val `in-set` = "in-set".asInstanceOf[ComparisonOperator]
   val `not-in-set` = "not-in-set".asInstanceOf[ComparisonOperator]
 
-  @inline def values = js.Array(
-    `less-than`,
-    `less-than-equals`,
-    `greater-than`,
-    `greater-than-equals`,
-    `in-cidr-set`,
-    `not-in-cidr-set`,
-    `in-port-set`,
-    `not-in-port-set`,
-    `in-set`,
-    `not-in-set`
-  )
+  @inline def values = js.Array(`less-than`, `less-than-equals`, `greater-than`, `greater-than-equals`, `in-cidr-set`, `not-in-cidr-set`, `in-port-set`, `not-in-port-set`, `in-set`, `not-in-set`)
 }
 
 @js.native
@@ -647,3 +636,4 @@ object ViolationEventType {
 
   @inline def values = js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`)
 }
+

@@ -56,25 +56,7 @@ object MetricType {
   val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
   val KafkaBrokerStorageUtilization = "KafkaBrokerStorageUtilization".asInstanceOf[MetricType]
 
-  @inline def values = js.Array(
-    DynamoDBReadCapacityUtilization,
-    DynamoDBWriteCapacityUtilization,
-    ALBRequestCountPerTarget,
-    RDSReaderAverageCPUUtilization,
-    RDSReaderAverageDatabaseConnections,
-    EC2SpotFleetRequestAverageCPUUtilization,
-    EC2SpotFleetRequestAverageNetworkIn,
-    EC2SpotFleetRequestAverageNetworkOut,
-    SageMakerVariantInvocationsPerInstance,
-    ECSServiceAverageCPUUtilization,
-    ECSServiceAverageMemoryUtilization,
-    AppStreamAverageCapacityUtilization,
-    ComprehendInferenceUtilization,
-    LambdaProvisionedConcurrencyUtilization,
-    CassandraReadCapacityUtilization,
-    CassandraWriteCapacityUtilization,
-    KafkaBrokerStorageUtilization
-  )
+  @inline def values = js.Array(DynamoDBReadCapacityUtilization, DynamoDBWriteCapacityUtilization, ALBRequestCountPerTarget, RDSReaderAverageCPUUtilization, RDSReaderAverageDatabaseConnections, EC2SpotFleetRequestAverageCPUUtilization, EC2SpotFleetRequestAverageNetworkIn, EC2SpotFleetRequestAverageNetworkOut, SageMakerVariantInvocationsPerInstance, ECSServiceAverageCPUUtilization, ECSServiceAverageMemoryUtilization, AppStreamAverageCapacityUtilization, ComprehendInferenceUtilization, LambdaProvisionedConcurrencyUtilization, CassandraReadCapacityUtilization, CassandraWriteCapacityUtilization, KafkaBrokerStorageUtilization)
 }
 
 @js.native
@@ -107,25 +89,7 @@ object ScalableDimension {
   val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
   val `kafka:broker-storage:VolumeSize` = "kafka:broker-storage:VolumeSize".asInstanceOf[ScalableDimension]
 
-  @inline def values = js.Array(
-    `ecs:service:DesiredCount`,
-    `ec2:spot-fleet-request:TargetCapacity`,
-    `elasticmapreduce:instancegroup:InstanceCount`,
-    `appstream:fleet:DesiredCapacity`,
-    `dynamodb:table:ReadCapacityUnits`,
-    `dynamodb:table:WriteCapacityUnits`,
-    `dynamodb:index:ReadCapacityUnits`,
-    `dynamodb:index:WriteCapacityUnits`,
-    `rds:cluster:ReadReplicaCount`,
-    `sagemaker:variant:DesiredInstanceCount`,
-    `custom-resource:ResourceType:Property`,
-    `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
-    `comprehend:entity-recognizer-endpoint:DesiredInferenceUnits`,
-    `lambda:function:ProvisionedConcurrency`,
-    `cassandra:table:ReadCapacityUnits`,
-    `cassandra:table:WriteCapacityUnits`,
-    `kafka:broker-storage:VolumeSize`
-  )
+  @inline def values = js.Array(`ecs:service:DesiredCount`, `ec2:spot-fleet-request:TargetCapacity`, `elasticmapreduce:instancegroup:InstanceCount`, `appstream:fleet:DesiredCapacity`, `dynamodb:table:ReadCapacityUnits`, `dynamodb:table:WriteCapacityUnits`, `dynamodb:index:ReadCapacityUnits`, `dynamodb:index:WriteCapacityUnits`, `rds:cluster:ReadReplicaCount`, `sagemaker:variant:DesiredInstanceCount`, `custom-resource:ResourceType:Property`, `comprehend:document-classifier-endpoint:DesiredInferenceUnits`, `comprehend:entity-recognizer-endpoint:DesiredInferenceUnits`, `lambda:function:ProvisionedConcurrency`, `cassandra:table:ReadCapacityUnits`, `cassandra:table:WriteCapacityUnits`, `kafka:broker-storage:VolumeSize`)
 }
 
 @js.native
@@ -159,3 +123,4 @@ object ServiceNamespace {
 
   @inline def values = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka)
 }
+

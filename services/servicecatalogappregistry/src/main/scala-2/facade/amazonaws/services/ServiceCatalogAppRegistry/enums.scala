@@ -19,3 +19,4 @@ object SyncAction {
 
   @inline def values = js.Array(START_SYNC, NO_ACTION)
 }
+

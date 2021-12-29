@@ -1,118 +1,106 @@
 package facade.amazonaws.services.kinesisanalyticsv2
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ApplicationRestoreType extends js.Any
+type ApplicationRestoreType = "SKIP_RESTORE_FROM_SNAPSHOT" | "RESTORE_FROM_LATEST_SNAPSHOT" | "RESTORE_FROM_CUSTOM_SNAPSHOT"
 object ApplicationRestoreType {
-  val SKIP_RESTORE_FROM_SNAPSHOT = "SKIP_RESTORE_FROM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
-  val RESTORE_FROM_LATEST_SNAPSHOT = "RESTORE_FROM_LATEST_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
-  val RESTORE_FROM_CUSTOM_SNAPSHOT = "RESTORE_FROM_CUSTOM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
+  inline val SKIP_RESTORE_FROM_SNAPSHOT: "SKIP_RESTORE_FROM_SNAPSHOT" = "SKIP_RESTORE_FROM_SNAPSHOT"
+  inline val RESTORE_FROM_LATEST_SNAPSHOT: "RESTORE_FROM_LATEST_SNAPSHOT" = "RESTORE_FROM_LATEST_SNAPSHOT"
+  inline val RESTORE_FROM_CUSTOM_SNAPSHOT: "RESTORE_FROM_CUSTOM_SNAPSHOT" = "RESTORE_FROM_CUSTOM_SNAPSHOT"
 
-  @inline def values = js.Array(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT)
+  inline def values: js.Array[ApplicationRestoreType] = js.Array(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT)
 }
 
-@js.native
-sealed trait ApplicationStatus extends js.Any
+type ApplicationStatus = "DELETING" | "STARTING" | "STOPPING" | "READY" | "RUNNING" | "UPDATING" | "AUTOSCALING" | "FORCE_STOPPING"
 object ApplicationStatus {
-  val DELETING = "DELETING".asInstanceOf[ApplicationStatus]
-  val STARTING = "STARTING".asInstanceOf[ApplicationStatus]
-  val STOPPING = "STOPPING".asInstanceOf[ApplicationStatus]
-  val READY = "READY".asInstanceOf[ApplicationStatus]
-  val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
-  val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
-  val AUTOSCALING = "AUTOSCALING".asInstanceOf[ApplicationStatus]
-  val FORCE_STOPPING = "FORCE_STOPPING".asInstanceOf[ApplicationStatus]
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val READY: "READY" = "READY"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val AUTOSCALING: "AUTOSCALING" = "AUTOSCALING"
+  inline val FORCE_STOPPING: "FORCE_STOPPING" = "FORCE_STOPPING"
 
-  @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING, AUTOSCALING, FORCE_STOPPING)
+  inline def values: js.Array[ApplicationStatus] = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING, AUTOSCALING, FORCE_STOPPING)
 }
 
-@js.native
-sealed trait CodeContentType extends js.Any
+type CodeContentType = "PLAINTEXT" | "ZIPFILE"
 object CodeContentType {
-  val PLAINTEXT = "PLAINTEXT".asInstanceOf[CodeContentType]
-  val ZIPFILE = "ZIPFILE".asInstanceOf[CodeContentType]
+  inline val PLAINTEXT: "PLAINTEXT" = "PLAINTEXT"
+  inline val ZIPFILE: "ZIPFILE" = "ZIPFILE"
 
-  @inline def values = js.Array(PLAINTEXT, ZIPFILE)
+  inline def values: js.Array[CodeContentType] = js.Array(PLAINTEXT, ZIPFILE)
 }
 
-@js.native
-sealed trait ConfigurationType extends js.Any
+type ConfigurationType = "DEFAULT" | "CUSTOM"
 object ConfigurationType {
-  val DEFAULT = "DEFAULT".asInstanceOf[ConfigurationType]
-  val CUSTOM = "CUSTOM".asInstanceOf[ConfigurationType]
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
 
-  @inline def values = js.Array(DEFAULT, CUSTOM)
+  inline def values: js.Array[ConfigurationType] = js.Array(DEFAULT, CUSTOM)
 }
 
-@js.native
-sealed trait InputStartingPosition extends js.Any
+type InputStartingPosition = "NOW" | "TRIM_HORIZON" | "LAST_STOPPED_POINT"
 object InputStartingPosition {
-  val NOW = "NOW".asInstanceOf[InputStartingPosition]
-  val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
-  val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
+  inline val NOW: "NOW" = "NOW"
+  inline val TRIM_HORIZON: "TRIM_HORIZON" = "TRIM_HORIZON"
+  inline val LAST_STOPPED_POINT: "LAST_STOPPED_POINT" = "LAST_STOPPED_POINT"
 
-  @inline def values = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
+  inline def values: js.Array[InputStartingPosition] = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
 }
 
-@js.native
-sealed trait LogLevel extends js.Any
+type LogLevel = "INFO" | "WARN" | "ERROR" | "DEBUG"
 object LogLevel {
-  val INFO = "INFO".asInstanceOf[LogLevel]
-  val WARN = "WARN".asInstanceOf[LogLevel]
-  val ERROR = "ERROR".asInstanceOf[LogLevel]
-  val DEBUG = "DEBUG".asInstanceOf[LogLevel]
+  inline val INFO: "INFO" = "INFO"
+  inline val WARN: "WARN" = "WARN"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val DEBUG: "DEBUG" = "DEBUG"
 
-  @inline def values = js.Array(INFO, WARN, ERROR, DEBUG)
+  inline def values: js.Array[LogLevel] = js.Array(INFO, WARN, ERROR, DEBUG)
 }
 
-@js.native
-sealed trait MetricsLevel extends js.Any
+type MetricsLevel = "APPLICATION" | "TASK" | "OPERATOR" | "PARALLELISM"
 object MetricsLevel {
-  val APPLICATION = "APPLICATION".asInstanceOf[MetricsLevel]
-  val TASK = "TASK".asInstanceOf[MetricsLevel]
-  val OPERATOR = "OPERATOR".asInstanceOf[MetricsLevel]
-  val PARALLELISM = "PARALLELISM".asInstanceOf[MetricsLevel]
+  inline val APPLICATION: "APPLICATION" = "APPLICATION"
+  inline val TASK: "TASK" = "TASK"
+  inline val OPERATOR: "OPERATOR" = "OPERATOR"
+  inline val PARALLELISM: "PARALLELISM" = "PARALLELISM"
 
-  @inline def values = js.Array(APPLICATION, TASK, OPERATOR, PARALLELISM)
+  inline def values: js.Array[MetricsLevel] = js.Array(APPLICATION, TASK, OPERATOR, PARALLELISM)
 }
 
-@js.native
-sealed trait RecordFormatType extends js.Any
+type RecordFormatType = "JSON" | "CSV"
 object RecordFormatType {
-  val JSON = "JSON".asInstanceOf[RecordFormatType]
-  val CSV = "CSV".asInstanceOf[RecordFormatType]
+  inline val JSON: "JSON" = "JSON"
+  inline val CSV: "CSV" = "CSV"
 
-  @inline def values = js.Array(JSON, CSV)
+  inline def values: js.Array[RecordFormatType] = js.Array(JSON, CSV)
 }
 
-@js.native
-sealed trait RuntimeEnvironment extends js.Any
+type RuntimeEnvironment = "SQL-1_0" | "FLINK-1_6" | "FLINK-1_8" | "FLINK-1_11"
 object RuntimeEnvironment {
-  val `SQL-1_0` = "SQL-1_0".asInstanceOf[RuntimeEnvironment]
-  val `FLINK-1_6` = "FLINK-1_6".asInstanceOf[RuntimeEnvironment]
-  val `FLINK-1_8` = "FLINK-1_8".asInstanceOf[RuntimeEnvironment]
-  val `FLINK-1_11` = "FLINK-1_11".asInstanceOf[RuntimeEnvironment]
+  inline val `SQL-1_0`: "SQL-1_0" = "SQL-1_0"
+  inline val `FLINK-1_6`: "FLINK-1_6" = "FLINK-1_6"
+  inline val `FLINK-1_8`: "FLINK-1_8" = "FLINK-1_8"
+  inline val `FLINK-1_11`: "FLINK-1_11" = "FLINK-1_11"
 
-  @inline def values = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`)
+  inline def values: js.Array[RuntimeEnvironment] = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`)
 }
 
-@js.native
-sealed trait SnapshotStatus extends js.Any
+type SnapshotStatus = "CREATING" | "READY" | "DELETING" | "FAILED"
 object SnapshotStatus {
-  val CREATING = "CREATING".asInstanceOf[SnapshotStatus]
-  val READY = "READY".asInstanceOf[SnapshotStatus]
-  val DELETING = "DELETING".asInstanceOf[SnapshotStatus]
-  val FAILED = "FAILED".asInstanceOf[SnapshotStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val READY: "READY" = "READY"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, READY, DELETING, FAILED)
+  inline def values: js.Array[SnapshotStatus] = js.Array(CREATING, READY, DELETING, FAILED)
 }
 
-@js.native
-sealed trait UrlType extends js.Any
+type UrlType = "FLINK_DASHBOARD_URL"
 object UrlType {
-  val FLINK_DASHBOARD_URL = "FLINK_DASHBOARD_URL".asInstanceOf[UrlType]
+  inline val FLINK_DASHBOARD_URL: "FLINK_DASHBOARD_URL" = "FLINK_DASHBOARD_URL"
 
-  @inline def values = js.Array(FLINK_DASHBOARD_URL)
+  inline def values: js.Array[UrlType] = js.Array(FLINK_DASHBOARD_URL)
 }

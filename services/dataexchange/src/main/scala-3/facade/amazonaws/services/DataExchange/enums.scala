@@ -1,30 +1,27 @@
 package facade.amazonaws.services.dataexchange
 
 import scalajs._
-import scala.scalajs.js.|
 
 /** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
   */
-@js.native
-sealed trait AssetType extends js.Any
+type AssetType = "S3_SNAPSHOT"
 object AssetType {
-  val S3_SNAPSHOT = "S3_SNAPSHOT".asInstanceOf[AssetType]
+  inline val S3_SNAPSHOT: "S3_SNAPSHOT" = "S3_SNAPSHOT"
 
-  @inline def values = js.Array(S3_SNAPSHOT)
+  inline def values: js.Array[AssetType] = js.Array(S3_SNAPSHOT)
 }
 
-@js.native
-sealed trait Code extends js.Any
+type Code = "ACCESS_DENIED_EXCEPTION" | "INTERNAL_SERVER_EXCEPTION" | "MALWARE_DETECTED" | "RESOURCE_NOT_FOUND_EXCEPTION" | "SERVICE_QUOTA_EXCEEDED_EXCEPTION" | "VALIDATION_EXCEPTION" | "MALWARE_SCAN_ENCRYPTED_FILE"
 object Code {
-  val ACCESS_DENIED_EXCEPTION = "ACCESS_DENIED_EXCEPTION".asInstanceOf[Code]
-  val INTERNAL_SERVER_EXCEPTION = "INTERNAL_SERVER_EXCEPTION".asInstanceOf[Code]
-  val MALWARE_DETECTED = "MALWARE_DETECTED".asInstanceOf[Code]
-  val RESOURCE_NOT_FOUND_EXCEPTION = "RESOURCE_NOT_FOUND_EXCEPTION".asInstanceOf[Code]
-  val SERVICE_QUOTA_EXCEEDED_EXCEPTION = "SERVICE_QUOTA_EXCEEDED_EXCEPTION".asInstanceOf[Code]
-  val VALIDATION_EXCEPTION = "VALIDATION_EXCEPTION".asInstanceOf[Code]
-  val MALWARE_SCAN_ENCRYPTED_FILE = "MALWARE_SCAN_ENCRYPTED_FILE".asInstanceOf[Code]
+  inline val ACCESS_DENIED_EXCEPTION: "ACCESS_DENIED_EXCEPTION" = "ACCESS_DENIED_EXCEPTION"
+  inline val INTERNAL_SERVER_EXCEPTION: "INTERNAL_SERVER_EXCEPTION" = "INTERNAL_SERVER_EXCEPTION"
+  inline val MALWARE_DETECTED: "MALWARE_DETECTED" = "MALWARE_DETECTED"
+  inline val RESOURCE_NOT_FOUND_EXCEPTION: "RESOURCE_NOT_FOUND_EXCEPTION" = "RESOURCE_NOT_FOUND_EXCEPTION"
+  inline val SERVICE_QUOTA_EXCEEDED_EXCEPTION: "SERVICE_QUOTA_EXCEEDED_EXCEPTION" = "SERVICE_QUOTA_EXCEEDED_EXCEPTION"
+  inline val VALIDATION_EXCEPTION: "VALIDATION_EXCEPTION" = "VALIDATION_EXCEPTION"
+  inline val MALWARE_SCAN_ENCRYPTED_FILE: "MALWARE_SCAN_ENCRYPTED_FILE" = "MALWARE_SCAN_ENCRYPTED_FILE"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[Code] = js.Array(
     ACCESS_DENIED_EXCEPTION,
     INTERNAL_SERVER_EXCEPTION,
     MALWARE_DETECTED,
@@ -37,69 +34,63 @@ object Code {
 
 /** The name of the limit that was reached.
   */
-@js.native
-sealed trait JobErrorLimitName extends js.Any
+type JobErrorLimitName = "Assets per revision" | "Asset size in GB"
 object JobErrorLimitName {
-  val `Assets per revision` = "Assets per revision".asInstanceOf[JobErrorLimitName]
-  val `Asset size in GB` = "Asset size in GB".asInstanceOf[JobErrorLimitName]
+  inline val `Assets per revision`: "Assets per revision" = "Assets per revision"
+  inline val `Asset size in GB`: "Asset size in GB" = "Asset size in GB"
 
-  @inline def values = js.Array(`Assets per revision`, `Asset size in GB`)
+  inline def values: js.Array[JobErrorLimitName] = js.Array(`Assets per revision`, `Asset size in GB`)
 }
 
 /** The types of resource which the job error can apply to.
   */
-@js.native
-sealed trait JobErrorResourceTypes extends js.Any
+type JobErrorResourceTypes = "REVISION" | "ASSET"
 object JobErrorResourceTypes {
-  val REVISION = "REVISION".asInstanceOf[JobErrorResourceTypes]
-  val ASSET = "ASSET".asInstanceOf[JobErrorResourceTypes]
+  inline val REVISION: "REVISION" = "REVISION"
+  inline val ASSET: "ASSET" = "ASSET"
 
-  @inline def values = js.Array(REVISION, ASSET)
+  inline def values: js.Array[JobErrorResourceTypes] = js.Array(REVISION, ASSET)
 }
 
 /** A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set.
   */
-@js.native
-sealed trait Origin extends js.Any
+type Origin = "OWNED" | "ENTITLED"
 object Origin {
-  val OWNED = "OWNED".asInstanceOf[Origin]
-  val ENTITLED = "ENTITLED".asInstanceOf[Origin]
+  inline val OWNED: "OWNED" = "OWNED"
+  inline val ENTITLED: "ENTITLED" = "ENTITLED"
 
-  @inline def values = js.Array(OWNED, ENTITLED)
+  inline def values: js.Array[Origin] = js.Array(OWNED, ENTITLED)
 }
 
 /** The types of encryption supported in export jobs to Amazon S3.
   */
-@js.native
-sealed trait ServerSideEncryptionTypes extends js.Any
+type ServerSideEncryptionTypes = "aws:kms" | "AES256"
 object ServerSideEncryptionTypes {
-  val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryptionTypes]
-  val AES256 = "AES256".asInstanceOf[ServerSideEncryptionTypes]
+  inline val `aws:kms`: "aws:kms" = "aws:kms"
+  inline val AES256: "AES256" = "AES256"
 
-  @inline def values = js.Array(`aws:kms`, AES256)
+  inline def values: js.Array[ServerSideEncryptionTypes] = js.Array(`aws:kms`, AES256)
 }
 
-@js.native
-sealed trait State extends js.Any
+type State = "WAITING" | "IN_PROGRESS" | "ERROR" | "COMPLETED" | "CANCELLED" | "TIMED_OUT"
 object State {
-  val WAITING = "WAITING".asInstanceOf[State]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[State]
-  val ERROR = "ERROR".asInstanceOf[State]
-  val COMPLETED = "COMPLETED".asInstanceOf[State]
-  val CANCELLED = "CANCELLED".asInstanceOf[State]
-  val TIMED_OUT = "TIMED_OUT".asInstanceOf[State]
+  inline val WAITING: "WAITING" = "WAITING"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
 
-  @inline def values = js.Array(WAITING, IN_PROGRESS, ERROR, COMPLETED, CANCELLED, TIMED_OUT)
+  inline def values: js.Array[State] = js.Array(WAITING, IN_PROGRESS, ERROR, COMPLETED, CANCELLED, TIMED_OUT)
 }
 
-@js.native
-sealed trait Type extends js.Any
+type Type = "IMPORT_ASSETS_FROM_S3" | "IMPORT_ASSET_FROM_SIGNED_URL" | "EXPORT_ASSETS_TO_S3" | "EXPORT_ASSET_TO_SIGNED_URL" | "EXPORT_REVISIONS_TO_S3"
 object Type {
-  val IMPORT_ASSETS_FROM_S3 = "IMPORT_ASSETS_FROM_S3".asInstanceOf[Type]
-  val IMPORT_ASSET_FROM_SIGNED_URL = "IMPORT_ASSET_FROM_SIGNED_URL".asInstanceOf[Type]
-  val EXPORT_ASSETS_TO_S3 = "EXPORT_ASSETS_TO_S3".asInstanceOf[Type]
-  val EXPORT_ASSET_TO_SIGNED_URL = "EXPORT_ASSET_TO_SIGNED_URL".asInstanceOf[Type]
-  val EXPORT_REVISIONS_TO_S3 = "EXPORT_REVISIONS_TO_S3".asInstanceOf[Type]
+  inline val IMPORT_ASSETS_FROM_S3: "IMPORT_ASSETS_FROM_S3" = "IMPORT_ASSETS_FROM_S3"
+  inline val IMPORT_ASSET_FROM_SIGNED_URL: "IMPORT_ASSET_FROM_SIGNED_URL" = "IMPORT_ASSET_FROM_SIGNED_URL"
+  inline val EXPORT_ASSETS_TO_S3: "EXPORT_ASSETS_TO_S3" = "EXPORT_ASSETS_TO_S3"
+  inline val EXPORT_ASSET_TO_SIGNED_URL: "EXPORT_ASSET_TO_SIGNED_URL" = "EXPORT_ASSET_TO_SIGNED_URL"
+  inline val EXPORT_REVISIONS_TO_S3: "EXPORT_REVISIONS_TO_S3" = "EXPORT_REVISIONS_TO_S3"
 
-  @inline def values = js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL, EXPORT_REVISIONS_TO_S3)
+  inline def values: js.Array[Type] = js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL, EXPORT_REVISIONS_TO_S3)
 }

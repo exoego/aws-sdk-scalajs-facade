@@ -1,162 +1,145 @@
 package facade.amazonaws.services.servicediscovery
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait CustomHealthStatus extends js.Any
+type CustomHealthStatus = "HEALTHY" | "UNHEALTHY"
 object CustomHealthStatus {
-  val HEALTHY = "HEALTHY".asInstanceOf[CustomHealthStatus]
-  val UNHEALTHY = "UNHEALTHY".asInstanceOf[CustomHealthStatus]
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
 
-  @inline def values = js.Array(HEALTHY, UNHEALTHY)
+  inline def values: js.Array[CustomHealthStatus] = js.Array(HEALTHY, UNHEALTHY)
 }
 
-@js.native
-sealed trait FilterCondition extends js.Any
+type FilterCondition = "EQ" | "IN" | "BETWEEN"
 object FilterCondition {
-  val EQ = "EQ".asInstanceOf[FilterCondition]
-  val IN = "IN".asInstanceOf[FilterCondition]
-  val BETWEEN = "BETWEEN".asInstanceOf[FilterCondition]
+  inline val EQ: "EQ" = "EQ"
+  inline val IN: "IN" = "IN"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
 
-  @inline def values = js.Array(EQ, IN, BETWEEN)
+  inline def values: js.Array[FilterCondition] = js.Array(EQ, IN, BETWEEN)
 }
 
-@js.native
-sealed trait HealthCheckType extends js.Any
+type HealthCheckType = "HTTP" | "HTTPS" | "TCP"
 object HealthCheckType {
-  val HTTP = "HTTP".asInstanceOf[HealthCheckType]
-  val HTTPS = "HTTPS".asInstanceOf[HealthCheckType]
-  val TCP = "TCP".asInstanceOf[HealthCheckType]
+  inline val HTTP: "HTTP" = "HTTP"
+  inline val HTTPS: "HTTPS" = "HTTPS"
+  inline val TCP: "TCP" = "TCP"
 
-  @inline def values = js.Array(HTTP, HTTPS, TCP)
+  inline def values: js.Array[HealthCheckType] = js.Array(HTTP, HTTPS, TCP)
 }
 
-@js.native
-sealed trait HealthStatus extends js.Any
+type HealthStatus = "HEALTHY" | "UNHEALTHY" | "UNKNOWN"
 object HealthStatus {
-  val HEALTHY = "HEALTHY".asInstanceOf[HealthStatus]
-  val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
-  val UNKNOWN = "UNKNOWN".asInstanceOf[HealthStatus]
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  @inline def values = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
+  inline def values: js.Array[HealthStatus] = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
 }
 
-@js.native
-sealed trait HealthStatusFilter extends js.Any
+type HealthStatusFilter = "HEALTHY" | "UNHEALTHY" | "ALL"
 object HealthStatusFilter {
-  val HEALTHY = "HEALTHY".asInstanceOf[HealthStatusFilter]
-  val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatusFilter]
-  val ALL = "ALL".asInstanceOf[HealthStatusFilter]
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
+  inline val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(HEALTHY, UNHEALTHY, ALL)
+  inline def values: js.Array[HealthStatusFilter] = js.Array(HEALTHY, UNHEALTHY, ALL)
 }
 
-@js.native
-sealed trait NamespaceFilterName extends js.Any
+type NamespaceFilterName = "TYPE"
 object NamespaceFilterName {
-  val TYPE = "TYPE".asInstanceOf[NamespaceFilterName]
+  inline val TYPE: "TYPE" = "TYPE"
 
-  @inline def values = js.Array(TYPE)
+  inline def values: js.Array[NamespaceFilterName] = js.Array(TYPE)
 }
 
-@js.native
-sealed trait NamespaceType extends js.Any
+type NamespaceType = "DNS_PUBLIC" | "DNS_PRIVATE" | "HTTP"
 object NamespaceType {
-  val DNS_PUBLIC = "DNS_PUBLIC".asInstanceOf[NamespaceType]
-  val DNS_PRIVATE = "DNS_PRIVATE".asInstanceOf[NamespaceType]
-  val HTTP = "HTTP".asInstanceOf[NamespaceType]
+  inline val DNS_PUBLIC: "DNS_PUBLIC" = "DNS_PUBLIC"
+  inline val DNS_PRIVATE: "DNS_PRIVATE" = "DNS_PRIVATE"
+  inline val HTTP: "HTTP" = "HTTP"
 
-  @inline def values = js.Array(DNS_PUBLIC, DNS_PRIVATE, HTTP)
+  inline def values: js.Array[NamespaceType] = js.Array(DNS_PUBLIC, DNS_PRIVATE, HTTP)
 }
 
-@js.native
-sealed trait OperationFilterName extends js.Any
+type OperationFilterName = "NAMESPACE_ID" | "SERVICE_ID" | "STATUS" | "TYPE" | "UPDATE_DATE"
 object OperationFilterName {
-  val NAMESPACE_ID = "NAMESPACE_ID".asInstanceOf[OperationFilterName]
-  val SERVICE_ID = "SERVICE_ID".asInstanceOf[OperationFilterName]
-  val STATUS = "STATUS".asInstanceOf[OperationFilterName]
-  val TYPE = "TYPE".asInstanceOf[OperationFilterName]
-  val UPDATE_DATE = "UPDATE_DATE".asInstanceOf[OperationFilterName]
+  inline val NAMESPACE_ID: "NAMESPACE_ID" = "NAMESPACE_ID"
+  inline val SERVICE_ID: "SERVICE_ID" = "SERVICE_ID"
+  inline val STATUS: "STATUS" = "STATUS"
+  inline val TYPE: "TYPE" = "TYPE"
+  inline val UPDATE_DATE: "UPDATE_DATE" = "UPDATE_DATE"
 
-  @inline def values = js.Array(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE)
+  inline def values: js.Array[OperationFilterName] = js.Array(NAMESPACE_ID, SERVICE_ID, STATUS, TYPE, UPDATE_DATE)
 }
 
-@js.native
-sealed trait OperationStatus extends js.Any
+type OperationStatus = "SUBMITTED" | "PENDING" | "SUCCESS" | "FAIL"
 object OperationStatus {
-  val SUBMITTED = "SUBMITTED".asInstanceOf[OperationStatus]
-  val PENDING = "PENDING".asInstanceOf[OperationStatus]
-  val SUCCESS = "SUCCESS".asInstanceOf[OperationStatus]
-  val FAIL = "FAIL".asInstanceOf[OperationStatus]
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val FAIL: "FAIL" = "FAIL"
 
-  @inline def values = js.Array(SUBMITTED, PENDING, SUCCESS, FAIL)
+  inline def values: js.Array[OperationStatus] = js.Array(SUBMITTED, PENDING, SUCCESS, FAIL)
 }
 
-@js.native
-sealed trait OperationTargetType extends js.Any
+type OperationTargetType = "NAMESPACE" | "SERVICE" | "INSTANCE"
 object OperationTargetType {
-  val NAMESPACE = "NAMESPACE".asInstanceOf[OperationTargetType]
-  val SERVICE = "SERVICE".asInstanceOf[OperationTargetType]
-  val INSTANCE = "INSTANCE".asInstanceOf[OperationTargetType]
+  inline val NAMESPACE: "NAMESPACE" = "NAMESPACE"
+  inline val SERVICE: "SERVICE" = "SERVICE"
+  inline val INSTANCE: "INSTANCE" = "INSTANCE"
 
-  @inline def values = js.Array(NAMESPACE, SERVICE, INSTANCE)
+  inline def values: js.Array[OperationTargetType] = js.Array(NAMESPACE, SERVICE, INSTANCE)
 }
 
-@js.native
-sealed trait OperationType extends js.Any
+type OperationType = "CREATE_NAMESPACE" | "DELETE_NAMESPACE" | "UPDATE_SERVICE" | "REGISTER_INSTANCE" | "DEREGISTER_INSTANCE"
 object OperationType {
-  val CREATE_NAMESPACE = "CREATE_NAMESPACE".asInstanceOf[OperationType]
-  val DELETE_NAMESPACE = "DELETE_NAMESPACE".asInstanceOf[OperationType]
-  val UPDATE_SERVICE = "UPDATE_SERVICE".asInstanceOf[OperationType]
-  val REGISTER_INSTANCE = "REGISTER_INSTANCE".asInstanceOf[OperationType]
-  val DEREGISTER_INSTANCE = "DEREGISTER_INSTANCE".asInstanceOf[OperationType]
+  inline val CREATE_NAMESPACE: "CREATE_NAMESPACE" = "CREATE_NAMESPACE"
+  inline val DELETE_NAMESPACE: "DELETE_NAMESPACE" = "DELETE_NAMESPACE"
+  inline val UPDATE_SERVICE: "UPDATE_SERVICE" = "UPDATE_SERVICE"
+  inline val REGISTER_INSTANCE: "REGISTER_INSTANCE" = "REGISTER_INSTANCE"
+  inline val DEREGISTER_INSTANCE: "DEREGISTER_INSTANCE" = "DEREGISTER_INSTANCE"
 
-  @inline def values = js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
+  inline def values: js.Array[OperationType] = js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
 }
 
-@js.native
-sealed trait RecordType extends js.Any
+type RecordType = "SRV" | "A" | "AAAA" | "CNAME"
 object RecordType {
-  val SRV = "SRV".asInstanceOf[RecordType]
-  val A = "A".asInstanceOf[RecordType]
-  val AAAA = "AAAA".asInstanceOf[RecordType]
-  val CNAME = "CNAME".asInstanceOf[RecordType]
+  inline val SRV: "SRV" = "SRV"
+  inline val A: "A" = "A"
+  inline val AAAA: "AAAA" = "AAAA"
+  inline val CNAME: "CNAME" = "CNAME"
 
-  @inline def values = js.Array(SRV, A, AAAA, CNAME)
+  inline def values: js.Array[RecordType] = js.Array(SRV, A, AAAA, CNAME)
 }
 
-@js.native
-sealed trait RoutingPolicy extends js.Any
+type RoutingPolicy = "MULTIVALUE" | "WEIGHTED"
 object RoutingPolicy {
-  val MULTIVALUE = "MULTIVALUE".asInstanceOf[RoutingPolicy]
-  val WEIGHTED = "WEIGHTED".asInstanceOf[RoutingPolicy]
+  inline val MULTIVALUE: "MULTIVALUE" = "MULTIVALUE"
+  inline val WEIGHTED: "WEIGHTED" = "WEIGHTED"
 
-  @inline def values = js.Array(MULTIVALUE, WEIGHTED)
+  inline def values: js.Array[RoutingPolicy] = js.Array(MULTIVALUE, WEIGHTED)
 }
 
-@js.native
-sealed trait ServiceFilterName extends js.Any
+type ServiceFilterName = "NAMESPACE_ID"
 object ServiceFilterName {
-  val NAMESPACE_ID = "NAMESPACE_ID".asInstanceOf[ServiceFilterName]
+  inline val NAMESPACE_ID: "NAMESPACE_ID" = "NAMESPACE_ID"
 
-  @inline def values = js.Array(NAMESPACE_ID)
+  inline def values: js.Array[ServiceFilterName] = js.Array(NAMESPACE_ID)
 }
 
-@js.native
-sealed trait ServiceType extends js.Any
+type ServiceType = "HTTP" | "DNS_HTTP" | "DNS"
 object ServiceType {
-  val HTTP = "HTTP".asInstanceOf[ServiceType]
-  val DNS_HTTP = "DNS_HTTP".asInstanceOf[ServiceType]
-  val DNS = "DNS".asInstanceOf[ServiceType]
+  inline val HTTP: "HTTP" = "HTTP"
+  inline val DNS_HTTP: "DNS_HTTP" = "DNS_HTTP"
+  inline val DNS: "DNS" = "DNS"
 
-  @inline def values = js.Array(HTTP, DNS_HTTP, DNS)
+  inline def values: js.Array[ServiceType] = js.Array(HTTP, DNS_HTTP, DNS)
 }
 
-@js.native
-sealed trait ServiceTypeOption extends js.Any
+type ServiceTypeOption = "HTTP"
 object ServiceTypeOption {
-  val HTTP = "HTTP".asInstanceOf[ServiceTypeOption]
+  inline val HTTP: "HTTP" = "HTTP"
 
-  @inline def values = js.Array(HTTP)
+  inline def values: js.Array[ServiceTypeOption] = js.Array(HTTP)
 }

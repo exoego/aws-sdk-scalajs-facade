@@ -1,56 +1,52 @@
 package facade.amazonaws.services.sqs
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait MessageSystemAttributeName extends js.Any
+type MessageSystemAttributeName = "SenderId" | "SentTimestamp" | "ApproximateReceiveCount" | "ApproximateFirstReceiveTimestamp" | "SequenceNumber" | "MessageDeduplicationId" | "MessageGroupId" | "AWSTraceHeader"
 object MessageSystemAttributeName {
-  val SenderId = "SenderId".asInstanceOf[MessageSystemAttributeName]
-  val SentTimestamp = "SentTimestamp".asInstanceOf[MessageSystemAttributeName]
-  val ApproximateReceiveCount = "ApproximateReceiveCount".asInstanceOf[MessageSystemAttributeName]
-  val ApproximateFirstReceiveTimestamp = "ApproximateFirstReceiveTimestamp".asInstanceOf[MessageSystemAttributeName]
-  val SequenceNumber = "SequenceNumber".asInstanceOf[MessageSystemAttributeName]
-  val MessageDeduplicationId = "MessageDeduplicationId".asInstanceOf[MessageSystemAttributeName]
-  val MessageGroupId = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
-  val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
+  inline val SenderId: "SenderId" = "SenderId"
+  inline val SentTimestamp: "SentTimestamp" = "SentTimestamp"
+  inline val ApproximateReceiveCount: "ApproximateReceiveCount" = "ApproximateReceiveCount"
+  inline val ApproximateFirstReceiveTimestamp: "ApproximateFirstReceiveTimestamp" = "ApproximateFirstReceiveTimestamp"
+  inline val SequenceNumber: "SequenceNumber" = "SequenceNumber"
+  inline val MessageDeduplicationId: "MessageDeduplicationId" = "MessageDeduplicationId"
+  inline val MessageGroupId: "MessageGroupId" = "MessageGroupId"
+  inline val AWSTraceHeader: "AWSTraceHeader" = "AWSTraceHeader"
 
-  @inline def values = js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader)
+  inline def values: js.Array[MessageSystemAttributeName] = js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader)
 }
 
-@js.native
-sealed trait MessageSystemAttributeNameForSends extends js.Any
+type MessageSystemAttributeNameForSends = "AWSTraceHeader"
 object MessageSystemAttributeNameForSends {
-  val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeNameForSends]
+  inline val AWSTraceHeader: "AWSTraceHeader" = "AWSTraceHeader"
 
-  @inline def values = js.Array(AWSTraceHeader)
+  inline def values: js.Array[MessageSystemAttributeNameForSends] = js.Array(AWSTraceHeader)
 }
 
-@js.native
-sealed trait QueueAttributeName extends js.Any
+type QueueAttributeName = "All" | "Policy" | "VisibilityTimeout" | "MaximumMessageSize" | "MessageRetentionPeriod" | "ApproximateNumberOfMessages" | "ApproximateNumberOfMessagesNotVisible" | "CreatedTimestamp" | "LastModifiedTimestamp" | "QueueArn" | "ApproximateNumberOfMessagesDelayed" | "DelaySeconds" | "ReceiveMessageWaitTimeSeconds" | "RedrivePolicy" | "FifoQueue" | "ContentBasedDeduplication" | "KmsMasterKeyId" | "KmsDataKeyReusePeriodSeconds" | "DeduplicationScope" | "FifoThroughputLimit"
 object QueueAttributeName {
-  val All = "All".asInstanceOf[QueueAttributeName]
-  val Policy = "Policy".asInstanceOf[QueueAttributeName]
-  val VisibilityTimeout = "VisibilityTimeout".asInstanceOf[QueueAttributeName]
-  val MaximumMessageSize = "MaximumMessageSize".asInstanceOf[QueueAttributeName]
-  val MessageRetentionPeriod = "MessageRetentionPeriod".asInstanceOf[QueueAttributeName]
-  val ApproximateNumberOfMessages = "ApproximateNumberOfMessages".asInstanceOf[QueueAttributeName]
-  val ApproximateNumberOfMessagesNotVisible = "ApproximateNumberOfMessagesNotVisible".asInstanceOf[QueueAttributeName]
-  val CreatedTimestamp = "CreatedTimestamp".asInstanceOf[QueueAttributeName]
-  val LastModifiedTimestamp = "LastModifiedTimestamp".asInstanceOf[QueueAttributeName]
-  val QueueArn = "QueueArn".asInstanceOf[QueueAttributeName]
-  val ApproximateNumberOfMessagesDelayed = "ApproximateNumberOfMessagesDelayed".asInstanceOf[QueueAttributeName]
-  val DelaySeconds = "DelaySeconds".asInstanceOf[QueueAttributeName]
-  val ReceiveMessageWaitTimeSeconds = "ReceiveMessageWaitTimeSeconds".asInstanceOf[QueueAttributeName]
-  val RedrivePolicy = "RedrivePolicy".asInstanceOf[QueueAttributeName]
-  val FifoQueue = "FifoQueue".asInstanceOf[QueueAttributeName]
-  val ContentBasedDeduplication = "ContentBasedDeduplication".asInstanceOf[QueueAttributeName]
-  val KmsMasterKeyId = "KmsMasterKeyId".asInstanceOf[QueueAttributeName]
-  val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
-  val DeduplicationScope = "DeduplicationScope".asInstanceOf[QueueAttributeName]
-  val FifoThroughputLimit = "FifoThroughputLimit".asInstanceOf[QueueAttributeName]
+  inline val All: "All" = "All"
+  inline val Policy: "Policy" = "Policy"
+  inline val VisibilityTimeout: "VisibilityTimeout" = "VisibilityTimeout"
+  inline val MaximumMessageSize: "MaximumMessageSize" = "MaximumMessageSize"
+  inline val MessageRetentionPeriod: "MessageRetentionPeriod" = "MessageRetentionPeriod"
+  inline val ApproximateNumberOfMessages: "ApproximateNumberOfMessages" = "ApproximateNumberOfMessages"
+  inline val ApproximateNumberOfMessagesNotVisible: "ApproximateNumberOfMessagesNotVisible" = "ApproximateNumberOfMessagesNotVisible"
+  inline val CreatedTimestamp: "CreatedTimestamp" = "CreatedTimestamp"
+  inline val LastModifiedTimestamp: "LastModifiedTimestamp" = "LastModifiedTimestamp"
+  inline val QueueArn: "QueueArn" = "QueueArn"
+  inline val ApproximateNumberOfMessagesDelayed: "ApproximateNumberOfMessagesDelayed" = "ApproximateNumberOfMessagesDelayed"
+  inline val DelaySeconds: "DelaySeconds" = "DelaySeconds"
+  inline val ReceiveMessageWaitTimeSeconds: "ReceiveMessageWaitTimeSeconds" = "ReceiveMessageWaitTimeSeconds"
+  inline val RedrivePolicy: "RedrivePolicy" = "RedrivePolicy"
+  inline val FifoQueue: "FifoQueue" = "FifoQueue"
+  inline val ContentBasedDeduplication: "ContentBasedDeduplication" = "ContentBasedDeduplication"
+  inline val KmsMasterKeyId: "KmsMasterKeyId" = "KmsMasterKeyId"
+  inline val KmsDataKeyReusePeriodSeconds: "KmsDataKeyReusePeriodSeconds" = "KmsDataKeyReusePeriodSeconds"
+  inline val DeduplicationScope: "DeduplicationScope" = "DeduplicationScope"
+  inline val FifoThroughputLimit: "FifoThroughputLimit" = "FifoThroughputLimit"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[QueueAttributeName] = js.Array(
     All,
     Policy,
     VisibilityTimeout,

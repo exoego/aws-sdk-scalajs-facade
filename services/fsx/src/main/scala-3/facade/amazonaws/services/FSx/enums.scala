@@ -1,227 +1,206 @@
 package facade.amazonaws.services.fsx
 
 import scalajs._
-import scala.scalajs.js.|
 
 /** Describes the type of administrative action, as follows: * <code>FILE_SYSTEM_UPDATE</code> - A file system update administrative action initiated by the user from the Amazon FSx console, API (UpdateFileSystem), or CLI (update-file-system). * <code>STORAGE_OPTIMIZATION</code> - Once the <code>FILE_SYSTEM_UPDATE</code> task to increase a file system's storage capacity completes successfully, a <code>STORAGE_OPTIMIZATION</code> task starts. <li> For Windows, storage optimization is the process of migrating the file system data to the new, larger disks. * For Lustre, storage optimization consists of rebalancing the data across the existing and newly added file servers. You can track the storage optimization progress using the <code>ProgressPercent</code> property. When <code>STORAGE_OPTIMIZATION</code> completes successfully, the parent <code>FILE_SYSTEM_UPDATE</code> action status changes to <code>COMPLETED</code>. For more information, see
   * [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html|Managing storage capacity]] in the <i>Amazon FSx for Windows File Server User Guide</i> and [[https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html|Managing storage and throughput capacity]] in the <i>Amazon FSx for Lustre User Guide</i>. </li> * <code>FILE_SYSTEM_ALIAS_ASSOCIATION</code> - A file system update to associate a new DNS alias with the file system. For more information, see . * <code>FILE_SYSTEM_ALIAS_DISASSOCIATION</code> - A file system update to disassociate a DNS alias from the file system. For more information, see .
   */
-@js.native
-sealed trait AdministrativeActionType extends js.Any
+type AdministrativeActionType = "FILE_SYSTEM_UPDATE" | "STORAGE_OPTIMIZATION" | "FILE_SYSTEM_ALIAS_ASSOCIATION" | "FILE_SYSTEM_ALIAS_DISASSOCIATION"
 object AdministrativeActionType {
-  val FILE_SYSTEM_UPDATE = "FILE_SYSTEM_UPDATE".asInstanceOf[AdministrativeActionType]
-  val STORAGE_OPTIMIZATION = "STORAGE_OPTIMIZATION".asInstanceOf[AdministrativeActionType]
-  val FILE_SYSTEM_ALIAS_ASSOCIATION = "FILE_SYSTEM_ALIAS_ASSOCIATION".asInstanceOf[AdministrativeActionType]
-  val FILE_SYSTEM_ALIAS_DISASSOCIATION = "FILE_SYSTEM_ALIAS_DISASSOCIATION".asInstanceOf[AdministrativeActionType]
+  inline val FILE_SYSTEM_UPDATE: "FILE_SYSTEM_UPDATE" = "FILE_SYSTEM_UPDATE"
+  inline val STORAGE_OPTIMIZATION: "STORAGE_OPTIMIZATION" = "STORAGE_OPTIMIZATION"
+  inline val FILE_SYSTEM_ALIAS_ASSOCIATION: "FILE_SYSTEM_ALIAS_ASSOCIATION" = "FILE_SYSTEM_ALIAS_ASSOCIATION"
+  inline val FILE_SYSTEM_ALIAS_DISASSOCIATION: "FILE_SYSTEM_ALIAS_DISASSOCIATION" = "FILE_SYSTEM_ALIAS_DISASSOCIATION"
 
-  @inline def values = js.Array(FILE_SYSTEM_UPDATE, STORAGE_OPTIMIZATION, FILE_SYSTEM_ALIAS_ASSOCIATION, FILE_SYSTEM_ALIAS_DISASSOCIATION)
+  inline def values: js.Array[AdministrativeActionType] = js.Array(FILE_SYSTEM_UPDATE, STORAGE_OPTIMIZATION, FILE_SYSTEM_ALIAS_ASSOCIATION, FILE_SYSTEM_ALIAS_DISASSOCIATION)
 }
 
-@js.native
-sealed trait AliasLifecycle extends js.Any
+type AliasLifecycle = "AVAILABLE" | "CREATING" | "DELETING" | "CREATE_FAILED" | "DELETE_FAILED"
 object AliasLifecycle {
-  val AVAILABLE = "AVAILABLE".asInstanceOf[AliasLifecycle]
-  val CREATING = "CREATING".asInstanceOf[AliasLifecycle]
-  val DELETING = "DELETING".asInstanceOf[AliasLifecycle]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[AliasLifecycle]
-  val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[AliasLifecycle]
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val DELETE_FAILED: "DELETE_FAILED" = "DELETE_FAILED"
 
-  @inline def values = js.Array(AVAILABLE, CREATING, DELETING, CREATE_FAILED, DELETE_FAILED)
+  inline def values: js.Array[AliasLifecycle] = js.Array(AVAILABLE, CREATING, DELETING, CREATE_FAILED, DELETE_FAILED)
 }
 
-@js.native
-sealed trait AutoImportPolicyType extends js.Any
+type AutoImportPolicyType = "NONE" | "NEW" | "NEW_CHANGED"
 object AutoImportPolicyType {
-  val NONE = "NONE".asInstanceOf[AutoImportPolicyType]
-  val NEW = "NEW".asInstanceOf[AutoImportPolicyType]
-  val NEW_CHANGED = "NEW_CHANGED".asInstanceOf[AutoImportPolicyType]
+  inline val NONE: "NONE" = "NONE"
+  inline val NEW: "NEW" = "NEW"
+  inline val NEW_CHANGED: "NEW_CHANGED" = "NEW_CHANGED"
 
-  @inline def values = js.Array(NONE, NEW, NEW_CHANGED)
+  inline def values: js.Array[AutoImportPolicyType] = js.Array(NONE, NEW, NEW_CHANGED)
 }
 
 /** The lifecycle status of the backup. * <code>AVAILABLE</code> - The backup is fully available. * <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx has not started creating the backup. * <code>CREATING</code> - Amazon FSx is creating the new user-intiated backup * <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only; Amazon FSx is backing up the file system. * <code>COPYING</code> - Amazon FSx is copying the backup. * <code>DELETED</code> - Amazon FSx deleted the backup and it is no longer available. * <code>FAILED</code> - Amazon FSx could not complete the backup.
   */
-@js.native
-sealed trait BackupLifecycle extends js.Any
+type BackupLifecycle = "AVAILABLE" | "CREATING" | "TRANSFERRING" | "DELETED" | "FAILED" | "PENDING" | "COPYING"
 object BackupLifecycle {
-  val AVAILABLE = "AVAILABLE".asInstanceOf[BackupLifecycle]
-  val CREATING = "CREATING".asInstanceOf[BackupLifecycle]
-  val TRANSFERRING = "TRANSFERRING".asInstanceOf[BackupLifecycle]
-  val DELETED = "DELETED".asInstanceOf[BackupLifecycle]
-  val FAILED = "FAILED".asInstanceOf[BackupLifecycle]
-  val PENDING = "PENDING".asInstanceOf[BackupLifecycle]
-  val COPYING = "COPYING".asInstanceOf[BackupLifecycle]
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val TRANSFERRING: "TRANSFERRING" = "TRANSFERRING"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val COPYING: "COPYING" = "COPYING"
 
-  @inline def values = js.Array(AVAILABLE, CREATING, TRANSFERRING, DELETED, FAILED, PENDING, COPYING)
+  inline def values: js.Array[BackupLifecycle] = js.Array(AVAILABLE, CREATING, TRANSFERRING, DELETED, FAILED, PENDING, COPYING)
 }
 
 /** The type of the backup.
   */
-@js.native
-sealed trait BackupType extends js.Any
+type BackupType = "AUTOMATIC" | "USER_INITIATED" | "AWS_BACKUP"
 object BackupType {
-  val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackupType]
-  val USER_INITIATED = "USER_INITIATED".asInstanceOf[BackupType]
-  val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupType]
+  inline val AUTOMATIC: "AUTOMATIC" = "AUTOMATIC"
+  inline val USER_INITIATED: "USER_INITIATED" = "USER_INITIATED"
+  inline val AWS_BACKUP: "AWS_BACKUP" = "AWS_BACKUP"
 
-  @inline def values = js.Array(AUTOMATIC, USER_INITIATED, AWS_BACKUP)
+  inline def values: js.Array[BackupType] = js.Array(AUTOMATIC, USER_INITIATED, AWS_BACKUP)
 }
 
-@js.native
-sealed trait DataRepositoryLifecycle extends js.Any
+type DataRepositoryLifecycle = "CREATING" | "AVAILABLE" | "MISCONFIGURED" | "UPDATING" | "DELETING"
 object DataRepositoryLifecycle {
-  val CREATING = "CREATING".asInstanceOf[DataRepositoryLifecycle]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[DataRepositoryLifecycle]
-  val MISCONFIGURED = "MISCONFIGURED".asInstanceOf[DataRepositoryLifecycle]
-  val UPDATING = "UPDATING".asInstanceOf[DataRepositoryLifecycle]
-  val DELETING = "DELETING".asInstanceOf[DataRepositoryLifecycle]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val MISCONFIGURED: "MISCONFIGURED" = "MISCONFIGURED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(CREATING, AVAILABLE, MISCONFIGURED, UPDATING, DELETING)
+  inline def values: js.Array[DataRepositoryLifecycle] = js.Array(CREATING, AVAILABLE, MISCONFIGURED, UPDATING, DELETING)
 }
 
-@js.native
-sealed trait DataRepositoryTaskFilterName extends js.Any
+type DataRepositoryTaskFilterName = "file-system-id" | "task-lifecycle"
 object DataRepositoryTaskFilterName {
-  val `file-system-id` = "file-system-id".asInstanceOf[DataRepositoryTaskFilterName]
-  val `task-lifecycle` = "task-lifecycle".asInstanceOf[DataRepositoryTaskFilterName]
+  inline val `file-system-id`: "file-system-id" = "file-system-id"
+  inline val `task-lifecycle`: "task-lifecycle" = "task-lifecycle"
 
-  @inline def values = js.Array(`file-system-id`, `task-lifecycle`)
+  inline def values: js.Array[DataRepositoryTaskFilterName] = js.Array(`file-system-id`, `task-lifecycle`)
 }
 
-@js.native
-sealed trait DataRepositoryTaskLifecycle extends js.Any
+type DataRepositoryTaskLifecycle = "PENDING" | "EXECUTING" | "FAILED" | "SUCCEEDED" | "CANCELED" | "CANCELING"
 object DataRepositoryTaskLifecycle {
-  val PENDING = "PENDING".asInstanceOf[DataRepositoryTaskLifecycle]
-  val EXECUTING = "EXECUTING".asInstanceOf[DataRepositoryTaskLifecycle]
-  val FAILED = "FAILED".asInstanceOf[DataRepositoryTaskLifecycle]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[DataRepositoryTaskLifecycle]
-  val CANCELED = "CANCELED".asInstanceOf[DataRepositoryTaskLifecycle]
-  val CANCELING = "CANCELING".asInstanceOf[DataRepositoryTaskLifecycle]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val EXECUTING: "EXECUTING" = "EXECUTING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val CANCELED: "CANCELED" = "CANCELED"
+  inline val CANCELING: "CANCELING" = "CANCELING"
 
-  @inline def values = js.Array(PENDING, EXECUTING, FAILED, SUCCEEDED, CANCELED, CANCELING)
+  inline def values: js.Array[DataRepositoryTaskLifecycle] = js.Array(PENDING, EXECUTING, FAILED, SUCCEEDED, CANCELED, CANCELING)
 }
 
-@js.native
-sealed trait DataRepositoryTaskType extends js.Any
+type DataRepositoryTaskType = "EXPORT_TO_REPOSITORY"
 object DataRepositoryTaskType {
-  val EXPORT_TO_REPOSITORY = "EXPORT_TO_REPOSITORY".asInstanceOf[DataRepositoryTaskType]
+  inline val EXPORT_TO_REPOSITORY: "EXPORT_TO_REPOSITORY" = "EXPORT_TO_REPOSITORY"
 
-  @inline def values = js.Array(EXPORT_TO_REPOSITORY)
+  inline def values: js.Array[DataRepositoryTaskType] = js.Array(EXPORT_TO_REPOSITORY)
 }
 
-@js.native
-sealed trait DriveCacheType extends js.Any
+type DriveCacheType = "NONE" | "READ"
 object DriveCacheType {
-  val NONE = "NONE".asInstanceOf[DriveCacheType]
-  val READ = "READ".asInstanceOf[DriveCacheType]
+  inline val NONE: "NONE" = "NONE"
+  inline val READ: "READ" = "READ"
 
-  @inline def values = js.Array(NONE, READ)
+  inline def values: js.Array[DriveCacheType] = js.Array(NONE, READ)
 }
 
 /** The lifecycle status of the file system.
   */
-@js.native
-sealed trait FileSystemLifecycle extends js.Any
+type FileSystemLifecycle = "AVAILABLE" | "CREATING" | "FAILED" | "DELETING" | "MISCONFIGURED" | "UPDATING"
 object FileSystemLifecycle {
-  val AVAILABLE = "AVAILABLE".asInstanceOf[FileSystemLifecycle]
-  val CREATING = "CREATING".asInstanceOf[FileSystemLifecycle]
-  val FAILED = "FAILED".asInstanceOf[FileSystemLifecycle]
-  val DELETING = "DELETING".asInstanceOf[FileSystemLifecycle]
-  val MISCONFIGURED = "MISCONFIGURED".asInstanceOf[FileSystemLifecycle]
-  val UPDATING = "UPDATING".asInstanceOf[FileSystemLifecycle]
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val MISCONFIGURED: "MISCONFIGURED" = "MISCONFIGURED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING)
+  inline def values: js.Array[FileSystemLifecycle] = js.Array(AVAILABLE, CREATING, FAILED, DELETING, MISCONFIGURED, UPDATING)
 }
 
 /** An enumeration specifying the currently ongoing maintenance operation.
   */
-@js.native
-sealed trait FileSystemMaintenanceOperation extends js.Any
+type FileSystemMaintenanceOperation = "PATCHING" | "BACKING_UP"
 object FileSystemMaintenanceOperation {
-  val PATCHING = "PATCHING".asInstanceOf[FileSystemMaintenanceOperation]
-  val BACKING_UP = "BACKING_UP".asInstanceOf[FileSystemMaintenanceOperation]
+  inline val PATCHING: "PATCHING" = "PATCHING"
+  inline val BACKING_UP: "BACKING_UP" = "BACKING_UP"
 
-  @inline def values = js.Array(PATCHING, BACKING_UP)
+  inline def values: js.Array[FileSystemMaintenanceOperation] = js.Array(PATCHING, BACKING_UP)
 }
 
 /** The type of file system.
   */
-@js.native
-sealed trait FileSystemType extends js.Any
+type FileSystemType = "WINDOWS" | "LUSTRE"
 object FileSystemType {
-  val WINDOWS = "WINDOWS".asInstanceOf[FileSystemType]
-  val LUSTRE = "LUSTRE".asInstanceOf[FileSystemType]
+  inline val WINDOWS: "WINDOWS" = "WINDOWS"
+  inline val LUSTRE: "LUSTRE" = "LUSTRE"
 
-  @inline def values = js.Array(WINDOWS, LUSTRE)
+  inline def values: js.Array[FileSystemType] = js.Array(WINDOWS, LUSTRE)
 }
 
 /** The name for a filter.
   */
-@js.native
-sealed trait FilterName extends js.Any
+type FilterName = "file-system-id" | "backup-type" | "file-system-type"
 object FilterName {
-  val `file-system-id` = "file-system-id".asInstanceOf[FilterName]
-  val `backup-type` = "backup-type".asInstanceOf[FilterName]
-  val `file-system-type` = "file-system-type".asInstanceOf[FilterName]
+  inline val `file-system-id`: "file-system-id" = "file-system-id"
+  inline val `backup-type`: "backup-type" = "backup-type"
+  inline val `file-system-type`: "file-system-type" = "file-system-type"
 
-  @inline def values = js.Array(`file-system-id`, `backup-type`, `file-system-type`)
+  inline def values: js.Array[FilterName] = js.Array(`file-system-id`, `backup-type`, `file-system-type`)
 }
 
-@js.native
-sealed trait LustreDeploymentType extends js.Any
+type LustreDeploymentType = "SCRATCH_1" | "SCRATCH_2" | "PERSISTENT_1"
 object LustreDeploymentType {
-  val SCRATCH_1 = "SCRATCH_1".asInstanceOf[LustreDeploymentType]
-  val SCRATCH_2 = "SCRATCH_2".asInstanceOf[LustreDeploymentType]
-  val PERSISTENT_1 = "PERSISTENT_1".asInstanceOf[LustreDeploymentType]
+  inline val SCRATCH_1: "SCRATCH_1" = "SCRATCH_1"
+  inline val SCRATCH_2: "SCRATCH_2" = "SCRATCH_2"
+  inline val PERSISTENT_1: "PERSISTENT_1" = "PERSISTENT_1"
 
-  @inline def values = js.Array(SCRATCH_1, SCRATCH_2, PERSISTENT_1)
+  inline def values: js.Array[LustreDeploymentType] = js.Array(SCRATCH_1, SCRATCH_2, PERSISTENT_1)
 }
 
-@js.native
-sealed trait ReportFormat extends js.Any
+type ReportFormat = "REPORT_CSV_20191124"
 object ReportFormat {
-  val REPORT_CSV_20191124 = "REPORT_CSV_20191124".asInstanceOf[ReportFormat]
+  inline val REPORT_CSV_20191124: "REPORT_CSV_20191124" = "REPORT_CSV_20191124"
 
-  @inline def values = js.Array(REPORT_CSV_20191124)
+  inline def values: js.Array[ReportFormat] = js.Array(REPORT_CSV_20191124)
 }
 
-@js.native
-sealed trait ReportScope extends js.Any
+type ReportScope = "FAILED_FILES_ONLY"
 object ReportScope {
-  val FAILED_FILES_ONLY = "FAILED_FILES_ONLY".asInstanceOf[ReportScope]
+  inline val FAILED_FILES_ONLY: "FAILED_FILES_ONLY" = "FAILED_FILES_ONLY"
 
-  @inline def values = js.Array(FAILED_FILES_ONLY)
+  inline def values: js.Array[ReportScope] = js.Array(FAILED_FILES_ONLY)
 }
 
-@js.native
-sealed trait Status extends js.Any
+type Status = "FAILED" | "IN_PROGRESS" | "PENDING" | "COMPLETED" | "UPDATED_OPTIMIZING"
 object Status {
-  val FAILED = "FAILED".asInstanceOf[Status]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[Status]
-  val PENDING = "PENDING".asInstanceOf[Status]
-  val COMPLETED = "COMPLETED".asInstanceOf[Status]
-  val UPDATED_OPTIMIZING = "UPDATED_OPTIMIZING".asInstanceOf[Status]
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val UPDATED_OPTIMIZING: "UPDATED_OPTIMIZING" = "UPDATED_OPTIMIZING"
 
-  @inline def values = js.Array(FAILED, IN_PROGRESS, PENDING, COMPLETED, UPDATED_OPTIMIZING)
+  inline def values: js.Array[Status] = js.Array(FAILED, IN_PROGRESS, PENDING, COMPLETED, UPDATED_OPTIMIZING)
 }
 
 /** The storage type for your Amazon FSx file system.
   */
-@js.native
-sealed trait StorageType extends js.Any
+type StorageType = "SSD" | "HDD"
 object StorageType {
-  val SSD = "SSD".asInstanceOf[StorageType]
-  val HDD = "HDD".asInstanceOf[StorageType]
+  inline val SSD: "SSD" = "SSD"
+  inline val HDD: "HDD" = "HDD"
 
-  @inline def values = js.Array(SSD, HDD)
+  inline def values: js.Array[StorageType] = js.Array(SSD, HDD)
 }
 
-@js.native
-sealed trait WindowsDeploymentType extends js.Any
+type WindowsDeploymentType = "MULTI_AZ_1" | "SINGLE_AZ_1" | "SINGLE_AZ_2"
 object WindowsDeploymentType {
-  val MULTI_AZ_1 = "MULTI_AZ_1".asInstanceOf[WindowsDeploymentType]
-  val SINGLE_AZ_1 = "SINGLE_AZ_1".asInstanceOf[WindowsDeploymentType]
-  val SINGLE_AZ_2 = "SINGLE_AZ_2".asInstanceOf[WindowsDeploymentType]
+  inline val MULTI_AZ_1: "MULTI_AZ_1" = "MULTI_AZ_1"
+  inline val SINGLE_AZ_1: "SINGLE_AZ_1" = "SINGLE_AZ_1"
+  inline val SINGLE_AZ_2: "SINGLE_AZ_2" = "SINGLE_AZ_2"
 
-  @inline def values = js.Array(MULTI_AZ_1, SINGLE_AZ_1, SINGLE_AZ_2)
+  inline def values: js.Array[WindowsDeploymentType] = js.Array(MULTI_AZ_1, SINGLE_AZ_1, SINGLE_AZ_2)
 }

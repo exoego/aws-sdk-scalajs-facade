@@ -22,3 +22,4 @@ object ProviderType {
 
   @inline def values = js.Array(Bitbucket, GitHub, GitHubEnterpriseServer)
 }
+

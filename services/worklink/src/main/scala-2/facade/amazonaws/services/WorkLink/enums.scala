@@ -55,3 +55,4 @@ object IdentityProviderType {
 
   @inline def values = js.Array(SAML)
 }
+

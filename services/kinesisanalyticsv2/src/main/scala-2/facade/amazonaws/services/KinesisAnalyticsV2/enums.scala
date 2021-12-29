@@ -116,3 +116,4 @@ object UrlType {
 
   @inline def values = js.Array(FLINK_DASHBOARD_URL)
 }
+

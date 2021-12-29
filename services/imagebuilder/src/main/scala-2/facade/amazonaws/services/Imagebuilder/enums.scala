@@ -113,3 +113,4 @@ object Platform {
 
   @inline def values = js.Array(Windows, Linux)
 }
+

@@ -223,3 +223,4 @@ object UsageLimitPeriod {
 
   @inline def values = js.Array(daily, weekly, monthly)
 }
+

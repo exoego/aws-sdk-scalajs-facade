@@ -80,18 +80,7 @@ object LastUpdateStatusReasonCode {
   val ImageAccessDenied = "ImageAccessDenied".asInstanceOf[LastUpdateStatusReasonCode]
   val InvalidImage = "InvalidImage".asInstanceOf[LastUpdateStatusReasonCode]
 
-  @inline def values = js.Array(
-    EniLimitExceeded,
-    InsufficientRolePermissions,
-    InvalidConfiguration,
-    InternalError,
-    SubnetOutOfIPAddresses,
-    InvalidSubnet,
-    InvalidSecurityGroup,
-    ImageDeleted,
-    ImageAccessDenied,
-    InvalidImage
-  )
+  @inline def values = js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup, ImageDeleted, ImageAccessDenied, InvalidImage)
 }
 
 @js.native
@@ -150,32 +139,7 @@ object Runtime {
   val provided = "provided".asInstanceOf[Runtime]
   val `provided.al2` = "provided.al2".asInstanceOf[Runtime]
 
-  @inline def values = js.Array(
-    nodejs,
-    `nodejs4.3`,
-    `nodejs6.10`,
-    `nodejs8.10`,
-    `nodejs10.x`,
-    `nodejs12.x`,
-    `nodejs14.x`,
-    java8,
-    `java8.al2`,
-    java11,
-    `python2.7`,
-    `python3.6`,
-    `python3.7`,
-    `python3.8`,
-    `dotnetcore1.0`,
-    `dotnetcore2.0`,
-    `dotnetcore2.1`,
-    `dotnetcore3.1`,
-    `nodejs4.3-edge`,
-    `go1.x`,
-    `ruby2.5`,
-    `ruby2.7`,
-    provided,
-    `provided.al2`
-  )
+  @inline def values = js.Array(nodejs, `nodejs4.3`, `nodejs6.10`, `nodejs8.10`, `nodejs10.x`, `nodejs12.x`, `nodejs14.x`, java8, `java8.al2`, java11, `python2.7`, `python3.6`, `python3.7`, `python3.8`, `dotnetcore1.0`, `dotnetcore2.0`, `dotnetcore2.1`, `dotnetcore3.1`, `nodejs4.3-edge`, `go1.x`, `ruby2.5`, `ruby2.7`, provided, `provided.al2`)
 }
 
 @js.native
@@ -218,21 +182,7 @@ object StateReasonCode {
   val ImageAccessDenied = "ImageAccessDenied".asInstanceOf[StateReasonCode]
   val InvalidImage = "InvalidImage".asInstanceOf[StateReasonCode]
 
-  @inline def values = js.Array(
-    Idle,
-    Creating,
-    Restoring,
-    EniLimitExceeded,
-    InsufficientRolePermissions,
-    InvalidConfiguration,
-    InternalError,
-    SubnetOutOfIPAddresses,
-    InvalidSubnet,
-    InvalidSecurityGroup,
-    ImageDeleted,
-    ImageAccessDenied,
-    InvalidImage
-  )
+  @inline def values = js.Array(Idle, Creating, Restoring, EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup, ImageDeleted, ImageAccessDenied, InvalidImage)
 }
 
 @js.native
@@ -243,3 +193,4 @@ object TracingMode {
 
   @inline def values = js.Array(Active, PassThrough)
 }
+

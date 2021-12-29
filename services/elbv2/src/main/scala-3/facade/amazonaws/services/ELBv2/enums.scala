@@ -1,119 +1,108 @@
 package facade.amazonaws.services.elbv2
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ActionTypeEnum extends js.Any
+type ActionTypeEnum = "forward" | "authenticate-oidc" | "authenticate-cognito" | "redirect" | "fixed-response"
 object ActionTypeEnum {
-  val forward = "forward".asInstanceOf[ActionTypeEnum]
-  val `authenticate-oidc` = "authenticate-oidc".asInstanceOf[ActionTypeEnum]
-  val `authenticate-cognito` = "authenticate-cognito".asInstanceOf[ActionTypeEnum]
-  val redirect = "redirect".asInstanceOf[ActionTypeEnum]
-  val `fixed-response` = "fixed-response".asInstanceOf[ActionTypeEnum]
+  inline val forward: "forward" = "forward"
+  inline val `authenticate-oidc`: "authenticate-oidc" = "authenticate-oidc"
+  inline val `authenticate-cognito`: "authenticate-cognito" = "authenticate-cognito"
+  inline val redirect: "redirect" = "redirect"
+  inline val `fixed-response`: "fixed-response" = "fixed-response"
 
-  @inline def values = js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`)
+  inline def values: js.Array[ActionTypeEnum] = js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`)
 }
 
-@js.native
-sealed trait AuthenticateCognitoActionConditionalBehaviorEnum extends js.Any
+type AuthenticateCognitoActionConditionalBehaviorEnum = "deny" | "allow" | "authenticate"
 object AuthenticateCognitoActionConditionalBehaviorEnum {
-  val deny = "deny".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
-  val allow = "allow".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
-  val authenticate = "authenticate".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
+  inline val deny: "deny" = "deny"
+  inline val allow: "allow" = "allow"
+  inline val authenticate: "authenticate" = "authenticate"
 
-  @inline def values = js.Array(deny, allow, authenticate)
+  inline def values: js.Array[AuthenticateCognitoActionConditionalBehaviorEnum] = js.Array(deny, allow, authenticate)
 }
 
-@js.native
-sealed trait AuthenticateOidcActionConditionalBehaviorEnum extends js.Any
+type AuthenticateOidcActionConditionalBehaviorEnum = "deny" | "allow" | "authenticate"
 object AuthenticateOidcActionConditionalBehaviorEnum {
-  val deny = "deny".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
-  val allow = "allow".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
-  val authenticate = "authenticate".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
+  inline val deny: "deny" = "deny"
+  inline val allow: "allow" = "allow"
+  inline val authenticate: "authenticate" = "authenticate"
 
-  @inline def values = js.Array(deny, allow, authenticate)
+  inline def values: js.Array[AuthenticateOidcActionConditionalBehaviorEnum] = js.Array(deny, allow, authenticate)
 }
 
-@js.native
-sealed trait IpAddressType extends js.Any
+type IpAddressType = "ipv4" | "dualstack"
 object IpAddressType {
-  val ipv4 = "ipv4".asInstanceOf[IpAddressType]
-  val dualstack = "dualstack".asInstanceOf[IpAddressType]
+  inline val ipv4: "ipv4" = "ipv4"
+  inline val dualstack: "dualstack" = "dualstack"
 
-  @inline def values = js.Array(ipv4, dualstack)
+  inline def values: js.Array[IpAddressType] = js.Array(ipv4, dualstack)
 }
 
-@js.native
-sealed trait LoadBalancerSchemeEnum extends js.Any
+type LoadBalancerSchemeEnum = "internet-facing" | "internal"
 object LoadBalancerSchemeEnum {
-  val `internet-facing` = "internet-facing".asInstanceOf[LoadBalancerSchemeEnum]
-  val internal = "internal".asInstanceOf[LoadBalancerSchemeEnum]
+  inline val `internet-facing`: "internet-facing" = "internet-facing"
+  inline val internal: "internal" = "internal"
 
-  @inline def values = js.Array(`internet-facing`, internal)
+  inline def values: js.Array[LoadBalancerSchemeEnum] = js.Array(`internet-facing`, internal)
 }
 
-@js.native
-sealed trait LoadBalancerStateEnum extends js.Any
+type LoadBalancerStateEnum = "active" | "provisioning" | "active_impaired" | "failed"
 object LoadBalancerStateEnum {
-  val active = "active".asInstanceOf[LoadBalancerStateEnum]
-  val provisioning = "provisioning".asInstanceOf[LoadBalancerStateEnum]
-  val active_impaired = "active_impaired".asInstanceOf[LoadBalancerStateEnum]
-  val failed = "failed".asInstanceOf[LoadBalancerStateEnum]
+  inline val active: "active" = "active"
+  inline val provisioning: "provisioning" = "provisioning"
+  inline val active_impaired: "active_impaired" = "active_impaired"
+  inline val failed: "failed" = "failed"
 
-  @inline def values = js.Array(active, provisioning, active_impaired, failed)
+  inline def values: js.Array[LoadBalancerStateEnum] = js.Array(active, provisioning, active_impaired, failed)
 }
 
-@js.native
-sealed trait LoadBalancerTypeEnum extends js.Any
+type LoadBalancerTypeEnum = "application" | "network" | "gateway"
 object LoadBalancerTypeEnum {
-  val application = "application".asInstanceOf[LoadBalancerTypeEnum]
-  val network = "network".asInstanceOf[LoadBalancerTypeEnum]
-  val gateway = "gateway".asInstanceOf[LoadBalancerTypeEnum]
+  inline val application: "application" = "application"
+  inline val network: "network" = "network"
+  inline val gateway: "gateway" = "gateway"
 
-  @inline def values = js.Array(application, network, gateway)
+  inline def values: js.Array[LoadBalancerTypeEnum] = js.Array(application, network, gateway)
 }
 
-@js.native
-sealed trait ProtocolEnum extends js.Any
+type ProtocolEnum = "HTTP" | "HTTPS" | "TCP" | "TLS" | "UDP" | "TCP_UDP" | "GENEVE"
 object ProtocolEnum {
-  val HTTP = "HTTP".asInstanceOf[ProtocolEnum]
-  val HTTPS = "HTTPS".asInstanceOf[ProtocolEnum]
-  val TCP = "TCP".asInstanceOf[ProtocolEnum]
-  val TLS = "TLS".asInstanceOf[ProtocolEnum]
-  val UDP = "UDP".asInstanceOf[ProtocolEnum]
-  val TCP_UDP = "TCP_UDP".asInstanceOf[ProtocolEnum]
-  val GENEVE = "GENEVE".asInstanceOf[ProtocolEnum]
+  inline val HTTP: "HTTP" = "HTTP"
+  inline val HTTPS: "HTTPS" = "HTTPS"
+  inline val TCP: "TCP" = "TCP"
+  inline val TLS: "TLS" = "TLS"
+  inline val UDP: "UDP" = "UDP"
+  inline val TCP_UDP: "TCP_UDP" = "TCP_UDP"
+  inline val GENEVE: "GENEVE" = "GENEVE"
 
-  @inline def values = js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, GENEVE)
+  inline def values: js.Array[ProtocolEnum] = js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, GENEVE)
 }
 
-@js.native
-sealed trait RedirectActionStatusCodeEnum extends js.Any
+type RedirectActionStatusCodeEnum = "HTTP_301" | "HTTP_302"
 object RedirectActionStatusCodeEnum {
-  val HTTP_301 = "HTTP_301".asInstanceOf[RedirectActionStatusCodeEnum]
-  val HTTP_302 = "HTTP_302".asInstanceOf[RedirectActionStatusCodeEnum]
+  inline val HTTP_301: "HTTP_301" = "HTTP_301"
+  inline val HTTP_302: "HTTP_302" = "HTTP_302"
 
-  @inline def values = js.Array(HTTP_301, HTTP_302)
+  inline def values: js.Array[RedirectActionStatusCodeEnum] = js.Array(HTTP_301, HTTP_302)
 }
 
-@js.native
-sealed trait TargetHealthReasonEnum extends js.Any
+type TargetHealthReasonEnum = "Elb.RegistrationInProgress" | "Elb.InitialHealthChecking" | "Target.ResponseCodeMismatch" | "Target.Timeout" | "Target.FailedHealthChecks" | "Target.NotRegistered" | "Target.NotInUse" | "Target.DeregistrationInProgress" | "Target.InvalidState" | "Target.IpUnusable" | "Target.HealthCheckDisabled" | "Elb.InternalError"
 object TargetHealthReasonEnum {
-  val `Elb.RegistrationInProgress` = "Elb.RegistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
-  val `Elb.InitialHealthChecking` = "Elb.InitialHealthChecking".asInstanceOf[TargetHealthReasonEnum]
-  val `Target.ResponseCodeMismatch` = "Target.ResponseCodeMismatch".asInstanceOf[TargetHealthReasonEnum]
-  val `Target.Timeout` = "Target.Timeout".asInstanceOf[TargetHealthReasonEnum]
-  val `Target.FailedHealthChecks` = "Target.FailedHealthChecks".asInstanceOf[TargetHealthReasonEnum]
-  val `Target.NotRegistered` = "Target.NotRegistered".asInstanceOf[TargetHealthReasonEnum]
-  val `Target.NotInUse` = "Target.NotInUse".asInstanceOf[TargetHealthReasonEnum]
-  val `Target.DeregistrationInProgress` = "Target.DeregistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
-  val `Target.InvalidState` = "Target.InvalidState".asInstanceOf[TargetHealthReasonEnum]
-  val `Target.IpUnusable` = "Target.IpUnusable".asInstanceOf[TargetHealthReasonEnum]
-  val `Target.HealthCheckDisabled` = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
-  val `Elb.InternalError` = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
+  inline val `Elb.RegistrationInProgress`: "Elb.RegistrationInProgress" = "Elb.RegistrationInProgress"
+  inline val `Elb.InitialHealthChecking`: "Elb.InitialHealthChecking" = "Elb.InitialHealthChecking"
+  inline val `Target.ResponseCodeMismatch`: "Target.ResponseCodeMismatch" = "Target.ResponseCodeMismatch"
+  inline val `Target.Timeout`: "Target.Timeout" = "Target.Timeout"
+  inline val `Target.FailedHealthChecks`: "Target.FailedHealthChecks" = "Target.FailedHealthChecks"
+  inline val `Target.NotRegistered`: "Target.NotRegistered" = "Target.NotRegistered"
+  inline val `Target.NotInUse`: "Target.NotInUse" = "Target.NotInUse"
+  inline val `Target.DeregistrationInProgress`: "Target.DeregistrationInProgress" = "Target.DeregistrationInProgress"
+  inline val `Target.InvalidState`: "Target.InvalidState" = "Target.InvalidState"
+  inline val `Target.IpUnusable`: "Target.IpUnusable" = "Target.IpUnusable"
+  inline val `Target.HealthCheckDisabled`: "Target.HealthCheckDisabled" = "Target.HealthCheckDisabled"
+  inline val `Elb.InternalError`: "Elb.InternalError" = "Elb.InternalError"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[TargetHealthReasonEnum] = js.Array(
     `Elb.RegistrationInProgress`,
     `Elb.InitialHealthChecking`,
     `Target.ResponseCodeMismatch`,
@@ -129,25 +118,23 @@ object TargetHealthReasonEnum {
   )
 }
 
-@js.native
-sealed trait TargetHealthStateEnum extends js.Any
+type TargetHealthStateEnum = "initial" | "healthy" | "unhealthy" | "unused" | "draining" | "unavailable"
 object TargetHealthStateEnum {
-  val initial = "initial".asInstanceOf[TargetHealthStateEnum]
-  val healthy = "healthy".asInstanceOf[TargetHealthStateEnum]
-  val unhealthy = "unhealthy".asInstanceOf[TargetHealthStateEnum]
-  val unused = "unused".asInstanceOf[TargetHealthStateEnum]
-  val draining = "draining".asInstanceOf[TargetHealthStateEnum]
-  val unavailable = "unavailable".asInstanceOf[TargetHealthStateEnum]
+  inline val initial: "initial" = "initial"
+  inline val healthy: "healthy" = "healthy"
+  inline val unhealthy: "unhealthy" = "unhealthy"
+  inline val unused: "unused" = "unused"
+  inline val draining: "draining" = "draining"
+  inline val unavailable: "unavailable" = "unavailable"
 
-  @inline def values = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
+  inline def values: js.Array[TargetHealthStateEnum] = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
 }
 
-@js.native
-sealed trait TargetTypeEnum extends js.Any
+type TargetTypeEnum = "instance" | "ip" | "lambda"
 object TargetTypeEnum {
-  val instance = "instance".asInstanceOf[TargetTypeEnum]
-  val ip = "ip".asInstanceOf[TargetTypeEnum]
-  val lambda = "lambda".asInstanceOf[TargetTypeEnum]
+  inline val instance: "instance" = "instance"
+  inline val ip: "ip" = "ip"
+  inline val lambda: "lambda" = "lambda"
 
-  @inline def values = js.Array(instance, ip, lambda)
+  inline def values: js.Array[TargetTypeEnum] = js.Array(instance, ip, lambda)
 }

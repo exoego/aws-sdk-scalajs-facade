@@ -1,245 +1,221 @@
 package facade.amazonaws.services.route53resolver
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait Action extends js.Any
+type Action = "ALLOW" | "BLOCK" | "ALERT"
 object Action {
-  val ALLOW = "ALLOW".asInstanceOf[Action]
-  val BLOCK = "BLOCK".asInstanceOf[Action]
-  val ALERT = "ALERT".asInstanceOf[Action]
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val BLOCK: "BLOCK" = "BLOCK"
+  inline val ALERT: "ALERT" = "ALERT"
 
-  @inline def values = js.Array(ALLOW, BLOCK, ALERT)
+  inline def values: js.Array[Action] = js.Array(ALLOW, BLOCK, ALERT)
 }
 
-@js.native
-sealed trait BlockOverrideDnsType extends js.Any
+type BlockOverrideDnsType = "CNAME"
 object BlockOverrideDnsType {
-  val CNAME = "CNAME".asInstanceOf[BlockOverrideDnsType]
+  inline val CNAME: "CNAME" = "CNAME"
 
-  @inline def values = js.Array(CNAME)
+  inline def values: js.Array[BlockOverrideDnsType] = js.Array(CNAME)
 }
 
-@js.native
-sealed trait BlockResponse extends js.Any
+type BlockResponse = "NODATA" | "NXDOMAIN" | "OVERRIDE"
 object BlockResponse {
-  val NODATA = "NODATA".asInstanceOf[BlockResponse]
-  val NXDOMAIN = "NXDOMAIN".asInstanceOf[BlockResponse]
-  val OVERRIDE = "OVERRIDE".asInstanceOf[BlockResponse]
+  inline val NODATA: "NODATA" = "NODATA"
+  inline val NXDOMAIN: "NXDOMAIN" = "NXDOMAIN"
+  inline val OVERRIDE: "OVERRIDE" = "OVERRIDE"
 
-  @inline def values = js.Array(NODATA, NXDOMAIN, OVERRIDE)
+  inline def values: js.Array[BlockResponse] = js.Array(NODATA, NXDOMAIN, OVERRIDE)
 }
 
-@js.native
-sealed trait FirewallDomainImportOperation extends js.Any
+type FirewallDomainImportOperation = "REPLACE"
 object FirewallDomainImportOperation {
-  val REPLACE = "REPLACE".asInstanceOf[FirewallDomainImportOperation]
+  inline val REPLACE: "REPLACE" = "REPLACE"
 
-  @inline def values = js.Array(REPLACE)
+  inline def values: js.Array[FirewallDomainImportOperation] = js.Array(REPLACE)
 }
 
-@js.native
-sealed trait FirewallDomainListStatus extends js.Any
+type FirewallDomainListStatus = "COMPLETE" | "COMPLETE_IMPORT_FAILED" | "IMPORTING" | "DELETING" | "UPDATING"
 object FirewallDomainListStatus {
-  val COMPLETE = "COMPLETE".asInstanceOf[FirewallDomainListStatus]
-  val COMPLETE_IMPORT_FAILED = "COMPLETE_IMPORT_FAILED".asInstanceOf[FirewallDomainListStatus]
-  val IMPORTING = "IMPORTING".asInstanceOf[FirewallDomainListStatus]
-  val DELETING = "DELETING".asInstanceOf[FirewallDomainListStatus]
-  val UPDATING = "UPDATING".asInstanceOf[FirewallDomainListStatus]
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val COMPLETE_IMPORT_FAILED: "COMPLETE_IMPORT_FAILED" = "COMPLETE_IMPORT_FAILED"
+  inline val IMPORTING: "IMPORTING" = "IMPORTING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(COMPLETE, COMPLETE_IMPORT_FAILED, IMPORTING, DELETING, UPDATING)
+  inline def values: js.Array[FirewallDomainListStatus] = js.Array(COMPLETE, COMPLETE_IMPORT_FAILED, IMPORTING, DELETING, UPDATING)
 }
 
-@js.native
-sealed trait FirewallDomainUpdateOperation extends js.Any
+type FirewallDomainUpdateOperation = "ADD" | "REMOVE" | "REPLACE"
 object FirewallDomainUpdateOperation {
-  val ADD = "ADD".asInstanceOf[FirewallDomainUpdateOperation]
-  val REMOVE = "REMOVE".asInstanceOf[FirewallDomainUpdateOperation]
-  val REPLACE = "REPLACE".asInstanceOf[FirewallDomainUpdateOperation]
+  inline val ADD: "ADD" = "ADD"
+  inline val REMOVE: "REMOVE" = "REMOVE"
+  inline val REPLACE: "REPLACE" = "REPLACE"
 
-  @inline def values = js.Array(ADD, REMOVE, REPLACE)
+  inline def values: js.Array[FirewallDomainUpdateOperation] = js.Array(ADD, REMOVE, REPLACE)
 }
 
-@js.native
-sealed trait FirewallFailOpenStatus extends js.Any
+type FirewallFailOpenStatus = "ENABLED" | "DISABLED"
 object FirewallFailOpenStatus {
-  val ENABLED = "ENABLED".asInstanceOf[FirewallFailOpenStatus]
-  val DISABLED = "DISABLED".asInstanceOf[FirewallFailOpenStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[FirewallFailOpenStatus] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait FirewallRuleGroupAssociationStatus extends js.Any
+type FirewallRuleGroupAssociationStatus = "COMPLETE" | "DELETING" | "UPDATING"
 object FirewallRuleGroupAssociationStatus {
-  val COMPLETE = "COMPLETE".asInstanceOf[FirewallRuleGroupAssociationStatus]
-  val DELETING = "DELETING".asInstanceOf[FirewallRuleGroupAssociationStatus]
-  val UPDATING = "UPDATING".asInstanceOf[FirewallRuleGroupAssociationStatus]
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(COMPLETE, DELETING, UPDATING)
+  inline def values: js.Array[FirewallRuleGroupAssociationStatus] = js.Array(COMPLETE, DELETING, UPDATING)
 }
 
-@js.native
-sealed trait FirewallRuleGroupStatus extends js.Any
+type FirewallRuleGroupStatus = "COMPLETE" | "DELETING" | "UPDATING"
 object FirewallRuleGroupStatus {
-  val COMPLETE = "COMPLETE".asInstanceOf[FirewallRuleGroupStatus]
-  val DELETING = "DELETING".asInstanceOf[FirewallRuleGroupStatus]
-  val UPDATING = "UPDATING".asInstanceOf[FirewallRuleGroupStatus]
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
 
-  @inline def values = js.Array(COMPLETE, DELETING, UPDATING)
+  inline def values: js.Array[FirewallRuleGroupStatus] = js.Array(COMPLETE, DELETING, UPDATING)
 }
 
-@js.native
-sealed trait IpAddressStatus extends js.Any
+type IpAddressStatus = "CREATING" | "FAILED_CREATION" | "ATTACHING" | "ATTACHED" | "REMAP_DETACHING" | "REMAP_ATTACHING" | "DETACHING" | "FAILED_RESOURCE_GONE" | "DELETING" | "DELETE_FAILED_FAS_EXPIRED"
 object IpAddressStatus {
-  val CREATING = "CREATING".asInstanceOf[IpAddressStatus]
-  val FAILED_CREATION = "FAILED_CREATION".asInstanceOf[IpAddressStatus]
-  val ATTACHING = "ATTACHING".asInstanceOf[IpAddressStatus]
-  val ATTACHED = "ATTACHED".asInstanceOf[IpAddressStatus]
-  val REMAP_DETACHING = "REMAP_DETACHING".asInstanceOf[IpAddressStatus]
-  val REMAP_ATTACHING = "REMAP_ATTACHING".asInstanceOf[IpAddressStatus]
-  val DETACHING = "DETACHING".asInstanceOf[IpAddressStatus]
-  val FAILED_RESOURCE_GONE = "FAILED_RESOURCE_GONE".asInstanceOf[IpAddressStatus]
-  val DELETING = "DELETING".asInstanceOf[IpAddressStatus]
-  val DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED".asInstanceOf[IpAddressStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val FAILED_CREATION: "FAILED_CREATION" = "FAILED_CREATION"
+  inline val ATTACHING: "ATTACHING" = "ATTACHING"
+  inline val ATTACHED: "ATTACHED" = "ATTACHED"
+  inline val REMAP_DETACHING: "REMAP_DETACHING" = "REMAP_DETACHING"
+  inline val REMAP_ATTACHING: "REMAP_ATTACHING" = "REMAP_ATTACHING"
+  inline val DETACHING: "DETACHING" = "DETACHING"
+  inline val FAILED_RESOURCE_GONE: "FAILED_RESOURCE_GONE" = "FAILED_RESOURCE_GONE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETE_FAILED_FAS_EXPIRED: "DELETE_FAILED_FAS_EXPIRED" = "DELETE_FAILED_FAS_EXPIRED"
 
-  @inline def values = js.Array(CREATING, FAILED_CREATION, ATTACHING, ATTACHED, REMAP_DETACHING, REMAP_ATTACHING, DETACHING, FAILED_RESOURCE_GONE, DELETING, DELETE_FAILED_FAS_EXPIRED)
+  inline def values: js.Array[IpAddressStatus] = js.Array(CREATING, FAILED_CREATION, ATTACHING, ATTACHED, REMAP_DETACHING, REMAP_ATTACHING, DETACHING, FAILED_RESOURCE_GONE, DELETING, DELETE_FAILED_FAS_EXPIRED)
 }
 
-@js.native
-sealed trait MutationProtectionStatus extends js.Any
+type MutationProtectionStatus = "ENABLED" | "DISABLED"
 object MutationProtectionStatus {
-  val ENABLED = "ENABLED".asInstanceOf[MutationProtectionStatus]
-  val DISABLED = "DISABLED".asInstanceOf[MutationProtectionStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[MutationProtectionStatus] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait ResolverDNSSECValidationStatus extends js.Any
+type ResolverDNSSECValidationStatus = "ENABLING" | "ENABLED" | "DISABLING" | "DISABLED"
 object ResolverDNSSECValidationStatus {
-  val ENABLING = "ENABLING".asInstanceOf[ResolverDNSSECValidationStatus]
-  val ENABLED = "ENABLED".asInstanceOf[ResolverDNSSECValidationStatus]
-  val DISABLING = "DISABLING".asInstanceOf[ResolverDNSSECValidationStatus]
-  val DISABLED = "DISABLED".asInstanceOf[ResolverDNSSECValidationStatus]
+  inline val ENABLING: "ENABLING" = "ENABLING"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLING: "DISABLING" = "DISABLING"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
+  inline def values: js.Array[ResolverDNSSECValidationStatus] = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
 }
 
-@js.native
-sealed trait ResolverEndpointDirection extends js.Any
+type ResolverEndpointDirection = "INBOUND" | "OUTBOUND"
 object ResolverEndpointDirection {
-  val INBOUND = "INBOUND".asInstanceOf[ResolverEndpointDirection]
-  val OUTBOUND = "OUTBOUND".asInstanceOf[ResolverEndpointDirection]
+  inline val INBOUND: "INBOUND" = "INBOUND"
+  inline val OUTBOUND: "OUTBOUND" = "OUTBOUND"
 
-  @inline def values = js.Array(INBOUND, OUTBOUND)
+  inline def values: js.Array[ResolverEndpointDirection] = js.Array(INBOUND, OUTBOUND)
 }
 
-@js.native
-sealed trait ResolverEndpointStatus extends js.Any
+type ResolverEndpointStatus = "CREATING" | "OPERATIONAL" | "UPDATING" | "AUTO_RECOVERING" | "ACTION_NEEDED" | "DELETING"
 object ResolverEndpointStatus {
-  val CREATING = "CREATING".asInstanceOf[ResolverEndpointStatus]
-  val OPERATIONAL = "OPERATIONAL".asInstanceOf[ResolverEndpointStatus]
-  val UPDATING = "UPDATING".asInstanceOf[ResolverEndpointStatus]
-  val AUTO_RECOVERING = "AUTO_RECOVERING".asInstanceOf[ResolverEndpointStatus]
-  val ACTION_NEEDED = "ACTION_NEEDED".asInstanceOf[ResolverEndpointStatus]
-  val DELETING = "DELETING".asInstanceOf[ResolverEndpointStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val OPERATIONAL: "OPERATIONAL" = "OPERATIONAL"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val AUTO_RECOVERING: "AUTO_RECOVERING" = "AUTO_RECOVERING"
+  inline val ACTION_NEEDED: "ACTION_NEEDED" = "ACTION_NEEDED"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING)
+  inline def values: js.Array[ResolverEndpointStatus] = js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING)
 }
 
-@js.native
-sealed trait ResolverQueryLogConfigAssociationError extends js.Any
+type ResolverQueryLogConfigAssociationError = "NONE" | "DESTINATION_NOT_FOUND" | "ACCESS_DENIED" | "INTERNAL_SERVICE_ERROR"
 object ResolverQueryLogConfigAssociationError {
-  val NONE = "NONE".asInstanceOf[ResolverQueryLogConfigAssociationError]
-  val DESTINATION_NOT_FOUND = "DESTINATION_NOT_FOUND".asInstanceOf[ResolverQueryLogConfigAssociationError]
-  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[ResolverQueryLogConfigAssociationError]
-  val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[ResolverQueryLogConfigAssociationError]
+  inline val NONE: "NONE" = "NONE"
+  inline val DESTINATION_NOT_FOUND: "DESTINATION_NOT_FOUND" = "DESTINATION_NOT_FOUND"
+  inline val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  inline val INTERNAL_SERVICE_ERROR: "INTERNAL_SERVICE_ERROR" = "INTERNAL_SERVICE_ERROR"
 
-  @inline def values = js.Array(NONE, DESTINATION_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR)
+  inline def values: js.Array[ResolverQueryLogConfigAssociationError] = js.Array(NONE, DESTINATION_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR)
 }
 
-@js.native
-sealed trait ResolverQueryLogConfigAssociationStatus extends js.Any
+type ResolverQueryLogConfigAssociationStatus = "CREATING" | "ACTIVE" | "ACTION_NEEDED" | "DELETING" | "FAILED"
 object ResolverQueryLogConfigAssociationStatus {
-  val CREATING = "CREATING".asInstanceOf[ResolverQueryLogConfigAssociationStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[ResolverQueryLogConfigAssociationStatus]
-  val ACTION_NEEDED = "ACTION_NEEDED".asInstanceOf[ResolverQueryLogConfigAssociationStatus]
-  val DELETING = "DELETING".asInstanceOf[ResolverQueryLogConfigAssociationStatus]
-  val FAILED = "FAILED".asInstanceOf[ResolverQueryLogConfigAssociationStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val ACTION_NEEDED: "ACTION_NEEDED" = "ACTION_NEEDED"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, ACTIVE, ACTION_NEEDED, DELETING, FAILED)
+  inline def values: js.Array[ResolverQueryLogConfigAssociationStatus] = js.Array(CREATING, ACTIVE, ACTION_NEEDED, DELETING, FAILED)
 }
 
-@js.native
-sealed trait ResolverQueryLogConfigStatus extends js.Any
+type ResolverQueryLogConfigStatus = "CREATING" | "CREATED" | "DELETING" | "FAILED"
 object ResolverQueryLogConfigStatus {
-  val CREATING = "CREATING".asInstanceOf[ResolverQueryLogConfigStatus]
-  val CREATED = "CREATED".asInstanceOf[ResolverQueryLogConfigStatus]
-  val DELETING = "DELETING".asInstanceOf[ResolverQueryLogConfigStatus]
-  val FAILED = "FAILED".asInstanceOf[ResolverQueryLogConfigStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val CREATED: "CREATED" = "CREATED"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, CREATED, DELETING, FAILED)
+  inline def values: js.Array[ResolverQueryLogConfigStatus] = js.Array(CREATING, CREATED, DELETING, FAILED)
 }
 
-@js.native
-sealed trait ResolverRuleAssociationStatus extends js.Any
+type ResolverRuleAssociationStatus = "CREATING" | "COMPLETE" | "DELETING" | "FAILED" | "OVERRIDDEN"
 object ResolverRuleAssociationStatus {
-  val CREATING = "CREATING".asInstanceOf[ResolverRuleAssociationStatus]
-  val COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleAssociationStatus]
-  val DELETING = "DELETING".asInstanceOf[ResolverRuleAssociationStatus]
-  val FAILED = "FAILED".asInstanceOf[ResolverRuleAssociationStatus]
-  val OVERRIDDEN = "OVERRIDDEN".asInstanceOf[ResolverRuleAssociationStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val OVERRIDDEN: "OVERRIDDEN" = "OVERRIDDEN"
 
-  @inline def values = js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN)
+  inline def values: js.Array[ResolverRuleAssociationStatus] = js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN)
 }
 
-@js.native
-sealed trait ResolverRuleStatus extends js.Any
+type ResolverRuleStatus = "COMPLETE" | "DELETING" | "UPDATING" | "FAILED"
 object ResolverRuleStatus {
-  val COMPLETE = "COMPLETE".asInstanceOf[ResolverRuleStatus]
-  val DELETING = "DELETING".asInstanceOf[ResolverRuleStatus]
-  val UPDATING = "UPDATING".asInstanceOf[ResolverRuleStatus]
-  val FAILED = "FAILED".asInstanceOf[ResolverRuleStatus]
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(COMPLETE, DELETING, UPDATING, FAILED)
+  inline def values: js.Array[ResolverRuleStatus] = js.Array(COMPLETE, DELETING, UPDATING, FAILED)
 }
 
-@js.native
-sealed trait RuleTypeOption extends js.Any
+type RuleTypeOption = "FORWARD" | "SYSTEM" | "RECURSIVE"
 object RuleTypeOption {
-  val FORWARD = "FORWARD".asInstanceOf[RuleTypeOption]
-  val SYSTEM = "SYSTEM".asInstanceOf[RuleTypeOption]
-  val RECURSIVE = "RECURSIVE".asInstanceOf[RuleTypeOption]
+  inline val FORWARD: "FORWARD" = "FORWARD"
+  inline val SYSTEM: "SYSTEM" = "SYSTEM"
+  inline val RECURSIVE: "RECURSIVE" = "RECURSIVE"
 
-  @inline def values = js.Array(FORWARD, SYSTEM, RECURSIVE)
+  inline def values: js.Array[RuleTypeOption] = js.Array(FORWARD, SYSTEM, RECURSIVE)
 }
 
-@js.native
-sealed trait ShareStatus extends js.Any
+type ShareStatus = "NOT_SHARED" | "SHARED_WITH_ME" | "SHARED_BY_ME"
 object ShareStatus {
-  val NOT_SHARED = "NOT_SHARED".asInstanceOf[ShareStatus]
-  val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ShareStatus]
-  val SHARED_BY_ME = "SHARED_BY_ME".asInstanceOf[ShareStatus]
+  inline val NOT_SHARED: "NOT_SHARED" = "NOT_SHARED"
+  inline val SHARED_WITH_ME: "SHARED_WITH_ME" = "SHARED_WITH_ME"
+  inline val SHARED_BY_ME: "SHARED_BY_ME" = "SHARED_BY_ME"
 
-  @inline def values = js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME)
+  inline def values: js.Array[ShareStatus] = js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME)
 }
 
-@js.native
-sealed trait SortOrder extends js.Any
+type SortOrder = "ASCENDING" | "DESCENDING"
 object SortOrder {
-  val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
-  val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+  inline val ASCENDING: "ASCENDING" = "ASCENDING"
+  inline val DESCENDING: "DESCENDING" = "DESCENDING"
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }
 
-@js.native
-sealed trait Validation extends js.Any
+type Validation = "ENABLE" | "DISABLE"
 object Validation {
-  val ENABLE = "ENABLE".asInstanceOf[Validation]
-  val DISABLE = "DISABLE".asInstanceOf[Validation]
+  inline val ENABLE: "ENABLE" = "ENABLE"
+  inline val DISABLE: "DISABLE" = "DISABLE"
 
-  @inline def values = js.Array(ENABLE, DISABLE)
+  inline def values: js.Array[Validation] = js.Array(ENABLE, DISABLE)
 }

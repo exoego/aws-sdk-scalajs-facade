@@ -78,7 +78,11 @@ object IndexFieldType {
   @inline def values = js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`)
 }
 
-/** The state of processing a change to an option. One of: * RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete. * Processing: The option's latest value is in the process of being activated. * Active: The option's latest value is fully deployed. * FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.
+/** The state of processing a change to an option. One of:
+  * * RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.
+  * * Processing: The option's latest value is in the process of being activated.
+  * * Active: The option's latest value is fully deployed.
+  * * FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.
   */
 @js.native
 sealed trait OptionState extends js.Any
@@ -110,21 +114,7 @@ object PartitionInstanceType {
   val `search.xlarge` = "search.xlarge".asInstanceOf[PartitionInstanceType]
   val `search.2xlarge` = "search.2xlarge".asInstanceOf[PartitionInstanceType]
 
-  @inline def values = js.Array(
-    `search.m1.small`,
-    `search.m1.large`,
-    `search.m2.xlarge`,
-    `search.m2.2xlarge`,
-    `search.m3.medium`,
-    `search.m3.large`,
-    `search.m3.xlarge`,
-    `search.m3.2xlarge`,
-    `search.small`,
-    `search.medium`,
-    `search.large`,
-    `search.xlarge`,
-    `search.2xlarge`
-  )
+  @inline def values = js.Array(`search.m1.small`, `search.m1.large`, `search.m2.xlarge`, `search.m2.2xlarge`, `search.m3.medium`, `search.m3.large`, `search.m3.xlarge`, `search.m3.2xlarge`, `search.small`, `search.medium`, `search.large`, `search.xlarge`, `search.2xlarge`)
 }
 
 @js.native
@@ -147,3 +137,4 @@ object TLSSecurityPolicy {
 
   @inline def values = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
 }
+

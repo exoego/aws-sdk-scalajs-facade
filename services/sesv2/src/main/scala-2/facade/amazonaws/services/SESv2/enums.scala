@@ -3,7 +3,8 @@ package facade.amazonaws.services.sesv2
 import scalajs._
 import scala.scalajs.js.|
 
-/** The action that you want to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email. These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
+/** The action that you want to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email.
+  * These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
   */
 @js.native
 sealed trait BehaviorOnMxFailure extends js.Any
@@ -32,22 +33,7 @@ object BulkEmailStatus {
   val TRANSIENT_FAILURE = "TRANSIENT_FAILURE".asInstanceOf[BulkEmailStatus]
   val FAILED = "FAILED".asInstanceOf[BulkEmailStatus]
 
-  @inline def values = js.Array(
-    SUCCESS,
-    MESSAGE_REJECTED,
-    MAIL_FROM_DOMAIN_NOT_VERIFIED,
-    CONFIGURATION_SET_NOT_FOUND,
-    TEMPLATE_NOT_FOUND,
-    ACCOUNT_SUSPENDED,
-    ACCOUNT_THROTTLED,
-    ACCOUNT_DAILY_QUOTA_EXCEEDED,
-    INVALID_SENDING_POOL_NAME,
-    ACCOUNT_SENDING_PAUSED,
-    CONFIGURATION_SET_SENDING_PAUSED,
-    INVALID_PARAMETER,
-    TRANSIENT_FAILURE,
-    FAILED
-  )
+  @inline def values = js.Array(SUCCESS, MESSAGE_REJECTED, MAIL_FROM_DOMAIN_NOT_VERIFIED, CONFIGURATION_SET_NOT_FOUND, TEMPLATE_NOT_FOUND, ACCOUNT_SUSPENDED, ACCOUNT_THROTTLED, ACCOUNT_DAILY_QUOTA_EXCEEDED, INVALID_SENDING_POOL_NAME, ACCOUNT_SENDING_PAUSED, CONFIGURATION_SET_SENDING_PAUSED, INVALID_PARAMETER, TRANSIENT_FAILURE, FAILED)
 }
 
 @js.native
@@ -123,7 +109,12 @@ object DkimSigningAttributesOrigin {
   @inline def values = js.Array(AWS_SES, EXTERNAL)
 }
 
-/** The DKIM authentication status of the identity. The status can be one of the following: * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain. * <code>SUCCESS</code> – The verification process completed successfully. * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain. * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain. * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
+/** The DKIM authentication status of the identity. The status can be one of the following:
+  * * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain.
+  * * <code>SUCCESS</code> – The verification process completed successfully.
+  * * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain.
+  * * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain.
+  * * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
   */
 @js.native
 sealed trait DkimStatus extends js.Any
@@ -156,7 +147,9 @@ object EventType {
   @inline def values = js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE, DELIVERY_DELAY, SUBSCRIPTION)
 }
 
-/** The email identity type. The identity type can be one of the following: * <code>EMAIL_ADDRESS</code> – The identity is an email address. * <code>DOMAIN</code> – The identity is a domain.
+/** The email identity type. The identity type can be one of the following:
+  * * <code>EMAIL_ADDRESS</code> – The identity is an email address.
+  * * <code>DOMAIN</code> – The identity is a domain.
   */
 @js.native
 sealed trait IdentityType extends js.Any
@@ -192,7 +185,11 @@ object JobStatus {
   @inline def values = js.Array(CREATED, PROCESSING, COMPLETED, FAILED)
 }
 
-/** The status of the MAIL FROM domain. This status can have the following values: * <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet. * <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain. * <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists. * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.
+/** The status of the MAIL FROM domain. This status can have the following values:
+  * * <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.
+  * * <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM domain.
+  * * <code>FAILED</code> – Amazon SES can't find the required MX record, or the record no longer exists.
+  * * <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon SES from determining the status of the MAIL FROM domain.
   */
 @js.native
 sealed trait MailFromDomainStatus extends js.Any
@@ -234,7 +231,9 @@ object SubscriptionStatus {
   @inline def values = js.Array(OPT_IN, OPT_OUT)
 }
 
-/** The type of action that you want to perform on the address. Acceptable values: * PUT: add the addresses to the suppression list. * DELETE: remove the address from the suppression list.
+/** The type of action that you want to perform on the address. Acceptable values:
+  * * PUT: add the addresses to the suppression list.
+  * * DELETE: remove the address from the suppression list.
   */
 @js.native
 sealed trait SuppressionListImportAction extends js.Any
@@ -245,7 +244,9 @@ object SuppressionListImportAction {
   @inline def values = js.Array(DELETE, PUT)
 }
 
-/** The reason that the address was added to the suppression list for your account. The value can be one of the following: * <code>COMPLAINT</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a complaint. * <code>BOUNCE</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a hard bounce.
+/** The reason that the address was added to the suppression list for your account. The value can be one of the following:
+  * * <code>COMPLAINT</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a complaint.
+  * * <code>BOUNCE</code> – Amazon SES added an email address to the suppression list for your account because a message sent to that address results in a hard bounce.
   */
 @js.native
 sealed trait SuppressionListReason extends js.Any
@@ -277,3 +278,4 @@ object WarmupStatus {
 
   @inline def values = js.Array(IN_PROGRESS, DONE)
 }
+

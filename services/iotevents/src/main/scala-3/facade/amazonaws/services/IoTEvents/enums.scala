@@ -1,77 +1,69 @@
 package facade.amazonaws.services.iotevents
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AnalysisResultLevel extends js.Any
+type AnalysisResultLevel = "INFO" | "WARNING" | "ERROR"
 object AnalysisResultLevel {
-  val INFO = "INFO".asInstanceOf[AnalysisResultLevel]
-  val WARNING = "WARNING".asInstanceOf[AnalysisResultLevel]
-  val ERROR = "ERROR".asInstanceOf[AnalysisResultLevel]
+  inline val INFO: "INFO" = "INFO"
+  inline val WARNING: "WARNING" = "WARNING"
+  inline val ERROR: "ERROR" = "ERROR"
 
-  @inline def values = js.Array(INFO, WARNING, ERROR)
+  inline def values: js.Array[AnalysisResultLevel] = js.Array(INFO, WARNING, ERROR)
 }
 
-@js.native
-sealed trait AnalysisStatus extends js.Any
+type AnalysisStatus = "RUNNING" | "COMPLETE" | "FAILED"
 object AnalysisStatus {
-  val RUNNING = "RUNNING".asInstanceOf[AnalysisStatus]
-  val COMPLETE = "COMPLETE".asInstanceOf[AnalysisStatus]
-  val FAILED = "FAILED".asInstanceOf[AnalysisStatus]
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(RUNNING, COMPLETE, FAILED)
+  inline def values: js.Array[AnalysisStatus] = js.Array(RUNNING, COMPLETE, FAILED)
 }
 
-@js.native
-sealed trait DetectorModelVersionStatus extends js.Any
+type DetectorModelVersionStatus = "ACTIVE" | "ACTIVATING" | "INACTIVE" | "DEPRECATED" | "DRAFT" | "PAUSED" | "FAILED"
 object DetectorModelVersionStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[DetectorModelVersionStatus]
-  val ACTIVATING = "ACTIVATING".asInstanceOf[DetectorModelVersionStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[DetectorModelVersionStatus]
-  val DEPRECATED = "DEPRECATED".asInstanceOf[DetectorModelVersionStatus]
-  val DRAFT = "DRAFT".asInstanceOf[DetectorModelVersionStatus]
-  val PAUSED = "PAUSED".asInstanceOf[DetectorModelVersionStatus]
-  val FAILED = "FAILED".asInstanceOf[DetectorModelVersionStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val ACTIVATING: "ACTIVATING" = "ACTIVATING"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val DEPRECATED: "DEPRECATED" = "DEPRECATED"
+  inline val DRAFT: "DRAFT" = "DRAFT"
+  inline val PAUSED: "PAUSED" = "PAUSED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED)
+  inline def values: js.Array[DetectorModelVersionStatus] = js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED)
 }
 
-@js.native
-sealed trait EvaluationMethod extends js.Any
+type EvaluationMethod = "BATCH" | "SERIAL"
 object EvaluationMethod {
-  val BATCH = "BATCH".asInstanceOf[EvaluationMethod]
-  val SERIAL = "SERIAL".asInstanceOf[EvaluationMethod]
+  inline val BATCH: "BATCH" = "BATCH"
+  inline val SERIAL: "SERIAL" = "SERIAL"
 
-  @inline def values = js.Array(BATCH, SERIAL)
+  inline def values: js.Array[EvaluationMethod] = js.Array(BATCH, SERIAL)
 }
 
-@js.native
-sealed trait InputStatus extends js.Any
+type InputStatus = "CREATING" | "UPDATING" | "ACTIVE" | "DELETING"
 object InputStatus {
-  val CREATING = "CREATING".asInstanceOf[InputStatus]
-  val UPDATING = "UPDATING".asInstanceOf[InputStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[InputStatus]
-  val DELETING = "DELETING".asInstanceOf[InputStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING)
+  inline def values: js.Array[InputStatus] = js.Array(CREATING, UPDATING, ACTIVE, DELETING)
 }
 
-@js.native
-sealed trait LoggingLevel extends js.Any
+type LoggingLevel = "ERROR" | "INFO" | "DEBUG"
 object LoggingLevel {
-  val ERROR = "ERROR".asInstanceOf[LoggingLevel]
-  val INFO = "INFO".asInstanceOf[LoggingLevel]
-  val DEBUG = "DEBUG".asInstanceOf[LoggingLevel]
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val INFO: "INFO" = "INFO"
+  inline val DEBUG: "DEBUG" = "DEBUG"
 
-  @inline def values = js.Array(ERROR, INFO, DEBUG)
+  inline def values: js.Array[LoggingLevel] = js.Array(ERROR, INFO, DEBUG)
 }
 
-@js.native
-sealed trait PayloadType extends js.Any
+type PayloadType = "STRING" | "JSON"
 object PayloadType {
-  val STRING = "STRING".asInstanceOf[PayloadType]
-  val JSON = "JSON".asInstanceOf[PayloadType]
+  inline val STRING: "STRING" = "STRING"
+  inline val JSON: "JSON" = "JSON"
 
-  @inline def values = js.Array(STRING, JSON)
+  inline def values: js.Array[PayloadType] = js.Array(STRING, JSON)
 }

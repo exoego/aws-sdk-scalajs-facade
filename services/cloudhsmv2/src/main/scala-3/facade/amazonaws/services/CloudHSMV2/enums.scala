@@ -1,59 +1,53 @@
 package facade.amazonaws.services.cloudhsmv2
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait BackupPolicy extends js.Any
+type BackupPolicy = "DEFAULT"
 object BackupPolicy {
-  val DEFAULT = "DEFAULT".asInstanceOf[BackupPolicy]
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
 
-  @inline def values = js.Array(DEFAULT)
+  inline def values: js.Array[BackupPolicy] = js.Array(DEFAULT)
 }
 
-@js.native
-sealed trait BackupRetentionType extends js.Any
+type BackupRetentionType = "DAYS"
 object BackupRetentionType {
-  val DAYS = "DAYS".asInstanceOf[BackupRetentionType]
+  inline val DAYS: "DAYS" = "DAYS"
 
-  @inline def values = js.Array(DAYS)
+  inline def values: js.Array[BackupRetentionType] = js.Array(DAYS)
 }
 
-@js.native
-sealed trait BackupState extends js.Any
+type BackupState = "CREATE_IN_PROGRESS" | "READY" | "DELETED" | "PENDING_DELETION"
 object BackupState {
-  val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[BackupState]
-  val READY = "READY".asInstanceOf[BackupState]
-  val DELETED = "DELETED".asInstanceOf[BackupState]
-  val PENDING_DELETION = "PENDING_DELETION".asInstanceOf[BackupState]
+  inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  inline val READY: "READY" = "READY"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val PENDING_DELETION: "PENDING_DELETION" = "PENDING_DELETION"
 
-  @inline def values = js.Array(CREATE_IN_PROGRESS, READY, DELETED, PENDING_DELETION)
+  inline def values: js.Array[BackupState] = js.Array(CREATE_IN_PROGRESS, READY, DELETED, PENDING_DELETION)
 }
 
-@js.native
-sealed trait ClusterState extends js.Any
+type ClusterState = "CREATE_IN_PROGRESS" | "UNINITIALIZED" | "INITIALIZE_IN_PROGRESS" | "INITIALIZED" | "ACTIVE" | "UPDATE_IN_PROGRESS" | "DELETE_IN_PROGRESS" | "DELETED" | "DEGRADED"
 object ClusterState {
-  val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[ClusterState]
-  val UNINITIALIZED = "UNINITIALIZED".asInstanceOf[ClusterState]
-  val INITIALIZE_IN_PROGRESS = "INITIALIZE_IN_PROGRESS".asInstanceOf[ClusterState]
-  val INITIALIZED = "INITIALIZED".asInstanceOf[ClusterState]
-  val ACTIVE = "ACTIVE".asInstanceOf[ClusterState]
-  val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ClusterState]
-  val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ClusterState]
-  val DELETED = "DELETED".asInstanceOf[ClusterState]
-  val DEGRADED = "DEGRADED".asInstanceOf[ClusterState]
+  inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  inline val UNINITIALIZED: "UNINITIALIZED" = "UNINITIALIZED"
+  inline val INITIALIZE_IN_PROGRESS: "INITIALIZE_IN_PROGRESS" = "INITIALIZE_IN_PROGRESS"
+  inline val INITIALIZED: "INITIALIZED" = "INITIALIZED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+  inline val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val DEGRADED: "DEGRADED" = "DEGRADED"
 
-  @inline def values = js.Array(CREATE_IN_PROGRESS, UNINITIALIZED, INITIALIZE_IN_PROGRESS, INITIALIZED, ACTIVE, UPDATE_IN_PROGRESS, DELETE_IN_PROGRESS, DELETED, DEGRADED)
+  inline def values: js.Array[ClusterState] = js.Array(CREATE_IN_PROGRESS, UNINITIALIZED, INITIALIZE_IN_PROGRESS, INITIALIZED, ACTIVE, UPDATE_IN_PROGRESS, DELETE_IN_PROGRESS, DELETED, DEGRADED)
 }
 
-@js.native
-sealed trait HsmState extends js.Any
+type HsmState = "CREATE_IN_PROGRESS" | "ACTIVE" | "DEGRADED" | "DELETE_IN_PROGRESS" | "DELETED"
 object HsmState {
-  val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[HsmState]
-  val ACTIVE = "ACTIVE".asInstanceOf[HsmState]
-  val DEGRADED = "DEGRADED".asInstanceOf[HsmState]
-  val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[HsmState]
-  val DELETED = "DELETED".asInstanceOf[HsmState]
+  inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DEGRADED: "DEGRADED" = "DEGRADED"
+  inline val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(CREATE_IN_PROGRESS, ACTIVE, DEGRADED, DELETE_IN_PROGRESS, DELETED)
+  inline def values: js.Array[HsmState] = js.Array(CREATE_IN_PROGRESS, ACTIVE, DEGRADED, DELETE_IN_PROGRESS, DELETED)
 }

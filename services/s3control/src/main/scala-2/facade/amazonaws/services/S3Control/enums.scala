@@ -145,16 +145,7 @@ object OperationName {
   val S3PutObjectLegalHold = "S3PutObjectLegalHold".asInstanceOf[OperationName]
   val S3PutObjectRetention = "S3PutObjectRetention".asInstanceOf[OperationName]
 
-  @inline def values = js.Array(
-    LambdaInvoke,
-    S3PutObjectCopy,
-    S3PutObjectAcl,
-    S3PutObjectTagging,
-    S3DeleteObjectTagging,
-    S3InitiateRestoreObject,
-    S3PutObjectLegalHold,
-    S3PutObjectRetention
-  )
+  @inline def values = js.Array(LambdaInvoke, S3PutObjectCopy, S3PutObjectAcl, S3PutObjectTagging, S3DeleteObjectTagging, S3InitiateRestoreObject, S3PutObjectLegalHold, S3PutObjectRetention)
 }
 
 @js.native
@@ -288,3 +279,4 @@ object TransitionStorageClass {
 
   @inline def values = js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
 }
+

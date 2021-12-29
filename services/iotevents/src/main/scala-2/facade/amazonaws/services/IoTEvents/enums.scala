@@ -75,3 +75,4 @@ object PayloadType {
 
   @inline def values = js.Array(STRING, JSON)
 }
+

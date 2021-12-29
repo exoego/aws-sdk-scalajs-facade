@@ -1,58 +1,52 @@
 package facade.amazonaws.services.braket
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait CancellationStatus extends js.Any
+type CancellationStatus = "CANCELLING" | "CANCELLED"
 object CancellationStatus {
-  val CANCELLING = "CANCELLING".asInstanceOf[CancellationStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[CancellationStatus]
+  inline val CANCELLING: "CANCELLING" = "CANCELLING"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array(CANCELLING, CANCELLED)
+  inline def values: js.Array[CancellationStatus] = js.Array(CANCELLING, CANCELLED)
 }
 
-@js.native
-sealed trait DeviceStatus extends js.Any
+type DeviceStatus = "ONLINE" | "OFFLINE"
 object DeviceStatus {
-  val ONLINE = "ONLINE".asInstanceOf[DeviceStatus]
-  val OFFLINE = "OFFLINE".asInstanceOf[DeviceStatus]
+  inline val ONLINE: "ONLINE" = "ONLINE"
+  inline val OFFLINE: "OFFLINE" = "OFFLINE"
 
-  @inline def values = js.Array(ONLINE, OFFLINE)
+  inline def values: js.Array[DeviceStatus] = js.Array(ONLINE, OFFLINE)
 }
 
-@js.native
-sealed trait DeviceType extends js.Any
+type DeviceType = "QPU" | "SIMULATOR"
 object DeviceType {
-  val QPU = "QPU".asInstanceOf[DeviceType]
-  val SIMULATOR = "SIMULATOR".asInstanceOf[DeviceType]
+  inline val QPU: "QPU" = "QPU"
+  inline val SIMULATOR: "SIMULATOR" = "SIMULATOR"
 
-  @inline def values = js.Array(QPU, SIMULATOR)
+  inline def values: js.Array[DeviceType] = js.Array(QPU, SIMULATOR)
 }
 
-@js.native
-sealed trait QuantumTaskStatus extends js.Any
+type QuantumTaskStatus = "CREATED" | "QUEUED" | "RUNNING" | "COMPLETED" | "FAILED" | "CANCELLING" | "CANCELLED"
 object QuantumTaskStatus {
-  val CREATED = "CREATED".asInstanceOf[QuantumTaskStatus]
-  val QUEUED = "QUEUED".asInstanceOf[QuantumTaskStatus]
-  val RUNNING = "RUNNING".asInstanceOf[QuantumTaskStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[QuantumTaskStatus]
-  val FAILED = "FAILED".asInstanceOf[QuantumTaskStatus]
-  val CANCELLING = "CANCELLING".asInstanceOf[QuantumTaskStatus]
-  val CANCELLED = "CANCELLED".asInstanceOf[QuantumTaskStatus]
+  inline val CREATED: "CREATED" = "CREATED"
+  inline val QUEUED: "QUEUED" = "QUEUED"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELLING: "CANCELLING" = "CANCELLING"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array(CREATED, QUEUED, RUNNING, COMPLETED, FAILED, CANCELLING, CANCELLED)
+  inline def values: js.Array[QuantumTaskStatus] = js.Array(CREATED, QUEUED, RUNNING, COMPLETED, FAILED, CANCELLING, CANCELLED)
 }
 
-@js.native
-sealed trait SearchQuantumTasksFilterOperator extends js.Any
+type SearchQuantumTasksFilterOperator = "LT" | "LTE" | "EQUAL" | "GT" | "GTE" | "BETWEEN"
 object SearchQuantumTasksFilterOperator {
-  val LT = "LT".asInstanceOf[SearchQuantumTasksFilterOperator]
-  val LTE = "LTE".asInstanceOf[SearchQuantumTasksFilterOperator]
-  val EQUAL = "EQUAL".asInstanceOf[SearchQuantumTasksFilterOperator]
-  val GT = "GT".asInstanceOf[SearchQuantumTasksFilterOperator]
-  val GTE = "GTE".asInstanceOf[SearchQuantumTasksFilterOperator]
-  val BETWEEN = "BETWEEN".asInstanceOf[SearchQuantumTasksFilterOperator]
+  inline val LT: "LT" = "LT"
+  inline val LTE: "LTE" = "LTE"
+  inline val EQUAL: "EQUAL" = "EQUAL"
+  inline val GT: "GT" = "GT"
+  inline val GTE: "GTE" = "GTE"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
 
-  @inline def values = js.Array(LT, LTE, EQUAL, GT, GTE, BETWEEN)
+  inline def values: js.Array[SearchQuantumTasksFilterOperator] = js.Array(LT, LTE, EQUAL, GT, GTE, BETWEEN)
 }

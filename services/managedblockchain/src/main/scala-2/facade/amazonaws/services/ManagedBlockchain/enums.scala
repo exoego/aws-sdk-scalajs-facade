@@ -111,3 +111,4 @@ object VoteValue {
 
   @inline def values = js.Array(YES, NO)
 }
+

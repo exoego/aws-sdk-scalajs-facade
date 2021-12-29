@@ -1,60 +1,56 @@
 package facade.amazonaws.services.polly
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait Engine extends js.Any
+type Engine = "standard" | "neural"
 object Engine {
-  val standard = "standard".asInstanceOf[Engine]
-  val neural = "neural".asInstanceOf[Engine]
+  inline val standard: "standard" = "standard"
+  inline val neural: "neural" = "neural"
 
-  @inline def values = js.Array(standard, neural)
+  inline def values: js.Array[Engine] = js.Array(standard, neural)
 }
 
-@js.native
-sealed trait Gender extends js.Any
+type Gender = "Female" | "Male"
 object Gender {
-  val Female = "Female".asInstanceOf[Gender]
-  val Male = "Male".asInstanceOf[Gender]
+  inline val Female: "Female" = "Female"
+  inline val Male: "Male" = "Male"
 
-  @inline def values = js.Array(Female, Male)
+  inline def values: js.Array[Gender] = js.Array(Female, Male)
 }
 
-@js.native
-sealed trait LanguageCode extends js.Any
+type LanguageCode = "arb" | "cmn-CN" | "cy-GB" | "da-DK" | "de-DE" | "en-AU" | "en-GB" | "en-GB-WLS" | "en-IN" | "en-US" | "es-ES" | "es-MX" | "es-US" | "fr-CA" | "fr-FR" | "is-IS" | "it-IT" | "ja-JP" | "hi-IN" | "ko-KR" | "nb-NO" | "nl-NL" | "pl-PL" | "pt-BR" | "pt-PT" | "ro-RO" | "ru-RU" | "sv-SE" | "tr-TR"
 object LanguageCode {
-  val arb = "arb".asInstanceOf[LanguageCode]
-  val `cmn-CN` = "cmn-CN".asInstanceOf[LanguageCode]
-  val `cy-GB` = "cy-GB".asInstanceOf[LanguageCode]
-  val `da-DK` = "da-DK".asInstanceOf[LanguageCode]
-  val `de-DE` = "de-DE".asInstanceOf[LanguageCode]
-  val `en-AU` = "en-AU".asInstanceOf[LanguageCode]
-  val `en-GB` = "en-GB".asInstanceOf[LanguageCode]
-  val `en-GB-WLS` = "en-GB-WLS".asInstanceOf[LanguageCode]
-  val `en-IN` = "en-IN".asInstanceOf[LanguageCode]
-  val `en-US` = "en-US".asInstanceOf[LanguageCode]
-  val `es-ES` = "es-ES".asInstanceOf[LanguageCode]
-  val `es-MX` = "es-MX".asInstanceOf[LanguageCode]
-  val `es-US` = "es-US".asInstanceOf[LanguageCode]
-  val `fr-CA` = "fr-CA".asInstanceOf[LanguageCode]
-  val `fr-FR` = "fr-FR".asInstanceOf[LanguageCode]
-  val `is-IS` = "is-IS".asInstanceOf[LanguageCode]
-  val `it-IT` = "it-IT".asInstanceOf[LanguageCode]
-  val `ja-JP` = "ja-JP".asInstanceOf[LanguageCode]
-  val `hi-IN` = "hi-IN".asInstanceOf[LanguageCode]
-  val `ko-KR` = "ko-KR".asInstanceOf[LanguageCode]
-  val `nb-NO` = "nb-NO".asInstanceOf[LanguageCode]
-  val `nl-NL` = "nl-NL".asInstanceOf[LanguageCode]
-  val `pl-PL` = "pl-PL".asInstanceOf[LanguageCode]
-  val `pt-BR` = "pt-BR".asInstanceOf[LanguageCode]
-  val `pt-PT` = "pt-PT".asInstanceOf[LanguageCode]
-  val `ro-RO` = "ro-RO".asInstanceOf[LanguageCode]
-  val `ru-RU` = "ru-RU".asInstanceOf[LanguageCode]
-  val `sv-SE` = "sv-SE".asInstanceOf[LanguageCode]
-  val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
+  inline val arb: "arb" = "arb"
+  inline val `cmn-CN`: "cmn-CN" = "cmn-CN"
+  inline val `cy-GB`: "cy-GB" = "cy-GB"
+  inline val `da-DK`: "da-DK" = "da-DK"
+  inline val `de-DE`: "de-DE" = "de-DE"
+  inline val `en-AU`: "en-AU" = "en-AU"
+  inline val `en-GB`: "en-GB" = "en-GB"
+  inline val `en-GB-WLS`: "en-GB-WLS" = "en-GB-WLS"
+  inline val `en-IN`: "en-IN" = "en-IN"
+  inline val `en-US`: "en-US" = "en-US"
+  inline val `es-ES`: "es-ES" = "es-ES"
+  inline val `es-MX`: "es-MX" = "es-MX"
+  inline val `es-US`: "es-US" = "es-US"
+  inline val `fr-CA`: "fr-CA" = "fr-CA"
+  inline val `fr-FR`: "fr-FR" = "fr-FR"
+  inline val `is-IS`: "is-IS" = "is-IS"
+  inline val `it-IT`: "it-IT" = "it-IT"
+  inline val `ja-JP`: "ja-JP" = "ja-JP"
+  inline val `hi-IN`: "hi-IN" = "hi-IN"
+  inline val `ko-KR`: "ko-KR" = "ko-KR"
+  inline val `nb-NO`: "nb-NO" = "nb-NO"
+  inline val `nl-NL`: "nl-NL" = "nl-NL"
+  inline val `pl-PL`: "pl-PL" = "pl-PL"
+  inline val `pt-BR`: "pt-BR" = "pt-BR"
+  inline val `pt-PT`: "pt-PT" = "pt-PT"
+  inline val `ro-RO`: "ro-RO" = "ro-RO"
+  inline val `ru-RU`: "ru-RU" = "ru-RU"
+  inline val `sv-SE`: "sv-SE" = "sv-SE"
+  inline val `tr-TR`: "tr-TR" = "tr-TR"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[LanguageCode] = js.Array(
     arb,
     `cmn-CN`,
     `cy-GB`,
@@ -87,115 +83,110 @@ object LanguageCode {
   )
 }
 
-@js.native
-sealed trait OutputFormat extends js.Any
+type OutputFormat = "json" | "mp3" | "ogg_vorbis" | "pcm"
 object OutputFormat {
-  val json = "json".asInstanceOf[OutputFormat]
-  val mp3 = "mp3".asInstanceOf[OutputFormat]
-  val ogg_vorbis = "ogg_vorbis".asInstanceOf[OutputFormat]
-  val pcm = "pcm".asInstanceOf[OutputFormat]
+  inline val json: "json" = "json"
+  inline val mp3: "mp3" = "mp3"
+  inline val ogg_vorbis: "ogg_vorbis" = "ogg_vorbis"
+  inline val pcm: "pcm" = "pcm"
 
-  @inline def values = js.Array(json, mp3, ogg_vorbis, pcm)
+  inline def values: js.Array[OutputFormat] = js.Array(json, mp3, ogg_vorbis, pcm)
 }
 
-@js.native
-sealed trait SpeechMarkType extends js.Any
+type SpeechMarkType = "sentence" | "ssml" | "viseme" | "word"
 object SpeechMarkType {
-  val sentence = "sentence".asInstanceOf[SpeechMarkType]
-  val ssml = "ssml".asInstanceOf[SpeechMarkType]
-  val viseme = "viseme".asInstanceOf[SpeechMarkType]
-  val word = "word".asInstanceOf[SpeechMarkType]
+  inline val sentence: "sentence" = "sentence"
+  inline val ssml: "ssml" = "ssml"
+  inline val viseme: "viseme" = "viseme"
+  inline val word: "word" = "word"
 
-  @inline def values = js.Array(sentence, ssml, viseme, word)
+  inline def values: js.Array[SpeechMarkType] = js.Array(sentence, ssml, viseme, word)
 }
 
-@js.native
-sealed trait TaskStatus extends js.Any
+type TaskStatus = "scheduled" | "inProgress" | "completed" | "failed"
 object TaskStatus {
-  val scheduled = "scheduled".asInstanceOf[TaskStatus]
-  val inProgress = "inProgress".asInstanceOf[TaskStatus]
-  val completed = "completed".asInstanceOf[TaskStatus]
-  val failed = "failed".asInstanceOf[TaskStatus]
+  inline val scheduled: "scheduled" = "scheduled"
+  inline val inProgress: "inProgress" = "inProgress"
+  inline val completed: "completed" = "completed"
+  inline val failed: "failed" = "failed"
 
-  @inline def values = js.Array(scheduled, inProgress, completed, failed)
+  inline def values: js.Array[TaskStatus] = js.Array(scheduled, inProgress, completed, failed)
 }
 
-@js.native
-sealed trait TextType extends js.Any
+type TextType = "ssml" | "text"
 object TextType {
-  val ssml = "ssml".asInstanceOf[TextType]
-  val text = "text".asInstanceOf[TextType]
+  inline val ssml: "ssml" = "ssml"
+  inline val text: "text" = "text"
 
-  @inline def values = js.Array(ssml, text)
+  inline def values: js.Array[TextType] = js.Array(ssml, text)
 }
 
-@js.native
-sealed trait VoiceId extends js.Any
+type VoiceId = "Aditi" | "Amy" | "Astrid" | "Bianca" | "Brian" | "Camila" | "Carla" | "Carmen" | "Celine" | "Chantal" | "Conchita" | "Cristiano" | "Dora" | "Emma" | "Enrique" | "Ewa" | "Filiz" | "Geraint" | "Giorgio" | "Gwyneth" | "Hans" | "Ines" | "Ivy" | "Jacek" | "Jan" | "Joanna" | "Joey" | "Justin" | "Karl" | "Kendra" | "Kevin" | "Kimberly" | "Lea" | "Liv" | "Lotte" | "Lucia" | "Lupe" | "Mads" | "Maja" | "Marlene" | "Mathieu" | "Matthew" | "Maxim" | "Mia" | "Miguel" | "Mizuki" | "Naja" | "Nicole" | "Olivia" | "Penelope" | "Raveena" | "Ricardo" | "Ruben" | "Russell" | "Salli" | "Seoyeon" | "Takumi" | "Tatyana" | "Vicki" | "Vitoria" | "Zeina" | "Zhiyu"
 object VoiceId {
-  val Aditi = "Aditi".asInstanceOf[VoiceId]
-  val Amy = "Amy".asInstanceOf[VoiceId]
-  val Astrid = "Astrid".asInstanceOf[VoiceId]
-  val Bianca = "Bianca".asInstanceOf[VoiceId]
-  val Brian = "Brian".asInstanceOf[VoiceId]
-  val Camila = "Camila".asInstanceOf[VoiceId]
-  val Carla = "Carla".asInstanceOf[VoiceId]
-  val Carmen = "Carmen".asInstanceOf[VoiceId]
-  val Celine = "Celine".asInstanceOf[VoiceId]
-  val Chantal = "Chantal".asInstanceOf[VoiceId]
-  val Conchita = "Conchita".asInstanceOf[VoiceId]
-  val Cristiano = "Cristiano".asInstanceOf[VoiceId]
-  val Dora = "Dora".asInstanceOf[VoiceId]
-  val Emma = "Emma".asInstanceOf[VoiceId]
-  val Enrique = "Enrique".asInstanceOf[VoiceId]
-  val Ewa = "Ewa".asInstanceOf[VoiceId]
-  val Filiz = "Filiz".asInstanceOf[VoiceId]
-  val Geraint = "Geraint".asInstanceOf[VoiceId]
-  val Giorgio = "Giorgio".asInstanceOf[VoiceId]
-  val Gwyneth = "Gwyneth".asInstanceOf[VoiceId]
-  val Hans = "Hans".asInstanceOf[VoiceId]
-  val Ines = "Ines".asInstanceOf[VoiceId]
-  val Ivy = "Ivy".asInstanceOf[VoiceId]
-  val Jacek = "Jacek".asInstanceOf[VoiceId]
-  val Jan = "Jan".asInstanceOf[VoiceId]
-  val Joanna = "Joanna".asInstanceOf[VoiceId]
-  val Joey = "Joey".asInstanceOf[VoiceId]
-  val Justin = "Justin".asInstanceOf[VoiceId]
-  val Karl = "Karl".asInstanceOf[VoiceId]
-  val Kendra = "Kendra".asInstanceOf[VoiceId]
-  val Kevin = "Kevin".asInstanceOf[VoiceId]
-  val Kimberly = "Kimberly".asInstanceOf[VoiceId]
-  val Lea = "Lea".asInstanceOf[VoiceId]
-  val Liv = "Liv".asInstanceOf[VoiceId]
-  val Lotte = "Lotte".asInstanceOf[VoiceId]
-  val Lucia = "Lucia".asInstanceOf[VoiceId]
-  val Lupe = "Lupe".asInstanceOf[VoiceId]
-  val Mads = "Mads".asInstanceOf[VoiceId]
-  val Maja = "Maja".asInstanceOf[VoiceId]
-  val Marlene = "Marlene".asInstanceOf[VoiceId]
-  val Mathieu = "Mathieu".asInstanceOf[VoiceId]
-  val Matthew = "Matthew".asInstanceOf[VoiceId]
-  val Maxim = "Maxim".asInstanceOf[VoiceId]
-  val Mia = "Mia".asInstanceOf[VoiceId]
-  val Miguel = "Miguel".asInstanceOf[VoiceId]
-  val Mizuki = "Mizuki".asInstanceOf[VoiceId]
-  val Naja = "Naja".asInstanceOf[VoiceId]
-  val Nicole = "Nicole".asInstanceOf[VoiceId]
-  val Olivia = "Olivia".asInstanceOf[VoiceId]
-  val Penelope = "Penelope".asInstanceOf[VoiceId]
-  val Raveena = "Raveena".asInstanceOf[VoiceId]
-  val Ricardo = "Ricardo".asInstanceOf[VoiceId]
-  val Ruben = "Ruben".asInstanceOf[VoiceId]
-  val Russell = "Russell".asInstanceOf[VoiceId]
-  val Salli = "Salli".asInstanceOf[VoiceId]
-  val Seoyeon = "Seoyeon".asInstanceOf[VoiceId]
-  val Takumi = "Takumi".asInstanceOf[VoiceId]
-  val Tatyana = "Tatyana".asInstanceOf[VoiceId]
-  val Vicki = "Vicki".asInstanceOf[VoiceId]
-  val Vitoria = "Vitoria".asInstanceOf[VoiceId]
-  val Zeina = "Zeina".asInstanceOf[VoiceId]
-  val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
+  inline val Aditi: "Aditi" = "Aditi"
+  inline val Amy: "Amy" = "Amy"
+  inline val Astrid: "Astrid" = "Astrid"
+  inline val Bianca: "Bianca" = "Bianca"
+  inline val Brian: "Brian" = "Brian"
+  inline val Camila: "Camila" = "Camila"
+  inline val Carla: "Carla" = "Carla"
+  inline val Carmen: "Carmen" = "Carmen"
+  inline val Celine: "Celine" = "Celine"
+  inline val Chantal: "Chantal" = "Chantal"
+  inline val Conchita: "Conchita" = "Conchita"
+  inline val Cristiano: "Cristiano" = "Cristiano"
+  inline val Dora: "Dora" = "Dora"
+  inline val Emma: "Emma" = "Emma"
+  inline val Enrique: "Enrique" = "Enrique"
+  inline val Ewa: "Ewa" = "Ewa"
+  inline val Filiz: "Filiz" = "Filiz"
+  inline val Geraint: "Geraint" = "Geraint"
+  inline val Giorgio: "Giorgio" = "Giorgio"
+  inline val Gwyneth: "Gwyneth" = "Gwyneth"
+  inline val Hans: "Hans" = "Hans"
+  inline val Ines: "Ines" = "Ines"
+  inline val Ivy: "Ivy" = "Ivy"
+  inline val Jacek: "Jacek" = "Jacek"
+  inline val Jan: "Jan" = "Jan"
+  inline val Joanna: "Joanna" = "Joanna"
+  inline val Joey: "Joey" = "Joey"
+  inline val Justin: "Justin" = "Justin"
+  inline val Karl: "Karl" = "Karl"
+  inline val Kendra: "Kendra" = "Kendra"
+  inline val Kevin: "Kevin" = "Kevin"
+  inline val Kimberly: "Kimberly" = "Kimberly"
+  inline val Lea: "Lea" = "Lea"
+  inline val Liv: "Liv" = "Liv"
+  inline val Lotte: "Lotte" = "Lotte"
+  inline val Lucia: "Lucia" = "Lucia"
+  inline val Lupe: "Lupe" = "Lupe"
+  inline val Mads: "Mads" = "Mads"
+  inline val Maja: "Maja" = "Maja"
+  inline val Marlene: "Marlene" = "Marlene"
+  inline val Mathieu: "Mathieu" = "Mathieu"
+  inline val Matthew: "Matthew" = "Matthew"
+  inline val Maxim: "Maxim" = "Maxim"
+  inline val Mia: "Mia" = "Mia"
+  inline val Miguel: "Miguel" = "Miguel"
+  inline val Mizuki: "Mizuki" = "Mizuki"
+  inline val Naja: "Naja" = "Naja"
+  inline val Nicole: "Nicole" = "Nicole"
+  inline val Olivia: "Olivia" = "Olivia"
+  inline val Penelope: "Penelope" = "Penelope"
+  inline val Raveena: "Raveena" = "Raveena"
+  inline val Ricardo: "Ricardo" = "Ricardo"
+  inline val Ruben: "Ruben" = "Ruben"
+  inline val Russell: "Russell" = "Russell"
+  inline val Salli: "Salli" = "Salli"
+  inline val Seoyeon: "Seoyeon" = "Seoyeon"
+  inline val Takumi: "Takumi" = "Takumi"
+  inline val Tatyana: "Tatyana" = "Tatyana"
+  inline val Vicki: "Vicki" = "Vicki"
+  inline val Vitoria: "Vitoria" = "Vitoria"
+  inline val Zeina: "Zeina" = "Zeina"
+  inline val Zhiyu: "Zhiyu" = "Zhiyu"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[VoiceId] = js.Array(
     Aditi,
     Amy,
     Astrid,

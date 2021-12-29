@@ -30,3 +30,4 @@ object Type {
 
   @inline def values = js.Array(OpenApi3, JSONSchemaDraft4)
 }
+

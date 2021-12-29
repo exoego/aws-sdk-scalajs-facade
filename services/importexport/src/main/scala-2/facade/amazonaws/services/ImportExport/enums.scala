@@ -13,3 +13,4 @@ object JobType {
 
   @inline def values = js.Array(Import, Export)
 }
+

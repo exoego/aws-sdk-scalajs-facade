@@ -36,7 +36,9 @@ object HsmStatus {
   @inline def values = js.Array(PENDING, RUNNING, UPDATING, SUSPENDED, TERMINATING, TERMINATED, DEGRADED)
 }
 
-/** Specifies the type of subscription for the HSM. * ```PRODUCTION``` - The HSM is being used in a production environment. * ```TRIAL``` - The HSM is being used in a product trial.
+/** Specifies the type of subscription for the HSM.
+  * * ```PRODUCTION``` - The HSM is being used in a production environment.
+  * * ```TRIAL``` - The HSM is being used in a product trial.
   */
 @js.native
 sealed trait SubscriptionType extends js.Any
@@ -45,3 +47,4 @@ object SubscriptionType {
 
   @inline def values = js.Array(PRODUCTION)
 }
+

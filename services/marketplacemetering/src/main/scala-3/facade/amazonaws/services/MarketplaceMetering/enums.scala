@@ -1,14 +1,12 @@
 package facade.amazonaws.services.marketplacemetering
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait UsageRecordResultStatus extends js.Any
+type UsageRecordResultStatus = "Success" | "CustomerNotSubscribed" | "DuplicateRecord"
 object UsageRecordResultStatus {
-  val Success = "Success".asInstanceOf[UsageRecordResultStatus]
-  val CustomerNotSubscribed = "CustomerNotSubscribed".asInstanceOf[UsageRecordResultStatus]
-  val DuplicateRecord = "DuplicateRecord".asInstanceOf[UsageRecordResultStatus]
+  inline val Success: "Success" = "Success"
+  inline val CustomerNotSubscribed: "CustomerNotSubscribed" = "CustomerNotSubscribed"
+  inline val DuplicateRecord: "DuplicateRecord" = "DuplicateRecord"
 
-  @inline def values = js.Array(Success, CustomerNotSubscribed, DuplicateRecord)
+  inline def values: js.Array[UsageRecordResultStatus] = js.Array(Success, CustomerNotSubscribed, DuplicateRecord)
 }

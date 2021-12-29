@@ -183,3 +183,4 @@ object StatusType {
 
   @inline def values = js.Array(Detected, Missed)
 }
+

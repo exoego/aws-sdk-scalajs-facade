@@ -26,17 +26,7 @@ object ConnectionErrorCodeType {
   val USER_LOGGED_IN = "USER_LOGGED_IN".asInstanceOf[ConnectionErrorCodeType]
   val SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
 
-  @inline def values = js.Array(
-    INVALID_CREDENTIALS,
-    CLUSTER_NOT_FOUND,
-    NETWORK_ERRORS,
-    INTERNAL_ERROR,
-    INSUFFICIENT_CLOUDHSM_HSMS,
-    USER_LOCKED_OUT,
-    USER_NOT_FOUND,
-    USER_LOGGED_IN,
-    SUBNET_NOT_FOUND
-  )
+  @inline def values = js.Array(INVALID_CREDENTIALS, CLUSTER_NOT_FOUND, NETWORK_ERRORS, INTERNAL_ERROR, INSUFFICIENT_CLOUDHSM_HSMS, USER_LOCKED_OUT, USER_NOT_FOUND, USER_LOGGED_IN, SUBNET_NOT_FOUND)
 }
 
 @js.native
@@ -126,22 +116,7 @@ object GrantOperation {
   val GenerateDataKeyPair = "GenerateDataKeyPair".asInstanceOf[GrantOperation]
   val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext".asInstanceOf[GrantOperation]
 
-  @inline def values = js.Array(
-    Decrypt,
-    Encrypt,
-    GenerateDataKey,
-    GenerateDataKeyWithoutPlaintext,
-    ReEncryptFrom,
-    ReEncryptTo,
-    Sign,
-    Verify,
-    GetPublicKey,
-    CreateGrant,
-    RetireGrant,
-    DescribeKey,
-    GenerateDataKeyPair,
-    GenerateDataKeyPairWithoutPlaintext
-  )
+  @inline def values = js.Array(Decrypt, Encrypt, GenerateDataKey, GenerateDataKeyWithoutPlaintext, ReEncryptFrom, ReEncryptTo, Sign, Verify, GetPublicKey, CreateGrant, RetireGrant, DescribeKey, GenerateDataKeyPair, GenerateDataKeyPairWithoutPlaintext)
 }
 
 @js.native
@@ -206,17 +181,7 @@ object SigningAlgorithmSpec {
   val ECDSA_SHA_384 = "ECDSA_SHA_384".asInstanceOf[SigningAlgorithmSpec]
   val ECDSA_SHA_512 = "ECDSA_SHA_512".asInstanceOf[SigningAlgorithmSpec]
 
-  @inline def values = js.Array(
-    RSASSA_PSS_SHA_256,
-    RSASSA_PSS_SHA_384,
-    RSASSA_PSS_SHA_512,
-    RSASSA_PKCS1_V1_5_SHA_256,
-    RSASSA_PKCS1_V1_5_SHA_384,
-    RSASSA_PKCS1_V1_5_SHA_512,
-    ECDSA_SHA_256,
-    ECDSA_SHA_384,
-    ECDSA_SHA_512
-  )
+  @inline def values = js.Array(RSASSA_PSS_SHA_256, RSASSA_PSS_SHA_384, RSASSA_PSS_SHA_512, RSASSA_PKCS1_V1_5_SHA_256, RSASSA_PKCS1_V1_5_SHA_384, RSASSA_PKCS1_V1_5_SHA_512, ECDSA_SHA_256, ECDSA_SHA_384, ECDSA_SHA_512)
 }
 
 @js.native
@@ -226,3 +191,4 @@ object WrappingKeySpec {
 
   @inline def values = js.Array(RSA_2048)
 }
+

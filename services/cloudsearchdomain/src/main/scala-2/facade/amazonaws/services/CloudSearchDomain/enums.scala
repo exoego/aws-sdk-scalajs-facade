@@ -22,3 +22,4 @@ object QueryParser {
 
   @inline def values = js.Array(simple, structured, lucene, dismax)
 }
+

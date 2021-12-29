@@ -24,3 +24,4 @@ object TypeHint {
 
   @inline def values = js.Array(JSON, UUID, TIMESTAMP, DATE, TIME, DECIMAL)
 }
+

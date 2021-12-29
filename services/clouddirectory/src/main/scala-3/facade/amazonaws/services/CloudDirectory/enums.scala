@@ -1,26 +1,24 @@
 package facade.amazonaws.services.clouddirectory
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait BatchReadExceptionType extends js.Any
+type BatchReadExceptionType = "ValidationException" | "InvalidArnException" | "ResourceNotFoundException" | "InvalidNextTokenException" | "AccessDeniedException" | "NotNodeException" | "FacetValidationException" | "CannotListParentOfRootException" | "NotIndexException" | "NotPolicyException" | "DirectoryNotEnabledException" | "LimitExceededException" | "InternalServiceException"
 object BatchReadExceptionType {
-  val ValidationException = "ValidationException".asInstanceOf[BatchReadExceptionType]
-  val InvalidArnException = "InvalidArnException".asInstanceOf[BatchReadExceptionType]
-  val ResourceNotFoundException = "ResourceNotFoundException".asInstanceOf[BatchReadExceptionType]
-  val InvalidNextTokenException = "InvalidNextTokenException".asInstanceOf[BatchReadExceptionType]
-  val AccessDeniedException = "AccessDeniedException".asInstanceOf[BatchReadExceptionType]
-  val NotNodeException = "NotNodeException".asInstanceOf[BatchReadExceptionType]
-  val FacetValidationException = "FacetValidationException".asInstanceOf[BatchReadExceptionType]
-  val CannotListParentOfRootException = "CannotListParentOfRootException".asInstanceOf[BatchReadExceptionType]
-  val NotIndexException = "NotIndexException".asInstanceOf[BatchReadExceptionType]
-  val NotPolicyException = "NotPolicyException".asInstanceOf[BatchReadExceptionType]
-  val DirectoryNotEnabledException = "DirectoryNotEnabledException".asInstanceOf[BatchReadExceptionType]
-  val LimitExceededException = "LimitExceededException".asInstanceOf[BatchReadExceptionType]
-  val InternalServiceException = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
+  inline val ValidationException: "ValidationException" = "ValidationException"
+  inline val InvalidArnException: "InvalidArnException" = "InvalidArnException"
+  inline val ResourceNotFoundException: "ResourceNotFoundException" = "ResourceNotFoundException"
+  inline val InvalidNextTokenException: "InvalidNextTokenException" = "InvalidNextTokenException"
+  inline val AccessDeniedException: "AccessDeniedException" = "AccessDeniedException"
+  inline val NotNodeException: "NotNodeException" = "NotNodeException"
+  inline val FacetValidationException: "FacetValidationException" = "FacetValidationException"
+  inline val CannotListParentOfRootException: "CannotListParentOfRootException" = "CannotListParentOfRootException"
+  inline val NotIndexException: "NotIndexException" = "NotIndexException"
+  inline val NotPolicyException: "NotPolicyException" = "NotPolicyException"
+  inline val DirectoryNotEnabledException: "DirectoryNotEnabledException" = "DirectoryNotEnabledException"
+  inline val LimitExceededException: "LimitExceededException" = "LimitExceededException"
+  inline val InternalServiceException: "InternalServiceException" = "InternalServiceException"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[BatchReadExceptionType] = js.Array(
     ValidationException,
     InvalidArnException,
     ResourceNotFoundException,
@@ -37,95 +35,86 @@ object BatchReadExceptionType {
   )
 }
 
-@js.native
-sealed trait ConsistencyLevel extends js.Any
+type ConsistencyLevel = "SERIALIZABLE" | "EVENTUAL"
 object ConsistencyLevel {
-  val SERIALIZABLE = "SERIALIZABLE".asInstanceOf[ConsistencyLevel]
-  val EVENTUAL = "EVENTUAL".asInstanceOf[ConsistencyLevel]
+  inline val SERIALIZABLE: "SERIALIZABLE" = "SERIALIZABLE"
+  inline val EVENTUAL: "EVENTUAL" = "EVENTUAL"
 
-  @inline def values = js.Array(SERIALIZABLE, EVENTUAL)
+  inline def values: js.Array[ConsistencyLevel] = js.Array(SERIALIZABLE, EVENTUAL)
 }
 
-@js.native
-sealed trait DirectoryState extends js.Any
+type DirectoryState = "ENABLED" | "DISABLED" | "DELETED"
 object DirectoryState {
-  val ENABLED = "ENABLED".asInstanceOf[DirectoryState]
-  val DISABLED = "DISABLED".asInstanceOf[DirectoryState]
-  val DELETED = "DELETED".asInstanceOf[DirectoryState]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(ENABLED, DISABLED, DELETED)
+  inline def values: js.Array[DirectoryState] = js.Array(ENABLED, DISABLED, DELETED)
 }
 
-@js.native
-sealed trait FacetAttributeType extends js.Any
+type FacetAttributeType = "STRING" | "BINARY" | "BOOLEAN" | "NUMBER" | "DATETIME" | "VARIANT"
 object FacetAttributeType {
-  val STRING = "STRING".asInstanceOf[FacetAttributeType]
-  val BINARY = "BINARY".asInstanceOf[FacetAttributeType]
-  val BOOLEAN = "BOOLEAN".asInstanceOf[FacetAttributeType]
-  val NUMBER = "NUMBER".asInstanceOf[FacetAttributeType]
-  val DATETIME = "DATETIME".asInstanceOf[FacetAttributeType]
-  val VARIANT = "VARIANT".asInstanceOf[FacetAttributeType]
+  inline val STRING: "STRING" = "STRING"
+  inline val BINARY: "BINARY" = "BINARY"
+  inline val BOOLEAN: "BOOLEAN" = "BOOLEAN"
+  inline val NUMBER: "NUMBER" = "NUMBER"
+  inline val DATETIME: "DATETIME" = "DATETIME"
+  inline val VARIANT: "VARIANT" = "VARIANT"
 
-  @inline def values = js.Array(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT)
+  inline def values: js.Array[FacetAttributeType] = js.Array(STRING, BINARY, BOOLEAN, NUMBER, DATETIME, VARIANT)
 }
 
-@js.native
-sealed trait FacetStyle extends js.Any
+type FacetStyle = "STATIC" | "DYNAMIC"
 object FacetStyle {
-  val STATIC = "STATIC".asInstanceOf[FacetStyle]
-  val DYNAMIC = "DYNAMIC".asInstanceOf[FacetStyle]
+  inline val STATIC: "STATIC" = "STATIC"
+  inline val DYNAMIC: "DYNAMIC" = "DYNAMIC"
 
-  @inline def values = js.Array(STATIC, DYNAMIC)
+  inline def values: js.Array[FacetStyle] = js.Array(STATIC, DYNAMIC)
 }
 
-@js.native
-sealed trait ObjectType extends js.Any
+type ObjectType = "NODE" | "LEAF_NODE" | "POLICY" | "INDEX"
 object ObjectType {
-  val NODE = "NODE".asInstanceOf[ObjectType]
-  val LEAF_NODE = "LEAF_NODE".asInstanceOf[ObjectType]
-  val POLICY = "POLICY".asInstanceOf[ObjectType]
-  val INDEX = "INDEX".asInstanceOf[ObjectType]
+  inline val NODE: "NODE" = "NODE"
+  inline val LEAF_NODE: "LEAF_NODE" = "LEAF_NODE"
+  inline val POLICY: "POLICY" = "POLICY"
+  inline val INDEX: "INDEX" = "INDEX"
 
-  @inline def values = js.Array(NODE, LEAF_NODE, POLICY, INDEX)
+  inline def values: js.Array[ObjectType] = js.Array(NODE, LEAF_NODE, POLICY, INDEX)
 }
 
-@js.native
-sealed trait RangeMode extends js.Any
+type RangeMode = "FIRST" | "LAST" | "LAST_BEFORE_MISSING_VALUES" | "INCLUSIVE" | "EXCLUSIVE"
 object RangeMode {
-  val FIRST = "FIRST".asInstanceOf[RangeMode]
-  val LAST = "LAST".asInstanceOf[RangeMode]
-  val LAST_BEFORE_MISSING_VALUES = "LAST_BEFORE_MISSING_VALUES".asInstanceOf[RangeMode]
-  val INCLUSIVE = "INCLUSIVE".asInstanceOf[RangeMode]
-  val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[RangeMode]
+  inline val FIRST: "FIRST" = "FIRST"
+  inline val LAST: "LAST" = "LAST"
+  inline val LAST_BEFORE_MISSING_VALUES: "LAST_BEFORE_MISSING_VALUES" = "LAST_BEFORE_MISSING_VALUES"
+  inline val INCLUSIVE: "INCLUSIVE" = "INCLUSIVE"
+  inline val EXCLUSIVE: "EXCLUSIVE" = "EXCLUSIVE"
 
-  @inline def values = js.Array(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE)
+  inline def values: js.Array[RangeMode] = js.Array(FIRST, LAST, LAST_BEFORE_MISSING_VALUES, INCLUSIVE, EXCLUSIVE)
 }
 
-@js.native
-sealed trait RequiredAttributeBehavior extends js.Any
+type RequiredAttributeBehavior = "REQUIRED_ALWAYS" | "NOT_REQUIRED"
 object RequiredAttributeBehavior {
-  val REQUIRED_ALWAYS = "REQUIRED_ALWAYS".asInstanceOf[RequiredAttributeBehavior]
-  val NOT_REQUIRED = "NOT_REQUIRED".asInstanceOf[RequiredAttributeBehavior]
+  inline val REQUIRED_ALWAYS: "REQUIRED_ALWAYS" = "REQUIRED_ALWAYS"
+  inline val NOT_REQUIRED: "NOT_REQUIRED" = "NOT_REQUIRED"
 
-  @inline def values = js.Array(REQUIRED_ALWAYS, NOT_REQUIRED)
+  inline def values: js.Array[RequiredAttributeBehavior] = js.Array(REQUIRED_ALWAYS, NOT_REQUIRED)
 }
 
-@js.native
-sealed trait RuleType extends js.Any
+type RuleType = "BINARY_LENGTH" | "NUMBER_COMPARISON" | "STRING_FROM_SET" | "STRING_LENGTH"
 object RuleType {
-  val BINARY_LENGTH = "BINARY_LENGTH".asInstanceOf[RuleType]
-  val NUMBER_COMPARISON = "NUMBER_COMPARISON".asInstanceOf[RuleType]
-  val STRING_FROM_SET = "STRING_FROM_SET".asInstanceOf[RuleType]
-  val STRING_LENGTH = "STRING_LENGTH".asInstanceOf[RuleType]
+  inline val BINARY_LENGTH: "BINARY_LENGTH" = "BINARY_LENGTH"
+  inline val NUMBER_COMPARISON: "NUMBER_COMPARISON" = "NUMBER_COMPARISON"
+  inline val STRING_FROM_SET: "STRING_FROM_SET" = "STRING_FROM_SET"
+  inline val STRING_LENGTH: "STRING_LENGTH" = "STRING_LENGTH"
 
-  @inline def values = js.Array(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH)
+  inline def values: js.Array[RuleType] = js.Array(BINARY_LENGTH, NUMBER_COMPARISON, STRING_FROM_SET, STRING_LENGTH)
 }
 
-@js.native
-sealed trait UpdateActionType extends js.Any
+type UpdateActionType = "CREATE_OR_UPDATE" | "DELETE"
 object UpdateActionType {
-  val CREATE_OR_UPDATE = "CREATE_OR_UPDATE".asInstanceOf[UpdateActionType]
-  val DELETE = "DELETE".asInstanceOf[UpdateActionType]
+  inline val CREATE_OR_UPDATE: "CREATE_OR_UPDATE" = "CREATE_OR_UPDATE"
+  inline val DELETE: "DELETE" = "DELETE"
 
-  @inline def values = js.Array(CREATE_OR_UPDATE, DELETE)
+  inline def values: js.Array[UpdateActionType] = js.Array(CREATE_OR_UPDATE, DELETE)
 }

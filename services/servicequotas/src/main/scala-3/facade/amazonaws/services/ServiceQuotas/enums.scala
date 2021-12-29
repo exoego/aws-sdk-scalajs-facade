@@ -1,50 +1,45 @@
 package facade.amazonaws.services.servicequotas
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ErrorCode extends js.Any
+type ErrorCode = "DEPENDENCY_ACCESS_DENIED_ERROR" | "DEPENDENCY_THROTTLING_ERROR" | "DEPENDENCY_SERVICE_ERROR" | "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"
 object ErrorCode {
-  val DEPENDENCY_ACCESS_DENIED_ERROR = "DEPENDENCY_ACCESS_DENIED_ERROR".asInstanceOf[ErrorCode]
-  val DEPENDENCY_THROTTLING_ERROR = "DEPENDENCY_THROTTLING_ERROR".asInstanceOf[ErrorCode]
-  val DEPENDENCY_SERVICE_ERROR = "DEPENDENCY_SERVICE_ERROR".asInstanceOf[ErrorCode]
-  val SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR".asInstanceOf[ErrorCode]
+  inline val DEPENDENCY_ACCESS_DENIED_ERROR: "DEPENDENCY_ACCESS_DENIED_ERROR" = "DEPENDENCY_ACCESS_DENIED_ERROR"
+  inline val DEPENDENCY_THROTTLING_ERROR: "DEPENDENCY_THROTTLING_ERROR" = "DEPENDENCY_THROTTLING_ERROR"
+  inline val DEPENDENCY_SERVICE_ERROR: "DEPENDENCY_SERVICE_ERROR" = "DEPENDENCY_SERVICE_ERROR"
+  inline val SERVICE_QUOTA_NOT_AVAILABLE_ERROR: "SERVICE_QUOTA_NOT_AVAILABLE_ERROR" = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"
 
-  @inline def values = js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR)
+  inline def values: js.Array[ErrorCode] = js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR)
 }
 
-@js.native
-sealed trait PeriodUnit extends js.Any
+type PeriodUnit = "MICROSECOND" | "MILLISECOND" | "SECOND" | "MINUTE" | "HOUR" | "DAY" | "WEEK"
 object PeriodUnit {
-  val MICROSECOND = "MICROSECOND".asInstanceOf[PeriodUnit]
-  val MILLISECOND = "MILLISECOND".asInstanceOf[PeriodUnit]
-  val SECOND = "SECOND".asInstanceOf[PeriodUnit]
-  val MINUTE = "MINUTE".asInstanceOf[PeriodUnit]
-  val HOUR = "HOUR".asInstanceOf[PeriodUnit]
-  val DAY = "DAY".asInstanceOf[PeriodUnit]
-  val WEEK = "WEEK".asInstanceOf[PeriodUnit]
+  inline val MICROSECOND: "MICROSECOND" = "MICROSECOND"
+  inline val MILLISECOND: "MILLISECOND" = "MILLISECOND"
+  inline val SECOND: "SECOND" = "SECOND"
+  inline val MINUTE: "MINUTE" = "MINUTE"
+  inline val HOUR: "HOUR" = "HOUR"
+  inline val DAY: "DAY" = "DAY"
+  inline val WEEK: "WEEK" = "WEEK"
 
-  @inline def values = js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK)
+  inline def values: js.Array[PeriodUnit] = js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK)
 }
 
-@js.native
-sealed trait RequestStatus extends js.Any
+type RequestStatus = "PENDING" | "CASE_OPENED" | "APPROVED" | "DENIED" | "CASE_CLOSED"
 object RequestStatus {
-  val PENDING = "PENDING".asInstanceOf[RequestStatus]
-  val CASE_OPENED = "CASE_OPENED".asInstanceOf[RequestStatus]
-  val APPROVED = "APPROVED".asInstanceOf[RequestStatus]
-  val DENIED = "DENIED".asInstanceOf[RequestStatus]
-  val CASE_CLOSED = "CASE_CLOSED".asInstanceOf[RequestStatus]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val CASE_OPENED: "CASE_OPENED" = "CASE_OPENED"
+  inline val APPROVED: "APPROVED" = "APPROVED"
+  inline val DENIED: "DENIED" = "DENIED"
+  inline val CASE_CLOSED: "CASE_CLOSED" = "CASE_CLOSED"
 
-  @inline def values = js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED)
+  inline def values: js.Array[RequestStatus] = js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED)
 }
 
-@js.native
-sealed trait ServiceQuotaTemplateAssociationStatus extends js.Any
+type ServiceQuotaTemplateAssociationStatus = "ASSOCIATED" | "DISASSOCIATED"
 object ServiceQuotaTemplateAssociationStatus {
-  val ASSOCIATED = "ASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
-  val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
+  inline val ASSOCIATED: "ASSOCIATED" = "ASSOCIATED"
+  inline val DISASSOCIATED: "DISASSOCIATED" = "DISASSOCIATED"
 
-  @inline def values = js.Array(ASSOCIATED, DISASSOCIATED)
+  inline def values: js.Array[ServiceQuotaTemplateAssociationStatus] = js.Array(ASSOCIATED, DISASSOCIATED)
 }

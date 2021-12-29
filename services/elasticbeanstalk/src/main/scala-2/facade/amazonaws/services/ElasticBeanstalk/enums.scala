@@ -224,3 +224,4 @@ object ValidationSeverity {
 
   @inline def values = js.Array(error, warning)
 }
+

@@ -1,42 +1,37 @@
 package facade.amazonaws.services.cognitoidentity
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AmbiguousRoleResolutionType extends js.Any
+type AmbiguousRoleResolutionType = "AuthenticatedRole" | "Deny"
 object AmbiguousRoleResolutionType {
-  val AuthenticatedRole = "AuthenticatedRole".asInstanceOf[AmbiguousRoleResolutionType]
-  val Deny = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
+  inline val AuthenticatedRole: "AuthenticatedRole" = "AuthenticatedRole"
+  inline val Deny: "Deny" = "Deny"
 
-  @inline def values = js.Array(AuthenticatedRole, Deny)
+  inline def values: js.Array[AmbiguousRoleResolutionType] = js.Array(AuthenticatedRole, Deny)
 }
 
-@js.native
-sealed trait ErrorCode extends js.Any
+type ErrorCode = "AccessDenied" | "InternalServerError"
 object ErrorCode {
-  val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
-  val InternalServerError = "InternalServerError".asInstanceOf[ErrorCode]
+  inline val AccessDenied: "AccessDenied" = "AccessDenied"
+  inline val InternalServerError: "InternalServerError" = "InternalServerError"
 
-  @inline def values = js.Array(AccessDenied, InternalServerError)
+  inline def values: js.Array[ErrorCode] = js.Array(AccessDenied, InternalServerError)
 }
 
-@js.native
-sealed trait MappingRuleMatchType extends js.Any
+type MappingRuleMatchType = "Equals" | "Contains" | "StartsWith" | "NotEqual"
 object MappingRuleMatchType {
-  val Equals = "Equals".asInstanceOf[MappingRuleMatchType]
-  val Contains = "Contains".asInstanceOf[MappingRuleMatchType]
-  val StartsWith = "StartsWith".asInstanceOf[MappingRuleMatchType]
-  val NotEqual = "NotEqual".asInstanceOf[MappingRuleMatchType]
+  inline val Equals: "Equals" = "Equals"
+  inline val Contains: "Contains" = "Contains"
+  inline val StartsWith: "StartsWith" = "StartsWith"
+  inline val NotEqual: "NotEqual" = "NotEqual"
 
-  @inline def values = js.Array(Equals, Contains, StartsWith, NotEqual)
+  inline def values: js.Array[MappingRuleMatchType] = js.Array(Equals, Contains, StartsWith, NotEqual)
 }
 
-@js.native
-sealed trait RoleMappingType extends js.Any
+type RoleMappingType = "Token" | "Rules"
 object RoleMappingType {
-  val Token = "Token".asInstanceOf[RoleMappingType]
-  val Rules = "Rules".asInstanceOf[RoleMappingType]
+  inline val Token: "Token" = "Token"
+  inline val Rules: "Rules" = "Rules"
 
-  @inline def values = js.Array(Token, Rules)
+  inline def values: js.Array[RoleMappingType] = js.Array(Token, Rules)
 }

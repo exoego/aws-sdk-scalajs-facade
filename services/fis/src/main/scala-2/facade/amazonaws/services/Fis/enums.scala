@@ -31,3 +31,4 @@ object ExperimentStatus {
 
   @inline def values = js.Array(pending, initiating, running, completed, stopping, stopped, failed)
 }
+

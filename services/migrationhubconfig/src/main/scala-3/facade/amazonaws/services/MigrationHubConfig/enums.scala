@@ -1,12 +1,10 @@
 package facade.amazonaws.services.migrationhubconfig
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait TargetType extends js.Any
+type TargetType = "ACCOUNT"
 object TargetType {
-  val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
 
-  @inline def values = js.Array(ACCOUNT)
+  inline def values: js.Array[TargetType] = js.Array(ACCOUNT)
 }

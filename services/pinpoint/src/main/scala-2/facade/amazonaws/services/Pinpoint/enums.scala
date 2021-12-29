@@ -258,3 +258,4 @@ object __EndpointTypesElement {
 
   @inline def values = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
 }
+

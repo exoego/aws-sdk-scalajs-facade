@@ -1,457 +1,417 @@
 package facade.amazonaws.services.emr
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ActionOnFailure extends js.Any
+type ActionOnFailure = "TERMINATE_JOB_FLOW" | "TERMINATE_CLUSTER" | "CANCEL_AND_WAIT" | "CONTINUE"
 object ActionOnFailure {
-  val TERMINATE_JOB_FLOW = "TERMINATE_JOB_FLOW".asInstanceOf[ActionOnFailure]
-  val TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[ActionOnFailure]
-  val CANCEL_AND_WAIT = "CANCEL_AND_WAIT".asInstanceOf[ActionOnFailure]
-  val CONTINUE = "CONTINUE".asInstanceOf[ActionOnFailure]
+  inline val TERMINATE_JOB_FLOW: "TERMINATE_JOB_FLOW" = "TERMINATE_JOB_FLOW"
+  inline val TERMINATE_CLUSTER: "TERMINATE_CLUSTER" = "TERMINATE_CLUSTER"
+  inline val CANCEL_AND_WAIT: "CANCEL_AND_WAIT" = "CANCEL_AND_WAIT"
+  inline val CONTINUE: "CONTINUE" = "CONTINUE"
 
-  @inline def values = js.Array(TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE)
+  inline def values: js.Array[ActionOnFailure] = js.Array(TERMINATE_JOB_FLOW, TERMINATE_CLUSTER, CANCEL_AND_WAIT, CONTINUE)
 }
 
-@js.native
-sealed trait AdjustmentType extends js.Any
+type AdjustmentType = "CHANGE_IN_CAPACITY" | "PERCENT_CHANGE_IN_CAPACITY" | "EXACT_CAPACITY"
 object AdjustmentType {
-  val CHANGE_IN_CAPACITY = "CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
-  val PERCENT_CHANGE_IN_CAPACITY = "PERCENT_CHANGE_IN_CAPACITY".asInstanceOf[AdjustmentType]
-  val EXACT_CAPACITY = "EXACT_CAPACITY".asInstanceOf[AdjustmentType]
+  inline val CHANGE_IN_CAPACITY: "CHANGE_IN_CAPACITY" = "CHANGE_IN_CAPACITY"
+  inline val PERCENT_CHANGE_IN_CAPACITY: "PERCENT_CHANGE_IN_CAPACITY" = "PERCENT_CHANGE_IN_CAPACITY"
+  inline val EXACT_CAPACITY: "EXACT_CAPACITY" = "EXACT_CAPACITY"
 
-  @inline def values = js.Array(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY)
+  inline def values: js.Array[AdjustmentType] = js.Array(CHANGE_IN_CAPACITY, PERCENT_CHANGE_IN_CAPACITY, EXACT_CAPACITY)
 }
 
-@js.native
-sealed trait AuthMode extends js.Any
+type AuthMode = "SSO" | "IAM"
 object AuthMode {
-  val SSO = "SSO".asInstanceOf[AuthMode]
-  val IAM = "IAM".asInstanceOf[AuthMode]
+  inline val SSO: "SSO" = "SSO"
+  inline val IAM: "IAM" = "IAM"
 
-  @inline def values = js.Array(SSO, IAM)
+  inline def values: js.Array[AuthMode] = js.Array(SSO, IAM)
 }
 
-@js.native
-sealed trait AutoScalingPolicyState extends js.Any
+type AutoScalingPolicyState = "PENDING" | "ATTACHING" | "ATTACHED" | "DETACHING" | "DETACHED" | "FAILED"
 object AutoScalingPolicyState {
-  val PENDING = "PENDING".asInstanceOf[AutoScalingPolicyState]
-  val ATTACHING = "ATTACHING".asInstanceOf[AutoScalingPolicyState]
-  val ATTACHED = "ATTACHED".asInstanceOf[AutoScalingPolicyState]
-  val DETACHING = "DETACHING".asInstanceOf[AutoScalingPolicyState]
-  val DETACHED = "DETACHED".asInstanceOf[AutoScalingPolicyState]
-  val FAILED = "FAILED".asInstanceOf[AutoScalingPolicyState]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val ATTACHING: "ATTACHING" = "ATTACHING"
+  inline val ATTACHED: "ATTACHED" = "ATTACHED"
+  inline val DETACHING: "DETACHING" = "DETACHING"
+  inline val DETACHED: "DETACHED" = "DETACHED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED)
+  inline def values: js.Array[AutoScalingPolicyState] = js.Array(PENDING, ATTACHING, ATTACHED, DETACHING, DETACHED, FAILED)
 }
 
-@js.native
-sealed trait AutoScalingPolicyStateChangeReasonCode extends js.Any
+type AutoScalingPolicyStateChangeReasonCode = "USER_REQUEST" | "PROVISION_FAILURE" | "CLEANUP_FAILURE"
 object AutoScalingPolicyStateChangeReasonCode {
-  val USER_REQUEST = "USER_REQUEST".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
-  val PROVISION_FAILURE = "PROVISION_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
-  val CLEANUP_FAILURE = "CLEANUP_FAILURE".asInstanceOf[AutoScalingPolicyStateChangeReasonCode]
+  inline val USER_REQUEST: "USER_REQUEST" = "USER_REQUEST"
+  inline val PROVISION_FAILURE: "PROVISION_FAILURE" = "PROVISION_FAILURE"
+  inline val CLEANUP_FAILURE: "CLEANUP_FAILURE" = "CLEANUP_FAILURE"
 
-  @inline def values = js.Array(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE)
+  inline def values: js.Array[AutoScalingPolicyStateChangeReasonCode] = js.Array(USER_REQUEST, PROVISION_FAILURE, CLEANUP_FAILURE)
 }
 
-@js.native
-sealed trait CancelStepsRequestStatus extends js.Any
+type CancelStepsRequestStatus = "SUBMITTED" | "FAILED"
 object CancelStepsRequestStatus {
-  val SUBMITTED = "SUBMITTED".asInstanceOf[CancelStepsRequestStatus]
-  val FAILED = "FAILED".asInstanceOf[CancelStepsRequestStatus]
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(SUBMITTED, FAILED)
+  inline def values: js.Array[CancelStepsRequestStatus] = js.Array(SUBMITTED, FAILED)
 }
 
-@js.native
-sealed trait ClusterState extends js.Any
+type ClusterState = "STARTING" | "BOOTSTRAPPING" | "RUNNING" | "WAITING" | "TERMINATING" | "TERMINATED" | "TERMINATED_WITH_ERRORS"
 object ClusterState {
-  val STARTING = "STARTING".asInstanceOf[ClusterState]
-  val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[ClusterState]
-  val RUNNING = "RUNNING".asInstanceOf[ClusterState]
-  val WAITING = "WAITING".asInstanceOf[ClusterState]
-  val TERMINATING = "TERMINATING".asInstanceOf[ClusterState]
-  val TERMINATED = "TERMINATED".asInstanceOf[ClusterState]
-  val TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS".asInstanceOf[ClusterState]
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val BOOTSTRAPPING: "BOOTSTRAPPING" = "BOOTSTRAPPING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val WAITING: "WAITING" = "WAITING"
+  inline val TERMINATING: "TERMINATING" = "TERMINATING"
+  inline val TERMINATED: "TERMINATED" = "TERMINATED"
+  inline val TERMINATED_WITH_ERRORS: "TERMINATED_WITH_ERRORS" = "TERMINATED_WITH_ERRORS"
 
-  @inline def values = js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS)
+  inline def values: js.Array[ClusterState] = js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS)
 }
 
-@js.native
-sealed trait ClusterStateChangeReasonCode extends js.Any
+type ClusterStateChangeReasonCode = "INTERNAL_ERROR" | "VALIDATION_ERROR" | "INSTANCE_FAILURE" | "INSTANCE_FLEET_TIMEOUT" | "BOOTSTRAP_FAILURE" | "USER_REQUEST" | "STEP_FAILURE" | "ALL_STEPS_COMPLETED"
 object ClusterStateChangeReasonCode {
-  val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
-  val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[ClusterStateChangeReasonCode]
-  val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
-  val INSTANCE_FLEET_TIMEOUT = "INSTANCE_FLEET_TIMEOUT".asInstanceOf[ClusterStateChangeReasonCode]
-  val BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
-  val USER_REQUEST = "USER_REQUEST".asInstanceOf[ClusterStateChangeReasonCode]
-  val STEP_FAILURE = "STEP_FAILURE".asInstanceOf[ClusterStateChangeReasonCode]
-  val ALL_STEPS_COMPLETED = "ALL_STEPS_COMPLETED".asInstanceOf[ClusterStateChangeReasonCode]
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
+  inline val VALIDATION_ERROR: "VALIDATION_ERROR" = "VALIDATION_ERROR"
+  inline val INSTANCE_FAILURE: "INSTANCE_FAILURE" = "INSTANCE_FAILURE"
+  inline val INSTANCE_FLEET_TIMEOUT: "INSTANCE_FLEET_TIMEOUT" = "INSTANCE_FLEET_TIMEOUT"
+  inline val BOOTSTRAP_FAILURE: "BOOTSTRAP_FAILURE" = "BOOTSTRAP_FAILURE"
+  inline val USER_REQUEST: "USER_REQUEST" = "USER_REQUEST"
+  inline val STEP_FAILURE: "STEP_FAILURE" = "STEP_FAILURE"
+  inline val ALL_STEPS_COMPLETED: "ALL_STEPS_COMPLETED" = "ALL_STEPS_COMPLETED"
 
-  @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, INSTANCE_FLEET_TIMEOUT, BOOTSTRAP_FAILURE, USER_REQUEST, STEP_FAILURE, ALL_STEPS_COMPLETED)
+  inline def values: js.Array[ClusterStateChangeReasonCode] = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, INSTANCE_FLEET_TIMEOUT, BOOTSTRAP_FAILURE, USER_REQUEST, STEP_FAILURE, ALL_STEPS_COMPLETED)
 }
 
-@js.native
-sealed trait ComparisonOperator extends js.Any
+type ComparisonOperator = "GREATER_THAN_OR_EQUAL" | "GREATER_THAN" | "LESS_THAN" | "LESS_THAN_OR_EQUAL"
 object ComparisonOperator {
-  val GREATER_THAN_OR_EQUAL = "GREATER_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
-  val GREATER_THAN = "GREATER_THAN".asInstanceOf[ComparisonOperator]
-  val LESS_THAN = "LESS_THAN".asInstanceOf[ComparisonOperator]
-  val LESS_THAN_OR_EQUAL = "LESS_THAN_OR_EQUAL".asInstanceOf[ComparisonOperator]
+  inline val GREATER_THAN_OR_EQUAL: "GREATER_THAN_OR_EQUAL" = "GREATER_THAN_OR_EQUAL"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val LESS_THAN_OR_EQUAL: "LESS_THAN_OR_EQUAL" = "LESS_THAN_OR_EQUAL"
 
-  @inline def values = js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL)
+  inline def values: js.Array[ComparisonOperator] = js.Array(GREATER_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN, LESS_THAN_OR_EQUAL)
 }
 
-@js.native
-sealed trait ComputeLimitsUnitType extends js.Any
+type ComputeLimitsUnitType = "InstanceFleetUnits" | "Instances" | "VCPU"
 object ComputeLimitsUnitType {
-  val InstanceFleetUnits = "InstanceFleetUnits".asInstanceOf[ComputeLimitsUnitType]
-  val Instances = "Instances".asInstanceOf[ComputeLimitsUnitType]
-  val VCPU = "VCPU".asInstanceOf[ComputeLimitsUnitType]
+  inline val InstanceFleetUnits: "InstanceFleetUnits" = "InstanceFleetUnits"
+  inline val Instances: "Instances" = "Instances"
+  inline val VCPU: "VCPU" = "VCPU"
 
-  @inline def values = js.Array(InstanceFleetUnits, Instances, VCPU)
+  inline def values: js.Array[ComputeLimitsUnitType] = js.Array(InstanceFleetUnits, Instances, VCPU)
 }
 
-@js.native
-sealed trait ExecutionEngineType extends js.Any
+type ExecutionEngineType = "EMR"
 object ExecutionEngineType {
-  val EMR = "EMR".asInstanceOf[ExecutionEngineType]
+  inline val EMR: "EMR" = "EMR"
 
-  @inline def values = js.Array(EMR)
+  inline def values: js.Array[ExecutionEngineType] = js.Array(EMR)
 }
 
-@js.native
-sealed trait IdentityType extends js.Any
+type IdentityType = "USER" | "GROUP"
 object IdentityType {
-  val USER = "USER".asInstanceOf[IdentityType]
-  val GROUP = "GROUP".asInstanceOf[IdentityType]
+  inline val USER: "USER" = "USER"
+  inline val GROUP: "GROUP" = "GROUP"
 
-  @inline def values = js.Array(USER, GROUP)
+  inline def values: js.Array[IdentityType] = js.Array(USER, GROUP)
 }
 
-@js.native
-sealed trait InstanceCollectionType extends js.Any
+type InstanceCollectionType = "INSTANCE_FLEET" | "INSTANCE_GROUP"
 object InstanceCollectionType {
-  val INSTANCE_FLEET = "INSTANCE_FLEET".asInstanceOf[InstanceCollectionType]
-  val INSTANCE_GROUP = "INSTANCE_GROUP".asInstanceOf[InstanceCollectionType]
+  inline val INSTANCE_FLEET: "INSTANCE_FLEET" = "INSTANCE_FLEET"
+  inline val INSTANCE_GROUP: "INSTANCE_GROUP" = "INSTANCE_GROUP"
 
-  @inline def values = js.Array(INSTANCE_FLEET, INSTANCE_GROUP)
+  inline def values: js.Array[InstanceCollectionType] = js.Array(INSTANCE_FLEET, INSTANCE_GROUP)
 }
 
-@js.native
-sealed trait InstanceFleetState extends js.Any
+type InstanceFleetState = "PROVISIONING" | "BOOTSTRAPPING" | "RUNNING" | "RESIZING" | "SUSPENDED" | "TERMINATING" | "TERMINATED"
 object InstanceFleetState {
-  val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceFleetState]
-  val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceFleetState]
-  val RUNNING = "RUNNING".asInstanceOf[InstanceFleetState]
-  val RESIZING = "RESIZING".asInstanceOf[InstanceFleetState]
-  val SUSPENDED = "SUSPENDED".asInstanceOf[InstanceFleetState]
-  val TERMINATING = "TERMINATING".asInstanceOf[InstanceFleetState]
-  val TERMINATED = "TERMINATED".asInstanceOf[InstanceFleetState]
+  inline val PROVISIONING: "PROVISIONING" = "PROVISIONING"
+  inline val BOOTSTRAPPING: "BOOTSTRAPPING" = "BOOTSTRAPPING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val RESIZING: "RESIZING" = "RESIZING"
+  inline val SUSPENDED: "SUSPENDED" = "SUSPENDED"
+  inline val TERMINATING: "TERMINATING" = "TERMINATING"
+  inline val TERMINATED: "TERMINATED" = "TERMINATED"
 
-  @inline def values = js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED)
+  inline def values: js.Array[InstanceFleetState] = js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RESIZING, SUSPENDED, TERMINATING, TERMINATED)
 }
 
-@js.native
-sealed trait InstanceFleetStateChangeReasonCode extends js.Any
+type InstanceFleetStateChangeReasonCode = "INTERNAL_ERROR" | "VALIDATION_ERROR" | "INSTANCE_FAILURE" | "CLUSTER_TERMINATED"
 object InstanceFleetStateChangeReasonCode {
-  val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
-  val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceFleetStateChangeReasonCode]
-  val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceFleetStateChangeReasonCode]
-  val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceFleetStateChangeReasonCode]
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
+  inline val VALIDATION_ERROR: "VALIDATION_ERROR" = "VALIDATION_ERROR"
+  inline val INSTANCE_FAILURE: "INSTANCE_FAILURE" = "INSTANCE_FAILURE"
+  inline val CLUSTER_TERMINATED: "CLUSTER_TERMINATED" = "CLUSTER_TERMINATED"
 
-  @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED)
+  inline def values: js.Array[InstanceFleetStateChangeReasonCode] = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED)
 }
 
-@js.native
-sealed trait InstanceFleetType extends js.Any
+type InstanceFleetType = "MASTER" | "CORE" | "TASK"
 object InstanceFleetType {
-  val MASTER = "MASTER".asInstanceOf[InstanceFleetType]
-  val CORE = "CORE".asInstanceOf[InstanceFleetType]
-  val TASK = "TASK".asInstanceOf[InstanceFleetType]
+  inline val MASTER: "MASTER" = "MASTER"
+  inline val CORE: "CORE" = "CORE"
+  inline val TASK: "TASK" = "TASK"
 
-  @inline def values = js.Array(MASTER, CORE, TASK)
+  inline def values: js.Array[InstanceFleetType] = js.Array(MASTER, CORE, TASK)
 }
 
-@js.native
-sealed trait InstanceGroupState extends js.Any
+type InstanceGroupState = "PROVISIONING" | "BOOTSTRAPPING" | "RUNNING" | "RECONFIGURING" | "RESIZING" | "SUSPENDED" | "TERMINATING" | "TERMINATED" | "ARRESTED" | "SHUTTING_DOWN" | "ENDED"
 object InstanceGroupState {
-  val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceGroupState]
-  val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceGroupState]
-  val RUNNING = "RUNNING".asInstanceOf[InstanceGroupState]
-  val RECONFIGURING = "RECONFIGURING".asInstanceOf[InstanceGroupState]
-  val RESIZING = "RESIZING".asInstanceOf[InstanceGroupState]
-  val SUSPENDED = "SUSPENDED".asInstanceOf[InstanceGroupState]
-  val TERMINATING = "TERMINATING".asInstanceOf[InstanceGroupState]
-  val TERMINATED = "TERMINATED".asInstanceOf[InstanceGroupState]
-  val ARRESTED = "ARRESTED".asInstanceOf[InstanceGroupState]
-  val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[InstanceGroupState]
-  val ENDED = "ENDED".asInstanceOf[InstanceGroupState]
+  inline val PROVISIONING: "PROVISIONING" = "PROVISIONING"
+  inline val BOOTSTRAPPING: "BOOTSTRAPPING" = "BOOTSTRAPPING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val RECONFIGURING: "RECONFIGURING" = "RECONFIGURING"
+  inline val RESIZING: "RESIZING" = "RESIZING"
+  inline val SUSPENDED: "SUSPENDED" = "SUSPENDED"
+  inline val TERMINATING: "TERMINATING" = "TERMINATING"
+  inline val TERMINATED: "TERMINATED" = "TERMINATED"
+  inline val ARRESTED: "ARRESTED" = "ARRESTED"
+  inline val SHUTTING_DOWN: "SHUTTING_DOWN" = "SHUTTING_DOWN"
+  inline val ENDED: "ENDED" = "ENDED"
 
-  @inline def values = js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RECONFIGURING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED)
+  inline def values: js.Array[InstanceGroupState] = js.Array(PROVISIONING, BOOTSTRAPPING, RUNNING, RECONFIGURING, RESIZING, SUSPENDED, TERMINATING, TERMINATED, ARRESTED, SHUTTING_DOWN, ENDED)
 }
 
-@js.native
-sealed trait InstanceGroupStateChangeReasonCode extends js.Any
+type InstanceGroupStateChangeReasonCode = "INTERNAL_ERROR" | "VALIDATION_ERROR" | "INSTANCE_FAILURE" | "CLUSTER_TERMINATED"
 object InstanceGroupStateChangeReasonCode {
-  val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
-  val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceGroupStateChangeReasonCode]
-  val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceGroupStateChangeReasonCode]
-  val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceGroupStateChangeReasonCode]
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
+  inline val VALIDATION_ERROR: "VALIDATION_ERROR" = "VALIDATION_ERROR"
+  inline val INSTANCE_FAILURE: "INSTANCE_FAILURE" = "INSTANCE_FAILURE"
+  inline val CLUSTER_TERMINATED: "CLUSTER_TERMINATED" = "CLUSTER_TERMINATED"
 
-  @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED)
+  inline def values: js.Array[InstanceGroupStateChangeReasonCode] = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, CLUSTER_TERMINATED)
 }
 
-@js.native
-sealed trait InstanceGroupType extends js.Any
+type InstanceGroupType = "MASTER" | "CORE" | "TASK"
 object InstanceGroupType {
-  val MASTER = "MASTER".asInstanceOf[InstanceGroupType]
-  val CORE = "CORE".asInstanceOf[InstanceGroupType]
-  val TASK = "TASK".asInstanceOf[InstanceGroupType]
+  inline val MASTER: "MASTER" = "MASTER"
+  inline val CORE: "CORE" = "CORE"
+  inline val TASK: "TASK" = "TASK"
 
-  @inline def values = js.Array(MASTER, CORE, TASK)
+  inline def values: js.Array[InstanceGroupType] = js.Array(MASTER, CORE, TASK)
 }
 
-@js.native
-sealed trait InstanceRoleType extends js.Any
+type InstanceRoleType = "MASTER" | "CORE" | "TASK"
 object InstanceRoleType {
-  val MASTER = "MASTER".asInstanceOf[InstanceRoleType]
-  val CORE = "CORE".asInstanceOf[InstanceRoleType]
-  val TASK = "TASK".asInstanceOf[InstanceRoleType]
+  inline val MASTER: "MASTER" = "MASTER"
+  inline val CORE: "CORE" = "CORE"
+  inline val TASK: "TASK" = "TASK"
 
-  @inline def values = js.Array(MASTER, CORE, TASK)
+  inline def values: js.Array[InstanceRoleType] = js.Array(MASTER, CORE, TASK)
 }
 
-@js.native
-sealed trait InstanceState extends js.Any
+type InstanceState = "AWAITING_FULFILLMENT" | "PROVISIONING" | "BOOTSTRAPPING" | "RUNNING" | "TERMINATED"
 object InstanceState {
-  val AWAITING_FULFILLMENT = "AWAITING_FULFILLMENT".asInstanceOf[InstanceState]
-  val PROVISIONING = "PROVISIONING".asInstanceOf[InstanceState]
-  val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[InstanceState]
-  val RUNNING = "RUNNING".asInstanceOf[InstanceState]
-  val TERMINATED = "TERMINATED".asInstanceOf[InstanceState]
+  inline val AWAITING_FULFILLMENT: "AWAITING_FULFILLMENT" = "AWAITING_FULFILLMENT"
+  inline val PROVISIONING: "PROVISIONING" = "PROVISIONING"
+  inline val BOOTSTRAPPING: "BOOTSTRAPPING" = "BOOTSTRAPPING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val TERMINATED: "TERMINATED" = "TERMINATED"
 
-  @inline def values = js.Array(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED)
+  inline def values: js.Array[InstanceState] = js.Array(AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING, TERMINATED)
 }
 
-@js.native
-sealed trait InstanceStateChangeReasonCode extends js.Any
+type InstanceStateChangeReasonCode = "INTERNAL_ERROR" | "VALIDATION_ERROR" | "INSTANCE_FAILURE" | "BOOTSTRAP_FAILURE" | "CLUSTER_TERMINATED"
 object InstanceStateChangeReasonCode {
-  val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
-  val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[InstanceStateChangeReasonCode]
-  val INSTANCE_FAILURE = "INSTANCE_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
-  val BOOTSTRAP_FAILURE = "BOOTSTRAP_FAILURE".asInstanceOf[InstanceStateChangeReasonCode]
-  val CLUSTER_TERMINATED = "CLUSTER_TERMINATED".asInstanceOf[InstanceStateChangeReasonCode]
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
+  inline val VALIDATION_ERROR: "VALIDATION_ERROR" = "VALIDATION_ERROR"
+  inline val INSTANCE_FAILURE: "INSTANCE_FAILURE" = "INSTANCE_FAILURE"
+  inline val BOOTSTRAP_FAILURE: "BOOTSTRAP_FAILURE" = "BOOTSTRAP_FAILURE"
+  inline val CLUSTER_TERMINATED: "CLUSTER_TERMINATED" = "CLUSTER_TERMINATED"
 
-  @inline def values = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED)
+  inline def values: js.Array[InstanceStateChangeReasonCode] = js.Array(INTERNAL_ERROR, VALIDATION_ERROR, INSTANCE_FAILURE, BOOTSTRAP_FAILURE, CLUSTER_TERMINATED)
 }
 
 /** The type of instance.
   */
-@js.native
-sealed trait JobFlowExecutionState extends js.Any
+type JobFlowExecutionState = "STARTING" | "BOOTSTRAPPING" | "RUNNING" | "WAITING" | "SHUTTING_DOWN" | "TERMINATED" | "COMPLETED" | "FAILED"
 object JobFlowExecutionState {
-  val STARTING = "STARTING".asInstanceOf[JobFlowExecutionState]
-  val BOOTSTRAPPING = "BOOTSTRAPPING".asInstanceOf[JobFlowExecutionState]
-  val RUNNING = "RUNNING".asInstanceOf[JobFlowExecutionState]
-  val WAITING = "WAITING".asInstanceOf[JobFlowExecutionState]
-  val SHUTTING_DOWN = "SHUTTING_DOWN".asInstanceOf[JobFlowExecutionState]
-  val TERMINATED = "TERMINATED".asInstanceOf[JobFlowExecutionState]
-  val COMPLETED = "COMPLETED".asInstanceOf[JobFlowExecutionState]
-  val FAILED = "FAILED".asInstanceOf[JobFlowExecutionState]
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val BOOTSTRAPPING: "BOOTSTRAPPING" = "BOOTSTRAPPING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val WAITING: "WAITING" = "WAITING"
+  inline val SHUTTING_DOWN: "SHUTTING_DOWN" = "SHUTTING_DOWN"
+  inline val TERMINATED: "TERMINATED" = "TERMINATED"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED)
+  inline def values: js.Array[JobFlowExecutionState] = js.Array(STARTING, BOOTSTRAPPING, RUNNING, WAITING, SHUTTING_DOWN, TERMINATED, COMPLETED, FAILED)
 }
 
-@js.native
-sealed trait MarketType extends js.Any
+type MarketType = "ON_DEMAND" | "SPOT"
 object MarketType {
-  val ON_DEMAND = "ON_DEMAND".asInstanceOf[MarketType]
-  val SPOT = "SPOT".asInstanceOf[MarketType]
+  inline val ON_DEMAND: "ON_DEMAND" = "ON_DEMAND"
+  inline val SPOT: "SPOT" = "SPOT"
 
-  @inline def values = js.Array(ON_DEMAND, SPOT)
+  inline def values: js.Array[MarketType] = js.Array(ON_DEMAND, SPOT)
 }
 
-@js.native
-sealed trait NotebookExecutionStatus extends js.Any
+type NotebookExecutionStatus = "START_PENDING" | "STARTING" | "RUNNING" | "FINISHING" | "FINISHED" | "FAILING" | "FAILED" | "STOP_PENDING" | "STOPPING" | "STOPPED"
 object NotebookExecutionStatus {
-  val START_PENDING = "START_PENDING".asInstanceOf[NotebookExecutionStatus]
-  val STARTING = "STARTING".asInstanceOf[NotebookExecutionStatus]
-  val RUNNING = "RUNNING".asInstanceOf[NotebookExecutionStatus]
-  val FINISHING = "FINISHING".asInstanceOf[NotebookExecutionStatus]
-  val FINISHED = "FINISHED".asInstanceOf[NotebookExecutionStatus]
-  val FAILING = "FAILING".asInstanceOf[NotebookExecutionStatus]
-  val FAILED = "FAILED".asInstanceOf[NotebookExecutionStatus]
-  val STOP_PENDING = "STOP_PENDING".asInstanceOf[NotebookExecutionStatus]
-  val STOPPING = "STOPPING".asInstanceOf[NotebookExecutionStatus]
-  val STOPPED = "STOPPED".asInstanceOf[NotebookExecutionStatus]
+  inline val START_PENDING: "START_PENDING" = "START_PENDING"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val FINISHING: "FINISHING" = "FINISHING"
+  inline val FINISHED: "FINISHED" = "FINISHED"
+  inline val FAILING: "FAILING" = "FAILING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val STOP_PENDING: "STOP_PENDING" = "STOP_PENDING"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array(START_PENDING, STARTING, RUNNING, FINISHING, FINISHED, FAILING, FAILED, STOP_PENDING, STOPPING, STOPPED)
+  inline def values: js.Array[NotebookExecutionStatus] = js.Array(START_PENDING, STARTING, RUNNING, FINISHING, FINISHED, FAILING, FAILED, STOP_PENDING, STOPPING, STOPPED)
 }
 
-@js.native
-sealed trait OnDemandCapacityReservationPreference extends js.Any
+type OnDemandCapacityReservationPreference = "open" | "none"
 object OnDemandCapacityReservationPreference {
-  val open = "open".asInstanceOf[OnDemandCapacityReservationPreference]
-  val none = "none".asInstanceOf[OnDemandCapacityReservationPreference]
+  inline val open: "open" = "open"
+  inline val none: "none" = "none"
 
-  @inline def values = js.Array(open, none)
+  inline def values: js.Array[OnDemandCapacityReservationPreference] = js.Array(open, none)
 }
 
-@js.native
-sealed trait OnDemandCapacityReservationUsageStrategy extends js.Any
+type OnDemandCapacityReservationUsageStrategy = "use-capacity-reservations-first"
 object OnDemandCapacityReservationUsageStrategy {
-  val `use-capacity-reservations-first` = "use-capacity-reservations-first".asInstanceOf[OnDemandCapacityReservationUsageStrategy]
+  inline val `use-capacity-reservations-first`: "use-capacity-reservations-first" = "use-capacity-reservations-first"
 
-  @inline def values = js.Array(`use-capacity-reservations-first`)
+  inline def values: js.Array[OnDemandCapacityReservationUsageStrategy] = js.Array(`use-capacity-reservations-first`)
 }
 
-@js.native
-sealed trait OnDemandProvisioningAllocationStrategy extends js.Any
+type OnDemandProvisioningAllocationStrategy = "lowest-price"
 object OnDemandProvisioningAllocationStrategy {
-  val `lowest-price` = "lowest-price".asInstanceOf[OnDemandProvisioningAllocationStrategy]
+  inline val `lowest-price`: "lowest-price" = "lowest-price"
 
-  @inline def values = js.Array(`lowest-price`)
+  inline def values: js.Array[OnDemandProvisioningAllocationStrategy] = js.Array(`lowest-price`)
 }
 
-@js.native
-sealed trait PlacementGroupStrategy extends js.Any
+type PlacementGroupStrategy = "SPREAD" | "PARTITION" | "CLUSTER" | "NONE"
 object PlacementGroupStrategy {
-  val SPREAD = "SPREAD".asInstanceOf[PlacementGroupStrategy]
-  val PARTITION = "PARTITION".asInstanceOf[PlacementGroupStrategy]
-  val CLUSTER = "CLUSTER".asInstanceOf[PlacementGroupStrategy]
-  val NONE = "NONE".asInstanceOf[PlacementGroupStrategy]
+  inline val SPREAD: "SPREAD" = "SPREAD"
+  inline val PARTITION: "PARTITION" = "PARTITION"
+  inline val CLUSTER: "CLUSTER" = "CLUSTER"
+  inline val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array(SPREAD, PARTITION, CLUSTER, NONE)
+  inline def values: js.Array[PlacementGroupStrategy] = js.Array(SPREAD, PARTITION, CLUSTER, NONE)
 }
 
-@js.native
-sealed trait RepoUpgradeOnBoot extends js.Any
+type RepoUpgradeOnBoot = "SECURITY" | "NONE"
 object RepoUpgradeOnBoot {
-  val SECURITY = "SECURITY".asInstanceOf[RepoUpgradeOnBoot]
-  val NONE = "NONE".asInstanceOf[RepoUpgradeOnBoot]
+  inline val SECURITY: "SECURITY" = "SECURITY"
+  inline val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array(SECURITY, NONE)
+  inline def values: js.Array[RepoUpgradeOnBoot] = js.Array(SECURITY, NONE)
 }
 
-@js.native
-sealed trait ScaleDownBehavior extends js.Any
+type ScaleDownBehavior = "TERMINATE_AT_INSTANCE_HOUR" | "TERMINATE_AT_TASK_COMPLETION"
 object ScaleDownBehavior {
-  val TERMINATE_AT_INSTANCE_HOUR = "TERMINATE_AT_INSTANCE_HOUR".asInstanceOf[ScaleDownBehavior]
-  val TERMINATE_AT_TASK_COMPLETION = "TERMINATE_AT_TASK_COMPLETION".asInstanceOf[ScaleDownBehavior]
+  inline val TERMINATE_AT_INSTANCE_HOUR: "TERMINATE_AT_INSTANCE_HOUR" = "TERMINATE_AT_INSTANCE_HOUR"
+  inline val TERMINATE_AT_TASK_COMPLETION: "TERMINATE_AT_TASK_COMPLETION" = "TERMINATE_AT_TASK_COMPLETION"
 
-  @inline def values = js.Array(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION)
+  inline def values: js.Array[ScaleDownBehavior] = js.Array(TERMINATE_AT_INSTANCE_HOUR, TERMINATE_AT_TASK_COMPLETION)
 }
 
-@js.native
-sealed trait SpotProvisioningAllocationStrategy extends js.Any
+type SpotProvisioningAllocationStrategy = "capacity-optimized"
 object SpotProvisioningAllocationStrategy {
-  val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotProvisioningAllocationStrategy]
+  inline val `capacity-optimized`: "capacity-optimized" = "capacity-optimized"
 
-  @inline def values = js.Array(`capacity-optimized`)
+  inline def values: js.Array[SpotProvisioningAllocationStrategy] = js.Array(`capacity-optimized`)
 }
 
-@js.native
-sealed trait SpotProvisioningTimeoutAction extends js.Any
+type SpotProvisioningTimeoutAction = "SWITCH_TO_ON_DEMAND" | "TERMINATE_CLUSTER"
 object SpotProvisioningTimeoutAction {
-  val SWITCH_TO_ON_DEMAND = "SWITCH_TO_ON_DEMAND".asInstanceOf[SpotProvisioningTimeoutAction]
-  val TERMINATE_CLUSTER = "TERMINATE_CLUSTER".asInstanceOf[SpotProvisioningTimeoutAction]
+  inline val SWITCH_TO_ON_DEMAND: "SWITCH_TO_ON_DEMAND" = "SWITCH_TO_ON_DEMAND"
+  inline val TERMINATE_CLUSTER: "TERMINATE_CLUSTER" = "TERMINATE_CLUSTER"
 
-  @inline def values = js.Array(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER)
+  inline def values: js.Array[SpotProvisioningTimeoutAction] = js.Array(SWITCH_TO_ON_DEMAND, TERMINATE_CLUSTER)
 }
 
-@js.native
-sealed trait Statistic extends js.Any
+type Statistic = "SAMPLE_COUNT" | "AVERAGE" | "SUM" | "MINIMUM" | "MAXIMUM"
 object Statistic {
-  val SAMPLE_COUNT = "SAMPLE_COUNT".asInstanceOf[Statistic]
-  val AVERAGE = "AVERAGE".asInstanceOf[Statistic]
-  val SUM = "SUM".asInstanceOf[Statistic]
-  val MINIMUM = "MINIMUM".asInstanceOf[Statistic]
-  val MAXIMUM = "MAXIMUM".asInstanceOf[Statistic]
+  inline val SAMPLE_COUNT: "SAMPLE_COUNT" = "SAMPLE_COUNT"
+  inline val AVERAGE: "AVERAGE" = "AVERAGE"
+  inline val SUM: "SUM" = "SUM"
+  inline val MINIMUM: "MINIMUM" = "MINIMUM"
+  inline val MAXIMUM: "MAXIMUM" = "MAXIMUM"
 
-  @inline def values = js.Array(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM)
+  inline def values: js.Array[Statistic] = js.Array(SAMPLE_COUNT, AVERAGE, SUM, MINIMUM, MAXIMUM)
 }
 
-@js.native
-sealed trait StepCancellationOption extends js.Any
+type StepCancellationOption = "SEND_INTERRUPT" | "TERMINATE_PROCESS"
 object StepCancellationOption {
-  val SEND_INTERRUPT = "SEND_INTERRUPT".asInstanceOf[StepCancellationOption]
-  val TERMINATE_PROCESS = "TERMINATE_PROCESS".asInstanceOf[StepCancellationOption]
+  inline val SEND_INTERRUPT: "SEND_INTERRUPT" = "SEND_INTERRUPT"
+  inline val TERMINATE_PROCESS: "TERMINATE_PROCESS" = "TERMINATE_PROCESS"
 
-  @inline def values = js.Array(SEND_INTERRUPT, TERMINATE_PROCESS)
+  inline def values: js.Array[StepCancellationOption] = js.Array(SEND_INTERRUPT, TERMINATE_PROCESS)
 }
 
-@js.native
-sealed trait StepExecutionState extends js.Any
+type StepExecutionState = "PENDING" | "RUNNING" | "CONTINUE" | "COMPLETED" | "CANCELLED" | "FAILED" | "INTERRUPTED"
 object StepExecutionState {
-  val PENDING = "PENDING".asInstanceOf[StepExecutionState]
-  val RUNNING = "RUNNING".asInstanceOf[StepExecutionState]
-  val CONTINUE = "CONTINUE".asInstanceOf[StepExecutionState]
-  val COMPLETED = "COMPLETED".asInstanceOf[StepExecutionState]
-  val CANCELLED = "CANCELLED".asInstanceOf[StepExecutionState]
-  val FAILED = "FAILED".asInstanceOf[StepExecutionState]
-  val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepExecutionState]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val CONTINUE: "CONTINUE" = "CONTINUE"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val INTERRUPTED: "INTERRUPTED" = "INTERRUPTED"
 
-  @inline def values = js.Array(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
+  inline def values: js.Array[StepExecutionState] = js.Array(PENDING, RUNNING, CONTINUE, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
 }
 
-@js.native
-sealed trait StepState extends js.Any
+type StepState = "PENDING" | "CANCEL_PENDING" | "RUNNING" | "COMPLETED" | "CANCELLED" | "FAILED" | "INTERRUPTED"
 object StepState {
-  val PENDING = "PENDING".asInstanceOf[StepState]
-  val CANCEL_PENDING = "CANCEL_PENDING".asInstanceOf[StepState]
-  val RUNNING = "RUNNING".asInstanceOf[StepState]
-  val COMPLETED = "COMPLETED".asInstanceOf[StepState]
-  val CANCELLED = "CANCELLED".asInstanceOf[StepState]
-  val FAILED = "FAILED".asInstanceOf[StepState]
-  val INTERRUPTED = "INTERRUPTED".asInstanceOf[StepState]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val CANCEL_PENDING: "CANCEL_PENDING" = "CANCEL_PENDING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val INTERRUPTED: "INTERRUPTED" = "INTERRUPTED"
 
-  @inline def values = js.Array(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
+  inline def values: js.Array[StepState] = js.Array(PENDING, CANCEL_PENDING, RUNNING, COMPLETED, CANCELLED, FAILED, INTERRUPTED)
 }
 
-@js.native
-sealed trait StepStateChangeReasonCode extends js.Any
+type StepStateChangeReasonCode = "NONE"
 object StepStateChangeReasonCode {
-  val NONE = "NONE".asInstanceOf[StepStateChangeReasonCode]
+  inline val NONE: "NONE" = "NONE"
 
-  @inline def values = js.Array(NONE)
+  inline def values: js.Array[StepStateChangeReasonCode] = js.Array(NONE)
 }
 
-@js.native
-sealed trait Unit extends js.Any
+type Unit = "NONE" | "SECONDS" | "MICRO_SECONDS" | "MILLI_SECONDS" | "BYTES" | "KILO_BYTES" | "MEGA_BYTES" | "GIGA_BYTES" | "TERA_BYTES" | "BITS" | "KILO_BITS" | "MEGA_BITS" | "GIGA_BITS" | "TERA_BITS" | "PERCENT" | "COUNT" | "BYTES_PER_SECOND" | "KILO_BYTES_PER_SECOND" | "MEGA_BYTES_PER_SECOND" | "GIGA_BYTES_PER_SECOND" | "TERA_BYTES_PER_SECOND" | "BITS_PER_SECOND" | "KILO_BITS_PER_SECOND" | "MEGA_BITS_PER_SECOND" | "GIGA_BITS_PER_SECOND" | "TERA_BITS_PER_SECOND" | "COUNT_PER_SECOND"
 object Unit {
-  val NONE = "NONE".asInstanceOf[Unit]
-  val SECONDS = "SECONDS".asInstanceOf[Unit]
-  val MICRO_SECONDS = "MICRO_SECONDS".asInstanceOf[Unit]
-  val MILLI_SECONDS = "MILLI_SECONDS".asInstanceOf[Unit]
-  val BYTES = "BYTES".asInstanceOf[Unit]
-  val KILO_BYTES = "KILO_BYTES".asInstanceOf[Unit]
-  val MEGA_BYTES = "MEGA_BYTES".asInstanceOf[Unit]
-  val GIGA_BYTES = "GIGA_BYTES".asInstanceOf[Unit]
-  val TERA_BYTES = "TERA_BYTES".asInstanceOf[Unit]
-  val BITS = "BITS".asInstanceOf[Unit]
-  val KILO_BITS = "KILO_BITS".asInstanceOf[Unit]
-  val MEGA_BITS = "MEGA_BITS".asInstanceOf[Unit]
-  val GIGA_BITS = "GIGA_BITS".asInstanceOf[Unit]
-  val TERA_BITS = "TERA_BITS".asInstanceOf[Unit]
-  val PERCENT = "PERCENT".asInstanceOf[Unit]
-  val COUNT = "COUNT".asInstanceOf[Unit]
-  val BYTES_PER_SECOND = "BYTES_PER_SECOND".asInstanceOf[Unit]
-  val KILO_BYTES_PER_SECOND = "KILO_BYTES_PER_SECOND".asInstanceOf[Unit]
-  val MEGA_BYTES_PER_SECOND = "MEGA_BYTES_PER_SECOND".asInstanceOf[Unit]
-  val GIGA_BYTES_PER_SECOND = "GIGA_BYTES_PER_SECOND".asInstanceOf[Unit]
-  val TERA_BYTES_PER_SECOND = "TERA_BYTES_PER_SECOND".asInstanceOf[Unit]
-  val BITS_PER_SECOND = "BITS_PER_SECOND".asInstanceOf[Unit]
-  val KILO_BITS_PER_SECOND = "KILO_BITS_PER_SECOND".asInstanceOf[Unit]
-  val MEGA_BITS_PER_SECOND = "MEGA_BITS_PER_SECOND".asInstanceOf[Unit]
-  val GIGA_BITS_PER_SECOND = "GIGA_BITS_PER_SECOND".asInstanceOf[Unit]
-  val TERA_BITS_PER_SECOND = "TERA_BITS_PER_SECOND".asInstanceOf[Unit]
-  val COUNT_PER_SECOND = "COUNT_PER_SECOND".asInstanceOf[Unit]
+  inline val NONE: "NONE" = "NONE"
+  inline val SECONDS: "SECONDS" = "SECONDS"
+  inline val MICRO_SECONDS: "MICRO_SECONDS" = "MICRO_SECONDS"
+  inline val MILLI_SECONDS: "MILLI_SECONDS" = "MILLI_SECONDS"
+  inline val BYTES: "BYTES" = "BYTES"
+  inline val KILO_BYTES: "KILO_BYTES" = "KILO_BYTES"
+  inline val MEGA_BYTES: "MEGA_BYTES" = "MEGA_BYTES"
+  inline val GIGA_BYTES: "GIGA_BYTES" = "GIGA_BYTES"
+  inline val TERA_BYTES: "TERA_BYTES" = "TERA_BYTES"
+  inline val BITS: "BITS" = "BITS"
+  inline val KILO_BITS: "KILO_BITS" = "KILO_BITS"
+  inline val MEGA_BITS: "MEGA_BITS" = "MEGA_BITS"
+  inline val GIGA_BITS: "GIGA_BITS" = "GIGA_BITS"
+  inline val TERA_BITS: "TERA_BITS" = "TERA_BITS"
+  inline val PERCENT: "PERCENT" = "PERCENT"
+  inline val COUNT: "COUNT" = "COUNT"
+  inline val BYTES_PER_SECOND: "BYTES_PER_SECOND" = "BYTES_PER_SECOND"
+  inline val KILO_BYTES_PER_SECOND: "KILO_BYTES_PER_SECOND" = "KILO_BYTES_PER_SECOND"
+  inline val MEGA_BYTES_PER_SECOND: "MEGA_BYTES_PER_SECOND" = "MEGA_BYTES_PER_SECOND"
+  inline val GIGA_BYTES_PER_SECOND: "GIGA_BYTES_PER_SECOND" = "GIGA_BYTES_PER_SECOND"
+  inline val TERA_BYTES_PER_SECOND: "TERA_BYTES_PER_SECOND" = "TERA_BYTES_PER_SECOND"
+  inline val BITS_PER_SECOND: "BITS_PER_SECOND" = "BITS_PER_SECOND"
+  inline val KILO_BITS_PER_SECOND: "KILO_BITS_PER_SECOND" = "KILO_BITS_PER_SECOND"
+  inline val MEGA_BITS_PER_SECOND: "MEGA_BITS_PER_SECOND" = "MEGA_BITS_PER_SECOND"
+  inline val GIGA_BITS_PER_SECOND: "GIGA_BITS_PER_SECOND" = "GIGA_BITS_PER_SECOND"
+  inline val TERA_BITS_PER_SECOND: "TERA_BITS_PER_SECOND" = "TERA_BITS_PER_SECOND"
+  inline val COUNT_PER_SECOND: "COUNT_PER_SECOND" = "COUNT_PER_SECOND"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[Unit] = js.Array(
     NONE,
     SECONDS,
     MICRO_SECONDS,

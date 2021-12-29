@@ -63,3 +63,4 @@ object WorkGroupState {
 
   @inline def values = js.Array(ENABLED, DISABLED)
 }
+

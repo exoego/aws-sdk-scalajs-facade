@@ -1,36 +1,32 @@
 package facade.amazonaws.services.location
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait BatchItemErrorCode extends js.Any
+type BatchItemErrorCode = "AccessDeniedError" | "ConflictError" | "InternalServerError" | "ResourceNotFoundError" | "ThrottlingError" | "ValidationError"
 object BatchItemErrorCode {
-  val AccessDeniedError = "AccessDeniedError".asInstanceOf[BatchItemErrorCode]
-  val ConflictError = "ConflictError".asInstanceOf[BatchItemErrorCode]
-  val InternalServerError = "InternalServerError".asInstanceOf[BatchItemErrorCode]
-  val ResourceNotFoundError = "ResourceNotFoundError".asInstanceOf[BatchItemErrorCode]
-  val ThrottlingError = "ThrottlingError".asInstanceOf[BatchItemErrorCode]
-  val ValidationError = "ValidationError".asInstanceOf[BatchItemErrorCode]
+  inline val AccessDeniedError: "AccessDeniedError" = "AccessDeniedError"
+  inline val ConflictError: "ConflictError" = "ConflictError"
+  inline val InternalServerError: "InternalServerError" = "InternalServerError"
+  inline val ResourceNotFoundError: "ResourceNotFoundError" = "ResourceNotFoundError"
+  inline val ThrottlingError: "ThrottlingError" = "ThrottlingError"
+  inline val ValidationError: "ValidationError" = "ValidationError"
 
-  @inline def values = js.Array(AccessDeniedError, ConflictError, InternalServerError, ResourceNotFoundError, ThrottlingError, ValidationError)
+  inline def values: js.Array[BatchItemErrorCode] = js.Array(AccessDeniedError, ConflictError, InternalServerError, ResourceNotFoundError, ThrottlingError, ValidationError)
 }
 
-@js.native
-sealed trait IntendedUse extends js.Any
+type IntendedUse = "SingleUse" | "Storage"
 object IntendedUse {
-  val SingleUse = "SingleUse".asInstanceOf[IntendedUse]
-  val Storage = "Storage".asInstanceOf[IntendedUse]
+  inline val SingleUse: "SingleUse" = "SingleUse"
+  inline val Storage: "Storage" = "Storage"
 
-  @inline def values = js.Array(SingleUse, Storage)
+  inline def values: js.Array[IntendedUse] = js.Array(SingleUse, Storage)
 }
 
-@js.native
-sealed trait PricingPlan extends js.Any
+type PricingPlan = "RequestBasedUsage" | "MobileAssetTracking" | "MobileAssetManagement"
 object PricingPlan {
-  val RequestBasedUsage = "RequestBasedUsage".asInstanceOf[PricingPlan]
-  val MobileAssetTracking = "MobileAssetTracking".asInstanceOf[PricingPlan]
-  val MobileAssetManagement = "MobileAssetManagement".asInstanceOf[PricingPlan]
+  inline val RequestBasedUsage: "RequestBasedUsage" = "RequestBasedUsage"
+  inline val MobileAssetTracking: "MobileAssetTracking" = "MobileAssetTracking"
+  inline val MobileAssetManagement: "MobileAssetManagement" = "MobileAssetManagement"
 
-  @inline def values = js.Array(RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
+  inline def values: js.Array[PricingPlan] = js.Array(RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
 }

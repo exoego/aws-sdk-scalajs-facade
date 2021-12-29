@@ -1,68 +1,61 @@
 package facade.amazonaws.services.lexruntime
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ConfirmationStatus extends js.Any
+type ConfirmationStatus = "None" | "Confirmed" | "Denied"
 object ConfirmationStatus {
-  val None = "None".asInstanceOf[ConfirmationStatus]
-  val Confirmed = "Confirmed".asInstanceOf[ConfirmationStatus]
-  val Denied = "Denied".asInstanceOf[ConfirmationStatus]
+  inline val None: "None" = "None"
+  inline val Confirmed: "Confirmed" = "Confirmed"
+  inline val Denied: "Denied" = "Denied"
 
-  @inline def values = js.Array(None, Confirmed, Denied)
+  inline def values: js.Array[ConfirmationStatus] = js.Array(None, Confirmed, Denied)
 }
 
-@js.native
-sealed trait ContentType extends js.Any
+type ContentType = "application/vnd.amazonaws.card.generic"
 object ContentType {
-  val `application/vnd.amazonaws.card.generic` = "application/vnd.amazonaws.card.generic".asInstanceOf[ContentType]
+  inline val `application/vnd.amazonaws.card.generic`: "application/vnd.amazonaws.card.generic" = "application/vnd.amazonaws.card.generic"
 
-  @inline def values = js.Array(`application/vnd.amazonaws.card.generic`)
+  inline def values: js.Array[ContentType] = js.Array(`application/vnd.amazonaws.card.generic`)
 }
 
-@js.native
-sealed trait DialogActionType extends js.Any
+type DialogActionType = "ElicitIntent" | "ConfirmIntent" | "ElicitSlot" | "Close" | "Delegate"
 object DialogActionType {
-  val ElicitIntent = "ElicitIntent".asInstanceOf[DialogActionType]
-  val ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogActionType]
-  val ElicitSlot = "ElicitSlot".asInstanceOf[DialogActionType]
-  val Close = "Close".asInstanceOf[DialogActionType]
-  val Delegate = "Delegate".asInstanceOf[DialogActionType]
+  inline val ElicitIntent: "ElicitIntent" = "ElicitIntent"
+  inline val ConfirmIntent: "ConfirmIntent" = "ConfirmIntent"
+  inline val ElicitSlot: "ElicitSlot" = "ElicitSlot"
+  inline val Close: "Close" = "Close"
+  inline val Delegate: "Delegate" = "Delegate"
 
-  @inline def values = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate)
+  inline def values: js.Array[DialogActionType] = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate)
 }
 
-@js.native
-sealed trait DialogState extends js.Any
+type DialogState = "ElicitIntent" | "ConfirmIntent" | "ElicitSlot" | "Fulfilled" | "ReadyForFulfillment" | "Failed"
 object DialogState {
-  val ElicitIntent = "ElicitIntent".asInstanceOf[DialogState]
-  val ConfirmIntent = "ConfirmIntent".asInstanceOf[DialogState]
-  val ElicitSlot = "ElicitSlot".asInstanceOf[DialogState]
-  val Fulfilled = "Fulfilled".asInstanceOf[DialogState]
-  val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[DialogState]
-  val Failed = "Failed".asInstanceOf[DialogState]
+  inline val ElicitIntent: "ElicitIntent" = "ElicitIntent"
+  inline val ConfirmIntent: "ConfirmIntent" = "ConfirmIntent"
+  inline val ElicitSlot: "ElicitSlot" = "ElicitSlot"
+  inline val Fulfilled: "Fulfilled" = "Fulfilled"
+  inline val ReadyForFulfillment: "ReadyForFulfillment" = "ReadyForFulfillment"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed)
+  inline def values: js.Array[DialogState] = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed)
 }
 
-@js.native
-sealed trait FulfillmentState extends js.Any
+type FulfillmentState = "Fulfilled" | "Failed" | "ReadyForFulfillment"
 object FulfillmentState {
-  val Fulfilled = "Fulfilled".asInstanceOf[FulfillmentState]
-  val Failed = "Failed".asInstanceOf[FulfillmentState]
-  val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[FulfillmentState]
+  inline val Fulfilled: "Fulfilled" = "Fulfilled"
+  inline val Failed: "Failed" = "Failed"
+  inline val ReadyForFulfillment: "ReadyForFulfillment" = "ReadyForFulfillment"
 
-  @inline def values = js.Array(Fulfilled, Failed, ReadyForFulfillment)
+  inline def values: js.Array[FulfillmentState] = js.Array(Fulfilled, Failed, ReadyForFulfillment)
 }
 
-@js.native
-sealed trait MessageFormatType extends js.Any
+type MessageFormatType = "PlainText" | "CustomPayload" | "SSML" | "Composite"
 object MessageFormatType {
-  val PlainText = "PlainText".asInstanceOf[MessageFormatType]
-  val CustomPayload = "CustomPayload".asInstanceOf[MessageFormatType]
-  val SSML = "SSML".asInstanceOf[MessageFormatType]
-  val Composite = "Composite".asInstanceOf[MessageFormatType]
+  inline val PlainText: "PlainText" = "PlainText"
+  inline val CustomPayload: "CustomPayload" = "CustomPayload"
+  inline val SSML: "SSML" = "SSML"
+  inline val Composite: "Composite" = "Composite"
 
-  @inline def values = js.Array(PlainText, CustomPayload, SSML, Composite)
+  inline def values: js.Array[MessageFormatType] = js.Array(PlainText, CustomPayload, SSML, Composite)
 }

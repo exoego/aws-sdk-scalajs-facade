@@ -1,14 +1,12 @@
 package facade.amazonaws.services.elasticinference
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait LocationType extends js.Any
+type LocationType = "region" | "availability-zone" | "availability-zone-id"
 object LocationType {
-  val region = "region".asInstanceOf[LocationType]
-  val `availability-zone` = "availability-zone".asInstanceOf[LocationType]
-  val `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
+  inline val region: "region" = "region"
+  inline val `availability-zone`: "availability-zone" = "availability-zone"
+  inline val `availability-zone-id`: "availability-zone-id" = "availability-zone-id"
 
-  @inline def values = js.Array(region, `availability-zone`, `availability-zone-id`)
+  inline def values: js.Array[LocationType] = js.Array(region, `availability-zone`, `availability-zone-id`)
 }

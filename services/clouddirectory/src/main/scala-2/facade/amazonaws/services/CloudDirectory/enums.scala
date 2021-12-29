@@ -20,21 +20,7 @@ object BatchReadExceptionType {
   val LimitExceededException = "LimitExceededException".asInstanceOf[BatchReadExceptionType]
   val InternalServiceException = "InternalServiceException".asInstanceOf[BatchReadExceptionType]
 
-  @inline def values = js.Array(
-    ValidationException,
-    InvalidArnException,
-    ResourceNotFoundException,
-    InvalidNextTokenException,
-    AccessDeniedException,
-    NotNodeException,
-    FacetValidationException,
-    CannotListParentOfRootException,
-    NotIndexException,
-    NotPolicyException,
-    DirectoryNotEnabledException,
-    LimitExceededException,
-    InternalServiceException
-  )
+  @inline def values = js.Array(ValidationException, InvalidArnException, ResourceNotFoundException, InvalidNextTokenException, AccessDeniedException, NotNodeException, FacetValidationException, CannotListParentOfRootException, NotIndexException, NotPolicyException, DirectoryNotEnabledException, LimitExceededException, InternalServiceException)
 }
 
 @js.native
@@ -129,3 +115,4 @@ object UpdateActionType {
 
   @inline def values = js.Array(CREATE_OR_UPDATE, DELETE)
 }
+

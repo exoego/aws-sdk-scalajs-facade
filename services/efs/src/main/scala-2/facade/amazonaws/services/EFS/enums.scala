@@ -56,3 +56,4 @@ object TransitionToIARules {
 
   @inline def values = js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
 }
+

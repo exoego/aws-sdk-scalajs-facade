@@ -1,250 +1,226 @@
 package facade.amazonaws.services.iot
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AbortAction extends js.Any
+type AbortAction = "CANCEL"
 object AbortAction {
-  val CANCEL = "CANCEL".asInstanceOf[AbortAction]
+  inline val CANCEL: "CANCEL" = "CANCEL"
 
-  @inline def values = js.Array(CANCEL)
+  inline def values: js.Array[AbortAction] = js.Array(CANCEL)
 }
 
-@js.native
-sealed trait ActionType extends js.Any
+type ActionType = "PUBLISH" | "SUBSCRIBE" | "RECEIVE" | "CONNECT"
 object ActionType {
-  val PUBLISH = "PUBLISH".asInstanceOf[ActionType]
-  val SUBSCRIBE = "SUBSCRIBE".asInstanceOf[ActionType]
-  val RECEIVE = "RECEIVE".asInstanceOf[ActionType]
-  val CONNECT = "CONNECT".asInstanceOf[ActionType]
+  inline val PUBLISH: "PUBLISH" = "PUBLISH"
+  inline val SUBSCRIBE: "SUBSCRIBE" = "SUBSCRIBE"
+  inline val RECEIVE: "RECEIVE" = "RECEIVE"
+  inline val CONNECT: "CONNECT" = "CONNECT"
 
-  @inline def values = js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT)
+  inline def values: js.Array[ActionType] = js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT)
 }
 
 /** The type of alert target: one of "SNS".
   */
-@js.native
-sealed trait AlertTargetType extends js.Any
+type AlertTargetType = "SNS"
 object AlertTargetType {
-  val SNS = "SNS".asInstanceOf[AlertTargetType]
+  inline val SNS: "SNS" = "SNS"
 
-  @inline def values = js.Array(SNS)
+  inline def values: js.Array[AlertTargetType] = js.Array(SNS)
 }
 
-@js.native
-sealed trait AuditCheckRunStatus extends js.Any
+type AuditCheckRunStatus = "IN_PROGRESS" | "WAITING_FOR_DATA_COLLECTION" | "CANCELED" | "COMPLETED_COMPLIANT" | "COMPLETED_NON_COMPLIANT" | "FAILED"
 object AuditCheckRunStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditCheckRunStatus]
-  val WAITING_FOR_DATA_COLLECTION = "WAITING_FOR_DATA_COLLECTION".asInstanceOf[AuditCheckRunStatus]
-  val CANCELED = "CANCELED".asInstanceOf[AuditCheckRunStatus]
-  val COMPLETED_COMPLIANT = "COMPLETED_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
-  val COMPLETED_NON_COMPLIANT = "COMPLETED_NON_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
-  val FAILED = "FAILED".asInstanceOf[AuditCheckRunStatus]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val WAITING_FOR_DATA_COLLECTION: "WAITING_FOR_DATA_COLLECTION" = "WAITING_FOR_DATA_COLLECTION"
+  inline val CANCELED: "CANCELED" = "CANCELED"
+  inline val COMPLETED_COMPLIANT: "COMPLETED_COMPLIANT" = "COMPLETED_COMPLIANT"
+  inline val COMPLETED_NON_COMPLIANT: "COMPLETED_NON_COMPLIANT" = "COMPLETED_NON_COMPLIANT"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED)
+  inline def values: js.Array[AuditCheckRunStatus] = js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED)
 }
 
-@js.native
-sealed trait AuditFindingSeverity extends js.Any
+type AuditFindingSeverity = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW"
 object AuditFindingSeverity {
-  val CRITICAL = "CRITICAL".asInstanceOf[AuditFindingSeverity]
-  val HIGH = "HIGH".asInstanceOf[AuditFindingSeverity]
-  val MEDIUM = "MEDIUM".asInstanceOf[AuditFindingSeverity]
-  val LOW = "LOW".asInstanceOf[AuditFindingSeverity]
+  inline val CRITICAL: "CRITICAL" = "CRITICAL"
+  inline val HIGH: "HIGH" = "HIGH"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val LOW: "LOW" = "LOW"
 
-  @inline def values = js.Array(CRITICAL, HIGH, MEDIUM, LOW)
+  inline def values: js.Array[AuditFindingSeverity] = js.Array(CRITICAL, HIGH, MEDIUM, LOW)
 }
 
-@js.native
-sealed trait AuditFrequency extends js.Any
+type AuditFrequency = "DAILY" | "WEEKLY" | "BIWEEKLY" | "MONTHLY"
 object AuditFrequency {
-  val DAILY = "DAILY".asInstanceOf[AuditFrequency]
-  val WEEKLY = "WEEKLY".asInstanceOf[AuditFrequency]
-  val BIWEEKLY = "BIWEEKLY".asInstanceOf[AuditFrequency]
-  val MONTHLY = "MONTHLY".asInstanceOf[AuditFrequency]
+  inline val DAILY: "DAILY" = "DAILY"
+  inline val WEEKLY: "WEEKLY" = "WEEKLY"
+  inline val BIWEEKLY: "BIWEEKLY" = "BIWEEKLY"
+  inline val MONTHLY: "MONTHLY" = "MONTHLY"
 
-  @inline def values = js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY)
+  inline def values: js.Array[AuditFrequency] = js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY)
 }
 
-@js.native
-sealed trait AuditMitigationActionsExecutionStatus extends js.Any
+type AuditMitigationActionsExecutionStatus = "IN_PROGRESS" | "COMPLETED" | "FAILED" | "CANCELED" | "SKIPPED" | "PENDING"
 object AuditMitigationActionsExecutionStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditMitigationActionsExecutionStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[AuditMitigationActionsExecutionStatus]
-  val FAILED = "FAILED".asInstanceOf[AuditMitigationActionsExecutionStatus]
-  val CANCELED = "CANCELED".asInstanceOf[AuditMitigationActionsExecutionStatus]
-  val SKIPPED = "SKIPPED".asInstanceOf[AuditMitigationActionsExecutionStatus]
-  val PENDING = "PENDING".asInstanceOf[AuditMitigationActionsExecutionStatus]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELED: "CANCELED" = "CANCELED"
+  inline val SKIPPED: "SKIPPED" = "SKIPPED"
+  inline val PENDING: "PENDING" = "PENDING"
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING)
+  inline def values: js.Array[AuditMitigationActionsExecutionStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING)
 }
 
-@js.native
-sealed trait AuditMitigationActionsTaskStatus extends js.Any
+type AuditMitigationActionsTaskStatus = "IN_PROGRESS" | "COMPLETED" | "FAILED" | "CANCELED"
 object AuditMitigationActionsTaskStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditMitigationActionsTaskStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[AuditMitigationActionsTaskStatus]
-  val FAILED = "FAILED".asInstanceOf[AuditMitigationActionsTaskStatus]
-  val CANCELED = "CANCELED".asInstanceOf[AuditMitigationActionsTaskStatus]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
+  inline def values: js.Array[AuditMitigationActionsTaskStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
 }
 
-@js.native
-sealed trait AuditNotificationType extends js.Any
+type AuditNotificationType = "SNS"
 object AuditNotificationType {
-  val SNS = "SNS".asInstanceOf[AuditNotificationType]
+  inline val SNS: "SNS" = "SNS"
 
-  @inline def values = js.Array(SNS)
+  inline def values: js.Array[AuditNotificationType] = js.Array(SNS)
 }
 
-@js.native
-sealed trait AuditTaskStatus extends js.Any
+type AuditTaskStatus = "IN_PROGRESS" | "COMPLETED" | "FAILED" | "CANCELED"
 object AuditTaskStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AuditTaskStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[AuditTaskStatus]
-  val FAILED = "FAILED".asInstanceOf[AuditTaskStatus]
-  val CANCELED = "CANCELED".asInstanceOf[AuditTaskStatus]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
+  inline def values: js.Array[AuditTaskStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
 }
 
-@js.native
-sealed trait AuditTaskType extends js.Any
+type AuditTaskType = "ON_DEMAND_AUDIT_TASK" | "SCHEDULED_AUDIT_TASK"
 object AuditTaskType {
-  val ON_DEMAND_AUDIT_TASK = "ON_DEMAND_AUDIT_TASK".asInstanceOf[AuditTaskType]
-  val SCHEDULED_AUDIT_TASK = "SCHEDULED_AUDIT_TASK".asInstanceOf[AuditTaskType]
+  inline val ON_DEMAND_AUDIT_TASK: "ON_DEMAND_AUDIT_TASK" = "ON_DEMAND_AUDIT_TASK"
+  inline val SCHEDULED_AUDIT_TASK: "SCHEDULED_AUDIT_TASK" = "SCHEDULED_AUDIT_TASK"
 
-  @inline def values = js.Array(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK)
+  inline def values: js.Array[AuditTaskType] = js.Array(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK)
 }
 
-@js.native
-sealed trait AuthDecision extends js.Any
+type AuthDecision = "ALLOWED" | "EXPLICIT_DENY" | "IMPLICIT_DENY"
 object AuthDecision {
-  val ALLOWED = "ALLOWED".asInstanceOf[AuthDecision]
-  val EXPLICIT_DENY = "EXPLICIT_DENY".asInstanceOf[AuthDecision]
-  val IMPLICIT_DENY = "IMPLICIT_DENY".asInstanceOf[AuthDecision]
+  inline val ALLOWED: "ALLOWED" = "ALLOWED"
+  inline val EXPLICIT_DENY: "EXPLICIT_DENY" = "EXPLICIT_DENY"
+  inline val IMPLICIT_DENY: "IMPLICIT_DENY" = "IMPLICIT_DENY"
 
-  @inline def values = js.Array(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY)
+  inline def values: js.Array[AuthDecision] = js.Array(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY)
 }
 
-@js.native
-sealed trait AuthorizerStatus extends js.Any
+type AuthorizerStatus = "ACTIVE" | "INACTIVE"
 object AuthorizerStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[AuthorizerStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[AuthorizerStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  inline def values: js.Array[AuthorizerStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
-@js.native
-sealed trait AutoRegistrationStatus extends js.Any
+type AutoRegistrationStatus = "ENABLE" | "DISABLE"
 object AutoRegistrationStatus {
-  val ENABLE = "ENABLE".asInstanceOf[AutoRegistrationStatus]
-  val DISABLE = "DISABLE".asInstanceOf[AutoRegistrationStatus]
+  inline val ENABLE: "ENABLE" = "ENABLE"
+  inline val DISABLE: "DISABLE" = "DISABLE"
 
-  @inline def values = js.Array(ENABLE, DISABLE)
+  inline def values: js.Array[AutoRegistrationStatus] = js.Array(ENABLE, DISABLE)
 }
 
-@js.native
-sealed trait AwsJobAbortCriteriaAbortAction extends js.Any
+type AwsJobAbortCriteriaAbortAction = "CANCEL"
 object AwsJobAbortCriteriaAbortAction {
-  val CANCEL = "CANCEL".asInstanceOf[AwsJobAbortCriteriaAbortAction]
+  inline val CANCEL: "CANCEL" = "CANCEL"
 
-  @inline def values = js.Array(CANCEL)
+  inline def values: js.Array[AwsJobAbortCriteriaAbortAction] = js.Array(CANCEL)
 }
 
-@js.native
-sealed trait AwsJobAbortCriteriaFailureType extends js.Any
+type AwsJobAbortCriteriaFailureType = "FAILED" | "REJECTED" | "TIMED_OUT" | "ALL"
 object AwsJobAbortCriteriaFailureType {
-  val FAILED = "FAILED".asInstanceOf[AwsJobAbortCriteriaFailureType]
-  val REJECTED = "REJECTED".asInstanceOf[AwsJobAbortCriteriaFailureType]
-  val TIMED_OUT = "TIMED_OUT".asInstanceOf[AwsJobAbortCriteriaFailureType]
-  val ALL = "ALL".asInstanceOf[AwsJobAbortCriteriaFailureType]
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  inline val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
+  inline def values: js.Array[AwsJobAbortCriteriaFailureType] = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
 }
 
-@js.native
-sealed trait BehaviorCriteriaType extends js.Any
+type BehaviorCriteriaType = "STATIC" | "STATISTICAL" | "MACHINE_LEARNING"
 object BehaviorCriteriaType {
-  val STATIC = "STATIC".asInstanceOf[BehaviorCriteriaType]
-  val STATISTICAL = "STATISTICAL".asInstanceOf[BehaviorCriteriaType]
-  val MACHINE_LEARNING = "MACHINE_LEARNING".asInstanceOf[BehaviorCriteriaType]
+  inline val STATIC: "STATIC" = "STATIC"
+  inline val STATISTICAL: "STATISTICAL" = "STATISTICAL"
+  inline val MACHINE_LEARNING: "MACHINE_LEARNING" = "MACHINE_LEARNING"
 
-  @inline def values = js.Array(STATIC, STATISTICAL, MACHINE_LEARNING)
+  inline def values: js.Array[BehaviorCriteriaType] = js.Array(STATIC, STATISTICAL, MACHINE_LEARNING)
 }
 
-@js.native
-sealed trait CACertificateStatus extends js.Any
+type CACertificateStatus = "ACTIVE" | "INACTIVE"
 object CACertificateStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[CACertificateStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[CACertificateStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  inline def values: js.Array[CACertificateStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
-@js.native
-sealed trait CACertificateUpdateAction extends js.Any
+type CACertificateUpdateAction = "DEACTIVATE"
 object CACertificateUpdateAction {
-  val DEACTIVATE = "DEACTIVATE".asInstanceOf[CACertificateUpdateAction]
+  inline val DEACTIVATE: "DEACTIVATE" = "DEACTIVATE"
 
-  @inline def values = js.Array(DEACTIVATE)
+  inline def values: js.Array[CACertificateUpdateAction] = js.Array(DEACTIVATE)
 }
 
-@js.native
-sealed trait CannedAccessControlList extends js.Any
+type CannedAccessControlList = "private" | "public-read" | "public-read-write" | "aws-exec-read" | "authenticated-read" | "bucket-owner-read" | "bucket-owner-full-control" | "log-delivery-write"
 object CannedAccessControlList {
-  val `private` = "private".asInstanceOf[CannedAccessControlList]
-  val `public-read` = "public-read".asInstanceOf[CannedAccessControlList]
-  val `public-read-write` = "public-read-write".asInstanceOf[CannedAccessControlList]
-  val `aws-exec-read` = "aws-exec-read".asInstanceOf[CannedAccessControlList]
-  val `authenticated-read` = "authenticated-read".asInstanceOf[CannedAccessControlList]
-  val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[CannedAccessControlList]
-  val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedAccessControlList]
-  val `log-delivery-write` = "log-delivery-write".asInstanceOf[CannedAccessControlList]
+  inline val `private`: "private" = "private"
+  inline val `public-read`: "public-read" = "public-read"
+  inline val `public-read-write`: "public-read-write" = "public-read-write"
+  inline val `aws-exec-read`: "aws-exec-read" = "aws-exec-read"
+  inline val `authenticated-read`: "authenticated-read" = "authenticated-read"
+  inline val `bucket-owner-read`: "bucket-owner-read" = "bucket-owner-read"
+  inline val `bucket-owner-full-control`: "bucket-owner-full-control" = "bucket-owner-full-control"
+  inline val `log-delivery-write`: "log-delivery-write" = "log-delivery-write"
 
-  @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `log-delivery-write`)
+  inline def values: js.Array[CannedAccessControlList] = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `log-delivery-write`)
 }
 
-@js.native
-sealed trait CertificateMode extends js.Any
+type CertificateMode = "DEFAULT" | "SNI_ONLY"
 object CertificateMode {
-  val DEFAULT = "DEFAULT".asInstanceOf[CertificateMode]
-  val SNI_ONLY = "SNI_ONLY".asInstanceOf[CertificateMode]
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+  inline val SNI_ONLY: "SNI_ONLY" = "SNI_ONLY"
 
-  @inline def values = js.Array(DEFAULT, SNI_ONLY)
+  inline def values: js.Array[CertificateMode] = js.Array(DEFAULT, SNI_ONLY)
 }
 
-@js.native
-sealed trait CertificateStatus extends js.Any
+type CertificateStatus = "ACTIVE" | "INACTIVE" | "REVOKED" | "PENDING_TRANSFER" | "REGISTER_INACTIVE" | "PENDING_ACTIVATION"
 object CertificateStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[CertificateStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[CertificateStatus]
-  val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
-  val PENDING_TRANSFER = "PENDING_TRANSFER".asInstanceOf[CertificateStatus]
-  val REGISTER_INACTIVE = "REGISTER_INACTIVE".asInstanceOf[CertificateStatus]
-  val PENDING_ACTIVATION = "PENDING_ACTIVATION".asInstanceOf[CertificateStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val REVOKED: "REVOKED" = "REVOKED"
+  inline val PENDING_TRANSFER: "PENDING_TRANSFER" = "PENDING_TRANSFER"
+  inline val REGISTER_INACTIVE: "REGISTER_INACTIVE" = "REGISTER_INACTIVE"
+  inline val PENDING_ACTIVATION: "PENDING_ACTIVATION" = "PENDING_ACTIVATION"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION)
+  inline def values: js.Array[CertificateStatus] = js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION)
 }
 
-@js.native
-sealed trait ComparisonOperator extends js.Any
+type ComparisonOperator = "less-than" | "less-than-equals" | "greater-than" | "greater-than-equals" | "in-cidr-set" | "not-in-cidr-set" | "in-port-set" | "not-in-port-set" | "in-set" | "not-in-set"
 object ComparisonOperator {
-  val `less-than` = "less-than".asInstanceOf[ComparisonOperator]
-  val `less-than-equals` = "less-than-equals".asInstanceOf[ComparisonOperator]
-  val `greater-than` = "greater-than".asInstanceOf[ComparisonOperator]
-  val `greater-than-equals` = "greater-than-equals".asInstanceOf[ComparisonOperator]
-  val `in-cidr-set` = "in-cidr-set".asInstanceOf[ComparisonOperator]
-  val `not-in-cidr-set` = "not-in-cidr-set".asInstanceOf[ComparisonOperator]
-  val `in-port-set` = "in-port-set".asInstanceOf[ComparisonOperator]
-  val `not-in-port-set` = "not-in-port-set".asInstanceOf[ComparisonOperator]
-  val `in-set` = "in-set".asInstanceOf[ComparisonOperator]
-  val `not-in-set` = "not-in-set".asInstanceOf[ComparisonOperator]
+  inline val `less-than`: "less-than" = "less-than"
+  inline val `less-than-equals`: "less-than-equals" = "less-than-equals"
+  inline val `greater-than`: "greater-than" = "greater-than"
+  inline val `greater-than-equals`: "greater-than-equals" = "greater-than-equals"
+  inline val `in-cidr-set`: "in-cidr-set" = "in-cidr-set"
+  inline val `not-in-cidr-set`: "not-in-cidr-set" = "not-in-cidr-set"
+  inline val `in-port-set`: "in-port-set" = "in-port-set"
+  inline val `not-in-port-set`: "not-in-port-set" = "not-in-port-set"
+  inline val `in-set`: "in-set" = "in-set"
+  inline val `not-in-set`: "not-in-set" = "not-in-set"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[ComparisonOperator] = js.Array(
     `less-than`,
     `less-than-equals`,
     `greater-than`,
@@ -258,392 +234,355 @@ object ComparisonOperator {
   )
 }
 
-@js.native
-sealed trait ConfidenceLevel extends js.Any
+type ConfidenceLevel = "LOW" | "MEDIUM" | "HIGH"
 object ConfidenceLevel {
-  val LOW = "LOW".asInstanceOf[ConfidenceLevel]
-  val MEDIUM = "MEDIUM".asInstanceOf[ConfidenceLevel]
-  val HIGH = "HIGH".asInstanceOf[ConfidenceLevel]
+  inline val LOW: "LOW" = "LOW"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val HIGH: "HIGH" = "HIGH"
 
-  @inline def values = js.Array(LOW, MEDIUM, HIGH)
+  inline def values: js.Array[ConfidenceLevel] = js.Array(LOW, MEDIUM, HIGH)
 }
 
-@js.native
-sealed trait CustomMetricType extends js.Any
+type CustomMetricType = "string-list" | "ip-address-list" | "number-list" | "number"
 object CustomMetricType {
-  val `string-list` = "string-list".asInstanceOf[CustomMetricType]
-  val `ip-address-list` = "ip-address-list".asInstanceOf[CustomMetricType]
-  val `number-list` = "number-list".asInstanceOf[CustomMetricType]
-  val number = "number".asInstanceOf[CustomMetricType]
+  inline val `string-list`: "string-list" = "string-list"
+  inline val `ip-address-list`: "ip-address-list" = "ip-address-list"
+  inline val `number-list`: "number-list" = "number-list"
+  inline val number: "number" = "number"
 
-  @inline def values = js.Array(`string-list`, `ip-address-list`, `number-list`, number)
+  inline def values: js.Array[CustomMetricType] = js.Array(`string-list`, `ip-address-list`, `number-list`, number)
 }
 
-@js.native
-sealed trait DayOfWeek extends js.Any
+type DayOfWeek = "SUN" | "MON" | "TUE" | "WED" | "THU" | "FRI" | "SAT"
 object DayOfWeek {
-  val SUN = "SUN".asInstanceOf[DayOfWeek]
-  val MON = "MON".asInstanceOf[DayOfWeek]
-  val TUE = "TUE".asInstanceOf[DayOfWeek]
-  val WED = "WED".asInstanceOf[DayOfWeek]
-  val THU = "THU".asInstanceOf[DayOfWeek]
-  val FRI = "FRI".asInstanceOf[DayOfWeek]
-  val SAT = "SAT".asInstanceOf[DayOfWeek]
+  inline val SUN: "SUN" = "SUN"
+  inline val MON: "MON" = "MON"
+  inline val TUE: "TUE" = "TUE"
+  inline val WED: "WED" = "WED"
+  inline val THU: "THU" = "THU"
+  inline val FRI: "FRI" = "FRI"
+  inline val SAT: "SAT" = "SAT"
 
-  @inline def values = js.Array(SUN, MON, TUE, WED, THU, FRI, SAT)
+  inline def values: js.Array[DayOfWeek] = js.Array(SUN, MON, TUE, WED, THU, FRI, SAT)
 }
 
-@js.native
-sealed trait DetectMitigationActionExecutionStatus extends js.Any
+type DetectMitigationActionExecutionStatus = "IN_PROGRESS" | "SUCCESSFUL" | "FAILED" | "SKIPPED"
 object DetectMitigationActionExecutionStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DetectMitigationActionExecutionStatus]
-  val SUCCESSFUL = "SUCCESSFUL".asInstanceOf[DetectMitigationActionExecutionStatus]
-  val FAILED = "FAILED".asInstanceOf[DetectMitigationActionExecutionStatus]
-  val SKIPPED = "SKIPPED".asInstanceOf[DetectMitigationActionExecutionStatus]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCESSFUL: "SUCCESSFUL" = "SUCCESSFUL"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SKIPPED: "SKIPPED" = "SKIPPED"
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCESSFUL, FAILED, SKIPPED)
+  inline def values: js.Array[DetectMitigationActionExecutionStatus] = js.Array(IN_PROGRESS, SUCCESSFUL, FAILED, SKIPPED)
 }
 
-@js.native
-sealed trait DetectMitigationActionsTaskStatus extends js.Any
+type DetectMitigationActionsTaskStatus = "IN_PROGRESS" | "SUCCESSFUL" | "FAILED" | "CANCELED"
 object DetectMitigationActionsTaskStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DetectMitigationActionsTaskStatus]
-  val SUCCESSFUL = "SUCCESSFUL".asInstanceOf[DetectMitigationActionsTaskStatus]
-  val FAILED = "FAILED".asInstanceOf[DetectMitigationActionsTaskStatus]
-  val CANCELED = "CANCELED".asInstanceOf[DetectMitigationActionsTaskStatus]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCESSFUL: "SUCCESSFUL" = "SUCCESSFUL"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCESSFUL, FAILED, CANCELED)
+  inline def values: js.Array[DetectMitigationActionsTaskStatus] = js.Array(IN_PROGRESS, SUCCESSFUL, FAILED, CANCELED)
 }
 
-@js.native
-sealed trait DeviceCertificateUpdateAction extends js.Any
+type DeviceCertificateUpdateAction = "DEACTIVATE"
 object DeviceCertificateUpdateAction {
-  val DEACTIVATE = "DEACTIVATE".asInstanceOf[DeviceCertificateUpdateAction]
+  inline val DEACTIVATE: "DEACTIVATE" = "DEACTIVATE"
 
-  @inline def values = js.Array(DEACTIVATE)
+  inline def values: js.Array[DeviceCertificateUpdateAction] = js.Array(DEACTIVATE)
 }
 
-@js.native
-sealed trait DimensionType extends js.Any
+type DimensionType = "TOPIC_FILTER"
 object DimensionType {
-  val TOPIC_FILTER = "TOPIC_FILTER".asInstanceOf[DimensionType]
+  inline val TOPIC_FILTER: "TOPIC_FILTER" = "TOPIC_FILTER"
 
-  @inline def values = js.Array(TOPIC_FILTER)
+  inline def values: js.Array[DimensionType] = js.Array(TOPIC_FILTER)
 }
 
-@js.native
-sealed trait DimensionValueOperator extends js.Any
+type DimensionValueOperator = "IN" | "NOT_IN"
 object DimensionValueOperator {
-  val IN = "IN".asInstanceOf[DimensionValueOperator]
-  val NOT_IN = "NOT_IN".asInstanceOf[DimensionValueOperator]
+  inline val IN: "IN" = "IN"
+  inline val NOT_IN: "NOT_IN" = "NOT_IN"
 
-  @inline def values = js.Array(IN, NOT_IN)
+  inline def values: js.Array[DimensionValueOperator] = js.Array(IN, NOT_IN)
 }
 
-@js.native
-sealed trait DomainConfigurationStatus extends js.Any
+type DomainConfigurationStatus = "ENABLED" | "DISABLED"
 object DomainConfigurationStatus {
-  val ENABLED = "ENABLED".asInstanceOf[DomainConfigurationStatus]
-  val DISABLED = "DISABLED".asInstanceOf[DomainConfigurationStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[DomainConfigurationStatus] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait DomainType extends js.Any
+type DomainType = "ENDPOINT" | "AWS_MANAGED" | "CUSTOMER_MANAGED"
 object DomainType {
-  val ENDPOINT = "ENDPOINT".asInstanceOf[DomainType]
-  val AWS_MANAGED = "AWS_MANAGED".asInstanceOf[DomainType]
-  val CUSTOMER_MANAGED = "CUSTOMER_MANAGED".asInstanceOf[DomainType]
+  inline val ENDPOINT: "ENDPOINT" = "ENDPOINT"
+  inline val AWS_MANAGED: "AWS_MANAGED" = "AWS_MANAGED"
+  inline val CUSTOMER_MANAGED: "CUSTOMER_MANAGED" = "CUSTOMER_MANAGED"
 
-  @inline def values = js.Array(ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED)
+  inline def values: js.Array[DomainType] = js.Array(ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED)
 }
 
-@js.native
-sealed trait DynamicGroupStatus extends js.Any
+type DynamicGroupStatus = "ACTIVE" | "BUILDING" | "REBUILDING"
 object DynamicGroupStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[DynamicGroupStatus]
-  val BUILDING = "BUILDING".asInstanceOf[DynamicGroupStatus]
-  val REBUILDING = "REBUILDING".asInstanceOf[DynamicGroupStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val BUILDING: "BUILDING" = "BUILDING"
+  inline val REBUILDING: "REBUILDING" = "REBUILDING"
 
-  @inline def values = js.Array(ACTIVE, BUILDING, REBUILDING)
+  inline def values: js.Array[DynamicGroupStatus] = js.Array(ACTIVE, BUILDING, REBUILDING)
 }
 
-@js.native
-sealed trait DynamoKeyType extends js.Any
+type DynamoKeyType = "STRING" | "NUMBER"
 object DynamoKeyType {
-  val STRING = "STRING".asInstanceOf[DynamoKeyType]
-  val NUMBER = "NUMBER".asInstanceOf[DynamoKeyType]
+  inline val STRING: "STRING" = "STRING"
+  inline val NUMBER: "NUMBER" = "NUMBER"
 
-  @inline def values = js.Array(STRING, NUMBER)
+  inline def values: js.Array[DynamoKeyType] = js.Array(STRING, NUMBER)
 }
 
-@js.native
-sealed trait EventType extends js.Any
+type EventType = "THING" | "THING_GROUP" | "THING_TYPE" | "THING_GROUP_MEMBERSHIP" | "THING_GROUP_HIERARCHY" | "THING_TYPE_ASSOCIATION" | "JOB" | "JOB_EXECUTION" | "POLICY" | "CERTIFICATE" | "CA_CERTIFICATE"
 object EventType {
-  val THING = "THING".asInstanceOf[EventType]
-  val THING_GROUP = "THING_GROUP".asInstanceOf[EventType]
-  val THING_TYPE = "THING_TYPE".asInstanceOf[EventType]
-  val THING_GROUP_MEMBERSHIP = "THING_GROUP_MEMBERSHIP".asInstanceOf[EventType]
-  val THING_GROUP_HIERARCHY = "THING_GROUP_HIERARCHY".asInstanceOf[EventType]
-  val THING_TYPE_ASSOCIATION = "THING_TYPE_ASSOCIATION".asInstanceOf[EventType]
-  val JOB = "JOB".asInstanceOf[EventType]
-  val JOB_EXECUTION = "JOB_EXECUTION".asInstanceOf[EventType]
-  val POLICY = "POLICY".asInstanceOf[EventType]
-  val CERTIFICATE = "CERTIFICATE".asInstanceOf[EventType]
-  val CA_CERTIFICATE = "CA_CERTIFICATE".asInstanceOf[EventType]
+  inline val THING: "THING" = "THING"
+  inline val THING_GROUP: "THING_GROUP" = "THING_GROUP"
+  inline val THING_TYPE: "THING_TYPE" = "THING_TYPE"
+  inline val THING_GROUP_MEMBERSHIP: "THING_GROUP_MEMBERSHIP" = "THING_GROUP_MEMBERSHIP"
+  inline val THING_GROUP_HIERARCHY: "THING_GROUP_HIERARCHY" = "THING_GROUP_HIERARCHY"
+  inline val THING_TYPE_ASSOCIATION: "THING_TYPE_ASSOCIATION" = "THING_TYPE_ASSOCIATION"
+  inline val JOB: "JOB" = "JOB"
+  inline val JOB_EXECUTION: "JOB_EXECUTION" = "JOB_EXECUTION"
+  inline val POLICY: "POLICY" = "POLICY"
+  inline val CERTIFICATE: "CERTIFICATE" = "CERTIFICATE"
+  inline val CA_CERTIFICATE: "CA_CERTIFICATE" = "CA_CERTIFICATE"
 
-  @inline def values = js.Array(THING, THING_GROUP, THING_TYPE, THING_GROUP_MEMBERSHIP, THING_GROUP_HIERARCHY, THING_TYPE_ASSOCIATION, JOB, JOB_EXECUTION, POLICY, CERTIFICATE, CA_CERTIFICATE)
+  inline def values: js.Array[EventType] = js.Array(THING, THING_GROUP, THING_TYPE, THING_GROUP_MEMBERSHIP, THING_GROUP_HIERARCHY, THING_TYPE_ASSOCIATION, JOB, JOB_EXECUTION, POLICY, CERTIFICATE, CA_CERTIFICATE)
 }
 
-@js.native
-sealed trait FieldType extends js.Any
+type FieldType = "Number" | "String" | "Boolean"
 object FieldType {
-  val Number = "Number".asInstanceOf[FieldType]
-  val String = "String".asInstanceOf[FieldType]
-  val Boolean = "Boolean".asInstanceOf[FieldType]
+  inline val Number: "Number" = "Number"
+  inline val String: "String" = "String"
+  inline val Boolean: "Boolean" = "Boolean"
 
-  @inline def values = js.Array(Number, String, Boolean)
+  inline def values: js.Array[FieldType] = js.Array(Number, String, Boolean)
 }
 
-@js.native
-sealed trait IndexStatus extends js.Any
+type IndexStatus = "ACTIVE" | "BUILDING" | "REBUILDING"
 object IndexStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
-  val BUILDING = "BUILDING".asInstanceOf[IndexStatus]
-  val REBUILDING = "REBUILDING".asInstanceOf[IndexStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val BUILDING: "BUILDING" = "BUILDING"
+  inline val REBUILDING: "REBUILDING" = "REBUILDING"
 
-  @inline def values = js.Array(ACTIVE, BUILDING, REBUILDING)
+  inline def values: js.Array[IndexStatus] = js.Array(ACTIVE, BUILDING, REBUILDING)
 }
 
-@js.native
-sealed trait JobExecutionFailureType extends js.Any
+type JobExecutionFailureType = "FAILED" | "REJECTED" | "TIMED_OUT" | "ALL"
 object JobExecutionFailureType {
-  val FAILED = "FAILED".asInstanceOf[JobExecutionFailureType]
-  val REJECTED = "REJECTED".asInstanceOf[JobExecutionFailureType]
-  val TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionFailureType]
-  val ALL = "ALL".asInstanceOf[JobExecutionFailureType]
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  inline val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
+  inline def values: js.Array[JobExecutionFailureType] = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
 }
 
-@js.native
-sealed trait JobExecutionStatus extends js.Any
+type JobExecutionStatus = "QUEUED" | "IN_PROGRESS" | "SUCCEEDED" | "FAILED" | "TIMED_OUT" | "REJECTED" | "REMOVED" | "CANCELED"
 object JobExecutionStatus {
-  val QUEUED = "QUEUED".asInstanceOf[JobExecutionStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobExecutionStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[JobExecutionStatus]
-  val FAILED = "FAILED".asInstanceOf[JobExecutionStatus]
-  val TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionStatus]
-  val REJECTED = "REJECTED".asInstanceOf[JobExecutionStatus]
-  val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
-  val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
+  inline val QUEUED: "QUEUED" = "QUEUED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+  inline val REMOVED: "REMOVED" = "REMOVED"
+  inline val CANCELED: "CANCELED" = "CANCELED"
 
-  @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
+  inline def values: js.Array[JobExecutionStatus] = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
 }
 
-@js.native
-sealed trait JobStatus extends js.Any
+type JobStatus = "IN_PROGRESS" | "CANCELED" | "COMPLETED" | "DELETION_IN_PROGRESS"
 object JobStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
-  val CANCELED = "CANCELED".asInstanceOf[JobStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
-  val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[JobStatus]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val CANCELED: "CANCELED" = "CANCELED"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val DELETION_IN_PROGRESS: "DELETION_IN_PROGRESS" = "DELETION_IN_PROGRESS"
 
-  @inline def values = js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS)
+  inline def values: js.Array[JobStatus] = js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS)
 }
 
-@js.native
-sealed trait LogLevel extends js.Any
+type LogLevel = "DEBUG" | "INFO" | "ERROR" | "WARN" | "DISABLED"
 object LogLevel {
-  val DEBUG = "DEBUG".asInstanceOf[LogLevel]
-  val INFO = "INFO".asInstanceOf[LogLevel]
-  val ERROR = "ERROR".asInstanceOf[LogLevel]
-  val WARN = "WARN".asInstanceOf[LogLevel]
-  val DISABLED = "DISABLED".asInstanceOf[LogLevel]
+  inline val DEBUG: "DEBUG" = "DEBUG"
+  inline val INFO: "INFO" = "INFO"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val WARN: "WARN" = "WARN"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(DEBUG, INFO, ERROR, WARN, DISABLED)
+  inline def values: js.Array[LogLevel] = js.Array(DEBUG, INFO, ERROR, WARN, DISABLED)
 }
 
-@js.native
-sealed trait LogTargetType extends js.Any
+type LogTargetType = "DEFAULT" | "THING_GROUP"
 object LogTargetType {
-  val DEFAULT = "DEFAULT".asInstanceOf[LogTargetType]
-  val THING_GROUP = "THING_GROUP".asInstanceOf[LogTargetType]
+  inline val DEFAULT: "DEFAULT" = "DEFAULT"
+  inline val THING_GROUP: "THING_GROUP" = "THING_GROUP"
 
-  @inline def values = js.Array(DEFAULT, THING_GROUP)
+  inline def values: js.Array[LogTargetType] = js.Array(DEFAULT, THING_GROUP)
 }
 
-@js.native
-sealed trait MessageFormat extends js.Any
+type MessageFormat = "RAW" | "JSON"
 object MessageFormat {
-  val RAW = "RAW".asInstanceOf[MessageFormat]
-  val JSON = "JSON".asInstanceOf[MessageFormat]
+  inline val RAW: "RAW" = "RAW"
+  inline val JSON: "JSON" = "JSON"
 
-  @inline def values = js.Array(RAW, JSON)
+  inline def values: js.Array[MessageFormat] = js.Array(RAW, JSON)
 }
 
-@js.native
-sealed trait MitigationActionType extends js.Any
+type MitigationActionType = "UPDATE_DEVICE_CERTIFICATE" | "UPDATE_CA_CERTIFICATE" | "ADD_THINGS_TO_THING_GROUP" | "REPLACE_DEFAULT_POLICY_VERSION" | "ENABLE_IOT_LOGGING" | "PUBLISH_FINDING_TO_SNS"
 object MitigationActionType {
-  val UPDATE_DEVICE_CERTIFICATE = "UPDATE_DEVICE_CERTIFICATE".asInstanceOf[MitigationActionType]
-  val UPDATE_CA_CERTIFICATE = "UPDATE_CA_CERTIFICATE".asInstanceOf[MitigationActionType]
-  val ADD_THINGS_TO_THING_GROUP = "ADD_THINGS_TO_THING_GROUP".asInstanceOf[MitigationActionType]
-  val REPLACE_DEFAULT_POLICY_VERSION = "REPLACE_DEFAULT_POLICY_VERSION".asInstanceOf[MitigationActionType]
-  val ENABLE_IOT_LOGGING = "ENABLE_IOT_LOGGING".asInstanceOf[MitigationActionType]
-  val PUBLISH_FINDING_TO_SNS = "PUBLISH_FINDING_TO_SNS".asInstanceOf[MitigationActionType]
+  inline val UPDATE_DEVICE_CERTIFICATE: "UPDATE_DEVICE_CERTIFICATE" = "UPDATE_DEVICE_CERTIFICATE"
+  inline val UPDATE_CA_CERTIFICATE: "UPDATE_CA_CERTIFICATE" = "UPDATE_CA_CERTIFICATE"
+  inline val ADD_THINGS_TO_THING_GROUP: "ADD_THINGS_TO_THING_GROUP" = "ADD_THINGS_TO_THING_GROUP"
+  inline val REPLACE_DEFAULT_POLICY_VERSION: "REPLACE_DEFAULT_POLICY_VERSION" = "REPLACE_DEFAULT_POLICY_VERSION"
+  inline val ENABLE_IOT_LOGGING: "ENABLE_IOT_LOGGING" = "ENABLE_IOT_LOGGING"
+  inline val PUBLISH_FINDING_TO_SNS: "PUBLISH_FINDING_TO_SNS" = "PUBLISH_FINDING_TO_SNS"
 
-  @inline def values = js.Array(UPDATE_DEVICE_CERTIFICATE, UPDATE_CA_CERTIFICATE, ADD_THINGS_TO_THING_GROUP, REPLACE_DEFAULT_POLICY_VERSION, ENABLE_IOT_LOGGING, PUBLISH_FINDING_TO_SNS)
+  inline def values: js.Array[MitigationActionType] = js.Array(UPDATE_DEVICE_CERTIFICATE, UPDATE_CA_CERTIFICATE, ADD_THINGS_TO_THING_GROUP, REPLACE_DEFAULT_POLICY_VERSION, ENABLE_IOT_LOGGING, PUBLISH_FINDING_TO_SNS)
 }
 
-@js.native
-sealed trait ModelStatus extends js.Any
+type ModelStatus = "PENDING_BUILD" | "ACTIVE" | "EXPIRED"
 object ModelStatus {
-  val PENDING_BUILD = "PENDING_BUILD".asInstanceOf[ModelStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[ModelStatus]
-  val EXPIRED = "EXPIRED".asInstanceOf[ModelStatus]
+  inline val PENDING_BUILD: "PENDING_BUILD" = "PENDING_BUILD"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
 
-  @inline def values = js.Array(PENDING_BUILD, ACTIVE, EXPIRED)
+  inline def values: js.Array[ModelStatus] = js.Array(PENDING_BUILD, ACTIVE, EXPIRED)
 }
 
-@js.native
-sealed trait OTAUpdateStatus extends js.Any
+type OTAUpdateStatus = "CREATE_PENDING" | "CREATE_IN_PROGRESS" | "CREATE_COMPLETE" | "CREATE_FAILED"
 object OTAUpdateStatus {
-  val CREATE_PENDING = "CREATE_PENDING".asInstanceOf[OTAUpdateStatus]
-  val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[OTAUpdateStatus]
-  val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[OTAUpdateStatus]
-  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[OTAUpdateStatus]
+  inline val CREATE_PENDING: "CREATE_PENDING" = "CREATE_PENDING"
+  inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  inline val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
 
-  @inline def values = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
+  inline def values: js.Array[OTAUpdateStatus] = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
 }
 
-@js.native
-sealed trait PolicyTemplateName extends js.Any
+type PolicyTemplateName = "BLANK_POLICY"
 object PolicyTemplateName {
-  val BLANK_POLICY = "BLANK_POLICY".asInstanceOf[PolicyTemplateName]
+  inline val BLANK_POLICY: "BLANK_POLICY" = "BLANK_POLICY"
 
-  @inline def values = js.Array(BLANK_POLICY)
+  inline def values: js.Array[PolicyTemplateName] = js.Array(BLANK_POLICY)
 }
 
-@js.native
-sealed trait Protocol extends js.Any
+type Protocol = "MQTT" | "HTTP"
 object Protocol {
-  val MQTT = "MQTT".asInstanceOf[Protocol]
-  val HTTP = "HTTP".asInstanceOf[Protocol]
+  inline val MQTT: "MQTT" = "MQTT"
+  inline val HTTP: "HTTP" = "HTTP"
 
-  @inline def values = js.Array(MQTT, HTTP)
+  inline def values: js.Array[Protocol] = js.Array(MQTT, HTTP)
 }
 
-@js.native
-sealed trait ReportType extends js.Any
+type ReportType = "ERRORS" | "RESULTS"
 object ReportType {
-  val ERRORS = "ERRORS".asInstanceOf[ReportType]
-  val RESULTS = "RESULTS".asInstanceOf[ReportType]
+  inline val ERRORS: "ERRORS" = "ERRORS"
+  inline val RESULTS: "RESULTS" = "RESULTS"
 
-  @inline def values = js.Array(ERRORS, RESULTS)
+  inline def values: js.Array[ReportType] = js.Array(ERRORS, RESULTS)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "DEVICE_CERTIFICATE" | "CA_CERTIFICATE" | "IOT_POLICY" | "COGNITO_IDENTITY_POOL" | "CLIENT_ID" | "ACCOUNT_SETTINGS" | "ROLE_ALIAS" | "IAM_ROLE"
 object ResourceType {
-  val DEVICE_CERTIFICATE = "DEVICE_CERTIFICATE".asInstanceOf[ResourceType]
-  val CA_CERTIFICATE = "CA_CERTIFICATE".asInstanceOf[ResourceType]
-  val IOT_POLICY = "IOT_POLICY".asInstanceOf[ResourceType]
-  val COGNITO_IDENTITY_POOL = "COGNITO_IDENTITY_POOL".asInstanceOf[ResourceType]
-  val CLIENT_ID = "CLIENT_ID".asInstanceOf[ResourceType]
-  val ACCOUNT_SETTINGS = "ACCOUNT_SETTINGS".asInstanceOf[ResourceType]
-  val ROLE_ALIAS = "ROLE_ALIAS".asInstanceOf[ResourceType]
-  val IAM_ROLE = "IAM_ROLE".asInstanceOf[ResourceType]
+  inline val DEVICE_CERTIFICATE: "DEVICE_CERTIFICATE" = "DEVICE_CERTIFICATE"
+  inline val CA_CERTIFICATE: "CA_CERTIFICATE" = "CA_CERTIFICATE"
+  inline val IOT_POLICY: "IOT_POLICY" = "IOT_POLICY"
+  inline val COGNITO_IDENTITY_POOL: "COGNITO_IDENTITY_POOL" = "COGNITO_IDENTITY_POOL"
+  inline val CLIENT_ID: "CLIENT_ID" = "CLIENT_ID"
+  inline val ACCOUNT_SETTINGS: "ACCOUNT_SETTINGS" = "ACCOUNT_SETTINGS"
+  inline val ROLE_ALIAS: "ROLE_ALIAS" = "ROLE_ALIAS"
+  inline val IAM_ROLE: "IAM_ROLE" = "IAM_ROLE"
 
-  @inline def values = js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE)
+  inline def values: js.Array[ResourceType] = js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE)
 }
 
-@js.native
-sealed trait ServerCertificateStatus extends js.Any
+type ServerCertificateStatus = "INVALID" | "VALID"
 object ServerCertificateStatus {
-  val INVALID = "INVALID".asInstanceOf[ServerCertificateStatus]
-  val VALID = "VALID".asInstanceOf[ServerCertificateStatus]
+  inline val INVALID: "INVALID" = "INVALID"
+  inline val VALID: "VALID" = "VALID"
 
-  @inline def values = js.Array(INVALID, VALID)
+  inline def values: js.Array[ServerCertificateStatus] = js.Array(INVALID, VALID)
 }
 
-@js.native
-sealed trait ServiceType extends js.Any
+type ServiceType = "DATA" | "CREDENTIAL_PROVIDER" | "JOBS"
 object ServiceType {
-  val DATA = "DATA".asInstanceOf[ServiceType]
-  val CREDENTIAL_PROVIDER = "CREDENTIAL_PROVIDER".asInstanceOf[ServiceType]
-  val JOBS = "JOBS".asInstanceOf[ServiceType]
+  inline val DATA: "DATA" = "DATA"
+  inline val CREDENTIAL_PROVIDER: "CREDENTIAL_PROVIDER" = "CREDENTIAL_PROVIDER"
+  inline val JOBS: "JOBS" = "JOBS"
 
-  @inline def values = js.Array(DATA, CREDENTIAL_PROVIDER, JOBS)
+  inline def values: js.Array[ServiceType] = js.Array(DATA, CREDENTIAL_PROVIDER, JOBS)
 }
 
-@js.native
-sealed trait Status extends js.Any
+type Status = "InProgress" | "Completed" | "Failed" | "Cancelled" | "Cancelling"
 object Status {
-  val InProgress = "InProgress".asInstanceOf[Status]
-  val Completed = "Completed".asInstanceOf[Status]
-  val Failed = "Failed".asInstanceOf[Status]
-  val Cancelled = "Cancelled".asInstanceOf[Status]
-  val Cancelling = "Cancelling".asInstanceOf[Status]
+  inline val InProgress: "InProgress" = "InProgress"
+  inline val Completed: "Completed" = "Completed"
+  inline val Failed: "Failed" = "Failed"
+  inline val Cancelled: "Cancelled" = "Cancelled"
+  inline val Cancelling: "Cancelling" = "Cancelling"
 
-  @inline def values = js.Array(InProgress, Completed, Failed, Cancelled, Cancelling)
+  inline def values: js.Array[Status] = js.Array(InProgress, Completed, Failed, Cancelled, Cancelling)
 }
 
-@js.native
-sealed trait TargetSelection extends js.Any
+type TargetSelection = "CONTINUOUS" | "SNAPSHOT"
 object TargetSelection {
-  val CONTINUOUS = "CONTINUOUS".asInstanceOf[TargetSelection]
-  val SNAPSHOT = "SNAPSHOT".asInstanceOf[TargetSelection]
+  inline val CONTINUOUS: "CONTINUOUS" = "CONTINUOUS"
+  inline val SNAPSHOT: "SNAPSHOT" = "SNAPSHOT"
 
-  @inline def values = js.Array(CONTINUOUS, SNAPSHOT)
+  inline def values: js.Array[TargetSelection] = js.Array(CONTINUOUS, SNAPSHOT)
 }
 
-@js.native
-sealed trait ThingConnectivityIndexingMode extends js.Any
+type ThingConnectivityIndexingMode = "OFF" | "STATUS"
 object ThingConnectivityIndexingMode {
-  val OFF = "OFF".asInstanceOf[ThingConnectivityIndexingMode]
-  val STATUS = "STATUS".asInstanceOf[ThingConnectivityIndexingMode]
+  inline val OFF: "OFF" = "OFF"
+  inline val STATUS: "STATUS" = "STATUS"
 
-  @inline def values = js.Array(OFF, STATUS)
+  inline def values: js.Array[ThingConnectivityIndexingMode] = js.Array(OFF, STATUS)
 }
 
-@js.native
-sealed trait ThingGroupIndexingMode extends js.Any
+type ThingGroupIndexingMode = "OFF" | "ON"
 object ThingGroupIndexingMode {
-  val OFF = "OFF".asInstanceOf[ThingGroupIndexingMode]
-  val ON = "ON".asInstanceOf[ThingGroupIndexingMode]
+  inline val OFF: "OFF" = "OFF"
+  inline val ON: "ON" = "ON"
 
-  @inline def values = js.Array(OFF, ON)
+  inline def values: js.Array[ThingGroupIndexingMode] = js.Array(OFF, ON)
 }
 
-@js.native
-sealed trait ThingIndexingMode extends js.Any
+type ThingIndexingMode = "OFF" | "REGISTRY" | "REGISTRY_AND_SHADOW"
 object ThingIndexingMode {
-  val OFF = "OFF".asInstanceOf[ThingIndexingMode]
-  val REGISTRY = "REGISTRY".asInstanceOf[ThingIndexingMode]
-  val REGISTRY_AND_SHADOW = "REGISTRY_AND_SHADOW".asInstanceOf[ThingIndexingMode]
+  inline val OFF: "OFF" = "OFF"
+  inline val REGISTRY: "REGISTRY" = "REGISTRY"
+  inline val REGISTRY_AND_SHADOW: "REGISTRY_AND_SHADOW" = "REGISTRY_AND_SHADOW"
 
-  @inline def values = js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW)
+  inline def values: js.Array[ThingIndexingMode] = js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW)
 }
 
-@js.native
-sealed trait TopicRuleDestinationStatus extends js.Any
+type TopicRuleDestinationStatus = "ENABLED" | "IN_PROGRESS" | "DISABLED" | "ERROR" | "DELETING"
 object TopicRuleDestinationStatus {
-  val ENABLED = "ENABLED".asInstanceOf[TopicRuleDestinationStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TopicRuleDestinationStatus]
-  val DISABLED = "DISABLED".asInstanceOf[TopicRuleDestinationStatus]
-  val ERROR = "ERROR".asInstanceOf[TopicRuleDestinationStatus]
-  val DELETING = "DELETING".asInstanceOf[TopicRuleDestinationStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val DELETING: "DELETING" = "DELETING"
 
-  @inline def values = js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR, DELETING)
+  inline def values: js.Array[TopicRuleDestinationStatus] = js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR, DELETING)
 }
 
-@js.native
-sealed trait ViolationEventType extends js.Any
+type ViolationEventType = "in-alarm" | "alarm-cleared" | "alarm-invalidated"
 object ViolationEventType {
-  val `in-alarm` = "in-alarm".asInstanceOf[ViolationEventType]
-  val `alarm-cleared` = "alarm-cleared".asInstanceOf[ViolationEventType]
-  val `alarm-invalidated` = "alarm-invalidated".asInstanceOf[ViolationEventType]
+  inline val `in-alarm`: "in-alarm" = "in-alarm"
+  inline val `alarm-cleared`: "alarm-cleared" = "alarm-cleared"
+  inline val `alarm-invalidated`: "alarm-invalidated" = "alarm-invalidated"
 
-  @inline def values = js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`)
+  inline def values: js.Array[ViolationEventType] = js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`)
 }

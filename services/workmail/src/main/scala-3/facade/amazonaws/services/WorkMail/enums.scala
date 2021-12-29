@@ -1,103 +1,92 @@
 package facade.amazonaws.services.workmail
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccessControlRuleEffect extends js.Any
+type AccessControlRuleEffect = "ALLOW" | "DENY"
 object AccessControlRuleEffect {
-  val ALLOW = "ALLOW".asInstanceOf[AccessControlRuleEffect]
-  val DENY = "DENY".asInstanceOf[AccessControlRuleEffect]
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val DENY: "DENY" = "DENY"
 
-  @inline def values = js.Array(ALLOW, DENY)
+  inline def values: js.Array[AccessControlRuleEffect] = js.Array(ALLOW, DENY)
 }
 
-@js.native
-sealed trait EntityState extends js.Any
+type EntityState = "ENABLED" | "DISABLED" | "DELETED"
 object EntityState {
-  val ENABLED = "ENABLED".asInstanceOf[EntityState]
-  val DISABLED = "DISABLED".asInstanceOf[EntityState]
-  val DELETED = "DELETED".asInstanceOf[EntityState]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(ENABLED, DISABLED, DELETED)
+  inline def values: js.Array[EntityState] = js.Array(ENABLED, DISABLED, DELETED)
 }
 
-@js.native
-sealed trait FolderName extends js.Any
+type FolderName = "INBOX" | "DELETED_ITEMS" | "SENT_ITEMS" | "DRAFTS" | "JUNK_EMAIL"
 object FolderName {
-  val INBOX = "INBOX".asInstanceOf[FolderName]
-  val DELETED_ITEMS = "DELETED_ITEMS".asInstanceOf[FolderName]
-  val SENT_ITEMS = "SENT_ITEMS".asInstanceOf[FolderName]
-  val DRAFTS = "DRAFTS".asInstanceOf[FolderName]
-  val JUNK_EMAIL = "JUNK_EMAIL".asInstanceOf[FolderName]
+  inline val INBOX: "INBOX" = "INBOX"
+  inline val DELETED_ITEMS: "DELETED_ITEMS" = "DELETED_ITEMS"
+  inline val SENT_ITEMS: "SENT_ITEMS" = "SENT_ITEMS"
+  inline val DRAFTS: "DRAFTS" = "DRAFTS"
+  inline val JUNK_EMAIL: "JUNK_EMAIL" = "JUNK_EMAIL"
 
-  @inline def values = js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL)
+  inline def values: js.Array[FolderName] = js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL)
 }
 
-@js.native
-sealed trait MailboxExportJobState extends js.Any
+type MailboxExportJobState = "RUNNING" | "COMPLETED" | "FAILED" | "CANCELLED"
 object MailboxExportJobState {
-  val RUNNING = "RUNNING".asInstanceOf[MailboxExportJobState]
-  val COMPLETED = "COMPLETED".asInstanceOf[MailboxExportJobState]
-  val FAILED = "FAILED".asInstanceOf[MailboxExportJobState]
-  val CANCELLED = "CANCELLED".asInstanceOf[MailboxExportJobState]
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val CANCELLED: "CANCELLED" = "CANCELLED"
 
-  @inline def values = js.Array(RUNNING, COMPLETED, FAILED, CANCELLED)
+  inline def values: js.Array[MailboxExportJobState] = js.Array(RUNNING, COMPLETED, FAILED, CANCELLED)
 }
 
-@js.native
-sealed trait MemberType extends js.Any
+type MemberType = "GROUP" | "USER"
 object MemberType {
-  val GROUP = "GROUP".asInstanceOf[MemberType]
-  val USER = "USER".asInstanceOf[MemberType]
+  inline val GROUP: "GROUP" = "GROUP"
+  inline val USER: "USER" = "USER"
 
-  @inline def values = js.Array(GROUP, USER)
+  inline def values: js.Array[MemberType] = js.Array(GROUP, USER)
 }
 
-@js.native
-sealed trait MobileDeviceAccessRuleEffect extends js.Any
+type MobileDeviceAccessRuleEffect = "ALLOW" | "DENY"
 object MobileDeviceAccessRuleEffect {
-  val ALLOW = "ALLOW".asInstanceOf[MobileDeviceAccessRuleEffect]
-  val DENY = "DENY".asInstanceOf[MobileDeviceAccessRuleEffect]
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val DENY: "DENY" = "DENY"
 
-  @inline def values = js.Array(ALLOW, DENY)
+  inline def values: js.Array[MobileDeviceAccessRuleEffect] = js.Array(ALLOW, DENY)
 }
 
-@js.native
-sealed trait PermissionType extends js.Any
+type PermissionType = "FULL_ACCESS" | "SEND_AS" | "SEND_ON_BEHALF"
 object PermissionType {
-  val FULL_ACCESS = "FULL_ACCESS".asInstanceOf[PermissionType]
-  val SEND_AS = "SEND_AS".asInstanceOf[PermissionType]
-  val SEND_ON_BEHALF = "SEND_ON_BEHALF".asInstanceOf[PermissionType]
+  inline val FULL_ACCESS: "FULL_ACCESS" = "FULL_ACCESS"
+  inline val SEND_AS: "SEND_AS" = "SEND_AS"
+  inline val SEND_ON_BEHALF: "SEND_ON_BEHALF" = "SEND_ON_BEHALF"
 
-  @inline def values = js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF)
+  inline def values: js.Array[PermissionType] = js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF)
 }
 
-@js.native
-sealed trait ResourceType extends js.Any
+type ResourceType = "ROOM" | "EQUIPMENT"
 object ResourceType {
-  val ROOM = "ROOM".asInstanceOf[ResourceType]
-  val EQUIPMENT = "EQUIPMENT".asInstanceOf[ResourceType]
+  inline val ROOM: "ROOM" = "ROOM"
+  inline val EQUIPMENT: "EQUIPMENT" = "EQUIPMENT"
 
-  @inline def values = js.Array(ROOM, EQUIPMENT)
+  inline def values: js.Array[ResourceType] = js.Array(ROOM, EQUIPMENT)
 }
 
-@js.native
-sealed trait RetentionAction extends js.Any
+type RetentionAction = "NONE" | "DELETE" | "PERMANENTLY_DELETE"
 object RetentionAction {
-  val NONE = "NONE".asInstanceOf[RetentionAction]
-  val DELETE = "DELETE".asInstanceOf[RetentionAction]
-  val PERMANENTLY_DELETE = "PERMANENTLY_DELETE".asInstanceOf[RetentionAction]
+  inline val NONE: "NONE" = "NONE"
+  inline val DELETE: "DELETE" = "DELETE"
+  inline val PERMANENTLY_DELETE: "PERMANENTLY_DELETE" = "PERMANENTLY_DELETE"
 
-  @inline def values = js.Array(NONE, DELETE, PERMANENTLY_DELETE)
+  inline def values: js.Array[RetentionAction] = js.Array(NONE, DELETE, PERMANENTLY_DELETE)
 }
 
-@js.native
-sealed trait UserRole extends js.Any
+type UserRole = "USER" | "RESOURCE" | "SYSTEM_USER"
 object UserRole {
-  val USER = "USER".asInstanceOf[UserRole]
-  val RESOURCE = "RESOURCE".asInstanceOf[UserRole]
-  val SYSTEM_USER = "SYSTEM_USER".asInstanceOf[UserRole]
+  inline val USER: "USER" = "USER"
+  inline val RESOURCE: "RESOURCE" = "RESOURCE"
+  inline val SYSTEM_USER: "SYSTEM_USER" = "SYSTEM_USER"
 
-  @inline def values = js.Array(USER, RESOURCE, SYSTEM_USER)
+  inline def values: js.Array[UserRole] = js.Array(USER, RESOURCE, SYSTEM_USER)
 }

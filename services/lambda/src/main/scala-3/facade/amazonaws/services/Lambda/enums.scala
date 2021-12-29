@@ -1,86 +1,77 @@
 package facade.amazonaws.services.lambda
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait CodeSigningPolicy extends js.Any
+type CodeSigningPolicy = "Warn" | "Enforce"
 object CodeSigningPolicy {
-  val Warn = "Warn".asInstanceOf[CodeSigningPolicy]
-  val Enforce = "Enforce".asInstanceOf[CodeSigningPolicy]
+  inline val Warn: "Warn" = "Warn"
+  inline val Enforce: "Enforce" = "Enforce"
 
-  @inline def values = js.Array(Warn, Enforce)
+  inline def values: js.Array[CodeSigningPolicy] = js.Array(Warn, Enforce)
 }
 
-@js.native
-sealed trait EndPointType extends js.Any
+type EndPointType = "KAFKA_BOOTSTRAP_SERVERS"
 object EndPointType {
-  val KAFKA_BOOTSTRAP_SERVERS = "KAFKA_BOOTSTRAP_SERVERS".asInstanceOf[EndPointType]
+  inline val KAFKA_BOOTSTRAP_SERVERS: "KAFKA_BOOTSTRAP_SERVERS" = "KAFKA_BOOTSTRAP_SERVERS"
 
-  @inline def values = js.Array(KAFKA_BOOTSTRAP_SERVERS)
+  inline def values: js.Array[EndPointType] = js.Array(KAFKA_BOOTSTRAP_SERVERS)
 }
 
-@js.native
-sealed trait EventSourcePosition extends js.Any
+type EventSourcePosition = "TRIM_HORIZON" | "LATEST" | "AT_TIMESTAMP"
 object EventSourcePosition {
-  val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[EventSourcePosition]
-  val LATEST = "LATEST".asInstanceOf[EventSourcePosition]
-  val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[EventSourcePosition]
+  inline val TRIM_HORIZON: "TRIM_HORIZON" = "TRIM_HORIZON"
+  inline val LATEST: "LATEST" = "LATEST"
+  inline val AT_TIMESTAMP: "AT_TIMESTAMP" = "AT_TIMESTAMP"
 
-  @inline def values = js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP)
+  inline def values: js.Array[EventSourcePosition] = js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP)
 }
 
-@js.native
-sealed trait FunctionResponseType extends js.Any
+type FunctionResponseType = "ReportBatchItemFailures"
 object FunctionResponseType {
-  val ReportBatchItemFailures = "ReportBatchItemFailures".asInstanceOf[FunctionResponseType]
+  inline val ReportBatchItemFailures: "ReportBatchItemFailures" = "ReportBatchItemFailures"
 
-  @inline def values = js.Array(ReportBatchItemFailures)
+  inline def values: js.Array[FunctionResponseType] = js.Array(ReportBatchItemFailures)
 }
 
-@js.native
-sealed trait FunctionVersion extends js.Any
+type FunctionVersion = "ALL"
 object FunctionVersion {
-  val ALL = "ALL".asInstanceOf[FunctionVersion]
+  inline val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(ALL)
+  inline def values: js.Array[FunctionVersion] = js.Array(ALL)
 }
 
-@js.native
-sealed trait InvocationType extends js.Any
+type InvocationType = "Event" | "RequestResponse" | "DryRun"
 object InvocationType {
-  val Event = "Event".asInstanceOf[InvocationType]
-  val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
-  val DryRun = "DryRun".asInstanceOf[InvocationType]
+  inline val Event: "Event" = "Event"
+  inline val RequestResponse: "RequestResponse" = "RequestResponse"
+  inline val DryRun: "DryRun" = "DryRun"
 
-  @inline def values = js.Array(Event, RequestResponse, DryRun)
+  inline def values: js.Array[InvocationType] = js.Array(Event, RequestResponse, DryRun)
 }
 
-@js.native
-sealed trait LastUpdateStatus extends js.Any
+type LastUpdateStatus = "Successful" | "Failed" | "InProgress"
 object LastUpdateStatus {
-  val Successful = "Successful".asInstanceOf[LastUpdateStatus]
-  val Failed = "Failed".asInstanceOf[LastUpdateStatus]
-  val InProgress = "InProgress".asInstanceOf[LastUpdateStatus]
+  inline val Successful: "Successful" = "Successful"
+  inline val Failed: "Failed" = "Failed"
+  inline val InProgress: "InProgress" = "InProgress"
 
-  @inline def values = js.Array(Successful, Failed, InProgress)
+  inline def values: js.Array[LastUpdateStatus] = js.Array(Successful, Failed, InProgress)
 }
 
-@js.native
-sealed trait LastUpdateStatusReasonCode extends js.Any
+type LastUpdateStatusReasonCode = "EniLimitExceeded" | "InsufficientRolePermissions" | "InvalidConfiguration" | "InternalError" | "SubnetOutOfIPAddresses" | "InvalidSubnet" | "InvalidSecurityGroup" | "ImageDeleted" | "ImageAccessDenied" | "InvalidImage"
 object LastUpdateStatusReasonCode {
-  val EniLimitExceeded = "EniLimitExceeded".asInstanceOf[LastUpdateStatusReasonCode]
-  val InsufficientRolePermissions = "InsufficientRolePermissions".asInstanceOf[LastUpdateStatusReasonCode]
-  val InvalidConfiguration = "InvalidConfiguration".asInstanceOf[LastUpdateStatusReasonCode]
-  val InternalError = "InternalError".asInstanceOf[LastUpdateStatusReasonCode]
-  val SubnetOutOfIPAddresses = "SubnetOutOfIPAddresses".asInstanceOf[LastUpdateStatusReasonCode]
-  val InvalidSubnet = "InvalidSubnet".asInstanceOf[LastUpdateStatusReasonCode]
-  val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[LastUpdateStatusReasonCode]
-  val ImageDeleted = "ImageDeleted".asInstanceOf[LastUpdateStatusReasonCode]
-  val ImageAccessDenied = "ImageAccessDenied".asInstanceOf[LastUpdateStatusReasonCode]
-  val InvalidImage = "InvalidImage".asInstanceOf[LastUpdateStatusReasonCode]
+  inline val EniLimitExceeded: "EniLimitExceeded" = "EniLimitExceeded"
+  inline val InsufficientRolePermissions: "InsufficientRolePermissions" = "InsufficientRolePermissions"
+  inline val InvalidConfiguration: "InvalidConfiguration" = "InvalidConfiguration"
+  inline val InternalError: "InternalError" = "InternalError"
+  inline val SubnetOutOfIPAddresses: "SubnetOutOfIPAddresses" = "SubnetOutOfIPAddresses"
+  inline val InvalidSubnet: "InvalidSubnet" = "InvalidSubnet"
+  inline val InvalidSecurityGroup: "InvalidSecurityGroup" = "InvalidSecurityGroup"
+  inline val ImageDeleted: "ImageDeleted" = "ImageDeleted"
+  inline val ImageAccessDenied: "ImageAccessDenied" = "ImageAccessDenied"
+  inline val InvalidImage: "InvalidImage" = "InvalidImage"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[LastUpdateStatusReasonCode] = js.Array(
     EniLimitExceeded,
     InsufficientRolePermissions,
     InvalidConfiguration,
@@ -94,63 +85,59 @@ object LastUpdateStatusReasonCode {
   )
 }
 
-@js.native
-sealed trait LogType extends js.Any
+type LogType = "None" | "Tail"
 object LogType {
-  val None = "None".asInstanceOf[LogType]
-  val Tail = "Tail".asInstanceOf[LogType]
+  inline val None: "None" = "None"
+  inline val Tail: "Tail" = "Tail"
 
-  @inline def values = js.Array(None, Tail)
+  inline def values: js.Array[LogType] = js.Array(None, Tail)
 }
 
-@js.native
-sealed trait PackageType extends js.Any
+type PackageType = "Zip" | "Image"
 object PackageType {
-  val Zip = "Zip".asInstanceOf[PackageType]
-  val Image = "Image".asInstanceOf[PackageType]
+  inline val Zip: "Zip" = "Zip"
+  inline val Image: "Image" = "Image"
 
-  @inline def values = js.Array(Zip, Image)
+  inline def values: js.Array[PackageType] = js.Array(Zip, Image)
 }
 
-@js.native
-sealed trait ProvisionedConcurrencyStatusEnum extends js.Any
+type ProvisionedConcurrencyStatusEnum = "IN_PROGRESS" | "READY" | "FAILED"
 object ProvisionedConcurrencyStatusEnum {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ProvisionedConcurrencyStatusEnum]
-  val READY = "READY".asInstanceOf[ProvisionedConcurrencyStatusEnum]
-  val FAILED = "FAILED".asInstanceOf[ProvisionedConcurrencyStatusEnum]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val READY: "READY" = "READY"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, READY, FAILED)
+  inline def values: js.Array[ProvisionedConcurrencyStatusEnum] = js.Array(IN_PROGRESS, READY, FAILED)
 }
 
-@js.native
-sealed trait Runtime extends js.Any
+type Runtime = "nodejs" | "nodejs4.3" | "nodejs6.10" | "nodejs8.10" | "nodejs10.x" | "nodejs12.x" | "nodejs14.x" | "java8" | "java8.al2" | "java11" | "python2.7" | "python3.6" | "python3.7" | "python3.8" | "dotnetcore1.0" | "dotnetcore2.0" | "dotnetcore2.1" | "dotnetcore3.1" | "nodejs4.3-edge" | "go1.x" | "ruby2.5" | "ruby2.7" | "provided" | "provided.al2"
 object Runtime {
-  val nodejs = "nodejs".asInstanceOf[Runtime]
-  val `nodejs4.3` = "nodejs4.3".asInstanceOf[Runtime]
-  val `nodejs6.10` = "nodejs6.10".asInstanceOf[Runtime]
-  val `nodejs8.10` = "nodejs8.10".asInstanceOf[Runtime]
-  val `nodejs10.x` = "nodejs10.x".asInstanceOf[Runtime]
-  val `nodejs12.x` = "nodejs12.x".asInstanceOf[Runtime]
-  val `nodejs14.x` = "nodejs14.x".asInstanceOf[Runtime]
-  val java8 = "java8".asInstanceOf[Runtime]
-  val `java8.al2` = "java8.al2".asInstanceOf[Runtime]
-  val java11 = "java11".asInstanceOf[Runtime]
-  val `python2.7` = "python2.7".asInstanceOf[Runtime]
-  val `python3.6` = "python3.6".asInstanceOf[Runtime]
-  val `python3.7` = "python3.7".asInstanceOf[Runtime]
-  val `python3.8` = "python3.8".asInstanceOf[Runtime]
-  val `dotnetcore1.0` = "dotnetcore1.0".asInstanceOf[Runtime]
-  val `dotnetcore2.0` = "dotnetcore2.0".asInstanceOf[Runtime]
-  val `dotnetcore2.1` = "dotnetcore2.1".asInstanceOf[Runtime]
-  val `dotnetcore3.1` = "dotnetcore3.1".asInstanceOf[Runtime]
-  val `nodejs4.3-edge` = "nodejs4.3-edge".asInstanceOf[Runtime]
-  val `go1.x` = "go1.x".asInstanceOf[Runtime]
-  val `ruby2.5` = "ruby2.5".asInstanceOf[Runtime]
-  val `ruby2.7` = "ruby2.7".asInstanceOf[Runtime]
-  val provided = "provided".asInstanceOf[Runtime]
-  val `provided.al2` = "provided.al2".asInstanceOf[Runtime]
+  inline val nodejs: "nodejs" = "nodejs"
+  inline val `nodejs4.3`: "nodejs4.3" = "nodejs4.3"
+  inline val `nodejs6.10`: "nodejs6.10" = "nodejs6.10"
+  inline val `nodejs8.10`: "nodejs8.10" = "nodejs8.10"
+  inline val `nodejs10.x`: "nodejs10.x" = "nodejs10.x"
+  inline val `nodejs12.x`: "nodejs12.x" = "nodejs12.x"
+  inline val `nodejs14.x`: "nodejs14.x" = "nodejs14.x"
+  inline val java8: "java8" = "java8"
+  inline val `java8.al2`: "java8.al2" = "java8.al2"
+  inline val java11: "java11" = "java11"
+  inline val `python2.7`: "python2.7" = "python2.7"
+  inline val `python3.6`: "python3.6" = "python3.6"
+  inline val `python3.7`: "python3.7" = "python3.7"
+  inline val `python3.8`: "python3.8" = "python3.8"
+  inline val `dotnetcore1.0`: "dotnetcore1.0" = "dotnetcore1.0"
+  inline val `dotnetcore2.0`: "dotnetcore2.0" = "dotnetcore2.0"
+  inline val `dotnetcore2.1`: "dotnetcore2.1" = "dotnetcore2.1"
+  inline val `dotnetcore3.1`: "dotnetcore3.1" = "dotnetcore3.1"
+  inline val `nodejs4.3-edge`: "nodejs4.3-edge" = "nodejs4.3-edge"
+  inline val `go1.x`: "go1.x" = "go1.x"
+  inline val `ruby2.5`: "ruby2.5" = "ruby2.5"
+  inline val `ruby2.7`: "ruby2.7" = "ruby2.7"
+  inline val provided: "provided" = "provided"
+  inline val `provided.al2`: "provided.al2" = "provided.al2"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[Runtime] = js.Array(
     nodejs,
     `nodejs4.3`,
     `nodejs6.10`,
@@ -178,47 +165,44 @@ object Runtime {
   )
 }
 
-@js.native
-sealed trait SourceAccessType extends js.Any
+type SourceAccessType = "BASIC_AUTH" | "VPC_SUBNET" | "VPC_SECURITY_GROUP" | "SASL_SCRAM_512_AUTH" | "SASL_SCRAM_256_AUTH"
 object SourceAccessType {
-  val BASIC_AUTH = "BASIC_AUTH".asInstanceOf[SourceAccessType]
-  val VPC_SUBNET = "VPC_SUBNET".asInstanceOf[SourceAccessType]
-  val VPC_SECURITY_GROUP = "VPC_SECURITY_GROUP".asInstanceOf[SourceAccessType]
-  val SASL_SCRAM_512_AUTH = "SASL_SCRAM_512_AUTH".asInstanceOf[SourceAccessType]
-  val SASL_SCRAM_256_AUTH = "SASL_SCRAM_256_AUTH".asInstanceOf[SourceAccessType]
+  inline val BASIC_AUTH: "BASIC_AUTH" = "BASIC_AUTH"
+  inline val VPC_SUBNET: "VPC_SUBNET" = "VPC_SUBNET"
+  inline val VPC_SECURITY_GROUP: "VPC_SECURITY_GROUP" = "VPC_SECURITY_GROUP"
+  inline val SASL_SCRAM_512_AUTH: "SASL_SCRAM_512_AUTH" = "SASL_SCRAM_512_AUTH"
+  inline val SASL_SCRAM_256_AUTH: "SASL_SCRAM_256_AUTH" = "SASL_SCRAM_256_AUTH"
 
-  @inline def values = js.Array(BASIC_AUTH, VPC_SUBNET, VPC_SECURITY_GROUP, SASL_SCRAM_512_AUTH, SASL_SCRAM_256_AUTH)
+  inline def values: js.Array[SourceAccessType] = js.Array(BASIC_AUTH, VPC_SUBNET, VPC_SECURITY_GROUP, SASL_SCRAM_512_AUTH, SASL_SCRAM_256_AUTH)
 }
 
-@js.native
-sealed trait State extends js.Any
+type State = "Pending" | "Active" | "Inactive" | "Failed"
 object State {
-  val Pending = "Pending".asInstanceOf[State]
-  val Active = "Active".asInstanceOf[State]
-  val Inactive = "Inactive".asInstanceOf[State]
-  val Failed = "Failed".asInstanceOf[State]
+  inline val Pending: "Pending" = "Pending"
+  inline val Active: "Active" = "Active"
+  inline val Inactive: "Inactive" = "Inactive"
+  inline val Failed: "Failed" = "Failed"
 
-  @inline def values = js.Array(Pending, Active, Inactive, Failed)
+  inline def values: js.Array[State] = js.Array(Pending, Active, Inactive, Failed)
 }
 
-@js.native
-sealed trait StateReasonCode extends js.Any
+type StateReasonCode = "Idle" | "Creating" | "Restoring" | "EniLimitExceeded" | "InsufficientRolePermissions" | "InvalidConfiguration" | "InternalError" | "SubnetOutOfIPAddresses" | "InvalidSubnet" | "InvalidSecurityGroup" | "ImageDeleted" | "ImageAccessDenied" | "InvalidImage"
 object StateReasonCode {
-  val Idle = "Idle".asInstanceOf[StateReasonCode]
-  val Creating = "Creating".asInstanceOf[StateReasonCode]
-  val Restoring = "Restoring".asInstanceOf[StateReasonCode]
-  val EniLimitExceeded = "EniLimitExceeded".asInstanceOf[StateReasonCode]
-  val InsufficientRolePermissions = "InsufficientRolePermissions".asInstanceOf[StateReasonCode]
-  val InvalidConfiguration = "InvalidConfiguration".asInstanceOf[StateReasonCode]
-  val InternalError = "InternalError".asInstanceOf[StateReasonCode]
-  val SubnetOutOfIPAddresses = "SubnetOutOfIPAddresses".asInstanceOf[StateReasonCode]
-  val InvalidSubnet = "InvalidSubnet".asInstanceOf[StateReasonCode]
-  val InvalidSecurityGroup = "InvalidSecurityGroup".asInstanceOf[StateReasonCode]
-  val ImageDeleted = "ImageDeleted".asInstanceOf[StateReasonCode]
-  val ImageAccessDenied = "ImageAccessDenied".asInstanceOf[StateReasonCode]
-  val InvalidImage = "InvalidImage".asInstanceOf[StateReasonCode]
+  inline val Idle: "Idle" = "Idle"
+  inline val Creating: "Creating" = "Creating"
+  inline val Restoring: "Restoring" = "Restoring"
+  inline val EniLimitExceeded: "EniLimitExceeded" = "EniLimitExceeded"
+  inline val InsufficientRolePermissions: "InsufficientRolePermissions" = "InsufficientRolePermissions"
+  inline val InvalidConfiguration: "InvalidConfiguration" = "InvalidConfiguration"
+  inline val InternalError: "InternalError" = "InternalError"
+  inline val SubnetOutOfIPAddresses: "SubnetOutOfIPAddresses" = "SubnetOutOfIPAddresses"
+  inline val InvalidSubnet: "InvalidSubnet" = "InvalidSubnet"
+  inline val InvalidSecurityGroup: "InvalidSecurityGroup" = "InvalidSecurityGroup"
+  inline val ImageDeleted: "ImageDeleted" = "ImageDeleted"
+  inline val ImageAccessDenied: "ImageAccessDenied" = "ImageAccessDenied"
+  inline val InvalidImage: "InvalidImage" = "InvalidImage"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[StateReasonCode] = js.Array(
     Idle,
     Creating,
     Restoring,
@@ -235,11 +219,10 @@ object StateReasonCode {
   )
 }
 
-@js.native
-sealed trait TracingMode extends js.Any
+type TracingMode = "Active" | "PassThrough"
 object TracingMode {
-  val Active = "Active".asInstanceOf[TracingMode]
-  val PassThrough = "PassThrough".asInstanceOf[TracingMode]
+  inline val Active: "Active" = "Active"
+  inline val PassThrough: "PassThrough" = "PassThrough"
 
-  @inline def values = js.Array(Active, PassThrough)
+  inline def values: js.Array[TracingMode] = js.Array(Active, PassThrough)
 }

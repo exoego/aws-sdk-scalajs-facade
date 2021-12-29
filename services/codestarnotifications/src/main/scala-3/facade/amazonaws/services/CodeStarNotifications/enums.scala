@@ -1,64 +1,57 @@
 package facade.amazonaws.services.codestarnotifications
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DetailType extends js.Any
+type DetailType = "BASIC" | "FULL"
 object DetailType {
-  val BASIC = "BASIC".asInstanceOf[DetailType]
-  val FULL = "FULL".asInstanceOf[DetailType]
+  inline val BASIC: "BASIC" = "BASIC"
+  inline val FULL: "FULL" = "FULL"
 
-  @inline def values = js.Array(BASIC, FULL)
+  inline def values: js.Array[DetailType] = js.Array(BASIC, FULL)
 }
 
-@js.native
-sealed trait ListEventTypesFilterName extends js.Any
+type ListEventTypesFilterName = "RESOURCE_TYPE" | "SERVICE_NAME"
 object ListEventTypesFilterName {
-  val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[ListEventTypesFilterName]
-  val SERVICE_NAME = "SERVICE_NAME".asInstanceOf[ListEventTypesFilterName]
+  inline val RESOURCE_TYPE: "RESOURCE_TYPE" = "RESOURCE_TYPE"
+  inline val SERVICE_NAME: "SERVICE_NAME" = "SERVICE_NAME"
 
-  @inline def values = js.Array(RESOURCE_TYPE, SERVICE_NAME)
+  inline def values: js.Array[ListEventTypesFilterName] = js.Array(RESOURCE_TYPE, SERVICE_NAME)
 }
 
-@js.native
-sealed trait ListNotificationRulesFilterName extends js.Any
+type ListNotificationRulesFilterName = "EVENT_TYPE_ID" | "CREATED_BY" | "RESOURCE" | "TARGET_ADDRESS"
 object ListNotificationRulesFilterName {
-  val EVENT_TYPE_ID = "EVENT_TYPE_ID".asInstanceOf[ListNotificationRulesFilterName]
-  val CREATED_BY = "CREATED_BY".asInstanceOf[ListNotificationRulesFilterName]
-  val RESOURCE = "RESOURCE".asInstanceOf[ListNotificationRulesFilterName]
-  val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListNotificationRulesFilterName]
+  inline val EVENT_TYPE_ID: "EVENT_TYPE_ID" = "EVENT_TYPE_ID"
+  inline val CREATED_BY: "CREATED_BY" = "CREATED_BY"
+  inline val RESOURCE: "RESOURCE" = "RESOURCE"
+  inline val TARGET_ADDRESS: "TARGET_ADDRESS" = "TARGET_ADDRESS"
 
-  @inline def values = js.Array(EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS)
+  inline def values: js.Array[ListNotificationRulesFilterName] = js.Array(EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS)
 }
 
-@js.native
-sealed trait ListTargetsFilterName extends js.Any
+type ListTargetsFilterName = "TARGET_TYPE" | "TARGET_ADDRESS" | "TARGET_STATUS"
 object ListTargetsFilterName {
-  val TARGET_TYPE = "TARGET_TYPE".asInstanceOf[ListTargetsFilterName]
-  val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListTargetsFilterName]
-  val TARGET_STATUS = "TARGET_STATUS".asInstanceOf[ListTargetsFilterName]
+  inline val TARGET_TYPE: "TARGET_TYPE" = "TARGET_TYPE"
+  inline val TARGET_ADDRESS: "TARGET_ADDRESS" = "TARGET_ADDRESS"
+  inline val TARGET_STATUS: "TARGET_STATUS" = "TARGET_STATUS"
 
-  @inline def values = js.Array(TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS)
+  inline def values: js.Array[ListTargetsFilterName] = js.Array(TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS)
 }
 
-@js.native
-sealed trait NotificationRuleStatus extends js.Any
+type NotificationRuleStatus = "ENABLED" | "DISABLED"
 object NotificationRuleStatus {
-  val ENABLED = "ENABLED".asInstanceOf[NotificationRuleStatus]
-  val DISABLED = "DISABLED".asInstanceOf[NotificationRuleStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[NotificationRuleStatus] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait TargetStatus extends js.Any
+type TargetStatus = "PENDING" | "ACTIVE" | "UNREACHABLE" | "INACTIVE" | "DEACTIVATED"
 object TargetStatus {
-  val PENDING = "PENDING".asInstanceOf[TargetStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[TargetStatus]
-  val UNREACHABLE = "UNREACHABLE".asInstanceOf[TargetStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[TargetStatus]
-  val DEACTIVATED = "DEACTIVATED".asInstanceOf[TargetStatus]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val UNREACHABLE: "UNREACHABLE" = "UNREACHABLE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val DEACTIVATED: "DEACTIVATED" = "DEACTIVATED"
 
-  @inline def values = js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED)
+  inline def values: js.Array[TargetStatus] = js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED)
 }

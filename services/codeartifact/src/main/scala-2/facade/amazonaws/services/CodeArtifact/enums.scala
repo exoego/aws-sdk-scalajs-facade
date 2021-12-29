@@ -75,3 +75,4 @@ object PackageVersionStatus {
 
   @inline def values = js.Array(Published, Unfinished, Unlisted, Archived, Disposed, Deleted)
 }
+

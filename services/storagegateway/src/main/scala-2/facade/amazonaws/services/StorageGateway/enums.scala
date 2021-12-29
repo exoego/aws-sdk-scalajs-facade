@@ -112,3 +112,4 @@ object TapeStorageClass {
 
   @inline def values = js.Array(DEEP_ARCHIVE, GLACIER)
 }
+

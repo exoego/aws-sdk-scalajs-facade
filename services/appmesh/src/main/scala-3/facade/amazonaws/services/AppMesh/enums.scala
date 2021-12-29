@@ -1,178 +1,160 @@
 package facade.amazonaws.services.appmesh
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DurationUnit extends js.Any
+type DurationUnit = "s" | "ms"
 object DurationUnit {
-  val s = "s".asInstanceOf[DurationUnit]
-  val ms = "ms".asInstanceOf[DurationUnit]
+  inline val s: "s" = "s"
+  inline val ms: "ms" = "ms"
 
-  @inline def values = js.Array(s, ms)
+  inline def values: js.Array[DurationUnit] = js.Array(s, ms)
 }
 
-@js.native
-sealed trait EgressFilterType extends js.Any
+type EgressFilterType = "ALLOW_ALL" | "DROP_ALL"
 object EgressFilterType {
-  val ALLOW_ALL = "ALLOW_ALL".asInstanceOf[EgressFilterType]
-  val DROP_ALL = "DROP_ALL".asInstanceOf[EgressFilterType]
+  inline val ALLOW_ALL: "ALLOW_ALL" = "ALLOW_ALL"
+  inline val DROP_ALL: "DROP_ALL" = "DROP_ALL"
 
-  @inline def values = js.Array(ALLOW_ALL, DROP_ALL)
+  inline def values: js.Array[EgressFilterType] = js.Array(ALLOW_ALL, DROP_ALL)
 }
 
-@js.native
-sealed trait GatewayRouteStatusCode extends js.Any
+type GatewayRouteStatusCode = "ACTIVE" | "INACTIVE" | "DELETED"
 object GatewayRouteStatusCode {
-  val ACTIVE = "ACTIVE".asInstanceOf[GatewayRouteStatusCode]
-  val INACTIVE = "INACTIVE".asInstanceOf[GatewayRouteStatusCode]
-  val DELETED = "DELETED".asInstanceOf[GatewayRouteStatusCode]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
+  inline def values: js.Array[GatewayRouteStatusCode] = js.Array(ACTIVE, INACTIVE, DELETED)
 }
 
-@js.native
-sealed trait GrpcRetryPolicyEvent extends js.Any
+type GrpcRetryPolicyEvent = "cancelled" | "deadline-exceeded" | "internal" | "resource-exhausted" | "unavailable"
 object GrpcRetryPolicyEvent {
-  val cancelled = "cancelled".asInstanceOf[GrpcRetryPolicyEvent]
-  val `deadline-exceeded` = "deadline-exceeded".asInstanceOf[GrpcRetryPolicyEvent]
-  val internal = "internal".asInstanceOf[GrpcRetryPolicyEvent]
-  val `resource-exhausted` = "resource-exhausted".asInstanceOf[GrpcRetryPolicyEvent]
-  val unavailable = "unavailable".asInstanceOf[GrpcRetryPolicyEvent]
+  inline val cancelled: "cancelled" = "cancelled"
+  inline val `deadline-exceeded`: "deadline-exceeded" = "deadline-exceeded"
+  inline val internal: "internal" = "internal"
+  inline val `resource-exhausted`: "resource-exhausted" = "resource-exhausted"
+  inline val unavailable: "unavailable" = "unavailable"
 
-  @inline def values = js.Array(cancelled, `deadline-exceeded`, internal, `resource-exhausted`, unavailable)
+  inline def values: js.Array[GrpcRetryPolicyEvent] = js.Array(cancelled, `deadline-exceeded`, internal, `resource-exhausted`, unavailable)
 }
 
-@js.native
-sealed trait HttpMethod extends js.Any
+type HttpMethod = "GET" | "HEAD" | "POST" | "PUT" | "DELETE" | "CONNECT" | "OPTIONS" | "TRACE" | "PATCH"
 object HttpMethod {
-  val GET = "GET".asInstanceOf[HttpMethod]
-  val HEAD = "HEAD".asInstanceOf[HttpMethod]
-  val POST = "POST".asInstanceOf[HttpMethod]
-  val PUT = "PUT".asInstanceOf[HttpMethod]
-  val DELETE = "DELETE".asInstanceOf[HttpMethod]
-  val CONNECT = "CONNECT".asInstanceOf[HttpMethod]
-  val OPTIONS = "OPTIONS".asInstanceOf[HttpMethod]
-  val TRACE = "TRACE".asInstanceOf[HttpMethod]
-  val PATCH = "PATCH".asInstanceOf[HttpMethod]
+  inline val GET: "GET" = "GET"
+  inline val HEAD: "HEAD" = "HEAD"
+  inline val POST: "POST" = "POST"
+  inline val PUT: "PUT" = "PUT"
+  inline val DELETE: "DELETE" = "DELETE"
+  inline val CONNECT: "CONNECT" = "CONNECT"
+  inline val OPTIONS: "OPTIONS" = "OPTIONS"
+  inline val TRACE: "TRACE" = "TRACE"
+  inline val PATCH: "PATCH" = "PATCH"
 
-  @inline def values = js.Array(GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH)
+  inline def values: js.Array[HttpMethod] = js.Array(GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE, PATCH)
 }
 
-@js.native
-sealed trait HttpScheme extends js.Any
+type HttpScheme = "http" | "https"
 object HttpScheme {
-  val http = "http".asInstanceOf[HttpScheme]
-  val https = "https".asInstanceOf[HttpScheme]
+  inline val http: "http" = "http"
+  inline val https: "https" = "https"
 
-  @inline def values = js.Array(http, https)
+  inline def values: js.Array[HttpScheme] = js.Array(http, https)
 }
 
-@js.native
-sealed trait ListenerTlsMode extends js.Any
+type ListenerTlsMode = "STRICT" | "PERMISSIVE" | "DISABLED"
 object ListenerTlsMode {
-  val STRICT = "STRICT".asInstanceOf[ListenerTlsMode]
-  val PERMISSIVE = "PERMISSIVE".asInstanceOf[ListenerTlsMode]
-  val DISABLED = "DISABLED".asInstanceOf[ListenerTlsMode]
+  inline val STRICT: "STRICT" = "STRICT"
+  inline val PERMISSIVE: "PERMISSIVE" = "PERMISSIVE"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(STRICT, PERMISSIVE, DISABLED)
+  inline def values: js.Array[ListenerTlsMode] = js.Array(STRICT, PERMISSIVE, DISABLED)
 }
 
-@js.native
-sealed trait MeshStatusCode extends js.Any
+type MeshStatusCode = "ACTIVE" | "INACTIVE" | "DELETED"
 object MeshStatusCode {
-  val ACTIVE = "ACTIVE".asInstanceOf[MeshStatusCode]
-  val INACTIVE = "INACTIVE".asInstanceOf[MeshStatusCode]
-  val DELETED = "DELETED".asInstanceOf[MeshStatusCode]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
+  inline def values: js.Array[MeshStatusCode] = js.Array(ACTIVE, INACTIVE, DELETED)
 }
 
-@js.native
-sealed trait PortProtocol extends js.Any
+type PortProtocol = "http" | "tcp" | "http2" | "grpc"
 object PortProtocol {
-  val http = "http".asInstanceOf[PortProtocol]
-  val tcp = "tcp".asInstanceOf[PortProtocol]
-  val http2 = "http2".asInstanceOf[PortProtocol]
-  val grpc = "grpc".asInstanceOf[PortProtocol]
+  inline val http: "http" = "http"
+  inline val tcp: "tcp" = "tcp"
+  inline val http2: "http2" = "http2"
+  inline val grpc: "grpc" = "grpc"
 
-  @inline def values = js.Array(http, tcp, http2, grpc)
+  inline def values: js.Array[PortProtocol] = js.Array(http, tcp, http2, grpc)
 }
 
-@js.native
-sealed trait RouteStatusCode extends js.Any
+type RouteStatusCode = "ACTIVE" | "INACTIVE" | "DELETED"
 object RouteStatusCode {
-  val ACTIVE = "ACTIVE".asInstanceOf[RouteStatusCode]
-  val INACTIVE = "INACTIVE".asInstanceOf[RouteStatusCode]
-  val DELETED = "DELETED".asInstanceOf[RouteStatusCode]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
+  inline def values: js.Array[RouteStatusCode] = js.Array(ACTIVE, INACTIVE, DELETED)
 }
 
-@js.native
-sealed trait TcpRetryPolicyEvent extends js.Any
+type TcpRetryPolicyEvent = "connection-error"
 object TcpRetryPolicyEvent {
-  val `connection-error` = "connection-error".asInstanceOf[TcpRetryPolicyEvent]
+  inline val `connection-error`: "connection-error" = "connection-error"
 
-  @inline def values = js.Array(`connection-error`)
+  inline def values: js.Array[TcpRetryPolicyEvent] = js.Array(`connection-error`)
 }
 
-@js.native
-sealed trait VirtualGatewayListenerTlsMode extends js.Any
+type VirtualGatewayListenerTlsMode = "STRICT" | "PERMISSIVE" | "DISABLED"
 object VirtualGatewayListenerTlsMode {
-  val STRICT = "STRICT".asInstanceOf[VirtualGatewayListenerTlsMode]
-  val PERMISSIVE = "PERMISSIVE".asInstanceOf[VirtualGatewayListenerTlsMode]
-  val DISABLED = "DISABLED".asInstanceOf[VirtualGatewayListenerTlsMode]
+  inline val STRICT: "STRICT" = "STRICT"
+  inline val PERMISSIVE: "PERMISSIVE" = "PERMISSIVE"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(STRICT, PERMISSIVE, DISABLED)
+  inline def values: js.Array[VirtualGatewayListenerTlsMode] = js.Array(STRICT, PERMISSIVE, DISABLED)
 }
 
-@js.native
-sealed trait VirtualGatewayPortProtocol extends js.Any
+type VirtualGatewayPortProtocol = "http" | "http2" | "grpc"
 object VirtualGatewayPortProtocol {
-  val http = "http".asInstanceOf[VirtualGatewayPortProtocol]
-  val http2 = "http2".asInstanceOf[VirtualGatewayPortProtocol]
-  val grpc = "grpc".asInstanceOf[VirtualGatewayPortProtocol]
+  inline val http: "http" = "http"
+  inline val http2: "http2" = "http2"
+  inline val grpc: "grpc" = "grpc"
 
-  @inline def values = js.Array(http, http2, grpc)
+  inline def values: js.Array[VirtualGatewayPortProtocol] = js.Array(http, http2, grpc)
 }
 
-@js.native
-sealed trait VirtualGatewayStatusCode extends js.Any
+type VirtualGatewayStatusCode = "ACTIVE" | "INACTIVE" | "DELETED"
 object VirtualGatewayStatusCode {
-  val ACTIVE = "ACTIVE".asInstanceOf[VirtualGatewayStatusCode]
-  val INACTIVE = "INACTIVE".asInstanceOf[VirtualGatewayStatusCode]
-  val DELETED = "DELETED".asInstanceOf[VirtualGatewayStatusCode]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
+  inline def values: js.Array[VirtualGatewayStatusCode] = js.Array(ACTIVE, INACTIVE, DELETED)
 }
 
-@js.native
-sealed trait VirtualNodeStatusCode extends js.Any
+type VirtualNodeStatusCode = "ACTIVE" | "INACTIVE" | "DELETED"
 object VirtualNodeStatusCode {
-  val ACTIVE = "ACTIVE".asInstanceOf[VirtualNodeStatusCode]
-  val INACTIVE = "INACTIVE".asInstanceOf[VirtualNodeStatusCode]
-  val DELETED = "DELETED".asInstanceOf[VirtualNodeStatusCode]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
+  inline def values: js.Array[VirtualNodeStatusCode] = js.Array(ACTIVE, INACTIVE, DELETED)
 }
 
-@js.native
-sealed trait VirtualRouterStatusCode extends js.Any
+type VirtualRouterStatusCode = "ACTIVE" | "INACTIVE" | "DELETED"
 object VirtualRouterStatusCode {
-  val ACTIVE = "ACTIVE".asInstanceOf[VirtualRouterStatusCode]
-  val INACTIVE = "INACTIVE".asInstanceOf[VirtualRouterStatusCode]
-  val DELETED = "DELETED".asInstanceOf[VirtualRouterStatusCode]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
+  inline def values: js.Array[VirtualRouterStatusCode] = js.Array(ACTIVE, INACTIVE, DELETED)
 }
 
-@js.native
-sealed trait VirtualServiceStatusCode extends js.Any
+type VirtualServiceStatusCode = "ACTIVE" | "INACTIVE" | "DELETED"
 object VirtualServiceStatusCode {
-  val ACTIVE = "ACTIVE".asInstanceOf[VirtualServiceStatusCode]
-  val INACTIVE = "INACTIVE".asInstanceOf[VirtualServiceStatusCode]
-  val DELETED = "DELETED".asInstanceOf[VirtualServiceStatusCode]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, DELETED)
+  inline def values: js.Array[VirtualServiceStatusCode] = js.Array(ACTIVE, INACTIVE, DELETED)
 }

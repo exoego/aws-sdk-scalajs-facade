@@ -93,3 +93,4 @@ object SettablePolicyStateValues {
 
   @inline def values = js.Array(ENABLED, DISABLED)
 }
+

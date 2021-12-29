@@ -1,42 +1,37 @@
 package facade.amazonaws.services.healthlake
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait DatastoreStatus extends js.Any
+type DatastoreStatus = "CREATING" | "ACTIVE" | "DELETING" | "DELETED"
 object DatastoreStatus {
-  val CREATING = "CREATING".asInstanceOf[DatastoreStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[DatastoreStatus]
-  val DELETING = "DELETING".asInstanceOf[DatastoreStatus]
-  val DELETED = "DELETED".asInstanceOf[DatastoreStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, DELETED)
+  inline def values: js.Array[DatastoreStatus] = js.Array(CREATING, ACTIVE, DELETING, DELETED)
 }
 
-@js.native
-sealed trait FHIRVersion extends js.Any
+type FHIRVersion = "R4"
 object FHIRVersion {
-  val R4 = "R4".asInstanceOf[FHIRVersion]
+  inline val R4: "R4" = "R4"
 
-  @inline def values = js.Array(R4)
+  inline def values: js.Array[FHIRVersion] = js.Array(R4)
 }
 
-@js.native
-sealed trait JobStatus extends js.Any
+type JobStatus = "SUBMITTED" | "IN_PROGRESS" | "COMPLETED" | "FAILED"
 object JobStatus {
-  val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
-  val FAILED = "FAILED".asInstanceOf[JobStatus]
+  inline val SUBMITTED: "SUBMITTED" = "SUBMITTED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
+  inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
 }
 
-@js.native
-sealed trait PreloadDataType extends js.Any
+type PreloadDataType = "SYNTHEA"
 object PreloadDataType {
-  val SYNTHEA = "SYNTHEA".asInstanceOf[PreloadDataType]
+  inline val SYNTHEA: "SYNTHEA" = "SYNTHEA"
 
-  @inline def values = js.Array(SYNTHEA)
+  inline def values: js.Array[PreloadDataType] = js.Array(SYNTHEA)
 }

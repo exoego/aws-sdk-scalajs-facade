@@ -1,175 +1,157 @@
 package facade.amazonaws.services.greengrassv2
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait CloudComponentState extends js.Any
+type CloudComponentState = "REQUESTED" | "INITIATED" | "DEPLOYABLE" | "FAILED" | "DEPRECATED"
 object CloudComponentState {
-  val REQUESTED = "REQUESTED".asInstanceOf[CloudComponentState]
-  val INITIATED = "INITIATED".asInstanceOf[CloudComponentState]
-  val DEPLOYABLE = "DEPLOYABLE".asInstanceOf[CloudComponentState]
-  val FAILED = "FAILED".asInstanceOf[CloudComponentState]
-  val DEPRECATED = "DEPRECATED".asInstanceOf[CloudComponentState]
+  inline val REQUESTED: "REQUESTED" = "REQUESTED"
+  inline val INITIATED: "INITIATED" = "INITIATED"
+  inline val DEPLOYABLE: "DEPLOYABLE" = "DEPLOYABLE"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val DEPRECATED: "DEPRECATED" = "DEPRECATED"
 
-  @inline def values = js.Array(REQUESTED, INITIATED, DEPLOYABLE, FAILED, DEPRECATED)
+  inline def values: js.Array[CloudComponentState] = js.Array(REQUESTED, INITIATED, DEPLOYABLE, FAILED, DEPRECATED)
 }
 
-@js.native
-sealed trait ComponentDependencyType extends js.Any
+type ComponentDependencyType = "HARD" | "SOFT"
 object ComponentDependencyType {
-  val HARD = "HARD".asInstanceOf[ComponentDependencyType]
-  val SOFT = "SOFT".asInstanceOf[ComponentDependencyType]
+  inline val HARD: "HARD" = "HARD"
+  inline val SOFT: "SOFT" = "SOFT"
 
-  @inline def values = js.Array(HARD, SOFT)
+  inline def values: js.Array[ComponentDependencyType] = js.Array(HARD, SOFT)
 }
 
-@js.native
-sealed trait ComponentVisibilityScope extends js.Any
+type ComponentVisibilityScope = "PRIVATE" | "PUBLIC"
 object ComponentVisibilityScope {
-  val PRIVATE = "PRIVATE".asInstanceOf[ComponentVisibilityScope]
-  val PUBLIC = "PUBLIC".asInstanceOf[ComponentVisibilityScope]
+  inline val PRIVATE: "PRIVATE" = "PRIVATE"
+  inline val PUBLIC: "PUBLIC" = "PUBLIC"
 
-  @inline def values = js.Array(PRIVATE, PUBLIC)
+  inline def values: js.Array[ComponentVisibilityScope] = js.Array(PRIVATE, PUBLIC)
 }
 
-@js.native
-sealed trait CoreDeviceStatus extends js.Any
+type CoreDeviceStatus = "HEALTHY" | "UNHEALTHY"
 object CoreDeviceStatus {
-  val HEALTHY = "HEALTHY".asInstanceOf[CoreDeviceStatus]
-  val UNHEALTHY = "UNHEALTHY".asInstanceOf[CoreDeviceStatus]
+  inline val HEALTHY: "HEALTHY" = "HEALTHY"
+  inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
 
-  @inline def values = js.Array(HEALTHY, UNHEALTHY)
+  inline def values: js.Array[CoreDeviceStatus] = js.Array(HEALTHY, UNHEALTHY)
 }
 
-@js.native
-sealed trait DeploymentComponentUpdatePolicyAction extends js.Any
+type DeploymentComponentUpdatePolicyAction = "NOTIFY_COMPONENTS" | "SKIP_NOTIFY_COMPONENTS"
 object DeploymentComponentUpdatePolicyAction {
-  val NOTIFY_COMPONENTS = "NOTIFY_COMPONENTS".asInstanceOf[DeploymentComponentUpdatePolicyAction]
-  val SKIP_NOTIFY_COMPONENTS = "SKIP_NOTIFY_COMPONENTS".asInstanceOf[DeploymentComponentUpdatePolicyAction]
+  inline val NOTIFY_COMPONENTS: "NOTIFY_COMPONENTS" = "NOTIFY_COMPONENTS"
+  inline val SKIP_NOTIFY_COMPONENTS: "SKIP_NOTIFY_COMPONENTS" = "SKIP_NOTIFY_COMPONENTS"
 
-  @inline def values = js.Array(NOTIFY_COMPONENTS, SKIP_NOTIFY_COMPONENTS)
+  inline def values: js.Array[DeploymentComponentUpdatePolicyAction] = js.Array(NOTIFY_COMPONENTS, SKIP_NOTIFY_COMPONENTS)
 }
 
-@js.native
-sealed trait DeploymentFailureHandlingPolicy extends js.Any
+type DeploymentFailureHandlingPolicy = "ROLLBACK" | "DO_NOTHING"
 object DeploymentFailureHandlingPolicy {
-  val ROLLBACK = "ROLLBACK".asInstanceOf[DeploymentFailureHandlingPolicy]
-  val DO_NOTHING = "DO_NOTHING".asInstanceOf[DeploymentFailureHandlingPolicy]
+  inline val ROLLBACK: "ROLLBACK" = "ROLLBACK"
+  inline val DO_NOTHING: "DO_NOTHING" = "DO_NOTHING"
 
-  @inline def values = js.Array(ROLLBACK, DO_NOTHING)
+  inline def values: js.Array[DeploymentFailureHandlingPolicy] = js.Array(ROLLBACK, DO_NOTHING)
 }
 
-@js.native
-sealed trait DeploymentHistoryFilter extends js.Any
+type DeploymentHistoryFilter = "ALL" | "LATEST_ONLY"
 object DeploymentHistoryFilter {
-  val ALL = "ALL".asInstanceOf[DeploymentHistoryFilter]
-  val LATEST_ONLY = "LATEST_ONLY".asInstanceOf[DeploymentHistoryFilter]
+  inline val ALL: "ALL" = "ALL"
+  inline val LATEST_ONLY: "LATEST_ONLY" = "LATEST_ONLY"
 
-  @inline def values = js.Array(ALL, LATEST_ONLY)
+  inline def values: js.Array[DeploymentHistoryFilter] = js.Array(ALL, LATEST_ONLY)
 }
 
-@js.native
-sealed trait DeploymentStatus extends js.Any
+type DeploymentStatus = "ACTIVE" | "COMPLETED" | "CANCELED" | "FAILED" | "INACTIVE"
 object DeploymentStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[DeploymentStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[DeploymentStatus]
-  val CANCELED = "CANCELED".asInstanceOf[DeploymentStatus]
-  val FAILED = "FAILED".asInstanceOf[DeploymentStatus]
-  val INACTIVE = "INACTIVE".asInstanceOf[DeploymentStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val CANCELED: "CANCELED" = "CANCELED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(ACTIVE, COMPLETED, CANCELED, FAILED, INACTIVE)
+  inline def values: js.Array[DeploymentStatus] = js.Array(ACTIVE, COMPLETED, CANCELED, FAILED, INACTIVE)
 }
 
-@js.native
-sealed trait EffectiveDeploymentExecutionStatus extends js.Any
+type EffectiveDeploymentExecutionStatus = "IN_PROGRESS" | "QUEUED" | "FAILED" | "COMPLETED" | "TIMED_OUT" | "CANCELED" | "REJECTED"
 object EffectiveDeploymentExecutionStatus {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[EffectiveDeploymentExecutionStatus]
-  val QUEUED = "QUEUED".asInstanceOf[EffectiveDeploymentExecutionStatus]
-  val FAILED = "FAILED".asInstanceOf[EffectiveDeploymentExecutionStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[EffectiveDeploymentExecutionStatus]
-  val TIMED_OUT = "TIMED_OUT".asInstanceOf[EffectiveDeploymentExecutionStatus]
-  val CANCELED = "CANCELED".asInstanceOf[EffectiveDeploymentExecutionStatus]
-  val REJECTED = "REJECTED".asInstanceOf[EffectiveDeploymentExecutionStatus]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val QUEUED: "QUEUED" = "QUEUED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  inline val CANCELED: "CANCELED" = "CANCELED"
+  inline val REJECTED: "REJECTED" = "REJECTED"
 
-  @inline def values = js.Array(IN_PROGRESS, QUEUED, FAILED, COMPLETED, TIMED_OUT, CANCELED, REJECTED)
+  inline def values: js.Array[EffectiveDeploymentExecutionStatus] = js.Array(IN_PROGRESS, QUEUED, FAILED, COMPLETED, TIMED_OUT, CANCELED, REJECTED)
 }
 
-@js.native
-sealed trait InstalledComponentLifecycleState extends js.Any
+type InstalledComponentLifecycleState = "NEW" | "INSTALLED" | "STARTING" | "RUNNING" | "STOPPING" | "ERRORED" | "BROKEN" | "FINISHED"
 object InstalledComponentLifecycleState {
-  val NEW = "NEW".asInstanceOf[InstalledComponentLifecycleState]
-  val INSTALLED = "INSTALLED".asInstanceOf[InstalledComponentLifecycleState]
-  val STARTING = "STARTING".asInstanceOf[InstalledComponentLifecycleState]
-  val RUNNING = "RUNNING".asInstanceOf[InstalledComponentLifecycleState]
-  val STOPPING = "STOPPING".asInstanceOf[InstalledComponentLifecycleState]
-  val ERRORED = "ERRORED".asInstanceOf[InstalledComponentLifecycleState]
-  val BROKEN = "BROKEN".asInstanceOf[InstalledComponentLifecycleState]
-  val FINISHED = "FINISHED".asInstanceOf[InstalledComponentLifecycleState]
+  inline val NEW: "NEW" = "NEW"
+  inline val INSTALLED: "INSTALLED" = "INSTALLED"
+  inline val STARTING: "STARTING" = "STARTING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val STOPPING: "STOPPING" = "STOPPING"
+  inline val ERRORED: "ERRORED" = "ERRORED"
+  inline val BROKEN: "BROKEN" = "BROKEN"
+  inline val FINISHED: "FINISHED" = "FINISHED"
 
-  @inline def values = js.Array(NEW, INSTALLED, STARTING, RUNNING, STOPPING, ERRORED, BROKEN, FINISHED)
+  inline def values: js.Array[InstalledComponentLifecycleState] = js.Array(NEW, INSTALLED, STARTING, RUNNING, STOPPING, ERRORED, BROKEN, FINISHED)
 }
 
-@js.native
-sealed trait IoTJobAbortAction extends js.Any
+type IoTJobAbortAction = "CANCEL"
 object IoTJobAbortAction {
-  val CANCEL = "CANCEL".asInstanceOf[IoTJobAbortAction]
+  inline val CANCEL: "CANCEL" = "CANCEL"
 
-  @inline def values = js.Array(CANCEL)
+  inline def values: js.Array[IoTJobAbortAction] = js.Array(CANCEL)
 }
 
-@js.native
-sealed trait IoTJobExecutionFailureType extends js.Any
+type IoTJobExecutionFailureType = "FAILED" | "REJECTED" | "TIMED_OUT" | "ALL"
 object IoTJobExecutionFailureType {
-  val FAILED = "FAILED".asInstanceOf[IoTJobExecutionFailureType]
-  val REJECTED = "REJECTED".asInstanceOf[IoTJobExecutionFailureType]
-  val TIMED_OUT = "TIMED_OUT".asInstanceOf[IoTJobExecutionFailureType]
-  val ALL = "ALL".asInstanceOf[IoTJobExecutionFailureType]
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+  inline val TIMED_OUT: "TIMED_OUT" = "TIMED_OUT"
+  inline val ALL: "ALL" = "ALL"
 
-  @inline def values = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
+  inline def values: js.Array[IoTJobExecutionFailureType] = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
 }
 
-@js.native
-sealed trait LambdaEventSourceType extends js.Any
+type LambdaEventSourceType = "PUB_SUB" | "IOT_CORE"
 object LambdaEventSourceType {
-  val PUB_SUB = "PUB_SUB".asInstanceOf[LambdaEventSourceType]
-  val IOT_CORE = "IOT_CORE".asInstanceOf[LambdaEventSourceType]
+  inline val PUB_SUB: "PUB_SUB" = "PUB_SUB"
+  inline val IOT_CORE: "IOT_CORE" = "IOT_CORE"
 
-  @inline def values = js.Array(PUB_SUB, IOT_CORE)
+  inline def values: js.Array[LambdaEventSourceType] = js.Array(PUB_SUB, IOT_CORE)
 }
 
-@js.native
-sealed trait LambdaFilesystemPermission extends js.Any
+type LambdaFilesystemPermission = "ro" | "rw"
 object LambdaFilesystemPermission {
-  val ro = "ro".asInstanceOf[LambdaFilesystemPermission]
-  val rw = "rw".asInstanceOf[LambdaFilesystemPermission]
+  inline val ro: "ro" = "ro"
+  inline val rw: "rw" = "rw"
 
-  @inline def values = js.Array(ro, rw)
+  inline def values: js.Array[LambdaFilesystemPermission] = js.Array(ro, rw)
 }
 
-@js.native
-sealed trait LambdaInputPayloadEncodingType extends js.Any
+type LambdaInputPayloadEncodingType = "json" | "binary"
 object LambdaInputPayloadEncodingType {
-  val json = "json".asInstanceOf[LambdaInputPayloadEncodingType]
-  val binary = "binary".asInstanceOf[LambdaInputPayloadEncodingType]
+  inline val json: "json" = "json"
+  inline val binary: "binary" = "binary"
 
-  @inline def values = js.Array(json, binary)
+  inline def values: js.Array[LambdaInputPayloadEncodingType] = js.Array(json, binary)
 }
 
-@js.native
-sealed trait LambdaIsolationMode extends js.Any
+type LambdaIsolationMode = "GreengrassContainer" | "NoContainer"
 object LambdaIsolationMode {
-  val GreengrassContainer = "GreengrassContainer".asInstanceOf[LambdaIsolationMode]
-  val NoContainer = "NoContainer".asInstanceOf[LambdaIsolationMode]
+  inline val GreengrassContainer: "GreengrassContainer" = "GreengrassContainer"
+  inline val NoContainer: "NoContainer" = "NoContainer"
 
-  @inline def values = js.Array(GreengrassContainer, NoContainer)
+  inline def values: js.Array[LambdaIsolationMode] = js.Array(GreengrassContainer, NoContainer)
 }
 
-@js.native
-sealed trait RecipeOutputFormat extends js.Any
+type RecipeOutputFormat = "JSON" | "YAML"
 object RecipeOutputFormat {
-  val JSON = "JSON".asInstanceOf[RecipeOutputFormat]
-  val YAML = "YAML".asInstanceOf[RecipeOutputFormat]
+  inline val JSON: "JSON" = "JSON"
+  inline val YAML: "YAML" = "YAML"
 
-  @inline def values = js.Array(JSON, YAML)
+  inline def values: js.Array[RecipeOutputFormat] = js.Array(JSON, YAML)
 }

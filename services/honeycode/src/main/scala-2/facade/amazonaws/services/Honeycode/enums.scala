@@ -61,3 +61,4 @@ object UpsertAction {
 
   @inline def values = js.Array(UPDATED, APPENDED)
 }
+

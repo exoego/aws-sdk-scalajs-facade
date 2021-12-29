@@ -1008,25 +1008,7 @@ object H264Level {
   val H264_LEVEL_5_2 = "H264_LEVEL_5_2".asInstanceOf[H264Level]
   val H264_LEVEL_AUTO = "H264_LEVEL_AUTO".asInstanceOf[H264Level]
 
-  @inline def values = js.Array(
-    H264_LEVEL_1,
-    H264_LEVEL_1_1,
-    H264_LEVEL_1_2,
-    H264_LEVEL_1_3,
-    H264_LEVEL_2,
-    H264_LEVEL_2_1,
-    H264_LEVEL_2_2,
-    H264_LEVEL_3,
-    H264_LEVEL_3_1,
-    H264_LEVEL_3_2,
-    H264_LEVEL_4,
-    H264_LEVEL_4_1,
-    H264_LEVEL_4_2,
-    H264_LEVEL_5,
-    H264_LEVEL_5_1,
-    H264_LEVEL_5_2,
-    H264_LEVEL_AUTO
-  )
+  @inline def values = js.Array(H264_LEVEL_1, H264_LEVEL_1_1, H264_LEVEL_1_2, H264_LEVEL_1_3, H264_LEVEL_2, H264_LEVEL_2_1, H264_LEVEL_2_2, H264_LEVEL_3, H264_LEVEL_3_1, H264_LEVEL_3_2, H264_LEVEL_4, H264_LEVEL_4_1, H264_LEVEL_4_2, H264_LEVEL_5, H264_LEVEL_5_1, H264_LEVEL_5_2, H264_LEVEL_AUTO)
 }
 
 /** H264 Look Ahead Rate Control
@@ -1247,22 +1229,7 @@ object H265Level {
   val H265_LEVEL_6_2 = "H265_LEVEL_6_2".asInstanceOf[H265Level]
   val H265_LEVEL_AUTO = "H265_LEVEL_AUTO".asInstanceOf[H265Level]
 
-  @inline def values = js.Array(
-    H265_LEVEL_1,
-    H265_LEVEL_2,
-    H265_LEVEL_2_1,
-    H265_LEVEL_3,
-    H265_LEVEL_3_1,
-    H265_LEVEL_4,
-    H265_LEVEL_4_1,
-    H265_LEVEL_5,
-    H265_LEVEL_5_1,
-    H265_LEVEL_5_2,
-    H265_LEVEL_6,
-    H265_LEVEL_6_1,
-    H265_LEVEL_6_2,
-    H265_LEVEL_AUTO
-  )
+  @inline def values = js.Array(H265_LEVEL_1, H265_LEVEL_2, H265_LEVEL_2_1, H265_LEVEL_3, H265_LEVEL_3_1, H265_LEVEL_4, H265_LEVEL_4_1, H265_LEVEL_5, H265_LEVEL_5_1, H265_LEVEL_5_2, H265_LEVEL_6, H265_LEVEL_6_1, H265_LEVEL_6_2, H265_LEVEL_AUTO)
 }
 
 /** H265 Look Ahead Rate Control
@@ -1846,7 +1813,9 @@ object InputMaximumBitrate {
   @inline def values = js.Array(MAX_10_MBPS, MAX_20_MBPS, MAX_50_MBPS)
 }
 
-/** Input preference when deciding which input to make active when a previously failed input has recovered. If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy. If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
+/** Input preference when deciding which input to make active when a previously failed input has recovered.
+  * If \"EQUAL_INPUT_PREFERENCE\", then the active input will stay active as long as it is healthy.
+  * If \"PRIMARY_INPUT_PREFERRED\", then always switch back to the primary input when it is healthy.
   */
 @js.native
 sealed trait InputPreference extends js.Any
@@ -1893,7 +1862,9 @@ object InputSourceEndBehavior {
   @inline def values = js.Array(CONTINUE, LOOP)
 }
 
-/** There are two types of input sources, static and dynamic. If an input source is dynamic you can change the source url of the input dynamically using an input switch action. However, the only input type to support a dynamic url at this time is MP4_FILE. By default all input sources are static.
+/** There are two types of input sources, static and dynamic. If an input source is dynamic you can
+  * change the source url of the input dynamically using an input switch action. However, the only input type
+  * to support a dynamic url at this time is MP4_FILE. By default all input sources are static.
   */
 @js.native
 sealed trait InputSourceType extends js.Any
@@ -2424,7 +2395,11 @@ object PipelineId {
   @inline def values = js.Array(PIPELINE_0, PIPELINE_1)
 }
 
-/** Indicates which pipeline is preferred by the multiplex for program ingest. If set to \"PIPELINE_0\" or \"PIPELINE_1\" and an unhealthy ingest causes the multiplex to switch to the non-preferred pipeline, it will switch back once that ingest is healthy again. If set to \"CURRENTLY_ACTIVE\", it will not switch back to the other pipeline based on it recovering to a healthy state, it will only switch if the active pipeline becomes unhealthy.
+/** Indicates which pipeline is preferred by the multiplex for program ingest.
+  * If set to \"PIPELINE_0\" or \"PIPELINE_1\" and an unhealthy ingest causes the multiplex to switch to the non-preferred pipeline,
+  * it will switch back once that ingest is healthy again. If set to \"CURRENTLY_ACTIVE\",
+  * it will not switch back to the other pipeline based on it recovering to a healthy state,
+  * it will only switch if the active pipeline becomes unhealthy.
   */
 @js.native
 sealed trait PreferredChannelPipeline extends js.Any
@@ -2840,25 +2815,7 @@ object TemporalFilterStrength {
   val STRENGTH_15 = "STRENGTH_15".asInstanceOf[TemporalFilterStrength]
   val STRENGTH_16 = "STRENGTH_16".asInstanceOf[TemporalFilterStrength]
 
-  @inline def values = js.Array(
-    AUTO,
-    STRENGTH_1,
-    STRENGTH_2,
-    STRENGTH_3,
-    STRENGTH_4,
-    STRENGTH_5,
-    STRENGTH_6,
-    STRENGTH_7,
-    STRENGTH_8,
-    STRENGTH_9,
-    STRENGTH_10,
-    STRENGTH_11,
-    STRENGTH_12,
-    STRENGTH_13,
-    STRENGTH_14,
-    STRENGTH_15,
-    STRENGTH_16
-  )
+  @inline def values = js.Array(AUTO, STRENGTH_1, STRENGTH_2, STRENGTH_3, STRENGTH_4, STRENGTH_5, STRENGTH_6, STRENGTH_7, STRENGTH_8, STRENGTH_9, STRENGTH_10, STRENGTH_11, STRENGTH_12, STRENGTH_13, STRENGTH_14, STRENGTH_15, STRENGTH_16)
 }
 
 /** Timecode Config Source
@@ -2956,3 +2913,4 @@ object WavCodingMode {
 
   @inline def values = js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_4_0, CODING_MODE_8_0)
 }
+

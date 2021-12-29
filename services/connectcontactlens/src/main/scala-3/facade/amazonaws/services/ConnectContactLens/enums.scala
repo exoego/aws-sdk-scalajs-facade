@@ -1,14 +1,12 @@
 package facade.amazonaws.services.connectcontactlens
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait SentimentValue extends js.Any
+type SentimentValue = "POSITIVE" | "NEUTRAL" | "NEGATIVE"
 object SentimentValue {
-  val POSITIVE = "POSITIVE".asInstanceOf[SentimentValue]
-  val NEUTRAL = "NEUTRAL".asInstanceOf[SentimentValue]
-  val NEGATIVE = "NEGATIVE".asInstanceOf[SentimentValue]
+  inline val POSITIVE: "POSITIVE" = "POSITIVE"
+  inline val NEUTRAL: "NEUTRAL" = "NEUTRAL"
+  inline val NEGATIVE: "NEGATIVE" = "NEGATIVE"
 
-  @inline def values = js.Array(POSITIVE, NEUTRAL, NEGATIVE)
+  inline def values: js.Array[SentimentValue] = js.Array(POSITIVE, NEUTRAL, NEGATIVE)
 }

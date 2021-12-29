@@ -55,3 +55,4 @@ object ResourceStatusValue {
 
   @inline def values = js.Array(PENDING)
 }
+

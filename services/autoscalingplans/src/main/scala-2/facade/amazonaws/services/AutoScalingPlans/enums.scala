@@ -76,16 +76,7 @@ object ScalableDimension {
   val `dynamodb:index:ReadCapacityUnits` = "dynamodb:index:ReadCapacityUnits".asInstanceOf[ScalableDimension]
   val `dynamodb:index:WriteCapacityUnits` = "dynamodb:index:WriteCapacityUnits".asInstanceOf[ScalableDimension]
 
-  @inline def values = js.Array(
-    `autoscaling:autoScalingGroup:DesiredCapacity`,
-    `ecs:service:DesiredCount`,
-    `ec2:spot-fleet-request:TargetCapacity`,
-    `rds:cluster:ReadReplicaCount`,
-    `dynamodb:table:ReadCapacityUnits`,
-    `dynamodb:table:WriteCapacityUnits`,
-    `dynamodb:index:ReadCapacityUnits`,
-    `dynamodb:index:WriteCapacityUnits`
-  )
+  @inline def values = js.Array(`autoscaling:autoScalingGroup:DesiredCapacity`, `ecs:service:DesiredCount`, `ec2:spot-fleet-request:TargetCapacity`, `rds:cluster:ReadReplicaCount`, `dynamodb:table:ReadCapacityUnits`, `dynamodb:table:WriteCapacityUnits`, `dynamodb:index:ReadCapacityUnits`, `dynamodb:index:WriteCapacityUnits`)
 }
 
 @js.native
@@ -105,21 +96,7 @@ object ScalingMetricType {
   val EC2SpotFleetRequestAverageNetworkIn = "EC2SpotFleetRequestAverageNetworkIn".asInstanceOf[ScalingMetricType]
   val EC2SpotFleetRequestAverageNetworkOut = "EC2SpotFleetRequestAverageNetworkOut".asInstanceOf[ScalingMetricType]
 
-  @inline def values = js.Array(
-    ASGAverageCPUUtilization,
-    ASGAverageNetworkIn,
-    ASGAverageNetworkOut,
-    DynamoDBReadCapacityUtilization,
-    DynamoDBWriteCapacityUtilization,
-    ECSServiceAverageCPUUtilization,
-    ECSServiceAverageMemoryUtilization,
-    ALBRequestCountPerTarget,
-    RDSReaderAverageCPUUtilization,
-    RDSReaderAverageDatabaseConnections,
-    EC2SpotFleetRequestAverageCPUUtilization,
-    EC2SpotFleetRequestAverageNetworkIn,
-    EC2SpotFleetRequestAverageNetworkOut
-  )
+  @inline def values = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, DynamoDBReadCapacityUtilization, DynamoDBWriteCapacityUtilization, ECSServiceAverageCPUUtilization, ECSServiceAverageMemoryUtilization, ALBRequestCountPerTarget, RDSReaderAverageCPUUtilization, RDSReaderAverageDatabaseConnections, EC2SpotFleetRequestAverageCPUUtilization, EC2SpotFleetRequestAverageNetworkIn, EC2SpotFleetRequestAverageNetworkOut)
 }
 
 @js.native
@@ -167,3 +144,4 @@ object ServiceNamespace {
 
   @inline def values = js.Array(autoscaling, ecs, ec2, rds, dynamodb)
 }
+

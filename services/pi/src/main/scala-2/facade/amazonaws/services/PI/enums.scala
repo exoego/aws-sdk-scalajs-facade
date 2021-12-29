@@ -10,3 +10,4 @@ object ServiceType {
 
   @inline def values = js.Array(RDS)
 }
+

@@ -104,3 +104,4 @@ object Type {
 
   @inline def values = js.Array(AmazonCustomerByEmail, CanonicalUser, Group)
 }
+

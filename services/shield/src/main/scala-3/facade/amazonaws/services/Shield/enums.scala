@@ -1,109 +1,98 @@
 package facade.amazonaws.services.shield
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AttackLayer extends js.Any
+type AttackLayer = "NETWORK" | "APPLICATION"
 object AttackLayer {
-  val NETWORK = "NETWORK".asInstanceOf[AttackLayer]
-  val APPLICATION = "APPLICATION".asInstanceOf[AttackLayer]
+  inline val NETWORK: "NETWORK" = "NETWORK"
+  inline val APPLICATION: "APPLICATION" = "APPLICATION"
 
-  @inline def values = js.Array(NETWORK, APPLICATION)
+  inline def values: js.Array[AttackLayer] = js.Array(NETWORK, APPLICATION)
 }
 
-@js.native
-sealed trait AttackPropertyIdentifier extends js.Any
+type AttackPropertyIdentifier = "DESTINATION_URL" | "REFERRER" | "SOURCE_ASN" | "SOURCE_COUNTRY" | "SOURCE_IP_ADDRESS" | "SOURCE_USER_AGENT" | "WORDPRESS_PINGBACK_REFLECTOR" | "WORDPRESS_PINGBACK_SOURCE"
 object AttackPropertyIdentifier {
-  val DESTINATION_URL = "DESTINATION_URL".asInstanceOf[AttackPropertyIdentifier]
-  val REFERRER = "REFERRER".asInstanceOf[AttackPropertyIdentifier]
-  val SOURCE_ASN = "SOURCE_ASN".asInstanceOf[AttackPropertyIdentifier]
-  val SOURCE_COUNTRY = "SOURCE_COUNTRY".asInstanceOf[AttackPropertyIdentifier]
-  val SOURCE_IP_ADDRESS = "SOURCE_IP_ADDRESS".asInstanceOf[AttackPropertyIdentifier]
-  val SOURCE_USER_AGENT = "SOURCE_USER_AGENT".asInstanceOf[AttackPropertyIdentifier]
-  val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR".asInstanceOf[AttackPropertyIdentifier]
-  val WORDPRESS_PINGBACK_SOURCE = "WORDPRESS_PINGBACK_SOURCE".asInstanceOf[AttackPropertyIdentifier]
+  inline val DESTINATION_URL: "DESTINATION_URL" = "DESTINATION_URL"
+  inline val REFERRER: "REFERRER" = "REFERRER"
+  inline val SOURCE_ASN: "SOURCE_ASN" = "SOURCE_ASN"
+  inline val SOURCE_COUNTRY: "SOURCE_COUNTRY" = "SOURCE_COUNTRY"
+  inline val SOURCE_IP_ADDRESS: "SOURCE_IP_ADDRESS" = "SOURCE_IP_ADDRESS"
+  inline val SOURCE_USER_AGENT: "SOURCE_USER_AGENT" = "SOURCE_USER_AGENT"
+  inline val WORDPRESS_PINGBACK_REFLECTOR: "WORDPRESS_PINGBACK_REFLECTOR" = "WORDPRESS_PINGBACK_REFLECTOR"
+  inline val WORDPRESS_PINGBACK_SOURCE: "WORDPRESS_PINGBACK_SOURCE" = "WORDPRESS_PINGBACK_SOURCE"
 
-  @inline def values = js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE)
+  inline def values: js.Array[AttackPropertyIdentifier] = js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE)
 }
 
-@js.native
-sealed trait AutoRenew extends js.Any
+type AutoRenew = "ENABLED" | "DISABLED"
 object AutoRenew {
-  val ENABLED = "ENABLED".asInstanceOf[AutoRenew]
-  val DISABLED = "DISABLED".asInstanceOf[AutoRenew]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  inline def values: js.Array[AutoRenew] = js.Array(ENABLED, DISABLED)
 }
 
-@js.native
-sealed trait ProactiveEngagementStatus extends js.Any
+type ProactiveEngagementStatus = "ENABLED" | "DISABLED" | "PENDING"
 object ProactiveEngagementStatus {
-  val ENABLED = "ENABLED".asInstanceOf[ProactiveEngagementStatus]
-  val DISABLED = "DISABLED".asInstanceOf[ProactiveEngagementStatus]
-  val PENDING = "PENDING".asInstanceOf[ProactiveEngagementStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val PENDING: "PENDING" = "PENDING"
 
-  @inline def values = js.Array(ENABLED, DISABLED, PENDING)
+  inline def values: js.Array[ProactiveEngagementStatus] = js.Array(ENABLED, DISABLED, PENDING)
 }
 
-@js.native
-sealed trait ProtectedResourceType extends js.Any
+type ProtectedResourceType = "CLOUDFRONT_DISTRIBUTION" | "ROUTE_53_HOSTED_ZONE" | "ELASTIC_IP_ALLOCATION" | "CLASSIC_LOAD_BALANCER" | "APPLICATION_LOAD_BALANCER" | "GLOBAL_ACCELERATOR"
 object ProtectedResourceType {
-  val CLOUDFRONT_DISTRIBUTION = "CLOUDFRONT_DISTRIBUTION".asInstanceOf[ProtectedResourceType]
-  val ROUTE_53_HOSTED_ZONE = "ROUTE_53_HOSTED_ZONE".asInstanceOf[ProtectedResourceType]
-  val ELASTIC_IP_ALLOCATION = "ELASTIC_IP_ALLOCATION".asInstanceOf[ProtectedResourceType]
-  val CLASSIC_LOAD_BALANCER = "CLASSIC_LOAD_BALANCER".asInstanceOf[ProtectedResourceType]
-  val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ProtectedResourceType]
-  val GLOBAL_ACCELERATOR = "GLOBAL_ACCELERATOR".asInstanceOf[ProtectedResourceType]
+  inline val CLOUDFRONT_DISTRIBUTION: "CLOUDFRONT_DISTRIBUTION" = "CLOUDFRONT_DISTRIBUTION"
+  inline val ROUTE_53_HOSTED_ZONE: "ROUTE_53_HOSTED_ZONE" = "ROUTE_53_HOSTED_ZONE"
+  inline val ELASTIC_IP_ALLOCATION: "ELASTIC_IP_ALLOCATION" = "ELASTIC_IP_ALLOCATION"
+  inline val CLASSIC_LOAD_BALANCER: "CLASSIC_LOAD_BALANCER" = "CLASSIC_LOAD_BALANCER"
+  inline val APPLICATION_LOAD_BALANCER: "APPLICATION_LOAD_BALANCER" = "APPLICATION_LOAD_BALANCER"
+  inline val GLOBAL_ACCELERATOR: "GLOBAL_ACCELERATOR" = "GLOBAL_ACCELERATOR"
 
-  @inline def values = js.Array(CLOUDFRONT_DISTRIBUTION, ROUTE_53_HOSTED_ZONE, ELASTIC_IP_ALLOCATION, CLASSIC_LOAD_BALANCER, APPLICATION_LOAD_BALANCER, GLOBAL_ACCELERATOR)
+  inline def values: js.Array[ProtectedResourceType] = js.Array(CLOUDFRONT_DISTRIBUTION, ROUTE_53_HOSTED_ZONE, ELASTIC_IP_ALLOCATION, CLASSIC_LOAD_BALANCER, APPLICATION_LOAD_BALANCER, GLOBAL_ACCELERATOR)
 }
 
-@js.native
-sealed trait ProtectionGroupAggregation extends js.Any
+type ProtectionGroupAggregation = "SUM" | "MEAN" | "MAX"
 object ProtectionGroupAggregation {
-  val SUM = "SUM".asInstanceOf[ProtectionGroupAggregation]
-  val MEAN = "MEAN".asInstanceOf[ProtectionGroupAggregation]
-  val MAX = "MAX".asInstanceOf[ProtectionGroupAggregation]
+  inline val SUM: "SUM" = "SUM"
+  inline val MEAN: "MEAN" = "MEAN"
+  inline val MAX: "MAX" = "MAX"
 
-  @inline def values = js.Array(SUM, MEAN, MAX)
+  inline def values: js.Array[ProtectionGroupAggregation] = js.Array(SUM, MEAN, MAX)
 }
 
-@js.native
-sealed trait ProtectionGroupPattern extends js.Any
+type ProtectionGroupPattern = "ALL" | "ARBITRARY" | "BY_RESOURCE_TYPE"
 object ProtectionGroupPattern {
-  val ALL = "ALL".asInstanceOf[ProtectionGroupPattern]
-  val ARBITRARY = "ARBITRARY".asInstanceOf[ProtectionGroupPattern]
-  val BY_RESOURCE_TYPE = "BY_RESOURCE_TYPE".asInstanceOf[ProtectionGroupPattern]
+  inline val ALL: "ALL" = "ALL"
+  inline val ARBITRARY: "ARBITRARY" = "ARBITRARY"
+  inline val BY_RESOURCE_TYPE: "BY_RESOURCE_TYPE" = "BY_RESOURCE_TYPE"
 
-  @inline def values = js.Array(ALL, ARBITRARY, BY_RESOURCE_TYPE)
+  inline def values: js.Array[ProtectionGroupPattern] = js.Array(ALL, ARBITRARY, BY_RESOURCE_TYPE)
 }
 
-@js.native
-sealed trait SubResourceType extends js.Any
+type SubResourceType = "IP" | "URL"
 object SubResourceType {
-  val IP = "IP".asInstanceOf[SubResourceType]
-  val URL = "URL".asInstanceOf[SubResourceType]
+  inline val IP: "IP" = "IP"
+  inline val URL: "URL" = "URL"
 
-  @inline def values = js.Array(IP, URL)
+  inline def values: js.Array[SubResourceType] = js.Array(IP, URL)
 }
 
-@js.native
-sealed trait SubscriptionState extends js.Any
+type SubscriptionState = "ACTIVE" | "INACTIVE"
 object SubscriptionState {
-  val ACTIVE = "ACTIVE".asInstanceOf[SubscriptionState]
-  val INACTIVE = "INACTIVE".asInstanceOf[SubscriptionState]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  inline def values: js.Array[SubscriptionState] = js.Array(ACTIVE, INACTIVE)
 }
 
-@js.native
-sealed trait Unit extends js.Any
+type Unit = "BITS" | "BYTES" | "PACKETS" | "REQUESTS"
 object Unit {
-  val BITS = "BITS".asInstanceOf[Unit]
-  val BYTES = "BYTES".asInstanceOf[Unit]
-  val PACKETS = "PACKETS".asInstanceOf[Unit]
-  val REQUESTS = "REQUESTS".asInstanceOf[Unit]
+  inline val BITS: "BITS" = "BITS"
+  inline val BYTES: "BYTES" = "BYTES"
+  inline val PACKETS: "PACKETS" = "PACKETS"
+  inline val REQUESTS: "REQUESTS" = "REQUESTS"
 
-  @inline def values = js.Array(BITS, BYTES, PACKETS, REQUESTS)
+  inline def values: js.Array[Unit] = js.Array(BITS, BYTES, PACKETS, REQUESTS)
 }

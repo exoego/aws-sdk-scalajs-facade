@@ -33,15 +33,7 @@ object ComparisonOperator {
   val LessThanLowerThreshold = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
   val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
 
-  @inline def values = js.Array(
-    GreaterThanOrEqualToThreshold,
-    GreaterThanThreshold,
-    LessThanThreshold,
-    LessThanOrEqualToThreshold,
-    LessThanLowerOrGreaterThanUpperThreshold,
-    LessThanLowerThreshold,
-    GreaterThanUpperThreshold
-  )
+  @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold, LessThanLowerOrGreaterThanUpperThreshold, LessThanLowerThreshold, GreaterThanUpperThreshold)
 }
 
 @js.native
@@ -111,35 +103,7 @@ object StandardUnit {
   val `Count/Second` = "Count/Second".asInstanceOf[StandardUnit]
   val None = "None".asInstanceOf[StandardUnit]
 
-  @inline def values = js.Array(
-    Seconds,
-    Microseconds,
-    Milliseconds,
-    Bytes,
-    Kilobytes,
-    Megabytes,
-    Gigabytes,
-    Terabytes,
-    Bits,
-    Kilobits,
-    Megabits,
-    Gigabits,
-    Terabits,
-    Percent,
-    Count,
-    `Bytes/Second`,
-    `Kilobytes/Second`,
-    `Megabytes/Second`,
-    `Gigabytes/Second`,
-    `Terabytes/Second`,
-    `Bits/Second`,
-    `Kilobits/Second`,
-    `Megabits/Second`,
-    `Gigabits/Second`,
-    `Terabits/Second`,
-    `Count/Second`,
-    None
-  )
+  @inline def values = js.Array(Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, `Bytes/Second`, `Kilobytes/Second`, `Megabytes/Second`, `Gigabytes/Second`, `Terabytes/Second`, `Bits/Second`, `Kilobits/Second`, `Megabits/Second`, `Gigabits/Second`, `Terabits/Second`, `Count/Second`, None)
 }
 
 @js.native
@@ -173,3 +137,4 @@ object StatusCode {
 
   @inline def values = js.Array(Complete, InternalError, PartialData)
 }
+

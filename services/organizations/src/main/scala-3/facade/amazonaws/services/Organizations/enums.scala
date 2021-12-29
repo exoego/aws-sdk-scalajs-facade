@@ -1,64 +1,58 @@
 package facade.amazonaws.services.organizations
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccountJoinedMethod extends js.Any
+type AccountJoinedMethod = "INVITED" | "CREATED"
 object AccountJoinedMethod {
-  val INVITED = "INVITED".asInstanceOf[AccountJoinedMethod]
-  val CREATED = "CREATED".asInstanceOf[AccountJoinedMethod]
+  inline val INVITED: "INVITED" = "INVITED"
+  inline val CREATED: "CREATED" = "CREATED"
 
-  @inline def values = js.Array(INVITED, CREATED)
+  inline def values: js.Array[AccountJoinedMethod] = js.Array(INVITED, CREATED)
 }
 
-@js.native
-sealed trait AccountStatus extends js.Any
+type AccountStatus = "ACTIVE" | "SUSPENDED"
 object AccountStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[AccountStatus]
-  val SUSPENDED = "SUSPENDED".asInstanceOf[AccountStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val SUSPENDED: "SUSPENDED" = "SUSPENDED"
 
-  @inline def values = js.Array(ACTIVE, SUSPENDED)
+  inline def values: js.Array[AccountStatus] = js.Array(ACTIVE, SUSPENDED)
 }
 
-@js.native
-sealed trait ActionType extends js.Any
+type ActionType = "INVITE" | "ENABLE_ALL_FEATURES" | "APPROVE_ALL_FEATURES" | "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE"
 object ActionType {
-  val INVITE = "INVITE".asInstanceOf[ActionType]
-  val ENABLE_ALL_FEATURES = "ENABLE_ALL_FEATURES".asInstanceOf[ActionType]
-  val APPROVE_ALL_FEATURES = "APPROVE_ALL_FEATURES".asInstanceOf[ActionType]
-  val ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE".asInstanceOf[ActionType]
+  inline val INVITE: "INVITE" = "INVITE"
+  inline val ENABLE_ALL_FEATURES: "ENABLE_ALL_FEATURES" = "ENABLE_ALL_FEATURES"
+  inline val APPROVE_ALL_FEATURES: "APPROVE_ALL_FEATURES" = "APPROVE_ALL_FEATURES"
+  inline val ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE: "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE" = "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE"
 
-  @inline def values = js.Array(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE)
+  inline def values: js.Array[ActionType] = js.Array(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE)
 }
 
-@js.native
-sealed trait ChildType extends js.Any
+type ChildType = "ACCOUNT" | "ORGANIZATIONAL_UNIT"
 object ChildType {
-  val ACCOUNT = "ACCOUNT".asInstanceOf[ChildType]
-  val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[ChildType]
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val ORGANIZATIONAL_UNIT: "ORGANIZATIONAL_UNIT" = "ORGANIZATIONAL_UNIT"
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATIONAL_UNIT)
+  inline def values: js.Array[ChildType] = js.Array(ACCOUNT, ORGANIZATIONAL_UNIT)
 }
 
-@js.native
-sealed trait CreateAccountFailureReason extends js.Any
+type CreateAccountFailureReason = "ACCOUNT_LIMIT_EXCEEDED" | "EMAIL_ALREADY_EXISTS" | "INVALID_ADDRESS" | "INVALID_EMAIL" | "CONCURRENT_ACCOUNT_MODIFICATION" | "INTERNAL_FAILURE" | "GOVCLOUD_ACCOUNT_ALREADY_EXISTS" | "MISSING_BUSINESS_VALIDATION" | "FAILED_BUSINESS_VALIDATION" | "PENDING_BUSINESS_VALIDATION" | "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" | "UNKNOWN_BUSINESS_VALIDATION" | "MISSING_PAYMENT_INSTRUMENT"
 object CreateAccountFailureReason {
-  val ACCOUNT_LIMIT_EXCEEDED = "ACCOUNT_LIMIT_EXCEEDED".asInstanceOf[CreateAccountFailureReason]
-  val EMAIL_ALREADY_EXISTS = "EMAIL_ALREADY_EXISTS".asInstanceOf[CreateAccountFailureReason]
-  val INVALID_ADDRESS = "INVALID_ADDRESS".asInstanceOf[CreateAccountFailureReason]
-  val INVALID_EMAIL = "INVALID_EMAIL".asInstanceOf[CreateAccountFailureReason]
-  val CONCURRENT_ACCOUNT_MODIFICATION = "CONCURRENT_ACCOUNT_MODIFICATION".asInstanceOf[CreateAccountFailureReason]
-  val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[CreateAccountFailureReason]
-  val GOVCLOUD_ACCOUNT_ALREADY_EXISTS = "GOVCLOUD_ACCOUNT_ALREADY_EXISTS".asInstanceOf[CreateAccountFailureReason]
-  val MISSING_BUSINESS_VALIDATION = "MISSING_BUSINESS_VALIDATION".asInstanceOf[CreateAccountFailureReason]
-  val FAILED_BUSINESS_VALIDATION = "FAILED_BUSINESS_VALIDATION".asInstanceOf[CreateAccountFailureReason]
-  val PENDING_BUSINESS_VALIDATION = "PENDING_BUSINESS_VALIDATION".asInstanceOf[CreateAccountFailureReason]
-  val INVALID_IDENTITY_FOR_BUSINESS_VALIDATION = "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION".asInstanceOf[CreateAccountFailureReason]
-  val UNKNOWN_BUSINESS_VALIDATION = "UNKNOWN_BUSINESS_VALIDATION".asInstanceOf[CreateAccountFailureReason]
-  val MISSING_PAYMENT_INSTRUMENT = "MISSING_PAYMENT_INSTRUMENT".asInstanceOf[CreateAccountFailureReason]
+  inline val ACCOUNT_LIMIT_EXCEEDED: "ACCOUNT_LIMIT_EXCEEDED" = "ACCOUNT_LIMIT_EXCEEDED"
+  inline val EMAIL_ALREADY_EXISTS: "EMAIL_ALREADY_EXISTS" = "EMAIL_ALREADY_EXISTS"
+  inline val INVALID_ADDRESS: "INVALID_ADDRESS" = "INVALID_ADDRESS"
+  inline val INVALID_EMAIL: "INVALID_EMAIL" = "INVALID_EMAIL"
+  inline val CONCURRENT_ACCOUNT_MODIFICATION: "CONCURRENT_ACCOUNT_MODIFICATION" = "CONCURRENT_ACCOUNT_MODIFICATION"
+  inline val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
+  inline val GOVCLOUD_ACCOUNT_ALREADY_EXISTS: "GOVCLOUD_ACCOUNT_ALREADY_EXISTS" = "GOVCLOUD_ACCOUNT_ALREADY_EXISTS"
+  inline val MISSING_BUSINESS_VALIDATION: "MISSING_BUSINESS_VALIDATION" = "MISSING_BUSINESS_VALIDATION"
+  inline val FAILED_BUSINESS_VALIDATION: "FAILED_BUSINESS_VALIDATION" = "FAILED_BUSINESS_VALIDATION"
+  inline val PENDING_BUSINESS_VALIDATION: "PENDING_BUSINESS_VALIDATION" = "PENDING_BUSINESS_VALIDATION"
+  inline val INVALID_IDENTITY_FOR_BUSINESS_VALIDATION: "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION" = "INVALID_IDENTITY_FOR_BUSINESS_VALIDATION"
+  inline val UNKNOWN_BUSINESS_VALIDATION: "UNKNOWN_BUSINESS_VALIDATION" = "UNKNOWN_BUSINESS_VALIDATION"
+  inline val MISSING_PAYMENT_INSTRUMENT: "MISSING_PAYMENT_INSTRUMENT" = "MISSING_PAYMENT_INSTRUMENT"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[CreateAccountFailureReason] = js.Array(
     ACCOUNT_LIMIT_EXCEEDED,
     EMAIL_ALREADY_EXISTS,
     INVALID_ADDRESS,
@@ -75,118 +69,107 @@ object CreateAccountFailureReason {
   )
 }
 
-@js.native
-sealed trait CreateAccountState extends js.Any
+type CreateAccountState = "IN_PROGRESS" | "SUCCEEDED" | "FAILED"
 object CreateAccountState {
-  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CreateAccountState]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[CreateAccountState]
-  val FAILED = "FAILED".asInstanceOf[CreateAccountState]
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
+  inline def values: js.Array[CreateAccountState] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
 }
 
-@js.native
-sealed trait EffectivePolicyType extends js.Any
+type EffectivePolicyType = "TAG_POLICY" | "BACKUP_POLICY" | "AISERVICES_OPT_OUT_POLICY"
 object EffectivePolicyType {
-  val TAG_POLICY = "TAG_POLICY".asInstanceOf[EffectivePolicyType]
-  val BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[EffectivePolicyType]
-  val AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[EffectivePolicyType]
+  inline val TAG_POLICY: "TAG_POLICY" = "TAG_POLICY"
+  inline val BACKUP_POLICY: "BACKUP_POLICY" = "BACKUP_POLICY"
+  inline val AISERVICES_OPT_OUT_POLICY: "AISERVICES_OPT_OUT_POLICY" = "AISERVICES_OPT_OUT_POLICY"
 
-  @inline def values = js.Array(TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY)
+  inline def values: js.Array[EffectivePolicyType] = js.Array(TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY)
 }
 
-@js.native
-sealed trait HandshakePartyType extends js.Any
+type HandshakePartyType = "ACCOUNT" | "ORGANIZATION" | "EMAIL"
 object HandshakePartyType {
-  val ACCOUNT = "ACCOUNT".asInstanceOf[HandshakePartyType]
-  val ORGANIZATION = "ORGANIZATION".asInstanceOf[HandshakePartyType]
-  val EMAIL = "EMAIL".asInstanceOf[HandshakePartyType]
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val ORGANIZATION: "ORGANIZATION" = "ORGANIZATION"
+  inline val EMAIL: "EMAIL" = "EMAIL"
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATION, EMAIL)
+  inline def values: js.Array[HandshakePartyType] = js.Array(ACCOUNT, ORGANIZATION, EMAIL)
 }
 
-@js.native
-sealed trait HandshakeResourceType extends js.Any
+type HandshakeResourceType = "ACCOUNT" | "ORGANIZATION" | "ORGANIZATION_FEATURE_SET" | "EMAIL" | "MASTER_EMAIL" | "MASTER_NAME" | "NOTES" | "PARENT_HANDSHAKE"
 object HandshakeResourceType {
-  val ACCOUNT = "ACCOUNT".asInstanceOf[HandshakeResourceType]
-  val ORGANIZATION = "ORGANIZATION".asInstanceOf[HandshakeResourceType]
-  val ORGANIZATION_FEATURE_SET = "ORGANIZATION_FEATURE_SET".asInstanceOf[HandshakeResourceType]
-  val EMAIL = "EMAIL".asInstanceOf[HandshakeResourceType]
-  val MASTER_EMAIL = "MASTER_EMAIL".asInstanceOf[HandshakeResourceType]
-  val MASTER_NAME = "MASTER_NAME".asInstanceOf[HandshakeResourceType]
-  val NOTES = "NOTES".asInstanceOf[HandshakeResourceType]
-  val PARENT_HANDSHAKE = "PARENT_HANDSHAKE".asInstanceOf[HandshakeResourceType]
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val ORGANIZATION: "ORGANIZATION" = "ORGANIZATION"
+  inline val ORGANIZATION_FEATURE_SET: "ORGANIZATION_FEATURE_SET" = "ORGANIZATION_FEATURE_SET"
+  inline val EMAIL: "EMAIL" = "EMAIL"
+  inline val MASTER_EMAIL: "MASTER_EMAIL" = "MASTER_EMAIL"
+  inline val MASTER_NAME: "MASTER_NAME" = "MASTER_NAME"
+  inline val NOTES: "NOTES" = "NOTES"
+  inline val PARENT_HANDSHAKE: "PARENT_HANDSHAKE" = "PARENT_HANDSHAKE"
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATION, ORGANIZATION_FEATURE_SET, EMAIL, MASTER_EMAIL, MASTER_NAME, NOTES, PARENT_HANDSHAKE)
+  inline def values: js.Array[HandshakeResourceType] = js.Array(ACCOUNT, ORGANIZATION, ORGANIZATION_FEATURE_SET, EMAIL, MASTER_EMAIL, MASTER_NAME, NOTES, PARENT_HANDSHAKE)
 }
 
-@js.native
-sealed trait HandshakeState extends js.Any
+type HandshakeState = "REQUESTED" | "OPEN" | "CANCELED" | "ACCEPTED" | "DECLINED" | "EXPIRED"
 object HandshakeState {
-  val REQUESTED = "REQUESTED".asInstanceOf[HandshakeState]
-  val OPEN = "OPEN".asInstanceOf[HandshakeState]
-  val CANCELED = "CANCELED".asInstanceOf[HandshakeState]
-  val ACCEPTED = "ACCEPTED".asInstanceOf[HandshakeState]
-  val DECLINED = "DECLINED".asInstanceOf[HandshakeState]
-  val EXPIRED = "EXPIRED".asInstanceOf[HandshakeState]
+  inline val REQUESTED: "REQUESTED" = "REQUESTED"
+  inline val OPEN: "OPEN" = "OPEN"
+  inline val CANCELED: "CANCELED" = "CANCELED"
+  inline val ACCEPTED: "ACCEPTED" = "ACCEPTED"
+  inline val DECLINED: "DECLINED" = "DECLINED"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
 
-  @inline def values = js.Array(REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED)
+  inline def values: js.Array[HandshakeState] = js.Array(REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED)
 }
 
-@js.native
-sealed trait IAMUserAccessToBilling extends js.Any
+type IAMUserAccessToBilling = "ALLOW" | "DENY"
 object IAMUserAccessToBilling {
-  val ALLOW = "ALLOW".asInstanceOf[IAMUserAccessToBilling]
-  val DENY = "DENY".asInstanceOf[IAMUserAccessToBilling]
+  inline val ALLOW: "ALLOW" = "ALLOW"
+  inline val DENY: "DENY" = "DENY"
 
-  @inline def values = js.Array(ALLOW, DENY)
+  inline def values: js.Array[IAMUserAccessToBilling] = js.Array(ALLOW, DENY)
 }
 
-@js.native
-sealed trait OrganizationFeatureSet extends js.Any
+type OrganizationFeatureSet = "ALL" | "CONSOLIDATED_BILLING"
 object OrganizationFeatureSet {
-  val ALL = "ALL".asInstanceOf[OrganizationFeatureSet]
-  val CONSOLIDATED_BILLING = "CONSOLIDATED_BILLING".asInstanceOf[OrganizationFeatureSet]
+  inline val ALL: "ALL" = "ALL"
+  inline val CONSOLIDATED_BILLING: "CONSOLIDATED_BILLING" = "CONSOLIDATED_BILLING"
 
-  @inline def values = js.Array(ALL, CONSOLIDATED_BILLING)
+  inline def values: js.Array[OrganizationFeatureSet] = js.Array(ALL, CONSOLIDATED_BILLING)
 }
 
-@js.native
-sealed trait ParentType extends js.Any
+type ParentType = "ROOT" | "ORGANIZATIONAL_UNIT"
 object ParentType {
-  val ROOT = "ROOT".asInstanceOf[ParentType]
-  val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[ParentType]
+  inline val ROOT: "ROOT" = "ROOT"
+  inline val ORGANIZATIONAL_UNIT: "ORGANIZATIONAL_UNIT" = "ORGANIZATIONAL_UNIT"
 
-  @inline def values = js.Array(ROOT, ORGANIZATIONAL_UNIT)
+  inline def values: js.Array[ParentType] = js.Array(ROOT, ORGANIZATIONAL_UNIT)
 }
 
-@js.native
-sealed trait PolicyType extends js.Any
+type PolicyType = "SERVICE_CONTROL_POLICY" | "TAG_POLICY" | "BACKUP_POLICY" | "AISERVICES_OPT_OUT_POLICY"
 object PolicyType {
-  val SERVICE_CONTROL_POLICY = "SERVICE_CONTROL_POLICY".asInstanceOf[PolicyType]
-  val TAG_POLICY = "TAG_POLICY".asInstanceOf[PolicyType]
-  val BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[PolicyType]
-  val AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[PolicyType]
+  inline val SERVICE_CONTROL_POLICY: "SERVICE_CONTROL_POLICY" = "SERVICE_CONTROL_POLICY"
+  inline val TAG_POLICY: "TAG_POLICY" = "TAG_POLICY"
+  inline val BACKUP_POLICY: "BACKUP_POLICY" = "BACKUP_POLICY"
+  inline val AISERVICES_OPT_OUT_POLICY: "AISERVICES_OPT_OUT_POLICY" = "AISERVICES_OPT_OUT_POLICY"
 
-  @inline def values = js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY)
+  inline def values: js.Array[PolicyType] = js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY)
 }
 
-@js.native
-sealed trait PolicyTypeStatus extends js.Any
+type PolicyTypeStatus = "ENABLED" | "PENDING_ENABLE" | "PENDING_DISABLE"
 object PolicyTypeStatus {
-  val ENABLED = "ENABLED".asInstanceOf[PolicyTypeStatus]
-  val PENDING_ENABLE = "PENDING_ENABLE".asInstanceOf[PolicyTypeStatus]
-  val PENDING_DISABLE = "PENDING_DISABLE".asInstanceOf[PolicyTypeStatus]
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val PENDING_ENABLE: "PENDING_ENABLE" = "PENDING_ENABLE"
+  inline val PENDING_DISABLE: "PENDING_DISABLE" = "PENDING_DISABLE"
 
-  @inline def values = js.Array(ENABLED, PENDING_ENABLE, PENDING_DISABLE)
+  inline def values: js.Array[PolicyTypeStatus] = js.Array(ENABLED, PENDING_ENABLE, PENDING_DISABLE)
 }
 
-@js.native
-sealed trait TargetType extends js.Any
+type TargetType = "ACCOUNT" | "ORGANIZATIONAL_UNIT" | "ROOT"
 object TargetType {
-  val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
-  val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[TargetType]
-  val ROOT = "ROOT".asInstanceOf[TargetType]
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+  inline val ORGANIZATIONAL_UNIT: "ORGANIZATIONAL_UNIT" = "ORGANIZATIONAL_UNIT"
+  inline val ROOT: "ROOT" = "ROOT"
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATIONAL_UNIT, ROOT)
+  inline def values: js.Array[TargetType] = js.Array(ACCOUNT, ORGANIZATIONAL_UNIT, ROOT)
 }

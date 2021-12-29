@@ -1,160 +1,145 @@
 package facade.amazonaws.services.acmpca
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait AccessMethodType extends js.Any
+type AccessMethodType = "CA_REPOSITORY" | "RESOURCE_PKI_MANIFEST" | "RESOURCE_PKI_NOTIFY"
 object AccessMethodType {
-  val CA_REPOSITORY = "CA_REPOSITORY".asInstanceOf[AccessMethodType]
-  val RESOURCE_PKI_MANIFEST = "RESOURCE_PKI_MANIFEST".asInstanceOf[AccessMethodType]
-  val RESOURCE_PKI_NOTIFY = "RESOURCE_PKI_NOTIFY".asInstanceOf[AccessMethodType]
+  inline val CA_REPOSITORY: "CA_REPOSITORY" = "CA_REPOSITORY"
+  inline val RESOURCE_PKI_MANIFEST: "RESOURCE_PKI_MANIFEST" = "RESOURCE_PKI_MANIFEST"
+  inline val RESOURCE_PKI_NOTIFY: "RESOURCE_PKI_NOTIFY" = "RESOURCE_PKI_NOTIFY"
 
-  @inline def values = js.Array(CA_REPOSITORY, RESOURCE_PKI_MANIFEST, RESOURCE_PKI_NOTIFY)
+  inline def values: js.Array[AccessMethodType] = js.Array(CA_REPOSITORY, RESOURCE_PKI_MANIFEST, RESOURCE_PKI_NOTIFY)
 }
 
-@js.native
-sealed trait ActionType extends js.Any
+type ActionType = "IssueCertificate" | "GetCertificate" | "ListPermissions"
 object ActionType {
-  val IssueCertificate = "IssueCertificate".asInstanceOf[ActionType]
-  val GetCertificate = "GetCertificate".asInstanceOf[ActionType]
-  val ListPermissions = "ListPermissions".asInstanceOf[ActionType]
+  inline val IssueCertificate: "IssueCertificate" = "IssueCertificate"
+  inline val GetCertificate: "GetCertificate" = "GetCertificate"
+  inline val ListPermissions: "ListPermissions" = "ListPermissions"
 
-  @inline def values = js.Array(IssueCertificate, GetCertificate, ListPermissions)
+  inline def values: js.Array[ActionType] = js.Array(IssueCertificate, GetCertificate, ListPermissions)
 }
 
-@js.native
-sealed trait AuditReportResponseFormat extends js.Any
+type AuditReportResponseFormat = "JSON" | "CSV"
 object AuditReportResponseFormat {
-  val JSON = "JSON".asInstanceOf[AuditReportResponseFormat]
-  val CSV = "CSV".asInstanceOf[AuditReportResponseFormat]
+  inline val JSON: "JSON" = "JSON"
+  inline val CSV: "CSV" = "CSV"
 
-  @inline def values = js.Array(JSON, CSV)
+  inline def values: js.Array[AuditReportResponseFormat] = js.Array(JSON, CSV)
 }
 
-@js.native
-sealed trait AuditReportStatus extends js.Any
+type AuditReportStatus = "CREATING" | "SUCCESS" | "FAILED"
 object AuditReportStatus {
-  val CREATING = "CREATING".asInstanceOf[AuditReportStatus]
-  val SUCCESS = "SUCCESS".asInstanceOf[AuditReportStatus]
-  val FAILED = "FAILED".asInstanceOf[AuditReportStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, SUCCESS, FAILED)
+  inline def values: js.Array[AuditReportStatus] = js.Array(CREATING, SUCCESS, FAILED)
 }
 
-@js.native
-sealed trait CertificateAuthorityStatus extends js.Any
+type CertificateAuthorityStatus = "CREATING" | "PENDING_CERTIFICATE" | "ACTIVE" | "DELETED" | "DISABLED" | "EXPIRED" | "FAILED"
 object CertificateAuthorityStatus {
-  val CREATING = "CREATING".asInstanceOf[CertificateAuthorityStatus]
-  val PENDING_CERTIFICATE = "PENDING_CERTIFICATE".asInstanceOf[CertificateAuthorityStatus]
-  val ACTIVE = "ACTIVE".asInstanceOf[CertificateAuthorityStatus]
-  val DELETED = "DELETED".asInstanceOf[CertificateAuthorityStatus]
-  val DISABLED = "DISABLED".asInstanceOf[CertificateAuthorityStatus]
-  val EXPIRED = "EXPIRED".asInstanceOf[CertificateAuthorityStatus]
-  val FAILED = "FAILED".asInstanceOf[CertificateAuthorityStatus]
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val PENDING_CERTIFICATE: "PENDING_CERTIFICATE" = "PENDING_CERTIFICATE"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED)
+  inline def values: js.Array[CertificateAuthorityStatus] = js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED)
 }
 
-@js.native
-sealed trait CertificateAuthorityType extends js.Any
+type CertificateAuthorityType = "ROOT" | "SUBORDINATE"
 object CertificateAuthorityType {
-  val ROOT = "ROOT".asInstanceOf[CertificateAuthorityType]
-  val SUBORDINATE = "SUBORDINATE".asInstanceOf[CertificateAuthorityType]
+  inline val ROOT: "ROOT" = "ROOT"
+  inline val SUBORDINATE: "SUBORDINATE" = "SUBORDINATE"
 
-  @inline def values = js.Array(ROOT, SUBORDINATE)
+  inline def values: js.Array[CertificateAuthorityType] = js.Array(ROOT, SUBORDINATE)
 }
 
-@js.native
-sealed trait ExtendedKeyUsageType extends js.Any
+type ExtendedKeyUsageType = "SERVER_AUTH" | "CLIENT_AUTH" | "CODE_SIGNING" | "EMAIL_PROTECTION" | "TIME_STAMPING" | "OCSP_SIGNING" | "SMART_CARD_LOGIN" | "DOCUMENT_SIGNING" | "CERTIFICATE_TRANSPARENCY"
 object ExtendedKeyUsageType {
-  val SERVER_AUTH = "SERVER_AUTH".asInstanceOf[ExtendedKeyUsageType]
-  val CLIENT_AUTH = "CLIENT_AUTH".asInstanceOf[ExtendedKeyUsageType]
-  val CODE_SIGNING = "CODE_SIGNING".asInstanceOf[ExtendedKeyUsageType]
-  val EMAIL_PROTECTION = "EMAIL_PROTECTION".asInstanceOf[ExtendedKeyUsageType]
-  val TIME_STAMPING = "TIME_STAMPING".asInstanceOf[ExtendedKeyUsageType]
-  val OCSP_SIGNING = "OCSP_SIGNING".asInstanceOf[ExtendedKeyUsageType]
-  val SMART_CARD_LOGIN = "SMART_CARD_LOGIN".asInstanceOf[ExtendedKeyUsageType]
-  val DOCUMENT_SIGNING = "DOCUMENT_SIGNING".asInstanceOf[ExtendedKeyUsageType]
-  val CERTIFICATE_TRANSPARENCY = "CERTIFICATE_TRANSPARENCY".asInstanceOf[ExtendedKeyUsageType]
+  inline val SERVER_AUTH: "SERVER_AUTH" = "SERVER_AUTH"
+  inline val CLIENT_AUTH: "CLIENT_AUTH" = "CLIENT_AUTH"
+  inline val CODE_SIGNING: "CODE_SIGNING" = "CODE_SIGNING"
+  inline val EMAIL_PROTECTION: "EMAIL_PROTECTION" = "EMAIL_PROTECTION"
+  inline val TIME_STAMPING: "TIME_STAMPING" = "TIME_STAMPING"
+  inline val OCSP_SIGNING: "OCSP_SIGNING" = "OCSP_SIGNING"
+  inline val SMART_CARD_LOGIN: "SMART_CARD_LOGIN" = "SMART_CARD_LOGIN"
+  inline val DOCUMENT_SIGNING: "DOCUMENT_SIGNING" = "DOCUMENT_SIGNING"
+  inline val CERTIFICATE_TRANSPARENCY: "CERTIFICATE_TRANSPARENCY" = "CERTIFICATE_TRANSPARENCY"
 
-  @inline def values = js.Array(SERVER_AUTH, CLIENT_AUTH, CODE_SIGNING, EMAIL_PROTECTION, TIME_STAMPING, OCSP_SIGNING, SMART_CARD_LOGIN, DOCUMENT_SIGNING, CERTIFICATE_TRANSPARENCY)
+  inline def values: js.Array[ExtendedKeyUsageType] = js.Array(SERVER_AUTH, CLIENT_AUTH, CODE_SIGNING, EMAIL_PROTECTION, TIME_STAMPING, OCSP_SIGNING, SMART_CARD_LOGIN, DOCUMENT_SIGNING, CERTIFICATE_TRANSPARENCY)
 }
 
-@js.native
-sealed trait FailureReason extends js.Any
+type FailureReason = "REQUEST_TIMED_OUT" | "UNSUPPORTED_ALGORITHM" | "OTHER"
 object FailureReason {
-  val REQUEST_TIMED_OUT = "REQUEST_TIMED_OUT".asInstanceOf[FailureReason]
-  val UNSUPPORTED_ALGORITHM = "UNSUPPORTED_ALGORITHM".asInstanceOf[FailureReason]
-  val OTHER = "OTHER".asInstanceOf[FailureReason]
+  inline val REQUEST_TIMED_OUT: "REQUEST_TIMED_OUT" = "REQUEST_TIMED_OUT"
+  inline val UNSUPPORTED_ALGORITHM: "UNSUPPORTED_ALGORITHM" = "UNSUPPORTED_ALGORITHM"
+  inline val OTHER: "OTHER" = "OTHER"
 
-  @inline def values = js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER)
+  inline def values: js.Array[FailureReason] = js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER)
 }
 
-@js.native
-sealed trait KeyAlgorithm extends js.Any
+type KeyAlgorithm = "RSA_2048" | "RSA_4096" | "EC_prime256v1" | "EC_secp384r1"
 object KeyAlgorithm {
-  val RSA_2048 = "RSA_2048".asInstanceOf[KeyAlgorithm]
-  val RSA_4096 = "RSA_4096".asInstanceOf[KeyAlgorithm]
-  val EC_prime256v1 = "EC_prime256v1".asInstanceOf[KeyAlgorithm]
-  val EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
+  inline val RSA_2048: "RSA_2048" = "RSA_2048"
+  inline val RSA_4096: "RSA_4096" = "RSA_4096"
+  inline val EC_prime256v1: "EC_prime256v1" = "EC_prime256v1"
+  inline val EC_secp384r1: "EC_secp384r1" = "EC_secp384r1"
 
-  @inline def values = js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1)
+  inline def values: js.Array[KeyAlgorithm] = js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1)
 }
 
-@js.native
-sealed trait PolicyQualifierId extends js.Any
+type PolicyQualifierId = "CPS"
 object PolicyQualifierId {
-  val CPS = "CPS".asInstanceOf[PolicyQualifierId]
+  inline val CPS: "CPS" = "CPS"
 
-  @inline def values = js.Array(CPS)
+  inline def values: js.Array[PolicyQualifierId] = js.Array(CPS)
 }
 
-@js.native
-sealed trait ResourceOwner extends js.Any
+type ResourceOwner = "SELF" | "OTHER_ACCOUNTS"
 object ResourceOwner {
-  val SELF = "SELF".asInstanceOf[ResourceOwner]
-  val OTHER_ACCOUNTS = "OTHER_ACCOUNTS".asInstanceOf[ResourceOwner]
+  inline val SELF: "SELF" = "SELF"
+  inline val OTHER_ACCOUNTS: "OTHER_ACCOUNTS" = "OTHER_ACCOUNTS"
 
-  @inline def values = js.Array(SELF, OTHER_ACCOUNTS)
+  inline def values: js.Array[ResourceOwner] = js.Array(SELF, OTHER_ACCOUNTS)
 }
 
-@js.native
-sealed trait RevocationReason extends js.Any
+type RevocationReason = "UNSPECIFIED" | "KEY_COMPROMISE" | "CERTIFICATE_AUTHORITY_COMPROMISE" | "AFFILIATION_CHANGED" | "SUPERSEDED" | "CESSATION_OF_OPERATION" | "PRIVILEGE_WITHDRAWN" | "A_A_COMPROMISE"
 object RevocationReason {
-  val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[RevocationReason]
-  val KEY_COMPROMISE = "KEY_COMPROMISE".asInstanceOf[RevocationReason]
-  val CERTIFICATE_AUTHORITY_COMPROMISE = "CERTIFICATE_AUTHORITY_COMPROMISE".asInstanceOf[RevocationReason]
-  val AFFILIATION_CHANGED = "AFFILIATION_CHANGED".asInstanceOf[RevocationReason]
-  val SUPERSEDED = "SUPERSEDED".asInstanceOf[RevocationReason]
-  val CESSATION_OF_OPERATION = "CESSATION_OF_OPERATION".asInstanceOf[RevocationReason]
-  val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
-  val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
+  inline val UNSPECIFIED: "UNSPECIFIED" = "UNSPECIFIED"
+  inline val KEY_COMPROMISE: "KEY_COMPROMISE" = "KEY_COMPROMISE"
+  inline val CERTIFICATE_AUTHORITY_COMPROMISE: "CERTIFICATE_AUTHORITY_COMPROMISE" = "CERTIFICATE_AUTHORITY_COMPROMISE"
+  inline val AFFILIATION_CHANGED: "AFFILIATION_CHANGED" = "AFFILIATION_CHANGED"
+  inline val SUPERSEDED: "SUPERSEDED" = "SUPERSEDED"
+  inline val CESSATION_OF_OPERATION: "CESSATION_OF_OPERATION" = "CESSATION_OF_OPERATION"
+  inline val PRIVILEGE_WITHDRAWN: "PRIVILEGE_WITHDRAWN" = "PRIVILEGE_WITHDRAWN"
+  inline val A_A_COMPROMISE: "A_A_COMPROMISE" = "A_A_COMPROMISE"
 
-  @inline def values = js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE)
+  inline def values: js.Array[RevocationReason] = js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE)
 }
 
-@js.native
-sealed trait SigningAlgorithm extends js.Any
+type SigningAlgorithm = "SHA256WITHECDSA" | "SHA384WITHECDSA" | "SHA512WITHECDSA" | "SHA256WITHRSA" | "SHA384WITHRSA" | "SHA512WITHRSA"
 object SigningAlgorithm {
-  val SHA256WITHECDSA = "SHA256WITHECDSA".asInstanceOf[SigningAlgorithm]
-  val SHA384WITHECDSA = "SHA384WITHECDSA".asInstanceOf[SigningAlgorithm]
-  val SHA512WITHECDSA = "SHA512WITHECDSA".asInstanceOf[SigningAlgorithm]
-  val SHA256WITHRSA = "SHA256WITHRSA".asInstanceOf[SigningAlgorithm]
-  val SHA384WITHRSA = "SHA384WITHRSA".asInstanceOf[SigningAlgorithm]
-  val SHA512WITHRSA = "SHA512WITHRSA".asInstanceOf[SigningAlgorithm]
+  inline val SHA256WITHECDSA: "SHA256WITHECDSA" = "SHA256WITHECDSA"
+  inline val SHA384WITHECDSA: "SHA384WITHECDSA" = "SHA384WITHECDSA"
+  inline val SHA512WITHECDSA: "SHA512WITHECDSA" = "SHA512WITHECDSA"
+  inline val SHA256WITHRSA: "SHA256WITHRSA" = "SHA256WITHRSA"
+  inline val SHA384WITHRSA: "SHA384WITHRSA" = "SHA384WITHRSA"
+  inline val SHA512WITHRSA: "SHA512WITHRSA" = "SHA512WITHRSA"
 
-  @inline def values = js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
+  inline def values: js.Array[SigningAlgorithm] = js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
 }
 
-@js.native
-sealed trait ValidityPeriodType extends js.Any
+type ValidityPeriodType = "END_DATE" | "ABSOLUTE" | "DAYS" | "MONTHS" | "YEARS"
 object ValidityPeriodType {
-  val END_DATE = "END_DATE".asInstanceOf[ValidityPeriodType]
-  val ABSOLUTE = "ABSOLUTE".asInstanceOf[ValidityPeriodType]
-  val DAYS = "DAYS".asInstanceOf[ValidityPeriodType]
-  val MONTHS = "MONTHS".asInstanceOf[ValidityPeriodType]
-  val YEARS = "YEARS".asInstanceOf[ValidityPeriodType]
+  inline val END_DATE: "END_DATE" = "END_DATE"
+  inline val ABSOLUTE: "ABSOLUTE" = "ABSOLUTE"
+  inline val DAYS: "DAYS" = "DAYS"
+  inline val MONTHS: "MONTHS" = "MONTHS"
+  inline val YEARS: "YEARS" = "YEARS"
 
-  @inline def values = js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS)
+  inline def values: js.Array[ValidityPeriodType] = js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS)
 }

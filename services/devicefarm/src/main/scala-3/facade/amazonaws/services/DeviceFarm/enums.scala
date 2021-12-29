@@ -1,51 +1,48 @@
 package facade.amazonaws.services.devicefarm
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait ArtifactCategory extends js.Any
+type ArtifactCategory = "SCREENSHOT" | "FILE" | "LOG"
 object ArtifactCategory {
-  val SCREENSHOT = "SCREENSHOT".asInstanceOf[ArtifactCategory]
-  val FILE = "FILE".asInstanceOf[ArtifactCategory]
-  val LOG = "LOG".asInstanceOf[ArtifactCategory]
+  inline val SCREENSHOT: "SCREENSHOT" = "SCREENSHOT"
+  inline val FILE: "FILE" = "FILE"
+  inline val LOG: "LOG" = "LOG"
 
-  @inline def values = js.Array(SCREENSHOT, FILE, LOG)
+  inline def values: js.Array[ArtifactCategory] = js.Array(SCREENSHOT, FILE, LOG)
 }
 
-@js.native
-sealed trait ArtifactType extends js.Any
+type ArtifactType = "UNKNOWN" | "SCREENSHOT" | "DEVICE_LOG" | "MESSAGE_LOG" | "VIDEO_LOG" | "RESULT_LOG" | "SERVICE_LOG" | "WEBKIT_LOG" | "INSTRUMENTATION_OUTPUT" | "EXERCISER_MONKEY_OUTPUT" | "CALABASH_JSON_OUTPUT" | "CALABASH_PRETTY_OUTPUT" | "CALABASH_STANDARD_OUTPUT" | "CALABASH_JAVA_XML_OUTPUT" | "AUTOMATION_OUTPUT" | "APPIUM_SERVER_OUTPUT" | "APPIUM_JAVA_OUTPUT" | "APPIUM_JAVA_XML_OUTPUT" | "APPIUM_PYTHON_OUTPUT" | "APPIUM_PYTHON_XML_OUTPUT" | "EXPLORER_EVENT_LOG" | "EXPLORER_SUMMARY_LOG" | "APPLICATION_CRASH_REPORT" | "XCTEST_LOG" | "VIDEO" | "CUSTOMER_ARTIFACT" | "CUSTOMER_ARTIFACT_LOG" | "TESTSPEC_OUTPUT"
 object ArtifactType {
-  val UNKNOWN = "UNKNOWN".asInstanceOf[ArtifactType]
-  val SCREENSHOT = "SCREENSHOT".asInstanceOf[ArtifactType]
-  val DEVICE_LOG = "DEVICE_LOG".asInstanceOf[ArtifactType]
-  val MESSAGE_LOG = "MESSAGE_LOG".asInstanceOf[ArtifactType]
-  val VIDEO_LOG = "VIDEO_LOG".asInstanceOf[ArtifactType]
-  val RESULT_LOG = "RESULT_LOG".asInstanceOf[ArtifactType]
-  val SERVICE_LOG = "SERVICE_LOG".asInstanceOf[ArtifactType]
-  val WEBKIT_LOG = "WEBKIT_LOG".asInstanceOf[ArtifactType]
-  val INSTRUMENTATION_OUTPUT = "INSTRUMENTATION_OUTPUT".asInstanceOf[ArtifactType]
-  val EXERCISER_MONKEY_OUTPUT = "EXERCISER_MONKEY_OUTPUT".asInstanceOf[ArtifactType]
-  val CALABASH_JSON_OUTPUT = "CALABASH_JSON_OUTPUT".asInstanceOf[ArtifactType]
-  val CALABASH_PRETTY_OUTPUT = "CALABASH_PRETTY_OUTPUT".asInstanceOf[ArtifactType]
-  val CALABASH_STANDARD_OUTPUT = "CALABASH_STANDARD_OUTPUT".asInstanceOf[ArtifactType]
-  val CALABASH_JAVA_XML_OUTPUT = "CALABASH_JAVA_XML_OUTPUT".asInstanceOf[ArtifactType]
-  val AUTOMATION_OUTPUT = "AUTOMATION_OUTPUT".asInstanceOf[ArtifactType]
-  val APPIUM_SERVER_OUTPUT = "APPIUM_SERVER_OUTPUT".asInstanceOf[ArtifactType]
-  val APPIUM_JAVA_OUTPUT = "APPIUM_JAVA_OUTPUT".asInstanceOf[ArtifactType]
-  val APPIUM_JAVA_XML_OUTPUT = "APPIUM_JAVA_XML_OUTPUT".asInstanceOf[ArtifactType]
-  val APPIUM_PYTHON_OUTPUT = "APPIUM_PYTHON_OUTPUT".asInstanceOf[ArtifactType]
-  val APPIUM_PYTHON_XML_OUTPUT = "APPIUM_PYTHON_XML_OUTPUT".asInstanceOf[ArtifactType]
-  val EXPLORER_EVENT_LOG = "EXPLORER_EVENT_LOG".asInstanceOf[ArtifactType]
-  val EXPLORER_SUMMARY_LOG = "EXPLORER_SUMMARY_LOG".asInstanceOf[ArtifactType]
-  val APPLICATION_CRASH_REPORT = "APPLICATION_CRASH_REPORT".asInstanceOf[ArtifactType]
-  val XCTEST_LOG = "XCTEST_LOG".asInstanceOf[ArtifactType]
-  val VIDEO = "VIDEO".asInstanceOf[ArtifactType]
-  val CUSTOMER_ARTIFACT = "CUSTOMER_ARTIFACT".asInstanceOf[ArtifactType]
-  val CUSTOMER_ARTIFACT_LOG = "CUSTOMER_ARTIFACT_LOG".asInstanceOf[ArtifactType]
-  val TESTSPEC_OUTPUT = "TESTSPEC_OUTPUT".asInstanceOf[ArtifactType]
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val SCREENSHOT: "SCREENSHOT" = "SCREENSHOT"
+  inline val DEVICE_LOG: "DEVICE_LOG" = "DEVICE_LOG"
+  inline val MESSAGE_LOG: "MESSAGE_LOG" = "MESSAGE_LOG"
+  inline val VIDEO_LOG: "VIDEO_LOG" = "VIDEO_LOG"
+  inline val RESULT_LOG: "RESULT_LOG" = "RESULT_LOG"
+  inline val SERVICE_LOG: "SERVICE_LOG" = "SERVICE_LOG"
+  inline val WEBKIT_LOG: "WEBKIT_LOG" = "WEBKIT_LOG"
+  inline val INSTRUMENTATION_OUTPUT: "INSTRUMENTATION_OUTPUT" = "INSTRUMENTATION_OUTPUT"
+  inline val EXERCISER_MONKEY_OUTPUT: "EXERCISER_MONKEY_OUTPUT" = "EXERCISER_MONKEY_OUTPUT"
+  inline val CALABASH_JSON_OUTPUT: "CALABASH_JSON_OUTPUT" = "CALABASH_JSON_OUTPUT"
+  inline val CALABASH_PRETTY_OUTPUT: "CALABASH_PRETTY_OUTPUT" = "CALABASH_PRETTY_OUTPUT"
+  inline val CALABASH_STANDARD_OUTPUT: "CALABASH_STANDARD_OUTPUT" = "CALABASH_STANDARD_OUTPUT"
+  inline val CALABASH_JAVA_XML_OUTPUT: "CALABASH_JAVA_XML_OUTPUT" = "CALABASH_JAVA_XML_OUTPUT"
+  inline val AUTOMATION_OUTPUT: "AUTOMATION_OUTPUT" = "AUTOMATION_OUTPUT"
+  inline val APPIUM_SERVER_OUTPUT: "APPIUM_SERVER_OUTPUT" = "APPIUM_SERVER_OUTPUT"
+  inline val APPIUM_JAVA_OUTPUT: "APPIUM_JAVA_OUTPUT" = "APPIUM_JAVA_OUTPUT"
+  inline val APPIUM_JAVA_XML_OUTPUT: "APPIUM_JAVA_XML_OUTPUT" = "APPIUM_JAVA_XML_OUTPUT"
+  inline val APPIUM_PYTHON_OUTPUT: "APPIUM_PYTHON_OUTPUT" = "APPIUM_PYTHON_OUTPUT"
+  inline val APPIUM_PYTHON_XML_OUTPUT: "APPIUM_PYTHON_XML_OUTPUT" = "APPIUM_PYTHON_XML_OUTPUT"
+  inline val EXPLORER_EVENT_LOG: "EXPLORER_EVENT_LOG" = "EXPLORER_EVENT_LOG"
+  inline val EXPLORER_SUMMARY_LOG: "EXPLORER_SUMMARY_LOG" = "EXPLORER_SUMMARY_LOG"
+  inline val APPLICATION_CRASH_REPORT: "APPLICATION_CRASH_REPORT" = "APPLICATION_CRASH_REPORT"
+  inline val XCTEST_LOG: "XCTEST_LOG" = "XCTEST_LOG"
+  inline val VIDEO: "VIDEO" = "VIDEO"
+  inline val CUSTOMER_ARTIFACT: "CUSTOMER_ARTIFACT" = "CUSTOMER_ARTIFACT"
+  inline val CUSTOMER_ARTIFACT_LOG: "CUSTOMER_ARTIFACT_LOG" = "CUSTOMER_ARTIFACT_LOG"
+  inline val TESTSPEC_OUTPUT: "TESTSPEC_OUTPUT" = "TESTSPEC_OUTPUT"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[ArtifactType] = js.Array(
     UNKNOWN,
     SCREENSHOT,
     DEVICE_LOG,
@@ -77,41 +74,38 @@ object ArtifactType {
   )
 }
 
-@js.native
-sealed trait BillingMethod extends js.Any
+type BillingMethod = "METERED" | "UNMETERED"
 object BillingMethod {
-  val METERED = "METERED".asInstanceOf[BillingMethod]
-  val UNMETERED = "UNMETERED".asInstanceOf[BillingMethod]
+  inline val METERED: "METERED" = "METERED"
+  inline val UNMETERED: "UNMETERED" = "UNMETERED"
 
-  @inline def values = js.Array(METERED, UNMETERED)
+  inline def values: js.Array[BillingMethod] = js.Array(METERED, UNMETERED)
 }
 
-@js.native
-sealed trait CurrencyCode extends js.Any
+type CurrencyCode = "USD"
 object CurrencyCode {
-  val USD = "USD".asInstanceOf[CurrencyCode]
+  inline val USD: "USD" = "USD"
 
-  @inline def values = js.Array(USD)
+  inline def values: js.Array[CurrencyCode] = js.Array(USD)
 }
 
-@js.native
-sealed trait DeviceAttribute extends js.Any
+type DeviceAttribute = "ARN" | "PLATFORM" | "FORM_FACTOR" | "MANUFACTURER" | "REMOTE_ACCESS_ENABLED" | "REMOTE_DEBUG_ENABLED" | "APPIUM_VERSION" | "INSTANCE_ARN" | "INSTANCE_LABELS" | "FLEET_TYPE" | "OS_VERSION" | "MODEL" | "AVAILABILITY"
 object DeviceAttribute {
-  val ARN = "ARN".asInstanceOf[DeviceAttribute]
-  val PLATFORM = "PLATFORM".asInstanceOf[DeviceAttribute]
-  val FORM_FACTOR = "FORM_FACTOR".asInstanceOf[DeviceAttribute]
-  val MANUFACTURER = "MANUFACTURER".asInstanceOf[DeviceAttribute]
-  val REMOTE_ACCESS_ENABLED = "REMOTE_ACCESS_ENABLED".asInstanceOf[DeviceAttribute]
-  val REMOTE_DEBUG_ENABLED = "REMOTE_DEBUG_ENABLED".asInstanceOf[DeviceAttribute]
-  val APPIUM_VERSION = "APPIUM_VERSION".asInstanceOf[DeviceAttribute]
-  val INSTANCE_ARN = "INSTANCE_ARN".asInstanceOf[DeviceAttribute]
-  val INSTANCE_LABELS = "INSTANCE_LABELS".asInstanceOf[DeviceAttribute]
-  val FLEET_TYPE = "FLEET_TYPE".asInstanceOf[DeviceAttribute]
-  val OS_VERSION = "OS_VERSION".asInstanceOf[DeviceAttribute]
-  val MODEL = "MODEL".asInstanceOf[DeviceAttribute]
-  val AVAILABILITY = "AVAILABILITY".asInstanceOf[DeviceAttribute]
+  inline val ARN: "ARN" = "ARN"
+  inline val PLATFORM: "PLATFORM" = "PLATFORM"
+  inline val FORM_FACTOR: "FORM_FACTOR" = "FORM_FACTOR"
+  inline val MANUFACTURER: "MANUFACTURER" = "MANUFACTURER"
+  inline val REMOTE_ACCESS_ENABLED: "REMOTE_ACCESS_ENABLED" = "REMOTE_ACCESS_ENABLED"
+  inline val REMOTE_DEBUG_ENABLED: "REMOTE_DEBUG_ENABLED" = "REMOTE_DEBUG_ENABLED"
+  inline val APPIUM_VERSION: "APPIUM_VERSION" = "APPIUM_VERSION"
+  inline val INSTANCE_ARN: "INSTANCE_ARN" = "INSTANCE_ARN"
+  inline val INSTANCE_LABELS: "INSTANCE_LABELS" = "INSTANCE_LABELS"
+  inline val FLEET_TYPE: "FLEET_TYPE" = "FLEET_TYPE"
+  inline val OS_VERSION: "OS_VERSION" = "OS_VERSION"
+  inline val MODEL: "MODEL" = "MODEL"
+  inline val AVAILABILITY: "AVAILABILITY" = "AVAILABILITY"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[DeviceAttribute] = js.Array(
     ARN,
     PLATFORM,
     FORM_FACTOR,
@@ -128,34 +122,32 @@ object DeviceAttribute {
   )
 }
 
-@js.native
-sealed trait DeviceAvailability extends js.Any
+type DeviceAvailability = "TEMPORARY_NOT_AVAILABLE" | "BUSY" | "AVAILABLE" | "HIGHLY_AVAILABLE"
 object DeviceAvailability {
-  val TEMPORARY_NOT_AVAILABLE = "TEMPORARY_NOT_AVAILABLE".asInstanceOf[DeviceAvailability]
-  val BUSY = "BUSY".asInstanceOf[DeviceAvailability]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[DeviceAvailability]
-  val HIGHLY_AVAILABLE = "HIGHLY_AVAILABLE".asInstanceOf[DeviceAvailability]
+  inline val TEMPORARY_NOT_AVAILABLE: "TEMPORARY_NOT_AVAILABLE" = "TEMPORARY_NOT_AVAILABLE"
+  inline val BUSY: "BUSY" = "BUSY"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val HIGHLY_AVAILABLE: "HIGHLY_AVAILABLE" = "HIGHLY_AVAILABLE"
 
-  @inline def values = js.Array(TEMPORARY_NOT_AVAILABLE, BUSY, AVAILABLE, HIGHLY_AVAILABLE)
+  inline def values: js.Array[DeviceAvailability] = js.Array(TEMPORARY_NOT_AVAILABLE, BUSY, AVAILABLE, HIGHLY_AVAILABLE)
 }
 
-@js.native
-sealed trait DeviceFilterAttribute extends js.Any
+type DeviceFilterAttribute = "ARN" | "PLATFORM" | "OS_VERSION" | "MODEL" | "AVAILABILITY" | "FORM_FACTOR" | "MANUFACTURER" | "REMOTE_ACCESS_ENABLED" | "REMOTE_DEBUG_ENABLED" | "INSTANCE_ARN" | "INSTANCE_LABELS" | "FLEET_TYPE"
 object DeviceFilterAttribute {
-  val ARN = "ARN".asInstanceOf[DeviceFilterAttribute]
-  val PLATFORM = "PLATFORM".asInstanceOf[DeviceFilterAttribute]
-  val OS_VERSION = "OS_VERSION".asInstanceOf[DeviceFilterAttribute]
-  val MODEL = "MODEL".asInstanceOf[DeviceFilterAttribute]
-  val AVAILABILITY = "AVAILABILITY".asInstanceOf[DeviceFilterAttribute]
-  val FORM_FACTOR = "FORM_FACTOR".asInstanceOf[DeviceFilterAttribute]
-  val MANUFACTURER = "MANUFACTURER".asInstanceOf[DeviceFilterAttribute]
-  val REMOTE_ACCESS_ENABLED = "REMOTE_ACCESS_ENABLED".asInstanceOf[DeviceFilterAttribute]
-  val REMOTE_DEBUG_ENABLED = "REMOTE_DEBUG_ENABLED".asInstanceOf[DeviceFilterAttribute]
-  val INSTANCE_ARN = "INSTANCE_ARN".asInstanceOf[DeviceFilterAttribute]
-  val INSTANCE_LABELS = "INSTANCE_LABELS".asInstanceOf[DeviceFilterAttribute]
-  val FLEET_TYPE = "FLEET_TYPE".asInstanceOf[DeviceFilterAttribute]
+  inline val ARN: "ARN" = "ARN"
+  inline val PLATFORM: "PLATFORM" = "PLATFORM"
+  inline val OS_VERSION: "OS_VERSION" = "OS_VERSION"
+  inline val MODEL: "MODEL" = "MODEL"
+  inline val AVAILABILITY: "AVAILABILITY" = "AVAILABILITY"
+  inline val FORM_FACTOR: "FORM_FACTOR" = "FORM_FACTOR"
+  inline val MANUFACTURER: "MANUFACTURER" = "MANUFACTURER"
+  inline val REMOTE_ACCESS_ENABLED: "REMOTE_ACCESS_ENABLED" = "REMOTE_ACCESS_ENABLED"
+  inline val REMOTE_DEBUG_ENABLED: "REMOTE_DEBUG_ENABLED" = "REMOTE_DEBUG_ENABLED"
+  inline val INSTANCE_ARN: "INSTANCE_ARN" = "INSTANCE_ARN"
+  inline val INSTANCE_LABELS: "INSTANCE_LABELS" = "INSTANCE_LABELS"
+  inline val FLEET_TYPE: "FLEET_TYPE" = "FLEET_TYPE"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[DeviceFilterAttribute] = js.Array(
     ARN,
     PLATFORM,
     OS_VERSION,
@@ -171,165 +163,151 @@ object DeviceFilterAttribute {
   )
 }
 
-@js.native
-sealed trait DeviceFormFactor extends js.Any
+type DeviceFormFactor = "PHONE" | "TABLET"
 object DeviceFormFactor {
-  val PHONE = "PHONE".asInstanceOf[DeviceFormFactor]
-  val TABLET = "TABLET".asInstanceOf[DeviceFormFactor]
+  inline val PHONE: "PHONE" = "PHONE"
+  inline val TABLET: "TABLET" = "TABLET"
 
-  @inline def values = js.Array(PHONE, TABLET)
+  inline def values: js.Array[DeviceFormFactor] = js.Array(PHONE, TABLET)
 }
 
-@js.native
-sealed trait DevicePlatform extends js.Any
+type DevicePlatform = "ANDROID" | "IOS"
 object DevicePlatform {
-  val ANDROID = "ANDROID".asInstanceOf[DevicePlatform]
-  val IOS = "IOS".asInstanceOf[DevicePlatform]
+  inline val ANDROID: "ANDROID" = "ANDROID"
+  inline val IOS: "IOS" = "IOS"
 
-  @inline def values = js.Array(ANDROID, IOS)
+  inline def values: js.Array[DevicePlatform] = js.Array(ANDROID, IOS)
 }
 
-@js.native
-sealed trait DevicePoolType extends js.Any
+type DevicePoolType = "CURATED" | "PRIVATE"
 object DevicePoolType {
-  val CURATED = "CURATED".asInstanceOf[DevicePoolType]
-  val PRIVATE = "PRIVATE".asInstanceOf[DevicePoolType]
+  inline val CURATED: "CURATED" = "CURATED"
+  inline val PRIVATE: "PRIVATE" = "PRIVATE"
 
-  @inline def values = js.Array(CURATED, PRIVATE)
+  inline def values: js.Array[DevicePoolType] = js.Array(CURATED, PRIVATE)
 }
 
-@js.native
-sealed trait ExecutionResult extends js.Any
+type ExecutionResult = "PENDING" | "PASSED" | "WARNED" | "FAILED" | "SKIPPED" | "ERRORED" | "STOPPED"
 object ExecutionResult {
-  val PENDING = "PENDING".asInstanceOf[ExecutionResult]
-  val PASSED = "PASSED".asInstanceOf[ExecutionResult]
-  val WARNED = "WARNED".asInstanceOf[ExecutionResult]
-  val FAILED = "FAILED".asInstanceOf[ExecutionResult]
-  val SKIPPED = "SKIPPED".asInstanceOf[ExecutionResult]
-  val ERRORED = "ERRORED".asInstanceOf[ExecutionResult]
-  val STOPPED = "STOPPED".asInstanceOf[ExecutionResult]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val PASSED: "PASSED" = "PASSED"
+  inline val WARNED: "WARNED" = "WARNED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SKIPPED: "SKIPPED" = "SKIPPED"
+  inline val ERRORED: "ERRORED" = "ERRORED"
+  inline val STOPPED: "STOPPED" = "STOPPED"
 
-  @inline def values = js.Array(PENDING, PASSED, WARNED, FAILED, SKIPPED, ERRORED, STOPPED)
+  inline def values: js.Array[ExecutionResult] = js.Array(PENDING, PASSED, WARNED, FAILED, SKIPPED, ERRORED, STOPPED)
 }
 
-@js.native
-sealed trait ExecutionResultCode extends js.Any
+type ExecutionResultCode = "PARSING_FAILED" | "VPC_ENDPOINT_SETUP_FAILED"
 object ExecutionResultCode {
-  val PARSING_FAILED = "PARSING_FAILED".asInstanceOf[ExecutionResultCode]
-  val VPC_ENDPOINT_SETUP_FAILED = "VPC_ENDPOINT_SETUP_FAILED".asInstanceOf[ExecutionResultCode]
+  inline val PARSING_FAILED: "PARSING_FAILED" = "PARSING_FAILED"
+  inline val VPC_ENDPOINT_SETUP_FAILED: "VPC_ENDPOINT_SETUP_FAILED" = "VPC_ENDPOINT_SETUP_FAILED"
 
-  @inline def values = js.Array(PARSING_FAILED, VPC_ENDPOINT_SETUP_FAILED)
+  inline def values: js.Array[ExecutionResultCode] = js.Array(PARSING_FAILED, VPC_ENDPOINT_SETUP_FAILED)
 }
 
-@js.native
-sealed trait ExecutionStatus extends js.Any
+type ExecutionStatus = "PENDING" | "PENDING_CONCURRENCY" | "PENDING_DEVICE" | "PROCESSING" | "SCHEDULING" | "PREPARING" | "RUNNING" | "COMPLETED" | "STOPPING"
 object ExecutionStatus {
-  val PENDING = "PENDING".asInstanceOf[ExecutionStatus]
-  val PENDING_CONCURRENCY = "PENDING_CONCURRENCY".asInstanceOf[ExecutionStatus]
-  val PENDING_DEVICE = "PENDING_DEVICE".asInstanceOf[ExecutionStatus]
-  val PROCESSING = "PROCESSING".asInstanceOf[ExecutionStatus]
-  val SCHEDULING = "SCHEDULING".asInstanceOf[ExecutionStatus]
-  val PREPARING = "PREPARING".asInstanceOf[ExecutionStatus]
-  val RUNNING = "RUNNING".asInstanceOf[ExecutionStatus]
-  val COMPLETED = "COMPLETED".asInstanceOf[ExecutionStatus]
-  val STOPPING = "STOPPING".asInstanceOf[ExecutionStatus]
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val PENDING_CONCURRENCY: "PENDING_CONCURRENCY" = "PENDING_CONCURRENCY"
+  inline val PENDING_DEVICE: "PENDING_DEVICE" = "PENDING_DEVICE"
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val SCHEDULING: "SCHEDULING" = "SCHEDULING"
+  inline val PREPARING: "PREPARING" = "PREPARING"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val STOPPING: "STOPPING" = "STOPPING"
 
-  @inline def values = js.Array(PENDING, PENDING_CONCURRENCY, PENDING_DEVICE, PROCESSING, SCHEDULING, PREPARING, RUNNING, COMPLETED, STOPPING)
+  inline def values: js.Array[ExecutionStatus] = js.Array(PENDING, PENDING_CONCURRENCY, PENDING_DEVICE, PROCESSING, SCHEDULING, PREPARING, RUNNING, COMPLETED, STOPPING)
 }
 
-@js.native
-sealed trait InstanceStatus extends js.Any
+type InstanceStatus = "IN_USE" | "PREPARING" | "AVAILABLE" | "NOT_AVAILABLE"
 object InstanceStatus {
-  val IN_USE = "IN_USE".asInstanceOf[InstanceStatus]
-  val PREPARING = "PREPARING".asInstanceOf[InstanceStatus]
-  val AVAILABLE = "AVAILABLE".asInstanceOf[InstanceStatus]
-  val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[InstanceStatus]
+  inline val IN_USE: "IN_USE" = "IN_USE"
+  inline val PREPARING: "PREPARING" = "PREPARING"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+  inline val NOT_AVAILABLE: "NOT_AVAILABLE" = "NOT_AVAILABLE"
 
-  @inline def values = js.Array(IN_USE, PREPARING, AVAILABLE, NOT_AVAILABLE)
+  inline def values: js.Array[InstanceStatus] = js.Array(IN_USE, PREPARING, AVAILABLE, NOT_AVAILABLE)
 }
 
-@js.native
-sealed trait InteractionMode extends js.Any
+type InteractionMode = "INTERACTIVE" | "NO_VIDEO" | "VIDEO_ONLY"
 object InteractionMode {
-  val INTERACTIVE = "INTERACTIVE".asInstanceOf[InteractionMode]
-  val NO_VIDEO = "NO_VIDEO".asInstanceOf[InteractionMode]
-  val VIDEO_ONLY = "VIDEO_ONLY".asInstanceOf[InteractionMode]
+  inline val INTERACTIVE: "INTERACTIVE" = "INTERACTIVE"
+  inline val NO_VIDEO: "NO_VIDEO" = "NO_VIDEO"
+  inline val VIDEO_ONLY: "VIDEO_ONLY" = "VIDEO_ONLY"
 
-  @inline def values = js.Array(INTERACTIVE, NO_VIDEO, VIDEO_ONLY)
+  inline def values: js.Array[InteractionMode] = js.Array(INTERACTIVE, NO_VIDEO, VIDEO_ONLY)
 }
 
-@js.native
-sealed trait NetworkProfileType extends js.Any
+type NetworkProfileType = "CURATED" | "PRIVATE"
 object NetworkProfileType {
-  val CURATED = "CURATED".asInstanceOf[NetworkProfileType]
-  val PRIVATE = "PRIVATE".asInstanceOf[NetworkProfileType]
+  inline val CURATED: "CURATED" = "CURATED"
+  inline val PRIVATE: "PRIVATE" = "PRIVATE"
 
-  @inline def values = js.Array(CURATED, PRIVATE)
+  inline def values: js.Array[NetworkProfileType] = js.Array(CURATED, PRIVATE)
 }
 
-@js.native
-sealed trait OfferingTransactionType extends js.Any
+type OfferingTransactionType = "PURCHASE" | "RENEW" | "SYSTEM"
 object OfferingTransactionType {
-  val PURCHASE = "PURCHASE".asInstanceOf[OfferingTransactionType]
-  val RENEW = "RENEW".asInstanceOf[OfferingTransactionType]
-  val SYSTEM = "SYSTEM".asInstanceOf[OfferingTransactionType]
+  inline val PURCHASE: "PURCHASE" = "PURCHASE"
+  inline val RENEW: "RENEW" = "RENEW"
+  inline val SYSTEM: "SYSTEM" = "SYSTEM"
 
-  @inline def values = js.Array(PURCHASE, RENEW, SYSTEM)
+  inline def values: js.Array[OfferingTransactionType] = js.Array(PURCHASE, RENEW, SYSTEM)
 }
 
-@js.native
-sealed trait OfferingType extends js.Any
+type OfferingType = "RECURRING"
 object OfferingType {
-  val RECURRING = "RECURRING".asInstanceOf[OfferingType]
+  inline val RECURRING: "RECURRING" = "RECURRING"
 
-  @inline def values = js.Array(RECURRING)
+  inline def values: js.Array[OfferingType] = js.Array(RECURRING)
 }
 
-@js.native
-sealed trait RecurringChargeFrequency extends js.Any
+type RecurringChargeFrequency = "MONTHLY"
 object RecurringChargeFrequency {
-  val MONTHLY = "MONTHLY".asInstanceOf[RecurringChargeFrequency]
+  inline val MONTHLY: "MONTHLY" = "MONTHLY"
 
-  @inline def values = js.Array(MONTHLY)
+  inline def values: js.Array[RecurringChargeFrequency] = js.Array(MONTHLY)
 }
 
-@js.native
-sealed trait RuleOperator extends js.Any
+type RuleOperator = "EQUALS" | "LESS_THAN" | "LESS_THAN_OR_EQUALS" | "GREATER_THAN" | "GREATER_THAN_OR_EQUALS" | "IN" | "NOT_IN" | "CONTAINS"
 object RuleOperator {
-  val EQUALS = "EQUALS".asInstanceOf[RuleOperator]
-  val LESS_THAN = "LESS_THAN".asInstanceOf[RuleOperator]
-  val LESS_THAN_OR_EQUALS = "LESS_THAN_OR_EQUALS".asInstanceOf[RuleOperator]
-  val GREATER_THAN = "GREATER_THAN".asInstanceOf[RuleOperator]
-  val GREATER_THAN_OR_EQUALS = "GREATER_THAN_OR_EQUALS".asInstanceOf[RuleOperator]
-  val IN = "IN".asInstanceOf[RuleOperator]
-  val NOT_IN = "NOT_IN".asInstanceOf[RuleOperator]
-  val CONTAINS = "CONTAINS".asInstanceOf[RuleOperator]
+  inline val EQUALS: "EQUALS" = "EQUALS"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val LESS_THAN_OR_EQUALS: "LESS_THAN_OR_EQUALS" = "LESS_THAN_OR_EQUALS"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val GREATER_THAN_OR_EQUALS: "GREATER_THAN_OR_EQUALS" = "GREATER_THAN_OR_EQUALS"
+  inline val IN: "IN" = "IN"
+  inline val NOT_IN: "NOT_IN" = "NOT_IN"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
 
-  @inline def values = js.Array(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
+  inline def values: js.Array[RuleOperator] = js.Array(EQUALS, LESS_THAN, LESS_THAN_OR_EQUALS, GREATER_THAN, GREATER_THAN_OR_EQUALS, IN, NOT_IN, CONTAINS)
 }
 
-@js.native
-sealed trait SampleType extends js.Any
+type SampleType = "CPU" | "MEMORY" | "THREADS" | "RX_RATE" | "TX_RATE" | "RX" | "TX" | "NATIVE_FRAMES" | "NATIVE_FPS" | "NATIVE_MIN_DRAWTIME" | "NATIVE_AVG_DRAWTIME" | "NATIVE_MAX_DRAWTIME" | "OPENGL_FRAMES" | "OPENGL_FPS" | "OPENGL_MIN_DRAWTIME" | "OPENGL_AVG_DRAWTIME" | "OPENGL_MAX_DRAWTIME"
 object SampleType {
-  val CPU = "CPU".asInstanceOf[SampleType]
-  val MEMORY = "MEMORY".asInstanceOf[SampleType]
-  val THREADS = "THREADS".asInstanceOf[SampleType]
-  val RX_RATE = "RX_RATE".asInstanceOf[SampleType]
-  val TX_RATE = "TX_RATE".asInstanceOf[SampleType]
-  val RX = "RX".asInstanceOf[SampleType]
-  val TX = "TX".asInstanceOf[SampleType]
-  val NATIVE_FRAMES = "NATIVE_FRAMES".asInstanceOf[SampleType]
-  val NATIVE_FPS = "NATIVE_FPS".asInstanceOf[SampleType]
-  val NATIVE_MIN_DRAWTIME = "NATIVE_MIN_DRAWTIME".asInstanceOf[SampleType]
-  val NATIVE_AVG_DRAWTIME = "NATIVE_AVG_DRAWTIME".asInstanceOf[SampleType]
-  val NATIVE_MAX_DRAWTIME = "NATIVE_MAX_DRAWTIME".asInstanceOf[SampleType]
-  val OPENGL_FRAMES = "OPENGL_FRAMES".asInstanceOf[SampleType]
-  val OPENGL_FPS = "OPENGL_FPS".asInstanceOf[SampleType]
-  val OPENGL_MIN_DRAWTIME = "OPENGL_MIN_DRAWTIME".asInstanceOf[SampleType]
-  val OPENGL_AVG_DRAWTIME = "OPENGL_AVG_DRAWTIME".asInstanceOf[SampleType]
-  val OPENGL_MAX_DRAWTIME = "OPENGL_MAX_DRAWTIME".asInstanceOf[SampleType]
+  inline val CPU: "CPU" = "CPU"
+  inline val MEMORY: "MEMORY" = "MEMORY"
+  inline val THREADS: "THREADS" = "THREADS"
+  inline val RX_RATE: "RX_RATE" = "RX_RATE"
+  inline val TX_RATE: "TX_RATE" = "TX_RATE"
+  inline val RX: "RX" = "RX"
+  inline val TX: "TX" = "TX"
+  inline val NATIVE_FRAMES: "NATIVE_FRAMES" = "NATIVE_FRAMES"
+  inline val NATIVE_FPS: "NATIVE_FPS" = "NATIVE_FPS"
+  inline val NATIVE_MIN_DRAWTIME: "NATIVE_MIN_DRAWTIME" = "NATIVE_MIN_DRAWTIME"
+  inline val NATIVE_AVG_DRAWTIME: "NATIVE_AVG_DRAWTIME" = "NATIVE_AVG_DRAWTIME"
+  inline val NATIVE_MAX_DRAWTIME: "NATIVE_MAX_DRAWTIME" = "NATIVE_MAX_DRAWTIME"
+  inline val OPENGL_FRAMES: "OPENGL_FRAMES" = "OPENGL_FRAMES"
+  inline val OPENGL_FPS: "OPENGL_FPS" = "OPENGL_FPS"
+  inline val OPENGL_MIN_DRAWTIME: "OPENGL_MIN_DRAWTIME" = "OPENGL_MIN_DRAWTIME"
+  inline val OPENGL_AVG_DRAWTIME: "OPENGL_AVG_DRAWTIME" = "OPENGL_AVG_DRAWTIME"
+  inline val OPENGL_MAX_DRAWTIME: "OPENGL_MAX_DRAWTIME" = "OPENGL_MAX_DRAWTIME"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[SampleType] = js.Array(
     CPU,
     MEMORY,
     THREADS,
@@ -350,61 +328,57 @@ object SampleType {
   )
 }
 
-@js.native
-sealed trait TestGridSessionArtifactCategory extends js.Any
+type TestGridSessionArtifactCategory = "VIDEO" | "LOG"
 object TestGridSessionArtifactCategory {
-  val VIDEO = "VIDEO".asInstanceOf[TestGridSessionArtifactCategory]
-  val LOG = "LOG".asInstanceOf[TestGridSessionArtifactCategory]
+  inline val VIDEO: "VIDEO" = "VIDEO"
+  inline val LOG: "LOG" = "LOG"
 
-  @inline def values = js.Array(VIDEO, LOG)
+  inline def values: js.Array[TestGridSessionArtifactCategory] = js.Array(VIDEO, LOG)
 }
 
-@js.native
-sealed trait TestGridSessionArtifactType extends js.Any
+type TestGridSessionArtifactType = "UNKNOWN" | "VIDEO" | "SELENIUM_LOG"
 object TestGridSessionArtifactType {
-  val UNKNOWN = "UNKNOWN".asInstanceOf[TestGridSessionArtifactType]
-  val VIDEO = "VIDEO".asInstanceOf[TestGridSessionArtifactType]
-  val SELENIUM_LOG = "SELENIUM_LOG".asInstanceOf[TestGridSessionArtifactType]
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+  inline val VIDEO: "VIDEO" = "VIDEO"
+  inline val SELENIUM_LOG: "SELENIUM_LOG" = "SELENIUM_LOG"
 
-  @inline def values = js.Array(UNKNOWN, VIDEO, SELENIUM_LOG)
+  inline def values: js.Array[TestGridSessionArtifactType] = js.Array(UNKNOWN, VIDEO, SELENIUM_LOG)
 }
 
-@js.native
-sealed trait TestGridSessionStatus extends js.Any
+type TestGridSessionStatus = "ACTIVE" | "CLOSED" | "ERRORED"
 object TestGridSessionStatus {
-  val ACTIVE = "ACTIVE".asInstanceOf[TestGridSessionStatus]
-  val CLOSED = "CLOSED".asInstanceOf[TestGridSessionStatus]
-  val ERRORED = "ERRORED".asInstanceOf[TestGridSessionStatus]
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val CLOSED: "CLOSED" = "CLOSED"
+  inline val ERRORED: "ERRORED" = "ERRORED"
 
-  @inline def values = js.Array(ACTIVE, CLOSED, ERRORED)
+  inline def values: js.Array[TestGridSessionStatus] = js.Array(ACTIVE, CLOSED, ERRORED)
 }
 
-@js.native
-sealed trait TestType extends js.Any
+type TestType = "BUILTIN_FUZZ" | "BUILTIN_EXPLORER" | "WEB_PERFORMANCE_PROFILE" | "APPIUM_JAVA_JUNIT" | "APPIUM_JAVA_TESTNG" | "APPIUM_PYTHON" | "APPIUM_NODE" | "APPIUM_RUBY" | "APPIUM_WEB_JAVA_JUNIT" | "APPIUM_WEB_JAVA_TESTNG" | "APPIUM_WEB_PYTHON" | "APPIUM_WEB_NODE" | "APPIUM_WEB_RUBY" | "CALABASH" | "INSTRUMENTATION" | "UIAUTOMATION" | "UIAUTOMATOR" | "XCTEST" | "XCTEST_UI" | "REMOTE_ACCESS_RECORD" | "REMOTE_ACCESS_REPLAY"
 object TestType {
-  val BUILTIN_FUZZ = "BUILTIN_FUZZ".asInstanceOf[TestType]
-  val BUILTIN_EXPLORER = "BUILTIN_EXPLORER".asInstanceOf[TestType]
-  val WEB_PERFORMANCE_PROFILE = "WEB_PERFORMANCE_PROFILE".asInstanceOf[TestType]
-  val APPIUM_JAVA_JUNIT = "APPIUM_JAVA_JUNIT".asInstanceOf[TestType]
-  val APPIUM_JAVA_TESTNG = "APPIUM_JAVA_TESTNG".asInstanceOf[TestType]
-  val APPIUM_PYTHON = "APPIUM_PYTHON".asInstanceOf[TestType]
-  val APPIUM_NODE = "APPIUM_NODE".asInstanceOf[TestType]
-  val APPIUM_RUBY = "APPIUM_RUBY".asInstanceOf[TestType]
-  val APPIUM_WEB_JAVA_JUNIT = "APPIUM_WEB_JAVA_JUNIT".asInstanceOf[TestType]
-  val APPIUM_WEB_JAVA_TESTNG = "APPIUM_WEB_JAVA_TESTNG".asInstanceOf[TestType]
-  val APPIUM_WEB_PYTHON = "APPIUM_WEB_PYTHON".asInstanceOf[TestType]
-  val APPIUM_WEB_NODE = "APPIUM_WEB_NODE".asInstanceOf[TestType]
-  val APPIUM_WEB_RUBY = "APPIUM_WEB_RUBY".asInstanceOf[TestType]
-  val CALABASH = "CALABASH".asInstanceOf[TestType]
-  val INSTRUMENTATION = "INSTRUMENTATION".asInstanceOf[TestType]
-  val UIAUTOMATION = "UIAUTOMATION".asInstanceOf[TestType]
-  val UIAUTOMATOR = "UIAUTOMATOR".asInstanceOf[TestType]
-  val XCTEST = "XCTEST".asInstanceOf[TestType]
-  val XCTEST_UI = "XCTEST_UI".asInstanceOf[TestType]
-  val REMOTE_ACCESS_RECORD = "REMOTE_ACCESS_RECORD".asInstanceOf[TestType]
-  val REMOTE_ACCESS_REPLAY = "REMOTE_ACCESS_REPLAY".asInstanceOf[TestType]
+  inline val BUILTIN_FUZZ: "BUILTIN_FUZZ" = "BUILTIN_FUZZ"
+  inline val BUILTIN_EXPLORER: "BUILTIN_EXPLORER" = "BUILTIN_EXPLORER"
+  inline val WEB_PERFORMANCE_PROFILE: "WEB_PERFORMANCE_PROFILE" = "WEB_PERFORMANCE_PROFILE"
+  inline val APPIUM_JAVA_JUNIT: "APPIUM_JAVA_JUNIT" = "APPIUM_JAVA_JUNIT"
+  inline val APPIUM_JAVA_TESTNG: "APPIUM_JAVA_TESTNG" = "APPIUM_JAVA_TESTNG"
+  inline val APPIUM_PYTHON: "APPIUM_PYTHON" = "APPIUM_PYTHON"
+  inline val APPIUM_NODE: "APPIUM_NODE" = "APPIUM_NODE"
+  inline val APPIUM_RUBY: "APPIUM_RUBY" = "APPIUM_RUBY"
+  inline val APPIUM_WEB_JAVA_JUNIT: "APPIUM_WEB_JAVA_JUNIT" = "APPIUM_WEB_JAVA_JUNIT"
+  inline val APPIUM_WEB_JAVA_TESTNG: "APPIUM_WEB_JAVA_TESTNG" = "APPIUM_WEB_JAVA_TESTNG"
+  inline val APPIUM_WEB_PYTHON: "APPIUM_WEB_PYTHON" = "APPIUM_WEB_PYTHON"
+  inline val APPIUM_WEB_NODE: "APPIUM_WEB_NODE" = "APPIUM_WEB_NODE"
+  inline val APPIUM_WEB_RUBY: "APPIUM_WEB_RUBY" = "APPIUM_WEB_RUBY"
+  inline val CALABASH: "CALABASH" = "CALABASH"
+  inline val INSTRUMENTATION: "INSTRUMENTATION" = "INSTRUMENTATION"
+  inline val UIAUTOMATION: "UIAUTOMATION" = "UIAUTOMATION"
+  inline val UIAUTOMATOR: "UIAUTOMATOR" = "UIAUTOMATOR"
+  inline val XCTEST: "XCTEST" = "XCTEST"
+  inline val XCTEST_UI: "XCTEST_UI" = "XCTEST_UI"
+  inline val REMOTE_ACCESS_RECORD: "REMOTE_ACCESS_RECORD" = "REMOTE_ACCESS_RECORD"
+  inline val REMOTE_ACCESS_REPLAY: "REMOTE_ACCESS_REPLAY" = "REMOTE_ACCESS_REPLAY"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[TestType] = js.Array(
     BUILTIN_FUZZ,
     BUILTIN_EXPLORER,
     WEB_PERFORMANCE_PROFILE,
@@ -429,63 +403,60 @@ object TestType {
   )
 }
 
-@js.native
-sealed trait UploadCategory extends js.Any
+type UploadCategory = "CURATED" | "PRIVATE"
 object UploadCategory {
-  val CURATED = "CURATED".asInstanceOf[UploadCategory]
-  val PRIVATE = "PRIVATE".asInstanceOf[UploadCategory]
+  inline val CURATED: "CURATED" = "CURATED"
+  inline val PRIVATE: "PRIVATE" = "PRIVATE"
 
-  @inline def values = js.Array(CURATED, PRIVATE)
+  inline def values: js.Array[UploadCategory] = js.Array(CURATED, PRIVATE)
 }
 
-@js.native
-sealed trait UploadStatus extends js.Any
+type UploadStatus = "INITIALIZED" | "PROCESSING" | "SUCCEEDED" | "FAILED"
 object UploadStatus {
-  val INITIALIZED = "INITIALIZED".asInstanceOf[UploadStatus]
-  val PROCESSING = "PROCESSING".asInstanceOf[UploadStatus]
-  val SUCCEEDED = "SUCCEEDED".asInstanceOf[UploadStatus]
-  val FAILED = "FAILED".asInstanceOf[UploadStatus]
+  inline val INITIALIZED: "INITIALIZED" = "INITIALIZED"
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
 
-  @inline def values = js.Array(INITIALIZED, PROCESSING, SUCCEEDED, FAILED)
+  inline def values: js.Array[UploadStatus] = js.Array(INITIALIZED, PROCESSING, SUCCEEDED, FAILED)
 }
 
-@js.native
-sealed trait UploadType extends js.Any
+type UploadType = "ANDROID_APP" | "IOS_APP" | "WEB_APP" | "EXTERNAL_DATA" | "APPIUM_JAVA_JUNIT_TEST_PACKAGE" | "APPIUM_JAVA_TESTNG_TEST_PACKAGE" | "APPIUM_PYTHON_TEST_PACKAGE" | "APPIUM_NODE_TEST_PACKAGE" | "APPIUM_RUBY_TEST_PACKAGE" | "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE" | "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE" | "APPIUM_WEB_PYTHON_TEST_PACKAGE" | "APPIUM_WEB_NODE_TEST_PACKAGE" | "APPIUM_WEB_RUBY_TEST_PACKAGE" | "CALABASH_TEST_PACKAGE" | "INSTRUMENTATION_TEST_PACKAGE" | "UIAUTOMATION_TEST_PACKAGE" | "UIAUTOMATOR_TEST_PACKAGE" | "XCTEST_TEST_PACKAGE" | "XCTEST_UI_TEST_PACKAGE" | "APPIUM_JAVA_JUNIT_TEST_SPEC" | "APPIUM_JAVA_TESTNG_TEST_SPEC" | "APPIUM_PYTHON_TEST_SPEC" | "APPIUM_NODE_TEST_SPEC" | "APPIUM_RUBY_TEST_SPEC" | "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC" | "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC" | "APPIUM_WEB_PYTHON_TEST_SPEC" | "APPIUM_WEB_NODE_TEST_SPEC" | "APPIUM_WEB_RUBY_TEST_SPEC" | "INSTRUMENTATION_TEST_SPEC" | "XCTEST_UI_TEST_SPEC"
 object UploadType {
-  val ANDROID_APP = "ANDROID_APP".asInstanceOf[UploadType]
-  val IOS_APP = "IOS_APP".asInstanceOf[UploadType]
-  val WEB_APP = "WEB_APP".asInstanceOf[UploadType]
-  val EXTERNAL_DATA = "EXTERNAL_DATA".asInstanceOf[UploadType]
-  val APPIUM_JAVA_JUNIT_TEST_PACKAGE = "APPIUM_JAVA_JUNIT_TEST_PACKAGE".asInstanceOf[UploadType]
-  val APPIUM_JAVA_TESTNG_TEST_PACKAGE = "APPIUM_JAVA_TESTNG_TEST_PACKAGE".asInstanceOf[UploadType]
-  val APPIUM_PYTHON_TEST_PACKAGE = "APPIUM_PYTHON_TEST_PACKAGE".asInstanceOf[UploadType]
-  val APPIUM_NODE_TEST_PACKAGE = "APPIUM_NODE_TEST_PACKAGE".asInstanceOf[UploadType]
-  val APPIUM_RUBY_TEST_PACKAGE = "APPIUM_RUBY_TEST_PACKAGE".asInstanceOf[UploadType]
-  val APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE = "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE".asInstanceOf[UploadType]
-  val APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE = "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE".asInstanceOf[UploadType]
-  val APPIUM_WEB_PYTHON_TEST_PACKAGE = "APPIUM_WEB_PYTHON_TEST_PACKAGE".asInstanceOf[UploadType]
-  val APPIUM_WEB_NODE_TEST_PACKAGE = "APPIUM_WEB_NODE_TEST_PACKAGE".asInstanceOf[UploadType]
-  val APPIUM_WEB_RUBY_TEST_PACKAGE = "APPIUM_WEB_RUBY_TEST_PACKAGE".asInstanceOf[UploadType]
-  val CALABASH_TEST_PACKAGE = "CALABASH_TEST_PACKAGE".asInstanceOf[UploadType]
-  val INSTRUMENTATION_TEST_PACKAGE = "INSTRUMENTATION_TEST_PACKAGE".asInstanceOf[UploadType]
-  val UIAUTOMATION_TEST_PACKAGE = "UIAUTOMATION_TEST_PACKAGE".asInstanceOf[UploadType]
-  val UIAUTOMATOR_TEST_PACKAGE = "UIAUTOMATOR_TEST_PACKAGE".asInstanceOf[UploadType]
-  val XCTEST_TEST_PACKAGE = "XCTEST_TEST_PACKAGE".asInstanceOf[UploadType]
-  val XCTEST_UI_TEST_PACKAGE = "XCTEST_UI_TEST_PACKAGE".asInstanceOf[UploadType]
-  val APPIUM_JAVA_JUNIT_TEST_SPEC = "APPIUM_JAVA_JUNIT_TEST_SPEC".asInstanceOf[UploadType]
-  val APPIUM_JAVA_TESTNG_TEST_SPEC = "APPIUM_JAVA_TESTNG_TEST_SPEC".asInstanceOf[UploadType]
-  val APPIUM_PYTHON_TEST_SPEC = "APPIUM_PYTHON_TEST_SPEC".asInstanceOf[UploadType]
-  val APPIUM_NODE_TEST_SPEC = "APPIUM_NODE_TEST_SPEC".asInstanceOf[UploadType]
-  val APPIUM_RUBY_TEST_SPEC = "APPIUM_RUBY_TEST_SPEC".asInstanceOf[UploadType]
-  val APPIUM_WEB_JAVA_JUNIT_TEST_SPEC = "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC".asInstanceOf[UploadType]
-  val APPIUM_WEB_JAVA_TESTNG_TEST_SPEC = "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC".asInstanceOf[UploadType]
-  val APPIUM_WEB_PYTHON_TEST_SPEC = "APPIUM_WEB_PYTHON_TEST_SPEC".asInstanceOf[UploadType]
-  val APPIUM_WEB_NODE_TEST_SPEC = "APPIUM_WEB_NODE_TEST_SPEC".asInstanceOf[UploadType]
-  val APPIUM_WEB_RUBY_TEST_SPEC = "APPIUM_WEB_RUBY_TEST_SPEC".asInstanceOf[UploadType]
-  val INSTRUMENTATION_TEST_SPEC = "INSTRUMENTATION_TEST_SPEC".asInstanceOf[UploadType]
-  val XCTEST_UI_TEST_SPEC = "XCTEST_UI_TEST_SPEC".asInstanceOf[UploadType]
+  inline val ANDROID_APP: "ANDROID_APP" = "ANDROID_APP"
+  inline val IOS_APP: "IOS_APP" = "IOS_APP"
+  inline val WEB_APP: "WEB_APP" = "WEB_APP"
+  inline val EXTERNAL_DATA: "EXTERNAL_DATA" = "EXTERNAL_DATA"
+  inline val APPIUM_JAVA_JUNIT_TEST_PACKAGE: "APPIUM_JAVA_JUNIT_TEST_PACKAGE" = "APPIUM_JAVA_JUNIT_TEST_PACKAGE"
+  inline val APPIUM_JAVA_TESTNG_TEST_PACKAGE: "APPIUM_JAVA_TESTNG_TEST_PACKAGE" = "APPIUM_JAVA_TESTNG_TEST_PACKAGE"
+  inline val APPIUM_PYTHON_TEST_PACKAGE: "APPIUM_PYTHON_TEST_PACKAGE" = "APPIUM_PYTHON_TEST_PACKAGE"
+  inline val APPIUM_NODE_TEST_PACKAGE: "APPIUM_NODE_TEST_PACKAGE" = "APPIUM_NODE_TEST_PACKAGE"
+  inline val APPIUM_RUBY_TEST_PACKAGE: "APPIUM_RUBY_TEST_PACKAGE" = "APPIUM_RUBY_TEST_PACKAGE"
+  inline val APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE: "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE" = "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE"
+  inline val APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE: "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE" = "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE"
+  inline val APPIUM_WEB_PYTHON_TEST_PACKAGE: "APPIUM_WEB_PYTHON_TEST_PACKAGE" = "APPIUM_WEB_PYTHON_TEST_PACKAGE"
+  inline val APPIUM_WEB_NODE_TEST_PACKAGE: "APPIUM_WEB_NODE_TEST_PACKAGE" = "APPIUM_WEB_NODE_TEST_PACKAGE"
+  inline val APPIUM_WEB_RUBY_TEST_PACKAGE: "APPIUM_WEB_RUBY_TEST_PACKAGE" = "APPIUM_WEB_RUBY_TEST_PACKAGE"
+  inline val CALABASH_TEST_PACKAGE: "CALABASH_TEST_PACKAGE" = "CALABASH_TEST_PACKAGE"
+  inline val INSTRUMENTATION_TEST_PACKAGE: "INSTRUMENTATION_TEST_PACKAGE" = "INSTRUMENTATION_TEST_PACKAGE"
+  inline val UIAUTOMATION_TEST_PACKAGE: "UIAUTOMATION_TEST_PACKAGE" = "UIAUTOMATION_TEST_PACKAGE"
+  inline val UIAUTOMATOR_TEST_PACKAGE: "UIAUTOMATOR_TEST_PACKAGE" = "UIAUTOMATOR_TEST_PACKAGE"
+  inline val XCTEST_TEST_PACKAGE: "XCTEST_TEST_PACKAGE" = "XCTEST_TEST_PACKAGE"
+  inline val XCTEST_UI_TEST_PACKAGE: "XCTEST_UI_TEST_PACKAGE" = "XCTEST_UI_TEST_PACKAGE"
+  inline val APPIUM_JAVA_JUNIT_TEST_SPEC: "APPIUM_JAVA_JUNIT_TEST_SPEC" = "APPIUM_JAVA_JUNIT_TEST_SPEC"
+  inline val APPIUM_JAVA_TESTNG_TEST_SPEC: "APPIUM_JAVA_TESTNG_TEST_SPEC" = "APPIUM_JAVA_TESTNG_TEST_SPEC"
+  inline val APPIUM_PYTHON_TEST_SPEC: "APPIUM_PYTHON_TEST_SPEC" = "APPIUM_PYTHON_TEST_SPEC"
+  inline val APPIUM_NODE_TEST_SPEC: "APPIUM_NODE_TEST_SPEC" = "APPIUM_NODE_TEST_SPEC"
+  inline val APPIUM_RUBY_TEST_SPEC: "APPIUM_RUBY_TEST_SPEC" = "APPIUM_RUBY_TEST_SPEC"
+  inline val APPIUM_WEB_JAVA_JUNIT_TEST_SPEC: "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC" = "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC"
+  inline val APPIUM_WEB_JAVA_TESTNG_TEST_SPEC: "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC" = "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC"
+  inline val APPIUM_WEB_PYTHON_TEST_SPEC: "APPIUM_WEB_PYTHON_TEST_SPEC" = "APPIUM_WEB_PYTHON_TEST_SPEC"
+  inline val APPIUM_WEB_NODE_TEST_SPEC: "APPIUM_WEB_NODE_TEST_SPEC" = "APPIUM_WEB_NODE_TEST_SPEC"
+  inline val APPIUM_WEB_RUBY_TEST_SPEC: "APPIUM_WEB_RUBY_TEST_SPEC" = "APPIUM_WEB_RUBY_TEST_SPEC"
+  inline val INSTRUMENTATION_TEST_SPEC: "INSTRUMENTATION_TEST_SPEC" = "INSTRUMENTATION_TEST_SPEC"
+  inline val XCTEST_UI_TEST_SPEC: "XCTEST_UI_TEST_SPEC" = "XCTEST_UI_TEST_SPEC"
 
-  @inline def values = js.Array(
+  inline def values: js.Array[UploadType] = js.Array(
     ANDROID_APP,
     IOS_APP,
     WEB_APP,

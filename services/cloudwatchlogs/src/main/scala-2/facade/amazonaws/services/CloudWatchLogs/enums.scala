@@ -47,3 +47,4 @@ object QueryStatus {
 
   @inline def values = js.Array(Scheduled, Running, Complete, Failed, Cancelled)
 }
+

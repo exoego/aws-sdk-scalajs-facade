@@ -1,26 +1,23 @@
 package facade.amazonaws.services.datapipeline
 
 import scalajs._
-import scala.scalajs.js.|
 
-@js.native
-sealed trait OperatorType extends js.Any
+type OperatorType = "EQ" | "REF_EQ" | "LE" | "GE" | "BETWEEN"
 object OperatorType {
-  val EQ = "EQ".asInstanceOf[OperatorType]
-  val REF_EQ = "REF_EQ".asInstanceOf[OperatorType]
-  val LE = "LE".asInstanceOf[OperatorType]
-  val GE = "GE".asInstanceOf[OperatorType]
-  val BETWEEN = "BETWEEN".asInstanceOf[OperatorType]
+  inline val EQ: "EQ" = "EQ"
+  inline val REF_EQ: "REF_EQ" = "REF_EQ"
+  inline val LE: "LE" = "LE"
+  inline val GE: "GE" = "GE"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
 
-  @inline def values = js.Array(EQ, REF_EQ, LE, GE, BETWEEN)
+  inline def values: js.Array[OperatorType] = js.Array(EQ, REF_EQ, LE, GE, BETWEEN)
 }
 
-@js.native
-sealed trait TaskStatus extends js.Any
+type TaskStatus = "FINISHED" | "FAILED" | "FALSE"
 object TaskStatus {
-  val FINISHED = "FINISHED".asInstanceOf[TaskStatus]
-  val FAILED = "FAILED".asInstanceOf[TaskStatus]
-  val FALSE = "FALSE".asInstanceOf[TaskStatus]
+  inline val FINISHED: "FINISHED" = "FINISHED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val FALSE: "FALSE" = "FALSE"
 
-  @inline def values = js.Array(FINISHED, FAILED, FALSE)
+  inline def values: js.Array[TaskStatus] = js.Array(FINISHED, FAILED, FALSE)
 }

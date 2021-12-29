@@ -86,7 +86,8 @@ object PolicySourceType {
   @inline def values = js.Array(user, group, role, `aws-managed`, `user-managed`, resource, none)
 }
 
-/** The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity. For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM identities]] in the <i>IAM User Guide</i>.
+/** The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.
+  * For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM identities ]] in the <i>IAM User Guide</i>.
   */
 @js.native
 sealed trait PolicyUsageType extends js.Any
@@ -232,32 +233,6 @@ object summaryKeyType {
   val VersionsPerPolicyQuota = "VersionsPerPolicyQuota".asInstanceOf[summaryKeyType]
   val GlobalEndpointTokenVersion = "GlobalEndpointTokenVersion".asInstanceOf[summaryKeyType]
 
-  @inline def values = js.Array(
-    Users,
-    UsersQuota,
-    Groups,
-    GroupsQuota,
-    ServerCertificates,
-    ServerCertificatesQuota,
-    UserPolicySizeQuota,
-    GroupPolicySizeQuota,
-    GroupsPerUserQuota,
-    SigningCertificatesPerUserQuota,
-    AccessKeysPerUserQuota,
-    MFADevices,
-    MFADevicesInUse,
-    AccountMFAEnabled,
-    AccountAccessKeysPresent,
-    AccountSigningCertificatesPresent,
-    AttachedPoliciesPerGroupQuota,
-    AttachedPoliciesPerRoleQuota,
-    AttachedPoliciesPerUserQuota,
-    Policies,
-    PoliciesQuota,
-    PolicySizeQuota,
-    PolicyVersionsInUse,
-    PolicyVersionsInUseQuota,
-    VersionsPerPolicyQuota,
-    GlobalEndpointTokenVersion
-  )
+  @inline def values = js.Array(Users, UsersQuota, Groups, GroupsQuota, ServerCertificates, ServerCertificatesQuota, UserPolicySizeQuota, GroupPolicySizeQuota, GroupsPerUserQuota, SigningCertificatesPerUserQuota, AccessKeysPerUserQuota, MFADevices, MFADevicesInUse, AccountMFAEnabled, AccountAccessKeysPresent, AccountSigningCertificatesPresent, AttachedPoliciesPerGroupQuota, AttachedPoliciesPerRoleQuota, AttachedPoliciesPerUserQuota, Policies, PoliciesQuota, PolicySizeQuota, PolicyVersionsInUse, PolicyVersionsInUseQuota, VersionsPerPolicyQuota, GlobalEndpointTokenVersion)
 }
+
