@@ -14,7 +14,7 @@ object SharedConfig {
   val scala212Version = "2.12.15"
 
   val settings = Seq(
-    scalacOptions ++= Seq("-deprecation"),
+    scalacOptions ++= Seq("-deprecation", "-feature"),
     scalaJSLinkerConfig ~= {
       val isCI = Option(System.getenv("CI")).exists(_.contains("true"))
       _.withBatchMode(isCI)

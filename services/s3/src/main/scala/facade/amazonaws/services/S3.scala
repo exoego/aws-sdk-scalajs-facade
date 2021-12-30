@@ -4,6 +4,7 @@ import scalajs._
 import scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 import scala.concurrent.Future
+import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object s3 {
@@ -307,7 +308,6 @@ package object s3 {
     @inline def uploadPartCopyFuture(params: UploadPartCopyRequest): Future[UploadPartCopyOutput] = service.uploadPartCopy(params).promise().toFuture
     @inline def uploadPartFuture(params: UploadPartRequest): Future[UploadPartOutput] = service.uploadPart(params).promise().toFuture
     @inline def writeGetObjectResponseFuture(params: WriteGetObjectResponseRequest): Future[js.Object] = service.writeGetObjectResponse(params).promise().toFuture
-    import scala.concurrent.Future
 
     /** Get a pre-signed URL for a given operation name.
       *
