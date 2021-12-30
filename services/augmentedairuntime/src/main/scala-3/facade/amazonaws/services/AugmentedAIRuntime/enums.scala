@@ -1,6 +1,6 @@
 package facade.amazonaws.services.augmentedairuntime
 
-import scalajs._
+import scalajs.js
 
 type ContentClassifier = "FreeOfPersonallyIdentifiableInformation" | "FreeOfAdultContent"
 object ContentClassifier {

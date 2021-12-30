@@ -1,7 +1,6 @@
 package facade.amazonaws.services.cognitosync
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait BulkPublishStatus extends js.Any
@@ -11,7 +10,7 @@ object BulkPublishStatus {
   val FAILED = "FAILED".asInstanceOf[BulkPublishStatus]
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[BulkPublishStatus]
 
-  @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED)
+  @inline def values: js.Array[BulkPublishStatus] = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, SUCCEEDED)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object Operation {
   val replace = "replace".asInstanceOf[Operation]
   val remove = "remove".asInstanceOf[Operation]
 
-  @inline def values = js.Array(replace, remove)
+  @inline def values: js.Array[Operation] = js.Array(replace, remove)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object Platform {
   val GCM = "GCM".asInstanceOf[Platform]
   val ADM = "ADM".asInstanceOf[Platform]
 
-  @inline def values = js.Array(APNS, APNS_SANDBOX, GCM, ADM)
+  @inline def values: js.Array[Platform] = js.Array(APNS, APNS_SANDBOX, GCM, ADM)
 }
 
 @js.native
@@ -40,6 +39,5 @@ object StreamingStatus {
   val ENABLED = "ENABLED".asInstanceOf[StreamingStatus]
   val DISABLED = "DISABLED".asInstanceOf[StreamingStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[StreamingStatus] = js.Array(ENABLED, DISABLED)
 }
-

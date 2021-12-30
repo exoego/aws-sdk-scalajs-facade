@@ -1,7 +1,6 @@
 package facade.amazonaws.services.securityhub
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AdminStatus extends js.Any
@@ -9,7 +8,7 @@ object AdminStatus {
   val ENABLED = "ENABLED".asInstanceOf[AdminStatus]
   val DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[AdminStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLE_IN_PROGRESS)
+  @inline def values: js.Array[AdminStatus] = js.Array(ENABLED, DISABLE_IN_PROGRESS)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object AwsIamAccessKeyStatus {
   val Active = "Active".asInstanceOf[AwsIamAccessKeyStatus]
   val Inactive = "Inactive".asInstanceOf[AwsIamAccessKeyStatus]
 
-  @inline def values = js.Array(Active, Inactive)
+  @inline def values: js.Array[AwsIamAccessKeyStatus] = js.Array(Active, Inactive)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object ComplianceStatus {
   val FAILED = "FAILED".asInstanceOf[ComplianceStatus]
   val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[ComplianceStatus]
 
-  @inline def values = js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE)
+  @inline def values: js.Array[ComplianceStatus] = js.Array(PASSED, WARNING, FAILED, NOT_AVAILABLE)
 }
 
 @js.native
@@ -38,7 +37,7 @@ object ControlStatus {
   val ENABLED = "ENABLED".asInstanceOf[ControlStatus]
   val DISABLED = "DISABLED".asInstanceOf[ControlStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[ControlStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -46,7 +45,7 @@ sealed trait DateRangeUnit extends js.Any
 object DateRangeUnit {
   val DAYS = "DAYS".asInstanceOf[DateRangeUnit]
 
-  @inline def values = js.Array(DAYS)
+  @inline def values: js.Array[DateRangeUnit] = js.Array(DAYS)
 }
 
 @js.native
@@ -56,7 +55,7 @@ object IntegrationType {
   val RECEIVE_FINDINGS_FROM_SECURITY_HUB = "RECEIVE_FINDINGS_FROM_SECURITY_HUB".asInstanceOf[IntegrationType]
   val UPDATE_FINDINGS_IN_SECURITY_HUB = "UPDATE_FINDINGS_IN_SECURITY_HUB".asInstanceOf[IntegrationType]
 
-  @inline def values = js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB, UPDATE_FINDINGS_IN_SECURITY_HUB)
+  @inline def values: js.Array[IntegrationType] = js.Array(SEND_FINDINGS_TO_SECURITY_HUB, RECEIVE_FINDINGS_FROM_SECURITY_HUB, UPDATE_FINDINGS_IN_SECURITY_HUB)
 }
 
 @js.native
@@ -66,7 +65,7 @@ object MalwareState {
   val REMOVAL_FAILED = "REMOVAL_FAILED".asInstanceOf[MalwareState]
   val REMOVED = "REMOVED".asInstanceOf[MalwareState]
 
-  @inline def values = js.Array(OBSERVED, REMOVAL_FAILED, REMOVED)
+  @inline def values: js.Array[MalwareState] = js.Array(OBSERVED, REMOVAL_FAILED, REMOVED)
 }
 
 @js.native
@@ -88,7 +87,23 @@ object MalwareType {
   val VIRUS = "VIRUS".asInstanceOf[MalwareType]
   val WORM = "WORM".asInstanceOf[MalwareType]
 
-  @inline def values = js.Array(ADWARE, BLENDED_THREAT, BOTNET_AGENT, COIN_MINER, EXPLOIT_KIT, KEYLOGGER, MACRO, POTENTIALLY_UNWANTED, SPYWARE, RANSOMWARE, REMOTE_ACCESS, ROOTKIT, TROJAN, VIRUS, WORM)
+  @inline def values: js.Array[MalwareType] = js.Array(
+    ADWARE,
+    BLENDED_THREAT,
+    BOTNET_AGENT,
+    COIN_MINER,
+    EXPLOIT_KIT,
+    KEYLOGGER,
+    MACRO,
+    POTENTIALLY_UNWANTED,
+    SPYWARE,
+    RANSOMWARE,
+    REMOTE_ACCESS,
+    ROOTKIT,
+    TROJAN,
+    VIRUS,
+    WORM
+  )
 }
 
 @js.native
@@ -97,7 +112,7 @@ object MapFilterComparison {
   val EQUALS = "EQUALS".asInstanceOf[MapFilterComparison]
   val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[MapFilterComparison]
 
-  @inline def values = js.Array(EQUALS, NOT_EQUALS)
+  @inline def values: js.Array[MapFilterComparison] = js.Array(EQUALS, NOT_EQUALS)
 }
 
 @js.native
@@ -106,7 +121,7 @@ object NetworkDirection {
   val IN = "IN".asInstanceOf[NetworkDirection]
   val OUT = "OUT".asInstanceOf[NetworkDirection]
 
-  @inline def values = js.Array(IN, OUT)
+  @inline def values: js.Array[NetworkDirection] = js.Array(IN, OUT)
 }
 
 @js.native
@@ -116,7 +131,7 @@ object Partition {
   val `aws-cn` = "aws-cn".asInstanceOf[Partition]
   val `aws-us-gov` = "aws-us-gov".asInstanceOf[Partition]
 
-  @inline def values = js.Array(aws, `aws-cn`, `aws-us-gov`)
+  @inline def values: js.Array[Partition] = js.Array(aws, `aws-cn`, `aws-us-gov`)
 }
 
 @js.native
@@ -125,7 +140,7 @@ object RecordState {
   val ACTIVE = "ACTIVE".asInstanceOf[RecordState]
   val ARCHIVED = "ARCHIVED".asInstanceOf[RecordState]
 
-  @inline def values = js.Array(ACTIVE, ARCHIVED)
+  @inline def values: js.Array[RecordState] = js.Array(ACTIVE, ARCHIVED)
 }
 
 @js.native
@@ -137,7 +152,7 @@ object SeverityLabel {
   val HIGH = "HIGH".asInstanceOf[SeverityLabel]
   val CRITICAL = "CRITICAL".asInstanceOf[SeverityLabel]
 
-  @inline def values = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL)
+  @inline def values: js.Array[SeverityLabel] = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL)
 }
 
 @js.native
@@ -148,7 +163,7 @@ object SeverityRating {
   val HIGH = "HIGH".asInstanceOf[SeverityRating]
   val CRITICAL = "CRITICAL".asInstanceOf[SeverityRating]
 
-  @inline def values = js.Array(LOW, MEDIUM, HIGH, CRITICAL)
+  @inline def values: js.Array[SeverityRating] = js.Array(LOW, MEDIUM, HIGH, CRITICAL)
 }
 
 @js.native
@@ -157,7 +172,7 @@ object SortOrder {
   val asc = "asc".asInstanceOf[SortOrder]
   val desc = "desc".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(asc, desc)
+  @inline def values: js.Array[SortOrder] = js.Array(asc, desc)
 }
 
 @js.native
@@ -169,7 +184,7 @@ object StandardsStatus {
   val DELETING = "DELETING".asInstanceOf[StandardsStatus]
   val INCOMPLETE = "INCOMPLETE".asInstanceOf[StandardsStatus]
 
-  @inline def values = js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE)
+  @inline def values: js.Array[StandardsStatus] = js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE)
 }
 
 @js.native
@@ -180,7 +195,7 @@ object StringFilterComparison {
   val NOT_EQUALS = "NOT_EQUALS".asInstanceOf[StringFilterComparison]
   val PREFIX_NOT_EQUALS = "PREFIX_NOT_EQUALS".asInstanceOf[StringFilterComparison]
 
-  @inline def values = js.Array(EQUALS, PREFIX, NOT_EQUALS, PREFIX_NOT_EQUALS)
+  @inline def values: js.Array[StringFilterComparison] = js.Array(EQUALS, PREFIX, NOT_EQUALS, PREFIX_NOT_EQUALS)
 }
 
 @js.native
@@ -193,7 +208,7 @@ object ThreatIntelIndicatorCategory {
   val EXPLOIT_SITE = "EXPLOIT_SITE".asInstanceOf[ThreatIntelIndicatorCategory]
   val KEYLOGGER = "KEYLOGGER".asInstanceOf[ThreatIntelIndicatorCategory]
 
-  @inline def values = js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER)
+  @inline def values: js.Array[ThreatIntelIndicatorCategory] = js.Array(BACKDOOR, CARD_STEALER, COMMAND_AND_CONTROL, DROP_SITE, EXPLOIT_SITE, KEYLOGGER)
 }
 
 @js.native
@@ -211,7 +226,7 @@ object ThreatIntelIndicatorType {
   val PROCESS = "PROCESS".asInstanceOf[ThreatIntelIndicatorType]
   val URL = "URL".asInstanceOf[ThreatIntelIndicatorType]
 
-  @inline def values = js.Array(DOMAIN, EMAIL_ADDRESS, HASH_MD5, HASH_SHA1, HASH_SHA256, HASH_SHA512, IPV4_ADDRESS, IPV6_ADDRESS, MUTEX, PROCESS, URL)
+  @inline def values: js.Array[ThreatIntelIndicatorType] = js.Array(DOMAIN, EMAIL_ADDRESS, HASH_MD5, HASH_SHA1, HASH_SHA256, HASH_SHA512, IPV4_ADDRESS, IPV6_ADDRESS, MUTEX, PROCESS, URL)
 }
 
 @js.native
@@ -222,7 +237,7 @@ object VerificationState {
   val FALSE_POSITIVE = "FALSE_POSITIVE".asInstanceOf[VerificationState]
   val BENIGN_POSITIVE = "BENIGN_POSITIVE".asInstanceOf[VerificationState]
 
-  @inline def values = js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
+  @inline def values: js.Array[VerificationState] = js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
 }
 
 @deprecated("This field is deprecated, use Workflow.Status instead.", "forever")
@@ -235,7 +250,7 @@ object WorkflowState {
   val DEFERRED = "DEFERRED".asInstanceOf[WorkflowState]
   val RESOLVED = "RESOLVED".asInstanceOf[WorkflowState]
 
-  @inline def values = js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED)
+  @inline def values: js.Array[WorkflowState] = js.Array(NEW, ASSIGNED, IN_PROGRESS, DEFERRED, RESOLVED)
 }
 
 @js.native
@@ -246,6 +261,5 @@ object WorkflowStatus {
   val RESOLVED = "RESOLVED".asInstanceOf[WorkflowStatus]
   val SUPPRESSED = "SUPPRESSED".asInstanceOf[WorkflowStatus]
 
-  @inline def values = js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED)
+  @inline def values: js.Array[WorkflowStatus] = js.Array(NEW, NOTIFIED, RESOLVED, SUPPRESSED)
 }
-

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.kinesisanalytics
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ApplicationStatus extends js.Any
@@ -13,7 +12,7 @@ object ApplicationStatus {
   val RUNNING = "RUNNING".asInstanceOf[ApplicationStatus]
   val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
 
-  @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
+  @inline def values: js.Array[ApplicationStatus] = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING)
 }
 
 @js.native
@@ -23,7 +22,7 @@ object InputStartingPosition {
   val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
   val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
 
-  @inline def values = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
+  @inline def values: js.Array[InputStartingPosition] = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
 }
 
 @js.native
@@ -32,6 +31,5 @@ object RecordFormatType {
   val JSON = "JSON".asInstanceOf[RecordFormatType]
   val CSV = "CSV".asInstanceOf[RecordFormatType]
 
-  @inline def values = js.Array(JSON, CSV)
+  @inline def values: js.Array[RecordFormatType] = js.Array(JSON, CSV)
 }
-

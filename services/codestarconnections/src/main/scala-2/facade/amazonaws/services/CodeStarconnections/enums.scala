@@ -1,7 +1,6 @@
 package facade.amazonaws.services.codestarconnections
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ConnectionStatus extends js.Any
@@ -10,7 +9,7 @@ object ConnectionStatus {
   val AVAILABLE = "AVAILABLE".asInstanceOf[ConnectionStatus]
   val ERROR = "ERROR".asInstanceOf[ConnectionStatus]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, ERROR)
+  @inline def values: js.Array[ConnectionStatus] = js.Array(PENDING, AVAILABLE, ERROR)
 }
 
 @js.native
@@ -20,6 +19,5 @@ object ProviderType {
   val GitHub = "GitHub".asInstanceOf[ProviderType]
   val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
-  @inline def values = js.Array(Bitbucket, GitHub, GitHubEnterpriseServer)
+  @inline def values: js.Array[ProviderType] = js.Array(Bitbucket, GitHub, GitHubEnterpriseServer)
 }
-

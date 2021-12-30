@@ -1,7 +1,6 @@
 package facade.amazonaws.services.dynamodb
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AttributeAction extends js.Any
@@ -10,7 +9,7 @@ object AttributeAction {
   val PUT = "PUT".asInstanceOf[AttributeAction]
   val DELETE = "DELETE".asInstanceOf[AttributeAction]
 
-  @inline def values = js.Array(ADD, PUT, DELETE)
+  @inline def values: js.Array[AttributeAction] = js.Array(ADD, PUT, DELETE)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object BackupStatus {
   val DELETED = "DELETED".asInstanceOf[BackupStatus]
   val AVAILABLE = "AVAILABLE".asInstanceOf[BackupStatus]
 
-  @inline def values = js.Array(CREATING, DELETED, AVAILABLE)
+  @inline def values: js.Array[BackupStatus] = js.Array(CREATING, DELETED, AVAILABLE)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object BackupType {
   val SYSTEM = "SYSTEM".asInstanceOf[BackupType]
   val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupType]
 
-  @inline def values = js.Array(USER, SYSTEM, AWS_BACKUP)
+  @inline def values: js.Array[BackupType] = js.Array(USER, SYSTEM, AWS_BACKUP)
 }
 
 @js.native
@@ -41,7 +40,7 @@ object BackupTypeFilter {
   val AWS_BACKUP = "AWS_BACKUP".asInstanceOf[BackupTypeFilter]
   val ALL = "ALL".asInstanceOf[BackupTypeFilter]
 
-  @inline def values = js.Array(USER, SYSTEM, AWS_BACKUP, ALL)
+  @inline def values: js.Array[BackupTypeFilter] = js.Array(USER, SYSTEM, AWS_BACKUP, ALL)
 }
 
 @js.native
@@ -59,7 +58,19 @@ object BatchStatementErrorCodeEnum {
   val AccessDenied = "AccessDenied".asInstanceOf[BatchStatementErrorCodeEnum]
   val DuplicateItem = "DuplicateItem".asInstanceOf[BatchStatementErrorCodeEnum]
 
-  @inline def values = js.Array(ConditionalCheckFailed, ItemCollectionSizeLimitExceeded, RequestLimitExceeded, ValidationError, ProvisionedThroughputExceeded, TransactionConflict, ThrottlingError, InternalServerError, ResourceNotFound, AccessDenied, DuplicateItem)
+  @inline def values: js.Array[BatchStatementErrorCodeEnum] = js.Array(
+    ConditionalCheckFailed,
+    ItemCollectionSizeLimitExceeded,
+    RequestLimitExceeded,
+    ValidationError,
+    ProvisionedThroughputExceeded,
+    TransactionConflict,
+    ThrottlingError,
+    InternalServerError,
+    ResourceNotFound,
+    AccessDenied,
+    DuplicateItem
+  )
 }
 
 @js.native
@@ -68,7 +79,7 @@ object BillingMode {
   val PROVISIONED = "PROVISIONED".asInstanceOf[BillingMode]
   val PAY_PER_REQUEST = "PAY_PER_REQUEST".asInstanceOf[BillingMode]
 
-  @inline def values = js.Array(PROVISIONED, PAY_PER_REQUEST)
+  @inline def values: js.Array[BillingMode] = js.Array(PROVISIONED, PAY_PER_REQUEST)
 }
 
 @js.native
@@ -88,7 +99,7 @@ object ComparisonOperator {
   val NOT_CONTAINS = "NOT_CONTAINS".asInstanceOf[ComparisonOperator]
   val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
-  @inline def values = js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
+  @inline def values: js.Array[ComparisonOperator] = js.Array(EQ, NE, IN, LE, LT, GE, GT, BETWEEN, NOT_NULL, NULL, CONTAINS, NOT_CONTAINS, BEGINS_WITH)
 }
 
 @js.native
@@ -97,7 +108,7 @@ object ConditionalOperator {
   val AND = "AND".asInstanceOf[ConditionalOperator]
   val OR = "OR".asInstanceOf[ConditionalOperator]
 
-  @inline def values = js.Array(AND, OR)
+  @inline def values: js.Array[ConditionalOperator] = js.Array(AND, OR)
 }
 
 @js.native
@@ -106,7 +117,7 @@ object ContinuousBackupsStatus {
   val ENABLED = "ENABLED".asInstanceOf[ContinuousBackupsStatus]
   val DISABLED = "DISABLED".asInstanceOf[ContinuousBackupsStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[ContinuousBackupsStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -115,7 +126,7 @@ object ContributorInsightsAction {
   val ENABLE = "ENABLE".asInstanceOf[ContributorInsightsAction]
   val DISABLE = "DISABLE".asInstanceOf[ContributorInsightsAction]
 
-  @inline def values = js.Array(ENABLE, DISABLE)
+  @inline def values: js.Array[ContributorInsightsAction] = js.Array(ENABLE, DISABLE)
 }
 
 @js.native
@@ -127,7 +138,7 @@ object ContributorInsightsStatus {
   val DISABLED = "DISABLED".asInstanceOf[ContributorInsightsStatus]
   val FAILED = "FAILED".asInstanceOf[ContributorInsightsStatus]
 
-  @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED)
+  @inline def values: js.Array[ContributorInsightsStatus] = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, FAILED)
 }
 
 @js.native
@@ -139,7 +150,7 @@ object DestinationStatus {
   val DISABLED = "DISABLED".asInstanceOf[DestinationStatus]
   val ENABLE_FAILED = "ENABLE_FAILED".asInstanceOf[DestinationStatus]
 
-  @inline def values = js.Array(ENABLING, ACTIVE, DISABLING, DISABLED, ENABLE_FAILED)
+  @inline def values: js.Array[DestinationStatus] = js.Array(ENABLING, ACTIVE, DISABLING, DISABLED, ENABLE_FAILED)
 }
 
 @js.native
@@ -148,7 +159,7 @@ object ExportFormat {
   val DYNAMODB_JSON = "DYNAMODB_JSON".asInstanceOf[ExportFormat]
   val ION = "ION".asInstanceOf[ExportFormat]
 
-  @inline def values = js.Array(DYNAMODB_JSON, ION)
+  @inline def values: js.Array[ExportFormat] = js.Array(DYNAMODB_JSON, ION)
 }
 
 @js.native
@@ -158,7 +169,7 @@ object ExportStatus {
   val COMPLETED = "COMPLETED".asInstanceOf[ExportStatus]
   val FAILED = "FAILED".asInstanceOf[ExportStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED)
+  @inline def values: js.Array[ExportStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED)
 }
 
 @js.native
@@ -169,7 +180,7 @@ object GlobalTableStatus {
   val DELETING = "DELETING".asInstanceOf[GlobalTableStatus]
   val UPDATING = "UPDATING".asInstanceOf[GlobalTableStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, UPDATING)
+  @inline def values: js.Array[GlobalTableStatus] = js.Array(CREATING, ACTIVE, DELETING, UPDATING)
 }
 
 @js.native
@@ -180,7 +191,7 @@ object IndexStatus {
   val DELETING = "DELETING".asInstanceOf[IndexStatus]
   val ACTIVE = "ACTIVE".asInstanceOf[IndexStatus]
 
-  @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE)
+  @inline def values: js.Array[IndexStatus] = js.Array(CREATING, UPDATING, DELETING, ACTIVE)
 }
 
 @js.native
@@ -189,7 +200,7 @@ object KeyType {
   val HASH = "HASH".asInstanceOf[KeyType]
   val RANGE = "RANGE".asInstanceOf[KeyType]
 
-  @inline def values = js.Array(HASH, RANGE)
+  @inline def values: js.Array[KeyType] = js.Array(HASH, RANGE)
 }
 
 @js.native
@@ -198,7 +209,7 @@ object PointInTimeRecoveryStatus {
   val ENABLED = "ENABLED".asInstanceOf[PointInTimeRecoveryStatus]
   val DISABLED = "DISABLED".asInstanceOf[PointInTimeRecoveryStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[PointInTimeRecoveryStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -208,7 +219,7 @@ object ProjectionType {
   val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[ProjectionType]
   val INCLUDE = "INCLUDE".asInstanceOf[ProjectionType]
 
-  @inline def values = js.Array(ALL, KEYS_ONLY, INCLUDE)
+  @inline def values: js.Array[ProjectionType] = js.Array(ALL, KEYS_ONLY, INCLUDE)
 }
 
 @js.native
@@ -222,14 +233,10 @@ object ReplicaStatus {
   val REGION_DISABLED = "REGION_DISABLED".asInstanceOf[ReplicaStatus]
   val INACCESSIBLE_ENCRYPTION_CREDENTIALS = "INACCESSIBLE_ENCRYPTION_CREDENTIALS".asInstanceOf[ReplicaStatus]
 
-  @inline def values = js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE, REGION_DISABLED, INACCESSIBLE_ENCRYPTION_CREDENTIALS)
+  @inline def values: js.Array[ReplicaStatus] = js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE, REGION_DISABLED, INACCESSIBLE_ENCRYPTION_CREDENTIALS)
 }
 
-/** Determines the level of detail about provisioned throughput consumption that is returned in the response:
-  * * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed.
-  * Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s).
-  * * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation.
-  * * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
+/** Determines the level of detail about provisioned throughput consumption that is returned in the response: * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed. Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s). * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation. * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
   */
 @js.native
 sealed trait ReturnConsumedCapacity extends js.Any
@@ -238,7 +245,7 @@ object ReturnConsumedCapacity {
   val TOTAL = "TOTAL".asInstanceOf[ReturnConsumedCapacity]
   val NONE = "NONE".asInstanceOf[ReturnConsumedCapacity]
 
-  @inline def values = js.Array(INDEXES, TOTAL, NONE)
+  @inline def values: js.Array[ReturnConsumedCapacity] = js.Array(INDEXES, TOTAL, NONE)
 }
 
 @js.native
@@ -247,7 +254,7 @@ object ReturnItemCollectionMetrics {
   val SIZE = "SIZE".asInstanceOf[ReturnItemCollectionMetrics]
   val NONE = "NONE".asInstanceOf[ReturnItemCollectionMetrics]
 
-  @inline def values = js.Array(SIZE, NONE)
+  @inline def values: js.Array[ReturnItemCollectionMetrics] = js.Array(SIZE, NONE)
 }
 
 @js.native
@@ -259,7 +266,7 @@ object ReturnValue {
   val ALL_NEW = "ALL_NEW".asInstanceOf[ReturnValue]
   val UPDATED_NEW = "UPDATED_NEW".asInstanceOf[ReturnValue]
 
-  @inline def values = js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW)
+  @inline def values: js.Array[ReturnValue] = js.Array(NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW)
 }
 
 @js.native
@@ -268,7 +275,7 @@ object ReturnValuesOnConditionCheckFailure {
   val ALL_OLD = "ALL_OLD".asInstanceOf[ReturnValuesOnConditionCheckFailure]
   val NONE = "NONE".asInstanceOf[ReturnValuesOnConditionCheckFailure]
 
-  @inline def values = js.Array(ALL_OLD, NONE)
+  @inline def values: js.Array[ReturnValuesOnConditionCheckFailure] = js.Array(ALL_OLD, NONE)
 }
 
 @js.native
@@ -277,7 +284,7 @@ object S3SseAlgorithm {
   val AES256 = "AES256".asInstanceOf[S3SseAlgorithm]
   val KMS = "KMS".asInstanceOf[S3SseAlgorithm]
 
-  @inline def values = js.Array(AES256, KMS)
+  @inline def values: js.Array[S3SseAlgorithm] = js.Array(AES256, KMS)
 }
 
 @js.native
@@ -289,7 +296,7 @@ object SSEStatus {
   val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
   val UPDATING = "UPDATING".asInstanceOf[SSEStatus]
 
-  @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING)
+  @inline def values: js.Array[SSEStatus] = js.Array(ENABLING, ENABLED, DISABLING, DISABLED, UPDATING)
 }
 
 @js.native
@@ -298,7 +305,7 @@ object SSEType {
   val AES256 = "AES256".asInstanceOf[SSEType]
   val KMS = "KMS".asInstanceOf[SSEType]
 
-  @inline def values = js.Array(AES256, KMS)
+  @inline def values: js.Array[SSEType] = js.Array(AES256, KMS)
 }
 
 @js.native
@@ -308,7 +315,7 @@ object ScalarAttributeType {
   val N = "N".asInstanceOf[ScalarAttributeType]
   val B = "B".asInstanceOf[ScalarAttributeType]
 
-  @inline def values = js.Array(S, N, B)
+  @inline def values: js.Array[ScalarAttributeType] = js.Array(S, N, B)
 }
 
 @js.native
@@ -319,7 +326,7 @@ object Select {
   val SPECIFIC_ATTRIBUTES = "SPECIFIC_ATTRIBUTES".asInstanceOf[Select]
   val COUNT = "COUNT".asInstanceOf[Select]
 
-  @inline def values = js.Array(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT)
+  @inline def values: js.Array[Select] = js.Array(ALL_ATTRIBUTES, ALL_PROJECTED_ATTRIBUTES, SPECIFIC_ATTRIBUTES, COUNT)
 }
 
 @js.native
@@ -330,7 +337,7 @@ object StreamViewType {
   val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
   val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
 
-  @inline def values = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
+  @inline def values: js.Array[StreamViewType] = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
 }
 
 @js.native
@@ -344,7 +351,7 @@ object TableStatus {
   val ARCHIVING = "ARCHIVING".asInstanceOf[TableStatus]
   val ARCHIVED = "ARCHIVED".asInstanceOf[TableStatus]
 
-  @inline def values = js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED)
+  @inline def values: js.Array[TableStatus] = js.Array(CREATING, UPDATING, DELETING, ACTIVE, INACCESSIBLE_ENCRYPTION_CREDENTIALS, ARCHIVING, ARCHIVED)
 }
 
 @js.native
@@ -355,6 +362,5 @@ object TimeToLiveStatus {
   val ENABLED = "ENABLED".asInstanceOf[TimeToLiveStatus]
   val DISABLED = "DISABLED".asInstanceOf[TimeToLiveStatus]
 
-  @inline def values = js.Array(ENABLING, DISABLING, ENABLED, DISABLED)
+  @inline def values: js.Array[TimeToLiveStatus] = js.Array(ENABLING, DISABLING, ENABLED, DISABLED)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.transfer
 
-import scalajs._
+import scalajs.js
 
 type Domain = "S3" | "EFS"
 object Domain {

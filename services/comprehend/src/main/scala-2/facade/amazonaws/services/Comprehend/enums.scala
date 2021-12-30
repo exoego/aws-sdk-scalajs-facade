@@ -1,7 +1,6 @@
 package facade.amazonaws.services.comprehend
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DocumentClassifierDataFormat extends js.Any
@@ -9,7 +8,7 @@ object DocumentClassifierDataFormat {
   val COMPREHEND_CSV = "COMPREHEND_CSV".asInstanceOf[DocumentClassifierDataFormat]
   val AUGMENTED_MANIFEST = "AUGMENTED_MANIFEST".asInstanceOf[DocumentClassifierDataFormat]
 
-  @inline def values = js.Array(COMPREHEND_CSV, AUGMENTED_MANIFEST)
+  @inline def values: js.Array[DocumentClassifierDataFormat] = js.Array(COMPREHEND_CSV, AUGMENTED_MANIFEST)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object DocumentClassifierMode {
   val MULTI_CLASS = "MULTI_CLASS".asInstanceOf[DocumentClassifierMode]
   val MULTI_LABEL = "MULTI_LABEL".asInstanceOf[DocumentClassifierMode]
 
-  @inline def values = js.Array(MULTI_CLASS, MULTI_LABEL)
+  @inline def values: js.Array[DocumentClassifierMode] = js.Array(MULTI_CLASS, MULTI_LABEL)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object EndpointStatus {
   val IN_SERVICE = "IN_SERVICE".asInstanceOf[EndpointStatus]
   val UPDATING = "UPDATING".asInstanceOf[EndpointStatus]
 
-  @inline def values = js.Array(CREATING, DELETING, FAILED, IN_SERVICE, UPDATING)
+  @inline def values: js.Array[EndpointStatus] = js.Array(CREATING, DELETING, FAILED, IN_SERVICE, UPDATING)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object EntityRecognizerDataFormat {
   val COMPREHEND_CSV = "COMPREHEND_CSV".asInstanceOf[EntityRecognizerDataFormat]
   val AUGMENTED_MANIFEST = "AUGMENTED_MANIFEST".asInstanceOf[EntityRecognizerDataFormat]
 
-  @inline def values = js.Array(COMPREHEND_CSV, AUGMENTED_MANIFEST)
+  @inline def values: js.Array[EntityRecognizerDataFormat] = js.Array(COMPREHEND_CSV, AUGMENTED_MANIFEST)
 }
 
 @js.native
@@ -55,7 +54,7 @@ object EntityType {
   val TITLE = "TITLE".asInstanceOf[EntityType]
   val OTHER = "OTHER".asInstanceOf[EntityType]
 
-  @inline def values = js.Array(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER)
+  @inline def values: js.Array[EntityType] = js.Array(PERSON, LOCATION, ORGANIZATION, COMMERCIAL_ITEM, EVENT, DATE, QUANTITY, TITLE, OTHER)
 }
 
 @js.native
@@ -64,7 +63,7 @@ object InputFormat {
   val ONE_DOC_PER_FILE = "ONE_DOC_PER_FILE".asInstanceOf[InputFormat]
   val ONE_DOC_PER_LINE = "ONE_DOC_PER_LINE".asInstanceOf[InputFormat]
 
-  @inline def values = js.Array(ONE_DOC_PER_FILE, ONE_DOC_PER_LINE)
+  @inline def values: js.Array[InputFormat] = js.Array(ONE_DOC_PER_FILE, ONE_DOC_PER_LINE)
 }
 
 @js.native
@@ -77,7 +76,7 @@ object JobStatus {
   val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
   val STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
-  @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED, STOP_REQUESTED, STOPPED)
+  @inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED, STOP_REQUESTED, STOPPED)
 }
 
 @js.native
@@ -96,7 +95,7 @@ object LanguageCode {
   val zh = "zh".asInstanceOf[LanguageCode]
   val `zh-TW` = "zh-TW".asInstanceOf[LanguageCode]
 
-  @inline def values = js.Array(en, es, fr, de, it, pt, ar, hi, ja, ko, zh, `zh-TW`)
+  @inline def values: js.Array[LanguageCode] = js.Array(en, es, fr, de, it, pt, ar, hi, ja, ko, zh, `zh-TW`)
 }
 
 @js.native
@@ -110,7 +109,7 @@ object ModelStatus {
   val IN_ERROR = "IN_ERROR".asInstanceOf[ModelStatus]
   val TRAINED = "TRAINED".asInstanceOf[ModelStatus]
 
-  @inline def values = js.Array(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED)
+  @inline def values: js.Array[ModelStatus] = js.Array(SUBMITTED, TRAINING, DELETING, STOP_REQUESTED, STOPPED, IN_ERROR, TRAINED)
 }
 
 @js.native
@@ -135,7 +134,7 @@ object PartOfSpeechTagType {
   val SYM = "SYM".asInstanceOf[PartOfSpeechTagType]
   val VERB = "VERB".asInstanceOf[PartOfSpeechTagType]
 
-  @inline def values = js.Array(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB)
+  @inline def values: js.Array[PartOfSpeechTagType] = js.Array(ADJ, ADP, ADV, AUX, CONJ, CCONJ, DET, INTJ, NOUN, NUM, O, PART, PRON, PROPN, PUNCT, SCONJ, SYM, VERB)
 }
 
 @js.native
@@ -144,7 +143,7 @@ object PiiEntitiesDetectionMaskMode {
   val MASK = "MASK".asInstanceOf[PiiEntitiesDetectionMaskMode]
   val REPLACE_WITH_PII_ENTITY_TYPE = "REPLACE_WITH_PII_ENTITY_TYPE".asInstanceOf[PiiEntitiesDetectionMaskMode]
 
-  @inline def values = js.Array(MASK, REPLACE_WITH_PII_ENTITY_TYPE)
+  @inline def values: js.Array[PiiEntitiesDetectionMaskMode] = js.Array(MASK, REPLACE_WITH_PII_ENTITY_TYPE)
 }
 
 @js.native
@@ -153,7 +152,7 @@ object PiiEntitiesDetectionMode {
   val ONLY_REDACTION = "ONLY_REDACTION".asInstanceOf[PiiEntitiesDetectionMode]
   val ONLY_OFFSETS = "ONLY_OFFSETS".asInstanceOf[PiiEntitiesDetectionMode]
 
-  @inline def values = js.Array(ONLY_REDACTION, ONLY_OFFSETS)
+  @inline def values: js.Array[PiiEntitiesDetectionMode] = js.Array(ONLY_REDACTION, ONLY_OFFSETS)
 }
 
 @js.native
@@ -183,7 +182,31 @@ object PiiEntityType {
   val MAC_ADDRESS = "MAC_ADDRESS".asInstanceOf[PiiEntityType]
   val ALL = "ALL".asInstanceOf[PiiEntityType]
 
-  @inline def values = js.Array(BANK_ACCOUNT_NUMBER, BANK_ROUTING, CREDIT_DEBIT_NUMBER, CREDIT_DEBIT_CVV, CREDIT_DEBIT_EXPIRY, PIN, EMAIL, ADDRESS, NAME, PHONE, SSN, DATE_TIME, PASSPORT_NUMBER, DRIVER_ID, URL, AGE, USERNAME, PASSWORD, AWS_ACCESS_KEY, AWS_SECRET_KEY, IP_ADDRESS, MAC_ADDRESS, ALL)
+  @inline def values: js.Array[PiiEntityType] = js.Array(
+    BANK_ACCOUNT_NUMBER,
+    BANK_ROUTING,
+    CREDIT_DEBIT_NUMBER,
+    CREDIT_DEBIT_CVV,
+    CREDIT_DEBIT_EXPIRY,
+    PIN,
+    EMAIL,
+    ADDRESS,
+    NAME,
+    PHONE,
+    SSN,
+    DATE_TIME,
+    PASSPORT_NUMBER,
+    DRIVER_ID,
+    URL,
+    AGE,
+    USERNAME,
+    PASSWORD,
+    AWS_ACCESS_KEY,
+    AWS_SECRET_KEY,
+    IP_ADDRESS,
+    MAC_ADDRESS,
+    ALL
+  )
 }
 
 @js.native
@@ -194,7 +217,7 @@ object SentimentType {
   val NEUTRAL = "NEUTRAL".asInstanceOf[SentimentType]
   val MIXED = "MIXED".asInstanceOf[SentimentType]
 
-  @inline def values = js.Array(POSITIVE, NEGATIVE, NEUTRAL, MIXED)
+  @inline def values: js.Array[SentimentType] = js.Array(POSITIVE, NEGATIVE, NEUTRAL, MIXED)
 }
 
 @js.native
@@ -207,6 +230,5 @@ object SyntaxLanguageCode {
   val it = "it".asInstanceOf[SyntaxLanguageCode]
   val pt = "pt".asInstanceOf[SyntaxLanguageCode]
 
-  @inline def values = js.Array(en, es, fr, de, it, pt)
+  @inline def values: js.Array[SyntaxLanguageCode] = js.Array(en, es, fr, de, it, pt)
 }
-

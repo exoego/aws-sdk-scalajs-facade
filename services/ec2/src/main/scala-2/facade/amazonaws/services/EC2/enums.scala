@@ -1,7 +1,6 @@
 package facade.amazonaws.services.ec2
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccountAttributeName extends js.Any
@@ -9,7 +8,7 @@ object AccountAttributeName {
   val `supported-platforms` = "supported-platforms".asInstanceOf[AccountAttributeName]
   val `default-vpc` = "default-vpc".asInstanceOf[AccountAttributeName]
 
-  @inline def values = js.Array(`supported-platforms`, `default-vpc`)
+  @inline def values: js.Array[AccountAttributeName] = js.Array(`supported-platforms`, `default-vpc`)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object ActivityStatus {
   val pending_termination = "pending_termination".asInstanceOf[ActivityStatus]
   val fulfilled = "fulfilled".asInstanceOf[ActivityStatus]
 
-  @inline def values = js.Array(error, pending_fulfillment, pending_termination, fulfilled)
+  @inline def values: js.Array[ActivityStatus] = js.Array(error, pending_fulfillment, pending_termination, fulfilled)
 }
 
 @js.native
@@ -28,7 +27,7 @@ sealed trait AddressAttributeName extends js.Any
 object AddressAttributeName {
   val `domain-name` = "domain-name".asInstanceOf[AddressAttributeName]
 
-  @inline def values = js.Array(`domain-name`)
+  @inline def values: js.Array[AddressAttributeName] = js.Array(`domain-name`)
 }
 
 @js.native
@@ -37,7 +36,7 @@ object Affinity {
   val default = "default".asInstanceOf[Affinity]
   val host = "host".asInstanceOf[Affinity]
 
-  @inline def values = js.Array(default, host)
+  @inline def values: js.Array[Affinity] = js.Array(default, host)
 }
 
 @js.native
@@ -50,7 +49,7 @@ object AllocationState {
   val `released-permanent-failure` = "released-permanent-failure".asInstanceOf[AllocationState]
   val pending = "pending".asInstanceOf[AllocationState]
 
-  @inline def values = js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending)
+  @inline def values: js.Array[AllocationState] = js.Array(available, `under-assessment`, `permanent-failure`, released, `released-permanent-failure`, pending)
 }
 
 @js.native
@@ -61,7 +60,7 @@ object AllocationStrategy {
   val capacityOptimized = "capacityOptimized".asInstanceOf[AllocationStrategy]
   val capacityOptimizedPrioritized = "capacityOptimizedPrioritized".asInstanceOf[AllocationStrategy]
 
-  @inline def values = js.Array(lowestPrice, diversified, capacityOptimized, capacityOptimizedPrioritized)
+  @inline def values: js.Array[AllocationStrategy] = js.Array(lowestPrice, diversified, capacityOptimized, capacityOptimizedPrioritized)
 }
 
 @js.native
@@ -70,7 +69,7 @@ object AllowsMultipleInstanceTypes {
   val on = "on".asInstanceOf[AllowsMultipleInstanceTypes]
   val off = "off".asInstanceOf[AllowsMultipleInstanceTypes]
 
-  @inline def values = js.Array(on, off)
+  @inline def values: js.Array[AllowsMultipleInstanceTypes] = js.Array(on, off)
 }
 
 @js.native
@@ -80,7 +79,7 @@ object AnalysisStatus {
   val succeeded = "succeeded".asInstanceOf[AnalysisStatus]
   val failed = "failed".asInstanceOf[AnalysisStatus]
 
-  @inline def values = js.Array(running, succeeded, failed)
+  @inline def values: js.Array[AnalysisStatus] = js.Array(running, succeeded, failed)
 }
 
 @js.native
@@ -89,7 +88,7 @@ object ApplianceModeSupportValue {
   val enable = "enable".asInstanceOf[ApplianceModeSupportValue]
   val disable = "disable".asInstanceOf[ApplianceModeSupportValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[ApplianceModeSupportValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -99,7 +98,7 @@ object ArchitectureType {
   val x86_64 = "x86_64".asInstanceOf[ArchitectureType]
   val arm64 = "arm64".asInstanceOf[ArchitectureType]
 
-  @inline def values = js.Array(i386, x86_64, arm64)
+  @inline def values: js.Array[ArchitectureType] = js.Array(i386, x86_64, arm64)
 }
 
 @js.native
@@ -109,7 +108,7 @@ object ArchitectureValues {
   val x86_64 = "x86_64".asInstanceOf[ArchitectureValues]
   val arm64 = "arm64".asInstanceOf[ArchitectureValues]
 
-  @inline def values = js.Array(i386, x86_64, arm64)
+  @inline def values: js.Array[ArchitectureValues] = js.Array(i386, x86_64, arm64)
 }
 
 @js.native
@@ -117,7 +116,7 @@ sealed trait AssociatedNetworkType extends js.Any
 object AssociatedNetworkType {
   val vpc = "vpc".asInstanceOf[AssociatedNetworkType]
 
-  @inline def values = js.Array(vpc)
+  @inline def values: js.Array[AssociatedNetworkType] = js.Array(vpc)
 }
 
 @js.native
@@ -129,7 +128,7 @@ object AssociationStatusCode {
   val disassociating = "disassociating".asInstanceOf[AssociationStatusCode]
   val disassociated = "disassociated".asInstanceOf[AssociationStatusCode]
 
-  @inline def values = js.Array(associating, associated, `association-failed`, disassociating, disassociated)
+  @inline def values: js.Array[AssociationStatusCode] = js.Array(associating, associated, `association-failed`, disassociating, disassociated)
 }
 
 @js.native
@@ -140,7 +139,7 @@ object AttachmentStatus {
   val detaching = "detaching".asInstanceOf[AttachmentStatus]
   val detached = "detached".asInstanceOf[AttachmentStatus]
 
-  @inline def values = js.Array(attaching, attached, detaching, detached)
+  @inline def values: js.Array[AttachmentStatus] = js.Array(attaching, attached, detaching, detached)
 }
 
 @js.native
@@ -149,7 +148,7 @@ object AutoAcceptSharedAssociationsValue {
   val enable = "enable".asInstanceOf[AutoAcceptSharedAssociationsValue]
   val disable = "disable".asInstanceOf[AutoAcceptSharedAssociationsValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[AutoAcceptSharedAssociationsValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -158,7 +157,7 @@ object AutoAcceptSharedAttachmentsValue {
   val enable = "enable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
   val disable = "disable".asInstanceOf[AutoAcceptSharedAttachmentsValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[AutoAcceptSharedAttachmentsValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -167,7 +166,7 @@ object AutoPlacement {
   val on = "on".asInstanceOf[AutoPlacement]
   val off = "off".asInstanceOf[AutoPlacement]
 
-  @inline def values = js.Array(on, off)
+  @inline def values: js.Array[AutoPlacement] = js.Array(on, off)
 }
 
 @js.native
@@ -177,7 +176,7 @@ object AvailabilityZoneOptInStatus {
   val `opted-in` = "opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
   val `not-opted-in` = "not-opted-in".asInstanceOf[AvailabilityZoneOptInStatus]
 
-  @inline def values = js.Array(`opt-in-not-required`, `opted-in`, `not-opted-in`)
+  @inline def values: js.Array[AvailabilityZoneOptInStatus] = js.Array(`opt-in-not-required`, `opted-in`, `not-opted-in`)
 }
 
 @js.native
@@ -188,7 +187,7 @@ object AvailabilityZoneState {
   val impaired = "impaired".asInstanceOf[AvailabilityZoneState]
   val unavailable = "unavailable".asInstanceOf[AvailabilityZoneState]
 
-  @inline def values = js.Array(available, information, impaired, unavailable)
+  @inline def values: js.Array[AvailabilityZoneState] = js.Array(available, information, impaired, unavailable)
 }
 
 @js.native
@@ -202,7 +201,7 @@ object BatchState {
   val cancelled_terminating = "cancelled_terminating".asInstanceOf[BatchState]
   val modifying = "modifying".asInstanceOf[BatchState]
 
-  @inline def values = js.Array(submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying)
+  @inline def values: js.Array[BatchState] = js.Array(submitted, active, cancelled, failed, cancelled_running, cancelled_terminating, modifying)
 }
 
 @js.native
@@ -211,7 +210,7 @@ object BgpStatus {
   val up = "up".asInstanceOf[BgpStatus]
   val down = "down".asInstanceOf[BgpStatus]
 
-  @inline def values = js.Array(up, down)
+  @inline def values: js.Array[BgpStatus] = js.Array(up, down)
 }
 
 @js.native
@@ -220,7 +219,7 @@ object BootModeType {
   val `legacy-bios` = "legacy-bios".asInstanceOf[BootModeType]
   val uefi = "uefi".asInstanceOf[BootModeType]
 
-  @inline def values = js.Array(`legacy-bios`, uefi)
+  @inline def values: js.Array[BootModeType] = js.Array(`legacy-bios`, uefi)
 }
 
 @js.native
@@ -229,7 +228,7 @@ object BootModeValues {
   val `legacy-bios` = "legacy-bios".asInstanceOf[BootModeValues]
   val uefi = "uefi".asInstanceOf[BootModeValues]
 
-  @inline def values = js.Array(`legacy-bios`, uefi)
+  @inline def values: js.Array[BootModeValues] = js.Array(`legacy-bios`, uefi)
 }
 
 @js.native
@@ -243,7 +242,7 @@ object BundleTaskState {
   val complete = "complete".asInstanceOf[BundleTaskState]
   val failed = "failed".asInstanceOf[BundleTaskState]
 
-  @inline def values = js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed)
+  @inline def values: js.Array[BundleTaskState] = js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed)
 }
 
 @js.native
@@ -258,7 +257,16 @@ object ByoipCidrState {
   val provisioned = "provisioned".asInstanceOf[ByoipCidrState]
   val `provisioned-not-publicly-advertisable` = "provisioned-not-publicly-advertisable".asInstanceOf[ByoipCidrState]
 
-  @inline def values = js.Array(advertised, deprovisioned, `failed-deprovision`, `failed-provision`, `pending-deprovision`, `pending-provision`, provisioned, `provisioned-not-publicly-advertisable`)
+  @inline def values: js.Array[ByoipCidrState] = js.Array(
+    advertised,
+    deprovisioned,
+    `failed-deprovision`,
+    `failed-provision`,
+    `pending-deprovision`,
+    `pending-provision`,
+    provisioned,
+    `provisioned-not-publicly-advertisable`
+  )
 }
 
 @js.native
@@ -269,7 +277,7 @@ object CancelBatchErrorCode {
   val fleetRequestNotInCancellableState = "fleetRequestNotInCancellableState".asInstanceOf[CancelBatchErrorCode]
   val unexpectedError = "unexpectedError".asInstanceOf[CancelBatchErrorCode]
 
-  @inline def values = js.Array(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError)
+  @inline def values: js.Array[CancelBatchErrorCode] = js.Array(fleetRequestIdDoesNotExist, fleetRequestIdMalformed, fleetRequestNotInCancellableState, unexpectedError)
 }
 
 @js.native
@@ -281,7 +289,7 @@ object CancelSpotInstanceRequestState {
   val cancelled = "cancelled".asInstanceOf[CancelSpotInstanceRequestState]
   val completed = "completed".asInstanceOf[CancelSpotInstanceRequestState]
 
-  @inline def values = js.Array(active, open, closed, cancelled, completed)
+  @inline def values: js.Array[CancelSpotInstanceRequestState] = js.Array(active, open, closed, cancelled, completed)
 }
 
 @js.native
@@ -299,7 +307,19 @@ object CapacityReservationInstancePlatform {
   val `Linux with SQL Server Web` = "Linux with SQL Server Web".asInstanceOf[CapacityReservationInstancePlatform]
   val `Linux with SQL Server Enterprise` = "Linux with SQL Server Enterprise".asInstanceOf[CapacityReservationInstancePlatform]
 
-  @inline def values = js.Array(`Linux/UNIX`, `Red Hat Enterprise Linux`, `SUSE Linux`, Windows, `Windows with SQL Server`, `Windows with SQL Server Enterprise`, `Windows with SQL Server Standard`, `Windows with SQL Server Web`, `Linux with SQL Server Standard`, `Linux with SQL Server Web`, `Linux with SQL Server Enterprise`)
+  @inline def values: js.Array[CapacityReservationInstancePlatform] = js.Array(
+    `Linux/UNIX`,
+    `Red Hat Enterprise Linux`,
+    `SUSE Linux`,
+    Windows,
+    `Windows with SQL Server`,
+    `Windows with SQL Server Enterprise`,
+    `Windows with SQL Server Standard`,
+    `Windows with SQL Server Web`,
+    `Linux with SQL Server Standard`,
+    `Linux with SQL Server Web`,
+    `Linux with SQL Server Enterprise`
+  )
 }
 
 @js.native
@@ -308,7 +328,7 @@ object CapacityReservationPreference {
   val open = "open".asInstanceOf[CapacityReservationPreference]
   val none = "none".asInstanceOf[CapacityReservationPreference]
 
-  @inline def values = js.Array(open, none)
+  @inline def values: js.Array[CapacityReservationPreference] = js.Array(open, none)
 }
 
 @js.native
@@ -320,7 +340,7 @@ object CapacityReservationState {
   val pending = "pending".asInstanceOf[CapacityReservationState]
   val failed = "failed".asInstanceOf[CapacityReservationState]
 
-  @inline def values = js.Array(active, expired, cancelled, pending, failed)
+  @inline def values: js.Array[CapacityReservationState] = js.Array(active, expired, cancelled, pending, failed)
 }
 
 @js.native
@@ -329,7 +349,7 @@ object CapacityReservationTenancy {
   val default = "default".asInstanceOf[CapacityReservationTenancy]
   val dedicated = "dedicated".asInstanceOf[CapacityReservationTenancy]
 
-  @inline def values = js.Array(default, dedicated)
+  @inline def values: js.Array[CapacityReservationTenancy] = js.Array(default, dedicated)
 }
 
 @js.native
@@ -340,7 +360,7 @@ object CarrierGatewayState {
   val deleting = "deleting".asInstanceOf[CarrierGatewayState]
   val deleted = "deleted".asInstanceOf[CarrierGatewayState]
 
-  @inline def values = js.Array(pending, available, deleting, deleted)
+  @inline def values: js.Array[CarrierGatewayState] = js.Array(pending, available, deleting, deleted)
 }
 
 @js.native
@@ -349,7 +369,7 @@ object ClientCertificateRevocationListStatusCode {
   val pending = "pending".asInstanceOf[ClientCertificateRevocationListStatusCode]
   val active = "active".asInstanceOf[ClientCertificateRevocationListStatusCode]
 
-  @inline def values = js.Array(pending, active)
+  @inline def values: js.Array[ClientCertificateRevocationListStatusCode] = js.Array(pending, active)
 }
 
 @js.native
@@ -359,7 +379,7 @@ object ClientVpnAuthenticationType {
   val `directory-service-authentication` = "directory-service-authentication".asInstanceOf[ClientVpnAuthenticationType]
   val `federated-authentication` = "federated-authentication".asInstanceOf[ClientVpnAuthenticationType]
 
-  @inline def values = js.Array(`certificate-authentication`, `directory-service-authentication`, `federated-authentication`)
+  @inline def values: js.Array[ClientVpnAuthenticationType] = js.Array(`certificate-authentication`, `directory-service-authentication`, `federated-authentication`)
 }
 
 @js.native
@@ -370,7 +390,7 @@ object ClientVpnAuthorizationRuleStatusCode {
   val failed = "failed".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
   val revoking = "revoking".asInstanceOf[ClientVpnAuthorizationRuleStatusCode]
 
-  @inline def values = js.Array(authorizing, active, failed, revoking)
+  @inline def values: js.Array[ClientVpnAuthorizationRuleStatusCode] = js.Array(authorizing, active, failed, revoking)
 }
 
 @js.native
@@ -381,7 +401,7 @@ object ClientVpnConnectionStatusCode {
   val terminating = "terminating".asInstanceOf[ClientVpnConnectionStatusCode]
   val terminated = "terminated".asInstanceOf[ClientVpnConnectionStatusCode]
 
-  @inline def values = js.Array(active, `failed-to-terminate`, terminating, terminated)
+  @inline def values: js.Array[ClientVpnConnectionStatusCode] = js.Array(active, `failed-to-terminate`, terminating, terminated)
 }
 
 @js.native
@@ -390,7 +410,7 @@ object ClientVpnEndpointAttributeStatusCode {
   val applying = "applying".asInstanceOf[ClientVpnEndpointAttributeStatusCode]
   val applied = "applied".asInstanceOf[ClientVpnEndpointAttributeStatusCode]
 
-  @inline def values = js.Array(applying, applied)
+  @inline def values: js.Array[ClientVpnEndpointAttributeStatusCode] = js.Array(applying, applied)
 }
 
 @js.native
@@ -401,7 +421,7 @@ object ClientVpnEndpointStatusCode {
   val deleting = "deleting".asInstanceOf[ClientVpnEndpointStatusCode]
   val deleted = "deleted".asInstanceOf[ClientVpnEndpointStatusCode]
 
-  @inline def values = js.Array(`pending-associate`, available, deleting, deleted)
+  @inline def values: js.Array[ClientVpnEndpointStatusCode] = js.Array(`pending-associate`, available, deleting, deleted)
 }
 
 @js.native
@@ -412,7 +432,7 @@ object ClientVpnRouteStatusCode {
   val failed = "failed".asInstanceOf[ClientVpnRouteStatusCode]
   val deleting = "deleting".asInstanceOf[ClientVpnRouteStatusCode]
 
-  @inline def values = js.Array(creating, active, failed, deleting)
+  @inline def values: js.Array[ClientVpnRouteStatusCode] = js.Array(creating, active, failed, deleting)
 }
 
 @js.native
@@ -421,7 +441,7 @@ object ConnectionNotificationState {
   val Enabled = "Enabled".asInstanceOf[ConnectionNotificationState]
   val Disabled = "Disabled".asInstanceOf[ConnectionNotificationState]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[ConnectionNotificationState] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -429,7 +449,7 @@ sealed trait ConnectionNotificationType extends js.Any
 object ConnectionNotificationType {
   val Topic = "Topic".asInstanceOf[ConnectionNotificationType]
 
-  @inline def values = js.Array(Topic)
+  @inline def values: js.Array[ConnectionNotificationType] = js.Array(Topic)
 }
 
 @js.native
@@ -437,7 +457,7 @@ sealed trait ContainerFormat extends js.Any
 object ContainerFormat {
   val ova = "ova".asInstanceOf[ContainerFormat]
 
-  @inline def values = js.Array(ova)
+  @inline def values: js.Array[ContainerFormat] = js.Array(ova)
 }
 
 @js.native
@@ -448,7 +468,7 @@ object ConversionTaskState {
   val cancelled = "cancelled".asInstanceOf[ConversionTaskState]
   val completed = "completed".asInstanceOf[ConversionTaskState]
 
-  @inline def values = js.Array(active, cancelling, cancelled, completed)
+  @inline def values: js.Array[ConversionTaskState] = js.Array(active, cancelling, cancelled, completed)
 }
 
 @js.native
@@ -456,7 +476,7 @@ sealed trait CopyTagsFromSource extends js.Any
 object CopyTagsFromSource {
   val volume = "volume".asInstanceOf[CopyTagsFromSource]
 
-  @inline def values = js.Array(volume)
+  @inline def values: js.Array[CopyTagsFromSource] = js.Array(volume)
 }
 
 @js.native
@@ -464,7 +484,7 @@ sealed trait CurrencyCodeValues extends js.Any
 object CurrencyCodeValues {
   val USD = "USD".asInstanceOf[CurrencyCodeValues]
 
-  @inline def values = js.Array(USD)
+  @inline def values: js.Array[CurrencyCodeValues] = js.Array(USD)
 }
 
 @js.native
@@ -473,7 +493,7 @@ object DatafeedSubscriptionState {
   val Active = "Active".asInstanceOf[DatafeedSubscriptionState]
   val Inactive = "Inactive".asInstanceOf[DatafeedSubscriptionState]
 
-  @inline def values = js.Array(Active, Inactive)
+  @inline def values: js.Array[DatafeedSubscriptionState] = js.Array(Active, Inactive)
 }
 
 @js.native
@@ -482,7 +502,7 @@ object DefaultRouteTableAssociationValue {
   val enable = "enable".asInstanceOf[DefaultRouteTableAssociationValue]
   val disable = "disable".asInstanceOf[DefaultRouteTableAssociationValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[DefaultRouteTableAssociationValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -491,7 +511,7 @@ object DefaultRouteTablePropagationValue {
   val enable = "enable".asInstanceOf[DefaultRouteTablePropagationValue]
   val disable = "disable".asInstanceOf[DefaultRouteTablePropagationValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[DefaultRouteTablePropagationValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -500,7 +520,7 @@ object DefaultTargetCapacityType {
   val spot = "spot".asInstanceOf[DefaultTargetCapacityType]
   val `on-demand` = "on-demand".asInstanceOf[DefaultTargetCapacityType]
 
-  @inline def values = js.Array(spot, `on-demand`)
+  @inline def values: js.Array[DefaultTargetCapacityType] = js.Array(spot, `on-demand`)
 }
 
 @js.native
@@ -511,7 +531,7 @@ object DeleteFleetErrorCode {
   val fleetNotInDeletableState = "fleetNotInDeletableState".asInstanceOf[DeleteFleetErrorCode]
   val unexpectedError = "unexpectedError".asInstanceOf[DeleteFleetErrorCode]
 
-  @inline def values = js.Array(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError)
+  @inline def values: js.Array[DeleteFleetErrorCode] = js.Array(fleetIdDoesNotExist, fleetIdMalformed, fleetNotInDeletableState, unexpectedError)
 }
 
 @js.native
@@ -521,7 +541,7 @@ object DeleteQueuedReservedInstancesErrorCode {
   val `reserved-instances-not-in-queued-state` = "reserved-instances-not-in-queued-state".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
   val `unexpected-error` = "unexpected-error".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
 
-  @inline def values = js.Array(`reserved-instances-id-invalid`, `reserved-instances-not-in-queued-state`, `unexpected-error`)
+  @inline def values: js.Array[DeleteQueuedReservedInstancesErrorCode] = js.Array(`reserved-instances-id-invalid`, `reserved-instances-not-in-queued-state`, `unexpected-error`)
 }
 
 @js.native
@@ -530,7 +550,7 @@ object DeviceType {
   val ebs = "ebs".asInstanceOf[DeviceType]
   val `instance-store` = "instance-store".asInstanceOf[DeviceType]
 
-  @inline def values = js.Array(ebs, `instance-store`)
+  @inline def values: js.Array[DeviceType] = js.Array(ebs, `instance-store`)
 }
 
 @js.native
@@ -540,7 +560,7 @@ object DiskImageFormat {
   val RAW = "RAW".asInstanceOf[DiskImageFormat]
   val VHD = "VHD".asInstanceOf[DiskImageFormat]
 
-  @inline def values = js.Array(VMDK, RAW, VHD)
+  @inline def values: js.Array[DiskImageFormat] = js.Array(VMDK, RAW, VHD)
 }
 
 @js.native
@@ -549,7 +569,7 @@ object DiskType {
   val hdd = "hdd".asInstanceOf[DiskType]
   val ssd = "ssd".asInstanceOf[DiskType]
 
-  @inline def values = js.Array(hdd, ssd)
+  @inline def values: js.Array[DiskType] = js.Array(hdd, ssd)
 }
 
 @js.native
@@ -559,7 +579,7 @@ object DnsNameState {
   val verified = "verified".asInstanceOf[DnsNameState]
   val failed = "failed".asInstanceOf[DnsNameState]
 
-  @inline def values = js.Array(pendingVerification, verified, failed)
+  @inline def values: js.Array[DnsNameState] = js.Array(pendingVerification, verified, failed)
 }
 
 @js.native
@@ -568,7 +588,7 @@ object DnsSupportValue {
   val enable = "enable".asInstanceOf[DnsSupportValue]
   val disable = "disable".asInstanceOf[DnsSupportValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[DnsSupportValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -577,7 +597,7 @@ object DomainType {
   val vpc = "vpc".asInstanceOf[DomainType]
   val standard = "standard".asInstanceOf[DomainType]
 
-  @inline def values = js.Array(vpc, standard)
+  @inline def values: js.Array[DomainType] = js.Array(vpc, standard)
 }
 
 @js.native
@@ -586,7 +606,7 @@ object EbsEncryptionSupport {
   val unsupported = "unsupported".asInstanceOf[EbsEncryptionSupport]
   val supported = "supported".asInstanceOf[EbsEncryptionSupport]
 
-  @inline def values = js.Array(unsupported, supported)
+  @inline def values: js.Array[EbsEncryptionSupport] = js.Array(unsupported, supported)
 }
 
 @js.native
@@ -596,7 +616,7 @@ object EbsNvmeSupport {
   val supported = "supported".asInstanceOf[EbsNvmeSupport]
   val required = "required".asInstanceOf[EbsNvmeSupport]
 
-  @inline def values = js.Array(unsupported, supported, required)
+  @inline def values: js.Array[EbsNvmeSupport] = js.Array(unsupported, supported, required)
 }
 
 @js.native
@@ -606,7 +626,7 @@ object EbsOptimizedSupport {
   val supported = "supported".asInstanceOf[EbsOptimizedSupport]
   val default = "default".asInstanceOf[EbsOptimizedSupport]
 
-  @inline def values = js.Array(unsupported, supported, default)
+  @inline def values: js.Array[EbsOptimizedSupport] = js.Array(unsupported, supported, default)
 }
 
 @js.native
@@ -614,7 +634,7 @@ sealed trait ElasticGpuState extends js.Any
 object ElasticGpuState {
   val ATTACHED = "ATTACHED".asInstanceOf[ElasticGpuState]
 
-  @inline def values = js.Array(ATTACHED)
+  @inline def values: js.Array[ElasticGpuState] = js.Array(ATTACHED)
 }
 
 @js.native
@@ -623,7 +643,7 @@ object ElasticGpuStatus {
   val OK = "OK".asInstanceOf[ElasticGpuStatus]
   val IMPAIRED = "IMPAIRED".asInstanceOf[ElasticGpuStatus]
 
-  @inline def values = js.Array(OK, IMPAIRED)
+  @inline def values: js.Array[ElasticGpuStatus] = js.Array(OK, IMPAIRED)
 }
 
 @js.native
@@ -633,7 +653,7 @@ object EnaSupport {
   val supported = "supported".asInstanceOf[EnaSupport]
   val required = "required".asInstanceOf[EnaSupport]
 
-  @inline def values = js.Array(unsupported, supported, required)
+  @inline def values: js.Array[EnaSupport] = js.Array(unsupported, supported, required)
 }
 
 @js.native
@@ -642,7 +662,7 @@ object EndDateType {
   val unlimited = "unlimited".asInstanceOf[EndDateType]
   val limited = "limited".asInstanceOf[EndDateType]
 
-  @inline def values = js.Array(unlimited, limited)
+  @inline def values: js.Array[EndDateType] = js.Array(unlimited, limited)
 }
 
 @js.native
@@ -652,7 +672,7 @@ object EphemeralNvmeSupport {
   val supported = "supported".asInstanceOf[EphemeralNvmeSupport]
   val required = "required".asInstanceOf[EphemeralNvmeSupport]
 
-  @inline def values = js.Array(unsupported, supported, required)
+  @inline def values: js.Array[EphemeralNvmeSupport] = js.Array(unsupported, supported, required)
 }
 
 @js.native
@@ -664,7 +684,7 @@ object EventCode {
   val `instance-retirement` = "instance-retirement".asInstanceOf[EventCode]
   val `instance-stop` = "instance-stop".asInstanceOf[EventCode]
 
-  @inline def values = js.Array(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`)
+  @inline def values: js.Array[EventCode] = js.Array(`instance-reboot`, `system-reboot`, `system-maintenance`, `instance-retirement`, `instance-stop`)
 }
 
 @js.native
@@ -675,7 +695,7 @@ object EventType {
   val error = "error".asInstanceOf[EventType]
   val information = "information".asInstanceOf[EventType]
 
-  @inline def values = js.Array(instanceChange, fleetRequestChange, error, information)
+  @inline def values: js.Array[EventType] = js.Array(instanceChange, fleetRequestChange, error, information)
 }
 
 @js.native
@@ -684,7 +704,7 @@ object ExcessCapacityTerminationPolicy {
   val noTermination = "noTermination".asInstanceOf[ExcessCapacityTerminationPolicy]
   val default = "default".asInstanceOf[ExcessCapacityTerminationPolicy]
 
-  @inline def values = js.Array(noTermination, default)
+  @inline def values: js.Array[ExcessCapacityTerminationPolicy] = js.Array(noTermination, default)
 }
 
 @js.native
@@ -694,7 +714,7 @@ object ExportEnvironment {
   val vmware = "vmware".asInstanceOf[ExportEnvironment]
   val microsoft = "microsoft".asInstanceOf[ExportEnvironment]
 
-  @inline def values = js.Array(citrix, vmware, microsoft)
+  @inline def values: js.Array[ExportEnvironment] = js.Array(citrix, vmware, microsoft)
 }
 
 @js.native
@@ -705,7 +725,7 @@ object ExportTaskState {
   val cancelled = "cancelled".asInstanceOf[ExportTaskState]
   val completed = "completed".asInstanceOf[ExportTaskState]
 
-  @inline def values = js.Array(active, cancelling, cancelled, completed)
+  @inline def values: js.Array[ExportTaskState] = js.Array(active, cancelling, cancelled, completed)
 }
 
 @js.native
@@ -717,7 +737,7 @@ object FastSnapshotRestoreStateCode {
   val disabling = "disabling".asInstanceOf[FastSnapshotRestoreStateCode]
   val disabled = "disabled".asInstanceOf[FastSnapshotRestoreStateCode]
 
-  @inline def values = js.Array(enabling, optimizing, enabled, disabling, disabled)
+  @inline def values: js.Array[FastSnapshotRestoreStateCode] = js.Array(enabling, optimizing, enabled, disabling, disabled)
 }
 
 @js.native
@@ -728,7 +748,7 @@ object FleetActivityStatus {
   val pending_termination = "pending_termination".asInstanceOf[FleetActivityStatus]
   val fulfilled = "fulfilled".asInstanceOf[FleetActivityStatus]
 
-  @inline def values = js.Array(error, pending_fulfillment, pending_termination, fulfilled)
+  @inline def values: js.Array[FleetActivityStatus] = js.Array(error, pending_fulfillment, pending_termination, fulfilled)
 }
 
 @js.native
@@ -736,7 +756,7 @@ sealed trait FleetCapacityReservationUsageStrategy extends js.Any
 object FleetCapacityReservationUsageStrategy {
   val `use-capacity-reservations-first` = "use-capacity-reservations-first".asInstanceOf[FleetCapacityReservationUsageStrategy]
 
-  @inline def values = js.Array(`use-capacity-reservations-first`)
+  @inline def values: js.Array[FleetCapacityReservationUsageStrategy] = js.Array(`use-capacity-reservations-first`)
 }
 
 @js.native
@@ -746,7 +766,7 @@ object FleetEventType {
   val `fleet-change` = "fleet-change".asInstanceOf[FleetEventType]
   val `service-error` = "service-error".asInstanceOf[FleetEventType]
 
-  @inline def values = js.Array(`instance-change`, `fleet-change`, `service-error`)
+  @inline def values: js.Array[FleetEventType] = js.Array(`instance-change`, `fleet-change`, `service-error`)
 }
 
 @js.native
@@ -755,7 +775,7 @@ object FleetExcessCapacityTerminationPolicy {
   val `no-termination` = "no-termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
   val termination = "termination".asInstanceOf[FleetExcessCapacityTerminationPolicy]
 
-  @inline def values = js.Array(`no-termination`, termination)
+  @inline def values: js.Array[FleetExcessCapacityTerminationPolicy] = js.Array(`no-termination`, termination)
 }
 
 @js.native
@@ -764,7 +784,7 @@ object FleetOnDemandAllocationStrategy {
   val `lowest-price` = "lowest-price".asInstanceOf[FleetOnDemandAllocationStrategy]
   val prioritized = "prioritized".asInstanceOf[FleetOnDemandAllocationStrategy]
 
-  @inline def values = js.Array(`lowest-price`, prioritized)
+  @inline def values: js.Array[FleetOnDemandAllocationStrategy] = js.Array(`lowest-price`, prioritized)
 }
 
 @js.native
@@ -772,7 +792,7 @@ sealed trait FleetReplacementStrategy extends js.Any
 object FleetReplacementStrategy {
   val launch = "launch".asInstanceOf[FleetReplacementStrategy]
 
-  @inline def values = js.Array(launch)
+  @inline def values: js.Array[FleetReplacementStrategy] = js.Array(launch)
 }
 
 @js.native
@@ -786,7 +806,7 @@ object FleetStateCode {
   val deleted_terminating = "deleted_terminating".asInstanceOf[FleetStateCode]
   val modifying = "modifying".asInstanceOf[FleetStateCode]
 
-  @inline def values = js.Array(submitted, active, deleted, failed, deleted_running, deleted_terminating, modifying)
+  @inline def values: js.Array[FleetStateCode] = js.Array(submitted, active, deleted, failed, deleted_running, deleted_terminating, modifying)
 }
 
 @js.native
@@ -796,7 +816,7 @@ object FleetType {
   val maintain = "maintain".asInstanceOf[FleetType]
   val instant = "instant".asInstanceOf[FleetType]
 
-  @inline def values = js.Array(request, maintain, instant)
+  @inline def values: js.Array[FleetType] = js.Array(request, maintain, instant)
 }
 
 @js.native
@@ -806,7 +826,7 @@ object FlowLogsResourceType {
   val Subnet = "Subnet".asInstanceOf[FlowLogsResourceType]
   val NetworkInterface = "NetworkInterface".asInstanceOf[FlowLogsResourceType]
 
-  @inline def values = js.Array(VPC, Subnet, NetworkInterface)
+  @inline def values: js.Array[FlowLogsResourceType] = js.Array(VPC, Subnet, NetworkInterface)
 }
 
 @js.native
@@ -817,7 +837,7 @@ object FpgaImageAttributeName {
   val loadPermission = "loadPermission".asInstanceOf[FpgaImageAttributeName]
   val productCodes = "productCodes".asInstanceOf[FpgaImageAttributeName]
 
-  @inline def values = js.Array(description, name, loadPermission, productCodes)
+  @inline def values: js.Array[FpgaImageAttributeName] = js.Array(description, name, loadPermission, productCodes)
 }
 
 @js.native
@@ -828,7 +848,7 @@ object FpgaImageStateCode {
   val available = "available".asInstanceOf[FpgaImageStateCode]
   val unavailable = "unavailable".asInstanceOf[FpgaImageStateCode]
 
-  @inline def values = js.Array(pending, failed, available, unavailable)
+  @inline def values: js.Array[FpgaImageStateCode] = js.Array(pending, failed, available, unavailable)
 }
 
 @js.native
@@ -836,7 +856,7 @@ sealed trait GatewayType extends js.Any
 object GatewayType {
   val `ipsec.1` = "ipsec.1".asInstanceOf[GatewayType]
 
-  @inline def values = js.Array(`ipsec.1`)
+  @inline def values: js.Array[GatewayType] = js.Array(`ipsec.1`)
 }
 
 @js.native
@@ -845,7 +865,7 @@ object HostRecovery {
   val on = "on".asInstanceOf[HostRecovery]
   val off = "off".asInstanceOf[HostRecovery]
 
-  @inline def values = js.Array(on, off)
+  @inline def values: js.Array[HostRecovery] = js.Array(on, off)
 }
 
 @js.native
@@ -854,7 +874,7 @@ object HostTenancy {
   val dedicated = "dedicated".asInstanceOf[HostTenancy]
   val host = "host".asInstanceOf[HostTenancy]
 
-  @inline def values = js.Array(dedicated, host)
+  @inline def values: js.Array[HostTenancy] = js.Array(dedicated, host)
 }
 
 @js.native
@@ -863,7 +883,7 @@ object HttpTokensState {
   val optional = "optional".asInstanceOf[HttpTokensState]
   val required = "required".asInstanceOf[HttpTokensState]
 
-  @inline def values = js.Array(optional, required)
+  @inline def values: js.Array[HttpTokensState] = js.Array(optional, required)
 }
 
 @js.native
@@ -872,7 +892,7 @@ object HypervisorType {
   val ovm = "ovm".asInstanceOf[HypervisorType]
   val xen = "xen".asInstanceOf[HypervisorType]
 
-  @inline def values = js.Array(ovm, xen)
+  @inline def values: js.Array[HypervisorType] = js.Array(ovm, xen)
 }
 
 @js.native
@@ -883,7 +903,7 @@ object IamInstanceProfileAssociationState {
   val disassociating = "disassociating".asInstanceOf[IamInstanceProfileAssociationState]
   val disassociated = "disassociated".asInstanceOf[IamInstanceProfileAssociationState]
 
-  @inline def values = js.Array(associating, associated, disassociating, disassociated)
+  @inline def values: js.Array[IamInstanceProfileAssociationState] = js.Array(associating, associated, disassociating, disassociated)
 }
 
 @js.native
@@ -892,7 +912,7 @@ object Igmpv2SupportValue {
   val enable = "enable".asInstanceOf[Igmpv2SupportValue]
   val disable = "disable".asInstanceOf[Igmpv2SupportValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[Igmpv2SupportValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -907,7 +927,7 @@ object ImageAttributeName {
   val sriovNetSupport = "sriovNetSupport".asInstanceOf[ImageAttributeName]
   val bootMode = "bootMode".asInstanceOf[ImageAttributeName]
 
-  @inline def values = js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport, bootMode)
+  @inline def values: js.Array[ImageAttributeName] = js.Array(description, kernel, ramdisk, launchPermission, productCodes, blockDeviceMapping, sriovNetSupport, bootMode)
 }
 
 @js.native
@@ -921,7 +941,7 @@ object ImageState {
   val failed = "failed".asInstanceOf[ImageState]
   val error = "error".asInstanceOf[ImageState]
 
-  @inline def values = js.Array(pending, available, invalid, deregistered, transient, failed, error)
+  @inline def values: js.Array[ImageState] = js.Array(pending, available, invalid, deregistered, transient, failed, error)
 }
 
 @js.native
@@ -931,7 +951,7 @@ object ImageTypeValues {
   val kernel = "kernel".asInstanceOf[ImageTypeValues]
   val ramdisk = "ramdisk".asInstanceOf[ImageTypeValues]
 
-  @inline def values = js.Array(machine, kernel, ramdisk)
+  @inline def values: js.Array[ImageTypeValues] = js.Array(machine, kernel, ramdisk)
 }
 
 @js.native
@@ -953,7 +973,23 @@ object InstanceAttributeName {
   val enaSupport = "enaSupport".asInstanceOf[InstanceAttributeName]
   val enclaveOptions = "enclaveOptions".asInstanceOf[InstanceAttributeName]
 
-  @inline def values = js.Array(instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized, sriovNetSupport, enaSupport, enclaveOptions)
+  @inline def values: js.Array[InstanceAttributeName] = js.Array(
+    instanceType,
+    kernel,
+    ramdisk,
+    userData,
+    disableApiTermination,
+    instanceInitiatedShutdownBehavior,
+    rootDeviceName,
+    blockDeviceMapping,
+    productCodes,
+    sourceDestCheck,
+    groupSet,
+    ebsOptimized,
+    sriovNetSupport,
+    enaSupport,
+    enclaveOptions
+  )
 }
 
 @js.native
@@ -962,7 +998,7 @@ object InstanceHealthStatus {
   val healthy = "healthy".asInstanceOf[InstanceHealthStatus]
   val unhealthy = "unhealthy".asInstanceOf[InstanceHealthStatus]
 
-  @inline def values = js.Array(healthy, unhealthy)
+  @inline def values: js.Array[InstanceHealthStatus] = js.Array(healthy, unhealthy)
 }
 
 @js.native
@@ -972,7 +1008,7 @@ object InstanceInterruptionBehavior {
   val stop = "stop".asInstanceOf[InstanceInterruptionBehavior]
   val terminate = "terminate".asInstanceOf[InstanceInterruptionBehavior]
 
-  @inline def values = js.Array(hibernate, stop, terminate)
+  @inline def values: js.Array[InstanceInterruptionBehavior] = js.Array(hibernate, stop, terminate)
 }
 
 @js.native
@@ -981,7 +1017,7 @@ object InstanceLifecycle {
   val spot = "spot".asInstanceOf[InstanceLifecycle]
   val `on-demand` = "on-demand".asInstanceOf[InstanceLifecycle]
 
-  @inline def values = js.Array(spot, `on-demand`)
+  @inline def values: js.Array[InstanceLifecycle] = js.Array(spot, `on-demand`)
 }
 
 @js.native
@@ -990,7 +1026,7 @@ object InstanceLifecycleType {
   val spot = "spot".asInstanceOf[InstanceLifecycleType]
   val scheduled = "scheduled".asInstanceOf[InstanceLifecycleType]
 
-  @inline def values = js.Array(spot, scheduled)
+  @inline def values: js.Array[InstanceLifecycleType] = js.Array(spot, scheduled)
 }
 
 @js.native
@@ -999,7 +1035,7 @@ object InstanceMatchCriteria {
   val open = "open".asInstanceOf[InstanceMatchCriteria]
   val targeted = "targeted".asInstanceOf[InstanceMatchCriteria]
 
-  @inline def values = js.Array(open, targeted)
+  @inline def values: js.Array[InstanceMatchCriteria] = js.Array(open, targeted)
 }
 
 @js.native
@@ -1008,7 +1044,7 @@ object InstanceMetadataEndpointState {
   val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
   val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
 
-  @inline def values = js.Array(disabled, enabled)
+  @inline def values: js.Array[InstanceMetadataEndpointState] = js.Array(disabled, enabled)
 }
 
 @js.native
@@ -1017,7 +1053,7 @@ object InstanceMetadataOptionsState {
   val pending = "pending".asInstanceOf[InstanceMetadataOptionsState]
   val applied = "applied".asInstanceOf[InstanceMetadataOptionsState]
 
-  @inline def values = js.Array(pending, applied)
+  @inline def values: js.Array[InstanceMetadataOptionsState] = js.Array(pending, applied)
 }
 
 @js.native
@@ -1030,7 +1066,7 @@ object InstanceStateName {
   val stopping = "stopping".asInstanceOf[InstanceStateName]
   val stopped = "stopped".asInstanceOf[InstanceStateName]
 
-  @inline def values = js.Array(pending, running, `shutting-down`, terminated, stopping, stopped)
+  @inline def values: js.Array[InstanceStateName] = js.Array(pending, running, `shutting-down`, terminated, stopping, stopped)
 }
 
 @js.native
@@ -1435,7 +1471,406 @@ object InstanceType {
   val `x2gd.16xlarge` = "x2gd.16xlarge".asInstanceOf[InstanceType]
   val `x2gd.metal` = "x2gd.metal".asInstanceOf[InstanceType]
 
-  @inline def values = js.Array(`t1.micro`, `t2.nano`, `t2.micro`, `t2.small`, `t2.medium`, `t2.large`, `t2.xlarge`, `t2.2xlarge`, `t3.nano`, `t3.micro`, `t3.small`, `t3.medium`, `t3.large`, `t3.xlarge`, `t3.2xlarge`, `t3a.nano`, `t3a.micro`, `t3a.small`, `t3a.medium`, `t3a.large`, `t3a.xlarge`, `t3a.2xlarge`, `t4g.nano`, `t4g.micro`, `t4g.small`, `t4g.medium`, `t4g.large`, `t4g.xlarge`, `t4g.2xlarge`, `m1.small`, `m1.medium`, `m1.large`, `m1.xlarge`, `m3.medium`, `m3.large`, `m3.xlarge`, `m3.2xlarge`, `m4.large`, `m4.xlarge`, `m4.2xlarge`, `m4.4xlarge`, `m4.10xlarge`, `m4.16xlarge`, `m2.xlarge`, `m2.2xlarge`, `m2.4xlarge`, `cr1.8xlarge`, `r3.large`, `r3.xlarge`, `r3.2xlarge`, `r3.4xlarge`, `r3.8xlarge`, `r4.large`, `r4.xlarge`, `r4.2xlarge`, `r4.4xlarge`, `r4.8xlarge`, `r4.16xlarge`, `r5.large`, `r5.xlarge`, `r5.2xlarge`, `r5.4xlarge`, `r5.8xlarge`, `r5.12xlarge`, `r5.16xlarge`, `r5.24xlarge`, `r5.metal`, `r5a.large`, `r5a.xlarge`, `r5a.2xlarge`, `r5a.4xlarge`, `r5a.8xlarge`, `r5a.12xlarge`, `r5a.16xlarge`, `r5a.24xlarge`, `r5b.large`, `r5b.xlarge`, `r5b.2xlarge`, `r5b.4xlarge`, `r5b.8xlarge`, `r5b.12xlarge`, `r5b.16xlarge`, `r5b.24xlarge`, `r5b.metal`, `r5d.large`, `r5d.xlarge`, `r5d.2xlarge`, `r5d.4xlarge`, `r5d.8xlarge`, `r5d.12xlarge`, `r5d.16xlarge`, `r5d.24xlarge`, `r5d.metal`, `r5ad.large`, `r5ad.xlarge`, `r5ad.2xlarge`, `r5ad.4xlarge`, `r5ad.8xlarge`, `r5ad.12xlarge`, `r5ad.16xlarge`, `r5ad.24xlarge`, `r6g.metal`, `r6g.medium`, `r6g.large`, `r6g.xlarge`, `r6g.2xlarge`, `r6g.4xlarge`, `r6g.8xlarge`, `r6g.12xlarge`, `r6g.16xlarge`, `r6gd.metal`, `r6gd.medium`, `r6gd.large`, `r6gd.xlarge`, `r6gd.2xlarge`, `r6gd.4xlarge`, `r6gd.8xlarge`, `r6gd.12xlarge`, `r6gd.16xlarge`, `x1.16xlarge`, `x1.32xlarge`, `x1e.xlarge`, `x1e.2xlarge`, `x1e.4xlarge`, `x1e.8xlarge`, `x1e.16xlarge`, `x1e.32xlarge`, `i2.xlarge`, `i2.2xlarge`, `i2.4xlarge`, `i2.8xlarge`, `i3.large`, `i3.xlarge`, `i3.2xlarge`, `i3.4xlarge`, `i3.8xlarge`, `i3.16xlarge`, `i3.metal`, `i3en.large`, `i3en.xlarge`, `i3en.2xlarge`, `i3en.3xlarge`, `i3en.6xlarge`, `i3en.12xlarge`, `i3en.24xlarge`, `i3en.metal`, `hi1.4xlarge`, `hs1.8xlarge`, `c1.medium`, `c1.xlarge`, `c3.large`, `c3.xlarge`, `c3.2xlarge`, `c3.4xlarge`, `c3.8xlarge`, `c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `c5.large`, `c5.xlarge`, `c5.2xlarge`, `c5.4xlarge`, `c5.9xlarge`, `c5.12xlarge`, `c5.18xlarge`, `c5.24xlarge`, `c5.metal`, `c5a.large`, `c5a.xlarge`, `c5a.2xlarge`, `c5a.4xlarge`, `c5a.8xlarge`, `c5a.12xlarge`, `c5a.16xlarge`, `c5a.24xlarge`, `c5ad.large`, `c5ad.xlarge`, `c5ad.2xlarge`, `c5ad.4xlarge`, `c5ad.8xlarge`, `c5ad.12xlarge`, `c5ad.16xlarge`, `c5ad.24xlarge`, `c5d.large`, `c5d.xlarge`, `c5d.2xlarge`, `c5d.4xlarge`, `c5d.9xlarge`, `c5d.12xlarge`, `c5d.18xlarge`, `c5d.24xlarge`, `c5d.metal`, `c5n.large`, `c5n.xlarge`, `c5n.2xlarge`, `c5n.4xlarge`, `c5n.9xlarge`, `c5n.18xlarge`, `c5n.metal`, `c6g.metal`, `c6g.medium`, `c6g.large`, `c6g.xlarge`, `c6g.2xlarge`, `c6g.4xlarge`, `c6g.8xlarge`, `c6g.12xlarge`, `c6g.16xlarge`, `c6gd.metal`, `c6gd.medium`, `c6gd.large`, `c6gd.xlarge`, `c6gd.2xlarge`, `c6gd.4xlarge`, `c6gd.8xlarge`, `c6gd.12xlarge`, `c6gd.16xlarge`, `c6gn.medium`, `c6gn.large`, `c6gn.xlarge`, `c6gn.2xlarge`, `c6gn.4xlarge`, `c6gn.8xlarge`, `c6gn.12xlarge`, `c6gn.16xlarge`, `cc1.4xlarge`, `cc2.8xlarge`, `g2.2xlarge`, `g2.8xlarge`, `g3.4xlarge`, `g3.8xlarge`, `g3.16xlarge`, `g3s.xlarge`, `g4ad.4xlarge`, `g4ad.8xlarge`, `g4ad.16xlarge`, `g4dn.xlarge`, `g4dn.2xlarge`, `g4dn.4xlarge`, `g4dn.8xlarge`, `g4dn.12xlarge`, `g4dn.16xlarge`, `g4dn.metal`, `cg1.4xlarge`, `p2.xlarge`, `p2.8xlarge`, `p2.16xlarge`, `p3.2xlarge`, `p3.8xlarge`, `p3.16xlarge`, `p3dn.24xlarge`, `p4d.24xlarge`, `d2.xlarge`, `d2.2xlarge`, `d2.4xlarge`, `d2.8xlarge`, `d3.xlarge`, `d3.2xlarge`, `d3.4xlarge`, `d3.8xlarge`, `d3en.xlarge`, `d3en.2xlarge`, `d3en.4xlarge`, `d3en.6xlarge`, `d3en.8xlarge`, `d3en.12xlarge`, `f1.2xlarge`, `f1.4xlarge`, `f1.16xlarge`, `m5.large`, `m5.xlarge`, `m5.2xlarge`, `m5.4xlarge`, `m5.8xlarge`, `m5.12xlarge`, `m5.16xlarge`, `m5.24xlarge`, `m5.metal`, `m5a.large`, `m5a.xlarge`, `m5a.2xlarge`, `m5a.4xlarge`, `m5a.8xlarge`, `m5a.12xlarge`, `m5a.16xlarge`, `m5a.24xlarge`, `m5d.large`, `m5d.xlarge`, `m5d.2xlarge`, `m5d.4xlarge`, `m5d.8xlarge`, `m5d.12xlarge`, `m5d.16xlarge`, `m5d.24xlarge`, `m5d.metal`, `m5ad.large`, `m5ad.xlarge`, `m5ad.2xlarge`, `m5ad.4xlarge`, `m5ad.8xlarge`, `m5ad.12xlarge`, `m5ad.16xlarge`, `m5ad.24xlarge`, `m5zn.large`, `m5zn.xlarge`, `m5zn.2xlarge`, `m5zn.3xlarge`, `m5zn.6xlarge`, `m5zn.12xlarge`, `m5zn.metal`, `h1.2xlarge`, `h1.4xlarge`, `h1.8xlarge`, `h1.16xlarge`, `z1d.large`, `z1d.xlarge`, `z1d.2xlarge`, `z1d.3xlarge`, `z1d.6xlarge`, `z1d.12xlarge`, `z1d.metal`, `u-6tb1.metal`, `u-9tb1.metal`, `u-12tb1.metal`, `u-18tb1.metal`, `u-24tb1.metal`, `a1.medium`, `a1.large`, `a1.xlarge`, `a1.2xlarge`, `a1.4xlarge`, `a1.metal`, `m5dn.large`, `m5dn.xlarge`, `m5dn.2xlarge`, `m5dn.4xlarge`, `m5dn.8xlarge`, `m5dn.12xlarge`, `m5dn.16xlarge`, `m5dn.24xlarge`, `m5n.large`, `m5n.xlarge`, `m5n.2xlarge`, `m5n.4xlarge`, `m5n.8xlarge`, `m5n.12xlarge`, `m5n.16xlarge`, `m5n.24xlarge`, `r5dn.large`, `r5dn.xlarge`, `r5dn.2xlarge`, `r5dn.4xlarge`, `r5dn.8xlarge`, `r5dn.12xlarge`, `r5dn.16xlarge`, `r5dn.24xlarge`, `r5n.large`, `r5n.xlarge`, `r5n.2xlarge`, `r5n.4xlarge`, `r5n.8xlarge`, `r5n.12xlarge`, `r5n.16xlarge`, `r5n.24xlarge`, `inf1.xlarge`, `inf1.2xlarge`, `inf1.6xlarge`, `inf1.24xlarge`, `m6g.metal`, `m6g.medium`, `m6g.large`, `m6g.xlarge`, `m6g.2xlarge`, `m6g.4xlarge`, `m6g.8xlarge`, `m6g.12xlarge`, `m6g.16xlarge`, `m6gd.metal`, `m6gd.medium`, `m6gd.large`, `m6gd.xlarge`, `m6gd.2xlarge`, `m6gd.4xlarge`, `m6gd.8xlarge`, `m6gd.12xlarge`, `m6gd.16xlarge`, `mac1.metal`, `x2gd.medium`, `x2gd.large`, `x2gd.xlarge`, `x2gd.2xlarge`, `x2gd.4xlarge`, `x2gd.8xlarge`, `x2gd.12xlarge`, `x2gd.16xlarge`, `x2gd.metal`)
+  @inline def values: js.Array[InstanceType] = js.Array(
+    `t1.micro`,
+    `t2.nano`,
+    `t2.micro`,
+    `t2.small`,
+    `t2.medium`,
+    `t2.large`,
+    `t2.xlarge`,
+    `t2.2xlarge`,
+    `t3.nano`,
+    `t3.micro`,
+    `t3.small`,
+    `t3.medium`,
+    `t3.large`,
+    `t3.xlarge`,
+    `t3.2xlarge`,
+    `t3a.nano`,
+    `t3a.micro`,
+    `t3a.small`,
+    `t3a.medium`,
+    `t3a.large`,
+    `t3a.xlarge`,
+    `t3a.2xlarge`,
+    `t4g.nano`,
+    `t4g.micro`,
+    `t4g.small`,
+    `t4g.medium`,
+    `t4g.large`,
+    `t4g.xlarge`,
+    `t4g.2xlarge`,
+    `m1.small`,
+    `m1.medium`,
+    `m1.large`,
+    `m1.xlarge`,
+    `m3.medium`,
+    `m3.large`,
+    `m3.xlarge`,
+    `m3.2xlarge`,
+    `m4.large`,
+    `m4.xlarge`,
+    `m4.2xlarge`,
+    `m4.4xlarge`,
+    `m4.10xlarge`,
+    `m4.16xlarge`,
+    `m2.xlarge`,
+    `m2.2xlarge`,
+    `m2.4xlarge`,
+    `cr1.8xlarge`,
+    `r3.large`,
+    `r3.xlarge`,
+    `r3.2xlarge`,
+    `r3.4xlarge`,
+    `r3.8xlarge`,
+    `r4.large`,
+    `r4.xlarge`,
+    `r4.2xlarge`,
+    `r4.4xlarge`,
+    `r4.8xlarge`,
+    `r4.16xlarge`,
+    `r5.large`,
+    `r5.xlarge`,
+    `r5.2xlarge`,
+    `r5.4xlarge`,
+    `r5.8xlarge`,
+    `r5.12xlarge`,
+    `r5.16xlarge`,
+    `r5.24xlarge`,
+    `r5.metal`,
+    `r5a.large`,
+    `r5a.xlarge`,
+    `r5a.2xlarge`,
+    `r5a.4xlarge`,
+    `r5a.8xlarge`,
+    `r5a.12xlarge`,
+    `r5a.16xlarge`,
+    `r5a.24xlarge`,
+    `r5b.large`,
+    `r5b.xlarge`,
+    `r5b.2xlarge`,
+    `r5b.4xlarge`,
+    `r5b.8xlarge`,
+    `r5b.12xlarge`,
+    `r5b.16xlarge`,
+    `r5b.24xlarge`,
+    `r5b.metal`,
+    `r5d.large`,
+    `r5d.xlarge`,
+    `r5d.2xlarge`,
+    `r5d.4xlarge`,
+    `r5d.8xlarge`,
+    `r5d.12xlarge`,
+    `r5d.16xlarge`,
+    `r5d.24xlarge`,
+    `r5d.metal`,
+    `r5ad.large`,
+    `r5ad.xlarge`,
+    `r5ad.2xlarge`,
+    `r5ad.4xlarge`,
+    `r5ad.8xlarge`,
+    `r5ad.12xlarge`,
+    `r5ad.16xlarge`,
+    `r5ad.24xlarge`,
+    `r6g.metal`,
+    `r6g.medium`,
+    `r6g.large`,
+    `r6g.xlarge`,
+    `r6g.2xlarge`,
+    `r6g.4xlarge`,
+    `r6g.8xlarge`,
+    `r6g.12xlarge`,
+    `r6g.16xlarge`,
+    `r6gd.metal`,
+    `r6gd.medium`,
+    `r6gd.large`,
+    `r6gd.xlarge`,
+    `r6gd.2xlarge`,
+    `r6gd.4xlarge`,
+    `r6gd.8xlarge`,
+    `r6gd.12xlarge`,
+    `r6gd.16xlarge`,
+    `x1.16xlarge`,
+    `x1.32xlarge`,
+    `x1e.xlarge`,
+    `x1e.2xlarge`,
+    `x1e.4xlarge`,
+    `x1e.8xlarge`,
+    `x1e.16xlarge`,
+    `x1e.32xlarge`,
+    `i2.xlarge`,
+    `i2.2xlarge`,
+    `i2.4xlarge`,
+    `i2.8xlarge`,
+    `i3.large`,
+    `i3.xlarge`,
+    `i3.2xlarge`,
+    `i3.4xlarge`,
+    `i3.8xlarge`,
+    `i3.16xlarge`,
+    `i3.metal`,
+    `i3en.large`,
+    `i3en.xlarge`,
+    `i3en.2xlarge`,
+    `i3en.3xlarge`,
+    `i3en.6xlarge`,
+    `i3en.12xlarge`,
+    `i3en.24xlarge`,
+    `i3en.metal`,
+    `hi1.4xlarge`,
+    `hs1.8xlarge`,
+    `c1.medium`,
+    `c1.xlarge`,
+    `c3.large`,
+    `c3.xlarge`,
+    `c3.2xlarge`,
+    `c3.4xlarge`,
+    `c3.8xlarge`,
+    `c4.large`,
+    `c4.xlarge`,
+    `c4.2xlarge`,
+    `c4.4xlarge`,
+    `c4.8xlarge`,
+    `c5.large`,
+    `c5.xlarge`,
+    `c5.2xlarge`,
+    `c5.4xlarge`,
+    `c5.9xlarge`,
+    `c5.12xlarge`,
+    `c5.18xlarge`,
+    `c5.24xlarge`,
+    `c5.metal`,
+    `c5a.large`,
+    `c5a.xlarge`,
+    `c5a.2xlarge`,
+    `c5a.4xlarge`,
+    `c5a.8xlarge`,
+    `c5a.12xlarge`,
+    `c5a.16xlarge`,
+    `c5a.24xlarge`,
+    `c5ad.large`,
+    `c5ad.xlarge`,
+    `c5ad.2xlarge`,
+    `c5ad.4xlarge`,
+    `c5ad.8xlarge`,
+    `c5ad.12xlarge`,
+    `c5ad.16xlarge`,
+    `c5ad.24xlarge`,
+    `c5d.large`,
+    `c5d.xlarge`,
+    `c5d.2xlarge`,
+    `c5d.4xlarge`,
+    `c5d.9xlarge`,
+    `c5d.12xlarge`,
+    `c5d.18xlarge`,
+    `c5d.24xlarge`,
+    `c5d.metal`,
+    `c5n.large`,
+    `c5n.xlarge`,
+    `c5n.2xlarge`,
+    `c5n.4xlarge`,
+    `c5n.9xlarge`,
+    `c5n.18xlarge`,
+    `c5n.metal`,
+    `c6g.metal`,
+    `c6g.medium`,
+    `c6g.large`,
+    `c6g.xlarge`,
+    `c6g.2xlarge`,
+    `c6g.4xlarge`,
+    `c6g.8xlarge`,
+    `c6g.12xlarge`,
+    `c6g.16xlarge`,
+    `c6gd.metal`,
+    `c6gd.medium`,
+    `c6gd.large`,
+    `c6gd.xlarge`,
+    `c6gd.2xlarge`,
+    `c6gd.4xlarge`,
+    `c6gd.8xlarge`,
+    `c6gd.12xlarge`,
+    `c6gd.16xlarge`,
+    `c6gn.medium`,
+    `c6gn.large`,
+    `c6gn.xlarge`,
+    `c6gn.2xlarge`,
+    `c6gn.4xlarge`,
+    `c6gn.8xlarge`,
+    `c6gn.12xlarge`,
+    `c6gn.16xlarge`,
+    `cc1.4xlarge`,
+    `cc2.8xlarge`,
+    `g2.2xlarge`,
+    `g2.8xlarge`,
+    `g3.4xlarge`,
+    `g3.8xlarge`,
+    `g3.16xlarge`,
+    `g3s.xlarge`,
+    `g4ad.4xlarge`,
+    `g4ad.8xlarge`,
+    `g4ad.16xlarge`,
+    `g4dn.xlarge`,
+    `g4dn.2xlarge`,
+    `g4dn.4xlarge`,
+    `g4dn.8xlarge`,
+    `g4dn.12xlarge`,
+    `g4dn.16xlarge`,
+    `g4dn.metal`,
+    `cg1.4xlarge`,
+    `p2.xlarge`,
+    `p2.8xlarge`,
+    `p2.16xlarge`,
+    `p3.2xlarge`,
+    `p3.8xlarge`,
+    `p3.16xlarge`,
+    `p3dn.24xlarge`,
+    `p4d.24xlarge`,
+    `d2.xlarge`,
+    `d2.2xlarge`,
+    `d2.4xlarge`,
+    `d2.8xlarge`,
+    `d3.xlarge`,
+    `d3.2xlarge`,
+    `d3.4xlarge`,
+    `d3.8xlarge`,
+    `d3en.xlarge`,
+    `d3en.2xlarge`,
+    `d3en.4xlarge`,
+    `d3en.6xlarge`,
+    `d3en.8xlarge`,
+    `d3en.12xlarge`,
+    `f1.2xlarge`,
+    `f1.4xlarge`,
+    `f1.16xlarge`,
+    `m5.large`,
+    `m5.xlarge`,
+    `m5.2xlarge`,
+    `m5.4xlarge`,
+    `m5.8xlarge`,
+    `m5.12xlarge`,
+    `m5.16xlarge`,
+    `m5.24xlarge`,
+    `m5.metal`,
+    `m5a.large`,
+    `m5a.xlarge`,
+    `m5a.2xlarge`,
+    `m5a.4xlarge`,
+    `m5a.8xlarge`,
+    `m5a.12xlarge`,
+    `m5a.16xlarge`,
+    `m5a.24xlarge`,
+    `m5d.large`,
+    `m5d.xlarge`,
+    `m5d.2xlarge`,
+    `m5d.4xlarge`,
+    `m5d.8xlarge`,
+    `m5d.12xlarge`,
+    `m5d.16xlarge`,
+    `m5d.24xlarge`,
+    `m5d.metal`,
+    `m5ad.large`,
+    `m5ad.xlarge`,
+    `m5ad.2xlarge`,
+    `m5ad.4xlarge`,
+    `m5ad.8xlarge`,
+    `m5ad.12xlarge`,
+    `m5ad.16xlarge`,
+    `m5ad.24xlarge`,
+    `m5zn.large`,
+    `m5zn.xlarge`,
+    `m5zn.2xlarge`,
+    `m5zn.3xlarge`,
+    `m5zn.6xlarge`,
+    `m5zn.12xlarge`,
+    `m5zn.metal`,
+    `h1.2xlarge`,
+    `h1.4xlarge`,
+    `h1.8xlarge`,
+    `h1.16xlarge`,
+    `z1d.large`,
+    `z1d.xlarge`,
+    `z1d.2xlarge`,
+    `z1d.3xlarge`,
+    `z1d.6xlarge`,
+    `z1d.12xlarge`,
+    `z1d.metal`,
+    `u-6tb1.metal`,
+    `u-9tb1.metal`,
+    `u-12tb1.metal`,
+    `u-18tb1.metal`,
+    `u-24tb1.metal`,
+    `a1.medium`,
+    `a1.large`,
+    `a1.xlarge`,
+    `a1.2xlarge`,
+    `a1.4xlarge`,
+    `a1.metal`,
+    `m5dn.large`,
+    `m5dn.xlarge`,
+    `m5dn.2xlarge`,
+    `m5dn.4xlarge`,
+    `m5dn.8xlarge`,
+    `m5dn.12xlarge`,
+    `m5dn.16xlarge`,
+    `m5dn.24xlarge`,
+    `m5n.large`,
+    `m5n.xlarge`,
+    `m5n.2xlarge`,
+    `m5n.4xlarge`,
+    `m5n.8xlarge`,
+    `m5n.12xlarge`,
+    `m5n.16xlarge`,
+    `m5n.24xlarge`,
+    `r5dn.large`,
+    `r5dn.xlarge`,
+    `r5dn.2xlarge`,
+    `r5dn.4xlarge`,
+    `r5dn.8xlarge`,
+    `r5dn.12xlarge`,
+    `r5dn.16xlarge`,
+    `r5dn.24xlarge`,
+    `r5n.large`,
+    `r5n.xlarge`,
+    `r5n.2xlarge`,
+    `r5n.4xlarge`,
+    `r5n.8xlarge`,
+    `r5n.12xlarge`,
+    `r5n.16xlarge`,
+    `r5n.24xlarge`,
+    `inf1.xlarge`,
+    `inf1.2xlarge`,
+    `inf1.6xlarge`,
+    `inf1.24xlarge`,
+    `m6g.metal`,
+    `m6g.medium`,
+    `m6g.large`,
+    `m6g.xlarge`,
+    `m6g.2xlarge`,
+    `m6g.4xlarge`,
+    `m6g.8xlarge`,
+    `m6g.12xlarge`,
+    `m6g.16xlarge`,
+    `m6gd.metal`,
+    `m6gd.medium`,
+    `m6gd.large`,
+    `m6gd.xlarge`,
+    `m6gd.2xlarge`,
+    `m6gd.4xlarge`,
+    `m6gd.8xlarge`,
+    `m6gd.12xlarge`,
+    `m6gd.16xlarge`,
+    `mac1.metal`,
+    `x2gd.medium`,
+    `x2gd.large`,
+    `x2gd.xlarge`,
+    `x2gd.2xlarge`,
+    `x2gd.4xlarge`,
+    `x2gd.8xlarge`,
+    `x2gd.12xlarge`,
+    `x2gd.16xlarge`,
+    `x2gd.metal`
+  )
 }
 
 @js.native
@@ -1444,7 +1879,7 @@ object InstanceTypeHypervisor {
   val nitro = "nitro".asInstanceOf[InstanceTypeHypervisor]
   val xen = "xen".asInstanceOf[InstanceTypeHypervisor]
 
-  @inline def values = js.Array(nitro, xen)
+  @inline def values: js.Array[InstanceTypeHypervisor] = js.Array(nitro, xen)
 }
 
 @js.native
@@ -1453,7 +1888,7 @@ object InterfacePermissionType {
   val `INSTANCE-ATTACH` = "INSTANCE-ATTACH".asInstanceOf[InterfacePermissionType]
   val `EIP-ASSOCIATE` = "EIP-ASSOCIATE".asInstanceOf[InterfacePermissionType]
 
-  @inline def values = js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`)
+  @inline def values: js.Array[InterfacePermissionType] = js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`)
 }
 
 @js.native
@@ -1462,7 +1897,7 @@ object Ipv6SupportValue {
   val enable = "enable".asInstanceOf[Ipv6SupportValue]
   val disable = "disable".asInstanceOf[Ipv6SupportValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[Ipv6SupportValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -1475,7 +1910,14 @@ object LaunchTemplateErrorCode {
   val launchTemplateVersionDoesNotExist = "launchTemplateVersionDoesNotExist".asInstanceOf[LaunchTemplateErrorCode]
   val unexpectedError = "unexpectedError".asInstanceOf[LaunchTemplateErrorCode]
 
-  @inline def values = js.Array(launchTemplateIdDoesNotExist, launchTemplateIdMalformed, launchTemplateNameDoesNotExist, launchTemplateNameMalformed, launchTemplateVersionDoesNotExist, unexpectedError)
+  @inline def values: js.Array[LaunchTemplateErrorCode] = js.Array(
+    launchTemplateIdDoesNotExist,
+    launchTemplateIdMalformed,
+    launchTemplateNameDoesNotExist,
+    launchTemplateNameMalformed,
+    launchTemplateVersionDoesNotExist,
+    unexpectedError
+  )
 }
 
 @js.native
@@ -1484,7 +1926,7 @@ object LaunchTemplateHttpTokensState {
   val optional = "optional".asInstanceOf[LaunchTemplateHttpTokensState]
   val required = "required".asInstanceOf[LaunchTemplateHttpTokensState]
 
-  @inline def values = js.Array(optional, required)
+  @inline def values: js.Array[LaunchTemplateHttpTokensState] = js.Array(optional, required)
 }
 
 @js.native
@@ -1493,7 +1935,7 @@ object LaunchTemplateInstanceMetadataEndpointState {
   val disabled = "disabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
   val enabled = "enabled".asInstanceOf[LaunchTemplateInstanceMetadataEndpointState]
 
-  @inline def values = js.Array(disabled, enabled)
+  @inline def values: js.Array[LaunchTemplateInstanceMetadataEndpointState] = js.Array(disabled, enabled)
 }
 
 @js.native
@@ -1502,7 +1944,7 @@ object LaunchTemplateInstanceMetadataOptionsState {
   val pending = "pending".asInstanceOf[LaunchTemplateInstanceMetadataOptionsState]
   val applied = "applied".asInstanceOf[LaunchTemplateInstanceMetadataOptionsState]
 
-  @inline def values = js.Array(pending, applied)
+  @inline def values: js.Array[LaunchTemplateInstanceMetadataOptionsState] = js.Array(pending, applied)
 }
 
 @js.native
@@ -1513,7 +1955,7 @@ object ListingState {
   val cancelled = "cancelled".asInstanceOf[ListingState]
   val pending = "pending".asInstanceOf[ListingState]
 
-  @inline def values = js.Array(available, sold, cancelled, pending)
+  @inline def values: js.Array[ListingState] = js.Array(available, sold, cancelled, pending)
 }
 
 @js.native
@@ -1524,7 +1966,7 @@ object ListingStatus {
   val cancelled = "cancelled".asInstanceOf[ListingStatus]
   val closed = "closed".asInstanceOf[ListingStatus]
 
-  @inline def values = js.Array(active, pending, cancelled, closed)
+  @inline def values: js.Array[ListingStatus] = js.Array(active, pending, cancelled, closed)
 }
 
 @js.native
@@ -1536,7 +1978,7 @@ object LocalGatewayRouteState {
   val deleting = "deleting".asInstanceOf[LocalGatewayRouteState]
   val deleted = "deleted".asInstanceOf[LocalGatewayRouteState]
 
-  @inline def values = js.Array(pending, active, blackhole, deleting, deleted)
+  @inline def values: js.Array[LocalGatewayRouteState] = js.Array(pending, active, blackhole, deleting, deleted)
 }
 
 @js.native
@@ -1545,7 +1987,7 @@ object LocalGatewayRouteType {
   val static = "static".asInstanceOf[LocalGatewayRouteType]
   val propagated = "propagated".asInstanceOf[LocalGatewayRouteType]
 
-  @inline def values = js.Array(static, propagated)
+  @inline def values: js.Array[LocalGatewayRouteType] = js.Array(static, propagated)
 }
 
 @js.native
@@ -1555,7 +1997,7 @@ object LocationType {
   val `availability-zone` = "availability-zone".asInstanceOf[LocationType]
   val `availability-zone-id` = "availability-zone-id".asInstanceOf[LocationType]
 
-  @inline def values = js.Array(region, `availability-zone`, `availability-zone-id`)
+  @inline def values: js.Array[LocationType] = js.Array(region, `availability-zone`, `availability-zone-id`)
 }
 
 @js.native
@@ -1564,7 +2006,7 @@ object LogDestinationType {
   val `cloud-watch-logs` = "cloud-watch-logs".asInstanceOf[LogDestinationType]
   val s3 = "s3".asInstanceOf[LogDestinationType]
 
-  @inline def values = js.Array(`cloud-watch-logs`, s3)
+  @inline def values: js.Array[LogDestinationType] = js.Array(`cloud-watch-logs`, s3)
 }
 
 @js.native
@@ -1572,7 +2014,7 @@ sealed trait MarketType extends js.Any
 object MarketType {
   val spot = "spot".asInstanceOf[MarketType]
 
-  @inline def values = js.Array(spot)
+  @inline def values: js.Array[MarketType] = js.Array(spot)
 }
 
 @js.native
@@ -1581,7 +2023,7 @@ object MembershipType {
   val static = "static".asInstanceOf[MembershipType]
   val igmp = "igmp".asInstanceOf[MembershipType]
 
-  @inline def values = js.Array(static, igmp)
+  @inline def values: js.Array[MembershipType] = js.Array(static, igmp)
 }
 
 @js.native
@@ -1590,7 +2032,7 @@ object ModifyAvailabilityZoneOptInStatus {
   val `opted-in` = "opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
   val `not-opted-in` = "not-opted-in".asInstanceOf[ModifyAvailabilityZoneOptInStatus]
 
-  @inline def values = js.Array(`opted-in`, `not-opted-in`)
+  @inline def values: js.Array[ModifyAvailabilityZoneOptInStatus] = js.Array(`opted-in`, `not-opted-in`)
 }
 
 @js.native
@@ -1601,7 +2043,7 @@ object MonitoringState {
   val enabled = "enabled".asInstanceOf[MonitoringState]
   val pending = "pending".asInstanceOf[MonitoringState]
 
-  @inline def values = js.Array(disabled, disabling, enabled, pending)
+  @inline def values: js.Array[MonitoringState] = js.Array(disabled, disabling, enabled, pending)
 }
 
 @js.native
@@ -1610,7 +2052,7 @@ object MoveStatus {
   val movingToVpc = "movingToVpc".asInstanceOf[MoveStatus]
   val restoringToClassic = "restoringToClassic".asInstanceOf[MoveStatus]
 
-  @inline def values = js.Array(movingToVpc, restoringToClassic)
+  @inline def values: js.Array[MoveStatus] = js.Array(movingToVpc, restoringToClassic)
 }
 
 @js.native
@@ -1619,7 +2061,7 @@ object MulticastSupportValue {
   val enable = "enable".asInstanceOf[MulticastSupportValue]
   val disable = "disable".asInstanceOf[MulticastSupportValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[MulticastSupportValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -1631,7 +2073,7 @@ object NatGatewayState {
   val deleting = "deleting".asInstanceOf[NatGatewayState]
   val deleted = "deleted".asInstanceOf[NatGatewayState]
 
-  @inline def values = js.Array(pending, failed, available, deleting, deleted)
+  @inline def values: js.Array[NatGatewayState] = js.Array(pending, failed, available, deleting, deleted)
 }
 
 @js.native
@@ -1642,7 +2084,7 @@ object NetworkInterfaceAttribute {
   val sourceDestCheck = "sourceDestCheck".asInstanceOf[NetworkInterfaceAttribute]
   val attachment = "attachment".asInstanceOf[NetworkInterfaceAttribute]
 
-  @inline def values = js.Array(description, groupSet, sourceDestCheck, attachment)
+  @inline def values: js.Array[NetworkInterfaceAttribute] = js.Array(description, groupSet, sourceDestCheck, attachment)
 }
 
 @js.native
@@ -1650,7 +2092,7 @@ sealed trait NetworkInterfaceCreationType extends js.Any
 object NetworkInterfaceCreationType {
   val efa = "efa".asInstanceOf[NetworkInterfaceCreationType]
 
-  @inline def values = js.Array(efa)
+  @inline def values: js.Array[NetworkInterfaceCreationType] = js.Array(efa)
 }
 
 @js.native
@@ -1661,7 +2103,7 @@ object NetworkInterfacePermissionStateCode {
   val revoking = "revoking".asInstanceOf[NetworkInterfacePermissionStateCode]
   val revoked = "revoked".asInstanceOf[NetworkInterfacePermissionStateCode]
 
-  @inline def values = js.Array(pending, granted, revoking, revoked)
+  @inline def values: js.Array[NetworkInterfacePermissionStateCode] = js.Array(pending, granted, revoking, revoked)
 }
 
 @js.native
@@ -1673,7 +2115,7 @@ object NetworkInterfaceStatus {
   val `in-use` = "in-use".asInstanceOf[NetworkInterfaceStatus]
   val detaching = "detaching".asInstanceOf[NetworkInterfaceStatus]
 
-  @inline def values = js.Array(available, associated, attaching, `in-use`, detaching)
+  @inline def values: js.Array[NetworkInterfaceStatus] = js.Array(available, associated, attaching, `in-use`, detaching)
 }
 
 @js.native
@@ -1683,7 +2125,7 @@ object NetworkInterfaceType {
   val natGateway = "natGateway".asInstanceOf[NetworkInterfaceType]
   val efa = "efa".asInstanceOf[NetworkInterfaceType]
 
-  @inline def values = js.Array(interface, natGateway, efa)
+  @inline def values: js.Array[NetworkInterfaceType] = js.Array(interface, natGateway, efa)
 }
 
 @js.native
@@ -1692,7 +2134,7 @@ object OfferingClassType {
   val standard = "standard".asInstanceOf[OfferingClassType]
   val convertible = "convertible".asInstanceOf[OfferingClassType]
 
-  @inline def values = js.Array(standard, convertible)
+  @inline def values: js.Array[OfferingClassType] = js.Array(standard, convertible)
 }
 
 @js.native
@@ -1705,7 +2147,7 @@ object OfferingTypeValues {
   val `Partial Upfront` = "Partial Upfront".asInstanceOf[OfferingTypeValues]
   val `All Upfront` = "All Upfront".asInstanceOf[OfferingTypeValues]
 
-  @inline def values = js.Array(`Heavy Utilization`, `Medium Utilization`, `Light Utilization`, `No Upfront`, `Partial Upfront`, `All Upfront`)
+  @inline def values: js.Array[OfferingTypeValues] = js.Array(`Heavy Utilization`, `Medium Utilization`, `Light Utilization`, `No Upfront`, `Partial Upfront`, `All Upfront`)
 }
 
 @js.native
@@ -1714,7 +2156,7 @@ object OnDemandAllocationStrategy {
   val lowestPrice = "lowestPrice".asInstanceOf[OnDemandAllocationStrategy]
   val prioritized = "prioritized".asInstanceOf[OnDemandAllocationStrategy]
 
-  @inline def values = js.Array(lowestPrice, prioritized)
+  @inline def values: js.Array[OnDemandAllocationStrategy] = js.Array(lowestPrice, prioritized)
 }
 
 @js.native
@@ -1723,7 +2165,7 @@ object OperationType {
   val add = "add".asInstanceOf[OperationType]
   val remove = "remove".asInstanceOf[OperationType]
 
-  @inline def values = js.Array(add, remove)
+  @inline def values: js.Array[OperationType] = js.Array(add, remove)
 }
 
 @js.native
@@ -1734,7 +2176,7 @@ object PartitionLoadFrequency {
   val weekly = "weekly".asInstanceOf[PartitionLoadFrequency]
   val monthly = "monthly".asInstanceOf[PartitionLoadFrequency]
 
-  @inline def values = js.Array(none, daily, weekly, monthly)
+  @inline def values: js.Array[PartitionLoadFrequency] = js.Array(none, daily, weekly, monthly)
 }
 
 @js.native
@@ -1744,7 +2186,7 @@ object PaymentOption {
   val PartialUpfront = "PartialUpfront".asInstanceOf[PaymentOption]
   val NoUpfront = "NoUpfront".asInstanceOf[PaymentOption]
 
-  @inline def values = js.Array(AllUpfront, PartialUpfront, NoUpfront)
+  @inline def values: js.Array[PaymentOption] = js.Array(AllUpfront, PartialUpfront, NoUpfront)
 }
 
 @js.native
@@ -1752,7 +2194,7 @@ sealed trait PermissionGroup extends js.Any
 object PermissionGroup {
   val all = "all".asInstanceOf[PermissionGroup]
 
-  @inline def values = js.Array(all)
+  @inline def values: js.Array[PermissionGroup] = js.Array(all)
 }
 
 @js.native
@@ -1763,7 +2205,7 @@ object PlacementGroupState {
   val deleting = "deleting".asInstanceOf[PlacementGroupState]
   val deleted = "deleted".asInstanceOf[PlacementGroupState]
 
-  @inline def values = js.Array(pending, available, deleting, deleted)
+  @inline def values: js.Array[PlacementGroupState] = js.Array(pending, available, deleting, deleted)
 }
 
 @js.native
@@ -1773,7 +2215,7 @@ object PlacementGroupStrategy {
   val partition = "partition".asInstanceOf[PlacementGroupStrategy]
   val spread = "spread".asInstanceOf[PlacementGroupStrategy]
 
-  @inline def values = js.Array(cluster, partition, spread)
+  @inline def values: js.Array[PlacementGroupStrategy] = js.Array(cluster, partition, spread)
 }
 
 @js.native
@@ -1783,7 +2225,7 @@ object PlacementStrategy {
   val spread = "spread".asInstanceOf[PlacementStrategy]
   val partition = "partition".asInstanceOf[PlacementStrategy]
 
-  @inline def values = js.Array(cluster, spread, partition)
+  @inline def values: js.Array[PlacementStrategy] = js.Array(cluster, spread, partition)
 }
 
 @js.native
@@ -1791,7 +2233,7 @@ sealed trait PlatformValues extends js.Any
 object PlatformValues {
   val Windows = "Windows".asInstanceOf[PlatformValues]
 
-  @inline def values = js.Array(Windows)
+  @inline def values: js.Array[PlatformValues] = js.Array(Windows)
 }
 
 @js.native
@@ -1810,7 +2252,20 @@ object PrefixListState {
   val `delete-complete` = "delete-complete".asInstanceOf[PrefixListState]
   val `delete-failed` = "delete-failed".asInstanceOf[PrefixListState]
 
-  @inline def values = js.Array(`create-in-progress`, `create-complete`, `create-failed`, `modify-in-progress`, `modify-complete`, `modify-failed`, `restore-in-progress`, `restore-complete`, `restore-failed`, `delete-in-progress`, `delete-complete`, `delete-failed`)
+  @inline def values: js.Array[PrefixListState] = js.Array(
+    `create-in-progress`,
+    `create-complete`,
+    `create-failed`,
+    `modify-in-progress`,
+    `modify-complete`,
+    `modify-failed`,
+    `restore-in-progress`,
+    `restore-complete`,
+    `restore-failed`,
+    `delete-in-progress`,
+    `delete-complete`,
+    `delete-failed`
+  )
 }
 
 @js.native
@@ -1823,7 +2278,7 @@ object PrincipalType {
   val User = "User".asInstanceOf[PrincipalType]
   val Role = "Role".asInstanceOf[PrincipalType]
 
-  @inline def values = js.Array(All, Service, OrganizationUnit, Account, User, Role)
+  @inline def values: js.Array[PrincipalType] = js.Array(All, Service, OrganizationUnit, Account, User, Role)
 }
 
 @js.native
@@ -1832,7 +2287,7 @@ object ProductCodeValues {
   val devpay = "devpay".asInstanceOf[ProductCodeValues]
   val marketplace = "marketplace".asInstanceOf[ProductCodeValues]
 
-  @inline def values = js.Array(devpay, marketplace)
+  @inline def values: js.Array[ProductCodeValues] = js.Array(devpay, marketplace)
 }
 
 @js.native
@@ -1841,7 +2296,7 @@ object Protocol {
   val tcp = "tcp".asInstanceOf[Protocol]
   val udp = "udp".asInstanceOf[Protocol]
 
-  @inline def values = js.Array(tcp, udp)
+  @inline def values: js.Array[Protocol] = js.Array(tcp, udp)
 }
 
 @js.native
@@ -1849,7 +2304,7 @@ sealed trait ProtocolValue extends js.Any
 object ProtocolValue {
   val gre = "gre".asInstanceOf[ProtocolValue]
 
-  @inline def values = js.Array(gre)
+  @inline def values: js.Array[ProtocolValue] = js.Array(gre)
 }
 
 @js.native
@@ -1860,7 +2315,7 @@ object RIProductDescription {
   val Windows = "Windows".asInstanceOf[RIProductDescription]
   val `Windows (Amazon VPC)` = "Windows (Amazon VPC)".asInstanceOf[RIProductDescription]
 
-  @inline def values = js.Array(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`)
+  @inline def values: js.Array[RIProductDescription] = js.Array(`Linux/UNIX`, `Linux/UNIX (Amazon VPC)`, Windows, `Windows (Amazon VPC)`)
 }
 
 @js.native
@@ -1868,7 +2323,7 @@ sealed trait RecurringChargeFrequency extends js.Any
 object RecurringChargeFrequency {
   val Hourly = "Hourly".asInstanceOf[RecurringChargeFrequency]
 
-  @inline def values = js.Array(Hourly)
+  @inline def values: js.Array[RecurringChargeFrequency] = js.Array(Hourly)
 }
 
 @js.native
@@ -1881,7 +2336,7 @@ object ReplaceRootVolumeTaskState {
   val failed = "failed".asInstanceOf[ReplaceRootVolumeTaskState]
   val `failed-detached` = "failed-detached".asInstanceOf[ReplaceRootVolumeTaskState]
 
-  @inline def values = js.Array(pending, `in-progress`, failing, succeeded, failed, `failed-detached`)
+  @inline def values: js.Array[ReplaceRootVolumeTaskState] = js.Array(pending, `in-progress`, failing, succeeded, failed, `failed-detached`)
 }
 
 @js.native
@@ -1889,7 +2344,7 @@ sealed trait ReplacementStrategy extends js.Any
 object ReplacementStrategy {
   val launch = "launch".asInstanceOf[ReplacementStrategy]
 
-  @inline def values = js.Array(launch)
+  @inline def values: js.Array[ReplacementStrategy] = js.Array(launch)
 }
 
 @js.native
@@ -1905,7 +2360,17 @@ object ReportInstanceReasonCodes {
   val `performance-other` = "performance-other".asInstanceOf[ReportInstanceReasonCodes]
   val other = "other".asInstanceOf[ReportInstanceReasonCodes]
 
-  @inline def values = js.Array(`instance-stuck-in-state`, unresponsive, `not-accepting-credentials`, `password-not-available`, `performance-network`, `performance-instance-store`, `performance-ebs-volume`, `performance-other`, other)
+  @inline def values: js.Array[ReportInstanceReasonCodes] = js.Array(
+    `instance-stuck-in-state`,
+    unresponsive,
+    `not-accepting-credentials`,
+    `password-not-available`,
+    `performance-network`,
+    `performance-instance-store`,
+    `performance-ebs-volume`,
+    `performance-other`,
+    other
+  )
 }
 
 @js.native
@@ -1914,7 +2379,7 @@ object ReportStatusType {
   val ok = "ok".asInstanceOf[ReportStatusType]
   val impaired = "impaired".asInstanceOf[ReportStatusType]
 
-  @inline def values = js.Array(ok, impaired)
+  @inline def values: js.Array[ReportStatusType] = js.Array(ok, impaired)
 }
 
 @js.native
@@ -1925,7 +2390,7 @@ object ReservationState {
   val active = "active".asInstanceOf[ReservationState]
   val retired = "retired".asInstanceOf[ReservationState]
 
-  @inline def values = js.Array(`payment-pending`, `payment-failed`, active, retired)
+  @inline def values: js.Array[ReservationState] = js.Array(`payment-pending`, `payment-failed`, active, retired)
 }
 
 @js.native
@@ -1938,7 +2403,7 @@ object ReservedInstanceState {
   val queued = "queued".asInstanceOf[ReservedInstanceState]
   val `queued-deleted` = "queued-deleted".asInstanceOf[ReservedInstanceState]
 
-  @inline def values = js.Array(`payment-pending`, active, `payment-failed`, retired, queued, `queued-deleted`)
+  @inline def values: js.Array[ReservedInstanceState] = js.Array(`payment-pending`, active, `payment-failed`, retired, queued, `queued-deleted`)
 }
 
 @js.native
@@ -1946,7 +2411,7 @@ sealed trait ResetFpgaImageAttributeName extends js.Any
 object ResetFpgaImageAttributeName {
   val loadPermission = "loadPermission".asInstanceOf[ResetFpgaImageAttributeName]
 
-  @inline def values = js.Array(loadPermission)
+  @inline def values: js.Array[ResetFpgaImageAttributeName] = js.Array(loadPermission)
 }
 
 @js.native
@@ -1954,7 +2419,7 @@ sealed trait ResetImageAttributeName extends js.Any
 object ResetImageAttributeName {
   val launchPermission = "launchPermission".asInstanceOf[ResetImageAttributeName]
 
-  @inline def values = js.Array(launchPermission)
+  @inline def values: js.Array[ResetImageAttributeName] = js.Array(launchPermission)
 }
 
 @js.native
@@ -2008,7 +2473,55 @@ object ResourceType {
   val `vpn-gateway` = "vpn-gateway".asInstanceOf[ResourceType]
   val `vpc-flow-log` = "vpc-flow-log".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(`client-vpn-endpoint`, `customer-gateway`, `dedicated-host`, `dhcp-options`, `egress-only-internet-gateway`, `elastic-ip`, `elastic-gpu`, `export-image-task`, `export-instance-task`, fleet, `fpga-image`, `host-reservation`, image, `import-image-task`, `import-snapshot-task`, instance, `internet-gateway`, `key-pair`, `launch-template`, `local-gateway-route-table-vpc-association`, natgateway, `network-acl`, `network-interface`, `network-insights-analysis`, `network-insights-path`, `placement-group`, `reserved-instances`, `route-table`, `security-group`, snapshot, `spot-fleet-request`, `spot-instances-request`, subnet, `traffic-mirror-filter`, `traffic-mirror-session`, `traffic-mirror-target`, `transit-gateway`, `transit-gateway-attachment`, `transit-gateway-connect-peer`, `transit-gateway-multicast-domain`, `transit-gateway-route-table`, volume, vpc, `vpc-peering-connection`, `vpn-connection`, `vpn-gateway`, `vpc-flow-log`)
+  @inline def values: js.Array[ResourceType] = js.Array(
+    `client-vpn-endpoint`,
+    `customer-gateway`,
+    `dedicated-host`,
+    `dhcp-options`,
+    `egress-only-internet-gateway`,
+    `elastic-ip`,
+    `elastic-gpu`,
+    `export-image-task`,
+    `export-instance-task`,
+    fleet,
+    `fpga-image`,
+    `host-reservation`,
+    image,
+    `import-image-task`,
+    `import-snapshot-task`,
+    instance,
+    `internet-gateway`,
+    `key-pair`,
+    `launch-template`,
+    `local-gateway-route-table-vpc-association`,
+    natgateway,
+    `network-acl`,
+    `network-interface`,
+    `network-insights-analysis`,
+    `network-insights-path`,
+    `placement-group`,
+    `reserved-instances`,
+    `route-table`,
+    `security-group`,
+    snapshot,
+    `spot-fleet-request`,
+    `spot-instances-request`,
+    subnet,
+    `traffic-mirror-filter`,
+    `traffic-mirror-session`,
+    `traffic-mirror-target`,
+    `transit-gateway`,
+    `transit-gateway-attachment`,
+    `transit-gateway-connect-peer`,
+    `transit-gateway-multicast-domain`,
+    `transit-gateway-route-table`,
+    volume,
+    vpc,
+    `vpc-peering-connection`,
+    `vpn-connection`,
+    `vpn-gateway`,
+    `vpc-flow-log`
+  )
 }
 
 @js.native
@@ -2017,7 +2530,7 @@ object RootDeviceType {
   val ebs = "ebs".asInstanceOf[RootDeviceType]
   val `instance-store` = "instance-store".asInstanceOf[RootDeviceType]
 
-  @inline def values = js.Array(ebs, `instance-store`)
+  @inline def values: js.Array[RootDeviceType] = js.Array(ebs, `instance-store`)
 }
 
 @js.native
@@ -2027,7 +2540,7 @@ object RouteOrigin {
   val CreateRoute = "CreateRoute".asInstanceOf[RouteOrigin]
   val EnableVgwRoutePropagation = "EnableVgwRoutePropagation".asInstanceOf[RouteOrigin]
 
-  @inline def values = js.Array(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation)
+  @inline def values: js.Array[RouteOrigin] = js.Array(CreateRouteTable, CreateRoute, EnableVgwRoutePropagation)
 }
 
 @js.native
@@ -2036,7 +2549,7 @@ object RouteState {
   val active = "active".asInstanceOf[RouteState]
   val blackhole = "blackhole".asInstanceOf[RouteState]
 
-  @inline def values = js.Array(active, blackhole)
+  @inline def values: js.Array[RouteState] = js.Array(active, blackhole)
 }
 
 @js.native
@@ -2048,7 +2561,7 @@ object RouteTableAssociationStateCode {
   val disassociated = "disassociated".asInstanceOf[RouteTableAssociationStateCode]
   val failed = "failed".asInstanceOf[RouteTableAssociationStateCode]
 
-  @inline def values = js.Array(associating, associated, disassociating, disassociated, failed)
+  @inline def values: js.Array[RouteTableAssociationStateCode] = js.Array(associating, associated, disassociating, disassociated, failed)
 }
 
 @js.native
@@ -2057,7 +2570,7 @@ object RuleAction {
   val allow = "allow".asInstanceOf[RuleAction]
   val deny = "deny".asInstanceOf[RuleAction]
 
-  @inline def values = js.Array(allow, deny)
+  @inline def values: js.Array[RuleAction] = js.Array(allow, deny)
 }
 
 @js.native
@@ -2066,7 +2579,7 @@ object SelfServicePortal {
   val enabled = "enabled".asInstanceOf[SelfServicePortal]
   val disabled = "disabled".asInstanceOf[SelfServicePortal]
 
-  @inline def values = js.Array(enabled, disabled)
+  @inline def values: js.Array[SelfServicePortal] = js.Array(enabled, disabled)
 }
 
 @js.native
@@ -2078,7 +2591,7 @@ object ServiceState {
   val Deleted = "Deleted".asInstanceOf[ServiceState]
   val Failed = "Failed".asInstanceOf[ServiceState]
 
-  @inline def values = js.Array(Pending, Available, Deleting, Deleted, Failed)
+  @inline def values: js.Array[ServiceState] = js.Array(Pending, Available, Deleting, Deleted, Failed)
 }
 
 @js.native
@@ -2088,7 +2601,7 @@ object ServiceType {
   val Gateway = "Gateway".asInstanceOf[ServiceType]
   val GatewayLoadBalancer = "GatewayLoadBalancer".asInstanceOf[ServiceType]
 
-  @inline def values = js.Array(Interface, Gateway, GatewayLoadBalancer)
+  @inline def values: js.Array[ServiceType] = js.Array(Interface, Gateway, GatewayLoadBalancer)
 }
 
 @js.native
@@ -2097,7 +2610,7 @@ object ShutdownBehavior {
   val stop = "stop".asInstanceOf[ShutdownBehavior]
   val terminate = "terminate".asInstanceOf[ShutdownBehavior]
 
-  @inline def values = js.Array(stop, terminate)
+  @inline def values: js.Array[ShutdownBehavior] = js.Array(stop, terminate)
 }
 
 @js.native
@@ -2106,7 +2619,7 @@ object SnapshotAttributeName {
   val productCodes = "productCodes".asInstanceOf[SnapshotAttributeName]
   val createVolumePermission = "createVolumePermission".asInstanceOf[SnapshotAttributeName]
 
-  @inline def values = js.Array(productCodes, createVolumePermission)
+  @inline def values: js.Array[SnapshotAttributeName] = js.Array(productCodes, createVolumePermission)
 }
 
 @js.native
@@ -2116,7 +2629,7 @@ object SnapshotState {
   val completed = "completed".asInstanceOf[SnapshotState]
   val error = "error".asInstanceOf[SnapshotState]
 
-  @inline def values = js.Array(pending, completed, error)
+  @inline def values: js.Array[SnapshotState] = js.Array(pending, completed, error)
 }
 
 @js.native
@@ -2127,7 +2640,7 @@ object SpotAllocationStrategy {
   val `capacity-optimized` = "capacity-optimized".asInstanceOf[SpotAllocationStrategy]
   val `capacity-optimized-prioritized` = "capacity-optimized-prioritized".asInstanceOf[SpotAllocationStrategy]
 
-  @inline def values = js.Array(`lowest-price`, diversified, `capacity-optimized`, `capacity-optimized-prioritized`)
+  @inline def values: js.Array[SpotAllocationStrategy] = js.Array(`lowest-price`, diversified, `capacity-optimized`, `capacity-optimized-prioritized`)
 }
 
 @js.native
@@ -2137,7 +2650,7 @@ object SpotInstanceInterruptionBehavior {
   val stop = "stop".asInstanceOf[SpotInstanceInterruptionBehavior]
   val terminate = "terminate".asInstanceOf[SpotInstanceInterruptionBehavior]
 
-  @inline def values = js.Array(hibernate, stop, terminate)
+  @inline def values: js.Array[SpotInstanceInterruptionBehavior] = js.Array(hibernate, stop, terminate)
 }
 
 @js.native
@@ -2149,7 +2662,7 @@ object SpotInstanceState {
   val cancelled = "cancelled".asInstanceOf[SpotInstanceState]
   val failed = "failed".asInstanceOf[SpotInstanceState]
 
-  @inline def values = js.Array(open, active, closed, cancelled, failed)
+  @inline def values: js.Array[SpotInstanceState] = js.Array(open, active, closed, cancelled, failed)
 }
 
 @js.native
@@ -2158,7 +2671,7 @@ object SpotInstanceType {
   val `one-time` = "one-time".asInstanceOf[SpotInstanceType]
   val persistent = "persistent".asInstanceOf[SpotInstanceType]
 
-  @inline def values = js.Array(`one-time`, persistent)
+  @inline def values: js.Array[SpotInstanceType] = js.Array(`one-time`, persistent)
 }
 
 @js.native
@@ -2173,7 +2686,7 @@ object State {
   val Failed = "Failed".asInstanceOf[State]
   val Expired = "Expired".asInstanceOf[State]
 
-  @inline def values = js.Array(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired)
+  @inline def values: js.Array[State] = js.Array(PendingAcceptance, Pending, Available, Deleting, Deleted, Rejected, Failed, Expired)
 }
 
 @js.native
@@ -2182,7 +2695,7 @@ object StaticSourcesSupportValue {
   val enable = "enable".asInstanceOf[StaticSourcesSupportValue]
   val disable = "disable".asInstanceOf[StaticSourcesSupportValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[StaticSourcesSupportValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -2192,7 +2705,7 @@ object Status {
   val InVpc = "InVpc".asInstanceOf[Status]
   val InClassic = "InClassic".asInstanceOf[Status]
 
-  @inline def values = js.Array(MoveInProgress, InVpc, InClassic)
+  @inline def values: js.Array[Status] = js.Array(MoveInProgress, InVpc, InClassic)
 }
 
 @js.native
@@ -2200,7 +2713,7 @@ sealed trait StatusName extends js.Any
 object StatusName {
   val reachability = "reachability".asInstanceOf[StatusName]
 
-  @inline def values = js.Array(reachability)
+  @inline def values: js.Array[StatusName] = js.Array(reachability)
 }
 
 @js.native
@@ -2211,7 +2724,7 @@ object StatusType {
   val `insufficient-data` = "insufficient-data".asInstanceOf[StatusType]
   val initializing = "initializing".asInstanceOf[StatusType]
 
-  @inline def values = js.Array(passed, failed, `insufficient-data`, initializing)
+  @inline def values: js.Array[StatusType] = js.Array(passed, failed, `insufficient-data`, initializing)
 }
 
 @js.native
@@ -2224,7 +2737,7 @@ object SubnetCidrBlockStateCode {
   val failing = "failing".asInstanceOf[SubnetCidrBlockStateCode]
   val failed = "failed".asInstanceOf[SubnetCidrBlockStateCode]
 
-  @inline def values = js.Array(associating, associated, disassociating, disassociated, failing, failed)
+  @inline def values: js.Array[SubnetCidrBlockStateCode] = js.Array(associating, associated, disassociating, disassociated, failing, failed)
 }
 
 @js.native
@@ -2233,7 +2746,7 @@ object SubnetState {
   val pending = "pending".asInstanceOf[SubnetState]
   val available = "available".asInstanceOf[SubnetState]
 
-  @inline def values = js.Array(pending, available)
+  @inline def values: js.Array[SubnetState] = js.Array(pending, available)
 }
 
 @js.native
@@ -2245,7 +2758,7 @@ object SummaryStatus {
   val `not-applicable` = "not-applicable".asInstanceOf[SummaryStatus]
   val initializing = "initializing".asInstanceOf[SummaryStatus]
 
-  @inline def values = js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing)
+  @inline def values: js.Array[SummaryStatus] = js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing)
 }
 
 @js.native
@@ -2254,7 +2767,7 @@ object TelemetryStatus {
   val UP = "UP".asInstanceOf[TelemetryStatus]
   val DOWN = "DOWN".asInstanceOf[TelemetryStatus]
 
-  @inline def values = js.Array(UP, DOWN)
+  @inline def values: js.Array[TelemetryStatus] = js.Array(UP, DOWN)
 }
 
 @js.native
@@ -2264,7 +2777,7 @@ object Tenancy {
   val dedicated = "dedicated".asInstanceOf[Tenancy]
   val host = "host".asInstanceOf[Tenancy]
 
-  @inline def values = js.Array(default, dedicated, host)
+  @inline def values: js.Array[Tenancy] = js.Array(default, dedicated, host)
 }
 
 @js.native
@@ -2273,7 +2786,7 @@ object TrafficDirection {
   val ingress = "ingress".asInstanceOf[TrafficDirection]
   val egress = "egress".asInstanceOf[TrafficDirection]
 
-  @inline def values = js.Array(ingress, egress)
+  @inline def values: js.Array[TrafficDirection] = js.Array(ingress, egress)
 }
 
 @js.native
@@ -2284,7 +2797,7 @@ object TrafficMirrorFilterRuleField {
   val protocol = "protocol".asInstanceOf[TrafficMirrorFilterRuleField]
   val description = "description".asInstanceOf[TrafficMirrorFilterRuleField]
 
-  @inline def values = js.Array(`destination-port-range`, `source-port-range`, protocol, description)
+  @inline def values: js.Array[TrafficMirrorFilterRuleField] = js.Array(`destination-port-range`, `source-port-range`, protocol, description)
 }
 
 @js.native
@@ -2292,7 +2805,7 @@ sealed trait TrafficMirrorNetworkService extends js.Any
 object TrafficMirrorNetworkService {
   val `amazon-dns` = "amazon-dns".asInstanceOf[TrafficMirrorNetworkService]
 
-  @inline def values = js.Array(`amazon-dns`)
+  @inline def values: js.Array[TrafficMirrorNetworkService] = js.Array(`amazon-dns`)
 }
 
 @js.native
@@ -2301,7 +2814,7 @@ object TrafficMirrorRuleAction {
   val accept = "accept".asInstanceOf[TrafficMirrorRuleAction]
   val reject = "reject".asInstanceOf[TrafficMirrorRuleAction]
 
-  @inline def values = js.Array(accept, reject)
+  @inline def values: js.Array[TrafficMirrorRuleAction] = js.Array(accept, reject)
 }
 
 @js.native
@@ -2311,7 +2824,7 @@ object TrafficMirrorSessionField {
   val description = "description".asInstanceOf[TrafficMirrorSessionField]
   val `virtual-network-id` = "virtual-network-id".asInstanceOf[TrafficMirrorSessionField]
 
-  @inline def values = js.Array(`packet-length`, description, `virtual-network-id`)
+  @inline def values: js.Array[TrafficMirrorSessionField] = js.Array(`packet-length`, description, `virtual-network-id`)
 }
 
 @js.native
@@ -2320,7 +2833,7 @@ object TrafficMirrorTargetType {
   val `network-interface` = "network-interface".asInstanceOf[TrafficMirrorTargetType]
   val `network-load-balancer` = "network-load-balancer".asInstanceOf[TrafficMirrorTargetType]
 
-  @inline def values = js.Array(`network-interface`, `network-load-balancer`)
+  @inline def values: js.Array[TrafficMirrorTargetType] = js.Array(`network-interface`, `network-load-balancer`)
 }
 
 @js.native
@@ -2330,7 +2843,7 @@ object TrafficType {
   val REJECT = "REJECT".asInstanceOf[TrafficType]
   val ALL = "ALL".asInstanceOf[TrafficType]
 
-  @inline def values = js.Array(ACCEPT, REJECT, ALL)
+  @inline def values: js.Array[TrafficType] = js.Array(ACCEPT, REJECT, ALL)
 }
 
 @js.native
@@ -2341,7 +2854,7 @@ object TransitGatewayAssociationState {
   val disassociating = "disassociating".asInstanceOf[TransitGatewayAssociationState]
   val disassociated = "disassociated".asInstanceOf[TransitGatewayAssociationState]
 
-  @inline def values = js.Array(associating, associated, disassociating, disassociated)
+  @inline def values: js.Array[TransitGatewayAssociationState] = js.Array(associating, associated, disassociating, disassociated)
 }
 
 @js.native
@@ -2354,7 +2867,7 @@ object TransitGatewayAttachmentResourceType {
   val peering = "peering".asInstanceOf[TransitGatewayAttachmentResourceType]
   val `tgw-peering` = "tgw-peering".asInstanceOf[TransitGatewayAttachmentResourceType]
 
-  @inline def values = js.Array(vpc, vpn, `direct-connect-gateway`, connect, peering, `tgw-peering`)
+  @inline def values: js.Array[TransitGatewayAttachmentResourceType] = js.Array(vpc, vpn, `direct-connect-gateway`, connect, peering, `tgw-peering`)
 }
 
 @js.native
@@ -2374,7 +2887,7 @@ object TransitGatewayAttachmentState {
   val rejecting = "rejecting".asInstanceOf[TransitGatewayAttachmentState]
   val failing = "failing".asInstanceOf[TransitGatewayAttachmentState]
 
-  @inline def values = js.Array(initiating, initiatingRequest, pendingAcceptance, rollingBack, pending, available, modifying, deleting, deleted, failed, rejected, rejecting, failing)
+  @inline def values: js.Array[TransitGatewayAttachmentState] = js.Array(initiating, initiatingRequest, pendingAcceptance, rollingBack, pending, available, modifying, deleting, deleted, failed, rejected, rejecting, failing)
 }
 
 @js.native
@@ -2385,7 +2898,7 @@ object TransitGatewayConnectPeerState {
   val deleting = "deleting".asInstanceOf[TransitGatewayConnectPeerState]
   val deleted = "deleted".asInstanceOf[TransitGatewayConnectPeerState]
 
-  @inline def values = js.Array(pending, available, deleting, deleted)
+  @inline def values: js.Array[TransitGatewayConnectPeerState] = js.Array(pending, available, deleting, deleted)
 }
 
 @js.native
@@ -2399,7 +2912,7 @@ object TransitGatewayMulitcastDomainAssociationState {
   val rejected = "rejected".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
   val failed = "failed".asInstanceOf[TransitGatewayMulitcastDomainAssociationState]
 
-  @inline def values = js.Array(pendingAcceptance, associating, associated, disassociating, disassociated, rejected, failed)
+  @inline def values: js.Array[TransitGatewayMulitcastDomainAssociationState] = js.Array(pendingAcceptance, associating, associated, disassociating, disassociated, rejected, failed)
 }
 
 @js.native
@@ -2410,7 +2923,7 @@ object TransitGatewayMulticastDomainState {
   val deleting = "deleting".asInstanceOf[TransitGatewayMulticastDomainState]
   val deleted = "deleted".asInstanceOf[TransitGatewayMulticastDomainState]
 
-  @inline def values = js.Array(pending, available, deleting, deleted)
+  @inline def values: js.Array[TransitGatewayMulticastDomainState] = js.Array(pending, available, deleting, deleted)
 }
 
 @js.native
@@ -2421,7 +2934,7 @@ object TransitGatewayPrefixListReferenceState {
   val modifying = "modifying".asInstanceOf[TransitGatewayPrefixListReferenceState]
   val deleting = "deleting".asInstanceOf[TransitGatewayPrefixListReferenceState]
 
-  @inline def values = js.Array(pending, available, modifying, deleting)
+  @inline def values: js.Array[TransitGatewayPrefixListReferenceState] = js.Array(pending, available, modifying, deleting)
 }
 
 @js.native
@@ -2432,7 +2945,7 @@ object TransitGatewayPropagationState {
   val disabling = "disabling".asInstanceOf[TransitGatewayPropagationState]
   val disabled = "disabled".asInstanceOf[TransitGatewayPropagationState]
 
-  @inline def values = js.Array(enabling, enabled, disabling, disabled)
+  @inline def values: js.Array[TransitGatewayPropagationState] = js.Array(enabling, enabled, disabling, disabled)
 }
 
 @js.native
@@ -2444,7 +2957,7 @@ object TransitGatewayRouteState {
   val deleting = "deleting".asInstanceOf[TransitGatewayRouteState]
   val deleted = "deleted".asInstanceOf[TransitGatewayRouteState]
 
-  @inline def values = js.Array(pending, active, blackhole, deleting, deleted)
+  @inline def values: js.Array[TransitGatewayRouteState] = js.Array(pending, active, blackhole, deleting, deleted)
 }
 
 @js.native
@@ -2455,7 +2968,7 @@ object TransitGatewayRouteTableState {
   val deleting = "deleting".asInstanceOf[TransitGatewayRouteTableState]
   val deleted = "deleted".asInstanceOf[TransitGatewayRouteTableState]
 
-  @inline def values = js.Array(pending, available, deleting, deleted)
+  @inline def values: js.Array[TransitGatewayRouteTableState] = js.Array(pending, available, deleting, deleted)
 }
 
 @js.native
@@ -2464,7 +2977,7 @@ object TransitGatewayRouteType {
   val static = "static".asInstanceOf[TransitGatewayRouteType]
   val propagated = "propagated".asInstanceOf[TransitGatewayRouteType]
 
-  @inline def values = js.Array(static, propagated)
+  @inline def values: js.Array[TransitGatewayRouteType] = js.Array(static, propagated)
 }
 
 @js.native
@@ -2476,7 +2989,7 @@ object TransitGatewayState {
   val deleting = "deleting".asInstanceOf[TransitGatewayState]
   val deleted = "deleted".asInstanceOf[TransitGatewayState]
 
-  @inline def values = js.Array(pending, available, modifying, deleting, deleted)
+  @inline def values: js.Array[TransitGatewayState] = js.Array(pending, available, modifying, deleting, deleted)
 }
 
 @js.native
@@ -2485,7 +2998,7 @@ object TransportProtocol {
   val tcp = "tcp".asInstanceOf[TransportProtocol]
   val udp = "udp".asInstanceOf[TransportProtocol]
 
-  @inline def values = js.Array(tcp, udp)
+  @inline def values: js.Array[TransportProtocol] = js.Array(tcp, udp)
 }
 
 @js.native
@@ -2494,7 +3007,7 @@ object TunnelInsideIpVersion {
   val ipv4 = "ipv4".asInstanceOf[TunnelInsideIpVersion]
   val ipv6 = "ipv6".asInstanceOf[TunnelInsideIpVersion]
 
-  @inline def values = js.Array(ipv4, ipv6)
+  @inline def values: js.Array[TunnelInsideIpVersion] = js.Array(ipv4, ipv6)
 }
 
 @js.native
@@ -2505,7 +3018,7 @@ object UnlimitedSupportedInstanceFamily {
   val t3a = "t3a".asInstanceOf[UnlimitedSupportedInstanceFamily]
   val t4g = "t4g".asInstanceOf[UnlimitedSupportedInstanceFamily]
 
-  @inline def values = js.Array(t2, t3, t3a, t4g)
+  @inline def values: js.Array[UnlimitedSupportedInstanceFamily] = js.Array(t2, t3, t3a, t4g)
 }
 
 @js.native
@@ -2516,7 +3029,7 @@ object UnsuccessfulInstanceCreditSpecificationErrorCode {
   val IncorrectInstanceState = "IncorrectInstanceState".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
   val `InstanceCreditSpecification.NotSupported` = "InstanceCreditSpecification.NotSupported".asInstanceOf[UnsuccessfulInstanceCreditSpecificationErrorCode]
 
-  @inline def values = js.Array(`InvalidInstanceID.Malformed`, `InvalidInstanceID.NotFound`, IncorrectInstanceState, `InstanceCreditSpecification.NotSupported`)
+  @inline def values: js.Array[UnsuccessfulInstanceCreditSpecificationErrorCode] = js.Array(`InvalidInstanceID.Malformed`, `InvalidInstanceID.NotFound`, IncorrectInstanceState, `InstanceCreditSpecification.NotSupported`)
 }
 
 @js.native
@@ -2525,7 +3038,7 @@ object UsageClassType {
   val spot = "spot".asInstanceOf[UsageClassType]
   val `on-demand` = "on-demand".asInstanceOf[UsageClassType]
 
-  @inline def values = js.Array(spot, `on-demand`)
+  @inline def values: js.Array[UsageClassType] = js.Array(spot, `on-demand`)
 }
 
 @js.native
@@ -2534,7 +3047,7 @@ object VirtualizationType {
   val hvm = "hvm".asInstanceOf[VirtualizationType]
   val paravirtual = "paravirtual".asInstanceOf[VirtualizationType]
 
-  @inline def values = js.Array(hvm, paravirtual)
+  @inline def values: js.Array[VirtualizationType] = js.Array(hvm, paravirtual)
 }
 
 @js.native
@@ -2546,7 +3059,7 @@ object VolumeAttachmentState {
   val detached = "detached".asInstanceOf[VolumeAttachmentState]
   val busy = "busy".asInstanceOf[VolumeAttachmentState]
 
-  @inline def values = js.Array(attaching, attached, detaching, detached, busy)
+  @inline def values: js.Array[VolumeAttachmentState] = js.Array(attaching, attached, detaching, detached, busy)
 }
 
 @js.native
@@ -2555,7 +3068,7 @@ object VolumeAttributeName {
   val autoEnableIO = "autoEnableIO".asInstanceOf[VolumeAttributeName]
   val productCodes = "productCodes".asInstanceOf[VolumeAttributeName]
 
-  @inline def values = js.Array(autoEnableIO, productCodes)
+  @inline def values: js.Array[VolumeAttributeName] = js.Array(autoEnableIO, productCodes)
 }
 
 @js.native
@@ -2566,7 +3079,7 @@ object VolumeModificationState {
   val completed = "completed".asInstanceOf[VolumeModificationState]
   val failed = "failed".asInstanceOf[VolumeModificationState]
 
-  @inline def values = js.Array(modifying, optimizing, completed, failed)
+  @inline def values: js.Array[VolumeModificationState] = js.Array(modifying, optimizing, completed, failed)
 }
 
 @js.native
@@ -2579,7 +3092,7 @@ object VolumeState {
   val deleted = "deleted".asInstanceOf[VolumeState]
   val error = "error".asInstanceOf[VolumeState]
 
-  @inline def values = js.Array(creating, available, `in-use`, deleting, deleted, error)
+  @inline def values: js.Array[VolumeState] = js.Array(creating, available, `in-use`, deleting, deleted, error)
 }
 
 @js.native
@@ -2589,7 +3102,7 @@ object VolumeStatusInfoStatus {
   val impaired = "impaired".asInstanceOf[VolumeStatusInfoStatus]
   val `insufficient-data` = "insufficient-data".asInstanceOf[VolumeStatusInfoStatus]
 
-  @inline def values = js.Array(ok, impaired, `insufficient-data`)
+  @inline def values: js.Array[VolumeStatusInfoStatus] = js.Array(ok, impaired, `insufficient-data`)
 }
 
 @js.native
@@ -2598,7 +3111,7 @@ object VolumeStatusName {
   val `io-enabled` = "io-enabled".asInstanceOf[VolumeStatusName]
   val `io-performance` = "io-performance".asInstanceOf[VolumeStatusName]
 
-  @inline def values = js.Array(`io-enabled`, `io-performance`)
+  @inline def values: js.Array[VolumeStatusName] = js.Array(`io-enabled`, `io-performance`)
 }
 
 @js.native
@@ -2612,7 +3125,7 @@ object VolumeType {
   val st1 = "st1".asInstanceOf[VolumeType]
   val gp3 = "gp3".asInstanceOf[VolumeType]
 
-  @inline def values = js.Array(standard, io1, io2, gp2, sc1, st1, gp3)
+  @inline def values: js.Array[VolumeType] = js.Array(standard, io1, io2, gp2, sc1, st1, gp3)
 }
 
 @js.native
@@ -2621,7 +3134,7 @@ object VpcAttributeName {
   val enableDnsSupport = "enableDnsSupport".asInstanceOf[VpcAttributeName]
   val enableDnsHostnames = "enableDnsHostnames".asInstanceOf[VpcAttributeName]
 
-  @inline def values = js.Array(enableDnsSupport, enableDnsHostnames)
+  @inline def values: js.Array[VpcAttributeName] = js.Array(enableDnsSupport, enableDnsHostnames)
 }
 
 @js.native
@@ -2634,7 +3147,7 @@ object VpcCidrBlockStateCode {
   val failing = "failing".asInstanceOf[VpcCidrBlockStateCode]
   val failed = "failed".asInstanceOf[VpcCidrBlockStateCode]
 
-  @inline def values = js.Array(associating, associated, disassociating, disassociated, failing, failed)
+  @inline def values: js.Array[VpcCidrBlockStateCode] = js.Array(associating, associated, disassociating, disassociated, failing, failed)
 }
 
 @js.native
@@ -2644,7 +3157,7 @@ object VpcEndpointType {
   val Gateway = "Gateway".asInstanceOf[VpcEndpointType]
   val GatewayLoadBalancer = "GatewayLoadBalancer".asInstanceOf[VpcEndpointType]
 
-  @inline def values = js.Array(Interface, Gateway, GatewayLoadBalancer)
+  @inline def values: js.Array[VpcEndpointType] = js.Array(Interface, Gateway, GatewayLoadBalancer)
 }
 
 @js.native
@@ -2660,7 +3173,7 @@ object VpcPeeringConnectionStateReasonCode {
   val provisioning = "provisioning".asInstanceOf[VpcPeeringConnectionStateReasonCode]
   val deleting = "deleting".asInstanceOf[VpcPeeringConnectionStateReasonCode]
 
-  @inline def values = js.Array(`initiating-request`, `pending-acceptance`, active, deleted, rejected, failed, expired, provisioning, deleting)
+  @inline def values: js.Array[VpcPeeringConnectionStateReasonCode] = js.Array(`initiating-request`, `pending-acceptance`, active, deleted, rejected, failed, expired, provisioning, deleting)
 }
 
 @js.native
@@ -2669,7 +3182,7 @@ object VpcState {
   val pending = "pending".asInstanceOf[VpcState]
   val available = "available".asInstanceOf[VpcState]
 
-  @inline def values = js.Array(pending, available)
+  @inline def values: js.Array[VpcState] = js.Array(pending, available)
 }
 
 @js.native
@@ -2677,7 +3190,7 @@ sealed trait VpcTenancy extends js.Any
 object VpcTenancy {
   val default = "default".asInstanceOf[VpcTenancy]
 
-  @inline def values = js.Array(default)
+  @inline def values: js.Array[VpcTenancy] = js.Array(default)
 }
 
 @js.native
@@ -2686,7 +3199,7 @@ object VpnEcmpSupportValue {
   val enable = "enable".asInstanceOf[VpnEcmpSupportValue]
   val disable = "disable".asInstanceOf[VpnEcmpSupportValue]
 
-  @inline def values = js.Array(enable, disable)
+  @inline def values: js.Array[VpnEcmpSupportValue] = js.Array(enable, disable)
 }
 
 @js.native
@@ -2694,7 +3207,7 @@ sealed trait VpnProtocol extends js.Any
 object VpnProtocol {
   val openvpn = "openvpn".asInstanceOf[VpnProtocol]
 
-  @inline def values = js.Array(openvpn)
+  @inline def values: js.Array[VpnProtocol] = js.Array(openvpn)
 }
 
 @js.native
@@ -2705,7 +3218,7 @@ object VpnState {
   val deleting = "deleting".asInstanceOf[VpnState]
   val deleted = "deleted".asInstanceOf[VpnState]
 
-  @inline def values = js.Array(pending, available, deleting, deleted)
+  @inline def values: js.Array[VpnState] = js.Array(pending, available, deleting, deleted)
 }
 
 @js.native
@@ -2713,7 +3226,7 @@ sealed trait VpnStaticRouteSource extends js.Any
 object VpnStaticRouteSource {
   val Static = "Static".asInstanceOf[VpnStaticRouteSource]
 
-  @inline def values = js.Array(Static)
+  @inline def values: js.Array[VpnStaticRouteSource] = js.Array(Static)
 }
 
 @js.native
@@ -2722,6 +3235,5 @@ object scope {
   val `Availability Zone` = "Availability Zone".asInstanceOf[scope]
   val Region = "Region".asInstanceOf[scope]
 
-  @inline def values = js.Array(`Availability Zone`, Region)
+  @inline def values: js.Array[scope] = js.Array(`Availability Zone`, Region)
 }
-

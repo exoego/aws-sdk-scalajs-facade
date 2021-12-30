@@ -1,7 +1,6 @@
 package facade.amazonaws.services.ecr
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait EncryptionType extends js.Any
@@ -9,7 +8,7 @@ object EncryptionType {
   val AES256 = "AES256".asInstanceOf[EncryptionType]
   val KMS = "KMS".asInstanceOf[EncryptionType]
 
-  @inline def values = js.Array(AES256, KMS)
+  @inline def values: js.Array[EncryptionType] = js.Array(AES256, KMS)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object FindingSeverity {
   val CRITICAL = "CRITICAL".asInstanceOf[FindingSeverity]
   val UNDEFINED = "UNDEFINED".asInstanceOf[FindingSeverity]
 
-  @inline def values = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED)
+  @inline def values: js.Array[FindingSeverity] = js.Array(INFORMATIONAL, LOW, MEDIUM, HIGH, CRITICAL, UNDEFINED)
 }
 
 @js.native
@@ -30,7 +29,7 @@ sealed trait ImageActionType extends js.Any
 object ImageActionType {
   val EXPIRE = "EXPIRE".asInstanceOf[ImageActionType]
 
-  @inline def values = js.Array(EXPIRE)
+  @inline def values: js.Array[ImageActionType] = js.Array(EXPIRE)
 }
 
 @js.native
@@ -44,7 +43,7 @@ object ImageFailureCode {
   val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
   val KmsError = "KmsError".asInstanceOf[ImageFailureCode]
 
-  @inline def values = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
+  @inline def values: js.Array[ImageFailureCode] = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
 }
 
 @js.native
@@ -53,7 +52,7 @@ object ImageTagMutability {
   val MUTABLE = "MUTABLE".asInstanceOf[ImageTagMutability]
   val IMMUTABLE = "IMMUTABLE".asInstanceOf[ImageTagMutability]
 
-  @inline def values = js.Array(MUTABLE, IMMUTABLE)
+  @inline def values: js.Array[ImageTagMutability] = js.Array(MUTABLE, IMMUTABLE)
 }
 
 @js.native
@@ -62,7 +61,7 @@ object LayerAvailability {
   val AVAILABLE = "AVAILABLE".asInstanceOf[LayerAvailability]
   val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
 
-  @inline def values = js.Array(AVAILABLE, UNAVAILABLE)
+  @inline def values: js.Array[LayerAvailability] = js.Array(AVAILABLE, UNAVAILABLE)
 }
 
 @js.native
@@ -71,7 +70,7 @@ object LayerFailureCode {
   val InvalidLayerDigest = "InvalidLayerDigest".asInstanceOf[LayerFailureCode]
   val MissingLayerDigest = "MissingLayerDigest".asInstanceOf[LayerFailureCode]
 
-  @inline def values = js.Array(InvalidLayerDigest, MissingLayerDigest)
+  @inline def values: js.Array[LayerFailureCode] = js.Array(InvalidLayerDigest, MissingLayerDigest)
 }
 
 @js.native
@@ -82,7 +81,7 @@ object LifecyclePolicyPreviewStatus {
   val EXPIRED = "EXPIRED".asInstanceOf[LifecyclePolicyPreviewStatus]
   val FAILED = "FAILED".asInstanceOf[LifecyclePolicyPreviewStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
+  @inline def values: js.Array[LifecyclePolicyPreviewStatus] = js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
 }
 
 @js.native
@@ -92,7 +91,7 @@ object ScanStatus {
   val COMPLETE = "COMPLETE".asInstanceOf[ScanStatus]
   val FAILED = "FAILED".asInstanceOf[ScanStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETE, FAILED)
+  @inline def values: js.Array[ScanStatus] = js.Array(IN_PROGRESS, COMPLETE, FAILED)
 }
 
 @js.native
@@ -102,6 +101,5 @@ object TagStatus {
   val UNTAGGED = "UNTAGGED".asInstanceOf[TagStatus]
   val ANY = "ANY".asInstanceOf[TagStatus]
 
-  @inline def values = js.Array(TAGGED, UNTAGGED, ANY)
+  @inline def values: js.Array[TagStatus] = js.Array(TAGGED, UNTAGGED, ANY)
 }
-

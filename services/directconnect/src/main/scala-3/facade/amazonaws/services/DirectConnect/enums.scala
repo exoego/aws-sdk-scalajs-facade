@@ -1,6 +1,6 @@
 package facade.amazonaws.services.directconnect
 
-import scalajs._
+import scalajs.js
 
 type AddressFamily = "ipv4" | "ipv6"
 object AddressFamily {

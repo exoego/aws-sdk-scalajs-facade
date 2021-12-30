@@ -1,6 +1,6 @@
 package facade.amazonaws.services.appflow
 
-import scalajs._
+import scalajs.js
 
 type AggregationType = "None" | "SingleFile"
 object AggregationType {

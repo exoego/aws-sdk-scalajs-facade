@@ -1,6 +1,6 @@
 package facade.amazonaws.services.lambda
 
-import scalajs._
+import scalajs.js
 
 type CodeSigningPolicy = "Warn" | "Enforce"
 object CodeSigningPolicy {

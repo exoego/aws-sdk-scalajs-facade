@@ -1,6 +1,6 @@
 package facade.amazonaws.services.codeguruprofiler
 
-import scalajs._
+import scalajs.js
 
 type ActionGroup = "agentPermissions"
 object ActionGroup {

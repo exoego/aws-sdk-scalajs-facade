@@ -1,6 +1,6 @@
 package facade.amazonaws.services.pi
 
-import scalajs._
+import scalajs.js
 
 type ServiceType = "RDS"
 object ServiceType {

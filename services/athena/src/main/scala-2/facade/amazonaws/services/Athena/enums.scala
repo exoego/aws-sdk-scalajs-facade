@@ -1,7 +1,6 @@
 package facade.amazonaws.services.athena
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ColumnNullable extends js.Any
@@ -10,7 +9,7 @@ object ColumnNullable {
   val NULLABLE = "NULLABLE".asInstanceOf[ColumnNullable]
   val UNKNOWN = "UNKNOWN".asInstanceOf[ColumnNullable]
 
-  @inline def values = js.Array(NOT_NULL, NULLABLE, UNKNOWN)
+  @inline def values: js.Array[ColumnNullable] = js.Array(NOT_NULL, NULLABLE, UNKNOWN)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object DataCatalogType {
   val GLUE = "GLUE".asInstanceOf[DataCatalogType]
   val HIVE = "HIVE".asInstanceOf[DataCatalogType]
 
-  @inline def values = js.Array(LAMBDA, GLUE, HIVE)
+  @inline def values: js.Array[DataCatalogType] = js.Array(LAMBDA, GLUE, HIVE)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object EncryptionOption {
   val SSE_KMS = "SSE_KMS".asInstanceOf[EncryptionOption]
   val CSE_KMS = "CSE_KMS".asInstanceOf[EncryptionOption]
 
-  @inline def values = js.Array(SSE_S3, SSE_KMS, CSE_KMS)
+  @inline def values: js.Array[EncryptionOption] = js.Array(SSE_S3, SSE_KMS, CSE_KMS)
 }
 
 @js.native
@@ -42,7 +41,7 @@ object QueryExecutionState {
   val FAILED = "FAILED".asInstanceOf[QueryExecutionState]
   val CANCELLED = "CANCELLED".asInstanceOf[QueryExecutionState]
 
-  @inline def values = js.Array(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED)
+  @inline def values: js.Array[QueryExecutionState] = js.Array(QUEUED, RUNNING, SUCCEEDED, FAILED, CANCELLED)
 }
 
 @js.native
@@ -52,7 +51,7 @@ object StatementType {
   val DML = "DML".asInstanceOf[StatementType]
   val UTILITY = "UTILITY".asInstanceOf[StatementType]
 
-  @inline def values = js.Array(DDL, DML, UTILITY)
+  @inline def values: js.Array[StatementType] = js.Array(DDL, DML, UTILITY)
 }
 
 @js.native
@@ -61,6 +60,5 @@ object WorkGroupState {
   val ENABLED = "ENABLED".asInstanceOf[WorkGroupState]
   val DISABLED = "DISABLED".asInstanceOf[WorkGroupState]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[WorkGroupState] = js.Array(ENABLED, DISABLED)
 }
-

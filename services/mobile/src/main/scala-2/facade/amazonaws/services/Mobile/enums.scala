@@ -1,7 +1,6 @@
 package facade.amazonaws.services.mobile
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 /** Developer desktop or target mobile app or website platform.
   */
@@ -16,7 +15,7 @@ object Platform {
   val ANDROID = "ANDROID".asInstanceOf[Platform]
   val JAVASCRIPT = "JAVASCRIPT".asInstanceOf[Platform]
 
-  @inline def values = js.Array(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT)
+  @inline def values: js.Array[Platform] = js.Array(OSX, WINDOWS, LINUX, OBJC, SWIFT, ANDROID, JAVASCRIPT)
 }
 
 /** Synchronization state for a project.
@@ -28,6 +27,5 @@ object ProjectState {
   val SYNCING = "SYNCING".asInstanceOf[ProjectState]
   val IMPORTING = "IMPORTING".asInstanceOf[ProjectState]
 
-  @inline def values = js.Array(NORMAL, SYNCING, IMPORTING)
+  @inline def values: js.Array[ProjectState] = js.Array(NORMAL, SYNCING, IMPORTING)
 }
-

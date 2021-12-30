@@ -1,14 +1,13 @@
 package facade.amazonaws.services.imagebuilder
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ComponentFormat extends js.Any
 object ComponentFormat {
   val SHELL = "SHELL".asInstanceOf[ComponentFormat]
 
-  @inline def values = js.Array(SHELL)
+  @inline def values: js.Array[ComponentFormat] = js.Array(SHELL)
 }
 
 @js.native
@@ -17,7 +16,7 @@ object ComponentType {
   val BUILD = "BUILD".asInstanceOf[ComponentType]
   val TEST = "TEST".asInstanceOf[ComponentType]
 
-  @inline def values = js.Array(BUILD, TEST)
+  @inline def values: js.Array[ComponentType] = js.Array(BUILD, TEST)
 }
 
 @js.native
@@ -25,7 +24,7 @@ sealed trait ContainerRepositoryService extends js.Any
 object ContainerRepositoryService {
   val ECR = "ECR".asInstanceOf[ContainerRepositoryService]
 
-  @inline def values = js.Array(ECR)
+  @inline def values: js.Array[ContainerRepositoryService] = js.Array(ECR)
 }
 
 @js.native
@@ -33,7 +32,7 @@ sealed trait ContainerType extends js.Any
 object ContainerType {
   val DOCKER = "DOCKER".asInstanceOf[ContainerType]
 
-  @inline def values = js.Array(DOCKER)
+  @inline def values: js.Array[ContainerType] = js.Array(DOCKER)
 }
 
 @js.native
@@ -47,7 +46,7 @@ object EbsVolumeType {
   val sc1 = "sc1".asInstanceOf[EbsVolumeType]
   val st1 = "st1".asInstanceOf[EbsVolumeType]
 
-  @inline def values = js.Array(standard, io1, io2, gp2, gp3, sc1, st1)
+  @inline def values: js.Array[EbsVolumeType] = js.Array(standard, io1, io2, gp2, gp3, sc1, st1)
 }
 
 @js.native
@@ -65,7 +64,7 @@ object ImageStatus {
   val DEPRECATED = "DEPRECATED".asInstanceOf[ImageStatus]
   val DELETED = "DELETED".asInstanceOf[ImageStatus]
 
-  @inline def values = js.Array(PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED)
+  @inline def values: js.Array[ImageStatus] = js.Array(PENDING, CREATING, BUILDING, TESTING, DISTRIBUTING, INTEGRATING, AVAILABLE, CANCELLED, FAILED, DEPRECATED, DELETED)
 }
 
 @js.native
@@ -74,7 +73,7 @@ object ImageType {
   val AMI = "AMI".asInstanceOf[ImageType]
   val DOCKER = "DOCKER".asInstanceOf[ImageType]
 
-  @inline def values = js.Array(AMI, DOCKER)
+  @inline def values: js.Array[ImageType] = js.Array(AMI, DOCKER)
 }
 
 @js.native
@@ -84,7 +83,7 @@ object Ownership {
   val Shared = "Shared".asInstanceOf[Ownership]
   val Amazon = "Amazon".asInstanceOf[Ownership]
 
-  @inline def values = js.Array(Self, Shared, Amazon)
+  @inline def values: js.Array[Ownership] = js.Array(Self, Shared, Amazon)
 }
 
 @js.native
@@ -93,7 +92,7 @@ object PipelineExecutionStartCondition {
   val EXPRESSION_MATCH_ONLY = "EXPRESSION_MATCH_ONLY".asInstanceOf[PipelineExecutionStartCondition]
   val EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE = "EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE".asInstanceOf[PipelineExecutionStartCondition]
 
-  @inline def values = js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE)
+  @inline def values: js.Array[PipelineExecutionStartCondition] = js.Array(EXPRESSION_MATCH_ONLY, EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE)
 }
 
 @js.native
@@ -102,7 +101,7 @@ object PipelineStatus {
   val DISABLED = "DISABLED".asInstanceOf[PipelineStatus]
   val ENABLED = "ENABLED".asInstanceOf[PipelineStatus]
 
-  @inline def values = js.Array(DISABLED, ENABLED)
+  @inline def values: js.Array[PipelineStatus] = js.Array(DISABLED, ENABLED)
 }
 
 @js.native
@@ -111,6 +110,5 @@ object Platform {
   val Windows = "Windows".asInstanceOf[Platform]
   val Linux = "Linux".asInstanceOf[Platform]
 
-  @inline def values = js.Array(Windows, Linux)
+  @inline def values: js.Array[Platform] = js.Array(Windows, Linux)
 }
-

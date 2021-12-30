@@ -1,7 +1,6 @@
 package facade.amazonaws.services.iotevents
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AnalysisResultLevel extends js.Any
@@ -10,7 +9,7 @@ object AnalysisResultLevel {
   val WARNING = "WARNING".asInstanceOf[AnalysisResultLevel]
   val ERROR = "ERROR".asInstanceOf[AnalysisResultLevel]
 
-  @inline def values = js.Array(INFO, WARNING, ERROR)
+  @inline def values: js.Array[AnalysisResultLevel] = js.Array(INFO, WARNING, ERROR)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object AnalysisStatus {
   val COMPLETE = "COMPLETE".asInstanceOf[AnalysisStatus]
   val FAILED = "FAILED".asInstanceOf[AnalysisStatus]
 
-  @inline def values = js.Array(RUNNING, COMPLETE, FAILED)
+  @inline def values: js.Array[AnalysisStatus] = js.Array(RUNNING, COMPLETE, FAILED)
 }
 
 @js.native
@@ -34,7 +33,7 @@ object DetectorModelVersionStatus {
   val PAUSED = "PAUSED".asInstanceOf[DetectorModelVersionStatus]
   val FAILED = "FAILED".asInstanceOf[DetectorModelVersionStatus]
 
-  @inline def values = js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED)
+  @inline def values: js.Array[DetectorModelVersionStatus] = js.Array(ACTIVE, ACTIVATING, INACTIVE, DEPRECATED, DRAFT, PAUSED, FAILED)
 }
 
 @js.native
@@ -43,7 +42,7 @@ object EvaluationMethod {
   val BATCH = "BATCH".asInstanceOf[EvaluationMethod]
   val SERIAL = "SERIAL".asInstanceOf[EvaluationMethod]
 
-  @inline def values = js.Array(BATCH, SERIAL)
+  @inline def values: js.Array[EvaluationMethod] = js.Array(BATCH, SERIAL)
 }
 
 @js.native
@@ -54,7 +53,7 @@ object InputStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[InputStatus]
   val DELETING = "DELETING".asInstanceOf[InputStatus]
 
-  @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING)
+  @inline def values: js.Array[InputStatus] = js.Array(CREATING, UPDATING, ACTIVE, DELETING)
 }
 
 @js.native
@@ -64,7 +63,7 @@ object LoggingLevel {
   val INFO = "INFO".asInstanceOf[LoggingLevel]
   val DEBUG = "DEBUG".asInstanceOf[LoggingLevel]
 
-  @inline def values = js.Array(ERROR, INFO, DEBUG)
+  @inline def values: js.Array[LoggingLevel] = js.Array(ERROR, INFO, DEBUG)
 }
 
 @js.native
@@ -73,6 +72,5 @@ object PayloadType {
   val STRING = "STRING".asInstanceOf[PayloadType]
   val JSON = "JSON".asInstanceOf[PayloadType]
 
-  @inline def values = js.Array(STRING, JSON)
+  @inline def values: js.Array[PayloadType] = js.Array(STRING, JSON)
 }
-

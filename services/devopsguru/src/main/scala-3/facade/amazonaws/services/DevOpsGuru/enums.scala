@@ -1,6 +1,6 @@
 package facade.amazonaws.services.devopsguru
 
-import scalajs._
+import scalajs.js
 
 type AnomalySeverity = "LOW" | "MEDIUM" | "HIGH"
 object AnomalySeverity {

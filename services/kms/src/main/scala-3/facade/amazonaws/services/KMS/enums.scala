@@ -1,6 +1,6 @@
 package facade.amazonaws.services.kms
 
-import scalajs._
+import scalajs.js
 
 type AlgorithmSpec = "RSAES_PKCS1_V1_5" | "RSAES_OAEP_SHA_1" | "RSAES_OAEP_SHA_256"
 object AlgorithmSpec {

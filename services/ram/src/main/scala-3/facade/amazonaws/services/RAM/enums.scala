@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ram
 
-import scalajs._
+import scalajs.js
 
 type ResourceOwner = "SELF" | "OTHER-ACCOUNTS"
 object ResourceOwner {

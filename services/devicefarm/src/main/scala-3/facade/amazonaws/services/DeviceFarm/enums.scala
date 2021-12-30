@@ -1,6 +1,6 @@
 package facade.amazonaws.services.devicefarm
 
-import scalajs._
+import scalajs.js
 
 type ArtifactCategory = "SCREENSHOT" | "FILE" | "LOG"
 object ArtifactCategory {

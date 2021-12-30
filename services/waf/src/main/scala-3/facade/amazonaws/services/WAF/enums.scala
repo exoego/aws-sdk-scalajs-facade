@@ -1,6 +1,6 @@
 package facade.amazonaws.services.waf
 
-import scalajs._
+import scalajs.js
 
 type ChangeAction = "INSERT" | "DELETE"
 object ChangeAction {

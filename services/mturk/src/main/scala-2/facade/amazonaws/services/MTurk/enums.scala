@@ -1,7 +1,6 @@
 package facade.amazonaws.services.mturk
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AssignmentStatus extends js.Any
@@ -10,7 +9,7 @@ object AssignmentStatus {
   val Approved = "Approved".asInstanceOf[AssignmentStatus]
   val Rejected = "Rejected".asInstanceOf[AssignmentStatus]
 
-  @inline def values = js.Array(Submitted, Approved, Rejected)
+  @inline def values: js.Array[AssignmentStatus] = js.Array(Submitted, Approved, Rejected)
 }
 
 @js.native
@@ -27,7 +26,7 @@ object Comparator {
   val In = "In".asInstanceOf[Comparator]
   val NotIn = "NotIn".asInstanceOf[Comparator]
 
-  @inline def values = js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn)
+  @inline def values: js.Array[Comparator] = js.Array(LessThan, LessThanOrEqualTo, GreaterThan, GreaterThanOrEqualTo, EqualTo, NotEqualTo, Exists, DoesNotExist, In, NotIn)
 }
 
 @js.native
@@ -46,7 +45,20 @@ object EventType {
   val HITDisposed = "HITDisposed".asInstanceOf[EventType]
   val Ping = "Ping".asInstanceOf[EventType]
 
-  @inline def values = js.Array(AssignmentAccepted, AssignmentAbandoned, AssignmentReturned, AssignmentSubmitted, AssignmentRejected, AssignmentApproved, HITCreated, HITExpired, HITReviewable, HITExtended, HITDisposed, Ping)
+  @inline def values: js.Array[EventType] = js.Array(
+    AssignmentAccepted,
+    AssignmentAbandoned,
+    AssignmentReturned,
+    AssignmentSubmitted,
+    AssignmentRejected,
+    AssignmentApproved,
+    HITCreated,
+    HITExpired,
+    HITReviewable,
+    HITExtended,
+    HITDisposed,
+    Ping
+  )
 }
 
 @js.native
@@ -56,7 +68,7 @@ object HITAccessActions {
   val PreviewAndAccept = "PreviewAndAccept".asInstanceOf[HITAccessActions]
   val DiscoverPreviewAndAccept = "DiscoverPreviewAndAccept".asInstanceOf[HITAccessActions]
 
-  @inline def values = js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
+  @inline def values: js.Array[HITAccessActions] = js.Array(Accept, PreviewAndAccept, DiscoverPreviewAndAccept)
 }
 
 @js.native
@@ -67,7 +79,7 @@ object HITReviewStatus {
   val ReviewedAppropriate = "ReviewedAppropriate".asInstanceOf[HITReviewStatus]
   val ReviewedInappropriate = "ReviewedInappropriate".asInstanceOf[HITReviewStatus]
 
-  @inline def values = js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate)
+  @inline def values: js.Array[HITReviewStatus] = js.Array(NotReviewed, MarkedForReview, ReviewedAppropriate, ReviewedInappropriate)
 }
 
 @js.native
@@ -79,7 +91,7 @@ object HITStatus {
   val Reviewing = "Reviewing".asInstanceOf[HITStatus]
   val Disposed = "Disposed".asInstanceOf[HITStatus]
 
-  @inline def values = js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed)
+  @inline def values: js.Array[HITStatus] = js.Array(Assignable, Unassignable, Reviewable, Reviewing, Disposed)
 }
 
 @js.native
@@ -89,7 +101,7 @@ object NotificationTransport {
   val SQS = "SQS".asInstanceOf[NotificationTransport]
   val SNS = "SNS".asInstanceOf[NotificationTransport]
 
-  @inline def values = js.Array(Email, SQS, SNS)
+  @inline def values: js.Array[NotificationTransport] = js.Array(Email, SQS, SNS)
 }
 
 @js.native
@@ -98,7 +110,7 @@ object NotifyWorkersFailureCode {
   val SoftFailure = "SoftFailure".asInstanceOf[NotifyWorkersFailureCode]
   val HardFailure = "HardFailure".asInstanceOf[NotifyWorkersFailureCode]
 
-  @inline def values = js.Array(SoftFailure, HardFailure)
+  @inline def values: js.Array[NotifyWorkersFailureCode] = js.Array(SoftFailure, HardFailure)
 }
 
 @js.native
@@ -107,7 +119,7 @@ object QualificationStatus {
   val Granted = "Granted".asInstanceOf[QualificationStatus]
   val Revoked = "Revoked".asInstanceOf[QualificationStatus]
 
-  @inline def values = js.Array(Granted, Revoked)
+  @inline def values: js.Array[QualificationStatus] = js.Array(Granted, Revoked)
 }
 
 @js.native
@@ -116,7 +128,7 @@ object QualificationTypeStatus {
   val Active = "Active".asInstanceOf[QualificationTypeStatus]
   val Inactive = "Inactive".asInstanceOf[QualificationTypeStatus]
 
-  @inline def values = js.Array(Active, Inactive)
+  @inline def values: js.Array[QualificationTypeStatus] = js.Array(Active, Inactive)
 }
 
 @js.native
@@ -127,7 +139,7 @@ object ReviewActionStatus {
   val Failed = "Failed".asInstanceOf[ReviewActionStatus]
   val Cancelled = "Cancelled".asInstanceOf[ReviewActionStatus]
 
-  @inline def values = js.Array(Intended, Succeeded, Failed, Cancelled)
+  @inline def values: js.Array[ReviewActionStatus] = js.Array(Intended, Succeeded, Failed, Cancelled)
 }
 
 @js.native
@@ -136,7 +148,7 @@ object ReviewPolicyLevel {
   val Assignment = "Assignment".asInstanceOf[ReviewPolicyLevel]
   val HIT = "HIT".asInstanceOf[ReviewPolicyLevel]
 
-  @inline def values = js.Array(Assignment, HIT)
+  @inline def values: js.Array[ReviewPolicyLevel] = js.Array(Assignment, HIT)
 }
 
 @js.native
@@ -145,6 +157,5 @@ object ReviewableHITStatus {
   val Reviewable = "Reviewable".asInstanceOf[ReviewableHITStatus]
   val Reviewing = "Reviewing".asInstanceOf[ReviewableHITStatus]
 
-  @inline def values = js.Array(Reviewable, Reviewing)
+  @inline def values: js.Array[ReviewableHITStatus] = js.Array(Reviewable, Reviewing)
 }
-

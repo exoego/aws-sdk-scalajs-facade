@@ -1,7 +1,6 @@
 package facade.amazonaws.services.customerprofiles
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DataPullMode extends js.Any
@@ -9,7 +8,7 @@ object DataPullMode {
   val Incremental = "Incremental".asInstanceOf[DataPullMode]
   val Complete = "Complete".asInstanceOf[DataPullMode]
 
-  @inline def values = js.Array(Incremental, Complete)
+  @inline def values: js.Array[DataPullMode] = js.Array(Incremental, Complete)
 }
 
 @js.native
@@ -21,7 +20,7 @@ object FieldContentType {
   val EMAIL_ADDRESS = "EMAIL_ADDRESS".asInstanceOf[FieldContentType]
   val NAME = "NAME".asInstanceOf[FieldContentType]
 
-  @inline def values = js.Array(STRING, NUMBER, PHONE_NUMBER, EMAIL_ADDRESS, NAME)
+  @inline def values: js.Array[FieldContentType] = js.Array(STRING, NUMBER, PHONE_NUMBER, EMAIL_ADDRESS, NAME)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object Gender {
   val FEMALE = "FEMALE".asInstanceOf[Gender]
   val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[Gender]
 
-  @inline def values = js.Array(MALE, FEMALE, UNSPECIFIED)
+  @inline def values: js.Array[Gender] = js.Array(MALE, FEMALE, UNSPECIFIED)
 }
 
 @js.native
@@ -54,7 +53,24 @@ object MarketoConnectorOperator {
   val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[MarketoConnectorOperator]
   val NO_OP = "NO_OP".asInstanceOf[MarketoConnectorOperator]
 
-  @inline def values = js.Array(PROJECTION, LESS_THAN, GREATER_THAN, BETWEEN, ADDITION, MULTIPLICATION, DIVISION, SUBTRACTION, MASK_ALL, MASK_FIRST_N, MASK_LAST_N, VALIDATE_NON_NULL, VALIDATE_NON_ZERO, VALIDATE_NON_NEGATIVE, VALIDATE_NUMERIC, NO_OP)
+  @inline def values: js.Array[MarketoConnectorOperator] = js.Array(
+    PROJECTION,
+    LESS_THAN,
+    GREATER_THAN,
+    BETWEEN,
+    ADDITION,
+    MULTIPLICATION,
+    DIVISION,
+    SUBTRACTION,
+    MASK_ALL,
+    MASK_FIRST_N,
+    MASK_LAST_N,
+    VALIDATE_NON_NULL,
+    VALIDATE_NON_ZERO,
+    VALIDATE_NON_NEGATIVE,
+    VALIDATE_NUMERIC,
+    NO_OP
+  )
 }
 
 @js.native
@@ -75,7 +91,22 @@ object OperatorPropertiesKeys {
   val CONCAT_FORMAT = "CONCAT_FORMAT".asInstanceOf[OperatorPropertiesKeys]
   val SUBFIELD_CATEGORY_MAP = "SUBFIELD_CATEGORY_MAP".asInstanceOf[OperatorPropertiesKeys]
 
-  @inline def values = js.Array(VALUE, VALUES, DATA_TYPE, UPPER_BOUND, LOWER_BOUND, SOURCE_DATA_TYPE, DESTINATION_DATA_TYPE, VALIDATION_ACTION, MASK_VALUE, MASK_LENGTH, TRUNCATE_LENGTH, MATH_OPERATION_FIELDS_ORDER, CONCAT_FORMAT, SUBFIELD_CATEGORY_MAP)
+  @inline def values: js.Array[OperatorPropertiesKeys] = js.Array(
+    VALUE,
+    VALUES,
+    DATA_TYPE,
+    UPPER_BOUND,
+    LOWER_BOUND,
+    SOURCE_DATA_TYPE,
+    DESTINATION_DATA_TYPE,
+    VALIDATION_ACTION,
+    MASK_VALUE,
+    MASK_LENGTH,
+    TRUNCATE_LENGTH,
+    MATH_OPERATION_FIELDS_ORDER,
+    CONCAT_FORMAT,
+    SUBFIELD_CATEGORY_MAP
+  )
 }
 
 @js.native
@@ -85,7 +116,7 @@ object PartyType {
   val BUSINESS = "BUSINESS".asInstanceOf[PartyType]
   val OTHER = "OTHER".asInstanceOf[PartyType]
 
-  @inline def values = js.Array(INDIVIDUAL, BUSINESS, OTHER)
+  @inline def values: js.Array[PartyType] = js.Array(INDIVIDUAL, BUSINESS, OTHER)
 }
 
 @js.native
@@ -112,7 +143,28 @@ object S3ConnectorOperator {
   val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[S3ConnectorOperator]
   val NO_OP = "NO_OP".asInstanceOf[S3ConnectorOperator]
 
-  @inline def values = js.Array(PROJECTION, LESS_THAN, GREATER_THAN, BETWEEN, LESS_THAN_OR_EQUAL_TO, GREATER_THAN_OR_EQUAL_TO, EQUAL_TO, NOT_EQUAL_TO, ADDITION, MULTIPLICATION, DIVISION, SUBTRACTION, MASK_ALL, MASK_FIRST_N, MASK_LAST_N, VALIDATE_NON_NULL, VALIDATE_NON_ZERO, VALIDATE_NON_NEGATIVE, VALIDATE_NUMERIC, NO_OP)
+  @inline def values: js.Array[S3ConnectorOperator] = js.Array(
+    PROJECTION,
+    LESS_THAN,
+    GREATER_THAN,
+    BETWEEN,
+    LESS_THAN_OR_EQUAL_TO,
+    GREATER_THAN_OR_EQUAL_TO,
+    EQUAL_TO,
+    NOT_EQUAL_TO,
+    ADDITION,
+    MULTIPLICATION,
+    DIVISION,
+    SUBTRACTION,
+    MASK_ALL,
+    MASK_FIRST_N,
+    MASK_LAST_N,
+    VALIDATE_NON_NULL,
+    VALIDATE_NON_ZERO,
+    VALIDATE_NON_NEGATIVE,
+    VALIDATE_NUMERIC,
+    NO_OP
+  )
 }
 
 @js.native
@@ -140,7 +192,29 @@ object SalesforceConnectorOperator {
   val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[SalesforceConnectorOperator]
   val NO_OP = "NO_OP".asInstanceOf[SalesforceConnectorOperator]
 
-  @inline def values = js.Array(PROJECTION, LESS_THAN, CONTAINS, GREATER_THAN, BETWEEN, LESS_THAN_OR_EQUAL_TO, GREATER_THAN_OR_EQUAL_TO, EQUAL_TO, NOT_EQUAL_TO, ADDITION, MULTIPLICATION, DIVISION, SUBTRACTION, MASK_ALL, MASK_FIRST_N, MASK_LAST_N, VALIDATE_NON_NULL, VALIDATE_NON_ZERO, VALIDATE_NON_NEGATIVE, VALIDATE_NUMERIC, NO_OP)
+  @inline def values: js.Array[SalesforceConnectorOperator] = js.Array(
+    PROJECTION,
+    LESS_THAN,
+    CONTAINS,
+    GREATER_THAN,
+    BETWEEN,
+    LESS_THAN_OR_EQUAL_TO,
+    GREATER_THAN_OR_EQUAL_TO,
+    EQUAL_TO,
+    NOT_EQUAL_TO,
+    ADDITION,
+    MULTIPLICATION,
+    DIVISION,
+    SUBTRACTION,
+    MASK_ALL,
+    MASK_FIRST_N,
+    MASK_LAST_N,
+    VALIDATE_NON_NULL,
+    VALIDATE_NON_ZERO,
+    VALIDATE_NON_NEGATIVE,
+    VALIDATE_NUMERIC,
+    NO_OP
+  )
 }
 
 @js.native
@@ -168,7 +242,29 @@ object ServiceNowConnectorOperator {
   val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[ServiceNowConnectorOperator]
   val NO_OP = "NO_OP".asInstanceOf[ServiceNowConnectorOperator]
 
-  @inline def values = js.Array(PROJECTION, CONTAINS, LESS_THAN, GREATER_THAN, BETWEEN, LESS_THAN_OR_EQUAL_TO, GREATER_THAN_OR_EQUAL_TO, EQUAL_TO, NOT_EQUAL_TO, ADDITION, MULTIPLICATION, DIVISION, SUBTRACTION, MASK_ALL, MASK_FIRST_N, MASK_LAST_N, VALIDATE_NON_NULL, VALIDATE_NON_ZERO, VALIDATE_NON_NEGATIVE, VALIDATE_NUMERIC, NO_OP)
+  @inline def values: js.Array[ServiceNowConnectorOperator] = js.Array(
+    PROJECTION,
+    CONTAINS,
+    LESS_THAN,
+    GREATER_THAN,
+    BETWEEN,
+    LESS_THAN_OR_EQUAL_TO,
+    GREATER_THAN_OR_EQUAL_TO,
+    EQUAL_TO,
+    NOT_EQUAL_TO,
+    ADDITION,
+    MULTIPLICATION,
+    DIVISION,
+    SUBTRACTION,
+    MASK_ALL,
+    MASK_FIRST_N,
+    MASK_LAST_N,
+    VALIDATE_NON_NULL,
+    VALIDATE_NON_ZERO,
+    VALIDATE_NON_NEGATIVE,
+    VALIDATE_NUMERIC,
+    NO_OP
+  )
 }
 
 @js.native
@@ -180,7 +276,7 @@ object SourceConnectorType {
   val Servicenow = "Servicenow".asInstanceOf[SourceConnectorType]
   val S3 = "S3".asInstanceOf[SourceConnectorType]
 
-  @inline def values = js.Array(Salesforce, Marketo, Zendesk, Servicenow, S3)
+  @inline def values: js.Array[SourceConnectorType] = js.Array(Salesforce, Marketo, Zendesk, Servicenow, S3)
 }
 
 @js.native
@@ -192,7 +288,7 @@ object StandardIdentifier {
   val LOOKUP_ONLY = "LOOKUP_ONLY".asInstanceOf[StandardIdentifier]
   val NEW_ONLY = "NEW_ONLY".asInstanceOf[StandardIdentifier]
 
-  @inline def values = js.Array(PROFILE, UNIQUE, SECONDARY, LOOKUP_ONLY, NEW_ONLY)
+  @inline def values: js.Array[StandardIdentifier] = js.Array(PROFILE, UNIQUE, SECONDARY, LOOKUP_ONLY, NEW_ONLY)
 }
 
 @js.native
@@ -206,7 +302,7 @@ object TaskType {
   val Truncate = "Truncate".asInstanceOf[TaskType]
   val Validate = "Validate".asInstanceOf[TaskType]
 
-  @inline def values = js.Array(Arithmetic, Filter, Map, Mask, Merge, Truncate, Validate)
+  @inline def values: js.Array[TaskType] = js.Array(Arithmetic, Filter, Map, Mask, Merge, Truncate, Validate)
 }
 
 @js.native
@@ -216,7 +312,7 @@ object TriggerType {
   val Event = "Event".asInstanceOf[TriggerType]
   val OnDemand = "OnDemand".asInstanceOf[TriggerType]
 
-  @inline def values = js.Array(Scheduled, Event, OnDemand)
+  @inline def values: js.Array[TriggerType] = js.Array(Scheduled, Event, OnDemand)
 }
 
 @js.native
@@ -237,6 +333,20 @@ object ZendeskConnectorOperator {
   val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[ZendeskConnectorOperator]
   val NO_OP = "NO_OP".asInstanceOf[ZendeskConnectorOperator]
 
-  @inline def values = js.Array(PROJECTION, GREATER_THAN, ADDITION, MULTIPLICATION, DIVISION, SUBTRACTION, MASK_ALL, MASK_FIRST_N, MASK_LAST_N, VALIDATE_NON_NULL, VALIDATE_NON_ZERO, VALIDATE_NON_NEGATIVE, VALIDATE_NUMERIC, NO_OP)
+  @inline def values: js.Array[ZendeskConnectorOperator] = js.Array(
+    PROJECTION,
+    GREATER_THAN,
+    ADDITION,
+    MULTIPLICATION,
+    DIVISION,
+    SUBTRACTION,
+    MASK_ALL,
+    MASK_FIRST_N,
+    MASK_LAST_N,
+    VALIDATE_NON_NULL,
+    VALIDATE_NON_ZERO,
+    VALIDATE_NON_NEGATIVE,
+    VALIDATE_NUMERIC,
+    NO_OP
+  )
 }
-

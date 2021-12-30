@@ -1,7 +1,6 @@
 package facade.amazonaws.services.lexruntime
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ConfirmationStatus extends js.Any
@@ -10,7 +9,7 @@ object ConfirmationStatus {
   val Confirmed = "Confirmed".asInstanceOf[ConfirmationStatus]
   val Denied = "Denied".asInstanceOf[ConfirmationStatus]
 
-  @inline def values = js.Array(None, Confirmed, Denied)
+  @inline def values: js.Array[ConfirmationStatus] = js.Array(None, Confirmed, Denied)
 }
 
 @js.native
@@ -18,7 +17,7 @@ sealed trait ContentType extends js.Any
 object ContentType {
   val `application/vnd.amazonaws.card.generic` = "application/vnd.amazonaws.card.generic".asInstanceOf[ContentType]
 
-  @inline def values = js.Array(`application/vnd.amazonaws.card.generic`)
+  @inline def values: js.Array[ContentType] = js.Array(`application/vnd.amazonaws.card.generic`)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object DialogActionType {
   val Close = "Close".asInstanceOf[DialogActionType]
   val Delegate = "Delegate".asInstanceOf[DialogActionType]
 
-  @inline def values = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate)
+  @inline def values: js.Array[DialogActionType] = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Close, Delegate)
 }
 
 @js.native
@@ -43,7 +42,7 @@ object DialogState {
   val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[DialogState]
   val Failed = "Failed".asInstanceOf[DialogState]
 
-  @inline def values = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed)
+  @inline def values: js.Array[DialogState] = js.Array(ElicitIntent, ConfirmIntent, ElicitSlot, Fulfilled, ReadyForFulfillment, Failed)
 }
 
 @js.native
@@ -53,7 +52,7 @@ object FulfillmentState {
   val Failed = "Failed".asInstanceOf[FulfillmentState]
   val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[FulfillmentState]
 
-  @inline def values = js.Array(Fulfilled, Failed, ReadyForFulfillment)
+  @inline def values: js.Array[FulfillmentState] = js.Array(Fulfilled, Failed, ReadyForFulfillment)
 }
 
 @js.native
@@ -64,6 +63,5 @@ object MessageFormatType {
   val SSML = "SSML".asInstanceOf[MessageFormatType]
   val Composite = "Composite".asInstanceOf[MessageFormatType]
 
-  @inline def values = js.Array(PlainText, CustomPayload, SSML, Composite)
+  @inline def values: js.Array[MessageFormatType] = js.Array(PlainText, CustomPayload, SSML, Composite)
 }
-

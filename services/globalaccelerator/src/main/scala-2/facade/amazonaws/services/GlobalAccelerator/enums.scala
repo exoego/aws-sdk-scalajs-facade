@@ -1,7 +1,6 @@
 package facade.amazonaws.services.globalaccelerator
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AcceleratorStatus extends js.Any
@@ -9,7 +8,7 @@ object AcceleratorStatus {
   val DEPLOYED = "DEPLOYED".asInstanceOf[AcceleratorStatus]
   val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AcceleratorStatus]
 
-  @inline def values = js.Array(DEPLOYED, IN_PROGRESS)
+  @inline def values: js.Array[AcceleratorStatus] = js.Array(DEPLOYED, IN_PROGRESS)
 }
 
 @js.native
@@ -27,7 +26,19 @@ object ByoipCidrState {
   val FAILED_WITHDRAW = "FAILED_WITHDRAW".asInstanceOf[ByoipCidrState]
   val FAILED_DEPROVISION = "FAILED_DEPROVISION".asInstanceOf[ByoipCidrState]
 
-  @inline def values = js.Array(PENDING_PROVISIONING, READY, PENDING_ADVERTISING, ADVERTISING, PENDING_WITHDRAWING, PENDING_DEPROVISIONING, DEPROVISIONED, FAILED_PROVISION, FAILED_ADVERTISING, FAILED_WITHDRAW, FAILED_DEPROVISION)
+  @inline def values: js.Array[ByoipCidrState] = js.Array(
+    PENDING_PROVISIONING,
+    READY,
+    PENDING_ADVERTISING,
+    ADVERTISING,
+    PENDING_WITHDRAWING,
+    PENDING_DEPROVISIONING,
+    DEPROVISIONED,
+    FAILED_PROVISION,
+    FAILED_ADVERTISING,
+    FAILED_WITHDRAW,
+    FAILED_DEPROVISION
+  )
 }
 
 @js.native
@@ -36,7 +47,7 @@ object ClientAffinity {
   val NONE = "NONE".asInstanceOf[ClientAffinity]
   val SOURCE_IP = "SOURCE_IP".asInstanceOf[ClientAffinity]
 
-  @inline def values = js.Array(NONE, SOURCE_IP)
+  @inline def values: js.Array[ClientAffinity] = js.Array(NONE, SOURCE_IP)
 }
 
 @js.native
@@ -45,7 +56,7 @@ object CustomRoutingAcceleratorStatus {
   val DEPLOYED = "DEPLOYED".asInstanceOf[CustomRoutingAcceleratorStatus]
   val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CustomRoutingAcceleratorStatus]
 
-  @inline def values = js.Array(DEPLOYED, IN_PROGRESS)
+  @inline def values: js.Array[CustomRoutingAcceleratorStatus] = js.Array(DEPLOYED, IN_PROGRESS)
 }
 
 @js.native
@@ -54,7 +65,7 @@ object CustomRoutingDestinationTrafficState {
   val ALLOW = "ALLOW".asInstanceOf[CustomRoutingDestinationTrafficState]
   val DENY = "DENY".asInstanceOf[CustomRoutingDestinationTrafficState]
 
-  @inline def values = js.Array(ALLOW, DENY)
+  @inline def values: js.Array[CustomRoutingDestinationTrafficState] = js.Array(ALLOW, DENY)
 }
 
 @js.native
@@ -63,7 +74,7 @@ object CustomRoutingProtocol {
   val TCP = "TCP".asInstanceOf[CustomRoutingProtocol]
   val UDP = "UDP".asInstanceOf[CustomRoutingProtocol]
 
-  @inline def values = js.Array(TCP, UDP)
+  @inline def values: js.Array[CustomRoutingProtocol] = js.Array(TCP, UDP)
 }
 
 @js.native
@@ -73,7 +84,7 @@ object HealthCheckProtocol {
   val HTTP = "HTTP".asInstanceOf[HealthCheckProtocol]
   val HTTPS = "HTTPS".asInstanceOf[HealthCheckProtocol]
 
-  @inline def values = js.Array(TCP, HTTP, HTTPS)
+  @inline def values: js.Array[HealthCheckProtocol] = js.Array(TCP, HTTP, HTTPS)
 }
 
 @js.native
@@ -83,7 +94,7 @@ object HealthState {
   val HEALTHY = "HEALTHY".asInstanceOf[HealthState]
   val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthState]
 
-  @inline def values = js.Array(INITIAL, HEALTHY, UNHEALTHY)
+  @inline def values: js.Array[HealthState] = js.Array(INITIAL, HEALTHY, UNHEALTHY)
 }
 
 @js.native
@@ -91,7 +102,7 @@ sealed trait IpAddressType extends js.Any
 object IpAddressType {
   val IPV4 = "IPV4".asInstanceOf[IpAddressType]
 
-  @inline def values = js.Array(IPV4)
+  @inline def values: js.Array[IpAddressType] = js.Array(IPV4)
 }
 
 @js.native
@@ -100,6 +111,5 @@ object Protocol {
   val TCP = "TCP".asInstanceOf[Protocol]
   val UDP = "UDP".asInstanceOf[Protocol]
 
-  @inline def values = js.Array(TCP, UDP)
+  @inline def values: js.Array[Protocol] = js.Array(TCP, UDP)
 }
-

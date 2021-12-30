@@ -1,14 +1,13 @@
 package facade.amazonaws.services.iot
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AbortAction extends js.Any
 object AbortAction {
   val CANCEL = "CANCEL".asInstanceOf[AbortAction]
 
-  @inline def values = js.Array(CANCEL)
+  @inline def values: js.Array[AbortAction] = js.Array(CANCEL)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object ActionType {
   val RECEIVE = "RECEIVE".asInstanceOf[ActionType]
   val CONNECT = "CONNECT".asInstanceOf[ActionType]
 
-  @inline def values = js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT)
+  @inline def values: js.Array[ActionType] = js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT)
 }
 
 /** The type of alert target: one of "SNS".
@@ -29,7 +28,7 @@ sealed trait AlertTargetType extends js.Any
 object AlertTargetType {
   val SNS = "SNS".asInstanceOf[AlertTargetType]
 
-  @inline def values = js.Array(SNS)
+  @inline def values: js.Array[AlertTargetType] = js.Array(SNS)
 }
 
 @js.native
@@ -42,7 +41,7 @@ object AuditCheckRunStatus {
   val COMPLETED_NON_COMPLIANT = "COMPLETED_NON_COMPLIANT".asInstanceOf[AuditCheckRunStatus]
   val FAILED = "FAILED".asInstanceOf[AuditCheckRunStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED)
+  @inline def values: js.Array[AuditCheckRunStatus] = js.Array(IN_PROGRESS, WAITING_FOR_DATA_COLLECTION, CANCELED, COMPLETED_COMPLIANT, COMPLETED_NON_COMPLIANT, FAILED)
 }
 
 @js.native
@@ -53,7 +52,7 @@ object AuditFindingSeverity {
   val MEDIUM = "MEDIUM".asInstanceOf[AuditFindingSeverity]
   val LOW = "LOW".asInstanceOf[AuditFindingSeverity]
 
-  @inline def values = js.Array(CRITICAL, HIGH, MEDIUM, LOW)
+  @inline def values: js.Array[AuditFindingSeverity] = js.Array(CRITICAL, HIGH, MEDIUM, LOW)
 }
 
 @js.native
@@ -64,7 +63,7 @@ object AuditFrequency {
   val BIWEEKLY = "BIWEEKLY".asInstanceOf[AuditFrequency]
   val MONTHLY = "MONTHLY".asInstanceOf[AuditFrequency]
 
-  @inline def values = js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY)
+  @inline def values: js.Array[AuditFrequency] = js.Array(DAILY, WEEKLY, BIWEEKLY, MONTHLY)
 }
 
 @js.native
@@ -77,7 +76,7 @@ object AuditMitigationActionsExecutionStatus {
   val SKIPPED = "SKIPPED".asInstanceOf[AuditMitigationActionsExecutionStatus]
   val PENDING = "PENDING".asInstanceOf[AuditMitigationActionsExecutionStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING)
+  @inline def values: js.Array[AuditMitigationActionsExecutionStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED, SKIPPED, PENDING)
 }
 
 @js.native
@@ -88,7 +87,7 @@ object AuditMitigationActionsTaskStatus {
   val FAILED = "FAILED".asInstanceOf[AuditMitigationActionsTaskStatus]
   val CANCELED = "CANCELED".asInstanceOf[AuditMitigationActionsTaskStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
+  @inline def values: js.Array[AuditMitigationActionsTaskStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
 }
 
 @js.native
@@ -96,7 +95,7 @@ sealed trait AuditNotificationType extends js.Any
 object AuditNotificationType {
   val SNS = "SNS".asInstanceOf[AuditNotificationType]
 
-  @inline def values = js.Array(SNS)
+  @inline def values: js.Array[AuditNotificationType] = js.Array(SNS)
 }
 
 @js.native
@@ -107,7 +106,7 @@ object AuditTaskStatus {
   val FAILED = "FAILED".asInstanceOf[AuditTaskStatus]
   val CANCELED = "CANCELED".asInstanceOf[AuditTaskStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
+  @inline def values: js.Array[AuditTaskStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED, CANCELED)
 }
 
 @js.native
@@ -116,7 +115,7 @@ object AuditTaskType {
   val ON_DEMAND_AUDIT_TASK = "ON_DEMAND_AUDIT_TASK".asInstanceOf[AuditTaskType]
   val SCHEDULED_AUDIT_TASK = "SCHEDULED_AUDIT_TASK".asInstanceOf[AuditTaskType]
 
-  @inline def values = js.Array(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK)
+  @inline def values: js.Array[AuditTaskType] = js.Array(ON_DEMAND_AUDIT_TASK, SCHEDULED_AUDIT_TASK)
 }
 
 @js.native
@@ -126,7 +125,7 @@ object AuthDecision {
   val EXPLICIT_DENY = "EXPLICIT_DENY".asInstanceOf[AuthDecision]
   val IMPLICIT_DENY = "IMPLICIT_DENY".asInstanceOf[AuthDecision]
 
-  @inline def values = js.Array(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY)
+  @inline def values: js.Array[AuthDecision] = js.Array(ALLOWED, EXPLICIT_DENY, IMPLICIT_DENY)
 }
 
 @js.native
@@ -135,7 +134,7 @@ object AuthorizerStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[AuthorizerStatus]
   val INACTIVE = "INACTIVE".asInstanceOf[AuthorizerStatus]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values: js.Array[AuthorizerStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native
@@ -144,7 +143,7 @@ object AutoRegistrationStatus {
   val ENABLE = "ENABLE".asInstanceOf[AutoRegistrationStatus]
   val DISABLE = "DISABLE".asInstanceOf[AutoRegistrationStatus]
 
-  @inline def values = js.Array(ENABLE, DISABLE)
+  @inline def values: js.Array[AutoRegistrationStatus] = js.Array(ENABLE, DISABLE)
 }
 
 @js.native
@@ -152,7 +151,7 @@ sealed trait AwsJobAbortCriteriaAbortAction extends js.Any
 object AwsJobAbortCriteriaAbortAction {
   val CANCEL = "CANCEL".asInstanceOf[AwsJobAbortCriteriaAbortAction]
 
-  @inline def values = js.Array(CANCEL)
+  @inline def values: js.Array[AwsJobAbortCriteriaAbortAction] = js.Array(CANCEL)
 }
 
 @js.native
@@ -163,7 +162,7 @@ object AwsJobAbortCriteriaFailureType {
   val TIMED_OUT = "TIMED_OUT".asInstanceOf[AwsJobAbortCriteriaFailureType]
   val ALL = "ALL".asInstanceOf[AwsJobAbortCriteriaFailureType]
 
-  @inline def values = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
+  @inline def values: js.Array[AwsJobAbortCriteriaFailureType] = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
 }
 
 @js.native
@@ -173,7 +172,7 @@ object BehaviorCriteriaType {
   val STATISTICAL = "STATISTICAL".asInstanceOf[BehaviorCriteriaType]
   val MACHINE_LEARNING = "MACHINE_LEARNING".asInstanceOf[BehaviorCriteriaType]
 
-  @inline def values = js.Array(STATIC, STATISTICAL, MACHINE_LEARNING)
+  @inline def values: js.Array[BehaviorCriteriaType] = js.Array(STATIC, STATISTICAL, MACHINE_LEARNING)
 }
 
 @js.native
@@ -182,7 +181,7 @@ object CACertificateStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[CACertificateStatus]
   val INACTIVE = "INACTIVE".asInstanceOf[CACertificateStatus]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values: js.Array[CACertificateStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native
@@ -190,7 +189,7 @@ sealed trait CACertificateUpdateAction extends js.Any
 object CACertificateUpdateAction {
   val DEACTIVATE = "DEACTIVATE".asInstanceOf[CACertificateUpdateAction]
 
-  @inline def values = js.Array(DEACTIVATE)
+  @inline def values: js.Array[CACertificateUpdateAction] = js.Array(DEACTIVATE)
 }
 
 @js.native
@@ -205,7 +204,7 @@ object CannedAccessControlList {
   val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedAccessControlList]
   val `log-delivery-write` = "log-delivery-write".asInstanceOf[CannedAccessControlList]
 
-  @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `log-delivery-write`)
+  @inline def values: js.Array[CannedAccessControlList] = js.Array(`private`, `public-read`, `public-read-write`, `aws-exec-read`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `log-delivery-write`)
 }
 
 @js.native
@@ -214,7 +213,7 @@ object CertificateMode {
   val DEFAULT = "DEFAULT".asInstanceOf[CertificateMode]
   val SNI_ONLY = "SNI_ONLY".asInstanceOf[CertificateMode]
 
-  @inline def values = js.Array(DEFAULT, SNI_ONLY)
+  @inline def values: js.Array[CertificateMode] = js.Array(DEFAULT, SNI_ONLY)
 }
 
 @js.native
@@ -227,7 +226,7 @@ object CertificateStatus {
   val REGISTER_INACTIVE = "REGISTER_INACTIVE".asInstanceOf[CertificateStatus]
   val PENDING_ACTIVATION = "PENDING_ACTIVATION".asInstanceOf[CertificateStatus]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION)
+  @inline def values: js.Array[CertificateStatus] = js.Array(ACTIVE, INACTIVE, REVOKED, PENDING_TRANSFER, REGISTER_INACTIVE, PENDING_ACTIVATION)
 }
 
 @js.native
@@ -244,7 +243,18 @@ object ComparisonOperator {
   val `in-set` = "in-set".asInstanceOf[ComparisonOperator]
   val `not-in-set` = "not-in-set".asInstanceOf[ComparisonOperator]
 
-  @inline def values = js.Array(`less-than`, `less-than-equals`, `greater-than`, `greater-than-equals`, `in-cidr-set`, `not-in-cidr-set`, `in-port-set`, `not-in-port-set`, `in-set`, `not-in-set`)
+  @inline def values: js.Array[ComparisonOperator] = js.Array(
+    `less-than`,
+    `less-than-equals`,
+    `greater-than`,
+    `greater-than-equals`,
+    `in-cidr-set`,
+    `not-in-cidr-set`,
+    `in-port-set`,
+    `not-in-port-set`,
+    `in-set`,
+    `not-in-set`
+  )
 }
 
 @js.native
@@ -254,7 +264,7 @@ object ConfidenceLevel {
   val MEDIUM = "MEDIUM".asInstanceOf[ConfidenceLevel]
   val HIGH = "HIGH".asInstanceOf[ConfidenceLevel]
 
-  @inline def values = js.Array(LOW, MEDIUM, HIGH)
+  @inline def values: js.Array[ConfidenceLevel] = js.Array(LOW, MEDIUM, HIGH)
 }
 
 @js.native
@@ -265,7 +275,7 @@ object CustomMetricType {
   val `number-list` = "number-list".asInstanceOf[CustomMetricType]
   val number = "number".asInstanceOf[CustomMetricType]
 
-  @inline def values = js.Array(`string-list`, `ip-address-list`, `number-list`, number)
+  @inline def values: js.Array[CustomMetricType] = js.Array(`string-list`, `ip-address-list`, `number-list`, number)
 }
 
 @js.native
@@ -279,7 +289,7 @@ object DayOfWeek {
   val FRI = "FRI".asInstanceOf[DayOfWeek]
   val SAT = "SAT".asInstanceOf[DayOfWeek]
 
-  @inline def values = js.Array(SUN, MON, TUE, WED, THU, FRI, SAT)
+  @inline def values: js.Array[DayOfWeek] = js.Array(SUN, MON, TUE, WED, THU, FRI, SAT)
 }
 
 @js.native
@@ -290,7 +300,7 @@ object DetectMitigationActionExecutionStatus {
   val FAILED = "FAILED".asInstanceOf[DetectMitigationActionExecutionStatus]
   val SKIPPED = "SKIPPED".asInstanceOf[DetectMitigationActionExecutionStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCESSFUL, FAILED, SKIPPED)
+  @inline def values: js.Array[DetectMitigationActionExecutionStatus] = js.Array(IN_PROGRESS, SUCCESSFUL, FAILED, SKIPPED)
 }
 
 @js.native
@@ -301,7 +311,7 @@ object DetectMitigationActionsTaskStatus {
   val FAILED = "FAILED".asInstanceOf[DetectMitigationActionsTaskStatus]
   val CANCELED = "CANCELED".asInstanceOf[DetectMitigationActionsTaskStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCESSFUL, FAILED, CANCELED)
+  @inline def values: js.Array[DetectMitigationActionsTaskStatus] = js.Array(IN_PROGRESS, SUCCESSFUL, FAILED, CANCELED)
 }
 
 @js.native
@@ -309,7 +319,7 @@ sealed trait DeviceCertificateUpdateAction extends js.Any
 object DeviceCertificateUpdateAction {
   val DEACTIVATE = "DEACTIVATE".asInstanceOf[DeviceCertificateUpdateAction]
 
-  @inline def values = js.Array(DEACTIVATE)
+  @inline def values: js.Array[DeviceCertificateUpdateAction] = js.Array(DEACTIVATE)
 }
 
 @js.native
@@ -317,7 +327,7 @@ sealed trait DimensionType extends js.Any
 object DimensionType {
   val TOPIC_FILTER = "TOPIC_FILTER".asInstanceOf[DimensionType]
 
-  @inline def values = js.Array(TOPIC_FILTER)
+  @inline def values: js.Array[DimensionType] = js.Array(TOPIC_FILTER)
 }
 
 @js.native
@@ -326,7 +336,7 @@ object DimensionValueOperator {
   val IN = "IN".asInstanceOf[DimensionValueOperator]
   val NOT_IN = "NOT_IN".asInstanceOf[DimensionValueOperator]
 
-  @inline def values = js.Array(IN, NOT_IN)
+  @inline def values: js.Array[DimensionValueOperator] = js.Array(IN, NOT_IN)
 }
 
 @js.native
@@ -335,7 +345,7 @@ object DomainConfigurationStatus {
   val ENABLED = "ENABLED".asInstanceOf[DomainConfigurationStatus]
   val DISABLED = "DISABLED".asInstanceOf[DomainConfigurationStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[DomainConfigurationStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -345,7 +355,7 @@ object DomainType {
   val AWS_MANAGED = "AWS_MANAGED".asInstanceOf[DomainType]
   val CUSTOMER_MANAGED = "CUSTOMER_MANAGED".asInstanceOf[DomainType]
 
-  @inline def values = js.Array(ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED)
+  @inline def values: js.Array[DomainType] = js.Array(ENDPOINT, AWS_MANAGED, CUSTOMER_MANAGED)
 }
 
 @js.native
@@ -355,7 +365,7 @@ object DynamicGroupStatus {
   val BUILDING = "BUILDING".asInstanceOf[DynamicGroupStatus]
   val REBUILDING = "REBUILDING".asInstanceOf[DynamicGroupStatus]
 
-  @inline def values = js.Array(ACTIVE, BUILDING, REBUILDING)
+  @inline def values: js.Array[DynamicGroupStatus] = js.Array(ACTIVE, BUILDING, REBUILDING)
 }
 
 @js.native
@@ -364,7 +374,7 @@ object DynamoKeyType {
   val STRING = "STRING".asInstanceOf[DynamoKeyType]
   val NUMBER = "NUMBER".asInstanceOf[DynamoKeyType]
 
-  @inline def values = js.Array(STRING, NUMBER)
+  @inline def values: js.Array[DynamoKeyType] = js.Array(STRING, NUMBER)
 }
 
 @js.native
@@ -382,7 +392,7 @@ object EventType {
   val CERTIFICATE = "CERTIFICATE".asInstanceOf[EventType]
   val CA_CERTIFICATE = "CA_CERTIFICATE".asInstanceOf[EventType]
 
-  @inline def values = js.Array(THING, THING_GROUP, THING_TYPE, THING_GROUP_MEMBERSHIP, THING_GROUP_HIERARCHY, THING_TYPE_ASSOCIATION, JOB, JOB_EXECUTION, POLICY, CERTIFICATE, CA_CERTIFICATE)
+  @inline def values: js.Array[EventType] = js.Array(THING, THING_GROUP, THING_TYPE, THING_GROUP_MEMBERSHIP, THING_GROUP_HIERARCHY, THING_TYPE_ASSOCIATION, JOB, JOB_EXECUTION, POLICY, CERTIFICATE, CA_CERTIFICATE)
 }
 
 @js.native
@@ -392,7 +402,7 @@ object FieldType {
   val String = "String".asInstanceOf[FieldType]
   val Boolean = "Boolean".asInstanceOf[FieldType]
 
-  @inline def values = js.Array(Number, String, Boolean)
+  @inline def values: js.Array[FieldType] = js.Array(Number, String, Boolean)
 }
 
 @js.native
@@ -402,7 +412,7 @@ object IndexStatus {
   val BUILDING = "BUILDING".asInstanceOf[IndexStatus]
   val REBUILDING = "REBUILDING".asInstanceOf[IndexStatus]
 
-  @inline def values = js.Array(ACTIVE, BUILDING, REBUILDING)
+  @inline def values: js.Array[IndexStatus] = js.Array(ACTIVE, BUILDING, REBUILDING)
 }
 
 @js.native
@@ -413,7 +423,7 @@ object JobExecutionFailureType {
   val TIMED_OUT = "TIMED_OUT".asInstanceOf[JobExecutionFailureType]
   val ALL = "ALL".asInstanceOf[JobExecutionFailureType]
 
-  @inline def values = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
+  @inline def values: js.Array[JobExecutionFailureType] = js.Array(FAILED, REJECTED, TIMED_OUT, ALL)
 }
 
 @js.native
@@ -428,7 +438,7 @@ object JobExecutionStatus {
   val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
   val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
-  @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
+  @inline def values: js.Array[JobExecutionStatus] = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
 }
 
 @js.native
@@ -439,7 +449,7 @@ object JobStatus {
   val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
   val DELETION_IN_PROGRESS = "DELETION_IN_PROGRESS".asInstanceOf[JobStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS)
+  @inline def values: js.Array[JobStatus] = js.Array(IN_PROGRESS, CANCELED, COMPLETED, DELETION_IN_PROGRESS)
 }
 
 @js.native
@@ -451,7 +461,7 @@ object LogLevel {
   val WARN = "WARN".asInstanceOf[LogLevel]
   val DISABLED = "DISABLED".asInstanceOf[LogLevel]
 
-  @inline def values = js.Array(DEBUG, INFO, ERROR, WARN, DISABLED)
+  @inline def values: js.Array[LogLevel] = js.Array(DEBUG, INFO, ERROR, WARN, DISABLED)
 }
 
 @js.native
@@ -460,7 +470,7 @@ object LogTargetType {
   val DEFAULT = "DEFAULT".asInstanceOf[LogTargetType]
   val THING_GROUP = "THING_GROUP".asInstanceOf[LogTargetType]
 
-  @inline def values = js.Array(DEFAULT, THING_GROUP)
+  @inline def values: js.Array[LogTargetType] = js.Array(DEFAULT, THING_GROUP)
 }
 
 @js.native
@@ -469,7 +479,7 @@ object MessageFormat {
   val RAW = "RAW".asInstanceOf[MessageFormat]
   val JSON = "JSON".asInstanceOf[MessageFormat]
 
-  @inline def values = js.Array(RAW, JSON)
+  @inline def values: js.Array[MessageFormat] = js.Array(RAW, JSON)
 }
 
 @js.native
@@ -482,7 +492,7 @@ object MitigationActionType {
   val ENABLE_IOT_LOGGING = "ENABLE_IOT_LOGGING".asInstanceOf[MitigationActionType]
   val PUBLISH_FINDING_TO_SNS = "PUBLISH_FINDING_TO_SNS".asInstanceOf[MitigationActionType]
 
-  @inline def values = js.Array(UPDATE_DEVICE_CERTIFICATE, UPDATE_CA_CERTIFICATE, ADD_THINGS_TO_THING_GROUP, REPLACE_DEFAULT_POLICY_VERSION, ENABLE_IOT_LOGGING, PUBLISH_FINDING_TO_SNS)
+  @inline def values: js.Array[MitigationActionType] = js.Array(UPDATE_DEVICE_CERTIFICATE, UPDATE_CA_CERTIFICATE, ADD_THINGS_TO_THING_GROUP, REPLACE_DEFAULT_POLICY_VERSION, ENABLE_IOT_LOGGING, PUBLISH_FINDING_TO_SNS)
 }
 
 @js.native
@@ -492,7 +502,7 @@ object ModelStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[ModelStatus]
   val EXPIRED = "EXPIRED".asInstanceOf[ModelStatus]
 
-  @inline def values = js.Array(PENDING_BUILD, ACTIVE, EXPIRED)
+  @inline def values: js.Array[ModelStatus] = js.Array(PENDING_BUILD, ACTIVE, EXPIRED)
 }
 
 @js.native
@@ -503,7 +513,7 @@ object OTAUpdateStatus {
   val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[OTAUpdateStatus]
   val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[OTAUpdateStatus]
 
-  @inline def values = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
+  @inline def values: js.Array[OTAUpdateStatus] = js.Array(CREATE_PENDING, CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
 }
 
 @js.native
@@ -511,7 +521,7 @@ sealed trait PolicyTemplateName extends js.Any
 object PolicyTemplateName {
   val BLANK_POLICY = "BLANK_POLICY".asInstanceOf[PolicyTemplateName]
 
-  @inline def values = js.Array(BLANK_POLICY)
+  @inline def values: js.Array[PolicyTemplateName] = js.Array(BLANK_POLICY)
 }
 
 @js.native
@@ -520,7 +530,7 @@ object Protocol {
   val MQTT = "MQTT".asInstanceOf[Protocol]
   val HTTP = "HTTP".asInstanceOf[Protocol]
 
-  @inline def values = js.Array(MQTT, HTTP)
+  @inline def values: js.Array[Protocol] = js.Array(MQTT, HTTP)
 }
 
 @js.native
@@ -529,7 +539,7 @@ object ReportType {
   val ERRORS = "ERRORS".asInstanceOf[ReportType]
   val RESULTS = "RESULTS".asInstanceOf[ReportType]
 
-  @inline def values = js.Array(ERRORS, RESULTS)
+  @inline def values: js.Array[ReportType] = js.Array(ERRORS, RESULTS)
 }
 
 @js.native
@@ -544,7 +554,7 @@ object ResourceType {
   val ROLE_ALIAS = "ROLE_ALIAS".asInstanceOf[ResourceType]
   val IAM_ROLE = "IAM_ROLE".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE)
+  @inline def values: js.Array[ResourceType] = js.Array(DEVICE_CERTIFICATE, CA_CERTIFICATE, IOT_POLICY, COGNITO_IDENTITY_POOL, CLIENT_ID, ACCOUNT_SETTINGS, ROLE_ALIAS, IAM_ROLE)
 }
 
 @js.native
@@ -553,7 +563,7 @@ object ServerCertificateStatus {
   val INVALID = "INVALID".asInstanceOf[ServerCertificateStatus]
   val VALID = "VALID".asInstanceOf[ServerCertificateStatus]
 
-  @inline def values = js.Array(INVALID, VALID)
+  @inline def values: js.Array[ServerCertificateStatus] = js.Array(INVALID, VALID)
 }
 
 @js.native
@@ -563,7 +573,7 @@ object ServiceType {
   val CREDENTIAL_PROVIDER = "CREDENTIAL_PROVIDER".asInstanceOf[ServiceType]
   val JOBS = "JOBS".asInstanceOf[ServiceType]
 
-  @inline def values = js.Array(DATA, CREDENTIAL_PROVIDER, JOBS)
+  @inline def values: js.Array[ServiceType] = js.Array(DATA, CREDENTIAL_PROVIDER, JOBS)
 }
 
 @js.native
@@ -575,7 +585,7 @@ object Status {
   val Cancelled = "Cancelled".asInstanceOf[Status]
   val Cancelling = "Cancelling".asInstanceOf[Status]
 
-  @inline def values = js.Array(InProgress, Completed, Failed, Cancelled, Cancelling)
+  @inline def values: js.Array[Status] = js.Array(InProgress, Completed, Failed, Cancelled, Cancelling)
 }
 
 @js.native
@@ -584,7 +594,7 @@ object TargetSelection {
   val CONTINUOUS = "CONTINUOUS".asInstanceOf[TargetSelection]
   val SNAPSHOT = "SNAPSHOT".asInstanceOf[TargetSelection]
 
-  @inline def values = js.Array(CONTINUOUS, SNAPSHOT)
+  @inline def values: js.Array[TargetSelection] = js.Array(CONTINUOUS, SNAPSHOT)
 }
 
 @js.native
@@ -593,7 +603,7 @@ object ThingConnectivityIndexingMode {
   val OFF = "OFF".asInstanceOf[ThingConnectivityIndexingMode]
   val STATUS = "STATUS".asInstanceOf[ThingConnectivityIndexingMode]
 
-  @inline def values = js.Array(OFF, STATUS)
+  @inline def values: js.Array[ThingConnectivityIndexingMode] = js.Array(OFF, STATUS)
 }
 
 @js.native
@@ -602,7 +612,7 @@ object ThingGroupIndexingMode {
   val OFF = "OFF".asInstanceOf[ThingGroupIndexingMode]
   val ON = "ON".asInstanceOf[ThingGroupIndexingMode]
 
-  @inline def values = js.Array(OFF, ON)
+  @inline def values: js.Array[ThingGroupIndexingMode] = js.Array(OFF, ON)
 }
 
 @js.native
@@ -612,7 +622,7 @@ object ThingIndexingMode {
   val REGISTRY = "REGISTRY".asInstanceOf[ThingIndexingMode]
   val REGISTRY_AND_SHADOW = "REGISTRY_AND_SHADOW".asInstanceOf[ThingIndexingMode]
 
-  @inline def values = js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW)
+  @inline def values: js.Array[ThingIndexingMode] = js.Array(OFF, REGISTRY, REGISTRY_AND_SHADOW)
 }
 
 @js.native
@@ -624,7 +634,7 @@ object TopicRuleDestinationStatus {
   val ERROR = "ERROR".asInstanceOf[TopicRuleDestinationStatus]
   val DELETING = "DELETING".asInstanceOf[TopicRuleDestinationStatus]
 
-  @inline def values = js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR, DELETING)
+  @inline def values: js.Array[TopicRuleDestinationStatus] = js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR, DELETING)
 }
 
 @js.native
@@ -634,6 +644,5 @@ object ViolationEventType {
   val `alarm-cleared` = "alarm-cleared".asInstanceOf[ViolationEventType]
   val `alarm-invalidated` = "alarm-invalidated".asInstanceOf[ViolationEventType]
 
-  @inline def values = js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`)
+  @inline def values: js.Array[ViolationEventType] = js.Array(`in-alarm`, `alarm-cleared`, `alarm-invalidated`)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.pinpoint
 
-import scalajs._
+import scalajs.js
 
 type Action = "OPEN_APP" | "DEEP_LINK" | "URL"
 object Action {

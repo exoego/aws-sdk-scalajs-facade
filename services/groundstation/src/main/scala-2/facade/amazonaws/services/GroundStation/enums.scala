@@ -1,7 +1,6 @@
 package facade.amazonaws.services.groundstation
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AngleUnits extends js.Any
@@ -9,7 +8,7 @@ object AngleUnits {
   val DEGREE_ANGLE = "DEGREE_ANGLE".asInstanceOf[AngleUnits]
   val RADIAN = "RADIAN".asInstanceOf[AngleUnits]
 
-  @inline def values = js.Array(DEGREE_ANGLE, RADIAN)
+  @inline def values: js.Array[AngleUnits] = js.Array(DEGREE_ANGLE, RADIAN)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object BandwidthUnits {
   val MHz = "MHz".asInstanceOf[BandwidthUnits]
   val kHz = "kHz".asInstanceOf[BandwidthUnits]
 
-  @inline def values = js.Array(GHz, MHz, kHz)
+  @inline def values: js.Array[BandwidthUnits] = js.Array(GHz, MHz, kHz)
 }
 
 @js.native
@@ -33,7 +32,7 @@ object ConfigCapabilityType {
   val `uplink-echo` = "uplink-echo".asInstanceOf[ConfigCapabilityType]
   val `s3-recording` = "s3-recording".asInstanceOf[ConfigCapabilityType]
 
-  @inline def values = js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`, `s3-recording`)
+  @inline def values: js.Array[ConfigCapabilityType] = js.Array(`antenna-downlink`, `antenna-downlink-demod-decode`, `antenna-uplink`, `dataflow-endpoint`, tracking, `uplink-echo`, `s3-recording`)
 }
 
 @js.native
@@ -53,7 +52,7 @@ object ContactStatus {
   val SCHEDULED = "SCHEDULED".asInstanceOf[ContactStatus]
   val SCHEDULING = "SCHEDULING".asInstanceOf[ContactStatus]
 
-  @inline def values = js.Array(AVAILABLE, AWS_CANCELLED, AWS_FAILED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING)
+  @inline def values: js.Array[ContactStatus] = js.Array(AVAILABLE, AWS_CANCELLED, AWS_FAILED, CANCELLED, CANCELLING, COMPLETED, FAILED, FAILED_TO_SCHEDULE, PASS, POSTPASS, PREPASS, SCHEDULED, SCHEDULING)
 }
 
 @js.native
@@ -63,7 +62,7 @@ object Criticality {
   val REMOVED = "REMOVED".asInstanceOf[Criticality]
   val REQUIRED = "REQUIRED".asInstanceOf[Criticality]
 
-  @inline def values = js.Array(PREFERRED, REMOVED, REQUIRED)
+  @inline def values: js.Array[Criticality] = js.Array(PREFERRED, REMOVED, REQUIRED)
 }
 
 @js.native
@@ -71,7 +70,7 @@ sealed trait EirpUnits extends js.Any
 object EirpUnits {
   val dBW = "dBW".asInstanceOf[EirpUnits]
 
-  @inline def values = js.Array(dBW)
+  @inline def values: js.Array[EirpUnits] = js.Array(dBW)
 }
 
 @js.native
@@ -83,7 +82,7 @@ object EndpointStatus {
   val deleting = "deleting".asInstanceOf[EndpointStatus]
   val failed = "failed".asInstanceOf[EndpointStatus]
 
-  @inline def values = js.Array(created, creating, deleted, deleting, failed)
+  @inline def values: js.Array[EndpointStatus] = js.Array(created, creating, deleted, deleting, failed)
 }
 
 @js.native
@@ -93,7 +92,7 @@ object FrequencyUnits {
   val MHz = "MHz".asInstanceOf[FrequencyUnits]
   val kHz = "kHz".asInstanceOf[FrequencyUnits]
 
-  @inline def values = js.Array(GHz, MHz, kHz)
+  @inline def values: js.Array[FrequencyUnits] = js.Array(GHz, MHz, kHz)
 }
 
 @js.native
@@ -103,6 +102,5 @@ object Polarization {
   val NONE = "NONE".asInstanceOf[Polarization]
   val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[Polarization]
 
-  @inline def values = js.Array(LEFT_HAND, NONE, RIGHT_HAND)
+  @inline def values: js.Array[Polarization] = js.Array(LEFT_HAND, NONE, RIGHT_HAND)
 }
-

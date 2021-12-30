@@ -1,6 +1,6 @@
 package facade.amazonaws.services.emrcontainers
 
-import scalajs._
+import scalajs.js
 
 type ContainerProviderType = "EKS"
 object ContainerProviderType {

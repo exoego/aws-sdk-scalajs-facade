@@ -1,3 +1,3 @@
 package facade.amazonaws.services.sns
 
-import scalajs._
+import scalajs.js

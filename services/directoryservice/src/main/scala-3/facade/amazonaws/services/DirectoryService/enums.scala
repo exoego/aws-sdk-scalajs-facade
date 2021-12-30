@@ -1,6 +1,6 @@
 package facade.amazonaws.services.directoryservice
 
-import scalajs._
+import scalajs.js
 
 type CertificateState = "Registering" | "Registered" | "RegisterFailed" | "Deregistering" | "Deregistered" | "DeregisterFailed"
 object CertificateState {

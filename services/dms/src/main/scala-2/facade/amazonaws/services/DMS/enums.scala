@@ -1,7 +1,6 @@
 package facade.amazonaws.services.dms
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AuthMechanismValue extends js.Any
@@ -10,7 +9,7 @@ object AuthMechanismValue {
   val mongodb_cr = "mongodb_cr".asInstanceOf[AuthMechanismValue]
   val scram_sha_1 = "scram_sha_1".asInstanceOf[AuthMechanismValue]
 
-  @inline def values = js.Array(default, mongodb_cr, scram_sha_1)
+  @inline def values: js.Array[AuthMechanismValue] = js.Array(default, mongodb_cr, scram_sha_1)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object AuthTypeValue {
   val no = "no".asInstanceOf[AuthTypeValue]
   val password = "password".asInstanceOf[AuthTypeValue]
 
-  @inline def values = js.Array(no, password)
+  @inline def values: js.Array[AuthTypeValue] = js.Array(no, password)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object CharLengthSemantics {
   val char = "char".asInstanceOf[CharLengthSemantics]
   val byte = "byte".asInstanceOf[CharLengthSemantics]
 
-  @inline def values = js.Array(default, char, byte)
+  @inline def values: js.Array[CharLengthSemantics] = js.Array(default, char, byte)
 }
 
 @js.native
@@ -38,7 +37,7 @@ object CompressionTypeValue {
   val none = "none".asInstanceOf[CompressionTypeValue]
   val gzip = "gzip".asInstanceOf[CompressionTypeValue]
 
-  @inline def values = js.Array(none, gzip)
+  @inline def values: js.Array[CompressionTypeValue] = js.Array(none, gzip)
 }
 
 @js.native
@@ -47,7 +46,7 @@ object DataFormatValue {
   val csv = "csv".asInstanceOf[DataFormatValue]
   val parquet = "parquet".asInstanceOf[DataFormatValue]
 
-  @inline def values = js.Array(csv, parquet)
+  @inline def values: js.Array[DataFormatValue] = js.Array(csv, parquet)
 }
 
 @js.native
@@ -58,7 +57,7 @@ object DatePartitionDelimiterValue {
   val DASH = "DASH".asInstanceOf[DatePartitionDelimiterValue]
   val NONE = "NONE".asInstanceOf[DatePartitionDelimiterValue]
 
-  @inline def values = js.Array(SLASH, UNDERSCORE, DASH, NONE)
+  @inline def values: js.Array[DatePartitionDelimiterValue] = js.Array(SLASH, UNDERSCORE, DASH, NONE)
 }
 
 @js.native
@@ -70,7 +69,7 @@ object DatePartitionSequenceValue {
   val MMYYYYDD = "MMYYYYDD".asInstanceOf[DatePartitionSequenceValue]
   val DDMMYYYY = "DDMMYYYY".asInstanceOf[DatePartitionSequenceValue]
 
-  @inline def values = js.Array(YYYYMMDD, YYYYMMDDHH, YYYYMM, MMYYYYDD, DDMMYYYY)
+  @inline def values: js.Array[DatePartitionSequenceValue] = js.Array(YYYYMMDD, YYYYMMDDHH, YYYYMM, MMYYYYDD, DDMMYYYY)
 }
 
 @js.native
@@ -81,7 +80,7 @@ object DmsSslModeValue {
   val `verify-ca` = "verify-ca".asInstanceOf[DmsSslModeValue]
   val `verify-full` = "verify-full".asInstanceOf[DmsSslModeValue]
 
-  @inline def values = js.Array(none, require, `verify-ca`, `verify-full`)
+  @inline def values: js.Array[DmsSslModeValue] = js.Array(none, require, `verify-ca`, `verify-full`)
 }
 
 @js.native
@@ -91,7 +90,7 @@ object EncodingTypeValue {
   val `plain-dictionary` = "plain-dictionary".asInstanceOf[EncodingTypeValue]
   val `rle-dictionary` = "rle-dictionary".asInstanceOf[EncodingTypeValue]
 
-  @inline def values = js.Array(plain, `plain-dictionary`, `rle-dictionary`)
+  @inline def values: js.Array[EncodingTypeValue] = js.Array(plain, `plain-dictionary`, `rle-dictionary`)
 }
 
 @js.native
@@ -100,7 +99,7 @@ object EncryptionModeValue {
   val `sse-s3` = "sse-s3".asInstanceOf[EncryptionModeValue]
   val `sse-kms` = "sse-kms".asInstanceOf[EncryptionModeValue]
 
-  @inline def values = js.Array(`sse-s3`, `sse-kms`)
+  @inline def values: js.Array[EncryptionModeValue] = js.Array(`sse-s3`, `sse-kms`)
 }
 
 @js.native
@@ -111,7 +110,7 @@ object EndpointSettingTypeValue {
   val integer = "integer".asInstanceOf[EndpointSettingTypeValue]
   val `enum` = "enum".asInstanceOf[EndpointSettingTypeValue]
 
-  @inline def values = js.Array(string, boolean, integer, `enum`)
+  @inline def values: js.Array[EndpointSettingTypeValue] = js.Array(string, boolean, integer, `enum`)
 }
 
 @js.native
@@ -122,7 +121,7 @@ object KafkaSecurityProtocol {
   val `ssl-encryption` = "ssl-encryption".asInstanceOf[KafkaSecurityProtocol]
   val `sasl-ssl` = "sasl-ssl".asInstanceOf[KafkaSecurityProtocol]
 
-  @inline def values = js.Array(plaintext, `ssl-authentication`, `ssl-encryption`, `sasl-ssl`)
+  @inline def values: js.Array[KafkaSecurityProtocol] = js.Array(plaintext, `ssl-authentication`, `ssl-encryption`, `sasl-ssl`)
 }
 
 @js.native
@@ -131,7 +130,7 @@ object MessageFormatValue {
   val json = "json".asInstanceOf[MessageFormatValue]
   val `json-unformatted` = "json-unformatted".asInstanceOf[MessageFormatValue]
 
-  @inline def values = js.Array(json, `json-unformatted`)
+  @inline def values: js.Array[MessageFormatValue] = js.Array(json, `json-unformatted`)
 }
 
 @js.native
@@ -141,7 +140,7 @@ object MigrationTypeValue {
   val cdc = "cdc".asInstanceOf[MigrationTypeValue]
   val `full-load-and-cdc` = "full-load-and-cdc".asInstanceOf[MigrationTypeValue]
 
-  @inline def values = js.Array(`full-load`, cdc, `full-load-and-cdc`)
+  @inline def values: js.Array[MigrationTypeValue] = js.Array(`full-load`, cdc, `full-load-and-cdc`)
 }
 
 @js.native
@@ -150,7 +149,7 @@ object NestingLevelValue {
   val none = "none".asInstanceOf[NestingLevelValue]
   val one = "one".asInstanceOf[NestingLevelValue]
 
-  @inline def values = js.Array(none, one)
+  @inline def values: js.Array[NestingLevelValue] = js.Array(none, one)
 }
 
 @js.native
@@ -159,7 +158,7 @@ object ParquetVersionValue {
   val `parquet-1-0` = "parquet-1-0".asInstanceOf[ParquetVersionValue]
   val `parquet-2-0` = "parquet-2-0".asInstanceOf[ParquetVersionValue]
 
-  @inline def values = js.Array(`parquet-1-0`, `parquet-2-0`)
+  @inline def values: js.Array[ParquetVersionValue] = js.Array(`parquet-1-0`, `parquet-2-0`)
 }
 
 @js.native
@@ -169,7 +168,7 @@ object RefreshSchemasStatusTypeValue {
   val failed = "failed".asInstanceOf[RefreshSchemasStatusTypeValue]
   val refreshing = "refreshing".asInstanceOf[RefreshSchemasStatusTypeValue]
 
-  @inline def values = js.Array(successful, failed, refreshing)
+  @inline def values: js.Array[RefreshSchemasStatusTypeValue] = js.Array(successful, failed, refreshing)
 }
 
 @js.native
@@ -177,7 +176,7 @@ sealed trait ReleaseStatusValues extends js.Any
 object ReleaseStatusValues {
   val beta = "beta".asInstanceOf[ReleaseStatusValues]
 
-  @inline def values = js.Array(beta)
+  @inline def values: js.Array[ReleaseStatusValues] = js.Array(beta)
 }
 
 @js.native
@@ -186,7 +185,7 @@ object ReloadOptionValue {
   val `data-reload` = "data-reload".asInstanceOf[ReloadOptionValue]
   val `validate-only` = "validate-only".asInstanceOf[ReloadOptionValue]
 
-  @inline def values = js.Array(`data-reload`, `validate-only`)
+  @inline def values: js.Array[ReloadOptionValue] = js.Array(`data-reload`, `validate-only`)
 }
 
 @js.native
@@ -195,7 +194,7 @@ object ReplicationEndpointTypeValue {
   val source = "source".asInstanceOf[ReplicationEndpointTypeValue]
   val target = "target".asInstanceOf[ReplicationEndpointTypeValue]
 
-  @inline def values = js.Array(source, target)
+  @inline def values: js.Array[ReplicationEndpointTypeValue] = js.Array(source, target)
 }
 
 @js.native
@@ -205,7 +204,7 @@ object SafeguardPolicy {
   val `exclusive-automatic-truncation` = "exclusive-automatic-truncation".asInstanceOf[SafeguardPolicy]
   val `shared-automatic-truncation` = "shared-automatic-truncation".asInstanceOf[SafeguardPolicy]
 
-  @inline def values = js.Array(`rely-on-sql-server-replication-agent`, `exclusive-automatic-truncation`, `shared-automatic-truncation`)
+  @inline def values: js.Array[SafeguardPolicy] = js.Array(`rely-on-sql-server-replication-agent`, `exclusive-automatic-truncation`, `shared-automatic-truncation`)
 }
 
 @js.native
@@ -213,7 +212,7 @@ sealed trait SourceType extends js.Any
 object SourceType {
   val `replication-instance` = "replication-instance".asInstanceOf[SourceType]
 
-  @inline def values = js.Array(`replication-instance`)
+  @inline def values: js.Array[SourceType] = js.Array(`replication-instance`)
 }
 
 @js.native
@@ -223,7 +222,7 @@ object StartReplicationTaskTypeValue {
   val `resume-processing` = "resume-processing".asInstanceOf[StartReplicationTaskTypeValue]
   val `reload-target` = "reload-target".asInstanceOf[StartReplicationTaskTypeValue]
 
-  @inline def values = js.Array(`start-replication`, `resume-processing`, `reload-target`)
+  @inline def values: js.Array[StartReplicationTaskTypeValue] = js.Array(`start-replication`, `resume-processing`, `reload-target`)
 }
 
 @js.native
@@ -232,6 +231,5 @@ object TargetDbType {
   val `specific-database` = "specific-database".asInstanceOf[TargetDbType]
   val `multiple-databases` = "multiple-databases".asInstanceOf[TargetDbType]
 
-  @inline def values = js.Array(`specific-database`, `multiple-databases`)
+  @inline def values: js.Array[TargetDbType] = js.Array(`specific-database`, `multiple-databases`)
 }
-

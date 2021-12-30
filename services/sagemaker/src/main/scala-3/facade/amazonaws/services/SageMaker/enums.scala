@@ -1,6 +1,6 @@
 package facade.amazonaws.services.sagemaker
 
-import scalajs._
+import scalajs.js
 
 type ActionStatus = "Unknown" | "InProgress" | "Completed" | "Failed" | "Stopping" | "Stopped"
 object ActionStatus {

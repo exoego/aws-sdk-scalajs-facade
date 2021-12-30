@@ -1,7 +1,6 @@
 package facade.amazonaws.services.forecast
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AttributeType extends js.Any
@@ -12,7 +11,7 @@ object AttributeType {
   val timestamp = "timestamp".asInstanceOf[AttributeType]
   val geolocation = "geolocation".asInstanceOf[AttributeType]
 
-  @inline def values = js.Array(string, integer, float, timestamp, geolocation)
+  @inline def values: js.Array[AttributeType] = js.Array(string, integer, float, timestamp, geolocation)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object DatasetType {
   val RELATED_TIME_SERIES = "RELATED_TIME_SERIES".asInstanceOf[DatasetType]
   val ITEM_METADATA = "ITEM_METADATA".asInstanceOf[DatasetType]
 
-  @inline def values = js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA)
+  @inline def values: js.Array[DatasetType] = js.Array(TARGET_TIME_SERIES, RELATED_TIME_SERIES, ITEM_METADATA)
 }
 
 @js.native
@@ -36,7 +35,7 @@ object Domain {
   val WEB_TRAFFIC = "WEB_TRAFFIC".asInstanceOf[Domain]
   val METRICS = "METRICS".asInstanceOf[Domain]
 
-  @inline def values = js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS)
+  @inline def values: js.Array[Domain] = js.Array(RETAIL, CUSTOM, INVENTORY_PLANNING, EC2_CAPACITY, WORK_FORCE, WEB_TRAFFIC, METRICS)
 }
 
 @js.native
@@ -45,7 +44,7 @@ object EvaluationType {
   val SUMMARY = "SUMMARY".asInstanceOf[EvaluationType]
   val COMPUTED = "COMPUTED".asInstanceOf[EvaluationType]
 
-  @inline def values = js.Array(SUMMARY, COMPUTED)
+  @inline def values: js.Array[EvaluationType] = js.Array(SUMMARY, COMPUTED)
 }
 
 @js.native
@@ -53,7 +52,7 @@ sealed trait FeaturizationMethodName extends js.Any
 object FeaturizationMethodName {
   val filling = "filling".asInstanceOf[FeaturizationMethodName]
 
-  @inline def values = js.Array(filling)
+  @inline def values: js.Array[FeaturizationMethodName] = js.Array(filling)
 }
 
 @js.native
@@ -62,7 +61,7 @@ object FilterConditionString {
   val IS = "IS".asInstanceOf[FilterConditionString]
   val IS_NOT = "IS_NOT".asInstanceOf[FilterConditionString]
 
-  @inline def values = js.Array(IS, IS_NOT)
+  @inline def values: js.Array[FilterConditionString] = js.Array(IS, IS_NOT)
 }
 
 @js.native
@@ -73,6 +72,5 @@ object ScalingType {
   val Logarithmic = "Logarithmic".asInstanceOf[ScalingType]
   val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[ScalingType]
 
-  @inline def values = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
+  @inline def values: js.Array[ScalingType] = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
 }
-

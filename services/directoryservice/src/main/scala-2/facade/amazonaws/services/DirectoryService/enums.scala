@@ -1,7 +1,6 @@
 package facade.amazonaws.services.directoryservice
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait CertificateState extends js.Any
@@ -13,7 +12,7 @@ object CertificateState {
   val Deregistered = "Deregistered".asInstanceOf[CertificateState]
   val DeregisterFailed = "DeregisterFailed".asInstanceOf[CertificateState]
 
-  @inline def values = js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed)
+  @inline def values: js.Array[CertificateState] = js.Array(Registering, Registered, RegisterFailed, Deregistering, Deregistered, DeregisterFailed)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object CertificateType {
   val ClientCertAuth = "ClientCertAuth".asInstanceOf[CertificateType]
   val ClientLDAPS = "ClientLDAPS".asInstanceOf[CertificateType]
 
-  @inline def values = js.Array(ClientCertAuth, ClientLDAPS)
+  @inline def values: js.Array[CertificateType] = js.Array(ClientCertAuth, ClientLDAPS)
 }
 
 @js.native
@@ -30,7 +29,7 @@ sealed trait ClientAuthenticationType extends js.Any
 object ClientAuthenticationType {
   val SmartCard = "SmartCard".asInstanceOf[ClientAuthenticationType]
 
-  @inline def values = js.Array(SmartCard)
+  @inline def values: js.Array[ClientAuthenticationType] = js.Array(SmartCard)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object DirectoryEdition {
   val Enterprise = "Enterprise".asInstanceOf[DirectoryEdition]
   val Standard = "Standard".asInstanceOf[DirectoryEdition]
 
-  @inline def values = js.Array(Enterprise, Standard)
+  @inline def values: js.Array[DirectoryEdition] = js.Array(Enterprise, Standard)
 }
 
 @js.native
@@ -48,7 +47,7 @@ object DirectorySize {
   val Small = "Small".asInstanceOf[DirectorySize]
   val Large = "Large".asInstanceOf[DirectorySize]
 
-  @inline def values = js.Array(Small, Large)
+  @inline def values: js.Array[DirectorySize] = js.Array(Small, Large)
 }
 
 @js.native
@@ -66,7 +65,7 @@ object DirectoryStage {
   val Deleted = "Deleted".asInstanceOf[DirectoryStage]
   val Failed = "Failed".asInstanceOf[DirectoryStage]
 
-  @inline def values = js.Array(Requested, Creating, Created, Active, Inoperable, Impaired, Restoring, RestoreFailed, Deleting, Deleted, Failed)
+  @inline def values: js.Array[DirectoryStage] = js.Array(Requested, Creating, Created, Active, Inoperable, Impaired, Restoring, RestoreFailed, Deleting, Deleted, Failed)
 }
 
 @js.native
@@ -77,7 +76,7 @@ object DirectoryType {
   val MicrosoftAD = "MicrosoftAD".asInstanceOf[DirectoryType]
   val SharedMicrosoftAD = "SharedMicrosoftAD".asInstanceOf[DirectoryType]
 
-  @inline def values = js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD)
+  @inline def values: js.Array[DirectoryType] = js.Array(SimpleAD, ADConnector, MicrosoftAD, SharedMicrosoftAD)
 }
 
 @js.native
@@ -91,7 +90,7 @@ object DomainControllerStatus {
   val Deleted = "Deleted".asInstanceOf[DomainControllerStatus]
   val Failed = "Failed".asInstanceOf[DomainControllerStatus]
 
-  @inline def values = js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed)
+  @inline def values: js.Array[DomainControllerStatus] = js.Array(Creating, Active, Impaired, Restoring, Deleting, Deleted, Failed)
 }
 
 @js.native
@@ -104,7 +103,7 @@ object IpRouteStatusMsg {
   val AddFailed = "AddFailed".asInstanceOf[IpRouteStatusMsg]
   val RemoveFailed = "RemoveFailed".asInstanceOf[IpRouteStatusMsg]
 
-  @inline def values = js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed)
+  @inline def values: js.Array[IpRouteStatusMsg] = js.Array(Adding, Added, Removing, Removed, AddFailed, RemoveFailed)
 }
 
 @js.native
@@ -115,7 +114,7 @@ object LDAPSStatus {
   val EnableFailed = "EnableFailed".asInstanceOf[LDAPSStatus]
   val Disabled = "Disabled".asInstanceOf[LDAPSStatus]
 
-  @inline def values = js.Array(Enabling, Enabled, EnableFailed, Disabled)
+  @inline def values: js.Array[LDAPSStatus] = js.Array(Enabling, Enabled, EnableFailed, Disabled)
 }
 
 @js.native
@@ -123,7 +122,7 @@ sealed trait LDAPSType extends js.Any
 object LDAPSType {
   val Client = "Client".asInstanceOf[LDAPSType]
 
-  @inline def values = js.Array(Client)
+  @inline def values: js.Array[LDAPSType] = js.Array(Client)
 }
 
 @js.native
@@ -134,7 +133,7 @@ object RadiusAuthenticationProtocol {
   val `MS-CHAPv1` = "MS-CHAPv1".asInstanceOf[RadiusAuthenticationProtocol]
   val `MS-CHAPv2` = "MS-CHAPv2".asInstanceOf[RadiusAuthenticationProtocol]
 
-  @inline def values = js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`)
+  @inline def values: js.Array[RadiusAuthenticationProtocol] = js.Array(PAP, CHAP, `MS-CHAPv1`, `MS-CHAPv2`)
 }
 
 @js.native
@@ -144,7 +143,7 @@ object RadiusStatus {
   val Completed = "Completed".asInstanceOf[RadiusStatus]
   val Failed = "Failed".asInstanceOf[RadiusStatus]
 
-  @inline def values = js.Array(Creating, Completed, Failed)
+  @inline def values: js.Array[RadiusStatus] = js.Array(Creating, Completed, Failed)
 }
 
 @js.native
@@ -153,7 +152,7 @@ object RegionType {
   val Primary = "Primary".asInstanceOf[RegionType]
   val Additional = "Additional".asInstanceOf[RegionType]
 
-  @inline def values = js.Array(Primary, Additional)
+  @inline def values: js.Array[RegionType] = js.Array(Primary, Additional)
 }
 
 @js.native
@@ -161,7 +160,7 @@ sealed trait ReplicationScope extends js.Any
 object ReplicationScope {
   val Domain = "Domain".asInstanceOf[ReplicationScope]
 
-  @inline def values = js.Array(Domain)
+  @inline def values: js.Array[ReplicationScope] = js.Array(Domain)
 }
 
 @js.native
@@ -177,7 +176,7 @@ object SchemaExtensionStatus {
   val Failed = "Failed".asInstanceOf[SchemaExtensionStatus]
   val Completed = "Completed".asInstanceOf[SchemaExtensionStatus]
 
-  @inline def values = js.Array(Initializing, CreatingSnapshot, UpdatingSchema, Replicating, CancelInProgress, RollbackInProgress, Cancelled, Failed, Completed)
+  @inline def values: js.Array[SchemaExtensionStatus] = js.Array(Initializing, CreatingSnapshot, UpdatingSchema, Replicating, CancelInProgress, RollbackInProgress, Cancelled, Failed, Completed)
 }
 
 @js.native
@@ -186,7 +185,7 @@ object SelectiveAuth {
   val Enabled = "Enabled".asInstanceOf[SelectiveAuth]
   val Disabled = "Disabled".asInstanceOf[SelectiveAuth]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[SelectiveAuth] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -195,7 +194,7 @@ object ShareMethod {
   val ORGANIZATIONS = "ORGANIZATIONS".asInstanceOf[ShareMethod]
   val HANDSHAKE = "HANDSHAKE".asInstanceOf[ShareMethod]
 
-  @inline def values = js.Array(ORGANIZATIONS, HANDSHAKE)
+  @inline def values: js.Array[ShareMethod] = js.Array(ORGANIZATIONS, HANDSHAKE)
 }
 
 @js.native
@@ -211,7 +210,7 @@ object ShareStatus {
   val Deleted = "Deleted".asInstanceOf[ShareStatus]
   val Deleting = "Deleting".asInstanceOf[ShareStatus]
 
-  @inline def values = js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
+  @inline def values: js.Array[ShareStatus] = js.Array(Shared, PendingAcceptance, Rejected, Rejecting, RejectFailed, Sharing, ShareFailed, Deleted, Deleting)
 }
 
 @js.native
@@ -221,7 +220,7 @@ object SnapshotStatus {
   val Completed = "Completed".asInstanceOf[SnapshotStatus]
   val Failed = "Failed".asInstanceOf[SnapshotStatus]
 
-  @inline def values = js.Array(Creating, Completed, Failed)
+  @inline def values: js.Array[SnapshotStatus] = js.Array(Creating, Completed, Failed)
 }
 
 @js.native
@@ -230,7 +229,7 @@ object SnapshotType {
   val Auto = "Auto".asInstanceOf[SnapshotType]
   val Manual = "Manual".asInstanceOf[SnapshotType]
 
-  @inline def values = js.Array(Auto, Manual)
+  @inline def values: js.Array[SnapshotType] = js.Array(Auto, Manual)
 }
 
 @js.native
@@ -238,7 +237,7 @@ sealed trait TargetType extends js.Any
 object TargetType {
   val ACCOUNT = "ACCOUNT".asInstanceOf[TargetType]
 
-  @inline def values = js.Array(ACCOUNT)
+  @inline def values: js.Array[TargetType] = js.Array(ACCOUNT)
 }
 
 @js.native
@@ -249,7 +248,7 @@ object TopicStatus {
   val Failed = "Failed".asInstanceOf[TopicStatus]
   val Deleted = "Deleted".asInstanceOf[TopicStatus]
 
-  @inline def values = js.Array(Registered, `Topic not found`, Failed, Deleted)
+  @inline def values: js.Array[TopicStatus] = js.Array(Registered, `Topic not found`, Failed, Deleted)
 }
 
 @js.native
@@ -259,7 +258,7 @@ object TrustDirection {
   val `One-Way: Incoming` = "One-Way: Incoming".asInstanceOf[TrustDirection]
   val `Two-Way` = "Two-Way".asInstanceOf[TrustDirection]
 
-  @inline def values = js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`)
+  @inline def values: js.Array[TrustDirection] = js.Array(`One-Way: Outgoing`, `One-Way: Incoming`, `Two-Way`)
 }
 
 @js.native
@@ -277,7 +276,7 @@ object TrustState {
   val Deleted = "Deleted".asInstanceOf[TrustState]
   val Failed = "Failed".asInstanceOf[TrustState]
 
-  @inline def values = js.Array(Creating, Created, Verifying, VerifyFailed, Verified, Updating, UpdateFailed, Updated, Deleting, Deleted, Failed)
+  @inline def values: js.Array[TrustState] = js.Array(Creating, Created, Verifying, VerifyFailed, Verified, Updating, UpdateFailed, Updated, Deleting, Deleted, Failed)
 }
 
 @js.native
@@ -286,6 +285,5 @@ object TrustType {
   val Forest = "Forest".asInstanceOf[TrustType]
   val External = "External".asInstanceOf[TrustType]
 
-  @inline def values = js.Array(Forest, External)
+  @inline def values: js.Array[TrustType] = js.Array(Forest, External)
 }
-

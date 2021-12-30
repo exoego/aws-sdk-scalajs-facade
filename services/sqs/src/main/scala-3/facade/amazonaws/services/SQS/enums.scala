@@ -1,6 +1,6 @@
 package facade.amazonaws.services.sqs
 
-import scalajs._
+import scalajs.js
 
 type MessageSystemAttributeName = "SenderId" | "SentTimestamp" | "ApproximateReceiveCount" | "ApproximateFirstReceiveTimestamp" | "SequenceNumber" | "MessageDeduplicationId" | "MessageGroupId" | "AWSTraceHeader"
 object MessageSystemAttributeName {

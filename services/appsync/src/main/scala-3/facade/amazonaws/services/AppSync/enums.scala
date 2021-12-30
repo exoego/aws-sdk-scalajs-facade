@@ -1,6 +1,6 @@
 package facade.amazonaws.services.appsync
 
-import scalajs._
+import scalajs.js
 
 type ApiCacheStatus = "AVAILABLE" | "CREATING" | "DELETING" | "MODIFYING" | "FAILED"
 object ApiCacheStatus {

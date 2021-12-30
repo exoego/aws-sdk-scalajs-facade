@@ -1,7 +1,6 @@
 package facade.amazonaws.services.kms
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AlgorithmSpec extends js.Any
@@ -10,7 +9,7 @@ object AlgorithmSpec {
   val RSAES_OAEP_SHA_1 = "RSAES_OAEP_SHA_1".asInstanceOf[AlgorithmSpec]
   val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256".asInstanceOf[AlgorithmSpec]
 
-  @inline def values = js.Array(RSAES_PKCS1_V1_5, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256)
+  @inline def values: js.Array[AlgorithmSpec] = js.Array(RSAES_PKCS1_V1_5, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256)
 }
 
 @js.native
@@ -26,7 +25,17 @@ object ConnectionErrorCodeType {
   val USER_LOGGED_IN = "USER_LOGGED_IN".asInstanceOf[ConnectionErrorCodeType]
   val SUBNET_NOT_FOUND = "SUBNET_NOT_FOUND".asInstanceOf[ConnectionErrorCodeType]
 
-  @inline def values = js.Array(INVALID_CREDENTIALS, CLUSTER_NOT_FOUND, NETWORK_ERRORS, INTERNAL_ERROR, INSUFFICIENT_CLOUDHSM_HSMS, USER_LOCKED_OUT, USER_NOT_FOUND, USER_LOGGED_IN, SUBNET_NOT_FOUND)
+  @inline def values: js.Array[ConnectionErrorCodeType] = js.Array(
+    INVALID_CREDENTIALS,
+    CLUSTER_NOT_FOUND,
+    NETWORK_ERRORS,
+    INTERNAL_ERROR,
+    INSUFFICIENT_CLOUDHSM_HSMS,
+    USER_LOCKED_OUT,
+    USER_NOT_FOUND,
+    USER_LOGGED_IN,
+    SUBNET_NOT_FOUND
+  )
 }
 
 @js.native
@@ -38,7 +47,7 @@ object ConnectionStateType {
   val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionStateType]
   val DISCONNECTING = "DISCONNECTING".asInstanceOf[ConnectionStateType]
 
-  @inline def values = js.Array(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING)
+  @inline def values: js.Array[ConnectionStateType] = js.Array(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING)
 }
 
 @js.native
@@ -53,7 +62,7 @@ object CustomerMasterKeySpec {
   val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[CustomerMasterKeySpec]
   val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT".asInstanceOf[CustomerMasterKeySpec]
 
-  @inline def values = js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1, SYMMETRIC_DEFAULT)
+  @inline def values: js.Array[CustomerMasterKeySpec] = js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1, SYMMETRIC_DEFAULT)
 }
 
 @js.native
@@ -67,7 +76,7 @@ object DataKeyPairSpec {
   val ECC_NIST_P521 = "ECC_NIST_P521".asInstanceOf[DataKeyPairSpec]
   val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[DataKeyPairSpec]
 
-  @inline def values = js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1)
+  @inline def values: js.Array[DataKeyPairSpec] = js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1)
 }
 
 @js.native
@@ -76,7 +85,7 @@ object DataKeySpec {
   val AES_256 = "AES_256".asInstanceOf[DataKeySpec]
   val AES_128 = "AES_128".asInstanceOf[DataKeySpec]
 
-  @inline def values = js.Array(AES_256, AES_128)
+  @inline def values: js.Array[DataKeySpec] = js.Array(AES_256, AES_128)
 }
 
 @js.native
@@ -86,7 +95,7 @@ object EncryptionAlgorithmSpec {
   val RSAES_OAEP_SHA_1 = "RSAES_OAEP_SHA_1".asInstanceOf[EncryptionAlgorithmSpec]
   val RSAES_OAEP_SHA_256 = "RSAES_OAEP_SHA_256".asInstanceOf[EncryptionAlgorithmSpec]
 
-  @inline def values = js.Array(SYMMETRIC_DEFAULT, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256)
+  @inline def values: js.Array[EncryptionAlgorithmSpec] = js.Array(SYMMETRIC_DEFAULT, RSAES_OAEP_SHA_1, RSAES_OAEP_SHA_256)
 }
 
 @js.native
@@ -95,7 +104,7 @@ object ExpirationModelType {
   val KEY_MATERIAL_EXPIRES = "KEY_MATERIAL_EXPIRES".asInstanceOf[ExpirationModelType]
   val KEY_MATERIAL_DOES_NOT_EXPIRE = "KEY_MATERIAL_DOES_NOT_EXPIRE".asInstanceOf[ExpirationModelType]
 
-  @inline def values = js.Array(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE)
+  @inline def values: js.Array[ExpirationModelType] = js.Array(KEY_MATERIAL_EXPIRES, KEY_MATERIAL_DOES_NOT_EXPIRE)
 }
 
 @js.native
@@ -116,7 +125,22 @@ object GrantOperation {
   val GenerateDataKeyPair = "GenerateDataKeyPair".asInstanceOf[GrantOperation]
   val GenerateDataKeyPairWithoutPlaintext = "GenerateDataKeyPairWithoutPlaintext".asInstanceOf[GrantOperation]
 
-  @inline def values = js.Array(Decrypt, Encrypt, GenerateDataKey, GenerateDataKeyWithoutPlaintext, ReEncryptFrom, ReEncryptTo, Sign, Verify, GetPublicKey, CreateGrant, RetireGrant, DescribeKey, GenerateDataKeyPair, GenerateDataKeyPairWithoutPlaintext)
+  @inline def values: js.Array[GrantOperation] = js.Array(
+    Decrypt,
+    Encrypt,
+    GenerateDataKey,
+    GenerateDataKeyWithoutPlaintext,
+    ReEncryptFrom,
+    ReEncryptTo,
+    Sign,
+    Verify,
+    GetPublicKey,
+    CreateGrant,
+    RetireGrant,
+    DescribeKey,
+    GenerateDataKeyPair,
+    GenerateDataKeyPairWithoutPlaintext
+  )
 }
 
 @js.native
@@ -125,7 +149,7 @@ object KeyManagerType {
   val AWS = "AWS".asInstanceOf[KeyManagerType]
   val CUSTOMER = "CUSTOMER".asInstanceOf[KeyManagerType]
 
-  @inline def values = js.Array(AWS, CUSTOMER)
+  @inline def values: js.Array[KeyManagerType] = js.Array(AWS, CUSTOMER)
 }
 
 @js.native
@@ -137,7 +161,7 @@ object KeyState {
   val PendingImport = "PendingImport".asInstanceOf[KeyState]
   val Unavailable = "Unavailable".asInstanceOf[KeyState]
 
-  @inline def values = js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable)
+  @inline def values: js.Array[KeyState] = js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable)
 }
 
 @js.native
@@ -146,7 +170,7 @@ object KeyUsageType {
   val SIGN_VERIFY = "SIGN_VERIFY".asInstanceOf[KeyUsageType]
   val ENCRYPT_DECRYPT = "ENCRYPT_DECRYPT".asInstanceOf[KeyUsageType]
 
-  @inline def values = js.Array(SIGN_VERIFY, ENCRYPT_DECRYPT)
+  @inline def values: js.Array[KeyUsageType] = js.Array(SIGN_VERIFY, ENCRYPT_DECRYPT)
 }
 
 @js.native
@@ -155,7 +179,7 @@ object MessageType {
   val RAW = "RAW".asInstanceOf[MessageType]
   val DIGEST = "DIGEST".asInstanceOf[MessageType]
 
-  @inline def values = js.Array(RAW, DIGEST)
+  @inline def values: js.Array[MessageType] = js.Array(RAW, DIGEST)
 }
 
 @js.native
@@ -165,7 +189,7 @@ object OriginType {
   val EXTERNAL = "EXTERNAL".asInstanceOf[OriginType]
   val AWS_CLOUDHSM = "AWS_CLOUDHSM".asInstanceOf[OriginType]
 
-  @inline def values = js.Array(AWS_KMS, EXTERNAL, AWS_CLOUDHSM)
+  @inline def values: js.Array[OriginType] = js.Array(AWS_KMS, EXTERNAL, AWS_CLOUDHSM)
 }
 
 @js.native
@@ -181,7 +205,17 @@ object SigningAlgorithmSpec {
   val ECDSA_SHA_384 = "ECDSA_SHA_384".asInstanceOf[SigningAlgorithmSpec]
   val ECDSA_SHA_512 = "ECDSA_SHA_512".asInstanceOf[SigningAlgorithmSpec]
 
-  @inline def values = js.Array(RSASSA_PSS_SHA_256, RSASSA_PSS_SHA_384, RSASSA_PSS_SHA_512, RSASSA_PKCS1_V1_5_SHA_256, RSASSA_PKCS1_V1_5_SHA_384, RSASSA_PKCS1_V1_5_SHA_512, ECDSA_SHA_256, ECDSA_SHA_384, ECDSA_SHA_512)
+  @inline def values: js.Array[SigningAlgorithmSpec] = js.Array(
+    RSASSA_PSS_SHA_256,
+    RSASSA_PSS_SHA_384,
+    RSASSA_PSS_SHA_512,
+    RSASSA_PKCS1_V1_5_SHA_256,
+    RSASSA_PKCS1_V1_5_SHA_384,
+    RSASSA_PKCS1_V1_5_SHA_512,
+    ECDSA_SHA_256,
+    ECDSA_SHA_384,
+    ECDSA_SHA_512
+  )
 }
 
 @js.native
@@ -189,6 +223,5 @@ sealed trait WrappingKeySpec extends js.Any
 object WrappingKeySpec {
   val RSA_2048 = "RSA_2048".asInstanceOf[WrappingKeySpec]
 
-  @inline def values = js.Array(RSA_2048)
+  @inline def values: js.Array[WrappingKeySpec] = js.Array(RSA_2048)
 }
-

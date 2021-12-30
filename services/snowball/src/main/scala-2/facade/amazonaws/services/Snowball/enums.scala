@@ -1,7 +1,6 @@
 package facade.amazonaws.services.snowball
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ClusterState extends js.Any
@@ -12,7 +11,7 @@ object ClusterState {
   val Complete = "Complete".asInstanceOf[ClusterState]
   val Cancelled = "Cancelled".asInstanceOf[ClusterState]
 
-  @inline def values = js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled)
+  @inline def values: js.Array[ClusterState] = js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled)
 }
 
 @js.native
@@ -32,7 +31,21 @@ object JobState {
   val Listing = "Listing".asInstanceOf[JobState]
   val Pending = "Pending".asInstanceOf[JobState]
 
-  @inline def values = js.Array(New, PreparingAppliance, PreparingShipment, InTransitToCustomer, WithCustomer, InTransitToAWS, WithAWSSortingFacility, WithAWS, InProgress, Complete, Cancelled, Listing, Pending)
+  @inline def values: js.Array[JobState] = js.Array(
+    New,
+    PreparingAppliance,
+    PreparingShipment,
+    InTransitToCustomer,
+    WithCustomer,
+    InTransitToAWS,
+    WithAWSSortingFacility,
+    WithAWS,
+    InProgress,
+    Complete,
+    Cancelled,
+    Listing,
+    Pending
+  )
 }
 
 @js.native
@@ -42,7 +55,7 @@ object JobType {
   val EXPORT = "EXPORT".asInstanceOf[JobType]
   val LOCAL_USE = "LOCAL_USE".asInstanceOf[JobType]
 
-  @inline def values = js.Array(IMPORT, EXPORT, LOCAL_USE)
+  @inline def values: js.Array[JobType] = js.Array(IMPORT, EXPORT, LOCAL_USE)
 }
 
 @js.native
@@ -51,7 +64,7 @@ object ShipmentState {
   val RECEIVED = "RECEIVED".asInstanceOf[ShipmentState]
   val RETURNED = "RETURNED".asInstanceOf[ShipmentState]
 
-  @inline def values = js.Array(RECEIVED, RETURNED)
+  @inline def values: js.Array[ShipmentState] = js.Array(RECEIVED, RETURNED)
 }
 
 @js.native
@@ -62,7 +75,7 @@ object ShippingLabelStatus {
   val Succeeded = "Succeeded".asInstanceOf[ShippingLabelStatus]
   val Failed = "Failed".asInstanceOf[ShippingLabelStatus]
 
-  @inline def values = js.Array(InProgress, TimedOut, Succeeded, Failed)
+  @inline def values: js.Array[ShippingLabelStatus] = js.Array(InProgress, TimedOut, Succeeded, Failed)
 }
 
 @js.native
@@ -73,7 +86,7 @@ object ShippingOption {
   val EXPRESS = "EXPRESS".asInstanceOf[ShippingOption]
   val STANDARD = "STANDARD".asInstanceOf[ShippingOption]
 
-  @inline def values = js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD)
+  @inline def values: js.Array[ShippingOption] = js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD)
 }
 
 @js.native
@@ -87,7 +100,7 @@ object SnowballCapacity {
   val T8 = "T8".asInstanceOf[SnowballCapacity]
   val NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
 
-  @inline def values = js.Array(T50, T80, T100, T42, T98, T8, NoPreference)
+  @inline def values: js.Array[SnowballCapacity] = js.Array(T50, T80, T100, T42, T98, T8, NoPreference)
 }
 
 @js.native
@@ -100,6 +113,5 @@ object SnowballType {
   val EDGE_S = "EDGE_S".asInstanceOf[SnowballType]
   val SNC1_HDD = "SNC1_HDD".asInstanceOf[SnowballType]
 
-  @inline def values = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD)
+  @inline def values: js.Array[SnowballType] = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD)
 }
-

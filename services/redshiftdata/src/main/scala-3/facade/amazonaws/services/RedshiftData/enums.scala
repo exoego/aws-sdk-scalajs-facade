@@ -1,6 +1,6 @@
 package facade.amazonaws.services.redshiftdata
 
-import scalajs._
+import scalajs.js
 
 type StatusString = "SUBMITTED" | "PICKED" | "STARTED" | "FINISHED" | "ABORTED" | "FAILED" | "ALL"
 object StatusString {

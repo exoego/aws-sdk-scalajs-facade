@@ -1,6 +1,6 @@
 package facade.amazonaws.services.chime
 
-import scalajs._
+import scalajs.js
 
 type AccountType = "Team" | "EnterpriseDirectory" | "EnterpriseLWA" | "EnterpriseOIDC"
 object AccountType {

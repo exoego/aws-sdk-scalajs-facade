@@ -1,6 +1,6 @@
 package facade.amazonaws.services.polly
 
-import scalajs._
+import scalajs.js
 
 type Engine = "standard" | "neural"
 object Engine {

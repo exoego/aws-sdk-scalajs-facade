@@ -1,6 +1,6 @@
 package facade.amazonaws.services.managedblockchain
 
-import scalajs._
+import scalajs.js
 
 type Edition = "STARTER" | "STANDARD"
 object Edition {

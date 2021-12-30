@@ -1,6 +1,6 @@
 package facade.amazonaws.services.serverlessapplicationrepository
 
-import scalajs._
+import scalajs.js
 
 /** Values that must be specified in order to deploy some applications.
   */

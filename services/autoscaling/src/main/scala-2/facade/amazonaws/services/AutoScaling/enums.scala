@@ -1,7 +1,6 @@
 package facade.amazonaws.services.autoscaling
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait InstanceMetadataEndpointState extends js.Any
@@ -9,7 +8,7 @@ object InstanceMetadataEndpointState {
   val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
   val enabled = "enabled".asInstanceOf[InstanceMetadataEndpointState]
 
-  @inline def values = js.Array(disabled, enabled)
+  @inline def values: js.Array[InstanceMetadataEndpointState] = js.Array(disabled, enabled)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object InstanceMetadataHttpTokensState {
   val optional = "optional".asInstanceOf[InstanceMetadataHttpTokensState]
   val required = "required".asInstanceOf[InstanceMetadataHttpTokensState]
 
-  @inline def values = js.Array(optional, required)
+  @inline def values: js.Array[InstanceMetadataHttpTokensState] = js.Array(optional, required)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object InstanceRefreshStatus {
   val Cancelling = "Cancelling".asInstanceOf[InstanceRefreshStatus]
   val Cancelled = "Cancelled".asInstanceOf[InstanceRefreshStatus]
 
-  @inline def values = js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled)
+  @inline def values: js.Array[InstanceRefreshStatus] = js.Array(Pending, InProgress, Successful, Failed, Cancelling, Cancelled)
 }
 
 @js.native
@@ -60,7 +59,30 @@ object LifecycleState {
   val `Warmed:Stopped` = "Warmed:Stopped".asInstanceOf[LifecycleState]
   val `Warmed:Running` = "Warmed:Running".asInstanceOf[LifecycleState]
 
-  @inline def values = js.Array(Pending, `Pending:Wait`, `Pending:Proceed`, Quarantined, InService, Terminating, `Terminating:Wait`, `Terminating:Proceed`, Terminated, Detaching, Detached, EnteringStandby, Standby, `Warmed:Pending`, `Warmed:Pending:Wait`, `Warmed:Pending:Proceed`, `Warmed:Terminating`, `Warmed:Terminating:Wait`, `Warmed:Terminating:Proceed`, `Warmed:Terminated`, `Warmed:Stopped`, `Warmed:Running`)
+  @inline def values: js.Array[LifecycleState] = js.Array(
+    Pending,
+    `Pending:Wait`,
+    `Pending:Proceed`,
+    Quarantined,
+    InService,
+    Terminating,
+    `Terminating:Wait`,
+    `Terminating:Proceed`,
+    Terminated,
+    Detaching,
+    Detached,
+    EnteringStandby,
+    Standby,
+    `Warmed:Pending`,
+    `Warmed:Pending:Wait`,
+    `Warmed:Pending:Proceed`,
+    `Warmed:Terminating`,
+    `Warmed:Terminating:Wait`,
+    `Warmed:Terminating:Proceed`,
+    `Warmed:Terminated`,
+    `Warmed:Stopped`,
+    `Warmed:Running`
+  )
 }
 
 @js.native
@@ -72,7 +94,7 @@ object MetricStatistic {
   val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
   val Sum = "Sum".asInstanceOf[MetricStatistic]
 
-  @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
+  @inline def values: js.Array[MetricStatistic] = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
 }
 
 @js.native
@@ -83,7 +105,7 @@ object MetricType {
   val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[MetricType]
   val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
 
-  @inline def values = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
+  @inline def values: js.Array[MetricType] = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
 }
 
 @js.native
@@ -91,7 +113,7 @@ sealed trait RefreshStrategy extends js.Any
 object RefreshStrategy {
   val Rolling = "Rolling".asInstanceOf[RefreshStrategy]
 
-  @inline def values = js.Array(Rolling)
+  @inline def values: js.Array[RefreshStrategy] = js.Array(Rolling)
 }
 
 @js.native
@@ -110,7 +132,20 @@ object ScalingActivityStatusCode {
   val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
   val Cancelled = "Cancelled".asInstanceOf[ScalingActivityStatusCode]
 
-  @inline def values = js.Array(PendingSpotBidPlacement, WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, WaitingForELBConnectionDraining, MidLifecycleAction, WaitingForInstanceWarmup, Successful, Failed, Cancelled)
+  @inline def values: js.Array[ScalingActivityStatusCode] = js.Array(
+    PendingSpotBidPlacement,
+    WaitingForSpotInstanceRequestId,
+    WaitingForSpotInstanceId,
+    WaitingForInstanceId,
+    PreInService,
+    InProgress,
+    WaitingForELBConnectionDraining,
+    MidLifecycleAction,
+    WaitingForInstanceWarmup,
+    Successful,
+    Failed,
+    Cancelled
+  )
 }
 
 @js.native
@@ -119,7 +154,7 @@ object WarmPoolState {
   val Stopped = "Stopped".asInstanceOf[WarmPoolState]
   val Running = "Running".asInstanceOf[WarmPoolState]
 
-  @inline def values = js.Array(Stopped, Running)
+  @inline def values: js.Array[WarmPoolState] = js.Array(Stopped, Running)
 }
 
 @js.native
@@ -127,6 +162,5 @@ sealed trait WarmPoolStatus extends js.Any
 object WarmPoolStatus {
   val PendingDelete = "PendingDelete".asInstanceOf[WarmPoolStatus]
 
-  @inline def values = js.Array(PendingDelete)
+  @inline def values: js.Array[WarmPoolStatus] = js.Array(PendingDelete)
 }
-

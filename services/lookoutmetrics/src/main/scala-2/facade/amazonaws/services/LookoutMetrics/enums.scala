@@ -1,7 +1,6 @@
 package facade.amazonaws.services.lookoutmetrics
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AggregationFunction extends js.Any
@@ -9,7 +8,7 @@ object AggregationFunction {
   val AVG = "AVG".asInstanceOf[AggregationFunction]
   val SUM = "SUM".asInstanceOf[AggregationFunction]
 
-  @inline def values = js.Array(AVG, SUM)
+  @inline def values: js.Array[AggregationFunction] = js.Array(AVG, SUM)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object AlertStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[AlertStatus]
   val INACTIVE = "INACTIVE".asInstanceOf[AlertStatus]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values: js.Array[AlertStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native
@@ -27,7 +26,7 @@ object AlertType {
   val SNS = "SNS".asInstanceOf[AlertType]
   val LAMBDA = "LAMBDA".asInstanceOf[AlertType]
 
-  @inline def values = js.Array(SNS, LAMBDA)
+  @inline def values: js.Array[AlertType] = js.Array(SNS, LAMBDA)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object AnomalyDetectionTaskStatus {
   val FAILED = "FAILED".asInstanceOf[AnomalyDetectionTaskStatus]
   val FAILED_TO_SCHEDULE = "FAILED_TO_SCHEDULE".asInstanceOf[AnomalyDetectionTaskStatus]
 
-  @inline def values = js.Array(PENDING, IN_PROGRESS, COMPLETED, FAILED, FAILED_TO_SCHEDULE)
+  @inline def values: js.Array[AnomalyDetectionTaskStatus] = js.Array(PENDING, IN_PROGRESS, COMPLETED, FAILED, FAILED_TO_SCHEDULE)
 }
 
 @js.native
@@ -54,7 +53,7 @@ object AnomalyDetectorStatus {
   val BACK_TEST_ACTIVE = "BACK_TEST_ACTIVE".asInstanceOf[AnomalyDetectorStatus]
   val BACK_TEST_COMPLETE = "BACK_TEST_COMPLETE".asInstanceOf[AnomalyDetectorStatus]
 
-  @inline def values = js.Array(ACTIVE, ACTIVATING, DELETING, FAILED, INACTIVE, BACK_TEST_ACTIVATING, BACK_TEST_ACTIVE, BACK_TEST_COMPLETE)
+  @inline def values: js.Array[AnomalyDetectorStatus] = js.Array(ACTIVE, ACTIVATING, DELETING, FAILED, INACTIVE, BACK_TEST_ACTIVATING, BACK_TEST_ACTIVE, BACK_TEST_COMPLETE)
 }
 
 @js.native
@@ -63,7 +62,7 @@ object CSVFileCompression {
   val NONE = "NONE".asInstanceOf[CSVFileCompression]
   val GZIP = "GZIP".asInstanceOf[CSVFileCompression]
 
-  @inline def values = js.Array(NONE, GZIP)
+  @inline def values: js.Array[CSVFileCompression] = js.Array(NONE, GZIP)
 }
 
 @js.native
@@ -74,7 +73,7 @@ object Frequency {
   val PT10M = "PT10M".asInstanceOf[Frequency]
   val PT5M = "PT5M".asInstanceOf[Frequency]
 
-  @inline def values = js.Array(P1D, PT1H, PT10M, PT5M)
+  @inline def values: js.Array[Frequency] = js.Array(P1D, PT1H, PT10M, PT5M)
 }
 
 @js.native
@@ -83,6 +82,5 @@ object JsonFileCompression {
   val NONE = "NONE".asInstanceOf[JsonFileCompression]
   val GZIP = "GZIP".asInstanceOf[JsonFileCompression]
 
-  @inline def values = js.Array(NONE, GZIP)
+  @inline def values: js.Array[JsonFileCompression] = js.Array(NONE, GZIP)
 }
-

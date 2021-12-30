@@ -1,7 +1,6 @@
 package facade.amazonaws.services.pinpoint
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait Action extends js.Any
@@ -10,7 +9,7 @@ object Action {
   val DEEP_LINK = "DEEP_LINK".asInstanceOf[Action]
   val URL = "URL".asInstanceOf[Action]
 
-  @inline def values = js.Array(OPEN_APP, DEEP_LINK, URL)
+  @inline def values: js.Array[Action] = js.Array(OPEN_APP, DEEP_LINK, URL)
 }
 
 @js.native
@@ -24,7 +23,7 @@ object AttributeType {
   val ON = "ON".asInstanceOf[AttributeType]
   val BETWEEN = "BETWEEN".asInstanceOf[AttributeType]
 
-  @inline def values = js.Array(INCLUSIVE, EXCLUSIVE, CONTAINS, BEFORE, AFTER, ON, BETWEEN)
+  @inline def values: js.Array[AttributeType] = js.Array(INCLUSIVE, EXCLUSIVE, CONTAINS, BEFORE, AFTER, ON, BETWEEN)
 }
 
 @js.native
@@ -38,7 +37,7 @@ object CampaignStatus {
   val DELETED = "DELETED".asInstanceOf[CampaignStatus]
   val INVALID = "INVALID".asInstanceOf[CampaignStatus]
 
-  @inline def values = js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED, INVALID)
+  @inline def values: js.Array[CampaignStatus] = js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED, INVALID)
 }
 
 @js.native
@@ -57,7 +56,7 @@ object ChannelType {
   val BAIDU = "BAIDU".asInstanceOf[ChannelType]
   val CUSTOM = "CUSTOM".asInstanceOf[ChannelType]
 
-  @inline def values = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+  @inline def values: js.Array[ChannelType] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
 }
 
 @js.native
@@ -71,7 +70,7 @@ object DeliveryStatus {
   val OPT_OUT = "OPT_OUT".asInstanceOf[DeliveryStatus]
   val DUPLICATE = "DUPLICATE".asInstanceOf[DeliveryStatus]
 
-  @inline def values = js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
+  @inline def values: js.Array[DeliveryStatus] = js.Array(SUCCESSFUL, THROTTLED, TEMPORARY_FAILURE, PERMANENT_FAILURE, UNKNOWN_FAILURE, OPT_OUT, DUPLICATE)
 }
 
 @js.native
@@ -80,7 +79,7 @@ object DimensionType {
   val INCLUSIVE = "INCLUSIVE".asInstanceOf[DimensionType]
   val EXCLUSIVE = "EXCLUSIVE".asInstanceOf[DimensionType]
 
-  @inline def values = js.Array(INCLUSIVE, EXCLUSIVE)
+  @inline def values: js.Array[DimensionType] = js.Array(INCLUSIVE, EXCLUSIVE)
 }
 
 @js.native
@@ -91,7 +90,7 @@ object Duration {
   val DAY_14 = "DAY_14".asInstanceOf[Duration]
   val DAY_30 = "DAY_30".asInstanceOf[Duration]
 
-  @inline def values = js.Array(HR_24, DAY_7, DAY_14, DAY_30)
+  @inline def values: js.Array[Duration] = js.Array(HR_24, DAY_7, DAY_14, DAY_30)
 }
 
 @js.native
@@ -100,7 +99,7 @@ object FilterType {
   val SYSTEM = "SYSTEM".asInstanceOf[FilterType]
   val ENDPOINT = "ENDPOINT".asInstanceOf[FilterType]
 
-  @inline def values = js.Array(SYSTEM, ENDPOINT)
+  @inline def values: js.Array[FilterType] = js.Array(SYSTEM, ENDPOINT)
 }
 
 @js.native
@@ -109,7 +108,7 @@ object Format {
   val CSV = "CSV".asInstanceOf[Format]
   val JSON = "JSON".asInstanceOf[Format]
 
-  @inline def values = js.Array(CSV, JSON)
+  @inline def values: js.Array[Format] = js.Array(CSV, JSON)
 }
 
 @js.native
@@ -122,7 +121,7 @@ object Frequency {
   val MONTHLY = "MONTHLY".asInstanceOf[Frequency]
   val EVENT = "EVENT".asInstanceOf[Frequency]
 
-  @inline def values = js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT)
+  @inline def values: js.Array[Frequency] = js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT)
 }
 
 @js.native
@@ -132,7 +131,7 @@ object Include {
   val ANY = "ANY".asInstanceOf[Include]
   val NONE = "NONE".asInstanceOf[Include]
 
-  @inline def values = js.Array(ALL, ANY, NONE)
+  @inline def values: js.Array[Include] = js.Array(ALL, ANY, NONE)
 }
 
 @js.native
@@ -148,7 +147,7 @@ object JobStatus {
   val FAILING = "FAILING".asInstanceOf[JobStatus]
   val FAILED = "FAILED".asInstanceOf[JobStatus]
 
-  @inline def values = js.Array(CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED)
+  @inline def values: js.Array[JobStatus] = js.Array(CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED)
 }
 
 @js.native
@@ -157,7 +156,7 @@ object MessageType {
   val TRANSACTIONAL = "TRANSACTIONAL".asInstanceOf[MessageType]
   val PROMOTIONAL = "PROMOTIONAL".asInstanceOf[MessageType]
 
-  @inline def values = js.Array(TRANSACTIONAL, PROMOTIONAL)
+  @inline def values: js.Array[MessageType] = js.Array(TRANSACTIONAL, PROMOTIONAL)
 }
 
 @js.native
@@ -166,7 +165,7 @@ object Mode {
   val DELIVERY = "DELIVERY".asInstanceOf[Mode]
   val FILTER = "FILTER".asInstanceOf[Mode]
 
-  @inline def values = js.Array(DELIVERY, FILTER)
+  @inline def values: js.Array[Mode] = js.Array(DELIVERY, FILTER)
 }
 
 @js.native
@@ -175,7 +174,7 @@ object Operator {
   val ALL = "ALL".asInstanceOf[Operator]
   val ANY = "ANY".asInstanceOf[Operator]
 
-  @inline def values = js.Array(ALL, ANY)
+  @inline def values: js.Array[Operator] = js.Array(ALL, ANY)
 }
 
 @js.native
@@ -184,7 +183,7 @@ object RecencyType {
   val ACTIVE = "ACTIVE".asInstanceOf[RecencyType]
   val INACTIVE = "INACTIVE".asInstanceOf[RecencyType]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values: js.Array[RecencyType] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native
@@ -193,7 +192,7 @@ object SegmentType {
   val DIMENSIONAL = "DIMENSIONAL".asInstanceOf[SegmentType]
   val IMPORT = "IMPORT".asInstanceOf[SegmentType]
 
-  @inline def values = js.Array(DIMENSIONAL, IMPORT)
+  @inline def values: js.Array[SegmentType] = js.Array(DIMENSIONAL, IMPORT)
 }
 
 @js.native
@@ -203,7 +202,7 @@ object SourceType {
   val ANY = "ANY".asInstanceOf[SourceType]
   val NONE = "NONE".asInstanceOf[SourceType]
 
-  @inline def values = js.Array(ALL, ANY, NONE)
+  @inline def values: js.Array[SourceType] = js.Array(ALL, ANY, NONE)
 }
 
 @js.native
@@ -216,7 +215,7 @@ object State {
   val CLOSED = "CLOSED".asInstanceOf[State]
   val PAUSED = "PAUSED".asInstanceOf[State]
 
-  @inline def values = js.Array(DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED, PAUSED)
+  @inline def values: js.Array[State] = js.Array(DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED, PAUSED)
 }
 
 @js.native
@@ -227,7 +226,7 @@ object TemplateType {
   val VOICE = "VOICE".asInstanceOf[TemplateType]
   val PUSH = "PUSH".asInstanceOf[TemplateType]
 
-  @inline def values = js.Array(EMAIL, SMS, VOICE, PUSH)
+  @inline def values: js.Array[TemplateType] = js.Array(EMAIL, SMS, VOICE, PUSH)
 }
 
 @js.native
@@ -237,7 +236,7 @@ object Type {
   val ANY = "ANY".asInstanceOf[Type]
   val NONE = "NONE".asInstanceOf[Type]
 
-  @inline def values = js.Array(ALL, ANY, NONE)
+  @inline def values: js.Array[Type] = js.Array(ALL, ANY, NONE)
 }
 
 @js.native
@@ -256,6 +255,5 @@ object __EndpointTypesElement {
   val BAIDU = "BAIDU".asInstanceOf[__EndpointTypesElement]
   val CUSTOM = "CUSTOM".asInstanceOf[__EndpointTypesElement]
 
-  @inline def values = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+  @inline def values: js.Array[__EndpointTypesElement] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
 }
-

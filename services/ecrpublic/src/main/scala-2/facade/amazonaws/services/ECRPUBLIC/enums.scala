@@ -1,7 +1,6 @@
 package facade.amazonaws.services.ecrpublic
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ImageFailureCode extends js.Any
@@ -14,7 +13,7 @@ object ImageFailureCode {
   val ImageReferencedByManifestList = "ImageReferencedByManifestList".asInstanceOf[ImageFailureCode]
   val KmsError = "KmsError".asInstanceOf[ImageFailureCode]
 
-  @inline def values = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
+  @inline def values: js.Array[ImageFailureCode] = js.Array(InvalidImageDigest, InvalidImageTag, ImageTagDoesNotMatchDigest, ImageNotFound, MissingDigestAndTag, ImageReferencedByManifestList, KmsError)
 }
 
 @js.native
@@ -23,7 +22,7 @@ object LayerAvailability {
   val AVAILABLE = "AVAILABLE".asInstanceOf[LayerAvailability]
   val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[LayerAvailability]
 
-  @inline def values = js.Array(AVAILABLE, UNAVAILABLE)
+  @inline def values: js.Array[LayerAvailability] = js.Array(AVAILABLE, UNAVAILABLE)
 }
 
 @js.native
@@ -32,7 +31,7 @@ object LayerFailureCode {
   val InvalidLayerDigest = "InvalidLayerDigest".asInstanceOf[LayerFailureCode]
   val MissingLayerDigest = "MissingLayerDigest".asInstanceOf[LayerFailureCode]
 
-  @inline def values = js.Array(InvalidLayerDigest, MissingLayerDigest)
+  @inline def values: js.Array[LayerFailureCode] = js.Array(InvalidLayerDigest, MissingLayerDigest)
 }
 
 @js.native
@@ -42,6 +41,5 @@ object RegistryAliasStatus {
   val PENDING = "PENDING".asInstanceOf[RegistryAliasStatus]
   val REJECTED = "REJECTED".asInstanceOf[RegistryAliasStatus]
 
-  @inline def values = js.Array(ACTIVE, PENDING, REJECTED)
+  @inline def values: js.Array[RegistryAliasStatus] = js.Array(ACTIVE, PENDING, REJECTED)
 }
-

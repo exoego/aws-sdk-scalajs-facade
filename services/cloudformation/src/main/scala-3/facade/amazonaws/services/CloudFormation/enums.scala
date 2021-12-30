@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cloudformation
 
-import scalajs._
+import scalajs.js
 
 type AccountGateStatus = "SUCCEEDED" | "FAILED" | "SKIPPED"
 object AccountGateStatus {

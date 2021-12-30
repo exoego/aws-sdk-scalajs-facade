@@ -1,6 +1,6 @@
 package facade.amazonaws.services.signer
 
-import scalajs._
+import scalajs.js
 
 type Category = "AWSIoT"
 object Category {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ses
 
-import scalajs._
+import scalajs.js
 
 type BehaviorOnMXFailure = "UseDefaultValue" | "RejectMessage"
 object BehaviorOnMXFailure {

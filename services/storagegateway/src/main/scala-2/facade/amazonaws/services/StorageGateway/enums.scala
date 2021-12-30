@@ -1,7 +1,6 @@
 package facade.amazonaws.services.storagegateway
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ActiveDirectoryStatus extends js.Any
@@ -14,7 +13,7 @@ object ActiveDirectoryStatus {
   val TIMEOUT = "TIMEOUT".asInstanceOf[ActiveDirectoryStatus]
   val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ActiveDirectoryStatus]
 
-  @inline def values = js.Array(ACCESS_DENIED, DETACHED, JOINED, JOINING, NETWORK_ERROR, TIMEOUT, UNKNOWN_ERROR)
+  @inline def values: js.Array[ActiveDirectoryStatus] = js.Array(ACCESS_DENIED, DETACHED, JOINED, JOINING, NETWORK_ERROR, TIMEOUT, UNKNOWN_ERROR)
 }
 
 @js.native
@@ -24,7 +23,7 @@ object AvailabilityMonitorTestStatus {
   val FAILED = "FAILED".asInstanceOf[AvailabilityMonitorTestStatus]
   val PENDING = "PENDING".asInstanceOf[AvailabilityMonitorTestStatus]
 
-  @inline def values = js.Array(COMPLETE, FAILED, PENDING)
+  @inline def values: js.Array[AvailabilityMonitorTestStatus] = js.Array(COMPLETE, FAILED, PENDING)
 }
 
 @js.native
@@ -33,7 +32,7 @@ object CaseSensitivity {
   val ClientSpecified = "ClientSpecified".asInstanceOf[CaseSensitivity]
   val CaseSensitive = "CaseSensitive".asInstanceOf[CaseSensitivity]
 
-  @inline def values = js.Array(ClientSpecified, CaseSensitive)
+  @inline def values: js.Array[CaseSensitivity] = js.Array(ClientSpecified, CaseSensitive)
 }
 
 /** The type of the file share.
@@ -44,7 +43,7 @@ object FileShareType {
   val NFS = "NFS".asInstanceOf[FileShareType]
   val SMB = "SMB".asInstanceOf[FileShareType]
 
-  @inline def values = js.Array(NFS, SMB)
+  @inline def values: js.Array[FileShareType] = js.Array(NFS, SMB)
 }
 
 @js.native
@@ -56,7 +55,7 @@ object HostEnvironment {
   val KVM = "KVM".asInstanceOf[HostEnvironment]
   val OTHER = "OTHER".asInstanceOf[HostEnvironment]
 
-  @inline def values = js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER)
+  @inline def values: js.Array[HostEnvironment] = js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER)
 }
 
 /** A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts objects into. The default value is <code>private</code>.
@@ -72,7 +71,7 @@ object ObjectACL {
   val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectACL]
   val `aws-exec-read` = "aws-exec-read".asInstanceOf[ObjectACL]
 
-  @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `aws-exec-read`)
+  @inline def values: js.Array[ObjectACL] = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `bucket-owner-read`, `bucket-owner-full-control`, `aws-exec-read`)
 }
 
 @js.native
@@ -81,7 +80,7 @@ object PoolStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[PoolStatus]
   val DELETED = "DELETED".asInstanceOf[PoolStatus]
 
-  @inline def values = js.Array(ACTIVE, DELETED)
+  @inline def values: js.Array[PoolStatus] = js.Array(ACTIVE, DELETED)
 }
 
 @js.native
@@ -91,7 +90,7 @@ object RetentionLockType {
   val GOVERNANCE = "GOVERNANCE".asInstanceOf[RetentionLockType]
   val NONE = "NONE".asInstanceOf[RetentionLockType]
 
-  @inline def values = js.Array(COMPLIANCE, GOVERNANCE, NONE)
+  @inline def values: js.Array[RetentionLockType] = js.Array(COMPLIANCE, GOVERNANCE, NONE)
 }
 
 @js.native
@@ -101,7 +100,7 @@ object SMBSecurityStrategy {
   val MandatorySigning = "MandatorySigning".asInstanceOf[SMBSecurityStrategy]
   val MandatoryEncryption = "MandatoryEncryption".asInstanceOf[SMBSecurityStrategy]
 
-  @inline def values = js.Array(ClientSpecified, MandatorySigning, MandatoryEncryption)
+  @inline def values: js.Array[SMBSecurityStrategy] = js.Array(ClientSpecified, MandatorySigning, MandatoryEncryption)
 }
 
 @js.native
@@ -110,6 +109,5 @@ object TapeStorageClass {
   val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[TapeStorageClass]
   val GLACIER = "GLACIER".asInstanceOf[TapeStorageClass]
 
-  @inline def values = js.Array(DEEP_ARCHIVE, GLACIER)
+  @inline def values: js.Array[TapeStorageClass] = js.Array(DEEP_ARCHIVE, GLACIER)
 }
-

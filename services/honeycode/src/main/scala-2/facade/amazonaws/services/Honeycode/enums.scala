@@ -1,7 +1,6 @@
 package facade.amazonaws.services.honeycode
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait Format extends js.Any
@@ -18,7 +17,7 @@ object Format {
   val CONTACT = "CONTACT".asInstanceOf[Format]
   val ROWLINK = "ROWLINK".asInstanceOf[Format]
 
-  @inline def values = js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK)
+  @inline def values: js.Array[Format] = js.Array(AUTO, NUMBER, CURRENCY, DATE, TIME, DATE_TIME, PERCENTAGE, TEXT, ACCOUNTING, CONTACT, ROWLINK)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object ImportDataCharacterEncoding {
   val `UTF-16LE` = "UTF-16LE".asInstanceOf[ImportDataCharacterEncoding]
   val `UTF-16` = "UTF-16".asInstanceOf[ImportDataCharacterEncoding]
 
-  @inline def values = js.Array(`UTF-8`, `US-ASCII`, `ISO-8859-1`, `UTF-16BE`, `UTF-16LE`, `UTF-16`)
+  @inline def values: js.Array[ImportDataCharacterEncoding] = js.Array(`UTF-8`, `US-ASCII`, `ISO-8859-1`, `UTF-16BE`, `UTF-16LE`, `UTF-16`)
 }
 
 @js.native
@@ -39,7 +38,7 @@ sealed trait ImportSourceDataFormat extends js.Any
 object ImportSourceDataFormat {
   val DELIMITED_TEXT = "DELIMITED_TEXT".asInstanceOf[ImportSourceDataFormat]
 
-  @inline def values = js.Array(DELIMITED_TEXT)
+  @inline def values: js.Array[ImportSourceDataFormat] = js.Array(DELIMITED_TEXT)
 }
 
 @js.native
@@ -50,7 +49,7 @@ object TableDataImportJobStatus {
   val COMPLETED = "COMPLETED".asInstanceOf[TableDataImportJobStatus]
   val FAILED = "FAILED".asInstanceOf[TableDataImportJobStatus]
 
-  @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
+  @inline def values: js.Array[TableDataImportJobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
 }
 
 @js.native
@@ -59,6 +58,5 @@ object UpsertAction {
   val UPDATED = "UPDATED".asInstanceOf[UpsertAction]
   val APPENDED = "APPENDED".asInstanceOf[UpsertAction]
 
-  @inline def values = js.Array(UPDATED, APPENDED)
+  @inline def values: js.Array[UpsertAction] = js.Array(UPDATED, APPENDED)
 }
-

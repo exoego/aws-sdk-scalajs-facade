@@ -1,6 +1,6 @@
 package facade.amazonaws.services.textract
 
-import scalajs._
+import scalajs.js
 
 type BlockType = "KEY_VALUE_SET" | "PAGE" | "LINE" | "WORD" | "TABLE" | "CELL" | "SELECTION_ELEMENT"
 object BlockType {

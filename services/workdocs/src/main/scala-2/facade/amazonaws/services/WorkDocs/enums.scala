@@ -1,7 +1,6 @@
 package facade.amazonaws.services.workdocs
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ActivityType extends js.Any
@@ -40,7 +39,41 @@ object ActivityType {
   val FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED = "FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED".asInstanceOf[ActivityType]
   val FOLDER_MOVED = "FOLDER_MOVED".asInstanceOf[ActivityType]
 
-  @inline def values = js.Array(DOCUMENT_CHECKED_IN, DOCUMENT_CHECKED_OUT, DOCUMENT_RENAMED, DOCUMENT_VERSION_UPLOADED, DOCUMENT_VERSION_DELETED, DOCUMENT_VERSION_VIEWED, DOCUMENT_VERSION_DOWNLOADED, DOCUMENT_RECYCLED, DOCUMENT_RESTORED, DOCUMENT_REVERTED, DOCUMENT_SHARED, DOCUMENT_UNSHARED, DOCUMENT_SHARE_PERMISSION_CHANGED, DOCUMENT_SHAREABLE_LINK_CREATED, DOCUMENT_SHAREABLE_LINK_REMOVED, DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED, DOCUMENT_MOVED, DOCUMENT_COMMENT_ADDED, DOCUMENT_COMMENT_DELETED, DOCUMENT_ANNOTATION_ADDED, DOCUMENT_ANNOTATION_DELETED, FOLDER_CREATED, FOLDER_DELETED, FOLDER_RENAMED, FOLDER_RECYCLED, FOLDER_RESTORED, FOLDER_SHARED, FOLDER_UNSHARED, FOLDER_SHARE_PERMISSION_CHANGED, FOLDER_SHAREABLE_LINK_CREATED, FOLDER_SHAREABLE_LINK_REMOVED, FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED, FOLDER_MOVED)
+  @inline def values: js.Array[ActivityType] = js.Array(
+    DOCUMENT_CHECKED_IN,
+    DOCUMENT_CHECKED_OUT,
+    DOCUMENT_RENAMED,
+    DOCUMENT_VERSION_UPLOADED,
+    DOCUMENT_VERSION_DELETED,
+    DOCUMENT_VERSION_VIEWED,
+    DOCUMENT_VERSION_DOWNLOADED,
+    DOCUMENT_RECYCLED,
+    DOCUMENT_RESTORED,
+    DOCUMENT_REVERTED,
+    DOCUMENT_SHARED,
+    DOCUMENT_UNSHARED,
+    DOCUMENT_SHARE_PERMISSION_CHANGED,
+    DOCUMENT_SHAREABLE_LINK_CREATED,
+    DOCUMENT_SHAREABLE_LINK_REMOVED,
+    DOCUMENT_SHAREABLE_LINK_PERMISSION_CHANGED,
+    DOCUMENT_MOVED,
+    DOCUMENT_COMMENT_ADDED,
+    DOCUMENT_COMMENT_DELETED,
+    DOCUMENT_ANNOTATION_ADDED,
+    DOCUMENT_ANNOTATION_DELETED,
+    FOLDER_CREATED,
+    FOLDER_DELETED,
+    FOLDER_RENAMED,
+    FOLDER_RECYCLED,
+    FOLDER_RESTORED,
+    FOLDER_SHARED,
+    FOLDER_UNSHARED,
+    FOLDER_SHARE_PERMISSION_CHANGED,
+    FOLDER_SHAREABLE_LINK_CREATED,
+    FOLDER_SHAREABLE_LINK_REMOVED,
+    FOLDER_SHAREABLE_LINK_PERMISSION_CHANGED,
+    FOLDER_MOVED
+  )
 }
 
 @js.native
@@ -49,7 +82,7 @@ object BooleanEnumType {
   val TRUE = "TRUE".asInstanceOf[BooleanEnumType]
   val FALSE = "FALSE".asInstanceOf[BooleanEnumType]
 
-  @inline def values = js.Array(TRUE, FALSE)
+  @inline def values: js.Array[BooleanEnumType] = js.Array(TRUE, FALSE)
 }
 
 @js.native
@@ -59,7 +92,7 @@ object CommentStatusType {
   val PUBLISHED = "PUBLISHED".asInstanceOf[CommentStatusType]
   val DELETED = "DELETED".asInstanceOf[CommentStatusType]
 
-  @inline def values = js.Array(DRAFT, PUBLISHED, DELETED)
+  @inline def values: js.Array[CommentStatusType] = js.Array(DRAFT, PUBLISHED, DELETED)
 }
 
 @js.native
@@ -68,7 +101,7 @@ object CommentVisibilityType {
   val PUBLIC = "PUBLIC".asInstanceOf[CommentVisibilityType]
   val PRIVATE = "PRIVATE".asInstanceOf[CommentVisibilityType]
 
-  @inline def values = js.Array(PUBLIC, PRIVATE)
+  @inline def values: js.Array[CommentVisibilityType] = js.Array(PUBLIC, PRIVATE)
 }
 
 @js.native
@@ -77,7 +110,7 @@ object DocumentSourceType {
   val ORIGINAL = "ORIGINAL".asInstanceOf[DocumentSourceType]
   val WITH_COMMENTS = "WITH_COMMENTS".asInstanceOf[DocumentSourceType]
 
-  @inline def values = js.Array(ORIGINAL, WITH_COMMENTS)
+  @inline def values: js.Array[DocumentSourceType] = js.Array(ORIGINAL, WITH_COMMENTS)
 }
 
 @js.native
@@ -86,7 +119,7 @@ object DocumentStatusType {
   val INITIALIZED = "INITIALIZED".asInstanceOf[DocumentStatusType]
   val ACTIVE = "ACTIVE".asInstanceOf[DocumentStatusType]
 
-  @inline def values = js.Array(INITIALIZED, ACTIVE)
+  @inline def values: js.Array[DocumentStatusType] = js.Array(INITIALIZED, ACTIVE)
 }
 
 @js.native
@@ -96,7 +129,7 @@ object DocumentThumbnailType {
   val SMALL_HQ = "SMALL_HQ".asInstanceOf[DocumentThumbnailType]
   val LARGE = "LARGE".asInstanceOf[DocumentThumbnailType]
 
-  @inline def values = js.Array(SMALL, SMALL_HQ, LARGE)
+  @inline def values: js.Array[DocumentThumbnailType] = js.Array(SMALL, SMALL_HQ, LARGE)
 }
 
 @js.native
@@ -104,7 +137,7 @@ sealed trait DocumentVersionStatus extends js.Any
 object DocumentVersionStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[DocumentVersionStatus]
 
-  @inline def values = js.Array(ACTIVE)
+  @inline def values: js.Array[DocumentVersionStatus] = js.Array(ACTIVE)
 }
 
 @js.native
@@ -114,7 +147,7 @@ object FolderContentType {
   val DOCUMENT = "DOCUMENT".asInstanceOf[FolderContentType]
   val FOLDER = "FOLDER".asInstanceOf[FolderContentType]
 
-  @inline def values = js.Array(ALL, DOCUMENT, FOLDER)
+  @inline def values: js.Array[FolderContentType] = js.Array(ALL, DOCUMENT, FOLDER)
 }
 
 @js.native
@@ -132,7 +165,7 @@ object LocaleType {
   val pt_BR = "pt_BR".asInstanceOf[LocaleType]
   val default = "default".asInstanceOf[LocaleType]
 
-  @inline def values = js.Array(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default)
+  @inline def values: js.Array[LocaleType] = js.Array(en, fr, ko, de, es, ja, ru, zh_CN, zh_TW, pt_BR, default)
 }
 
 @js.native
@@ -141,7 +174,7 @@ object OrderType {
   val ASCENDING = "ASCENDING".asInstanceOf[OrderType]
   val DESCENDING = "DESCENDING".asInstanceOf[OrderType]
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values: js.Array[OrderType] = js.Array(ASCENDING, DESCENDING)
 }
 
 @js.native
@@ -153,7 +186,7 @@ object PrincipalType {
   val ANONYMOUS = "ANONYMOUS".asInstanceOf[PrincipalType]
   val ORGANIZATION = "ORGANIZATION".asInstanceOf[PrincipalType]
 
-  @inline def values = js.Array(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION)
+  @inline def values: js.Array[PrincipalType] = js.Array(USER, GROUP, INVITE, ANONYMOUS, ORGANIZATION)
 }
 
 @js.native
@@ -161,7 +194,7 @@ sealed trait ResourceCollectionType extends js.Any
 object ResourceCollectionType {
   val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ResourceCollectionType]
 
-  @inline def values = js.Array(SHARED_WITH_ME)
+  @inline def values: js.Array[ResourceCollectionType] = js.Array(SHARED_WITH_ME)
 }
 
 @js.native
@@ -170,7 +203,7 @@ object ResourceSortType {
   val DATE = "DATE".asInstanceOf[ResourceSortType]
   val NAME = "NAME".asInstanceOf[ResourceSortType]
 
-  @inline def values = js.Array(DATE, NAME)
+  @inline def values: js.Array[ResourceSortType] = js.Array(DATE, NAME)
 }
 
 @js.native
@@ -181,7 +214,7 @@ object ResourceStateType {
   val RECYCLING = "RECYCLING".asInstanceOf[ResourceStateType]
   val RECYCLED = "RECYCLED".asInstanceOf[ResourceStateType]
 
-  @inline def values = js.Array(ACTIVE, RESTORING, RECYCLING, RECYCLED)
+  @inline def values: js.Array[ResourceStateType] = js.Array(ACTIVE, RESTORING, RECYCLING, RECYCLED)
 }
 
 @js.native
@@ -190,7 +223,7 @@ object ResourceType {
   val FOLDER = "FOLDER".asInstanceOf[ResourceType]
   val DOCUMENT = "DOCUMENT".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(FOLDER, DOCUMENT)
+  @inline def values: js.Array[ResourceType] = js.Array(FOLDER, DOCUMENT)
 }
 
 @js.native
@@ -199,7 +232,7 @@ object RolePermissionType {
   val DIRECT = "DIRECT".asInstanceOf[RolePermissionType]
   val INHERITED = "INHERITED".asInstanceOf[RolePermissionType]
 
-  @inline def values = js.Array(DIRECT, INHERITED)
+  @inline def values: js.Array[RolePermissionType] = js.Array(DIRECT, INHERITED)
 }
 
 @js.native
@@ -210,7 +243,7 @@ object RoleType {
   val OWNER = "OWNER".asInstanceOf[RoleType]
   val COOWNER = "COOWNER".asInstanceOf[RoleType]
 
-  @inline def values = js.Array(VIEWER, CONTRIBUTOR, OWNER, COOWNER)
+  @inline def values: js.Array[RoleType] = js.Array(VIEWER, CONTRIBUTOR, OWNER, COOWNER)
 }
 
 @js.native
@@ -219,7 +252,7 @@ object ShareStatusType {
   val SUCCESS = "SUCCESS".asInstanceOf[ShareStatusType]
   val FAILURE = "FAILURE".asInstanceOf[ShareStatusType]
 
-  @inline def values = js.Array(SUCCESS, FAILURE)
+  @inline def values: js.Array[ShareStatusType] = js.Array(SUCCESS, FAILURE)
 }
 
 @js.native
@@ -228,7 +261,7 @@ object StorageType {
   val UNLIMITED = "UNLIMITED".asInstanceOf[StorageType]
   val QUOTA = "QUOTA".asInstanceOf[StorageType]
 
-  @inline def values = js.Array(UNLIMITED, QUOTA)
+  @inline def values: js.Array[StorageType] = js.Array(UNLIMITED, QUOTA)
 }
 
 @js.native
@@ -236,7 +269,7 @@ sealed trait SubscriptionProtocolType extends js.Any
 object SubscriptionProtocolType {
   val HTTPS = "HTTPS".asInstanceOf[SubscriptionProtocolType]
 
-  @inline def values = js.Array(HTTPS)
+  @inline def values: js.Array[SubscriptionProtocolType] = js.Array(HTTPS)
 }
 
 @js.native
@@ -244,7 +277,7 @@ sealed trait SubscriptionType extends js.Any
 object SubscriptionType {
   val ALL = "ALL".asInstanceOf[SubscriptionType]
 
-  @inline def values = js.Array(ALL)
+  @inline def values: js.Array[SubscriptionType] = js.Array(ALL)
 }
 
 @js.native
@@ -253,7 +286,7 @@ object UserFilterType {
   val ALL = "ALL".asInstanceOf[UserFilterType]
   val ACTIVE_PENDING = "ACTIVE_PENDING".asInstanceOf[UserFilterType]
 
-  @inline def values = js.Array(ALL, ACTIVE_PENDING)
+  @inline def values: js.Array[UserFilterType] = js.Array(ALL, ACTIVE_PENDING)
 }
 
 @js.native
@@ -265,7 +298,7 @@ object UserSortType {
   val USER_STATUS = "USER_STATUS".asInstanceOf[UserSortType]
   val STORAGE_USED = "STORAGE_USED".asInstanceOf[UserSortType]
 
-  @inline def values = js.Array(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED)
+  @inline def values: js.Array[UserSortType] = js.Array(USER_NAME, FULL_NAME, STORAGE_LIMIT, USER_STATUS, STORAGE_USED)
 }
 
 @js.native
@@ -275,7 +308,7 @@ object UserStatusType {
   val INACTIVE = "INACTIVE".asInstanceOf[UserStatusType]
   val PENDING = "PENDING".asInstanceOf[UserStatusType]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, PENDING)
+  @inline def values: js.Array[UserStatusType] = js.Array(ACTIVE, INACTIVE, PENDING)
 }
 
 @js.native
@@ -287,6 +320,5 @@ object UserType {
   val MINIMALUSER = "MINIMALUSER".asInstanceOf[UserType]
   val WORKSPACESUSER = "WORKSPACESUSER".asInstanceOf[UserType]
 
-  @inline def values = js.Array(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER)
+  @inline def values: js.Array[UserType] = js.Array(USER, ADMIN, POWERUSER, MINIMALUSER, WORKSPACESUSER)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.opsworks
 
-import scalajs._
+import scalajs.js
 
 type AppAttributesKeys = "DocumentRoot" | "RailsEnv" | "AutoBundleOnDeploy" | "AwsFlowRubySettings"
 object AppAttributesKeys {

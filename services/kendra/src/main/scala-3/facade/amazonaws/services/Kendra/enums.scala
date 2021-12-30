@@ -1,6 +1,6 @@
 package facade.amazonaws.services.kendra
 
-import scalajs._
+import scalajs.js
 
 type AdditionalResultAttributeValueType = "TEXT_WITH_HIGHLIGHTS_VALUE"
 object AdditionalResultAttributeValueType {

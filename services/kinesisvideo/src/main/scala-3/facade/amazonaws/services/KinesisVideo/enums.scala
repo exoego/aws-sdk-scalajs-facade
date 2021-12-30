@@ -1,6 +1,6 @@
 package facade.amazonaws.services.kinesisvideo
 
-import scalajs._
+import scalajs.js
 
 type APIName = "PUT_MEDIA" | "GET_MEDIA" | "LIST_FRAGMENTS" | "GET_MEDIA_FOR_FRAGMENT_LIST" | "GET_HLS_STREAMING_SESSION_URL" | "GET_DASH_STREAMING_SESSION_URL" | "GET_CLIP"
 object APIName {

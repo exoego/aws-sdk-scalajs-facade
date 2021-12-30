@@ -1,7 +1,6 @@
 package facade.amazonaws.services.route53resolver
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait Action extends js.Any
@@ -10,7 +9,7 @@ object Action {
   val BLOCK = "BLOCK".asInstanceOf[Action]
   val ALERT = "ALERT".asInstanceOf[Action]
 
-  @inline def values = js.Array(ALLOW, BLOCK, ALERT)
+  @inline def values: js.Array[Action] = js.Array(ALLOW, BLOCK, ALERT)
 }
 
 @js.native
@@ -18,7 +17,7 @@ sealed trait BlockOverrideDnsType extends js.Any
 object BlockOverrideDnsType {
   val CNAME = "CNAME".asInstanceOf[BlockOverrideDnsType]
 
-  @inline def values = js.Array(CNAME)
+  @inline def values: js.Array[BlockOverrideDnsType] = js.Array(CNAME)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object BlockResponse {
   val NXDOMAIN = "NXDOMAIN".asInstanceOf[BlockResponse]
   val OVERRIDE = "OVERRIDE".asInstanceOf[BlockResponse]
 
-  @inline def values = js.Array(NODATA, NXDOMAIN, OVERRIDE)
+  @inline def values: js.Array[BlockResponse] = js.Array(NODATA, NXDOMAIN, OVERRIDE)
 }
 
 @js.native
@@ -36,7 +35,7 @@ sealed trait FirewallDomainImportOperation extends js.Any
 object FirewallDomainImportOperation {
   val REPLACE = "REPLACE".asInstanceOf[FirewallDomainImportOperation]
 
-  @inline def values = js.Array(REPLACE)
+  @inline def values: js.Array[FirewallDomainImportOperation] = js.Array(REPLACE)
 }
 
 @js.native
@@ -48,7 +47,7 @@ object FirewallDomainListStatus {
   val DELETING = "DELETING".asInstanceOf[FirewallDomainListStatus]
   val UPDATING = "UPDATING".asInstanceOf[FirewallDomainListStatus]
 
-  @inline def values = js.Array(COMPLETE, COMPLETE_IMPORT_FAILED, IMPORTING, DELETING, UPDATING)
+  @inline def values: js.Array[FirewallDomainListStatus] = js.Array(COMPLETE, COMPLETE_IMPORT_FAILED, IMPORTING, DELETING, UPDATING)
 }
 
 @js.native
@@ -58,7 +57,7 @@ object FirewallDomainUpdateOperation {
   val REMOVE = "REMOVE".asInstanceOf[FirewallDomainUpdateOperation]
   val REPLACE = "REPLACE".asInstanceOf[FirewallDomainUpdateOperation]
 
-  @inline def values = js.Array(ADD, REMOVE, REPLACE)
+  @inline def values: js.Array[FirewallDomainUpdateOperation] = js.Array(ADD, REMOVE, REPLACE)
 }
 
 @js.native
@@ -67,7 +66,7 @@ object FirewallFailOpenStatus {
   val ENABLED = "ENABLED".asInstanceOf[FirewallFailOpenStatus]
   val DISABLED = "DISABLED".asInstanceOf[FirewallFailOpenStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[FirewallFailOpenStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -77,7 +76,7 @@ object FirewallRuleGroupAssociationStatus {
   val DELETING = "DELETING".asInstanceOf[FirewallRuleGroupAssociationStatus]
   val UPDATING = "UPDATING".asInstanceOf[FirewallRuleGroupAssociationStatus]
 
-  @inline def values = js.Array(COMPLETE, DELETING, UPDATING)
+  @inline def values: js.Array[FirewallRuleGroupAssociationStatus] = js.Array(COMPLETE, DELETING, UPDATING)
 }
 
 @js.native
@@ -87,7 +86,7 @@ object FirewallRuleGroupStatus {
   val DELETING = "DELETING".asInstanceOf[FirewallRuleGroupStatus]
   val UPDATING = "UPDATING".asInstanceOf[FirewallRuleGroupStatus]
 
-  @inline def values = js.Array(COMPLETE, DELETING, UPDATING)
+  @inline def values: js.Array[FirewallRuleGroupStatus] = js.Array(COMPLETE, DELETING, UPDATING)
 }
 
 @js.native
@@ -104,7 +103,7 @@ object IpAddressStatus {
   val DELETING = "DELETING".asInstanceOf[IpAddressStatus]
   val DELETE_FAILED_FAS_EXPIRED = "DELETE_FAILED_FAS_EXPIRED".asInstanceOf[IpAddressStatus]
 
-  @inline def values = js.Array(CREATING, FAILED_CREATION, ATTACHING, ATTACHED, REMAP_DETACHING, REMAP_ATTACHING, DETACHING, FAILED_RESOURCE_GONE, DELETING, DELETE_FAILED_FAS_EXPIRED)
+  @inline def values: js.Array[IpAddressStatus] = js.Array(CREATING, FAILED_CREATION, ATTACHING, ATTACHED, REMAP_DETACHING, REMAP_ATTACHING, DETACHING, FAILED_RESOURCE_GONE, DELETING, DELETE_FAILED_FAS_EXPIRED)
 }
 
 @js.native
@@ -113,7 +112,7 @@ object MutationProtectionStatus {
   val ENABLED = "ENABLED".asInstanceOf[MutationProtectionStatus]
   val DISABLED = "DISABLED".asInstanceOf[MutationProtectionStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[MutationProtectionStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -124,7 +123,7 @@ object ResolverDNSSECValidationStatus {
   val DISABLING = "DISABLING".asInstanceOf[ResolverDNSSECValidationStatus]
   val DISABLED = "DISABLED".asInstanceOf[ResolverDNSSECValidationStatus]
 
-  @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
+  @inline def values: js.Array[ResolverDNSSECValidationStatus] = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
 }
 
 @js.native
@@ -133,7 +132,7 @@ object ResolverEndpointDirection {
   val INBOUND = "INBOUND".asInstanceOf[ResolverEndpointDirection]
   val OUTBOUND = "OUTBOUND".asInstanceOf[ResolverEndpointDirection]
 
-  @inline def values = js.Array(INBOUND, OUTBOUND)
+  @inline def values: js.Array[ResolverEndpointDirection] = js.Array(INBOUND, OUTBOUND)
 }
 
 @js.native
@@ -146,7 +145,7 @@ object ResolverEndpointStatus {
   val ACTION_NEEDED = "ACTION_NEEDED".asInstanceOf[ResolverEndpointStatus]
   val DELETING = "DELETING".asInstanceOf[ResolverEndpointStatus]
 
-  @inline def values = js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING)
+  @inline def values: js.Array[ResolverEndpointStatus] = js.Array(CREATING, OPERATIONAL, UPDATING, AUTO_RECOVERING, ACTION_NEEDED, DELETING)
 }
 
 @js.native
@@ -157,7 +156,7 @@ object ResolverQueryLogConfigAssociationError {
   val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[ResolverQueryLogConfigAssociationError]
   val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[ResolverQueryLogConfigAssociationError]
 
-  @inline def values = js.Array(NONE, DESTINATION_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR)
+  @inline def values: js.Array[ResolverQueryLogConfigAssociationError] = js.Array(NONE, DESTINATION_NOT_FOUND, ACCESS_DENIED, INTERNAL_SERVICE_ERROR)
 }
 
 @js.native
@@ -169,7 +168,7 @@ object ResolverQueryLogConfigAssociationStatus {
   val DELETING = "DELETING".asInstanceOf[ResolverQueryLogConfigAssociationStatus]
   val FAILED = "FAILED".asInstanceOf[ResolverQueryLogConfigAssociationStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, ACTION_NEEDED, DELETING, FAILED)
+  @inline def values: js.Array[ResolverQueryLogConfigAssociationStatus] = js.Array(CREATING, ACTIVE, ACTION_NEEDED, DELETING, FAILED)
 }
 
 @js.native
@@ -180,7 +179,7 @@ object ResolverQueryLogConfigStatus {
   val DELETING = "DELETING".asInstanceOf[ResolverQueryLogConfigStatus]
   val FAILED = "FAILED".asInstanceOf[ResolverQueryLogConfigStatus]
 
-  @inline def values = js.Array(CREATING, CREATED, DELETING, FAILED)
+  @inline def values: js.Array[ResolverQueryLogConfigStatus] = js.Array(CREATING, CREATED, DELETING, FAILED)
 }
 
 @js.native
@@ -192,7 +191,7 @@ object ResolverRuleAssociationStatus {
   val FAILED = "FAILED".asInstanceOf[ResolverRuleAssociationStatus]
   val OVERRIDDEN = "OVERRIDDEN".asInstanceOf[ResolverRuleAssociationStatus]
 
-  @inline def values = js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN)
+  @inline def values: js.Array[ResolverRuleAssociationStatus] = js.Array(CREATING, COMPLETE, DELETING, FAILED, OVERRIDDEN)
 }
 
 @js.native
@@ -203,7 +202,7 @@ object ResolverRuleStatus {
   val UPDATING = "UPDATING".asInstanceOf[ResolverRuleStatus]
   val FAILED = "FAILED".asInstanceOf[ResolverRuleStatus]
 
-  @inline def values = js.Array(COMPLETE, DELETING, UPDATING, FAILED)
+  @inline def values: js.Array[ResolverRuleStatus] = js.Array(COMPLETE, DELETING, UPDATING, FAILED)
 }
 
 @js.native
@@ -213,7 +212,7 @@ object RuleTypeOption {
   val SYSTEM = "SYSTEM".asInstanceOf[RuleTypeOption]
   val RECURSIVE = "RECURSIVE".asInstanceOf[RuleTypeOption]
 
-  @inline def values = js.Array(FORWARD, SYSTEM, RECURSIVE)
+  @inline def values: js.Array[RuleTypeOption] = js.Array(FORWARD, SYSTEM, RECURSIVE)
 }
 
 @js.native
@@ -223,7 +222,7 @@ object ShareStatus {
   val SHARED_WITH_ME = "SHARED_WITH_ME".asInstanceOf[ShareStatus]
   val SHARED_BY_ME = "SHARED_BY_ME".asInstanceOf[ShareStatus]
 
-  @inline def values = js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME)
+  @inline def values: js.Array[ShareStatus] = js.Array(NOT_SHARED, SHARED_WITH_ME, SHARED_BY_ME)
 }
 
 @js.native
@@ -232,7 +231,7 @@ object SortOrder {
   val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
   val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }
 
 @js.native
@@ -241,6 +240,5 @@ object Validation {
   val ENABLE = "ENABLE".asInstanceOf[Validation]
   val DISABLE = "DISABLE".asInstanceOf[Validation]
 
-  @inline def values = js.Array(ENABLE, DISABLE)
+  @inline def values: js.Array[Validation] = js.Array(ENABLE, DISABLE)
 }
-

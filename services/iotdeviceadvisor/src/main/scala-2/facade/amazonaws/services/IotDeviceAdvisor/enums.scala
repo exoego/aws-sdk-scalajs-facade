@@ -1,7 +1,6 @@
 package facade.amazonaws.services.iotdeviceadvisor
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait Status extends js.Any
@@ -14,7 +13,7 @@ object Status {
   val PASS_WITH_WARNINGS = "PASS_WITH_WARNINGS".asInstanceOf[Status]
   val ERROR = "ERROR".asInstanceOf[Status]
 
-  @inline def values = js.Array(PASS, FAIL, CANCELED, PENDING, RUNNING, PASS_WITH_WARNINGS, ERROR)
+  @inline def values: js.Array[Status] = js.Array(PASS, FAIL, CANCELED, PENDING, RUNNING, PASS_WITH_WARNINGS, ERROR)
 }
 
 @js.native
@@ -28,6 +27,5 @@ object SuiteRunStatus {
   val PASS_WITH_WARNINGS = "PASS_WITH_WARNINGS".asInstanceOf[SuiteRunStatus]
   val ERROR = "ERROR".asInstanceOf[SuiteRunStatus]
 
-  @inline def values = js.Array(PASS, FAIL, CANCELED, PENDING, RUNNING, PASS_WITH_WARNINGS, ERROR)
+  @inline def values: js.Array[SuiteRunStatus] = js.Array(PASS, FAIL, CANCELED, PENDING, RUNNING, PASS_WITH_WARNINGS, ERROR)
 }
-

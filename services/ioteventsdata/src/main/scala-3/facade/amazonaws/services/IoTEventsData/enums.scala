@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ioteventsdata
 
-import scalajs._
+import scalajs.js
 
 type ErrorCode = "ResourceNotFoundException" | "InvalidRequestException" | "InternalFailureException" | "ServiceUnavailableException" | "ThrottlingException"
 object ErrorCode {

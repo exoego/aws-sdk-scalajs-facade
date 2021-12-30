@@ -1,6 +1,6 @@
 package facade.amazonaws.services.snowball
 
-import scalajs._
+import scalajs.js
 
 type ClusterState = "AwaitingQuorum" | "Pending" | "InUse" | "Complete" | "Cancelled"
 object ClusterState {

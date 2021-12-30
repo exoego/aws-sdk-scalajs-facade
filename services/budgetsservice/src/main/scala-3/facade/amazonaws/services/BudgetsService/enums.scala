@@ -1,6 +1,6 @@
 package facade.amazonaws.services.budgetsservice
 
-import scalajs._
+import scalajs.js
 
 type ActionStatus = "STANDBY" | "PENDING" | "EXECUTION_IN_PROGRESS" | "EXECUTION_SUCCESS" | "EXECUTION_FAILURE" | "REVERSE_IN_PROGRESS" | "REVERSE_SUCCESS" | "REVERSE_FAILURE" | "RESET_IN_PROGRESS" | "RESET_FAILURE"
 object ActionStatus {

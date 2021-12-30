@@ -1,7 +1,6 @@
 package facade.amazonaws.services.lookoutvision
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DatasetStatus extends js.Any
@@ -17,7 +16,18 @@ object DatasetStatus {
   val DELETE_COMPLETE = "DELETE_COMPLETE".asInstanceOf[DatasetStatus]
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[DatasetStatus]
 
-  @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, UPDATE_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_FAILED_ROLLBACK_IN_PROGRESS, UPDATE_FAILED_ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED)
+  @inline def values: js.Array[DatasetStatus] = js.Array(
+    CREATE_IN_PROGRESS,
+    CREATE_COMPLETE,
+    CREATE_FAILED,
+    UPDATE_IN_PROGRESS,
+    UPDATE_COMPLETE,
+    UPDATE_FAILED_ROLLBACK_IN_PROGRESS,
+    UPDATE_FAILED_ROLLBACK_COMPLETE,
+    DELETE_IN_PROGRESS,
+    DELETE_COMPLETE,
+    DELETE_FAILED
+  )
 }
 
 @js.native
@@ -29,7 +39,7 @@ object ModelHostingStatus {
   val STOPPING_HOSTING = "STOPPING_HOSTING".asInstanceOf[ModelHostingStatus]
   val SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[ModelHostingStatus]
 
-  @inline def values = js.Array(STARTING_HOSTING, HOSTED, HOSTING_FAILED, STOPPING_HOSTING, SYSTEM_UPDATING)
+  @inline def values: js.Array[ModelHostingStatus] = js.Array(STARTING_HOSTING, HOSTED, HOSTING_FAILED, STOPPING_HOSTING, SYSTEM_UPDATING)
 }
 
 @js.native
@@ -45,6 +55,5 @@ object ModelStatus {
   val SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[ModelStatus]
   val DELETING = "DELETING".asInstanceOf[ModelStatus]
 
-  @inline def values = js.Array(TRAINING, TRAINED, TRAINING_FAILED, STARTING_HOSTING, HOSTED, HOSTING_FAILED, STOPPING_HOSTING, SYSTEM_UPDATING, DELETING)
+  @inline def values: js.Array[ModelStatus] = js.Array(TRAINING, TRAINED, TRAINING_FAILED, STARTING_HOSTING, HOSTED, HOSTING_FAILED, STOPPING_HOSTING, SYSTEM_UPDATING, DELETING)
 }
-

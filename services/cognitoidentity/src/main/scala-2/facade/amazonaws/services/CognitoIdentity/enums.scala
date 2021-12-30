@@ -1,7 +1,6 @@
 package facade.amazonaws.services.cognitoidentity
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AmbiguousRoleResolutionType extends js.Any
@@ -9,7 +8,7 @@ object AmbiguousRoleResolutionType {
   val AuthenticatedRole = "AuthenticatedRole".asInstanceOf[AmbiguousRoleResolutionType]
   val Deny = "Deny".asInstanceOf[AmbiguousRoleResolutionType]
 
-  @inline def values = js.Array(AuthenticatedRole, Deny)
+  @inline def values: js.Array[AmbiguousRoleResolutionType] = js.Array(AuthenticatedRole, Deny)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object ErrorCode {
   val AccessDenied = "AccessDenied".asInstanceOf[ErrorCode]
   val InternalServerError = "InternalServerError".asInstanceOf[ErrorCode]
 
-  @inline def values = js.Array(AccessDenied, InternalServerError)
+  @inline def values: js.Array[ErrorCode] = js.Array(AccessDenied, InternalServerError)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object MappingRuleMatchType {
   val StartsWith = "StartsWith".asInstanceOf[MappingRuleMatchType]
   val NotEqual = "NotEqual".asInstanceOf[MappingRuleMatchType]
 
-  @inline def values = js.Array(Equals, Contains, StartsWith, NotEqual)
+  @inline def values: js.Array[MappingRuleMatchType] = js.Array(Equals, Contains, StartsWith, NotEqual)
 }
 
 @js.native
@@ -38,6 +37,5 @@ object RoleMappingType {
   val Token = "Token".asInstanceOf[RoleMappingType]
   val Rules = "Rules".asInstanceOf[RoleMappingType]
 
-  @inline def values = js.Array(Token, Rules)
+  @inline def values: js.Array[RoleMappingType] = js.Array(Token, Rules)
 }
-

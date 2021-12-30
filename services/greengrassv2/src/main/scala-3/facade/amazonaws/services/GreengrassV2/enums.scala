@@ -1,6 +1,6 @@
 package facade.amazonaws.services.greengrassv2
 
-import scalajs._
+import scalajs.js
 
 type CloudComponentState = "REQUESTED" | "INITIATED" | "DEPLOYABLE" | "FAILED" | "DEPRECATED"
 object CloudComponentState {

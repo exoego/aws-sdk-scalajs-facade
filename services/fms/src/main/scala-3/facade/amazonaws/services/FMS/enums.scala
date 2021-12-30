@@ -1,6 +1,6 @@
 package facade.amazonaws.services.fms
 
-import scalajs._
+import scalajs.js
 
 type AccountRoleStatus = "READY" | "CREATING" | "PENDING_DELETION" | "DELETING" | "DELETED"
 object AccountRoleStatus {

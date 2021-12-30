@@ -1,7 +1,6 @@
 package facade.amazonaws.services.lexruntimev2
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ConfirmationState extends js.Any
@@ -10,7 +9,7 @@ object ConfirmationState {
   val Denied = "Denied".asInstanceOf[ConfirmationState]
   val None = "None".asInstanceOf[ConfirmationState]
 
-  @inline def values = js.Array(Confirmed, Denied, None)
+  @inline def values: js.Array[ConfirmationState] = js.Array(Confirmed, Denied, None)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object DialogActionType {
   val ElicitIntent = "ElicitIntent".asInstanceOf[DialogActionType]
   val ElicitSlot = "ElicitSlot".asInstanceOf[DialogActionType]
 
-  @inline def values = js.Array(Close, ConfirmIntent, Delegate, ElicitIntent, ElicitSlot)
+  @inline def values: js.Array[DialogActionType] = js.Array(Close, ConfirmIntent, Delegate, ElicitIntent, ElicitSlot)
 }
 
 @js.native
@@ -34,7 +33,7 @@ object IntentState {
   val ReadyForFulfillment = "ReadyForFulfillment".asInstanceOf[IntentState]
   val Waiting = "Waiting".asInstanceOf[IntentState]
 
-  @inline def values = js.Array(Failed, Fulfilled, InProgress, ReadyForFulfillment, Waiting)
+  @inline def values: js.Array[IntentState] = js.Array(Failed, Fulfilled, InProgress, ReadyForFulfillment, Waiting)
 }
 
 @js.native
@@ -45,7 +44,7 @@ object MessageContentType {
   val PlainText = "PlainText".asInstanceOf[MessageContentType]
   val SSML = "SSML".asInstanceOf[MessageContentType]
 
-  @inline def values = js.Array(CustomPayload, ImageResponseCard, PlainText, SSML)
+  @inline def values: js.Array[MessageContentType] = js.Array(CustomPayload, ImageResponseCard, PlainText, SSML)
 }
 
 @js.native
@@ -56,6 +55,5 @@ object SentimentType {
   val NEUTRAL = "NEUTRAL".asInstanceOf[SentimentType]
   val POSITIVE = "POSITIVE".asInstanceOf[SentimentType]
 
-  @inline def values = js.Array(MIXED, NEGATIVE, NEUTRAL, POSITIVE)
+  @inline def values: js.Array[SentimentType] = js.Array(MIXED, NEGATIVE, NEUTRAL, POSITIVE)
 }
-

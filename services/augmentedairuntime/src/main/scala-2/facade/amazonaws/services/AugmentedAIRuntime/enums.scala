@@ -1,7 +1,6 @@
 package facade.amazonaws.services.augmentedairuntime
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ContentClassifier extends js.Any
@@ -9,7 +8,7 @@ object ContentClassifier {
   val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
   val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
-  @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
+  @inline def values: js.Array[ContentClassifier] = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
 }
 
 @js.native
@@ -21,7 +20,7 @@ object HumanLoopStatus {
   val Stopped = "Stopped".asInstanceOf[HumanLoopStatus]
   val Stopping = "Stopping".asInstanceOf[HumanLoopStatus]
 
-  @inline def values = js.Array(InProgress, Failed, Completed, Stopped, Stopping)
+  @inline def values: js.Array[HumanLoopStatus] = js.Array(InProgress, Failed, Completed, Stopped, Stopping)
 }
 
 @js.native
@@ -30,6 +29,5 @@ object SortOrder {
   val Ascending = "Ascending".asInstanceOf[SortOrder]
   val Descending = "Descending".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[SortOrder] = js.Array(Ascending, Descending)
 }
-

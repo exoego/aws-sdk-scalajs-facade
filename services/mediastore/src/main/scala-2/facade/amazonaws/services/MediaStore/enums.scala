@@ -1,7 +1,6 @@
 package facade.amazonaws.services.mediastore
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ContainerLevelMetrics extends js.Any
@@ -9,7 +8,7 @@ object ContainerLevelMetrics {
   val ENABLED = "ENABLED".asInstanceOf[ContainerLevelMetrics]
   val DISABLED = "DISABLED".asInstanceOf[ContainerLevelMetrics]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[ContainerLevelMetrics] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object ContainerStatus {
   val CREATING = "CREATING".asInstanceOf[ContainerStatus]
   val DELETING = "DELETING".asInstanceOf[ContainerStatus]
 
-  @inline def values = js.Array(ACTIVE, CREATING, DELETING)
+  @inline def values: js.Array[ContainerStatus] = js.Array(ACTIVE, CREATING, DELETING)
 }
 
 @js.native
@@ -30,6 +29,5 @@ object MethodName {
   val DELETE = "DELETE".asInstanceOf[MethodName]
   val HEAD = "HEAD".asInstanceOf[MethodName]
 
-  @inline def values = js.Array(PUT, GET, DELETE, HEAD)
+  @inline def values: js.Array[MethodName] = js.Array(PUT, GET, DELETE, HEAD)
 }
-

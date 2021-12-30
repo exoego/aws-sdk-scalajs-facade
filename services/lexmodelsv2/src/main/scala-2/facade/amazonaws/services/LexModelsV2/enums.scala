@@ -1,7 +1,6 @@
 package facade.amazonaws.services.lexmodelsv2
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait BotAliasStatus extends js.Any
@@ -11,7 +10,7 @@ object BotAliasStatus {
   val Deleting = "Deleting".asInstanceOf[BotAliasStatus]
   val Failed = "Failed".asInstanceOf[BotAliasStatus]
 
-  @inline def values = js.Array(Creating, Available, Deleting, Failed)
+  @inline def values: js.Array[BotAliasStatus] = js.Array(Creating, Available, Deleting, Failed)
 }
 
 @js.native
@@ -19,7 +18,7 @@ sealed trait BotFilterName extends js.Any
 object BotFilterName {
   val BotName = "BotName".asInstanceOf[BotFilterName]
 
-  @inline def values = js.Array(BotName)
+  @inline def values: js.Array[BotFilterName] = js.Array(BotName)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object BotFilterOperator {
   val CO = "CO".asInstanceOf[BotFilterOperator]
   val EQ = "EQ".asInstanceOf[BotFilterOperator]
 
-  @inline def values = js.Array(CO, EQ)
+  @inline def values: js.Array[BotFilterOperator] = js.Array(CO, EQ)
 }
 
 @js.native
@@ -36,7 +35,7 @@ sealed trait BotLocaleFilterName extends js.Any
 object BotLocaleFilterName {
   val BotLocaleName = "BotLocaleName".asInstanceOf[BotLocaleFilterName]
 
-  @inline def values = js.Array(BotLocaleName)
+  @inline def values: js.Array[BotLocaleFilterName] = js.Array(BotLocaleName)
 }
 
 @js.native
@@ -45,7 +44,7 @@ object BotLocaleFilterOperator {
   val CO = "CO".asInstanceOf[BotLocaleFilterOperator]
   val EQ = "EQ".asInstanceOf[BotLocaleFilterOperator]
 
-  @inline def values = js.Array(CO, EQ)
+  @inline def values: js.Array[BotLocaleFilterOperator] = js.Array(CO, EQ)
 }
 
 @js.native
@@ -53,7 +52,7 @@ sealed trait BotLocaleSortAttribute extends js.Any
 object BotLocaleSortAttribute {
   val BotLocaleName = "BotLocaleName".asInstanceOf[BotLocaleSortAttribute]
 
-  @inline def values = js.Array(BotLocaleName)
+  @inline def values: js.Array[BotLocaleSortAttribute] = js.Array(BotLocaleName)
 }
 
 @js.native
@@ -67,7 +66,7 @@ object BotLocaleStatus {
   val Deleting = "Deleting".asInstanceOf[BotLocaleStatus]
   val NotBuilt = "NotBuilt".asInstanceOf[BotLocaleStatus]
 
-  @inline def values = js.Array(Creating, Building, Built, ReadyExpressTesting, Failed, Deleting, NotBuilt)
+  @inline def values: js.Array[BotLocaleStatus] = js.Array(Creating, Building, Built, ReadyExpressTesting, Failed, Deleting, NotBuilt)
 }
 
 @js.native
@@ -75,7 +74,7 @@ sealed trait BotSortAttribute extends js.Any
 object BotSortAttribute {
   val BotName = "BotName".asInstanceOf[BotSortAttribute]
 
-  @inline def values = js.Array(BotName)
+  @inline def values: js.Array[BotSortAttribute] = js.Array(BotName)
 }
 
 @js.native
@@ -88,7 +87,7 @@ object BotStatus {
   val Failed = "Failed".asInstanceOf[BotStatus]
   val Versioning = "Versioning".asInstanceOf[BotStatus]
 
-  @inline def values = js.Array(Creating, Available, Inactive, Deleting, Failed, Versioning)
+  @inline def values: js.Array[BotStatus] = js.Array(Creating, Available, Inactive, Deleting, Failed, Versioning)
 }
 
 @js.native
@@ -96,7 +95,7 @@ sealed trait BotVersionSortAttribute extends js.Any
 object BotVersionSortAttribute {
   val BotVersion = "BotVersion".asInstanceOf[BotVersionSortAttribute]
 
-  @inline def values = js.Array(BotVersion)
+  @inline def values: js.Array[BotVersionSortAttribute] = js.Array(BotVersion)
 }
 
 @js.native
@@ -104,7 +103,7 @@ sealed trait BuiltInIntentSortAttribute extends js.Any
 object BuiltInIntentSortAttribute {
   val IntentSignature = "IntentSignature".asInstanceOf[BuiltInIntentSortAttribute]
 
-  @inline def values = js.Array(IntentSignature)
+  @inline def values: js.Array[BuiltInIntentSortAttribute] = js.Array(IntentSignature)
 }
 
 @js.native
@@ -112,7 +111,7 @@ sealed trait BuiltInSlotTypeSortAttribute extends js.Any
 object BuiltInSlotTypeSortAttribute {
   val SlotTypeSignature = "SlotTypeSignature".asInstanceOf[BuiltInSlotTypeSortAttribute]
 
-  @inline def values = js.Array(SlotTypeSignature)
+  @inline def values: js.Array[BuiltInSlotTypeSortAttribute] = js.Array(SlotTypeSignature)
 }
 
 @js.native
@@ -120,7 +119,7 @@ sealed trait IntentFilterName extends js.Any
 object IntentFilterName {
   val IntentName = "IntentName".asInstanceOf[IntentFilterName]
 
-  @inline def values = js.Array(IntentName)
+  @inline def values: js.Array[IntentFilterName] = js.Array(IntentName)
 }
 
 @js.native
@@ -129,7 +128,7 @@ object IntentFilterOperator {
   val CO = "CO".asInstanceOf[IntentFilterOperator]
   val EQ = "EQ".asInstanceOf[IntentFilterOperator]
 
-  @inline def values = js.Array(CO, EQ)
+  @inline def values: js.Array[IntentFilterOperator] = js.Array(CO, EQ)
 }
 
 @js.native
@@ -138,7 +137,7 @@ object IntentSortAttribute {
   val IntentName = "IntentName".asInstanceOf[IntentSortAttribute]
   val LastUpdatedDateTime = "LastUpdatedDateTime".asInstanceOf[IntentSortAttribute]
 
-  @inline def values = js.Array(IntentName, LastUpdatedDateTime)
+  @inline def values: js.Array[IntentSortAttribute] = js.Array(IntentName, LastUpdatedDateTime)
 }
 
 @js.native
@@ -147,7 +146,7 @@ object ObfuscationSettingType {
   val None = "None".asInstanceOf[ObfuscationSettingType]
   val DefaultObfuscation = "DefaultObfuscation".asInstanceOf[ObfuscationSettingType]
 
-  @inline def values = js.Array(None, DefaultObfuscation)
+  @inline def values: js.Array[ObfuscationSettingType] = js.Array(None, DefaultObfuscation)
 }
 
 @js.native
@@ -156,7 +155,7 @@ object SlotConstraint {
   val Required = "Required".asInstanceOf[SlotConstraint]
   val Optional = "Optional".asInstanceOf[SlotConstraint]
 
-  @inline def values = js.Array(Required, Optional)
+  @inline def values: js.Array[SlotConstraint] = js.Array(Required, Optional)
 }
 
 @js.native
@@ -164,7 +163,7 @@ sealed trait SlotFilterName extends js.Any
 object SlotFilterName {
   val SlotName = "SlotName".asInstanceOf[SlotFilterName]
 
-  @inline def values = js.Array(SlotName)
+  @inline def values: js.Array[SlotFilterName] = js.Array(SlotName)
 }
 
 @js.native
@@ -173,7 +172,7 @@ object SlotFilterOperator {
   val CO = "CO".asInstanceOf[SlotFilterOperator]
   val EQ = "EQ".asInstanceOf[SlotFilterOperator]
 
-  @inline def values = js.Array(CO, EQ)
+  @inline def values: js.Array[SlotFilterOperator] = js.Array(CO, EQ)
 }
 
 @js.native
@@ -182,7 +181,7 @@ object SlotSortAttribute {
   val SlotName = "SlotName".asInstanceOf[SlotSortAttribute]
   val LastUpdatedDateTime = "LastUpdatedDateTime".asInstanceOf[SlotSortAttribute]
 
-  @inline def values = js.Array(SlotName, LastUpdatedDateTime)
+  @inline def values: js.Array[SlotSortAttribute] = js.Array(SlotName, LastUpdatedDateTime)
 }
 
 @js.native
@@ -190,7 +189,7 @@ sealed trait SlotTypeFilterName extends js.Any
 object SlotTypeFilterName {
   val SlotTypeName = "SlotTypeName".asInstanceOf[SlotTypeFilterName]
 
-  @inline def values = js.Array(SlotTypeName)
+  @inline def values: js.Array[SlotTypeFilterName] = js.Array(SlotTypeName)
 }
 
 @js.native
@@ -199,7 +198,7 @@ object SlotTypeFilterOperator {
   val CO = "CO".asInstanceOf[SlotTypeFilterOperator]
   val EQ = "EQ".asInstanceOf[SlotTypeFilterOperator]
 
-  @inline def values = js.Array(CO, EQ)
+  @inline def values: js.Array[SlotTypeFilterOperator] = js.Array(CO, EQ)
 }
 
 @js.native
@@ -208,7 +207,7 @@ object SlotTypeSortAttribute {
   val SlotTypeName = "SlotTypeName".asInstanceOf[SlotTypeSortAttribute]
   val LastUpdatedDateTime = "LastUpdatedDateTime".asInstanceOf[SlotTypeSortAttribute]
 
-  @inline def values = js.Array(SlotTypeName, LastUpdatedDateTime)
+  @inline def values: js.Array[SlotTypeSortAttribute] = js.Array(SlotTypeName, LastUpdatedDateTime)
 }
 
 @js.native
@@ -217,7 +216,7 @@ object SlotValueResolutionStrategy {
   val OriginalValue = "OriginalValue".asInstanceOf[SlotValueResolutionStrategy]
   val TopResolution = "TopResolution".asInstanceOf[SlotValueResolutionStrategy]
 
-  @inline def values = js.Array(OriginalValue, TopResolution)
+  @inline def values: js.Array[SlotValueResolutionStrategy] = js.Array(OriginalValue, TopResolution)
 }
 
 @js.native
@@ -226,6 +225,5 @@ object SortOrder {
   val Ascending = "Ascending".asInstanceOf[SortOrder]
   val Descending = "Descending".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[SortOrder] = js.Array(Ascending, Descending)
 }
-

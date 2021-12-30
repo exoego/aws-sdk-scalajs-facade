@@ -1,6 +1,6 @@
 package facade.amazonaws.services.migrationhubconfig
 
-import scalajs._
+import scalajs.js
 
 type TargetType = "ACCOUNT"
 object TargetType {

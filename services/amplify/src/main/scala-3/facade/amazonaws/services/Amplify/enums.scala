@@ -1,6 +1,6 @@
 package facade.amazonaws.services.amplify
 
-import scalajs._
+import scalajs.js
 
 type DomainStatus = "PENDING_VERIFICATION" | "IN_PROGRESS" | "AVAILABLE" | "PENDING_DEPLOYMENT" | "FAILED" | "CREATING" | "REQUESTING_CERTIFICATE" | "UPDATING"
 object DomainStatus {

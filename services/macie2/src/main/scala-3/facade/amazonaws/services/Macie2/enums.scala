@@ -1,6 +1,6 @@
 package facade.amazonaws.services.macie2
 
-import scalajs._
+import scalajs.js
 
 /** The current status of an account as the delegated Amazon Macie administrator account for an AWS organization. Possible values are:
   */

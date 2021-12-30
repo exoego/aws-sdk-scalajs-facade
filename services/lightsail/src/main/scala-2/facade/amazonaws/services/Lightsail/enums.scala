@@ -1,7 +1,6 @@
 package facade.amazonaws.services.lightsail
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccessDirection extends js.Any
@@ -9,7 +8,7 @@ object AccessDirection {
   val inbound = "inbound".asInstanceOf[AccessDirection]
   val outbound = "outbound".asInstanceOf[AccessDirection]
 
-  @inline def values = js.Array(inbound, outbound)
+  @inline def values: js.Array[AccessDirection] = js.Array(inbound, outbound)
 }
 
 @js.native
@@ -17,7 +16,7 @@ sealed trait AddOnType extends js.Any
 object AddOnType {
   val AutoSnapshot = "AutoSnapshot".asInstanceOf[AddOnType]
 
-  @inline def values = js.Array(AutoSnapshot)
+  @inline def values: js.Array[AddOnType] = js.Array(AutoSnapshot)
 }
 
 @js.native
@@ -27,7 +26,7 @@ object AlarmState {
   val ALARM = "ALARM".asInstanceOf[AlarmState]
   val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[AlarmState]
 
-  @inline def values = js.Array(OK, ALARM, INSUFFICIENT_DATA)
+  @inline def values: js.Array[AlarmState] = js.Array(OK, ALARM, INSUFFICIENT_DATA)
 }
 
 @js.native
@@ -38,7 +37,7 @@ object AutoSnapshotStatus {
   val InProgress = "InProgress".asInstanceOf[AutoSnapshotStatus]
   val NotFound = "NotFound".asInstanceOf[AutoSnapshotStatus]
 
-  @inline def values = js.Array(Success, Failed, InProgress, NotFound)
+  @inline def values: js.Array[AutoSnapshotStatus] = js.Array(Success, Failed, InProgress, NotFound)
 }
 
 @js.native
@@ -47,7 +46,7 @@ object BehaviorEnum {
   val `dont-cache` = "dont-cache".asInstanceOf[BehaviorEnum]
   val cache = "cache".asInstanceOf[BehaviorEnum]
 
-  @inline def values = js.Array(`dont-cache`, cache)
+  @inline def values: js.Array[BehaviorEnum] = js.Array(`dont-cache`, cache)
 }
 
 @js.native
@@ -56,7 +55,7 @@ object BlueprintType {
   val os = "os".asInstanceOf[BlueprintType]
   val app = "app".asInstanceOf[BlueprintType]
 
-  @inline def values = js.Array(os, app)
+  @inline def values: js.Array[BlueprintType] = js.Array(os, app)
 }
 
 @js.native
@@ -70,7 +69,7 @@ object CertificateStatus {
   val REVOKED = "REVOKED".asInstanceOf[CertificateStatus]
   val FAILED = "FAILED".asInstanceOf[CertificateStatus]
 
-  @inline def values = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED)
+  @inline def values: js.Array[CertificateStatus] = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED)
 }
 
 @js.native
@@ -78,7 +77,7 @@ sealed trait CloudFormationStackRecordSourceType extends js.Any
 object CloudFormationStackRecordSourceType {
   val ExportSnapshotRecord = "ExportSnapshotRecord".asInstanceOf[CloudFormationStackRecordSourceType]
 
-  @inline def values = js.Array(ExportSnapshotRecord)
+  @inline def values: js.Array[CloudFormationStackRecordSourceType] = js.Array(ExportSnapshotRecord)
 }
 
 @js.native
@@ -89,7 +88,7 @@ object ComparisonOperator {
   val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
   val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
 
-  @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+  @inline def values: js.Array[ComparisonOperator] = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
 }
 
 @js.native
@@ -99,7 +98,7 @@ object ContactMethodStatus {
   val Valid = "Valid".asInstanceOf[ContactMethodStatus]
   val Invalid = "Invalid".asInstanceOf[ContactMethodStatus]
 
-  @inline def values = js.Array(PendingVerification, Valid, Invalid)
+  @inline def values: js.Array[ContactMethodStatus] = js.Array(PendingVerification, Valid, Invalid)
 }
 
 @js.native
@@ -107,7 +106,7 @@ sealed trait ContactMethodVerificationProtocol extends js.Any
 object ContactMethodVerificationProtocol {
   val Email = "Email".asInstanceOf[ContactMethodVerificationProtocol]
 
-  @inline def values = js.Array(Email)
+  @inline def values: js.Array[ContactMethodVerificationProtocol] = js.Array(Email)
 }
 
 @js.native
@@ -116,7 +115,7 @@ object ContactProtocol {
   val Email = "Email".asInstanceOf[ContactProtocol]
   val SMS = "SMS".asInstanceOf[ContactProtocol]
 
-  @inline def values = js.Array(Email, SMS)
+  @inline def values: js.Array[ContactProtocol] = js.Array(Email, SMS)
 }
 
 @js.native
@@ -127,7 +126,7 @@ object ContainerServiceDeploymentState {
   val INACTIVE = "INACTIVE".asInstanceOf[ContainerServiceDeploymentState]
   val FAILED = "FAILED".asInstanceOf[ContainerServiceDeploymentState]
 
-  @inline def values = js.Array(ACTIVATING, ACTIVE, INACTIVE, FAILED)
+  @inline def values: js.Array[ContainerServiceDeploymentState] = js.Array(ACTIVATING, ACTIVE, INACTIVE, FAILED)
 }
 
 @js.native
@@ -136,7 +135,7 @@ object ContainerServiceMetricName {
   val CPUUtilization = "CPUUtilization".asInstanceOf[ContainerServiceMetricName]
   val MemoryUtilization = "MemoryUtilization".asInstanceOf[ContainerServiceMetricName]
 
-  @inline def values = js.Array(CPUUtilization, MemoryUtilization)
+  @inline def values: js.Array[ContainerServiceMetricName] = js.Array(CPUUtilization, MemoryUtilization)
 }
 
 @js.native
@@ -149,7 +148,7 @@ object ContainerServicePowerName {
   val large = "large".asInstanceOf[ContainerServicePowerName]
   val xlarge = "xlarge".asInstanceOf[ContainerServicePowerName]
 
-  @inline def values = js.Array(nano, micro, small, medium, large, xlarge)
+  @inline def values: js.Array[ContainerServicePowerName] = js.Array(nano, micro, small, medium, large, xlarge)
 }
 
 @js.native
@@ -160,7 +159,7 @@ object ContainerServiceProtocol {
   val TCP = "TCP".asInstanceOf[ContainerServiceProtocol]
   val UDP = "UDP".asInstanceOf[ContainerServiceProtocol]
 
-  @inline def values = js.Array(HTTP, HTTPS, TCP, UDP)
+  @inline def values: js.Array[ContainerServiceProtocol] = js.Array(HTTP, HTTPS, TCP, UDP)
 }
 
 @js.native
@@ -174,7 +173,7 @@ object ContainerServiceState {
   val DISABLED = "DISABLED".asInstanceOf[ContainerServiceState]
   val DEPLOYING = "DEPLOYING".asInstanceOf[ContainerServiceState]
 
-  @inline def values = js.Array(PENDING, READY, RUNNING, UPDATING, DELETING, DISABLED, DEPLOYING)
+  @inline def values: js.Array[ContainerServiceState] = js.Array(PENDING, READY, RUNNING, UPDATING, DELETING, DISABLED, DEPLOYING)
 }
 
 @js.native
@@ -190,7 +189,17 @@ object ContainerServiceStateDetailCode {
   val CERTIFICATE_LIMIT_EXCEEDED = "CERTIFICATE_LIMIT_EXCEEDED".asInstanceOf[ContainerServiceStateDetailCode]
   val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[ContainerServiceStateDetailCode]
 
-  @inline def values = js.Array(CREATING_SYSTEM_RESOURCES, CREATING_NETWORK_INFRASTRUCTURE, PROVISIONING_CERTIFICATE, PROVISIONING_SERVICE, CREATING_DEPLOYMENT, EVALUATING_HEALTH_CHECK, ACTIVATING_DEPLOYMENT, CERTIFICATE_LIMIT_EXCEEDED, UNKNOWN_ERROR)
+  @inline def values: js.Array[ContainerServiceStateDetailCode] = js.Array(
+    CREATING_SYSTEM_RESOURCES,
+    CREATING_NETWORK_INFRASTRUCTURE,
+    PROVISIONING_CERTIFICATE,
+    PROVISIONING_SERVICE,
+    CREATING_DEPLOYMENT,
+    EVALUATING_HEALTH_CHECK,
+    ACTIVATING_DEPLOYMENT,
+    CERTIFICATE_LIMIT_EXCEEDED,
+    UNKNOWN_ERROR
+  )
 }
 
 @js.native
@@ -201,7 +210,7 @@ object DiskSnapshotState {
   val error = "error".asInstanceOf[DiskSnapshotState]
   val unknown = "unknown".asInstanceOf[DiskSnapshotState]
 
-  @inline def values = js.Array(pending, completed, error, unknown)
+  @inline def values: js.Array[DiskSnapshotState] = js.Array(pending, completed, error, unknown)
 }
 
 @js.native
@@ -213,7 +222,7 @@ object DiskState {
   val `in-use` = "in-use".asInstanceOf[DiskState]
   val unknown = "unknown".asInstanceOf[DiskState]
 
-  @inline def values = js.Array(pending, error, available, `in-use`, unknown)
+  @inline def values: js.Array[DiskState] = js.Array(pending, error, available, `in-use`, unknown)
 }
 
 @js.native
@@ -226,7 +235,7 @@ object DistributionMetricName {
   val Http4xxErrorRate = "Http4xxErrorRate".asInstanceOf[DistributionMetricName]
   val Http5xxErrorRate = "Http5xxErrorRate".asInstanceOf[DistributionMetricName]
 
-  @inline def values = js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate)
+  @inline def values: js.Array[DistributionMetricName] = js.Array(Requests, BytesDownloaded, BytesUploaded, TotalErrorRate, Http4xxErrorRate, Http5xxErrorRate)
 }
 
 @js.native
@@ -235,7 +244,7 @@ object ExportSnapshotRecordSourceType {
   val InstanceSnapshot = "InstanceSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
   val DiskSnapshot = "DiskSnapshot".asInstanceOf[ExportSnapshotRecordSourceType]
 
-  @inline def values = js.Array(InstanceSnapshot, DiskSnapshot)
+  @inline def values: js.Array[ExportSnapshotRecordSourceType] = js.Array(InstanceSnapshot, DiskSnapshot)
 }
 
 @js.native
@@ -245,7 +254,7 @@ object ForwardValues {
   val `allow-list` = "allow-list".asInstanceOf[ForwardValues]
   val all = "all".asInstanceOf[ForwardValues]
 
-  @inline def values = js.Array(none, `allow-list`, all)
+  @inline def values: js.Array[ForwardValues] = js.Array(none, `allow-list`, all)
 }
 
 @js.native
@@ -267,7 +276,23 @@ object HeaderEnum {
   val Origin = "Origin".asInstanceOf[HeaderEnum]
   val Referer = "Referer".asInstanceOf[HeaderEnum]
 
-  @inline def values = js.Array(Accept, `Accept-Charset`, `Accept-Datetime`, `Accept-Encoding`, `Accept-Language`, Authorization, `CloudFront-Forwarded-Proto`, `CloudFront-Is-Desktop-Viewer`, `CloudFront-Is-Mobile-Viewer`, `CloudFront-Is-SmartTV-Viewer`, `CloudFront-Is-Tablet-Viewer`, `CloudFront-Viewer-Country`, Host, Origin, Referer)
+  @inline def values: js.Array[HeaderEnum] = js.Array(
+    Accept,
+    `Accept-Charset`,
+    `Accept-Datetime`,
+    `Accept-Encoding`,
+    `Accept-Language`,
+    Authorization,
+    `CloudFront-Forwarded-Proto`,
+    `CloudFront-Is-Desktop-Viewer`,
+    `CloudFront-Is-Mobile-Viewer`,
+    `CloudFront-Is-SmartTV-Viewer`,
+    `CloudFront-Is-Tablet-Viewer`,
+    `CloudFront-Viewer-Country`,
+    Host,
+    Origin,
+    Referer
+  )
 }
 
 @js.native
@@ -276,7 +301,7 @@ object InstanceAccessProtocol {
   val ssh = "ssh".asInstanceOf[InstanceAccessProtocol]
   val rdp = "rdp".asInstanceOf[InstanceAccessProtocol]
 
-  @inline def values = js.Array(ssh, rdp)
+  @inline def values: js.Array[InstanceAccessProtocol] = js.Array(ssh, rdp)
 }
 
 @js.native
@@ -294,7 +319,19 @@ object InstanceHealthReason {
   val `Instance.InvalidState` = "Instance.InvalidState".asInstanceOf[InstanceHealthReason]
   val `Instance.IpUnusable` = "Instance.IpUnusable".asInstanceOf[InstanceHealthReason]
 
-  @inline def values = js.Array(`Lb.RegistrationInProgress`, `Lb.InitialHealthChecking`, `Lb.InternalError`, `Instance.ResponseCodeMismatch`, `Instance.Timeout`, `Instance.FailedHealthChecks`, `Instance.NotRegistered`, `Instance.NotInUse`, `Instance.DeregistrationInProgress`, `Instance.InvalidState`, `Instance.IpUnusable`)
+  @inline def values: js.Array[InstanceHealthReason] = js.Array(
+    `Lb.RegistrationInProgress`,
+    `Lb.InitialHealthChecking`,
+    `Lb.InternalError`,
+    `Instance.ResponseCodeMismatch`,
+    `Instance.Timeout`,
+    `Instance.FailedHealthChecks`,
+    `Instance.NotRegistered`,
+    `Instance.NotInUse`,
+    `Instance.DeregistrationInProgress`,
+    `Instance.InvalidState`,
+    `Instance.IpUnusable`
+  )
 }
 
 @js.native
@@ -307,7 +344,7 @@ object InstanceHealthState {
   val draining = "draining".asInstanceOf[InstanceHealthState]
   val unavailable = "unavailable".asInstanceOf[InstanceHealthState]
 
-  @inline def values = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
+  @inline def values: js.Array[InstanceHealthState] = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
 }
 
 @js.native
@@ -322,7 +359,7 @@ object InstanceMetricName {
   val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[InstanceMetricName]
   val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[InstanceMetricName]
 
-  @inline def values = js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage)
+  @inline def values: js.Array[InstanceMetricName] = js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, BurstCapacityTime, BurstCapacityPercentage)
 }
 
 @js.native
@@ -331,7 +368,7 @@ object InstancePlatform {
   val LINUX_UNIX = "LINUX_UNIX".asInstanceOf[InstancePlatform]
   val WINDOWS = "WINDOWS".asInstanceOf[InstancePlatform]
 
-  @inline def values = js.Array(LINUX_UNIX, WINDOWS)
+  @inline def values: js.Array[InstancePlatform] = js.Array(LINUX_UNIX, WINDOWS)
 }
 
 @js.native
@@ -341,7 +378,7 @@ object InstanceSnapshotState {
   val error = "error".asInstanceOf[InstanceSnapshotState]
   val available = "available".asInstanceOf[InstanceSnapshotState]
 
-  @inline def values = js.Array(pending, error, available)
+  @inline def values: js.Array[InstanceSnapshotState] = js.Array(pending, error, available)
 }
 
 @js.native
@@ -350,7 +387,7 @@ object IpAddressType {
   val dualstack = "dualstack".asInstanceOf[IpAddressType]
   val ipv4 = "ipv4".asInstanceOf[IpAddressType]
 
-  @inline def values = js.Array(dualstack, ipv4)
+  @inline def values: js.Array[IpAddressType] = js.Array(dualstack, ipv4)
 }
 
 @js.native
@@ -360,7 +397,7 @@ object LoadBalancerAttributeName {
   val SessionStickinessEnabled = "SessionStickinessEnabled".asInstanceOf[LoadBalancerAttributeName]
   val SessionStickiness_LB_CookieDurationSeconds = "SessionStickiness_LB_CookieDurationSeconds".asInstanceOf[LoadBalancerAttributeName]
 
-  @inline def values = js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds)
+  @inline def values: js.Array[LoadBalancerAttributeName] = js.Array(HealthCheckPath, SessionStickinessEnabled, SessionStickiness_LB_CookieDurationSeconds)
 }
 
 @js.native
@@ -379,7 +416,20 @@ object LoadBalancerMetricName {
   val RejectedConnectionCount = "RejectedConnectionCount".asInstanceOf[LoadBalancerMetricName]
   val RequestCount = "RequestCount".asInstanceOf[LoadBalancerMetricName]
 
-  @inline def values = js.Array(ClientTLSNegotiationErrorCount, HealthyHostCount, UnhealthyHostCount, HTTPCode_LB_4XX_Count, HTTPCode_LB_5XX_Count, HTTPCode_Instance_2XX_Count, HTTPCode_Instance_3XX_Count, HTTPCode_Instance_4XX_Count, HTTPCode_Instance_5XX_Count, InstanceResponseTime, RejectedConnectionCount, RequestCount)
+  @inline def values: js.Array[LoadBalancerMetricName] = js.Array(
+    ClientTLSNegotiationErrorCount,
+    HealthyHostCount,
+    UnhealthyHostCount,
+    HTTPCode_LB_4XX_Count,
+    HTTPCode_LB_5XX_Count,
+    HTTPCode_Instance_2XX_Count,
+    HTTPCode_Instance_3XX_Count,
+    HTTPCode_Instance_4XX_Count,
+    HTTPCode_Instance_5XX_Count,
+    InstanceResponseTime,
+    RejectedConnectionCount,
+    RequestCount
+  )
 }
 
 @js.native
@@ -388,7 +438,7 @@ object LoadBalancerProtocol {
   val HTTP_HTTPS = "HTTP_HTTPS".asInstanceOf[LoadBalancerProtocol]
   val HTTP = "HTTP".asInstanceOf[LoadBalancerProtocol]
 
-  @inline def values = js.Array(HTTP_HTTPS, HTTP)
+  @inline def values: js.Array[LoadBalancerProtocol] = js.Array(HTTP_HTTPS, HTTP)
 }
 
 @js.native
@@ -400,7 +450,7 @@ object LoadBalancerState {
   val failed = "failed".asInstanceOf[LoadBalancerState]
   val unknown = "unknown".asInstanceOf[LoadBalancerState]
 
-  @inline def values = js.Array(active, provisioning, active_impaired, failed, unknown)
+  @inline def values: js.Array[LoadBalancerState] = js.Array(active, provisioning, active_impaired, failed, unknown)
 }
 
 @js.native
@@ -410,7 +460,7 @@ object LoadBalancerTlsCertificateDomainStatus {
   val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
   val SUCCESS = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateDomainStatus]
 
-  @inline def values = js.Array(PENDING_VALIDATION, FAILED, SUCCESS)
+  @inline def values: js.Array[LoadBalancerTlsCertificateDomainStatus] = js.Array(PENDING_VALIDATION, FAILED, SUCCESS)
 }
 
 @js.native
@@ -422,7 +472,7 @@ object LoadBalancerTlsCertificateFailureReason {
   val INVALID_PUBLIC_DOMAIN = "INVALID_PUBLIC_DOMAIN".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
   val OTHER = "OTHER".asInstanceOf[LoadBalancerTlsCertificateFailureReason]
 
-  @inline def values = js.Array(NO_AVAILABLE_CONTACTS, ADDITIONAL_VERIFICATION_REQUIRED, DOMAIN_NOT_ALLOWED, INVALID_PUBLIC_DOMAIN, OTHER)
+  @inline def values: js.Array[LoadBalancerTlsCertificateFailureReason] = js.Array(NO_AVAILABLE_CONTACTS, ADDITIONAL_VERIFICATION_REQUIRED, DOMAIN_NOT_ALLOWED, INVALID_PUBLIC_DOMAIN, OTHER)
 }
 
 @js.native
@@ -433,7 +483,7 @@ object LoadBalancerTlsCertificateRenewalStatus {
   val SUCCESS = "SUCCESS".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
   val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateRenewalStatus]
 
-  @inline def values = js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED)
+  @inline def values: js.Array[LoadBalancerTlsCertificateRenewalStatus] = js.Array(PENDING_AUTO_RENEWAL, PENDING_VALIDATION, SUCCESS, FAILED)
 }
 
 @js.native
@@ -450,7 +500,18 @@ object LoadBalancerTlsCertificateRevocationReason {
   val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
   val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[LoadBalancerTlsCertificateRevocationReason]
 
-  @inline def values = js.Array(UNSPECIFIED, KEY_COMPROMISE, CA_COMPROMISE, AFFILIATION_CHANGED, SUPERCEDED, CESSATION_OF_OPERATION, CERTIFICATE_HOLD, REMOVE_FROM_CRL, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE)
+  @inline def values: js.Array[LoadBalancerTlsCertificateRevocationReason] = js.Array(
+    UNSPECIFIED,
+    KEY_COMPROMISE,
+    CA_COMPROMISE,
+    AFFILIATION_CHANGED,
+    SUPERCEDED,
+    CESSATION_OF_OPERATION,
+    CERTIFICATE_HOLD,
+    REMOVE_FROM_CRL,
+    PRIVILEGE_WITHDRAWN,
+    A_A_COMPROMISE
+  )
 }
 
 @js.native
@@ -465,7 +526,7 @@ object LoadBalancerTlsCertificateStatus {
   val FAILED = "FAILED".asInstanceOf[LoadBalancerTlsCertificateStatus]
   val UNKNOWN = "UNKNOWN".asInstanceOf[LoadBalancerTlsCertificateStatus]
 
-  @inline def values = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
+  @inline def values: js.Array[LoadBalancerTlsCertificateStatus] = js.Array(PENDING_VALIDATION, ISSUED, INACTIVE, EXPIRED, VALIDATION_TIMED_OUT, REVOKED, FAILED, UNKNOWN)
 }
 
 @js.native
@@ -497,7 +558,33 @@ object MetricName {
   val BurstCapacityTime = "BurstCapacityTime".asInstanceOf[MetricName]
   val BurstCapacityPercentage = "BurstCapacityPercentage".asInstanceOf[MetricName]
 
-  @inline def values = js.Array(CPUUtilization, NetworkIn, NetworkOut, StatusCheckFailed, StatusCheckFailed_Instance, StatusCheckFailed_System, ClientTLSNegotiationErrorCount, HealthyHostCount, UnhealthyHostCount, HTTPCode_LB_4XX_Count, HTTPCode_LB_5XX_Count, HTTPCode_Instance_2XX_Count, HTTPCode_Instance_3XX_Count, HTTPCode_Instance_4XX_Count, HTTPCode_Instance_5XX_Count, InstanceResponseTime, RejectedConnectionCount, RequestCount, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput, BurstCapacityTime, BurstCapacityPercentage)
+  @inline def values: js.Array[MetricName] = js.Array(
+    CPUUtilization,
+    NetworkIn,
+    NetworkOut,
+    StatusCheckFailed,
+    StatusCheckFailed_Instance,
+    StatusCheckFailed_System,
+    ClientTLSNegotiationErrorCount,
+    HealthyHostCount,
+    UnhealthyHostCount,
+    HTTPCode_LB_4XX_Count,
+    HTTPCode_LB_5XX_Count,
+    HTTPCode_Instance_2XX_Count,
+    HTTPCode_Instance_3XX_Count,
+    HTTPCode_Instance_4XX_Count,
+    HTTPCode_Instance_5XX_Count,
+    InstanceResponseTime,
+    RejectedConnectionCount,
+    RequestCount,
+    DatabaseConnections,
+    DiskQueueDepth,
+    FreeStorageSpace,
+    NetworkReceiveThroughput,
+    NetworkTransmitThroughput,
+    BurstCapacityTime,
+    BurstCapacityPercentage
+  )
 }
 
 @js.native
@@ -509,7 +596,7 @@ object MetricStatistic {
   val Average = "Average".asInstanceOf[MetricStatistic]
   val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
 
-  @inline def values = js.Array(Minimum, Maximum, Sum, Average, SampleCount)
+  @inline def values: js.Array[MetricStatistic] = js.Array(Minimum, Maximum, Sum, Average, SampleCount)
 }
 
 @js.native
@@ -543,7 +630,35 @@ object MetricUnit {
   val `Count/Second` = "Count/Second".asInstanceOf[MetricUnit]
   val None = "None".asInstanceOf[MetricUnit]
 
-  @inline def values = js.Array(Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, `Bytes/Second`, `Kilobytes/Second`, `Megabytes/Second`, `Gigabytes/Second`, `Terabytes/Second`, `Bits/Second`, `Kilobits/Second`, `Megabits/Second`, `Gigabits/Second`, `Terabits/Second`, `Count/Second`, None)
+  @inline def values: js.Array[MetricUnit] = js.Array(
+    Seconds,
+    Microseconds,
+    Milliseconds,
+    Bytes,
+    Kilobytes,
+    Megabytes,
+    Gigabytes,
+    Terabytes,
+    Bits,
+    Kilobits,
+    Megabits,
+    Gigabits,
+    Terabits,
+    Percent,
+    Count,
+    `Bytes/Second`,
+    `Kilobytes/Second`,
+    `Megabytes/Second`,
+    `Gigabytes/Second`,
+    `Terabytes/Second`,
+    `Bits/Second`,
+    `Kilobits/Second`,
+    `Megabits/Second`,
+    `Gigabits/Second`,
+    `Terabits/Second`,
+    `Count/Second`,
+    None
+  )
 }
 
 @js.native
@@ -554,7 +669,7 @@ object NetworkProtocol {
   val udp = "udp".asInstanceOf[NetworkProtocol]
   val icmp = "icmp".asInstanceOf[NetworkProtocol]
 
-  @inline def values = js.Array(tcp, all, udp, icmp)
+  @inline def values: js.Array[NetworkProtocol] = js.Array(tcp, all, udp, icmp)
 }
 
 @js.native
@@ -566,7 +681,7 @@ object OperationStatus {
   val Completed = "Completed".asInstanceOf[OperationStatus]
   val Succeeded = "Succeeded".asInstanceOf[OperationStatus]
 
-  @inline def values = js.Array(NotStarted, Started, Failed, Completed, Succeeded)
+  @inline def values: js.Array[OperationStatus] = js.Array(NotStarted, Started, Failed, Completed, Succeeded)
 }
 
 @js.native
@@ -645,7 +760,80 @@ object OperationType {
   val RegisterContainerImage = "RegisterContainerImage".asInstanceOf[OperationType]
   val DeleteContainerImage = "DeleteContainerImage".asInstanceOf[OperationType]
 
-  @inline def values = js.Array(DeleteKnownHostKeys, DeleteInstance, CreateInstance, StopInstance, StartInstance, RebootInstance, OpenInstancePublicPorts, PutInstancePublicPorts, CloseInstancePublicPorts, AllocateStaticIp, ReleaseStaticIp, AttachStaticIp, DetachStaticIp, UpdateDomainEntry, DeleteDomainEntry, CreateDomain, DeleteDomain, CreateInstanceSnapshot, DeleteInstanceSnapshot, CreateInstancesFromSnapshot, CreateLoadBalancer, DeleteLoadBalancer, AttachInstancesToLoadBalancer, DetachInstancesFromLoadBalancer, UpdateLoadBalancerAttribute, CreateLoadBalancerTlsCertificate, DeleteLoadBalancerTlsCertificate, AttachLoadBalancerTlsCertificate, CreateDisk, DeleteDisk, AttachDisk, DetachDisk, CreateDiskSnapshot, DeleteDiskSnapshot, CreateDiskFromSnapshot, CreateRelationalDatabase, UpdateRelationalDatabase, DeleteRelationalDatabase, CreateRelationalDatabaseFromSnapshot, CreateRelationalDatabaseSnapshot, DeleteRelationalDatabaseSnapshot, UpdateRelationalDatabaseParameters, StartRelationalDatabase, RebootRelationalDatabase, StopRelationalDatabase, EnableAddOn, DisableAddOn, PutAlarm, GetAlarms, DeleteAlarm, TestAlarm, CreateContactMethod, GetContactMethods, SendContactMethodVerification, DeleteContactMethod, CreateDistribution, UpdateDistribution, DeleteDistribution, ResetDistributionCache, AttachCertificateToDistribution, DetachCertificateFromDistribution, UpdateDistributionBundle, SetIpAddressType, CreateCertificate, DeleteCertificate, CreateContainerService, UpdateContainerService, DeleteContainerService, CreateContainerServiceDeployment, CreateContainerServiceRegistryLogin, RegisterContainerImage, DeleteContainerImage)
+  @inline def values: js.Array[OperationType] = js.Array(
+    DeleteKnownHostKeys,
+    DeleteInstance,
+    CreateInstance,
+    StopInstance,
+    StartInstance,
+    RebootInstance,
+    OpenInstancePublicPorts,
+    PutInstancePublicPorts,
+    CloseInstancePublicPorts,
+    AllocateStaticIp,
+    ReleaseStaticIp,
+    AttachStaticIp,
+    DetachStaticIp,
+    UpdateDomainEntry,
+    DeleteDomainEntry,
+    CreateDomain,
+    DeleteDomain,
+    CreateInstanceSnapshot,
+    DeleteInstanceSnapshot,
+    CreateInstancesFromSnapshot,
+    CreateLoadBalancer,
+    DeleteLoadBalancer,
+    AttachInstancesToLoadBalancer,
+    DetachInstancesFromLoadBalancer,
+    UpdateLoadBalancerAttribute,
+    CreateLoadBalancerTlsCertificate,
+    DeleteLoadBalancerTlsCertificate,
+    AttachLoadBalancerTlsCertificate,
+    CreateDisk,
+    DeleteDisk,
+    AttachDisk,
+    DetachDisk,
+    CreateDiskSnapshot,
+    DeleteDiskSnapshot,
+    CreateDiskFromSnapshot,
+    CreateRelationalDatabase,
+    UpdateRelationalDatabase,
+    DeleteRelationalDatabase,
+    CreateRelationalDatabaseFromSnapshot,
+    CreateRelationalDatabaseSnapshot,
+    DeleteRelationalDatabaseSnapshot,
+    UpdateRelationalDatabaseParameters,
+    StartRelationalDatabase,
+    RebootRelationalDatabase,
+    StopRelationalDatabase,
+    EnableAddOn,
+    DisableAddOn,
+    PutAlarm,
+    GetAlarms,
+    DeleteAlarm,
+    TestAlarm,
+    CreateContactMethod,
+    GetContactMethods,
+    SendContactMethodVerification,
+    DeleteContactMethod,
+    CreateDistribution,
+    UpdateDistribution,
+    DeleteDistribution,
+    ResetDistributionCache,
+    AttachCertificateToDistribution,
+    DetachCertificateFromDistribution,
+    UpdateDistributionBundle,
+    SetIpAddressType,
+    CreateCertificate,
+    DeleteCertificate,
+    CreateContainerService,
+    UpdateContainerService,
+    DeleteContainerService,
+    CreateContainerServiceDeployment,
+    CreateContainerServiceRegistryLogin,
+    RegisterContainerImage,
+    DeleteContainerImage
+  )
 }
 
 @js.native
@@ -654,7 +842,7 @@ object OriginProtocolPolicyEnum {
   val `http-only` = "http-only".asInstanceOf[OriginProtocolPolicyEnum]
   val `https-only` = "https-only".asInstanceOf[OriginProtocolPolicyEnum]
 
-  @inline def values = js.Array(`http-only`, `https-only`)
+  @inline def values: js.Array[OriginProtocolPolicyEnum] = js.Array(`http-only`, `https-only`)
 }
 
 @js.native
@@ -663,7 +851,7 @@ object PortAccessType {
   val Public = "Public".asInstanceOf[PortAccessType]
   val Private = "Private".asInstanceOf[PortAccessType]
 
-  @inline def values = js.Array(Public, Private)
+  @inline def values: js.Array[PortAccessType] = js.Array(Public, Private)
 }
 
 @js.native
@@ -674,7 +862,7 @@ object PortInfoSourceType {
   val NONE = "NONE".asInstanceOf[PortInfoSourceType]
   val CLOSED = "CLOSED".asInstanceOf[PortInfoSourceType]
 
-  @inline def values = js.Array(DEFAULT, INSTANCE, NONE, CLOSED)
+  @inline def values: js.Array[PortInfoSourceType] = js.Array(DEFAULT, INSTANCE, NONE, CLOSED)
 }
 
 @js.native
@@ -683,7 +871,7 @@ object PortState {
   val open = "open".asInstanceOf[PortState]
   val closed = "closed".asInstanceOf[PortState]
 
-  @inline def values = js.Array(open, closed)
+  @inline def values: js.Array[PortState] = js.Array(open, closed)
 }
 
 @js.native
@@ -693,7 +881,7 @@ object RecordState {
   val Succeeded = "Succeeded".asInstanceOf[RecordState]
   val Failed = "Failed".asInstanceOf[RecordState]
 
-  @inline def values = js.Array(Started, Succeeded, Failed)
+  @inline def values: js.Array[RecordState] = js.Array(Started, Succeeded, Failed)
 }
 
 @js.native
@@ -714,7 +902,22 @@ object RegionName {
   val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
   val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[RegionName]
 
-  @inline def values = js.Array(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-central-1`, `ca-central-1`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ap-northeast-2`)
+  @inline def values: js.Array[RegionName] = js.Array(
+    `us-east-1`,
+    `us-east-2`,
+    `us-west-1`,
+    `us-west-2`,
+    `eu-west-1`,
+    `eu-west-2`,
+    `eu-west-3`,
+    `eu-central-1`,
+    `ca-central-1`,
+    `ap-south-1`,
+    `ap-southeast-1`,
+    `ap-southeast-2`,
+    `ap-northeast-1`,
+    `ap-northeast-2`
+  )
 }
 
 @js.native
@@ -722,7 +925,7 @@ sealed trait RelationalDatabaseEngine extends js.Any
 object RelationalDatabaseEngine {
   val mysql = "mysql".asInstanceOf[RelationalDatabaseEngine]
 
-  @inline def values = js.Array(mysql)
+  @inline def values: js.Array[RelationalDatabaseEngine] = js.Array(mysql)
 }
 
 @js.native
@@ -735,7 +938,7 @@ object RelationalDatabaseMetricName {
   val NetworkReceiveThroughput = "NetworkReceiveThroughput".asInstanceOf[RelationalDatabaseMetricName]
   val NetworkTransmitThroughput = "NetworkTransmitThroughput".asInstanceOf[RelationalDatabaseMetricName]
 
-  @inline def values = js.Array(CPUUtilization, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput)
+  @inline def values: js.Array[RelationalDatabaseMetricName] = js.Array(CPUUtilization, DatabaseConnections, DiskQueueDepth, FreeStorageSpace, NetworkReceiveThroughput, NetworkTransmitThroughput)
 }
 
 @js.native
@@ -745,7 +948,7 @@ object RelationalDatabasePasswordVersion {
   val PREVIOUS = "PREVIOUS".asInstanceOf[RelationalDatabasePasswordVersion]
   val PENDING = "PENDING".asInstanceOf[RelationalDatabasePasswordVersion]
 
-  @inline def values = js.Array(CURRENT, PREVIOUS, PENDING)
+  @inline def values: js.Array[RelationalDatabasePasswordVersion] = js.Array(CURRENT, PREVIOUS, PENDING)
 }
 
 @js.native
@@ -756,7 +959,7 @@ object RenewalStatus {
   val Success = "Success".asInstanceOf[RenewalStatus]
   val Failed = "Failed".asInstanceOf[RenewalStatus]
 
-  @inline def values = js.Array(PendingAutoRenewal, PendingValidation, Success, Failed)
+  @inline def values: js.Array[RenewalStatus] = js.Array(PendingAutoRenewal, PendingValidation, Success, Failed)
 }
 
 @js.native
@@ -782,7 +985,27 @@ object ResourceType {
   val Distribution = "Distribution".asInstanceOf[ResourceType]
   val Certificate = "Certificate".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(ContainerService, Instance, StaticIp, KeyPair, InstanceSnapshot, Domain, PeeredVpc, LoadBalancer, LoadBalancerTlsCertificate, Disk, DiskSnapshot, RelationalDatabase, RelationalDatabaseSnapshot, ExportSnapshotRecord, CloudFormationStackRecord, Alarm, ContactMethod, Distribution, Certificate)
+  @inline def values: js.Array[ResourceType] = js.Array(
+    ContainerService,
+    Instance,
+    StaticIp,
+    KeyPair,
+    InstanceSnapshot,
+    Domain,
+    PeeredVpc,
+    LoadBalancer,
+    LoadBalancerTlsCertificate,
+    Disk,
+    DiskSnapshot,
+    RelationalDatabase,
+    RelationalDatabaseSnapshot,
+    ExportSnapshotRecord,
+    CloudFormationStackRecord,
+    Alarm,
+    ContactMethod,
+    Distribution,
+    Certificate
+  )
 }
 
 @js.native
@@ -793,6 +1016,5 @@ object TreatMissingData {
   val ignore = "ignore".asInstanceOf[TreatMissingData]
   val missing = "missing".asInstanceOf[TreatMissingData]
 
-  @inline def values = js.Array(breaching, notBreaching, ignore, missing)
+  @inline def values: js.Array[TreatMissingData] = js.Array(breaching, notBreaching, ignore, missing)
 }
-

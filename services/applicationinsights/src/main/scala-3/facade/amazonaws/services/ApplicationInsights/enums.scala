@@ -1,6 +1,6 @@
 package facade.amazonaws.services.applicationinsights
 
-import scalajs._
+import scalajs.js
 
 type CloudWatchEventSource = "EC2" | "CODE_DEPLOY" | "HEALTH" | "RDS"
 object CloudWatchEventSource {

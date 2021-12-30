@@ -1,6 +1,6 @@
 package facade.amazonaws.services.kinesisvideosignaling
 
-import scalajs._
+import scalajs.js
 
 type Service = "TURN"
 object Service {

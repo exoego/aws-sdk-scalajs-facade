@@ -1,7 +1,6 @@
 package facade.amazonaws.services.codestarnotifications
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DetailType extends js.Any
@@ -9,7 +8,7 @@ object DetailType {
   val BASIC = "BASIC".asInstanceOf[DetailType]
   val FULL = "FULL".asInstanceOf[DetailType]
 
-  @inline def values = js.Array(BASIC, FULL)
+  @inline def values: js.Array[DetailType] = js.Array(BASIC, FULL)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object ListEventTypesFilterName {
   val RESOURCE_TYPE = "RESOURCE_TYPE".asInstanceOf[ListEventTypesFilterName]
   val SERVICE_NAME = "SERVICE_NAME".asInstanceOf[ListEventTypesFilterName]
 
-  @inline def values = js.Array(RESOURCE_TYPE, SERVICE_NAME)
+  @inline def values: js.Array[ListEventTypesFilterName] = js.Array(RESOURCE_TYPE, SERVICE_NAME)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object ListNotificationRulesFilterName {
   val RESOURCE = "RESOURCE".asInstanceOf[ListNotificationRulesFilterName]
   val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListNotificationRulesFilterName]
 
-  @inline def values = js.Array(EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS)
+  @inline def values: js.Array[ListNotificationRulesFilterName] = js.Array(EVENT_TYPE_ID, CREATED_BY, RESOURCE, TARGET_ADDRESS)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object ListTargetsFilterName {
   val TARGET_ADDRESS = "TARGET_ADDRESS".asInstanceOf[ListTargetsFilterName]
   val TARGET_STATUS = "TARGET_STATUS".asInstanceOf[ListTargetsFilterName]
 
-  @inline def values = js.Array(TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS)
+  @inline def values: js.Array[ListTargetsFilterName] = js.Array(TARGET_TYPE, TARGET_ADDRESS, TARGET_STATUS)
 }
 
 @js.native
@@ -48,7 +47,7 @@ object NotificationRuleStatus {
   val ENABLED = "ENABLED".asInstanceOf[NotificationRuleStatus]
   val DISABLED = "DISABLED".asInstanceOf[NotificationRuleStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[NotificationRuleStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -60,6 +59,5 @@ object TargetStatus {
   val INACTIVE = "INACTIVE".asInstanceOf[TargetStatus]
   val DEACTIVATED = "DEACTIVATED".asInstanceOf[TargetStatus]
 
-  @inline def values = js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED)
+  @inline def values: js.Array[TargetStatus] = js.Array(PENDING, ACTIVE, UNREACHABLE, INACTIVE, DEACTIVATED)
 }
-

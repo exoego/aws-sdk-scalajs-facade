@@ -1,7 +1,6 @@
 package facade.amazonaws.services.cloudfront
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait CachePolicyCookieBehavior extends js.Any
@@ -11,7 +10,7 @@ object CachePolicyCookieBehavior {
   val allExcept = "allExcept".asInstanceOf[CachePolicyCookieBehavior]
   val all = "all".asInstanceOf[CachePolicyCookieBehavior]
 
-  @inline def values = js.Array(none, whitelist, allExcept, all)
+  @inline def values: js.Array[CachePolicyCookieBehavior] = js.Array(none, whitelist, allExcept, all)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object CachePolicyHeaderBehavior {
   val none = "none".asInstanceOf[CachePolicyHeaderBehavior]
   val whitelist = "whitelist".asInstanceOf[CachePolicyHeaderBehavior]
 
-  @inline def values = js.Array(none, whitelist)
+  @inline def values: js.Array[CachePolicyHeaderBehavior] = js.Array(none, whitelist)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object CachePolicyQueryStringBehavior {
   val allExcept = "allExcept".asInstanceOf[CachePolicyQueryStringBehavior]
   val all = "all".asInstanceOf[CachePolicyQueryStringBehavior]
 
-  @inline def values = js.Array(none, whitelist, allExcept, all)
+  @inline def values: js.Array[CachePolicyQueryStringBehavior] = js.Array(none, whitelist, allExcept, all)
 }
 
 @js.native
@@ -40,7 +39,7 @@ object CachePolicyType {
   val managed = "managed".asInstanceOf[CachePolicyType]
   val custom = "custom".asInstanceOf[CachePolicyType]
 
-  @inline def values = js.Array(managed, custom)
+  @inline def values: js.Array[CachePolicyType] = js.Array(managed, custom)
 }
 
 @js.native
@@ -50,7 +49,7 @@ object CertificateSource {
   val iam = "iam".asInstanceOf[CertificateSource]
   val acm = "acm".asInstanceOf[CertificateSource]
 
-  @inline def values = js.Array(cloudfront, iam, acm)
+  @inline def values: js.Array[CertificateSource] = js.Array(cloudfront, iam, acm)
 }
 
 @js.native
@@ -61,7 +60,7 @@ object EventType {
   val `origin-request` = "origin-request".asInstanceOf[EventType]
   val `origin-response` = "origin-response".asInstanceOf[EventType]
 
-  @inline def values = js.Array(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`)
+  @inline def values: js.Array[EventType] = js.Array(`viewer-request`, `viewer-response`, `origin-request`, `origin-response`)
 }
 
 @js.native
@@ -69,7 +68,7 @@ sealed trait Format extends js.Any
 object Format {
   val URLEncoded = "URLEncoded".asInstanceOf[Format]
 
-  @inline def values = js.Array(URLEncoded)
+  @inline def values: js.Array[Format] = js.Array(URLEncoded)
 }
 
 @js.native
@@ -79,7 +78,7 @@ object GeoRestrictionType {
   val whitelist = "whitelist".asInstanceOf[GeoRestrictionType]
   val none = "none".asInstanceOf[GeoRestrictionType]
 
-  @inline def values = js.Array(blacklist, whitelist, none)
+  @inline def values: js.Array[GeoRestrictionType] = js.Array(blacklist, whitelist, none)
 }
 
 @js.native
@@ -88,7 +87,7 @@ object HttpVersion {
   val `http1.1` = "http1.1".asInstanceOf[HttpVersion]
   val http2 = "http2".asInstanceOf[HttpVersion]
 
-  @inline def values = js.Array(`http1.1`, http2)
+  @inline def values: js.Array[HttpVersion] = js.Array(`http1.1`, http2)
 }
 
 @js.native
@@ -98,7 +97,7 @@ object ICPRecordalStatus {
   val SUSPENDED = "SUSPENDED".asInstanceOf[ICPRecordalStatus]
   val PENDING = "PENDING".asInstanceOf[ICPRecordalStatus]
 
-  @inline def values = js.Array(APPROVED, SUSPENDED, PENDING)
+  @inline def values: js.Array[ICPRecordalStatus] = js.Array(APPROVED, SUSPENDED, PENDING)
 }
 
 @js.native
@@ -108,7 +107,7 @@ object ItemSelection {
   val whitelist = "whitelist".asInstanceOf[ItemSelection]
   val all = "all".asInstanceOf[ItemSelection]
 
-  @inline def values = js.Array(none, whitelist, all)
+  @inline def values: js.Array[ItemSelection] = js.Array(none, whitelist, all)
 }
 
 @js.native
@@ -122,7 +121,7 @@ object Method {
   val OPTIONS = "OPTIONS".asInstanceOf[Method]
   val DELETE = "DELETE".asInstanceOf[Method]
 
-  @inline def values = js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE)
+  @inline def values: js.Array[Method] = js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE)
 }
 
 @js.native
@@ -135,7 +134,7 @@ object MinimumProtocolVersion {
   val `TLSv1.2_2018` = "TLSv1.2_2018".asInstanceOf[MinimumProtocolVersion]
   val `TLSv1.2_2019` = "TLSv1.2_2019".asInstanceOf[MinimumProtocolVersion]
 
-  @inline def values = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`)
+  @inline def values: js.Array[MinimumProtocolVersion] = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`)
 }
 
 @js.native
@@ -145,7 +144,7 @@ object OriginProtocolPolicy {
   val `match-viewer` = "match-viewer".asInstanceOf[OriginProtocolPolicy]
   val `https-only` = "https-only".asInstanceOf[OriginProtocolPolicy]
 
-  @inline def values = js.Array(`http-only`, `match-viewer`, `https-only`)
+  @inline def values: js.Array[OriginProtocolPolicy] = js.Array(`http-only`, `match-viewer`, `https-only`)
 }
 
 @js.native
@@ -155,7 +154,7 @@ object OriginRequestPolicyCookieBehavior {
   val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyCookieBehavior]
   val all = "all".asInstanceOf[OriginRequestPolicyCookieBehavior]
 
-  @inline def values = js.Array(none, whitelist, all)
+  @inline def values: js.Array[OriginRequestPolicyCookieBehavior] = js.Array(none, whitelist, all)
 }
 
 @js.native
@@ -166,7 +165,7 @@ object OriginRequestPolicyHeaderBehavior {
   val allViewer = "allViewer".asInstanceOf[OriginRequestPolicyHeaderBehavior]
   val allViewerAndWhitelistCloudFront = "allViewerAndWhitelistCloudFront".asInstanceOf[OriginRequestPolicyHeaderBehavior]
 
-  @inline def values = js.Array(none, whitelist, allViewer, allViewerAndWhitelistCloudFront)
+  @inline def values: js.Array[OriginRequestPolicyHeaderBehavior] = js.Array(none, whitelist, allViewer, allViewerAndWhitelistCloudFront)
 }
 
 @js.native
@@ -176,7 +175,7 @@ object OriginRequestPolicyQueryStringBehavior {
   val whitelist = "whitelist".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
   val all = "all".asInstanceOf[OriginRequestPolicyQueryStringBehavior]
 
-  @inline def values = js.Array(none, whitelist, all)
+  @inline def values: js.Array[OriginRequestPolicyQueryStringBehavior] = js.Array(none, whitelist, all)
 }
 
 @js.native
@@ -185,7 +184,7 @@ object OriginRequestPolicyType {
   val managed = "managed".asInstanceOf[OriginRequestPolicyType]
   val custom = "custom".asInstanceOf[OriginRequestPolicyType]
 
-  @inline def values = js.Array(managed, custom)
+  @inline def values: js.Array[OriginRequestPolicyType] = js.Array(managed, custom)
 }
 
 @js.native
@@ -195,7 +194,7 @@ object PriceClass {
   val PriceClass_200 = "PriceClass_200".asInstanceOf[PriceClass]
   val PriceClass_All = "PriceClass_All".asInstanceOf[PriceClass]
 
-  @inline def values = js.Array(PriceClass_100, PriceClass_200, PriceClass_All)
+  @inline def values: js.Array[PriceClass] = js.Array(PriceClass_100, PriceClass_200, PriceClass_All)
 }
 
 @js.native
@@ -204,7 +203,7 @@ object RealtimeMetricsSubscriptionStatus {
   val Enabled = "Enabled".asInstanceOf[RealtimeMetricsSubscriptionStatus]
   val Disabled = "Disabled".asInstanceOf[RealtimeMetricsSubscriptionStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[RealtimeMetricsSubscriptionStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -214,7 +213,7 @@ object SSLSupportMethod {
   val vip = "vip".asInstanceOf[SSLSupportMethod]
   val `static-ip` = "static-ip".asInstanceOf[SSLSupportMethod]
 
-  @inline def values = js.Array(`sni-only`, vip, `static-ip`)
+  @inline def values: js.Array[SSLSupportMethod] = js.Array(`sni-only`, vip, `static-ip`)
 }
 
 @js.native
@@ -225,7 +224,7 @@ object SslProtocol {
   val `TLSv1.1` = "TLSv1.1".asInstanceOf[SslProtocol]
   val `TLSv1.2` = "TLSv1.2".asInstanceOf[SslProtocol]
 
-  @inline def values = js.Array(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`)
+  @inline def values: js.Array[SslProtocol] = js.Array(SSLv3, TLSv1, `TLSv1.1`, `TLSv1.2`)
 }
 
 @js.native
@@ -235,6 +234,5 @@ object ViewerProtocolPolicy {
   val `https-only` = "https-only".asInstanceOf[ViewerProtocolPolicy]
   val `redirect-to-https` = "redirect-to-https".asInstanceOf[ViewerProtocolPolicy]
 
-  @inline def values = js.Array(`allow-all`, `https-only`, `redirect-to-https`)
+  @inline def values: js.Array[ViewerProtocolPolicy] = js.Array(`allow-all`, `https-only`, `redirect-to-https`)
 }
-

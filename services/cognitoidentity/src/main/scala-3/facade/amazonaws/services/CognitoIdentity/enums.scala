@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cognitoidentity
 
-import scalajs._
+import scalajs.js
 
 type AmbiguousRoleResolutionType = "AuthenticatedRole" | "Deny"
 object AmbiguousRoleResolutionType {

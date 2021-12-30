@@ -1,7 +1,6 @@
 package facade.amazonaws.services.rdsdataservice
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DecimalReturnType extends js.Any
@@ -9,7 +8,7 @@ object DecimalReturnType {
   val STRING = "STRING".asInstanceOf[DecimalReturnType]
   val DOUBLE_OR_LONG = "DOUBLE_OR_LONG".asInstanceOf[DecimalReturnType]
 
-  @inline def values = js.Array(STRING, DOUBLE_OR_LONG)
+  @inline def values: js.Array[DecimalReturnType] = js.Array(STRING, DOUBLE_OR_LONG)
 }
 
 @js.native
@@ -22,6 +21,5 @@ object TypeHint {
   val TIME = "TIME".asInstanceOf[TypeHint]
   val DECIMAL = "DECIMAL".asInstanceOf[TypeHint]
 
-  @inline def values = js.Array(JSON, UUID, TIMESTAMP, DATE, TIME, DECIMAL)
+  @inline def values: js.Array[TypeHint] = js.Array(JSON, UUID, TIMESTAMP, DATE, TIME, DECIMAL)
 }
-

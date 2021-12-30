@@ -1,6 +1,6 @@
 package facade.amazonaws.services.sms
 
-import scalajs._
+import scalajs.js
 
 type AppLaunchConfigurationStatus = "NOT_CONFIGURED" | "CONFIGURED"
 object AppLaunchConfigurationStatus {

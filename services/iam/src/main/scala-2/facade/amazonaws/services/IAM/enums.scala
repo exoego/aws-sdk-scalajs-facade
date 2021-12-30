@@ -1,7 +1,6 @@
 package facade.amazonaws.services.iam
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccessAdvisorUsageGranularityType extends js.Any
@@ -9,7 +8,7 @@ object AccessAdvisorUsageGranularityType {
   val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
   val ACTION_LEVEL = "ACTION_LEVEL".asInstanceOf[AccessAdvisorUsageGranularityType]
 
-  @inline def values = js.Array(SERVICE_LEVEL, ACTION_LEVEL)
+  @inline def values: js.Array[AccessAdvisorUsageGranularityType] = js.Array(SERVICE_LEVEL, ACTION_LEVEL)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object ContextKeyTypeEnum {
   val date = "date".asInstanceOf[ContextKeyTypeEnum]
   val dateList = "dateList".asInstanceOf[ContextKeyTypeEnum]
 
-  @inline def values = js.Array(string, stringList, numeric, numericList, boolean, booleanList, ip, ipList, binary, binaryList, date, dateList)
+  @inline def values: js.Array[ContextKeyTypeEnum] = js.Array(string, stringList, numeric, numericList, boolean, booleanList, ip, ipList, binary, binaryList, date, dateList)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object DeletionTaskStatusType {
   val FAILED = "FAILED".asInstanceOf[DeletionTaskStatusType]
   val NOT_STARTED = "NOT_STARTED".asInstanceOf[DeletionTaskStatusType]
 
-  @inline def values = js.Array(SUCCEEDED, IN_PROGRESS, FAILED, NOT_STARTED)
+  @inline def values: js.Array[DeletionTaskStatusType] = js.Array(SUCCEEDED, IN_PROGRESS, FAILED, NOT_STARTED)
 }
 
 @js.native
@@ -51,7 +50,7 @@ object EntityType {
   val LocalManagedPolicy = "LocalManagedPolicy".asInstanceOf[EntityType]
   val AWSManagedPolicy = "AWSManagedPolicy".asInstanceOf[EntityType]
 
-  @inline def values = js.Array(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy)
+  @inline def values: js.Array[EntityType] = js.Array(User, Role, Group, LocalManagedPolicy, AWSManagedPolicy)
 }
 
 @js.native
@@ -59,7 +58,7 @@ sealed trait PermissionsBoundaryAttachmentType extends js.Any
 object PermissionsBoundaryAttachmentType {
   val PermissionsBoundaryPolicy = "PermissionsBoundaryPolicy".asInstanceOf[PermissionsBoundaryAttachmentType]
 
-  @inline def values = js.Array(PermissionsBoundaryPolicy)
+  @inline def values: js.Array[PermissionsBoundaryAttachmentType] = js.Array(PermissionsBoundaryPolicy)
 }
 
 @js.native
@@ -69,7 +68,7 @@ object PolicyEvaluationDecisionType {
   val explicitDeny = "explicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
   val implicitDeny = "implicitDeny".asInstanceOf[PolicyEvaluationDecisionType]
 
-  @inline def values = js.Array(allowed, explicitDeny, implicitDeny)
+  @inline def values: js.Array[PolicyEvaluationDecisionType] = js.Array(allowed, explicitDeny, implicitDeny)
 }
 
 @js.native
@@ -83,11 +82,10 @@ object PolicySourceType {
   val resource = "resource".asInstanceOf[PolicySourceType]
   val none = "none".asInstanceOf[PolicySourceType]
 
-  @inline def values = js.Array(user, group, role, `aws-managed`, `user-managed`, resource, none)
+  @inline def values: js.Array[PolicySourceType] = js.Array(user, group, role, `aws-managed`, `user-managed`, resource, none)
 }
 
-/** The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity.
-  * For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM identities ]] in the <i>IAM User Guide</i>.
+/** The policy usage type that indicates whether the policy is used as a permissions policy or as the permissions boundary for an entity. For more information about permissions boundaries, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html|Permissions boundaries for IAM identities]] in the <i>IAM User Guide</i>.
   */
 @js.native
 sealed trait PolicyUsageType extends js.Any
@@ -95,7 +93,7 @@ object PolicyUsageType {
   val PermissionsPolicy = "PermissionsPolicy".asInstanceOf[PolicyUsageType]
   val PermissionsBoundary = "PermissionsBoundary".asInstanceOf[PolicyUsageType]
 
-  @inline def values = js.Array(PermissionsPolicy, PermissionsBoundary)
+  @inline def values: js.Array[PolicyUsageType] = js.Array(PermissionsPolicy, PermissionsBoundary)
 }
 
 @js.native
@@ -103,7 +101,7 @@ sealed trait ReportFormatType extends js.Any
 object ReportFormatType {
   val `text/csv` = "text/csv".asInstanceOf[ReportFormatType]
 
-  @inline def values = js.Array(`text/csv`)
+  @inline def values: js.Array[ReportFormatType] = js.Array(`text/csv`)
 }
 
 @js.native
@@ -113,7 +111,7 @@ object ReportStateType {
   val INPROGRESS = "INPROGRESS".asInstanceOf[ReportStateType]
   val COMPLETE = "COMPLETE".asInstanceOf[ReportStateType]
 
-  @inline def values = js.Array(STARTED, INPROGRESS, COMPLETE)
+  @inline def values: js.Array[ReportStateType] = js.Array(STARTED, INPROGRESS, COMPLETE)
 }
 
 @js.native
@@ -123,7 +121,7 @@ object assignmentStatusType {
   val Unassigned = "Unassigned".asInstanceOf[assignmentStatusType]
   val Any = "Any".asInstanceOf[assignmentStatusType]
 
-  @inline def values = js.Array(Assigned, Unassigned, Any)
+  @inline def values: js.Array[assignmentStatusType] = js.Array(Assigned, Unassigned, Any)
 }
 
 @js.native
@@ -132,7 +130,7 @@ object encodingType {
   val SSH = "SSH".asInstanceOf[encodingType]
   val PEM = "PEM".asInstanceOf[encodingType]
 
-  @inline def values = js.Array(SSH, PEM)
+  @inline def values: js.Array[encodingType] = js.Array(SSH, PEM)
 }
 
 @js.native
@@ -141,7 +139,7 @@ object globalEndpointTokenVersion {
   val v1Token = "v1Token".asInstanceOf[globalEndpointTokenVersion]
   val v2Token = "v2Token".asInstanceOf[globalEndpointTokenVersion]
 
-  @inline def values = js.Array(v1Token, v2Token)
+  @inline def values: js.Array[globalEndpointTokenVersion] = js.Array(v1Token, v2Token)
 }
 
 @js.native
@@ -151,7 +149,7 @@ object jobStatusType {
   val COMPLETED = "COMPLETED".asInstanceOf[jobStatusType]
   val FAILED = "FAILED".asInstanceOf[jobStatusType]
 
-  @inline def values = js.Array(IN_PROGRESS, COMPLETED, FAILED)
+  @inline def values: js.Array[jobStatusType] = js.Array(IN_PROGRESS, COMPLETED, FAILED)
 }
 
 @js.native
@@ -161,7 +159,7 @@ object policyOwnerEntityType {
   val ROLE = "ROLE".asInstanceOf[policyOwnerEntityType]
   val GROUP = "GROUP".asInstanceOf[policyOwnerEntityType]
 
-  @inline def values = js.Array(USER, ROLE, GROUP)
+  @inline def values: js.Array[policyOwnerEntityType] = js.Array(USER, ROLE, GROUP)
 }
 
 @js.native
@@ -171,7 +169,7 @@ object policyScopeType {
   val AWS = "AWS".asInstanceOf[policyScopeType]
   val Local = "Local".asInstanceOf[policyScopeType]
 
-  @inline def values = js.Array(All, AWS, Local)
+  @inline def values: js.Array[policyScopeType] = js.Array(All, AWS, Local)
 }
 
 @js.native
@@ -180,7 +178,7 @@ object policyType {
   val INLINE = "INLINE".asInstanceOf[policyType]
   val MANAGED = "MANAGED".asInstanceOf[policyType]
 
-  @inline def values = js.Array(INLINE, MANAGED)
+  @inline def values: js.Array[policyType] = js.Array(INLINE, MANAGED)
 }
 
 @js.native
@@ -191,7 +189,7 @@ object sortKeyType {
   val LAST_AUTHENTICATED_TIME_ASCENDING = "LAST_AUTHENTICATED_TIME_ASCENDING".asInstanceOf[sortKeyType]
   val LAST_AUTHENTICATED_TIME_DESCENDING = "LAST_AUTHENTICATED_TIME_DESCENDING".asInstanceOf[sortKeyType]
 
-  @inline def values = js.Array(SERVICE_NAMESPACE_ASCENDING, SERVICE_NAMESPACE_DESCENDING, LAST_AUTHENTICATED_TIME_ASCENDING, LAST_AUTHENTICATED_TIME_DESCENDING)
+  @inline def values: js.Array[sortKeyType] = js.Array(SERVICE_NAMESPACE_ASCENDING, SERVICE_NAMESPACE_DESCENDING, LAST_AUTHENTICATED_TIME_ASCENDING, LAST_AUTHENTICATED_TIME_DESCENDING)
 }
 
 @js.native
@@ -200,7 +198,7 @@ object statusType {
   val Active = "Active".asInstanceOf[statusType]
   val Inactive = "Inactive".asInstanceOf[statusType]
 
-  @inline def values = js.Array(Active, Inactive)
+  @inline def values: js.Array[statusType] = js.Array(Active, Inactive)
 }
 
 @js.native
@@ -233,6 +231,32 @@ object summaryKeyType {
   val VersionsPerPolicyQuota = "VersionsPerPolicyQuota".asInstanceOf[summaryKeyType]
   val GlobalEndpointTokenVersion = "GlobalEndpointTokenVersion".asInstanceOf[summaryKeyType]
 
-  @inline def values = js.Array(Users, UsersQuota, Groups, GroupsQuota, ServerCertificates, ServerCertificatesQuota, UserPolicySizeQuota, GroupPolicySizeQuota, GroupsPerUserQuota, SigningCertificatesPerUserQuota, AccessKeysPerUserQuota, MFADevices, MFADevicesInUse, AccountMFAEnabled, AccountAccessKeysPresent, AccountSigningCertificatesPresent, AttachedPoliciesPerGroupQuota, AttachedPoliciesPerRoleQuota, AttachedPoliciesPerUserQuota, Policies, PoliciesQuota, PolicySizeQuota, PolicyVersionsInUse, PolicyVersionsInUseQuota, VersionsPerPolicyQuota, GlobalEndpointTokenVersion)
+  @inline def values: js.Array[summaryKeyType] = js.Array(
+    Users,
+    UsersQuota,
+    Groups,
+    GroupsQuota,
+    ServerCertificates,
+    ServerCertificatesQuota,
+    UserPolicySizeQuota,
+    GroupPolicySizeQuota,
+    GroupsPerUserQuota,
+    SigningCertificatesPerUserQuota,
+    AccessKeysPerUserQuota,
+    MFADevices,
+    MFADevicesInUse,
+    AccountMFAEnabled,
+    AccountAccessKeysPresent,
+    AccountSigningCertificatesPresent,
+    AttachedPoliciesPerGroupQuota,
+    AttachedPoliciesPerRoleQuota,
+    AttachedPoliciesPerUserQuota,
+    Policies,
+    PoliciesQuota,
+    PolicySizeQuota,
+    PolicyVersionsInUse,
+    PolicyVersionsInUseQuota,
+    VersionsPerPolicyQuota,
+    GlobalEndpointTokenVersion
+  )
 }
-

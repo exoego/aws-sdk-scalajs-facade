@@ -1,7 +1,6 @@
 package facade.amazonaws.services.ioteventsdata
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ErrorCode extends js.Any
@@ -12,6 +11,5 @@ object ErrorCode {
   val ServiceUnavailableException = "ServiceUnavailableException".asInstanceOf[ErrorCode]
   val ThrottlingException = "ThrottlingException".asInstanceOf[ErrorCode]
 
-  @inline def values = js.Array(ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException)
+  @inline def values: js.Array[ErrorCode] = js.Array(ResourceNotFoundException, InvalidRequestException, InternalFailureException, ServiceUnavailableException, ThrottlingException)
 }
-

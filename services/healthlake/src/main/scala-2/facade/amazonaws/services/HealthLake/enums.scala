@@ -1,7 +1,6 @@
 package facade.amazonaws.services.healthlake
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DatastoreStatus extends js.Any
@@ -11,7 +10,7 @@ object DatastoreStatus {
   val DELETING = "DELETING".asInstanceOf[DatastoreStatus]
   val DELETED = "DELETED".asInstanceOf[DatastoreStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, DELETED)
+  @inline def values: js.Array[DatastoreStatus] = js.Array(CREATING, ACTIVE, DELETING, DELETED)
 }
 
 @js.native
@@ -19,7 +18,7 @@ sealed trait FHIRVersion extends js.Any
 object FHIRVersion {
   val R4 = "R4".asInstanceOf[FHIRVersion]
 
-  @inline def values = js.Array(R4)
+  @inline def values: js.Array[FHIRVersion] = js.Array(R4)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object JobStatus {
   val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
   val FAILED = "FAILED".asInstanceOf[JobStatus]
 
-  @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
+  @inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
 }
 
 @js.native
@@ -38,6 +37,5 @@ sealed trait PreloadDataType extends js.Any
 object PreloadDataType {
   val SYNTHEA = "SYNTHEA".asInstanceOf[PreloadDataType]
 
-  @inline def values = js.Array(SYNTHEA)
+  @inline def values: js.Array[PreloadDataType] = js.Array(SYNTHEA)
 }
-

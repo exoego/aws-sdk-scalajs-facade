@@ -1,6 +1,6 @@
 package facade.amazonaws.services.servicecatalog
 
-import scalajs._
+import scalajs.js
 
 type AccessLevelFilterKey = "Account" | "Role" | "User"
 object AccessLevelFilterKey {

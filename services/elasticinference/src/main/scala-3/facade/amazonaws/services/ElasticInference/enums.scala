@@ -1,6 +1,6 @@
 package facade.amazonaws.services.elasticinference
 
-import scalajs._
+import scalajs.js
 
 type LocationType = "region" | "availability-zone" | "availability-zone-id"
 object LocationType {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.codestarnotifications
 
-import scalajs._
+import scalajs.js
 
 type DetailType = "BASIC" | "FULL"
 object DetailType {

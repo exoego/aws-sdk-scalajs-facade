@@ -1,6 +1,6 @@
 package facade.amazonaws.services.savingsplans
 
-import scalajs._
+import scalajs.js
 
 type CurrencyCode = "CNY" | "USD"
 object CurrencyCode {

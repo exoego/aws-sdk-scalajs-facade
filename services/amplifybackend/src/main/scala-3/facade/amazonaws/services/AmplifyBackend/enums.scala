@@ -1,6 +1,6 @@
 package facade.amazonaws.services.amplifybackend
 
-import scalajs._
+import scalajs.js
 
 type AdditionalConstraintsElement = "REQUIRE_DIGIT" | "REQUIRE_LOWERCASE" | "REQUIRE_SYMBOL" | "REQUIRE_UPPERCASE"
 object AdditionalConstraintsElement {

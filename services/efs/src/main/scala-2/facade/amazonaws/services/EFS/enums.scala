@@ -1,7 +1,6 @@
 package facade.amazonaws.services.efs
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait LifeCycleState extends js.Any
@@ -13,7 +12,7 @@ object LifeCycleState {
   val deleted = "deleted".asInstanceOf[LifeCycleState]
   val error = "error".asInstanceOf[LifeCycleState]
 
-  @inline def values = js.Array(creating, available, updating, deleting, deleted, error)
+  @inline def values: js.Array[LifeCycleState] = js.Array(creating, available, updating, deleting, deleted, error)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object PerformanceMode {
   val generalPurpose = "generalPurpose".asInstanceOf[PerformanceMode]
   val maxIO = "maxIO".asInstanceOf[PerformanceMode]
 
-  @inline def values = js.Array(generalPurpose, maxIO)
+  @inline def values: js.Array[PerformanceMode] = js.Array(generalPurpose, maxIO)
 }
 
 @js.native
@@ -33,7 +32,7 @@ object Status {
   val DISABLED = "DISABLED".asInstanceOf[Status]
   val DISABLING = "DISABLING".asInstanceOf[Status]
 
-  @inline def values = js.Array(ENABLED, ENABLING, DISABLED, DISABLING)
+  @inline def values: js.Array[Status] = js.Array(ENABLED, ENABLING, DISABLED, DISABLING)
 }
 
 @js.native
@@ -42,7 +41,7 @@ object ThroughputMode {
   val bursting = "bursting".asInstanceOf[ThroughputMode]
   val provisioned = "provisioned".asInstanceOf[ThroughputMode]
 
-  @inline def values = js.Array(bursting, provisioned)
+  @inline def values: js.Array[ThroughputMode] = js.Array(bursting, provisioned)
 }
 
 @js.native
@@ -54,6 +53,5 @@ object TransitionToIARules {
   val AFTER_60_DAYS = "AFTER_60_DAYS".asInstanceOf[TransitionToIARules]
   val AFTER_90_DAYS = "AFTER_90_DAYS".asInstanceOf[TransitionToIARules]
 
-  @inline def values = js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
+  @inline def values: js.Array[TransitionToIARules] = js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
 }
-

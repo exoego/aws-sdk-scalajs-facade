@@ -1,7 +1,6 @@
 package facade.amazonaws.services.alexaforbusiness
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait BusinessReportFailureCode extends js.Any
@@ -10,7 +9,7 @@ object BusinessReportFailureCode {
   val NO_SUCH_BUCKET = "NO_SUCH_BUCKET".asInstanceOf[BusinessReportFailureCode]
   val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[BusinessReportFailureCode]
 
-  @inline def values = js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE)
+  @inline def values: js.Array[BusinessReportFailureCode] = js.Array(ACCESS_DENIED, NO_SUCH_BUCKET, INTERNAL_FAILURE)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object BusinessReportFormat {
   val CSV = "CSV".asInstanceOf[BusinessReportFormat]
   val CSV_ZIP = "CSV_ZIP".asInstanceOf[BusinessReportFormat]
 
-  @inline def values = js.Array(CSV, CSV_ZIP)
+  @inline def values: js.Array[BusinessReportFormat] = js.Array(CSV, CSV_ZIP)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object BusinessReportInterval {
   val ONE_WEEK = "ONE_WEEK".asInstanceOf[BusinessReportInterval]
   val THIRTY_DAYS = "THIRTY_DAYS".asInstanceOf[BusinessReportInterval]
 
-  @inline def values = js.Array(ONE_DAY, ONE_WEEK, THIRTY_DAYS)
+  @inline def values: js.Array[BusinessReportInterval] = js.Array(ONE_DAY, ONE_WEEK, THIRTY_DAYS)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object BusinessReportStatus {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[BusinessReportStatus]
   val FAILED = "FAILED".asInstanceOf[BusinessReportStatus]
 
-  @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED)
+  @inline def values: js.Array[BusinessReportStatus] = js.Array(RUNNING, SUCCEEDED, FAILED)
 }
 
 @js.native
@@ -49,7 +48,7 @@ object CommsProtocol {
   val SIPS = "SIPS".asInstanceOf[CommsProtocol]
   val H323 = "H323".asInstanceOf[CommsProtocol]
 
-  @inline def values = js.Array(SIP, SIPS, H323)
+  @inline def values: js.Array[CommsProtocol] = js.Array(SIP, SIPS, H323)
 }
 
 @js.native
@@ -66,7 +65,7 @@ object ConferenceProviderType {
   val ZOOM = "ZOOM".asInstanceOf[ConferenceProviderType]
   val CUSTOM = "CUSTOM".asInstanceOf[ConferenceProviderType]
 
-  @inline def values = js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
+  @inline def values: js.Array[ConferenceProviderType] = js.Array(CHIME, BLUEJEANS, FUZE, GOOGLE_HANGOUTS, POLYCOM, RINGCENTRAL, SKYPE_FOR_BUSINESS, WEBEX, ZOOM, CUSTOM)
 }
 
 @js.native
@@ -75,7 +74,7 @@ object ConnectionStatus {
   val ONLINE = "ONLINE".asInstanceOf[ConnectionStatus]
   val OFFLINE = "OFFLINE".asInstanceOf[ConnectionStatus]
 
-  @inline def values = js.Array(ONLINE, OFFLINE)
+  @inline def values: js.Array[ConnectionStatus] = js.Array(ONLINE, OFFLINE)
 }
 
 @js.native
@@ -84,7 +83,7 @@ object DeviceEventType {
   val CONNECTION_STATUS = "CONNECTION_STATUS".asInstanceOf[DeviceEventType]
   val DEVICE_STATUS = "DEVICE_STATUS".asInstanceOf[DeviceEventType]
 
-  @inline def values = js.Array(CONNECTION_STATUS, DEVICE_STATUS)
+  @inline def values: js.Array[DeviceEventType] = js.Array(CONNECTION_STATUS, DEVICE_STATUS)
 }
 
 @js.native
@@ -96,7 +95,7 @@ object DeviceStatus {
   val DEREGISTERED = "DEREGISTERED".asInstanceOf[DeviceStatus]
   val FAILED = "FAILED".asInstanceOf[DeviceStatus]
 
-  @inline def values = js.Array(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED)
+  @inline def values: js.Array[DeviceStatus] = js.Array(READY, PENDING, WAS_OFFLINE, DEREGISTERED, FAILED)
 }
 
 @js.native
@@ -120,7 +119,25 @@ object DeviceStatusDetailCode {
   val PASSWORD_MANAGER_ACCESS_DENIED = "PASSWORD_MANAGER_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
   val CERTIFICATE_AUTHORITY_ACCESS_DENIED = "CERTIFICATE_AUTHORITY_ACCESS_DENIED".asInstanceOf[DeviceStatusDetailCode]
 
-  @inline def values = js.Array(DEVICE_SOFTWARE_UPDATE_NEEDED, DEVICE_WAS_OFFLINE, CREDENTIALS_ACCESS_FAILURE, TLS_VERSION_MISMATCH, ASSOCIATION_REJECTION, AUTHENTICATION_FAILURE, DHCP_FAILURE, INTERNET_UNAVAILABLE, DNS_FAILURE, UNKNOWN_FAILURE, CERTIFICATE_ISSUING_LIMIT_EXCEEDED, INVALID_CERTIFICATE_AUTHORITY, NETWORK_PROFILE_NOT_FOUND, INVALID_PASSWORD_STATE, PASSWORD_NOT_FOUND, PASSWORD_MANAGER_ACCESS_DENIED, CERTIFICATE_AUTHORITY_ACCESS_DENIED)
+  @inline def values: js.Array[DeviceStatusDetailCode] = js.Array(
+    DEVICE_SOFTWARE_UPDATE_NEEDED,
+    DEVICE_WAS_OFFLINE,
+    CREDENTIALS_ACCESS_FAILURE,
+    TLS_VERSION_MISMATCH,
+    ASSOCIATION_REJECTION,
+    AUTHENTICATION_FAILURE,
+    DHCP_FAILURE,
+    INTERNET_UNAVAILABLE,
+    DNS_FAILURE,
+    UNKNOWN_FAILURE,
+    CERTIFICATE_ISSUING_LIMIT_EXCEEDED,
+    INVALID_CERTIFICATE_AUTHORITY,
+    NETWORK_PROFILE_NOT_FOUND,
+    INVALID_PASSWORD_STATE,
+    PASSWORD_NOT_FOUND,
+    PASSWORD_MANAGER_ACCESS_DENIED,
+    CERTIFICATE_AUTHORITY_ACCESS_DENIED
+  )
 }
 
 @js.native
@@ -128,7 +145,7 @@ sealed trait DeviceUsageType extends js.Any
 object DeviceUsageType {
   val VOICE = "VOICE".asInstanceOf[DeviceUsageType]
 
-  @inline def values = js.Array(VOICE)
+  @inline def values: js.Array[DeviceUsageType] = js.Array(VOICE)
 }
 
 @js.native
@@ -137,7 +154,7 @@ object DistanceUnit {
   val METRIC = "METRIC".asInstanceOf[DistanceUnit]
   val IMPERIAL = "IMPERIAL".asInstanceOf[DistanceUnit]
 
-  @inline def values = js.Array(METRIC, IMPERIAL)
+  @inline def values: js.Array[DistanceUnit] = js.Array(METRIC, IMPERIAL)
 }
 
 @js.native
@@ -146,7 +163,7 @@ object EnablementType {
   val ENABLED = "ENABLED".asInstanceOf[EnablementType]
   val PENDING = "PENDING".asInstanceOf[EnablementType]
 
-  @inline def values = js.Array(ENABLED, PENDING)
+  @inline def values: js.Array[EnablementType] = js.Array(ENABLED, PENDING)
 }
 
 @js.native
@@ -155,7 +172,7 @@ object EnablementTypeFilter {
   val ENABLED = "ENABLED".asInstanceOf[EnablementTypeFilter]
   val PENDING = "PENDING".asInstanceOf[EnablementTypeFilter]
 
-  @inline def values = js.Array(ENABLED, PENDING)
+  @inline def values: js.Array[EnablementTypeFilter] = js.Array(ENABLED, PENDING)
 }
 
 @js.native
@@ -166,7 +183,7 @@ object EndOfMeetingReminderType {
   val CHIME = "CHIME".asInstanceOf[EndOfMeetingReminderType]
   val KNOCK = "KNOCK".asInstanceOf[EndOfMeetingReminderType]
 
-  @inline def values = js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK)
+  @inline def values: js.Array[EndOfMeetingReminderType] = js.Array(ANNOUNCEMENT_TIME_CHECK, ANNOUNCEMENT_VARIABLE_TIME_LEFT, CHIME, KNOCK)
 }
 
 @js.native
@@ -178,7 +195,7 @@ object EnrollmentStatus {
   val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[EnrollmentStatus]
   val DEREGISTERING = "DEREGISTERING".asInstanceOf[EnrollmentStatus]
 
-  @inline def values = js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING)
+  @inline def values: js.Array[EnrollmentStatus] = js.Array(INITIALIZED, PENDING, REGISTERED, DISASSOCIATING, DEREGISTERING)
 }
 
 @js.native
@@ -193,7 +210,7 @@ object Feature {
   val SETTINGS = "SETTINGS".asInstanceOf[Feature]
   val ALL = "ALL".asInstanceOf[Feature]
 
-  @inline def values = js.Array(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL)
+  @inline def values: js.Array[Feature] = js.Array(BLUETOOTH, VOLUME, NOTIFICATIONS, LISTS, SKILLS, NETWORK_PROFILE, SETTINGS, ALL)
 }
 
 @js.native
@@ -201,7 +218,7 @@ sealed trait Locale extends js.Any
 object Locale {
   val `en-US` = "en-US".asInstanceOf[Locale]
 
-  @inline def values = js.Array(`en-US`)
+  @inline def values: js.Array[Locale] = js.Array(`en-US`)
 }
 
 @js.native
@@ -209,7 +226,7 @@ sealed trait NetworkEapMethod extends js.Any
 object NetworkEapMethod {
   val EAP_TLS = "EAP_TLS".asInstanceOf[NetworkEapMethod]
 
-  @inline def values = js.Array(EAP_TLS)
+  @inline def values: js.Array[NetworkEapMethod] = js.Array(EAP_TLS)
 }
 
 @js.native
@@ -221,7 +238,7 @@ object NetworkSecurityType {
   val WPA2_PSK = "WPA2_PSK".asInstanceOf[NetworkSecurityType]
   val WPA2_ENTERPRISE = "WPA2_ENTERPRISE".asInstanceOf[NetworkSecurityType]
 
-  @inline def values = js.Array(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE)
+  @inline def values: js.Array[NetworkSecurityType] = js.Array(OPEN, WEP, WPA_PSK, WPA2_PSK, WPA2_ENTERPRISE)
 }
 
 @js.native
@@ -231,7 +248,7 @@ object PhoneNumberType {
   val WORK = "WORK".asInstanceOf[PhoneNumberType]
   val HOME = "HOME".asInstanceOf[PhoneNumberType]
 
-  @inline def values = js.Array(MOBILE, WORK, HOME)
+  @inline def values: js.Array[PhoneNumberType] = js.Array(MOBILE, WORK, HOME)
 }
 
 @js.native
@@ -241,7 +258,7 @@ object RequirePin {
   val NO = "NO".asInstanceOf[RequirePin]
   val OPTIONAL = "OPTIONAL".asInstanceOf[RequirePin]
 
-  @inline def values = js.Array(YES, NO, OPTIONAL)
+  @inline def values: js.Array[RequirePin] = js.Array(YES, NO, OPTIONAL)
 }
 
 @js.native
@@ -249,7 +266,7 @@ sealed trait SipType extends js.Any
 object SipType {
   val WORK = "WORK".asInstanceOf[SipType]
 
-  @inline def values = js.Array(WORK)
+  @inline def values: js.Array[SipType] = js.Array(WORK)
 }
 
 @js.native
@@ -258,7 +275,7 @@ object SkillType {
   val PUBLIC = "PUBLIC".asInstanceOf[SkillType]
   val PRIVATE = "PRIVATE".asInstanceOf[SkillType]
 
-  @inline def values = js.Array(PUBLIC, PRIVATE)
+  @inline def values: js.Array[SkillType] = js.Array(PUBLIC, PRIVATE)
 }
 
 @js.native
@@ -268,7 +285,7 @@ object SkillTypeFilter {
   val PRIVATE = "PRIVATE".asInstanceOf[SkillTypeFilter]
   val ALL = "ALL".asInstanceOf[SkillTypeFilter]
 
-  @inline def values = js.Array(PUBLIC, PRIVATE, ALL)
+  @inline def values: js.Array[SkillTypeFilter] = js.Array(PUBLIC, PRIVATE, ALL)
 }
 
 @js.native
@@ -277,7 +294,7 @@ object SortValue {
   val ASC = "ASC".asInstanceOf[SortValue]
   val DESC = "DESC".asInstanceOf[SortValue]
 
-  @inline def values = js.Array(ASC, DESC)
+  @inline def values: js.Array[SortValue] = js.Array(ASC, DESC)
 }
 
 @js.native
@@ -286,7 +303,7 @@ object TemperatureUnit {
   val FAHRENHEIT = "FAHRENHEIT".asInstanceOf[TemperatureUnit]
   val CELSIUS = "CELSIUS".asInstanceOf[TemperatureUnit]
 
-  @inline def values = js.Array(FAHRENHEIT, CELSIUS)
+  @inline def values: js.Array[TemperatureUnit] = js.Array(FAHRENHEIT, CELSIUS)
 }
 
 @js.native
@@ -297,6 +314,5 @@ object WakeWord {
   val ECHO = "ECHO".asInstanceOf[WakeWord]
   val COMPUTER = "COMPUTER".asInstanceOf[WakeWord]
 
-  @inline def values = js.Array(ALEXA, AMAZON, ECHO, COMPUTER)
+  @inline def values: js.Array[WakeWord] = js.Array(ALEXA, AMAZON, ECHO, COMPUTER)
 }
-

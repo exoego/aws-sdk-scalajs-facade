@@ -1,3 +1,3 @@
 package facade.amazonaws.services.elastictranscoder
 
-import scalajs._
+import scalajs.js

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.mgn
 
-import scalajs._
+import scalajs.js
 
 type ChangeServerLifeCycleStateSourceServerLifecycleState = "READY_FOR_TEST" | "READY_FOR_CUTOVER" | "CUTOVER"
 object ChangeServerLifeCycleStateSourceServerLifecycleState {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.inspector
 
-import scalajs._
+import scalajs.js
 
 type AgentHealth = "HEALTHY" | "UNHEALTHY" | "UNKNOWN"
 object AgentHealth {

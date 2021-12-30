@@ -1,6 +1,6 @@
 package facade.amazonaws.services.appmesh
 
-import scalajs._
+import scalajs.js
 
 type DurationUnit = "s" | "ms"
 object DurationUnit {

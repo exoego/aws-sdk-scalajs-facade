@@ -1,6 +1,6 @@
 package facade.amazonaws.services.health
 
-import scalajs._
+import scalajs.js
 
 type entityStatusCode = "IMPAIRED" | "UNIMPAIRED" | "UNKNOWN"
 object entityStatusCode {

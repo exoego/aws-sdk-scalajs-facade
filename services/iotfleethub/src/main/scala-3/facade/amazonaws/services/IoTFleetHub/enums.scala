@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iotfleethub
 
-import scalajs._
+import scalajs.js
 
 type ApplicationState = "CREATING" | "DELETING" | "ACTIVE" | "CREATE_FAILED" | "DELETE_FAILED"
 object ApplicationState {

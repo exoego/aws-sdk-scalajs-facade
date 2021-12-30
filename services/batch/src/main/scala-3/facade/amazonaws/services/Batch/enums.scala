@@ -1,6 +1,6 @@
 package facade.amazonaws.services.batch
 
-import scalajs._
+import scalajs.js
 
 type ArrayJobDependency = "N_TO_N" | "SEQUENTIAL"
 object ArrayJobDependency {

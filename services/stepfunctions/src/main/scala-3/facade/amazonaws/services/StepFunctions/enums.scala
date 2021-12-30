@@ -1,6 +1,6 @@
 package facade.amazonaws.services.stepfunctions
 
-import scalajs._
+import scalajs.js
 
 type ExecutionStatus = "RUNNING" | "SUCCEEDED" | "FAILED" | "TIMED_OUT" | "ABORTED"
 object ExecutionStatus {

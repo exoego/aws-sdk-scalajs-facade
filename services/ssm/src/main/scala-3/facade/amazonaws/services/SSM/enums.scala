@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ssm
 
-import scalajs._
+import scalajs.js
 
 type AssociationComplianceSeverity = "CRITICAL" | "HIGH" | "MEDIUM" | "LOW" | "UNSPECIFIED"
 object AssociationComplianceSeverity {

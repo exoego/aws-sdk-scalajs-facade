@@ -1,6 +1,6 @@
 package facade.amazonaws.services.eks
 
-import scalajs._
+import scalajs.js
 
 type AMITypes = "AL2_x86_64" | "AL2_x86_64_GPU" | "AL2_ARM_64"
 object AMITypes {

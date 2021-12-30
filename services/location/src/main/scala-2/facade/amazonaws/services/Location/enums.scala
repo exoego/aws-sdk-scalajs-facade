@@ -1,7 +1,6 @@
 package facade.amazonaws.services.location
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait BatchItemErrorCode extends js.Any
@@ -13,7 +12,7 @@ object BatchItemErrorCode {
   val ThrottlingError = "ThrottlingError".asInstanceOf[BatchItemErrorCode]
   val ValidationError = "ValidationError".asInstanceOf[BatchItemErrorCode]
 
-  @inline def values = js.Array(AccessDeniedError, ConflictError, InternalServerError, ResourceNotFoundError, ThrottlingError, ValidationError)
+  @inline def values: js.Array[BatchItemErrorCode] = js.Array(AccessDeniedError, ConflictError, InternalServerError, ResourceNotFoundError, ThrottlingError, ValidationError)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object IntendedUse {
   val SingleUse = "SingleUse".asInstanceOf[IntendedUse]
   val Storage = "Storage".asInstanceOf[IntendedUse]
 
-  @inline def values = js.Array(SingleUse, Storage)
+  @inline def values: js.Array[IntendedUse] = js.Array(SingleUse, Storage)
 }
 
 @js.native
@@ -32,6 +31,5 @@ object PricingPlan {
   val MobileAssetTracking = "MobileAssetTracking".asInstanceOf[PricingPlan]
   val MobileAssetManagement = "MobileAssetManagement".asInstanceOf[PricingPlan]
 
-  @inline def values = js.Array(RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
+  @inline def values: js.Array[PricingPlan] = js.Array(RequestBasedUsage, MobileAssetTracking, MobileAssetManagement)
 }
-

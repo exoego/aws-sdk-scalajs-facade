@@ -1,14 +1,13 @@
 package facade.amazonaws.services.kendra
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AdditionalResultAttributeValueType extends js.Any
 object AdditionalResultAttributeValueType {
   val TEXT_WITH_HIGHLIGHTS_VALUE = "TEXT_WITH_HIGHLIGHTS_VALUE".asInstanceOf[AdditionalResultAttributeValueType]
 
-  @inline def values = js.Array(TEXT_WITH_HIGHLIGHTS_VALUE)
+  @inline def values: js.Array[AdditionalResultAttributeValueType] = js.Array(TEXT_WITH_HIGHLIGHTS_VALUE)
 }
 
 @js.native
@@ -26,7 +25,7 @@ object ConfluenceAttachmentFieldName {
   val URL = "URL".asInstanceOf[ConfluenceAttachmentFieldName]
   val VERSION = "VERSION".asInstanceOf[ConfluenceAttachmentFieldName]
 
-  @inline def values = js.Array(AUTHOR, CONTENT_TYPE, CREATED_DATE, DISPLAY_URL, FILE_SIZE, ITEM_TYPE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
+  @inline def values: js.Array[ConfluenceAttachmentFieldName] = js.Array(AUTHOR, CONTENT_TYPE, CREATED_DATE, DISPLAY_URL, FILE_SIZE, ITEM_TYPE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
 }
 
 @js.native
@@ -42,7 +41,7 @@ object ConfluenceBlogFieldName {
   val URL = "URL".asInstanceOf[ConfluenceBlogFieldName]
   val VERSION = "VERSION".asInstanceOf[ConfluenceBlogFieldName]
 
-  @inline def values = js.Array(AUTHOR, DISPLAY_URL, ITEM_TYPE, LABELS, PUBLISH_DATE, SPACE_KEY, SPACE_NAME, URL, VERSION)
+  @inline def values: js.Array[ConfluenceBlogFieldName] = js.Array(AUTHOR, DISPLAY_URL, ITEM_TYPE, LABELS, PUBLISH_DATE, SPACE_KEY, SPACE_NAME, URL, VERSION)
 }
 
 @js.native
@@ -61,7 +60,7 @@ object ConfluencePageFieldName {
   val URL = "URL".asInstanceOf[ConfluencePageFieldName]
   val VERSION = "VERSION".asInstanceOf[ConfluencePageFieldName]
 
-  @inline def values = js.Array(AUTHOR, CONTENT_STATUS, CREATED_DATE, DISPLAY_URL, ITEM_TYPE, LABELS, MODIFIED_DATE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
+  @inline def values: js.Array[ConfluencePageFieldName] = js.Array(AUTHOR, CONTENT_STATUS, CREATED_DATE, DISPLAY_URL, ITEM_TYPE, LABELS, MODIFIED_DATE, PARENT_ID, SPACE_KEY, SPACE_NAME, URL, VERSION)
 }
 
 @js.native
@@ -72,7 +71,7 @@ object ConfluenceSpaceFieldName {
   val SPACE_KEY = "SPACE_KEY".asInstanceOf[ConfluenceSpaceFieldName]
   val URL = "URL".asInstanceOf[ConfluenceSpaceFieldName]
 
-  @inline def values = js.Array(DISPLAY_URL, ITEM_TYPE, SPACE_KEY, URL)
+  @inline def values: js.Array[ConfluenceSpaceFieldName] = js.Array(DISPLAY_URL, ITEM_TYPE, SPACE_KEY, URL)
 }
 
 @js.native
@@ -81,7 +80,7 @@ object ConfluenceVersion {
   val CLOUD = "CLOUD".asInstanceOf[ConfluenceVersion]
   val SERVER = "SERVER".asInstanceOf[ConfluenceVersion]
 
-  @inline def values = js.Array(CLOUD, SERVER)
+  @inline def values: js.Array[ConfluenceVersion] = js.Array(CLOUD, SERVER)
 }
 
 @js.native
@@ -93,7 +92,7 @@ object ContentType {
   val PLAIN_TEXT = "PLAIN_TEXT".asInstanceOf[ContentType]
   val PPT = "PPT".asInstanceOf[ContentType]
 
-  @inline def values = js.Array(PDF, HTML, MS_WORD, PLAIN_TEXT, PPT)
+  @inline def values: js.Array[ContentType] = js.Array(PDF, HTML, MS_WORD, PLAIN_TEXT, PPT)
 }
 
 @js.native
@@ -105,7 +104,7 @@ object DataSourceStatus {
   val UPDATING = "UPDATING".asInstanceOf[DataSourceStatus]
   val ACTIVE = "ACTIVE".asInstanceOf[DataSourceStatus]
 
-  @inline def values = js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE)
+  @inline def values: js.Array[DataSourceStatus] = js.Array(CREATING, DELETING, FAILED, UPDATING, ACTIVE)
 }
 
 @js.native
@@ -119,7 +118,7 @@ object DataSourceSyncJobStatus {
   val ABORTED = "ABORTED".asInstanceOf[DataSourceSyncJobStatus]
   val SYNCING_INDEXING = "SYNCING_INDEXING".asInstanceOf[DataSourceSyncJobStatus]
 
-  @inline def values = js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING)
+  @inline def values: js.Array[DataSourceSyncJobStatus] = js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING)
 }
 
 @js.native
@@ -135,7 +134,7 @@ object DataSourceType {
   val CONFLUENCE = "CONFLUENCE".asInstanceOf[DataSourceType]
   val GOOGLEDRIVE = "GOOGLEDRIVE".asInstanceOf[DataSourceType]
 
-  @inline def values = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE)
+  @inline def values: js.Array[DataSourceType] = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE)
 }
 
 @js.native
@@ -146,7 +145,7 @@ object DatabaseEngineType {
   val RDS_MYSQL = "RDS_MYSQL".asInstanceOf[DatabaseEngineType]
   val RDS_POSTGRESQL = "RDS_POSTGRESQL".asInstanceOf[DatabaseEngineType]
 
-  @inline def values = js.Array(RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL)
+  @inline def values: js.Array[DatabaseEngineType] = js.Array(RDS_AURORA_MYSQL, RDS_AURORA_POSTGRESQL, RDS_MYSQL, RDS_POSTGRESQL)
 }
 
 @js.native
@@ -157,7 +156,7 @@ object DocumentAttributeValueType {
   val LONG_VALUE = "LONG_VALUE".asInstanceOf[DocumentAttributeValueType]
   val DATE_VALUE = "DATE_VALUE".asInstanceOf[DocumentAttributeValueType]
 
-  @inline def values = js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE)
+  @inline def values: js.Array[DocumentAttributeValueType] = js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE)
 }
 
 @js.native
@@ -166,7 +165,7 @@ object ErrorCode {
   val InternalError = "InternalError".asInstanceOf[ErrorCode]
   val InvalidRequest = "InvalidRequest".asInstanceOf[ErrorCode]
 
-  @inline def values = js.Array(InternalError, InvalidRequest)
+  @inline def values: js.Array[ErrorCode] = js.Array(InternalError, InvalidRequest)
 }
 
 @js.native
@@ -176,7 +175,7 @@ object FaqFileFormat {
   val CSV_WITH_HEADER = "CSV_WITH_HEADER".asInstanceOf[FaqFileFormat]
   val JSON = "JSON".asInstanceOf[FaqFileFormat]
 
-  @inline def values = js.Array(CSV, CSV_WITH_HEADER, JSON)
+  @inline def values: js.Array[FaqFileFormat] = js.Array(CSV, CSV_WITH_HEADER, JSON)
 }
 
 @js.native
@@ -188,7 +187,7 @@ object FaqStatus {
   val DELETING = "DELETING".asInstanceOf[FaqStatus]
   val FAILED = "FAILED".asInstanceOf[FaqStatus]
 
-  @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
+  @inline def values: js.Array[FaqStatus] = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
 }
 
 @js.native
@@ -197,7 +196,7 @@ object HighlightType {
   val STANDARD = "STANDARD".asInstanceOf[HighlightType]
   val THESAURUS_SYNONYM = "THESAURUS_SYNONYM".asInstanceOf[HighlightType]
 
-  @inline def values = js.Array(STANDARD, THESAURUS_SYNONYM)
+  @inline def values: js.Array[HighlightType] = js.Array(STANDARD, THESAURUS_SYNONYM)
 }
 
 @js.native
@@ -206,7 +205,7 @@ object IndexEdition {
   val DEVELOPER_EDITION = "DEVELOPER_EDITION".asInstanceOf[IndexEdition]
   val ENTERPRISE_EDITION = "ENTERPRISE_EDITION".asInstanceOf[IndexEdition]
 
-  @inline def values = js.Array(DEVELOPER_EDITION, ENTERPRISE_EDITION)
+  @inline def values: js.Array[IndexEdition] = js.Array(DEVELOPER_EDITION, ENTERPRISE_EDITION)
 }
 
 @js.native
@@ -219,7 +218,7 @@ object IndexStatus {
   val UPDATING = "UPDATING".asInstanceOf[IndexStatus]
   val SYSTEM_UPDATING = "SYSTEM_UPDATING".asInstanceOf[IndexStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING)
+  @inline def values: js.Array[IndexStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING)
 }
 
 @js.native
@@ -228,7 +227,7 @@ object KeyLocation {
   val URL = "URL".asInstanceOf[KeyLocation]
   val SECRET_MANAGER = "SECRET_MANAGER".asInstanceOf[KeyLocation]
 
-  @inline def values = js.Array(URL, SECRET_MANAGER)
+  @inline def values: js.Array[KeyLocation] = js.Array(URL, SECRET_MANAGER)
 }
 
 @js.native
@@ -237,7 +236,7 @@ object Order {
   val ASCENDING = "ASCENDING".asInstanceOf[Order]
   val DESCENDING = "DESCENDING".asInstanceOf[Order]
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values: js.Array[Order] = js.Array(ASCENDING, DESCENDING)
 }
 
 @js.native
@@ -246,7 +245,7 @@ object PrincipalType {
   val USER = "USER".asInstanceOf[PrincipalType]
   val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
-  @inline def values = js.Array(USER, GROUP)
+  @inline def values: js.Array[PrincipalType] = js.Array(USER, GROUP)
 }
 
 @js.native
@@ -255,7 +254,7 @@ object QueryIdentifiersEnclosingOption {
   val DOUBLE_QUOTES = "DOUBLE_QUOTES".asInstanceOf[QueryIdentifiersEnclosingOption]
   val NONE = "NONE".asInstanceOf[QueryIdentifiersEnclosingOption]
 
-  @inline def values = js.Array(DOUBLE_QUOTES, NONE)
+  @inline def values: js.Array[QueryIdentifiersEnclosingOption] = js.Array(DOUBLE_QUOTES, NONE)
 }
 
 @js.native
@@ -265,7 +264,7 @@ object QueryResultType {
   val QUESTION_ANSWER = "QUESTION_ANSWER".asInstanceOf[QueryResultType]
   val ANSWER = "ANSWER".asInstanceOf[QueryResultType]
 
-  @inline def values = js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER)
+  @inline def values: js.Array[QueryResultType] = js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER)
 }
 
 @js.native
@@ -274,7 +273,7 @@ object ReadAccessType {
   val ALLOW = "ALLOW".asInstanceOf[ReadAccessType]
   val DENY = "DENY".asInstanceOf[ReadAccessType]
 
-  @inline def values = js.Array(ALLOW, DENY)
+  @inline def values: js.Array[ReadAccessType] = js.Array(ALLOW, DENY)
 }
 
 @js.native
@@ -283,7 +282,7 @@ object RelevanceType {
   val RELEVANT = "RELEVANT".asInstanceOf[RelevanceType]
   val NOT_RELEVANT = "NOT_RELEVANT".asInstanceOf[RelevanceType]
 
-  @inline def values = js.Array(RELEVANT, NOT_RELEVANT)
+  @inline def values: js.Array[RelevanceType] = js.Array(RELEVANT, NOT_RELEVANT)
 }
 
 @js.native
@@ -292,7 +291,7 @@ object SalesforceChatterFeedIncludeFilterType {
   val ACTIVE_USER = "ACTIVE_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
   val STANDARD_USER = "STANDARD_USER".asInstanceOf[SalesforceChatterFeedIncludeFilterType]
 
-  @inline def values = js.Array(ACTIVE_USER, STANDARD_USER)
+  @inline def values: js.Array[SalesforceChatterFeedIncludeFilterType] = js.Array(ACTIVE_USER, STANDARD_USER)
 }
 
 @js.native
@@ -302,7 +301,7 @@ object SalesforceKnowledgeArticleState {
   val PUBLISHED = "PUBLISHED".asInstanceOf[SalesforceKnowledgeArticleState]
   val ARCHIVED = "ARCHIVED".asInstanceOf[SalesforceKnowledgeArticleState]
 
-  @inline def values = js.Array(DRAFT, PUBLISHED, ARCHIVED)
+  @inline def values: js.Array[SalesforceKnowledgeArticleState] = js.Array(DRAFT, PUBLISHED, ARCHIVED)
 }
 
 @js.native
@@ -326,7 +325,7 @@ object SalesforceStandardObjectName {
   val TASK = "TASK".asInstanceOf[SalesforceStandardObjectName]
   val USER = "USER".asInstanceOf[SalesforceStandardObjectName]
 
-  @inline def values = js.Array(ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER)
+  @inline def values: js.Array[SalesforceStandardObjectName] = js.Array(ACCOUNT, CAMPAIGN, CASE, CONTACT, CONTRACT, DOCUMENT, GROUP, IDEA, LEAD, OPPORTUNITY, PARTNER, PRICEBOOK, PRODUCT, PROFILE, SOLUTION, TASK, USER)
 }
 
 /** Enumeration for query score confidence.
@@ -339,7 +338,7 @@ object ScoreConfidence {
   val MEDIUM = "MEDIUM".asInstanceOf[ScoreConfidence]
   val LOW = "LOW".asInstanceOf[ScoreConfidence]
 
-  @inline def values = js.Array(VERY_HIGH, HIGH, MEDIUM, LOW)
+  @inline def values: js.Array[ScoreConfidence] = js.Array(VERY_HIGH, HIGH, MEDIUM, LOW)
 }
 
 @js.native
@@ -348,7 +347,7 @@ object ServiceNowAuthenticationType {
   val HTTP_BASIC = "HTTP_BASIC".asInstanceOf[ServiceNowAuthenticationType]
   val OAUTH2 = "OAUTH2".asInstanceOf[ServiceNowAuthenticationType]
 
-  @inline def values = js.Array(HTTP_BASIC, OAUTH2)
+  @inline def values: js.Array[ServiceNowAuthenticationType] = js.Array(HTTP_BASIC, OAUTH2)
 }
 
 @js.native
@@ -357,7 +356,7 @@ object ServiceNowBuildVersionType {
   val LONDON = "LONDON".asInstanceOf[ServiceNowBuildVersionType]
   val OTHERS = "OTHERS".asInstanceOf[ServiceNowBuildVersionType]
 
-  @inline def values = js.Array(LONDON, OTHERS)
+  @inline def values: js.Array[ServiceNowBuildVersionType] = js.Array(LONDON, OTHERS)
 }
 
 @js.native
@@ -365,7 +364,7 @@ sealed trait SharePointVersion extends js.Any
 object SharePointVersion {
   val SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE".asInstanceOf[SharePointVersion]
 
-  @inline def values = js.Array(SHAREPOINT_ONLINE)
+  @inline def values: js.Array[SharePointVersion] = js.Array(SHAREPOINT_ONLINE)
 }
 
 @js.native
@@ -374,7 +373,7 @@ object SortOrder {
   val DESC = "DESC".asInstanceOf[SortOrder]
   val ASC = "ASC".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(DESC, ASC)
+  @inline def values: js.Array[SortOrder] = js.Array(DESC, ASC)
 }
 
 @js.native
@@ -387,7 +386,7 @@ object ThesaurusStatus {
   val ACTIVE_BUT_UPDATE_FAILED = "ACTIVE_BUT_UPDATE_FAILED".asInstanceOf[ThesaurusStatus]
   val FAILED = "FAILED".asInstanceOf[ThesaurusStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, UPDATING, ACTIVE_BUT_UPDATE_FAILED, FAILED)
+  @inline def values: js.Array[ThesaurusStatus] = js.Array(CREATING, ACTIVE, DELETING, UPDATING, ACTIVE_BUT_UPDATE_FAILED, FAILED)
 }
 
 @js.native
@@ -396,6 +395,5 @@ object UserContextPolicy {
   val ATTRIBUTE_FILTER = "ATTRIBUTE_FILTER".asInstanceOf[UserContextPolicy]
   val USER_TOKEN = "USER_TOKEN".asInstanceOf[UserContextPolicy]
 
-  @inline def values = js.Array(ATTRIBUTE_FILTER, USER_TOKEN)
+  @inline def values: js.Array[UserContextPolicy] = js.Array(ATTRIBUTE_FILTER, USER_TOKEN)
 }
-

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.dynamodbstreams
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait KeyType extends js.Any
@@ -9,7 +8,7 @@ object KeyType {
   val HASH = "HASH".asInstanceOf[KeyType]
   val RANGE = "RANGE".asInstanceOf[KeyType]
 
-  @inline def values = js.Array(HASH, RANGE)
+  @inline def values: js.Array[KeyType] = js.Array(HASH, RANGE)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object OperationType {
   val MODIFY = "MODIFY".asInstanceOf[OperationType]
   val REMOVE = "REMOVE".asInstanceOf[OperationType]
 
-  @inline def values = js.Array(INSERT, MODIFY, REMOVE)
+  @inline def values: js.Array[OperationType] = js.Array(INSERT, MODIFY, REMOVE)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object ShardIteratorType {
   val AT_SEQUENCE_NUMBER = "AT_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
   val AFTER_SEQUENCE_NUMBER = "AFTER_SEQUENCE_NUMBER".asInstanceOf[ShardIteratorType]
 
-  @inline def values = js.Array(TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER)
+  @inline def values: js.Array[ShardIteratorType] = js.Array(TRIM_HORIZON, LATEST, AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER)
 }
 
 @js.native
@@ -41,7 +40,7 @@ object StreamStatus {
   val DISABLING = "DISABLING".asInstanceOf[StreamStatus]
   val DISABLED = "DISABLED".asInstanceOf[StreamStatus]
 
-  @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
+  @inline def values: js.Array[StreamStatus] = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
 }
 
 @js.native
@@ -52,6 +51,5 @@ object StreamViewType {
   val NEW_AND_OLD_IMAGES = "NEW_AND_OLD_IMAGES".asInstanceOf[StreamViewType]
   val KEYS_ONLY = "KEYS_ONLY".asInstanceOf[StreamViewType]
 
-  @inline def values = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
+  @inline def values: js.Array[StreamViewType] = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
 }
-

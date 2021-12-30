@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ssoadmin
 
-import scalajs._
+import scalajs.js
 
 type InstanceAccessControlAttributeConfigurationStatus = "ENABLED" | "CREATION_IN_PROGRESS" | "CREATION_FAILED"
 object InstanceAccessControlAttributeConfigurationStatus {

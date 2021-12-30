@@ -1,7 +1,6 @@
 package facade.amazonaws.services.cloudwatch
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AlarmType extends js.Any
@@ -9,7 +8,7 @@ object AlarmType {
   val CompositeAlarm = "CompositeAlarm".asInstanceOf[AlarmType]
   val MetricAlarm = "MetricAlarm".asInstanceOf[AlarmType]
 
-  @inline def values = js.Array(CompositeAlarm, MetricAlarm)
+  @inline def values: js.Array[AlarmType] = js.Array(CompositeAlarm, MetricAlarm)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object AnomalyDetectorStateValue {
   val TRAINED_INSUFFICIENT_DATA = "TRAINED_INSUFFICIENT_DATA".asInstanceOf[AnomalyDetectorStateValue]
   val TRAINED = "TRAINED".asInstanceOf[AnomalyDetectorStateValue]
 
-  @inline def values = js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED)
+  @inline def values: js.Array[AnomalyDetectorStateValue] = js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED)
 }
 
 @js.native
@@ -33,7 +32,15 @@ object ComparisonOperator {
   val LessThanLowerThreshold = "LessThanLowerThreshold".asInstanceOf[ComparisonOperator]
   val GreaterThanUpperThreshold = "GreaterThanUpperThreshold".asInstanceOf[ComparisonOperator]
 
-  @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold, LessThanLowerOrGreaterThanUpperThreshold, LessThanLowerThreshold, GreaterThanUpperThreshold)
+  @inline def values: js.Array[ComparisonOperator] = js.Array(
+    GreaterThanOrEqualToThreshold,
+    GreaterThanThreshold,
+    LessThanThreshold,
+    LessThanOrEqualToThreshold,
+    LessThanLowerOrGreaterThanUpperThreshold,
+    LessThanLowerThreshold,
+    GreaterThanUpperThreshold
+  )
 }
 
 @js.native
@@ -43,7 +50,7 @@ object HistoryItemType {
   val StateUpdate = "StateUpdate".asInstanceOf[HistoryItemType]
   val Action = "Action".asInstanceOf[HistoryItemType]
 
-  @inline def values = js.Array(ConfigurationUpdate, StateUpdate, Action)
+  @inline def values: js.Array[HistoryItemType] = js.Array(ConfigurationUpdate, StateUpdate, Action)
 }
 
 @js.native
@@ -52,7 +59,7 @@ object MetricStreamOutputFormat {
   val json = "json".asInstanceOf[MetricStreamOutputFormat]
   val `opentelemetry0.7` = "opentelemetry0.7".asInstanceOf[MetricStreamOutputFormat]
 
-  @inline def values = js.Array(json, `opentelemetry0.7`)
+  @inline def values: js.Array[MetricStreamOutputFormat] = js.Array(json, `opentelemetry0.7`)
 }
 
 @js.native
@@ -60,7 +67,7 @@ sealed trait RecentlyActive extends js.Any
 object RecentlyActive {
   val PT3H = "PT3H".asInstanceOf[RecentlyActive]
 
-  @inline def values = js.Array(PT3H)
+  @inline def values: js.Array[RecentlyActive] = js.Array(PT3H)
 }
 
 @js.native
@@ -69,7 +76,7 @@ object ScanBy {
   val TimestampDescending = "TimestampDescending".asInstanceOf[ScanBy]
   val TimestampAscending = "TimestampAscending".asInstanceOf[ScanBy]
 
-  @inline def values = js.Array(TimestampDescending, TimestampAscending)
+  @inline def values: js.Array[ScanBy] = js.Array(TimestampDescending, TimestampAscending)
 }
 
 @js.native
@@ -103,7 +110,35 @@ object StandardUnit {
   val `Count/Second` = "Count/Second".asInstanceOf[StandardUnit]
   val None = "None".asInstanceOf[StandardUnit]
 
-  @inline def values = js.Array(Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, `Bytes/Second`, `Kilobytes/Second`, `Megabytes/Second`, `Gigabytes/Second`, `Terabytes/Second`, `Bits/Second`, `Kilobits/Second`, `Megabits/Second`, `Gigabits/Second`, `Terabits/Second`, `Count/Second`, None)
+  @inline def values: js.Array[StandardUnit] = js.Array(
+    Seconds,
+    Microseconds,
+    Milliseconds,
+    Bytes,
+    Kilobytes,
+    Megabytes,
+    Gigabytes,
+    Terabytes,
+    Bits,
+    Kilobits,
+    Megabits,
+    Gigabits,
+    Terabits,
+    Percent,
+    Count,
+    `Bytes/Second`,
+    `Kilobytes/Second`,
+    `Megabytes/Second`,
+    `Gigabytes/Second`,
+    `Terabytes/Second`,
+    `Bits/Second`,
+    `Kilobits/Second`,
+    `Megabits/Second`,
+    `Gigabits/Second`,
+    `Terabits/Second`,
+    `Count/Second`,
+    None
+  )
 }
 
 @js.native
@@ -113,7 +148,7 @@ object StateValue {
   val ALARM = "ALARM".asInstanceOf[StateValue]
   val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[StateValue]
 
-  @inline def values = js.Array(OK, ALARM, INSUFFICIENT_DATA)
+  @inline def values: js.Array[StateValue] = js.Array(OK, ALARM, INSUFFICIENT_DATA)
 }
 
 @js.native
@@ -125,7 +160,7 @@ object Statistic {
   val Minimum = "Minimum".asInstanceOf[Statistic]
   val Maximum = "Maximum".asInstanceOf[Statistic]
 
-  @inline def values = js.Array(SampleCount, Average, Sum, Minimum, Maximum)
+  @inline def values: js.Array[Statistic] = js.Array(SampleCount, Average, Sum, Minimum, Maximum)
 }
 
 @js.native
@@ -135,6 +170,5 @@ object StatusCode {
   val InternalError = "InternalError".asInstanceOf[StatusCode]
   val PartialData = "PartialData".asInstanceOf[StatusCode]
 
-  @inline def values = js.Array(Complete, InternalError, PartialData)
+  @inline def values: js.Array[StatusCode] = js.Array(Complete, InternalError, PartialData)
 }
-

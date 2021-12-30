@@ -1,7 +1,6 @@
 package facade.amazonaws.services.braket
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait CancellationStatus extends js.Any
@@ -9,7 +8,7 @@ object CancellationStatus {
   val CANCELLING = "CANCELLING".asInstanceOf[CancellationStatus]
   val CANCELLED = "CANCELLED".asInstanceOf[CancellationStatus]
 
-  @inline def values = js.Array(CANCELLING, CANCELLED)
+  @inline def values: js.Array[CancellationStatus] = js.Array(CANCELLING, CANCELLED)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object DeviceStatus {
   val ONLINE = "ONLINE".asInstanceOf[DeviceStatus]
   val OFFLINE = "OFFLINE".asInstanceOf[DeviceStatus]
 
-  @inline def values = js.Array(ONLINE, OFFLINE)
+  @inline def values: js.Array[DeviceStatus] = js.Array(ONLINE, OFFLINE)
 }
 
 @js.native
@@ -27,7 +26,7 @@ object DeviceType {
   val QPU = "QPU".asInstanceOf[DeviceType]
   val SIMULATOR = "SIMULATOR".asInstanceOf[DeviceType]
 
-  @inline def values = js.Array(QPU, SIMULATOR)
+  @inline def values: js.Array[DeviceType] = js.Array(QPU, SIMULATOR)
 }
 
 @js.native
@@ -41,7 +40,7 @@ object QuantumTaskStatus {
   val CANCELLING = "CANCELLING".asInstanceOf[QuantumTaskStatus]
   val CANCELLED = "CANCELLED".asInstanceOf[QuantumTaskStatus]
 
-  @inline def values = js.Array(CREATED, QUEUED, RUNNING, COMPLETED, FAILED, CANCELLING, CANCELLED)
+  @inline def values: js.Array[QuantumTaskStatus] = js.Array(CREATED, QUEUED, RUNNING, COMPLETED, FAILED, CANCELLING, CANCELLED)
 }
 
 @js.native
@@ -54,6 +53,5 @@ object SearchQuantumTasksFilterOperator {
   val GTE = "GTE".asInstanceOf[SearchQuantumTasksFilterOperator]
   val BETWEEN = "BETWEEN".asInstanceOf[SearchQuantumTasksFilterOperator]
 
-  @inline def values = js.Array(LT, LTE, EQUAL, GT, GTE, BETWEEN)
+  @inline def values: js.Array[SearchQuantumTasksFilterOperator] = js.Array(LT, LTE, EQUAL, GT, GTE, BETWEEN)
 }
-

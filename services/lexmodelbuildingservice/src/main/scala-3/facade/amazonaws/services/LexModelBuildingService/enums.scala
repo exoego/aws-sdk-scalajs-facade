@@ -1,6 +1,6 @@
 package facade.amazonaws.services.lexmodelbuildingservice
 
-import scalajs._
+import scalajs.js
 
 type ChannelStatus = "IN_PROGRESS" | "CREATED" | "FAILED"
 object ChannelStatus {

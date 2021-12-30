@@ -1,6 +1,6 @@
 package facade.amazonaws.services.autoscaling
 
-import scalajs._
+import scalajs.js
 
 type InstanceMetadataEndpointState = "disabled" | "enabled"
 object InstanceMetadataEndpointState {

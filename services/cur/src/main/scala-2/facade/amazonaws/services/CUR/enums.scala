@@ -1,7 +1,6 @@
 package facade.amazonaws.services.cur
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 /** The region of the S3 bucket that AWS delivers the report into.
   */
@@ -32,7 +31,31 @@ object AWSRegion {
   val `cn-north-1` = "cn-north-1".asInstanceOf[AWSRegion]
   val `cn-northwest-1` = "cn-northwest-1".asInstanceOf[AWSRegion]
 
-  @inline def values = js.Array(`af-south-1`, `ap-east-1`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `ca-central-1`, `eu-central-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-north-1`, `eu-south-1`, `me-south-1`, `sa-east-1`, `us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `cn-north-1`, `cn-northwest-1`)
+  @inline def values: js.Array[AWSRegion] = js.Array(
+    `af-south-1`,
+    `ap-east-1`,
+    `ap-south-1`,
+    `ap-southeast-1`,
+    `ap-southeast-2`,
+    `ap-northeast-1`,
+    `ap-northeast-2`,
+    `ap-northeast-3`,
+    `ca-central-1`,
+    `eu-central-1`,
+    `eu-west-1`,
+    `eu-west-2`,
+    `eu-west-3`,
+    `eu-north-1`,
+    `eu-south-1`,
+    `me-south-1`,
+    `sa-east-1`,
+    `us-east-1`,
+    `us-east-2`,
+    `us-west-1`,
+    `us-west-2`,
+    `cn-north-1`,
+    `cn-northwest-1`
+  )
 }
 
 /** The types of manifest that you want AWS to create for this report.
@@ -44,7 +67,7 @@ object AdditionalArtifact {
   val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[AdditionalArtifact]
   val ATHENA = "ATHENA".asInstanceOf[AdditionalArtifact]
 
-  @inline def values = js.Array(REDSHIFT, QUICKSIGHT, ATHENA)
+  @inline def values: js.Array[AdditionalArtifact] = js.Array(REDSHIFT, QUICKSIGHT, ATHENA)
 }
 
 /** The compression format that AWS uses for the report.
@@ -56,7 +79,7 @@ object CompressionFormat {
   val GZIP = "GZIP".asInstanceOf[CompressionFormat]
   val Parquet = "Parquet".asInstanceOf[CompressionFormat]
 
-  @inline def values = js.Array(ZIP, GZIP, Parquet)
+  @inline def values: js.Array[CompressionFormat] = js.Array(ZIP, GZIP, Parquet)
 }
 
 /** The format that AWS saves the report in.
@@ -67,7 +90,7 @@ object ReportFormat {
   val textORcsv = "textORcsv".asInstanceOf[ReportFormat]
   val Parquet = "Parquet".asInstanceOf[ReportFormat]
 
-  @inline def values = js.Array(textORcsv, Parquet)
+  @inline def values: js.Array[ReportFormat] = js.Array(textORcsv, Parquet)
 }
 
 @js.native
@@ -76,7 +99,7 @@ object ReportVersioning {
   val CREATE_NEW_REPORT = "CREATE_NEW_REPORT".asInstanceOf[ReportVersioning]
   val OVERWRITE_REPORT = "OVERWRITE_REPORT".asInstanceOf[ReportVersioning]
 
-  @inline def values = js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT)
+  @inline def values: js.Array[ReportVersioning] = js.Array(CREATE_NEW_REPORT, OVERWRITE_REPORT)
 }
 
 /** Whether or not AWS includes resource IDs in the report.
@@ -86,7 +109,7 @@ sealed trait SchemaElement extends js.Any
 object SchemaElement {
   val RESOURCES = "RESOURCES".asInstanceOf[SchemaElement]
 
-  @inline def values = js.Array(RESOURCES)
+  @inline def values: js.Array[SchemaElement] = js.Array(RESOURCES)
 }
 
 /** The length of time covered by the report.
@@ -98,6 +121,5 @@ object TimeUnit {
   val DAILY = "DAILY".asInstanceOf[TimeUnit]
   val MONTHLY = "MONTHLY".asInstanceOf[TimeUnit]
 
-  @inline def values = js.Array(HOURLY, DAILY, MONTHLY)
+  @inline def values: js.Array[TimeUnit] = js.Array(HOURLY, DAILY, MONTHLY)
 }
-

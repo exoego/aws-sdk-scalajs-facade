@@ -1,7 +1,6 @@
 package facade.amazonaws.services.auditmanager
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccountStatus extends js.Any
@@ -10,7 +9,7 @@ object AccountStatus {
   val INACTIVE = "INACTIVE".asInstanceOf[AccountStatus]
   val PENDING_ACTIVATION = "PENDING_ACTIVATION".asInstanceOf[AccountStatus]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, PENDING_ACTIVATION)
+  @inline def values: js.Array[AccountStatus] = js.Array(ACTIVE, INACTIVE, PENDING_ACTIVATION)
 }
 
 @js.native
@@ -25,7 +24,7 @@ object ActionEnum {
   val REVIEWED = "REVIEWED".asInstanceOf[ActionEnum]
   val IMPORT_EVIDENCE = "IMPORT_EVIDENCE".asInstanceOf[ActionEnum]
 
-  @inline def values = js.Array(CREATE, UPDATE_METADATA, ACTIVE, INACTIVE, DELETE, UNDER_REVIEW, REVIEWED, IMPORT_EVIDENCE)
+  @inline def values: js.Array[ActionEnum] = js.Array(CREATE, UPDATE_METADATA, ACTIVE, INACTIVE, DELETE, UNDER_REVIEW, REVIEWED, IMPORT_EVIDENCE)
 }
 
 @js.native
@@ -33,7 +32,7 @@ sealed trait AssessmentReportDestinationType extends js.Any
 object AssessmentReportDestinationType {
   val S3 = "S3".asInstanceOf[AssessmentReportDestinationType]
 
-  @inline def values = js.Array(S3)
+  @inline def values: js.Array[AssessmentReportDestinationType] = js.Array(S3)
 }
 
 @js.native
@@ -43,7 +42,7 @@ object AssessmentReportStatus {
   val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[AssessmentReportStatus]
   val FAILED = "FAILED".asInstanceOf[AssessmentReportStatus]
 
-  @inline def values = js.Array(COMPLETE, IN_PROGRESS, FAILED)
+  @inline def values: js.Array[AssessmentReportStatus] = js.Array(COMPLETE, IN_PROGRESS, FAILED)
 }
 
 @js.native
@@ -52,7 +51,7 @@ object AssessmentStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[AssessmentStatus]
   val INACTIVE = "INACTIVE".asInstanceOf[AssessmentStatus]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values: js.Array[AssessmentStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native
@@ -63,7 +62,7 @@ object ControlResponse {
   val DEFER = "DEFER".asInstanceOf[ControlResponse]
   val IGNORE = "IGNORE".asInstanceOf[ControlResponse]
 
-  @inline def values = js.Array(MANUAL, AUTOMATE, DEFER, IGNORE)
+  @inline def values: js.Array[ControlResponse] = js.Array(MANUAL, AUTOMATE, DEFER, IGNORE)
 }
 
 @js.native
@@ -73,7 +72,7 @@ object ControlSetStatus {
   val UNDER_REVIEW = "UNDER_REVIEW".asInstanceOf[ControlSetStatus]
   val REVIEWED = "REVIEWED".asInstanceOf[ControlSetStatus]
 
-  @inline def values = js.Array(ACTIVE, UNDER_REVIEW, REVIEWED)
+  @inline def values: js.Array[ControlSetStatus] = js.Array(ACTIVE, UNDER_REVIEW, REVIEWED)
 }
 
 @js.native
@@ -83,7 +82,7 @@ object ControlStatus {
   val REVIEWED = "REVIEWED".asInstanceOf[ControlStatus]
   val INACTIVE = "INACTIVE".asInstanceOf[ControlStatus]
 
-  @inline def values = js.Array(UNDER_REVIEW, REVIEWED, INACTIVE)
+  @inline def values: js.Array[ControlStatus] = js.Array(UNDER_REVIEW, REVIEWED, INACTIVE)
 }
 
 @js.native
@@ -92,7 +91,7 @@ object ControlType {
   val Standard = "Standard".asInstanceOf[ControlType]
   val Custom = "Custom".asInstanceOf[ControlType]
 
-  @inline def values = js.Array(Standard, Custom)
+  @inline def values: js.Array[ControlType] = js.Array(Standard, Custom)
 }
 
 @js.native
@@ -102,7 +101,7 @@ object DelegationStatus {
   val UNDER_REVIEW = "UNDER_REVIEW".asInstanceOf[DelegationStatus]
   val COMPLETE = "COMPLETE".asInstanceOf[DelegationStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, UNDER_REVIEW, COMPLETE)
+  @inline def values: js.Array[DelegationStatus] = js.Array(IN_PROGRESS, UNDER_REVIEW, COMPLETE)
 }
 
 @js.native
@@ -111,7 +110,7 @@ object FrameworkType {
   val Standard = "Standard".asInstanceOf[FrameworkType]
   val Custom = "Custom".asInstanceOf[FrameworkType]
 
-  @inline def values = js.Array(Standard, Custom)
+  @inline def values: js.Array[FrameworkType] = js.Array(Standard, Custom)
 }
 
 @js.native
@@ -119,7 +118,7 @@ sealed trait KeywordInputType extends js.Any
 object KeywordInputType {
   val SELECT_FROM_LIST = "SELECT_FROM_LIST".asInstanceOf[KeywordInputType]
 
-  @inline def values = js.Array(SELECT_FROM_LIST)
+  @inline def values: js.Array[KeywordInputType] = js.Array(SELECT_FROM_LIST)
 }
 
 @js.native
@@ -131,7 +130,7 @@ object ObjectTypeEnum {
   val DELEGATION = "DELEGATION".asInstanceOf[ObjectTypeEnum]
   val ASSESSMENT_REPORT = "ASSESSMENT_REPORT".asInstanceOf[ObjectTypeEnum]
 
-  @inline def values = js.Array(ASSESSMENT, CONTROL_SET, CONTROL, DELEGATION, ASSESSMENT_REPORT)
+  @inline def values: js.Array[ObjectTypeEnum] = js.Array(ASSESSMENT, CONTROL_SET, CONTROL, DELEGATION, ASSESSMENT_REPORT)
 }
 
 @js.native
@@ -140,7 +139,7 @@ object RoleType {
   val PROCESS_OWNER = "PROCESS_OWNER".asInstanceOf[RoleType]
   val RESOURCE_OWNER = "RESOURCE_OWNER".asInstanceOf[RoleType]
 
-  @inline def values = js.Array(PROCESS_OWNER, RESOURCE_OWNER)
+  @inline def values: js.Array[RoleType] = js.Array(PROCESS_OWNER, RESOURCE_OWNER)
 }
 
 @js.native
@@ -152,7 +151,7 @@ object SettingAttribute {
   val DEFAULT_ASSESSMENT_REPORTS_DESTINATION = "DEFAULT_ASSESSMENT_REPORTS_DESTINATION".asInstanceOf[SettingAttribute]
   val DEFAULT_PROCESS_OWNERS = "DEFAULT_PROCESS_OWNERS".asInstanceOf[SettingAttribute]
 
-  @inline def values = js.Array(ALL, IS_AWS_ORG_ENABLED, SNS_TOPIC, DEFAULT_ASSESSMENT_REPORTS_DESTINATION, DEFAULT_PROCESS_OWNERS)
+  @inline def values: js.Array[SettingAttribute] = js.Array(ALL, IS_AWS_ORG_ENABLED, SNS_TOPIC, DEFAULT_ASSESSMENT_REPORTS_DESTINATION, DEFAULT_PROCESS_OWNERS)
 }
 
 @js.native
@@ -162,7 +161,7 @@ object SourceFrequency {
   val WEEKLY = "WEEKLY".asInstanceOf[SourceFrequency]
   val MONTHLY = "MONTHLY".asInstanceOf[SourceFrequency]
 
-  @inline def values = js.Array(DAILY, WEEKLY, MONTHLY)
+  @inline def values: js.Array[SourceFrequency] = js.Array(DAILY, WEEKLY, MONTHLY)
 }
 
 @js.native
@@ -171,7 +170,7 @@ object SourceSetUpOption {
   val System_Controls_Mapping = "System_Controls_Mapping".asInstanceOf[SourceSetUpOption]
   val Procedural_Controls_Mapping = "Procedural_Controls_Mapping".asInstanceOf[SourceSetUpOption]
 
-  @inline def values = js.Array(System_Controls_Mapping, Procedural_Controls_Mapping)
+  @inline def values: js.Array[SourceSetUpOption] = js.Array(System_Controls_Mapping, Procedural_Controls_Mapping)
 }
 
 @js.native
@@ -183,6 +182,5 @@ object SourceType {
   val AWS_API_Call = "AWS_API_Call".asInstanceOf[SourceType]
   val MANUAL = "MANUAL".asInstanceOf[SourceType]
 
-  @inline def values = js.Array(AWS_Cloudtrail, AWS_Config, AWS_Security_Hub, AWS_API_Call, MANUAL)
+  @inline def values: js.Array[SourceType] = js.Array(AWS_Cloudtrail, AWS_Config, AWS_Security_Hub, AWS_API_Call, MANUAL)
 }
-

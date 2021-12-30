@@ -1,6 +1,6 @@
 package facade.amazonaws.services.networkfirewall
 
-import scalajs._
+import scalajs.js
 
 type AttachmentStatus = "CREATING" | "DELETING" | "SCALING" | "READY"
 object AttachmentStatus {

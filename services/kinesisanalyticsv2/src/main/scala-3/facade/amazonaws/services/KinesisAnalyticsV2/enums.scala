@@ -1,6 +1,6 @@
 package facade.amazonaws.services.kinesisanalyticsv2
 
-import scalajs._
+import scalajs.js
 
 type ApplicationRestoreType = "SKIP_RESTORE_FROM_SNAPSHOT" | "RESTORE_FROM_LATEST_SNAPSHOT" | "RESTORE_FROM_CUSTOM_SNAPSHOT"
 object ApplicationRestoreType {

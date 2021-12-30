@@ -1,7 +1,6 @@
 package facade.amazonaws.services.redshift
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ActionType extends js.Any
@@ -10,7 +9,7 @@ object ActionType {
   val `recommend-node-config` = "recommend-node-config".asInstanceOf[ActionType]
   val `resize-cluster` = "resize-cluster".asInstanceOf[ActionType]
 
-  @inline def values = js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`)
+  @inline def values: js.Array[ActionType] = js.Array(`restore-cluster`, `recommend-node-config`, `resize-cluster`)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object AquaConfigurationStatus {
   val disabled = "disabled".asInstanceOf[AquaConfigurationStatus]
   val auto = "auto".asInstanceOf[AquaConfigurationStatus]
 
-  @inline def values = js.Array(enabled, disabled, auto)
+  @inline def values: js.Array[AquaConfigurationStatus] = js.Array(enabled, disabled, auto)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object AquaStatus {
   val disabled = "disabled".asInstanceOf[AquaStatus]
   val applying = "applying".asInstanceOf[AquaStatus]
 
-  @inline def values = js.Array(enabled, disabled, applying)
+  @inline def values: js.Array[AquaStatus] = js.Array(enabled, disabled, applying)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object AuthorizationStatus {
   val Authorized = "Authorized".asInstanceOf[AuthorizationStatus]
   val Revoking = "Revoking".asInstanceOf[AuthorizationStatus]
 
-  @inline def values = js.Array(Authorized, Revoking)
+  @inline def values: js.Array[AuthorizationStatus] = js.Array(Authorized, Revoking)
 }
 
 @js.native
@@ -48,7 +47,7 @@ object Mode {
   val standard = "standard".asInstanceOf[Mode]
   val `high-performance` = "high-performance".asInstanceOf[Mode]
 
-  @inline def values = js.Array(standard, `high-performance`)
+  @inline def values: js.Array[Mode] = js.Array(standard, `high-performance`)
 }
 
 @js.native
@@ -59,7 +58,7 @@ object NodeConfigurationOptionsFilterName {
   val EstimatedDiskUtilizationPercent = "EstimatedDiskUtilizationPercent".asInstanceOf[NodeConfigurationOptionsFilterName]
   val Mode = "Mode".asInstanceOf[NodeConfigurationOptionsFilterName]
 
-  @inline def values = js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode)
+  @inline def values: js.Array[NodeConfigurationOptionsFilterName] = js.Array(NodeType, NumberOfNodes, EstimatedDiskUtilizationPercent, Mode)
 }
 
 @js.native
@@ -73,7 +72,7 @@ object OperatorType {
   val in = "in".asInstanceOf[OperatorType]
   val between = "between".asInstanceOf[OperatorType]
 
-  @inline def values = js.Array(eq, lt, gt, le, ge, in, between)
+  @inline def values: js.Array[OperatorType] = js.Array(eq, lt, gt, le, ge, in, between)
 }
 
 @js.native
@@ -82,7 +81,7 @@ object ParameterApplyType {
   val static = "static".asInstanceOf[ParameterApplyType]
   val dynamic = "dynamic".asInstanceOf[ParameterApplyType]
 
-  @inline def values = js.Array(static, dynamic)
+  @inline def values: js.Array[ParameterApplyType] = js.Array(static, dynamic)
 }
 
 @js.native
@@ -93,7 +92,7 @@ object PartnerIntegrationStatus {
   val RuntimeFailure = "RuntimeFailure".asInstanceOf[PartnerIntegrationStatus]
   val ConnectionFailure = "ConnectionFailure".asInstanceOf[PartnerIntegrationStatus]
 
-  @inline def values = js.Array(Active, Inactive, RuntimeFailure, ConnectionFailure)
+  @inline def values: js.Array[PartnerIntegrationStatus] = js.Array(Active, Inactive, RuntimeFailure, ConnectionFailure)
 }
 
 @js.native
@@ -102,7 +101,7 @@ object ReservedNodeOfferingType {
   val Regular = "Regular".asInstanceOf[ReservedNodeOfferingType]
   val Upgradable = "Upgradable".asInstanceOf[ReservedNodeOfferingType]
 
-  @inline def values = js.Array(Regular, Upgradable)
+  @inline def values: js.Array[ReservedNodeOfferingType] = js.Array(Regular, Upgradable)
 }
 
 @js.native
@@ -112,7 +111,7 @@ object ScheduleState {
   val ACTIVE = "ACTIVE".asInstanceOf[ScheduleState]
   val FAILED = "FAILED".asInstanceOf[ScheduleState]
 
-  @inline def values = js.Array(MODIFYING, ACTIVE, FAILED)
+  @inline def values: js.Array[ScheduleState] = js.Array(MODIFYING, ACTIVE, FAILED)
 }
 
 @js.native
@@ -121,7 +120,7 @@ object ScheduledActionFilterName {
   val `cluster-identifier` = "cluster-identifier".asInstanceOf[ScheduledActionFilterName]
   val `iam-role` = "iam-role".asInstanceOf[ScheduledActionFilterName]
 
-  @inline def values = js.Array(`cluster-identifier`, `iam-role`)
+  @inline def values: js.Array[ScheduledActionFilterName] = js.Array(`cluster-identifier`, `iam-role`)
 }
 
 @js.native
@@ -130,7 +129,7 @@ object ScheduledActionState {
   val ACTIVE = "ACTIVE".asInstanceOf[ScheduledActionState]
   val DISABLED = "DISABLED".asInstanceOf[ScheduledActionState]
 
-  @inline def values = js.Array(ACTIVE, DISABLED)
+  @inline def values: js.Array[ScheduledActionState] = js.Array(ACTIVE, DISABLED)
 }
 
 @js.native
@@ -140,7 +139,7 @@ object ScheduledActionTypeValues {
   val PauseCluster = "PauseCluster".asInstanceOf[ScheduledActionTypeValues]
   val ResumeCluster = "ResumeCluster".asInstanceOf[ScheduledActionTypeValues]
 
-  @inline def values = js.Array(ResizeCluster, PauseCluster, ResumeCluster)
+  @inline def values: js.Array[ScheduledActionTypeValues] = js.Array(ResizeCluster, PauseCluster, ResumeCluster)
 }
 
 @js.native
@@ -150,7 +149,7 @@ object SnapshotAttributeToSortBy {
   val TOTAL_SIZE = "TOTAL_SIZE".asInstanceOf[SnapshotAttributeToSortBy]
   val CREATE_TIME = "CREATE_TIME".asInstanceOf[SnapshotAttributeToSortBy]
 
-  @inline def values = js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME)
+  @inline def values: js.Array[SnapshotAttributeToSortBy] = js.Array(SOURCE_TYPE, TOTAL_SIZE, CREATE_TIME)
 }
 
 @js.native
@@ -159,7 +158,7 @@ object SortByOrder {
   val ASC = "ASC".asInstanceOf[SortByOrder]
   val DESC = "DESC".asInstanceOf[SortByOrder]
 
-  @inline def values = js.Array(ASC, DESC)
+  @inline def values: js.Array[SortByOrder] = js.Array(ASC, DESC)
 }
 
 @js.native
@@ -171,7 +170,7 @@ object SourceType {
   val `cluster-snapshot` = "cluster-snapshot".asInstanceOf[SourceType]
   val `scheduled-action` = "scheduled-action".asInstanceOf[SourceType]
 
-  @inline def values = js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
+  @inline def values: js.Array[SourceType] = js.Array(cluster, `cluster-parameter-group`, `cluster-security-group`, `cluster-snapshot`, `scheduled-action`)
 }
 
 @js.native
@@ -183,7 +182,7 @@ object TableRestoreStatusType {
   val FAILED = "FAILED".asInstanceOf[TableRestoreStatusType]
   val CANCELED = "CANCELED".asInstanceOf[TableRestoreStatusType]
 
-  @inline def values = js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
+  @inline def values: js.Array[TableRestoreStatusType] = js.Array(PENDING, IN_PROGRESS, SUCCEEDED, FAILED, CANCELED)
 }
 
 @js.native
@@ -193,7 +192,7 @@ object UsageLimitBreachAction {
   val `emit-metric` = "emit-metric".asInstanceOf[UsageLimitBreachAction]
   val disable = "disable".asInstanceOf[UsageLimitBreachAction]
 
-  @inline def values = js.Array(log, `emit-metric`, disable)
+  @inline def values: js.Array[UsageLimitBreachAction] = js.Array(log, `emit-metric`, disable)
 }
 
 @js.native
@@ -202,7 +201,7 @@ object UsageLimitFeatureType {
   val spectrum = "spectrum".asInstanceOf[UsageLimitFeatureType]
   val `concurrency-scaling` = "concurrency-scaling".asInstanceOf[UsageLimitFeatureType]
 
-  @inline def values = js.Array(spectrum, `concurrency-scaling`)
+  @inline def values: js.Array[UsageLimitFeatureType] = js.Array(spectrum, `concurrency-scaling`)
 }
 
 @js.native
@@ -211,7 +210,7 @@ object UsageLimitLimitType {
   val time = "time".asInstanceOf[UsageLimitLimitType]
   val `data-scanned` = "data-scanned".asInstanceOf[UsageLimitLimitType]
 
-  @inline def values = js.Array(time, `data-scanned`)
+  @inline def values: js.Array[UsageLimitLimitType] = js.Array(time, `data-scanned`)
 }
 
 @js.native
@@ -221,6 +220,5 @@ object UsageLimitPeriod {
   val weekly = "weekly".asInstanceOf[UsageLimitPeriod]
   val monthly = "monthly".asInstanceOf[UsageLimitPeriod]
 
-  @inline def values = js.Array(daily, weekly, monthly)
+  @inline def values: js.Array[UsageLimitPeriod] = js.Array(daily, weekly, monthly)
 }
-

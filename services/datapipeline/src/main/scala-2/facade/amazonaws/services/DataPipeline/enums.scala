@@ -1,7 +1,6 @@
 package facade.amazonaws.services.datapipeline
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait OperatorType extends js.Any
@@ -12,7 +11,7 @@ object OperatorType {
   val GE = "GE".asInstanceOf[OperatorType]
   val BETWEEN = "BETWEEN".asInstanceOf[OperatorType]
 
-  @inline def values = js.Array(EQ, REF_EQ, LE, GE, BETWEEN)
+  @inline def values: js.Array[OperatorType] = js.Array(EQ, REF_EQ, LE, GE, BETWEEN)
 }
 
 @js.native
@@ -22,6 +21,5 @@ object TaskStatus {
   val FAILED = "FAILED".asInstanceOf[TaskStatus]
   val FALSE = "FALSE".asInstanceOf[TaskStatus]
 
-  @inline def values = js.Array(FINISHED, FAILED, FALSE)
+  @inline def values: js.Array[TaskStatus] = js.Array(FINISHED, FAILED, FALSE)
 }
-

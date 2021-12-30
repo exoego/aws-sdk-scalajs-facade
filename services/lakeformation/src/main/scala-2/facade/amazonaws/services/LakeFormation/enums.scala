@@ -1,7 +1,6 @@
 package facade.amazonaws.services.lakeformation
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ComparisonOperator extends js.Any
@@ -18,7 +17,7 @@ object ComparisonOperator {
   val IN = "IN".asInstanceOf[ComparisonOperator]
   val BETWEEN = "BETWEEN".asInstanceOf[ComparisonOperator]
 
-  @inline def values = js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN)
+  @inline def values: js.Array[ComparisonOperator] = js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object DataLakeResourceType {
   val TABLE = "TABLE".asInstanceOf[DataLakeResourceType]
   val DATA_LOCATION = "DATA_LOCATION".asInstanceOf[DataLakeResourceType]
 
-  @inline def values = js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION)
+  @inline def values: js.Array[DataLakeResourceType] = js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object FieldNameString {
   val ROLE_ARN = "ROLE_ARN".asInstanceOf[FieldNameString]
   val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[FieldNameString]
 
-  @inline def values = js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED)
+  @inline def values: js.Array[FieldNameString] = js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED)
 }
 
 @js.native
@@ -56,6 +55,5 @@ object Permission {
   val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
   val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
-  @inline def values = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
+  @inline def values: js.Array[Permission] = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
 }
-

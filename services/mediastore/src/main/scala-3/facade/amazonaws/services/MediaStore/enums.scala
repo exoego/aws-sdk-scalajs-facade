@@ -1,6 +1,6 @@
 package facade.amazonaws.services.mediastore
 
-import scalajs._
+import scalajs.js
 
 type ContainerLevelMetrics = "ENABLED" | "DISABLED"
 object ContainerLevelMetrics {

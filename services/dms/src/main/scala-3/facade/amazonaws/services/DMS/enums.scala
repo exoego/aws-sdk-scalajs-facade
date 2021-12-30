@@ -1,6 +1,6 @@
 package facade.amazonaws.services.dms
 
-import scalajs._
+import scalajs.js
 
 type AuthMechanismValue = "default" | "mongodb_cr" | "scram_sha_1"
 object AuthMechanismValue {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.licensemanager
 
-import scalajs._
+import scalajs.js
 
 type AllowedOperation = "CreateGrant" | "CheckoutLicense" | "CheckoutBorrowLicense" | "CheckInLicense" | "ExtendConsumptionLicense" | "ListPurchasedLicenses" | "CreateToken"
 object AllowedOperation {

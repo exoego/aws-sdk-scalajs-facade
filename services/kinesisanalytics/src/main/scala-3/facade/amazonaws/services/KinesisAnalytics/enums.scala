@@ -1,6 +1,6 @@
 package facade.amazonaws.services.kinesisanalytics
 
-import scalajs._
+import scalajs.js
 
 type ApplicationStatus = "DELETING" | "STARTING" | "STOPPING" | "READY" | "RUNNING" | "UPDATING"
 object ApplicationStatus {

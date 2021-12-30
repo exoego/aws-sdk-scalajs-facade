@@ -1,6 +1,6 @@
 package facade.amazonaws.services.groundstation
 
-import scalajs._
+import scalajs.js
 
 type AngleUnits = "DEGREE_ANGLE" | "RADIAN"
 object AngleUnits {

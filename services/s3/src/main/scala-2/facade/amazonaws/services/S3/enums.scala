@@ -1,14 +1,13 @@
 package facade.amazonaws.services.s3
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AnalyticsS3ExportFileFormat extends js.Any
 object AnalyticsS3ExportFileFormat {
   val CSV = "CSV".asInstanceOf[AnalyticsS3ExportFileFormat]
 
-  @inline def values = js.Array(CSV)
+  @inline def values: js.Array[AnalyticsS3ExportFileFormat] = js.Array(CSV)
 }
 
 @js.native
@@ -17,7 +16,7 @@ object ArchiveStatus {
   val ARCHIVE_ACCESS = "ARCHIVE_ACCESS".asInstanceOf[ArchiveStatus]
   val DEEP_ARCHIVE_ACCESS = "DEEP_ARCHIVE_ACCESS".asInstanceOf[ArchiveStatus]
 
-  @inline def values = js.Array(ARCHIVE_ACCESS, DEEP_ARCHIVE_ACCESS)
+  @inline def values: js.Array[ArchiveStatus] = js.Array(ARCHIVE_ACCESS, DEEP_ARCHIVE_ACCESS)
 }
 
 @js.native
@@ -26,7 +25,7 @@ object BucketAccelerateStatus {
   val Enabled = "Enabled".asInstanceOf[BucketAccelerateStatus]
   val Suspended = "Suspended".asInstanceOf[BucketAccelerateStatus]
 
-  @inline def values = js.Array(Enabled, Suspended)
+  @inline def values: js.Array[BucketAccelerateStatus] = js.Array(Enabled, Suspended)
 }
 
 @js.native
@@ -37,7 +36,7 @@ object BucketCannedACL {
   val `public-read-write` = "public-read-write".asInstanceOf[BucketCannedACL]
   val `authenticated-read` = "authenticated-read".asInstanceOf[BucketCannedACL]
 
-  @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`)
+  @inline def values: js.Array[BucketCannedACL] = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`)
 }
 
 @js.native
@@ -69,7 +68,33 @@ object BucketLocationConstraint {
   val `us-west-1` = "us-west-1".asInstanceOf[BucketLocationConstraint]
   val `us-west-2` = "us-west-2".asInstanceOf[BucketLocationConstraint]
 
-  @inline def values = js.Array(`af-south-1`, `ap-east-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ca-central-1`, `cn-north-1`, `cn-northwest-1`, EU, `eu-central-1`, `eu-north-1`, `eu-south-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `me-south-1`, `sa-east-1`, `us-east-2`, `us-gov-east-1`, `us-gov-west-1`, `us-west-1`, `us-west-2`)
+  @inline def values: js.Array[BucketLocationConstraint] = js.Array(
+    `af-south-1`,
+    `ap-east-1`,
+    `ap-northeast-1`,
+    `ap-northeast-2`,
+    `ap-northeast-3`,
+    `ap-south-1`,
+    `ap-southeast-1`,
+    `ap-southeast-2`,
+    `ca-central-1`,
+    `cn-north-1`,
+    `cn-northwest-1`,
+    EU,
+    `eu-central-1`,
+    `eu-north-1`,
+    `eu-south-1`,
+    `eu-west-1`,
+    `eu-west-2`,
+    `eu-west-3`,
+    `me-south-1`,
+    `sa-east-1`,
+    `us-east-2`,
+    `us-gov-east-1`,
+    `us-gov-west-1`,
+    `us-west-1`,
+    `us-west-2`
+  )
 }
 
 @js.native
@@ -79,7 +104,7 @@ object BucketLogsPermission {
   val READ = "READ".asInstanceOf[BucketLogsPermission]
   val WRITE = "WRITE".asInstanceOf[BucketLogsPermission]
 
-  @inline def values = js.Array(FULL_CONTROL, READ, WRITE)
+  @inline def values: js.Array[BucketLogsPermission] = js.Array(FULL_CONTROL, READ, WRITE)
 }
 
 @js.native
@@ -88,7 +113,7 @@ object BucketVersioningStatus {
   val Enabled = "Enabled".asInstanceOf[BucketVersioningStatus]
   val Suspended = "Suspended".asInstanceOf[BucketVersioningStatus]
 
-  @inline def values = js.Array(Enabled, Suspended)
+  @inline def values: js.Array[BucketVersioningStatus] = js.Array(Enabled, Suspended)
 }
 
 @js.native
@@ -98,7 +123,7 @@ object CompressionType {
   val GZIP = "GZIP".asInstanceOf[CompressionType]
   val BZIP2 = "BZIP2".asInstanceOf[CompressionType]
 
-  @inline def values = js.Array(NONE, GZIP, BZIP2)
+  @inline def values: js.Array[CompressionType] = js.Array(NONE, GZIP, BZIP2)
 }
 
 @js.native
@@ -107,7 +132,7 @@ object DeleteMarkerReplicationStatus {
   val Enabled = "Enabled".asInstanceOf[DeleteMarkerReplicationStatus]
   val Disabled = "Disabled".asInstanceOf[DeleteMarkerReplicationStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[DeleteMarkerReplicationStatus] = js.Array(Enabled, Disabled)
 }
 
 /** Requests Amazon S3 to encode the object keys in the response and specifies the encoding method to use. An object key may contain any Unicode character; however, XML 1.0 parser cannot parse some characters, such as characters with an ASCII value from 0 to 10. For characters that are not supported in XML 1.0, you can add this parameter to request that Amazon S3 encode the keys in the response.
@@ -117,7 +142,7 @@ sealed trait EncodingType extends js.Any
 object EncodingType {
   val url = "url".asInstanceOf[EncodingType]
 
-  @inline def values = js.Array(url)
+  @inline def values: js.Array[EncodingType] = js.Array(url)
 }
 
 /** The bucket event for which to send notifications.
@@ -143,7 +168,25 @@ object Event {
   val `s3:Replication:OperationMissedThreshold` = "s3:Replication:OperationMissedThreshold".asInstanceOf[Event]
   val `s3:Replication:OperationReplicatedAfterThreshold` = "s3:Replication:OperationReplicatedAfterThreshold".asInstanceOf[Event]
 
-  @inline def values = js.Array(`s3:ReducedRedundancyLostObject`, `s3:ObjectCreated:*`, `s3:ObjectCreated:Put`, `s3:ObjectCreated:Post`, `s3:ObjectCreated:Copy`, `s3:ObjectCreated:CompleteMultipartUpload`, `s3:ObjectRemoved:*`, `s3:ObjectRemoved:Delete`, `s3:ObjectRemoved:DeleteMarkerCreated`, `s3:ObjectRestore:*`, `s3:ObjectRestore:Post`, `s3:ObjectRestore:Completed`, `s3:Replication:*`, `s3:Replication:OperationFailedReplication`, `s3:Replication:OperationNotTracked`, `s3:Replication:OperationMissedThreshold`, `s3:Replication:OperationReplicatedAfterThreshold`)
+  @inline def values: js.Array[Event] = js.Array(
+    `s3:ReducedRedundancyLostObject`,
+    `s3:ObjectCreated:*`,
+    `s3:ObjectCreated:Put`,
+    `s3:ObjectCreated:Post`,
+    `s3:ObjectCreated:Copy`,
+    `s3:ObjectCreated:CompleteMultipartUpload`,
+    `s3:ObjectRemoved:*`,
+    `s3:ObjectRemoved:Delete`,
+    `s3:ObjectRemoved:DeleteMarkerCreated`,
+    `s3:ObjectRestore:*`,
+    `s3:ObjectRestore:Post`,
+    `s3:ObjectRestore:Completed`,
+    `s3:Replication:*`,
+    `s3:Replication:OperationFailedReplication`,
+    `s3:Replication:OperationNotTracked`,
+    `s3:Replication:OperationMissedThreshold`,
+    `s3:Replication:OperationReplicatedAfterThreshold`
+  )
 }
 
 @js.native
@@ -152,7 +195,7 @@ object ExistingObjectReplicationStatus {
   val Enabled = "Enabled".asInstanceOf[ExistingObjectReplicationStatus]
   val Disabled = "Disabled".asInstanceOf[ExistingObjectReplicationStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[ExistingObjectReplicationStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -161,7 +204,7 @@ object ExpirationStatus {
   val Enabled = "Enabled".asInstanceOf[ExpirationStatus]
   val Disabled = "Disabled".asInstanceOf[ExpirationStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[ExpirationStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -169,7 +212,7 @@ sealed trait ExpressionType extends js.Any
 object ExpressionType {
   val SQL = "SQL".asInstanceOf[ExpressionType]
 
-  @inline def values = js.Array(SQL)
+  @inline def values: js.Array[ExpressionType] = js.Array(SQL)
 }
 
 @js.native
@@ -179,7 +222,7 @@ object FileHeaderInfo {
   val IGNORE = "IGNORE".asInstanceOf[FileHeaderInfo]
   val NONE = "NONE".asInstanceOf[FileHeaderInfo]
 
-  @inline def values = js.Array(USE, IGNORE, NONE)
+  @inline def values: js.Array[FileHeaderInfo] = js.Array(USE, IGNORE, NONE)
 }
 
 @js.native
@@ -188,7 +231,7 @@ object FilterRuleName {
   val prefix = "prefix".asInstanceOf[FilterRuleName]
   val suffix = "suffix".asInstanceOf[FilterRuleName]
 
-  @inline def values = js.Array(prefix, suffix)
+  @inline def values: js.Array[FilterRuleName] = js.Array(prefix, suffix)
 }
 
 @js.native
@@ -197,7 +240,7 @@ object IntelligentTieringAccessTier {
   val ARCHIVE_ACCESS = "ARCHIVE_ACCESS".asInstanceOf[IntelligentTieringAccessTier]
   val DEEP_ARCHIVE_ACCESS = "DEEP_ARCHIVE_ACCESS".asInstanceOf[IntelligentTieringAccessTier]
 
-  @inline def values = js.Array(ARCHIVE_ACCESS, DEEP_ARCHIVE_ACCESS)
+  @inline def values: js.Array[IntelligentTieringAccessTier] = js.Array(ARCHIVE_ACCESS, DEEP_ARCHIVE_ACCESS)
 }
 
 @js.native
@@ -206,7 +249,7 @@ object IntelligentTieringStatus {
   val Enabled = "Enabled".asInstanceOf[IntelligentTieringStatus]
   val Disabled = "Disabled".asInstanceOf[IntelligentTieringStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[IntelligentTieringStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -216,7 +259,7 @@ object InventoryFormat {
   val ORC = "ORC".asInstanceOf[InventoryFormat]
   val Parquet = "Parquet".asInstanceOf[InventoryFormat]
 
-  @inline def values = js.Array(CSV, ORC, Parquet)
+  @inline def values: js.Array[InventoryFormat] = js.Array(CSV, ORC, Parquet)
 }
 
 @js.native
@@ -225,7 +268,7 @@ object InventoryFrequency {
   val Daily = "Daily".asInstanceOf[InventoryFrequency]
   val Weekly = "Weekly".asInstanceOf[InventoryFrequency]
 
-  @inline def values = js.Array(Daily, Weekly)
+  @inline def values: js.Array[InventoryFrequency] = js.Array(Daily, Weekly)
 }
 
 @js.native
@@ -234,7 +277,7 @@ object InventoryIncludedObjectVersions {
   val All = "All".asInstanceOf[InventoryIncludedObjectVersions]
   val Current = "Current".asInstanceOf[InventoryIncludedObjectVersions]
 
-  @inline def values = js.Array(All, Current)
+  @inline def values: js.Array[InventoryIncludedObjectVersions] = js.Array(All, Current)
 }
 
 @js.native
@@ -252,7 +295,19 @@ object InventoryOptionalField {
   val ObjectLockLegalHoldStatus = "ObjectLockLegalHoldStatus".asInstanceOf[InventoryOptionalField]
   val IntelligentTieringAccessTier = "IntelligentTieringAccessTier".asInstanceOf[InventoryOptionalField]
 
-  @inline def values = js.Array(Size, LastModifiedDate, StorageClass, ETag, IsMultipartUploaded, ReplicationStatus, EncryptionStatus, ObjectLockRetainUntilDate, ObjectLockMode, ObjectLockLegalHoldStatus, IntelligentTieringAccessTier)
+  @inline def values: js.Array[InventoryOptionalField] = js.Array(
+    Size,
+    LastModifiedDate,
+    StorageClass,
+    ETag,
+    IsMultipartUploaded,
+    ReplicationStatus,
+    EncryptionStatus,
+    ObjectLockRetainUntilDate,
+    ObjectLockMode,
+    ObjectLockLegalHoldStatus,
+    IntelligentTieringAccessTier
+  )
 }
 
 @js.native
@@ -261,7 +316,7 @@ object JSONType {
   val DOCUMENT = "DOCUMENT".asInstanceOf[JSONType]
   val LINES = "LINES".asInstanceOf[JSONType]
 
-  @inline def values = js.Array(DOCUMENT, LINES)
+  @inline def values: js.Array[JSONType] = js.Array(DOCUMENT, LINES)
 }
 
 @js.native
@@ -270,7 +325,7 @@ object MFADelete {
   val Enabled = "Enabled".asInstanceOf[MFADelete]
   val Disabled = "Disabled".asInstanceOf[MFADelete]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[MFADelete] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -279,7 +334,7 @@ object MFADeleteStatus {
   val Enabled = "Enabled".asInstanceOf[MFADeleteStatus]
   val Disabled = "Disabled".asInstanceOf[MFADeleteStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[MFADeleteStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -288,7 +343,7 @@ object MetadataDirective {
   val COPY = "COPY".asInstanceOf[MetadataDirective]
   val REPLACE = "REPLACE".asInstanceOf[MetadataDirective]
 
-  @inline def values = js.Array(COPY, REPLACE)
+  @inline def values: js.Array[MetadataDirective] = js.Array(COPY, REPLACE)
 }
 
 @js.native
@@ -297,7 +352,7 @@ object MetricsStatus {
   val Enabled = "Enabled".asInstanceOf[MetricsStatus]
   val Disabled = "Disabled".asInstanceOf[MetricsStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[MetricsStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -311,7 +366,7 @@ object ObjectCannedACL {
   val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[ObjectCannedACL]
   val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[ObjectCannedACL]
 
-  @inline def values = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `aws-exec-read`, `bucket-owner-read`, `bucket-owner-full-control`)
+  @inline def values: js.Array[ObjectCannedACL] = js.Array(`private`, `public-read`, `public-read-write`, `authenticated-read`, `aws-exec-read`, `bucket-owner-read`, `bucket-owner-full-control`)
 }
 
 @js.native
@@ -319,7 +374,7 @@ sealed trait ObjectLockEnabled extends js.Any
 object ObjectLockEnabled {
   val Enabled = "Enabled".asInstanceOf[ObjectLockEnabled]
 
-  @inline def values = js.Array(Enabled)
+  @inline def values: js.Array[ObjectLockEnabled] = js.Array(Enabled)
 }
 
 @js.native
@@ -328,7 +383,7 @@ object ObjectLockLegalHoldStatus {
   val ON = "ON".asInstanceOf[ObjectLockLegalHoldStatus]
   val OFF = "OFF".asInstanceOf[ObjectLockLegalHoldStatus]
 
-  @inline def values = js.Array(ON, OFF)
+  @inline def values: js.Array[ObjectLockLegalHoldStatus] = js.Array(ON, OFF)
 }
 
 @js.native
@@ -337,7 +392,7 @@ object ObjectLockMode {
   val GOVERNANCE = "GOVERNANCE".asInstanceOf[ObjectLockMode]
   val COMPLIANCE = "COMPLIANCE".asInstanceOf[ObjectLockMode]
 
-  @inline def values = js.Array(GOVERNANCE, COMPLIANCE)
+  @inline def values: js.Array[ObjectLockMode] = js.Array(GOVERNANCE, COMPLIANCE)
 }
 
 @js.native
@@ -346,12 +401,10 @@ object ObjectLockRetentionMode {
   val GOVERNANCE = "GOVERNANCE".asInstanceOf[ObjectLockRetentionMode]
   val COMPLIANCE = "COMPLIANCE".asInstanceOf[ObjectLockRetentionMode]
 
-  @inline def values = js.Array(GOVERNANCE, COMPLIANCE)
+  @inline def values: js.Array[ObjectLockRetentionMode] = js.Array(GOVERNANCE, COMPLIANCE)
 }
 
-/** The container element for object ownership for a bucket's ownership controls.
-  * BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL.
-  * ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.
+/** The container element for object ownership for a bucket's ownership controls. BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL. ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.
   */
 @js.native
 sealed trait ObjectOwnership extends js.Any
@@ -359,7 +412,7 @@ object ObjectOwnership {
   val BucketOwnerPreferred = "BucketOwnerPreferred".asInstanceOf[ObjectOwnership]
   val ObjectWriter = "ObjectWriter".asInstanceOf[ObjectOwnership]
 
-  @inline def values = js.Array(BucketOwnerPreferred, ObjectWriter)
+  @inline def values: js.Array[ObjectOwnership] = js.Array(BucketOwnerPreferred, ObjectWriter)
 }
 
 @js.native
@@ -374,7 +427,7 @@ object ObjectStorageClass {
   val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[ObjectStorageClass]
   val OUTPOSTS = "OUTPOSTS".asInstanceOf[ObjectStorageClass]
 
-  @inline def values = js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, OUTPOSTS)
+  @inline def values: js.Array[ObjectStorageClass] = js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, OUTPOSTS)
 }
 
 @js.native
@@ -382,7 +435,7 @@ sealed trait ObjectVersionStorageClass extends js.Any
 object ObjectVersionStorageClass {
   val STANDARD = "STANDARD".asInstanceOf[ObjectVersionStorageClass]
 
-  @inline def values = js.Array(STANDARD)
+  @inline def values: js.Array[ObjectVersionStorageClass] = js.Array(STANDARD)
 }
 
 @js.native
@@ -390,7 +443,7 @@ sealed trait OwnerOverride extends js.Any
 object OwnerOverride {
   val Destination = "Destination".asInstanceOf[OwnerOverride]
 
-  @inline def values = js.Array(Destination)
+  @inline def values: js.Array[OwnerOverride] = js.Array(Destination)
 }
 
 @js.native
@@ -399,7 +452,7 @@ object Payer {
   val Requester = "Requester".asInstanceOf[Payer]
   val BucketOwner = "BucketOwner".asInstanceOf[Payer]
 
-  @inline def values = js.Array(Requester, BucketOwner)
+  @inline def values: js.Array[Payer] = js.Array(Requester, BucketOwner)
 }
 
 @js.native
@@ -411,7 +464,7 @@ object Permission {
   val READ = "READ".asInstanceOf[Permission]
   val READ_ACP = "READ_ACP".asInstanceOf[Permission]
 
-  @inline def values = js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP)
+  @inline def values: js.Array[Permission] = js.Array(FULL_CONTROL, WRITE, WRITE_ACP, READ, READ_ACP)
 }
 
 @js.native
@@ -420,7 +473,7 @@ object Protocol {
   val http = "http".asInstanceOf[Protocol]
   val https = "https".asInstanceOf[Protocol]
 
-  @inline def values = js.Array(http, https)
+  @inline def values: js.Array[Protocol] = js.Array(http, https)
 }
 
 @js.native
@@ -429,7 +482,7 @@ object QuoteFields {
   val ALWAYS = "ALWAYS".asInstanceOf[QuoteFields]
   val ASNEEDED = "ASNEEDED".asInstanceOf[QuoteFields]
 
-  @inline def values = js.Array(ALWAYS, ASNEEDED)
+  @inline def values: js.Array[QuoteFields] = js.Array(ALWAYS, ASNEEDED)
 }
 
 @js.native
@@ -438,7 +491,7 @@ object ReplicaModificationsStatus {
   val Enabled = "Enabled".asInstanceOf[ReplicaModificationsStatus]
   val Disabled = "Disabled".asInstanceOf[ReplicaModificationsStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[ReplicaModificationsStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -447,7 +500,7 @@ object ReplicationRuleStatus {
   val Enabled = "Enabled".asInstanceOf[ReplicationRuleStatus]
   val Disabled = "Disabled".asInstanceOf[ReplicationRuleStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[ReplicationRuleStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -458,7 +511,7 @@ object ReplicationStatus {
   val FAILED = "FAILED".asInstanceOf[ReplicationStatus]
   val REPLICA = "REPLICA".asInstanceOf[ReplicationStatus]
 
-  @inline def values = js.Array(COMPLETE, PENDING, FAILED, REPLICA)
+  @inline def values: js.Array[ReplicationStatus] = js.Array(COMPLETE, PENDING, FAILED, REPLICA)
 }
 
 @js.native
@@ -467,7 +520,7 @@ object ReplicationTimeStatus {
   val Enabled = "Enabled".asInstanceOf[ReplicationTimeStatus]
   val Disabled = "Disabled".asInstanceOf[ReplicationTimeStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[ReplicationTimeStatus] = js.Array(Enabled, Disabled)
 }
 
 /** If present, indicates that the requester was successfully charged for the request.
@@ -477,7 +530,7 @@ sealed trait RequestCharged extends js.Any
 object RequestCharged {
   val requester = "requester".asInstanceOf[RequestCharged]
 
-  @inline def values = js.Array(requester)
+  @inline def values: js.Array[RequestCharged] = js.Array(requester)
 }
 
 /** Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html|Downloading Objects in Requestor Pays Buckets]] in the <i>Amazon S3 Developer Guide</i>.
@@ -487,7 +540,7 @@ sealed trait RequestPayer extends js.Any
 object RequestPayer {
   val requester = "requester".asInstanceOf[RequestPayer]
 
-  @inline def values = js.Array(requester)
+  @inline def values: js.Array[RequestPayer] = js.Array(requester)
 }
 
 @js.native
@@ -495,7 +548,7 @@ sealed trait RestoreRequestType extends js.Any
 object RestoreRequestType {
   val SELECT = "SELECT".asInstanceOf[RestoreRequestType]
 
-  @inline def values = js.Array(SELECT)
+  @inline def values: js.Array[RestoreRequestType] = js.Array(SELECT)
 }
 
 @js.native
@@ -504,7 +557,7 @@ object ServerSideEncryption {
   val AES256 = "AES256".asInstanceOf[ServerSideEncryption]
   val `aws:kms` = "aws:kms".asInstanceOf[ServerSideEncryption]
 
-  @inline def values = js.Array(AES256, `aws:kms`)
+  @inline def values: js.Array[ServerSideEncryption] = js.Array(AES256, `aws:kms`)
 }
 
 @js.native
@@ -513,7 +566,7 @@ object SseKmsEncryptedObjectsStatus {
   val Enabled = "Enabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
   val Disabled = "Disabled".asInstanceOf[SseKmsEncryptedObjectsStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[SseKmsEncryptedObjectsStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -528,7 +581,7 @@ object StorageClass {
   val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[StorageClass]
   val OUTPOSTS = "OUTPOSTS".asInstanceOf[StorageClass]
 
-  @inline def values = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE, OUTPOSTS)
+  @inline def values: js.Array[StorageClass] = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE, OUTPOSTS)
 }
 
 @js.native
@@ -536,7 +589,7 @@ sealed trait StorageClassAnalysisSchemaVersion extends js.Any
 object StorageClassAnalysisSchemaVersion {
   val V_1 = "V_1".asInstanceOf[StorageClassAnalysisSchemaVersion]
 
-  @inline def values = js.Array(V_1)
+  @inline def values: js.Array[StorageClassAnalysisSchemaVersion] = js.Array(V_1)
 }
 
 @js.native
@@ -545,7 +598,7 @@ object TaggingDirective {
   val COPY = "COPY".asInstanceOf[TaggingDirective]
   val REPLACE = "REPLACE".asInstanceOf[TaggingDirective]
 
-  @inline def values = js.Array(COPY, REPLACE)
+  @inline def values: js.Array[TaggingDirective] = js.Array(COPY, REPLACE)
 }
 
 @js.native
@@ -555,7 +608,7 @@ object Tier {
   val Bulk = "Bulk".asInstanceOf[Tier]
   val Expedited = "Expedited".asInstanceOf[Tier]
 
-  @inline def values = js.Array(Standard, Bulk, Expedited)
+  @inline def values: js.Array[Tier] = js.Array(Standard, Bulk, Expedited)
 }
 
 @js.native
@@ -567,7 +620,7 @@ object TransitionStorageClass {
   val INTELLIGENT_TIERING = "INTELLIGENT_TIERING".asInstanceOf[TransitionStorageClass]
   val DEEP_ARCHIVE = "DEEP_ARCHIVE".asInstanceOf[TransitionStorageClass]
 
-  @inline def values = js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
+  @inline def values: js.Array[TransitionStorageClass] = js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
 }
 
 @js.native
@@ -577,6 +630,5 @@ object Type {
   val AmazonCustomerByEmail = "AmazonCustomerByEmail".asInstanceOf[Type]
   val Group = "Group".asInstanceOf[Type]
 
-  @inline def values = js.Array(CanonicalUser, AmazonCustomerByEmail, Group)
+  @inline def values: js.Array[Type] = js.Array(CanonicalUser, AmazonCustomerByEmail, Group)
 }
-

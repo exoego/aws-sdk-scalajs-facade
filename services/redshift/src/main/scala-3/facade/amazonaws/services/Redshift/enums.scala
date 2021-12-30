@@ -1,6 +1,6 @@
 package facade.amazonaws.services.redshift
 
-import scalajs._
+import scalajs.js
 
 type ActionType = "restore-cluster" | "recommend-node-config" | "resize-cluster"
 object ActionType {

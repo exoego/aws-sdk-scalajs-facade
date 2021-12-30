@@ -1,7 +1,6 @@
 package facade.amazonaws.services.health
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait entityStatusCode extends js.Any
@@ -10,7 +9,7 @@ object entityStatusCode {
   val UNIMPAIRED = "UNIMPAIRED".asInstanceOf[entityStatusCode]
   val UNKNOWN = "UNKNOWN".asInstanceOf[entityStatusCode]
 
-  @inline def values = js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN)
+  @inline def values: js.Array[entityStatusCode] = js.Array(IMPAIRED, UNIMPAIRED, UNKNOWN)
 }
 
 @js.native
@@ -18,7 +17,7 @@ sealed trait eventAggregateField extends js.Any
 object eventAggregateField {
   val eventTypeCategory = "eventTypeCategory".asInstanceOf[eventAggregateField]
 
-  @inline def values = js.Array(eventTypeCategory)
+  @inline def values: js.Array[eventAggregateField] = js.Array(eventTypeCategory)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object eventScopeCode {
   val ACCOUNT_SPECIFIC = "ACCOUNT_SPECIFIC".asInstanceOf[eventScopeCode]
   val NONE = "NONE".asInstanceOf[eventScopeCode]
 
-  @inline def values = js.Array(PUBLIC, ACCOUNT_SPECIFIC, NONE)
+  @inline def values: js.Array[eventScopeCode] = js.Array(PUBLIC, ACCOUNT_SPECIFIC, NONE)
 }
 
 @js.native
@@ -38,7 +37,7 @@ object eventStatusCode {
   val closed = "closed".asInstanceOf[eventStatusCode]
   val upcoming = "upcoming".asInstanceOf[eventStatusCode]
 
-  @inline def values = js.Array(open, closed, upcoming)
+  @inline def values: js.Array[eventStatusCode] = js.Array(open, closed, upcoming)
 }
 
 @js.native
@@ -49,6 +48,5 @@ object eventTypeCategory {
   val scheduledChange = "scheduledChange".asInstanceOf[eventTypeCategory]
   val investigation = "investigation".asInstanceOf[eventTypeCategory]
 
-  @inline def values = js.Array(issue, accountNotification, scheduledChange, investigation)
+  @inline def values: js.Array[eventTypeCategory] = js.Array(issue, accountNotification, scheduledChange, investigation)
 }
-

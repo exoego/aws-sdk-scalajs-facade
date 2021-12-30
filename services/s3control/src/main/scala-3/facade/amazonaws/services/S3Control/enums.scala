@@ -1,6 +1,6 @@
 package facade.amazonaws.services.s3control
 
-import scalajs._
+import scalajs.js
 
 type BucketCannedACL = "private" | "public-read" | "public-read-write" | "authenticated-read"
 object BucketCannedACL {

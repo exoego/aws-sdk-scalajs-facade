@@ -1,7 +1,6 @@
 package facade.amazonaws.services.sagemaker
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ActionStatus extends js.Any
@@ -13,7 +12,7 @@ object ActionStatus {
   val Stopping = "Stopping".asInstanceOf[ActionStatus]
   val Stopped = "Stopped".asInstanceOf[ActionStatus]
 
-  @inline def values = js.Array(Unknown, InProgress, Completed, Failed, Stopping, Stopped)
+  @inline def values: js.Array[ActionStatus] = js.Array(Unknown, InProgress, Completed, Failed, Stopping, Stopped)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object AlgorithmSortBy {
   val Name = "Name".asInstanceOf[AlgorithmSortBy]
   val CreationTime = "CreationTime".asInstanceOf[AlgorithmSortBy]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[AlgorithmSortBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -34,7 +33,7 @@ object AlgorithmStatus {
   val Failed = "Failed".asInstanceOf[AlgorithmStatus]
   val Deleting = "Deleting".asInstanceOf[AlgorithmStatus]
 
-  @inline def values = js.Array(Pending, InProgress, Completed, Failed, Deleting)
+  @inline def values: js.Array[AlgorithmStatus] = js.Array(Pending, InProgress, Completed, Failed, Deleting)
 }
 
 @js.native
@@ -44,7 +43,7 @@ object AppImageConfigSortKey {
   val LastModifiedTime = "LastModifiedTime".asInstanceOf[AppImageConfigSortKey]
   val Name = "Name".asInstanceOf[AppImageConfigSortKey]
 
-  @inline def values = js.Array(CreationTime, LastModifiedTime, Name)
+  @inline def values: js.Array[AppImageConfigSortKey] = js.Array(CreationTime, LastModifiedTime, Name)
 }
 
 @js.native
@@ -83,7 +82,40 @@ object AppInstanceType {
   val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[AppInstanceType]
   val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[AppInstanceType]
 
-  @inline def values = js.Array(system, `ml.t3.micro`, `ml.t3.small`, `ml.t3.medium`, `ml.t3.large`, `ml.t3.xlarge`, `ml.t3.2xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.8xlarge`, `ml.m5.12xlarge`, `ml.m5.16xlarge`, `ml.m5.24xlarge`, `ml.c5.large`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.12xlarge`, `ml.c5.18xlarge`, `ml.c5.24xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.g4dn.xlarge`, `ml.g4dn.2xlarge`, `ml.g4dn.4xlarge`, `ml.g4dn.8xlarge`, `ml.g4dn.12xlarge`, `ml.g4dn.16xlarge`)
+  @inline def values: js.Array[AppInstanceType] = js.Array(
+    system,
+    `ml.t3.micro`,
+    `ml.t3.small`,
+    `ml.t3.medium`,
+    `ml.t3.large`,
+    `ml.t3.xlarge`,
+    `ml.t3.2xlarge`,
+    `ml.m5.large`,
+    `ml.m5.xlarge`,
+    `ml.m5.2xlarge`,
+    `ml.m5.4xlarge`,
+    `ml.m5.8xlarge`,
+    `ml.m5.12xlarge`,
+    `ml.m5.16xlarge`,
+    `ml.m5.24xlarge`,
+    `ml.c5.large`,
+    `ml.c5.xlarge`,
+    `ml.c5.2xlarge`,
+    `ml.c5.4xlarge`,
+    `ml.c5.9xlarge`,
+    `ml.c5.12xlarge`,
+    `ml.c5.18xlarge`,
+    `ml.c5.24xlarge`,
+    `ml.p3.2xlarge`,
+    `ml.p3.8xlarge`,
+    `ml.p3.16xlarge`,
+    `ml.g4dn.xlarge`,
+    `ml.g4dn.2xlarge`,
+    `ml.g4dn.4xlarge`,
+    `ml.g4dn.8xlarge`,
+    `ml.g4dn.12xlarge`,
+    `ml.g4dn.16xlarge`
+  )
 }
 
 @js.native
@@ -92,7 +124,7 @@ object AppNetworkAccessType {
   val PublicInternetOnly = "PublicInternetOnly".asInstanceOf[AppNetworkAccessType]
   val VpcOnly = "VpcOnly".asInstanceOf[AppNetworkAccessType]
 
-  @inline def values = js.Array(PublicInternetOnly, VpcOnly)
+  @inline def values: js.Array[AppNetworkAccessType] = js.Array(PublicInternetOnly, VpcOnly)
 }
 
 @js.native
@@ -100,7 +132,7 @@ sealed trait AppSortKey extends js.Any
 object AppSortKey {
   val CreationTime = "CreationTime".asInstanceOf[AppSortKey]
 
-  @inline def values = js.Array(CreationTime)
+  @inline def values: js.Array[AppSortKey] = js.Array(CreationTime)
 }
 
 @js.native
@@ -112,7 +144,7 @@ object AppStatus {
   val InService = "InService".asInstanceOf[AppStatus]
   val Pending = "Pending".asInstanceOf[AppStatus]
 
-  @inline def values = js.Array(Deleted, Deleting, Failed, InService, Pending)
+  @inline def values: js.Array[AppStatus] = js.Array(Deleted, Deleting, Failed, InService, Pending)
 }
 
 @js.native
@@ -122,7 +154,7 @@ object AppType {
   val KernelGateway = "KernelGateway".asInstanceOf[AppType]
   val TensorBoard = "TensorBoard".asInstanceOf[AppType]
 
-  @inline def values = js.Array(JupyterServer, KernelGateway, TensorBoard)
+  @inline def values: js.Array[AppType] = js.Array(JupyterServer, KernelGateway, TensorBoard)
 }
 
 @js.native
@@ -133,7 +165,7 @@ object ArtifactSourceIdType {
   val S3Version = "S3Version".asInstanceOf[ArtifactSourceIdType]
   val Custom = "Custom".asInstanceOf[ArtifactSourceIdType]
 
-  @inline def values = js.Array(MD5Hash, S3ETag, S3Version, Custom)
+  @inline def values: js.Array[ArtifactSourceIdType] = js.Array(MD5Hash, S3ETag, S3Version, Custom)
 }
 
 @js.native
@@ -142,7 +174,7 @@ object AssemblyType {
   val None = "None".asInstanceOf[AssemblyType]
   val Line = "Line".asInstanceOf[AssemblyType]
 
-  @inline def values = js.Array(None, Line)
+  @inline def values: js.Array[AssemblyType] = js.Array(None, Line)
 }
 
 @js.native
@@ -153,7 +185,7 @@ object AssociationEdgeType {
   val DerivedFrom = "DerivedFrom".asInstanceOf[AssociationEdgeType]
   val Produced = "Produced".asInstanceOf[AssociationEdgeType]
 
-  @inline def values = js.Array(ContributedTo, AssociatedWith, DerivedFrom, Produced)
+  @inline def values: js.Array[AssociationEdgeType] = js.Array(ContributedTo, AssociatedWith, DerivedFrom, Produced)
 }
 
 /** The compression used for Athena query results.
@@ -165,7 +197,7 @@ object AthenaResultCompressionType {
   val SNAPPY = "SNAPPY".asInstanceOf[AthenaResultCompressionType]
   val ZLIB = "ZLIB".asInstanceOf[AthenaResultCompressionType]
 
-  @inline def values = js.Array(GZIP, SNAPPY, ZLIB)
+  @inline def values: js.Array[AthenaResultCompressionType] = js.Array(GZIP, SNAPPY, ZLIB)
 }
 
 /** The data storage format for Athena query results.
@@ -179,7 +211,7 @@ object AthenaResultFormat {
   val JSON = "JSON".asInstanceOf[AthenaResultFormat]
   val TEXTFILE = "TEXTFILE".asInstanceOf[AthenaResultFormat]
 
-  @inline def values = js.Array(PARQUET, ORC, AVRO, JSON, TEXTFILE)
+  @inline def values: js.Array[AthenaResultFormat] = js.Array(PARQUET, ORC, AVRO, JSON, TEXTFILE)
 }
 
 @js.native
@@ -188,7 +220,7 @@ object AuthMode {
   val SSO = "SSO".asInstanceOf[AuthMode]
   val IAM = "IAM".asInstanceOf[AuthMode]
 
-  @inline def values = js.Array(SSO, IAM)
+  @inline def values: js.Array[AuthMode] = js.Array(SSO, IAM)
 }
 
 @js.native
@@ -197,7 +229,7 @@ object AutoMLJobObjectiveType {
   val Maximize = "Maximize".asInstanceOf[AutoMLJobObjectiveType]
   val Minimize = "Minimize".asInstanceOf[AutoMLJobObjectiveType]
 
-  @inline def values = js.Array(Maximize, Minimize)
+  @inline def values: js.Array[AutoMLJobObjectiveType] = js.Array(Maximize, Minimize)
 }
 
 @js.native
@@ -217,7 +249,21 @@ object AutoMLJobSecondaryStatus {
   val Completed = "Completed".asInstanceOf[AutoMLJobSecondaryStatus]
   val ExplainabilityError = "ExplainabilityError".asInstanceOf[AutoMLJobSecondaryStatus]
 
-  @inline def values = js.Array(Starting, AnalyzingData, FeatureEngineering, ModelTuning, MaxCandidatesReached, Failed, Stopped, MaxAutoMLJobRuntimeReached, Stopping, CandidateDefinitionsGenerated, GeneratingExplainabilityReport, Completed, ExplainabilityError)
+  @inline def values: js.Array[AutoMLJobSecondaryStatus] = js.Array(
+    Starting,
+    AnalyzingData,
+    FeatureEngineering,
+    ModelTuning,
+    MaxCandidatesReached,
+    Failed,
+    Stopped,
+    MaxAutoMLJobRuntimeReached,
+    Stopping,
+    CandidateDefinitionsGenerated,
+    GeneratingExplainabilityReport,
+    Completed,
+    ExplainabilityError
+  )
 }
 
 @js.native
@@ -229,7 +275,7 @@ object AutoMLJobStatus {
   val Stopped = "Stopped".asInstanceOf[AutoMLJobStatus]
   val Stopping = "Stopping".asInstanceOf[AutoMLJobStatus]
 
-  @inline def values = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
+  @inline def values: js.Array[AutoMLJobStatus] = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
 }
 
 @js.native
@@ -241,7 +287,7 @@ object AutoMLMetricEnum {
   val F1macro = "F1macro".asInstanceOf[AutoMLMetricEnum]
   val AUC = "AUC".asInstanceOf[AutoMLMetricEnum]
 
-  @inline def values = js.Array(Accuracy, MSE, F1, F1macro, AUC)
+  @inline def values: js.Array[AutoMLMetricEnum] = js.Array(Accuracy, MSE, F1, F1macro, AUC)
 }
 
 @js.native
@@ -250,7 +296,7 @@ object AutoMLS3DataType {
   val ManifestFile = "ManifestFile".asInstanceOf[AutoMLS3DataType]
   val S3Prefix = "S3Prefix".asInstanceOf[AutoMLS3DataType]
 
-  @inline def values = js.Array(ManifestFile, S3Prefix)
+  @inline def values: js.Array[AutoMLS3DataType] = js.Array(ManifestFile, S3Prefix)
 }
 
 @js.native
@@ -260,7 +306,7 @@ object AutoMLSortBy {
   val CreationTime = "CreationTime".asInstanceOf[AutoMLSortBy]
   val Status = "Status".asInstanceOf[AutoMLSortBy]
 
-  @inline def values = js.Array(Name, CreationTime, Status)
+  @inline def values: js.Array[AutoMLSortBy] = js.Array(Name, CreationTime, Status)
 }
 
 @js.native
@@ -269,7 +315,7 @@ object AutoMLSortOrder {
   val Ascending = "Ascending".asInstanceOf[AutoMLSortOrder]
   val Descending = "Descending".asInstanceOf[AutoMLSortOrder]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[AutoMLSortOrder] = js.Array(Ascending, Descending)
 }
 
 @js.native
@@ -278,7 +324,7 @@ object AwsManagedHumanLoopRequestSource {
   val `AWS/Rekognition/DetectModerationLabels/Image/V3` = "AWS/Rekognition/DetectModerationLabels/Image/V3".asInstanceOf[AwsManagedHumanLoopRequestSource]
   val `AWS/Textract/AnalyzeDocument/Forms/V1` = "AWS/Textract/AnalyzeDocument/Forms/V1".asInstanceOf[AwsManagedHumanLoopRequestSource]
 
-  @inline def values = js.Array(`AWS/Rekognition/DetectModerationLabels/Image/V3`, `AWS/Textract/AnalyzeDocument/Forms/V1`)
+  @inline def values: js.Array[AwsManagedHumanLoopRequestSource] = js.Array(`AWS/Rekognition/DetectModerationLabels/Image/V3`, `AWS/Textract/AnalyzeDocument/Forms/V1`)
 }
 
 @js.native
@@ -287,7 +333,7 @@ object BatchStrategy {
   val MultiRecord = "MultiRecord".asInstanceOf[BatchStrategy]
   val SingleRecord = "SingleRecord".asInstanceOf[BatchStrategy]
 
-  @inline def values = js.Array(MultiRecord, SingleRecord)
+  @inline def values: js.Array[BatchStrategy] = js.Array(MultiRecord, SingleRecord)
 }
 
 @js.native
@@ -296,7 +342,7 @@ object BooleanOperator {
   val And = "And".asInstanceOf[BooleanOperator]
   val Or = "Or".asInstanceOf[BooleanOperator]
 
-  @inline def values = js.Array(And, Or)
+  @inline def values: js.Array[BooleanOperator] = js.Array(And, Or)
 }
 
 @js.native
@@ -306,7 +352,7 @@ object CandidateSortBy {
   val Status = "Status".asInstanceOf[CandidateSortBy]
   val FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[CandidateSortBy]
 
-  @inline def values = js.Array(CreationTime, Status, FinalObjectiveMetricValue)
+  @inline def values: js.Array[CandidateSortBy] = js.Array(CreationTime, Status, FinalObjectiveMetricValue)
 }
 
 @js.native
@@ -318,7 +364,7 @@ object CandidateStatus {
   val Stopped = "Stopped".asInstanceOf[CandidateStatus]
   val Stopping = "Stopping".asInstanceOf[CandidateStatus]
 
-  @inline def values = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
+  @inline def values: js.Array[CandidateStatus] = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
 }
 
 @js.native
@@ -328,7 +374,7 @@ object CandidateStepType {
   val `AWS::SageMaker::TransformJob` = "AWS::SageMaker::TransformJob".asInstanceOf[CandidateStepType]
   val `AWS::SageMaker::ProcessingJob` = "AWS::SageMaker::ProcessingJob".asInstanceOf[CandidateStepType]
 
-  @inline def values = js.Array(`AWS::SageMaker::TrainingJob`, `AWS::SageMaker::TransformJob`, `AWS::SageMaker::ProcessingJob`)
+  @inline def values: js.Array[CandidateStepType] = js.Array(`AWS::SageMaker::TrainingJob`, `AWS::SageMaker::TransformJob`, `AWS::SageMaker::ProcessingJob`)
 }
 
 @js.native
@@ -337,7 +383,7 @@ object CapacitySizeType {
   val INSTANCE_COUNT = "INSTANCE_COUNT".asInstanceOf[CapacitySizeType]
   val CAPACITY_PERCENT = "CAPACITY_PERCENT".asInstanceOf[CapacitySizeType]
 
-  @inline def values = js.Array(INSTANCE_COUNT, CAPACITY_PERCENT)
+  @inline def values: js.Array[CapacitySizeType] = js.Array(INSTANCE_COUNT, CAPACITY_PERCENT)
 }
 
 @js.native
@@ -346,7 +392,7 @@ object CaptureMode {
   val Input = "Input".asInstanceOf[CaptureMode]
   val Output = "Output".asInstanceOf[CaptureMode]
 
-  @inline def values = js.Array(Input, Output)
+  @inline def values: js.Array[CaptureMode] = js.Array(Input, Output)
 }
 
 @js.native
@@ -355,7 +401,7 @@ object CaptureStatus {
   val Started = "Started".asInstanceOf[CaptureStatus]
   val Stopped = "Stopped".asInstanceOf[CaptureStatus]
 
-  @inline def values = js.Array(Started, Stopped)
+  @inline def values: js.Array[CaptureStatus] = js.Array(Started, Stopped)
 }
 
 @js.native
@@ -365,7 +411,7 @@ object CodeRepositorySortBy {
   val CreationTime = "CreationTime".asInstanceOf[CodeRepositorySortBy]
   val LastModifiedTime = "LastModifiedTime".asInstanceOf[CodeRepositorySortBy]
 
-  @inline def values = js.Array(Name, CreationTime, LastModifiedTime)
+  @inline def values: js.Array[CodeRepositorySortBy] = js.Array(Name, CreationTime, LastModifiedTime)
 }
 
 @js.native
@@ -374,7 +420,7 @@ object CodeRepositorySortOrder {
   val Ascending = "Ascending".asInstanceOf[CodeRepositorySortOrder]
   val Descending = "Descending".asInstanceOf[CodeRepositorySortOrder]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[CodeRepositorySortOrder] = js.Array(Ascending, Descending)
 }
 
 @js.native
@@ -387,7 +433,7 @@ object CompilationJobStatus {
   val STOPPING = "STOPPING".asInstanceOf[CompilationJobStatus]
   val STOPPED = "STOPPED".asInstanceOf[CompilationJobStatus]
 
-  @inline def values = js.Array(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED)
+  @inline def values: js.Array[CompilationJobStatus] = js.Array(INPROGRESS, COMPLETED, FAILED, STARTING, STOPPING, STOPPED)
 }
 
 @js.native
@@ -396,7 +442,7 @@ object CompressionType {
   val None = "None".asInstanceOf[CompressionType]
   val Gzip = "Gzip".asInstanceOf[CompressionType]
 
-  @inline def values = js.Array(None, Gzip)
+  @inline def values: js.Array[CompressionType] = js.Array(None, Gzip)
 }
 
 @js.native
@@ -405,7 +451,7 @@ object ConditionOutcome {
   val True = "True".asInstanceOf[ConditionOutcome]
   val False = "False".asInstanceOf[ConditionOutcome]
 
-  @inline def values = js.Array(True, False)
+  @inline def values: js.Array[ConditionOutcome] = js.Array(True, False)
 }
 
 @js.native
@@ -414,7 +460,7 @@ object ContainerMode {
   val SingleModel = "SingleModel".asInstanceOf[ContainerMode]
   val MultiModel = "MultiModel".asInstanceOf[ContainerMode]
 
-  @inline def values = js.Array(SingleModel, MultiModel)
+  @inline def values: js.Array[ContainerMode] = js.Array(SingleModel, MultiModel)
 }
 
 @js.native
@@ -423,7 +469,7 @@ object ContentClassifier {
   val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
   val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
-  @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
+  @inline def values: js.Array[ContentClassifier] = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
 }
 
 @js.native
@@ -432,7 +478,7 @@ object DataDistributionType {
   val FullyReplicated = "FullyReplicated".asInstanceOf[DataDistributionType]
   val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[DataDistributionType]
 
-  @inline def values = js.Array(FullyReplicated, ShardedByS3Key)
+  @inline def values: js.Array[DataDistributionType] = js.Array(FullyReplicated, ShardedByS3Key)
 }
 
 @js.native
@@ -443,7 +489,7 @@ object DetailedAlgorithmStatus {
   val Completed = "Completed".asInstanceOf[DetailedAlgorithmStatus]
   val Failed = "Failed".asInstanceOf[DetailedAlgorithmStatus]
 
-  @inline def values = js.Array(NotStarted, InProgress, Completed, Failed)
+  @inline def values: js.Array[DetailedAlgorithmStatus] = js.Array(NotStarted, InProgress, Completed, Failed)
 }
 
 @js.native
@@ -454,7 +500,7 @@ object DetailedModelPackageStatus {
   val Completed = "Completed".asInstanceOf[DetailedModelPackageStatus]
   val Failed = "Failed".asInstanceOf[DetailedModelPackageStatus]
 
-  @inline def values = js.Array(NotStarted, InProgress, Completed, Failed)
+  @inline def values: js.Array[DetailedModelPackageStatus] = js.Array(NotStarted, InProgress, Completed, Failed)
 }
 
 @js.native
@@ -463,7 +509,7 @@ object DirectInternetAccess {
   val Enabled = "Enabled".asInstanceOf[DirectInternetAccess]
   val Disabled = "Disabled".asInstanceOf[DirectInternetAccess]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[DirectInternetAccess] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -477,7 +523,7 @@ object DomainStatus {
   val Update_Failed = "Update_Failed".asInstanceOf[DomainStatus]
   val Delete_Failed = "Delete_Failed".asInstanceOf[DomainStatus]
 
-  @inline def values = js.Array(Deleting, Failed, InService, Pending, Updating, Update_Failed, Delete_Failed)
+  @inline def values: js.Array[DomainStatus] = js.Array(Deleting, Failed, InService, Pending, Updating, Update_Failed, Delete_Failed)
 }
 
 @js.native
@@ -490,7 +536,7 @@ object EdgePackagingJobStatus {
   val STOPPING = "STOPPING".asInstanceOf[EdgePackagingJobStatus]
   val STOPPED = "STOPPED".asInstanceOf[EdgePackagingJobStatus]
 
-  @inline def values = js.Array(STARTING, INPROGRESS, COMPLETED, FAILED, STOPPING, STOPPED)
+  @inline def values: js.Array[EdgePackagingJobStatus] = js.Array(STARTING, INPROGRESS, COMPLETED, FAILED, STOPPING, STOPPED)
 }
 
 @js.native
@@ -499,7 +545,7 @@ object EndpointConfigSortKey {
   val Name = "Name".asInstanceOf[EndpointConfigSortKey]
   val CreationTime = "CreationTime".asInstanceOf[EndpointConfigSortKey]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[EndpointConfigSortKey] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -509,7 +555,7 @@ object EndpointSortKey {
   val CreationTime = "CreationTime".asInstanceOf[EndpointSortKey]
   val Status = "Status".asInstanceOf[EndpointSortKey]
 
-  @inline def values = js.Array(Name, CreationTime, Status)
+  @inline def values: js.Array[EndpointSortKey] = js.Array(Name, CreationTime, Status)
 }
 
 @js.native
@@ -524,7 +570,7 @@ object EndpointStatus {
   val Deleting = "Deleting".asInstanceOf[EndpointStatus]
   val Failed = "Failed".asInstanceOf[EndpointStatus]
 
-  @inline def values = js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed)
+  @inline def values: js.Array[EndpointStatus] = js.Array(OutOfService, Creating, Updating, SystemUpdating, RollingBack, InService, Deleting, Failed)
 }
 
 @js.native
@@ -538,7 +584,7 @@ object ExecutionStatus {
   val Stopping = "Stopping".asInstanceOf[ExecutionStatus]
   val Stopped = "Stopped".asInstanceOf[ExecutionStatus]
 
-  @inline def values = js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped)
+  @inline def values: js.Array[ExecutionStatus] = js.Array(Pending, Completed, CompletedWithViolations, InProgress, Failed, Stopping, Stopped)
 }
 
 @js.native
@@ -549,7 +595,7 @@ object FeatureGroupSortBy {
   val OfflineStoreStatus = "OfflineStoreStatus".asInstanceOf[FeatureGroupSortBy]
   val CreationTime = "CreationTime".asInstanceOf[FeatureGroupSortBy]
 
-  @inline def values = js.Array(Name, FeatureGroupStatus, OfflineStoreStatus, CreationTime)
+  @inline def values: js.Array[FeatureGroupSortBy] = js.Array(Name, FeatureGroupStatus, OfflineStoreStatus, CreationTime)
 }
 
 @js.native
@@ -558,7 +604,7 @@ object FeatureGroupSortOrder {
   val Ascending = "Ascending".asInstanceOf[FeatureGroupSortOrder]
   val Descending = "Descending".asInstanceOf[FeatureGroupSortOrder]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[FeatureGroupSortOrder] = js.Array(Ascending, Descending)
 }
 
 @js.native
@@ -570,7 +616,7 @@ object FeatureGroupStatus {
   val Deleting = "Deleting".asInstanceOf[FeatureGroupStatus]
   val DeleteFailed = "DeleteFailed".asInstanceOf[FeatureGroupStatus]
 
-  @inline def values = js.Array(Creating, Created, CreateFailed, Deleting, DeleteFailed)
+  @inline def values: js.Array[FeatureGroupStatus] = js.Array(Creating, Created, CreateFailed, Deleting, DeleteFailed)
 }
 
 @js.native
@@ -580,7 +626,7 @@ object FeatureType {
   val Fractional = "Fractional".asInstanceOf[FeatureType]
   val String = "String".asInstanceOf[FeatureType]
 
-  @inline def values = js.Array(Integral, Fractional, String)
+  @inline def values: js.Array[FeatureType] = js.Array(Integral, Fractional, String)
 }
 
 @js.native
@@ -589,7 +635,7 @@ object FileSystemAccessMode {
   val rw = "rw".asInstanceOf[FileSystemAccessMode]
   val ro = "ro".asInstanceOf[FileSystemAccessMode]
 
-  @inline def values = js.Array(rw, ro)
+  @inline def values: js.Array[FileSystemAccessMode] = js.Array(rw, ro)
 }
 
 @js.native
@@ -598,7 +644,7 @@ object FileSystemType {
   val EFS = "EFS".asInstanceOf[FileSystemType]
   val FSxLustre = "FSxLustre".asInstanceOf[FileSystemType]
 
-  @inline def values = js.Array(EFS, FSxLustre)
+  @inline def values: js.Array[FileSystemType] = js.Array(EFS, FSxLustre)
 }
 
 @js.native
@@ -609,7 +655,7 @@ object FlowDefinitionStatus {
   val Failed = "Failed".asInstanceOf[FlowDefinitionStatus]
   val Deleting = "Deleting".asInstanceOf[FlowDefinitionStatus]
 
-  @inline def values = js.Array(Initializing, Active, Failed, Deleting)
+  @inline def values: js.Array[FlowDefinitionStatus] = js.Array(Initializing, Active, Failed, Deleting)
 }
 
 @js.native
@@ -625,7 +671,7 @@ object Framework {
   val DARKNET = "DARKNET".asInstanceOf[Framework]
   val SKLEARN = "SKLEARN".asInstanceOf[Framework]
 
-  @inline def values = js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE, DARKNET, SKLEARN)
+  @inline def values: js.Array[Framework] = js.Array(TENSORFLOW, KERAS, MXNET, ONNX, PYTORCH, XGBOOST, TFLITE, DARKNET, SKLEARN)
 }
 
 @js.native
@@ -634,7 +680,7 @@ object HumanTaskUiStatus {
   val Active = "Active".asInstanceOf[HumanTaskUiStatus]
   val Deleting = "Deleting".asInstanceOf[HumanTaskUiStatus]
 
-  @inline def values = js.Array(Active, Deleting)
+  @inline def values: js.Array[HumanTaskUiStatus] = js.Array(Active, Deleting)
 }
 
 @js.native
@@ -645,7 +691,7 @@ object HyperParameterScalingType {
   val Logarithmic = "Logarithmic".asInstanceOf[HyperParameterScalingType]
   val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[HyperParameterScalingType]
 
-  @inline def values = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
+  @inline def values: js.Array[HyperParameterScalingType] = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
 }
 
 @js.native
@@ -654,7 +700,7 @@ object HyperParameterTuningJobObjectiveType {
   val Maximize = "Maximize".asInstanceOf[HyperParameterTuningJobObjectiveType]
   val Minimize = "Minimize".asInstanceOf[HyperParameterTuningJobObjectiveType]
 
-  @inline def values = js.Array(Maximize, Minimize)
+  @inline def values: js.Array[HyperParameterTuningJobObjectiveType] = js.Array(Maximize, Minimize)
 }
 
 @js.native
@@ -664,7 +710,7 @@ object HyperParameterTuningJobSortByOptions {
   val Status = "Status".asInstanceOf[HyperParameterTuningJobSortByOptions]
   val CreationTime = "CreationTime".asInstanceOf[HyperParameterTuningJobSortByOptions]
 
-  @inline def values = js.Array(Name, Status, CreationTime)
+  @inline def values: js.Array[HyperParameterTuningJobSortByOptions] = js.Array(Name, Status, CreationTime)
 }
 
 @js.native
@@ -676,7 +722,7 @@ object HyperParameterTuningJobStatus {
   val Stopped = "Stopped".asInstanceOf[HyperParameterTuningJobStatus]
   val Stopping = "Stopping".asInstanceOf[HyperParameterTuningJobStatus]
 
-  @inline def values = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
+  @inline def values: js.Array[HyperParameterTuningJobStatus] = js.Array(Completed, InProgress, Failed, Stopped, Stopping)
 }
 
 /** The strategy hyperparameter tuning uses to find the best combination of hyperparameters for your model. Currently, the only supported value is <code>Bayesian</code>.
@@ -687,7 +733,7 @@ object HyperParameterTuningJobStrategyType {
   val Bayesian = "Bayesian".asInstanceOf[HyperParameterTuningJobStrategyType]
   val Random = "Random".asInstanceOf[HyperParameterTuningJobStrategyType]
 
-  @inline def values = js.Array(Bayesian, Random)
+  @inline def values: js.Array[HyperParameterTuningJobStrategyType] = js.Array(Bayesian, Random)
 }
 
 @js.native
@@ -696,7 +742,7 @@ object HyperParameterTuningJobWarmStartType {
   val IdenticalDataAndAlgorithm = "IdenticalDataAndAlgorithm".asInstanceOf[HyperParameterTuningJobWarmStartType]
   val TransferLearning = "TransferLearning".asInstanceOf[HyperParameterTuningJobWarmStartType]
 
-  @inline def values = js.Array(IdenticalDataAndAlgorithm, TransferLearning)
+  @inline def values: js.Array[HyperParameterTuningJobWarmStartType] = js.Array(IdenticalDataAndAlgorithm, TransferLearning)
 }
 
 @js.native
@@ -706,7 +752,7 @@ object ImageSortBy {
   val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ImageSortBy]
   val IMAGE_NAME = "IMAGE_NAME".asInstanceOf[ImageSortBy]
 
-  @inline def values = js.Array(CREATION_TIME, LAST_MODIFIED_TIME, IMAGE_NAME)
+  @inline def values: js.Array[ImageSortBy] = js.Array(CREATION_TIME, LAST_MODIFIED_TIME, IMAGE_NAME)
 }
 
 @js.native
@@ -715,7 +761,7 @@ object ImageSortOrder {
   val ASCENDING = "ASCENDING".asInstanceOf[ImageSortOrder]
   val DESCENDING = "DESCENDING".asInstanceOf[ImageSortOrder]
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values: js.Array[ImageSortOrder] = js.Array(ASCENDING, DESCENDING)
 }
 
 @js.native
@@ -729,7 +775,7 @@ object ImageStatus {
   val DELETING = "DELETING".asInstanceOf[ImageStatus]
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ImageStatus]
 
-  @inline def values = js.Array(CREATING, CREATED, CREATE_FAILED, UPDATING, UPDATE_FAILED, DELETING, DELETE_FAILED)
+  @inline def values: js.Array[ImageStatus] = js.Array(CREATING, CREATED, CREATE_FAILED, UPDATING, UPDATE_FAILED, DELETING, DELETE_FAILED)
 }
 
 @js.native
@@ -739,7 +785,7 @@ object ImageVersionSortBy {
   val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ImageVersionSortBy]
   val VERSION = "VERSION".asInstanceOf[ImageVersionSortBy]
 
-  @inline def values = js.Array(CREATION_TIME, LAST_MODIFIED_TIME, VERSION)
+  @inline def values: js.Array[ImageVersionSortBy] = js.Array(CREATION_TIME, LAST_MODIFIED_TIME, VERSION)
 }
 
 @js.native
@@ -748,7 +794,7 @@ object ImageVersionSortOrder {
   val ASCENDING = "ASCENDING".asInstanceOf[ImageVersionSortOrder]
   val DESCENDING = "DESCENDING".asInstanceOf[ImageVersionSortOrder]
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values: js.Array[ImageVersionSortOrder] = js.Array(ASCENDING, DESCENDING)
 }
 
 @js.native
@@ -760,7 +806,7 @@ object ImageVersionStatus {
   val DELETING = "DELETING".asInstanceOf[ImageVersionStatus]
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ImageVersionStatus]
 
-  @inline def values = js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED)
+  @inline def values: js.Array[ImageVersionStatus] = js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED)
 }
 
 @js.native
@@ -769,7 +815,7 @@ object InferenceExecutionMode {
   val Serial = "Serial".asInstanceOf[InferenceExecutionMode]
   val Direct = "Direct".asInstanceOf[InferenceExecutionMode]
 
-  @inline def values = js.Array(Serial, Direct)
+  @inline def values: js.Array[InferenceExecutionMode] = js.Array(Serial, Direct)
 }
 
 @js.native
@@ -778,7 +824,7 @@ object InputMode {
   val Pipe = "Pipe".asInstanceOf[InputMode]
   val File = "File".asInstanceOf[InputMode]
 
-  @inline def values = js.Array(Pipe, File)
+  @inline def values: js.Array[InputMode] = js.Array(Pipe, File)
 }
 
 @js.native
@@ -823,7 +869,46 @@ object InstanceType {
   val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[InstanceType]
   val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[InstanceType]
 
-  @inline def values = js.Array(`ml.t2.medium`, `ml.t2.large`, `ml.t2.xlarge`, `ml.t2.2xlarge`, `ml.t3.medium`, `ml.t3.large`, `ml.t3.xlarge`, `ml.t3.2xlarge`, `ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.c5d.xlarge`, `ml.c5d.2xlarge`, `ml.c5d.4xlarge`, `ml.c5d.9xlarge`, `ml.c5d.18xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`)
+  @inline def values: js.Array[InstanceType] = js.Array(
+    `ml.t2.medium`,
+    `ml.t2.large`,
+    `ml.t2.xlarge`,
+    `ml.t2.2xlarge`,
+    `ml.t3.medium`,
+    `ml.t3.large`,
+    `ml.t3.xlarge`,
+    `ml.t3.2xlarge`,
+    `ml.m4.xlarge`,
+    `ml.m4.2xlarge`,
+    `ml.m4.4xlarge`,
+    `ml.m4.10xlarge`,
+    `ml.m4.16xlarge`,
+    `ml.m5.xlarge`,
+    `ml.m5.2xlarge`,
+    `ml.m5.4xlarge`,
+    `ml.m5.12xlarge`,
+    `ml.m5.24xlarge`,
+    `ml.c4.xlarge`,
+    `ml.c4.2xlarge`,
+    `ml.c4.4xlarge`,
+    `ml.c4.8xlarge`,
+    `ml.c5.xlarge`,
+    `ml.c5.2xlarge`,
+    `ml.c5.4xlarge`,
+    `ml.c5.9xlarge`,
+    `ml.c5.18xlarge`,
+    `ml.c5d.xlarge`,
+    `ml.c5d.2xlarge`,
+    `ml.c5d.4xlarge`,
+    `ml.c5d.9xlarge`,
+    `ml.c5d.18xlarge`,
+    `ml.p2.xlarge`,
+    `ml.p2.8xlarge`,
+    `ml.p2.16xlarge`,
+    `ml.p3.2xlarge`,
+    `ml.p3.8xlarge`,
+    `ml.p3.16xlarge`
+  )
 }
 
 @js.native
@@ -832,7 +917,7 @@ object JoinSource {
   val Input = "Input".asInstanceOf[JoinSource]
   val None = "None".asInstanceOf[JoinSource]
 
-  @inline def values = js.Array(Input, None)
+  @inline def values: js.Array[JoinSource] = js.Array(Input, None)
 }
 
 @js.native
@@ -845,7 +930,7 @@ object LabelingJobStatus {
   val Stopping = "Stopping".asInstanceOf[LabelingJobStatus]
   val Stopped = "Stopped".asInstanceOf[LabelingJobStatus]
 
-  @inline def values = js.Array(Initializing, InProgress, Completed, Failed, Stopping, Stopped)
+  @inline def values: js.Array[LabelingJobStatus] = js.Array(Initializing, InProgress, Completed, Failed, Stopping, Stopped)
 }
 
 @js.native
@@ -855,7 +940,7 @@ object ListCompilationJobsSortBy {
   val CreationTime = "CreationTime".asInstanceOf[ListCompilationJobsSortBy]
   val Status = "Status".asInstanceOf[ListCompilationJobsSortBy]
 
-  @inline def values = js.Array(Name, CreationTime, Status)
+  @inline def values: js.Array[ListCompilationJobsSortBy] = js.Array(Name, CreationTime, Status)
 }
 
 @js.native
@@ -865,7 +950,7 @@ object ListDeviceFleetsSortBy {
   val CREATION_TIME = "CREATION_TIME".asInstanceOf[ListDeviceFleetsSortBy]
   val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ListDeviceFleetsSortBy]
 
-  @inline def values = js.Array(NAME, CREATION_TIME, LAST_MODIFIED_TIME)
+  @inline def values: js.Array[ListDeviceFleetsSortBy] = js.Array(NAME, CREATION_TIME, LAST_MODIFIED_TIME)
 }
 
 @js.native
@@ -877,7 +962,7 @@ object ListEdgePackagingJobsSortBy {
   val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ListEdgePackagingJobsSortBy]
   val STATUS = "STATUS".asInstanceOf[ListEdgePackagingJobsSortBy]
 
-  @inline def values = js.Array(NAME, MODEL_NAME, CREATION_TIME, LAST_MODIFIED_TIME, STATUS)
+  @inline def values: js.Array[ListEdgePackagingJobsSortBy] = js.Array(NAME, MODEL_NAME, CREATION_TIME, LAST_MODIFIED_TIME, STATUS)
 }
 
 @js.native
@@ -885,7 +970,7 @@ sealed trait ListLabelingJobsForWorkteamSortByOptions extends js.Any
 object ListLabelingJobsForWorkteamSortByOptions {
   val CreationTime = "CreationTime".asInstanceOf[ListLabelingJobsForWorkteamSortByOptions]
 
-  @inline def values = js.Array(CreationTime)
+  @inline def values: js.Array[ListLabelingJobsForWorkteamSortByOptions] = js.Array(CreationTime)
 }
 
 @js.native
@@ -894,7 +979,7 @@ object ListWorkforcesSortByOptions {
   val Name = "Name".asInstanceOf[ListWorkforcesSortByOptions]
   val CreateDate = "CreateDate".asInstanceOf[ListWorkforcesSortByOptions]
 
-  @inline def values = js.Array(Name, CreateDate)
+  @inline def values: js.Array[ListWorkforcesSortByOptions] = js.Array(Name, CreateDate)
 }
 
 @js.native
@@ -903,7 +988,7 @@ object ListWorkteamsSortByOptions {
   val Name = "Name".asInstanceOf[ListWorkteamsSortByOptions]
   val CreateDate = "CreateDate".asInstanceOf[ListWorkteamsSortByOptions]
 
-  @inline def values = js.Array(Name, CreateDate)
+  @inline def values: js.Array[ListWorkteamsSortByOptions] = js.Array(Name, CreateDate)
 }
 
 @js.native
@@ -913,7 +998,7 @@ object ModelApprovalStatus {
   val Rejected = "Rejected".asInstanceOf[ModelApprovalStatus]
   val PendingManualApproval = "PendingManualApproval".asInstanceOf[ModelApprovalStatus]
 
-  @inline def values = js.Array(Approved, Rejected, PendingManualApproval)
+  @inline def values: js.Array[ModelApprovalStatus] = js.Array(Approved, Rejected, PendingManualApproval)
 }
 
 @js.native
@@ -922,7 +1007,7 @@ object ModelCacheSetting {
   val Enabled = "Enabled".asInstanceOf[ModelCacheSetting]
   val Disabled = "Disabled".asInstanceOf[ModelCacheSetting]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[ModelCacheSetting] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -931,7 +1016,7 @@ object ModelPackageGroupSortBy {
   val Name = "Name".asInstanceOf[ModelPackageGroupSortBy]
   val CreationTime = "CreationTime".asInstanceOf[ModelPackageGroupSortBy]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[ModelPackageGroupSortBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -944,7 +1029,7 @@ object ModelPackageGroupStatus {
   val Deleting = "Deleting".asInstanceOf[ModelPackageGroupStatus]
   val DeleteFailed = "DeleteFailed".asInstanceOf[ModelPackageGroupStatus]
 
-  @inline def values = js.Array(Pending, InProgress, Completed, Failed, Deleting, DeleteFailed)
+  @inline def values: js.Array[ModelPackageGroupStatus] = js.Array(Pending, InProgress, Completed, Failed, Deleting, DeleteFailed)
 }
 
 @js.native
@@ -953,7 +1038,7 @@ object ModelPackageSortBy {
   val Name = "Name".asInstanceOf[ModelPackageSortBy]
   val CreationTime = "CreationTime".asInstanceOf[ModelPackageSortBy]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[ModelPackageSortBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -965,7 +1050,7 @@ object ModelPackageStatus {
   val Failed = "Failed".asInstanceOf[ModelPackageStatus]
   val Deleting = "Deleting".asInstanceOf[ModelPackageStatus]
 
-  @inline def values = js.Array(Pending, InProgress, Completed, Failed, Deleting)
+  @inline def values: js.Array[ModelPackageStatus] = js.Array(Pending, InProgress, Completed, Failed, Deleting)
 }
 
 @js.native
@@ -975,7 +1060,7 @@ object ModelPackageType {
   val Unversioned = "Unversioned".asInstanceOf[ModelPackageType]
   val Both = "Both".asInstanceOf[ModelPackageType]
 
-  @inline def values = js.Array(Versioned, Unversioned, Both)
+  @inline def values: js.Array[ModelPackageType] = js.Array(Versioned, Unversioned, Both)
 }
 
 @js.native
@@ -984,7 +1069,7 @@ object ModelSortKey {
   val Name = "Name".asInstanceOf[ModelSortKey]
   val CreationTime = "CreationTime".asInstanceOf[ModelSortKey]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[ModelSortKey] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -994,7 +1079,7 @@ object MonitoringExecutionSortKey {
   val ScheduledTime = "ScheduledTime".asInstanceOf[MonitoringExecutionSortKey]
   val Status = "Status".asInstanceOf[MonitoringExecutionSortKey]
 
-  @inline def values = js.Array(CreationTime, ScheduledTime, Status)
+  @inline def values: js.Array[MonitoringExecutionSortKey] = js.Array(CreationTime, ScheduledTime, Status)
 }
 
 @js.native
@@ -1003,7 +1088,7 @@ object MonitoringJobDefinitionSortKey {
   val Name = "Name".asInstanceOf[MonitoringJobDefinitionSortKey]
   val CreationTime = "CreationTime".asInstanceOf[MonitoringJobDefinitionSortKey]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[MonitoringJobDefinitionSortKey] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -1013,7 +1098,7 @@ object MonitoringProblemType {
   val MulticlassClassification = "MulticlassClassification".asInstanceOf[MonitoringProblemType]
   val Regression = "Regression".asInstanceOf[MonitoringProblemType]
 
-  @inline def values = js.Array(BinaryClassification, MulticlassClassification, Regression)
+  @inline def values: js.Array[MonitoringProblemType] = js.Array(BinaryClassification, MulticlassClassification, Regression)
 }
 
 @js.native
@@ -1023,7 +1108,7 @@ object MonitoringScheduleSortKey {
   val CreationTime = "CreationTime".asInstanceOf[MonitoringScheduleSortKey]
   val Status = "Status".asInstanceOf[MonitoringScheduleSortKey]
 
-  @inline def values = js.Array(Name, CreationTime, Status)
+  @inline def values: js.Array[MonitoringScheduleSortKey] = js.Array(Name, CreationTime, Status)
 }
 
 @js.native
@@ -1034,7 +1119,7 @@ object MonitoringType {
   val ModelBias = "ModelBias".asInstanceOf[MonitoringType]
   val ModelExplainability = "ModelExplainability".asInstanceOf[MonitoringType]
 
-  @inline def values = js.Array(DataQuality, ModelQuality, ModelBias, ModelExplainability)
+  @inline def values: js.Array[MonitoringType] = js.Array(DataQuality, ModelQuality, ModelBias, ModelExplainability)
 }
 
 @js.native
@@ -1047,7 +1132,7 @@ object NotebookInstanceAcceleratorType {
   val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[NotebookInstanceAcceleratorType]
   val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[NotebookInstanceAcceleratorType]
 
-  @inline def values = js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
+  @inline def values: js.Array[NotebookInstanceAcceleratorType] = js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
 }
 
 @js.native
@@ -1057,7 +1142,7 @@ object NotebookInstanceLifecycleConfigSortKey {
   val CreationTime = "CreationTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
   val LastModifiedTime = "LastModifiedTime".asInstanceOf[NotebookInstanceLifecycleConfigSortKey]
 
-  @inline def values = js.Array(Name, CreationTime, LastModifiedTime)
+  @inline def values: js.Array[NotebookInstanceLifecycleConfigSortKey] = js.Array(Name, CreationTime, LastModifiedTime)
 }
 
 @js.native
@@ -1066,7 +1151,7 @@ object NotebookInstanceLifecycleConfigSortOrder {
   val Ascending = "Ascending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
   val Descending = "Descending".asInstanceOf[NotebookInstanceLifecycleConfigSortOrder]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[NotebookInstanceLifecycleConfigSortOrder] = js.Array(Ascending, Descending)
 }
 
 @js.native
@@ -1076,7 +1161,7 @@ object NotebookInstanceSortKey {
   val CreationTime = "CreationTime".asInstanceOf[NotebookInstanceSortKey]
   val Status = "Status".asInstanceOf[NotebookInstanceSortKey]
 
-  @inline def values = js.Array(Name, CreationTime, Status)
+  @inline def values: js.Array[NotebookInstanceSortKey] = js.Array(Name, CreationTime, Status)
 }
 
 @js.native
@@ -1085,7 +1170,7 @@ object NotebookInstanceSortOrder {
   val Ascending = "Ascending".asInstanceOf[NotebookInstanceSortOrder]
   val Descending = "Descending".asInstanceOf[NotebookInstanceSortOrder]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[NotebookInstanceSortOrder] = js.Array(Ascending, Descending)
 }
 
 @js.native
@@ -1099,7 +1184,7 @@ object NotebookInstanceStatus {
   val Deleting = "Deleting".asInstanceOf[NotebookInstanceStatus]
   val Updating = "Updating".asInstanceOf[NotebookInstanceStatus]
 
-  @inline def values = js.Array(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating)
+  @inline def values: js.Array[NotebookInstanceStatus] = js.Array(Pending, InService, Stopping, Stopped, Failed, Deleting, Updating)
 }
 
 @js.native
@@ -1108,7 +1193,7 @@ object NotebookOutputOption {
   val Allowed = "Allowed".asInstanceOf[NotebookOutputOption]
   val Disabled = "Disabled".asInstanceOf[NotebookOutputOption]
 
-  @inline def values = js.Array(Allowed, Disabled)
+  @inline def values: js.Array[NotebookOutputOption] = js.Array(Allowed, Disabled)
 }
 
 @js.native
@@ -1118,7 +1203,7 @@ object ObjectiveStatus {
   val Pending = "Pending".asInstanceOf[ObjectiveStatus]
   val Failed = "Failed".asInstanceOf[ObjectiveStatus]
 
-  @inline def values = js.Array(Succeeded, Pending, Failed)
+  @inline def values: js.Array[ObjectiveStatus] = js.Array(Succeeded, Pending, Failed)
 }
 
 @js.native
@@ -1128,7 +1213,7 @@ object OfflineStoreStatusValue {
   val Blocked = "Blocked".asInstanceOf[OfflineStoreStatusValue]
   val Disabled = "Disabled".asInstanceOf[OfflineStoreStatusValue]
 
-  @inline def values = js.Array(Active, Blocked, Disabled)
+  @inline def values: js.Array[OfflineStoreStatusValue] = js.Array(Active, Blocked, Disabled)
 }
 
 @js.native
@@ -1145,7 +1230,7 @@ object Operator {
   val NotExists = "NotExists".asInstanceOf[Operator]
   val In = "In".asInstanceOf[Operator]
 
-  @inline def values = js.Array(Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, Contains, Exists, NotExists, In)
+  @inline def values: js.Array[Operator] = js.Array(Equals, NotEquals, GreaterThan, GreaterThanOrEqualTo, LessThan, LessThanOrEqualTo, Contains, Exists, NotExists, In)
 }
 
 @js.native
@@ -1154,7 +1239,7 @@ object OrderKey {
   val Ascending = "Ascending".asInstanceOf[OrderKey]
   val Descending = "Descending".asInstanceOf[OrderKey]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[OrderKey] = js.Array(Ascending, Descending)
 }
 
 @js.native
@@ -1165,7 +1250,7 @@ object ParameterType {
   val Categorical = "Categorical".asInstanceOf[ParameterType]
   val FreeText = "FreeText".asInstanceOf[ParameterType]
 
-  @inline def values = js.Array(Integer, Continuous, Categorical, FreeText)
+  @inline def values: js.Array[ParameterType] = js.Array(Integer, Continuous, Categorical, FreeText)
 }
 
 @js.native
@@ -1177,7 +1262,7 @@ object PipelineExecutionStatus {
   val Failed = "Failed".asInstanceOf[PipelineExecutionStatus]
   val Succeeded = "Succeeded".asInstanceOf[PipelineExecutionStatus]
 
-  @inline def values = js.Array(Executing, Stopping, Stopped, Failed, Succeeded)
+  @inline def values: js.Array[PipelineExecutionStatus] = js.Array(Executing, Stopping, Stopped, Failed, Succeeded)
 }
 
 @js.native
@@ -1185,7 +1270,7 @@ sealed trait PipelineStatus extends js.Any
 object PipelineStatus {
   val Active = "Active".asInstanceOf[PipelineStatus]
 
-  @inline def values = js.Array(Active)
+  @inline def values: js.Array[PipelineStatus] = js.Array(Active)
 }
 
 @js.native
@@ -1195,7 +1280,7 @@ object ProblemType {
   val MulticlassClassification = "MulticlassClassification".asInstanceOf[ProblemType]
   val Regression = "Regression".asInstanceOf[ProblemType]
 
-  @inline def values = js.Array(BinaryClassification, MulticlassClassification, Regression)
+  @inline def values: js.Array[ProblemType] = js.Array(BinaryClassification, MulticlassClassification, Regression)
 }
 
 @js.native
@@ -1240,7 +1325,46 @@ object ProcessingInstanceType {
   val `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[ProcessingInstanceType]
   val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProcessingInstanceType]
 
-  @inline def values = js.Array(`ml.t3.medium`, `ml.t3.large`, `ml.t3.xlarge`, `ml.t3.2xlarge`, `ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.r5.large`, `ml.r5.xlarge`, `ml.r5.2xlarge`, `ml.r5.4xlarge`, `ml.r5.8xlarge`, `ml.r5.12xlarge`, `ml.r5.16xlarge`, `ml.r5.24xlarge`)
+  @inline def values: js.Array[ProcessingInstanceType] = js.Array(
+    `ml.t3.medium`,
+    `ml.t3.large`,
+    `ml.t3.xlarge`,
+    `ml.t3.2xlarge`,
+    `ml.m4.xlarge`,
+    `ml.m4.2xlarge`,
+    `ml.m4.4xlarge`,
+    `ml.m4.10xlarge`,
+    `ml.m4.16xlarge`,
+    `ml.c4.xlarge`,
+    `ml.c4.2xlarge`,
+    `ml.c4.4xlarge`,
+    `ml.c4.8xlarge`,
+    `ml.p2.xlarge`,
+    `ml.p2.8xlarge`,
+    `ml.p2.16xlarge`,
+    `ml.p3.2xlarge`,
+    `ml.p3.8xlarge`,
+    `ml.p3.16xlarge`,
+    `ml.c5.xlarge`,
+    `ml.c5.2xlarge`,
+    `ml.c5.4xlarge`,
+    `ml.c5.9xlarge`,
+    `ml.c5.18xlarge`,
+    `ml.m5.large`,
+    `ml.m5.xlarge`,
+    `ml.m5.2xlarge`,
+    `ml.m5.4xlarge`,
+    `ml.m5.12xlarge`,
+    `ml.m5.24xlarge`,
+    `ml.r5.large`,
+    `ml.r5.xlarge`,
+    `ml.r5.2xlarge`,
+    `ml.r5.4xlarge`,
+    `ml.r5.8xlarge`,
+    `ml.r5.12xlarge`,
+    `ml.r5.16xlarge`,
+    `ml.r5.24xlarge`
+  )
 }
 
 @js.native
@@ -1252,7 +1376,7 @@ object ProcessingJobStatus {
   val Stopping = "Stopping".asInstanceOf[ProcessingJobStatus]
   val Stopped = "Stopped".asInstanceOf[ProcessingJobStatus]
 
-  @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
+  @inline def values: js.Array[ProcessingJobStatus] = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
 }
 
 @js.native
@@ -1261,7 +1385,7 @@ object ProcessingS3CompressionType {
   val None = "None".asInstanceOf[ProcessingS3CompressionType]
   val Gzip = "Gzip".asInstanceOf[ProcessingS3CompressionType]
 
-  @inline def values = js.Array(None, Gzip)
+  @inline def values: js.Array[ProcessingS3CompressionType] = js.Array(None, Gzip)
 }
 
 @js.native
@@ -1270,7 +1394,7 @@ object ProcessingS3DataDistributionType {
   val FullyReplicated = "FullyReplicated".asInstanceOf[ProcessingS3DataDistributionType]
   val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[ProcessingS3DataDistributionType]
 
-  @inline def values = js.Array(FullyReplicated, ShardedByS3Key)
+  @inline def values: js.Array[ProcessingS3DataDistributionType] = js.Array(FullyReplicated, ShardedByS3Key)
 }
 
 @js.native
@@ -1279,7 +1403,7 @@ object ProcessingS3DataType {
   val ManifestFile = "ManifestFile".asInstanceOf[ProcessingS3DataType]
   val S3Prefix = "S3Prefix".asInstanceOf[ProcessingS3DataType]
 
-  @inline def values = js.Array(ManifestFile, S3Prefix)
+  @inline def values: js.Array[ProcessingS3DataType] = js.Array(ManifestFile, S3Prefix)
 }
 
 @js.native
@@ -1288,7 +1412,7 @@ object ProcessingS3InputMode {
   val Pipe = "Pipe".asInstanceOf[ProcessingS3InputMode]
   val File = "File".asInstanceOf[ProcessingS3InputMode]
 
-  @inline def values = js.Array(Pipe, File)
+  @inline def values: js.Array[ProcessingS3InputMode] = js.Array(Pipe, File)
 }
 
 @js.native
@@ -1297,7 +1421,7 @@ object ProcessingS3UploadMode {
   val Continuous = "Continuous".asInstanceOf[ProcessingS3UploadMode]
   val EndOfJob = "EndOfJob".asInstanceOf[ProcessingS3UploadMode]
 
-  @inline def values = js.Array(Continuous, EndOfJob)
+  @inline def values: js.Array[ProcessingS3UploadMode] = js.Array(Continuous, EndOfJob)
 }
 
 @js.native
@@ -1310,7 +1434,7 @@ object ProductionVariantAcceleratorType {
   val `ml.eia2.large` = "ml.eia2.large".asInstanceOf[ProductionVariantAcceleratorType]
   val `ml.eia2.xlarge` = "ml.eia2.xlarge".asInstanceOf[ProductionVariantAcceleratorType]
 
-  @inline def values = js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
+  @inline def values: js.Array[ProductionVariantAcceleratorType] = js.Array(`ml.eia1.medium`, `ml.eia1.large`, `ml.eia1.xlarge`, `ml.eia2.medium`, `ml.eia2.large`, `ml.eia2.xlarge`)
 }
 
 @js.native
@@ -1383,7 +1507,74 @@ object ProductionVariantInstanceType {
   val `ml.inf1.6xlarge` = "ml.inf1.6xlarge".asInstanceOf[ProductionVariantInstanceType]
   val `ml.inf1.24xlarge` = "ml.inf1.24xlarge".asInstanceOf[ProductionVariantInstanceType]
 
-  @inline def values = js.Array(`ml.t2.medium`, `ml.t2.large`, `ml.t2.xlarge`, `ml.t2.2xlarge`, `ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.m5d.large`, `ml.m5d.xlarge`, `ml.m5d.2xlarge`, `ml.m5d.4xlarge`, `ml.m5d.12xlarge`, `ml.m5d.24xlarge`, `ml.c4.large`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.c5.large`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.c5d.large`, `ml.c5d.xlarge`, `ml.c5d.2xlarge`, `ml.c5d.4xlarge`, `ml.c5d.9xlarge`, `ml.c5d.18xlarge`, `ml.g4dn.xlarge`, `ml.g4dn.2xlarge`, `ml.g4dn.4xlarge`, `ml.g4dn.8xlarge`, `ml.g4dn.12xlarge`, `ml.g4dn.16xlarge`, `ml.r5.large`, `ml.r5.xlarge`, `ml.r5.2xlarge`, `ml.r5.4xlarge`, `ml.r5.12xlarge`, `ml.r5.24xlarge`, `ml.r5d.large`, `ml.r5d.xlarge`, `ml.r5d.2xlarge`, `ml.r5d.4xlarge`, `ml.r5d.12xlarge`, `ml.r5d.24xlarge`, `ml.inf1.xlarge`, `ml.inf1.2xlarge`, `ml.inf1.6xlarge`, `ml.inf1.24xlarge`)
+  @inline def values: js.Array[ProductionVariantInstanceType] = js.Array(
+    `ml.t2.medium`,
+    `ml.t2.large`,
+    `ml.t2.xlarge`,
+    `ml.t2.2xlarge`,
+    `ml.m4.xlarge`,
+    `ml.m4.2xlarge`,
+    `ml.m4.4xlarge`,
+    `ml.m4.10xlarge`,
+    `ml.m4.16xlarge`,
+    `ml.m5.large`,
+    `ml.m5.xlarge`,
+    `ml.m5.2xlarge`,
+    `ml.m5.4xlarge`,
+    `ml.m5.12xlarge`,
+    `ml.m5.24xlarge`,
+    `ml.m5d.large`,
+    `ml.m5d.xlarge`,
+    `ml.m5d.2xlarge`,
+    `ml.m5d.4xlarge`,
+    `ml.m5d.12xlarge`,
+    `ml.m5d.24xlarge`,
+    `ml.c4.large`,
+    `ml.c4.xlarge`,
+    `ml.c4.2xlarge`,
+    `ml.c4.4xlarge`,
+    `ml.c4.8xlarge`,
+    `ml.p2.xlarge`,
+    `ml.p2.8xlarge`,
+    `ml.p2.16xlarge`,
+    `ml.p3.2xlarge`,
+    `ml.p3.8xlarge`,
+    `ml.p3.16xlarge`,
+    `ml.c5.large`,
+    `ml.c5.xlarge`,
+    `ml.c5.2xlarge`,
+    `ml.c5.4xlarge`,
+    `ml.c5.9xlarge`,
+    `ml.c5.18xlarge`,
+    `ml.c5d.large`,
+    `ml.c5d.xlarge`,
+    `ml.c5d.2xlarge`,
+    `ml.c5d.4xlarge`,
+    `ml.c5d.9xlarge`,
+    `ml.c5d.18xlarge`,
+    `ml.g4dn.xlarge`,
+    `ml.g4dn.2xlarge`,
+    `ml.g4dn.4xlarge`,
+    `ml.g4dn.8xlarge`,
+    `ml.g4dn.12xlarge`,
+    `ml.g4dn.16xlarge`,
+    `ml.r5.large`,
+    `ml.r5.xlarge`,
+    `ml.r5.2xlarge`,
+    `ml.r5.4xlarge`,
+    `ml.r5.12xlarge`,
+    `ml.r5.24xlarge`,
+    `ml.r5d.large`,
+    `ml.r5d.xlarge`,
+    `ml.r5d.2xlarge`,
+    `ml.r5d.4xlarge`,
+    `ml.r5d.12xlarge`,
+    `ml.r5d.24xlarge`,
+    `ml.inf1.xlarge`,
+    `ml.inf1.2xlarge`,
+    `ml.inf1.6xlarge`,
+    `ml.inf1.24xlarge`
+  )
 }
 
 @js.native
@@ -1392,7 +1583,7 @@ object ProfilingStatus {
   val Enabled = "Enabled".asInstanceOf[ProfilingStatus]
   val Disabled = "Disabled".asInstanceOf[ProfilingStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[ProfilingStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -1401,7 +1592,7 @@ object ProjectSortBy {
   val Name = "Name".asInstanceOf[ProjectSortBy]
   val CreationTime = "CreationTime".asInstanceOf[ProjectSortBy]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[ProjectSortBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -1410,7 +1601,7 @@ object ProjectSortOrder {
   val Ascending = "Ascending".asInstanceOf[ProjectSortOrder]
   val Descending = "Descending".asInstanceOf[ProjectSortOrder]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[ProjectSortOrder] = js.Array(Ascending, Descending)
 }
 
 @js.native
@@ -1424,7 +1615,7 @@ object ProjectStatus {
   val DeleteFailed = "DeleteFailed".asInstanceOf[ProjectStatus]
   val DeleteCompleted = "DeleteCompleted".asInstanceOf[ProjectStatus]
 
-  @inline def values = js.Array(Pending, CreateInProgress, CreateCompleted, CreateFailed, DeleteInProgress, DeleteFailed, DeleteCompleted)
+  @inline def values: js.Array[ProjectStatus] = js.Array(Pending, CreateInProgress, CreateCompleted, CreateFailed, DeleteInProgress, DeleteFailed, DeleteCompleted)
 }
 
 @js.native
@@ -1433,7 +1624,7 @@ object RecordWrapper {
   val None = "None".asInstanceOf[RecordWrapper]
   val RecordIO = "RecordIO".asInstanceOf[RecordWrapper]
 
-  @inline def values = js.Array(None, RecordIO)
+  @inline def values: js.Array[RecordWrapper] = js.Array(None, RecordIO)
 }
 
 /** The compression used for Redshift query results.
@@ -1447,7 +1638,7 @@ object RedshiftResultCompressionType {
   val ZSTD = "ZSTD".asInstanceOf[RedshiftResultCompressionType]
   val SNAPPY = "SNAPPY".asInstanceOf[RedshiftResultCompressionType]
 
-  @inline def values = js.Array(None, GZIP, BZIP2, ZSTD, SNAPPY)
+  @inline def values: js.Array[RedshiftResultCompressionType] = js.Array(None, GZIP, BZIP2, ZSTD, SNAPPY)
 }
 
 /** The data storage format for Redshift query results.
@@ -1458,7 +1649,7 @@ object RedshiftResultFormat {
   val PARQUET = "PARQUET".asInstanceOf[RedshiftResultFormat]
   val CSV = "CSV".asInstanceOf[RedshiftResultFormat]
 
-  @inline def values = js.Array(PARQUET, CSV)
+  @inline def values: js.Array[RedshiftResultFormat] = js.Array(PARQUET, CSV)
 }
 
 @js.native
@@ -1467,7 +1658,7 @@ object RepositoryAccessMode {
   val Platform = "Platform".asInstanceOf[RepositoryAccessMode]
   val Vpc = "Vpc".asInstanceOf[RepositoryAccessMode]
 
-  @inline def values = js.Array(Platform, Vpc)
+  @inline def values: js.Array[RepositoryAccessMode] = js.Array(Platform, Vpc)
 }
 
 @js.native
@@ -1484,7 +1675,7 @@ object ResourceType {
   val PipelineExecution = "PipelineExecution".asInstanceOf[ResourceType]
   val FeatureGroup = "FeatureGroup".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(TrainingJob, Experiment, ExperimentTrial, ExperimentTrialComponent, Endpoint, ModelPackage, ModelPackageGroup, Pipeline, PipelineExecution, FeatureGroup)
+  @inline def values: js.Array[ResourceType] = js.Array(TrainingJob, Experiment, ExperimentTrial, ExperimentTrialComponent, Endpoint, ModelPackage, ModelPackageGroup, Pipeline, PipelineExecution, FeatureGroup)
 }
 
 @js.native
@@ -1493,7 +1684,7 @@ object RetentionType {
   val Retain = "Retain".asInstanceOf[RetentionType]
   val Delete = "Delete".asInstanceOf[RetentionType]
 
-  @inline def values = js.Array(Retain, Delete)
+  @inline def values: js.Array[RetentionType] = js.Array(Retain, Delete)
 }
 
 @js.native
@@ -1502,7 +1693,7 @@ object RootAccess {
   val Enabled = "Enabled".asInstanceOf[RootAccess]
   val Disabled = "Disabled".asInstanceOf[RootAccess]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[RootAccess] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -1515,7 +1706,7 @@ object RuleEvaluationStatus {
   val Stopping = "Stopping".asInstanceOf[RuleEvaluationStatus]
   val Stopped = "Stopped".asInstanceOf[RuleEvaluationStatus]
 
-  @inline def values = js.Array(InProgress, NoIssuesFound, IssuesFound, Error, Stopping, Stopped)
+  @inline def values: js.Array[RuleEvaluationStatus] = js.Array(InProgress, NoIssuesFound, IssuesFound, Error, Stopping, Stopped)
 }
 
 @js.native
@@ -1524,7 +1715,7 @@ object S3DataDistribution {
   val FullyReplicated = "FullyReplicated".asInstanceOf[S3DataDistribution]
   val ShardedByS3Key = "ShardedByS3Key".asInstanceOf[S3DataDistribution]
 
-  @inline def values = js.Array(FullyReplicated, ShardedByS3Key)
+  @inline def values: js.Array[S3DataDistribution] = js.Array(FullyReplicated, ShardedByS3Key)
 }
 
 @js.native
@@ -1534,7 +1725,7 @@ object S3DataType {
   val S3Prefix = "S3Prefix".asInstanceOf[S3DataType]
   val AugmentedManifestFile = "AugmentedManifestFile".asInstanceOf[S3DataType]
 
-  @inline def values = js.Array(ManifestFile, S3Prefix, AugmentedManifestFile)
+  @inline def values: js.Array[S3DataType] = js.Array(ManifestFile, S3Prefix, AugmentedManifestFile)
 }
 
 @js.native
@@ -1543,7 +1734,7 @@ object SagemakerServicecatalogStatus {
   val Enabled = "Enabled".asInstanceOf[SagemakerServicecatalogStatus]
   val Disabled = "Disabled".asInstanceOf[SagemakerServicecatalogStatus]
 
-  @inline def values = js.Array(Enabled, Disabled)
+  @inline def values: js.Array[SagemakerServicecatalogStatus] = js.Array(Enabled, Disabled)
 }
 
 @js.native
@@ -1554,7 +1745,7 @@ object ScheduleStatus {
   val Scheduled = "Scheduled".asInstanceOf[ScheduleStatus]
   val Stopped = "Stopped".asInstanceOf[ScheduleStatus]
 
-  @inline def values = js.Array(Pending, Failed, Scheduled, Stopped)
+  @inline def values: js.Array[ScheduleStatus] = js.Array(Pending, Failed, Scheduled, Stopped)
 }
 
 @js.native
@@ -1563,7 +1754,7 @@ object SearchSortOrder {
   val Ascending = "Ascending".asInstanceOf[SearchSortOrder]
   val Descending = "Descending".asInstanceOf[SearchSortOrder]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[SearchSortOrder] = js.Array(Ascending, Descending)
 }
 
 @js.native
@@ -1585,7 +1776,23 @@ object SecondaryStatus {
   val MaxWaitTimeExceeded = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
   val Updating = "Updating".asInstanceOf[SecondaryStatus]
 
-  @inline def values = js.Array(Starting, LaunchingMLInstances, PreparingTrainingStack, Downloading, DownloadingTrainingImage, Training, Uploading, Stopping, Stopped, MaxRuntimeExceeded, Completed, Failed, Interrupted, MaxWaitTimeExceeded, Updating)
+  @inline def values: js.Array[SecondaryStatus] = js.Array(
+    Starting,
+    LaunchingMLInstances,
+    PreparingTrainingStack,
+    Downloading,
+    DownloadingTrainingImage,
+    Training,
+    Uploading,
+    Stopping,
+    Stopped,
+    MaxRuntimeExceeded,
+    Completed,
+    Failed,
+    Interrupted,
+    MaxWaitTimeExceeded,
+    Updating
+  )
 }
 
 @js.native
@@ -1594,7 +1801,7 @@ object SortActionsBy {
   val Name = "Name".asInstanceOf[SortActionsBy]
   val CreationTime = "CreationTime".asInstanceOf[SortActionsBy]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[SortActionsBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -1602,7 +1809,7 @@ sealed trait SortArtifactsBy extends js.Any
 object SortArtifactsBy {
   val CreationTime = "CreationTime".asInstanceOf[SortArtifactsBy]
 
-  @inline def values = js.Array(CreationTime)
+  @inline def values: js.Array[SortArtifactsBy] = js.Array(CreationTime)
 }
 
 @js.native
@@ -1614,7 +1821,7 @@ object SortAssociationsBy {
   val DestinationType = "DestinationType".asInstanceOf[SortAssociationsBy]
   val CreationTime = "CreationTime".asInstanceOf[SortAssociationsBy]
 
-  @inline def values = js.Array(SourceArn, DestinationArn, SourceType, DestinationType, CreationTime)
+  @inline def values: js.Array[SortAssociationsBy] = js.Array(SourceArn, DestinationArn, SourceType, DestinationType, CreationTime)
 }
 
 @js.native
@@ -1624,7 +1831,7 @@ object SortBy {
   val CreationTime = "CreationTime".asInstanceOf[SortBy]
   val Status = "Status".asInstanceOf[SortBy]
 
-  @inline def values = js.Array(Name, CreationTime, Status)
+  @inline def values: js.Array[SortBy] = js.Array(Name, CreationTime, Status)
 }
 
 @js.native
@@ -1633,7 +1840,7 @@ object SortContextsBy {
   val Name = "Name".asInstanceOf[SortContextsBy]
   val CreationTime = "CreationTime".asInstanceOf[SortContextsBy]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[SortContextsBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -1642,7 +1849,7 @@ object SortExperimentsBy {
   val Name = "Name".asInstanceOf[SortExperimentsBy]
   val CreationTime = "CreationTime".asInstanceOf[SortExperimentsBy]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[SortExperimentsBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -1651,7 +1858,7 @@ object SortOrder {
   val Ascending = "Ascending".asInstanceOf[SortOrder]
   val Descending = "Descending".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(Ascending, Descending)
+  @inline def values: js.Array[SortOrder] = js.Array(Ascending, Descending)
 }
 
 @js.native
@@ -1660,7 +1867,7 @@ object SortPipelineExecutionsBy {
   val CreationTime = "CreationTime".asInstanceOf[SortPipelineExecutionsBy]
   val PipelineExecutionArn = "PipelineExecutionArn".asInstanceOf[SortPipelineExecutionsBy]
 
-  @inline def values = js.Array(CreationTime, PipelineExecutionArn)
+  @inline def values: js.Array[SortPipelineExecutionsBy] = js.Array(CreationTime, PipelineExecutionArn)
 }
 
 @js.native
@@ -1669,7 +1876,7 @@ object SortPipelinesBy {
   val Name = "Name".asInstanceOf[SortPipelinesBy]
   val CreationTime = "CreationTime".asInstanceOf[SortPipelinesBy]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[SortPipelinesBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -1678,7 +1885,7 @@ object SortTrialComponentsBy {
   val Name = "Name".asInstanceOf[SortTrialComponentsBy]
   val CreationTime = "CreationTime".asInstanceOf[SortTrialComponentsBy]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[SortTrialComponentsBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -1687,7 +1894,7 @@ object SortTrialsBy {
   val Name = "Name".asInstanceOf[SortTrialsBy]
   val CreationTime = "CreationTime".asInstanceOf[SortTrialsBy]
 
-  @inline def values = js.Array(Name, CreationTime)
+  @inline def values: js.Array[SortTrialsBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -1698,7 +1905,7 @@ object SplitType {
   val RecordIO = "RecordIO".asInstanceOf[SplitType]
   val TFRecord = "TFRecord".asInstanceOf[SplitType]
 
-  @inline def values = js.Array(None, Line, RecordIO, TFRecord)
+  @inline def values: js.Array[SplitType] = js.Array(None, Line, RecordIO, TFRecord)
 }
 
 @js.native
@@ -1711,7 +1918,7 @@ object StepStatus {
   val Failed = "Failed".asInstanceOf[StepStatus]
   val Succeeded = "Succeeded".asInstanceOf[StepStatus]
 
-  @inline def values = js.Array(Starting, Executing, Stopping, Stopped, Failed, Succeeded)
+  @inline def values: js.Array[StepStatus] = js.Array(Starting, Executing, Stopping, Stopped, Failed, Succeeded)
 }
 
 @js.native
@@ -1747,7 +1954,37 @@ object TargetDevice {
   val coreml = "coreml".asInstanceOf[TargetDevice]
   val jacinto_tda4vm = "jacinto_tda4vm".asInstanceOf[TargetDevice]
 
-  @inline def values = js.Array(lambda, ml_m4, ml_m5, ml_c4, ml_c5, ml_p2, ml_p3, ml_g4dn, ml_inf1, ml_eia2, jetson_tx1, jetson_tx2, jetson_nano, jetson_xavier, rasp3b, imx8qm, deeplens, rk3399, rk3288, aisage, sbe_c, qcs605, qcs603, sitara_am57x, amba_cv22, x86_win32, x86_win64, coreml, jacinto_tda4vm)
+  @inline def values: js.Array[TargetDevice] = js.Array(
+    lambda,
+    ml_m4,
+    ml_m5,
+    ml_c4,
+    ml_c5,
+    ml_p2,
+    ml_p3,
+    ml_g4dn,
+    ml_inf1,
+    ml_eia2,
+    jetson_tx1,
+    jetson_tx2,
+    jetson_nano,
+    jetson_xavier,
+    rasp3b,
+    imx8qm,
+    deeplens,
+    rk3399,
+    rk3288,
+    aisage,
+    sbe_c,
+    qcs605,
+    qcs603,
+    sitara_am57x,
+    amba_cv22,
+    x86_win32,
+    x86_win64,
+    coreml,
+    jacinto_tda4vm
+  )
 }
 
 @js.native
@@ -1757,7 +1994,7 @@ object TargetPlatformAccelerator {
   val MALI = "MALI".asInstanceOf[TargetPlatformAccelerator]
   val NVIDIA = "NVIDIA".asInstanceOf[TargetPlatformAccelerator]
 
-  @inline def values = js.Array(INTEL_GRAPHICS, MALI, NVIDIA)
+  @inline def values: js.Array[TargetPlatformAccelerator] = js.Array(INTEL_GRAPHICS, MALI, NVIDIA)
 }
 
 @js.native
@@ -1769,7 +2006,7 @@ object TargetPlatformArch {
   val ARM_EABI = "ARM_EABI".asInstanceOf[TargetPlatformArch]
   val ARM_EABIHF = "ARM_EABIHF".asInstanceOf[TargetPlatformArch]
 
-  @inline def values = js.Array(X86_64, X86, ARM64, ARM_EABI, ARM_EABIHF)
+  @inline def values: js.Array[TargetPlatformArch] = js.Array(X86_64, X86, ARM64, ARM_EABI, ARM_EABIHF)
 }
 
 @js.native
@@ -1778,7 +2015,7 @@ object TargetPlatformOs {
   val ANDROID = "ANDROID".asInstanceOf[TargetPlatformOs]
   val LINUX = "LINUX".asInstanceOf[TargetPlatformOs]
 
-  @inline def values = js.Array(ANDROID, LINUX)
+  @inline def values: js.Array[TargetPlatformOs] = js.Array(ANDROID, LINUX)
 }
 
 @js.native
@@ -1787,7 +2024,7 @@ object TrafficRoutingConfigType {
   val ALL_AT_ONCE = "ALL_AT_ONCE".asInstanceOf[TrafficRoutingConfigType]
   val CANARY = "CANARY".asInstanceOf[TrafficRoutingConfigType]
 
-  @inline def values = js.Array(ALL_AT_ONCE, CANARY)
+  @inline def values: js.Array[TrafficRoutingConfigType] = js.Array(ALL_AT_ONCE, CANARY)
 }
 
 @js.native
@@ -1796,7 +2033,7 @@ object TrainingInputMode {
   val Pipe = "Pipe".asInstanceOf[TrainingInputMode]
   val File = "File".asInstanceOf[TrainingInputMode]
 
-  @inline def values = js.Array(Pipe, File)
+  @inline def values: js.Array[TrainingInputMode] = js.Array(Pipe, File)
 }
 
 @js.native
@@ -1842,7 +2079,47 @@ object TrainingInstanceType {
   val `ml.c5n.9xlarge` = "ml.c5n.9xlarge".asInstanceOf[TrainingInstanceType]
   val `ml.c5n.18xlarge` = "ml.c5n.18xlarge".asInstanceOf[TrainingInstanceType]
 
-  @inline def values = js.Array(`ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.g4dn.xlarge`, `ml.g4dn.2xlarge`, `ml.g4dn.4xlarge`, `ml.g4dn.8xlarge`, `ml.g4dn.12xlarge`, `ml.g4dn.16xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.p3dn.24xlarge`, `ml.p4d.24xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.c5n.xlarge`, `ml.c5n.2xlarge`, `ml.c5n.4xlarge`, `ml.c5n.9xlarge`, `ml.c5n.18xlarge`)
+  @inline def values: js.Array[TrainingInstanceType] = js.Array(
+    `ml.m4.xlarge`,
+    `ml.m4.2xlarge`,
+    `ml.m4.4xlarge`,
+    `ml.m4.10xlarge`,
+    `ml.m4.16xlarge`,
+    `ml.g4dn.xlarge`,
+    `ml.g4dn.2xlarge`,
+    `ml.g4dn.4xlarge`,
+    `ml.g4dn.8xlarge`,
+    `ml.g4dn.12xlarge`,
+    `ml.g4dn.16xlarge`,
+    `ml.m5.large`,
+    `ml.m5.xlarge`,
+    `ml.m5.2xlarge`,
+    `ml.m5.4xlarge`,
+    `ml.m5.12xlarge`,
+    `ml.m5.24xlarge`,
+    `ml.c4.xlarge`,
+    `ml.c4.2xlarge`,
+    `ml.c4.4xlarge`,
+    `ml.c4.8xlarge`,
+    `ml.p2.xlarge`,
+    `ml.p2.8xlarge`,
+    `ml.p2.16xlarge`,
+    `ml.p3.2xlarge`,
+    `ml.p3.8xlarge`,
+    `ml.p3.16xlarge`,
+    `ml.p3dn.24xlarge`,
+    `ml.p4d.24xlarge`,
+    `ml.c5.xlarge`,
+    `ml.c5.2xlarge`,
+    `ml.c5.4xlarge`,
+    `ml.c5.9xlarge`,
+    `ml.c5.18xlarge`,
+    `ml.c5n.xlarge`,
+    `ml.c5n.2xlarge`,
+    `ml.c5n.4xlarge`,
+    `ml.c5n.9xlarge`,
+    `ml.c5n.18xlarge`
+  )
 }
 
 @js.native
@@ -1851,7 +2128,7 @@ object TrainingJobEarlyStoppingType {
   val Off = "Off".asInstanceOf[TrainingJobEarlyStoppingType]
   val Auto = "Auto".asInstanceOf[TrainingJobEarlyStoppingType]
 
-  @inline def values = js.Array(Off, Auto)
+  @inline def values: js.Array[TrainingJobEarlyStoppingType] = js.Array(Off, Auto)
 }
 
 @js.native
@@ -1862,7 +2139,7 @@ object TrainingJobSortByOptions {
   val Status = "Status".asInstanceOf[TrainingJobSortByOptions]
   val FinalObjectiveMetricValue = "FinalObjectiveMetricValue".asInstanceOf[TrainingJobSortByOptions]
 
-  @inline def values = js.Array(Name, CreationTime, Status, FinalObjectiveMetricValue)
+  @inline def values: js.Array[TrainingJobSortByOptions] = js.Array(Name, CreationTime, Status, FinalObjectiveMetricValue)
 }
 
 @js.native
@@ -1874,7 +2151,7 @@ object TrainingJobStatus {
   val Stopping = "Stopping".asInstanceOf[TrainingJobStatus]
   val Stopped = "Stopped".asInstanceOf[TrainingJobStatus]
 
-  @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
+  @inline def values: js.Array[TrainingJobStatus] = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
 }
 
 @js.native
@@ -1907,7 +2184,34 @@ object TransformInstanceType {
   val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TransformInstanceType]
   val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TransformInstanceType]
 
-  @inline def values = js.Array(`ml.m4.xlarge`, `ml.m4.2xlarge`, `ml.m4.4xlarge`, `ml.m4.10xlarge`, `ml.m4.16xlarge`, `ml.c4.xlarge`, `ml.c4.2xlarge`, `ml.c4.4xlarge`, `ml.c4.8xlarge`, `ml.p2.xlarge`, `ml.p2.8xlarge`, `ml.p2.16xlarge`, `ml.p3.2xlarge`, `ml.p3.8xlarge`, `ml.p3.16xlarge`, `ml.c5.xlarge`, `ml.c5.2xlarge`, `ml.c5.4xlarge`, `ml.c5.9xlarge`, `ml.c5.18xlarge`, `ml.m5.large`, `ml.m5.xlarge`, `ml.m5.2xlarge`, `ml.m5.4xlarge`, `ml.m5.12xlarge`, `ml.m5.24xlarge`)
+  @inline def values: js.Array[TransformInstanceType] = js.Array(
+    `ml.m4.xlarge`,
+    `ml.m4.2xlarge`,
+    `ml.m4.4xlarge`,
+    `ml.m4.10xlarge`,
+    `ml.m4.16xlarge`,
+    `ml.c4.xlarge`,
+    `ml.c4.2xlarge`,
+    `ml.c4.4xlarge`,
+    `ml.c4.8xlarge`,
+    `ml.p2.xlarge`,
+    `ml.p2.8xlarge`,
+    `ml.p2.16xlarge`,
+    `ml.p3.2xlarge`,
+    `ml.p3.8xlarge`,
+    `ml.p3.16xlarge`,
+    `ml.c5.xlarge`,
+    `ml.c5.2xlarge`,
+    `ml.c5.4xlarge`,
+    `ml.c5.9xlarge`,
+    `ml.c5.18xlarge`,
+    `ml.m5.large`,
+    `ml.m5.xlarge`,
+    `ml.m5.2xlarge`,
+    `ml.m5.4xlarge`,
+    `ml.m5.12xlarge`,
+    `ml.m5.24xlarge`
+  )
 }
 
 @js.native
@@ -1919,7 +2223,7 @@ object TransformJobStatus {
   val Stopping = "Stopping".asInstanceOf[TransformJobStatus]
   val Stopped = "Stopped".asInstanceOf[TransformJobStatus]
 
-  @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
+  @inline def values: js.Array[TransformJobStatus] = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
 }
 
 @js.native
@@ -1931,7 +2235,7 @@ object TrialComponentPrimaryStatus {
   val Stopping = "Stopping".asInstanceOf[TrialComponentPrimaryStatus]
   val Stopped = "Stopped".asInstanceOf[TrialComponentPrimaryStatus]
 
-  @inline def values = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
+  @inline def values: js.Array[TrialComponentPrimaryStatus] = js.Array(InProgress, Completed, Failed, Stopping, Stopped)
 }
 
 @js.native
@@ -1940,7 +2244,7 @@ object UserProfileSortKey {
   val CreationTime = "CreationTime".asInstanceOf[UserProfileSortKey]
   val LastModifiedTime = "LastModifiedTime".asInstanceOf[UserProfileSortKey]
 
-  @inline def values = js.Array(CreationTime, LastModifiedTime)
+  @inline def values: js.Array[UserProfileSortKey] = js.Array(CreationTime, LastModifiedTime)
 }
 
 @js.native
@@ -1954,7 +2258,7 @@ object UserProfileStatus {
   val Update_Failed = "Update_Failed".asInstanceOf[UserProfileStatus]
   val Delete_Failed = "Delete_Failed".asInstanceOf[UserProfileStatus]
 
-  @inline def values = js.Array(Deleting, Failed, InService, Pending, Updating, Update_Failed, Delete_Failed)
+  @inline def values: js.Array[UserProfileStatus] = js.Array(Deleting, Failed, InService, Pending, Updating, Update_Failed, Delete_Failed)
 }
 
 @js.native
@@ -1964,6 +2268,5 @@ object VariantPropertyType {
   val DesiredWeight = "DesiredWeight".asInstanceOf[VariantPropertyType]
   val DataCaptureConfig = "DataCaptureConfig".asInstanceOf[VariantPropertyType]
 
-  @inline def values = js.Array(DesiredInstanceCount, DesiredWeight, DataCaptureConfig)
+  @inline def values: js.Array[VariantPropertyType] = js.Array(DesiredInstanceCount, DesiredWeight, DataCaptureConfig)
 }
-

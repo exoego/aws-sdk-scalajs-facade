@@ -1,6 +1,6 @@
 package facade.amazonaws.services.elasticache
 
-import scalajs._
+import scalajs.js
 
 type AZMode = "single-az" | "cross-az"
 object AZMode {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.timestreamquery
 
-import scalajs._
+import scalajs.js
 
 type ScalarType = "VARCHAR" | "BOOLEAN" | "BIGINT" | "DOUBLE" | "TIMESTAMP" | "DATE" | "TIME" | "INTERVAL_DAY_TO_SECOND" | "INTERVAL_YEAR_TO_MONTH" | "UNKNOWN" | "INTEGER"
 object ScalarType {

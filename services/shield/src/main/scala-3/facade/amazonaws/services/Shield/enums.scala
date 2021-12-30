@@ -1,6 +1,6 @@
 package facade.amazonaws.services.shield
 
-import scalajs._
+import scalajs.js
 
 type AttackLayer = "NETWORK" | "APPLICATION"
 object AttackLayer {

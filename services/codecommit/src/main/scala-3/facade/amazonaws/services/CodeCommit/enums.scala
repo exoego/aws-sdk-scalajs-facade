@@ -1,6 +1,6 @@
 package facade.amazonaws.services.codecommit
 
-import scalajs._
+import scalajs.js
 
 type ApprovalState = "APPROVE" | "REVOKE"
 object ApprovalState {

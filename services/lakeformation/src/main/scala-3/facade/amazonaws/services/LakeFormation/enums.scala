@@ -1,6 +1,6 @@
 package facade.amazonaws.services.lakeformation
 
-import scalajs._
+import scalajs.js
 
 type ComparisonOperator = "EQ" | "NE" | "LE" | "LT" | "GE" | "GT" | "CONTAINS" | "NOT_CONTAINS" | "BEGINS_WITH" | "IN" | "BETWEEN"
 object ComparisonOperator {

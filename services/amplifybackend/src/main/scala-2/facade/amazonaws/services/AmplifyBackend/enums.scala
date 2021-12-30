@@ -1,7 +1,6 @@
 package facade.amazonaws.services.amplifybackend
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AdditionalConstraintsElement extends js.Any
@@ -11,7 +10,7 @@ object AdditionalConstraintsElement {
   val REQUIRE_SYMBOL = "REQUIRE_SYMBOL".asInstanceOf[AdditionalConstraintsElement]
   val REQUIRE_UPPERCASE = "REQUIRE_UPPERCASE".asInstanceOf[AdditionalConstraintsElement]
 
-  @inline def values = js.Array(REQUIRE_DIGIT, REQUIRE_LOWERCASE, REQUIRE_SYMBOL, REQUIRE_UPPERCASE)
+  @inline def values: js.Array[AdditionalConstraintsElement] = js.Array(REQUIRE_DIGIT, REQUIRE_LOWERCASE, REQUIRE_SYMBOL, REQUIRE_UPPERCASE)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object AuthResources {
   val USER_POOL_ONLY = "USER_POOL_ONLY".asInstanceOf[AuthResources]
   val IDENTITY_POOL_AND_USER_POOL = "IDENTITY_POOL_AND_USER_POOL".asInstanceOf[AuthResources]
 
-  @inline def values = js.Array(USER_POOL_ONLY, IDENTITY_POOL_AND_USER_POOL)
+  @inline def values: js.Array[AuthResources] = js.Array(USER_POOL_ONLY, IDENTITY_POOL_AND_USER_POOL)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object DeliveryMethod {
   val EMAIL = "EMAIL".asInstanceOf[DeliveryMethod]
   val SMS = "SMS".asInstanceOf[DeliveryMethod]
 
-  @inline def values = js.Array(EMAIL, SMS)
+  @inline def values: js.Array[DeliveryMethod] = js.Array(EMAIL, SMS)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object MFAMode {
   val OFF = "OFF".asInstanceOf[MFAMode]
   val OPTIONAL = "OPTIONAL".asInstanceOf[MFAMode]
 
-  @inline def values = js.Array(ON, OFF, OPTIONAL)
+  @inline def values: js.Array[MFAMode] = js.Array(ON, OFF, OPTIONAL)
 }
 
 @js.native
@@ -48,7 +47,7 @@ object MfaTypesElement {
   val SMS = "SMS".asInstanceOf[MfaTypesElement]
   val TOTP = "TOTP".asInstanceOf[MfaTypesElement]
 
-  @inline def values = js.Array(SMS, TOTP)
+  @inline def values: js.Array[MfaTypesElement] = js.Array(SMS, TOTP)
 }
 
 @js.native
@@ -59,7 +58,7 @@ object Mode {
   val AMAZON_COGNITO_USER_POOLS = "AMAZON_COGNITO_USER_POOLS".asInstanceOf[Mode]
   val OPENID_CONNECT = "OPENID_CONNECT".asInstanceOf[Mode]
 
-  @inline def values = js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT)
+  @inline def values: js.Array[Mode] = js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT)
 }
 
 @js.native
@@ -68,7 +67,7 @@ object OAuthGrantType {
   val CODE = "CODE".asInstanceOf[OAuthGrantType]
   val IMPLICIT = "IMPLICIT".asInstanceOf[OAuthGrantType]
 
-  @inline def values = js.Array(CODE, IMPLICIT)
+  @inline def values: js.Array[OAuthGrantType] = js.Array(CODE, IMPLICIT)
 }
 
 @js.native
@@ -80,7 +79,7 @@ object OAuthScopesElement {
   val PROFILE = "PROFILE".asInstanceOf[OAuthScopesElement]
   val AWS_COGNITO_SIGNIN_USER_ADMIN = "AWS_COGNITO_SIGNIN_USER_ADMIN".asInstanceOf[OAuthScopesElement]
 
-  @inline def values = js.Array(PHONE, EMAIL, OPENID, PROFILE, AWS_COGNITO_SIGNIN_USER_ADMIN)
+  @inline def values: js.Array[OAuthScopesElement] = js.Array(PHONE, EMAIL, OPENID, PROFILE, AWS_COGNITO_SIGNIN_USER_ADMIN)
 }
 
 @js.native
@@ -104,7 +103,25 @@ object RequiredSignUpAttributesElement {
   val WEBSITE = "WEBSITE".asInstanceOf[RequiredSignUpAttributesElement]
   val ZONE_INFO = "ZONE_INFO".asInstanceOf[RequiredSignUpAttributesElement]
 
-  @inline def values = js.Array(ADDRESS, BIRTHDATE, EMAIL, FAMILY_NAME, GENDER, GIVEN_NAME, LOCALE, MIDDLE_NAME, NAME, NICKNAME, PHONE_NUMBER, PICTURE, PREFERRED_USERNAME, PROFILE, UPDATED_AT, WEBSITE, ZONE_INFO)
+  @inline def values: js.Array[RequiredSignUpAttributesElement] = js.Array(
+    ADDRESS,
+    BIRTHDATE,
+    EMAIL,
+    FAMILY_NAME,
+    GENDER,
+    GIVEN_NAME,
+    LOCALE,
+    MIDDLE_NAME,
+    NAME,
+    NICKNAME,
+    PHONE_NUMBER,
+    PICTURE,
+    PREFERRED_USERNAME,
+    PROFILE,
+    UPDATED_AT,
+    WEBSITE,
+    ZONE_INFO
+  )
 }
 
 @js.native
@@ -115,7 +132,7 @@ object ResolutionStrategy {
   val AUTOMERGE = "AUTOMERGE".asInstanceOf[ResolutionStrategy]
   val NONE = "NONE".asInstanceOf[ResolutionStrategy]
 
-  @inline def values = js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE)
+  @inline def values: js.Array[ResolutionStrategy] = js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE)
 }
 
 @js.native
@@ -123,7 +140,7 @@ sealed trait Service extends js.Any
 object Service {
   val COGNITO = "COGNITO".asInstanceOf[Service]
 
-  @inline def values = js.Array(COGNITO)
+  @inline def values: js.Array[Service] = js.Array(COGNITO)
 }
 
 @js.native
@@ -134,7 +151,7 @@ object SignInMethod {
   val PHONE_NUMBER = "PHONE_NUMBER".asInstanceOf[SignInMethod]
   val USERNAME = "USERNAME".asInstanceOf[SignInMethod]
 
-  @inline def values = js.Array(EMAIL, EMAIL_AND_PHONE_NUMBER, PHONE_NUMBER, USERNAME)
+  @inline def values: js.Array[SignInMethod] = js.Array(EMAIL, EMAIL_AND_PHONE_NUMBER, PHONE_NUMBER, USERNAME)
 }
 
 @js.native
@@ -143,6 +160,5 @@ object Status {
   val LATEST = "LATEST".asInstanceOf[Status]
   val STALE = "STALE".asInstanceOf[Status]
 
-  @inline def values = js.Array(LATEST, STALE)
+  @inline def values: js.Array[Status] = js.Array(LATEST, STALE)
 }
-

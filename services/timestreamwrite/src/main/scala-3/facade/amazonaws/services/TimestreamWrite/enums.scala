@@ -1,6 +1,6 @@
 package facade.amazonaws.services.timestreamwrite
 
-import scalajs._
+import scalajs.js
 
 type DimensionValueType = "VARCHAR"
 object DimensionValueType {

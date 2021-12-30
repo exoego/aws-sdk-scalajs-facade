@@ -1,7 +1,6 @@
 package facade.amazonaws.services.mgn
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ChangeServerLifeCycleStateSourceServerLifecycleState extends js.Any
@@ -10,7 +9,7 @@ object ChangeServerLifeCycleStateSourceServerLifecycleState {
   val READY_FOR_CUTOVER = "READY_FOR_CUTOVER".asInstanceOf[ChangeServerLifeCycleStateSourceServerLifecycleState]
   val CUTOVER = "CUTOVER".asInstanceOf[ChangeServerLifeCycleStateSourceServerLifecycleState]
 
-  @inline def values = js.Array(READY_FOR_TEST, READY_FOR_CUTOVER, CUTOVER)
+  @inline def values: js.Array[ChangeServerLifeCycleStateSourceServerLifecycleState] = js.Array(READY_FOR_TEST, READY_FOR_CUTOVER, CUTOVER)
 }
 
 @js.native
@@ -31,7 +30,22 @@ object DataReplicationErrorString {
   val FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER = "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER".asInstanceOf[DataReplicationErrorString]
   val FAILED_TO_START_DATA_TRANSFER = "FAILED_TO_START_DATA_TRANSFER".asInstanceOf[DataReplicationErrorString]
 
-  @inline def values = js.Array(AGENT_NOT_SEEN, SNAPSHOTS_FAILURE, NOT_CONVERGING, UNSTABLE_NETWORK, FAILED_TO_CREATE_SECURITY_GROUP, FAILED_TO_LAUNCH_REPLICATION_SERVER, FAILED_TO_BOOT_REPLICATION_SERVER, FAILED_TO_AUTHENTICATE_WITH_SERVICE, FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE, FAILED_TO_CREATE_STAGING_DISKS, FAILED_TO_ATTACH_STAGING_DISKS, FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT, FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER, FAILED_TO_START_DATA_TRANSFER)
+  @inline def values: js.Array[DataReplicationErrorString] = js.Array(
+    AGENT_NOT_SEEN,
+    SNAPSHOTS_FAILURE,
+    NOT_CONVERGING,
+    UNSTABLE_NETWORK,
+    FAILED_TO_CREATE_SECURITY_GROUP,
+    FAILED_TO_LAUNCH_REPLICATION_SERVER,
+    FAILED_TO_BOOT_REPLICATION_SERVER,
+    FAILED_TO_AUTHENTICATE_WITH_SERVICE,
+    FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE,
+    FAILED_TO_CREATE_STAGING_DISKS,
+    FAILED_TO_ATTACH_STAGING_DISKS,
+    FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT,
+    FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER,
+    FAILED_TO_START_DATA_TRANSFER
+  )
 }
 
 @js.native
@@ -49,7 +63,19 @@ object DataReplicationInitiationStepName {
   val CONNECT_AGENT_TO_REPLICATION_SERVER = "CONNECT_AGENT_TO_REPLICATION_SERVER".asInstanceOf[DataReplicationInitiationStepName]
   val START_DATA_TRANSFER = "START_DATA_TRANSFER".asInstanceOf[DataReplicationInitiationStepName]
 
-  @inline def values = js.Array(WAIT, CREATE_SECURITY_GROUP, LAUNCH_REPLICATION_SERVER, BOOT_REPLICATION_SERVER, AUTHENTICATE_WITH_SERVICE, DOWNLOAD_REPLICATION_SOFTWARE, CREATE_STAGING_DISKS, ATTACH_STAGING_DISKS, PAIR_REPLICATION_SERVER_WITH_AGENT, CONNECT_AGENT_TO_REPLICATION_SERVER, START_DATA_TRANSFER)
+  @inline def values: js.Array[DataReplicationInitiationStepName] = js.Array(
+    WAIT,
+    CREATE_SECURITY_GROUP,
+    LAUNCH_REPLICATION_SERVER,
+    BOOT_REPLICATION_SERVER,
+    AUTHENTICATE_WITH_SERVICE,
+    DOWNLOAD_REPLICATION_SOFTWARE,
+    CREATE_STAGING_DISKS,
+    ATTACH_STAGING_DISKS,
+    PAIR_REPLICATION_SERVER_WITH_AGENT,
+    CONNECT_AGENT_TO_REPLICATION_SERVER,
+    START_DATA_TRANSFER
+  )
 }
 
 @js.native
@@ -61,7 +87,7 @@ object DataReplicationInitiationStepStatus {
   val FAILED = "FAILED".asInstanceOf[DataReplicationInitiationStepStatus]
   val SKIPPED = "SKIPPED".asInstanceOf[DataReplicationInitiationStepStatus]
 
-  @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, SUCCEEDED, FAILED, SKIPPED)
+  @inline def values: js.Array[DataReplicationInitiationStepStatus] = js.Array(NOT_STARTED, IN_PROGRESS, SUCCEEDED, FAILED, SKIPPED)
 }
 
 @js.native
@@ -78,7 +104,7 @@ object DataReplicationState {
   val STALLED = "STALLED".asInstanceOf[DataReplicationState]
   val DISCONNECTED = "DISCONNECTED".asInstanceOf[DataReplicationState]
 
-  @inline def values = js.Array(STOPPED, INITIATING, INITIAL_SYNC, BACKLOG, CREATING_SNAPSHOT, CONTINUOUS, PAUSED, RESCAN, STALLED, DISCONNECTED)
+  @inline def values: js.Array[DataReplicationState] = js.Array(STOPPED, INITIATING, INITIAL_SYNC, BACKLOG, CREATING_SNAPSHOT, CONTINUOUS, PAUSED, RESCAN, STALLED, DISCONNECTED)
 }
 
 @js.native
@@ -89,7 +115,7 @@ object FirstBoot {
   val UNKNOWN = "UNKNOWN".asInstanceOf[FirstBoot]
   val STOPPED = "STOPPED".asInstanceOf[FirstBoot]
 
-  @inline def values = js.Array(WAITING, SUCCEEDED, UNKNOWN, STOPPED)
+  @inline def values: js.Array[FirstBoot] = js.Array(WAITING, SUCCEEDED, UNKNOWN, STOPPED)
 }
 
 @js.native
@@ -100,7 +126,7 @@ object InitiatedBy {
   val DIAGNOSTIC = "DIAGNOSTIC".asInstanceOf[InitiatedBy]
   val TERMINATE = "TERMINATE".asInstanceOf[InitiatedBy]
 
-  @inline def values = js.Array(START_TEST, START_CUTOVER, DIAGNOSTIC, TERMINATE)
+  @inline def values: js.Array[InitiatedBy] = js.Array(START_TEST, START_CUTOVER, DIAGNOSTIC, TERMINATE)
 }
 
 @js.native
@@ -123,7 +149,24 @@ object JobLogEvent {
   val JOB_CANCEL = "JOB_CANCEL".asInstanceOf[JobLogEvent]
   val JOB_END = "JOB_END".asInstanceOf[JobLogEvent]
 
-  @inline def values = js.Array(JOB_START, SERVER_SKIPPED, CLEANUP_START, CLEANUP_END, CLEANUP_FAIL, SNAPSHOT_START, SNAPSHOT_END, SNAPSHOT_FAIL, USING_PREVIOUS_SNAPSHOT, CONVERSION_START, CONVERSION_END, CONVERSION_FAIL, LAUNCH_START, LAUNCH_FAILED, JOB_CANCEL, JOB_END)
+  @inline def values: js.Array[JobLogEvent] = js.Array(
+    JOB_START,
+    SERVER_SKIPPED,
+    CLEANUP_START,
+    CLEANUP_END,
+    CLEANUP_FAIL,
+    SNAPSHOT_START,
+    SNAPSHOT_END,
+    SNAPSHOT_FAIL,
+    USING_PREVIOUS_SNAPSHOT,
+    CONVERSION_START,
+    CONVERSION_END,
+    CONVERSION_FAIL,
+    LAUNCH_START,
+    LAUNCH_FAILED,
+    JOB_CANCEL,
+    JOB_END
+  )
 }
 
 @js.native
@@ -133,7 +176,7 @@ object JobStatus {
   val STARTED = "STARTED".asInstanceOf[JobStatus]
   val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
 
-  @inline def values = js.Array(PENDING, STARTED, COMPLETED)
+  @inline def values: js.Array[JobStatus] = js.Array(PENDING, STARTED, COMPLETED)
 }
 
 @js.native
@@ -142,7 +185,7 @@ object JobType {
   val LAUNCH = "LAUNCH".asInstanceOf[JobType]
   val TERMINATE = "TERMINATE".asInstanceOf[JobType]
 
-  @inline def values = js.Array(LAUNCH, TERMINATE)
+  @inline def values: js.Array[JobType] = js.Array(LAUNCH, TERMINATE)
 }
 
 @js.native
@@ -151,7 +194,7 @@ object LaunchDisposition {
   val STOPPED = "STOPPED".asInstanceOf[LaunchDisposition]
   val STARTED = "STARTED".asInstanceOf[LaunchDisposition]
 
-  @inline def values = js.Array(STOPPED, STARTED)
+  @inline def values: js.Array[LaunchDisposition] = js.Array(STOPPED, STARTED)
 }
 
 @js.native
@@ -163,7 +206,7 @@ object LaunchStatus {
   val FAILED = "FAILED".asInstanceOf[LaunchStatus]
   val TERMINATED = "TERMINATED".asInstanceOf[LaunchStatus]
 
-  @inline def values = js.Array(PENDING, IN_PROGRESS, LAUNCHED, FAILED, TERMINATED)
+  @inline def values: js.Array[LaunchStatus] = js.Array(PENDING, IN_PROGRESS, LAUNCHED, FAILED, TERMINATED)
 }
 
 @js.native
@@ -178,7 +221,7 @@ object LifeCycleState {
   val CUTOVER = "CUTOVER".asInstanceOf[LifeCycleState]
   val DISCONNECTED = "DISCONNECTED".asInstanceOf[LifeCycleState]
 
-  @inline def values = js.Array(STOPPED, NOT_READY, READY_FOR_TEST, TESTING, READY_FOR_CUTOVER, CUTTING_OVER, CUTOVER, DISCONNECTED)
+  @inline def values: js.Array[LifeCycleState] = js.Array(STOPPED, NOT_READY, READY_FOR_TEST, TESTING, READY_FOR_CUTOVER, CUTTING_OVER, CUTOVER, DISCONNECTED)
 }
 
 @js.native
@@ -187,7 +230,7 @@ object ReplicationConfigurationDataPlaneRouting {
   val PRIVATE_IP = "PRIVATE_IP".asInstanceOf[ReplicationConfigurationDataPlaneRouting]
   val PUBLIC_IP = "PUBLIC_IP".asInstanceOf[ReplicationConfigurationDataPlaneRouting]
 
-  @inline def values = js.Array(PRIVATE_IP, PUBLIC_IP)
+  @inline def values: js.Array[ReplicationConfigurationDataPlaneRouting] = js.Array(PRIVATE_IP, PUBLIC_IP)
 }
 
 @js.native
@@ -196,7 +239,7 @@ object ReplicationConfigurationDefaultLargeStagingDiskType {
   val GP2 = "GP2".asInstanceOf[ReplicationConfigurationDefaultLargeStagingDiskType]
   val ST1 = "ST1".asInstanceOf[ReplicationConfigurationDefaultLargeStagingDiskType]
 
-  @inline def values = js.Array(GP2, ST1)
+  @inline def values: js.Array[ReplicationConfigurationDefaultLargeStagingDiskType] = js.Array(GP2, ST1)
 }
 
 @js.native
@@ -206,7 +249,7 @@ object ReplicationConfigurationEbsEncryption {
   val DEFAULT = "DEFAULT".asInstanceOf[ReplicationConfigurationEbsEncryption]
   val CUSTOM = "CUSTOM".asInstanceOf[ReplicationConfigurationEbsEncryption]
 
-  @inline def values = js.Array(NONE, DEFAULT, CUSTOM)
+  @inline def values: js.Array[ReplicationConfigurationEbsEncryption] = js.Array(NONE, DEFAULT, CUSTOM)
 }
 
 @js.native
@@ -219,7 +262,7 @@ object ReplicationConfigurationReplicatedDiskStagingDiskType {
   val ST1 = "ST1".asInstanceOf[ReplicationConfigurationReplicatedDiskStagingDiskType]
   val STANDARD = "STANDARD".asInstanceOf[ReplicationConfigurationReplicatedDiskStagingDiskType]
 
-  @inline def values = js.Array(AUTO, GP2, IO1, SC1, ST1, STANDARD)
+  @inline def values: js.Array[ReplicationConfigurationReplicatedDiskStagingDiskType] = js.Array(AUTO, GP2, IO1, SC1, ST1, STANDARD)
 }
 
 @js.native
@@ -228,6 +271,5 @@ object TargetInstanceTypeRightSizingMethod {
   val NONE = "NONE".asInstanceOf[TargetInstanceTypeRightSizingMethod]
   val BASIC = "BASIC".asInstanceOf[TargetInstanceTypeRightSizingMethod]
 
-  @inline def values = js.Array(NONE, BASIC)
+  @inline def values: js.Array[TargetInstanceTypeRightSizingMethod] = js.Array(NONE, BASIC)
 }
-

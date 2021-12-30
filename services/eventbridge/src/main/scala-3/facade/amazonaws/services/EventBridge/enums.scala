@@ -1,6 +1,6 @@
 package facade.amazonaws.services.eventbridge
 
-import scalajs._
+import scalajs.js
 
 type ApiDestinationHttpMethod = "POST" | "GET" | "HEAD" | "OPTIONS" | "PUT" | "PATCH" | "DELETE"
 object ApiDestinationHttpMethod {

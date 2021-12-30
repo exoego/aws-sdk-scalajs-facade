@@ -1,6 +1,6 @@
 package facade.amazonaws.services.marketplaceentitlementservice
 
-import scalajs._
+import scalajs.js
 
 type GetEntitlementFilterName = "CUSTOMER_IDENTIFIER" | "DIMENSION"
 object GetEntitlementFilterName {

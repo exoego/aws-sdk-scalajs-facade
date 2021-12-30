@@ -1,7 +1,6 @@
 package facade.amazonaws.services.applicationautoscaling
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AdjustmentType extends js.Any
@@ -10,7 +9,7 @@ object AdjustmentType {
   val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[AdjustmentType]
   val ExactCapacity = "ExactCapacity".asInstanceOf[AdjustmentType]
 
-  @inline def values = js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity)
+  @inline def values: js.Array[AdjustmentType] = js.Array(ChangeInCapacity, PercentChangeInCapacity, ExactCapacity)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object MetricAggregationType {
   val Minimum = "Minimum".asInstanceOf[MetricAggregationType]
   val Maximum = "Maximum".asInstanceOf[MetricAggregationType]
 
-  @inline def values = js.Array(Average, Minimum, Maximum)
+  @inline def values: js.Array[MetricAggregationType] = js.Array(Average, Minimum, Maximum)
 }
 
 @js.native
@@ -32,7 +31,7 @@ object MetricStatistic {
   val SampleCount = "SampleCount".asInstanceOf[MetricStatistic]
   val Sum = "Sum".asInstanceOf[MetricStatistic]
 
-  @inline def values = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
+  @inline def values: js.Array[MetricStatistic] = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
 }
 
 @js.native
@@ -56,7 +55,25 @@ object MetricType {
   val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
   val KafkaBrokerStorageUtilization = "KafkaBrokerStorageUtilization".asInstanceOf[MetricType]
 
-  @inline def values = js.Array(DynamoDBReadCapacityUtilization, DynamoDBWriteCapacityUtilization, ALBRequestCountPerTarget, RDSReaderAverageCPUUtilization, RDSReaderAverageDatabaseConnections, EC2SpotFleetRequestAverageCPUUtilization, EC2SpotFleetRequestAverageNetworkIn, EC2SpotFleetRequestAverageNetworkOut, SageMakerVariantInvocationsPerInstance, ECSServiceAverageCPUUtilization, ECSServiceAverageMemoryUtilization, AppStreamAverageCapacityUtilization, ComprehendInferenceUtilization, LambdaProvisionedConcurrencyUtilization, CassandraReadCapacityUtilization, CassandraWriteCapacityUtilization, KafkaBrokerStorageUtilization)
+  @inline def values: js.Array[MetricType] = js.Array(
+    DynamoDBReadCapacityUtilization,
+    DynamoDBWriteCapacityUtilization,
+    ALBRequestCountPerTarget,
+    RDSReaderAverageCPUUtilization,
+    RDSReaderAverageDatabaseConnections,
+    EC2SpotFleetRequestAverageCPUUtilization,
+    EC2SpotFleetRequestAverageNetworkIn,
+    EC2SpotFleetRequestAverageNetworkOut,
+    SageMakerVariantInvocationsPerInstance,
+    ECSServiceAverageCPUUtilization,
+    ECSServiceAverageMemoryUtilization,
+    AppStreamAverageCapacityUtilization,
+    ComprehendInferenceUtilization,
+    LambdaProvisionedConcurrencyUtilization,
+    CassandraReadCapacityUtilization,
+    CassandraWriteCapacityUtilization,
+    KafkaBrokerStorageUtilization
+  )
 }
 
 @js.native
@@ -65,7 +82,7 @@ object PolicyType {
   val StepScaling = "StepScaling".asInstanceOf[PolicyType]
   val TargetTrackingScaling = "TargetTrackingScaling".asInstanceOf[PolicyType]
 
-  @inline def values = js.Array(StepScaling, TargetTrackingScaling)
+  @inline def values: js.Array[PolicyType] = js.Array(StepScaling, TargetTrackingScaling)
 }
 
 @js.native
@@ -89,7 +106,25 @@ object ScalableDimension {
   val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
   val `kafka:broker-storage:VolumeSize` = "kafka:broker-storage:VolumeSize".asInstanceOf[ScalableDimension]
 
-  @inline def values = js.Array(`ecs:service:DesiredCount`, `ec2:spot-fleet-request:TargetCapacity`, `elasticmapreduce:instancegroup:InstanceCount`, `appstream:fleet:DesiredCapacity`, `dynamodb:table:ReadCapacityUnits`, `dynamodb:table:WriteCapacityUnits`, `dynamodb:index:ReadCapacityUnits`, `dynamodb:index:WriteCapacityUnits`, `rds:cluster:ReadReplicaCount`, `sagemaker:variant:DesiredInstanceCount`, `custom-resource:ResourceType:Property`, `comprehend:document-classifier-endpoint:DesiredInferenceUnits`, `comprehend:entity-recognizer-endpoint:DesiredInferenceUnits`, `lambda:function:ProvisionedConcurrency`, `cassandra:table:ReadCapacityUnits`, `cassandra:table:WriteCapacityUnits`, `kafka:broker-storage:VolumeSize`)
+  @inline def values: js.Array[ScalableDimension] = js.Array(
+    `ecs:service:DesiredCount`,
+    `ec2:spot-fleet-request:TargetCapacity`,
+    `elasticmapreduce:instancegroup:InstanceCount`,
+    `appstream:fleet:DesiredCapacity`,
+    `dynamodb:table:ReadCapacityUnits`,
+    `dynamodb:table:WriteCapacityUnits`,
+    `dynamodb:index:ReadCapacityUnits`,
+    `dynamodb:index:WriteCapacityUnits`,
+    `rds:cluster:ReadReplicaCount`,
+    `sagemaker:variant:DesiredInstanceCount`,
+    `custom-resource:ResourceType:Property`,
+    `comprehend:document-classifier-endpoint:DesiredInferenceUnits`,
+    `comprehend:entity-recognizer-endpoint:DesiredInferenceUnits`,
+    `lambda:function:ProvisionedConcurrency`,
+    `cassandra:table:ReadCapacityUnits`,
+    `cassandra:table:WriteCapacityUnits`,
+    `kafka:broker-storage:VolumeSize`
+  )
 }
 
 @js.native
@@ -102,7 +137,7 @@ object ScalingActivityStatusCode {
   val Unfulfilled = "Unfulfilled".asInstanceOf[ScalingActivityStatusCode]
   val Failed = "Failed".asInstanceOf[ScalingActivityStatusCode]
 
-  @inline def values = js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed)
+  @inline def values: js.Array[ScalingActivityStatusCode] = js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed)
 }
 
 @js.native
@@ -121,6 +156,5 @@ object ServiceNamespace {
   val cassandra = "cassandra".asInstanceOf[ServiceNamespace]
   val kafka = "kafka".asInstanceOf[ServiceNamespace]
 
-  @inline def values = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka)
+  @inline def values: js.Array[ServiceNamespace] = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka)
 }
-

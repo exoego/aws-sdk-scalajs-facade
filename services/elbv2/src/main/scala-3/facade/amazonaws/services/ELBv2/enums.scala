@@ -1,6 +1,6 @@
 package facade.amazonaws.services.elbv2
 
-import scalajs._
+import scalajs.js
 
 type ActionTypeEnum = "forward" | "authenticate-oidc" | "authenticate-cognito" | "redirect" | "fixed-response"
 object ActionTypeEnum {

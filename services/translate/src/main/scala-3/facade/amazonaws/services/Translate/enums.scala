@@ -1,6 +1,6 @@
 package facade.amazonaws.services.translate
 
-import scalajs._
+import scalajs.js
 
 type EncryptionKeyType = "KMS"
 object EncryptionKeyType {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.datapipeline
 
-import scalajs._
+import scalajs.js
 
 type OperatorType = "EQ" | "REF_EQ" | "LE" | "GE" | "BETWEEN"
 object OperatorType {

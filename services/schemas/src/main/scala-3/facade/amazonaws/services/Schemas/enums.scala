@@ -1,6 +1,6 @@
 package facade.amazonaws.services.schemas
 
-import scalajs._
+import scalajs.js
 
 type CodeGenerationStatus = "CREATE_IN_PROGRESS" | "CREATE_COMPLETE" | "CREATE_FAILED"
 object CodeGenerationStatus {

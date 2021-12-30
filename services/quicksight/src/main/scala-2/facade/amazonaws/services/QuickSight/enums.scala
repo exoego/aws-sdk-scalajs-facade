@@ -1,7 +1,6 @@
 package facade.amazonaws.services.quicksight
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AnalysisErrorType extends js.Any
@@ -17,7 +16,18 @@ object AnalysisErrorType {
   val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH".asInstanceOf[AnalysisErrorType]
   val COLUMN_REPLACEMENT_MISSING = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[AnalysisErrorType]
 
-  @inline def values = js.Array(ACCESS_DENIED, SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE, PARAMETER_VALUE_INCOMPATIBLE, PARAMETER_TYPE_INVALID, PARAMETER_NOT_FOUND, COLUMN_TYPE_MISMATCH, COLUMN_GEOGRAPHIC_ROLE_MISMATCH, COLUMN_REPLACEMENT_MISSING)
+  @inline def values: js.Array[AnalysisErrorType] = js.Array(
+    ACCESS_DENIED,
+    SOURCE_NOT_FOUND,
+    DATA_SET_NOT_FOUND,
+    INTERNAL_FAILURE,
+    PARAMETER_VALUE_INCOMPATIBLE,
+    PARAMETER_TYPE_INVALID,
+    PARAMETER_NOT_FOUND,
+    COLUMN_TYPE_MISMATCH,
+    COLUMN_GEOGRAPHIC_ROLE_MISMATCH,
+    COLUMN_REPLACEMENT_MISSING
+  )
 }
 
 @js.native
@@ -25,7 +35,7 @@ sealed trait AnalysisFilterAttribute extends js.Any
 object AnalysisFilterAttribute {
   val QUICKSIGHT_USER = "QUICKSIGHT_USER".asInstanceOf[AnalysisFilterAttribute]
 
-  @inline def values = js.Array(QUICKSIGHT_USER)
+  @inline def values: js.Array[AnalysisFilterAttribute] = js.Array(QUICKSIGHT_USER)
 }
 
 @js.native
@@ -35,7 +45,7 @@ object AssignmentStatus {
   val DRAFT = "DRAFT".asInstanceOf[AssignmentStatus]
   val DISABLED = "DISABLED".asInstanceOf[AssignmentStatus]
 
-  @inline def values = js.Array(ENABLED, DRAFT, DISABLED)
+  @inline def values: js.Array[AssignmentStatus] = js.Array(ENABLED, DRAFT, DISABLED)
 }
 
 @js.native
@@ -46,7 +56,7 @@ object ColumnDataType {
   val DECIMAL = "DECIMAL".asInstanceOf[ColumnDataType]
   val DATETIME = "DATETIME".asInstanceOf[ColumnDataType]
 
-  @inline def values = js.Array(STRING, INTEGER, DECIMAL, DATETIME)
+  @inline def values: js.Array[ColumnDataType] = js.Array(STRING, INTEGER, DECIMAL, DATETIME)
 }
 
 @js.native
@@ -55,7 +65,7 @@ object DashboardBehavior {
   val ENABLED = "ENABLED".asInstanceOf[DashboardBehavior]
   val DISABLED = "DISABLED".asInstanceOf[DashboardBehavior]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[DashboardBehavior] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -72,7 +82,18 @@ object DashboardErrorType {
   val COLUMN_GEOGRAPHIC_ROLE_MISMATCH = "COLUMN_GEOGRAPHIC_ROLE_MISMATCH".asInstanceOf[DashboardErrorType]
   val COLUMN_REPLACEMENT_MISSING = "COLUMN_REPLACEMENT_MISSING".asInstanceOf[DashboardErrorType]
 
-  @inline def values = js.Array(ACCESS_DENIED, SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE, PARAMETER_VALUE_INCOMPATIBLE, PARAMETER_TYPE_INVALID, PARAMETER_NOT_FOUND, COLUMN_TYPE_MISMATCH, COLUMN_GEOGRAPHIC_ROLE_MISMATCH, COLUMN_REPLACEMENT_MISSING)
+  @inline def values: js.Array[DashboardErrorType] = js.Array(
+    ACCESS_DENIED,
+    SOURCE_NOT_FOUND,
+    DATA_SET_NOT_FOUND,
+    INTERNAL_FAILURE,
+    PARAMETER_VALUE_INCOMPATIBLE,
+    PARAMETER_TYPE_INVALID,
+    PARAMETER_NOT_FOUND,
+    COLUMN_TYPE_MISMATCH,
+    COLUMN_GEOGRAPHIC_ROLE_MISMATCH,
+    COLUMN_REPLACEMENT_MISSING
+  )
 }
 
 @js.native
@@ -80,7 +101,7 @@ sealed trait DashboardFilterAttribute extends js.Any
 object DashboardFilterAttribute {
   val QUICKSIGHT_USER = "QUICKSIGHT_USER".asInstanceOf[DashboardFilterAttribute]
 
-  @inline def values = js.Array(QUICKSIGHT_USER)
+  @inline def values: js.Array[DashboardFilterAttribute] = js.Array(QUICKSIGHT_USER)
 }
 
 @js.native
@@ -89,7 +110,7 @@ object DashboardUIState {
   val EXPANDED = "EXPANDED".asInstanceOf[DashboardUIState]
   val COLLAPSED = "COLLAPSED".asInstanceOf[DashboardUIState]
 
-  @inline def values = js.Array(EXPANDED, COLLAPSED)
+  @inline def values: js.Array[DashboardUIState] = js.Array(EXPANDED, COLLAPSED)
 }
 
 @js.native
@@ -98,7 +119,7 @@ object DataSetImportMode {
   val SPICE = "SPICE".asInstanceOf[DataSetImportMode]
   val DIRECT_QUERY = "DIRECT_QUERY".asInstanceOf[DataSetImportMode]
 
-  @inline def values = js.Array(SPICE, DIRECT_QUERY)
+  @inline def values: js.Array[DataSetImportMode] = js.Array(SPICE, DIRECT_QUERY)
 }
 
 @js.native
@@ -113,7 +134,7 @@ object DataSourceErrorInfoType {
   val CONFLICT = "CONFLICT".asInstanceOf[DataSourceErrorInfoType]
   val UNKNOWN = "UNKNOWN".asInstanceOf[DataSourceErrorInfoType]
 
-  @inline def values = js.Array(ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN)
+  @inline def values: js.Array[DataSourceErrorInfoType] = js.Array(ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN)
 }
 
 @js.native
@@ -143,7 +164,31 @@ object DataSourceType {
   val TWITTER = "TWITTER".asInstanceOf[DataSourceType]
   val TIMESTREAM = "TIMESTREAM".asInstanceOf[DataSourceType]
 
-  @inline def values = js.Array(ADOBE_ANALYTICS, AMAZON_ELASTICSEARCH, ATHENA, AURORA, AURORA_POSTGRESQL, AWS_IOT_ANALYTICS, GITHUB, JIRA, MARIADB, MYSQL, ORACLE, POSTGRESQL, PRESTO, REDSHIFT, S3, SALESFORCE, SERVICENOW, SNOWFLAKE, SPARK, SQLSERVER, TERADATA, TWITTER, TIMESTREAM)
+  @inline def values: js.Array[DataSourceType] = js.Array(
+    ADOBE_ANALYTICS,
+    AMAZON_ELASTICSEARCH,
+    ATHENA,
+    AURORA,
+    AURORA_POSTGRESQL,
+    AWS_IOT_ANALYTICS,
+    GITHUB,
+    JIRA,
+    MARIADB,
+    MYSQL,
+    ORACLE,
+    POSTGRESQL,
+    PRESTO,
+    REDSHIFT,
+    S3,
+    SALESFORCE,
+    SERVICENOW,
+    SNOWFLAKE,
+    SPARK,
+    SQLSERVER,
+    TERADATA,
+    TWITTER,
+    TIMESTREAM
+  )
 }
 
 @js.native
@@ -152,7 +197,7 @@ object Edition {
   val STANDARD = "STANDARD".asInstanceOf[Edition]
   val ENTERPRISE = "ENTERPRISE".asInstanceOf[Edition]
 
-  @inline def values = js.Array(STANDARD, ENTERPRISE)
+  @inline def values: js.Array[Edition] = js.Array(STANDARD, ENTERPRISE)
 }
 
 @js.native
@@ -162,7 +207,7 @@ object EmbeddingIdentityType {
   val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[EmbeddingIdentityType]
   val ANONYMOUS = "ANONYMOUS".asInstanceOf[EmbeddingIdentityType]
 
-  @inline def values = js.Array(IAM, QUICKSIGHT, ANONYMOUS)
+  @inline def values: js.Array[EmbeddingIdentityType] = js.Array(IAM, QUICKSIGHT, ANONYMOUS)
 }
 
 @js.native
@@ -175,7 +220,7 @@ object FileFormat {
   val XLSX = "XLSX".asInstanceOf[FileFormat]
   val JSON = "JSON".asInstanceOf[FileFormat]
 
-  @inline def values = js.Array(CSV, TSV, CLF, ELF, XLSX, JSON)
+  @inline def values: js.Array[FileFormat] = js.Array(CSV, TSV, CLF, ELF, XLSX, JSON)
 }
 
 @js.native
@@ -183,7 +228,7 @@ sealed trait FilterOperator extends js.Any
 object FilterOperator {
   val StringEquals = "StringEquals".asInstanceOf[FilterOperator]
 
-  @inline def values = js.Array(StringEquals)
+  @inline def values: js.Array[FilterOperator] = js.Array(StringEquals)
 }
 
 @js.native
@@ -191,7 +236,7 @@ sealed trait GeoSpatialCountryCode extends js.Any
 object GeoSpatialCountryCode {
   val US = "US".asInstanceOf[GeoSpatialCountryCode]
 
-  @inline def values = js.Array(US)
+  @inline def values: js.Array[GeoSpatialCountryCode] = js.Array(US)
 }
 
 @js.native
@@ -205,7 +250,7 @@ object GeoSpatialDataRole {
   val LONGITUDE = "LONGITUDE".asInstanceOf[GeoSpatialDataRole]
   val LATITUDE = "LATITUDE".asInstanceOf[GeoSpatialDataRole]
 
-  @inline def values = js.Array(COUNTRY, STATE, COUNTY, CITY, POSTCODE, LONGITUDE, LATITUDE)
+  @inline def values: js.Array[GeoSpatialDataRole] = js.Array(COUNTRY, STATE, COUNTY, CITY, POSTCODE, LONGITUDE, LATITUDE)
 }
 
 @js.native
@@ -213,7 +258,7 @@ sealed trait IdentityStore extends js.Any
 object IdentityStore {
   val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityStore]
 
-  @inline def values = js.Array(QUICKSIGHT)
+  @inline def values: js.Array[IdentityStore] = js.Array(QUICKSIGHT)
 }
 
 @js.native
@@ -222,7 +267,7 @@ object IdentityType {
   val IAM = "IAM".asInstanceOf[IdentityType]
   val QUICKSIGHT = "QUICKSIGHT".asInstanceOf[IdentityType]
 
-  @inline def values = js.Array(IAM, QUICKSIGHT)
+  @inline def values: js.Array[IdentityType] = js.Array(IAM, QUICKSIGHT)
 }
 
 @js.native
@@ -269,7 +314,48 @@ object IngestionErrorType {
   val FAILURE_TO_PROCESS_JSON_FILE = "FAILURE_TO_PROCESS_JSON_FILE".asInstanceOf[IngestionErrorType]
   val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[IngestionErrorType]
 
-  @inline def values = js.Array(FAILURE_TO_ASSUME_ROLE, INGESTION_SUPERSEDED, INGESTION_CANCELED, DATA_SET_DELETED, DATA_SET_NOT_SPICE, S3_UPLOADED_FILE_DELETED, S3_MANIFEST_ERROR, DATA_TOLERANCE_EXCEPTION, SPICE_TABLE_NOT_FOUND, DATA_SET_SIZE_LIMIT_EXCEEDED, ROW_SIZE_LIMIT_EXCEEDED, ACCOUNT_CAPACITY_LIMIT_EXCEEDED, CUSTOMER_ERROR, DATA_SOURCE_NOT_FOUND, IAM_ROLE_NOT_AVAILABLE, CONNECTION_FAILURE, SQL_TABLE_NOT_FOUND, PERMISSION_DENIED, SSL_CERTIFICATE_VALIDATION_FAILURE, OAUTH_TOKEN_FAILURE, SOURCE_API_LIMIT_EXCEEDED_FAILURE, PASSWORD_AUTHENTICATION_FAILURE, SQL_SCHEMA_MISMATCH_ERROR, INVALID_DATE_FORMAT, INVALID_DATAPREP_SYNTAX, SOURCE_RESOURCE_LIMIT_EXCEEDED, SQL_INVALID_PARAMETER_VALUE, QUERY_TIMEOUT, SQL_NUMERIC_OVERFLOW, UNRESOLVABLE_HOST, UNROUTABLE_HOST, SQL_EXCEPTION, S3_FILE_INACCESSIBLE, IOT_FILE_NOT_FOUND, IOT_DATA_SET_FILE_EMPTY, INVALID_DATA_SOURCE_CONFIG, DATA_SOURCE_AUTH_FAILED, DATA_SOURCE_CONNECTION_FAILED, FAILURE_TO_PROCESS_JSON_FILE, INTERNAL_SERVICE_ERROR)
+  @inline def values: js.Array[IngestionErrorType] = js.Array(
+    FAILURE_TO_ASSUME_ROLE,
+    INGESTION_SUPERSEDED,
+    INGESTION_CANCELED,
+    DATA_SET_DELETED,
+    DATA_SET_NOT_SPICE,
+    S3_UPLOADED_FILE_DELETED,
+    S3_MANIFEST_ERROR,
+    DATA_TOLERANCE_EXCEPTION,
+    SPICE_TABLE_NOT_FOUND,
+    DATA_SET_SIZE_LIMIT_EXCEEDED,
+    ROW_SIZE_LIMIT_EXCEEDED,
+    ACCOUNT_CAPACITY_LIMIT_EXCEEDED,
+    CUSTOMER_ERROR,
+    DATA_SOURCE_NOT_FOUND,
+    IAM_ROLE_NOT_AVAILABLE,
+    CONNECTION_FAILURE,
+    SQL_TABLE_NOT_FOUND,
+    PERMISSION_DENIED,
+    SSL_CERTIFICATE_VALIDATION_FAILURE,
+    OAUTH_TOKEN_FAILURE,
+    SOURCE_API_LIMIT_EXCEEDED_FAILURE,
+    PASSWORD_AUTHENTICATION_FAILURE,
+    SQL_SCHEMA_MISMATCH_ERROR,
+    INVALID_DATE_FORMAT,
+    INVALID_DATAPREP_SYNTAX,
+    SOURCE_RESOURCE_LIMIT_EXCEEDED,
+    SQL_INVALID_PARAMETER_VALUE,
+    QUERY_TIMEOUT,
+    SQL_NUMERIC_OVERFLOW,
+    UNRESOLVABLE_HOST,
+    UNROUTABLE_HOST,
+    SQL_EXCEPTION,
+    S3_FILE_INACCESSIBLE,
+    IOT_FILE_NOT_FOUND,
+    IOT_DATA_SET_FILE_EMPTY,
+    INVALID_DATA_SOURCE_CONFIG,
+    DATA_SOURCE_AUTH_FAILED,
+    DATA_SOURCE_CONNECTION_FAILED,
+    FAILURE_TO_PROCESS_JSON_FILE,
+    INTERNAL_SERVICE_ERROR
+  )
 }
 
 @js.native
@@ -278,7 +364,7 @@ object IngestionRequestSource {
   val MANUAL = "MANUAL".asInstanceOf[IngestionRequestSource]
   val SCHEDULED = "SCHEDULED".asInstanceOf[IngestionRequestSource]
 
-  @inline def values = js.Array(MANUAL, SCHEDULED)
+  @inline def values: js.Array[IngestionRequestSource] = js.Array(MANUAL, SCHEDULED)
 }
 
 @js.native
@@ -289,7 +375,7 @@ object IngestionRequestType {
   val INCREMENTAL_REFRESH = "INCREMENTAL_REFRESH".asInstanceOf[IngestionRequestType]
   val FULL_REFRESH = "FULL_REFRESH".asInstanceOf[IngestionRequestType]
 
-  @inline def values = js.Array(INITIAL_INGESTION, EDIT, INCREMENTAL_REFRESH, FULL_REFRESH)
+  @inline def values: js.Array[IngestionRequestType] = js.Array(INITIAL_INGESTION, EDIT, INCREMENTAL_REFRESH, FULL_REFRESH)
 }
 
 @js.native
@@ -302,7 +388,7 @@ object IngestionStatus {
   val COMPLETED = "COMPLETED".asInstanceOf[IngestionStatus]
   val CANCELLED = "CANCELLED".asInstanceOf[IngestionStatus]
 
-  @inline def values = js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED)
+  @inline def values: js.Array[IngestionStatus] = js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED)
 }
 
 @js.native
@@ -316,7 +402,7 @@ object InputColumnDataType {
   val BOOLEAN = "BOOLEAN".asInstanceOf[InputColumnDataType]
   val JSON = "JSON".asInstanceOf[InputColumnDataType]
 
-  @inline def values = js.Array(STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON)
+  @inline def values: js.Array[InputColumnDataType] = js.Array(STRING, INTEGER, DECIMAL, DATETIME, BIT, BOOLEAN, JSON)
 }
 
 @js.native
@@ -327,7 +413,7 @@ object JoinType {
   val LEFT = "LEFT".asInstanceOf[JoinType]
   val RIGHT = "RIGHT".asInstanceOf[JoinType]
 
-  @inline def values = js.Array(INNER, OUTER, LEFT, RIGHT)
+  @inline def values: js.Array[JoinType] = js.Array(INNER, OUTER, LEFT, RIGHT)
 }
 
 @js.native
@@ -336,7 +422,7 @@ object NamespaceErrorType {
   val PERMISSION_DENIED = "PERMISSION_DENIED".asInstanceOf[NamespaceErrorType]
   val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[NamespaceErrorType]
 
-  @inline def values = js.Array(PERMISSION_DENIED, INTERNAL_SERVICE_ERROR)
+  @inline def values: js.Array[NamespaceErrorType] = js.Array(PERMISSION_DENIED, INTERNAL_SERVICE_ERROR)
 }
 
 @js.native
@@ -348,7 +434,7 @@ object NamespaceStatus {
   val RETRYABLE_FAILURE = "RETRYABLE_FAILURE".asInstanceOf[NamespaceStatus]
   val NON_RETRYABLE_FAILURE = "NON_RETRYABLE_FAILURE".asInstanceOf[NamespaceStatus]
 
-  @inline def values = js.Array(CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE)
+  @inline def values: js.Array[NamespaceStatus] = js.Array(CREATED, CREATING, DELETING, RETRYABLE_FAILURE, NON_RETRYABLE_FAILURE)
 }
 
 @js.native
@@ -362,7 +448,7 @@ object ResourceStatus {
   val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ResourceStatus]
   val DELETED = "DELETED".asInstanceOf[ResourceStatus]
 
-  @inline def values = js.Array(CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED, DELETED)
+  @inline def values: js.Array[ResourceStatus] = js.Array(CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED, DELETED)
 }
 
 @js.native
@@ -371,7 +457,7 @@ object RowLevelPermissionPolicy {
   val GRANT_ACCESS = "GRANT_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
   val DENY_ACCESS = "DENY_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
 
-  @inline def values = js.Array(GRANT_ACCESS, DENY_ACCESS)
+  @inline def values: js.Array[RowLevelPermissionPolicy] = js.Array(GRANT_ACCESS, DENY_ACCESS)
 }
 
 @js.native
@@ -382,7 +468,7 @@ object TemplateErrorType {
   val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[TemplateErrorType]
   val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[TemplateErrorType]
 
-  @inline def values = js.Array(SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE, ACCESS_DENIED)
+  @inline def values: js.Array[TemplateErrorType] = js.Array(SOURCE_NOT_FOUND, DATA_SET_NOT_FOUND, INTERNAL_FAILURE, ACCESS_DENIED)
 }
 
 @js.native
@@ -391,7 +477,7 @@ object TextQualifier {
   val DOUBLE_QUOTE = "DOUBLE_QUOTE".asInstanceOf[TextQualifier]
   val SINGLE_QUOTE = "SINGLE_QUOTE".asInstanceOf[TextQualifier]
 
-  @inline def values = js.Array(DOUBLE_QUOTE, SINGLE_QUOTE)
+  @inline def values: js.Array[TextQualifier] = js.Array(DOUBLE_QUOTE, SINGLE_QUOTE)
 }
 
 @js.native
@@ -399,7 +485,7 @@ sealed trait ThemeErrorType extends js.Any
 object ThemeErrorType {
   val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ThemeErrorType]
 
-  @inline def values = js.Array(INTERNAL_FAILURE)
+  @inline def values: js.Array[ThemeErrorType] = js.Array(INTERNAL_FAILURE)
 }
 
 @js.native
@@ -409,7 +495,7 @@ object ThemeType {
   val CUSTOM = "CUSTOM".asInstanceOf[ThemeType]
   val ALL = "ALL".asInstanceOf[ThemeType]
 
-  @inline def values = js.Array(QUICKSIGHT, CUSTOM, ALL)
+  @inline def values: js.Array[ThemeType] = js.Array(QUICKSIGHT, CUSTOM, ALL)
 }
 
 @js.native
@@ -421,6 +507,5 @@ object UserRole {
   val RESTRICTED_AUTHOR = "RESTRICTED_AUTHOR".asInstanceOf[UserRole]
   val RESTRICTED_READER = "RESTRICTED_READER".asInstanceOf[UserRole]
 
-  @inline def values = js.Array(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER)
+  @inline def values: js.Array[UserRole] = js.Array(ADMIN, AUTHOR, READER, RESTRICTED_AUTHOR, RESTRICTED_READER)
 }
-

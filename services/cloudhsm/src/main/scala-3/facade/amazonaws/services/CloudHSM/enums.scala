@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cloudhsm
 
-import scalajs._
+import scalajs.js
 
 type ClientVersion = "5.1" | "5.3"
 object ClientVersion {

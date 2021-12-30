@@ -1,7 +1,6 @@
 package facade.amazonaws.services.savingsplans
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait CurrencyCode extends js.Any
@@ -9,7 +8,7 @@ object CurrencyCode {
   val CNY = "CNY".asInstanceOf[CurrencyCode]
   val USD = "USD".asInstanceOf[CurrencyCode]
 
-  @inline def values = js.Array(CNY, USD)
+  @inline def values: js.Array[CurrencyCode] = js.Array(CNY, USD)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object SavingsPlanOfferingFilterAttribute {
   val region = "region".asInstanceOf[SavingsPlanOfferingFilterAttribute]
   val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingFilterAttribute]
 
-  @inline def values = js.Array(region, instanceFamily)
+  @inline def values: js.Array[SavingsPlanOfferingFilterAttribute] = js.Array(region, instanceFamily)
 }
 
 @js.native
@@ -27,7 +26,7 @@ object SavingsPlanOfferingPropertyKey {
   val region = "region".asInstanceOf[SavingsPlanOfferingPropertyKey]
   val instanceFamily = "instanceFamily".asInstanceOf[SavingsPlanOfferingPropertyKey]
 
-  @inline def values = js.Array(region, instanceFamily)
+  @inline def values: js.Array[SavingsPlanOfferingPropertyKey] = js.Array(region, instanceFamily)
 }
 
 @js.native
@@ -37,7 +36,7 @@ object SavingsPlanPaymentOption {
   val `Partial Upfront` = "Partial Upfront".asInstanceOf[SavingsPlanPaymentOption]
   val `No Upfront` = "No Upfront".asInstanceOf[SavingsPlanPaymentOption]
 
-  @inline def values = js.Array(`All Upfront`, `Partial Upfront`, `No Upfront`)
+  @inline def values: js.Array[SavingsPlanPaymentOption] = js.Array(`All Upfront`, `Partial Upfront`, `No Upfront`)
 }
 
 @js.native
@@ -48,7 +47,7 @@ object SavingsPlanProductType {
   val Lambda = "Lambda".asInstanceOf[SavingsPlanProductType]
   val SageMaker = "SageMaker".asInstanceOf[SavingsPlanProductType]
 
-  @inline def values = js.Array(EC2, Fargate, Lambda, SageMaker)
+  @inline def values: js.Array[SavingsPlanProductType] = js.Array(EC2, Fargate, Lambda, SageMaker)
 }
 
 @js.native
@@ -61,7 +60,7 @@ object SavingsPlanRateFilterAttribute {
   val tenancy = "tenancy".asInstanceOf[SavingsPlanRateFilterAttribute]
   val productId = "productId".asInstanceOf[SavingsPlanRateFilterAttribute]
 
-  @inline def values = js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId)
+  @inline def values: js.Array[SavingsPlanRateFilterAttribute] = js.Array(region, instanceFamily, instanceType, productDescription, tenancy, productId)
 }
 
 @js.native
@@ -76,7 +75,7 @@ object SavingsPlanRateFilterName {
   val usageType = "usageType".asInstanceOf[SavingsPlanRateFilterName]
   val operation = "operation".asInstanceOf[SavingsPlanRateFilterName]
 
-  @inline def values = js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation)
+  @inline def values: js.Array[SavingsPlanRateFilterName] = js.Array(region, instanceType, productDescription, tenancy, productType, serviceCode, usageType, operation)
 }
 
 @js.native
@@ -88,7 +87,7 @@ object SavingsPlanRatePropertyKey {
   val productDescription = "productDescription".asInstanceOf[SavingsPlanRatePropertyKey]
   val tenancy = "tenancy".asInstanceOf[SavingsPlanRatePropertyKey]
 
-  @inline def values = js.Array(region, instanceType, instanceFamily, productDescription, tenancy)
+  @inline def values: js.Array[SavingsPlanRatePropertyKey] = js.Array(region, instanceType, instanceFamily, productDescription, tenancy)
 }
 
 @js.native
@@ -100,7 +99,7 @@ object SavingsPlanRateServiceCode {
   val AWSLambda = "AWSLambda".asInstanceOf[SavingsPlanRateServiceCode]
   val AmazonSageMaker = "AmazonSageMaker".asInstanceOf[SavingsPlanRateServiceCode]
 
-  @inline def values = js.Array(AmazonEC2, AmazonECS, AmazonEKS, AWSLambda, AmazonSageMaker)
+  @inline def values: js.Array[SavingsPlanRateServiceCode] = js.Array(AmazonEC2, AmazonECS, AmazonEKS, AWSLambda, AmazonSageMaker)
 }
 
 @js.native
@@ -110,7 +109,7 @@ object SavingsPlanRateUnit {
   val `Lambda-GB-Second` = "Lambda-GB-Second".asInstanceOf[SavingsPlanRateUnit]
   val Request = "Request".asInstanceOf[SavingsPlanRateUnit]
 
-  @inline def values = js.Array(Hrs, `Lambda-GB-Second`, Request)
+  @inline def values: js.Array[SavingsPlanRateUnit] = js.Array(Hrs, `Lambda-GB-Second`, Request)
 }
 
 @js.native
@@ -123,7 +122,7 @@ object SavingsPlanState {
   val queued = "queued".asInstanceOf[SavingsPlanState]
   val `queued-deleted` = "queued-deleted".asInstanceOf[SavingsPlanState]
 
-  @inline def values = js.Array(`payment-pending`, `payment-failed`, active, retired, queued, `queued-deleted`)
+  @inline def values: js.Array[SavingsPlanState] = js.Array(`payment-pending`, `payment-failed`, active, retired, queued, `queued-deleted`)
 }
 
 @js.native
@@ -133,7 +132,7 @@ object SavingsPlanType {
   val EC2Instance = "EC2Instance".asInstanceOf[SavingsPlanType]
   val SageMaker = "SageMaker".asInstanceOf[SavingsPlanType]
 
-  @inline def values = js.Array(Compute, EC2Instance, SageMaker)
+  @inline def values: js.Array[SavingsPlanType] = js.Array(Compute, EC2Instance, SageMaker)
 }
 
 @js.native
@@ -149,6 +148,5 @@ object SavingsPlansFilterName {
   val start = "start".asInstanceOf[SavingsPlansFilterName]
   val end = "end".asInstanceOf[SavingsPlansFilterName]
 
-  @inline def values = js.Array(region, `ec2-instance-family`, commitment, upfront, term, `savings-plan-type`, `payment-option`, start, end)
+  @inline def values: js.Array[SavingsPlansFilterName] = js.Array(region, `ec2-instance-family`, commitment, upfront, term, `savings-plan-type`, `payment-option`, start, end)
 }
-

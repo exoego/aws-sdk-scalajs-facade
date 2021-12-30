@@ -1,7 +1,6 @@
 package facade.amazonaws.services.servicecatalog
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccessLevelFilterKey extends js.Any
@@ -10,7 +9,7 @@ object AccessLevelFilterKey {
   val Role = "Role".asInstanceOf[AccessLevelFilterKey]
   val User = "User".asInstanceOf[AccessLevelFilterKey]
 
-  @inline def values = js.Array(Account, Role, User)
+  @inline def values: js.Array[AccessLevelFilterKey] = js.Array(Account, Role, User)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object AccessStatus {
   val UNDER_CHANGE = "UNDER_CHANGE".asInstanceOf[AccessStatus]
   val DISABLED = "DISABLED".asInstanceOf[AccessStatus]
 
-  @inline def values = js.Array(ENABLED, UNDER_CHANGE, DISABLED)
+  @inline def values: js.Array[AccessStatus] = js.Array(ENABLED, UNDER_CHANGE, DISABLED)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object ChangeAction {
   val MODIFY = "MODIFY".asInstanceOf[ChangeAction]
   val REMOVE = "REMOVE".asInstanceOf[ChangeAction]
 
-  @inline def values = js.Array(ADD, MODIFY, REMOVE)
+  @inline def values: js.Array[ChangeAction] = js.Array(ADD, MODIFY, REMOVE)
 }
 
 @js.native
@@ -38,7 +37,7 @@ sealed trait CopyOption extends js.Any
 object CopyOption {
   val CopyTags = "CopyTags".asInstanceOf[CopyOption]
 
-  @inline def values = js.Array(CopyTags)
+  @inline def values: js.Array[CopyOption] = js.Array(CopyTags)
 }
 
 @js.native
@@ -48,7 +47,7 @@ object CopyProductStatus {
   val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CopyProductStatus]
   val FAILED = "FAILED".asInstanceOf[CopyProductStatus]
 
-  @inline def values = js.Array(SUCCEEDED, IN_PROGRESS, FAILED)
+  @inline def values: js.Array[CopyProductStatus] = js.Array(SUCCEEDED, IN_PROGRESS, FAILED)
 }
 
 @js.native
@@ -59,7 +58,7 @@ object DescribePortfolioShareType {
   val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[DescribePortfolioShareType]
   val ORGANIZATION_MEMBER_ACCOUNT = "ORGANIZATION_MEMBER_ACCOUNT".asInstanceOf[DescribePortfolioShareType]
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATION, ORGANIZATIONAL_UNIT, ORGANIZATION_MEMBER_ACCOUNT)
+  @inline def values: js.Array[DescribePortfolioShareType] = js.Array(ACCOUNT, ORGANIZATION, ORGANIZATIONAL_UNIT, ORGANIZATION_MEMBER_ACCOUNT)
 }
 
 @js.native
@@ -68,7 +67,7 @@ object EvaluationType {
   val STATIC = "STATIC".asInstanceOf[EvaluationType]
   val DYNAMIC = "DYNAMIC".asInstanceOf[EvaluationType]
 
-  @inline def values = js.Array(STATIC, DYNAMIC)
+  @inline def values: js.Array[EvaluationType] = js.Array(STATIC, DYNAMIC)
 }
 
 @js.native
@@ -78,7 +77,7 @@ object OrganizationNodeType {
   val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[OrganizationNodeType]
   val ACCOUNT = "ACCOUNT".asInstanceOf[OrganizationNodeType]
 
-  @inline def values = js.Array(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT)
+  @inline def values: js.Array[OrganizationNodeType] = js.Array(ORGANIZATION, ORGANIZATIONAL_UNIT, ACCOUNT)
 }
 
 @js.native
@@ -88,7 +87,7 @@ object PortfolioShareType {
   val AWS_SERVICECATALOG = "AWS_SERVICECATALOG".asInstanceOf[PortfolioShareType]
   val AWS_ORGANIZATIONS = "AWS_ORGANIZATIONS".asInstanceOf[PortfolioShareType]
 
-  @inline def values = js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS)
+  @inline def values: js.Array[PortfolioShareType] = js.Array(IMPORTED, AWS_SERVICECATALOG, AWS_ORGANIZATIONS)
 }
 
 @js.native
@@ -96,7 +95,7 @@ sealed trait PrincipalType extends js.Any
 object PrincipalType {
   val IAM = "IAM".asInstanceOf[PrincipalType]
 
-  @inline def values = js.Array(IAM)
+  @inline def values: js.Array[PrincipalType] = js.Array(IAM)
 }
 
 @js.native
@@ -104,7 +103,7 @@ sealed trait ProductSource extends js.Any
 object ProductSource {
   val ACCOUNT = "ACCOUNT".asInstanceOf[ProductSource]
 
-  @inline def values = js.Array(ACCOUNT)
+  @inline def values: js.Array[ProductSource] = js.Array(ACCOUNT)
 }
 
 @js.native
@@ -113,7 +112,7 @@ object ProductType {
   val CLOUD_FORMATION_TEMPLATE = "CLOUD_FORMATION_TEMPLATE".asInstanceOf[ProductType]
   val MARKETPLACE = "MARKETPLACE".asInstanceOf[ProductType]
 
-  @inline def values = js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE)
+  @inline def values: js.Array[ProductType] = js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE)
 }
 
 @js.native
@@ -124,7 +123,7 @@ object ProductViewFilterBy {
   val ProductType = "ProductType".asInstanceOf[ProductViewFilterBy]
   val SourceProductId = "SourceProductId".asInstanceOf[ProductViewFilterBy]
 
-  @inline def values = js.Array(FullTextSearch, Owner, ProductType, SourceProductId)
+  @inline def values: js.Array[ProductViewFilterBy] = js.Array(FullTextSearch, Owner, ProductType, SourceProductId)
 }
 
 @js.native
@@ -134,7 +133,7 @@ object ProductViewSortBy {
   val VersionCount = "VersionCount".asInstanceOf[ProductViewSortBy]
   val CreationDate = "CreationDate".asInstanceOf[ProductViewSortBy]
 
-  @inline def values = js.Array(Title, VersionCount, CreationDate)
+  @inline def values: js.Array[ProductViewSortBy] = js.Array(Title, VersionCount, CreationDate)
 }
 
 @js.native
@@ -143,7 +142,7 @@ object PropertyKey {
   val OWNER = "OWNER".asInstanceOf[PropertyKey]
   val LAUNCH_ROLE = "LAUNCH_ROLE".asInstanceOf[PropertyKey]
 
-  @inline def values = js.Array(OWNER, LAUNCH_ROLE)
+  @inline def values: js.Array[PropertyKey] = js.Array(OWNER, LAUNCH_ROLE)
 }
 
 @js.native
@@ -156,7 +155,7 @@ object ProvisionedProductPlanStatus {
   val EXECUTE_SUCCESS = "EXECUTE_SUCCESS".asInstanceOf[ProvisionedProductPlanStatus]
   val EXECUTE_FAILED = "EXECUTE_FAILED".asInstanceOf[ProvisionedProductPlanStatus]
 
-  @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED)
+  @inline def values: js.Array[ProvisionedProductPlanStatus] = js.Array(CREATE_IN_PROGRESS, CREATE_SUCCESS, CREATE_FAILED, EXECUTE_IN_PROGRESS, EXECUTE_SUCCESS, EXECUTE_FAILED)
 }
 
 @js.native
@@ -164,7 +163,7 @@ sealed trait ProvisionedProductPlanType extends js.Any
 object ProvisionedProductPlanType {
   val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ProvisionedProductPlanType]
 
-  @inline def values = js.Array(CLOUDFORMATION)
+  @inline def values: js.Array[ProvisionedProductPlanType] = js.Array(CLOUDFORMATION)
 }
 
 @js.native
@@ -176,7 +175,7 @@ object ProvisionedProductStatus {
   val ERROR = "ERROR".asInstanceOf[ProvisionedProductStatus]
   val PLAN_IN_PROGRESS = "PLAN_IN_PROGRESS".asInstanceOf[ProvisionedProductStatus]
 
-  @inline def values = js.Array(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS)
+  @inline def values: js.Array[ProvisionedProductStatus] = js.Array(AVAILABLE, UNDER_CHANGE, TAINTED, ERROR, PLAN_IN_PROGRESS)
 }
 
 @js.native
@@ -184,7 +183,7 @@ sealed trait ProvisionedProductViewFilterBy extends js.Any
 object ProvisionedProductViewFilterBy {
   val SearchQuery = "SearchQuery".asInstanceOf[ProvisionedProductViewFilterBy]
 
-  @inline def values = js.Array(SearchQuery)
+  @inline def values: js.Array[ProvisionedProductViewFilterBy] = js.Array(SearchQuery)
 }
 
 @js.native
@@ -193,7 +192,7 @@ object ProvisioningArtifactGuidance {
   val DEFAULT = "DEFAULT".asInstanceOf[ProvisioningArtifactGuidance]
   val DEPRECATED = "DEPRECATED".asInstanceOf[ProvisioningArtifactGuidance]
 
-  @inline def values = js.Array(DEFAULT, DEPRECATED)
+  @inline def values: js.Array[ProvisioningArtifactGuidance] = js.Array(DEFAULT, DEPRECATED)
 }
 
 @js.native
@@ -201,7 +200,7 @@ sealed trait ProvisioningArtifactPropertyName extends js.Any
 object ProvisioningArtifactPropertyName {
   val Id = "Id".asInstanceOf[ProvisioningArtifactPropertyName]
 
-  @inline def values = js.Array(Id)
+  @inline def values: js.Array[ProvisioningArtifactPropertyName] = js.Array(Id)
 }
 
 @js.native
@@ -211,7 +210,7 @@ object ProvisioningArtifactType {
   val MARKETPLACE_AMI = "MARKETPLACE_AMI".asInstanceOf[ProvisioningArtifactType]
   val MARKETPLACE_CAR = "MARKETPLACE_CAR".asInstanceOf[ProvisioningArtifactType]
 
-  @inline def values = js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR)
+  @inline def values: js.Array[ProvisioningArtifactType] = js.Array(CLOUD_FORMATION_TEMPLATE, MARKETPLACE_AMI, MARKETPLACE_CAR)
 }
 
 @js.native
@@ -223,7 +222,7 @@ object RecordStatus {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[RecordStatus]
   val FAILED = "FAILED".asInstanceOf[RecordStatus]
 
-  @inline def values = js.Array(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED)
+  @inline def values: js.Array[RecordStatus] = js.Array(CREATED, IN_PROGRESS, IN_PROGRESS_IN_ERROR, SUCCEEDED, FAILED)
 }
 
 @js.native
@@ -233,7 +232,7 @@ object Replacement {
   val FALSE = "FALSE".asInstanceOf[Replacement]
   val CONDITIONAL = "CONDITIONAL".asInstanceOf[Replacement]
 
-  @inline def values = js.Array(TRUE, FALSE, CONDITIONAL)
+  @inline def values: js.Array[Replacement] = js.Array(TRUE, FALSE, CONDITIONAL)
 }
 
 @js.native
@@ -243,7 +242,7 @@ object RequiresRecreation {
   val CONDITIONALLY = "CONDITIONALLY".asInstanceOf[RequiresRecreation]
   val ALWAYS = "ALWAYS".asInstanceOf[RequiresRecreation]
 
-  @inline def values = js.Array(NEVER, CONDITIONALLY, ALWAYS)
+  @inline def values: js.Array[RequiresRecreation] = js.Array(NEVER, CONDITIONALLY, ALWAYS)
 }
 
 @js.native
@@ -256,7 +255,7 @@ object ResourceAttribute {
   val DELETIONPOLICY = "DELETIONPOLICY".asInstanceOf[ResourceAttribute]
   val TAGS = "TAGS".asInstanceOf[ResourceAttribute]
 
-  @inline def values = js.Array(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS)
+  @inline def values: js.Array[ResourceAttribute] = js.Array(PROPERTIES, METADATA, CREATIONPOLICY, UPDATEPOLICY, DELETIONPOLICY, TAGS)
 }
 
 @js.native
@@ -268,7 +267,7 @@ object ServiceActionAssociationErrorCode {
   val RESOURCE_NOT_FOUND = "RESOURCE_NOT_FOUND".asInstanceOf[ServiceActionAssociationErrorCode]
   val THROTTLING = "THROTTLING".asInstanceOf[ServiceActionAssociationErrorCode]
 
-  @inline def values = js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING)
+  @inline def values: js.Array[ServiceActionAssociationErrorCode] = js.Array(DUPLICATE_RESOURCE, INTERNAL_FAILURE, LIMIT_EXCEEDED, RESOURCE_NOT_FOUND, THROTTLING)
 }
 
 @js.native
@@ -279,7 +278,7 @@ object ServiceActionDefinitionKey {
   val AssumeRole = "AssumeRole".asInstanceOf[ServiceActionDefinitionKey]
   val Parameters = "Parameters".asInstanceOf[ServiceActionDefinitionKey]
 
-  @inline def values = js.Array(Name, Version, AssumeRole, Parameters)
+  @inline def values: js.Array[ServiceActionDefinitionKey] = js.Array(Name, Version, AssumeRole, Parameters)
 }
 
 @js.native
@@ -287,7 +286,7 @@ sealed trait ServiceActionDefinitionType extends js.Any
 object ServiceActionDefinitionType {
   val SSM_AUTOMATION = "SSM_AUTOMATION".asInstanceOf[ServiceActionDefinitionType]
 
-  @inline def values = js.Array(SSM_AUTOMATION)
+  @inline def values: js.Array[ServiceActionDefinitionType] = js.Array(SSM_AUTOMATION)
 }
 
 @js.native
@@ -299,7 +298,7 @@ object ShareStatus {
   val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[ShareStatus]
   val ERROR = "ERROR".asInstanceOf[ShareStatus]
 
-  @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR)
+  @inline def values: js.Array[ShareStatus] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERRORS, ERROR)
 }
 
 @js.native
@@ -308,7 +307,7 @@ object SortOrder {
   val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
   val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }
 
 @js.native
@@ -318,7 +317,7 @@ object StackInstanceStatus {
   val OUTDATED = "OUTDATED".asInstanceOf[StackInstanceStatus]
   val INOPERABLE = "INOPERABLE".asInstanceOf[StackInstanceStatus]
 
-  @inline def values = js.Array(CURRENT, OUTDATED, INOPERABLE)
+  @inline def values: js.Array[StackInstanceStatus] = js.Array(CURRENT, OUTDATED, INOPERABLE)
 }
 
 @js.native
@@ -328,7 +327,7 @@ object StackSetOperationType {
   val UPDATE = "UPDATE".asInstanceOf[StackSetOperationType]
   val DELETE = "DELETE".asInstanceOf[StackSetOperationType]
 
-  @inline def values = js.Array(CREATE, UPDATE, DELETE)
+  @inline def values: js.Array[StackSetOperationType] = js.Array(CREATE, UPDATE, DELETE)
 }
 
 @js.native
@@ -338,6 +337,5 @@ object Status {
   val CREATING = "CREATING".asInstanceOf[Status]
   val FAILED = "FAILED".asInstanceOf[Status]
 
-  @inline def values = js.Array(AVAILABLE, CREATING, FAILED)
+  @inline def values: js.Array[Status] = js.Array(AVAILABLE, CREATING, FAILED)
 }
-

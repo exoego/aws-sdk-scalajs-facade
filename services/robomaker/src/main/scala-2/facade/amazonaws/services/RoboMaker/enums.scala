@@ -1,7 +1,6 @@
 package facade.amazonaws.services.robomaker
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait Architecture extends js.Any
@@ -10,7 +9,7 @@ object Architecture {
   val ARM64 = "ARM64".asInstanceOf[Architecture]
   val ARMHF = "ARMHF".asInstanceOf[Architecture]
 
-  @inline def values = js.Array(X86_64, ARM64, ARMHF)
+  @inline def values: js.Array[Architecture] = js.Array(X86_64, ARM64, ARMHF)
 }
 
 @js.native
@@ -41,7 +40,32 @@ object DeploymentJobErrorCode {
   val DeploymentFleetDoesNotExist = "DeploymentFleetDoesNotExist".asInstanceOf[DeploymentJobErrorCode]
   val FleetDeploymentTimeout = "FleetDeploymentTimeout".asInstanceOf[DeploymentJobErrorCode]
 
-  @inline def values = js.Array(ResourceNotFound, EnvironmentSetupError, EtagMismatch, FailureThresholdBreached, RobotDeploymentAborted, RobotDeploymentNoResponse, RobotAgentConnectionTimeout, GreengrassDeploymentFailed, InvalidGreengrassGroup, MissingRobotArchitecture, MissingRobotApplicationArchitecture, MissingRobotDeploymentResource, GreengrassGroupVersionDoesNotExist, LambdaDeleted, ExtractingBundleFailure, PreLaunchFileFailure, PostLaunchFileFailure, BadPermissionError, DownloadConditionFailed, BadLambdaAssociated, InternalServerError, RobotApplicationDoesNotExist, DeploymentFleetDoesNotExist, FleetDeploymentTimeout)
+  @inline def values: js.Array[DeploymentJobErrorCode] = js.Array(
+    ResourceNotFound,
+    EnvironmentSetupError,
+    EtagMismatch,
+    FailureThresholdBreached,
+    RobotDeploymentAborted,
+    RobotDeploymentNoResponse,
+    RobotAgentConnectionTimeout,
+    GreengrassDeploymentFailed,
+    InvalidGreengrassGroup,
+    MissingRobotArchitecture,
+    MissingRobotApplicationArchitecture,
+    MissingRobotDeploymentResource,
+    GreengrassGroupVersionDoesNotExist,
+    LambdaDeleted,
+    ExtractingBundleFailure,
+    PreLaunchFileFailure,
+    PostLaunchFileFailure,
+    BadPermissionError,
+    DownloadConditionFailed,
+    BadLambdaAssociated,
+    InternalServerError,
+    RobotApplicationDoesNotExist,
+    DeploymentFleetDoesNotExist,
+    FleetDeploymentTimeout
+  )
 }
 
 @js.native
@@ -54,7 +78,7 @@ object DeploymentStatus {
   val Succeeded = "Succeeded".asInstanceOf[DeploymentStatus]
   val Canceled = "Canceled".asInstanceOf[DeploymentStatus]
 
-  @inline def values = js.Array(Pending, Preparing, InProgress, Failed, Succeeded, Canceled)
+  @inline def values: js.Array[DeploymentStatus] = js.Array(Pending, Preparing, InProgress, Failed, Succeeded, Canceled)
 }
 
 @js.native
@@ -63,7 +87,7 @@ object ExitBehavior {
   val FAIL = "FAIL".asInstanceOf[ExitBehavior]
   val RESTART = "RESTART".asInstanceOf[ExitBehavior]
 
-  @inline def values = js.Array(FAIL, RESTART)
+  @inline def values: js.Array[ExitBehavior] = js.Array(FAIL, RESTART)
 }
 
 @js.native
@@ -72,7 +96,7 @@ object FailureBehavior {
   val Fail = "Fail".asInstanceOf[FailureBehavior]
   val Continue = "Continue".asInstanceOf[FailureBehavior]
 
-  @inline def values = js.Array(Fail, Continue)
+  @inline def values: js.Array[FailureBehavior] = js.Array(Fail, Continue)
 }
 
 @js.native
@@ -80,7 +104,7 @@ sealed trait RenderingEngineType extends js.Any
 object RenderingEngineType {
   val OGRE = "OGRE".asInstanceOf[RenderingEngineType]
 
-  @inline def values = js.Array(OGRE)
+  @inline def values: js.Array[RenderingEngineType] = js.Array(OGRE)
 }
 
 @js.native
@@ -94,7 +118,7 @@ object RobotDeploymentStep {
   val ExecutingPostLaunch = "ExecutingPostLaunch".asInstanceOf[RobotDeploymentStep]
   val Finished = "Finished".asInstanceOf[RobotDeploymentStep]
 
-  @inline def values = js.Array(Validating, DownloadingExtracting, ExecutingDownloadCondition, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished)
+  @inline def values: js.Array[RobotDeploymentStep] = js.Array(Validating, DownloadingExtracting, ExecutingDownloadCondition, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished)
 }
 
 @js.native
@@ -103,7 +127,7 @@ object RobotSoftwareSuiteType {
   val ROS = "ROS".asInstanceOf[RobotSoftwareSuiteType]
   val ROS2 = "ROS2".asInstanceOf[RobotSoftwareSuiteType]
 
-  @inline def values = js.Array(ROS, ROS2)
+  @inline def values: js.Array[RobotSoftwareSuiteType] = js.Array(ROS, ROS2)
 }
 
 @js.native
@@ -113,7 +137,7 @@ object RobotSoftwareSuiteVersionType {
   val Melodic = "Melodic".asInstanceOf[RobotSoftwareSuiteVersionType]
   val Dashing = "Dashing".asInstanceOf[RobotSoftwareSuiteVersionType]
 
-  @inline def values = js.Array(Kinetic, Melodic, Dashing)
+  @inline def values: js.Array[RobotSoftwareSuiteVersionType] = js.Array(Kinetic, Melodic, Dashing)
 }
 
 @js.native
@@ -127,7 +151,7 @@ object RobotStatus {
   val InSync = "InSync".asInstanceOf[RobotStatus]
   val NoResponse = "NoResponse".asInstanceOf[RobotStatus]
 
-  @inline def values = js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse)
+  @inline def values: js.Array[RobotStatus] = js.Array(Available, Registered, PendingNewDeployment, Deploying, Failed, InSync, NoResponse)
 }
 
 @js.native
@@ -135,7 +159,7 @@ sealed trait SimulationJobBatchErrorCode extends js.Any
 object SimulationJobBatchErrorCode {
   val InternalServiceError = "InternalServiceError".asInstanceOf[SimulationJobBatchErrorCode]
 
-  @inline def values = js.Array(InternalServiceError)
+  @inline def values: js.Array[SimulationJobBatchErrorCode] = js.Array(InternalServiceError)
 }
 
 @js.native
@@ -151,7 +175,7 @@ object SimulationJobBatchStatus {
   val TimingOut = "TimingOut".asInstanceOf[SimulationJobBatchStatus]
   val TimedOut = "TimedOut".asInstanceOf[SimulationJobBatchStatus]
 
-  @inline def values = js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut)
+  @inline def values: js.Array[SimulationJobBatchStatus] = js.Array(Pending, InProgress, Failed, Completed, Canceled, Canceling, Completing, TimingOut, TimedOut)
 }
 
 @js.native
@@ -189,7 +213,39 @@ object SimulationJobErrorCode {
   val WrongRegionSimulationApplication = "WrongRegionSimulationApplication".asInstanceOf[SimulationJobErrorCode]
   val UploadContentMismatchError = "UploadContentMismatchError".asInstanceOf[SimulationJobErrorCode]
 
-  @inline def values = js.Array(InternalServiceError, RobotApplicationCrash, SimulationApplicationCrash, RobotApplicationHealthCheckFailure, SimulationApplicationHealthCheckFailure, BadPermissionsRobotApplication, BadPermissionsSimulationApplication, BadPermissionsS3Object, BadPermissionsS3Output, BadPermissionsCloudwatchLogs, SubnetIpLimitExceeded, ENILimitExceeded, BadPermissionsUserCredentials, InvalidBundleRobotApplication, InvalidBundleSimulationApplication, InvalidS3Resource, ThrottlingError, LimitExceeded, MismatchedEtag, RobotApplicationVersionMismatchedEtag, SimulationApplicationVersionMismatchedEtag, ResourceNotFound, RequestThrottled, BatchTimedOut, BatchCanceled, InvalidInput, WrongRegionS3Bucket, WrongRegionS3Output, WrongRegionRobotApplication, WrongRegionSimulationApplication, UploadContentMismatchError)
+  @inline def values: js.Array[SimulationJobErrorCode] = js.Array(
+    InternalServiceError,
+    RobotApplicationCrash,
+    SimulationApplicationCrash,
+    RobotApplicationHealthCheckFailure,
+    SimulationApplicationHealthCheckFailure,
+    BadPermissionsRobotApplication,
+    BadPermissionsSimulationApplication,
+    BadPermissionsS3Object,
+    BadPermissionsS3Output,
+    BadPermissionsCloudwatchLogs,
+    SubnetIpLimitExceeded,
+    ENILimitExceeded,
+    BadPermissionsUserCredentials,
+    InvalidBundleRobotApplication,
+    InvalidBundleSimulationApplication,
+    InvalidS3Resource,
+    ThrottlingError,
+    LimitExceeded,
+    MismatchedEtag,
+    RobotApplicationVersionMismatchedEtag,
+    SimulationApplicationVersionMismatchedEtag,
+    ResourceNotFound,
+    RequestThrottled,
+    BatchTimedOut,
+    BatchCanceled,
+    InvalidInput,
+    WrongRegionS3Bucket,
+    WrongRegionS3Output,
+    WrongRegionRobotApplication,
+    WrongRegionSimulationApplication,
+    UploadContentMismatchError
+  )
 }
 
 @js.native
@@ -206,7 +262,7 @@ object SimulationJobStatus {
   val Terminated = "Terminated".asInstanceOf[SimulationJobStatus]
   val Canceled = "Canceled".asInstanceOf[SimulationJobStatus]
 
-  @inline def values = js.Array(Pending, Preparing, Running, Restarting, Completed, Failed, RunningFailed, Terminating, Terminated, Canceled)
+  @inline def values: js.Array[SimulationJobStatus] = js.Array(Pending, Preparing, Running, Restarting, Completed, Failed, RunningFailed, Terminating, Terminated, Canceled)
 }
 
 @js.native
@@ -215,7 +271,7 @@ object SimulationSoftwareSuiteType {
   val Gazebo = "Gazebo".asInstanceOf[SimulationSoftwareSuiteType]
   val RosbagPlay = "RosbagPlay".asInstanceOf[SimulationSoftwareSuiteType]
 
-  @inline def values = js.Array(Gazebo, RosbagPlay)
+  @inline def values: js.Array[SimulationSoftwareSuiteType] = js.Array(Gazebo, RosbagPlay)
 }
 
 @js.native
@@ -224,7 +280,7 @@ object UploadBehavior {
   val UPLOAD_ON_TERMINATE = "UPLOAD_ON_TERMINATE".asInstanceOf[UploadBehavior]
   val UPLOAD_ROLLING_AUTO_REMOVE = "UPLOAD_ROLLING_AUTO_REMOVE".asInstanceOf[UploadBehavior]
 
-  @inline def values = js.Array(UPLOAD_ON_TERMINATE, UPLOAD_ROLLING_AUTO_REMOVE)
+  @inline def values: js.Array[UploadBehavior] = js.Array(UPLOAD_ON_TERMINATE, UPLOAD_ROLLING_AUTO_REMOVE)
 }
 
 @js.native
@@ -237,7 +293,7 @@ object WorldExportJobErrorCode {
   val InvalidInput = "InvalidInput".asInstanceOf[WorldExportJobErrorCode]
   val AccessDenied = "AccessDenied".asInstanceOf[WorldExportJobErrorCode]
 
-  @inline def values = js.Array(InternalServiceError, LimitExceeded, ResourceNotFound, RequestThrottled, InvalidInput, AccessDenied)
+  @inline def values: js.Array[WorldExportJobErrorCode] = js.Array(InternalServiceError, LimitExceeded, ResourceNotFound, RequestThrottled, InvalidInput, AccessDenied)
 }
 
 @js.native
@@ -250,7 +306,7 @@ object WorldExportJobStatus {
   val Canceling = "Canceling".asInstanceOf[WorldExportJobStatus]
   val Canceled = "Canceled".asInstanceOf[WorldExportJobStatus]
 
-  @inline def values = js.Array(Pending, Running, Completed, Failed, Canceling, Canceled)
+  @inline def values: js.Array[WorldExportJobStatus] = js.Array(Pending, Running, Completed, Failed, Canceling, Canceled)
 }
 
 @js.native
@@ -263,7 +319,7 @@ object WorldGenerationJobErrorCode {
   val InvalidInput = "InvalidInput".asInstanceOf[WorldGenerationJobErrorCode]
   val AllWorldGenerationFailed = "AllWorldGenerationFailed".asInstanceOf[WorldGenerationJobErrorCode]
 
-  @inline def values = js.Array(InternalServiceError, LimitExceeded, ResourceNotFound, RequestThrottled, InvalidInput, AllWorldGenerationFailed)
+  @inline def values: js.Array[WorldGenerationJobErrorCode] = js.Array(InternalServiceError, LimitExceeded, ResourceNotFound, RequestThrottled, InvalidInput, AllWorldGenerationFailed)
 }
 
 @js.native
@@ -277,6 +333,5 @@ object WorldGenerationJobStatus {
   val Canceling = "Canceling".asInstanceOf[WorldGenerationJobStatus]
   val Canceled = "Canceled".asInstanceOf[WorldGenerationJobStatus]
 
-  @inline def values = js.Array(Pending, Running, Completed, Failed, PartialFailed, Canceling, Canceled)
+  @inline def values: js.Array[WorldGenerationJobStatus] = js.Array(Pending, Running, Completed, Failed, PartialFailed, Canceling, Canceled)
 }
-

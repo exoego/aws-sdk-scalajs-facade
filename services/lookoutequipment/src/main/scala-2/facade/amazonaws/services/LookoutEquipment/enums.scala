@@ -1,7 +1,6 @@
 package facade.amazonaws.services.lookoutequipment
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DataUploadFrequency extends js.Any
@@ -12,7 +11,7 @@ object DataUploadFrequency {
   val PT30M = "PT30M".asInstanceOf[DataUploadFrequency]
   val PT1H = "PT1H".asInstanceOf[DataUploadFrequency]
 
-  @inline def values = js.Array(PT5M, PT10M, PT15M, PT30M, PT1H)
+  @inline def values: js.Array[DataUploadFrequency] = js.Array(PT5M, PT10M, PT15M, PT30M, PT1H)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object DatasetStatus {
   val INGESTION_IN_PROGRESS = "INGESTION_IN_PROGRESS".asInstanceOf[DatasetStatus]
   val ACTIVE = "ACTIVE".asInstanceOf[DatasetStatus]
 
-  @inline def values = js.Array(CREATED, INGESTION_IN_PROGRESS, ACTIVE)
+  @inline def values: js.Array[DatasetStatus] = js.Array(CREATED, INGESTION_IN_PROGRESS, ACTIVE)
 }
 
 @js.native
@@ -32,7 +31,7 @@ object InferenceExecutionStatus {
   val SUCCESS = "SUCCESS".asInstanceOf[InferenceExecutionStatus]
   val FAILED = "FAILED".asInstanceOf[InferenceExecutionStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCESS, FAILED)
+  @inline def values: js.Array[InferenceExecutionStatus] = js.Array(IN_PROGRESS, SUCCESS, FAILED)
 }
 
 @js.native
@@ -43,7 +42,7 @@ object InferenceSchedulerStatus {
   val STOPPING = "STOPPING".asInstanceOf[InferenceSchedulerStatus]
   val STOPPED = "STOPPED".asInstanceOf[InferenceSchedulerStatus]
 
-  @inline def values = js.Array(PENDING, RUNNING, STOPPING, STOPPED)
+  @inline def values: js.Array[InferenceSchedulerStatus] = js.Array(PENDING, RUNNING, STOPPING, STOPPED)
 }
 
 @js.native
@@ -53,7 +52,7 @@ object IngestionJobStatus {
   val SUCCESS = "SUCCESS".asInstanceOf[IngestionJobStatus]
   val FAILED = "FAILED".asInstanceOf[IngestionJobStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCESS, FAILED)
+  @inline def values: js.Array[IngestionJobStatus] = js.Array(IN_PROGRESS, SUCCESS, FAILED)
 }
 
 @js.native
@@ -63,7 +62,7 @@ object ModelStatus {
   val SUCCESS = "SUCCESS".asInstanceOf[ModelStatus]
   val FAILED = "FAILED".asInstanceOf[ModelStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCESS, FAILED)
+  @inline def values: js.Array[ModelStatus] = js.Array(IN_PROGRESS, SUCCESS, FAILED)
 }
 
 @js.native
@@ -81,6 +80,5 @@ object TargetSamplingRate {
   val PT30M = "PT30M".asInstanceOf[TargetSamplingRate]
   val PT1H = "PT1H".asInstanceOf[TargetSamplingRate]
 
-  @inline def values = js.Array(PT1S, PT5S, PT10S, PT15S, PT30S, PT1M, PT5M, PT10M, PT15M, PT30M, PT1H)
+  @inline def values: js.Array[TargetSamplingRate] = js.Array(PT1S, PT5S, PT10S, PT15S, PT30S, PT1M, PT5M, PT10M, PT15M, PT30M, PT1H)
 }
-

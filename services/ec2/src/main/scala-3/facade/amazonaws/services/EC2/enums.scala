@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ec2
 
-import scalajs._
+import scalajs.js
 
 type AccountAttributeName = "supported-platforms" | "default-vpc"
 object AccountAttributeName {

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.comprehendmedical
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AttributeName extends js.Any
@@ -11,7 +10,7 @@ object AttributeName {
   val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[AttributeName]
   val NEGATION = "NEGATION".asInstanceOf[AttributeName]
 
-  @inline def values = js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION)
+  @inline def values: js.Array[AttributeName] = js.Array(SIGN, SYMPTOM, DIAGNOSIS, NEGATION)
 }
 
 @js.native
@@ -52,7 +51,42 @@ object EntitySubType {
   val TIME_TO_PROCEDURE_NAME = "TIME_TO_PROCEDURE_NAME".asInstanceOf[EntitySubType]
   val TIME_TO_TREATMENT_NAME = "TIME_TO_TREATMENT_NAME".asInstanceOf[EntitySubType]
 
-  @inline def values = js.Array(NAME, DOSAGE, ROUTE_OR_MODE, FORM, FREQUENCY, DURATION, GENERIC_NAME, BRAND_NAME, STRENGTH, RATE, ACUITY, TEST_NAME, TEST_VALUE, TEST_UNITS, PROCEDURE_NAME, TREATMENT_NAME, DATE, AGE, CONTACT_POINT, EMAIL, IDENTIFIER, URL, ADDRESS, PROFESSION, SYSTEM_ORGAN_SITE, DIRECTION, QUALITY, QUANTITY, TIME_EXPRESSION, TIME_TO_MEDICATION_NAME, TIME_TO_DX_NAME, TIME_TO_TEST_NAME, TIME_TO_PROCEDURE_NAME, TIME_TO_TREATMENT_NAME)
+  @inline def values: js.Array[EntitySubType] = js.Array(
+    NAME,
+    DOSAGE,
+    ROUTE_OR_MODE,
+    FORM,
+    FREQUENCY,
+    DURATION,
+    GENERIC_NAME,
+    BRAND_NAME,
+    STRENGTH,
+    RATE,
+    ACUITY,
+    TEST_NAME,
+    TEST_VALUE,
+    TEST_UNITS,
+    PROCEDURE_NAME,
+    TREATMENT_NAME,
+    DATE,
+    AGE,
+    CONTACT_POINT,
+    EMAIL,
+    IDENTIFIER,
+    URL,
+    ADDRESS,
+    PROFESSION,
+    SYSTEM_ORGAN_SITE,
+    DIRECTION,
+    QUALITY,
+    QUANTITY,
+    TIME_EXPRESSION,
+    TIME_TO_MEDICATION_NAME,
+    TIME_TO_DX_NAME,
+    TIME_TO_TEST_NAME,
+    TIME_TO_PROCEDURE_NAME,
+    TIME_TO_TREATMENT_NAME
+  )
 }
 
 @js.native
@@ -65,7 +99,7 @@ object EntityType {
   val ANATOMY = "ANATOMY".asInstanceOf[EntityType]
   val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[EntityType]
 
-  @inline def values = js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION)
+  @inline def values: js.Array[EntityType] = js.Array(MEDICATION, MEDICAL_CONDITION, PROTECTED_HEALTH_INFORMATION, TEST_TREATMENT_PROCEDURE, ANATOMY, TIME_EXPRESSION)
 }
 
 @js.native
@@ -79,7 +113,7 @@ object ICD10CMAttributeType {
   val TIME_TO_DX_NAME = "TIME_TO_DX_NAME".asInstanceOf[ICD10CMAttributeType]
   val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[ICD10CMAttributeType]
 
-  @inline def values = js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY, TIME_TO_DX_NAME, TIME_EXPRESSION)
+  @inline def values: js.Array[ICD10CMAttributeType] = js.Array(ACUITY, DIRECTION, SYSTEM_ORGAN_SITE, QUALITY, QUANTITY, TIME_TO_DX_NAME, TIME_EXPRESSION)
 }
 
 @js.native
@@ -87,7 +121,7 @@ sealed trait ICD10CMEntityCategory extends js.Any
 object ICD10CMEntityCategory {
   val MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[ICD10CMEntityCategory]
 
-  @inline def values = js.Array(MEDICAL_CONDITION)
+  @inline def values: js.Array[ICD10CMEntityCategory] = js.Array(MEDICAL_CONDITION)
 }
 
 @js.native
@@ -96,7 +130,7 @@ object ICD10CMEntityType {
   val DX_NAME = "DX_NAME".asInstanceOf[ICD10CMEntityType]
   val TIME_EXPRESSION = "TIME_EXPRESSION".asInstanceOf[ICD10CMEntityType]
 
-  @inline def values = js.Array(DX_NAME, TIME_EXPRESSION)
+  @inline def values: js.Array[ICD10CMEntityType] = js.Array(DX_NAME, TIME_EXPRESSION)
 }
 
 @js.native
@@ -105,7 +139,7 @@ object ICD10CMRelationshipType {
   val OVERLAP = "OVERLAP".asInstanceOf[ICD10CMRelationshipType]
   val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[ICD10CMRelationshipType]
 
-  @inline def values = js.Array(OVERLAP, SYSTEM_ORGAN_SITE)
+  @inline def values: js.Array[ICD10CMRelationshipType] = js.Array(OVERLAP, SYSTEM_ORGAN_SITE)
 }
 
 @js.native
@@ -116,7 +150,7 @@ object ICD10CMTraitName {
   val SIGN = "SIGN".asInstanceOf[ICD10CMTraitName]
   val SYMPTOM = "SYMPTOM".asInstanceOf[ICD10CMTraitName]
 
-  @inline def values = js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM)
+  @inline def values: js.Array[ICD10CMTraitName] = js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM)
 }
 
 @js.native
@@ -130,7 +164,7 @@ object JobStatus {
   val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
   val STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
-  @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED)
+  @inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, PARTIAL_SUCCESS, FAILED, STOP_REQUESTED, STOPPED)
 }
 
 @js.native
@@ -138,7 +172,7 @@ sealed trait LanguageCode extends js.Any
 object LanguageCode {
   val en = "en".asInstanceOf[LanguageCode]
 
-  @inline def values = js.Array(en)
+  @inline def values: js.Array[LanguageCode] = js.Array(en)
 }
 
 @js.native
@@ -163,7 +197,26 @@ object RelationshipType {
   val DIRECTION = "DIRECTION".asInstanceOf[RelationshipType]
   val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
 
-  @inline def values = js.Array(EVERY, WITH_DOSAGE, ADMINISTERED_VIA, FOR, NEGATIVE, OVERLAP, DOSAGE, ROUTE_OR_MODE, FORM, FREQUENCY, DURATION, STRENGTH, RATE, ACUITY, TEST_VALUE, TEST_UNITS, DIRECTION, SYSTEM_ORGAN_SITE)
+  @inline def values: js.Array[RelationshipType] = js.Array(
+    EVERY,
+    WITH_DOSAGE,
+    ADMINISTERED_VIA,
+    FOR,
+    NEGATIVE,
+    OVERLAP,
+    DOSAGE,
+    ROUTE_OR_MODE,
+    FORM,
+    FREQUENCY,
+    DURATION,
+    STRENGTH,
+    RATE,
+    ACUITY,
+    TEST_VALUE,
+    TEST_UNITS,
+    DIRECTION,
+    SYSTEM_ORGAN_SITE
+  )
 }
 
 @js.native
@@ -177,7 +230,7 @@ object RxNormAttributeType {
   val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[RxNormAttributeType]
   val STRENGTH = "STRENGTH".asInstanceOf[RxNormAttributeType]
 
-  @inline def values = js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH)
+  @inline def values: js.Array[RxNormAttributeType] = js.Array(DOSAGE, DURATION, FORM, FREQUENCY, RATE, ROUTE_OR_MODE, STRENGTH)
 }
 
 @js.native
@@ -185,7 +238,7 @@ sealed trait RxNormEntityCategory extends js.Any
 object RxNormEntityCategory {
   val MEDICATION = "MEDICATION".asInstanceOf[RxNormEntityCategory]
 
-  @inline def values = js.Array(MEDICATION)
+  @inline def values: js.Array[RxNormEntityCategory] = js.Array(MEDICATION)
 }
 
 @js.native
@@ -194,7 +247,7 @@ object RxNormEntityType {
   val BRAND_NAME = "BRAND_NAME".asInstanceOf[RxNormEntityType]
   val GENERIC_NAME = "GENERIC_NAME".asInstanceOf[RxNormEntityType]
 
-  @inline def values = js.Array(BRAND_NAME, GENERIC_NAME)
+  @inline def values: js.Array[RxNormEntityType] = js.Array(BRAND_NAME, GENERIC_NAME)
 }
 
 @js.native
@@ -202,6 +255,5 @@ sealed trait RxNormTraitName extends js.Any
 object RxNormTraitName {
   val NEGATION = "NEGATION".asInstanceOf[RxNormTraitName]
 
-  @inline def values = js.Array(NEGATION)
+  @inline def values: js.Array[RxNormTraitName] = js.Array(NEGATION)
 }
-

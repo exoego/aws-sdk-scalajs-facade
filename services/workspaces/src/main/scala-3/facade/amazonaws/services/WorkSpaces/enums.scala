@@ -1,6 +1,6 @@
 package facade.amazonaws.services.workspaces
 
-import scalajs._
+import scalajs.js
 
 type AccessPropertyValue = "ALLOW" | "DENY"
 object AccessPropertyValue {

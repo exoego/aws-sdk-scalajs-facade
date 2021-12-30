@@ -1,6 +1,6 @@
 package facade.amazonaws.services.globalaccelerator
 
-import scalajs._
+import scalajs.js
 
 type AcceleratorStatus = "DEPLOYED" | "IN_PROGRESS"
 object AcceleratorStatus {

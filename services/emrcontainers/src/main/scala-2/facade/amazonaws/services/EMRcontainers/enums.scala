@@ -1,14 +1,13 @@
 package facade.amazonaws.services.emrcontainers
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ContainerProviderType extends js.Any
 object ContainerProviderType {
   val EKS = "EKS".asInstanceOf[ContainerProviderType]
 
-  @inline def values = js.Array(EKS)
+  @inline def values: js.Array[ContainerProviderType] = js.Array(EKS)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object EndpointState {
   val TERMINATED = "TERMINATED".asInstanceOf[EndpointState]
   val TERMINATED_WITH_ERRORS = "TERMINATED_WITH_ERRORS".asInstanceOf[EndpointState]
 
-  @inline def values = js.Array(CREATING, ACTIVE, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS)
+  @inline def values: js.Array[EndpointState] = js.Array(CREATING, ACTIVE, TERMINATING, TERMINATED, TERMINATED_WITH_ERRORS)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object FailureReason {
   val VALIDATION_ERROR = "VALIDATION_ERROR".asInstanceOf[FailureReason]
   val CLUSTER_UNAVAILABLE = "CLUSTER_UNAVAILABLE".asInstanceOf[FailureReason]
 
-  @inline def values = js.Array(INTERNAL_ERROR, USER_ERROR, VALIDATION_ERROR, CLUSTER_UNAVAILABLE)
+  @inline def values: js.Array[FailureReason] = js.Array(INTERNAL_ERROR, USER_ERROR, VALIDATION_ERROR, CLUSTER_UNAVAILABLE)
 }
 
 @js.native
@@ -45,7 +44,7 @@ object JobRunState {
   val CANCEL_PENDING = "CANCEL_PENDING".asInstanceOf[JobRunState]
   val COMPLETED = "COMPLETED".asInstanceOf[JobRunState]
 
-  @inline def values = js.Array(PENDING, SUBMITTED, RUNNING, FAILED, CANCELLED, CANCEL_PENDING, COMPLETED)
+  @inline def values: js.Array[JobRunState] = js.Array(PENDING, SUBMITTED, RUNNING, FAILED, CANCELLED, CANCEL_PENDING, COMPLETED)
 }
 
 @js.native
@@ -54,7 +53,7 @@ object PersistentAppUI {
   val ENABLED = "ENABLED".asInstanceOf[PersistentAppUI]
   val DISABLED = "DISABLED".asInstanceOf[PersistentAppUI]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[PersistentAppUI] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -65,6 +64,5 @@ object VirtualClusterState {
   val TERMINATED = "TERMINATED".asInstanceOf[VirtualClusterState]
   val ARRESTED = "ARRESTED".asInstanceOf[VirtualClusterState]
 
-  @inline def values = js.Array(RUNNING, TERMINATING, TERMINATED, ARRESTED)
+  @inline def values: js.Array[VirtualClusterState] = js.Array(RUNNING, TERMINATING, TERMINATED, ARRESTED)
 }
-

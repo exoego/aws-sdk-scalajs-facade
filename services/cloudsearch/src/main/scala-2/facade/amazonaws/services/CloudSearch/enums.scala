@@ -1,7 +1,6 @@
 package facade.amazonaws.services.cloudsearch
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AlgorithmicStemming extends js.Any
@@ -11,7 +10,7 @@ object AlgorithmicStemming {
   val light = "light".asInstanceOf[AlgorithmicStemming]
   val full = "full".asInstanceOf[AlgorithmicStemming]
 
-  @inline def values = js.Array(none, minimal, light, full)
+  @inline def values: js.Array[AlgorithmicStemming] = js.Array(none, minimal, light, full)
 }
 
 /** An <a href="http://tools.ietf.org/html/rfc4646" target="_blank">IETF RFC 4646</a> language code or <code>mul</code> for multiple languages.
@@ -55,7 +54,7 @@ object AnalysisSchemeLanguage {
   val `zh-Hans` = "zh-Hans".asInstanceOf[AnalysisSchemeLanguage]
   val `zh-Hant` = "zh-Hant".asInstanceOf[AnalysisSchemeLanguage]
 
-  @inline def values = js.Array(ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, `zh-Hans`, `zh-Hant`)
+  @inline def values: js.Array[AnalysisSchemeLanguage] = js.Array(ar, bg, ca, cs, da, de, el, en, es, eu, fa, fi, fr, ga, gl, he, hi, hu, hy, id, it, ja, ko, lv, mul, nl, no, pt, ro, ru, sv, th, tr, `zh-Hans`, `zh-Hant`)
 }
 
 /** The type of field. The valid options for a field depend on the field type. For more information about the supported field types, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
@@ -75,14 +74,10 @@ object IndexFieldType {
   val `text-array` = "text-array".asInstanceOf[IndexFieldType]
   val `date-array` = "date-array".asInstanceOf[IndexFieldType]
 
-  @inline def values = js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`)
+  @inline def values: js.Array[IndexFieldType] = js.Array(int, double, literal, text, date, latlon, `int-array`, `double-array`, `literal-array`, `text-array`, `date-array`)
 }
 
-/** The state of processing a change to an option. One of:
-  * * RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete.
-  * * Processing: The option's latest value is in the process of being activated.
-  * * Active: The option's latest value is fully deployed.
-  * * FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.
+/** The state of processing a change to an option. One of: * RequiresIndexDocuments: The option's latest value will not be deployed until <a>IndexDocuments</a> has been called and indexing is complete. * Processing: The option's latest value is in the process of being activated. * Active: The option's latest value is fully deployed. * FailedToValidate: The option value is not compatible with the domain's data and cannot be used to index the data. You must either modify the option value or update or remove the incompatible documents.
   */
 @js.native
 sealed trait OptionState extends js.Any
@@ -92,7 +87,7 @@ object OptionState {
   val Active = "Active".asInstanceOf[OptionState]
   val FailedToValidate = "FailedToValidate".asInstanceOf[OptionState]
 
-  @inline def values = js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate)
+  @inline def values: js.Array[OptionState] = js.Array(RequiresIndexDocuments, Processing, Active, FailedToValidate)
 }
 
 /** The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.
@@ -114,7 +109,21 @@ object PartitionInstanceType {
   val `search.xlarge` = "search.xlarge".asInstanceOf[PartitionInstanceType]
   val `search.2xlarge` = "search.2xlarge".asInstanceOf[PartitionInstanceType]
 
-  @inline def values = js.Array(`search.m1.small`, `search.m1.large`, `search.m2.xlarge`, `search.m2.2xlarge`, `search.m3.medium`, `search.m3.large`, `search.m3.xlarge`, `search.m3.2xlarge`, `search.small`, `search.medium`, `search.large`, `search.xlarge`, `search.2xlarge`)
+  @inline def values: js.Array[PartitionInstanceType] = js.Array(
+    `search.m1.small`,
+    `search.m1.large`,
+    `search.m2.xlarge`,
+    `search.m2.2xlarge`,
+    `search.m3.medium`,
+    `search.m3.large`,
+    `search.m3.xlarge`,
+    `search.m3.2xlarge`,
+    `search.small`,
+    `search.medium`,
+    `search.large`,
+    `search.xlarge`,
+    `search.2xlarge`
+  )
 }
 
 @js.native
@@ -124,7 +133,7 @@ object SuggesterFuzzyMatching {
   val low = "low".asInstanceOf[SuggesterFuzzyMatching]
   val high = "high".asInstanceOf[SuggesterFuzzyMatching]
 
-  @inline def values = js.Array(none, low, high)
+  @inline def values: js.Array[SuggesterFuzzyMatching] = js.Array(none, low, high)
 }
 
 /** The minimum required TLS version.
@@ -135,6 +144,5 @@ object TLSSecurityPolicy {
   val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
   val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
-  @inline def values = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
+  @inline def values: js.Array[TLSSecurityPolicy] = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
 }
-

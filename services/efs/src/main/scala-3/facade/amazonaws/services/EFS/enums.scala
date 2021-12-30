@@ -1,6 +1,6 @@
 package facade.amazonaws.services.efs
 
-import scalajs._
+import scalajs.js
 
 type LifeCycleState = "creating" | "available" | "updating" | "deleting" | "deleted" | "error"
 object LifeCycleState {

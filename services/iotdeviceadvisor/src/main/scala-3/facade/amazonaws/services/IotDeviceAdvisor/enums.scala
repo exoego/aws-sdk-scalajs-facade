@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iotdeviceadvisor
 
-import scalajs._
+import scalajs.js
 
 type Status = "PASS" | "FAIL" | "CANCELED" | "PENDING" | "RUNNING" | "PASS_WITH_WARNINGS" | "ERROR"
 object Status {

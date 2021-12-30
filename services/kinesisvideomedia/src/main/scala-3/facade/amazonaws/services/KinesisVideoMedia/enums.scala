@@ -1,6 +1,6 @@
 package facade.amazonaws.services.kinesisvideomedia
 
-import scalajs._
+import scalajs.js
 
 type StartSelectorType = "FRAGMENT_NUMBER" | "SERVER_TIMESTAMP" | "PRODUCER_TIMESTAMP" | "NOW" | "EARLIEST" | "CONTINUATION_TOKEN"
 object StartSelectorType {

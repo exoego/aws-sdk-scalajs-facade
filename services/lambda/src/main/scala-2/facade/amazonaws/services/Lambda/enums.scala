@@ -1,7 +1,6 @@
 package facade.amazonaws.services.lambda
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait CodeSigningPolicy extends js.Any
@@ -9,7 +8,7 @@ object CodeSigningPolicy {
   val Warn = "Warn".asInstanceOf[CodeSigningPolicy]
   val Enforce = "Enforce".asInstanceOf[CodeSigningPolicy]
 
-  @inline def values = js.Array(Warn, Enforce)
+  @inline def values: js.Array[CodeSigningPolicy] = js.Array(Warn, Enforce)
 }
 
 @js.native
@@ -17,7 +16,7 @@ sealed trait EndPointType extends js.Any
 object EndPointType {
   val KAFKA_BOOTSTRAP_SERVERS = "KAFKA_BOOTSTRAP_SERVERS".asInstanceOf[EndPointType]
 
-  @inline def values = js.Array(KAFKA_BOOTSTRAP_SERVERS)
+  @inline def values: js.Array[EndPointType] = js.Array(KAFKA_BOOTSTRAP_SERVERS)
 }
 
 @js.native
@@ -27,7 +26,7 @@ object EventSourcePosition {
   val LATEST = "LATEST".asInstanceOf[EventSourcePosition]
   val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[EventSourcePosition]
 
-  @inline def values = js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP)
+  @inline def values: js.Array[EventSourcePosition] = js.Array(TRIM_HORIZON, LATEST, AT_TIMESTAMP)
 }
 
 @js.native
@@ -35,7 +34,7 @@ sealed trait FunctionResponseType extends js.Any
 object FunctionResponseType {
   val ReportBatchItemFailures = "ReportBatchItemFailures".asInstanceOf[FunctionResponseType]
 
-  @inline def values = js.Array(ReportBatchItemFailures)
+  @inline def values: js.Array[FunctionResponseType] = js.Array(ReportBatchItemFailures)
 }
 
 @js.native
@@ -43,7 +42,7 @@ sealed trait FunctionVersion extends js.Any
 object FunctionVersion {
   val ALL = "ALL".asInstanceOf[FunctionVersion]
 
-  @inline def values = js.Array(ALL)
+  @inline def values: js.Array[FunctionVersion] = js.Array(ALL)
 }
 
 @js.native
@@ -53,7 +52,7 @@ object InvocationType {
   val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
   val DryRun = "DryRun".asInstanceOf[InvocationType]
 
-  @inline def values = js.Array(Event, RequestResponse, DryRun)
+  @inline def values: js.Array[InvocationType] = js.Array(Event, RequestResponse, DryRun)
 }
 
 @js.native
@@ -63,7 +62,7 @@ object LastUpdateStatus {
   val Failed = "Failed".asInstanceOf[LastUpdateStatus]
   val InProgress = "InProgress".asInstanceOf[LastUpdateStatus]
 
-  @inline def values = js.Array(Successful, Failed, InProgress)
+  @inline def values: js.Array[LastUpdateStatus] = js.Array(Successful, Failed, InProgress)
 }
 
 @js.native
@@ -80,7 +79,18 @@ object LastUpdateStatusReasonCode {
   val ImageAccessDenied = "ImageAccessDenied".asInstanceOf[LastUpdateStatusReasonCode]
   val InvalidImage = "InvalidImage".asInstanceOf[LastUpdateStatusReasonCode]
 
-  @inline def values = js.Array(EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup, ImageDeleted, ImageAccessDenied, InvalidImage)
+  @inline def values: js.Array[LastUpdateStatusReasonCode] = js.Array(
+    EniLimitExceeded,
+    InsufficientRolePermissions,
+    InvalidConfiguration,
+    InternalError,
+    SubnetOutOfIPAddresses,
+    InvalidSubnet,
+    InvalidSecurityGroup,
+    ImageDeleted,
+    ImageAccessDenied,
+    InvalidImage
+  )
 }
 
 @js.native
@@ -89,7 +99,7 @@ object LogType {
   val None = "None".asInstanceOf[LogType]
   val Tail = "Tail".asInstanceOf[LogType]
 
-  @inline def values = js.Array(None, Tail)
+  @inline def values: js.Array[LogType] = js.Array(None, Tail)
 }
 
 @js.native
@@ -98,7 +108,7 @@ object PackageType {
   val Zip = "Zip".asInstanceOf[PackageType]
   val Image = "Image".asInstanceOf[PackageType]
 
-  @inline def values = js.Array(Zip, Image)
+  @inline def values: js.Array[PackageType] = js.Array(Zip, Image)
 }
 
 @js.native
@@ -108,7 +118,7 @@ object ProvisionedConcurrencyStatusEnum {
   val READY = "READY".asInstanceOf[ProvisionedConcurrencyStatusEnum]
   val FAILED = "FAILED".asInstanceOf[ProvisionedConcurrencyStatusEnum]
 
-  @inline def values = js.Array(IN_PROGRESS, READY, FAILED)
+  @inline def values: js.Array[ProvisionedConcurrencyStatusEnum] = js.Array(IN_PROGRESS, READY, FAILED)
 }
 
 @js.native
@@ -139,7 +149,32 @@ object Runtime {
   val provided = "provided".asInstanceOf[Runtime]
   val `provided.al2` = "provided.al2".asInstanceOf[Runtime]
 
-  @inline def values = js.Array(nodejs, `nodejs4.3`, `nodejs6.10`, `nodejs8.10`, `nodejs10.x`, `nodejs12.x`, `nodejs14.x`, java8, `java8.al2`, java11, `python2.7`, `python3.6`, `python3.7`, `python3.8`, `dotnetcore1.0`, `dotnetcore2.0`, `dotnetcore2.1`, `dotnetcore3.1`, `nodejs4.3-edge`, `go1.x`, `ruby2.5`, `ruby2.7`, provided, `provided.al2`)
+  @inline def values: js.Array[Runtime] = js.Array(
+    nodejs,
+    `nodejs4.3`,
+    `nodejs6.10`,
+    `nodejs8.10`,
+    `nodejs10.x`,
+    `nodejs12.x`,
+    `nodejs14.x`,
+    java8,
+    `java8.al2`,
+    java11,
+    `python2.7`,
+    `python3.6`,
+    `python3.7`,
+    `python3.8`,
+    `dotnetcore1.0`,
+    `dotnetcore2.0`,
+    `dotnetcore2.1`,
+    `dotnetcore3.1`,
+    `nodejs4.3-edge`,
+    `go1.x`,
+    `ruby2.5`,
+    `ruby2.7`,
+    provided,
+    `provided.al2`
+  )
 }
 
 @js.native
@@ -151,7 +186,7 @@ object SourceAccessType {
   val SASL_SCRAM_512_AUTH = "SASL_SCRAM_512_AUTH".asInstanceOf[SourceAccessType]
   val SASL_SCRAM_256_AUTH = "SASL_SCRAM_256_AUTH".asInstanceOf[SourceAccessType]
 
-  @inline def values = js.Array(BASIC_AUTH, VPC_SUBNET, VPC_SECURITY_GROUP, SASL_SCRAM_512_AUTH, SASL_SCRAM_256_AUTH)
+  @inline def values: js.Array[SourceAccessType] = js.Array(BASIC_AUTH, VPC_SUBNET, VPC_SECURITY_GROUP, SASL_SCRAM_512_AUTH, SASL_SCRAM_256_AUTH)
 }
 
 @js.native
@@ -162,7 +197,7 @@ object State {
   val Inactive = "Inactive".asInstanceOf[State]
   val Failed = "Failed".asInstanceOf[State]
 
-  @inline def values = js.Array(Pending, Active, Inactive, Failed)
+  @inline def values: js.Array[State] = js.Array(Pending, Active, Inactive, Failed)
 }
 
 @js.native
@@ -182,7 +217,21 @@ object StateReasonCode {
   val ImageAccessDenied = "ImageAccessDenied".asInstanceOf[StateReasonCode]
   val InvalidImage = "InvalidImage".asInstanceOf[StateReasonCode]
 
-  @inline def values = js.Array(Idle, Creating, Restoring, EniLimitExceeded, InsufficientRolePermissions, InvalidConfiguration, InternalError, SubnetOutOfIPAddresses, InvalidSubnet, InvalidSecurityGroup, ImageDeleted, ImageAccessDenied, InvalidImage)
+  @inline def values: js.Array[StateReasonCode] = js.Array(
+    Idle,
+    Creating,
+    Restoring,
+    EniLimitExceeded,
+    InsufficientRolePermissions,
+    InvalidConfiguration,
+    InternalError,
+    SubnetOutOfIPAddresses,
+    InvalidSubnet,
+    InvalidSecurityGroup,
+    ImageDeleted,
+    ImageAccessDenied,
+    InvalidImage
+  )
 }
 
 @js.native
@@ -191,6 +240,5 @@ object TracingMode {
   val Active = "Active".asInstanceOf[TracingMode]
   val PassThrough = "PassThrough".asInstanceOf[TracingMode]
 
-  @inline def values = js.Array(Active, PassThrough)
+  @inline def values: js.Array[TracingMode] = js.Array(Active, PassThrough)
 }
-

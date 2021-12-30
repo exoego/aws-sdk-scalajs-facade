@@ -1,7 +1,6 @@
 package facade.amazonaws.services.ses
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait BehaviorOnMXFailure extends js.Any
@@ -9,7 +8,7 @@ object BehaviorOnMXFailure {
   val UseDefaultValue = "UseDefaultValue".asInstanceOf[BehaviorOnMXFailure]
   val RejectMessage = "RejectMessage".asInstanceOf[BehaviorOnMXFailure]
 
-  @inline def values = js.Array(UseDefaultValue, RejectMessage)
+  @inline def values: js.Array[BehaviorOnMXFailure] = js.Array(UseDefaultValue, RejectMessage)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object BounceType {
   val Undefined = "Undefined".asInstanceOf[BounceType]
   val TemporaryFailure = "TemporaryFailure".asInstanceOf[BounceType]
 
-  @inline def values = js.Array(DoesNotExist, MessageTooLarge, ExceededQuota, ContentRejected, Undefined, TemporaryFailure)
+  @inline def values: js.Array[BounceType] = js.Array(DoesNotExist, MessageTooLarge, ExceededQuota, ContentRejected, Undefined, TemporaryFailure)
 }
 
 @js.native
@@ -43,7 +42,22 @@ object BulkEmailStatus {
   val TransientFailure = "TransientFailure".asInstanceOf[BulkEmailStatus]
   val Failed = "Failed".asInstanceOf[BulkEmailStatus]
 
-  @inline def values = js.Array(Success, MessageRejected, MailFromDomainNotVerified, ConfigurationSetDoesNotExist, TemplateDoesNotExist, AccountSuspended, AccountThrottled, AccountDailyQuotaExceeded, InvalidSendingPoolName, AccountSendingPaused, ConfigurationSetSendingPaused, InvalidParameterValue, TransientFailure, Failed)
+  @inline def values: js.Array[BulkEmailStatus] = js.Array(
+    Success,
+    MessageRejected,
+    MailFromDomainNotVerified,
+    ConfigurationSetDoesNotExist,
+    TemplateDoesNotExist,
+    AccountSuspended,
+    AccountThrottled,
+    AccountDailyQuotaExceeded,
+    InvalidSendingPoolName,
+    AccountSendingPaused,
+    ConfigurationSetSendingPaused,
+    InvalidParameterValue,
+    TransientFailure,
+    Failed
+  )
 }
 
 @js.native
@@ -54,7 +68,7 @@ object ConfigurationSetAttribute {
   val deliveryOptions = "deliveryOptions".asInstanceOf[ConfigurationSetAttribute]
   val reputationOptions = "reputationOptions".asInstanceOf[ConfigurationSetAttribute]
 
-  @inline def values = js.Array(eventDestinations, trackingOptions, deliveryOptions, reputationOptions)
+  @inline def values: js.Array[ConfigurationSetAttribute] = js.Array(eventDestinations, trackingOptions, deliveryOptions, reputationOptions)
 }
 
 @js.native
@@ -65,7 +79,7 @@ object CustomMailFromStatus {
   val Failed = "Failed".asInstanceOf[CustomMailFromStatus]
   val TemporaryFailure = "TemporaryFailure".asInstanceOf[CustomMailFromStatus]
 
-  @inline def values = js.Array(Pending, Success, Failed, TemporaryFailure)
+  @inline def values: js.Array[CustomMailFromStatus] = js.Array(Pending, Success, Failed, TemporaryFailure)
 }
 
 @js.native
@@ -75,7 +89,7 @@ object DimensionValueSource {
   val emailHeader = "emailHeader".asInstanceOf[DimensionValueSource]
   val linkTag = "linkTag".asInstanceOf[DimensionValueSource]
 
-  @inline def values = js.Array(messageTag, emailHeader, linkTag)
+  @inline def values: js.Array[DimensionValueSource] = js.Array(messageTag, emailHeader, linkTag)
 }
 
 @js.native
@@ -87,7 +101,7 @@ object DsnAction {
   val relayed = "relayed".asInstanceOf[DsnAction]
   val expanded = "expanded".asInstanceOf[DsnAction]
 
-  @inline def values = js.Array(failed, delayed, delivered, relayed, expanded)
+  @inline def values: js.Array[DsnAction] = js.Array(failed, delayed, delivered, relayed, expanded)
 }
 
 @js.native
@@ -102,7 +116,7 @@ object EventType {
   val click = "click".asInstanceOf[EventType]
   val renderingFailure = "renderingFailure".asInstanceOf[EventType]
 
-  @inline def values = js.Array(send, reject, bounce, complaint, delivery, open, click, renderingFailure)
+  @inline def values: js.Array[EventType] = js.Array(send, reject, bounce, complaint, delivery, open, click, renderingFailure)
 }
 
 @js.native
@@ -111,7 +125,7 @@ object IdentityType {
   val EmailAddress = "EmailAddress".asInstanceOf[IdentityType]
   val Domain = "Domain".asInstanceOf[IdentityType]
 
-  @inline def values = js.Array(EmailAddress, Domain)
+  @inline def values: js.Array[IdentityType] = js.Array(EmailAddress, Domain)
 }
 
 @js.native
@@ -120,7 +134,7 @@ object InvocationType {
   val Event = "Event".asInstanceOf[InvocationType]
   val RequestResponse = "RequestResponse".asInstanceOf[InvocationType]
 
-  @inline def values = js.Array(Event, RequestResponse)
+  @inline def values: js.Array[InvocationType] = js.Array(Event, RequestResponse)
 }
 
 @js.native
@@ -130,7 +144,7 @@ object NotificationType {
   val Complaint = "Complaint".asInstanceOf[NotificationType]
   val Delivery = "Delivery".asInstanceOf[NotificationType]
 
-  @inline def values = js.Array(Bounce, Complaint, Delivery)
+  @inline def values: js.Array[NotificationType] = js.Array(Bounce, Complaint, Delivery)
 }
 
 @js.native
@@ -139,7 +153,7 @@ object ReceiptFilterPolicy {
   val Block = "Block".asInstanceOf[ReceiptFilterPolicy]
   val Allow = "Allow".asInstanceOf[ReceiptFilterPolicy]
 
-  @inline def values = js.Array(Block, Allow)
+  @inline def values: js.Array[ReceiptFilterPolicy] = js.Array(Block, Allow)
 }
 
 @js.native
@@ -148,7 +162,7 @@ object SNSActionEncoding {
   val `UTF-8` = "UTF-8".asInstanceOf[SNSActionEncoding]
   val Base64 = "Base64".asInstanceOf[SNSActionEncoding]
 
-  @inline def values = js.Array(`UTF-8`, Base64)
+  @inline def values: js.Array[SNSActionEncoding] = js.Array(`UTF-8`, Base64)
 }
 
 @js.native
@@ -156,7 +170,7 @@ sealed trait StopScope extends js.Any
 object StopScope {
   val RuleSet = "RuleSet".asInstanceOf[StopScope]
 
-  @inline def values = js.Array(RuleSet)
+  @inline def values: js.Array[StopScope] = js.Array(RuleSet)
 }
 
 @js.native
@@ -165,7 +179,7 @@ object TlsPolicy {
   val Require = "Require".asInstanceOf[TlsPolicy]
   val Optional = "Optional".asInstanceOf[TlsPolicy]
 
-  @inline def values = js.Array(Require, Optional)
+  @inline def values: js.Array[TlsPolicy] = js.Array(Require, Optional)
 }
 
 @js.native
@@ -177,6 +191,5 @@ object VerificationStatus {
   val TemporaryFailure = "TemporaryFailure".asInstanceOf[VerificationStatus]
   val NotStarted = "NotStarted".asInstanceOf[VerificationStatus]
 
-  @inline def values = js.Array(Pending, Success, Failed, TemporaryFailure, NotStarted)
+  @inline def values: js.Array[VerificationStatus] = js.Array(Pending, Success, Failed, TemporaryFailure, NotStarted)
 }
-

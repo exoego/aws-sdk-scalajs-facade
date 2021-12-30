@@ -1,6 +1,6 @@
 package facade.amazonaws.services.servicediscovery
 
-import scalajs._
+import scalajs.js
 
 type CustomHealthStatus = "HEALTHY" | "UNHEALTHY"
 object CustomHealthStatus {

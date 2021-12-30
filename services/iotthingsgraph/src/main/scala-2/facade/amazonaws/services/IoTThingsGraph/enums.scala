@@ -1,14 +1,13 @@
 package facade.amazonaws.services.iotthingsgraph
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DefinitionLanguage extends js.Any
 object DefinitionLanguage {
   val GRAPHQL = "GRAPHQL".asInstanceOf[DefinitionLanguage]
 
-  @inline def values = js.Array(GRAPHQL)
+  @inline def values: js.Array[DefinitionLanguage] = js.Array(GRAPHQL)
 }
 
 @js.native
@@ -17,7 +16,7 @@ object DeploymentTarget {
   val GREENGRASS = "GREENGRASS".asInstanceOf[DeploymentTarget]
   val CLOUD = "CLOUD".asInstanceOf[DeploymentTarget]
 
-  @inline def values = js.Array(GREENGRASS, CLOUD)
+  @inline def values: js.Array[DeploymentTarget] = js.Array(GREENGRASS, CLOUD)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object EntityFilterName {
   val SEMANTIC_TYPE_PATH = "SEMANTIC_TYPE_PATH".asInstanceOf[EntityFilterName]
   val REFERENCED_ENTITY_ID = "REFERENCED_ENTITY_ID".asInstanceOf[EntityFilterName]
 
-  @inline def values = js.Array(NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID)
+  @inline def values: js.Array[EntityFilterName] = js.Array(NAME, NAMESPACE, SEMANTIC_TYPE_PATH, REFERENCED_ENTITY_ID)
 }
 
 @js.native
@@ -45,7 +44,7 @@ object EntityType {
   val MAPPING = "MAPPING".asInstanceOf[EntityType]
   val ENUM = "ENUM".asInstanceOf[EntityType]
 
-  @inline def values = js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
+  @inline def values: js.Array[EntityType] = js.Array(DEVICE, SERVICE, DEVICE_MODEL, CAPABILITY, STATE, ACTION, EVENT, PROPERTY, MAPPING, ENUM)
 }
 
 @js.native
@@ -69,7 +68,25 @@ object FlowExecutionEventType {
   val THING_ACTION_TASK_SUCCEEDED = "THING_ACTION_TASK_SUCCEEDED".asInstanceOf[FlowExecutionEventType]
   val ACKNOWLEDGE_TASK_MESSAGE = "ACKNOWLEDGE_TASK_MESSAGE".asInstanceOf[FlowExecutionEventType]
 
-  @inline def values = js.Array(EXECUTION_STARTED, EXECUTION_FAILED, EXECUTION_ABORTED, EXECUTION_SUCCEEDED, STEP_STARTED, STEP_FAILED, STEP_SUCCEEDED, ACTIVITY_SCHEDULED, ACTIVITY_STARTED, ACTIVITY_FAILED, ACTIVITY_SUCCEEDED, START_FLOW_EXECUTION_TASK, SCHEDULE_NEXT_READY_STEPS_TASK, THING_ACTION_TASK, THING_ACTION_TASK_FAILED, THING_ACTION_TASK_SUCCEEDED, ACKNOWLEDGE_TASK_MESSAGE)
+  @inline def values: js.Array[FlowExecutionEventType] = js.Array(
+    EXECUTION_STARTED,
+    EXECUTION_FAILED,
+    EXECUTION_ABORTED,
+    EXECUTION_SUCCEEDED,
+    STEP_STARTED,
+    STEP_FAILED,
+    STEP_SUCCEEDED,
+    ACTIVITY_SCHEDULED,
+    ACTIVITY_STARTED,
+    ACTIVITY_FAILED,
+    ACTIVITY_SUCCEEDED,
+    START_FLOW_EXECUTION_TASK,
+    SCHEDULE_NEXT_READY_STEPS_TASK,
+    THING_ACTION_TASK,
+    THING_ACTION_TASK_FAILED,
+    THING_ACTION_TASK_SUCCEEDED,
+    ACKNOWLEDGE_TASK_MESSAGE
+  )
 }
 
 @js.native
@@ -80,7 +97,7 @@ object FlowExecutionStatus {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[FlowExecutionStatus]
   val FAILED = "FAILED".asInstanceOf[FlowExecutionStatus]
 
-  @inline def values = js.Array(RUNNING, ABORTED, SUCCEEDED, FAILED)
+  @inline def values: js.Array[FlowExecutionStatus] = js.Array(RUNNING, ABORTED, SUCCEEDED, FAILED)
 }
 
 @js.native
@@ -88,7 +105,7 @@ sealed trait FlowTemplateFilterName extends js.Any
 object FlowTemplateFilterName {
   val DEVICE_MODEL_ID = "DEVICE_MODEL_ID".asInstanceOf[FlowTemplateFilterName]
 
-  @inline def values = js.Array(DEVICE_MODEL_ID)
+  @inline def values: js.Array[FlowTemplateFilterName] = js.Array(DEVICE_MODEL_ID)
 }
 
 @js.native
@@ -98,7 +115,7 @@ object NamespaceDeletionStatus {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[NamespaceDeletionStatus]
   val FAILED = "FAILED".asInstanceOf[NamespaceDeletionStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
+  @inline def values: js.Array[NamespaceDeletionStatus] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
 }
 
 @js.native
@@ -106,7 +123,7 @@ sealed trait NamespaceDeletionStatusErrorCodes extends js.Any
 object NamespaceDeletionStatusErrorCodes {
   val VALIDATION_FAILED = "VALIDATION_FAILED".asInstanceOf[NamespaceDeletionStatusErrorCodes]
 
-  @inline def values = js.Array(VALIDATION_FAILED)
+  @inline def values: js.Array[NamespaceDeletionStatusErrorCodes] = js.Array(VALIDATION_FAILED)
 }
 
 @js.native
@@ -121,7 +138,7 @@ object SystemInstanceDeploymentStatus {
   val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[SystemInstanceDeploymentStatus]
   val DELETED_IN_TARGET = "DELETED_IN_TARGET".asInstanceOf[SystemInstanceDeploymentStatus]
 
-  @inline def values = js.Array(NOT_DEPLOYED, BOOTSTRAP, DEPLOY_IN_PROGRESS, DEPLOYED_IN_TARGET, UNDEPLOY_IN_PROGRESS, FAILED, PENDING_DELETE, DELETED_IN_TARGET)
+  @inline def values: js.Array[SystemInstanceDeploymentStatus] = js.Array(NOT_DEPLOYED, BOOTSTRAP, DEPLOY_IN_PROGRESS, DEPLOYED_IN_TARGET, UNDEPLOY_IN_PROGRESS, FAILED, PENDING_DELETE, DELETED_IN_TARGET)
 }
 
 @js.native
@@ -131,7 +148,7 @@ object SystemInstanceFilterName {
   val STATUS = "STATUS".asInstanceOf[SystemInstanceFilterName]
   val GREENGRASS_GROUP_NAME = "GREENGRASS_GROUP_NAME".asInstanceOf[SystemInstanceFilterName]
 
-  @inline def values = js.Array(SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME)
+  @inline def values: js.Array[SystemInstanceFilterName] = js.Array(SYSTEM_TEMPLATE_ID, STATUS, GREENGRASS_GROUP_NAME)
 }
 
 @js.native
@@ -139,7 +156,7 @@ sealed trait SystemTemplateFilterName extends js.Any
 object SystemTemplateFilterName {
   val FLOW_TEMPLATE_ID = "FLOW_TEMPLATE_ID".asInstanceOf[SystemTemplateFilterName]
 
-  @inline def values = js.Array(FLOW_TEMPLATE_ID)
+  @inline def values: js.Array[SystemTemplateFilterName] = js.Array(FLOW_TEMPLATE_ID)
 }
 
 @js.native
@@ -149,6 +166,5 @@ object UploadStatus {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[UploadStatus]
   val FAILED = "FAILED".asInstanceOf[UploadStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
+  @inline def values: js.Array[UploadStatus] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.importexport
 
-import scalajs._
+import scalajs.js
 
 /** Specifies whether the job to initiate is an import or export job.
   */

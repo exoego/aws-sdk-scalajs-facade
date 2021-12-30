@@ -1,7 +1,6 @@
 package facade.amazonaws.services.schemas
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait CodeGenerationStatus extends js.Any
@@ -10,7 +9,7 @@ object CodeGenerationStatus {
   val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[CodeGenerationStatus]
   val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[CodeGenerationStatus]
 
-  @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
+  @inline def values: js.Array[CodeGenerationStatus] = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object DiscovererState {
   val STARTED = "STARTED".asInstanceOf[DiscovererState]
   val STOPPED = "STOPPED".asInstanceOf[DiscovererState]
 
-  @inline def values = js.Array(STARTED, STOPPED)
+  @inline def values: js.Array[DiscovererState] = js.Array(STARTED, STOPPED)
 }
 
 @js.native
@@ -28,6 +27,5 @@ object Type {
   val OpenApi3 = "OpenApi3".asInstanceOf[Type]
   val JSONSchemaDraft4 = "JSONSchemaDraft4".asInstanceOf[Type]
 
-  @inline def values = js.Array(OpenApi3, JSONSchemaDraft4)
+  @inline def values: js.Array[Type] = js.Array(OpenApi3, JSONSchemaDraft4)
 }
-

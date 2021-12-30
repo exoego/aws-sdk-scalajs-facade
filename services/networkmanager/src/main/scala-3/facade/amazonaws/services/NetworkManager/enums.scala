@@ -1,6 +1,6 @@
 package facade.amazonaws.services.networkmanager
 
-import scalajs._
+import scalajs.js
 
 type ConnectionState = "PENDING" | "AVAILABLE" | "DELETING" | "UPDATING"
 object ConnectionState {

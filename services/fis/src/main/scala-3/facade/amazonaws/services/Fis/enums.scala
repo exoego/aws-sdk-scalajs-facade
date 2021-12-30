@@ -1,6 +1,6 @@
 package facade.amazonaws.services.fis
 
-import scalajs._
+import scalajs.js
 
 type ExperimentActionStatus = "pending" | "initiating" | "running" | "completed" | "cancelled" | "stopping" | "stopped" | "failed"
 object ExperimentActionStatus {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iot
 
-import scalajs._
+import scalajs.js
 
 type AbortAction = "CANCEL"
 object AbortAction {

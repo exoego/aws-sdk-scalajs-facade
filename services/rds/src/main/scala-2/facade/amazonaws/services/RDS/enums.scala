@@ -1,7 +1,6 @@
 package facade.amazonaws.services.rds
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ActivityStreamMode extends js.Any
@@ -9,7 +8,7 @@ object ActivityStreamMode {
   val sync = "sync".asInstanceOf[ActivityStreamMode]
   val async = "async".asInstanceOf[ActivityStreamMode]
 
-  @inline def values = js.Array(sync, async)
+  @inline def values: js.Array[ActivityStreamMode] = js.Array(sync, async)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object ActivityStreamStatus {
   val started = "started".asInstanceOf[ActivityStreamStatus]
   val stopping = "stopping".asInstanceOf[ActivityStreamStatus]
 
-  @inline def values = js.Array(stopped, starting, started, stopping)
+  @inline def values: js.Array[ActivityStreamStatus] = js.Array(stopped, starting, started, stopping)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object ApplyMethod {
   val immediate = "immediate".asInstanceOf[ApplyMethod]
   val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
-  @inline def values = js.Array(immediate, `pending-reboot`)
+  @inline def values: js.Array[ApplyMethod] = js.Array(immediate, `pending-reboot`)
 }
 
 @js.native
@@ -37,7 +36,7 @@ sealed trait AuthScheme extends js.Any
 object AuthScheme {
   val SECRETS = "SECRETS".asInstanceOf[AuthScheme]
 
-  @inline def values = js.Array(SECRETS)
+  @inline def values: js.Array[AuthScheme] = js.Array(SECRETS)
 }
 
 @js.native
@@ -50,7 +49,7 @@ object DBProxyEndpointStatus {
   val creating = "creating".asInstanceOf[DBProxyEndpointStatus]
   val deleting = "deleting".asInstanceOf[DBProxyEndpointStatus]
 
-  @inline def values = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting)
+  @inline def values: js.Array[DBProxyEndpointStatus] = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting)
 }
 
 @js.native
@@ -59,7 +58,7 @@ object DBProxyEndpointTargetRole {
   val READ_WRITE = "READ_WRITE".asInstanceOf[DBProxyEndpointTargetRole]
   val READ_ONLY = "READ_ONLY".asInstanceOf[DBProxyEndpointTargetRole]
 
-  @inline def values = js.Array(READ_WRITE, READ_ONLY)
+  @inline def values: js.Array[DBProxyEndpointTargetRole] = js.Array(READ_WRITE, READ_ONLY)
 }
 
 @js.native
@@ -75,7 +74,7 @@ object DBProxyStatus {
   val suspending = "suspending".asInstanceOf[DBProxyStatus]
   val reactivating = "reactivating".asInstanceOf[DBProxyStatus]
 
-  @inline def values = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating)
+  @inline def values: js.Array[DBProxyStatus] = js.Array(available, modifying, `incompatible-network`, `insufficient-resource-limits`, creating, deleting, suspended, suspending, reactivating)
 }
 
 @js.native
@@ -84,7 +83,7 @@ object EngineFamily {
   val MYSQL = "MYSQL".asInstanceOf[EngineFamily]
   val POSTGRESQL = "POSTGRESQL".asInstanceOf[EngineFamily]
 
-  @inline def values = js.Array(MYSQL, POSTGRESQL)
+  @inline def values: js.Array[EngineFamily] = js.Array(MYSQL, POSTGRESQL)
 }
 
 @js.native
@@ -94,7 +93,7 @@ object FailoverStatus {
   val `failing-over` = "failing-over".asInstanceOf[FailoverStatus]
   val cancelling = "cancelling".asInstanceOf[FailoverStatus]
 
-  @inline def values = js.Array(pending, `failing-over`, cancelling)
+  @inline def values: js.Array[FailoverStatus] = js.Array(pending, `failing-over`, cancelling)
 }
 
 @js.native
@@ -103,7 +102,7 @@ object IAMAuthMode {
   val DISABLED = "DISABLED".asInstanceOf[IAMAuthMode]
   val REQUIRED = "REQUIRED".asInstanceOf[IAMAuthMode]
 
-  @inline def values = js.Array(DISABLED, REQUIRED)
+  @inline def values: js.Array[IAMAuthMode] = js.Array(DISABLED, REQUIRED)
 }
 
 @js.native
@@ -112,7 +111,7 @@ object ReplicaMode {
   val `open-read-only` = "open-read-only".asInstanceOf[ReplicaMode]
   val mounted = "mounted".asInstanceOf[ReplicaMode]
 
-  @inline def values = js.Array(`open-read-only`, mounted)
+  @inline def values: js.Array[ReplicaMode] = js.Array(`open-read-only`, mounted)
 }
 
 @js.native
@@ -125,7 +124,7 @@ object SourceType {
   val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
   val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
-  @inline def values = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
+  @inline def values: js.Array[SourceType] = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
 }
 
 @js.native
@@ -137,7 +136,7 @@ object TargetHealthReason {
   val PENDING_PROXY_CAPACITY = "PENDING_PROXY_CAPACITY".asInstanceOf[TargetHealthReason]
   val INVALID_REPLICATION_STATE = "INVALID_REPLICATION_STATE".asInstanceOf[TargetHealthReason]
 
-  @inline def values = js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY, INVALID_REPLICATION_STATE)
+  @inline def values: js.Array[TargetHealthReason] = js.Array(UNREACHABLE, CONNECTION_FAILED, AUTH_FAILURE, PENDING_PROXY_CAPACITY, INVALID_REPLICATION_STATE)
 }
 
 @js.native
@@ -147,7 +146,7 @@ object TargetRole {
   val READ_ONLY = "READ_ONLY".asInstanceOf[TargetRole]
   val UNKNOWN = "UNKNOWN".asInstanceOf[TargetRole]
 
-  @inline def values = js.Array(READ_WRITE, READ_ONLY, UNKNOWN)
+  @inline def values: js.Array[TargetRole] = js.Array(READ_WRITE, READ_ONLY, UNKNOWN)
 }
 
 @js.native
@@ -157,7 +156,7 @@ object TargetState {
   val AVAILABLE = "AVAILABLE".asInstanceOf[TargetState]
   val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[TargetState]
 
-  @inline def values = js.Array(REGISTERING, AVAILABLE, UNAVAILABLE)
+  @inline def values: js.Array[TargetState] = js.Array(REGISTERING, AVAILABLE, UNAVAILABLE)
 }
 
 @js.native
@@ -167,7 +166,7 @@ object TargetType {
   val RDS_SERVERLESS_ENDPOINT = "RDS_SERVERLESS_ENDPOINT".asInstanceOf[TargetType]
   val TRACKED_CLUSTER = "TRACKED_CLUSTER".asInstanceOf[TargetType]
 
-  @inline def values = js.Array(RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER)
+  @inline def values: js.Array[TargetType] = js.Array(RDS_INSTANCE, RDS_SERVERLESS_ENDPOINT, TRACKED_CLUSTER)
 }
 
 @js.native
@@ -179,6 +178,5 @@ object WriteForwardingStatus {
   val disabling = "disabling".asInstanceOf[WriteForwardingStatus]
   val unknown = "unknown".asInstanceOf[WriteForwardingStatus]
 
-  @inline def values = js.Array(enabled, disabled, enabling, disabling, unknown)
+  @inline def values: js.Array[WriteForwardingStatus] = js.Array(enabled, disabled, enabling, disabling, unknown)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.wafv2
 
-import scalajs._
+import scalajs.js
 
 type ActionValue = "ALLOW" | "BLOCK" | "COUNT"
 object ActionValue {

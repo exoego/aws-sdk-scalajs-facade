@@ -1,6 +1,6 @@
 package facade.amazonaws.services.servicecatalogappregistry
 
-import scalajs._
+import scalajs.js
 
 type ResourceType = "CFN_STACK"
 object ResourceType {

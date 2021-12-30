@@ -1,6 +1,6 @@
 package facade.amazonaws.services.route53domains
 
-import scalajs._
+import scalajs.js
 
 type ContactType = "PERSON" | "COMPANY" | "ASSOCIATION" | "PUBLIC_BODY" | "RESELLER"
 object ContactType {

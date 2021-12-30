@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cloudwatch
 
-import scalajs._
+import scalajs.js
 
 type AlarmType = "CompositeAlarm" | "MetricAlarm"
 object AlarmType {

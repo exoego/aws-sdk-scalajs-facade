@@ -1,7 +1,6 @@
 package facade.amazonaws.services.iotjobsdataplane
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait JobExecutionStatus extends js.Any
@@ -15,6 +14,5 @@ object JobExecutionStatus {
   val REMOVED = "REMOVED".asInstanceOf[JobExecutionStatus]
   val CANCELED = "CANCELED".asInstanceOf[JobExecutionStatus]
 
-  @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
+  @inline def values: js.Array[JobExecutionStatus] = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED, TIMED_OUT, REJECTED, REMOVED, CANCELED)
 }
-

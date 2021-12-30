@@ -1,7 +1,6 @@
 package facade.amazonaws.services.glue
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait BackfillErrorCode extends js.Any
@@ -12,7 +11,7 @@ object BackfillErrorCode {
   val MISSING_PARTITION_VALUE_ERROR = "MISSING_PARTITION_VALUE_ERROR".asInstanceOf[BackfillErrorCode]
   val UNSUPPORTED_PARTITION_CHARACTER_ERROR = "UNSUPPORTED_PARTITION_CHARACTER_ERROR".asInstanceOf[BackfillErrorCode]
 
-  @inline def values = js.Array(ENCRYPTED_PARTITION_ERROR, INTERNAL_ERROR, INVALID_PARTITION_TYPE_DATA_ERROR, MISSING_PARTITION_VALUE_ERROR, UNSUPPORTED_PARTITION_CHARACTER_ERROR)
+  @inline def values: js.Array[BackfillErrorCode] = js.Array(ENCRYPTED_PARTITION_ERROR, INTERNAL_ERROR, INVALID_PARTITION_TYPE_DATA_ERROR, MISSING_PARTITION_VALUE_ERROR, UNSUPPORTED_PARTITION_CHARACTER_ERROR)
 }
 
 @js.native
@@ -21,7 +20,7 @@ object CatalogEncryptionMode {
   val DISABLED = "DISABLED".asInstanceOf[CatalogEncryptionMode]
   val `SSE-KMS` = "SSE-KMS".asInstanceOf[CatalogEncryptionMode]
 
-  @inline def values = js.Array(DISABLED, `SSE-KMS`)
+  @inline def values: js.Array[CatalogEncryptionMode] = js.Array(DISABLED, `SSE-KMS`)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object CloudWatchEncryptionMode {
   val DISABLED = "DISABLED".asInstanceOf[CloudWatchEncryptionMode]
   val `SSE-KMS` = "SSE-KMS".asInstanceOf[CloudWatchEncryptionMode]
 
-  @inline def values = js.Array(DISABLED, `SSE-KMS`)
+  @inline def values: js.Array[CloudWatchEncryptionMode] = js.Array(DISABLED, `SSE-KMS`)
 }
 
 @js.native
@@ -44,7 +43,7 @@ object ColumnStatisticsType {
   val STRING = "STRING".asInstanceOf[ColumnStatisticsType]
   val BINARY = "BINARY".asInstanceOf[ColumnStatisticsType]
 
-  @inline def values = js.Array(BOOLEAN, DATE, DECIMAL, DOUBLE, LONG, STRING, BINARY)
+  @inline def values: js.Array[ColumnStatisticsType] = js.Array(BOOLEAN, DATE, DECIMAL, DOUBLE, LONG, STRING, BINARY)
 }
 
 @js.native
@@ -56,7 +55,7 @@ object Comparator {
   val GREATER_THAN_EQUALS = "GREATER_THAN_EQUALS".asInstanceOf[Comparator]
   val LESS_THAN_EQUALS = "LESS_THAN_EQUALS".asInstanceOf[Comparator]
 
-  @inline def values = js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS)
+  @inline def values: js.Array[Comparator] = js.Array(EQUALS, GREATER_THAN, LESS_THAN, GREATER_THAN_EQUALS, LESS_THAN_EQUALS)
 }
 
 @js.native
@@ -71,7 +70,7 @@ object Compatibility {
   val FULL = "FULL".asInstanceOf[Compatibility]
   val FULL_ALL = "FULL_ALL".asInstanceOf[Compatibility]
 
-  @inline def values = js.Array(NONE, DISABLED, BACKWARD, BACKWARD_ALL, FORWARD, FORWARD_ALL, FULL, FULL_ALL)
+  @inline def values: js.Array[Compatibility] = js.Array(NONE, DISABLED, BACKWARD, BACKWARD_ALL, FORWARD, FORWARD_ALL, FULL, FULL_ALL)
 }
 
 @js.native
@@ -103,7 +102,33 @@ object ConnectionPropertyKey {
   val CONNECTOR_TYPE = "CONNECTOR_TYPE".asInstanceOf[ConnectionPropertyKey]
   val CONNECTOR_CLASS_NAME = "CONNECTOR_CLASS_NAME".asInstanceOf[ConnectionPropertyKey]
 
-  @inline def values = js.Array(HOST, PORT, USERNAME, PASSWORD, ENCRYPTED_PASSWORD, JDBC_DRIVER_JAR_URI, JDBC_DRIVER_CLASS_NAME, JDBC_ENGINE, JDBC_ENGINE_VERSION, CONFIG_FILES, INSTANCE_ID, JDBC_CONNECTION_URL, JDBC_ENFORCE_SSL, CUSTOM_JDBC_CERT, SKIP_CUSTOM_JDBC_CERT_VALIDATION, CUSTOM_JDBC_CERT_STRING, CONNECTION_URL, KAFKA_BOOTSTRAP_SERVERS, KAFKA_SSL_ENABLED, KAFKA_CUSTOM_CERT, KAFKA_SKIP_CUSTOM_CERT_VALIDATION, SECRET_ID, CONNECTOR_URL, CONNECTOR_TYPE, CONNECTOR_CLASS_NAME)
+  @inline def values: js.Array[ConnectionPropertyKey] = js.Array(
+    HOST,
+    PORT,
+    USERNAME,
+    PASSWORD,
+    ENCRYPTED_PASSWORD,
+    JDBC_DRIVER_JAR_URI,
+    JDBC_DRIVER_CLASS_NAME,
+    JDBC_ENGINE,
+    JDBC_ENGINE_VERSION,
+    CONFIG_FILES,
+    INSTANCE_ID,
+    JDBC_CONNECTION_URL,
+    JDBC_ENFORCE_SSL,
+    CUSTOM_JDBC_CERT,
+    SKIP_CUSTOM_JDBC_CERT_VALIDATION,
+    CUSTOM_JDBC_CERT_STRING,
+    CONNECTION_URL,
+    KAFKA_BOOTSTRAP_SERVERS,
+    KAFKA_SSL_ENABLED,
+    KAFKA_CUSTOM_CERT,
+    KAFKA_SKIP_CUSTOM_CERT_VALIDATION,
+    SECRET_ID,
+    CONNECTOR_URL,
+    CONNECTOR_TYPE,
+    CONNECTOR_CLASS_NAME
+  )
 }
 
 @js.native
@@ -117,7 +142,7 @@ object ConnectionType {
   val MARKETPLACE = "MARKETPLACE".asInstanceOf[ConnectionType]
   val CUSTOM = "CUSTOM".asInstanceOf[ConnectionType]
 
-  @inline def values = js.Array(JDBC, SFTP, MONGODB, KAFKA, NETWORK, MARKETPLACE, CUSTOM)
+  @inline def values: js.Array[ConnectionType] = js.Array(JDBC, SFTP, MONGODB, KAFKA, NETWORK, MARKETPLACE, CUSTOM)
 }
 
 @js.native
@@ -129,7 +154,7 @@ object CrawlState {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[CrawlState]
   val FAILED = "FAILED".asInstanceOf[CrawlState]
 
-  @inline def values = js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED)
+  @inline def values: js.Array[CrawlState] = js.Array(RUNNING, CANCELLING, CANCELLED, SUCCEEDED, FAILED)
 }
 
 @js.native
@@ -138,7 +163,7 @@ object CrawlerLineageSettings {
   val ENABLE = "ENABLE".asInstanceOf[CrawlerLineageSettings]
   val DISABLE = "DISABLE".asInstanceOf[CrawlerLineageSettings]
 
-  @inline def values = js.Array(ENABLE, DISABLE)
+  @inline def values: js.Array[CrawlerLineageSettings] = js.Array(ENABLE, DISABLE)
 }
 
 @js.native
@@ -148,7 +173,7 @@ object CrawlerState {
   val RUNNING = "RUNNING".asInstanceOf[CrawlerState]
   val STOPPING = "STOPPING".asInstanceOf[CrawlerState]
 
-  @inline def values = js.Array(READY, RUNNING, STOPPING)
+  @inline def values: js.Array[CrawlerState] = js.Array(READY, RUNNING, STOPPING)
 }
 
 @js.native
@@ -158,7 +183,7 @@ object CsvHeaderOption {
   val PRESENT = "PRESENT".asInstanceOf[CsvHeaderOption]
   val ABSENT = "ABSENT".asInstanceOf[CsvHeaderOption]
 
-  @inline def values = js.Array(UNKNOWN, PRESENT, ABSENT)
+  @inline def values: js.Array[CsvHeaderOption] = js.Array(UNKNOWN, PRESENT, ABSENT)
 }
 
 @js.native
@@ -166,7 +191,7 @@ sealed trait DataFormat extends js.Any
 object DataFormat {
   val AVRO = "AVRO".asInstanceOf[DataFormat]
 
-  @inline def values = js.Array(AVRO)
+  @inline def values: js.Array[DataFormat] = js.Array(AVRO)
 }
 
 @js.native
@@ -176,7 +201,7 @@ object DeleteBehavior {
   val DELETE_FROM_DATABASE = "DELETE_FROM_DATABASE".asInstanceOf[DeleteBehavior]
   val DEPRECATE_IN_DATABASE = "DEPRECATE_IN_DATABASE".asInstanceOf[DeleteBehavior]
 
-  @inline def values = js.Array(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE)
+  @inline def values: js.Array[DeleteBehavior] = js.Array(LOG, DELETE_FROM_DATABASE, DEPRECATE_IN_DATABASE)
 }
 
 @js.native
@@ -185,7 +210,7 @@ object EnableHybridValues {
   val TRUE = "TRUE".asInstanceOf[EnableHybridValues]
   val FALSE = "FALSE".asInstanceOf[EnableHybridValues]
 
-  @inline def values = js.Array(TRUE, FALSE)
+  @inline def values: js.Array[EnableHybridValues] = js.Array(TRUE, FALSE)
 }
 
 @js.native
@@ -195,7 +220,7 @@ object ExistCondition {
   val NOT_EXIST = "NOT_EXIST".asInstanceOf[ExistCondition]
   val NONE = "NONE".asInstanceOf[ExistCondition]
 
-  @inline def values = js.Array(MUST_EXIST, NOT_EXIST, NONE)
+  @inline def values: js.Array[ExistCondition] = js.Array(MUST_EXIST, NOT_EXIST, NONE)
 }
 
 @js.native
@@ -204,7 +229,7 @@ object JobBookmarksEncryptionMode {
   val DISABLED = "DISABLED".asInstanceOf[JobBookmarksEncryptionMode]
   val `CSE-KMS` = "CSE-KMS".asInstanceOf[JobBookmarksEncryptionMode]
 
-  @inline def values = js.Array(DISABLED, `CSE-KMS`)
+  @inline def values: js.Array[JobBookmarksEncryptionMode] = js.Array(DISABLED, `CSE-KMS`)
 }
 
 @js.native
@@ -218,7 +243,7 @@ object JobRunState {
   val FAILED = "FAILED".asInstanceOf[JobRunState]
   val TIMEOUT = "TIMEOUT".asInstanceOf[JobRunState]
 
-  @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
+  @inline def values: js.Array[JobRunState] = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
 }
 
 @js.native
@@ -227,7 +252,7 @@ object Language {
   val PYTHON = "PYTHON".asInstanceOf[Language]
   val SCALA = "SCALA".asInstanceOf[Language]
 
-  @inline def values = js.Array(PYTHON, SCALA)
+  @inline def values: js.Array[Language] = js.Array(PYTHON, SCALA)
 }
 
 @js.native
@@ -237,7 +262,7 @@ object LastCrawlStatus {
   val CANCELLED = "CANCELLED".asInstanceOf[LastCrawlStatus]
   val FAILED = "FAILED".asInstanceOf[LastCrawlStatus]
 
-  @inline def values = js.Array(SUCCEEDED, CANCELLED, FAILED)
+  @inline def values: js.Array[LastCrawlStatus] = js.Array(SUCCEEDED, CANCELLED, FAILED)
 }
 
 @js.native
@@ -246,7 +271,7 @@ object Logical {
   val AND = "AND".asInstanceOf[Logical]
   val ANY = "ANY".asInstanceOf[Logical]
 
-  @inline def values = js.Array(AND, ANY)
+  @inline def values: js.Array[Logical] = js.Array(AND, ANY)
 }
 
 @js.native
@@ -254,7 +279,7 @@ sealed trait LogicalOperator extends js.Any
 object LogicalOperator {
   val EQUALS = "EQUALS".asInstanceOf[LogicalOperator]
 
-  @inline def values = js.Array(EQUALS)
+  @inline def values: js.Array[LogicalOperator] = js.Array(EQUALS)
 }
 
 @js.native
@@ -263,7 +288,7 @@ object MLUserDataEncryptionModeString {
   val DISABLED = "DISABLED".asInstanceOf[MLUserDataEncryptionModeString]
   val `SSE-KMS` = "SSE-KMS".asInstanceOf[MLUserDataEncryptionModeString]
 
-  @inline def values = js.Array(DISABLED, `SSE-KMS`)
+  @inline def values: js.Array[MLUserDataEncryptionModeString] = js.Array(DISABLED, `SSE-KMS`)
 }
 
 @js.native
@@ -273,7 +298,7 @@ object NodeType {
   val JOB = "JOB".asInstanceOf[NodeType]
   val TRIGGER = "TRIGGER".asInstanceOf[NodeType]
 
-  @inline def values = js.Array(CRAWLER, JOB, TRIGGER)
+  @inline def values: js.Array[NodeType] = js.Array(CRAWLER, JOB, TRIGGER)
 }
 
 @js.native
@@ -284,7 +309,7 @@ object PartitionIndexStatus {
   val DELETING = "DELETING".asInstanceOf[PartitionIndexStatus]
   val FAILED = "FAILED".asInstanceOf[PartitionIndexStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, FAILED)
+  @inline def values: js.Array[PartitionIndexStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED)
 }
 
 @js.native
@@ -300,7 +325,7 @@ object Permission {
   val CREATE_TABLE = "CREATE_TABLE".asInstanceOf[Permission]
   val DATA_LOCATION_ACCESS = "DATA_LOCATION_ACCESS".asInstanceOf[Permission]
 
-  @inline def values = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
+  @inline def values: js.Array[Permission] = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
 }
 
 @js.native
@@ -310,7 +335,7 @@ object PrincipalType {
   val ROLE = "ROLE".asInstanceOf[PrincipalType]
   val GROUP = "GROUP".asInstanceOf[PrincipalType]
 
-  @inline def values = js.Array(USER, ROLE, GROUP)
+  @inline def values: js.Array[PrincipalType] = js.Array(USER, ROLE, GROUP)
 }
 
 @js.native
@@ -319,7 +344,7 @@ object RecrawlBehavior {
   val CRAWL_EVERYTHING = "CRAWL_EVERYTHING".asInstanceOf[RecrawlBehavior]
   val CRAWL_NEW_FOLDERS_ONLY = "CRAWL_NEW_FOLDERS_ONLY".asInstanceOf[RecrawlBehavior]
 
-  @inline def values = js.Array(CRAWL_EVERYTHING, CRAWL_NEW_FOLDERS_ONLY)
+  @inline def values: js.Array[RecrawlBehavior] = js.Array(CRAWL_EVERYTHING, CRAWL_NEW_FOLDERS_ONLY)
 }
 
 @js.native
@@ -328,7 +353,7 @@ object RegistryStatus {
   val AVAILABLE = "AVAILABLE".asInstanceOf[RegistryStatus]
   val DELETING = "DELETING".asInstanceOf[RegistryStatus]
 
-  @inline def values = js.Array(AVAILABLE, DELETING)
+  @inline def values: js.Array[RegistryStatus] = js.Array(AVAILABLE, DELETING)
 }
 
 @js.native
@@ -337,7 +362,7 @@ object ResourceShareType {
   val FOREIGN = "FOREIGN".asInstanceOf[ResourceShareType]
   val ALL = "ALL".asInstanceOf[ResourceShareType]
 
-  @inline def values = js.Array(FOREIGN, ALL)
+  @inline def values: js.Array[ResourceShareType] = js.Array(FOREIGN, ALL)
 }
 
 @js.native
@@ -347,7 +372,7 @@ object ResourceType {
   val FILE = "FILE".asInstanceOf[ResourceType]
   val ARCHIVE = "ARCHIVE".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(JAR, FILE, ARCHIVE)
+  @inline def values: js.Array[ResourceType] = js.Array(JAR, FILE, ARCHIVE)
 }
 
 @js.native
@@ -357,7 +382,7 @@ object S3EncryptionMode {
   val `SSE-KMS` = "SSE-KMS".asInstanceOf[S3EncryptionMode]
   val `SSE-S3` = "SSE-S3".asInstanceOf[S3EncryptionMode]
 
-  @inline def values = js.Array(DISABLED, `SSE-KMS`, `SSE-S3`)
+  @inline def values: js.Array[S3EncryptionMode] = js.Array(DISABLED, `SSE-KMS`, `SSE-S3`)
 }
 
 @js.native
@@ -367,7 +392,7 @@ object ScheduleState {
   val NOT_SCHEDULED = "NOT_SCHEDULED".asInstanceOf[ScheduleState]
   val TRANSITIONING = "TRANSITIONING".asInstanceOf[ScheduleState]
 
-  @inline def values = js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING)
+  @inline def values: js.Array[ScheduleState] = js.Array(SCHEDULED, NOT_SCHEDULED, TRANSITIONING)
 }
 
 @js.native
@@ -375,7 +400,7 @@ sealed trait SchemaDiffType extends js.Any
 object SchemaDiffType {
   val SYNTAX_DIFF = "SYNTAX_DIFF".asInstanceOf[SchemaDiffType]
 
-  @inline def values = js.Array(SYNTAX_DIFF)
+  @inline def values: js.Array[SchemaDiffType] = js.Array(SYNTAX_DIFF)
 }
 
 @js.native
@@ -385,7 +410,7 @@ object SchemaStatus {
   val PENDING = "PENDING".asInstanceOf[SchemaStatus]
   val DELETING = "DELETING".asInstanceOf[SchemaStatus]
 
-  @inline def values = js.Array(AVAILABLE, PENDING, DELETING)
+  @inline def values: js.Array[SchemaStatus] = js.Array(AVAILABLE, PENDING, DELETING)
 }
 
 @js.native
@@ -396,7 +421,7 @@ object SchemaVersionStatus {
   val FAILURE = "FAILURE".asInstanceOf[SchemaVersionStatus]
   val DELETING = "DELETING".asInstanceOf[SchemaVersionStatus]
 
-  @inline def values = js.Array(AVAILABLE, PENDING, FAILURE, DELETING)
+  @inline def values: js.Array[SchemaVersionStatus] = js.Array(AVAILABLE, PENDING, FAILURE, DELETING)
 }
 
 @js.native
@@ -405,7 +430,7 @@ object Sort {
   val ASC = "ASC".asInstanceOf[Sort]
   val DESC = "DESC".asInstanceOf[Sort]
 
-  @inline def values = js.Array(ASC, DESC)
+  @inline def values: js.Array[Sort] = js.Array(ASC, DESC)
 }
 
 @js.native
@@ -414,7 +439,7 @@ object SortDirectionType {
   val DESCENDING = "DESCENDING".asInstanceOf[SortDirectionType]
   val ASCENDING = "ASCENDING".asInstanceOf[SortDirectionType]
 
-  @inline def values = js.Array(DESCENDING, ASCENDING)
+  @inline def values: js.Array[SortDirectionType] = js.Array(DESCENDING, ASCENDING)
 }
 
 @js.native
@@ -424,7 +449,7 @@ object TaskRunSortColumnType {
   val STATUS = "STATUS".asInstanceOf[TaskRunSortColumnType]
   val STARTED = "STARTED".asInstanceOf[TaskRunSortColumnType]
 
-  @inline def values = js.Array(TASK_RUN_TYPE, STATUS, STARTED)
+  @inline def values: js.Array[TaskRunSortColumnType] = js.Array(TASK_RUN_TYPE, STATUS, STARTED)
 }
 
 @js.native
@@ -438,7 +463,7 @@ object TaskStatusType {
   val FAILED = "FAILED".asInstanceOf[TaskStatusType]
   val TIMEOUT = "TIMEOUT".asInstanceOf[TaskStatusType]
 
-  @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
+  @inline def values: js.Array[TaskStatusType] = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
 }
 
 @js.native
@@ -450,7 +475,7 @@ object TaskType {
   val EXPORT_LABELS = "EXPORT_LABELS".asInstanceOf[TaskType]
   val FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TaskType]
 
-  @inline def values = js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES)
+  @inline def values: js.Array[TaskType] = js.Array(EVALUATION, LABELING_SET_GENERATION, IMPORT_LABELS, EXPORT_LABELS, FIND_MATCHES)
 }
 
 @js.native
@@ -462,7 +487,7 @@ object TransformSortColumnType {
   val CREATED = "CREATED".asInstanceOf[TransformSortColumnType]
   val LAST_MODIFIED = "LAST_MODIFIED".asInstanceOf[TransformSortColumnType]
 
-  @inline def values = js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED)
+  @inline def values: js.Array[TransformSortColumnType] = js.Array(NAME, TRANSFORM_TYPE, STATUS, CREATED, LAST_MODIFIED)
 }
 
 @js.native
@@ -472,7 +497,7 @@ object TransformStatusType {
   val READY = "READY".asInstanceOf[TransformStatusType]
   val DELETING = "DELETING".asInstanceOf[TransformStatusType]
 
-  @inline def values = js.Array(NOT_READY, READY, DELETING)
+  @inline def values: js.Array[TransformStatusType] = js.Array(NOT_READY, READY, DELETING)
 }
 
 @js.native
@@ -480,7 +505,7 @@ sealed trait TransformType extends js.Any
 object TransformType {
   val FIND_MATCHES = "FIND_MATCHES".asInstanceOf[TransformType]
 
-  @inline def values = js.Array(FIND_MATCHES)
+  @inline def values: js.Array[TransformType] = js.Array(FIND_MATCHES)
 }
 
 @js.native
@@ -495,7 +520,7 @@ object TriggerState {
   val DELETING = "DELETING".asInstanceOf[TriggerState]
   val UPDATING = "UPDATING".asInstanceOf[TriggerState]
 
-  @inline def values = js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING)
+  @inline def values: js.Array[TriggerState] = js.Array(CREATING, CREATED, ACTIVATING, ACTIVATED, DEACTIVATING, DEACTIVATED, DELETING, UPDATING)
 }
 
 @js.native
@@ -505,7 +530,7 @@ object TriggerType {
   val CONDITIONAL = "CONDITIONAL".asInstanceOf[TriggerType]
   val ON_DEMAND = "ON_DEMAND".asInstanceOf[TriggerType]
 
-  @inline def values = js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND)
+  @inline def values: js.Array[TriggerType] = js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND)
 }
 
 @js.native
@@ -514,7 +539,7 @@ object UpdateBehavior {
   val LOG = "LOG".asInstanceOf[UpdateBehavior]
   val UPDATE_IN_DATABASE = "UPDATE_IN_DATABASE".asInstanceOf[UpdateBehavior]
 
-  @inline def values = js.Array(LOG, UPDATE_IN_DATABASE)
+  @inline def values: js.Array[UpdateBehavior] = js.Array(LOG, UPDATE_IN_DATABASE)
 }
 
 @js.native
@@ -524,7 +549,7 @@ object WorkerType {
   val `G.1X` = "G.1X".asInstanceOf[WorkerType]
   val `G.2X` = "G.2X".asInstanceOf[WorkerType]
 
-  @inline def values = js.Array(Standard, `G.1X`, `G.2X`)
+  @inline def values: js.Array[WorkerType] = js.Array(Standard, `G.1X`, `G.2X`)
 }
 
 @js.native
@@ -536,6 +561,5 @@ object WorkflowRunStatus {
   val STOPPED = "STOPPED".asInstanceOf[WorkflowRunStatus]
   val ERROR = "ERROR".asInstanceOf[WorkflowRunStatus]
 
-  @inline def values = js.Array(RUNNING, COMPLETED, STOPPING, STOPPED, ERROR)
+  @inline def values: js.Array[WorkflowRunStatus] = js.Array(RUNNING, COMPLETED, STOPPING, STOPPED, ERROR)
 }
-

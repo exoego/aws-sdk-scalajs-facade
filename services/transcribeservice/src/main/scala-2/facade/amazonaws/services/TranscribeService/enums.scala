@@ -1,7 +1,6 @@
 package facade.amazonaws.services.transcribeservice
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait BaseModelName extends js.Any
@@ -9,7 +8,7 @@ object BaseModelName {
   val NarrowBand = "NarrowBand".asInstanceOf[BaseModelName]
   val WideBand = "WideBand".asInstanceOf[BaseModelName]
 
-  @inline def values = js.Array(NarrowBand, WideBand)
+  @inline def values: js.Array[BaseModelName] = js.Array(NarrowBand, WideBand)
 }
 
 @js.native
@@ -21,7 +20,7 @@ object CLMLanguageCode {
   val `en-GB` = "en-GB".asInstanceOf[CLMLanguageCode]
   val `en-AU` = "en-AU".asInstanceOf[CLMLanguageCode]
 
-  @inline def values = js.Array(`en-US`, `hi-IN`, `es-US`, `en-GB`, `en-AU`)
+  @inline def values: js.Array[CLMLanguageCode] = js.Array(`en-US`, `hi-IN`, `es-US`, `en-GB`, `en-AU`)
 }
 
 @js.native
@@ -64,7 +63,44 @@ object LanguageCode {
   val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
   val `zh-CN` = "zh-CN".asInstanceOf[LanguageCode]
 
-  @inline def values = js.Array(`af-ZA`, `ar-AE`, `ar-SA`, `cy-GB`, `da-DK`, `de-CH`, `de-DE`, `en-AB`, `en-AU`, `en-GB`, `en-IE`, `en-IN`, `en-US`, `en-WL`, `es-ES`, `es-US`, `fa-IR`, `fr-CA`, `fr-FR`, `ga-IE`, `gd-GB`, `he-IL`, `hi-IN`, `id-ID`, `it-IT`, `ja-JP`, `ko-KR`, `ms-MY`, `nl-NL`, `pt-BR`, `pt-PT`, `ru-RU`, `ta-IN`, `te-IN`, `tr-TR`, `zh-CN`)
+  @inline def values: js.Array[LanguageCode] = js.Array(
+    `af-ZA`,
+    `ar-AE`,
+    `ar-SA`,
+    `cy-GB`,
+    `da-DK`,
+    `de-CH`,
+    `de-DE`,
+    `en-AB`,
+    `en-AU`,
+    `en-GB`,
+    `en-IE`,
+    `en-IN`,
+    `en-US`,
+    `en-WL`,
+    `es-ES`,
+    `es-US`,
+    `fa-IR`,
+    `fr-CA`,
+    `fr-FR`,
+    `ga-IE`,
+    `gd-GB`,
+    `he-IL`,
+    `hi-IN`,
+    `id-ID`,
+    `it-IT`,
+    `ja-JP`,
+    `ko-KR`,
+    `ms-MY`,
+    `nl-NL`,
+    `pt-BR`,
+    `pt-PT`,
+    `ru-RU`,
+    `ta-IN`,
+    `te-IN`,
+    `tr-TR`,
+    `zh-CN`
+  )
 }
 
 @js.native
@@ -78,7 +114,7 @@ object MediaFormat {
   val amr = "amr".asInstanceOf[MediaFormat]
   val webm = "webm".asInstanceOf[MediaFormat]
 
-  @inline def values = js.Array(mp3, mp4, wav, flac, ogg, amr, webm)
+  @inline def values: js.Array[MediaFormat] = js.Array(mp3, mp4, wav, flac, ogg, amr, webm)
 }
 
 @js.native
@@ -88,7 +124,7 @@ object ModelStatus {
   val FAILED = "FAILED".asInstanceOf[ModelStatus]
   val COMPLETED = "COMPLETED".asInstanceOf[ModelStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, FAILED, COMPLETED)
+  @inline def values: js.Array[ModelStatus] = js.Array(IN_PROGRESS, FAILED, COMPLETED)
 }
 
 @js.native
@@ -97,7 +133,7 @@ object OutputLocationType {
   val CUSTOMER_BUCKET = "CUSTOMER_BUCKET".asInstanceOf[OutputLocationType]
   val SERVICE_BUCKET = "SERVICE_BUCKET".asInstanceOf[OutputLocationType]
 
-  @inline def values = js.Array(CUSTOMER_BUCKET, SERVICE_BUCKET)
+  @inline def values: js.Array[OutputLocationType] = js.Array(CUSTOMER_BUCKET, SERVICE_BUCKET)
 }
 
 @js.native
@@ -106,7 +142,7 @@ object RedactionOutput {
   val redacted = "redacted".asInstanceOf[RedactionOutput]
   val redacted_and_unredacted = "redacted_and_unredacted".asInstanceOf[RedactionOutput]
 
-  @inline def values = js.Array(redacted, redacted_and_unredacted)
+  @inline def values: js.Array[RedactionOutput] = js.Array(redacted, redacted_and_unredacted)
 }
 
 @js.native
@@ -114,7 +150,7 @@ sealed trait RedactionType extends js.Any
 object RedactionType {
   val PII = "PII".asInstanceOf[RedactionType]
 
-  @inline def values = js.Array(PII)
+  @inline def values: js.Array[RedactionType] = js.Array(PII)
 }
 
 @js.native
@@ -122,7 +158,7 @@ sealed trait Specialty extends js.Any
 object Specialty {
   val PRIMARYCARE = "PRIMARYCARE".asInstanceOf[Specialty]
 
-  @inline def values = js.Array(PRIMARYCARE)
+  @inline def values: js.Array[Specialty] = js.Array(PRIMARYCARE)
 }
 
 @js.native
@@ -133,7 +169,7 @@ object TranscriptionJobStatus {
   val FAILED = "FAILED".asInstanceOf[TranscriptionJobStatus]
   val COMPLETED = "COMPLETED".asInstanceOf[TranscriptionJobStatus]
 
-  @inline def values = js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED)
+  @inline def values: js.Array[TranscriptionJobStatus] = js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED)
 }
 
 @js.native
@@ -142,7 +178,7 @@ object Type {
   val CONVERSATION = "CONVERSATION".asInstanceOf[Type]
   val DICTATION = "DICTATION".asInstanceOf[Type]
 
-  @inline def values = js.Array(CONVERSATION, DICTATION)
+  @inline def values: js.Array[Type] = js.Array(CONVERSATION, DICTATION)
 }
 
 @js.native
@@ -152,7 +188,7 @@ object VocabularyFilterMethod {
   val mask = "mask".asInstanceOf[VocabularyFilterMethod]
   val tag = "tag".asInstanceOf[VocabularyFilterMethod]
 
-  @inline def values = js.Array(remove, mask, tag)
+  @inline def values: js.Array[VocabularyFilterMethod] = js.Array(remove, mask, tag)
 }
 
 @js.native
@@ -162,6 +198,5 @@ object VocabularyState {
   val READY = "READY".asInstanceOf[VocabularyState]
   val FAILED = "FAILED".asInstanceOf[VocabularyState]
 
-  @inline def values = js.Array(PENDING, READY, FAILED)
+  @inline def values: js.Array[VocabularyState] = js.Array(PENDING, READY, FAILED)
 }
-

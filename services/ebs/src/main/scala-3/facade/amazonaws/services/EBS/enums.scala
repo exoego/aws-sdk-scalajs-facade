@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ebs
 
-import scalajs._
+import scalajs.js
 
 type ChecksumAggregationMethod = "LINEAR"
 object ChecksumAggregationMethod {

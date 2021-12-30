@@ -1,14 +1,13 @@
 package facade.amazonaws.services.computeoptimizer
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait EBSFilterName extends js.Any
 object EBSFilterName {
   val Finding = "Finding".asInstanceOf[EBSFilterName]
 
-  @inline def values = js.Array(Finding)
+  @inline def values: js.Array[EBSFilterName] = js.Array(Finding)
 }
 
 @js.native
@@ -17,7 +16,7 @@ object EBSFinding {
   val Optimized = "Optimized".asInstanceOf[EBSFinding]
   val NotOptimized = "NotOptimized".asInstanceOf[EBSFinding]
 
-  @inline def values = js.Array(Optimized, NotOptimized)
+  @inline def values: js.Array[EBSFinding] = js.Array(Optimized, NotOptimized)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object EBSMetricName {
   val VolumeReadBytesPerSecond = "VolumeReadBytesPerSecond".asInstanceOf[EBSMetricName]
   val VolumeWriteBytesPerSecond = "VolumeWriteBytesPerSecond".asInstanceOf[EBSMetricName]
 
-  @inline def values = js.Array(VolumeReadOpsPerSecond, VolumeWriteOpsPerSecond, VolumeReadBytesPerSecond, VolumeWriteBytesPerSecond)
+  @inline def values: js.Array[EBSMetricName] = js.Array(VolumeReadOpsPerSecond, VolumeWriteOpsPerSecond, VolumeReadBytesPerSecond, VolumeWriteBytesPerSecond)
 }
 
 @js.native
@@ -72,7 +71,45 @@ object ExportableAutoScalingGroupField {
   val RecommendationOptionsNetwork = "RecommendationOptionsNetwork".asInstanceOf[ExportableAutoScalingGroupField]
   val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableAutoScalingGroupField]
 
-  @inline def values = js.Array(AccountId, AutoScalingGroupArn, AutoScalingGroupName, Finding, UtilizationMetricsCpuMaximum, UtilizationMetricsMemoryMaximum, UtilizationMetricsEbsReadOpsPerSecondMaximum, UtilizationMetricsEbsWriteOpsPerSecondMaximum, UtilizationMetricsEbsReadBytesPerSecondMaximum, UtilizationMetricsEbsWriteBytesPerSecondMaximum, LookbackPeriodInDays, CurrentConfigurationInstanceType, CurrentConfigurationDesiredCapacity, CurrentConfigurationMinSize, CurrentConfigurationMaxSize, CurrentOnDemandPrice, CurrentStandardOneYearNoUpfrontReservedPrice, CurrentStandardThreeYearNoUpfrontReservedPrice, CurrentVCpus, CurrentMemory, CurrentStorage, CurrentNetwork, RecommendationOptionsConfigurationInstanceType, RecommendationOptionsConfigurationDesiredCapacity, RecommendationOptionsConfigurationMinSize, RecommendationOptionsConfigurationMaxSize, RecommendationOptionsProjectedUtilizationMetricsCpuMaximum, RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum, RecommendationOptionsPerformanceRisk, RecommendationOptionsOnDemandPrice, RecommendationOptionsStandardOneYearNoUpfrontReservedPrice, RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice, RecommendationOptionsVcpus, RecommendationOptionsMemory, RecommendationOptionsStorage, RecommendationOptionsNetwork, LastRefreshTimestamp)
+  @inline def values: js.Array[ExportableAutoScalingGroupField] = js.Array(
+    AccountId,
+    AutoScalingGroupArn,
+    AutoScalingGroupName,
+    Finding,
+    UtilizationMetricsCpuMaximum,
+    UtilizationMetricsMemoryMaximum,
+    UtilizationMetricsEbsReadOpsPerSecondMaximum,
+    UtilizationMetricsEbsWriteOpsPerSecondMaximum,
+    UtilizationMetricsEbsReadBytesPerSecondMaximum,
+    UtilizationMetricsEbsWriteBytesPerSecondMaximum,
+    LookbackPeriodInDays,
+    CurrentConfigurationInstanceType,
+    CurrentConfigurationDesiredCapacity,
+    CurrentConfigurationMinSize,
+    CurrentConfigurationMaxSize,
+    CurrentOnDemandPrice,
+    CurrentStandardOneYearNoUpfrontReservedPrice,
+    CurrentStandardThreeYearNoUpfrontReservedPrice,
+    CurrentVCpus,
+    CurrentMemory,
+    CurrentStorage,
+    CurrentNetwork,
+    RecommendationOptionsConfigurationInstanceType,
+    RecommendationOptionsConfigurationDesiredCapacity,
+    RecommendationOptionsConfigurationMinSize,
+    RecommendationOptionsConfigurationMaxSize,
+    RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+    RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+    RecommendationOptionsPerformanceRisk,
+    RecommendationOptionsOnDemandPrice,
+    RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+    RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+    RecommendationOptionsVcpus,
+    RecommendationOptionsMemory,
+    RecommendationOptionsStorage,
+    RecommendationOptionsNetwork,
+    LastRefreshTimestamp
+  )
 }
 
 @js.native
@@ -112,7 +149,41 @@ object ExportableInstanceField {
   val RecommendationsSourcesRecommendationSourceType = "RecommendationsSourcesRecommendationSourceType".asInstanceOf[ExportableInstanceField]
   val LastRefreshTimestamp = "LastRefreshTimestamp".asInstanceOf[ExportableInstanceField]
 
-  @inline def values = js.Array(AccountId, InstanceArn, InstanceName, Finding, LookbackPeriodInDays, CurrentInstanceType, UtilizationMetricsCpuMaximum, UtilizationMetricsMemoryMaximum, UtilizationMetricsEbsReadOpsPerSecondMaximum, UtilizationMetricsEbsWriteOpsPerSecondMaximum, UtilizationMetricsEbsReadBytesPerSecondMaximum, UtilizationMetricsEbsWriteBytesPerSecondMaximum, CurrentOnDemandPrice, CurrentStandardOneYearNoUpfrontReservedPrice, CurrentStandardThreeYearNoUpfrontReservedPrice, CurrentVCpus, CurrentMemory, CurrentStorage, CurrentNetwork, RecommendationOptionsInstanceType, RecommendationOptionsProjectedUtilizationMetricsCpuMaximum, RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum, RecommendationOptionsPerformanceRisk, RecommendationOptionsVcpus, RecommendationOptionsMemory, RecommendationOptionsStorage, RecommendationOptionsNetwork, RecommendationOptionsOnDemandPrice, RecommendationOptionsStandardOneYearNoUpfrontReservedPrice, RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice, RecommendationsSourcesRecommendationSourceArn, RecommendationsSourcesRecommendationSourceType, LastRefreshTimestamp)
+  @inline def values: js.Array[ExportableInstanceField] = js.Array(
+    AccountId,
+    InstanceArn,
+    InstanceName,
+    Finding,
+    LookbackPeriodInDays,
+    CurrentInstanceType,
+    UtilizationMetricsCpuMaximum,
+    UtilizationMetricsMemoryMaximum,
+    UtilizationMetricsEbsReadOpsPerSecondMaximum,
+    UtilizationMetricsEbsWriteOpsPerSecondMaximum,
+    UtilizationMetricsEbsReadBytesPerSecondMaximum,
+    UtilizationMetricsEbsWriteBytesPerSecondMaximum,
+    CurrentOnDemandPrice,
+    CurrentStandardOneYearNoUpfrontReservedPrice,
+    CurrentStandardThreeYearNoUpfrontReservedPrice,
+    CurrentVCpus,
+    CurrentMemory,
+    CurrentStorage,
+    CurrentNetwork,
+    RecommendationOptionsInstanceType,
+    RecommendationOptionsProjectedUtilizationMetricsCpuMaximum,
+    RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum,
+    RecommendationOptionsPerformanceRisk,
+    RecommendationOptionsVcpus,
+    RecommendationOptionsMemory,
+    RecommendationOptionsStorage,
+    RecommendationOptionsNetwork,
+    RecommendationOptionsOnDemandPrice,
+    RecommendationOptionsStandardOneYearNoUpfrontReservedPrice,
+    RecommendationOptionsStandardThreeYearNoUpfrontReservedPrice,
+    RecommendationsSourcesRecommendationSourceArn,
+    RecommendationsSourcesRecommendationSourceType,
+    LastRefreshTimestamp
+  )
 }
 
 @js.native
@@ -120,7 +191,7 @@ sealed trait FileFormat extends js.Any
 object FileFormat {
   val Csv = "Csv".asInstanceOf[FileFormat]
 
-  @inline def values = js.Array(Csv)
+  @inline def values: js.Array[FileFormat] = js.Array(Csv)
 }
 
 @js.native
@@ -129,7 +200,7 @@ object FilterName {
   val Finding = "Finding".asInstanceOf[FilterName]
   val RecommendationSourceType = "RecommendationSourceType".asInstanceOf[FilterName]
 
-  @inline def values = js.Array(Finding, RecommendationSourceType)
+  @inline def values: js.Array[FilterName] = js.Array(Finding, RecommendationSourceType)
 }
 
 @js.native
@@ -140,7 +211,7 @@ object Finding {
   val Optimized = "Optimized".asInstanceOf[Finding]
   val NotOptimized = "NotOptimized".asInstanceOf[Finding]
 
-  @inline def values = js.Array(Underprovisioned, Overprovisioned, Optimized, NotOptimized)
+  @inline def values: js.Array[Finding] = js.Array(Underprovisioned, Overprovisioned, Optimized, NotOptimized)
 }
 
 @js.native
@@ -149,7 +220,7 @@ object FindingReasonCode {
   val MemoryOverprovisioned = "MemoryOverprovisioned".asInstanceOf[FindingReasonCode]
   val MemoryUnderprovisioned = "MemoryUnderprovisioned".asInstanceOf[FindingReasonCode]
 
-  @inline def values = js.Array(MemoryOverprovisioned, MemoryUnderprovisioned)
+  @inline def values: js.Array[FindingReasonCode] = js.Array(MemoryOverprovisioned, MemoryUnderprovisioned)
 }
 
 @js.native
@@ -158,7 +229,7 @@ object JobFilterName {
   val ResourceType = "ResourceType".asInstanceOf[JobFilterName]
   val JobStatus = "JobStatus".asInstanceOf[JobFilterName]
 
-  @inline def values = js.Array(ResourceType, JobStatus)
+  @inline def values: js.Array[JobFilterName] = js.Array(ResourceType, JobStatus)
 }
 
 @js.native
@@ -169,7 +240,7 @@ object JobStatus {
   val Complete = "Complete".asInstanceOf[JobStatus]
   val Failed = "Failed".asInstanceOf[JobStatus]
 
-  @inline def values = js.Array(Queued, InProgress, Complete, Failed)
+  @inline def values: js.Array[JobStatus] = js.Array(Queued, InProgress, Complete, Failed)
 }
 
 @js.native
@@ -177,7 +248,7 @@ sealed trait LambdaFunctionMemoryMetricName extends js.Any
 object LambdaFunctionMemoryMetricName {
   val Duration = "Duration".asInstanceOf[LambdaFunctionMemoryMetricName]
 
-  @inline def values = js.Array(Duration)
+  @inline def values: js.Array[LambdaFunctionMemoryMetricName] = js.Array(Duration)
 }
 
 @js.native
@@ -187,7 +258,7 @@ object LambdaFunctionMemoryMetricStatistic {
   val UpperBound = "UpperBound".asInstanceOf[LambdaFunctionMemoryMetricStatistic]
   val Expected = "Expected".asInstanceOf[LambdaFunctionMemoryMetricStatistic]
 
-  @inline def values = js.Array(LowerBound, UpperBound, Expected)
+  @inline def values: js.Array[LambdaFunctionMemoryMetricStatistic] = js.Array(LowerBound, UpperBound, Expected)
 }
 
 @js.native
@@ -196,7 +267,7 @@ object LambdaFunctionMetricName {
   val Duration = "Duration".asInstanceOf[LambdaFunctionMetricName]
   val Memory = "Memory".asInstanceOf[LambdaFunctionMetricName]
 
-  @inline def values = js.Array(Duration, Memory)
+  @inline def values: js.Array[LambdaFunctionMetricName] = js.Array(Duration, Memory)
 }
 
 @js.native
@@ -205,7 +276,7 @@ object LambdaFunctionMetricStatistic {
   val Maximum = "Maximum".asInstanceOf[LambdaFunctionMetricStatistic]
   val Average = "Average".asInstanceOf[LambdaFunctionMetricStatistic]
 
-  @inline def values = js.Array(Maximum, Average)
+  @inline def values: js.Array[LambdaFunctionMetricStatistic] = js.Array(Maximum, Average)
 }
 
 @js.native
@@ -214,7 +285,7 @@ object LambdaFunctionRecommendationFilterName {
   val Finding = "Finding".asInstanceOf[LambdaFunctionRecommendationFilterName]
   val FindingReasonCode = "FindingReasonCode".asInstanceOf[LambdaFunctionRecommendationFilterName]
 
-  @inline def values = js.Array(Finding, FindingReasonCode)
+  @inline def values: js.Array[LambdaFunctionRecommendationFilterName] = js.Array(Finding, FindingReasonCode)
 }
 
 @js.native
@@ -224,7 +295,7 @@ object LambdaFunctionRecommendationFinding {
   val NotOptimized = "NotOptimized".asInstanceOf[LambdaFunctionRecommendationFinding]
   val Unavailable = "Unavailable".asInstanceOf[LambdaFunctionRecommendationFinding]
 
-  @inline def values = js.Array(Optimized, NotOptimized, Unavailable)
+  @inline def values: js.Array[LambdaFunctionRecommendationFinding] = js.Array(Optimized, NotOptimized, Unavailable)
 }
 
 @js.native
@@ -235,7 +306,7 @@ object LambdaFunctionRecommendationFindingReasonCode {
   val InsufficientData = "InsufficientData".asInstanceOf[LambdaFunctionRecommendationFindingReasonCode]
   val Inconclusive = "Inconclusive".asInstanceOf[LambdaFunctionRecommendationFindingReasonCode]
 
-  @inline def values = js.Array(MemoryOverprovisioned, MemoryUnderprovisioned, InsufficientData, Inconclusive)
+  @inline def values: js.Array[LambdaFunctionRecommendationFindingReasonCode] = js.Array(MemoryOverprovisioned, MemoryUnderprovisioned, InsufficientData, Inconclusive)
 }
 
 @js.native
@@ -248,7 +319,7 @@ object MetricName {
   val EBS_READ_BYTES_PER_SECOND = "EBS_READ_BYTES_PER_SECOND".asInstanceOf[MetricName]
   val EBS_WRITE_BYTES_PER_SECOND = "EBS_WRITE_BYTES_PER_SECOND".asInstanceOf[MetricName]
 
-  @inline def values = js.Array(Cpu, Memory, EBS_READ_OPS_PER_SECOND, EBS_WRITE_OPS_PER_SECOND, EBS_READ_BYTES_PER_SECOND, EBS_WRITE_BYTES_PER_SECOND)
+  @inline def values: js.Array[MetricName] = js.Array(Cpu, Memory, EBS_READ_OPS_PER_SECOND, EBS_WRITE_OPS_PER_SECOND, EBS_READ_BYTES_PER_SECOND, EBS_WRITE_BYTES_PER_SECOND)
 }
 
 @js.native
@@ -257,7 +328,7 @@ object MetricStatistic {
   val Maximum = "Maximum".asInstanceOf[MetricStatistic]
   val Average = "Average".asInstanceOf[MetricStatistic]
 
-  @inline def values = js.Array(Maximum, Average)
+  @inline def values: js.Array[MetricStatistic] = js.Array(Maximum, Average)
 }
 
 @js.native
@@ -268,7 +339,7 @@ object RecommendationSourceType {
   val EbsVolume = "EbsVolume".asInstanceOf[RecommendationSourceType]
   val LambdaFunction = "LambdaFunction".asInstanceOf[RecommendationSourceType]
 
-  @inline def values = js.Array(Ec2Instance, AutoScalingGroup, EbsVolume, LambdaFunction)
+  @inline def values: js.Array[RecommendationSourceType] = js.Array(Ec2Instance, AutoScalingGroup, EbsVolume, LambdaFunction)
 }
 
 @js.native
@@ -277,7 +348,7 @@ object ResourceType {
   val Ec2Instance = "Ec2Instance".asInstanceOf[ResourceType]
   val AutoScalingGroup = "AutoScalingGroup".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(Ec2Instance, AutoScalingGroup)
+  @inline def values: js.Array[ResourceType] = js.Array(Ec2Instance, AutoScalingGroup)
 }
 
 @js.native
@@ -288,6 +359,5 @@ object Status {
   val Pending = "Pending".asInstanceOf[Status]
   val Failed = "Failed".asInstanceOf[Status]
 
-  @inline def values = js.Array(Active, Inactive, Pending, Failed)
+  @inline def values: js.Array[Status] = js.Array(Active, Inactive, Pending, Failed)
 }
-

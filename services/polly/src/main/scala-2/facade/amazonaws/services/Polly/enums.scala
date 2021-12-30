@@ -1,7 +1,6 @@
 package facade.amazonaws.services.polly
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait Engine extends js.Any
@@ -9,7 +8,7 @@ object Engine {
   val standard = "standard".asInstanceOf[Engine]
   val neural = "neural".asInstanceOf[Engine]
 
-  @inline def values = js.Array(standard, neural)
+  @inline def values: js.Array[Engine] = js.Array(standard, neural)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object Gender {
   val Female = "Female".asInstanceOf[Gender]
   val Male = "Male".asInstanceOf[Gender]
 
-  @inline def values = js.Array(Female, Male)
+  @inline def values: js.Array[Gender] = js.Array(Female, Male)
 }
 
 @js.native
@@ -54,7 +53,37 @@ object LanguageCode {
   val `sv-SE` = "sv-SE".asInstanceOf[LanguageCode]
   val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
 
-  @inline def values = js.Array(arb, `cmn-CN`, `cy-GB`, `da-DK`, `de-DE`, `en-AU`, `en-GB`, `en-GB-WLS`, `en-IN`, `en-US`, `es-ES`, `es-MX`, `es-US`, `fr-CA`, `fr-FR`, `is-IS`, `it-IT`, `ja-JP`, `hi-IN`, `ko-KR`, `nb-NO`, `nl-NL`, `pl-PL`, `pt-BR`, `pt-PT`, `ro-RO`, `ru-RU`, `sv-SE`, `tr-TR`)
+  @inline def values: js.Array[LanguageCode] = js.Array(
+    arb,
+    `cmn-CN`,
+    `cy-GB`,
+    `da-DK`,
+    `de-DE`,
+    `en-AU`,
+    `en-GB`,
+    `en-GB-WLS`,
+    `en-IN`,
+    `en-US`,
+    `es-ES`,
+    `es-MX`,
+    `es-US`,
+    `fr-CA`,
+    `fr-FR`,
+    `is-IS`,
+    `it-IT`,
+    `ja-JP`,
+    `hi-IN`,
+    `ko-KR`,
+    `nb-NO`,
+    `nl-NL`,
+    `pl-PL`,
+    `pt-BR`,
+    `pt-PT`,
+    `ro-RO`,
+    `ru-RU`,
+    `sv-SE`,
+    `tr-TR`
+  )
 }
 
 @js.native
@@ -65,7 +94,7 @@ object OutputFormat {
   val ogg_vorbis = "ogg_vorbis".asInstanceOf[OutputFormat]
   val pcm = "pcm".asInstanceOf[OutputFormat]
 
-  @inline def values = js.Array(json, mp3, ogg_vorbis, pcm)
+  @inline def values: js.Array[OutputFormat] = js.Array(json, mp3, ogg_vorbis, pcm)
 }
 
 @js.native
@@ -76,7 +105,7 @@ object SpeechMarkType {
   val viseme = "viseme".asInstanceOf[SpeechMarkType]
   val word = "word".asInstanceOf[SpeechMarkType]
 
-  @inline def values = js.Array(sentence, ssml, viseme, word)
+  @inline def values: js.Array[SpeechMarkType] = js.Array(sentence, ssml, viseme, word)
 }
 
 @js.native
@@ -87,7 +116,7 @@ object TaskStatus {
   val completed = "completed".asInstanceOf[TaskStatus]
   val failed = "failed".asInstanceOf[TaskStatus]
 
-  @inline def values = js.Array(scheduled, inProgress, completed, failed)
+  @inline def values: js.Array[TaskStatus] = js.Array(scheduled, inProgress, completed, failed)
 }
 
 @js.native
@@ -96,7 +125,7 @@ object TextType {
   val ssml = "ssml".asInstanceOf[TextType]
   val text = "text".asInstanceOf[TextType]
 
-  @inline def values = js.Array(ssml, text)
+  @inline def values: js.Array[TextType] = js.Array(ssml, text)
 }
 
 @js.native
@@ -165,6 +194,68 @@ object VoiceId {
   val Zeina = "Zeina".asInstanceOf[VoiceId]
   val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
 
-  @inline def values = js.Array(Aditi, Amy, Astrid, Bianca, Brian, Camila, Carla, Carmen, Celine, Chantal, Conchita, Cristiano, Dora, Emma, Enrique, Ewa, Filiz, Geraint, Giorgio, Gwyneth, Hans, Ines, Ivy, Jacek, Jan, Joanna, Joey, Justin, Karl, Kendra, Kevin, Kimberly, Lea, Liv, Lotte, Lucia, Lupe, Mads, Maja, Marlene, Mathieu, Matthew, Maxim, Mia, Miguel, Mizuki, Naja, Nicole, Olivia, Penelope, Raveena, Ricardo, Ruben, Russell, Salli, Seoyeon, Takumi, Tatyana, Vicki, Vitoria, Zeina, Zhiyu)
+  @inline def values: js.Array[VoiceId] = js.Array(
+    Aditi,
+    Amy,
+    Astrid,
+    Bianca,
+    Brian,
+    Camila,
+    Carla,
+    Carmen,
+    Celine,
+    Chantal,
+    Conchita,
+    Cristiano,
+    Dora,
+    Emma,
+    Enrique,
+    Ewa,
+    Filiz,
+    Geraint,
+    Giorgio,
+    Gwyneth,
+    Hans,
+    Ines,
+    Ivy,
+    Jacek,
+    Jan,
+    Joanna,
+    Joey,
+    Justin,
+    Karl,
+    Kendra,
+    Kevin,
+    Kimberly,
+    Lea,
+    Liv,
+    Lotte,
+    Lucia,
+    Lupe,
+    Mads,
+    Maja,
+    Marlene,
+    Mathieu,
+    Matthew,
+    Maxim,
+    Mia,
+    Miguel,
+    Mizuki,
+    Naja,
+    Nicole,
+    Olivia,
+    Penelope,
+    Raveena,
+    Ricardo,
+    Ruben,
+    Russell,
+    Salli,
+    Seoyeon,
+    Takumi,
+    Tatyana,
+    Vicki,
+    Vitoria,
+    Zeina,
+    Zhiyu
+  )
 }
-

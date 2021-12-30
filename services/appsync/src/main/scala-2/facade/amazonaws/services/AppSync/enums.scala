@@ -1,7 +1,6 @@
 package facade.amazonaws.services.appsync
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ApiCacheStatus extends js.Any
@@ -12,7 +11,7 @@ object ApiCacheStatus {
   val MODIFYING = "MODIFYING".asInstanceOf[ApiCacheStatus]
   val FAILED = "FAILED".asInstanceOf[ApiCacheStatus]
 
-  @inline def values = js.Array(AVAILABLE, CREATING, DELETING, MODIFYING, FAILED)
+  @inline def values: js.Array[ApiCacheStatus] = js.Array(AVAILABLE, CREATING, DELETING, MODIFYING, FAILED)
 }
 
 @js.native
@@ -34,7 +33,7 @@ object ApiCacheType {
   val LARGE_8X = "LARGE_8X".asInstanceOf[ApiCacheType]
   val LARGE_12X = "LARGE_12X".asInstanceOf[ApiCacheType]
 
-  @inline def values = js.Array(T2_SMALL, T2_MEDIUM, R4_LARGE, R4_XLARGE, R4_2XLARGE, R4_4XLARGE, R4_8XLARGE, SMALL, MEDIUM, LARGE, XLARGE, LARGE_2X, LARGE_4X, LARGE_8X, LARGE_12X)
+  @inline def values: js.Array[ApiCacheType] = js.Array(T2_SMALL, T2_MEDIUM, R4_LARGE, R4_XLARGE, R4_2XLARGE, R4_4XLARGE, R4_8XLARGE, SMALL, MEDIUM, LARGE, XLARGE, LARGE_2X, LARGE_4X, LARGE_8X, LARGE_12X)
 }
 
 @js.native
@@ -43,7 +42,7 @@ object ApiCachingBehavior {
   val FULL_REQUEST_CACHING = "FULL_REQUEST_CACHING".asInstanceOf[ApiCachingBehavior]
   val PER_RESOLVER_CACHING = "PER_RESOLVER_CACHING".asInstanceOf[ApiCachingBehavior]
 
-  @inline def values = js.Array(FULL_REQUEST_CACHING, PER_RESOLVER_CACHING)
+  @inline def values: js.Array[ApiCachingBehavior] = js.Array(FULL_REQUEST_CACHING, PER_RESOLVER_CACHING)
 }
 
 @js.native
@@ -54,7 +53,7 @@ object AuthenticationType {
   val AMAZON_COGNITO_USER_POOLS = "AMAZON_COGNITO_USER_POOLS".asInstanceOf[AuthenticationType]
   val OPENID_CONNECT = "OPENID_CONNECT".asInstanceOf[AuthenticationType]
 
-  @inline def values = js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT)
+  @inline def values: js.Array[AuthenticationType] = js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT)
 }
 
 @js.native
@@ -62,7 +61,7 @@ sealed trait AuthorizationType extends js.Any
 object AuthorizationType {
   val AWS_IAM = "AWS_IAM".asInstanceOf[AuthorizationType]
 
-  @inline def values = js.Array(AWS_IAM)
+  @inline def values: js.Array[AuthorizationType] = js.Array(AWS_IAM)
 }
 
 @js.native
@@ -71,7 +70,7 @@ object ConflictDetectionType {
   val VERSION = "VERSION".asInstanceOf[ConflictDetectionType]
   val NONE = "NONE".asInstanceOf[ConflictDetectionType]
 
-  @inline def values = js.Array(VERSION, NONE)
+  @inline def values: js.Array[ConflictDetectionType] = js.Array(VERSION, NONE)
 }
 
 @js.native
@@ -82,7 +81,7 @@ object ConflictHandlerType {
   val AUTOMERGE = "AUTOMERGE".asInstanceOf[ConflictHandlerType]
   val NONE = "NONE".asInstanceOf[ConflictHandlerType]
 
-  @inline def values = js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE)
+  @inline def values: js.Array[ConflictHandlerType] = js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE)
 }
 
 @js.native
@@ -95,7 +94,7 @@ object DataSourceType {
   val HTTP = "HTTP".asInstanceOf[DataSourceType]
   val RELATIONAL_DATABASE = "RELATIONAL_DATABASE".asInstanceOf[DataSourceType]
 
-  @inline def values = js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE)
+  @inline def values: js.Array[DataSourceType] = js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE)
 }
 
 @js.native
@@ -104,7 +103,7 @@ object DefaultAction {
   val ALLOW = "ALLOW".asInstanceOf[DefaultAction]
   val DENY = "DENY".asInstanceOf[DefaultAction]
 
-  @inline def values = js.Array(ALLOW, DENY)
+  @inline def values: js.Array[DefaultAction] = js.Array(ALLOW, DENY)
 }
 
 @js.native
@@ -114,7 +113,7 @@ object FieldLogLevel {
   val ERROR = "ERROR".asInstanceOf[FieldLogLevel]
   val ALL = "ALL".asInstanceOf[FieldLogLevel]
 
-  @inline def values = js.Array(NONE, ERROR, ALL)
+  @inline def values: js.Array[FieldLogLevel] = js.Array(NONE, ERROR, ALL)
 }
 
 @js.native
@@ -123,7 +122,7 @@ object OutputType {
   val SDL = "SDL".asInstanceOf[OutputType]
   val JSON = "JSON".asInstanceOf[OutputType]
 
-  @inline def values = js.Array(SDL, JSON)
+  @inline def values: js.Array[OutputType] = js.Array(SDL, JSON)
 }
 
 @js.native
@@ -131,7 +130,7 @@ sealed trait RelationalDatabaseSourceType extends js.Any
 object RelationalDatabaseSourceType {
   val RDS_HTTP_ENDPOINT = "RDS_HTTP_ENDPOINT".asInstanceOf[RelationalDatabaseSourceType]
 
-  @inline def values = js.Array(RDS_HTTP_ENDPOINT)
+  @inline def values: js.Array[RelationalDatabaseSourceType] = js.Array(RDS_HTTP_ENDPOINT)
 }
 
 @js.native
@@ -140,7 +139,7 @@ object ResolverKind {
   val UNIT = "UNIT".asInstanceOf[ResolverKind]
   val PIPELINE = "PIPELINE".asInstanceOf[ResolverKind]
 
-  @inline def values = js.Array(UNIT, PIPELINE)
+  @inline def values: js.Array[ResolverKind] = js.Array(UNIT, PIPELINE)
 }
 
 @js.native
@@ -153,7 +152,7 @@ object SchemaStatus {
   val SUCCESS = "SUCCESS".asInstanceOf[SchemaStatus]
   val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[SchemaStatus]
 
-  @inline def values = js.Array(PROCESSING, ACTIVE, DELETING, FAILED, SUCCESS, NOT_APPLICABLE)
+  @inline def values: js.Array[SchemaStatus] = js.Array(PROCESSING, ACTIVE, DELETING, FAILED, SUCCESS, NOT_APPLICABLE)
 }
 
 @js.native
@@ -162,6 +161,5 @@ object TypeDefinitionFormat {
   val SDL = "SDL".asInstanceOf[TypeDefinitionFormat]
   val JSON = "JSON".asInstanceOf[TypeDefinitionFormat]
 
-  @inline def values = js.Array(SDL, JSON)
+  @inline def values: js.Array[TypeDefinitionFormat] = js.Array(SDL, JSON)
 }
-

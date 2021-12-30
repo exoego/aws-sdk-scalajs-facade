@@ -1,6 +1,6 @@
 package facade.amazonaws.services.s3
 
-import scalajs._
+import scalajs.js
 
 type AnalyticsS3ExportFileFormat = "CSV"
 object AnalyticsS3ExportFileFormat {

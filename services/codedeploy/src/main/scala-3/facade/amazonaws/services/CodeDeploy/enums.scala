@@ -1,6 +1,6 @@
 package facade.amazonaws.services.codedeploy
 
-import scalajs._
+import scalajs.js
 
 type ApplicationRevisionSortBy = "registerTime" | "firstUsedTime" | "lastUsedTime"
 object ApplicationRevisionSortBy {

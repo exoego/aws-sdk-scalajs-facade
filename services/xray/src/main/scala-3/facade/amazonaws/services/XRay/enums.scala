@@ -1,6 +1,6 @@
 package facade.amazonaws.services.xray
 
-import scalajs._
+import scalajs.js
 
 type EncryptionStatus = "UPDATING" | "ACTIVE"
 object EncryptionStatus {

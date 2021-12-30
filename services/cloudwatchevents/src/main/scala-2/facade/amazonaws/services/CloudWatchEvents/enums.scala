@@ -1,7 +1,6 @@
 package facade.amazonaws.services.cloudwatchevents
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ApiDestinationHttpMethod extends js.Any
@@ -14,7 +13,7 @@ object ApiDestinationHttpMethod {
   val PATCH = "PATCH".asInstanceOf[ApiDestinationHttpMethod]
   val DELETE = "DELETE".asInstanceOf[ApiDestinationHttpMethod]
 
-  @inline def values = js.Array(POST, GET, HEAD, OPTIONS, PUT, PATCH, DELETE)
+  @inline def values: js.Array[ApiDestinationHttpMethod] = js.Array(POST, GET, HEAD, OPTIONS, PUT, PATCH, DELETE)
 }
 
 @js.native
@@ -23,7 +22,7 @@ object ApiDestinationState {
   val ACTIVE = "ACTIVE".asInstanceOf[ApiDestinationState]
   val INACTIVE = "INACTIVE".asInstanceOf[ApiDestinationState]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values: js.Array[ApiDestinationState] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native
@@ -36,7 +35,7 @@ object ArchiveState {
   val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ArchiveState]
   val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ArchiveState]
 
-  @inline def values = js.Array(ENABLED, DISABLED, CREATING, UPDATING, CREATE_FAILED, UPDATE_FAILED)
+  @inline def values: js.Array[ArchiveState] = js.Array(ENABLED, DISABLED, CREATING, UPDATING, CREATE_FAILED, UPDATE_FAILED)
 }
 
 @js.native
@@ -45,7 +44,7 @@ object AssignPublicIp {
   val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
   val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[AssignPublicIp] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -55,7 +54,7 @@ object ConnectionAuthorizationType {
   val OAUTH_CLIENT_CREDENTIALS = "OAUTH_CLIENT_CREDENTIALS".asInstanceOf[ConnectionAuthorizationType]
   val API_KEY = "API_KEY".asInstanceOf[ConnectionAuthorizationType]
 
-  @inline def values = js.Array(BASIC, OAUTH_CLIENT_CREDENTIALS, API_KEY)
+  @inline def values: js.Array[ConnectionAuthorizationType] = js.Array(BASIC, OAUTH_CLIENT_CREDENTIALS, API_KEY)
 }
 
 @js.native
@@ -65,7 +64,7 @@ object ConnectionOAuthHttpMethod {
   val POST = "POST".asInstanceOf[ConnectionOAuthHttpMethod]
   val PUT = "PUT".asInstanceOf[ConnectionOAuthHttpMethod]
 
-  @inline def values = js.Array(GET, POST, PUT)
+  @inline def values: js.Array[ConnectionOAuthHttpMethod] = js.Array(GET, POST, PUT)
 }
 
 @js.native
@@ -79,7 +78,7 @@ object ConnectionState {
   val AUTHORIZING = "AUTHORIZING".asInstanceOf[ConnectionState]
   val DEAUTHORIZING = "DEAUTHORIZING".asInstanceOf[ConnectionState]
 
-  @inline def values = js.Array(CREATING, UPDATING, DELETING, AUTHORIZED, DEAUTHORIZED, AUTHORIZING, DEAUTHORIZING)
+  @inline def values: js.Array[ConnectionState] = js.Array(CREATING, UPDATING, DELETING, AUTHORIZED, DEAUTHORIZED, AUTHORIZING, DEAUTHORIZING)
 }
 
 @js.native
@@ -89,7 +88,7 @@ object EventSourceState {
   val ACTIVE = "ACTIVE".asInstanceOf[EventSourceState]
   val DELETED = "DELETED".asInstanceOf[EventSourceState]
 
-  @inline def values = js.Array(PENDING, ACTIVE, DELETED)
+  @inline def values: js.Array[EventSourceState] = js.Array(PENDING, ACTIVE, DELETED)
 }
 
 @js.native
@@ -98,7 +97,7 @@ object LaunchType {
   val EC2 = "EC2".asInstanceOf[LaunchType]
   val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
-  @inline def values = js.Array(EC2, FARGATE)
+  @inline def values: js.Array[LaunchType] = js.Array(EC2, FARGATE)
 }
 
 @js.native
@@ -111,7 +110,7 @@ object ReplayState {
   val CANCELLED = "CANCELLED".asInstanceOf[ReplayState]
   val FAILED = "FAILED".asInstanceOf[ReplayState]
 
-  @inline def values = js.Array(STARTING, RUNNING, CANCELLING, COMPLETED, CANCELLED, FAILED)
+  @inline def values: js.Array[ReplayState] = js.Array(STARTING, RUNNING, CANCELLING, COMPLETED, CANCELLED, FAILED)
 }
 
 @js.native
@@ -120,6 +119,5 @@ object RuleState {
   val ENABLED = "ENABLED".asInstanceOf[RuleState]
   val DISABLED = "DISABLED".asInstanceOf[RuleState]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[RuleState] = js.Array(ENABLED, DISABLED)
 }
-

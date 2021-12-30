@@ -1,6 +1,6 @@
 package facade.amazonaws.services.codeartifact
 
-import scalajs._
+import scalajs.js
 
 type DomainStatus = "Active" | "Deleted"
 object DomainStatus {

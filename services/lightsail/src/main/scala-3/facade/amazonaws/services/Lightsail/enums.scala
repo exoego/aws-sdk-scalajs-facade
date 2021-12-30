@@ -1,6 +1,6 @@
 package facade.amazonaws.services.lightsail
 
-import scalajs._
+import scalajs.js
 
 type AccessDirection = "inbound" | "outbound"
 object AccessDirection {

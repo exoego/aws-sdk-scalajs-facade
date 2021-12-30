@@ -1,6 +1,6 @@
 package facade.amazonaws.services.route53
 
-import scalajs._
+import scalajs.js
 
 type AccountLimitType = "MAX_HEALTH_CHECKS_BY_OWNER" | "MAX_HOSTED_ZONES_BY_OWNER" | "MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER" | "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER" | "MAX_TRAFFIC_POLICIES_BY_OWNER"
 object AccountLimitType {

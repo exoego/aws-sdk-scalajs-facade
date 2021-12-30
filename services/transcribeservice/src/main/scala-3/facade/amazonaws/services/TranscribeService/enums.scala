@@ -1,6 +1,6 @@
 package facade.amazonaws.services.transcribeservice
 
-import scalajs._
+import scalajs.js
 
 type BaseModelName = "NarrowBand" | "WideBand"
 object BaseModelName {
