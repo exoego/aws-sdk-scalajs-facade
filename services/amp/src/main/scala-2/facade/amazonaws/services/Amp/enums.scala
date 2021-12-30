@@ -1,7 +1,6 @@
 package facade.amazonaws.services.amp
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 /** State of a workspace.
   */
@@ -14,6 +13,5 @@ object WorkspaceStatusCode {
   val DELETING = "DELETING".asInstanceOf[WorkspaceStatusCode]
   val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[WorkspaceStatusCode]
 
-  @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATION_FAILED)
+  @inline def values: js.Array[WorkspaceStatusCode] = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATION_FAILED)
 }
-

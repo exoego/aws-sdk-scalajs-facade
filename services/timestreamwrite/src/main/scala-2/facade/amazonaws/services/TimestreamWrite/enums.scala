@@ -1,14 +1,13 @@
 package facade.amazonaws.services.timestreamwrite
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DimensionValueType extends js.Any
 object DimensionValueType {
   val VARCHAR = "VARCHAR".asInstanceOf[DimensionValueType]
 
-  @inline def values = js.Array(VARCHAR)
+  @inline def values: js.Array[DimensionValueType] = js.Array(VARCHAR)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object MeasureValueType {
   val VARCHAR = "VARCHAR".asInstanceOf[MeasureValueType]
   val BOOLEAN = "BOOLEAN".asInstanceOf[MeasureValueType]
 
-  @inline def values = js.Array(DOUBLE, BIGINT, VARCHAR, BOOLEAN)
+  @inline def values: js.Array[MeasureValueType] = js.Array(DOUBLE, BIGINT, VARCHAR, BOOLEAN)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object TableStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[TableStatus]
   val DELETING = "DELETING".asInstanceOf[TableStatus]
 
-  @inline def values = js.Array(ACTIVE, DELETING)
+  @inline def values: js.Array[TableStatus] = js.Array(ACTIVE, DELETING)
 }
 
 @js.native
@@ -39,6 +38,5 @@ object TimeUnit {
   val MICROSECONDS = "MICROSECONDS".asInstanceOf[TimeUnit]
   val NANOSECONDS = "NANOSECONDS".asInstanceOf[TimeUnit]
 
-  @inline def values = js.Array(MILLISECONDS, SECONDS, MICROSECONDS, NANOSECONDS)
+  @inline def values: js.Array[TimeUnit] = js.Array(MILLISECONDS, SECONDS, MICROSECONDS, NANOSECONDS)
 }
-

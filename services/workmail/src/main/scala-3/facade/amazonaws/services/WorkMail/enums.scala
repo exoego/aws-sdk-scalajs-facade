@@ -1,6 +1,6 @@
 package facade.amazonaws.services.workmail
 
-import scalajs._
+import scalajs.js
 
 type AccessControlRuleEffect = "ALLOW" | "DENY"
 object AccessControlRuleEffect {

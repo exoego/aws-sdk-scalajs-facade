@@ -1,6 +1,6 @@
 package facade.amazonaws.services.pricing
 
-import scalajs._
+import scalajs.js
 
 type FilterType = "TERM_MATCH"
 object FilterType {

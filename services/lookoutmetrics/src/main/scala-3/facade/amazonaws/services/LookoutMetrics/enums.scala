@@ -1,6 +1,6 @@
 package facade.amazonaws.services.lookoutmetrics
 
-import scalajs._
+import scalajs.js
 
 type AggregationFunction = "AVG" | "SUM"
 object AggregationFunction {

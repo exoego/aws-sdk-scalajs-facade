@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iotevents
 
-import scalajs._
+import scalajs.js
 
 type AnalysisResultLevel = "INFO" | "WARNING" | "ERROR"
 object AnalysisResultLevel {

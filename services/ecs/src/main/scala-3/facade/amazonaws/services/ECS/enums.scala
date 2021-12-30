@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ecs
 
-import scalajs._
+import scalajs.js
 
 type AgentUpdateStatus = "PENDING" | "STAGING" | "STAGED" | "UPDATING" | "UPDATED" | "FAILED"
 object AgentUpdateStatus {

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.servicequotas
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ErrorCode extends js.Any
@@ -11,7 +10,7 @@ object ErrorCode {
   val DEPENDENCY_SERVICE_ERROR = "DEPENDENCY_SERVICE_ERROR".asInstanceOf[ErrorCode]
   val SERVICE_QUOTA_NOT_AVAILABLE_ERROR = "SERVICE_QUOTA_NOT_AVAILABLE_ERROR".asInstanceOf[ErrorCode]
 
-  @inline def values = js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR)
+  @inline def values: js.Array[ErrorCode] = js.Array(DEPENDENCY_ACCESS_DENIED_ERROR, DEPENDENCY_THROTTLING_ERROR, DEPENDENCY_SERVICE_ERROR, SERVICE_QUOTA_NOT_AVAILABLE_ERROR)
 }
 
 @js.native
@@ -25,7 +24,7 @@ object PeriodUnit {
   val DAY = "DAY".asInstanceOf[PeriodUnit]
   val WEEK = "WEEK".asInstanceOf[PeriodUnit]
 
-  @inline def values = js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK)
+  @inline def values: js.Array[PeriodUnit] = js.Array(MICROSECOND, MILLISECOND, SECOND, MINUTE, HOUR, DAY, WEEK)
 }
 
 @js.native
@@ -37,7 +36,7 @@ object RequestStatus {
   val DENIED = "DENIED".asInstanceOf[RequestStatus]
   val CASE_CLOSED = "CASE_CLOSED".asInstanceOf[RequestStatus]
 
-  @inline def values = js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED)
+  @inline def values: js.Array[RequestStatus] = js.Array(PENDING, CASE_OPENED, APPROVED, DENIED, CASE_CLOSED)
 }
 
 @js.native
@@ -46,6 +45,5 @@ object ServiceQuotaTemplateAssociationStatus {
   val ASSOCIATED = "ASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
   val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ServiceQuotaTemplateAssociationStatus]
 
-  @inline def values = js.Array(ASSOCIATED, DISASSOCIATED)
+  @inline def values: js.Array[ServiceQuotaTemplateAssociationStatus] = js.Array(ASSOCIATED, DISASSOCIATED)
 }
-

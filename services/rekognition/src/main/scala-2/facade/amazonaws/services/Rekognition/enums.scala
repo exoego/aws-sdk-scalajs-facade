@@ -1,7 +1,6 @@
 package facade.amazonaws.services.rekognition
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait Attribute extends js.Any
@@ -9,7 +8,7 @@ object Attribute {
   val DEFAULT = "DEFAULT".asInstanceOf[Attribute]
   val ALL = "ALL".asInstanceOf[Attribute]
 
-  @inline def values = js.Array(DEFAULT, ALL)
+  @inline def values: js.Array[Attribute] = js.Array(DEFAULT, ALL)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object BodyPart {
   val LEFT_HAND = "LEFT_HAND".asInstanceOf[BodyPart]
   val RIGHT_HAND = "RIGHT_HAND".asInstanceOf[BodyPart]
 
-  @inline def values = js.Array(FACE, HEAD, LEFT_HAND, RIGHT_HAND)
+  @inline def values: js.Array[BodyPart] = js.Array(FACE, HEAD, LEFT_HAND, RIGHT_HAND)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object CelebrityRecognitionSortBy {
   val ID = "ID".asInstanceOf[CelebrityRecognitionSortBy]
   val TIMESTAMP = "TIMESTAMP".asInstanceOf[CelebrityRecognitionSortBy]
 
-  @inline def values = js.Array(ID, TIMESTAMP)
+  @inline def values: js.Array[CelebrityRecognitionSortBy] = js.Array(ID, TIMESTAMP)
 }
 
 @js.native
@@ -38,7 +37,7 @@ object ContentClassifier {
   val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
   val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
-  @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
+  @inline def values: js.Array[ContentClassifier] = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
 }
 
 @js.native
@@ -47,7 +46,7 @@ object ContentModerationSortBy {
   val NAME = "NAME".asInstanceOf[ContentModerationSortBy]
   val TIMESTAMP = "TIMESTAMP".asInstanceOf[ContentModerationSortBy]
 
-  @inline def values = js.Array(NAME, TIMESTAMP)
+  @inline def values: js.Array[ContentModerationSortBy] = js.Array(NAME, TIMESTAMP)
 }
 
 @js.native
@@ -63,7 +62,7 @@ object EmotionName {
   val UNKNOWN = "UNKNOWN".asInstanceOf[EmotionName]
   val FEAR = "FEAR".asInstanceOf[EmotionName]
 
-  @inline def values = js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR)
+  @inline def values: js.Array[EmotionName] = js.Array(HAPPY, SAD, ANGRY, CONFUSED, DISGUSTED, SURPRISED, CALM, UNKNOWN, FEAR)
 }
 
 @js.native
@@ -72,7 +71,7 @@ object FaceAttributes {
   val DEFAULT = "DEFAULT".asInstanceOf[FaceAttributes]
   val ALL = "ALL".asInstanceOf[FaceAttributes]
 
-  @inline def values = js.Array(DEFAULT, ALL)
+  @inline def values: js.Array[FaceAttributes] = js.Array(DEFAULT, ALL)
 }
 
 @js.native
@@ -81,7 +80,7 @@ object FaceSearchSortBy {
   val INDEX = "INDEX".asInstanceOf[FaceSearchSortBy]
   val TIMESTAMP = "TIMESTAMP".asInstanceOf[FaceSearchSortBy]
 
-  @inline def values = js.Array(INDEX, TIMESTAMP)
+  @inline def values: js.Array[FaceSearchSortBy] = js.Array(INDEX, TIMESTAMP)
 }
 
 @js.native
@@ -90,7 +89,7 @@ object GenderType {
   val Male = "Male".asInstanceOf[GenderType]
   val Female = "Female".asInstanceOf[GenderType]
 
-  @inline def values = js.Array(Male, Female)
+  @inline def values: js.Array[GenderType] = js.Array(Male, Female)
 }
 
 @js.native
@@ -99,7 +98,7 @@ object LabelDetectionSortBy {
   val NAME = "NAME".asInstanceOf[LabelDetectionSortBy]
   val TIMESTAMP = "TIMESTAMP".asInstanceOf[LabelDetectionSortBy]
 
-  @inline def values = js.Array(NAME, TIMESTAMP)
+  @inline def values: js.Array[LabelDetectionSortBy] = js.Array(NAME, TIMESTAMP)
 }
 
 @js.native
@@ -136,7 +135,38 @@ object LandmarkType {
   val midJawlineRight = "midJawlineRight".asInstanceOf[LandmarkType]
   val upperJawlineRight = "upperJawlineRight".asInstanceOf[LandmarkType]
 
-  @inline def values = js.Array(eyeLeft, eyeRight, nose, mouthLeft, mouthRight, leftEyeBrowLeft, leftEyeBrowRight, leftEyeBrowUp, rightEyeBrowLeft, rightEyeBrowRight, rightEyeBrowUp, leftEyeLeft, leftEyeRight, leftEyeUp, leftEyeDown, rightEyeLeft, rightEyeRight, rightEyeUp, rightEyeDown, noseLeft, noseRight, mouthUp, mouthDown, leftPupil, rightPupil, upperJawlineLeft, midJawlineLeft, chinBottom, midJawlineRight, upperJawlineRight)
+  @inline def values: js.Array[LandmarkType] = js.Array(
+    eyeLeft,
+    eyeRight,
+    nose,
+    mouthLeft,
+    mouthRight,
+    leftEyeBrowLeft,
+    leftEyeBrowRight,
+    leftEyeBrowUp,
+    rightEyeBrowLeft,
+    rightEyeBrowRight,
+    rightEyeBrowUp,
+    leftEyeLeft,
+    leftEyeRight,
+    leftEyeUp,
+    leftEyeDown,
+    rightEyeLeft,
+    rightEyeRight,
+    rightEyeUp,
+    rightEyeDown,
+    noseLeft,
+    noseRight,
+    mouthUp,
+    mouthDown,
+    leftPupil,
+    rightPupil,
+    upperJawlineLeft,
+    midJawlineLeft,
+    chinBottom,
+    midJawlineRight,
+    upperJawlineRight
+  )
 }
 
 @js.native
@@ -147,7 +177,7 @@ object OrientationCorrection {
   val ROTATE_180 = "ROTATE_180".asInstanceOf[OrientationCorrection]
   val ROTATE_270 = "ROTATE_270".asInstanceOf[OrientationCorrection]
 
-  @inline def values = js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270)
+  @inline def values: js.Array[OrientationCorrection] = js.Array(ROTATE_0, ROTATE_90, ROTATE_180, ROTATE_270)
 }
 
 @js.native
@@ -156,7 +186,7 @@ object PersonTrackingSortBy {
   val INDEX = "INDEX".asInstanceOf[PersonTrackingSortBy]
   val TIMESTAMP = "TIMESTAMP".asInstanceOf[PersonTrackingSortBy]
 
-  @inline def values = js.Array(INDEX, TIMESTAMP)
+  @inline def values: js.Array[PersonTrackingSortBy] = js.Array(INDEX, TIMESTAMP)
 }
 
 @js.native
@@ -166,7 +196,7 @@ object ProjectStatus {
   val CREATED = "CREATED".asInstanceOf[ProjectStatus]
   val DELETING = "DELETING".asInstanceOf[ProjectStatus]
 
-  @inline def values = js.Array(CREATING, CREATED, DELETING)
+  @inline def values: js.Array[ProjectStatus] = js.Array(CREATING, CREATED, DELETING)
 }
 
 @js.native
@@ -182,7 +212,7 @@ object ProjectVersionStatus {
   val STOPPED = "STOPPED".asInstanceOf[ProjectVersionStatus]
   val DELETING = "DELETING".asInstanceOf[ProjectVersionStatus]
 
-  @inline def values = js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING)
+  @inline def values: js.Array[ProjectVersionStatus] = js.Array(TRAINING_IN_PROGRESS, TRAINING_COMPLETED, TRAINING_FAILED, STARTING, RUNNING, FAILED, STOPPING, STOPPED, DELETING)
 }
 
 @js.native
@@ -192,7 +222,7 @@ object ProtectiveEquipmentType {
   val HAND_COVER = "HAND_COVER".asInstanceOf[ProtectiveEquipmentType]
   val HEAD_COVER = "HEAD_COVER".asInstanceOf[ProtectiveEquipmentType]
 
-  @inline def values = js.Array(FACE_COVER, HAND_COVER, HEAD_COVER)
+  @inline def values: js.Array[ProtectiveEquipmentType] = js.Array(FACE_COVER, HAND_COVER, HEAD_COVER)
 }
 
 @js.native
@@ -204,7 +234,7 @@ object QualityFilter {
   val MEDIUM = "MEDIUM".asInstanceOf[QualityFilter]
   val HIGH = "HIGH".asInstanceOf[QualityFilter]
 
-  @inline def values = js.Array(NONE, AUTO, LOW, MEDIUM, HIGH)
+  @inline def values: js.Array[QualityFilter] = js.Array(NONE, AUTO, LOW, MEDIUM, HIGH)
 }
 
 @js.native
@@ -218,7 +248,7 @@ object Reason {
   val SMALL_BOUNDING_BOX = "SMALL_BOUNDING_BOX".asInstanceOf[Reason]
   val LOW_FACE_QUALITY = "LOW_FACE_QUALITY".asInstanceOf[Reason]
 
-  @inline def values = js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX, LOW_FACE_QUALITY)
+  @inline def values: js.Array[Reason] = js.Array(EXCEEDS_MAX_FACES, EXTREME_POSE, LOW_BRIGHTNESS, LOW_SHARPNESS, LOW_CONFIDENCE, SMALL_BOUNDING_BOX, LOW_FACE_QUALITY)
 }
 
 @js.native
@@ -227,7 +257,7 @@ object SegmentType {
   val TECHNICAL_CUE = "TECHNICAL_CUE".asInstanceOf[SegmentType]
   val SHOT = "SHOT".asInstanceOf[SegmentType]
 
-  @inline def values = js.Array(TECHNICAL_CUE, SHOT)
+  @inline def values: js.Array[SegmentType] = js.Array(TECHNICAL_CUE, SHOT)
 }
 
 @js.native
@@ -239,7 +269,7 @@ object StreamProcessorStatus {
   val FAILED = "FAILED".asInstanceOf[StreamProcessorStatus]
   val STOPPING = "STOPPING".asInstanceOf[StreamProcessorStatus]
 
-  @inline def values = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
+  @inline def values: js.Array[StreamProcessorStatus] = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
 }
 
 @js.native
@@ -249,7 +279,7 @@ object TechnicalCueType {
   val EndCredits = "EndCredits".asInstanceOf[TechnicalCueType]
   val BlackFrames = "BlackFrames".asInstanceOf[TechnicalCueType]
 
-  @inline def values = js.Array(ColorBars, EndCredits, BlackFrames)
+  @inline def values: js.Array[TechnicalCueType] = js.Array(ColorBars, EndCredits, BlackFrames)
 }
 
 @js.native
@@ -258,7 +288,7 @@ object TextTypes {
   val LINE = "LINE".asInstanceOf[TextTypes]
   val WORD = "WORD".asInstanceOf[TextTypes]
 
-  @inline def values = js.Array(LINE, WORD)
+  @inline def values: js.Array[TextTypes] = js.Array(LINE, WORD)
 }
 
 @js.native
@@ -268,6 +298,5 @@ object VideoJobStatus {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[VideoJobStatus]
   val FAILED = "FAILED".asInstanceOf[VideoJobStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
+  @inline def values: js.Array[VideoJobStatus] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
 }
-

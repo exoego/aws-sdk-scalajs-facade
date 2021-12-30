@@ -1,7 +1,6 @@
 package facade.amazonaws.services.guardduty
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AdminStatus extends js.Any
@@ -9,7 +8,7 @@ object AdminStatus {
   val ENABLED = "ENABLED".asInstanceOf[AdminStatus]
   val DISABLE_IN_PROGRESS = "DISABLE_IN_PROGRESS".asInstanceOf[AdminStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLE_IN_PROGRESS)
+  @inline def values: js.Array[AdminStatus] = js.Array(ENABLED, DISABLE_IN_PROGRESS)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object DataSource {
   val DNS_LOGS = "DNS_LOGS".asInstanceOf[DataSource]
   val S3_LOGS = "S3_LOGS".asInstanceOf[DataSource]
 
-  @inline def values = js.Array(FLOW_LOGS, CLOUD_TRAIL, DNS_LOGS, S3_LOGS)
+  @inline def values: js.Array[DataSource] = js.Array(FLOW_LOGS, CLOUD_TRAIL, DNS_LOGS, S3_LOGS)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object DataSourceStatus {
   val ENABLED = "ENABLED".asInstanceOf[DataSourceStatus]
   val DISABLED = "DISABLED".asInstanceOf[DataSourceStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[DataSourceStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -37,7 +36,7 @@ sealed trait DestinationType extends js.Any
 object DestinationType {
   val S3 = "S3".asInstanceOf[DestinationType]
 
-  @inline def values = js.Array(S3)
+  @inline def values: js.Array[DestinationType] = js.Array(S3)
 }
 
 @js.native
@@ -46,7 +45,7 @@ object DetectorStatus {
   val ENABLED = "ENABLED".asInstanceOf[DetectorStatus]
   val DISABLED = "DISABLED".asInstanceOf[DetectorStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[DetectorStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -55,7 +54,7 @@ object Feedback {
   val USEFUL = "USEFUL".asInstanceOf[Feedback]
   val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[Feedback]
 
-  @inline def values = js.Array(USEFUL, NOT_USEFUL)
+  @inline def values: js.Array[Feedback] = js.Array(USEFUL, NOT_USEFUL)
 }
 
 @js.native
@@ -64,7 +63,7 @@ object FilterAction {
   val NOOP = "NOOP".asInstanceOf[FilterAction]
   val ARCHIVE = "ARCHIVE".asInstanceOf[FilterAction]
 
-  @inline def values = js.Array(NOOP, ARCHIVE)
+  @inline def values: js.Array[FilterAction] = js.Array(NOOP, ARCHIVE)
 }
 
 @js.native
@@ -74,7 +73,7 @@ object FindingPublishingFrequency {
   val ONE_HOUR = "ONE_HOUR".asInstanceOf[FindingPublishingFrequency]
   val SIX_HOURS = "SIX_HOURS".asInstanceOf[FindingPublishingFrequency]
 
-  @inline def values = js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS)
+  @inline def values: js.Array[FindingPublishingFrequency] = js.Array(FIFTEEN_MINUTES, ONE_HOUR, SIX_HOURS)
 }
 
 @js.native
@@ -82,7 +81,7 @@ sealed trait FindingStatisticType extends js.Any
 object FindingStatisticType {
   val COUNT_BY_SEVERITY = "COUNT_BY_SEVERITY".asInstanceOf[FindingStatisticType]
 
-  @inline def values = js.Array(COUNT_BY_SEVERITY)
+  @inline def values: js.Array[FindingStatisticType] = js.Array(COUNT_BY_SEVERITY)
 }
 
 @js.native
@@ -95,7 +94,7 @@ object IpSetFormat {
   val PROOF_POINT = "PROOF_POINT".asInstanceOf[IpSetFormat]
   val FIRE_EYE = "FIRE_EYE".asInstanceOf[IpSetFormat]
 
-  @inline def values = js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE)
+  @inline def values: js.Array[IpSetFormat] = js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE)
 }
 
 @js.native
@@ -109,7 +108,7 @@ object IpSetStatus {
   val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[IpSetStatus]
   val DELETED = "DELETED".asInstanceOf[IpSetStatus]
 
-  @inline def values = js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED)
+  @inline def values: js.Array[IpSetStatus] = js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED)
 }
 
 @js.native
@@ -118,7 +117,7 @@ object OrderBy {
   val ASC = "ASC".asInstanceOf[OrderBy]
   val DESC = "DESC".asInstanceOf[OrderBy]
 
-  @inline def values = js.Array(ASC, DESC)
+  @inline def values: js.Array[OrderBy] = js.Array(ASC, DESC)
 }
 
 @js.native
@@ -129,7 +128,7 @@ object PublishingStatus {
   val UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY = "UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY".asInstanceOf[PublishingStatus]
   val STOPPED = "STOPPED".asInstanceOf[PublishingStatus]
 
-  @inline def values = js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED)
+  @inline def values: js.Array[PublishingStatus] = js.Array(PENDING_VERIFICATION, PUBLISHING, UNABLE_TO_PUBLISH_FIX_DESTINATION_PROPERTY, STOPPED)
 }
 
 @js.native
@@ -142,7 +141,7 @@ object ThreatIntelSetFormat {
   val PROOF_POINT = "PROOF_POINT".asInstanceOf[ThreatIntelSetFormat]
   val FIRE_EYE = "FIRE_EYE".asInstanceOf[ThreatIntelSetFormat]
 
-  @inline def values = js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE)
+  @inline def values: js.Array[ThreatIntelSetFormat] = js.Array(TXT, STIX, OTX_CSV, ALIEN_VAULT, PROOF_POINT, FIRE_EYE)
 }
 
 @js.native
@@ -156,7 +155,7 @@ object ThreatIntelSetStatus {
   val DELETE_PENDING = "DELETE_PENDING".asInstanceOf[ThreatIntelSetStatus]
   val DELETED = "DELETED".asInstanceOf[ThreatIntelSetStatus]
 
-  @inline def values = js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED)
+  @inline def values: js.Array[ThreatIntelSetStatus] = js.Array(INACTIVE, ACTIVATING, ACTIVE, DEACTIVATING, ERROR, DELETE_PENDING, DELETED)
 }
 
 @js.native
@@ -167,6 +166,5 @@ object UsageStatisticType {
   val SUM_BY_RESOURCE = "SUM_BY_RESOURCE".asInstanceOf[UsageStatisticType]
   val TOP_RESOURCES = "TOP_RESOURCES".asInstanceOf[UsageStatisticType]
 
-  @inline def values = js.Array(SUM_BY_ACCOUNT, SUM_BY_DATA_SOURCE, SUM_BY_RESOURCE, TOP_RESOURCES)
+  @inline def values: js.Array[UsageStatisticType] = js.Array(SUM_BY_ACCOUNT, SUM_BY_DATA_SOURCE, SUM_BY_RESOURCE, TOP_RESOURCES)
 }
-

@@ -1,14 +1,13 @@
 package facade.amazonaws.services.cloudtrail
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait EventCategory extends js.Any
 object EventCategory {
   val insight = "insight".asInstanceOf[EventCategory]
 
-  @inline def values = js.Array(insight)
+  @inline def values: js.Array[EventCategory] = js.Array(insight)
 }
 
 @js.native
@@ -16,7 +15,7 @@ sealed trait InsightType extends js.Any
 object InsightType {
   val ApiCallRateInsight = "ApiCallRateInsight".asInstanceOf[InsightType]
 
-  @inline def values = js.Array(ApiCallRateInsight)
+  @inline def values: js.Array[InsightType] = js.Array(ApiCallRateInsight)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object LookupAttributeKey {
   val EventSource = "EventSource".asInstanceOf[LookupAttributeKey]
   val AccessKeyId = "AccessKeyId".asInstanceOf[LookupAttributeKey]
 
-  @inline def values = js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
+  @inline def values: js.Array[LookupAttributeKey] = js.Array(EventId, EventName, ReadOnly, Username, ResourceType, ResourceName, EventSource, AccessKeyId)
 }
 
 @js.native
@@ -41,6 +40,5 @@ object ReadWriteType {
   val WriteOnly = "WriteOnly".asInstanceOf[ReadWriteType]
   val All = "All".asInstanceOf[ReadWriteType]
 
-  @inline def values = js.Array(ReadOnly, WriteOnly, All)
+  @inline def values: js.Array[ReadWriteType] = js.Array(ReadOnly, WriteOnly, All)
 }
-

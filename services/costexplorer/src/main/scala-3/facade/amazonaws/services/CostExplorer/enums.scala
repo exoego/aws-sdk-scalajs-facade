@@ -1,6 +1,6 @@
 package facade.amazonaws.services.costexplorer
 
-import scalajs._
+import scalajs.js
 
 type AccountScope = "PAYER" | "LINKED"
 object AccountScope {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.alexaforbusiness
 
-import scalajs._
+import scalajs.js
 
 type BusinessReportFailureCode = "ACCESS_DENIED" | "NO_SUCH_BUCKET" | "INTERNAL_FAILURE"
 object BusinessReportFailureCode {

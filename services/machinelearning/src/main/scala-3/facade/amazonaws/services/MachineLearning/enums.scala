@@ -1,6 +1,6 @@
 package facade.amazonaws.services.machinelearning
 
-import scalajs._
+import scalajs.js
 
 /** The function used to train an <code>MLModel</code>. Training choices supported by Amazon ML include the following: * <code>SGD</code> - Stochastic Gradient Descent. * <code>RandomForest</code> - Random forest of decision trees.
   */

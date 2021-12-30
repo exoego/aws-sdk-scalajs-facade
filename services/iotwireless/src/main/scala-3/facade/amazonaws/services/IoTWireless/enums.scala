@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iotwireless
 
-import scalajs._
+import scalajs.js
 
 /** Sidewalk device battery level.
   */

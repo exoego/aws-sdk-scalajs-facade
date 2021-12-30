@@ -1,6 +1,6 @@
 package facade.amazonaws.services.kinesis
 
-import scalajs._
+import scalajs.js
 
 type ConsumerStatus = "CREATING" | "DELETING" | "ACTIVE"
 object ConsumerStatus {

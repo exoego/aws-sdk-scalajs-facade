@@ -1,7 +1,6 @@
 package facade.amazonaws.services.devopsguru
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AnomalySeverity extends js.Any
@@ -10,7 +9,7 @@ object AnomalySeverity {
   val MEDIUM = "MEDIUM".asInstanceOf[AnomalySeverity]
   val HIGH = "HIGH".asInstanceOf[AnomalySeverity]
 
-  @inline def values = js.Array(LOW, MEDIUM, HIGH)
+  @inline def values: js.Array[AnomalySeverity] = js.Array(LOW, MEDIUM, HIGH)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object AnomalyStatus {
   val ONGOING = "ONGOING".asInstanceOf[AnomalyStatus]
   val CLOSED = "CLOSED".asInstanceOf[AnomalyStatus]
 
-  @inline def values = js.Array(ONGOING, CLOSED)
+  @inline def values: js.Array[AnomalyStatus] = js.Array(ONGOING, CLOSED)
 }
 
 @js.native
@@ -34,7 +33,7 @@ object CloudWatchMetricsStat {
   val p90 = "p90".asInstanceOf[CloudWatchMetricsStat]
   val p50 = "p50".asInstanceOf[CloudWatchMetricsStat]
 
-  @inline def values = js.Array(Sum, Average, SampleCount, Minimum, Maximum, p99, p90, p50)
+  @inline def values: js.Array[CloudWatchMetricsStat] = js.Array(Sum, Average, SampleCount, Minimum, Maximum, p99, p90, p50)
 }
 
 @js.native
@@ -46,7 +45,7 @@ object EventClass {
   val CONFIG_CHANGE = "CONFIG_CHANGE".asInstanceOf[EventClass]
   val SCHEMA_CHANGE = "SCHEMA_CHANGE".asInstanceOf[EventClass]
 
-  @inline def values = js.Array(INFRASTRUCTURE, DEPLOYMENT, SECURITY_CHANGE, CONFIG_CHANGE, SCHEMA_CHANGE)
+  @inline def values: js.Array[EventClass] = js.Array(INFRASTRUCTURE, DEPLOYMENT, SECURITY_CHANGE, CONFIG_CHANGE, SCHEMA_CHANGE)
 }
 
 @js.native
@@ -55,7 +54,7 @@ object EventDataSource {
   val AWS_CLOUD_TRAIL = "AWS_CLOUD_TRAIL".asInstanceOf[EventDataSource]
   val AWS_CODE_DEPLOY = "AWS_CODE_DEPLOY".asInstanceOf[EventDataSource]
 
-  @inline def values = js.Array(AWS_CLOUD_TRAIL, AWS_CODE_DEPLOY)
+  @inline def values: js.Array[EventDataSource] = js.Array(AWS_CLOUD_TRAIL, AWS_CODE_DEPLOY)
 }
 
 @js.native
@@ -67,7 +66,7 @@ object InsightFeedbackOption {
   val DATA_NOISY_ANOMALY = "DATA_NOISY_ANOMALY".asInstanceOf[InsightFeedbackOption]
   val DATA_INCORRECT = "DATA_INCORRECT".asInstanceOf[InsightFeedbackOption]
 
-  @inline def values = js.Array(VALID_COLLECTION, RECOMMENDATION_USEFUL, ALERT_TOO_SENSITIVE, DATA_NOISY_ANOMALY, DATA_INCORRECT)
+  @inline def values: js.Array[InsightFeedbackOption] = js.Array(VALID_COLLECTION, RECOMMENDATION_USEFUL, ALERT_TOO_SENSITIVE, DATA_NOISY_ANOMALY, DATA_INCORRECT)
 }
 
 @js.native
@@ -77,7 +76,7 @@ object InsightSeverity {
   val MEDIUM = "MEDIUM".asInstanceOf[InsightSeverity]
   val HIGH = "HIGH".asInstanceOf[InsightSeverity]
 
-  @inline def values = js.Array(LOW, MEDIUM, HIGH)
+  @inline def values: js.Array[InsightSeverity] = js.Array(LOW, MEDIUM, HIGH)
 }
 
 @js.native
@@ -86,7 +85,7 @@ object InsightStatus {
   val ONGOING = "ONGOING".asInstanceOf[InsightStatus]
   val CLOSED = "CLOSED".asInstanceOf[InsightStatus]
 
-  @inline def values = js.Array(ONGOING, CLOSED)
+  @inline def values: js.Array[InsightStatus] = js.Array(ONGOING, CLOSED)
 }
 
 @js.native
@@ -95,7 +94,7 @@ object InsightType {
   val REACTIVE = "REACTIVE".asInstanceOf[InsightType]
   val PROACTIVE = "PROACTIVE".asInstanceOf[InsightType]
 
-  @inline def values = js.Array(REACTIVE, PROACTIVE)
+  @inline def values: js.Array[InsightType] = js.Array(REACTIVE, PROACTIVE)
 }
 
 /** Specifies if DevOps Guru is enabled to create an AWS Systems Manager OpsItem for each created insight.
@@ -106,7 +105,7 @@ object OptInStatus {
   val ENABLED = "ENABLED".asInstanceOf[OptInStatus]
   val DISABLED = "DISABLED".asInstanceOf[OptInStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[OptInStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -114,7 +113,7 @@ sealed trait ResourceCollectionType extends js.Any
 object ResourceCollectionType {
   val AWS_CLOUD_FORMATION = "AWS_CLOUD_FORMATION".asInstanceOf[ResourceCollectionType]
 
-  @inline def values = js.Array(AWS_CLOUD_FORMATION)
+  @inline def values: js.Array[ResourceCollectionType] = js.Array(AWS_CLOUD_FORMATION)
 }
 
 @js.native
@@ -123,6 +122,5 @@ object UpdateResourceCollectionAction {
   val ADD = "ADD".asInstanceOf[UpdateResourceCollectionAction]
   val REMOVE = "REMOVE".asInstanceOf[UpdateResourceCollectionAction]
 
-  @inline def values = js.Array(ADD, REMOVE)
+  @inline def values: js.Array[UpdateResourceCollectionAction] = js.Array(ADD, REMOVE)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.s3outposts
 
-import scalajs._
+import scalajs.js
 
 type EndpointStatus = "PENDING" | "AVAILABLE"
 object EndpointStatus {

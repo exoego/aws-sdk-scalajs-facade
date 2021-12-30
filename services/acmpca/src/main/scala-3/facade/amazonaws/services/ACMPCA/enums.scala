@@ -1,6 +1,6 @@
 package facade.amazonaws.services.acmpca
 
-import scalajs._
+import scalajs.js
 
 type AccessMethodType = "CA_REPOSITORY" | "RESOURCE_PKI_MANIFEST" | "RESOURCE_PKI_NOTIFY"
 object AccessMethodType {

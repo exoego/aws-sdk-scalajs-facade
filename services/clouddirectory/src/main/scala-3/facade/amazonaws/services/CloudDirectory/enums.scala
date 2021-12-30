@@ -1,6 +1,6 @@
 package facade.amazonaws.services.clouddirectory
 
-import scalajs._
+import scalajs.js
 
 type BatchReadExceptionType = "ValidationException" | "InvalidArnException" | "ResourceNotFoundException" | "InvalidNextTokenException" | "AccessDeniedException" | "NotNodeException" | "FacetValidationException" | "CannotListParentOfRootException" | "NotIndexException" | "NotPolicyException" | "DirectoryNotEnabledException" | "LimitExceededException" | "InternalServiceException"
 object BatchReadExceptionType {

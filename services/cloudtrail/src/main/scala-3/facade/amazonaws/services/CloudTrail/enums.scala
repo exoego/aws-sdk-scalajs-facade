@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cloudtrail
 
-import scalajs._
+import scalajs.js
 
 type EventCategory = "insight"
 object EventCategory {

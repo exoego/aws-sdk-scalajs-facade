@@ -1,6 +1,6 @@
 package facade.amazonaws.services.resourcegroupstaggingapi
 
-import scalajs._
+import scalajs.js
 
 type ErrorCode = "InternalServiceException" | "InvalidParameterException"
 object ErrorCode {

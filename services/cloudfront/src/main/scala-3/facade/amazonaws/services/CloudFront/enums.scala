@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cloudfront
 
-import scalajs._
+import scalajs.js
 
 type CachePolicyCookieBehavior = "none" | "whitelist" | "allExcept" | "all"
 object CachePolicyCookieBehavior {

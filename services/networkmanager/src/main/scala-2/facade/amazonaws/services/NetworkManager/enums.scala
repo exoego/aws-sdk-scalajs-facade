@@ -1,7 +1,6 @@
 package facade.amazonaws.services.networkmanager
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ConnectionState extends js.Any
@@ -11,7 +10,7 @@ object ConnectionState {
   val DELETING = "DELETING".asInstanceOf[ConnectionState]
   val UPDATING = "UPDATING".asInstanceOf[ConnectionState]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  @inline def values: js.Array[ConnectionState] = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object CustomerGatewayAssociationState {
   val DELETING = "DELETING".asInstanceOf[CustomerGatewayAssociationState]
   val DELETED = "DELETED".asInstanceOf[CustomerGatewayAssociationState]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
+  @inline def values: js.Array[CustomerGatewayAssociationState] = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
 }
 
 @js.native
@@ -33,7 +32,7 @@ object DeviceState {
   val DELETING = "DELETING".asInstanceOf[DeviceState]
   val UPDATING = "UPDATING".asInstanceOf[DeviceState]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  @inline def values: js.Array[DeviceState] = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
 }
 
 @js.native
@@ -44,7 +43,7 @@ object GlobalNetworkState {
   val DELETING = "DELETING".asInstanceOf[GlobalNetworkState]
   val UPDATING = "UPDATING".asInstanceOf[GlobalNetworkState]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  @inline def values: js.Array[GlobalNetworkState] = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
 }
 
 @js.native
@@ -55,7 +54,7 @@ object LinkAssociationState {
   val DELETING = "DELETING".asInstanceOf[LinkAssociationState]
   val DELETED = "DELETED".asInstanceOf[LinkAssociationState]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
+  @inline def values: js.Array[LinkAssociationState] = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
 }
 
 @js.native
@@ -66,7 +65,7 @@ object LinkState {
   val DELETING = "DELETING".asInstanceOf[LinkState]
   val UPDATING = "UPDATING".asInstanceOf[LinkState]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  @inline def values: js.Array[LinkState] = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
 }
 
 @js.native
@@ -77,7 +76,7 @@ object SiteState {
   val DELETING = "DELETING".asInstanceOf[SiteState]
   val UPDATING = "UPDATING".asInstanceOf[SiteState]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
+  @inline def values: js.Array[SiteState] = js.Array(PENDING, AVAILABLE, DELETING, UPDATING)
 }
 
 @js.native
@@ -88,7 +87,7 @@ object TransitGatewayConnectPeerAssociationState {
   val DELETING = "DELETING".asInstanceOf[TransitGatewayConnectPeerAssociationState]
   val DELETED = "DELETED".asInstanceOf[TransitGatewayConnectPeerAssociationState]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
+  @inline def values: js.Array[TransitGatewayConnectPeerAssociationState] = js.Array(PENDING, AVAILABLE, DELETING, DELETED)
 }
 
 @js.native
@@ -100,6 +99,5 @@ object TransitGatewayRegistrationState {
   val DELETED = "DELETED".asInstanceOf[TransitGatewayRegistrationState]
   val FAILED = "FAILED".asInstanceOf[TransitGatewayRegistrationState]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED)
+  @inline def values: js.Array[TransitGatewayRegistrationState] = js.Array(PENDING, AVAILABLE, DELETING, DELETED, FAILED)
 }
-

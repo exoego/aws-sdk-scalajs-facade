@@ -1,7 +1,6 @@
 package facade.amazonaws.services.organizations
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccountJoinedMethod extends js.Any
@@ -9,7 +8,7 @@ object AccountJoinedMethod {
   val INVITED = "INVITED".asInstanceOf[AccountJoinedMethod]
   val CREATED = "CREATED".asInstanceOf[AccountJoinedMethod]
 
-  @inline def values = js.Array(INVITED, CREATED)
+  @inline def values: js.Array[AccountJoinedMethod] = js.Array(INVITED, CREATED)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object AccountStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[AccountStatus]
   val SUSPENDED = "SUSPENDED".asInstanceOf[AccountStatus]
 
-  @inline def values = js.Array(ACTIVE, SUSPENDED)
+  @inline def values: js.Array[AccountStatus] = js.Array(ACTIVE, SUSPENDED)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object ActionType {
   val APPROVE_ALL_FEATURES = "APPROVE_ALL_FEATURES".asInstanceOf[ActionType]
   val ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE = "ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE".asInstanceOf[ActionType]
 
-  @inline def values = js.Array(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE)
+  @inline def values: js.Array[ActionType] = js.Array(INVITE, ENABLE_ALL_FEATURES, APPROVE_ALL_FEATURES, ADD_ORGANIZATIONS_SERVICE_LINKED_ROLE)
 }
 
 @js.native
@@ -38,7 +37,7 @@ object ChildType {
   val ACCOUNT = "ACCOUNT".asInstanceOf[ChildType]
   val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[ChildType]
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATIONAL_UNIT)
+  @inline def values: js.Array[ChildType] = js.Array(ACCOUNT, ORGANIZATIONAL_UNIT)
 }
 
 @js.native
@@ -58,7 +57,21 @@ object CreateAccountFailureReason {
   val UNKNOWN_BUSINESS_VALIDATION = "UNKNOWN_BUSINESS_VALIDATION".asInstanceOf[CreateAccountFailureReason]
   val MISSING_PAYMENT_INSTRUMENT = "MISSING_PAYMENT_INSTRUMENT".asInstanceOf[CreateAccountFailureReason]
 
-  @inline def values = js.Array(ACCOUNT_LIMIT_EXCEEDED, EMAIL_ALREADY_EXISTS, INVALID_ADDRESS, INVALID_EMAIL, CONCURRENT_ACCOUNT_MODIFICATION, INTERNAL_FAILURE, GOVCLOUD_ACCOUNT_ALREADY_EXISTS, MISSING_BUSINESS_VALIDATION, FAILED_BUSINESS_VALIDATION, PENDING_BUSINESS_VALIDATION, INVALID_IDENTITY_FOR_BUSINESS_VALIDATION, UNKNOWN_BUSINESS_VALIDATION, MISSING_PAYMENT_INSTRUMENT)
+  @inline def values: js.Array[CreateAccountFailureReason] = js.Array(
+    ACCOUNT_LIMIT_EXCEEDED,
+    EMAIL_ALREADY_EXISTS,
+    INVALID_ADDRESS,
+    INVALID_EMAIL,
+    CONCURRENT_ACCOUNT_MODIFICATION,
+    INTERNAL_FAILURE,
+    GOVCLOUD_ACCOUNT_ALREADY_EXISTS,
+    MISSING_BUSINESS_VALIDATION,
+    FAILED_BUSINESS_VALIDATION,
+    PENDING_BUSINESS_VALIDATION,
+    INVALID_IDENTITY_FOR_BUSINESS_VALIDATION,
+    UNKNOWN_BUSINESS_VALIDATION,
+    MISSING_PAYMENT_INSTRUMENT
+  )
 }
 
 @js.native
@@ -68,7 +81,7 @@ object CreateAccountState {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[CreateAccountState]
   val FAILED = "FAILED".asInstanceOf[CreateAccountState]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
+  @inline def values: js.Array[CreateAccountState] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
 }
 
 @js.native
@@ -78,7 +91,7 @@ object EffectivePolicyType {
   val BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[EffectivePolicyType]
   val AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[EffectivePolicyType]
 
-  @inline def values = js.Array(TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY)
+  @inline def values: js.Array[EffectivePolicyType] = js.Array(TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY)
 }
 
 @js.native
@@ -88,7 +101,7 @@ object HandshakePartyType {
   val ORGANIZATION = "ORGANIZATION".asInstanceOf[HandshakePartyType]
   val EMAIL = "EMAIL".asInstanceOf[HandshakePartyType]
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATION, EMAIL)
+  @inline def values: js.Array[HandshakePartyType] = js.Array(ACCOUNT, ORGANIZATION, EMAIL)
 }
 
 @js.native
@@ -103,7 +116,7 @@ object HandshakeResourceType {
   val NOTES = "NOTES".asInstanceOf[HandshakeResourceType]
   val PARENT_HANDSHAKE = "PARENT_HANDSHAKE".asInstanceOf[HandshakeResourceType]
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATION, ORGANIZATION_FEATURE_SET, EMAIL, MASTER_EMAIL, MASTER_NAME, NOTES, PARENT_HANDSHAKE)
+  @inline def values: js.Array[HandshakeResourceType] = js.Array(ACCOUNT, ORGANIZATION, ORGANIZATION_FEATURE_SET, EMAIL, MASTER_EMAIL, MASTER_NAME, NOTES, PARENT_HANDSHAKE)
 }
 
 @js.native
@@ -116,7 +129,7 @@ object HandshakeState {
   val DECLINED = "DECLINED".asInstanceOf[HandshakeState]
   val EXPIRED = "EXPIRED".asInstanceOf[HandshakeState]
 
-  @inline def values = js.Array(REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED)
+  @inline def values: js.Array[HandshakeState] = js.Array(REQUESTED, OPEN, CANCELED, ACCEPTED, DECLINED, EXPIRED)
 }
 
 @js.native
@@ -125,7 +138,7 @@ object IAMUserAccessToBilling {
   val ALLOW = "ALLOW".asInstanceOf[IAMUserAccessToBilling]
   val DENY = "DENY".asInstanceOf[IAMUserAccessToBilling]
 
-  @inline def values = js.Array(ALLOW, DENY)
+  @inline def values: js.Array[IAMUserAccessToBilling] = js.Array(ALLOW, DENY)
 }
 
 @js.native
@@ -134,7 +147,7 @@ object OrganizationFeatureSet {
   val ALL = "ALL".asInstanceOf[OrganizationFeatureSet]
   val CONSOLIDATED_BILLING = "CONSOLIDATED_BILLING".asInstanceOf[OrganizationFeatureSet]
 
-  @inline def values = js.Array(ALL, CONSOLIDATED_BILLING)
+  @inline def values: js.Array[OrganizationFeatureSet] = js.Array(ALL, CONSOLIDATED_BILLING)
 }
 
 @js.native
@@ -143,7 +156,7 @@ object ParentType {
   val ROOT = "ROOT".asInstanceOf[ParentType]
   val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[ParentType]
 
-  @inline def values = js.Array(ROOT, ORGANIZATIONAL_UNIT)
+  @inline def values: js.Array[ParentType] = js.Array(ROOT, ORGANIZATIONAL_UNIT)
 }
 
 @js.native
@@ -154,7 +167,7 @@ object PolicyType {
   val BACKUP_POLICY = "BACKUP_POLICY".asInstanceOf[PolicyType]
   val AISERVICES_OPT_OUT_POLICY = "AISERVICES_OPT_OUT_POLICY".asInstanceOf[PolicyType]
 
-  @inline def values = js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY)
+  @inline def values: js.Array[PolicyType] = js.Array(SERVICE_CONTROL_POLICY, TAG_POLICY, BACKUP_POLICY, AISERVICES_OPT_OUT_POLICY)
 }
 
 @js.native
@@ -164,7 +177,7 @@ object PolicyTypeStatus {
   val PENDING_ENABLE = "PENDING_ENABLE".asInstanceOf[PolicyTypeStatus]
   val PENDING_DISABLE = "PENDING_DISABLE".asInstanceOf[PolicyTypeStatus]
 
-  @inline def values = js.Array(ENABLED, PENDING_ENABLE, PENDING_DISABLE)
+  @inline def values: js.Array[PolicyTypeStatus] = js.Array(ENABLED, PENDING_ENABLE, PENDING_DISABLE)
 }
 
 @js.native
@@ -174,6 +187,5 @@ object TargetType {
   val ORGANIZATIONAL_UNIT = "ORGANIZATIONAL_UNIT".asInstanceOf[TargetType]
   val ROOT = "ROOT".asInstanceOf[TargetType]
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATIONAL_UNIT, ROOT)
+  @inline def values: js.Array[TargetType] = js.Array(ACCOUNT, ORGANIZATIONAL_UNIT, ROOT)
 }
-

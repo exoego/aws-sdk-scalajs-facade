@@ -1,6 +1,6 @@
 package facade.amazonaws.services.wellarchitected
 
-import scalajs._
+import scalajs.js
 
 type DifferenceStatus = "UPDATED" | "NEW" | "DELETED"
 object DifferenceStatus {

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.licensemanager
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AllowedOperation extends js.Any
@@ -14,7 +13,7 @@ object AllowedOperation {
   val ListPurchasedLicenses = "ListPurchasedLicenses".asInstanceOf[AllowedOperation]
   val CreateToken = "CreateToken".asInstanceOf[AllowedOperation]
 
-  @inline def values = js.Array(CreateGrant, CheckoutLicense, CheckoutBorrowLicense, CheckInLicense, ExtendConsumptionLicense, ListPurchasedLicenses, CreateToken)
+  @inline def values: js.Array[AllowedOperation] = js.Array(CreateGrant, CheckoutLicense, CheckoutBorrowLicense, CheckInLicense, ExtendConsumptionLicense, ListPurchasedLicenses, CreateToken)
 }
 
 @js.native
@@ -22,7 +21,7 @@ sealed trait CheckoutType extends js.Any
 object CheckoutType {
   val PROVISIONAL = "PROVISIONAL".asInstanceOf[CheckoutType]
 
-  @inline def values = js.Array(PROVISIONAL)
+  @inline def values: js.Array[CheckoutType] = js.Array(PROVISIONAL)
 }
 
 @js.native
@@ -30,7 +29,7 @@ sealed trait DigitalSignatureMethod extends js.Any
 object DigitalSignatureMethod {
   val JWT_PS384 = "JWT_PS384".asInstanceOf[DigitalSignatureMethod]
 
-  @inline def values = js.Array(JWT_PS384)
+  @inline def values: js.Array[DigitalSignatureMethod] = js.Array(JWT_PS384)
 }
 
 @js.native
@@ -64,7 +63,35 @@ object EntitlementDataUnit {
   val `Terabits/Second` = "Terabits/Second".asInstanceOf[EntitlementDataUnit]
   val `Count/Second` = "Count/Second".asInstanceOf[EntitlementDataUnit]
 
-  @inline def values = js.Array(Count, None, Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, `Bytes/Second`, `Kilobytes/Second`, `Megabytes/Second`, `Gigabytes/Second`, `Terabytes/Second`, `Bits/Second`, `Kilobits/Second`, `Megabits/Second`, `Gigabits/Second`, `Terabits/Second`, `Count/Second`)
+  @inline def values: js.Array[EntitlementDataUnit] = js.Array(
+    Count,
+    None,
+    Seconds,
+    Microseconds,
+    Milliseconds,
+    Bytes,
+    Kilobytes,
+    Megabytes,
+    Gigabytes,
+    Terabytes,
+    Bits,
+    Kilobits,
+    Megabits,
+    Gigabits,
+    Terabits,
+    Percent,
+    `Bytes/Second`,
+    `Kilobytes/Second`,
+    `Megabytes/Second`,
+    `Gigabytes/Second`,
+    `Terabytes/Second`,
+    `Bits/Second`,
+    `Kilobits/Second`,
+    `Megabits/Second`,
+    `Gigabits/Second`,
+    `Terabits/Second`,
+    `Count/Second`
+  )
 }
 
 @js.native
@@ -98,7 +125,35 @@ object EntitlementUnit {
   val `Terabits/Second` = "Terabits/Second".asInstanceOf[EntitlementUnit]
   val `Count/Second` = "Count/Second".asInstanceOf[EntitlementUnit]
 
-  @inline def values = js.Array(Count, None, Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, `Bytes/Second`, `Kilobytes/Second`, `Megabytes/Second`, `Gigabytes/Second`, `Terabytes/Second`, `Bits/Second`, `Kilobits/Second`, `Megabits/Second`, `Gigabits/Second`, `Terabits/Second`, `Count/Second`)
+  @inline def values: js.Array[EntitlementUnit] = js.Array(
+    Count,
+    None,
+    Seconds,
+    Microseconds,
+    Milliseconds,
+    Bytes,
+    Kilobytes,
+    Megabytes,
+    Gigabytes,
+    Terabytes,
+    Bits,
+    Kilobits,
+    Megabits,
+    Gigabits,
+    Terabits,
+    Percent,
+    `Bytes/Second`,
+    `Kilobytes/Second`,
+    `Megabytes/Second`,
+    `Gigabytes/Second`,
+    `Terabytes/Second`,
+    `Bits/Second`,
+    `Kilobits/Second`,
+    `Megabits/Second`,
+    `Gigabits/Second`,
+    `Terabits/Second`,
+    `Count/Second`
+  )
 }
 
 @js.native
@@ -113,7 +168,7 @@ object GrantStatus {
   val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[GrantStatus]
   val DISABLED = "DISABLED".asInstanceOf[GrantStatus]
 
-  @inline def values = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, PENDING_DELETE, DISABLED)
+  @inline def values: js.Array[GrantStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, PENDING_DELETE, DISABLED)
 }
 
 @js.native
@@ -124,7 +179,7 @@ object InventoryFilterCondition {
   val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[InventoryFilterCondition]
   val CONTAINS = "CONTAINS".asInstanceOf[InventoryFilterCondition]
 
-  @inline def values = js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS)
+  @inline def values: js.Array[InventoryFilterCondition] = js.Array(EQUALS, NOT_EQUALS, BEGINS_WITH, CONTAINS)
 }
 
 @js.native
@@ -133,7 +188,7 @@ object LicenseConfigurationStatus {
   val AVAILABLE = "AVAILABLE".asInstanceOf[LicenseConfigurationStatus]
   val DISABLED = "DISABLED".asInstanceOf[LicenseConfigurationStatus]
 
-  @inline def values = js.Array(AVAILABLE, DISABLED)
+  @inline def values: js.Array[LicenseConfigurationStatus] = js.Array(AVAILABLE, DISABLED)
 }
 
 @js.native
@@ -144,7 +199,7 @@ object LicenseCountingType {
   val Core = "Core".asInstanceOf[LicenseCountingType]
   val Socket = "Socket".asInstanceOf[LicenseCountingType]
 
-  @inline def values = js.Array(vCPU, Instance, Core, Socket)
+  @inline def values: js.Array[LicenseCountingType] = js.Array(vCPU, Instance, Core, Socket)
 }
 
 @js.native
@@ -153,7 +208,7 @@ object LicenseDeletionStatus {
   val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[LicenseDeletionStatus]
   val DELETED = "DELETED".asInstanceOf[LicenseDeletionStatus]
 
-  @inline def values = js.Array(PENDING_DELETE, DELETED)
+  @inline def values: js.Array[LicenseDeletionStatus] = js.Array(PENDING_DELETE, DELETED)
 }
 
 @js.native
@@ -167,7 +222,7 @@ object LicenseStatus {
   val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[LicenseStatus]
   val DELETED = "DELETED".asInstanceOf[LicenseStatus]
 
-  @inline def values = js.Array(AVAILABLE, PENDING_AVAILABLE, DEACTIVATED, SUSPENDED, EXPIRED, PENDING_DELETE, DELETED)
+  @inline def values: js.Array[LicenseStatus] = js.Array(AVAILABLE, PENDING_AVAILABLE, DEACTIVATED, SUSPENDED, EXPIRED, PENDING_DELETE, DELETED)
 }
 
 @js.native
@@ -181,7 +236,7 @@ object ReceivedStatus {
   val DELETED = "DELETED".asInstanceOf[ReceivedStatus]
   val DISABLED = "DISABLED".asInstanceOf[ReceivedStatus]
 
-  @inline def values = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, DISABLED)
+  @inline def values: js.Array[ReceivedStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, DISABLED)
 }
 
 @js.native
@@ -191,7 +246,7 @@ object RenewType {
   val Weekly = "Weekly".asInstanceOf[RenewType]
   val Monthly = "Monthly".asInstanceOf[RenewType]
 
-  @inline def values = js.Array(None, Weekly, Monthly)
+  @inline def values: js.Array[RenewType] = js.Array(None, Weekly, Monthly)
 }
 
 @js.native
@@ -203,7 +258,7 @@ object ResourceType {
   val RDS = "RDS".asInstanceOf[ResourceType]
   val SYSTEMS_MANAGER_MANAGED_INSTANCE = "SYSTEMS_MANAGER_MANAGED_INSTANCE".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE)
+  @inline def values: js.Array[ResourceType] = js.Array(EC2_INSTANCE, EC2_HOST, EC2_AMI, RDS, SYSTEMS_MANAGER_MANAGED_INSTANCE)
 }
 
 @js.native
@@ -211,6 +266,5 @@ sealed trait TokenType extends js.Any
 object TokenType {
   val REFRESH_TOKEN = "REFRESH_TOKEN".asInstanceOf[TokenType]
 
-  @inline def values = js.Array(REFRESH_TOKEN)
+  @inline def values: js.Array[TokenType] = js.Array(REFRESH_TOKEN)
 }
-

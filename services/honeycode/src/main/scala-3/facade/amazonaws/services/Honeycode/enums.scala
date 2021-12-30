@@ -1,6 +1,6 @@
 package facade.amazonaws.services.honeycode
 
-import scalajs._
+import scalajs.js
 
 type Format = "AUTO" | "NUMBER" | "CURRENCY" | "DATE" | "TIME" | "DATE_TIME" | "PERCENTAGE" | "TEXT" | "ACCOUNTING" | "CONTACT" | "ROWLINK"
 object Format {

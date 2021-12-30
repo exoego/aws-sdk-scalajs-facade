@@ -1,6 +1,6 @@
 package facade.amazonaws.services.robomaker
 
-import scalajs._
+import scalajs.js
 
 type Architecture = "X86_64" | "ARM64" | "ARMHF"
 object Architecture {

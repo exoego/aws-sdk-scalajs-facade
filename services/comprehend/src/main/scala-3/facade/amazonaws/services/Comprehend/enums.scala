@@ -1,6 +1,6 @@
 package facade.amazonaws.services.comprehend
 
-import scalajs._
+import scalajs.js
 
 type DocumentClassifierDataFormat = "COMPREHEND_CSV" | "AUGMENTED_MANIFEST"
 object DocumentClassifierDataFormat {

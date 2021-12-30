@@ -1,7 +1,6 @@
 package facade.amazonaws.services.kinesisvideomedia
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait StartSelectorType extends js.Any
@@ -13,6 +12,5 @@ object StartSelectorType {
   val EARLIEST = "EARLIEST".asInstanceOf[StartSelectorType]
   val CONTINUATION_TOKEN = "CONTINUATION_TOKEN".asInstanceOf[StartSelectorType]
 
-  @inline def values = js.Array(FRAGMENT_NUMBER, SERVER_TIMESTAMP, PRODUCER_TIMESTAMP, NOW, EARLIEST, CONTINUATION_TOKEN)
+  @inline def values: js.Array[StartSelectorType] = js.Array(FRAGMENT_NUMBER, SERVER_TIMESTAMP, PRODUCER_TIMESTAMP, NOW, EARLIEST, CONTINUATION_TOKEN)
 }
-

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.kinesisvideoarchivedmedia
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ClipFragmentSelectorType extends js.Any
@@ -9,7 +8,7 @@ object ClipFragmentSelectorType {
   val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
   val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[ClipFragmentSelectorType]
 
-  @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+  @inline def values: js.Array[ClipFragmentSelectorType] = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object ContainerFormat {
   val FRAGMENTED_MP4 = "FRAGMENTED_MP4".asInstanceOf[ContainerFormat]
   val MPEG_TS = "MPEG_TS".asInstanceOf[ContainerFormat]
 
-  @inline def values = js.Array(FRAGMENTED_MP4, MPEG_TS)
+  @inline def values: js.Array[ContainerFormat] = js.Array(FRAGMENTED_MP4, MPEG_TS)
 }
 
 @js.native
@@ -27,7 +26,7 @@ object DASHDisplayFragmentNumber {
   val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentNumber]
   val NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentNumber]
 
-  @inline def values = js.Array(ALWAYS, NEVER)
+  @inline def values: js.Array[DASHDisplayFragmentNumber] = js.Array(ALWAYS, NEVER)
 }
 
 @js.native
@@ -36,7 +35,7 @@ object DASHDisplayFragmentTimestamp {
   val ALWAYS = "ALWAYS".asInstanceOf[DASHDisplayFragmentTimestamp]
   val NEVER = "NEVER".asInstanceOf[DASHDisplayFragmentTimestamp]
 
-  @inline def values = js.Array(ALWAYS, NEVER)
+  @inline def values: js.Array[DASHDisplayFragmentTimestamp] = js.Array(ALWAYS, NEVER)
 }
 
 @js.native
@@ -45,7 +44,7 @@ object DASHFragmentSelectorType {
   val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
   val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[DASHFragmentSelectorType]
 
-  @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+  @inline def values: js.Array[DASHFragmentSelectorType] = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
 }
 
 @js.native
@@ -55,7 +54,7 @@ object DASHPlaybackMode {
   val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[DASHPlaybackMode]
   val ON_DEMAND = "ON_DEMAND".asInstanceOf[DASHPlaybackMode]
 
-  @inline def values = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
+  @inline def values: js.Array[DASHPlaybackMode] = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
 }
 
 @js.native
@@ -64,7 +63,7 @@ object FragmentSelectorType {
   val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
   val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[FragmentSelectorType]
 
-  @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+  @inline def values: js.Array[FragmentSelectorType] = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
 }
 
 @js.native
@@ -74,7 +73,7 @@ object HLSDiscontinuityMode {
   val NEVER = "NEVER".asInstanceOf[HLSDiscontinuityMode]
   val ON_DISCONTINUITY = "ON_DISCONTINUITY".asInstanceOf[HLSDiscontinuityMode]
 
-  @inline def values = js.Array(ALWAYS, NEVER, ON_DISCONTINUITY)
+  @inline def values: js.Array[HLSDiscontinuityMode] = js.Array(ALWAYS, NEVER, ON_DISCONTINUITY)
 }
 
 @js.native
@@ -83,7 +82,7 @@ object HLSDisplayFragmentTimestamp {
   val ALWAYS = "ALWAYS".asInstanceOf[HLSDisplayFragmentTimestamp]
   val NEVER = "NEVER".asInstanceOf[HLSDisplayFragmentTimestamp]
 
-  @inline def values = js.Array(ALWAYS, NEVER)
+  @inline def values: js.Array[HLSDisplayFragmentTimestamp] = js.Array(ALWAYS, NEVER)
 }
 
 @js.native
@@ -92,7 +91,7 @@ object HLSFragmentSelectorType {
   val PRODUCER_TIMESTAMP = "PRODUCER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
   val SERVER_TIMESTAMP = "SERVER_TIMESTAMP".asInstanceOf[HLSFragmentSelectorType]
 
-  @inline def values = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
+  @inline def values: js.Array[HLSFragmentSelectorType] = js.Array(PRODUCER_TIMESTAMP, SERVER_TIMESTAMP)
 }
 
 @js.native
@@ -102,6 +101,5 @@ object HLSPlaybackMode {
   val LIVE_REPLAY = "LIVE_REPLAY".asInstanceOf[HLSPlaybackMode]
   val ON_DEMAND = "ON_DEMAND".asInstanceOf[HLSPlaybackMode]
 
-  @inline def values = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
+  @inline def values: js.Array[HLSPlaybackMode] = js.Array(LIVE, LIVE_REPLAY, ON_DEMAND)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.appconfig
 
-import scalajs._
+import scalajs.js
 
 type DeploymentEventType = "PERCENTAGE_UPDATED" | "ROLLBACK_STARTED" | "ROLLBACK_COMPLETED" | "BAKE_TIME_STARTED" | "DEPLOYMENT_STARTED" | "DEPLOYMENT_COMPLETED"
 object DeploymentEventType {

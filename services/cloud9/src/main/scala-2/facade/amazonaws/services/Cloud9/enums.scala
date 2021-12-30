@@ -1,7 +1,6 @@
 package facade.amazonaws.services.cloud9
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ConnectionType extends js.Any
@@ -9,7 +8,7 @@ object ConnectionType {
   val CONNECT_SSH = "CONNECT_SSH".asInstanceOf[ConnectionType]
   val CONNECT_SSM = "CONNECT_SSM".asInstanceOf[ConnectionType]
 
-  @inline def values = js.Array(CONNECT_SSH, CONNECT_SSM)
+  @inline def values: js.Array[ConnectionType] = js.Array(CONNECT_SSH, CONNECT_SSM)
 }
 
 @js.native
@@ -21,7 +20,7 @@ object EnvironmentLifecycleStatus {
   val DELETING = "DELETING".asInstanceOf[EnvironmentLifecycleStatus]
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[EnvironmentLifecycleStatus]
 
-  @inline def values = js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED)
+  @inline def values: js.Array[EnvironmentLifecycleStatus] = js.Array(CREATING, CREATED, CREATE_FAILED, DELETING, DELETE_FAILED)
 }
 
 @js.native
@@ -35,7 +34,7 @@ object EnvironmentStatus {
   val stopped = "stopped".asInstanceOf[EnvironmentStatus]
   val deleting = "deleting".asInstanceOf[EnvironmentStatus]
 
-  @inline def values = js.Array(error, creating, connecting, ready, stopping, stopped, deleting)
+  @inline def values: js.Array[EnvironmentStatus] = js.Array(error, creating, connecting, ready, stopping, stopped, deleting)
 }
 
 @js.native
@@ -44,7 +43,7 @@ object EnvironmentType {
   val ssh = "ssh".asInstanceOf[EnvironmentType]
   val ec2 = "ec2".asInstanceOf[EnvironmentType]
 
-  @inline def values = js.Array(ssh, ec2)
+  @inline def values: js.Array[EnvironmentType] = js.Array(ssh, ec2)
 }
 
 @js.native
@@ -62,7 +61,19 @@ object ManagedCredentialsStatus {
   val FAILED_REMOVAL_BY_COLLABORATOR = "FAILED_REMOVAL_BY_COLLABORATOR".asInstanceOf[ManagedCredentialsStatus]
   val FAILED_REMOVAL_BY_OWNER = "FAILED_REMOVAL_BY_OWNER".asInstanceOf[ManagedCredentialsStatus]
 
-  @inline def values = js.Array(ENABLED_ON_CREATE, ENABLED_BY_OWNER, DISABLED_BY_DEFAULT, DISABLED_BY_OWNER, DISABLED_BY_COLLABORATOR, PENDING_REMOVAL_BY_COLLABORATOR, PENDING_START_REMOVAL_BY_COLLABORATOR, PENDING_REMOVAL_BY_OWNER, PENDING_START_REMOVAL_BY_OWNER, FAILED_REMOVAL_BY_COLLABORATOR, FAILED_REMOVAL_BY_OWNER)
+  @inline def values: js.Array[ManagedCredentialsStatus] = js.Array(
+    ENABLED_ON_CREATE,
+    ENABLED_BY_OWNER,
+    DISABLED_BY_DEFAULT,
+    DISABLED_BY_OWNER,
+    DISABLED_BY_COLLABORATOR,
+    PENDING_REMOVAL_BY_COLLABORATOR,
+    PENDING_START_REMOVAL_BY_COLLABORATOR,
+    PENDING_REMOVAL_BY_OWNER,
+    PENDING_START_REMOVAL_BY_OWNER,
+    FAILED_REMOVAL_BY_COLLABORATOR,
+    FAILED_REMOVAL_BY_OWNER
+  )
 }
 
 @js.native
@@ -71,7 +82,7 @@ object MemberPermissions {
   val `read-write` = "read-write".asInstanceOf[MemberPermissions]
   val `read-only` = "read-only".asInstanceOf[MemberPermissions]
 
-  @inline def values = js.Array(`read-write`, `read-only`)
+  @inline def values: js.Array[MemberPermissions] = js.Array(`read-write`, `read-only`)
 }
 
 @js.native
@@ -81,6 +92,5 @@ object Permissions {
   val `read-write` = "read-write".asInstanceOf[Permissions]
   val `read-only` = "read-only".asInstanceOf[Permissions]
 
-  @inline def values = js.Array(owner, `read-write`, `read-only`)
+  @inline def values: js.Array[Permissions] = js.Array(owner, `read-write`, `read-only`)
 }
-

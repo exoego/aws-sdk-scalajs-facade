@@ -1,6 +1,6 @@
 package facade.amazonaws.services.mediatailor
 
-import scalajs._
+import scalajs.js
 
 type AccessType = "S3_SIGV4"
 object AccessType {

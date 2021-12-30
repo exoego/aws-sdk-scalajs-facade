@@ -1,6 +1,6 @@
 package facade.amazonaws.services.marketplacecatalog
 
-import scalajs._
+import scalajs.js
 
 type ChangeStatus = "PREPARING" | "APPLYING" | "SUCCEEDED" | "CANCELLED" | "FAILED"
 object ChangeStatus {

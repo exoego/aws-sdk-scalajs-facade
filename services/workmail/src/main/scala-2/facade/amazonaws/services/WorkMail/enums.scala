@@ -1,7 +1,6 @@
 package facade.amazonaws.services.workmail
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccessControlRuleEffect extends js.Any
@@ -9,7 +8,7 @@ object AccessControlRuleEffect {
   val ALLOW = "ALLOW".asInstanceOf[AccessControlRuleEffect]
   val DENY = "DENY".asInstanceOf[AccessControlRuleEffect]
 
-  @inline def values = js.Array(ALLOW, DENY)
+  @inline def values: js.Array[AccessControlRuleEffect] = js.Array(ALLOW, DENY)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object EntityState {
   val DISABLED = "DISABLED".asInstanceOf[EntityState]
   val DELETED = "DELETED".asInstanceOf[EntityState]
 
-  @inline def values = js.Array(ENABLED, DISABLED, DELETED)
+  @inline def values: js.Array[EntityState] = js.Array(ENABLED, DISABLED, DELETED)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object FolderName {
   val DRAFTS = "DRAFTS".asInstanceOf[FolderName]
   val JUNK_EMAIL = "JUNK_EMAIL".asInstanceOf[FolderName]
 
-  @inline def values = js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL)
+  @inline def values: js.Array[FolderName] = js.Array(INBOX, DELETED_ITEMS, SENT_ITEMS, DRAFTS, JUNK_EMAIL)
 }
 
 @js.native
@@ -42,7 +41,7 @@ object MailboxExportJobState {
   val FAILED = "FAILED".asInstanceOf[MailboxExportJobState]
   val CANCELLED = "CANCELLED".asInstanceOf[MailboxExportJobState]
 
-  @inline def values = js.Array(RUNNING, COMPLETED, FAILED, CANCELLED)
+  @inline def values: js.Array[MailboxExportJobState] = js.Array(RUNNING, COMPLETED, FAILED, CANCELLED)
 }
 
 @js.native
@@ -51,7 +50,7 @@ object MemberType {
   val GROUP = "GROUP".asInstanceOf[MemberType]
   val USER = "USER".asInstanceOf[MemberType]
 
-  @inline def values = js.Array(GROUP, USER)
+  @inline def values: js.Array[MemberType] = js.Array(GROUP, USER)
 }
 
 @js.native
@@ -60,7 +59,7 @@ object MobileDeviceAccessRuleEffect {
   val ALLOW = "ALLOW".asInstanceOf[MobileDeviceAccessRuleEffect]
   val DENY = "DENY".asInstanceOf[MobileDeviceAccessRuleEffect]
 
-  @inline def values = js.Array(ALLOW, DENY)
+  @inline def values: js.Array[MobileDeviceAccessRuleEffect] = js.Array(ALLOW, DENY)
 }
 
 @js.native
@@ -70,7 +69,7 @@ object PermissionType {
   val SEND_AS = "SEND_AS".asInstanceOf[PermissionType]
   val SEND_ON_BEHALF = "SEND_ON_BEHALF".asInstanceOf[PermissionType]
 
-  @inline def values = js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF)
+  @inline def values: js.Array[PermissionType] = js.Array(FULL_ACCESS, SEND_AS, SEND_ON_BEHALF)
 }
 
 @js.native
@@ -79,7 +78,7 @@ object ResourceType {
   val ROOM = "ROOM".asInstanceOf[ResourceType]
   val EQUIPMENT = "EQUIPMENT".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(ROOM, EQUIPMENT)
+  @inline def values: js.Array[ResourceType] = js.Array(ROOM, EQUIPMENT)
 }
 
 @js.native
@@ -89,7 +88,7 @@ object RetentionAction {
   val DELETE = "DELETE".asInstanceOf[RetentionAction]
   val PERMANENTLY_DELETE = "PERMANENTLY_DELETE".asInstanceOf[RetentionAction]
 
-  @inline def values = js.Array(NONE, DELETE, PERMANENTLY_DELETE)
+  @inline def values: js.Array[RetentionAction] = js.Array(NONE, DELETE, PERMANENTLY_DELETE)
 }
 
 @js.native
@@ -99,6 +98,5 @@ object UserRole {
   val RESOURCE = "RESOURCE".asInstanceOf[UserRole]
   val SYSTEM_USER = "SYSTEM_USER".asInstanceOf[UserRole]
 
-  @inline def values = js.Array(USER, RESOURCE, SYSTEM_USER)
+  @inline def values: js.Array[UserRole] = js.Array(USER, RESOURCE, SYSTEM_USER)
 }
-

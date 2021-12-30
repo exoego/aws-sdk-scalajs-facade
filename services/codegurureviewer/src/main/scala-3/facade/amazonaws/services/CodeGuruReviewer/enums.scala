@@ -1,6 +1,6 @@
 package facade.amazonaws.services.codegurureviewer
 
-import scalajs._
+import scalajs.js
 
 type JobState = "Completed" | "Pending" | "Failed" | "Deleting"
 object JobState {

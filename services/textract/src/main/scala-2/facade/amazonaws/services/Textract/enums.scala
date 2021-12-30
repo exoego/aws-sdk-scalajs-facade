@@ -1,7 +1,6 @@
 package facade.amazonaws.services.textract
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait BlockType extends js.Any
@@ -14,7 +13,7 @@ object BlockType {
   val CELL = "CELL".asInstanceOf[BlockType]
   val SELECTION_ELEMENT = "SELECTION_ELEMENT".asInstanceOf[BlockType]
 
-  @inline def values = js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT)
+  @inline def values: js.Array[BlockType] = js.Array(KEY_VALUE_SET, PAGE, LINE, WORD, TABLE, CELL, SELECTION_ELEMENT)
 }
 
 @js.native
@@ -23,7 +22,7 @@ object ContentClassifier {
   val FreeOfPersonallyIdentifiableInformation = "FreeOfPersonallyIdentifiableInformation".asInstanceOf[ContentClassifier]
   val FreeOfAdultContent = "FreeOfAdultContent".asInstanceOf[ContentClassifier]
 
-  @inline def values = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
+  @inline def values: js.Array[ContentClassifier] = js.Array(FreeOfPersonallyIdentifiableInformation, FreeOfAdultContent)
 }
 
 @js.native
@@ -32,7 +31,7 @@ object EntityType {
   val KEY = "KEY".asInstanceOf[EntityType]
   val VALUE = "VALUE".asInstanceOf[EntityType]
 
-  @inline def values = js.Array(KEY, VALUE)
+  @inline def values: js.Array[EntityType] = js.Array(KEY, VALUE)
 }
 
 @js.native
@@ -41,7 +40,7 @@ object FeatureType {
   val TABLES = "TABLES".asInstanceOf[FeatureType]
   val FORMS = "FORMS".asInstanceOf[FeatureType]
 
-  @inline def values = js.Array(TABLES, FORMS)
+  @inline def values: js.Array[FeatureType] = js.Array(TABLES, FORMS)
 }
 
 @js.native
@@ -52,7 +51,7 @@ object JobStatus {
   val FAILED = "FAILED".asInstanceOf[JobStatus]
   val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[JobStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS)
+  @inline def values: js.Array[JobStatus] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED, PARTIAL_SUCCESS)
 }
 
 @js.native
@@ -62,7 +61,7 @@ object RelationshipType {
   val CHILD = "CHILD".asInstanceOf[RelationshipType]
   val COMPLEX_FEATURES = "COMPLEX_FEATURES".asInstanceOf[RelationshipType]
 
-  @inline def values = js.Array(VALUE, CHILD, COMPLEX_FEATURES)
+  @inline def values: js.Array[RelationshipType] = js.Array(VALUE, CHILD, COMPLEX_FEATURES)
 }
 
 @js.native
@@ -71,7 +70,7 @@ object SelectionStatus {
   val SELECTED = "SELECTED".asInstanceOf[SelectionStatus]
   val NOT_SELECTED = "NOT_SELECTED".asInstanceOf[SelectionStatus]
 
-  @inline def values = js.Array(SELECTED, NOT_SELECTED)
+  @inline def values: js.Array[SelectionStatus] = js.Array(SELECTED, NOT_SELECTED)
 }
 
 @js.native
@@ -80,6 +79,5 @@ object TextType {
   val HANDWRITING = "HANDWRITING".asInstanceOf[TextType]
   val PRINTED = "PRINTED".asInstanceOf[TextType]
 
-  @inline def values = js.Array(HANDWRITING, PRINTED)
+  @inline def values: js.Array[TextType] = js.Array(HANDWRITING, PRINTED)
 }
-

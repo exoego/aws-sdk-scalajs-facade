@@ -1,6 +1,6 @@
 package facade.amazonaws.services.apigateway
 
-import scalajs._
+import scalajs.js
 
 type ApiKeySourceType = "HEADER" | "AUTHORIZER"
 object ApiKeySourceType {

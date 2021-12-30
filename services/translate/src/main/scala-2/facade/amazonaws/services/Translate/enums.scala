@@ -1,14 +1,13 @@
 package facade.amazonaws.services.translate
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait EncryptionKeyType extends js.Any
 object EncryptionKeyType {
   val KMS = "KMS".asInstanceOf[EncryptionKeyType]
 
-  @inline def values = js.Array(KMS)
+  @inline def values: js.Array[EncryptionKeyType] = js.Array(KMS)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object JobStatus {
   val STOP_REQUESTED = "STOP_REQUESTED".asInstanceOf[JobStatus]
   val STOPPED = "STOPPED".asInstanceOf[JobStatus]
 
-  @inline def values = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED)
+  @inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, COMPLETED_WITH_ERROR, FAILED, STOP_REQUESTED, STOPPED)
 }
 
 @js.native
@@ -30,7 +29,7 @@ sealed trait MergeStrategy extends js.Any
 object MergeStrategy {
   val OVERWRITE = "OVERWRITE".asInstanceOf[MergeStrategy]
 
-  @inline def values = js.Array(OVERWRITE)
+  @inline def values: js.Array[MergeStrategy] = js.Array(OVERWRITE)
 }
 
 @js.native
@@ -40,7 +39,7 @@ object ParallelDataFormat {
   val CSV = "CSV".asInstanceOf[ParallelDataFormat]
   val TMX = "TMX".asInstanceOf[ParallelDataFormat]
 
-  @inline def values = js.Array(TSV, CSV, TMX)
+  @inline def values: js.Array[ParallelDataFormat] = js.Array(TSV, CSV, TMX)
 }
 
 @js.native
@@ -52,7 +51,7 @@ object ParallelDataStatus {
   val DELETING = "DELETING".asInstanceOf[ParallelDataStatus]
   val FAILED = "FAILED".asInstanceOf[ParallelDataStatus]
 
-  @inline def values = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
+  @inline def values: js.Array[ParallelDataStatus] = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
 }
 
 @js.native
@@ -61,6 +60,5 @@ object TerminologyDataFormat {
   val CSV = "CSV".asInstanceOf[TerminologyDataFormat]
   val TMX = "TMX".asInstanceOf[TerminologyDataFormat]
 
-  @inline def values = js.Array(CSV, TMX)
+  @inline def values: js.Array[TerminologyDataFormat] = js.Array(CSV, TMX)
 }
-

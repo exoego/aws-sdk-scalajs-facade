@@ -1,6 +1,6 @@
 package facade.amazonaws.services.storagegateway
 
-import scalajs._
+import scalajs.js
 
 type ActiveDirectoryStatus = "ACCESS_DENIED" | "DETACHED" | "JOINED" | "JOINING" | "NETWORK_ERROR" | "TIMEOUT" | "UNKNOWN_ERROR"
 object ActiveDirectoryStatus {

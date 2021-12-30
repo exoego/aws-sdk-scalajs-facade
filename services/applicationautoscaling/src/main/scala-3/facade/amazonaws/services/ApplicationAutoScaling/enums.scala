@@ -1,6 +1,6 @@
 package facade.amazonaws.services.applicationautoscaling
 
-import scalajs._
+import scalajs.js
 
 type AdjustmentType = "ChangeInCapacity" | "PercentChangeInCapacity" | "ExactCapacity"
 object AdjustmentType {

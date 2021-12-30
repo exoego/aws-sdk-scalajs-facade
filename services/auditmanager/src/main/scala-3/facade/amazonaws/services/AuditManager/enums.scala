@@ -1,6 +1,6 @@
 package facade.amazonaws.services.auditmanager
 
-import scalajs._
+import scalajs.js
 
 type AccountStatus = "ACTIVE" | "INACTIVE" | "PENDING_ACTIVATION"
 object AccountStatus {

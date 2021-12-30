@@ -1,6 +1,6 @@
 package facade.amazonaws.services.organizations
 
-import scalajs._
+import scalajs.js
 
 type AccountJoinedMethod = "INVITED" | "CREATED"
 object AccountJoinedMethod {

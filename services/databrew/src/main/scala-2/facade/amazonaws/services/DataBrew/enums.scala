@@ -1,7 +1,6 @@
 package facade.amazonaws.services.databrew
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait CompressionFormat extends js.Any
@@ -16,7 +15,7 @@ object CompressionFormat {
   val ZSTD = "ZSTD".asInstanceOf[CompressionFormat]
   val ZLIB = "ZLIB".asInstanceOf[CompressionFormat]
 
-  @inline def values = js.Array(GZIP, LZ4, SNAPPY, BZIP2, DEFLATE, LZO, BROTLI, ZSTD, ZLIB)
+  @inline def values: js.Array[CompressionFormat] = js.Array(GZIP, LZ4, SNAPPY, BZIP2, DEFLATE, LZO, BROTLI, ZSTD, ZLIB)
 }
 
 @js.native
@@ -25,7 +24,7 @@ object EncryptionMode {
   val `SSE-KMS` = "SSE-KMS".asInstanceOf[EncryptionMode]
   val `SSE-S3` = "SSE-S3".asInstanceOf[EncryptionMode]
 
-  @inline def values = js.Array(`SSE-KMS`, `SSE-S3`)
+  @inline def values: js.Array[EncryptionMode] = js.Array(`SSE-KMS`, `SSE-S3`)
 }
 
 @js.native
@@ -36,7 +35,7 @@ object InputFormat {
   val PARQUET = "PARQUET".asInstanceOf[InputFormat]
   val EXCEL = "EXCEL".asInstanceOf[InputFormat]
 
-  @inline def values = js.Array(CSV, JSON, PARQUET, EXCEL)
+  @inline def values: js.Array[InputFormat] = js.Array(CSV, JSON, PARQUET, EXCEL)
 }
 
 @js.native
@@ -50,7 +49,7 @@ object JobRunState {
   val FAILED = "FAILED".asInstanceOf[JobRunState]
   val TIMEOUT = "TIMEOUT".asInstanceOf[JobRunState]
 
-  @inline def values = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
+  @inline def values: js.Array[JobRunState] = js.Array(STARTING, RUNNING, STOPPING, STOPPED, SUCCEEDED, FAILED, TIMEOUT)
 }
 
 @js.native
@@ -59,7 +58,7 @@ object JobType {
   val PROFILE = "PROFILE".asInstanceOf[JobType]
   val RECIPE = "RECIPE".asInstanceOf[JobType]
 
-  @inline def values = js.Array(PROFILE, RECIPE)
+  @inline def values: js.Array[JobType] = js.Array(PROFILE, RECIPE)
 }
 
 @js.native
@@ -68,7 +67,7 @@ object LogSubscription {
   val ENABLE = "ENABLE".asInstanceOf[LogSubscription]
   val DISABLE = "DISABLE".asInstanceOf[LogSubscription]
 
-  @inline def values = js.Array(ENABLE, DISABLE)
+  @inline def values: js.Array[LogSubscription] = js.Array(ENABLE, DISABLE)
 }
 
 @js.native
@@ -77,7 +76,7 @@ object Order {
   val DESCENDING = "DESCENDING".asInstanceOf[Order]
   val ASCENDING = "ASCENDING".asInstanceOf[Order]
 
-  @inline def values = js.Array(DESCENDING, ASCENDING)
+  @inline def values: js.Array[Order] = js.Array(DESCENDING, ASCENDING)
 }
 
 @js.native
@@ -85,7 +84,7 @@ sealed trait OrderedBy extends js.Any
 object OrderedBy {
   val LAST_MODIFIED_DATE = "LAST_MODIFIED_DATE".asInstanceOf[OrderedBy]
 
-  @inline def values = js.Array(LAST_MODIFIED_DATE)
+  @inline def values: js.Array[OrderedBy] = js.Array(LAST_MODIFIED_DATE)
 }
 
 @js.native
@@ -99,7 +98,7 @@ object OutputFormat {
   val ORC = "ORC".asInstanceOf[OutputFormat]
   val XML = "XML".asInstanceOf[OutputFormat]
 
-  @inline def values = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML)
+  @inline def values: js.Array[OutputFormat] = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML)
 }
 
 @js.native
@@ -109,7 +108,7 @@ object ParameterType {
   val Number = "Number".asInstanceOf[ParameterType]
   val String = "String".asInstanceOf[ParameterType]
 
-  @inline def values = js.Array(Datetime, Number, String)
+  @inline def values: js.Array[ParameterType] = js.Array(Datetime, Number, String)
 }
 
 @js.native
@@ -118,7 +117,7 @@ object SampleMode {
   val FULL_DATASET = "FULL_DATASET".asInstanceOf[SampleMode]
   val CUSTOM_ROWS = "CUSTOM_ROWS".asInstanceOf[SampleMode]
 
-  @inline def values = js.Array(FULL_DATASET, CUSTOM_ROWS)
+  @inline def values: js.Array[SampleMode] = js.Array(FULL_DATASET, CUSTOM_ROWS)
 }
 
 @js.native
@@ -128,7 +127,7 @@ object SampleType {
   val LAST_N = "LAST_N".asInstanceOf[SampleType]
   val RANDOM = "RANDOM".asInstanceOf[SampleType]
 
-  @inline def values = js.Array(FIRST_N, LAST_N, RANDOM)
+  @inline def values: js.Array[SampleType] = js.Array(FIRST_N, LAST_N, RANDOM)
 }
 
 @js.native
@@ -145,7 +144,7 @@ object SessionStatus {
   val TERMINATING = "TERMINATING".asInstanceOf[SessionStatus]
   val UPDATING = "UPDATING".asInstanceOf[SessionStatus]
 
-  @inline def values = js.Array(ASSIGNED, FAILED, INITIALIZING, PROVISIONING, READY, RECYCLING, ROTATING, TERMINATED, TERMINATING, UPDATING)
+  @inline def values: js.Array[SessionStatus] = js.Array(ASSIGNED, FAILED, INITIALIZING, PROVISIONING, READY, RECYCLING, ROTATING, TERMINATED, TERMINATING, UPDATING)
 }
 
 @js.native
@@ -155,6 +154,5 @@ object Source {
   val `DATA-CATALOG` = "DATA-CATALOG".asInstanceOf[Source]
   val DATABASE = "DATABASE".asInstanceOf[Source]
 
-  @inline def values = js.Array(S3, `DATA-CATALOG`, DATABASE)
+  @inline def values: js.Array[Source] = js.Array(S3, `DATA-CATALOG`, DATABASE)
 }
-

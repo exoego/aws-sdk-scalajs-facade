@@ -1,6 +1,6 @@
 package facade.amazonaws.services.codestarconnections
 
-import scalajs._
+import scalajs.js
 
 type ConnectionStatus = "PENDING" | "AVAILABLE" | "ERROR"
 object ConnectionStatus {

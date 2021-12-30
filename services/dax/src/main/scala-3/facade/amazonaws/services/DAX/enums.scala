@@ -1,6 +1,6 @@
 package facade.amazonaws.services.dax
 
-import scalajs._
+import scalajs.js
 
 type ChangeType = "IMMEDIATE" | "REQUIRES_REBOOT"
 object ChangeType {

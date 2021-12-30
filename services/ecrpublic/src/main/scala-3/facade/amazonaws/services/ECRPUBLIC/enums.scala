@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ecrpublic
 
-import scalajs._
+import scalajs.js
 
 type ImageFailureCode = "InvalidImageDigest" | "InvalidImageTag" | "ImageTagDoesNotMatchDigest" | "ImageNotFound" | "MissingDigestAndTag" | "ImageReferencedByManifestList" | "KmsError"
 object ImageFailureCode {

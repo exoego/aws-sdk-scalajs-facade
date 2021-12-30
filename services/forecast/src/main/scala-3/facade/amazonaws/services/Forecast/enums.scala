@@ -1,6 +1,6 @@
 package facade.amazonaws.services.forecast
 
-import scalajs._
+import scalajs.js
 
 type AttributeType = "string" | "integer" | "float" | "timestamp" | "geolocation"
 object AttributeType {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.glacier
 
-import scalajs._
+import scalajs.js
 
 type ActionCode = "ArchiveRetrieval" | "InventoryRetrieval" | "Select"
 object ActionCode {

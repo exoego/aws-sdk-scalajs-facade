@@ -1,6 +1,6 @@
 package facade.amazonaws.services.codepipeline
 
-import scalajs._
+import scalajs.js
 
 type ActionCategory = "Source" | "Build" | "Deploy" | "Test" | "Invoke" | "Approval"
 object ActionCategory {

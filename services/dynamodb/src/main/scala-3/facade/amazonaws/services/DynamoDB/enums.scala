@@ -1,6 +1,6 @@
 package facade.amazonaws.services.dynamodb
 
-import scalajs._
+import scalajs.js
 
 type AttributeAction = "ADD" | "PUT" | "DELETE"
 object AttributeAction {

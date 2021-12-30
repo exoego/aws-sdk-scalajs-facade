@@ -1,6 +1,6 @@
 package facade.amazonaws.services.computeoptimizer
 
-import scalajs._
+import scalajs.js
 
 type EBSFilterName = "Finding"
 object EBSFilterName {

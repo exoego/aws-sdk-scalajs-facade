@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iotsitewise
 
-import scalajs._
+import scalajs.js
 
 type AggregateType = "AVERAGE" | "COUNT" | "MAXIMUM" | "MINIMUM" | "SUM" | "STANDARD_DEVIATION"
 object AggregateType {

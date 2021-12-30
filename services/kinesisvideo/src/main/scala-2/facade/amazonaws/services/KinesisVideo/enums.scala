@@ -1,7 +1,6 @@
 package facade.amazonaws.services.kinesisvideo
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait APIName extends js.Any
@@ -14,7 +13,7 @@ object APIName {
   val GET_DASH_STREAMING_SESSION_URL = "GET_DASH_STREAMING_SESSION_URL".asInstanceOf[APIName]
   val GET_CLIP = "GET_CLIP".asInstanceOf[APIName]
 
-  @inline def values = js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP)
+  @inline def values: js.Array[APIName] = js.Array(PUT_MEDIA, GET_MEDIA, LIST_FRAGMENTS, GET_MEDIA_FOR_FRAGMENT_LIST, GET_HLS_STREAMING_SESSION_URL, GET_DASH_STREAMING_SESSION_URL, GET_CLIP)
 }
 
 @js.native
@@ -23,7 +22,7 @@ object ChannelProtocol {
   val WSS = "WSS".asInstanceOf[ChannelProtocol]
   val HTTPS = "HTTPS".asInstanceOf[ChannelProtocol]
 
-  @inline def values = js.Array(WSS, HTTPS)
+  @inline def values: js.Array[ChannelProtocol] = js.Array(WSS, HTTPS)
 }
 
 @js.native
@@ -32,7 +31,7 @@ object ChannelRole {
   val MASTER = "MASTER".asInstanceOf[ChannelRole]
   val VIEWER = "VIEWER".asInstanceOf[ChannelRole]
 
-  @inline def values = js.Array(MASTER, VIEWER)
+  @inline def values: js.Array[ChannelRole] = js.Array(MASTER, VIEWER)
 }
 
 @js.native
@@ -40,7 +39,7 @@ sealed trait ChannelType extends js.Any
 object ChannelType {
   val SINGLE_MASTER = "SINGLE_MASTER".asInstanceOf[ChannelType]
 
-  @inline def values = js.Array(SINGLE_MASTER)
+  @inline def values: js.Array[ChannelType] = js.Array(SINGLE_MASTER)
 }
 
 @js.native
@@ -48,7 +47,7 @@ sealed trait ComparisonOperator extends js.Any
 object ComparisonOperator {
   val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[ComparisonOperator]
 
-  @inline def values = js.Array(BEGINS_WITH)
+  @inline def values: js.Array[ComparisonOperator] = js.Array(BEGINS_WITH)
 }
 
 @js.native
@@ -59,7 +58,7 @@ object Status {
   val UPDATING = "UPDATING".asInstanceOf[Status]
   val DELETING = "DELETING".asInstanceOf[Status]
 
-  @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING)
+  @inline def values: js.Array[Status] = js.Array(CREATING, ACTIVE, UPDATING, DELETING)
 }
 
 @js.native
@@ -68,6 +67,5 @@ object UpdateDataRetentionOperation {
   val INCREASE_DATA_RETENTION = "INCREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
   val DECREASE_DATA_RETENTION = "DECREASE_DATA_RETENTION".asInstanceOf[UpdateDataRetentionOperation]
 
-  @inline def values = js.Array(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION)
+  @inline def values: js.Array[UpdateDataRetentionOperation] = js.Array(INCREASE_DATA_RETENTION, DECREASE_DATA_RETENTION)
 }
-

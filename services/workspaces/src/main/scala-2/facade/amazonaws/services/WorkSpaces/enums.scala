@@ -1,7 +1,6 @@
 package facade.amazonaws.services.workspaces
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccessPropertyValue extends js.Any
@@ -9,7 +8,7 @@ object AccessPropertyValue {
   val ALLOW = "ALLOW".asInstanceOf[AccessPropertyValue]
   val DENY = "DENY".asInstanceOf[AccessPropertyValue]
 
-  @inline def values = js.Array(ALLOW, DENY)
+  @inline def values: js.Array[AccessPropertyValue] = js.Array(ALLOW, DENY)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object Application {
   val Microsoft_Office_2016 = "Microsoft_Office_2016".asInstanceOf[Application]
   val Microsoft_Office_2019 = "Microsoft_Office_2019".asInstanceOf[Application]
 
-  @inline def values = js.Array(Microsoft_Office_2016, Microsoft_Office_2019)
+  @inline def values: js.Array[Application] = js.Array(Microsoft_Office_2016, Microsoft_Office_2019)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object AssociationStatus {
   val PENDING_ASSOCIATION = "PENDING_ASSOCIATION".asInstanceOf[AssociationStatus]
   val PENDING_DISASSOCIATION = "PENDING_DISASSOCIATION".asInstanceOf[AssociationStatus]
 
-  @inline def values = js.Array(NOT_ASSOCIATED, ASSOCIATED_WITH_OWNER_ACCOUNT, ASSOCIATED_WITH_SHARED_ACCOUNT, PENDING_ASSOCIATION, PENDING_DISASSOCIATION)
+  @inline def values: js.Array[AssociationStatus] = js.Array(NOT_ASSOCIATED, ASSOCIATED_WITH_OWNER_ACCOUNT, ASSOCIATED_WITH_SHARED_ACCOUNT, PENDING_ASSOCIATION, PENDING_DISASSOCIATION)
 }
 
 @js.native
@@ -44,7 +43,7 @@ object Compute {
   val POWERPRO = "POWERPRO".asInstanceOf[Compute]
   val GRAPHICSPRO = "GRAPHICSPRO".asInstanceOf[Compute]
 
-  @inline def values = js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO)
+  @inline def values: js.Array[Compute] = js.Array(VALUE, STANDARD, PERFORMANCE, POWER, GRAPHICS, POWERPRO, GRAPHICSPRO)
 }
 
 @js.native
@@ -54,7 +53,7 @@ object ConnectionAliasState {
   val CREATED = "CREATED".asInstanceOf[ConnectionAliasState]
   val DELETING = "DELETING".asInstanceOf[ConnectionAliasState]
 
-  @inline def values = js.Array(CREATING, CREATED, DELETING)
+  @inline def values: js.Array[ConnectionAliasState] = js.Array(CREATING, CREATED, DELETING)
 }
 
 @js.native
@@ -64,7 +63,7 @@ object ConnectionState {
   val DISCONNECTED = "DISCONNECTED".asInstanceOf[ConnectionState]
   val UNKNOWN = "UNKNOWN".asInstanceOf[ConnectionState]
 
-  @inline def values = js.Array(CONNECTED, DISCONNECTED, UNKNOWN)
+  @inline def values: js.Array[ConnectionState] = js.Array(CONNECTED, DISCONNECTED, UNKNOWN)
 }
 
 @js.native
@@ -74,7 +73,7 @@ object DedicatedTenancyModificationStateEnum {
   val COMPLETED = "COMPLETED".asInstanceOf[DedicatedTenancyModificationStateEnum]
   val FAILED = "FAILED".asInstanceOf[DedicatedTenancyModificationStateEnum]
 
-  @inline def values = js.Array(PENDING, COMPLETED, FAILED)
+  @inline def values: js.Array[DedicatedTenancyModificationStateEnum] = js.Array(PENDING, COMPLETED, FAILED)
 }
 
 @js.native
@@ -82,7 +81,7 @@ sealed trait DedicatedTenancySupportEnum extends js.Any
 object DedicatedTenancySupportEnum {
   val ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportEnum]
 
-  @inline def values = js.Array(ENABLED)
+  @inline def values: js.Array[DedicatedTenancySupportEnum] = js.Array(ENABLED)
 }
 
 @js.native
@@ -91,7 +90,7 @@ object DedicatedTenancySupportResultEnum {
   val ENABLED = "ENABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
   val DISABLED = "DISABLED".asInstanceOf[DedicatedTenancySupportResultEnum]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[DedicatedTenancySupportResultEnum] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -100,7 +99,7 @@ object ImageType {
   val OWNED = "OWNED".asInstanceOf[ImageType]
   val SHARED = "SHARED".asInstanceOf[ImageType]
 
-  @inline def values = js.Array(OWNED, SHARED)
+  @inline def values: js.Array[ImageType] = js.Array(OWNED, SHARED)
 }
 
 @js.native
@@ -110,7 +109,7 @@ object ModificationResourceEnum {
   val USER_VOLUME = "USER_VOLUME".asInstanceOf[ModificationResourceEnum]
   val COMPUTE_TYPE = "COMPUTE_TYPE".asInstanceOf[ModificationResourceEnum]
 
-  @inline def values = js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE)
+  @inline def values: js.Array[ModificationResourceEnum] = js.Array(ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE)
 }
 
 @js.native
@@ -119,7 +118,7 @@ object ModificationStateEnum {
   val UPDATE_INITIATED = "UPDATE_INITIATED".asInstanceOf[ModificationStateEnum]
   val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[ModificationStateEnum]
 
-  @inline def values = js.Array(UPDATE_INITIATED, UPDATE_IN_PROGRESS)
+  @inline def values: js.Array[ModificationStateEnum] = js.Array(UPDATE_INITIATED, UPDATE_IN_PROGRESS)
 }
 
 @js.native
@@ -128,7 +127,7 @@ object OperatingSystemType {
   val WINDOWS = "WINDOWS".asInstanceOf[OperatingSystemType]
   val LINUX = "LINUX".asInstanceOf[OperatingSystemType]
 
-  @inline def values = js.Array(WINDOWS, LINUX)
+  @inline def values: js.Array[OperatingSystemType] = js.Array(WINDOWS, LINUX)
 }
 
 @js.native
@@ -137,7 +136,7 @@ object ReconnectEnum {
   val ENABLED = "ENABLED".asInstanceOf[ReconnectEnum]
   val DISABLED = "DISABLED".asInstanceOf[ReconnectEnum]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[ReconnectEnum] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -146,7 +145,7 @@ object RunningMode {
   val AUTO_STOP = "AUTO_STOP".asInstanceOf[RunningMode]
   val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[RunningMode]
 
-  @inline def values = js.Array(AUTO_STOP, ALWAYS_ON)
+  @inline def values: js.Array[RunningMode] = js.Array(AUTO_STOP, ALWAYS_ON)
 }
 
 @js.native
@@ -155,7 +154,7 @@ object TargetWorkspaceState {
   val AVAILABLE = "AVAILABLE".asInstanceOf[TargetWorkspaceState]
   val ADMIN_MAINTENANCE = "ADMIN_MAINTENANCE".asInstanceOf[TargetWorkspaceState]
 
-  @inline def values = js.Array(AVAILABLE, ADMIN_MAINTENANCE)
+  @inline def values: js.Array[TargetWorkspaceState] = js.Array(AVAILABLE, ADMIN_MAINTENANCE)
 }
 
 @js.native
@@ -164,7 +163,7 @@ object Tenancy {
   val DEDICATED = "DEDICATED".asInstanceOf[Tenancy]
   val SHARED = "SHARED".asInstanceOf[Tenancy]
 
-  @inline def values = js.Array(DEDICATED, SHARED)
+  @inline def values: js.Array[Tenancy] = js.Array(DEDICATED, SHARED)
 }
 
 @js.native
@@ -176,7 +175,7 @@ object WorkspaceDirectoryState {
   val DEREGISTERED = "DEREGISTERED".asInstanceOf[WorkspaceDirectoryState]
   val ERROR = "ERROR".asInstanceOf[WorkspaceDirectoryState]
 
-  @inline def values = js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR)
+  @inline def values: js.Array[WorkspaceDirectoryState] = js.Array(REGISTERING, REGISTERED, DEREGISTERING, DEREGISTERED, ERROR)
 }
 
 @js.native
@@ -185,7 +184,7 @@ object WorkspaceDirectoryType {
   val SIMPLE_AD = "SIMPLE_AD".asInstanceOf[WorkspaceDirectoryType]
   val AD_CONNECTOR = "AD_CONNECTOR".asInstanceOf[WorkspaceDirectoryType]
 
-  @inline def values = js.Array(SIMPLE_AD, AD_CONNECTOR)
+  @inline def values: js.Array[WorkspaceDirectoryType] = js.Array(SIMPLE_AD, AD_CONNECTOR)
 }
 
 @js.native
@@ -196,7 +195,7 @@ object WorkspaceImageIngestionProcess {
   val BYOL_GRAPHICSPRO = "BYOL_GRAPHICSPRO".asInstanceOf[WorkspaceImageIngestionProcess]
   val BYOL_REGULAR_WSP = "BYOL_REGULAR_WSP".asInstanceOf[WorkspaceImageIngestionProcess]
 
-  @inline def values = js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO, BYOL_REGULAR_WSP)
+  @inline def values: js.Array[WorkspaceImageIngestionProcess] = js.Array(BYOL_REGULAR, BYOL_GRAPHICS, BYOL_GRAPHICSPRO, BYOL_REGULAR_WSP)
 }
 
 @js.native
@@ -205,7 +204,7 @@ object WorkspaceImageRequiredTenancy {
   val DEFAULT = "DEFAULT".asInstanceOf[WorkspaceImageRequiredTenancy]
   val DEDICATED = "DEDICATED".asInstanceOf[WorkspaceImageRequiredTenancy]
 
-  @inline def values = js.Array(DEFAULT, DEDICATED)
+  @inline def values: js.Array[WorkspaceImageRequiredTenancy] = js.Array(DEFAULT, DEDICATED)
 }
 
 @js.native
@@ -215,7 +214,7 @@ object WorkspaceImageState {
   val PENDING = "PENDING".asInstanceOf[WorkspaceImageState]
   val ERROR = "ERROR".asInstanceOf[WorkspaceImageState]
 
-  @inline def values = js.Array(AVAILABLE, PENDING, ERROR)
+  @inline def values: js.Array[WorkspaceImageState] = js.Array(AVAILABLE, PENDING, ERROR)
 }
 
 @js.native
@@ -239,6 +238,23 @@ object WorkspaceState {
   val STOPPED = "STOPPED".asInstanceOf[WorkspaceState]
   val ERROR = "ERROR".asInstanceOf[WorkspaceState]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, IMPAIRED, UNHEALTHY, REBOOTING, STARTING, REBUILDING, RESTORING, MAINTENANCE, ADMIN_MAINTENANCE, TERMINATING, TERMINATED, SUSPENDED, UPDATING, STOPPING, STOPPED, ERROR)
+  @inline def values: js.Array[WorkspaceState] = js.Array(
+    PENDING,
+    AVAILABLE,
+    IMPAIRED,
+    UNHEALTHY,
+    REBOOTING,
+    STARTING,
+    REBUILDING,
+    RESTORING,
+    MAINTENANCE,
+    ADMIN_MAINTENANCE,
+    TERMINATING,
+    TERMINATED,
+    SUSPENDED,
+    UPDATING,
+    STOPPING,
+    STOPPED,
+    ERROR
+  )
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.braket
 
-import scalajs._
+import scalajs.js
 
 type CancellationStatus = "CANCELLING" | "CANCELLED"
 object CancellationStatus {

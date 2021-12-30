@@ -1,7 +1,6 @@
 package facade.amazonaws.services.codeartifact
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DomainStatus extends js.Any
@@ -9,7 +8,7 @@ object DomainStatus {
   val Active = "Active".asInstanceOf[DomainStatus]
   val Deleted = "Deleted".asInstanceOf[DomainStatus]
 
-  @inline def values = js.Array(Active, Deleted)
+  @inline def values: js.Array[DomainStatus] = js.Array(Active, Deleted)
 }
 
 @js.native
@@ -17,7 +16,7 @@ sealed trait ExternalConnectionStatus extends js.Any
 object ExternalConnectionStatus {
   val Available = "Available".asInstanceOf[ExternalConnectionStatus]
 
-  @inline def values = js.Array(Available)
+  @inline def values: js.Array[ExternalConnectionStatus] = js.Array(Available)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object HashAlgorithm {
   val `SHA-256` = "SHA-256".asInstanceOf[HashAlgorithm]
   val `SHA-512` = "SHA-512".asInstanceOf[HashAlgorithm]
 
-  @inline def values = js.Array(MD5, `SHA-1`, `SHA-256`, `SHA-512`)
+  @inline def values: js.Array[HashAlgorithm] = js.Array(MD5, `SHA-1`, `SHA-256`, `SHA-512`)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object PackageFormat {
   val maven = "maven".asInstanceOf[PackageFormat]
   val nuget = "nuget".asInstanceOf[PackageFormat]
 
-  @inline def values = js.Array(npm, pypi, maven, nuget)
+  @inline def values: js.Array[PackageFormat] = js.Array(npm, pypi, maven, nuget)
 }
 
 @js.native
@@ -52,7 +51,7 @@ object PackageVersionErrorCode {
   val NOT_FOUND = "NOT_FOUND".asInstanceOf[PackageVersionErrorCode]
   val SKIPPED = "SKIPPED".asInstanceOf[PackageVersionErrorCode]
 
-  @inline def values = js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED)
+  @inline def values: js.Array[PackageVersionErrorCode] = js.Array(ALREADY_EXISTS, MISMATCHED_REVISION, MISMATCHED_STATUS, NOT_ALLOWED, NOT_FOUND, SKIPPED)
 }
 
 @js.native
@@ -60,7 +59,7 @@ sealed trait PackageVersionSortType extends js.Any
 object PackageVersionSortType {
   val PUBLISHED_TIME = "PUBLISHED_TIME".asInstanceOf[PackageVersionSortType]
 
-  @inline def values = js.Array(PUBLISHED_TIME)
+  @inline def values: js.Array[PackageVersionSortType] = js.Array(PUBLISHED_TIME)
 }
 
 @js.native
@@ -73,6 +72,5 @@ object PackageVersionStatus {
   val Disposed = "Disposed".asInstanceOf[PackageVersionStatus]
   val Deleted = "Deleted".asInstanceOf[PackageVersionStatus]
 
-  @inline def values = js.Array(Published, Unfinished, Unlisted, Archived, Disposed, Deleted)
+  @inline def values: js.Array[PackageVersionStatus] = js.Array(Published, Unfinished, Unlisted, Archived, Disposed, Deleted)
 }
-

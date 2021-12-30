@@ -1,6 +1,6 @@
 package facade.amazonaws.services.kinesisvideoarchivedmedia
 
-import scalajs._
+import scalajs.js
 
 type ClipFragmentSelectorType = "PRODUCER_TIMESTAMP" | "SERVER_TIMESTAMP"
 object ClipFragmentSelectorType {

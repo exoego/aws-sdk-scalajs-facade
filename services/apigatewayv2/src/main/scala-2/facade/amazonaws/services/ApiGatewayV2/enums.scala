@@ -1,7 +1,6 @@
 package facade.amazonaws.services.apigatewayv2
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 /** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
   */
@@ -13,7 +12,7 @@ object AuthorizationType {
   val CUSTOM = "CUSTOM".asInstanceOf[AuthorizationType]
   val JWT = "JWT".asInstanceOf[AuthorizationType]
 
-  @inline def values = js.Array(NONE, AWS_IAM, CUSTOM, JWT)
+  @inline def values: js.Array[AuthorizationType] = js.Array(NONE, AWS_IAM, CUSTOM, JWT)
 }
 
 /** The authorizer type. Specify REQUEST for a Lambda function using incoming request parameters. Specify JWT to use JSON Web Tokens (supported only for HTTP APIs).
@@ -24,7 +23,7 @@ object AuthorizerType {
   val REQUEST = "REQUEST".asInstanceOf[AuthorizerType]
   val JWT = "JWT".asInstanceOf[AuthorizerType]
 
-  @inline def values = js.Array(REQUEST, JWT)
+  @inline def values: js.Array[AuthorizerType] = js.Array(REQUEST, JWT)
 }
 
 /** Represents a connection type.
@@ -35,7 +34,7 @@ object ConnectionType {
   val INTERNET = "INTERNET".asInstanceOf[ConnectionType]
   val VPC_LINK = "VPC_LINK".asInstanceOf[ConnectionType]
 
-  @inline def values = js.Array(INTERNET, VPC_LINK)
+  @inline def values: js.Array[ConnectionType] = js.Array(INTERNET, VPC_LINK)
 }
 
 /** Specifies how to handle response payload content type conversions. Supported only for WebSocket APIs.
@@ -46,7 +45,7 @@ object ContentHandlingStrategy {
   val CONVERT_TO_BINARY = "CONVERT_TO_BINARY".asInstanceOf[ContentHandlingStrategy]
   val CONVERT_TO_TEXT = "CONVERT_TO_TEXT".asInstanceOf[ContentHandlingStrategy]
 
-  @inline def values = js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT)
+  @inline def values: js.Array[ContentHandlingStrategy] = js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT)
 }
 
 /** Represents a deployment status.
@@ -58,7 +57,7 @@ object DeploymentStatus {
   val FAILED = "FAILED".asInstanceOf[DeploymentStatus]
   val DEPLOYED = "DEPLOYED".asInstanceOf[DeploymentStatus]
 
-  @inline def values = js.Array(PENDING, FAILED, DEPLOYED)
+  @inline def values: js.Array[DeploymentStatus] = js.Array(PENDING, FAILED, DEPLOYED)
 }
 
 /** The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.
@@ -69,7 +68,7 @@ object DomainNameStatus {
   val AVAILABLE = "AVAILABLE".asInstanceOf[DomainNameStatus]
   val UPDATING = "UPDATING".asInstanceOf[DomainNameStatus]
 
-  @inline def values = js.Array(AVAILABLE, UPDATING)
+  @inline def values: js.Array[DomainNameStatus] = js.Array(AVAILABLE, UPDATING)
 }
 
 /** Represents an endpoint type.
@@ -80,7 +79,7 @@ object EndpointType {
   val REGIONAL = "REGIONAL".asInstanceOf[EndpointType]
   val EDGE = "EDGE".asInstanceOf[EndpointType]
 
-  @inline def values = js.Array(REGIONAL, EDGE)
+  @inline def values: js.Array[EndpointType] = js.Array(REGIONAL, EDGE)
 }
 
 /** Represents an API method integration type.
@@ -94,7 +93,7 @@ object IntegrationType {
   val HTTP_PROXY = "HTTP_PROXY".asInstanceOf[IntegrationType]
   val AWS_PROXY = "AWS_PROXY".asInstanceOf[IntegrationType]
 
-  @inline def values = js.Array(AWS, HTTP, MOCK, HTTP_PROXY, AWS_PROXY)
+  @inline def values: js.Array[IntegrationType] = js.Array(AWS, HTTP, MOCK, HTTP_PROXY, AWS_PROXY)
 }
 
 /** The logging level.
@@ -106,7 +105,7 @@ object LoggingLevel {
   val INFO = "INFO".asInstanceOf[LoggingLevel]
   val OFF = "OFF".asInstanceOf[LoggingLevel]
 
-  @inline def values = js.Array(ERROR, INFO, OFF)
+  @inline def values: js.Array[LoggingLevel] = js.Array(ERROR, INFO, OFF)
 }
 
 /** Represents passthrough behavior for an integration response. Supported only for WebSocket APIs.
@@ -118,7 +117,7 @@ object PassthroughBehavior {
   val NEVER = "NEVER".asInstanceOf[PassthroughBehavior]
   val WHEN_NO_TEMPLATES = "WHEN_NO_TEMPLATES".asInstanceOf[PassthroughBehavior]
 
-  @inline def values = js.Array(WHEN_NO_MATCH, NEVER, WHEN_NO_TEMPLATES)
+  @inline def values: js.Array[PassthroughBehavior] = js.Array(WHEN_NO_MATCH, NEVER, WHEN_NO_TEMPLATES)
 }
 
 /** Represents a protocol type.
@@ -129,7 +128,7 @@ object ProtocolType {
   val WEBSOCKET = "WEBSOCKET".asInstanceOf[ProtocolType]
   val HTTP = "HTTP".asInstanceOf[ProtocolType]
 
-  @inline def values = js.Array(WEBSOCKET, HTTP)
+  @inline def values: js.Array[ProtocolType] = js.Array(WEBSOCKET, HTTP)
 }
 
 /** The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.
@@ -140,7 +139,7 @@ object SecurityPolicy {
   val TLS_1_0 = "TLS_1_0".asInstanceOf[SecurityPolicy]
   val TLS_1_2 = "TLS_1_2".asInstanceOf[SecurityPolicy]
 
-  @inline def values = js.Array(TLS_1_0, TLS_1_2)
+  @inline def values: js.Array[SecurityPolicy] = js.Array(TLS_1_0, TLS_1_2)
 }
 
 /** The status of the VPC link.
@@ -154,7 +153,7 @@ object VpcLinkStatus {
   val FAILED = "FAILED".asInstanceOf[VpcLinkStatus]
   val INACTIVE = "INACTIVE".asInstanceOf[VpcLinkStatus]
 
-  @inline def values = js.Array(PENDING, AVAILABLE, DELETING, FAILED, INACTIVE)
+  @inline def values: js.Array[VpcLinkStatus] = js.Array(PENDING, AVAILABLE, DELETING, FAILED, INACTIVE)
 }
 
 /** The version of the VPC link.
@@ -164,6 +163,5 @@ sealed trait VpcLinkVersion extends js.Any
 object VpcLinkVersion {
   val V2 = "V2".asInstanceOf[VpcLinkVersion]
 
-  @inline def values = js.Array(V2)
+  @inline def values: js.Array[VpcLinkVersion] = js.Array(V2)
 }
-

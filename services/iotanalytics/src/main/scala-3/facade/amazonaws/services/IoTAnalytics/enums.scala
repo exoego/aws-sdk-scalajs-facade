@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iotanalytics
 
-import scalajs._
+import scalajs.js
 
 type ChannelStatus = "CREATING" | "ACTIVE" | "DELETING"
 object ChannelStatus {

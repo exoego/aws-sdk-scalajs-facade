@@ -1,7 +1,6 @@
 package facade.amazonaws.services.amplify
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait DomainStatus extends js.Any
@@ -15,7 +14,7 @@ object DomainStatus {
   val REQUESTING_CERTIFICATE = "REQUESTING_CERTIFICATE".asInstanceOf[DomainStatus]
   val UPDATING = "UPDATING".asInstanceOf[DomainStatus]
 
-  @inline def values = js.Array(PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING)
+  @inline def values: js.Array[DomainStatus] = js.Array(PENDING_VERIFICATION, IN_PROGRESS, AVAILABLE, PENDING_DEPLOYMENT, FAILED, CREATING, REQUESTING_CERTIFICATE, UPDATING)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object JobStatus {
   val CANCELLING = "CANCELLING".asInstanceOf[JobStatus]
   val CANCELLED = "CANCELLED".asInstanceOf[JobStatus]
 
-  @inline def values = js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED)
+  @inline def values: js.Array[JobStatus] = js.Array(PENDING, PROVISIONING, RUNNING, FAILED, SUCCEED, CANCELLING, CANCELLED)
 }
 
 @js.native
@@ -40,7 +39,7 @@ object JobType {
   val MANUAL = "MANUAL".asInstanceOf[JobType]
   val WEB_HOOK = "WEB_HOOK".asInstanceOf[JobType]
 
-  @inline def values = js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK)
+  @inline def values: js.Array[JobType] = js.Array(RELEASE, RETRY, MANUAL, WEB_HOOK)
 }
 
 @js.native
@@ -48,7 +47,7 @@ sealed trait Platform extends js.Any
 object Platform {
   val WEB = "WEB".asInstanceOf[Platform]
 
-  @inline def values = js.Array(WEB)
+  @inline def values: js.Array[Platform] = js.Array(WEB)
 }
 
 @js.native
@@ -60,6 +59,5 @@ object Stage {
   val EXPERIMENTAL = "EXPERIMENTAL".asInstanceOf[Stage]
   val PULL_REQUEST = "PULL_REQUEST".asInstanceOf[Stage]
 
-  @inline def values = js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST)
+  @inline def values: js.Array[Stage] = js.Array(PRODUCTION, BETA, DEVELOPMENT, EXPERIMENTAL, PULL_REQUEST)
 }
-

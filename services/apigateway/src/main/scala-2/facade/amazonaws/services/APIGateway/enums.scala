@@ -1,7 +1,6 @@
 package facade.amazonaws.services.apigateway
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ApiKeySourceType extends js.Any
@@ -9,7 +8,7 @@ object ApiKeySourceType {
   val HEADER = "HEADER".asInstanceOf[ApiKeySourceType]
   val AUTHORIZER = "AUTHORIZER".asInstanceOf[ApiKeySourceType]
 
-  @inline def values = js.Array(HEADER, AUTHORIZER)
+  @inline def values: js.Array[ApiKeySourceType] = js.Array(HEADER, AUTHORIZER)
 }
 
 @js.native
@@ -17,7 +16,7 @@ sealed trait ApiKeysFormat extends js.Any
 object ApiKeysFormat {
   val csv = "csv".asInstanceOf[ApiKeysFormat]
 
-  @inline def values = js.Array(csv)
+  @inline def values: js.Array[ApiKeysFormat] = js.Array(csv)
 }
 
 /** The authorizer type. Valid values are <code>TOKEN</code> for a Lambda function using a single authorization token submitted in a custom header, <code>REQUEST</code> for a Lambda function using incoming request parameters, and <code>COGNITO_USER_POOLS</code> for using an Amazon Cognito user pool.
@@ -29,7 +28,7 @@ object AuthorizerType {
   val REQUEST = "REQUEST".asInstanceOf[AuthorizerType]
   val COGNITO_USER_POOLS = "COGNITO_USER_POOLS".asInstanceOf[AuthorizerType]
 
-  @inline def values = js.Array(TOKEN, REQUEST, COGNITO_USER_POOLS)
+  @inline def values: js.Array[AuthorizerType] = js.Array(TOKEN, REQUEST, COGNITO_USER_POOLS)
 }
 
 /** Returns the size of the ```CacheCluster```.
@@ -46,7 +45,7 @@ object CacheClusterSize {
   val `118` = "118".asInstanceOf[CacheClusterSize]
   val `237` = "237".asInstanceOf[CacheClusterSize]
 
-  @inline def values = js.Array(`0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118`, `237`)
+  @inline def values: js.Array[CacheClusterSize] = js.Array(`0.5`, `1.6`, `6.1`, `13.5`, `28.4`, `58.2`, `118`, `237`)
 }
 
 /** Returns the status of the ```CacheCluster```.
@@ -60,7 +59,7 @@ object CacheClusterStatus {
   val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[CacheClusterStatus]
   val FLUSH_IN_PROGRESS = "FLUSH_IN_PROGRESS".asInstanceOf[CacheClusterStatus]
 
-  @inline def values = js.Array(CREATE_IN_PROGRESS, AVAILABLE, DELETE_IN_PROGRESS, NOT_AVAILABLE, FLUSH_IN_PROGRESS)
+  @inline def values: js.Array[CacheClusterStatus] = js.Array(CREATE_IN_PROGRESS, AVAILABLE, DELETE_IN_PROGRESS, NOT_AVAILABLE, FLUSH_IN_PROGRESS)
 }
 
 @js.native
@@ -69,7 +68,7 @@ object ConnectionType {
   val INTERNET = "INTERNET".asInstanceOf[ConnectionType]
   val VPC_LINK = "VPC_LINK".asInstanceOf[ConnectionType]
 
-  @inline def values = js.Array(INTERNET, VPC_LINK)
+  @inline def values: js.Array[ConnectionType] = js.Array(INTERNET, VPC_LINK)
 }
 
 @js.native
@@ -78,7 +77,7 @@ object ContentHandlingStrategy {
   val CONVERT_TO_BINARY = "CONVERT_TO_BINARY".asInstanceOf[ContentHandlingStrategy]
   val CONVERT_TO_TEXT = "CONVERT_TO_TEXT".asInstanceOf[ContentHandlingStrategy]
 
-  @inline def values = js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT)
+  @inline def values: js.Array[ContentHandlingStrategy] = js.Array(CONVERT_TO_BINARY, CONVERT_TO_TEXT)
 }
 
 @js.native
@@ -97,7 +96,7 @@ object DocumentationPartType {
   val RESPONSE_HEADER = "RESPONSE_HEADER".asInstanceOf[DocumentationPartType]
   val RESPONSE_BODY = "RESPONSE_BODY".asInstanceOf[DocumentationPartType]
 
-  @inline def values = js.Array(API, AUTHORIZER, MODEL, RESOURCE, METHOD, PATH_PARAMETER, QUERY_PARAMETER, REQUEST_HEADER, REQUEST_BODY, RESPONSE, RESPONSE_HEADER, RESPONSE_BODY)
+  @inline def values: js.Array[DocumentationPartType] = js.Array(API, AUTHORIZER, MODEL, RESOURCE, METHOD, PATH_PARAMETER, QUERY_PARAMETER, REQUEST_HEADER, REQUEST_BODY, RESPONSE, RESPONSE_HEADER, RESPONSE_BODY)
 }
 
 @js.native
@@ -107,7 +106,7 @@ object DomainNameStatus {
   val UPDATING = "UPDATING".asInstanceOf[DomainNameStatus]
   val PENDING = "PENDING".asInstanceOf[DomainNameStatus]
 
-  @inline def values = js.Array(AVAILABLE, UPDATING, PENDING)
+  @inline def values: js.Array[DomainNameStatus] = js.Array(AVAILABLE, UPDATING, PENDING)
 }
 
 /** The endpoint type. The valid values are <code>EDGE</code> for edge-optimized API setup, most suitable for mobile applications; <code>REGIONAL</code> for regional API endpoint setup, most suitable for calling from AWS Region; and <code>PRIVATE</code> for private APIs.
@@ -119,7 +118,7 @@ object EndpointType {
   val EDGE = "EDGE".asInstanceOf[EndpointType]
   val PRIVATE = "PRIVATE".asInstanceOf[EndpointType]
 
-  @inline def values = js.Array(REGIONAL, EDGE, PRIVATE)
+  @inline def values: js.Array[EndpointType] = js.Array(REGIONAL, EDGE, PRIVATE)
 }
 
 @js.native
@@ -146,7 +145,28 @@ object GatewayResponseType {
   val THROTTLED = "THROTTLED".asInstanceOf[GatewayResponseType]
   val QUOTA_EXCEEDED = "QUOTA_EXCEEDED".asInstanceOf[GatewayResponseType]
 
-  @inline def values = js.Array(DEFAULT_4XX, DEFAULT_5XX, RESOURCE_NOT_FOUND, UNAUTHORIZED, INVALID_API_KEY, ACCESS_DENIED, AUTHORIZER_FAILURE, AUTHORIZER_CONFIGURATION_ERROR, INVALID_SIGNATURE, EXPIRED_TOKEN, MISSING_AUTHENTICATION_TOKEN, INTEGRATION_FAILURE, INTEGRATION_TIMEOUT, API_CONFIGURATION_ERROR, UNSUPPORTED_MEDIA_TYPE, BAD_REQUEST_PARAMETERS, BAD_REQUEST_BODY, REQUEST_TOO_LARGE, THROTTLED, QUOTA_EXCEEDED)
+  @inline def values: js.Array[GatewayResponseType] = js.Array(
+    DEFAULT_4XX,
+    DEFAULT_5XX,
+    RESOURCE_NOT_FOUND,
+    UNAUTHORIZED,
+    INVALID_API_KEY,
+    ACCESS_DENIED,
+    AUTHORIZER_FAILURE,
+    AUTHORIZER_CONFIGURATION_ERROR,
+    INVALID_SIGNATURE,
+    EXPIRED_TOKEN,
+    MISSING_AUTHENTICATION_TOKEN,
+    INTEGRATION_FAILURE,
+    INTEGRATION_TIMEOUT,
+    API_CONFIGURATION_ERROR,
+    UNSUPPORTED_MEDIA_TYPE,
+    BAD_REQUEST_PARAMETERS,
+    BAD_REQUEST_BODY,
+    REQUEST_TOO_LARGE,
+    THROTTLED,
+    QUOTA_EXCEEDED
+  )
 }
 
 /** The integration type. The valid value is <code>HTTP</code> for integrating an API method with an HTTP backend; <code>AWS</code> with any AWS service endpoints; <code>MOCK</code> for testing without actually invoking the backend; <code>HTTP_PROXY</code> for integrating with the HTTP proxy integration; <code>AWS_PROXY</code> for integrating with the Lambda proxy integration.
@@ -160,7 +180,7 @@ object IntegrationType {
   val HTTP_PROXY = "HTTP_PROXY".asInstanceOf[IntegrationType]
   val AWS_PROXY = "AWS_PROXY".asInstanceOf[IntegrationType]
 
-  @inline def values = js.Array(HTTP, AWS, MOCK, HTTP_PROXY, AWS_PROXY)
+  @inline def values: js.Array[IntegrationType] = js.Array(HTTP, AWS, MOCK, HTTP_PROXY, AWS_PROXY)
 }
 
 @js.native
@@ -169,7 +189,7 @@ object LocationStatusType {
   val DOCUMENTED = "DOCUMENTED".asInstanceOf[LocationStatusType]
   val UNDOCUMENTED = "UNDOCUMENTED".asInstanceOf[LocationStatusType]
 
-  @inline def values = js.Array(DOCUMENTED, UNDOCUMENTED)
+  @inline def values: js.Array[LocationStatusType] = js.Array(DOCUMENTED, UNDOCUMENTED)
 }
 
 @js.native
@@ -182,7 +202,7 @@ object Op {
   val copy = "copy".asInstanceOf[Op]
   val test = "test".asInstanceOf[Op]
 
-  @inline def values = js.Array(add, remove, replace, move, copy, test)
+  @inline def values: js.Array[Op] = js.Array(add, remove, replace, move, copy, test)
 }
 
 @js.native
@@ -191,7 +211,7 @@ object PutMode {
   val merge = "merge".asInstanceOf[PutMode]
   val overwrite = "overwrite".asInstanceOf[PutMode]
 
-  @inline def values = js.Array(merge, overwrite)
+  @inline def values: js.Array[PutMode] = js.Array(merge, overwrite)
 }
 
 @js.native
@@ -201,7 +221,7 @@ object QuotaPeriodType {
   val WEEK = "WEEK".asInstanceOf[QuotaPeriodType]
   val MONTH = "MONTH".asInstanceOf[QuotaPeriodType]
 
-  @inline def values = js.Array(DAY, WEEK, MONTH)
+  @inline def values: js.Array[QuotaPeriodType] = js.Array(DAY, WEEK, MONTH)
 }
 
 @js.native
@@ -210,7 +230,7 @@ object SecurityPolicy {
   val TLS_1_0 = "TLS_1_0".asInstanceOf[SecurityPolicy]
   val TLS_1_2 = "TLS_1_2".asInstanceOf[SecurityPolicy]
 
-  @inline def values = js.Array(TLS_1_0, TLS_1_2)
+  @inline def values: js.Array[SecurityPolicy] = js.Array(TLS_1_0, TLS_1_2)
 }
 
 @js.native
@@ -220,7 +240,7 @@ object UnauthorizedCacheControlHeaderStrategy {
   val SUCCEED_WITH_RESPONSE_HEADER = "SUCCEED_WITH_RESPONSE_HEADER".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
   val SUCCEED_WITHOUT_RESPONSE_HEADER = "SUCCEED_WITHOUT_RESPONSE_HEADER".asInstanceOf[UnauthorizedCacheControlHeaderStrategy]
 
-  @inline def values = js.Array(FAIL_WITH_403, SUCCEED_WITH_RESPONSE_HEADER, SUCCEED_WITHOUT_RESPONSE_HEADER)
+  @inline def values: js.Array[UnauthorizedCacheControlHeaderStrategy] = js.Array(FAIL_WITH_403, SUCCEED_WITH_RESPONSE_HEADER, SUCCEED_WITHOUT_RESPONSE_HEADER)
 }
 
 @js.native
@@ -231,6 +251,5 @@ object VpcLinkStatus {
   val DELETING = "DELETING".asInstanceOf[VpcLinkStatus]
   val FAILED = "FAILED".asInstanceOf[VpcLinkStatus]
 
-  @inline def values = js.Array(AVAILABLE, PENDING, DELETING, FAILED)
+  @inline def values: js.Array[VpcLinkStatus] = js.Array(AVAILABLE, PENDING, DELETING, FAILED)
 }
-

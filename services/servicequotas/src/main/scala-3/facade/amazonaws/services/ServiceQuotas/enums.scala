@@ -1,6 +1,6 @@
 package facade.amazonaws.services.servicequotas
 
-import scalajs._
+import scalajs.js
 
 type ErrorCode = "DEPENDENCY_ACCESS_DENIED_ERROR" | "DEPENDENCY_THROTTLING_ERROR" | "DEPENDENCY_SERVICE_ERROR" | "SERVICE_QUOTA_NOT_AVAILABLE_ERROR"
 object ErrorCode {

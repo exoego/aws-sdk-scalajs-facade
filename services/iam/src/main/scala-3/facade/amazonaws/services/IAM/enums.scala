@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iam
 
-import scalajs._
+import scalajs.js
 
 type AccessAdvisorUsageGranularityType = "SERVICE_LEVEL" | "ACTION_LEVEL"
 object AccessAdvisorUsageGranularityType {

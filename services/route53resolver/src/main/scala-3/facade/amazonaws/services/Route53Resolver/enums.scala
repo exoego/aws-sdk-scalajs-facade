@@ -1,6 +1,6 @@
 package facade.amazonaws.services.route53resolver
 
-import scalajs._
+import scalajs.js
 
 type Action = "ALLOW" | "BLOCK" | "ALERT"
 object Action {

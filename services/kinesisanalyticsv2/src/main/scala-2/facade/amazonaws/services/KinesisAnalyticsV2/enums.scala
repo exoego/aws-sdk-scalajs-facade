@@ -1,7 +1,6 @@
 package facade.amazonaws.services.kinesisanalyticsv2
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ApplicationRestoreType extends js.Any
@@ -10,7 +9,7 @@ object ApplicationRestoreType {
   val RESTORE_FROM_LATEST_SNAPSHOT = "RESTORE_FROM_LATEST_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
   val RESTORE_FROM_CUSTOM_SNAPSHOT = "RESTORE_FROM_CUSTOM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
 
-  @inline def values = js.Array(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT)
+  @inline def values: js.Array[ApplicationRestoreType] = js.Array(SKIP_RESTORE_FROM_SNAPSHOT, RESTORE_FROM_LATEST_SNAPSHOT, RESTORE_FROM_CUSTOM_SNAPSHOT)
 }
 
 @js.native
@@ -25,7 +24,7 @@ object ApplicationStatus {
   val AUTOSCALING = "AUTOSCALING".asInstanceOf[ApplicationStatus]
   val FORCE_STOPPING = "FORCE_STOPPING".asInstanceOf[ApplicationStatus]
 
-  @inline def values = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING, AUTOSCALING, FORCE_STOPPING)
+  @inline def values: js.Array[ApplicationStatus] = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING, AUTOSCALING, FORCE_STOPPING)
 }
 
 @js.native
@@ -34,7 +33,7 @@ object CodeContentType {
   val PLAINTEXT = "PLAINTEXT".asInstanceOf[CodeContentType]
   val ZIPFILE = "ZIPFILE".asInstanceOf[CodeContentType]
 
-  @inline def values = js.Array(PLAINTEXT, ZIPFILE)
+  @inline def values: js.Array[CodeContentType] = js.Array(PLAINTEXT, ZIPFILE)
 }
 
 @js.native
@@ -43,7 +42,7 @@ object ConfigurationType {
   val DEFAULT = "DEFAULT".asInstanceOf[ConfigurationType]
   val CUSTOM = "CUSTOM".asInstanceOf[ConfigurationType]
 
-  @inline def values = js.Array(DEFAULT, CUSTOM)
+  @inline def values: js.Array[ConfigurationType] = js.Array(DEFAULT, CUSTOM)
 }
 
 @js.native
@@ -53,7 +52,7 @@ object InputStartingPosition {
   val TRIM_HORIZON = "TRIM_HORIZON".asInstanceOf[InputStartingPosition]
   val LAST_STOPPED_POINT = "LAST_STOPPED_POINT".asInstanceOf[InputStartingPosition]
 
-  @inline def values = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
+  @inline def values: js.Array[InputStartingPosition] = js.Array(NOW, TRIM_HORIZON, LAST_STOPPED_POINT)
 }
 
 @js.native
@@ -64,7 +63,7 @@ object LogLevel {
   val ERROR = "ERROR".asInstanceOf[LogLevel]
   val DEBUG = "DEBUG".asInstanceOf[LogLevel]
 
-  @inline def values = js.Array(INFO, WARN, ERROR, DEBUG)
+  @inline def values: js.Array[LogLevel] = js.Array(INFO, WARN, ERROR, DEBUG)
 }
 
 @js.native
@@ -75,7 +74,7 @@ object MetricsLevel {
   val OPERATOR = "OPERATOR".asInstanceOf[MetricsLevel]
   val PARALLELISM = "PARALLELISM".asInstanceOf[MetricsLevel]
 
-  @inline def values = js.Array(APPLICATION, TASK, OPERATOR, PARALLELISM)
+  @inline def values: js.Array[MetricsLevel] = js.Array(APPLICATION, TASK, OPERATOR, PARALLELISM)
 }
 
 @js.native
@@ -84,7 +83,7 @@ object RecordFormatType {
   val JSON = "JSON".asInstanceOf[RecordFormatType]
   val CSV = "CSV".asInstanceOf[RecordFormatType]
 
-  @inline def values = js.Array(JSON, CSV)
+  @inline def values: js.Array[RecordFormatType] = js.Array(JSON, CSV)
 }
 
 @js.native
@@ -95,7 +94,7 @@ object RuntimeEnvironment {
   val `FLINK-1_8` = "FLINK-1_8".asInstanceOf[RuntimeEnvironment]
   val `FLINK-1_11` = "FLINK-1_11".asInstanceOf[RuntimeEnvironment]
 
-  @inline def values = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`)
+  @inline def values: js.Array[RuntimeEnvironment] = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`)
 }
 
 @js.native
@@ -106,7 +105,7 @@ object SnapshotStatus {
   val DELETING = "DELETING".asInstanceOf[SnapshotStatus]
   val FAILED = "FAILED".asInstanceOf[SnapshotStatus]
 
-  @inline def values = js.Array(CREATING, READY, DELETING, FAILED)
+  @inline def values: js.Array[SnapshotStatus] = js.Array(CREATING, READY, DELETING, FAILED)
 }
 
 @js.native
@@ -114,6 +113,5 @@ sealed trait UrlType extends js.Any
 object UrlType {
   val FLINK_DASHBOARD_URL = "FLINK_DASHBOARD_URL".asInstanceOf[UrlType]
 
-  @inline def values = js.Array(FLINK_DASHBOARD_URL)
+  @inline def values: js.Array[UrlType] = js.Array(FLINK_DASHBOARD_URL)
 }
-

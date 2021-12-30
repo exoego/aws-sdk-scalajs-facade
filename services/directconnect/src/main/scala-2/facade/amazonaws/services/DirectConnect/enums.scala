@@ -1,7 +1,6 @@
 package facade.amazonaws.services.directconnect
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AddressFamily extends js.Any
@@ -9,7 +8,7 @@ object AddressFamily {
   val ipv4 = "ipv4".asInstanceOf[AddressFamily]
   val ipv6 = "ipv6".asInstanceOf[AddressFamily]
 
-  @inline def values = js.Array(ipv4, ipv6)
+  @inline def values: js.Array[AddressFamily] = js.Array(ipv4, ipv6)
 }
 
 @js.native
@@ -21,7 +20,7 @@ object BGPPeerState {
   val deleting = "deleting".asInstanceOf[BGPPeerState]
   val deleted = "deleted".asInstanceOf[BGPPeerState]
 
-  @inline def values = js.Array(verifying, pending, available, deleting, deleted)
+  @inline def values: js.Array[BGPPeerState] = js.Array(verifying, pending, available, deleting, deleted)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object BGPStatus {
   val down = "down".asInstanceOf[BGPStatus]
   val unknown = "unknown".asInstanceOf[BGPStatus]
 
-  @inline def values = js.Array(up, down, unknown)
+  @inline def values: js.Array[BGPStatus] = js.Array(up, down, unknown)
 }
 
 @js.native
@@ -47,7 +46,7 @@ object ConnectionState {
   val rejected = "rejected".asInstanceOf[ConnectionState]
   val unknown = "unknown".asInstanceOf[ConnectionState]
 
-  @inline def values = js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown)
+  @inline def values: js.Array[ConnectionState] = js.Array(ordering, requested, pending, available, down, deleting, deleted, rejected, unknown)
 }
 
 @js.native
@@ -57,7 +56,7 @@ object DirectConnectGatewayAssociationProposalState {
   val accepted = "accepted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
   val deleted = "deleted".asInstanceOf[DirectConnectGatewayAssociationProposalState]
 
-  @inline def values = js.Array(requested, accepted, deleted)
+  @inline def values: js.Array[DirectConnectGatewayAssociationProposalState] = js.Array(requested, accepted, deleted)
 }
 
 @js.native
@@ -69,7 +68,7 @@ object DirectConnectGatewayAssociationState {
   val disassociated = "disassociated".asInstanceOf[DirectConnectGatewayAssociationState]
   val updating = "updating".asInstanceOf[DirectConnectGatewayAssociationState]
 
-  @inline def values = js.Array(associating, associated, disassociating, disassociated, updating)
+  @inline def values: js.Array[DirectConnectGatewayAssociationState] = js.Array(associating, associated, disassociating, disassociated, updating)
 }
 
 @js.native
@@ -80,7 +79,7 @@ object DirectConnectGatewayAttachmentState {
   val detaching = "detaching".asInstanceOf[DirectConnectGatewayAttachmentState]
   val detached = "detached".asInstanceOf[DirectConnectGatewayAttachmentState]
 
-  @inline def values = js.Array(attaching, attached, detaching, detached)
+  @inline def values: js.Array[DirectConnectGatewayAttachmentState] = js.Array(attaching, attached, detaching, detached)
 }
 
 @js.native
@@ -89,7 +88,7 @@ object DirectConnectGatewayAttachmentType {
   val TransitVirtualInterface = "TransitVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
   val PrivateVirtualInterface = "PrivateVirtualInterface".asInstanceOf[DirectConnectGatewayAttachmentType]
 
-  @inline def values = js.Array(TransitVirtualInterface, PrivateVirtualInterface)
+  @inline def values: js.Array[DirectConnectGatewayAttachmentType] = js.Array(TransitVirtualInterface, PrivateVirtualInterface)
 }
 
 @js.native
@@ -100,7 +99,7 @@ object DirectConnectGatewayState {
   val deleting = "deleting".asInstanceOf[DirectConnectGatewayState]
   val deleted = "deleted".asInstanceOf[DirectConnectGatewayState]
 
-  @inline def values = js.Array(pending, available, deleting, deleted)
+  @inline def values: js.Array[DirectConnectGatewayState] = js.Array(pending, available, deleting, deleted)
 }
 
 @js.native
@@ -109,7 +108,7 @@ object GatewayType {
   val virtualPrivateGateway = "virtualPrivateGateway".asInstanceOf[GatewayType]
   val transitGateway = "transitGateway".asInstanceOf[GatewayType]
 
-  @inline def values = js.Array(virtualPrivateGateway, transitGateway)
+  @inline def values: js.Array[GatewayType] = js.Array(virtualPrivateGateway, transitGateway)
 }
 
 @js.native
@@ -119,7 +118,7 @@ object HasLogicalRedundancy {
   val yes = "yes".asInstanceOf[HasLogicalRedundancy]
   val no = "no".asInstanceOf[HasLogicalRedundancy]
 
-  @inline def values = js.Array(unknown, yes, no)
+  @inline def values: js.Array[HasLogicalRedundancy] = js.Array(unknown, yes, no)
 }
 
 @js.native
@@ -133,7 +132,7 @@ object InterconnectState {
   val deleted = "deleted".asInstanceOf[InterconnectState]
   val unknown = "unknown".asInstanceOf[InterconnectState]
 
-  @inline def values = js.Array(requested, pending, available, down, deleting, deleted, unknown)
+  @inline def values: js.Array[InterconnectState] = js.Array(requested, pending, available, down, deleting, deleted, unknown)
 }
 
 @js.native
@@ -147,7 +146,7 @@ object LagState {
   val deleted = "deleted".asInstanceOf[LagState]
   val unknown = "unknown".asInstanceOf[LagState]
 
-  @inline def values = js.Array(requested, pending, available, down, deleting, deleted, unknown)
+  @inline def values: js.Array[LagState] = js.Array(requested, pending, available, down, deleting, deleted, unknown)
 }
 
 @js.native
@@ -155,7 +154,7 @@ sealed trait LoaContentType extends js.Any
 object LoaContentType {
   val `application/pdf` = "application/pdf".asInstanceOf[LoaContentType]
 
-  @inline def values = js.Array(`application/pdf`)
+  @inline def values: js.Array[LoaContentType] = js.Array(`application/pdf`)
 }
 
 @js.native
@@ -171,6 +170,5 @@ object VirtualInterfaceState {
   val rejected = "rejected".asInstanceOf[VirtualInterfaceState]
   val unknown = "unknown".asInstanceOf[VirtualInterfaceState]
 
-  @inline def values = js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown)
+  @inline def values: js.Array[VirtualInterfaceState] = js.Array(confirming, verifying, pending, available, down, deleting, deleted, rejected, unknown)
 }
-

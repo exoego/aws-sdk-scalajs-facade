@@ -1,7 +1,6 @@
 package facade.amazonaws.services.networkfirewall
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AttachmentStatus extends js.Any
@@ -11,7 +10,7 @@ object AttachmentStatus {
   val SCALING = "SCALING".asInstanceOf[AttachmentStatus]
   val READY = "READY".asInstanceOf[AttachmentStatus]
 
-  @inline def values = js.Array(CREATING, DELETING, SCALING, READY)
+  @inline def values: js.Array[AttachmentStatus] = js.Array(CREATING, DELETING, SCALING, READY)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object ConfigurationSyncState {
   val PENDING = "PENDING".asInstanceOf[ConfigurationSyncState]
   val IN_SYNC = "IN_SYNC".asInstanceOf[ConfigurationSyncState]
 
-  @inline def values = js.Array(PENDING, IN_SYNC)
+  @inline def values: js.Array[ConfigurationSyncState] = js.Array(PENDING, IN_SYNC)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object FirewallStatusValue {
   val DELETING = "DELETING".asInstanceOf[FirewallStatusValue]
   val READY = "READY".asInstanceOf[FirewallStatusValue]
 
-  @inline def values = js.Array(PROVISIONING, DELETING, READY)
+  @inline def values: js.Array[FirewallStatusValue] = js.Array(PROVISIONING, DELETING, READY)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object GeneratedRulesType {
   val ALLOWLIST = "ALLOWLIST".asInstanceOf[GeneratedRulesType]
   val DENYLIST = "DENYLIST".asInstanceOf[GeneratedRulesType]
 
-  @inline def values = js.Array(ALLOWLIST, DENYLIST)
+  @inline def values: js.Array[GeneratedRulesType] = js.Array(ALLOWLIST, DENYLIST)
 }
 
 @js.native
@@ -49,7 +48,7 @@ object LogDestinationType {
   val CloudWatchLogs = "CloudWatchLogs".asInstanceOf[LogDestinationType]
   val KinesisDataFirehose = "KinesisDataFirehose".asInstanceOf[LogDestinationType]
 
-  @inline def values = js.Array(S3, CloudWatchLogs, KinesisDataFirehose)
+  @inline def values: js.Array[LogDestinationType] = js.Array(S3, CloudWatchLogs, KinesisDataFirehose)
 }
 
 @js.native
@@ -58,7 +57,7 @@ object LogType {
   val ALERT = "ALERT".asInstanceOf[LogType]
   val FLOW = "FLOW".asInstanceOf[LogType]
 
-  @inline def values = js.Array(ALERT, FLOW)
+  @inline def values: js.Array[LogType] = js.Array(ALERT, FLOW)
 }
 
 @js.native
@@ -67,7 +66,7 @@ object PerObjectSyncStatus {
   val PENDING = "PENDING".asInstanceOf[PerObjectSyncStatus]
   val IN_SYNC = "IN_SYNC".asInstanceOf[PerObjectSyncStatus]
 
-  @inline def values = js.Array(PENDING, IN_SYNC)
+  @inline def values: js.Array[PerObjectSyncStatus] = js.Array(PENDING, IN_SYNC)
 }
 
 @js.native
@@ -76,7 +75,7 @@ object ResourceStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[ResourceStatus]
   val DELETING = "DELETING".asInstanceOf[ResourceStatus]
 
-  @inline def values = js.Array(ACTIVE, DELETING)
+  @inline def values: js.Array[ResourceStatus] = js.Array(ACTIVE, DELETING)
 }
 
 @js.native
@@ -85,7 +84,7 @@ object RuleGroupType {
   val STATELESS = "STATELESS".asInstanceOf[RuleGroupType]
   val STATEFUL = "STATEFUL".asInstanceOf[RuleGroupType]
 
-  @inline def values = js.Array(STATELESS, STATEFUL)
+  @inline def values: js.Array[RuleGroupType] = js.Array(STATELESS, STATEFUL)
 }
 
 @js.native
@@ -95,7 +94,7 @@ object StatefulAction {
   val DROP = "DROP".asInstanceOf[StatefulAction]
   val ALERT = "ALERT".asInstanceOf[StatefulAction]
 
-  @inline def values = js.Array(PASS, DROP, ALERT)
+  @inline def values: js.Array[StatefulAction] = js.Array(PASS, DROP, ALERT)
 }
 
 @js.native
@@ -104,7 +103,7 @@ object StatefulRuleDirection {
   val FORWARD = "FORWARD".asInstanceOf[StatefulRuleDirection]
   val ANY = "ANY".asInstanceOf[StatefulRuleDirection]
 
-  @inline def values = js.Array(FORWARD, ANY)
+  @inline def values: js.Array[StatefulRuleDirection] = js.Array(FORWARD, ANY)
 }
 
 @js.native
@@ -130,7 +129,7 @@ object StatefulRuleProtocol {
   val NTP = "NTP".asInstanceOf[StatefulRuleProtocol]
   val DHCP = "DHCP".asInstanceOf[StatefulRuleProtocol]
 
-  @inline def values = js.Array(IP, TCP, UDP, ICMP, HTTP, FTP, TLS, SMB, DNS, DCERPC, SSH, SMTP, IMAP, MSN, KRB5, IKEV2, TFTP, NTP, DHCP)
+  @inline def values: js.Array[StatefulRuleProtocol] = js.Array(IP, TCP, UDP, ICMP, HTTP, FTP, TLS, SMB, DNS, DCERPC, SSH, SMTP, IMAP, MSN, KRB5, IKEV2, TFTP, NTP, DHCP)
 }
 
 @js.native
@@ -145,7 +144,7 @@ object TCPFlag {
   val ECE = "ECE".asInstanceOf[TCPFlag]
   val CWR = "CWR".asInstanceOf[TCPFlag]
 
-  @inline def values = js.Array(FIN, SYN, RST, PSH, ACK, URG, ECE, CWR)
+  @inline def values: js.Array[TCPFlag] = js.Array(FIN, SYN, RST, PSH, ACK, URG, ECE, CWR)
 }
 
 @js.native
@@ -154,6 +153,5 @@ object TargetType {
   val TLS_SNI = "TLS_SNI".asInstanceOf[TargetType]
   val HTTP_HOST = "HTTP_HOST".asInstanceOf[TargetType]
 
-  @inline def values = js.Array(TLS_SNI, HTTP_HOST)
+  @inline def values: js.Array[TargetType] = js.Array(TLS_SNI, HTTP_HOST)
 }
-

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.cloudwatchlogs
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 /** The method used to distribute log data to the destination, which can be either random or grouped by log stream.
   */
@@ -11,7 +10,7 @@ object Distribution {
   val Random = "Random".asInstanceOf[Distribution]
   val ByLogStream = "ByLogStream".asInstanceOf[Distribution]
 
-  @inline def values = js.Array(Random, ByLogStream)
+  @inline def values: js.Array[Distribution] = js.Array(Random, ByLogStream)
 }
 
 @js.native
@@ -24,7 +23,7 @@ object ExportTaskStatusCode {
   val PENDING_CANCEL = "PENDING_CANCEL".asInstanceOf[ExportTaskStatusCode]
   val RUNNING = "RUNNING".asInstanceOf[ExportTaskStatusCode]
 
-  @inline def values = js.Array(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING)
+  @inline def values: js.Array[ExportTaskStatusCode] = js.Array(CANCELLED, COMPLETED, FAILED, PENDING, PENDING_CANCEL, RUNNING)
 }
 
 @js.native
@@ -33,7 +32,7 @@ object OrderBy {
   val LogStreamName = "LogStreamName".asInstanceOf[OrderBy]
   val LastEventTime = "LastEventTime".asInstanceOf[OrderBy]
 
-  @inline def values = js.Array(LogStreamName, LastEventTime)
+  @inline def values: js.Array[OrderBy] = js.Array(LogStreamName, LastEventTime)
 }
 
 @js.native
@@ -45,6 +44,5 @@ object QueryStatus {
   val Failed = "Failed".asInstanceOf[QueryStatus]
   val Cancelled = "Cancelled".asInstanceOf[QueryStatus]
 
-  @inline def values = js.Array(Scheduled, Running, Complete, Failed, Cancelled)
+  @inline def values: js.Array[QueryStatus] = js.Array(Scheduled, Running, Complete, Failed, Cancelled)
 }
-

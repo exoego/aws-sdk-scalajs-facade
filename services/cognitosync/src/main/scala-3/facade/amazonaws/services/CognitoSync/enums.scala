@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cognitosync
 
-import scalajs._
+import scalajs.js
 
 type BulkPublishStatus = "NOT_STARTED" | "IN_PROGRESS" | "FAILED" | "SUCCEEDED"
 object BulkPublishStatus {

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.codebuild
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ArtifactNamespace extends js.Any
@@ -9,7 +8,7 @@ object ArtifactNamespace {
   val NONE = "NONE".asInstanceOf[ArtifactNamespace]
   val BUILD_ID = "BUILD_ID".asInstanceOf[ArtifactNamespace]
 
-  @inline def values = js.Array(NONE, BUILD_ID)
+  @inline def values: js.Array[ArtifactNamespace] = js.Array(NONE, BUILD_ID)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object ArtifactPackaging {
   val NONE = "NONE".asInstanceOf[ArtifactPackaging]
   val ZIP = "ZIP".asInstanceOf[ArtifactPackaging]
 
-  @inline def values = js.Array(NONE, ZIP)
+  @inline def values: js.Array[ArtifactPackaging] = js.Array(NONE, ZIP)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object ArtifactsType {
   val S3 = "S3".asInstanceOf[ArtifactsType]
   val NO_ARTIFACTS = "NO_ARTIFACTS".asInstanceOf[ArtifactsType]
 
-  @inline def values = js.Array(CODEPIPELINE, S3, NO_ARTIFACTS)
+  @inline def values: js.Array[ArtifactsType] = js.Array(CODEPIPELINE, S3, NO_ARTIFACTS)
 }
 
 @js.native
@@ -38,18 +37,11 @@ object AuthType {
   val BASIC_AUTH = "BASIC_AUTH".asInstanceOf[AuthType]
   val PERSONAL_ACCESS_TOKEN = "PERSONAL_ACCESS_TOKEN".asInstanceOf[AuthType]
 
-  @inline def values = js.Array(OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN)
+  @inline def values: js.Array[AuthType] = js.Array(OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN)
 }
 
-/** Specifies the access for objects that are uploaded to an Amazon S3 bucket that is owned by another account.
-  * By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.
-  * <dl> <dt>NONE</dt> <dd> The bucket owner does not have access to the objects. This is the default.
-  * </dd> <dt>READ_ONLY</dt> <dd> The bucket owner has read only access to the objects. The uploading account retains ownership of the objects.
-  * </dd> <dt>FULL</dt> <dd> The bucket owner has full access to the objects. Object ownership is determined by the following criteria:
-  * * If the bucket is configured with the ```Bucket owner preferred``` setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy.
-  * * Otherwise, the uploading account retains ownership of the objects.
-  * For more information about Amazon S3 object ownership, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html|Controlling ownership of uploaded objects using S3 Object Ownership]] in the <i>Amazon Simple Storage Service User Guide</i>.
-  * </dd> </dl>
+/** Specifies the access for objects that are uploaded to an Amazon S3 bucket that is owned by another account. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects. <dl> <dt>NONE</dt> <dd> The bucket owner does not have access to the objects. This is the default. </dd> <dt>READ_ONLY</dt> <dd> The bucket owner has read only access to the objects. The uploading account retains ownership of the objects. </dd> <dt>FULL</dt> <dd> The bucket owner has full access to the objects. Object ownership is determined by the following criteria: * If the bucket is configured with the ```Bucket owner preferred``` setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy. * Otherwise, the uploading account retains ownership of the objects. For more information about Amazon S3 object ownership, see
+  * [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html|Controlling ownership of uploaded objects using S3 Object Ownership]] in the <i>Amazon Simple Storage Service User Guide</i>. </dd> </dl>
   */
 @js.native
 sealed trait BucketOwnerAccess extends js.Any
@@ -58,7 +50,7 @@ object BucketOwnerAccess {
   val READ_ONLY = "READ_ONLY".asInstanceOf[BucketOwnerAccess]
   val FULL = "FULL".asInstanceOf[BucketOwnerAccess]
 
-  @inline def values = js.Array(NONE, READ_ONLY, FULL)
+  @inline def values: js.Array[BucketOwnerAccess] = js.Array(NONE, READ_ONLY, FULL)
 }
 
 @js.native
@@ -72,7 +64,7 @@ object BuildBatchPhaseType {
   val FAILED = "FAILED".asInstanceOf[BuildBatchPhaseType]
   val STOPPED = "STOPPED".asInstanceOf[BuildBatchPhaseType]
 
-  @inline def values = js.Array(SUBMITTED, DOWNLOAD_BATCHSPEC, IN_PROGRESS, COMBINE_ARTIFACTS, SUCCEEDED, FAILED, STOPPED)
+  @inline def values: js.Array[BuildBatchPhaseType] = js.Array(SUBMITTED, DOWNLOAD_BATCHSPEC, IN_PROGRESS, COMBINE_ARTIFACTS, SUCCEEDED, FAILED, STOPPED)
 }
 
 @js.native
@@ -90,7 +82,7 @@ object BuildPhaseType {
   val FINALIZING = "FINALIZING".asInstanceOf[BuildPhaseType]
   val COMPLETED = "COMPLETED".asInstanceOf[BuildPhaseType]
 
-  @inline def values = js.Array(SUBMITTED, QUEUED, PROVISIONING, DOWNLOAD_SOURCE, INSTALL, PRE_BUILD, BUILD, POST_BUILD, UPLOAD_ARTIFACTS, FINALIZING, COMPLETED)
+  @inline def values: js.Array[BuildPhaseType] = js.Array(SUBMITTED, QUEUED, PROVISIONING, DOWNLOAD_SOURCE, INSTALL, PRE_BUILD, BUILD, POST_BUILD, UPLOAD_ARTIFACTS, FINALIZING, COMPLETED)
 }
 
 @js.native
@@ -100,7 +92,7 @@ object CacheMode {
   val LOCAL_SOURCE_CACHE = "LOCAL_SOURCE_CACHE".asInstanceOf[CacheMode]
   val LOCAL_CUSTOM_CACHE = "LOCAL_CUSTOM_CACHE".asInstanceOf[CacheMode]
 
-  @inline def values = js.Array(LOCAL_DOCKER_LAYER_CACHE, LOCAL_SOURCE_CACHE, LOCAL_CUSTOM_CACHE)
+  @inline def values: js.Array[CacheMode] = js.Array(LOCAL_DOCKER_LAYER_CACHE, LOCAL_SOURCE_CACHE, LOCAL_CUSTOM_CACHE)
 }
 
 @js.native
@@ -110,7 +102,7 @@ object CacheType {
   val S3 = "S3".asInstanceOf[CacheType]
   val LOCAL = "LOCAL".asInstanceOf[CacheType]
 
-  @inline def values = js.Array(NO_CACHE, S3, LOCAL)
+  @inline def values: js.Array[CacheType] = js.Array(NO_CACHE, S3, LOCAL)
 }
 
 @js.native
@@ -121,7 +113,7 @@ object ComputeType {
   val BUILD_GENERAL1_LARGE = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
   val BUILD_GENERAL1_2XLARGE = "BUILD_GENERAL1_2XLARGE".asInstanceOf[ComputeType]
 
-  @inline def values = js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE, BUILD_GENERAL1_2XLARGE)
+  @inline def values: js.Array[ComputeType] = js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE, BUILD_GENERAL1_2XLARGE)
 }
 
 @js.native
@@ -129,7 +121,7 @@ sealed trait CredentialProviderType extends js.Any
 object CredentialProviderType {
   val SECRETS_MANAGER = "SECRETS_MANAGER".asInstanceOf[CredentialProviderType]
 
-  @inline def values = js.Array(SECRETS_MANAGER)
+  @inline def values: js.Array[CredentialProviderType] = js.Array(SECRETS_MANAGER)
 }
 
 @js.native
@@ -141,7 +133,7 @@ object EnvironmentType {
   val ARM_CONTAINER = "ARM_CONTAINER".asInstanceOf[EnvironmentType]
   val WINDOWS_SERVER_2019_CONTAINER = "WINDOWS_SERVER_2019_CONTAINER".asInstanceOf[EnvironmentType]
 
-  @inline def values = js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER)
+  @inline def values: js.Array[EnvironmentType] = js.Array(WINDOWS_CONTAINER, LINUX_CONTAINER, LINUX_GPU_CONTAINER, ARM_CONTAINER, WINDOWS_SERVER_2019_CONTAINER)
 }
 
 @js.native
@@ -151,7 +143,7 @@ object EnvironmentVariableType {
   val PARAMETER_STORE = "PARAMETER_STORE".asInstanceOf[EnvironmentVariableType]
   val SECRETS_MANAGER = "SECRETS_MANAGER".asInstanceOf[EnvironmentVariableType]
 
-  @inline def values = js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER)
+  @inline def values: js.Array[EnvironmentVariableType] = js.Array(PLAINTEXT, PARAMETER_STORE, SECRETS_MANAGER)
 }
 
 @js.native
@@ -159,7 +151,7 @@ sealed trait FileSystemType extends js.Any
 object FileSystemType {
   val EFS = "EFS".asInstanceOf[FileSystemType]
 
-  @inline def values = js.Array(EFS)
+  @inline def values: js.Array[FileSystemType] = js.Array(EFS)
 }
 
 @js.native
@@ -168,7 +160,7 @@ object ImagePullCredentialsType {
   val CODEBUILD = "CODEBUILD".asInstanceOf[ImagePullCredentialsType]
   val SERVICE_ROLE = "SERVICE_ROLE".asInstanceOf[ImagePullCredentialsType]
 
-  @inline def values = js.Array(CODEBUILD, SERVICE_ROLE)
+  @inline def values: js.Array[ImagePullCredentialsType] = js.Array(CODEBUILD, SERVICE_ROLE)
 }
 
 @js.native
@@ -185,7 +177,7 @@ object LanguageType {
   val BASE = "BASE".asInstanceOf[LanguageType]
   val PHP = "PHP".asInstanceOf[LanguageType]
 
-  @inline def values = js.Array(JAVA, PYTHON, NODE_JS, RUBY, GOLANG, DOCKER, ANDROID, DOTNET, BASE, PHP)
+  @inline def values: js.Array[LanguageType] = js.Array(JAVA, PYTHON, NODE_JS, RUBY, GOLANG, DOCKER, ANDROID, DOTNET, BASE, PHP)
 }
 
 @js.native
@@ -194,7 +186,7 @@ object LogsConfigStatusType {
   val ENABLED = "ENABLED".asInstanceOf[LogsConfigStatusType]
   val DISABLED = "DISABLED".asInstanceOf[LogsConfigStatusType]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[LogsConfigStatusType] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -205,7 +197,7 @@ object PlatformType {
   val UBUNTU = "UBUNTU".asInstanceOf[PlatformType]
   val WINDOWS_SERVER = "WINDOWS_SERVER".asInstanceOf[PlatformType]
 
-  @inline def values = js.Array(DEBIAN, AMAZON_LINUX, UBUNTU, WINDOWS_SERVER)
+  @inline def values: js.Array[PlatformType] = js.Array(DEBIAN, AMAZON_LINUX, UBUNTU, WINDOWS_SERVER)
 }
 
 @js.native
@@ -215,7 +207,7 @@ object ProjectSortByType {
   val CREATED_TIME = "CREATED_TIME".asInstanceOf[ProjectSortByType]
   val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ProjectSortByType]
 
-  @inline def values = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
+  @inline def values: js.Array[ProjectSortByType] = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
 }
 
 @js.native
@@ -224,7 +216,7 @@ object ReportCodeCoverageSortByType {
   val LINE_COVERAGE_PERCENTAGE = "LINE_COVERAGE_PERCENTAGE".asInstanceOf[ReportCodeCoverageSortByType]
   val FILE_PATH = "FILE_PATH".asInstanceOf[ReportCodeCoverageSortByType]
 
-  @inline def values = js.Array(LINE_COVERAGE_PERCENTAGE, FILE_PATH)
+  @inline def values: js.Array[ReportCodeCoverageSortByType] = js.Array(LINE_COVERAGE_PERCENTAGE, FILE_PATH)
 }
 
 @js.native
@@ -233,7 +225,7 @@ object ReportExportConfigType {
   val S3 = "S3".asInstanceOf[ReportExportConfigType]
   val NO_EXPORT = "NO_EXPORT".asInstanceOf[ReportExportConfigType]
 
-  @inline def values = js.Array(S3, NO_EXPORT)
+  @inline def values: js.Array[ReportExportConfigType] = js.Array(S3, NO_EXPORT)
 }
 
 @js.native
@@ -243,7 +235,7 @@ object ReportGroupSortByType {
   val CREATED_TIME = "CREATED_TIME".asInstanceOf[ReportGroupSortByType]
   val LAST_MODIFIED_TIME = "LAST_MODIFIED_TIME".asInstanceOf[ReportGroupSortByType]
 
-  @inline def values = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
+  @inline def values: js.Array[ReportGroupSortByType] = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
 }
 
 @js.native
@@ -252,7 +244,7 @@ object ReportGroupStatusType {
   val ACTIVE = "ACTIVE".asInstanceOf[ReportGroupStatusType]
   val DELETING = "DELETING".asInstanceOf[ReportGroupStatusType]
 
-  @inline def values = js.Array(ACTIVE, DELETING)
+  @inline def values: js.Array[ReportGroupStatusType] = js.Array(ACTIVE, DELETING)
 }
 
 @js.native
@@ -268,7 +260,7 @@ object ReportGroupTrendFieldType {
   val BRANCHES_COVERED = "BRANCHES_COVERED".asInstanceOf[ReportGroupTrendFieldType]
   val BRANCHES_MISSED = "BRANCHES_MISSED".asInstanceOf[ReportGroupTrendFieldType]
 
-  @inline def values = js.Array(PASS_RATE, DURATION, TOTAL, LINE_COVERAGE, LINES_COVERED, LINES_MISSED, BRANCH_COVERAGE, BRANCHES_COVERED, BRANCHES_MISSED)
+  @inline def values: js.Array[ReportGroupTrendFieldType] = js.Array(PASS_RATE, DURATION, TOTAL, LINE_COVERAGE, LINES_COVERED, LINES_MISSED, BRANCH_COVERAGE, BRANCHES_COVERED, BRANCHES_MISSED)
 }
 
 @js.native
@@ -277,7 +269,7 @@ object ReportPackagingType {
   val ZIP = "ZIP".asInstanceOf[ReportPackagingType]
   val NONE = "NONE".asInstanceOf[ReportPackagingType]
 
-  @inline def values = js.Array(ZIP, NONE)
+  @inline def values: js.Array[ReportPackagingType] = js.Array(ZIP, NONE)
 }
 
 @js.native
@@ -289,7 +281,7 @@ object ReportStatusType {
   val INCOMPLETE = "INCOMPLETE".asInstanceOf[ReportStatusType]
   val DELETING = "DELETING".asInstanceOf[ReportStatusType]
 
-  @inline def values = js.Array(GENERATING, SUCCEEDED, FAILED, INCOMPLETE, DELETING)
+  @inline def values: js.Array[ReportStatusType] = js.Array(GENERATING, SUCCEEDED, FAILED, INCOMPLETE, DELETING)
 }
 
 @js.native
@@ -298,7 +290,7 @@ object ReportType {
   val TEST = "TEST".asInstanceOf[ReportType]
   val CODE_COVERAGE = "CODE_COVERAGE".asInstanceOf[ReportType]
 
-  @inline def values = js.Array(TEST, CODE_COVERAGE)
+  @inline def values: js.Array[ReportType] = js.Array(TEST, CODE_COVERAGE)
 }
 
 @js.native
@@ -307,7 +299,7 @@ object RetryBuildBatchType {
   val RETRY_ALL_BUILDS = "RETRY_ALL_BUILDS".asInstanceOf[RetryBuildBatchType]
   val RETRY_FAILED_BUILDS = "RETRY_FAILED_BUILDS".asInstanceOf[RetryBuildBatchType]
 
-  @inline def values = js.Array(RETRY_ALL_BUILDS, RETRY_FAILED_BUILDS)
+  @inline def values: js.Array[RetryBuildBatchType] = js.Array(RETRY_ALL_BUILDS, RETRY_FAILED_BUILDS)
 }
 
 @js.native
@@ -317,7 +309,7 @@ object ServerType {
   val BITBUCKET = "BITBUCKET".asInstanceOf[ServerType]
   val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[ServerType]
 
-  @inline def values = js.Array(GITHUB, BITBUCKET, GITHUB_ENTERPRISE)
+  @inline def values: js.Array[ServerType] = js.Array(GITHUB, BITBUCKET, GITHUB_ENTERPRISE)
 }
 
 @js.native
@@ -326,7 +318,7 @@ object SharedResourceSortByType {
   val ARN = "ARN".asInstanceOf[SharedResourceSortByType]
   val MODIFIED_TIME = "MODIFIED_TIME".asInstanceOf[SharedResourceSortByType]
 
-  @inline def values = js.Array(ARN, MODIFIED_TIME)
+  @inline def values: js.Array[SharedResourceSortByType] = js.Array(ARN, MODIFIED_TIME)
 }
 
 @js.native
@@ -335,7 +327,7 @@ object SortOrderType {
   val ASCENDING = "ASCENDING".asInstanceOf[SortOrderType]
   val DESCENDING = "DESCENDING".asInstanceOf[SortOrderType]
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values: js.Array[SortOrderType] = js.Array(ASCENDING, DESCENDING)
 }
 
 @js.native
@@ -343,7 +335,7 @@ sealed trait SourceAuthType extends js.Any
 object SourceAuthType {
   val OAUTH = "OAUTH".asInstanceOf[SourceAuthType]
 
-  @inline def values = js.Array(OAUTH)
+  @inline def values: js.Array[SourceAuthType] = js.Array(OAUTH)
 }
 
 @js.native
@@ -357,7 +349,7 @@ object SourceType {
   val GITHUB_ENTERPRISE = "GITHUB_ENTERPRISE".asInstanceOf[SourceType]
   val NO_SOURCE = "NO_SOURCE".asInstanceOf[SourceType]
 
-  @inline def values = js.Array(CODECOMMIT, CODEPIPELINE, GITHUB, S3, BITBUCKET, GITHUB_ENTERPRISE, NO_SOURCE)
+  @inline def values: js.Array[SourceType] = js.Array(CODECOMMIT, CODEPIPELINE, GITHUB, S3, BITBUCKET, GITHUB_ENTERPRISE, NO_SOURCE)
 }
 
 @js.native
@@ -370,7 +362,7 @@ object StatusType {
   val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[StatusType]
   val STOPPED = "STOPPED".asInstanceOf[StatusType]
 
-  @inline def values = js.Array(SUCCEEDED, FAILED, FAULT, TIMED_OUT, IN_PROGRESS, STOPPED)
+  @inline def values: js.Array[StatusType] = js.Array(SUCCEEDED, FAILED, FAULT, TIMED_OUT, IN_PROGRESS, STOPPED)
 }
 
 @js.native
@@ -379,7 +371,7 @@ object WebhookBuildType {
   val BUILD = "BUILD".asInstanceOf[WebhookBuildType]
   val BUILD_BATCH = "BUILD_BATCH".asInstanceOf[WebhookBuildType]
 
-  @inline def values = js.Array(BUILD, BUILD_BATCH)
+  @inline def values: js.Array[WebhookBuildType] = js.Array(BUILD, BUILD_BATCH)
 }
 
 @js.native
@@ -392,6 +384,5 @@ object WebhookFilterType {
   val FILE_PATH = "FILE_PATH".asInstanceOf[WebhookFilterType]
   val COMMIT_MESSAGE = "COMMIT_MESSAGE".asInstanceOf[WebhookFilterType]
 
-  @inline def values = js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH, COMMIT_MESSAGE)
+  @inline def values: js.Array[WebhookFilterType] = js.Array(EVENT, BASE_REF, HEAD_REF, ACTOR_ACCOUNT_ID, FILE_PATH, COMMIT_MESSAGE)
 }
-

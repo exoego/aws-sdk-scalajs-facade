@@ -1,7 +1,6 @@
 package facade.amazonaws.services.kinesis
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ConsumerStatus extends js.Any
@@ -10,7 +9,7 @@ object ConsumerStatus {
   val DELETING = "DELETING".asInstanceOf[ConsumerStatus]
   val ACTIVE = "ACTIVE".asInstanceOf[ConsumerStatus]
 
-  @inline def values = js.Array(CREATING, DELETING, ACTIVE)
+  @inline def values: js.Array[ConsumerStatus] = js.Array(CREATING, DELETING, ACTIVE)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object EncryptionType {
   val NONE = "NONE".asInstanceOf[EncryptionType]
   val KMS = "KMS".asInstanceOf[EncryptionType]
 
-  @inline def values = js.Array(NONE, KMS)
+  @inline def values: js.Array[EncryptionType] = js.Array(NONE, KMS)
 }
 
 @js.native
@@ -34,7 +33,16 @@ object MetricsName {
   val IteratorAgeMilliseconds = "IteratorAgeMilliseconds".asInstanceOf[MetricsName]
   val ALL = "ALL".asInstanceOf[MetricsName]
 
-  @inline def values = js.Array(IncomingBytes, IncomingRecords, OutgoingBytes, OutgoingRecords, WriteProvisionedThroughputExceeded, ReadProvisionedThroughputExceeded, IteratorAgeMilliseconds, ALL)
+  @inline def values: js.Array[MetricsName] = js.Array(
+    IncomingBytes,
+    IncomingRecords,
+    OutgoingBytes,
+    OutgoingRecords,
+    WriteProvisionedThroughputExceeded,
+    ReadProvisionedThroughputExceeded,
+    IteratorAgeMilliseconds,
+    ALL
+  )
 }
 
 @js.native
@@ -42,7 +50,7 @@ sealed trait ScalingType extends js.Any
 object ScalingType {
   val UNIFORM_SCALING = "UNIFORM_SCALING".asInstanceOf[ScalingType]
 
-  @inline def values = js.Array(UNIFORM_SCALING)
+  @inline def values: js.Array[ScalingType] = js.Array(UNIFORM_SCALING)
 }
 
 @js.native
@@ -55,7 +63,7 @@ object ShardFilterType {
   val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardFilterType]
   val FROM_TIMESTAMP = "FROM_TIMESTAMP".asInstanceOf[ShardFilterType]
 
-  @inline def values = js.Array(AFTER_SHARD_ID, AT_TRIM_HORIZON, FROM_TRIM_HORIZON, AT_LATEST, AT_TIMESTAMP, FROM_TIMESTAMP)
+  @inline def values: js.Array[ShardFilterType] = js.Array(AFTER_SHARD_ID, AT_TRIM_HORIZON, FROM_TRIM_HORIZON, AT_LATEST, AT_TIMESTAMP, FROM_TIMESTAMP)
 }
 
 @js.native
@@ -67,7 +75,7 @@ object ShardIteratorType {
   val LATEST = "LATEST".asInstanceOf[ShardIteratorType]
   val AT_TIMESTAMP = "AT_TIMESTAMP".asInstanceOf[ShardIteratorType]
 
-  @inline def values = js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP)
+  @inline def values: js.Array[ShardIteratorType] = js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP)
 }
 
 @js.native
@@ -78,6 +86,5 @@ object StreamStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[StreamStatus]
   val UPDATING = "UPDATING".asInstanceOf[StreamStatus]
 
-  @inline def values = js.Array(CREATING, DELETING, ACTIVE, UPDATING)
+  @inline def values: js.Array[StreamStatus] = js.Array(CREATING, DELETING, ACTIVE, UPDATING)
 }
-

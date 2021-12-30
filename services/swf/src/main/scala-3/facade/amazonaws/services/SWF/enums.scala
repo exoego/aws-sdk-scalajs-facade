@@ -1,6 +1,6 @@
 package facade.amazonaws.services.swf
 
-import scalajs._
+import scalajs.js
 
 type ActivityTaskTimeoutType = "START_TO_CLOSE" | "SCHEDULE_TO_START" | "SCHEDULE_TO_CLOSE" | "HEARTBEAT"
 object ActivityTaskTimeoutType {

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.elasticbeanstalk
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ActionHistoryStatus extends js.Any
@@ -10,7 +9,7 @@ object ActionHistoryStatus {
   val Failed = "Failed".asInstanceOf[ActionHistoryStatus]
   val Unknown = "Unknown".asInstanceOf[ActionHistoryStatus]
 
-  @inline def values = js.Array(Completed, Failed, Unknown)
+  @inline def values: js.Array[ActionHistoryStatus] = js.Array(Completed, Failed, Unknown)
 }
 
 @js.native
@@ -21,7 +20,7 @@ object ActionStatus {
   val Running = "Running".asInstanceOf[ActionStatus]
   val Unknown = "Unknown".asInstanceOf[ActionStatus]
 
-  @inline def values = js.Array(Scheduled, Pending, Running, Unknown)
+  @inline def values: js.Array[ActionStatus] = js.Array(Scheduled, Pending, Running, Unknown)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object ActionType {
   val PlatformUpdate = "PlatformUpdate".asInstanceOf[ActionType]
   val Unknown = "Unknown".asInstanceOf[ActionType]
 
-  @inline def values = js.Array(InstanceRefresh, PlatformUpdate, Unknown)
+  @inline def values: js.Array[ActionType] = js.Array(InstanceRefresh, PlatformUpdate, Unknown)
 }
 
 @js.native
@@ -43,7 +42,7 @@ object ApplicationVersionStatus {
   val Processing = "Processing".asInstanceOf[ApplicationVersionStatus]
   val Building = "Building".asInstanceOf[ApplicationVersionStatus]
 
-  @inline def values = js.Array(Processed, Unprocessed, Failed, Processing, Building)
+  @inline def values: js.Array[ApplicationVersionStatus] = js.Array(Processed, Unprocessed, Failed, Processing, Building)
 }
 
 @js.native
@@ -53,7 +52,7 @@ object ComputeType {
   val BUILD_GENERAL1_MEDIUM = "BUILD_GENERAL1_MEDIUM".asInstanceOf[ComputeType]
   val BUILD_GENERAL1_LARGE = "BUILD_GENERAL1_LARGE".asInstanceOf[ComputeType]
 
-  @inline def values = js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE)
+  @inline def values: js.Array[ComputeType] = js.Array(BUILD_GENERAL1_SMALL, BUILD_GENERAL1_MEDIUM, BUILD_GENERAL1_LARGE)
 }
 
 @js.native
@@ -63,7 +62,7 @@ object ConfigurationDeploymentStatus {
   val pending = "pending".asInstanceOf[ConfigurationDeploymentStatus]
   val failed = "failed".asInstanceOf[ConfigurationDeploymentStatus]
 
-  @inline def values = js.Array(deployed, pending, failed)
+  @inline def values: js.Array[ConfigurationDeploymentStatus] = js.Array(deployed, pending, failed)
 }
 
 @js.native
@@ -72,7 +71,7 @@ object ConfigurationOptionValueType {
   val Scalar = "Scalar".asInstanceOf[ConfigurationOptionValueType]
   val List = "List".asInstanceOf[ConfigurationOptionValueType]
 
-  @inline def values = js.Array(Scalar, List)
+  @inline def values: js.Array[ConfigurationOptionValueType] = js.Array(Scalar, List)
 }
 
 @js.native
@@ -83,7 +82,7 @@ object EnvironmentHealth {
   val Red = "Red".asInstanceOf[EnvironmentHealth]
   val Grey = "Grey".asInstanceOf[EnvironmentHealth]
 
-  @inline def values = js.Array(Green, Yellow, Red, Grey)
+  @inline def values: js.Array[EnvironmentHealth] = js.Array(Green, Yellow, Red, Grey)
 }
 
 @js.native
@@ -98,7 +97,7 @@ object EnvironmentHealthAttribute {
   val HealthStatus = "HealthStatus".asInstanceOf[EnvironmentHealthAttribute]
   val RefreshedAt = "RefreshedAt".asInstanceOf[EnvironmentHealthAttribute]
 
-  @inline def values = js.Array(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt)
+  @inline def values: js.Array[EnvironmentHealthAttribute] = js.Array(Status, Color, Causes, ApplicationMetrics, InstancesHealth, All, HealthStatus, RefreshedAt)
 }
 
 @js.native
@@ -114,7 +113,7 @@ object EnvironmentHealthStatus {
   val Severe = "Severe".asInstanceOf[EnvironmentHealthStatus]
   val Suspended = "Suspended".asInstanceOf[EnvironmentHealthStatus]
 
-  @inline def values = js.Array(NoData, Unknown, Pending, Ok, Info, Warning, Degraded, Severe, Suspended)
+  @inline def values: js.Array[EnvironmentHealthStatus] = js.Array(NoData, Unknown, Pending, Ok, Info, Warning, Degraded, Severe, Suspended)
 }
 
 @js.native
@@ -123,7 +122,7 @@ object EnvironmentInfoType {
   val tail = "tail".asInstanceOf[EnvironmentInfoType]
   val bundle = "bundle".asInstanceOf[EnvironmentInfoType]
 
-  @inline def values = js.Array(tail, bundle)
+  @inline def values: js.Array[EnvironmentInfoType] = js.Array(tail, bundle)
 }
 
 @js.native
@@ -138,7 +137,7 @@ object EnvironmentStatus {
   val Terminating = "Terminating".asInstanceOf[EnvironmentStatus]
   val Terminated = "Terminated".asInstanceOf[EnvironmentStatus]
 
-  @inline def values = js.Array(Aborting, Launching, Updating, LinkingFrom, LinkingTo, Ready, Terminating, Terminated)
+  @inline def values: js.Array[EnvironmentStatus] = js.Array(Aborting, Launching, Updating, LinkingFrom, LinkingTo, Ready, Terminating, Terminated)
 }
 
 @js.native
@@ -151,7 +150,7 @@ object EventSeverity {
   val ERROR = "ERROR".asInstanceOf[EventSeverity]
   val FATAL = "FATAL".asInstanceOf[EventSeverity]
 
-  @inline def values = js.Array(TRACE, DEBUG, INFO, WARN, ERROR, FATAL)
+  @inline def values: js.Array[EventSeverity] = js.Array(TRACE, DEBUG, INFO, WARN, ERROR, FATAL)
 }
 
 @js.native
@@ -165,7 +164,7 @@ object FailureType {
   val InvalidEnvironmentState = "InvalidEnvironmentState".asInstanceOf[FailureType]
   val PermissionsError = "PermissionsError".asInstanceOf[FailureType]
 
-  @inline def values = js.Array(UpdateCancelled, CancellationFailed, RollbackFailed, RollbackSuccessful, InternalFailure, InvalidEnvironmentState, PermissionsError)
+  @inline def values: js.Array[FailureType] = js.Array(UpdateCancelled, CancellationFailed, RollbackFailed, RollbackSuccessful, InternalFailure, InvalidEnvironmentState, PermissionsError)
 }
 
 @js.native
@@ -183,7 +182,7 @@ object InstancesHealthAttribute {
   val InstanceType = "InstanceType".asInstanceOf[InstancesHealthAttribute]
   val All = "All".asInstanceOf[InstancesHealthAttribute]
 
-  @inline def values = js.Array(HealthStatus, Color, Causes, ApplicationMetrics, RefreshedAt, LaunchedAt, System, Deployment, AvailabilityZone, InstanceType, All)
+  @inline def values: js.Array[InstancesHealthAttribute] = js.Array(HealthStatus, Color, Causes, ApplicationMetrics, RefreshedAt, LaunchedAt, System, Deployment, AvailabilityZone, InstanceType, All)
 }
 
 @js.native
@@ -195,7 +194,7 @@ object PlatformStatus {
   val Deleting = "Deleting".asInstanceOf[PlatformStatus]
   val Deleted = "Deleted".asInstanceOf[PlatformStatus]
 
-  @inline def values = js.Array(Creating, Failed, Ready, Deleting, Deleted)
+  @inline def values: js.Array[PlatformStatus] = js.Array(Creating, Failed, Ready, Deleting, Deleted)
 }
 
 @js.native
@@ -204,7 +203,7 @@ object SourceRepository {
   val CodeCommit = "CodeCommit".asInstanceOf[SourceRepository]
   val S3 = "S3".asInstanceOf[SourceRepository]
 
-  @inline def values = js.Array(CodeCommit, S3)
+  @inline def values: js.Array[SourceRepository] = js.Array(CodeCommit, S3)
 }
 
 @js.native
@@ -213,7 +212,7 @@ object SourceType {
   val Git = "Git".asInstanceOf[SourceType]
   val Zip = "Zip".asInstanceOf[SourceType]
 
-  @inline def values = js.Array(Git, Zip)
+  @inline def values: js.Array[SourceType] = js.Array(Git, Zip)
 }
 
 @js.native
@@ -222,6 +221,5 @@ object ValidationSeverity {
   val error = "error".asInstanceOf[ValidationSeverity]
   val warning = "warning".asInstanceOf[ValidationSeverity]
 
-  @inline def values = js.Array(error, warning)
+  @inline def values: js.Array[ValidationSeverity] = js.Array(error, warning)
 }
-

@@ -1,3 +1,3 @@
 package facade.amazonaws.services.mobileanalytics
 
-import scalajs._
+import scalajs.js

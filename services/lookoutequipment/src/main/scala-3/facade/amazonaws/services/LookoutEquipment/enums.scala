@@ -1,6 +1,6 @@
 package facade.amazonaws.services.lookoutequipment
 
-import scalajs._
+import scalajs.js
 
 type DataUploadFrequency = "PT5M" | "PT10M" | "PT15M" | "PT30M" | "PT1H"
 object DataUploadFrequency {

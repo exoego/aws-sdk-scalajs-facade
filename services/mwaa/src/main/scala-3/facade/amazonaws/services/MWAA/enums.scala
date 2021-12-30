@@ -1,6 +1,6 @@
 package facade.amazonaws.services.mwaa
 
-import scalajs._
+import scalajs.js
 
 type EnvironmentStatus = "CREATING" | "CREATE_FAILED" | "AVAILABLE" | "UPDATING" | "DELETING" | "DELETED" | "UNAVAILABLE" | "UPDATE_FAILED"
 object EnvironmentStatus {

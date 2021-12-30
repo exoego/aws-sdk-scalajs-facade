@@ -1,6 +1,6 @@
 package facade.amazonaws.services.codebuild
 
-import scalajs._
+import scalajs.js
 
 type ArtifactNamespace = "NONE" | "BUILD_ID"
 object ArtifactNamespace {

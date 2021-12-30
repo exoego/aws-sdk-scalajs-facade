@@ -1,6 +1,6 @@
 package facade.amazonaws.services.connect
 
-import scalajs._
+import scalajs.js
 
 type Channel = "VOICE" | "CHAT" | "TASK"
 object Channel {

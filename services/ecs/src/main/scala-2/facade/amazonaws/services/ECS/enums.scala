@@ -1,7 +1,6 @@
 package facade.amazonaws.services.ecs
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AgentUpdateStatus extends js.Any
@@ -13,7 +12,7 @@ object AgentUpdateStatus {
   val UPDATED = "UPDATED".asInstanceOf[AgentUpdateStatus]
   val FAILED = "FAILED".asInstanceOf[AgentUpdateStatus]
 
-  @inline def values = js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED)
+  @inline def values: js.Array[AgentUpdateStatus] = js.Array(PENDING, STAGING, STAGED, UPDATING, UPDATED, FAILED)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object AssignPublicIp {
   val ENABLED = "ENABLED".asInstanceOf[AssignPublicIp]
   val DISABLED = "DISABLED".asInstanceOf[AssignPublicIp]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[AssignPublicIp] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -30,7 +29,7 @@ sealed trait CapacityProviderField extends js.Any
 object CapacityProviderField {
   val TAGS = "TAGS".asInstanceOf[CapacityProviderField]
 
-  @inline def values = js.Array(TAGS)
+  @inline def values: js.Array[CapacityProviderField] = js.Array(TAGS)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object CapacityProviderStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[CapacityProviderStatus]
   val INACTIVE = "INACTIVE".asInstanceOf[CapacityProviderStatus]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values: js.Array[CapacityProviderStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native
@@ -52,7 +51,7 @@ object CapacityProviderUpdateStatus {
   val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[CapacityProviderUpdateStatus]
   val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[CapacityProviderUpdateStatus]
 
-  @inline def values = js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, UPDATE_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_FAILED)
+  @inline def values: js.Array[CapacityProviderUpdateStatus] = js.Array(DELETE_IN_PROGRESS, DELETE_COMPLETE, DELETE_FAILED, UPDATE_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_FAILED)
 }
 
 @js.native
@@ -64,7 +63,7 @@ object ClusterField {
   val STATISTICS = "STATISTICS".asInstanceOf[ClusterField]
   val TAGS = "TAGS".asInstanceOf[ClusterField]
 
-  @inline def values = js.Array(ATTACHMENTS, CONFIGURATIONS, SETTINGS, STATISTICS, TAGS)
+  @inline def values: js.Array[ClusterField] = js.Array(ATTACHMENTS, CONFIGURATIONS, SETTINGS, STATISTICS, TAGS)
 }
 
 @js.native
@@ -72,7 +71,7 @@ sealed trait ClusterSettingName extends js.Any
 object ClusterSettingName {
   val containerInsights = "containerInsights".asInstanceOf[ClusterSettingName]
 
-  @inline def values = js.Array(containerInsights)
+  @inline def values: js.Array[ClusterSettingName] = js.Array(containerInsights)
 }
 
 @js.native
@@ -81,7 +80,7 @@ object Compatibility {
   val EC2 = "EC2".asInstanceOf[Compatibility]
   val FARGATE = "FARGATE".asInstanceOf[Compatibility]
 
-  @inline def values = js.Array(EC2, FARGATE)
+  @inline def values: js.Array[Compatibility] = js.Array(EC2, FARGATE)
 }
 
 @js.native
@@ -90,7 +89,7 @@ object Connectivity {
   val CONNECTED = "CONNECTED".asInstanceOf[Connectivity]
   val DISCONNECTED = "DISCONNECTED".asInstanceOf[Connectivity]
 
-  @inline def values = js.Array(CONNECTED, DISCONNECTED)
+  @inline def values: js.Array[Connectivity] = js.Array(CONNECTED, DISCONNECTED)
 }
 
 @js.native
@@ -101,7 +100,7 @@ object ContainerCondition {
   val SUCCESS = "SUCCESS".asInstanceOf[ContainerCondition]
   val HEALTHY = "HEALTHY".asInstanceOf[ContainerCondition]
 
-  @inline def values = js.Array(START, COMPLETE, SUCCESS, HEALTHY)
+  @inline def values: js.Array[ContainerCondition] = js.Array(START, COMPLETE, SUCCESS, HEALTHY)
 }
 
 @js.native
@@ -109,7 +108,7 @@ sealed trait ContainerInstanceField extends js.Any
 object ContainerInstanceField {
   val TAGS = "TAGS".asInstanceOf[ContainerInstanceField]
 
-  @inline def values = js.Array(TAGS)
+  @inline def values: js.Array[ContainerInstanceField] = js.Array(TAGS)
 }
 
 @js.native
@@ -121,7 +120,7 @@ object ContainerInstanceStatus {
   val DEREGISTERING = "DEREGISTERING".asInstanceOf[ContainerInstanceStatus]
   val REGISTRATION_FAILED = "REGISTRATION_FAILED".asInstanceOf[ContainerInstanceStatus]
 
-  @inline def values = js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED)
+  @inline def values: js.Array[ContainerInstanceStatus] = js.Array(ACTIVE, DRAINING, REGISTERING, DEREGISTERING, REGISTRATION_FAILED)
 }
 
 @js.native
@@ -131,7 +130,7 @@ object DeploymentControllerType {
   val CODE_DEPLOY = "CODE_DEPLOY".asInstanceOf[DeploymentControllerType]
   val EXTERNAL = "EXTERNAL".asInstanceOf[DeploymentControllerType]
 
-  @inline def values = js.Array(ECS, CODE_DEPLOY, EXTERNAL)
+  @inline def values: js.Array[DeploymentControllerType] = js.Array(ECS, CODE_DEPLOY, EXTERNAL)
 }
 
 @js.native
@@ -141,7 +140,7 @@ object DeploymentRolloutState {
   val FAILED = "FAILED".asInstanceOf[DeploymentRolloutState]
   val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[DeploymentRolloutState]
 
-  @inline def values = js.Array(COMPLETED, FAILED, IN_PROGRESS)
+  @inline def values: js.Array[DeploymentRolloutState] = js.Array(COMPLETED, FAILED, IN_PROGRESS)
 }
 
 @js.native
@@ -151,7 +150,7 @@ object DesiredStatus {
   val PENDING = "PENDING".asInstanceOf[DesiredStatus]
   val STOPPED = "STOPPED".asInstanceOf[DesiredStatus]
 
-  @inline def values = js.Array(RUNNING, PENDING, STOPPED)
+  @inline def values: js.Array[DesiredStatus] = js.Array(RUNNING, PENDING, STOPPED)
 }
 
 @js.native
@@ -161,7 +160,7 @@ object DeviceCgroupPermission {
   val write = "write".asInstanceOf[DeviceCgroupPermission]
   val mknod = "mknod".asInstanceOf[DeviceCgroupPermission]
 
-  @inline def values = js.Array(read, write, mknod)
+  @inline def values: js.Array[DeviceCgroupPermission] = js.Array(read, write, mknod)
 }
 
 @js.native
@@ -170,7 +169,7 @@ object EFSAuthorizationConfigIAM {
   val ENABLED = "ENABLED".asInstanceOf[EFSAuthorizationConfigIAM]
   val DISABLED = "DISABLED".asInstanceOf[EFSAuthorizationConfigIAM]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[EFSAuthorizationConfigIAM] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -179,7 +178,7 @@ object EFSTransitEncryption {
   val ENABLED = "ENABLED".asInstanceOf[EFSTransitEncryption]
   val DISABLED = "DISABLED".asInstanceOf[EFSTransitEncryption]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[EFSTransitEncryption] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -187,7 +186,7 @@ sealed trait EnvironmentFileType extends js.Any
 object EnvironmentFileType {
   val s3 = "s3".asInstanceOf[EnvironmentFileType]
 
-  @inline def values = js.Array(s3)
+  @inline def values: js.Array[EnvironmentFileType] = js.Array(s3)
 }
 
 @js.native
@@ -197,7 +196,7 @@ object ExecuteCommandLogging {
   val DEFAULT = "DEFAULT".asInstanceOf[ExecuteCommandLogging]
   val OVERRIDE = "OVERRIDE".asInstanceOf[ExecuteCommandLogging]
 
-  @inline def values = js.Array(NONE, DEFAULT, OVERRIDE)
+  @inline def values: js.Array[ExecuteCommandLogging] = js.Array(NONE, DEFAULT, OVERRIDE)
 }
 
 @js.native
@@ -206,7 +205,7 @@ object FirelensConfigurationType {
   val fluentd = "fluentd".asInstanceOf[FirelensConfigurationType]
   val fluentbit = "fluentbit".asInstanceOf[FirelensConfigurationType]
 
-  @inline def values = js.Array(fluentd, fluentbit)
+  @inline def values: js.Array[FirelensConfigurationType] = js.Array(fluentd, fluentbit)
 }
 
 @js.native
@@ -216,7 +215,7 @@ object HealthStatus {
   val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatus]
   val UNKNOWN = "UNKNOWN".asInstanceOf[HealthStatus]
 
-  @inline def values = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
+  @inline def values: js.Array[HealthStatus] = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
 }
 
 @js.native
@@ -226,7 +225,7 @@ object IpcMode {
   val task = "task".asInstanceOf[IpcMode]
   val none = "none".asInstanceOf[IpcMode]
 
-  @inline def values = js.Array(host, task, none)
+  @inline def values: js.Array[IpcMode] = js.Array(host, task, none)
 }
 
 @js.native
@@ -235,7 +234,7 @@ object LaunchType {
   val EC2 = "EC2".asInstanceOf[LaunchType]
   val FARGATE = "FARGATE".asInstanceOf[LaunchType]
 
-  @inline def values = js.Array(EC2, FARGATE)
+  @inline def values: js.Array[LaunchType] = js.Array(EC2, FARGATE)
 }
 
 @js.native
@@ -250,7 +249,7 @@ object LogDriver {
   val splunk = "splunk".asInstanceOf[LogDriver]
   val awsfirelens = "awsfirelens".asInstanceOf[LogDriver]
 
-  @inline def values = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens)
+  @inline def values: js.Array[LogDriver] = js.Array(`json-file`, syslog, journald, gelf, fluentd, awslogs, splunk, awsfirelens)
 }
 
 @js.native
@@ -258,7 +257,7 @@ sealed trait ManagedAgentName extends js.Any
 object ManagedAgentName {
   val ExecuteCommandAgent = "ExecuteCommandAgent".asInstanceOf[ManagedAgentName]
 
-  @inline def values = js.Array(ExecuteCommandAgent)
+  @inline def values: js.Array[ManagedAgentName] = js.Array(ExecuteCommandAgent)
 }
 
 @js.native
@@ -267,7 +266,7 @@ object ManagedScalingStatus {
   val ENABLED = "ENABLED".asInstanceOf[ManagedScalingStatus]
   val DISABLED = "DISABLED".asInstanceOf[ManagedScalingStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[ManagedScalingStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -276,7 +275,7 @@ object ManagedTerminationProtection {
   val ENABLED = "ENABLED".asInstanceOf[ManagedTerminationProtection]
   val DISABLED = "DISABLED".asInstanceOf[ManagedTerminationProtection]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[ManagedTerminationProtection] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -287,7 +286,7 @@ object NetworkMode {
   val awsvpc = "awsvpc".asInstanceOf[NetworkMode]
   val none = "none".asInstanceOf[NetworkMode]
 
-  @inline def values = js.Array(bridge, host, awsvpc, none)
+  @inline def values: js.Array[NetworkMode] = js.Array(bridge, host, awsvpc, none)
 }
 
 @js.native
@@ -296,7 +295,7 @@ object PidMode {
   val host = "host".asInstanceOf[PidMode]
   val task = "task".asInstanceOf[PidMode]
 
-  @inline def values = js.Array(host, task)
+  @inline def values: js.Array[PidMode] = js.Array(host, task)
 }
 
 @js.native
@@ -305,7 +304,7 @@ object PlacementConstraintType {
   val distinctInstance = "distinctInstance".asInstanceOf[PlacementConstraintType]
   val memberOf = "memberOf".asInstanceOf[PlacementConstraintType]
 
-  @inline def values = js.Array(distinctInstance, memberOf)
+  @inline def values: js.Array[PlacementConstraintType] = js.Array(distinctInstance, memberOf)
 }
 
 @js.native
@@ -315,7 +314,7 @@ object PlacementStrategyType {
   val spread = "spread".asInstanceOf[PlacementStrategyType]
   val binpack = "binpack".asInstanceOf[PlacementStrategyType]
 
-  @inline def values = js.Array(random, spread, binpack)
+  @inline def values: js.Array[PlacementStrategyType] = js.Array(random, spread, binpack)
 }
 
 @js.native
@@ -323,7 +322,7 @@ sealed trait PlatformDeviceType extends js.Any
 object PlatformDeviceType {
   val GPU = "GPU".asInstanceOf[PlatformDeviceType]
 
-  @inline def values = js.Array(GPU)
+  @inline def values: js.Array[PlatformDeviceType] = js.Array(GPU)
 }
 
 @js.native
@@ -332,7 +331,7 @@ object PropagateTags {
   val TASK_DEFINITION = "TASK_DEFINITION".asInstanceOf[PropagateTags]
   val SERVICE = "SERVICE".asInstanceOf[PropagateTags]
 
-  @inline def values = js.Array(TASK_DEFINITION, SERVICE)
+  @inline def values: js.Array[PropagateTags] = js.Array(TASK_DEFINITION, SERVICE)
 }
 
 @js.native
@@ -340,7 +339,7 @@ sealed trait ProxyConfigurationType extends js.Any
 object ProxyConfigurationType {
   val APPMESH = "APPMESH".asInstanceOf[ProxyConfigurationType]
 
-  @inline def values = js.Array(APPMESH)
+  @inline def values: js.Array[ProxyConfigurationType] = js.Array(APPMESH)
 }
 
 @js.native
@@ -349,7 +348,7 @@ object ResourceType {
   val GPU = "GPU".asInstanceOf[ResourceType]
   val InferenceAccelerator = "InferenceAccelerator".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(GPU, InferenceAccelerator)
+  @inline def values: js.Array[ResourceType] = js.Array(GPU, InferenceAccelerator)
 }
 
 @js.native
@@ -357,7 +356,7 @@ sealed trait ScaleUnit extends js.Any
 object ScaleUnit {
   val PERCENT = "PERCENT".asInstanceOf[ScaleUnit]
 
-  @inline def values = js.Array(PERCENT)
+  @inline def values: js.Array[ScaleUnit] = js.Array(PERCENT)
 }
 
 @js.native
@@ -366,7 +365,7 @@ object SchedulingStrategy {
   val REPLICA = "REPLICA".asInstanceOf[SchedulingStrategy]
   val DAEMON = "DAEMON".asInstanceOf[SchedulingStrategy]
 
-  @inline def values = js.Array(REPLICA, DAEMON)
+  @inline def values: js.Array[SchedulingStrategy] = js.Array(REPLICA, DAEMON)
 }
 
 @js.native
@@ -375,7 +374,7 @@ object Scope {
   val task = "task".asInstanceOf[Scope]
   val shared = "shared".asInstanceOf[Scope]
 
-  @inline def values = js.Array(task, shared)
+  @inline def values: js.Array[Scope] = js.Array(task, shared)
 }
 
 @js.native
@@ -383,7 +382,7 @@ sealed trait ServiceField extends js.Any
 object ServiceField {
   val TAGS = "TAGS".asInstanceOf[ServiceField]
 
-  @inline def values = js.Array(TAGS)
+  @inline def values: js.Array[ServiceField] = js.Array(TAGS)
 }
 
 @js.native
@@ -395,7 +394,7 @@ object SettingName {
   val awsvpcTrunking = "awsvpcTrunking".asInstanceOf[SettingName]
   val containerInsights = "containerInsights".asInstanceOf[SettingName]
 
-  @inline def values = js.Array(serviceLongArnFormat, taskLongArnFormat, containerInstanceLongArnFormat, awsvpcTrunking, containerInsights)
+  @inline def values: js.Array[SettingName] = js.Array(serviceLongArnFormat, taskLongArnFormat, containerInstanceLongArnFormat, awsvpcTrunking, containerInsights)
 }
 
 @js.native
@@ -404,7 +403,7 @@ object SortOrder {
   val ASC = "ASC".asInstanceOf[SortOrder]
   val DESC = "DESC".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(ASC, DESC)
+  @inline def values: js.Array[SortOrder] = js.Array(ASC, DESC)
 }
 
 @js.native
@@ -413,7 +412,7 @@ object StabilityStatus {
   val STEADY_STATE = "STEADY_STATE".asInstanceOf[StabilityStatus]
   val STABILIZING = "STABILIZING".asInstanceOf[StabilityStatus]
 
-  @inline def values = js.Array(STEADY_STATE, STABILIZING)
+  @inline def values: js.Array[StabilityStatus] = js.Array(STEADY_STATE, STABILIZING)
 }
 
 @js.native
@@ -421,7 +420,7 @@ sealed trait TargetType extends js.Any
 object TargetType {
   val `container-instance` = "container-instance".asInstanceOf[TargetType]
 
-  @inline def values = js.Array(`container-instance`)
+  @inline def values: js.Array[TargetType] = js.Array(`container-instance`)
 }
 
 @js.native
@@ -431,7 +430,7 @@ object TaskDefinitionFamilyStatus {
   val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionFamilyStatus]
   val ALL = "ALL".asInstanceOf[TaskDefinitionFamilyStatus]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE, ALL)
+  @inline def values: js.Array[TaskDefinitionFamilyStatus] = js.Array(ACTIVE, INACTIVE, ALL)
 }
 
 @js.native
@@ -439,7 +438,7 @@ sealed trait TaskDefinitionField extends js.Any
 object TaskDefinitionField {
   val TAGS = "TAGS".asInstanceOf[TaskDefinitionField]
 
-  @inline def values = js.Array(TAGS)
+  @inline def values: js.Array[TaskDefinitionField] = js.Array(TAGS)
 }
 
 @js.native
@@ -447,7 +446,7 @@ sealed trait TaskDefinitionPlacementConstraintType extends js.Any
 object TaskDefinitionPlacementConstraintType {
   val memberOf = "memberOf".asInstanceOf[TaskDefinitionPlacementConstraintType]
 
-  @inline def values = js.Array(memberOf)
+  @inline def values: js.Array[TaskDefinitionPlacementConstraintType] = js.Array(memberOf)
 }
 
 @js.native
@@ -456,7 +455,7 @@ object TaskDefinitionStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[TaskDefinitionStatus]
   val INACTIVE = "INACTIVE".asInstanceOf[TaskDefinitionStatus]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values: js.Array[TaskDefinitionStatus] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native
@@ -464,7 +463,7 @@ sealed trait TaskField extends js.Any
 object TaskField {
   val TAGS = "TAGS".asInstanceOf[TaskField]
 
-  @inline def values = js.Array(TAGS)
+  @inline def values: js.Array[TaskField] = js.Array(TAGS)
 }
 
 @js.native
@@ -472,7 +471,7 @@ sealed trait TaskSetField extends js.Any
 object TaskSetField {
   val TAGS = "TAGS".asInstanceOf[TaskSetField]
 
-  @inline def values = js.Array(TAGS)
+  @inline def values: js.Array[TaskSetField] = js.Array(TAGS)
 }
 
 @js.native
@@ -482,7 +481,7 @@ object TaskStopCode {
   val EssentialContainerExited = "EssentialContainerExited".asInstanceOf[TaskStopCode]
   val UserInitiated = "UserInitiated".asInstanceOf[TaskStopCode]
 
-  @inline def values = js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated)
+  @inline def values: js.Array[TaskStopCode] = js.Array(TaskFailedToStart, EssentialContainerExited, UserInitiated)
 }
 
 @js.native
@@ -491,7 +490,7 @@ object TransportProtocol {
   val tcp = "tcp".asInstanceOf[TransportProtocol]
   val udp = "udp".asInstanceOf[TransportProtocol]
 
-  @inline def values = js.Array(tcp, udp)
+  @inline def values: js.Array[TransportProtocol] = js.Array(tcp, udp)
 }
 
 @js.native
@@ -513,6 +512,5 @@ object UlimitName {
   val sigpending = "sigpending".asInstanceOf[UlimitName]
   val stack = "stack".asInstanceOf[UlimitName]
 
-  @inline def values = js.Array(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack)
+  @inline def values: js.Array[UlimitName] = js.Array(core, cpu, data, fsize, locks, memlock, msgqueue, nice, nofile, nproc, rss, rtprio, rttime, sigpending, stack)
 }
-

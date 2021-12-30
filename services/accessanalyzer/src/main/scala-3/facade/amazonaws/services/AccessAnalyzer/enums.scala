@@ -1,6 +1,6 @@
 package facade.amazonaws.services.accessanalyzer
 
-import scalajs._
+import scalajs.js
 
 type AccessPreviewStatus = "COMPLETED" | "CREATING" | "FAILED"
 object AccessPreviewStatus {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.healthlake
 
-import scalajs._
+import scalajs.js
 
 type DatastoreStatus = "CREATING" | "ACTIVE" | "DELETING" | "DELETED"
 object DatastoreStatus {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cloud9
 
-import scalajs._
+import scalajs.js
 
 type ConnectionType = "CONNECT_SSH" | "CONNECT_SSM"
 object ConnectionType {

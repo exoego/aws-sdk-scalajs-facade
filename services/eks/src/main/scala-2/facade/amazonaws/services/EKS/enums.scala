@@ -1,7 +1,6 @@
 package facade.amazonaws.services.eks
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AMITypes extends js.Any
@@ -10,7 +9,7 @@ object AMITypes {
   val AL2_x86_64_GPU = "AL2_x86_64_GPU".asInstanceOf[AMITypes]
   val AL2_ARM_64 = "AL2_ARM_64".asInstanceOf[AMITypes]
 
-  @inline def values = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64)
+  @inline def values: js.Array[AMITypes] = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64)
 }
 
 @js.native
@@ -23,7 +22,7 @@ object AddonIssueCode {
   val ConfigurationConflict = "ConfigurationConflict".asInstanceOf[AddonIssueCode]
   val AdmissionRequestDenied = "AdmissionRequestDenied".asInstanceOf[AddonIssueCode]
 
-  @inline def values = js.Array(AccessDenied, InternalFailure, ClusterUnreachable, InsufficientNumberOfReplicas, ConfigurationConflict, AdmissionRequestDenied)
+  @inline def values: js.Array[AddonIssueCode] = js.Array(AccessDenied, InternalFailure, ClusterUnreachable, InsufficientNumberOfReplicas, ConfigurationConflict, AdmissionRequestDenied)
 }
 
 @js.native
@@ -37,7 +36,7 @@ object AddonStatus {
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[AddonStatus]
   val DEGRADED = "DEGRADED".asInstanceOf[AddonStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, CREATE_FAILED, UPDATING, DELETING, DELETE_FAILED, DEGRADED)
+  @inline def values: js.Array[AddonStatus] = js.Array(CREATING, ACTIVE, CREATE_FAILED, UPDATING, DELETING, DELETE_FAILED, DEGRADED)
 }
 
 @js.native
@@ -46,7 +45,7 @@ object CapacityTypes {
   val ON_DEMAND = "ON_DEMAND".asInstanceOf[CapacityTypes]
   val SPOT = "SPOT".asInstanceOf[CapacityTypes]
 
-  @inline def values = js.Array(ON_DEMAND, SPOT)
+  @inline def values: js.Array[CapacityTypes] = js.Array(ON_DEMAND, SPOT)
 }
 
 @js.native
@@ -58,7 +57,7 @@ object ClusterStatus {
   val FAILED = "FAILED".asInstanceOf[ClusterStatus]
   val UPDATING = "UPDATING".asInstanceOf[ClusterStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING)
+  @inline def values: js.Array[ClusterStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING)
 }
 
 @js.native
@@ -80,7 +79,23 @@ object ErrorCode {
   val ConfigurationConflict = "ConfigurationConflict".asInstanceOf[ErrorCode]
   val AdmissionRequestDenied = "AdmissionRequestDenied".asInstanceOf[ErrorCode]
 
-  @inline def values = js.Array(SubnetNotFound, SecurityGroupNotFound, EniLimitReached, IpNotAvailable, AccessDenied, OperationNotPermitted, VpcIdNotFound, Unknown, NodeCreationFailure, PodEvictionFailure, InsufficientFreeAddresses, ClusterUnreachable, InsufficientNumberOfReplicas, ConfigurationConflict, AdmissionRequestDenied)
+  @inline def values: js.Array[ErrorCode] = js.Array(
+    SubnetNotFound,
+    SecurityGroupNotFound,
+    EniLimitReached,
+    IpNotAvailable,
+    AccessDenied,
+    OperationNotPermitted,
+    VpcIdNotFound,
+    Unknown,
+    NodeCreationFailure,
+    PodEvictionFailure,
+    InsufficientFreeAddresses,
+    ClusterUnreachable,
+    InsufficientNumberOfReplicas,
+    ConfigurationConflict,
+    AdmissionRequestDenied
+  )
 }
 
 @js.native
@@ -92,7 +107,7 @@ object FargateProfileStatus {
   val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[FargateProfileStatus]
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[FargateProfileStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED)
+  @inline def values: js.Array[FargateProfileStatus] = js.Array(CREATING, ACTIVE, DELETING, CREATE_FAILED, DELETE_FAILED)
 }
 
 @js.native
@@ -104,7 +119,7 @@ object LogType {
   val controllerManager = "controllerManager".asInstanceOf[LogType]
   val scheduler = "scheduler".asInstanceOf[LogType]
 
-  @inline def values = js.Array(api, audit, authenticator, controllerManager, scheduler)
+  @inline def values: js.Array[LogType] = js.Array(api, audit, authenticator, controllerManager, scheduler)
 }
 
 @js.native
@@ -129,7 +144,26 @@ object NodegroupIssueCode {
   val InternalFailure = "InternalFailure".asInstanceOf[NodegroupIssueCode]
   val ClusterUnreachable = "ClusterUnreachable".asInstanceOf[NodegroupIssueCode]
 
-  @inline def values = js.Array(AutoScalingGroupNotFound, AutoScalingGroupInvalidConfiguration, Ec2SecurityGroupNotFound, Ec2SecurityGroupDeletionFailure, Ec2LaunchTemplateNotFound, Ec2LaunchTemplateVersionMismatch, Ec2SubnetNotFound, Ec2SubnetInvalidConfiguration, IamInstanceProfileNotFound, IamLimitExceeded, IamNodeRoleNotFound, NodeCreationFailure, AsgInstanceLaunchFailures, InstanceLimitExceeded, InsufficientFreeAddresses, AccessDenied, InternalFailure, ClusterUnreachable)
+  @inline def values: js.Array[NodegroupIssueCode] = js.Array(
+    AutoScalingGroupNotFound,
+    AutoScalingGroupInvalidConfiguration,
+    Ec2SecurityGroupNotFound,
+    Ec2SecurityGroupDeletionFailure,
+    Ec2LaunchTemplateNotFound,
+    Ec2LaunchTemplateVersionMismatch,
+    Ec2SubnetNotFound,
+    Ec2SubnetInvalidConfiguration,
+    IamInstanceProfileNotFound,
+    IamLimitExceeded,
+    IamNodeRoleNotFound,
+    NodeCreationFailure,
+    AsgInstanceLaunchFailures,
+    InstanceLimitExceeded,
+    InsufficientFreeAddresses,
+    AccessDenied,
+    InternalFailure,
+    ClusterUnreachable
+  )
 }
 
 @js.native
@@ -143,7 +177,7 @@ object NodegroupStatus {
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[NodegroupStatus]
   val DEGRADED = "DEGRADED".asInstanceOf[NodegroupStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED)
+  @inline def values: js.Array[NodegroupStatus] = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATE_FAILED, DELETE_FAILED, DEGRADED)
 }
 
 @js.native
@@ -152,7 +186,7 @@ object ResolveConflicts {
   val OVERWRITE = "OVERWRITE".asInstanceOf[ResolveConflicts]
   val NONE = "NONE".asInstanceOf[ResolveConflicts]
 
-  @inline def values = js.Array(OVERWRITE, NONE)
+  @inline def values: js.Array[ResolveConflicts] = js.Array(OVERWRITE, NONE)
 }
 
 @js.native
@@ -176,7 +210,25 @@ object UpdateParamType {
   val ServiceAccountRoleArn = "ServiceAccountRoleArn".asInstanceOf[UpdateParamType]
   val ResolveConflicts = "ResolveConflicts".asInstanceOf[UpdateParamType]
 
-  @inline def values = js.Array(Version, PlatformVersion, EndpointPrivateAccess, EndpointPublicAccess, ClusterLogging, DesiredSize, LabelsToAdd, LabelsToRemove, MaxSize, MinSize, ReleaseVersion, PublicAccessCidrs, IdentityProviderConfig, EncryptionConfig, AddonVersion, ServiceAccountRoleArn, ResolveConflicts)
+  @inline def values: js.Array[UpdateParamType] = js.Array(
+    Version,
+    PlatformVersion,
+    EndpointPrivateAccess,
+    EndpointPublicAccess,
+    ClusterLogging,
+    DesiredSize,
+    LabelsToAdd,
+    LabelsToRemove,
+    MaxSize,
+    MinSize,
+    ReleaseVersion,
+    PublicAccessCidrs,
+    IdentityProviderConfig,
+    EncryptionConfig,
+    AddonVersion,
+    ServiceAccountRoleArn,
+    ResolveConflicts
+  )
 }
 
 @js.native
@@ -187,7 +239,7 @@ object UpdateStatus {
   val Cancelled = "Cancelled".asInstanceOf[UpdateStatus]
   val Successful = "Successful".asInstanceOf[UpdateStatus]
 
-  @inline def values = js.Array(InProgress, Failed, Cancelled, Successful)
+  @inline def values: js.Array[UpdateStatus] = js.Array(InProgress, Failed, Cancelled, Successful)
 }
 
 @js.native
@@ -202,7 +254,16 @@ object UpdateType {
   val AssociateEncryptionConfig = "AssociateEncryptionConfig".asInstanceOf[UpdateType]
   val AddonUpdate = "AddonUpdate".asInstanceOf[UpdateType]
 
-  @inline def values = js.Array(VersionUpdate, EndpointAccessUpdate, LoggingUpdate, ConfigUpdate, AssociateIdentityProviderConfig, DisassociateIdentityProviderConfig, AssociateEncryptionConfig, AddonUpdate)
+  @inline def values: js.Array[UpdateType] = js.Array(
+    VersionUpdate,
+    EndpointAccessUpdate,
+    LoggingUpdate,
+    ConfigUpdate,
+    AssociateIdentityProviderConfig,
+    DisassociateIdentityProviderConfig,
+    AssociateEncryptionConfig,
+    AddonUpdate
+  )
 }
 
 @js.native
@@ -212,6 +273,5 @@ object configStatus {
   val DELETING = "DELETING".asInstanceOf[configStatus]
   val ACTIVE = "ACTIVE".asInstanceOf[configStatus]
 
-  @inline def values = js.Array(CREATING, DELETING, ACTIVE)
+  @inline def values: js.Array[configStatus] = js.Array(CREATING, DELETING, ACTIVE)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ecr
 
-import scalajs._
+import scalajs.js
 
 type EncryptionType = "AES256" | "KMS"
 object EncryptionType {

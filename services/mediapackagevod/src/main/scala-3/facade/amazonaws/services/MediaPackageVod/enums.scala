@@ -1,6 +1,6 @@
 package facade.amazonaws.services.mediapackagevod
 
-import scalajs._
+import scalajs.js
 
 type AdMarkers = "NONE" | "SCTE35_ENHANCED" | "PASSTHROUGH"
 object AdMarkers {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iotthingsgraph
 
-import scalajs._
+import scalajs.js
 
 type DefinitionLanguage = "GRAPHQL"
 object DefinitionLanguage {

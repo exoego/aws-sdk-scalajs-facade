@@ -1,6 +1,6 @@
 package facade.amazonaws.services.location
 
-import scalajs._
+import scalajs.js
 
 type BatchItemErrorCode = "AccessDeniedError" | "ConflictError" | "InternalServerError" | "ResourceNotFoundError" | "ThrottlingError" | "ValidationError"
 object BatchItemErrorCode {

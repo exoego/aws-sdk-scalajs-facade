@@ -1,6 +1,6 @@
 package facade.amazonaws.services.databrew
 
-import scalajs._
+import scalajs.js
 
 type CompressionFormat = "GZIP" | "LZ4" | "SNAPPY" | "BZIP2" | "DEFLATE" | "LZO" | "BROTLI" | "ZSTD" | "ZLIB"
 object CompressionFormat {

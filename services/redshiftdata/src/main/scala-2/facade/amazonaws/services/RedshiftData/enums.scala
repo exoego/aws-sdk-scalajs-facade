@@ -1,7 +1,6 @@
 package facade.amazonaws.services.redshiftdata
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait StatusString extends js.Any
@@ -14,6 +13,5 @@ object StatusString {
   val FAILED = "FAILED".asInstanceOf[StatusString]
   val ALL = "ALL".asInstanceOf[StatusString]
 
-  @inline def values = js.Array(SUBMITTED, PICKED, STARTED, FINISHED, ABORTED, FAILED, ALL)
+  @inline def values: js.Array[StatusString] = js.Array(SUBMITTED, PICKED, STARTED, FINISHED, ABORTED, FAILED, ALL)
 }
-

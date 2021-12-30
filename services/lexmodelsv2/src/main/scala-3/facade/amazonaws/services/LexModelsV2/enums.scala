@@ -1,6 +1,6 @@
 package facade.amazonaws.services.lexmodelsv2
 
-import scalajs._
+import scalajs.js
 
 type BotAliasStatus = "Creating" | "Available" | "Deleting" | "Failed"
 object BotAliasStatus {

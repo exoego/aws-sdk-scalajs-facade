@@ -1,6 +1,6 @@
 package facade.amazonaws.services.lexruntime
 
-import scalajs._
+import scalajs.js
 
 type ConfirmationStatus = "None" | "Confirmed" | "Denied"
 object ConfirmationStatus {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cloudsearch
 
-import scalajs._
+import scalajs.js
 
 type AlgorithmicStemming = "none" | "minimal" | "light" | "full"
 object AlgorithmicStemming {

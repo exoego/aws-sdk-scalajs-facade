@@ -1,6 +1,6 @@
 package facade.amazonaws.services.mq
 
-import scalajs._
+import scalajs.js
 
 /** The authentication strategy used to secure the broker.
   */

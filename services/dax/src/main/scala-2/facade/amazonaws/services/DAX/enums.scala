@@ -1,7 +1,6 @@
 package facade.amazonaws.services.dax
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ChangeType extends js.Any
@@ -9,7 +8,7 @@ object ChangeType {
   val IMMEDIATE = "IMMEDIATE".asInstanceOf[ChangeType]
   val REQUIRES_REBOOT = "REQUIRES_REBOOT".asInstanceOf[ChangeType]
 
-  @inline def values = js.Array(IMMEDIATE, REQUIRES_REBOOT)
+  @inline def values: js.Array[ChangeType] = js.Array(IMMEDIATE, REQUIRES_REBOOT)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object IsModifiable {
   val FALSE = "FALSE".asInstanceOf[IsModifiable]
   val CONDITIONAL = "CONDITIONAL".asInstanceOf[IsModifiable]
 
-  @inline def values = js.Array(TRUE, FALSE, CONDITIONAL)
+  @inline def values: js.Array[IsModifiable] = js.Array(TRUE, FALSE, CONDITIONAL)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object ParameterType {
   val DEFAULT = "DEFAULT".asInstanceOf[ParameterType]
   val NODE_TYPE_SPECIFIC = "NODE_TYPE_SPECIFIC".asInstanceOf[ParameterType]
 
-  @inline def values = js.Array(DEFAULT, NODE_TYPE_SPECIFIC)
+  @inline def values: js.Array[ParameterType] = js.Array(DEFAULT, NODE_TYPE_SPECIFIC)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object SSEStatus {
   val DISABLING = "DISABLING".asInstanceOf[SSEStatus]
   val DISABLED = "DISABLED".asInstanceOf[SSEStatus]
 
-  @inline def values = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
+  @inline def values: js.Array[SSEStatus] = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
 }
 
 @js.native
@@ -49,6 +48,5 @@ object SourceType {
   val PARAMETER_GROUP = "PARAMETER_GROUP".asInstanceOf[SourceType]
   val SUBNET_GROUP = "SUBNET_GROUP".asInstanceOf[SourceType]
 
-  @inline def values = js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP)
+  @inline def values: js.Array[SourceType] = js.Array(CLUSTER, PARAMETER_GROUP, SUBNET_GROUP)
 }
-

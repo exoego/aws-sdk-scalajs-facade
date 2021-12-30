@@ -1,6 +1,6 @@
 package facade.amazonaws.services.medialive
 
-import scalajs._
+import scalajs.js
 
 /** Aac Coding Mode
   */

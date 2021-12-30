@@ -1,6 +1,6 @@
 package facade.amazonaws.services.mediastoredata
 
-import scalajs._
+import scalajs.js
 
 type ItemType = "OBJECT" | "FOLDER"
 object ItemType {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.amp
 
-import scalajs._
+import scalajs.js
 
 /** State of a workspace.
   */

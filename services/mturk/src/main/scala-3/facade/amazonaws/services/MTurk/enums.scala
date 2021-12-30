@@ -1,6 +1,6 @@
 package facade.amazonaws.services.mturk
 
-import scalajs._
+import scalajs.js
 
 type AssignmentStatus = "Submitted" | "Approved" | "Rejected"
 object AssignmentStatus {

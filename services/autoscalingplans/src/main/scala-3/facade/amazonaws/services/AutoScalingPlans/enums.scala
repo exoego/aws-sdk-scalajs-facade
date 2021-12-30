@@ -1,6 +1,6 @@
 package facade.amazonaws.services.autoscalingplans
 
-import scalajs._
+import scalajs.js
 
 type ForecastDataType = "CapacityForecast" | "LoadForecast" | "ScheduledActionMinCapacity" | "ScheduledActionMaxCapacity"
 object ForecastDataType {

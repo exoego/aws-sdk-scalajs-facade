@@ -1,6 +1,6 @@
 package facade.amazonaws.services.es
 
-import scalajs._
+import scalajs.js
 
 /** Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.
   */

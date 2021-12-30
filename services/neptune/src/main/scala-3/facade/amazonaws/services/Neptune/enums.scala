@@ -1,6 +1,6 @@
 package facade.amazonaws.services.neptune
 
-import scalajs._
+import scalajs.js
 
 type ApplyMethod = "immediate" | "pending-reboot"
 object ApplyMethod {

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.iotfleethub
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ApplicationState extends js.Any
@@ -12,6 +11,5 @@ object ApplicationState {
   val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[ApplicationState]
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ApplicationState]
 
-  @inline def values = js.Array(CREATING, DELETING, ACTIVE, CREATE_FAILED, DELETE_FAILED)
+  @inline def values: js.Array[ApplicationState] = js.Array(CREATING, DELETING, ACTIVE, CREATE_FAILED, DELETE_FAILED)
 }
-

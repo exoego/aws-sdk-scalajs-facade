@@ -1,7 +1,6 @@
 package facade.amazonaws.services.firehose
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait CompressionFormat extends js.Any
@@ -12,7 +11,7 @@ object CompressionFormat {
   val Snappy = "Snappy".asInstanceOf[CompressionFormat]
   val HADOOP_SNAPPY = "HADOOP_SNAPPY".asInstanceOf[CompressionFormat]
 
-  @inline def values = js.Array(UNCOMPRESSED, GZIP, ZIP, Snappy, HADOOP_SNAPPY)
+  @inline def values: js.Array[CompressionFormat] = js.Array(UNCOMPRESSED, GZIP, ZIP, Snappy, HADOOP_SNAPPY)
 }
 
 @js.native
@@ -21,7 +20,7 @@ object ContentEncoding {
   val NONE = "NONE".asInstanceOf[ContentEncoding]
   val GZIP = "GZIP".asInstanceOf[ContentEncoding]
 
-  @inline def values = js.Array(NONE, GZIP)
+  @inline def values: js.Array[ContentEncoding] = js.Array(NONE, GZIP)
 }
 
 @js.native
@@ -34,7 +33,7 @@ object DeliveryStreamEncryptionStatus {
   val DISABLING = "DISABLING".asInstanceOf[DeliveryStreamEncryptionStatus]
   val DISABLING_FAILED = "DISABLING_FAILED".asInstanceOf[DeliveryStreamEncryptionStatus]
 
-  @inline def values = js.Array(ENABLED, ENABLING, ENABLING_FAILED, DISABLED, DISABLING, DISABLING_FAILED)
+  @inline def values: js.Array[DeliveryStreamEncryptionStatus] = js.Array(ENABLED, ENABLING, ENABLING_FAILED, DISABLED, DISABLING, DISABLING_FAILED)
 }
 
 @js.native
@@ -56,7 +55,23 @@ object DeliveryStreamFailureType {
   val SECURITY_GROUP_ACCESS_DENIED = "SECURITY_GROUP_ACCESS_DENIED".asInstanceOf[DeliveryStreamFailureType]
   val UNKNOWN_ERROR = "UNKNOWN_ERROR".asInstanceOf[DeliveryStreamFailureType]
 
-  @inline def values = js.Array(RETIRE_KMS_GRANT_FAILED, CREATE_KMS_GRANT_FAILED, KMS_ACCESS_DENIED, DISABLED_KMS_KEY, INVALID_KMS_KEY, KMS_KEY_NOT_FOUND, KMS_OPT_IN_REQUIRED, CREATE_ENI_FAILED, DELETE_ENI_FAILED, SUBNET_NOT_FOUND, SECURITY_GROUP_NOT_FOUND, ENI_ACCESS_DENIED, SUBNET_ACCESS_DENIED, SECURITY_GROUP_ACCESS_DENIED, UNKNOWN_ERROR)
+  @inline def values: js.Array[DeliveryStreamFailureType] = js.Array(
+    RETIRE_KMS_GRANT_FAILED,
+    CREATE_KMS_GRANT_FAILED,
+    KMS_ACCESS_DENIED,
+    DISABLED_KMS_KEY,
+    INVALID_KMS_KEY,
+    KMS_KEY_NOT_FOUND,
+    KMS_OPT_IN_REQUIRED,
+    CREATE_ENI_FAILED,
+    DELETE_ENI_FAILED,
+    SUBNET_NOT_FOUND,
+    SECURITY_GROUP_NOT_FOUND,
+    ENI_ACCESS_DENIED,
+    SUBNET_ACCESS_DENIED,
+    SECURITY_GROUP_ACCESS_DENIED,
+    UNKNOWN_ERROR
+  )
 }
 
 @js.native
@@ -68,7 +83,7 @@ object DeliveryStreamStatus {
   val DELETING_FAILED = "DELETING_FAILED".asInstanceOf[DeliveryStreamStatus]
   val ACTIVE = "ACTIVE".asInstanceOf[DeliveryStreamStatus]
 
-  @inline def values = js.Array(CREATING, CREATING_FAILED, DELETING, DELETING_FAILED, ACTIVE)
+  @inline def values: js.Array[DeliveryStreamStatus] = js.Array(CREATING, CREATING_FAILED, DELETING, DELETING_FAILED, ACTIVE)
 }
 
 @js.native
@@ -77,7 +92,7 @@ object DeliveryStreamType {
   val DirectPut = "DirectPut".asInstanceOf[DeliveryStreamType]
   val KinesisStreamAsSource = "KinesisStreamAsSource".asInstanceOf[DeliveryStreamType]
 
-  @inline def values = js.Array(DirectPut, KinesisStreamAsSource)
+  @inline def values: js.Array[DeliveryStreamType] = js.Array(DirectPut, KinesisStreamAsSource)
 }
 
 @js.native
@@ -89,7 +104,7 @@ object ElasticsearchIndexRotationPeriod {
   val OneWeek = "OneWeek".asInstanceOf[ElasticsearchIndexRotationPeriod]
   val OneMonth = "OneMonth".asInstanceOf[ElasticsearchIndexRotationPeriod]
 
-  @inline def values = js.Array(NoRotation, OneHour, OneDay, OneWeek, OneMonth)
+  @inline def values: js.Array[ElasticsearchIndexRotationPeriod] = js.Array(NoRotation, OneHour, OneDay, OneWeek, OneMonth)
 }
 
 @js.native
@@ -98,7 +113,7 @@ object ElasticsearchS3BackupMode {
   val FailedDocumentsOnly = "FailedDocumentsOnly".asInstanceOf[ElasticsearchS3BackupMode]
   val AllDocuments = "AllDocuments".asInstanceOf[ElasticsearchS3BackupMode]
 
-  @inline def values = js.Array(FailedDocumentsOnly, AllDocuments)
+  @inline def values: js.Array[ElasticsearchS3BackupMode] = js.Array(FailedDocumentsOnly, AllDocuments)
 }
 
 @js.native
@@ -107,7 +122,7 @@ object HECEndpointType {
   val Raw = "Raw".asInstanceOf[HECEndpointType]
   val Event = "Event".asInstanceOf[HECEndpointType]
 
-  @inline def values = js.Array(Raw, Event)
+  @inline def values: js.Array[HECEndpointType] = js.Array(Raw, Event)
 }
 
 @js.native
@@ -116,7 +131,7 @@ object HttpEndpointS3BackupMode {
   val FailedDataOnly = "FailedDataOnly".asInstanceOf[HttpEndpointS3BackupMode]
   val AllData = "AllData".asInstanceOf[HttpEndpointS3BackupMode]
 
-  @inline def values = js.Array(FailedDataOnly, AllData)
+  @inline def values: js.Array[HttpEndpointS3BackupMode] = js.Array(FailedDataOnly, AllData)
 }
 
 @js.native
@@ -125,7 +140,7 @@ object KeyType {
   val AWS_OWNED_CMK = "AWS_OWNED_CMK".asInstanceOf[KeyType]
   val CUSTOMER_MANAGED_CMK = "CUSTOMER_MANAGED_CMK".asInstanceOf[KeyType]
 
-  @inline def values = js.Array(AWS_OWNED_CMK, CUSTOMER_MANAGED_CMK)
+  @inline def values: js.Array[KeyType] = js.Array(AWS_OWNED_CMK, CUSTOMER_MANAGED_CMK)
 }
 
 @js.native
@@ -133,7 +148,7 @@ sealed trait NoEncryptionConfig extends js.Any
 object NoEncryptionConfig {
   val NoEncryption = "NoEncryption".asInstanceOf[NoEncryptionConfig]
 
-  @inline def values = js.Array(NoEncryption)
+  @inline def values: js.Array[NoEncryptionConfig] = js.Array(NoEncryption)
 }
 
 @js.native
@@ -143,7 +158,7 @@ object OrcCompression {
   val ZLIB = "ZLIB".asInstanceOf[OrcCompression]
   val SNAPPY = "SNAPPY".asInstanceOf[OrcCompression]
 
-  @inline def values = js.Array(NONE, ZLIB, SNAPPY)
+  @inline def values: js.Array[OrcCompression] = js.Array(NONE, ZLIB, SNAPPY)
 }
 
 @js.native
@@ -152,7 +167,7 @@ object OrcFormatVersion {
   val V0_11 = "V0_11".asInstanceOf[OrcFormatVersion]
   val V0_12 = "V0_12".asInstanceOf[OrcFormatVersion]
 
-  @inline def values = js.Array(V0_11, V0_12)
+  @inline def values: js.Array[OrcFormatVersion] = js.Array(V0_11, V0_12)
 }
 
 @js.native
@@ -162,7 +177,7 @@ object ParquetCompression {
   val GZIP = "GZIP".asInstanceOf[ParquetCompression]
   val SNAPPY = "SNAPPY".asInstanceOf[ParquetCompression]
 
-  @inline def values = js.Array(UNCOMPRESSED, GZIP, SNAPPY)
+  @inline def values: js.Array[ParquetCompression] = js.Array(UNCOMPRESSED, GZIP, SNAPPY)
 }
 
 @js.native
@@ -171,7 +186,7 @@ object ParquetWriterVersion {
   val V1 = "V1".asInstanceOf[ParquetWriterVersion]
   val V2 = "V2".asInstanceOf[ParquetWriterVersion]
 
-  @inline def values = js.Array(V1, V2)
+  @inline def values: js.Array[ParquetWriterVersion] = js.Array(V1, V2)
 }
 
 @js.native
@@ -183,7 +198,7 @@ object ProcessorParameterName {
   val BufferSizeInMBs = "BufferSizeInMBs".asInstanceOf[ProcessorParameterName]
   val BufferIntervalInSeconds = "BufferIntervalInSeconds".asInstanceOf[ProcessorParameterName]
 
-  @inline def values = js.Array(LambdaArn, NumberOfRetries, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds)
+  @inline def values: js.Array[ProcessorParameterName] = js.Array(LambdaArn, NumberOfRetries, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds)
 }
 
 @js.native
@@ -191,7 +206,7 @@ sealed trait ProcessorType extends js.Any
 object ProcessorType {
   val Lambda = "Lambda".asInstanceOf[ProcessorType]
 
-  @inline def values = js.Array(Lambda)
+  @inline def values: js.Array[ProcessorType] = js.Array(Lambda)
 }
 
 @js.native
@@ -200,7 +215,7 @@ object RedshiftS3BackupMode {
   val Disabled = "Disabled".asInstanceOf[RedshiftS3BackupMode]
   val Enabled = "Enabled".asInstanceOf[RedshiftS3BackupMode]
 
-  @inline def values = js.Array(Disabled, Enabled)
+  @inline def values: js.Array[RedshiftS3BackupMode] = js.Array(Disabled, Enabled)
 }
 
 @js.native
@@ -209,7 +224,7 @@ object S3BackupMode {
   val Disabled = "Disabled".asInstanceOf[S3BackupMode]
   val Enabled = "Enabled".asInstanceOf[S3BackupMode]
 
-  @inline def values = js.Array(Disabled, Enabled)
+  @inline def values: js.Array[S3BackupMode] = js.Array(Disabled, Enabled)
 }
 
 @js.native
@@ -218,6 +233,5 @@ object SplunkS3BackupMode {
   val FailedEventsOnly = "FailedEventsOnly".asInstanceOf[SplunkS3BackupMode]
   val AllEvents = "AllEvents".asInstanceOf[SplunkS3BackupMode]
 
-  @inline def values = js.Array(FailedEventsOnly, AllEvents)
+  @inline def values: js.Array[SplunkS3BackupMode] = js.Array(FailedEventsOnly, AllEvents)
 }
-

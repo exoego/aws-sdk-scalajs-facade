@@ -1,6 +1,6 @@
 package facade.amazonaws.services.pinpointsmsvoice
 
-import scalajs._
+import scalajs.js
 
 /** The types of events that are sent to the event destination.
   */

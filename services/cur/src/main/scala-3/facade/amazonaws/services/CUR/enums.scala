@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cur
 
-import scalajs._
+import scalajs.js
 
 /** The region of the S3 bucket that AWS delivers the report into.
   */

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cloudhsmv2
 
-import scalajs._
+import scalajs.js
 
 type BackupPolicy = "DEFAULT"
 object BackupPolicy {

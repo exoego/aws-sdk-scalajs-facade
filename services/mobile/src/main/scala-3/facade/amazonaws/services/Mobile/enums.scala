@@ -1,6 +1,6 @@
 package facade.amazonaws.services.mobile
 
-import scalajs._
+import scalajs.js
 
 /** Developer desktop or target mobile app or website platform.
   */

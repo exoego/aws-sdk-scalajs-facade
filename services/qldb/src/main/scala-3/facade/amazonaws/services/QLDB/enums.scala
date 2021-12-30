@@ -1,6 +1,6 @@
 package facade.amazonaws.services.qldb
 
-import scalajs._
+import scalajs.js
 
 type ErrorCause = "KINESIS_STREAM_NOT_FOUND" | "IAM_PERMISSION_REVOKED"
 object ErrorCause {

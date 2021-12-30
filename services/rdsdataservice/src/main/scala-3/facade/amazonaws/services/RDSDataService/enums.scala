@@ -1,6 +1,6 @@
 package facade.amazonaws.services.rdsdataservice
 
-import scalajs._
+import scalajs.js
 
 type DecimalReturnType = "STRING" | "DOUBLE_OR_LONG"
 object DecimalReturnType {

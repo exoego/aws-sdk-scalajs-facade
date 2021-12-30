@@ -1,6 +1,6 @@
 package facade.amazonaws.services.customerprofiles
 
-import scalajs._
+import scalajs.js
 
 type DataPullMode = "Incremental" | "Complete"
 object DataPullMode {

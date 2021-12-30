@@ -1,7 +1,6 @@
 package facade.amazonaws.services.timestreamquery
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ScalarType extends js.Any
@@ -18,6 +17,5 @@ object ScalarType {
   val UNKNOWN = "UNKNOWN".asInstanceOf[ScalarType]
   val INTEGER = "INTEGER".asInstanceOf[ScalarType]
 
-  @inline def values = js.Array(VARCHAR, BOOLEAN, BIGINT, DOUBLE, TIMESTAMP, DATE, TIME, INTERVAL_DAY_TO_SECOND, INTERVAL_YEAR_TO_MONTH, UNKNOWN, INTEGER)
+  @inline def values: js.Array[ScalarType] = js.Array(VARCHAR, BOOLEAN, BIGINT, DOUBLE, TIMESTAMP, DATE, TIME, INTERVAL_DAY_TO_SECOND, INTERVAL_YEAR_TO_MONTH, UNKNOWN, INTEGER)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.acm
 
-import scalajs._
+import scalajs.js
 
 type CertificateStatus = "PENDING_VALIDATION" | "ISSUED" | "INACTIVE" | "EXPIRED" | "VALIDATION_TIMED_OUT" | "REVOKED" | "FAILED"
 object CertificateStatus {

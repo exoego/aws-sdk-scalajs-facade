@@ -1,6 +1,6 @@
 package facade.amazonaws.services.detective
 
-import scalajs._
+import scalajs.js
 
 type MemberDisabledReason = "VOLUME_TOO_HIGH" | "VOLUME_UNKNOWN"
 object MemberDisabledReason {

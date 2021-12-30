@@ -1,7 +1,6 @@
 package facade.amazonaws.services.mwaa
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait EnvironmentStatus extends js.Any
@@ -15,7 +14,7 @@ object EnvironmentStatus {
   val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[EnvironmentStatus]
   val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[EnvironmentStatus]
 
-  @inline def values = js.Array(CREATING, CREATE_FAILED, AVAILABLE, UPDATING, DELETING, DELETED, UNAVAILABLE, UPDATE_FAILED)
+  @inline def values: js.Array[EnvironmentStatus] = js.Array(CREATING, CREATE_FAILED, AVAILABLE, UPDATING, DELETING, DELETED, UNAVAILABLE, UPDATE_FAILED)
 }
 
 @js.native
@@ -27,7 +26,7 @@ object LoggingLevel {
   val INFO = "INFO".asInstanceOf[LoggingLevel]
   val DEBUG = "DEBUG".asInstanceOf[LoggingLevel]
 
-  @inline def values = js.Array(CRITICAL, ERROR, WARNING, INFO, DEBUG)
+  @inline def values: js.Array[LoggingLevel] = js.Array(CRITICAL, ERROR, WARNING, INFO, DEBUG)
 }
 
 @js.native
@@ -61,7 +60,35 @@ object Unit {
   val `Count/Second` = "Count/Second".asInstanceOf[Unit]
   val None = "None".asInstanceOf[Unit]
 
-  @inline def values = js.Array(Seconds, Microseconds, Milliseconds, Bytes, Kilobytes, Megabytes, Gigabytes, Terabytes, Bits, Kilobits, Megabits, Gigabits, Terabits, Percent, Count, `Bytes/Second`, `Kilobytes/Second`, `Megabytes/Second`, `Gigabytes/Second`, `Terabytes/Second`, `Bits/Second`, `Kilobits/Second`, `Megabits/Second`, `Gigabits/Second`, `Terabits/Second`, `Count/Second`, None)
+  @inline def values: js.Array[Unit] = js.Array(
+    Seconds,
+    Microseconds,
+    Milliseconds,
+    Bytes,
+    Kilobytes,
+    Megabytes,
+    Gigabytes,
+    Terabytes,
+    Bits,
+    Kilobits,
+    Megabits,
+    Gigabits,
+    Terabits,
+    Percent,
+    Count,
+    `Bytes/Second`,
+    `Kilobytes/Second`,
+    `Megabytes/Second`,
+    `Gigabytes/Second`,
+    `Terabytes/Second`,
+    `Bits/Second`,
+    `Kilobits/Second`,
+    `Megabits/Second`,
+    `Gigabits/Second`,
+    `Terabits/Second`,
+    `Count/Second`,
+    None
+  )
 }
 
 @js.native
@@ -71,7 +98,7 @@ object UpdateStatus {
   val PENDING = "PENDING".asInstanceOf[UpdateStatus]
   val FAILED = "FAILED".asInstanceOf[UpdateStatus]
 
-  @inline def values = js.Array(SUCCESS, PENDING, FAILED)
+  @inline def values: js.Array[UpdateStatus] = js.Array(SUCCESS, PENDING, FAILED)
 }
 
 @js.native
@@ -80,6 +107,5 @@ object WebserverAccessMode {
   val PRIVATE_ONLY = "PRIVATE_ONLY".asInstanceOf[WebserverAccessMode]
   val PUBLIC_ONLY = "PUBLIC_ONLY".asInstanceOf[WebserverAccessMode]
 
-  @inline def values = js.Array(PRIVATE_ONLY, PUBLIC_ONLY)
+  @inline def values: js.Array[WebserverAccessMode] = js.Array(PRIVATE_ONLY, PUBLIC_ONLY)
 }
-

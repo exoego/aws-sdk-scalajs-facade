@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cloudsearchdomain
 
-import scalajs._
+import scalajs.js
 
 type ContentType = "application/json" | "application/xml"
 object ContentType {

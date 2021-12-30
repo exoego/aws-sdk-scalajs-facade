@@ -1,6 +1,6 @@
 package facade.amazonaws.services.mediaconnect
 
-import scalajs._
+import scalajs.js
 
 type Algorithm = "aes128" | "aes192" | "aes256"
 object Algorithm {

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.route53domains
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ContactType extends js.Any
@@ -12,7 +11,7 @@ object ContactType {
   val PUBLIC_BODY = "PUBLIC_BODY".asInstanceOf[ContactType]
   val RESELLER = "RESELLER".asInstanceOf[ContactType]
 
-  @inline def values = js.Array(PERSON, COMPANY, ASSOCIATION, PUBLIC_BODY, RESELLER)
+  @inline def values: js.Array[ContactType] = js.Array(PERSON, COMPANY, ASSOCIATION, PUBLIC_BODY, RESELLER)
 }
 
 @js.native
@@ -248,7 +247,237 @@ object CountryCode {
   val ZM = "ZM".asInstanceOf[CountryCode]
   val ZW = "ZW".asInstanceOf[CountryCode]
 
-  @inline def values = js.Array(AD, AE, AF, AG, AI, AL, AM, AN, AO, AQ, AR, AS, AT, AU, AW, AZ, BA, BB, BD, BE, BF, BG, BH, BI, BJ, BL, BM, BN, BO, BR, BS, BT, BW, BY, BZ, CA, CC, CD, CF, CG, CH, CI, CK, CL, CM, CN, CO, CR, CU, CV, CX, CY, CZ, DE, DJ, DK, DM, DO, DZ, EC, EE, EG, ER, ES, ET, FI, FJ, FK, FM, FO, FR, GA, GB, GD, GE, GH, GI, GL, GM, GN, GQ, GR, GT, GU, GW, GY, HK, HN, HR, HT, HU, ID, IE, IL, IM, IN, IQ, IR, IS, IT, JM, JO, JP, KE, KG, KH, KI, KM, KN, KP, KR, KW, KY, KZ, LA, LB, LC, LI, LK, LR, LS, LT, LU, LV, LY, MA, MC, MD, ME, MF, MG, MH, MK, ML, MM, MN, MO, MP, MR, MS, MT, MU, MV, MW, MX, MY, MZ, NA, NC, NE, NG, NI, NL, NO, NP, NR, NU, NZ, OM, PA, PE, PF, PG, PH, PK, PL, PM, PN, PR, PT, PW, PY, QA, RO, RS, RU, RW, SA, SB, SC, SD, SE, SG, SH, SI, SK, SL, SM, SN, SO, SR, ST, SV, SY, SZ, TC, TD, TG, TH, TJ, TK, TL, TM, TN, TO, TR, TT, TV, TW, TZ, UA, UG, US, UY, UZ, VA, VC, VE, VG, VI, VN, VU, WF, WS, YE, YT, ZA, ZM, ZW)
+  @inline def values: js.Array[CountryCode] = js.Array(
+    AD,
+    AE,
+    AF,
+    AG,
+    AI,
+    AL,
+    AM,
+    AN,
+    AO,
+    AQ,
+    AR,
+    AS,
+    AT,
+    AU,
+    AW,
+    AZ,
+    BA,
+    BB,
+    BD,
+    BE,
+    BF,
+    BG,
+    BH,
+    BI,
+    BJ,
+    BL,
+    BM,
+    BN,
+    BO,
+    BR,
+    BS,
+    BT,
+    BW,
+    BY,
+    BZ,
+    CA,
+    CC,
+    CD,
+    CF,
+    CG,
+    CH,
+    CI,
+    CK,
+    CL,
+    CM,
+    CN,
+    CO,
+    CR,
+    CU,
+    CV,
+    CX,
+    CY,
+    CZ,
+    DE,
+    DJ,
+    DK,
+    DM,
+    DO,
+    DZ,
+    EC,
+    EE,
+    EG,
+    ER,
+    ES,
+    ET,
+    FI,
+    FJ,
+    FK,
+    FM,
+    FO,
+    FR,
+    GA,
+    GB,
+    GD,
+    GE,
+    GH,
+    GI,
+    GL,
+    GM,
+    GN,
+    GQ,
+    GR,
+    GT,
+    GU,
+    GW,
+    GY,
+    HK,
+    HN,
+    HR,
+    HT,
+    HU,
+    ID,
+    IE,
+    IL,
+    IM,
+    IN,
+    IQ,
+    IR,
+    IS,
+    IT,
+    JM,
+    JO,
+    JP,
+    KE,
+    KG,
+    KH,
+    KI,
+    KM,
+    KN,
+    KP,
+    KR,
+    KW,
+    KY,
+    KZ,
+    LA,
+    LB,
+    LC,
+    LI,
+    LK,
+    LR,
+    LS,
+    LT,
+    LU,
+    LV,
+    LY,
+    MA,
+    MC,
+    MD,
+    ME,
+    MF,
+    MG,
+    MH,
+    MK,
+    ML,
+    MM,
+    MN,
+    MO,
+    MP,
+    MR,
+    MS,
+    MT,
+    MU,
+    MV,
+    MW,
+    MX,
+    MY,
+    MZ,
+    NA,
+    NC,
+    NE,
+    NG,
+    NI,
+    NL,
+    NO,
+    NP,
+    NR,
+    NU,
+    NZ,
+    OM,
+    PA,
+    PE,
+    PF,
+    PG,
+    PH,
+    PK,
+    PL,
+    PM,
+    PN,
+    PR,
+    PT,
+    PW,
+    PY,
+    QA,
+    RO,
+    RS,
+    RU,
+    RW,
+    SA,
+    SB,
+    SC,
+    SD,
+    SE,
+    SG,
+    SH,
+    SI,
+    SK,
+    SL,
+    SM,
+    SN,
+    SO,
+    SR,
+    ST,
+    SV,
+    SY,
+    SZ,
+    TC,
+    TD,
+    TG,
+    TH,
+    TJ,
+    TK,
+    TL,
+    TM,
+    TN,
+    TO,
+    TR,
+    TT,
+    TV,
+    TW,
+    TZ,
+    UA,
+    UG,
+    US,
+    UY,
+    UZ,
+    VA,
+    VC,
+    VE,
+    VG,
+    VI,
+    VN,
+    VU,
+    WF,
+    WS,
+    YE,
+    YT,
+    ZA,
+    ZM,
+    ZW
+  )
 }
 
 @js.native
@@ -263,7 +492,7 @@ object DomainAvailability {
   val RESERVED = "RESERVED".asInstanceOf[DomainAvailability]
   val DONT_KNOW = "DONT_KNOW".asInstanceOf[DomainAvailability]
 
-  @inline def values = js.Array(AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW)
+  @inline def values: js.Array[DomainAvailability] = js.Array(AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW)
 }
 
 @js.native
@@ -299,7 +528,37 @@ object ExtraParamName {
   val UK_CONTACT_TYPE = "UK_CONTACT_TYPE".asInstanceOf[ExtraParamName]
   val UK_COMPANY_NUMBER = "UK_COMPANY_NUMBER".asInstanceOf[ExtraParamName]
 
-  @inline def values = js.Array(DUNS_NUMBER, BRAND_NUMBER, BIRTH_DEPARTMENT, BIRTH_DATE_IN_YYYY_MM_DD, BIRTH_COUNTRY, BIRTH_CITY, DOCUMENT_NUMBER, AU_ID_NUMBER, AU_ID_TYPE, CA_LEGAL_TYPE, CA_BUSINESS_ENTITY_TYPE, CA_LEGAL_REPRESENTATIVE, CA_LEGAL_REPRESENTATIVE_CAPACITY, ES_IDENTIFICATION, ES_IDENTIFICATION_TYPE, ES_LEGAL_FORM, FI_BUSINESS_NUMBER, FI_ID_NUMBER, FI_NATIONALITY, FI_ORGANIZATION_TYPE, IT_NATIONALITY, IT_PIN, IT_REGISTRANT_ENTITY_TYPE, RU_PASSPORT_DATA, SE_ID_NUMBER, SG_ID_NUMBER, VAT_NUMBER, UK_CONTACT_TYPE, UK_COMPANY_NUMBER)
+  @inline def values: js.Array[ExtraParamName] = js.Array(
+    DUNS_NUMBER,
+    BRAND_NUMBER,
+    BIRTH_DEPARTMENT,
+    BIRTH_DATE_IN_YYYY_MM_DD,
+    BIRTH_COUNTRY,
+    BIRTH_CITY,
+    DOCUMENT_NUMBER,
+    AU_ID_NUMBER,
+    AU_ID_TYPE,
+    CA_LEGAL_TYPE,
+    CA_BUSINESS_ENTITY_TYPE,
+    CA_LEGAL_REPRESENTATIVE,
+    CA_LEGAL_REPRESENTATIVE_CAPACITY,
+    ES_IDENTIFICATION,
+    ES_IDENTIFICATION_TYPE,
+    ES_LEGAL_FORM,
+    FI_BUSINESS_NUMBER,
+    FI_ID_NUMBER,
+    FI_NATIONALITY,
+    FI_ORGANIZATION_TYPE,
+    IT_NATIONALITY,
+    IT_PIN,
+    IT_REGISTRANT_ENTITY_TYPE,
+    RU_PASSPORT_DATA,
+    SE_ID_NUMBER,
+    SG_ID_NUMBER,
+    VAT_NUMBER,
+    UK_CONTACT_TYPE,
+    UK_COMPANY_NUMBER
+  )
 }
 
 @js.native
@@ -311,7 +570,7 @@ object OperationStatus {
   val SUCCESSFUL = "SUCCESSFUL".asInstanceOf[OperationStatus]
   val FAILED = "FAILED".asInstanceOf[OperationStatus]
 
-  @inline def values = js.Array(SUBMITTED, IN_PROGRESS, ERROR, SUCCESSFUL, FAILED)
+  @inline def values: js.Array[OperationStatus] = js.Array(SUBMITTED, IN_PROGRESS, ERROR, SUCCESSFUL, FAILED)
 }
 
 @js.native
@@ -336,7 +595,26 @@ object OperationType {
   val INTERNAL_TRANSFER_OUT_DOMAIN = "INTERNAL_TRANSFER_OUT_DOMAIN".asInstanceOf[OperationType]
   val INTERNAL_TRANSFER_IN_DOMAIN = "INTERNAL_TRANSFER_IN_DOMAIN".asInstanceOf[OperationType]
 
-  @inline def values = js.Array(REGISTER_DOMAIN, DELETE_DOMAIN, TRANSFER_IN_DOMAIN, UPDATE_DOMAIN_CONTACT, UPDATE_NAMESERVER, CHANGE_PRIVACY_PROTECTION, DOMAIN_LOCK, ENABLE_AUTORENEW, DISABLE_AUTORENEW, ADD_DNSSEC, REMOVE_DNSSEC, EXPIRE_DOMAIN, TRANSFER_OUT_DOMAIN, CHANGE_DOMAIN_OWNER, RENEW_DOMAIN, PUSH_DOMAIN, INTERNAL_TRANSFER_OUT_DOMAIN, INTERNAL_TRANSFER_IN_DOMAIN)
+  @inline def values: js.Array[OperationType] = js.Array(
+    REGISTER_DOMAIN,
+    DELETE_DOMAIN,
+    TRANSFER_IN_DOMAIN,
+    UPDATE_DOMAIN_CONTACT,
+    UPDATE_NAMESERVER,
+    CHANGE_PRIVACY_PROTECTION,
+    DOMAIN_LOCK,
+    ENABLE_AUTORENEW,
+    DISABLE_AUTORENEW,
+    ADD_DNSSEC,
+    REMOVE_DNSSEC,
+    EXPIRE_DOMAIN,
+    TRANSFER_OUT_DOMAIN,
+    CHANGE_DOMAIN_OWNER,
+    RENEW_DOMAIN,
+    PUSH_DOMAIN,
+    INTERNAL_TRANSFER_OUT_DOMAIN,
+    INTERNAL_TRANSFER_IN_DOMAIN
+  )
 }
 
 @js.native
@@ -346,17 +624,12 @@ object ReachabilityStatus {
   val DONE = "DONE".asInstanceOf[ReachabilityStatus]
   val EXPIRED = "EXPIRED".asInstanceOf[ReachabilityStatus]
 
-  @inline def values = js.Array(PENDING, DONE, EXPIRED)
+  @inline def values: js.Array[ReachabilityStatus] = js.Array(PENDING, DONE, EXPIRED)
 }
 
 /** Whether the domain name can be transferred to Route 53.
-  * 
-  * '''Note:'''You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>.
-  * Valid values:
-  * <dl> <dt>TRANSFERABLE</dt> <dd> The domain name can be transferred to Route 53.
-  * </dd> <dt>UNTRANSFERRABLE</dt> <dd> The domain name can't be transferred to Route 53.
-  * </dd> <dt>DONT_KNOW</dt> <dd> Reserved for future use.
-  * </dd> </dl>
+  *
+  * '''Note:'''You can transfer only domains that have a value of <code>TRANSFERABLE</code> for <code>Transferable</code>. Valid values: <dl> <dt>TRANSFERABLE</dt> <dd> The domain name can be transferred to Route 53. </dd> <dt>UNTRANSFERRABLE</dt> <dd> The domain name can't be transferred to Route 53. </dd> <dt>DONT_KNOW</dt> <dd> Reserved for future use. </dd> </dl>
   */
 @js.native
 sealed trait Transferable extends js.Any
@@ -365,6 +638,5 @@ object Transferable {
   val UNTRANSFERABLE = "UNTRANSFERABLE".asInstanceOf[Transferable]
   val DONT_KNOW = "DONT_KNOW".asInstanceOf[Transferable]
 
-  @inline def values = js.Array(TRANSFERABLE, UNTRANSFERABLE, DONT_KNOW)
+  @inline def values: js.Array[Transferable] = js.Array(TRANSFERABLE, UNTRANSFERABLE, DONT_KNOW)
 }
-

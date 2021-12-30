@@ -1,6 +1,6 @@
 package facade.amazonaws.services.guardduty
 
-import scalajs._
+import scalajs.js
 
 type AdminStatus = "ENABLED" | "DISABLE_IN_PROGRESS"
 object AdminStatus {

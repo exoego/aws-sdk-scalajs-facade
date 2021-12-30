@@ -1,7 +1,6 @@
 package facade.amazonaws.services.shield
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AttackLayer extends js.Any
@@ -9,7 +8,7 @@ object AttackLayer {
   val NETWORK = "NETWORK".asInstanceOf[AttackLayer]
   val APPLICATION = "APPLICATION".asInstanceOf[AttackLayer]
 
-  @inline def values = js.Array(NETWORK, APPLICATION)
+  @inline def values: js.Array[AttackLayer] = js.Array(NETWORK, APPLICATION)
 }
 
 @js.native
@@ -24,7 +23,7 @@ object AttackPropertyIdentifier {
   val WORDPRESS_PINGBACK_REFLECTOR = "WORDPRESS_PINGBACK_REFLECTOR".asInstanceOf[AttackPropertyIdentifier]
   val WORDPRESS_PINGBACK_SOURCE = "WORDPRESS_PINGBACK_SOURCE".asInstanceOf[AttackPropertyIdentifier]
 
-  @inline def values = js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE)
+  @inline def values: js.Array[AttackPropertyIdentifier] = js.Array(DESTINATION_URL, REFERRER, SOURCE_ASN, SOURCE_COUNTRY, SOURCE_IP_ADDRESS, SOURCE_USER_AGENT, WORDPRESS_PINGBACK_REFLECTOR, WORDPRESS_PINGBACK_SOURCE)
 }
 
 @js.native
@@ -33,7 +32,7 @@ object AutoRenew {
   val ENABLED = "ENABLED".asInstanceOf[AutoRenew]
   val DISABLED = "DISABLED".asInstanceOf[AutoRenew]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[AutoRenew] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -43,7 +42,7 @@ object ProactiveEngagementStatus {
   val DISABLED = "DISABLED".asInstanceOf[ProactiveEngagementStatus]
   val PENDING = "PENDING".asInstanceOf[ProactiveEngagementStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED, PENDING)
+  @inline def values: js.Array[ProactiveEngagementStatus] = js.Array(ENABLED, DISABLED, PENDING)
 }
 
 @js.native
@@ -56,7 +55,7 @@ object ProtectedResourceType {
   val APPLICATION_LOAD_BALANCER = "APPLICATION_LOAD_BALANCER".asInstanceOf[ProtectedResourceType]
   val GLOBAL_ACCELERATOR = "GLOBAL_ACCELERATOR".asInstanceOf[ProtectedResourceType]
 
-  @inline def values = js.Array(CLOUDFRONT_DISTRIBUTION, ROUTE_53_HOSTED_ZONE, ELASTIC_IP_ALLOCATION, CLASSIC_LOAD_BALANCER, APPLICATION_LOAD_BALANCER, GLOBAL_ACCELERATOR)
+  @inline def values: js.Array[ProtectedResourceType] = js.Array(CLOUDFRONT_DISTRIBUTION, ROUTE_53_HOSTED_ZONE, ELASTIC_IP_ALLOCATION, CLASSIC_LOAD_BALANCER, APPLICATION_LOAD_BALANCER, GLOBAL_ACCELERATOR)
 }
 
 @js.native
@@ -66,7 +65,7 @@ object ProtectionGroupAggregation {
   val MEAN = "MEAN".asInstanceOf[ProtectionGroupAggregation]
   val MAX = "MAX".asInstanceOf[ProtectionGroupAggregation]
 
-  @inline def values = js.Array(SUM, MEAN, MAX)
+  @inline def values: js.Array[ProtectionGroupAggregation] = js.Array(SUM, MEAN, MAX)
 }
 
 @js.native
@@ -76,7 +75,7 @@ object ProtectionGroupPattern {
   val ARBITRARY = "ARBITRARY".asInstanceOf[ProtectionGroupPattern]
   val BY_RESOURCE_TYPE = "BY_RESOURCE_TYPE".asInstanceOf[ProtectionGroupPattern]
 
-  @inline def values = js.Array(ALL, ARBITRARY, BY_RESOURCE_TYPE)
+  @inline def values: js.Array[ProtectionGroupPattern] = js.Array(ALL, ARBITRARY, BY_RESOURCE_TYPE)
 }
 
 @js.native
@@ -85,7 +84,7 @@ object SubResourceType {
   val IP = "IP".asInstanceOf[SubResourceType]
   val URL = "URL".asInstanceOf[SubResourceType]
 
-  @inline def values = js.Array(IP, URL)
+  @inline def values: js.Array[SubResourceType] = js.Array(IP, URL)
 }
 
 @js.native
@@ -94,7 +93,7 @@ object SubscriptionState {
   val ACTIVE = "ACTIVE".asInstanceOf[SubscriptionState]
   val INACTIVE = "INACTIVE".asInstanceOf[SubscriptionState]
 
-  @inline def values = js.Array(ACTIVE, INACTIVE)
+  @inline def values: js.Array[SubscriptionState] = js.Array(ACTIVE, INACTIVE)
 }
 
 @js.native
@@ -105,6 +104,5 @@ object Unit {
   val PACKETS = "PACKETS".asInstanceOf[Unit]
   val REQUESTS = "REQUESTS".asInstanceOf[Unit]
 
-  @inline def values = js.Array(BITS, BYTES, PACKETS, REQUESTS)
+  @inline def values: js.Array[Unit] = js.Array(BITS, BYTES, PACKETS, REQUESTS)
 }
-

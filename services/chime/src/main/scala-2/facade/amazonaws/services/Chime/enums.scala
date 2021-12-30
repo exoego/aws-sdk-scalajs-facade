@@ -1,7 +1,6 @@
 package facade.amazonaws.services.chime
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccountType extends js.Any
@@ -11,7 +10,7 @@ object AccountType {
   val EnterpriseLWA = "EnterpriseLWA".asInstanceOf[AccountType]
   val EnterpriseOIDC = "EnterpriseOIDC".asInstanceOf[AccountType]
 
-  @inline def values = js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC)
+  @inline def values: js.Array[AccountType] = js.Array(Team, EnterpriseDirectory, EnterpriseLWA, EnterpriseOIDC)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object AppInstanceDataType {
   val Channel = "Channel".asInstanceOf[AppInstanceDataType]
   val ChannelMessage = "ChannelMessage".asInstanceOf[AppInstanceDataType]
 
-  @inline def values = js.Array(Channel, ChannelMessage)
+  @inline def values: js.Array[AppInstanceDataType] = js.Array(Channel, ChannelMessage)
 }
 
 @js.native
@@ -28,7 +27,7 @@ sealed trait BotType extends js.Any
 object BotType {
   val ChatBot = "ChatBot".asInstanceOf[BotType]
 
-  @inline def values = js.Array(ChatBot)
+  @inline def values: js.Array[BotType] = js.Array(ChatBot)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object CallingNameStatus {
   val UpdateSucceeded = "UpdateSucceeded".asInstanceOf[CallingNameStatus]
   val UpdateFailed = "UpdateFailed".asInstanceOf[CallingNameStatus]
 
-  @inline def values = js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed)
+  @inline def values: js.Array[CallingNameStatus] = js.Array(Unassigned, UpdateInProgress, UpdateSucceeded, UpdateFailed)
 }
 
 @js.native
@@ -48,7 +47,7 @@ object Capability {
   val Voice = "Voice".asInstanceOf[Capability]
   val SMS = "SMS".asInstanceOf[Capability]
 
-  @inline def values = js.Array(Voice, SMS)
+  @inline def values: js.Array[Capability] = js.Array(Voice, SMS)
 }
 
 @js.native
@@ -57,7 +56,7 @@ object ChannelMembershipType {
   val DEFAULT = "DEFAULT".asInstanceOf[ChannelMembershipType]
   val HIDDEN = "HIDDEN".asInstanceOf[ChannelMembershipType]
 
-  @inline def values = js.Array(DEFAULT, HIDDEN)
+  @inline def values: js.Array[ChannelMembershipType] = js.Array(DEFAULT, HIDDEN)
 }
 
 @js.native
@@ -66,7 +65,7 @@ object ChannelMessagePersistenceType {
   val PERSISTENT = "PERSISTENT".asInstanceOf[ChannelMessagePersistenceType]
   val NON_PERSISTENT = "NON_PERSISTENT".asInstanceOf[ChannelMessagePersistenceType]
 
-  @inline def values = js.Array(PERSISTENT, NON_PERSISTENT)
+  @inline def values: js.Array[ChannelMessagePersistenceType] = js.Array(PERSISTENT, NON_PERSISTENT)
 }
 
 @js.native
@@ -75,7 +74,7 @@ object ChannelMessageType {
   val STANDARD = "STANDARD".asInstanceOf[ChannelMessageType]
   val CONTROL = "CONTROL".asInstanceOf[ChannelMessageType]
 
-  @inline def values = js.Array(STANDARD, CONTROL)
+  @inline def values: js.Array[ChannelMessageType] = js.Array(STANDARD, CONTROL)
 }
 
 @js.native
@@ -84,7 +83,7 @@ object ChannelMode {
   val UNRESTRICTED = "UNRESTRICTED".asInstanceOf[ChannelMode]
   val RESTRICTED = "RESTRICTED".asInstanceOf[ChannelMode]
 
-  @inline def values = js.Array(UNRESTRICTED, RESTRICTED)
+  @inline def values: js.Array[ChannelMode] = js.Array(UNRESTRICTED, RESTRICTED)
 }
 
 @js.native
@@ -93,7 +92,7 @@ object ChannelPrivacy {
   val PUBLIC = "PUBLIC".asInstanceOf[ChannelPrivacy]
   val PRIVATE = "PRIVATE".asInstanceOf[ChannelPrivacy]
 
-  @inline def values = js.Array(PUBLIC, PRIVATE)
+  @inline def values: js.Array[ChannelPrivacy] = js.Array(PUBLIC, PRIVATE)
 }
 
 @js.native
@@ -103,7 +102,7 @@ object EmailStatus {
   val Sent = "Sent".asInstanceOf[EmailStatus]
   val Failed = "Failed".asInstanceOf[EmailStatus]
 
-  @inline def values = js.Array(NotSent, Sent, Failed)
+  @inline def values: js.Array[EmailStatus] = js.Array(NotSent, Sent, Failed)
 }
 
 @js.native
@@ -125,7 +124,23 @@ object ErrorCode {
   val VoiceConnectorGroupAssociationsExist = "VoiceConnectorGroupAssociationsExist".asInstanceOf[ErrorCode]
   val PhoneNumberAssociationsExist = "PhoneNumberAssociationsExist".asInstanceOf[ErrorCode]
 
-  @inline def values = js.Array(BadRequest, Conflict, Forbidden, NotFound, PreconditionFailed, ResourceLimitExceeded, ServiceFailure, AccessDenied, ServiceUnavailable, Throttled, Throttling, Unauthorized, Unprocessable, VoiceConnectorGroupAssociationsExist, PhoneNumberAssociationsExist)
+  @inline def values: js.Array[ErrorCode] = js.Array(
+    BadRequest,
+    Conflict,
+    Forbidden,
+    NotFound,
+    PreconditionFailed,
+    ResourceLimitExceeded,
+    ServiceFailure,
+    AccessDenied,
+    ServiceUnavailable,
+    Throttled,
+    Throttling,
+    Unauthorized,
+    Unprocessable,
+    VoiceConnectorGroupAssociationsExist,
+    PhoneNumberAssociationsExist
+  )
 }
 
 @js.native
@@ -134,7 +149,7 @@ object GeoMatchLevel {
   val Country = "Country".asInstanceOf[GeoMatchLevel]
   val AreaCode = "AreaCode".asInstanceOf[GeoMatchLevel]
 
-  @inline def values = js.Array(Country, AreaCode)
+  @inline def values: js.Array[GeoMatchLevel] = js.Array(Country, AreaCode)
 }
 
 @js.native
@@ -144,7 +159,7 @@ object InviteStatus {
   val Accepted = "Accepted".asInstanceOf[InviteStatus]
   val Failed = "Failed".asInstanceOf[InviteStatus]
 
-  @inline def values = js.Array(Pending, Accepted, Failed)
+  @inline def values: js.Array[InviteStatus] = js.Array(Pending, Accepted, Failed)
 }
 
 @js.native
@@ -155,7 +170,7 @@ object License {
   val Pro = "Pro".asInstanceOf[License]
   val ProTrial = "ProTrial".asInstanceOf[License]
 
-  @inline def values = js.Array(Basic, Plus, Pro, ProTrial)
+  @inline def values: js.Array[License] = js.Array(Basic, Plus, Pro, ProTrial)
 }
 
 @js.native
@@ -165,7 +180,7 @@ object MemberType {
   val Bot = "Bot".asInstanceOf[MemberType]
   val Webhook = "Webhook".asInstanceOf[MemberType]
 
-  @inline def values = js.Array(User, Bot, Webhook)
+  @inline def values: js.Array[MemberType] = js.Array(User, Bot, Webhook)
 }
 
 @js.native
@@ -175,7 +190,7 @@ object NotificationTarget {
   val SNS = "SNS".asInstanceOf[NotificationTarget]
   val SQS = "SQS".asInstanceOf[NotificationTarget]
 
-  @inline def values = js.Array(EventBridge, SNS, SQS)
+  @inline def values: js.Array[NotificationTarget] = js.Array(EventBridge, SNS, SQS)
 }
 
 @js.native
@@ -184,7 +199,7 @@ object NumberSelectionBehavior {
   val PreferSticky = "PreferSticky".asInstanceOf[NumberSelectionBehavior]
   val AvoidSticky = "AvoidSticky".asInstanceOf[NumberSelectionBehavior]
 
-  @inline def values = js.Array(PreferSticky, AvoidSticky)
+  @inline def values: js.Array[NumberSelectionBehavior] = js.Array(PreferSticky, AvoidSticky)
 }
 
 @js.native
@@ -194,7 +209,7 @@ object OrderedPhoneNumberStatus {
   val Acquired = "Acquired".asInstanceOf[OrderedPhoneNumberStatus]
   val Failed = "Failed".asInstanceOf[OrderedPhoneNumberStatus]
 
-  @inline def values = js.Array(Processing, Acquired, Failed)
+  @inline def values: js.Array[OrderedPhoneNumberStatus] = js.Array(Processing, Acquired, Failed)
 }
 
 @js.native
@@ -203,7 +218,7 @@ object OriginationRouteProtocol {
   val TCP = "TCP".asInstanceOf[OriginationRouteProtocol]
   val UDP = "UDP".asInstanceOf[OriginationRouteProtocol]
 
-  @inline def values = js.Array(TCP, UDP)
+  @inline def values: js.Array[OriginationRouteProtocol] = js.Array(TCP, UDP)
 }
 
 @js.native
@@ -215,7 +230,7 @@ object PhoneNumberAssociationName {
   val VoiceConnectorGroupId = "VoiceConnectorGroupId".asInstanceOf[PhoneNumberAssociationName]
   val SipRuleId = "SipRuleId".asInstanceOf[PhoneNumberAssociationName]
 
-  @inline def values = js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId, SipRuleId)
+  @inline def values: js.Array[PhoneNumberAssociationName] = js.Array(AccountId, UserId, VoiceConnectorId, VoiceConnectorGroupId, SipRuleId)
 }
 
 @js.native
@@ -226,7 +241,7 @@ object PhoneNumberOrderStatus {
   val Failed = "Failed".asInstanceOf[PhoneNumberOrderStatus]
   val Partial = "Partial".asInstanceOf[PhoneNumberOrderStatus]
 
-  @inline def values = js.Array(Processing, Successful, Failed, Partial)
+  @inline def values: js.Array[PhoneNumberOrderStatus] = js.Array(Processing, Successful, Failed, Partial)
 }
 
 @js.native
@@ -235,7 +250,7 @@ object PhoneNumberProductType {
   val BusinessCalling = "BusinessCalling".asInstanceOf[PhoneNumberProductType]
   val VoiceConnector = "VoiceConnector".asInstanceOf[PhoneNumberProductType]
 
-  @inline def values = js.Array(BusinessCalling, VoiceConnector)
+  @inline def values: js.Array[PhoneNumberProductType] = js.Array(BusinessCalling, VoiceConnector)
 }
 
 @js.native
@@ -250,7 +265,7 @@ object PhoneNumberStatus {
   val ReleaseFailed = "ReleaseFailed".asInstanceOf[PhoneNumberStatus]
   val DeleteFailed = "DeleteFailed".asInstanceOf[PhoneNumberStatus]
 
-  @inline def values = js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed)
+  @inline def values: js.Array[PhoneNumberStatus] = js.Array(AcquireInProgress, AcquireFailed, Unassigned, Assigned, ReleaseInProgress, DeleteInProgress, ReleaseFailed, DeleteFailed)
 }
 
 @js.native
@@ -259,7 +274,7 @@ object PhoneNumberType {
   val Local = "Local".asInstanceOf[PhoneNumberType]
   val TollFree = "TollFree".asInstanceOf[PhoneNumberType]
 
-  @inline def values = js.Array(Local, TollFree)
+  @inline def values: js.Array[PhoneNumberType] = js.Array(Local, TollFree)
 }
 
 @js.native
@@ -269,7 +284,7 @@ object ProxySessionStatus {
   val InProgress = "InProgress".asInstanceOf[ProxySessionStatus]
   val Closed = "Closed".asInstanceOf[ProxySessionStatus]
 
-  @inline def values = js.Array(Open, InProgress, Closed)
+  @inline def values: js.Array[ProxySessionStatus] = js.Array(Open, InProgress, Closed)
 }
 
 @js.native
@@ -279,7 +294,7 @@ object RegistrationStatus {
   val Registered = "Registered".asInstanceOf[RegistrationStatus]
   val Suspended = "Suspended".asInstanceOf[RegistrationStatus]
 
-  @inline def values = js.Array(Unregistered, Registered, Suspended)
+  @inline def values: js.Array[RegistrationStatus] = js.Array(Unregistered, Registered, Suspended)
 }
 
 @js.native
@@ -288,7 +303,7 @@ object RoomMembershipRole {
   val Administrator = "Administrator".asInstanceOf[RoomMembershipRole]
   val Member = "Member".asInstanceOf[RoomMembershipRole]
 
-  @inline def values = js.Array(Administrator, Member)
+  @inline def values: js.Array[RoomMembershipRole] = js.Array(Administrator, Member)
 }
 
 @js.native
@@ -297,7 +312,7 @@ object SipRuleTriggerType {
   val ToPhoneNumber = "ToPhoneNumber".asInstanceOf[SipRuleTriggerType]
   val RequestUriHostname = "RequestUriHostname".asInstanceOf[SipRuleTriggerType]
 
-  @inline def values = js.Array(ToPhoneNumber, RequestUriHostname)
+  @inline def values: js.Array[SipRuleTriggerType] = js.Array(ToPhoneNumber, RequestUriHostname)
 }
 
 @js.native
@@ -306,7 +321,7 @@ object SortOrder {
   val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
   val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }
 
 @js.native
@@ -315,7 +330,7 @@ object UserType {
   val PrivateUser = "PrivateUser".asInstanceOf[UserType]
   val SharedDevice = "SharedDevice".asInstanceOf[UserType]
 
-  @inline def values = js.Array(PrivateUser, SharedDevice)
+  @inline def values: js.Array[UserType] = js.Array(PrivateUser, SharedDevice)
 }
 
 @js.native
@@ -324,6 +339,5 @@ object VoiceConnectorAwsRegion {
   val `us-east-1` = "us-east-1".asInstanceOf[VoiceConnectorAwsRegion]
   val `us-west-2` = "us-west-2".asInstanceOf[VoiceConnectorAwsRegion]
 
-  @inline def values = js.Array(`us-east-1`, `us-west-2`)
+  @inline def values: js.Array[VoiceConnectorAwsRegion] = js.Array(`us-east-1`, `us-west-2`)
 }
-

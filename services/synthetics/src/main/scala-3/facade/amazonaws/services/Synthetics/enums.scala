@@ -1,6 +1,6 @@
 package facade.amazonaws.services.synthetics
 
-import scalajs._
+import scalajs.js
 
 type CanaryRunState = "RUNNING" | "PASSED" | "FAILED"
 object CanaryRunState {

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.codedeploy
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ApplicationRevisionSortBy extends js.Any
@@ -10,7 +9,7 @@ object ApplicationRevisionSortBy {
   val firstUsedTime = "firstUsedTime".asInstanceOf[ApplicationRevisionSortBy]
   val lastUsedTime = "lastUsedTime".asInstanceOf[ApplicationRevisionSortBy]
 
-  @inline def values = js.Array(registerTime, firstUsedTime, lastUsedTime)
+  @inline def values: js.Array[ApplicationRevisionSortBy] = js.Array(registerTime, firstUsedTime, lastUsedTime)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object AutoRollbackEvent {
   val DEPLOYMENT_STOP_ON_ALARM = "DEPLOYMENT_STOP_ON_ALARM".asInstanceOf[AutoRollbackEvent]
   val DEPLOYMENT_STOP_ON_REQUEST = "DEPLOYMENT_STOP_ON_REQUEST".asInstanceOf[AutoRollbackEvent]
 
-  @inline def values = js.Array(DEPLOYMENT_FAILURE, DEPLOYMENT_STOP_ON_ALARM, DEPLOYMENT_STOP_ON_REQUEST)
+  @inline def values: js.Array[AutoRollbackEvent] = js.Array(DEPLOYMENT_FAILURE, DEPLOYMENT_STOP_ON_ALARM, DEPLOYMENT_STOP_ON_REQUEST)
 }
 
 @js.native
@@ -32,7 +31,7 @@ object BundleType {
   val YAML = "YAML".asInstanceOf[BundleType]
   val JSON = "JSON".asInstanceOf[BundleType]
 
-  @inline def values = js.Array(tar, tgz, zip, YAML, JSON)
+  @inline def values: js.Array[BundleType] = js.Array(tar, tgz, zip, YAML, JSON)
 }
 
 @js.native
@@ -42,7 +41,7 @@ object ComputePlatform {
   val Lambda = "Lambda".asInstanceOf[ComputePlatform]
   val ECS = "ECS".asInstanceOf[ComputePlatform]
 
-  @inline def values = js.Array(Server, Lambda, ECS)
+  @inline def values: js.Array[ComputePlatform] = js.Array(Server, Lambda, ECS)
 }
 
 @js.native
@@ -56,7 +55,7 @@ object DeploymentCreator {
   val CloudFormation = "CloudFormation".asInstanceOf[DeploymentCreator]
   val CloudFormationRollback = "CloudFormationRollback".asInstanceOf[DeploymentCreator]
 
-  @inline def values = js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CodeDeployAutoUpdate, CloudFormation, CloudFormationRollback)
+  @inline def values: js.Array[DeploymentCreator] = js.Array(user, autoscaling, codeDeployRollback, CodeDeploy, CodeDeployAutoUpdate, CloudFormation, CloudFormationRollback)
 }
 
 @js.native
@@ -65,7 +64,7 @@ object DeploymentOption {
   val WITH_TRAFFIC_CONTROL = "WITH_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
   val WITHOUT_TRAFFIC_CONTROL = "WITHOUT_TRAFFIC_CONTROL".asInstanceOf[DeploymentOption]
 
-  @inline def values = js.Array(WITH_TRAFFIC_CONTROL, WITHOUT_TRAFFIC_CONTROL)
+  @inline def values: js.Array[DeploymentOption] = js.Array(WITH_TRAFFIC_CONTROL, WITHOUT_TRAFFIC_CONTROL)
 }
 
 @js.native
@@ -74,7 +73,7 @@ object DeploymentReadyAction {
   val CONTINUE_DEPLOYMENT = "CONTINUE_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
   val STOP_DEPLOYMENT = "STOP_DEPLOYMENT".asInstanceOf[DeploymentReadyAction]
 
-  @inline def values = js.Array(CONTINUE_DEPLOYMENT, STOP_DEPLOYMENT)
+  @inline def values: js.Array[DeploymentReadyAction] = js.Array(CONTINUE_DEPLOYMENT, STOP_DEPLOYMENT)
 }
 
 @js.native
@@ -89,7 +88,7 @@ object DeploymentStatus {
   val Stopped = "Stopped".asInstanceOf[DeploymentStatus]
   val Ready = "Ready".asInstanceOf[DeploymentStatus]
 
-  @inline def values = js.Array(Created, Queued, InProgress, Baking, Succeeded, Failed, Stopped, Ready)
+  @inline def values: js.Array[DeploymentStatus] = js.Array(Created, Queued, InProgress, Baking, Succeeded, Failed, Stopped, Ready)
 }
 
 @js.native
@@ -100,7 +99,7 @@ object DeploymentTargetType {
   val ECSTarget = "ECSTarget".asInstanceOf[DeploymentTargetType]
   val CloudFormationTarget = "CloudFormationTarget".asInstanceOf[DeploymentTargetType]
 
-  @inline def values = js.Array(InstanceTarget, LambdaTarget, ECSTarget, CloudFormationTarget)
+  @inline def values: js.Array[DeploymentTargetType] = js.Array(InstanceTarget, LambdaTarget, ECSTarget, CloudFormationTarget)
 }
 
 @js.native
@@ -109,7 +108,7 @@ object DeploymentType {
   val IN_PLACE = "IN_PLACE".asInstanceOf[DeploymentType]
   val BLUE_GREEN = "BLUE_GREEN".asInstanceOf[DeploymentType]
 
-  @inline def values = js.Array(IN_PLACE, BLUE_GREEN)
+  @inline def values: js.Array[DeploymentType] = js.Array(IN_PLACE, BLUE_GREEN)
 }
 
 @js.native
@@ -118,7 +117,7 @@ object DeploymentWaitType {
   val READY_WAIT = "READY_WAIT".asInstanceOf[DeploymentWaitType]
   val TERMINATION_WAIT = "TERMINATION_WAIT".asInstanceOf[DeploymentWaitType]
 
-  @inline def values = js.Array(READY_WAIT, TERMINATION_WAIT)
+  @inline def values: js.Array[DeploymentWaitType] = js.Array(READY_WAIT, TERMINATION_WAIT)
 }
 
 @js.native
@@ -128,7 +127,7 @@ object EC2TagFilterType {
   val VALUE_ONLY = "VALUE_ONLY".asInstanceOf[EC2TagFilterType]
   val KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[EC2TagFilterType]
 
-  @inline def values = js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
+  @inline def values: js.Array[EC2TagFilterType] = js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
 }
 
 @js.native
@@ -169,7 +168,42 @@ object ErrorCode {
   val TIMEOUT = "TIMEOUT".asInstanceOf[ErrorCode]
   val CLOUDFORMATION_STACK_FAILURE = "CLOUDFORMATION_STACK_FAILURE".asInstanceOf[ErrorCode]
 
-  @inline def values = js.Array(AGENT_ISSUE, ALARM_ACTIVE, APPLICATION_MISSING, AUTOSCALING_VALIDATION_ERROR, AUTO_SCALING_CONFIGURATION, AUTO_SCALING_IAM_ROLE_PERMISSIONS, CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND, CUSTOMER_APPLICATION_UNHEALTHY, DEPLOYMENT_GROUP_MISSING, ECS_UPDATE_ERROR, ELASTIC_LOAD_BALANCING_INVALID, ELB_INVALID_INSTANCE, HEALTH_CONSTRAINTS, HEALTH_CONSTRAINTS_INVALID, HOOK_EXECUTION_FAILURE, IAM_ROLE_MISSING, IAM_ROLE_PERMISSIONS, INTERNAL_ERROR, INVALID_ECS_SERVICE, INVALID_LAMBDA_CONFIGURATION, INVALID_LAMBDA_FUNCTION, INVALID_REVISION, MANUAL_STOP, MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION, MISSING_ELB_INFORMATION, MISSING_GITHUB_TOKEN, NO_EC2_SUBSCRIPTION, NO_INSTANCES, OVER_MAX_INSTANCES, RESOURCE_LIMIT_EXCEEDED, REVISION_MISSING, THROTTLED, TIMEOUT, CLOUDFORMATION_STACK_FAILURE)
+  @inline def values: js.Array[ErrorCode] = js.Array(
+    AGENT_ISSUE,
+    ALARM_ACTIVE,
+    APPLICATION_MISSING,
+    AUTOSCALING_VALIDATION_ERROR,
+    AUTO_SCALING_CONFIGURATION,
+    AUTO_SCALING_IAM_ROLE_PERMISSIONS,
+    CODEDEPLOY_RESOURCE_CANNOT_BE_FOUND,
+    CUSTOMER_APPLICATION_UNHEALTHY,
+    DEPLOYMENT_GROUP_MISSING,
+    ECS_UPDATE_ERROR,
+    ELASTIC_LOAD_BALANCING_INVALID,
+    ELB_INVALID_INSTANCE,
+    HEALTH_CONSTRAINTS,
+    HEALTH_CONSTRAINTS_INVALID,
+    HOOK_EXECUTION_FAILURE,
+    IAM_ROLE_MISSING,
+    IAM_ROLE_PERMISSIONS,
+    INTERNAL_ERROR,
+    INVALID_ECS_SERVICE,
+    INVALID_LAMBDA_CONFIGURATION,
+    INVALID_LAMBDA_FUNCTION,
+    INVALID_REVISION,
+    MANUAL_STOP,
+    MISSING_BLUE_GREEN_DEPLOYMENT_CONFIGURATION,
+    MISSING_ELB_INFORMATION,
+    MISSING_GITHUB_TOKEN,
+    NO_EC2_SUBSCRIPTION,
+    NO_INSTANCES,
+    OVER_MAX_INSTANCES,
+    RESOURCE_LIMIT_EXCEEDED,
+    REVISION_MISSING,
+    THROTTLED,
+    TIMEOUT,
+    CLOUDFORMATION_STACK_FAILURE
+  )
 }
 
 @js.native
@@ -179,7 +213,7 @@ object FileExistsBehavior {
   val OVERWRITE = "OVERWRITE".asInstanceOf[FileExistsBehavior]
   val RETAIN = "RETAIN".asInstanceOf[FileExistsBehavior]
 
-  @inline def values = js.Array(DISALLOW, OVERWRITE, RETAIN)
+  @inline def values: js.Array[FileExistsBehavior] = js.Array(DISALLOW, OVERWRITE, RETAIN)
 }
 
 @js.native
@@ -188,7 +222,7 @@ object GreenFleetProvisioningAction {
   val DISCOVER_EXISTING = "DISCOVER_EXISTING".asInstanceOf[GreenFleetProvisioningAction]
   val COPY_AUTO_SCALING_GROUP = "COPY_AUTO_SCALING_GROUP".asInstanceOf[GreenFleetProvisioningAction]
 
-  @inline def values = js.Array(DISCOVER_EXISTING, COPY_AUTO_SCALING_GROUP)
+  @inline def values: js.Array[GreenFleetProvisioningAction] = js.Array(DISCOVER_EXISTING, COPY_AUTO_SCALING_GROUP)
 }
 
 @js.native
@@ -197,7 +231,7 @@ object InstanceAction {
   val TERMINATE = "TERMINATE".asInstanceOf[InstanceAction]
   val KEEP_ALIVE = "KEEP_ALIVE".asInstanceOf[InstanceAction]
 
-  @inline def values = js.Array(TERMINATE, KEEP_ALIVE)
+  @inline def values: js.Array[InstanceAction] = js.Array(TERMINATE, KEEP_ALIVE)
 }
 
 @deprecated("InstanceStatus is deprecated, use TargetStatus instead.", "forever")
@@ -212,7 +246,7 @@ object InstanceStatus {
   val Unknown = "Unknown".asInstanceOf[InstanceStatus]
   val Ready = "Ready".asInstanceOf[InstanceStatus]
 
-  @inline def values = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
+  @inline def values: js.Array[InstanceStatus] = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
 }
 
 @js.native
@@ -221,7 +255,7 @@ object InstanceType {
   val Blue = "Blue".asInstanceOf[InstanceType]
   val Green = "Green".asInstanceOf[InstanceType]
 
-  @inline def values = js.Array(Blue, Green)
+  @inline def values: js.Array[InstanceType] = js.Array(Blue, Green)
 }
 
 @js.native
@@ -234,7 +268,7 @@ object LifecycleErrorCode {
   val ScriptFailed = "ScriptFailed".asInstanceOf[LifecycleErrorCode]
   val UnknownError = "UnknownError".asInstanceOf[LifecycleErrorCode]
 
-  @inline def values = js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError)
+  @inline def values: js.Array[LifecycleErrorCode] = js.Array(Success, ScriptMissing, ScriptNotExecutable, ScriptTimedOut, ScriptFailed, UnknownError)
 }
 
 @js.native
@@ -247,7 +281,7 @@ object LifecycleEventStatus {
   val Skipped = "Skipped".asInstanceOf[LifecycleEventStatus]
   val Unknown = "Unknown".asInstanceOf[LifecycleEventStatus]
 
-  @inline def values = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown)
+  @inline def values: js.Array[LifecycleEventStatus] = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown)
 }
 
 @js.native
@@ -257,7 +291,7 @@ object ListStateFilterAction {
   val exclude = "exclude".asInstanceOf[ListStateFilterAction]
   val ignore = "ignore".asInstanceOf[ListStateFilterAction]
 
-  @inline def values = js.Array(include, exclude, ignore)
+  @inline def values: js.Array[ListStateFilterAction] = js.Array(include, exclude, ignore)
 }
 
 @js.native
@@ -266,7 +300,7 @@ object MinimumHealthyHostsType {
   val HOST_COUNT = "HOST_COUNT".asInstanceOf[MinimumHealthyHostsType]
   val FLEET_PERCENT = "FLEET_PERCENT".asInstanceOf[MinimumHealthyHostsType]
 
-  @inline def values = js.Array(HOST_COUNT, FLEET_PERCENT)
+  @inline def values: js.Array[MinimumHealthyHostsType] = js.Array(HOST_COUNT, FLEET_PERCENT)
 }
 
 @js.native
@@ -275,7 +309,7 @@ object OutdatedInstancesStrategy {
   val UPDATE = "UPDATE".asInstanceOf[OutdatedInstancesStrategy]
   val IGNORE = "IGNORE".asInstanceOf[OutdatedInstancesStrategy]
 
-  @inline def values = js.Array(UPDATE, IGNORE)
+  @inline def values: js.Array[OutdatedInstancesStrategy] = js.Array(UPDATE, IGNORE)
 }
 
 @js.native
@@ -284,7 +318,7 @@ object RegistrationStatus {
   val Registered = "Registered".asInstanceOf[RegistrationStatus]
   val Deregistered = "Deregistered".asInstanceOf[RegistrationStatus]
 
-  @inline def values = js.Array(Registered, Deregistered)
+  @inline def values: js.Array[RegistrationStatus] = js.Array(Registered, Deregistered)
 }
 
 @js.native
@@ -295,7 +329,7 @@ object RevisionLocationType {
   val String = "String".asInstanceOf[RevisionLocationType]
   val AppSpecContent = "AppSpecContent".asInstanceOf[RevisionLocationType]
 
-  @inline def values = js.Array(S3, GitHub, String, AppSpecContent)
+  @inline def values: js.Array[RevisionLocationType] = js.Array(S3, GitHub, String, AppSpecContent)
 }
 
 @js.native
@@ -304,7 +338,7 @@ object SortOrder {
   val ascending = "ascending".asInstanceOf[SortOrder]
   val descending = "descending".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(ascending, descending)
+  @inline def values: js.Array[SortOrder] = js.Array(ascending, descending)
 }
 
 @js.native
@@ -313,7 +347,7 @@ object StopStatus {
   val Pending = "Pending".asInstanceOf[StopStatus]
   val Succeeded = "Succeeded".asInstanceOf[StopStatus]
 
-  @inline def values = js.Array(Pending, Succeeded)
+  @inline def values: js.Array[StopStatus] = js.Array(Pending, Succeeded)
 }
 
 @js.native
@@ -323,7 +357,7 @@ object TagFilterType {
   val VALUE_ONLY = "VALUE_ONLY".asInstanceOf[TagFilterType]
   val KEY_AND_VALUE = "KEY_AND_VALUE".asInstanceOf[TagFilterType]
 
-  @inline def values = js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
+  @inline def values: js.Array[TagFilterType] = js.Array(KEY_ONLY, VALUE_ONLY, KEY_AND_VALUE)
 }
 
 @js.native
@@ -332,7 +366,7 @@ object TargetFilterName {
   val TargetStatus = "TargetStatus".asInstanceOf[TargetFilterName]
   val ServerInstanceLabel = "ServerInstanceLabel".asInstanceOf[TargetFilterName]
 
-  @inline def values = js.Array(TargetStatus, ServerInstanceLabel)
+  @inline def values: js.Array[TargetFilterName] = js.Array(TargetStatus, ServerInstanceLabel)
 }
 
 @js.native
@@ -341,7 +375,7 @@ object TargetLabel {
   val Blue = "Blue".asInstanceOf[TargetLabel]
   val Green = "Green".asInstanceOf[TargetLabel]
 
-  @inline def values = js.Array(Blue, Green)
+  @inline def values: js.Array[TargetLabel] = js.Array(Blue, Green)
 }
 
 @js.native
@@ -355,7 +389,7 @@ object TargetStatus {
   val Unknown = "Unknown".asInstanceOf[TargetStatus]
   val Ready = "Ready".asInstanceOf[TargetStatus]
 
-  @inline def values = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
+  @inline def values: js.Array[TargetStatus] = js.Array(Pending, InProgress, Succeeded, Failed, Skipped, Unknown, Ready)
 }
 
 @js.native
@@ -365,7 +399,7 @@ object TrafficRoutingType {
   val TimeBasedLinear = "TimeBasedLinear".asInstanceOf[TrafficRoutingType]
   val AllAtOnce = "AllAtOnce".asInstanceOf[TrafficRoutingType]
 
-  @inline def values = js.Array(TimeBasedCanary, TimeBasedLinear, AllAtOnce)
+  @inline def values: js.Array[TrafficRoutingType] = js.Array(TimeBasedCanary, TimeBasedLinear, AllAtOnce)
 }
 
 @js.native
@@ -382,6 +416,16 @@ object TriggerEventType {
   val InstanceFailure = "InstanceFailure".asInstanceOf[TriggerEventType]
   val InstanceReady = "InstanceReady".asInstanceOf[TriggerEventType]
 
-  @inline def values = js.Array(DeploymentStart, DeploymentSuccess, DeploymentFailure, DeploymentStop, DeploymentRollback, DeploymentReady, InstanceStart, InstanceSuccess, InstanceFailure, InstanceReady)
+  @inline def values: js.Array[TriggerEventType] = js.Array(
+    DeploymentStart,
+    DeploymentSuccess,
+    DeploymentFailure,
+    DeploymentStop,
+    DeploymentRollback,
+    DeploymentReady,
+    InstanceStart,
+    InstanceSuccess,
+    InstanceFailure,
+    InstanceReady
+  )
 }
-

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.iotanalytics
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ChannelStatus extends js.Any
@@ -10,7 +9,7 @@ object ChannelStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[ChannelStatus]
   val DELETING = "DELETING".asInstanceOf[ChannelStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING)
+  @inline def values: js.Array[ChannelStatus] = js.Array(CREATING, ACTIVE, DELETING)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object ComputeType {
   val ACU_1 = "ACU_1".asInstanceOf[ComputeType]
   val ACU_2 = "ACU_2".asInstanceOf[ComputeType]
 
-  @inline def values = js.Array(ACU_1, ACU_2)
+  @inline def values: js.Array[ComputeType] = js.Array(ACU_1, ACU_2)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object DatasetActionType {
   val QUERY = "QUERY".asInstanceOf[DatasetActionType]
   val CONTAINER = "CONTAINER".asInstanceOf[DatasetActionType]
 
-  @inline def values = js.Array(QUERY, CONTAINER)
+  @inline def values: js.Array[DatasetActionType] = js.Array(QUERY, CONTAINER)
 }
 
 @js.native
@@ -38,7 +37,7 @@ object DatasetContentState {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[DatasetContentState]
   val FAILED = "FAILED".asInstanceOf[DatasetContentState]
 
-  @inline def values = js.Array(CREATING, SUCCEEDED, FAILED)
+  @inline def values: js.Array[DatasetContentState] = js.Array(CREATING, SUCCEEDED, FAILED)
 }
 
 @js.native
@@ -48,7 +47,7 @@ object DatasetStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[DatasetStatus]
   val DELETING = "DELETING".asInstanceOf[DatasetStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING)
+  @inline def values: js.Array[DatasetStatus] = js.Array(CREATING, ACTIVE, DELETING)
 }
 
 @js.native
@@ -58,7 +57,7 @@ object DatastoreStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[DatastoreStatus]
   val DELETING = "DELETING".asInstanceOf[DatastoreStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, DELETING)
+  @inline def values: js.Array[DatastoreStatus] = js.Array(CREATING, ACTIVE, DELETING)
 }
 
 @js.native
@@ -67,7 +66,7 @@ object FileFormatType {
   val JSON = "JSON".asInstanceOf[FileFormatType]
   val PARQUET = "PARQUET".asInstanceOf[FileFormatType]
 
-  @inline def values = js.Array(JSON, PARQUET)
+  @inline def values: js.Array[FileFormatType] = js.Array(JSON, PARQUET)
 }
 
 @js.native
@@ -75,7 +74,7 @@ sealed trait LoggingLevel extends js.Any
 object LoggingLevel {
   val ERROR = "ERROR".asInstanceOf[LoggingLevel]
 
-  @inline def values = js.Array(ERROR)
+  @inline def values: js.Array[LoggingLevel] = js.Array(ERROR)
 }
 
 @js.native
@@ -86,6 +85,5 @@ object ReprocessingStatus {
   val CANCELLED = "CANCELLED".asInstanceOf[ReprocessingStatus]
   val FAILED = "FAILED".asInstanceOf[ReprocessingStatus]
 
-  @inline def values = js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED)
+  @inline def values: js.Array[ReprocessingStatus] = js.Array(RUNNING, SUCCEEDED, CANCELLED, FAILED)
 }
-

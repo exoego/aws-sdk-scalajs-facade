@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iotjobsdataplane
 
-import scalajs._
+import scalajs.js
 
 type JobExecutionStatus = "QUEUED" | "IN_PROGRESS" | "SUCCEEDED" | "FAILED" | "TIMED_OUT" | "REJECTED" | "REMOVED" | "CANCELED"
 object JobExecutionStatus {

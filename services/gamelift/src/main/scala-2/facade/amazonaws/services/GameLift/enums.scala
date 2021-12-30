@@ -1,7 +1,6 @@
 package facade.amazonaws.services.gamelift
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AcceptanceType extends js.Any
@@ -9,7 +8,7 @@ object AcceptanceType {
   val ACCEPT = "ACCEPT".asInstanceOf[AcceptanceType]
   val REJECT = "REJECT".asInstanceOf[AcceptanceType]
 
-  @inline def values = js.Array(ACCEPT, REJECT)
+  @inline def values: js.Array[AcceptanceType] = js.Array(ACCEPT, REJECT)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object BackfillMode {
   val AUTOMATIC = "AUTOMATIC".asInstanceOf[BackfillMode]
   val MANUAL = "MANUAL".asInstanceOf[BackfillMode]
 
-  @inline def values = js.Array(AUTOMATIC, MANUAL)
+  @inline def values: js.Array[BackfillMode] = js.Array(AUTOMATIC, MANUAL)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object BalancingStrategy {
   val SPOT_PREFERRED = "SPOT_PREFERRED".asInstanceOf[BalancingStrategy]
   val ON_DEMAND_ONLY = "ON_DEMAND_ONLY".asInstanceOf[BalancingStrategy]
 
-  @inline def values = js.Array(SPOT_ONLY, SPOT_PREFERRED, ON_DEMAND_ONLY)
+  @inline def values: js.Array[BalancingStrategy] = js.Array(SPOT_ONLY, SPOT_PREFERRED, ON_DEMAND_ONLY)
 }
 
 @js.native
@@ -38,7 +37,7 @@ object BuildStatus {
   val READY = "READY".asInstanceOf[BuildStatus]
   val FAILED = "FAILED".asInstanceOf[BuildStatus]
 
-  @inline def values = js.Array(INITIALIZED, READY, FAILED)
+  @inline def values: js.Array[BuildStatus] = js.Array(INITIALIZED, READY, FAILED)
 }
 
 @js.native
@@ -47,7 +46,7 @@ object CertificateType {
   val DISABLED = "DISABLED".asInstanceOf[CertificateType]
   val GENERATED = "GENERATED".asInstanceOf[CertificateType]
 
-  @inline def values = js.Array(DISABLED, GENERATED)
+  @inline def values: js.Array[CertificateType] = js.Array(DISABLED, GENERATED)
 }
 
 @js.native
@@ -58,7 +57,7 @@ object ComparisonOperatorType {
   val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperatorType]
   val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperatorType]
 
-  @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+  @inline def values: js.Array[ComparisonOperatorType] = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
 }
 
 @js.native
@@ -147,7 +146,90 @@ object EC2InstanceType {
   val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[EC2InstanceType]
   val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[EC2InstanceType]
 
-  @inline def values = js.Array(`t2.micro`, `t2.small`, `t2.medium`, `t2.large`, `c3.large`, `c3.xlarge`, `c3.2xlarge`, `c3.4xlarge`, `c3.8xlarge`, `c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `c5.large`, `c5.xlarge`, `c5.2xlarge`, `c5.4xlarge`, `c5.9xlarge`, `c5.12xlarge`, `c5.18xlarge`, `c5.24xlarge`, `c5a.large`, `c5a.xlarge`, `c5a.2xlarge`, `c5a.4xlarge`, `c5a.8xlarge`, `c5a.12xlarge`, `c5a.16xlarge`, `c5a.24xlarge`, `r3.large`, `r3.xlarge`, `r3.2xlarge`, `r3.4xlarge`, `r3.8xlarge`, `r4.large`, `r4.xlarge`, `r4.2xlarge`, `r4.4xlarge`, `r4.8xlarge`, `r4.16xlarge`, `r5.large`, `r5.xlarge`, `r5.2xlarge`, `r5.4xlarge`, `r5.8xlarge`, `r5.12xlarge`, `r5.16xlarge`, `r5.24xlarge`, `r5a.large`, `r5a.xlarge`, `r5a.2xlarge`, `r5a.4xlarge`, `r5a.8xlarge`, `r5a.12xlarge`, `r5a.16xlarge`, `r5a.24xlarge`, `m3.medium`, `m3.large`, `m3.xlarge`, `m3.2xlarge`, `m4.large`, `m4.xlarge`, `m4.2xlarge`, `m4.4xlarge`, `m4.10xlarge`, `m5.large`, `m5.xlarge`, `m5.2xlarge`, `m5.4xlarge`, `m5.8xlarge`, `m5.12xlarge`, `m5.16xlarge`, `m5.24xlarge`, `m5a.large`, `m5a.xlarge`, `m5a.2xlarge`, `m5a.4xlarge`, `m5a.8xlarge`, `m5a.12xlarge`, `m5a.16xlarge`, `m5a.24xlarge`)
+  @inline def values: js.Array[EC2InstanceType] = js.Array(
+    `t2.micro`,
+    `t2.small`,
+    `t2.medium`,
+    `t2.large`,
+    `c3.large`,
+    `c3.xlarge`,
+    `c3.2xlarge`,
+    `c3.4xlarge`,
+    `c3.8xlarge`,
+    `c4.large`,
+    `c4.xlarge`,
+    `c4.2xlarge`,
+    `c4.4xlarge`,
+    `c4.8xlarge`,
+    `c5.large`,
+    `c5.xlarge`,
+    `c5.2xlarge`,
+    `c5.4xlarge`,
+    `c5.9xlarge`,
+    `c5.12xlarge`,
+    `c5.18xlarge`,
+    `c5.24xlarge`,
+    `c5a.large`,
+    `c5a.xlarge`,
+    `c5a.2xlarge`,
+    `c5a.4xlarge`,
+    `c5a.8xlarge`,
+    `c5a.12xlarge`,
+    `c5a.16xlarge`,
+    `c5a.24xlarge`,
+    `r3.large`,
+    `r3.xlarge`,
+    `r3.2xlarge`,
+    `r3.4xlarge`,
+    `r3.8xlarge`,
+    `r4.large`,
+    `r4.xlarge`,
+    `r4.2xlarge`,
+    `r4.4xlarge`,
+    `r4.8xlarge`,
+    `r4.16xlarge`,
+    `r5.large`,
+    `r5.xlarge`,
+    `r5.2xlarge`,
+    `r5.4xlarge`,
+    `r5.8xlarge`,
+    `r5.12xlarge`,
+    `r5.16xlarge`,
+    `r5.24xlarge`,
+    `r5a.large`,
+    `r5a.xlarge`,
+    `r5a.2xlarge`,
+    `r5a.4xlarge`,
+    `r5a.8xlarge`,
+    `r5a.12xlarge`,
+    `r5a.16xlarge`,
+    `r5a.24xlarge`,
+    `m3.medium`,
+    `m3.large`,
+    `m3.xlarge`,
+    `m3.2xlarge`,
+    `m4.large`,
+    `m4.xlarge`,
+    `m4.2xlarge`,
+    `m4.4xlarge`,
+    `m4.10xlarge`,
+    `m5.large`,
+    `m5.xlarge`,
+    `m5.2xlarge`,
+    `m5.4xlarge`,
+    `m5.8xlarge`,
+    `m5.12xlarge`,
+    `m5.16xlarge`,
+    `m5.24xlarge`,
+    `m5a.large`,
+    `m5a.xlarge`,
+    `m5a.2xlarge`,
+    `m5a.4xlarge`,
+    `m5a.8xlarge`,
+    `m5a.12xlarge`,
+    `m5a.16xlarge`,
+    `m5a.24xlarge`
+  )
 }
 
 @js.native
@@ -187,7 +269,41 @@ object EventCode {
   val FLEET_VPC_PEERING_DELETED = "FLEET_VPC_PEERING_DELETED".asInstanceOf[EventCode]
   val INSTANCE_INTERRUPTED = "INSTANCE_INTERRUPTED".asInstanceOf[EventCode]
 
-  @inline def values = js.Array(GENERIC_EVENT, FLEET_CREATED, FLEET_DELETED, FLEET_SCALING_EVENT, FLEET_STATE_DOWNLOADING, FLEET_STATE_VALIDATING, FLEET_STATE_BUILDING, FLEET_STATE_ACTIVATING, FLEET_STATE_ACTIVE, FLEET_STATE_ERROR, FLEET_INITIALIZATION_FAILED, FLEET_BINARY_DOWNLOAD_FAILED, FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND, FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE, FLEET_VALIDATION_TIMED_OUT, FLEET_ACTIVATION_FAILED, FLEET_ACTIVATION_FAILED_NO_INSTANCES, FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED, SERVER_PROCESS_INVALID_PATH, SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT, SERVER_PROCESS_PROCESS_READY_TIMEOUT, SERVER_PROCESS_CRASHED, SERVER_PROCESS_TERMINATED_UNHEALTHY, SERVER_PROCESS_FORCE_TERMINATED, SERVER_PROCESS_PROCESS_EXIT_TIMEOUT, GAME_SESSION_ACTIVATION_TIMEOUT, FLEET_CREATION_EXTRACTING_BUILD, FLEET_CREATION_RUNNING_INSTALLER, FLEET_CREATION_VALIDATING_RUNTIME_CONFIG, FLEET_VPC_PEERING_SUCCEEDED, FLEET_VPC_PEERING_FAILED, FLEET_VPC_PEERING_DELETED, INSTANCE_INTERRUPTED)
+  @inline def values: js.Array[EventCode] = js.Array(
+    GENERIC_EVENT,
+    FLEET_CREATED,
+    FLEET_DELETED,
+    FLEET_SCALING_EVENT,
+    FLEET_STATE_DOWNLOADING,
+    FLEET_STATE_VALIDATING,
+    FLEET_STATE_BUILDING,
+    FLEET_STATE_ACTIVATING,
+    FLEET_STATE_ACTIVE,
+    FLEET_STATE_ERROR,
+    FLEET_INITIALIZATION_FAILED,
+    FLEET_BINARY_DOWNLOAD_FAILED,
+    FLEET_VALIDATION_LAUNCH_PATH_NOT_FOUND,
+    FLEET_VALIDATION_EXECUTABLE_RUNTIME_FAILURE,
+    FLEET_VALIDATION_TIMED_OUT,
+    FLEET_ACTIVATION_FAILED,
+    FLEET_ACTIVATION_FAILED_NO_INSTANCES,
+    FLEET_NEW_GAME_SESSION_PROTECTION_POLICY_UPDATED,
+    SERVER_PROCESS_INVALID_PATH,
+    SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT,
+    SERVER_PROCESS_PROCESS_READY_TIMEOUT,
+    SERVER_PROCESS_CRASHED,
+    SERVER_PROCESS_TERMINATED_UNHEALTHY,
+    SERVER_PROCESS_FORCE_TERMINATED,
+    SERVER_PROCESS_PROCESS_EXIT_TIMEOUT,
+    GAME_SESSION_ACTIVATION_TIMEOUT,
+    FLEET_CREATION_EXTRACTING_BUILD,
+    FLEET_CREATION_RUNNING_INSTALLER,
+    FLEET_CREATION_VALIDATING_RUNTIME_CONFIG,
+    FLEET_VPC_PEERING_SUCCEEDED,
+    FLEET_VPC_PEERING_FAILED,
+    FLEET_VPC_PEERING_DELETED,
+    INSTANCE_INTERRUPTED
+  )
 }
 
 @js.native
@@ -195,7 +311,7 @@ sealed trait FleetAction extends js.Any
 object FleetAction {
   val AUTO_SCALING = "AUTO_SCALING".asInstanceOf[FleetAction]
 
-  @inline def values = js.Array(AUTO_SCALING)
+  @inline def values: js.Array[FleetAction] = js.Array(AUTO_SCALING)
 }
 
 @js.native
@@ -211,7 +327,7 @@ object FleetStatus {
   val ERROR = "ERROR".asInstanceOf[FleetStatus]
   val TERMINATED = "TERMINATED".asInstanceOf[FleetStatus]
 
-  @inline def values = js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
+  @inline def values: js.Array[FleetStatus] = js.Array(NEW, DOWNLOADING, VALIDATING, BUILDING, ACTIVATING, ACTIVE, DELETING, ERROR, TERMINATED)
 }
 
 @js.native
@@ -220,7 +336,7 @@ object FleetType {
   val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
   val SPOT = "SPOT".asInstanceOf[FleetType]
 
-  @inline def values = js.Array(ON_DEMAND, SPOT)
+  @inline def values: js.Array[FleetType] = js.Array(ON_DEMAND, SPOT)
 }
 
 @js.native
@@ -229,7 +345,7 @@ object FlexMatchMode {
   val STANDALONE = "STANDALONE".asInstanceOf[FlexMatchMode]
   val WITH_QUEUE = "WITH_QUEUE".asInstanceOf[FlexMatchMode]
 
-  @inline def values = js.Array(STANDALONE, WITH_QUEUE)
+  @inline def values: js.Array[FlexMatchMode] = js.Array(STANDALONE, WITH_QUEUE)
 }
 
 @js.native
@@ -237,7 +353,7 @@ sealed trait GameServerClaimStatus extends js.Any
 object GameServerClaimStatus {
   val CLAIMED = "CLAIMED".asInstanceOf[GameServerClaimStatus]
 
-  @inline def values = js.Array(CLAIMED)
+  @inline def values: js.Array[GameServerClaimStatus] = js.Array(CLAIMED)
 }
 
 @js.native
@@ -245,7 +361,7 @@ sealed trait GameServerGroupAction extends js.Any
 object GameServerGroupAction {
   val REPLACE_INSTANCE_TYPES = "REPLACE_INSTANCE_TYPES".asInstanceOf[GameServerGroupAction]
 
-  @inline def values = js.Array(REPLACE_INSTANCE_TYPES)
+  @inline def values: js.Array[GameServerGroupAction] = js.Array(REPLACE_INSTANCE_TYPES)
 }
 
 @js.native
@@ -255,7 +371,7 @@ object GameServerGroupDeleteOption {
   val FORCE_DELETE = "FORCE_DELETE".asInstanceOf[GameServerGroupDeleteOption]
   val RETAIN = "RETAIN".asInstanceOf[GameServerGroupDeleteOption]
 
-  @inline def values = js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN)
+  @inline def values: js.Array[GameServerGroupDeleteOption] = js.Array(SAFE_DELETE, FORCE_DELETE, RETAIN)
 }
 
 @js.native
@@ -326,7 +442,72 @@ object GameServerGroupInstanceType {
   val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
 
-  @inline def values = js.Array(`c4.large`, `c4.xlarge`, `c4.2xlarge`, `c4.4xlarge`, `c4.8xlarge`, `c5.large`, `c5.xlarge`, `c5.2xlarge`, `c5.4xlarge`, `c5.9xlarge`, `c5.12xlarge`, `c5.18xlarge`, `c5.24xlarge`, `c5a.large`, `c5a.xlarge`, `c5a.2xlarge`, `c5a.4xlarge`, `c5a.8xlarge`, `c5a.12xlarge`, `c5a.16xlarge`, `c5a.24xlarge`, `r4.large`, `r4.xlarge`, `r4.2xlarge`, `r4.4xlarge`, `r4.8xlarge`, `r4.16xlarge`, `r5.large`, `r5.xlarge`, `r5.2xlarge`, `r5.4xlarge`, `r5.8xlarge`, `r5.12xlarge`, `r5.16xlarge`, `r5.24xlarge`, `r5a.large`, `r5a.xlarge`, `r5a.2xlarge`, `r5a.4xlarge`, `r5a.8xlarge`, `r5a.12xlarge`, `r5a.16xlarge`, `r5a.24xlarge`, `m4.large`, `m4.xlarge`, `m4.2xlarge`, `m4.4xlarge`, `m4.10xlarge`, `m5.large`, `m5.xlarge`, `m5.2xlarge`, `m5.4xlarge`, `m5.8xlarge`, `m5.12xlarge`, `m5.16xlarge`, `m5.24xlarge`, `m5a.large`, `m5a.xlarge`, `m5a.2xlarge`, `m5a.4xlarge`, `m5a.8xlarge`, `m5a.12xlarge`, `m5a.16xlarge`, `m5a.24xlarge`)
+  @inline def values: js.Array[GameServerGroupInstanceType] = js.Array(
+    `c4.large`,
+    `c4.xlarge`,
+    `c4.2xlarge`,
+    `c4.4xlarge`,
+    `c4.8xlarge`,
+    `c5.large`,
+    `c5.xlarge`,
+    `c5.2xlarge`,
+    `c5.4xlarge`,
+    `c5.9xlarge`,
+    `c5.12xlarge`,
+    `c5.18xlarge`,
+    `c5.24xlarge`,
+    `c5a.large`,
+    `c5a.xlarge`,
+    `c5a.2xlarge`,
+    `c5a.4xlarge`,
+    `c5a.8xlarge`,
+    `c5a.12xlarge`,
+    `c5a.16xlarge`,
+    `c5a.24xlarge`,
+    `r4.large`,
+    `r4.xlarge`,
+    `r4.2xlarge`,
+    `r4.4xlarge`,
+    `r4.8xlarge`,
+    `r4.16xlarge`,
+    `r5.large`,
+    `r5.xlarge`,
+    `r5.2xlarge`,
+    `r5.4xlarge`,
+    `r5.8xlarge`,
+    `r5.12xlarge`,
+    `r5.16xlarge`,
+    `r5.24xlarge`,
+    `r5a.large`,
+    `r5a.xlarge`,
+    `r5a.2xlarge`,
+    `r5a.4xlarge`,
+    `r5a.8xlarge`,
+    `r5a.12xlarge`,
+    `r5a.16xlarge`,
+    `r5a.24xlarge`,
+    `m4.large`,
+    `m4.xlarge`,
+    `m4.2xlarge`,
+    `m4.4xlarge`,
+    `m4.10xlarge`,
+    `m5.large`,
+    `m5.xlarge`,
+    `m5.2xlarge`,
+    `m5.4xlarge`,
+    `m5.8xlarge`,
+    `m5.12xlarge`,
+    `m5.16xlarge`,
+    `m5.24xlarge`,
+    `m5a.large`,
+    `m5a.xlarge`,
+    `m5a.2xlarge`,
+    `m5a.4xlarge`,
+    `m5a.8xlarge`,
+    `m5a.12xlarge`,
+    `m5a.16xlarge`,
+    `m5a.24xlarge`
+  )
 }
 
 @js.native
@@ -340,7 +521,7 @@ object GameServerGroupStatus {
   val DELETED = "DELETED".asInstanceOf[GameServerGroupStatus]
   val ERROR = "ERROR".asInstanceOf[GameServerGroupStatus]
 
-  @inline def values = js.Array(NEW, ACTIVATING, ACTIVE, DELETE_SCHEDULED, DELETING, DELETED, ERROR)
+  @inline def values: js.Array[GameServerGroupStatus] = js.Array(NEW, ACTIVATING, ACTIVE, DELETE_SCHEDULED, DELETING, DELETED, ERROR)
 }
 
 @js.native
@@ -348,7 +529,7 @@ sealed trait GameServerHealthCheck extends js.Any
 object GameServerHealthCheck {
   val HEALTHY = "HEALTHY".asInstanceOf[GameServerHealthCheck]
 
-  @inline def values = js.Array(HEALTHY)
+  @inline def values: js.Array[GameServerHealthCheck] = js.Array(HEALTHY)
 }
 
 @js.native
@@ -358,7 +539,7 @@ object GameServerInstanceStatus {
   val DRAINING = "DRAINING".asInstanceOf[GameServerInstanceStatus]
   val SPOT_TERMINATING = "SPOT_TERMINATING".asInstanceOf[GameServerInstanceStatus]
 
-  @inline def values = js.Array(ACTIVE, DRAINING, SPOT_TERMINATING)
+  @inline def values: js.Array[GameServerInstanceStatus] = js.Array(ACTIVE, DRAINING, SPOT_TERMINATING)
 }
 
 @js.native
@@ -367,7 +548,7 @@ object GameServerProtectionPolicy {
   val NO_PROTECTION = "NO_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
   val FULL_PROTECTION = "FULL_PROTECTION".asInstanceOf[GameServerProtectionPolicy]
 
-  @inline def values = js.Array(NO_PROTECTION, FULL_PROTECTION)
+  @inline def values: js.Array[GameServerProtectionPolicy] = js.Array(NO_PROTECTION, FULL_PROTECTION)
 }
 
 @js.native
@@ -376,7 +557,7 @@ object GameServerUtilizationStatus {
   val AVAILABLE = "AVAILABLE".asInstanceOf[GameServerUtilizationStatus]
   val UTILIZED = "UTILIZED".asInstanceOf[GameServerUtilizationStatus]
 
-  @inline def values = js.Array(AVAILABLE, UTILIZED)
+  @inline def values: js.Array[GameServerUtilizationStatus] = js.Array(AVAILABLE, UTILIZED)
 }
 
 @js.native
@@ -388,7 +569,7 @@ object GameSessionPlacementState {
   val TIMED_OUT = "TIMED_OUT".asInstanceOf[GameSessionPlacementState]
   val FAILED = "FAILED".asInstanceOf[GameSessionPlacementState]
 
-  @inline def values = js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT, FAILED)
+  @inline def values: js.Array[GameSessionPlacementState] = js.Array(PENDING, FULFILLED, CANCELLED, TIMED_OUT, FAILED)
 }
 
 @js.native
@@ -400,7 +581,7 @@ object GameSessionStatus {
   val TERMINATING = "TERMINATING".asInstanceOf[GameSessionStatus]
   val ERROR = "ERROR".asInstanceOf[GameSessionStatus]
 
-  @inline def values = js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR)
+  @inline def values: js.Array[GameSessionStatus] = js.Array(ACTIVE, ACTIVATING, TERMINATED, TERMINATING, ERROR)
 }
 
 @js.native
@@ -408,7 +589,7 @@ sealed trait GameSessionStatusReason extends js.Any
 object GameSessionStatusReason {
   val INTERRUPTED = "INTERRUPTED".asInstanceOf[GameSessionStatusReason]
 
-  @inline def values = js.Array(INTERRUPTED)
+  @inline def values: js.Array[GameSessionStatusReason] = js.Array(INTERRUPTED)
 }
 
 @js.native
@@ -418,7 +599,7 @@ object InstanceStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[InstanceStatus]
   val TERMINATING = "TERMINATING".asInstanceOf[InstanceStatus]
 
-  @inline def values = js.Array(PENDING, ACTIVE, TERMINATING)
+  @inline def values: js.Array[InstanceStatus] = js.Array(PENDING, ACTIVE, TERMINATING)
 }
 
 @js.native
@@ -427,7 +608,7 @@ object IpProtocol {
   val TCP = "TCP".asInstanceOf[IpProtocol]
   val UDP = "UDP".asInstanceOf[IpProtocol]
 
-  @inline def values = js.Array(TCP, UDP)
+  @inline def values: js.Array[IpProtocol] = js.Array(TCP, UDP)
 }
 
 @js.native
@@ -435,7 +616,7 @@ sealed trait LocationUpdateStatus extends js.Any
 object LocationUpdateStatus {
   val PENDING_UPDATE = "PENDING_UPDATE".asInstanceOf[LocationUpdateStatus]
 
-  @inline def values = js.Array(PENDING_UPDATE)
+  @inline def values: js.Array[LocationUpdateStatus] = js.Array(PENDING_UPDATE)
 }
 
 @js.native
@@ -450,7 +631,7 @@ object MatchmakingConfigurationStatus {
   val SEARCHING = "SEARCHING".asInstanceOf[MatchmakingConfigurationStatus]
   val TIMED_OUT = "TIMED_OUT".asInstanceOf[MatchmakingConfigurationStatus]
 
-  @inline def values = js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT)
+  @inline def values: js.Array[MatchmakingConfigurationStatus] = js.Array(CANCELLED, COMPLETED, FAILED, PLACING, QUEUED, REQUIRES_ACCEPTANCE, SEARCHING, TIMED_OUT)
 }
 
 @js.native
@@ -468,7 +649,19 @@ object MetricName {
   val QueueDepth = "QueueDepth".asInstanceOf[MetricName]
   val WaitTime = "WaitTime".asInstanceOf[MetricName]
 
-  @inline def values = js.Array(ActivatingGameSessions, ActiveGameSessions, ActiveInstances, AvailableGameSessions, AvailablePlayerSessions, CurrentPlayerSessions, IdleInstances, PercentAvailableGameSessions, PercentIdleInstances, QueueDepth, WaitTime)
+  @inline def values: js.Array[MetricName] = js.Array(
+    ActivatingGameSessions,
+    ActiveGameSessions,
+    ActiveInstances,
+    AvailableGameSessions,
+    AvailablePlayerSessions,
+    CurrentPlayerSessions,
+    IdleInstances,
+    PercentAvailableGameSessions,
+    PercentIdleInstances,
+    QueueDepth,
+    WaitTime
+  )
 }
 
 @js.native
@@ -478,7 +671,7 @@ object OperatingSystem {
   val AMAZON_LINUX = "AMAZON_LINUX".asInstanceOf[OperatingSystem]
   val AMAZON_LINUX_2 = "AMAZON_LINUX_2".asInstanceOf[OperatingSystem]
 
-  @inline def values = js.Array(WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2)
+  @inline def values: js.Array[OperatingSystem] = js.Array(WINDOWS_2012, AMAZON_LINUX, AMAZON_LINUX_2)
 }
 
 @js.native
@@ -487,7 +680,7 @@ object PlayerSessionCreationPolicy {
   val ACCEPT_ALL = "ACCEPT_ALL".asInstanceOf[PlayerSessionCreationPolicy]
   val DENY_ALL = "DENY_ALL".asInstanceOf[PlayerSessionCreationPolicy]
 
-  @inline def values = js.Array(ACCEPT_ALL, DENY_ALL)
+  @inline def values: js.Array[PlayerSessionCreationPolicy] = js.Array(ACCEPT_ALL, DENY_ALL)
 }
 
 @js.native
@@ -498,7 +691,7 @@ object PlayerSessionStatus {
   val COMPLETED = "COMPLETED".asInstanceOf[PlayerSessionStatus]
   val TIMEDOUT = "TIMEDOUT".asInstanceOf[PlayerSessionStatus]
 
-  @inline def values = js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT)
+  @inline def values: js.Array[PlayerSessionStatus] = js.Array(RESERVED, ACTIVE, COMPLETED, TIMEDOUT)
 }
 
 @js.native
@@ -507,7 +700,7 @@ object PolicyType {
   val RuleBased = "RuleBased".asInstanceOf[PolicyType]
   val TargetBased = "TargetBased".asInstanceOf[PolicyType]
 
-  @inline def values = js.Array(RuleBased, TargetBased)
+  @inline def values: js.Array[PolicyType] = js.Array(RuleBased, TargetBased)
 }
 
 @js.native
@@ -518,7 +711,7 @@ object PriorityType {
   val DESTINATION = "DESTINATION".asInstanceOf[PriorityType]
   val LOCATION = "LOCATION".asInstanceOf[PriorityType]
 
-  @inline def values = js.Array(LATENCY, COST, DESTINATION, LOCATION)
+  @inline def values: js.Array[PriorityType] = js.Array(LATENCY, COST, DESTINATION, LOCATION)
 }
 
 @js.native
@@ -527,7 +720,7 @@ object ProtectionPolicy {
   val NoProtection = "NoProtection".asInstanceOf[ProtectionPolicy]
   val FullProtection = "FullProtection".asInstanceOf[ProtectionPolicy]
 
-  @inline def values = js.Array(NoProtection, FullProtection)
+  @inline def values: js.Array[ProtectionPolicy] = js.Array(NoProtection, FullProtection)
 }
 
 @js.native
@@ -536,7 +729,7 @@ object RoutingStrategyType {
   val SIMPLE = "SIMPLE".asInstanceOf[RoutingStrategyType]
   val TERMINAL = "TERMINAL".asInstanceOf[RoutingStrategyType]
 
-  @inline def values = js.Array(SIMPLE, TERMINAL)
+  @inline def values: js.Array[RoutingStrategyType] = js.Array(SIMPLE, TERMINAL)
 }
 
 @js.native
@@ -546,7 +739,7 @@ object ScalingAdjustmentType {
   val ExactCapacity = "ExactCapacity".asInstanceOf[ScalingAdjustmentType]
   val PercentChangeInCapacity = "PercentChangeInCapacity".asInstanceOf[ScalingAdjustmentType]
 
-  @inline def values = js.Array(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity)
+  @inline def values: js.Array[ScalingAdjustmentType] = js.Array(ChangeInCapacity, ExactCapacity, PercentChangeInCapacity)
 }
 
 @js.native
@@ -560,7 +753,7 @@ object ScalingStatusType {
   val DELETED = "DELETED".asInstanceOf[ScalingStatusType]
   val ERROR = "ERROR".asInstanceOf[ScalingStatusType]
 
-  @inline def values = js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR)
+  @inline def values: js.Array[ScalingStatusType] = js.Array(ACTIVE, UPDATE_REQUESTED, UPDATING, DELETE_REQUESTED, DELETING, DELETED, ERROR)
 }
 
 @js.native
@@ -569,6 +762,5 @@ object SortOrder {
   val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
   val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
 
-  @inline def values = js.Array(ASCENDING, DESCENDING)
+  @inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }
-

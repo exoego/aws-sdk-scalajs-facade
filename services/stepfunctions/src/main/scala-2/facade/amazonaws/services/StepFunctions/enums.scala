@@ -1,7 +1,6 @@
 package facade.amazonaws.services.stepfunctions
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ExecutionStatus extends js.Any
@@ -12,7 +11,7 @@ object ExecutionStatus {
   val TIMED_OUT = "TIMED_OUT".asInstanceOf[ExecutionStatus]
   val ABORTED = "ABORTED".asInstanceOf[ExecutionStatus]
 
-  @inline def values = js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED)
+  @inline def values: js.Array[ExecutionStatus] = js.Array(RUNNING, SUCCEEDED, FAILED, TIMED_OUT, ABORTED)
 }
 
 @js.native
@@ -74,7 +73,63 @@ object HistoryEventType {
   val WaitStateEntered = "WaitStateEntered".asInstanceOf[HistoryEventType]
   val WaitStateExited = "WaitStateExited".asInstanceOf[HistoryEventType]
 
-  @inline def values = js.Array(ActivityFailed, ActivityScheduled, ActivityScheduleFailed, ActivityStarted, ActivitySucceeded, ActivityTimedOut, ChoiceStateEntered, ChoiceStateExited, ExecutionAborted, ExecutionFailed, ExecutionStarted, ExecutionSucceeded, ExecutionTimedOut, FailStateEntered, LambdaFunctionFailed, LambdaFunctionScheduled, LambdaFunctionScheduleFailed, LambdaFunctionStarted, LambdaFunctionStartFailed, LambdaFunctionSucceeded, LambdaFunctionTimedOut, MapIterationAborted, MapIterationFailed, MapIterationStarted, MapIterationSucceeded, MapStateAborted, MapStateEntered, MapStateExited, MapStateFailed, MapStateStarted, MapStateSucceeded, ParallelStateAborted, ParallelStateEntered, ParallelStateExited, ParallelStateFailed, ParallelStateStarted, ParallelStateSucceeded, PassStateEntered, PassStateExited, SucceedStateEntered, SucceedStateExited, TaskFailed, TaskScheduled, TaskStarted, TaskStartFailed, TaskStateAborted, TaskStateEntered, TaskStateExited, TaskSubmitFailed, TaskSubmitted, TaskSucceeded, TaskTimedOut, WaitStateAborted, WaitStateEntered, WaitStateExited)
+  @inline def values: js.Array[HistoryEventType] = js.Array(
+    ActivityFailed,
+    ActivityScheduled,
+    ActivityScheduleFailed,
+    ActivityStarted,
+    ActivitySucceeded,
+    ActivityTimedOut,
+    ChoiceStateEntered,
+    ChoiceStateExited,
+    ExecutionAborted,
+    ExecutionFailed,
+    ExecutionStarted,
+    ExecutionSucceeded,
+    ExecutionTimedOut,
+    FailStateEntered,
+    LambdaFunctionFailed,
+    LambdaFunctionScheduled,
+    LambdaFunctionScheduleFailed,
+    LambdaFunctionStarted,
+    LambdaFunctionStartFailed,
+    LambdaFunctionSucceeded,
+    LambdaFunctionTimedOut,
+    MapIterationAborted,
+    MapIterationFailed,
+    MapIterationStarted,
+    MapIterationSucceeded,
+    MapStateAborted,
+    MapStateEntered,
+    MapStateExited,
+    MapStateFailed,
+    MapStateStarted,
+    MapStateSucceeded,
+    ParallelStateAborted,
+    ParallelStateEntered,
+    ParallelStateExited,
+    ParallelStateFailed,
+    ParallelStateStarted,
+    ParallelStateSucceeded,
+    PassStateEntered,
+    PassStateExited,
+    SucceedStateEntered,
+    SucceedStateExited,
+    TaskFailed,
+    TaskScheduled,
+    TaskStarted,
+    TaskStartFailed,
+    TaskStateAborted,
+    TaskStateEntered,
+    TaskStateExited,
+    TaskSubmitFailed,
+    TaskSubmitted,
+    TaskSucceeded,
+    TaskTimedOut,
+    WaitStateAborted,
+    WaitStateEntered,
+    WaitStateExited
+  )
 }
 
 @js.native
@@ -85,7 +140,7 @@ object LogLevel {
   val FATAL = "FATAL".asInstanceOf[LogLevel]
   val OFF = "OFF".asInstanceOf[LogLevel]
 
-  @inline def values = js.Array(ALL, ERROR, FATAL, OFF)
+  @inline def values: js.Array[LogLevel] = js.Array(ALL, ERROR, FATAL, OFF)
 }
 
 @js.native
@@ -94,7 +149,7 @@ object StateMachineStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[StateMachineStatus]
   val DELETING = "DELETING".asInstanceOf[StateMachineStatus]
 
-  @inline def values = js.Array(ACTIVE, DELETING)
+  @inline def values: js.Array[StateMachineStatus] = js.Array(ACTIVE, DELETING)
 }
 
 @js.native
@@ -103,7 +158,7 @@ object StateMachineType {
   val STANDARD = "STANDARD".asInstanceOf[StateMachineType]
   val EXPRESS = "EXPRESS".asInstanceOf[StateMachineType]
 
-  @inline def values = js.Array(STANDARD, EXPRESS)
+  @inline def values: js.Array[StateMachineType] = js.Array(STANDARD, EXPRESS)
 }
 
 @js.native
@@ -113,6 +168,5 @@ object SyncExecutionStatus {
   val FAILED = "FAILED".asInstanceOf[SyncExecutionStatus]
   val TIMED_OUT = "TIMED_OUT".asInstanceOf[SyncExecutionStatus]
 
-  @inline def values = js.Array(SUCCEEDED, FAILED, TIMED_OUT)
+  @inline def values: js.Array[SyncExecutionStatus] = js.Array(SUCCEEDED, FAILED, TIMED_OUT)
 }
-

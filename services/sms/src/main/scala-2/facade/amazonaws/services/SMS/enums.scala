@@ -1,7 +1,6 @@
 package facade.amazonaws.services.sms
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AppLaunchConfigurationStatus extends js.Any
@@ -9,7 +8,7 @@ object AppLaunchConfigurationStatus {
   val NOT_CONFIGURED = "NOT_CONFIGURED".asInstanceOf[AppLaunchConfigurationStatus]
   val CONFIGURED = "CONFIGURED".asInstanceOf[AppLaunchConfigurationStatus]
 
-  @inline def values = js.Array(NOT_CONFIGURED, CONFIGURED)
+  @inline def values: js.Array[AppLaunchConfigurationStatus] = js.Array(NOT_CONFIGURED, CONFIGURED)
 }
 
 @js.native
@@ -31,7 +30,23 @@ object AppLaunchStatus {
   val TERMINATE_FAILED = "TERMINATE_FAILED".asInstanceOf[AppLaunchStatus]
   val TERMINATED = "TERMINATED".asInstanceOf[AppLaunchStatus]
 
-  @inline def values = js.Array(READY_FOR_CONFIGURATION, CONFIGURATION_IN_PROGRESS, CONFIGURATION_INVALID, READY_FOR_LAUNCH, VALIDATION_IN_PROGRESS, LAUNCH_PENDING, LAUNCH_IN_PROGRESS, LAUNCHED, PARTIALLY_LAUNCHED, DELTA_LAUNCH_IN_PROGRESS, DELTA_LAUNCH_FAILED, LAUNCH_FAILED, TERMINATE_IN_PROGRESS, TERMINATE_FAILED, TERMINATED)
+  @inline def values: js.Array[AppLaunchStatus] = js.Array(
+    READY_FOR_CONFIGURATION,
+    CONFIGURATION_IN_PROGRESS,
+    CONFIGURATION_INVALID,
+    READY_FOR_LAUNCH,
+    VALIDATION_IN_PROGRESS,
+    LAUNCH_PENDING,
+    LAUNCH_IN_PROGRESS,
+    LAUNCHED,
+    PARTIALLY_LAUNCHED,
+    DELTA_LAUNCH_IN_PROGRESS,
+    DELTA_LAUNCH_FAILED,
+    LAUNCH_FAILED,
+    TERMINATE_IN_PROGRESS,
+    TERMINATE_FAILED,
+    TERMINATED
+  )
 }
 
 @js.native
@@ -40,7 +55,7 @@ object AppReplicationConfigurationStatus {
   val NOT_CONFIGURED = "NOT_CONFIGURED".asInstanceOf[AppReplicationConfigurationStatus]
   val CONFIGURED = "CONFIGURED".asInstanceOf[AppReplicationConfigurationStatus]
 
-  @inline def values = js.Array(NOT_CONFIGURED, CONFIGURED)
+  @inline def values: js.Array[AppReplicationConfigurationStatus] = js.Array(NOT_CONFIGURED, CONFIGURED)
 }
 
 @js.native
@@ -63,7 +78,24 @@ object AppReplicationStatus {
   val REPLICATION_STOP_FAILED = "REPLICATION_STOP_FAILED".asInstanceOf[AppReplicationStatus]
   val REPLICATION_STOPPED = "REPLICATION_STOPPED".asInstanceOf[AppReplicationStatus]
 
-  @inline def values = js.Array(READY_FOR_CONFIGURATION, CONFIGURATION_IN_PROGRESS, CONFIGURATION_INVALID, READY_FOR_REPLICATION, VALIDATION_IN_PROGRESS, REPLICATION_PENDING, REPLICATION_IN_PROGRESS, REPLICATED, PARTIALLY_REPLICATED, DELTA_REPLICATION_IN_PROGRESS, DELTA_REPLICATED, DELTA_REPLICATION_FAILED, REPLICATION_FAILED, REPLICATION_STOPPING, REPLICATION_STOP_FAILED, REPLICATION_STOPPED)
+  @inline def values: js.Array[AppReplicationStatus] = js.Array(
+    READY_FOR_CONFIGURATION,
+    CONFIGURATION_IN_PROGRESS,
+    CONFIGURATION_INVALID,
+    READY_FOR_REPLICATION,
+    VALIDATION_IN_PROGRESS,
+    REPLICATION_PENDING,
+    REPLICATION_IN_PROGRESS,
+    REPLICATED,
+    PARTIALLY_REPLICATED,
+    DELTA_REPLICATION_IN_PROGRESS,
+    DELTA_REPLICATED,
+    DELTA_REPLICATION_FAILED,
+    REPLICATION_FAILED,
+    REPLICATION_STOPPING,
+    REPLICATION_STOP_FAILED,
+    REPLICATION_STOPPED
+  )
 }
 
 @js.native
@@ -76,7 +108,7 @@ object AppStatus {
   val DELETED = "DELETED".asInstanceOf[AppStatus]
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[AppStatus]
 
-  @inline def values = js.Array(CREATING, ACTIVE, UPDATING, DELETING, DELETED, DELETE_FAILED)
+  @inline def values: js.Array[AppStatus] = js.Array(CREATING, ACTIVE, UPDATING, DELETING, DELETED, DELETE_FAILED)
 }
 
 @js.native
@@ -84,7 +116,7 @@ sealed trait AppValidationStrategy extends js.Any
 object AppValidationStrategy {
   val SSM = "SSM".asInstanceOf[AppValidationStrategy]
 
-  @inline def values = js.Array(SSM)
+  @inline def values: js.Array[AppValidationStrategy] = js.Array(SSM)
 }
 
 @js.native
@@ -96,7 +128,7 @@ object ConnectorCapability {
   val SNAPSHOT_BATCHING = "SNAPSHOT_BATCHING".asInstanceOf[ConnectorCapability]
   val SMS_OPTIMIZED = "SMS_OPTIMIZED".asInstanceOf[ConnectorCapability]
 
-  @inline def values = js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING, SMS_OPTIMIZED)
+  @inline def values: js.Array[ConnectorCapability] = js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`, SNAPSHOT_BATCHING, SMS_OPTIMIZED)
 }
 
 @js.native
@@ -105,7 +137,7 @@ object ConnectorStatus {
   val HEALTHY = "HEALTHY".asInstanceOf[ConnectorStatus]
   val UNHEALTHY = "UNHEALTHY".asInstanceOf[ConnectorStatus]
 
-  @inline def values = js.Array(HEALTHY, UNHEALTHY)
+  @inline def values: js.Array[ConnectorStatus] = js.Array(HEALTHY, UNHEALTHY)
 }
 
 @js.native
@@ -114,7 +146,7 @@ object LicenseType {
   val AWS = "AWS".asInstanceOf[LicenseType]
   val BYOL = "BYOL".asInstanceOf[LicenseType]
 
-  @inline def values = js.Array(AWS, BYOL)
+  @inline def values: js.Array[LicenseType] = js.Array(AWS, BYOL)
 }
 
 @js.native
@@ -123,7 +155,7 @@ object OutputFormat {
   val JSON = "JSON".asInstanceOf[OutputFormat]
   val YAML = "YAML".asInstanceOf[OutputFormat]
 
-  @inline def values = js.Array(JSON, YAML)
+  @inline def values: js.Array[OutputFormat] = js.Array(JSON, YAML)
 }
 
 @js.native
@@ -138,7 +170,7 @@ object ReplicationJobState {
   val PAUSED_ON_FAILURE = "PAUSED_ON_FAILURE".asInstanceOf[ReplicationJobState]
   val FAILING = "FAILING".asInstanceOf[ReplicationJobState]
 
-  @inline def values = js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING)
+  @inline def values: js.Array[ReplicationJobState] = js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED, COMPLETED, PAUSED_ON_FAILURE, FAILING)
 }
 
 @js.native
@@ -152,7 +184,7 @@ object ReplicationRunState {
   val DELETING = "DELETING".asInstanceOf[ReplicationRunState]
   val DELETED = "DELETED".asInstanceOf[ReplicationRunState]
 
-  @inline def values = js.Array(PENDING, MISSED, ACTIVE, FAILED, COMPLETED, DELETING, DELETED)
+  @inline def values: js.Array[ReplicationRunState] = js.Array(PENDING, MISSED, ACTIVE, FAILED, COMPLETED, DELETING, DELETED)
 }
 
 @js.native
@@ -161,7 +193,7 @@ object ReplicationRunType {
   val ON_DEMAND = "ON_DEMAND".asInstanceOf[ReplicationRunType]
   val AUTOMATIC = "AUTOMATIC".asInstanceOf[ReplicationRunType]
 
-  @inline def values = js.Array(ON_DEMAND, AUTOMATIC)
+  @inline def values: js.Array[ReplicationRunType] = js.Array(ON_DEMAND, AUTOMATIC)
 }
 
 @js.native
@@ -170,7 +202,7 @@ object ScriptType {
   val SHELL_SCRIPT = "SHELL_SCRIPT".asInstanceOf[ScriptType]
   val POWERSHELL_SCRIPT = "POWERSHELL_SCRIPT".asInstanceOf[ScriptType]
 
-  @inline def values = js.Array(SHELL_SCRIPT, POWERSHELL_SCRIPT)
+  @inline def values: js.Array[ScriptType] = js.Array(SHELL_SCRIPT, POWERSHELL_SCRIPT)
 }
 
 @js.native
@@ -182,7 +214,7 @@ object ServerCatalogStatus {
   val DELETED = "DELETED".asInstanceOf[ServerCatalogStatus]
   val EXPIRED = "EXPIRED".asInstanceOf[ServerCatalogStatus]
 
-  @inline def values = js.Array(NOT_IMPORTED, IMPORTING, AVAILABLE, DELETED, EXPIRED)
+  @inline def values: js.Array[ServerCatalogStatus] = js.Array(NOT_IMPORTED, IMPORTING, AVAILABLE, DELETED, EXPIRED)
 }
 
 @js.native
@@ -190,7 +222,7 @@ sealed trait ServerType extends js.Any
 object ServerType {
   val VIRTUAL_MACHINE = "VIRTUAL_MACHINE".asInstanceOf[ServerType]
 
-  @inline def values = js.Array(VIRTUAL_MACHINE)
+  @inline def values: js.Array[ServerType] = js.Array(VIRTUAL_MACHINE)
 }
 
 @js.native
@@ -198,7 +230,7 @@ sealed trait ServerValidationStrategy extends js.Any
 object ServerValidationStrategy {
   val USERDATA = "USERDATA".asInstanceOf[ServerValidationStrategy]
 
-  @inline def values = js.Array(USERDATA)
+  @inline def values: js.Array[ServerValidationStrategy] = js.Array(USERDATA)
 }
 
 @js.native
@@ -210,7 +242,7 @@ object ValidationStatus {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[ValidationStatus]
   val FAILED = "FAILED".asInstanceOf[ValidationStatus]
 
-  @inline def values = js.Array(READY_FOR_VALIDATION, PENDING, IN_PROGRESS, SUCCEEDED, FAILED)
+  @inline def values: js.Array[ValidationStatus] = js.Array(READY_FOR_VALIDATION, PENDING, IN_PROGRESS, SUCCEEDED, FAILED)
 }
 
 @js.native
@@ -220,6 +252,5 @@ object VmManagerType {
   val SCVMM = "SCVMM".asInstanceOf[VmManagerType]
   val `HYPERV-MANAGER` = "HYPERV-MANAGER".asInstanceOf[VmManagerType]
 
-  @inline def values = js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`)
+  @inline def values: js.Array[VmManagerType] = js.Array(VSPHERE, SCVMM, `HYPERV-MANAGER`)
 }
-

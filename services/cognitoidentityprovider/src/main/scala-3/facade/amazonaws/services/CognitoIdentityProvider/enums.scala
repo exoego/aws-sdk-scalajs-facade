@@ -1,6 +1,6 @@
 package facade.amazonaws.services.cognitoidentityprovider
 
-import scalajs._
+import scalajs.js
 
 type AccountTakeoverEventActionType = "BLOCK" | "MFA_IF_CONFIGURED" | "MFA_REQUIRED" | "NO_ACTION"
 object AccountTakeoverEventActionType {

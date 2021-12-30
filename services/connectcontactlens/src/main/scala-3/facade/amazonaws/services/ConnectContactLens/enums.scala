@@ -1,6 +1,6 @@
 package facade.amazonaws.services.connectcontactlens
 
-import scalajs._
+import scalajs.js
 
 type SentimentValue = "POSITIVE" | "NEUTRAL" | "NEGATIVE"
 object SentimentValue {

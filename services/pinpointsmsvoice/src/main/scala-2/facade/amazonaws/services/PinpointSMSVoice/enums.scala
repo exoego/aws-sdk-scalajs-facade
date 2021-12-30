@@ -1,7 +1,6 @@
 package facade.amazonaws.services.pinpointsmsvoice
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 /** The types of events that are sent to the event destination.
   */
@@ -16,6 +15,5 @@ object EventType {
   val FAILED = "FAILED".asInstanceOf[EventType]
   val NO_ANSWER = "NO_ANSWER".asInstanceOf[EventType]
 
-  @inline def values = js.Array(INITIATED_CALL, RINGING, ANSWERED, COMPLETED_CALL, BUSY, FAILED, NO_ANSWER)
+  @inline def values: js.Array[EventType] = js.Array(INITIATED_CALL, RINGING, ANSWERED, COMPLETED_CALL, BUSY, FAILED, NO_ANSWER)
 }
-

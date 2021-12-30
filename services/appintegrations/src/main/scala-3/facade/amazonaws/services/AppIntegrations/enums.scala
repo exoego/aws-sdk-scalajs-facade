@@ -1,3 +1,3 @@
 package facade.amazonaws.services.appintegrations
 
-import scalajs._
+import scalajs.js

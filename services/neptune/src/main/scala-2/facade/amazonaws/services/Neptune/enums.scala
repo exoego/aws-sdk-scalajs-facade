@@ -1,7 +1,6 @@
 package facade.amazonaws.services.neptune
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ApplyMethod extends js.Any
@@ -9,7 +8,7 @@ object ApplyMethod {
   val immediate = "immediate".asInstanceOf[ApplyMethod]
   val `pending-reboot` = "pending-reboot".asInstanceOf[ApplyMethod]
 
-  @inline def values = js.Array(immediate, `pending-reboot`)
+  @inline def values: js.Array[ApplyMethod] = js.Array(immediate, `pending-reboot`)
 }
 
 @js.native
@@ -22,6 +21,5 @@ object SourceType {
   val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
   val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
 
-  @inline def values = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
+  @inline def values: js.Array[SourceType] = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
 }
-

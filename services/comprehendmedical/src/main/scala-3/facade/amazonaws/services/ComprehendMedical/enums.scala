@@ -1,6 +1,6 @@
 package facade.amazonaws.services.comprehendmedical
 
-import scalajs._
+import scalajs.js
 
 type AttributeName = "SIGN" | "SYMPTOM" | "DIAGNOSIS" | "NEGATION"
 object AttributeName {

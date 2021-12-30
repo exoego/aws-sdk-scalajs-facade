@@ -1,6 +1,6 @@
 package facade.amazonaws.services.ivs
 
-import scalajs._
+import scalajs.js
 
 type ChannelLatencyMode = "NORMAL" | "LOW"
 object ChannelLatencyMode {

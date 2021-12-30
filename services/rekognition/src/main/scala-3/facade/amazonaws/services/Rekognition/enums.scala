@@ -1,6 +1,6 @@
 package facade.amazonaws.services.rekognition
 
-import scalajs._
+import scalajs.js
 
 type Attribute = "DEFAULT" | "ALL"
 object Attribute {

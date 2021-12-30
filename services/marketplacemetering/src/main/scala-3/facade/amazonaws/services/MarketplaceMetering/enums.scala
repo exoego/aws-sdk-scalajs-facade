@@ -1,6 +1,6 @@
 package facade.amazonaws.services.marketplacemetering
 
-import scalajs._
+import scalajs.js
 
 type UsageRecordResultStatus = "Success" | "CustomerNotSubscribed" | "DuplicateRecord"
 object UsageRecordResultStatus {

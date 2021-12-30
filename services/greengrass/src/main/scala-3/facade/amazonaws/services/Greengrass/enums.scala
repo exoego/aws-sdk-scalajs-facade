@@ -1,6 +1,6 @@
 package facade.amazonaws.services.greengrass
 
-import scalajs._
+import scalajs.js
 
 /** The current status of the bulk deployment.
   */

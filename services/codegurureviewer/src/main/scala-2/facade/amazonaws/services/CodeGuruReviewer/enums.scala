@@ -1,7 +1,6 @@
 package facade.amazonaws.services.codegurureviewer
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait JobState extends js.Any
@@ -11,7 +10,7 @@ object JobState {
   val Failed = "Failed".asInstanceOf[JobState]
   val Deleting = "Deleting".asInstanceOf[JobState]
 
-  @inline def values = js.Array(Completed, Pending, Failed, Deleting)
+  @inline def values: js.Array[JobState] = js.Array(Completed, Pending, Failed, Deleting)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object ProviderType {
   val Bitbucket = "Bitbucket".asInstanceOf[ProviderType]
   val GitHubEnterpriseServer = "GitHubEnterpriseServer".asInstanceOf[ProviderType]
 
-  @inline def values = js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer)
+  @inline def values: js.Array[ProviderType] = js.Array(CodeCommit, GitHub, Bitbucket, GitHubEnterpriseServer)
 }
 
 @js.native
@@ -31,7 +30,7 @@ object Reaction {
   val ThumbsUp = "ThumbsUp".asInstanceOf[Reaction]
   val ThumbsDown = "ThumbsDown".asInstanceOf[Reaction]
 
-  @inline def values = js.Array(ThumbsUp, ThumbsDown)
+  @inline def values: js.Array[Reaction] = js.Array(ThumbsUp, ThumbsDown)
 }
 
 @js.native
@@ -43,7 +42,7 @@ object RepositoryAssociationState {
   val Disassociating = "Disassociating".asInstanceOf[RepositoryAssociationState]
   val Disassociated = "Disassociated".asInstanceOf[RepositoryAssociationState]
 
-  @inline def values = js.Array(Associated, Associating, Failed, Disassociating, Disassociated)
+  @inline def values: js.Array[RepositoryAssociationState] = js.Array(Associated, Associating, Failed, Disassociating, Disassociated)
 }
 
 @js.native
@@ -52,6 +51,5 @@ object Type {
   val PullRequest = "PullRequest".asInstanceOf[Type]
   val RepositoryAnalysis = "RepositoryAnalysis".asInstanceOf[Type]
 
-  @inline def values = js.Array(PullRequest, RepositoryAnalysis)
+  @inline def values: js.Array[Type] = js.Array(PullRequest, RepositoryAnalysis)
 }
-

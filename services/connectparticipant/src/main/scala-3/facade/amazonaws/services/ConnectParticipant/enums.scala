@@ -1,6 +1,6 @@
 package facade.amazonaws.services.connectparticipant
 
-import scalajs._
+import scalajs.js
 
 type ArtifactStatus = "APPROVED" | "REJECTED" | "IN_PROGRESS"
 object ArtifactStatus {

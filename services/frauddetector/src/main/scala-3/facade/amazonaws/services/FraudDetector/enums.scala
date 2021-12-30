@@ -1,6 +1,6 @@
 package facade.amazonaws.services.frauddetector
 
-import scalajs._
+import scalajs.js
 
 type AsyncJobStatus = "IN_PROGRESS_INITIALIZING" | "IN_PROGRESS" | "CANCEL_IN_PROGRESS" | "CANCELED" | "COMPLETE" | "FAILED"
 object AsyncJobStatus {

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.connect
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait Channel extends js.Any
@@ -10,7 +9,7 @@ object Channel {
   val CHAT = "CHAT".asInstanceOf[Channel]
   val TASK = "TASK".asInstanceOf[Channel]
 
-  @inline def values = js.Array(VOICE, CHAT, TASK)
+  @inline def values: js.Array[Channel] = js.Array(VOICE, CHAT, TASK)
 }
 
 @js.native
@@ -18,7 +17,7 @@ sealed trait Comparison extends js.Any
 object Comparison {
   val LT = "LT".asInstanceOf[Comparison]
 
-  @inline def values = js.Array(LT)
+  @inline def values: js.Array[Comparison] = js.Array(LT)
 }
 
 @js.native
@@ -34,7 +33,7 @@ object ContactFlowType {
   val AGENT_TRANSFER = "AGENT_TRANSFER".asInstanceOf[ContactFlowType]
   val QUEUE_TRANSFER = "QUEUE_TRANSFER".asInstanceOf[ContactFlowType]
 
-  @inline def values = js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER)
+  @inline def values: js.Array[ContactFlowType] = js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER)
 }
 
 /** The current metric names.
@@ -56,7 +55,21 @@ object CurrentMetricName {
   val SLOTS_ACTIVE = "SLOTS_ACTIVE".asInstanceOf[CurrentMetricName]
   val SLOTS_AVAILABLE = "SLOTS_AVAILABLE".asInstanceOf[CurrentMetricName]
 
-  @inline def values = js.Array(AGENTS_ONLINE, AGENTS_AVAILABLE, AGENTS_ON_CALL, AGENTS_NON_PRODUCTIVE, AGENTS_AFTER_CONTACT_WORK, AGENTS_ERROR, AGENTS_STAFFED, CONTACTS_IN_QUEUE, OLDEST_CONTACT_AGE, CONTACTS_SCHEDULED, AGENTS_ON_CONTACT, SLOTS_ACTIVE, SLOTS_AVAILABLE)
+  @inline def values: js.Array[CurrentMetricName] = js.Array(
+    AGENTS_ONLINE,
+    AGENTS_AVAILABLE,
+    AGENTS_ON_CALL,
+    AGENTS_NON_PRODUCTIVE,
+    AGENTS_AFTER_CONTACT_WORK,
+    AGENTS_ERROR,
+    AGENTS_STAFFED,
+    CONTACTS_IN_QUEUE,
+    OLDEST_CONTACT_AGE,
+    CONTACTS_SCHEDULED,
+    AGENTS_ON_CONTACT,
+    SLOTS_ACTIVE,
+    SLOTS_AVAILABLE
+  )
 }
 
 @js.native
@@ -66,7 +79,7 @@ object DirectoryType {
   val CONNECT_MANAGED = "CONNECT_MANAGED".asInstanceOf[DirectoryType]
   val EXISTING_DIRECTORY = "EXISTING_DIRECTORY".asInstanceOf[DirectoryType]
 
-  @inline def values = js.Array(SAML, CONNECT_MANAGED, EXISTING_DIRECTORY)
+  @inline def values: js.Array[DirectoryType] = js.Array(SAML, CONNECT_MANAGED, EXISTING_DIRECTORY)
 }
 
 @js.native
@@ -74,7 +87,7 @@ sealed trait EncryptionType extends js.Any
 object EncryptionType {
   val KMS = "KMS".asInstanceOf[EncryptionType]
 
-  @inline def values = js.Array(KMS)
+  @inline def values: js.Array[EncryptionType] = js.Array(KMS)
 }
 
 @js.native
@@ -83,7 +96,7 @@ object Grouping {
   val QUEUE = "QUEUE".asInstanceOf[Grouping]
   val CHANNEL = "CHANNEL".asInstanceOf[Grouping]
 
-  @inline def values = js.Array(QUEUE, CHANNEL)
+  @inline def values: js.Array[Grouping] = js.Array(QUEUE, CHANNEL)
 }
 
 /** The historical metric names.
@@ -117,7 +130,33 @@ object HistoricalMetricName {
   val INTERACTION_AND_HOLD_TIME = "INTERACTION_AND_HOLD_TIME".asInstanceOf[HistoricalMetricName]
   val SERVICE_LEVEL = "SERVICE_LEVEL".asInstanceOf[HistoricalMetricName]
 
-  @inline def values = js.Array(CONTACTS_QUEUED, CONTACTS_HANDLED, CONTACTS_ABANDONED, CONTACTS_CONSULTED, CONTACTS_AGENT_HUNG_UP_FIRST, CONTACTS_HANDLED_INCOMING, CONTACTS_HANDLED_OUTBOUND, CONTACTS_HOLD_ABANDONS, CONTACTS_TRANSFERRED_IN, CONTACTS_TRANSFERRED_OUT, CONTACTS_TRANSFERRED_IN_FROM_QUEUE, CONTACTS_TRANSFERRED_OUT_FROM_QUEUE, CONTACTS_MISSED, CALLBACK_CONTACTS_HANDLED, API_CONTACTS_HANDLED, OCCUPANCY, HANDLE_TIME, AFTER_CONTACT_WORK_TIME, QUEUED_TIME, ABANDON_TIME, QUEUE_ANSWER_TIME, HOLD_TIME, INTERACTION_TIME, INTERACTION_AND_HOLD_TIME, SERVICE_LEVEL)
+  @inline def values: js.Array[HistoricalMetricName] = js.Array(
+    CONTACTS_QUEUED,
+    CONTACTS_HANDLED,
+    CONTACTS_ABANDONED,
+    CONTACTS_CONSULTED,
+    CONTACTS_AGENT_HUNG_UP_FIRST,
+    CONTACTS_HANDLED_INCOMING,
+    CONTACTS_HANDLED_OUTBOUND,
+    CONTACTS_HOLD_ABANDONS,
+    CONTACTS_TRANSFERRED_IN,
+    CONTACTS_TRANSFERRED_OUT,
+    CONTACTS_TRANSFERRED_IN_FROM_QUEUE,
+    CONTACTS_TRANSFERRED_OUT_FROM_QUEUE,
+    CONTACTS_MISSED,
+    CALLBACK_CONTACTS_HANDLED,
+    API_CONTACTS_HANDLED,
+    OCCUPANCY,
+    HANDLE_TIME,
+    AFTER_CONTACT_WORK_TIME,
+    QUEUED_TIME,
+    ABANDON_TIME,
+    QUEUE_ANSWER_TIME,
+    HOLD_TIME,
+    INTERACTION_TIME,
+    INTERACTION_AND_HOLD_TIME,
+    SERVICE_LEVEL
+  )
 }
 
 @js.native
@@ -131,7 +170,7 @@ object HoursOfOperationDays {
   val FRIDAY = "FRIDAY".asInstanceOf[HoursOfOperationDays]
   val SATURDAY = "SATURDAY".asInstanceOf[HoursOfOperationDays]
 
-  @inline def values = js.Array(SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY)
+  @inline def values: js.Array[HoursOfOperationDays] = js.Array(SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY)
 }
 
 @js.native
@@ -145,7 +184,7 @@ object InstanceAttributeType {
   val USE_CUSTOM_TTS_VOICES = "USE_CUSTOM_TTS_VOICES".asInstanceOf[InstanceAttributeType]
   val EARLY_MEDIA = "EARLY_MEDIA".asInstanceOf[InstanceAttributeType]
 
-  @inline def values = js.Array(INBOUND_CALLS, OUTBOUND_CALLS, CONTACTFLOW_LOGS, CONTACT_LENS, AUTO_RESOLVE_BEST_VOICES, USE_CUSTOM_TTS_VOICES, EARLY_MEDIA)
+  @inline def values: js.Array[InstanceAttributeType] = js.Array(INBOUND_CALLS, OUTBOUND_CALLS, CONTACTFLOW_LOGS, CONTACT_LENS, AUTO_RESOLVE_BEST_VOICES, USE_CUSTOM_TTS_VOICES, EARLY_MEDIA)
 }
 
 @js.native
@@ -155,7 +194,7 @@ object InstanceStatus {
   val ACTIVE = "ACTIVE".asInstanceOf[InstanceStatus]
   val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[InstanceStatus]
 
-  @inline def values = js.Array(CREATION_IN_PROGRESS, ACTIVE, CREATION_FAILED)
+  @inline def values: js.Array[InstanceStatus] = js.Array(CREATION_IN_PROGRESS, ACTIVE, CREATION_FAILED)
 }
 
 @js.native
@@ -168,7 +207,7 @@ object InstanceStorageResourceType {
   val CONTACT_TRACE_RECORDS = "CONTACT_TRACE_RECORDS".asInstanceOf[InstanceStorageResourceType]
   val AGENT_EVENTS = "AGENT_EVENTS".asInstanceOf[InstanceStorageResourceType]
 
-  @inline def values = js.Array(CHAT_TRANSCRIPTS, CALL_RECORDINGS, SCHEDULED_REPORTS, MEDIA_STREAMS, CONTACT_TRACE_RECORDS, AGENT_EVENTS)
+  @inline def values: js.Array[InstanceStorageResourceType] = js.Array(CHAT_TRANSCRIPTS, CALL_RECORDINGS, SCHEDULED_REPORTS, MEDIA_STREAMS, CONTACT_TRACE_RECORDS, AGENT_EVENTS)
 }
 
 @js.native
@@ -176,7 +215,7 @@ sealed trait IntegrationType extends js.Any
 object IntegrationType {
   val EVENT = "EVENT".asInstanceOf[IntegrationType]
 
-  @inline def values = js.Array(EVENT)
+  @inline def values: js.Array[IntegrationType] = js.Array(EVENT)
 }
 
 @js.native
@@ -420,7 +459,245 @@ object PhoneNumberCountryCode {
   val ZM = "ZM".asInstanceOf[PhoneNumberCountryCode]
   val ZW = "ZW".asInstanceOf[PhoneNumberCountryCode]
 
-  @inline def values = js.Array(AF, AL, DZ, AS, AD, AO, AI, AQ, AG, AR, AM, AW, AU, AT, AZ, BS, BH, BD, BB, BY, BE, BZ, BJ, BM, BT, BO, BA, BW, BR, IO, VG, BN, BG, BF, BI, KH, CM, CA, CV, KY, CF, TD, CL, CN, CX, CC, CO, KM, CK, CR, HR, CU, CW, CY, CZ, CD, DK, DJ, DM, DO, TL, EC, EG, SV, GQ, ER, EE, ET, FK, FO, FJ, FI, FR, PF, GA, GM, GE, DE, GH, GI, GR, GL, GD, GU, GT, GG, GN, GW, GY, HT, HN, HK, HU, IS, IN, ID, IR, IQ, IE, IM, IL, IT, CI, JM, JP, JE, JO, KZ, KE, KI, KW, KG, LA, LV, LB, LS, LR, LY, LI, LT, LU, MO, MK, MG, MW, MY, MV, ML, MT, MH, MR, MU, YT, MX, FM, MD, MC, MN, ME, MS, MA, MZ, MM, NA, NR, NP, NL, AN, NC, NZ, NI, NE, NG, NU, KP, MP, NO, OM, PK, PW, PA, PG, PY, PE, PH, PN, PL, PT, PR, QA, CG, RE, RO, RU, RW, BL, SH, KN, LC, MF, PM, VC, WS, SM, ST, SA, SN, RS, SC, SL, SG, SX, SK, SI, SB, SO, ZA, KR, ES, LK, SD, SR, SJ, SZ, SE, CH, SY, TW, TJ, TZ, TH, TG, TK, TO, TT, TN, TR, TM, TC, TV, VI, UG, UA, AE, GB, US, UY, UZ, VU, VA, VE, VN, WF, EH, YE, ZM, ZW)
+  @inline def values: js.Array[PhoneNumberCountryCode] = js.Array(
+    AF,
+    AL,
+    DZ,
+    AS,
+    AD,
+    AO,
+    AI,
+    AQ,
+    AG,
+    AR,
+    AM,
+    AW,
+    AU,
+    AT,
+    AZ,
+    BS,
+    BH,
+    BD,
+    BB,
+    BY,
+    BE,
+    BZ,
+    BJ,
+    BM,
+    BT,
+    BO,
+    BA,
+    BW,
+    BR,
+    IO,
+    VG,
+    BN,
+    BG,
+    BF,
+    BI,
+    KH,
+    CM,
+    CA,
+    CV,
+    KY,
+    CF,
+    TD,
+    CL,
+    CN,
+    CX,
+    CC,
+    CO,
+    KM,
+    CK,
+    CR,
+    HR,
+    CU,
+    CW,
+    CY,
+    CZ,
+    CD,
+    DK,
+    DJ,
+    DM,
+    DO,
+    TL,
+    EC,
+    EG,
+    SV,
+    GQ,
+    ER,
+    EE,
+    ET,
+    FK,
+    FO,
+    FJ,
+    FI,
+    FR,
+    PF,
+    GA,
+    GM,
+    GE,
+    DE,
+    GH,
+    GI,
+    GR,
+    GL,
+    GD,
+    GU,
+    GT,
+    GG,
+    GN,
+    GW,
+    GY,
+    HT,
+    HN,
+    HK,
+    HU,
+    IS,
+    IN,
+    ID,
+    IR,
+    IQ,
+    IE,
+    IM,
+    IL,
+    IT,
+    CI,
+    JM,
+    JP,
+    JE,
+    JO,
+    KZ,
+    KE,
+    KI,
+    KW,
+    KG,
+    LA,
+    LV,
+    LB,
+    LS,
+    LR,
+    LY,
+    LI,
+    LT,
+    LU,
+    MO,
+    MK,
+    MG,
+    MW,
+    MY,
+    MV,
+    ML,
+    MT,
+    MH,
+    MR,
+    MU,
+    YT,
+    MX,
+    FM,
+    MD,
+    MC,
+    MN,
+    ME,
+    MS,
+    MA,
+    MZ,
+    MM,
+    NA,
+    NR,
+    NP,
+    NL,
+    AN,
+    NC,
+    NZ,
+    NI,
+    NE,
+    NG,
+    NU,
+    KP,
+    MP,
+    NO,
+    OM,
+    PK,
+    PW,
+    PA,
+    PG,
+    PY,
+    PE,
+    PH,
+    PN,
+    PL,
+    PT,
+    PR,
+    QA,
+    CG,
+    RE,
+    RO,
+    RU,
+    RW,
+    BL,
+    SH,
+    KN,
+    LC,
+    MF,
+    PM,
+    VC,
+    WS,
+    SM,
+    ST,
+    SA,
+    SN,
+    RS,
+    SC,
+    SL,
+    SG,
+    SX,
+    SK,
+    SI,
+    SB,
+    SO,
+    ZA,
+    KR,
+    ES,
+    LK,
+    SD,
+    SR,
+    SJ,
+    SZ,
+    SE,
+    CH,
+    SY,
+    TW,
+    TJ,
+    TZ,
+    TH,
+    TG,
+    TK,
+    TO,
+    TT,
+    TN,
+    TR,
+    TM,
+    TC,
+    TV,
+    VI,
+    UG,
+    UA,
+    AE,
+    GB,
+    US,
+    UY,
+    UZ,
+    VU,
+    VA,
+    VE,
+    VN,
+    WF,
+    EH,
+    YE,
+    ZM,
+    ZW
+  )
 }
 
 @js.native
@@ -429,7 +706,7 @@ object PhoneNumberType {
   val TOLL_FREE = "TOLL_FREE".asInstanceOf[PhoneNumberType]
   val DID = "DID".asInstanceOf[PhoneNumberType]
 
-  @inline def values = js.Array(TOLL_FREE, DID)
+  @inline def values: js.Array[PhoneNumberType] = js.Array(TOLL_FREE, DID)
 }
 
 @js.native
@@ -438,7 +715,7 @@ object PhoneType {
   val SOFT_PHONE = "SOFT_PHONE".asInstanceOf[PhoneType]
   val DESK_PHONE = "DESK_PHONE".asInstanceOf[PhoneType]
 
-  @inline def values = js.Array(SOFT_PHONE, DESK_PHONE)
+  @inline def values: js.Array[PhoneType] = js.Array(SOFT_PHONE, DESK_PHONE)
 }
 
 @js.native
@@ -447,7 +724,7 @@ object QueueStatus {
   val ENABLED = "ENABLED".asInstanceOf[QueueStatus]
   val DISABLED = "DISABLED".asInstanceOf[QueueStatus]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[QueueStatus] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -456,7 +733,7 @@ object QueueType {
   val STANDARD = "STANDARD".asInstanceOf[QueueType]
   val AGENT = "AGENT".asInstanceOf[QueueType]
 
-  @inline def values = js.Array(STANDARD, AGENT)
+  @inline def values: js.Array[QueueType] = js.Array(STANDARD, AGENT)
 }
 
 @js.native
@@ -466,7 +743,7 @@ object QuickConnectType {
   val QUEUE = "QUEUE".asInstanceOf[QuickConnectType]
   val PHONE_NUMBER = "PHONE_NUMBER".asInstanceOf[QuickConnectType]
 
-  @inline def values = js.Array(USER, QUEUE, PHONE_NUMBER)
+  @inline def values: js.Array[QuickConnectType] = js.Array(USER, QUEUE, PHONE_NUMBER)
 }
 
 @js.native
@@ -474,7 +751,7 @@ sealed trait ReferenceType extends js.Any
 object ReferenceType {
   val URL = "URL".asInstanceOf[ReferenceType]
 
-  @inline def values = js.Array(URL)
+  @inline def values: js.Array[ReferenceType] = js.Array(URL)
 }
 
 @js.native
@@ -483,7 +760,7 @@ object SourceType {
   val SALESFORCE = "SALESFORCE".asInstanceOf[SourceType]
   val ZENDESK = "ZENDESK".asInstanceOf[SourceType]
 
-  @inline def values = js.Array(SALESFORCE, ZENDESK)
+  @inline def values: js.Array[SourceType] = js.Array(SALESFORCE, ZENDESK)
 }
 
 @js.native
@@ -493,7 +770,7 @@ object Statistic {
   val MAX = "MAX".asInstanceOf[Statistic]
   val AVG = "AVG".asInstanceOf[Statistic]
 
-  @inline def values = js.Array(SUM, MAX, AVG)
+  @inline def values: js.Array[Statistic] = js.Array(SUM, MAX, AVG)
 }
 
 @js.native
@@ -504,7 +781,7 @@ object StorageType {
   val KINESIS_STREAM = "KINESIS_STREAM".asInstanceOf[StorageType]
   val KINESIS_FIREHOSE = "KINESIS_FIREHOSE".asInstanceOf[StorageType]
 
-  @inline def values = js.Array(S3, KINESIS_VIDEO_STREAM, KINESIS_STREAM, KINESIS_FIREHOSE)
+  @inline def values: js.Array[StorageType] = js.Array(S3, KINESIS_VIDEO_STREAM, KINESIS_STREAM, KINESIS_FIREHOSE)
 }
 
 @js.native
@@ -514,7 +791,7 @@ object Unit {
   val COUNT = "COUNT".asInstanceOf[Unit]
   val PERCENT = "PERCENT".asInstanceOf[Unit]
 
-  @inline def values = js.Array(SECONDS, COUNT, PERCENT)
+  @inline def values: js.Array[Unit] = js.Array(SECONDS, COUNT, PERCENT)
 }
 
 @js.native
@@ -522,7 +799,7 @@ sealed trait UseCaseType extends js.Any
 object UseCaseType {
   val RULES_EVALUATION = "RULES_EVALUATION".asInstanceOf[UseCaseType]
 
-  @inline def values = js.Array(RULES_EVALUATION)
+  @inline def values: js.Array[UseCaseType] = js.Array(RULES_EVALUATION)
 }
 
 @js.native
@@ -532,6 +809,5 @@ object VoiceRecordingTrack {
   val TO_AGENT = "TO_AGENT".asInstanceOf[VoiceRecordingTrack]
   val ALL = "ALL".asInstanceOf[VoiceRecordingTrack]
 
-  @inline def values = js.Array(FROM_AGENT, TO_AGENT, ALL)
+  @inline def values: js.Array[VoiceRecordingTrack] = js.Array(FROM_AGENT, TO_AGENT, ALL)
 }
-

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.route53
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccountLimitType extends js.Any
@@ -12,7 +11,13 @@ object AccountLimitType {
   val MAX_REUSABLE_DELEGATION_SETS_BY_OWNER = "MAX_REUSABLE_DELEGATION_SETS_BY_OWNER".asInstanceOf[AccountLimitType]
   val MAX_TRAFFIC_POLICIES_BY_OWNER = "MAX_TRAFFIC_POLICIES_BY_OWNER".asInstanceOf[AccountLimitType]
 
-  @inline def values = js.Array(MAX_HEALTH_CHECKS_BY_OWNER, MAX_HOSTED_ZONES_BY_OWNER, MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER, MAX_REUSABLE_DELEGATION_SETS_BY_OWNER, MAX_TRAFFIC_POLICIES_BY_OWNER)
+  @inline def values: js.Array[AccountLimitType] = js.Array(
+    MAX_HEALTH_CHECKS_BY_OWNER,
+    MAX_HOSTED_ZONES_BY_OWNER,
+    MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER,
+    MAX_REUSABLE_DELEGATION_SETS_BY_OWNER,
+    MAX_TRAFFIC_POLICIES_BY_OWNER
+  )
 }
 
 @js.native
@@ -22,7 +27,7 @@ object ChangeAction {
   val DELETE = "DELETE".asInstanceOf[ChangeAction]
   val UPSERT = "UPSERT".asInstanceOf[ChangeAction]
 
-  @inline def values = js.Array(CREATE, DELETE, UPSERT)
+  @inline def values: js.Array[ChangeAction] = js.Array(CREATE, DELETE, UPSERT)
 }
 
 @js.native
@@ -31,7 +36,7 @@ object ChangeStatus {
   val PENDING = "PENDING".asInstanceOf[ChangeStatus]
   val INSYNC = "INSYNC".asInstanceOf[ChangeStatus]
 
-  @inline def values = js.Array(PENDING, INSYNC)
+  @inline def values: js.Array[ChangeStatus] = js.Array(PENDING, INSYNC)
 }
 
 @js.native
@@ -65,7 +70,35 @@ object CloudWatchRegion {
   val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
   val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[CloudWatchRegion]
 
-  @inline def values = js.Array(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `ca-central-1`, `eu-central-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `ap-east-1`, `me-south-1`, `ap-south-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `eu-north-1`, `sa-east-1`, `cn-northwest-1`, `cn-north-1`, `af-south-1`, `eu-south-1`, `us-gov-west-1`, `us-gov-east-1`, `us-iso-east-1`, `us-isob-east-1`)
+  @inline def values: js.Array[CloudWatchRegion] = js.Array(
+    `us-east-1`,
+    `us-east-2`,
+    `us-west-1`,
+    `us-west-2`,
+    `ca-central-1`,
+    `eu-central-1`,
+    `eu-west-1`,
+    `eu-west-2`,
+    `eu-west-3`,
+    `ap-east-1`,
+    `me-south-1`,
+    `ap-south-1`,
+    `ap-southeast-1`,
+    `ap-southeast-2`,
+    `ap-northeast-1`,
+    `ap-northeast-2`,
+    `ap-northeast-3`,
+    `eu-north-1`,
+    `sa-east-1`,
+    `cn-northwest-1`,
+    `cn-north-1`,
+    `af-south-1`,
+    `eu-south-1`,
+    `us-gov-west-1`,
+    `us-gov-east-1`,
+    `us-iso-east-1`,
+    `us-isob-east-1`
+  )
 }
 
 @js.native
@@ -76,7 +109,7 @@ object ComparisonOperator {
   val LessThanThreshold = "LessThanThreshold".asInstanceOf[ComparisonOperator]
   val LessThanOrEqualToThreshold = "LessThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]
 
-  @inline def values = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
+  @inline def values: js.Array[ComparisonOperator] = js.Array(GreaterThanOrEqualToThreshold, GreaterThanThreshold, LessThanThreshold, LessThanOrEqualToThreshold)
 }
 
 @js.native
@@ -91,7 +124,7 @@ object HealthCheckRegion {
   val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[HealthCheckRegion]
   val `sa-east-1` = "sa-east-1".asInstanceOf[HealthCheckRegion]
 
-  @inline def values = js.Array(`us-east-1`, `us-west-1`, `us-west-2`, `eu-west-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`)
+  @inline def values: js.Array[HealthCheckRegion] = js.Array(`us-east-1`, `us-west-1`, `us-west-2`, `eu-west-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `sa-east-1`)
 }
 
 @js.native
@@ -105,7 +138,7 @@ object HealthCheckType {
   val CALCULATED = "CALCULATED".asInstanceOf[HealthCheckType]
   val CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC".asInstanceOf[HealthCheckType]
 
-  @inline def values = js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC)
+  @inline def values: js.Array[HealthCheckType] = js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC)
 }
 
 @js.native
@@ -114,7 +147,7 @@ object HostedZoneLimitType {
   val MAX_RRSETS_BY_ZONE = "MAX_RRSETS_BY_ZONE".asInstanceOf[HostedZoneLimitType]
   val MAX_VPCS_ASSOCIATED_BY_ZONE = "MAX_VPCS_ASSOCIATED_BY_ZONE".asInstanceOf[HostedZoneLimitType]
 
-  @inline def values = js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE)
+  @inline def values: js.Array[HostedZoneLimitType] = js.Array(MAX_RRSETS_BY_ZONE, MAX_VPCS_ASSOCIATED_BY_ZONE)
 }
 
 @js.native
@@ -124,7 +157,7 @@ object InsufficientDataHealthStatus {
   val Unhealthy = "Unhealthy".asInstanceOf[InsufficientDataHealthStatus]
   val LastKnownStatus = "LastKnownStatus".asInstanceOf[InsufficientDataHealthStatus]
 
-  @inline def values = js.Array(Healthy, Unhealthy, LastKnownStatus)
+  @inline def values: js.Array[InsufficientDataHealthStatus] = js.Array(Healthy, Unhealthy, LastKnownStatus)
 }
 
 @js.native
@@ -144,7 +177,7 @@ object RRType {
   val CAA = "CAA".asInstanceOf[RRType]
   val DS = "DS".asInstanceOf[RRType]
 
-  @inline def values = js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA, DS)
+  @inline def values: js.Array[RRType] = js.Array(SOA, A, TXT, NS, CNAME, MX, NAPTR, PTR, SRV, SPF, AAAA, CAA, DS)
 }
 
 @js.native
@@ -155,7 +188,7 @@ object ResettableElementName {
   val ResourcePath = "ResourcePath".asInstanceOf[ResettableElementName]
   val ChildHealthChecks = "ChildHealthChecks".asInstanceOf[ResettableElementName]
 
-  @inline def values = js.Array(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks)
+  @inline def values: js.Array[ResettableElementName] = js.Array(FullyQualifiedDomainName, Regions, ResourcePath, ChildHealthChecks)
 }
 
 @js.native
@@ -164,7 +197,7 @@ object ResourceRecordSetFailover {
   val PRIMARY = "PRIMARY".asInstanceOf[ResourceRecordSetFailover]
   val SECONDARY = "SECONDARY".asInstanceOf[ResourceRecordSetFailover]
 
-  @inline def values = js.Array(PRIMARY, SECONDARY)
+  @inline def values: js.Array[ResourceRecordSetFailover] = js.Array(PRIMARY, SECONDARY)
 }
 
 @js.native
@@ -194,7 +227,31 @@ object ResourceRecordSetRegion {
   val `af-south-1` = "af-south-1".asInstanceOf[ResourceRecordSetRegion]
   val `eu-south-1` = "eu-south-1".asInstanceOf[ResourceRecordSetRegion]
 
-  @inline def values = js.Array(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `ca-central-1`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-central-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `eu-north-1`, `sa-east-1`, `cn-north-1`, `cn-northwest-1`, `ap-east-1`, `me-south-1`, `ap-south-1`, `af-south-1`, `eu-south-1`)
+  @inline def values: js.Array[ResourceRecordSetRegion] = js.Array(
+    `us-east-1`,
+    `us-east-2`,
+    `us-west-1`,
+    `us-west-2`,
+    `ca-central-1`,
+    `eu-west-1`,
+    `eu-west-2`,
+    `eu-west-3`,
+    `eu-central-1`,
+    `ap-southeast-1`,
+    `ap-southeast-2`,
+    `ap-northeast-1`,
+    `ap-northeast-2`,
+    `ap-northeast-3`,
+    `eu-north-1`,
+    `sa-east-1`,
+    `cn-north-1`,
+    `cn-northwest-1`,
+    `ap-east-1`,
+    `me-south-1`,
+    `ap-south-1`,
+    `af-south-1`,
+    `eu-south-1`
+  )
 }
 
 @js.native
@@ -202,7 +259,7 @@ sealed trait ReusableDelegationSetLimitType extends js.Any
 object ReusableDelegationSetLimitType {
   val MAX_ZONES_BY_REUSABLE_DELEGATION_SET = "MAX_ZONES_BY_REUSABLE_DELEGATION_SET".asInstanceOf[ReusableDelegationSetLimitType]
 
-  @inline def values = js.Array(MAX_ZONES_BY_REUSABLE_DELEGATION_SET)
+  @inline def values: js.Array[ReusableDelegationSetLimitType] = js.Array(MAX_ZONES_BY_REUSABLE_DELEGATION_SET)
 }
 
 @js.native
@@ -214,7 +271,7 @@ object Statistic {
   val Maximum = "Maximum".asInstanceOf[Statistic]
   val Minimum = "Minimum".asInstanceOf[Statistic]
 
-  @inline def values = js.Array(Average, Sum, SampleCount, Maximum, Minimum)
+  @inline def values: js.Array[Statistic] = js.Array(Average, Sum, SampleCount, Maximum, Minimum)
 }
 
 @js.native
@@ -223,7 +280,7 @@ object TagResourceType {
   val healthcheck = "healthcheck".asInstanceOf[TagResourceType]
   val hostedzone = "hostedzone".asInstanceOf[TagResourceType]
 
-  @inline def values = js.Array(healthcheck, hostedzone)
+  @inline def values: js.Array[TagResourceType] = js.Array(healthcheck, hostedzone)
 }
 
 @js.native
@@ -256,6 +313,32 @@ object VPCRegion {
   val `af-south-1` = "af-south-1".asInstanceOf[VPCRegion]
   val `eu-south-1` = "eu-south-1".asInstanceOf[VPCRegion]
 
-  @inline def values = js.Array(`us-east-1`, `us-east-2`, `us-west-1`, `us-west-2`, `eu-west-1`, `eu-west-2`, `eu-west-3`, `eu-central-1`, `ap-east-1`, `me-south-1`, `us-gov-west-1`, `us-gov-east-1`, `us-iso-east-1`, `us-isob-east-1`, `ap-southeast-1`, `ap-southeast-2`, `ap-south-1`, `ap-northeast-1`, `ap-northeast-2`, `ap-northeast-3`, `eu-north-1`, `sa-east-1`, `ca-central-1`, `cn-north-1`, `af-south-1`, `eu-south-1`)
+  @inline def values: js.Array[VPCRegion] = js.Array(
+    `us-east-1`,
+    `us-east-2`,
+    `us-west-1`,
+    `us-west-2`,
+    `eu-west-1`,
+    `eu-west-2`,
+    `eu-west-3`,
+    `eu-central-1`,
+    `ap-east-1`,
+    `me-south-1`,
+    `us-gov-west-1`,
+    `us-gov-east-1`,
+    `us-iso-east-1`,
+    `us-isob-east-1`,
+    `ap-southeast-1`,
+    `ap-southeast-2`,
+    `ap-south-1`,
+    `ap-northeast-1`,
+    `ap-northeast-2`,
+    `ap-northeast-3`,
+    `eu-north-1`,
+    `sa-east-1`,
+    `ca-central-1`,
+    `cn-north-1`,
+    `af-south-1`,
+    `eu-south-1`
+  )
 }
-

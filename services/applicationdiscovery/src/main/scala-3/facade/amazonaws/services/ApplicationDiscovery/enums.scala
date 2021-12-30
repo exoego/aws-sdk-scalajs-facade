@@ -1,6 +1,6 @@
 package facade.amazonaws.services.applicationdiscovery
 
-import scalajs._
+import scalajs.js
 
 type AgentStatus = "HEALTHY" | "UNHEALTHY" | "RUNNING" | "UNKNOWN" | "BLACKLISTED" | "SHUTDOWN"
 object AgentStatus {

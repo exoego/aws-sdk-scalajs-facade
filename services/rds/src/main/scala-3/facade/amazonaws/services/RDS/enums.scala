@@ -1,6 +1,6 @@
 package facade.amazonaws.services.rds
 
-import scalajs._
+import scalajs.js
 
 type ActivityStreamMode = "sync" | "async"
 object ActivityStreamMode {

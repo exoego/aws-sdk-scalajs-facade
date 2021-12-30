@@ -1,7 +1,6 @@
 package facade.amazonaws.services.fms
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccountRoleStatus extends js.Any
@@ -12,7 +11,7 @@ object AccountRoleStatus {
   val DELETING = "DELETING".asInstanceOf[AccountRoleStatus]
   val DELETED = "DELETED".asInstanceOf[AccountRoleStatus]
 
-  @inline def values = js.Array(READY, CREATING, PENDING_DELETION, DELETING, DELETED)
+  @inline def values: js.Array[AccountRoleStatus] = js.Array(READY, CREATING, PENDING_DELETION, DELETING, DELETED)
 }
 
 @js.native
@@ -21,7 +20,7 @@ object CustomerPolicyScopeIdType {
   val ACCOUNT = "ACCOUNT".asInstanceOf[CustomerPolicyScopeIdType]
   val ORG_UNIT = "ORG_UNIT".asInstanceOf[CustomerPolicyScopeIdType]
 
-  @inline def values = js.Array(ACCOUNT, ORG_UNIT)
+  @inline def values: js.Array[CustomerPolicyScopeIdType] = js.Array(ACCOUNT, ORG_UNIT)
 }
 
 @js.native
@@ -32,7 +31,7 @@ object DependentServiceName {
   val AWSSHIELD_ADVANCED = "AWSSHIELD_ADVANCED".asInstanceOf[DependentServiceName]
   val AWSVPC = "AWSVPC".asInstanceOf[DependentServiceName]
 
-  @inline def values = js.Array(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED, AWSVPC)
+  @inline def values: js.Array[DependentServiceName] = js.Array(AWSCONFIG, AWSWAF, AWSSHIELD_ADVANCED, AWSVPC)
 }
 
 @js.native
@@ -41,7 +40,7 @@ object PolicyComplianceStatusType {
   val COMPLIANT = "COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
   val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
 
-  @inline def values = js.Array(COMPLIANT, NON_COMPLIANT)
+  @inline def values: js.Array[PolicyComplianceStatusType] = js.Array(COMPLIANT, NON_COMPLIANT)
 }
 
 @js.native
@@ -50,7 +49,7 @@ object RemediationActionType {
   val REMOVE = "REMOVE".asInstanceOf[RemediationActionType]
   val MODIFY = "MODIFY".asInstanceOf[RemediationActionType]
 
-  @inline def values = js.Array(REMOVE, MODIFY)
+  @inline def values: js.Array[RemediationActionType] = js.Array(REMOVE, MODIFY)
 }
 
 @js.native
@@ -65,7 +64,7 @@ object SecurityServiceType {
   val NETWORK_FIREWALL = "NETWORK_FIREWALL".asInstanceOf[SecurityServiceType]
   val DNS_FIREWALL = "DNS_FIREWALL".asInstanceOf[SecurityServiceType]
 
-  @inline def values = js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT, NETWORK_FIREWALL, DNS_FIREWALL)
+  @inline def values: js.Array[SecurityServiceType] = js.Array(WAF, WAFV2, SHIELD_ADVANCED, SECURITY_GROUPS_COMMON, SECURITY_GROUPS_CONTENT_AUDIT, SECURITY_GROUPS_USAGE_AUDIT, NETWORK_FIREWALL, DNS_FIREWALL)
 }
 
 @js.native
@@ -87,6 +86,21 @@ object ViolationReason {
   val NETWORK_FIREWALL_POLICY_MODIFIED = "NETWORK_FIREWALL_POLICY_MODIFIED".asInstanceOf[ViolationReason]
   val RESOURCE_MISSING_DNS_FIREWALL = "RESOURCE_MISSING_DNS_FIREWALL".asInstanceOf[ViolationReason]
 
-  @inline def values = js.Array(WEB_ACL_MISSING_RULE_GROUP, RESOURCE_MISSING_WEB_ACL, RESOURCE_INCORRECT_WEB_ACL, RESOURCE_MISSING_SHIELD_PROTECTION, RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION, RESOURCE_MISSING_SECURITY_GROUP, RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP, SECURITY_GROUP_UNUSED, SECURITY_GROUP_REDUNDANT, FMS_CREATED_SECURITY_GROUP_EDITED, MISSING_FIREWALL, MISSING_FIREWALL_SUBNET_IN_AZ, MISSING_EXPECTED_ROUTE_TABLE, NETWORK_FIREWALL_POLICY_MODIFIED, RESOURCE_MISSING_DNS_FIREWALL)
+  @inline def values: js.Array[ViolationReason] = js.Array(
+    WEB_ACL_MISSING_RULE_GROUP,
+    RESOURCE_MISSING_WEB_ACL,
+    RESOURCE_INCORRECT_WEB_ACL,
+    RESOURCE_MISSING_SHIELD_PROTECTION,
+    RESOURCE_MISSING_WEB_ACL_OR_SHIELD_PROTECTION,
+    RESOURCE_MISSING_SECURITY_GROUP,
+    RESOURCE_VIOLATES_AUDIT_SECURITY_GROUP,
+    SECURITY_GROUP_UNUSED,
+    SECURITY_GROUP_REDUNDANT,
+    FMS_CREATED_SECURITY_GROUP_EDITED,
+    MISSING_FIREWALL,
+    MISSING_FIREWALL_SUBNET_IN_AZ,
+    MISSING_EXPECTED_ROUTE_TABLE,
+    NETWORK_FIREWALL_POLICY_MODIFIED,
+    RESOURCE_MISSING_DNS_FIREWALL
+  )
 }
-

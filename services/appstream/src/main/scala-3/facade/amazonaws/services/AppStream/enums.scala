@@ -1,6 +1,6 @@
 package facade.amazonaws.services.appstream
 
-import scalajs._
+import scalajs.js
 
 type AccessEndpointType = "STREAMING"
 object AccessEndpointType {

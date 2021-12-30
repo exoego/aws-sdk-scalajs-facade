@@ -1,7 +1,6 @@
 package facade.amazonaws.services.managedblockchain
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait Edition extends js.Any
@@ -9,7 +8,7 @@ object Edition {
   val STARTER = "STARTER".asInstanceOf[Edition]
   val STANDARD = "STANDARD".asInstanceOf[Edition]
 
-  @inline def values = js.Array(STARTER, STANDARD)
+  @inline def values: js.Array[Edition] = js.Array(STARTER, STANDARD)
 }
 
 @js.native
@@ -18,7 +17,7 @@ object Framework {
   val HYPERLEDGER_FABRIC = "HYPERLEDGER_FABRIC".asInstanceOf[Framework]
   val ETHEREUM = "ETHEREUM".asInstanceOf[Framework]
 
-  @inline def values = js.Array(HYPERLEDGER_FABRIC, ETHEREUM)
+  @inline def values: js.Array[Framework] = js.Array(HYPERLEDGER_FABRIC, ETHEREUM)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object InvitationStatus {
   val REJECTED = "REJECTED".asInstanceOf[InvitationStatus]
   val EXPIRED = "EXPIRED".asInstanceOf[InvitationStatus]
 
-  @inline def values = js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
+  @inline def values: js.Array[InvitationStatus] = js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
 }
 
 @js.native
@@ -43,7 +42,7 @@ object MemberStatus {
   val DELETING = "DELETING".asInstanceOf[MemberStatus]
   val DELETED = "DELETED".asInstanceOf[MemberStatus]
 
-  @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
+  @inline def values: js.Array[MemberStatus] = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
 }
 
 @js.native
@@ -55,7 +54,7 @@ object NetworkStatus {
   val DELETING = "DELETING".asInstanceOf[NetworkStatus]
   val DELETED = "DELETED".asInstanceOf[NetworkStatus]
 
-  @inline def values = js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
+  @inline def values: js.Array[NetworkStatus] = js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
 }
 
 @js.native
@@ -70,7 +69,7 @@ object NodeStatus {
   val DELETED = "DELETED".asInstanceOf[NodeStatus]
   val FAILED = "FAILED".asInstanceOf[NodeStatus]
 
-  @inline def values = js.Array(CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
+  @inline def values: js.Array[NodeStatus] = js.Array(CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
 }
 
 @js.native
@@ -82,7 +81,7 @@ object ProposalStatus {
   val EXPIRED = "EXPIRED".asInstanceOf[ProposalStatus]
   val ACTION_FAILED = "ACTION_FAILED".asInstanceOf[ProposalStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED)
+  @inline def values: js.Array[ProposalStatus] = js.Array(IN_PROGRESS, APPROVED, REJECTED, EXPIRED, ACTION_FAILED)
 }
 
 @js.native
@@ -91,7 +90,7 @@ object StateDBType {
   val LevelDB = "LevelDB".asInstanceOf[StateDBType]
   val CouchDB = "CouchDB".asInstanceOf[StateDBType]
 
-  @inline def values = js.Array(LevelDB, CouchDB)
+  @inline def values: js.Array[StateDBType] = js.Array(LevelDB, CouchDB)
 }
 
 @js.native
@@ -100,7 +99,7 @@ object ThresholdComparator {
   val GREATER_THAN = "GREATER_THAN".asInstanceOf[ThresholdComparator]
   val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[ThresholdComparator]
 
-  @inline def values = js.Array(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO)
+  @inline def values: js.Array[ThresholdComparator] = js.Array(GREATER_THAN, GREATER_THAN_OR_EQUAL_TO)
 }
 
 @js.native
@@ -109,6 +108,5 @@ object VoteValue {
   val YES = "YES".asInstanceOf[VoteValue]
   val NO = "NO".asInstanceOf[VoteValue]
 
-  @inline def values = js.Array(YES, NO)
+  @inline def values: js.Array[VoteValue] = js.Array(YES, NO)
 }
-

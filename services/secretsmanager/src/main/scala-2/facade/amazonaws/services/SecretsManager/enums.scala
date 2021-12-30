@@ -1,7 +1,6 @@
 package facade.amazonaws.services.secretsmanager
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait FilterNameStringType extends js.Any
@@ -13,7 +12,7 @@ object FilterNameStringType {
   val `primary-region` = "primary-region".asInstanceOf[FilterNameStringType]
   val all = "all".asInstanceOf[FilterNameStringType]
 
-  @inline def values = js.Array(description, name, `tag-key`, `tag-value`, `primary-region`, all)
+  @inline def values: js.Array[FilterNameStringType] = js.Array(description, name, `tag-key`, `tag-value`, `primary-region`, all)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object SortOrderType {
   val asc = "asc".asInstanceOf[SortOrderType]
   val desc = "desc".asInstanceOf[SortOrderType]
 
-  @inline def values = js.Array(asc, desc)
+  @inline def values: js.Array[SortOrderType] = js.Array(asc, desc)
 }
 
 @js.native
@@ -32,6 +31,5 @@ object StatusType {
   val Failed = "Failed".asInstanceOf[StatusType]
   val InProgress = "InProgress".asInstanceOf[StatusType]
 
-  @inline def values = js.Array(InSync, Failed, InProgress)
+  @inline def values: js.Array[StatusType] = js.Array(InSync, Failed, InProgress)
 }
-

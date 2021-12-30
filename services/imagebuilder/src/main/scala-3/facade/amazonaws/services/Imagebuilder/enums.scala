@@ -1,6 +1,6 @@
 package facade.amazonaws.services.imagebuilder
 
-import scalajs._
+import scalajs.js
 
 type ComponentFormat = "SHELL"
 object ComponentFormat {

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.secretsmanager
 
-import scalajs._
+import scalajs.js
 
 type FilterNameStringType = "description" | "name" | "tag-key" | "tag-value" | "primary-region" | "all"
 object FilterNameStringType {

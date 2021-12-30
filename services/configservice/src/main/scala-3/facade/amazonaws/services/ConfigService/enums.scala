@@ -1,6 +1,6 @@
 package facade.amazonaws.services.configservice
 
-import scalajs._
+import scalajs.js
 
 type AggregateConformancePackComplianceSummaryGroupKey = "ACCOUNT_ID" | "AWS_REGION"
 object AggregateConformancePackComplianceSummaryGroupKey {

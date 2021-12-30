@@ -1,7 +1,6 @@
 package facade.amazonaws.services.migrationhub
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ApplicationStatus extends js.Any
@@ -10,7 +9,7 @@ object ApplicationStatus {
   val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ApplicationStatus]
   val COMPLETED = "COMPLETED".asInstanceOf[ApplicationStatus]
 
-  @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED)
+  @inline def values: js.Array[ApplicationStatus] = js.Array(NOT_STARTED, IN_PROGRESS, COMPLETED)
 }
 
 @js.native
@@ -27,7 +26,7 @@ object ResourceAttributeType {
   val BIOS_ID = "BIOS_ID".asInstanceOf[ResourceAttributeType]
   val MOTHERBOARD_SERIAL_NUMBER = "MOTHERBOARD_SERIAL_NUMBER".asInstanceOf[ResourceAttributeType]
 
-  @inline def values = js.Array(IPV4_ADDRESS, IPV6_ADDRESS, MAC_ADDRESS, FQDN, VM_MANAGER_ID, VM_MANAGED_OBJECT_REFERENCE, VM_NAME, VM_PATH, BIOS_ID, MOTHERBOARD_SERIAL_NUMBER)
+  @inline def values: js.Array[ResourceAttributeType] = js.Array(IPV4_ADDRESS, IPV6_ADDRESS, MAC_ADDRESS, FQDN, VM_MANAGER_ID, VM_MANAGED_OBJECT_REFERENCE, VM_NAME, VM_PATH, BIOS_ID, MOTHERBOARD_SERIAL_NUMBER)
 }
 
 @js.native
@@ -38,6 +37,5 @@ object Status {
   val FAILED = "FAILED".asInstanceOf[Status]
   val COMPLETED = "COMPLETED".asInstanceOf[Status]
 
-  @inline def values = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, COMPLETED)
+  @inline def values: js.Array[Status] = js.Array(NOT_STARTED, IN_PROGRESS, FAILED, COMPLETED)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.migrationhub
 
-import scalajs._
+import scalajs.js
 
 type ApplicationStatus = "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED"
 object ApplicationStatus {

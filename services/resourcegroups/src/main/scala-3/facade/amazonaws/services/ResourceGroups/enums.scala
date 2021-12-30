@@ -1,6 +1,6 @@
 package facade.amazonaws.services.resourcegroups
 
-import scalajs._
+import scalajs.js
 
 type GroupConfigurationStatus = "UPDATING" | "UPDATE_COMPLETE" | "UPDATE_FAILED"
 object GroupConfigurationStatus {

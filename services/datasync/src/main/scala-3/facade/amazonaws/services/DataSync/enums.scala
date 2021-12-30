@@ -1,6 +1,6 @@
 package facade.amazonaws.services.datasync
 
-import scalajs._
+import scalajs.js
 
 type AgentStatus = "ONLINE" | "OFFLINE"
 object AgentStatus {

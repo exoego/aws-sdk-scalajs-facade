@@ -1,7 +1,6 @@
 package facade.amazonaws.services.fis
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ExperimentActionStatus extends js.Any
@@ -15,7 +14,7 @@ object ExperimentActionStatus {
   val stopped = "stopped".asInstanceOf[ExperimentActionStatus]
   val failed = "failed".asInstanceOf[ExperimentActionStatus]
 
-  @inline def values = js.Array(pending, initiating, running, completed, cancelled, stopping, stopped, failed)
+  @inline def values: js.Array[ExperimentActionStatus] = js.Array(pending, initiating, running, completed, cancelled, stopping, stopped, failed)
 }
 
 @js.native
@@ -29,6 +28,5 @@ object ExperimentStatus {
   val stopped = "stopped".asInstanceOf[ExperimentStatus]
   val failed = "failed".asInstanceOf[ExperimentStatus]
 
-  @inline def values = js.Array(pending, initiating, running, completed, stopping, stopped, failed)
+  @inline def values: js.Array[ExperimentStatus] = js.Array(pending, initiating, running, completed, stopping, stopped, failed)
 }
-

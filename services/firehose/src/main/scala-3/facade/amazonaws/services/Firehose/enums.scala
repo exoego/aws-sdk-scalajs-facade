@@ -1,6 +1,6 @@
 package facade.amazonaws.services.firehose
 
-import scalajs._
+import scalajs.js
 
 type CompressionFormat = "UNCOMPRESSED" | "GZIP" | "ZIP" | "Snappy" | "HADOOP_SNAPPY"
 object CompressionFormat {

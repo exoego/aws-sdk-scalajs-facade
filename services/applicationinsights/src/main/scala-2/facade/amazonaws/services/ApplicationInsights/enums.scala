@@ -1,7 +1,6 @@
 package facade.amazonaws.services.applicationinsights
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait CloudWatchEventSource extends js.Any
@@ -11,7 +10,7 @@ object CloudWatchEventSource {
   val HEALTH = "HEALTH".asInstanceOf[CloudWatchEventSource]
   val RDS = "RDS".asInstanceOf[CloudWatchEventSource]
 
-  @inline def values = js.Array(EC2, CODE_DEPLOY, HEALTH, RDS)
+  @inline def values: js.Array[CloudWatchEventSource] = js.Array(EC2, CODE_DEPLOY, HEALTH, RDS)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object ConfigurationEventResourceType {
   val CLOUDFORMATION = "CLOUDFORMATION".asInstanceOf[ConfigurationEventResourceType]
   val SSM_ASSOCIATION = "SSM_ASSOCIATION".asInstanceOf[ConfigurationEventResourceType]
 
-  @inline def values = js.Array(CLOUDWATCH_ALARM, CLOUDWATCH_LOG, CLOUDFORMATION, SSM_ASSOCIATION)
+  @inline def values: js.Array[ConfigurationEventResourceType] = js.Array(CLOUDWATCH_ALARM, CLOUDWATCH_LOG, CLOUDFORMATION, SSM_ASSOCIATION)
 }
 
 @js.native
@@ -32,7 +31,7 @@ object ConfigurationEventStatus {
   val WARN = "WARN".asInstanceOf[ConfigurationEventStatus]
   val ERROR = "ERROR".asInstanceOf[ConfigurationEventStatus]
 
-  @inline def values = js.Array(INFO, WARN, ERROR)
+  @inline def values: js.Array[ConfigurationEventStatus] = js.Array(INFO, WARN, ERROR)
 }
 
 @js.native
@@ -40,7 +39,7 @@ sealed trait FeedbackKey extends js.Any
 object FeedbackKey {
   val INSIGHTS_FEEDBACK = "INSIGHTS_FEEDBACK".asInstanceOf[FeedbackKey]
 
-  @inline def values = js.Array(INSIGHTS_FEEDBACK)
+  @inline def values: js.Array[FeedbackKey] = js.Array(INSIGHTS_FEEDBACK)
 }
 
 @js.native
@@ -50,7 +49,7 @@ object FeedbackValue {
   val USEFUL = "USEFUL".asInstanceOf[FeedbackValue]
   val NOT_USEFUL = "NOT_USEFUL".asInstanceOf[FeedbackValue]
 
-  @inline def values = js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL)
+  @inline def values: js.Array[FeedbackValue] = js.Array(NOT_SPECIFIED, USEFUL, NOT_USEFUL)
 }
 
 @js.native
@@ -60,7 +59,7 @@ object LogFilter {
   val WARN = "WARN".asInstanceOf[LogFilter]
   val INFO = "INFO".asInstanceOf[LogFilter]
 
-  @inline def values = js.Array(ERROR, WARN, INFO)
+  @inline def values: js.Array[LogFilter] = js.Array(ERROR, WARN, INFO)
 }
 
 @js.native
@@ -69,7 +68,7 @@ object OsType {
   val WINDOWS = "WINDOWS".asInstanceOf[OsType]
   val LINUX = "LINUX".asInstanceOf[OsType]
 
-  @inline def values = js.Array(WINDOWS, LINUX)
+  @inline def values: js.Array[OsType] = js.Array(WINDOWS, LINUX)
 }
 
 @js.native
@@ -79,7 +78,7 @@ object SeverityLevel {
   val Medium = "Medium".asInstanceOf[SeverityLevel]
   val High = "High".asInstanceOf[SeverityLevel]
 
-  @inline def values = js.Array(Low, Medium, High)
+  @inline def values: js.Array[SeverityLevel] = js.Array(Low, Medium, High)
 }
 
 @js.native
@@ -89,7 +88,7 @@ object Status {
   val RESOLVED = "RESOLVED".asInstanceOf[Status]
   val PENDING = "PENDING".asInstanceOf[Status]
 
-  @inline def values = js.Array(IGNORE, RESOLVED, PENDING)
+  @inline def values: js.Array[Status] = js.Array(IGNORE, RESOLVED, PENDING)
 }
 
 @js.native
@@ -108,6 +107,18 @@ object Tier {
   val JAVA_JMX = "JAVA_JMX".asInstanceOf[Tier]
   val ORACLE = "ORACLE".asInstanceOf[Tier]
 
-  @inline def values = js.Array(CUSTOM, DEFAULT, DOT_NET_CORE, DOT_NET_WORKER, DOT_NET_WEB_TIER, DOT_NET_WEB, SQL_SERVER, SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP, MYSQL, POSTGRESQL, JAVA_JMX, ORACLE)
+  @inline def values: js.Array[Tier] = js.Array(
+    CUSTOM,
+    DEFAULT,
+    DOT_NET_CORE,
+    DOT_NET_WORKER,
+    DOT_NET_WEB_TIER,
+    DOT_NET_WEB,
+    SQL_SERVER,
+    SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP,
+    MYSQL,
+    POSTGRESQL,
+    JAVA_JMX,
+    ORACLE
+  )
 }
-

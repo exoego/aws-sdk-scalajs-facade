@@ -1,6 +1,6 @@
 package facade.amazonaws.services.personalize
 
-import scalajs._
+import scalajs.js
 
 type RecipeProvider = "SERVICE"
 object RecipeProvider {

@@ -1,7 +1,6 @@
 package facade.amazonaws.services.ram
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ResourceOwner extends js.Any
@@ -9,7 +8,7 @@ object ResourceOwner {
   val SELF = "SELF".asInstanceOf[ResourceOwner]
   val `OTHER-ACCOUNTS` = "OTHER-ACCOUNTS".asInstanceOf[ResourceOwner]
 
-  @inline def values = js.Array(SELF, `OTHER-ACCOUNTS`)
+  @inline def values: js.Array[ResourceOwner] = js.Array(SELF, `OTHER-ACCOUNTS`)
 }
 
 @js.native
@@ -21,7 +20,7 @@ object ResourceShareAssociationStatus {
   val DISASSOCIATING = "DISASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]
   val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ResourceShareAssociationStatus]
 
-  @inline def values = js.Array(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED)
+  @inline def values: js.Array[ResourceShareAssociationStatus] = js.Array(ASSOCIATING, ASSOCIATED, FAILED, DISASSOCIATING, DISASSOCIATED)
 }
 
 @js.native
@@ -30,7 +29,7 @@ object ResourceShareAssociationType {
   val PRINCIPAL = "PRINCIPAL".asInstanceOf[ResourceShareAssociationType]
   val RESOURCE = "RESOURCE".asInstanceOf[ResourceShareAssociationType]
 
-  @inline def values = js.Array(PRINCIPAL, RESOURCE)
+  @inline def values: js.Array[ResourceShareAssociationType] = js.Array(PRINCIPAL, RESOURCE)
 }
 
 @js.native
@@ -40,7 +39,7 @@ object ResourceShareFeatureSet {
   val PROMOTING_TO_STANDARD = "PROMOTING_TO_STANDARD".asInstanceOf[ResourceShareFeatureSet]
   val STANDARD = "STANDARD".asInstanceOf[ResourceShareFeatureSet]
 
-  @inline def values = js.Array(CREATED_FROM_POLICY, PROMOTING_TO_STANDARD, STANDARD)
+  @inline def values: js.Array[ResourceShareFeatureSet] = js.Array(CREATED_FROM_POLICY, PROMOTING_TO_STANDARD, STANDARD)
 }
 
 @js.native
@@ -51,7 +50,7 @@ object ResourceShareInvitationStatus {
   val REJECTED = "REJECTED".asInstanceOf[ResourceShareInvitationStatus]
   val EXPIRED = "EXPIRED".asInstanceOf[ResourceShareInvitationStatus]
 
-  @inline def values = js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED)
+  @inline def values: js.Array[ResourceShareInvitationStatus] = js.Array(PENDING, ACCEPTED, REJECTED, EXPIRED)
 }
 
 @js.native
@@ -63,7 +62,7 @@ object ResourceShareStatus {
   val DELETING = "DELETING".asInstanceOf[ResourceShareStatus]
   val DELETED = "DELETED".asInstanceOf[ResourceShareStatus]
 
-  @inline def values = js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED)
+  @inline def values: js.Array[ResourceShareStatus] = js.Array(PENDING, ACTIVE, FAILED, DELETING, DELETED)
 }
 
 @js.native
@@ -75,6 +74,5 @@ object ResourceStatus {
   val UNAVAILABLE = "UNAVAILABLE".asInstanceOf[ResourceStatus]
   val PENDING = "PENDING".asInstanceOf[ResourceStatus]
 
-  @inline def values = js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING)
+  @inline def values: js.Array[ResourceStatus] = js.Array(AVAILABLE, ZONAL_RESOURCE_INACCESSIBLE, LIMIT_EXCEEDED, UNAVAILABLE, PENDING)
 }
-

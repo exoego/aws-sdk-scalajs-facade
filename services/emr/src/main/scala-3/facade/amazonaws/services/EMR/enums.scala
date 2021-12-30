@@ -1,6 +1,6 @@
 package facade.amazonaws.services.emr
 
-import scalajs._
+import scalajs.js
 
 type ActionOnFailure = "TERMINATE_JOB_FLOW" | "TERMINATE_CLUSTER" | "CANCEL_AND_WAIT" | "CONTINUE"
 object ActionOnFailure {

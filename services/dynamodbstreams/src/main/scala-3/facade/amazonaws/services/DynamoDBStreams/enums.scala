@@ -1,6 +1,6 @@
 package facade.amazonaws.services.dynamodbstreams
 
-import scalajs._
+import scalajs.js
 
 type KeyType = "HASH" | "RANGE"
 object KeyType {

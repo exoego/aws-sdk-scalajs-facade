@@ -1,6 +1,6 @@
 package facade.amazonaws.services.opsworkscm
 
-import scalajs._
+import scalajs.js
 
 type BackupStatus = "IN_PROGRESS" | "OK" | "FAILED" | "DELETING"
 object BackupStatus {

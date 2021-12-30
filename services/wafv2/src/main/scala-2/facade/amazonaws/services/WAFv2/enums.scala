@@ -1,7 +1,6 @@
 package facade.amazonaws.services.wafv2
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ActionValue extends js.Any
@@ -10,7 +9,7 @@ object ActionValue {
   val BLOCK = "BLOCK".asInstanceOf[ActionValue]
   val COUNT = "COUNT".asInstanceOf[ActionValue]
 
-  @inline def values = js.Array(ALLOW, BLOCK, COUNT)
+  @inline def values: js.Array[ActionValue] = js.Array(ALLOW, BLOCK, COUNT)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object BodyParsingFallbackBehavior {
   val NO_MATCH = "NO_MATCH".asInstanceOf[BodyParsingFallbackBehavior]
   val EVALUATE_AS_STRING = "EVALUATE_AS_STRING".asInstanceOf[BodyParsingFallbackBehavior]
 
-  @inline def values = js.Array(MATCH, NO_MATCH, EVALUATE_AS_STRING)
+  @inline def values: js.Array[BodyParsingFallbackBehavior] = js.Array(MATCH, NO_MATCH, EVALUATE_AS_STRING)
 }
 
 @js.native
@@ -33,7 +32,7 @@ object ComparisonOperator {
   val GE = "GE".asInstanceOf[ComparisonOperator]
   val GT = "GT".asInstanceOf[ComparisonOperator]
 
-  @inline def values = js.Array(EQ, NE, LE, LT, GE, GT)
+  @inline def values: js.Array[ComparisonOperator] = js.Array(EQ, NE, LE, LT, GE, GT)
 }
 
 @js.native
@@ -289,7 +288,257 @@ object CountryCode {
   val ZM = "ZM".asInstanceOf[CountryCode]
   val ZW = "ZW".asInstanceOf[CountryCode]
 
-  @inline def values = js.Array(AF, AX, AL, DZ, AS, AD, AO, AI, AQ, AG, AR, AM, AW, AU, AT, AZ, BS, BH, BD, BB, BY, BE, BZ, BJ, BM, BT, BO, BQ, BA, BW, BV, BR, IO, BN, BG, BF, BI, KH, CM, CA, CV, KY, CF, TD, CL, CN, CX, CC, CO, KM, CG, CD, CK, CR, CI, HR, CU, CW, CY, CZ, DK, DJ, DM, DO, EC, EG, SV, GQ, ER, EE, ET, FK, FO, FJ, FI, FR, GF, PF, TF, GA, GM, GE, DE, GH, GI, GR, GL, GD, GP, GU, GT, GG, GN, GW, GY, HT, HM, VA, HN, HK, HU, IS, IN, ID, IR, IQ, IE, IM, IL, IT, JM, JP, JE, JO, KZ, KE, KI, KP, KR, KW, KG, LA, LV, LB, LS, LR, LY, LI, LT, LU, MO, MK, MG, MW, MY, MV, ML, MT, MH, MQ, MR, MU, YT, MX, FM, MD, MC, MN, ME, MS, MA, MZ, MM, NA, NR, NP, NL, NC, NZ, NI, NE, NG, NU, NF, MP, NO, OM, PK, PW, PS, PA, PG, PY, PE, PH, PN, PL, PT, PR, QA, RE, RO, RU, RW, BL, SH, KN, LC, MF, PM, VC, WS, SM, ST, SA, SN, RS, SC, SL, SG, SX, SK, SI, SB, SO, ZA, GS, SS, ES, LK, SD, SR, SJ, SZ, SE, CH, SY, TW, TJ, TZ, TH, TL, TG, TK, TO, TT, TN, TR, TM, TC, TV, UG, UA, AE, GB, US, UM, UY, UZ, VU, VE, VN, VG, VI, WF, EH, YE, ZM, ZW)
+  @inline def values: js.Array[CountryCode] = js.Array(
+    AF,
+    AX,
+    AL,
+    DZ,
+    AS,
+    AD,
+    AO,
+    AI,
+    AQ,
+    AG,
+    AR,
+    AM,
+    AW,
+    AU,
+    AT,
+    AZ,
+    BS,
+    BH,
+    BD,
+    BB,
+    BY,
+    BE,
+    BZ,
+    BJ,
+    BM,
+    BT,
+    BO,
+    BQ,
+    BA,
+    BW,
+    BV,
+    BR,
+    IO,
+    BN,
+    BG,
+    BF,
+    BI,
+    KH,
+    CM,
+    CA,
+    CV,
+    KY,
+    CF,
+    TD,
+    CL,
+    CN,
+    CX,
+    CC,
+    CO,
+    KM,
+    CG,
+    CD,
+    CK,
+    CR,
+    CI,
+    HR,
+    CU,
+    CW,
+    CY,
+    CZ,
+    DK,
+    DJ,
+    DM,
+    DO,
+    EC,
+    EG,
+    SV,
+    GQ,
+    ER,
+    EE,
+    ET,
+    FK,
+    FO,
+    FJ,
+    FI,
+    FR,
+    GF,
+    PF,
+    TF,
+    GA,
+    GM,
+    GE,
+    DE,
+    GH,
+    GI,
+    GR,
+    GL,
+    GD,
+    GP,
+    GU,
+    GT,
+    GG,
+    GN,
+    GW,
+    GY,
+    HT,
+    HM,
+    VA,
+    HN,
+    HK,
+    HU,
+    IS,
+    IN,
+    ID,
+    IR,
+    IQ,
+    IE,
+    IM,
+    IL,
+    IT,
+    JM,
+    JP,
+    JE,
+    JO,
+    KZ,
+    KE,
+    KI,
+    KP,
+    KR,
+    KW,
+    KG,
+    LA,
+    LV,
+    LB,
+    LS,
+    LR,
+    LY,
+    LI,
+    LT,
+    LU,
+    MO,
+    MK,
+    MG,
+    MW,
+    MY,
+    MV,
+    ML,
+    MT,
+    MH,
+    MQ,
+    MR,
+    MU,
+    YT,
+    MX,
+    FM,
+    MD,
+    MC,
+    MN,
+    ME,
+    MS,
+    MA,
+    MZ,
+    MM,
+    NA,
+    NR,
+    NP,
+    NL,
+    NC,
+    NZ,
+    NI,
+    NE,
+    NG,
+    NU,
+    NF,
+    MP,
+    NO,
+    OM,
+    PK,
+    PW,
+    PS,
+    PA,
+    PG,
+    PY,
+    PE,
+    PH,
+    PN,
+    PL,
+    PT,
+    PR,
+    QA,
+    RE,
+    RO,
+    RU,
+    RW,
+    BL,
+    SH,
+    KN,
+    LC,
+    MF,
+    PM,
+    VC,
+    WS,
+    SM,
+    ST,
+    SA,
+    SN,
+    RS,
+    SC,
+    SL,
+    SG,
+    SX,
+    SK,
+    SI,
+    SB,
+    SO,
+    ZA,
+    GS,
+    SS,
+    ES,
+    LK,
+    SD,
+    SR,
+    SJ,
+    SZ,
+    SE,
+    CH,
+    SY,
+    TW,
+    TJ,
+    TZ,
+    TH,
+    TL,
+    TG,
+    TK,
+    TO,
+    TT,
+    TN,
+    TR,
+    TM,
+    TC,
+    TV,
+    UG,
+    UA,
+    AE,
+    GB,
+    US,
+    UM,
+    UY,
+    UZ,
+    VU,
+    VE,
+    VN,
+    VG,
+    VI,
+    WF,
+    EH,
+    YE,
+    ZM,
+    ZW
+  )
 }
 
 @js.native
@@ -298,7 +547,7 @@ object FallbackBehavior {
   val MATCH = "MATCH".asInstanceOf[FallbackBehavior]
   val NO_MATCH = "NO_MATCH".asInstanceOf[FallbackBehavior]
 
-  @inline def values = js.Array(MATCH, NO_MATCH)
+  @inline def values: js.Array[FallbackBehavior] = js.Array(MATCH, NO_MATCH)
 }
 
 @js.native
@@ -307,7 +556,7 @@ object FilterBehavior {
   val KEEP = "KEEP".asInstanceOf[FilterBehavior]
   val DROP = "DROP".asInstanceOf[FilterBehavior]
 
-  @inline def values = js.Array(KEEP, DROP)
+  @inline def values: js.Array[FilterBehavior] = js.Array(KEEP, DROP)
 }
 
 @js.native
@@ -316,7 +565,7 @@ object FilterRequirement {
   val MEETS_ALL = "MEETS_ALL".asInstanceOf[FilterRequirement]
   val MEETS_ANY = "MEETS_ANY".asInstanceOf[FilterRequirement]
 
-  @inline def values = js.Array(MEETS_ALL, MEETS_ANY)
+  @inline def values: js.Array[FilterRequirement] = js.Array(MEETS_ALL, MEETS_ANY)
 }
 
 @js.native
@@ -326,7 +575,7 @@ object ForwardedIPPosition {
   val LAST = "LAST".asInstanceOf[ForwardedIPPosition]
   val ANY = "ANY".asInstanceOf[ForwardedIPPosition]
 
-  @inline def values = js.Array(FIRST, LAST, ANY)
+  @inline def values: js.Array[ForwardedIPPosition] = js.Array(FIRST, LAST, ANY)
 }
 
 @js.native
@@ -335,7 +584,7 @@ object IPAddressVersion {
   val IPV4 = "IPV4".asInstanceOf[IPAddressVersion]
   val IPV6 = "IPV6".asInstanceOf[IPAddressVersion]
 
-  @inline def values = js.Array(IPV4, IPV6)
+  @inline def values: js.Array[IPAddressVersion] = js.Array(IPV4, IPV6)
 }
 
 @js.native
@@ -345,7 +594,7 @@ object JsonMatchScope {
   val KEY = "KEY".asInstanceOf[JsonMatchScope]
   val VALUE = "VALUE".asInstanceOf[JsonMatchScope]
 
-  @inline def values = js.Array(ALL, KEY, VALUE)
+  @inline def values: js.Array[JsonMatchScope] = js.Array(ALL, KEY, VALUE)
 }
 
 @js.native
@@ -354,7 +603,7 @@ object LabelMatchScope {
   val LABEL = "LABEL".asInstanceOf[LabelMatchScope]
   val NAMESPACE = "NAMESPACE".asInstanceOf[LabelMatchScope]
 
-  @inline def values = js.Array(LABEL, NAMESPACE)
+  @inline def values: js.Array[LabelMatchScope] = js.Array(LABEL, NAMESPACE)
 }
 
 @js.native
@@ -366,7 +615,7 @@ object PositionalConstraint {
   val CONTAINS = "CONTAINS".asInstanceOf[PositionalConstraint]
   val CONTAINS_WORD = "CONTAINS_WORD".asInstanceOf[PositionalConstraint]
 
-  @inline def values = js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD)
+  @inline def values: js.Array[PositionalConstraint] = js.Array(EXACTLY, STARTS_WITH, ENDS_WITH, CONTAINS, CONTAINS_WORD)
 }
 
 @js.native
@@ -375,7 +624,7 @@ object RateBasedStatementAggregateKeyType {
   val IP = "IP".asInstanceOf[RateBasedStatementAggregateKeyType]
   val FORWARDED_IP = "FORWARDED_IP".asInstanceOf[RateBasedStatementAggregateKeyType]
 
-  @inline def values = js.Array(IP, FORWARDED_IP)
+  @inline def values: js.Array[RateBasedStatementAggregateKeyType] = js.Array(IP, FORWARDED_IP)
 }
 
 @js.native
@@ -385,7 +634,7 @@ object ResourceType {
   val API_GATEWAY = "API_GATEWAY".asInstanceOf[ResourceType]
   val APPSYNC = "APPSYNC".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY, APPSYNC)
+  @inline def values: js.Array[ResourceType] = js.Array(APPLICATION_LOAD_BALANCER, API_GATEWAY, APPSYNC)
 }
 
 @js.native
@@ -395,7 +644,7 @@ object ResponseContentType {
   val TEXT_HTML = "TEXT_HTML".asInstanceOf[ResponseContentType]
   val APPLICATION_JSON = "APPLICATION_JSON".asInstanceOf[ResponseContentType]
 
-  @inline def values = js.Array(TEXT_PLAIN, TEXT_HTML, APPLICATION_JSON)
+  @inline def values: js.Array[ResponseContentType] = js.Array(TEXT_PLAIN, TEXT_HTML, APPLICATION_JSON)
 }
 
 @js.native
@@ -404,7 +653,7 @@ object Scope {
   val CLOUDFRONT = "CLOUDFRONT".asInstanceOf[Scope]
   val REGIONAL = "REGIONAL".asInstanceOf[Scope]
 
-  @inline def values = js.Array(CLOUDFRONT, REGIONAL)
+  @inline def values: js.Array[Scope] = js.Array(CLOUDFRONT, REGIONAL)
 }
 
 @js.native
@@ -417,6 +666,5 @@ object TextTransformationType {
   val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformationType]
   val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformationType]
 
-  @inline def values = js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE)
+  @inline def values: js.Array[TextTransformationType] = js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE)
 }
-

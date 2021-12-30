@@ -1,6 +1,6 @@
 package facade.amazonaws.services.backup
 
-import scalajs._
+import scalajs.js
 
 type BackupJobState = "CREATED" | "PENDING" | "RUNNING" | "ABORTING" | "ABORTED" | "COMPLETED" | "FAILED" | "EXPIRED"
 object BackupJobState {

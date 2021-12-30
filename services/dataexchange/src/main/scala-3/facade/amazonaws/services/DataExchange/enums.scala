@@ -1,6 +1,6 @@
 package facade.amazonaws.services.dataexchange
 
-import scalajs._
+import scalajs.js
 
 /** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
   */

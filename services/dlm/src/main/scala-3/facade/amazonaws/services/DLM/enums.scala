@@ -1,6 +1,6 @@
 package facade.amazonaws.services.dlm
 
-import scalajs._
+import scalajs.js
 
 type EventSourceValues = "MANAGED_CWE"
 object EventSourceValues {

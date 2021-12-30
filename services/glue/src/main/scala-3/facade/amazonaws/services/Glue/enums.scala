@@ -1,6 +1,6 @@
 package facade.amazonaws.services.glue
 
-import scalajs._
+import scalajs.js
 
 type BackfillErrorCode = "ENCRYPTED_PARTITION_ERROR" | "INTERNAL_ERROR" | "INVALID_PARTITION_TYPE_DATA_ERROR" | "MISSING_PARTITION_VALUE_ERROR" | "UNSUPPORTED_PARTITION_CHARACTER_ERROR"
 object BackfillErrorCode {

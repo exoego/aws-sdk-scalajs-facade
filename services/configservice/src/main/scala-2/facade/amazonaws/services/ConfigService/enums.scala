@@ -1,7 +1,6 @@
 package facade.amazonaws.services.configservice
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AggregateConformancePackComplianceSummaryGroupKey extends js.Any
@@ -9,7 +8,7 @@ object AggregateConformancePackComplianceSummaryGroupKey {
   val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[AggregateConformancePackComplianceSummaryGroupKey]
   val AWS_REGION = "AWS_REGION".asInstanceOf[AggregateConformancePackComplianceSummaryGroupKey]
 
-  @inline def values = js.Array(ACCOUNT_ID, AWS_REGION)
+  @inline def values: js.Array[AggregateConformancePackComplianceSummaryGroupKey] = js.Array(ACCOUNT_ID, AWS_REGION)
 }
 
 @js.native
@@ -19,7 +18,7 @@ object AggregatedSourceStatusType {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[AggregatedSourceStatusType]
   val OUTDATED = "OUTDATED".asInstanceOf[AggregatedSourceStatusType]
 
-  @inline def values = js.Array(FAILED, SUCCEEDED, OUTDATED)
+  @inline def values: js.Array[AggregatedSourceStatusType] = js.Array(FAILED, SUCCEEDED, OUTDATED)
 }
 
 @js.native
@@ -28,7 +27,7 @@ object AggregatedSourceType {
   val ACCOUNT = "ACCOUNT".asInstanceOf[AggregatedSourceType]
   val ORGANIZATION = "ORGANIZATION".asInstanceOf[AggregatedSourceType]
 
-  @inline def values = js.Array(ACCOUNT, ORGANIZATION)
+  @inline def values: js.Array[AggregatedSourceType] = js.Array(ACCOUNT, ORGANIZATION)
 }
 
 @js.native
@@ -37,7 +36,7 @@ object ChronologicalOrder {
   val Reverse = "Reverse".asInstanceOf[ChronologicalOrder]
   val Forward = "Forward".asInstanceOf[ChronologicalOrder]
 
-  @inline def values = js.Array(Reverse, Forward)
+  @inline def values: js.Array[ChronologicalOrder] = js.Array(Reverse, Forward)
 }
 
 @js.native
@@ -48,7 +47,7 @@ object ComplianceType {
   val NOT_APPLICABLE = "NOT_APPLICABLE".asInstanceOf[ComplianceType]
   val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[ComplianceType]
 
-  @inline def values = js.Array(COMPLIANT, NON_COMPLIANT, NOT_APPLICABLE, INSUFFICIENT_DATA)
+  @inline def values: js.Array[ComplianceType] = js.Array(COMPLIANT, NON_COMPLIANT, NOT_APPLICABLE, INSUFFICIENT_DATA)
 }
 
 @js.native
@@ -57,7 +56,7 @@ object ConfigRuleComplianceSummaryGroupKey {
   val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[ConfigRuleComplianceSummaryGroupKey]
   val AWS_REGION = "AWS_REGION".asInstanceOf[ConfigRuleComplianceSummaryGroupKey]
 
-  @inline def values = js.Array(ACCOUNT_ID, AWS_REGION)
+  @inline def values: js.Array[ConfigRuleComplianceSummaryGroupKey] = js.Array(ACCOUNT_ID, AWS_REGION)
 }
 
 @js.native
@@ -68,7 +67,7 @@ object ConfigRuleState {
   val DELETING_RESULTS = "DELETING_RESULTS".asInstanceOf[ConfigRuleState]
   val EVALUATING = "EVALUATING".asInstanceOf[ConfigRuleState]
 
-  @inline def values = js.Array(ACTIVE, DELETING, DELETING_RESULTS, EVALUATING)
+  @inline def values: js.Array[ConfigRuleState] = js.Array(ACTIVE, DELETING, DELETING_RESULTS, EVALUATING)
 }
 
 @js.native
@@ -80,7 +79,7 @@ object ConfigurationItemStatus {
   val ResourceDeleted = "ResourceDeleted".asInstanceOf[ConfigurationItemStatus]
   val ResourceDeletedNotRecorded = "ResourceDeletedNotRecorded".asInstanceOf[ConfigurationItemStatus]
 
-  @inline def values = js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded)
+  @inline def values: js.Array[ConfigurationItemStatus] = js.Array(OK, ResourceDiscovered, ResourceNotRecorded, ResourceDeleted, ResourceDeletedNotRecorded)
 }
 
 @js.native
@@ -90,7 +89,7 @@ object ConformancePackComplianceType {
   val NON_COMPLIANT = "NON_COMPLIANT".asInstanceOf[ConformancePackComplianceType]
   val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[ConformancePackComplianceType]
 
-  @inline def values = js.Array(COMPLIANT, NON_COMPLIANT, INSUFFICIENT_DATA)
+  @inline def values: js.Array[ConformancePackComplianceType] = js.Array(COMPLIANT, NON_COMPLIANT, INSUFFICIENT_DATA)
 }
 
 @js.native
@@ -102,7 +101,7 @@ object ConformancePackState {
   val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[ConformancePackState]
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[ConformancePackState]
 
-  @inline def values = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED)
+  @inline def values: js.Array[ConformancePackState] = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, DELETE_IN_PROGRESS, DELETE_FAILED)
 }
 
 @js.native
@@ -112,7 +111,7 @@ object DeliveryStatus {
   val Failure = "Failure".asInstanceOf[DeliveryStatus]
   val Not_Applicable = "Not_Applicable".asInstanceOf[DeliveryStatus]
 
-  @inline def values = js.Array(Success, Failure, Not_Applicable)
+  @inline def values: js.Array[DeliveryStatus] = js.Array(Success, Failure, Not_Applicable)
 }
 
 @js.native
@@ -120,7 +119,7 @@ sealed trait EventSource extends js.Any
 object EventSource {
   val `aws.config` = "aws.config".asInstanceOf[EventSource]
 
-  @inline def values = js.Array(`aws.config`)
+  @inline def values: js.Array[EventSource] = js.Array(`aws.config`)
 }
 
 @js.native
@@ -132,7 +131,7 @@ object MaximumExecutionFrequency {
   val Twelve_Hours = "Twelve_Hours".asInstanceOf[MaximumExecutionFrequency]
   val TwentyFour_Hours = "TwentyFour_Hours".asInstanceOf[MaximumExecutionFrequency]
 
-  @inline def values = js.Array(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours)
+  @inline def values: js.Array[MaximumExecutionFrequency] = js.Array(One_Hour, Three_Hours, Six_Hours, Twelve_Hours, TwentyFour_Hours)
 }
 
 @js.native
@@ -148,7 +147,17 @@ object MemberAccountRuleStatus {
   val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[MemberAccountRuleStatus]
   val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[MemberAccountRuleStatus]
 
-  @inline def values = js.Array(CREATE_SUCCESSFUL, CREATE_IN_PROGRESS, CREATE_FAILED, DELETE_SUCCESSFUL, DELETE_FAILED, DELETE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_IN_PROGRESS, UPDATE_FAILED)
+  @inline def values: js.Array[MemberAccountRuleStatus] = js.Array(
+    CREATE_SUCCESSFUL,
+    CREATE_IN_PROGRESS,
+    CREATE_FAILED,
+    DELETE_SUCCESSFUL,
+    DELETE_FAILED,
+    DELETE_IN_PROGRESS,
+    UPDATE_SUCCESSFUL,
+    UPDATE_IN_PROGRESS,
+    UPDATE_FAILED
+  )
 }
 
 @js.native
@@ -159,7 +168,7 @@ object MessageType {
   val ScheduledNotification = "ScheduledNotification".asInstanceOf[MessageType]
   val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[MessageType]
 
-  @inline def values = js.Array(ConfigurationItemChangeNotification, ConfigurationSnapshotDeliveryCompleted, ScheduledNotification, OversizedConfigurationItemChangeNotification)
+  @inline def values: js.Array[MessageType] = js.Array(ConfigurationItemChangeNotification, ConfigurationSnapshotDeliveryCompleted, ScheduledNotification, OversizedConfigurationItemChangeNotification)
 }
 
 @js.native
@@ -169,7 +178,7 @@ object OrganizationConfigRuleTriggerType {
   val OversizedConfigurationItemChangeNotification = "OversizedConfigurationItemChangeNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
   val ScheduledNotification = "ScheduledNotification".asInstanceOf[OrganizationConfigRuleTriggerType]
 
-  @inline def values = js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification)
+  @inline def values: js.Array[OrganizationConfigRuleTriggerType] = js.Array(ConfigurationItemChangeNotification, OversizedConfigurationItemChangeNotification, ScheduledNotification)
 }
 
 @js.native
@@ -185,7 +194,17 @@ object OrganizationResourceDetailedStatus {
   val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationResourceDetailedStatus]
   val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceDetailedStatus]
 
-  @inline def values = js.Array(CREATE_SUCCESSFUL, CREATE_IN_PROGRESS, CREATE_FAILED, DELETE_SUCCESSFUL, DELETE_FAILED, DELETE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_IN_PROGRESS, UPDATE_FAILED)
+  @inline def values: js.Array[OrganizationResourceDetailedStatus] = js.Array(
+    CREATE_SUCCESSFUL,
+    CREATE_IN_PROGRESS,
+    CREATE_FAILED,
+    DELETE_SUCCESSFUL,
+    DELETE_FAILED,
+    DELETE_IN_PROGRESS,
+    UPDATE_SUCCESSFUL,
+    UPDATE_IN_PROGRESS,
+    UPDATE_FAILED
+  )
 }
 
 @js.native
@@ -201,7 +220,17 @@ object OrganizationResourceStatus {
   val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationResourceStatus]
   val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationResourceStatus]
 
-  @inline def values = js.Array(CREATE_SUCCESSFUL, CREATE_IN_PROGRESS, CREATE_FAILED, DELETE_SUCCESSFUL, DELETE_FAILED, DELETE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_IN_PROGRESS, UPDATE_FAILED)
+  @inline def values: js.Array[OrganizationResourceStatus] = js.Array(
+    CREATE_SUCCESSFUL,
+    CREATE_IN_PROGRESS,
+    CREATE_FAILED,
+    DELETE_SUCCESSFUL,
+    DELETE_FAILED,
+    DELETE_IN_PROGRESS,
+    UPDATE_SUCCESSFUL,
+    UPDATE_IN_PROGRESS,
+    UPDATE_FAILED
+  )
 }
 
 @js.native
@@ -217,7 +246,17 @@ object OrganizationRuleStatus {
   val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[OrganizationRuleStatus]
   val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[OrganizationRuleStatus]
 
-  @inline def values = js.Array(CREATE_SUCCESSFUL, CREATE_IN_PROGRESS, CREATE_FAILED, DELETE_SUCCESSFUL, DELETE_FAILED, DELETE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_IN_PROGRESS, UPDATE_FAILED)
+  @inline def values: js.Array[OrganizationRuleStatus] = js.Array(
+    CREATE_SUCCESSFUL,
+    CREATE_IN_PROGRESS,
+    CREATE_FAILED,
+    DELETE_SUCCESSFUL,
+    DELETE_FAILED,
+    DELETE_IN_PROGRESS,
+    UPDATE_SUCCESSFUL,
+    UPDATE_IN_PROGRESS,
+    UPDATE_FAILED
+  )
 }
 
 @js.native
@@ -226,7 +265,7 @@ object Owner {
   val CUSTOM_LAMBDA = "CUSTOM_LAMBDA".asInstanceOf[Owner]
   val AWS = "AWS".asInstanceOf[Owner]
 
-  @inline def values = js.Array(CUSTOM_LAMBDA, AWS)
+  @inline def values: js.Array[Owner] = js.Array(CUSTOM_LAMBDA, AWS)
 }
 
 @js.native
@@ -236,7 +275,7 @@ object RecorderStatus {
   val Success = "Success".asInstanceOf[RecorderStatus]
   val Failure = "Failure".asInstanceOf[RecorderStatus]
 
-  @inline def values = js.Array(Pending, Success, Failure)
+  @inline def values: js.Array[RecorderStatus] = js.Array(Pending, Success, Failure)
 }
 
 @js.native
@@ -247,7 +286,7 @@ object RemediationExecutionState {
   val SUCCEEDED = "SUCCEEDED".asInstanceOf[RemediationExecutionState]
   val FAILED = "FAILED".asInstanceOf[RemediationExecutionState]
 
-  @inline def values = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED)
+  @inline def values: js.Array[RemediationExecutionState] = js.Array(QUEUED, IN_PROGRESS, SUCCEEDED, FAILED)
 }
 
 @js.native
@@ -257,7 +296,7 @@ object RemediationExecutionStepState {
   val PENDING = "PENDING".asInstanceOf[RemediationExecutionStepState]
   val FAILED = "FAILED".asInstanceOf[RemediationExecutionStepState]
 
-  @inline def values = js.Array(SUCCEEDED, PENDING, FAILED)
+  @inline def values: js.Array[RemediationExecutionStepState] = js.Array(SUCCEEDED, PENDING, FAILED)
 }
 
 @js.native
@@ -265,7 +304,7 @@ sealed trait RemediationTargetType extends js.Any
 object RemediationTargetType {
   val SSM_DOCUMENT = "SSM_DOCUMENT".asInstanceOf[RemediationTargetType]
 
-  @inline def values = js.Array(SSM_DOCUMENT)
+  @inline def values: js.Array[RemediationTargetType] = js.Array(SSM_DOCUMENT)
 }
 
 @js.native
@@ -275,7 +314,7 @@ object ResourceCountGroupKey {
   val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[ResourceCountGroupKey]
   val AWS_REGION = "AWS_REGION".asInstanceOf[ResourceCountGroupKey]
 
-  @inline def values = js.Array(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION)
+  @inline def values: js.Array[ResourceCountGroupKey] = js.Array(RESOURCE_TYPE, ACCOUNT_ID, AWS_REGION)
 }
 
 @js.native
@@ -379,7 +418,105 @@ object ResourceType {
   val `AWS::SNS::Topic` = "AWS::SNS::Topic".asInstanceOf[ResourceType]
   val `AWS::SSM::FileData` = "AWS::SSM::FileData".asInstanceOf[ResourceType]
 
-  @inline def values = js.Array(`AWS::EC2::CustomerGateway`, `AWS::EC2::EIP`, `AWS::EC2::Host`, `AWS::EC2::Instance`, `AWS::EC2::InternetGateway`, `AWS::EC2::NetworkAcl`, `AWS::EC2::NetworkInterface`, `AWS::EC2::RouteTable`, `AWS::EC2::SecurityGroup`, `AWS::EC2::Subnet`, `AWS::CloudTrail::Trail`, `AWS::EC2::Volume`, `AWS::EC2::VPC`, `AWS::EC2::VPNConnection`, `AWS::EC2::VPNGateway`, `AWS::EC2::RegisteredHAInstance`, `AWS::EC2::NatGateway`, `AWS::EC2::EgressOnlyInternetGateway`, `AWS::EC2::VPCEndpoint`, `AWS::EC2::VPCEndpointService`, `AWS::EC2::FlowLog`, `AWS::EC2::VPCPeeringConnection`, `AWS::Elasticsearch::Domain`, `AWS::IAM::Group`, `AWS::IAM::Policy`, `AWS::IAM::Role`, `AWS::IAM::User`, `AWS::ElasticLoadBalancingV2::LoadBalancer`, `AWS::ACM::Certificate`, `AWS::RDS::DBInstance`, `AWS::RDS::DBSubnetGroup`, `AWS::RDS::DBSecurityGroup`, `AWS::RDS::DBSnapshot`, `AWS::RDS::DBCluster`, `AWS::RDS::DBClusterSnapshot`, `AWS::RDS::EventSubscription`, `AWS::S3::Bucket`, `AWS::S3::AccountPublicAccessBlock`, `AWS::Redshift::Cluster`, `AWS::Redshift::ClusterSnapshot`, `AWS::Redshift::ClusterParameterGroup`, `AWS::Redshift::ClusterSecurityGroup`, `AWS::Redshift::ClusterSubnetGroup`, `AWS::Redshift::EventSubscription`, `AWS::SSM::ManagedInstanceInventory`, `AWS::CloudWatch::Alarm`, `AWS::CloudFormation::Stack`, `AWS::ElasticLoadBalancing::LoadBalancer`, `AWS::AutoScaling::AutoScalingGroup`, `AWS::AutoScaling::LaunchConfiguration`, `AWS::AutoScaling::ScalingPolicy`, `AWS::AutoScaling::ScheduledAction`, `AWS::DynamoDB::Table`, `AWS::CodeBuild::Project`, `AWS::WAF::RateBasedRule`, `AWS::WAF::Rule`, `AWS::WAF::RuleGroup`, `AWS::WAF::WebACL`, `AWS::WAFRegional::RateBasedRule`, `AWS::WAFRegional::Rule`, `AWS::WAFRegional::RuleGroup`, `AWS::WAFRegional::WebACL`, `AWS::CloudFront::Distribution`, `AWS::CloudFront::StreamingDistribution`, `AWS::Lambda::Function`, `AWS::NetworkFirewall::Firewall`, `AWS::NetworkFirewall::FirewallPolicy`, `AWS::NetworkFirewall::RuleGroup`, `AWS::ElasticBeanstalk::Application`, `AWS::ElasticBeanstalk::ApplicationVersion`, `AWS::ElasticBeanstalk::Environment`, `AWS::WAFv2::WebACL`, `AWS::WAFv2::RuleGroup`, `AWS::WAFv2::IPSet`, `AWS::WAFv2::RegexPatternSet`, `AWS::WAFv2::ManagedRuleSet`, `AWS::XRay::EncryptionConfig`, `AWS::SSM::AssociationCompliance`, `AWS::SSM::PatchCompliance`, `AWS::Shield::Protection`, `AWS::ShieldRegional::Protection`, `AWS::Config::ConformancePackCompliance`, `AWS::Config::ResourceCompliance`, `AWS::ApiGateway::Stage`, `AWS::ApiGateway::RestApi`, `AWS::ApiGatewayV2::Stage`, `AWS::ApiGatewayV2::Api`, `AWS::CodePipeline::Pipeline`, `AWS::ServiceCatalog::CloudFormationProvisionedProduct`, `AWS::ServiceCatalog::CloudFormationProduct`, `AWS::ServiceCatalog::Portfolio`, `AWS::SQS::Queue`, `AWS::KMS::Key`, `AWS::QLDB::Ledger`, `AWS::SecretsManager::Secret`, `AWS::SNS::Topic`, `AWS::SSM::FileData`)
+  @inline def values: js.Array[ResourceType] = js.Array(
+    `AWS::EC2::CustomerGateway`,
+    `AWS::EC2::EIP`,
+    `AWS::EC2::Host`,
+    `AWS::EC2::Instance`,
+    `AWS::EC2::InternetGateway`,
+    `AWS::EC2::NetworkAcl`,
+    `AWS::EC2::NetworkInterface`,
+    `AWS::EC2::RouteTable`,
+    `AWS::EC2::SecurityGroup`,
+    `AWS::EC2::Subnet`,
+    `AWS::CloudTrail::Trail`,
+    `AWS::EC2::Volume`,
+    `AWS::EC2::VPC`,
+    `AWS::EC2::VPNConnection`,
+    `AWS::EC2::VPNGateway`,
+    `AWS::EC2::RegisteredHAInstance`,
+    `AWS::EC2::NatGateway`,
+    `AWS::EC2::EgressOnlyInternetGateway`,
+    `AWS::EC2::VPCEndpoint`,
+    `AWS::EC2::VPCEndpointService`,
+    `AWS::EC2::FlowLog`,
+    `AWS::EC2::VPCPeeringConnection`,
+    `AWS::Elasticsearch::Domain`,
+    `AWS::IAM::Group`,
+    `AWS::IAM::Policy`,
+    `AWS::IAM::Role`,
+    `AWS::IAM::User`,
+    `AWS::ElasticLoadBalancingV2::LoadBalancer`,
+    `AWS::ACM::Certificate`,
+    `AWS::RDS::DBInstance`,
+    `AWS::RDS::DBSubnetGroup`,
+    `AWS::RDS::DBSecurityGroup`,
+    `AWS::RDS::DBSnapshot`,
+    `AWS::RDS::DBCluster`,
+    `AWS::RDS::DBClusterSnapshot`,
+    `AWS::RDS::EventSubscription`,
+    `AWS::S3::Bucket`,
+    `AWS::S3::AccountPublicAccessBlock`,
+    `AWS::Redshift::Cluster`,
+    `AWS::Redshift::ClusterSnapshot`,
+    `AWS::Redshift::ClusterParameterGroup`,
+    `AWS::Redshift::ClusterSecurityGroup`,
+    `AWS::Redshift::ClusterSubnetGroup`,
+    `AWS::Redshift::EventSubscription`,
+    `AWS::SSM::ManagedInstanceInventory`,
+    `AWS::CloudWatch::Alarm`,
+    `AWS::CloudFormation::Stack`,
+    `AWS::ElasticLoadBalancing::LoadBalancer`,
+    `AWS::AutoScaling::AutoScalingGroup`,
+    `AWS::AutoScaling::LaunchConfiguration`,
+    `AWS::AutoScaling::ScalingPolicy`,
+    `AWS::AutoScaling::ScheduledAction`,
+    `AWS::DynamoDB::Table`,
+    `AWS::CodeBuild::Project`,
+    `AWS::WAF::RateBasedRule`,
+    `AWS::WAF::Rule`,
+    `AWS::WAF::RuleGroup`,
+    `AWS::WAF::WebACL`,
+    `AWS::WAFRegional::RateBasedRule`,
+    `AWS::WAFRegional::Rule`,
+    `AWS::WAFRegional::RuleGroup`,
+    `AWS::WAFRegional::WebACL`,
+    `AWS::CloudFront::Distribution`,
+    `AWS::CloudFront::StreamingDistribution`,
+    `AWS::Lambda::Function`,
+    `AWS::NetworkFirewall::Firewall`,
+    `AWS::NetworkFirewall::FirewallPolicy`,
+    `AWS::NetworkFirewall::RuleGroup`,
+    `AWS::ElasticBeanstalk::Application`,
+    `AWS::ElasticBeanstalk::ApplicationVersion`,
+    `AWS::ElasticBeanstalk::Environment`,
+    `AWS::WAFv2::WebACL`,
+    `AWS::WAFv2::RuleGroup`,
+    `AWS::WAFv2::IPSet`,
+    `AWS::WAFv2::RegexPatternSet`,
+    `AWS::WAFv2::ManagedRuleSet`,
+    `AWS::XRay::EncryptionConfig`,
+    `AWS::SSM::AssociationCompliance`,
+    `AWS::SSM::PatchCompliance`,
+    `AWS::Shield::Protection`,
+    `AWS::ShieldRegional::Protection`,
+    `AWS::Config::ConformancePackCompliance`,
+    `AWS::Config::ResourceCompliance`,
+    `AWS::ApiGateway::Stage`,
+    `AWS::ApiGateway::RestApi`,
+    `AWS::ApiGatewayV2::Stage`,
+    `AWS::ApiGatewayV2::Api`,
+    `AWS::CodePipeline::Pipeline`,
+    `AWS::ServiceCatalog::CloudFormationProvisionedProduct`,
+    `AWS::ServiceCatalog::CloudFormationProduct`,
+    `AWS::ServiceCatalog::Portfolio`,
+    `AWS::SQS::Queue`,
+    `AWS::KMS::Key`,
+    `AWS::QLDB::Ledger`,
+    `AWS::SecretsManager::Secret`,
+    `AWS::SNS::Topic`,
+    `AWS::SSM::FileData`
+  )
 }
 
 @js.native
@@ -387,6 +524,5 @@ sealed trait ResourceValueType extends js.Any
 object ResourceValueType {
   val RESOURCE_ID = "RESOURCE_ID".asInstanceOf[ResourceValueType]
 
-  @inline def values = js.Array(RESOURCE_ID)
+  @inline def values: js.Array[ResourceValueType] = js.Array(RESOURCE_ID)
 }
-

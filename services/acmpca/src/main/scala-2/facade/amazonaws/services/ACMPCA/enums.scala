@@ -1,7 +1,6 @@
 package facade.amazonaws.services.acmpca
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait AccessMethodType extends js.Any
@@ -10,7 +9,7 @@ object AccessMethodType {
   val RESOURCE_PKI_MANIFEST = "RESOURCE_PKI_MANIFEST".asInstanceOf[AccessMethodType]
   val RESOURCE_PKI_NOTIFY = "RESOURCE_PKI_NOTIFY".asInstanceOf[AccessMethodType]
 
-  @inline def values = js.Array(CA_REPOSITORY, RESOURCE_PKI_MANIFEST, RESOURCE_PKI_NOTIFY)
+  @inline def values: js.Array[AccessMethodType] = js.Array(CA_REPOSITORY, RESOURCE_PKI_MANIFEST, RESOURCE_PKI_NOTIFY)
 }
 
 @js.native
@@ -20,7 +19,7 @@ object ActionType {
   val GetCertificate = "GetCertificate".asInstanceOf[ActionType]
   val ListPermissions = "ListPermissions".asInstanceOf[ActionType]
 
-  @inline def values = js.Array(IssueCertificate, GetCertificate, ListPermissions)
+  @inline def values: js.Array[ActionType] = js.Array(IssueCertificate, GetCertificate, ListPermissions)
 }
 
 @js.native
@@ -29,7 +28,7 @@ object AuditReportResponseFormat {
   val JSON = "JSON".asInstanceOf[AuditReportResponseFormat]
   val CSV = "CSV".asInstanceOf[AuditReportResponseFormat]
 
-  @inline def values = js.Array(JSON, CSV)
+  @inline def values: js.Array[AuditReportResponseFormat] = js.Array(JSON, CSV)
 }
 
 @js.native
@@ -39,7 +38,7 @@ object AuditReportStatus {
   val SUCCESS = "SUCCESS".asInstanceOf[AuditReportStatus]
   val FAILED = "FAILED".asInstanceOf[AuditReportStatus]
 
-  @inline def values = js.Array(CREATING, SUCCESS, FAILED)
+  @inline def values: js.Array[AuditReportStatus] = js.Array(CREATING, SUCCESS, FAILED)
 }
 
 @js.native
@@ -53,7 +52,7 @@ object CertificateAuthorityStatus {
   val EXPIRED = "EXPIRED".asInstanceOf[CertificateAuthorityStatus]
   val FAILED = "FAILED".asInstanceOf[CertificateAuthorityStatus]
 
-  @inline def values = js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED)
+  @inline def values: js.Array[CertificateAuthorityStatus] = js.Array(CREATING, PENDING_CERTIFICATE, ACTIVE, DELETED, DISABLED, EXPIRED, FAILED)
 }
 
 @js.native
@@ -62,7 +61,7 @@ object CertificateAuthorityType {
   val ROOT = "ROOT".asInstanceOf[CertificateAuthorityType]
   val SUBORDINATE = "SUBORDINATE".asInstanceOf[CertificateAuthorityType]
 
-  @inline def values = js.Array(ROOT, SUBORDINATE)
+  @inline def values: js.Array[CertificateAuthorityType] = js.Array(ROOT, SUBORDINATE)
 }
 
 @js.native
@@ -78,7 +77,7 @@ object ExtendedKeyUsageType {
   val DOCUMENT_SIGNING = "DOCUMENT_SIGNING".asInstanceOf[ExtendedKeyUsageType]
   val CERTIFICATE_TRANSPARENCY = "CERTIFICATE_TRANSPARENCY".asInstanceOf[ExtendedKeyUsageType]
 
-  @inline def values = js.Array(SERVER_AUTH, CLIENT_AUTH, CODE_SIGNING, EMAIL_PROTECTION, TIME_STAMPING, OCSP_SIGNING, SMART_CARD_LOGIN, DOCUMENT_SIGNING, CERTIFICATE_TRANSPARENCY)
+  @inline def values: js.Array[ExtendedKeyUsageType] = js.Array(SERVER_AUTH, CLIENT_AUTH, CODE_SIGNING, EMAIL_PROTECTION, TIME_STAMPING, OCSP_SIGNING, SMART_CARD_LOGIN, DOCUMENT_SIGNING, CERTIFICATE_TRANSPARENCY)
 }
 
 @js.native
@@ -88,7 +87,7 @@ object FailureReason {
   val UNSUPPORTED_ALGORITHM = "UNSUPPORTED_ALGORITHM".asInstanceOf[FailureReason]
   val OTHER = "OTHER".asInstanceOf[FailureReason]
 
-  @inline def values = js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER)
+  @inline def values: js.Array[FailureReason] = js.Array(REQUEST_TIMED_OUT, UNSUPPORTED_ALGORITHM, OTHER)
 }
 
 @js.native
@@ -99,7 +98,7 @@ object KeyAlgorithm {
   val EC_prime256v1 = "EC_prime256v1".asInstanceOf[KeyAlgorithm]
   val EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
 
-  @inline def values = js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1)
+  @inline def values: js.Array[KeyAlgorithm] = js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1)
 }
 
 @js.native
@@ -107,7 +106,7 @@ sealed trait PolicyQualifierId extends js.Any
 object PolicyQualifierId {
   val CPS = "CPS".asInstanceOf[PolicyQualifierId]
 
-  @inline def values = js.Array(CPS)
+  @inline def values: js.Array[PolicyQualifierId] = js.Array(CPS)
 }
 
 @js.native
@@ -116,7 +115,7 @@ object ResourceOwner {
   val SELF = "SELF".asInstanceOf[ResourceOwner]
   val OTHER_ACCOUNTS = "OTHER_ACCOUNTS".asInstanceOf[ResourceOwner]
 
-  @inline def values = js.Array(SELF, OTHER_ACCOUNTS)
+  @inline def values: js.Array[ResourceOwner] = js.Array(SELF, OTHER_ACCOUNTS)
 }
 
 @js.native
@@ -131,7 +130,7 @@ object RevocationReason {
   val PRIVILEGE_WITHDRAWN = "PRIVILEGE_WITHDRAWN".asInstanceOf[RevocationReason]
   val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
-  @inline def values = js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE)
+  @inline def values: js.Array[RevocationReason] = js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE)
 }
 
 @js.native
@@ -144,7 +143,7 @@ object SigningAlgorithm {
   val SHA384WITHRSA = "SHA384WITHRSA".asInstanceOf[SigningAlgorithm]
   val SHA512WITHRSA = "SHA512WITHRSA".asInstanceOf[SigningAlgorithm]
 
-  @inline def values = js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
+  @inline def values: js.Array[SigningAlgorithm] = js.Array(SHA256WITHECDSA, SHA384WITHECDSA, SHA512WITHECDSA, SHA256WITHRSA, SHA384WITHRSA, SHA512WITHRSA)
 }
 
 @js.native
@@ -156,6 +155,5 @@ object ValidityPeriodType {
   val MONTHS = "MONTHS".asInstanceOf[ValidityPeriodType]
   val YEARS = "YEARS".asInstanceOf[ValidityPeriodType]
 
-  @inline def values = js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS)
+  @inline def values: js.Array[ValidityPeriodType] = js.Array(END_DATE, ABSOLUTE, DAYS, MONTHS, YEARS)
 }
-

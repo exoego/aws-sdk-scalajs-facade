@@ -1,7 +1,6 @@
 package facade.amazonaws.services.es
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 /** Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.
   */
@@ -11,7 +10,7 @@ object AutoTuneDesiredState {
   val ENABLED = "ENABLED".asInstanceOf[AutoTuneDesiredState]
   val DISABLED = "DISABLED".asInstanceOf[AutoTuneDesiredState]
 
-  @inline def values = js.Array(ENABLED, DISABLED)
+  @inline def values: js.Array[AutoTuneDesiredState] = js.Array(ENABLED, DISABLED)
 }
 
 /** Specifies the Auto-Tune state for the Elasticsearch domain. For valid states see the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a>.
@@ -29,7 +28,17 @@ object AutoTuneState {
   val DISABLED_AND_ROLLBACK_ERROR = "DISABLED_AND_ROLLBACK_ERROR".asInstanceOf[AutoTuneState]
   val ERROR = "ERROR".asInstanceOf[AutoTuneState]
 
-  @inline def values = js.Array(ENABLED, DISABLED, ENABLE_IN_PROGRESS, DISABLE_IN_PROGRESS, DISABLED_AND_ROLLBACK_SCHEDULED, DISABLED_AND_ROLLBACK_IN_PROGRESS, DISABLED_AND_ROLLBACK_COMPLETE, DISABLED_AND_ROLLBACK_ERROR, ERROR)
+  @inline def values: js.Array[AutoTuneState] = js.Array(
+    ENABLED,
+    DISABLED,
+    ENABLE_IN_PROGRESS,
+    DISABLE_IN_PROGRESS,
+    DISABLED_AND_ROLLBACK_SCHEDULED,
+    DISABLED_AND_ROLLBACK_IN_PROGRESS,
+    DISABLED_AND_ROLLBACK_COMPLETE,
+    DISABLED_AND_ROLLBACK_ERROR,
+    ERROR
+  )
 }
 
 /** Specifies Auto-Tune type. Valid value is SCHEDULED_ACTION.
@@ -39,7 +48,7 @@ sealed trait AutoTuneType extends js.Any
 object AutoTuneType {
   val SCHEDULED_ACTION = "SCHEDULED_ACTION".asInstanceOf[AutoTuneType]
 
-  @inline def values = js.Array(SCHEDULED_ACTION)
+  @inline def values: js.Array[AutoTuneType] = js.Array(SCHEDULED_ACTION)
 }
 
 @js.native
@@ -51,7 +60,7 @@ object DeploymentStatus {
   val NOT_ELIGIBLE = "NOT_ELIGIBLE".asInstanceOf[DeploymentStatus]
   val ELIGIBLE = "ELIGIBLE".asInstanceOf[DeploymentStatus]
 
-  @inline def values = js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE)
+  @inline def values: js.Array[DeploymentStatus] = js.Array(PENDING_UPDATE, IN_PROGRESS, COMPLETED, NOT_ELIGIBLE, ELIGIBLE)
 }
 
 @js.native
@@ -61,7 +70,7 @@ object DescribePackagesFilterName {
   val PackageName = "PackageName".asInstanceOf[DescribePackagesFilterName]
   val PackageStatus = "PackageStatus".asInstanceOf[DescribePackagesFilterName]
 
-  @inline def values = js.Array(PackageID, PackageName, PackageStatus)
+  @inline def values: js.Array[DescribePackagesFilterName] = js.Array(PackageID, PackageName, PackageStatus)
 }
 
 @js.native
@@ -73,7 +82,7 @@ object DomainPackageStatus {
   val DISSOCIATING = "DISSOCIATING".asInstanceOf[DomainPackageStatus]
   val DISSOCIATION_FAILED = "DISSOCIATION_FAILED".asInstanceOf[DomainPackageStatus]
 
-  @inline def values = js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED)
+  @inline def values: js.Array[DomainPackageStatus] = js.Array(ASSOCIATING, ASSOCIATION_FAILED, ACTIVE, DISSOCIATING, DISSOCIATION_FAILED)
 }
 
 @js.native
@@ -138,7 +147,66 @@ object ESPartitionInstanceType {
   val `i3.8xlarge.elasticsearch` = "i3.8xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
   val `i3.16xlarge.elasticsearch` = "i3.16xlarge.elasticsearch".asInstanceOf[ESPartitionInstanceType]
 
-  @inline def values = js.Array(`m3.medium.elasticsearch`, `m3.large.elasticsearch`, `m3.xlarge.elasticsearch`, `m3.2xlarge.elasticsearch`, `m4.large.elasticsearch`, `m4.xlarge.elasticsearch`, `m4.2xlarge.elasticsearch`, `m4.4xlarge.elasticsearch`, `m4.10xlarge.elasticsearch`, `m5.large.elasticsearch`, `m5.xlarge.elasticsearch`, `m5.2xlarge.elasticsearch`, `m5.4xlarge.elasticsearch`, `m5.12xlarge.elasticsearch`, `r5.large.elasticsearch`, `r5.xlarge.elasticsearch`, `r5.2xlarge.elasticsearch`, `r5.4xlarge.elasticsearch`, `r5.12xlarge.elasticsearch`, `c5.large.elasticsearch`, `c5.xlarge.elasticsearch`, `c5.2xlarge.elasticsearch`, `c5.4xlarge.elasticsearch`, `c5.9xlarge.elasticsearch`, `c5.18xlarge.elasticsearch`, `ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`, `t2.micro.elasticsearch`, `t2.small.elasticsearch`, `t2.medium.elasticsearch`, `r3.large.elasticsearch`, `r3.xlarge.elasticsearch`, `r3.2xlarge.elasticsearch`, `r3.4xlarge.elasticsearch`, `r3.8xlarge.elasticsearch`, `i2.xlarge.elasticsearch`, `i2.2xlarge.elasticsearch`, `d2.xlarge.elasticsearch`, `d2.2xlarge.elasticsearch`, `d2.4xlarge.elasticsearch`, `d2.8xlarge.elasticsearch`, `c4.large.elasticsearch`, `c4.xlarge.elasticsearch`, `c4.2xlarge.elasticsearch`, `c4.4xlarge.elasticsearch`, `c4.8xlarge.elasticsearch`, `r4.large.elasticsearch`, `r4.xlarge.elasticsearch`, `r4.2xlarge.elasticsearch`, `r4.4xlarge.elasticsearch`, `r4.8xlarge.elasticsearch`, `r4.16xlarge.elasticsearch`, `i3.large.elasticsearch`, `i3.xlarge.elasticsearch`, `i3.2xlarge.elasticsearch`, `i3.4xlarge.elasticsearch`, `i3.8xlarge.elasticsearch`, `i3.16xlarge.elasticsearch`)
+  @inline def values: js.Array[ESPartitionInstanceType] = js.Array(
+    `m3.medium.elasticsearch`,
+    `m3.large.elasticsearch`,
+    `m3.xlarge.elasticsearch`,
+    `m3.2xlarge.elasticsearch`,
+    `m4.large.elasticsearch`,
+    `m4.xlarge.elasticsearch`,
+    `m4.2xlarge.elasticsearch`,
+    `m4.4xlarge.elasticsearch`,
+    `m4.10xlarge.elasticsearch`,
+    `m5.large.elasticsearch`,
+    `m5.xlarge.elasticsearch`,
+    `m5.2xlarge.elasticsearch`,
+    `m5.4xlarge.elasticsearch`,
+    `m5.12xlarge.elasticsearch`,
+    `r5.large.elasticsearch`,
+    `r5.xlarge.elasticsearch`,
+    `r5.2xlarge.elasticsearch`,
+    `r5.4xlarge.elasticsearch`,
+    `r5.12xlarge.elasticsearch`,
+    `c5.large.elasticsearch`,
+    `c5.xlarge.elasticsearch`,
+    `c5.2xlarge.elasticsearch`,
+    `c5.4xlarge.elasticsearch`,
+    `c5.9xlarge.elasticsearch`,
+    `c5.18xlarge.elasticsearch`,
+    `ultrawarm1.medium.elasticsearch`,
+    `ultrawarm1.large.elasticsearch`,
+    `t2.micro.elasticsearch`,
+    `t2.small.elasticsearch`,
+    `t2.medium.elasticsearch`,
+    `r3.large.elasticsearch`,
+    `r3.xlarge.elasticsearch`,
+    `r3.2xlarge.elasticsearch`,
+    `r3.4xlarge.elasticsearch`,
+    `r3.8xlarge.elasticsearch`,
+    `i2.xlarge.elasticsearch`,
+    `i2.2xlarge.elasticsearch`,
+    `d2.xlarge.elasticsearch`,
+    `d2.2xlarge.elasticsearch`,
+    `d2.4xlarge.elasticsearch`,
+    `d2.8xlarge.elasticsearch`,
+    `c4.large.elasticsearch`,
+    `c4.xlarge.elasticsearch`,
+    `c4.2xlarge.elasticsearch`,
+    `c4.4xlarge.elasticsearch`,
+    `c4.8xlarge.elasticsearch`,
+    `r4.large.elasticsearch`,
+    `r4.xlarge.elasticsearch`,
+    `r4.2xlarge.elasticsearch`,
+    `r4.4xlarge.elasticsearch`,
+    `r4.8xlarge.elasticsearch`,
+    `r4.16xlarge.elasticsearch`,
+    `i3.large.elasticsearch`,
+    `i3.xlarge.elasticsearch`,
+    `i3.2xlarge.elasticsearch`,
+    `i3.4xlarge.elasticsearch`,
+    `i3.8xlarge.elasticsearch`,
+    `i3.16xlarge.elasticsearch`
+  )
 }
 
 @js.native
@@ -147,7 +215,7 @@ object ESWarmPartitionInstanceType {
   val `ultrawarm1.medium.elasticsearch` = "ultrawarm1.medium.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
   val `ultrawarm1.large.elasticsearch` = "ultrawarm1.large.elasticsearch".asInstanceOf[ESWarmPartitionInstanceType]
 
-  @inline def values = js.Array(`ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`)
+  @inline def values: js.Array[ESWarmPartitionInstanceType] = js.Array(`ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`)
 }
 
 @js.native
@@ -160,14 +228,10 @@ object InboundCrossClusterSearchConnectionStatusCode {
   val DELETING = "DELETING".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
   val DELETED = "DELETED".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]
 
-  @inline def values = js.Array(PENDING_ACCEPTANCE, APPROVED, REJECTING, REJECTED, DELETING, DELETED)
+  @inline def values: js.Array[InboundCrossClusterSearchConnectionStatusCode] = js.Array(PENDING_ACCEPTANCE, APPROVED, REJECTING, REJECTED, DELETING, DELETED)
 }
 
-/** <p>Type of Log File, it can be one of the following:* INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.
-  * * SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.
-  * * ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.
-  * * AUDIT_LOGS: Audit logs contain records of user requests for access from the domain.
-  * </p>
+/** <p>Type of Log File, it can be one of the following:* INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute. * SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute. * ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting. * AUDIT_LOGS: Audit logs contain records of user requests for access from the domain. </p>
   */
 @js.native
 sealed trait LogType extends js.Any
@@ -177,12 +241,10 @@ object LogType {
   val ES_APPLICATION_LOGS = "ES_APPLICATION_LOGS".asInstanceOf[LogType]
   val AUDIT_LOGS = "AUDIT_LOGS".asInstanceOf[LogType]
 
-  @inline def values = js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS, AUDIT_LOGS)
+  @inline def values: js.Array[LogType] = js.Array(INDEX_SLOW_LOGS, SEARCH_SLOW_LOGS, ES_APPLICATION_LOGS, AUDIT_LOGS)
 }
 
-/** The state of a requested change. One of the following:
-  * * Processing: The request change is still in-process.
-  * * Active: The request change is processed and deployed to the Elasticsearch domain.
+/** The state of a requested change. One of the following: * Processing: The request change is still in-process. * Active: The request change is processed and deployed to the Elasticsearch domain.
   */
 @js.native
 sealed trait OptionState extends js.Any
@@ -191,7 +253,7 @@ object OptionState {
   val Processing = "Processing".asInstanceOf[OptionState]
   val Active = "Active".asInstanceOf[OptionState]
 
-  @inline def values = js.Array(RequiresIndexDocuments, Processing, Active)
+  @inline def values: js.Array[OptionState] = js.Array(RequiresIndexDocuments, Processing, Active)
 }
 
 @js.native
@@ -206,7 +268,7 @@ object OutboundCrossClusterSearchConnectionStatusCode {
   val DELETING = "DELETING".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
   val DELETED = "DELETED".asInstanceOf[OutboundCrossClusterSearchConnectionStatusCode]
 
-  @inline def values = js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED)
+  @inline def values: js.Array[OutboundCrossClusterSearchConnectionStatusCode] = js.Array(PENDING_ACCEPTANCE, VALIDATING, VALIDATION_FAILED, PROVISIONING, ACTIVE, REJECTED, DELETING, DELETED)
 }
 
 @js.native
@@ -221,7 +283,7 @@ object PackageStatus {
   val DELETED = "DELETED".asInstanceOf[PackageStatus]
   val DELETE_FAILED = "DELETE_FAILED".asInstanceOf[PackageStatus]
 
-  @inline def values = js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED)
+  @inline def values: js.Array[PackageStatus] = js.Array(COPYING, COPY_FAILED, VALIDATING, VALIDATION_FAILED, AVAILABLE, DELETING, DELETED, DELETE_FAILED)
 }
 
 @js.native
@@ -229,7 +291,7 @@ sealed trait PackageType extends js.Any
 object PackageType {
   val `TXT-DICTIONARY` = "TXT-DICTIONARY".asInstanceOf[PackageType]
 
-  @inline def values = js.Array(`TXT-DICTIONARY`)
+  @inline def values: js.Array[PackageType] = js.Array(`TXT-DICTIONARY`)
 }
 
 @js.native
@@ -239,7 +301,7 @@ object ReservedElasticsearchInstancePaymentOption {
   val PARTIAL_UPFRONT = "PARTIAL_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
   val NO_UPFRONT = "NO_UPFRONT".asInstanceOf[ReservedElasticsearchInstancePaymentOption]
 
-  @inline def values = js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT)
+  @inline def values: js.Array[ReservedElasticsearchInstancePaymentOption] = js.Array(ALL_UPFRONT, PARTIAL_UPFRONT, NO_UPFRONT)
 }
 
 /** Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK.
@@ -250,7 +312,7 @@ object RollbackOnDisable {
   val NO_ROLLBACK = "NO_ROLLBACK".asInstanceOf[RollbackOnDisable]
   val DEFAULT_ROLLBACK = "DEFAULT_ROLLBACK".asInstanceOf[RollbackOnDisable]
 
-  @inline def values = js.Array(NO_ROLLBACK, DEFAULT_ROLLBACK)
+  @inline def values: js.Array[RollbackOnDisable] = js.Array(NO_ROLLBACK, DEFAULT_ROLLBACK)
 }
 
 /** Specifies Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING.
@@ -261,7 +323,7 @@ object ScheduledAutoTuneActionType {
   val JVM_HEAP_SIZE_TUNING = "JVM_HEAP_SIZE_TUNING".asInstanceOf[ScheduledAutoTuneActionType]
   val JVM_YOUNG_GEN_TUNING = "JVM_YOUNG_GEN_TUNING".asInstanceOf[ScheduledAutoTuneActionType]
 
-  @inline def values = js.Array(JVM_HEAP_SIZE_TUNING, JVM_YOUNG_GEN_TUNING)
+  @inline def values: js.Array[ScheduledAutoTuneActionType] = js.Array(JVM_HEAP_SIZE_TUNING, JVM_YOUNG_GEN_TUNING)
 }
 
 /** Specifies Auto-Tune action severity. Valid values are LOW, MEDIUM and HIGH.
@@ -273,7 +335,7 @@ object ScheduledAutoTuneSeverityType {
   val MEDIUM = "MEDIUM".asInstanceOf[ScheduledAutoTuneSeverityType]
   val HIGH = "HIGH".asInstanceOf[ScheduledAutoTuneSeverityType]
 
-  @inline def values = js.Array(LOW, MEDIUM, HIGH)
+  @inline def values: js.Array[ScheduledAutoTuneSeverityType] = js.Array(LOW, MEDIUM, HIGH)
 }
 
 @js.native
@@ -282,7 +344,7 @@ object TLSSecurityPolicy {
   val `Policy-Min-TLS-1-0-2019-07` = "Policy-Min-TLS-1-0-2019-07".asInstanceOf[TLSSecurityPolicy]
   val `Policy-Min-TLS-1-2-2019-07` = "Policy-Min-TLS-1-2-2019-07".asInstanceOf[TLSSecurityPolicy]
 
-  @inline def values = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
+  @inline def values: js.Array[TLSSecurityPolicy] = js.Array(`Policy-Min-TLS-1-0-2019-07`, `Policy-Min-TLS-1-2-2019-07`)
 }
 
 /** Specifies the unit of a maintenance schedule duration. Valid value is HOUR. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html" target="_blank">Developer Guide</a> for more information.
@@ -292,7 +354,7 @@ sealed trait TimeUnit extends js.Any
 object TimeUnit {
   val HOURS = "HOURS".asInstanceOf[TimeUnit]
 
-  @inline def values = js.Array(HOURS)
+  @inline def values: js.Array[TimeUnit] = js.Array(HOURS)
 }
 
 @js.native
@@ -303,7 +365,7 @@ object UpgradeStatus {
   val SUCCEEDED_WITH_ISSUES = "SUCCEEDED_WITH_ISSUES".asInstanceOf[UpgradeStatus]
   val FAILED = "FAILED".asInstanceOf[UpgradeStatus]
 
-  @inline def values = js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED)
+  @inline def values: js.Array[UpgradeStatus] = js.Array(IN_PROGRESS, SUCCEEDED, SUCCEEDED_WITH_ISSUES, FAILED)
 }
 
 @js.native
@@ -313,7 +375,7 @@ object UpgradeStep {
   val SNAPSHOT = "SNAPSHOT".asInstanceOf[UpgradeStep]
   val UPGRADE = "UPGRADE".asInstanceOf[UpgradeStep]
 
-  @inline def values = js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE)
+  @inline def values: js.Array[UpgradeStep] = js.Array(PRE_UPGRADE_CHECK, SNAPSHOT, UPGRADE)
 }
 
 /** The type of EBS volume, standard, gp2, or io1. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs" target="_blank">Configuring EBS-based Storage</a>for more information.
@@ -325,6 +387,5 @@ object VolumeType {
   val gp2 = "gp2".asInstanceOf[VolumeType]
   val io1 = "io1".asInstanceOf[VolumeType]
 
-  @inline def values = js.Array(standard, gp2, io1)
+  @inline def values: js.Array[VolumeType] = js.Array(standard, gp2, io1)
 }
-

@@ -1,6 +1,6 @@
 package facade.amazonaws.services.gamelift
 
-import scalajs._
+import scalajs.js
 
 type AcceptanceType = "ACCEPT" | "REJECT"
 object AcceptanceType {

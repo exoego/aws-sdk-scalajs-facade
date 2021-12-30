@@ -1,6 +1,6 @@
 package facade.amazonaws.services.athena
 
-import scalajs._
+import scalajs.js
 
 type ColumnNullable = "NOT_NULL" | "NULLABLE" | "UNKNOWN"
 object ColumnNullable {

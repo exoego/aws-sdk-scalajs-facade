@@ -1,6 +1,6 @@
 package facade.amazonaws.services.worklink
 
-import scalajs._
+import scalajs.js
 
 type AuthorizationProviderType = "SAML"
 object AuthorizationProviderType {

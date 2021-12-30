@@ -1,6 +1,6 @@
 package facade.amazonaws.services.iotsecuretunneling
 
-import scalajs._
+import scalajs.js
 
 type ConnectionStatus = "CONNECTED" | "DISCONNECTED"
 object ConnectionStatus {

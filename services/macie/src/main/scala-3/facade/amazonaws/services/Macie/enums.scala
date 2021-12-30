@@ -1,6 +1,6 @@
 package facade.amazonaws.services.macie
 
-import scalajs._
+import scalajs.js
 
 type S3ContinuousClassificationType = "FULL"
 object S3ContinuousClassificationType {

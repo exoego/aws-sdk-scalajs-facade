@@ -1,7 +1,6 @@
 package facade.amazonaws.services.sqs
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait MessageSystemAttributeName extends js.Any
@@ -15,7 +14,7 @@ object MessageSystemAttributeName {
   val MessageGroupId = "MessageGroupId".asInstanceOf[MessageSystemAttributeName]
   val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeName]
 
-  @inline def values = js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader)
+  @inline def values: js.Array[MessageSystemAttributeName] = js.Array(SenderId, SentTimestamp, ApproximateReceiveCount, ApproximateFirstReceiveTimestamp, SequenceNumber, MessageDeduplicationId, MessageGroupId, AWSTraceHeader)
 }
 
 @js.native
@@ -23,7 +22,7 @@ sealed trait MessageSystemAttributeNameForSends extends js.Any
 object MessageSystemAttributeNameForSends {
   val AWSTraceHeader = "AWSTraceHeader".asInstanceOf[MessageSystemAttributeNameForSends]
 
-  @inline def values = js.Array(AWSTraceHeader)
+  @inline def values: js.Array[MessageSystemAttributeNameForSends] = js.Array(AWSTraceHeader)
 }
 
 @js.native
@@ -50,6 +49,26 @@ object QueueAttributeName {
   val DeduplicationScope = "DeduplicationScope".asInstanceOf[QueueAttributeName]
   val FifoThroughputLimit = "FifoThroughputLimit".asInstanceOf[QueueAttributeName]
 
-  @inline def values = js.Array(All, Policy, VisibilityTimeout, MaximumMessageSize, MessageRetentionPeriod, ApproximateNumberOfMessages, ApproximateNumberOfMessagesNotVisible, CreatedTimestamp, LastModifiedTimestamp, QueueArn, ApproximateNumberOfMessagesDelayed, DelaySeconds, ReceiveMessageWaitTimeSeconds, RedrivePolicy, FifoQueue, ContentBasedDeduplication, KmsMasterKeyId, KmsDataKeyReusePeriodSeconds, DeduplicationScope, FifoThroughputLimit)
+  @inline def values: js.Array[QueueAttributeName] = js.Array(
+    All,
+    Policy,
+    VisibilityTimeout,
+    MaximumMessageSize,
+    MessageRetentionPeriod,
+    ApproximateNumberOfMessages,
+    ApproximateNumberOfMessagesNotVisible,
+    CreatedTimestamp,
+    LastModifiedTimestamp,
+    QueueArn,
+    ApproximateNumberOfMessagesDelayed,
+    DelaySeconds,
+    ReceiveMessageWaitTimeSeconds,
+    RedrivePolicy,
+    FifoQueue,
+    ContentBasedDeduplication,
+    KmsMasterKeyId,
+    KmsDataKeyReusePeriodSeconds,
+    DeduplicationScope,
+    FifoThroughputLimit
+  )
 }
-

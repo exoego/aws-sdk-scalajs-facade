@@ -1,6 +1,6 @@
 package facade.amazonaws.services.apigatewayv2
 
-import scalajs._
+import scalajs.js
 
 /** The authorization type. For WebSocket APIs, valid values are NONE for open access, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer. For HTTP APIs, valid values are NONE for open access, JWT for using JSON Web Tokens, AWS_IAM for using AWS IAM permissions, and CUSTOM for using a Lambda authorizer.
   */

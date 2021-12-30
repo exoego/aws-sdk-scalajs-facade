@@ -1,6 +1,6 @@
 package facade.amazonaws.services.elasticbeanstalk
 
-import scalajs._
+import scalajs.js
 
 type ActionHistoryStatus = "Completed" | "Failed" | "Unknown"
 object ActionHistoryStatus {

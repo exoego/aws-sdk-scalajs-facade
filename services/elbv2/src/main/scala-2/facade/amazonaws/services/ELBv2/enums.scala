@@ -1,7 +1,6 @@
 package facade.amazonaws.services.elbv2
 
-import scalajs._
-import scala.scalajs.js.|
+import scalajs.js
 
 @js.native
 sealed trait ActionTypeEnum extends js.Any
@@ -12,7 +11,7 @@ object ActionTypeEnum {
   val redirect = "redirect".asInstanceOf[ActionTypeEnum]
   val `fixed-response` = "fixed-response".asInstanceOf[ActionTypeEnum]
 
-  @inline def values = js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`)
+  @inline def values: js.Array[ActionTypeEnum] = js.Array(forward, `authenticate-oidc`, `authenticate-cognito`, redirect, `fixed-response`)
 }
 
 @js.native
@@ -22,7 +21,7 @@ object AuthenticateCognitoActionConditionalBehaviorEnum {
   val allow = "allow".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
   val authenticate = "authenticate".asInstanceOf[AuthenticateCognitoActionConditionalBehaviorEnum]
 
-  @inline def values = js.Array(deny, allow, authenticate)
+  @inline def values: js.Array[AuthenticateCognitoActionConditionalBehaviorEnum] = js.Array(deny, allow, authenticate)
 }
 
 @js.native
@@ -32,7 +31,7 @@ object AuthenticateOidcActionConditionalBehaviorEnum {
   val allow = "allow".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
   val authenticate = "authenticate".asInstanceOf[AuthenticateOidcActionConditionalBehaviorEnum]
 
-  @inline def values = js.Array(deny, allow, authenticate)
+  @inline def values: js.Array[AuthenticateOidcActionConditionalBehaviorEnum] = js.Array(deny, allow, authenticate)
 }
 
 @js.native
@@ -41,7 +40,7 @@ object IpAddressType {
   val ipv4 = "ipv4".asInstanceOf[IpAddressType]
   val dualstack = "dualstack".asInstanceOf[IpAddressType]
 
-  @inline def values = js.Array(ipv4, dualstack)
+  @inline def values: js.Array[IpAddressType] = js.Array(ipv4, dualstack)
 }
 
 @js.native
@@ -50,7 +49,7 @@ object LoadBalancerSchemeEnum {
   val `internet-facing` = "internet-facing".asInstanceOf[LoadBalancerSchemeEnum]
   val internal = "internal".asInstanceOf[LoadBalancerSchemeEnum]
 
-  @inline def values = js.Array(`internet-facing`, internal)
+  @inline def values: js.Array[LoadBalancerSchemeEnum] = js.Array(`internet-facing`, internal)
 }
 
 @js.native
@@ -61,7 +60,7 @@ object LoadBalancerStateEnum {
   val active_impaired = "active_impaired".asInstanceOf[LoadBalancerStateEnum]
   val failed = "failed".asInstanceOf[LoadBalancerStateEnum]
 
-  @inline def values = js.Array(active, provisioning, active_impaired, failed)
+  @inline def values: js.Array[LoadBalancerStateEnum] = js.Array(active, provisioning, active_impaired, failed)
 }
 
 @js.native
@@ -71,7 +70,7 @@ object LoadBalancerTypeEnum {
   val network = "network".asInstanceOf[LoadBalancerTypeEnum]
   val gateway = "gateway".asInstanceOf[LoadBalancerTypeEnum]
 
-  @inline def values = js.Array(application, network, gateway)
+  @inline def values: js.Array[LoadBalancerTypeEnum] = js.Array(application, network, gateway)
 }
 
 @js.native
@@ -85,7 +84,7 @@ object ProtocolEnum {
   val TCP_UDP = "TCP_UDP".asInstanceOf[ProtocolEnum]
   val GENEVE = "GENEVE".asInstanceOf[ProtocolEnum]
 
-  @inline def values = js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, GENEVE)
+  @inline def values: js.Array[ProtocolEnum] = js.Array(HTTP, HTTPS, TCP, TLS, UDP, TCP_UDP, GENEVE)
 }
 
 @js.native
@@ -94,7 +93,7 @@ object RedirectActionStatusCodeEnum {
   val HTTP_301 = "HTTP_301".asInstanceOf[RedirectActionStatusCodeEnum]
   val HTTP_302 = "HTTP_302".asInstanceOf[RedirectActionStatusCodeEnum]
 
-  @inline def values = js.Array(HTTP_301, HTTP_302)
+  @inline def values: js.Array[RedirectActionStatusCodeEnum] = js.Array(HTTP_301, HTTP_302)
 }
 
 @js.native
@@ -113,7 +112,20 @@ object TargetHealthReasonEnum {
   val `Target.HealthCheckDisabled` = "Target.HealthCheckDisabled".asInstanceOf[TargetHealthReasonEnum]
   val `Elb.InternalError` = "Elb.InternalError".asInstanceOf[TargetHealthReasonEnum]
 
-  @inline def values = js.Array(`Elb.RegistrationInProgress`, `Elb.InitialHealthChecking`, `Target.ResponseCodeMismatch`, `Target.Timeout`, `Target.FailedHealthChecks`, `Target.NotRegistered`, `Target.NotInUse`, `Target.DeregistrationInProgress`, `Target.InvalidState`, `Target.IpUnusable`, `Target.HealthCheckDisabled`, `Elb.InternalError`)
+  @inline def values: js.Array[TargetHealthReasonEnum] = js.Array(
+    `Elb.RegistrationInProgress`,
+    `Elb.InitialHealthChecking`,
+    `Target.ResponseCodeMismatch`,
+    `Target.Timeout`,
+    `Target.FailedHealthChecks`,
+    `Target.NotRegistered`,
+    `Target.NotInUse`,
+    `Target.DeregistrationInProgress`,
+    `Target.InvalidState`,
+    `Target.IpUnusable`,
+    `Target.HealthCheckDisabled`,
+    `Elb.InternalError`
+  )
 }
 
 @js.native
@@ -126,7 +138,7 @@ object TargetHealthStateEnum {
   val draining = "draining".asInstanceOf[TargetHealthStateEnum]
   val unavailable = "unavailable".asInstanceOf[TargetHealthStateEnum]
 
-  @inline def values = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
+  @inline def values: js.Array[TargetHealthStateEnum] = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
 }
 
 @js.native
@@ -136,6 +148,5 @@ object TargetTypeEnum {
   val ip = "ip".asInstanceOf[TargetTypeEnum]
   val lambda = "lambda".asInstanceOf[TargetTypeEnum]
 
-  @inline def values = js.Array(instance, ip, lambda)
+  @inline def values: js.Array[TargetTypeEnum] = js.Array(instance, ip, lambda)
 }
-
