@@ -4,6 +4,8 @@ import facade.amazonaws.AWSCredentials
 import facade.amazonaws.services.sts
 import org.scalatest.funsuite.AnyFunSuite
 
+import scala.scalajs.js.JavaScriptException
+
 class CredentialsTest extends AnyFunSuite {
   test("ChainableTemporaryCredentials") {
     val credentials: AWSCredentials = new ChainableTemporaryCredentials()
@@ -54,7 +56,11 @@ class CredentialsTest extends AnyFunSuite {
   }
 
   test("TemporaryCredentials") {
-    val credentials: AWSCredentials = new TemporaryCredentials()
+    val ex = intercept[JavaScriptException] {
+      val credentials: AWSCredentials = new TemporaryCredentials()
+    }
+    // CI env has no fallback credentials
+    assert(ex.getMessage().contains("Cannot read property 'masterCredentials' of null"))
   }
 
   test("TokenFileWebIdentityCredentials") {

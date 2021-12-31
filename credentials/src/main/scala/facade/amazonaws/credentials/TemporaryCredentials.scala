@@ -7,6 +7,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
 @js.native
+@deprecated("Use ChainableTemporaryCredentials", "forever")
 @JSImport("aws-sdk/lib/node_loader", "TemporaryCredentials", "AWS.TemporaryCredentials")
 class TemporaryCredentials() extends AWSCredentials {
   def this(options: AssumeRoleRequest, masterCredentials: AWSCredentials) = this()
