@@ -16,6 +16,7 @@ package object medialive {
   type __doubleMin0Max1 = Double
   type __doubleMin0Max100 = Double
   type __doubleMin1 = Double
+  type __doubleMin1Max65535 = Double
   type __doubleMinNegative59Max0 = Double
   type __integer = Int
   type __integerMin0 = Int
@@ -61,6 +62,7 @@ package object medialive {
   type __integerMin25Max2000 = Int
   type __integerMin3 = Int
   type __integerMin30 = Int
+  type __integerMin32Max8191 = Int
   type __integerMin4Max20 = Int
   type __integerMin800Max3000 = Int
   type __integerMin96Max600 = Int
@@ -129,6 +131,8 @@ package object medialive {
   type __stringMin1Max255 = String
   type __stringMin1Max256 = String
   type __stringMin1Max35 = String
+  type __stringMin1Max7 = String
+  type __stringMin2Max2 = String
   type __stringMin32Max32 = String
   type __stringMin34Max34 = String
   type __stringMin3Max3 = String
@@ -143,6 +147,7 @@ package object medialive {
     @inline def batchStopFuture(params: BatchStopRequest): Future[BatchStopResponse] = service.batchStop(params).promise().toFuture
     @inline def batchUpdateScheduleFuture(params: BatchUpdateScheduleRequest): Future[BatchUpdateScheduleResponse] = service.batchUpdateSchedule(params).promise().toFuture
     @inline def cancelInputDeviceTransferFuture(params: CancelInputDeviceTransferRequest): Future[CancelInputDeviceTransferResponse] = service.cancelInputDeviceTransfer(params).promise().toFuture
+    @inline def claimDeviceFuture(params: ClaimDeviceRequest): Future[ClaimDeviceResponse] = service.claimDevice(params).promise().toFuture
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
     @inline def createInputFuture(params: CreateInputRequest): Future[CreateInputResponse] = service.createInput(params).promise().toFuture
     @inline def createInputSecurityGroupFuture(params: CreateInputSecurityGroupRequest): Future[CreateInputSecurityGroupResponse] = service.createInputSecurityGroup(params).promise().toFuture
@@ -207,6 +212,7 @@ package object medialive {
     def batchStop(params: BatchStopRequest): Request[BatchStopResponse] = js.native
     def batchUpdateSchedule(params: BatchUpdateScheduleRequest): Request[BatchUpdateScheduleResponse] = js.native
     def cancelInputDeviceTransfer(params: CancelInputDeviceTransferRequest): Request[CancelInputDeviceTransferResponse] = js.native
+    def claimDevice(params: ClaimDeviceRequest): Request[ClaimDeviceResponse] = js.native
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
     def createInput(params: CreateInputRequest): Request[CreateInputResponse] = js.native
     def createInputSecurityGroup(params: CreateInputSecurityGroupRequest): Request[CreateInputSecurityGroupResponse] = js.native
@@ -591,6 +597,7 @@ package object medialive {
     var AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings]
     var AudioType: js.UndefOr[AudioType]
     var AudioTypeControl: js.UndefOr[AudioDescriptionAudioTypeControl]
+    var AudioWatermarkingSettings: js.UndefOr[AudioWatermarkSettings]
     var CodecSettings: js.UndefOr[AudioCodecSettings]
     var LanguageCode: js.UndefOr[__stringMin1Max35]
     var LanguageCodeControl: js.UndefOr[AudioDescriptionLanguageCodeControl]
@@ -606,6 +613,7 @@ package object medialive {
         AudioNormalizationSettings: js.UndefOr[AudioNormalizationSettings] = js.undefined,
         AudioType: js.UndefOr[AudioType] = js.undefined,
         AudioTypeControl: js.UndefOr[AudioDescriptionAudioTypeControl] = js.undefined,
+        AudioWatermarkingSettings: js.UndefOr[AudioWatermarkSettings] = js.undefined,
         CodecSettings: js.UndefOr[AudioCodecSettings] = js.undefined,
         LanguageCode: js.UndefOr[__stringMin1Max35] = js.undefined,
         LanguageCodeControl: js.UndefOr[AudioDescriptionLanguageCodeControl] = js.undefined,
@@ -620,12 +628,35 @@ package object medialive {
       AudioNormalizationSettings.foreach(__v => __obj.updateDynamic("AudioNormalizationSettings")(__v.asInstanceOf[js.Any]))
       AudioType.foreach(__v => __obj.updateDynamic("AudioType")(__v.asInstanceOf[js.Any]))
       AudioTypeControl.foreach(__v => __obj.updateDynamic("AudioTypeControl")(__v.asInstanceOf[js.Any]))
+      AudioWatermarkingSettings.foreach(__v => __obj.updateDynamic("AudioWatermarkingSettings")(__v.asInstanceOf[js.Any]))
       CodecSettings.foreach(__v => __obj.updateDynamic("CodecSettings")(__v.asInstanceOf[js.Any]))
       LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
       LanguageCodeControl.foreach(__v => __obj.updateDynamic("LanguageCodeControl")(__v.asInstanceOf[js.Any]))
       RemixSettings.foreach(__v => __obj.updateDynamic("RemixSettings")(__v.asInstanceOf[js.Any]))
       StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AudioDescription]
+    }
+  }
+
+  /** Audio Hls Rendition Selection
+    */
+  @js.native
+  trait AudioHlsRenditionSelection extends js.Object {
+    var GroupId: __stringMin1
+    var Name: __stringMin1
+  }
+
+  object AudioHlsRenditionSelection {
+    @inline
+    def apply(
+        GroupId: __stringMin1,
+        Name: __stringMin1
+    ): AudioHlsRenditionSelection = {
+      val __obj = js.Dynamic.literal(
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AudioHlsRenditionSelection]
     }
   }
 
@@ -749,6 +780,7 @@ package object medialive {
     */
   @js.native
   trait AudioSelectorSettings extends js.Object {
+    var AudioHlsRenditionSelection: js.UndefOr[AudioHlsRenditionSelection]
     var AudioLanguageSelection: js.UndefOr[AudioLanguageSelection]
     var AudioPidSelection: js.UndefOr[AudioPidSelection]
     var AudioTrackSelection: js.UndefOr[AudioTrackSelection]
@@ -757,11 +789,13 @@ package object medialive {
   object AudioSelectorSettings {
     @inline
     def apply(
+        AudioHlsRenditionSelection: js.UndefOr[AudioHlsRenditionSelection] = js.undefined,
         AudioLanguageSelection: js.UndefOr[AudioLanguageSelection] = js.undefined,
         AudioPidSelection: js.UndefOr[AudioPidSelection] = js.undefined,
         AudioTrackSelection: js.UndefOr[AudioTrackSelection] = js.undefined
     ): AudioSelectorSettings = {
       val __obj = js.Dynamic.literal()
+      AudioHlsRenditionSelection.foreach(__v => __obj.updateDynamic("AudioHlsRenditionSelection")(__v.asInstanceOf[js.Any]))
       AudioLanguageSelection.foreach(__v => __obj.updateDynamic("AudioLanguageSelection")(__v.asInstanceOf[js.Any]))
       AudioPidSelection.foreach(__v => __obj.updateDynamic("AudioPidSelection")(__v.asInstanceOf[js.Any]))
       AudioTrackSelection.foreach(__v => __obj.updateDynamic("AudioTrackSelection")(__v.asInstanceOf[js.Any]))
@@ -827,6 +861,24 @@ package object medialive {
         "Tracks" -> Tracks.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AudioTrackSelection]
+    }
+  }
+
+  /** Audio Watermark Settings
+    */
+  @js.native
+  trait AudioWatermarkSettings extends js.Object {
+    var NielsenWatermarksSettings: js.UndefOr[NielsenWatermarksSettings]
+  }
+
+  object AudioWatermarkSettings {
+    @inline
+    def apply(
+        NielsenWatermarksSettings: js.UndefOr[NielsenWatermarksSettings] = js.undefined
+    ): AudioWatermarkSettings = {
+      val __obj = js.Dynamic.literal()
+      NielsenWatermarksSettings.foreach(__v => __obj.updateDynamic("NielsenWatermarksSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioWatermarkSettings]
     }
   }
 
@@ -1713,6 +1765,37 @@ package object medialive {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Vpc.foreach(__v => __obj.updateDynamic("Vpc")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ChannelSummary]
+    }
+  }
+
+  /** A request to claim an AWS Elemental device that you have purchased from a third-party vendor.
+    */
+  @js.native
+  trait ClaimDeviceRequest extends js.Object {
+    var Id: js.UndefOr[__string]
+  }
+
+  object ClaimDeviceRequest {
+    @inline
+    def apply(
+        Id: js.UndefOr[__string] = js.undefined
+    ): ClaimDeviceRequest = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClaimDeviceRequest]
+    }
+  }
+
+  /** Placeholder documentation for ClaimDeviceResponse
+    */
+  @js.native
+  trait ClaimDeviceResponse extends js.Object
+
+  object ClaimDeviceResponse {
+    @inline
+    def apply(): ClaimDeviceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[ClaimDeviceResponse]
     }
   }
 
@@ -3258,15 +3341,18 @@ package object medialive {
     */
   @js.native
   trait DvbSubSourceSettings extends js.Object {
+    var OcrLanguage: js.UndefOr[DvbSubOcrLanguage]
     var Pid: js.UndefOr[__integerMin1]
   }
 
   object DvbSubSourceSettings {
     @inline
     def apply(
+        OcrLanguage: js.UndefOr[DvbSubOcrLanguage] = js.undefined,
         Pid: js.UndefOr[__integerMin1] = js.undefined
     ): DvbSubSourceSettings = {
       val __obj = js.Dynamic.literal()
+      OcrLanguage.foreach(__v => __obj.updateDynamic("OcrLanguage")(__v.asInstanceOf[js.Any]))
       Pid.foreach(__v => __obj.updateDynamic("Pid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DvbSubSourceSettings]
     }
@@ -4404,6 +4490,7 @@ package object medialive {
     var BufferSegments: js.UndefOr[__integerMin0]
     var Retries: js.UndefOr[__integerMin0]
     var RetryInterval: js.UndefOr[__integerMin0]
+    var Scte35Source: js.UndefOr[HlsScte35SourceType]
   }
 
   object HlsInputSettings {
@@ -4412,13 +4499,15 @@ package object medialive {
         Bandwidth: js.UndefOr[__integerMin0] = js.undefined,
         BufferSegments: js.UndefOr[__integerMin0] = js.undefined,
         Retries: js.UndefOr[__integerMin0] = js.undefined,
-        RetryInterval: js.UndefOr[__integerMin0] = js.undefined
+        RetryInterval: js.UndefOr[__integerMin0] = js.undefined,
+        Scte35Source: js.UndefOr[HlsScte35SourceType] = js.undefined
     ): HlsInputSettings = {
       val __obj = js.Dynamic.literal()
       Bandwidth.foreach(__v => __obj.updateDynamic("Bandwidth")(__v.asInstanceOf[js.Any]))
       BufferSegments.foreach(__v => __obj.updateDynamic("BufferSegments")(__v.asInstanceOf[js.Any]))
       Retries.foreach(__v => __obj.updateDynamic("Retries")(__v.asInstanceOf[js.Any]))
       RetryInterval.foreach(__v => __obj.updateDynamic("RetryInterval")(__v.asInstanceOf[js.Any]))
+      Scte35Source.foreach(__v => __obj.updateDynamic("Scte35Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsInputSettings]
     }
   }
@@ -5164,6 +5253,7 @@ package object medialive {
     var FilterStrength: js.UndefOr[__integerMin1Max5]
     var InputFilter: js.UndefOr[InputFilter]
     var NetworkInputSettings: js.UndefOr[NetworkInputSettings]
+    var Scte35Pid: js.UndefOr[__integerMin32Max8191]
     var Smpte2038DataPreference: js.UndefOr[Smpte2038DataPreference]
     var SourceEndBehavior: js.UndefOr[InputSourceEndBehavior]
     var VideoSelector: js.UndefOr[VideoSelector]
@@ -5179,6 +5269,7 @@ package object medialive {
         FilterStrength: js.UndefOr[__integerMin1Max5] = js.undefined,
         InputFilter: js.UndefOr[InputFilter] = js.undefined,
         NetworkInputSettings: js.UndefOr[NetworkInputSettings] = js.undefined,
+        Scte35Pid: js.UndefOr[__integerMin32Max8191] = js.undefined,
         Smpte2038DataPreference: js.UndefOr[Smpte2038DataPreference] = js.undefined,
         SourceEndBehavior: js.UndefOr[InputSourceEndBehavior] = js.undefined,
         VideoSelector: js.UndefOr[VideoSelector] = js.undefined
@@ -5191,6 +5282,7 @@ package object medialive {
       FilterStrength.foreach(__v => __obj.updateDynamic("FilterStrength")(__v.asInstanceOf[js.Any]))
       InputFilter.foreach(__v => __obj.updateDynamic("InputFilter")(__v.asInstanceOf[js.Any]))
       NetworkInputSettings.foreach(__v => __obj.updateDynamic("NetworkInputSettings")(__v.asInstanceOf[js.Any]))
+      Scte35Pid.foreach(__v => __obj.updateDynamic("Scte35Pid")(__v.asInstanceOf[js.Any]))
       Smpte2038DataPreference.foreach(__v => __obj.updateDynamic("Smpte2038DataPreference")(__v.asInstanceOf[js.Any]))
       SourceEndBehavior.foreach(__v => __obj.updateDynamic("SourceEndBehavior")(__v.asInstanceOf[js.Any]))
       VideoSelector.foreach(__v => __obj.updateDynamic("VideoSelector")(__v.asInstanceOf[js.Any]))
@@ -6909,6 +7001,31 @@ package object medialive {
     }
   }
 
+  /** Nielsen CBET
+    */
+  @js.native
+  trait NielsenCBET extends js.Object {
+    var CbetCheckDigitString: __stringMin2Max2
+    var CbetStepaside: NielsenWatermarksCbetStepaside
+    var Csid: __stringMin1Max7
+  }
+
+  object NielsenCBET {
+    @inline
+    def apply(
+        CbetCheckDigitString: __stringMin2Max2,
+        CbetStepaside: NielsenWatermarksCbetStepaside,
+        Csid: __stringMin1Max7
+    ): NielsenCBET = {
+      val __obj = js.Dynamic.literal(
+        "CbetCheckDigitString" -> CbetCheckDigitString.asInstanceOf[js.Any],
+        "CbetStepaside" -> CbetStepaside.asInstanceOf[js.Any],
+        "Csid" -> Csid.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NielsenCBET]
+    }
+  }
+
   /** Nielsen Configuration
     */
   @js.native
@@ -6927,6 +7044,52 @@ package object medialive {
       DistributorId.foreach(__v => __obj.updateDynamic("DistributorId")(__v.asInstanceOf[js.Any]))
       NielsenPcmToId3Tagging.foreach(__v => __obj.updateDynamic("NielsenPcmToId3Tagging")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NielsenConfiguration]
+    }
+  }
+
+  /** Nielsen Naes Ii Nw
+    */
+  @js.native
+  trait NielsenNaesIiNw extends js.Object {
+    var CheckDigitString: __stringMin2Max2
+    var Sid: __doubleMin1Max65535
+  }
+
+  object NielsenNaesIiNw {
+    @inline
+    def apply(
+        CheckDigitString: __stringMin2Max2,
+        Sid: __doubleMin1Max65535
+    ): NielsenNaesIiNw = {
+      val __obj = js.Dynamic.literal(
+        "CheckDigitString" -> CheckDigitString.asInstanceOf[js.Any],
+        "Sid" -> Sid.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NielsenNaesIiNw]
+    }
+  }
+
+  /** Nielsen Watermarks Settings
+    */
+  @js.native
+  trait NielsenWatermarksSettings extends js.Object {
+    var NielsenCbetSettings: js.UndefOr[NielsenCBET]
+    var NielsenDistributionType: js.UndefOr[NielsenWatermarksDistributionTypes]
+    var NielsenNaesIiNwSettings: js.UndefOr[NielsenNaesIiNw]
+  }
+
+  object NielsenWatermarksSettings {
+    @inline
+    def apply(
+        NielsenCbetSettings: js.UndefOr[NielsenCBET] = js.undefined,
+        NielsenDistributionType: js.UndefOr[NielsenWatermarksDistributionTypes] = js.undefined,
+        NielsenNaesIiNwSettings: js.UndefOr[NielsenNaesIiNw] = js.undefined
+    ): NielsenWatermarksSettings = {
+      val __obj = js.Dynamic.literal()
+      NielsenCbetSettings.foreach(__v => __obj.updateDynamic("NielsenCbetSettings")(__v.asInstanceOf[js.Any]))
+      NielsenDistributionType.foreach(__v => __obj.updateDynamic("NielsenDistributionType")(__v.asInstanceOf[js.Any]))
+      NielsenNaesIiNwSettings.foreach(__v => __obj.updateDynamic("NielsenNaesIiNwSettings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NielsenWatermarksSettings]
     }
   }
 
@@ -7753,15 +7916,18 @@ package object medialive {
     */
   @js.native
   trait Scte27SourceSettings extends js.Object {
+    var OcrLanguage: js.UndefOr[Scte27OcrLanguage]
     var Pid: js.UndefOr[__integerMin1]
   }
 
   object Scte27SourceSettings {
     @inline
     def apply(
+        OcrLanguage: js.UndefOr[Scte27OcrLanguage] = js.undefined,
         Pid: js.UndefOr[__integerMin1] = js.undefined
     ): Scte27SourceSettings = {
       val __obj = js.Dynamic.literal()
+      OcrLanguage.foreach(__v => __obj.updateDynamic("OcrLanguage")(__v.asInstanceOf[js.Any]))
       Pid.foreach(__v => __obj.updateDynamic("Pid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Scte27SourceSettings]
     }
@@ -9378,12 +9544,17 @@ package object medialive {
   /** Webvtt Destination Settings
     */
   @js.native
-  trait WebvttDestinationSettings extends js.Object
+  trait WebvttDestinationSettings extends js.Object {
+    var StyleControl: js.UndefOr[WebvttDestinationStyleControl]
+  }
 
   object WebvttDestinationSettings {
     @inline
-    def apply(): WebvttDestinationSettings = {
+    def apply(
+        StyleControl: js.UndefOr[WebvttDestinationStyleControl] = js.undefined
+    ): WebvttDestinationSettings = {
       val __obj = js.Dynamic.literal()
+      StyleControl.foreach(__v => __obj.updateDynamic("StyleControl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WebvttDestinationSettings]
     }
   }

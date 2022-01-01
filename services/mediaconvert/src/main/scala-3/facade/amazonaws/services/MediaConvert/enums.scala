@@ -261,7 +261,7 @@ object AudioChannelTag {
   inline def values: js.Array[AudioChannelTag] = js.Array(L, R, C, LFE, LS, RS, LC, RC, CS, LSD, RSD, TCS, VHL, VHC, VHR)
 }
 
-/** Type of Audio codec.
+/** Choose the audio codec for this output. Note that the option Dolby Digital passthrough (PASSTHROUGH) applies only to Dolby Digital and Dolby Digital Plus audio inputs. Make sure that you choose a codec that's supported with your output container: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#reference-codecs-containers-output-audio For audio-only outputs, make sure that both your input audio codec and your output audio codec are supported for audio-only workflows. For more information, see: https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers-input.html#reference-codecs-containers-input-audio-only and https://docs.aws.amazon.com/mediaconvert/latest/ug/reference-codecs-containers.html#audio-only-output
   */
 type AudioCodec = "AAC" | "MP2" | "MP3" | "WAV" | "AIFF" | "AC3" | "EAC3" | "EAC3_ATMOS" | "VORBIS" | "OPUS" | "PASSTHROUGH"
 object AudioCodec {
@@ -344,13 +344,14 @@ object AudioNormalizationPeakCalculation {
 
 /** Specifies the type of the audio selector.
   */
-type AudioSelectorType = "PID" | "TRACK" | "LANGUAGE_CODE"
+type AudioSelectorType = "PID" | "TRACK" | "LANGUAGE_CODE" | "HLS_RENDITION_GROUP"
 object AudioSelectorType {
   inline val PID: "PID" = "PID"
   inline val TRACK: "TRACK" = "TRACK"
   inline val LANGUAGE_CODE: "LANGUAGE_CODE" = "LANGUAGE_CODE"
+  inline val HLS_RENDITION_GROUP: "HLS_RENDITION_GROUP" = "HLS_RENDITION_GROUP"
 
-  inline def values: js.Array[AudioSelectorType] = js.Array(PID, TRACK, LANGUAGE_CODE)
+  inline def values: js.Array[AudioSelectorType] = js.Array(PID, TRACK, LANGUAGE_CODE, HLS_RENDITION_GROUP)
 }
 
 /** When set to FOLLOW_INPUT, if the input contains an ISO 639 audio_type, then that value is passed through to the output. If the input contains no ISO 639 audio_type, the value in Audio Type is included in the output. Otherwise the value in Audio Type is included in the output. Note that this field and audioType are both ignored if audioDescriptionBroadcasterMix is set to BROADCASTER_MIXED_AD.
@@ -516,30 +517,65 @@ object BillingTagsSource {
   inline def values: js.Array[BillingTagsSource] = js.Array(QUEUE, PRESET, JOB_TEMPLATE, JOB)
 }
 
-/** If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+/** Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
   */
-type BurninSubtitleAlignment = "CENTERED" | "LEFT"
+type BurnInSubtitleStylePassthrough = "ENABLED" | "DISABLED"
+object BurnInSubtitleStylePassthrough {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[BurnInSubtitleStylePassthrough] = js.Array(ENABLED, DISABLED)
+}
+
+/** Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates.
+  */
+type BurninSubtitleAlignment = "CENTERED" | "LEFT" | "AUTO"
 object BurninSubtitleAlignment {
   inline val CENTERED: "CENTERED" = "CENTERED"
   inline val LEFT: "LEFT" = "LEFT"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[BurninSubtitleAlignment] = js.Array(CENTERED, LEFT)
+  inline def values: js.Array[BurninSubtitleAlignment] = js.Array(CENTERED, LEFT, AUTO)
 }
 
-/** Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+/** Ignore this setting unless Style passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
   */
-type BurninSubtitleBackgroundColor = "NONE" | "BLACK" | "WHITE"
+type BurninSubtitleApplyFontColor = "WHITE_TEXT_ONLY" | "ALL_TEXT"
+object BurninSubtitleApplyFontColor {
+  inline val WHITE_TEXT_ONLY: "WHITE_TEXT_ONLY" = "WHITE_TEXT_ONLY"
+  inline val ALL_TEXT: "ALL_TEXT" = "ALL_TEXT"
+
+  inline def values: js.Array[BurninSubtitleApplyFontColor] = js.Array(WHITE_TEXT_ONLY, ALL_TEXT)
+}
+
+/** Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
+  */
+type BurninSubtitleBackgroundColor = "NONE" | "BLACK" | "WHITE" | "AUTO"
 object BurninSubtitleBackgroundColor {
   inline val NONE: "NONE" = "NONE"
   inline val BLACK: "BLACK" = "BLACK"
   inline val WHITE: "WHITE" = "WHITE"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[BurninSubtitleBackgroundColor] = js.Array(NONE, BLACK, WHITE)
+  inline def values: js.Array[BurninSubtitleBackgroundColor] = js.Array(NONE, BLACK, WHITE, AUTO)
 }
 
-/** Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+/** Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
   */
-type BurninSubtitleFontColor = "WHITE" | "BLACK" | "YELLOW" | "RED" | "GREEN" | "BLUE"
+type BurninSubtitleFallbackFont = "BEST_MATCH" | "MONOSPACED_SANSSERIF" | "MONOSPACED_SERIF" | "PROPORTIONAL_SANSSERIF" | "PROPORTIONAL_SERIF"
+object BurninSubtitleFallbackFont {
+  inline val BEST_MATCH: "BEST_MATCH" = "BEST_MATCH"
+  inline val MONOSPACED_SANSSERIF: "MONOSPACED_SANSSERIF" = "MONOSPACED_SANSSERIF"
+  inline val MONOSPACED_SERIF: "MONOSPACED_SERIF" = "MONOSPACED_SERIF"
+  inline val PROPORTIONAL_SANSSERIF: "PROPORTIONAL_SANSSERIF" = "PROPORTIONAL_SANSSERIF"
+  inline val PROPORTIONAL_SERIF: "PROPORTIONAL_SERIF" = "PROPORTIONAL_SERIF"
+
+  inline def values: js.Array[BurninSubtitleFallbackFont] = js.Array(BEST_MATCH, MONOSPACED_SANSSERIF, MONOSPACED_SERIF, PROPORTIONAL_SANSSERIF, PROPORTIONAL_SERIF)
+}
+
+/** Specify the color of the burned-in captions text. Leave Font color (FontColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present.
+  */
+type BurninSubtitleFontColor = "WHITE" | "BLACK" | "YELLOW" | "RED" | "GREEN" | "BLUE" | "HEX" | "AUTO"
 object BurninSubtitleFontColor {
   inline val WHITE: "WHITE" = "WHITE"
   inline val BLACK: "BLACK" = "BLACK"
@@ -547,13 +583,15 @@ object BurninSubtitleFontColor {
   inline val RED: "RED" = "RED"
   inline val GREEN: "GREEN" = "GREEN"
   inline val BLUE: "BLUE" = "BLUE"
+  inline val HEX: "HEX" = "HEX"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[BurninSubtitleFontColor] = js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE)
+  inline def values: js.Array[BurninSubtitleFontColor] = js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE, HEX, AUTO)
 }
 
-/** Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+/** Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font outline color data from your input captions, if present.
   */
-type BurninSubtitleOutlineColor = "BLACK" | "WHITE" | "YELLOW" | "RED" | "GREEN" | "BLUE"
+type BurninSubtitleOutlineColor = "BLACK" | "WHITE" | "YELLOW" | "RED" | "GREEN" | "BLUE" | "AUTO"
 object BurninSubtitleOutlineColor {
   inline val BLACK: "BLACK" = "BLACK"
   inline val WHITE: "WHITE" = "WHITE"
@@ -561,32 +599,35 @@ object BurninSubtitleOutlineColor {
   inline val RED: "RED" = "RED"
   inline val GREEN: "GREEN" = "GREEN"
   inline val BLUE: "BLUE" = "BLUE"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[BurninSubtitleOutlineColor] = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
+  inline def values: js.Array[BurninSubtitleOutlineColor] = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE, AUTO)
 }
 
-/** Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+/** Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present.
   */
-type BurninSubtitleShadowColor = "NONE" | "BLACK" | "WHITE"
+type BurninSubtitleShadowColor = "NONE" | "BLACK" | "WHITE" | "AUTO"
 object BurninSubtitleShadowColor {
   inline val NONE: "NONE" = "NONE"
   inline val BLACK: "BLACK" = "BLACK"
   inline val WHITE: "WHITE" = "WHITE"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[BurninSubtitleShadowColor] = js.Array(NONE, BLACK, WHITE)
+  inline def values: js.Array[BurninSubtitleShadowColor] = js.Array(NONE, BLACK, WHITE, AUTO)
 }
 
-/** Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption.
+/** Specify whether the text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions.
   */
-type BurninSubtitleTeletextSpacing = "FIXED_GRID" | "PROPORTIONAL"
+type BurninSubtitleTeletextSpacing = "FIXED_GRID" | "PROPORTIONAL" | "AUTO"
 object BurninSubtitleTeletextSpacing {
   inline val FIXED_GRID: "FIXED_GRID" = "FIXED_GRID"
   inline val PROPORTIONAL: "PROPORTIONAL" = "PROPORTIONAL"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[BurninSubtitleTeletextSpacing] = js.Array(FIXED_GRID, PROPORTIONAL)
+  inline def values: js.Array[BurninSubtitleTeletextSpacing] = js.Array(FIXED_GRID, PROPORTIONAL, AUTO)
 }
 
-/** Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Other options are embedded with SCTE-20, burn-in, DVB-sub, IMSC, SCC, SRT, teletext, TTML, and web-VTT. If you are using SCTE-20, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED) to create an output that complies with the SCTE-43 spec. To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
+/** Specify the format for this set of captions on this output. The default format is embedded without SCTE-20. Note that your choice of video output container constrains your choice of output captions format. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/captions-support-tables.html. If you are using SCTE-20 and you want to create an output that complies with the SCTE-43 spec, choose SCTE-20 plus embedded (SCTE20_PLUS_EMBEDDED). To create a non-compliant output where the embedded captions come first, choose Embedded plus SCTE-20 (EMBEDDED_PLUS_SCTE20).
   */
 type CaptionDestinationType = "BURN_IN" | "DVB_SUB" | "EMBEDDED" | "EMBEDDED_PLUS_SCTE20" | "IMSC" | "SCTE20_PLUS_EMBEDDED" | "SCC" | "SRT" | "SMI" | "TELETEXT" | "TTML" | "WEBVTT"
 object CaptionDestinationType {
@@ -658,6 +699,18 @@ object CmafEncryptionType {
   inline def values: js.Array[CmafEncryptionType] = js.Array(SAMPLE_AES, AES_CTR)
 }
 
+/** Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest (WriteHlsManifest), MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+  */
+type CmafImageBasedTrickPlay = "NONE" | "THUMBNAIL" | "THUMBNAIL_AND_FULLFRAME" | "ADVANCED"
+object CmafImageBasedTrickPlay {
+  inline val NONE: "NONE" = "NONE"
+  inline val THUMBNAIL: "THUMBNAIL" = "THUMBNAIL"
+  inline val THUMBNAIL_AND_FULLFRAME: "THUMBNAIL_AND_FULLFRAME" = "THUMBNAIL_AND_FULLFRAME"
+  inline val ADVANCED: "ADVANCED" = "ADVANCED"
+
+  inline def values: js.Array[CmafImageBasedTrickPlay] = js.Array(NONE, THUMBNAIL, THUMBNAIL_AND_FULLFRAME, ADVANCED)
+}
+
 /** When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization vector in the HLS and DASH manifests.
   */
 type CmafInitializationVectorInManifest = "INCLUDE" | "EXCLUDE"
@@ -666,6 +719,16 @@ object CmafInitializationVectorInManifest {
   inline val EXCLUDE: "EXCLUDE" = "EXCLUDE"
 
   inline def values: js.Array[CmafInitializationVectorInManifest] = js.Array(INCLUDE, EXCLUDE)
+}
+
+/** The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+  */
+type CmafIntervalCadence = "FOLLOW_IFRAME" | "FOLLOW_CUSTOM"
+object CmafIntervalCadence {
+  inline val FOLLOW_IFRAME: "FOLLOW_IFRAME" = "FOLLOW_IFRAME"
+  inline val FOLLOW_CUSTOM: "FOLLOW_CUSTOM" = "FOLLOW_CUSTOM"
+
+  inline def values: js.Array[CmafIntervalCadence] = js.Array(FOLLOW_IFRAME, FOLLOW_CUSTOM)
 }
 
 /** Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
@@ -728,6 +791,16 @@ object CmafSegmentControl {
   inline def values: js.Array[CmafSegmentControl] = js.Array(SINGLE_FILE, SEGMENTED_FILES)
 }
 
+/** Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+  */
+type CmafSegmentLengthControl = "EXACT" | "GOP_MULTIPLE"
+object CmafSegmentLengthControl {
+  inline val EXACT: "EXACT" = "EXACT"
+  inline val GOP_MULTIPLE: "GOP_MULTIPLE" = "GOP_MULTIPLE"
+
+  inline def values: js.Array[CmafSegmentLengthControl] = js.Array(EXACT, GOP_MULTIPLE)
+}
+
 /** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
   */
 type CmafStreamInfResolution = "INCLUDE" | "EXCLUDE"
@@ -736,6 +809,16 @@ object CmafStreamInfResolution {
   inline val EXCLUDE: "EXCLUDE" = "EXCLUDE"
 
   inline def values: js.Array[CmafStreamInfResolution] = js.Array(INCLUDE, EXCLUDE)
+}
+
+/** When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+  */
+type CmafTargetDurationCompatibilityMode = "LEGACY" | "SPEC_COMPLIANT"
+object CmafTargetDurationCompatibilityMode {
+  inline val LEGACY: "LEGACY" = "LEGACY"
+  inline val SPEC_COMPLIANT: "SPEC_COMPLIANT" = "SPEC_COMPLIANT"
+
+  inline def values: js.Array[CmafTargetDurationCompatibilityMode] = js.Array(LEGACY, SPEC_COMPLIANT)
 }
 
 /** When set to ENABLED, a DASH MPD manifest will be generated for this output.
@@ -904,6 +987,16 @@ object ContainerType {
   inline def values: js.Array[ContainerType] = js.Array(F4V, ISMV, M2TS, M3U8, CMFC, MOV, MP4, MPD, MXF, WEBM, RAW)
 }
 
+/** The action to take on copy and redistribution control XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+  */
+type CopyProtectionAction = "PASSTHROUGH" | "STRIP"
+object CopyProtectionAction {
+  inline val PASSTHROUGH: "PASSTHROUGH" = "PASSTHROUGH"
+  inline val STRIP: "STRIP" = "STRIP"
+
+  inline def values: js.Array[CopyProtectionAction] = js.Array(PASSTHROUGH, STRIP)
+}
+
 /** Use this setting only when your audio codec is a Dolby one (AC3, EAC3, or Atmos) and your downstream workflow requires that your DASH manifest use the Dolby channel configuration tag, rather than the MPEG one. For example, you might need to use this to make dynamic ad insertion work. Specify which audio channel configuration scheme ID URI MediaConvert writes in your DASH manifest. Keep the default value, MPEG channel configuration (MPEG_CHANNEL_CONFIGURATION), to have MediaConvert write this: urn:mpeg:mpegB:cicp:ChannelConfiguration. Choose Dolby channel configuration (DOLBY_CHANNEL_CONFIGURATION) to have MediaConvert write this instead: tag:dolby.com,2014:dash:audio_channel_configuration:2011.
   */
 type DashIsoGroupAudioChannelConfigSchemeIdUri = "MPEG_CHANNEL_CONFIGURATION" | "DOLBY_CHANNEL_CONFIGURATION"
@@ -922,6 +1015,28 @@ object DashIsoHbbtvCompliance {
   inline val NONE: "NONE" = "NONE"
 
   inline def values: js.Array[DashIsoHbbtvCompliance] = js.Array(HBBTV_1_5, NONE)
+}
+
+/** Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+  */
+type DashIsoImageBasedTrickPlay = "NONE" | "THUMBNAIL" | "THUMBNAIL_AND_FULLFRAME" | "ADVANCED"
+object DashIsoImageBasedTrickPlay {
+  inline val NONE: "NONE" = "NONE"
+  inline val THUMBNAIL: "THUMBNAIL" = "THUMBNAIL"
+  inline val THUMBNAIL_AND_FULLFRAME: "THUMBNAIL_AND_FULLFRAME" = "THUMBNAIL_AND_FULLFRAME"
+  inline val ADVANCED: "ADVANCED" = "ADVANCED"
+
+  inline def values: js.Array[DashIsoImageBasedTrickPlay] = js.Array(NONE, THUMBNAIL, THUMBNAIL_AND_FULLFRAME, ADVANCED)
+}
+
+/** The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+  */
+type DashIsoIntervalCadence = "FOLLOW_IFRAME" | "FOLLOW_CUSTOM"
+object DashIsoIntervalCadence {
+  inline val FOLLOW_IFRAME: "FOLLOW_IFRAME" = "FOLLOW_IFRAME"
+  inline val FOLLOW_CUSTOM: "FOLLOW_CUSTOM" = "FOLLOW_CUSTOM"
+
+  inline def values: js.Array[DashIsoIntervalCadence] = js.Array(FOLLOW_IFRAME, FOLLOW_CUSTOM)
 }
 
 /** Specify whether your DASH profile is on-demand or main. When you choose Main profile (MAIN_PROFILE), the service signals urn:mpeg:dash:profile:isoff-main:2011 in your .mpd DASH manifest. When you choose On-demand (ON_DEMAND_PROFILE), the service signals urn:mpeg:dash:profile:isoff-on-demand:2011 in your .mpd. When you choose On-demand, you must also set the output group setting Segment control (SegmentControl) to Single file (SINGLE_FILE).
@@ -962,6 +1077,16 @@ object DashIsoSegmentControl {
   inline val SEGMENTED_FILES: "SEGMENTED_FILES" = "SEGMENTED_FILES"
 
   inline def values: js.Array[DashIsoSegmentControl] = js.Array(SINGLE_FILE, SEGMENTED_FILES)
+}
+
+/** Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+  */
+type DashIsoSegmentLengthControl = "EXACT" | "GOP_MULTIPLE"
+object DashIsoSegmentLengthControl {
+  inline val EXACT: "EXACT" = "EXACT"
+  inline val GOP_MULTIPLE: "GOP_MULTIPLE" = "GOP_MULTIPLE"
+
+  inline def values: js.Array[DashIsoSegmentLengthControl] = js.Array(EXACT, GOP_MULTIPLE)
 }
 
 /** When you enable Precise segment duration in manifests (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment durations. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When this feature isn't enabled, the segment durations in your DASH manifest are approximate. The segment duration information appears in the duration attribute of the SegmentTemplate element.
@@ -1058,30 +1183,55 @@ object DropFrameTimecode {
   inline def values: js.Array[DropFrameTimecode] = js.Array(DISABLED, ENABLED)
 }
 
-/** If no explicit x_position or y_position is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+/** Specify the font that you want the service to use for your burn in captions when your input captions specify a font that MediaConvert doesn't support. When you set Fallback font (FallbackFont) to best match (BEST_MATCH), or leave blank, MediaConvert uses a supported font that most closely matches the font that your input captions specify. When there are multiple unsupported fonts in your input captions, MediaConvert matches each font with the supported font that matches best. When you explicitly choose a replacement font, MediaConvert uses that font to replace all unsupported fonts from your input.
   */
-type DvbSubtitleAlignment = "CENTERED" | "LEFT"
+type DvbSubSubtitleFallbackFont = "BEST_MATCH" | "MONOSPACED_SANSSERIF" | "MONOSPACED_SERIF" | "PROPORTIONAL_SANSSERIF" | "PROPORTIONAL_SERIF"
+object DvbSubSubtitleFallbackFont {
+  inline val BEST_MATCH: "BEST_MATCH" = "BEST_MATCH"
+  inline val MONOSPACED_SANSSERIF: "MONOSPACED_SANSSERIF" = "MONOSPACED_SANSSERIF"
+  inline val MONOSPACED_SERIF: "MONOSPACED_SERIF" = "MONOSPACED_SERIF"
+  inline val PROPORTIONAL_SANSSERIF: "PROPORTIONAL_SANSSERIF" = "PROPORTIONAL_SANSSERIF"
+  inline val PROPORTIONAL_SERIF: "PROPORTIONAL_SERIF" = "PROPORTIONAL_SERIF"
+
+  inline def values: js.Array[DvbSubSubtitleFallbackFont] = js.Array(BEST_MATCH, MONOSPACED_SANSSERIF, MONOSPACED_SERIF, PROPORTIONAL_SANSSERIF, PROPORTIONAL_SERIF)
+}
+
+/** Specify the alignment of your captions. If no explicit x_position is provided, setting alignment to centered will placethe captions at the bottom center of the output. Similarly, setting a left alignment willalign captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Within your job settings, all of your DVB-Sub settings must be identical.
+  */
+type DvbSubtitleAlignment = "CENTERED" | "LEFT" | "AUTO"
 object DvbSubtitleAlignment {
   inline val CENTERED: "CENTERED" = "CENTERED"
   inline val LEFT: "LEFT" = "LEFT"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[DvbSubtitleAlignment] = js.Array(CENTERED, LEFT)
+  inline def values: js.Array[DvbSubtitleAlignment] = js.Array(CENTERED, LEFT, AUTO)
 }
 
-/** Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.
+/** Ignore this setting unless Style Passthrough (StylePassthrough) is set to Enabled and Font color (FontColor) set to Black, Yellow, Red, Green, Blue, or Hex. Use Apply font color (ApplyFontColor) for additional font color controls. When you choose White text only (WHITE_TEXT_ONLY), or leave blank, your font color setting only applies to white text in your input captions. For example, if your font color setting is Yellow, and your input captions have red and white text, your output captions will have red and yellow text. When you choose ALL_TEXT, your font color setting applies to all of your output captions text.
   */
-type DvbSubtitleBackgroundColor = "NONE" | "BLACK" | "WHITE"
+type DvbSubtitleApplyFontColor = "WHITE_TEXT_ONLY" | "ALL_TEXT"
+object DvbSubtitleApplyFontColor {
+  inline val WHITE_TEXT_ONLY: "WHITE_TEXT_ONLY" = "WHITE_TEXT_ONLY"
+  inline val ALL_TEXT: "ALL_TEXT" = "ALL_TEXT"
+
+  inline def values: js.Array[DvbSubtitleApplyFontColor] = js.Array(WHITE_TEXT_ONLY, ALL_TEXT)
+}
+
+/** Specify the color of the rectangle behind the captions. Leave background color (BackgroundColor) blank and set Style passthrough (StylePassthrough) to enabled to use the background color data from your input captions, if present.
+  */
+type DvbSubtitleBackgroundColor = "NONE" | "BLACK" | "WHITE" | "AUTO"
 object DvbSubtitleBackgroundColor {
   inline val NONE: "NONE" = "NONE"
   inline val BLACK: "BLACK" = "BLACK"
   inline val WHITE: "WHITE" = "WHITE"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[DvbSubtitleBackgroundColor] = js.Array(NONE, BLACK, WHITE)
+  inline def values: js.Array[DvbSubtitleBackgroundColor] = js.Array(NONE, BLACK, WHITE, AUTO)
 }
 
-/** Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+/** Specify the color of the captions text. Leave Font color (FontColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
   */
-type DvbSubtitleFontColor = "WHITE" | "BLACK" | "YELLOW" | "RED" | "GREEN" | "BLUE"
+type DvbSubtitleFontColor = "WHITE" | "BLACK" | "YELLOW" | "RED" | "GREEN" | "BLUE" | "HEX" | "AUTO"
 object DvbSubtitleFontColor {
   inline val WHITE: "WHITE" = "WHITE"
   inline val BLACK: "BLACK" = "BLACK"
@@ -1089,13 +1239,15 @@ object DvbSubtitleFontColor {
   inline val RED: "RED" = "RED"
   inline val GREEN: "GREEN" = "GREEN"
   inline val BLUE: "BLUE" = "BLUE"
+  inline val HEX: "HEX" = "HEX"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[DvbSubtitleFontColor] = js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE)
+  inline def values: js.Array[DvbSubtitleFontColor] = js.Array(WHITE, BLACK, YELLOW, RED, GREEN, BLUE, HEX, AUTO)
 }
 
-/** Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+/** Specify font outline color. Leave Outline color (OutlineColor) blank and set Style passthrough (StylePassthrough) to enabled to use the font outline color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
   */
-type DvbSubtitleOutlineColor = "BLACK" | "WHITE" | "YELLOW" | "RED" | "GREEN" | "BLUE"
+type DvbSubtitleOutlineColor = "BLACK" | "WHITE" | "YELLOW" | "RED" | "GREEN" | "BLUE" | "AUTO"
 object DvbSubtitleOutlineColor {
   inline val BLACK: "BLACK" = "BLACK"
   inline val WHITE: "WHITE" = "WHITE"
@@ -1103,29 +1255,42 @@ object DvbSubtitleOutlineColor {
   inline val RED: "RED" = "RED"
   inline val GREEN: "GREEN" = "GREEN"
   inline val BLUE: "BLUE" = "BLUE"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[DvbSubtitleOutlineColor] = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE)
+  inline def values: js.Array[DvbSubtitleOutlineColor] = js.Array(BLACK, WHITE, YELLOW, RED, GREEN, BLUE, AUTO)
 }
 
-/** Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.
+/** Specify the color of the shadow cast by the captions. Leave Shadow color (ShadowColor) blank and set Style passthrough (StylePassthrough) to enabled to use the shadow color data from your input captions, if present. Within your job settings, all of your DVB-Sub settings must be identical.
   */
-type DvbSubtitleShadowColor = "NONE" | "BLACK" | "WHITE"
+type DvbSubtitleShadowColor = "NONE" | "BLACK" | "WHITE" | "AUTO"
 object DvbSubtitleShadowColor {
   inline val NONE: "NONE" = "NONE"
   inline val BLACK: "BLACK" = "BLACK"
   inline val WHITE: "WHITE" = "WHITE"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[DvbSubtitleShadowColor] = js.Array(NONE, BLACK, WHITE)
+  inline def values: js.Array[DvbSubtitleShadowColor] = js.Array(NONE, BLACK, WHITE, AUTO)
 }
 
-/** Only applies to jobs with input captions in Teletext or STL formats. Specify whether the spacing between letters in your captions is set by the captions grid or varies depending on letter width. Choose fixed grid to conform to the spacing specified in the captions file more accurately. Choose proportional to make the text easier to read if the captions are closed caption.
+/** Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use default settings: white text with black outlining, bottom-center positioning, and automatic sizing. Whether you set Style passthrough to enabled or not, you can also choose to manually override any of the individual style and position settings.
   */
-type DvbSubtitleTeletextSpacing = "FIXED_GRID" | "PROPORTIONAL"
+type DvbSubtitleStylePassthrough = "ENABLED" | "DISABLED"
+object DvbSubtitleStylePassthrough {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[DvbSubtitleStylePassthrough] = js.Array(ENABLED, DISABLED)
+}
+
+/** Specify whether the Text spacing (TeletextSpacing) in your captions is set by the captions grid, or varies depending on letter width. Choose fixed grid (FIXED_GRID) to conform to the spacing specified in the captions file more accurately. Choose proportional (PROPORTIONAL) to make the text easier to read for closed captions. Within your job settings, all of your DVB-Sub settings must be identical.
+  */
+type DvbSubtitleTeletextSpacing = "FIXED_GRID" | "PROPORTIONAL" | "AUTO"
 object DvbSubtitleTeletextSpacing {
   inline val FIXED_GRID: "FIXED_GRID" = "FIXED_GRID"
   inline val PROPORTIONAL: "PROPORTIONAL" = "PROPORTIONAL"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[DvbSubtitleTeletextSpacing] = js.Array(FIXED_GRID, PROPORTIONAL)
+  inline def values: js.Array[DvbSubtitleTeletextSpacing] = js.Array(FIXED_GRID, PROPORTIONAL, AUTO)
 }
 
 /** Specify whether your DVB subtitles are standard or for hearing impaired. Choose hearing impaired if your subtitles include audio descriptions and dialogue. Choose standard if your subtitles include only dialogue.
@@ -1138,6 +1303,18 @@ object DvbSubtitlingType {
   inline def values: js.Array[DvbSubtitlingType] = js.Array(HEARING_IMPAIRED, STANDARD)
 }
 
+/** Specify how MediaConvert handles the display definition segment (DDS). Keep the default, None (NONE), to exclude the DDS from this set of captions. Choose No display window (NO_DISPLAY_WINDOW) to have MediaConvert include the DDS but not include display window data. In this case, MediaConvert writes that information to the page composition segment (PCS) instead. Choose Specify (SPECIFIED) to have MediaConvert set up the display window based on the values that you specify in related job settings. For video resolutions that are 576 pixels or smaller in height, MediaConvert doesn't include the DDS, regardless of the value you choose for DDS handling (ddsHandling). In this case, it doesn't write the display window data to the PCS either. Related settings: Use the settings DDS x-coordinate (ddsXCoordinate) and DDS y-coordinate (ddsYCoordinate) to specify the offset between the top left corner of the display window and the top left corner of the video frame. All burn-in and DVB-Sub font
+  * settings must match.
+  */
+type DvbddsHandling = "NONE" | "SPECIFIED" | "NO_DISPLAY_WINDOW"
+object DvbddsHandling {
+  inline val NONE: "NONE" = "NONE"
+  inline val SPECIFIED: "SPECIFIED" = "SPECIFIED"
+  inline val NO_DISPLAY_WINDOW: "NO_DISPLAY_WINDOW" = "NO_DISPLAY_WINDOW"
+
+  inline def values: js.Array[DvbddsHandling] = js.Array(NONE, SPECIFIED, NO_DISPLAY_WINDOW)
+}
+
 /** Specify the bitstream mode for the E-AC-3 stream that the encoder emits. For more information about the EAC3 bitstream mode, see ATSC A/52-2012 (Annex E).
   */
 type Eac3AtmosBitstreamMode = "COMPLETE_MAIN"
@@ -1147,13 +1324,16 @@ object Eac3AtmosBitstreamMode {
   inline def values: js.Array[Eac3AtmosBitstreamMode] = js.Array(COMPLETE_MAIN)
 }
 
-/** The coding mode for Dolby Digital Plus JOC (Atmos) is always 9.1.6 (CODING_MODE_9_1_6).
+/** The coding mode for Dolby Digital Plus JOC (Atmos).
   */
-type Eac3AtmosCodingMode = "CODING_MODE_9_1_6"
+type Eac3AtmosCodingMode = "CODING_MODE_AUTO" | "CODING_MODE_5_1_4" | "CODING_MODE_7_1_4" | "CODING_MODE_9_1_6"
 object Eac3AtmosCodingMode {
+  inline val CODING_MODE_AUTO: "CODING_MODE_AUTO" = "CODING_MODE_AUTO"
+  inline val CODING_MODE_5_1_4: "CODING_MODE_5_1_4" = "CODING_MODE_5_1_4"
+  inline val CODING_MODE_7_1_4: "CODING_MODE_7_1_4" = "CODING_MODE_7_1_4"
   inline val CODING_MODE_9_1_6: "CODING_MODE_9_1_6" = "CODING_MODE_9_1_6"
 
-  inline def values: js.Array[Eac3AtmosCodingMode] = js.Array(CODING_MODE_9_1_6)
+  inline def values: js.Array[Eac3AtmosCodingMode] = js.Array(CODING_MODE_AUTO, CODING_MODE_5_1_4, CODING_MODE_7_1_4, CODING_MODE_9_1_6)
 }
 
 /** Enable Dolby Dialogue Intelligence to adjust loudness based on dialogue analysis.
@@ -1166,7 +1346,17 @@ object Eac3AtmosDialogueIntelligence {
   inline def values: js.Array[Eac3AtmosDialogueIntelligence] = js.Array(ENABLED, DISABLED)
 }
 
-/** Specify the absolute peak level for a signal with dynamic range compression.
+/** Specify whether MediaConvert should use any downmix metadata from your input file. Keep the default value, Custom (SPECIFIED) to provide downmix values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your downmix values: Left only/Right only surround (LoRoSurroundMixLevel), Left total/Right total surround (LtRtSurroundMixLevel), Left total/Right total center (LtRtCenterMixLevel), Left only/Right only center (LoRoCenterMixLevel), and Stereo downmix (StereoDownmix). When you keep Custom (SPECIFIED) for Downmix control (DownmixControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
+  */
+type Eac3AtmosDownmixControl = "SPECIFIED" | "INITIALIZE_FROM_SOURCE"
+object Eac3AtmosDownmixControl {
+  inline val SPECIFIED: "SPECIFIED" = "SPECIFIED"
+  inline val INITIALIZE_FROM_SOURCE: "INITIALIZE_FROM_SOURCE" = "INITIALIZE_FROM_SOURCE"
+
+  inline def values: js.Array[Eac3AtmosDownmixControl] = js.Array(SPECIFIED, INITIALIZE_FROM_SOURCE)
+}
+
+/** Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the line operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression line (DynamicRangeCompressionLine). For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
   */
 type Eac3AtmosDynamicRangeCompressionLine = "NONE" | "FILM_STANDARD" | "FILM_LIGHT" | "MUSIC_STANDARD" | "MUSIC_LIGHT" | "SPEECH"
 object Eac3AtmosDynamicRangeCompressionLine {
@@ -1180,7 +1370,7 @@ object Eac3AtmosDynamicRangeCompressionLine {
   inline def values: js.Array[Eac3AtmosDynamicRangeCompressionLine] = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
 }
 
-/** Specify how the service limits the audio dynamic range when compressing the audio.
+/** Choose the Dolby dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in the Dolby stream for the RF operating mode. Default value: Film light (ATMOS_STORAGE_DDP_COMPR_FILM_LIGHT) Related setting: To have MediaConvert use the value you specify here, keep the default value, Custom (SPECIFIED) for the setting Dynamic range control (DynamicRangeControl). Otherwise, MediaConvert ignores Dynamic range compression RF (DynamicRangeCompressionRf). For information about the Dolby DRC operating modes and profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
   */
 type Eac3AtmosDynamicRangeCompressionRf = "NONE" | "FILM_STANDARD" | "FILM_LIGHT" | "MUSIC_STANDARD" | "MUSIC_LIGHT" | "SPEECH"
 object Eac3AtmosDynamicRangeCompressionRf {
@@ -1192,6 +1382,16 @@ object Eac3AtmosDynamicRangeCompressionRf {
   inline val SPEECH: "SPEECH" = "SPEECH"
 
   inline def values: js.Array[Eac3AtmosDynamicRangeCompressionRf] = js.Array(NONE, FILM_STANDARD, FILM_LIGHT, MUSIC_STANDARD, MUSIC_LIGHT, SPEECH)
+}
+
+/** Specify whether MediaConvert should use any dynamic range control metadata from your input file. Keep the default value, Custom (SPECIFIED), to provide dynamic range control values in your job settings. Choose Follow source (INITIALIZE_FROM_SOURCE) to use the metadata from your input. Related settings--Use these settings to specify your dynamic range control values: Dynamic range compression line (DynamicRangeCompressionLine) and Dynamic range compression RF (DynamicRangeCompressionRf). When you keep the value Custom (SPECIFIED) for Dynamic range control (DynamicRangeControl) and you don't specify values for the related settings, MediaConvert uses default values for those settings.
+  */
+type Eac3AtmosDynamicRangeControl = "SPECIFIED" | "INITIALIZE_FROM_SOURCE"
+object Eac3AtmosDynamicRangeControl {
+  inline val SPECIFIED: "SPECIFIED" = "SPECIFIED"
+  inline val INITIALIZE_FROM_SOURCE: "INITIALIZE_FROM_SOURCE" = "INITIALIZE_FROM_SOURCE"
+
+  inline def values: js.Array[Eac3AtmosDynamicRangeControl] = js.Array(SPECIFIED, INITIALIZE_FROM_SOURCE)
 }
 
 /** Choose how the service meters the loudness of your audio.
@@ -1207,7 +1407,7 @@ object Eac3AtmosMeteringMode {
   inline def values: js.Array[Eac3AtmosMeteringMode] = js.Array(LEQ_A, ITU_BS_1770_1, ITU_BS_1770_2, ITU_BS_1770_3, ITU_BS_1770_4)
 }
 
-/** Choose how the service does stereo downmixing.
+/** Choose how the service does stereo downmixing. Default value: Not indicated (ATMOS_STORAGE_DDP_DMIXMOD_NOT_INDICATED) Related setting: To have MediaConvert use this value, keep the default value, Custom (SPECIFIED) for the setting Downmix control (DownmixControl). Otherwise, MediaConvert ignores Stereo downmix (StereoDownmix).
   */
 type Eac3AtmosStereoDownmix = "NOT_INDICATED" | "STEREO" | "SURROUND" | "DPL2"
 object Eac3AtmosStereoDownmix {
@@ -1426,6 +1626,16 @@ object FileSourceConvert608To708 {
   inline def values: js.Array[FileSourceConvert608To708] = js.Array(UPCONVERT, DISABLED)
 }
 
+/** When you use the setting Time delta (TimeDelta) to adjust the sync between your sidecar captions and your video, use this setting to specify the units for the delta that you specify. When you don't specify a value for Time delta units (TimeDeltaUnits), MediaConvert uses seconds by default.
+  */
+type FileSourceTimeDeltaUnits = "SECONDS" | "MILLISECONDS"
+object FileSourceTimeDeltaUnits {
+  inline val SECONDS: "SECONDS" = "SECONDS"
+  inline val MILLISECONDS: "MILLISECONDS" = "MILLISECONDS"
+
+  inline def values: js.Array[FileSourceTimeDeltaUnits] = js.Array(SECONDS, MILLISECONDS)
+}
+
 /** Provide the font script, using an ISO 15924 script code, if the LanguageCode is not sufficient for determining the script type. Where LanguageCode or CustomLanguageCode is sufficient, use "AUTOMATIC" or leave unset.
   */
 type FontScript = "AUTOMATIC" | "HANS" | "HANT"
@@ -1529,14 +1739,15 @@ object H264EntropyEncoding {
   inline def values: js.Array[H264EntropyEncoding] = js.Array(CABAC, CAVLC)
 }
 
-/** Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
+/** The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
   */
-type H264FieldEncoding = "PAFF" | "FORCE_FIELD"
+type H264FieldEncoding = "PAFF" | "FORCE_FIELD" | "MBAFF"
 object H264FieldEncoding {
   inline val PAFF: "PAFF" = "PAFF"
   inline val FORCE_FIELD: "FORCE_FIELD" = "FORCE_FIELD"
+  inline val MBAFF: "MBAFF" = "MBAFF"
 
-  inline def values: js.Array[H264FieldEncoding] = js.Array(PAFF, FORCE_FIELD)
+  inline def values: js.Array[H264FieldEncoding] = js.Array(PAFF, FORCE_FIELD, MBAFF)
 }
 
 /** Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
@@ -1580,14 +1791,15 @@ object H264GopBReference {
   inline def values: js.Array[H264GopBReference] = js.Array(DISABLED, ENABLED)
 }
 
-/** Indicates if the GOP Size in H264 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+/** Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
   */
-type H264GopSizeUnits = "FRAMES" | "SECONDS"
+type H264GopSizeUnits = "FRAMES" | "SECONDS" | "AUTO"
 object H264GopSizeUnits {
   inline val FRAMES: "FRAMES" = "FRAMES"
   inline val SECONDS: "SECONDS" = "SECONDS"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[H264GopSizeUnits] = js.Array(FRAMES, SECONDS)
+  inline def values: js.Array[H264GopSizeUnits] = js.Array(FRAMES, SECONDS, AUTO)
 }
 
 /** Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
@@ -1842,14 +2054,15 @@ object H265GopBReference {
   inline def values: js.Array[H265GopBReference] = js.Array(DISABLED, ENABLED)
 }
 
-/** Indicates if the GOP Size in H265 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+/** Specify how the transcoder determines GOP size for this output. We recommend that you have the transcoder automatically choose this value for you based on characteristics of your input video. To enable this automatic behavior, choose Auto (AUTO) and and leave GOP size (GopSize) blank. By default, if you don't specify GOP mode control (GopSizeUnits), MediaConvert will use automatic behavior. If your output group specifies HLS, DASH, or CMAF, set GOP mode control to Auto and leave GOP size blank in each output in your output group. To explicitly specify the GOP length, choose Specified, frames (FRAMES) or Specified, seconds (SECONDS) and then provide the GOP length in the related setting GOP size (GopSize).
   */
-type H265GopSizeUnits = "FRAMES" | "SECONDS"
+type H265GopSizeUnits = "FRAMES" | "SECONDS" | "AUTO"
 object H265GopSizeUnits {
   inline val FRAMES: "FRAMES" = "FRAMES"
   inline val SECONDS: "SECONDS" = "SECONDS"
+  inline val AUTO: "AUTO" = "AUTO"
 
-  inline def values: js.Array[H265GopSizeUnits] = js.Array(FRAMES, SECONDS)
+  inline def values: js.Array[H265GopSizeUnits] = js.Array(FRAMES, SECONDS, AUTO)
 }
 
 /** Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
@@ -2122,6 +2335,18 @@ object HlsIFrameOnlyManifest {
   inline def values: js.Array[HlsIFrameOnlyManifest] = js.Array(INCLUDE, EXCLUDE)
 }
 
+/** Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
+  */
+type HlsImageBasedTrickPlay = "NONE" | "THUMBNAIL" | "THUMBNAIL_AND_FULLFRAME" | "ADVANCED"
+object HlsImageBasedTrickPlay {
+  inline val NONE: "NONE" = "NONE"
+  inline val THUMBNAIL: "THUMBNAIL" = "THUMBNAIL"
+  inline val THUMBNAIL_AND_FULLFRAME: "THUMBNAIL_AND_FULLFRAME" = "THUMBNAIL_AND_FULLFRAME"
+  inline val ADVANCED: "ADVANCED" = "ADVANCED"
+
+  inline def values: js.Array[HlsImageBasedTrickPlay] = js.Array(NONE, THUMBNAIL, THUMBNAIL_AND_FULLFRAME, ADVANCED)
+}
+
 /** The Initialization Vector is a 128-bit number used in conjunction with the key for encrypting blocks. If set to INCLUDE, Initialization Vector is listed in the manifest. Otherwise Initialization Vector is not in the manifest.
   */
 type HlsInitializationVectorInManifest = "INCLUDE" | "EXCLUDE"
@@ -2130,6 +2355,16 @@ object HlsInitializationVectorInManifest {
   inline val EXCLUDE: "EXCLUDE" = "EXCLUDE"
 
   inline def values: js.Array[HlsInitializationVectorInManifest] = js.Array(INCLUDE, EXCLUDE)
+}
+
+/** The cadence MediaConvert follows for generating thumbnails. If set to FOLLOW_IFRAME, MediaConvert generates thumbnails for each IDR frame in the output (matching the GOP cadence). If set to FOLLOW_CUSTOM, MediaConvert generates thumbnails according to the interval you specify in thumbnailInterval.
+  */
+type HlsIntervalCadence = "FOLLOW_IFRAME" | "FOLLOW_CUSTOM"
+object HlsIntervalCadence {
+  inline val FOLLOW_IFRAME: "FOLLOW_IFRAME" = "FOLLOW_IFRAME"
+  inline val FOLLOW_CUSTOM: "FOLLOW_CUSTOM" = "FOLLOW_CUSTOM"
+
+  inline def values: js.Array[HlsIntervalCadence] = js.Array(FOLLOW_IFRAME, FOLLOW_CUSTOM)
 }
 
 /** Specify whether your DRM encryption key is static or from a key provider that follows the SPEKE standard. For more information about SPEKE, see https://docs.aws.amazon.com/speke/latest/documentation/what-is-speke.html.
@@ -2202,6 +2437,16 @@ object HlsSegmentControl {
   inline def values: js.Array[HlsSegmentControl] = js.Array(SINGLE_FILE, SEGMENTED_FILES)
 }
 
+/** Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+  */
+type HlsSegmentLengthControl = "EXACT" | "GOP_MULTIPLE"
+object HlsSegmentLengthControl {
+  inline val EXACT: "EXACT" = "EXACT"
+  inline val GOP_MULTIPLE: "GOP_MULTIPLE" = "GOP_MULTIPLE"
+
+  inline def values: js.Array[HlsSegmentLengthControl] = js.Array(EXACT, GOP_MULTIPLE)
+}
+
 /** Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
   */
 type HlsStreamInfResolution = "INCLUDE" | "EXCLUDE"
@@ -2210,6 +2455,16 @@ object HlsStreamInfResolution {
   inline val EXCLUDE: "EXCLUDE" = "EXCLUDE"
 
   inline def values: js.Array[HlsStreamInfResolution] = js.Array(INCLUDE, EXCLUDE)
+}
+
+/** When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+  */
+type HlsTargetDurationCompatibilityMode = "LEGACY" | "SPEC_COMPLIANT"
+object HlsTargetDurationCompatibilityMode {
+  inline val LEGACY: "LEGACY" = "LEGACY"
+  inline val SPEC_COMPLIANT: "SPEC_COMPLIANT" = "SPEC_COMPLIANT"
+
+  inline def values: js.Array[HlsTargetDurationCompatibilityMode] = js.Array(LEGACY, SPEC_COMPLIANT)
 }
 
 /** Indicates ID3 frame that has the timecode.
@@ -2264,6 +2519,16 @@ object InputFilterEnable {
   inline def values: js.Array[InputFilterEnable] = js.Array(AUTO, DISABLE, FORCE)
 }
 
+/** An input policy allows or disallows a job you submit to run based on the conditions that you specify.
+  */
+type InputPolicy = "ALLOWED" | "DISALLOWED"
+object InputPolicy {
+  inline val ALLOWED: "ALLOWED" = "ALLOWED"
+  inline val DISALLOWED: "DISALLOWED" = "DISALLOWED"
+
+  inline def values: js.Array[InputPolicy] = js.Array(ALLOWED, DISALLOWED)
+}
+
 /** Set PSI control (InputPsiControl) for transport stream inputs to specify which data the demux process to scans. * Ignore PSI - Scan all PIDs for audio and video. * Use PSI - Scan only PSI data.
   */
 type InputPsiControl = "IGNORE_PSI" | "USE_PSI"
@@ -2285,6 +2550,17 @@ object InputRotate {
   inline val AUTO: "AUTO" = "AUTO"
 
   inline def values: js.Array[InputRotate] = js.Array(DEGREE_0, DEGREES_90, DEGREES_180, DEGREES_270, AUTO)
+}
+
+/** If the sample range metadata in your input video is accurate, or if you don't know about sample range, keep the default value, Follow (FOLLOW), for this setting. When you do, the service automatically detects your input sample range. If your input video has metadata indicating the wrong sample range, specify the accurate sample range here. When you do, MediaConvert ignores any sample range information in the input metadata. Regardless of whether MediaConvert uses the input sample range or the sample range that you specify, MediaConvert uses the sample range for transcoding and also writes it to the output metadata.
+  */
+type InputSampleRange = "FOLLOW" | "FULL_RANGE" | "LIMITED_RANGE"
+object InputSampleRange {
+  inline val FOLLOW: "FOLLOW" = "FOLLOW"
+  inline val FULL_RANGE: "FULL_RANGE" = "FULL_RANGE"
+  inline val LIMITED_RANGE: "LIMITED_RANGE" = "LIMITED_RANGE"
+
+  inline def values: js.Array[InputSampleRange] = js.Array(FOLLOW, FULL_RANGE, LIMITED_RANGE)
 }
 
 /** When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
@@ -2765,6 +3041,16 @@ object M2tsBufferModel {
   inline def values: js.Array[M2tsBufferModel] = js.Array(MULTIPLEX, NONE)
 }
 
+/** If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+  */
+type M2tsDataPtsControl = "AUTO" | "ALIGN_TO_VIDEO"
+object M2tsDataPtsControl {
+  inline val AUTO: "AUTO" = "AUTO"
+  inline val ALIGN_TO_VIDEO: "ALIGN_TO_VIDEO" = "ALIGN_TO_VIDEO"
+
+  inline def values: js.Array[M2tsDataPtsControl] = js.Array(AUTO, ALIGN_TO_VIDEO)
+}
+
 /** When set to VIDEO_AND_FIXED_INTERVALS, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. When set to VIDEO_INTERVAL, these additional markers will not be inserted. Only applicable when EBP segmentation markers are is selected (segmentationMarkers is EBP or EBP_LEGACY).
   */
 type M2tsEbpAudioInterval = "VIDEO_AND_FIXED_INTERVALS" | "VIDEO_INTERVAL"
@@ -2877,6 +3163,16 @@ object M3u8AudioDuration {
   inline val MATCH_VIDEO_DURATION: "MATCH_VIDEO_DURATION" = "MATCH_VIDEO_DURATION"
 
   inline def values: js.Array[M3u8AudioDuration] = js.Array(DEFAULT_CODEC_DURATION, MATCH_VIDEO_DURATION)
+}
+
+/** If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+  */
+type M3u8DataPtsControl = "AUTO" | "ALIGN_TO_VIDEO"
+object M3u8DataPtsControl {
+  inline val AUTO: "AUTO" = "AUTO"
+  inline val ALIGN_TO_VIDEO: "ALIGN_TO_VIDEO" = "ALIGN_TO_VIDEO"
+
+  inline def values: js.Array[M3u8DataPtsControl] = js.Array(AUTO, ALIGN_TO_VIDEO)
 }
 
 /** If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
@@ -3135,7 +3431,7 @@ object Mpeg2FramerateConversionAlgorithm {
   inline def values: js.Array[Mpeg2FramerateConversionAlgorithm] = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
 }
 
-/** Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+/** Specify the units for GOP size (GopSize). If you don't specify a value here, by default the encoder measures GOP size in frames.
   */
 type Mpeg2GopSizeUnits = "FRAMES" | "SECONDS"
 object Mpeg2GopSizeUnits {
@@ -3283,6 +3579,16 @@ object MsSmoothAudioDeduplication {
   inline def values: js.Array[MsSmoothAudioDeduplication] = js.Array(COMBINE_DUPLICATE_STREAMS, NONE)
 }
 
+/** Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+  */
+type MsSmoothFragmentLengthControl = "EXACT" | "GOP_MULTIPLE"
+object MsSmoothFragmentLengthControl {
+  inline val EXACT: "EXACT" = "EXACT"
+  inline val GOP_MULTIPLE: "GOP_MULTIPLE" = "GOP_MULTIPLE"
+
+  inline def values: js.Array[MsSmoothFragmentLengthControl] = js.Array(EXACT, GOP_MULTIPLE)
+}
+
 /** Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
   */
 type MsSmoothManifestEncoding = "UTF8" | "UTF16"
@@ -3305,13 +3611,24 @@ object MxfAfdSignaling {
 
 /** Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more information about the automatic selection behavior, see https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
   */
-type MxfProfile = "D_10" | "XDCAM" | "OP1A"
+type MxfProfile = "D_10" | "XDCAM" | "OP1A" | "XAVC"
 object MxfProfile {
   inline val D_10: "D_10" = "D_10"
   inline val XDCAM: "XDCAM" = "XDCAM"
   inline val OP1A: "OP1A" = "OP1A"
+  inline val XAVC: "XAVC" = "XAVC"
 
-  inline def values: js.Array[MxfProfile] = js.Array(D_10, XDCAM, OP1A)
+  inline def values: js.Array[MxfProfile] = js.Array(D_10, XDCAM, OP1A, XAVC)
+}
+
+/** To create an output that complies with the XAVC file format guidelines for interoperability, keep the default value, Drop frames for compliance (DROP_FRAMES_FOR_COMPLIANCE). To include all frames from your input in this output, keep the default setting, Allow any duration (ALLOW_ANY_DURATION). The number of frames that MediaConvert excludes when you set this to Drop frames for compliance depends on the output frame rate and duration.
+  */
+type MxfXavcDurationMode = "ALLOW_ANY_DURATION" | "DROP_FRAMES_FOR_COMPLIANCE"
+object MxfXavcDurationMode {
+  inline val ALLOW_ANY_DURATION: "ALLOW_ANY_DURATION" = "ALLOW_ANY_DURATION"
+  inline val DROP_FRAMES_FOR_COMPLIANCE: "DROP_FRAMES_FOR_COMPLIANCE" = "DROP_FRAMES_FOR_COMPLIANCE"
+
+  inline def values: js.Array[MxfXavcDurationMode] = js.Array(ALLOW_ANY_DURATION, DROP_FRAMES_FOR_COMPLIANCE)
 }
 
 /** Choose the type of Nielsen watermarks that you want in your outputs. When you choose NAES 2 and NW (NAES2_AND_NW), you must provide a value for the setting SID (sourceId). When you choose CBET (CBET), you must provide a value for the setting CSID (cbetSourceId). When you choose NAES 2, NW, and CBET (NAES2_AND_NW_AND_CBET), you must provide values for both of these settings.
@@ -3428,16 +3745,29 @@ object PricingPlan {
   inline def values: js.Array[PricingPlan] = js.Array(ON_DEMAND, RESERVED)
 }
 
+/** This setting applies only to ProRes 4444 and ProRes 4444 XQ outputs that you create from inputs that use 4:4:4 chroma sampling. Set Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING) to allow outputs to also use 4:4:4 chroma sampling. You must specify a value for this setting when your output codec profile supports 4:4:4 chroma sampling. Related Settings: When you set Chroma sampling to Preserve 4:4:4 sampling (PRESERVE_444_SAMPLING), you must choose an output codec profile that supports 4:4:4 chroma sampling. These values for Profile (CodecProfile) support 4:4:4 chroma sampling: Apple ProRes 4444 (APPLE_PRORES_4444) or Apple ProRes 4444 XQ (APPLE_PRORES_4444_XQ). When you set Chroma sampling to Preserve 4:4:4 sampling, you must disable all video preprocessors except for Nexguard file marker (PartnerWatermarking). When you set Chroma sampling to Preserve 4:4:4 sampling and use framerate conversion, you must set Frame rate conversion algorithm (FramerateConversionAlgorithm) to Drop
+  * duplicate (DUPLICATE_DROP).
+  */
+type ProresChromaSampling = "PRESERVE_444_SAMPLING" | "SUBSAMPLE_TO_422"
+object ProresChromaSampling {
+  inline val PRESERVE_444_SAMPLING: "PRESERVE_444_SAMPLING" = "PRESERVE_444_SAMPLING"
+  inline val SUBSAMPLE_TO_422: "SUBSAMPLE_TO_422" = "SUBSAMPLE_TO_422"
+
+  inline def values: js.Array[ProresChromaSampling] = js.Array(PRESERVE_444_SAMPLING, SUBSAMPLE_TO_422)
+}
+
 /** Use Profile (ProResCodecProfile) to specify the type of Apple ProRes codec to use for this output.
   */
-type ProresCodecProfile = "APPLE_PRORES_422" | "APPLE_PRORES_422_HQ" | "APPLE_PRORES_422_LT" | "APPLE_PRORES_422_PROXY"
+type ProresCodecProfile = "APPLE_PRORES_422" | "APPLE_PRORES_422_HQ" | "APPLE_PRORES_422_LT" | "APPLE_PRORES_422_PROXY" | "APPLE_PRORES_4444" | "APPLE_PRORES_4444_XQ"
 object ProresCodecProfile {
   inline val APPLE_PRORES_422: "APPLE_PRORES_422" = "APPLE_PRORES_422"
   inline val APPLE_PRORES_422_HQ: "APPLE_PRORES_422_HQ" = "APPLE_PRORES_422_HQ"
   inline val APPLE_PRORES_422_LT: "APPLE_PRORES_422_LT" = "APPLE_PRORES_422_LT"
   inline val APPLE_PRORES_422_PROXY: "APPLE_PRORES_422_PROXY" = "APPLE_PRORES_422_PROXY"
+  inline val APPLE_PRORES_4444: "APPLE_PRORES_4444" = "APPLE_PRORES_4444"
+  inline val APPLE_PRORES_4444_XQ: "APPLE_PRORES_4444_XQ" = "APPLE_PRORES_4444_XQ"
 
-  inline def values: js.Array[ProresCodecProfile] = js.Array(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY)
+  inline def values: js.Array[ProresCodecProfile] = js.Array(APPLE_PRORES_422, APPLE_PRORES_422_HQ, APPLE_PRORES_422_LT, APPLE_PRORES_422_PROXY, APPLE_PRORES_4444, APPLE_PRORES_4444_XQ)
 }
 
 /** If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings FramerateNumerator and FramerateDenominator.
@@ -3587,6 +3917,16 @@ object S3ServerSideEncryptionType {
   inline def values: js.Array[S3ServerSideEncryptionType] = js.Array(SERVER_SIDE_ENCRYPTION_S3, SERVER_SIDE_ENCRYPTION_KMS)
 }
 
+/** Specify the video color sample range for this output. To create a full range output, you must start with a full range YUV input and keep the default value, None (NONE). To create a limited range output from a full range input, choose Limited range (LIMITED_RANGE_SQUEEZE). With RGB inputs, your output is always limited range, regardless of your choice here. When you create a limited range output from a full range input, MediaConvert limits the active pixel values in a way that depends on the output's bit depth: 8-bit outputs contain only values from 16 through 235 and 10-bit outputs contain only values from 64 through 940. With this conversion, MediaConvert also changes the output metadata to note the limited range.
+  */
+type SampleRangeConversion = "LIMITED_RANGE_SQUEEZE" | "NONE"
+object SampleRangeConversion {
+  inline val LIMITED_RANGE_SQUEEZE: "LIMITED_RANGE_SQUEEZE" = "LIMITED_RANGE_SQUEEZE"
+  inline val NONE: "NONE" = "NONE"
+
+  inline def values: js.Array[SampleRangeConversion] = js.Array(LIMITED_RANGE_SQUEEZE, NONE)
+}
+
 /** Specify how the service handles outputs that have a different aspect ratio from the input aspect ratio. Choose Stretch to output (STRETCH_TO_OUTPUT) to have the service stretch your video image to fit. Keep the setting Default (DEFAULT) to have the service letterbox your video instead. This setting overrides any value that you specify for the setting Selection placement (position) in this output.
   */
 type ScalingBehavior = "DEFAULT" | "STRETCH_TO_OUTPUT"
@@ -3618,6 +3958,16 @@ object SimulateReservedQueue {
   inline val ENABLED: "ENABLED" = "ENABLED"
 
   inline def values: js.Array[SimulateReservedQueue] = js.Array(DISABLED, ENABLED)
+}
+
+/** Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
+  */
+type SrtStylePassthrough = "ENABLED" | "DISABLED"
+object SrtStylePassthrough {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[SrtStylePassthrough] = js.Array(ENABLED, DISABLED)
 }
 
 /** Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins processing your job to the time it completes the transcode or encounters an error.
@@ -3800,9 +4150,19 @@ object Vc3Telecine {
   inline def values: js.Array[Vc3Telecine] = js.Array(NONE, HARD)
 }
 
+/** The action to take on content advisory XDS packets. If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+  */
+type VchipAction = "PASSTHROUGH" | "STRIP"
+object VchipAction {
+  inline val PASSTHROUGH: "PASSTHROUGH" = "PASSTHROUGH"
+  inline val STRIP: "STRIP" = "STRIP"
+
+  inline def values: js.Array[VchipAction] = js.Array(PASSTHROUGH, STRIP)
+}
+
 /** Type of video codec
   */
-type VideoCodec = "AV1" | "AVC_INTRA" | "FRAME_CAPTURE" | "H_264" | "H_265" | "MPEG2" | "PRORES" | "VC3" | "VP8" | "VP9"
+type VideoCodec = "AV1" | "AVC_INTRA" | "FRAME_CAPTURE" | "H_264" | "H_265" | "MPEG2" | "PRORES" | "VC3" | "VP8" | "VP9" | "XAVC"
 object VideoCodec {
   inline val AV1: "AV1" = "AV1"
   inline val AVC_INTRA: "AVC_INTRA" = "AVC_INTRA"
@@ -3814,8 +4174,9 @@ object VideoCodec {
   inline val VC3: "VC3" = "VC3"
   inline val VP8: "VP8" = "VP8"
   inline val VP9: "VP9" = "VP9"
+  inline val XAVC: "XAVC" = "XAVC"
 
-  inline def values: js.Array[VideoCodec] = js.Array(AV1, AVC_INTRA, FRAME_CAPTURE, H_264, H_265, MPEG2, PRORES, VC3, VP8, VP9)
+  inline def values: js.Array[VideoCodec] = js.Array(AV1, AVC_INTRA, FRAME_CAPTURE, H_264, H_265, MPEG2, PRORES, VC3, VP8, VP9, XAVC)
 }
 
 /** Applies only to H.264, H.265, MPEG2, and ProRes outputs. Only enable Timecode insertion when the input frame rate is identical to the output frame rate. To include timecodes in this output, set Timecode insertion (VideoTimecodeInsertion) to PIC_TIMING_SEI. To leave them out, set it to DISABLED. Default is DISABLED. When the service inserts timecodes in an output, by default, it uses any embedded timecodes from the input. If none are present, the service will set the timecode for the first output frame to zero. To change this default behavior, adjust the settings under Timecode configuration (TimecodeConfig). In the console, these settings are located under Job > Job settings > Timecode configuration. Note - Timecode source under input settings (InputTimecodeSource) does not affect the timecodes that are inserted in the output. Source under Job settings > Timecode configuration (TimecodeSource) does.
@@ -3951,7 +4312,7 @@ object WavFormat {
   inline def values: js.Array[WavFormat] = js.Array(RIFF, RF64)
 }
 
-/** If your input captions format is teletext or teletext inside of STL, enable this setting to pass through style, color, and position information to your WebVTT output captions.
+/** Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
   */
 type WebvttStylePassthrough = "ENABLED" | "DISABLED"
 object WebvttStylePassthrough {
@@ -3959,4 +4320,227 @@ object WebvttStylePassthrough {
   inline val DISABLED: "DISABLED" = "DISABLED"
 
   inline def values: js.Array[WebvttStylePassthrough] = js.Array(ENABLED, DISABLED)
+}
+
+/** Specify the XAVC Intra 4k (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+  */
+type Xavc4kIntraCbgProfileClass = "CLASS_100" | "CLASS_300" | "CLASS_480"
+object Xavc4kIntraCbgProfileClass {
+  inline val CLASS_100: "CLASS_100" = "CLASS_100"
+  inline val CLASS_300: "CLASS_300" = "CLASS_300"
+  inline val CLASS_480: "CLASS_480" = "CLASS_480"
+
+  inline def values: js.Array[Xavc4kIntraCbgProfileClass] = js.Array(CLASS_100, CLASS_300, CLASS_480)
+}
+
+/** Specify the XAVC Intra 4k (VBR) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+  */
+type Xavc4kIntraVbrProfileClass = "CLASS_100" | "CLASS_300" | "CLASS_480"
+object Xavc4kIntraVbrProfileClass {
+  inline val CLASS_100: "CLASS_100" = "CLASS_100"
+  inline val CLASS_300: "CLASS_300" = "CLASS_300"
+  inline val CLASS_480: "CLASS_480" = "CLASS_480"
+
+  inline def values: js.Array[Xavc4kIntraVbrProfileClass] = js.Array(CLASS_100, CLASS_300, CLASS_480)
+}
+
+/** Specify the XAVC 4k (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+  */
+type Xavc4kProfileBitrateClass = "BITRATE_CLASS_100" | "BITRATE_CLASS_140" | "BITRATE_CLASS_200"
+object Xavc4kProfileBitrateClass {
+  inline val BITRATE_CLASS_100: "BITRATE_CLASS_100" = "BITRATE_CLASS_100"
+  inline val BITRATE_CLASS_140: "BITRATE_CLASS_140" = "BITRATE_CLASS_140"
+  inline val BITRATE_CLASS_200: "BITRATE_CLASS_200" = "BITRATE_CLASS_200"
+
+  inline def values: js.Array[Xavc4kProfileBitrateClass] = js.Array(BITRATE_CLASS_100, BITRATE_CLASS_140, BITRATE_CLASS_200)
+}
+
+/** Specify the codec profile for this output. Choose High, 8-bit, 4:2:0 (HIGH) or High, 10-bit, 4:2:2 (HIGH_422). These profiles are specified in ITU-T H.264.
+  */
+type Xavc4kProfileCodecProfile = "HIGH" | "HIGH_422"
+object Xavc4kProfileCodecProfile {
+  inline val HIGH: "HIGH" = "HIGH"
+  inline val HIGH_422: "HIGH_422" = "HIGH_422"
+
+  inline def values: js.Array[Xavc4kProfileCodecProfile] = js.Array(HIGH, HIGH_422)
+}
+
+/** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+  */
+type Xavc4kProfileQualityTuningLevel = "SINGLE_PASS" | "SINGLE_PASS_HQ" | "MULTI_PASS_HQ"
+object Xavc4kProfileQualityTuningLevel {
+  inline val SINGLE_PASS: "SINGLE_PASS" = "SINGLE_PASS"
+  inline val SINGLE_PASS_HQ: "SINGLE_PASS_HQ" = "SINGLE_PASS_HQ"
+  inline val MULTI_PASS_HQ: "MULTI_PASS_HQ" = "MULTI_PASS_HQ"
+
+  inline def values: js.Array[Xavc4kProfileQualityTuningLevel] = js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ)
+}
+
+/** Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of quantization for your video content. When you want to apply your quantization settings manually, you must set Adaptive quantization (adaptiveQuantization) to a value other than Auto (AUTO). Use this setting to specify the strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in this transcode, set Adaptive quantization to Off (OFF). Related settings: The value that you choose here applies to the following settings: Flicker adaptive quantization (flickerAdaptiveQuantization), Spatial adaptive quantization (spatialAdaptiveQuantization), and Temporal adaptive quantization (temporalAdaptiveQuantization).
+  */
+type XavcAdaptiveQuantization = "OFF" | "AUTO" | "LOW" | "MEDIUM" | "HIGH" | "HIGHER" | "MAX"
+object XavcAdaptiveQuantization {
+  inline val OFF: "OFF" = "OFF"
+  inline val AUTO: "AUTO" = "AUTO"
+  inline val LOW: "LOW" = "LOW"
+  inline val MEDIUM: "MEDIUM" = "MEDIUM"
+  inline val HIGH: "HIGH" = "HIGH"
+  inline val HIGHER: "HIGHER" = "HIGHER"
+  inline val MAX: "MAX" = "MAX"
+
+  inline def values: js.Array[XavcAdaptiveQuantization] = js.Array(OFF, AUTO, LOW, MEDIUM, HIGH, HIGHER, MAX)
+}
+
+/** Optional. Choose a specific entropy encoding mode only when you want to override XAVC recommendations. If you choose the value auto, MediaConvert uses the mode that the XAVC file format specifies given this output's operating point.
+  */
+type XavcEntropyEncoding = "AUTO" | "CABAC" | "CAVLC"
+object XavcEntropyEncoding {
+  inline val AUTO: "AUTO" = "AUTO"
+  inline val CABAC: "CABAC" = "CABAC"
+  inline val CAVLC: "CAVLC" = "CAVLC"
+
+  inline def values: js.Array[XavcEntropyEncoding] = js.Array(AUTO, CABAC, CAVLC)
+}
+
+/** The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (XavcAdaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. Enable this setting to have the encoder reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. This setting is disabled by default. Related setting: In addition to enabling this setting, you must also set Adaptive quantization (adaptiveQuantization) to a value other than Off (OFF) or Auto (AUTO). Use Adaptive quantization to adjust the degree
+  * of smoothing that Flicker adaptive quantization provides.
+  */
+type XavcFlickerAdaptiveQuantization = "DISABLED" | "ENABLED"
+object XavcFlickerAdaptiveQuantization {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+
+  inline def values: js.Array[XavcFlickerAdaptiveQuantization] = js.Array(DISABLED, ENABLED)
+}
+
+/** If you are using the console, use the Frame rate setting to specify the frame rate for this output. If you want to keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a frame rate from the dropdown list. The framerates shown in the dropdown list are decimal approximations of fractions. If you are creating your transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate that you specify in the settings FramerateNumerator and FramerateDenominator.
+  */
+type XavcFramerateControl = "INITIALIZE_FROM_SOURCE" | "SPECIFIED"
+object XavcFramerateControl {
+  inline val INITIALIZE_FROM_SOURCE: "INITIALIZE_FROM_SOURCE" = "INITIALIZE_FROM_SOURCE"
+  inline val SPECIFIED: "SPECIFIED" = "SPECIFIED"
+
+  inline def values: js.Array[XavcFramerateControl] = js.Array(INITIALIZE_FROM_SOURCE, SPECIFIED)
+}
+
+/** Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant add-on cost.
+  */
+type XavcFramerateConversionAlgorithm = "DUPLICATE_DROP" | "INTERPOLATE" | "FRAMEFORMER"
+object XavcFramerateConversionAlgorithm {
+  inline val DUPLICATE_DROP: "DUPLICATE_DROP" = "DUPLICATE_DROP"
+  inline val INTERPOLATE: "INTERPOLATE" = "INTERPOLATE"
+  inline val FRAMEFORMER: "FRAMEFORMER" = "FRAMEFORMER"
+
+  inline def values: js.Array[XavcFramerateConversionAlgorithm] = js.Array(DUPLICATE_DROP, INTERPOLATE, FRAMEFORMER)
+}
+
+/** Specify whether the encoder uses B-frames as reference frames for other pictures in the same GOP. Choose Allow (ENABLED) to allow the encoder to use B-frames as reference frames. Choose Don't allow (DISABLED) to prevent the encoder from using B-frames as reference frames.
+  */
+type XavcGopBReference = "DISABLED" | "ENABLED"
+object XavcGopBReference {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+
+  inline def values: js.Array[XavcGopBReference] = js.Array(DISABLED, ENABLED)
+}
+
+/** Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+  */
+type XavcHdIntraCbgProfileClass = "CLASS_50" | "CLASS_100" | "CLASS_200"
+object XavcHdIntraCbgProfileClass {
+  inline val CLASS_50: "CLASS_50" = "CLASS_50"
+  inline val CLASS_100: "CLASS_100" = "CLASS_100"
+  inline val CLASS_200: "CLASS_200" = "CLASS_200"
+
+  inline def values: js.Array[XavcHdIntraCbgProfileClass] = js.Array(CLASS_50, CLASS_100, CLASS_200)
+}
+
+/** Specify the XAVC HD (Long GOP) Bitrate Class to set the bitrate of your output. Outputs of the same class have similar image quality over the operating points that are valid for that class.
+  */
+type XavcHdProfileBitrateClass = "BITRATE_CLASS_25" | "BITRATE_CLASS_35" | "BITRATE_CLASS_50"
+object XavcHdProfileBitrateClass {
+  inline val BITRATE_CLASS_25: "BITRATE_CLASS_25" = "BITRATE_CLASS_25"
+  inline val BITRATE_CLASS_35: "BITRATE_CLASS_35" = "BITRATE_CLASS_35"
+  inline val BITRATE_CLASS_50: "BITRATE_CLASS_50" = "BITRATE_CLASS_50"
+
+  inline def values: js.Array[XavcHdProfileBitrateClass] = js.Array(BITRATE_CLASS_25, BITRATE_CLASS_35, BITRATE_CLASS_50)
+}
+
+/** Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
+  */
+type XavcHdProfileQualityTuningLevel = "SINGLE_PASS" | "SINGLE_PASS_HQ" | "MULTI_PASS_HQ"
+object XavcHdProfileQualityTuningLevel {
+  inline val SINGLE_PASS: "SINGLE_PASS" = "SINGLE_PASS"
+  inline val SINGLE_PASS_HQ: "SINGLE_PASS_HQ" = "SINGLE_PASS_HQ"
+  inline val MULTI_PASS_HQ: "MULTI_PASS_HQ" = "MULTI_PASS_HQ"
+
+  inline def values: js.Array[XavcHdProfileQualityTuningLevel] = js.Array(SINGLE_PASS, SINGLE_PASS_HQ, MULTI_PASS_HQ)
+}
+
+/** Ignore this setting unless you set Frame rate (framerateNumerator divided by framerateDenominator) to 29.970. If your input framerate is 23.976, choose Hard (HARD). Otherwise, keep the default value None (NONE). For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-telecine-and-inverse-telecine.html.
+  */
+type XavcHdProfileTelecine = "NONE" | "HARD"
+object XavcHdProfileTelecine {
+  inline val NONE: "NONE" = "NONE"
+  inline val HARD: "HARD" = "HARD"
+
+  inline def values: js.Array[XavcHdProfileTelecine] = js.Array(NONE, HARD)
+}
+
+/** Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced with top field bottom field first, depending on which of the Follow options you choose.
+  */
+type XavcInterlaceMode = "PROGRESSIVE" | "TOP_FIELD" | "BOTTOM_FIELD" | "FOLLOW_TOP_FIELD" | "FOLLOW_BOTTOM_FIELD"
+object XavcInterlaceMode {
+  inline val PROGRESSIVE: "PROGRESSIVE" = "PROGRESSIVE"
+  inline val TOP_FIELD: "TOP_FIELD" = "TOP_FIELD"
+  inline val BOTTOM_FIELD: "BOTTOM_FIELD" = "BOTTOM_FIELD"
+  inline val FOLLOW_TOP_FIELD: "FOLLOW_TOP_FIELD" = "FOLLOW_TOP_FIELD"
+  inline val FOLLOW_BOTTOM_FIELD: "FOLLOW_BOTTOM_FIELD" = "FOLLOW_BOTTOM_FIELD"
+
+  inline def values: js.Array[XavcInterlaceMode] = js.Array(PROGRESSIVE, TOP_FIELD, BOTTOM_FIELD, FOLLOW_TOP_FIELD, FOLLOW_BOTTOM_FIELD)
+}
+
+/** Specify the XAVC profile for this output. For more information, see the Sony documentation at https://www.xavc-info.org/. Note that MediaConvert doesn't support the interlaced video XAVC operating points for XAVC_HD_INTRA_CBG. To create an interlaced XAVC output, choose the profile XAVC_HD.
+  */
+type XavcProfile = "XAVC_HD_INTRA_CBG" | "XAVC_4K_INTRA_CBG" | "XAVC_4K_INTRA_VBR" | "XAVC_HD" | "XAVC_4K"
+object XavcProfile {
+  inline val XAVC_HD_INTRA_CBG: "XAVC_HD_INTRA_CBG" = "XAVC_HD_INTRA_CBG"
+  inline val XAVC_4K_INTRA_CBG: "XAVC_4K_INTRA_CBG" = "XAVC_4K_INTRA_CBG"
+  inline val XAVC_4K_INTRA_VBR: "XAVC_4K_INTRA_VBR" = "XAVC_4K_INTRA_VBR"
+  inline val XAVC_HD: "XAVC_HD" = "XAVC_HD"
+  inline val XAVC_4K: "XAVC_4K" = "XAVC_4K"
+
+  inline def values: js.Array[XavcProfile] = js.Array(XAVC_HD_INTRA_CBG, XAVC_4K_INTRA_CBG, XAVC_4K_INTRA_VBR, XAVC_HD, XAVC_4K)
+}
+
+/** Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to create a 25 fps output by relabeling the video frames and resampling your audio. Note that enabling this setting will slightly reduce the duration of your video. Related settings: You must also set Frame rate to 25. In your JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
+  */
+type XavcSlowPal = "DISABLED" | "ENABLED"
+object XavcSlowPal {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+
+  inline def values: js.Array[XavcSlowPal] = js.Array(DISABLED, ENABLED)
+}
+
+/** The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account
+  * where the viewer's attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of textures, set it to High or Higher.
+  */
+type XavcSpatialAdaptiveQuantization = "DISABLED" | "ENABLED"
+object XavcSpatialAdaptiveQuantization {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+
+  inline def values: js.Array[XavcSpatialAdaptiveQuantization] = js.Array(DISABLED, ENABLED)
+}
+
+/** The best way to set up adaptive quantization is to keep the default value, Auto (AUTO), for the setting Adaptive quantization (adaptiveQuantization). When you do so, MediaConvert automatically applies the best types of quantization for your video content. Include this setting in your JSON job specification only when you choose to change the default value for Adaptive quantization. For this setting, keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on temporal variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely to be.
+  * If viewers are likely to be focusing their attention on a part of the screen that doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to disable this feature. Related setting: When you enable temporal adaptive quantization, adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization).
+  */
+type XavcTemporalAdaptiveQuantization = "DISABLED" | "ENABLED"
+object XavcTemporalAdaptiveQuantization {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+
+  inline def values: js.Array[XavcTemporalAdaptiveQuantization] = js.Array(DISABLED, ENABLED)
 }

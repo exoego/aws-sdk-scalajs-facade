@@ -19,6 +19,14 @@ object AnomalyDetectorStateValue {
   inline def values: js.Array[AnomalyDetectorStateValue] = js.Array(PENDING_TRAINING, TRAINED_INSUFFICIENT_DATA, TRAINED)
 }
 
+type AnomalyDetectorType = "SINGLE_METRIC" | "METRIC_MATH"
+object AnomalyDetectorType {
+  inline val SINGLE_METRIC: "SINGLE_METRIC" = "SINGLE_METRIC"
+  inline val METRIC_MATH: "METRIC_MATH" = "METRIC_MATH"
+
+  inline def values: js.Array[AnomalyDetectorType] = js.Array(SINGLE_METRIC, METRIC_MATH)
+}
+
 type ComparisonOperator = "GreaterThanOrEqualToThreshold" | "GreaterThanThreshold" | "LessThanThreshold" | "LessThanOrEqualToThreshold" | "LessThanLowerOrGreaterThanUpperThreshold" | "LessThanLowerThreshold" | "GreaterThanUpperThreshold"
 object ComparisonOperator {
   inline val GreaterThanOrEqualToThreshold: "GreaterThanOrEqualToThreshold" = "GreaterThanOrEqualToThreshold"

@@ -35,11 +35,13 @@ package object route53resolver {
   type IpAddressesResponse = js.Array[IpAddressResponse]
   type ListDomainMaxResults = Int
   type ListFirewallConfigsMaxResult = Int
+  type ListResolverConfigsMaxResult = Int
   type MaxResults = Int
   type Name = String
   type NextToken = String
   type Port = Int
   type Priority = Int
+  type ResolverConfigList = js.Array[ResolverConfig]
   type ResolverDnssecConfigList = js.Array[ResolverDnssecConfig]
   type ResolverEndpoints = js.Array[ResolverEndpoint]
   type ResolverQueryLogConfigAssociationErrorMessage = String
@@ -91,6 +93,7 @@ package object route53resolver {
     @inline def getFirewallRuleGroupAssociationFuture(params: GetFirewallRuleGroupAssociationRequest): Future[GetFirewallRuleGroupAssociationResponse] = service.getFirewallRuleGroupAssociation(params).promise().toFuture
     @inline def getFirewallRuleGroupFuture(params: GetFirewallRuleGroupRequest): Future[GetFirewallRuleGroupResponse] = service.getFirewallRuleGroup(params).promise().toFuture
     @inline def getFirewallRuleGroupPolicyFuture(params: GetFirewallRuleGroupPolicyRequest): Future[GetFirewallRuleGroupPolicyResponse] = service.getFirewallRuleGroupPolicy(params).promise().toFuture
+    @inline def getResolverConfigFuture(params: GetResolverConfigRequest): Future[GetResolverConfigResponse] = service.getResolverConfig(params).promise().toFuture
     @inline def getResolverDnssecConfigFuture(params: GetResolverDnssecConfigRequest): Future[GetResolverDnssecConfigResponse] = service.getResolverDnssecConfig(params).promise().toFuture
     @inline def getResolverEndpointFuture(params: GetResolverEndpointRequest): Future[GetResolverEndpointResponse] = service.getResolverEndpoint(params).promise().toFuture
     @inline def getResolverQueryLogConfigAssociationFuture(params: GetResolverQueryLogConfigAssociationRequest): Future[GetResolverQueryLogConfigAssociationResponse] = service.getResolverQueryLogConfigAssociation(params).promise().toFuture
@@ -106,6 +109,7 @@ package object route53resolver {
     @inline def listFirewallRuleGroupAssociationsFuture(params: ListFirewallRuleGroupAssociationsRequest): Future[ListFirewallRuleGroupAssociationsResponse] = service.listFirewallRuleGroupAssociations(params).promise().toFuture
     @inline def listFirewallRuleGroupsFuture(params: ListFirewallRuleGroupsRequest): Future[ListFirewallRuleGroupsResponse] = service.listFirewallRuleGroups(params).promise().toFuture
     @inline def listFirewallRulesFuture(params: ListFirewallRulesRequest): Future[ListFirewallRulesResponse] = service.listFirewallRules(params).promise().toFuture
+    @inline def listResolverConfigsFuture(params: ListResolverConfigsRequest): Future[ListResolverConfigsResponse] = service.listResolverConfigs(params).promise().toFuture
     @inline def listResolverDnssecConfigsFuture(params: ListResolverDnssecConfigsRequest): Future[ListResolverDnssecConfigsResponse] = service.listResolverDnssecConfigs(params).promise().toFuture
     @inline def listResolverEndpointIpAddressesFuture(params: ListResolverEndpointIpAddressesRequest): Future[ListResolverEndpointIpAddressesResponse] = service.listResolverEndpointIpAddresses(params).promise().toFuture
     @inline def listResolverEndpointsFuture(params: ListResolverEndpointsRequest): Future[ListResolverEndpointsResponse] = service.listResolverEndpoints(params).promise().toFuture
@@ -123,6 +127,7 @@ package object route53resolver {
     @inline def updateFirewallDomainsFuture(params: UpdateFirewallDomainsRequest): Future[UpdateFirewallDomainsResponse] = service.updateFirewallDomains(params).promise().toFuture
     @inline def updateFirewallRuleFuture(params: UpdateFirewallRuleRequest): Future[UpdateFirewallRuleResponse] = service.updateFirewallRule(params).promise().toFuture
     @inline def updateFirewallRuleGroupAssociationFuture(params: UpdateFirewallRuleGroupAssociationRequest): Future[UpdateFirewallRuleGroupAssociationResponse] = service.updateFirewallRuleGroupAssociation(params).promise().toFuture
+    @inline def updateResolverConfigFuture(params: UpdateResolverConfigRequest): Future[UpdateResolverConfigResponse] = service.updateResolverConfig(params).promise().toFuture
     @inline def updateResolverDnssecConfigFuture(params: UpdateResolverDnssecConfigRequest): Future[UpdateResolverDnssecConfigResponse] = service.updateResolverDnssecConfig(params).promise().toFuture
     @inline def updateResolverEndpointFuture(params: UpdateResolverEndpointRequest): Future[UpdateResolverEndpointResponse] = service.updateResolverEndpoint(params).promise().toFuture
     @inline def updateResolverRuleFuture(params: UpdateResolverRuleRequest): Future[UpdateResolverRuleResponse] = service.updateResolverRule(params).promise().toFuture
@@ -159,6 +164,7 @@ package object route53resolver {
     def getFirewallRuleGroup(params: GetFirewallRuleGroupRequest): Request[GetFirewallRuleGroupResponse] = js.native
     def getFirewallRuleGroupAssociation(params: GetFirewallRuleGroupAssociationRequest): Request[GetFirewallRuleGroupAssociationResponse] = js.native
     def getFirewallRuleGroupPolicy(params: GetFirewallRuleGroupPolicyRequest): Request[GetFirewallRuleGroupPolicyResponse] = js.native
+    def getResolverConfig(params: GetResolverConfigRequest): Request[GetResolverConfigResponse] = js.native
     def getResolverDnssecConfig(params: GetResolverDnssecConfigRequest): Request[GetResolverDnssecConfigResponse] = js.native
     def getResolverEndpoint(params: GetResolverEndpointRequest): Request[GetResolverEndpointResponse] = js.native
     def getResolverQueryLogConfig(params: GetResolverQueryLogConfigRequest): Request[GetResolverQueryLogConfigResponse] = js.native
@@ -174,6 +180,7 @@ package object route53resolver {
     def listFirewallRuleGroupAssociations(params: ListFirewallRuleGroupAssociationsRequest): Request[ListFirewallRuleGroupAssociationsResponse] = js.native
     def listFirewallRuleGroups(params: ListFirewallRuleGroupsRequest): Request[ListFirewallRuleGroupsResponse] = js.native
     def listFirewallRules(params: ListFirewallRulesRequest): Request[ListFirewallRulesResponse] = js.native
+    def listResolverConfigs(params: ListResolverConfigsRequest): Request[ListResolverConfigsResponse] = js.native
     def listResolverDnssecConfigs(params: ListResolverDnssecConfigsRequest): Request[ListResolverDnssecConfigsResponse] = js.native
     def listResolverEndpointIpAddresses(params: ListResolverEndpointIpAddressesRequest): Request[ListResolverEndpointIpAddressesResponse] = js.native
     def listResolverEndpoints(params: ListResolverEndpointsRequest): Request[ListResolverEndpointsResponse] = js.native
@@ -191,6 +198,7 @@ package object route53resolver {
     def updateFirewallDomains(params: UpdateFirewallDomainsRequest): Request[UpdateFirewallDomainsResponse] = js.native
     def updateFirewallRule(params: UpdateFirewallRuleRequest): Request[UpdateFirewallRuleResponse] = js.native
     def updateFirewallRuleGroupAssociation(params: UpdateFirewallRuleGroupAssociationRequest): Request[UpdateFirewallRuleGroupAssociationResponse] = js.native
+    def updateResolverConfig(params: UpdateResolverConfigRequest): Request[UpdateResolverConfigResponse] = js.native
     def updateResolverDnssecConfig(params: UpdateResolverDnssecConfigRequest): Request[UpdateResolverDnssecConfigResponse] = js.native
     def updateResolverEndpoint(params: UpdateResolverEndpointRequest): Request[UpdateResolverEndpointResponse] = js.native
     def updateResolverRule(params: UpdateResolverRuleRequest): Request[UpdateResolverRuleResponse] = js.native
@@ -1014,7 +1022,7 @@ package object route53resolver {
     }
   }
 
-  /** Configuration of the firewall behavior provided by DNS Firewall for a single Amazon virtual private cloud (VPC).
+  /** Configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC).
     */
   @js.native
   trait FirewallConfig extends js.Object {
@@ -1041,7 +1049,7 @@ package object route53resolver {
     }
   }
 
-  /** High level information about a list of firewall domains for use in a <a>FirewallRule</a>. This is returned by <a>GetFirewallDomainList</a>. To retrieve the domains that are defined for this domain list, call <a>ListFirewallDomains</a>.
+  /** High-level information about a list of firewall domains for use in a <a>FirewallRule</a>. This is returned by <a>GetFirewallDomainList</a>. To retrieve the domains that are defined for this domain list, call <a>ListFirewallDomains</a>.
     */
   @js.native
   trait FirewallDomainList extends js.Object {
@@ -1215,7 +1223,7 @@ package object route53resolver {
     }
   }
 
-  /** An association between a firewall rul group and a VPC, which enables DNS filtering for the VPC.
+  /** An association between a firewall rule group and a VPC, which enables DNS filtering for the VPC.
     */
   @js.native
   trait FirewallRuleGroupAssociation extends js.Object {
@@ -1464,6 +1472,39 @@ package object route53resolver {
       val __obj = js.Dynamic.literal()
       FirewallRuleGroup.foreach(__v => __obj.updateDynamic("FirewallRuleGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetFirewallRuleGroupResponse]
+    }
+  }
+
+  @js.native
+  trait GetResolverConfigRequest extends js.Object {
+    var ResourceId: ResourceId
+  }
+
+  object GetResolverConfigRequest {
+    @inline
+    def apply(
+        ResourceId: ResourceId
+    ): GetResolverConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetResolverConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetResolverConfigResponse extends js.Object {
+    var ResolverConfig: js.UndefOr[ResolverConfig]
+  }
+
+  object GetResolverConfigResponse {
+    @inline
+    def apply(
+        ResolverConfig: js.UndefOr[ResolverConfig] = js.undefined
+    ): GetResolverConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      ResolverConfig.foreach(__v => __obj.updateDynamic("ResolverConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResolverConfigResponse]
     }
   }
 
@@ -2119,6 +2160,44 @@ package object route53resolver {
   }
 
   @js.native
+  trait ListResolverConfigsRequest extends js.Object {
+    var MaxResults: js.UndefOr[ListResolverConfigsMaxResult]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListResolverConfigsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ListResolverConfigsMaxResult] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListResolverConfigsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResolverConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListResolverConfigsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var ResolverConfigs: js.UndefOr[ResolverConfigList]
+  }
+
+  object ListResolverConfigsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        ResolverConfigs: js.UndefOr[ResolverConfigList] = js.undefined
+    ): ListResolverConfigsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResolverConfigs.foreach(__v => __obj.updateDynamic("ResolverConfigs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResolverConfigsResponse]
+    }
+  }
+
+  @js.native
   trait ListResolverDnssecConfigsRequest extends js.Object {
     var Filters: js.UndefOr[Filters]
     var MaxResults: js.UndefOr[MaxResults]
@@ -2595,6 +2674,33 @@ package object route53resolver {
       val __obj = js.Dynamic.literal()
       ReturnValue.foreach(__v => __obj.updateDynamic("ReturnValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutResolverRulePolicyResponse]
+    }
+  }
+
+  /** A complex type that contains information about a Resolver configuration for a VPC.
+    */
+  @js.native
+  trait ResolverConfig extends js.Object {
+    var AutodefinedReverse: js.UndefOr[ResolverAutodefinedReverseStatus]
+    var Id: js.UndefOr[ResourceId]
+    var OwnerId: js.UndefOr[AccountId]
+    var ResourceId: js.UndefOr[ResourceId]
+  }
+
+  object ResolverConfig {
+    @inline
+    def apply(
+        AutodefinedReverse: js.UndefOr[ResolverAutodefinedReverseStatus] = js.undefined,
+        Id: js.UndefOr[ResourceId] = js.undefined,
+        OwnerId: js.UndefOr[AccountId] = js.undefined,
+        ResourceId: js.UndefOr[ResourceId] = js.undefined
+    ): ResolverConfig = {
+      val __obj = js.Dynamic.literal()
+      AutodefinedReverse.foreach(__v => __obj.updateDynamic("AutodefinedReverse")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      OwnerId.foreach(__v => __obj.updateDynamic("OwnerId")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResolverConfig]
     }
   }
 
@@ -3160,6 +3266,42 @@ package object route53resolver {
       val __obj = js.Dynamic.literal()
       FirewallRule.foreach(__v => __obj.updateDynamic("FirewallRule")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFirewallRuleResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateResolverConfigRequest extends js.Object {
+    var AutodefinedReverseFlag: AutodefinedReverseFlag
+    var ResourceId: ResourceId
+  }
+
+  object UpdateResolverConfigRequest {
+    @inline
+    def apply(
+        AutodefinedReverseFlag: AutodefinedReverseFlag,
+        ResourceId: ResourceId
+    ): UpdateResolverConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "AutodefinedReverseFlag" -> AutodefinedReverseFlag.asInstanceOf[js.Any],
+        "ResourceId" -> ResourceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateResolverConfigRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateResolverConfigResponse extends js.Object {
+    var ResolverConfig: js.UndefOr[ResolverConfig]
+  }
+
+  object UpdateResolverConfigResponse {
+    @inline
+    def apply(
+        ResolverConfig: js.UndefOr[ResolverConfig] = js.undefined
+    ): UpdateResolverConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      ResolverConfig.foreach(__v => __obj.updateDynamic("ResolverConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateResolverConfigResponse]
     }
   }
 

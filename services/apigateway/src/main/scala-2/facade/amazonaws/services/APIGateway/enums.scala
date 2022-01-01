@@ -105,8 +105,10 @@ object DomainNameStatus {
   val AVAILABLE = "AVAILABLE".asInstanceOf[DomainNameStatus]
   val UPDATING = "UPDATING".asInstanceOf[DomainNameStatus]
   val PENDING = "PENDING".asInstanceOf[DomainNameStatus]
+  val PENDING_CERTIFICATE_REIMPORT = "PENDING_CERTIFICATE_REIMPORT".asInstanceOf[DomainNameStatus]
+  val PENDING_OWNERSHIP_VERIFICATION = "PENDING_OWNERSHIP_VERIFICATION".asInstanceOf[DomainNameStatus]
 
-  @inline def values: js.Array[DomainNameStatus] = js.Array(AVAILABLE, UPDATING, PENDING)
+  @inline def values: js.Array[DomainNameStatus] = js.Array(AVAILABLE, UPDATING, PENDING, PENDING_CERTIFICATE_REIMPORT, PENDING_OWNERSHIP_VERIFICATION)
 }
 
 /** The endpoint type. The valid values are <code>EDGE</code> for edge-optimized API setup, most suitable for mobile applications; <code>REGIONAL</code> for regional API endpoint setup, most suitable for calling from AWS Region; and <code>PRIVATE</code> for private APIs.
@@ -144,6 +146,7 @@ object GatewayResponseType {
   val REQUEST_TOO_LARGE = "REQUEST_TOO_LARGE".asInstanceOf[GatewayResponseType]
   val THROTTLED = "THROTTLED".asInstanceOf[GatewayResponseType]
   val QUOTA_EXCEEDED = "QUOTA_EXCEEDED".asInstanceOf[GatewayResponseType]
+  val WAF_FILTERED = "WAF_FILTERED".asInstanceOf[GatewayResponseType]
 
   @inline def values: js.Array[GatewayResponseType] = js.Array(
     DEFAULT_4XX,
@@ -165,7 +168,8 @@ object GatewayResponseType {
     BAD_REQUEST_BODY,
     REQUEST_TOO_LARGE,
     THROTTLED,
-    QUOTA_EXCEEDED
+    QUOTA_EXCEEDED,
+    WAF_FILTERED
   )
 }
 

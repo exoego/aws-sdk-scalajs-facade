@@ -22,7 +22,6 @@ package object ivs {
   type MaxRecordingConfigurationResults = Int
   type MaxStreamKeyResults = Int
   type MaxStreamResults = Int
-  type MaxTagResults = Int
   type PaginationToken = String
   type PlaybackKeyPairArn = String
   type PlaybackKeyPairFingerprint = String
@@ -35,6 +34,8 @@ package object ivs {
   type RecordingConfigurationName = String
   type ResourceArn = String
   type S3DestinationBucketName = String
+  type StreamEvents = js.Array[StreamEvent]
+  type StreamId = String
   type StreamKeyArn = String
   type StreamKeyArnList = js.Array[StreamKeyArn]
   type StreamKeyList = js.Array[StreamKeySummary]
@@ -42,12 +43,14 @@ package object ivs {
   type StreamKeys = js.Array[StreamKey]
   type StreamList = js.Array[StreamSummary]
   type StreamMetadata = String
+  type StreamSessionList = js.Array[StreamSessionSummary]
   type StreamStartTime = js.Date
   type StreamViewerCount = Double
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagValue = String
   type Tags = js.Dictionary[TagValue]
+  type Time = js.Date
   type errorCode = String
   type errorMessage = String
 
@@ -67,11 +70,13 @@ package object ivs {
     @inline def getRecordingConfigurationFuture(params: GetRecordingConfigurationRequest): Future[GetRecordingConfigurationResponse] = service.getRecordingConfiguration(params).promise().toFuture
     @inline def getStreamFuture(params: GetStreamRequest): Future[GetStreamResponse] = service.getStream(params).promise().toFuture
     @inline def getStreamKeyFuture(params: GetStreamKeyRequest): Future[GetStreamKeyResponse] = service.getStreamKey(params).promise().toFuture
+    @inline def getStreamSessionFuture(params: GetStreamSessionRequest): Future[GetStreamSessionResponse] = service.getStreamSession(params).promise().toFuture
     @inline def importPlaybackKeyPairFuture(params: ImportPlaybackKeyPairRequest): Future[ImportPlaybackKeyPairResponse] = service.importPlaybackKeyPair(params).promise().toFuture
     @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] = service.listChannels(params).promise().toFuture
     @inline def listPlaybackKeyPairsFuture(params: ListPlaybackKeyPairsRequest): Future[ListPlaybackKeyPairsResponse] = service.listPlaybackKeyPairs(params).promise().toFuture
     @inline def listRecordingConfigurationsFuture(params: ListRecordingConfigurationsRequest): Future[ListRecordingConfigurationsResponse] = service.listRecordingConfigurations(params).promise().toFuture
     @inline def listStreamKeysFuture(params: ListStreamKeysRequest): Future[ListStreamKeysResponse] = service.listStreamKeys(params).promise().toFuture
+    @inline def listStreamSessionsFuture(params: ListStreamSessionsRequest): Future[ListStreamSessionsResponse] = service.listStreamSessions(params).promise().toFuture
     @inline def listStreamsFuture(params: ListStreamsRequest): Future[ListStreamsResponse] = service.listStreams(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def putMetadataFuture(params: PutMetadataRequest): Future[js.Object] = service.putMetadata(params).promise().toFuture
@@ -101,11 +106,13 @@ package object ivs {
     def getRecordingConfiguration(params: GetRecordingConfigurationRequest): Request[GetRecordingConfigurationResponse] = js.native
     def getStream(params: GetStreamRequest): Request[GetStreamResponse] = js.native
     def getStreamKey(params: GetStreamKeyRequest): Request[GetStreamKeyResponse] = js.native
+    def getStreamSession(params: GetStreamSessionRequest): Request[GetStreamSessionResponse] = js.native
     def importPlaybackKeyPair(params: ImportPlaybackKeyPairRequest): Request[ImportPlaybackKeyPairResponse] = js.native
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
     def listPlaybackKeyPairs(params: ListPlaybackKeyPairsRequest): Request[ListPlaybackKeyPairsResponse] = js.native
     def listRecordingConfigurations(params: ListRecordingConfigurationsRequest): Request[ListRecordingConfigurationsResponse] = js.native
     def listStreamKeys(params: ListStreamKeysRequest): Request[ListStreamKeysResponse] = js.native
+    def listStreamSessions(params: ListStreamSessionsRequest): Request[ListStreamSessionsResponse] = js.native
     def listStreams(params: ListStreamsRequest): Request[ListStreamsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def putMetadata(params: PutMetadataRequest): Request[js.Object] = js.native
@@ -117,6 +124,33 @@ package object ivs {
   object IVS {
     @inline implicit def toOps(service: IVS): IVSOps = {
       new IVSOps(service)
+    }
+  }
+
+  /** Object specifying a stream’s audio configuration.
+    */
+  @js.native
+  trait AudioConfiguration extends js.Object {
+    var channels: js.UndefOr[Int]
+    var codec: js.UndefOr[String]
+    var sampleRate: js.UndefOr[Int]
+    var targetBitrate: js.UndefOr[Int]
+  }
+
+  object AudioConfiguration {
+    @inline
+    def apply(
+        channels: js.UndefOr[Int] = js.undefined,
+        codec: js.UndefOr[String] = js.undefined,
+        sampleRate: js.UndefOr[Int] = js.undefined,
+        targetBitrate: js.UndefOr[Int] = js.undefined
+    ): AudioConfiguration = {
+      val __obj = js.Dynamic.literal()
+      channels.foreach(__v => __obj.updateDynamic("channels")(__v.asInstanceOf[js.Any]))
+      codec.foreach(__v => __obj.updateDynamic("codec")(__v.asInstanceOf[js.Any]))
+      sampleRate.foreach(__v => __obj.updateDynamic("sampleRate")(__v.asInstanceOf[js.Any]))
+      targetBitrate.foreach(__v => __obj.updateDynamic("targetBitrate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AudioConfiguration]
     }
   }
 
@@ -681,6 +715,43 @@ package object ivs {
   }
 
   @js.native
+  trait GetStreamSessionRequest extends js.Object {
+    var channelArn: ChannelArn
+    var streamId: js.UndefOr[StreamId]
+  }
+
+  object GetStreamSessionRequest {
+    @inline
+    def apply(
+        channelArn: ChannelArn,
+        streamId: js.UndefOr[StreamId] = js.undefined
+    ): GetStreamSessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "channelArn" -> channelArn.asInstanceOf[js.Any]
+      )
+
+      streamId.foreach(__v => __obj.updateDynamic("streamId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStreamSessionRequest]
+    }
+  }
+
+  @js.native
+  trait GetStreamSessionResponse extends js.Object {
+    var streamSession: js.UndefOr[StreamSession]
+  }
+
+  object GetStreamSessionResponse {
+    @inline
+    def apply(
+        streamSession: js.UndefOr[StreamSession] = js.undefined
+    ): GetStreamSessionResponse = {
+      val __obj = js.Dynamic.literal()
+      streamSession.foreach(__v => __obj.updateDynamic("streamSession")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetStreamSessionResponse]
+    }
+  }
+
+  @js.native
   trait ImportPlaybackKeyPairRequest extends js.Object {
     var publicKeyMaterial: PlaybackPublicKeyMaterial
     var name: js.UndefOr[PlaybackKeyPairName]
@@ -717,6 +788,27 @@ package object ivs {
       val __obj = js.Dynamic.literal()
       keyPair.foreach(__v => __obj.updateDynamic("keyPair")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportPlaybackKeyPairResponse]
+    }
+  }
+
+  /** Object specifying the ingest configuration set up by the broadcaster, usually in an encoder.
+    */
+  @js.native
+  trait IngestConfiguration extends js.Object {
+    var audio: js.UndefOr[AudioConfiguration]
+    var video: js.UndefOr[VideoConfiguration]
+  }
+
+  object IngestConfiguration {
+    @inline
+    def apply(
+        audio: js.UndefOr[AudioConfiguration] = js.undefined,
+        video: js.UndefOr[VideoConfiguration] = js.undefined
+    ): IngestConfiguration = {
+      val __obj = js.Dynamic.literal()
+      audio.foreach(__v => __obj.updateDynamic("audio")(__v.asInstanceOf[js.Any]))
+      video.foreach(__v => __obj.updateDynamic("video")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IngestConfiguration]
     }
   }
 
@@ -892,7 +984,53 @@ package object ivs {
   }
 
   @js.native
+  trait ListStreamSessionsRequest extends js.Object {
+    var channelArn: ChannelArn
+    var maxResults: js.UndefOr[MaxStreamResults]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListStreamSessionsRequest {
+    @inline
+    def apply(
+        channelArn: ChannelArn,
+        maxResults: js.UndefOr[MaxStreamResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListStreamSessionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "channelArn" -> channelArn.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamSessionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListStreamSessionsResponse extends js.Object {
+    var streamSessions: StreamSessionList
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListStreamSessionsResponse {
+    @inline
+    def apply(
+        streamSessions: StreamSessionList,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListStreamSessionsResponse = {
+      val __obj = js.Dynamic.literal(
+        "streamSessions" -> streamSessions.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStreamSessionsResponse]
+    }
+  }
+
+  @js.native
   trait ListStreamsRequest extends js.Object {
+    var filterBy: js.UndefOr[StreamFilters]
     var maxResults: js.UndefOr[MaxStreamResults]
     var nextToken: js.UndefOr[PaginationToken]
   }
@@ -900,10 +1038,12 @@ package object ivs {
   object ListStreamsRequest {
     @inline
     def apply(
+        filterBy: js.UndefOr[StreamFilters] = js.undefined,
         maxResults: js.UndefOr[MaxStreamResults] = js.undefined,
         nextToken: js.UndefOr[PaginationToken] = js.undefined
     ): ListStreamsRequest = {
       val __obj = js.Dynamic.literal()
+      filterBy.foreach(__v => __obj.updateDynamic("filterBy")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListStreamsRequest]
@@ -934,23 +1074,16 @@ package object ivs {
   @js.native
   trait ListTagsForResourceRequest extends js.Object {
     var resourceArn: ResourceArn
-    var maxResults: js.UndefOr[MaxTagResults]
-    var nextToken: js.UndefOr[String]
   }
 
   object ListTagsForResourceRequest {
     @inline
     def apply(
-        resourceArn: ResourceArn,
-        maxResults: js.UndefOr[MaxTagResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        resourceArn: ResourceArn
     ): ListTagsForResourceRequest = {
       val __obj = js.Dynamic.literal(
         "resourceArn" -> resourceArn.asInstanceOf[js.Any]
       )
-
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceRequest]
     }
   }
@@ -958,20 +1091,16 @@ package object ivs {
   @js.native
   trait ListTagsForResourceResponse extends js.Object {
     var tags: Tags
-    var nextToken: js.UndefOr[String]
   }
 
   object ListTagsForResourceResponse {
     @inline
     def apply(
-        tags: Tags,
-        nextToken: js.UndefOr[String] = js.undefined
+        tags: Tags
     ): ListTagsForResourceResponse = {
       val __obj = js.Dynamic.literal(
         "tags" -> tags.asInstanceOf[js.Any]
       )
-
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
@@ -1167,6 +1296,7 @@ package object ivs {
     var playbackUrl: js.UndefOr[PlaybackURL]
     var startTime: js.UndefOr[StreamStartTime]
     var state: js.UndefOr[StreamState]
+    var streamId: js.UndefOr[StreamId]
     var viewerCount: js.UndefOr[StreamViewerCount]
   }
 
@@ -1178,6 +1308,7 @@ package object ivs {
         playbackUrl: js.UndefOr[PlaybackURL] = js.undefined,
         startTime: js.UndefOr[StreamStartTime] = js.undefined,
         state: js.UndefOr[StreamState] = js.undefined,
+        streamId: js.UndefOr[StreamId] = js.undefined,
         viewerCount: js.UndefOr[StreamViewerCount] = js.undefined
     ): Stream = {
       val __obj = js.Dynamic.literal()
@@ -1186,8 +1317,51 @@ package object ivs {
       playbackUrl.foreach(__v => __obj.updateDynamic("playbackUrl")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      streamId.foreach(__v => __obj.updateDynamic("streamId")(__v.asInstanceOf[js.Any]))
       viewerCount.foreach(__v => __obj.updateDynamic("viewerCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Stream]
+    }
+  }
+
+  /** Object specifying a stream’s events. For a list of events, see [[https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html|Using Amazon EventBridge with Amazon IVS]].
+    */
+  @js.native
+  trait StreamEvent extends js.Object {
+    var eventTime: js.UndefOr[Time]
+    var name: js.UndefOr[String]
+    var `type`: js.UndefOr[String]
+  }
+
+  object StreamEvent {
+    @inline
+    def apply(
+        eventTime: js.UndefOr[Time] = js.undefined,
+        name: js.UndefOr[String] = js.undefined,
+        `type`: js.UndefOr[String] = js.undefined
+    ): StreamEvent = {
+      val __obj = js.Dynamic.literal()
+      eventTime.foreach(__v => __obj.updateDynamic("eventTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamEvent]
+    }
+  }
+
+  /** Object specifying the stream attribute on which to filter.
+    */
+  @js.native
+  trait StreamFilters extends js.Object {
+    var health: js.UndefOr[StreamHealth]
+  }
+
+  object StreamFilters {
+    @inline
+    def apply(
+        health: js.UndefOr[StreamHealth] = js.undefined
+    ): StreamFilters = {
+      val __obj = js.Dynamic.literal()
+      health.foreach(__v => __obj.updateDynamic("health")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamFilters]
     }
   }
 
@@ -1242,6 +1416,69 @@ package object ivs {
     }
   }
 
+  /** Object that captures the Amazon IVS configuration that the customer provisioned, the ingest configurations that the broadcaster used, and the most recent Amazon IVS stream events it encountered.
+    */
+  @js.native
+  trait StreamSession extends js.Object {
+    var channel: js.UndefOr[Channel]
+    var endTime: js.UndefOr[Time]
+    var ingestConfiguration: js.UndefOr[IngestConfiguration]
+    var recordingConfiguration: js.UndefOr[RecordingConfiguration]
+    var startTime: js.UndefOr[Time]
+    var streamId: js.UndefOr[StreamId]
+    var truncatedEvents: js.UndefOr[StreamEvents]
+  }
+
+  object StreamSession {
+    @inline
+    def apply(
+        channel: js.UndefOr[Channel] = js.undefined,
+        endTime: js.UndefOr[Time] = js.undefined,
+        ingestConfiguration: js.UndefOr[IngestConfiguration] = js.undefined,
+        recordingConfiguration: js.UndefOr[RecordingConfiguration] = js.undefined,
+        startTime: js.UndefOr[Time] = js.undefined,
+        streamId: js.UndefOr[StreamId] = js.undefined,
+        truncatedEvents: js.UndefOr[StreamEvents] = js.undefined
+    ): StreamSession = {
+      val __obj = js.Dynamic.literal()
+      channel.foreach(__v => __obj.updateDynamic("channel")(__v.asInstanceOf[js.Any]))
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      ingestConfiguration.foreach(__v => __obj.updateDynamic("ingestConfiguration")(__v.asInstanceOf[js.Any]))
+      recordingConfiguration.foreach(__v => __obj.updateDynamic("recordingConfiguration")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      streamId.foreach(__v => __obj.updateDynamic("streamId")(__v.asInstanceOf[js.Any]))
+      truncatedEvents.foreach(__v => __obj.updateDynamic("truncatedEvents")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamSession]
+    }
+  }
+
+  /** Summary information about a stream session.
+    */
+  @js.native
+  trait StreamSessionSummary extends js.Object {
+    var endTime: js.UndefOr[Time]
+    var hasErrorEvent: js.UndefOr[Boolean]
+    var startTime: js.UndefOr[Time]
+    var streamId: js.UndefOr[StreamId]
+  }
+
+  object StreamSessionSummary {
+    @inline
+    def apply(
+        endTime: js.UndefOr[Time] = js.undefined,
+        hasErrorEvent: js.UndefOr[Boolean] = js.undefined,
+        startTime: js.UndefOr[Time] = js.undefined,
+        streamId: js.UndefOr[StreamId] = js.undefined
+    ): StreamSessionSummary = {
+      val __obj = js.Dynamic.literal()
+      endTime.foreach(__v => __obj.updateDynamic("endTime")(__v.asInstanceOf[js.Any]))
+      hasErrorEvent.foreach(__v => __obj.updateDynamic("hasErrorEvent")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      streamId.foreach(__v => __obj.updateDynamic("streamId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StreamSessionSummary]
+    }
+  }
+
   /** Summary information about a stream.
     */
   @js.native
@@ -1250,6 +1487,7 @@ package object ivs {
     var health: js.UndefOr[StreamHealth]
     var startTime: js.UndefOr[StreamStartTime]
     var state: js.UndefOr[StreamState]
+    var streamId: js.UndefOr[StreamId]
     var viewerCount: js.UndefOr[StreamViewerCount]
   }
 
@@ -1260,6 +1498,7 @@ package object ivs {
         health: js.UndefOr[StreamHealth] = js.undefined,
         startTime: js.UndefOr[StreamStartTime] = js.undefined,
         state: js.UndefOr[StreamState] = js.undefined,
+        streamId: js.UndefOr[StreamId] = js.undefined,
         viewerCount: js.UndefOr[StreamViewerCount] = js.undefined
     ): StreamSummary = {
       val __obj = js.Dynamic.literal()
@@ -1267,6 +1506,7 @@ package object ivs {
       health.foreach(__v => __obj.updateDynamic("health")(__v.asInstanceOf[js.Any]))
       startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      streamId.foreach(__v => __obj.updateDynamic("streamId")(__v.asInstanceOf[js.Any]))
       viewerCount.foreach(__v => __obj.updateDynamic("viewerCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamSummary]
     }
@@ -1380,6 +1620,45 @@ package object ivs {
       val __obj = js.Dynamic.literal()
       channel.foreach(__v => __obj.updateDynamic("channel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateChannelResponse]
+    }
+  }
+
+  /** Object specifying a stream’s video configuration.
+    */
+  @js.native
+  trait VideoConfiguration extends js.Object {
+    var avcLevel: js.UndefOr[String]
+    var avcProfile: js.UndefOr[String]
+    var codec: js.UndefOr[String]
+    var encoder: js.UndefOr[String]
+    var targetBitrate: js.UndefOr[Int]
+    var targetFramerate: js.UndefOr[Int]
+    var videoHeight: js.UndefOr[Int]
+    var videoWidth: js.UndefOr[Int]
+  }
+
+  object VideoConfiguration {
+    @inline
+    def apply(
+        avcLevel: js.UndefOr[String] = js.undefined,
+        avcProfile: js.UndefOr[String] = js.undefined,
+        codec: js.UndefOr[String] = js.undefined,
+        encoder: js.UndefOr[String] = js.undefined,
+        targetBitrate: js.UndefOr[Int] = js.undefined,
+        targetFramerate: js.UndefOr[Int] = js.undefined,
+        videoHeight: js.UndefOr[Int] = js.undefined,
+        videoWidth: js.UndefOr[Int] = js.undefined
+    ): VideoConfiguration = {
+      val __obj = js.Dynamic.literal()
+      avcLevel.foreach(__v => __obj.updateDynamic("avcLevel")(__v.asInstanceOf[js.Any]))
+      avcProfile.foreach(__v => __obj.updateDynamic("avcProfile")(__v.asInstanceOf[js.Any]))
+      codec.foreach(__v => __obj.updateDynamic("codec")(__v.asInstanceOf[js.Any]))
+      encoder.foreach(__v => __obj.updateDynamic("encoder")(__v.asInstanceOf[js.Any]))
+      targetBitrate.foreach(__v => __obj.updateDynamic("targetBitrate")(__v.asInstanceOf[js.Any]))
+      targetFramerate.foreach(__v => __obj.updateDynamic("targetFramerate")(__v.asInstanceOf[js.Any]))
+      videoHeight.foreach(__v => __obj.updateDynamic("videoHeight")(__v.asInstanceOf[js.Any]))
+      videoWidth.foreach(__v => __obj.updateDynamic("videoWidth")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VideoConfiguration]
     }
   }
 }

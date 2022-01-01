@@ -3,6 +3,80 @@ package facade.amazonaws.services.autoscaling
 import scalajs.js
 
 @js.native
+sealed trait AcceleratorManufacturer extends js.Any
+object AcceleratorManufacturer {
+  val nvidia = "nvidia".asInstanceOf[AcceleratorManufacturer]
+  val amd = "amd".asInstanceOf[AcceleratorManufacturer]
+  val `amazon-web-services` = "amazon-web-services".asInstanceOf[AcceleratorManufacturer]
+  val xilinx = "xilinx".asInstanceOf[AcceleratorManufacturer]
+
+  @inline def values: js.Array[AcceleratorManufacturer] = js.Array(nvidia, amd, `amazon-web-services`, xilinx)
+}
+
+@js.native
+sealed trait AcceleratorName extends js.Any
+object AcceleratorName {
+  val a100 = "a100".asInstanceOf[AcceleratorName]
+  val v100 = "v100".asInstanceOf[AcceleratorName]
+  val k80 = "k80".asInstanceOf[AcceleratorName]
+  val t4 = "t4".asInstanceOf[AcceleratorName]
+  val m60 = "m60".asInstanceOf[AcceleratorName]
+  val `radeon-pro-v520` = "radeon-pro-v520".asInstanceOf[AcceleratorName]
+  val vu9p = "vu9p".asInstanceOf[AcceleratorName]
+
+  @inline def values: js.Array[AcceleratorName] = js.Array(a100, v100, k80, t4, m60, `radeon-pro-v520`, vu9p)
+}
+
+@js.native
+sealed trait AcceleratorType extends js.Any
+object AcceleratorType {
+  val gpu = "gpu".asInstanceOf[AcceleratorType]
+  val fpga = "fpga".asInstanceOf[AcceleratorType]
+  val inference = "inference".asInstanceOf[AcceleratorType]
+
+  @inline def values: js.Array[AcceleratorType] = js.Array(gpu, fpga, inference)
+}
+
+@js.native
+sealed trait BareMetal extends js.Any
+object BareMetal {
+  val included = "included".asInstanceOf[BareMetal]
+  val excluded = "excluded".asInstanceOf[BareMetal]
+  val required = "required".asInstanceOf[BareMetal]
+
+  @inline def values: js.Array[BareMetal] = js.Array(included, excluded, required)
+}
+
+@js.native
+sealed trait BurstablePerformance extends js.Any
+object BurstablePerformance {
+  val included = "included".asInstanceOf[BurstablePerformance]
+  val excluded = "excluded".asInstanceOf[BurstablePerformance]
+  val required = "required".asInstanceOf[BurstablePerformance]
+
+  @inline def values: js.Array[BurstablePerformance] = js.Array(included, excluded, required)
+}
+
+@js.native
+sealed trait CpuManufacturer extends js.Any
+object CpuManufacturer {
+  val intel = "intel".asInstanceOf[CpuManufacturer]
+  val amd = "amd".asInstanceOf[CpuManufacturer]
+  val `amazon-web-services` = "amazon-web-services".asInstanceOf[CpuManufacturer]
+
+  @inline def values: js.Array[CpuManufacturer] = js.Array(intel, amd, `amazon-web-services`)
+}
+
+@js.native
+sealed trait InstanceGeneration extends js.Any
+object InstanceGeneration {
+  val current = "current".asInstanceOf[InstanceGeneration]
+  val previous = "previous".asInstanceOf[InstanceGeneration]
+
+  @inline def values: js.Array[InstanceGeneration] = js.Array(current, previous)
+}
+
+@js.native
 sealed trait InstanceMetadataEndpointState extends js.Any
 object InstanceMetadataEndpointState {
   val disabled = "disabled".asInstanceOf[InstanceMetadataEndpointState]
@@ -86,6 +160,25 @@ object LifecycleState {
 }
 
 @js.native
+sealed trait LocalStorage extends js.Any
+object LocalStorage {
+  val included = "included".asInstanceOf[LocalStorage]
+  val excluded = "excluded".asInstanceOf[LocalStorage]
+  val required = "required".asInstanceOf[LocalStorage]
+
+  @inline def values: js.Array[LocalStorage] = js.Array(included, excluded, required)
+}
+
+@js.native
+sealed trait LocalStorageType extends js.Any
+object LocalStorageType {
+  val hdd = "hdd".asInstanceOf[LocalStorageType]
+  val ssd = "ssd".asInstanceOf[LocalStorageType]
+
+  @inline def values: js.Array[LocalStorageType] = js.Array(hdd, ssd)
+}
+
+@js.native
 sealed trait MetricStatistic extends js.Any
 object MetricStatistic {
   val Average = "Average".asInstanceOf[MetricStatistic]
@@ -106,6 +199,57 @@ object MetricType {
   val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[MetricType]
 
   @inline def values: js.Array[MetricType] = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
+}
+
+@js.native
+sealed trait PredefinedLoadMetricType extends js.Any
+object PredefinedLoadMetricType {
+  val ASGTotalCPUUtilization = "ASGTotalCPUUtilization".asInstanceOf[PredefinedLoadMetricType]
+  val ASGTotalNetworkIn = "ASGTotalNetworkIn".asInstanceOf[PredefinedLoadMetricType]
+  val ASGTotalNetworkOut = "ASGTotalNetworkOut".asInstanceOf[PredefinedLoadMetricType]
+  val ALBTargetGroupRequestCount = "ALBTargetGroupRequestCount".asInstanceOf[PredefinedLoadMetricType]
+
+  @inline def values: js.Array[PredefinedLoadMetricType] = js.Array(ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount)
+}
+
+@js.native
+sealed trait PredefinedMetricPairType extends js.Any
+object PredefinedMetricPairType {
+  val ASGCPUUtilization = "ASGCPUUtilization".asInstanceOf[PredefinedMetricPairType]
+  val ASGNetworkIn = "ASGNetworkIn".asInstanceOf[PredefinedMetricPairType]
+  val ASGNetworkOut = "ASGNetworkOut".asInstanceOf[PredefinedMetricPairType]
+  val ALBRequestCount = "ALBRequestCount".asInstanceOf[PredefinedMetricPairType]
+
+  @inline def values: js.Array[PredefinedMetricPairType] = js.Array(ASGCPUUtilization, ASGNetworkIn, ASGNetworkOut, ALBRequestCount)
+}
+
+@js.native
+sealed trait PredefinedScalingMetricType extends js.Any
+object PredefinedScalingMetricType {
+  val ASGAverageCPUUtilization = "ASGAverageCPUUtilization".asInstanceOf[PredefinedScalingMetricType]
+  val ASGAverageNetworkIn = "ASGAverageNetworkIn".asInstanceOf[PredefinedScalingMetricType]
+  val ASGAverageNetworkOut = "ASGAverageNetworkOut".asInstanceOf[PredefinedScalingMetricType]
+  val ALBRequestCountPerTarget = "ALBRequestCountPerTarget".asInstanceOf[PredefinedScalingMetricType]
+
+  @inline def values: js.Array[PredefinedScalingMetricType] = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
+}
+
+@js.native
+sealed trait PredictiveScalingMaxCapacityBreachBehavior extends js.Any
+object PredictiveScalingMaxCapacityBreachBehavior {
+  val HonorMaxCapacity = "HonorMaxCapacity".asInstanceOf[PredictiveScalingMaxCapacityBreachBehavior]
+  val IncreaseMaxCapacity = "IncreaseMaxCapacity".asInstanceOf[PredictiveScalingMaxCapacityBreachBehavior]
+
+  @inline def values: js.Array[PredictiveScalingMaxCapacityBreachBehavior] = js.Array(HonorMaxCapacity, IncreaseMaxCapacity)
+}
+
+@js.native
+sealed trait PredictiveScalingMode extends js.Any
+object PredictiveScalingMode {
+  val ForecastAndScale = "ForecastAndScale".asInstanceOf[PredictiveScalingMode]
+  val ForecastOnly = "ForecastOnly".asInstanceOf[PredictiveScalingMode]
+
+  @inline def values: js.Array[PredictiveScalingMode] = js.Array(ForecastAndScale, ForecastOnly)
 }
 
 @js.native

@@ -503,6 +503,20 @@ object DvbSubDestinationTeletextGridControl {
   inline def values: js.Array[DvbSubDestinationTeletextGridControl] = js.Array(FIXED, SCALED)
 }
 
+/** Dvb Sub Ocr Language
+  */
+type DvbSubOcrLanguage = "DEU" | "ENG" | "FRA" | "NLD" | "POR" | "SPA"
+object DvbSubOcrLanguage {
+  inline val DEU: "DEU" = "DEU"
+  inline val ENG: "ENG" = "ENG"
+  inline val FRA: "FRA" = "FRA"
+  inline val NLD: "NLD" = "NLD"
+  inline val POR: "POR" = "POR"
+  inline val SPA: "SPA" = "SPA"
+
+  inline def values: js.Array[DvbSubOcrLanguage] = js.Array(DEU, ENG, FRA, NLD, POR, SPA)
+}
+
 /** Eac3 Attenuation Control
   */
 type Eac3AttenuationControl = "ATTENUATE_3_DB" | "NONE"
@@ -820,8 +834,9 @@ object GlobalConfigurationOutputTimingSource {
 
 /** H264 Adaptive Quantization
   */
-type H264AdaptiveQuantization = "HIGH" | "HIGHER" | "LOW" | "MAX" | "MEDIUM" | "OFF"
+type H264AdaptiveQuantization = "AUTO" | "HIGH" | "HIGHER" | "LOW" | "MAX" | "MEDIUM" | "OFF"
 object H264AdaptiveQuantization {
+  inline val AUTO: "AUTO" = "AUTO"
   inline val HIGH: "HIGH" = "HIGH"
   inline val HIGHER: "HIGHER" = "HIGHER"
   inline val LOW: "LOW" = "LOW"
@@ -829,7 +844,7 @@ object H264AdaptiveQuantization {
   inline val MEDIUM: "MEDIUM" = "MEDIUM"
   inline val OFF: "OFF" = "OFF"
 
-  inline def values: js.Array[H264AdaptiveQuantization] = js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF)
+  inline def values: js.Array[H264AdaptiveQuantization] = js.Array(AUTO, HIGH, HIGHER, LOW, MAX, MEDIUM, OFF)
 }
 
 /** H264 Color Metadata
@@ -1074,8 +1089,9 @@ object H264TimecodeInsertionBehavior {
 
 /** H265 Adaptive Quantization
   */
-type H265AdaptiveQuantization = "HIGH" | "HIGHER" | "LOW" | "MAX" | "MEDIUM" | "OFF"
+type H265AdaptiveQuantization = "AUTO" | "HIGH" | "HIGHER" | "LOW" | "MAX" | "MEDIUM" | "OFF"
 object H265AdaptiveQuantization {
+  inline val AUTO: "AUTO" = "AUTO"
   inline val HIGH: "HIGH" = "HIGH"
   inline val HIGHER: "HIGHER" = "HIGHER"
   inline val LOW: "LOW" = "LOW"
@@ -1083,7 +1099,7 @@ object H265AdaptiveQuantization {
   inline val MEDIUM: "MEDIUM" = "MEDIUM"
   inline val OFF: "OFF" = "OFF"
 
-  inline def values: js.Array[H265AdaptiveQuantization] = js.Array(HIGH, HIGHER, LOW, MAX, MEDIUM, OFF)
+  inline def values: js.Array[H265AdaptiveQuantization] = js.Array(AUTO, HIGH, HIGHER, LOW, MAX, MEDIUM, OFF)
 }
 
 /** H265 Alternative Transfer Function
@@ -1437,6 +1453,16 @@ object HlsRedundantManifest {
   inline def values: js.Array[HlsRedundantManifest] = js.Array(DISABLED, ENABLED)
 }
 
+/** Hls Scte35 Source Type
+  */
+type HlsScte35SourceType = "MANIFEST" | "SEGMENTS"
+object HlsScte35SourceType {
+  inline val MANIFEST: "MANIFEST" = "MANIFEST"
+  inline val SEGMENTS: "SEGMENTS" = "SEGMENTS"
+
+  inline def values: js.Array[HlsScte35SourceType] = js.Array(MANIFEST, SEGMENTS)
+}
+
 /** Hls Segmentation Mode
   */
 type HlsSegmentationMode = "USE_INPUT_SEGMENTATION" | "USE_SEGMENT_DURATION"
@@ -1735,7 +1761,7 @@ object InputSourceEndBehavior {
   inline def values: js.Array[InputSourceEndBehavior] = js.Array(CONTINUE, LOOP)
 }
 
-/** There are two types of input sources, static and dynamic. If an input source is dynamic you can change the source url of the input dynamically using an input switch action. However, the only input type to support a dynamic url at this time is MP4_FILE. By default all input sources are static.
+/** There are two types of input sources, static and dynamic. If an input source is dynamic you can change the source url of the input dynamically using an input switch action. Currently, two input types support a dynamic url at this time, MP4_FILE and TS_FILE. By default all input sources are static.
   */
 type InputSourceType = "STATIC" | "DYNAMIC"
 object InputSourceType {
@@ -1768,9 +1794,9 @@ object InputTimecodeSource {
   inline def values: js.Array[InputTimecodeSource] = js.Array(ZEROBASED, EMBEDDED)
 }
 
-/** Placeholder documentation for InputType
+/** The different types of inputs that AWS Elemental MediaLive supports.
   */
-type InputType = "UDP_PUSH" | "RTP_PUSH" | "RTMP_PUSH" | "RTMP_PULL" | "URL_PULL" | "MP4_FILE" | "MEDIACONNECT" | "INPUT_DEVICE" | "AWS_CDI"
+type InputType = "UDP_PUSH" | "RTP_PUSH" | "RTMP_PUSH" | "RTMP_PULL" | "URL_PULL" | "MP4_FILE" | "MEDIACONNECT" | "INPUT_DEVICE" | "AWS_CDI" | "TS_FILE"
 object InputType {
   inline val UDP_PUSH: "UDP_PUSH" = "UDP_PUSH"
   inline val RTP_PUSH: "RTP_PUSH" = "RTP_PUSH"
@@ -1781,8 +1807,9 @@ object InputType {
   inline val MEDIACONNECT: "MEDIACONNECT" = "MEDIACONNECT"
   inline val INPUT_DEVICE: "INPUT_DEVICE" = "INPUT_DEVICE"
   inline val AWS_CDI: "AWS_CDI" = "AWS_CDI"
+  inline val TS_FILE: "TS_FILE" = "TS_FILE"
 
-  inline def values: js.Array[InputType] = js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT, INPUT_DEVICE, AWS_CDI)
+  inline def values: js.Array[InputType] = js.Array(UDP_PUSH, RTP_PUSH, RTMP_PUSH, RTMP_PULL, URL_PULL, MP4_FILE, MEDIACONNECT, INPUT_DEVICE, AWS_CDI, TS_FILE)
 }
 
 /** If you specify a StopTimecode in an input (in order to clip the file), you can specify if you want the clip to exclude (the default) or include the frame specified by the timecode.
@@ -2192,6 +2219,26 @@ object NielsenPcmToId3TaggingState {
   inline def values: js.Array[NielsenPcmToId3TaggingState] = js.Array(DISABLED, ENABLED)
 }
 
+/** Nielsen Watermarks Cbet Stepaside
+  */
+type NielsenWatermarksCbetStepaside = "DISABLED" | "ENABLED"
+object NielsenWatermarksCbetStepaside {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+
+  inline def values: js.Array[NielsenWatermarksCbetStepaside] = js.Array(DISABLED, ENABLED)
+}
+
+/** Nielsen Watermarks Distribution Types
+  */
+type NielsenWatermarksDistributionTypes = "FINAL_DISTRIBUTOR" | "PROGRAM_CONTENT"
+object NielsenWatermarksDistributionTypes {
+  inline val FINAL_DISTRIBUTOR: "FINAL_DISTRIBUTOR" = "FINAL_DISTRIBUTOR"
+  inline val PROGRAM_CONTENT: "PROGRAM_CONTENT" = "PROGRAM_CONTENT"
+
+  inline def values: js.Array[NielsenWatermarksDistributionTypes] = js.Array(FINAL_DISTRIBUTOR, PROGRAM_CONTENT)
+}
+
 /** Units for duration, e.g. 'MONTHS'
   */
 type OfferingDurationUnits = "MONTHS"
@@ -2289,14 +2336,16 @@ object ReservationResourceType {
   inline def values: js.Array[ReservationResourceType] = js.Array(INPUT, OUTPUT, MULTIPLEX, CHANNEL)
 }
 
-/** Special features, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+/** Special features, 'ADVANCED_AUDIO' 'AUDIO_NORMALIZATION' 'MGHD' or 'MGUHD'
   */
-type ReservationSpecialFeature = "ADVANCED_AUDIO" | "AUDIO_NORMALIZATION"
+type ReservationSpecialFeature = "ADVANCED_AUDIO" | "AUDIO_NORMALIZATION" | "MGHD" | "MGUHD"
 object ReservationSpecialFeature {
   inline val ADVANCED_AUDIO: "ADVANCED_AUDIO" = "ADVANCED_AUDIO"
   inline val AUDIO_NORMALIZATION: "AUDIO_NORMALIZATION" = "AUDIO_NORMALIZATION"
+  inline val MGHD: "MGHD" = "MGHD"
+  inline val MGUHD: "MGUHD" = "MGUHD"
 
-  inline def values: js.Array[ReservationSpecialFeature] = js.Array(ADVANCED_AUDIO, AUDIO_NORMALIZATION)
+  inline def values: js.Array[ReservationSpecialFeature] = js.Array(ADVANCED_AUDIO, AUDIO_NORMALIZATION, MGHD, MGUHD)
 }
 
 /** Current reservation state
@@ -2382,6 +2431,20 @@ object Scte20Convert608To708 {
   inline val UPCONVERT: "UPCONVERT" = "UPCONVERT"
 
   inline def values: js.Array[Scte20Convert608To708] = js.Array(DISABLED, UPCONVERT)
+}
+
+/** Scte27 Ocr Language
+  */
+type Scte27OcrLanguage = "DEU" | "ENG" | "FRA" | "NLD" | "POR" | "SPA"
+object Scte27OcrLanguage {
+  inline val DEU: "DEU" = "DEU"
+  inline val ENG: "ENG" = "ENG"
+  inline val FRA: "FRA" = "FRA"
+  inline val NLD: "NLD" = "NLD"
+  inline val POR: "POR" = "POR"
+  inline val SPA: "SPA" = "SPA"
+
+  inline def values: js.Array[Scte27OcrLanguage] = js.Array(DEU, ENG, FRA, NLD, POR, SPA)
 }
 
 /** Scte35 Apos No Regional Blackout Behavior
@@ -2708,4 +2771,14 @@ object WavCodingMode {
   inline val CODING_MODE_8_0: "CODING_MODE_8_0" = "CODING_MODE_8_0"
 
   inline def values: js.Array[WavCodingMode] = js.Array(CODING_MODE_1_0, CODING_MODE_2_0, CODING_MODE_4_0, CODING_MODE_8_0)
+}
+
+/** Webvtt Destination Style Control
+  */
+type WebvttDestinationStyleControl = "NO_STYLE_DATA" | "PASSTHROUGH"
+object WebvttDestinationStyleControl {
+  inline val NO_STYLE_DATA: "NO_STYLE_DATA" = "NO_STYLE_DATA"
+  inline val PASSTHROUGH: "PASSTHROUGH" = "PASSTHROUGH"
+
+  inline def values: js.Array[WebvttDestinationStyleControl] = js.Array(NO_STYLE_DATA, PASSTHROUGH)
 }

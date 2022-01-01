@@ -35,6 +35,8 @@ package object kms {
   type KeyStorePasswordType = String
   type LimitType = Int
   type MarkerType = String
+  type MultiRegionKeyList = js.Array[MultiRegionKey]
+  type NullableBooleanType = Boolean
   type NumberOfBytesType = Int
   type PendingWindowInDaysType = Int
   type PlaintextType = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
@@ -43,6 +45,7 @@ package object kms {
   type PolicyType = String
   type PrincipalIdType = String
   type PublicKeyType = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type RegionType = String
   type SigningAlgorithmSpecList = js.Array[SigningAlgorithmSpec]
   type TagKeyList = js.Array[TagKeyType]
   type TagKeyType = String
@@ -88,6 +91,7 @@ package object kms {
     @inline def listRetirableGrantsFuture(params: ListRetirableGrantsRequest): Future[ListGrantsResponse] = service.listRetirableGrants(params).promise().toFuture
     @inline def putKeyPolicyFuture(params: PutKeyPolicyRequest): Future[js.Object] = service.putKeyPolicy(params).promise().toFuture
     @inline def reEncryptFuture(params: ReEncryptRequest): Future[ReEncryptResponse] = service.reEncrypt(params).promise().toFuture
+    @inline def replicateKeyFuture(params: ReplicateKeyRequest): Future[ReplicateKeyResponse] = service.replicateKey(params).promise().toFuture
     @inline def retireGrantFuture(params: RetireGrantRequest): Future[js.Object] = service.retireGrant(params).promise().toFuture
     @inline def revokeGrantFuture(params: RevokeGrantRequest): Future[js.Object] = service.revokeGrant(params).promise().toFuture
     @inline def scheduleKeyDeletionFuture(params: ScheduleKeyDeletionRequest): Future[ScheduleKeyDeletionResponse] = service.scheduleKeyDeletion(params).promise().toFuture
@@ -97,6 +101,7 @@ package object kms {
     @inline def updateAliasFuture(params: UpdateAliasRequest): Future[js.Object] = service.updateAlias(params).promise().toFuture
     @inline def updateCustomKeyStoreFuture(params: UpdateCustomKeyStoreRequest): Future[UpdateCustomKeyStoreResponse] = service.updateCustomKeyStore(params).promise().toFuture
     @inline def updateKeyDescriptionFuture(params: UpdateKeyDescriptionRequest): Future[js.Object] = service.updateKeyDescription(params).promise().toFuture
+    @inline def updatePrimaryRegionFuture(params: UpdatePrimaryRegionRequest): Future[js.Object] = service.updatePrimaryRegion(params).promise().toFuture
     @inline def verifyFuture(params: VerifyRequest): Future[VerifyResponse] = service.verify(params).promise().toFuture
 
   }
@@ -142,6 +147,7 @@ package object kms {
     def listRetirableGrants(params: ListRetirableGrantsRequest): Request[ListGrantsResponse] = js.native
     def putKeyPolicy(params: PutKeyPolicyRequest): Request[js.Object] = js.native
     def reEncrypt(params: ReEncryptRequest): Request[ReEncryptResponse] = js.native
+    def replicateKey(params: ReplicateKeyRequest): Request[ReplicateKeyResponse] = js.native
     def retireGrant(params: RetireGrantRequest): Request[js.Object] = js.native
     def revokeGrant(params: RevokeGrantRequest): Request[js.Object] = js.native
     def scheduleKeyDeletion(params: ScheduleKeyDeletionRequest): Request[ScheduleKeyDeletionResponse] = js.native
@@ -151,6 +157,7 @@ package object kms {
     def updateAlias(params: UpdateAliasRequest): Request[js.Object] = js.native
     def updateCustomKeyStore(params: UpdateCustomKeyStoreRequest): Request[UpdateCustomKeyStoreResponse] = js.native
     def updateKeyDescription(params: UpdateKeyDescriptionRequest): Request[js.Object] = js.native
+    def updatePrimaryRegion(params: UpdatePrimaryRegionRequest): Request[js.Object] = js.native
     def verify(params: VerifyRequest): Request[VerifyResponse] = js.native
   }
   object KMS {
@@ -373,7 +380,9 @@ package object kms {
     var CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType]
     var CustomerMasterKeySpec: js.UndefOr[CustomerMasterKeySpec]
     var Description: js.UndefOr[DescriptionType]
+    var KeySpec: js.UndefOr[KeySpec]
     var KeyUsage: js.UndefOr[KeyUsageType]
+    var MultiRegion: js.UndefOr[NullableBooleanType]
     var Origin: js.UndefOr[OriginType]
     var Policy: js.UndefOr[PolicyType]
     var Tags: js.UndefOr[TagList]
@@ -386,7 +395,9 @@ package object kms {
         CustomKeyStoreId: js.UndefOr[CustomKeyStoreIdType] = js.undefined,
         CustomerMasterKeySpec: js.UndefOr[CustomerMasterKeySpec] = js.undefined,
         Description: js.UndefOr[DescriptionType] = js.undefined,
+        KeySpec: js.UndefOr[KeySpec] = js.undefined,
         KeyUsage: js.UndefOr[KeyUsageType] = js.undefined,
+        MultiRegion: js.UndefOr[NullableBooleanType] = js.undefined,
         Origin: js.UndefOr[OriginType] = js.undefined,
         Policy: js.UndefOr[PolicyType] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -396,7 +407,9 @@ package object kms {
       CustomKeyStoreId.foreach(__v => __obj.updateDynamic("CustomKeyStoreId")(__v.asInstanceOf[js.Any]))
       CustomerMasterKeySpec.foreach(__v => __obj.updateDynamic("CustomerMasterKeySpec")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      KeySpec.foreach(__v => __obj.updateDynamic("KeySpec")(__v.asInstanceOf[js.Any]))
       KeyUsage.foreach(__v => __obj.updateDynamic("KeyUsage")(__v.asInstanceOf[js.Any]))
+      MultiRegion.foreach(__v => __obj.updateDynamic("MultiRegion")(__v.asInstanceOf[js.Any]))
       Origin.foreach(__v => __obj.updateDynamic("Origin")(__v.asInstanceOf[js.Any]))
       Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -1188,6 +1201,7 @@ package object kms {
     var CustomerMasterKeySpec: js.UndefOr[CustomerMasterKeySpec]
     var EncryptionAlgorithms: js.UndefOr[EncryptionAlgorithmSpecList]
     var KeyId: js.UndefOr[KeyIdType]
+    var KeySpec: js.UndefOr[KeySpec]
     var KeyUsage: js.UndefOr[KeyUsageType]
     var PublicKey: js.UndefOr[PublicKeyType]
     var SigningAlgorithms: js.UndefOr[SigningAlgorithmSpecList]
@@ -1199,6 +1213,7 @@ package object kms {
         CustomerMasterKeySpec: js.UndefOr[CustomerMasterKeySpec] = js.undefined,
         EncryptionAlgorithms: js.UndefOr[EncryptionAlgorithmSpecList] = js.undefined,
         KeyId: js.UndefOr[KeyIdType] = js.undefined,
+        KeySpec: js.UndefOr[KeySpec] = js.undefined,
         KeyUsage: js.UndefOr[KeyUsageType] = js.undefined,
         PublicKey: js.UndefOr[PublicKeyType] = js.undefined,
         SigningAlgorithms: js.UndefOr[SigningAlgorithmSpecList] = js.undefined
@@ -1207,6 +1222,7 @@ package object kms {
       CustomerMasterKeySpec.foreach(__v => __obj.updateDynamic("CustomerMasterKeySpec")(__v.asInstanceOf[js.Any]))
       EncryptionAlgorithms.foreach(__v => __obj.updateDynamic("EncryptionAlgorithms")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      KeySpec.foreach(__v => __obj.updateDynamic("KeySpec")(__v.asInstanceOf[js.Any]))
       KeyUsage.foreach(__v => __obj.updateDynamic("KeyUsage")(__v.asInstanceOf[js.Any]))
       PublicKey.foreach(__v => __obj.updateDynamic("PublicKey")(__v.asInstanceOf[js.Any]))
       SigningAlgorithms.foreach(__v => __obj.updateDynamic("SigningAlgorithms")(__v.asInstanceOf[js.Any]))
@@ -1214,8 +1230,8 @@ package object kms {
     }
   }
 
-  /** Use this structure to allow [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations|cryptographic operations]] in the grant only when the operation request includes the specified [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context|encryption context]]. AWS KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a [[https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks|symmetric CMK]]. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric CMKs and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>. <important> In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption context
-    * of the encryption operation. Only the order of the pairs can vary. However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive. To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see [[https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context|kms:EncryptionContext:]] in the <i> <i>AWS Key Management Service Developer Guide</i> </i>. </important>
+  /** Use this structure to allow [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations|cryptographic operations]] in the grant only when the operation request includes the specified [[https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context|encryption context]]. KMS applies the grant constraints only to cryptographic operations that support an encryption context, that is, all cryptographic operations with a [[https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#symmetric-cmks|symmetric KMS key]]. Grant constraints are not applied to operations that do not support an encryption context, such as cryptographic operations with asymmetric KMS keys and management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>. <important> In a cryptographic operation, the encryption context in the decryption operation must be an exact, case-sensitive match for the keys and values in the encryption
+    * context of the encryption operation. Only the order of the pairs can vary. However, in a grant constraint, the key in each key-value pair is not case sensitive, but the value is case sensitive. To avoid confusion, do not use multiple encryption context pairs that differ only by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code> and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For details, see [[https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context|kms:EncryptionContext:]] in the <i> <i>Key Management Service Developer Guide</i> </i>. </important>
     */
   @js.native
   trait GrantConstraints extends js.Object {
@@ -1340,7 +1356,7 @@ package object kms {
     }
   }
 
-  /** Contains metadata about a customer master key (CMK). This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.
+  /** Contains metadata about a KMS key. This data type is used as a response element for the <a>CreateKey</a> and <a>DescribeKey</a> operations.
     */
   @js.native
   trait KeyMetadata extends js.Object {
@@ -1357,9 +1373,13 @@ package object kms {
     var EncryptionAlgorithms: js.UndefOr[EncryptionAlgorithmSpecList]
     var ExpirationModel: js.UndefOr[ExpirationModelType]
     var KeyManager: js.UndefOr[KeyManagerType]
+    var KeySpec: js.UndefOr[KeySpec]
     var KeyState: js.UndefOr[KeyState]
     var KeyUsage: js.UndefOr[KeyUsageType]
+    var MultiRegion: js.UndefOr[NullableBooleanType]
+    var MultiRegionConfiguration: js.UndefOr[MultiRegionConfiguration]
     var Origin: js.UndefOr[OriginType]
+    var PendingDeletionWindowInDays: js.UndefOr[PendingWindowInDaysType]
     var SigningAlgorithms: js.UndefOr[SigningAlgorithmSpecList]
     var ValidTo: js.UndefOr[DateType]
   }
@@ -1380,9 +1400,13 @@ package object kms {
         EncryptionAlgorithms: js.UndefOr[EncryptionAlgorithmSpecList] = js.undefined,
         ExpirationModel: js.UndefOr[ExpirationModelType] = js.undefined,
         KeyManager: js.UndefOr[KeyManagerType] = js.undefined,
+        KeySpec: js.UndefOr[KeySpec] = js.undefined,
         KeyState: js.UndefOr[KeyState] = js.undefined,
         KeyUsage: js.UndefOr[KeyUsageType] = js.undefined,
+        MultiRegion: js.UndefOr[NullableBooleanType] = js.undefined,
+        MultiRegionConfiguration: js.UndefOr[MultiRegionConfiguration] = js.undefined,
         Origin: js.UndefOr[OriginType] = js.undefined,
+        PendingDeletionWindowInDays: js.UndefOr[PendingWindowInDaysType] = js.undefined,
         SigningAlgorithms: js.UndefOr[SigningAlgorithmSpecList] = js.undefined,
         ValidTo: js.UndefOr[DateType] = js.undefined
     ): KeyMetadata = {
@@ -1402,9 +1426,13 @@ package object kms {
       EncryptionAlgorithms.foreach(__v => __obj.updateDynamic("EncryptionAlgorithms")(__v.asInstanceOf[js.Any]))
       ExpirationModel.foreach(__v => __obj.updateDynamic("ExpirationModel")(__v.asInstanceOf[js.Any]))
       KeyManager.foreach(__v => __obj.updateDynamic("KeyManager")(__v.asInstanceOf[js.Any]))
+      KeySpec.foreach(__v => __obj.updateDynamic("KeySpec")(__v.asInstanceOf[js.Any]))
       KeyState.foreach(__v => __obj.updateDynamic("KeyState")(__v.asInstanceOf[js.Any]))
       KeyUsage.foreach(__v => __obj.updateDynamic("KeyUsage")(__v.asInstanceOf[js.Any]))
+      MultiRegion.foreach(__v => __obj.updateDynamic("MultiRegion")(__v.asInstanceOf[js.Any]))
+      MultiRegionConfiguration.foreach(__v => __obj.updateDynamic("MultiRegionConfiguration")(__v.asInstanceOf[js.Any]))
       Origin.foreach(__v => __obj.updateDynamic("Origin")(__v.asInstanceOf[js.Any]))
+      PendingDeletionWindowInDays.foreach(__v => __obj.updateDynamic("PendingDeletionWindowInDays")(__v.asInstanceOf[js.Any]))
       SigningAlgorithms.foreach(__v => __obj.updateDynamic("SigningAlgorithms")(__v.asInstanceOf[js.Any]))
       ValidTo.foreach(__v => __obj.updateDynamic("ValidTo")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KeyMetadata]
@@ -1664,6 +1692,51 @@ package object kms {
     }
   }
 
+  /** Describes the configuration of this multi-Region key. This field appears only when the KMS key is a primary or replica of a multi-Region key. For more information about any listed KMS key, use the <a>DescribeKey</a> operation.
+    */
+  @js.native
+  trait MultiRegionConfiguration extends js.Object {
+    var MultiRegionKeyType: js.UndefOr[MultiRegionKeyType]
+    var PrimaryKey: js.UndefOr[MultiRegionKey]
+    var ReplicaKeys: js.UndefOr[MultiRegionKeyList]
+  }
+
+  object MultiRegionConfiguration {
+    @inline
+    def apply(
+        MultiRegionKeyType: js.UndefOr[MultiRegionKeyType] = js.undefined,
+        PrimaryKey: js.UndefOr[MultiRegionKey] = js.undefined,
+        ReplicaKeys: js.UndefOr[MultiRegionKeyList] = js.undefined
+    ): MultiRegionConfiguration = {
+      val __obj = js.Dynamic.literal()
+      MultiRegionKeyType.foreach(__v => __obj.updateDynamic("MultiRegionKeyType")(__v.asInstanceOf[js.Any]))
+      PrimaryKey.foreach(__v => __obj.updateDynamic("PrimaryKey")(__v.asInstanceOf[js.Any]))
+      ReplicaKeys.foreach(__v => __obj.updateDynamic("ReplicaKeys")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiRegionConfiguration]
+    }
+  }
+
+  /** Describes the primary or replica key in a multi-Region key.
+    */
+  @js.native
+  trait MultiRegionKey extends js.Object {
+    var Arn: js.UndefOr[ArnType]
+    var Region: js.UndefOr[RegionType]
+  }
+
+  object MultiRegionKey {
+    @inline
+    def apply(
+        Arn: js.UndefOr[ArnType] = js.undefined,
+        Region: js.UndefOr[RegionType] = js.undefined
+    ): MultiRegionKey = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiRegionKey]
+    }
+  }
+
   @js.native
   trait PutKeyPolicyRequest extends js.Object {
     var KeyId: KeyIdType
@@ -1759,6 +1832,61 @@ package object kms {
   }
 
   @js.native
+  trait ReplicateKeyRequest extends js.Object {
+    var KeyId: KeyIdType
+    var ReplicaRegion: RegionType
+    var BypassPolicyLockoutSafetyCheck: js.UndefOr[BooleanType]
+    var Description: js.UndefOr[DescriptionType]
+    var Policy: js.UndefOr[PolicyType]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ReplicateKeyRequest {
+    @inline
+    def apply(
+        KeyId: KeyIdType,
+        ReplicaRegion: RegionType,
+        BypassPolicyLockoutSafetyCheck: js.UndefOr[BooleanType] = js.undefined,
+        Description: js.UndefOr[DescriptionType] = js.undefined,
+        Policy: js.UndefOr[PolicyType] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ReplicateKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
+        "ReplicaRegion" -> ReplicaRegion.asInstanceOf[js.Any]
+      )
+
+      BypassPolicyLockoutSafetyCheck.foreach(__v => __obj.updateDynamic("BypassPolicyLockoutSafetyCheck")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicateKeyRequest]
+    }
+  }
+
+  @js.native
+  trait ReplicateKeyResponse extends js.Object {
+    var ReplicaKeyMetadata: js.UndefOr[KeyMetadata]
+    var ReplicaPolicy: js.UndefOr[PolicyType]
+    var ReplicaTags: js.UndefOr[TagList]
+  }
+
+  object ReplicateKeyResponse {
+    @inline
+    def apply(
+        ReplicaKeyMetadata: js.UndefOr[KeyMetadata] = js.undefined,
+        ReplicaPolicy: js.UndefOr[PolicyType] = js.undefined,
+        ReplicaTags: js.UndefOr[TagList] = js.undefined
+    ): ReplicateKeyResponse = {
+      val __obj = js.Dynamic.literal()
+      ReplicaKeyMetadata.foreach(__v => __obj.updateDynamic("ReplicaKeyMetadata")(__v.asInstanceOf[js.Any]))
+      ReplicaPolicy.foreach(__v => __obj.updateDynamic("ReplicaPolicy")(__v.asInstanceOf[js.Any]))
+      ReplicaTags.foreach(__v => __obj.updateDynamic("ReplicaTags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReplicateKeyResponse]
+    }
+  }
+
+  @js.native
   trait RetireGrantRequest extends js.Object {
     var GrantId: js.UndefOr[GrantIdType]
     var GrantToken: js.UndefOr[GrantTokenType]
@@ -1825,17 +1953,23 @@ package object kms {
   trait ScheduleKeyDeletionResponse extends js.Object {
     var DeletionDate: js.UndefOr[DateType]
     var KeyId: js.UndefOr[KeyIdType]
+    var KeyState: js.UndefOr[KeyState]
+    var PendingWindowInDays: js.UndefOr[PendingWindowInDaysType]
   }
 
   object ScheduleKeyDeletionResponse {
     @inline
     def apply(
         DeletionDate: js.UndefOr[DateType] = js.undefined,
-        KeyId: js.UndefOr[KeyIdType] = js.undefined
+        KeyId: js.UndefOr[KeyIdType] = js.undefined,
+        KeyState: js.UndefOr[KeyState] = js.undefined,
+        PendingWindowInDays: js.UndefOr[PendingWindowInDaysType] = js.undefined
     ): ScheduleKeyDeletionResponse = {
       val __obj = js.Dynamic.literal()
       DeletionDate.foreach(__v => __obj.updateDynamic("DeletionDate")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      KeyState.foreach(__v => __obj.updateDynamic("KeyState")(__v.asInstanceOf[js.Any]))
+      PendingWindowInDays.foreach(__v => __obj.updateDynamic("PendingWindowInDays")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduleKeyDeletionResponse]
     }
   }
@@ -1892,7 +2026,7 @@ package object kms {
     }
   }
 
-  /** A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings. For information about the rules that apply to tag keys and tag values, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html|User-Defined Tag Restrictions]] in the <i>AWS Billing and Cost Management User Guide</i>.
+  /** A key-value pair. A tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings. For information about the rules that apply to tag keys and tag values, see [[https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html|User-Defined Tag Restrictions]] in the <i>Amazon Web Services Billing and Cost Management User Guide</i>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -2029,6 +2163,26 @@ package object kms {
         "KeyId" -> KeyId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UpdateKeyDescriptionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdatePrimaryRegionRequest extends js.Object {
+    var KeyId: KeyIdType
+    var PrimaryRegion: RegionType
+  }
+
+  object UpdatePrimaryRegionRequest {
+    @inline
+    def apply(
+        KeyId: KeyIdType,
+        PrimaryRegion: RegionType
+    ): UpdatePrimaryRegionRequest = {
+      val __obj = js.Dynamic.literal(
+        "KeyId" -> KeyId.asInstanceOf[js.Any],
+        "PrimaryRegion" -> PrimaryRegion.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdatePrimaryRegionRequest]
     }
   }
 

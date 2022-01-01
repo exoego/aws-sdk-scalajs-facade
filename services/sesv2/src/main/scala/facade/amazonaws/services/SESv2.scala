@@ -1514,6 +1514,8 @@ package object sesv2 {
   }
 
   /** An object that describes the recipients for an email.
+    *
+    * '''Note:'''Amazon SES does not support the SMTPUTF8 extension, as described in [[https://tools.ietf.org/html/rfc6531|RFC6531]]. For this reason, the <i>local part</i> of a destination email address (the part of the email address that precedes the @ sign) may only contain [[https://en.wikipedia.org/wiki/Email_address#Local-part|7-bit ASCII characters]]. If the <i>domain part</i> of an address (the part after the @ sign) contains non-ASCII characters, they must be encoded using Punycode, as described in [[https://tools.ietf.org/html/rfc3492.html|RFC3492]].
     */
   @js.native
   trait Destination extends js.Object {
@@ -1541,6 +1543,9 @@ package object sesv2 {
     */
   @js.native
   trait DkimAttributes extends js.Object {
+    var CurrentSigningKeyLength: js.UndefOr[DkimSigningKeyLength]
+    var LastKeyGenerationTimestamp: js.UndefOr[Timestamp]
+    var NextSigningKeyLength: js.UndefOr[DkimSigningKeyLength]
     var SigningAttributesOrigin: js.UndefOr[DkimSigningAttributesOrigin]
     var SigningEnabled: js.UndefOr[Enabled]
     var Status: js.UndefOr[DkimStatus]
@@ -1550,12 +1555,18 @@ package object sesv2 {
   object DkimAttributes {
     @inline
     def apply(
+        CurrentSigningKeyLength: js.UndefOr[DkimSigningKeyLength] = js.undefined,
+        LastKeyGenerationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        NextSigningKeyLength: js.UndefOr[DkimSigningKeyLength] = js.undefined,
         SigningAttributesOrigin: js.UndefOr[DkimSigningAttributesOrigin] = js.undefined,
         SigningEnabled: js.UndefOr[Enabled] = js.undefined,
         Status: js.UndefOr[DkimStatus] = js.undefined,
         Tokens: js.UndefOr[DnsTokenList] = js.undefined
     ): DkimAttributes = {
       val __obj = js.Dynamic.literal()
+      CurrentSigningKeyLength.foreach(__v => __obj.updateDynamic("CurrentSigningKeyLength")(__v.asInstanceOf[js.Any]))
+      LastKeyGenerationTimestamp.foreach(__v => __obj.updateDynamic("LastKeyGenerationTimestamp")(__v.asInstanceOf[js.Any]))
+      NextSigningKeyLength.foreach(__v => __obj.updateDynamic("NextSigningKeyLength")(__v.asInstanceOf[js.Any]))
       SigningAttributesOrigin.foreach(__v => __obj.updateDynamic("SigningAttributesOrigin")(__v.asInstanceOf[js.Any]))
       SigningEnabled.foreach(__v => __obj.updateDynamic("SigningEnabled")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -1564,24 +1575,26 @@ package object sesv2 {
     }
   }
 
-  /** An object that contains information about the tokens used for setting up Bring Your Own DKIM (BYODKIM).
+  /** An object that contains configuration for Bring Your Own DKIM (BYODKIM), or, for Easy DKIM
     */
   @js.native
   trait DkimSigningAttributes extends js.Object {
-    var DomainSigningPrivateKey: PrivateKey
-    var DomainSigningSelector: Selector
+    var DomainSigningPrivateKey: js.UndefOr[PrivateKey]
+    var DomainSigningSelector: js.UndefOr[Selector]
+    var NextSigningKeyLength: js.UndefOr[DkimSigningKeyLength]
   }
 
   object DkimSigningAttributes {
     @inline
     def apply(
-        DomainSigningPrivateKey: PrivateKey,
-        DomainSigningSelector: Selector
+        DomainSigningPrivateKey: js.UndefOr[PrivateKey] = js.undefined,
+        DomainSigningSelector: js.UndefOr[Selector] = js.undefined,
+        NextSigningKeyLength: js.UndefOr[DkimSigningKeyLength] = js.undefined
     ): DkimSigningAttributes = {
-      val __obj = js.Dynamic.literal(
-        "DomainSigningPrivateKey" -> DomainSigningPrivateKey.asInstanceOf[js.Any],
-        "DomainSigningSelector" -> DomainSigningSelector.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      DomainSigningPrivateKey.foreach(__v => __obj.updateDynamic("DomainSigningPrivateKey")(__v.asInstanceOf[js.Any]))
+      DomainSigningSelector.foreach(__v => __obj.updateDynamic("DomainSigningSelector")(__v.asInstanceOf[js.Any]))
+      NextSigningKeyLength.foreach(__v => __obj.updateDynamic("NextSigningKeyLength")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DkimSigningAttributes]
     }
   }
@@ -1871,7 +1884,7 @@ package object sesv2 {
     }
   }
 
-  /** A list of details about the email-sending capabilities of your Amazon SES account in the current AWS Region.
+  /** A list of details about the email-sending capabilities of your Amazon SES account in the current Amazon Web Services Region.
     */
   @js.native
   trait GetAccountResponse extends js.Object {
@@ -2255,7 +2268,7 @@ package object sesv2 {
     }
   }
 
-  /** Information about the dedicated IP addresses that are associated with your AWS account.
+  /** Information about the dedicated IP addresses that are associated with your Amazon Web Services account.
     */
   @js.native
   trait GetDedicatedIpsResponse extends js.Object {
@@ -2276,7 +2289,7 @@ package object sesv2 {
     }
   }
 
-  /** Retrieve information about the status of the Deliverability dashboard for your AWS account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your domains. You also gain the ability to perform predictive inbox placement tests. When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
+  /** Retrieve information about the status of the Deliverability dashboard for your Amazon Web Services account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for your domains. You also gain the ability to perform predictive inbox placement tests. When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
   trait GetDeliverabilityDashboardOptionsRequest extends js.Object
@@ -2786,7 +2799,7 @@ package object sesv2 {
     }
   }
 
-  /** An object that contains information about the inbox placement data settings for a verified domain that’s associated with your AWS account. This data is available only if you enabled the Deliverability dashboard for the domain.
+  /** An object that contains information about the inbox placement data settings for a verified domain that’s associated with your Amazon Web Services account. This data is available only if you enabled the Deliverability dashboard for the domain.
     */
   @js.native
   trait InboxPlacementTrackingOption extends js.Object {
@@ -2850,7 +2863,7 @@ package object sesv2 {
     }
   }
 
-  /** A request to obtain a list of configuration sets for your Amazon SES account in the current AWS Region.
+  /** A request to obtain a list of configuration sets for your Amazon SES account in the current Amazon Web Services Region.
     */
   @js.native
   trait ListConfigurationSetsRequest extends js.Object {
@@ -2871,7 +2884,7 @@ package object sesv2 {
     }
   }
 
-  /** A list of configuration sets in your Amazon SES account in the current AWS Region.
+  /** A list of configuration sets in your Amazon SES account in the current Amazon Web Services Region.
     */
   @js.native
   trait ListConfigurationSetsResponse extends js.Object {
@@ -3180,7 +3193,7 @@ package object sesv2 {
     }
   }
 
-  /** A request to list all of the email identities associated with your AWS account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.
+  /** A request to list all of the email identities associated with your Amazon Web Services account. This list includes identities that you've already verified, identities that are unverified, and identities that were verified in the past, but are no longer verified.
     */
   @js.native
   trait ListEmailIdentitiesRequest extends js.Object {
@@ -3222,7 +3235,7 @@ package object sesv2 {
     }
   }
 
-  /** Represents a request to list the email templates present in your Amazon SES account in the current AWS Region. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
+  /** Represents a request to list the email templates present in your Amazon SES account in the current Amazon Web Services Region. For more information, see the [[https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html|Amazon SES Developer Guide]].
     */
   @js.native
   trait ListEmailTemplatesRequest extends js.Object {
@@ -3952,7 +3965,7 @@ package object sesv2 {
     }
   }
 
-  /** Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests. When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other AWS services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
+  /** Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon SES API v2. You also gain the ability to perform predictive inbox placement tests. When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see [[http://aws.amazon.com/pinpoint/pricing/|Amazon Pinpoint Pricing]].
     */
   @js.native
   trait PutDeliverabilityDashboardOptionRequest extends js.Object {
@@ -4272,7 +4285,7 @@ package object sesv2 {
     }
   }
 
-  /** Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current AWS Region.
+  /** Enable or disable collection of reputation metrics for emails that you send using this configuration set in the current Amazon Web Services Region.
     */
   @js.native
   trait ReputationOptions extends js.Object {
@@ -4486,7 +4499,7 @@ package object sesv2 {
     }
   }
 
-  /** An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current AWS Region.
+  /** An object that contains information about the per-day and per-second sending limits for your Amazon SES account in the current Amazon Web Services Region.
     */
   @js.native
   trait SendQuota extends js.Object {
@@ -4510,7 +4523,7 @@ package object sesv2 {
     }
   }
 
-  /** Used to enable or disable email sending for messages that use this configuration set in the current AWS Region.
+  /** Used to enable or disable email sending for messages that use this configuration set in the current Amazon Web Services Region.
     */
   @js.native
   trait SendingOptions extends js.Object {
@@ -4622,7 +4635,7 @@ package object sesv2 {
     }
   }
 
-  /** An object that contains information about the email address suppression preferences for your account in the current AWS Region.
+  /** An object that contains information about the email address suppression preferences for your account in the current Amazon Web Services Region.
     */
   @js.native
   trait SuppressionAttributes extends js.Object {
@@ -4678,7 +4691,7 @@ package object sesv2 {
   }
 
   /** An object that defines the tags that are associated with a resource. A <i>tag</i> is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags. Each tag consists of a required <i>tag key</i> and an associated <i>tag value</i>, both of which you define. A tag key is a general label that acts as a category for a more specific tag value. A tag value acts as a descriptor within a tag key. A tag key can contain as many as 128 characters. A tag value can contain as many as 256 characters. The characters can be Unicode letters, digits, white space, or one of the following symbols: _ . : / = + -. The following additional restrictions apply to tags: * Tag keys and values are case sensitive. * For each associated resource, each tag key must be unique and it can have only one value. * The <code>aws:</code> prefix is
-    * reserved for use by AWS; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource. * You can associate tags with public or shared resources, but the tags are available only for your AWS account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified AWS Region for your AWS account.
+    * reserved for use by Amazon Web Services; you can’t use it in any tag keys or values that you define. In addition, you can't edit or remove tag keys or values that use this prefix. Tags that use this prefix don’t count against the limit of 50 tags per resource. * You can associate tags with public or shared resources, but the tags are available only for your Amazon Web Services account, not any other accounts that share the resource. In addition, the tags are available only for resources that are located in the specified Amazon Web Services Region for your Amazon Web Services account.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4868,7 +4881,7 @@ package object sesv2 {
     }
   }
 
-  /** An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them. These images and links include references to a domain operated by AWS. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.
+  /** An object that defines the tracking options for a configuration set. When you use the Amazon SES API v2 to send an email, it contains an invisible image that's used to track when recipients open your email. If your email contains links, those links are changed slightly in order to track when recipients click them. These images and links include references to a domain operated by Amazon Web Services. You can optionally configure the Amazon SES to use a domain that you operate for these images and links.
     */
   @js.native
   trait TrackingOptions extends js.Object {

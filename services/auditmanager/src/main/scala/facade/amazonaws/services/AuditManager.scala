@@ -21,6 +21,7 @@ package object auditmanager {
   type AssessmentEvidenceFolderName = String
   type AssessmentEvidenceFolders = js.Array[AssessmentEvidenceFolder]
   type AssessmentFrameworkDescription = String
+  type AssessmentFrameworkShareRequestList = js.Array[AssessmentFrameworkShareRequest]
   type AssessmentName = String
   type AssessmentReportDescription = String
   type AssessmentReportEvidenceErrors = js.Array[AssessmentReportEvidenceError]
@@ -35,6 +36,9 @@ package object auditmanager {
   type ControlCommentBody = String
   type ControlComments = js.Array[ControlComment]
   type ControlDescription = String
+  type ControlDomainInsightsList = js.Array[ControlDomainInsights]
+  type ControlInsightsMetadata = js.Array[ControlInsightsMetadataItem]
+  type ControlInsightsMetadataByAssessment = js.Array[ControlInsightsMetadataByAssessmentItem]
   type ControlMappingSources = js.Array[ControlMappingSource]
   type ControlMetadataList = js.Array[ControlMetadata]
   type ControlName = String
@@ -80,11 +84,14 @@ package object auditmanager {
   type MaxResults = Int
   type NonEmptyString = String
   type Notifications = js.Array[Notification]
+  type NullableInteger = Int
+  type Region = String
   type Resources = js.Array[Resource]
   type Roles = js.Array[Role]
   type S3Url = String
   type SNSTopic = String
   type ServiceMetadataList = js.Array[ServiceMetadata]
+  type ShareRequestComment = String
   type SnsArn = String
   type SourceDescription = String
   type SourceName = String
@@ -117,6 +124,7 @@ package object auditmanager {
     @inline def createAssessmentReportFuture(params: CreateAssessmentReportRequest): Future[CreateAssessmentReportResponse] = service.createAssessmentReport(params).promise().toFuture
     @inline def createControlFuture(params: CreateControlRequest): Future[CreateControlResponse] = service.createControl(params).promise().toFuture
     @inline def deleteAssessmentFrameworkFuture(params: DeleteAssessmentFrameworkRequest): Future[DeleteAssessmentFrameworkResponse] = service.deleteAssessmentFramework(params).promise().toFuture
+    @inline def deleteAssessmentFrameworkShareFuture(params: DeleteAssessmentFrameworkShareRequest): Future[DeleteAssessmentFrameworkShareResponse] = service.deleteAssessmentFrameworkShare(params).promise().toFuture
     @inline def deleteAssessmentFuture(params: DeleteAssessmentRequest): Future[DeleteAssessmentResponse] = service.deleteAssessment(params).promise().toFuture
     @inline def deleteAssessmentReportFuture(params: DeleteAssessmentReportRequest): Future[DeleteAssessmentReportResponse] = service.deleteAssessmentReport(params).promise().toFuture
     @inline def deleteControlFuture(params: DeleteControlRequest): Future[DeleteControlResponse] = service.deleteControl(params).promise().toFuture
@@ -135,23 +143,32 @@ package object auditmanager {
     @inline def getEvidenceFoldersByAssessmentControlFuture(params: GetEvidenceFoldersByAssessmentControlRequest): Future[GetEvidenceFoldersByAssessmentControlResponse] = service.getEvidenceFoldersByAssessmentControl(params).promise().toFuture
     @inline def getEvidenceFoldersByAssessmentFuture(params: GetEvidenceFoldersByAssessmentRequest): Future[GetEvidenceFoldersByAssessmentResponse] = service.getEvidenceFoldersByAssessment(params).promise().toFuture
     @inline def getEvidenceFuture(params: GetEvidenceRequest): Future[GetEvidenceResponse] = service.getEvidence(params).promise().toFuture
+    @inline def getInsightsByAssessmentFuture(params: GetInsightsByAssessmentRequest): Future[GetInsightsByAssessmentResponse] = service.getInsightsByAssessment(params).promise().toFuture
+    @inline def getInsightsFuture(params: GetInsightsRequest): Future[GetInsightsResponse] = service.getInsights(params).promise().toFuture
     @inline def getOrganizationAdminAccountFuture(params: GetOrganizationAdminAccountRequest): Future[GetOrganizationAdminAccountResponse] = service.getOrganizationAdminAccount(params).promise().toFuture
     @inline def getServicesInScopeFuture(params: GetServicesInScopeRequest): Future[GetServicesInScopeResponse] = service.getServicesInScope(params).promise().toFuture
     @inline def getSettingsFuture(params: GetSettingsRequest): Future[GetSettingsResponse] = service.getSettings(params).promise().toFuture
+    @inline def listAssessmentControlInsightsByControlDomainFuture(params: ListAssessmentControlInsightsByControlDomainRequest): Future[ListAssessmentControlInsightsByControlDomainResponse] = service.listAssessmentControlInsightsByControlDomain(params).promise().toFuture
+    @inline def listAssessmentFrameworkShareRequestsFuture(params: ListAssessmentFrameworkShareRequestsRequest): Future[ListAssessmentFrameworkShareRequestsResponse] = service.listAssessmentFrameworkShareRequests(params).promise().toFuture
     @inline def listAssessmentFrameworksFuture(params: ListAssessmentFrameworksRequest): Future[ListAssessmentFrameworksResponse] = service.listAssessmentFrameworks(params).promise().toFuture
     @inline def listAssessmentReportsFuture(params: ListAssessmentReportsRequest): Future[ListAssessmentReportsResponse] = service.listAssessmentReports(params).promise().toFuture
     @inline def listAssessmentsFuture(params: ListAssessmentsRequest): Future[ListAssessmentsResponse] = service.listAssessments(params).promise().toFuture
+    @inline def listControlDomainInsightsByAssessmentFuture(params: ListControlDomainInsightsByAssessmentRequest): Future[ListControlDomainInsightsByAssessmentResponse] = service.listControlDomainInsightsByAssessment(params).promise().toFuture
+    @inline def listControlDomainInsightsFuture(params: ListControlDomainInsightsRequest): Future[ListControlDomainInsightsResponse] = service.listControlDomainInsights(params).promise().toFuture
+    @inline def listControlInsightsByControlDomainFuture(params: ListControlInsightsByControlDomainRequest): Future[ListControlInsightsByControlDomainResponse] = service.listControlInsightsByControlDomain(params).promise().toFuture
     @inline def listControlsFuture(params: ListControlsRequest): Future[ListControlsResponse] = service.listControls(params).promise().toFuture
     @inline def listKeywordsForDataSourceFuture(params: ListKeywordsForDataSourceRequest): Future[ListKeywordsForDataSourceResponse] = service.listKeywordsForDataSource(params).promise().toFuture
     @inline def listNotificationsFuture(params: ListNotificationsRequest): Future[ListNotificationsResponse] = service.listNotifications(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def registerAccountFuture(params: RegisterAccountRequest): Future[RegisterAccountResponse] = service.registerAccount(params).promise().toFuture
     @inline def registerOrganizationAdminAccountFuture(params: RegisterOrganizationAdminAccountRequest): Future[RegisterOrganizationAdminAccountResponse] = service.registerOrganizationAdminAccount(params).promise().toFuture
+    @inline def startAssessmentFrameworkShareFuture(params: StartAssessmentFrameworkShareRequest): Future[StartAssessmentFrameworkShareResponse] = service.startAssessmentFrameworkShare(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAssessmentControlFuture(params: UpdateAssessmentControlRequest): Future[UpdateAssessmentControlResponse] = service.updateAssessmentControl(params).promise().toFuture
     @inline def updateAssessmentControlSetStatusFuture(params: UpdateAssessmentControlSetStatusRequest): Future[UpdateAssessmentControlSetStatusResponse] = service.updateAssessmentControlSetStatus(params).promise().toFuture
     @inline def updateAssessmentFrameworkFuture(params: UpdateAssessmentFrameworkRequest): Future[UpdateAssessmentFrameworkResponse] = service.updateAssessmentFramework(params).promise().toFuture
+    @inline def updateAssessmentFrameworkShareFuture(params: UpdateAssessmentFrameworkShareRequest): Future[UpdateAssessmentFrameworkShareResponse] = service.updateAssessmentFrameworkShare(params).promise().toFuture
     @inline def updateAssessmentFuture(params: UpdateAssessmentRequest): Future[UpdateAssessmentResponse] = service.updateAssessment(params).promise().toFuture
     @inline def updateAssessmentStatusFuture(params: UpdateAssessmentStatusRequest): Future[UpdateAssessmentStatusResponse] = service.updateAssessmentStatus(params).promise().toFuture
     @inline def updateControlFuture(params: UpdateControlRequest): Future[UpdateControlResponse] = service.updateControl(params).promise().toFuture
@@ -177,6 +194,7 @@ package object auditmanager {
     def createControl(params: CreateControlRequest): Request[CreateControlResponse] = js.native
     def deleteAssessment(params: DeleteAssessmentRequest): Request[DeleteAssessmentResponse] = js.native
     def deleteAssessmentFramework(params: DeleteAssessmentFrameworkRequest): Request[DeleteAssessmentFrameworkResponse] = js.native
+    def deleteAssessmentFrameworkShare(params: DeleteAssessmentFrameworkShareRequest): Request[DeleteAssessmentFrameworkShareResponse] = js.native
     def deleteAssessmentReport(params: DeleteAssessmentReportRequest): Request[DeleteAssessmentReportResponse] = js.native
     def deleteControl(params: DeleteControlRequest): Request[DeleteControlResponse] = js.native
     def deregisterAccount(params: DeregisterAccountRequest): Request[DeregisterAccountResponse] = js.native
@@ -194,24 +212,33 @@ package object auditmanager {
     def getEvidenceFolder(params: GetEvidenceFolderRequest): Request[GetEvidenceFolderResponse] = js.native
     def getEvidenceFoldersByAssessment(params: GetEvidenceFoldersByAssessmentRequest): Request[GetEvidenceFoldersByAssessmentResponse] = js.native
     def getEvidenceFoldersByAssessmentControl(params: GetEvidenceFoldersByAssessmentControlRequest): Request[GetEvidenceFoldersByAssessmentControlResponse] = js.native
+    def getInsights(params: GetInsightsRequest): Request[GetInsightsResponse] = js.native
+    def getInsightsByAssessment(params: GetInsightsByAssessmentRequest): Request[GetInsightsByAssessmentResponse] = js.native
     def getOrganizationAdminAccount(params: GetOrganizationAdminAccountRequest): Request[GetOrganizationAdminAccountResponse] = js.native
     def getServicesInScope(params: GetServicesInScopeRequest): Request[GetServicesInScopeResponse] = js.native
     def getSettings(params: GetSettingsRequest): Request[GetSettingsResponse] = js.native
+    def listAssessmentControlInsightsByControlDomain(params: ListAssessmentControlInsightsByControlDomainRequest): Request[ListAssessmentControlInsightsByControlDomainResponse] = js.native
+    def listAssessmentFrameworkShareRequests(params: ListAssessmentFrameworkShareRequestsRequest): Request[ListAssessmentFrameworkShareRequestsResponse] = js.native
     def listAssessmentFrameworks(params: ListAssessmentFrameworksRequest): Request[ListAssessmentFrameworksResponse] = js.native
     def listAssessmentReports(params: ListAssessmentReportsRequest): Request[ListAssessmentReportsResponse] = js.native
     def listAssessments(params: ListAssessmentsRequest): Request[ListAssessmentsResponse] = js.native
+    def listControlDomainInsights(params: ListControlDomainInsightsRequest): Request[ListControlDomainInsightsResponse] = js.native
+    def listControlDomainInsightsByAssessment(params: ListControlDomainInsightsByAssessmentRequest): Request[ListControlDomainInsightsByAssessmentResponse] = js.native
+    def listControlInsightsByControlDomain(params: ListControlInsightsByControlDomainRequest): Request[ListControlInsightsByControlDomainResponse] = js.native
     def listControls(params: ListControlsRequest): Request[ListControlsResponse] = js.native
     def listKeywordsForDataSource(params: ListKeywordsForDataSourceRequest): Request[ListKeywordsForDataSourceResponse] = js.native
     def listNotifications(params: ListNotificationsRequest): Request[ListNotificationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def registerAccount(params: RegisterAccountRequest): Request[RegisterAccountResponse] = js.native
     def registerOrganizationAdminAccount(params: RegisterOrganizationAdminAccountRequest): Request[RegisterOrganizationAdminAccountResponse] = js.native
+    def startAssessmentFrameworkShare(params: StartAssessmentFrameworkShareRequest): Request[StartAssessmentFrameworkShareResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAssessment(params: UpdateAssessmentRequest): Request[UpdateAssessmentResponse] = js.native
     def updateAssessmentControl(params: UpdateAssessmentControlRequest): Request[UpdateAssessmentControlResponse] = js.native
     def updateAssessmentControlSetStatus(params: UpdateAssessmentControlSetStatusRequest): Request[UpdateAssessmentControlSetStatusResponse] = js.native
     def updateAssessmentFramework(params: UpdateAssessmentFrameworkRequest): Request[UpdateAssessmentFrameworkResponse] = js.native
+    def updateAssessmentFrameworkShare(params: UpdateAssessmentFrameworkShareRequest): Request[UpdateAssessmentFrameworkShareResponse] = js.native
     def updateAssessmentStatus(params: UpdateAssessmentStatusRequest): Request[UpdateAssessmentStatusResponse] = js.native
     def updateControl(params: UpdateControlRequest): Request[UpdateControlResponse] = js.native
     def updateSettings(params: UpdateSettingsRequest): Request[UpdateSettingsResponse] = js.native
@@ -223,7 +250,7 @@ package object auditmanager {
     }
   }
 
-  /** The wrapper of AWS account details, such as account ID, email address, and so on.
+  /** The wrapper of Amazon Web Services account details, such as account ID or email address.
     */
   @js.native
   trait AWSAccount extends js.Object {
@@ -247,7 +274,7 @@ package object auditmanager {
     }
   }
 
-  /** An AWS service such as Amazon S3, AWS CloudTrail, and so on.
+  /** An Amazon Web Service such as Amazon S3 or CloudTrail.
     */
   @js.native
   trait AWSService extends js.Object {
@@ -265,7 +292,7 @@ package object auditmanager {
     }
   }
 
-  /** An entity that defines the scope of audit evidence collected by AWS Audit Manager. An AWS Audit Manager assessment is an implementation of an AWS Audit Manager framework.
+  /** An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.
     */
   @js.native
   trait Assessment extends js.Object {
@@ -295,7 +322,7 @@ package object auditmanager {
     }
   }
 
-  /** The control entity that represents a standard or custom control used in an AWS Audit Manager assessment.
+  /** The control entity that represents a standard control or a custom control in an Audit Manager assessment.
     */
   @js.native
   trait AssessmentControl extends js.Object {
@@ -337,7 +364,7 @@ package object auditmanager {
     }
   }
 
-  /** Represents a set of controls in an AWS Audit Manager assessment.
+  /** Represents a set of controls in an Audit Manager assessment.
     */
   @js.native
   trait AssessmentControlSet extends js.Object {
@@ -376,7 +403,7 @@ package object auditmanager {
     }
   }
 
-  /** The folder in which AWS Audit Manager stores evidence for an assessment.
+  /** The folder where Audit Manager stores evidence for an assessment.
     */
   @js.native
   trait AssessmentEvidenceFolder extends js.Object {
@@ -445,7 +472,7 @@ package object auditmanager {
     }
   }
 
-  /** The file used to structure and automate AWS Audit Manager assessments for a given compliance standard.
+  /** The file used to structure and automate Audit Manager assessments for a given compliance standard.
     */
   @js.native
   trait AssessmentFramework extends js.Object {
@@ -472,7 +499,7 @@ package object auditmanager {
     }
   }
 
-  /** The metadata associated with a standard or custom framework.
+  /** The metadata that's associated with a standard framework or a custom framework.
     */
   @js.native
   trait AssessmentFrameworkMetadata extends js.Object {
@@ -520,7 +547,67 @@ package object auditmanager {
     }
   }
 
-  /** The metadata associated with the specified assessment.
+  /** Represents a share request for a custom framework in Audit Manager.
+    */
+  @js.native
+  trait AssessmentFrameworkShareRequest extends js.Object {
+    var comment: js.UndefOr[ShareRequestComment]
+    var complianceType: js.UndefOr[ComplianceType]
+    var creationTime: js.UndefOr[Timestamp]
+    var customControlsCount: js.UndefOr[NullableInteger]
+    var destinationAccount: js.UndefOr[AccountId]
+    var destinationRegion: js.UndefOr[Region]
+    var expirationTime: js.UndefOr[Timestamp]
+    var frameworkDescription: js.UndefOr[FrameworkDescription]
+    var frameworkId: js.UndefOr[UUID]
+    var frameworkName: js.UndefOr[FrameworkName]
+    var id: js.UndefOr[UUID]
+    var lastUpdated: js.UndefOr[Timestamp]
+    var sourceAccount: js.UndefOr[AccountId]
+    var standardControlsCount: js.UndefOr[NullableInteger]
+    var status: js.UndefOr[ShareRequestStatus]
+  }
+
+  object AssessmentFrameworkShareRequest {
+    @inline
+    def apply(
+        comment: js.UndefOr[ShareRequestComment] = js.undefined,
+        complianceType: js.UndefOr[ComplianceType] = js.undefined,
+        creationTime: js.UndefOr[Timestamp] = js.undefined,
+        customControlsCount: js.UndefOr[NullableInteger] = js.undefined,
+        destinationAccount: js.UndefOr[AccountId] = js.undefined,
+        destinationRegion: js.UndefOr[Region] = js.undefined,
+        expirationTime: js.UndefOr[Timestamp] = js.undefined,
+        frameworkDescription: js.UndefOr[FrameworkDescription] = js.undefined,
+        frameworkId: js.UndefOr[UUID] = js.undefined,
+        frameworkName: js.UndefOr[FrameworkName] = js.undefined,
+        id: js.UndefOr[UUID] = js.undefined,
+        lastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        sourceAccount: js.UndefOr[AccountId] = js.undefined,
+        standardControlsCount: js.UndefOr[NullableInteger] = js.undefined,
+        status: js.UndefOr[ShareRequestStatus] = js.undefined
+    ): AssessmentFrameworkShareRequest = {
+      val __obj = js.Dynamic.literal()
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
+      complianceType.foreach(__v => __obj.updateDynamic("complianceType")(__v.asInstanceOf[js.Any]))
+      creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      customControlsCount.foreach(__v => __obj.updateDynamic("customControlsCount")(__v.asInstanceOf[js.Any]))
+      destinationAccount.foreach(__v => __obj.updateDynamic("destinationAccount")(__v.asInstanceOf[js.Any]))
+      destinationRegion.foreach(__v => __obj.updateDynamic("destinationRegion")(__v.asInstanceOf[js.Any]))
+      expirationTime.foreach(__v => __obj.updateDynamic("expirationTime")(__v.asInstanceOf[js.Any]))
+      frameworkDescription.foreach(__v => __obj.updateDynamic("frameworkDescription")(__v.asInstanceOf[js.Any]))
+      frameworkId.foreach(__v => __obj.updateDynamic("frameworkId")(__v.asInstanceOf[js.Any]))
+      frameworkName.foreach(__v => __obj.updateDynamic("frameworkName")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
+      sourceAccount.foreach(__v => __obj.updateDynamic("sourceAccount")(__v.asInstanceOf[js.Any]))
+      standardControlsCount.foreach(__v => __obj.updateDynamic("standardControlsCount")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssessmentFrameworkShareRequest]
+    }
+  }
+
+  /** The metadata that's associated with the specified assessment.
     */
   @js.native
   trait AssessmentMetadata extends js.Object {
@@ -568,7 +655,7 @@ package object auditmanager {
     }
   }
 
-  /** A metadata object associated with an assessment in AWS Audit Manager.
+  /** A metadata object that's associated with an assessment in Audit Manager.
     */
   @js.native
   trait AssessmentMetadataItem extends js.Object {
@@ -607,7 +694,7 @@ package object auditmanager {
     }
   }
 
-  /** A finalized document generated from an AWS Audit Manager assessment. These reports summarize the relevant evidence collected for your audit, and link to the relevant evidence folders which are named and organized according to the controls specified in your assessment.
+  /** A finalized document that's generated from an Audit Manager assessment. These reports summarize the relevant evidence that was collected for your audit, and link to the relevant evidence folders. These evidence folders are named and organized according to the controls that are specified in your assessment.
     */
   @js.native
   trait AssessmentReport extends js.Object {
@@ -673,7 +760,7 @@ package object auditmanager {
     }
   }
 
-  /** The metadata objects associated with the specified assessment report.
+  /** The metadata objects that are associated with the specified assessment report.
     */
   @js.native
   trait AssessmentReportMetadata extends js.Object {
@@ -712,7 +799,7 @@ package object auditmanager {
     }
   }
 
-  /** The location in which AWS Audit Manager saves assessment reports for the given assessment.
+  /** The location where Audit Manager saves assessment reports for the given assessment.
     */
   @js.native
   trait AssessmentReportsDestination extends js.Object {
@@ -1037,7 +1124,7 @@ package object auditmanager {
     }
   }
 
-  /** The record of a change within AWS Audit Manager, such as a modified assessment, a delegated control set, and so on.
+  /** The record of a change within Audit Manager. For example, this could be the status change of an assessment or the delegation of a control set.
     */
   @js.native
   trait ChangeLog extends js.Object {
@@ -1067,7 +1154,7 @@ package object auditmanager {
     }
   }
 
-  /** A control in AWS Audit Manager.
+  /** A control in Audit Manager.
     */
   @js.native
   trait Control extends js.Object {
@@ -1127,7 +1214,7 @@ package object auditmanager {
     }
   }
 
-  /** A comment posted by a user on a control. This includes the author's name, the comment text, and a timestamp.
+  /** A comment that's posted by a user on a control. This includes the author's name, the comment text, and a timestamp.
     */
   @js.native
   trait ControlComment extends js.Object {
@@ -1151,7 +1238,97 @@ package object auditmanager {
     }
   }
 
-  /** The data source that determines from where AWS Audit Manager collects evidence for the control.
+  /** A summary of the latest analytics data for a specific control domain. Control domain insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.
+    */
+  @js.native
+  trait ControlDomainInsights extends js.Object {
+    var controlsCountByNoncompliantEvidence: js.UndefOr[NullableInteger]
+    var evidenceInsights: js.UndefOr[EvidenceInsights]
+    var id: js.UndefOr[UUID]
+    var lastUpdated: js.UndefOr[Timestamp]
+    var name: js.UndefOr[NonEmptyString]
+    var totalControlsCount: js.UndefOr[NullableInteger]
+  }
+
+  object ControlDomainInsights {
+    @inline
+    def apply(
+        controlsCountByNoncompliantEvidence: js.UndefOr[NullableInteger] = js.undefined,
+        evidenceInsights: js.UndefOr[EvidenceInsights] = js.undefined,
+        id: js.UndefOr[UUID] = js.undefined,
+        lastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        name: js.UndefOr[NonEmptyString] = js.undefined,
+        totalControlsCount: js.UndefOr[NullableInteger] = js.undefined
+    ): ControlDomainInsights = {
+      val __obj = js.Dynamic.literal()
+      controlsCountByNoncompliantEvidence.foreach(__v => __obj.updateDynamic("controlsCountByNoncompliantEvidence")(__v.asInstanceOf[js.Any]))
+      evidenceInsights.foreach(__v => __obj.updateDynamic("evidenceInsights")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      totalControlsCount.foreach(__v => __obj.updateDynamic("totalControlsCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ControlDomainInsights]
+    }
+  }
+
+  /** A summary of the latest analytics data for a specific control in a specific active assessment. Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.
+    */
+  @js.native
+  trait ControlInsightsMetadataByAssessmentItem extends js.Object {
+    var controlSetName: js.UndefOr[NonEmptyString]
+    var evidenceInsights: js.UndefOr[EvidenceInsights]
+    var id: js.UndefOr[UUID]
+    var lastUpdated: js.UndefOr[Timestamp]
+    var name: js.UndefOr[NonEmptyString]
+  }
+
+  object ControlInsightsMetadataByAssessmentItem {
+    @inline
+    def apply(
+        controlSetName: js.UndefOr[NonEmptyString] = js.undefined,
+        evidenceInsights: js.UndefOr[EvidenceInsights] = js.undefined,
+        id: js.UndefOr[UUID] = js.undefined,
+        lastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        name: js.UndefOr[NonEmptyString] = js.undefined
+    ): ControlInsightsMetadataByAssessmentItem = {
+      val __obj = js.Dynamic.literal()
+      controlSetName.foreach(__v => __obj.updateDynamic("controlSetName")(__v.asInstanceOf[js.Any]))
+      evidenceInsights.foreach(__v => __obj.updateDynamic("evidenceInsights")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ControlInsightsMetadataByAssessmentItem]
+    }
+  }
+
+  /** A summary of the latest analytics data for a specific control. This data reflects the total counts for the specified control across all active assessments. Control insights are grouped by control domain, and ranked by the highest total count of non-compliant evidence.
+    */
+  @js.native
+  trait ControlInsightsMetadataItem extends js.Object {
+    var evidenceInsights: js.UndefOr[EvidenceInsights]
+    var id: js.UndefOr[UUID]
+    var lastUpdated: js.UndefOr[Timestamp]
+    var name: js.UndefOr[NonEmptyString]
+  }
+
+  object ControlInsightsMetadataItem {
+    @inline
+    def apply(
+        evidenceInsights: js.UndefOr[EvidenceInsights] = js.undefined,
+        id: js.UndefOr[UUID] = js.undefined,
+        lastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        name: js.UndefOr[NonEmptyString] = js.undefined
+    ): ControlInsightsMetadataItem = {
+      val __obj = js.Dynamic.literal()
+      evidenceInsights.foreach(__v => __obj.updateDynamic("evidenceInsights")(__v.asInstanceOf[js.Any]))
+      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ControlInsightsMetadataItem]
+    }
+  }
+
+  /** The data source that determines where Audit Manager collects evidence from for the control.
     */
   @js.native
   trait ControlMappingSource extends js.Object {
@@ -1190,7 +1367,7 @@ package object auditmanager {
     }
   }
 
-  /** The metadata associated with the specified standard or custom control.
+  /** The metadata that's associated with the standard control or custom control.
     */
   @js.native
   trait ControlMetadata extends js.Object {
@@ -1223,7 +1400,7 @@ package object auditmanager {
     }
   }
 
-  /** A set of controls in AWS Audit Manager.
+  /** A set of controls in Audit Manager.
     */
   @js.native
   trait ControlSet extends js.Object {
@@ -1247,7 +1424,7 @@ package object auditmanager {
     }
   }
 
-  /** Control entity attributes that uniquely identify an existing control to be added to a framework in AWS Audit Manager.
+  /** The control entity attributes that uniquely identify an existing control to be added to a framework in Audit Manager.
     */
   @js.native
   trait CreateAssessmentFrameworkControl extends js.Object {
@@ -1265,23 +1442,25 @@ package object auditmanager {
     }
   }
 
-  /** A <code>controlSet</code> entity that represents a collection of controls in AWS Audit Manager. This does not contain the control set ID.
+  /** A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This doesn't contain the control set ID.
     */
   @js.native
   trait CreateAssessmentFrameworkControlSet extends js.Object {
+    var name: ControlSetName
     var controls: js.UndefOr[CreateAssessmentFrameworkControls]
-    var name: js.UndefOr[ControlSetName]
   }
 
   object CreateAssessmentFrameworkControlSet {
     @inline
     def apply(
-        controls: js.UndefOr[CreateAssessmentFrameworkControls] = js.undefined,
-        name: js.UndefOr[ControlSetName] = js.undefined
+        name: ControlSetName,
+        controls: js.UndefOr[CreateAssessmentFrameworkControls] = js.undefined
     ): CreateAssessmentFrameworkControlSet = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
       controls.foreach(__v => __obj.updateDynamic("controls")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAssessmentFrameworkControlSet]
     }
   }
@@ -1424,7 +1603,7 @@ package object auditmanager {
     }
   }
 
-  /** Control mapping fields that represent the source for evidence collection, along with related parameters and metadata. This does not contain <code>mappingID</code>.
+  /** The control mapping fields that represent the source for evidence collection, along with related parameters and metadata. This doesn't contain <code>mappingID</code>.
     */
   @js.native
   trait CreateControlMappingSource extends js.Object {
@@ -1512,7 +1691,7 @@ package object auditmanager {
     }
   }
 
-  /** A collection of attributes used to create a delegation for an assessment in AWS Audit Manager.
+  /** A collection of attributes that's used to create a delegation for an assessment in Audit Manager.
     */
   @js.native
   trait CreateDelegationRequest extends js.Object {
@@ -1587,7 +1766,7 @@ package object auditmanager {
     }
   }
 
-  /** The metadata associated with the specified delegation.
+  /** The metadata that's associated with the delegation.
     */
   @js.native
   trait DelegationMetadata extends js.Object {
@@ -1648,6 +1827,37 @@ package object auditmanager {
     def apply(): DeleteAssessmentFrameworkResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteAssessmentFrameworkResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteAssessmentFrameworkShareRequest extends js.Object {
+    var requestId: UUID
+    var requestType: ShareRequestType
+  }
+
+  object DeleteAssessmentFrameworkShareRequest {
+    @inline
+    def apply(
+        requestId: UUID,
+        requestType: ShareRequestType
+    ): DeleteAssessmentFrameworkShareRequest = {
+      val __obj = js.Dynamic.literal(
+        "requestId" -> requestId.asInstanceOf[js.Any],
+        "requestType" -> requestType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAssessmentFrameworkShareRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteAssessmentFrameworkShareResponse extends js.Object
+
+  object DeleteAssessmentFrameworkShareResponse {
+    @inline
+    def apply(): DeleteAssessmentFrameworkShareResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteAssessmentFrameworkShareResponse]
     }
   }
 
@@ -1883,7 +2093,31 @@ package object auditmanager {
     }
   }
 
-  /** The file used to structure and automate AWS Audit Manager assessments for a given compliance standard.
+  /** A breakdown of the latest compliance check status for the evidence in your Audit Manager assessments.
+    */
+  @js.native
+  trait EvidenceInsights extends js.Object {
+    var compliantEvidenceCount: js.UndefOr[NullableInteger]
+    var inconclusiveEvidenceCount: js.UndefOr[NullableInteger]
+    var noncompliantEvidenceCount: js.UndefOr[NullableInteger]
+  }
+
+  object EvidenceInsights {
+    @inline
+    def apply(
+        compliantEvidenceCount: js.UndefOr[NullableInteger] = js.undefined,
+        inconclusiveEvidenceCount: js.UndefOr[NullableInteger] = js.undefined,
+        noncompliantEvidenceCount: js.UndefOr[NullableInteger] = js.undefined
+    ): EvidenceInsights = {
+      val __obj = js.Dynamic.literal()
+      compliantEvidenceCount.foreach(__v => __obj.updateDynamic("compliantEvidenceCount")(__v.asInstanceOf[js.Any]))
+      inconclusiveEvidenceCount.foreach(__v => __obj.updateDynamic("inconclusiveEvidenceCount")(__v.asInstanceOf[js.Any]))
+      noncompliantEvidenceCount.foreach(__v => __obj.updateDynamic("noncompliantEvidenceCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EvidenceInsights]
+    }
+  }
+
+  /** The file that's used to structure and automate Audit Manager assessments for a given compliance standard.
     */
   @js.native
   trait Framework extends js.Object {
@@ -1940,7 +2174,7 @@ package object auditmanager {
     }
   }
 
-  /** The metadata of a framework, such as the name, ID, description, and so on.
+  /** The metadata of a framework, such as the name, ID, or description.
     */
   @js.native
   trait FrameworkMetadata extends js.Object {
@@ -2442,6 +2676,66 @@ package object auditmanager {
   }
 
   @js.native
+  trait GetInsightsByAssessmentRequest extends js.Object {
+    var assessmentId: UUID
+  }
+
+  object GetInsightsByAssessmentRequest {
+    @inline
+    def apply(
+        assessmentId: UUID
+    ): GetInsightsByAssessmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "assessmentId" -> assessmentId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetInsightsByAssessmentRequest]
+    }
+  }
+
+  @js.native
+  trait GetInsightsByAssessmentResponse extends js.Object {
+    var insights: js.UndefOr[InsightsByAssessment]
+  }
+
+  object GetInsightsByAssessmentResponse {
+    @inline
+    def apply(
+        insights: js.UndefOr[InsightsByAssessment] = js.undefined
+    ): GetInsightsByAssessmentResponse = {
+      val __obj = js.Dynamic.literal()
+      insights.foreach(__v => __obj.updateDynamic("insights")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightsByAssessmentResponse]
+    }
+  }
+
+  @js.native
+  trait GetInsightsRequest extends js.Object
+
+  object GetInsightsRequest {
+    @inline
+    def apply(): GetInsightsRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetInsightsRequest]
+    }
+  }
+
+  @js.native
+  trait GetInsightsResponse extends js.Object {
+    var insights: js.UndefOr[Insights]
+  }
+
+  object GetInsightsResponse {
+    @inline
+    def apply(
+        insights: js.UndefOr[Insights] = js.undefined
+    ): GetInsightsResponse = {
+      val __obj = js.Dynamic.literal()
+      insights.foreach(__v => __obj.updateDynamic("insights")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInsightsResponse]
+    }
+  }
+
+  @js.native
   trait GetOrganizationAdminAccountRequest extends js.Object
 
   object GetOrganizationAdminAccountRequest {
@@ -2531,6 +2825,168 @@ package object auditmanager {
     }
   }
 
+  /** A summary of the latest analytics data for all your active assessments. This summary is a snapshot of the data that your active assessments collected on the <code>lastUpdated</code> date. It’s important to understand that the following totals are daily counts based on this date — they aren’t a total sum to date. The <code>Insights</code> data is eventually consistent. This means that, when you read data from <code>Insights</code>, the response might not instantly reflect the results of a recently completed write or update operation. If you repeat your read request after a few hours, the response should return the latest data.
+    *
+    * '''Note:'''If you delete an assessment or change its status to inactive, <code>InsightsByAssessment</code> includes data for that assessment as follows. * ```Inactive assessments``` - If Audit Manager collected evidence for your assessment before you changed it inactive, that evidence is included in the <code>InsightsByAssessment</code> counts for that day. * ```Deleted assessments``` - If Audit Manager collected evidence for your assessment before you deleted it, that evidence isn't included in the <code>InsightsByAssessment</code> counts for that day.
+    */
+  @js.native
+  trait Insights extends js.Object {
+    var activeAssessmentsCount: js.UndefOr[NullableInteger]
+    var assessmentControlsCountByNoncompliantEvidence: js.UndefOr[NullableInteger]
+    var compliantEvidenceCount: js.UndefOr[NullableInteger]
+    var inconclusiveEvidenceCount: js.UndefOr[NullableInteger]
+    var lastUpdated: js.UndefOr[Timestamp]
+    var noncompliantEvidenceCount: js.UndefOr[NullableInteger]
+    var totalAssessmentControlsCount: js.UndefOr[NullableInteger]
+  }
+
+  object Insights {
+    @inline
+    def apply(
+        activeAssessmentsCount: js.UndefOr[NullableInteger] = js.undefined,
+        assessmentControlsCountByNoncompliantEvidence: js.UndefOr[NullableInteger] = js.undefined,
+        compliantEvidenceCount: js.UndefOr[NullableInteger] = js.undefined,
+        inconclusiveEvidenceCount: js.UndefOr[NullableInteger] = js.undefined,
+        lastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        noncompliantEvidenceCount: js.UndefOr[NullableInteger] = js.undefined,
+        totalAssessmentControlsCount: js.UndefOr[NullableInteger] = js.undefined
+    ): Insights = {
+      val __obj = js.Dynamic.literal()
+      activeAssessmentsCount.foreach(__v => __obj.updateDynamic("activeAssessmentsCount")(__v.asInstanceOf[js.Any]))
+      assessmentControlsCountByNoncompliantEvidence.foreach(__v => __obj.updateDynamic("assessmentControlsCountByNoncompliantEvidence")(__v.asInstanceOf[js.Any]))
+      compliantEvidenceCount.foreach(__v => __obj.updateDynamic("compliantEvidenceCount")(__v.asInstanceOf[js.Any]))
+      inconclusiveEvidenceCount.foreach(__v => __obj.updateDynamic("inconclusiveEvidenceCount")(__v.asInstanceOf[js.Any]))
+      lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
+      noncompliantEvidenceCount.foreach(__v => __obj.updateDynamic("noncompliantEvidenceCount")(__v.asInstanceOf[js.Any]))
+      totalAssessmentControlsCount.foreach(__v => __obj.updateDynamic("totalAssessmentControlsCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Insights]
+    }
+  }
+
+  /** A summary of the latest analytics data for a specific active assessment. This summary is a snapshot of the data that was collected on the <code>lastUpdated</code> date. It’s important to understand that the totals in <code>InsightsByAssessment</code> are daily counts based on this date — they aren’t a total sum to date. The <code>InsightsByAssessment</code> data is eventually consistent. This means that when you read data from <code>InsightsByAssessment</code>, the response might not instantly reflect the results of a recently completed write or update operation. If you repeat your read request after a few hours, the response returns the latest data.
+    *
+    * '''Note:'''If you delete an assessment or change its status to inactive, <code>InsightsByAssessment</code> includes data for that assessment as follows. * ```Inactive assessments``` - If Audit Manager collected evidence for your assessment before you changed it inactive, that evidence is included in the <code>InsightsByAssessment</code> counts for that day. * ```Deleted assessments``` - If Audit Manager collected evidence for your assessment before you deleted it, that evidence isn't included in the <code>InsightsByAssessment</code> counts for that day.
+    */
+  @js.native
+  trait InsightsByAssessment extends js.Object {
+    var assessmentControlsCountByNoncompliantEvidence: js.UndefOr[NullableInteger]
+    var compliantEvidenceCount: js.UndefOr[NullableInteger]
+    var inconclusiveEvidenceCount: js.UndefOr[NullableInteger]
+    var lastUpdated: js.UndefOr[Timestamp]
+    var noncompliantEvidenceCount: js.UndefOr[NullableInteger]
+    var totalAssessmentControlsCount: js.UndefOr[NullableInteger]
+  }
+
+  object InsightsByAssessment {
+    @inline
+    def apply(
+        assessmentControlsCountByNoncompliantEvidence: js.UndefOr[NullableInteger] = js.undefined,
+        compliantEvidenceCount: js.UndefOr[NullableInteger] = js.undefined,
+        inconclusiveEvidenceCount: js.UndefOr[NullableInteger] = js.undefined,
+        lastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        noncompliantEvidenceCount: js.UndefOr[NullableInteger] = js.undefined,
+        totalAssessmentControlsCount: js.UndefOr[NullableInteger] = js.undefined
+    ): InsightsByAssessment = {
+      val __obj = js.Dynamic.literal()
+      assessmentControlsCountByNoncompliantEvidence.foreach(__v => __obj.updateDynamic("assessmentControlsCountByNoncompliantEvidence")(__v.asInstanceOf[js.Any]))
+      compliantEvidenceCount.foreach(__v => __obj.updateDynamic("compliantEvidenceCount")(__v.asInstanceOf[js.Any]))
+      inconclusiveEvidenceCount.foreach(__v => __obj.updateDynamic("inconclusiveEvidenceCount")(__v.asInstanceOf[js.Any]))
+      lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
+      noncompliantEvidenceCount.foreach(__v => __obj.updateDynamic("noncompliantEvidenceCount")(__v.asInstanceOf[js.Any]))
+      totalAssessmentControlsCount.foreach(__v => __obj.updateDynamic("totalAssessmentControlsCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InsightsByAssessment]
+    }
+  }
+
+  @js.native
+  trait ListAssessmentControlInsightsByControlDomainRequest extends js.Object {
+    var assessmentId: UUID
+    var controlDomainId: UUID
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListAssessmentControlInsightsByControlDomainRequest {
+    @inline
+    def apply(
+        assessmentId: UUID,
+        controlDomainId: UUID,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListAssessmentControlInsightsByControlDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "assessmentId" -> assessmentId.asInstanceOf[js.Any],
+        "controlDomainId" -> controlDomainId.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssessmentControlInsightsByControlDomainRequest]
+    }
+  }
+
+  @js.native
+  trait ListAssessmentControlInsightsByControlDomainResponse extends js.Object {
+    var controlInsightsByAssessment: js.UndefOr[ControlInsightsMetadataByAssessment]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListAssessmentControlInsightsByControlDomainResponse {
+    @inline
+    def apply(
+        controlInsightsByAssessment: js.UndefOr[ControlInsightsMetadataByAssessment] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListAssessmentControlInsightsByControlDomainResponse = {
+      val __obj = js.Dynamic.literal()
+      controlInsightsByAssessment.foreach(__v => __obj.updateDynamic("controlInsightsByAssessment")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssessmentControlInsightsByControlDomainResponse]
+    }
+  }
+
+  @js.native
+  trait ListAssessmentFrameworkShareRequestsRequest extends js.Object {
+    var requestType: ShareRequestType
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListAssessmentFrameworkShareRequestsRequest {
+    @inline
+    def apply(
+        requestType: ShareRequestType,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListAssessmentFrameworkShareRequestsRequest = {
+      val __obj = js.Dynamic.literal(
+        "requestType" -> requestType.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssessmentFrameworkShareRequestsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAssessmentFrameworkShareRequestsResponse extends js.Object {
+    var assessmentFrameworkShareRequests: js.UndefOr[AssessmentFrameworkShareRequestList]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListAssessmentFrameworkShareRequestsResponse {
+    @inline
+    def apply(
+        assessmentFrameworkShareRequests: js.UndefOr[AssessmentFrameworkShareRequestList] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListAssessmentFrameworkShareRequestsResponse = {
+      val __obj = js.Dynamic.literal()
+      assessmentFrameworkShareRequests.foreach(__v => __obj.updateDynamic("assessmentFrameworkShareRequests")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAssessmentFrameworkShareRequestsResponse]
+    }
+  }
+
   @js.native
   trait ListAssessmentFrameworksRequest extends js.Object {
     var frameworkType: FrameworkType
@@ -2616,17 +3072,20 @@ package object auditmanager {
   trait ListAssessmentsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[Token]
+    var status: js.UndefOr[AssessmentStatus]
   }
 
   object ListAssessmentsRequest {
     @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[Token] = js.undefined
+        nextToken: js.UndefOr[Token] = js.undefined,
+        status: js.UndefOr[AssessmentStatus] = js.undefined
     ): ListAssessmentsRequest = {
       val __obj = js.Dynamic.literal()
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssessmentsRequest]
     }
   }
@@ -2647,6 +3106,130 @@ package object auditmanager {
       assessmentMetadata.foreach(__v => __obj.updateDynamic("assessmentMetadata")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAssessmentsResponse]
+    }
+  }
+
+  @js.native
+  trait ListControlDomainInsightsByAssessmentRequest extends js.Object {
+    var assessmentId: UUID
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListControlDomainInsightsByAssessmentRequest {
+    @inline
+    def apply(
+        assessmentId: UUID,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListControlDomainInsightsByAssessmentRequest = {
+      val __obj = js.Dynamic.literal(
+        "assessmentId" -> assessmentId.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListControlDomainInsightsByAssessmentRequest]
+    }
+  }
+
+  @js.native
+  trait ListControlDomainInsightsByAssessmentResponse extends js.Object {
+    var controlDomainInsights: js.UndefOr[ControlDomainInsightsList]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListControlDomainInsightsByAssessmentResponse {
+    @inline
+    def apply(
+        controlDomainInsights: js.UndefOr[ControlDomainInsightsList] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListControlDomainInsightsByAssessmentResponse = {
+      val __obj = js.Dynamic.literal()
+      controlDomainInsights.foreach(__v => __obj.updateDynamic("controlDomainInsights")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListControlDomainInsightsByAssessmentResponse]
+    }
+  }
+
+  @js.native
+  trait ListControlDomainInsightsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListControlDomainInsightsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListControlDomainInsightsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListControlDomainInsightsRequest]
+    }
+  }
+
+  @js.native
+  trait ListControlDomainInsightsResponse extends js.Object {
+    var controlDomainInsights: js.UndefOr[ControlDomainInsightsList]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListControlDomainInsightsResponse {
+    @inline
+    def apply(
+        controlDomainInsights: js.UndefOr[ControlDomainInsightsList] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListControlDomainInsightsResponse = {
+      val __obj = js.Dynamic.literal()
+      controlDomainInsights.foreach(__v => __obj.updateDynamic("controlDomainInsights")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListControlDomainInsightsResponse]
+    }
+  }
+
+  @js.native
+  trait ListControlInsightsByControlDomainRequest extends js.Object {
+    var controlDomainId: UUID
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListControlInsightsByControlDomainRequest {
+    @inline
+    def apply(
+        controlDomainId: UUID,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListControlInsightsByControlDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "controlDomainId" -> controlDomainId.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListControlInsightsByControlDomainRequest]
+    }
+  }
+
+  @js.native
+  trait ListControlInsightsByControlDomainResponse extends js.Object {
+    var controlInsightsMetadata: js.UndefOr[ControlInsightsMetadata]
+    var nextToken: js.UndefOr[Token]
+  }
+
+  object ListControlInsightsByControlDomainResponse {
+    @inline
+    def apply(
+        controlInsightsMetadata: js.UndefOr[ControlInsightsMetadata] = js.undefined,
+        nextToken: js.UndefOr[Token] = js.undefined
+    ): ListControlInsightsByControlDomainResponse = {
+      val __obj = js.Dynamic.literal()
+      controlInsightsMetadata.foreach(__v => __obj.updateDynamic("controlInsightsMetadata")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListControlInsightsByControlDomainResponse]
     }
   }
 
@@ -2807,7 +3390,7 @@ package object auditmanager {
     }
   }
 
-  /** Evidence that is uploaded to AWS Audit Manager manually.
+  /** Evidence that's uploaded to Audit Manager manually.
     */
   @js.native
   trait ManualEvidence extends js.Object {
@@ -2825,7 +3408,7 @@ package object auditmanager {
     }
   }
 
-  /** The notification used to inform a user of an update in AWS Audit Manager. For example, this includes the notification that is sent when a control set is delegated for review.
+  /** The notification that informs a user of an update in Audit Manager. For example, this includes the notification that's sent when a control set is delegated for review.
     */
   @js.native
   trait Notification extends js.Object {
@@ -2935,7 +3518,7 @@ package object auditmanager {
     }
   }
 
-  /** A system asset that is evaluated in an AWS Audit Manager assessment.
+  /** A system asset that's evaluated in an Audit Manager assessment.
     */
   @js.native
   trait Resource extends js.Object {
@@ -2956,7 +3539,7 @@ package object auditmanager {
     }
   }
 
-  /** The wrapper that contains the AWS Audit Manager role information of the current user, such as the role type and IAM Amazon Resource Name (ARN).
+  /** The wrapper that contains the Audit Manager role information of the current user. This includes the role type and IAM Amazon Resource Name (ARN).
     */
   @js.native
   trait Role extends js.Object {
@@ -2977,7 +3560,7 @@ package object auditmanager {
     }
   }
 
-  /** The wrapper that contains the AWS accounts and AWS services in scope for the assessment.
+  /** The wrapper that contains the Amazon Web Services accounts and services that are in scope for the assessment.
     */
   @js.native
   trait Scope extends js.Object {
@@ -2998,7 +3581,7 @@ package object auditmanager {
     }
   }
 
-  /** The metadata associated with the specified AWS service.
+  /** The metadata that's associated with the Amazon Web Service.
     */
   @js.native
   trait ServiceMetadata extends js.Object {
@@ -3025,7 +3608,7 @@ package object auditmanager {
     }
   }
 
-  /** The settings object that holds all supported AWS Audit Manager settings.
+  /** The settings object that holds all supported Audit Manager settings.
     */
   @js.native
   trait Settings extends js.Object {
@@ -3055,7 +3638,7 @@ package object auditmanager {
     }
   }
 
-  /** The keyword to search for in AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names.
+  /** The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names.
     */
   @js.native
   trait SourceKeyword extends js.Object {
@@ -3073,6 +3656,49 @@ package object auditmanager {
       keywordInputType.foreach(__v => __obj.updateDynamic("keywordInputType")(__v.asInstanceOf[js.Any]))
       keywordValue.foreach(__v => __obj.updateDynamic("keywordValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceKeyword]
+    }
+  }
+
+  @js.native
+  trait StartAssessmentFrameworkShareRequest extends js.Object {
+    var destinationAccount: AccountId
+    var destinationRegion: Region
+    var frameworkId: UUID
+    var comment: js.UndefOr[ShareRequestComment]
+  }
+
+  object StartAssessmentFrameworkShareRequest {
+    @inline
+    def apply(
+        destinationAccount: AccountId,
+        destinationRegion: Region,
+        frameworkId: UUID,
+        comment: js.UndefOr[ShareRequestComment] = js.undefined
+    ): StartAssessmentFrameworkShareRequest = {
+      val __obj = js.Dynamic.literal(
+        "destinationAccount" -> destinationAccount.asInstanceOf[js.Any],
+        "destinationRegion" -> destinationRegion.asInstanceOf[js.Any],
+        "frameworkId" -> frameworkId.asInstanceOf[js.Any]
+      )
+
+      comment.foreach(__v => __obj.updateDynamic("comment")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartAssessmentFrameworkShareRequest]
+    }
+  }
+
+  @js.native
+  trait StartAssessmentFrameworkShareResponse extends js.Object {
+    var assessmentFrameworkShareRequest: js.UndefOr[AssessmentFrameworkShareRequest]
+  }
+
+  object StartAssessmentFrameworkShareResponse {
+    @inline
+    def apply(
+        assessmentFrameworkShareRequest: js.UndefOr[AssessmentFrameworkShareRequest] = js.undefined
+    ): StartAssessmentFrameworkShareResponse = {
+      val __obj = js.Dynamic.literal()
+      assessmentFrameworkShareRequest.foreach(__v => __obj.updateDynamic("assessmentFrameworkShareRequest")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartAssessmentFrameworkShareResponse]
     }
   }
 
@@ -3107,7 +3733,7 @@ package object auditmanager {
     }
   }
 
-  /** A uniform resource locator, used as a unique identifier to locate a resource on the internet.
+  /** Short for uniform resource locator. A URL is used as a unique identifier to locate a resource on the internet.
     */
   @js.native
   trait URL extends js.Object {
@@ -3247,26 +3873,28 @@ package object auditmanager {
     }
   }
 
-  /** A <code>controlSet</code> entity that represents a collection of controls in AWS Audit Manager. This does not contain the control set ID.
+  /** A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This doesn't contain the control set ID.
     */
   @js.native
   trait UpdateAssessmentFrameworkControlSet extends js.Object {
+    var name: ControlSetName
     var controls: js.UndefOr[CreateAssessmentFrameworkControls]
-    var id: js.UndefOr[UUID]
-    var name: js.UndefOr[ControlSetName]
+    var id: js.UndefOr[ControlSetName]
   }
 
   object UpdateAssessmentFrameworkControlSet {
     @inline
     def apply(
+        name: ControlSetName,
         controls: js.UndefOr[CreateAssessmentFrameworkControls] = js.undefined,
-        id: js.UndefOr[UUID] = js.undefined,
-        name: js.UndefOr[ControlSetName] = js.undefined
+        id: js.UndefOr[ControlSetName] = js.undefined
     ): UpdateAssessmentFrameworkControlSet = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
       controls.foreach(__v => __obj.updateDynamic("controls")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssessmentFrameworkControlSet]
     }
   }
@@ -3314,6 +3942,45 @@ package object auditmanager {
       val __obj = js.Dynamic.literal()
       framework.foreach(__v => __obj.updateDynamic("framework")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAssessmentFrameworkResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateAssessmentFrameworkShareRequest extends js.Object {
+    var action: ShareRequestAction
+    var requestId: UUID
+    var requestType: ShareRequestType
+  }
+
+  object UpdateAssessmentFrameworkShareRequest {
+    @inline
+    def apply(
+        action: ShareRequestAction,
+        requestId: UUID,
+        requestType: ShareRequestType
+    ): UpdateAssessmentFrameworkShareRequest = {
+      val __obj = js.Dynamic.literal(
+        "action" -> action.asInstanceOf[js.Any],
+        "requestId" -> requestId.asInstanceOf[js.Any],
+        "requestType" -> requestType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateAssessmentFrameworkShareRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateAssessmentFrameworkShareResponse extends js.Object {
+    var assessmentFrameworkShareRequest: js.UndefOr[AssessmentFrameworkShareRequest]
+  }
+
+  object UpdateAssessmentFrameworkShareResponse {
+    @inline
+    def apply(
+        assessmentFrameworkShareRequest: js.UndefOr[AssessmentFrameworkShareRequest] = js.undefined
+    ): UpdateAssessmentFrameworkShareResponse = {
+      val __obj = js.Dynamic.literal()
+      assessmentFrameworkShareRequest.foreach(__v => __obj.updateDynamic("assessmentFrameworkShareRequest")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateAssessmentFrameworkShareResponse]
     }
   }
 

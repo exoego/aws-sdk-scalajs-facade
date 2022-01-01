@@ -139,6 +139,37 @@ object SettingAttribute {
   inline def values: js.Array[SettingAttribute] = js.Array(ALL, IS_AWS_ORG_ENABLED, SNS_TOPIC, DEFAULT_ASSESSMENT_REPORTS_DESTINATION, DEFAULT_PROCESS_OWNERS)
 }
 
+type ShareRequestAction = "ACCEPT" | "DECLINE" | "REVOKE"
+object ShareRequestAction {
+  inline val ACCEPT: "ACCEPT" = "ACCEPT"
+  inline val DECLINE: "DECLINE" = "DECLINE"
+  inline val REVOKE: "REVOKE" = "REVOKE"
+
+  inline def values: js.Array[ShareRequestAction] = js.Array(ACCEPT, DECLINE, REVOKE)
+}
+
+type ShareRequestStatus = "ACTIVE" | "REPLICATING" | "SHARED" | "EXPIRING" | "FAILED" | "EXPIRED" | "DECLINED" | "REVOKED"
+object ShareRequestStatus {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val REPLICATING: "REPLICATING" = "REPLICATING"
+  inline val SHARED: "SHARED" = "SHARED"
+  inline val EXPIRING: "EXPIRING" = "EXPIRING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+  inline val DECLINED: "DECLINED" = "DECLINED"
+  inline val REVOKED: "REVOKED" = "REVOKED"
+
+  inline def values: js.Array[ShareRequestStatus] = js.Array(ACTIVE, REPLICATING, SHARED, EXPIRING, FAILED, EXPIRED, DECLINED, REVOKED)
+}
+
+type ShareRequestType = "SENT" | "RECEIVED"
+object ShareRequestType {
+  inline val SENT: "SENT" = "SENT"
+  inline val RECEIVED: "RECEIVED" = "RECEIVED"
+
+  inline def values: js.Array[ShareRequestType] = js.Array(SENT, RECEIVED)
+}
+
 type SourceFrequency = "DAILY" | "WEEKLY" | "MONTHLY"
 object SourceFrequency {
   inline val DAILY: "DAILY" = "DAILY"

@@ -50,6 +50,37 @@ object Gid {
 }
 
 @js.native
+sealed trait HdfsAuthenticationType extends js.Any
+object HdfsAuthenticationType {
+  val SIMPLE = "SIMPLE".asInstanceOf[HdfsAuthenticationType]
+  val KERBEROS = "KERBEROS".asInstanceOf[HdfsAuthenticationType]
+
+  @inline def values: js.Array[HdfsAuthenticationType] = js.Array(SIMPLE, KERBEROS)
+}
+
+@js.native
+sealed trait HdfsDataTransferProtection extends js.Any
+object HdfsDataTransferProtection {
+  val DISABLED = "DISABLED".asInstanceOf[HdfsDataTransferProtection]
+  val AUTHENTICATION = "AUTHENTICATION".asInstanceOf[HdfsDataTransferProtection]
+  val INTEGRITY = "INTEGRITY".asInstanceOf[HdfsDataTransferProtection]
+  val PRIVACY = "PRIVACY".asInstanceOf[HdfsDataTransferProtection]
+
+  @inline def values: js.Array[HdfsDataTransferProtection] = js.Array(DISABLED, AUTHENTICATION, INTEGRITY, PRIVACY)
+}
+
+@js.native
+sealed trait HdfsRpcProtection extends js.Any
+object HdfsRpcProtection {
+  val DISABLED = "DISABLED".asInstanceOf[HdfsRpcProtection]
+  val AUTHENTICATION = "AUTHENTICATION".asInstanceOf[HdfsRpcProtection]
+  val INTEGRITY = "INTEGRITY".asInstanceOf[HdfsRpcProtection]
+  val PRIVACY = "PRIVACY".asInstanceOf[HdfsRpcProtection]
+
+  @inline def values: js.Array[HdfsRpcProtection] = js.Array(DISABLED, AUTHENTICATION, INTEGRITY, PRIVACY)
+}
+
+@js.native
 sealed trait LocationFilterName extends js.Any
 object LocationFilterName {
   val LocationUri = "LocationUri".asInstanceOf[LocationFilterName]
@@ -173,6 +204,16 @@ object S3StorageClass {
   val OUTPOSTS = "OUTPOSTS".asInstanceOf[S3StorageClass]
 
   @inline def values: js.Array[S3StorageClass] = js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE, OUTPOSTS)
+}
+
+@js.native
+sealed trait SmbSecurityDescriptorCopyFlags extends js.Any
+object SmbSecurityDescriptorCopyFlags {
+  val NONE = "NONE".asInstanceOf[SmbSecurityDescriptorCopyFlags]
+  val OWNER_DACL = "OWNER_DACL".asInstanceOf[SmbSecurityDescriptorCopyFlags]
+  val OWNER_DACL_SACL = "OWNER_DACL_SACL".asInstanceOf[SmbSecurityDescriptorCopyFlags]
+
+  @inline def values: js.Array[SmbSecurityDescriptorCopyFlags] = js.Array(NONE, OWNER_DACL, OWNER_DACL_SACL)
 }
 
 @js.native

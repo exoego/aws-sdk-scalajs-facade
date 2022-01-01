@@ -22,15 +22,18 @@ package object fms {
   type DnsRuleGroupPriorities = js.Array[DnsRuleGroupPriority]
   type DnsRuleGroupPriority = Int
   type EvaluationResults = js.Array[EvaluationResult]
+  type ExpectedRoutes = js.Array[ExpectedRoute]
   type IPPortNumber = Double
   type IssueInfoMap = js.Dictionary[DetailedInfo]
   type LengthBoundedString = String
+  type LengthBoundedStringList = js.Array[LengthBoundedString]
   type ListId = String
   type ManagedServiceData = String
   type MemberAccounts = js.Array[AWSAccountId]
   type NetworkFirewallAction = String
   type NetworkFirewallActionList = js.Array[NetworkFirewallAction]
   type NetworkFirewallResourceName = String
+  type OrderedRemediationActions = js.Array[RemediationActionWithOrder]
   type PaginationMaxResults = Int
   type PaginationToken = String
   type PartialMatches = js.Array[PartialMatch]
@@ -38,6 +41,7 @@ package object fms {
   type PolicyId = String
   type PolicySummaryList = js.Array[PolicySummary]
   type PolicyUpdateToken = String
+  type PossibleRemediationActionList = js.Array[PossibleRemediationAction]
   type PreviousAppsList = js.Dictionary[AppsList]
   type PreviousListVersion = String
   type PreviousProtocolsList = js.Dictionary[ProtocolsList]
@@ -58,6 +62,7 @@ package object fms {
   type ResourceType = String
   type ResourceTypeList = js.Array[ResourceType]
   type ResourceViolations = js.Array[ResourceViolation]
+  type Routes = js.Array[Route]
   type SecurityGroupRemediationActions = js.Array[SecurityGroupRemediationAction]
   type StatefulRuleGroupList = js.Array[StatefulRuleGroup]
   type StatelessRuleGroupList = js.Array[StatelessRuleGroup]
@@ -141,7 +146,28 @@ package object fms {
     }
   }
 
-  /** An individual AWS Firewall Manager application.
+  /** Describes a remediation action target.
+    */
+  @js.native
+  trait ActionTarget extends js.Object {
+    var Description: js.UndefOr[LengthBoundedString]
+    var ResourceId: js.UndefOr[ResourceId]
+  }
+
+  object ActionTarget {
+    @inline
+    def apply(
+        Description: js.UndefOr[LengthBoundedString] = js.undefined,
+        ResourceId: js.UndefOr[ResourceId] = js.undefined
+    ): ActionTarget = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ResourceId.foreach(__v => __obj.updateDynamic("ResourceId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActionTarget]
+    }
+  }
+
+  /** An individual Firewall Manager application.
     */
   @js.native
   trait App extends js.Object {
@@ -166,7 +192,7 @@ package object fms {
     }
   }
 
-  /** An AWS Firewall Manager applications list.
+  /** An Firewall Manager applications list.
     */
   @js.native
   trait AppsListData extends js.Object {
@@ -204,7 +230,7 @@ package object fms {
     }
   }
 
-  /** Details of the AWS Firewall Manager applications list.
+  /** Details of the Firewall Manager applications list.
     */
   @js.native
   trait AppsListDataSummary extends js.Object {
@@ -248,7 +274,7 @@ package object fms {
     }
   }
 
-  /** Violations for an EC2 instance resource.
+  /** Violation detail for an EC2 instance resource.
     */
   @js.native
   trait AwsEc2InstanceViolation extends js.Object {
@@ -269,7 +295,7 @@ package object fms {
     }
   }
 
-  /** Violations for network interfaces associated with an EC2 instance.
+  /** Violation detail for network interfaces associated with an EC2 instance.
     */
   @js.native
   trait AwsEc2NetworkInterfaceViolation extends js.Object {
@@ -290,7 +316,7 @@ package object fms {
     }
   }
 
-  /** Details of the rule violation in a security group when compared to the master security group of the AWS Firewall Manager policy.
+  /** Violation detail for the rule violation in a security group when compared to the primary security group of the Firewall Manager policy.
     */
   @js.native
   trait AwsVPCSecurityGroupViolation extends js.Object {
@@ -493,6 +519,215 @@ package object fms {
     }
   }
 
+  /** The action of associating an EC2 resource, such as a subnet or internet gateway, with a route table.
+    */
+  @js.native
+  trait EC2AssociateRouteTableAction extends js.Object {
+    var RouteTableId: ActionTarget
+    var Description: js.UndefOr[LengthBoundedString]
+    var GatewayId: js.UndefOr[ActionTarget]
+    var SubnetId: js.UndefOr[ActionTarget]
+  }
+
+  object EC2AssociateRouteTableAction {
+    @inline
+    def apply(
+        RouteTableId: ActionTarget,
+        Description: js.UndefOr[LengthBoundedString] = js.undefined,
+        GatewayId: js.UndefOr[ActionTarget] = js.undefined,
+        SubnetId: js.UndefOr[ActionTarget] = js.undefined
+    ): EC2AssociateRouteTableAction = {
+      val __obj = js.Dynamic.literal(
+        "RouteTableId" -> RouteTableId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2AssociateRouteTableAction]
+    }
+  }
+
+  /** An action that copies the EC2 route table for use in remediation.
+    */
+  @js.native
+  trait EC2CopyRouteTableAction extends js.Object {
+    var RouteTableId: ActionTarget
+    var VpcId: ActionTarget
+    var Description: js.UndefOr[LengthBoundedString]
+  }
+
+  object EC2CopyRouteTableAction {
+    @inline
+    def apply(
+        RouteTableId: ActionTarget,
+        VpcId: ActionTarget,
+        Description: js.UndefOr[LengthBoundedString] = js.undefined
+    ): EC2CopyRouteTableAction = {
+      val __obj = js.Dynamic.literal(
+        "RouteTableId" -> RouteTableId.asInstanceOf[js.Any],
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2CopyRouteTableAction]
+    }
+  }
+
+  /** Information about the CreateRoute action in Amazon EC2.
+    */
+  @js.native
+  trait EC2CreateRouteAction extends js.Object {
+    var RouteTableId: ActionTarget
+    var Description: js.UndefOr[LengthBoundedString]
+    var DestinationCidrBlock: js.UndefOr[CIDR]
+    var DestinationIpv6CidrBlock: js.UndefOr[CIDR]
+    var DestinationPrefixListId: js.UndefOr[ResourceId]
+    var GatewayId: js.UndefOr[ActionTarget]
+    var VpcEndpointId: js.UndefOr[ActionTarget]
+  }
+
+  object EC2CreateRouteAction {
+    @inline
+    def apply(
+        RouteTableId: ActionTarget,
+        Description: js.UndefOr[LengthBoundedString] = js.undefined,
+        DestinationCidrBlock: js.UndefOr[CIDR] = js.undefined,
+        DestinationIpv6CidrBlock: js.UndefOr[CIDR] = js.undefined,
+        DestinationPrefixListId: js.UndefOr[ResourceId] = js.undefined,
+        GatewayId: js.UndefOr[ActionTarget] = js.undefined,
+        VpcEndpointId: js.UndefOr[ActionTarget] = js.undefined
+    ): EC2CreateRouteAction = {
+      val __obj = js.Dynamic.literal(
+        "RouteTableId" -> RouteTableId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DestinationCidrBlock.foreach(__v => __obj.updateDynamic("DestinationCidrBlock")(__v.asInstanceOf[js.Any]))
+      DestinationIpv6CidrBlock.foreach(__v => __obj.updateDynamic("DestinationIpv6CidrBlock")(__v.asInstanceOf[js.Any]))
+      DestinationPrefixListId.foreach(__v => __obj.updateDynamic("DestinationPrefixListId")(__v.asInstanceOf[js.Any]))
+      GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
+      VpcEndpointId.foreach(__v => __obj.updateDynamic("VpcEndpointId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2CreateRouteAction]
+    }
+  }
+
+  /** Information about the CreateRouteTable action in Amazon EC2.
+    */
+  @js.native
+  trait EC2CreateRouteTableAction extends js.Object {
+    var VpcId: ActionTarget
+    var Description: js.UndefOr[LengthBoundedString]
+  }
+
+  object EC2CreateRouteTableAction {
+    @inline
+    def apply(
+        VpcId: ActionTarget,
+        Description: js.UndefOr[LengthBoundedString] = js.undefined
+    ): EC2CreateRouteTableAction = {
+      val __obj = js.Dynamic.literal(
+        "VpcId" -> VpcId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2CreateRouteTableAction]
+    }
+  }
+
+  /** Information about the DeleteRoute action in Amazon EC2.
+    */
+  @js.native
+  trait EC2DeleteRouteAction extends js.Object {
+    var RouteTableId: ActionTarget
+    var Description: js.UndefOr[LengthBoundedString]
+    var DestinationCidrBlock: js.UndefOr[CIDR]
+    var DestinationIpv6CidrBlock: js.UndefOr[CIDR]
+    var DestinationPrefixListId: js.UndefOr[ResourceId]
+  }
+
+  object EC2DeleteRouteAction {
+    @inline
+    def apply(
+        RouteTableId: ActionTarget,
+        Description: js.UndefOr[LengthBoundedString] = js.undefined,
+        DestinationCidrBlock: js.UndefOr[CIDR] = js.undefined,
+        DestinationIpv6CidrBlock: js.UndefOr[CIDR] = js.undefined,
+        DestinationPrefixListId: js.UndefOr[ResourceId] = js.undefined
+    ): EC2DeleteRouteAction = {
+      val __obj = js.Dynamic.literal(
+        "RouteTableId" -> RouteTableId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DestinationCidrBlock.foreach(__v => __obj.updateDynamic("DestinationCidrBlock")(__v.asInstanceOf[js.Any]))
+      DestinationIpv6CidrBlock.foreach(__v => __obj.updateDynamic("DestinationIpv6CidrBlock")(__v.asInstanceOf[js.Any]))
+      DestinationPrefixListId.foreach(__v => __obj.updateDynamic("DestinationPrefixListId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2DeleteRouteAction]
+    }
+  }
+
+  /** Information about the ReplaceRoute action in Amazon EC2.
+    */
+  @js.native
+  trait EC2ReplaceRouteAction extends js.Object {
+    var RouteTableId: ActionTarget
+    var Description: js.UndefOr[LengthBoundedString]
+    var DestinationCidrBlock: js.UndefOr[CIDR]
+    var DestinationIpv6CidrBlock: js.UndefOr[CIDR]
+    var DestinationPrefixListId: js.UndefOr[ResourceId]
+    var GatewayId: js.UndefOr[ActionTarget]
+  }
+
+  object EC2ReplaceRouteAction {
+    @inline
+    def apply(
+        RouteTableId: ActionTarget,
+        Description: js.UndefOr[LengthBoundedString] = js.undefined,
+        DestinationCidrBlock: js.UndefOr[CIDR] = js.undefined,
+        DestinationIpv6CidrBlock: js.UndefOr[CIDR] = js.undefined,
+        DestinationPrefixListId: js.UndefOr[ResourceId] = js.undefined,
+        GatewayId: js.UndefOr[ActionTarget] = js.undefined
+    ): EC2ReplaceRouteAction = {
+      val __obj = js.Dynamic.literal(
+        "RouteTableId" -> RouteTableId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DestinationCidrBlock.foreach(__v => __obj.updateDynamic("DestinationCidrBlock")(__v.asInstanceOf[js.Any]))
+      DestinationIpv6CidrBlock.foreach(__v => __obj.updateDynamic("DestinationIpv6CidrBlock")(__v.asInstanceOf[js.Any]))
+      DestinationPrefixListId.foreach(__v => __obj.updateDynamic("DestinationPrefixListId")(__v.asInstanceOf[js.Any]))
+      GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2ReplaceRouteAction]
+    }
+  }
+
+  /** Information about the ReplaceRouteTableAssociation action in Amazon EC2.
+    */
+  @js.native
+  trait EC2ReplaceRouteTableAssociationAction extends js.Object {
+    var AssociationId: ActionTarget
+    var RouteTableId: ActionTarget
+    var Description: js.UndefOr[LengthBoundedString]
+  }
+
+  object EC2ReplaceRouteTableAssociationAction {
+    @inline
+    def apply(
+        AssociationId: ActionTarget,
+        RouteTableId: ActionTarget,
+        Description: js.UndefOr[LengthBoundedString] = js.undefined
+    ): EC2ReplaceRouteTableAssociationAction = {
+      val __obj = js.Dynamic.literal(
+        "AssociationId" -> AssociationId.asInstanceOf[js.Any],
+        "RouteTableId" -> RouteTableId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EC2ReplaceRouteTableAssociationAction]
+    }
+  }
+
   /** Describes the compliance status for the account. An account is considered noncompliant if it includes resources that are not protected by the specified policy or that don't comply with the policy.
     */
   @js.native
@@ -514,6 +749,39 @@ package object fms {
       EvaluationLimitExceeded.foreach(__v => __obj.updateDynamic("EvaluationLimitExceeded")(__v.asInstanceOf[js.Any]))
       ViolatorCount.foreach(__v => __obj.updateDynamic("ViolatorCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EvaluationResult]
+    }
+  }
+
+  /** Information about the expected route in the route table.
+    */
+  @js.native
+  trait ExpectedRoute extends js.Object {
+    var AllowedTargets: js.UndefOr[LengthBoundedStringList]
+    var ContributingSubnets: js.UndefOr[ResourceIdList]
+    var IpV4Cidr: js.UndefOr[CIDR]
+    var IpV6Cidr: js.UndefOr[CIDR]
+    var PrefixListId: js.UndefOr[CIDR]
+    var RouteTableId: js.UndefOr[ResourceId]
+  }
+
+  object ExpectedRoute {
+    @inline
+    def apply(
+        AllowedTargets: js.UndefOr[LengthBoundedStringList] = js.undefined,
+        ContributingSubnets: js.UndefOr[ResourceIdList] = js.undefined,
+        IpV4Cidr: js.UndefOr[CIDR] = js.undefined,
+        IpV6Cidr: js.UndefOr[CIDR] = js.undefined,
+        PrefixListId: js.UndefOr[CIDR] = js.undefined,
+        RouteTableId: js.UndefOr[ResourceId] = js.undefined
+    ): ExpectedRoute = {
+      val __obj = js.Dynamic.literal()
+      AllowedTargets.foreach(__v => __obj.updateDynamic("AllowedTargets")(__v.asInstanceOf[js.Any]))
+      ContributingSubnets.foreach(__v => __obj.updateDynamic("ContributingSubnets")(__v.asInstanceOf[js.Any]))
+      IpV4Cidr.foreach(__v => __obj.updateDynamic("IpV4Cidr")(__v.asInstanceOf[js.Any]))
+      IpV6Cidr.foreach(__v => __obj.updateDynamic("IpV6Cidr")(__v.asInstanceOf[js.Any]))
+      PrefixListId.foreach(__v => __obj.updateDynamic("PrefixListId")(__v.asInstanceOf[js.Any]))
+      RouteTableId.foreach(__v => __obj.updateDynamic("RouteTableId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExpectedRoute]
     }
   }
 
@@ -1067,7 +1335,157 @@ package object fms {
     }
   }
 
-  /** Violation details for AWS Network Firewall for a subnet that's not associated to the expected Firewall Manager managed route table.
+  /** Violation detail for an internet gateway route with an inactive state in the customer subnet route table or Network Firewall subnet route table.
+    */
+  @js.native
+  trait NetworkFirewallBlackHoleRouteDetectedViolation extends js.Object {
+    var RouteTableId: js.UndefOr[ResourceId]
+    var ViolatingRoutes: js.UndefOr[Routes]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object NetworkFirewallBlackHoleRouteDetectedViolation {
+    @inline
+    def apply(
+        RouteTableId: js.UndefOr[ResourceId] = js.undefined,
+        ViolatingRoutes: js.UndefOr[Routes] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): NetworkFirewallBlackHoleRouteDetectedViolation = {
+      val __obj = js.Dynamic.literal()
+      RouteTableId.foreach(__v => __obj.updateDynamic("RouteTableId")(__v.asInstanceOf[js.Any]))
+      ViolatingRoutes.foreach(__v => __obj.updateDynamic("ViolatingRoutes")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallBlackHoleRouteDetectedViolation]
+    }
+  }
+
+  /** Violation detail for the subnet for which internet traffic that hasn't been inspected.
+    */
+  @js.native
+  trait NetworkFirewallInternetTrafficNotInspectedViolation extends js.Object {
+    var ActualFirewallSubnetRoutes: js.UndefOr[Routes]
+    var ActualInternetGatewayRoutes: js.UndefOr[Routes]
+    var CurrentFirewallSubnetRouteTable: js.UndefOr[ResourceId]
+    var CurrentInternetGatewayRouteTable: js.UndefOr[ResourceId]
+    var ExpectedFirewallEndpoint: js.UndefOr[ResourceId]
+    var ExpectedFirewallSubnetRoutes: js.UndefOr[ExpectedRoutes]
+    var ExpectedInternetGatewayRoutes: js.UndefOr[ExpectedRoutes]
+    var FirewallSubnetId: js.UndefOr[ResourceId]
+    var InternetGatewayId: js.UndefOr[ResourceId]
+    var IsRouteTableUsedInDifferentAZ: js.UndefOr[Boolean]
+    var RouteTableId: js.UndefOr[ResourceId]
+    var SubnetAvailabilityZone: js.UndefOr[LengthBoundedString]
+    var SubnetId: js.UndefOr[ResourceId]
+    var ViolatingRoutes: js.UndefOr[Routes]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object NetworkFirewallInternetTrafficNotInspectedViolation {
+    @inline
+    def apply(
+        ActualFirewallSubnetRoutes: js.UndefOr[Routes] = js.undefined,
+        ActualInternetGatewayRoutes: js.UndefOr[Routes] = js.undefined,
+        CurrentFirewallSubnetRouteTable: js.UndefOr[ResourceId] = js.undefined,
+        CurrentInternetGatewayRouteTable: js.UndefOr[ResourceId] = js.undefined,
+        ExpectedFirewallEndpoint: js.UndefOr[ResourceId] = js.undefined,
+        ExpectedFirewallSubnetRoutes: js.UndefOr[ExpectedRoutes] = js.undefined,
+        ExpectedInternetGatewayRoutes: js.UndefOr[ExpectedRoutes] = js.undefined,
+        FirewallSubnetId: js.UndefOr[ResourceId] = js.undefined,
+        InternetGatewayId: js.UndefOr[ResourceId] = js.undefined,
+        IsRouteTableUsedInDifferentAZ: js.UndefOr[Boolean] = js.undefined,
+        RouteTableId: js.UndefOr[ResourceId] = js.undefined,
+        SubnetAvailabilityZone: js.UndefOr[LengthBoundedString] = js.undefined,
+        SubnetId: js.UndefOr[ResourceId] = js.undefined,
+        ViolatingRoutes: js.UndefOr[Routes] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): NetworkFirewallInternetTrafficNotInspectedViolation = {
+      val __obj = js.Dynamic.literal()
+      ActualFirewallSubnetRoutes.foreach(__v => __obj.updateDynamic("ActualFirewallSubnetRoutes")(__v.asInstanceOf[js.Any]))
+      ActualInternetGatewayRoutes.foreach(__v => __obj.updateDynamic("ActualInternetGatewayRoutes")(__v.asInstanceOf[js.Any]))
+      CurrentFirewallSubnetRouteTable.foreach(__v => __obj.updateDynamic("CurrentFirewallSubnetRouteTable")(__v.asInstanceOf[js.Any]))
+      CurrentInternetGatewayRouteTable.foreach(__v => __obj.updateDynamic("CurrentInternetGatewayRouteTable")(__v.asInstanceOf[js.Any]))
+      ExpectedFirewallEndpoint.foreach(__v => __obj.updateDynamic("ExpectedFirewallEndpoint")(__v.asInstanceOf[js.Any]))
+      ExpectedFirewallSubnetRoutes.foreach(__v => __obj.updateDynamic("ExpectedFirewallSubnetRoutes")(__v.asInstanceOf[js.Any]))
+      ExpectedInternetGatewayRoutes.foreach(__v => __obj.updateDynamic("ExpectedInternetGatewayRoutes")(__v.asInstanceOf[js.Any]))
+      FirewallSubnetId.foreach(__v => __obj.updateDynamic("FirewallSubnetId")(__v.asInstanceOf[js.Any]))
+      InternetGatewayId.foreach(__v => __obj.updateDynamic("InternetGatewayId")(__v.asInstanceOf[js.Any]))
+      IsRouteTableUsedInDifferentAZ.foreach(__v => __obj.updateDynamic("IsRouteTableUsedInDifferentAZ")(__v.asInstanceOf[js.Any]))
+      RouteTableId.foreach(__v => __obj.updateDynamic("RouteTableId")(__v.asInstanceOf[js.Any]))
+      SubnetAvailabilityZone.foreach(__v => __obj.updateDynamic("SubnetAvailabilityZone")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      ViolatingRoutes.foreach(__v => __obj.updateDynamic("ViolatingRoutes")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallInternetTrafficNotInspectedViolation]
+    }
+  }
+
+  /** Violation detail for the improperly configured subnet route. It's possible there is a missing route table route, or a configuration that causes traffic to cross an Availability Zone boundary.
+    */
+  @js.native
+  trait NetworkFirewallInvalidRouteConfigurationViolation extends js.Object {
+    var ActualFirewallEndpoint: js.UndefOr[ResourceId]
+    var ActualFirewallSubnetId: js.UndefOr[ResourceId]
+    var ActualFirewallSubnetRoutes: js.UndefOr[Routes]
+    var ActualInternetGatewayRoutes: js.UndefOr[Routes]
+    var AffectedSubnets: js.UndefOr[ResourceIdList]
+    var CurrentFirewallSubnetRouteTable: js.UndefOr[ResourceId]
+    var CurrentInternetGatewayRouteTable: js.UndefOr[ResourceId]
+    var ExpectedFirewallEndpoint: js.UndefOr[ResourceId]
+    var ExpectedFirewallSubnetId: js.UndefOr[ResourceId]
+    var ExpectedFirewallSubnetRoutes: js.UndefOr[ExpectedRoutes]
+    var ExpectedInternetGatewayRoutes: js.UndefOr[ExpectedRoutes]
+    var InternetGatewayId: js.UndefOr[ResourceId]
+    var IsRouteTableUsedInDifferentAZ: js.UndefOr[Boolean]
+    var RouteTableId: js.UndefOr[ResourceId]
+    var ViolatingRoute: js.UndefOr[Route]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object NetworkFirewallInvalidRouteConfigurationViolation {
+    @inline
+    def apply(
+        ActualFirewallEndpoint: js.UndefOr[ResourceId] = js.undefined,
+        ActualFirewallSubnetId: js.UndefOr[ResourceId] = js.undefined,
+        ActualFirewallSubnetRoutes: js.UndefOr[Routes] = js.undefined,
+        ActualInternetGatewayRoutes: js.UndefOr[Routes] = js.undefined,
+        AffectedSubnets: js.UndefOr[ResourceIdList] = js.undefined,
+        CurrentFirewallSubnetRouteTable: js.UndefOr[ResourceId] = js.undefined,
+        CurrentInternetGatewayRouteTable: js.UndefOr[ResourceId] = js.undefined,
+        ExpectedFirewallEndpoint: js.UndefOr[ResourceId] = js.undefined,
+        ExpectedFirewallSubnetId: js.UndefOr[ResourceId] = js.undefined,
+        ExpectedFirewallSubnetRoutes: js.UndefOr[ExpectedRoutes] = js.undefined,
+        ExpectedInternetGatewayRoutes: js.UndefOr[ExpectedRoutes] = js.undefined,
+        InternetGatewayId: js.UndefOr[ResourceId] = js.undefined,
+        IsRouteTableUsedInDifferentAZ: js.UndefOr[Boolean] = js.undefined,
+        RouteTableId: js.UndefOr[ResourceId] = js.undefined,
+        ViolatingRoute: js.UndefOr[Route] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): NetworkFirewallInvalidRouteConfigurationViolation = {
+      val __obj = js.Dynamic.literal()
+      ActualFirewallEndpoint.foreach(__v => __obj.updateDynamic("ActualFirewallEndpoint")(__v.asInstanceOf[js.Any]))
+      ActualFirewallSubnetId.foreach(__v => __obj.updateDynamic("ActualFirewallSubnetId")(__v.asInstanceOf[js.Any]))
+      ActualFirewallSubnetRoutes.foreach(__v => __obj.updateDynamic("ActualFirewallSubnetRoutes")(__v.asInstanceOf[js.Any]))
+      ActualInternetGatewayRoutes.foreach(__v => __obj.updateDynamic("ActualInternetGatewayRoutes")(__v.asInstanceOf[js.Any]))
+      AffectedSubnets.foreach(__v => __obj.updateDynamic("AffectedSubnets")(__v.asInstanceOf[js.Any]))
+      CurrentFirewallSubnetRouteTable.foreach(__v => __obj.updateDynamic("CurrentFirewallSubnetRouteTable")(__v.asInstanceOf[js.Any]))
+      CurrentInternetGatewayRouteTable.foreach(__v => __obj.updateDynamic("CurrentInternetGatewayRouteTable")(__v.asInstanceOf[js.Any]))
+      ExpectedFirewallEndpoint.foreach(__v => __obj.updateDynamic("ExpectedFirewallEndpoint")(__v.asInstanceOf[js.Any]))
+      ExpectedFirewallSubnetId.foreach(__v => __obj.updateDynamic("ExpectedFirewallSubnetId")(__v.asInstanceOf[js.Any]))
+      ExpectedFirewallSubnetRoutes.foreach(__v => __obj.updateDynamic("ExpectedFirewallSubnetRoutes")(__v.asInstanceOf[js.Any]))
+      ExpectedInternetGatewayRoutes.foreach(__v => __obj.updateDynamic("ExpectedInternetGatewayRoutes")(__v.asInstanceOf[js.Any]))
+      InternetGatewayId.foreach(__v => __obj.updateDynamic("InternetGatewayId")(__v.asInstanceOf[js.Any]))
+      IsRouteTableUsedInDifferentAZ.foreach(__v => __obj.updateDynamic("IsRouteTableUsedInDifferentAZ")(__v.asInstanceOf[js.Any]))
+      RouteTableId.foreach(__v => __obj.updateDynamic("RouteTableId")(__v.asInstanceOf[js.Any]))
+      ViolatingRoute.foreach(__v => __obj.updateDynamic("ViolatingRoute")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallInvalidRouteConfigurationViolation]
+    }
+  }
+
+  /** Violation detail for Network Firewall for a subnet that's not associated to the expected Firewall Manager managed route table.
     */
   @js.native
   trait NetworkFirewallMissingExpectedRTViolation extends js.Object {
@@ -1097,7 +1515,31 @@ package object fms {
     }
   }
 
-  /** Violation details for AWS Network Firewall for a subnet that doesn't have a Firewall Manager managed firewall in its VPC.
+  /** Violation detail for an expected route missing in Network Firewall.
+    */
+  @js.native
+  trait NetworkFirewallMissingExpectedRoutesViolation extends js.Object {
+    var ExpectedRoutes: js.UndefOr[ExpectedRoutes]
+    var ViolationTarget: js.UndefOr[ViolationTarget]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object NetworkFirewallMissingExpectedRoutesViolation {
+    @inline
+    def apply(
+        ExpectedRoutes: js.UndefOr[ExpectedRoutes] = js.undefined,
+        ViolationTarget: js.UndefOr[ViolationTarget] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): NetworkFirewallMissingExpectedRoutesViolation = {
+      val __obj = js.Dynamic.literal()
+      ExpectedRoutes.foreach(__v => __obj.updateDynamic("ExpectedRoutes")(__v.asInstanceOf[js.Any]))
+      ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallMissingExpectedRoutesViolation]
+    }
+  }
+
+  /** Violation detail for Network Firewall for a subnet that doesn't have a Firewall Manager managed firewall in its VPC.
     */
   @js.native
   trait NetworkFirewallMissingFirewallViolation extends js.Object {
@@ -1124,7 +1566,7 @@ package object fms {
     }
   }
 
-  /** Violation details for AWS Network Firewall for an Availability Zone that's missing the expected Firewall Manager managed subnet.
+  /** Violation detail for Network Firewall for an Availability Zone that's missing the expected Firewall Manager managed subnet.
     */
   @js.native
   trait NetworkFirewallMissingSubnetViolation extends js.Object {
@@ -1151,7 +1593,7 @@ package object fms {
     }
   }
 
-  /** The definition of the AWS Network Firewall firewall policy.
+  /** The definition of the Network Firewall firewall policy.
     */
   @js.native
   trait NetworkFirewallPolicyDescription extends js.Object {
@@ -1181,7 +1623,7 @@ package object fms {
     }
   }
 
-  /** Violation details for AWS Network Firewall for a firewall policy that has a different <a>NetworkFirewallPolicyDescription</a> than is required by the Firewall Manager policy.
+  /** Violation detail for Network Firewall for a firewall policy that has a different <a>NetworkFirewallPolicyDescription</a> than is required by the Firewall Manager policy.
     */
   @js.native
   trait NetworkFirewallPolicyModifiedViolation extends js.Object {
@@ -1202,6 +1644,63 @@ package object fms {
       ExpectedPolicyDescription.foreach(__v => __obj.updateDynamic("ExpectedPolicyDescription")(__v.asInstanceOf[js.Any]))
       ViolationTarget.foreach(__v => __obj.updateDynamic("ViolationTarget")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NetworkFirewallPolicyModifiedViolation]
+    }
+  }
+
+  /** Violation detail for an unexpected route that's present in a route table.
+    */
+  @js.native
+  trait NetworkFirewallUnexpectedFirewallRoutesViolation extends js.Object {
+    var FirewallEndpoint: js.UndefOr[ResourceId]
+    var FirewallSubnetId: js.UndefOr[ResourceId]
+    var RouteTableId: js.UndefOr[ResourceId]
+    var ViolatingRoutes: js.UndefOr[Routes]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object NetworkFirewallUnexpectedFirewallRoutesViolation {
+    @inline
+    def apply(
+        FirewallEndpoint: js.UndefOr[ResourceId] = js.undefined,
+        FirewallSubnetId: js.UndefOr[ResourceId] = js.undefined,
+        RouteTableId: js.UndefOr[ResourceId] = js.undefined,
+        ViolatingRoutes: js.UndefOr[Routes] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): NetworkFirewallUnexpectedFirewallRoutesViolation = {
+      val __obj = js.Dynamic.literal()
+      FirewallEndpoint.foreach(__v => __obj.updateDynamic("FirewallEndpoint")(__v.asInstanceOf[js.Any]))
+      FirewallSubnetId.foreach(__v => __obj.updateDynamic("FirewallSubnetId")(__v.asInstanceOf[js.Any]))
+      RouteTableId.foreach(__v => __obj.updateDynamic("RouteTableId")(__v.asInstanceOf[js.Any]))
+      ViolatingRoutes.foreach(__v => __obj.updateDynamic("ViolatingRoutes")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallUnexpectedFirewallRoutesViolation]
+    }
+  }
+
+  /** Violation detail for an unexpected gateway route that’s present in a route table.
+    */
+  @js.native
+  trait NetworkFirewallUnexpectedGatewayRoutesViolation extends js.Object {
+    var GatewayId: js.UndefOr[ResourceId]
+    var RouteTableId: js.UndefOr[ResourceId]
+    var ViolatingRoutes: js.UndefOr[Routes]
+    var VpcId: js.UndefOr[ResourceId]
+  }
+
+  object NetworkFirewallUnexpectedGatewayRoutesViolation {
+    @inline
+    def apply(
+        GatewayId: js.UndefOr[ResourceId] = js.undefined,
+        RouteTableId: js.UndefOr[ResourceId] = js.undefined,
+        ViolatingRoutes: js.UndefOr[Routes] = js.undefined,
+        VpcId: js.UndefOr[ResourceId] = js.undefined
+    ): NetworkFirewallUnexpectedGatewayRoutesViolation = {
+      val __obj = js.Dynamic.literal()
+      GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
+      RouteTableId.foreach(__v => __obj.updateDynamic("RouteTableId")(__v.asInstanceOf[js.Any]))
+      ViolatingRoutes.foreach(__v => __obj.updateDynamic("ViolatingRoutes")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkFirewallUnexpectedGatewayRoutesViolation]
     }
   }
 
@@ -1226,7 +1725,7 @@ package object fms {
     }
   }
 
-  /** An AWS Firewall Manager policy.
+  /** An Firewall Manager policy.
     */
   @js.native
   trait Policy extends js.Object {
@@ -1235,6 +1734,7 @@ package object fms {
     var RemediationEnabled: Boolean
     var ResourceType: ResourceType
     var SecurityServicePolicyData: SecurityServicePolicyData
+    var DeleteUnusedFMManagedResources: js.UndefOr[Boolean]
     var ExcludeMap: js.UndefOr[CustomerPolicyScopeMap]
     var IncludeMap: js.UndefOr[CustomerPolicyScopeMap]
     var PolicyId: js.UndefOr[PolicyId]
@@ -1251,6 +1751,7 @@ package object fms {
         RemediationEnabled: Boolean,
         ResourceType: ResourceType,
         SecurityServicePolicyData: SecurityServicePolicyData,
+        DeleteUnusedFMManagedResources: js.UndefOr[Boolean] = js.undefined,
         ExcludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
         IncludeMap: js.UndefOr[CustomerPolicyScopeMap] = js.undefined,
         PolicyId: js.UndefOr[PolicyId] = js.undefined,
@@ -1266,6 +1767,7 @@ package object fms {
         "SecurityServicePolicyData" -> SecurityServicePolicyData.asInstanceOf[js.Any]
       )
 
+      DeleteUnusedFMManagedResources.foreach(__v => __obj.updateDynamic("DeleteUnusedFMManagedResources")(__v.asInstanceOf[js.Any]))
       ExcludeMap.foreach(__v => __obj.updateDynamic("ExcludeMap")(__v.asInstanceOf[js.Any]))
       IncludeMap.foreach(__v => __obj.updateDynamic("IncludeMap")(__v.asInstanceOf[js.Any]))
       PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
@@ -1276,7 +1778,7 @@ package object fms {
     }
   }
 
-  /** Describes the noncompliant resources in a member account for a specific AWS Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
+  /** Describes the noncompliant resources in a member account for a specific Firewall Manager policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant, <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
     */
   @js.native
   trait PolicyComplianceDetail extends js.Object {
@@ -1312,7 +1814,7 @@ package object fms {
     }
   }
 
-  /** Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for AWS WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies.
+  /** Indicates whether the account is compliant with the specified policy. An account is considered noncompliant if it includes resources that are not protected by the policy, for WAF and Shield Advanced policies, or that are noncompliant with the policy, for security group policies.
     */
   @js.native
   trait PolicyComplianceStatus extends js.Object {
@@ -1348,10 +1850,11 @@ package object fms {
     }
   }
 
-  /** Details of the AWS Firewall Manager policy.
+  /** Details of the Firewall Manager policy.
     */
   @js.native
   trait PolicySummary extends js.Object {
+    var DeleteUnusedFMManagedResources: js.UndefOr[Boolean]
     var PolicyArn: js.UndefOr[ResourceArn]
     var PolicyId: js.UndefOr[PolicyId]
     var PolicyName: js.UndefOr[ResourceName]
@@ -1363,6 +1866,7 @@ package object fms {
   object PolicySummary {
     @inline
     def apply(
+        DeleteUnusedFMManagedResources: js.UndefOr[Boolean] = js.undefined,
         PolicyArn: js.UndefOr[ResourceArn] = js.undefined,
         PolicyId: js.UndefOr[PolicyId] = js.undefined,
         PolicyName: js.UndefOr[ResourceName] = js.undefined,
@@ -1371,6 +1875,7 @@ package object fms {
         SecurityServiceType: js.UndefOr[SecurityServiceType] = js.undefined
     ): PolicySummary = {
       val __obj = js.Dynamic.literal()
+      DeleteUnusedFMManagedResources.foreach(__v => __obj.updateDynamic("DeleteUnusedFMManagedResources")(__v.asInstanceOf[js.Any]))
       PolicyArn.foreach(__v => __obj.updateDynamic("PolicyArn")(__v.asInstanceOf[js.Any]))
       PolicyId.foreach(__v => __obj.updateDynamic("PolicyId")(__v.asInstanceOf[js.Any]))
       PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
@@ -1381,7 +1886,54 @@ package object fms {
     }
   }
 
-  /** An AWS Firewall Manager protocols list.
+  /** A list of remediation actions.
+    */
+  @js.native
+  trait PossibleRemediationAction extends js.Object {
+    var OrderedRemediationActions: OrderedRemediationActions
+    var Description: js.UndefOr[LengthBoundedString]
+    var IsDefaultAction: js.UndefOr[Boolean]
+  }
+
+  object PossibleRemediationAction {
+    @inline
+    def apply(
+        OrderedRemediationActions: OrderedRemediationActions,
+        Description: js.UndefOr[LengthBoundedString] = js.undefined,
+        IsDefaultAction: js.UndefOr[Boolean] = js.undefined
+    ): PossibleRemediationAction = {
+      val __obj = js.Dynamic.literal(
+        "OrderedRemediationActions" -> OrderedRemediationActions.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsDefaultAction.foreach(__v => __obj.updateDynamic("IsDefaultAction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PossibleRemediationAction]
+    }
+  }
+
+  /** A list of possible remediation action lists. Each individual possible remediation action is a list of individual remediation actions.
+    */
+  @js.native
+  trait PossibleRemediationActions extends js.Object {
+    var Actions: js.UndefOr[PossibleRemediationActionList]
+    var Description: js.UndefOr[LengthBoundedString]
+  }
+
+  object PossibleRemediationActions {
+    @inline
+    def apply(
+        Actions: js.UndefOr[PossibleRemediationActionList] = js.undefined,
+        Description: js.UndefOr[LengthBoundedString] = js.undefined
+    ): PossibleRemediationActions = {
+      val __obj = js.Dynamic.literal()
+      Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PossibleRemediationActions]
+    }
+  }
+
+  /** An Firewall Manager protocols list.
     */
   @js.native
   trait ProtocolsListData extends js.Object {
@@ -1419,7 +1971,7 @@ package object fms {
     }
   }
 
-  /** Details of the AWS Firewall Manager protocols list.
+  /** Details of the Firewall Manager protocols list.
     */
   @js.native
   trait ProtocolsListDataSummary extends js.Object {
@@ -1586,7 +2138,67 @@ package object fms {
     }
   }
 
-  /** The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see [[https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html|Working with Tag Editor]].
+  /** Information about an individual action you can take to remediate a violation.
+    */
+  @js.native
+  trait RemediationAction extends js.Object {
+    var Description: js.UndefOr[LengthBoundedString]
+    var EC2AssociateRouteTableAction: js.UndefOr[EC2AssociateRouteTableAction]
+    var EC2CopyRouteTableAction: js.UndefOr[EC2CopyRouteTableAction]
+    var EC2CreateRouteAction: js.UndefOr[EC2CreateRouteAction]
+    var EC2CreateRouteTableAction: js.UndefOr[EC2CreateRouteTableAction]
+    var EC2DeleteRouteAction: js.UndefOr[EC2DeleteRouteAction]
+    var EC2ReplaceRouteAction: js.UndefOr[EC2ReplaceRouteAction]
+    var EC2ReplaceRouteTableAssociationAction: js.UndefOr[EC2ReplaceRouteTableAssociationAction]
+  }
+
+  object RemediationAction {
+    @inline
+    def apply(
+        Description: js.UndefOr[LengthBoundedString] = js.undefined,
+        EC2AssociateRouteTableAction: js.UndefOr[EC2AssociateRouteTableAction] = js.undefined,
+        EC2CopyRouteTableAction: js.UndefOr[EC2CopyRouteTableAction] = js.undefined,
+        EC2CreateRouteAction: js.UndefOr[EC2CreateRouteAction] = js.undefined,
+        EC2CreateRouteTableAction: js.UndefOr[EC2CreateRouteTableAction] = js.undefined,
+        EC2DeleteRouteAction: js.UndefOr[EC2DeleteRouteAction] = js.undefined,
+        EC2ReplaceRouteAction: js.UndefOr[EC2ReplaceRouteAction] = js.undefined,
+        EC2ReplaceRouteTableAssociationAction: js.UndefOr[EC2ReplaceRouteTableAssociationAction] = js.undefined
+    ): RemediationAction = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EC2AssociateRouteTableAction.foreach(__v => __obj.updateDynamic("EC2AssociateRouteTableAction")(__v.asInstanceOf[js.Any]))
+      EC2CopyRouteTableAction.foreach(__v => __obj.updateDynamic("EC2CopyRouteTableAction")(__v.asInstanceOf[js.Any]))
+      EC2CreateRouteAction.foreach(__v => __obj.updateDynamic("EC2CreateRouteAction")(__v.asInstanceOf[js.Any]))
+      EC2CreateRouteTableAction.foreach(__v => __obj.updateDynamic("EC2CreateRouteTableAction")(__v.asInstanceOf[js.Any]))
+      EC2DeleteRouteAction.foreach(__v => __obj.updateDynamic("EC2DeleteRouteAction")(__v.asInstanceOf[js.Any]))
+      EC2ReplaceRouteAction.foreach(__v => __obj.updateDynamic("EC2ReplaceRouteAction")(__v.asInstanceOf[js.Any]))
+      EC2ReplaceRouteTableAssociationAction.foreach(__v => __obj.updateDynamic("EC2ReplaceRouteTableAssociationAction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemediationAction]
+    }
+  }
+
+  /** An ordered list of actions you can take to remediate a violation.
+    */
+  @js.native
+  trait RemediationActionWithOrder extends js.Object {
+    var Order: js.UndefOr[BasicInteger]
+    var RemediationAction: js.UndefOr[RemediationAction]
+  }
+
+  object RemediationActionWithOrder {
+    @inline
+    def apply(
+        Order: js.UndefOr[BasicInteger] = js.undefined,
+        RemediationAction: js.UndefOr[RemediationAction] = js.undefined
+    ): RemediationActionWithOrder = {
+      val __obj = js.Dynamic.literal()
+      Order.foreach(__v => __obj.updateDynamic("Order")(__v.asInstanceOf[js.Any]))
+      RemediationAction.foreach(__v => __obj.updateDynamic("RemediationAction")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemediationActionWithOrder]
+    }
+  }
+
+  /** The resource tags that Firewall Manager uses to determine if a particular resource should be included or excluded from the Firewall Manager policy. Tags enable you to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value. Firewall Manager combines the tags with "AND" so that, if you add more than one tag to a policy scope, a resource must have all the specified tags to be included or excluded. For more information, see [[https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html|Working with Tag Editor]].
     */
   @js.native
   trait ResourceTag extends js.Object {
@@ -1619,10 +2231,17 @@ package object fms {
     var DnsDuplicateRuleGroupViolation: js.UndefOr[DnsDuplicateRuleGroupViolation]
     var DnsRuleGroupLimitExceededViolation: js.UndefOr[DnsRuleGroupLimitExceededViolation]
     var DnsRuleGroupPriorityConflictViolation: js.UndefOr[DnsRuleGroupPriorityConflictViolation]
+    var NetworkFirewallBlackHoleRouteDetectedViolation: js.UndefOr[NetworkFirewallBlackHoleRouteDetectedViolation]
+    var NetworkFirewallInternetTrafficNotInspectedViolation: js.UndefOr[NetworkFirewallInternetTrafficNotInspectedViolation]
+    var NetworkFirewallInvalidRouteConfigurationViolation: js.UndefOr[NetworkFirewallInvalidRouteConfigurationViolation]
     var NetworkFirewallMissingExpectedRTViolation: js.UndefOr[NetworkFirewallMissingExpectedRTViolation]
+    var NetworkFirewallMissingExpectedRoutesViolation: js.UndefOr[NetworkFirewallMissingExpectedRoutesViolation]
     var NetworkFirewallMissingFirewallViolation: js.UndefOr[NetworkFirewallMissingFirewallViolation]
     var NetworkFirewallMissingSubnetViolation: js.UndefOr[NetworkFirewallMissingSubnetViolation]
     var NetworkFirewallPolicyModifiedViolation: js.UndefOr[NetworkFirewallPolicyModifiedViolation]
+    var NetworkFirewallUnexpectedFirewallRoutesViolation: js.UndefOr[NetworkFirewallUnexpectedFirewallRoutesViolation]
+    var NetworkFirewallUnexpectedGatewayRoutesViolation: js.UndefOr[NetworkFirewallUnexpectedGatewayRoutesViolation]
+    var PossibleRemediationActions: js.UndefOr[PossibleRemediationActions]
   }
 
   object ResourceViolation {
@@ -1634,10 +2253,17 @@ package object fms {
         DnsDuplicateRuleGroupViolation: js.UndefOr[DnsDuplicateRuleGroupViolation] = js.undefined,
         DnsRuleGroupLimitExceededViolation: js.UndefOr[DnsRuleGroupLimitExceededViolation] = js.undefined,
         DnsRuleGroupPriorityConflictViolation: js.UndefOr[DnsRuleGroupPriorityConflictViolation] = js.undefined,
+        NetworkFirewallBlackHoleRouteDetectedViolation: js.UndefOr[NetworkFirewallBlackHoleRouteDetectedViolation] = js.undefined,
+        NetworkFirewallInternetTrafficNotInspectedViolation: js.UndefOr[NetworkFirewallInternetTrafficNotInspectedViolation] = js.undefined,
+        NetworkFirewallInvalidRouteConfigurationViolation: js.UndefOr[NetworkFirewallInvalidRouteConfigurationViolation] = js.undefined,
         NetworkFirewallMissingExpectedRTViolation: js.UndefOr[NetworkFirewallMissingExpectedRTViolation] = js.undefined,
+        NetworkFirewallMissingExpectedRoutesViolation: js.UndefOr[NetworkFirewallMissingExpectedRoutesViolation] = js.undefined,
         NetworkFirewallMissingFirewallViolation: js.UndefOr[NetworkFirewallMissingFirewallViolation] = js.undefined,
         NetworkFirewallMissingSubnetViolation: js.UndefOr[NetworkFirewallMissingSubnetViolation] = js.undefined,
-        NetworkFirewallPolicyModifiedViolation: js.UndefOr[NetworkFirewallPolicyModifiedViolation] = js.undefined
+        NetworkFirewallPolicyModifiedViolation: js.UndefOr[NetworkFirewallPolicyModifiedViolation] = js.undefined,
+        NetworkFirewallUnexpectedFirewallRoutesViolation: js.UndefOr[NetworkFirewallUnexpectedFirewallRoutesViolation] = js.undefined,
+        NetworkFirewallUnexpectedGatewayRoutesViolation: js.UndefOr[NetworkFirewallUnexpectedGatewayRoutesViolation] = js.undefined,
+        PossibleRemediationActions: js.UndefOr[PossibleRemediationActions] = js.undefined
     ): ResourceViolation = {
       val __obj = js.Dynamic.literal()
       AwsEc2InstanceViolation.foreach(__v => __obj.updateDynamic("AwsEc2InstanceViolation")(__v.asInstanceOf[js.Any]))
@@ -1646,11 +2272,45 @@ package object fms {
       DnsDuplicateRuleGroupViolation.foreach(__v => __obj.updateDynamic("DnsDuplicateRuleGroupViolation")(__v.asInstanceOf[js.Any]))
       DnsRuleGroupLimitExceededViolation.foreach(__v => __obj.updateDynamic("DnsRuleGroupLimitExceededViolation")(__v.asInstanceOf[js.Any]))
       DnsRuleGroupPriorityConflictViolation.foreach(__v => __obj.updateDynamic("DnsRuleGroupPriorityConflictViolation")(__v.asInstanceOf[js.Any]))
+      NetworkFirewallBlackHoleRouteDetectedViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallBlackHoleRouteDetectedViolation")(__v.asInstanceOf[js.Any]))
+      NetworkFirewallInternetTrafficNotInspectedViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallInternetTrafficNotInspectedViolation")(__v.asInstanceOf[js.Any]))
+      NetworkFirewallInvalidRouteConfigurationViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallInvalidRouteConfigurationViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallMissingExpectedRTViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallMissingExpectedRTViolation")(__v.asInstanceOf[js.Any]))
+      NetworkFirewallMissingExpectedRoutesViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallMissingExpectedRoutesViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallMissingFirewallViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallMissingFirewallViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallMissingSubnetViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallMissingSubnetViolation")(__v.asInstanceOf[js.Any]))
       NetworkFirewallPolicyModifiedViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallPolicyModifiedViolation")(__v.asInstanceOf[js.Any]))
+      NetworkFirewallUnexpectedFirewallRoutesViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallUnexpectedFirewallRoutesViolation")(__v.asInstanceOf[js.Any]))
+      NetworkFirewallUnexpectedGatewayRoutesViolation.foreach(__v => __obj.updateDynamic("NetworkFirewallUnexpectedGatewayRoutesViolation")(__v.asInstanceOf[js.Any]))
+      PossibleRemediationActions.foreach(__v => __obj.updateDynamic("PossibleRemediationActions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceViolation]
+    }
+  }
+
+  /** Describes a route in a route table.
+    */
+  @js.native
+  trait Route extends js.Object {
+    var Destination: js.UndefOr[LengthBoundedString]
+    var DestinationType: js.UndefOr[DestinationType]
+    var Target: js.UndefOr[LengthBoundedString]
+    var TargetType: js.UndefOr[TargetType]
+  }
+
+  object Route {
+    @inline
+    def apply(
+        Destination: js.UndefOr[LengthBoundedString] = js.undefined,
+        DestinationType: js.UndefOr[DestinationType] = js.undefined,
+        Target: js.UndefOr[LengthBoundedString] = js.undefined,
+        TargetType: js.UndefOr[TargetType] = js.undefined
+    ): Route = {
+      val __obj = js.Dynamic.literal()
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      DestinationType.foreach(__v => __obj.updateDynamic("DestinationType")(__v.asInstanceOf[js.Any]))
+      Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
+      TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Route]
     }
   }
 
@@ -1737,7 +2397,7 @@ package object fms {
     }
   }
 
-  /** AWS Network Firewall stateful rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
+  /** Network Firewall stateful rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
     */
   @js.native
   trait StatefulRuleGroup extends js.Object {
@@ -1758,7 +2418,7 @@ package object fms {
     }
   }
 
-  /** AWS Network Firewall stateless rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
+  /** Network Firewall stateless rule group, used in a <a>NetworkFirewallPolicyDescription</a>.
     */
   @js.native
   trait StatelessRuleGroup extends js.Object {
@@ -1782,7 +2442,7 @@ package object fms {
     }
   }
 
-  /** A collection of key:value pairs associated with an AWS resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each AWS resource.
+  /** A collection of key:value pairs associated with an Amazon Web Services resource. The key:value pair can be anything you define. Typically, the tag key represents a category (such as "environment") and the tag value represents a specific value within that category (such as "test," "development," or "production"). You can add up to 50 tags to each Amazon Web Services resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1866,7 +2526,7 @@ package object fms {
     }
   }
 
-  /** Violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
+  /** Violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.
     */
   @js.native
   trait ViolationDetail extends js.Object {

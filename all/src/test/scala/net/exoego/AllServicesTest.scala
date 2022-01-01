@@ -24,6 +24,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.accessanalyzer.AccessAnalyzer(config)
   }
 
+  test("Account") {
+    val instance = new services.account.Account(config)
+  }
+
   test("AlexaForBusiness") {
     val instance = new services.alexaforbusiness.AlexaForBusiness(config)
   }
@@ -40,6 +44,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.amplifybackend.AmplifyBackend(config)
   }
 
+  test("AmplifyUIBuilder") {
+    val instance = new services.amplifyuibuilder.AmplifyUIBuilder(config)
+  }
+
   test("ApiGatewayManagementApi") {
     val instance = new services.apigatewaymanagementapi.ApiGatewayManagementApi(config)
   }
@@ -52,12 +60,20 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.appconfig.AppConfig(config)
   }
 
+  test("AppConfigData") {
+    val instance = new services.appconfigdata.AppConfigData(config)
+  }
+
   test("AppIntegrations") {
     val instance = new services.appintegrations.AppIntegrations(config)
   }
 
   test("AppMesh") {
     val instance = new services.appmesh.AppMesh(config)
+  }
+
+  test("AppRunner") {
+    val instance = new services.apprunner.AppRunner(config)
   }
 
   test("AppStream") {
@@ -74,6 +90,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("ApplicationAutoScaling") {
     val instance = new services.applicationautoscaling.ApplicationAutoScaling(config)
+  }
+
+  test("ApplicationCostProfiler") {
+    val instance = new services.applicationcostprofiler.ApplicationCostProfiler(config)
   }
 
   test("ApplicationDiscovery") {
@@ -108,6 +128,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.backup.Backup(config)
   }
 
+  test("BackupGateway") {
+    val instance = new services.backupgateway.BackupGateway(config)
+  }
+
   test("Batch") {
     val instance = new services.batch.Batch(config)
   }
@@ -128,8 +152,24 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.chime.Chime(config)
   }
 
+  test("ChimeSDKIdentity") {
+    val instance = new services.chimesdkidentity.ChimeSDKIdentity(config)
+  }
+
+  test("ChimeSDKMeetings") {
+    val instance = new services.chimesdkmeetings.ChimeSDKMeetings(config)
+  }
+
+  test("ChimeSDKMessaging") {
+    val instance = new services.chimesdkmessaging.ChimeSDKMessaging(config)
+  }
+
   test("Cloud9") {
     val instance = new services.cloud9.Cloud9(config)
+  }
+
+  test("CloudControl") {
+    val instance = new services.cloudcontrol.CloudControl(config)
   }
 
   test("CloudDirectory") {
@@ -276,6 +316,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.dms.DMS(config)
   }
 
+  test("DRS") {
+    val instance = new services.drs.DRS(config)
+  }
+
   test("DataBrew") {
     val instance = new services.databrew.DataBrew(config)
   }
@@ -396,12 +440,24 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.eventbridge.EventBridge(config)
   }
 
+  test("Evidently") {
+    val instance = new services.evidently.Evidently(config)
+  }
+
   test("FMS") {
     val instance = new services.fms.FMS(config)
   }
 
   test("FSx") {
     val instance = new services.fsx.FSx(config)
+  }
+
+  test("FinSpace") {
+    val instance = new services.finspace.FinSpace(config)
+  }
+
+  test("FinSpaceData") {
+    val instance = new services.finspacedata.FinSpaceData(config)
   }
 
   test("Firehose") {
@@ -438,6 +494,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("Glue") {
     val instance = new services.glue.Glue(config)
+  }
+
+  test("Grafana") {
+    val instance = new services.grafana.Grafana(config)
   }
 
   test("Greengrass") {
@@ -492,6 +552,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.inspector.Inspector(config)
   }
 
+  test("Inspector2") {
+    val instance = new services.inspector2.Inspector2(config)
+  }
+
   test("IoT1ClickDevicesService") {
     val instance = new services.iot1clickdevicesservice.IoT1ClickDevicesService(config)
   }
@@ -532,6 +596,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.iotthingsgraph.IoTThingsGraph(config)
   }
 
+  test("IoTTwinMaker") {
+    val instance = new services.iottwinmaker.IoTTwinMaker(config)
+  }
+
   test("IoTWireless") {
     val instance = new services.iotwireless.IoTWireless(config)
   }
@@ -554,6 +622,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("Kafka") {
     val instance = new services.kafka.Kafka(config)
+  }
+
+  test("KafkaConnect") {
+    val instance = new services.kafkaconnect.KafkaConnect(config)
   }
 
   test("Kendra") {
@@ -712,6 +784,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.mediatailor.MediaTailor(config)
   }
 
+  test("MemoryDB") {
+    val instance = new services.memorydb.MemoryDB(config)
+  }
+
   test("Mgn") {
     val instance = new services.mgn.Mgn(config)
   }
@@ -722,6 +798,14 @@ class AllServicesTest extends AnyFunSuite {
 
   test("MigrationHubConfig") {
     val instance = new services.migrationhubconfig.MigrationHubConfig(config)
+  }
+
+  test("MigrationHubRefactorSpaces") {
+    val instance = new services.migrationhubrefactorspaces.MigrationHubRefactorSpaces(config)
+  }
+
+  test("MigrationHubStrategy") {
+    val instance = new services.migrationhubstrategy.MigrationHubStrategy(config)
   }
 
   test("Mobile") {
@@ -744,6 +828,14 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.networkmanager.NetworkManager(config)
   }
 
+  test("Nimble") {
+    val instance = new services.nimble.Nimble(config)
+  }
+
+  test("OpenSearch") {
+    val instance = new services.opensearch.OpenSearch(config)
+  }
+
   test("OpsWorks") {
     val instance = new services.opsworks.OpsWorks(config)
   }
@@ -762,6 +854,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("PI") {
     val instance = new services.pi.PI(config)
+  }
+
+  test("Panorama") {
+    val instance = new services.panorama.Panorama(config)
   }
 
   test("Personalize") {
@@ -796,6 +892,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.pricing.Pricing(config)
   }
 
+  test("Proton") {
+    val instance = new services.proton.Proton(config)
+  }
+
   test("QLDB") {
     val instance = new services.qldb.QLDB(config)
   }
@@ -812,12 +912,20 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.ram.RAM(config)
   }
 
+  test("RBin") {
+    val instance = new services.rbin.RBin(config)
+  }
+
   test("RDS") {
     val instance = new services.rds.RDS(config)
   }
 
   test("RDSDataService") {
     val instance = new services.rdsdataservice.RDSDataService(config)
+  }
+
+  test("RUM") {
+    val instance = new services.rum.RUM(config)
   }
 
   test("Redshift") {
@@ -830,6 +938,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("Rekognition") {
     val instance = new services.rekognition.Rekognition(config)
+  }
+
+  test("ResilienceHub") {
+    val instance = new services.resiliencehub.ResilienceHub(config)
   }
 
   test("ResourceGroups") {
@@ -850,6 +962,18 @@ class AllServicesTest extends AnyFunSuite {
 
   test("Route53Domains") {
     val instance = new services.route53domains.Route53Domains(config)
+  }
+
+  test("Route53RecoveryCluster") {
+    val instance = new services.route53recoverycluster.Route53RecoveryCluster(config)
+  }
+
+  test("Route53RecoveryControlConfig") {
+    val instance = new services.route53recoverycontrolconfig.Route53RecoveryControlConfig(config)
+  }
+
+  test("Route53RecoveryReadiness") {
+    val instance = new services.route53recoveryreadiness.Route53RecoveryReadiness(config)
   }
 
   test("Route53Resolver") {
@@ -890,6 +1014,14 @@ class AllServicesTest extends AnyFunSuite {
 
   test("SSM") {
     val instance = new services.ssm.SSM(config)
+  }
+
+  test("SSMContacts") {
+    val instance = new services.ssmcontacts.SSMContacts(config)
+  }
+
+  test("SSMIncidents") {
+    val instance = new services.ssmincidents.SSMIncidents(config)
   }
 
   test("SSO") {
@@ -976,6 +1108,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.simpledb.SimpleDB(config)
   }
 
+  test("SnowDeviceManagement") {
+    val instance = new services.snowdevicemanagement.SnowDeviceManagement(config)
+  }
+
   test("Snowball") {
     val instance = new services.snowball.Snowball(config)
   }
@@ -1020,6 +1156,10 @@ class AllServicesTest extends AnyFunSuite {
     val instance = new services.translate.Translate(config)
   }
 
+  test("VoiceID") {
+    val instance = new services.voiceid.VoiceID(config)
+  }
+
   test("WAF") {
     val instance = new services.waf.WAF(config)
   }
@@ -1034,6 +1174,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("WellArchitected") {
     val instance = new services.wellarchitected.WellArchitected(config)
+  }
+
+  test("Wisdom") {
+    val instance = new services.wisdom.Wisdom(config)
   }
 
   test("WorkDocs") {
@@ -1054,6 +1198,10 @@ class AllServicesTest extends AnyFunSuite {
 
   test("WorkSpaces") {
     val instance = new services.workspaces.WorkSpaces(config)
+  }
+
+  test("WorkSpacesWeb") {
+    val instance = new services.workspacesweb.WorkSpacesWeb(config)
   }
 
   test("XRay") {

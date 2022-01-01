@@ -84,6 +84,7 @@ package object route53 {
   type ResourceRecords = js.Array[ResourceRecord]
   type ResourceTagSetList = js.Array[ResourceTagSet]
   type ResourceURI = String
+  type RoutingControlArn = String
   type SearchString = String
   type ServeSignature = String
   type ServicePrincipal = String
@@ -347,7 +348,7 @@ package object route53 {
     }
   }
 
-  /** <i>Alias resource record sets only:</i> Information about the AWS resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. When creating resource record sets for a private hosted zone, note the following: * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported. * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
+  /** <i>Alias resource record sets only:</i> Information about the Amazon Web Services resource, such as a CloudFront distribution or an Amazon S3 bucket, that you want to route traffic to. When creating resource record sets for a private hosted zone, note the following: * Creating geolocation alias resource record sets or latency alias resource record sets in a private hosted zone is unsupported. * For information about creating failover resource record sets in a private hosted zone, see [[https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-private-hosted-zones.html|Configuring Failover in a Private Hosted Zone]].
     */
   @js.native
   trait AliasTarget extends js.Object {
@@ -1367,7 +1368,7 @@ package object route53 {
     }
   }
 
-  /** A complex type that contains information about the request to remove authorization to associate a VPC that was created by one AWS account with a hosted zone that was created with a different AWS account.
+  /** A complex type that contains information about the request to remove authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account.
     */
   @js.native
   trait DeleteVPCAssociationAuthorizationRequest extends js.Object {
@@ -1785,7 +1786,7 @@ package object route53 {
     }
   }
 
-  /** A request for the number of health checks that are associated with the current AWS account.
+  /** A request for the number of health checks that are associated with the current Amazon Web Services account.
     */
   @js.native
   trait GetHealthCheckCountRequest extends js.Object
@@ -1931,7 +1932,7 @@ package object route53 {
     }
   }
 
-  /** A request to retrieve a count of all the hosted zones that are associated with the current AWS account.
+  /** A request to retrieve a count of all the hosted zones that are associated with the current Amazon Web Services account.
     */
   @js.native
   trait GetHostedZoneCountRequest extends js.Object
@@ -2168,7 +2169,7 @@ package object route53 {
     }
   }
 
-  /** Request to get the number of traffic policy instances that are associated with the current AWS account.
+  /** Request to get the number of traffic policy instances that are associated with the current Amazon Web Services account.
     */
   @js.native
   trait GetTrafficPolicyInstanceCountRequest extends js.Object
@@ -2279,7 +2280,7 @@ package object route53 {
     }
   }
 
-  /** A complex type that contains information about one health check that is associated with the current AWS account.
+  /** A complex type that contains information about one health check that is associated with the current Amazon Web Services account.
     */
   @js.native
   trait HealthCheck extends js.Object {
@@ -2334,6 +2335,7 @@ package object route53 {
     var Regions: js.UndefOr[HealthCheckRegionList]
     var RequestInterval: js.UndefOr[RequestInterval]
     var ResourcePath: js.UndefOr[ResourcePath]
+    var RoutingControlArn: js.UndefOr[RoutingControlArn]
     var SearchString: js.UndefOr[SearchString]
   }
 
@@ -2356,6 +2358,7 @@ package object route53 {
         Regions: js.UndefOr[HealthCheckRegionList] = js.undefined,
         RequestInterval: js.UndefOr[RequestInterval] = js.undefined,
         ResourcePath: js.UndefOr[ResourcePath] = js.undefined,
+        RoutingControlArn: js.UndefOr[RoutingControlArn] = js.undefined,
         SearchString: js.UndefOr[SearchString] = js.undefined
     ): HealthCheckConfig = {
       val __obj = js.Dynamic.literal(
@@ -2377,6 +2380,7 @@ package object route53 {
       Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
       RequestInterval.foreach(__v => __obj.updateDynamic("RequestInterval")(__v.asInstanceOf[js.Any]))
       ResourcePath.foreach(__v => __obj.updateDynamic("ResourcePath")(__v.asInstanceOf[js.Any]))
+      RoutingControlArn.foreach(__v => __obj.updateDynamic("RoutingControlArn")(__v.asInstanceOf[js.Any]))
       SearchString.foreach(__v => __obj.updateDynamic("SearchString")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HealthCheckConfig]
     }
@@ -2676,7 +2680,7 @@ package object route53 {
     }
   }
 
-  /** A request to retrieve a list of the health checks that are associated with the current AWS account.
+  /** A request to retrieve a list of the health checks that are associated with the current Amazon Web Services account.
     */
   @js.native
   trait ListHealthChecksRequest extends js.Object {
@@ -2729,7 +2733,7 @@ package object route53 {
     }
   }
 
-  /** Retrieves a list of the public and private hosted zones that are associated with the current AWS account in ASCII order by domain name.
+  /** Retrieves a list of the public and private hosted zones that are associated with the current Amazon Web Services account in ASCII order by domain name.
     */
   @js.native
   trait ListHostedZonesByNameRequest extends js.Object {
@@ -2791,7 +2795,7 @@ package object route53 {
     }
   }
 
-  /** Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account created the hosted zones.
+  /** Lists all the private hosted zones that a specified VPC is associated with, regardless of which Amazon Web Services account created the hosted zones.
     */
   @js.native
   trait ListHostedZonesByVPCRequest extends js.Object {
@@ -2844,7 +2848,7 @@ package object route53 {
     }
   }
 
-  /** A request to retrieve a list of the public and private hosted zones that are associated with the current AWS account.
+  /** A request to retrieve a list of the public and private hosted zones that are associated with the current Amazon Web Services account.
     */
   @js.native
   trait ListHostedZonesRequest extends js.Object {
@@ -3008,7 +3012,7 @@ package object route53 {
     }
   }
 
-  /** A request to get a list of the reusable delegation sets that are associated with the current AWS account.
+  /** A request to get a list of the reusable delegation sets that are associated with the current Amazon Web Services account.
     */
   @js.native
   trait ListReusableDelegationSetsRequest extends js.Object {
@@ -3029,7 +3033,7 @@ package object route53 {
     }
   }
 
-  /** A complex type that contains information about the reusable delegation sets that are associated with the current AWS account.
+  /** A complex type that contains information about the reusable delegation sets that are associated with the current Amazon Web Services account.
     */
   @js.native
   trait ListReusableDelegationSetsResponse extends js.Object {
@@ -3143,7 +3147,7 @@ package object route53 {
     }
   }
 
-  /** A complex type that contains the information about the request to list the traffic policies that are associated with the current AWS account.
+  /** A complex type that contains the information about the request to list the traffic policies that are associated with the current Amazon Web Services account.
     */
   @js.native
   trait ListTrafficPoliciesRequest extends js.Object {
@@ -3323,7 +3327,7 @@ package object route53 {
     }
   }
 
-  /** A request to get information about the traffic policy instances that you created by using the current AWS account.
+  /** A request to get information about the traffic policy instances that you created by using the current Amazon Web Services account.
     */
   @js.native
   trait ListTrafficPolicyInstancesRequest extends js.Object {
@@ -3828,7 +3832,7 @@ package object route53 {
     }
   }
 
-  /** A complex type that contains information about the latest version of one traffic policy that is associated with the current AWS account.
+  /** A complex type that contains information about the latest version of one traffic policy that is associated with the current Amazon Web Services account.
     */
   @js.native
   trait TrafficPolicySummary extends js.Object {
@@ -4079,7 +4083,7 @@ package object route53 {
     }
   }
 
-  /** (Private hosted zones only) A complex type that contains information about an Amazon VPC.
+  /** (Private hosted zones only) A complex type that contains information about an Amazon VPC. If you associate a private hosted zone with an Amazon VPC when you make a [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html|CreateHostedZone]] request, the following parameters are also required.
     */
   @js.native
   trait VPC extends js.Object {

@@ -24,6 +24,7 @@ package object mgn {
   type JobLogs = js.Array[JobLog]
   type JobsList = js.Array[Job]
   type LargeBoundedString = String
+  type LifeCycleStates = js.Array[LifeCycleState]
   type NetworkInterfaces = js.Array[NetworkInterface]
   type PaginationToken = String
   type ParticipatingServers = js.Array[ParticipatingServer]
@@ -33,6 +34,7 @@ package object mgn {
   type ReplicationConfigurationTemplateIDs = js.Array[ReplicationConfigurationTemplateID]
   type ReplicationConfigurationTemplates = js.Array[ReplicationConfigurationTemplate]
   type ReplicationServersSecurityGroupsIDs = js.Array[SecurityGroupID]
+  type ReplicationTypes = js.Array[ReplicationType]
   type SecurityGroupID = String
   type SmallBoundedString = String
   type SourceServerID = String
@@ -46,6 +48,8 @@ package object mgn {
   type TagValue = String
   type TagsMap = js.Dictionary[TagValue]
   type TerminateTargetInstancesRequestSourceServerIDs = js.Array[SourceServerID]
+  type VcenterClientID = String
+  type VcenterClientList = js.Array[VcenterClient]
 
   final class MgnOps(private val service: Mgn) extends AnyVal {
 
@@ -54,10 +58,12 @@ package object mgn {
     @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResponse] = service.deleteJob(params).promise().toFuture
     @inline def deleteReplicationConfigurationTemplateFuture(params: DeleteReplicationConfigurationTemplateRequest): Future[DeleteReplicationConfigurationTemplateResponse] = service.deleteReplicationConfigurationTemplate(params).promise().toFuture
     @inline def deleteSourceServerFuture(params: DeleteSourceServerRequest): Future[DeleteSourceServerResponse] = service.deleteSourceServer(params).promise().toFuture
+    @inline def deleteVcenterClientFuture(params: DeleteVcenterClientRequest): Future[js.Object] = service.deleteVcenterClient(params).promise().toFuture
     @inline def describeJobLogItemsFuture(params: DescribeJobLogItemsRequest): Future[DescribeJobLogItemsResponse] = service.describeJobLogItems(params).promise().toFuture
     @inline def describeJobsFuture(params: DescribeJobsRequest): Future[DescribeJobsResponse] = service.describeJobs(params).promise().toFuture
     @inline def describeReplicationConfigurationTemplatesFuture(params: DescribeReplicationConfigurationTemplatesRequest): Future[DescribeReplicationConfigurationTemplatesResponse] = service.describeReplicationConfigurationTemplates(params).promise().toFuture
     @inline def describeSourceServersFuture(params: DescribeSourceServersRequest): Future[DescribeSourceServersResponse] = service.describeSourceServers(params).promise().toFuture
+    @inline def describeVcenterClientsFuture(params: DescribeVcenterClientsRequest): Future[DescribeVcenterClientsResponse] = service.describeVcenterClients(params).promise().toFuture
     @inline def disconnectFromServiceFuture(params: DisconnectFromServiceRequest): Future[SourceServer] = service.disconnectFromService(params).promise().toFuture
     @inline def finalizeCutoverFuture(params: FinalizeCutoverRequest): Future[SourceServer] = service.finalizeCutover(params).promise().toFuture
     @inline def getLaunchConfigurationFuture(params: GetLaunchConfigurationRequest): Future[LaunchConfiguration] = service.getLaunchConfiguration(params).promise().toFuture
@@ -67,6 +73,7 @@ package object mgn {
     @inline def markAsArchivedFuture(params: MarkAsArchivedRequest): Future[SourceServer] = service.markAsArchived(params).promise().toFuture
     @inline def retryDataReplicationFuture(params: RetryDataReplicationRequest): Future[SourceServer] = service.retryDataReplication(params).promise().toFuture
     @inline def startCutoverFuture(params: StartCutoverRequest): Future[StartCutoverResponse] = service.startCutover(params).promise().toFuture
+    @inline def startReplicationFuture(params: StartReplicationRequest): Future[SourceServer] = service.startReplication(params).promise().toFuture
     @inline def startTestFuture(params: StartTestRequest): Future[StartTestResponse] = service.startTest(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def terminateTargetInstancesFuture(params: TerminateTargetInstancesRequest): Future[TerminateTargetInstancesResponse] = service.terminateTargetInstances(params).promise().toFuture
@@ -74,6 +81,7 @@ package object mgn {
     @inline def updateLaunchConfigurationFuture(params: UpdateLaunchConfigurationRequest): Future[LaunchConfiguration] = service.updateLaunchConfiguration(params).promise().toFuture
     @inline def updateReplicationConfigurationFuture(params: UpdateReplicationConfigurationRequest): Future[ReplicationConfiguration] = service.updateReplicationConfiguration(params).promise().toFuture
     @inline def updateReplicationConfigurationTemplateFuture(params: UpdateReplicationConfigurationTemplateRequest): Future[ReplicationConfigurationTemplate] = service.updateReplicationConfigurationTemplate(params).promise().toFuture
+    @inline def updateSourceServerReplicationTypeFuture(params: UpdateSourceServerReplicationTypeRequest): Future[SourceServer] = service.updateSourceServerReplicationType(params).promise().toFuture
 
   }
 
@@ -87,10 +95,12 @@ package object mgn {
     def deleteJob(params: DeleteJobRequest): Request[DeleteJobResponse] = js.native
     def deleteReplicationConfigurationTemplate(params: DeleteReplicationConfigurationTemplateRequest): Request[DeleteReplicationConfigurationTemplateResponse] = js.native
     def deleteSourceServer(params: DeleteSourceServerRequest): Request[DeleteSourceServerResponse] = js.native
+    def deleteVcenterClient(params: DeleteVcenterClientRequest): Request[js.Object] = js.native
     def describeJobLogItems(params: DescribeJobLogItemsRequest): Request[DescribeJobLogItemsResponse] = js.native
     def describeJobs(params: DescribeJobsRequest): Request[DescribeJobsResponse] = js.native
     def describeReplicationConfigurationTemplates(params: DescribeReplicationConfigurationTemplatesRequest): Request[DescribeReplicationConfigurationTemplatesResponse] = js.native
     def describeSourceServers(params: DescribeSourceServersRequest): Request[DescribeSourceServersResponse] = js.native
+    def describeVcenterClients(params: DescribeVcenterClientsRequest): Request[DescribeVcenterClientsResponse] = js.native
     def disconnectFromService(params: DisconnectFromServiceRequest): Request[SourceServer] = js.native
     def finalizeCutover(params: FinalizeCutoverRequest): Request[SourceServer] = js.native
     def getLaunchConfiguration(params: GetLaunchConfigurationRequest): Request[LaunchConfiguration] = js.native
@@ -100,6 +110,7 @@ package object mgn {
     def markAsArchived(params: MarkAsArchivedRequest): Request[SourceServer] = js.native
     def retryDataReplication(params: RetryDataReplicationRequest): Request[SourceServer] = js.native
     def startCutover(params: StartCutoverRequest): Request[StartCutoverResponse] = js.native
+    def startReplication(params: StartReplicationRequest): Request[SourceServer] = js.native
     def startTest(params: StartTestRequest): Request[StartTestResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def terminateTargetInstances(params: TerminateTargetInstancesRequest): Request[TerminateTargetInstancesResponse] = js.native
@@ -107,6 +118,7 @@ package object mgn {
     def updateLaunchConfiguration(params: UpdateLaunchConfigurationRequest): Request[LaunchConfiguration] = js.native
     def updateReplicationConfiguration(params: UpdateReplicationConfigurationRequest): Request[ReplicationConfiguration] = js.native
     def updateReplicationConfigurationTemplate(params: UpdateReplicationConfigurationTemplateRequest): Request[ReplicationConfigurationTemplate] = js.native
+    def updateSourceServerReplicationType(params: UpdateSourceServerReplicationTypeRequest): Request[SourceServer] = js.native
   }
   object Mgn {
     @inline implicit def toOps(service: Mgn): MgnOps = {
@@ -258,6 +270,7 @@ package object mgn {
     var dataReplicationState: js.UndefOr[DataReplicationState]
     var etaDateTime: js.UndefOr[ISO8601DatetimeString]
     var lagDuration: js.UndefOr[ISO8601DatetimeString]
+    var lastSnapshotDateTime: js.UndefOr[ISO8601DatetimeString]
     var replicatedDisks: js.UndefOr[DataReplicationInfoReplicatedDisks]
   }
 
@@ -269,6 +282,7 @@ package object mgn {
         dataReplicationState: js.UndefOr[DataReplicationState] = js.undefined,
         etaDateTime: js.UndefOr[ISO8601DatetimeString] = js.undefined,
         lagDuration: js.UndefOr[ISO8601DatetimeString] = js.undefined,
+        lastSnapshotDateTime: js.UndefOr[ISO8601DatetimeString] = js.undefined,
         replicatedDisks: js.UndefOr[DataReplicationInfoReplicatedDisks] = js.undefined
     ): DataReplicationInfo = {
       val __obj = js.Dynamic.literal()
@@ -277,6 +291,7 @@ package object mgn {
       dataReplicationState.foreach(__v => __obj.updateDynamic("dataReplicationState")(__v.asInstanceOf[js.Any]))
       etaDateTime.foreach(__v => __obj.updateDynamic("etaDateTime")(__v.asInstanceOf[js.Any]))
       lagDuration.foreach(__v => __obj.updateDynamic("lagDuration")(__v.asInstanceOf[js.Any]))
+      lastSnapshotDateTime.foreach(__v => __obj.updateDynamic("lastSnapshotDateTime")(__v.asInstanceOf[js.Any]))
       replicatedDisks.foreach(__v => __obj.updateDynamic("replicatedDisks")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataReplicationInfo]
     }
@@ -438,6 +453,23 @@ package object mgn {
     def apply(): DeleteSourceServerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteSourceServerResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteVcenterClientRequest extends js.Object {
+    var vcenterClientID: VcenterClientID
+  }
+
+  object DeleteVcenterClientRequest {
+    @inline
+    def apply(
+        vcenterClientID: VcenterClientID
+    ): DeleteVcenterClientRequest = {
+      val __obj = js.Dynamic.literal(
+        "vcenterClientID" -> vcenterClientID.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteVcenterClientRequest]
     }
   }
 
@@ -623,6 +655,8 @@ package object mgn {
   @js.native
   trait DescribeSourceServersRequestFilters extends js.Object {
     var isArchived: js.UndefOr[Boolean]
+    var lifeCycleStates: js.UndefOr[LifeCycleStates]
+    var replicationTypes: js.UndefOr[ReplicationTypes]
     var sourceServerIDs: js.UndefOr[DescribeSourceServersRequestFiltersIDs]
   }
 
@@ -630,10 +664,14 @@ package object mgn {
     @inline
     def apply(
         isArchived: js.UndefOr[Boolean] = js.undefined,
+        lifeCycleStates: js.UndefOr[LifeCycleStates] = js.undefined,
+        replicationTypes: js.UndefOr[ReplicationTypes] = js.undefined,
         sourceServerIDs: js.UndefOr[DescribeSourceServersRequestFiltersIDs] = js.undefined
     ): DescribeSourceServersRequestFilters = {
       val __obj = js.Dynamic.literal()
       isArchived.foreach(__v => __obj.updateDynamic("isArchived")(__v.asInstanceOf[js.Any]))
+      lifeCycleStates.foreach(__v => __obj.updateDynamic("lifeCycleStates")(__v.asInstanceOf[js.Any]))
+      replicationTypes.foreach(__v => __obj.updateDynamic("replicationTypes")(__v.asInstanceOf[js.Any]))
       sourceServerIDs.foreach(__v => __obj.updateDynamic("sourceServerIDs")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSourceServersRequestFilters]
     }
@@ -655,6 +693,44 @@ package object mgn {
       items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSourceServersResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeVcenterClientsRequest extends js.Object {
+    var maxResults: js.UndefOr[StrictlyPositiveInteger]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object DescribeVcenterClientsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[StrictlyPositiveInteger] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeVcenterClientsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeVcenterClientsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeVcenterClientsResponse extends js.Object {
+    var items: js.UndefOr[VcenterClientList]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object DescribeVcenterClientsResponse {
+    @inline
+    def apply(
+        items: js.UndefOr[VcenterClientList] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): DescribeVcenterClientsResponse = {
+      val __obj = js.Dynamic.literal()
+      items.foreach(__v => __obj.updateDynamic("items")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeVcenterClientsResponse]
     }
   }
 
@@ -754,6 +830,7 @@ package object mgn {
     var awsInstanceID: js.UndefOr[EC2InstanceID]
     var fqdn: js.UndefOr[BoundedString]
     var hostname: js.UndefOr[BoundedString]
+    var vmPath: js.UndefOr[BoundedString]
     var vmWareUuid: js.UndefOr[BoundedString]
   }
 
@@ -763,12 +840,14 @@ package object mgn {
         awsInstanceID: js.UndefOr[EC2InstanceID] = js.undefined,
         fqdn: js.UndefOr[BoundedString] = js.undefined,
         hostname: js.UndefOr[BoundedString] = js.undefined,
+        vmPath: js.UndefOr[BoundedString] = js.undefined,
         vmWareUuid: js.UndefOr[BoundedString] = js.undefined
     ): IdentificationHints = {
       val __obj = js.Dynamic.literal()
       awsInstanceID.foreach(__v => __obj.updateDynamic("awsInstanceID")(__v.asInstanceOf[js.Any]))
       fqdn.foreach(__v => __obj.updateDynamic("fqdn")(__v.asInstanceOf[js.Any]))
       hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      vmPath.foreach(__v => __obj.updateDynamic("vmPath")(__v.asInstanceOf[js.Any]))
       vmWareUuid.foreach(__v => __obj.updateDynamic("vmWareUuid")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IdentificationHints]
     }
@@ -1489,9 +1568,11 @@ package object mgn {
     var isArchived: js.UndefOr[Boolean]
     var launchedInstance: js.UndefOr[LaunchedInstance]
     var lifeCycle: js.UndefOr[LifeCycle]
+    var replicationType: js.UndefOr[ReplicationType]
     var sourceProperties: js.UndefOr[SourceProperties]
     var sourceServerID: js.UndefOr[SourceServerID]
     var tags: js.UndefOr[TagsMap]
+    var vcenterClientID: js.UndefOr[VcenterClientID]
   }
 
   object SourceServer {
@@ -1502,9 +1583,11 @@ package object mgn {
         isArchived: js.UndefOr[Boolean] = js.undefined,
         launchedInstance: js.UndefOr[LaunchedInstance] = js.undefined,
         lifeCycle: js.UndefOr[LifeCycle] = js.undefined,
+        replicationType: js.UndefOr[ReplicationType] = js.undefined,
         sourceProperties: js.UndefOr[SourceProperties] = js.undefined,
         sourceServerID: js.UndefOr[SourceServerID] = js.undefined,
-        tags: js.UndefOr[TagsMap] = js.undefined
+        tags: js.UndefOr[TagsMap] = js.undefined,
+        vcenterClientID: js.UndefOr[VcenterClientID] = js.undefined
     ): SourceServer = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -1512,9 +1595,11 @@ package object mgn {
       isArchived.foreach(__v => __obj.updateDynamic("isArchived")(__v.asInstanceOf[js.Any]))
       launchedInstance.foreach(__v => __obj.updateDynamic("launchedInstance")(__v.asInstanceOf[js.Any]))
       lifeCycle.foreach(__v => __obj.updateDynamic("lifeCycle")(__v.asInstanceOf[js.Any]))
+      replicationType.foreach(__v => __obj.updateDynamic("replicationType")(__v.asInstanceOf[js.Any]))
       sourceProperties.foreach(__v => __obj.updateDynamic("sourceProperties")(__v.asInstanceOf[js.Any]))
       sourceServerID.foreach(__v => __obj.updateDynamic("sourceServerID")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      vcenterClientID.foreach(__v => __obj.updateDynamic("vcenterClientID")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceServer]
     }
   }
@@ -1553,6 +1638,23 @@ package object mgn {
       val __obj = js.Dynamic.literal()
       job.foreach(__v => __obj.updateDynamic("job")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartCutoverResponse]
+    }
+  }
+
+  @js.native
+  trait StartReplicationRequest extends js.Object {
+    var sourceServerID: SourceServerID
+  }
+
+  object StartReplicationRequest {
+    @inline
+    def apply(
+        sourceServerID: SourceServerID
+    ): StartReplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "sourceServerID" -> sourceServerID.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartReplicationRequest]
     }
   }
 
@@ -1820,6 +1922,65 @@ package object mgn {
       stagingAreaTags.foreach(__v => __obj.updateDynamic("stagingAreaTags")(__v.asInstanceOf[js.Any]))
       useDedicatedReplicationServer.foreach(__v => __obj.updateDynamic("useDedicatedReplicationServer")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateReplicationConfigurationTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateSourceServerReplicationTypeRequest extends js.Object {
+    var replicationType: ReplicationType
+    var sourceServerID: SourceServerID
+  }
+
+  object UpdateSourceServerReplicationTypeRequest {
+    @inline
+    def apply(
+        replicationType: ReplicationType,
+        sourceServerID: SourceServerID
+    ): UpdateSourceServerReplicationTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "replicationType" -> replicationType.asInstanceOf[js.Any],
+        "sourceServerID" -> sourceServerID.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateSourceServerReplicationTypeRequest]
+    }
+  }
+
+  /** vCenter client.
+    */
+  @js.native
+  trait VcenterClient extends js.Object {
+    var arn: js.UndefOr[ARN]
+    var datacenterName: js.UndefOr[BoundedString]
+    var hostname: js.UndefOr[BoundedString]
+    var lastSeenDatetime: js.UndefOr[ISO8601DatetimeString]
+    var sourceServerTags: js.UndefOr[TagsMap]
+    var tags: js.UndefOr[TagsMap]
+    var vcenterClientID: js.UndefOr[VcenterClientID]
+    var vcenterUUID: js.UndefOr[BoundedString]
+  }
+
+  object VcenterClient {
+    @inline
+    def apply(
+        arn: js.UndefOr[ARN] = js.undefined,
+        datacenterName: js.UndefOr[BoundedString] = js.undefined,
+        hostname: js.UndefOr[BoundedString] = js.undefined,
+        lastSeenDatetime: js.UndefOr[ISO8601DatetimeString] = js.undefined,
+        sourceServerTags: js.UndefOr[TagsMap] = js.undefined,
+        tags: js.UndefOr[TagsMap] = js.undefined,
+        vcenterClientID: js.UndefOr[VcenterClientID] = js.undefined,
+        vcenterUUID: js.UndefOr[BoundedString] = js.undefined
+    ): VcenterClient = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      datacenterName.foreach(__v => __obj.updateDynamic("datacenterName")(__v.asInstanceOf[js.Any]))
+      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      lastSeenDatetime.foreach(__v => __obj.updateDynamic("lastSeenDatetime")(__v.asInstanceOf[js.Any]))
+      sourceServerTags.foreach(__v => __obj.updateDynamic("sourceServerTags")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      vcenterClientID.foreach(__v => __obj.updateDynamic("vcenterClientID")(__v.asInstanceOf[js.Any]))
+      vcenterUUID.foreach(__v => __obj.updateDynamic("vcenterUUID")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VcenterClient]
     }
   }
 }

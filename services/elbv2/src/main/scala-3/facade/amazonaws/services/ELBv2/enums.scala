@@ -87,6 +87,14 @@ object RedirectActionStatusCodeEnum {
   inline def values: js.Array[RedirectActionStatusCodeEnum] = js.Array(HTTP_301, HTTP_302)
 }
 
+type TargetGroupIpAddressTypeEnum = "ipv4" | "ipv6"
+object TargetGroupIpAddressTypeEnum {
+  inline val ipv4: "ipv4" = "ipv4"
+  inline val ipv6: "ipv6" = "ipv6"
+
+  inline def values: js.Array[TargetGroupIpAddressTypeEnum] = js.Array(ipv4, ipv6)
+}
+
 type TargetHealthReasonEnum = "Elb.RegistrationInProgress" | "Elb.InitialHealthChecking" | "Target.ResponseCodeMismatch" | "Target.Timeout" | "Target.FailedHealthChecks" | "Target.NotRegistered" | "Target.NotInUse" | "Target.DeregistrationInProgress" | "Target.InvalidState" | "Target.IpUnusable" | "Target.HealthCheckDisabled" | "Elb.InternalError"
 object TargetHealthReasonEnum {
   inline val `Elb.RegistrationInProgress`: "Elb.RegistrationInProgress" = "Elb.RegistrationInProgress"
@@ -130,11 +138,12 @@ object TargetHealthStateEnum {
   inline def values: js.Array[TargetHealthStateEnum] = js.Array(initial, healthy, unhealthy, unused, draining, unavailable)
 }
 
-type TargetTypeEnum = "instance" | "ip" | "lambda"
+type TargetTypeEnum = "instance" | "ip" | "lambda" | "alb"
 object TargetTypeEnum {
   inline val instance: "instance" = "instance"
   inline val ip: "ip" = "ip"
   inline val lambda: "lambda" = "lambda"
+  inline val alb: "alb" = "alb"
 
-  inline def values: js.Array[TargetTypeEnum] = js.Array(instance, ip, lambda)
+  inline def values: js.Array[TargetTypeEnum] = js.Array(instance, ip, lambda, alb)
 }

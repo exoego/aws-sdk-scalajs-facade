@@ -15,6 +15,15 @@ object ClusterState {
 }
 
 @js.native
+sealed trait DeviceServiceName extends js.Any
+object DeviceServiceName {
+  val NFS_ON_DEVICE_SERVICE = "NFS_ON_DEVICE_SERVICE".asInstanceOf[DeviceServiceName]
+  val S3_ON_DEVICE_SERVICE = "S3_ON_DEVICE_SERVICE".asInstanceOf[DeviceServiceName]
+
+  @inline def values: js.Array[DeviceServiceName] = js.Array(NFS_ON_DEVICE_SERVICE, S3_ON_DEVICE_SERVICE)
+}
+
+@js.native
 sealed trait JobState extends js.Any
 object JobState {
   val New = "New".asInstanceOf[JobState]
@@ -59,6 +68,24 @@ object JobType {
 }
 
 @js.native
+sealed trait LongTermPricingType extends js.Any
+object LongTermPricingType {
+  val OneYear = "OneYear".asInstanceOf[LongTermPricingType]
+  val ThreeYear = "ThreeYear".asInstanceOf[LongTermPricingType]
+
+  @inline def values: js.Array[LongTermPricingType] = js.Array(OneYear, ThreeYear)
+}
+
+@js.native
+sealed trait RemoteManagement extends js.Any
+object RemoteManagement {
+  val INSTALLED_ONLY = "INSTALLED_ONLY".asInstanceOf[RemoteManagement]
+  val INSTALLED_AUTOSTART = "INSTALLED_AUTOSTART".asInstanceOf[RemoteManagement]
+
+  @inline def values: js.Array[RemoteManagement] = js.Array(INSTALLED_ONLY, INSTALLED_AUTOSTART)
+}
+
+@js.native
 sealed trait ShipmentState extends js.Any
 object ShipmentState {
   val RECEIVED = "RECEIVED".asInstanceOf[ShipmentState]
@@ -98,9 +125,10 @@ object SnowballCapacity {
   val T42 = "T42".asInstanceOf[SnowballCapacity]
   val T98 = "T98".asInstanceOf[SnowballCapacity]
   val T8 = "T8".asInstanceOf[SnowballCapacity]
+  val T14 = "T14".asInstanceOf[SnowballCapacity]
   val NoPreference = "NoPreference".asInstanceOf[SnowballCapacity]
 
-  @inline def values: js.Array[SnowballCapacity] = js.Array(T50, T80, T100, T42, T98, T8, NoPreference)
+  @inline def values: js.Array[SnowballCapacity] = js.Array(T50, T80, T100, T42, T98, T8, T14, NoPreference)
 }
 
 @js.native
@@ -112,6 +140,25 @@ object SnowballType {
   val EDGE_CG = "EDGE_CG".asInstanceOf[SnowballType]
   val EDGE_S = "EDGE_S".asInstanceOf[SnowballType]
   val SNC1_HDD = "SNC1_HDD".asInstanceOf[SnowballType]
+  val SNC1_SSD = "SNC1_SSD".asInstanceOf[SnowballType]
 
-  @inline def values: js.Array[SnowballType] = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD)
+  @inline def values: js.Array[SnowballType] = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD, SNC1_SSD)
+}
+
+@js.native
+sealed trait StorageUnit extends js.Any
+object StorageUnit {
+  val TB = "TB".asInstanceOf[StorageUnit]
+
+  @inline def values: js.Array[StorageUnit] = js.Array(TB)
+}
+
+@js.native
+sealed trait TransferOption extends js.Any
+object TransferOption {
+  val IMPORT = "IMPORT".asInstanceOf[TransferOption]
+  val EXPORT = "EXPORT".asInstanceOf[TransferOption]
+  val LOCAL_USE = "LOCAL_USE".asInstanceOf[TransferOption]
+
+  @inline def values: js.Array[TransferOption] = js.Array(IMPORT, EXPORT, LOCAL_USE)
 }

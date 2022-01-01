@@ -25,8 +25,16 @@ package object rekognition {
   type ContentClassifiers = js.Array[ContentClassifier]
   type ContentModerationDetections = js.Array[ContentModerationDetection]
   type CustomLabels = js.Array[CustomLabel]
+  type DatasetArn = String
+  type DatasetEntries = js.Array[DatasetEntry]
+  type DatasetEntry = String
+  type DatasetLabel = String
+  type DatasetLabelDescriptions = js.Array[DatasetLabelDescription]
+  type DatasetLabels = js.Array[DatasetLabel]
+  type DatasetMetadataList = js.Array[DatasetMetadata]
   type DateTime = js.Date
   type Degree = Float
+  type DistributeDatasetMetadataList = js.Array[DistributeDataset]
   type Emotions = js.Array[Emotion]
   type EquipmentDetections = js.Array[EquipmentDetection]
   type ExtendedPaginationToken = String
@@ -40,6 +48,8 @@ package object rekognition {
   type FaceModelVersionList = js.Array[String]
   type FaceRecordList = js.Array[FaceRecord]
   type FlowDefinitionArn = String
+  type GroundTruthBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type HasErrors = Boolean
   type HumanLoopActivationConditionsEvaluationResults = String
   type HumanLoopActivationReason = String
   type HumanLoopActivationReasons = js.Array[HumanLoopActivationReason]
@@ -49,16 +59,22 @@ package object rekognition {
   type ImageId = String
   type InferenceUnits = Int
   type Instances = js.Array[Instance]
+  type IsLabeled = Boolean
   type JobId = String
   type JobTag = String
   type KinesisDataArn = String
   type KinesisVideoArn = String
+  type KmsKeyId = String
   type LabelDetections = js.Array[LabelDetection]
   type Labels = js.Array[Label]
   type Landmarks = js.Array[Landmark]
+  type ListDatasetEntriesPageSize = Int
+  type ListDatasetLabelsPageSize = Int
   type MaxFaces = Int
   type MaxFacesToIndex = Int
+  type MaxPixelThreshold = Float
   type MaxResults = Int
+  type MinCoveragePercentage = Float
   type ModerationLabels = js.Array[ModerationLabel]
   type PageSize = Int
   type PaginationToken = String
@@ -71,6 +87,7 @@ package object rekognition {
   type ProjectArn = String
   type ProjectDescriptions = js.Array[ProjectDescription]
   type ProjectName = String
+  type ProjectNames = js.Array[ProjectName]
   type ProjectVersionArn = String
   type ProjectVersionDescriptions = js.Array[ProjectVersionDescription]
   type ProjectVersionsPageSize = Int
@@ -78,6 +95,7 @@ package object rekognition {
   type ProtectiveEquipmentPersonIds = js.Array[UInteger]
   type ProtectiveEquipmentPersons = js.Array[ProtectiveEquipmentPerson]
   type ProtectiveEquipmentTypes = js.Array[ProtectiveEquipmentType]
+  type QueryString = String
   type Reasons = js.Array[Reason]
   type RegionsOfInterest = js.Array[RegionOfInterest]
   type RekognitionUniqueId = String
@@ -117,15 +135,18 @@ package object rekognition {
 
     @inline def compareFacesFuture(params: CompareFacesRequest): Future[CompareFacesResponse] = service.compareFaces(params).promise().toFuture
     @inline def createCollectionFuture(params: CreateCollectionRequest): Future[CreateCollectionResponse] = service.createCollection(params).promise().toFuture
+    @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] = service.createProject(params).promise().toFuture
     @inline def createProjectVersionFuture(params: CreateProjectVersionRequest): Future[CreateProjectVersionResponse] = service.createProjectVersion(params).promise().toFuture
     @inline def createStreamProcessorFuture(params: CreateStreamProcessorRequest): Future[CreateStreamProcessorResponse] = service.createStreamProcessor(params).promise().toFuture
     @inline def deleteCollectionFuture(params: DeleteCollectionRequest): Future[DeleteCollectionResponse] = service.deleteCollection(params).promise().toFuture
+    @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[DeleteDatasetResponse] = service.deleteDataset(params).promise().toFuture
     @inline def deleteFacesFuture(params: DeleteFacesRequest): Future[DeleteFacesResponse] = service.deleteFaces(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] = service.deleteProject(params).promise().toFuture
     @inline def deleteProjectVersionFuture(params: DeleteProjectVersionRequest): Future[DeleteProjectVersionResponse] = service.deleteProjectVersion(params).promise().toFuture
     @inline def deleteStreamProcessorFuture(params: DeleteStreamProcessorRequest): Future[DeleteStreamProcessorResponse] = service.deleteStreamProcessor(params).promise().toFuture
     @inline def describeCollectionFuture(params: DescribeCollectionRequest): Future[DescribeCollectionResponse] = service.describeCollection(params).promise().toFuture
+    @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
     @inline def describeProjectVersionsFuture(params: DescribeProjectVersionsRequest): Future[DescribeProjectVersionsResponse] = service.describeProjectVersions(params).promise().toFuture
     @inline def describeProjectsFuture(params: DescribeProjectsRequest): Future[DescribeProjectsResponse] = service.describeProjects(params).promise().toFuture
     @inline def describeStreamProcessorFuture(params: DescribeStreamProcessorRequest): Future[DescribeStreamProcessorResponse] = service.describeStreamProcessor(params).promise().toFuture
@@ -135,6 +156,7 @@ package object rekognition {
     @inline def detectModerationLabelsFuture(params: DetectModerationLabelsRequest): Future[DetectModerationLabelsResponse] = service.detectModerationLabels(params).promise().toFuture
     @inline def detectProtectiveEquipmentFuture(params: DetectProtectiveEquipmentRequest): Future[DetectProtectiveEquipmentResponse] = service.detectProtectiveEquipment(params).promise().toFuture
     @inline def detectTextFuture(params: DetectTextRequest): Future[DetectTextResponse] = service.detectText(params).promise().toFuture
+    @inline def distributeDatasetEntriesFuture(params: DistributeDatasetEntriesRequest): Future[DistributeDatasetEntriesResponse] = service.distributeDatasetEntries(params).promise().toFuture
     @inline def getCelebrityInfoFuture(params: GetCelebrityInfoRequest): Future[GetCelebrityInfoResponse] = service.getCelebrityInfo(params).promise().toFuture
     @inline def getCelebrityRecognitionFuture(params: GetCelebrityRecognitionRequest): Future[GetCelebrityRecognitionResponse] = service.getCelebrityRecognition(params).promise().toFuture
     @inline def getContentModerationFuture(params: GetContentModerationRequest): Future[GetContentModerationResponse] = service.getContentModeration(params).promise().toFuture
@@ -146,6 +168,8 @@ package object rekognition {
     @inline def getTextDetectionFuture(params: GetTextDetectionRequest): Future[GetTextDetectionResponse] = service.getTextDetection(params).promise().toFuture
     @inline def indexFacesFuture(params: IndexFacesRequest): Future[IndexFacesResponse] = service.indexFaces(params).promise().toFuture
     @inline def listCollectionsFuture(params: ListCollectionsRequest): Future[ListCollectionsResponse] = service.listCollections(params).promise().toFuture
+    @inline def listDatasetEntriesFuture(params: ListDatasetEntriesRequest): Future[ListDatasetEntriesResponse] = service.listDatasetEntries(params).promise().toFuture
+    @inline def listDatasetLabelsFuture(params: ListDatasetLabelsRequest): Future[ListDatasetLabelsResponse] = service.listDatasetLabels(params).promise().toFuture
     @inline def listFacesFuture(params: ListFacesRequest): Future[ListFacesResponse] = service.listFaces(params).promise().toFuture
     @inline def listStreamProcessorsFuture(params: ListStreamProcessorsRequest): Future[ListStreamProcessorsResponse] = service.listStreamProcessors(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
@@ -166,6 +190,7 @@ package object rekognition {
     @inline def stopStreamProcessorFuture(params: StopStreamProcessorRequest): Future[StopStreamProcessorResponse] = service.stopStreamProcessor(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDatasetEntriesFuture(params: UpdateDatasetEntriesRequest): Future[UpdateDatasetEntriesResponse] = service.updateDatasetEntries(params).promise().toFuture
 
   }
 
@@ -176,15 +201,18 @@ package object rekognition {
 
     def compareFaces(params: CompareFacesRequest): Request[CompareFacesResponse] = js.native
     def createCollection(params: CreateCollectionRequest): Request[CreateCollectionResponse] = js.native
+    def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse] = js.native
     def createProject(params: CreateProjectRequest): Request[CreateProjectResponse] = js.native
     def createProjectVersion(params: CreateProjectVersionRequest): Request[CreateProjectVersionResponse] = js.native
     def createStreamProcessor(params: CreateStreamProcessorRequest): Request[CreateStreamProcessorResponse] = js.native
     def deleteCollection(params: DeleteCollectionRequest): Request[DeleteCollectionResponse] = js.native
+    def deleteDataset(params: DeleteDatasetRequest): Request[DeleteDatasetResponse] = js.native
     def deleteFaces(params: DeleteFacesRequest): Request[DeleteFacesResponse] = js.native
     def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResponse] = js.native
     def deleteProjectVersion(params: DeleteProjectVersionRequest): Request[DeleteProjectVersionResponse] = js.native
     def deleteStreamProcessor(params: DeleteStreamProcessorRequest): Request[DeleteStreamProcessorResponse] = js.native
     def describeCollection(params: DescribeCollectionRequest): Request[DescribeCollectionResponse] = js.native
+    def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeProjectVersions(params: DescribeProjectVersionsRequest): Request[DescribeProjectVersionsResponse] = js.native
     def describeProjects(params: DescribeProjectsRequest): Request[DescribeProjectsResponse] = js.native
     def describeStreamProcessor(params: DescribeStreamProcessorRequest): Request[DescribeStreamProcessorResponse] = js.native
@@ -194,6 +222,7 @@ package object rekognition {
     def detectModerationLabels(params: DetectModerationLabelsRequest): Request[DetectModerationLabelsResponse] = js.native
     def detectProtectiveEquipment(params: DetectProtectiveEquipmentRequest): Request[DetectProtectiveEquipmentResponse] = js.native
     def detectText(params: DetectTextRequest): Request[DetectTextResponse] = js.native
+    def distributeDatasetEntries(params: DistributeDatasetEntriesRequest): Request[DistributeDatasetEntriesResponse] = js.native
     def getCelebrityInfo(params: GetCelebrityInfoRequest): Request[GetCelebrityInfoResponse] = js.native
     def getCelebrityRecognition(params: GetCelebrityRecognitionRequest): Request[GetCelebrityRecognitionResponse] = js.native
     def getContentModeration(params: GetContentModerationRequest): Request[GetContentModerationResponse] = js.native
@@ -205,6 +234,8 @@ package object rekognition {
     def getTextDetection(params: GetTextDetectionRequest): Request[GetTextDetectionResponse] = js.native
     def indexFaces(params: IndexFacesRequest): Request[IndexFacesResponse] = js.native
     def listCollections(params: ListCollectionsRequest): Request[ListCollectionsResponse] = js.native
+    def listDatasetEntries(params: ListDatasetEntriesRequest): Request[ListDatasetEntriesResponse] = js.native
+    def listDatasetLabels(params: ListDatasetLabelsRequest): Request[ListDatasetLabelsResponse] = js.native
     def listFaces(params: ListFacesRequest): Request[ListFacesResponse] = js.native
     def listStreamProcessors(params: ListStreamProcessorsRequest): Request[ListStreamProcessorsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
@@ -225,6 +256,7 @@ package object rekognition {
     def stopStreamProcessor(params: StopStreamProcessorRequest): Request[StopStreamProcessorResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateDatasetEntries(params: UpdateDatasetEntriesRequest): Request[UpdateDatasetEntriesResponse] = js.native
   }
   object Rekognition {
     @inline implicit def toOps(service: Rekognition): RekognitionOps = {
@@ -319,6 +351,27 @@ package object rekognition {
     }
   }
 
+  /** A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame. As videos can come from multiple sources, formats, and time periods, they may contain different standards and varying noise levels for black frames that need to be accounted for. For more information, see <a>StartSegmentDetection</a>.
+    */
+  @js.native
+  trait BlackFrame extends js.Object {
+    var MaxPixelThreshold: js.UndefOr[MaxPixelThreshold]
+    var MinCoveragePercentage: js.UndefOr[MinCoveragePercentage]
+  }
+
+  object BlackFrame {
+    @inline
+    def apply(
+        MaxPixelThreshold: js.UndefOr[MaxPixelThreshold] = js.undefined,
+        MinCoveragePercentage: js.UndefOr[MinCoveragePercentage] = js.undefined
+    ): BlackFrame = {
+      val __obj = js.Dynamic.literal()
+      MaxPixelThreshold.foreach(__v => __obj.updateDynamic("MaxPixelThreshold")(__v.asInstanceOf[js.Any]))
+      MinCoveragePercentage.foreach(__v => __obj.updateDynamic("MinCoveragePercentage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BlackFrame]
+    }
+  }
+
   /** Identifies the bounding box around the label, face, text or personal protective equipment. The <code>left</code> (x-coordinate) and <code>top</code> (y-coordinate) are coordinates representing the top and left sides of the bounding box. Note that the upper-left corner of the image is the origin (0,0). The <code>top</code> and <code>left</code> values returned are ratios of the overall image size. For example, if the input image is 700x200 pixels, and the top-left coordinate of the bounding box is 350x50 pixels, the API returns a <code>left</code> value of 0.5 (350/700) and a <code>top</code> value of 0.25 (50/200). The <code>width</code> and <code>height</code> values represent the dimensions of the bounding box as a ratio of the overall image dimension. For example, if the input image is 700x200 pixels, and the bounding box width is 70 pixels, the width returned is 0.1.
     *
     * '''Note:'''The bounding box coordinates can have negative values. For example, if Amazon Rekognition is able to detect a face that is at the image edge and is only partially visible, the service can return coordinates that are outside the image bounds and, depending on the image edge, you might get negative values or values greater than 1 for the <code>left</code> or <code>top</code> values.
@@ -354,6 +407,7 @@ package object rekognition {
   trait Celebrity extends js.Object {
     var Face: js.UndefOr[ComparedFace]
     var Id: js.UndefOr[RekognitionUniqueId]
+    var KnownGender: js.UndefOr[KnownGender]
     var MatchConfidence: js.UndefOr[Percent]
     var Name: js.UndefOr[String]
     var Urls: js.UndefOr[Urls]
@@ -364,6 +418,7 @@ package object rekognition {
     def apply(
         Face: js.UndefOr[ComparedFace] = js.undefined,
         Id: js.UndefOr[RekognitionUniqueId] = js.undefined,
+        KnownGender: js.UndefOr[KnownGender] = js.undefined,
         MatchConfidence: js.UndefOr[Percent] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         Urls: js.UndefOr[Urls] = js.undefined
@@ -371,6 +426,7 @@ package object rekognition {
       val __obj = js.Dynamic.literal()
       Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      KnownGender.foreach(__v => __obj.updateDynamic("KnownGender")(__v.asInstanceOf[js.Any]))
       MatchConfidence.foreach(__v => __obj.updateDynamic("MatchConfidence")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Urls.foreach(__v => __obj.updateDynamic("Urls")(__v.asInstanceOf[js.Any]))
@@ -386,6 +442,7 @@ package object rekognition {
     var Confidence: js.UndefOr[Percent]
     var Face: js.UndefOr[FaceDetail]
     var Id: js.UndefOr[RekognitionUniqueId]
+    var KnownGender: js.UndefOr[KnownGender]
     var Name: js.UndefOr[String]
     var Urls: js.UndefOr[Urls]
   }
@@ -397,6 +454,7 @@ package object rekognition {
         Confidence: js.UndefOr[Percent] = js.undefined,
         Face: js.UndefOr[FaceDetail] = js.undefined,
         Id: js.UndefOr[RekognitionUniqueId] = js.undefined,
+        KnownGender: js.UndefOr[KnownGender] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         Urls: js.UndefOr[Urls] = js.undefined
     ): CelebrityDetail = {
@@ -405,6 +463,7 @@ package object rekognition {
       Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
       Face.foreach(__v => __obj.updateDynamic("Face")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      KnownGender.foreach(__v => __obj.updateDynamic("KnownGender")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Urls.foreach(__v => __obj.updateDynamic("Urls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CelebrityDetail]
@@ -514,9 +573,11 @@ package object rekognition {
   trait ComparedFace extends js.Object {
     var BoundingBox: js.UndefOr[BoundingBox]
     var Confidence: js.UndefOr[Percent]
+    var Emotions: js.UndefOr[Emotions]
     var Landmarks: js.UndefOr[Landmarks]
     var Pose: js.UndefOr[Pose]
     var Quality: js.UndefOr[ImageQuality]
+    var Smile: js.UndefOr[Smile]
   }
 
   object ComparedFace {
@@ -524,16 +585,20 @@ package object rekognition {
     def apply(
         BoundingBox: js.UndefOr[BoundingBox] = js.undefined,
         Confidence: js.UndefOr[Percent] = js.undefined,
+        Emotions: js.UndefOr[Emotions] = js.undefined,
         Landmarks: js.UndefOr[Landmarks] = js.undefined,
         Pose: js.UndefOr[Pose] = js.undefined,
-        Quality: js.UndefOr[ImageQuality] = js.undefined
+        Quality: js.UndefOr[ImageQuality] = js.undefined,
+        Smile: js.UndefOr[Smile] = js.undefined
     ): ComparedFace = {
       val __obj = js.Dynamic.literal()
       BoundingBox.foreach(__v => __obj.updateDynamic("BoundingBox")(__v.asInstanceOf[js.Any]))
       Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Emotions.foreach(__v => __obj.updateDynamic("Emotions")(__v.asInstanceOf[js.Any]))
       Landmarks.foreach(__v => __obj.updateDynamic("Landmarks")(__v.asInstanceOf[js.Any]))
       Pose.foreach(__v => __obj.updateDynamic("Pose")(__v.asInstanceOf[js.Any]))
       Quality.foreach(__v => __obj.updateDynamic("Quality")(__v.asInstanceOf[js.Any]))
+      Smile.foreach(__v => __obj.updateDynamic("Smile")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComparedFace]
     }
   }
@@ -559,7 +624,7 @@ package object rekognition {
     }
   }
 
-  /** Information about an unsafe content label detection in a stored video.
+  /** Information about an inappropriate, unwanted, or offensive content label detection in a stored video.
     */
   @js.native
   trait ContentModerationDetection extends js.Object {
@@ -645,6 +710,46 @@ package object rekognition {
   }
 
   @js.native
+  trait CreateDatasetRequest extends js.Object {
+    var DatasetType: DatasetType
+    var ProjectArn: ProjectArn
+    var DatasetSource: js.UndefOr[DatasetSource]
+  }
+
+  object CreateDatasetRequest {
+    @inline
+    def apply(
+        DatasetType: DatasetType,
+        ProjectArn: ProjectArn,
+        DatasetSource: js.UndefOr[DatasetSource] = js.undefined
+    ): CreateDatasetRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatasetType" -> DatasetType.asInstanceOf[js.Any],
+        "ProjectArn" -> ProjectArn.asInstanceOf[js.Any]
+      )
+
+      DatasetSource.foreach(__v => __obj.updateDynamic("DatasetSource")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDatasetRequest]
+    }
+  }
+
+  @js.native
+  trait CreateDatasetResponse extends js.Object {
+    var DatasetArn: js.UndefOr[DatasetArn]
+  }
+
+  object CreateDatasetResponse {
+    @inline
+    def apply(
+        DatasetArn: js.UndefOr[DatasetArn] = js.undefined
+    ): CreateDatasetResponse = {
+      val __obj = js.Dynamic.literal()
+      DatasetArn.foreach(__v => __obj.updateDynamic("DatasetArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDatasetResponse]
+    }
+  }
+
+  @js.native
   trait CreateProjectRequest extends js.Object {
     var ProjectName: ProjectName
   }
@@ -681,10 +786,11 @@ package object rekognition {
   trait CreateProjectVersionRequest extends js.Object {
     var OutputConfig: OutputConfig
     var ProjectArn: ProjectArn
-    var TestingData: TestingData
-    var TrainingData: TrainingData
     var VersionName: VersionName
+    var KmsKeyId: js.UndefOr[KmsKeyId]
     var Tags: js.UndefOr[TagMap]
+    var TestingData: js.UndefOr[TestingData]
+    var TrainingData: js.UndefOr[TrainingData]
   }
 
   object CreateProjectVersionRequest {
@@ -692,20 +798,22 @@ package object rekognition {
     def apply(
         OutputConfig: OutputConfig,
         ProjectArn: ProjectArn,
-        TestingData: TestingData,
-        TrainingData: TrainingData,
         VersionName: VersionName,
-        Tags: js.UndefOr[TagMap] = js.undefined
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined,
+        TestingData: js.UndefOr[TestingData] = js.undefined,
+        TrainingData: js.UndefOr[TrainingData] = js.undefined
     ): CreateProjectVersionRequest = {
       val __obj = js.Dynamic.literal(
         "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
         "ProjectArn" -> ProjectArn.asInstanceOf[js.Any],
-        "TestingData" -> TestingData.asInstanceOf[js.Any],
-        "TrainingData" -> TrainingData.asInstanceOf[js.Any],
         "VersionName" -> VersionName.asInstanceOf[js.Any]
       )
 
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TestingData.foreach(__v => __obj.updateDynamic("TestingData")(__v.asInstanceOf[js.Any]))
+      TrainingData.foreach(__v => __obj.updateDynamic("TrainingData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProjectVersionRequest]
     }
   }
@@ -799,6 +907,181 @@ package object rekognition {
     }
   }
 
+  /** Describes updates or additions to a dataset. A Single update or addition is an entry (JSON Line) that provides information about a single image. To update an existing entry, you match the <code>source-ref</code> field of the update entry with the <code>source-ref</code> filed of the entry that you want to update. If the <code>source-ref</code> field doesn't match an existing entry, the entry is added to dataset as a new entry.
+    */
+  @js.native
+  trait DatasetChanges extends js.Object {
+    var GroundTruth: GroundTruthBlob
+  }
+
+  object DatasetChanges {
+    @inline
+    def apply(
+        GroundTruth: GroundTruthBlob
+    ): DatasetChanges = {
+      val __obj = js.Dynamic.literal(
+        "GroundTruth" -> GroundTruth.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DatasetChanges]
+    }
+  }
+
+  /** A description for a dataset. For more information, see <a>DescribeDataset</a>. The status fields <code>Status</code>, <code>StatusMessage</code>, and <code>StatusMessageCode</code> reflect the last operation on the dataset.
+    */
+  @js.native
+  trait DatasetDescription extends js.Object {
+    var CreationTimestamp: js.UndefOr[DateTime]
+    var DatasetStats: js.UndefOr[DatasetStats]
+    var LastUpdatedTimestamp: js.UndefOr[DateTime]
+    var Status: js.UndefOr[DatasetStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
+    var StatusMessageCode: js.UndefOr[DatasetStatusMessageCode]
+  }
+
+  object DatasetDescription {
+    @inline
+    def apply(
+        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
+        DatasetStats: js.UndefOr[DatasetStats] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[DateTime] = js.undefined,
+        Status: js.UndefOr[DatasetStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        StatusMessageCode: js.UndefOr[DatasetStatusMessageCode] = js.undefined
+    ): DatasetDescription = {
+      val __obj = js.Dynamic.literal()
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      DatasetStats.foreach(__v => __obj.updateDynamic("DatasetStats")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      StatusMessageCode.foreach(__v => __obj.updateDynamic("StatusMessageCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetDescription]
+    }
+  }
+
+  /** Describes a dataset label. For more information, see <a>ListDatasetLabels</a>.
+    */
+  @js.native
+  trait DatasetLabelDescription extends js.Object {
+    var LabelName: js.UndefOr[DatasetLabel]
+    var LabelStats: js.UndefOr[DatasetLabelStats]
+  }
+
+  object DatasetLabelDescription {
+    @inline
+    def apply(
+        LabelName: js.UndefOr[DatasetLabel] = js.undefined,
+        LabelStats: js.UndefOr[DatasetLabelStats] = js.undefined
+    ): DatasetLabelDescription = {
+      val __obj = js.Dynamic.literal()
+      LabelName.foreach(__v => __obj.updateDynamic("LabelName")(__v.asInstanceOf[js.Any]))
+      LabelStats.foreach(__v => __obj.updateDynamic("LabelStats")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetLabelDescription]
+    }
+  }
+
+  /** Statistics about a label used in a dataset. For more information, see <a>DatasetLabelDescription</a>.
+    */
+  @js.native
+  trait DatasetLabelStats extends js.Object {
+    var BoundingBoxCount: js.UndefOr[UInteger]
+    var EntryCount: js.UndefOr[UInteger]
+  }
+
+  object DatasetLabelStats {
+    @inline
+    def apply(
+        BoundingBoxCount: js.UndefOr[UInteger] = js.undefined,
+        EntryCount: js.UndefOr[UInteger] = js.undefined
+    ): DatasetLabelStats = {
+      val __obj = js.Dynamic.literal()
+      BoundingBoxCount.foreach(__v => __obj.updateDynamic("BoundingBoxCount")(__v.asInstanceOf[js.Any]))
+      EntryCount.foreach(__v => __obj.updateDynamic("EntryCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetLabelStats]
+    }
+  }
+
+  /** Summary information for an Amazon Rekognition Custom Labels dataset. For more information, see <a>ProjectDescription</a>.
+    */
+  @js.native
+  trait DatasetMetadata extends js.Object {
+    var CreationTimestamp: js.UndefOr[DateTime]
+    var DatasetArn: js.UndefOr[DatasetArn]
+    var DatasetType: js.UndefOr[DatasetType]
+    var Status: js.UndefOr[DatasetStatus]
+    var StatusMessage: js.UndefOr[StatusMessage]
+    var StatusMessageCode: js.UndefOr[DatasetStatusMessageCode]
+  }
+
+  object DatasetMetadata {
+    @inline
+    def apply(
+        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
+        DatasetArn: js.UndefOr[DatasetArn] = js.undefined,
+        DatasetType: js.UndefOr[DatasetType] = js.undefined,
+        Status: js.UndefOr[DatasetStatus] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        StatusMessageCode: js.UndefOr[DatasetStatusMessageCode] = js.undefined
+    ): DatasetMetadata = {
+      val __obj = js.Dynamic.literal()
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      DatasetArn.foreach(__v => __obj.updateDynamic("DatasetArn")(__v.asInstanceOf[js.Any]))
+      DatasetType.foreach(__v => __obj.updateDynamic("DatasetType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      StatusMessageCode.foreach(__v => __obj.updateDynamic("StatusMessageCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetMetadata]
+    }
+  }
+
+  /** The source that Amazon Rekognition Custom Labels uses to create a dataset. To use an Amazon Sagemaker format manifest file, specify the S3 bucket location in the <code>GroundTruthManifest</code> field. The S3 bucket must be in your AWS account. To create a copy of an existing dataset, specify the Amazon Resource Name (ARN) of an existing dataset in <code>DatasetArn</code>. You need to specify a value for <code>DatasetArn</code> or <code>GroundTruthManifest</code>, but not both. if you supply both values, or if you don't specify any values, an InvalidParameterException exception occurs. For more information, see <a>CreateDataset</a>.
+    */
+  @js.native
+  trait DatasetSource extends js.Object {
+    var DatasetArn: js.UndefOr[DatasetArn]
+    var GroundTruthManifest: js.UndefOr[GroundTruthManifest]
+  }
+
+  object DatasetSource {
+    @inline
+    def apply(
+        DatasetArn: js.UndefOr[DatasetArn] = js.undefined,
+        GroundTruthManifest: js.UndefOr[GroundTruthManifest] = js.undefined
+    ): DatasetSource = {
+      val __obj = js.Dynamic.literal()
+      DatasetArn.foreach(__v => __obj.updateDynamic("DatasetArn")(__v.asInstanceOf[js.Any]))
+      GroundTruthManifest.foreach(__v => __obj.updateDynamic("GroundTruthManifest")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetSource]
+    }
+  }
+
+  /** Provides statistics about a dataset. For more information, see <a>DescribeDataset</a>.
+    */
+  @js.native
+  trait DatasetStats extends js.Object {
+    var ErrorEntries: js.UndefOr[UInteger]
+    var LabeledEntries: js.UndefOr[UInteger]
+    var TotalEntries: js.UndefOr[UInteger]
+    var TotalLabels: js.UndefOr[UInteger]
+  }
+
+  object DatasetStats {
+    @inline
+    def apply(
+        ErrorEntries: js.UndefOr[UInteger] = js.undefined,
+        LabeledEntries: js.UndefOr[UInteger] = js.undefined,
+        TotalEntries: js.UndefOr[UInteger] = js.undefined,
+        TotalLabels: js.UndefOr[UInteger] = js.undefined
+    ): DatasetStats = {
+      val __obj = js.Dynamic.literal()
+      ErrorEntries.foreach(__v => __obj.updateDynamic("ErrorEntries")(__v.asInstanceOf[js.Any]))
+      LabeledEntries.foreach(__v => __obj.updateDynamic("LabeledEntries")(__v.asInstanceOf[js.Any]))
+      TotalEntries.foreach(__v => __obj.updateDynamic("TotalEntries")(__v.asInstanceOf[js.Any]))
+      TotalLabels.foreach(__v => __obj.updateDynamic("TotalLabels")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetStats]
+    }
+  }
+
   @js.native
   trait DeleteCollectionRequest extends js.Object {
     var CollectionId: CollectionId
@@ -829,6 +1112,34 @@ package object rekognition {
       val __obj = js.Dynamic.literal()
       StatusCode.foreach(__v => __obj.updateDynamic("StatusCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteCollectionResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteDatasetRequest extends js.Object {
+    var DatasetArn: DatasetArn
+  }
+
+  object DeleteDatasetRequest {
+    @inline
+    def apply(
+        DatasetArn: DatasetArn
+    ): DeleteDatasetRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatasetArn" -> DatasetArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteDatasetRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDatasetResponse extends js.Object
+
+  object DeleteDatasetResponse {
+    @inline
+    def apply(): DeleteDatasetResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteDatasetResponse]
     }
   }
 
@@ -1005,6 +1316,39 @@ package object rekognition {
   }
 
   @js.native
+  trait DescribeDatasetRequest extends js.Object {
+    var DatasetArn: DatasetArn
+  }
+
+  object DescribeDatasetRequest {
+    @inline
+    def apply(
+        DatasetArn: DatasetArn
+    ): DescribeDatasetRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatasetArn" -> DatasetArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeDatasetRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeDatasetResponse extends js.Object {
+    var DatasetDescription: js.UndefOr[DatasetDescription]
+  }
+
+  object DescribeDatasetResponse {
+    @inline
+    def apply(
+        DatasetDescription: js.UndefOr[DatasetDescription] = js.undefined
+    ): DescribeDatasetResponse = {
+      val __obj = js.Dynamic.literal()
+      DatasetDescription.foreach(__v => __obj.updateDynamic("DatasetDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDatasetResponse]
+    }
+  }
+
+  @js.native
   trait DescribeProjectVersionsRequest extends js.Object {
     var ProjectArn: ProjectArn
     var MaxResults: js.UndefOr[ProjectVersionsPageSize]
@@ -1054,17 +1398,20 @@ package object rekognition {
   trait DescribeProjectsRequest extends js.Object {
     var MaxResults: js.UndefOr[ProjectsPageSize]
     var NextToken: js.UndefOr[ExtendedPaginationToken]
+    var ProjectNames: js.UndefOr[ProjectNames]
   }
 
   object DescribeProjectsRequest {
     @inline
     def apply(
         MaxResults: js.UndefOr[ProjectsPageSize] = js.undefined,
-        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined,
+        ProjectNames: js.UndefOr[ProjectNames] = js.undefined
     ): DescribeProjectsRequest = {
       val __obj = js.Dynamic.literal()
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ProjectNames.foreach(__v => __obj.updateDynamic("ProjectNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProjectsRequest]
     }
   }
@@ -1451,6 +1798,53 @@ package object rekognition {
     }
   }
 
+  /** A training dataset or a test dataset used in a dataset distribution operation. For more information, see <a>DistributeDatasetEntries</a>.
+    */
+  @js.native
+  trait DistributeDataset extends js.Object {
+    var Arn: DatasetArn
+  }
+
+  object DistributeDataset {
+    @inline
+    def apply(
+        Arn: DatasetArn
+    ): DistributeDataset = {
+      val __obj = js.Dynamic.literal(
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DistributeDataset]
+    }
+  }
+
+  @js.native
+  trait DistributeDatasetEntriesRequest extends js.Object {
+    var Datasets: DistributeDatasetMetadataList
+  }
+
+  object DistributeDatasetEntriesRequest {
+    @inline
+    def apply(
+        Datasets: DistributeDatasetMetadataList
+    ): DistributeDatasetEntriesRequest = {
+      val __obj = js.Dynamic.literal(
+        "Datasets" -> Datasets.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DistributeDatasetEntriesRequest]
+    }
+  }
+
+  @js.native
+  trait DistributeDatasetEntriesResponse extends js.Object
+
+  object DistributeDatasetEntriesResponse {
+    @inline
+    def apply(): DistributeDatasetEntriesResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DistributeDatasetEntriesResponse]
+    }
+  }
+
   /** The emotions that appear to be expressed on the face, and the confidence level in the determination. The API is only making a determination of the physical appearance of a person's face. It is not a determination of the person’s internal emotional state and should not be used in such a way. For example, a person pretending to have a sad face might not be sad emotionally.
     */
   @js.native
@@ -1798,6 +2192,7 @@ package object rekognition {
 
   @js.native
   trait GetCelebrityInfoResponse extends js.Object {
+    var KnownGender: js.UndefOr[KnownGender]
     var Name: js.UndefOr[String]
     var Urls: js.UndefOr[Urls]
   }
@@ -1805,10 +2200,12 @@ package object rekognition {
   object GetCelebrityInfoResponse {
     @inline
     def apply(
+        KnownGender: js.UndefOr[KnownGender] = js.undefined,
         Name: js.UndefOr[String] = js.undefined,
         Urls: js.UndefOr[Urls] = js.undefined
     ): GetCelebrityInfoResponse = {
       val __obj = js.Dynamic.literal()
+      KnownGender.foreach(__v => __obj.updateDynamic("KnownGender")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Urls.foreach(__v => __obj.updateDynamic("Urls")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetCelebrityInfoResponse]
@@ -2505,6 +2902,24 @@ package object rekognition {
     }
   }
 
+  /** The known gender identity for the celebrity that matches the provided ID. The known gender identity can be Male, Female, Nonbinary, or Unlisted.
+    */
+  @js.native
+  trait KnownGender extends js.Object {
+    var Type: js.UndefOr[KnownGenderType]
+  }
+
+  object KnownGender {
+    @inline
+    def apply(
+        Type: js.UndefOr[KnownGenderType] = js.undefined
+    ): KnownGender = {
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KnownGender]
+    }
+  }
+
   /** Structure containing details about the detected label, including the name, detected instances, parent labels, and level of confidence.
     */
   @js.native
@@ -2615,6 +3030,104 @@ package object rekognition {
       FaceModelVersions.foreach(__v => __obj.updateDynamic("FaceModelVersions")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCollectionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListDatasetEntriesRequest extends js.Object {
+    var DatasetArn: DatasetArn
+    var ContainsLabels: js.UndefOr[DatasetLabels]
+    var HasErrors: js.UndefOr[HasErrors]
+    var Labeled: js.UndefOr[IsLabeled]
+    var MaxResults: js.UndefOr[ListDatasetEntriesPageSize]
+    var NextToken: js.UndefOr[ExtendedPaginationToken]
+    var SourceRefContains: js.UndefOr[QueryString]
+  }
+
+  object ListDatasetEntriesRequest {
+    @inline
+    def apply(
+        DatasetArn: DatasetArn,
+        ContainsLabels: js.UndefOr[DatasetLabels] = js.undefined,
+        HasErrors: js.UndefOr[HasErrors] = js.undefined,
+        Labeled: js.UndefOr[IsLabeled] = js.undefined,
+        MaxResults: js.UndefOr[ListDatasetEntriesPageSize] = js.undefined,
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined,
+        SourceRefContains: js.UndefOr[QueryString] = js.undefined
+    ): ListDatasetEntriesRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatasetArn" -> DatasetArn.asInstanceOf[js.Any]
+      )
+
+      ContainsLabels.foreach(__v => __obj.updateDynamic("ContainsLabels")(__v.asInstanceOf[js.Any]))
+      HasErrors.foreach(__v => __obj.updateDynamic("HasErrors")(__v.asInstanceOf[js.Any]))
+      Labeled.foreach(__v => __obj.updateDynamic("Labeled")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SourceRefContains.foreach(__v => __obj.updateDynamic("SourceRefContains")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatasetEntriesRequest]
+    }
+  }
+
+  @js.native
+  trait ListDatasetEntriesResponse extends js.Object {
+    var DatasetEntries: js.UndefOr[DatasetEntries]
+    var NextToken: js.UndefOr[ExtendedPaginationToken]
+  }
+
+  object ListDatasetEntriesResponse {
+    @inline
+    def apply(
+        DatasetEntries: js.UndefOr[DatasetEntries] = js.undefined,
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined
+    ): ListDatasetEntriesResponse = {
+      val __obj = js.Dynamic.literal()
+      DatasetEntries.foreach(__v => __obj.updateDynamic("DatasetEntries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatasetEntriesResponse]
+    }
+  }
+
+  @js.native
+  trait ListDatasetLabelsRequest extends js.Object {
+    var DatasetArn: DatasetArn
+    var MaxResults: js.UndefOr[ListDatasetLabelsPageSize]
+    var NextToken: js.UndefOr[ExtendedPaginationToken]
+  }
+
+  object ListDatasetLabelsRequest {
+    @inline
+    def apply(
+        DatasetArn: DatasetArn,
+        MaxResults: js.UndefOr[ListDatasetLabelsPageSize] = js.undefined,
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined
+    ): ListDatasetLabelsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatasetArn" -> DatasetArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatasetLabelsRequest]
+    }
+  }
+
+  @js.native
+  trait ListDatasetLabelsResponse extends js.Object {
+    var DatasetLabelDescriptions: js.UndefOr[DatasetLabelDescriptions]
+    var NextToken: js.UndefOr[ExtendedPaginationToken]
+  }
+
+  object ListDatasetLabelsResponse {
+    @inline
+    def apply(
+        DatasetLabelDescriptions: js.UndefOr[DatasetLabelDescriptions] = js.undefined,
+        NextToken: js.UndefOr[ExtendedPaginationToken] = js.undefined
+    ): ListDatasetLabelsResponse = {
+      val __obj = js.Dynamic.literal()
+      DatasetLabelDescriptions.foreach(__v => __obj.updateDynamic("DatasetLabelDescriptions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatasetLabelsResponse]
     }
   }
 
@@ -2735,7 +3248,7 @@ package object rekognition {
     }
   }
 
-  /** Provides information about a single type of unsafe content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.
+  /** Provides information about a single type of inappropriate, unwanted, or offensive content found in an image or video. Each type of moderated content has a label within a hierarchical taxonomy. For more information, see Content moderation in the Amazon Rekognition Developer Guide.
     */
   @js.native
   trait ModerationLabel extends js.Object {
@@ -2801,7 +3314,7 @@ package object rekognition {
     }
   }
 
-  /** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>.
+  /** The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see [[https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics|Giving access to multiple Amazon SNS topics]].
     */
   @js.native
   trait NotificationChannel extends js.Object {
@@ -2976,11 +3489,12 @@ package object rekognition {
     }
   }
 
-  /** A description of a Amazon Rekognition Custom Labels project.
+  /** A description of an Amazon Rekognition Custom Labels project. For more information, see <a>DescribeProjects</a>.
     */
   @js.native
   trait ProjectDescription extends js.Object {
     var CreationTimestamp: js.UndefOr[DateTime]
+    var Datasets: js.UndefOr[DatasetMetadataList]
     var ProjectArn: js.UndefOr[ProjectArn]
     var Status: js.UndefOr[ProjectStatus]
   }
@@ -2989,24 +3503,27 @@ package object rekognition {
     @inline
     def apply(
         CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
+        Datasets: js.UndefOr[DatasetMetadataList] = js.undefined,
         ProjectArn: js.UndefOr[ProjectArn] = js.undefined,
         Status: js.UndefOr[ProjectStatus] = js.undefined
     ): ProjectDescription = {
       val __obj = js.Dynamic.literal()
       CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      Datasets.foreach(__v => __obj.updateDynamic("Datasets")(__v.asInstanceOf[js.Any]))
       ProjectArn.foreach(__v => __obj.updateDynamic("ProjectArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectDescription]
     }
   }
 
-  /** The description of a version of a model.
+  /** A description of a version of an Amazon Rekognition Custom Labels model.
     */
   @js.native
   trait ProjectVersionDescription extends js.Object {
     var BillableTrainingTimeInSeconds: js.UndefOr[ULong]
     var CreationTimestamp: js.UndefOr[DateTime]
     var EvaluationResult: js.UndefOr[EvaluationResult]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
     var ManifestSummary: js.UndefOr[GroundTruthManifest]
     var MinInferenceUnits: js.UndefOr[InferenceUnits]
     var OutputConfig: js.UndefOr[OutputConfig]
@@ -3024,6 +3541,7 @@ package object rekognition {
         BillableTrainingTimeInSeconds: js.UndefOr[ULong] = js.undefined,
         CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
         EvaluationResult: js.UndefOr[EvaluationResult] = js.undefined,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         ManifestSummary: js.UndefOr[GroundTruthManifest] = js.undefined,
         MinInferenceUnits: js.UndefOr[InferenceUnits] = js.undefined,
         OutputConfig: js.UndefOr[OutputConfig] = js.undefined,
@@ -3038,6 +3556,7 @@ package object rekognition {
       BillableTrainingTimeInSeconds.foreach(__v => __obj.updateDynamic("BillableTrainingTimeInSeconds")(__v.asInstanceOf[js.Any]))
       CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
       EvaluationResult.foreach(__v => __obj.updateDynamic("EvaluationResult")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       ManifestSummary.foreach(__v => __obj.updateDynamic("ManifestSummary")(__v.asInstanceOf[js.Any]))
       MinInferenceUnits.foreach(__v => __obj.updateDynamic("MinInferenceUnits")(__v.asInstanceOf[js.Any]))
       OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
@@ -3338,11 +3857,14 @@ package object rekognition {
     */
   @js.native
   trait SegmentDetection extends js.Object {
+    var DurationFrames: js.UndefOr[ULong]
     var DurationMillis: js.UndefOr[ULong]
     var DurationSMPTE: js.UndefOr[Timecode]
+    var EndFrameNumber: js.UndefOr[ULong]
     var EndTimecodeSMPTE: js.UndefOr[Timecode]
     var EndTimestampMillis: js.UndefOr[Timestamp]
     var ShotSegment: js.UndefOr[ShotSegment]
+    var StartFrameNumber: js.UndefOr[ULong]
     var StartTimecodeSMPTE: js.UndefOr[Timecode]
     var StartTimestampMillis: js.UndefOr[Timestamp]
     var TechnicalCueSegment: js.UndefOr[TechnicalCueSegment]
@@ -3352,22 +3874,28 @@ package object rekognition {
   object SegmentDetection {
     @inline
     def apply(
+        DurationFrames: js.UndefOr[ULong] = js.undefined,
         DurationMillis: js.UndefOr[ULong] = js.undefined,
         DurationSMPTE: js.UndefOr[Timecode] = js.undefined,
+        EndFrameNumber: js.UndefOr[ULong] = js.undefined,
         EndTimecodeSMPTE: js.UndefOr[Timecode] = js.undefined,
         EndTimestampMillis: js.UndefOr[Timestamp] = js.undefined,
         ShotSegment: js.UndefOr[ShotSegment] = js.undefined,
+        StartFrameNumber: js.UndefOr[ULong] = js.undefined,
         StartTimecodeSMPTE: js.UndefOr[Timecode] = js.undefined,
         StartTimestampMillis: js.UndefOr[Timestamp] = js.undefined,
         TechnicalCueSegment: js.UndefOr[TechnicalCueSegment] = js.undefined,
         Type: js.UndefOr[SegmentType] = js.undefined
     ): SegmentDetection = {
       val __obj = js.Dynamic.literal()
+      DurationFrames.foreach(__v => __obj.updateDynamic("DurationFrames")(__v.asInstanceOf[js.Any]))
       DurationMillis.foreach(__v => __obj.updateDynamic("DurationMillis")(__v.asInstanceOf[js.Any]))
       DurationSMPTE.foreach(__v => __obj.updateDynamic("DurationSMPTE")(__v.asInstanceOf[js.Any]))
+      EndFrameNumber.foreach(__v => __obj.updateDynamic("EndFrameNumber")(__v.asInstanceOf[js.Any]))
       EndTimecodeSMPTE.foreach(__v => __obj.updateDynamic("EndTimecodeSMPTE")(__v.asInstanceOf[js.Any]))
       EndTimestampMillis.foreach(__v => __obj.updateDynamic("EndTimestampMillis")(__v.asInstanceOf[js.Any]))
       ShotSegment.foreach(__v => __obj.updateDynamic("ShotSegment")(__v.asInstanceOf[js.Any]))
+      StartFrameNumber.foreach(__v => __obj.updateDynamic("StartFrameNumber")(__v.asInstanceOf[js.Any]))
       StartTimecodeSMPTE.foreach(__v => __obj.updateDynamic("StartTimecodeSMPTE")(__v.asInstanceOf[js.Any]))
       StartTimestampMillis.foreach(__v => __obj.updateDynamic("StartTimestampMillis")(__v.asInstanceOf[js.Any]))
       TechnicalCueSegment.foreach(__v => __obj.updateDynamic("TechnicalCueSegment")(__v.asInstanceOf[js.Any]))
@@ -3868,15 +4396,18 @@ package object rekognition {
     */
   @js.native
   trait StartTechnicalCueDetectionFilter extends js.Object {
+    var BlackFrame: js.UndefOr[BlackFrame]
     var MinSegmentConfidence: js.UndefOr[SegmentConfidence]
   }
 
   object StartTechnicalCueDetectionFilter {
     @inline
     def apply(
+        BlackFrame: js.UndefOr[BlackFrame] = js.undefined,
         MinSegmentConfidence: js.UndefOr[SegmentConfidence] = js.undefined
     ): StartTechnicalCueDetectionFilter = {
       val __obj = js.Dynamic.literal()
+      BlackFrame.foreach(__v => __obj.updateDynamic("BlackFrame")(__v.asInstanceOf[js.Any]))
       MinSegmentConfidence.foreach(__v => __obj.updateDynamic("MinSegmentConfidence")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTechnicalCueDetectionFilter]
     }
@@ -4176,7 +4707,7 @@ package object rekognition {
     }
   }
 
-  /** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels creates a testing dataset using an 80/20 split of the training dataset.
+  /** The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon Rekognition Custom Labels uses the training dataset to create a test dataset with a temporary split of the training dataset.
     */
   @js.native
   trait TestingData extends js.Object {
@@ -4369,7 +4900,38 @@ package object rekognition {
     }
   }
 
-  /** Contains the Amazon S3 bucket location of the validation data for a model training job. The validation data includes error information for individual JSON lines in the dataset. For more information, see Debugging a Failed Model Training in the Amazon Rekognition Custom Labels Developer Guide. You get the <code>ValidationData</code> object for the training dataset (<a>TrainingDataResult</a>) and the test dataset (<a>TestingDataResult</a>) by calling <a>DescribeProjectVersions</a>. The assets array contains a single <a>Asset</a> object. The <a>GroundTruthManifest</a> field of the Asset object contains the S3 bucket location of the validation data.
+  @js.native
+  trait UpdateDatasetEntriesRequest extends js.Object {
+    var Changes: DatasetChanges
+    var DatasetArn: DatasetArn
+  }
+
+  object UpdateDatasetEntriesRequest {
+    @inline
+    def apply(
+        Changes: DatasetChanges,
+        DatasetArn: DatasetArn
+    ): UpdateDatasetEntriesRequest = {
+      val __obj = js.Dynamic.literal(
+        "Changes" -> Changes.asInstanceOf[js.Any],
+        "DatasetArn" -> DatasetArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateDatasetEntriesRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDatasetEntriesResponse extends js.Object
+
+  object UpdateDatasetEntriesResponse {
+    @inline
+    def apply(): UpdateDatasetEntriesResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateDatasetEntriesResponse]
+    }
+  }
+
+  /** Contains the Amazon S3 bucket location of the validation data for a model training job. The validation data includes error information for individual JSON Lines in the dataset. For more information, see <i>Debugging a Failed Model Training</i> in the Amazon Rekognition Custom Labels Developer Guide. You get the <code>ValidationData</code> object for the training dataset (<a>TrainingDataResult</a>) and the test dataset (<a>TestingDataResult</a>) by calling <a>DescribeProjectVersions</a>. The assets array contains a single <a>Asset</a> object. The <a>GroundTruthManifest</a> field of the Asset object contains the S3 bucket location of the validation data.
     */
   @js.native
   trait ValidationData extends js.Object {
@@ -4410,6 +4972,7 @@ package object rekognition {
   @js.native
   trait VideoMetadata extends js.Object {
     var Codec: js.UndefOr[String]
+    var ColorRange: js.UndefOr[VideoColorRange]
     var DurationMillis: js.UndefOr[ULong]
     var Format: js.UndefOr[String]
     var FrameHeight: js.UndefOr[ULong]
@@ -4421,6 +4984,7 @@ package object rekognition {
     @inline
     def apply(
         Codec: js.UndefOr[String] = js.undefined,
+        ColorRange: js.UndefOr[VideoColorRange] = js.undefined,
         DurationMillis: js.UndefOr[ULong] = js.undefined,
         Format: js.UndefOr[String] = js.undefined,
         FrameHeight: js.UndefOr[ULong] = js.undefined,
@@ -4429,6 +4993,7 @@ package object rekognition {
     ): VideoMetadata = {
       val __obj = js.Dynamic.literal()
       Codec.foreach(__v => __obj.updateDynamic("Codec")(__v.asInstanceOf[js.Any]))
+      ColorRange.foreach(__v => __obj.updateDynamic("ColorRange")(__v.asInstanceOf[js.Any]))
       DurationMillis.foreach(__v => __obj.updateDynamic("DurationMillis")(__v.asInstanceOf[js.Any]))
       Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       FrameHeight.foreach(__v => __obj.updateDynamic("FrameHeight")(__v.asInstanceOf[js.Any]))

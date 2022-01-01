@@ -42,14 +42,24 @@ object ApiCachingBehavior {
   inline def values: js.Array[ApiCachingBehavior] = js.Array(FULL_REQUEST_CACHING, PER_RESOLVER_CACHING)
 }
 
-type AuthenticationType = "API_KEY" | "AWS_IAM" | "AMAZON_COGNITO_USER_POOLS" | "OPENID_CONNECT"
+type AssociationStatus = "PROCESSING" | "FAILED" | "SUCCESS"
+object AssociationStatus {
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+
+  inline def values: js.Array[AssociationStatus] = js.Array(PROCESSING, FAILED, SUCCESS)
+}
+
+type AuthenticationType = "API_KEY" | "AWS_IAM" | "AMAZON_COGNITO_USER_POOLS" | "OPENID_CONNECT" | "AWS_LAMBDA"
 object AuthenticationType {
   inline val API_KEY: "API_KEY" = "API_KEY"
   inline val AWS_IAM: "AWS_IAM" = "AWS_IAM"
   inline val AMAZON_COGNITO_USER_POOLS: "AMAZON_COGNITO_USER_POOLS" = "AMAZON_COGNITO_USER_POOLS"
   inline val OPENID_CONNECT: "OPENID_CONNECT" = "OPENID_CONNECT"
+  inline val AWS_LAMBDA: "AWS_LAMBDA" = "AWS_LAMBDA"
 
-  inline def values: js.Array[AuthenticationType] = js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT)
+  inline def values: js.Array[AuthenticationType] = js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT, AWS_LAMBDA)
 }
 
 type AuthorizationType = "AWS_IAM"
@@ -77,7 +87,7 @@ object ConflictHandlerType {
   inline def values: js.Array[ConflictHandlerType] = js.Array(OPTIMISTIC_CONCURRENCY, LAMBDA, AUTOMERGE, NONE)
 }
 
-type DataSourceType = "AWS_LAMBDA" | "AMAZON_DYNAMODB" | "AMAZON_ELASTICSEARCH" | "NONE" | "HTTP" | "RELATIONAL_DATABASE"
+type DataSourceType = "AWS_LAMBDA" | "AMAZON_DYNAMODB" | "AMAZON_ELASTICSEARCH" | "NONE" | "HTTP" | "RELATIONAL_DATABASE" | "AMAZON_OPENSEARCH_SERVICE"
 object DataSourceType {
   inline val AWS_LAMBDA: "AWS_LAMBDA" = "AWS_LAMBDA"
   inline val AMAZON_DYNAMODB: "AMAZON_DYNAMODB" = "AMAZON_DYNAMODB"
@@ -85,8 +95,9 @@ object DataSourceType {
   inline val NONE: "NONE" = "NONE"
   inline val HTTP: "HTTP" = "HTTP"
   inline val RELATIONAL_DATABASE: "RELATIONAL_DATABASE" = "RELATIONAL_DATABASE"
+  inline val AMAZON_OPENSEARCH_SERVICE: "AMAZON_OPENSEARCH_SERVICE" = "AMAZON_OPENSEARCH_SERVICE"
 
-  inline def values: js.Array[DataSourceType] = js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE)
+  inline def values: js.Array[DataSourceType] = js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE, AMAZON_OPENSEARCH_SERVICE)
 }
 
 type DefaultAction = "ALLOW" | "DENY"

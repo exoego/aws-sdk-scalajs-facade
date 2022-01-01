@@ -22,6 +22,10 @@ package object cloudwatchevents {
   type ArchiveStateReason = String
   type Arn = String
   type AuthHeaderParameters = String
+  type CapacityProvider = String
+  type CapacityProviderStrategy = js.Array[CapacityProviderStrategyItem]
+  type CapacityProviderStrategyItemBase = Int
+  type CapacityProviderStrategyItemWeight = Int
   type ConnectionArn = String
   type ConnectionBodyParametersList = js.Array[ConnectionBodyParameter]
   type ConnectionDescription = String
@@ -65,6 +69,10 @@ package object cloudwatchevents {
   type PartnerEventSourceNamePrefix = String
   type PathParameter = String
   type PathParameterList = js.Array[PathParameter]
+  type PlacementConstraintExpression = String
+  type PlacementConstraints = js.Array[PlacementConstraint]
+  type PlacementStrategies = js.Array[PlacementStrategy]
+  type PlacementStrategyField = String
   type Principal = String
   type PutEventsRequestEntryList = js.Array[PutEventsRequestEntry]
   type PutEventsResultEntryList = js.Array[PutEventsResultEntry]
@@ -75,6 +83,7 @@ package object cloudwatchevents {
   type QueryStringParametersMap = js.Dictionary[QueryStringValue]
   type QueryStringValue = String
   type RedshiftSecretManagerArn = String
+  type ReferenceId = String
   type RemoveTargetsResultEntryList = js.Array[RemoveTargetsResultEntry]
   type ReplayArn = String
   type ReplayDescription = String
@@ -362,7 +371,7 @@ package object cloudwatchevents {
     }
   }
 
-  /** The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.
+  /** The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an Batch job.
     */
   @js.native
   trait BatchArrayProperties extends js.Object {
@@ -380,7 +389,7 @@ package object cloudwatchevents {
     }
   }
 
-  /** The custom parameters to be used when the target is an AWS Batch job.
+  /** The custom parameters to be used when the target is an Batch job.
     */
   @js.native
   trait BatchParameters extends js.Object {
@@ -409,7 +418,7 @@ package object cloudwatchevents {
     }
   }
 
-  /** The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.
+  /** The retry strategy to use for failed jobs, if the target is an Batch job. If you specify a retry strategy here, it overrides the retry strategy defined in the job definition.
     */
   @js.native
   trait BatchRetryStrategy extends js.Object {
@@ -466,7 +475,33 @@ package object cloudwatchevents {
     }
   }
 
-  /** A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain AWS organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the AWS organization. Following is an example value for <code>Condition</code>: <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code>
+  /** The details of a capacity provider strategy. To learn more, see [[https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CapacityProviderStrategyItem.html|CapacityProviderStrategyItem]] in the Amazon ECS API Reference.
+    */
+  @js.native
+  trait CapacityProviderStrategyItem extends js.Object {
+    var capacityProvider: CapacityProvider
+    var base: js.UndefOr[CapacityProviderStrategyItemBase]
+    var weight: js.UndefOr[CapacityProviderStrategyItemWeight]
+  }
+
+  object CapacityProviderStrategyItem {
+    @inline
+    def apply(
+        capacityProvider: CapacityProvider,
+        base: js.UndefOr[CapacityProviderStrategyItemBase] = js.undefined,
+        weight: js.UndefOr[CapacityProviderStrategyItemWeight] = js.undefined
+    ): CapacityProviderStrategyItem = {
+      val __obj = js.Dynamic.literal(
+        "capacityProvider" -> capacityProvider.asInstanceOf[js.Any]
+      )
+
+      base.foreach(__v => __obj.updateDynamic("base")(__v.asInstanceOf[js.Any]))
+      weight.foreach(__v => __obj.updateDynamic("weight")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CapacityProviderStrategyItem]
+    }
+  }
+
+  /** A JSON string which you can use to limit the event bus permissions you are granting to only accounts that fulfill the condition. Currently, the only supported condition is membership in a certain Amazon Web Services organization. The string must contain <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the ID of the Amazon Web Services organization. Following is an example value for <code>Condition</code>: <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code>
     */
   @js.native
   trait Condition extends js.Object {
@@ -1803,10 +1838,18 @@ package object cloudwatchevents {
   @js.native
   trait EcsParameters extends js.Object {
     var TaskDefinitionArn: Arn
+    var CapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy]
+    var EnableECSManagedTags: js.UndefOr[Boolean]
+    var EnableExecuteCommand: js.UndefOr[Boolean]
     var Group: js.UndefOr[String]
     var LaunchType: js.UndefOr[LaunchType]
     var NetworkConfiguration: js.UndefOr[NetworkConfiguration]
+    var PlacementConstraints: js.UndefOr[PlacementConstraints]
+    var PlacementStrategy: js.UndefOr[PlacementStrategies]
     var PlatformVersion: js.UndefOr[String]
+    var PropagateTags: js.UndefOr[PropagateTags]
+    var ReferenceId: js.UndefOr[ReferenceId]
+    var Tags: js.UndefOr[TagList]
     var TaskCount: js.UndefOr[LimitMin1]
   }
 
@@ -1814,20 +1857,36 @@ package object cloudwatchevents {
     @inline
     def apply(
         TaskDefinitionArn: Arn,
+        CapacityProviderStrategy: js.UndefOr[CapacityProviderStrategy] = js.undefined,
+        EnableECSManagedTags: js.UndefOr[Boolean] = js.undefined,
+        EnableExecuteCommand: js.UndefOr[Boolean] = js.undefined,
         Group: js.UndefOr[String] = js.undefined,
         LaunchType: js.UndefOr[LaunchType] = js.undefined,
         NetworkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
+        PlacementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
+        PlacementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
         PlatformVersion: js.UndefOr[String] = js.undefined,
+        PropagateTags: js.UndefOr[PropagateTags] = js.undefined,
+        ReferenceId: js.UndefOr[ReferenceId] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
         TaskCount: js.UndefOr[LimitMin1] = js.undefined
     ): EcsParameters = {
       val __obj = js.Dynamic.literal(
         "TaskDefinitionArn" -> TaskDefinitionArn.asInstanceOf[js.Any]
       )
 
+      CapacityProviderStrategy.foreach(__v => __obj.updateDynamic("CapacityProviderStrategy")(__v.asInstanceOf[js.Any]))
+      EnableECSManagedTags.foreach(__v => __obj.updateDynamic("EnableECSManagedTags")(__v.asInstanceOf[js.Any]))
+      EnableExecuteCommand.foreach(__v => __obj.updateDynamic("EnableExecuteCommand")(__v.asInstanceOf[js.Any]))
       Group.foreach(__v => __obj.updateDynamic("Group")(__v.asInstanceOf[js.Any]))
       LaunchType.foreach(__v => __obj.updateDynamic("LaunchType")(__v.asInstanceOf[js.Any]))
       NetworkConfiguration.foreach(__v => __obj.updateDynamic("NetworkConfiguration")(__v.asInstanceOf[js.Any]))
+      PlacementConstraints.foreach(__v => __obj.updateDynamic("PlacementConstraints")(__v.asInstanceOf[js.Any]))
+      PlacementStrategy.foreach(__v => __obj.updateDynamic("PlacementStrategy")(__v.asInstanceOf[js.Any]))
       PlatformVersion.foreach(__v => __obj.updateDynamic("PlatformVersion")(__v.asInstanceOf[js.Any]))
+      PropagateTags.foreach(__v => __obj.updateDynamic("PropagateTags")(__v.asInstanceOf[js.Any]))
+      ReferenceId.foreach(__v => __obj.updateDynamic("ReferenceId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TaskCount.foreach(__v => __obj.updateDynamic("TaskCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EcsParameters]
     }
@@ -1854,7 +1913,7 @@ package object cloudwatchevents {
     }
   }
 
-  /** An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives rules from AWS services. A custom event bus can receive rules from AWS services as well as your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications.
+  /** An event bus receives events from a source and routes them to rules associated with that event bus. Your account's default event bus receives events from Amazon Web Services services. A custom event bus can receive events from your custom applications and services. A partner event bus receives events from an event source created by an SaaS partner. These events come from the partners services or applications.
     */
   @js.native
   trait EventBus extends js.Object {
@@ -1878,7 +1937,7 @@ package object cloudwatchevents {
     }
   }
 
-  /** A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services.
+  /** A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that Amazon Web Services account can receive events from the partner's applications or services.
     */
   @js.native
   trait EventSource extends js.Object {
@@ -2514,7 +2573,7 @@ package object cloudwatchevents {
     }
   }
 
-  /** A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that AWS account can receive events from the partner's applications or services.
+  /** A partner event source is created by an SaaS partner. If a customer creates a partner event bus that matches this event source, that Amazon Web Services account can receive events from the partner's applications or services.
     */
   @js.native
   trait PartnerEventSource extends js.Object {
@@ -2535,7 +2594,7 @@ package object cloudwatchevents {
     }
   }
 
-  /** The AWS account that a partner event source has been offered to.
+  /** The Amazon Web Services account that a partner event source has been offered to.
     */
   @js.native
   trait PartnerEventSourceAccount extends js.Object {
@@ -2559,6 +2618,48 @@ package object cloudwatchevents {
       ExpirationTime.foreach(__v => __obj.updateDynamic("ExpirationTime")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PartnerEventSourceAccount]
+    }
+  }
+
+  /** An object representing a constraint on task placement. To learn more, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task Placement Constraints]] in the Amazon Elastic Container Service Developer Guide.
+    */
+  @js.native
+  trait PlacementConstraint extends js.Object {
+    var expression: js.UndefOr[PlacementConstraintExpression]
+    var `type`: js.UndefOr[PlacementConstraintType]
+  }
+
+  object PlacementConstraint {
+    @inline
+    def apply(
+        expression: js.UndefOr[PlacementConstraintExpression] = js.undefined,
+        `type`: js.UndefOr[PlacementConstraintType] = js.undefined
+    ): PlacementConstraint = {
+      val __obj = js.Dynamic.literal()
+      expression.foreach(__v => __obj.updateDynamic("expression")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlacementConstraint]
+    }
+  }
+
+  /** The task placement strategy for a task or service. To learn more, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html|Task Placement Strategies]] in the Amazon Elastic Container Service Service Developer Guide.
+    */
+  @js.native
+  trait PlacementStrategy extends js.Object {
+    var field: js.UndefOr[PlacementStrategyField]
+    var `type`: js.UndefOr[PlacementStrategyType]
+  }
+
+  object PlacementStrategy {
+    @inline
+    def apply(
+        field: js.UndefOr[PlacementStrategyField] = js.undefined,
+        `type`: js.UndefOr[PlacementStrategyType] = js.undefined
+    ): PlacementStrategy = {
+      val __obj = js.Dynamic.literal()
+      field.foreach(__v => __obj.updateDynamic("field")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PlacementStrategy]
     }
   }
 
@@ -2901,7 +3002,7 @@ package object cloudwatchevents {
     }
   }
 
-  /** These are custom parameters to be used when the target is a Redshift cluster to invoke the Redshift Data API ExecuteStatement based on EventBridge events.
+  /** These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.
     */
   @js.native
   trait RedshiftDataParameters extends js.Object {
@@ -3313,7 +3414,7 @@ package object cloudwatchevents {
     }
   }
 
-  /** A key-value pair associated with an AWS resource. In EventBridge, rules and event buses support tagging.
+  /** A key-value pair associated with an Amazon Web Services resource. In EventBridge, rules and event buses support tagging.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3366,7 +3467,7 @@ package object cloudwatchevents {
     }
   }
 
-  /** Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see <a>PutTargets</a>. If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see [[https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html|Sending and Receiving Events Between AWS Accounts]] in the <i>Amazon EventBridge User Guide</i>.
+  /** Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see [[https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html|PutTargets]]. If you are setting the event bus of another account as the target, and that account granted permission to your account through an organization instead of directly by the account ID, then you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code> structure. For more information, see [[https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html|Sending and Receiving Events Between Amazon Web Services Accounts]] in the <i>Amazon EventBridge User Guide</i>.
     */
   @js.native
   trait Target extends js.Object {

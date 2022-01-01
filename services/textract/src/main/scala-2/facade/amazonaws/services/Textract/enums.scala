@@ -81,3 +81,11 @@ object TextType {
 
   @inline def values: js.Array[TextType] = js.Array(HANDWRITING, PRINTED)
 }
+
+@js.native
+sealed trait ValueType extends js.Any
+object ValueType {
+  val DATE = "DATE".asInstanceOf[ValueType]
+
+  @inline def values: js.Array[ValueType] = js.Array(DATE)
+}

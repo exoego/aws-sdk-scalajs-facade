@@ -3,6 +3,15 @@ package facade.amazonaws.services.kinesisanalyticsv2
 import scalajs.js
 
 @js.native
+sealed trait ApplicationMode extends js.Any
+object ApplicationMode {
+  val STREAMING = "STREAMING".asInstanceOf[ApplicationMode]
+  val INTERACTIVE = "INTERACTIVE".asInstanceOf[ApplicationMode]
+
+  @inline def values: js.Array[ApplicationMode] = js.Array(STREAMING, INTERACTIVE)
+}
+
+@js.native
 sealed trait ApplicationRestoreType extends js.Any
 object ApplicationRestoreType {
   val SKIP_RESTORE_FROM_SNAPSHOT = "SKIP_RESTORE_FROM_SNAPSHOT".asInstanceOf[ApplicationRestoreType]
@@ -23,8 +32,20 @@ object ApplicationStatus {
   val UPDATING = "UPDATING".asInstanceOf[ApplicationStatus]
   val AUTOSCALING = "AUTOSCALING".asInstanceOf[ApplicationStatus]
   val FORCE_STOPPING = "FORCE_STOPPING".asInstanceOf[ApplicationStatus]
+  val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[ApplicationStatus]
+  val MAINTENANCE = "MAINTENANCE".asInstanceOf[ApplicationStatus]
+  val ROLLED_BACK = "ROLLED_BACK".asInstanceOf[ApplicationStatus]
 
-  @inline def values: js.Array[ApplicationStatus] = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING, AUTOSCALING, FORCE_STOPPING)
+  @inline def values: js.Array[ApplicationStatus] = js.Array(DELETING, STARTING, STOPPING, READY, RUNNING, UPDATING, AUTOSCALING, FORCE_STOPPING, ROLLING_BACK, MAINTENANCE, ROLLED_BACK)
+}
+
+@js.native
+sealed trait ArtifactType extends js.Any
+object ArtifactType {
+  val UDF = "UDF".asInstanceOf[ArtifactType]
+  val DEPENDENCY_JAR = "DEPENDENCY_JAR".asInstanceOf[ArtifactType]
+
+  @inline def values: js.Array[ArtifactType] = js.Array(UDF, DEPENDENCY_JAR)
 }
 
 @js.native
@@ -92,9 +113,12 @@ object RuntimeEnvironment {
   val `SQL-1_0` = "SQL-1_0".asInstanceOf[RuntimeEnvironment]
   val `FLINK-1_6` = "FLINK-1_6".asInstanceOf[RuntimeEnvironment]
   val `FLINK-1_8` = "FLINK-1_8".asInstanceOf[RuntimeEnvironment]
+  val `ZEPPELIN-FLINK-1_0` = "ZEPPELIN-FLINK-1_0".asInstanceOf[RuntimeEnvironment]
   val `FLINK-1_11` = "FLINK-1_11".asInstanceOf[RuntimeEnvironment]
+  val `FLINK-1_13` = "FLINK-1_13".asInstanceOf[RuntimeEnvironment]
+  val `ZEPPELIN-FLINK-2_0` = "ZEPPELIN-FLINK-2_0".asInstanceOf[RuntimeEnvironment]
 
-  @inline def values: js.Array[RuntimeEnvironment] = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `FLINK-1_11`)
+  @inline def values: js.Array[RuntimeEnvironment] = js.Array(`SQL-1_0`, `FLINK-1_6`, `FLINK-1_8`, `ZEPPELIN-FLINK-1_0`, `FLINK-1_11`, `FLINK-1_13`, `ZEPPELIN-FLINK-2_0`)
 }
 
 @js.native
@@ -112,6 +136,7 @@ object SnapshotStatus {
 sealed trait UrlType extends js.Any
 object UrlType {
   val FLINK_DASHBOARD_URL = "FLINK_DASHBOARD_URL".asInstanceOf[UrlType]
+  val ZEPPELIN_UI_URL = "ZEPPELIN_UI_URL".asInstanceOf[UrlType]
 
-  @inline def values: js.Array[UrlType] = js.Array(FLINK_DASHBOARD_URL)
+  @inline def values: js.Array[UrlType] = js.Array(FLINK_DASHBOARD_URL, ZEPPELIN_UI_URL)
 }

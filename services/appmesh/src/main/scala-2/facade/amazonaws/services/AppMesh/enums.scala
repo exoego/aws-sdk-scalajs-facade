@@ -3,6 +3,24 @@ package facade.amazonaws.services.appmesh
 import scalajs.js
 
 @js.native
+sealed trait DefaultGatewayRouteRewrite extends js.Any
+object DefaultGatewayRouteRewrite {
+  val ENABLED = "ENABLED".asInstanceOf[DefaultGatewayRouteRewrite]
+  val DISABLED = "DISABLED".asInstanceOf[DefaultGatewayRouteRewrite]
+
+  @inline def values: js.Array[DefaultGatewayRouteRewrite] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
+sealed trait DnsResponseType extends js.Any
+object DnsResponseType {
+  val LOADBALANCER = "LOADBALANCER".asInstanceOf[DnsResponseType]
+  val ENDPOINTS = "ENDPOINTS".asInstanceOf[DnsResponseType]
+
+  @inline def values: js.Array[DnsResponseType] = js.Array(LOADBALANCER, ENDPOINTS)
+}
+
+@js.native
 sealed trait DurationUnit extends js.Any
 object DurationUnit {
   val s = "s".asInstanceOf[DurationUnit]

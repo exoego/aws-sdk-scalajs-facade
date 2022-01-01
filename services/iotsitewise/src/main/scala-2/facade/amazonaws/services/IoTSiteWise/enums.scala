@@ -97,8 +97,18 @@ object CapabilitySyncStatus {
   val IN_SYNC = "IN_SYNC".asInstanceOf[CapabilitySyncStatus]
   val OUT_OF_SYNC = "OUT_OF_SYNC".asInstanceOf[CapabilitySyncStatus]
   val SYNC_FAILED = "SYNC_FAILED".asInstanceOf[CapabilitySyncStatus]
+  val UNKNOWN = "UNKNOWN".asInstanceOf[CapabilitySyncStatus]
 
-  @inline def values: js.Array[CapabilitySyncStatus] = js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED)
+  @inline def values: js.Array[CapabilitySyncStatus] = js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED, UNKNOWN)
+}
+
+@js.native
+sealed trait ComputeLocation extends js.Any
+object ComputeLocation {
+  val EDGE = "EDGE".asInstanceOf[ComputeLocation]
+  val CLOUD = "CLOUD".asInstanceOf[ComputeLocation]
+
+  @inline def values: js.Array[ComputeLocation] = js.Array(EDGE, CLOUD)
 }
 
 @js.native
@@ -109,6 +119,24 @@ object ConfigurationState {
   val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[ConfigurationState]
 
   @inline def values: js.Array[ConfigurationState] = js.Array(ACTIVE, UPDATE_IN_PROGRESS, UPDATE_FAILED)
+}
+
+@js.native
+sealed trait DetailedErrorCode extends js.Any
+object DetailedErrorCode {
+  val INCOMPATIBLE_COMPUTE_LOCATION = "INCOMPATIBLE_COMPUTE_LOCATION".asInstanceOf[DetailedErrorCode]
+  val INCOMPATIBLE_FORWARDING_CONFIGURATION = "INCOMPATIBLE_FORWARDING_CONFIGURATION".asInstanceOf[DetailedErrorCode]
+
+  @inline def values: js.Array[DetailedErrorCode] = js.Array(INCOMPATIBLE_COMPUTE_LOCATION, INCOMPATIBLE_FORWARDING_CONFIGURATION)
+}
+
+@js.native
+sealed trait DisassociatedDataStorageState extends js.Any
+object DisassociatedDataStorageState {
+  val ENABLED = "ENABLED".asInstanceOf[DisassociatedDataStorageState]
+  val DISABLED = "DISABLED".asInstanceOf[DisassociatedDataStorageState]
+
+  @inline def values: js.Array[DisassociatedDataStorageState] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native
@@ -127,6 +155,15 @@ object ErrorCode {
   val INTERNAL_FAILURE = "INTERNAL_FAILURE".asInstanceOf[ErrorCode]
 
   @inline def values: js.Array[ErrorCode] = js.Array(VALIDATION_ERROR, INTERNAL_FAILURE)
+}
+
+@js.native
+sealed trait ForwardingConfigState extends js.Any
+object ForwardingConfigState {
+  val DISABLED = "DISABLED".asInstanceOf[ForwardingConfigState]
+  val ENABLED = "ENABLED".asInstanceOf[ForwardingConfigState]
+
+  @inline def values: js.Array[ForwardingConfigState] = js.Array(DISABLED, ENABLED)
 }
 
 @js.native
@@ -154,6 +191,15 @@ object ListAssetsFilter {
   val TOP_LEVEL = "TOP_LEVEL".asInstanceOf[ListAssetsFilter]
 
   @inline def values: js.Array[ListAssetsFilter] = js.Array(ALL, TOP_LEVEL)
+}
+
+@js.native
+sealed trait ListTimeSeriesType extends js.Any
+object ListTimeSeriesType {
+  val ASSOCIATED = "ASSOCIATED".asInstanceOf[ListTimeSeriesType]
+  val DISASSOCIATED = "DISASSOCIATED".asInstanceOf[ListTimeSeriesType]
+
+  @inline def values: js.Array[ListTimeSeriesType] = js.Array(ASSOCIATED, DISASSOCIATED)
 }
 
 @js.native
@@ -235,6 +281,15 @@ object ResourceType {
   val PROJECT = "PROJECT".asInstanceOf[ResourceType]
 
   @inline def values: js.Array[ResourceType] = js.Array(PORTAL, PROJECT)
+}
+
+@js.native
+sealed trait StorageType extends js.Any
+object StorageType {
+  val SITEWISE_DEFAULT_STORAGE = "SITEWISE_DEFAULT_STORAGE".asInstanceOf[StorageType]
+  val MULTI_LAYER_STORAGE = "MULTI_LAYER_STORAGE".asInstanceOf[StorageType]
+
+  @inline def values: js.Array[StorageType] = js.Array(SITEWISE_DEFAULT_STORAGE, MULTI_LAYER_STORAGE)
 }
 
 @js.native

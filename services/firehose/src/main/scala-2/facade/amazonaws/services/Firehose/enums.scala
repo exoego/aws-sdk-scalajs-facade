@@ -3,6 +3,27 @@ package facade.amazonaws.services.firehose
 import scalajs.js
 
 @js.native
+sealed trait AmazonopensearchserviceIndexRotationPeriod extends js.Any
+object AmazonopensearchserviceIndexRotationPeriod {
+  val NoRotation = "NoRotation".asInstanceOf[AmazonopensearchserviceIndexRotationPeriod]
+  val OneHour = "OneHour".asInstanceOf[AmazonopensearchserviceIndexRotationPeriod]
+  val OneDay = "OneDay".asInstanceOf[AmazonopensearchserviceIndexRotationPeriod]
+  val OneWeek = "OneWeek".asInstanceOf[AmazonopensearchserviceIndexRotationPeriod]
+  val OneMonth = "OneMonth".asInstanceOf[AmazonopensearchserviceIndexRotationPeriod]
+
+  @inline def values: js.Array[AmazonopensearchserviceIndexRotationPeriod] = js.Array(NoRotation, OneHour, OneDay, OneWeek, OneMonth)
+}
+
+@js.native
+sealed trait AmazonopensearchserviceS3BackupMode extends js.Any
+object AmazonopensearchserviceS3BackupMode {
+  val FailedDocumentsOnly = "FailedDocumentsOnly".asInstanceOf[AmazonopensearchserviceS3BackupMode]
+  val AllDocuments = "AllDocuments".asInstanceOf[AmazonopensearchserviceS3BackupMode]
+
+  @inline def values: js.Array[AmazonopensearchserviceS3BackupMode] = js.Array(FailedDocumentsOnly, AllDocuments)
+}
+
+@js.native
 sealed trait CompressionFormat extends js.Any
 object CompressionFormat {
   val UNCOMPRESSED = "UNCOMPRESSED".asInstanceOf[CompressionFormat]
@@ -194,19 +215,26 @@ sealed trait ProcessorParameterName extends js.Any
 object ProcessorParameterName {
   val LambdaArn = "LambdaArn".asInstanceOf[ProcessorParameterName]
   val NumberOfRetries = "NumberOfRetries".asInstanceOf[ProcessorParameterName]
+  val MetadataExtractionQuery = "MetadataExtractionQuery".asInstanceOf[ProcessorParameterName]
+  val JsonParsingEngine = "JsonParsingEngine".asInstanceOf[ProcessorParameterName]
   val RoleArn = "RoleArn".asInstanceOf[ProcessorParameterName]
   val BufferSizeInMBs = "BufferSizeInMBs".asInstanceOf[ProcessorParameterName]
   val BufferIntervalInSeconds = "BufferIntervalInSeconds".asInstanceOf[ProcessorParameterName]
+  val SubRecordType = "SubRecordType".asInstanceOf[ProcessorParameterName]
+  val Delimiter = "Delimiter".asInstanceOf[ProcessorParameterName]
 
-  @inline def values: js.Array[ProcessorParameterName] = js.Array(LambdaArn, NumberOfRetries, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds)
+  @inline def values: js.Array[ProcessorParameterName] = js.Array(LambdaArn, NumberOfRetries, MetadataExtractionQuery, JsonParsingEngine, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds, SubRecordType, Delimiter)
 }
 
 @js.native
 sealed trait ProcessorType extends js.Any
 object ProcessorType {
+  val RecordDeAggregation = "RecordDeAggregation".asInstanceOf[ProcessorType]
   val Lambda = "Lambda".asInstanceOf[ProcessorType]
+  val MetadataExtraction = "MetadataExtraction".asInstanceOf[ProcessorType]
+  val AppendDelimiterToRecord = "AppendDelimiterToRecord".asInstanceOf[ProcessorType]
 
-  @inline def values: js.Array[ProcessorType] = js.Array(Lambda)
+  @inline def values: js.Array[ProcessorType] = js.Array(RecordDeAggregation, Lambda, MetadataExtraction, AppendDelimiterToRecord)
 }
 
 @js.native

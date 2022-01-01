@@ -21,6 +21,7 @@ package object cloud9 {
   type ImageId = String
   type InstanceType = String
   type MaxResults = Int
+  type NullableBoolean = Boolean
   type PermissionsList = js.Array[Permissions]
   type SubnetId = String
   type TagKey = String
@@ -81,6 +82,7 @@ package object cloud9 {
     var clientRequestToken: js.UndefOr[ClientRequestToken]
     var connectionType: js.UndefOr[ConnectionType]
     var description: js.UndefOr[EnvironmentDescription]
+    var dryRun: js.UndefOr[NullableBoolean]
     var imageId: js.UndefOr[ImageId]
     var ownerArn: js.UndefOr[UserArn]
     var subnetId: js.UndefOr[SubnetId]
@@ -96,6 +98,7 @@ package object cloud9 {
         clientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         connectionType: js.UndefOr[ConnectionType] = js.undefined,
         description: js.UndefOr[EnvironmentDescription] = js.undefined,
+        dryRun: js.UndefOr[NullableBoolean] = js.undefined,
         imageId: js.UndefOr[ImageId] = js.undefined,
         ownerArn: js.UndefOr[UserArn] = js.undefined,
         subnetId: js.UndefOr[SubnetId] = js.undefined,
@@ -110,6 +113,7 @@ package object cloud9 {
       clientRequestToken.foreach(__v => __obj.updateDynamic("clientRequestToken")(__v.asInstanceOf[js.Any]))
       connectionType.foreach(__v => __obj.updateDynamic("connectionType")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      dryRun.foreach(__v => __obj.updateDynamic("dryRun")(__v.asInstanceOf[js.Any]))
       imageId.foreach(__v => __obj.updateDynamic("imageId")(__v.asInstanceOf[js.Any]))
       ownerArn.foreach(__v => __obj.updateDynamic("ownerArn")(__v.asInstanceOf[js.Any]))
       subnetId.foreach(__v => __obj.updateDynamic("subnetId")(__v.asInstanceOf[js.Any]))
@@ -350,7 +354,7 @@ package object cloud9 {
     }
   }
 
-  /** Information about an AWS Cloud9 development environment.
+  /** Information about an Cloud9 development environment.
     */
   @js.native
   trait Environment extends js.Object {
@@ -394,7 +398,7 @@ package object cloud9 {
     }
   }
 
-  /** Information about the current creation or deletion lifecycle state of an AWS Cloud9 development environment.
+  /** Information about the current creation or deletion lifecycle state of an Cloud9 development environment.
     */
   @js.native
   trait EnvironmentLifecycle extends js.Object {
@@ -418,7 +422,7 @@ package object cloud9 {
     }
   }
 
-  /** Information about an environment member for an AWS Cloud9 development environment.
+  /** Information about an environment member for an Cloud9 development environment.
     */
   @js.native
   trait EnvironmentMember extends js.Object {
@@ -521,7 +525,7 @@ package object cloud9 {
     }
   }
 
-  /** Metadata that is associated with AWS resources. In particular, a name-value pair that can be associated with an AWS Cloud9 development environment. There are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the user. A system tag is automatically created by AWS services. A system tag is prefixed with "aws:" and cannot be modified by the user.
+  /** Metadata that is associated with Amazon Web Services resources. In particular, a name-value pair that can be associated with an Cloud9 development environment. There are two types of tags: <i>user tags</i> and <i>system tags</i>. A user tag is created by the user. A system tag is automatically created by Amazon Web Services services. A system tag is prefixed with <code>"aws:"</code> and cannot be modified by the user.
     */
   @js.native
   trait Tag extends js.Object {
@@ -648,6 +652,7 @@ package object cloud9 {
   trait UpdateEnvironmentRequest extends js.Object {
     var environmentId: EnvironmentId
     var description: js.UndefOr[EnvironmentDescription]
+    var managedCredentialsAction: js.UndefOr[ManagedCredentialsAction]
     var name: js.UndefOr[EnvironmentName]
   }
 
@@ -656,6 +661,7 @@ package object cloud9 {
     def apply(
         environmentId: EnvironmentId,
         description: js.UndefOr[EnvironmentDescription] = js.undefined,
+        managedCredentialsAction: js.UndefOr[ManagedCredentialsAction] = js.undefined,
         name: js.UndefOr[EnvironmentName] = js.undefined
     ): UpdateEnvironmentRequest = {
       val __obj = js.Dynamic.literal(
@@ -663,6 +669,7 @@ package object cloud9 {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      managedCredentialsAction.foreach(__v => __obj.updateDynamic("managedCredentialsAction")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEnvironmentRequest]
     }

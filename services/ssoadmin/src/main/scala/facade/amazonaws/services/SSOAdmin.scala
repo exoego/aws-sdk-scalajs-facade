@@ -123,7 +123,7 @@ package object ssoadmin {
     }
   }
 
-  /** These are AWS SSO identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permission policies that determine who can access your AWS resources based upon the configured attribute value(s). When you enable ABAC and specify AccessControlAttributes, AWS SSO passes the attribute(s) value of the authenticated user into IAM for use in policy evaluation.
+  /** These are Amazon Web Services SSO identity store attributes that you can configure for use in attributes-based access control (ABAC). You can create permissions policies that determine who can access your Amazon Web Services resources based upon the configured attribute values. When you enable ABAC and specify <code>AccessControlAttributes</code>, Amazon Web Services SSO passes the attribute values of the authenticated user into IAM for use in policy evaluation.
     */
   @js.native
   trait AccessControlAttribute extends js.Object {
@@ -164,9 +164,9 @@ package object ssoadmin {
     }
   }
 
-  /** The assignment that indicates a principal's limited access to a specified AWS account with a specified permission set.
+  /** The assignment that indicates a principal's limited access to a specified Amazon Web Services account with a specified permission set.
     *
-    * '''Note:'''The term <i>principal</i> here refers to a user or group that is defined in AWS SSO.
+    * '''Note:'''The term <i>principal</i> here refers to a user or group that is defined in Amazon Web Services SSO.
     */
   @js.native
   trait AccountAssignment extends js.Object {
@@ -1513,7 +1513,7 @@ package object ssoadmin {
     }
   }
 
-  /** A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that AWS SSO creates in AWS accounts.
+  /** A set of key-value pairs that are used to manage the resource. Tags can only be applied to permission sets and cannot be applied to corresponding roles that Amazon Web Services SSO creates in Amazon Web Services accounts.
     */
   @js.native
   trait Tag extends js.Object {

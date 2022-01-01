@@ -12,6 +12,25 @@ object ResourceOwner {
 }
 
 @js.native
+sealed trait ResourceRegionScope extends js.Any
+object ResourceRegionScope {
+  val REGIONAL = "REGIONAL".asInstanceOf[ResourceRegionScope]
+  val GLOBAL = "GLOBAL".asInstanceOf[ResourceRegionScope]
+
+  @inline def values: js.Array[ResourceRegionScope] = js.Array(REGIONAL, GLOBAL)
+}
+
+@js.native
+sealed trait ResourceRegionScopeFilter extends js.Any
+object ResourceRegionScopeFilter {
+  val ALL = "ALL".asInstanceOf[ResourceRegionScopeFilter]
+  val REGIONAL = "REGIONAL".asInstanceOf[ResourceRegionScopeFilter]
+  val GLOBAL = "GLOBAL".asInstanceOf[ResourceRegionScopeFilter]
+
+  @inline def values: js.Array[ResourceRegionScopeFilter] = js.Array(ALL, REGIONAL, GLOBAL)
+}
+
+@js.native
 sealed trait ResourceShareAssociationStatus extends js.Any
 object ResourceShareAssociationStatus {
   val ASSOCIATING = "ASSOCIATING".asInstanceOf[ResourceShareAssociationStatus]

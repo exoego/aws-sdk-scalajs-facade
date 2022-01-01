@@ -8,6 +8,7 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object dataexchange {
+  type ApiDescription = String
   type Arn = String
   type AssetName = String
   type Description = String
@@ -16,8 +17,10 @@ package object dataexchange {
   type ListOfAssetEntry = js.Array[AssetEntry]
   type ListOfAssetSourceEntry = js.Array[AssetSourceEntry]
   type ListOfDataSetEntry = js.Array[DataSetEntry]
+  type ListOfEventActionEntry = js.Array[EventActionEntry]
   type ListOfJobEntry = js.Array[JobEntry]
   type ListOfJobError = js.Array[JobError]
+  type ListOfRedshiftDataShareAssetSourceEntry = js.Array[RedshiftDataShareAssetSourceEntry]
   type ListOfRevisionDestinationEntry = js.Array[RevisionDestinationEntry]
   type ListOfRevisionEntry = js.Array[RevisionEntry]
   type ListOf__string = js.Array[__string]
@@ -37,25 +40,31 @@ package object dataexchange {
 
     @inline def cancelJobFuture(params: CancelJobRequest): Future[js.Object] = service.cancelJob(params).promise().toFuture
     @inline def createDataSetFuture(params: CreateDataSetRequest): Future[CreateDataSetResponse] = service.createDataSet(params).promise().toFuture
+    @inline def createEventActionFuture(params: CreateEventActionRequest): Future[CreateEventActionResponse] = service.createEventAction(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResponse] = service.createJob(params).promise().toFuture
     @inline def createRevisionFuture(params: CreateRevisionRequest): Future[CreateRevisionResponse] = service.createRevision(params).promise().toFuture
     @inline def deleteAssetFuture(params: DeleteAssetRequest): Future[js.Object] = service.deleteAsset(params).promise().toFuture
     @inline def deleteDataSetFuture(params: DeleteDataSetRequest): Future[js.Object] = service.deleteDataSet(params).promise().toFuture
+    @inline def deleteEventActionFuture(params: DeleteEventActionRequest): Future[js.Object] = service.deleteEventAction(params).promise().toFuture
     @inline def deleteRevisionFuture(params: DeleteRevisionRequest): Future[js.Object] = service.deleteRevision(params).promise().toFuture
     @inline def getAssetFuture(params: GetAssetRequest): Future[GetAssetResponse] = service.getAsset(params).promise().toFuture
     @inline def getDataSetFuture(params: GetDataSetRequest): Future[GetDataSetResponse] = service.getDataSet(params).promise().toFuture
+    @inline def getEventActionFuture(params: GetEventActionRequest): Future[GetEventActionResponse] = service.getEventAction(params).promise().toFuture
     @inline def getJobFuture(params: GetJobRequest): Future[GetJobResponse] = service.getJob(params).promise().toFuture
     @inline def getRevisionFuture(params: GetRevisionRequest): Future[GetRevisionResponse] = service.getRevision(params).promise().toFuture
     @inline def listDataSetRevisionsFuture(params: ListDataSetRevisionsRequest): Future[ListDataSetRevisionsResponse] = service.listDataSetRevisions(params).promise().toFuture
     @inline def listDataSetsFuture(params: ListDataSetsRequest): Future[ListDataSetsResponse] = service.listDataSets(params).promise().toFuture
+    @inline def listEventActionsFuture(params: ListEventActionsRequest): Future[ListEventActionsResponse] = service.listEventActions(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise().toFuture
     @inline def listRevisionAssetsFuture(params: ListRevisionAssetsRequest): Future[ListRevisionAssetsResponse] = service.listRevisionAssets(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def sendApiAssetFuture(params: SendApiAssetRequest): Future[SendApiAssetResponse] = service.sendApiAsset(params).promise().toFuture
     @inline def startJobFuture(params: StartJobRequest): Future[StartJobResponse] = service.startJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateAssetFuture(params: UpdateAssetRequest): Future[UpdateAssetResponse] = service.updateAsset(params).promise().toFuture
     @inline def updateDataSetFuture(params: UpdateDataSetRequest): Future[UpdateDataSetResponse] = service.updateDataSet(params).promise().toFuture
+    @inline def updateEventActionFuture(params: UpdateEventActionRequest): Future[UpdateEventActionResponse] = service.updateEventAction(params).promise().toFuture
     @inline def updateRevisionFuture(params: UpdateRevisionRequest): Future[UpdateRevisionResponse] = service.updateRevision(params).promise().toFuture
 
   }
@@ -67,30 +76,96 @@ package object dataexchange {
 
     def cancelJob(params: CancelJobRequest): Request[js.Object] = js.native
     def createDataSet(params: CreateDataSetRequest): Request[CreateDataSetResponse] = js.native
+    def createEventAction(params: CreateEventActionRequest): Request[CreateEventActionResponse] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResponse] = js.native
     def createRevision(params: CreateRevisionRequest): Request[CreateRevisionResponse] = js.native
     def deleteAsset(params: DeleteAssetRequest): Request[js.Object] = js.native
     def deleteDataSet(params: DeleteDataSetRequest): Request[js.Object] = js.native
+    def deleteEventAction(params: DeleteEventActionRequest): Request[js.Object] = js.native
     def deleteRevision(params: DeleteRevisionRequest): Request[js.Object] = js.native
     def getAsset(params: GetAssetRequest): Request[GetAssetResponse] = js.native
     def getDataSet(params: GetDataSetRequest): Request[GetDataSetResponse] = js.native
+    def getEventAction(params: GetEventActionRequest): Request[GetEventActionResponse] = js.native
     def getJob(params: GetJobRequest): Request[GetJobResponse] = js.native
     def getRevision(params: GetRevisionRequest): Request[GetRevisionResponse] = js.native
     def listDataSetRevisions(params: ListDataSetRevisionsRequest): Request[ListDataSetRevisionsResponse] = js.native
     def listDataSets(params: ListDataSetsRequest): Request[ListDataSetsResponse] = js.native
+    def listEventActions(params: ListEventActionsRequest): Request[ListEventActionsResponse] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
     def listRevisionAssets(params: ListRevisionAssetsRequest): Request[ListRevisionAssetsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def sendApiAsset(params: SendApiAssetRequest): Request[SendApiAssetResponse] = js.native
     def startJob(params: StartJobRequest): Request[StartJobResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateAsset(params: UpdateAssetRequest): Request[UpdateAssetResponse] = js.native
     def updateDataSet(params: UpdateDataSetRequest): Request[UpdateDataSetResponse] = js.native
+    def updateEventAction(params: UpdateEventActionRequest): Request[UpdateEventActionResponse] = js.native
     def updateRevision(params: UpdateRevisionRequest): Request[UpdateRevisionResponse] = js.native
   }
   object DataExchange {
     @inline implicit def toOps(service: DataExchange): DataExchangeOps = {
       new DataExchangeOps(service)
+    }
+  }
+
+  /** What occurs after a certain event.
+    */
+  @js.native
+  trait Action extends js.Object {
+    var ExportRevisionToS3: js.UndefOr[AutoExportRevisionToS3RequestDetails]
+  }
+
+  object Action {
+    @inline
+    def apply(
+        ExportRevisionToS3: js.UndefOr[AutoExportRevisionToS3RequestDetails] = js.undefined
+    ): Action = {
+      val __obj = js.Dynamic.literal()
+      ExportRevisionToS3.foreach(__v => __obj.updateDynamic("ExportRevisionToS3")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Action]
+    }
+  }
+
+  /** The API Gateway API that is the asset.
+    */
+  @js.native
+  trait ApiGatewayApiAsset extends js.Object {
+    var ApiDescription: js.UndefOr[ApiDescription]
+    var ApiEndpoint: js.UndefOr[__string]
+    var ApiId: js.UndefOr[__string]
+    var ApiKey: js.UndefOr[__string]
+    var ApiName: js.UndefOr[__string]
+    var ApiSpecificationDownloadUrl: js.UndefOr[__string]
+    var ApiSpecificationDownloadUrlExpiresAt: js.UndefOr[Timestamp]
+    var ProtocolType: js.UndefOr[ProtocolType]
+    var Stage: js.UndefOr[__string]
+  }
+
+  object ApiGatewayApiAsset {
+    @inline
+    def apply(
+        ApiDescription: js.UndefOr[ApiDescription] = js.undefined,
+        ApiEndpoint: js.UndefOr[__string] = js.undefined,
+        ApiId: js.UndefOr[__string] = js.undefined,
+        ApiKey: js.UndefOr[__string] = js.undefined,
+        ApiName: js.UndefOr[__string] = js.undefined,
+        ApiSpecificationDownloadUrl: js.UndefOr[__string] = js.undefined,
+        ApiSpecificationDownloadUrlExpiresAt: js.UndefOr[Timestamp] = js.undefined,
+        ProtocolType: js.UndefOr[ProtocolType] = js.undefined,
+        Stage: js.UndefOr[__string] = js.undefined
+    ): ApiGatewayApiAsset = {
+      val __obj = js.Dynamic.literal()
+      ApiDescription.foreach(__v => __obj.updateDynamic("ApiDescription")(__v.asInstanceOf[js.Any]))
+      ApiEndpoint.foreach(__v => __obj.updateDynamic("ApiEndpoint")(__v.asInstanceOf[js.Any]))
+      ApiId.foreach(__v => __obj.updateDynamic("ApiId")(__v.asInstanceOf[js.Any]))
+      ApiKey.foreach(__v => __obj.updateDynamic("ApiKey")(__v.asInstanceOf[js.Any]))
+      ApiName.foreach(__v => __obj.updateDynamic("ApiName")(__v.asInstanceOf[js.Any]))
+      ApiSpecificationDownloadUrl.foreach(__v => __obj.updateDynamic("ApiSpecificationDownloadUrl")(__v.asInstanceOf[js.Any]))
+      ApiSpecificationDownloadUrlExpiresAt.foreach(__v => __obj.updateDynamic("ApiSpecificationDownloadUrlExpiresAt")(__v.asInstanceOf[js.Any]))
+      ProtocolType.foreach(__v => __obj.updateDynamic("ProtocolType")(__v.asInstanceOf[js.Any]))
+      Stage.foreach(__v => __obj.updateDynamic("Stage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApiGatewayApiAsset]
     }
   }
 
@@ -120,23 +195,31 @@ package object dataexchange {
     }
   }
 
+  /** Information about the asset.
+    */
   @js.native
   trait AssetDetails extends js.Object {
+    var ApiGatewayApiAsset: js.UndefOr[ApiGatewayApiAsset]
+    var RedshiftDataShareAsset: js.UndefOr[RedshiftDataShareAsset]
     var S3SnapshotAsset: js.UndefOr[S3SnapshotAsset]
   }
 
   object AssetDetails {
     @inline
     def apply(
+        ApiGatewayApiAsset: js.UndefOr[ApiGatewayApiAsset] = js.undefined,
+        RedshiftDataShareAsset: js.UndefOr[RedshiftDataShareAsset] = js.undefined,
         S3SnapshotAsset: js.UndefOr[S3SnapshotAsset] = js.undefined
     ): AssetDetails = {
       val __obj = js.Dynamic.literal()
+      ApiGatewayApiAsset.foreach(__v => __obj.updateDynamic("ApiGatewayApiAsset")(__v.asInstanceOf[js.Any]))
+      RedshiftDataShareAsset.foreach(__v => __obj.updateDynamic("RedshiftDataShareAsset")(__v.asInstanceOf[js.Any]))
       S3SnapshotAsset.foreach(__v => __obj.updateDynamic("S3SnapshotAsset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssetDetails]
     }
   }
 
-  /** An asset in AWS Data Exchange is a piece of data that can be stored as an S3 object. The asset can be a structured data file, an image file, or some other data file. When you create an import job for your files, you create an asset in AWS Data Exchange for each of those files.
+  /** An asset in AWS Data Exchange is a piece of data (S3 object) or a means of fulfilling data (Amazon Redshift datashare or Amazon API Gateway API). The asset can be a structured data file, an image file, or some other data file that can be stored as an S3 object, an Amazon API Gateway API, or an Amazon Redshift datashare (Preview). When you create an import job for your files, API Gateway APIs, or Amazon Redshift datashares, you create an asset in AWS Data Exchange.
     */
   @js.native
   trait AssetEntry extends js.Object {
@@ -202,6 +285,52 @@ package object dataexchange {
         "Key" -> Key.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AssetSourceEntry]
+    }
+  }
+
+  /** A revision destination is the Amazon S3 bucket folder destination to where the export will be sent.
+    */
+  @js.native
+  trait AutoExportRevisionDestinationEntry extends js.Object {
+    var Bucket: __string
+    var KeyPattern: js.UndefOr[__string]
+  }
+
+  object AutoExportRevisionDestinationEntry {
+    @inline
+    def apply(
+        Bucket: __string,
+        KeyPattern: js.UndefOr[__string] = js.undefined
+    ): AutoExportRevisionDestinationEntry = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+
+      KeyPattern.foreach(__v => __obj.updateDynamic("KeyPattern")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoExportRevisionDestinationEntry]
+    }
+  }
+
+  /** Details of the operation to be performed by the job.
+    */
+  @js.native
+  trait AutoExportRevisionToS3RequestDetails extends js.Object {
+    var RevisionDestination: AutoExportRevisionDestinationEntry
+    var Encryption: js.UndefOr[ExportServerSideEncryption]
+  }
+
+  object AutoExportRevisionToS3RequestDetails {
+    @inline
+    def apply(
+        RevisionDestination: AutoExportRevisionDestinationEntry,
+        Encryption: js.UndefOr[ExportServerSideEncryption] = js.undefined
+    ): AutoExportRevisionToS3RequestDetails = {
+      val __obj = js.Dynamic.literal(
+        "RevisionDestination" -> RevisionDestination.asInstanceOf[js.Any]
+      )
+
+      Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoExportRevisionToS3RequestDetails]
     }
   }
 
@@ -294,6 +423,59 @@ package object dataexchange {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDataSetResponse]
+    }
+  }
+
+  /** The request body for CreateEventAction.
+    */
+  @js.native
+  trait CreateEventActionRequest extends js.Object {
+    var Action: Action
+    var Event: Event
+  }
+
+  object CreateEventActionRequest {
+    @inline
+    def apply(
+        Action: Action,
+        Event: Event
+    ): CreateEventActionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any],
+        "Event" -> Event.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateEventActionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateEventActionResponse extends js.Object {
+    var Action: js.UndefOr[Action]
+    var Arn: js.UndefOr[Arn]
+    var CreatedAt: js.UndefOr[Timestamp]
+    var Event: js.UndefOr[Event]
+    var Id: js.UndefOr[Id]
+    var UpdatedAt: js.UndefOr[Timestamp]
+  }
+
+  object CreateEventActionResponse {
+    @inline
+    def apply(
+        Action: js.UndefOr[Action] = js.undefined,
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Event: js.UndefOr[Event] = js.undefined,
+        Id: js.UndefOr[Id] = js.undefined,
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+    ): CreateEventActionResponse = {
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Event.foreach(__v => __obj.updateDynamic("Event")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateEventActionResponse]
     }
   }
 
@@ -510,6 +692,23 @@ package object dataexchange {
   }
 
   @js.native
+  trait DeleteEventActionRequest extends js.Object {
+    var EventActionId: __string
+  }
+
+  object DeleteEventActionRequest {
+    @inline
+    def apply(
+        EventActionId: __string
+    ): DeleteEventActionRequest = {
+      val __obj = js.Dynamic.literal(
+        "EventActionId" -> EventActionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEventActionRequest]
+    }
+  }
+
+  @js.native
   trait DeleteRevisionRequest extends js.Object {
     var DataSetId: __string
     var RevisionId: __string
@@ -529,6 +728,8 @@ package object dataexchange {
     }
   }
 
+  /** Information about the job error.
+    */
   @js.native
   trait Details extends js.Object {
     var ImportAssetFromSignedUrlJobErrorDetails: js.UndefOr[ImportAssetFromSignedUrlJobErrorDetails]
@@ -545,6 +746,58 @@ package object dataexchange {
       ImportAssetFromSignedUrlJobErrorDetails.foreach(__v => __obj.updateDynamic("ImportAssetFromSignedUrlJobErrorDetails")(__v.asInstanceOf[js.Any]))
       ImportAssetsFromS3JobErrorDetails.foreach(__v => __obj.updateDynamic("ImportAssetsFromS3JobErrorDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Details]
+    }
+  }
+
+  /** What occurs to start an action.
+    */
+  @js.native
+  trait Event extends js.Object {
+    var RevisionPublished: js.UndefOr[RevisionPublished]
+  }
+
+  object Event {
+    @inline
+    def apply(
+        RevisionPublished: js.UndefOr[RevisionPublished] = js.undefined
+    ): Event = {
+      val __obj = js.Dynamic.literal()
+      RevisionPublished.foreach(__v => __obj.updateDynamic("RevisionPublished")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Event]
+    }
+  }
+
+  /** An event action is an object that defines the relationship between a specific event and an automated action that will be taken on behalf of the customer.
+    */
+  @js.native
+  trait EventActionEntry extends js.Object {
+    var Action: Action
+    var Arn: Arn
+    var CreatedAt: Timestamp
+    var Event: Event
+    var Id: Id
+    var UpdatedAt: Timestamp
+  }
+
+  object EventActionEntry {
+    @inline
+    def apply(
+        Action: Action,
+        Arn: Arn,
+        CreatedAt: Timestamp,
+        Event: Event,
+        Id: Id,
+        UpdatedAt: Timestamp
+    ): EventActionEntry = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any],
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
+        "Event" -> Event.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "UpdatedAt" -> UpdatedAt.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EventActionEntry]
     }
   }
 
@@ -696,6 +949,7 @@ package object dataexchange {
     var DataSetId: Id
     var RevisionDestinations: ListOfRevisionDestinationEntry
     var Encryption: js.UndefOr[ExportServerSideEncryption]
+    var EventActionArn: js.UndefOr[__string]
   }
 
   object ExportRevisionsToS3ResponseDetails {
@@ -703,7 +957,8 @@ package object dataexchange {
     def apply(
         DataSetId: Id,
         RevisionDestinations: ListOfRevisionDestinationEntry,
-        Encryption: js.UndefOr[ExportServerSideEncryption] = js.undefined
+        Encryption: js.UndefOr[ExportServerSideEncryption] = js.undefined,
+        EventActionArn: js.UndefOr[__string] = js.undefined
     ): ExportRevisionsToS3ResponseDetails = {
       val __obj = js.Dynamic.literal(
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
@@ -711,11 +966,12 @@ package object dataexchange {
       )
 
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      EventActionArn.foreach(__v => __obj.updateDynamic("EventActionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportRevisionsToS3ResponseDetails]
     }
   }
 
-  /** Encryption configuration of the export job. Includes the encryption type as well as the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption type.
+  /** Encryption configuration of the export job. Includes the encryption type in addition to the AWS KMS key. The KMS key is only necessary if you chose the KMS encryption. type.
     */
   @js.native
   trait ExportServerSideEncryption extends js.Object {
@@ -868,6 +1124,54 @@ package object dataexchange {
   }
 
   @js.native
+  trait GetEventActionRequest extends js.Object {
+    var EventActionId: __string
+  }
+
+  object GetEventActionRequest {
+    @inline
+    def apply(
+        EventActionId: __string
+    ): GetEventActionRequest = {
+      val __obj = js.Dynamic.literal(
+        "EventActionId" -> EventActionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetEventActionRequest]
+    }
+  }
+
+  @js.native
+  trait GetEventActionResponse extends js.Object {
+    var Action: js.UndefOr[Action]
+    var Arn: js.UndefOr[Arn]
+    var CreatedAt: js.UndefOr[Timestamp]
+    var Event: js.UndefOr[Event]
+    var Id: js.UndefOr[Id]
+    var UpdatedAt: js.UndefOr[Timestamp]
+  }
+
+  object GetEventActionResponse {
+    @inline
+    def apply(
+        Action: js.UndefOr[Action] = js.undefined,
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Event: js.UndefOr[Event] = js.undefined,
+        Id: js.UndefOr[Id] = js.undefined,
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+    ): GetEventActionResponse = {
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Event.foreach(__v => __obj.updateDynamic("Event")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEventActionResponse]
+    }
+  }
+
+  @js.native
   trait GetJobRequest extends js.Object {
     var JobId: __string
   }
@@ -981,6 +1285,102 @@ package object dataexchange {
     }
   }
 
+  /** The request details.
+    */
+  @js.native
+  trait ImportAssetFromApiGatewayApiRequestDetails extends js.Object {
+    var ApiId: __string
+    var ApiName: __string
+    var ApiSpecificationMd5Hash: __stringMin24Max24PatternAZaZ094AZaZ092AZaZ093
+    var DataSetId: Id
+    var ProtocolType: ProtocolType
+    var RevisionId: Id
+    var Stage: __string
+    var ApiDescription: js.UndefOr[ApiDescription]
+    var ApiKey: js.UndefOr[__string]
+  }
+
+  object ImportAssetFromApiGatewayApiRequestDetails {
+    @inline
+    def apply(
+        ApiId: __string,
+        ApiName: __string,
+        ApiSpecificationMd5Hash: __stringMin24Max24PatternAZaZ094AZaZ092AZaZ093,
+        DataSetId: Id,
+        ProtocolType: ProtocolType,
+        RevisionId: Id,
+        Stage: __string,
+        ApiDescription: js.UndefOr[ApiDescription] = js.undefined,
+        ApiKey: js.UndefOr[__string] = js.undefined
+    ): ImportAssetFromApiGatewayApiRequestDetails = {
+      val __obj = js.Dynamic.literal(
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "ApiName" -> ApiName.asInstanceOf[js.Any],
+        "ApiSpecificationMd5Hash" -> ApiSpecificationMd5Hash.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "ProtocolType" -> ProtocolType.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any],
+        "Stage" -> Stage.asInstanceOf[js.Any]
+      )
+
+      ApiDescription.foreach(__v => __obj.updateDynamic("ApiDescription")(__v.asInstanceOf[js.Any]))
+      ApiKey.foreach(__v => __obj.updateDynamic("ApiKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportAssetFromApiGatewayApiRequestDetails]
+    }
+  }
+
+  /** The response details.
+    */
+  @js.native
+  trait ImportAssetFromApiGatewayApiResponseDetails extends js.Object {
+    var ApiId: __string
+    var ApiName: __string
+    var ApiSpecificationMd5Hash: __stringMin24Max24PatternAZaZ094AZaZ092AZaZ093
+    var ApiSpecificationUploadUrl: __string
+    var ApiSpecificationUploadUrlExpiresAt: Timestamp
+    var DataSetId: Id
+    var ProtocolType: ProtocolType
+    var RevisionId: Id
+    var Stage: __string
+    var ApiDescription: js.UndefOr[ApiDescription]
+    var ApiKey: js.UndefOr[__string]
+  }
+
+  object ImportAssetFromApiGatewayApiResponseDetails {
+    @inline
+    def apply(
+        ApiId: __string,
+        ApiName: __string,
+        ApiSpecificationMd5Hash: __stringMin24Max24PatternAZaZ094AZaZ092AZaZ093,
+        ApiSpecificationUploadUrl: __string,
+        ApiSpecificationUploadUrlExpiresAt: Timestamp,
+        DataSetId: Id,
+        ProtocolType: ProtocolType,
+        RevisionId: Id,
+        Stage: __string,
+        ApiDescription: js.UndefOr[ApiDescription] = js.undefined,
+        ApiKey: js.UndefOr[__string] = js.undefined
+    ): ImportAssetFromApiGatewayApiResponseDetails = {
+      val __obj = js.Dynamic.literal(
+        "ApiId" -> ApiId.asInstanceOf[js.Any],
+        "ApiName" -> ApiName.asInstanceOf[js.Any],
+        "ApiSpecificationMd5Hash" -> ApiSpecificationMd5Hash.asInstanceOf[js.Any],
+        "ApiSpecificationUploadUrl" -> ApiSpecificationUploadUrl.asInstanceOf[js.Any],
+        "ApiSpecificationUploadUrlExpiresAt" -> ApiSpecificationUploadUrlExpiresAt.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "ProtocolType" -> ProtocolType.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any],
+        "Stage" -> Stage.asInstanceOf[js.Any]
+      )
+
+      ApiDescription.foreach(__v => __obj.updateDynamic("ApiDescription")(__v.asInstanceOf[js.Any]))
+      ApiKey.foreach(__v => __obj.updateDynamic("ApiKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportAssetFromApiGatewayApiResponseDetails]
+    }
+  }
+
+  /** Information about the job error.
+    */
   @js.native
   trait ImportAssetFromSignedUrlJobErrorDetails extends js.Object {
     var AssetName: AssetName
@@ -1058,6 +1458,56 @@ package object dataexchange {
       SignedUrl.foreach(__v => __obj.updateDynamic("SignedUrl")(__v.asInstanceOf[js.Any]))
       SignedUrlExpiresAt.foreach(__v => __obj.updateDynamic("SignedUrlExpiresAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportAssetFromSignedUrlResponseDetails]
+    }
+  }
+
+  /** Details from an import from Amazon Redshift datashare request.
+    */
+  @js.native
+  trait ImportAssetsFromRedshiftDataSharesRequestDetails extends js.Object {
+    var AssetSources: ListOfRedshiftDataShareAssetSourceEntry
+    var DataSetId: Id
+    var RevisionId: Id
+  }
+
+  object ImportAssetsFromRedshiftDataSharesRequestDetails {
+    @inline
+    def apply(
+        AssetSources: ListOfRedshiftDataShareAssetSourceEntry,
+        DataSetId: Id,
+        RevisionId: Id
+    ): ImportAssetsFromRedshiftDataSharesRequestDetails = {
+      val __obj = js.Dynamic.literal(
+        "AssetSources" -> AssetSources.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ImportAssetsFromRedshiftDataSharesRequestDetails]
+    }
+  }
+
+  /** Details from an import from Amazon Redshift datashare response.
+    */
+  @js.native
+  trait ImportAssetsFromRedshiftDataSharesResponseDetails extends js.Object {
+    var AssetSources: ListOfRedshiftDataShareAssetSourceEntry
+    var DataSetId: Id
+    var RevisionId: Id
+  }
+
+  object ImportAssetsFromRedshiftDataSharesResponseDetails {
+    @inline
+    def apply(
+        AssetSources: ListOfRedshiftDataShareAssetSourceEntry,
+        DataSetId: Id,
+        RevisionId: Id
+    ): ImportAssetsFromRedshiftDataSharesResponseDetails = {
+      val __obj = js.Dynamic.literal(
+        "AssetSources" -> AssetSources.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ImportAssetsFromRedshiftDataSharesResponseDetails]
     }
   }
 
@@ -1275,6 +1725,47 @@ package object dataexchange {
   }
 
   @js.native
+  trait ListEventActionsRequest extends js.Object {
+    var EventSourceId: js.UndefOr[__string]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListEventActionsRequest {
+    @inline
+    def apply(
+        EventSourceId: js.UndefOr[__string] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListEventActionsRequest = {
+      val __obj = js.Dynamic.literal()
+      EventSourceId.foreach(__v => __obj.updateDynamic("EventSourceId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEventActionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListEventActionsResponse extends js.Object {
+    var EventActions: js.UndefOr[ListOfEventActionEntry]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListEventActionsResponse {
+    @inline
+    def apply(
+        EventActions: js.UndefOr[ListOfEventActionEntry] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListEventActionsResponse = {
+      val __obj = js.Dynamic.literal()
+      EventActions.foreach(__v => __obj.updateDynamic("EventActions")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListEventActionsResponse]
+    }
+  }
+
+  @js.native
   trait ListJobsRequest extends js.Object {
     var DataSetId: js.UndefOr[__string]
     var MaxResults: js.UndefOr[MaxResults]
@@ -1397,6 +1888,8 @@ package object dataexchange {
     }
   }
 
+  /** Information about the origin of the data set.
+    */
   @js.native
   trait OriginDetails extends js.Object {
     var ProductId: __string
@@ -1414,6 +1907,44 @@ package object dataexchange {
     }
   }
 
+  /** The Amazon Redshift datashare asset.
+    */
+  @js.native
+  trait RedshiftDataShareAsset extends js.Object {
+    var Arn: __string
+  }
+
+  object RedshiftDataShareAsset {
+    @inline
+    def apply(
+        Arn: __string
+    ): RedshiftDataShareAsset = {
+      val __obj = js.Dynamic.literal(
+        "Arn" -> Arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RedshiftDataShareAsset]
+    }
+  }
+
+  /** The source of the Amazon Redshift datashare asset.
+    */
+  @js.native
+  trait RedshiftDataShareAssetSourceEntry extends js.Object {
+    var DataShareArn: __string
+  }
+
+  object RedshiftDataShareAssetSourceEntry {
+    @inline
+    def apply(
+        DataShareArn: __string
+    ): RedshiftDataShareAssetSourceEntry = {
+      val __obj = js.Dynamic.literal(
+        "DataShareArn" -> DataShareArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RedshiftDataShareAssetSourceEntry]
+    }
+  }
+
   /** The details for the request.
     */
   @js.native
@@ -1421,7 +1952,9 @@ package object dataexchange {
     var ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlRequestDetails]
     var ExportAssetsToS3: js.UndefOr[ExportAssetsToS3RequestDetails]
     var ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3RequestDetails]
+    var ImportAssetFromApiGatewayApi: js.UndefOr[ImportAssetFromApiGatewayApiRequestDetails]
     var ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlRequestDetails]
+    var ImportAssetsFromRedshiftDataShares: js.UndefOr[ImportAssetsFromRedshiftDataSharesRequestDetails]
     var ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3RequestDetails]
   }
 
@@ -1431,14 +1964,18 @@ package object dataexchange {
         ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlRequestDetails] = js.undefined,
         ExportAssetsToS3: js.UndefOr[ExportAssetsToS3RequestDetails] = js.undefined,
         ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3RequestDetails] = js.undefined,
+        ImportAssetFromApiGatewayApi: js.UndefOr[ImportAssetFromApiGatewayApiRequestDetails] = js.undefined,
         ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlRequestDetails] = js.undefined,
+        ImportAssetsFromRedshiftDataShares: js.UndefOr[ImportAssetsFromRedshiftDataSharesRequestDetails] = js.undefined,
         ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3RequestDetails] = js.undefined
     ): RequestDetails = {
       val __obj = js.Dynamic.literal()
       ExportAssetToSignedUrl.foreach(__v => __obj.updateDynamic("ExportAssetToSignedUrl")(__v.asInstanceOf[js.Any]))
       ExportAssetsToS3.foreach(__v => __obj.updateDynamic("ExportAssetsToS3")(__v.asInstanceOf[js.Any]))
       ExportRevisionsToS3.foreach(__v => __obj.updateDynamic("ExportRevisionsToS3")(__v.asInstanceOf[js.Any]))
+      ImportAssetFromApiGatewayApi.foreach(__v => __obj.updateDynamic("ImportAssetFromApiGatewayApi")(__v.asInstanceOf[js.Any]))
       ImportAssetFromSignedUrl.foreach(__v => __obj.updateDynamic("ImportAssetFromSignedUrl")(__v.asInstanceOf[js.Any]))
+      ImportAssetsFromRedshiftDataShares.foreach(__v => __obj.updateDynamic("ImportAssetsFromRedshiftDataShares")(__v.asInstanceOf[js.Any]))
       ImportAssetsFromS3.foreach(__v => __obj.updateDynamic("ImportAssetsFromS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RequestDetails]
     }
@@ -1451,7 +1988,9 @@ package object dataexchange {
     var ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlResponseDetails]
     var ExportAssetsToS3: js.UndefOr[ExportAssetsToS3ResponseDetails]
     var ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3ResponseDetails]
+    var ImportAssetFromApiGatewayApi: js.UndefOr[ImportAssetFromApiGatewayApiResponseDetails]
     var ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlResponseDetails]
+    var ImportAssetsFromRedshiftDataShares: js.UndefOr[ImportAssetsFromRedshiftDataSharesResponseDetails]
     var ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3ResponseDetails]
   }
 
@@ -1461,14 +2000,18 @@ package object dataexchange {
         ExportAssetToSignedUrl: js.UndefOr[ExportAssetToSignedUrlResponseDetails] = js.undefined,
         ExportAssetsToS3: js.UndefOr[ExportAssetsToS3ResponseDetails] = js.undefined,
         ExportRevisionsToS3: js.UndefOr[ExportRevisionsToS3ResponseDetails] = js.undefined,
+        ImportAssetFromApiGatewayApi: js.UndefOr[ImportAssetFromApiGatewayApiResponseDetails] = js.undefined,
         ImportAssetFromSignedUrl: js.UndefOr[ImportAssetFromSignedUrlResponseDetails] = js.undefined,
+        ImportAssetsFromRedshiftDataShares: js.UndefOr[ImportAssetsFromRedshiftDataSharesResponseDetails] = js.undefined,
         ImportAssetsFromS3: js.UndefOr[ImportAssetsFromS3ResponseDetails] = js.undefined
     ): ResponseDetails = {
       val __obj = js.Dynamic.literal()
       ExportAssetToSignedUrl.foreach(__v => __obj.updateDynamic("ExportAssetToSignedUrl")(__v.asInstanceOf[js.Any]))
       ExportAssetsToS3.foreach(__v => __obj.updateDynamic("ExportAssetsToS3")(__v.asInstanceOf[js.Any]))
       ExportRevisionsToS3.foreach(__v => __obj.updateDynamic("ExportRevisionsToS3")(__v.asInstanceOf[js.Any]))
+      ImportAssetFromApiGatewayApi.foreach(__v => __obj.updateDynamic("ImportAssetFromApiGatewayApi")(__v.asInstanceOf[js.Any]))
       ImportAssetFromSignedUrl.foreach(__v => __obj.updateDynamic("ImportAssetFromSignedUrl")(__v.asInstanceOf[js.Any]))
+      ImportAssetsFromRedshiftDataShares.foreach(__v => __obj.updateDynamic("ImportAssetsFromRedshiftDataShares")(__v.asInstanceOf[js.Any]))
       ImportAssetsFromS3.foreach(__v => __obj.updateDynamic("ImportAssetsFromS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResponseDetails]
     }
@@ -1541,6 +2084,25 @@ package object dataexchange {
     }
   }
 
+  /** Information about the published revision.
+    */
+  @js.native
+  trait RevisionPublished extends js.Object {
+    var DataSetId: Id
+  }
+
+  object RevisionPublished {
+    @inline
+    def apply(
+        DataSetId: Id
+    ): RevisionPublished = {
+      val __obj = js.Dynamic.literal(
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RevisionPublished]
+    }
+  }
+
   /** The S3 object that is the asset.
     */
   @js.native
@@ -1557,6 +2119,66 @@ package object dataexchange {
         "Size" -> Size.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[S3SnapshotAsset]
+    }
+  }
+
+  /** The request body for SendApiAsset.
+    */
+  @js.native
+  trait SendApiAssetRequest extends js.Object {
+    var AssetId: __string
+    var DataSetId: __string
+    var RevisionId: __string
+    var Body: js.UndefOr[__string]
+    var Method: js.UndefOr[__string]
+    var Path: js.UndefOr[__string]
+    var QueryStringParameters: js.UndefOr[MapOf__string]
+    var RequestHeaders: js.UndefOr[MapOf__string]
+  }
+
+  object SendApiAssetRequest {
+    @inline
+    def apply(
+        AssetId: __string,
+        DataSetId: __string,
+        RevisionId: __string,
+        Body: js.UndefOr[__string] = js.undefined,
+        Method: js.UndefOr[__string] = js.undefined,
+        Path: js.UndefOr[__string] = js.undefined,
+        QueryStringParameters: js.UndefOr[MapOf__string] = js.undefined,
+        RequestHeaders: js.UndefOr[MapOf__string] = js.undefined
+    ): SendApiAssetRequest = {
+      val __obj = js.Dynamic.literal(
+        "AssetId" -> AssetId.asInstanceOf[js.Any],
+        "DataSetId" -> DataSetId.asInstanceOf[js.Any],
+        "RevisionId" -> RevisionId.asInstanceOf[js.Any]
+      )
+
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      Method.foreach(__v => __obj.updateDynamic("Method")(__v.asInstanceOf[js.Any]))
+      Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      QueryStringParameters.foreach(__v => __obj.updateDynamic("QueryStringParameters")(__v.asInstanceOf[js.Any]))
+      RequestHeaders.foreach(__v => __obj.updateDynamic("RequestHeaders")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendApiAssetRequest]
+    }
+  }
+
+  @js.native
+  trait SendApiAssetResponse extends js.Object {
+    var Body: js.UndefOr[__string]
+    var ResponseHeaders: js.UndefOr[MapOf__string]
+  }
+
+  object SendApiAssetResponse {
+    @inline
+    def apply(
+        Body: js.UndefOr[__string] = js.undefined,
+        ResponseHeaders: js.UndefOr[MapOf__string] = js.undefined
+    ): SendApiAssetResponse = {
+      val __obj = js.Dynamic.literal()
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      ResponseHeaders.foreach(__v => __obj.updateDynamic("ResponseHeaders")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendApiAssetResponse]
     }
   }
 
@@ -1767,6 +2389,60 @@ package object dataexchange {
       SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
       UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDataSetResponse]
+    }
+  }
+
+  /** The request body for UpdateEventAction.
+    */
+  @js.native
+  trait UpdateEventActionRequest extends js.Object {
+    var EventActionId: __string
+    var Action: js.UndefOr[Action]
+  }
+
+  object UpdateEventActionRequest {
+    @inline
+    def apply(
+        EventActionId: __string,
+        Action: js.UndefOr[Action] = js.undefined
+    ): UpdateEventActionRequest = {
+      val __obj = js.Dynamic.literal(
+        "EventActionId" -> EventActionId.asInstanceOf[js.Any]
+      )
+
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEventActionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateEventActionResponse extends js.Object {
+    var Action: js.UndefOr[Action]
+    var Arn: js.UndefOr[Arn]
+    var CreatedAt: js.UndefOr[Timestamp]
+    var Event: js.UndefOr[Event]
+    var Id: js.UndefOr[Id]
+    var UpdatedAt: js.UndefOr[Timestamp]
+  }
+
+  object UpdateEventActionResponse {
+    @inline
+    def apply(
+        Action: js.UndefOr[Action] = js.undefined,
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Event: js.UndefOr[Event] = js.undefined,
+        Id: js.UndefOr[Id] = js.undefined,
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
+    ): UpdateEventActionResponse = {
+      val __obj = js.Dynamic.literal()
+      Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Event.foreach(__v => __obj.updateDynamic("Event")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateEventActionResponse]
     }
   }
 

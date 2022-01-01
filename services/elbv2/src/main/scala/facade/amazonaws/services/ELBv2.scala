@@ -659,6 +659,7 @@ package object elbv2 {
     var HealthCheckProtocol: js.UndefOr[ProtocolEnum]
     var HealthCheckTimeoutSeconds: js.UndefOr[HealthCheckTimeoutSeconds]
     var HealthyThresholdCount: js.UndefOr[HealthCheckThresholdCount]
+    var IpAddressType: js.UndefOr[TargetGroupIpAddressTypeEnum]
     var Matcher: js.UndefOr[Matcher]
     var Port: js.UndefOr[Port]
     var Protocol: js.UndefOr[ProtocolEnum]
@@ -680,6 +681,7 @@ package object elbv2 {
         HealthCheckProtocol: js.UndefOr[ProtocolEnum] = js.undefined,
         HealthCheckTimeoutSeconds: js.UndefOr[HealthCheckTimeoutSeconds] = js.undefined,
         HealthyThresholdCount: js.UndefOr[HealthCheckThresholdCount] = js.undefined,
+        IpAddressType: js.UndefOr[TargetGroupIpAddressTypeEnum] = js.undefined,
         Matcher: js.UndefOr[Matcher] = js.undefined,
         Port: js.UndefOr[Port] = js.undefined,
         Protocol: js.UndefOr[ProtocolEnum] = js.undefined,
@@ -700,6 +702,7 @@ package object elbv2 {
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
       HealthCheckTimeoutSeconds.foreach(__v => __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any]))
       HealthyThresholdCount.foreach(__v => __obj.updateDynamic("HealthyThresholdCount")(__v.asInstanceOf[js.Any]))
+      IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
       Matcher.foreach(__v => __obj.updateDynamic("Matcher")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
@@ -1119,6 +1122,7 @@ package object elbv2 {
 
   @js.native
   trait DescribeSSLPoliciesInput extends js.Object {
+    var LoadBalancerType: js.UndefOr[LoadBalancerTypeEnum]
     var Marker: js.UndefOr[Marker]
     var Names: js.UndefOr[SslPolicyNames]
     var PageSize: js.UndefOr[PageSize]
@@ -1127,11 +1131,13 @@ package object elbv2 {
   object DescribeSSLPoliciesInput {
     @inline
     def apply(
+        LoadBalancerType: js.UndefOr[LoadBalancerTypeEnum] = js.undefined,
         Marker: js.UndefOr[Marker] = js.undefined,
         Names: js.UndefOr[SslPolicyNames] = js.undefined,
         PageSize: js.UndefOr[PageSize] = js.undefined
     ): DescribeSSLPoliciesInput = {
       val __obj = js.Dynamic.literal()
+      LoadBalancerType.foreach(__v => __obj.updateDynamic("LoadBalancerType")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       Names.foreach(__v => __obj.updateDynamic("Names")(__v.asInstanceOf[js.Any]))
       PageSize.foreach(__v => __obj.updateDynamic("PageSize")(__v.asInstanceOf[js.Any]))
@@ -1412,7 +1418,7 @@ package object elbv2 {
     }
   }
 
-  /** Information about an Elastic Load Balancing resource limit for your AWS account.
+  /** Information about an Elastic Load Balancing resource limit for your Amazon Web Services account.
     */
   @js.native
   trait Limit extends js.Object {
@@ -2292,6 +2298,7 @@ package object elbv2 {
     var Ciphers: js.UndefOr[Ciphers]
     var Name: js.UndefOr[SslPolicyName]
     var SslProtocols: js.UndefOr[SslProtocols]
+    var SupportedLoadBalancerTypes: js.UndefOr[ListOfString]
   }
 
   object SslPolicy {
@@ -2299,12 +2306,14 @@ package object elbv2 {
     def apply(
         Ciphers: js.UndefOr[Ciphers] = js.undefined,
         Name: js.UndefOr[SslPolicyName] = js.undefined,
-        SslProtocols: js.UndefOr[SslProtocols] = js.undefined
+        SslProtocols: js.UndefOr[SslProtocols] = js.undefined,
+        SupportedLoadBalancerTypes: js.UndefOr[ListOfString] = js.undefined
     ): SslPolicy = {
       val __obj = js.Dynamic.literal()
       Ciphers.foreach(__v => __obj.updateDynamic("Ciphers")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       SslProtocols.foreach(__v => __obj.updateDynamic("SslProtocols")(__v.asInstanceOf[js.Any]))
+      SupportedLoadBalancerTypes.foreach(__v => __obj.updateDynamic("SupportedLoadBalancerTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SslPolicy]
     }
   }
@@ -2417,6 +2426,7 @@ package object elbv2 {
     var HealthCheckProtocol: js.UndefOr[ProtocolEnum]
     var HealthCheckTimeoutSeconds: js.UndefOr[HealthCheckTimeoutSeconds]
     var HealthyThresholdCount: js.UndefOr[HealthCheckThresholdCount]
+    var IpAddressType: js.UndefOr[TargetGroupIpAddressTypeEnum]
     var LoadBalancerArns: js.UndefOr[LoadBalancerArns]
     var Matcher: js.UndefOr[Matcher]
     var Port: js.UndefOr[Port]
@@ -2439,6 +2449,7 @@ package object elbv2 {
         HealthCheckProtocol: js.UndefOr[ProtocolEnum] = js.undefined,
         HealthCheckTimeoutSeconds: js.UndefOr[HealthCheckTimeoutSeconds] = js.undefined,
         HealthyThresholdCount: js.UndefOr[HealthCheckThresholdCount] = js.undefined,
+        IpAddressType: js.UndefOr[TargetGroupIpAddressTypeEnum] = js.undefined,
         LoadBalancerArns: js.UndefOr[LoadBalancerArns] = js.undefined,
         Matcher: js.UndefOr[Matcher] = js.undefined,
         Port: js.UndefOr[Port] = js.undefined,
@@ -2458,6 +2469,7 @@ package object elbv2 {
       HealthCheckProtocol.foreach(__v => __obj.updateDynamic("HealthCheckProtocol")(__v.asInstanceOf[js.Any]))
       HealthCheckTimeoutSeconds.foreach(__v => __obj.updateDynamic("HealthCheckTimeoutSeconds")(__v.asInstanceOf[js.Any]))
       HealthyThresholdCount.foreach(__v => __obj.updateDynamic("HealthyThresholdCount")(__v.asInstanceOf[js.Any]))
+      IpAddressType.foreach(__v => __obj.updateDynamic("IpAddressType")(__v.asInstanceOf[js.Any]))
       LoadBalancerArns.foreach(__v => __obj.updateDynamic("LoadBalancerArns")(__v.asInstanceOf[js.Any]))
       Matcher.foreach(__v => __obj.updateDynamic("Matcher")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))

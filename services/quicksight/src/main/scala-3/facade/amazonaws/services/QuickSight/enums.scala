@@ -55,6 +55,14 @@ object ColumnDataType {
   inline def values: js.Array[ColumnDataType] = js.Array(STRING, INTEGER, DECIMAL, DATETIME)
 }
 
+type ColumnTagName = "COLUMN_GEOGRAPHIC_ROLE" | "COLUMN_DESCRIPTION"
+object ColumnTagName {
+  inline val COLUMN_GEOGRAPHIC_ROLE: "COLUMN_GEOGRAPHIC_ROLE" = "COLUMN_GEOGRAPHIC_ROLE"
+  inline val COLUMN_DESCRIPTION: "COLUMN_DESCRIPTION" = "COLUMN_DESCRIPTION"
+
+  inline def values: js.Array[ColumnTagName] = js.Array(COLUMN_GEOGRAPHIC_ROLE, COLUMN_DESCRIPTION)
+}
+
 type DashboardBehavior = "ENABLED" | "DISABLED"
 object DashboardBehavior {
   inline val ENABLED: "ENABLED" = "ENABLED"
@@ -127,7 +135,7 @@ object DataSourceErrorInfoType {
   inline def values: js.Array[DataSourceErrorInfoType] = js.Array(ACCESS_DENIED, COPY_SOURCE_NOT_FOUND, TIMEOUT, ENGINE_VERSION_NOT_SUPPORTED, UNKNOWN_HOST, GENERIC_SQL_FAILURE, CONFLICT, UNKNOWN)
 }
 
-type DataSourceType = "ADOBE_ANALYTICS" | "AMAZON_ELASTICSEARCH" | "ATHENA" | "AURORA" | "AURORA_POSTGRESQL" | "AWS_IOT_ANALYTICS" | "GITHUB" | "JIRA" | "MARIADB" | "MYSQL" | "ORACLE" | "POSTGRESQL" | "PRESTO" | "REDSHIFT" | "S3" | "SALESFORCE" | "SERVICENOW" | "SNOWFLAKE" | "SPARK" | "SQLSERVER" | "TERADATA" | "TWITTER" | "TIMESTREAM"
+type DataSourceType = "ADOBE_ANALYTICS" | "AMAZON_ELASTICSEARCH" | "ATHENA" | "AURORA" | "AURORA_POSTGRESQL" | "AWS_IOT_ANALYTICS" | "GITHUB" | "JIRA" | "MARIADB" | "MYSQL" | "ORACLE" | "POSTGRESQL" | "PRESTO" | "REDSHIFT" | "S3" | "SALESFORCE" | "SERVICENOW" | "SNOWFLAKE" | "SPARK" | "SQLSERVER" | "TERADATA" | "TWITTER" | "TIMESTREAM" | "AMAZON_OPENSEARCH" | "EXASOL"
 object DataSourceType {
   inline val ADOBE_ANALYTICS: "ADOBE_ANALYTICS" = "ADOBE_ANALYTICS"
   inline val AMAZON_ELASTICSEARCH: "AMAZON_ELASTICSEARCH" = "AMAZON_ELASTICSEARCH"
@@ -152,6 +160,8 @@ object DataSourceType {
   inline val TERADATA: "TERADATA" = "TERADATA"
   inline val TWITTER: "TWITTER" = "TWITTER"
   inline val TIMESTREAM: "TIMESTREAM" = "TIMESTREAM"
+  inline val AMAZON_OPENSEARCH: "AMAZON_OPENSEARCH" = "AMAZON_OPENSEARCH"
+  inline val EXASOL: "EXASOL" = "EXASOL"
 
   inline def values: js.Array[DataSourceType] = js.Array(
     ADOBE_ANALYTICS,
@@ -176,7 +186,9 @@ object DataSourceType {
     SQLSERVER,
     TERADATA,
     TWITTER,
-    TIMESTREAM
+    TIMESTREAM,
+    AMAZON_OPENSEARCH,
+    EXASOL
   )
 }
 
@@ -216,6 +228,20 @@ object FilterOperator {
   inline def values: js.Array[FilterOperator] = js.Array(StringEquals)
 }
 
+type FolderFilterAttribute = "PARENT_FOLDER_ARN"
+object FolderFilterAttribute {
+  inline val PARENT_FOLDER_ARN: "PARENT_FOLDER_ARN" = "PARENT_FOLDER_ARN"
+
+  inline def values: js.Array[FolderFilterAttribute] = js.Array(PARENT_FOLDER_ARN)
+}
+
+type FolderType = "SHARED"
+object FolderType {
+  inline val SHARED: "SHARED" = "SHARED"
+
+  inline def values: js.Array[FolderType] = js.Array(SHARED)
+}
+
 type GeoSpatialCountryCode = "US"
 object GeoSpatialCountryCode {
   inline val US: "US" = "US"
@@ -252,7 +278,7 @@ object IdentityType {
 }
 
 type IngestionErrorType = "FAILURE_TO_ASSUME_ROLE" | "INGESTION_SUPERSEDED" | "INGESTION_CANCELED" | "DATA_SET_DELETED" | "DATA_SET_NOT_SPICE" | "S3_UPLOADED_FILE_DELETED" | "S3_MANIFEST_ERROR" | "DATA_TOLERANCE_EXCEPTION" | "SPICE_TABLE_NOT_FOUND" | "DATA_SET_SIZE_LIMIT_EXCEEDED" | "ROW_SIZE_LIMIT_EXCEEDED" | "ACCOUNT_CAPACITY_LIMIT_EXCEEDED" | "CUSTOMER_ERROR" | "DATA_SOURCE_NOT_FOUND" | "IAM_ROLE_NOT_AVAILABLE" | "CONNECTION_FAILURE" | "SQL_TABLE_NOT_FOUND" | "PERMISSION_DENIED" | "SSL_CERTIFICATE_VALIDATION_FAILURE" | "OAUTH_TOKEN_FAILURE" | "SOURCE_API_LIMIT_EXCEEDED_FAILURE" | "PASSWORD_AUTHENTICATION_FAILURE" | "SQL_SCHEMA_MISMATCH_ERROR" | "INVALID_DATE_FORMAT" | "INVALID_DATAPREP_SYNTAX" | "SOURCE_RESOURCE_LIMIT_EXCEEDED" | "SQL_INVALID_PARAMETER_VALUE" | "QUERY_TIMEOUT" | "SQL_NUMERIC_OVERFLOW" | "UNRESOLVABLE_HOST" | "UNROUTABLE_HOST" | "SQL_EXCEPTION" | "S3_FILE_INACCESSIBLE" | "IOT_FILE_NOT_FOUND" | "IOT_DATA_SET_FILE_EMPTY" | "INVALID_DATA_SOURCE_CONFIG" |
-  "DATA_SOURCE_AUTH_FAILED" | "DATA_SOURCE_CONNECTION_FAILED" | "FAILURE_TO_PROCESS_JSON_FILE" | "INTERNAL_SERVICE_ERROR"
+  "DATA_SOURCE_AUTH_FAILED" | "DATA_SOURCE_CONNECTION_FAILED" | "FAILURE_TO_PROCESS_JSON_FILE" | "INTERNAL_SERVICE_ERROR" | "REFRESH_SUPPRESSED_BY_EDIT" | "PERMISSION_NOT_FOUND" | "ELASTICSEARCH_CURSOR_NOT_ENABLED" | "CURSOR_NOT_ENABLED"
 object IngestionErrorType {
   inline val FAILURE_TO_ASSUME_ROLE: "FAILURE_TO_ASSUME_ROLE" = "FAILURE_TO_ASSUME_ROLE"
   inline val INGESTION_SUPERSEDED: "INGESTION_SUPERSEDED" = "INGESTION_SUPERSEDED"
@@ -294,6 +320,10 @@ object IngestionErrorType {
   inline val DATA_SOURCE_CONNECTION_FAILED: "DATA_SOURCE_CONNECTION_FAILED" = "DATA_SOURCE_CONNECTION_FAILED"
   inline val FAILURE_TO_PROCESS_JSON_FILE: "FAILURE_TO_PROCESS_JSON_FILE" = "FAILURE_TO_PROCESS_JSON_FILE"
   inline val INTERNAL_SERVICE_ERROR: "INTERNAL_SERVICE_ERROR" = "INTERNAL_SERVICE_ERROR"
+  inline val REFRESH_SUPPRESSED_BY_EDIT: "REFRESH_SUPPRESSED_BY_EDIT" = "REFRESH_SUPPRESSED_BY_EDIT"
+  inline val PERMISSION_NOT_FOUND: "PERMISSION_NOT_FOUND" = "PERMISSION_NOT_FOUND"
+  inline val ELASTICSEARCH_CURSOR_NOT_ENABLED: "ELASTICSEARCH_CURSOR_NOT_ENABLED" = "ELASTICSEARCH_CURSOR_NOT_ENABLED"
+  inline val CURSOR_NOT_ENABLED: "CURSOR_NOT_ENABLED" = "CURSOR_NOT_ENABLED"
 
   inline def values: js.Array[IngestionErrorType] = js.Array(
     FAILURE_TO_ASSUME_ROLE,
@@ -335,7 +365,11 @@ object IngestionErrorType {
     DATA_SOURCE_AUTH_FAILED,
     DATA_SOURCE_CONNECTION_FAILED,
     FAILURE_TO_PROCESS_JSON_FILE,
-    INTERNAL_SERVICE_ERROR
+    INTERNAL_SERVICE_ERROR,
+    REFRESH_SUPPRESSED_BY_EDIT,
+    PERMISSION_NOT_FOUND,
+    ELASTICSEARCH_CURSOR_NOT_ENABLED,
+    CURSOR_NOT_ENABLED
   )
 }
 
@@ -347,6 +381,8 @@ object IngestionRequestSource {
   inline def values: js.Array[IngestionRequestSource] = js.Array(MANUAL, SCHEDULED)
 }
 
+/** This defines the type of ingestion request. This is returned as part of create ingestion response.
+  */
 type IngestionRequestType = "INITIAL_INGESTION" | "EDIT" | "INCREMENTAL_REFRESH" | "FULL_REFRESH"
 object IngestionRequestType {
   inline val INITIAL_INGESTION: "INITIAL_INGESTION" = "INITIAL_INGESTION"
@@ -367,6 +403,16 @@ object IngestionStatus {
   inline val CANCELLED: "CANCELLED" = "CANCELLED"
 
   inline def values: js.Array[IngestionStatus] = js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED)
+}
+
+/** This defines the type of ingestion user wants to trigger. This is part of create ingestion request.
+  */
+type IngestionType = "INCREMENTAL_REFRESH" | "FULL_REFRESH"
+object IngestionType {
+  inline val INCREMENTAL_REFRESH: "INCREMENTAL_REFRESH" = "INCREMENTAL_REFRESH"
+  inline val FULL_REFRESH: "FULL_REFRESH" = "FULL_REFRESH"
+
+  inline def values: js.Array[IngestionType] = js.Array(INCREMENTAL_REFRESH, FULL_REFRESH)
 }
 
 type InputColumnDataType = "STRING" | "INTEGER" | "DECIMAL" | "DATETIME" | "BIT" | "BOOLEAN" | "JSON"
@@ -390,6 +436,15 @@ object JoinType {
   inline val RIGHT: "RIGHT" = "RIGHT"
 
   inline def values: js.Array[JoinType] = js.Array(INNER, OUTER, LEFT, RIGHT)
+}
+
+type MemberType = "DASHBOARD" | "ANALYSIS" | "DATASET"
+object MemberType {
+  inline val DASHBOARD: "DASHBOARD" = "DASHBOARD"
+  inline val ANALYSIS: "ANALYSIS" = "ANALYSIS"
+  inline val DATASET: "DATASET" = "DATASET"
+
+  inline def values: js.Array[MemberType] = js.Array(DASHBOARD, ANALYSIS, DATASET)
 }
 
 type NamespaceErrorType = "PERMISSION_DENIED" | "INTERNAL_SERVICE_ERROR"
@@ -424,12 +479,28 @@ object ResourceStatus {
   inline def values: js.Array[ResourceStatus] = js.Array(CREATION_IN_PROGRESS, CREATION_SUCCESSFUL, CREATION_FAILED, UPDATE_IN_PROGRESS, UPDATE_SUCCESSFUL, UPDATE_FAILED, DELETED)
 }
 
+type RowLevelPermissionFormatVersion = "VERSION_1" | "VERSION_2"
+object RowLevelPermissionFormatVersion {
+  inline val VERSION_1: "VERSION_1" = "VERSION_1"
+  inline val VERSION_2: "VERSION_2" = "VERSION_2"
+
+  inline def values: js.Array[RowLevelPermissionFormatVersion] = js.Array(VERSION_1, VERSION_2)
+}
+
 type RowLevelPermissionPolicy = "GRANT_ACCESS" | "DENY_ACCESS"
 object RowLevelPermissionPolicy {
   inline val GRANT_ACCESS: "GRANT_ACCESS" = "GRANT_ACCESS"
   inline val DENY_ACCESS: "DENY_ACCESS" = "DENY_ACCESS"
 
   inline def values: js.Array[RowLevelPermissionPolicy] = js.Array(GRANT_ACCESS, DENY_ACCESS)
+}
+
+type Status = "ENABLED" | "DISABLED"
+object Status {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[Status] = js.Array(ENABLED, DISABLED)
 }
 
 type TemplateErrorType = "SOURCE_NOT_FOUND" | "DATA_SET_NOT_FOUND" | "INTERNAL_FAILURE" | "ACCESS_DENIED"

@@ -218,6 +218,7 @@ package object cognitoidentityprovider {
     @inline def listUsersInGroupFuture(params: ListUsersInGroupRequest): Future[ListUsersInGroupResponse] = service.listUsersInGroup(params).promise().toFuture
     @inline def resendConfirmationCodeFuture(params: ResendConfirmationCodeRequest): Future[ResendConfirmationCodeResponse] = service.resendConfirmationCode(params).promise().toFuture
     @inline def respondToAuthChallengeFuture(params: RespondToAuthChallengeRequest): Future[RespondToAuthChallengeResponse] = service.respondToAuthChallenge(params).promise().toFuture
+    @inline def revokeTokenFuture(params: RevokeTokenRequest): Future[RevokeTokenResponse] = service.revokeToken(params).promise().toFuture
     @inline def setRiskConfigurationFuture(params: SetRiskConfigurationRequest): Future[SetRiskConfigurationResponse] = service.setRiskConfiguration(params).promise().toFuture
     @inline def setUICustomizationFuture(params: SetUICustomizationRequest): Future[SetUICustomizationResponse] = service.setUICustomization(params).promise().toFuture
     @inline def setUserMFAPreferenceFuture(params: SetUserMFAPreferenceRequest): Future[SetUserMFAPreferenceResponse] = service.setUserMFAPreference(params).promise().toFuture
@@ -326,6 +327,7 @@ package object cognitoidentityprovider {
     def listUsersInGroup(params: ListUsersInGroupRequest): Request[ListUsersInGroupResponse] = js.native
     def resendConfirmationCode(params: ResendConfirmationCodeRequest): Request[ResendConfirmationCodeResponse] = js.native
     def respondToAuthChallenge(params: RespondToAuthChallengeRequest): Request[RespondToAuthChallengeResponse] = js.native
+    def revokeToken(params: RevokeTokenRequest): Request[RevokeTokenResponse] = js.native
     def setRiskConfiguration(params: SetRiskConfigurationRequest): Request[SetRiskConfigurationResponse] = js.native
     def setUICustomization(params: SetUICustomizationRequest): Request[SetUICustomizationResponse] = js.native
     def setUserMFAPreference(params: SetUserMFAPreferenceRequest): Request[SetUserMFAPreferenceResponse] = js.native
@@ -2254,6 +2256,7 @@ package object cognitoidentityprovider {
     var AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType]
     var CallbackURLs: js.UndefOr[CallbackURLsListType]
     var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
+    var EnableTokenRevocation: js.UndefOr[WrappedBooleanType]
     var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
     var GenerateSecret: js.UndefOr[GenerateSecret]
     var IdTokenValidity: js.UndefOr[IdTokenValidityType]
@@ -2278,6 +2281,7 @@ package object cognitoidentityprovider {
         AnalyticsConfiguration: js.UndefOr[AnalyticsConfigurationType] = js.undefined,
         CallbackURLs: js.UndefOr[CallbackURLsListType] = js.undefined,
         DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
+        EnableTokenRevocation: js.UndefOr[WrappedBooleanType] = js.undefined,
         ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
         GenerateSecret: js.UndefOr[GenerateSecret] = js.undefined,
         IdTokenValidity: js.UndefOr[IdTokenValidityType] = js.undefined,
@@ -2301,6 +2305,7 @@ package object cognitoidentityprovider {
       AnalyticsConfiguration.foreach(__v => __obj.updateDynamic("AnalyticsConfiguration")(__v.asInstanceOf[js.Any]))
       CallbackURLs.foreach(__v => __obj.updateDynamic("CallbackURLs")(__v.asInstanceOf[js.Any]))
       DefaultRedirectURI.foreach(__v => __obj.updateDynamic("DefaultRedirectURI")(__v.asInstanceOf[js.Any]))
+      EnableTokenRevocation.foreach(__v => __obj.updateDynamic("EnableTokenRevocation")(__v.asInstanceOf[js.Any]))
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
       GenerateSecret.foreach(__v => __obj.updateDynamic("GenerateSecret")(__v.asInstanceOf[js.Any]))
       IdTokenValidity.foreach(__v => __obj.updateDynamic("IdTokenValidity")(__v.asInstanceOf[js.Any]))
@@ -3835,7 +3840,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** Specifies the configuration for AWS Lambda triggers.
+  /** Specifies the configuration for Lambda triggers.
     */
   @js.native
   trait LambdaConfigType extends js.Object {
@@ -4760,6 +4765,41 @@ package object cognitoidentityprovider {
     }
   }
 
+  @js.native
+  trait RevokeTokenRequest extends js.Object {
+    var ClientId: ClientIdType
+    var Token: TokenModelType
+    var ClientSecret: js.UndefOr[ClientSecretType]
+  }
+
+  object RevokeTokenRequest {
+    @inline
+    def apply(
+        ClientId: ClientIdType,
+        Token: TokenModelType,
+        ClientSecret: js.UndefOr[ClientSecretType] = js.undefined
+    ): RevokeTokenRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientId" -> ClientId.asInstanceOf[js.Any],
+        "Token" -> Token.asInstanceOf[js.Any]
+      )
+
+      ClientSecret.foreach(__v => __obj.updateDynamic("ClientSecret")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RevokeTokenRequest]
+    }
+  }
+
+  @js.native
+  trait RevokeTokenResponse extends js.Object
+
+  object RevokeTokenResponse {
+    @inline
+    def apply(): RevokeTokenResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[RevokeTokenResponse]
+    }
+  }
+
   /** The risk configuration type.
     */
   @js.native
@@ -5151,7 +5191,7 @@ package object cognitoidentityprovider {
     }
   }
 
-  /** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your AWS account. The Cognito User Pool makes the request to the Amazon SNS Service by using an AWS IAM role that you provide for your AWS account.
+  /** The SMS configuration type that includes the settings the Cognito User Pool needs to call for the Amazon SNS service to send an SMS message from your account. The Cognito User Pool makes the request to the Amazon SNS Service by using an IAM role that you provide for your account.
     */
   @js.native
   trait SmsConfigurationType extends js.Object {
@@ -5731,6 +5771,7 @@ package object cognitoidentityprovider {
     var CallbackURLs: js.UndefOr[CallbackURLsListType]
     var ClientName: js.UndefOr[ClientNameType]
     var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
+    var EnableTokenRevocation: js.UndefOr[WrappedBooleanType]
     var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
     var IdTokenValidity: js.UndefOr[IdTokenValidityType]
     var LogoutURLs: js.UndefOr[LogoutURLsListType]
@@ -5755,6 +5796,7 @@ package object cognitoidentityprovider {
         CallbackURLs: js.UndefOr[CallbackURLsListType] = js.undefined,
         ClientName: js.UndefOr[ClientNameType] = js.undefined,
         DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
+        EnableTokenRevocation: js.UndefOr[WrappedBooleanType] = js.undefined,
         ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
         IdTokenValidity: js.UndefOr[IdTokenValidityType] = js.undefined,
         LogoutURLs: js.UndefOr[LogoutURLsListType] = js.undefined,
@@ -5778,6 +5820,7 @@ package object cognitoidentityprovider {
       CallbackURLs.foreach(__v => __obj.updateDynamic("CallbackURLs")(__v.asInstanceOf[js.Any]))
       ClientName.foreach(__v => __obj.updateDynamic("ClientName")(__v.asInstanceOf[js.Any]))
       DefaultRedirectURI.foreach(__v => __obj.updateDynamic("DefaultRedirectURI")(__v.asInstanceOf[js.Any]))
+      EnableTokenRevocation.foreach(__v => __obj.updateDynamic("EnableTokenRevocation")(__v.asInstanceOf[js.Any]))
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
       IdTokenValidity.foreach(__v => __obj.updateDynamic("IdTokenValidity")(__v.asInstanceOf[js.Any]))
       LogoutURLs.foreach(__v => __obj.updateDynamic("LogoutURLs")(__v.asInstanceOf[js.Any]))
@@ -6063,6 +6106,7 @@ package object cognitoidentityprovider {
     var ClientSecret: js.UndefOr[ClientSecretType]
     var CreationDate: js.UndefOr[DateType]
     var DefaultRedirectURI: js.UndefOr[RedirectUrlType]
+    var EnableTokenRevocation: js.UndefOr[WrappedBooleanType]
     var ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType]
     var IdTokenValidity: js.UndefOr[IdTokenValidityType]
     var LastModifiedDate: js.UndefOr[DateType]
@@ -6090,6 +6134,7 @@ package object cognitoidentityprovider {
         ClientSecret: js.UndefOr[ClientSecretType] = js.undefined,
         CreationDate: js.UndefOr[DateType] = js.undefined,
         DefaultRedirectURI: js.UndefOr[RedirectUrlType] = js.undefined,
+        EnableTokenRevocation: js.UndefOr[WrappedBooleanType] = js.undefined,
         ExplicitAuthFlows: js.UndefOr[ExplicitAuthFlowsListType] = js.undefined,
         IdTokenValidity: js.UndefOr[IdTokenValidityType] = js.undefined,
         LastModifiedDate: js.UndefOr[DateType] = js.undefined,
@@ -6114,6 +6159,7 @@ package object cognitoidentityprovider {
       ClientSecret.foreach(__v => __obj.updateDynamic("ClientSecret")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       DefaultRedirectURI.foreach(__v => __obj.updateDynamic("DefaultRedirectURI")(__v.asInstanceOf[js.Any]))
+      EnableTokenRevocation.foreach(__v => __obj.updateDynamic("EnableTokenRevocation")(__v.asInstanceOf[js.Any]))
       ExplicitAuthFlows.foreach(__v => __obj.updateDynamic("ExplicitAuthFlows")(__v.asInstanceOf[js.Any]))
       IdTokenValidity.foreach(__v => __obj.updateDynamic("IdTokenValidity")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))

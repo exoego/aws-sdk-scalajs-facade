@@ -8,6 +8,7 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object cloudformation {
+  type AcceptTermsAndConditions = Boolean
   type Account = String
   type AccountGateStatusReason = String
   type AccountLimitList = js.Array[AccountLimit]
@@ -17,6 +18,8 @@ package object cloudformation {
   type AllowedValues = js.Array[AllowedValue]
   type Arn = String
   type AutoDeploymentNullable = Boolean
+  type AutoUpdate = Boolean
+  type BatchDescribeTypeConfigurationsErrors = js.Array[BatchDescribeTypeConfigurationsError]
   type BoxedInteger = Int
   type BoxedMaxResults = Int
   type Capabilities = js.Array[Capability]
@@ -30,12 +33,16 @@ package object cloudformation {
   type Changes = js.Array[Change]
   type ClientRequestToken = String
   type ClientToken = String
+  type ConfigurationSchema = String
+  type ConnectionArn = String
   type CreationTime = js.Date
   type DeletionTime = js.Date
   type Description = String
   type DisableRollback = Boolean
   type DriftedStackInstancesCount = Int
   type EnableTerminationProtection = Boolean
+  type ErrorCode = String
+  type ErrorMessage = String
   type EventId = String
   type ExecutionRoleName = String
   type ExportName = String
@@ -48,6 +55,8 @@ package object cloudformation {
   type InProgressStackInstancesCount = Int
   type InSyncStackInstancesCount = Int
   type IncludeNestedStacks = Boolean
+  type IsActivated = Boolean
+  type IsDefaultConfiguration = Boolean
   type IsDefaultVersion = Boolean
   type Key = String
   type LastUpdatedTime = js.Date
@@ -57,6 +66,8 @@ package object cloudformation {
   type LogicalIdHierarchy = String
   type LogicalResourceId = String
   type LogicalResourceIds = js.Array[LogicalResourceId]
+  type MajorVersion = Double
+  type ManagedExecutionNullable = Boolean
   type MaxConcurrentCount = Int
   type MaxConcurrentPercentage = Int
   type MaxResults = Int
@@ -85,12 +96,17 @@ package object cloudformation {
   type PropertyName = String
   type PropertyPath = String
   type PropertyValue = String
+  type PublicVersionNumber = String
+  type PublisherId = String
+  type PublisherName = String
+  type PublisherProfile = String
   type Reason = String
   type Region = String
   type RegionList = js.Array[Region]
   type RegistrationToken = String
   type RegistrationTokenList = js.Array[RegistrationToken]
   type RequestToken = String
+  type RequiredActivatedTypes = js.Array[RequiredActivatedType]
   type ResourceChangeDetails = js.Array[ResourceChangeDetail]
   type ResourceIdentifierProperties = js.Dictionary[ResourceIdentifierPropertyValue]
   type ResourceIdentifierPropertyKey = String
@@ -113,12 +129,15 @@ package object cloudformation {
   type RoleARN = String
   type RoleArn = String
   type RollbackTriggers = js.Array[RollbackTrigger]
+  type S3Bucket = String
   type S3Url = String
   type Scope = js.Array[ResourceAttribute]
   type StackDriftDetectionId = String
   type StackDriftDetectionStatusReason = String
   type StackEvents = js.Array[StackEvent]
   type StackId = String
+  type StackIdList = js.Array[StackId]
+  type StackIdsUrl = String
   type StackInstanceFilterValues = String
   type StackInstanceFilters = js.Array[StackInstanceFilter]
   type StackInstanceSummaries = js.Array[StackInstanceSummary]
@@ -145,6 +164,8 @@ package object cloudformation {
   type Stacks = js.Array[Stack]
   type StageList = js.Array[TemplateStage]
   type StatusMessage = String
+  type SupportedMajorVersion = Int
+  type SupportedMajorVersions = js.Array[SupportedMajorVersion]
   type TagKey = String
   type TagValue = String
   type Tags = js.Array[Tag]
@@ -152,6 +173,7 @@ package object cloudformation {
   type TemplateDescription = String
   type TemplateParameters = js.Array[TemplateParameter]
   type TemplateURL = String
+  type ThirdPartyTypeArn = String
   type TimeoutMinutes = Int
   type Timestamp = js.Date
   type TotalStackInstancesCount = Int
@@ -159,12 +181,20 @@ package object cloudformation {
   type TransformsList = js.Array[TransformName]
   type Type = String
   type TypeArn = String
+  type TypeConfiguration = String
+  type TypeConfigurationAlias = String
+  type TypeConfigurationArn = String
+  type TypeConfigurationDetailsList = js.Array[TypeConfigurationDetails]
+  type TypeConfigurationIdentifiers = js.Array[TypeConfigurationIdentifier]
   type TypeHierarchy = String
   type TypeName = String
+  type TypeNamePrefix = String
   type TypeSchema = String
   type TypeSummaries = js.Array[TypeSummary]
+  type TypeTestsStatusDescription = String
   type TypeVersionId = String
   type TypeVersionSummaries = js.Array[TypeVersionSummary]
+  type UnprocessedTypeConfigurations = js.Array[TypeConfigurationIdentifier]
   type Url = String
   type UsePreviousTemplate = Boolean
   type UsePreviousValue = Boolean
@@ -173,12 +203,15 @@ package object cloudformation {
 
   final class CloudFormationOps(private val service: CloudFormation) extends AnyVal {
 
+    @inline def activateTypeFuture(params: ActivateTypeInput): Future[ActivateTypeOutput] = service.activateType(params).promise().toFuture
+    @inline def batchDescribeTypeConfigurationsFuture(params: BatchDescribeTypeConfigurationsInput): Future[BatchDescribeTypeConfigurationsOutput] = service.batchDescribeTypeConfigurations(params).promise().toFuture
     @inline def cancelUpdateStackFuture(params: CancelUpdateStackInput): Future[js.Object] = service.cancelUpdateStack(params).promise().toFuture
     @inline def continueUpdateRollbackFuture(params: ContinueUpdateRollbackInput): Future[ContinueUpdateRollbackOutput] = service.continueUpdateRollback(params).promise().toFuture
     @inline def createChangeSetFuture(params: CreateChangeSetInput): Future[CreateChangeSetOutput] = service.createChangeSet(params).promise().toFuture
     @inline def createStackFuture(params: CreateStackInput): Future[CreateStackOutput] = service.createStack(params).promise().toFuture
     @inline def createStackInstancesFuture(params: CreateStackInstancesInput): Future[CreateStackInstancesOutput] = service.createStackInstances(params).promise().toFuture
     @inline def createStackSetFuture(params: CreateStackSetInput): Future[CreateStackSetOutput] = service.createStackSet(params).promise().toFuture
+    @inline def deactivateTypeFuture(params: DeactivateTypeInput): Future[DeactivateTypeOutput] = service.deactivateType(params).promise().toFuture
     @inline def deleteChangeSetFuture(params: DeleteChangeSetInput): Future[DeleteChangeSetOutput] = service.deleteChangeSet(params).promise().toFuture
     @inline def deleteStackFuture(params: DeleteStackInput): Future[js.Object] = service.deleteStack(params).promise().toFuture
     @inline def deleteStackInstancesFuture(params: DeleteStackInstancesInput): Future[DeleteStackInstancesOutput] = service.deleteStackInstances(params).promise().toFuture
@@ -186,6 +219,7 @@ package object cloudformation {
     @inline def deregisterTypeFuture(params: DeregisterTypeInput): Future[DeregisterTypeOutput] = service.deregisterType(params).promise().toFuture
     @inline def describeAccountLimitsFuture(params: DescribeAccountLimitsInput): Future[DescribeAccountLimitsOutput] = service.describeAccountLimits(params).promise().toFuture
     @inline def describeChangeSetFuture(params: DescribeChangeSetInput): Future[DescribeChangeSetOutput] = service.describeChangeSet(params).promise().toFuture
+    @inline def describePublisherFuture(params: DescribePublisherInput): Future[DescribePublisherOutput] = service.describePublisher(params).promise().toFuture
     @inline def describeStackDriftDetectionStatusFuture(params: DescribeStackDriftDetectionStatusInput): Future[DescribeStackDriftDetectionStatusOutput] = service.describeStackDriftDetectionStatus(params).promise().toFuture
     @inline def describeStackEventsFuture(params: DescribeStackEventsInput): Future[DescribeStackEventsOutput] = service.describeStackEvents(params).promise().toFuture
     @inline def describeStackInstanceFuture(params: DescribeStackInstanceInput): Future[DescribeStackInstanceOutput] = service.describeStackInstance(params).promise().toFuture
@@ -205,6 +239,7 @@ package object cloudformation {
     @inline def getStackPolicyFuture(params: GetStackPolicyInput): Future[GetStackPolicyOutput] = service.getStackPolicy(params).promise().toFuture
     @inline def getTemplateFuture(params: GetTemplateInput): Future[GetTemplateOutput] = service.getTemplate(params).promise().toFuture
     @inline def getTemplateSummaryFuture(params: GetTemplateSummaryInput): Future[GetTemplateSummaryOutput] = service.getTemplateSummary(params).promise().toFuture
+    @inline def importStacksToStackSetFuture(params: ImportStacksToStackSetInput): Future[ImportStacksToStackSetOutput] = service.importStacksToStackSet(params).promise().toFuture
     @inline def listChangeSetsFuture(params: ListChangeSetsInput): Future[ListChangeSetsOutput] = service.listChangeSets(params).promise().toFuture
     @inline def listExportsFuture(params: ListExportsInput): Future[ListExportsOutput] = service.listExports(params).promise().toFuture
     @inline def listImportsFuture(params: ListImportsInput): Future[ListImportsOutput] = service.listImports(params).promise().toFuture
@@ -217,12 +252,17 @@ package object cloudformation {
     @inline def listTypeRegistrationsFuture(params: ListTypeRegistrationsInput): Future[ListTypeRegistrationsOutput] = service.listTypeRegistrations(params).promise().toFuture
     @inline def listTypeVersionsFuture(params: ListTypeVersionsInput): Future[ListTypeVersionsOutput] = service.listTypeVersions(params).promise().toFuture
     @inline def listTypesFuture(params: ListTypesInput): Future[ListTypesOutput] = service.listTypes(params).promise().toFuture
+    @inline def publishTypeFuture(params: PublishTypeInput): Future[PublishTypeOutput] = service.publishType(params).promise().toFuture
     @inline def recordHandlerProgressFuture(params: RecordHandlerProgressInput): Future[RecordHandlerProgressOutput] = service.recordHandlerProgress(params).promise().toFuture
+    @inline def registerPublisherFuture(params: RegisterPublisherInput): Future[RegisterPublisherOutput] = service.registerPublisher(params).promise().toFuture
     @inline def registerTypeFuture(params: RegisterTypeInput): Future[RegisterTypeOutput] = service.registerType(params).promise().toFuture
+    @inline def rollbackStackFuture(params: RollbackStackInput): Future[RollbackStackOutput] = service.rollbackStack(params).promise().toFuture
     @inline def setStackPolicyFuture(params: SetStackPolicyInput): Future[js.Object] = service.setStackPolicy(params).promise().toFuture
+    @inline def setTypeConfigurationFuture(params: SetTypeConfigurationInput): Future[SetTypeConfigurationOutput] = service.setTypeConfiguration(params).promise().toFuture
     @inline def setTypeDefaultVersionFuture(params: SetTypeDefaultVersionInput): Future[SetTypeDefaultVersionOutput] = service.setTypeDefaultVersion(params).promise().toFuture
     @inline def signalResourceFuture(params: SignalResourceInput): Future[js.Object] = service.signalResource(params).promise().toFuture
     @inline def stopStackSetOperationFuture(params: StopStackSetOperationInput): Future[StopStackSetOperationOutput] = service.stopStackSetOperation(params).promise().toFuture
+    @inline def testTypeFuture(params: TestTypeInput): Future[TestTypeOutput] = service.testType(params).promise().toFuture
     @inline def updateStackFuture(params: UpdateStackInput): Future[UpdateStackOutput] = service.updateStack(params).promise().toFuture
     @inline def updateStackInstancesFuture(params: UpdateStackInstancesInput): Future[UpdateStackInstancesOutput] = service.updateStackInstances(params).promise().toFuture
     @inline def updateStackSetFuture(params: UpdateStackSetInput): Future[UpdateStackSetOutput] = service.updateStackSet(params).promise().toFuture
@@ -236,12 +276,15 @@ package object cloudformation {
   class CloudFormation() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def activateType(params: ActivateTypeInput): Request[ActivateTypeOutput] = js.native
+    def batchDescribeTypeConfigurations(params: BatchDescribeTypeConfigurationsInput): Request[BatchDescribeTypeConfigurationsOutput] = js.native
     def cancelUpdateStack(params: CancelUpdateStackInput): Request[js.Object] = js.native
     def continueUpdateRollback(params: ContinueUpdateRollbackInput): Request[ContinueUpdateRollbackOutput] = js.native
     def createChangeSet(params: CreateChangeSetInput): Request[CreateChangeSetOutput] = js.native
     def createStack(params: CreateStackInput): Request[CreateStackOutput] = js.native
     def createStackInstances(params: CreateStackInstancesInput): Request[CreateStackInstancesOutput] = js.native
     def createStackSet(params: CreateStackSetInput): Request[CreateStackSetOutput] = js.native
+    def deactivateType(params: DeactivateTypeInput): Request[DeactivateTypeOutput] = js.native
     def deleteChangeSet(params: DeleteChangeSetInput): Request[DeleteChangeSetOutput] = js.native
     def deleteStack(params: DeleteStackInput): Request[js.Object] = js.native
     def deleteStackInstances(params: DeleteStackInstancesInput): Request[DeleteStackInstancesOutput] = js.native
@@ -249,6 +292,7 @@ package object cloudformation {
     def deregisterType(params: DeregisterTypeInput): Request[DeregisterTypeOutput] = js.native
     def describeAccountLimits(params: DescribeAccountLimitsInput): Request[DescribeAccountLimitsOutput] = js.native
     def describeChangeSet(params: DescribeChangeSetInput): Request[DescribeChangeSetOutput] = js.native
+    def describePublisher(params: DescribePublisherInput): Request[DescribePublisherOutput] = js.native
     def describeStackDriftDetectionStatus(params: DescribeStackDriftDetectionStatusInput): Request[DescribeStackDriftDetectionStatusOutput] = js.native
     def describeStackEvents(params: DescribeStackEventsInput): Request[DescribeStackEventsOutput] = js.native
     def describeStackInstance(params: DescribeStackInstanceInput): Request[DescribeStackInstanceOutput] = js.native
@@ -268,6 +312,7 @@ package object cloudformation {
     def getStackPolicy(params: GetStackPolicyInput): Request[GetStackPolicyOutput] = js.native
     def getTemplate(params: GetTemplateInput): Request[GetTemplateOutput] = js.native
     def getTemplateSummary(params: GetTemplateSummaryInput): Request[GetTemplateSummaryOutput] = js.native
+    def importStacksToStackSet(params: ImportStacksToStackSetInput): Request[ImportStacksToStackSetOutput] = js.native
     def listChangeSets(params: ListChangeSetsInput): Request[ListChangeSetsOutput] = js.native
     def listExports(params: ListExportsInput): Request[ListExportsOutput] = js.native
     def listImports(params: ListImportsInput): Request[ListImportsOutput] = js.native
@@ -280,12 +325,17 @@ package object cloudformation {
     def listTypeRegistrations(params: ListTypeRegistrationsInput): Request[ListTypeRegistrationsOutput] = js.native
     def listTypeVersions(params: ListTypeVersionsInput): Request[ListTypeVersionsOutput] = js.native
     def listTypes(params: ListTypesInput): Request[ListTypesOutput] = js.native
+    def publishType(params: PublishTypeInput): Request[PublishTypeOutput] = js.native
     def recordHandlerProgress(params: RecordHandlerProgressInput): Request[RecordHandlerProgressOutput] = js.native
+    def registerPublisher(params: RegisterPublisherInput): Request[RegisterPublisherOutput] = js.native
     def registerType(params: RegisterTypeInput): Request[RegisterTypeOutput] = js.native
+    def rollbackStack(params: RollbackStackInput): Request[RollbackStackOutput] = js.native
     def setStackPolicy(params: SetStackPolicyInput): Request[js.Object] = js.native
+    def setTypeConfiguration(params: SetTypeConfigurationInput): Request[SetTypeConfigurationOutput] = js.native
     def setTypeDefaultVersion(params: SetTypeDefaultVersionInput): Request[SetTypeDefaultVersionOutput] = js.native
     def signalResource(params: SignalResourceInput): Request[js.Object] = js.native
     def stopStackSetOperation(params: StopStackSetOperationInput): Request[StopStackSetOperationOutput] = js.native
+    def testType(params: TestTypeInput): Request[TestTypeOutput] = js.native
     def updateStack(params: UpdateStackInput): Request[UpdateStackOutput] = js.native
     def updateStackInstances(params: UpdateStackInstancesInput): Request[UpdateStackInstancesOutput] = js.native
     def updateStackSet(params: UpdateStackSetInput): Request[UpdateStackSetOutput] = js.native
@@ -298,7 +348,7 @@ package object cloudformation {
     }
   }
 
-  /** Structure that contains the results of the account gate function which AWS CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region. For each account and Region, AWS CloudFormation lets you specify a Lamdba function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html|Configuring a target account gate]].
+  /** Structure that contains the results of the account gate function which CloudFormation invokes, if present, before proceeding with a stack set operation in an account and Region. For each account and Region, CloudFormation lets you specify a Lambda function that encapsulates any requirements that must be met before CloudFormation can proceed with a stack set operation in that account and Region. CloudFormation invokes the function each time a stack set operation is requested for that account and Region; if the function returns <code>FAILED</code>, CloudFormation cancels the operation in that account and Region, and sets the stack set operation result status for that account and Region to <code>FAILED</code>. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-account-gating.html|Configuring a target account gate]].
     */
   @js.native
   trait AccountGateResult extends js.Object {
@@ -319,7 +369,7 @@ package object cloudformation {
     }
   }
 
-  /** The AccountLimit data type. CloudFormation has the following limits per account: * Number of concurrent resources * Number of stacks * Number of stack outputs For more information about these account limits, and other CloudFormation limits, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html|AWS CloudFormation Limits]] in the <i>AWS CloudFormation User Guide</i>.
+  /** The AccountLimit data type. CloudFormation has the following limits per account: * Number of concurrent resources * Number of stacks * Number of stack outputs For more information about these account limits, and other CloudFormation limits, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html|CloudFormation Limits]] in the <i>CloudFormation User Guide</i>.
     */
   @js.native
   trait AccountLimit extends js.Object {
@@ -340,7 +390,66 @@ package object cloudformation {
     }
   }
 
-  /** [Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).
+  @js.native
+  trait ActivateTypeInput extends js.Object {
+    var AutoUpdate: js.UndefOr[AutoUpdate]
+    var ExecutionRoleArn: js.UndefOr[RoleArn]
+    var LoggingConfig: js.UndefOr[LoggingConfig]
+    var MajorVersion: js.UndefOr[MajorVersion]
+    var PublicTypeArn: js.UndefOr[ThirdPartyTypeArn]
+    var PublisherId: js.UndefOr[PublisherId]
+    var Type: js.UndefOr[ThirdPartyType]
+    var TypeName: js.UndefOr[TypeName]
+    var TypeNameAlias: js.UndefOr[TypeName]
+    var VersionBump: js.UndefOr[VersionBump]
+  }
+
+  object ActivateTypeInput {
+    @inline
+    def apply(
+        AutoUpdate: js.UndefOr[AutoUpdate] = js.undefined,
+        ExecutionRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        LoggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
+        MajorVersion: js.UndefOr[MajorVersion] = js.undefined,
+        PublicTypeArn: js.UndefOr[ThirdPartyTypeArn] = js.undefined,
+        PublisherId: js.UndefOr[PublisherId] = js.undefined,
+        Type: js.UndefOr[ThirdPartyType] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined,
+        TypeNameAlias: js.UndefOr[TypeName] = js.undefined,
+        VersionBump: js.UndefOr[VersionBump] = js.undefined
+    ): ActivateTypeInput = {
+      val __obj = js.Dynamic.literal()
+      AutoUpdate.foreach(__v => __obj.updateDynamic("AutoUpdate")(__v.asInstanceOf[js.Any]))
+      ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
+      LoggingConfig.foreach(__v => __obj.updateDynamic("LoggingConfig")(__v.asInstanceOf[js.Any]))
+      MajorVersion.foreach(__v => __obj.updateDynamic("MajorVersion")(__v.asInstanceOf[js.Any]))
+      PublicTypeArn.foreach(__v => __obj.updateDynamic("PublicTypeArn")(__v.asInstanceOf[js.Any]))
+      PublisherId.foreach(__v => __obj.updateDynamic("PublisherId")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      TypeNameAlias.foreach(__v => __obj.updateDynamic("TypeNameAlias")(__v.asInstanceOf[js.Any]))
+      VersionBump.foreach(__v => __obj.updateDynamic("VersionBump")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActivateTypeInput]
+    }
+  }
+
+  @js.native
+  trait ActivateTypeOutput extends js.Object {
+    var Arn: js.UndefOr[PrivateTypeArn]
+  }
+
+  object ActivateTypeOutput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[PrivateTypeArn] = js.undefined
+    ): ActivateTypeOutput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ActivateTypeOutput]
+    }
+  }
+
+  /** [Service-managed permissions] Describes whether StackSets automatically deploys to Organizations accounts that are added to a target organization or organizational unit (OU).
     */
   @js.native
   trait AutoDeployment extends js.Object {
@@ -358,6 +467,69 @@ package object cloudformation {
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       RetainStacksOnAccountRemoval.foreach(__v => __obj.updateDynamic("RetainStacksOnAccountRemoval")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoDeployment]
+    }
+  }
+
+  /** Detailed information concerning an error generated during the setting of configuration data for a CloudFormation extension.
+    */
+  @js.native
+  trait BatchDescribeTypeConfigurationsError extends js.Object {
+    var ErrorCode: js.UndefOr[ErrorCode]
+    var ErrorMessage: js.UndefOr[ErrorMessage]
+    var TypeConfigurationIdentifier: js.UndefOr[TypeConfigurationIdentifier]
+  }
+
+  object BatchDescribeTypeConfigurationsError {
+    @inline
+    def apply(
+        ErrorCode: js.UndefOr[ErrorCode] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorMessage] = js.undefined,
+        TypeConfigurationIdentifier: js.UndefOr[TypeConfigurationIdentifier] = js.undefined
+    ): BatchDescribeTypeConfigurationsError = {
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      TypeConfigurationIdentifier.foreach(__v => __obj.updateDynamic("TypeConfigurationIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDescribeTypeConfigurationsError]
+    }
+  }
+
+  @js.native
+  trait BatchDescribeTypeConfigurationsInput extends js.Object {
+    var TypeConfigurationIdentifiers: TypeConfigurationIdentifiers
+  }
+
+  object BatchDescribeTypeConfigurationsInput {
+    @inline
+    def apply(
+        TypeConfigurationIdentifiers: TypeConfigurationIdentifiers
+    ): BatchDescribeTypeConfigurationsInput = {
+      val __obj = js.Dynamic.literal(
+        "TypeConfigurationIdentifiers" -> TypeConfigurationIdentifiers.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDescribeTypeConfigurationsInput]
+    }
+  }
+
+  @js.native
+  trait BatchDescribeTypeConfigurationsOutput extends js.Object {
+    var Errors: js.UndefOr[BatchDescribeTypeConfigurationsErrors]
+    var TypeConfigurations: js.UndefOr[TypeConfigurationDetailsList]
+    var UnprocessedTypeConfigurations: js.UndefOr[UnprocessedTypeConfigurations]
+  }
+
+  object BatchDescribeTypeConfigurationsOutput {
+    @inline
+    def apply(
+        Errors: js.UndefOr[BatchDescribeTypeConfigurationsErrors] = js.undefined,
+        TypeConfigurations: js.UndefOr[TypeConfigurationDetailsList] = js.undefined,
+        UnprocessedTypeConfigurations: js.UndefOr[UnprocessedTypeConfigurations] = js.undefined
+    ): BatchDescribeTypeConfigurationsOutput = {
+      val __obj = js.Dynamic.literal()
+      Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
+      TypeConfigurations.foreach(__v => __obj.updateDynamic("TypeConfigurations")(__v.asInstanceOf[js.Any]))
+      UnprocessedTypeConfigurations.foreach(__v => __obj.updateDynamic("UnprocessedTypeConfigurations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDescribeTypeConfigurationsOutput]
     }
   }
 
@@ -384,7 +556,7 @@ package object cloudformation {
     }
   }
 
-  /** The <code>Change</code> structure describes the changes AWS CloudFormation will perform if you execute the change set.
+  /** The <code>Change</code> structure describes the changes CloudFormation will perform if you execute the change set.
     */
   @js.native
   trait Change extends js.Object {
@@ -738,8 +910,10 @@ package object cloudformation {
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
     var Description: js.UndefOr[Description]
     var ExecutionRoleName: js.UndefOr[ExecutionRoleName]
+    var ManagedExecution: js.UndefOr[ManagedExecution]
     var Parameters: js.UndefOr[Parameters]
     var PermissionModel: js.UndefOr[PermissionModels]
+    var StackId: js.UndefOr[StackId]
     var Tags: js.UndefOr[Tags]
     var TemplateBody: js.UndefOr[TemplateBody]
     var TemplateURL: js.UndefOr[TemplateURL]
@@ -756,8 +930,10 @@ package object cloudformation {
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
+        ManagedExecution: js.UndefOr[ManagedExecution] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         PermissionModel: js.UndefOr[PermissionModels] = js.undefined,
+        StackId: js.UndefOr[StackId] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
         TemplateURL: js.UndefOr[TemplateURL] = js.undefined
@@ -773,8 +949,10 @@ package object cloudformation {
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
+      ManagedExecution.foreach(__v => __obj.updateDynamic("ManagedExecution")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       PermissionModel.foreach(__v => __obj.updateDynamic("PermissionModel")(__v.asInstanceOf[js.Any]))
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))
       TemplateURL.foreach(__v => __obj.updateDynamic("TemplateURL")(__v.asInstanceOf[js.Any]))
@@ -795,6 +973,39 @@ package object cloudformation {
       val __obj = js.Dynamic.literal()
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStackSetOutput]
+    }
+  }
+
+  @js.native
+  trait DeactivateTypeInput extends js.Object {
+    var Arn: js.UndefOr[PrivateTypeArn]
+    var Type: js.UndefOr[ThirdPartyType]
+    var TypeName: js.UndefOr[TypeName]
+  }
+
+  object DeactivateTypeInput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[PrivateTypeArn] = js.undefined,
+        Type: js.UndefOr[ThirdPartyType] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined
+    ): DeactivateTypeInput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeactivateTypeInput]
+    }
+  }
+
+  @js.native
+  trait DeactivateTypeOutput extends js.Object
+
+  object DeactivateTypeOutput {
+    @inline
+    def apply(): DeactivateTypeOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeactivateTypeOutput]
     }
   }
 
@@ -950,7 +1161,7 @@ package object cloudformation {
     }
   }
 
-  /** [Service-managed permissions] The AWS Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization. For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.
+  /** [Service-managed permissions] The Organizations accounts to which StackSets deploys. StackSets does not deploy stack instances to the organization management account, even if the organization management account is in your organization or in an OU in your organization. For update operations, you can specify either <code>Accounts</code> or <code>OrganizationalUnitIds</code>. For create and delete operations, specify <code>OrganizationalUnitIds</code>.
     */
   @js.native
   trait DeploymentTargets extends js.Object {
@@ -1144,6 +1355,47 @@ package object cloudformation {
       StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeChangeSetOutput]
+    }
+  }
+
+  @js.native
+  trait DescribePublisherInput extends js.Object {
+    var PublisherId: js.UndefOr[PublisherId]
+  }
+
+  object DescribePublisherInput {
+    @inline
+    def apply(
+        PublisherId: js.UndefOr[PublisherId] = js.undefined
+    ): DescribePublisherInput = {
+      val __obj = js.Dynamic.literal()
+      PublisherId.foreach(__v => __obj.updateDynamic("PublisherId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePublisherInput]
+    }
+  }
+
+  @js.native
+  trait DescribePublisherOutput extends js.Object {
+    var IdentityProvider: js.UndefOr[IdentityProvider]
+    var PublisherId: js.UndefOr[PublisherId]
+    var PublisherProfile: js.UndefOr[PublisherProfile]
+    var PublisherStatus: js.UndefOr[PublisherStatus]
+  }
+
+  object DescribePublisherOutput {
+    @inline
+    def apply(
+        IdentityProvider: js.UndefOr[IdentityProvider] = js.undefined,
+        PublisherId: js.UndefOr[PublisherId] = js.undefined,
+        PublisherProfile: js.UndefOr[PublisherProfile] = js.undefined,
+        PublisherStatus: js.UndefOr[PublisherStatus] = js.undefined
+    ): DescribePublisherOutput = {
+      val __obj = js.Dynamic.literal()
+      IdentityProvider.foreach(__v => __obj.updateDynamic("IdentityProvider")(__v.asInstanceOf[js.Any]))
+      PublisherId.foreach(__v => __obj.updateDynamic("PublisherId")(__v.asInstanceOf[js.Any]))
+      PublisherProfile.foreach(__v => __obj.updateDynamic("PublisherProfile")(__v.asInstanceOf[js.Any]))
+      PublisherStatus.foreach(__v => __obj.updateDynamic("PublisherStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribePublisherOutput]
     }
   }
 
@@ -1537,6 +1789,8 @@ package object cloudformation {
   @js.native
   trait DescribeTypeInput extends js.Object {
     var Arn: js.UndefOr[TypeArn]
+    var PublicVersionNumber: js.UndefOr[PublicVersionNumber]
+    var PublisherId: js.UndefOr[PublisherId]
     var Type: js.UndefOr[RegistryType]
     var TypeName: js.UndefOr[TypeName]
     var VersionId: js.UndefOr[TypeVersionId]
@@ -1546,12 +1800,16 @@ package object cloudformation {
     @inline
     def apply(
         Arn: js.UndefOr[TypeArn] = js.undefined,
+        PublicVersionNumber: js.UndefOr[PublicVersionNumber] = js.undefined,
+        PublisherId: js.UndefOr[PublisherId] = js.undefined,
         Type: js.UndefOr[RegistryType] = js.undefined,
         TypeName: js.UndefOr[TypeName] = js.undefined,
         VersionId: js.UndefOr[TypeVersionId] = js.undefined
     ): DescribeTypeInput = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      PublicVersionNumber.foreach(__v => __obj.updateDynamic("PublicVersionNumber")(__v.asInstanceOf[js.Any]))
+      PublisherId.foreach(__v => __obj.updateDynamic("PublisherId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
@@ -1562,20 +1820,31 @@ package object cloudformation {
   @js.native
   trait DescribeTypeOutput extends js.Object {
     var Arn: js.UndefOr[TypeArn]
+    var AutoUpdate: js.UndefOr[AutoUpdate]
+    var ConfigurationSchema: js.UndefOr[ConfigurationSchema]
     var DefaultVersionId: js.UndefOr[TypeVersionId]
     var DeprecatedStatus: js.UndefOr[DeprecatedStatus]
     var Description: js.UndefOr[Description]
     var DocumentationUrl: js.UndefOr[OptionalSecureUrl]
     var ExecutionRoleArn: js.UndefOr[RoleArn]
+    var IsActivated: js.UndefOr[IsActivated]
     var IsDefaultVersion: js.UndefOr[IsDefaultVersion]
     var LastUpdated: js.UndefOr[Timestamp]
+    var LatestPublicVersion: js.UndefOr[PublicVersionNumber]
     var LoggingConfig: js.UndefOr[LoggingConfig]
+    var OriginalTypeArn: js.UndefOr[TypeArn]
+    var OriginalTypeName: js.UndefOr[TypeName]
     var ProvisioningType: js.UndefOr[ProvisioningType]
+    var PublicVersionNumber: js.UndefOr[PublicVersionNumber]
+    var PublisherId: js.UndefOr[PublisherId]
+    var RequiredActivatedTypes: js.UndefOr[RequiredActivatedTypes]
     var Schema: js.UndefOr[TypeSchema]
     var SourceUrl: js.UndefOr[OptionalSecureUrl]
     var TimeCreated: js.UndefOr[Timestamp]
     var Type: js.UndefOr[RegistryType]
     var TypeName: js.UndefOr[TypeName]
+    var TypeTestsStatus: js.UndefOr[TypeTestsStatus]
+    var TypeTestsStatusDescription: js.UndefOr[TypeTestsStatusDescription]
     var Visibility: js.UndefOr[Visibility]
   }
 
@@ -1583,38 +1852,60 @@ package object cloudformation {
     @inline
     def apply(
         Arn: js.UndefOr[TypeArn] = js.undefined,
+        AutoUpdate: js.UndefOr[AutoUpdate] = js.undefined,
+        ConfigurationSchema: js.UndefOr[ConfigurationSchema] = js.undefined,
         DefaultVersionId: js.UndefOr[TypeVersionId] = js.undefined,
         DeprecatedStatus: js.UndefOr[DeprecatedStatus] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         DocumentationUrl: js.UndefOr[OptionalSecureUrl] = js.undefined,
         ExecutionRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        IsActivated: js.UndefOr[IsActivated] = js.undefined,
         IsDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
         LastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        LatestPublicVersion: js.UndefOr[PublicVersionNumber] = js.undefined,
         LoggingConfig: js.UndefOr[LoggingConfig] = js.undefined,
+        OriginalTypeArn: js.UndefOr[TypeArn] = js.undefined,
+        OriginalTypeName: js.UndefOr[TypeName] = js.undefined,
         ProvisioningType: js.UndefOr[ProvisioningType] = js.undefined,
+        PublicVersionNumber: js.UndefOr[PublicVersionNumber] = js.undefined,
+        PublisherId: js.UndefOr[PublisherId] = js.undefined,
+        RequiredActivatedTypes: js.UndefOr[RequiredActivatedTypes] = js.undefined,
         Schema: js.UndefOr[TypeSchema] = js.undefined,
         SourceUrl: js.UndefOr[OptionalSecureUrl] = js.undefined,
         TimeCreated: js.UndefOr[Timestamp] = js.undefined,
         Type: js.UndefOr[RegistryType] = js.undefined,
         TypeName: js.UndefOr[TypeName] = js.undefined,
+        TypeTestsStatus: js.UndefOr[TypeTestsStatus] = js.undefined,
+        TypeTestsStatusDescription: js.UndefOr[TypeTestsStatusDescription] = js.undefined,
         Visibility: js.UndefOr[Visibility] = js.undefined
     ): DescribeTypeOutput = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      AutoUpdate.foreach(__v => __obj.updateDynamic("AutoUpdate")(__v.asInstanceOf[js.Any]))
+      ConfigurationSchema.foreach(__v => __obj.updateDynamic("ConfigurationSchema")(__v.asInstanceOf[js.Any]))
       DefaultVersionId.foreach(__v => __obj.updateDynamic("DefaultVersionId")(__v.asInstanceOf[js.Any]))
       DeprecatedStatus.foreach(__v => __obj.updateDynamic("DeprecatedStatus")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DocumentationUrl.foreach(__v => __obj.updateDynamic("DocumentationUrl")(__v.asInstanceOf[js.Any]))
       ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
+      IsActivated.foreach(__v => __obj.updateDynamic("IsActivated")(__v.asInstanceOf[js.Any]))
       IsDefaultVersion.foreach(__v => __obj.updateDynamic("IsDefaultVersion")(__v.asInstanceOf[js.Any]))
       LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      LatestPublicVersion.foreach(__v => __obj.updateDynamic("LatestPublicVersion")(__v.asInstanceOf[js.Any]))
       LoggingConfig.foreach(__v => __obj.updateDynamic("LoggingConfig")(__v.asInstanceOf[js.Any]))
+      OriginalTypeArn.foreach(__v => __obj.updateDynamic("OriginalTypeArn")(__v.asInstanceOf[js.Any]))
+      OriginalTypeName.foreach(__v => __obj.updateDynamic("OriginalTypeName")(__v.asInstanceOf[js.Any]))
       ProvisioningType.foreach(__v => __obj.updateDynamic("ProvisioningType")(__v.asInstanceOf[js.Any]))
+      PublicVersionNumber.foreach(__v => __obj.updateDynamic("PublicVersionNumber")(__v.asInstanceOf[js.Any]))
+      PublisherId.foreach(__v => __obj.updateDynamic("PublisherId")(__v.asInstanceOf[js.Any]))
+      RequiredActivatedTypes.foreach(__v => __obj.updateDynamic("RequiredActivatedTypes")(__v.asInstanceOf[js.Any]))
       Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       SourceUrl.foreach(__v => __obj.updateDynamic("SourceUrl")(__v.asInstanceOf[js.Any]))
       TimeCreated.foreach(__v => __obj.updateDynamic("TimeCreated")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      TypeTestsStatus.foreach(__v => __obj.updateDynamic("TypeTestsStatus")(__v.asInstanceOf[js.Any]))
+      TypeTestsStatusDescription.foreach(__v => __obj.updateDynamic("TypeTestsStatusDescription")(__v.asInstanceOf[js.Any]))
       Visibility.foreach(__v => __obj.updateDynamic("Visibility")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTypeOutput]
     }
@@ -1828,6 +2119,7 @@ package object cloudformation {
   trait ExecuteChangeSetInput extends js.Object {
     var ChangeSetName: ChangeSetNameOrId
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var DisableRollback: js.UndefOr[DisableRollback]
     var StackName: js.UndefOr[StackNameOrId]
   }
 
@@ -1836,6 +2128,7 @@ package object cloudformation {
     def apply(
         ChangeSetName: ChangeSetNameOrId,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        DisableRollback: js.UndefOr[DisableRollback] = js.undefined,
         StackName: js.UndefOr[StackNameOrId] = js.undefined
     ): ExecuteChangeSetInput = {
       val __obj = js.Dynamic.literal(
@@ -1843,6 +2136,7 @@ package object cloudformation {
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      DisableRollback.foreach(__v => __obj.updateDynamic("DisableRollback")(__v.asInstanceOf[js.Any]))
       StackName.foreach(__v => __obj.updateDynamic("StackName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExecuteChangeSetInput]
     }
@@ -1971,6 +2265,7 @@ package object cloudformation {
     */
   @js.native
   trait GetTemplateSummaryInput extends js.Object {
+    var CallAs: js.UndefOr[CallAs]
     var StackName: js.UndefOr[StackNameOrId]
     var StackSetName: js.UndefOr[StackSetNameOrId]
     var TemplateBody: js.UndefOr[TemplateBody]
@@ -1980,12 +2275,14 @@ package object cloudformation {
   object GetTemplateSummaryInput {
     @inline
     def apply(
+        CallAs: js.UndefOr[CallAs] = js.undefined,
         StackName: js.UndefOr[StackNameOrId] = js.undefined,
         StackSetName: js.UndefOr[StackSetNameOrId] = js.undefined,
         TemplateBody: js.UndefOr[TemplateBody] = js.undefined,
         TemplateURL: js.UndefOr[TemplateURL] = js.undefined
     ): GetTemplateSummaryInput = {
       val __obj = js.Dynamic.literal()
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
       StackName.foreach(__v => __obj.updateDynamic("StackName")(__v.asInstanceOf[js.Any]))
       StackSetName.foreach(__v => __obj.updateDynamic("StackSetName")(__v.asInstanceOf[js.Any]))
       TemplateBody.foreach(__v => __obj.updateDynamic("TemplateBody")(__v.asInstanceOf[js.Any]))
@@ -2033,6 +2330,58 @@ package object cloudformation {
       ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTemplateSummaryOutput]
+    }
+  }
+
+  @js.native
+  trait ImportStacksToStackSetInput extends js.Object {
+    var StackSetName: StackSetNameOrId
+    var CallAs: js.UndefOr[CallAs]
+    var OperationId: js.UndefOr[ClientRequestToken]
+    var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
+    var OrganizationalUnitIds: js.UndefOr[OrganizationalUnitIdList]
+    var StackIds: js.UndefOr[StackIdList]
+    var StackIdsUrl: js.UndefOr[StackIdsUrl]
+  }
+
+  object ImportStacksToStackSetInput {
+    @inline
+    def apply(
+        StackSetName: StackSetNameOrId,
+        CallAs: js.UndefOr[CallAs] = js.undefined,
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
+        OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
+        OrganizationalUnitIds: js.UndefOr[OrganizationalUnitIdList] = js.undefined,
+        StackIds: js.UndefOr[StackIdList] = js.undefined,
+        StackIdsUrl: js.UndefOr[StackIdsUrl] = js.undefined
+    ): ImportStacksToStackSetInput = {
+      val __obj = js.Dynamic.literal(
+        "StackSetName" -> StackSetName.asInstanceOf[js.Any]
+      )
+
+      CallAs.foreach(__v => __obj.updateDynamic("CallAs")(__v.asInstanceOf[js.Any]))
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
+      OrganizationalUnitIds.foreach(__v => __obj.updateDynamic("OrganizationalUnitIds")(__v.asInstanceOf[js.Any]))
+      StackIds.foreach(__v => __obj.updateDynamic("StackIds")(__v.asInstanceOf[js.Any]))
+      StackIdsUrl.foreach(__v => __obj.updateDynamic("StackIdsUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportStacksToStackSetInput]
+    }
+  }
+
+  @js.native
+  trait ImportStacksToStackSetOutput extends js.Object {
+    var OperationId: js.UndefOr[ClientRequestToken]
+  }
+
+  object ImportStacksToStackSetOutput {
+    @inline
+    def apply(
+        OperationId: js.UndefOr[ClientRequestToken] = js.undefined
+    ): ImportStacksToStackSetOutput = {
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportStacksToStackSetOutput]
     }
   }
 
@@ -2487,10 +2836,11 @@ package object cloudformation {
 
   @js.native
   trait ListTypeVersionsInput extends js.Object {
-    var Arn: js.UndefOr[PrivateTypeArn]
+    var Arn: js.UndefOr[TypeArn]
     var DeprecatedStatus: js.UndefOr[DeprecatedStatus]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var PublisherId: js.UndefOr[PublisherId]
     var Type: js.UndefOr[RegistryType]
     var TypeName: js.UndefOr[TypeName]
   }
@@ -2498,10 +2848,11 @@ package object cloudformation {
   object ListTypeVersionsInput {
     @inline
     def apply(
-        Arn: js.UndefOr[PrivateTypeArn] = js.undefined,
+        Arn: js.UndefOr[TypeArn] = js.undefined,
         DeprecatedStatus: js.UndefOr[DeprecatedStatus] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
+        PublisherId: js.UndefOr[PublisherId] = js.undefined,
         Type: js.UndefOr[RegistryType] = js.undefined,
         TypeName: js.UndefOr[TypeName] = js.undefined
     ): ListTypeVersionsInput = {
@@ -2510,6 +2861,7 @@ package object cloudformation {
       DeprecatedStatus.foreach(__v => __obj.updateDynamic("DeprecatedStatus")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PublisherId.foreach(__v => __obj.updateDynamic("PublisherId")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTypeVersionsInput]
@@ -2538,6 +2890,7 @@ package object cloudformation {
   @js.native
   trait ListTypesInput extends js.Object {
     var DeprecatedStatus: js.UndefOr[DeprecatedStatus]
+    var Filters: js.UndefOr[TypeFilters]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
     var ProvisioningType: js.UndefOr[ProvisioningType]
@@ -2549,6 +2902,7 @@ package object cloudformation {
     @inline
     def apply(
         DeprecatedStatus: js.UndefOr[DeprecatedStatus] = js.undefined,
+        Filters: js.UndefOr[TypeFilters] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ProvisioningType: js.UndefOr[ProvisioningType] = js.undefined,
@@ -2557,6 +2911,7 @@ package object cloudformation {
     ): ListTypesInput = {
       val __obj = js.Dynamic.literal()
       DeprecatedStatus.foreach(__v => __obj.updateDynamic("DeprecatedStatus")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ProvisioningType.foreach(__v => __obj.updateDynamic("ProvisioningType")(__v.asInstanceOf[js.Any]))
@@ -2585,7 +2940,7 @@ package object cloudformation {
     }
   }
 
-  /** Contains logging configuration information for a type.
+  /** Contains logging configuration information for an extension.
     */
   @js.native
   trait LoggingConfig extends js.Object {
@@ -2604,6 +2959,24 @@ package object cloudformation {
         "LogRoleArn" -> LogRoleArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[LoggingConfig]
+    }
+  }
+
+  /** Describes whether StackSets performs non-conflicting operations concurrently and queues conflicting operations.
+    */
+  @js.native
+  trait ManagedExecution extends js.Object {
+    var Active: js.UndefOr[ManagedExecutionNullable]
+  }
+
+  object ManagedExecution {
+    @inline
+    def apply(
+        Active: js.UndefOr[ManagedExecutionNullable] = js.undefined
+    ): ManagedExecution = {
+      val __obj = js.Dynamic.literal()
+      Active.foreach(__v => __obj.updateDynamic("Active")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedExecution]
     }
   }
 
@@ -2682,7 +3055,7 @@ package object cloudformation {
     }
   }
 
-  /** A set of criteria that AWS CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, AWS CloudFormation returns only the <code>AllowedValues</code> property.
+  /** A set of criteria that CloudFormation uses to validate parameter values. Although other constraints might be defined in the stack template, CloudFormation returns only the <code>AllowedValues</code> property.
     */
   @js.native
   trait ParameterConstraints extends js.Object {
@@ -2733,7 +3106,7 @@ package object cloudformation {
     }
   }
 
-  /** Context information that enables AWS CloudFormation to uniquely identify a resource. AWS CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource.
+  /** Context information that enables CloudFormation to uniquely identify a resource. CloudFormation uses context key-value pairs in cases where a resource's logical and physical IDs are not enough to uniquely identify that resource. Each context key-value pair specifies a resource that contains the targeted resource.
     */
   @js.native
   trait PhysicalResourceIdContextKeyValuePair extends js.Object {
@@ -2784,6 +3157,47 @@ package object cloudformation {
   }
 
   @js.native
+  trait PublishTypeInput extends js.Object {
+    var Arn: js.UndefOr[PrivateTypeArn]
+    var PublicVersionNumber: js.UndefOr[PublicVersionNumber]
+    var Type: js.UndefOr[ThirdPartyType]
+    var TypeName: js.UndefOr[TypeName]
+  }
+
+  object PublishTypeInput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[PrivateTypeArn] = js.undefined,
+        PublicVersionNumber: js.UndefOr[PublicVersionNumber] = js.undefined,
+        Type: js.UndefOr[ThirdPartyType] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined
+    ): PublishTypeInput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      PublicVersionNumber.foreach(__v => __obj.updateDynamic("PublicVersionNumber")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublishTypeInput]
+    }
+  }
+
+  @js.native
+  trait PublishTypeOutput extends js.Object {
+    var PublicTypeArn: js.UndefOr[TypeArn]
+  }
+
+  object PublishTypeOutput {
+    @inline
+    def apply(
+        PublicTypeArn: js.UndefOr[TypeArn] = js.undefined
+    ): PublishTypeOutput = {
+      val __obj = js.Dynamic.literal()
+      PublicTypeArn.foreach(__v => __obj.updateDynamic("PublicTypeArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublishTypeOutput]
+    }
+  }
+
+  @js.native
   trait RecordHandlerProgressInput extends js.Object {
     var BearerToken: ClientToken
     var OperationStatus: OperationStatus
@@ -2827,6 +3241,41 @@ package object cloudformation {
     def apply(): RecordHandlerProgressOutput = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[RecordHandlerProgressOutput]
+    }
+  }
+
+  @js.native
+  trait RegisterPublisherInput extends js.Object {
+    var AcceptTermsAndConditions: js.UndefOr[AcceptTermsAndConditions]
+    var ConnectionArn: js.UndefOr[ConnectionArn]
+  }
+
+  object RegisterPublisherInput {
+    @inline
+    def apply(
+        AcceptTermsAndConditions: js.UndefOr[AcceptTermsAndConditions] = js.undefined,
+        ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined
+    ): RegisterPublisherInput = {
+      val __obj = js.Dynamic.literal()
+      AcceptTermsAndConditions.foreach(__v => __obj.updateDynamic("AcceptTermsAndConditions")(__v.asInstanceOf[js.Any]))
+      ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterPublisherInput]
+    }
+  }
+
+  @js.native
+  trait RegisterPublisherOutput extends js.Object {
+    var PublisherId: js.UndefOr[PublisherId]
+  }
+
+  object RegisterPublisherOutput {
+    @inline
+    def apply(
+        PublisherId: js.UndefOr[PublisherId] = js.undefined
+    ): RegisterPublisherOutput = {
+      val __obj = js.Dynamic.literal()
+      PublisherId.foreach(__v => __obj.updateDynamic("PublisherId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterPublisherOutput]
     }
   }
 
@@ -2879,7 +3328,34 @@ package object cloudformation {
     }
   }
 
-  /** The <code>ResourceChange</code> structure describes the resource and the action that AWS CloudFormation will perform on it if you execute this change set.
+  /** For extensions that are modules, a public third-party extension that must be activated in your account in order for the module itself to be activated. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-enabling|Activating public modules for use in your account]] in the <i>CloudFormation User Guide</i>.
+    */
+  @js.native
+  trait RequiredActivatedType extends js.Object {
+    var OriginalTypeName: js.UndefOr[TypeName]
+    var PublisherId: js.UndefOr[PublisherId]
+    var SupportedMajorVersions: js.UndefOr[SupportedMajorVersions]
+    var TypeNameAlias: js.UndefOr[TypeName]
+  }
+
+  object RequiredActivatedType {
+    @inline
+    def apply(
+        OriginalTypeName: js.UndefOr[TypeName] = js.undefined,
+        PublisherId: js.UndefOr[PublisherId] = js.undefined,
+        SupportedMajorVersions: js.UndefOr[SupportedMajorVersions] = js.undefined,
+        TypeNameAlias: js.UndefOr[TypeName] = js.undefined
+    ): RequiredActivatedType = {
+      val __obj = js.Dynamic.literal()
+      OriginalTypeName.foreach(__v => __obj.updateDynamic("OriginalTypeName")(__v.asInstanceOf[js.Any]))
+      PublisherId.foreach(__v => __obj.updateDynamic("PublisherId")(__v.asInstanceOf[js.Any]))
+      SupportedMajorVersions.foreach(__v => __obj.updateDynamic("SupportedMajorVersions")(__v.asInstanceOf[js.Any]))
+      TypeNameAlias.foreach(__v => __obj.updateDynamic("TypeNameAlias")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RequiredActivatedType]
+    }
+  }
+
+  /** The <code>ResourceChange</code> structure describes the resource and the action that CloudFormation will perform on it if you execute this change set.
     */
   @js.native
   trait ResourceChange extends js.Object {
@@ -2921,7 +3397,7 @@ package object cloudformation {
     }
   }
 
-  /** For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes AWS CloudFormation will make to that resource.
+  /** For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code> structure describes the changes CloudFormation will make to that resource.
     */
   @js.native
   trait ResourceChangeDetail extends js.Object {
@@ -2972,7 +3448,7 @@ package object cloudformation {
     }
   }
 
-  /** The field that AWS CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.
+  /** The field that CloudFormation will change, such as the name of a resource's property, and whether the resource will be recreated.
     */
   @js.native
   trait ResourceTargetDefinition extends js.Object {
@@ -3021,7 +3497,7 @@ package object cloudformation {
     }
   }
 
-  /** Structure containing the rollback triggers for AWS CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards. Rollback triggers enable you to have AWS CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html|Monitor and Roll Back Stack Operations]].
+  /** Structure containing the rollback triggers for CloudFormation to monitor during stack creation and updating operations, and for the specified monitoring period afterwards. Rollback triggers enable you to have CloudFormation monitor the state of your application during stack creation and updating, and to roll back that operation if the application breaches the threshold of any of the alarms you've specified. For more information, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-rollback-triggers.html|Monitor and Roll Back Stack Operations]].
     */
   @js.native
   trait RollbackConfiguration extends js.Object {
@@ -3042,7 +3518,47 @@ package object cloudformation {
     }
   }
 
-  /** A rollback trigger AWS CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation.
+  @js.native
+  trait RollbackStackInput extends js.Object {
+    var StackName: StackNameOrId
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var RoleARN: js.UndefOr[RoleARN]
+  }
+
+  object RollbackStackInput {
+    @inline
+    def apply(
+        StackName: StackNameOrId,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined
+    ): RollbackStackInput = {
+      val __obj = js.Dynamic.literal(
+        "StackName" -> StackName.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RollbackStackInput]
+    }
+  }
+
+  @js.native
+  trait RollbackStackOutput extends js.Object {
+    var StackId: js.UndefOr[StackId]
+  }
+
+  object RollbackStackOutput {
+    @inline
+    def apply(
+        StackId: js.UndefOr[StackId] = js.undefined
+    ): RollbackStackOutput = {
+      val __obj = js.Dynamic.literal()
+      StackId.foreach(__v => __obj.updateDynamic("StackId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RollbackStackOutput]
+    }
+  }
+
+  /** A rollback trigger CloudFormation monitors during creation and updating of stacks. If any of the alarms you specify goes to ALARM state during the stack operation or within the specified monitoring period afterwards, CloudFormation rolls back the entire stack operation.
     */
   @js.native
   trait RollbackTrigger extends js.Object {
@@ -3087,6 +3603,52 @@ package object cloudformation {
       StackPolicyBody.foreach(__v => __obj.updateDynamic("StackPolicyBody")(__v.asInstanceOf[js.Any]))
       StackPolicyURL.foreach(__v => __obj.updateDynamic("StackPolicyURL")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetStackPolicyInput]
+    }
+  }
+
+  @js.native
+  trait SetTypeConfigurationInput extends js.Object {
+    var Configuration: TypeConfiguration
+    var ConfigurationAlias: js.UndefOr[TypeConfigurationAlias]
+    var Type: js.UndefOr[ThirdPartyType]
+    var TypeArn: js.UndefOr[TypeArn]
+    var TypeName: js.UndefOr[TypeName]
+  }
+
+  object SetTypeConfigurationInput {
+    @inline
+    def apply(
+        Configuration: TypeConfiguration,
+        ConfigurationAlias: js.UndefOr[TypeConfigurationAlias] = js.undefined,
+        Type: js.UndefOr[ThirdPartyType] = js.undefined,
+        TypeArn: js.UndefOr[TypeArn] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined
+    ): SetTypeConfigurationInput = {
+      val __obj = js.Dynamic.literal(
+        "Configuration" -> Configuration.asInstanceOf[js.Any]
+      )
+
+      ConfigurationAlias.foreach(__v => __obj.updateDynamic("ConfigurationAlias")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeArn.foreach(__v => __obj.updateDynamic("TypeArn")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SetTypeConfigurationInput]
+    }
+  }
+
+  @js.native
+  trait SetTypeConfigurationOutput extends js.Object {
+    var ConfigurationArn: js.UndefOr[TypeConfigurationArn]
+  }
+
+  object SetTypeConfigurationOutput {
+    @inline
+    def apply(
+        ConfigurationArn: js.UndefOr[TypeConfigurationArn] = js.undefined
+    ): SetTypeConfigurationOutput = {
+      val __obj = js.Dynamic.literal()
+      ConfigurationArn.foreach(__v => __obj.updateDynamic("ConfigurationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SetTypeConfigurationOutput]
     }
   }
 
@@ -3333,7 +3895,7 @@ package object cloudformation {
     }
   }
 
-  /** An AWS CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
+  /** An CloudFormation stack, in a specific account and Region, that's part of a stack set operation. A stack instance is a reference to an attempted or actual stack in a given account within a given Region. A stack instance can exist without a stack—for example, if the stack couldn't be created for some reason. A stack instance is associated with only one stack set. Each stack instance contains the ID of its associated stack set, as well as the ID of the actual stack and the stack status.
     */
   @js.native
   trait StackInstance extends js.Object {
@@ -3568,7 +4130,7 @@ package object cloudformation {
     }
   }
 
-  /** Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which AWS CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html|Detecting Unregulated Configuration Changes to Stacks and Resources]]. Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html|Resources that Support Drift Detection]]. Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.
+  /** Contains the drift information for a resource that has been checked for drift. This includes actual and expected property values for resources in which CloudFormation has detected drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html|Detecting Unregulated Configuration Changes to Stacks and Resources]]. Resources that do not currently support drift detection cannot be checked. For a list of resources that support drift detection, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html|Resources that Support Drift Detection]]. Use <a>DetectStackResourceDrift</a> to detect drift on individual resources, or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that support drift detection.
     */
   @js.native
   trait StackResourceDrift extends js.Object {
@@ -3705,7 +4267,7 @@ package object cloudformation {
     }
   }
 
-  /** A structure that contains information about a stack set. A stack set enables you to provision stacks into AWS accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires.
+  /** A structure that contains information about a stack set. A stack set enables you to provision stacks into Amazon Web Services accounts and across Regions by using a single CloudFormation template. In the stack set, you specify the template to use, as well as any parameters and capabilities that the template requires.
     */
   @js.native
   trait StackSet extends js.Object {
@@ -3714,6 +4276,7 @@ package object cloudformation {
     var Capabilities: js.UndefOr[Capabilities]
     var Description: js.UndefOr[Description]
     var ExecutionRoleName: js.UndefOr[ExecutionRoleName]
+    var ManagedExecution: js.UndefOr[ManagedExecution]
     var OrganizationalUnitIds: js.UndefOr[OrganizationalUnitIdList]
     var Parameters: js.UndefOr[Parameters]
     var PermissionModel: js.UndefOr[PermissionModels]
@@ -3734,6 +4297,7 @@ package object cloudformation {
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
+        ManagedExecution: js.UndefOr[ManagedExecution] = js.undefined,
         OrganizationalUnitIds: js.UndefOr[OrganizationalUnitIdList] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         PermissionModel: js.UndefOr[PermissionModels] = js.undefined,
@@ -3751,6 +4315,7 @@ package object cloudformation {
       Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
+      ManagedExecution.foreach(__v => __obj.updateDynamic("ManagedExecution")(__v.asInstanceOf[js.Any]))
       OrganizationalUnitIds.foreach(__v => __obj.updateDynamic("OrganizationalUnitIds")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       PermissionModel.foreach(__v => __obj.updateDynamic("PermissionModel")(__v.asInstanceOf[js.Any]))
@@ -3765,7 +4330,7 @@ package object cloudformation {
     }
   }
 
-  /** Detailed information about the drift status of the stack set. For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included. For stack set operations, includes information about drift operations currently being performed on the stack set. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html|Detecting Unmanaged Changes in Stack Sets]] in the <i>AWS CloudFormation User Guide</i>.
+  /** Detailed information about the drift status of the stack set. For stack sets, contains information about the last <i>completed</i> drift operation performed on the stack set. Information about drift operations in-progress is not included. For stack set operations, includes information about drift operations currently being performed on the stack set. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html|Detecting Unmanaged Changes in Stack Sets]] in the <i>CloudFormation User Guide</i>.
     */
   @js.native
   trait StackSetDriftDetectionDetails extends js.Object {
@@ -3855,7 +4420,7 @@ package object cloudformation {
     }
   }
 
-  /** The user-specified preferences for how AWS CloudFormation performs a stack set operation. For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]].
+  /** The user-specified preferences for how CloudFormation performs a stack set operation. For more information on maximum concurrent accounts and failure tolerance, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options|Stack set operation options]].
     */
   @js.native
   trait StackSetOperationPreferences extends js.Object {
@@ -3959,6 +4524,7 @@ package object cloudformation {
     var Description: js.UndefOr[Description]
     var DriftStatus: js.UndefOr[StackDriftStatus]
     var LastDriftCheckTimestamp: js.UndefOr[Timestamp]
+    var ManagedExecution: js.UndefOr[ManagedExecution]
     var PermissionModel: js.UndefOr[PermissionModels]
     var StackSetId: js.UndefOr[StackSetId]
     var StackSetName: js.UndefOr[StackSetName]
@@ -3972,6 +4538,7 @@ package object cloudformation {
         Description: js.UndefOr[Description] = js.undefined,
         DriftStatus: js.UndefOr[StackDriftStatus] = js.undefined,
         LastDriftCheckTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        ManagedExecution: js.UndefOr[ManagedExecution] = js.undefined,
         PermissionModel: js.UndefOr[PermissionModels] = js.undefined,
         StackSetId: js.UndefOr[StackSetId] = js.undefined,
         StackSetName: js.UndefOr[StackSetName] = js.undefined,
@@ -3982,6 +4549,7 @@ package object cloudformation {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DriftStatus.foreach(__v => __obj.updateDynamic("DriftStatus")(__v.asInstanceOf[js.Any]))
       LastDriftCheckTimestamp.foreach(__v => __obj.updateDynamic("LastDriftCheckTimestamp")(__v.asInstanceOf[js.Any]))
+      ManagedExecution.foreach(__v => __obj.updateDynamic("ManagedExecution")(__v.asInstanceOf[js.Any]))
       PermissionModel.foreach(__v => __obj.updateDynamic("PermissionModel")(__v.asInstanceOf[js.Any]))
       StackSetId.foreach(__v => __obj.updateDynamic("StackSetId")(__v.asInstanceOf[js.Any]))
       StackSetName.foreach(__v => __obj.updateDynamic("StackSetName")(__v.asInstanceOf[js.Any]))
@@ -4075,7 +4643,7 @@ package object cloudformation {
     }
   }
 
-  /** The Tag type enables you to specify a key-value pair that can be used to store information about an AWS CloudFormation stack.
+  /** The Tag type enables you to specify a key-value pair that can be used to store information about an CloudFormation stack.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4124,13 +4692,154 @@ package object cloudformation {
     }
   }
 
-  /** Contains summary information about the specified CloudFormation type.
+  @js.native
+  trait TestTypeInput extends js.Object {
+    var Arn: js.UndefOr[TypeArn]
+    var LogDeliveryBucket: js.UndefOr[S3Bucket]
+    var Type: js.UndefOr[ThirdPartyType]
+    var TypeName: js.UndefOr[TypeName]
+    var VersionId: js.UndefOr[TypeVersionId]
+  }
+
+  object TestTypeInput {
+    @inline
+    def apply(
+        Arn: js.UndefOr[TypeArn] = js.undefined,
+        LogDeliveryBucket: js.UndefOr[S3Bucket] = js.undefined,
+        Type: js.UndefOr[ThirdPartyType] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined,
+        VersionId: js.UndefOr[TypeVersionId] = js.undefined
+    ): TestTypeInput = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      LogDeliveryBucket.foreach(__v => __obj.updateDynamic("LogDeliveryBucket")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestTypeInput]
+    }
+  }
+
+  @js.native
+  trait TestTypeOutput extends js.Object {
+    var TypeVersionArn: js.UndefOr[TypeArn]
+  }
+
+  object TestTypeOutput {
+    @inline
+    def apply(
+        TypeVersionArn: js.UndefOr[TypeArn] = js.undefined
+    ): TestTypeOutput = {
+      val __obj = js.Dynamic.literal()
+      TypeVersionArn.foreach(__v => __obj.updateDynamic("TypeVersionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestTypeOutput]
+    }
+  }
+
+  /** Detailed information concerning the specification of a CloudFormation extension in a given account and region. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration|Configuring extensions at the account level]] in the <i>CloudFormation User Guide</i>.
+    */
+  @js.native
+  trait TypeConfigurationDetails extends js.Object {
+    var Alias: js.UndefOr[TypeConfigurationAlias]
+    var Arn: js.UndefOr[TypeConfigurationArn]
+    var Configuration: js.UndefOr[TypeConfiguration]
+    var IsDefaultConfiguration: js.UndefOr[IsDefaultConfiguration]
+    var LastUpdated: js.UndefOr[Timestamp]
+    var TypeArn: js.UndefOr[TypeArn]
+    var TypeName: js.UndefOr[TypeName]
+  }
+
+  object TypeConfigurationDetails {
+    @inline
+    def apply(
+        Alias: js.UndefOr[TypeConfigurationAlias] = js.undefined,
+        Arn: js.UndefOr[TypeConfigurationArn] = js.undefined,
+        Configuration: js.UndefOr[TypeConfiguration] = js.undefined,
+        IsDefaultConfiguration: js.UndefOr[IsDefaultConfiguration] = js.undefined,
+        LastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        TypeArn: js.UndefOr[TypeArn] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined
+    ): TypeConfigurationDetails = {
+      val __obj = js.Dynamic.literal()
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      IsDefaultConfiguration.foreach(__v => __obj.updateDynamic("IsDefaultConfiguration")(__v.asInstanceOf[js.Any]))
+      LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      TypeArn.foreach(__v => __obj.updateDynamic("TypeArn")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TypeConfigurationDetails]
+    }
+  }
+
+  /** Identifying information for the configuration of a CloudFormation extension.
+    */
+  @js.native
+  trait TypeConfigurationIdentifier extends js.Object {
+    var Type: js.UndefOr[ThirdPartyType]
+    var TypeArn: js.UndefOr[TypeArn]
+    var TypeConfigurationAlias: js.UndefOr[TypeConfigurationAlias]
+    var TypeConfigurationArn: js.UndefOr[TypeConfigurationArn]
+    var TypeName: js.UndefOr[TypeName]
+  }
+
+  object TypeConfigurationIdentifier {
+    @inline
+    def apply(
+        Type: js.UndefOr[ThirdPartyType] = js.undefined,
+        TypeArn: js.UndefOr[TypeArn] = js.undefined,
+        TypeConfigurationAlias: js.UndefOr[TypeConfigurationAlias] = js.undefined,
+        TypeConfigurationArn: js.UndefOr[TypeConfigurationArn] = js.undefined,
+        TypeName: js.UndefOr[TypeName] = js.undefined
+    ): TypeConfigurationIdentifier = {
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      TypeArn.foreach(__v => __obj.updateDynamic("TypeArn")(__v.asInstanceOf[js.Any]))
+      TypeConfigurationAlias.foreach(__v => __obj.updateDynamic("TypeConfigurationAlias")(__v.asInstanceOf[js.Any]))
+      TypeConfigurationArn.foreach(__v => __obj.updateDynamic("TypeConfigurationArn")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TypeConfigurationIdentifier]
+    }
+  }
+
+  /** Filter criteria to use in determining which extensions to return.
+    */
+  @js.native
+  trait TypeFilters extends js.Object {
+    var Category: js.UndefOr[Category]
+    var PublisherId: js.UndefOr[PublisherId]
+    var TypeNamePrefix: js.UndefOr[TypeNamePrefix]
+  }
+
+  object TypeFilters {
+    @inline
+    def apply(
+        Category: js.UndefOr[Category] = js.undefined,
+        PublisherId: js.UndefOr[PublisherId] = js.undefined,
+        TypeNamePrefix: js.UndefOr[TypeNamePrefix] = js.undefined
+    ): TypeFilters = {
+      val __obj = js.Dynamic.literal()
+      Category.foreach(__v => __obj.updateDynamic("Category")(__v.asInstanceOf[js.Any]))
+      PublisherId.foreach(__v => __obj.updateDynamic("PublisherId")(__v.asInstanceOf[js.Any]))
+      TypeNamePrefix.foreach(__v => __obj.updateDynamic("TypeNamePrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TypeFilters]
+    }
+  }
+
+  /** Contains summary information about the specified CloudFormation extension.
     */
   @js.native
   trait TypeSummary extends js.Object {
     var DefaultVersionId: js.UndefOr[TypeVersionId]
     var Description: js.UndefOr[Description]
+    var IsActivated: js.UndefOr[IsActivated]
     var LastUpdated: js.UndefOr[Timestamp]
+    var LatestPublicVersion: js.UndefOr[PublicVersionNumber]
+    var OriginalTypeName: js.UndefOr[TypeName]
+    var PublicVersionNumber: js.UndefOr[PublicVersionNumber]
+    var PublisherId: js.UndefOr[PublisherId]
+    var PublisherIdentity: js.UndefOr[IdentityProvider]
+    var PublisherName: js.UndefOr[PublisherName]
     var Type: js.UndefOr[RegistryType]
     var TypeArn: js.UndefOr[TypeArn]
     var TypeName: js.UndefOr[TypeName]
@@ -4141,7 +4850,14 @@ package object cloudformation {
     def apply(
         DefaultVersionId: js.UndefOr[TypeVersionId] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        IsActivated: js.UndefOr[IsActivated] = js.undefined,
         LastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        LatestPublicVersion: js.UndefOr[PublicVersionNumber] = js.undefined,
+        OriginalTypeName: js.UndefOr[TypeName] = js.undefined,
+        PublicVersionNumber: js.UndefOr[PublicVersionNumber] = js.undefined,
+        PublisherId: js.UndefOr[PublisherId] = js.undefined,
+        PublisherIdentity: js.UndefOr[IdentityProvider] = js.undefined,
+        PublisherName: js.UndefOr[PublisherName] = js.undefined,
         Type: js.UndefOr[RegistryType] = js.undefined,
         TypeArn: js.UndefOr[TypeArn] = js.undefined,
         TypeName: js.UndefOr[TypeName] = js.undefined
@@ -4149,7 +4865,14 @@ package object cloudformation {
       val __obj = js.Dynamic.literal()
       DefaultVersionId.foreach(__v => __obj.updateDynamic("DefaultVersionId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IsActivated.foreach(__v => __obj.updateDynamic("IsActivated")(__v.asInstanceOf[js.Any]))
       LastUpdated.foreach(__v => __obj.updateDynamic("LastUpdated")(__v.asInstanceOf[js.Any]))
+      LatestPublicVersion.foreach(__v => __obj.updateDynamic("LatestPublicVersion")(__v.asInstanceOf[js.Any]))
+      OriginalTypeName.foreach(__v => __obj.updateDynamic("OriginalTypeName")(__v.asInstanceOf[js.Any]))
+      PublicVersionNumber.foreach(__v => __obj.updateDynamic("PublicVersionNumber")(__v.asInstanceOf[js.Any]))
+      PublisherId.foreach(__v => __obj.updateDynamic("PublisherId")(__v.asInstanceOf[js.Any]))
+      PublisherIdentity.foreach(__v => __obj.updateDynamic("PublisherIdentity")(__v.asInstanceOf[js.Any]))
+      PublisherName.foreach(__v => __obj.updateDynamic("PublisherName")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       TypeArn.foreach(__v => __obj.updateDynamic("TypeArn")(__v.asInstanceOf[js.Any]))
       TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
@@ -4157,13 +4880,14 @@ package object cloudformation {
     }
   }
 
-  /** Contains summary information about a specific version of a CloudFormation type.
+  /** Contains summary information about a specific version of a CloudFormation extension.
     */
   @js.native
   trait TypeVersionSummary extends js.Object {
     var Arn: js.UndefOr[TypeArn]
     var Description: js.UndefOr[Description]
     var IsDefaultVersion: js.UndefOr[IsDefaultVersion]
+    var PublicVersionNumber: js.UndefOr[PublicVersionNumber]
     var TimeCreated: js.UndefOr[Timestamp]
     var Type: js.UndefOr[RegistryType]
     var TypeName: js.UndefOr[TypeName]
@@ -4176,6 +4900,7 @@ package object cloudformation {
         Arn: js.UndefOr[TypeArn] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         IsDefaultVersion: js.UndefOr[IsDefaultVersion] = js.undefined,
+        PublicVersionNumber: js.UndefOr[PublicVersionNumber] = js.undefined,
         TimeCreated: js.UndefOr[Timestamp] = js.undefined,
         Type: js.UndefOr[RegistryType] = js.undefined,
         TypeName: js.UndefOr[TypeName] = js.undefined,
@@ -4185,6 +4910,7 @@ package object cloudformation {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IsDefaultVersion.foreach(__v => __obj.updateDynamic("IsDefaultVersion")(__v.asInstanceOf[js.Any]))
+      PublicVersionNumber.foreach(__v => __obj.updateDynamic("PublicVersionNumber")(__v.asInstanceOf[js.Any]))
       TimeCreated.foreach(__v => __obj.updateDynamic("TimeCreated")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
@@ -4200,6 +4926,7 @@ package object cloudformation {
     var StackName: StackName
     var Capabilities: js.UndefOr[Capabilities]
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var DisableRollback: js.UndefOr[DisableRollback]
     var NotificationARNs: js.UndefOr[NotificationARNs]
     var Parameters: js.UndefOr[Parameters]
     var ResourceTypes: js.UndefOr[ResourceTypes]
@@ -4221,6 +4948,7 @@ package object cloudformation {
         StackName: StackName,
         Capabilities: js.UndefOr[Capabilities] = js.undefined,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        DisableRollback: js.UndefOr[DisableRollback] = js.undefined,
         NotificationARNs: js.UndefOr[NotificationARNs] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
         ResourceTypes: js.UndefOr[ResourceTypes] = js.undefined,
@@ -4241,6 +4969,7 @@ package object cloudformation {
 
       Capabilities.foreach(__v => __obj.updateDynamic("Capabilities")(__v.asInstanceOf[js.Any]))
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      DisableRollback.foreach(__v => __obj.updateDynamic("DisableRollback")(__v.asInstanceOf[js.Any]))
       NotificationARNs.foreach(__v => __obj.updateDynamic("NotificationARNs")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       ResourceTypes.foreach(__v => __obj.updateDynamic("ResourceTypes")(__v.asInstanceOf[js.Any]))
@@ -4342,6 +5071,7 @@ package object cloudformation {
     var DeploymentTargets: js.UndefOr[DeploymentTargets]
     var Description: js.UndefOr[Description]
     var ExecutionRoleName: js.UndefOr[ExecutionRoleName]
+    var ManagedExecution: js.UndefOr[ManagedExecution]
     var OperationId: js.UndefOr[ClientRequestToken]
     var OperationPreferences: js.UndefOr[StackSetOperationPreferences]
     var Parameters: js.UndefOr[Parameters]
@@ -4365,6 +5095,7 @@ package object cloudformation {
         DeploymentTargets: js.UndefOr[DeploymentTargets] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         ExecutionRoleName: js.UndefOr[ExecutionRoleName] = js.undefined,
+        ManagedExecution: js.UndefOr[ManagedExecution] = js.undefined,
         OperationId: js.UndefOr[ClientRequestToken] = js.undefined,
         OperationPreferences: js.UndefOr[StackSetOperationPreferences] = js.undefined,
         Parameters: js.UndefOr[Parameters] = js.undefined,
@@ -4387,6 +5118,7 @@ package object cloudformation {
       DeploymentTargets.foreach(__v => __obj.updateDynamic("DeploymentTargets")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ExecutionRoleName.foreach(__v => __obj.updateDynamic("ExecutionRoleName")(__v.asInstanceOf[js.Any]))
+      ManagedExecution.foreach(__v => __obj.updateDynamic("ManagedExecution")(__v.asInstanceOf[js.Any]))
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       OperationPreferences.foreach(__v => __obj.updateDynamic("OperationPreferences")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))

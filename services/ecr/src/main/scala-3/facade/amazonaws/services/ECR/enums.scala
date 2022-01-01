@@ -76,13 +76,65 @@ object LifecyclePolicyPreviewStatus {
   inline def values: js.Array[LifecyclePolicyPreviewStatus] = js.Array(IN_PROGRESS, COMPLETE, EXPIRED, FAILED)
 }
 
-type ScanStatus = "IN_PROGRESS" | "COMPLETE" | "FAILED"
-object ScanStatus {
+type ReplicationStatus = "IN_PROGRESS" | "COMPLETE" | "FAILED"
+object ReplicationStatus {
   inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
   inline val COMPLETE: "COMPLETE" = "COMPLETE"
   inline val FAILED: "FAILED" = "FAILED"
 
-  inline def values: js.Array[ScanStatus] = js.Array(IN_PROGRESS, COMPLETE, FAILED)
+  inline def values: js.Array[ReplicationStatus] = js.Array(IN_PROGRESS, COMPLETE, FAILED)
+}
+
+type RepositoryFilterType = "PREFIX_MATCH"
+object RepositoryFilterType {
+  inline val PREFIX_MATCH: "PREFIX_MATCH" = "PREFIX_MATCH"
+
+  inline def values: js.Array[RepositoryFilterType] = js.Array(PREFIX_MATCH)
+}
+
+type ScanFrequency = "SCAN_ON_PUSH" | "CONTINUOUS_SCAN" | "MANUAL"
+object ScanFrequency {
+  inline val SCAN_ON_PUSH: "SCAN_ON_PUSH" = "SCAN_ON_PUSH"
+  inline val CONTINUOUS_SCAN: "CONTINUOUS_SCAN" = "CONTINUOUS_SCAN"
+  inline val MANUAL: "MANUAL" = "MANUAL"
+
+  inline def values: js.Array[ScanFrequency] = js.Array(SCAN_ON_PUSH, CONTINUOUS_SCAN, MANUAL)
+}
+
+type ScanStatus = "IN_PROGRESS" | "COMPLETE" | "FAILED" | "UNSUPPORTED_IMAGE" | "ACTIVE" | "PENDING" | "SCAN_ELIGIBILITY_EXPIRED" | "FINDINGS_UNAVAILABLE"
+object ScanStatus {
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val UNSUPPORTED_IMAGE: "UNSUPPORTED_IMAGE" = "UNSUPPORTED_IMAGE"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val SCAN_ELIGIBILITY_EXPIRED: "SCAN_ELIGIBILITY_EXPIRED" = "SCAN_ELIGIBILITY_EXPIRED"
+  inline val FINDINGS_UNAVAILABLE: "FINDINGS_UNAVAILABLE" = "FINDINGS_UNAVAILABLE"
+
+  inline def values: js.Array[ScanStatus] = js.Array(IN_PROGRESS, COMPLETE, FAILED, UNSUPPORTED_IMAGE, ACTIVE, PENDING, SCAN_ELIGIBILITY_EXPIRED, FINDINGS_UNAVAILABLE)
+}
+
+type ScanType = "BASIC" | "ENHANCED"
+object ScanType {
+  inline val BASIC: "BASIC" = "BASIC"
+  inline val ENHANCED: "ENHANCED" = "ENHANCED"
+
+  inline def values: js.Array[ScanType] = js.Array(BASIC, ENHANCED)
+}
+
+type ScanningConfigurationFailureCode = "REPOSITORY_NOT_FOUND"
+object ScanningConfigurationFailureCode {
+  inline val REPOSITORY_NOT_FOUND: "REPOSITORY_NOT_FOUND" = "REPOSITORY_NOT_FOUND"
+
+  inline def values: js.Array[ScanningConfigurationFailureCode] = js.Array(REPOSITORY_NOT_FOUND)
+}
+
+type ScanningRepositoryFilterType = "WILDCARD"
+object ScanningRepositoryFilterType {
+  inline val WILDCARD: "WILDCARD" = "WILDCARD"
+
+  inline def values: js.Array[ScanningRepositoryFilterType] = js.Array(WILDCARD)
 }
 
 type TagStatus = "TAGGED" | "UNTAGGED" | "ANY"

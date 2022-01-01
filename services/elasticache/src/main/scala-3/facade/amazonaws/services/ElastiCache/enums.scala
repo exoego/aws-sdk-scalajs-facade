@@ -53,6 +53,14 @@ object ChangeType {
   inline def values: js.Array[ChangeType] = js.Array(immediate, `requires-reboot`)
 }
 
+type DataTieringStatus = "enabled" | "disabled"
+object DataTieringStatus {
+  inline val enabled: "enabled" = "enabled"
+  inline val disabled: "disabled" = "disabled"
+
+  inline def values: js.Array[DataTieringStatus] = js.Array(enabled, disabled)
+}
+
 type DestinationType = "cloudwatch-logs" | "kinesis-firehose"
 object DestinationType {
   inline val `cloudwatch-logs`: "cloudwatch-logs" = "cloudwatch-logs"

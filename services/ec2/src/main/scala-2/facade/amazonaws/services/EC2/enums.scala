@@ -3,6 +3,41 @@ package facade.amazonaws.services.ec2
 import scalajs.js
 
 @js.native
+sealed trait AcceleratorManufacturer extends js.Any
+object AcceleratorManufacturer {
+  val nvidia = "nvidia".asInstanceOf[AcceleratorManufacturer]
+  val amd = "amd".asInstanceOf[AcceleratorManufacturer]
+  val `amazon-web-services` = "amazon-web-services".asInstanceOf[AcceleratorManufacturer]
+  val xilinx = "xilinx".asInstanceOf[AcceleratorManufacturer]
+
+  @inline def values: js.Array[AcceleratorManufacturer] = js.Array(nvidia, amd, `amazon-web-services`, xilinx)
+}
+
+@js.native
+sealed trait AcceleratorName extends js.Any
+object AcceleratorName {
+  val a100 = "a100".asInstanceOf[AcceleratorName]
+  val v100 = "v100".asInstanceOf[AcceleratorName]
+  val k80 = "k80".asInstanceOf[AcceleratorName]
+  val t4 = "t4".asInstanceOf[AcceleratorName]
+  val m60 = "m60".asInstanceOf[AcceleratorName]
+  val `radeon-pro-v520` = "radeon-pro-v520".asInstanceOf[AcceleratorName]
+  val vu9p = "vu9p".asInstanceOf[AcceleratorName]
+
+  @inline def values: js.Array[AcceleratorName] = js.Array(a100, v100, k80, t4, m60, `radeon-pro-v520`, vu9p)
+}
+
+@js.native
+sealed trait AcceleratorType extends js.Any
+object AcceleratorType {
+  val gpu = "gpu".asInstanceOf[AcceleratorType]
+  val fpga = "fpga".asInstanceOf[AcceleratorType]
+  val inference = "inference".asInstanceOf[AcceleratorType]
+
+  @inline def values: js.Array[AcceleratorType] = js.Array(gpu, fpga, inference)
+}
+
+@js.native
 sealed trait AccountAttributeName extends js.Any
 object AccountAttributeName {
   val `supported-platforms` = "supported-platforms".asInstanceOf[AccountAttributeName]
@@ -28,6 +63,15 @@ object AddressAttributeName {
   val `domain-name` = "domain-name".asInstanceOf[AddressAttributeName]
 
   @inline def values: js.Array[AddressAttributeName] = js.Array(`domain-name`)
+}
+
+@js.native
+sealed trait AddressFamily extends js.Any
+object AddressFamily {
+  val ipv4 = "ipv4".asInstanceOf[AddressFamily]
+  val ipv6 = "ipv6".asInstanceOf[AddressFamily]
+
+  @inline def values: js.Array[AddressFamily] = js.Array(ipv4, ipv6)
 }
 
 @js.native
@@ -97,8 +141,9 @@ object ArchitectureType {
   val i386 = "i386".asInstanceOf[ArchitectureType]
   val x86_64 = "x86_64".asInstanceOf[ArchitectureType]
   val arm64 = "arm64".asInstanceOf[ArchitectureType]
+  val x86_64_mac = "x86_64_mac".asInstanceOf[ArchitectureType]
 
-  @inline def values: js.Array[ArchitectureType] = js.Array(i386, x86_64, arm64)
+  @inline def values: js.Array[ArchitectureType] = js.Array(i386, x86_64, arm64, x86_64_mac)
 }
 
 @js.native
@@ -107,8 +152,9 @@ object ArchitectureValues {
   val i386 = "i386".asInstanceOf[ArchitectureValues]
   val x86_64 = "x86_64".asInstanceOf[ArchitectureValues]
   val arm64 = "arm64".asInstanceOf[ArchitectureValues]
+  val x86_64_mac = "x86_64_mac".asInstanceOf[ArchitectureValues]
 
-  @inline def values: js.Array[ArchitectureValues] = js.Array(i386, x86_64, arm64)
+  @inline def values: js.Array[ArchitectureValues] = js.Array(i386, x86_64, arm64, x86_64_mac)
 }
 
 @js.native
@@ -191,6 +237,16 @@ object AvailabilityZoneState {
 }
 
 @js.native
+sealed trait BareMetal extends js.Any
+object BareMetal {
+  val included = "included".asInstanceOf[BareMetal]
+  val required = "required".asInstanceOf[BareMetal]
+  val excluded = "excluded".asInstanceOf[BareMetal]
+
+  @inline def values: js.Array[BareMetal] = js.Array(included, required, excluded)
+}
+
+@js.native
 sealed trait BatchState extends js.Any
 object BatchState {
   val submitted = "submitted".asInstanceOf[BatchState]
@@ -246,6 +302,16 @@ object BundleTaskState {
 }
 
 @js.native
+sealed trait BurstablePerformance extends js.Any
+object BurstablePerformance {
+  val included = "included".asInstanceOf[BurstablePerformance]
+  val required = "required".asInstanceOf[BurstablePerformance]
+  val excluded = "excluded".asInstanceOf[BurstablePerformance]
+
+  @inline def values: js.Array[BurstablePerformance] = js.Array(included, required, excluded)
+}
+
+@js.native
 sealed trait ByoipCidrState extends js.Any
 object ByoipCidrState {
   val advertised = "advertised".asInstanceOf[ByoipCidrState]
@@ -290,6 +356,22 @@ object CancelSpotInstanceRequestState {
   val completed = "completed".asInstanceOf[CancelSpotInstanceRequestState]
 
   @inline def values: js.Array[CancelSpotInstanceRequestState] = js.Array(active, open, closed, cancelled, completed)
+}
+
+@js.native
+sealed trait CapacityReservationFleetState extends js.Any
+object CapacityReservationFleetState {
+  val submitted = "submitted".asInstanceOf[CapacityReservationFleetState]
+  val modifying = "modifying".asInstanceOf[CapacityReservationFleetState]
+  val active = "active".asInstanceOf[CapacityReservationFleetState]
+  val partially_fulfilled = "partially_fulfilled".asInstanceOf[CapacityReservationFleetState]
+  val expiring = "expiring".asInstanceOf[CapacityReservationFleetState]
+  val expired = "expired".asInstanceOf[CapacityReservationFleetState]
+  val cancelling = "cancelling".asInstanceOf[CapacityReservationFleetState]
+  val cancelled = "cancelled".asInstanceOf[CapacityReservationFleetState]
+  val failed = "failed".asInstanceOf[CapacityReservationFleetState]
+
+  @inline def values: js.Array[CapacityReservationFleetState] = js.Array(submitted, modifying, active, partially_fulfilled, expiring, expired, cancelling, cancelled, failed)
 }
 
 @js.native
@@ -453,6 +535,15 @@ object ConnectionNotificationType {
 }
 
 @js.native
+sealed trait ConnectivityType extends js.Any
+object ConnectivityType {
+  val `private` = "private".asInstanceOf[ConnectivityType]
+  val `public` = "public".asInstanceOf[ConnectivityType]
+
+  @inline def values: js.Array[ConnectivityType] = js.Array(`private`, `public`)
+}
+
+@js.native
 sealed trait ContainerFormat extends js.Any
 object ContainerFormat {
   val ova = "ova".asInstanceOf[ContainerFormat]
@@ -477,6 +568,16 @@ object CopyTagsFromSource {
   val volume = "volume".asInstanceOf[CopyTagsFromSource]
 
   @inline def values: js.Array[CopyTagsFromSource] = js.Array(volume)
+}
+
+@js.native
+sealed trait CpuManufacturer extends js.Any
+object CpuManufacturer {
+  val intel = "intel".asInstanceOf[CpuManufacturer]
+  val amd = "amd".asInstanceOf[CpuManufacturer]
+  val `amazon-web-services` = "amazon-web-services".asInstanceOf[CpuManufacturer]
+
+  @inline def values: js.Array[CpuManufacturer] = js.Array(intel, amd, `amazon-web-services`)
 }
 
 @js.native
@@ -542,6 +643,15 @@ object DeleteQueuedReservedInstancesErrorCode {
   val `unexpected-error` = "unexpected-error".asInstanceOf[DeleteQueuedReservedInstancesErrorCode]
 
   @inline def values: js.Array[DeleteQueuedReservedInstancesErrorCode] = js.Array(`reserved-instances-id-invalid`, `reserved-instances-not-in-queued-state`, `unexpected-error`)
+}
+
+@js.native
+sealed trait DestinationFileFormat extends js.Any
+object DestinationFileFormat {
+  val `plain-text` = "plain-text".asInstanceOf[DestinationFileFormat]
+  val parquet = "parquet".asInstanceOf[DestinationFileFormat]
+
+  @inline def values: js.Array[DestinationFileFormat] = js.Array(`plain-text`, parquet)
 }
 
 @js.native
@@ -741,6 +851,16 @@ object FastSnapshotRestoreStateCode {
 }
 
 @js.native
+sealed trait FindingsFound extends js.Any
+object FindingsFound {
+  val `true` = "true".asInstanceOf[FindingsFound]
+  val `false` = "false".asInstanceOf[FindingsFound]
+  val unknown = "unknown".asInstanceOf[FindingsFound]
+
+  @inline def values: js.Array[FindingsFound] = js.Array(`true`, `false`, unknown)
+}
+
+@js.native
 sealed trait FleetActivityStatus extends js.Any
 object FleetActivityStatus {
   val error = "error".asInstanceOf[FleetActivityStatus]
@@ -749,6 +869,14 @@ object FleetActivityStatus {
   val fulfilled = "fulfilled".asInstanceOf[FleetActivityStatus]
 
   @inline def values: js.Array[FleetActivityStatus] = js.Array(error, pending_fulfillment, pending_termination, fulfilled)
+}
+
+@js.native
+sealed trait FleetCapacityReservationTenancy extends js.Any
+object FleetCapacityReservationTenancy {
+  val default = "default".asInstanceOf[FleetCapacityReservationTenancy]
+
+  @inline def values: js.Array[FleetCapacityReservationTenancy] = js.Array(default)
 }
 
 @js.native
@@ -779,6 +907,14 @@ object FleetExcessCapacityTerminationPolicy {
 }
 
 @js.native
+sealed trait FleetInstanceMatchCriteria extends js.Any
+object FleetInstanceMatchCriteria {
+  val open = "open".asInstanceOf[FleetInstanceMatchCriteria]
+
+  @inline def values: js.Array[FleetInstanceMatchCriteria] = js.Array(open)
+}
+
+@js.native
 sealed trait FleetOnDemandAllocationStrategy extends js.Any
 object FleetOnDemandAllocationStrategy {
   val `lowest-price` = "lowest-price".asInstanceOf[FleetOnDemandAllocationStrategy]
@@ -791,8 +927,9 @@ object FleetOnDemandAllocationStrategy {
 sealed trait FleetReplacementStrategy extends js.Any
 object FleetReplacementStrategy {
   val launch = "launch".asInstanceOf[FleetReplacementStrategy]
+  val `launch-before-terminate` = "launch-before-terminate".asInstanceOf[FleetReplacementStrategy]
 
-  @inline def values: js.Array[FleetReplacementStrategy] = js.Array(launch)
+  @inline def values: js.Array[FleetReplacementStrategy] = js.Array(launch, `launch-before-terminate`)
 }
 
 @js.native
@@ -852,6 +989,17 @@ object FpgaImageStateCode {
 }
 
 @js.native
+sealed trait GatewayAssociationState extends js.Any
+object GatewayAssociationState {
+  val associated = "associated".asInstanceOf[GatewayAssociationState]
+  val `not-associated` = "not-associated".asInstanceOf[GatewayAssociationState]
+  val associating = "associating".asInstanceOf[GatewayAssociationState]
+  val disassociating = "disassociating".asInstanceOf[GatewayAssociationState]
+
+  @inline def values: js.Array[GatewayAssociationState] = js.Array(associated, `not-associated`, associating, disassociating)
+}
+
+@js.native
 sealed trait GatewayType extends js.Any
 object GatewayType {
   val `ipsec.1` = "ipsec.1".asInstanceOf[GatewayType]
@@ -875,6 +1023,15 @@ object HostTenancy {
   val host = "host".asInstanceOf[HostTenancy]
 
   @inline def values: js.Array[HostTenancy] = js.Array(dedicated, host)
+}
+
+@js.native
+sealed trait HostnameType extends js.Any
+object HostnameType {
+  val `ip-name` = "ip-name".asInstanceOf[HostnameType]
+  val `resource-name` = "resource-name".asInstanceOf[HostnameType]
+
+  @inline def values: js.Array[HostnameType] = js.Array(`ip-name`, `resource-name`)
 }
 
 @js.native
@@ -993,6 +1150,26 @@ object InstanceAttributeName {
 }
 
 @js.native
+sealed trait InstanceEventWindowState extends js.Any
+object InstanceEventWindowState {
+  val creating = "creating".asInstanceOf[InstanceEventWindowState]
+  val deleting = "deleting".asInstanceOf[InstanceEventWindowState]
+  val active = "active".asInstanceOf[InstanceEventWindowState]
+  val deleted = "deleted".asInstanceOf[InstanceEventWindowState]
+
+  @inline def values: js.Array[InstanceEventWindowState] = js.Array(creating, deleting, active, deleted)
+}
+
+@js.native
+sealed trait InstanceGeneration extends js.Any
+object InstanceGeneration {
+  val current = "current".asInstanceOf[InstanceGeneration]
+  val previous = "previous".asInstanceOf[InstanceGeneration]
+
+  @inline def values: js.Array[InstanceGeneration] = js.Array(current, previous)
+}
+
+@js.native
 sealed trait InstanceHealthStatus extends js.Any
 object InstanceHealthStatus {
   val healthy = "healthy".asInstanceOf[InstanceHealthStatus]
@@ -1057,6 +1234,15 @@ object InstanceMetadataOptionsState {
 }
 
 @js.native
+sealed trait InstanceMetadataProtocolState extends js.Any
+object InstanceMetadataProtocolState {
+  val disabled = "disabled".asInstanceOf[InstanceMetadataProtocolState]
+  val enabled = "enabled".asInstanceOf[InstanceMetadataProtocolState]
+
+  @inline def values: js.Array[InstanceMetadataProtocolState] = js.Array(disabled, enabled)
+}
+
+@js.native
 sealed trait InstanceStateName extends js.Any
 object InstanceStateName {
   val pending = "pending".asInstanceOf[InstanceStateName]
@@ -1067,6 +1253,15 @@ object InstanceStateName {
   val stopped = "stopped".asInstanceOf[InstanceStateName]
 
   @inline def values: js.Array[InstanceStateName] = js.Array(pending, running, `shutting-down`, terminated, stopping, stopped)
+}
+
+@js.native
+sealed trait InstanceStorageEncryptionSupport extends js.Any
+object InstanceStorageEncryptionSupport {
+  val unsupported = "unsupported".asInstanceOf[InstanceStorageEncryptionSupport]
+  val required = "required".asInstanceOf[InstanceStorageEncryptionSupport]
+
+  @inline def values: js.Array[InstanceStorageEncryptionSupport] = js.Array(unsupported, required)
 }
 
 @js.native
@@ -1299,6 +1494,15 @@ object InstanceType {
   val `c6gn.8xlarge` = "c6gn.8xlarge".asInstanceOf[InstanceType]
   val `c6gn.12xlarge` = "c6gn.12xlarge".asInstanceOf[InstanceType]
   val `c6gn.16xlarge` = "c6gn.16xlarge".asInstanceOf[InstanceType]
+  val `c6i.large` = "c6i.large".asInstanceOf[InstanceType]
+  val `c6i.xlarge` = "c6i.xlarge".asInstanceOf[InstanceType]
+  val `c6i.2xlarge` = "c6i.2xlarge".asInstanceOf[InstanceType]
+  val `c6i.4xlarge` = "c6i.4xlarge".asInstanceOf[InstanceType]
+  val `c6i.8xlarge` = "c6i.8xlarge".asInstanceOf[InstanceType]
+  val `c6i.12xlarge` = "c6i.12xlarge".asInstanceOf[InstanceType]
+  val `c6i.16xlarge` = "c6i.16xlarge".asInstanceOf[InstanceType]
+  val `c6i.24xlarge` = "c6i.24xlarge".asInstanceOf[InstanceType]
+  val `c6i.32xlarge` = "c6i.32xlarge".asInstanceOf[InstanceType]
   val `cc1.4xlarge` = "cc1.4xlarge".asInstanceOf[InstanceType]
   val `cc2.8xlarge` = "cc2.8xlarge".asInstanceOf[InstanceType]
   val `g2.2xlarge` = "g2.2xlarge".asInstanceOf[InstanceType]
@@ -1307,6 +1511,8 @@ object InstanceType {
   val `g3.8xlarge` = "g3.8xlarge".asInstanceOf[InstanceType]
   val `g3.16xlarge` = "g3.16xlarge".asInstanceOf[InstanceType]
   val `g3s.xlarge` = "g3s.xlarge".asInstanceOf[InstanceType]
+  val `g4ad.xlarge` = "g4ad.xlarge".asInstanceOf[InstanceType]
+  val `g4ad.2xlarge` = "g4ad.2xlarge".asInstanceOf[InstanceType]
   val `g4ad.4xlarge` = "g4ad.4xlarge".asInstanceOf[InstanceType]
   val `g4ad.8xlarge` = "g4ad.8xlarge".asInstanceOf[InstanceType]
   val `g4ad.16xlarge` = "g4ad.16xlarge".asInstanceOf[InstanceType]
@@ -1340,6 +1546,7 @@ object InstanceType {
   val `d3en.6xlarge` = "d3en.6xlarge".asInstanceOf[InstanceType]
   val `d3en.8xlarge` = "d3en.8xlarge".asInstanceOf[InstanceType]
   val `d3en.12xlarge` = "d3en.12xlarge".asInstanceOf[InstanceType]
+  val `dl1.24xlarge` = "dl1.24xlarge".asInstanceOf[InstanceType]
   val `f1.2xlarge` = "f1.2xlarge".asInstanceOf[InstanceType]
   val `f1.4xlarge` = "f1.4xlarge".asInstanceOf[InstanceType]
   val `f1.16xlarge` = "f1.16xlarge".asInstanceOf[InstanceType]
@@ -1395,6 +1602,10 @@ object InstanceType {
   val `z1d.6xlarge` = "z1d.6xlarge".asInstanceOf[InstanceType]
   val `z1d.12xlarge` = "z1d.12xlarge".asInstanceOf[InstanceType]
   val `z1d.metal` = "z1d.metal".asInstanceOf[InstanceType]
+  val `u-6tb1.56xlarge` = "u-6tb1.56xlarge".asInstanceOf[InstanceType]
+  val `u-6tb1.112xlarge` = "u-6tb1.112xlarge".asInstanceOf[InstanceType]
+  val `u-9tb1.112xlarge` = "u-9tb1.112xlarge".asInstanceOf[InstanceType]
+  val `u-12tb1.112xlarge` = "u-12tb1.112xlarge".asInstanceOf[InstanceType]
   val `u-6tb1.metal` = "u-6tb1.metal".asInstanceOf[InstanceType]
   val `u-9tb1.metal` = "u-9tb1.metal".asInstanceOf[InstanceType]
   val `u-12tb1.metal` = "u-12tb1.metal".asInstanceOf[InstanceType]
@@ -1414,6 +1625,7 @@ object InstanceType {
   val `m5dn.12xlarge` = "m5dn.12xlarge".asInstanceOf[InstanceType]
   val `m5dn.16xlarge` = "m5dn.16xlarge".asInstanceOf[InstanceType]
   val `m5dn.24xlarge` = "m5dn.24xlarge".asInstanceOf[InstanceType]
+  val `m5dn.metal` = "m5dn.metal".asInstanceOf[InstanceType]
   val `m5n.large` = "m5n.large".asInstanceOf[InstanceType]
   val `m5n.xlarge` = "m5n.xlarge".asInstanceOf[InstanceType]
   val `m5n.2xlarge` = "m5n.2xlarge".asInstanceOf[InstanceType]
@@ -1422,6 +1634,7 @@ object InstanceType {
   val `m5n.12xlarge` = "m5n.12xlarge".asInstanceOf[InstanceType]
   val `m5n.16xlarge` = "m5n.16xlarge".asInstanceOf[InstanceType]
   val `m5n.24xlarge` = "m5n.24xlarge".asInstanceOf[InstanceType]
+  val `m5n.metal` = "m5n.metal".asInstanceOf[InstanceType]
   val `r5dn.large` = "r5dn.large".asInstanceOf[InstanceType]
   val `r5dn.xlarge` = "r5dn.xlarge".asInstanceOf[InstanceType]
   val `r5dn.2xlarge` = "r5dn.2xlarge".asInstanceOf[InstanceType]
@@ -1430,6 +1643,7 @@ object InstanceType {
   val `r5dn.12xlarge` = "r5dn.12xlarge".asInstanceOf[InstanceType]
   val `r5dn.16xlarge` = "r5dn.16xlarge".asInstanceOf[InstanceType]
   val `r5dn.24xlarge` = "r5dn.24xlarge".asInstanceOf[InstanceType]
+  val `r5dn.metal` = "r5dn.metal".asInstanceOf[InstanceType]
   val `r5n.large` = "r5n.large".asInstanceOf[InstanceType]
   val `r5n.xlarge` = "r5n.xlarge".asInstanceOf[InstanceType]
   val `r5n.2xlarge` = "r5n.2xlarge".asInstanceOf[InstanceType]
@@ -1438,6 +1652,7 @@ object InstanceType {
   val `r5n.12xlarge` = "r5n.12xlarge".asInstanceOf[InstanceType]
   val `r5n.16xlarge` = "r5n.16xlarge".asInstanceOf[InstanceType]
   val `r5n.24xlarge` = "r5n.24xlarge".asInstanceOf[InstanceType]
+  val `r5n.metal` = "r5n.metal".asInstanceOf[InstanceType]
   val `inf1.xlarge` = "inf1.xlarge".asInstanceOf[InstanceType]
   val `inf1.2xlarge` = "inf1.2xlarge".asInstanceOf[InstanceType]
   val `inf1.6xlarge` = "inf1.6xlarge".asInstanceOf[InstanceType]
@@ -1460,6 +1675,25 @@ object InstanceType {
   val `m6gd.8xlarge` = "m6gd.8xlarge".asInstanceOf[InstanceType]
   val `m6gd.12xlarge` = "m6gd.12xlarge".asInstanceOf[InstanceType]
   val `m6gd.16xlarge` = "m6gd.16xlarge".asInstanceOf[InstanceType]
+  val `m6a.large` = "m6a.large".asInstanceOf[InstanceType]
+  val `m6a.xlarge` = "m6a.xlarge".asInstanceOf[InstanceType]
+  val `m6a.2xlarge` = "m6a.2xlarge".asInstanceOf[InstanceType]
+  val `m6a.4xlarge` = "m6a.4xlarge".asInstanceOf[InstanceType]
+  val `m6a.8xlarge` = "m6a.8xlarge".asInstanceOf[InstanceType]
+  val `m6a.12xlarge` = "m6a.12xlarge".asInstanceOf[InstanceType]
+  val `m6a.16xlarge` = "m6a.16xlarge".asInstanceOf[InstanceType]
+  val `m6a.24xlarge` = "m6a.24xlarge".asInstanceOf[InstanceType]
+  val `m6a.32xlarge` = "m6a.32xlarge".asInstanceOf[InstanceType]
+  val `m6a.48xlarge` = "m6a.48xlarge".asInstanceOf[InstanceType]
+  val `m6i.large` = "m6i.large".asInstanceOf[InstanceType]
+  val `m6i.xlarge` = "m6i.xlarge".asInstanceOf[InstanceType]
+  val `m6i.2xlarge` = "m6i.2xlarge".asInstanceOf[InstanceType]
+  val `m6i.4xlarge` = "m6i.4xlarge".asInstanceOf[InstanceType]
+  val `m6i.8xlarge` = "m6i.8xlarge".asInstanceOf[InstanceType]
+  val `m6i.12xlarge` = "m6i.12xlarge".asInstanceOf[InstanceType]
+  val `m6i.16xlarge` = "m6i.16xlarge".asInstanceOf[InstanceType]
+  val `m6i.24xlarge` = "m6i.24xlarge".asInstanceOf[InstanceType]
+  val `m6i.32xlarge` = "m6i.32xlarge".asInstanceOf[InstanceType]
   val `mac1.metal` = "mac1.metal".asInstanceOf[InstanceType]
   val `x2gd.medium` = "x2gd.medium".asInstanceOf[InstanceType]
   val `x2gd.large` = "x2gd.large".asInstanceOf[InstanceType]
@@ -1470,6 +1704,35 @@ object InstanceType {
   val `x2gd.12xlarge` = "x2gd.12xlarge".asInstanceOf[InstanceType]
   val `x2gd.16xlarge` = "x2gd.16xlarge".asInstanceOf[InstanceType]
   val `x2gd.metal` = "x2gd.metal".asInstanceOf[InstanceType]
+  val `vt1.3xlarge` = "vt1.3xlarge".asInstanceOf[InstanceType]
+  val `vt1.6xlarge` = "vt1.6xlarge".asInstanceOf[InstanceType]
+  val `vt1.24xlarge` = "vt1.24xlarge".asInstanceOf[InstanceType]
+  val `im4gn.16xlarge` = "im4gn.16xlarge".asInstanceOf[InstanceType]
+  val `im4gn.2xlarge` = "im4gn.2xlarge".asInstanceOf[InstanceType]
+  val `im4gn.4xlarge` = "im4gn.4xlarge".asInstanceOf[InstanceType]
+  val `im4gn.8xlarge` = "im4gn.8xlarge".asInstanceOf[InstanceType]
+  val `im4gn.large` = "im4gn.large".asInstanceOf[InstanceType]
+  val `im4gn.xlarge` = "im4gn.xlarge".asInstanceOf[InstanceType]
+  val `is4gen.2xlarge` = "is4gen.2xlarge".asInstanceOf[InstanceType]
+  val `is4gen.4xlarge` = "is4gen.4xlarge".asInstanceOf[InstanceType]
+  val `is4gen.8xlarge` = "is4gen.8xlarge".asInstanceOf[InstanceType]
+  val `is4gen.large` = "is4gen.large".asInstanceOf[InstanceType]
+  val `is4gen.medium` = "is4gen.medium".asInstanceOf[InstanceType]
+  val `is4gen.xlarge` = "is4gen.xlarge".asInstanceOf[InstanceType]
+  val `g5g.xlarge` = "g5g.xlarge".asInstanceOf[InstanceType]
+  val `g5g.2xlarge` = "g5g.2xlarge".asInstanceOf[InstanceType]
+  val `g5g.4xlarge` = "g5g.4xlarge".asInstanceOf[InstanceType]
+  val `g5g.8xlarge` = "g5g.8xlarge".asInstanceOf[InstanceType]
+  val `g5g.16xlarge` = "g5g.16xlarge".asInstanceOf[InstanceType]
+  val `g5g.metal` = "g5g.metal".asInstanceOf[InstanceType]
+  val `g5.xlarge` = "g5.xlarge".asInstanceOf[InstanceType]
+  val `g5.2xlarge` = "g5.2xlarge".asInstanceOf[InstanceType]
+  val `g5.4xlarge` = "g5.4xlarge".asInstanceOf[InstanceType]
+  val `g5.8xlarge` = "g5.8xlarge".asInstanceOf[InstanceType]
+  val `g5.12xlarge` = "g5.12xlarge".asInstanceOf[InstanceType]
+  val `g5.16xlarge` = "g5.16xlarge".asInstanceOf[InstanceType]
+  val `g5.24xlarge` = "g5.24xlarge".asInstanceOf[InstanceType]
+  val `g5.48xlarge` = "g5.48xlarge".asInstanceOf[InstanceType]
 
   @inline def values: js.Array[InstanceType] = js.Array(
     `t1.micro`,
@@ -1699,6 +1962,15 @@ object InstanceType {
     `c6gn.8xlarge`,
     `c6gn.12xlarge`,
     `c6gn.16xlarge`,
+    `c6i.large`,
+    `c6i.xlarge`,
+    `c6i.2xlarge`,
+    `c6i.4xlarge`,
+    `c6i.8xlarge`,
+    `c6i.12xlarge`,
+    `c6i.16xlarge`,
+    `c6i.24xlarge`,
+    `c6i.32xlarge`,
     `cc1.4xlarge`,
     `cc2.8xlarge`,
     `g2.2xlarge`,
@@ -1707,6 +1979,8 @@ object InstanceType {
     `g3.8xlarge`,
     `g3.16xlarge`,
     `g3s.xlarge`,
+    `g4ad.xlarge`,
+    `g4ad.2xlarge`,
     `g4ad.4xlarge`,
     `g4ad.8xlarge`,
     `g4ad.16xlarge`,
@@ -1740,6 +2014,7 @@ object InstanceType {
     `d3en.6xlarge`,
     `d3en.8xlarge`,
     `d3en.12xlarge`,
+    `dl1.24xlarge`,
     `f1.2xlarge`,
     `f1.4xlarge`,
     `f1.16xlarge`,
@@ -1795,6 +2070,10 @@ object InstanceType {
     `z1d.6xlarge`,
     `z1d.12xlarge`,
     `z1d.metal`,
+    `u-6tb1.56xlarge`,
+    `u-6tb1.112xlarge`,
+    `u-9tb1.112xlarge`,
+    `u-12tb1.112xlarge`,
     `u-6tb1.metal`,
     `u-9tb1.metal`,
     `u-12tb1.metal`,
@@ -1814,6 +2093,7 @@ object InstanceType {
     `m5dn.12xlarge`,
     `m5dn.16xlarge`,
     `m5dn.24xlarge`,
+    `m5dn.metal`,
     `m5n.large`,
     `m5n.xlarge`,
     `m5n.2xlarge`,
@@ -1822,6 +2102,7 @@ object InstanceType {
     `m5n.12xlarge`,
     `m5n.16xlarge`,
     `m5n.24xlarge`,
+    `m5n.metal`,
     `r5dn.large`,
     `r5dn.xlarge`,
     `r5dn.2xlarge`,
@@ -1830,6 +2111,7 @@ object InstanceType {
     `r5dn.12xlarge`,
     `r5dn.16xlarge`,
     `r5dn.24xlarge`,
+    `r5dn.metal`,
     `r5n.large`,
     `r5n.xlarge`,
     `r5n.2xlarge`,
@@ -1838,6 +2120,7 @@ object InstanceType {
     `r5n.12xlarge`,
     `r5n.16xlarge`,
     `r5n.24xlarge`,
+    `r5n.metal`,
     `inf1.xlarge`,
     `inf1.2xlarge`,
     `inf1.6xlarge`,
@@ -1860,6 +2143,25 @@ object InstanceType {
     `m6gd.8xlarge`,
     `m6gd.12xlarge`,
     `m6gd.16xlarge`,
+    `m6a.large`,
+    `m6a.xlarge`,
+    `m6a.2xlarge`,
+    `m6a.4xlarge`,
+    `m6a.8xlarge`,
+    `m6a.12xlarge`,
+    `m6a.16xlarge`,
+    `m6a.24xlarge`,
+    `m6a.32xlarge`,
+    `m6a.48xlarge`,
+    `m6i.large`,
+    `m6i.xlarge`,
+    `m6i.2xlarge`,
+    `m6i.4xlarge`,
+    `m6i.8xlarge`,
+    `m6i.12xlarge`,
+    `m6i.16xlarge`,
+    `m6i.24xlarge`,
+    `m6i.32xlarge`,
     `mac1.metal`,
     `x2gd.medium`,
     `x2gd.large`,
@@ -1869,7 +2171,36 @@ object InstanceType {
     `x2gd.8xlarge`,
     `x2gd.12xlarge`,
     `x2gd.16xlarge`,
-    `x2gd.metal`
+    `x2gd.metal`,
+    `vt1.3xlarge`,
+    `vt1.6xlarge`,
+    `vt1.24xlarge`,
+    `im4gn.16xlarge`,
+    `im4gn.2xlarge`,
+    `im4gn.4xlarge`,
+    `im4gn.8xlarge`,
+    `im4gn.large`,
+    `im4gn.xlarge`,
+    `is4gen.2xlarge`,
+    `is4gen.4xlarge`,
+    `is4gen.8xlarge`,
+    `is4gen.large`,
+    `is4gen.medium`,
+    `is4gen.xlarge`,
+    `g5g.xlarge`,
+    `g5g.2xlarge`,
+    `g5g.4xlarge`,
+    `g5g.8xlarge`,
+    `g5g.16xlarge`,
+    `g5g.metal`,
+    `g5.xlarge`,
+    `g5.2xlarge`,
+    `g5.4xlarge`,
+    `g5.8xlarge`,
+    `g5.12xlarge`,
+    `g5.16xlarge`,
+    `g5.24xlarge`,
+    `g5.48xlarge`
   )
 }
 
@@ -1892,12 +2223,214 @@ object InterfacePermissionType {
 }
 
 @js.native
+sealed trait InterfaceProtocolType extends js.Any
+object InterfaceProtocolType {
+  val VLAN = "VLAN".asInstanceOf[InterfaceProtocolType]
+  val GRE = "GRE".asInstanceOf[InterfaceProtocolType]
+
+  @inline def values: js.Array[InterfaceProtocolType] = js.Array(VLAN, GRE)
+}
+
+@js.native
+sealed trait IpamAddressHistoryResourceType extends js.Any
+object IpamAddressHistoryResourceType {
+  val eip = "eip".asInstanceOf[IpamAddressHistoryResourceType]
+  val vpc = "vpc".asInstanceOf[IpamAddressHistoryResourceType]
+  val subnet = "subnet".asInstanceOf[IpamAddressHistoryResourceType]
+  val `network-interface` = "network-interface".asInstanceOf[IpamAddressHistoryResourceType]
+  val instance = "instance".asInstanceOf[IpamAddressHistoryResourceType]
+
+  @inline def values: js.Array[IpamAddressHistoryResourceType] = js.Array(eip, vpc, subnet, `network-interface`, instance)
+}
+
+@js.native
+sealed trait IpamComplianceStatus extends js.Any
+object IpamComplianceStatus {
+  val compliant = "compliant".asInstanceOf[IpamComplianceStatus]
+  val noncompliant = "noncompliant".asInstanceOf[IpamComplianceStatus]
+  val unmanaged = "unmanaged".asInstanceOf[IpamComplianceStatus]
+  val ignored = "ignored".asInstanceOf[IpamComplianceStatus]
+
+  @inline def values: js.Array[IpamComplianceStatus] = js.Array(compliant, noncompliant, unmanaged, ignored)
+}
+
+@js.native
+sealed trait IpamManagementState extends js.Any
+object IpamManagementState {
+  val managed = "managed".asInstanceOf[IpamManagementState]
+  val unmanaged = "unmanaged".asInstanceOf[IpamManagementState]
+  val ignored = "ignored".asInstanceOf[IpamManagementState]
+
+  @inline def values: js.Array[IpamManagementState] = js.Array(managed, unmanaged, ignored)
+}
+
+@js.native
+sealed trait IpamOverlapStatus extends js.Any
+object IpamOverlapStatus {
+  val overlapping = "overlapping".asInstanceOf[IpamOverlapStatus]
+  val nonoverlapping = "nonoverlapping".asInstanceOf[IpamOverlapStatus]
+  val ignored = "ignored".asInstanceOf[IpamOverlapStatus]
+
+  @inline def values: js.Array[IpamOverlapStatus] = js.Array(overlapping, nonoverlapping, ignored)
+}
+
+@js.native
+sealed trait IpamPoolAllocationResourceType extends js.Any
+object IpamPoolAllocationResourceType {
+  val `ipam-pool` = "ipam-pool".asInstanceOf[IpamPoolAllocationResourceType]
+  val vpc = "vpc".asInstanceOf[IpamPoolAllocationResourceType]
+  val `ec2-public-ipv4-pool` = "ec2-public-ipv4-pool".asInstanceOf[IpamPoolAllocationResourceType]
+  val custom = "custom".asInstanceOf[IpamPoolAllocationResourceType]
+
+  @inline def values: js.Array[IpamPoolAllocationResourceType] = js.Array(`ipam-pool`, vpc, `ec2-public-ipv4-pool`, custom)
+}
+
+@js.native
+sealed trait IpamPoolAwsService extends js.Any
+object IpamPoolAwsService {
+  val ec2 = "ec2".asInstanceOf[IpamPoolAwsService]
+
+  @inline def values: js.Array[IpamPoolAwsService] = js.Array(ec2)
+}
+
+@js.native
+sealed trait IpamPoolCidrFailureCode extends js.Any
+object IpamPoolCidrFailureCode {
+  val `cidr-not-available` = "cidr-not-available".asInstanceOf[IpamPoolCidrFailureCode]
+
+  @inline def values: js.Array[IpamPoolCidrFailureCode] = js.Array(`cidr-not-available`)
+}
+
+@js.native
+sealed trait IpamPoolCidrState extends js.Any
+object IpamPoolCidrState {
+  val `pending-provision` = "pending-provision".asInstanceOf[IpamPoolCidrState]
+  val provisioned = "provisioned".asInstanceOf[IpamPoolCidrState]
+  val `failed-provision` = "failed-provision".asInstanceOf[IpamPoolCidrState]
+  val `pending-deprovision` = "pending-deprovision".asInstanceOf[IpamPoolCidrState]
+  val deprovisioned = "deprovisioned".asInstanceOf[IpamPoolCidrState]
+  val `failed-deprovision` = "failed-deprovision".asInstanceOf[IpamPoolCidrState]
+  val `pending-import` = "pending-import".asInstanceOf[IpamPoolCidrState]
+  val `failed-import` = "failed-import".asInstanceOf[IpamPoolCidrState]
+
+  @inline def values: js.Array[IpamPoolCidrState] = js.Array(`pending-provision`, provisioned, `failed-provision`, `pending-deprovision`, deprovisioned, `failed-deprovision`, `pending-import`, `failed-import`)
+}
+
+@js.native
+sealed trait IpamPoolState extends js.Any
+object IpamPoolState {
+  val `create-in-progress` = "create-in-progress".asInstanceOf[IpamPoolState]
+  val `create-complete` = "create-complete".asInstanceOf[IpamPoolState]
+  val `create-failed` = "create-failed".asInstanceOf[IpamPoolState]
+  val `modify-in-progress` = "modify-in-progress".asInstanceOf[IpamPoolState]
+  val `modify-complete` = "modify-complete".asInstanceOf[IpamPoolState]
+  val `modify-failed` = "modify-failed".asInstanceOf[IpamPoolState]
+  val `delete-in-progress` = "delete-in-progress".asInstanceOf[IpamPoolState]
+  val `delete-complete` = "delete-complete".asInstanceOf[IpamPoolState]
+  val `delete-failed` = "delete-failed".asInstanceOf[IpamPoolState]
+
+  @inline def values: js.Array[IpamPoolState] = js.Array(
+    `create-in-progress`,
+    `create-complete`,
+    `create-failed`,
+    `modify-in-progress`,
+    `modify-complete`,
+    `modify-failed`,
+    `delete-in-progress`,
+    `delete-complete`,
+    `delete-failed`
+  )
+}
+
+@js.native
+sealed trait IpamResourceType extends js.Any
+object IpamResourceType {
+  val vpc = "vpc".asInstanceOf[IpamResourceType]
+  val subnet = "subnet".asInstanceOf[IpamResourceType]
+  val eip = "eip".asInstanceOf[IpamResourceType]
+  val `public-ipv4-pool` = "public-ipv4-pool".asInstanceOf[IpamResourceType]
+  val `ipv6-pool` = "ipv6-pool".asInstanceOf[IpamResourceType]
+
+  @inline def values: js.Array[IpamResourceType] = js.Array(vpc, subnet, eip, `public-ipv4-pool`, `ipv6-pool`)
+}
+
+@js.native
+sealed trait IpamScopeState extends js.Any
+object IpamScopeState {
+  val `create-in-progress` = "create-in-progress".asInstanceOf[IpamScopeState]
+  val `create-complete` = "create-complete".asInstanceOf[IpamScopeState]
+  val `create-failed` = "create-failed".asInstanceOf[IpamScopeState]
+  val `modify-in-progress` = "modify-in-progress".asInstanceOf[IpamScopeState]
+  val `modify-complete` = "modify-complete".asInstanceOf[IpamScopeState]
+  val `modify-failed` = "modify-failed".asInstanceOf[IpamScopeState]
+  val `delete-in-progress` = "delete-in-progress".asInstanceOf[IpamScopeState]
+  val `delete-complete` = "delete-complete".asInstanceOf[IpamScopeState]
+  val `delete-failed` = "delete-failed".asInstanceOf[IpamScopeState]
+
+  @inline def values: js.Array[IpamScopeState] = js.Array(
+    `create-in-progress`,
+    `create-complete`,
+    `create-failed`,
+    `modify-in-progress`,
+    `modify-complete`,
+    `modify-failed`,
+    `delete-in-progress`,
+    `delete-complete`,
+    `delete-failed`
+  )
+}
+
+@js.native
+sealed trait IpamScopeType extends js.Any
+object IpamScopeType {
+  val `public` = "public".asInstanceOf[IpamScopeType]
+  val `private` = "private".asInstanceOf[IpamScopeType]
+
+  @inline def values: js.Array[IpamScopeType] = js.Array(`public`, `private`)
+}
+
+@js.native
+sealed trait IpamState extends js.Any
+object IpamState {
+  val `create-in-progress` = "create-in-progress".asInstanceOf[IpamState]
+  val `create-complete` = "create-complete".asInstanceOf[IpamState]
+  val `create-failed` = "create-failed".asInstanceOf[IpamState]
+  val `modify-in-progress` = "modify-in-progress".asInstanceOf[IpamState]
+  val `modify-complete` = "modify-complete".asInstanceOf[IpamState]
+  val `modify-failed` = "modify-failed".asInstanceOf[IpamState]
+  val `delete-in-progress` = "delete-in-progress".asInstanceOf[IpamState]
+  val `delete-complete` = "delete-complete".asInstanceOf[IpamState]
+  val `delete-failed` = "delete-failed".asInstanceOf[IpamState]
+
+  @inline def values: js.Array[IpamState] = js.Array(
+    `create-in-progress`,
+    `create-complete`,
+    `create-failed`,
+    `modify-in-progress`,
+    `modify-complete`,
+    `modify-failed`,
+    `delete-in-progress`,
+    `delete-complete`,
+    `delete-failed`
+  )
+}
+
+@js.native
 sealed trait Ipv6SupportValue extends js.Any
 object Ipv6SupportValue {
   val enable = "enable".asInstanceOf[Ipv6SupportValue]
   val disable = "disable".asInstanceOf[Ipv6SupportValue]
 
   @inline def values: js.Array[Ipv6SupportValue] = js.Array(enable, disable)
+}
+
+@js.native
+sealed trait KeyType extends js.Any
+object KeyType {
+  val rsa = "rsa".asInstanceOf[KeyType]
+  val ed25519 = "ed25519".asInstanceOf[KeyType]
+
+  @inline def values: js.Array[KeyType] = js.Array(rsa, ed25519)
 }
 
 @js.native
@@ -1948,6 +2481,15 @@ object LaunchTemplateInstanceMetadataOptionsState {
 }
 
 @js.native
+sealed trait LaunchTemplateInstanceMetadataProtocolIpv6 extends js.Any
+object LaunchTemplateInstanceMetadataProtocolIpv6 {
+  val disabled = "disabled".asInstanceOf[LaunchTemplateInstanceMetadataProtocolIpv6]
+  val enabled = "enabled".asInstanceOf[LaunchTemplateInstanceMetadataProtocolIpv6]
+
+  @inline def values: js.Array[LaunchTemplateInstanceMetadataProtocolIpv6] = js.Array(disabled, enabled)
+}
+
+@js.native
 sealed trait ListingState extends js.Any
 object ListingState {
   val available = "available".asInstanceOf[ListingState]
@@ -1988,6 +2530,25 @@ object LocalGatewayRouteType {
   val propagated = "propagated".asInstanceOf[LocalGatewayRouteType]
 
   @inline def values: js.Array[LocalGatewayRouteType] = js.Array(static, propagated)
+}
+
+@js.native
+sealed trait LocalStorage extends js.Any
+object LocalStorage {
+  val included = "included".asInstanceOf[LocalStorage]
+  val required = "required".asInstanceOf[LocalStorage]
+  val excluded = "excluded".asInstanceOf[LocalStorage]
+
+  @inline def values: js.Array[LocalStorage] = js.Array(included, required, excluded)
+}
+
+@js.native
+sealed trait LocalStorageType extends js.Any
+object LocalStorageType {
+  val hdd = "hdd".asInstanceOf[LocalStorageType]
+  val ssd = "ssd".asInstanceOf[LocalStorageType]
+
+  @inline def values: js.Array[LocalStorageType] = js.Array(hdd, ssd)
 }
 
 @js.native
@@ -2091,8 +2652,10 @@ object NetworkInterfaceAttribute {
 sealed trait NetworkInterfaceCreationType extends js.Any
 object NetworkInterfaceCreationType {
   val efa = "efa".asInstanceOf[NetworkInterfaceCreationType]
+  val branch = "branch".asInstanceOf[NetworkInterfaceCreationType]
+  val trunk = "trunk".asInstanceOf[NetworkInterfaceCreationType]
 
-  @inline def values: js.Array[NetworkInterfaceCreationType] = js.Array(efa)
+  @inline def values: js.Array[NetworkInterfaceCreationType] = js.Array(efa, branch, trunk)
 }
 
 @js.native
@@ -2124,8 +2687,9 @@ object NetworkInterfaceType {
   val interface = "interface".asInstanceOf[NetworkInterfaceType]
   val natGateway = "natGateway".asInstanceOf[NetworkInterfaceType]
   val efa = "efa".asInstanceOf[NetworkInterfaceType]
+  val trunk = "trunk".asInstanceOf[NetworkInterfaceType]
 
-  @inline def values: js.Array[NetworkInterfaceType] = js.Array(interface, natGateway, efa)
+  @inline def values: js.Array[NetworkInterfaceType] = js.Array(interface, natGateway, efa, trunk)
 }
 
 @js.native
@@ -2343,8 +2907,9 @@ object ReplaceRootVolumeTaskState {
 sealed trait ReplacementStrategy extends js.Any
 object ReplacementStrategy {
   val launch = "launch".asInstanceOf[ReplacementStrategy]
+  val `launch-before-terminate` = "launch-before-terminate".asInstanceOf[ReplacementStrategy]
 
-  @inline def values: js.Array[ReplacementStrategy] = js.Array(launch)
+  @inline def values: js.Array[ReplacementStrategy] = js.Array(launch, `launch-before-terminate`)
 }
 
 @js.native
@@ -2425,8 +2990,10 @@ object ResetImageAttributeName {
 @js.native
 sealed trait ResourceType extends js.Any
 object ResourceType {
+  val `capacity-reservation` = "capacity-reservation".asInstanceOf[ResourceType]
   val `client-vpn-endpoint` = "client-vpn-endpoint".asInstanceOf[ResourceType]
   val `customer-gateway` = "customer-gateway".asInstanceOf[ResourceType]
+  val `carrier-gateway` = "carrier-gateway".asInstanceOf[ResourceType]
   val `dedicated-host` = "dedicated-host".asInstanceOf[ResourceType]
   val `dhcp-options` = "dhcp-options".asInstanceOf[ResourceType]
   val `egress-only-internet-gateway` = "egress-only-internet-gateway".asInstanceOf[ResourceType]
@@ -2441,19 +3008,35 @@ object ResourceType {
   val `import-image-task` = "import-image-task".asInstanceOf[ResourceType]
   val `import-snapshot-task` = "import-snapshot-task".asInstanceOf[ResourceType]
   val instance = "instance".asInstanceOf[ResourceType]
+  val `instance-event-window` = "instance-event-window".asInstanceOf[ResourceType]
   val `internet-gateway` = "internet-gateway".asInstanceOf[ResourceType]
+  val ipam = "ipam".asInstanceOf[ResourceType]
+  val `ipam-pool` = "ipam-pool".asInstanceOf[ResourceType]
+  val `ipam-scope` = "ipam-scope".asInstanceOf[ResourceType]
+  val `ipv4pool-ec2` = "ipv4pool-ec2".asInstanceOf[ResourceType]
+  val `ipv6pool-ec2` = "ipv6pool-ec2".asInstanceOf[ResourceType]
   val `key-pair` = "key-pair".asInstanceOf[ResourceType]
   val `launch-template` = "launch-template".asInstanceOf[ResourceType]
+  val `local-gateway` = "local-gateway".asInstanceOf[ResourceType]
+  val `local-gateway-route-table` = "local-gateway-route-table".asInstanceOf[ResourceType]
+  val `local-gateway-virtual-interface` = "local-gateway-virtual-interface".asInstanceOf[ResourceType]
+  val `local-gateway-virtual-interface-group` = "local-gateway-virtual-interface-group".asInstanceOf[ResourceType]
   val `local-gateway-route-table-vpc-association` = "local-gateway-route-table-vpc-association".asInstanceOf[ResourceType]
+  val `local-gateway-route-table-virtual-interface-group-association` = "local-gateway-route-table-virtual-interface-group-association".asInstanceOf[ResourceType]
   val natgateway = "natgateway".asInstanceOf[ResourceType]
   val `network-acl` = "network-acl".asInstanceOf[ResourceType]
   val `network-interface` = "network-interface".asInstanceOf[ResourceType]
   val `network-insights-analysis` = "network-insights-analysis".asInstanceOf[ResourceType]
   val `network-insights-path` = "network-insights-path".asInstanceOf[ResourceType]
+  val `network-insights-access-scope` = "network-insights-access-scope".asInstanceOf[ResourceType]
+  val `network-insights-access-scope-analysis` = "network-insights-access-scope-analysis".asInstanceOf[ResourceType]
   val `placement-group` = "placement-group".asInstanceOf[ResourceType]
+  val `prefix-list` = "prefix-list".asInstanceOf[ResourceType]
+  val `replace-root-volume-task` = "replace-root-volume-task".asInstanceOf[ResourceType]
   val `reserved-instances` = "reserved-instances".asInstanceOf[ResourceType]
   val `route-table` = "route-table".asInstanceOf[ResourceType]
   val `security-group` = "security-group".asInstanceOf[ResourceType]
+  val `security-group-rule` = "security-group-rule".asInstanceOf[ResourceType]
   val snapshot = "snapshot".asInstanceOf[ResourceType]
   val `spot-fleet-request` = "spot-fleet-request".asInstanceOf[ResourceType]
   val `spot-instances-request` = "spot-instances-request".asInstanceOf[ResourceType]
@@ -2468,14 +3051,18 @@ object ResourceType {
   val `transit-gateway-route-table` = "transit-gateway-route-table".asInstanceOf[ResourceType]
   val volume = "volume".asInstanceOf[ResourceType]
   val vpc = "vpc".asInstanceOf[ResourceType]
+  val `vpc-endpoint` = "vpc-endpoint".asInstanceOf[ResourceType]
+  val `vpc-endpoint-service` = "vpc-endpoint-service".asInstanceOf[ResourceType]
   val `vpc-peering-connection` = "vpc-peering-connection".asInstanceOf[ResourceType]
   val `vpn-connection` = "vpn-connection".asInstanceOf[ResourceType]
   val `vpn-gateway` = "vpn-gateway".asInstanceOf[ResourceType]
   val `vpc-flow-log` = "vpc-flow-log".asInstanceOf[ResourceType]
 
   @inline def values: js.Array[ResourceType] = js.Array(
+    `capacity-reservation`,
     `client-vpn-endpoint`,
     `customer-gateway`,
+    `carrier-gateway`,
     `dedicated-host`,
     `dhcp-options`,
     `egress-only-internet-gateway`,
@@ -2490,19 +3077,35 @@ object ResourceType {
     `import-image-task`,
     `import-snapshot-task`,
     instance,
+    `instance-event-window`,
     `internet-gateway`,
+    ipam,
+    `ipam-pool`,
+    `ipam-scope`,
+    `ipv4pool-ec2`,
+    `ipv6pool-ec2`,
     `key-pair`,
     `launch-template`,
+    `local-gateway`,
+    `local-gateway-route-table`,
+    `local-gateway-virtual-interface`,
+    `local-gateway-virtual-interface-group`,
     `local-gateway-route-table-vpc-association`,
+    `local-gateway-route-table-virtual-interface-group-association`,
     natgateway,
     `network-acl`,
     `network-interface`,
     `network-insights-analysis`,
     `network-insights-path`,
+    `network-insights-access-scope`,
+    `network-insights-access-scope-analysis`,
     `placement-group`,
+    `prefix-list`,
+    `replace-root-volume-task`,
     `reserved-instances`,
     `route-table`,
     `security-group`,
+    `security-group-rule`,
     snapshot,
     `spot-fleet-request`,
     `spot-instances-request`,
@@ -2517,6 +3120,8 @@ object ResourceType {
     `transit-gateway-route-table`,
     volume,
     vpc,
+    `vpc-endpoint`,
+    `vpc-endpoint-service`,
     `vpc-peering-connection`,
     `vpn-connection`,
     `vpn-gateway`,
@@ -2628,8 +3233,10 @@ object SnapshotState {
   val pending = "pending".asInstanceOf[SnapshotState]
   val completed = "completed".asInstanceOf[SnapshotState]
   val error = "error".asInstanceOf[SnapshotState]
+  val recoverable = "recoverable".asInstanceOf[SnapshotState]
+  val recovering = "recovering".asInstanceOf[SnapshotState]
 
-  @inline def values: js.Array[SnapshotState] = js.Array(pending, completed, error)
+  @inline def values: js.Array[SnapshotState] = js.Array(pending, completed, error, recoverable, recovering)
 }
 
 @js.native
@@ -2728,6 +3335,15 @@ object StatusType {
 }
 
 @js.native
+sealed trait StorageTier extends js.Any
+object StorageTier {
+  val archive = "archive".asInstanceOf[StorageTier]
+  val standard = "standard".asInstanceOf[StorageTier]
+
+  @inline def values: js.Array[StorageTier] = js.Array(archive, standard)
+}
+
+@js.native
 sealed trait SubnetCidrBlockStateCode extends js.Any
 object SubnetCidrBlockStateCode {
   val associating = "associating".asInstanceOf[SubnetCidrBlockStateCode]
@@ -2738,6 +3354,15 @@ object SubnetCidrBlockStateCode {
   val failed = "failed".asInstanceOf[SubnetCidrBlockStateCode]
 
   @inline def values: js.Array[SubnetCidrBlockStateCode] = js.Array(associating, associated, disassociating, disassociated, failing, failed)
+}
+
+@js.native
+sealed trait SubnetCidrReservationType extends js.Any
+object SubnetCidrReservationType {
+  val prefix = "prefix".asInstanceOf[SubnetCidrReservationType]
+  val explicit = "explicit".asInstanceOf[SubnetCidrReservationType]
+
+  @inline def values: js.Array[SubnetCidrReservationType] = js.Array(prefix, explicit)
 }
 
 @js.native
@@ -2762,6 +3387,24 @@ object SummaryStatus {
 }
 
 @js.native
+sealed trait TargetCapacityUnitType extends js.Any
+object TargetCapacityUnitType {
+  val vcpu = "vcpu".asInstanceOf[TargetCapacityUnitType]
+  val `memory-mib` = "memory-mib".asInstanceOf[TargetCapacityUnitType]
+  val units = "units".asInstanceOf[TargetCapacityUnitType]
+
+  @inline def values: js.Array[TargetCapacityUnitType] = js.Array(vcpu, `memory-mib`, units)
+}
+
+@js.native
+sealed trait TargetStorageTier extends js.Any
+object TargetStorageTier {
+  val archive = "archive".asInstanceOf[TargetStorageTier]
+
+  @inline def values: js.Array[TargetStorageTier] = js.Array(archive)
+}
+
+@js.native
 sealed trait TelemetryStatus extends js.Any
 object TelemetryStatus {
   val UP = "UP".asInstanceOf[TelemetryStatus]
@@ -2778,6 +3421,32 @@ object Tenancy {
   val host = "host".asInstanceOf[Tenancy]
 
   @inline def values: js.Array[Tenancy] = js.Array(default, dedicated, host)
+}
+
+@js.native
+sealed trait TieringOperationStatus extends js.Any
+object TieringOperationStatus {
+  val `archival-in-progress` = "archival-in-progress".asInstanceOf[TieringOperationStatus]
+  val `archival-completed` = "archival-completed".asInstanceOf[TieringOperationStatus]
+  val `archival-failed` = "archival-failed".asInstanceOf[TieringOperationStatus]
+  val `temporary-restore-in-progress` = "temporary-restore-in-progress".asInstanceOf[TieringOperationStatus]
+  val `temporary-restore-completed` = "temporary-restore-completed".asInstanceOf[TieringOperationStatus]
+  val `temporary-restore-failed` = "temporary-restore-failed".asInstanceOf[TieringOperationStatus]
+  val `permanent-restore-in-progress` = "permanent-restore-in-progress".asInstanceOf[TieringOperationStatus]
+  val `permanent-restore-completed` = "permanent-restore-completed".asInstanceOf[TieringOperationStatus]
+  val `permanent-restore-failed` = "permanent-restore-failed".asInstanceOf[TieringOperationStatus]
+
+  @inline def values: js.Array[TieringOperationStatus] = js.Array(
+    `archival-in-progress`,
+    `archival-completed`,
+    `archival-failed`,
+    `temporary-restore-in-progress`,
+    `temporary-restore-completed`,
+    `temporary-restore-failed`,
+    `permanent-restore-in-progress`,
+    `permanent-restore-completed`,
+    `permanent-restore-failed`
+  )
 }
 
 @js.native
@@ -3227,6 +3896,20 @@ object VpnStaticRouteSource {
   val Static = "Static".asInstanceOf[VpnStaticRouteSource]
 
   @inline def values: js.Array[VpnStaticRouteSource] = js.Array(Static)
+}
+
+@js.native
+sealed trait WeekDay extends js.Any
+object WeekDay {
+  val sunday = "sunday".asInstanceOf[WeekDay]
+  val monday = "monday".asInstanceOf[WeekDay]
+  val tuesday = "tuesday".asInstanceOf[WeekDay]
+  val wednesday = "wednesday".asInstanceOf[WeekDay]
+  val thursday = "thursday".asInstanceOf[WeekDay]
+  val friday = "friday".asInstanceOf[WeekDay]
+  val saturday = "saturday".asInstanceOf[WeekDay]
+
+  @inline def values: js.Array[WeekDay] = js.Array(sunday, monday, tuesday, wednesday, thursday, friday, saturday)
 }
 
 @js.native

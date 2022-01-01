@@ -9,6 +9,8 @@ import facade.amazonaws._
 
 package object directconnect {
   type ASN = Int
+  type AgreementList = js.Array[CustomerAgreement]
+  type AgreementName = String
   type AmazonAddress = String
   type AssociatedGatewayId = String
   type AvailableMacSecPortSpeeds = js.Array[PortSpeed]
@@ -16,6 +18,7 @@ package object directconnect {
   @deprecated("Deprecated in AWS SDK", "forever")
   type AwsDevice = String
   type AwsDeviceV2 = String
+  type AwsLogicalDeviceId = String
   type BGPAuthKey = String
   type BGPPeerId = String
   type BGPPeerIdList = js.Array[BGPPeerId]
@@ -38,6 +41,7 @@ package object directconnect {
   type DirectConnectGatewayId = String
   type DirectConnectGatewayList = js.Array[DirectConnectGateway]
   type DirectConnectGatewayName = String
+  type EnableSiteLink = Boolean
   type EncryptionMode = String
   type EndTime = js.Date
   type FailureTestHistoryStatus = String
@@ -63,6 +67,7 @@ package object directconnect {
   type OwnerAccount = String
   type PaginationToken = String
   type PartnerName = String
+  type Platform = String
   type PortEncryptionStatus = String
   type PortSpeed = String
   type ProviderList = js.Array[ProviderName]
@@ -74,11 +79,15 @@ package object directconnect {
   type ResourceTagList = js.Array[ResourceTag]
   type RouteFilterPrefixList = js.Array[RouteFilterPrefix]
   type RouterConfig = String
+  type RouterTypeIdentifier = String
   type SecretARN = String
+  type SiteLinkEnabled = Boolean
+  type Software = String
   type StartOnDate = String
   type StartTime = js.Date
   type State = String
   type StateChangeError = String
+  type Status = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
@@ -86,6 +95,7 @@ package object directconnect {
   type TestDuration = Int
   type TestId = String
   type VLAN = Int
+  type Vendor = String
   type VirtualGatewayId = String
   type VirtualGatewayList = js.Array[VirtualGateway]
   @deprecated("Deprecated in AWS SDK", "forever")
@@ -97,6 +107,8 @@ package object directconnect {
   type VirtualInterfaceRegion = String
   type VirtualInterfaceTestHistoryList = js.Array[VirtualInterfaceTestHistory]
   type VirtualInterfaceType = String
+  type XsltTemplateName = String
+  type XsltTemplateNameForMacSec = String
 
   final class DirectConnectOps(private val service: DirectConnect) extends AnyVal {
 
@@ -110,6 +122,7 @@ package object directconnect {
     @inline def associateMacSecKeyFuture(params: AssociateMacSecKeyRequest): Future[AssociateMacSecKeyResponse] = service.associateMacSecKey(params).promise().toFuture
     @inline def associateVirtualInterfaceFuture(params: AssociateVirtualInterfaceRequest): Future[VirtualInterface] = service.associateVirtualInterface(params).promise().toFuture
     @inline def confirmConnectionFuture(params: ConfirmConnectionRequest): Future[ConfirmConnectionResponse] = service.confirmConnection(params).promise().toFuture
+    @inline def confirmCustomerAgreementFuture(params: ConfirmCustomerAgreementRequest): Future[ConfirmCustomerAgreementResponse] = service.confirmCustomerAgreement(params).promise().toFuture
     @inline def confirmPrivateVirtualInterfaceFuture(params: ConfirmPrivateVirtualInterfaceRequest): Future[ConfirmPrivateVirtualInterfaceResponse] = service.confirmPrivateVirtualInterface(params).promise().toFuture
     @inline def confirmPublicVirtualInterfaceFuture(params: ConfirmPublicVirtualInterfaceRequest): Future[ConfirmPublicVirtualInterfaceResponse] = service.confirmPublicVirtualInterface(params).promise().toFuture
     @inline def confirmTransitVirtualInterfaceFuture(params: ConfirmTransitVirtualInterfaceRequest): Future[ConfirmTransitVirtualInterfaceResponse] = service.confirmTransitVirtualInterface(params).promise().toFuture
@@ -132,6 +145,7 @@ package object directconnect {
     @inline def deleteLagFuture(params: DeleteLagRequest): Future[Lag] = service.deleteLag(params).promise().toFuture
     @inline def deleteVirtualInterfaceFuture(params: DeleteVirtualInterfaceRequest): Future[DeleteVirtualInterfaceResponse] = service.deleteVirtualInterface(params).promise().toFuture
     @inline def describeConnectionsFuture(params: DescribeConnectionsRequest): Future[Connections] = service.describeConnections(params).promise().toFuture
+    @inline def describeCustomerMetadataFuture(): Future[DescribeCustomerMetadataResponse] = service.describeCustomerMetadata().promise().toFuture
     @inline def describeDirectConnectGatewayAssociationProposalsFuture(params: DescribeDirectConnectGatewayAssociationProposalsRequest): Future[DescribeDirectConnectGatewayAssociationProposalsResult] = service.describeDirectConnectGatewayAssociationProposals(params).promise().toFuture
     @inline def describeDirectConnectGatewayAssociationsFuture(params: DescribeDirectConnectGatewayAssociationsRequest): Future[DescribeDirectConnectGatewayAssociationsResult] = service.describeDirectConnectGatewayAssociations(params).promise().toFuture
     @inline def describeDirectConnectGatewayAttachmentsFuture(params: DescribeDirectConnectGatewayAttachmentsRequest): Future[DescribeDirectConnectGatewayAttachmentsResult] = service.describeDirectConnectGatewayAttachments(params).promise().toFuture
@@ -141,6 +155,7 @@ package object directconnect {
     @inline def describeLagsFuture(params: DescribeLagsRequest): Future[Lags] = service.describeLags(params).promise().toFuture
     @inline def describeLoaFuture(params: DescribeLoaRequest): Future[Loa] = service.describeLoa(params).promise().toFuture
     @inline def describeLocationsFuture(): Future[Locations] = service.describeLocations().promise().toFuture
+    @inline def describeRouterConfigurationFuture(params: DescribeRouterConfigurationRequest): Future[DescribeRouterConfigurationResponse] = service.describeRouterConfiguration(params).promise().toFuture
     @inline def describeTagsFuture(params: DescribeTagsRequest): Future[DescribeTagsResponse] = service.describeTags(params).promise().toFuture
     @inline def describeVirtualGatewaysFuture(): Future[VirtualGateways] = service.describeVirtualGateways().promise().toFuture
     @inline def describeVirtualInterfacesFuture(params: DescribeVirtualInterfacesRequest): Future[VirtualInterfaces] = service.describeVirtualInterfaces(params).promise().toFuture
@@ -153,6 +168,7 @@ package object directconnect {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateConnectionFuture(params: UpdateConnectionRequest): Future[Connection] = service.updateConnection(params).promise().toFuture
     @inline def updateDirectConnectGatewayAssociationFuture(params: UpdateDirectConnectGatewayAssociationRequest): Future[UpdateDirectConnectGatewayAssociationResult] = service.updateDirectConnectGatewayAssociation(params).promise().toFuture
+    @inline def updateDirectConnectGatewayFuture(params: UpdateDirectConnectGatewayRequest): Future[UpdateDirectConnectGatewayResponse] = service.updateDirectConnectGateway(params).promise().toFuture
     @inline def updateLagFuture(params: UpdateLagRequest): Future[Lag] = service.updateLag(params).promise().toFuture
     @inline def updateVirtualInterfaceAttributesFuture(params: UpdateVirtualInterfaceAttributesRequest): Future[VirtualInterface] = service.updateVirtualInterfaceAttributes(params).promise().toFuture
 
@@ -177,6 +193,7 @@ package object directconnect {
     def associateMacSecKey(params: AssociateMacSecKeyRequest): Request[AssociateMacSecKeyResponse] = js.native
     def associateVirtualInterface(params: AssociateVirtualInterfaceRequest): Request[VirtualInterface] = js.native
     def confirmConnection(params: ConfirmConnectionRequest): Request[ConfirmConnectionResponse] = js.native
+    def confirmCustomerAgreement(params: ConfirmCustomerAgreementRequest): Request[ConfirmCustomerAgreementResponse] = js.native
     def confirmPrivateVirtualInterface(params: ConfirmPrivateVirtualInterfaceRequest): Request[ConfirmPrivateVirtualInterfaceResponse] = js.native
     def confirmPublicVirtualInterface(params: ConfirmPublicVirtualInterfaceRequest): Request[ConfirmPublicVirtualInterfaceResponse] = js.native
     def confirmTransitVirtualInterface(params: ConfirmTransitVirtualInterfaceRequest): Request[ConfirmTransitVirtualInterfaceResponse] = js.native
@@ -199,6 +216,7 @@ package object directconnect {
     def deleteLag(params: DeleteLagRequest): Request[Lag] = js.native
     def deleteVirtualInterface(params: DeleteVirtualInterfaceRequest): Request[DeleteVirtualInterfaceResponse] = js.native
     def describeConnections(params: DescribeConnectionsRequest): Request[Connections] = js.native
+    def describeCustomerMetadata(): Request[DescribeCustomerMetadataResponse] = js.native
     def describeDirectConnectGatewayAssociationProposals(params: DescribeDirectConnectGatewayAssociationProposalsRequest): Request[DescribeDirectConnectGatewayAssociationProposalsResult] = js.native
     def describeDirectConnectGatewayAssociations(params: DescribeDirectConnectGatewayAssociationsRequest): Request[DescribeDirectConnectGatewayAssociationsResult] = js.native
     def describeDirectConnectGatewayAttachments(params: DescribeDirectConnectGatewayAttachmentsRequest): Request[DescribeDirectConnectGatewayAttachmentsResult] = js.native
@@ -208,6 +226,7 @@ package object directconnect {
     def describeLags(params: DescribeLagsRequest): Request[Lags] = js.native
     def describeLoa(params: DescribeLoaRequest): Request[Loa] = js.native
     def describeLocations(): Request[Locations] = js.native
+    def describeRouterConfiguration(params: DescribeRouterConfigurationRequest): Request[DescribeRouterConfigurationResponse] = js.native
     def describeTags(params: DescribeTagsRequest): Request[DescribeTagsResponse] = js.native
     def describeVirtualGateways(): Request[VirtualGateways] = js.native
     def describeVirtualInterfaces(params: DescribeVirtualInterfacesRequest): Request[VirtualInterfaces] = js.native
@@ -219,6 +238,7 @@ package object directconnect {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateConnection(params: UpdateConnectionRequest): Request[Connection] = js.native
+    def updateDirectConnectGateway(params: UpdateDirectConnectGatewayRequest): Request[UpdateDirectConnectGatewayResponse] = js.native
     def updateDirectConnectGatewayAssociation(params: UpdateDirectConnectGatewayAssociationRequest): Request[UpdateDirectConnectGatewayAssociationResult] = js.native
     def updateLag(params: UpdateLagRequest): Request[Lag] = js.native
     def updateVirtualInterfaceAttributes(params: UpdateVirtualInterfaceAttributesRequest): Request[VirtualInterface] = js.native
@@ -561,6 +581,7 @@ package object directconnect {
     var asn: js.UndefOr[ASN]
     var authKey: js.UndefOr[BGPAuthKey]
     var awsDeviceV2: js.UndefOr[AwsDeviceV2]
+    var awsLogicalDeviceId: js.UndefOr[AwsLogicalDeviceId]
     var bgpPeerId: js.UndefOr[BGPPeerId]
     var bgpPeerState: js.UndefOr[BGPPeerState]
     var bgpStatus: js.UndefOr[BGPStatus]
@@ -575,6 +596,7 @@ package object directconnect {
         asn: js.UndefOr[ASN] = js.undefined,
         authKey: js.UndefOr[BGPAuthKey] = js.undefined,
         awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
+        awsLogicalDeviceId: js.UndefOr[AwsLogicalDeviceId] = js.undefined,
         bgpPeerId: js.UndefOr[BGPPeerId] = js.undefined,
         bgpPeerState: js.UndefOr[BGPPeerState] = js.undefined,
         bgpStatus: js.UndefOr[BGPStatus] = js.undefined,
@@ -586,6 +608,7 @@ package object directconnect {
       asn.foreach(__v => __obj.updateDynamic("asn")(__v.asInstanceOf[js.Any]))
       authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
       awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
+      awsLogicalDeviceId.foreach(__v => __obj.updateDynamic("awsLogicalDeviceId")(__v.asInstanceOf[js.Any]))
       bgpPeerId.foreach(__v => __obj.updateDynamic("bgpPeerId")(__v.asInstanceOf[js.Any]))
       bgpPeerState.foreach(__v => __obj.updateDynamic("bgpPeerState")(__v.asInstanceOf[js.Any]))
       bgpStatus.foreach(__v => __obj.updateDynamic("bgpStatus")(__v.asInstanceOf[js.Any]))
@@ -624,6 +647,38 @@ package object directconnect {
       val __obj = js.Dynamic.literal()
       connectionState.foreach(__v => __obj.updateDynamic("connectionState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfirmConnectionResponse]
+    }
+  }
+
+  @js.native
+  trait ConfirmCustomerAgreementRequest extends js.Object {
+    var agreementName: js.UndefOr[AgreementName]
+  }
+
+  object ConfirmCustomerAgreementRequest {
+    @inline
+    def apply(
+        agreementName: js.UndefOr[AgreementName] = js.undefined
+    ): ConfirmCustomerAgreementRequest = {
+      val __obj = js.Dynamic.literal()
+      agreementName.foreach(__v => __obj.updateDynamic("agreementName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfirmCustomerAgreementRequest]
+    }
+  }
+
+  @js.native
+  trait ConfirmCustomerAgreementResponse extends js.Object {
+    var status: js.UndefOr[Status]
+  }
+
+  object ConfirmCustomerAgreementResponse {
+    @inline
+    def apply(
+        status: js.UndefOr[Status] = js.undefined
+    ): ConfirmCustomerAgreementResponse = {
+      val __obj = js.Dynamic.literal()
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfirmCustomerAgreementResponse]
     }
   }
 
@@ -736,12 +791,13 @@ package object directconnect {
     }
   }
 
-  /** Information about an AWS Direct Connect connection.
+  /** Information about an Direct Connect connection.
     */
   @js.native
   trait Connection extends js.Object {
     var awsDevice: js.UndefOr[AwsDevice]
     var awsDeviceV2: js.UndefOr[AwsDeviceV2]
+    var awsLogicalDeviceId: js.UndefOr[AwsLogicalDeviceId]
     var bandwidth: js.UndefOr[Bandwidth]
     var connectionId: js.UndefOr[ConnectionId]
     var connectionName: js.UndefOr[ConnectionName]
@@ -768,6 +824,7 @@ package object directconnect {
     def apply(
         awsDevice: js.UndefOr[AwsDevice] = js.undefined,
         awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
+        awsLogicalDeviceId: js.UndefOr[AwsLogicalDeviceId] = js.undefined,
         bandwidth: js.UndefOr[Bandwidth] = js.undefined,
         connectionId: js.UndefOr[ConnectionId] = js.undefined,
         connectionName: js.UndefOr[ConnectionName] = js.undefined,
@@ -791,6 +848,7 @@ package object directconnect {
       val __obj = js.Dynamic.literal()
       awsDevice.foreach(__v => __obj.updateDynamic("awsDevice")(__v.asInstanceOf[js.Any]))
       awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
+      awsLogicalDeviceId.foreach(__v => __obj.updateDynamic("awsLogicalDeviceId")(__v.asInstanceOf[js.Any]))
       bandwidth.foreach(__v => __obj.updateDynamic("bandwidth")(__v.asInstanceOf[js.Any]))
       connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
       connectionName.foreach(__v => __obj.updateDynamic("connectionName")(__v.asInstanceOf[js.Any]))
@@ -1178,6 +1236,27 @@ package object directconnect {
     }
   }
 
+  /** The name and status of a customer agreement.
+    */
+  @js.native
+  trait CustomerAgreement extends js.Object {
+    var agreementName: js.UndefOr[AgreementName]
+    var status: js.UndefOr[Status]
+  }
+
+  object CustomerAgreement {
+    @inline
+    def apply(
+        agreementName: js.UndefOr[AgreementName] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): CustomerAgreement = {
+      val __obj = js.Dynamic.literal()
+      agreementName.foreach(__v => __obj.updateDynamic("agreementName")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomerAgreement]
+    }
+  }
+
   @js.native
   trait DeleteBGPPeerRequest extends js.Object {
     var asn: js.UndefOr[ASN]
@@ -1497,6 +1576,25 @@ package object directconnect {
   }
 
   @js.native
+  trait DescribeCustomerMetadataResponse extends js.Object {
+    var agreements: js.UndefOr[AgreementList]
+    var nniPartnerType: js.UndefOr[NniPartnerType]
+  }
+
+  object DescribeCustomerMetadataResponse {
+    @inline
+    def apply(
+        agreements: js.UndefOr[AgreementList] = js.undefined,
+        nniPartnerType: js.UndefOr[NniPartnerType] = js.undefined
+    ): DescribeCustomerMetadataResponse = {
+      val __obj = js.Dynamic.literal()
+      agreements.foreach(__v => __obj.updateDynamic("agreements")(__v.asInstanceOf[js.Any]))
+      nniPartnerType.foreach(__v => __obj.updateDynamic("nniPartnerType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeCustomerMetadataResponse]
+    }
+  }
+
+  @js.native
   trait DescribeDirectConnectGatewayAssociationProposalsRequest extends js.Object {
     var associatedGatewayId: js.UndefOr[AssociatedGatewayId]
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
@@ -1791,6 +1889,54 @@ package object directconnect {
     }
   }
 
+  /** Provides the details about a virtual interface's router.
+    */
+  @js.native
+  trait DescribeRouterConfigurationRequest extends js.Object {
+    var virtualInterfaceId: VirtualInterfaceId
+    var routerTypeIdentifier: js.UndefOr[RouterTypeIdentifier]
+  }
+
+  object DescribeRouterConfigurationRequest {
+    @inline
+    def apply(
+        virtualInterfaceId: VirtualInterfaceId,
+        routerTypeIdentifier: js.UndefOr[RouterTypeIdentifier] = js.undefined
+    ): DescribeRouterConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
+      )
+
+      routerTypeIdentifier.foreach(__v => __obj.updateDynamic("routerTypeIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRouterConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeRouterConfigurationResponse extends js.Object {
+    var customerRouterConfig: js.UndefOr[RouterConfig]
+    var router: js.UndefOr[RouterType]
+    var virtualInterfaceId: js.UndefOr[VirtualInterfaceId]
+    var virtualInterfaceName: js.UndefOr[VirtualInterfaceName]
+  }
+
+  object DescribeRouterConfigurationResponse {
+    @inline
+    def apply(
+        customerRouterConfig: js.UndefOr[RouterConfig] = js.undefined,
+        router: js.UndefOr[RouterType] = js.undefined,
+        virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined,
+        virtualInterfaceName: js.UndefOr[VirtualInterfaceName] = js.undefined
+    ): DescribeRouterConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      customerRouterConfig.foreach(__v => __obj.updateDynamic("customerRouterConfig")(__v.asInstanceOf[js.Any]))
+      router.foreach(__v => __obj.updateDynamic("router")(__v.asInstanceOf[js.Any]))
+      virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))
+      virtualInterfaceName.foreach(__v => __obj.updateDynamic("virtualInterfaceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRouterConfigurationResponse]
+    }
+  }
+
   @js.native
   trait DescribeTagsRequest extends js.Object {
     var resourceArns: ResourceArnList
@@ -2058,6 +2204,7 @@ package object directconnect {
   trait Interconnect extends js.Object {
     var awsDevice: js.UndefOr[AwsDevice]
     var awsDeviceV2: js.UndefOr[AwsDeviceV2]
+    var awsLogicalDeviceId: js.UndefOr[AwsLogicalDeviceId]
     var bandwidth: js.UndefOr[Bandwidth]
     var hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy]
     var interconnectId: js.UndefOr[InterconnectId]
@@ -2077,6 +2224,7 @@ package object directconnect {
     def apply(
         awsDevice: js.UndefOr[AwsDevice] = js.undefined,
         awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
+        awsLogicalDeviceId: js.UndefOr[AwsLogicalDeviceId] = js.undefined,
         bandwidth: js.UndefOr[Bandwidth] = js.undefined,
         hasLogicalRedundancy: js.UndefOr[HasLogicalRedundancy] = js.undefined,
         interconnectId: js.UndefOr[InterconnectId] = js.undefined,
@@ -2093,6 +2241,7 @@ package object directconnect {
       val __obj = js.Dynamic.literal()
       awsDevice.foreach(__v => __obj.updateDynamic("awsDevice")(__v.asInstanceOf[js.Any]))
       awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
+      awsLogicalDeviceId.foreach(__v => __obj.updateDynamic("awsLogicalDeviceId")(__v.asInstanceOf[js.Any]))
       bandwidth.foreach(__v => __obj.updateDynamic("bandwidth")(__v.asInstanceOf[js.Any]))
       hasLogicalRedundancy.foreach(__v => __obj.updateDynamic("hasLogicalRedundancy")(__v.asInstanceOf[js.Any]))
       interconnectId.foreach(__v => __obj.updateDynamic("interconnectId")(__v.asInstanceOf[js.Any]))
@@ -2132,6 +2281,7 @@ package object directconnect {
     var allowsHostedConnections: js.UndefOr[BooleanFlag]
     var awsDevice: js.UndefOr[AwsDevice]
     var awsDeviceV2: js.UndefOr[AwsDeviceV2]
+    var awsLogicalDeviceId: js.UndefOr[AwsLogicalDeviceId]
     var connections: js.UndefOr[ConnectionList]
     var connectionsBandwidth: js.UndefOr[Bandwidth]
     var encryptionMode: js.UndefOr[EncryptionMode]
@@ -2157,6 +2307,7 @@ package object directconnect {
         allowsHostedConnections: js.UndefOr[BooleanFlag] = js.undefined,
         awsDevice: js.UndefOr[AwsDevice] = js.undefined,
         awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
+        awsLogicalDeviceId: js.UndefOr[AwsLogicalDeviceId] = js.undefined,
         connections: js.UndefOr[ConnectionList] = js.undefined,
         connectionsBandwidth: js.UndefOr[Bandwidth] = js.undefined,
         encryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
@@ -2179,6 +2330,7 @@ package object directconnect {
       allowsHostedConnections.foreach(__v => __obj.updateDynamic("allowsHostedConnections")(__v.asInstanceOf[js.Any]))
       awsDevice.foreach(__v => __obj.updateDynamic("awsDevice")(__v.asInstanceOf[js.Any]))
       awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
+      awsLogicalDeviceId.foreach(__v => __obj.updateDynamic("awsLogicalDeviceId")(__v.asInstanceOf[js.Any]))
       connections.foreach(__v => __obj.updateDynamic("connections")(__v.asInstanceOf[js.Any]))
       connectionsBandwidth.foreach(__v => __obj.updateDynamic("connectionsBandwidth")(__v.asInstanceOf[js.Any]))
       encryptionMode.foreach(__v => __obj.updateDynamic("encryptionMode")(__v.asInstanceOf[js.Any]))
@@ -2287,7 +2439,7 @@ package object directconnect {
     }
   }
 
-  /** Information about an AWS Direct Connect location.
+  /** Information about an Direct Connect location.
     */
   @js.native
   trait Location extends js.Object {
@@ -2405,6 +2557,7 @@ package object directconnect {
     var authKey: js.UndefOr[BGPAuthKey]
     var customerAddress: js.UndefOr[CustomerAddress]
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
+    var enableSiteLink: js.UndefOr[EnableSiteLink]
     var mtu: js.UndefOr[MTU]
     var tags: js.UndefOr[TagList]
     var virtualGatewayId: js.UndefOr[VirtualGatewayId]
@@ -2421,6 +2574,7 @@ package object directconnect {
         authKey: js.UndefOr[BGPAuthKey] = js.undefined,
         customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
         directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        enableSiteLink: js.UndefOr[EnableSiteLink] = js.undefined,
         mtu: js.UndefOr[MTU] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined
@@ -2436,6 +2590,7 @@ package object directconnect {
       authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
       customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
       directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
+      enableSiteLink.foreach(__v => __obj.updateDynamic("enableSiteLink")(__v.asInstanceOf[js.Any]))
       mtu.foreach(__v => __obj.updateDynamic("mtu")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
@@ -2585,6 +2740,7 @@ package object directconnect {
     var authKey: js.UndefOr[BGPAuthKey]
     var customerAddress: js.UndefOr[CustomerAddress]
     var directConnectGatewayId: js.UndefOr[DirectConnectGatewayId]
+    var enableSiteLink: js.UndefOr[EnableSiteLink]
     var mtu: js.UndefOr[MTU]
     var tags: js.UndefOr[TagList]
     var virtualInterfaceName: js.UndefOr[VirtualInterfaceName]
@@ -2600,6 +2756,7 @@ package object directconnect {
         authKey: js.UndefOr[BGPAuthKey] = js.undefined,
         customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
         directConnectGatewayId: js.UndefOr[DirectConnectGatewayId] = js.undefined,
+        enableSiteLink: js.UndefOr[EnableSiteLink] = js.undefined,
         mtu: js.UndefOr[MTU] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         virtualInterfaceName: js.UndefOr[VirtualInterfaceName] = js.undefined,
@@ -2612,6 +2769,7 @@ package object directconnect {
       authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
       customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
       directConnectGatewayId.foreach(__v => __obj.updateDynamic("directConnectGatewayId")(__v.asInstanceOf[js.Any]))
+      enableSiteLink.foreach(__v => __obj.updateDynamic("enableSiteLink")(__v.asInstanceOf[js.Any]))
       mtu.foreach(__v => __obj.updateDynamic("mtu")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       virtualInterfaceName.foreach(__v => __obj.updateDynamic("virtualInterfaceName")(__v.asInstanceOf[js.Any]))
@@ -2662,7 +2820,7 @@ package object directconnect {
     }
   }
 
-  /** Information about a tag associated with an AWS Direct Connect resource.
+  /** Information about a tag associated with an Direct Connect resource.
     */
   @js.native
   trait ResourceTag extends js.Object {
@@ -2698,6 +2856,39 @@ package object directconnect {
       val __obj = js.Dynamic.literal()
       cidr.foreach(__v => __obj.updateDynamic("cidr")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RouteFilterPrefix]
+    }
+  }
+
+  /** Information about the virtual router.
+    */
+  @js.native
+  trait RouterType extends js.Object {
+    var platform: js.UndefOr[Platform]
+    var routerTypeIdentifier: js.UndefOr[RouterTypeIdentifier]
+    var software: js.UndefOr[Software]
+    var vendor: js.UndefOr[Vendor]
+    var xsltTemplateName: js.UndefOr[XsltTemplateName]
+    var xsltTemplateNameForMacSec: js.UndefOr[XsltTemplateNameForMacSec]
+  }
+
+  object RouterType {
+    @inline
+    def apply(
+        platform: js.UndefOr[Platform] = js.undefined,
+        routerTypeIdentifier: js.UndefOr[RouterTypeIdentifier] = js.undefined,
+        software: js.UndefOr[Software] = js.undefined,
+        vendor: js.UndefOr[Vendor] = js.undefined,
+        xsltTemplateName: js.UndefOr[XsltTemplateName] = js.undefined,
+        xsltTemplateNameForMacSec: js.UndefOr[XsltTemplateNameForMacSec] = js.undefined
+    ): RouterType = {
+      val __obj = js.Dynamic.literal()
+      platform.foreach(__v => __obj.updateDynamic("platform")(__v.asInstanceOf[js.Any]))
+      routerTypeIdentifier.foreach(__v => __obj.updateDynamic("routerTypeIdentifier")(__v.asInstanceOf[js.Any]))
+      software.foreach(__v => __obj.updateDynamic("software")(__v.asInstanceOf[js.Any]))
+      vendor.foreach(__v => __obj.updateDynamic("vendor")(__v.asInstanceOf[js.Any]))
+      xsltTemplateName.foreach(__v => __obj.updateDynamic("xsltTemplateName")(__v.asInstanceOf[js.Any]))
+      xsltTemplateNameForMacSec.foreach(__v => __obj.updateDynamic("xsltTemplateNameForMacSec")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RouterType]
     }
   }
 
@@ -2922,6 +3113,42 @@ package object directconnect {
   }
 
   @js.native
+  trait UpdateDirectConnectGatewayRequest extends js.Object {
+    var directConnectGatewayId: DirectConnectGatewayId
+    var newDirectConnectGatewayName: DirectConnectGatewayName
+  }
+
+  object UpdateDirectConnectGatewayRequest {
+    @inline
+    def apply(
+        directConnectGatewayId: DirectConnectGatewayId,
+        newDirectConnectGatewayName: DirectConnectGatewayName
+    ): UpdateDirectConnectGatewayRequest = {
+      val __obj = js.Dynamic.literal(
+        "directConnectGatewayId" -> directConnectGatewayId.asInstanceOf[js.Any],
+        "newDirectConnectGatewayName" -> newDirectConnectGatewayName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateDirectConnectGatewayRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDirectConnectGatewayResponse extends js.Object {
+    var directConnectGateway: js.UndefOr[DirectConnectGateway]
+  }
+
+  object UpdateDirectConnectGatewayResponse {
+    @inline
+    def apply(
+        directConnectGateway: js.UndefOr[DirectConnectGateway] = js.undefined
+    ): UpdateDirectConnectGatewayResponse = {
+      val __obj = js.Dynamic.literal()
+      directConnectGateway.foreach(__v => __obj.updateDynamic("directConnectGateway")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDirectConnectGatewayResponse]
+    }
+  }
+
+  @js.native
   trait UpdateLagRequest extends js.Object {
     var lagId: LagId
     var encryptionMode: js.UndefOr[EncryptionMode]
@@ -2951,20 +3178,26 @@ package object directconnect {
   @js.native
   trait UpdateVirtualInterfaceAttributesRequest extends js.Object {
     var virtualInterfaceId: VirtualInterfaceId
+    var enableSiteLink: js.UndefOr[EnableSiteLink]
     var mtu: js.UndefOr[MTU]
+    var virtualInterfaceName: js.UndefOr[VirtualInterfaceName]
   }
 
   object UpdateVirtualInterfaceAttributesRequest {
     @inline
     def apply(
         virtualInterfaceId: VirtualInterfaceId,
-        mtu: js.UndefOr[MTU] = js.undefined
+        enableSiteLink: js.UndefOr[EnableSiteLink] = js.undefined,
+        mtu: js.UndefOr[MTU] = js.undefined,
+        virtualInterfaceName: js.UndefOr[VirtualInterfaceName] = js.undefined
     ): UpdateVirtualInterfaceAttributesRequest = {
       val __obj = js.Dynamic.literal(
         "virtualInterfaceId" -> virtualInterfaceId.asInstanceOf[js.Any]
       )
 
+      enableSiteLink.foreach(__v => __obj.updateDynamic("enableSiteLink")(__v.asInstanceOf[js.Any]))
       mtu.foreach(__v => __obj.updateDynamic("mtu")(__v.asInstanceOf[js.Any]))
+      virtualInterfaceName.foreach(__v => __obj.updateDynamic("virtualInterfaceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateVirtualInterfaceAttributesRequest]
     }
   }
@@ -3016,6 +3249,7 @@ package object directconnect {
     var asn: js.UndefOr[ASN]
     var authKey: js.UndefOr[BGPAuthKey]
     var awsDeviceV2: js.UndefOr[AwsDeviceV2]
+    var awsLogicalDeviceId: js.UndefOr[AwsLogicalDeviceId]
     var bgpPeers: js.UndefOr[BGPPeerList]
     var connectionId: js.UndefOr[ConnectionId]
     var customerAddress: js.UndefOr[CustomerAddress]
@@ -3027,6 +3261,7 @@ package object directconnect {
     var ownerAccount: js.UndefOr[OwnerAccount]
     var region: js.UndefOr[Region]
     var routeFilterPrefixes: js.UndefOr[RouteFilterPrefixList]
+    var siteLinkEnabled: js.UndefOr[SiteLinkEnabled]
     var tags: js.UndefOr[TagList]
     var virtualGatewayId: js.UndefOr[VirtualGatewayId]
     var virtualInterfaceId: js.UndefOr[VirtualInterfaceId]
@@ -3045,6 +3280,7 @@ package object directconnect {
         asn: js.UndefOr[ASN] = js.undefined,
         authKey: js.UndefOr[BGPAuthKey] = js.undefined,
         awsDeviceV2: js.UndefOr[AwsDeviceV2] = js.undefined,
+        awsLogicalDeviceId: js.UndefOr[AwsLogicalDeviceId] = js.undefined,
         bgpPeers: js.UndefOr[BGPPeerList] = js.undefined,
         connectionId: js.UndefOr[ConnectionId] = js.undefined,
         customerAddress: js.UndefOr[CustomerAddress] = js.undefined,
@@ -3056,6 +3292,7 @@ package object directconnect {
         ownerAccount: js.UndefOr[OwnerAccount] = js.undefined,
         region: js.UndefOr[Region] = js.undefined,
         routeFilterPrefixes: js.UndefOr[RouteFilterPrefixList] = js.undefined,
+        siteLinkEnabled: js.UndefOr[SiteLinkEnabled] = js.undefined,
         tags: js.UndefOr[TagList] = js.undefined,
         virtualGatewayId: js.UndefOr[VirtualGatewayId] = js.undefined,
         virtualInterfaceId: js.UndefOr[VirtualInterfaceId] = js.undefined,
@@ -3071,6 +3308,7 @@ package object directconnect {
       asn.foreach(__v => __obj.updateDynamic("asn")(__v.asInstanceOf[js.Any]))
       authKey.foreach(__v => __obj.updateDynamic("authKey")(__v.asInstanceOf[js.Any]))
       awsDeviceV2.foreach(__v => __obj.updateDynamic("awsDeviceV2")(__v.asInstanceOf[js.Any]))
+      awsLogicalDeviceId.foreach(__v => __obj.updateDynamic("awsLogicalDeviceId")(__v.asInstanceOf[js.Any]))
       bgpPeers.foreach(__v => __obj.updateDynamic("bgpPeers")(__v.asInstanceOf[js.Any]))
       connectionId.foreach(__v => __obj.updateDynamic("connectionId")(__v.asInstanceOf[js.Any]))
       customerAddress.foreach(__v => __obj.updateDynamic("customerAddress")(__v.asInstanceOf[js.Any]))
@@ -3082,6 +3320,7 @@ package object directconnect {
       ownerAccount.foreach(__v => __obj.updateDynamic("ownerAccount")(__v.asInstanceOf[js.Any]))
       region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
       routeFilterPrefixes.foreach(__v => __obj.updateDynamic("routeFilterPrefixes")(__v.asInstanceOf[js.Any]))
+      siteLinkEnabled.foreach(__v => __obj.updateDynamic("siteLinkEnabled")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       virtualGatewayId.foreach(__v => __obj.updateDynamic("virtualGatewayId")(__v.asInstanceOf[js.Any]))
       virtualInterfaceId.foreach(__v => __obj.updateDynamic("virtualInterfaceId")(__v.asInstanceOf[js.Any]))

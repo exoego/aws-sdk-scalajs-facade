@@ -52,6 +52,8 @@ object LanguageCode {
   val `ru-RU` = "ru-RU".asInstanceOf[LanguageCode]
   val `sv-SE` = "sv-SE".asInstanceOf[LanguageCode]
   val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
+  val `en-NZ` = "en-NZ".asInstanceOf[LanguageCode]
+  val `en-ZA` = "en-ZA".asInstanceOf[LanguageCode]
 
   @inline def values: js.Array[LanguageCode] = js.Array(
     arb,
@@ -82,7 +84,9 @@ object LanguageCode {
     `ro-RO`,
     `ru-RU`,
     `sv-SE`,
-    `tr-TR`
+    `tr-TR`,
+    `en-NZ`,
+    `en-ZA`
   )
 }
 
@@ -148,6 +152,7 @@ object VoiceId {
   val Enrique = "Enrique".asInstanceOf[VoiceId]
   val Ewa = "Ewa".asInstanceOf[VoiceId]
   val Filiz = "Filiz".asInstanceOf[VoiceId]
+  val Gabrielle = "Gabrielle".asInstanceOf[VoiceId]
   val Geraint = "Geraint".asInstanceOf[VoiceId]
   val Giorgio = "Giorgio".asInstanceOf[VoiceId]
   val Gwyneth = "Gwyneth".asInstanceOf[VoiceId]
@@ -193,6 +198,8 @@ object VoiceId {
   val Vitoria = "Vitoria".asInstanceOf[VoiceId]
   val Zeina = "Zeina".asInstanceOf[VoiceId]
   val Zhiyu = "Zhiyu".asInstanceOf[VoiceId]
+  val Aria = "Aria".asInstanceOf[VoiceId]
+  val Ayanda = "Ayanda".asInstanceOf[VoiceId]
 
   @inline def values: js.Array[VoiceId] = js.Array(
     Aditi,
@@ -212,6 +219,7 @@ object VoiceId {
     Enrique,
     Ewa,
     Filiz,
+    Gabrielle,
     Geraint,
     Giorgio,
     Gwyneth,
@@ -256,6 +264,8 @@ object VoiceId {
     Vicki,
     Vitoria,
     Zeina,
-    Zhiyu
+    Zhiyu,
+    Aria,
+    Ayanda
   )
 }

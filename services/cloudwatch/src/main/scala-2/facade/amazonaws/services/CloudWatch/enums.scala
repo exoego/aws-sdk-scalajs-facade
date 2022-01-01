@@ -22,6 +22,15 @@ object AnomalyDetectorStateValue {
 }
 
 @js.native
+sealed trait AnomalyDetectorType extends js.Any
+object AnomalyDetectorType {
+  val SINGLE_METRIC = "SINGLE_METRIC".asInstanceOf[AnomalyDetectorType]
+  val METRIC_MATH = "METRIC_MATH".asInstanceOf[AnomalyDetectorType]
+
+  @inline def values: js.Array[AnomalyDetectorType] = js.Array(SINGLE_METRIC, METRIC_MATH)
+}
+
+@js.native
 sealed trait ComparisonOperator extends js.Any
 object ComparisonOperator {
   val GreaterThanOrEqualToThreshold = "GreaterThanOrEqualToThreshold".asInstanceOf[ComparisonOperator]

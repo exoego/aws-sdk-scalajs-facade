@@ -21,6 +21,15 @@ object AwsIamAccessKeyStatus {
 }
 
 @js.native
+sealed trait AwsS3BucketNotificationConfigurationS3KeyFilterRuleName extends js.Any
+object AwsS3BucketNotificationConfigurationS3KeyFilterRuleName {
+  val Prefix = "Prefix".asInstanceOf[AwsS3BucketNotificationConfigurationS3KeyFilterRuleName]
+  val Suffix = "Suffix".asInstanceOf[AwsS3BucketNotificationConfigurationS3KeyFilterRuleName]
+
+  @inline def values: js.Array[AwsS3BucketNotificationConfigurationS3KeyFilterRuleName] = js.Array(Prefix, Suffix)
+}
+
+@js.native
 sealed trait ComplianceStatus extends js.Any
 object ComplianceStatus {
   val PASSED = "PASSED".asInstanceOf[ComplianceStatus]
@@ -188,6 +197,15 @@ object StandardsStatus {
 }
 
 @js.native
+sealed trait StatusReasonCode extends js.Any
+object StatusReasonCode {
+  val NO_AVAILABLE_CONFIGURATION_RECORDER = "NO_AVAILABLE_CONFIGURATION_RECORDER".asInstanceOf[StatusReasonCode]
+  val INTERNAL_ERROR = "INTERNAL_ERROR".asInstanceOf[StatusReasonCode]
+
+  @inline def values: js.Array[StatusReasonCode] = js.Array(NO_AVAILABLE_CONFIGURATION_RECORDER, INTERNAL_ERROR)
+}
+
+@js.native
 sealed trait StringFilterComparison extends js.Any
 object StringFilterComparison {
   val EQUALS = "EQUALS".asInstanceOf[StringFilterComparison]
@@ -240,7 +258,7 @@ object VerificationState {
   @inline def values: js.Array[VerificationState] = js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
 }
 
-@deprecated("This field is deprecated, use Workflow.Status instead.", "forever")
+@deprecated("This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.", "forever")
 @js.native
 sealed trait WorkflowState extends js.Any
 object WorkflowState {

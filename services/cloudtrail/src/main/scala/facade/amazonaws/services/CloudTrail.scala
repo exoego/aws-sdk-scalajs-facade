@@ -110,7 +110,7 @@ package object cloudtrail {
     }
   }
 
-  /** Returns the objects or data listed below if successful. Otherwise, returns an error.
+  /** Returns the objects or data if successful. Otherwise, returns an error.
     */
   @js.native
   trait AddTagsResponse extends js.Object
@@ -123,7 +123,7 @@ package object cloudtrail {
     }
   }
 
-  /** Advanced event selectors let you create fine-grained selectors for the following AWS CloudTrail event record ﬁelds. They help you control costs by logging only those events that are important to you. For more information about advanced event selectors, see [[https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html|Logging data events for trails]] in the <i>AWS CloudTrail User Guide</i>. * <code>readOnly</code> * <code>eventSource</code> * <code>eventName</code> * <code>eventCategory</code> * <code>resources.type</code> * <code>resources.ARN</code> You cannot apply both event selectors and advanced event selectors to a trail.
+  /** Advanced event selectors let you create fine-grained selectors for the following CloudTrail event record ﬁelds. They help you control costs by logging only those events that are important to you. For more information about advanced event selectors, see [[https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html|Logging data events for trails]] in the <i>CloudTrail User Guide</i>. * <code>readOnly</code> * <code>eventSource</code> * <code>eventName</code> * <code>eventCategory</code> * <code>resources.type</code> * <code>resources.ARN</code> You cannot apply both event selectors and advanced event selectors to a trail.
     */
   @js.native
   trait AdvancedEventSelector extends js.Object {
@@ -291,11 +291,11 @@ package object cloudtrail {
     }
   }
 
-  /** The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.
+  /** The Amazon S3 buckets, Lambda functions, or Amazon DynamoDB tables that you specify in your event selectors for your trail to log data events. Data events provide information about the resource operations performed on or within a resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.
     *
     * '''Note:'''The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors, but the total cannot exceed 250 across all selectors. If you are using advanced event selectors, the maximum total number of values for all conditions, across all advanced event selectors for the trail, is 500. The following example demonstrates how logging works when you configure logging of all data events for an S3 bucket named <code>bucket-1</code>. In this example, the CloudTrail user specified an empty prefix, and the option to log both <code>Read</code> and <code>Write</code> data events. <ol> * A user uploads an image file to <code>bucket-1</code>. * The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket with an empty prefix, events that occur on any object in that bucket are logged. The trail processes and logs the event. * A user
-    * uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>. * The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event. </ol> The following example demonstrates how logging works when you configure logging of AWS Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all AWS Lambda functions. <ol> * A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function. * The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an AWS Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event. * The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an AWS Lambda API.
-    * Because the CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event. </ol>
+    * uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>. * The <code>PutObject</code> API operation occurred for an object in an S3 bucket that the CloudTrail user didn't specify for the trail. The trail doesn’t log the event. </ol> The following example demonstrates how logging works when you configure logging of Lambda data events for a Lambda function named <i>MyLambdaFunction</i>, but not for all Lambda functions. <ol> * A user runs a script that includes a call to the <i>MyLambdaFunction</i> function and the <i>MyOtherLambdaFunction</i> function. * The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an Lambda API. It is recorded as a data event in CloudTrail. Because the CloudTrail user specified logging data events for <i>MyLambdaFunction</i>, any invocations of that function are logged. The trail processes and logs the event. * The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an Lambda API. Because the
+    * CloudTrail user did not specify logging data events for all Lambda functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does not match the function specified for the trail. The trail doesn’t log the event. </ol>
     */
   @js.native
   trait DataResource extends js.Object {
@@ -1057,7 +1057,7 @@ package object cloudtrail {
     }
   }
 
-  /** The request to CloudTrail to start logging AWS API calls for an account.
+  /** The request to CloudTrail to start logging Amazon Web Services API calls for an account.
     */
   @js.native
   trait StartLoggingRequest extends js.Object {
@@ -1089,7 +1089,7 @@ package object cloudtrail {
     }
   }
 
-  /** Passes the request to CloudTrail to stop logging AWS API calls for the specified account.
+  /** Passes the request to CloudTrail to stop logging Amazon Web Services API calls for the specified account.
     */
   @js.native
   trait StopLoggingRequest extends js.Object {

@@ -369,7 +369,7 @@ object DocumentStatus {
   inline def values: js.Array[DocumentStatus] = js.Array(Creating, Active, Updating, Deleting, Failed)
 }
 
-type DocumentType = "Command" | "Policy" | "Automation" | "Session" | "Package" | "ApplicationConfiguration" | "ApplicationConfigurationSchema" | "DeploymentStrategy" | "ChangeCalendar" | "Automation.ChangeTemplate"
+type DocumentType = "Command" | "Policy" | "Automation" | "Session" | "Package" | "ApplicationConfiguration" | "ApplicationConfigurationSchema" | "DeploymentStrategy" | "ChangeCalendar" | "Automation.ChangeTemplate" | "ProblemAnalysis" | "ProblemAnalysisTemplate"
 object DocumentType {
   inline val Command: "Command" = "Command"
   inline val Policy: "Policy" = "Policy"
@@ -381,6 +381,8 @@ object DocumentType {
   inline val DeploymentStrategy: "DeploymentStrategy" = "DeploymentStrategy"
   inline val ChangeCalendar: "ChangeCalendar" = "ChangeCalendar"
   inline val `Automation.ChangeTemplate`: "Automation.ChangeTemplate" = "Automation.ChangeTemplate"
+  inline val ProblemAnalysis: "ProblemAnalysis" = "ProblemAnalysis"
+  inline val ProblemAnalysisTemplate: "ProblemAnalysisTemplate" = "ProblemAnalysisTemplate"
 
   inline def values: js.Array[DocumentType] = js.Array(
     Command,
@@ -392,7 +394,9 @@ object DocumentType {
     ApplicationConfigurationSchema,
     DeploymentStrategy,
     ChangeCalendar,
-    `Automation.ChangeTemplate`
+    `Automation.ChangeTemplate`,
+    ProblemAnalysis,
+    ProblemAnalysisTemplate
   )
 }
 
@@ -504,6 +508,14 @@ object MaintenanceWindowResourceType {
   inline def values: js.Array[MaintenanceWindowResourceType] = js.Array(INSTANCE, RESOURCE_GROUP)
 }
 
+type MaintenanceWindowTaskCutoffBehavior = "CONTINUE_TASK" | "CANCEL_TASK"
+object MaintenanceWindowTaskCutoffBehavior {
+  inline val CONTINUE_TASK: "CONTINUE_TASK" = "CONTINUE_TASK"
+  inline val CANCEL_TASK: "CANCEL_TASK" = "CANCEL_TASK"
+
+  inline def values: js.Array[MaintenanceWindowTaskCutoffBehavior] = js.Array(CONTINUE_TASK, CANCEL_TASK)
+}
+
 type MaintenanceWindowTaskType = "RUN_COMMAND" | "AUTOMATION" | "STEP_FUNCTIONS" | "LAMBDA"
 object MaintenanceWindowTaskType {
   inline val RUN_COMMAND: "RUN_COMMAND" = "RUN_COMMAND"
@@ -534,7 +546,7 @@ object NotificationType {
   inline def values: js.Array[NotificationType] = js.Array(Command, Invocation)
 }
 
-type OperatingSystem = "WINDOWS" | "AMAZON_LINUX" | "AMAZON_LINUX_2" | "UBUNTU" | "REDHAT_ENTERPRISE_LINUX" | "SUSE" | "CENTOS" | "ORACLE_LINUX" | "DEBIAN" | "MACOS"
+type OperatingSystem = "WINDOWS" | "AMAZON_LINUX" | "AMAZON_LINUX_2" | "UBUNTU" | "REDHAT_ENTERPRISE_LINUX" | "SUSE" | "CENTOS" | "ORACLE_LINUX" | "DEBIAN" | "MACOS" | "RASPBIAN"
 object OperatingSystem {
   inline val WINDOWS: "WINDOWS" = "WINDOWS"
   inline val AMAZON_LINUX: "AMAZON_LINUX" = "AMAZON_LINUX"
@@ -546,8 +558,9 @@ object OperatingSystem {
   inline val ORACLE_LINUX: "ORACLE_LINUX" = "ORACLE_LINUX"
   inline val DEBIAN: "DEBIAN" = "DEBIAN"
   inline val MACOS: "MACOS" = "MACOS"
+  inline val RASPBIAN: "RASPBIAN" = "RASPBIAN"
 
-  inline def values: js.Array[OperatingSystem] = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS)
+  inline def values: js.Array[OperatingSystem] = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS, RASPBIAN)
 }
 
 type OpsFilterOperatorType = "Equal" | "NotEqual" | "BeginWith" | "LessThan" | "GreaterThan" | "Exists"
@@ -584,7 +597,7 @@ object OpsItemEventFilterOperator {
   inline def values: js.Array[OpsItemEventFilterOperator] = js.Array(Equal)
 }
 
-type OpsItemFilterKey = "Status" | "CreatedBy" | "Source" | "Priority" | "Title" | "OpsItemId" | "CreatedTime" | "LastModifiedTime" | "ActualStartTime" | "ActualEndTime" | "PlannedStartTime" | "PlannedEndTime" | "OperationalData" | "OperationalDataKey" | "OperationalDataValue" | "ResourceId" | "AutomationId" | "Category" | "Severity" | "OpsItemType" | "ChangeRequestByRequesterArn" | "ChangeRequestByRequesterName" | "ChangeRequestByApproverArn" | "ChangeRequestByApproverName" | "ChangeRequestByTemplate" | "ChangeRequestByTargetsResourceGroup"
+type OpsItemFilterKey = "Status" | "CreatedBy" | "Source" | "Priority" | "Title" | "OpsItemId" | "CreatedTime" | "LastModifiedTime" | "ActualStartTime" | "ActualEndTime" | "PlannedStartTime" | "PlannedEndTime" | "OperationalData" | "OperationalDataKey" | "OperationalDataValue" | "ResourceId" | "AutomationId" | "Category" | "Severity" | "OpsItemType" | "ChangeRequestByRequesterArn" | "ChangeRequestByRequesterName" | "ChangeRequestByApproverArn" | "ChangeRequestByApproverName" | "ChangeRequestByTemplate" | "ChangeRequestByTargetsResourceGroup" | "InsightByType"
 object OpsItemFilterKey {
   inline val Status: "Status" = "Status"
   inline val CreatedBy: "CreatedBy" = "CreatedBy"
@@ -612,6 +625,7 @@ object OpsItemFilterKey {
   inline val ChangeRequestByApproverName: "ChangeRequestByApproverName" = "ChangeRequestByApproverName"
   inline val ChangeRequestByTemplate: "ChangeRequestByTemplate" = "ChangeRequestByTemplate"
   inline val ChangeRequestByTargetsResourceGroup: "ChangeRequestByTargetsResourceGroup" = "ChangeRequestByTargetsResourceGroup"
+  inline val InsightByType: "InsightByType" = "InsightByType"
 
   inline def values: js.Array[OpsItemFilterKey] = js.Array(
     Status,
@@ -639,7 +653,8 @@ object OpsItemFilterKey {
     ChangeRequestByApproverArn,
     ChangeRequestByApproverName,
     ChangeRequestByTemplate,
-    ChangeRequestByTargetsResourceGroup
+    ChangeRequestByTargetsResourceGroup,
+    InsightByType
   )
 }
 
@@ -653,7 +668,23 @@ object OpsItemFilterOperator {
   inline def values: js.Array[OpsItemFilterOperator] = js.Array(Equal, Contains, GreaterThan, LessThan)
 }
 
-type OpsItemStatus = "Open" | "InProgress" | "Resolved" | "Pending" | "TimedOut" | "Cancelling" | "Cancelled" | "Failed" | "CompletedWithSuccess" | "CompletedWithFailure" | "Scheduled" | "RunbookInProgress" | "PendingChangeCalendarOverride" | "ChangeCalendarOverrideApproved" | "ChangeCalendarOverrideRejected" | "PendingApproval" | "Approved" | "Rejected"
+type OpsItemRelatedItemsFilterKey = "ResourceType" | "AssociationId" | "ResourceUri"
+object OpsItemRelatedItemsFilterKey {
+  inline val ResourceType: "ResourceType" = "ResourceType"
+  inline val AssociationId: "AssociationId" = "AssociationId"
+  inline val ResourceUri: "ResourceUri" = "ResourceUri"
+
+  inline def values: js.Array[OpsItemRelatedItemsFilterKey] = js.Array(ResourceType, AssociationId, ResourceUri)
+}
+
+type OpsItemRelatedItemsFilterOperator = "Equal"
+object OpsItemRelatedItemsFilterOperator {
+  inline val Equal: "Equal" = "Equal"
+
+  inline def values: js.Array[OpsItemRelatedItemsFilterOperator] = js.Array(Equal)
+}
+
+type OpsItemStatus = "Open" | "InProgress" | "Resolved" | "Pending" | "TimedOut" | "Cancelling" | "Cancelled" | "Failed" | "CompletedWithSuccess" | "CompletedWithFailure" | "Scheduled" | "RunbookInProgress" | "PendingChangeCalendarOverride" | "ChangeCalendarOverrideApproved" | "ChangeCalendarOverrideRejected" | "PendingApproval" | "Approved" | "Rejected" | "Closed"
 object OpsItemStatus {
   inline val Open: "Open" = "Open"
   inline val InProgress: "InProgress" = "InProgress"
@@ -673,6 +704,7 @@ object OpsItemStatus {
   inline val PendingApproval: "PendingApproval" = "PendingApproval"
   inline val Approved: "Approved" = "Approved"
   inline val Rejected: "Rejected" = "Rejected"
+  inline val Closed: "Closed" = "Closed"
 
   inline def values: js.Array[OpsItemStatus] = js.Array(
     Open,
@@ -692,7 +724,8 @@ object OpsItemStatus {
     ChangeCalendarOverrideRejected,
     PendingApproval,
     Approved,
-    Rejected
+    Rejected,
+    Closed
   )
 }
 
@@ -848,12 +881,13 @@ object PingStatus {
   inline def values: js.Array[PingStatus] = js.Array(Online, ConnectionLost, Inactive)
 }
 
-type PlatformType = "Windows" | "Linux"
+type PlatformType = "Windows" | "Linux" | "MacOS"
 object PlatformType {
   inline val Windows: "Windows" = "Windows"
   inline val Linux: "Linux" = "Linux"
+  inline val MacOS: "MacOS" = "MacOS"
 
-  inline def values: js.Array[PlatformType] = js.Array(Windows, Linux)
+  inline def values: js.Array[PlatformType] = js.Array(Windows, Linux, MacOS)
 }
 
 type RebootOption = "RebootIfNeeded" | "NoReboot"
@@ -944,6 +978,15 @@ object SignalType {
   inline val Resume: "Resume" = "Resume"
 
   inline def values: js.Array[SignalType] = js.Array(Approve, Reject, StartStep, StopStep, Resume)
+}
+
+type SourceType = "AWS::EC2::Instance" | "AWS::IoT::Thing" | "AWS::SSM::ManagedInstance"
+object SourceType {
+  inline val `AWS::EC2::Instance`: "AWS::EC2::Instance" = "AWS::EC2::Instance"
+  inline val `AWS::IoT::Thing`: "AWS::IoT::Thing" = "AWS::IoT::Thing"
+  inline val `AWS::SSM::ManagedInstance`: "AWS::SSM::ManagedInstance" = "AWS::SSM::ManagedInstance"
+
+  inline def values: js.Array[SourceType] = js.Array(`AWS::EC2::Instance`, `AWS::IoT::Thing`, `AWS::SSM::ManagedInstance`)
 }
 
 type StepExecutionFilterKey = "StartTimeBefore" | "StartTimeAfter" | "StepExecutionStatus" | "StepExecutionId" | "StepName" | "Action"

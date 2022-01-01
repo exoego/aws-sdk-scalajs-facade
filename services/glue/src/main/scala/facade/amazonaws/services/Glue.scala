@@ -16,13 +16,21 @@ package object glue {
   type BatchDeletePartitionValueList = js.Array[PartitionValueList]
   type BatchDeleteTableNameList = js.Array[NameString]
   type BatchDeleteTableVersionList = js.Array[VersionString]
+  type BatchGetBlueprintNames = js.Array[OrchestrationNameString]
   type BatchGetPartitionValueList = js.Array[PartitionValueList]
+  type BatchSize = Int
   type BatchStopJobRunErrorList = js.Array[BatchStopJobRunError]
   type BatchStopJobRunJobRunIdList = js.Array[IdString]
   type BatchStopJobRunSuccessfulSubmissionList = js.Array[BatchStopJobRunSuccessfulSubmission]
   type BatchUpdatePartitionFailureList = js.Array[BatchUpdatePartitionFailureEntry]
   type BatchUpdatePartitionRequestEntryList = js.Array[BatchUpdatePartitionRequestEntry]
+  type BatchWindow = Int
   type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type BlueprintNames = js.Array[OrchestrationNameString]
+  type BlueprintParameterSpec = String
+  type BlueprintParameters = String
+  type BlueprintRuns = js.Array[BlueprintRun]
+  type Blueprints = js.Array[Blueprint]
   type BooleanNullable = Boolean
   type BooleanValue = Boolean
   type BoundedPartitionValueList = js.Array[ValueString]
@@ -82,10 +90,12 @@ package object glue {
   type ErrorCodeString = String
   type ErrorMessageString = String
   type ErrorString = String
+  type EventQueueArn = String
   type ExecutionTime = Int
   type FieldType = String
   type FilterString = String
   type FormatString = String
+  type Generic512CharString = String
   type GenericBoundedDouble = Double
   type GenericMap = js.Dictionary[GenericString]
   type GenericString = String
@@ -125,6 +135,7 @@ package object glue {
   type MaxResultsNumber = Int
   type MaxRetries = Int
   type MessagePrefix = String
+  type MessageString = String
   type MetadataInfoMap = js.Dictionary[MetadataInfo]
   type MetadataKeyString = String
   type MetadataList = js.Array[MetadataKeyValuePair]
@@ -142,6 +153,9 @@ package object glue {
   type NullableBoolean = Boolean
   type NullableDouble = Double
   type NullableInteger = Int
+  type OrchestrationIAMRoleArn = String
+  type OrchestrationNameString = String
+  type OrchestrationS3Location = String
   type OrchestrationStringList = js.Array[GenericString]
   type OrderList = js.Array[Order]
   type OtherMetadataValueList = js.Array[OtherMetadataValueListItem]
@@ -210,6 +224,7 @@ package object glue {
   type TimestampValue = js.Date
   type Token = String
   type TotalSegmentsInteger = Int
+  type TransactionIdString = String
   type TransformIdList = js.Array[HashString]
   type TransformList = js.Array[MLTransform]
   type TransformSchema = js.Array[SchemaColumn]
@@ -240,6 +255,7 @@ package object glue {
     @inline def batchDeletePartitionFuture(params: BatchDeletePartitionRequest): Future[BatchDeletePartitionResponse] = service.batchDeletePartition(params).promise().toFuture
     @inline def batchDeleteTableFuture(params: BatchDeleteTableRequest): Future[BatchDeleteTableResponse] = service.batchDeleteTable(params).promise().toFuture
     @inline def batchDeleteTableVersionFuture(params: BatchDeleteTableVersionRequest): Future[BatchDeleteTableVersionResponse] = service.batchDeleteTableVersion(params).promise().toFuture
+    @inline def batchGetBlueprintsFuture(params: BatchGetBlueprintsRequest): Future[BatchGetBlueprintsResponse] = service.batchGetBlueprints(params).promise().toFuture
     @inline def batchGetCrawlersFuture(params: BatchGetCrawlersRequest): Future[BatchGetCrawlersResponse] = service.batchGetCrawlers(params).promise().toFuture
     @inline def batchGetDevEndpointsFuture(params: BatchGetDevEndpointsRequest): Future[BatchGetDevEndpointsResponse] = service.batchGetDevEndpoints(params).promise().toFuture
     @inline def batchGetJobsFuture(params: BatchGetJobsRequest): Future[BatchGetJobsResponse] = service.batchGetJobs(params).promise().toFuture
@@ -250,6 +266,7 @@ package object glue {
     @inline def batchUpdatePartitionFuture(params: BatchUpdatePartitionRequest): Future[BatchUpdatePartitionResponse] = service.batchUpdatePartition(params).promise().toFuture
     @inline def cancelMLTaskRunFuture(params: CancelMLTaskRunRequest): Future[CancelMLTaskRunResponse] = service.cancelMLTaskRun(params).promise().toFuture
     @inline def checkSchemaVersionValidityFuture(params: CheckSchemaVersionValidityInput): Future[CheckSchemaVersionValidityResponse] = service.checkSchemaVersionValidity(params).promise().toFuture
+    @inline def createBlueprintFuture(params: CreateBlueprintRequest): Future[CreateBlueprintResponse] = service.createBlueprint(params).promise().toFuture
     @inline def createClassifierFuture(params: CreateClassifierRequest): Future[CreateClassifierResponse] = service.createClassifier(params).promise().toFuture
     @inline def createConnectionFuture(params: CreateConnectionRequest): Future[CreateConnectionResponse] = service.createConnection(params).promise().toFuture
     @inline def createCrawlerFuture(params: CreateCrawlerRequest): Future[CreateCrawlerResponse] = service.createCrawler(params).promise().toFuture
@@ -267,6 +284,7 @@ package object glue {
     @inline def createTriggerFuture(params: CreateTriggerRequest): Future[CreateTriggerResponse] = service.createTrigger(params).promise().toFuture
     @inline def createUserDefinedFunctionFuture(params: CreateUserDefinedFunctionRequest): Future[CreateUserDefinedFunctionResponse] = service.createUserDefinedFunction(params).promise().toFuture
     @inline def createWorkflowFuture(params: CreateWorkflowRequest): Future[CreateWorkflowResponse] = service.createWorkflow(params).promise().toFuture
+    @inline def deleteBlueprintFuture(params: DeleteBlueprintRequest): Future[DeleteBlueprintResponse] = service.deleteBlueprint(params).promise().toFuture
     @inline def deleteClassifierFuture(params: DeleteClassifierRequest): Future[DeleteClassifierResponse] = service.deleteClassifier(params).promise().toFuture
     @inline def deleteColumnStatisticsForPartitionFuture(params: DeleteColumnStatisticsForPartitionRequest): Future[DeleteColumnStatisticsForPartitionResponse] = service.deleteColumnStatisticsForPartition(params).promise().toFuture
     @inline def deleteColumnStatisticsForTableFuture(params: DeleteColumnStatisticsForTableRequest): Future[DeleteColumnStatisticsForTableResponse] = service.deleteColumnStatisticsForTable(params).promise().toFuture
@@ -288,6 +306,9 @@ package object glue {
     @inline def deleteTriggerFuture(params: DeleteTriggerRequest): Future[DeleteTriggerResponse] = service.deleteTrigger(params).promise().toFuture
     @inline def deleteUserDefinedFunctionFuture(params: DeleteUserDefinedFunctionRequest): Future[DeleteUserDefinedFunctionResponse] = service.deleteUserDefinedFunction(params).promise().toFuture
     @inline def deleteWorkflowFuture(params: DeleteWorkflowRequest): Future[DeleteWorkflowResponse] = service.deleteWorkflow(params).promise().toFuture
+    @inline def getBlueprintFuture(params: GetBlueprintRequest): Future[GetBlueprintResponse] = service.getBlueprint(params).promise().toFuture
+    @inline def getBlueprintRunFuture(params: GetBlueprintRunRequest): Future[GetBlueprintRunResponse] = service.getBlueprintRun(params).promise().toFuture
+    @inline def getBlueprintRunsFuture(params: GetBlueprintRunsRequest): Future[GetBlueprintRunsResponse] = service.getBlueprintRuns(params).promise().toFuture
     @inline def getCatalogImportStatusFuture(params: GetCatalogImportStatusRequest): Future[GetCatalogImportStatusResponse] = service.getCatalogImportStatus(params).promise().toFuture
     @inline def getClassifierFuture(params: GetClassifierRequest): Future[GetClassifierResponse] = service.getClassifier(params).promise().toFuture
     @inline def getClassifiersFuture(params: GetClassifiersRequest): Future[GetClassifiersResponse] = service.getClassifiers(params).promise().toFuture
@@ -341,6 +362,7 @@ package object glue {
     @inline def getWorkflowRunPropertiesFuture(params: GetWorkflowRunPropertiesRequest): Future[GetWorkflowRunPropertiesResponse] = service.getWorkflowRunProperties(params).promise().toFuture
     @inline def getWorkflowRunsFuture(params: GetWorkflowRunsRequest): Future[GetWorkflowRunsResponse] = service.getWorkflowRuns(params).promise().toFuture
     @inline def importCatalogToGlueFuture(params: ImportCatalogToGlueRequest): Future[ImportCatalogToGlueResponse] = service.importCatalogToGlue(params).promise().toFuture
+    @inline def listBlueprintsFuture(params: ListBlueprintsRequest): Future[ListBlueprintsResponse] = service.listBlueprints(params).promise().toFuture
     @inline def listCrawlersFuture(params: ListCrawlersRequest): Future[ListCrawlersResponse] = service.listCrawlers(params).promise().toFuture
     @inline def listDevEndpointsFuture(params: ListDevEndpointsRequest): Future[ListDevEndpointsResponse] = service.listDevEndpoints(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise().toFuture
@@ -360,6 +382,7 @@ package object glue {
     @inline def resetJobBookmarkFuture(params: ResetJobBookmarkRequest): Future[ResetJobBookmarkResponse] = service.resetJobBookmark(params).promise().toFuture
     @inline def resumeWorkflowRunFuture(params: ResumeWorkflowRunRequest): Future[ResumeWorkflowRunResponse] = service.resumeWorkflowRun(params).promise().toFuture
     @inline def searchTablesFuture(params: SearchTablesRequest): Future[SearchTablesResponse] = service.searchTables(params).promise().toFuture
+    @inline def startBlueprintRunFuture(params: StartBlueprintRunRequest): Future[StartBlueprintRunResponse] = service.startBlueprintRun(params).promise().toFuture
     @inline def startCrawlerFuture(params: StartCrawlerRequest): Future[StartCrawlerResponse] = service.startCrawler(params).promise().toFuture
     @inline def startCrawlerScheduleFuture(params: StartCrawlerScheduleRequest): Future[StartCrawlerScheduleResponse] = service.startCrawlerSchedule(params).promise().toFuture
     @inline def startExportLabelsTaskRunFuture(params: StartExportLabelsTaskRunRequest): Future[StartExportLabelsTaskRunResponse] = service.startExportLabelsTaskRun(params).promise().toFuture
@@ -375,6 +398,7 @@ package object glue {
     @inline def stopWorkflowRunFuture(params: StopWorkflowRunRequest): Future[StopWorkflowRunResponse] = service.stopWorkflowRun(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateBlueprintFuture(params: UpdateBlueprintRequest): Future[UpdateBlueprintResponse] = service.updateBlueprint(params).promise().toFuture
     @inline def updateClassifierFuture(params: UpdateClassifierRequest): Future[UpdateClassifierResponse] = service.updateClassifier(params).promise().toFuture
     @inline def updateColumnStatisticsForPartitionFuture(params: UpdateColumnStatisticsForPartitionRequest): Future[UpdateColumnStatisticsForPartitionResponse] = service.updateColumnStatisticsForPartition(params).promise().toFuture
     @inline def updateColumnStatisticsForTableFuture(params: UpdateColumnStatisticsForTableRequest): Future[UpdateColumnStatisticsForTableResponse] = service.updateColumnStatisticsForTable(params).promise().toFuture
@@ -405,6 +429,7 @@ package object glue {
     def batchDeletePartition(params: BatchDeletePartitionRequest): Request[BatchDeletePartitionResponse] = js.native
     def batchDeleteTable(params: BatchDeleteTableRequest): Request[BatchDeleteTableResponse] = js.native
     def batchDeleteTableVersion(params: BatchDeleteTableVersionRequest): Request[BatchDeleteTableVersionResponse] = js.native
+    def batchGetBlueprints(params: BatchGetBlueprintsRequest): Request[BatchGetBlueprintsResponse] = js.native
     def batchGetCrawlers(params: BatchGetCrawlersRequest): Request[BatchGetCrawlersResponse] = js.native
     def batchGetDevEndpoints(params: BatchGetDevEndpointsRequest): Request[BatchGetDevEndpointsResponse] = js.native
     def batchGetJobs(params: BatchGetJobsRequest): Request[BatchGetJobsResponse] = js.native
@@ -415,6 +440,7 @@ package object glue {
     def batchUpdatePartition(params: BatchUpdatePartitionRequest): Request[BatchUpdatePartitionResponse] = js.native
     def cancelMLTaskRun(params: CancelMLTaskRunRequest): Request[CancelMLTaskRunResponse] = js.native
     def checkSchemaVersionValidity(params: CheckSchemaVersionValidityInput): Request[CheckSchemaVersionValidityResponse] = js.native
+    def createBlueprint(params: CreateBlueprintRequest): Request[CreateBlueprintResponse] = js.native
     def createClassifier(params: CreateClassifierRequest): Request[CreateClassifierResponse] = js.native
     def createConnection(params: CreateConnectionRequest): Request[CreateConnectionResponse] = js.native
     def createCrawler(params: CreateCrawlerRequest): Request[CreateCrawlerResponse] = js.native
@@ -432,6 +458,7 @@ package object glue {
     def createTrigger(params: CreateTriggerRequest): Request[CreateTriggerResponse] = js.native
     def createUserDefinedFunction(params: CreateUserDefinedFunctionRequest): Request[CreateUserDefinedFunctionResponse] = js.native
     def createWorkflow(params: CreateWorkflowRequest): Request[CreateWorkflowResponse] = js.native
+    def deleteBlueprint(params: DeleteBlueprintRequest): Request[DeleteBlueprintResponse] = js.native
     def deleteClassifier(params: DeleteClassifierRequest): Request[DeleteClassifierResponse] = js.native
     def deleteColumnStatisticsForPartition(params: DeleteColumnStatisticsForPartitionRequest): Request[DeleteColumnStatisticsForPartitionResponse] = js.native
     def deleteColumnStatisticsForTable(params: DeleteColumnStatisticsForTableRequest): Request[DeleteColumnStatisticsForTableResponse] = js.native
@@ -453,6 +480,9 @@ package object glue {
     def deleteTrigger(params: DeleteTriggerRequest): Request[DeleteTriggerResponse] = js.native
     def deleteUserDefinedFunction(params: DeleteUserDefinedFunctionRequest): Request[DeleteUserDefinedFunctionResponse] = js.native
     def deleteWorkflow(params: DeleteWorkflowRequest): Request[DeleteWorkflowResponse] = js.native
+    def getBlueprint(params: GetBlueprintRequest): Request[GetBlueprintResponse] = js.native
+    def getBlueprintRun(params: GetBlueprintRunRequest): Request[GetBlueprintRunResponse] = js.native
+    def getBlueprintRuns(params: GetBlueprintRunsRequest): Request[GetBlueprintRunsResponse] = js.native
     def getCatalogImportStatus(params: GetCatalogImportStatusRequest): Request[GetCatalogImportStatusResponse] = js.native
     def getClassifier(params: GetClassifierRequest): Request[GetClassifierResponse] = js.native
     def getClassifiers(params: GetClassifiersRequest): Request[GetClassifiersResponse] = js.native
@@ -506,6 +536,7 @@ package object glue {
     def getWorkflowRunProperties(params: GetWorkflowRunPropertiesRequest): Request[GetWorkflowRunPropertiesResponse] = js.native
     def getWorkflowRuns(params: GetWorkflowRunsRequest): Request[GetWorkflowRunsResponse] = js.native
     def importCatalogToGlue(params: ImportCatalogToGlueRequest): Request[ImportCatalogToGlueResponse] = js.native
+    def listBlueprints(params: ListBlueprintsRequest): Request[ListBlueprintsResponse] = js.native
     def listCrawlers(params: ListCrawlersRequest): Request[ListCrawlersResponse] = js.native
     def listDevEndpoints(params: ListDevEndpointsRequest): Request[ListDevEndpointsResponse] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
@@ -525,6 +556,7 @@ package object glue {
     def resetJobBookmark(params: ResetJobBookmarkRequest): Request[ResetJobBookmarkResponse] = js.native
     def resumeWorkflowRun(params: ResumeWorkflowRunRequest): Request[ResumeWorkflowRunResponse] = js.native
     def searchTables(params: SearchTablesRequest): Request[SearchTablesResponse] = js.native
+    def startBlueprintRun(params: StartBlueprintRunRequest): Request[StartBlueprintRunResponse] = js.native
     def startCrawler(params: StartCrawlerRequest): Request[StartCrawlerResponse] = js.native
     def startCrawlerSchedule(params: StartCrawlerScheduleRequest): Request[StartCrawlerScheduleResponse] = js.native
     def startExportLabelsTaskRun(params: StartExportLabelsTaskRunRequest): Request[StartExportLabelsTaskRunResponse] = js.native
@@ -540,6 +572,7 @@ package object glue {
     def stopWorkflowRun(params: StopWorkflowRunRequest): Request[StopWorkflowRunResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateBlueprint(params: UpdateBlueprintRequest): Request[UpdateBlueprintResponse] = js.native
     def updateClassifier(params: UpdateClassifierRequest): Request[UpdateClassifierResponse] = js.native
     def updateColumnStatisticsForPartition(params: UpdateColumnStatisticsForPartitionRequest): Request[UpdateColumnStatisticsForPartitionResponse] = js.native
     def updateColumnStatisticsForTable(params: UpdateColumnStatisticsForTableRequest): Request[UpdateColumnStatisticsForTableResponse] = js.native
@@ -749,6 +782,7 @@ package object glue {
     var DatabaseName: NameString
     var TablesToDelete: BatchDeleteTableNameList
     var CatalogId: js.UndefOr[CatalogIdString]
+    var TransactionId: js.UndefOr[TransactionIdString]
   }
 
   object BatchDeleteTableRequest {
@@ -756,7 +790,8 @@ package object glue {
     def apply(
         DatabaseName: NameString,
         TablesToDelete: BatchDeleteTableNameList,
-        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        TransactionId: js.UndefOr[TransactionIdString] = js.undefined
     ): BatchDeleteTableRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
@@ -764,6 +799,7 @@ package object glue {
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteTableRequest]
     }
   }
@@ -824,6 +860,49 @@ package object glue {
       val __obj = js.Dynamic.literal()
       Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteTableVersionResponse]
+    }
+  }
+
+  @js.native
+  trait BatchGetBlueprintsRequest extends js.Object {
+    var Names: BatchGetBlueprintNames
+    var IncludeBlueprint: js.UndefOr[NullableBoolean]
+    var IncludeParameterSpec: js.UndefOr[NullableBoolean]
+  }
+
+  object BatchGetBlueprintsRequest {
+    @inline
+    def apply(
+        Names: BatchGetBlueprintNames,
+        IncludeBlueprint: js.UndefOr[NullableBoolean] = js.undefined,
+        IncludeParameterSpec: js.UndefOr[NullableBoolean] = js.undefined
+    ): BatchGetBlueprintsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Names" -> Names.asInstanceOf[js.Any]
+      )
+
+      IncludeBlueprint.foreach(__v => __obj.updateDynamic("IncludeBlueprint")(__v.asInstanceOf[js.Any]))
+      IncludeParameterSpec.foreach(__v => __obj.updateDynamic("IncludeParameterSpec")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetBlueprintsRequest]
+    }
+  }
+
+  @js.native
+  trait BatchGetBlueprintsResponse extends js.Object {
+    var Blueprints: js.UndefOr[Blueprints]
+    var MissingBlueprints: js.UndefOr[BlueprintNames]
+  }
+
+  object BatchGetBlueprintsResponse {
+    @inline
+    def apply(
+        Blueprints: js.UndefOr[Blueprints] = js.undefined,
+        MissingBlueprints: js.UndefOr[BlueprintNames] = js.undefined
+    ): BatchGetBlueprintsResponse = {
+      val __obj = js.Dynamic.literal()
+      Blueprints.foreach(__v => __obj.updateDynamic("Blueprints")(__v.asInstanceOf[js.Any]))
+      MissingBlueprints.foreach(__v => __obj.updateDynamic("MissingBlueprints")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchGetBlueprintsResponse]
     }
   }
 
@@ -1252,6 +1331,117 @@ package object glue {
     }
   }
 
+  /** The details of a blueprint.
+    */
+  @js.native
+  trait Blueprint extends js.Object {
+    var BlueprintLocation: js.UndefOr[GenericString]
+    var BlueprintServiceLocation: js.UndefOr[GenericString]
+    var CreatedOn: js.UndefOr[TimestampValue]
+    var Description: js.UndefOr[Generic512CharString]
+    var ErrorMessage: js.UndefOr[ErrorString]
+    var LastActiveDefinition: js.UndefOr[LastActiveDefinition]
+    var LastModifiedOn: js.UndefOr[TimestampValue]
+    var Name: js.UndefOr[OrchestrationNameString]
+    var ParameterSpec: js.UndefOr[BlueprintParameterSpec]
+    var Status: js.UndefOr[BlueprintStatus]
+  }
+
+  object Blueprint {
+    @inline
+    def apply(
+        BlueprintLocation: js.UndefOr[GenericString] = js.undefined,
+        BlueprintServiceLocation: js.UndefOr[GenericString] = js.undefined,
+        CreatedOn: js.UndefOr[TimestampValue] = js.undefined,
+        Description: js.UndefOr[Generic512CharString] = js.undefined,
+        ErrorMessage: js.UndefOr[ErrorString] = js.undefined,
+        LastActiveDefinition: js.UndefOr[LastActiveDefinition] = js.undefined,
+        LastModifiedOn: js.UndefOr[TimestampValue] = js.undefined,
+        Name: js.UndefOr[OrchestrationNameString] = js.undefined,
+        ParameterSpec: js.UndefOr[BlueprintParameterSpec] = js.undefined,
+        Status: js.UndefOr[BlueprintStatus] = js.undefined
+    ): Blueprint = {
+      val __obj = js.Dynamic.literal()
+      BlueprintLocation.foreach(__v => __obj.updateDynamic("BlueprintLocation")(__v.asInstanceOf[js.Any]))
+      BlueprintServiceLocation.foreach(__v => __obj.updateDynamic("BlueprintServiceLocation")(__v.asInstanceOf[js.Any]))
+      CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      LastActiveDefinition.foreach(__v => __obj.updateDynamic("LastActiveDefinition")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ParameterSpec.foreach(__v => __obj.updateDynamic("ParameterSpec")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Blueprint]
+    }
+  }
+
+  /** The details of a blueprint.
+    */
+  @js.native
+  trait BlueprintDetails extends js.Object {
+    var BlueprintName: js.UndefOr[OrchestrationNameString]
+    var RunId: js.UndefOr[IdString]
+  }
+
+  object BlueprintDetails {
+    @inline
+    def apply(
+        BlueprintName: js.UndefOr[OrchestrationNameString] = js.undefined,
+        RunId: js.UndefOr[IdString] = js.undefined
+    ): BlueprintDetails = {
+      val __obj = js.Dynamic.literal()
+      BlueprintName.foreach(__v => __obj.updateDynamic("BlueprintName")(__v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BlueprintDetails]
+    }
+  }
+
+  /** The details of a blueprint run.
+    */
+  @js.native
+  trait BlueprintRun extends js.Object {
+    var BlueprintName: js.UndefOr[OrchestrationNameString]
+    var CompletedOn: js.UndefOr[TimestampValue]
+    var ErrorMessage: js.UndefOr[MessageString]
+    var Parameters: js.UndefOr[BlueprintParameters]
+    var RoleArn: js.UndefOr[OrchestrationIAMRoleArn]
+    var RollbackErrorMessage: js.UndefOr[MessageString]
+    var RunId: js.UndefOr[IdString]
+    var StartedOn: js.UndefOr[TimestampValue]
+    var State: js.UndefOr[BlueprintRunState]
+    var WorkflowName: js.UndefOr[NameString]
+  }
+
+  object BlueprintRun {
+    @inline
+    def apply(
+        BlueprintName: js.UndefOr[OrchestrationNameString] = js.undefined,
+        CompletedOn: js.UndefOr[TimestampValue] = js.undefined,
+        ErrorMessage: js.UndefOr[MessageString] = js.undefined,
+        Parameters: js.UndefOr[BlueprintParameters] = js.undefined,
+        RoleArn: js.UndefOr[OrchestrationIAMRoleArn] = js.undefined,
+        RollbackErrorMessage: js.UndefOr[MessageString] = js.undefined,
+        RunId: js.UndefOr[IdString] = js.undefined,
+        StartedOn: js.UndefOr[TimestampValue] = js.undefined,
+        State: js.UndefOr[BlueprintRunState] = js.undefined,
+        WorkflowName: js.UndefOr[NameString] = js.undefined
+    ): BlueprintRun = {
+      val __obj = js.Dynamic.literal()
+      BlueprintName.foreach(__v => __obj.updateDynamic("BlueprintName")(__v.asInstanceOf[js.Any]))
+      CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      RollbackErrorMessage.foreach(__v => __obj.updateDynamic("RollbackErrorMessage")(__v.asInstanceOf[js.Any]))
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      WorkflowName.foreach(__v => __obj.updateDynamic("WorkflowName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BlueprintRun]
+    }
+  }
+
   /** Defines column statistics supported for Boolean data columns.
     */
   @js.native
@@ -1319,7 +1509,7 @@ package object glue {
     }
   }
 
-  /** Specifies a table definition in the AWS Glue Data Catalog.
+  /** Specifies a table definition in the Glue Data Catalog.
     */
   @js.native
   trait CatalogEntry extends js.Object {
@@ -1365,7 +1555,7 @@ package object glue {
     }
   }
 
-  /** Specifies an AWS Glue Data Catalog target.
+  /** Specifies an Glue Data Catalog target.
     */
   @js.native
   trait CatalogTarget extends js.Object {
@@ -1426,7 +1616,7 @@ package object glue {
     }
   }
 
-  /** Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format. You can use the standard classifiers that AWS Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.
+  /** Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle. If it is, the classifier creates a schema in the form of a <code>StructType</code> object that matches that data format. You can use the standard classifiers that Glue provides, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code> classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier, as specified in one of the fields in the <code>Classifier</code> object.
     */
   @js.native
   trait Classifier extends js.Object {
@@ -1850,7 +2040,7 @@ package object glue {
     }
   }
 
-  /** The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption. When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your AWS KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled. This encryption requires that you set AWS KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.
+  /** The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code> or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code> field in the connection properties. You can enable catalog encryption or only password encryption. When a <code>CreationConnection</code> request arrives containing a password, the Data Catalog first encrypts the password using your KMS key. It then encrypts the whole connection object again if catalog encryption is also enabled. This encryption requires that you set KMS key permissions to enable or restrict access on the password key according to your security requirements. For example, you might want only administrators to have decrypt permission on the password key.
     */
   @js.native
   trait ConnectionPasswordEncryption extends js.Object {
@@ -1924,7 +2114,7 @@ package object glue {
     }
   }
 
-  /** Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.
+  /** Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the Glue Data Catalog.
     */
   @js.native
   trait Crawler extends js.Object {
@@ -2084,6 +2274,49 @@ package object glue {
   }
 
   @js.native
+  trait CreateBlueprintRequest extends js.Object {
+    var BlueprintLocation: OrchestrationS3Location
+    var Name: OrchestrationNameString
+    var Description: js.UndefOr[Generic512CharString]
+    var Tags: js.UndefOr[TagsMap]
+  }
+
+  object CreateBlueprintRequest {
+    @inline
+    def apply(
+        BlueprintLocation: OrchestrationS3Location,
+        Name: OrchestrationNameString,
+        Description: js.UndefOr[Generic512CharString] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
+    ): CreateBlueprintRequest = {
+      val __obj = js.Dynamic.literal(
+        "BlueprintLocation" -> BlueprintLocation.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBlueprintRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBlueprintResponse extends js.Object {
+    var Name: js.UndefOr[NameString]
+  }
+
+  object CreateBlueprintResponse {
+    @inline
+    def apply(
+        Name: js.UndefOr[NameString] = js.undefined
+    ): CreateBlueprintResponse = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBlueprintResponse]
+    }
+  }
+
+  @js.native
   trait CreateClassifierRequest extends js.Object {
     var CsvClassifier: js.UndefOr[CreateCsvClassifierRequest]
     var GrokClassifier: js.UndefOr[CreateGrokClassifierRequest]
@@ -2123,19 +2356,22 @@ package object glue {
   trait CreateConnectionRequest extends js.Object {
     var ConnectionInput: ConnectionInput
     var CatalogId: js.UndefOr[CatalogIdString]
+    var Tags: js.UndefOr[TagsMap]
   }
 
   object CreateConnectionRequest {
     @inline
     def apply(
         ConnectionInput: ConnectionInput,
-        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
     ): CreateConnectionRequest = {
       val __obj = js.Dynamic.literal(
         "ConnectionInput" -> ConnectionInput.asInstanceOf[js.Any]
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConnectionRequest]
     }
   }
@@ -2930,6 +3166,7 @@ package object glue {
     var TableInput: TableInput
     var CatalogId: js.UndefOr[CatalogIdString]
     var PartitionIndexes: js.UndefOr[PartitionIndexList]
+    var TransactionId: js.UndefOr[TransactionIdString]
   }
 
   object CreateTableRequest {
@@ -2938,7 +3175,8 @@ package object glue {
         DatabaseName: NameString,
         TableInput: TableInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-        PartitionIndexes: js.UndefOr[PartitionIndexList] = js.undefined
+        PartitionIndexes: js.UndefOr[PartitionIndexList] = js.undefined,
+        TransactionId: js.UndefOr[TransactionIdString] = js.undefined
     ): CreateTableRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
@@ -2947,6 +3185,7 @@ package object glue {
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       PartitionIndexes.foreach(__v => __obj.updateDynamic("PartitionIndexes")(__v.asInstanceOf[js.Any]))
+      TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTableRequest]
     }
   }
@@ -2968,6 +3207,7 @@ package object glue {
     var Name: NameString
     var Type: TriggerType
     var Description: js.UndefOr[DescriptionString]
+    var EventBatchingCondition: js.UndefOr[EventBatchingCondition]
     var Predicate: js.UndefOr[Predicate]
     var Schedule: js.UndefOr[GenericString]
     var StartOnCreation: js.UndefOr[BooleanValue]
@@ -2982,6 +3222,7 @@ package object glue {
         Name: NameString,
         Type: TriggerType,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        EventBatchingCondition: js.UndefOr[EventBatchingCondition] = js.undefined,
         Predicate: js.UndefOr[Predicate] = js.undefined,
         Schedule: js.UndefOr[GenericString] = js.undefined,
         StartOnCreation: js.UndefOr[BooleanValue] = js.undefined,
@@ -2995,6 +3236,7 @@ package object glue {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EventBatchingCondition.foreach(__v => __obj.updateDynamic("EventBatchingCondition")(__v.asInstanceOf[js.Any]))
       Predicate.foreach(__v => __obj.updateDynamic("Predicate")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       StartOnCreation.foreach(__v => __obj.updateDynamic("StartOnCreation")(__v.asInstanceOf[js.Any]))
@@ -3195,7 +3437,7 @@ package object glue {
     }
   }
 
-  /** The AWS Lake Formation principal.
+  /** The Lake Formation principal.
     */
   @js.native
   trait DataLakePrincipal extends js.Object {
@@ -3387,6 +3629,39 @@ package object glue {
         "UnscaledValue" -> UnscaledValue.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DecimalNumber]
+    }
+  }
+
+  @js.native
+  trait DeleteBlueprintRequest extends js.Object {
+    var Name: NameString
+  }
+
+  object DeleteBlueprintRequest {
+    @inline
+    def apply(
+        Name: NameString
+    ): DeleteBlueprintRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBlueprintRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBlueprintResponse extends js.Object {
+    var Name: js.UndefOr[NameString]
+  }
+
+  object DeleteBlueprintResponse {
+    @inline
+    def apply(
+        Name: js.UndefOr[NameString] = js.undefined
+    ): DeleteBlueprintResponse = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBlueprintResponse]
     }
   }
 
@@ -3936,6 +4211,7 @@ package object glue {
     var DatabaseName: NameString
     var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
+    var TransactionId: js.UndefOr[TransactionIdString]
   }
 
   object DeleteTableRequest {
@@ -3943,7 +4219,8 @@ package object glue {
     def apply(
         DatabaseName: NameString,
         Name: NameString,
-        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        TransactionId: js.UndefOr[TransactionIdString] = js.undefined
     ): DeleteTableRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
@@ -3951,6 +4228,7 @@ package object glue {
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteTableRequest]
     }
   }
@@ -4269,7 +4547,7 @@ package object glue {
     }
   }
 
-  /** An edge represents a directed connection between two AWS Glue components that are part of the workflow the edge belongs to.
+  /** An edge represents a directed connection between two components on a workflow graph.
     */
   @js.native
   trait Edge extends js.Object {
@@ -4402,6 +4680,29 @@ package object glue {
     }
   }
 
+  /** Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.
+    */
+  @js.native
+  trait EventBatchingCondition extends js.Object {
+    var BatchSize: BatchSize
+    var BatchWindow: js.UndefOr[BatchWindow]
+  }
+
+  object EventBatchingCondition {
+    @inline
+    def apply(
+        BatchSize: BatchSize,
+        BatchWindow: js.UndefOr[BatchWindow] = js.undefined
+    ): EventBatchingCondition = {
+      val __obj = js.Dynamic.literal(
+        "BatchSize" -> BatchSize.asInstanceOf[js.Any]
+      )
+
+      BatchWindow.foreach(__v => __obj.updateDynamic("BatchWindow")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventBatchingCondition]
+    }
+  }
+
   /** An execution property of a job.
     */
   @js.native
@@ -4519,6 +4820,125 @@ package object glue {
       JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
       JobRunId.foreach(__v => __obj.updateDynamic("JobRunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FindMatchesTaskRunProperties]
+    }
+  }
+
+  @js.native
+  trait GetBlueprintRequest extends js.Object {
+    var Name: NameString
+    var IncludeBlueprint: js.UndefOr[NullableBoolean]
+    var IncludeParameterSpec: js.UndefOr[NullableBoolean]
+  }
+
+  object GetBlueprintRequest {
+    @inline
+    def apply(
+        Name: NameString,
+        IncludeBlueprint: js.UndefOr[NullableBoolean] = js.undefined,
+        IncludeParameterSpec: js.UndefOr[NullableBoolean] = js.undefined
+    ): GetBlueprintRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      IncludeBlueprint.foreach(__v => __obj.updateDynamic("IncludeBlueprint")(__v.asInstanceOf[js.Any]))
+      IncludeParameterSpec.foreach(__v => __obj.updateDynamic("IncludeParameterSpec")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBlueprintRequest]
+    }
+  }
+
+  @js.native
+  trait GetBlueprintResponse extends js.Object {
+    var Blueprint: js.UndefOr[Blueprint]
+  }
+
+  object GetBlueprintResponse {
+    @inline
+    def apply(
+        Blueprint: js.UndefOr[Blueprint] = js.undefined
+    ): GetBlueprintResponse = {
+      val __obj = js.Dynamic.literal()
+      Blueprint.foreach(__v => __obj.updateDynamic("Blueprint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBlueprintResponse]
+    }
+  }
+
+  @js.native
+  trait GetBlueprintRunRequest extends js.Object {
+    var BlueprintName: OrchestrationNameString
+    var RunId: IdString
+  }
+
+  object GetBlueprintRunRequest {
+    @inline
+    def apply(
+        BlueprintName: OrchestrationNameString,
+        RunId: IdString
+    ): GetBlueprintRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "BlueprintName" -> BlueprintName.asInstanceOf[js.Any],
+        "RunId" -> RunId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetBlueprintRunRequest]
+    }
+  }
+
+  @js.native
+  trait GetBlueprintRunResponse extends js.Object {
+    var BlueprintRun: js.UndefOr[BlueprintRun]
+  }
+
+  object GetBlueprintRunResponse {
+    @inline
+    def apply(
+        BlueprintRun: js.UndefOr[BlueprintRun] = js.undefined
+    ): GetBlueprintRunResponse = {
+      val __obj = js.Dynamic.literal()
+      BlueprintRun.foreach(__v => __obj.updateDynamic("BlueprintRun")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBlueprintRunResponse]
+    }
+  }
+
+  @js.native
+  trait GetBlueprintRunsRequest extends js.Object {
+    var BlueprintName: NameString
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object GetBlueprintRunsRequest {
+    @inline
+    def apply(
+        BlueprintName: NameString,
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): GetBlueprintRunsRequest = {
+      val __obj = js.Dynamic.literal(
+        "BlueprintName" -> BlueprintName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBlueprintRunsRequest]
+    }
+  }
+
+  @js.native
+  trait GetBlueprintRunsResponse extends js.Object {
+    var BlueprintRuns: js.UndefOr[BlueprintRuns]
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object GetBlueprintRunsResponse {
+    @inline
+    def apply(
+        BlueprintRuns: js.UndefOr[BlueprintRuns] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): GetBlueprintRunsResponse = {
+      val __obj = js.Dynamic.literal()
+      BlueprintRuns.foreach(__v => __obj.updateDynamic("BlueprintRuns")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBlueprintRunsResponse]
     }
   }
 
@@ -5736,7 +6156,9 @@ package object glue {
     var Expression: js.UndefOr[PredicateString]
     var MaxResults: js.UndefOr[PageSize]
     var NextToken: js.UndefOr[Token]
+    var QueryAsOfTime: js.UndefOr[Timestamp]
     var Segment: js.UndefOr[Segment]
+    var TransactionId: js.UndefOr[TransactionIdString]
   }
 
   object GetPartitionsRequest {
@@ -5749,7 +6171,9 @@ package object glue {
         Expression: js.UndefOr[PredicateString] = js.undefined,
         MaxResults: js.UndefOr[PageSize] = js.undefined,
         NextToken: js.UndefOr[Token] = js.undefined,
-        Segment: js.UndefOr[Segment] = js.undefined
+        QueryAsOfTime: js.UndefOr[Timestamp] = js.undefined,
+        Segment: js.UndefOr[Segment] = js.undefined,
+        TransactionId: js.UndefOr[TransactionIdString] = js.undefined
     ): GetPartitionsRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
@@ -5761,7 +6185,9 @@ package object glue {
       Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueryAsOfTime.foreach(__v => __obj.updateDynamic("QueryAsOfTime")(__v.asInstanceOf[js.Any]))
       Segment.foreach(__v => __obj.updateDynamic("Segment")(__v.asInstanceOf[js.Any]))
+      TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPartitionsRequest]
     }
   }
@@ -6255,6 +6681,8 @@ package object glue {
     var DatabaseName: NameString
     var Name: NameString
     var CatalogId: js.UndefOr[CatalogIdString]
+    var QueryAsOfTime: js.UndefOr[Timestamp]
+    var TransactionId: js.UndefOr[TransactionIdString]
   }
 
   object GetTableRequest {
@@ -6262,7 +6690,9 @@ package object glue {
     def apply(
         DatabaseName: NameString,
         Name: NameString,
-        CatalogId: js.UndefOr[CatalogIdString] = js.undefined
+        CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
+        QueryAsOfTime: js.UndefOr[Timestamp] = js.undefined,
+        TransactionId: js.UndefOr[TransactionIdString] = js.undefined
     ): GetTableRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
@@ -6270,6 +6700,8 @@ package object glue {
       )
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      QueryAsOfTime.foreach(__v => __obj.updateDynamic("QueryAsOfTime")(__v.asInstanceOf[js.Any]))
+      TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTableRequest]
     }
   }
@@ -6389,6 +6821,8 @@ package object glue {
     var Expression: js.UndefOr[FilterString]
     var MaxResults: js.UndefOr[CatalogGetterPageSize]
     var NextToken: js.UndefOr[Token]
+    var QueryAsOfTime: js.UndefOr[Timestamp]
+    var TransactionId: js.UndefOr[TransactionIdString]
   }
 
   object GetTablesRequest {
@@ -6398,7 +6832,9 @@ package object glue {
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
         Expression: js.UndefOr[FilterString] = js.undefined,
         MaxResults: js.UndefOr[CatalogGetterPageSize] = js.undefined,
-        NextToken: js.UndefOr[Token] = js.undefined
+        NextToken: js.UndefOr[Token] = js.undefined,
+        QueryAsOfTime: js.UndefOr[Timestamp] = js.undefined,
+        TransactionId: js.UndefOr[TransactionIdString] = js.undefined
     ): GetTablesRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any]
@@ -6408,6 +6844,8 @@ package object glue {
       Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      QueryAsOfTime.foreach(__v => __obj.updateDynamic("QueryAsOfTime")(__v.asInstanceOf[js.Any]))
+      TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTablesRequest]
     }
   }
@@ -6813,7 +7251,7 @@ package object glue {
     }
   }
 
-  /** The database and table in the AWS Glue Data Catalog that is used for input or output data.
+  /** The database and table in the Glue Data Catalog that is used for input or output data.
     */
   @js.native
   trait GlueTable extends js.Object {
@@ -7084,7 +7522,7 @@ package object glue {
     }
   }
 
-  /** Specifies code executed when a job is run.
+  /** Specifies code that runs when a job is run.
     */
   @js.native
   trait JobCommand extends js.Object {
@@ -7345,6 +7783,36 @@ package object glue {
     }
   }
 
+  /** When there are multiple versions of a blueprint and the latest version has some errors, this attribute indicates the last successful blueprint definition that is available with the service.
+    */
+  @js.native
+  trait LastActiveDefinition extends js.Object {
+    var BlueprintLocation: js.UndefOr[GenericString]
+    var BlueprintServiceLocation: js.UndefOr[GenericString]
+    var Description: js.UndefOr[Generic512CharString]
+    var LastModifiedOn: js.UndefOr[TimestampValue]
+    var ParameterSpec: js.UndefOr[BlueprintParameterSpec]
+  }
+
+  object LastActiveDefinition {
+    @inline
+    def apply(
+        BlueprintLocation: js.UndefOr[GenericString] = js.undefined,
+        BlueprintServiceLocation: js.UndefOr[GenericString] = js.undefined,
+        Description: js.UndefOr[Generic512CharString] = js.undefined,
+        LastModifiedOn: js.UndefOr[TimestampValue] = js.undefined,
+        ParameterSpec: js.UndefOr[BlueprintParameterSpec] = js.undefined
+    ): LastActiveDefinition = {
+      val __obj = js.Dynamic.literal()
+      BlueprintLocation.foreach(__v => __obj.updateDynamic("BlueprintLocation")(__v.asInstanceOf[js.Any]))
+      BlueprintServiceLocation.foreach(__v => __obj.updateDynamic("BlueprintServiceLocation")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastModifiedOn.foreach(__v => __obj.updateDynamic("LastModifiedOn")(__v.asInstanceOf[js.Any]))
+      ParameterSpec.foreach(__v => __obj.updateDynamic("ParameterSpec")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LastActiveDefinition]
+    }
+  }
+
   /** Status and error information about the most recent crawl.
     */
   @js.native
@@ -7393,6 +7861,47 @@ package object glue {
       val __obj = js.Dynamic.literal()
       CrawlerLineageSettings.foreach(__v => __obj.updateDynamic("CrawlerLineageSettings")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LineageConfiguration]
+    }
+  }
+
+  @js.native
+  trait ListBlueprintsRequest extends js.Object {
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[GenericString]
+    var Tags: js.UndefOr[TagsMap]
+  }
+
+  object ListBlueprintsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined,
+        Tags: js.UndefOr[TagsMap] = js.undefined
+    ): ListBlueprintsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBlueprintsRequest]
+    }
+  }
+
+  @js.native
+  trait ListBlueprintsResponse extends js.Object {
+    var Blueprints: js.UndefOr[BlueprintNames]
+    var NextToken: js.UndefOr[GenericString]
+  }
+
+  object ListBlueprintsResponse {
+    @inline
+    def apply(
+        Blueprints: js.UndefOr[BlueprintNames] = js.undefined,
+        NextToken: js.UndefOr[GenericString] = js.undefined
+    ): ListBlueprintsResponse = {
+      val __obj = js.Dynamic.literal()
+      Blueprints.foreach(__v => __obj.updateDynamic("Blueprints")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBlueprintsResponse]
     }
   }
 
@@ -8022,7 +8531,7 @@ package object glue {
     }
   }
 
-  /** A node represents an AWS Glue component such as a trigger, or job, etc., that is part of a workflow.
+  /** A node represents an Glue component (trigger, crawler, or job) on a workflow graph.
     */
   @js.native
   trait Node extends js.Object {
@@ -8619,7 +9128,7 @@ package object glue {
     }
   }
 
-  /** When crawling an Amazon S3 data source after the first crawl is complete, specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. For more information, see [[https://docs.aws.amazon.com/glue/latest/dg/incremental-crawls.html|Incremental Crawls in AWS Glue]] in the developer guide.
+  /** When crawling an Amazon S3 data source after the first crawl is complete, specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. For more information, see [[https://docs.aws.amazon.com/glue/latest/dg/incremental-crawls.html|Incremental Crawls in Glue]] in the developer guide.
     */
   @js.native
   trait RecrawlPolicy extends js.Object {
@@ -8923,21 +9432,30 @@ package object glue {
   @js.native
   trait S3Target extends js.Object {
     var ConnectionName: js.UndefOr[ConnectionName]
+    var DlqEventQueueArn: js.UndefOr[EventQueueArn]
+    var EventQueueArn: js.UndefOr[EventQueueArn]
     var Exclusions: js.UndefOr[PathList]
     var Path: js.UndefOr[Path]
+    var SampleSize: js.UndefOr[NullableInteger]
   }
 
   object S3Target {
     @inline
     def apply(
         ConnectionName: js.UndefOr[ConnectionName] = js.undefined,
+        DlqEventQueueArn: js.UndefOr[EventQueueArn] = js.undefined,
+        EventQueueArn: js.UndefOr[EventQueueArn] = js.undefined,
         Exclusions: js.UndefOr[PathList] = js.undefined,
-        Path: js.UndefOr[Path] = js.undefined
+        Path: js.UndefOr[Path] = js.undefined,
+        SampleSize: js.UndefOr[NullableInteger] = js.undefined
     ): S3Target = {
       val __obj = js.Dynamic.literal()
       ConnectionName.foreach(__v => __obj.updateDynamic("ConnectionName")(__v.asInstanceOf[js.Any]))
+      DlqEventQueueArn.foreach(__v => __obj.updateDynamic("DlqEventQueueArn")(__v.asInstanceOf[js.Any]))
+      EventQueueArn.foreach(__v => __obj.updateDynamic("EventQueueArn")(__v.asInstanceOf[js.Any]))
       Exclusions.foreach(__v => __obj.updateDynamic("Exclusions")(__v.asInstanceOf[js.Any]))
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
+      SampleSize.foreach(__v => __obj.updateDynamic("SampleSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Target]
     }
   }
@@ -9005,7 +9523,7 @@ package object glue {
     }
   }
 
-  /** The unique ID of the schema in the AWS Glue schema registry.
+  /** The unique ID of the schema in the Glue schema registry.
     */
   @js.native
   trait SchemaId extends js.Object {
@@ -9065,7 +9583,7 @@ package object glue {
     }
   }
 
-  /** An object that references a schema stored in the AWS Glue Schema Registry.
+  /** An object that references a schema stored in the Glue Schema Registry.
     */
   @js.native
   trait SchemaReference extends js.Object {
@@ -9238,7 +9756,7 @@ package object glue {
     }
   }
 
-  /** Defines a non-overlapping region of a table's partitions, allowing multiple requests to be executed in parallel.
+  /** Defines a non-overlapping region of a table's partitions, allowing multiple requests to be run in parallel.
     */
   @js.native
   trait Segment extends js.Object {
@@ -9326,6 +9844,46 @@ package object glue {
       FieldName.foreach(__v => __obj.updateDynamic("FieldName")(__v.asInstanceOf[js.Any]))
       Sort.foreach(__v => __obj.updateDynamic("Sort")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SortCriterion]
+    }
+  }
+
+  @js.native
+  trait StartBlueprintRunRequest extends js.Object {
+    var BlueprintName: OrchestrationNameString
+    var RoleArn: OrchestrationIAMRoleArn
+    var Parameters: js.UndefOr[BlueprintParameters]
+  }
+
+  object StartBlueprintRunRequest {
+    @inline
+    def apply(
+        BlueprintName: OrchestrationNameString,
+        RoleArn: OrchestrationIAMRoleArn,
+        Parameters: js.UndefOr[BlueprintParameters] = js.undefined
+    ): StartBlueprintRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "BlueprintName" -> BlueprintName.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
+      )
+
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartBlueprintRunRequest]
+    }
+  }
+
+  @js.native
+  trait StartBlueprintRunResponse extends js.Object {
+    var RunId: js.UndefOr[IdString]
+  }
+
+  object StartBlueprintRunResponse {
+    @inline
+    def apply(
+        RunId: js.UndefOr[IdString] = js.undefined
+    ): StartBlueprintRunResponse = {
+      val __obj = js.Dynamic.literal()
+      RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartBlueprintRunResponse]
     }
   }
 
@@ -9654,6 +10212,27 @@ package object glue {
       val __obj = js.Dynamic.literal()
       RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartWorkflowRunResponse]
+    }
+  }
+
+  /** The batch condition that started the workflow run. Either the number of events in the batch size arrived, in which case the BatchSize member is non-zero, or the batch window expired, in which case the BatchWindow member is non-zero.
+    */
+  @js.native
+  trait StartingEventBatchCondition extends js.Object {
+    var BatchSize: js.UndefOr[NullableInteger]
+    var BatchWindow: js.UndefOr[NullableInteger]
+  }
+
+  object StartingEventBatchCondition {
+    @inline
+    def apply(
+        BatchSize: js.UndefOr[NullableInteger] = js.undefined,
+        BatchWindow: js.UndefOr[NullableInteger] = js.undefined
+    ): StartingEventBatchCondition = {
+      val __obj = js.Dynamic.literal()
+      BatchSize.foreach(__v => __obj.updateDynamic("BatchSize")(__v.asInstanceOf[js.Any]))
+      BatchWindow.foreach(__v => __obj.updateDynamic("BatchWindow")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartingEventBatchCondition]
     }
   }
 
@@ -10348,6 +10927,7 @@ package object glue {
   trait Trigger extends js.Object {
     var Actions: js.UndefOr[ActionList]
     var Description: js.UndefOr[DescriptionString]
+    var EventBatchingCondition: js.UndefOr[EventBatchingCondition]
     var Id: js.UndefOr[IdString]
     var Name: js.UndefOr[NameString]
     var Predicate: js.UndefOr[Predicate]
@@ -10362,6 +10942,7 @@ package object glue {
     def apply(
         Actions: js.UndefOr[ActionList] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        EventBatchingCondition: js.UndefOr[EventBatchingCondition] = js.undefined,
         Id: js.UndefOr[IdString] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined,
         Predicate: js.UndefOr[Predicate] = js.undefined,
@@ -10373,6 +10954,7 @@ package object glue {
       val __obj = js.Dynamic.literal()
       Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EventBatchingCondition.foreach(__v => __obj.updateDynamic("EventBatchingCondition")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Predicate.foreach(__v => __obj.updateDynamic("Predicate")(__v.asInstanceOf[js.Any]))
@@ -10408,6 +10990,7 @@ package object glue {
   trait TriggerUpdate extends js.Object {
     var Actions: js.UndefOr[ActionList]
     var Description: js.UndefOr[DescriptionString]
+    var EventBatchingCondition: js.UndefOr[EventBatchingCondition]
     var Name: js.UndefOr[NameString]
     var Predicate: js.UndefOr[Predicate]
     var Schedule: js.UndefOr[GenericString]
@@ -10418,6 +11001,7 @@ package object glue {
     def apply(
         Actions: js.UndefOr[ActionList] = js.undefined,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        EventBatchingCondition: js.UndefOr[EventBatchingCondition] = js.undefined,
         Name: js.UndefOr[NameString] = js.undefined,
         Predicate: js.UndefOr[Predicate] = js.undefined,
         Schedule: js.UndefOr[GenericString] = js.undefined
@@ -10425,6 +11009,7 @@ package object glue {
       val __obj = js.Dynamic.literal()
       Actions.foreach(__v => __obj.updateDynamic("Actions")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EventBatchingCondition.foreach(__v => __obj.updateDynamic("EventBatchingCondition")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Predicate.foreach(__v => __obj.updateDynamic("Predicate")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
@@ -10460,6 +11045,46 @@ package object glue {
     def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateBlueprintRequest extends js.Object {
+    var BlueprintLocation: OrchestrationS3Location
+    var Name: OrchestrationNameString
+    var Description: js.UndefOr[Generic512CharString]
+  }
+
+  object UpdateBlueprintRequest {
+    @inline
+    def apply(
+        BlueprintLocation: OrchestrationS3Location,
+        Name: OrchestrationNameString,
+        Description: js.UndefOr[Generic512CharString] = js.undefined
+    ): UpdateBlueprintRequest = {
+      val __obj = js.Dynamic.literal(
+        "BlueprintLocation" -> BlueprintLocation.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBlueprintRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateBlueprintResponse extends js.Object {
+    var Name: js.UndefOr[NameString]
+  }
+
+  object UpdateBlueprintResponse {
+    @inline
+    def apply(
+        Name: js.UndefOr[NameString] = js.undefined
+    ): UpdateBlueprintResponse = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBlueprintResponse]
     }
   }
 
@@ -11130,6 +11755,7 @@ package object glue {
     var TableInput: TableInput
     var CatalogId: js.UndefOr[CatalogIdString]
     var SkipArchive: js.UndefOr[BooleanNullable]
+    var TransactionId: js.UndefOr[TransactionIdString]
   }
 
   object UpdateTableRequest {
@@ -11138,7 +11764,8 @@ package object glue {
         DatabaseName: NameString,
         TableInput: TableInput,
         CatalogId: js.UndefOr[CatalogIdString] = js.undefined,
-        SkipArchive: js.UndefOr[BooleanNullable] = js.undefined
+        SkipArchive: js.UndefOr[BooleanNullable] = js.undefined,
+        TransactionId: js.UndefOr[TransactionIdString] = js.undefined
     ): UpdateTableRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
@@ -11147,6 +11774,7 @@ package object glue {
 
       CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
       SkipArchive.foreach(__v => __obj.updateDynamic("SkipArchive")(__v.asInstanceOf[js.Any]))
+      TransactionId.foreach(__v => __obj.updateDynamic("TransactionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableRequest]
     }
   }
@@ -11374,10 +12002,11 @@ package object glue {
     }
   }
 
-  /** A workflow represents a flow in which AWS Glue components should be executed to complete a logical task.
+  /** A workflow is a collection of multiple dependent Glue jobs and crawlers that are run to complete a complex ETL task. A workflow manages the execution and monitoring of all its jobs and crawlers.
     */
   @js.native
   trait Workflow extends js.Object {
+    var BlueprintDetails: js.UndefOr[BlueprintDetails]
     var CreatedOn: js.UndefOr[TimestampValue]
     var DefaultRunProperties: js.UndefOr[WorkflowRunProperties]
     var Description: js.UndefOr[GenericString]
@@ -11391,6 +12020,7 @@ package object glue {
   object Workflow {
     @inline
     def apply(
+        BlueprintDetails: js.UndefOr[BlueprintDetails] = js.undefined,
         CreatedOn: js.UndefOr[TimestampValue] = js.undefined,
         DefaultRunProperties: js.UndefOr[WorkflowRunProperties] = js.undefined,
         Description: js.UndefOr[GenericString] = js.undefined,
@@ -11401,6 +12031,7 @@ package object glue {
         Name: js.UndefOr[NameString] = js.undefined
     ): Workflow = {
       val __obj = js.Dynamic.literal()
+      BlueprintDetails.foreach(__v => __obj.updateDynamic("BlueprintDetails")(__v.asInstanceOf[js.Any]))
       CreatedOn.foreach(__v => __obj.updateDynamic("CreatedOn")(__v.asInstanceOf[js.Any]))
       DefaultRunProperties.foreach(__v => __obj.updateDynamic("DefaultRunProperties")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -11413,7 +12044,7 @@ package object glue {
     }
   }
 
-  /** A workflow graph represents the complete workflow containing all the AWS Glue components present in the workflow and all the directed connections between them.
+  /** A workflow graph represents the complete workflow containing all the Glue components present in the workflow and all the directed connections between them.
     */
   @js.native
   trait WorkflowGraph extends js.Object {
@@ -11444,6 +12075,7 @@ package object glue {
     var Name: js.UndefOr[NameString]
     var PreviousRunId: js.UndefOr[IdString]
     var StartedOn: js.UndefOr[TimestampValue]
+    var StartingEventBatchCondition: js.UndefOr[StartingEventBatchCondition]
     var Statistics: js.UndefOr[WorkflowRunStatistics]
     var Status: js.UndefOr[WorkflowRunStatus]
     var WorkflowRunId: js.UndefOr[IdString]
@@ -11459,6 +12091,7 @@ package object glue {
         Name: js.UndefOr[NameString] = js.undefined,
         PreviousRunId: js.UndefOr[IdString] = js.undefined,
         StartedOn: js.UndefOr[TimestampValue] = js.undefined,
+        StartingEventBatchCondition: js.UndefOr[StartingEventBatchCondition] = js.undefined,
         Statistics: js.UndefOr[WorkflowRunStatistics] = js.undefined,
         Status: js.UndefOr[WorkflowRunStatus] = js.undefined,
         WorkflowRunId: js.UndefOr[IdString] = js.undefined,
@@ -11471,6 +12104,7 @@ package object glue {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PreviousRunId.foreach(__v => __obj.updateDynamic("PreviousRunId")(__v.asInstanceOf[js.Any]))
       StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
+      StartingEventBatchCondition.foreach(__v => __obj.updateDynamic("StartingEventBatchCondition")(__v.asInstanceOf[js.Any]))
       Statistics.foreach(__v => __obj.updateDynamic("Statistics")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       WorkflowRunId.foreach(__v => __obj.updateDynamic("WorkflowRunId")(__v.asInstanceOf[js.Any]))

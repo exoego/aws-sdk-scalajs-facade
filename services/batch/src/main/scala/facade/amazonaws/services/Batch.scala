@@ -24,6 +24,7 @@ package object batch {
   type JobDetailList = js.Array[JobDetail]
   type JobQueueDetailList = js.Array[JobQueueDetail]
   type JobSummaryList = js.Array[JobSummary]
+  type ListJobsFilterList = js.Array[KeyValuesPair]
   type LogConfigurationOptionsMap = js.Dictionary[String]
   type MountPoints = js.Array[MountPoint]
   type NetworkInterfaceList = js.Array[NetworkInterface]
@@ -32,7 +33,10 @@ package object batch {
   type ParametersMap = js.Dictionary[String]
   type PlatformCapabilityList = js.Array[PlatformCapability]
   type ResourceRequirements = js.Array[ResourceRequirement]
+  type SchedulingPolicyDetailList = js.Array[SchedulingPolicyDetail]
+  type SchedulingPolicyListingDetailList = js.Array[SchedulingPolicyListingDetail]
   type SecretList = js.Array[Secret]
+  type ShareAttributesList = js.Array[ShareAttributes]
   type StringList = js.Array[String]
   type TagKey = String
   type TagKeysList = js.Array[TagKey]
@@ -48,14 +52,18 @@ package object batch {
     @inline def cancelJobFuture(params: CancelJobRequest): Future[CancelJobResponse] = service.cancelJob(params).promise().toFuture
     @inline def createComputeEnvironmentFuture(params: CreateComputeEnvironmentRequest): Future[CreateComputeEnvironmentResponse] = service.createComputeEnvironment(params).promise().toFuture
     @inline def createJobQueueFuture(params: CreateJobQueueRequest): Future[CreateJobQueueResponse] = service.createJobQueue(params).promise().toFuture
+    @inline def createSchedulingPolicyFuture(params: CreateSchedulingPolicyRequest): Future[CreateSchedulingPolicyResponse] = service.createSchedulingPolicy(params).promise().toFuture
     @inline def deleteComputeEnvironmentFuture(params: DeleteComputeEnvironmentRequest): Future[DeleteComputeEnvironmentResponse] = service.deleteComputeEnvironment(params).promise().toFuture
     @inline def deleteJobQueueFuture(params: DeleteJobQueueRequest): Future[DeleteJobQueueResponse] = service.deleteJobQueue(params).promise().toFuture
+    @inline def deleteSchedulingPolicyFuture(params: DeleteSchedulingPolicyRequest): Future[DeleteSchedulingPolicyResponse] = service.deleteSchedulingPolicy(params).promise().toFuture
     @inline def deregisterJobDefinitionFuture(params: DeregisterJobDefinitionRequest): Future[DeregisterJobDefinitionResponse] = service.deregisterJobDefinition(params).promise().toFuture
     @inline def describeComputeEnvironmentsFuture(params: DescribeComputeEnvironmentsRequest): Future[DescribeComputeEnvironmentsResponse] = service.describeComputeEnvironments(params).promise().toFuture
     @inline def describeJobDefinitionsFuture(params: DescribeJobDefinitionsRequest): Future[DescribeJobDefinitionsResponse] = service.describeJobDefinitions(params).promise().toFuture
     @inline def describeJobQueuesFuture(params: DescribeJobQueuesRequest): Future[DescribeJobQueuesResponse] = service.describeJobQueues(params).promise().toFuture
     @inline def describeJobsFuture(params: DescribeJobsRequest): Future[DescribeJobsResponse] = service.describeJobs(params).promise().toFuture
+    @inline def describeSchedulingPoliciesFuture(params: DescribeSchedulingPoliciesRequest): Future[DescribeSchedulingPoliciesResponse] = service.describeSchedulingPolicies(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResponse] = service.listJobs(params).promise().toFuture
+    @inline def listSchedulingPoliciesFuture(params: ListSchedulingPoliciesRequest): Future[ListSchedulingPoliciesResponse] = service.listSchedulingPolicies(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def registerJobDefinitionFuture(params: RegisterJobDefinitionRequest): Future[RegisterJobDefinitionResponse] = service.registerJobDefinition(params).promise().toFuture
     @inline def submitJobFuture(params: SubmitJobRequest): Future[SubmitJobResponse] = service.submitJob(params).promise().toFuture
@@ -64,6 +72,7 @@ package object batch {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateComputeEnvironmentFuture(params: UpdateComputeEnvironmentRequest): Future[UpdateComputeEnvironmentResponse] = service.updateComputeEnvironment(params).promise().toFuture
     @inline def updateJobQueueFuture(params: UpdateJobQueueRequest): Future[UpdateJobQueueResponse] = service.updateJobQueue(params).promise().toFuture
+    @inline def updateSchedulingPolicyFuture(params: UpdateSchedulingPolicyRequest): Future[UpdateSchedulingPolicyResponse] = service.updateSchedulingPolicy(params).promise().toFuture
 
   }
 
@@ -75,14 +84,18 @@ package object batch {
     def cancelJob(params: CancelJobRequest): Request[CancelJobResponse] = js.native
     def createComputeEnvironment(params: CreateComputeEnvironmentRequest): Request[CreateComputeEnvironmentResponse] = js.native
     def createJobQueue(params: CreateJobQueueRequest): Request[CreateJobQueueResponse] = js.native
+    def createSchedulingPolicy(params: CreateSchedulingPolicyRequest): Request[CreateSchedulingPolicyResponse] = js.native
     def deleteComputeEnvironment(params: DeleteComputeEnvironmentRequest): Request[DeleteComputeEnvironmentResponse] = js.native
     def deleteJobQueue(params: DeleteJobQueueRequest): Request[DeleteJobQueueResponse] = js.native
+    def deleteSchedulingPolicy(params: DeleteSchedulingPolicyRequest): Request[DeleteSchedulingPolicyResponse] = js.native
     def deregisterJobDefinition(params: DeregisterJobDefinitionRequest): Request[DeregisterJobDefinitionResponse] = js.native
     def describeComputeEnvironments(params: DescribeComputeEnvironmentsRequest): Request[DescribeComputeEnvironmentsResponse] = js.native
     def describeJobDefinitions(params: DescribeJobDefinitionsRequest): Request[DescribeJobDefinitionsResponse] = js.native
     def describeJobQueues(params: DescribeJobQueuesRequest): Request[DescribeJobQueuesResponse] = js.native
     def describeJobs(params: DescribeJobsRequest): Request[DescribeJobsResponse] = js.native
+    def describeSchedulingPolicies(params: DescribeSchedulingPoliciesRequest): Request[DescribeSchedulingPoliciesResponse] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResponse] = js.native
+    def listSchedulingPolicies(params: ListSchedulingPoliciesRequest): Request[ListSchedulingPoliciesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def registerJobDefinition(params: RegisterJobDefinitionRequest): Request[RegisterJobDefinitionResponse] = js.native
     def submitJob(params: SubmitJobRequest): Request[SubmitJobResponse] = js.native
@@ -91,6 +104,7 @@ package object batch {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateComputeEnvironment(params: UpdateComputeEnvironmentRequest): Request[UpdateComputeEnvironmentResponse] = js.native
     def updateJobQueue(params: UpdateJobQueueRequest): Request[UpdateJobQueueResponse] = js.native
+    def updateSchedulingPolicy(params: UpdateSchedulingPolicyRequest): Request[UpdateSchedulingPolicyResponse] = js.native
   }
   object Batch {
     @inline implicit def toOps(service: Batch): BatchOps = {
@@ -98,7 +112,7 @@ package object batch {
     }
   }
 
-  /** An object representing an AWS Batch array job.
+  /** An object representing an Batch array job.
     */
   @js.native
   trait ArrayProperties extends js.Object {
@@ -254,7 +268,7 @@ package object batch {
     }
   }
 
-  /** An object representing an AWS Batch compute environment.
+  /** An object representing an Batch compute environment.
     */
   @js.native
   trait ComputeEnvironmentDetail extends js.Object {
@@ -268,6 +282,7 @@ package object batch {
     var statusReason: js.UndefOr[String]
     var tags: js.UndefOr[TagrisTagsMap]
     var `type`: js.UndefOr[CEType]
+    var unmanagedvCpus: js.UndefOr[Int]
   }
 
   object ComputeEnvironmentDetail {
@@ -282,7 +297,8 @@ package object batch {
         status: js.UndefOr[CEStatus] = js.undefined,
         statusReason: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined,
-        `type`: js.UndefOr[CEType] = js.undefined
+        `type`: js.UndefOr[CEType] = js.undefined,
+        unmanagedvCpus: js.UndefOr[Int] = js.undefined
     ): ComputeEnvironmentDetail = {
       val __obj = js.Dynamic.literal(
         "computeEnvironmentArn" -> computeEnvironmentArn.asInstanceOf[js.Any],
@@ -297,13 +313,14 @@ package object batch {
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      unmanagedvCpus.foreach(__v => __obj.updateDynamic("unmanagedvCpus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeEnvironmentDetail]
     }
   }
 
   /** The order in which compute environments are tried for job placement within a queue. Compute environments are tried in ascending order. For example, if two compute environments are associated with a job queue, the compute environment with a lower order integer value is tried for job placement first. Compute environments must be in the <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
     *
-    * '''Note:'''All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't support mixing compute environment architecture types in a single job queue.
+    * '''Note:'''All compute environments that are associated with a job queue must share the same architecture. Batch doesn't support mixing compute environment architecture types in a single job queue.
     */
   @js.native
   trait ComputeEnvironmentOrder extends js.Object {
@@ -325,7 +342,7 @@ package object batch {
     }
   }
 
-  /** An object representing an AWS Batch compute resource. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html|Compute Environments]] in the <i>AWS Batch User Guide</i>.
+  /** An object representing an Batch compute resource. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html|Compute Environments]] in the <i>Batch User Guide</i>.
     */
   @js.native
   trait ComputeResource extends js.Object {
@@ -393,7 +410,7 @@ package object batch {
     }
   }
 
-  /** An object representing the attributes of a compute environment that can be updated. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html|Compute Environments]] in the <i>AWS Batch User Guide</i>.
+  /** An object representing the attributes of a compute environment that can be updated. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html|Compute Environments]] in the <i>Batch User Guide</i>.
     */
   @js.native
   trait ComputeResourceUpdate extends js.Object {
@@ -655,6 +672,7 @@ package object batch {
     var serviceRole: js.UndefOr[String]
     var state: js.UndefOr[CEState]
     var tags: js.UndefOr[TagrisTagsMap]
+    var unmanagedvCpus: js.UndefOr[Int]
   }
 
   object CreateComputeEnvironmentRequest {
@@ -665,7 +683,8 @@ package object batch {
         computeResources: js.UndefOr[ComputeResource] = js.undefined,
         serviceRole: js.UndefOr[String] = js.undefined,
         state: js.UndefOr[CEState] = js.undefined,
-        tags: js.UndefOr[TagrisTagsMap] = js.undefined
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined,
+        unmanagedvCpus: js.UndefOr[Int] = js.undefined
     ): CreateComputeEnvironmentRequest = {
       val __obj = js.Dynamic.literal(
         "computeEnvironmentName" -> computeEnvironmentName.asInstanceOf[js.Any],
@@ -676,6 +695,7 @@ package object batch {
       serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      unmanagedvCpus.foreach(__v => __obj.updateDynamic("unmanagedvCpus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateComputeEnvironmentRequest]
     }
   }
@@ -706,6 +726,7 @@ package object batch {
     var computeEnvironmentOrder: ComputeEnvironmentOrders
     var jobQueueName: String
     var priority: Int
+    var schedulingPolicyArn: js.UndefOr[String]
     var state: js.UndefOr[JQState]
     var tags: js.UndefOr[TagrisTagsMap]
   }
@@ -716,6 +737,7 @@ package object batch {
         computeEnvironmentOrder: ComputeEnvironmentOrders,
         jobQueueName: String,
         priority: Int,
+        schedulingPolicyArn: js.UndefOr[String] = js.undefined,
         state: js.UndefOr[JQState] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined
     ): CreateJobQueueRequest = {
@@ -725,6 +747,7 @@ package object batch {
         "priority" -> priority.asInstanceOf[js.Any]
       )
 
+      schedulingPolicyArn.foreach(__v => __obj.updateDynamic("schedulingPolicyArn")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobQueueRequest]
@@ -748,6 +771,50 @@ package object batch {
         "jobQueueName" -> jobQueueName.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateJobQueueResponse]
+    }
+  }
+
+  @js.native
+  trait CreateSchedulingPolicyRequest extends js.Object {
+    var name: String
+    var fairsharePolicy: js.UndefOr[FairsharePolicy]
+    var tags: js.UndefOr[TagrisTagsMap]
+  }
+
+  object CreateSchedulingPolicyRequest {
+    @inline
+    def apply(
+        name: String,
+        fairsharePolicy: js.UndefOr[FairsharePolicy] = js.undefined,
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined
+    ): CreateSchedulingPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      fairsharePolicy.foreach(__v => __obj.updateDynamic("fairsharePolicy")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSchedulingPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait CreateSchedulingPolicyResponse extends js.Object {
+    var arn: String
+    var name: String
+  }
+
+  object CreateSchedulingPolicyResponse {
+    @inline
+    def apply(
+        arn: String,
+        name: String
+    ): CreateSchedulingPolicyResponse = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateSchedulingPolicyResponse]
     }
   }
 
@@ -808,6 +875,34 @@ package object batch {
     def apply(): DeleteJobQueueResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteJobQueueResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteSchedulingPolicyRequest extends js.Object {
+    var arn: String
+  }
+
+  object DeleteSchedulingPolicyRequest {
+    @inline
+    def apply(
+        arn: String
+    ): DeleteSchedulingPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteSchedulingPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteSchedulingPolicyResponse extends js.Object
+
+  object DeleteSchedulingPolicyResponse {
+    @inline
+    def apply(): DeleteSchedulingPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteSchedulingPolicyResponse]
     }
   }
 
@@ -1009,9 +1104,42 @@ package object batch {
     }
   }
 
+  @js.native
+  trait DescribeSchedulingPoliciesRequest extends js.Object {
+    var arns: StringList
+  }
+
+  object DescribeSchedulingPoliciesRequest {
+    @inline
+    def apply(
+        arns: StringList
+    ): DescribeSchedulingPoliciesRequest = {
+      val __obj = js.Dynamic.literal(
+        "arns" -> arns.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeSchedulingPoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeSchedulingPoliciesResponse extends js.Object {
+    var schedulingPolicies: js.UndefOr[SchedulingPolicyDetailList]
+  }
+
+  object DescribeSchedulingPoliciesResponse {
+    @inline
+    def apply(
+        schedulingPolicies: js.UndefOr[SchedulingPolicyDetailList] = js.undefined
+    ): DescribeSchedulingPoliciesResponse = {
+      val __obj = js.Dynamic.literal()
+      schedulingPolicies.foreach(__v => __obj.updateDynamic("schedulingPolicies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeSchedulingPoliciesResponse]
+    }
+  }
+
   /** An object representing a container instance host device.
     *
-    * '''Note:'''This object isn't applicable to jobs running on Fargate resources and shouldn't be provided.
+    * '''Note:'''This object isn't applicable to jobs that are running on Fargate resources and shouldn't be provided.
     */
   @js.native
   trait Device extends js.Object {
@@ -1058,7 +1186,7 @@ package object batch {
     }
   }
 
-  /** This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see [[https://docs.aws.amazon.com/batch/latest/ug/efs-volumes.html|Amazon EFS Volumes]] in the <i>AWS Batch User Guide</i>.
+  /** This is used when you're using an Amazon Elastic File System file system for job storage. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html|Amazon EFS Volumes]] in the <i>Batch User Guide</i>.
     */
   @js.native
   trait EFSVolumeConfiguration extends js.Object {
@@ -1090,9 +1218,9 @@ package object batch {
     }
   }
 
-  /** Provides information used to select Amazon Machine Images (AMIs) for instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is currently <code>ECS_AL1</code> ([[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#alami|Amazon Linux]]) for non-GPU, non-Graviton instances. Starting on March 31, 2021, this default will be changing to <code>ECS_AL2</code> ([[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami|Amazon Linux 2]]).
+  /** Provides information used to select Amazon Machine Images (AMIs) for instances in the compute environment. If <code>Ec2Configuration</code> isn't specified, the default is <code>ECS_AL2</code> ([[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami|Amazon Linux 2]]).
     *
-    * '''Note:'''This object isn't applicable to jobs running on Fargate resources.
+    * '''Note:'''This object isn't applicable to jobs that are running on Fargate resources.
     */
   @js.native
   trait Ec2Configuration extends js.Object {
@@ -1144,7 +1272,31 @@ package object batch {
     }
   }
 
-  /** The platform configuration for jobs running on Fargate resources. For jobs that run on EC2 resources, you shouldn't specify this parameter.
+  /** The fair share policy for a scheduling policy.
+    */
+  @js.native
+  trait FairsharePolicy extends js.Object {
+    var computeReservation: js.UndefOr[Int]
+    var shareDecaySeconds: js.UndefOr[Int]
+    var shareDistribution: js.UndefOr[ShareAttributesList]
+  }
+
+  object FairsharePolicy {
+    @inline
+    def apply(
+        computeReservation: js.UndefOr[Int] = js.undefined,
+        shareDecaySeconds: js.UndefOr[Int] = js.undefined,
+        shareDistribution: js.UndefOr[ShareAttributesList] = js.undefined
+    ): FairsharePolicy = {
+      val __obj = js.Dynamic.literal()
+      computeReservation.foreach(__v => __obj.updateDynamic("computeReservation")(__v.asInstanceOf[js.Any]))
+      shareDecaySeconds.foreach(__v => __obj.updateDynamic("shareDecaySeconds")(__v.asInstanceOf[js.Any]))
+      shareDistribution.foreach(__v => __obj.updateDynamic("shareDistribution")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FairsharePolicy]
+    }
+  }
+
+  /** The platform configuration for jobs that are running on Fargate resources. Jobs that run on EC2 resources must not specify this parameter.
     */
   @js.native
   trait FargatePlatformConfiguration extends js.Object {
@@ -1180,7 +1332,7 @@ package object batch {
     }
   }
 
-  /** An object representing an AWS Batch job definition.
+  /** An object representing an Batch job definition.
     */
   @js.native
   trait JobDefinition extends js.Object {
@@ -1194,6 +1346,7 @@ package object batch {
     var platformCapabilities: js.UndefOr[PlatformCapabilityList]
     var propagateTags: js.UndefOr[Boolean]
     var retryStrategy: js.UndefOr[RetryStrategy]
+    var schedulingPriority: js.UndefOr[Int]
     var status: js.UndefOr[String]
     var tags: js.UndefOr[TagrisTagsMap]
     var timeout: js.UndefOr[JobTimeout]
@@ -1212,6 +1365,7 @@ package object batch {
         platformCapabilities: js.UndefOr[PlatformCapabilityList] = js.undefined,
         propagateTags: js.UndefOr[Boolean] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+        schedulingPriority: js.UndefOr[Int] = js.undefined,
         status: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
@@ -1229,6 +1383,7 @@ package object batch {
       platformCapabilities.foreach(__v => __obj.updateDynamic("platformCapabilities")(__v.asInstanceOf[js.Any]))
       propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
+      schedulingPriority.foreach(__v => __obj.updateDynamic("schedulingPriority")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
@@ -1236,7 +1391,7 @@ package object batch {
     }
   }
 
-  /** An object representing an AWS Batch job dependency.
+  /** An object representing an Batch job dependency.
     */
   @js.native
   trait JobDependency extends js.Object {
@@ -1257,7 +1412,7 @@ package object batch {
     }
   }
 
-  /** An object representing an AWS Batch job.
+  /** An object representing an Batch job.
     */
   @js.native
   trait JobDetail extends js.Object {
@@ -1279,6 +1434,8 @@ package object batch {
     var platformCapabilities: js.UndefOr[PlatformCapabilityList]
     var propagateTags: js.UndefOr[Boolean]
     var retryStrategy: js.UndefOr[RetryStrategy]
+    var schedulingPriority: js.UndefOr[Int]
+    var shareIdentifier: js.UndefOr[String]
     var statusReason: js.UndefOr[String]
     var stoppedAt: js.UndefOr[Double]
     var tags: js.UndefOr[TagrisTagsMap]
@@ -1306,6 +1463,8 @@ package object batch {
         platformCapabilities: js.UndefOr[PlatformCapabilityList] = js.undefined,
         propagateTags: js.UndefOr[Boolean] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+        schedulingPriority: js.UndefOr[Int] = js.undefined,
+        shareIdentifier: js.UndefOr[String] = js.undefined,
         statusReason: js.UndefOr[String] = js.undefined,
         stoppedAt: js.UndefOr[Double] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined,
@@ -1332,6 +1491,8 @@ package object batch {
       platformCapabilities.foreach(__v => __obj.updateDynamic("platformCapabilities")(__v.asInstanceOf[js.Any]))
       propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
+      schedulingPriority.foreach(__v => __obj.updateDynamic("schedulingPriority")(__v.asInstanceOf[js.Any]))
+      shareIdentifier.foreach(__v => __obj.updateDynamic("shareIdentifier")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       stoppedAt.foreach(__v => __obj.updateDynamic("stoppedAt")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1340,7 +1501,7 @@ package object batch {
     }
   }
 
-  /** An object representing the details of an AWS Batch job queue.
+  /** An object representing the details of an Batch job queue.
     */
   @js.native
   trait JobQueueDetail extends js.Object {
@@ -1349,6 +1510,7 @@ package object batch {
     var jobQueueName: String
     var priority: Int
     var state: JQState
+    var schedulingPolicyArn: js.UndefOr[String]
     var status: js.UndefOr[JQStatus]
     var statusReason: js.UndefOr[String]
     var tags: js.UndefOr[TagrisTagsMap]
@@ -1362,6 +1524,7 @@ package object batch {
         jobQueueName: String,
         priority: Int,
         state: JQState,
+        schedulingPolicyArn: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[JQStatus] = js.undefined,
         statusReason: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined
@@ -1374,6 +1537,7 @@ package object batch {
         "state" -> state.asInstanceOf[js.Any]
       )
 
+      schedulingPolicyArn.foreach(__v => __obj.updateDynamic("schedulingPolicyArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -1391,6 +1555,7 @@ package object batch {
     var container: js.UndefOr[ContainerSummary]
     var createdAt: js.UndefOr[Double]
     var jobArn: js.UndefOr[String]
+    var jobDefinition: js.UndefOr[String]
     var nodeProperties: js.UndefOr[NodePropertiesSummary]
     var startedAt: js.UndefOr[Double]
     var status: js.UndefOr[JobStatus]
@@ -1407,6 +1572,7 @@ package object batch {
         container: js.UndefOr[ContainerSummary] = js.undefined,
         createdAt: js.UndefOr[Double] = js.undefined,
         jobArn: js.UndefOr[String] = js.undefined,
+        jobDefinition: js.UndefOr[String] = js.undefined,
         nodeProperties: js.UndefOr[NodePropertiesSummary] = js.undefined,
         startedAt: js.UndefOr[Double] = js.undefined,
         status: js.UndefOr[JobStatus] = js.undefined,
@@ -1422,6 +1588,7 @@ package object batch {
       container.foreach(__v => __obj.updateDynamic("container")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       jobArn.foreach(__v => __obj.updateDynamic("jobArn")(__v.asInstanceOf[js.Any]))
+      jobDefinition.foreach(__v => __obj.updateDynamic("jobDefinition")(__v.asInstanceOf[js.Any]))
       nodeProperties.foreach(__v => __obj.updateDynamic("nodeProperties")(__v.asInstanceOf[js.Any]))
       startedAt.foreach(__v => __obj.updateDynamic("startedAt")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
@@ -1470,9 +1637,30 @@ package object batch {
     }
   }
 
+  /** A filter name and value pair that's used to return a more specific list of results from a <code>ListJobs</code> API operation.
+    */
+  @js.native
+  trait KeyValuesPair extends js.Object {
+    var name: js.UndefOr[String]
+    var values: js.UndefOr[StringList]
+  }
+
+  object KeyValuesPair {
+    @inline
+    def apply(
+        name: js.UndefOr[String] = js.undefined,
+        values: js.UndefOr[StringList] = js.undefined
+    ): KeyValuesPair = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KeyValuesPair]
+    }
+  }
+
   /** An object representing a launch template associated with a compute resource. You must specify either the launch template ID or launch template name in the request, but not both. If security groups are specified using both the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> and the launch template, the values in the <code>securityGroupIds</code> parameter of <code>CreateComputeEnvironment</code> will be used.
     *
-    * '''Note:'''This object isn't applicable to jobs running on Fargate resources.
+    * '''Note:'''This object isn't applicable to jobs that are running on Fargate resources.
     */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -1534,6 +1722,7 @@ package object batch {
   @js.native
   trait ListJobsRequest extends js.Object {
     var arrayJobId: js.UndefOr[String]
+    var filters: js.UndefOr[ListJobsFilterList]
     var jobQueue: js.UndefOr[String]
     var jobStatus: js.UndefOr[JobStatus]
     var maxResults: js.UndefOr[Int]
@@ -1545,6 +1734,7 @@ package object batch {
     @inline
     def apply(
         arrayJobId: js.UndefOr[String] = js.undefined,
+        filters: js.UndefOr[ListJobsFilterList] = js.undefined,
         jobQueue: js.UndefOr[String] = js.undefined,
         jobStatus: js.UndefOr[JobStatus] = js.undefined,
         maxResults: js.UndefOr[Int] = js.undefined,
@@ -1553,6 +1743,7 @@ package object batch {
     ): ListJobsRequest = {
       val __obj = js.Dynamic.literal()
       arrayJobId.foreach(__v => __obj.updateDynamic("arrayJobId")(__v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
       jobQueue.foreach(__v => __obj.updateDynamic("jobQueue")(__v.asInstanceOf[js.Any]))
       jobStatus.foreach(__v => __obj.updateDynamic("jobStatus")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
@@ -1580,6 +1771,44 @@ package object batch {
 
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListJobsResponse]
+    }
+  }
+
+  @js.native
+  trait ListSchedulingPoliciesRequest extends js.Object {
+    var maxResults: js.UndefOr[Int]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object ListSchedulingPoliciesRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[Int] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): ListSchedulingPoliciesRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSchedulingPoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait ListSchedulingPoliciesResponse extends js.Object {
+    var nextToken: js.UndefOr[String]
+    var schedulingPolicies: js.UndefOr[SchedulingPolicyListingDetailList]
+  }
+
+  object ListSchedulingPoliciesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[String] = js.undefined,
+        schedulingPolicies: js.UndefOr[SchedulingPolicyListingDetailList] = js.undefined
+    ): ListSchedulingPoliciesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      schedulingPolicies.foreach(__v => __obj.updateDynamic("schedulingPolicies")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSchedulingPoliciesResponse]
     }
   }
 
@@ -1666,7 +1895,7 @@ package object batch {
     }
   }
 
-  /** The network configuration for jobs running on Fargate resources. Jobs running on EC2 resources must not specify this parameter.
+  /** The network configuration for jobs that are running on Fargate resources. Jobs that are running on EC2 resources must not specify this parameter.
     */
   @js.native
   trait NetworkConfiguration extends js.Object {
@@ -1731,7 +1960,7 @@ package object batch {
 
   /** Object representing any node overrides to a job definition that's used in a <a>SubmitJob</a> API operation.
     *
-    * '''Note:'''This isn't applicable to jobs running on Fargate resources and shouldn't be provided; use <code>containerOverrides</code> instead.
+    * '''Note:'''This isn't applicable to jobs that are running on Fargate resources and shouldn't be provided; use <code>containerOverrides</code> instead.
     */
   @js.native
   trait NodeOverrides extends js.Object {
@@ -1859,6 +2088,7 @@ package object batch {
     var platformCapabilities: js.UndefOr[PlatformCapabilityList]
     var propagateTags: js.UndefOr[Boolean]
     var retryStrategy: js.UndefOr[RetryStrategy]
+    var schedulingPriority: js.UndefOr[Int]
     var tags: js.UndefOr[TagrisTagsMap]
     var timeout: js.UndefOr[JobTimeout]
   }
@@ -1874,6 +2104,7 @@ package object batch {
         platformCapabilities: js.UndefOr[PlatformCapabilityList] = js.undefined,
         propagateTags: js.UndefOr[Boolean] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+        schedulingPriority: js.UndefOr[Int] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): RegisterJobDefinitionRequest = {
@@ -1888,6 +2119,7 @@ package object batch {
       platformCapabilities.foreach(__v => __obj.updateDynamic("platformCapabilities")(__v.asInstanceOf[js.Any]))
       propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
+      schedulingPriority.foreach(__v => __obj.updateDynamic("schedulingPriority")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterJobDefinitionRequest]
@@ -1939,7 +2171,7 @@ package object batch {
     }
   }
 
-  /** The retry strategy associated with a job. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html|Automated job retries]] in the <i>AWS Batch User Guide</i>.
+  /** The retry strategy associated with a job. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html|Automated job retries]] in the <i>Batch User Guide</i>.
     */
   @js.native
   trait RetryStrategy extends js.Object {
@@ -1960,7 +2192,55 @@ package object batch {
     }
   }
 
-  /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways: * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter. * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html|Specifying sensitive data]] in the <i>AWS Batch User Guide</i>.
+  /** An object that represents a scheduling policy.
+    */
+  @js.native
+  trait SchedulingPolicyDetail extends js.Object {
+    var arn: String
+    var name: String
+    var fairsharePolicy: js.UndefOr[FairsharePolicy]
+    var tags: js.UndefOr[TagrisTagsMap]
+  }
+
+  object SchedulingPolicyDetail {
+    @inline
+    def apply(
+        arn: String,
+        name: String,
+        fairsharePolicy: js.UndefOr[FairsharePolicy] = js.undefined,
+        tags: js.UndefOr[TagrisTagsMap] = js.undefined
+    ): SchedulingPolicyDetail = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      fairsharePolicy.foreach(__v => __obj.updateDynamic("fairsharePolicy")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SchedulingPolicyDetail]
+    }
+  }
+
+  /** An object that contains the details of a scheduling policy that's returned in a <code>ListSchedulingPolicy</code> action.
+    */
+  @js.native
+  trait SchedulingPolicyListingDetail extends js.Object {
+    var arn: String
+  }
+
+  object SchedulingPolicyListingDetail {
+    @inline
+    def apply(
+        arn: String
+    ): SchedulingPolicyListingDetail = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SchedulingPolicyListingDetail]
+    }
+  }
+
+  /** An object representing the secret to expose to your container. Secrets can be exposed to a container in the following ways: * To inject sensitive data into your containers as environment variables, use the <code>secrets</code> container definition parameter. * To reference sensitive information in the log configuration of a container, use the <code>secretOptions</code> container definition parameter. For more information, see [[https://docs.aws.amazon.com/batch/latest/userguide/specifying-sensitive-data.html|Specifying sensitive data]] in the <i>Batch User Guide</i>.
     */
   @js.native
   trait Secret extends js.Object {
@@ -1982,6 +2262,29 @@ package object batch {
     }
   }
 
+  /** Specifies the weights for the fair share identifiers for the fair share policy. Fair share identifiers that aren't included have a default weight of <code>1.0</code>.
+    */
+  @js.native
+  trait ShareAttributes extends js.Object {
+    var shareIdentifier: String
+    var weightFactor: js.UndefOr[Float]
+  }
+
+  object ShareAttributes {
+    @inline
+    def apply(
+        shareIdentifier: String,
+        weightFactor: js.UndefOr[Float] = js.undefined
+    ): ShareAttributes = {
+      val __obj = js.Dynamic.literal(
+        "shareIdentifier" -> shareIdentifier.asInstanceOf[js.Any]
+      )
+
+      weightFactor.foreach(__v => __obj.updateDynamic("weightFactor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ShareAttributes]
+    }
+  }
+
   /** Contains the parameters for <code>SubmitJob</code>.
     */
   @js.native
@@ -1996,6 +2299,8 @@ package object batch {
     var parameters: js.UndefOr[ParametersMap]
     var propagateTags: js.UndefOr[Boolean]
     var retryStrategy: js.UndefOr[RetryStrategy]
+    var schedulingPriorityOverride: js.UndefOr[Int]
+    var shareIdentifier: js.UndefOr[String]
     var tags: js.UndefOr[TagrisTagsMap]
     var timeout: js.UndefOr[JobTimeout]
   }
@@ -2013,6 +2318,8 @@ package object batch {
         parameters: js.UndefOr[ParametersMap] = js.undefined,
         propagateTags: js.UndefOr[Boolean] = js.undefined,
         retryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
+        schedulingPriorityOverride: js.UndefOr[Int] = js.undefined,
+        shareIdentifier: js.UndefOr[String] = js.undefined,
         tags: js.UndefOr[TagrisTagsMap] = js.undefined,
         timeout: js.UndefOr[JobTimeout] = js.undefined
     ): SubmitJobRequest = {
@@ -2029,6 +2336,8 @@ package object batch {
       parameters.foreach(__v => __obj.updateDynamic("parameters")(__v.asInstanceOf[js.Any]))
       propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
       retryStrategy.foreach(__v => __obj.updateDynamic("retryStrategy")(__v.asInstanceOf[js.Any]))
+      schedulingPriorityOverride.foreach(__v => __obj.updateDynamic("schedulingPriorityOverride")(__v.asInstanceOf[js.Any]))
+      shareIdentifier.foreach(__v => __obj.updateDynamic("shareIdentifier")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       timeout.foreach(__v => __obj.updateDynamic("timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SubmitJobRequest]
@@ -2125,7 +2434,7 @@ package object batch {
 
   /** The container path, mount options, and size of the tmpfs mount.
     *
-    * '''Note:'''This object isn't applicable to jobs running on Fargate resources.
+    * '''Note:'''This object isn't applicable to jobs that are running on Fargate resources.
     */
   @js.native
   trait Tmpfs extends js.Object {
@@ -2153,7 +2462,7 @@ package object batch {
 
   /** The <code>ulimit</code> settings to pass to the container.
     *
-    * '''Note:'''This object isn't applicable to jobs running on Fargate resources.
+    * '''Note:'''This object isn't applicable to jobs that are running on Fargate resources.
     */
   @js.native
   trait Ulimit extends js.Object {
@@ -2217,6 +2526,7 @@ package object batch {
     var computeResources: js.UndefOr[ComputeResourceUpdate]
     var serviceRole: js.UndefOr[String]
     var state: js.UndefOr[CEState]
+    var unmanagedvCpus: js.UndefOr[Int]
   }
 
   object UpdateComputeEnvironmentRequest {
@@ -2225,7 +2535,8 @@ package object batch {
         computeEnvironment: String,
         computeResources: js.UndefOr[ComputeResourceUpdate] = js.undefined,
         serviceRole: js.UndefOr[String] = js.undefined,
-        state: js.UndefOr[CEState] = js.undefined
+        state: js.UndefOr[CEState] = js.undefined,
+        unmanagedvCpus: js.UndefOr[Int] = js.undefined
     ): UpdateComputeEnvironmentRequest = {
       val __obj = js.Dynamic.literal(
         "computeEnvironment" -> computeEnvironment.asInstanceOf[js.Any]
@@ -2234,6 +2545,7 @@ package object batch {
       computeResources.foreach(__v => __obj.updateDynamic("computeResources")(__v.asInstanceOf[js.Any]))
       serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      unmanagedvCpus.foreach(__v => __obj.updateDynamic("unmanagedvCpus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateComputeEnvironmentRequest]
     }
   }
@@ -2264,6 +2576,7 @@ package object batch {
     var jobQueue: String
     var computeEnvironmentOrder: js.UndefOr[ComputeEnvironmentOrders]
     var priority: js.UndefOr[Int]
+    var schedulingPolicyArn: js.UndefOr[String]
     var state: js.UndefOr[JQState]
   }
 
@@ -2273,6 +2586,7 @@ package object batch {
         jobQueue: String,
         computeEnvironmentOrder: js.UndefOr[ComputeEnvironmentOrders] = js.undefined,
         priority: js.UndefOr[Int] = js.undefined,
+        schedulingPolicyArn: js.UndefOr[String] = js.undefined,
         state: js.UndefOr[JQState] = js.undefined
     ): UpdateJobQueueRequest = {
       val __obj = js.Dynamic.literal(
@@ -2281,6 +2595,7 @@ package object batch {
 
       computeEnvironmentOrder.foreach(__v => __obj.updateDynamic("computeEnvironmentOrder")(__v.asInstanceOf[js.Any]))
       priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
+      schedulingPolicyArn.foreach(__v => __obj.updateDynamic("schedulingPolicyArn")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobQueueRequest]
     }
@@ -2302,6 +2617,38 @@ package object batch {
       jobQueueArn.foreach(__v => __obj.updateDynamic("jobQueueArn")(__v.asInstanceOf[js.Any]))
       jobQueueName.foreach(__v => __obj.updateDynamic("jobQueueName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateJobQueueResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateSchedulingPolicyRequest extends js.Object {
+    var arn: String
+    var fairsharePolicy: js.UndefOr[FairsharePolicy]
+  }
+
+  object UpdateSchedulingPolicyRequest {
+    @inline
+    def apply(
+        arn: String,
+        fairsharePolicy: js.UndefOr[FairsharePolicy] = js.undefined
+    ): UpdateSchedulingPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "arn" -> arn.asInstanceOf[js.Any]
+      )
+
+      fairsharePolicy.foreach(__v => __obj.updateDynamic("fairsharePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSchedulingPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateSchedulingPolicyResponse extends js.Object
+
+  object UpdateSchedulingPolicyResponse {
+    @inline
+    def apply(): UpdateSchedulingPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateSchedulingPolicyResponse]
     }
   }
 

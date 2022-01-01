@@ -8,6 +8,7 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object customerprofiles {
+  type AttributeSourceIdMap = js.Dictionary[uuid]
   type Attributes = js.Dictionary[string1To255]
   type BucketName = String
   type BucketPrefix = String
@@ -20,11 +21,19 @@ package object customerprofiles {
   type FieldNameList = js.Array[name]
   type FlowDescription = String
   type FlowName = String
+  type IdentityResolutionJobsList = js.Array[IdentityResolutionJob]
   type IntegrationList = js.Array[ListIntegrationItem]
+  type JobScheduleTime = String
   type KeyMap = js.Dictionary[ObjectTypeKeyList]
   type KmsArn = String
+  type MatchesList = js.Array[MatchItem]
+  type MatchingAttributes = js.Array[string1To255]
+  type MatchingAttributesList = js.Array[MatchingAttributes]
   type Object = String
   type ObjectTypeKeyList = js.Array[ObjectTypeKey]
+  type ObjectTypeNames = js.Dictionary[typeName]
+  type ProfileIdList = js.Array[uuid]
+  type ProfileIdToBeMergedList = js.Array[uuid]
   type ProfileList = js.Array[Profile]
   type ProfileObjectList = js.Array[ListProfileObjectsItem]
   type ProfileObjectTypeList = js.Array[ListProfileObjectTypeItem]
@@ -45,10 +54,15 @@ package object customerprofiles {
   type UpdateAttributes = js.Dictionary[string0To255]
   type encryptionKey = String
   type expirationDaysInteger = Int
+  type matchesNumber = Int
   type maxSize100 = Int
   type message = String
   type name = String
+  type optionalBoolean = Boolean
   type requestValueList = js.Array[string1To255]
+  type s3BucketName = String
+  type s3KeyName = String
+  type s3KeyNameCustomerOutputConfig = String
   type sqsQueueUrl = String
   type string0To1000 = String
   type string0To255 = String
@@ -73,17 +87,22 @@ package object customerprofiles {
     @inline def deleteProfileKeyFuture(params: DeleteProfileKeyRequest): Future[DeleteProfileKeyResponse] = service.deleteProfileKey(params).promise().toFuture
     @inline def deleteProfileObjectFuture(params: DeleteProfileObjectRequest): Future[DeleteProfileObjectResponse] = service.deleteProfileObject(params).promise().toFuture
     @inline def deleteProfileObjectTypeFuture(params: DeleteProfileObjectTypeRequest): Future[DeleteProfileObjectTypeResponse] = service.deleteProfileObjectType(params).promise().toFuture
+    @inline def getAutoMergingPreviewFuture(params: GetAutoMergingPreviewRequest): Future[GetAutoMergingPreviewResponse] = service.getAutoMergingPreview(params).promise().toFuture
     @inline def getDomainFuture(params: GetDomainRequest): Future[GetDomainResponse] = service.getDomain(params).promise().toFuture
+    @inline def getIdentityResolutionJobFuture(params: GetIdentityResolutionJobRequest): Future[GetIdentityResolutionJobResponse] = service.getIdentityResolutionJob(params).promise().toFuture
     @inline def getIntegrationFuture(params: GetIntegrationRequest): Future[GetIntegrationResponse] = service.getIntegration(params).promise().toFuture
+    @inline def getMatchesFuture(params: GetMatchesRequest): Future[GetMatchesResponse] = service.getMatches(params).promise().toFuture
     @inline def getProfileObjectTypeFuture(params: GetProfileObjectTypeRequest): Future[GetProfileObjectTypeResponse] = service.getProfileObjectType(params).promise().toFuture
     @inline def getProfileObjectTypeTemplateFuture(params: GetProfileObjectTypeTemplateRequest): Future[GetProfileObjectTypeTemplateResponse] = service.getProfileObjectTypeTemplate(params).promise().toFuture
     @inline def listAccountIntegrationsFuture(params: ListAccountIntegrationsRequest): Future[ListAccountIntegrationsResponse] = service.listAccountIntegrations(params).promise().toFuture
     @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] = service.listDomains(params).promise().toFuture
+    @inline def listIdentityResolutionJobsFuture(params: ListIdentityResolutionJobsRequest): Future[ListIdentityResolutionJobsResponse] = service.listIdentityResolutionJobs(params).promise().toFuture
     @inline def listIntegrationsFuture(params: ListIntegrationsRequest): Future[ListIntegrationsResponse] = service.listIntegrations(params).promise().toFuture
     @inline def listProfileObjectTypeTemplatesFuture(params: ListProfileObjectTypeTemplatesRequest): Future[ListProfileObjectTypeTemplatesResponse] = service.listProfileObjectTypeTemplates(params).promise().toFuture
     @inline def listProfileObjectTypesFuture(params: ListProfileObjectTypesRequest): Future[ListProfileObjectTypesResponse] = service.listProfileObjectTypes(params).promise().toFuture
     @inline def listProfileObjectsFuture(params: ListProfileObjectsRequest): Future[ListProfileObjectsResponse] = service.listProfileObjects(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def mergeProfilesFuture(params: MergeProfilesRequest): Future[MergeProfilesResponse] = service.mergeProfiles(params).promise().toFuture
     @inline def putIntegrationFuture(params: PutIntegrationRequest): Future[PutIntegrationResponse] = service.putIntegration(params).promise().toFuture
     @inline def putProfileObjectFuture(params: PutProfileObjectRequest): Future[PutProfileObjectResponse] = service.putProfileObject(params).promise().toFuture
     @inline def putProfileObjectTypeFuture(params: PutProfileObjectTypeRequest): Future[PutProfileObjectTypeResponse] = service.putProfileObjectType(params).promise().toFuture
@@ -109,17 +128,22 @@ package object customerprofiles {
     def deleteProfileKey(params: DeleteProfileKeyRequest): Request[DeleteProfileKeyResponse] = js.native
     def deleteProfileObject(params: DeleteProfileObjectRequest): Request[DeleteProfileObjectResponse] = js.native
     def deleteProfileObjectType(params: DeleteProfileObjectTypeRequest): Request[DeleteProfileObjectTypeResponse] = js.native
+    def getAutoMergingPreview(params: GetAutoMergingPreviewRequest): Request[GetAutoMergingPreviewResponse] = js.native
     def getDomain(params: GetDomainRequest): Request[GetDomainResponse] = js.native
+    def getIdentityResolutionJob(params: GetIdentityResolutionJobRequest): Request[GetIdentityResolutionJobResponse] = js.native
     def getIntegration(params: GetIntegrationRequest): Request[GetIntegrationResponse] = js.native
+    def getMatches(params: GetMatchesRequest): Request[GetMatchesResponse] = js.native
     def getProfileObjectType(params: GetProfileObjectTypeRequest): Request[GetProfileObjectTypeResponse] = js.native
     def getProfileObjectTypeTemplate(params: GetProfileObjectTypeTemplateRequest): Request[GetProfileObjectTypeTemplateResponse] = js.native
     def listAccountIntegrations(params: ListAccountIntegrationsRequest): Request[ListAccountIntegrationsResponse] = js.native
     def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
+    def listIdentityResolutionJobs(params: ListIdentityResolutionJobsRequest): Request[ListIdentityResolutionJobsResponse] = js.native
     def listIntegrations(params: ListIntegrationsRequest): Request[ListIntegrationsResponse] = js.native
     def listProfileObjectTypeTemplates(params: ListProfileObjectTypeTemplatesRequest): Request[ListProfileObjectTypeTemplatesResponse] = js.native
     def listProfileObjectTypes(params: ListProfileObjectTypesRequest): Request[ListProfileObjectTypesResponse] = js.native
     def listProfileObjects(params: ListProfileObjectsRequest): Request[ListProfileObjectsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def mergeProfiles(params: MergeProfilesRequest): Request[MergeProfilesResponse] = js.native
     def putIntegration(params: PutIntegrationRequest): Request[PutIntegrationResponse] = js.native
     def putProfileObject(params: PutProfileObjectRequest): Request[PutProfileObjectResponse] = js.native
     def putProfileObjectType(params: PutProfileObjectTypeRequest): Request[PutProfileObjectTypeResponse] = js.native
@@ -225,6 +249,55 @@ package object customerprofiles {
     }
   }
 
+  /** Configuration settings for how to perform the auto-merging of profiles.
+    */
+  @js.native
+  trait AutoMerging extends js.Object {
+    var Enabled: optionalBoolean
+    var ConflictResolution: js.UndefOr[ConflictResolution]
+    var Consolidation: js.UndefOr[Consolidation]
+  }
+
+  object AutoMerging {
+    @inline
+    def apply(
+        Enabled: optionalBoolean,
+        ConflictResolution: js.UndefOr[ConflictResolution] = js.undefined,
+        Consolidation: js.UndefOr[Consolidation] = js.undefined
+    ): AutoMerging = {
+      val __obj = js.Dynamic.literal(
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
+
+      ConflictResolution.foreach(__v => __obj.updateDynamic("ConflictResolution")(__v.asInstanceOf[js.Any]))
+      Consolidation.foreach(__v => __obj.updateDynamic("Consolidation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoMerging]
+    }
+  }
+
+  /** How the auto-merging process should resolve conflicts between different profiles.
+    */
+  @js.native
+  trait ConflictResolution extends js.Object {
+    var ConflictResolvingModel: ConflictResolvingModel
+    var SourceName: js.UndefOr[string1To255]
+  }
+
+  object ConflictResolution {
+    @inline
+    def apply(
+        ConflictResolvingModel: ConflictResolvingModel,
+        SourceName: js.UndefOr[string1To255] = js.undefined
+    ): ConflictResolution = {
+      val __obj = js.Dynamic.literal(
+        "ConflictResolvingModel" -> ConflictResolvingModel.asInstanceOf[js.Any]
+      )
+
+      SourceName.foreach(__v => __obj.updateDynamic("SourceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConflictResolution]
+    }
+  }
+
   /** The operation to be performed on the provided source fields.
     */
   @js.native
@@ -255,12 +328,32 @@ package object customerprofiles {
     }
   }
 
+  /** The matching criteria to be used during the auto-merging process.
+    */
+  @js.native
+  trait Consolidation extends js.Object {
+    var MatchingAttributesList: MatchingAttributesList
+  }
+
+  object Consolidation {
+    @inline
+    def apply(
+        MatchingAttributesList: MatchingAttributesList
+    ): Consolidation = {
+      val __obj = js.Dynamic.literal(
+        "MatchingAttributesList" -> MatchingAttributesList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Consolidation]
+    }
+  }
+
   @js.native
   trait CreateDomainRequest extends js.Object {
     var DefaultExpirationDays: expirationDaysInteger
     var DomainName: name
     var DeadLetterQueueUrl: js.UndefOr[sqsQueueUrl]
     var DefaultEncryptionKey: js.UndefOr[encryptionKey]
+    var Matching: js.UndefOr[MatchingRequest]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -271,6 +364,7 @@ package object customerprofiles {
         DomainName: name,
         DeadLetterQueueUrl: js.UndefOr[sqsQueueUrl] = js.undefined,
         DefaultEncryptionKey: js.UndefOr[encryptionKey] = js.undefined,
+        Matching: js.UndefOr[MatchingRequest] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDomainRequest = {
       val __obj = js.Dynamic.literal(
@@ -280,6 +374,7 @@ package object customerprofiles {
 
       DeadLetterQueueUrl.foreach(__v => __obj.updateDynamic("DeadLetterQueueUrl")(__v.asInstanceOf[js.Any]))
       DefaultEncryptionKey.foreach(__v => __obj.updateDynamic("DefaultEncryptionKey")(__v.asInstanceOf[js.Any]))
+      Matching.foreach(__v => __obj.updateDynamic("Matching")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainRequest]
     }
@@ -293,6 +388,7 @@ package object customerprofiles {
     var LastUpdatedAt: timestamp
     var DeadLetterQueueUrl: js.UndefOr[sqsQueueUrl]
     var DefaultEncryptionKey: js.UndefOr[encryptionKey]
+    var Matching: js.UndefOr[MatchingResponse]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -305,6 +401,7 @@ package object customerprofiles {
         LastUpdatedAt: timestamp,
         DeadLetterQueueUrl: js.UndefOr[sqsQueueUrl] = js.undefined,
         DefaultEncryptionKey: js.UndefOr[encryptionKey] = js.undefined,
+        Matching: js.UndefOr[MatchingResponse] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateDomainResponse = {
       val __obj = js.Dynamic.literal(
@@ -316,6 +413,7 @@ package object customerprofiles {
 
       DeadLetterQueueUrl.foreach(__v => __obj.updateDynamic("DeadLetterQueueUrl")(__v.asInstanceOf[js.Any]))
       DefaultEncryptionKey.foreach(__v => __obj.updateDynamic("DefaultEncryptionKey")(__v.asInstanceOf[js.Any]))
+      Matching.foreach(__v => __obj.updateDynamic("Matching")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDomainResponse]
     }
@@ -674,6 +772,122 @@ package object customerprofiles {
     }
   }
 
+  /** Configuration information about the S3 bucket where Identity Resolution Jobs writes result files.
+    *
+    * '''Note:'''You need to give Customer Profiles service principal write permission to your S3 bucket. Otherwise, you'll get an exception in the API response. For an example policy, see [[https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html#customer-profiles-cross-service|Amazon Connect Customer Profiles cross-service confused deputy prevention]].
+    */
+  @js.native
+  trait ExportingConfig extends js.Object {
+    var S3Exporting: js.UndefOr[S3ExportingConfig]
+  }
+
+  object ExportingConfig {
+    @inline
+    def apply(
+        S3Exporting: js.UndefOr[S3ExportingConfig] = js.undefined
+    ): ExportingConfig = {
+      val __obj = js.Dynamic.literal()
+      S3Exporting.foreach(__v => __obj.updateDynamic("S3Exporting")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportingConfig]
+    }
+  }
+
+  /** The S3 location where Identity Resolution Jobs write result files.
+    */
+  @js.native
+  trait ExportingLocation extends js.Object {
+    var S3Exporting: js.UndefOr[S3ExportingLocation]
+  }
+
+  object ExportingLocation {
+    @inline
+    def apply(
+        S3Exporting: js.UndefOr[S3ExportingLocation] = js.undefined
+    ): ExportingLocation = {
+      val __obj = js.Dynamic.literal()
+      S3Exporting.foreach(__v => __obj.updateDynamic("S3Exporting")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportingLocation]
+    }
+  }
+
+  /** A duplicate customer profile that is to be merged into a main profile.
+    */
+  @js.native
+  trait FieldSourceProfileIds extends js.Object {
+    var AccountNumber: js.UndefOr[uuid]
+    var AdditionalInformation: js.UndefOr[uuid]
+    var Address: js.UndefOr[uuid]
+    var Attributes: js.UndefOr[AttributeSourceIdMap]
+    var BillingAddress: js.UndefOr[uuid]
+    var BirthDate: js.UndefOr[uuid]
+    var BusinessEmailAddress: js.UndefOr[uuid]
+    var BusinessName: js.UndefOr[uuid]
+    var BusinessPhoneNumber: js.UndefOr[uuid]
+    var EmailAddress: js.UndefOr[uuid]
+    var FirstName: js.UndefOr[uuid]
+    var Gender: js.UndefOr[uuid]
+    var HomePhoneNumber: js.UndefOr[uuid]
+    var LastName: js.UndefOr[uuid]
+    var MailingAddress: js.UndefOr[uuid]
+    var MiddleName: js.UndefOr[uuid]
+    var MobilePhoneNumber: js.UndefOr[uuid]
+    var PartyType: js.UndefOr[uuid]
+    var PersonalEmailAddress: js.UndefOr[uuid]
+    var PhoneNumber: js.UndefOr[uuid]
+    var ShippingAddress: js.UndefOr[uuid]
+  }
+
+  object FieldSourceProfileIds {
+    @inline
+    def apply(
+        AccountNumber: js.UndefOr[uuid] = js.undefined,
+        AdditionalInformation: js.UndefOr[uuid] = js.undefined,
+        Address: js.UndefOr[uuid] = js.undefined,
+        Attributes: js.UndefOr[AttributeSourceIdMap] = js.undefined,
+        BillingAddress: js.UndefOr[uuid] = js.undefined,
+        BirthDate: js.UndefOr[uuid] = js.undefined,
+        BusinessEmailAddress: js.UndefOr[uuid] = js.undefined,
+        BusinessName: js.UndefOr[uuid] = js.undefined,
+        BusinessPhoneNumber: js.UndefOr[uuid] = js.undefined,
+        EmailAddress: js.UndefOr[uuid] = js.undefined,
+        FirstName: js.UndefOr[uuid] = js.undefined,
+        Gender: js.UndefOr[uuid] = js.undefined,
+        HomePhoneNumber: js.UndefOr[uuid] = js.undefined,
+        LastName: js.UndefOr[uuid] = js.undefined,
+        MailingAddress: js.UndefOr[uuid] = js.undefined,
+        MiddleName: js.UndefOr[uuid] = js.undefined,
+        MobilePhoneNumber: js.UndefOr[uuid] = js.undefined,
+        PartyType: js.UndefOr[uuid] = js.undefined,
+        PersonalEmailAddress: js.UndefOr[uuid] = js.undefined,
+        PhoneNumber: js.UndefOr[uuid] = js.undefined,
+        ShippingAddress: js.UndefOr[uuid] = js.undefined
+    ): FieldSourceProfileIds = {
+      val __obj = js.Dynamic.literal()
+      AccountNumber.foreach(__v => __obj.updateDynamic("AccountNumber")(__v.asInstanceOf[js.Any]))
+      AdditionalInformation.foreach(__v => __obj.updateDynamic("AdditionalInformation")(__v.asInstanceOf[js.Any]))
+      Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      BillingAddress.foreach(__v => __obj.updateDynamic("BillingAddress")(__v.asInstanceOf[js.Any]))
+      BirthDate.foreach(__v => __obj.updateDynamic("BirthDate")(__v.asInstanceOf[js.Any]))
+      BusinessEmailAddress.foreach(__v => __obj.updateDynamic("BusinessEmailAddress")(__v.asInstanceOf[js.Any]))
+      BusinessName.foreach(__v => __obj.updateDynamic("BusinessName")(__v.asInstanceOf[js.Any]))
+      BusinessPhoneNumber.foreach(__v => __obj.updateDynamic("BusinessPhoneNumber")(__v.asInstanceOf[js.Any]))
+      EmailAddress.foreach(__v => __obj.updateDynamic("EmailAddress")(__v.asInstanceOf[js.Any]))
+      FirstName.foreach(__v => __obj.updateDynamic("FirstName")(__v.asInstanceOf[js.Any]))
+      Gender.foreach(__v => __obj.updateDynamic("Gender")(__v.asInstanceOf[js.Any]))
+      HomePhoneNumber.foreach(__v => __obj.updateDynamic("HomePhoneNumber")(__v.asInstanceOf[js.Any]))
+      LastName.foreach(__v => __obj.updateDynamic("LastName")(__v.asInstanceOf[js.Any]))
+      MailingAddress.foreach(__v => __obj.updateDynamic("MailingAddress")(__v.asInstanceOf[js.Any]))
+      MiddleName.foreach(__v => __obj.updateDynamic("MiddleName")(__v.asInstanceOf[js.Any]))
+      MobilePhoneNumber.foreach(__v => __obj.updateDynamic("MobilePhoneNumber")(__v.asInstanceOf[js.Any]))
+      PartyType.foreach(__v => __obj.updateDynamic("PartyType")(__v.asInstanceOf[js.Any]))
+      PersonalEmailAddress.foreach(__v => __obj.updateDynamic("PersonalEmailAddress")(__v.asInstanceOf[js.Any]))
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
+      ShippingAddress.foreach(__v => __obj.updateDynamic("ShippingAddress")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FieldSourceProfileIds]
+    }
+  }
+
   /** The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.
     */
   @js.native
@@ -710,6 +924,56 @@ package object customerprofiles {
   }
 
   @js.native
+  trait GetAutoMergingPreviewRequest extends js.Object {
+    var ConflictResolution: ConflictResolution
+    var Consolidation: Consolidation
+    var DomainName: name
+  }
+
+  object GetAutoMergingPreviewRequest {
+    @inline
+    def apply(
+        ConflictResolution: ConflictResolution,
+        Consolidation: Consolidation,
+        DomainName: name
+    ): GetAutoMergingPreviewRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConflictResolution" -> ConflictResolution.asInstanceOf[js.Any],
+        "Consolidation" -> Consolidation.asInstanceOf[js.Any],
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAutoMergingPreviewRequest]
+    }
+  }
+
+  @js.native
+  trait GetAutoMergingPreviewResponse extends js.Object {
+    var DomainName: name
+    var NumberOfMatchesInSample: js.UndefOr[Double]
+    var NumberOfProfilesInSample: js.UndefOr[Double]
+    var NumberOfProfilesWillBeMerged: js.UndefOr[Double]
+  }
+
+  object GetAutoMergingPreviewResponse {
+    @inline
+    def apply(
+        DomainName: name,
+        NumberOfMatchesInSample: js.UndefOr[Double] = js.undefined,
+        NumberOfProfilesInSample: js.UndefOr[Double] = js.undefined,
+        NumberOfProfilesWillBeMerged: js.UndefOr[Double] = js.undefined
+    ): GetAutoMergingPreviewResponse = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      NumberOfMatchesInSample.foreach(__v => __obj.updateDynamic("NumberOfMatchesInSample")(__v.asInstanceOf[js.Any]))
+      NumberOfProfilesInSample.foreach(__v => __obj.updateDynamic("NumberOfProfilesInSample")(__v.asInstanceOf[js.Any]))
+      NumberOfProfilesWillBeMerged.foreach(__v => __obj.updateDynamic("NumberOfProfilesWillBeMerged")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAutoMergingPreviewResponse]
+    }
+  }
+
+  @js.native
   trait GetDomainRequest extends js.Object {
     var DomainName: name
   }
@@ -734,6 +998,7 @@ package object customerprofiles {
     var DeadLetterQueueUrl: js.UndefOr[sqsQueueUrl]
     var DefaultEncryptionKey: js.UndefOr[encryptionKey]
     var DefaultExpirationDays: js.UndefOr[expirationDaysInteger]
+    var Matching: js.UndefOr[MatchingResponse]
     var Stats: js.UndefOr[DomainStats]
     var Tags: js.UndefOr[TagMap]
   }
@@ -747,6 +1012,7 @@ package object customerprofiles {
         DeadLetterQueueUrl: js.UndefOr[sqsQueueUrl] = js.undefined,
         DefaultEncryptionKey: js.UndefOr[encryptionKey] = js.undefined,
         DefaultExpirationDays: js.UndefOr[expirationDaysInteger] = js.undefined,
+        Matching: js.UndefOr[MatchingResponse] = js.undefined,
         Stats: js.UndefOr[DomainStats] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): GetDomainResponse = {
@@ -759,9 +1025,76 @@ package object customerprofiles {
       DeadLetterQueueUrl.foreach(__v => __obj.updateDynamic("DeadLetterQueueUrl")(__v.asInstanceOf[js.Any]))
       DefaultEncryptionKey.foreach(__v => __obj.updateDynamic("DefaultEncryptionKey")(__v.asInstanceOf[js.Any]))
       DefaultExpirationDays.foreach(__v => __obj.updateDynamic("DefaultExpirationDays")(__v.asInstanceOf[js.Any]))
+      Matching.foreach(__v => __obj.updateDynamic("Matching")(__v.asInstanceOf[js.Any]))
       Stats.foreach(__v => __obj.updateDynamic("Stats")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDomainResponse]
+    }
+  }
+
+  @js.native
+  trait GetIdentityResolutionJobRequest extends js.Object {
+    var DomainName: name
+    var JobId: uuid
+  }
+
+  object GetIdentityResolutionJobRequest {
+    @inline
+    def apply(
+        DomainName: name,
+        JobId: uuid
+    ): GetIdentityResolutionJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetIdentityResolutionJobRequest]
+    }
+  }
+
+  @js.native
+  trait GetIdentityResolutionJobResponse extends js.Object {
+    var AutoMerging: js.UndefOr[AutoMerging]
+    var DomainName: js.UndefOr[name]
+    var ExportingLocation: js.UndefOr[ExportingLocation]
+    var JobEndTime: js.UndefOr[timestamp]
+    var JobExpirationTime: js.UndefOr[timestamp]
+    var JobId: js.UndefOr[uuid]
+    var JobStartTime: js.UndefOr[timestamp]
+    var JobStats: js.UndefOr[JobStats]
+    var LastUpdatedAt: js.UndefOr[timestamp]
+    var Message: js.UndefOr[stringTo2048]
+    var Status: js.UndefOr[IdentityResolutionJobStatus]
+  }
+
+  object GetIdentityResolutionJobResponse {
+    @inline
+    def apply(
+        AutoMerging: js.UndefOr[AutoMerging] = js.undefined,
+        DomainName: js.UndefOr[name] = js.undefined,
+        ExportingLocation: js.UndefOr[ExportingLocation] = js.undefined,
+        JobEndTime: js.UndefOr[timestamp] = js.undefined,
+        JobExpirationTime: js.UndefOr[timestamp] = js.undefined,
+        JobId: js.UndefOr[uuid] = js.undefined,
+        JobStartTime: js.UndefOr[timestamp] = js.undefined,
+        JobStats: js.UndefOr[JobStats] = js.undefined,
+        LastUpdatedAt: js.UndefOr[timestamp] = js.undefined,
+        Message: js.UndefOr[stringTo2048] = js.undefined,
+        Status: js.UndefOr[IdentityResolutionJobStatus] = js.undefined
+    ): GetIdentityResolutionJobResponse = {
+      val __obj = js.Dynamic.literal()
+      AutoMerging.foreach(__v => __obj.updateDynamic("AutoMerging")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      ExportingLocation.foreach(__v => __obj.updateDynamic("ExportingLocation")(__v.asInstanceOf[js.Any]))
+      JobEndTime.foreach(__v => __obj.updateDynamic("JobEndTime")(__v.asInstanceOf[js.Any]))
+      JobExpirationTime.foreach(__v => __obj.updateDynamic("JobExpirationTime")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobStartTime.foreach(__v => __obj.updateDynamic("JobStartTime")(__v.asInstanceOf[js.Any]))
+      JobStats.foreach(__v => __obj.updateDynamic("JobStats")(__v.asInstanceOf[js.Any]))
+      LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetIdentityResolutionJobResponse]
     }
   }
 
@@ -790,8 +1123,9 @@ package object customerprofiles {
     var CreatedAt: timestamp
     var DomainName: name
     var LastUpdatedAt: timestamp
-    var ObjectTypeName: typeName
     var Uri: string1To255
+    var ObjectTypeName: js.UndefOr[typeName]
+    var ObjectTypeNames: js.UndefOr[ObjectTypeNames]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -801,20 +1135,71 @@ package object customerprofiles {
         CreatedAt: timestamp,
         DomainName: name,
         LastUpdatedAt: timestamp,
-        ObjectTypeName: typeName,
         Uri: string1To255,
+        ObjectTypeName: js.UndefOr[typeName] = js.undefined,
+        ObjectTypeNames: js.UndefOr[ObjectTypeNames] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): GetIntegrationResponse = {
       val __obj = js.Dynamic.literal(
         "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "LastUpdatedAt" -> LastUpdatedAt.asInstanceOf[js.Any],
-        "ObjectTypeName" -> ObjectTypeName.asInstanceOf[js.Any],
         "Uri" -> Uri.asInstanceOf[js.Any]
       )
 
+      ObjectTypeName.foreach(__v => __obj.updateDynamic("ObjectTypeName")(__v.asInstanceOf[js.Any]))
+      ObjectTypeNames.foreach(__v => __obj.updateDynamic("ObjectTypeNames")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetIntegrationResponse]
+    }
+  }
+
+  @js.native
+  trait GetMatchesRequest extends js.Object {
+    var DomainName: name
+    var MaxResults: js.UndefOr[maxSize100]
+    var NextToken: js.UndefOr[token]
+  }
+
+  object GetMatchesRequest {
+    @inline
+    def apply(
+        DomainName: name,
+        MaxResults: js.UndefOr[maxSize100] = js.undefined,
+        NextToken: js.UndefOr[token] = js.undefined
+    ): GetMatchesRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMatchesRequest]
+    }
+  }
+
+  @js.native
+  trait GetMatchesResponse extends js.Object {
+    var MatchGenerationDate: js.UndefOr[timestamp]
+    var Matches: js.UndefOr[MatchesList]
+    var NextToken: js.UndefOr[token]
+    var PotentialMatches: js.UndefOr[matchesNumber]
+  }
+
+  object GetMatchesResponse {
+    @inline
+    def apply(
+        MatchGenerationDate: js.UndefOr[timestamp] = js.undefined,
+        Matches: js.UndefOr[MatchesList] = js.undefined,
+        NextToken: js.UndefOr[token] = js.undefined,
+        PotentialMatches: js.UndefOr[matchesNumber] = js.undefined
+    ): GetMatchesResponse = {
+      val __obj = js.Dynamic.literal()
+      MatchGenerationDate.foreach(__v => __obj.updateDynamic("MatchGenerationDate")(__v.asInstanceOf[js.Any]))
+      Matches.foreach(__v => __obj.updateDynamic("Matches")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PotentialMatches.foreach(__v => __obj.updateDynamic("PotentialMatches")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMatchesResponse]
     }
   }
 
@@ -849,6 +1234,7 @@ package object customerprofiles {
     var Fields: js.UndefOr[FieldMap]
     var Keys: js.UndefOr[KeyMap]
     var LastUpdatedAt: js.UndefOr[timestamp]
+    var SourceLastUpdatedTimestampFormat: js.UndefOr[string1To255]
     var Tags: js.UndefOr[TagMap]
     var TemplateId: js.UndefOr[name]
   }
@@ -865,6 +1251,7 @@ package object customerprofiles {
         Fields: js.UndefOr[FieldMap] = js.undefined,
         Keys: js.UndefOr[KeyMap] = js.undefined,
         LastUpdatedAt: js.UndefOr[timestamp] = js.undefined,
+        SourceLastUpdatedTimestampFormat: js.UndefOr[string1To255] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         TemplateId: js.UndefOr[name] = js.undefined
     ): GetProfileObjectTypeResponse = {
@@ -880,6 +1267,7 @@ package object customerprofiles {
       Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
       Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
       LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      SourceLastUpdatedTimestampFormat.foreach(__v => __obj.updateDynamic("SourceLastUpdatedTimestampFormat")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetProfileObjectTypeResponse]
@@ -908,6 +1296,7 @@ package object customerprofiles {
     var AllowProfileCreation: js.UndefOr[Boolean]
     var Fields: js.UndefOr[FieldMap]
     var Keys: js.UndefOr[KeyMap]
+    var SourceLastUpdatedTimestampFormat: js.UndefOr[string1To255]
     var SourceName: js.UndefOr[name]
     var SourceObject: js.UndefOr[name]
     var TemplateId: js.UndefOr[name]
@@ -919,6 +1308,7 @@ package object customerprofiles {
         AllowProfileCreation: js.UndefOr[Boolean] = js.undefined,
         Fields: js.UndefOr[FieldMap] = js.undefined,
         Keys: js.UndefOr[KeyMap] = js.undefined,
+        SourceLastUpdatedTimestampFormat: js.UndefOr[string1To255] = js.undefined,
         SourceName: js.UndefOr[name] = js.undefined,
         SourceObject: js.UndefOr[name] = js.undefined,
         TemplateId: js.UndefOr[name] = js.undefined
@@ -927,10 +1317,50 @@ package object customerprofiles {
       AllowProfileCreation.foreach(__v => __obj.updateDynamic("AllowProfileCreation")(__v.asInstanceOf[js.Any]))
       Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
       Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
+      SourceLastUpdatedTimestampFormat.foreach(__v => __obj.updateDynamic("SourceLastUpdatedTimestampFormat")(__v.asInstanceOf[js.Any]))
       SourceName.foreach(__v => __obj.updateDynamic("SourceName")(__v.asInstanceOf[js.Any]))
       SourceObject.foreach(__v => __obj.updateDynamic("SourceObject")(__v.asInstanceOf[js.Any]))
       TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetProfileObjectTypeTemplateResponse]
+    }
+  }
+
+  /** Information about the Identity Resolution Job.
+    */
+  @js.native
+  trait IdentityResolutionJob extends js.Object {
+    var DomainName: js.UndefOr[name]
+    var ExportingLocation: js.UndefOr[ExportingLocation]
+    var JobEndTime: js.UndefOr[timestamp]
+    var JobId: js.UndefOr[uuid]
+    var JobStartTime: js.UndefOr[timestamp]
+    var JobStats: js.UndefOr[JobStats]
+    var Message: js.UndefOr[stringTo2048]
+    var Status: js.UndefOr[IdentityResolutionJobStatus]
+  }
+
+  object IdentityResolutionJob {
+    @inline
+    def apply(
+        DomainName: js.UndefOr[name] = js.undefined,
+        ExportingLocation: js.UndefOr[ExportingLocation] = js.undefined,
+        JobEndTime: js.UndefOr[timestamp] = js.undefined,
+        JobId: js.UndefOr[uuid] = js.undefined,
+        JobStartTime: js.UndefOr[timestamp] = js.undefined,
+        JobStats: js.UndefOr[JobStats] = js.undefined,
+        Message: js.UndefOr[stringTo2048] = js.undefined,
+        Status: js.UndefOr[IdentityResolutionJobStatus] = js.undefined
+    ): IdentityResolutionJob = {
+      val __obj = js.Dynamic.literal()
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      ExportingLocation.foreach(__v => __obj.updateDynamic("ExportingLocation")(__v.asInstanceOf[js.Any]))
+      JobEndTime.foreach(__v => __obj.updateDynamic("JobEndTime")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      JobStartTime.foreach(__v => __obj.updateDynamic("JobStartTime")(__v.asInstanceOf[js.Any]))
+      JobStats.foreach(__v => __obj.updateDynamic("JobStats")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IdentityResolutionJob]
     }
   }
 
@@ -949,6 +1379,52 @@ package object customerprofiles {
       val __obj = js.Dynamic.literal()
       DatetimeTypeFieldName.foreach(__v => __obj.updateDynamic("DatetimeTypeFieldName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[IncrementalPullConfig]
+    }
+  }
+
+  /** The day and time when do you want to start the Identity Resolution Job every week.
+    */
+  @js.native
+  trait JobSchedule extends js.Object {
+    var DayOfTheWeek: JobScheduleDayOfTheWeek
+    var Time: JobScheduleTime
+  }
+
+  object JobSchedule {
+    @inline
+    def apply(
+        DayOfTheWeek: JobScheduleDayOfTheWeek,
+        Time: JobScheduleTime
+    ): JobSchedule = {
+      val __obj = js.Dynamic.literal(
+        "DayOfTheWeek" -> DayOfTheWeek.asInstanceOf[js.Any],
+        "Time" -> Time.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[JobSchedule]
+    }
+  }
+
+  /** Statistics about the Identity Resolution Job.
+    */
+  @js.native
+  trait JobStats extends js.Object {
+    var NumberOfMatchesFound: js.UndefOr[Double]
+    var NumberOfMergesDone: js.UndefOr[Double]
+    var NumberOfProfilesReviewed: js.UndefOr[Double]
+  }
+
+  object JobStats {
+    @inline
+    def apply(
+        NumberOfMatchesFound: js.UndefOr[Double] = js.undefined,
+        NumberOfMergesDone: js.UndefOr[Double] = js.undefined,
+        NumberOfProfilesReviewed: js.UndefOr[Double] = js.undefined
+    ): JobStats = {
+      val __obj = js.Dynamic.literal()
+      NumberOfMatchesFound.foreach(__v => __obj.updateDynamic("NumberOfMatchesFound")(__v.asInstanceOf[js.Any]))
+      NumberOfMergesDone.foreach(__v => __obj.updateDynamic("NumberOfMergesDone")(__v.asInstanceOf[js.Any]))
+      NumberOfProfilesReviewed.foreach(__v => __obj.updateDynamic("NumberOfProfilesReviewed")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JobStats]
     }
   }
 
@@ -1062,6 +1538,49 @@ package object customerprofiles {
     }
   }
 
+  @js.native
+  trait ListIdentityResolutionJobsRequest extends js.Object {
+    var DomainName: name
+    var MaxResults: js.UndefOr[maxSize100]
+    var NextToken: js.UndefOr[token]
+  }
+
+  object ListIdentityResolutionJobsRequest {
+    @inline
+    def apply(
+        DomainName: name,
+        MaxResults: js.UndefOr[maxSize100] = js.undefined,
+        NextToken: js.UndefOr[token] = js.undefined
+    ): ListIdentityResolutionJobsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListIdentityResolutionJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListIdentityResolutionJobsResponse extends js.Object {
+    var IdentityResolutionJobsList: js.UndefOr[IdentityResolutionJobsList]
+    var NextToken: js.UndefOr[token]
+  }
+
+  object ListIdentityResolutionJobsResponse {
+    @inline
+    def apply(
+        IdentityResolutionJobsList: js.UndefOr[IdentityResolutionJobsList] = js.undefined,
+        NextToken: js.UndefOr[token] = js.undefined
+    ): ListIdentityResolutionJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      IdentityResolutionJobsList.foreach(__v => __obj.updateDynamic("IdentityResolutionJobsList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListIdentityResolutionJobsResponse]
+    }
+  }
+
   /** An integration in list of integrations.
     */
   @js.native
@@ -1069,8 +1588,9 @@ package object customerprofiles {
     var CreatedAt: timestamp
     var DomainName: name
     var LastUpdatedAt: timestamp
-    var ObjectTypeName: typeName
     var Uri: string1To255
+    var ObjectTypeName: js.UndefOr[typeName]
+    var ObjectTypeNames: js.UndefOr[ObjectTypeNames]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -1080,18 +1600,20 @@ package object customerprofiles {
         CreatedAt: timestamp,
         DomainName: name,
         LastUpdatedAt: timestamp,
-        ObjectTypeName: typeName,
         Uri: string1To255,
+        ObjectTypeName: js.UndefOr[typeName] = js.undefined,
+        ObjectTypeNames: js.UndefOr[ObjectTypeNames] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): ListIntegrationItem = {
       val __obj = js.Dynamic.literal(
         "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "LastUpdatedAt" -> LastUpdatedAt.asInstanceOf[js.Any],
-        "ObjectTypeName" -> ObjectTypeName.asInstanceOf[js.Any],
         "Uri" -> Uri.asInstanceOf[js.Any]
       )
 
+      ObjectTypeName.foreach(__v => __obj.updateDynamic("ObjectTypeName")(__v.asInstanceOf[js.Any]))
+      ObjectTypeNames.foreach(__v => __obj.updateDynamic("ObjectTypeNames")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListIntegrationItem]
     }
@@ -1308,6 +1830,7 @@ package object customerprofiles {
     var ProfileId: uuid
     var MaxResults: js.UndefOr[maxSize100]
     var NextToken: js.UndefOr[token]
+    var ObjectFilter: js.UndefOr[ObjectFilter]
   }
 
   object ListProfileObjectsRequest {
@@ -1317,7 +1840,8 @@ package object customerprofiles {
         ObjectTypeName: typeName,
         ProfileId: uuid,
         MaxResults: js.UndefOr[maxSize100] = js.undefined,
-        NextToken: js.UndefOr[token] = js.undefined
+        NextToken: js.UndefOr[token] = js.undefined,
+        ObjectFilter: js.UndefOr[ObjectFilter] = js.undefined
     ): ListProfileObjectsRequest = {
       val __obj = js.Dynamic.literal(
         "DomainName" -> DomainName.asInstanceOf[js.Any],
@@ -1327,6 +1851,7 @@ package object customerprofiles {
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ObjectFilter.foreach(__v => __obj.updateDynamic("ObjectFilter")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProfileObjectsRequest]
     }
   }
@@ -1399,6 +1924,151 @@ package object customerprofiles {
         "Object" -> Object.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[MarketoSourceProperties]
+    }
+  }
+
+  /** The Match group object.
+    */
+  @js.native
+  trait MatchItem extends js.Object {
+    var ConfidenceScore: js.UndefOr[Double]
+    var MatchId: js.UndefOr[string1To255]
+    var ProfileIds: js.UndefOr[ProfileIdList]
+  }
+
+  object MatchItem {
+    @inline
+    def apply(
+        ConfidenceScore: js.UndefOr[Double] = js.undefined,
+        MatchId: js.UndefOr[string1To255] = js.undefined,
+        ProfileIds: js.UndefOr[ProfileIdList] = js.undefined
+    ): MatchItem = {
+      val __obj = js.Dynamic.literal()
+      ConfidenceScore.foreach(__v => __obj.updateDynamic("ConfidenceScore")(__v.asInstanceOf[js.Any]))
+      MatchId.foreach(__v => __obj.updateDynamic("MatchId")(__v.asInstanceOf[js.Any]))
+      ProfileIds.foreach(__v => __obj.updateDynamic("ProfileIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MatchItem]
+    }
+  }
+
+  /** The flag that enables the matching process of duplicate profiles.
+    */
+  @js.native
+  trait MatchingRequest extends js.Object {
+    var Enabled: optionalBoolean
+    var AutoMerging: js.UndefOr[AutoMerging]
+    var ExportingConfig: js.UndefOr[ExportingConfig]
+    var JobSchedule: js.UndefOr[JobSchedule]
+  }
+
+  object MatchingRequest {
+    @inline
+    def apply(
+        Enabled: optionalBoolean,
+        AutoMerging: js.UndefOr[AutoMerging] = js.undefined,
+        ExportingConfig: js.UndefOr[ExportingConfig] = js.undefined,
+        JobSchedule: js.UndefOr[JobSchedule] = js.undefined
+    ): MatchingRequest = {
+      val __obj = js.Dynamic.literal(
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
+
+      AutoMerging.foreach(__v => __obj.updateDynamic("AutoMerging")(__v.asInstanceOf[js.Any]))
+      ExportingConfig.foreach(__v => __obj.updateDynamic("ExportingConfig")(__v.asInstanceOf[js.Any]))
+      JobSchedule.foreach(__v => __obj.updateDynamic("JobSchedule")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MatchingRequest]
+    }
+  }
+
+  /** The flag that enables the matching process of duplicate profiles.
+    */
+  @js.native
+  trait MatchingResponse extends js.Object {
+    var AutoMerging: js.UndefOr[AutoMerging]
+    var Enabled: js.UndefOr[optionalBoolean]
+    var ExportingConfig: js.UndefOr[ExportingConfig]
+    var JobSchedule: js.UndefOr[JobSchedule]
+  }
+
+  object MatchingResponse {
+    @inline
+    def apply(
+        AutoMerging: js.UndefOr[AutoMerging] = js.undefined,
+        Enabled: js.UndefOr[optionalBoolean] = js.undefined,
+        ExportingConfig: js.UndefOr[ExportingConfig] = js.undefined,
+        JobSchedule: js.UndefOr[JobSchedule] = js.undefined
+    ): MatchingResponse = {
+      val __obj = js.Dynamic.literal()
+      AutoMerging.foreach(__v => __obj.updateDynamic("AutoMerging")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      ExportingConfig.foreach(__v => __obj.updateDynamic("ExportingConfig")(__v.asInstanceOf[js.Any]))
+      JobSchedule.foreach(__v => __obj.updateDynamic("JobSchedule")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MatchingResponse]
+    }
+  }
+
+  @js.native
+  trait MergeProfilesRequest extends js.Object {
+    var DomainName: name
+    var MainProfileId: uuid
+    var ProfileIdsToBeMerged: ProfileIdToBeMergedList
+    var FieldSourceProfileIds: js.UndefOr[FieldSourceProfileIds]
+  }
+
+  object MergeProfilesRequest {
+    @inline
+    def apply(
+        DomainName: name,
+        MainProfileId: uuid,
+        ProfileIdsToBeMerged: ProfileIdToBeMergedList,
+        FieldSourceProfileIds: js.UndefOr[FieldSourceProfileIds] = js.undefined
+    ): MergeProfilesRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "MainProfileId" -> MainProfileId.asInstanceOf[js.Any],
+        "ProfileIdsToBeMerged" -> ProfileIdsToBeMerged.asInstanceOf[js.Any]
+      )
+
+      FieldSourceProfileIds.foreach(__v => __obj.updateDynamic("FieldSourceProfileIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeProfilesRequest]
+    }
+  }
+
+  @js.native
+  trait MergeProfilesResponse extends js.Object {
+    var Message: js.UndefOr[message]
+  }
+
+  object MergeProfilesResponse {
+    @inline
+    def apply(
+        Message: js.UndefOr[message] = js.undefined
+    ): MergeProfilesResponse = {
+      val __obj = js.Dynamic.literal()
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MergeProfilesResponse]
+    }
+  }
+
+  /** The filter applied to ListProfileObjects response to include profile objects with the specified index values. This filter is only supported for ObjectTypeName _asset, _case and _order.
+    */
+  @js.native
+  trait ObjectFilter extends js.Object {
+    var KeyName: name
+    var Values: requestValueList
+  }
+
+  object ObjectFilter {
+    @inline
+    def apply(
+        KeyName: name,
+        Values: requestValueList
+    ): ObjectFilter = {
+      val __obj = js.Dynamic.literal(
+        "KeyName" -> KeyName.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ObjectFilter]
     }
   }
 
@@ -1531,8 +2201,9 @@ package object customerprofiles {
   @js.native
   trait PutIntegrationRequest extends js.Object {
     var DomainName: name
-    var ObjectTypeName: typeName
     var FlowDefinition: js.UndefOr[FlowDefinition]
+    var ObjectTypeName: js.UndefOr[typeName]
+    var ObjectTypeNames: js.UndefOr[ObjectTypeNames]
     var Tags: js.UndefOr[TagMap]
     var Uri: js.UndefOr[string1To255]
   }
@@ -1541,17 +2212,19 @@ package object customerprofiles {
     @inline
     def apply(
         DomainName: name,
-        ObjectTypeName: typeName,
         FlowDefinition: js.UndefOr[FlowDefinition] = js.undefined,
+        ObjectTypeName: js.UndefOr[typeName] = js.undefined,
+        ObjectTypeNames: js.UndefOr[ObjectTypeNames] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         Uri: js.UndefOr[string1To255] = js.undefined
     ): PutIntegrationRequest = {
       val __obj = js.Dynamic.literal(
-        "DomainName" -> DomainName.asInstanceOf[js.Any],
-        "ObjectTypeName" -> ObjectTypeName.asInstanceOf[js.Any]
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
       )
 
       FlowDefinition.foreach(__v => __obj.updateDynamic("FlowDefinition")(__v.asInstanceOf[js.Any]))
+      ObjectTypeName.foreach(__v => __obj.updateDynamic("ObjectTypeName")(__v.asInstanceOf[js.Any]))
+      ObjectTypeNames.foreach(__v => __obj.updateDynamic("ObjectTypeNames")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Uri.foreach(__v => __obj.updateDynamic("Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutIntegrationRequest]
@@ -1563,8 +2236,9 @@ package object customerprofiles {
     var CreatedAt: timestamp
     var DomainName: name
     var LastUpdatedAt: timestamp
-    var ObjectTypeName: typeName
     var Uri: string1To255
+    var ObjectTypeName: js.UndefOr[typeName]
+    var ObjectTypeNames: js.UndefOr[ObjectTypeNames]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -1574,18 +2248,20 @@ package object customerprofiles {
         CreatedAt: timestamp,
         DomainName: name,
         LastUpdatedAt: timestamp,
-        ObjectTypeName: typeName,
         Uri: string1To255,
+        ObjectTypeName: js.UndefOr[typeName] = js.undefined,
+        ObjectTypeNames: js.UndefOr[ObjectTypeNames] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): PutIntegrationResponse = {
       val __obj = js.Dynamic.literal(
         "CreatedAt" -> CreatedAt.asInstanceOf[js.Any],
         "DomainName" -> DomainName.asInstanceOf[js.Any],
         "LastUpdatedAt" -> LastUpdatedAt.asInstanceOf[js.Any],
-        "ObjectTypeName" -> ObjectTypeName.asInstanceOf[js.Any],
         "Uri" -> Uri.asInstanceOf[js.Any]
       )
 
+      ObjectTypeName.foreach(__v => __obj.updateDynamic("ObjectTypeName")(__v.asInstanceOf[js.Any]))
+      ObjectTypeNames.foreach(__v => __obj.updateDynamic("ObjectTypeNames")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutIntegrationResponse]
     }
@@ -1640,6 +2316,7 @@ package object customerprofiles {
     var ExpirationDays: js.UndefOr[expirationDaysInteger]
     var Fields: js.UndefOr[FieldMap]
     var Keys: js.UndefOr[KeyMap]
+    var SourceLastUpdatedTimestampFormat: js.UndefOr[string1To255]
     var Tags: js.UndefOr[TagMap]
     var TemplateId: js.UndefOr[name]
   }
@@ -1655,6 +2332,7 @@ package object customerprofiles {
         ExpirationDays: js.UndefOr[expirationDaysInteger] = js.undefined,
         Fields: js.UndefOr[FieldMap] = js.undefined,
         Keys: js.UndefOr[KeyMap] = js.undefined,
+        SourceLastUpdatedTimestampFormat: js.UndefOr[string1To255] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         TemplateId: js.UndefOr[name] = js.undefined
     ): PutProfileObjectTypeRequest = {
@@ -1669,6 +2347,7 @@ package object customerprofiles {
       ExpirationDays.foreach(__v => __obj.updateDynamic("ExpirationDays")(__v.asInstanceOf[js.Any]))
       Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
       Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
+      SourceLastUpdatedTimestampFormat.foreach(__v => __obj.updateDynamic("SourceLastUpdatedTimestampFormat")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutProfileObjectTypeRequest]
@@ -1686,6 +2365,7 @@ package object customerprofiles {
     var Fields: js.UndefOr[FieldMap]
     var Keys: js.UndefOr[KeyMap]
     var LastUpdatedAt: js.UndefOr[timestamp]
+    var SourceLastUpdatedTimestampFormat: js.UndefOr[string1To255]
     var Tags: js.UndefOr[TagMap]
     var TemplateId: js.UndefOr[name]
   }
@@ -1702,6 +2382,7 @@ package object customerprofiles {
         Fields: js.UndefOr[FieldMap] = js.undefined,
         Keys: js.UndefOr[KeyMap] = js.undefined,
         LastUpdatedAt: js.UndefOr[timestamp] = js.undefined,
+        SourceLastUpdatedTimestampFormat: js.UndefOr[string1To255] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         TemplateId: js.UndefOr[name] = js.undefined
     ): PutProfileObjectTypeResponse = {
@@ -1717,9 +2398,54 @@ package object customerprofiles {
       Fields.foreach(__v => __obj.updateDynamic("Fields")(__v.asInstanceOf[js.Any]))
       Keys.foreach(__v => __obj.updateDynamic("Keys")(__v.asInstanceOf[js.Any]))
       LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      SourceLastUpdatedTimestampFormat.foreach(__v => __obj.updateDynamic("SourceLastUpdatedTimestampFormat")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutProfileObjectTypeResponse]
+    }
+  }
+
+  /** Configuration information about the S3 bucket where Identity Resolution Jobs write result files.
+    */
+  @js.native
+  trait S3ExportingConfig extends js.Object {
+    var S3BucketName: s3BucketName
+    var S3KeyName: js.UndefOr[s3KeyNameCustomerOutputConfig]
+  }
+
+  object S3ExportingConfig {
+    @inline
+    def apply(
+        S3BucketName: s3BucketName,
+        S3KeyName: js.UndefOr[s3KeyNameCustomerOutputConfig] = js.undefined
+    ): S3ExportingConfig = {
+      val __obj = js.Dynamic.literal(
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any]
+      )
+
+      S3KeyName.foreach(__v => __obj.updateDynamic("S3KeyName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3ExportingConfig]
+    }
+  }
+
+  /** The S3 location where Identity Resolution Jobs write result files.
+    */
+  @js.native
+  trait S3ExportingLocation extends js.Object {
+    var S3BucketName: js.UndefOr[s3BucketName]
+    var S3KeyName: js.UndefOr[s3KeyName]
+  }
+
+  object S3ExportingLocation {
+    @inline
+    def apply(
+        S3BucketName: js.UndefOr[s3BucketName] = js.undefined,
+        S3KeyName: js.UndefOr[s3KeyName] = js.undefined
+    ): S3ExportingLocation = {
+      val __obj = js.Dynamic.literal()
+      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
+      S3KeyName.foreach(__v => __obj.updateDynamic("S3KeyName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3ExportingLocation]
     }
   }
 
@@ -2123,6 +2849,7 @@ package object customerprofiles {
     var DeadLetterQueueUrl: js.UndefOr[sqsQueueUrl]
     var DefaultEncryptionKey: js.UndefOr[encryptionKey]
     var DefaultExpirationDays: js.UndefOr[expirationDaysInteger]
+    var Matching: js.UndefOr[MatchingRequest]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -2133,6 +2860,7 @@ package object customerprofiles {
         DeadLetterQueueUrl: js.UndefOr[sqsQueueUrl] = js.undefined,
         DefaultEncryptionKey: js.UndefOr[encryptionKey] = js.undefined,
         DefaultExpirationDays: js.UndefOr[expirationDaysInteger] = js.undefined,
+        Matching: js.UndefOr[MatchingRequest] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): UpdateDomainRequest = {
       val __obj = js.Dynamic.literal(
@@ -2142,6 +2870,7 @@ package object customerprofiles {
       DeadLetterQueueUrl.foreach(__v => __obj.updateDynamic("DeadLetterQueueUrl")(__v.asInstanceOf[js.Any]))
       DefaultEncryptionKey.foreach(__v => __obj.updateDynamic("DefaultEncryptionKey")(__v.asInstanceOf[js.Any]))
       DefaultExpirationDays.foreach(__v => __obj.updateDynamic("DefaultExpirationDays")(__v.asInstanceOf[js.Any]))
+      Matching.foreach(__v => __obj.updateDynamic("Matching")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainRequest]
     }
@@ -2155,6 +2884,7 @@ package object customerprofiles {
     var DeadLetterQueueUrl: js.UndefOr[sqsQueueUrl]
     var DefaultEncryptionKey: js.UndefOr[encryptionKey]
     var DefaultExpirationDays: js.UndefOr[expirationDaysInteger]
+    var Matching: js.UndefOr[MatchingResponse]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -2167,6 +2897,7 @@ package object customerprofiles {
         DeadLetterQueueUrl: js.UndefOr[sqsQueueUrl] = js.undefined,
         DefaultEncryptionKey: js.UndefOr[encryptionKey] = js.undefined,
         DefaultExpirationDays: js.UndefOr[expirationDaysInteger] = js.undefined,
+        Matching: js.UndefOr[MatchingResponse] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): UpdateDomainResponse = {
       val __obj = js.Dynamic.literal(
@@ -2178,6 +2909,7 @@ package object customerprofiles {
       DeadLetterQueueUrl.foreach(__v => __obj.updateDynamic("DeadLetterQueueUrl")(__v.asInstanceOf[js.Any]))
       DefaultEncryptionKey.foreach(__v => __obj.updateDynamic("DefaultEncryptionKey")(__v.asInstanceOf[js.Any]))
       DefaultExpirationDays.foreach(__v => __obj.updateDynamic("DefaultExpirationDays")(__v.asInstanceOf[js.Any]))
+      Matching.foreach(__v => __obj.updateDynamic("Matching")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainResponse]
     }

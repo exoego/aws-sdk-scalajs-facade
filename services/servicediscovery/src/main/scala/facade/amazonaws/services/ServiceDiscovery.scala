@@ -21,6 +21,7 @@ package object servicediscovery {
   type FilterValues = js.Array[FilterValue]
   type HttpInstanceSummaryList = js.Array[HttpInstanceSummary]
   type InstanceHealthStatusMap = js.Dictionary[HealthStatus]
+  type InstanceId = String
   type InstanceIdList = js.Array[ResourceId]
   type InstanceSummaryList = js.Array[InstanceSummary]
   type MaxResults = Int
@@ -73,7 +74,10 @@ package object servicediscovery {
     @inline def registerInstanceFuture(params: RegisterInstanceRequest): Future[RegisterInstanceResponse] = service.registerInstance(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateHttpNamespaceFuture(params: UpdateHttpNamespaceRequest): Future[UpdateHttpNamespaceResponse] = service.updateHttpNamespace(params).promise().toFuture
     @inline def updateInstanceCustomHealthStatusFuture(params: UpdateInstanceCustomHealthStatusRequest): Future[js.Object] = service.updateInstanceCustomHealthStatus(params).promise().toFuture
+    @inline def updatePrivateDnsNamespaceFuture(params: UpdatePrivateDnsNamespaceRequest): Future[UpdatePrivateDnsNamespaceResponse] = service.updatePrivateDnsNamespace(params).promise().toFuture
+    @inline def updatePublicDnsNamespaceFuture(params: UpdatePublicDnsNamespaceRequest): Future[UpdatePublicDnsNamespaceResponse] = service.updatePublicDnsNamespace(params).promise().toFuture
     @inline def updateServiceFuture(params: UpdateServiceRequest): Future[UpdateServiceResponse] = service.updateService(params).promise().toFuture
 
   }
@@ -104,7 +108,10 @@ package object servicediscovery {
     def registerInstance(params: RegisterInstanceRequest): Request[RegisterInstanceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateHttpNamespace(params: UpdateHttpNamespaceRequest): Request[UpdateHttpNamespaceResponse] = js.native
     def updateInstanceCustomHealthStatus(params: UpdateInstanceCustomHealthStatusRequest): Request[js.Object] = js.native
+    def updatePrivateDnsNamespace(params: UpdatePrivateDnsNamespaceRequest): Request[UpdatePrivateDnsNamespaceResponse] = js.native
+    def updatePublicDnsNamespace(params: UpdatePublicDnsNamespaceRequest): Request[UpdatePublicDnsNamespaceResponse] = js.native
     def updateService(params: UpdateServiceRequest): Request[UpdateServiceResponse] = js.native
   }
   object ServiceDiscovery {
@@ -162,6 +169,7 @@ package object servicediscovery {
     var Vpc: ResourceId
     var CreatorRequestId: js.UndefOr[ResourceId]
     var Description: js.UndefOr[ResourceDescription]
+    var Properties: js.UndefOr[PrivateDnsNamespaceProperties]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -172,6 +180,7 @@ package object servicediscovery {
         Vpc: ResourceId,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
         Description: js.UndefOr[ResourceDescription] = js.undefined,
+        Properties: js.UndefOr[PrivateDnsNamespaceProperties] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreatePrivateDnsNamespaceRequest = {
       val __obj = js.Dynamic.literal(
@@ -181,6 +190,7 @@ package object servicediscovery {
 
       CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePrivateDnsNamespaceRequest]
     }
@@ -207,6 +217,7 @@ package object servicediscovery {
     var Name: NamespaceNamePublic
     var CreatorRequestId: js.UndefOr[ResourceId]
     var Description: js.UndefOr[ResourceDescription]
+    var Properties: js.UndefOr[PublicDnsNamespaceProperties]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -216,6 +227,7 @@ package object servicediscovery {
         Name: NamespaceNamePublic,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined,
         Description: js.UndefOr[ResourceDescription] = js.undefined,
+        Properties: js.UndefOr[PublicDnsNamespaceProperties] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreatePublicDnsNamespaceRequest = {
       val __obj = js.Dynamic.literal(
@@ -224,6 +236,7 @@ package object servicediscovery {
 
       CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePublicDnsNamespaceRequest]
     }
@@ -449,7 +462,7 @@ package object servicediscovery {
     }
   }
 
-  /** A complex type that contains information about the Amazon Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+  /** A complex type that contains information about the Amazon Route 53 DNS records that you want Cloud Map to create when you register an instance.
     */
   @js.native
   trait DnsConfig extends js.Object {
@@ -475,7 +488,7 @@ package object servicediscovery {
     }
   }
 
-  /** A complex type that contains information about changes to the Route 53 DNS records that AWS Cloud Map creates when you register an instance.
+  /** A complex type that contains information about changes to the Route 53 DNS records that Cloud Map creates when you register an instance.
     */
   @js.native
   trait DnsConfigChange extends js.Object {
@@ -494,25 +507,28 @@ package object servicediscovery {
     }
   }
 
-  /** A complex type that contains the ID for the Route 53 hosted zone that AWS Cloud Map creates when you create a namespace.
+  /** A complex type that contains the ID for the Route 53 hosted zone that Cloud Map creates when you create a namespace.
     */
   @js.native
   trait DnsProperties extends js.Object {
     var HostedZoneId: js.UndefOr[ResourceId]
+    var SOA: js.UndefOr[SOA]
   }
 
   object DnsProperties {
     @inline
     def apply(
-        HostedZoneId: js.UndefOr[ResourceId] = js.undefined
+        HostedZoneId: js.UndefOr[ResourceId] = js.undefined,
+        SOA: js.UndefOr[SOA] = js.undefined
     ): DnsProperties = {
       val __obj = js.Dynamic.literal()
       HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      SOA.foreach(__v => __obj.updateDynamic("SOA")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DnsProperties]
     }
   }
 
-  /** A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when you register an instance.
+  /** A complex type that contains information about the Route 53 DNS records that you want Cloud Map to create when you register an instance.
     */
   @js.native
   trait DnsRecord extends js.Object {
@@ -715,12 +731,10 @@ package object servicediscovery {
     }
   }
 
-  /** <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>. <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both. </important> Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]]. Note the following about configuring health checks. <b> <code>A</code> and <code>AAAA</code> records</b> If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code> records, AWS Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint that is specified by the IPv4
-    * address is unhealthy, Route 53 considers both the <code>A</code> and <code>AAAA</code> records to be unhealthy. <b> <code>CNAME</code> records</b> You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error.
-    * ```Request interval``` A Route 53 health checker in each health-checking region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another, so you'll sometimes see several requests per second followed by a few seconds with no health checks at all.
-    * ```Health checking regions``` Health checkers perform checks from all Route 53 health-checking regions. For a list of the current regions, see [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions|Regions]].
-    * ```Alias records``` When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, AWS Cloud Map creates a Route 53 alias record. Note the following: * Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced AWS resource. such as an ELB load balancer. For more information, see [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth|EvaluateTargetHealth]]. * If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check.
-    * ```Charges for health checks``` Health checks are basic Route 53 health checks that monitor an AWS endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]].
+  /** <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check. If you specify settings for a health check, Cloud Map associates the health check with the records that you specify in <code>DnsConfig</code>. <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both. </important> Health checks are basic Route 53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]]. Note the following about configuring health checks. <dl> <dt>A and AAAA records</dt> <dd> If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code> records, Cloud Map creates a health check that uses the IPv4 address to check the health of the resource. If the endpoint tthat's specified by the IPv4 address
+    * is unhealthy, Route 53 considers both the <code>A</code> and <code>AAAA</code> records to be unhealthy. </dd> <dt>CNAME records</dt> <dd> You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code> includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code> request will fail with an <code>InvalidInput</code> error. </dd> <dt>Request interval</dt> <dd> A Route 53 health checker in each health-checking Amazon Web Services Region sends a health check request to an endpoint every 30 seconds. On average, your endpoint receives a health check request about every two seconds. However, health checkers don't coordinate with one another. Therefore, you might sometimes see several requests in one second that's followed by a few seconds with no health checks at all. </dd> <dt>Health checking regions</dt> <dd> Health checkers perform checks from all Route 53 health-checking Regions. For a list of the current
+    * Regions, see [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-Regions|Regions]]. </dd> <dt>Alias records</dt> <dd> When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code> attribute, Cloud Map creates a Route 53 alias record. Note the following: * Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records. When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health of the referenced Amazon Web Services resource. such as an ELB load balancer. For more information, see [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth|EvaluateTargetHealth]]. * If you include <code>HealthCheckConfig</code> and then use the service to register an instance that creates an alias record, Route 53 doesn't create the health check. </dd> <dt>Charges for health checks</dt> <dd> Health
+    * checks are basic Route 53 health checks that monitor an Amazon Web Services endpoint. For information about pricing for health checks, see [[http://aws.amazon.com/route53/pricing/|Amazon Route 53 Pricing]]. </dd> </dl>
     */
   @js.native
   trait HealthCheckConfig extends js.Object {
@@ -746,10 +760,10 @@ package object servicediscovery {
     }
   }
 
-  /** A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances: * You can't use a health check that is defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.) * You want to use a third-party health checker regardless of where your resources are. <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both. </important> To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. AWS Cloud Map doesn't monitor the status of the resource, it
-    * just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request. Here's how custom health checks work: <ol> * You create a service and specify a value for <code>FailureThreshold</code>. The failure threshold indicates the number of 30-second intervals you want AWS Cloud Map to wait between the time that your application sends an [[https://docs.aws.amazon.com/cloud-map/latest/api/API_UpdateInstanceCustomHealthStatus.html|UpdateInstanceCustomHealthStatus]] request and the time that AWS Cloud Map stops routing internet traffic to the corresponding resource. * You register an instance. <li> You configure a third-party health checker to monitor the resource that is associated with the new instance.
+  /** A complex type that contains information about an optional custom health check. A custom health check, which requires that you use a third-party health checker to evaluate the health of your resources, is useful in the following circumstances: * You can't use a health check that's defined by <code>HealthCheckConfig</code> because the resource isn't available over the internet. For example, you can use a custom health check when the instance is in an Amazon VPC. (To check the health of resources in a VPC, the health checker must also be in the VPC.) * You want to use a third-party health checker regardless of where your resources are located. <important> If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code> or <code>HealthCheckConfig</code> but not both. </important> To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code> request. Cloud Map doesn't monitor the status of the resource,
+    * it just keeps a record of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code> request. Here's how custom health checks work: <ol> * You create a service. * You register an instance. <li> You configure a third-party health checker to monitor the resource that's associated with the new instance.
     *
-    * '''Note:'''AWS Cloud Map doesn't check the health of the resource directly. </li> * The third-party health-checker determines that the resource is unhealthy and notifies your application. * Your application submits an <code>UpdateInstanceCustomHealthStatus</code> request. * AWS Cloud Map waits for (<code>FailureThreshold</code> x 30) seconds. * If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, AWS Cloud Map stops routing traffic to the resource. </ol>
+    * '''Note:'''Cloud Map doesn't check the health of the resource directly. </li> * The third-party health-checker determines that the resource is unhealthy and notifies your application. * Your application submits an <code>UpdateInstanceCustomHealthStatus</code> request. * Cloud Map waits for 30 seconds. * If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during that time to change the status back to healthy, Cloud Map stops routing traffic to the resource. </ol>
     */
   @js.native
   trait HealthCheckCustomConfig extends js.Object {
@@ -797,6 +811,25 @@ package object servicediscovery {
     }
   }
 
+  /** Updated properties for the HTTP namespace.
+    */
+  @js.native
+  trait HttpNamespaceChange extends js.Object {
+    var Description: ResourceDescription
+  }
+
+  object HttpNamespaceChange {
+    @inline
+    def apply(
+        Description: ResourceDescription
+    ): HttpNamespaceChange = {
+      val __obj = js.Dynamic.literal(
+        "Description" -> Description.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[HttpNamespaceChange]
+    }
+  }
+
   /** A complex type that contains the name of an HTTP namespace.
     */
   @js.native
@@ -815,7 +848,7 @@ package object servicediscovery {
     }
   }
 
-  /** A complex type that contains information about an instance that AWS Cloud Map creates when you submit a <code>RegisterInstance</code> request.
+  /** A complex type that contains information about an instance that Cloud Map creates when you submit a <code>RegisterInstance</code> request.
     */
   @js.native
   trait Instance extends js.Object {
@@ -1129,7 +1162,7 @@ package object servicediscovery {
     }
   }
 
-  /** A complex type that contains information that is specific to the namespace type.
+  /** A complex type that contains information that's specific to the namespace type.
     */
   @js.native
   trait NamespaceProperties extends js.Object {
@@ -1275,10 +1308,204 @@ package object servicediscovery {
     }
   }
 
+  /** Updated properties for the private DNS namespace.
+    */
+  @js.native
+  trait PrivateDnsNamespaceChange extends js.Object {
+    var Description: js.UndefOr[ResourceDescription]
+    var Properties: js.UndefOr[PrivateDnsNamespacePropertiesChange]
+  }
+
+  object PrivateDnsNamespaceChange {
+    @inline
+    def apply(
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        Properties: js.UndefOr[PrivateDnsNamespacePropertiesChange] = js.undefined
+    ): PrivateDnsNamespaceChange = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrivateDnsNamespaceChange]
+    }
+  }
+
+  /** DNS properties for the private DNS namespace.
+    */
+  @js.native
+  trait PrivateDnsNamespaceProperties extends js.Object {
+    var DnsProperties: PrivateDnsPropertiesMutable
+  }
+
+  object PrivateDnsNamespaceProperties {
+    @inline
+    def apply(
+        DnsProperties: PrivateDnsPropertiesMutable
+    ): PrivateDnsNamespaceProperties = {
+      val __obj = js.Dynamic.literal(
+        "DnsProperties" -> DnsProperties.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PrivateDnsNamespaceProperties]
+    }
+  }
+
+  /** Updated properties for the private DNS namespace.
+    */
+  @js.native
+  trait PrivateDnsNamespacePropertiesChange extends js.Object {
+    var DnsProperties: PrivateDnsPropertiesMutableChange
+  }
+
+  object PrivateDnsNamespacePropertiesChange {
+    @inline
+    def apply(
+        DnsProperties: PrivateDnsPropertiesMutableChange
+    ): PrivateDnsNamespacePropertiesChange = {
+      val __obj = js.Dynamic.literal(
+        "DnsProperties" -> DnsProperties.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PrivateDnsNamespacePropertiesChange]
+    }
+  }
+
+  /** DNS properties for the private DNS namespace.
+    */
+  @js.native
+  trait PrivateDnsPropertiesMutable extends js.Object {
+    var SOA: SOA
+  }
+
+  object PrivateDnsPropertiesMutable {
+    @inline
+    def apply(
+        SOA: SOA
+    ): PrivateDnsPropertiesMutable = {
+      val __obj = js.Dynamic.literal(
+        "SOA" -> SOA.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PrivateDnsPropertiesMutable]
+    }
+  }
+
+  /** Updated DNS properties for the private DNS namespace.
+    */
+  @js.native
+  trait PrivateDnsPropertiesMutableChange extends js.Object {
+    var SOA: SOAChange
+  }
+
+  object PrivateDnsPropertiesMutableChange {
+    @inline
+    def apply(
+        SOA: SOAChange
+    ): PrivateDnsPropertiesMutableChange = {
+      val __obj = js.Dynamic.literal(
+        "SOA" -> SOA.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PrivateDnsPropertiesMutableChange]
+    }
+  }
+
+  /** Updated properties for the public DNS namespace.
+    */
+  @js.native
+  trait PublicDnsNamespaceChange extends js.Object {
+    var Description: js.UndefOr[ResourceDescription]
+    var Properties: js.UndefOr[PublicDnsNamespacePropertiesChange]
+  }
+
+  object PublicDnsNamespaceChange {
+    @inline
+    def apply(
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        Properties: js.UndefOr[PublicDnsNamespacePropertiesChange] = js.undefined
+    ): PublicDnsNamespaceChange = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublicDnsNamespaceChange]
+    }
+  }
+
+  /** DNS properties for the public DNS namespace.
+    */
+  @js.native
+  trait PublicDnsNamespaceProperties extends js.Object {
+    var DnsProperties: PublicDnsPropertiesMutable
+  }
+
+  object PublicDnsNamespaceProperties {
+    @inline
+    def apply(
+        DnsProperties: PublicDnsPropertiesMutable
+    ): PublicDnsNamespaceProperties = {
+      val __obj = js.Dynamic.literal(
+        "DnsProperties" -> DnsProperties.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PublicDnsNamespaceProperties]
+    }
+  }
+
+  /** Updated properties for the public DNS namespace.
+    */
+  @js.native
+  trait PublicDnsNamespacePropertiesChange extends js.Object {
+    var DnsProperties: PublicDnsPropertiesMutableChange
+  }
+
+  object PublicDnsNamespacePropertiesChange {
+    @inline
+    def apply(
+        DnsProperties: PublicDnsPropertiesMutableChange
+    ): PublicDnsNamespacePropertiesChange = {
+      val __obj = js.Dynamic.literal(
+        "DnsProperties" -> DnsProperties.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PublicDnsNamespacePropertiesChange]
+    }
+  }
+
+  /** DNS properties for the public DNS namespace.
+    */
+  @js.native
+  trait PublicDnsPropertiesMutable extends js.Object {
+    var SOA: SOA
+  }
+
+  object PublicDnsPropertiesMutable {
+    @inline
+    def apply(
+        SOA: SOA
+    ): PublicDnsPropertiesMutable = {
+      val __obj = js.Dynamic.literal(
+        "SOA" -> SOA.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PublicDnsPropertiesMutable]
+    }
+  }
+
+  /** Updated DNS properties for the public DNS namespace.
+    */
+  @js.native
+  trait PublicDnsPropertiesMutableChange extends js.Object {
+    var SOA: SOAChange
+  }
+
+  object PublicDnsPropertiesMutableChange {
+    @inline
+    def apply(
+        SOA: SOAChange
+    ): PublicDnsPropertiesMutableChange = {
+      val __obj = js.Dynamic.literal(
+        "SOA" -> SOA.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PublicDnsPropertiesMutableChange]
+    }
+  }
+
   @js.native
   trait RegisterInstanceRequest extends js.Object {
     var Attributes: Attributes
-    var InstanceId: ResourceId
+    var InstanceId: InstanceId
     var ServiceId: ResourceId
     var CreatorRequestId: js.UndefOr[ResourceId]
   }
@@ -1287,7 +1514,7 @@ package object servicediscovery {
     @inline
     def apply(
         Attributes: Attributes,
-        InstanceId: ResourceId,
+        InstanceId: InstanceId,
         ServiceId: ResourceId,
         CreatorRequestId: js.UndefOr[ResourceId] = js.undefined
     ): RegisterInstanceRequest = {
@@ -1315,6 +1542,44 @@ package object servicediscovery {
       val __obj = js.Dynamic.literal()
       OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterInstanceResponse]
+    }
+  }
+
+  /** Start of Authority (SOA) properties for a public or private DNS namespace.
+    */
+  @js.native
+  trait SOA extends js.Object {
+    var TTL: RecordTTL
+  }
+
+  object SOA {
+    @inline
+    def apply(
+        TTL: RecordTTL
+    ): SOA = {
+      val __obj = js.Dynamic.literal(
+        "TTL" -> TTL.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SOA]
+    }
+  }
+
+  /** Updated Start of Authority (SOA) properties for a public or private DNS namespace.
+    */
+  @js.native
+  trait SOAChange extends js.Object {
+    var TTL: RecordTTL
+  }
+
+  object SOAChange {
+    @inline
+    def apply(
+        TTL: RecordTTL
+    ): SOAChange = {
+      val __obj = js.Dynamic.literal(
+        "TTL" -> TTL.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SOAChange]
     }
   }
 
@@ -1464,7 +1729,7 @@ package object servicediscovery {
     }
   }
 
-  /** A custom key-value pair associated with a resource.
+  /** A custom key-value pair that's associated with a resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1549,6 +1814,46 @@ package object servicediscovery {
   }
 
   @js.native
+  trait UpdateHttpNamespaceRequest extends js.Object {
+    var Id: ResourceId
+    var Namespace: HttpNamespaceChange
+    var UpdaterRequestId: js.UndefOr[ResourceId]
+  }
+
+  object UpdateHttpNamespaceRequest {
+    @inline
+    def apply(
+        Id: ResourceId,
+        Namespace: HttpNamespaceChange,
+        UpdaterRequestId: js.UndefOr[ResourceId] = js.undefined
+    ): UpdateHttpNamespaceRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+
+      UpdaterRequestId.foreach(__v => __obj.updateDynamic("UpdaterRequestId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateHttpNamespaceRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateHttpNamespaceResponse extends js.Object {
+    var OperationId: js.UndefOr[OperationId]
+  }
+
+  object UpdateHttpNamespaceResponse {
+    @inline
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): UpdateHttpNamespaceResponse = {
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateHttpNamespaceResponse]
+    }
+  }
+
+  @js.native
   trait UpdateInstanceCustomHealthStatusRequest extends js.Object {
     var InstanceId: ResourceId
     var ServiceId: ResourceId
@@ -1568,6 +1873,86 @@ package object servicediscovery {
         "Status" -> Status.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[UpdateInstanceCustomHealthStatusRequest]
+    }
+  }
+
+  @js.native
+  trait UpdatePrivateDnsNamespaceRequest extends js.Object {
+    var Id: ResourceId
+    var Namespace: PrivateDnsNamespaceChange
+    var UpdaterRequestId: js.UndefOr[ResourceId]
+  }
+
+  object UpdatePrivateDnsNamespaceRequest {
+    @inline
+    def apply(
+        Id: ResourceId,
+        Namespace: PrivateDnsNamespaceChange,
+        UpdaterRequestId: js.UndefOr[ResourceId] = js.undefined
+    ): UpdatePrivateDnsNamespaceRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+
+      UpdaterRequestId.foreach(__v => __obj.updateDynamic("UpdaterRequestId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePrivateDnsNamespaceRequest]
+    }
+  }
+
+  @js.native
+  trait UpdatePrivateDnsNamespaceResponse extends js.Object {
+    var OperationId: js.UndefOr[OperationId]
+  }
+
+  object UpdatePrivateDnsNamespaceResponse {
+    @inline
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): UpdatePrivateDnsNamespaceResponse = {
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePrivateDnsNamespaceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdatePublicDnsNamespaceRequest extends js.Object {
+    var Id: ResourceId
+    var Namespace: PublicDnsNamespaceChange
+    var UpdaterRequestId: js.UndefOr[ResourceId]
+  }
+
+  object UpdatePublicDnsNamespaceRequest {
+    @inline
+    def apply(
+        Id: ResourceId,
+        Namespace: PublicDnsNamespaceChange,
+        UpdaterRequestId: js.UndefOr[ResourceId] = js.undefined
+    ): UpdatePublicDnsNamespaceRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+
+      UpdaterRequestId.foreach(__v => __obj.updateDynamic("UpdaterRequestId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePublicDnsNamespaceRequest]
+    }
+  }
+
+  @js.native
+  trait UpdatePublicDnsNamespaceResponse extends js.Object {
+    var OperationId: js.UndefOr[OperationId]
+  }
+
+  object UpdatePublicDnsNamespaceResponse {
+    @inline
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): UpdatePublicDnsNamespaceResponse = {
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePublicDnsNamespaceResponse]
     }
   }
 

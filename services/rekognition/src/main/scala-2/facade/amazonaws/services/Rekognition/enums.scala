@@ -50,6 +50,39 @@ object ContentModerationSortBy {
 }
 
 @js.native
+sealed trait DatasetStatus extends js.Any
+object DatasetStatus {
+  val CREATE_IN_PROGRESS = "CREATE_IN_PROGRESS".asInstanceOf[DatasetStatus]
+  val CREATE_COMPLETE = "CREATE_COMPLETE".asInstanceOf[DatasetStatus]
+  val CREATE_FAILED = "CREATE_FAILED".asInstanceOf[DatasetStatus]
+  val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[DatasetStatus]
+  val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[DatasetStatus]
+  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[DatasetStatus]
+  val DELETE_IN_PROGRESS = "DELETE_IN_PROGRESS".asInstanceOf[DatasetStatus]
+
+  @inline def values: js.Array[DatasetStatus] = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, UPDATE_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_FAILED, DELETE_IN_PROGRESS)
+}
+
+@js.native
+sealed trait DatasetStatusMessageCode extends js.Any
+object DatasetStatusMessageCode {
+  val SUCCESS = "SUCCESS".asInstanceOf[DatasetStatusMessageCode]
+  val SERVICE_ERROR = "SERVICE_ERROR".asInstanceOf[DatasetStatusMessageCode]
+  val CLIENT_ERROR = "CLIENT_ERROR".asInstanceOf[DatasetStatusMessageCode]
+
+  @inline def values: js.Array[DatasetStatusMessageCode] = js.Array(SUCCESS, SERVICE_ERROR, CLIENT_ERROR)
+}
+
+@js.native
+sealed trait DatasetType extends js.Any
+object DatasetType {
+  val TRAIN = "TRAIN".asInstanceOf[DatasetType]
+  val TEST = "TEST".asInstanceOf[DatasetType]
+
+  @inline def values: js.Array[DatasetType] = js.Array(TRAIN, TEST)
+}
+
+@js.native
 sealed trait EmotionName extends js.Any
 object EmotionName {
   val HAPPY = "HAPPY".asInstanceOf[EmotionName]
@@ -90,6 +123,19 @@ object GenderType {
   val Female = "Female".asInstanceOf[GenderType]
 
   @inline def values: js.Array[GenderType] = js.Array(Male, Female)
+}
+
+/** A list of enum string of possible gender values that Celebrity returns.
+  */
+@js.native
+sealed trait KnownGenderType extends js.Any
+object KnownGenderType {
+  val Male = "Male".asInstanceOf[KnownGenderType]
+  val Female = "Female".asInstanceOf[KnownGenderType]
+  val Nonbinary = "Nonbinary".asInstanceOf[KnownGenderType]
+  val Unlisted = "Unlisted".asInstanceOf[KnownGenderType]
+
+  @inline def values: js.Array[KnownGenderType] = js.Array(Male, Female, Nonbinary, Unlisted)
 }
 
 @js.native
@@ -278,8 +324,12 @@ object TechnicalCueType {
   val ColorBars = "ColorBars".asInstanceOf[TechnicalCueType]
   val EndCredits = "EndCredits".asInstanceOf[TechnicalCueType]
   val BlackFrames = "BlackFrames".asInstanceOf[TechnicalCueType]
+  val OpeningCredits = "OpeningCredits".asInstanceOf[TechnicalCueType]
+  val StudioLogo = "StudioLogo".asInstanceOf[TechnicalCueType]
+  val Slate = "Slate".asInstanceOf[TechnicalCueType]
+  val Content = "Content".asInstanceOf[TechnicalCueType]
 
-  @inline def values: js.Array[TechnicalCueType] = js.Array(ColorBars, EndCredits, BlackFrames)
+  @inline def values: js.Array[TechnicalCueType] = js.Array(ColorBars, EndCredits, BlackFrames, OpeningCredits, StudioLogo, Slate, Content)
 }
 
 @js.native
@@ -289,6 +339,15 @@ object TextTypes {
   val WORD = "WORD".asInstanceOf[TextTypes]
 
   @inline def values: js.Array[TextTypes] = js.Array(LINE, WORD)
+}
+
+@js.native
+sealed trait VideoColorRange extends js.Any
+object VideoColorRange {
+  val FULL = "FULL".asInstanceOf[VideoColorRange]
+  val LIMITED = "LIMITED".asInstanceOf[VideoColorRange]
+
+  @inline def values: js.Array[VideoColorRange] = js.Array(FULL, LIMITED)
 }
 
 @js.native

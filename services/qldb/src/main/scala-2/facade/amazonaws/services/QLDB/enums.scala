@@ -3,6 +3,16 @@ package facade.amazonaws.services.qldb
 import scalajs.js
 
 @js.native
+sealed trait EncryptionStatus extends js.Any
+object EncryptionStatus {
+  val ENABLED = "ENABLED".asInstanceOf[EncryptionStatus]
+  val UPDATING = "UPDATING".asInstanceOf[EncryptionStatus]
+  val KMS_KEY_INACCESSIBLE = "KMS_KEY_INACCESSIBLE".asInstanceOf[EncryptionStatus]
+
+  @inline def values: js.Array[EncryptionStatus] = js.Array(ENABLED, UPDATING, KMS_KEY_INACCESSIBLE)
+}
+
+@js.native
 sealed trait ErrorCause extends js.Any
 object ErrorCause {
   val KINESIS_STREAM_NOT_FOUND = "KINESIS_STREAM_NOT_FOUND".asInstanceOf[ErrorCause]
@@ -33,11 +43,22 @@ object LedgerState {
 }
 
 @js.native
+sealed trait OutputFormat extends js.Any
+object OutputFormat {
+  val ION_BINARY = "ION_BINARY".asInstanceOf[OutputFormat]
+  val ION_TEXT = "ION_TEXT".asInstanceOf[OutputFormat]
+  val JSON = "JSON".asInstanceOf[OutputFormat]
+
+  @inline def values: js.Array[OutputFormat] = js.Array(ION_BINARY, ION_TEXT, JSON)
+}
+
+@js.native
 sealed trait PermissionsMode extends js.Any
 object PermissionsMode {
   val ALLOW_ALL = "ALLOW_ALL".asInstanceOf[PermissionsMode]
+  val STANDARD = "STANDARD".asInstanceOf[PermissionsMode]
 
-  @inline def values: js.Array[PermissionsMode] = js.Array(ALLOW_ALL)
+  @inline def values: js.Array[PermissionsMode] = js.Array(ALLOW_ALL, STANDARD)
 }
 
 @js.native

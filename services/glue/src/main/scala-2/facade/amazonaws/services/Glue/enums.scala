@@ -15,6 +15,28 @@ object BackfillErrorCode {
 }
 
 @js.native
+sealed trait BlueprintRunState extends js.Any
+object BlueprintRunState {
+  val RUNNING = "RUNNING".asInstanceOf[BlueprintRunState]
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[BlueprintRunState]
+  val FAILED = "FAILED".asInstanceOf[BlueprintRunState]
+  val ROLLING_BACK = "ROLLING_BACK".asInstanceOf[BlueprintRunState]
+
+  @inline def values: js.Array[BlueprintRunState] = js.Array(RUNNING, SUCCEEDED, FAILED, ROLLING_BACK)
+}
+
+@js.native
+sealed trait BlueprintStatus extends js.Any
+object BlueprintStatus {
+  val CREATING = "CREATING".asInstanceOf[BlueprintStatus]
+  val ACTIVE = "ACTIVE".asInstanceOf[BlueprintStatus]
+  val UPDATING = "UPDATING".asInstanceOf[BlueprintStatus]
+  val FAILED = "FAILED".asInstanceOf[BlueprintStatus]
+
+  @inline def values: js.Array[BlueprintStatus] = js.Array(CREATING, ACTIVE, UPDATING, FAILED)
+}
+
+@js.native
 sealed trait CatalogEncryptionMode extends js.Any
 object CatalogEncryptionMode {
   val DISABLED = "DISABLED".asInstanceOf[CatalogEncryptionMode]
@@ -97,6 +119,11 @@ object ConnectionPropertyKey {
   val KAFKA_SSL_ENABLED = "KAFKA_SSL_ENABLED".asInstanceOf[ConnectionPropertyKey]
   val KAFKA_CUSTOM_CERT = "KAFKA_CUSTOM_CERT".asInstanceOf[ConnectionPropertyKey]
   val KAFKA_SKIP_CUSTOM_CERT_VALIDATION = "KAFKA_SKIP_CUSTOM_CERT_VALIDATION".asInstanceOf[ConnectionPropertyKey]
+  val KAFKA_CLIENT_KEYSTORE = "KAFKA_CLIENT_KEYSTORE".asInstanceOf[ConnectionPropertyKey]
+  val KAFKA_CLIENT_KEYSTORE_PASSWORD = "KAFKA_CLIENT_KEYSTORE_PASSWORD".asInstanceOf[ConnectionPropertyKey]
+  val KAFKA_CLIENT_KEY_PASSWORD = "KAFKA_CLIENT_KEY_PASSWORD".asInstanceOf[ConnectionPropertyKey]
+  val ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD = "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD".asInstanceOf[ConnectionPropertyKey]
+  val ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD = "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD".asInstanceOf[ConnectionPropertyKey]
   val SECRET_ID = "SECRET_ID".asInstanceOf[ConnectionPropertyKey]
   val CONNECTOR_URL = "CONNECTOR_URL".asInstanceOf[ConnectionPropertyKey]
   val CONNECTOR_TYPE = "CONNECTOR_TYPE".asInstanceOf[ConnectionPropertyKey]
@@ -124,6 +151,11 @@ object ConnectionPropertyKey {
     KAFKA_SSL_ENABLED,
     KAFKA_CUSTOM_CERT,
     KAFKA_SKIP_CUSTOM_CERT_VALIDATION,
+    KAFKA_CLIENT_KEYSTORE,
+    KAFKA_CLIENT_KEYSTORE_PASSWORD,
+    KAFKA_CLIENT_KEY_PASSWORD,
+    ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD,
+    ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD,
     SECRET_ID,
     CONNECTOR_URL,
     CONNECTOR_TYPE,
@@ -190,8 +222,9 @@ object CsvHeaderOption {
 sealed trait DataFormat extends js.Any
 object DataFormat {
   val AVRO = "AVRO".asInstanceOf[DataFormat]
+  val JSON = "JSON".asInstanceOf[DataFormat]
 
-  @inline def values: js.Array[DataFormat] = js.Array(AVRO)
+  @inline def values: js.Array[DataFormat] = js.Array(AVRO, JSON)
 }
 
 @js.native
@@ -343,8 +376,9 @@ sealed trait RecrawlBehavior extends js.Any
 object RecrawlBehavior {
   val CRAWL_EVERYTHING = "CRAWL_EVERYTHING".asInstanceOf[RecrawlBehavior]
   val CRAWL_NEW_FOLDERS_ONLY = "CRAWL_NEW_FOLDERS_ONLY".asInstanceOf[RecrawlBehavior]
+  val CRAWL_EVENT_MODE = "CRAWL_EVENT_MODE".asInstanceOf[RecrawlBehavior]
 
-  @inline def values: js.Array[RecrawlBehavior] = js.Array(CRAWL_EVERYTHING, CRAWL_NEW_FOLDERS_ONLY)
+  @inline def values: js.Array[RecrawlBehavior] = js.Array(CRAWL_EVERYTHING, CRAWL_NEW_FOLDERS_ONLY, CRAWL_EVENT_MODE)
 }
 
 @js.native
@@ -529,8 +563,9 @@ object TriggerType {
   val SCHEDULED = "SCHEDULED".asInstanceOf[TriggerType]
   val CONDITIONAL = "CONDITIONAL".asInstanceOf[TriggerType]
   val ON_DEMAND = "ON_DEMAND".asInstanceOf[TriggerType]
+  val EVENT = "EVENT".asInstanceOf[TriggerType]
 
-  @inline def values: js.Array[TriggerType] = js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND)
+  @inline def values: js.Array[TriggerType] = js.Array(SCHEDULED, CONDITIONAL, ON_DEMAND, EVENT)
 }
 
 @js.native

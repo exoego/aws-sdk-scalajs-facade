@@ -13,6 +13,14 @@ object AttributeType {
   inline def values: js.Array[AttributeType] = js.Array(string, integer, float, timestamp, geolocation)
 }
 
+type AutoMLOverrideStrategy = "LatencyOptimized" | "AccuracyOptimized"
+object AutoMLOverrideStrategy {
+  inline val LatencyOptimized: "LatencyOptimized" = "LatencyOptimized"
+  inline val AccuracyOptimized: "AccuracyOptimized" = "AccuracyOptimized"
+
+  inline def values: js.Array[AutoMLOverrideStrategy] = js.Array(LatencyOptimized, AccuracyOptimized)
+}
+
 type DatasetType = "TARGET_TIME_SERIES" | "RELATED_TIME_SERIES" | "ITEM_METADATA"
 object DatasetType {
   inline val TARGET_TIME_SERIES: "TARGET_TIME_SERIES" = "TARGET_TIME_SERIES"
@@ -58,6 +66,17 @@ object FilterConditionString {
   inline def values: js.Array[FilterConditionString] = js.Array(IS, IS_NOT)
 }
 
+type OptimizationMetric = "WAPE" | "RMSE" | "AverageWeightedQuantileLoss" | "MASE" | "MAPE"
+object OptimizationMetric {
+  inline val WAPE: "WAPE" = "WAPE"
+  inline val RMSE: "RMSE" = "RMSE"
+  inline val AverageWeightedQuantileLoss: "AverageWeightedQuantileLoss" = "AverageWeightedQuantileLoss"
+  inline val MASE: "MASE" = "MASE"
+  inline val MAPE: "MAPE" = "MAPE"
+
+  inline def values: js.Array[OptimizationMetric] = js.Array(WAPE, RMSE, AverageWeightedQuantileLoss, MASE, MAPE)
+}
+
 type ScalingType = "Auto" | "Linear" | "Logarithmic" | "ReverseLogarithmic"
 object ScalingType {
   inline val Auto: "Auto" = "Auto"
@@ -66,4 +85,28 @@ object ScalingType {
   inline val ReverseLogarithmic: "ReverseLogarithmic" = "ReverseLogarithmic"
 
   inline def values: js.Array[ScalingType] = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
+}
+
+type State = "Active" | "Deleted"
+object State {
+  inline val Active: "Active" = "Active"
+  inline val Deleted: "Deleted" = "Deleted"
+
+  inline def values: js.Array[State] = js.Array(Active, Deleted)
+}
+
+type TimePointGranularity = "ALL" | "SPECIFIC"
+object TimePointGranularity {
+  inline val ALL: "ALL" = "ALL"
+  inline val SPECIFIC: "SPECIFIC" = "SPECIFIC"
+
+  inline def values: js.Array[TimePointGranularity] = js.Array(ALL, SPECIFIC)
+}
+
+type TimeSeriesGranularity = "ALL" | "SPECIFIC"
+object TimeSeriesGranularity {
+  inline val ALL: "ALL" = "ALL"
+  inline val SPECIFIC: "SPECIFIC" = "SPECIFIC"
+
+  inline def values: js.Array[TimeSeriesGranularity] = js.Array(ALL, SPECIFIC)
 }

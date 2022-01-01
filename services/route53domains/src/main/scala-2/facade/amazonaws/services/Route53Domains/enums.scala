@@ -17,6 +17,7 @@ object ContactType {
 @js.native
 sealed trait CountryCode extends js.Any
 object CountryCode {
+  val AC = "AC".asInstanceOf[CountryCode]
   val AD = "AD".asInstanceOf[CountryCode]
   val AE = "AE".asInstanceOf[CountryCode]
   val AF = "AF".asInstanceOf[CountryCode]
@@ -32,6 +33,7 @@ object CountryCode {
   val AT = "AT".asInstanceOf[CountryCode]
   val AU = "AU".asInstanceOf[CountryCode]
   val AW = "AW".asInstanceOf[CountryCode]
+  val AX = "AX".asInstanceOf[CountryCode]
   val AZ = "AZ".asInstanceOf[CountryCode]
   val BA = "BA".asInstanceOf[CountryCode]
   val BB = "BB".asInstanceOf[CountryCode]
@@ -46,9 +48,11 @@ object CountryCode {
   val BM = "BM".asInstanceOf[CountryCode]
   val BN = "BN".asInstanceOf[CountryCode]
   val BO = "BO".asInstanceOf[CountryCode]
+  val BQ = "BQ".asInstanceOf[CountryCode]
   val BR = "BR".asInstanceOf[CountryCode]
   val BS = "BS".asInstanceOf[CountryCode]
   val BT = "BT".asInstanceOf[CountryCode]
+  val BV = "BV".asInstanceOf[CountryCode]
   val BW = "BW".asInstanceOf[CountryCode]
   val BY = "BY".asInstanceOf[CountryCode]
   val BZ = "BZ".asInstanceOf[CountryCode]
@@ -67,6 +71,7 @@ object CountryCode {
   val CR = "CR".asInstanceOf[CountryCode]
   val CU = "CU".asInstanceOf[CountryCode]
   val CV = "CV".asInstanceOf[CountryCode]
+  val CW = "CW".asInstanceOf[CountryCode]
   val CX = "CX".asInstanceOf[CountryCode]
   val CY = "CY".asInstanceOf[CountryCode]
   val CZ = "CZ".asInstanceOf[CountryCode]
@@ -79,6 +84,7 @@ object CountryCode {
   val EC = "EC".asInstanceOf[CountryCode]
   val EE = "EE".asInstanceOf[CountryCode]
   val EG = "EG".asInstanceOf[CountryCode]
+  val EH = "EH".asInstanceOf[CountryCode]
   val ER = "ER".asInstanceOf[CountryCode]
   val ES = "ES".asInstanceOf[CountryCode]
   val ET = "ET".asInstanceOf[CountryCode]
@@ -92,18 +98,23 @@ object CountryCode {
   val GB = "GB".asInstanceOf[CountryCode]
   val GD = "GD".asInstanceOf[CountryCode]
   val GE = "GE".asInstanceOf[CountryCode]
+  val GF = "GF".asInstanceOf[CountryCode]
+  val GG = "GG".asInstanceOf[CountryCode]
   val GH = "GH".asInstanceOf[CountryCode]
   val GI = "GI".asInstanceOf[CountryCode]
   val GL = "GL".asInstanceOf[CountryCode]
   val GM = "GM".asInstanceOf[CountryCode]
   val GN = "GN".asInstanceOf[CountryCode]
+  val GP = "GP".asInstanceOf[CountryCode]
   val GQ = "GQ".asInstanceOf[CountryCode]
   val GR = "GR".asInstanceOf[CountryCode]
+  val GS = "GS".asInstanceOf[CountryCode]
   val GT = "GT".asInstanceOf[CountryCode]
   val GU = "GU".asInstanceOf[CountryCode]
   val GW = "GW".asInstanceOf[CountryCode]
   val GY = "GY".asInstanceOf[CountryCode]
   val HK = "HK".asInstanceOf[CountryCode]
+  val HM = "HM".asInstanceOf[CountryCode]
   val HN = "HN".asInstanceOf[CountryCode]
   val HR = "HR".asInstanceOf[CountryCode]
   val HT = "HT".asInstanceOf[CountryCode]
@@ -113,10 +124,12 @@ object CountryCode {
   val IL = "IL".asInstanceOf[CountryCode]
   val IM = "IM".asInstanceOf[CountryCode]
   val IN = "IN".asInstanceOf[CountryCode]
+  val IO = "IO".asInstanceOf[CountryCode]
   val IQ = "IQ".asInstanceOf[CountryCode]
   val IR = "IR".asInstanceOf[CountryCode]
   val IS = "IS".asInstanceOf[CountryCode]
   val IT = "IT".asInstanceOf[CountryCode]
+  val JE = "JE".asInstanceOf[CountryCode]
   val JM = "JM".asInstanceOf[CountryCode]
   val JO = "JO".asInstanceOf[CountryCode]
   val JP = "JP".asInstanceOf[CountryCode]
@@ -155,6 +168,7 @@ object CountryCode {
   val MN = "MN".asInstanceOf[CountryCode]
   val MO = "MO".asInstanceOf[CountryCode]
   val MP = "MP".asInstanceOf[CountryCode]
+  val MQ = "MQ".asInstanceOf[CountryCode]
   val MR = "MR".asInstanceOf[CountryCode]
   val MS = "MS".asInstanceOf[CountryCode]
   val MT = "MT".asInstanceOf[CountryCode]
@@ -167,6 +181,7 @@ object CountryCode {
   val NA = "NA".asInstanceOf[CountryCode]
   val NC = "NC".asInstanceOf[CountryCode]
   val NE = "NE".asInstanceOf[CountryCode]
+  val NF = "NF".asInstanceOf[CountryCode]
   val NG = "NG".asInstanceOf[CountryCode]
   val NI = "NI".asInstanceOf[CountryCode]
   val NL = "NL".asInstanceOf[CountryCode]
@@ -186,10 +201,12 @@ object CountryCode {
   val PM = "PM".asInstanceOf[CountryCode]
   val PN = "PN".asInstanceOf[CountryCode]
   val PR = "PR".asInstanceOf[CountryCode]
+  val PS = "PS".asInstanceOf[CountryCode]
   val PT = "PT".asInstanceOf[CountryCode]
   val PW = "PW".asInstanceOf[CountryCode]
   val PY = "PY".asInstanceOf[CountryCode]
   val QA = "QA".asInstanceOf[CountryCode]
+  val RE = "RE".asInstanceOf[CountryCode]
   val RO = "RO".asInstanceOf[CountryCode]
   val RS = "RS".asInstanceOf[CountryCode]
   val RU = "RU".asInstanceOf[CountryCode]
@@ -202,18 +219,22 @@ object CountryCode {
   val SG = "SG".asInstanceOf[CountryCode]
   val SH = "SH".asInstanceOf[CountryCode]
   val SI = "SI".asInstanceOf[CountryCode]
+  val SJ = "SJ".asInstanceOf[CountryCode]
   val SK = "SK".asInstanceOf[CountryCode]
   val SL = "SL".asInstanceOf[CountryCode]
   val SM = "SM".asInstanceOf[CountryCode]
   val SN = "SN".asInstanceOf[CountryCode]
   val SO = "SO".asInstanceOf[CountryCode]
   val SR = "SR".asInstanceOf[CountryCode]
+  val SS = "SS".asInstanceOf[CountryCode]
   val ST = "ST".asInstanceOf[CountryCode]
   val SV = "SV".asInstanceOf[CountryCode]
+  val SX = "SX".asInstanceOf[CountryCode]
   val SY = "SY".asInstanceOf[CountryCode]
   val SZ = "SZ".asInstanceOf[CountryCode]
   val TC = "TC".asInstanceOf[CountryCode]
   val TD = "TD".asInstanceOf[CountryCode]
+  val TF = "TF".asInstanceOf[CountryCode]
   val TG = "TG".asInstanceOf[CountryCode]
   val TH = "TH".asInstanceOf[CountryCode]
   val TJ = "TJ".asInstanceOf[CountryCode]
@@ -222,6 +243,7 @@ object CountryCode {
   val TM = "TM".asInstanceOf[CountryCode]
   val TN = "TN".asInstanceOf[CountryCode]
   val TO = "TO".asInstanceOf[CountryCode]
+  val TP = "TP".asInstanceOf[CountryCode]
   val TR = "TR".asInstanceOf[CountryCode]
   val TT = "TT".asInstanceOf[CountryCode]
   val TV = "TV".asInstanceOf[CountryCode]
@@ -248,6 +270,7 @@ object CountryCode {
   val ZW = "ZW".asInstanceOf[CountryCode]
 
   @inline def values: js.Array[CountryCode] = js.Array(
+    AC,
     AD,
     AE,
     AF,
@@ -263,6 +286,7 @@ object CountryCode {
     AT,
     AU,
     AW,
+    AX,
     AZ,
     BA,
     BB,
@@ -277,9 +301,11 @@ object CountryCode {
     BM,
     BN,
     BO,
+    BQ,
     BR,
     BS,
     BT,
+    BV,
     BW,
     BY,
     BZ,
@@ -298,6 +324,7 @@ object CountryCode {
     CR,
     CU,
     CV,
+    CW,
     CX,
     CY,
     CZ,
@@ -310,6 +337,7 @@ object CountryCode {
     EC,
     EE,
     EG,
+    EH,
     ER,
     ES,
     ET,
@@ -323,18 +351,23 @@ object CountryCode {
     GB,
     GD,
     GE,
+    GF,
+    GG,
     GH,
     GI,
     GL,
     GM,
     GN,
+    GP,
     GQ,
     GR,
+    GS,
     GT,
     GU,
     GW,
     GY,
     HK,
+    HM,
     HN,
     HR,
     HT,
@@ -344,10 +377,12 @@ object CountryCode {
     IL,
     IM,
     IN,
+    IO,
     IQ,
     IR,
     IS,
     IT,
+    JE,
     JM,
     JO,
     JP,
@@ -386,6 +421,7 @@ object CountryCode {
     MN,
     MO,
     MP,
+    MQ,
     MR,
     MS,
     MT,
@@ -398,6 +434,7 @@ object CountryCode {
     NA,
     NC,
     NE,
+    NF,
     NG,
     NI,
     NL,
@@ -417,10 +454,12 @@ object CountryCode {
     PM,
     PN,
     PR,
+    PS,
     PT,
     PW,
     PY,
     QA,
+    RE,
     RO,
     RS,
     RU,
@@ -433,18 +472,22 @@ object CountryCode {
     SG,
     SH,
     SI,
+    SJ,
     SK,
     SL,
     SM,
     SN,
     SO,
     SR,
+    SS,
     ST,
     SV,
+    SX,
     SY,
     SZ,
     TC,
     TD,
+    TF,
     TG,
     TH,
     TJ,
@@ -453,6 +496,7 @@ object CountryCode {
     TM,
     TN,
     TO,
+    TP,
     TR,
     TT,
     TV,
@@ -527,6 +571,7 @@ object ExtraParamName {
   val VAT_NUMBER = "VAT_NUMBER".asInstanceOf[ExtraParamName]
   val UK_CONTACT_TYPE = "UK_CONTACT_TYPE".asInstanceOf[ExtraParamName]
   val UK_COMPANY_NUMBER = "UK_COMPANY_NUMBER".asInstanceOf[ExtraParamName]
+  val EU_COUNTRY_OF_CITIZENSHIP = "EU_COUNTRY_OF_CITIZENSHIP".asInstanceOf[ExtraParamName]
 
   @inline def values: js.Array[ExtraParamName] = js.Array(
     DUNS_NUMBER,
@@ -557,8 +602,18 @@ object ExtraParamName {
     SG_ID_NUMBER,
     VAT_NUMBER,
     UK_CONTACT_TYPE,
-    UK_COMPANY_NUMBER
+    UK_COMPANY_NUMBER,
+    EU_COUNTRY_OF_CITIZENSHIP
   )
+}
+
+@js.native
+sealed trait ListDomainsAttributeName extends js.Any
+object ListDomainsAttributeName {
+  val DomainName = "DomainName".asInstanceOf[ListDomainsAttributeName]
+  val Expiry = "Expiry".asInstanceOf[ListDomainsAttributeName]
+
+  @inline def values: js.Array[ListDomainsAttributeName] = js.Array(DomainName, Expiry)
 }
 
 @js.native
@@ -618,6 +673,16 @@ object OperationType {
 }
 
 @js.native
+sealed trait Operator extends js.Any
+object Operator {
+  val LE = "LE".asInstanceOf[Operator]
+  val GE = "GE".asInstanceOf[Operator]
+  val BEGINS_WITH = "BEGINS_WITH".asInstanceOf[Operator]
+
+  @inline def values: js.Array[Operator] = js.Array(LE, GE, BEGINS_WITH)
+}
+
+@js.native
 sealed trait ReachabilityStatus extends js.Any
 object ReachabilityStatus {
   val PENDING = "PENDING".asInstanceOf[ReachabilityStatus]
@@ -625,6 +690,15 @@ object ReachabilityStatus {
   val EXPIRED = "EXPIRED".asInstanceOf[ReachabilityStatus]
 
   @inline def values: js.Array[ReachabilityStatus] = js.Array(PENDING, DONE, EXPIRED)
+}
+
+@js.native
+sealed trait SortOrder extends js.Any
+object SortOrder {
+  val ASC = "ASC".asInstanceOf[SortOrder]
+  val DESC = "DESC".asInstanceOf[SortOrder]
+
+  @inline def values: js.Array[SortOrder] = js.Array(ASC, DESC)
 }
 
 /** Whether the domain name can be transferred to Route 53.

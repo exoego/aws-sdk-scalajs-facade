@@ -14,6 +14,7 @@ package object licensemanager {
   type BoxBoolean = Boolean
   type BoxInteger = Int
   type BoxLong = Double
+  type ClientRequestToken = String
   type ClientToken = String
   type ConsumedLicenseSummaryList = js.Array[ConsumedLicenseSummary]
   type DateTime = js.Date
@@ -28,11 +29,12 @@ package object licensemanager {
   type GrantList = js.Array[Grant]
   type GrantedLicenseList = js.Array[GrantedLicense]
   type ISO8601DateTime = String
-  type IdempotencyToken = String
   type InventoryFilterList = js.Array[InventoryFilter]
   type LicenseConfigurationAssociations = js.Array[LicenseConfigurationAssociation]
   type LicenseConfigurationUsageList = js.Array[LicenseConfigurationUsage]
   type LicenseConfigurations = js.Array[LicenseConfiguration]
+  type LicenseConversionTaskId = String
+  type LicenseConversionTasks = js.Array[LicenseConversionTask]
   type LicenseList = js.Array[License]
   type LicenseOperationFailureList = js.Array[LicenseOperationFailure]
   type LicenseSpecifications = js.Array[LicenseSpecification]
@@ -43,13 +45,18 @@ package object licensemanager {
   type PrincipalArnList = js.Array[Arn]
   type ProductInformationFilterList = js.Array[ProductInformationFilter]
   type ProductInformationList = js.Array[ProductInformation]
+  type ReportGeneratorList = js.Array[ReportGenerator]
+  type ReportGeneratorName = String
+  type ReportTypeList = js.Array[ReportType]
   type ResourceInventoryList = js.Array[ResourceInventory]
   type SignedToken = String
+  type StatusReasonMessage = String
   type StringList = js.Array[String]
   type TagKeyList = js.Array[String]
   type TagList = js.Array[Tag]
   type TokenList = js.Array[TokenData]
   type TokenString = String
+  type UsageOperation = String
 
   final class LicenseManagerOps(private val service: LicenseManager) extends AnyVal {
 
@@ -60,24 +67,31 @@ package object licensemanager {
     @inline def createGrantFuture(params: CreateGrantRequest): Future[CreateGrantResponse] = service.createGrant(params).promise().toFuture
     @inline def createGrantVersionFuture(params: CreateGrantVersionRequest): Future[CreateGrantVersionResponse] = service.createGrantVersion(params).promise().toFuture
     @inline def createLicenseConfigurationFuture(params: CreateLicenseConfigurationRequest): Future[CreateLicenseConfigurationResponse] = service.createLicenseConfiguration(params).promise().toFuture
+    @inline def createLicenseConversionTaskForResourceFuture(params: CreateLicenseConversionTaskForResourceRequest): Future[CreateLicenseConversionTaskForResourceResponse] = service.createLicenseConversionTaskForResource(params).promise().toFuture
     @inline def createLicenseFuture(params: CreateLicenseRequest): Future[CreateLicenseResponse] = service.createLicense(params).promise().toFuture
+    @inline def createLicenseManagerReportGeneratorFuture(params: CreateLicenseManagerReportGeneratorRequest): Future[CreateLicenseManagerReportGeneratorResponse] = service.createLicenseManagerReportGenerator(params).promise().toFuture
     @inline def createLicenseVersionFuture(params: CreateLicenseVersionRequest): Future[CreateLicenseVersionResponse] = service.createLicenseVersion(params).promise().toFuture
     @inline def createTokenFuture(params: CreateTokenRequest): Future[CreateTokenResponse] = service.createToken(params).promise().toFuture
     @inline def deleteGrantFuture(params: DeleteGrantRequest): Future[DeleteGrantResponse] = service.deleteGrant(params).promise().toFuture
     @inline def deleteLicenseConfigurationFuture(params: DeleteLicenseConfigurationRequest): Future[DeleteLicenseConfigurationResponse] = service.deleteLicenseConfiguration(params).promise().toFuture
     @inline def deleteLicenseFuture(params: DeleteLicenseRequest): Future[DeleteLicenseResponse] = service.deleteLicense(params).promise().toFuture
+    @inline def deleteLicenseManagerReportGeneratorFuture(params: DeleteLicenseManagerReportGeneratorRequest): Future[DeleteLicenseManagerReportGeneratorResponse] = service.deleteLicenseManagerReportGenerator(params).promise().toFuture
     @inline def deleteTokenFuture(params: DeleteTokenRequest): Future[DeleteTokenResponse] = service.deleteToken(params).promise().toFuture
     @inline def extendLicenseConsumptionFuture(params: ExtendLicenseConsumptionRequest): Future[ExtendLicenseConsumptionResponse] = service.extendLicenseConsumption(params).promise().toFuture
     @inline def getAccessTokenFuture(params: GetAccessTokenRequest): Future[GetAccessTokenResponse] = service.getAccessToken(params).promise().toFuture
     @inline def getGrantFuture(params: GetGrantRequest): Future[GetGrantResponse] = service.getGrant(params).promise().toFuture
     @inline def getLicenseConfigurationFuture(params: GetLicenseConfigurationRequest): Future[GetLicenseConfigurationResponse] = service.getLicenseConfiguration(params).promise().toFuture
+    @inline def getLicenseConversionTaskFuture(params: GetLicenseConversionTaskRequest): Future[GetLicenseConversionTaskResponse] = service.getLicenseConversionTask(params).promise().toFuture
     @inline def getLicenseFuture(params: GetLicenseRequest): Future[GetLicenseResponse] = service.getLicense(params).promise().toFuture
+    @inline def getLicenseManagerReportGeneratorFuture(params: GetLicenseManagerReportGeneratorRequest): Future[GetLicenseManagerReportGeneratorResponse] = service.getLicenseManagerReportGenerator(params).promise().toFuture
     @inline def getLicenseUsageFuture(params: GetLicenseUsageRequest): Future[GetLicenseUsageResponse] = service.getLicenseUsage(params).promise().toFuture
     @inline def getServiceSettingsFuture(params: GetServiceSettingsRequest): Future[GetServiceSettingsResponse] = service.getServiceSettings(params).promise().toFuture
     @inline def listAssociationsForLicenseConfigurationFuture(params: ListAssociationsForLicenseConfigurationRequest): Future[ListAssociationsForLicenseConfigurationResponse] = service.listAssociationsForLicenseConfiguration(params).promise().toFuture
     @inline def listDistributedGrantsFuture(params: ListDistributedGrantsRequest): Future[ListDistributedGrantsResponse] = service.listDistributedGrants(params).promise().toFuture
     @inline def listFailuresForLicenseConfigurationOperationsFuture(params: ListFailuresForLicenseConfigurationOperationsRequest): Future[ListFailuresForLicenseConfigurationOperationsResponse] = service.listFailuresForLicenseConfigurationOperations(params).promise().toFuture
     @inline def listLicenseConfigurationsFuture(params: ListLicenseConfigurationsRequest): Future[ListLicenseConfigurationsResponse] = service.listLicenseConfigurations(params).promise().toFuture
+    @inline def listLicenseConversionTasksFuture(params: ListLicenseConversionTasksRequest): Future[ListLicenseConversionTasksResponse] = service.listLicenseConversionTasks(params).promise().toFuture
+    @inline def listLicenseManagerReportGeneratorsFuture(params: ListLicenseManagerReportGeneratorsRequest): Future[ListLicenseManagerReportGeneratorsResponse] = service.listLicenseManagerReportGenerators(params).promise().toFuture
     @inline def listLicenseSpecificationsForResourceFuture(params: ListLicenseSpecificationsForResourceRequest): Future[ListLicenseSpecificationsForResourceResponse] = service.listLicenseSpecificationsForResource(params).promise().toFuture
     @inline def listLicenseVersionsFuture(params: ListLicenseVersionsRequest): Future[ListLicenseVersionsResponse] = service.listLicenseVersions(params).promise().toFuture
     @inline def listLicensesFuture(params: ListLicensesRequest): Future[ListLicensesResponse] = service.listLicenses(params).promise().toFuture
@@ -91,6 +105,7 @@ package object licensemanager {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateLicenseConfigurationFuture(params: UpdateLicenseConfigurationRequest): Future[UpdateLicenseConfigurationResponse] = service.updateLicenseConfiguration(params).promise().toFuture
+    @inline def updateLicenseManagerReportGeneratorFuture(params: UpdateLicenseManagerReportGeneratorRequest): Future[UpdateLicenseManagerReportGeneratorResponse] = service.updateLicenseManagerReportGenerator(params).promise().toFuture
     @inline def updateLicenseSpecificationsForResourceFuture(params: UpdateLicenseSpecificationsForResourceRequest): Future[UpdateLicenseSpecificationsForResourceResponse] = service.updateLicenseSpecificationsForResource(params).promise().toFuture
     @inline def updateServiceSettingsFuture(params: UpdateServiceSettingsRequest): Future[UpdateServiceSettingsResponse] = service.updateServiceSettings(params).promise().toFuture
 
@@ -109,23 +124,30 @@ package object licensemanager {
     def createGrantVersion(params: CreateGrantVersionRequest): Request[CreateGrantVersionResponse] = js.native
     def createLicense(params: CreateLicenseRequest): Request[CreateLicenseResponse] = js.native
     def createLicenseConfiguration(params: CreateLicenseConfigurationRequest): Request[CreateLicenseConfigurationResponse] = js.native
+    def createLicenseConversionTaskForResource(params: CreateLicenseConversionTaskForResourceRequest): Request[CreateLicenseConversionTaskForResourceResponse] = js.native
+    def createLicenseManagerReportGenerator(params: CreateLicenseManagerReportGeneratorRequest): Request[CreateLicenseManagerReportGeneratorResponse] = js.native
     def createLicenseVersion(params: CreateLicenseVersionRequest): Request[CreateLicenseVersionResponse] = js.native
     def createToken(params: CreateTokenRequest): Request[CreateTokenResponse] = js.native
     def deleteGrant(params: DeleteGrantRequest): Request[DeleteGrantResponse] = js.native
     def deleteLicense(params: DeleteLicenseRequest): Request[DeleteLicenseResponse] = js.native
     def deleteLicenseConfiguration(params: DeleteLicenseConfigurationRequest): Request[DeleteLicenseConfigurationResponse] = js.native
+    def deleteLicenseManagerReportGenerator(params: DeleteLicenseManagerReportGeneratorRequest): Request[DeleteLicenseManagerReportGeneratorResponse] = js.native
     def deleteToken(params: DeleteTokenRequest): Request[DeleteTokenResponse] = js.native
     def extendLicenseConsumption(params: ExtendLicenseConsumptionRequest): Request[ExtendLicenseConsumptionResponse] = js.native
     def getAccessToken(params: GetAccessTokenRequest): Request[GetAccessTokenResponse] = js.native
     def getGrant(params: GetGrantRequest): Request[GetGrantResponse] = js.native
     def getLicense(params: GetLicenseRequest): Request[GetLicenseResponse] = js.native
     def getLicenseConfiguration(params: GetLicenseConfigurationRequest): Request[GetLicenseConfigurationResponse] = js.native
+    def getLicenseConversionTask(params: GetLicenseConversionTaskRequest): Request[GetLicenseConversionTaskResponse] = js.native
+    def getLicenseManagerReportGenerator(params: GetLicenseManagerReportGeneratorRequest): Request[GetLicenseManagerReportGeneratorResponse] = js.native
     def getLicenseUsage(params: GetLicenseUsageRequest): Request[GetLicenseUsageResponse] = js.native
     def getServiceSettings(params: GetServiceSettingsRequest): Request[GetServiceSettingsResponse] = js.native
     def listAssociationsForLicenseConfiguration(params: ListAssociationsForLicenseConfigurationRequest): Request[ListAssociationsForLicenseConfigurationResponse] = js.native
     def listDistributedGrants(params: ListDistributedGrantsRequest): Request[ListDistributedGrantsResponse] = js.native
     def listFailuresForLicenseConfigurationOperations(params: ListFailuresForLicenseConfigurationOperationsRequest): Request[ListFailuresForLicenseConfigurationOperationsResponse] = js.native
     def listLicenseConfigurations(params: ListLicenseConfigurationsRequest): Request[ListLicenseConfigurationsResponse] = js.native
+    def listLicenseConversionTasks(params: ListLicenseConversionTasksRequest): Request[ListLicenseConversionTasksResponse] = js.native
+    def listLicenseManagerReportGenerators(params: ListLicenseManagerReportGeneratorsRequest): Request[ListLicenseManagerReportGeneratorsResponse] = js.native
     def listLicenseSpecificationsForResource(params: ListLicenseSpecificationsForResourceRequest): Request[ListLicenseSpecificationsForResourceResponse] = js.native
     def listLicenseVersions(params: ListLicenseVersionsRequest): Request[ListLicenseVersionsResponse] = js.native
     def listLicenses(params: ListLicensesRequest): Request[ListLicensesResponse] = js.native
@@ -139,6 +161,7 @@ package object licensemanager {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateLicenseConfiguration(params: UpdateLicenseConfigurationRequest): Request[UpdateLicenseConfigurationResponse] = js.native
+    def updateLicenseManagerReportGenerator(params: UpdateLicenseManagerReportGeneratorRequest): Request[UpdateLicenseManagerReportGeneratorResponse] = js.native
     def updateLicenseSpecificationsForResource(params: UpdateLicenseSpecificationsForResourceRequest): Request[UpdateLicenseSpecificationsForResourceResponse] = js.native
     def updateServiceSettings(params: UpdateServiceSettingsRequest): Request[UpdateServiceSettingsResponse] = js.native
   }
@@ -371,6 +394,7 @@ package object licensemanager {
     var EntitlementsAllowed: js.UndefOr[EntitlementDataList]
     var Expiration: js.UndefOr[ISO8601DateTime]
     var IssuedAt: js.UndefOr[ISO8601DateTime]
+    var LicenseArn: js.UndefOr[String]
     var LicenseConsumptionToken: js.UndefOr[String]
     var NodeId: js.UndefOr[String]
     var SignedToken: js.UndefOr[SignedToken]
@@ -383,6 +407,7 @@ package object licensemanager {
         EntitlementsAllowed: js.UndefOr[EntitlementDataList] = js.undefined,
         Expiration: js.UndefOr[ISO8601DateTime] = js.undefined,
         IssuedAt: js.UndefOr[ISO8601DateTime] = js.undefined,
+        LicenseArn: js.UndefOr[String] = js.undefined,
         LicenseConsumptionToken: js.UndefOr[String] = js.undefined,
         NodeId: js.UndefOr[String] = js.undefined,
         SignedToken: js.UndefOr[SignedToken] = js.undefined
@@ -392,6 +417,7 @@ package object licensemanager {
       EntitlementsAllowed.foreach(__v => __obj.updateDynamic("EntitlementsAllowed")(__v.asInstanceOf[js.Any]))
       Expiration.foreach(__v => __obj.updateDynamic("Expiration")(__v.asInstanceOf[js.Any]))
       IssuedAt.foreach(__v => __obj.updateDynamic("IssuedAt")(__v.asInstanceOf[js.Any]))
+      LicenseArn.foreach(__v => __obj.updateDynamic("LicenseArn")(__v.asInstanceOf[js.Any]))
       LicenseConsumptionToken.foreach(__v => __obj.updateDynamic("LicenseConsumptionToken")(__v.asInstanceOf[js.Any]))
       NodeId.foreach(__v => __obj.updateDynamic("NodeId")(__v.asInstanceOf[js.Any]))
       SignedToken.foreach(__v => __obj.updateDynamic("SignedToken")(__v.asInstanceOf[js.Any]))
@@ -447,7 +473,7 @@ package object licensemanager {
   @js.native
   trait CreateGrantRequest extends js.Object {
     var AllowedOperations: AllowedOperationList
-    var ClientToken: String
+    var ClientToken: ClientToken
     var GrantName: String
     var HomeRegion: String
     var LicenseArn: Arn
@@ -458,7 +484,7 @@ package object licensemanager {
     @inline
     def apply(
         AllowedOperations: AllowedOperationList,
-        ClientToken: String,
+        ClientToken: ClientToken,
         GrantName: String,
         HomeRegion: String,
         LicenseArn: Arn,
@@ -500,23 +526,25 @@ package object licensemanager {
 
   @js.native
   trait CreateGrantVersionRequest extends js.Object {
-    var ClientToken: String
+    var ClientToken: ClientToken
     var GrantArn: Arn
     var AllowedOperations: js.UndefOr[AllowedOperationList]
     var GrantName: js.UndefOr[String]
     var SourceVersion: js.UndefOr[String]
     var Status: js.UndefOr[GrantStatus]
+    var StatusReason: js.UndefOr[StatusReasonMessage]
   }
 
   object CreateGrantVersionRequest {
     @inline
     def apply(
-        ClientToken: String,
+        ClientToken: ClientToken,
         GrantArn: Arn,
         AllowedOperations: js.UndefOr[AllowedOperationList] = js.undefined,
         GrantName: js.UndefOr[String] = js.undefined,
         SourceVersion: js.UndefOr[String] = js.undefined,
-        Status: js.UndefOr[GrantStatus] = js.undefined
+        Status: js.UndefOr[GrantStatus] = js.undefined,
+        StatusReason: js.UndefOr[StatusReasonMessage] = js.undefined
     ): CreateGrantVersionRequest = {
       val __obj = js.Dynamic.literal(
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
@@ -527,6 +555,7 @@ package object licensemanager {
       GrantName.foreach(__v => __obj.updateDynamic("GrantName")(__v.asInstanceOf[js.Any]))
       SourceVersion.foreach(__v => __obj.updateDynamic("SourceVersion")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGrantVersionRequest]
     }
   }
@@ -612,9 +641,100 @@ package object licensemanager {
   }
 
   @js.native
+  trait CreateLicenseConversionTaskForResourceRequest extends js.Object {
+    var DestinationLicenseContext: LicenseConversionContext
+    var ResourceArn: Arn
+    var SourceLicenseContext: LicenseConversionContext
+  }
+
+  object CreateLicenseConversionTaskForResourceRequest {
+    @inline
+    def apply(
+        DestinationLicenseContext: LicenseConversionContext,
+        ResourceArn: Arn,
+        SourceLicenseContext: LicenseConversionContext
+    ): CreateLicenseConversionTaskForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "DestinationLicenseContext" -> DestinationLicenseContext.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "SourceLicenseContext" -> SourceLicenseContext.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateLicenseConversionTaskForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLicenseConversionTaskForResourceResponse extends js.Object {
+    var LicenseConversionTaskId: js.UndefOr[LicenseConversionTaskId]
+  }
+
+  object CreateLicenseConversionTaskForResourceResponse {
+    @inline
+    def apply(
+        LicenseConversionTaskId: js.UndefOr[LicenseConversionTaskId] = js.undefined
+    ): CreateLicenseConversionTaskForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      LicenseConversionTaskId.foreach(__v => __obj.updateDynamic("LicenseConversionTaskId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLicenseConversionTaskForResourceResponse]
+    }
+  }
+
+  @js.native
+  trait CreateLicenseManagerReportGeneratorRequest extends js.Object {
+    var ClientToken: ClientRequestToken
+    var ReportContext: ReportContext
+    var ReportFrequency: ReportFrequency
+    var ReportGeneratorName: ReportGeneratorName
+    var Type: ReportTypeList
+    var Description: js.UndefOr[String]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateLicenseManagerReportGeneratorRequest {
+    @inline
+    def apply(
+        ClientToken: ClientRequestToken,
+        ReportContext: ReportContext,
+        ReportFrequency: ReportFrequency,
+        ReportGeneratorName: ReportGeneratorName,
+        Type: ReportTypeList,
+        Description: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateLicenseManagerReportGeneratorRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "ReportContext" -> ReportContext.asInstanceOf[js.Any],
+        "ReportFrequency" -> ReportFrequency.asInstanceOf[js.Any],
+        "ReportGeneratorName" -> ReportGeneratorName.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLicenseManagerReportGeneratorRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLicenseManagerReportGeneratorResponse extends js.Object {
+    var LicenseManagerReportGeneratorArn: js.UndefOr[String]
+  }
+
+  object CreateLicenseManagerReportGeneratorResponse {
+    @inline
+    def apply(
+        LicenseManagerReportGeneratorArn: js.UndefOr[String] = js.undefined
+    ): CreateLicenseManagerReportGeneratorResponse = {
+      val __obj = js.Dynamic.literal()
+      LicenseManagerReportGeneratorArn.foreach(__v => __obj.updateDynamic("LicenseManagerReportGeneratorArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLicenseManagerReportGeneratorResponse]
+    }
+  }
+
+  @js.native
   trait CreateLicenseRequest extends js.Object {
     var Beneficiary: String
-    var ClientToken: String
+    var ClientToken: ClientToken
     var ConsumptionConfiguration: ConsumptionConfiguration
     var Entitlements: EntitlementList
     var HomeRegion: String
@@ -630,7 +750,7 @@ package object licensemanager {
     @inline
     def apply(
         Beneficiary: String,
-        ClientToken: String,
+        ClientToken: ClientToken,
         ConsumptionConfiguration: ConsumptionConfiguration,
         Entitlements: EntitlementList,
         HomeRegion: String,
@@ -683,7 +803,7 @@ package object licensemanager {
 
   @js.native
   trait CreateLicenseVersionRequest extends js.Object {
-    var ClientToken: String
+    var ClientToken: ClientToken
     var ConsumptionConfiguration: ConsumptionConfiguration
     var Entitlements: EntitlementList
     var HomeRegion: String
@@ -700,7 +820,7 @@ package object licensemanager {
   object CreateLicenseVersionRequest {
     @inline
     def apply(
-        ClientToken: String,
+        ClientToken: ClientToken,
         ConsumptionConfiguration: ConsumptionConfiguration,
         Entitlements: EntitlementList,
         HomeRegion: String,
@@ -756,7 +876,7 @@ package object licensemanager {
 
   @js.native
   trait CreateTokenRequest extends js.Object {
-    var ClientToken: IdempotencyToken
+    var ClientToken: ClientToken
     var LicenseArn: Arn
     var ExpirationInDays: js.UndefOr[Int]
     var RoleArns: js.UndefOr[ArnList]
@@ -766,7 +886,7 @@ package object licensemanager {
   object CreateTokenRequest {
     @inline
     def apply(
-        ClientToken: IdempotencyToken,
+        ClientToken: ClientToken,
         LicenseArn: Arn,
         ExpirationInDays: js.UndefOr[Int] = js.undefined,
         RoleArns: js.UndefOr[ArnList] = js.undefined,
@@ -833,18 +953,22 @@ package object licensemanager {
   trait DeleteGrantRequest extends js.Object {
     var GrantArn: Arn
     var Version: String
+    var StatusReason: js.UndefOr[StatusReasonMessage]
   }
 
   object DeleteGrantRequest {
     @inline
     def apply(
         GrantArn: Arn,
-        Version: String
+        Version: String,
+        StatusReason: js.UndefOr[StatusReasonMessage] = js.undefined
     ): DeleteGrantRequest = {
       val __obj = js.Dynamic.literal(
         "GrantArn" -> GrantArn.asInstanceOf[js.Any],
         "Version" -> Version.asInstanceOf[js.Any]
       )
+
+      StatusReason.foreach(__v => __obj.updateDynamic("StatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteGrantRequest]
     }
   }
@@ -896,6 +1020,34 @@ package object licensemanager {
     def apply(): DeleteLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLicenseConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteLicenseManagerReportGeneratorRequest extends js.Object {
+    var LicenseManagerReportGeneratorArn: String
+  }
+
+  object DeleteLicenseManagerReportGeneratorRequest {
+    @inline
+    def apply(
+        LicenseManagerReportGeneratorArn: String
+    ): DeleteLicenseManagerReportGeneratorRequest = {
+      val __obj = js.Dynamic.literal(
+        "LicenseManagerReportGeneratorArn" -> LicenseManagerReportGeneratorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteLicenseManagerReportGeneratorRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteLicenseManagerReportGeneratorResponse extends js.Object
+
+  object DeleteLicenseManagerReportGeneratorResponse {
+    @inline
+    def apply(): DeleteLicenseManagerReportGeneratorResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteLicenseManagerReportGeneratorResponse]
     }
   }
 
@@ -1273,6 +1425,96 @@ package object licensemanager {
   }
 
   @js.native
+  trait GetLicenseConversionTaskRequest extends js.Object {
+    var LicenseConversionTaskId: LicenseConversionTaskId
+  }
+
+  object GetLicenseConversionTaskRequest {
+    @inline
+    def apply(
+        LicenseConversionTaskId: LicenseConversionTaskId
+    ): GetLicenseConversionTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "LicenseConversionTaskId" -> LicenseConversionTaskId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetLicenseConversionTaskRequest]
+    }
+  }
+
+  @js.native
+  trait GetLicenseConversionTaskResponse extends js.Object {
+    var DestinationLicenseContext: js.UndefOr[LicenseConversionContext]
+    var EndTime: js.UndefOr[DateTime]
+    var LicenseConversionTaskId: js.UndefOr[LicenseConversionTaskId]
+    var LicenseConversionTime: js.UndefOr[DateTime]
+    var ResourceArn: js.UndefOr[String]
+    var SourceLicenseContext: js.UndefOr[LicenseConversionContext]
+    var StartTime: js.UndefOr[DateTime]
+    var Status: js.UndefOr[LicenseConversionTaskStatus]
+    var StatusMessage: js.UndefOr[String]
+  }
+
+  object GetLicenseConversionTaskResponse {
+    @inline
+    def apply(
+        DestinationLicenseContext: js.UndefOr[LicenseConversionContext] = js.undefined,
+        EndTime: js.UndefOr[DateTime] = js.undefined,
+        LicenseConversionTaskId: js.UndefOr[LicenseConversionTaskId] = js.undefined,
+        LicenseConversionTime: js.UndefOr[DateTime] = js.undefined,
+        ResourceArn: js.UndefOr[String] = js.undefined,
+        SourceLicenseContext: js.UndefOr[LicenseConversionContext] = js.undefined,
+        StartTime: js.UndefOr[DateTime] = js.undefined,
+        Status: js.UndefOr[LicenseConversionTaskStatus] = js.undefined,
+        StatusMessage: js.UndefOr[String] = js.undefined
+    ): GetLicenseConversionTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      DestinationLicenseContext.foreach(__v => __obj.updateDynamic("DestinationLicenseContext")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      LicenseConversionTaskId.foreach(__v => __obj.updateDynamic("LicenseConversionTaskId")(__v.asInstanceOf[js.Any]))
+      LicenseConversionTime.foreach(__v => __obj.updateDynamic("LicenseConversionTime")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      SourceLicenseContext.foreach(__v => __obj.updateDynamic("SourceLicenseContext")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLicenseConversionTaskResponse]
+    }
+  }
+
+  @js.native
+  trait GetLicenseManagerReportGeneratorRequest extends js.Object {
+    var LicenseManagerReportGeneratorArn: String
+  }
+
+  object GetLicenseManagerReportGeneratorRequest {
+    @inline
+    def apply(
+        LicenseManagerReportGeneratorArn: String
+    ): GetLicenseManagerReportGeneratorRequest = {
+      val __obj = js.Dynamic.literal(
+        "LicenseManagerReportGeneratorArn" -> LicenseManagerReportGeneratorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetLicenseManagerReportGeneratorRequest]
+    }
+  }
+
+  @js.native
+  trait GetLicenseManagerReportGeneratorResponse extends js.Object {
+    var ReportGenerator: js.UndefOr[ReportGenerator]
+  }
+
+  object GetLicenseManagerReportGeneratorResponse {
+    @inline
+    def apply(
+        ReportGenerator: js.UndefOr[ReportGenerator] = js.undefined
+    ): GetLicenseManagerReportGeneratorResponse = {
+      val __obj = js.Dynamic.literal()
+      ReportGenerator.foreach(__v => __obj.updateDynamic("ReportGenerator")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLicenseManagerReportGeneratorResponse]
+    }
+  }
+
+  @js.native
   trait GetLicenseRequest extends js.Object {
     var LicenseArn: Arn
     var Version: js.UndefOr[String]
@@ -1394,7 +1636,7 @@ package object licensemanager {
     var LicenseArn: Arn
     var ParentArn: Arn
     var Version: String
-    var StatusReason: js.UndefOr[String]
+    var StatusReason: js.UndefOr[StatusReasonMessage]
   }
 
   object Grant {
@@ -1409,7 +1651,7 @@ package object licensemanager {
         LicenseArn: Arn,
         ParentArn: Arn,
         Version: String,
-        StatusReason: js.UndefOr[String] = js.undefined
+        StatusReason: js.UndefOr[StatusReasonMessage] = js.undefined
     ): Grant = {
       val __obj = js.Dynamic.literal(
         "GrantArn" -> GrantArn.asInstanceOf[js.Any],
@@ -1561,7 +1803,7 @@ package object licensemanager {
     }
   }
 
-  /** Software license that is managed in AWS License Manager.
+  /** Software license that is managed in License Manager.
     */
   @js.native
   trait License extends js.Object {
@@ -1741,6 +1983,66 @@ package object licensemanager {
       ResourceStatus.foreach(__v => __obj.updateDynamic("ResourceStatus")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LicenseConfigurationUsage]
+    }
+  }
+
+  /** Information about a license type conversion task.
+    */
+  @js.native
+  trait LicenseConversionContext extends js.Object {
+    var UsageOperation: js.UndefOr[UsageOperation]
+  }
+
+  object LicenseConversionContext {
+    @inline
+    def apply(
+        UsageOperation: js.UndefOr[UsageOperation] = js.undefined
+    ): LicenseConversionContext = {
+      val __obj = js.Dynamic.literal()
+      UsageOperation.foreach(__v => __obj.updateDynamic("UsageOperation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LicenseConversionContext]
+    }
+  }
+
+  /** Information about a license type conversion task.
+    */
+  @js.native
+  trait LicenseConversionTask extends js.Object {
+    var DestinationLicenseContext: js.UndefOr[LicenseConversionContext]
+    var EndTime: js.UndefOr[DateTime]
+    var LicenseConversionTaskId: js.UndefOr[LicenseConversionTaskId]
+    var LicenseConversionTime: js.UndefOr[DateTime]
+    var ResourceArn: js.UndefOr[String]
+    var SourceLicenseContext: js.UndefOr[LicenseConversionContext]
+    var StartTime: js.UndefOr[DateTime]
+    var Status: js.UndefOr[LicenseConversionTaskStatus]
+    var StatusMessage: js.UndefOr[String]
+  }
+
+  object LicenseConversionTask {
+    @inline
+    def apply(
+        DestinationLicenseContext: js.UndefOr[LicenseConversionContext] = js.undefined,
+        EndTime: js.UndefOr[DateTime] = js.undefined,
+        LicenseConversionTaskId: js.UndefOr[LicenseConversionTaskId] = js.undefined,
+        LicenseConversionTime: js.UndefOr[DateTime] = js.undefined,
+        ResourceArn: js.UndefOr[String] = js.undefined,
+        SourceLicenseContext: js.UndefOr[LicenseConversionContext] = js.undefined,
+        StartTime: js.UndefOr[DateTime] = js.undefined,
+        Status: js.UndefOr[LicenseConversionTaskStatus] = js.undefined,
+        StatusMessage: js.UndefOr[String] = js.undefined
+    ): LicenseConversionTask = {
+      val __obj = js.Dynamic.literal()
+      DestinationLicenseContext.foreach(__v => __obj.updateDynamic("DestinationLicenseContext")(__v.asInstanceOf[js.Any]))
+      EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
+      LicenseConversionTaskId.foreach(__v => __obj.updateDynamic("LicenseConversionTaskId")(__v.asInstanceOf[js.Any]))
+      LicenseConversionTime.foreach(__v => __obj.updateDynamic("LicenseConversionTime")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      SourceLicenseContext.foreach(__v => __obj.updateDynamic("SourceLicenseContext")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LicenseConversionTask]
     }
   }
 
@@ -1995,6 +2297,88 @@ package object licensemanager {
       LicenseConfigurations.foreach(__v => __obj.updateDynamic("LicenseConfigurations")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLicenseConfigurationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListLicenseConversionTasksRequest extends js.Object {
+    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[BoxInteger]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListLicenseConversionTasksRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[BoxInteger] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListLicenseConversionTasksRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLicenseConversionTasksRequest]
+    }
+  }
+
+  @js.native
+  trait ListLicenseConversionTasksResponse extends js.Object {
+    var LicenseConversionTasks: js.UndefOr[LicenseConversionTasks]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListLicenseConversionTasksResponse {
+    @inline
+    def apply(
+        LicenseConversionTasks: js.UndefOr[LicenseConversionTasks] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListLicenseConversionTasksResponse = {
+      val __obj = js.Dynamic.literal()
+      LicenseConversionTasks.foreach(__v => __obj.updateDynamic("LicenseConversionTasks")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLicenseConversionTasksResponse]
+    }
+  }
+
+  @js.native
+  trait ListLicenseManagerReportGeneratorsRequest extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var MaxResults: js.UndefOr[MaxSize100]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListLicenseManagerReportGeneratorsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        MaxResults: js.UndefOr[MaxSize100] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListLicenseManagerReportGeneratorsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLicenseManagerReportGeneratorsRequest]
+    }
+  }
+
+  @js.native
+  trait ListLicenseManagerReportGeneratorsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var ReportGenerators: js.UndefOr[ReportGeneratorList]
+  }
+
+  object ListLicenseManagerReportGeneratorsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        ReportGenerators: js.UndefOr[ReportGeneratorList] = js.undefined
+    ): ListLicenseManagerReportGeneratorsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ReportGenerators.foreach(__v => __obj.updateDynamic("ReportGenerators")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLicenseManagerReportGeneratorsResponse]
     }
   }
 
@@ -2422,7 +2806,7 @@ package object licensemanager {
     }
   }
 
-  /** Configuration information for AWS Organizations.
+  /** Configuration information for Organizations.
     */
   @js.native
   trait OrganizationConfiguration extends js.Object {
@@ -2514,17 +2898,20 @@ package object licensemanager {
   trait ReceivedMetadata extends js.Object {
     var AllowedOperations: js.UndefOr[AllowedOperationList]
     var ReceivedStatus: js.UndefOr[ReceivedStatus]
+    var ReceivedStatusReason: js.UndefOr[StatusReasonMessage]
   }
 
   object ReceivedMetadata {
     @inline
     def apply(
         AllowedOperations: js.UndefOr[AllowedOperationList] = js.undefined,
-        ReceivedStatus: js.UndefOr[ReceivedStatus] = js.undefined
+        ReceivedStatus: js.UndefOr[ReceivedStatus] = js.undefined,
+        ReceivedStatusReason: js.UndefOr[StatusReasonMessage] = js.undefined
     ): ReceivedMetadata = {
       val __obj = js.Dynamic.literal()
       AllowedOperations.foreach(__v => __obj.updateDynamic("AllowedOperations")(__v.asInstanceOf[js.Any]))
       ReceivedStatus.foreach(__v => __obj.updateDynamic("ReceivedStatus")(__v.asInstanceOf[js.Any]))
+      ReceivedStatusReason.foreach(__v => __obj.updateDynamic("ReceivedStatusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReceivedMetadata]
     }
   }
@@ -2568,6 +2955,100 @@ package object licensemanager {
     }
   }
 
+  /** Details of the license configuration that this generator reports on.
+    */
+  @js.native
+  trait ReportContext extends js.Object {
+    var licenseConfigurationArns: ArnList
+  }
+
+  object ReportContext {
+    @inline
+    def apply(
+        licenseConfigurationArns: ArnList
+    ): ReportContext = {
+      val __obj = js.Dynamic.literal(
+        "licenseConfigurationArns" -> licenseConfigurationArns.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ReportContext]
+    }
+  }
+
+  /** Details about how frequently reports are generated.
+    */
+  @js.native
+  trait ReportFrequency extends js.Object {
+    var period: js.UndefOr[ReportFrequencyType]
+    var value: js.UndefOr[Int]
+  }
+
+  object ReportFrequency {
+    @inline
+    def apply(
+        period: js.UndefOr[ReportFrequencyType] = js.undefined,
+        value: js.UndefOr[Int] = js.undefined
+    ): ReportFrequency = {
+      val __obj = js.Dynamic.literal()
+      period.foreach(__v => __obj.updateDynamic("period")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportFrequency]
+    }
+  }
+
+  /** Describe the details of a report generator.
+    */
+  @js.native
+  trait ReportGenerator extends js.Object {
+    var CreateTime: js.UndefOr[String]
+    var Description: js.UndefOr[String]
+    var LastReportGenerationTime: js.UndefOr[String]
+    var LastRunFailureReason: js.UndefOr[String]
+    var LastRunStatus: js.UndefOr[String]
+    var LicenseManagerReportGeneratorArn: js.UndefOr[String]
+    var ReportContext: js.UndefOr[ReportContext]
+    var ReportCreatorAccount: js.UndefOr[String]
+    var ReportFrequency: js.UndefOr[ReportFrequency]
+    var ReportGeneratorName: js.UndefOr[String]
+    var ReportType: js.UndefOr[ReportTypeList]
+    var S3Location: js.UndefOr[S3Location]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ReportGenerator {
+    @inline
+    def apply(
+        CreateTime: js.UndefOr[String] = js.undefined,
+        Description: js.UndefOr[String] = js.undefined,
+        LastReportGenerationTime: js.UndefOr[String] = js.undefined,
+        LastRunFailureReason: js.UndefOr[String] = js.undefined,
+        LastRunStatus: js.UndefOr[String] = js.undefined,
+        LicenseManagerReportGeneratorArn: js.UndefOr[String] = js.undefined,
+        ReportContext: js.UndefOr[ReportContext] = js.undefined,
+        ReportCreatorAccount: js.UndefOr[String] = js.undefined,
+        ReportFrequency: js.UndefOr[ReportFrequency] = js.undefined,
+        ReportGeneratorName: js.UndefOr[String] = js.undefined,
+        ReportType: js.UndefOr[ReportTypeList] = js.undefined,
+        S3Location: js.UndefOr[S3Location] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ReportGenerator = {
+      val __obj = js.Dynamic.literal()
+      CreateTime.foreach(__v => __obj.updateDynamic("CreateTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastReportGenerationTime.foreach(__v => __obj.updateDynamic("LastReportGenerationTime")(__v.asInstanceOf[js.Any]))
+      LastRunFailureReason.foreach(__v => __obj.updateDynamic("LastRunFailureReason")(__v.asInstanceOf[js.Any]))
+      LastRunStatus.foreach(__v => __obj.updateDynamic("LastRunStatus")(__v.asInstanceOf[js.Any]))
+      LicenseManagerReportGeneratorArn.foreach(__v => __obj.updateDynamic("LicenseManagerReportGeneratorArn")(__v.asInstanceOf[js.Any]))
+      ReportContext.foreach(__v => __obj.updateDynamic("ReportContext")(__v.asInstanceOf[js.Any]))
+      ReportCreatorAccount.foreach(__v => __obj.updateDynamic("ReportCreatorAccount")(__v.asInstanceOf[js.Any]))
+      ReportFrequency.foreach(__v => __obj.updateDynamic("ReportFrequency")(__v.asInstanceOf[js.Any]))
+      ReportGeneratorName.foreach(__v => __obj.updateDynamic("ReportGeneratorName")(__v.asInstanceOf[js.Any]))
+      ReportType.foreach(__v => __obj.updateDynamic("ReportType")(__v.asInstanceOf[js.Any]))
+      S3Location.foreach(__v => __obj.updateDynamic("S3Location")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportGenerator]
+    }
+  }
+
   /** Details about a resource.
     */
   @js.native
@@ -2598,6 +3079,27 @@ package object licensemanager {
       ResourceOwningAccountId.foreach(__v => __obj.updateDynamic("ResourceOwningAccountId")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceInventory]
+    }
+  }
+
+  /** Details of the S3 bucket that report generator reports are published to.
+    */
+  @js.native
+  trait S3Location extends js.Object {
+    var bucket: js.UndefOr[String]
+    var keyPrefix: js.UndefOr[String]
+  }
+
+  object S3Location {
+    @inline
+    def apply(
+        bucket: js.UndefOr[String] = js.undefined,
+        keyPrefix: js.UndefOr[String] = js.undefined
+    ): S3Location = {
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      keyPrefix.foreach(__v => __obj.updateDynamic("keyPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Location]
     }
   }
 
@@ -2770,6 +3272,53 @@ package object licensemanager {
     def apply(): UpdateLicenseConfigurationResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateLicenseConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateLicenseManagerReportGeneratorRequest extends js.Object {
+    var ClientToken: ClientRequestToken
+    var LicenseManagerReportGeneratorArn: String
+    var ReportContext: ReportContext
+    var ReportFrequency: ReportFrequency
+    var ReportGeneratorName: ReportGeneratorName
+    var Type: ReportTypeList
+    var Description: js.UndefOr[String]
+  }
+
+  object UpdateLicenseManagerReportGeneratorRequest {
+    @inline
+    def apply(
+        ClientToken: ClientRequestToken,
+        LicenseManagerReportGeneratorArn: String,
+        ReportContext: ReportContext,
+        ReportFrequency: ReportFrequency,
+        ReportGeneratorName: ReportGeneratorName,
+        Type: ReportTypeList,
+        Description: js.UndefOr[String] = js.undefined
+    ): UpdateLicenseManagerReportGeneratorRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "LicenseManagerReportGeneratorArn" -> LicenseManagerReportGeneratorArn.asInstanceOf[js.Any],
+        "ReportContext" -> ReportContext.asInstanceOf[js.Any],
+        "ReportFrequency" -> ReportFrequency.asInstanceOf[js.Any],
+        "ReportGeneratorName" -> ReportGeneratorName.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateLicenseManagerReportGeneratorRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateLicenseManagerReportGeneratorResponse extends js.Object
+
+  object UpdateLicenseManagerReportGeneratorResponse {
+    @inline
+    def apply(): UpdateLicenseManagerReportGeneratorResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateLicenseManagerReportGeneratorResponse]
     }
   }
 

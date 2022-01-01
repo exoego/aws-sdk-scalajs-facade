@@ -155,6 +155,40 @@ object SettingAttribute {
 }
 
 @js.native
+sealed trait ShareRequestAction extends js.Any
+object ShareRequestAction {
+  val ACCEPT = "ACCEPT".asInstanceOf[ShareRequestAction]
+  val DECLINE = "DECLINE".asInstanceOf[ShareRequestAction]
+  val REVOKE = "REVOKE".asInstanceOf[ShareRequestAction]
+
+  @inline def values: js.Array[ShareRequestAction] = js.Array(ACCEPT, DECLINE, REVOKE)
+}
+
+@js.native
+sealed trait ShareRequestStatus extends js.Any
+object ShareRequestStatus {
+  val ACTIVE = "ACTIVE".asInstanceOf[ShareRequestStatus]
+  val REPLICATING = "REPLICATING".asInstanceOf[ShareRequestStatus]
+  val SHARED = "SHARED".asInstanceOf[ShareRequestStatus]
+  val EXPIRING = "EXPIRING".asInstanceOf[ShareRequestStatus]
+  val FAILED = "FAILED".asInstanceOf[ShareRequestStatus]
+  val EXPIRED = "EXPIRED".asInstanceOf[ShareRequestStatus]
+  val DECLINED = "DECLINED".asInstanceOf[ShareRequestStatus]
+  val REVOKED = "REVOKED".asInstanceOf[ShareRequestStatus]
+
+  @inline def values: js.Array[ShareRequestStatus] = js.Array(ACTIVE, REPLICATING, SHARED, EXPIRING, FAILED, EXPIRED, DECLINED, REVOKED)
+}
+
+@js.native
+sealed trait ShareRequestType extends js.Any
+object ShareRequestType {
+  val SENT = "SENT".asInstanceOf[ShareRequestType]
+  val RECEIVED = "RECEIVED".asInstanceOf[ShareRequestType]
+
+  @inline def values: js.Array[ShareRequestType] = js.Array(SENT, RECEIVED)
+}
+
+@js.native
 sealed trait SourceFrequency extends js.Any
 object SourceFrequency {
   val DAILY = "DAILY".asInstanceOf[SourceFrequency]

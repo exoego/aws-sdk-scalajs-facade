@@ -141,16 +141,20 @@ package object mediapackagevod {
   @js.native
   trait CmafEncryption extends js.Object {
     var SpekeKeyProvider: SpekeKeyProvider
+    var ConstantInitializationVector: js.UndefOr[__string]
   }
 
   object CmafEncryption {
     @inline
     def apply(
-        SpekeKeyProvider: SpekeKeyProvider
+        SpekeKeyProvider: SpekeKeyProvider,
+        ConstantInitializationVector: js.UndefOr[__string] = js.undefined
     ): CmafEncryption = {
       val __obj = js.Dynamic.literal(
         "SpekeKeyProvider" -> SpekeKeyProvider.asInstanceOf[js.Any]
       )
+
+      ConstantInitializationVector.foreach(__v => __obj.updateDynamic("ConstantInitializationVector")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmafEncryption]
     }
   }
@@ -161,6 +165,7 @@ package object mediapackagevod {
   trait CmafPackage extends js.Object {
     var HlsManifests: __listOfHlsManifest
     var Encryption: js.UndefOr[CmafEncryption]
+    var IncludeEncoderConfigurationInSegments: js.UndefOr[__boolean]
     var SegmentDurationSeconds: js.UndefOr[__integer]
   }
 
@@ -169,6 +174,7 @@ package object mediapackagevod {
     def apply(
         HlsManifests: __listOfHlsManifest,
         Encryption: js.UndefOr[CmafEncryption] = js.undefined,
+        IncludeEncoderConfigurationInSegments: js.UndefOr[__boolean] = js.undefined,
         SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined
     ): CmafPackage = {
       val __obj = js.Dynamic.literal(
@@ -176,6 +182,7 @@ package object mediapackagevod {
       )
 
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      IncludeEncoderConfigurationInSegments.foreach(__v => __obj.updateDynamic("IncludeEncoderConfigurationInSegments")(__v.asInstanceOf[js.Any]))
       SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CmafPackage]
     }
@@ -500,6 +507,7 @@ package object mediapackagevod {
   trait DashPackage extends js.Object {
     var DashManifests: __listOfDashManifest
     var Encryption: js.UndefOr[DashEncryption]
+    var IncludeEncoderConfigurationInSegments: js.UndefOr[__boolean]
     var PeriodTriggers: js.UndefOr[__listOf__PeriodTriggersElement]
     var SegmentDurationSeconds: js.UndefOr[__integer]
     var SegmentTemplateFormat: js.UndefOr[SegmentTemplateFormat]
@@ -510,6 +518,7 @@ package object mediapackagevod {
     def apply(
         DashManifests: __listOfDashManifest,
         Encryption: js.UndefOr[DashEncryption] = js.undefined,
+        IncludeEncoderConfigurationInSegments: js.UndefOr[__boolean] = js.undefined,
         PeriodTriggers: js.UndefOr[__listOf__PeriodTriggersElement] = js.undefined,
         SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
         SegmentTemplateFormat: js.UndefOr[SegmentTemplateFormat] = js.undefined
@@ -519,6 +528,7 @@ package object mediapackagevod {
       )
 
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      IncludeEncoderConfigurationInSegments.foreach(__v => __obj.updateDynamic("IncludeEncoderConfigurationInSegments")(__v.asInstanceOf[js.Any]))
       PeriodTriggers.foreach(__v => __obj.updateDynamic("PeriodTriggers")(__v.asInstanceOf[js.Any]))
       SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
       SegmentTemplateFormat.foreach(__v => __obj.updateDynamic("SegmentTemplateFormat")(__v.asInstanceOf[js.Any]))
@@ -792,6 +802,7 @@ package object mediapackagevod {
   @js.native
   trait EgressEndpoint extends js.Object {
     var PackagingConfigurationId: js.UndefOr[__string]
+    var Status: js.UndefOr[__string]
     var Url: js.UndefOr[__string]
   }
 
@@ -799,10 +810,12 @@ package object mediapackagevod {
     @inline
     def apply(
         PackagingConfigurationId: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[__string] = js.undefined,
         Url: js.UndefOr[__string] = js.undefined
     ): EgressEndpoint = {
       val __obj = js.Dynamic.literal()
       PackagingConfigurationId.foreach(__v => __obj.updateDynamic("PackagingConfigurationId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EgressEndpoint]
     }
@@ -873,6 +886,7 @@ package object mediapackagevod {
   trait HlsPackage extends js.Object {
     var HlsManifests: __listOfHlsManifest
     var Encryption: js.UndefOr[HlsEncryption]
+    var IncludeDvbSubtitles: js.UndefOr[__boolean]
     var SegmentDurationSeconds: js.UndefOr[__integer]
     var UseAudioRenditionGroup: js.UndefOr[__boolean]
   }
@@ -882,6 +896,7 @@ package object mediapackagevod {
     def apply(
         HlsManifests: __listOfHlsManifest,
         Encryption: js.UndefOr[HlsEncryption] = js.undefined,
+        IncludeDvbSubtitles: js.UndefOr[__boolean] = js.undefined,
         SegmentDurationSeconds: js.UndefOr[__integer] = js.undefined,
         UseAudioRenditionGroup: js.UndefOr[__boolean] = js.undefined
     ): HlsPackage = {
@@ -890,6 +905,7 @@ package object mediapackagevod {
       )
 
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      IncludeDvbSubtitles.foreach(__v => __obj.updateDynamic("IncludeDvbSubtitles")(__v.asInstanceOf[js.Any]))
       SegmentDurationSeconds.foreach(__v => __obj.updateDynamic("SegmentDurationSeconds")(__v.asInstanceOf[js.Any]))
       UseAudioRenditionGroup.foreach(__v => __obj.updateDynamic("UseAudioRenditionGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HlsPackage]

@@ -42,6 +42,14 @@ object DetectorVersionStatus {
   inline def values: js.Array[DetectorVersionStatus] = js.Array(DRAFT, ACTIVE, INACTIVE)
 }
 
+type EventIngestion = "ENABLED" | "DISABLED"
+object EventIngestion {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[EventIngestion] = js.Array(ENABLED, DISABLED)
+}
+
 type Language = "DETECTORPL"
 object Language {
   inline val DETECTORPL: "DETECTORPL" = "DETECTORPL"
@@ -80,11 +88,12 @@ object ModelSource {
   inline def values: js.Array[ModelSource] = js.Array(SAGEMAKER)
 }
 
-type ModelTypeEnum = "ONLINE_FRAUD_INSIGHTS"
+type ModelTypeEnum = "ONLINE_FRAUD_INSIGHTS" | "TRANSACTION_FRAUD_INSIGHTS"
 object ModelTypeEnum {
   inline val ONLINE_FRAUD_INSIGHTS: "ONLINE_FRAUD_INSIGHTS" = "ONLINE_FRAUD_INSIGHTS"
+  inline val TRANSACTION_FRAUD_INSIGHTS: "TRANSACTION_FRAUD_INSIGHTS" = "TRANSACTION_FRAUD_INSIGHTS"
 
-  inline def values: js.Array[ModelTypeEnum] = js.Array(ONLINE_FRAUD_INSIGHTS)
+  inline def values: js.Array[ModelTypeEnum] = js.Array(ONLINE_FRAUD_INSIGHTS, TRANSACTION_FRAUD_INSIGHTS)
 }
 
 type ModelVersionStatus = "ACTIVE" | "INACTIVE" | "TRAINING_CANCELLED"
@@ -104,9 +113,19 @@ object RuleExecutionMode {
   inline def values: js.Array[RuleExecutionMode] = js.Array(ALL_MATCHED, FIRST_MATCHED)
 }
 
-type TrainingDataSourceEnum = "EXTERNAL_EVENTS"
+type TrainingDataSourceEnum = "EXTERNAL_EVENTS" | "INGESTED_EVENTS"
 object TrainingDataSourceEnum {
   inline val EXTERNAL_EVENTS: "EXTERNAL_EVENTS" = "EXTERNAL_EVENTS"
+  inline val INGESTED_EVENTS: "INGESTED_EVENTS" = "INGESTED_EVENTS"
 
-  inline def values: js.Array[TrainingDataSourceEnum] = js.Array(EXTERNAL_EVENTS)
+  inline def values: js.Array[TrainingDataSourceEnum] = js.Array(EXTERNAL_EVENTS, INGESTED_EVENTS)
+}
+
+type UnlabeledEventsTreatment = "IGNORE" | "FRAUD" | "LEGIT"
+object UnlabeledEventsTreatment {
+  inline val IGNORE: "IGNORE" = "IGNORE"
+  inline val FRAUD: "FRAUD" = "FRAUD"
+  inline val LEGIT: "LEGIT" = "LEGIT"
+
+  inline def values: js.Array[UnlabeledEventsTreatment] = js.Array(IGNORE, FRAUD, LEGIT)
 }

@@ -102,6 +102,15 @@ object KeyAlgorithm {
 }
 
 @js.native
+sealed trait KeyStorageSecurityStandard extends js.Any
+object KeyStorageSecurityStandard {
+  val FIPS_140_2_LEVEL_2_OR_HIGHER = "FIPS_140_2_LEVEL_2_OR_HIGHER".asInstanceOf[KeyStorageSecurityStandard]
+  val FIPS_140_2_LEVEL_3_OR_HIGHER = "FIPS_140_2_LEVEL_3_OR_HIGHER".asInstanceOf[KeyStorageSecurityStandard]
+
+  @inline def values: js.Array[KeyStorageSecurityStandard] = js.Array(FIPS_140_2_LEVEL_2_OR_HIGHER, FIPS_140_2_LEVEL_3_OR_HIGHER)
+}
+
+@js.native
 sealed trait PolicyQualifierId extends js.Any
 object PolicyQualifierId {
   val CPS = "CPS".asInstanceOf[PolicyQualifierId]
@@ -131,6 +140,15 @@ object RevocationReason {
   val A_A_COMPROMISE = "A_A_COMPROMISE".asInstanceOf[RevocationReason]
 
   @inline def values: js.Array[RevocationReason] = js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE)
+}
+
+@js.native
+sealed trait S3ObjectAcl extends js.Any
+object S3ObjectAcl {
+  val PUBLIC_READ = "PUBLIC_READ".asInstanceOf[S3ObjectAcl]
+  val BUCKET_OWNER_FULL_CONTROL = "BUCKET_OWNER_FULL_CONTROL".asInstanceOf[S3ObjectAcl]
+
+  @inline def values: js.Array[S3ObjectAcl] = js.Array(PUBLIC_READ, BUCKET_OWNER_FULL_CONTROL)
 }
 
 @js.native

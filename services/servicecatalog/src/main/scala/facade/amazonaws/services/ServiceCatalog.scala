@@ -2805,7 +2805,7 @@ package object servicecatalog {
   @js.native
   trait ListAcceptedPortfolioSharesInput extends js.Object {
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
-    var PageSize: js.UndefOr[PageSize]
+    var PageSize: js.UndefOr[PageSizeMax100]
     var PageToken: js.UndefOr[PageToken]
     var PortfolioShareType: js.UndefOr[PortfolioShareType]
   }
@@ -2814,7 +2814,7 @@ package object servicecatalog {
     @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-        PageSize: js.UndefOr[PageSize] = js.undefined,
+        PageSize: js.UndefOr[PageSizeMax100] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined,
         PortfolioShareType: js.UndefOr[PortfolioShareType] = js.undefined
     ): ListAcceptedPortfolioSharesInput = {
@@ -3089,7 +3089,7 @@ package object servicecatalog {
   trait ListPortfoliosForProductInput extends js.Object {
     var ProductId: Id
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
-    var PageSize: js.UndefOr[PageSize]
+    var PageSize: js.UndefOr[PageSizeMax100]
     var PageToken: js.UndefOr[PageToken]
   }
 
@@ -3098,7 +3098,7 @@ package object servicecatalog {
     def apply(
         ProductId: Id,
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-        PageSize: js.UndefOr[PageSize] = js.undefined,
+        PageSize: js.UndefOr[PageSizeMax100] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListPortfoliosForProductInput = {
       val __obj = js.Dynamic.literal(
@@ -3134,7 +3134,7 @@ package object servicecatalog {
   @js.native
   trait ListPortfoliosInput extends js.Object {
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
-    var PageSize: js.UndefOr[PageSize]
+    var PageSize: js.UndefOr[PageSizeMax100]
     var PageToken: js.UndefOr[PageToken]
   }
 
@@ -3142,7 +3142,7 @@ package object servicecatalog {
     @inline
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
-        PageSize: js.UndefOr[PageSize] = js.undefined,
+        PageSize: js.UndefOr[PageSizeMax100] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined
     ): ListPortfoliosInput = {
       val __obj = js.Dynamic.literal()
@@ -4846,7 +4846,7 @@ package object servicecatalog {
   trait SearchProductsInput extends js.Object {
     var AcceptLanguage: js.UndefOr[AcceptLanguage]
     var Filters: js.UndefOr[ProductViewFilters]
-    var PageSize: js.UndefOr[PageSize]
+    var PageSize: js.UndefOr[PageSizeMax100]
     var PageToken: js.UndefOr[PageToken]
     var SortBy: js.UndefOr[ProductViewSortBy]
     var SortOrder: js.UndefOr[SortOrder]
@@ -4857,7 +4857,7 @@ package object servicecatalog {
     def apply(
         AcceptLanguage: js.UndefOr[AcceptLanguage] = js.undefined,
         Filters: js.UndefOr[ProductViewFilters] = js.undefined,
-        PageSize: js.UndefOr[PageSize] = js.undefined,
+        PageSize: js.UndefOr[PageSizeMax100] = js.undefined,
         PageToken: js.UndefOr[PageToken] = js.undefined,
         SortBy: js.UndefOr[ProductViewSortBy] = js.undefined,
         SortOrder: js.UndefOr[SortOrder] = js.undefined

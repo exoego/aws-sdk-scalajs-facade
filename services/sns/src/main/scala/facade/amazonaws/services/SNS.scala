@@ -10,21 +10,33 @@ import facade.amazonaws._
 package object sns {
   type ActionsList = js.Array[action]
   type AmazonResourceName = String
+  type BatchResultErrorEntryList = js.Array[BatchResultErrorEntry]
   type Binary = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DelegatesList = js.Array[delegate]
+  type Iso2CountryCode = String
   type ListOfEndpoints = js.Array[Endpoint]
   type ListOfPlatformApplications = js.Array[PlatformApplication]
   type ListString = js.Array[String]
   type MapStringToString = js.Dictionary[String]
+  type MaxItems = Int
+  type MaxItemsListOriginationNumbers = Int
   type MessageAttributeMap = js.Dictionary[MessageAttributeValue]
+  type NumberCapabilityList = js.Array[NumberCapability]
+  type OTPCode = String
   type PhoneNumber = String
+  type PhoneNumberInformationList = js.Array[PhoneNumberInformation]
   type PhoneNumberList = js.Array[PhoneNumber]
+  type PhoneNumberString = String
+  type PublishBatchRequestEntryList = js.Array[PublishBatchRequestEntry]
+  type PublishBatchResultEntryList = js.Array[PublishBatchResultEntry]
+  type SMSSandboxPhoneNumberList = js.Array[SMSSandboxPhoneNumber]
   type SubscriptionAttributesMap = js.Dictionary[attributeValue]
   type SubscriptionsList = js.Array[Subscription]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[Tag]
   type TagValue = String
+  type Timestamp = js.Date
   type TopicAttributesMap = js.Dictionary[attributeValue]
   type TopicsList = js.Array[Topic]
   type account = String
@@ -53,23 +65,29 @@ package object sns {
     @inline def confirmSubscriptionFuture(params: ConfirmSubscriptionInput): Future[ConfirmSubscriptionResponse] = service.confirmSubscription(params).promise().toFuture
     @inline def createPlatformApplicationFuture(params: CreatePlatformApplicationInput): Future[CreatePlatformApplicationResponse] = service.createPlatformApplication(params).promise().toFuture
     @inline def createPlatformEndpointFuture(params: CreatePlatformEndpointInput): Future[CreateEndpointResponse] = service.createPlatformEndpoint(params).promise().toFuture
+    @inline def createSMSSandboxPhoneNumberFuture(params: CreateSMSSandboxPhoneNumberInput): Future[CreateSMSSandboxPhoneNumberResult] = service.createSMSSandboxPhoneNumber(params).promise().toFuture
     @inline def createTopicFuture(params: CreateTopicInput): Future[CreateTopicResponse] = service.createTopic(params).promise().toFuture
     @inline def deleteEndpointFuture(params: DeleteEndpointInput): Future[js.Object] = service.deleteEndpoint(params).promise().toFuture
     @inline def deletePlatformApplicationFuture(params: DeletePlatformApplicationInput): Future[js.Object] = service.deletePlatformApplication(params).promise().toFuture
+    @inline def deleteSMSSandboxPhoneNumberFuture(params: DeleteSMSSandboxPhoneNumberInput): Future[DeleteSMSSandboxPhoneNumberResult] = service.deleteSMSSandboxPhoneNumber(params).promise().toFuture
     @inline def deleteTopicFuture(params: DeleteTopicInput): Future[js.Object] = service.deleteTopic(params).promise().toFuture
     @inline def getEndpointAttributesFuture(params: GetEndpointAttributesInput): Future[GetEndpointAttributesResponse] = service.getEndpointAttributes(params).promise().toFuture
     @inline def getPlatformApplicationAttributesFuture(params: GetPlatformApplicationAttributesInput): Future[GetPlatformApplicationAttributesResponse] = service.getPlatformApplicationAttributes(params).promise().toFuture
     @inline def getSMSAttributesFuture(params: GetSMSAttributesInput): Future[GetSMSAttributesResponse] = service.getSMSAttributes(params).promise().toFuture
+    @inline def getSMSSandboxAccountStatusFuture(params: GetSMSSandboxAccountStatusInput): Future[GetSMSSandboxAccountStatusResult] = service.getSMSSandboxAccountStatus(params).promise().toFuture
     @inline def getSubscriptionAttributesFuture(params: GetSubscriptionAttributesInput): Future[GetSubscriptionAttributesResponse] = service.getSubscriptionAttributes(params).promise().toFuture
     @inline def getTopicAttributesFuture(params: GetTopicAttributesInput): Future[GetTopicAttributesResponse] = service.getTopicAttributes(params).promise().toFuture
     @inline def listEndpointsByPlatformApplicationFuture(params: ListEndpointsByPlatformApplicationInput): Future[ListEndpointsByPlatformApplicationResponse] = service.listEndpointsByPlatformApplication(params).promise().toFuture
+    @inline def listOriginationNumbersFuture(params: ListOriginationNumbersRequest): Future[ListOriginationNumbersResult] = service.listOriginationNumbers(params).promise().toFuture
     @inline def listPhoneNumbersOptedOutFuture(params: ListPhoneNumbersOptedOutInput): Future[ListPhoneNumbersOptedOutResponse] = service.listPhoneNumbersOptedOut(params).promise().toFuture
     @inline def listPlatformApplicationsFuture(params: ListPlatformApplicationsInput): Future[ListPlatformApplicationsResponse] = service.listPlatformApplications(params).promise().toFuture
+    @inline def listSMSSandboxPhoneNumbersFuture(params: ListSMSSandboxPhoneNumbersInput): Future[ListSMSSandboxPhoneNumbersResult] = service.listSMSSandboxPhoneNumbers(params).promise().toFuture
     @inline def listSubscriptionsByTopicFuture(params: ListSubscriptionsByTopicInput): Future[ListSubscriptionsByTopicResponse] = service.listSubscriptionsByTopic(params).promise().toFuture
     @inline def listSubscriptionsFuture(params: ListSubscriptionsInput): Future[ListSubscriptionsResponse] = service.listSubscriptions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listTopicsFuture(params: ListTopicsInput): Future[ListTopicsResponse] = service.listTopics(params).promise().toFuture
     @inline def optInPhoneNumberFuture(params: OptInPhoneNumberInput): Future[OptInPhoneNumberResponse] = service.optInPhoneNumber(params).promise().toFuture
+    @inline def publishBatchFuture(params: PublishBatchInput): Future[PublishBatchResponse] = service.publishBatch(params).promise().toFuture
     @inline def publishFuture(params: PublishInput): Future[PublishResponse] = service.publish(params).promise().toFuture
     @inline def removePermissionFuture(params: RemovePermissionInput): Future[js.Object] = service.removePermission(params).promise().toFuture
     @inline def setEndpointAttributesFuture(params: SetEndpointAttributesInput): Future[js.Object] = service.setEndpointAttributes(params).promise().toFuture
@@ -81,6 +99,7 @@ package object sns {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def unsubscribeFuture(params: UnsubscribeInput): Future[js.Object] = service.unsubscribe(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def verifySMSSandboxPhoneNumberFuture(params: VerifySMSSandboxPhoneNumberInput): Future[VerifySMSSandboxPhoneNumberResult] = service.verifySMSSandboxPhoneNumber(params).promise().toFuture
 
   }
 
@@ -94,24 +113,30 @@ package object sns {
     def confirmSubscription(params: ConfirmSubscriptionInput): Request[ConfirmSubscriptionResponse] = js.native
     def createPlatformApplication(params: CreatePlatformApplicationInput): Request[CreatePlatformApplicationResponse] = js.native
     def createPlatformEndpoint(params: CreatePlatformEndpointInput): Request[CreateEndpointResponse] = js.native
+    def createSMSSandboxPhoneNumber(params: CreateSMSSandboxPhoneNumberInput): Request[CreateSMSSandboxPhoneNumberResult] = js.native
     def createTopic(params: CreateTopicInput): Request[CreateTopicResponse] = js.native
     def deleteEndpoint(params: DeleteEndpointInput): Request[js.Object] = js.native
     def deletePlatformApplication(params: DeletePlatformApplicationInput): Request[js.Object] = js.native
+    def deleteSMSSandboxPhoneNumber(params: DeleteSMSSandboxPhoneNumberInput): Request[DeleteSMSSandboxPhoneNumberResult] = js.native
     def deleteTopic(params: DeleteTopicInput): Request[js.Object] = js.native
     def getEndpointAttributes(params: GetEndpointAttributesInput): Request[GetEndpointAttributesResponse] = js.native
     def getPlatformApplicationAttributes(params: GetPlatformApplicationAttributesInput): Request[GetPlatformApplicationAttributesResponse] = js.native
     def getSMSAttributes(params: GetSMSAttributesInput): Request[GetSMSAttributesResponse] = js.native
+    def getSMSSandboxAccountStatus(params: GetSMSSandboxAccountStatusInput): Request[GetSMSSandboxAccountStatusResult] = js.native
     def getSubscriptionAttributes(params: GetSubscriptionAttributesInput): Request[GetSubscriptionAttributesResponse] = js.native
     def getTopicAttributes(params: GetTopicAttributesInput): Request[GetTopicAttributesResponse] = js.native
     def listEndpointsByPlatformApplication(params: ListEndpointsByPlatformApplicationInput): Request[ListEndpointsByPlatformApplicationResponse] = js.native
+    def listOriginationNumbers(params: ListOriginationNumbersRequest): Request[ListOriginationNumbersResult] = js.native
     def listPhoneNumbersOptedOut(params: ListPhoneNumbersOptedOutInput): Request[ListPhoneNumbersOptedOutResponse] = js.native
     def listPlatformApplications(params: ListPlatformApplicationsInput): Request[ListPlatformApplicationsResponse] = js.native
+    def listSMSSandboxPhoneNumbers(params: ListSMSSandboxPhoneNumbersInput): Request[ListSMSSandboxPhoneNumbersResult] = js.native
     def listSubscriptions(params: ListSubscriptionsInput): Request[ListSubscriptionsResponse] = js.native
     def listSubscriptionsByTopic(params: ListSubscriptionsByTopicInput): Request[ListSubscriptionsByTopicResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTopics(params: ListTopicsInput): Request[ListTopicsResponse] = js.native
     def optInPhoneNumber(params: OptInPhoneNumberInput): Request[OptInPhoneNumberResponse] = js.native
     def publish(params: PublishInput): Request[PublishResponse] = js.native
+    def publishBatch(params: PublishBatchInput): Request[PublishBatchResponse] = js.native
     def removePermission(params: RemovePermissionInput): Request[js.Object] = js.native
     def setEndpointAttributes(params: SetEndpointAttributesInput): Request[js.Object] = js.native
     def setPlatformApplicationAttributes(params: SetPlatformApplicationAttributesInput): Request[js.Object] = js.native
@@ -122,6 +147,7 @@ package object sns {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def unsubscribe(params: UnsubscribeInput): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def verifySMSSandboxPhoneNumber(params: VerifySMSSandboxPhoneNumberInput): Request[VerifySMSSandboxPhoneNumberResult] = js.native
   }
   object SNS {
     @inline implicit def toOps(service: SNS): SNSOps = {
@@ -152,6 +178,35 @@ package object sns {
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AddPermissionInput]
+    }
+  }
+
+  /** Gives a detailed description of failed messages in the batch.
+    */
+  @js.native
+  trait BatchResultErrorEntry extends js.Object {
+    var Code: String
+    var Id: String
+    var SenderFault: Boolean
+    var Message: js.UndefOr[String]
+  }
+
+  object BatchResultErrorEntry {
+    @inline
+    def apply(
+        Code: String,
+        Id: String,
+        SenderFault: Boolean,
+        Message: js.UndefOr[String] = js.undefined
+    ): BatchResultErrorEntry = {
+      val __obj = js.Dynamic.literal(
+        "Code" -> Code.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "SenderFault" -> SenderFault.asInstanceOf[js.Any]
+      )
+
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchResultErrorEntry]
     }
   }
 
@@ -326,6 +381,38 @@ package object sns {
     }
   }
 
+  @js.native
+  trait CreateSMSSandboxPhoneNumberInput extends js.Object {
+    var PhoneNumber: PhoneNumberString
+    var LanguageCode: js.UndefOr[LanguageCodeString]
+  }
+
+  object CreateSMSSandboxPhoneNumberInput {
+    @inline
+    def apply(
+        PhoneNumber: PhoneNumberString,
+        LanguageCode: js.UndefOr[LanguageCodeString] = js.undefined
+    ): CreateSMSSandboxPhoneNumberInput = {
+      val __obj = js.Dynamic.literal(
+        "PhoneNumber" -> PhoneNumber.asInstanceOf[js.Any]
+      )
+
+      LanguageCode.foreach(__v => __obj.updateDynamic("LanguageCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateSMSSandboxPhoneNumberInput]
+    }
+  }
+
+  @js.native
+  trait CreateSMSSandboxPhoneNumberResult extends js.Object
+
+  object CreateSMSSandboxPhoneNumberResult {
+    @inline
+    def apply(): CreateSMSSandboxPhoneNumberResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreateSMSSandboxPhoneNumberResult]
+    }
+  }
+
   /** Input for CreateTopic action.
     */
   @js.native
@@ -409,6 +496,34 @@ package object sns {
   }
 
   @js.native
+  trait DeleteSMSSandboxPhoneNumberInput extends js.Object {
+    var PhoneNumber: PhoneNumberString
+  }
+
+  object DeleteSMSSandboxPhoneNumberInput {
+    @inline
+    def apply(
+        PhoneNumber: PhoneNumberString
+    ): DeleteSMSSandboxPhoneNumberInput = {
+      val __obj = js.Dynamic.literal(
+        "PhoneNumber" -> PhoneNumber.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteSMSSandboxPhoneNumberInput]
+    }
+  }
+
+  @js.native
+  trait DeleteSMSSandboxPhoneNumberResult extends js.Object
+
+  object DeleteSMSSandboxPhoneNumberResult {
+    @inline
+    def apply(): DeleteSMSSandboxPhoneNumberResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteSMSSandboxPhoneNumberResult]
+    }
+  }
+
+  @js.native
   trait DeleteTopicInput extends js.Object {
     var TopicArn: topicARN
   }
@@ -425,7 +540,7 @@ package object sns {
     }
   }
 
-  /** Endpoint for mobile app and device.
+  /** The endpoint for mobile app and device.
     */
   @js.native
   trait Endpoint extends js.Object {
@@ -556,6 +671,34 @@ package object sns {
     }
   }
 
+  @js.native
+  trait GetSMSSandboxAccountStatusInput extends js.Object
+
+  object GetSMSSandboxAccountStatusInput {
+    @inline
+    def apply(): GetSMSSandboxAccountStatusInput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetSMSSandboxAccountStatusInput]
+    }
+  }
+
+  @js.native
+  trait GetSMSSandboxAccountStatusResult extends js.Object {
+    var IsInSandbox: Boolean
+  }
+
+  object GetSMSSandboxAccountStatusResult {
+    @inline
+    def apply(
+        IsInSandbox: Boolean
+    ): GetSMSSandboxAccountStatusResult = {
+      val __obj = js.Dynamic.literal(
+        "IsInSandbox" -> IsInSandbox.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetSMSSandboxAccountStatusResult]
+    }
+  }
+
   /** Input for GetSubscriptionAttributes.
     */
   @js.native
@@ -674,6 +817,44 @@ package object sns {
     }
   }
 
+  @js.native
+  trait ListOriginationNumbersRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxItemsListOriginationNumbers]
+    var NextToken: js.UndefOr[nextToken]
+  }
+
+  object ListOriginationNumbersRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxItemsListOriginationNumbers] = js.undefined,
+        NextToken: js.UndefOr[nextToken] = js.undefined
+    ): ListOriginationNumbersRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOriginationNumbersRequest]
+    }
+  }
+
+  @js.native
+  trait ListOriginationNumbersResult extends js.Object {
+    var NextToken: js.UndefOr[nextToken]
+    var PhoneNumbers: js.UndefOr[PhoneNumberInformationList]
+  }
+
+  object ListOriginationNumbersResult {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[nextToken] = js.undefined,
+        PhoneNumbers: js.UndefOr[PhoneNumberInformationList] = js.undefined
+    ): ListOriginationNumbersResult = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      PhoneNumbers.foreach(__v => __obj.updateDynamic("PhoneNumbers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOriginationNumbersResult]
+    }
+  }
+
   /** The input for the <code>ListPhoneNumbersOptedOut</code> action.
     */
   @js.native
@@ -749,6 +930,46 @@ package object sns {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       PlatformApplications.foreach(__v => __obj.updateDynamic("PlatformApplications")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPlatformApplicationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListSMSSandboxPhoneNumbersInput extends js.Object {
+    var MaxResults: js.UndefOr[MaxItems]
+    var NextToken: js.UndefOr[nextToken]
+  }
+
+  object ListSMSSandboxPhoneNumbersInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxItems] = js.undefined,
+        NextToken: js.UndefOr[nextToken] = js.undefined
+    ): ListSMSSandboxPhoneNumbersInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSMSSandboxPhoneNumbersInput]
+    }
+  }
+
+  @js.native
+  trait ListSMSSandboxPhoneNumbersResult extends js.Object {
+    var PhoneNumbers: SMSSandboxPhoneNumberList
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListSMSSandboxPhoneNumbersResult {
+    @inline
+    def apply(
+        PhoneNumbers: SMSSandboxPhoneNumberList,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListSMSSandboxPhoneNumbersResult = {
+      val __obj = js.Dynamic.literal(
+        "PhoneNumbers" -> PhoneNumbers.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListSMSSandboxPhoneNumbersResult]
     }
   }
 
@@ -963,6 +1184,39 @@ package object sns {
     }
   }
 
+  /** A list of phone numbers and their metadata.
+    */
+  @js.native
+  trait PhoneNumberInformation extends js.Object {
+    var CreatedAt: js.UndefOr[Timestamp]
+    var Iso2CountryCode: js.UndefOr[Iso2CountryCode]
+    var NumberCapabilities: js.UndefOr[NumberCapabilityList]
+    var PhoneNumber: js.UndefOr[String]
+    var RouteType: js.UndefOr[RouteType]
+    var Status: js.UndefOr[String]
+  }
+
+  object PhoneNumberInformation {
+    @inline
+    def apply(
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Iso2CountryCode: js.UndefOr[Iso2CountryCode] = js.undefined,
+        NumberCapabilities: js.UndefOr[NumberCapabilityList] = js.undefined,
+        PhoneNumber: js.UndefOr[String] = js.undefined,
+        RouteType: js.UndefOr[RouteType] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined
+    ): PhoneNumberInformation = {
+      val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Iso2CountryCode.foreach(__v => __obj.updateDynamic("Iso2CountryCode")(__v.asInstanceOf[js.Any]))
+      NumberCapabilities.foreach(__v => __obj.updateDynamic("NumberCapabilities")(__v.asInstanceOf[js.Any]))
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
+      RouteType.foreach(__v => __obj.updateDynamic("RouteType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PhoneNumberInformation]
+    }
+  }
+
   /** Platform application object.
     */
   @js.native
@@ -981,6 +1235,107 @@ package object sns {
       Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
       PlatformApplicationArn.foreach(__v => __obj.updateDynamic("PlatformApplicationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlatformApplication]
+    }
+  }
+
+  @js.native
+  trait PublishBatchInput extends js.Object {
+    var PublishBatchRequestEntries: PublishBatchRequestEntryList
+    var TopicArn: topicARN
+  }
+
+  object PublishBatchInput {
+    @inline
+    def apply(
+        PublishBatchRequestEntries: PublishBatchRequestEntryList,
+        TopicArn: topicARN
+    ): PublishBatchInput = {
+      val __obj = js.Dynamic.literal(
+        "PublishBatchRequestEntries" -> PublishBatchRequestEntries.asInstanceOf[js.Any],
+        "TopicArn" -> TopicArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PublishBatchInput]
+    }
+  }
+
+  /** Contains the details of a single Amazon SNS message along with an <code>Id</code> that identifies a message within the batch.
+    */
+  @js.native
+  trait PublishBatchRequestEntry extends js.Object {
+    var Id: String
+    var Message: message
+    var MessageAttributes: js.UndefOr[MessageAttributeMap]
+    var MessageDeduplicationId: js.UndefOr[String]
+    var MessageGroupId: js.UndefOr[String]
+    var MessageStructure: js.UndefOr[messageStructure]
+    var Subject: js.UndefOr[subject]
+  }
+
+  object PublishBatchRequestEntry {
+    @inline
+    def apply(
+        Id: String,
+        Message: message,
+        MessageAttributes: js.UndefOr[MessageAttributeMap] = js.undefined,
+        MessageDeduplicationId: js.UndefOr[String] = js.undefined,
+        MessageGroupId: js.UndefOr[String] = js.undefined,
+        MessageStructure: js.UndefOr[messageStructure] = js.undefined,
+        Subject: js.UndefOr[subject] = js.undefined
+    ): PublishBatchRequestEntry = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Message" -> Message.asInstanceOf[js.Any]
+      )
+
+      MessageAttributes.foreach(__v => __obj.updateDynamic("MessageAttributes")(__v.asInstanceOf[js.Any]))
+      MessageDeduplicationId.foreach(__v => __obj.updateDynamic("MessageDeduplicationId")(__v.asInstanceOf[js.Any]))
+      MessageGroupId.foreach(__v => __obj.updateDynamic("MessageGroupId")(__v.asInstanceOf[js.Any]))
+      MessageStructure.foreach(__v => __obj.updateDynamic("MessageStructure")(__v.asInstanceOf[js.Any]))
+      Subject.foreach(__v => __obj.updateDynamic("Subject")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublishBatchRequestEntry]
+    }
+  }
+
+  @js.native
+  trait PublishBatchResponse extends js.Object {
+    var Failed: js.UndefOr[BatchResultErrorEntryList]
+    var Successful: js.UndefOr[PublishBatchResultEntryList]
+  }
+
+  object PublishBatchResponse {
+    @inline
+    def apply(
+        Failed: js.UndefOr[BatchResultErrorEntryList] = js.undefined,
+        Successful: js.UndefOr[PublishBatchResultEntryList] = js.undefined
+    ): PublishBatchResponse = {
+      val __obj = js.Dynamic.literal()
+      Failed.foreach(__v => __obj.updateDynamic("Failed")(__v.asInstanceOf[js.Any]))
+      Successful.foreach(__v => __obj.updateDynamic("Successful")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublishBatchResponse]
+    }
+  }
+
+  /** Encloses data related to a successful message in a batch request for topic.
+    */
+  @js.native
+  trait PublishBatchResultEntry extends js.Object {
+    var Id: js.UndefOr[String]
+    var MessageId: js.UndefOr[messageId]
+    var SequenceNumber: js.UndefOr[String]
+  }
+
+  object PublishBatchResultEntry {
+    @inline
+    def apply(
+        Id: js.UndefOr[String] = js.undefined,
+        MessageId: js.UndefOr[messageId] = js.undefined,
+        SequenceNumber: js.UndefOr[String] = js.undefined
+    ): PublishBatchResultEntry = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      SequenceNumber.foreach(__v => __obj.updateDynamic("SequenceNumber")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublishBatchResultEntry]
     }
   }
 
@@ -1068,6 +1423,27 @@ package object sns {
         "TopicArn" -> TopicArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[RemovePermissionInput]
+    }
+  }
+
+  /** A verified or pending destination phone number in the SMS sandbox. When you start using Amazon SNS to send SMS messages, your Amazon Web Services account is in the <i>SMS sandbox</i>. The SMS sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS sender. While your Amazon Web Services account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can send SMS messages only to verified destination phone numbers. For more information, including how to move out of the sandbox to send messages without restrictions, see [[https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html|SMS sandbox]] in the <i>Amazon SNS Developer Guide</i>.
+    */
+  @js.native
+  trait SMSSandboxPhoneNumber extends js.Object {
+    var PhoneNumber: js.UndefOr[PhoneNumberString]
+    var Status: js.UndefOr[SMSSandboxPhoneNumberVerificationStatus]
+  }
+
+  object SMSSandboxPhoneNumber {
+    @inline
+    def apply(
+        PhoneNumber: js.UndefOr[PhoneNumberString] = js.undefined,
+        Status: js.UndefOr[SMSSandboxPhoneNumberVerificationStatus] = js.undefined
+    ): SMSSandboxPhoneNumber = {
+      val __obj = js.Dynamic.literal()
+      PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SMSSandboxPhoneNumber]
     }
   }
 
@@ -1397,6 +1773,39 @@ package object sns {
     def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait VerifySMSSandboxPhoneNumberInput extends js.Object {
+    var OneTimePassword: OTPCode
+    var PhoneNumber: PhoneNumberString
+  }
+
+  object VerifySMSSandboxPhoneNumberInput {
+    @inline
+    def apply(
+        OneTimePassword: OTPCode,
+        PhoneNumber: PhoneNumberString
+    ): VerifySMSSandboxPhoneNumberInput = {
+      val __obj = js.Dynamic.literal(
+        "OneTimePassword" -> OneTimePassword.asInstanceOf[js.Any],
+        "PhoneNumber" -> PhoneNumber.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VerifySMSSandboxPhoneNumberInput]
+    }
+  }
+
+  /** The destination phone number's verification status.
+    */
+  @js.native
+  trait VerifySMSSandboxPhoneNumberResult extends js.Object
+
+  object VerifySMSSandboxPhoneNumberResult {
+    @inline
+    def apply(): VerifySMSSandboxPhoneNumberResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[VerifySMSSandboxPhoneNumberResult]
     }
   }
 }

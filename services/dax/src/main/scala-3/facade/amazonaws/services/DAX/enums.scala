@@ -10,6 +10,14 @@ object ChangeType {
   inline def values: js.Array[ChangeType] = js.Array(IMMEDIATE, REQUIRES_REBOOT)
 }
 
+type ClusterEndpointEncryptionType = "NONE" | "TLS"
+object ClusterEndpointEncryptionType {
+  inline val NONE: "NONE" = "NONE"
+  inline val TLS: "TLS" = "TLS"
+
+  inline def values: js.Array[ClusterEndpointEncryptionType] = js.Array(NONE, TLS)
+}
+
 type IsModifiable = "TRUE" | "FALSE" | "CONDITIONAL"
 object IsModifiable {
   inline val TRUE: "TRUE" = "TRUE"

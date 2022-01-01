@@ -112,6 +112,7 @@ package object codebuild {
     @inline def stopBuildBatchFuture(params: StopBuildBatchInput): Future[StopBuildBatchOutput] = service.stopBuildBatch(params).promise().toFuture
     @inline def stopBuildFuture(params: StopBuildInput): Future[StopBuildOutput] = service.stopBuild(params).promise().toFuture
     @inline def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] = service.updateProject(params).promise().toFuture
+    @inline def updateProjectVisibilityFuture(params: UpdateProjectVisibilityInput): Future[UpdateProjectVisibilityOutput] = service.updateProjectVisibility(params).promise().toFuture
     @inline def updateReportGroupFuture(params: UpdateReportGroupInput): Future[UpdateReportGroupOutput] = service.updateReportGroup(params).promise().toFuture
     @inline def updateWebhookFuture(params: UpdateWebhookInput): Future[UpdateWebhookOutput] = service.updateWebhook(params).promise().toFuture
 
@@ -164,6 +165,7 @@ package object codebuild {
     def stopBuild(params: StopBuildInput): Request[StopBuildOutput] = js.native
     def stopBuildBatch(params: StopBuildBatchInput): Request[StopBuildBatchOutput] = js.native
     def updateProject(params: UpdateProjectInput): Request[UpdateProjectOutput] = js.native
+    def updateProjectVisibility(params: UpdateProjectVisibilityInput): Request[UpdateProjectVisibilityOutput] = js.native
     def updateReportGroup(params: UpdateReportGroupInput): Request[UpdateReportGroupOutput] = js.native
     def updateWebhook(params: UpdateWebhookInput): Request[UpdateWebhookOutput] = js.native
   }
@@ -797,7 +799,7 @@ package object codebuild {
     }
   }
 
-  /** Contains information that defines how the AWS CodeBuild build project reports the build status to the source provider.
+  /** Contains information that defines how the CodeBuild build project reports the build status to the source provider.
     */
   @js.native
   trait BuildStatusConfig extends js.Object {
@@ -848,7 +850,7 @@ package object codebuild {
     }
   }
 
-  /** Information about Amazon CloudWatch Logs for a build project.
+  /** Information about CloudWatch Logs for a build project.
     */
   @js.native
   trait CloudWatchLogsConfig extends js.Object {
@@ -1470,7 +1472,7 @@ package object codebuild {
     }
   }
 
-  /** Information about a Docker image that is managed by AWS CodeBuild.
+  /** Information about a Docker image that is managed by CodeBuild.
     */
   @js.native
   trait EnvironmentImage extends js.Object {
@@ -1494,7 +1496,7 @@ package object codebuild {
     }
   }
 
-  /** A set of Docker images that are related by programming language and are managed by AWS CodeBuild.
+  /** A set of Docker images that are related by programming language and are managed by CodeBuild.
     */
   @js.native
   trait EnvironmentLanguage extends js.Object {
@@ -1515,7 +1517,7 @@ package object codebuild {
     }
   }
 
-  /** A set of Docker images that are related by platform and are managed by AWS CodeBuild.
+  /** A set of Docker images that are related by platform and are managed by CodeBuild.
     */
   @js.native
   trait EnvironmentPlatform extends js.Object {
@@ -1562,7 +1564,7 @@ package object codebuild {
     }
   }
 
-  /** Contains information about an exported environment variable. Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from the current build stage to subsequent stages in the pipeline. For more information, see [[https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html|Working with variables]] in the <i>AWS CodePipeline User Guide</i>.
+  /** Contains information about an exported environment variable. Exported environment variables are used in conjunction with CodePipeline to export environment variables from the current build stage to subsequent stages in the pipeline. For more information, see [[https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html|Working with variables]] in the <i>CodePipeline User Guide</i>.
     *
     * '''Note:'''During a build, the value of a variable is available starting with the <code>install</code> phase. It can be updated between the start of the <code>install</code> phase and the end of the <code>post_build</code> phase. After the <code>post_build</code> phase ends, the value of exported variables cannot change.
     */
@@ -1661,7 +1663,7 @@ package object codebuild {
     }
   }
 
-  /** Information about the Git submodules configuration for an AWS CodeBuild build project.
+  /** Information about the Git submodules configuration for an CodeBuild build project.
     */
   @js.native
   trait GitSubmodulesConfig extends js.Object {
@@ -2246,7 +2248,7 @@ package object codebuild {
     }
   }
 
-  /** Information about logs for a build project. These can be logs in Amazon CloudWatch Logs, built in a specified S3 bucket, or both.
+  /** Information about logs for a build project. These can be logs in CloudWatch Logs, built in a specified S3 bucket, or both.
     */
   @js.native
   trait LogsConfig extends js.Object {
@@ -2267,7 +2269,7 @@ package object codebuild {
     }
   }
 
-  /** Information about build logs in Amazon CloudWatch Logs.
+  /** Information about build logs in CloudWatch Logs.
     */
   @js.native
   trait LogsLocation extends js.Object {
@@ -2366,7 +2368,10 @@ package object codebuild {
     var lastModified: js.UndefOr[Timestamp]
     var logsConfig: js.UndefOr[LogsConfig]
     var name: js.UndefOr[ProjectName]
+    var projectVisibility: js.UndefOr[ProjectVisibilityType]
+    var publicProjectAlias: js.UndefOr[NonEmptyString]
     var queuedTimeoutInMinutes: js.UndefOr[TimeOut]
+    var resourceAccessRole: js.UndefOr[NonEmptyString]
     var secondaryArtifacts: js.UndefOr[ProjectArtifactsList]
     var secondarySourceVersions: js.UndefOr[ProjectSecondarySourceVersions]
     var secondarySources: js.UndefOr[ProjectSources]
@@ -2396,7 +2401,10 @@ package object codebuild {
         lastModified: js.UndefOr[Timestamp] = js.undefined,
         logsConfig: js.UndefOr[LogsConfig] = js.undefined,
         name: js.UndefOr[ProjectName] = js.undefined,
+        projectVisibility: js.UndefOr[ProjectVisibilityType] = js.undefined,
+        publicProjectAlias: js.UndefOr[NonEmptyString] = js.undefined,
         queuedTimeoutInMinutes: js.UndefOr[TimeOut] = js.undefined,
+        resourceAccessRole: js.UndefOr[NonEmptyString] = js.undefined,
         secondaryArtifacts: js.UndefOr[ProjectArtifactsList] = js.undefined,
         secondarySourceVersions: js.UndefOr[ProjectSecondarySourceVersions] = js.undefined,
         secondarySources: js.UndefOr[ProjectSources] = js.undefined,
@@ -2423,7 +2431,10 @@ package object codebuild {
       lastModified.foreach(__v => __obj.updateDynamic("lastModified")(__v.asInstanceOf[js.Any]))
       logsConfig.foreach(__v => __obj.updateDynamic("logsConfig")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      projectVisibility.foreach(__v => __obj.updateDynamic("projectVisibility")(__v.asInstanceOf[js.Any]))
+      publicProjectAlias.foreach(__v => __obj.updateDynamic("publicProjectAlias")(__v.asInstanceOf[js.Any]))
       queuedTimeoutInMinutes.foreach(__v => __obj.updateDynamic("queuedTimeoutInMinutes")(__v.asInstanceOf[js.Any]))
+      resourceAccessRole.foreach(__v => __obj.updateDynamic("resourceAccessRole")(__v.asInstanceOf[js.Any]))
       secondaryArtifacts.foreach(__v => __obj.updateDynamic("secondaryArtifacts")(__v.asInstanceOf[js.Any]))
       secondarySourceVersions.foreach(__v => __obj.updateDynamic("secondarySourceVersions")(__v.asInstanceOf[js.Any]))
       secondarySources.foreach(__v => __obj.updateDynamic("secondarySources")(__v.asInstanceOf[js.Any]))
@@ -2510,6 +2521,7 @@ package object codebuild {
     */
   @js.native
   trait ProjectBuildBatchConfig extends js.Object {
+    var batchReportMode: js.UndefOr[BatchReportModeType]
     var combineArtifacts: js.UndefOr[WrapperBoolean]
     var restrictions: js.UndefOr[BatchRestrictions]
     var serviceRole: js.UndefOr[NonEmptyString]
@@ -2519,12 +2531,14 @@ package object codebuild {
   object ProjectBuildBatchConfig {
     @inline
     def apply(
+        batchReportMode: js.UndefOr[BatchReportModeType] = js.undefined,
         combineArtifacts: js.UndefOr[WrapperBoolean] = js.undefined,
         restrictions: js.UndefOr[BatchRestrictions] = js.undefined,
         serviceRole: js.UndefOr[NonEmptyString] = js.undefined,
         timeoutInMins: js.UndefOr[WrapperInt] = js.undefined
     ): ProjectBuildBatchConfig = {
       val __obj = js.Dynamic.literal()
+      batchReportMode.foreach(__v => __obj.updateDynamic("batchReportMode")(__v.asInstanceOf[js.Any]))
       combineArtifacts.foreach(__v => __obj.updateDynamic("combineArtifacts")(__v.asInstanceOf[js.Any]))
       restrictions.foreach(__v => __obj.updateDynamic("restrictions")(__v.asInstanceOf[js.Any]))
       serviceRole.foreach(__v => __obj.updateDynamic("serviceRole")(__v.asInstanceOf[js.Any]))
@@ -2735,7 +2749,7 @@ package object codebuild {
     }
   }
 
-  /** Information about credentials that provide access to a private Docker registry. When this is set: * <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. * images cannot be curated or an Amazon ECR image. For more information, see [[https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html|Private Registry with AWS Secrets Manager Sample for AWS CodeBuild]].
+  /** Information about credentials that provide access to a private Docker registry. When this is set: * <code>imagePullCredentialsType</code> must be set to <code>SERVICE_ROLE</code>. * images cannot be curated or an Amazon ECR image. For more information, see [[https://docs.aws.amazon.com/codebuild/latest/userguide/sample-private-registry.html|Private Registry with Secrets Manager Sample for CodeBuild]].
     */
   @js.native
   trait RegistryCredential extends js.Object {
@@ -2931,7 +2945,7 @@ package object codebuild {
     }
   }
 
-  /** Represents a resolved build artifact. A resolve artifact is an artifact that is built and deployed to the destination, such as Amazon S3.
+  /** Represents a resolved build artifact. A resolved artifact is an artifact that is built and deployed to the destination, such as Amazon S3.
     */
   @js.native
   trait ResolvedArtifact extends js.Object {
@@ -3090,7 +3104,7 @@ package object codebuild {
     }
   }
 
-  /** Information about the authorization settings for AWS CodeBuild to access the source code to be built. This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly.
+  /** Information about the authorization settings for CodeBuild to access the source code to be built. This information is for the CodeBuild console's use only. Your code should not get or set this information directly.
     */
   @js.native
   trait SourceAuth extends js.Object {
@@ -3451,7 +3465,7 @@ package object codebuild {
     }
   }
 
-  /** A tag, consisting of a key and a value. This tag is available for use by AWS services that support tags in AWS CodeBuild.
+  /** A tag, consisting of a key and a value. This tag is available for use by Amazon Web Services services that support tags in CodeBuild.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3652,6 +3666,52 @@ package object codebuild {
   }
 
   @js.native
+  trait UpdateProjectVisibilityInput extends js.Object {
+    var projectArn: NonEmptyString
+    var projectVisibility: ProjectVisibilityType
+    var resourceAccessRole: js.UndefOr[NonEmptyString]
+  }
+
+  object UpdateProjectVisibilityInput {
+    @inline
+    def apply(
+        projectArn: NonEmptyString,
+        projectVisibility: ProjectVisibilityType,
+        resourceAccessRole: js.UndefOr[NonEmptyString] = js.undefined
+    ): UpdateProjectVisibilityInput = {
+      val __obj = js.Dynamic.literal(
+        "projectArn" -> projectArn.asInstanceOf[js.Any],
+        "projectVisibility" -> projectVisibility.asInstanceOf[js.Any]
+      )
+
+      resourceAccessRole.foreach(__v => __obj.updateDynamic("resourceAccessRole")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateProjectVisibilityInput]
+    }
+  }
+
+  @js.native
+  trait UpdateProjectVisibilityOutput extends js.Object {
+    var projectArn: js.UndefOr[NonEmptyString]
+    var projectVisibility: js.UndefOr[ProjectVisibilityType]
+    var publicProjectAlias: js.UndefOr[NonEmptyString]
+  }
+
+  object UpdateProjectVisibilityOutput {
+    @inline
+    def apply(
+        projectArn: js.UndefOr[NonEmptyString] = js.undefined,
+        projectVisibility: js.UndefOr[ProjectVisibilityType] = js.undefined,
+        publicProjectAlias: js.UndefOr[NonEmptyString] = js.undefined
+    ): UpdateProjectVisibilityOutput = {
+      val __obj = js.Dynamic.literal()
+      projectArn.foreach(__v => __obj.updateDynamic("projectArn")(__v.asInstanceOf[js.Any]))
+      projectVisibility.foreach(__v => __obj.updateDynamic("projectVisibility")(__v.asInstanceOf[js.Any]))
+      publicProjectAlias.foreach(__v => __obj.updateDynamic("publicProjectAlias")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateProjectVisibilityOutput]
+    }
+  }
+
+  @js.native
   trait UpdateReportGroupInput extends js.Object {
     var arn: NonEmptyString
     var exportConfig: js.UndefOr[ReportExportConfig]
@@ -3737,7 +3797,7 @@ package object codebuild {
     }
   }
 
-  /** Information about the VPC configuration that AWS CodeBuild accesses.
+  /** Information about the VPC configuration that CodeBuild accesses.
     */
   @js.native
   trait VpcConfig extends js.Object {
@@ -3761,7 +3821,7 @@ package object codebuild {
     }
   }
 
-  /** Information about a webhook that connects repository events to a build project in AWS CodeBuild.
+  /** Information about a webhook that connects repository events to a build project in CodeBuild.
     */
   @js.native
   trait Webhook extends js.Object {

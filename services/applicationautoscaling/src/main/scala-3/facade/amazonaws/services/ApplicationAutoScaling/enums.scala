@@ -31,7 +31,7 @@ object MetricStatistic {
   inline def values: js.Array[MetricStatistic] = js.Array(Average, Minimum, Maximum, SampleCount, Sum)
 }
 
-type MetricType = "DynamoDBReadCapacityUtilization" | "DynamoDBWriteCapacityUtilization" | "ALBRequestCountPerTarget" | "RDSReaderAverageCPUUtilization" | "RDSReaderAverageDatabaseConnections" | "EC2SpotFleetRequestAverageCPUUtilization" | "EC2SpotFleetRequestAverageNetworkIn" | "EC2SpotFleetRequestAverageNetworkOut" | "SageMakerVariantInvocationsPerInstance" | "ECSServiceAverageCPUUtilization" | "ECSServiceAverageMemoryUtilization" | "AppStreamAverageCapacityUtilization" | "ComprehendInferenceUtilization" | "LambdaProvisionedConcurrencyUtilization" | "CassandraReadCapacityUtilization" | "CassandraWriteCapacityUtilization" | "KafkaBrokerStorageUtilization"
+type MetricType = "DynamoDBReadCapacityUtilization" | "DynamoDBWriteCapacityUtilization" | "ALBRequestCountPerTarget" | "RDSReaderAverageCPUUtilization" | "RDSReaderAverageDatabaseConnections" | "EC2SpotFleetRequestAverageCPUUtilization" | "EC2SpotFleetRequestAverageNetworkIn" | "EC2SpotFleetRequestAverageNetworkOut" | "SageMakerVariantInvocationsPerInstance" | "ECSServiceAverageCPUUtilization" | "ECSServiceAverageMemoryUtilization" | "AppStreamAverageCapacityUtilization" | "ComprehendInferenceUtilization" | "LambdaProvisionedConcurrencyUtilization" | "CassandraReadCapacityUtilization" | "CassandraWriteCapacityUtilization" | "KafkaBrokerStorageUtilization" | "ElastiCachePrimaryEngineCPUUtilization" | "ElastiCacheReplicaEngineCPUUtilization" | "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage" | "NeptuneReaderAverageCPUUtilization"
 object MetricType {
   inline val DynamoDBReadCapacityUtilization: "DynamoDBReadCapacityUtilization" = "DynamoDBReadCapacityUtilization"
   inline val DynamoDBWriteCapacityUtilization: "DynamoDBWriteCapacityUtilization" = "DynamoDBWriteCapacityUtilization"
@@ -50,6 +50,10 @@ object MetricType {
   inline val CassandraReadCapacityUtilization: "CassandraReadCapacityUtilization" = "CassandraReadCapacityUtilization"
   inline val CassandraWriteCapacityUtilization: "CassandraWriteCapacityUtilization" = "CassandraWriteCapacityUtilization"
   inline val KafkaBrokerStorageUtilization: "KafkaBrokerStorageUtilization" = "KafkaBrokerStorageUtilization"
+  inline val ElastiCachePrimaryEngineCPUUtilization: "ElastiCachePrimaryEngineCPUUtilization" = "ElastiCachePrimaryEngineCPUUtilization"
+  inline val ElastiCacheReplicaEngineCPUUtilization: "ElastiCacheReplicaEngineCPUUtilization" = "ElastiCacheReplicaEngineCPUUtilization"
+  inline val ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage: "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage" = "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage"
+  inline val NeptuneReaderAverageCPUUtilization: "NeptuneReaderAverageCPUUtilization" = "NeptuneReaderAverageCPUUtilization"
 
   inline def values: js.Array[MetricType] = js.Array(
     DynamoDBReadCapacityUtilization,
@@ -68,7 +72,11 @@ object MetricType {
     LambdaProvisionedConcurrencyUtilization,
     CassandraReadCapacityUtilization,
     CassandraWriteCapacityUtilization,
-    KafkaBrokerStorageUtilization
+    KafkaBrokerStorageUtilization,
+    ElastiCachePrimaryEngineCPUUtilization,
+    ElastiCacheReplicaEngineCPUUtilization,
+    ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
+    NeptuneReaderAverageCPUUtilization
   )
 }
 
@@ -80,7 +88,7 @@ object PolicyType {
   inline def values: js.Array[PolicyType] = js.Array(StepScaling, TargetTrackingScaling)
 }
 
-type ScalableDimension = "ecs:service:DesiredCount" | "ec2:spot-fleet-request:TargetCapacity" | "elasticmapreduce:instancegroup:InstanceCount" | "appstream:fleet:DesiredCapacity" | "dynamodb:table:ReadCapacityUnits" | "dynamodb:table:WriteCapacityUnits" | "dynamodb:index:ReadCapacityUnits" | "dynamodb:index:WriteCapacityUnits" | "rds:cluster:ReadReplicaCount" | "sagemaker:variant:DesiredInstanceCount" | "custom-resource:ResourceType:Property" | "comprehend:document-classifier-endpoint:DesiredInferenceUnits" | "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits" | "lambda:function:ProvisionedConcurrency" | "cassandra:table:ReadCapacityUnits" | "cassandra:table:WriteCapacityUnits" | "kafka:broker-storage:VolumeSize"
+type ScalableDimension = "ecs:service:DesiredCount" | "ec2:spot-fleet-request:TargetCapacity" | "elasticmapreduce:instancegroup:InstanceCount" | "appstream:fleet:DesiredCapacity" | "dynamodb:table:ReadCapacityUnits" | "dynamodb:table:WriteCapacityUnits" | "dynamodb:index:ReadCapacityUnits" | "dynamodb:index:WriteCapacityUnits" | "rds:cluster:ReadReplicaCount" | "sagemaker:variant:DesiredInstanceCount" | "custom-resource:ResourceType:Property" | "comprehend:document-classifier-endpoint:DesiredInferenceUnits" | "comprehend:entity-recognizer-endpoint:DesiredInferenceUnits" | "lambda:function:ProvisionedConcurrency" | "cassandra:table:ReadCapacityUnits" | "cassandra:table:WriteCapacityUnits" | "kafka:broker-storage:VolumeSize" | "elasticache:replication-group:NodeGroups" | "elasticache:replication-group:Replicas" | "neptune:cluster:ReadReplicaCount"
 object ScalableDimension {
   inline val `ecs:service:DesiredCount`: "ecs:service:DesiredCount" = "ecs:service:DesiredCount"
   inline val `ec2:spot-fleet-request:TargetCapacity`: "ec2:spot-fleet-request:TargetCapacity" = "ec2:spot-fleet-request:TargetCapacity"
@@ -99,6 +107,9 @@ object ScalableDimension {
   inline val `cassandra:table:ReadCapacityUnits`: "cassandra:table:ReadCapacityUnits" = "cassandra:table:ReadCapacityUnits"
   inline val `cassandra:table:WriteCapacityUnits`: "cassandra:table:WriteCapacityUnits" = "cassandra:table:WriteCapacityUnits"
   inline val `kafka:broker-storage:VolumeSize`: "kafka:broker-storage:VolumeSize" = "kafka:broker-storage:VolumeSize"
+  inline val `elasticache:replication-group:NodeGroups`: "elasticache:replication-group:NodeGroups" = "elasticache:replication-group:NodeGroups"
+  inline val `elasticache:replication-group:Replicas`: "elasticache:replication-group:Replicas" = "elasticache:replication-group:Replicas"
+  inline val `neptune:cluster:ReadReplicaCount`: "neptune:cluster:ReadReplicaCount" = "neptune:cluster:ReadReplicaCount"
 
   inline def values: js.Array[ScalableDimension] = js.Array(
     `ecs:service:DesiredCount`,
@@ -117,7 +128,10 @@ object ScalableDimension {
     `lambda:function:ProvisionedConcurrency`,
     `cassandra:table:ReadCapacityUnits`,
     `cassandra:table:WriteCapacityUnits`,
-    `kafka:broker-storage:VolumeSize`
+    `kafka:broker-storage:VolumeSize`,
+    `elasticache:replication-group:NodeGroups`,
+    `elasticache:replication-group:Replicas`,
+    `neptune:cluster:ReadReplicaCount`
   )
 }
 
@@ -133,7 +147,7 @@ object ScalingActivityStatusCode {
   inline def values: js.Array[ScalingActivityStatusCode] = js.Array(Pending, InProgress, Successful, Overridden, Unfulfilled, Failed)
 }
 
-type ServiceNamespace = "ecs" | "elasticmapreduce" | "ec2" | "appstream" | "dynamodb" | "rds" | "sagemaker" | "custom-resource" | "comprehend" | "lambda" | "cassandra" | "kafka"
+type ServiceNamespace = "ecs" | "elasticmapreduce" | "ec2" | "appstream" | "dynamodb" | "rds" | "sagemaker" | "custom-resource" | "comprehend" | "lambda" | "cassandra" | "kafka" | "elasticache" | "neptune"
 object ServiceNamespace {
   inline val ecs: "ecs" = "ecs"
   inline val elasticmapreduce: "elasticmapreduce" = "elasticmapreduce"
@@ -147,6 +161,8 @@ object ServiceNamespace {
   inline val lambda: "lambda" = "lambda"
   inline val cassandra: "cassandra" = "cassandra"
   inline val kafka: "kafka" = "kafka"
+  inline val elasticache: "elasticache" = "elasticache"
+  inline val neptune: "neptune" = "neptune"
 
-  inline def values: js.Array[ServiceNamespace] = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka)
+  inline def values: js.Array[ServiceNamespace] = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka, elasticache, neptune)
 }

@@ -17,8 +17,10 @@ package object quicksight {
   type AnalysisSearchFilterList = js.Array[AnalysisSearchFilter]
   type AnalysisSummaryList = js.Array[AnalysisSummary]
   type Arn = String
+  type ArnList = js.Array[Arn]
   type AwsAccountId = String
   type AwsAndAccountId = String
+  type CIDR = String
   type CalculatedColumnList = js.Array[CalculatedColumn]
   type Catalog = String
   type ClusterId = String
@@ -35,6 +37,7 @@ package object quicksight {
   type ColumnNameList = js.Array[String]
   type ColumnSchemaList = js.Array[ColumnSchema]
   type ColumnTagList = js.Array[ColumnTag]
+  type ColumnTagNames = js.Array[ColumnTagName]
   type CopySourceArn = String
   type CustomSqlName = String
   type DashboardErrorList = js.Array[DashboardError]
@@ -56,12 +59,17 @@ package object quicksight {
   type Domain = String
   type DoubleList = js.Array[Double]
   type EmbeddingUrl = String
+  type EntryPath = String
   type EntryPoint = String
   type Expression = String
   type FieldFolderDescription = String
   type FieldFolderMap = js.Dictionary[FieldFolder]
   type FieldFolderPath = String
   type FolderColumnList = js.Array[String]
+  type FolderMemberList = js.Array[MemberIdArnPair]
+  type FolderName = String
+  type FolderSearchFilterList = js.Array[FolderSearchFilter]
+  type FolderSummaryList = js.Array[FolderSummary]
   type GroupDescription = String
   type GroupList = js.Array[Group]
   type GroupMemberList = js.Array[GroupMember]
@@ -80,6 +88,8 @@ package object quicksight {
   type InputColumnList = js.Array[InputColumn]
   type InstanceId = String
   type IntegerParameterList = js.Array[IntegerParameter]
+  type IpRestrictionRuleDescription = String
+  type IpRestrictionRuleMap = js.Dictionary[IpRestrictionRuleDescription]
   type LogicalTableAlias = String
   type LogicalTableId = String
   type LogicalTableMap = js.Dictionary[LogicalTable]
@@ -88,10 +98,12 @@ package object quicksight {
   type Namespace = String
   type Namespaces = js.Array[NamespaceInfoV2]
   type NonEmptyString = String
+  type NullableBoolean = Boolean
   type OnClause = String
   type OptionalPort = Int
   type OutputColumnList = js.Array[OutputColumn]
   type Password = String
+  type Path = js.Array[Arn]
   type PhysicalTableId = String
   type PhysicalTableMap = js.Dictionary[PhysicalTable]
   type Port = Int
@@ -110,9 +122,14 @@ package object quicksight {
   type RestrictiveResourceId = String
   type RoleName = String
   type RoleSessionName = String
+  type RowLevelPermissionTagDelimiter = String
+  type RowLevelPermissionTagRuleList = js.Array[RowLevelPermissionTagRule]
   type S3Bucket = String
   type S3Key = String
   type SessionLifetimeInMinutes = Double
+  type SessionTagKey = String
+  type SessionTagList = js.Array[SessionTag]
+  type SessionTagValue = String
   type SheetList = js.Array[Sheet]
   type SiteBaseUrl = String
   type SqlQuery = String
@@ -137,6 +154,7 @@ package object quicksight {
   type TimestampList = js.Array[Timestamp]
   type TransformOperationList = js.Array[TransformOperation]
   type TypeCastFormat = String
+  type UpdateLinkPermissionList = js.Array[ResourcePermission]
   type UpdateResourcePermissionList = js.Array[ResourcePermission]
   type UserList = js.Array[User]
   type UserName = String
@@ -145,7 +163,6 @@ package object quicksight {
   type VersionNumber = Double
   type Warehouse = String
   type WorkGroup = String
-  type timestamp = js.Date
 
   final class QuickSightOps(private val service: QuickSight) extends AnyVal {
 
@@ -155,6 +172,8 @@ package object quicksight {
     @inline def createDashboardFuture(params: CreateDashboardRequest): Future[CreateDashboardResponse] = service.createDashboard(params).promise().toFuture
     @inline def createDataSetFuture(params: CreateDataSetRequest): Future[CreateDataSetResponse] = service.createDataSet(params).promise().toFuture
     @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] = service.createDataSource(params).promise().toFuture
+    @inline def createFolderFuture(params: CreateFolderRequest): Future[CreateFolderResponse] = service.createFolder(params).promise().toFuture
+    @inline def createFolderMembershipFuture(params: CreateFolderMembershipRequest): Future[CreateFolderMembershipResponse] = service.createFolderMembership(params).promise().toFuture
     @inline def createGroupFuture(params: CreateGroupRequest): Future[CreateGroupResponse] = service.createGroup(params).promise().toFuture
     @inline def createGroupMembershipFuture(params: CreateGroupMembershipRequest): Future[CreateGroupMembershipResponse] = service.createGroupMembership(params).promise().toFuture
     @inline def createIAMPolicyAssignmentFuture(params: CreateIAMPolicyAssignmentRequest): Future[CreateIAMPolicyAssignmentResponse] = service.createIAMPolicyAssignment(params).promise().toFuture
@@ -169,6 +188,8 @@ package object quicksight {
     @inline def deleteDashboardFuture(params: DeleteDashboardRequest): Future[DeleteDashboardResponse] = service.deleteDashboard(params).promise().toFuture
     @inline def deleteDataSetFuture(params: DeleteDataSetRequest): Future[DeleteDataSetResponse] = service.deleteDataSet(params).promise().toFuture
     @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] = service.deleteDataSource(params).promise().toFuture
+    @inline def deleteFolderFuture(params: DeleteFolderRequest): Future[DeleteFolderResponse] = service.deleteFolder(params).promise().toFuture
+    @inline def deleteFolderMembershipFuture(params: DeleteFolderMembershipRequest): Future[DeleteFolderMembershipResponse] = service.deleteFolderMembership(params).promise().toFuture
     @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] = service.deleteGroup(params).promise().toFuture
     @inline def deleteGroupMembershipFuture(params: DeleteGroupMembershipRequest): Future[DeleteGroupMembershipResponse] = service.deleteGroupMembership(params).promise().toFuture
     @inline def deleteIAMPolicyAssignmentFuture(params: DeleteIAMPolicyAssignmentRequest): Future[DeleteIAMPolicyAssignmentResponse] = service.deleteIAMPolicyAssignment(params).promise().toFuture
@@ -189,9 +210,13 @@ package object quicksight {
     @inline def describeDataSetPermissionsFuture(params: DescribeDataSetPermissionsRequest): Future[DescribeDataSetPermissionsResponse] = service.describeDataSetPermissions(params).promise().toFuture
     @inline def describeDataSourceFuture(params: DescribeDataSourceRequest): Future[DescribeDataSourceResponse] = service.describeDataSource(params).promise().toFuture
     @inline def describeDataSourcePermissionsFuture(params: DescribeDataSourcePermissionsRequest): Future[DescribeDataSourcePermissionsResponse] = service.describeDataSourcePermissions(params).promise().toFuture
+    @inline def describeFolderFuture(params: DescribeFolderRequest): Future[DescribeFolderResponse] = service.describeFolder(params).promise().toFuture
+    @inline def describeFolderPermissionsFuture(params: DescribeFolderPermissionsRequest): Future[DescribeFolderPermissionsResponse] = service.describeFolderPermissions(params).promise().toFuture
+    @inline def describeFolderResolvedPermissionsFuture(params: DescribeFolderResolvedPermissionsRequest): Future[DescribeFolderResolvedPermissionsResponse] = service.describeFolderResolvedPermissions(params).promise().toFuture
     @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] = service.describeGroup(params).promise().toFuture
     @inline def describeIAMPolicyAssignmentFuture(params: DescribeIAMPolicyAssignmentRequest): Future[DescribeIAMPolicyAssignmentResponse] = service.describeIAMPolicyAssignment(params).promise().toFuture
     @inline def describeIngestionFuture(params: DescribeIngestionRequest): Future[DescribeIngestionResponse] = service.describeIngestion(params).promise().toFuture
+    @inline def describeIpRestrictionFuture(params: DescribeIpRestrictionRequest): Future[DescribeIpRestrictionResponse] = service.describeIpRestriction(params).promise().toFuture
     @inline def describeNamespaceFuture(params: DescribeNamespaceRequest): Future[DescribeNamespaceResponse] = service.describeNamespace(params).promise().toFuture
     @inline def describeTemplateAliasFuture(params: DescribeTemplateAliasRequest): Future[DescribeTemplateAliasResponse] = service.describeTemplateAlias(params).promise().toFuture
     @inline def describeTemplateFuture(params: DescribeTemplateRequest): Future[DescribeTemplateResponse] = service.describeTemplate(params).promise().toFuture
@@ -200,6 +225,8 @@ package object quicksight {
     @inline def describeThemeFuture(params: DescribeThemeRequest): Future[DescribeThemeResponse] = service.describeTheme(params).promise().toFuture
     @inline def describeThemePermissionsFuture(params: DescribeThemePermissionsRequest): Future[DescribeThemePermissionsResponse] = service.describeThemePermissions(params).promise().toFuture
     @inline def describeUserFuture(params: DescribeUserRequest): Future[DescribeUserResponse] = service.describeUser(params).promise().toFuture
+    @inline def generateEmbedUrlForAnonymousUserFuture(params: GenerateEmbedUrlForAnonymousUserRequest): Future[GenerateEmbedUrlForAnonymousUserResponse] = service.generateEmbedUrlForAnonymousUser(params).promise().toFuture
+    @inline def generateEmbedUrlForRegisteredUserFuture(params: GenerateEmbedUrlForRegisteredUserRequest): Future[GenerateEmbedUrlForRegisteredUserResponse] = service.generateEmbedUrlForRegisteredUser(params).promise().toFuture
     @inline def getDashboardEmbedUrlFuture(params: GetDashboardEmbedUrlRequest): Future[GetDashboardEmbedUrlResponse] = service.getDashboardEmbedUrl(params).promise().toFuture
     @inline def getSessionEmbedUrlFuture(params: GetSessionEmbedUrlRequest): Future[GetSessionEmbedUrlResponse] = service.getSessionEmbedUrl(params).promise().toFuture
     @inline def listAnalysesFuture(params: ListAnalysesRequest): Future[ListAnalysesResponse] = service.listAnalyses(params).promise().toFuture
@@ -207,6 +234,8 @@ package object quicksight {
     @inline def listDashboardsFuture(params: ListDashboardsRequest): Future[ListDashboardsResponse] = service.listDashboards(params).promise().toFuture
     @inline def listDataSetsFuture(params: ListDataSetsRequest): Future[ListDataSetsResponse] = service.listDataSets(params).promise().toFuture
     @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] = service.listDataSources(params).promise().toFuture
+    @inline def listFolderMembersFuture(params: ListFolderMembersRequest): Future[ListFolderMembersResponse] = service.listFolderMembers(params).promise().toFuture
+    @inline def listFoldersFuture(params: ListFoldersRequest): Future[ListFoldersResponse] = service.listFolders(params).promise().toFuture
     @inline def listGroupMembershipsFuture(params: ListGroupMembershipsRequest): Future[ListGroupMembershipsResponse] = service.listGroupMemberships(params).promise().toFuture
     @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
     @inline def listIAMPolicyAssignmentsForUserFuture(params: ListIAMPolicyAssignmentsForUserRequest): Future[ListIAMPolicyAssignmentsForUserResponse] = service.listIAMPolicyAssignmentsForUser(params).promise().toFuture
@@ -226,6 +255,7 @@ package object quicksight {
     @inline def restoreAnalysisFuture(params: RestoreAnalysisRequest): Future[RestoreAnalysisResponse] = service.restoreAnalysis(params).promise().toFuture
     @inline def searchAnalysesFuture(params: SearchAnalysesRequest): Future[SearchAnalysesResponse] = service.searchAnalyses(params).promise().toFuture
     @inline def searchDashboardsFuture(params: SearchDashboardsRequest): Future[SearchDashboardsResponse] = service.searchDashboards(params).promise().toFuture
+    @inline def searchFoldersFuture(params: SearchFoldersRequest): Future[SearchFoldersResponse] = service.searchFolders(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAccountCustomizationFuture(params: UpdateAccountCustomizationRequest): Future[UpdateAccountCustomizationResponse] = service.updateAccountCustomization(params).promise().toFuture
@@ -239,8 +269,11 @@ package object quicksight {
     @inline def updateDataSetPermissionsFuture(params: UpdateDataSetPermissionsRequest): Future[UpdateDataSetPermissionsResponse] = service.updateDataSetPermissions(params).promise().toFuture
     @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] = service.updateDataSource(params).promise().toFuture
     @inline def updateDataSourcePermissionsFuture(params: UpdateDataSourcePermissionsRequest): Future[UpdateDataSourcePermissionsResponse] = service.updateDataSourcePermissions(params).promise().toFuture
+    @inline def updateFolderFuture(params: UpdateFolderRequest): Future[UpdateFolderResponse] = service.updateFolder(params).promise().toFuture
+    @inline def updateFolderPermissionsFuture(params: UpdateFolderPermissionsRequest): Future[UpdateFolderPermissionsResponse] = service.updateFolderPermissions(params).promise().toFuture
     @inline def updateGroupFuture(params: UpdateGroupRequest): Future[UpdateGroupResponse] = service.updateGroup(params).promise().toFuture
     @inline def updateIAMPolicyAssignmentFuture(params: UpdateIAMPolicyAssignmentRequest): Future[UpdateIAMPolicyAssignmentResponse] = service.updateIAMPolicyAssignment(params).promise().toFuture
+    @inline def updateIpRestrictionFuture(params: UpdateIpRestrictionRequest): Future[UpdateIpRestrictionResponse] = service.updateIpRestriction(params).promise().toFuture
     @inline def updateTemplateAliasFuture(params: UpdateTemplateAliasRequest): Future[UpdateTemplateAliasResponse] = service.updateTemplateAlias(params).promise().toFuture
     @inline def updateTemplateFuture(params: UpdateTemplateRequest): Future[UpdateTemplateResponse] = service.updateTemplate(params).promise().toFuture
     @inline def updateTemplatePermissionsFuture(params: UpdateTemplatePermissionsRequest): Future[UpdateTemplatePermissionsResponse] = service.updateTemplatePermissions(params).promise().toFuture
@@ -262,6 +295,8 @@ package object quicksight {
     def createDashboard(params: CreateDashboardRequest): Request[CreateDashboardResponse] = js.native
     def createDataSet(params: CreateDataSetRequest): Request[CreateDataSetResponse] = js.native
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
+    def createFolder(params: CreateFolderRequest): Request[CreateFolderResponse] = js.native
+    def createFolderMembership(params: CreateFolderMembershipRequest): Request[CreateFolderMembershipResponse] = js.native
     def createGroup(params: CreateGroupRequest): Request[CreateGroupResponse] = js.native
     def createGroupMembership(params: CreateGroupMembershipRequest): Request[CreateGroupMembershipResponse] = js.native
     def createIAMPolicyAssignment(params: CreateIAMPolicyAssignmentRequest): Request[CreateIAMPolicyAssignmentResponse] = js.native
@@ -276,6 +311,8 @@ package object quicksight {
     def deleteDashboard(params: DeleteDashboardRequest): Request[DeleteDashboardResponse] = js.native
     def deleteDataSet(params: DeleteDataSetRequest): Request[DeleteDataSetResponse] = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse] = js.native
+    def deleteFolder(params: DeleteFolderRequest): Request[DeleteFolderResponse] = js.native
+    def deleteFolderMembership(params: DeleteFolderMembershipRequest): Request[DeleteFolderMembershipResponse] = js.native
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
     def deleteGroupMembership(params: DeleteGroupMembershipRequest): Request[DeleteGroupMembershipResponse] = js.native
     def deleteIAMPolicyAssignment(params: DeleteIAMPolicyAssignmentRequest): Request[DeleteIAMPolicyAssignmentResponse] = js.native
@@ -296,9 +333,13 @@ package object quicksight {
     def describeDataSetPermissions(params: DescribeDataSetPermissionsRequest): Request[DescribeDataSetPermissionsResponse] = js.native
     def describeDataSource(params: DescribeDataSourceRequest): Request[DescribeDataSourceResponse] = js.native
     def describeDataSourcePermissions(params: DescribeDataSourcePermissionsRequest): Request[DescribeDataSourcePermissionsResponse] = js.native
+    def describeFolder(params: DescribeFolderRequest): Request[DescribeFolderResponse] = js.native
+    def describeFolderPermissions(params: DescribeFolderPermissionsRequest): Request[DescribeFolderPermissionsResponse] = js.native
+    def describeFolderResolvedPermissions(params: DescribeFolderResolvedPermissionsRequest): Request[DescribeFolderResolvedPermissionsResponse] = js.native
     def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse] = js.native
     def describeIAMPolicyAssignment(params: DescribeIAMPolicyAssignmentRequest): Request[DescribeIAMPolicyAssignmentResponse] = js.native
     def describeIngestion(params: DescribeIngestionRequest): Request[DescribeIngestionResponse] = js.native
+    def describeIpRestriction(params: DescribeIpRestrictionRequest): Request[DescribeIpRestrictionResponse] = js.native
     def describeNamespace(params: DescribeNamespaceRequest): Request[DescribeNamespaceResponse] = js.native
     def describeTemplate(params: DescribeTemplateRequest): Request[DescribeTemplateResponse] = js.native
     def describeTemplateAlias(params: DescribeTemplateAliasRequest): Request[DescribeTemplateAliasResponse] = js.native
@@ -307,6 +348,8 @@ package object quicksight {
     def describeThemeAlias(params: DescribeThemeAliasRequest): Request[DescribeThemeAliasResponse] = js.native
     def describeThemePermissions(params: DescribeThemePermissionsRequest): Request[DescribeThemePermissionsResponse] = js.native
     def describeUser(params: DescribeUserRequest): Request[DescribeUserResponse] = js.native
+    def generateEmbedUrlForAnonymousUser(params: GenerateEmbedUrlForAnonymousUserRequest): Request[GenerateEmbedUrlForAnonymousUserResponse] = js.native
+    def generateEmbedUrlForRegisteredUser(params: GenerateEmbedUrlForRegisteredUserRequest): Request[GenerateEmbedUrlForRegisteredUserResponse] = js.native
     def getDashboardEmbedUrl(params: GetDashboardEmbedUrlRequest): Request[GetDashboardEmbedUrlResponse] = js.native
     def getSessionEmbedUrl(params: GetSessionEmbedUrlRequest): Request[GetSessionEmbedUrlResponse] = js.native
     def listAnalyses(params: ListAnalysesRequest): Request[ListAnalysesResponse] = js.native
@@ -314,6 +357,8 @@ package object quicksight {
     def listDashboards(params: ListDashboardsRequest): Request[ListDashboardsResponse] = js.native
     def listDataSets(params: ListDataSetsRequest): Request[ListDataSetsResponse] = js.native
     def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
+    def listFolderMembers(params: ListFolderMembersRequest): Request[ListFolderMembersResponse] = js.native
+    def listFolders(params: ListFoldersRequest): Request[ListFoldersResponse] = js.native
     def listGroupMemberships(params: ListGroupMembershipsRequest): Request[ListGroupMembershipsResponse] = js.native
     def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
     def listIAMPolicyAssignments(params: ListIAMPolicyAssignmentsRequest): Request[ListIAMPolicyAssignmentsResponse] = js.native
@@ -333,6 +378,7 @@ package object quicksight {
     def restoreAnalysis(params: RestoreAnalysisRequest): Request[RestoreAnalysisResponse] = js.native
     def searchAnalyses(params: SearchAnalysesRequest): Request[SearchAnalysesResponse] = js.native
     def searchDashboards(params: SearchDashboardsRequest): Request[SearchDashboardsResponse] = js.native
+    def searchFolders(params: SearchFoldersRequest): Request[SearchFoldersResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAccountCustomization(params: UpdateAccountCustomizationRequest): Request[UpdateAccountCustomizationResponse] = js.native
@@ -346,8 +392,11 @@ package object quicksight {
     def updateDataSetPermissions(params: UpdateDataSetPermissionsRequest): Request[UpdateDataSetPermissionsResponse] = js.native
     def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse] = js.native
     def updateDataSourcePermissions(params: UpdateDataSourcePermissionsRequest): Request[UpdateDataSourcePermissionsResponse] = js.native
+    def updateFolder(params: UpdateFolderRequest): Request[UpdateFolderResponse] = js.native
+    def updateFolderPermissions(params: UpdateFolderPermissionsRequest): Request[UpdateFolderPermissionsResponse] = js.native
     def updateGroup(params: UpdateGroupRequest): Request[UpdateGroupResponse] = js.native
     def updateIAMPolicyAssignment(params: UpdateIAMPolicyAssignmentRequest): Request[UpdateIAMPolicyAssignmentResponse] = js.native
+    def updateIpRestriction(params: UpdateIpRestrictionRequest): Request[UpdateIpRestrictionResponse] = js.native
     def updateTemplate(params: UpdateTemplateRequest): Request[UpdateTemplateResponse] = js.native
     def updateTemplateAlias(params: UpdateTemplateAliasRequest): Request[UpdateTemplateAliasResponse] = js.native
     def updateTemplatePermissions(params: UpdateTemplatePermissionsRequest): Request[UpdateTemplatePermissionsResponse] = js.native
@@ -362,25 +411,28 @@ package object quicksight {
     }
   }
 
-  /** The Amazon QuickSight customizations associated with your AWS account or a QuickSight namespace in a specific AWS Region.
+  /** The Amazon QuickSight customizations associated with your Amazon Web Services account or a QuickSight namespace in a specific Amazon Web Services Region.
     */
   @js.native
   trait AccountCustomization extends js.Object {
+    var DefaultEmailCustomizationTemplate: js.UndefOr[Arn]
     var DefaultTheme: js.UndefOr[Arn]
   }
 
   object AccountCustomization {
     @inline
     def apply(
+        DefaultEmailCustomizationTemplate: js.UndefOr[Arn] = js.undefined,
         DefaultTheme: js.UndefOr[Arn] = js.undefined
     ): AccountCustomization = {
       val __obj = js.Dynamic.literal()
+      DefaultEmailCustomizationTemplate.foreach(__v => __obj.updateDynamic("DefaultEmailCustomizationTemplate")(__v.asInstanceOf[js.Any]))
       DefaultTheme.foreach(__v => __obj.updateDynamic("DefaultTheme")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccountCustomization]
     }
   }
 
-  /** The QuickSight settings associated with your AWS account.
+  /** The Amazon QuickSight settings associated with your Amazon Web Services account.
     */
   @js.native
   trait AccountSettings extends js.Object {
@@ -407,7 +459,7 @@ package object quicksight {
     }
   }
 
-  /** The active AWS Identity and Access Management (IAM) policy assignment.
+  /** The active Identity and Access Management (IAM) policy assignment.
     */
   @js.native
   trait ActiveIAMPolicyAssignment extends js.Object {
@@ -446,7 +498,7 @@ package object quicksight {
     }
   }
 
-  /** Amazon Elasticsearch Service parameters.
+  /** The parameters for OpenSearch.
     */
   @js.native
   trait AmazonElasticsearchParameters extends js.Object {
@@ -462,6 +514,25 @@ package object quicksight {
         "Domain" -> Domain.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[AmazonElasticsearchParameters]
+    }
+  }
+
+  /** The parameters for OpenSearch.
+    */
+  @js.native
+  trait AmazonOpenSearchParameters extends js.Object {
+    var Domain: Domain
+  }
+
+  object AmazonOpenSearchParameters {
+    @inline
+    def apply(
+        Domain: Domain
+    ): AmazonOpenSearchParameters = {
+      val __obj = js.Dynamic.literal(
+        "Domain" -> Domain.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AmazonOpenSearchParameters]
     }
   }
 
@@ -510,7 +581,7 @@ package object quicksight {
     }
   }
 
-  /** A metadata error structure for an analysis.
+  /** Analysis error.
     */
   @js.native
   trait AnalysisError extends js.Object {
@@ -628,7 +699,44 @@ package object quicksight {
     }
   }
 
-  /** Amazon Athena parameters.
+  /** Information about the dashboard that you want to embed.
+    */
+  @js.native
+  trait AnonymousUserDashboardEmbeddingConfiguration extends js.Object {
+    var InitialDashboardId: RestrictiveResourceId
+  }
+
+  object AnonymousUserDashboardEmbeddingConfiguration {
+    @inline
+    def apply(
+        InitialDashboardId: RestrictiveResourceId
+    ): AnonymousUserDashboardEmbeddingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "InitialDashboardId" -> InitialDashboardId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AnonymousUserDashboardEmbeddingConfiguration]
+    }
+  }
+
+  /** The type of experience you want to embed. For anonymous users, you can embed Amazon QuickSight dashboards.
+    */
+  @js.native
+  trait AnonymousUserEmbeddingExperienceConfiguration extends js.Object {
+    var Dashboard: js.UndefOr[AnonymousUserDashboardEmbeddingConfiguration]
+  }
+
+  object AnonymousUserEmbeddingExperienceConfiguration {
+    @inline
+    def apply(
+        Dashboard: js.UndefOr[AnonymousUserDashboardEmbeddingConfiguration] = js.undefined
+    ): AnonymousUserEmbeddingExperienceConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Dashboard.foreach(__v => __obj.updateDynamic("Dashboard")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnonymousUserEmbeddingExperienceConfiguration]
+    }
+  }
+
+  /** Parameters for Amazon Athena.
     */
   @js.native
   trait AthenaParameters extends js.Object {
@@ -646,7 +754,7 @@ package object quicksight {
     }
   }
 
-  /** Amazon Aurora parameters.
+  /** Parameters for Amazon Aurora.
     */
   @js.native
   trait AuroraParameters extends js.Object {
@@ -671,7 +779,7 @@ package object quicksight {
     }
   }
 
-  /** Amazon Aurora with PostgreSQL compatibility parameters.
+  /** Parameters for Amazon Aurora PostgreSQL-Compatible Edition.
     */
   @js.native
   trait AuroraPostgreSqlParameters extends js.Object {
@@ -696,7 +804,7 @@ package object quicksight {
     }
   }
 
-  /** AWS IoT Analytics parameters.
+  /** The parameters for IoT Analytics.
     */
   @js.native
   trait AwsIotAnalyticsParameters extends js.Object {
@@ -952,7 +1060,7 @@ package object quicksight {
     }
   }
 
-  /** A tag for a column in a <a>TagColumnOperation</a> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
+  /** A tag for a column in a <code> [[https://docs.aws.amazon.com/quicksight/latest/APIReference/API_TagColumnOperation.html|TagColumnOperation]] </code> structure. This is a variant type structure. For this structure to be valid, only one of the attributes can be non-null.
     */
   @js.native
   trait ColumnTag extends js.Object {
@@ -1202,10 +1310,12 @@ package object quicksight {
     var PhysicalTableMap: PhysicalTableMap
     var ColumnGroups: js.UndefOr[ColumnGroupList]
     var ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList]
+    var DataSetUsageConfiguration: js.UndefOr[DataSetUsageConfiguration]
     var FieldFolders: js.UndefOr[FieldFolderMap]
     var LogicalTableMap: js.UndefOr[LogicalTableMap]
     var Permissions: js.UndefOr[ResourcePermissionList]
     var RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet]
+    var RowLevelPermissionTagConfiguration: js.UndefOr[RowLevelPermissionTagConfiguration]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -1219,10 +1329,12 @@ package object quicksight {
         PhysicalTableMap: PhysicalTableMap,
         ColumnGroups: js.UndefOr[ColumnGroupList] = js.undefined,
         ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList] = js.undefined,
+        DataSetUsageConfiguration: js.UndefOr[DataSetUsageConfiguration] = js.undefined,
         FieldFolders: js.UndefOr[FieldFolderMap] = js.undefined,
         LogicalTableMap: js.UndefOr[LogicalTableMap] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined,
+        RowLevelPermissionTagConfiguration: js.UndefOr[RowLevelPermissionTagConfiguration] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDataSetRequest = {
       val __obj = js.Dynamic.literal(
@@ -1235,10 +1347,12 @@ package object quicksight {
 
       ColumnGroups.foreach(__v => __obj.updateDynamic("ColumnGroups")(__v.asInstanceOf[js.Any]))
       ColumnLevelPermissionRules.foreach(__v => __obj.updateDynamic("ColumnLevelPermissionRules")(__v.asInstanceOf[js.Any]))
+      DataSetUsageConfiguration.foreach(__v => __obj.updateDynamic("DataSetUsageConfiguration")(__v.asInstanceOf[js.Any]))
       FieldFolders.foreach(__v => __obj.updateDynamic("FieldFolders")(__v.asInstanceOf[js.Any]))
       LogicalTableMap.foreach(__v => __obj.updateDynamic("LogicalTableMap")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
+      RowLevelPermissionTagConfiguration.foreach(__v => __obj.updateDynamic("RowLevelPermissionTagConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDataSetRequest]
     }
@@ -1345,6 +1459,115 @@ package object quicksight {
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDataSourceResponse]
+    }
+  }
+
+  @js.native
+  trait CreateFolderMembershipRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var FolderId: RestrictiveResourceId
+    var MemberId: RestrictiveResourceId
+    var MemberType: MemberType
+  }
+
+  object CreateFolderMembershipRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        FolderId: RestrictiveResourceId,
+        MemberId: RestrictiveResourceId,
+        MemberType: MemberType
+    ): CreateFolderMembershipRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "FolderId" -> FolderId.asInstanceOf[js.Any],
+        "MemberId" -> MemberId.asInstanceOf[js.Any],
+        "MemberType" -> MemberType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateFolderMembershipRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFolderMembershipResponse extends js.Object {
+    var FolderMember: js.UndefOr[FolderMember]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object CreateFolderMembershipResponse {
+    @inline
+    def apply(
+        FolderMember: js.UndefOr[FolderMember] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): CreateFolderMembershipResponse = {
+      val __obj = js.Dynamic.literal()
+      FolderMember.foreach(__v => __obj.updateDynamic("FolderMember")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFolderMembershipResponse]
+    }
+  }
+
+  @js.native
+  trait CreateFolderRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var FolderId: RestrictiveResourceId
+    var FolderType: js.UndefOr[FolderType]
+    var Name: js.UndefOr[FolderName]
+    var ParentFolderArn: js.UndefOr[Arn]
+    var Permissions: js.UndefOr[ResourcePermissionList]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateFolderRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        FolderId: RestrictiveResourceId,
+        FolderType: js.UndefOr[FolderType] = js.undefined,
+        Name: js.UndefOr[FolderName] = js.undefined,
+        ParentFolderArn: js.UndefOr[Arn] = js.undefined,
+        Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateFolderRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
+
+      FolderType.foreach(__v => __obj.updateDynamic("FolderType")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      ParentFolderArn.foreach(__v => __obj.updateDynamic("ParentFolderArn")(__v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFolderRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFolderResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var FolderId: js.UndefOr[RestrictiveResourceId]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object CreateFolderResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        FolderId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): CreateFolderResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      FolderId.foreach(__v => __obj.updateDynamic("FolderId")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFolderResponse]
     }
   }
 
@@ -1521,6 +1744,7 @@ package object quicksight {
     var AwsAccountId: AwsAccountId
     var DataSetId: String
     var IngestionId: IngestionId
+    var IngestionType: js.UndefOr[IngestionType]
   }
 
   object CreateIngestionRequest {
@@ -1528,13 +1752,16 @@ package object quicksight {
     def apply(
         AwsAccountId: AwsAccountId,
         DataSetId: String,
-        IngestionId: IngestionId
+        IngestionId: IngestionId,
+        IngestionType: js.UndefOr[IngestionType] = js.undefined
     ): CreateIngestionRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
         "DataSetId" -> DataSetId.asInstanceOf[js.Any],
         "IngestionId" -> IngestionId.asInstanceOf[js.Any]
       )
+
+      IngestionType.foreach(__v => __obj.updateDynamic("IngestionType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateIngestionRequest]
     }
   }
@@ -2211,6 +2438,7 @@ package object quicksight {
     var ConsumedSpiceCapacityInBytes: js.UndefOr[Double]
     var CreatedTime: js.UndefOr[Timestamp]
     var DataSetId: js.UndefOr[ResourceId]
+    var DataSetUsageConfiguration: js.UndefOr[DataSetUsageConfiguration]
     var FieldFolders: js.UndefOr[FieldFolderMap]
     var ImportMode: js.UndefOr[DataSetImportMode]
     var LastUpdatedTime: js.UndefOr[Timestamp]
@@ -2219,6 +2447,7 @@ package object quicksight {
     var OutputColumns: js.UndefOr[OutputColumnList]
     var PhysicalTableMap: js.UndefOr[PhysicalTableMap]
     var RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet]
+    var RowLevelPermissionTagConfiguration: js.UndefOr[RowLevelPermissionTagConfiguration]
   }
 
   object DataSet {
@@ -2230,6 +2459,7 @@ package object quicksight {
         ConsumedSpiceCapacityInBytes: js.UndefOr[Double] = js.undefined,
         CreatedTime: js.UndefOr[Timestamp] = js.undefined,
         DataSetId: js.UndefOr[ResourceId] = js.undefined,
+        DataSetUsageConfiguration: js.UndefOr[DataSetUsageConfiguration] = js.undefined,
         FieldFolders: js.UndefOr[FieldFolderMap] = js.undefined,
         ImportMode: js.UndefOr[DataSetImportMode] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -2237,7 +2467,8 @@ package object quicksight {
         Name: js.UndefOr[ResourceName] = js.undefined,
         OutputColumns: js.UndefOr[OutputColumnList] = js.undefined,
         PhysicalTableMap: js.UndefOr[PhysicalTableMap] = js.undefined,
-        RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined
+        RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined,
+        RowLevelPermissionTagConfiguration: js.UndefOr[RowLevelPermissionTagConfiguration] = js.undefined
     ): DataSet = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -2246,6 +2477,7 @@ package object quicksight {
       ConsumedSpiceCapacityInBytes.foreach(__v => __obj.updateDynamic("ConsumedSpiceCapacityInBytes")(__v.asInstanceOf[js.Any]))
       CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
       DataSetId.foreach(__v => __obj.updateDynamic("DataSetId")(__v.asInstanceOf[js.Any]))
+      DataSetUsageConfiguration.foreach(__v => __obj.updateDynamic("DataSetUsageConfiguration")(__v.asInstanceOf[js.Any]))
       FieldFolders.foreach(__v => __obj.updateDynamic("FieldFolders")(__v.asInstanceOf[js.Any]))
       ImportMode.foreach(__v => __obj.updateDynamic("ImportMode")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
@@ -2254,6 +2486,7 @@ package object quicksight {
       OutputColumns.foreach(__v => __obj.updateDynamic("OutputColumns")(__v.asInstanceOf[js.Any]))
       PhysicalTableMap.foreach(__v => __obj.updateDynamic("PhysicalTableMap")(__v.asInstanceOf[js.Any]))
       RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
+      RowLevelPermissionTagConfiguration.foreach(__v => __obj.updateDynamic("RowLevelPermissionTagConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSet]
     }
   }
@@ -2334,6 +2567,7 @@ package object quicksight {
     var LastUpdatedTime: js.UndefOr[Timestamp]
     var Name: js.UndefOr[ResourceName]
     var RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet]
+    var RowLevelPermissionTagConfigurationApplied: js.UndefOr[Boolean]
   }
 
   object DataSetSummary {
@@ -2346,7 +2580,8 @@ package object quicksight {
         ImportMode: js.UndefOr[DataSetImportMode] = js.undefined,
         LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
         Name: js.UndefOr[ResourceName] = js.undefined,
-        RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined
+        RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined,
+        RowLevelPermissionTagConfigurationApplied: js.UndefOr[Boolean] = js.undefined
     ): DataSetSummary = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
@@ -2357,7 +2592,29 @@ package object quicksight {
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
+      RowLevelPermissionTagConfigurationApplied.foreach(__v => __obj.updateDynamic("RowLevelPermissionTagConfigurationApplied")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSetSummary]
+    }
+  }
+
+  /** The usage configuration to apply to child datasets that reference this dataset as a source.
+    */
+  @js.native
+  trait DataSetUsageConfiguration extends js.Object {
+    var DisableUseAsDirectQuerySource: js.UndefOr[Boolean]
+    var DisableUseAsImportedSource: js.UndefOr[Boolean]
+  }
+
+  object DataSetUsageConfiguration {
+    @inline
+    def apply(
+        DisableUseAsDirectQuerySource: js.UndefOr[Boolean] = js.undefined,
+        DisableUseAsImportedSource: js.UndefOr[Boolean] = js.undefined
+    ): DataSetUsageConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DisableUseAsDirectQuerySource.foreach(__v => __obj.updateDynamic("DisableUseAsDirectQuerySource")(__v.asInstanceOf[js.Any]))
+      DisableUseAsImportedSource.foreach(__v => __obj.updateDynamic("DisableUseAsImportedSource")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataSetUsageConfiguration]
     }
   }
 
@@ -2459,10 +2716,12 @@ package object quicksight {
   @js.native
   trait DataSourceParameters extends js.Object {
     var AmazonElasticsearchParameters: js.UndefOr[AmazonElasticsearchParameters]
+    var AmazonOpenSearchParameters: js.UndefOr[AmazonOpenSearchParameters]
     var AthenaParameters: js.UndefOr[AthenaParameters]
     var AuroraParameters: js.UndefOr[AuroraParameters]
     var AuroraPostgreSqlParameters: js.UndefOr[AuroraPostgreSqlParameters]
     var AwsIotAnalyticsParameters: js.UndefOr[AwsIotAnalyticsParameters]
+    var ExasolParameters: js.UndefOr[ExasolParameters]
     var JiraParameters: js.UndefOr[JiraParameters]
     var MariaDbParameters: js.UndefOr[MariaDbParameters]
     var MySqlParameters: js.UndefOr[MySqlParameters]
@@ -2484,10 +2743,12 @@ package object quicksight {
     @inline
     def apply(
         AmazonElasticsearchParameters: js.UndefOr[AmazonElasticsearchParameters] = js.undefined,
+        AmazonOpenSearchParameters: js.UndefOr[AmazonOpenSearchParameters] = js.undefined,
         AthenaParameters: js.UndefOr[AthenaParameters] = js.undefined,
         AuroraParameters: js.UndefOr[AuroraParameters] = js.undefined,
         AuroraPostgreSqlParameters: js.UndefOr[AuroraPostgreSqlParameters] = js.undefined,
         AwsIotAnalyticsParameters: js.UndefOr[AwsIotAnalyticsParameters] = js.undefined,
+        ExasolParameters: js.UndefOr[ExasolParameters] = js.undefined,
         JiraParameters: js.UndefOr[JiraParameters] = js.undefined,
         MariaDbParameters: js.UndefOr[MariaDbParameters] = js.undefined,
         MySqlParameters: js.UndefOr[MySqlParameters] = js.undefined,
@@ -2506,10 +2767,12 @@ package object quicksight {
     ): DataSourceParameters = {
       val __obj = js.Dynamic.literal()
       AmazonElasticsearchParameters.foreach(__v => __obj.updateDynamic("AmazonElasticsearchParameters")(__v.asInstanceOf[js.Any]))
+      AmazonOpenSearchParameters.foreach(__v => __obj.updateDynamic("AmazonOpenSearchParameters")(__v.asInstanceOf[js.Any]))
       AthenaParameters.foreach(__v => __obj.updateDynamic("AthenaParameters")(__v.asInstanceOf[js.Any]))
       AuroraParameters.foreach(__v => __obj.updateDynamic("AuroraParameters")(__v.asInstanceOf[js.Any]))
       AuroraPostgreSqlParameters.foreach(__v => __obj.updateDynamic("AuroraPostgreSqlParameters")(__v.asInstanceOf[js.Any]))
       AwsIotAnalyticsParameters.foreach(__v => __obj.updateDynamic("AwsIotAnalyticsParameters")(__v.asInstanceOf[js.Any]))
+      ExasolParameters.foreach(__v => __obj.updateDynamic("ExasolParameters")(__v.asInstanceOf[js.Any]))
       JiraParameters.foreach(__v => __obj.updateDynamic("JiraParameters")(__v.asInstanceOf[js.Any]))
       MariaDbParameters.foreach(__v => __obj.updateDynamic("MariaDbParameters")(__v.asInstanceOf[js.Any]))
       MySqlParameters.foreach(__v => __obj.updateDynamic("MySqlParameters")(__v.asInstanceOf[js.Any]))
@@ -2804,6 +3067,96 @@ package object quicksight {
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteDataSourceResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteFolderMembershipRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var FolderId: RestrictiveResourceId
+    var MemberId: RestrictiveResourceId
+    var MemberType: MemberType
+  }
+
+  object DeleteFolderMembershipRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        FolderId: RestrictiveResourceId,
+        MemberId: RestrictiveResourceId,
+        MemberType: MemberType
+    ): DeleteFolderMembershipRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "FolderId" -> FolderId.asInstanceOf[js.Any],
+        "MemberId" -> MemberId.asInstanceOf[js.Any],
+        "MemberType" -> MemberType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteFolderMembershipRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFolderMembershipResponse extends js.Object {
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DeleteFolderMembershipResponse {
+    @inline
+    def apply(
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DeleteFolderMembershipResponse = {
+      val __obj = js.Dynamic.literal()
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFolderMembershipResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteFolderRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var FolderId: RestrictiveResourceId
+  }
+
+  object DeleteFolderRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        FolderId: RestrictiveResourceId
+    ): DeleteFolderRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteFolderRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFolderResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var FolderId: js.UndefOr[RestrictiveResourceId]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DeleteFolderResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        FolderId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DeleteFolderResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      FolderId.foreach(__v => __obj.updateDynamic("FolderId")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteFolderResponse]
     }
   }
 
@@ -3472,6 +3825,7 @@ package object quicksight {
   trait DescribeDashboardPermissionsResponse extends js.Object {
     var DashboardArn: js.UndefOr[Arn]
     var DashboardId: js.UndefOr[RestrictiveResourceId]
+    var LinkSharingConfiguration: js.UndefOr[LinkSharingConfiguration]
     var Permissions: js.UndefOr[ResourcePermissionList]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
@@ -3482,6 +3836,7 @@ package object quicksight {
     def apply(
         DashboardArn: js.UndefOr[Arn] = js.undefined,
         DashboardId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        LinkSharingConfiguration: js.UndefOr[LinkSharingConfiguration] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
@@ -3489,6 +3844,7 @@ package object quicksight {
       val __obj = js.Dynamic.literal()
       DashboardArn.foreach(__v => __obj.updateDynamic("DashboardArn")(__v.asInstanceOf[js.Any]))
       DashboardId.foreach(__v => __obj.updateDynamic("DashboardId")(__v.asInstanceOf[js.Any]))
+      LinkSharingConfiguration.foreach(__v => __obj.updateDynamic("LinkSharingConfiguration")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -3726,6 +4082,144 @@ package object quicksight {
   }
 
   @js.native
+  trait DescribeFolderPermissionsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var FolderId: RestrictiveResourceId
+  }
+
+  object DescribeFolderPermissionsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        FolderId: RestrictiveResourceId
+    ): DescribeFolderPermissionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeFolderPermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFolderPermissionsResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var FolderId: js.UndefOr[RestrictiveResourceId]
+    var Permissions: js.UndefOr[ResourcePermissionList]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DescribeFolderPermissionsResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        FolderId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DescribeFolderPermissionsResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      FolderId.foreach(__v => __obj.updateDynamic("FolderId")(__v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFolderPermissionsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeFolderRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var FolderId: RestrictiveResourceId
+  }
+
+  object DescribeFolderRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        FolderId: RestrictiveResourceId
+    ): DescribeFolderRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeFolderRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFolderResolvedPermissionsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var FolderId: RestrictiveResourceId
+  }
+
+  object DescribeFolderResolvedPermissionsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        FolderId: RestrictiveResourceId
+    ): DescribeFolderResolvedPermissionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeFolderResolvedPermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFolderResolvedPermissionsResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var FolderId: js.UndefOr[RestrictiveResourceId]
+    var Permissions: js.UndefOr[ResourcePermissionList]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DescribeFolderResolvedPermissionsResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        FolderId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DescribeFolderResolvedPermissionsResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      FolderId.foreach(__v => __obj.updateDynamic("FolderId")(__v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFolderResolvedPermissionsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeFolderResponse extends js.Object {
+    var Folder: js.UndefOr[Folder]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DescribeFolderResponse {
+    @inline
+    def apply(
+        Folder: js.UndefOr[Folder] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DescribeFolderResponse = {
+      val __obj = js.Dynamic.literal()
+      Folder.foreach(__v => __obj.updateDynamic("Folder")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFolderResponse]
+    }
+  }
+
+  @js.native
   trait DescribeGroupRequest extends js.Object {
     var AwsAccountId: AwsAccountId
     var GroupName: GroupName
@@ -3857,6 +4351,51 @@ package object quicksight {
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeIngestionResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeIpRestrictionRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+  }
+
+  object DescribeIpRestrictionRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId
+    ): DescribeIpRestrictionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeIpRestrictionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeIpRestrictionResponse extends js.Object {
+    var AwsAccountId: js.UndefOr[AwsAccountId]
+    var Enabled: js.UndefOr[NullableBoolean]
+    var IpRestrictionRuleMap: js.UndefOr[IpRestrictionRuleMap]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object DescribeIpRestrictionResponse {
+    @inline
+    def apply(
+        AwsAccountId: js.UndefOr[AwsAccountId] = js.undefined,
+        Enabled: js.UndefOr[NullableBoolean] = js.undefined,
+        IpRestrictionRuleMap: js.UndefOr[IpRestrictionRuleMap] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): DescribeIpRestrictionResponse = {
+      val __obj = js.Dynamic.literal()
+      AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      IpRestrictionRuleMap.foreach(__v => __obj.updateDynamic("IpRestrictionRuleMap")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeIpRestrictionResponse]
     }
   }
 
@@ -4252,6 +4791,28 @@ package object quicksight {
     }
   }
 
+  /** The required parameters for connecting to an Exasol data source.
+    */
+  @js.native
+  trait ExasolParameters extends js.Object {
+    var Host: Host
+    var Port: Port
+  }
+
+  object ExasolParameters {
+    @inline
+    def apply(
+        Host: Host,
+        Port: Port
+    ): ExasolParameters = {
+      val __obj = js.Dynamic.literal(
+        "Host" -> Host.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ExasolParameters]
+    }
+  }
+
   /** Export to .csv option.
     */
   @js.native
@@ -4307,6 +4868,226 @@ package object quicksight {
         "ConditionExpression" -> ConditionExpression.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[FilterOperation]
+    }
+  }
+
+  /** A folder in Amazon QuickSight.
+    */
+  @js.native
+  trait Folder extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var FolderId: js.UndefOr[RestrictiveResourceId]
+    var FolderPath: js.UndefOr[Path]
+    var FolderType: js.UndefOr[FolderType]
+    var LastUpdatedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[FolderName]
+  }
+
+  object Folder {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        FolderId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        FolderPath: js.UndefOr[Path] = js.undefined,
+        FolderType: js.UndefOr[FolderType] = js.undefined,
+        LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[FolderName] = js.undefined
+    ): Folder = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      FolderId.foreach(__v => __obj.updateDynamic("FolderId")(__v.asInstanceOf[js.Any]))
+      FolderPath.foreach(__v => __obj.updateDynamic("FolderPath")(__v.asInstanceOf[js.Any]))
+      FolderType.foreach(__v => __obj.updateDynamic("FolderType")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Folder]
+    }
+  }
+
+  /** An asset in a Amazon QuickSight folder, such as a dashboard, analysis, or dataset.
+    */
+  @js.native
+  trait FolderMember extends js.Object {
+    var MemberId: js.UndefOr[RestrictiveResourceId]
+    var MemberType: js.UndefOr[MemberType]
+  }
+
+  object FolderMember {
+    @inline
+    def apply(
+        MemberId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        MemberType: js.UndefOr[MemberType] = js.undefined
+    ): FolderMember = {
+      val __obj = js.Dynamic.literal()
+      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
+      MemberType.foreach(__v => __obj.updateDynamic("MemberType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FolderMember]
+    }
+  }
+
+  /** A filter to use to search a Amazon QuickSight folder.
+    */
+  @js.native
+  trait FolderSearchFilter extends js.Object {
+    var Name: js.UndefOr[FolderFilterAttribute]
+    var Operator: js.UndefOr[FilterOperator]
+    var Value: js.UndefOr[String]
+  }
+
+  object FolderSearchFilter {
+    @inline
+    def apply(
+        Name: js.UndefOr[FolderFilterAttribute] = js.undefined,
+        Operator: js.UndefOr[FilterOperator] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): FolderSearchFilter = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Operator.foreach(__v => __obj.updateDynamic("Operator")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FolderSearchFilter]
+    }
+  }
+
+  /** A summary of information about an existing Amazon QuickSight folder.
+    */
+  @js.native
+  trait FolderSummary extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var CreatedTime: js.UndefOr[Timestamp]
+    var FolderId: js.UndefOr[RestrictiveResourceId]
+    var FolderType: js.UndefOr[FolderType]
+    var LastUpdatedTime: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[FolderName]
+  }
+
+  object FolderSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        CreatedTime: js.UndefOr[Timestamp] = js.undefined,
+        FolderId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        FolderType: js.UndefOr[FolderType] = js.undefined,
+        LastUpdatedTime: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[FolderName] = js.undefined
+    ): FolderSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      FolderId.foreach(__v => __obj.updateDynamic("FolderId")(__v.asInstanceOf[js.Any]))
+      FolderType.foreach(__v => __obj.updateDynamic("FolderType")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FolderSummary]
+    }
+  }
+
+  @js.native
+  trait GenerateEmbedUrlForAnonymousUserRequest extends js.Object {
+    var AuthorizedResourceArns: ArnList
+    var AwsAccountId: AwsAccountId
+    var ExperienceConfiguration: AnonymousUserEmbeddingExperienceConfiguration
+    var Namespace: Namespace
+    var SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes]
+    var SessionTags: js.UndefOr[SessionTagList]
+  }
+
+  object GenerateEmbedUrlForAnonymousUserRequest {
+    @inline
+    def apply(
+        AuthorizedResourceArns: ArnList,
+        AwsAccountId: AwsAccountId,
+        ExperienceConfiguration: AnonymousUserEmbeddingExperienceConfiguration,
+        Namespace: Namespace,
+        SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes] = js.undefined,
+        SessionTags: js.UndefOr[SessionTagList] = js.undefined
+    ): GenerateEmbedUrlForAnonymousUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "AuthorizedResourceArns" -> AuthorizedResourceArns.asInstanceOf[js.Any],
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ExperienceConfiguration" -> ExperienceConfiguration.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+
+      SessionLifetimeInMinutes.foreach(__v => __obj.updateDynamic("SessionLifetimeInMinutes")(__v.asInstanceOf[js.Any]))
+      SessionTags.foreach(__v => __obj.updateDynamic("SessionTags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateEmbedUrlForAnonymousUserRequest]
+    }
+  }
+
+  @js.native
+  trait GenerateEmbedUrlForAnonymousUserResponse extends js.Object {
+    var EmbedUrl: EmbeddingUrl
+    var RequestId: String
+    var Status: StatusCode
+  }
+
+  object GenerateEmbedUrlForAnonymousUserResponse {
+    @inline
+    def apply(
+        EmbedUrl: EmbeddingUrl,
+        RequestId: String,
+        Status: StatusCode
+    ): GenerateEmbedUrlForAnonymousUserResponse = {
+      val __obj = js.Dynamic.literal(
+        "EmbedUrl" -> EmbedUrl.asInstanceOf[js.Any],
+        "RequestId" -> RequestId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GenerateEmbedUrlForAnonymousUserResponse]
+    }
+  }
+
+  @js.native
+  trait GenerateEmbedUrlForRegisteredUserRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var ExperienceConfiguration: RegisteredUserEmbeddingExperienceConfiguration
+    var UserArn: Arn
+    var SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes]
+  }
+
+  object GenerateEmbedUrlForRegisteredUserRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        ExperienceConfiguration: RegisteredUserEmbeddingExperienceConfiguration,
+        UserArn: Arn,
+        SessionLifetimeInMinutes: js.UndefOr[SessionLifetimeInMinutes] = js.undefined
+    ): GenerateEmbedUrlForRegisteredUserRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "ExperienceConfiguration" -> ExperienceConfiguration.asInstanceOf[js.Any],
+        "UserArn" -> UserArn.asInstanceOf[js.Any]
+      )
+
+      SessionLifetimeInMinutes.foreach(__v => __obj.updateDynamic("SessionLifetimeInMinutes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GenerateEmbedUrlForRegisteredUserRequest]
+    }
+  }
+
+  @js.native
+  trait GenerateEmbedUrlForRegisteredUserResponse extends js.Object {
+    var EmbedUrl: EmbeddingUrl
+    var RequestId: String
+    var Status: StatusCode
+  }
+
+  object GenerateEmbedUrlForRegisteredUserResponse {
+    @inline
+    def apply(
+        EmbedUrl: EmbeddingUrl,
+        RequestId: String,
+        Status: StatusCode
+    ): GenerateEmbedUrlForRegisteredUserResponse = {
+      val __obj = js.Dynamic.literal(
+        "EmbedUrl" -> EmbedUrl.asInstanceOf[js.Any],
+        "RequestId" -> RequestId.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GenerateEmbedUrlForRegisteredUserResponse]
     }
   }
 
@@ -4519,7 +5300,7 @@ package object quicksight {
     }
   }
 
-  /** An AWS Identity and Access Management (IAM) policy assignment.
+  /** An Identity and Access Management (IAM) policy assignment.
     */
   @js.native
   trait IAMPolicyAssignment extends js.Object {
@@ -4578,7 +5359,7 @@ package object quicksight {
   @js.native
   trait Ingestion extends js.Object {
     var Arn: Arn
-    var CreatedTime: timestamp
+    var CreatedTime: Timestamp
     var IngestionStatus: IngestionStatus
     var ErrorInfo: js.UndefOr[ErrorInfo]
     var IngestionId: js.UndefOr[IngestionId]
@@ -4594,7 +5375,7 @@ package object quicksight {
     @inline
     def apply(
         Arn: Arn,
-        CreatedTime: timestamp,
+        CreatedTime: Timestamp,
         IngestionStatus: IngestionStatus,
         ErrorInfo: js.UndefOr[ErrorInfo] = js.undefined,
         IngestionId: js.UndefOr[IngestionId] = js.undefined,
@@ -4667,7 +5448,7 @@ package object quicksight {
     }
   }
 
-  /** Jira parameters.
+  /** The parameters for Jira.
     */
   @js.native
   trait JiraParameters extends js.Object {
@@ -4736,6 +5517,24 @@ package object quicksight {
       val __obj = js.Dynamic.literal()
       UniqueKey.foreach(__v => __obj.updateDynamic("UniqueKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JoinKeyProperties]
+    }
+  }
+
+  /** A structure that contains the configuration of a shareable link to the dashboard.
+    */
+  @js.native
+  trait LinkSharingConfiguration extends js.Object {
+    var Permissions: js.UndefOr[ResourcePermissionList]
+  }
+
+  object LinkSharingConfiguration {
+    @inline
+    def apply(
+        Permissions: js.UndefOr[ResourcePermissionList] = js.undefined
+    ): LinkSharingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LinkSharingConfiguration]
     }
   }
 
@@ -4984,6 +5783,107 @@ package object quicksight {
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDataSourcesResponse]
+    }
+  }
+
+  @js.native
+  trait ListFolderMembersRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var FolderId: RestrictiveResourceId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListFolderMembersRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        FolderId: RestrictiveResourceId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListFolderMembersRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFolderMembersRequest]
+    }
+  }
+
+  @js.native
+  trait ListFolderMembersResponse extends js.Object {
+    var FolderMemberList: js.UndefOr[FolderMemberList]
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object ListFolderMembersResponse {
+    @inline
+    def apply(
+        FolderMemberList: js.UndefOr[FolderMemberList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): ListFolderMembersResponse = {
+      val __obj = js.Dynamic.literal()
+      FolderMemberList.foreach(__v => __obj.updateDynamic("FolderMemberList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFolderMembersResponse]
+    }
+  }
+
+  @js.native
+  trait ListFoldersRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListFoldersRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListFoldersRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFoldersRequest]
+    }
+  }
+
+  @js.native
+  trait ListFoldersResponse extends js.Object {
+    var FolderSummaryList: js.UndefOr[FolderSummaryList]
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object ListFoldersResponse {
+    @inline
+    def apply(
+        FolderSummaryList: js.UndefOr[FolderSummaryList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): ListFoldersResponse = {
+      val __obj = js.Dynamic.literal()
+      FolderSummaryList.foreach(__v => __obj.updateDynamic("FolderSummaryList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFoldersResponse]
     }
   }
 
@@ -5790,6 +6690,7 @@ package object quicksight {
     */
   @js.native
   trait LogicalTableSource extends js.Object {
+    var DataSetArn: js.UndefOr[Arn]
     var JoinInstruction: js.UndefOr[JoinInstruction]
     var PhysicalTableId: js.UndefOr[PhysicalTableId]
   }
@@ -5797,10 +6698,12 @@ package object quicksight {
   object LogicalTableSource {
     @inline
     def apply(
+        DataSetArn: js.UndefOr[Arn] = js.undefined,
         JoinInstruction: js.UndefOr[JoinInstruction] = js.undefined,
         PhysicalTableId: js.UndefOr[PhysicalTableId] = js.undefined
     ): LogicalTableSource = {
       val __obj = js.Dynamic.literal()
+      DataSetArn.foreach(__v => __obj.updateDynamic("DataSetArn")(__v.asInstanceOf[js.Any]))
       JoinInstruction.foreach(__v => __obj.updateDynamic("JoinInstruction")(__v.asInstanceOf[js.Any]))
       PhysicalTableId.foreach(__v => __obj.updateDynamic("PhysicalTableId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LogicalTableSource]
@@ -5847,7 +6750,7 @@ package object quicksight {
     }
   }
 
-  /** MariaDB parameters.
+  /** The parameters for MariaDB.
     */
   @js.native
   trait MariaDbParameters extends js.Object {
@@ -5872,7 +6775,28 @@ package object quicksight {
     }
   }
 
-  /** MySQL parameters.
+  /** An object that consists of a member Amazon Resource Name (ARN) and a member ID.
+    */
+  @js.native
+  trait MemberIdArnPair extends js.Object {
+    var MemberArn: js.UndefOr[Arn]
+    var MemberId: js.UndefOr[RestrictiveResourceId]
+  }
+
+  object MemberIdArnPair {
+    @inline
+    def apply(
+        MemberArn: js.UndefOr[Arn] = js.undefined,
+        MemberId: js.UndefOr[RestrictiveResourceId] = js.undefined
+    ): MemberIdArnPair = {
+      val __obj = js.Dynamic.literal()
+      MemberArn.foreach(__v => __obj.updateDynamic("MemberArn")(__v.asInstanceOf[js.Any]))
+      MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MemberIdArnPair]
+    }
+  }
+
+  /** The parameters for MySQL.
     */
   @js.native
   trait MySqlParameters extends js.Object {
@@ -5951,7 +6875,7 @@ package object quicksight {
     }
   }
 
-  /** Oracle parameters.
+  /** The parameters for Oracle.
     */
   @js.native
   trait OracleParameters extends js.Object {
@@ -6000,7 +6924,7 @@ package object quicksight {
     }
   }
 
-  /** A list of QuickSight parameters and the list's override values.
+  /** A list of Amazon QuickSight parameters and the list's override values.
     */
   @js.native
   trait Parameters extends js.Object {
@@ -6051,7 +6975,7 @@ package object quicksight {
     }
   }
 
-  /** PostgreSQL parameters.
+  /** The parameters for PostgreSQL.
     */
   @js.native
   trait PostgreSqlParameters extends js.Object {
@@ -6076,7 +7000,7 @@ package object quicksight {
     }
   }
 
-  /** Presto parameters.
+  /** The parameters for Presto.
     */
   @js.native
   trait PrestoParameters extends js.Object {
@@ -6142,7 +7066,7 @@ package object quicksight {
     }
   }
 
-  /** Amazon RDS parameters.
+  /** The parameters for Amazon RDS.
     */
   @js.native
   trait RdsParameters extends js.Object {
@@ -6164,7 +7088,7 @@ package object quicksight {
     }
   }
 
-  /** Amazon Redshift parameters. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.
+  /** The parameters for Amazon Redshift. The <code>ClusterId</code> field can be blank if <code>Host</code> and <code>Port</code> are both set. The <code>Host</code> and <code>Port</code> fields can be blank if the <code>ClusterId</code> field is set.
     */
   @js.native
   trait RedshiftParameters extends js.Object {
@@ -6200,7 +7124,10 @@ package object quicksight {
     var IdentityType: IdentityType
     var Namespace: Namespace
     var UserRole: UserRole
+    var CustomFederationProviderUrl: js.UndefOr[String]
     var CustomPermissionsName: js.UndefOr[RoleName]
+    var ExternalLoginFederationProviderType: js.UndefOr[String]
+    var ExternalLoginId: js.UndefOr[String]
     var IamArn: js.UndefOr[String]
     var SessionName: js.UndefOr[RoleSessionName]
     var UserName: js.UndefOr[UserName]
@@ -6214,7 +7141,10 @@ package object quicksight {
         IdentityType: IdentityType,
         Namespace: Namespace,
         UserRole: UserRole,
+        CustomFederationProviderUrl: js.UndefOr[String] = js.undefined,
         CustomPermissionsName: js.UndefOr[RoleName] = js.undefined,
+        ExternalLoginFederationProviderType: js.UndefOr[String] = js.undefined,
+        ExternalLoginId: js.UndefOr[String] = js.undefined,
         IamArn: js.UndefOr[String] = js.undefined,
         SessionName: js.UndefOr[RoleSessionName] = js.undefined,
         UserName: js.UndefOr[UserName] = js.undefined
@@ -6227,7 +7157,10 @@ package object quicksight {
         "UserRole" -> UserRole.asInstanceOf[js.Any]
       )
 
+      CustomFederationProviderUrl.foreach(__v => __obj.updateDynamic("CustomFederationProviderUrl")(__v.asInstanceOf[js.Any]))
       CustomPermissionsName.foreach(__v => __obj.updateDynamic("CustomPermissionsName")(__v.asInstanceOf[js.Any]))
+      ExternalLoginFederationProviderType.foreach(__v => __obj.updateDynamic("ExternalLoginFederationProviderType")(__v.asInstanceOf[js.Any]))
+      ExternalLoginId.foreach(__v => __obj.updateDynamic("ExternalLoginId")(__v.asInstanceOf[js.Any]))
       IamArn.foreach(__v => __obj.updateDynamic("IamArn")(__v.asInstanceOf[js.Any]))
       SessionName.foreach(__v => __obj.updateDynamic("SessionName")(__v.asInstanceOf[js.Any]))
       UserName.foreach(__v => __obj.updateDynamic("UserName")(__v.asInstanceOf[js.Any]))
@@ -6257,6 +7190,87 @@ package object quicksight {
       User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       UserInvitationUrl.foreach(__v => __obj.updateDynamic("UserInvitationUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterUserResponse]
+    }
+  }
+
+  /** Information about the dashboard you want to embed.
+    */
+  @js.native
+  trait RegisteredUserDashboardEmbeddingConfiguration extends js.Object {
+    var InitialDashboardId: RestrictiveResourceId
+  }
+
+  object RegisteredUserDashboardEmbeddingConfiguration {
+    @inline
+    def apply(
+        InitialDashboardId: RestrictiveResourceId
+    ): RegisteredUserDashboardEmbeddingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "InitialDashboardId" -> InitialDashboardId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RegisteredUserDashboardEmbeddingConfiguration]
+    }
+  }
+
+  /** The type of experience you want to embed. For registered users, you can embed Amazon QuickSight dashboards or the Amazon QuickSight console.
+    *
+    * '''Note:'''Exactly one of the experience configurations is required. You can choose <code>Dashboard</code> or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.
+    */
+  @js.native
+  trait RegisteredUserEmbeddingExperienceConfiguration extends js.Object {
+    var Dashboard: js.UndefOr[RegisteredUserDashboardEmbeddingConfiguration]
+    var QSearchBar: js.UndefOr[RegisteredUserQSearchBarEmbeddingConfiguration]
+    var QuickSightConsole: js.UndefOr[RegisteredUserQuickSightConsoleEmbeddingConfiguration]
+  }
+
+  object RegisteredUserEmbeddingExperienceConfiguration {
+    @inline
+    def apply(
+        Dashboard: js.UndefOr[RegisteredUserDashboardEmbeddingConfiguration] = js.undefined,
+        QSearchBar: js.UndefOr[RegisteredUserQSearchBarEmbeddingConfiguration] = js.undefined,
+        QuickSightConsole: js.UndefOr[RegisteredUserQuickSightConsoleEmbeddingConfiguration] = js.undefined
+    ): RegisteredUserEmbeddingExperienceConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Dashboard.foreach(__v => __obj.updateDynamic("Dashboard")(__v.asInstanceOf[js.Any]))
+      QSearchBar.foreach(__v => __obj.updateDynamic("QSearchBar")(__v.asInstanceOf[js.Any]))
+      QuickSightConsole.foreach(__v => __obj.updateDynamic("QuickSightConsole")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisteredUserEmbeddingExperienceConfiguration]
+    }
+  }
+
+  /** Information about the Q search bar embedding experience.
+    */
+  @js.native
+  trait RegisteredUserQSearchBarEmbeddingConfiguration extends js.Object {
+    var InitialTopicId: js.UndefOr[RestrictiveResourceId]
+  }
+
+  object RegisteredUserQSearchBarEmbeddingConfiguration {
+    @inline
+    def apply(
+        InitialTopicId: js.UndefOr[RestrictiveResourceId] = js.undefined
+    ): RegisteredUserQSearchBarEmbeddingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      InitialTopicId.foreach(__v => __obj.updateDynamic("InitialTopicId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisteredUserQSearchBarEmbeddingConfiguration]
+    }
+  }
+
+  /** Information about the Amazon QuickSight console that you want to embed.
+    */
+  @js.native
+  trait RegisteredUserQuickSightConsoleEmbeddingConfiguration extends js.Object {
+    var InitialPath: js.UndefOr[EntryPath]
+  }
+
+  object RegisteredUserQuickSightConsoleEmbeddingConfiguration {
+    @inline
+    def apply(
+        InitialPath: js.UndefOr[EntryPath] = js.undefined
+    ): RegisteredUserQuickSightConsoleEmbeddingConfiguration = {
+      val __obj = js.Dynamic.literal()
+      InitialPath.foreach(__v => __obj.updateDynamic("InitialPath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisteredUserQuickSightConsoleEmbeddingConfiguration]
     }
   }
 
@@ -6387,17 +7401,20 @@ package object quicksight {
   trait RowInfo extends js.Object {
     var RowsDropped: js.UndefOr[Double]
     var RowsIngested: js.UndefOr[Double]
+    var TotalRowsInDataset: js.UndefOr[Double]
   }
 
   object RowInfo {
     @inline
     def apply(
         RowsDropped: js.UndefOr[Double] = js.undefined,
-        RowsIngested: js.UndefOr[Double] = js.undefined
+        RowsIngested: js.UndefOr[Double] = js.undefined,
+        TotalRowsInDataset: js.UndefOr[Double] = js.undefined
     ): RowInfo = {
       val __obj = js.Dynamic.literal()
       RowsDropped.foreach(__v => __obj.updateDynamic("RowsDropped")(__v.asInstanceOf[js.Any]))
       RowsIngested.foreach(__v => __obj.updateDynamic("RowsIngested")(__v.asInstanceOf[js.Any]))
+      TotalRowsInDataset.foreach(__v => __obj.updateDynamic("TotalRowsInDataset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RowInfo]
     }
   }
@@ -6408,7 +7425,9 @@ package object quicksight {
   trait RowLevelPermissionDataSet extends js.Object {
     var Arn: Arn
     var PermissionPolicy: RowLevelPermissionPolicy
+    var FormatVersion: js.UndefOr[RowLevelPermissionFormatVersion]
     var Namespace: js.UndefOr[Namespace]
+    var Status: js.UndefOr[Status]
   }
 
   object RowLevelPermissionDataSet {
@@ -6416,19 +7435,75 @@ package object quicksight {
     def apply(
         Arn: Arn,
         PermissionPolicy: RowLevelPermissionPolicy,
-        Namespace: js.UndefOr[Namespace] = js.undefined
+        FormatVersion: js.UndefOr[RowLevelPermissionFormatVersion] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
     ): RowLevelPermissionDataSet = {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any],
         "PermissionPolicy" -> PermissionPolicy.asInstanceOf[js.Any]
       )
 
+      FormatVersion.foreach(__v => __obj.updateDynamic("FormatVersion")(__v.asInstanceOf[js.Any]))
       Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RowLevelPermissionDataSet]
     }
   }
 
-  /** S3 parameters.
+  /** The configuration of tags on a dataset to set row-level security.
+    */
+  @js.native
+  trait RowLevelPermissionTagConfiguration extends js.Object {
+    var TagRules: RowLevelPermissionTagRuleList
+    var Status: js.UndefOr[Status]
+  }
+
+  object RowLevelPermissionTagConfiguration {
+    @inline
+    def apply(
+        TagRules: RowLevelPermissionTagRuleList,
+        Status: js.UndefOr[Status] = js.undefined
+    ): RowLevelPermissionTagConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "TagRules" -> TagRules.asInstanceOf[js.Any]
+      )
+
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RowLevelPermissionTagConfiguration]
+    }
+  }
+
+  /** A set of rules associated with a tag.
+    */
+  @js.native
+  trait RowLevelPermissionTagRule extends js.Object {
+    var ColumnName: String
+    var TagKey: SessionTagKey
+    var MatchAllValue: js.UndefOr[SessionTagValue]
+    var TagMultiValueDelimiter: js.UndefOr[RowLevelPermissionTagDelimiter]
+  }
+
+  object RowLevelPermissionTagRule {
+    @inline
+    def apply(
+        ColumnName: String,
+        TagKey: SessionTagKey,
+        MatchAllValue: js.UndefOr[SessionTagValue] = js.undefined,
+        TagMultiValueDelimiter: js.UndefOr[RowLevelPermissionTagDelimiter] = js.undefined
+    ): RowLevelPermissionTagRule = {
+      val __obj = js.Dynamic.literal(
+        "ColumnName" -> ColumnName.asInstanceOf[js.Any],
+        "TagKey" -> TagKey.asInstanceOf[js.Any]
+      )
+
+      MatchAllValue.foreach(__v => __obj.updateDynamic("MatchAllValue")(__v.asInstanceOf[js.Any]))
+      TagMultiValueDelimiter.foreach(__v => __obj.updateDynamic("TagMultiValueDelimiter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RowLevelPermissionTagRule]
+    }
+  }
+
+  /** The parameters for S3.
     */
   @js.native
   trait S3Parameters extends js.Object {
@@ -6447,7 +7522,7 @@ package object quicksight {
     }
   }
 
-  /** A physical table type for as S3 data source.
+  /** A physical table type for an S3 data source.
     */
   @js.native
   trait S3Source extends js.Object {
@@ -6577,7 +7652,59 @@ package object quicksight {
     }
   }
 
-  /** ServiceNow parameters.
+  @js.native
+  trait SearchFoldersRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var Filters: FolderSearchFilterList
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object SearchFoldersRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        Filters: FolderSearchFilterList,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): SearchFoldersRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "Filters" -> Filters.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchFoldersRequest]
+    }
+  }
+
+  @js.native
+  trait SearchFoldersResponse extends js.Object {
+    var FolderSummaryList: js.UndefOr[FolderSummaryList]
+    var NextToken: js.UndefOr[String]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object SearchFoldersResponse {
+    @inline
+    def apply(
+        FolderSummaryList: js.UndefOr[FolderSummaryList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): SearchFoldersResponse = {
+      val __obj = js.Dynamic.literal()
+      FolderSummaryList.foreach(__v => __obj.updateDynamic("FolderSummaryList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchFoldersResponse]
+    }
+  }
+
+  /** The parameters for ServiceNow.
     */
   @js.native
   trait ServiceNowParameters extends js.Object {
@@ -6596,7 +7723,29 @@ package object quicksight {
     }
   }
 
-  /** A <i>sheet</i>, which is an object that contains a set of visuals that are viewed together on one page in the Amazon QuickSight console. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one visualization widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other components, such as controls, filters, and so on.
+  /** The key-value pair used for the row-level security tags feature.
+    */
+  @js.native
+  trait SessionTag extends js.Object {
+    var Key: SessionTagKey
+    var Value: SessionTagValue
+  }
+
+  object SessionTag {
+    @inline
+    def apply(
+        Key: SessionTagKey,
+        Value: SessionTagValue
+    ): SessionTag = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SessionTag]
+    }
+  }
+
+  /** A <i>sheet</i>, which is an object that contains a set of visuals that are viewed together on one page in Amazon QuickSight. Every analysis and dashboard contains at least one sheet. Each sheet contains at least one visualization widget, for example a chart, pivot table, or narrative insight. Sheets can be associated with other components, such as controls, filters, and so on.
     */
   @js.native
   trait Sheet extends js.Object {
@@ -6656,7 +7805,7 @@ package object quicksight {
     }
   }
 
-  /** Snowflake parameters.
+  /** The parameters for Snowflake.
     */
   @js.native
   trait SnowflakeParameters extends js.Object {
@@ -6681,7 +7830,7 @@ package object quicksight {
     }
   }
 
-  /** Spark parameters.
+  /** The parameters for Spark.
     */
   @js.native
   trait SparkParameters extends js.Object {
@@ -6703,7 +7852,7 @@ package object quicksight {
     }
   }
 
-  /** SQL Server parameters.
+  /** The parameters for SQL Server.
     */
   @js.native
   trait SqlServerParameters extends js.Object {
@@ -6728,7 +7877,7 @@ package object quicksight {
     }
   }
 
-  /** Secure Socket Layer (SSL) properties that apply when QuickSight connects to your underlying data source.
+  /** Secure Socket Layer (SSL) properties that apply when Amazon QuickSight connects to your underlying data source.
     */
   @js.native
   trait SslProperties extends js.Object {
@@ -6851,7 +8000,7 @@ package object quicksight {
     }
   }
 
-  /** A template object. A <i>template</i> is an entity in QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with an analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template. You can share templates across AWS accounts by allowing users in other AWS accounts to create a template or a dashboard from an existing template.
+  /** A template object. A <i>template</i> is an entity in Amazon QuickSight that encapsulates the metadata required to create an analysis and that you can use to create a dashboard. A template adds a layer of abstraction by using placeholders to replace the dataset associated with an analysis. You can use templates to create dashboards by replacing dataset placeholders with datasets that follow the same schema that was used to create the source analysis and template. You can share templates across Amazon Web Services accounts by allowing users in other Amazon Web Services accounts to create a template or a dashboard from an existing template.
     */
   @js.native
   trait Template extends js.Object {
@@ -7096,7 +8245,7 @@ package object quicksight {
     }
   }
 
-  /** Teradata parameters.
+  /** The parameters for Teradata.
     */
   @js.native
   trait TeradataParameters extends js.Object {
@@ -7377,6 +8526,7 @@ package object quicksight {
     var ProjectOperation: js.UndefOr[ProjectOperation]
     var RenameColumnOperation: js.UndefOr[RenameColumnOperation]
     var TagColumnOperation: js.UndefOr[TagColumnOperation]
+    var UntagColumnOperation: js.UndefOr[UntagColumnOperation]
   }
 
   object TransformOperation {
@@ -7387,7 +8537,8 @@ package object quicksight {
         FilterOperation: js.UndefOr[FilterOperation] = js.undefined,
         ProjectOperation: js.UndefOr[ProjectOperation] = js.undefined,
         RenameColumnOperation: js.UndefOr[RenameColumnOperation] = js.undefined,
-        TagColumnOperation: js.UndefOr[TagColumnOperation] = js.undefined
+        TagColumnOperation: js.UndefOr[TagColumnOperation] = js.undefined,
+        UntagColumnOperation: js.UndefOr[UntagColumnOperation] = js.undefined
     ): TransformOperation = {
       val __obj = js.Dynamic.literal()
       CastColumnTypeOperation.foreach(__v => __obj.updateDynamic("CastColumnTypeOperation")(__v.asInstanceOf[js.Any]))
@@ -7396,11 +8547,12 @@ package object quicksight {
       ProjectOperation.foreach(__v => __obj.updateDynamic("ProjectOperation")(__v.asInstanceOf[js.Any]))
       RenameColumnOperation.foreach(__v => __obj.updateDynamic("RenameColumnOperation")(__v.asInstanceOf[js.Any]))
       TagColumnOperation.foreach(__v => __obj.updateDynamic("TagColumnOperation")(__v.asInstanceOf[js.Any]))
+      UntagColumnOperation.foreach(__v => __obj.updateDynamic("UntagColumnOperation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TransformOperation]
     }
   }
 
-  /** Twitter parameters.
+  /** The parameters for Twitter.
     */
   @js.native
   trait TwitterParameters extends js.Object {
@@ -7482,6 +8634,28 @@ package object quicksight {
       Warning.foreach(__v => __obj.updateDynamic("Warning")(__v.asInstanceOf[js.Any]))
       WarningForeground.foreach(__v => __obj.updateDynamic("WarningForeground")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UIColorPalette]
+    }
+  }
+
+  /** A transform operation that removes tags associated with a column.
+    */
+  @js.native
+  trait UntagColumnOperation extends js.Object {
+    var ColumnName: ColumnName
+    var TagNames: ColumnTagNames
+  }
+
+  object UntagColumnOperation {
+    @inline
+    def apply(
+        ColumnName: ColumnName,
+        TagNames: ColumnTagNames
+    ): UntagColumnOperation = {
+      val __obj = js.Dynamic.literal(
+        "ColumnName" -> ColumnName.asInstanceOf[js.Any],
+        "TagNames" -> TagNames.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagColumnOperation]
     }
   }
 
@@ -7742,7 +8916,9 @@ package object quicksight {
   trait UpdateDashboardPermissionsRequest extends js.Object {
     var AwsAccountId: AwsAccountId
     var DashboardId: RestrictiveResourceId
+    var GrantLinkPermissions: js.UndefOr[UpdateLinkPermissionList]
     var GrantPermissions: js.UndefOr[UpdateResourcePermissionList]
+    var RevokeLinkPermissions: js.UndefOr[UpdateLinkPermissionList]
     var RevokePermissions: js.UndefOr[UpdateResourcePermissionList]
   }
 
@@ -7751,7 +8927,9 @@ package object quicksight {
     def apply(
         AwsAccountId: AwsAccountId,
         DashboardId: RestrictiveResourceId,
+        GrantLinkPermissions: js.UndefOr[UpdateLinkPermissionList] = js.undefined,
         GrantPermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined,
+        RevokeLinkPermissions: js.UndefOr[UpdateLinkPermissionList] = js.undefined,
         RevokePermissions: js.UndefOr[UpdateResourcePermissionList] = js.undefined
     ): UpdateDashboardPermissionsRequest = {
       val __obj = js.Dynamic.literal(
@@ -7759,7 +8937,9 @@ package object quicksight {
         "DashboardId" -> DashboardId.asInstanceOf[js.Any]
       )
 
+      GrantLinkPermissions.foreach(__v => __obj.updateDynamic("GrantLinkPermissions")(__v.asInstanceOf[js.Any]))
       GrantPermissions.foreach(__v => __obj.updateDynamic("GrantPermissions")(__v.asInstanceOf[js.Any]))
+      RevokeLinkPermissions.foreach(__v => __obj.updateDynamic("RevokeLinkPermissions")(__v.asInstanceOf[js.Any]))
       RevokePermissions.foreach(__v => __obj.updateDynamic("RevokePermissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDashboardPermissionsRequest]
     }
@@ -7769,6 +8949,7 @@ package object quicksight {
   trait UpdateDashboardPermissionsResponse extends js.Object {
     var DashboardArn: js.UndefOr[Arn]
     var DashboardId: js.UndefOr[RestrictiveResourceId]
+    var LinkSharingConfiguration: js.UndefOr[LinkSharingConfiguration]
     var Permissions: js.UndefOr[ResourcePermissionList]
     var RequestId: js.UndefOr[String]
     var Status: js.UndefOr[StatusCode]
@@ -7779,6 +8960,7 @@ package object quicksight {
     def apply(
         DashboardArn: js.UndefOr[Arn] = js.undefined,
         DashboardId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        LinkSharingConfiguration: js.UndefOr[LinkSharingConfiguration] = js.undefined,
         Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
         RequestId: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[StatusCode] = js.undefined
@@ -7786,6 +8968,7 @@ package object quicksight {
       val __obj = js.Dynamic.literal()
       DashboardArn.foreach(__v => __obj.updateDynamic("DashboardArn")(__v.asInstanceOf[js.Any]))
       DashboardId.foreach(__v => __obj.updateDynamic("DashboardId")(__v.asInstanceOf[js.Any]))
+      LinkSharingConfiguration.foreach(__v => __obj.updateDynamic("LinkSharingConfiguration")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -7972,9 +9155,11 @@ package object quicksight {
     var PhysicalTableMap: PhysicalTableMap
     var ColumnGroups: js.UndefOr[ColumnGroupList]
     var ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList]
+    var DataSetUsageConfiguration: js.UndefOr[DataSetUsageConfiguration]
     var FieldFolders: js.UndefOr[FieldFolderMap]
     var LogicalTableMap: js.UndefOr[LogicalTableMap]
     var RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet]
+    var RowLevelPermissionTagConfiguration: js.UndefOr[RowLevelPermissionTagConfiguration]
   }
 
   object UpdateDataSetRequest {
@@ -7987,9 +9172,11 @@ package object quicksight {
         PhysicalTableMap: PhysicalTableMap,
         ColumnGroups: js.UndefOr[ColumnGroupList] = js.undefined,
         ColumnLevelPermissionRules: js.UndefOr[ColumnLevelPermissionRuleList] = js.undefined,
+        DataSetUsageConfiguration: js.UndefOr[DataSetUsageConfiguration] = js.undefined,
         FieldFolders: js.UndefOr[FieldFolderMap] = js.undefined,
         LogicalTableMap: js.UndefOr[LogicalTableMap] = js.undefined,
-        RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined
+        RowLevelPermissionDataSet: js.UndefOr[RowLevelPermissionDataSet] = js.undefined,
+        RowLevelPermissionTagConfiguration: js.UndefOr[RowLevelPermissionTagConfiguration] = js.undefined
     ): UpdateDataSetRequest = {
       val __obj = js.Dynamic.literal(
         "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
@@ -8001,9 +9188,11 @@ package object quicksight {
 
       ColumnGroups.foreach(__v => __obj.updateDynamic("ColumnGroups")(__v.asInstanceOf[js.Any]))
       ColumnLevelPermissionRules.foreach(__v => __obj.updateDynamic("ColumnLevelPermissionRules")(__v.asInstanceOf[js.Any]))
+      DataSetUsageConfiguration.foreach(__v => __obj.updateDynamic("DataSetUsageConfiguration")(__v.asInstanceOf[js.Any]))
       FieldFolders.foreach(__v => __obj.updateDynamic("FieldFolders")(__v.asInstanceOf[js.Any]))
       LogicalTableMap.foreach(__v => __obj.updateDynamic("LogicalTableMap")(__v.asInstanceOf[js.Any]))
       RowLevelPermissionDataSet.foreach(__v => __obj.updateDynamic("RowLevelPermissionDataSet")(__v.asInstanceOf[js.Any]))
+      RowLevelPermissionTagConfiguration.foreach(__v => __obj.updateDynamic("RowLevelPermissionTagConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDataSetRequest]
     }
   }
@@ -8156,6 +9345,109 @@ package object quicksight {
   }
 
   @js.native
+  trait UpdateFolderPermissionsRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var FolderId: RestrictiveResourceId
+    var GrantPermissions: js.UndefOr[ResourcePermissionList]
+    var RevokePermissions: js.UndefOr[ResourcePermissionList]
+  }
+
+  object UpdateFolderPermissionsRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        FolderId: RestrictiveResourceId,
+        GrantPermissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        RevokePermissions: js.UndefOr[ResourcePermissionList] = js.undefined
+    ): UpdateFolderPermissionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "FolderId" -> FolderId.asInstanceOf[js.Any]
+      )
+
+      GrantPermissions.foreach(__v => __obj.updateDynamic("GrantPermissions")(__v.asInstanceOf[js.Any]))
+      RevokePermissions.foreach(__v => __obj.updateDynamic("RevokePermissions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFolderPermissionsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFolderPermissionsResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var FolderId: js.UndefOr[RestrictiveResourceId]
+    var Permissions: js.UndefOr[ResourcePermissionList]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object UpdateFolderPermissionsResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        FolderId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        Permissions: js.UndefOr[ResourcePermissionList] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): UpdateFolderPermissionsResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      FolderId.foreach(__v => __obj.updateDynamic("FolderId")(__v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFolderPermissionsResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateFolderRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var FolderId: RestrictiveResourceId
+    var Name: FolderName
+  }
+
+  object UpdateFolderRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        FolderId: RestrictiveResourceId,
+        Name: FolderName
+    ): UpdateFolderRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any],
+        "FolderId" -> FolderId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateFolderRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFolderResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var FolderId: js.UndefOr[RestrictiveResourceId]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object UpdateFolderResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        FolderId: js.UndefOr[RestrictiveResourceId] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): UpdateFolderResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      FolderId.foreach(__v => __obj.updateDynamic("FolderId")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFolderResponse]
+    }
+  }
+
+  @js.native
   trait UpdateGroupRequest extends js.Object {
     var AwsAccountId: AwsAccountId
     var GroupName: GroupName
@@ -8268,6 +9560,52 @@ package object quicksight {
       RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIAMPolicyAssignmentResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateIpRestrictionRequest extends js.Object {
+    var AwsAccountId: AwsAccountId
+    var Enabled: js.UndefOr[NullableBoolean]
+    var IpRestrictionRuleMap: js.UndefOr[IpRestrictionRuleMap]
+  }
+
+  object UpdateIpRestrictionRequest {
+    @inline
+    def apply(
+        AwsAccountId: AwsAccountId,
+        Enabled: js.UndefOr[NullableBoolean] = js.undefined,
+        IpRestrictionRuleMap: js.UndefOr[IpRestrictionRuleMap] = js.undefined
+    ): UpdateIpRestrictionRequest = {
+      val __obj = js.Dynamic.literal(
+        "AwsAccountId" -> AwsAccountId.asInstanceOf[js.Any]
+      )
+
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      IpRestrictionRuleMap.foreach(__v => __obj.updateDynamic("IpRestrictionRuleMap")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateIpRestrictionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateIpRestrictionResponse extends js.Object {
+    var AwsAccountId: js.UndefOr[AwsAccountId]
+    var RequestId: js.UndefOr[String]
+    var Status: js.UndefOr[StatusCode]
+  }
+
+  object UpdateIpRestrictionResponse {
+    @inline
+    def apply(
+        AwsAccountId: js.UndefOr[AwsAccountId] = js.undefined,
+        RequestId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[StatusCode] = js.undefined
+    ): UpdateIpRestrictionResponse = {
+      val __obj = js.Dynamic.literal()
+      AwsAccountId.foreach(__v => __obj.updateDynamic("AwsAccountId")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateIpRestrictionResponse]
     }
   }
 
@@ -8609,7 +9947,10 @@ package object quicksight {
     var Namespace: Namespace
     var Role: UserRole
     var UserName: UserName
+    var CustomFederationProviderUrl: js.UndefOr[String]
     var CustomPermissionsName: js.UndefOr[RoleName]
+    var ExternalLoginFederationProviderType: js.UndefOr[String]
+    var ExternalLoginId: js.UndefOr[String]
     var UnapplyCustomPermissions: js.UndefOr[Boolean]
   }
 
@@ -8621,7 +9962,10 @@ package object quicksight {
         Namespace: Namespace,
         Role: UserRole,
         UserName: UserName,
+        CustomFederationProviderUrl: js.UndefOr[String] = js.undefined,
         CustomPermissionsName: js.UndefOr[RoleName] = js.undefined,
+        ExternalLoginFederationProviderType: js.UndefOr[String] = js.undefined,
+        ExternalLoginId: js.UndefOr[String] = js.undefined,
         UnapplyCustomPermissions: js.UndefOr[Boolean] = js.undefined
     ): UpdateUserRequest = {
       val __obj = js.Dynamic.literal(
@@ -8632,7 +9976,10 @@ package object quicksight {
         "UserName" -> UserName.asInstanceOf[js.Any]
       )
 
+      CustomFederationProviderUrl.foreach(__v => __obj.updateDynamic("CustomFederationProviderUrl")(__v.asInstanceOf[js.Any]))
       CustomPermissionsName.foreach(__v => __obj.updateDynamic("CustomPermissionsName")(__v.asInstanceOf[js.Any]))
+      ExternalLoginFederationProviderType.foreach(__v => __obj.updateDynamic("ExternalLoginFederationProviderType")(__v.asInstanceOf[js.Any]))
+      ExternalLoginId.foreach(__v => __obj.updateDynamic("ExternalLoginId")(__v.asInstanceOf[js.Any]))
       UnapplyCustomPermissions.foreach(__v => __obj.updateDynamic("UnapplyCustomPermissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateUserRequest]
     }
@@ -8698,6 +10045,9 @@ package object quicksight {
     var Arn: js.UndefOr[Arn]
     var CustomPermissionsName: js.UndefOr[RoleName]
     var Email: js.UndefOr[String]
+    var ExternalLoginFederationProviderType: js.UndefOr[String]
+    var ExternalLoginFederationProviderUrl: js.UndefOr[String]
+    var ExternalLoginId: js.UndefOr[String]
     var IdentityType: js.UndefOr[IdentityType]
     var PrincipalId: js.UndefOr[String]
     var Role: js.UndefOr[UserRole]
@@ -8711,6 +10061,9 @@ package object quicksight {
         Arn: js.UndefOr[Arn] = js.undefined,
         CustomPermissionsName: js.UndefOr[RoleName] = js.undefined,
         Email: js.UndefOr[String] = js.undefined,
+        ExternalLoginFederationProviderType: js.UndefOr[String] = js.undefined,
+        ExternalLoginFederationProviderUrl: js.UndefOr[String] = js.undefined,
+        ExternalLoginId: js.UndefOr[String] = js.undefined,
         IdentityType: js.UndefOr[IdentityType] = js.undefined,
         PrincipalId: js.UndefOr[String] = js.undefined,
         Role: js.UndefOr[UserRole] = js.undefined,
@@ -8721,6 +10074,9 @@ package object quicksight {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CustomPermissionsName.foreach(__v => __obj.updateDynamic("CustomPermissionsName")(__v.asInstanceOf[js.Any]))
       Email.foreach(__v => __obj.updateDynamic("Email")(__v.asInstanceOf[js.Any]))
+      ExternalLoginFederationProviderType.foreach(__v => __obj.updateDynamic("ExternalLoginFederationProviderType")(__v.asInstanceOf[js.Any]))
+      ExternalLoginFederationProviderUrl.foreach(__v => __obj.updateDynamic("ExternalLoginFederationProviderUrl")(__v.asInstanceOf[js.Any]))
+      ExternalLoginId.foreach(__v => __obj.updateDynamic("ExternalLoginId")(__v.asInstanceOf[js.Any]))
       IdentityType.foreach(__v => __obj.updateDynamic("IdentityType")(__v.asInstanceOf[js.Any]))
       PrincipalId.foreach(__v => __obj.updateDynamic("PrincipalId")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))

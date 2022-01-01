@@ -9,6 +9,23 @@ object AdditionalResultAttributeValueType {
   inline def values: js.Array[AdditionalResultAttributeValueType] = js.Array(TEXT_WITH_HIGHLIGHTS_VALUE)
 }
 
+type ConditionOperator = "GreaterThan" | "GreaterThanOrEquals" | "LessThan" | "LessThanOrEquals" | "Equals" | "NotEquals" | "Contains" | "NotContains" | "Exists" | "NotExists" | "BeginsWith"
+object ConditionOperator {
+  inline val GreaterThan: "GreaterThan" = "GreaterThan"
+  inline val GreaterThanOrEquals: "GreaterThanOrEquals" = "GreaterThanOrEquals"
+  inline val LessThan: "LessThan" = "LessThan"
+  inline val LessThanOrEquals: "LessThanOrEquals" = "LessThanOrEquals"
+  inline val Equals: "Equals" = "Equals"
+  inline val NotEquals: "NotEquals" = "NotEquals"
+  inline val Contains: "Contains" = "Contains"
+  inline val NotContains: "NotContains" = "NotContains"
+  inline val Exists: "Exists" = "Exists"
+  inline val NotExists: "NotExists" = "NotExists"
+  inline val BeginsWith: "BeginsWith" = "BeginsWith"
+
+  inline def values: js.Array[ConditionOperator] = js.Array(GreaterThan, GreaterThanOrEquals, LessThan, LessThanOrEquals, Equals, NotEquals, Contains, NotContains, Exists, NotExists, BeginsWith)
+}
+
 type ConfluenceAttachmentFieldName = "AUTHOR" | "CONTENT_TYPE" | "CREATED_DATE" | "DISPLAY_URL" | "FILE_SIZE" | "ITEM_TYPE" | "PARENT_ID" | "SPACE_KEY" | "SPACE_NAME" | "URL" | "VERSION"
 object ConfluenceAttachmentFieldName {
   inline val AUTHOR: "AUTHOR" = "AUTHOR"
@@ -112,7 +129,7 @@ object DataSourceSyncJobStatus {
   inline def values: js.Array[DataSourceSyncJobStatus] = js.Array(FAILED, SUCCEEDED, SYNCING, INCOMPLETE, STOPPING, ABORTED, SYNCING_INDEXING)
 }
 
-type DataSourceType = "S3" | "SHAREPOINT" | "DATABASE" | "SALESFORCE" | "ONEDRIVE" | "SERVICENOW" | "CUSTOM" | "CONFLUENCE" | "GOOGLEDRIVE"
+type DataSourceType = "S3" | "SHAREPOINT" | "DATABASE" | "SALESFORCE" | "ONEDRIVE" | "SERVICENOW" | "CUSTOM" | "CONFLUENCE" | "GOOGLEDRIVE" | "WEBCRAWLER" | "WORKDOCS"
 object DataSourceType {
   inline val S3: "S3" = "S3"
   inline val SHAREPOINT: "SHAREPOINT" = "SHAREPOINT"
@@ -123,8 +140,10 @@ object DataSourceType {
   inline val CUSTOM: "CUSTOM" = "CUSTOM"
   inline val CONFLUENCE: "CONFLUENCE" = "CONFLUENCE"
   inline val GOOGLEDRIVE: "GOOGLEDRIVE" = "GOOGLEDRIVE"
+  inline val WEBCRAWLER: "WEBCRAWLER" = "WEBCRAWLER"
+  inline val WORKDOCS: "WORKDOCS" = "WORKDOCS"
 
-  inline def values: js.Array[DataSourceType] = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE)
+  inline def values: js.Array[DataSourceType] = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE, WEBCRAWLER, WORKDOCS)
 }
 
 type DatabaseEngineType = "RDS_AURORA_MYSQL" | "RDS_AURORA_POSTGRESQL" | "RDS_MYSQL" | "RDS_POSTGRESQL"
@@ -147,12 +166,49 @@ object DocumentAttributeValueType {
   inline def values: js.Array[DocumentAttributeValueType] = js.Array(STRING_VALUE, STRING_LIST_VALUE, LONG_VALUE, DATE_VALUE)
 }
 
+type DocumentStatus = "NOT_FOUND" | "PROCESSING" | "INDEXED" | "UPDATED" | "FAILED" | "UPDATE_FAILED"
+object DocumentStatus {
+  inline val NOT_FOUND: "NOT_FOUND" = "NOT_FOUND"
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val INDEXED: "INDEXED" = "INDEXED"
+  inline val UPDATED: "UPDATED" = "UPDATED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
+
+  inline def values: js.Array[DocumentStatus] = js.Array(NOT_FOUND, PROCESSING, INDEXED, UPDATED, FAILED, UPDATE_FAILED)
+}
+
+type EndpointType = "HOME"
+object EndpointType {
+  inline val HOME: "HOME" = "HOME"
+
+  inline def values: js.Array[EndpointType] = js.Array(HOME)
+}
+
+type EntityType = "USER" | "GROUP"
+object EntityType {
+  inline val USER: "USER" = "USER"
+  inline val GROUP: "GROUP" = "GROUP"
+
+  inline def values: js.Array[EntityType] = js.Array(USER, GROUP)
+}
+
 type ErrorCode = "InternalError" | "InvalidRequest"
 object ErrorCode {
   inline val InternalError: "InternalError" = "InternalError"
   inline val InvalidRequest: "InvalidRequest" = "InvalidRequest"
 
   inline def values: js.Array[ErrorCode] = js.Array(InternalError, InvalidRequest)
+}
+
+type ExperienceStatus = "CREATING" | "ACTIVE" | "DELETING" | "FAILED"
+object ExperienceStatus {
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[ExperienceStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED)
 }
 
 type FaqFileFormat = "CSV" | "CSV_WITH_HEADER" | "JSON"
@@ -203,6 +259,18 @@ object IndexStatus {
   inline def values: js.Array[IndexStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, SYSTEM_UPDATING)
 }
 
+type Interval = "THIS_MONTH" | "THIS_WEEK" | "ONE_WEEK_AGO" | "TWO_WEEKS_AGO" | "ONE_MONTH_AGO" | "TWO_MONTHS_AGO"
+object Interval {
+  inline val THIS_MONTH: "THIS_MONTH" = "THIS_MONTH"
+  inline val THIS_WEEK: "THIS_WEEK" = "THIS_WEEK"
+  inline val ONE_WEEK_AGO: "ONE_WEEK_AGO" = "ONE_WEEK_AGO"
+  inline val TWO_WEEKS_AGO: "TWO_WEEKS_AGO" = "TWO_WEEKS_AGO"
+  inline val ONE_MONTH_AGO: "ONE_MONTH_AGO" = "ONE_MONTH_AGO"
+  inline val TWO_MONTHS_AGO: "TWO_MONTHS_AGO" = "TWO_MONTHS_AGO"
+
+  inline def values: js.Array[Interval] = js.Array(THIS_MONTH, THIS_WEEK, ONE_WEEK_AGO, TWO_WEEKS_AGO, ONE_MONTH_AGO, TWO_MONTHS_AGO)
+}
+
 type KeyLocation = "URL" | "SECRET_MANAGER"
 object KeyLocation {
   inline val URL: "URL" = "URL"
@@ -211,12 +279,51 @@ object KeyLocation {
   inline def values: js.Array[KeyLocation] = js.Array(URL, SECRET_MANAGER)
 }
 
+type MetricType = "QUERIES_BY_COUNT" | "QUERIES_BY_ZERO_CLICK_RATE" | "QUERIES_BY_ZERO_RESULT_RATE" | "DOCS_BY_CLICK_COUNT" | "AGG_QUERY_DOC_METRICS" | "TREND_QUERY_DOC_METRICS"
+object MetricType {
+  inline val QUERIES_BY_COUNT: "QUERIES_BY_COUNT" = "QUERIES_BY_COUNT"
+  inline val QUERIES_BY_ZERO_CLICK_RATE: "QUERIES_BY_ZERO_CLICK_RATE" = "QUERIES_BY_ZERO_CLICK_RATE"
+  inline val QUERIES_BY_ZERO_RESULT_RATE: "QUERIES_BY_ZERO_RESULT_RATE" = "QUERIES_BY_ZERO_RESULT_RATE"
+  inline val DOCS_BY_CLICK_COUNT: "DOCS_BY_CLICK_COUNT" = "DOCS_BY_CLICK_COUNT"
+  inline val AGG_QUERY_DOC_METRICS: "AGG_QUERY_DOC_METRICS" = "AGG_QUERY_DOC_METRICS"
+  inline val TREND_QUERY_DOC_METRICS: "TREND_QUERY_DOC_METRICS" = "TREND_QUERY_DOC_METRICS"
+
+  inline def values: js.Array[MetricType] = js.Array(QUERIES_BY_COUNT, QUERIES_BY_ZERO_CLICK_RATE, QUERIES_BY_ZERO_RESULT_RATE, DOCS_BY_CLICK_COUNT, AGG_QUERY_DOC_METRICS, TREND_QUERY_DOC_METRICS)
+}
+
+type Mode = "ENABLED" | "LEARN_ONLY"
+object Mode {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val LEARN_ONLY: "LEARN_ONLY" = "LEARN_ONLY"
+
+  inline def values: js.Array[Mode] = js.Array(ENABLED, LEARN_ONLY)
+}
+
 type Order = "ASCENDING" | "DESCENDING"
 object Order {
   inline val ASCENDING: "ASCENDING" = "ASCENDING"
   inline val DESCENDING: "DESCENDING" = "DESCENDING"
 
   inline def values: js.Array[Order] = js.Array(ASCENDING, DESCENDING)
+}
+
+type Persona = "OWNER" | "VIEWER"
+object Persona {
+  inline val OWNER: "OWNER" = "OWNER"
+  inline val VIEWER: "VIEWER" = "VIEWER"
+
+  inline def values: js.Array[Persona] = js.Array(OWNER, VIEWER)
+}
+
+type PrincipalMappingStatus = "FAILED" | "SUCCEEDED" | "PROCESSING" | "DELETING" | "DELETED"
+object PrincipalMappingStatus {
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val PROCESSING: "PROCESSING" = "PROCESSING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val DELETED: "DELETED" = "DELETED"
+
+  inline def values: js.Array[PrincipalMappingStatus] = js.Array(FAILED, SUCCEEDED, PROCESSING, DELETING, DELETED)
 }
 
 type PrincipalType = "USER" | "GROUP"
@@ -242,6 +349,26 @@ object QueryResultType {
   inline val ANSWER: "ANSWER" = "ANSWER"
 
   inline def values: js.Array[QueryResultType] = js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER)
+}
+
+type QuerySuggestionsBlockListStatus = "ACTIVE" | "CREATING" | "DELETING" | "UPDATING" | "ACTIVE_BUT_UPDATE_FAILED" | "FAILED"
+object QuerySuggestionsBlockListStatus {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val DELETING: "DELETING" = "DELETING"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val ACTIVE_BUT_UPDATE_FAILED: "ACTIVE_BUT_UPDATE_FAILED" = "ACTIVE_BUT_UPDATE_FAILED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[QuerySuggestionsBlockListStatus] = js.Array(ACTIVE, CREATING, DELETING, UPDATING, ACTIVE_BUT_UPDATE_FAILED, FAILED)
+}
+
+type QuerySuggestionsStatus = "ACTIVE" | "UPDATING"
+object QuerySuggestionsStatus {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+
+  inline def values: js.Array[QuerySuggestionsStatus] = js.Array(ACTIVE, UPDATING)
 }
 
 type ReadAccessType = "ALLOW" | "DENY"
@@ -302,14 +429,15 @@ object SalesforceStandardObjectName {
 
 /** Enumeration for query score confidence.
   */
-type ScoreConfidence = "VERY_HIGH" | "HIGH" | "MEDIUM" | "LOW"
+type ScoreConfidence = "VERY_HIGH" | "HIGH" | "MEDIUM" | "LOW" | "NOT_AVAILABLE"
 object ScoreConfidence {
   inline val VERY_HIGH: "VERY_HIGH" = "VERY_HIGH"
   inline val HIGH: "HIGH" = "HIGH"
   inline val MEDIUM: "MEDIUM" = "MEDIUM"
   inline val LOW: "LOW" = "LOW"
+  inline val NOT_AVAILABLE: "NOT_AVAILABLE" = "NOT_AVAILABLE"
 
-  inline def values: js.Array[ScoreConfidence] = js.Array(VERY_HIGH, HIGH, MEDIUM, LOW)
+  inline def values: js.Array[ScoreConfidence] = js.Array(VERY_HIGH, HIGH, MEDIUM, LOW, NOT_AVAILABLE)
 }
 
 type ServiceNowAuthenticationType = "HTTP_BASIC" | "OAUTH2"
@@ -328,11 +456,13 @@ object ServiceNowBuildVersionType {
   inline def values: js.Array[ServiceNowBuildVersionType] = js.Array(LONDON, OTHERS)
 }
 
-type SharePointVersion = "SHAREPOINT_ONLINE"
+type SharePointVersion = "SHAREPOINT_2013" | "SHAREPOINT_2016" | "SHAREPOINT_ONLINE"
 object SharePointVersion {
+  inline val SHAREPOINT_2013: "SHAREPOINT_2013" = "SHAREPOINT_2013"
+  inline val SHAREPOINT_2016: "SHAREPOINT_2016" = "SHAREPOINT_2016"
   inline val SHAREPOINT_ONLINE: "SHAREPOINT_ONLINE" = "SHAREPOINT_ONLINE"
 
-  inline def values: js.Array[SharePointVersion] = js.Array(SHAREPOINT_ONLINE)
+  inline def values: js.Array[SharePointVersion] = js.Array(SHAREPOINT_2013, SHAREPOINT_2016, SHAREPOINT_ONLINE)
 }
 
 type SortOrder = "DESC" | "ASC"
@@ -361,4 +491,21 @@ object UserContextPolicy {
   inline val USER_TOKEN: "USER_TOKEN" = "USER_TOKEN"
 
   inline def values: js.Array[UserContextPolicy] = js.Array(ATTRIBUTE_FILTER, USER_TOKEN)
+}
+
+type UserGroupResolutionMode = "AWS_SSO" | "NONE"
+object UserGroupResolutionMode {
+  inline val AWS_SSO: "AWS_SSO" = "AWS_SSO"
+  inline val NONE: "NONE" = "NONE"
+
+  inline def values: js.Array[UserGroupResolutionMode] = js.Array(AWS_SSO, NONE)
+}
+
+type WebCrawlerMode = "HOST_ONLY" | "SUBDOMAINS" | "EVERYTHING"
+object WebCrawlerMode {
+  inline val HOST_ONLY: "HOST_ONLY" = "HOST_ONLY"
+  inline val SUBDOMAINS: "SUBDOMAINS" = "SUBDOMAINS"
+  inline val EVERYTHING: "EVERYTHING" = "EVERYTHING"
+
+  inline def values: js.Array[WebCrawlerMode] = js.Array(HOST_ONLY, SUBDOMAINS, EVERYTHING)
 }

@@ -12,6 +12,8 @@ package object applicationinsights {
   type AmazonResourceName = String
   type ApplicationComponentList = js.Array[ApplicationComponent]
   type ApplicationInfoList = js.Array[ApplicationInfo]
+  type AutoConfigEnabled = Boolean
+  type AutoCreate = Boolean
   type CWEMonitorEnabled = Boolean
   type CloudWatchEventDetailType = String
   type CloudWatchEventId = String
@@ -42,6 +44,7 @@ package object applicationinsights {
   type HealthEventTypeCode = String
   type HealthService = String
   type Insights = String
+  type LastRecurrenceTime = js.Date
   type LifeCycle = String
   type LineTime = js.Date
   type LogGroup = String
@@ -67,6 +70,7 @@ package object applicationinsights {
   type ProblemList = js.Array[Problem]
   type RdsEventCategories = String
   type RdsEventMessage = String
+  type RecurringCount = Double
   type Remarks = String
   type RemoveSNSTopic = Boolean
   type ResourceARN = String
@@ -208,7 +212,9 @@ package object applicationinsights {
     */
   @js.native
   trait ApplicationInfo extends js.Object {
+    var AutoConfigEnabled: js.UndefOr[AutoConfigEnabled]
     var CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled]
+    var DiscoveryType: js.UndefOr[DiscoveryType]
     var LifeCycle: js.UndefOr[LifeCycle]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
     var OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn]
@@ -219,7 +225,9 @@ package object applicationinsights {
   object ApplicationInfo {
     @inline
     def apply(
+        AutoConfigEnabled: js.UndefOr[AutoConfigEnabled] = js.undefined,
         CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled] = js.undefined,
+        DiscoveryType: js.UndefOr[DiscoveryType] = js.undefined,
         LifeCycle: js.UndefOr[LifeCycle] = js.undefined,
         OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
         OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
@@ -227,7 +235,9 @@ package object applicationinsights {
         ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined
     ): ApplicationInfo = {
       val __obj = js.Dynamic.literal()
+      AutoConfigEnabled.foreach(__v => __obj.updateDynamic("AutoConfigEnabled")(__v.asInstanceOf[js.Any]))
       CWEMonitorEnabled.foreach(__v => __obj.updateDynamic("CWEMonitorEnabled")(__v.asInstanceOf[js.Any]))
+      DiscoveryType.foreach(__v => __obj.updateDynamic("DiscoveryType")(__v.asInstanceOf[js.Any]))
       LifeCycle.foreach(__v => __obj.updateDynamic("LifeCycle")(__v.asInstanceOf[js.Any]))
       OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
       OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
@@ -272,29 +282,33 @@ package object applicationinsights {
 
   @js.native
   trait CreateApplicationRequest extends js.Object {
-    var ResourceGroupName: ResourceGroupName
+    var AutoConfigEnabled: js.UndefOr[AutoConfigEnabled]
+    var AutoCreate: js.UndefOr[AutoCreate]
     var CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
     var OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn]
+    var ResourceGroupName: js.UndefOr[ResourceGroupName]
     var Tags: js.UndefOr[TagList]
   }
 
   object CreateApplicationRequest {
     @inline
     def apply(
-        ResourceGroupName: ResourceGroupName,
+        AutoConfigEnabled: js.UndefOr[AutoConfigEnabled] = js.undefined,
+        AutoCreate: js.UndefOr[AutoCreate] = js.undefined,
         CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled] = js.undefined,
         OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
         OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
+        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateApplicationRequest = {
-      val __obj = js.Dynamic.literal(
-        "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      AutoConfigEnabled.foreach(__v => __obj.updateDynamic("AutoConfigEnabled")(__v.asInstanceOf[js.Any]))
+      AutoCreate.foreach(__v => __obj.updateDynamic("AutoCreate")(__v.asInstanceOf[js.Any]))
       CWEMonitorEnabled.foreach(__v => __obj.updateDynamic("CWEMonitorEnabled")(__v.asInstanceOf[js.Any]))
       OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
       OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
+      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationRequest]
     }
@@ -1013,6 +1027,7 @@ package object applicationinsights {
 
   @js.native
   trait ListProblemsRequest extends js.Object {
+    var ComponentName: js.UndefOr[ComponentName]
     var EndTime: js.UndefOr[EndTime]
     var MaxResults: js.UndefOr[MaxEntities]
     var NextToken: js.UndefOr[PaginationToken]
@@ -1023,6 +1038,7 @@ package object applicationinsights {
   object ListProblemsRequest {
     @inline
     def apply(
+        ComponentName: js.UndefOr[ComponentName] = js.undefined,
         EndTime: js.UndefOr[EndTime] = js.undefined,
         MaxResults: js.UndefOr[MaxEntities] = js.undefined,
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
@@ -1030,6 +1046,7 @@ package object applicationinsights {
         StartTime: js.UndefOr[StartTime] = js.undefined
     ): ListProblemsRequest = {
       val __obj = js.Dynamic.literal()
+      ComponentName.foreach(__v => __obj.updateDynamic("ComponentName")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
@@ -1043,17 +1060,20 @@ package object applicationinsights {
   trait ListProblemsResponse extends js.Object {
     var NextToken: js.UndefOr[PaginationToken]
     var ProblemList: js.UndefOr[ProblemList]
+    var ResourceGroupName: js.UndefOr[ResourceGroupName]
   }
 
   object ListProblemsResponse {
     @inline
     def apply(
         NextToken: js.UndefOr[PaginationToken] = js.undefined,
-        ProblemList: js.UndefOr[ProblemList] = js.undefined
+        ProblemList: js.UndefOr[ProblemList] = js.undefined,
+        ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined
     ): ListProblemsResponse = {
       val __obj = js.Dynamic.literal()
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ProblemList.foreach(__v => __obj.updateDynamic("ProblemList")(__v.asInstanceOf[js.Any]))
+      ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListProblemsResponse]
     }
   }
@@ -1277,6 +1297,8 @@ package object applicationinsights {
     var Feedback: js.UndefOr[Feedback]
     var Id: js.UndefOr[ProblemId]
     var Insights: js.UndefOr[Insights]
+    var LastRecurrenceTime: js.UndefOr[LastRecurrenceTime]
+    var RecurringCount: js.UndefOr[RecurringCount]
     var ResourceGroupName: js.UndefOr[ResourceGroupName]
     var SeverityLevel: js.UndefOr[SeverityLevel]
     var StartTime: js.UndefOr[StartTime]
@@ -1292,6 +1314,8 @@ package object applicationinsights {
         Feedback: js.UndefOr[Feedback] = js.undefined,
         Id: js.UndefOr[ProblemId] = js.undefined,
         Insights: js.UndefOr[Insights] = js.undefined,
+        LastRecurrenceTime: js.UndefOr[LastRecurrenceTime] = js.undefined,
+        RecurringCount: js.UndefOr[RecurringCount] = js.undefined,
         ResourceGroupName: js.UndefOr[ResourceGroupName] = js.undefined,
         SeverityLevel: js.UndefOr[SeverityLevel] = js.undefined,
         StartTime: js.UndefOr[StartTime] = js.undefined,
@@ -1304,6 +1328,8 @@ package object applicationinsights {
       Feedback.foreach(__v => __obj.updateDynamic("Feedback")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Insights.foreach(__v => __obj.updateDynamic("Insights")(__v.asInstanceOf[js.Any]))
+      LastRecurrenceTime.foreach(__v => __obj.updateDynamic("LastRecurrenceTime")(__v.asInstanceOf[js.Any]))
+      RecurringCount.foreach(__v => __obj.updateDynamic("RecurringCount")(__v.asInstanceOf[js.Any]))
       ResourceGroupName.foreach(__v => __obj.updateDynamic("ResourceGroupName")(__v.asInstanceOf[js.Any]))
       SeverityLevel.foreach(__v => __obj.updateDynamic("SeverityLevel")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
@@ -1419,6 +1445,7 @@ package object applicationinsights {
   @js.native
   trait UpdateApplicationRequest extends js.Object {
     var ResourceGroupName: ResourceGroupName
+    var AutoConfigEnabled: js.UndefOr[AutoConfigEnabled]
     var CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled]
     var OpsCenterEnabled: js.UndefOr[OpsCenterEnabled]
     var OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn]
@@ -1429,6 +1456,7 @@ package object applicationinsights {
     @inline
     def apply(
         ResourceGroupName: ResourceGroupName,
+        AutoConfigEnabled: js.UndefOr[AutoConfigEnabled] = js.undefined,
         CWEMonitorEnabled: js.UndefOr[CWEMonitorEnabled] = js.undefined,
         OpsCenterEnabled: js.UndefOr[OpsCenterEnabled] = js.undefined,
         OpsItemSNSTopicArn: js.UndefOr[OpsItemSNSTopicArn] = js.undefined,
@@ -1438,6 +1466,7 @@ package object applicationinsights {
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
+      AutoConfigEnabled.foreach(__v => __obj.updateDynamic("AutoConfigEnabled")(__v.asInstanceOf[js.Any]))
       CWEMonitorEnabled.foreach(__v => __obj.updateDynamic("CWEMonitorEnabled")(__v.asInstanceOf[js.Any]))
       OpsCenterEnabled.foreach(__v => __obj.updateDynamic("OpsCenterEnabled")(__v.asInstanceOf[js.Any]))
       OpsItemSNSTopicArn.foreach(__v => __obj.updateDynamic("OpsItemSNSTopicArn")(__v.asInstanceOf[js.Any]))
@@ -1466,6 +1495,7 @@ package object applicationinsights {
   trait UpdateComponentConfigurationRequest extends js.Object {
     var ComponentName: ComponentName
     var ResourceGroupName: ResourceGroupName
+    var AutoConfigEnabled: js.UndefOr[AutoConfigEnabled]
     var ComponentConfiguration: js.UndefOr[ComponentConfiguration]
     var Monitor: js.UndefOr[Monitor]
     var Tier: js.UndefOr[Tier]
@@ -1476,6 +1506,7 @@ package object applicationinsights {
     def apply(
         ComponentName: ComponentName,
         ResourceGroupName: ResourceGroupName,
+        AutoConfigEnabled: js.UndefOr[AutoConfigEnabled] = js.undefined,
         ComponentConfiguration: js.UndefOr[ComponentConfiguration] = js.undefined,
         Monitor: js.UndefOr[Monitor] = js.undefined,
         Tier: js.UndefOr[Tier] = js.undefined
@@ -1485,6 +1516,7 @@ package object applicationinsights {
         "ResourceGroupName" -> ResourceGroupName.asInstanceOf[js.Any]
       )
 
+      AutoConfigEnabled.foreach(__v => __obj.updateDynamic("AutoConfigEnabled")(__v.asInstanceOf[js.Any]))
       ComponentConfiguration.foreach(__v => __obj.updateDynamic("ComponentConfiguration")(__v.asInstanceOf[js.Any]))
       Monitor.foreach(__v => __obj.updateDynamic("Monitor")(__v.asInstanceOf[js.Any]))
       Tier.foreach(__v => __obj.updateDynamic("Tier")(__v.asInstanceOf[js.Any]))

@@ -3,6 +3,25 @@ package facade.amazonaws.services.connect
 import scalajs.js
 
 @js.native
+sealed trait AgentStatusState extends js.Any
+object AgentStatusState {
+  val ENABLED = "ENABLED".asInstanceOf[AgentStatusState]
+  val DISABLED = "DISABLED".asInstanceOf[AgentStatusState]
+
+  @inline def values: js.Array[AgentStatusState] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
+sealed trait AgentStatusType extends js.Any
+object AgentStatusType {
+  val ROUTABLE = "ROUTABLE".asInstanceOf[AgentStatusType]
+  val CUSTOM = "CUSTOM".asInstanceOf[AgentStatusType]
+  val OFFLINE = "OFFLINE".asInstanceOf[AgentStatusType]
+
+  @inline def values: js.Array[AgentStatusType] = js.Array(ROUTABLE, CUSTOM, OFFLINE)
+}
+
+@js.native
 sealed trait Channel extends js.Any
 object Channel {
   val VOICE = "VOICE".asInstanceOf[Channel]
@@ -21,6 +40,33 @@ object Comparison {
 }
 
 @js.native
+sealed trait ContactFlowModuleState extends js.Any
+object ContactFlowModuleState {
+  val ACTIVE = "ACTIVE".asInstanceOf[ContactFlowModuleState]
+  val ARCHIVED = "ARCHIVED".asInstanceOf[ContactFlowModuleState]
+
+  @inline def values: js.Array[ContactFlowModuleState] = js.Array(ACTIVE, ARCHIVED)
+}
+
+@js.native
+sealed trait ContactFlowModuleStatus extends js.Any
+object ContactFlowModuleStatus {
+  val PUBLISHED = "PUBLISHED".asInstanceOf[ContactFlowModuleStatus]
+  val SAVED = "SAVED".asInstanceOf[ContactFlowModuleStatus]
+
+  @inline def values: js.Array[ContactFlowModuleStatus] = js.Array(PUBLISHED, SAVED)
+}
+
+@js.native
+sealed trait ContactFlowState extends js.Any
+object ContactFlowState {
+  val ACTIVE = "ACTIVE".asInstanceOf[ContactFlowState]
+  val ARCHIVED = "ARCHIVED".asInstanceOf[ContactFlowState]
+
+  @inline def values: js.Array[ContactFlowState] = js.Array(ACTIVE, ARCHIVED)
+}
+
+@js.native
 sealed trait ContactFlowType extends js.Any
 object ContactFlowType {
   val CONTACT_FLOW = "CONTACT_FLOW".asInstanceOf[ContactFlowType]
@@ -34,6 +80,19 @@ object ContactFlowType {
   val QUEUE_TRANSFER = "QUEUE_TRANSFER".asInstanceOf[ContactFlowType]
 
   @inline def values: js.Array[ContactFlowType] = js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER)
+}
+
+@js.native
+sealed trait ContactInitiationMethod extends js.Any
+object ContactInitiationMethod {
+  val INBOUND = "INBOUND".asInstanceOf[ContactInitiationMethod]
+  val OUTBOUND = "OUTBOUND".asInstanceOf[ContactInitiationMethod]
+  val TRANSFER = "TRANSFER".asInstanceOf[ContactInitiationMethod]
+  val QUEUE_TRANSFER = "QUEUE_TRANSFER".asInstanceOf[ContactInitiationMethod]
+  val CALLBACK = "CALLBACK".asInstanceOf[ContactInitiationMethod]
+  val API = "API".asInstanceOf[ContactInitiationMethod]
+
+  @inline def values: js.Array[ContactInitiationMethod] = js.Array(INBOUND, OUTBOUND, TRANSFER, QUEUE_TRANSFER, CALLBACK, API)
 }
 
 /** The current metric names.
@@ -214,8 +273,21 @@ object InstanceStorageResourceType {
 sealed trait IntegrationType extends js.Any
 object IntegrationType {
   val EVENT = "EVENT".asInstanceOf[IntegrationType]
+  val VOICE_ID = "VOICE_ID".asInstanceOf[IntegrationType]
+  val PINPOINT_APP = "PINPOINT_APP".asInstanceOf[IntegrationType]
+  val WISDOM_ASSISTANT = "WISDOM_ASSISTANT".asInstanceOf[IntegrationType]
+  val WISDOM_KNOWLEDGE_BASE = "WISDOM_KNOWLEDGE_BASE".asInstanceOf[IntegrationType]
 
-  @inline def values: js.Array[IntegrationType] = js.Array(EVENT)
+  @inline def values: js.Array[IntegrationType] = js.Array(EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT, WISDOM_KNOWLEDGE_BASE)
+}
+
+@js.native
+sealed trait LexVersion extends js.Any
+object LexVersion {
+  val V1 = "V1".asInstanceOf[LexVersion]
+  val V2 = "V2".asInstanceOf[LexVersion]
+
+  @inline def values: js.Array[LexVersion] = js.Array(V1, V2)
 }
 
 @js.native
@@ -747,11 +819,21 @@ object QuickConnectType {
 }
 
 @js.native
+sealed trait ReferenceStatus extends js.Any
+object ReferenceStatus {
+  val APPROVED = "APPROVED".asInstanceOf[ReferenceStatus]
+  val REJECTED = "REJECTED".asInstanceOf[ReferenceStatus]
+
+  @inline def values: js.Array[ReferenceStatus] = js.Array(APPROVED, REJECTED)
+}
+
+@js.native
 sealed trait ReferenceType extends js.Any
 object ReferenceType {
   val URL = "URL".asInstanceOf[ReferenceType]
+  val ATTACHMENT = "ATTACHMENT".asInstanceOf[ReferenceType]
 
-  @inline def values: js.Array[ReferenceType] = js.Array(URL)
+  @inline def values: js.Array[ReferenceType] = js.Array(URL, ATTACHMENT)
 }
 
 @js.native
@@ -785,6 +867,15 @@ object StorageType {
 }
 
 @js.native
+sealed trait TrafficType extends js.Any
+object TrafficType {
+  val GENERAL = "GENERAL".asInstanceOf[TrafficType]
+  val CAMPAIGN = "CAMPAIGN".asInstanceOf[TrafficType]
+
+  @inline def values: js.Array[TrafficType] = js.Array(GENERAL, CAMPAIGN)
+}
+
+@js.native
 sealed trait Unit extends js.Any
 object Unit {
   val SECONDS = "SECONDS".asInstanceOf[Unit]
@@ -798,8 +889,9 @@ object Unit {
 sealed trait UseCaseType extends js.Any
 object UseCaseType {
   val RULES_EVALUATION = "RULES_EVALUATION".asInstanceOf[UseCaseType]
+  val CONNECT_CAMPAIGNS = "CONNECT_CAMPAIGNS".asInstanceOf[UseCaseType]
 
-  @inline def values: js.Array[UseCaseType] = js.Array(RULES_EVALUATION)
+  @inline def values: js.Array[UseCaseType] = js.Array(RULES_EVALUATION, CONNECT_CAMPAIGNS)
 }
 
 @js.native

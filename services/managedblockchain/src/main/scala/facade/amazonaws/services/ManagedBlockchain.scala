@@ -946,6 +946,7 @@ package object managedblockchain {
     var Description: js.UndefOr[DescriptionString]
     var FrameworkAttributes: js.UndefOr[MemberFrameworkAttributes]
     var Id: js.UndefOr[ResourceIdString]
+    var KmsKeyArn: js.UndefOr[String]
     var LogPublishingConfiguration: js.UndefOr[MemberLogPublishingConfiguration]
     var Name: js.UndefOr[NetworkMemberNameString]
     var NetworkId: js.UndefOr[ResourceIdString]
@@ -961,6 +962,7 @@ package object managedblockchain {
         Description: js.UndefOr[DescriptionString] = js.undefined,
         FrameworkAttributes: js.UndefOr[MemberFrameworkAttributes] = js.undefined,
         Id: js.UndefOr[ResourceIdString] = js.undefined,
+        KmsKeyArn: js.UndefOr[String] = js.undefined,
         LogPublishingConfiguration: js.UndefOr[MemberLogPublishingConfiguration] = js.undefined,
         Name: js.UndefOr[NetworkMemberNameString] = js.undefined,
         NetworkId: js.UndefOr[ResourceIdString] = js.undefined,
@@ -973,6 +975,7 @@ package object managedblockchain {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       FrameworkAttributes.foreach(__v => __obj.updateDynamic("FrameworkAttributes")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NetworkId.foreach(__v => __obj.updateDynamic("NetworkId")(__v.asInstanceOf[js.Any]))
@@ -989,6 +992,7 @@ package object managedblockchain {
     var FrameworkConfiguration: MemberFrameworkConfiguration
     var Name: NetworkMemberNameString
     var Description: js.UndefOr[DescriptionString]
+    var KmsKeyArn: js.UndefOr[ArnString]
     var LogPublishingConfiguration: js.UndefOr[MemberLogPublishingConfiguration]
     var Tags: js.UndefOr[InputTagMap]
   }
@@ -999,6 +1003,7 @@ package object managedblockchain {
         FrameworkConfiguration: MemberFrameworkConfiguration,
         Name: NetworkMemberNameString,
         Description: js.UndefOr[DescriptionString] = js.undefined,
+        KmsKeyArn: js.UndefOr[ArnString] = js.undefined,
         LogPublishingConfiguration: js.UndefOr[MemberLogPublishingConfiguration] = js.undefined,
         Tags: js.UndefOr[InputTagMap] = js.undefined
     ): MemberConfiguration = {
@@ -1008,6 +1013,7 @@ package object managedblockchain {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MemberConfiguration]
@@ -1362,6 +1368,7 @@ package object managedblockchain {
     var FrameworkAttributes: js.UndefOr[NodeFrameworkAttributes]
     var Id: js.UndefOr[ResourceIdString]
     var InstanceType: js.UndefOr[InstanceTypeString]
+    var KmsKeyArn: js.UndefOr[String]
     var LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration]
     var MemberId: js.UndefOr[ResourceIdString]
     var NetworkId: js.UndefOr[ResourceIdString]
@@ -1379,6 +1386,7 @@ package object managedblockchain {
         FrameworkAttributes: js.UndefOr[NodeFrameworkAttributes] = js.undefined,
         Id: js.UndefOr[ResourceIdString] = js.undefined,
         InstanceType: js.UndefOr[InstanceTypeString] = js.undefined,
+        KmsKeyArn: js.UndefOr[String] = js.undefined,
         LogPublishingConfiguration: js.UndefOr[NodeLogPublishingConfiguration] = js.undefined,
         MemberId: js.UndefOr[ResourceIdString] = js.undefined,
         NetworkId: js.UndefOr[ResourceIdString] = js.undefined,
@@ -1393,6 +1401,7 @@ package object managedblockchain {
       FrameworkAttributes.foreach(__v => __obj.updateDynamic("FrameworkAttributes")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       LogPublishingConfiguration.foreach(__v => __obj.updateDynamic("LogPublishingConfiguration")(__v.asInstanceOf[js.Any]))
       MemberId.foreach(__v => __obj.updateDynamic("MemberId")(__v.asInstanceOf[js.Any]))
       NetworkId.foreach(__v => __obj.updateDynamic("NetworkId")(__v.asInstanceOf[js.Any]))

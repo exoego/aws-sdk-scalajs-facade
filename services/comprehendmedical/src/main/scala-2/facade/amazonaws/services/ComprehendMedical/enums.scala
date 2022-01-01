@@ -17,6 +17,7 @@ object AttributeName {
 sealed trait EntitySubType extends js.Any
 object EntitySubType {
   val NAME = "NAME".asInstanceOf[EntitySubType]
+  val DX_NAME = "DX_NAME".asInstanceOf[EntitySubType]
   val DOSAGE = "DOSAGE".asInstanceOf[EntitySubType]
   val ROUTE_OR_MODE = "ROUTE_OR_MODE".asInstanceOf[EntitySubType]
   val FORM = "FORM".asInstanceOf[EntitySubType]
@@ -30,13 +31,16 @@ object EntitySubType {
   val TEST_NAME = "TEST_NAME".asInstanceOf[EntitySubType]
   val TEST_VALUE = "TEST_VALUE".asInstanceOf[EntitySubType]
   val TEST_UNITS = "TEST_UNITS".asInstanceOf[EntitySubType]
+  val TEST_UNIT = "TEST_UNIT".asInstanceOf[EntitySubType]
   val PROCEDURE_NAME = "PROCEDURE_NAME".asInstanceOf[EntitySubType]
   val TREATMENT_NAME = "TREATMENT_NAME".asInstanceOf[EntitySubType]
   val DATE = "DATE".asInstanceOf[EntitySubType]
   val AGE = "AGE".asInstanceOf[EntitySubType]
   val CONTACT_POINT = "CONTACT_POINT".asInstanceOf[EntitySubType]
+  val PHONE_OR_FAX = "PHONE_OR_FAX".asInstanceOf[EntitySubType]
   val EMAIL = "EMAIL".asInstanceOf[EntitySubType]
   val IDENTIFIER = "IDENTIFIER".asInstanceOf[EntitySubType]
+  val ID = "ID".asInstanceOf[EntitySubType]
   val URL = "URL".asInstanceOf[EntitySubType]
   val ADDRESS = "ADDRESS".asInstanceOf[EntitySubType]
   val PROFESSION = "PROFESSION".asInstanceOf[EntitySubType]
@@ -53,6 +57,7 @@ object EntitySubType {
 
   @inline def values: js.Array[EntitySubType] = js.Array(
     NAME,
+    DX_NAME,
     DOSAGE,
     ROUTE_OR_MODE,
     FORM,
@@ -66,13 +71,16 @@ object EntitySubType {
     TEST_NAME,
     TEST_VALUE,
     TEST_UNITS,
+    TEST_UNIT,
     PROCEDURE_NAME,
     TREATMENT_NAME,
     DATE,
     AGE,
     CONTACT_POINT,
+    PHONE_OR_FAX,
     EMAIL,
     IDENTIFIER,
+    ID,
     URL,
     ADDRESS,
     PROFESSION,
@@ -194,6 +202,7 @@ object RelationshipType {
   val ACUITY = "ACUITY".asInstanceOf[RelationshipType]
   val TEST_VALUE = "TEST_VALUE".asInstanceOf[RelationshipType]
   val TEST_UNITS = "TEST_UNITS".asInstanceOf[RelationshipType]
+  val TEST_UNIT = "TEST_UNIT".asInstanceOf[RelationshipType]
   val DIRECTION = "DIRECTION".asInstanceOf[RelationshipType]
   val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[RelationshipType]
 
@@ -214,6 +223,7 @@ object RelationshipType {
     ACUITY,
     TEST_VALUE,
     TEST_UNITS,
+    TEST_UNIT,
     DIRECTION,
     SYSTEM_ORGAN_SITE
   )
@@ -256,4 +266,62 @@ object RxNormTraitName {
   val NEGATION = "NEGATION".asInstanceOf[RxNormTraitName]
 
   @inline def values: js.Array[RxNormTraitName] = js.Array(NEGATION)
+}
+
+@js.native
+sealed trait SNOMEDCTAttributeType extends js.Any
+object SNOMEDCTAttributeType {
+  val ACUITY = "ACUITY".asInstanceOf[SNOMEDCTAttributeType]
+  val QUALITY = "QUALITY".asInstanceOf[SNOMEDCTAttributeType]
+  val DIRECTION = "DIRECTION".asInstanceOf[SNOMEDCTAttributeType]
+  val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[SNOMEDCTAttributeType]
+  val TEST_VALUE = "TEST_VALUE".asInstanceOf[SNOMEDCTAttributeType]
+  val TEST_UNIT = "TEST_UNIT".asInstanceOf[SNOMEDCTAttributeType]
+
+  @inline def values: js.Array[SNOMEDCTAttributeType] = js.Array(ACUITY, QUALITY, DIRECTION, SYSTEM_ORGAN_SITE, TEST_VALUE, TEST_UNIT)
+}
+
+@js.native
+sealed trait SNOMEDCTEntityCategory extends js.Any
+object SNOMEDCTEntityCategory {
+  val MEDICAL_CONDITION = "MEDICAL_CONDITION".asInstanceOf[SNOMEDCTEntityCategory]
+  val ANATOMY = "ANATOMY".asInstanceOf[SNOMEDCTEntityCategory]
+  val TEST_TREATMENT_PROCEDURE = "TEST_TREATMENT_PROCEDURE".asInstanceOf[SNOMEDCTEntityCategory]
+
+  @inline def values: js.Array[SNOMEDCTEntityCategory] = js.Array(MEDICAL_CONDITION, ANATOMY, TEST_TREATMENT_PROCEDURE)
+}
+
+@js.native
+sealed trait SNOMEDCTEntityType extends js.Any
+object SNOMEDCTEntityType {
+  val DX_NAME = "DX_NAME".asInstanceOf[SNOMEDCTEntityType]
+  val TEST_NAME = "TEST_NAME".asInstanceOf[SNOMEDCTEntityType]
+  val PROCEDURE_NAME = "PROCEDURE_NAME".asInstanceOf[SNOMEDCTEntityType]
+  val TREATMENT_NAME = "TREATMENT_NAME".asInstanceOf[SNOMEDCTEntityType]
+
+  @inline def values: js.Array[SNOMEDCTEntityType] = js.Array(DX_NAME, TEST_NAME, PROCEDURE_NAME, TREATMENT_NAME)
+}
+
+@js.native
+sealed trait SNOMEDCTRelationshipType extends js.Any
+object SNOMEDCTRelationshipType {
+  val ACUITY = "ACUITY".asInstanceOf[SNOMEDCTRelationshipType]
+  val QUALITY = "QUALITY".asInstanceOf[SNOMEDCTRelationshipType]
+  val TEST_VALUE = "TEST_VALUE".asInstanceOf[SNOMEDCTRelationshipType]
+  val TEST_UNITS = "TEST_UNITS".asInstanceOf[SNOMEDCTRelationshipType]
+  val DIRECTION = "DIRECTION".asInstanceOf[SNOMEDCTRelationshipType]
+  val SYSTEM_ORGAN_SITE = "SYSTEM_ORGAN_SITE".asInstanceOf[SNOMEDCTRelationshipType]
+
+  @inline def values: js.Array[SNOMEDCTRelationshipType] = js.Array(ACUITY, QUALITY, TEST_VALUE, TEST_UNITS, DIRECTION, SYSTEM_ORGAN_SITE)
+}
+
+@js.native
+sealed trait SNOMEDCTTraitName extends js.Any
+object SNOMEDCTTraitName {
+  val NEGATION = "NEGATION".asInstanceOf[SNOMEDCTTraitName]
+  val DIAGNOSIS = "DIAGNOSIS".asInstanceOf[SNOMEDCTTraitName]
+  val SIGN = "SIGN".asInstanceOf[SNOMEDCTTraitName]
+  val SYMPTOM = "SYMPTOM".asInstanceOf[SNOMEDCTTraitName]
+
+  @inline def values: js.Array[SNOMEDCTTraitName] = js.Array(NEGATION, DIAGNOSIS, SIGN, SYMPTOM)
 }

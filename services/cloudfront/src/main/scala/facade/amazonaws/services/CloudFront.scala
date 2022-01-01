@@ -8,6 +8,10 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object cloudfront {
+  type AccessControlAllowHeadersList = js.Array[String]
+  type AccessControlAllowMethodsList = js.Array[ResponseHeadersPolicyAccessControlAllowMethodsValues]
+  type AccessControlAllowOriginsList = js.Array[String]
+  type AccessControlExposeHeadersList = js.Array[String]
   type AliasICPRecordals = js.Array[AliasICPRecordal]
   type AliasList = js.Array[String]
   type AwsAccountNumberList = js.Array[String]
@@ -15,6 +19,7 @@ package object cloudfront {
   type CachePolicySummaryList = js.Array[CachePolicySummary]
   type CloudFrontOriginAccessIdentitySummaryList = js.Array[CloudFrontOriginAccessIdentitySummary]
   type CommentType = String
+  type ConflictingAliases = js.Array[ConflictingAlias]
   type ContentTypeProfileList = js.Array[ContentTypeProfile]
   type CookieNameList = js.Array[String]
   type CustomErrorResponseList = js.Array[CustomErrorResponse]
@@ -26,6 +31,13 @@ package object cloudfront {
   type FieldLevelEncryptionSummaryList = js.Array[FieldLevelEncryptionSummary]
   type FieldList = js.Array[String]
   type FieldPatternList = js.Array[String]
+  type FunctionARN = String
+  type FunctionAssociationList = js.Array[FunctionAssociation]
+  type FunctionBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type FunctionEventObject = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type FunctionExecutionLogList = js.Array[String]
+  type FunctionName = String
+  type FunctionSummaryList = js.Array[FunctionSummary]
   type HeaderList = js.Array[String]
   type InvalidationSummaryList = js.Array[InvalidationSummary]
   type KGKeyPairIdsList = js.Array[KGKeyPairIds]
@@ -49,6 +61,8 @@ package object cloudfront {
   type QueryStringNamesList = js.Array[String]
   type RealtimeLogConfigList = js.Array[RealtimeLogConfig]
   type ResourceARN = String
+  type ResponseHeadersPolicyCustomHeaderList = js.Array[ResponseHeadersPolicyCustomHeader]
+  type ResponseHeadersPolicySummaryList = js.Array[ResponseHeadersPolicySummary]
   type SignerList = js.Array[Signer]
   type SslProtocolsList = js.Array[SslProtocol]
   type StatusCodeList = js.Array[Int]
@@ -58,22 +72,29 @@ package object cloudfront {
   type TagList = js.Array[Tag]
   type TagValue = String
   type TrustedKeyGroupIdList = js.Array[String]
+  type aliasString = String
+  type distributionIdString = String
+  type listConflictingAliasesMaxItemsInteger = Int
+  type sensitiveStringType = String
   type timestamp = js.Date
 
   final class CloudFrontOps(private val service: CloudFront) extends AnyVal {
 
+    @inline def associateAliasFuture(params: AssociateAliasRequest): Future[js.Object] = service.associateAlias(params).promise().toFuture
     @inline def createCachePolicyFuture(params: CreateCachePolicyRequest): Future[CreateCachePolicyResult] = service.createCachePolicy(params).promise().toFuture
     @inline def createCloudFrontOriginAccessIdentityFuture(params: CreateCloudFrontOriginAccessIdentityRequest): Future[CreateCloudFrontOriginAccessIdentityResult] = service.createCloudFrontOriginAccessIdentity(params).promise().toFuture
     @inline def createDistributionFuture(params: CreateDistributionRequest): Future[CreateDistributionResult] = service.createDistribution(params).promise().toFuture
     @inline def createDistributionWithTagsFuture(params: CreateDistributionWithTagsRequest): Future[CreateDistributionWithTagsResult] = service.createDistributionWithTags(params).promise().toFuture
     @inline def createFieldLevelEncryptionConfigFuture(params: CreateFieldLevelEncryptionConfigRequest): Future[CreateFieldLevelEncryptionConfigResult] = service.createFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def createFieldLevelEncryptionProfileFuture(params: CreateFieldLevelEncryptionProfileRequest): Future[CreateFieldLevelEncryptionProfileResult] = service.createFieldLevelEncryptionProfile(params).promise().toFuture
+    @inline def createFunctionFuture(params: CreateFunctionRequest): Future[CreateFunctionResult] = service.createFunction(params).promise().toFuture
     @inline def createInvalidationFuture(params: CreateInvalidationRequest): Future[CreateInvalidationResult] = service.createInvalidation(params).promise().toFuture
     @inline def createKeyGroupFuture(params: CreateKeyGroupRequest): Future[CreateKeyGroupResult] = service.createKeyGroup(params).promise().toFuture
     @inline def createMonitoringSubscriptionFuture(params: CreateMonitoringSubscriptionRequest): Future[CreateMonitoringSubscriptionResult] = service.createMonitoringSubscription(params).promise().toFuture
     @inline def createOriginRequestPolicyFuture(params: CreateOriginRequestPolicyRequest): Future[CreateOriginRequestPolicyResult] = service.createOriginRequestPolicy(params).promise().toFuture
     @inline def createPublicKeyFuture(params: CreatePublicKeyRequest): Future[CreatePublicKeyResult] = service.createPublicKey(params).promise().toFuture
     @inline def createRealtimeLogConfigFuture(params: CreateRealtimeLogConfigRequest): Future[CreateRealtimeLogConfigResult] = service.createRealtimeLogConfig(params).promise().toFuture
+    @inline def createResponseHeadersPolicyFuture(params: CreateResponseHeadersPolicyRequest): Future[CreateResponseHeadersPolicyResult] = service.createResponseHeadersPolicy(params).promise().toFuture
     @inline def createStreamingDistributionFuture(params: CreateStreamingDistributionRequest): Future[CreateStreamingDistributionResult] = service.createStreamingDistribution(params).promise().toFuture
     @inline def createStreamingDistributionWithTagsFuture(params: CreateStreamingDistributionWithTagsRequest): Future[CreateStreamingDistributionWithTagsResult] = service.createStreamingDistributionWithTags(params).promise().toFuture
     @inline def deleteCachePolicyFuture(params: DeleteCachePolicyRequest): Future[js.Object] = service.deleteCachePolicy(params).promise().toFuture
@@ -81,12 +102,15 @@ package object cloudfront {
     @inline def deleteDistributionFuture(params: DeleteDistributionRequest): Future[js.Object] = service.deleteDistribution(params).promise().toFuture
     @inline def deleteFieldLevelEncryptionConfigFuture(params: DeleteFieldLevelEncryptionConfigRequest): Future[js.Object] = service.deleteFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def deleteFieldLevelEncryptionProfileFuture(params: DeleteFieldLevelEncryptionProfileRequest): Future[js.Object] = service.deleteFieldLevelEncryptionProfile(params).promise().toFuture
+    @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[js.Object] = service.deleteFunction(params).promise().toFuture
     @inline def deleteKeyGroupFuture(params: DeleteKeyGroupRequest): Future[js.Object] = service.deleteKeyGroup(params).promise().toFuture
     @inline def deleteMonitoringSubscriptionFuture(params: DeleteMonitoringSubscriptionRequest): Future[DeleteMonitoringSubscriptionResult] = service.deleteMonitoringSubscription(params).promise().toFuture
     @inline def deleteOriginRequestPolicyFuture(params: DeleteOriginRequestPolicyRequest): Future[js.Object] = service.deleteOriginRequestPolicy(params).promise().toFuture
     @inline def deletePublicKeyFuture(params: DeletePublicKeyRequest): Future[js.Object] = service.deletePublicKey(params).promise().toFuture
     @inline def deleteRealtimeLogConfigFuture(params: DeleteRealtimeLogConfigRequest): Future[js.Object] = service.deleteRealtimeLogConfig(params).promise().toFuture
+    @inline def deleteResponseHeadersPolicyFuture(params: DeleteResponseHeadersPolicyRequest): Future[js.Object] = service.deleteResponseHeadersPolicy(params).promise().toFuture
     @inline def deleteStreamingDistributionFuture(params: DeleteStreamingDistributionRequest): Future[js.Object] = service.deleteStreamingDistribution(params).promise().toFuture
+    @inline def describeFunctionFuture(params: DescribeFunctionRequest): Future[DescribeFunctionResult] = service.describeFunction(params).promise().toFuture
     @inline def getCachePolicyConfigFuture(params: GetCachePolicyConfigRequest): Future[GetCachePolicyConfigResult] = service.getCachePolicyConfig(params).promise().toFuture
     @inline def getCachePolicyFuture(params: GetCachePolicyRequest): Future[GetCachePolicyResult] = service.getCachePolicy(params).promise().toFuture
     @inline def getCloudFrontOriginAccessIdentityConfigFuture(params: GetCloudFrontOriginAccessIdentityConfigRequest): Future[GetCloudFrontOriginAccessIdentityConfigResult] = service.getCloudFrontOriginAccessIdentityConfig(params).promise().toFuture
@@ -97,6 +121,7 @@ package object cloudfront {
     @inline def getFieldLevelEncryptionFuture(params: GetFieldLevelEncryptionRequest): Future[GetFieldLevelEncryptionResult] = service.getFieldLevelEncryption(params).promise().toFuture
     @inline def getFieldLevelEncryptionProfileConfigFuture(params: GetFieldLevelEncryptionProfileConfigRequest): Future[GetFieldLevelEncryptionProfileConfigResult] = service.getFieldLevelEncryptionProfileConfig(params).promise().toFuture
     @inline def getFieldLevelEncryptionProfileFuture(params: GetFieldLevelEncryptionProfileRequest): Future[GetFieldLevelEncryptionProfileResult] = service.getFieldLevelEncryptionProfile(params).promise().toFuture
+    @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResult] = service.getFunction(params).promise().toFuture
     @inline def getInvalidationFuture(params: GetInvalidationRequest): Future[GetInvalidationResult] = service.getInvalidation(params).promise().toFuture
     @inline def getKeyGroupConfigFuture(params: GetKeyGroupConfigRequest): Future[GetKeyGroupConfigResult] = service.getKeyGroupConfig(params).promise().toFuture
     @inline def getKeyGroupFuture(params: GetKeyGroupRequest): Future[GetKeyGroupResult] = service.getKeyGroup(params).promise().toFuture
@@ -106,36 +131,46 @@ package object cloudfront {
     @inline def getPublicKeyConfigFuture(params: GetPublicKeyConfigRequest): Future[GetPublicKeyConfigResult] = service.getPublicKeyConfig(params).promise().toFuture
     @inline def getPublicKeyFuture(params: GetPublicKeyRequest): Future[GetPublicKeyResult] = service.getPublicKey(params).promise().toFuture
     @inline def getRealtimeLogConfigFuture(params: GetRealtimeLogConfigRequest): Future[GetRealtimeLogConfigResult] = service.getRealtimeLogConfig(params).promise().toFuture
+    @inline def getResponseHeadersPolicyConfigFuture(params: GetResponseHeadersPolicyConfigRequest): Future[GetResponseHeadersPolicyConfigResult] = service.getResponseHeadersPolicyConfig(params).promise().toFuture
+    @inline def getResponseHeadersPolicyFuture(params: GetResponseHeadersPolicyRequest): Future[GetResponseHeadersPolicyResult] = service.getResponseHeadersPolicy(params).promise().toFuture
     @inline def getStreamingDistributionConfigFuture(params: GetStreamingDistributionConfigRequest): Future[GetStreamingDistributionConfigResult] = service.getStreamingDistributionConfig(params).promise().toFuture
     @inline def getStreamingDistributionFuture(params: GetStreamingDistributionRequest): Future[GetStreamingDistributionResult] = service.getStreamingDistribution(params).promise().toFuture
     @inline def listCachePoliciesFuture(params: ListCachePoliciesRequest): Future[ListCachePoliciesResult] = service.listCachePolicies(params).promise().toFuture
     @inline def listCloudFrontOriginAccessIdentitiesFuture(params: ListCloudFrontOriginAccessIdentitiesRequest): Future[ListCloudFrontOriginAccessIdentitiesResult] = service.listCloudFrontOriginAccessIdentities(params).promise().toFuture
+    @inline def listConflictingAliasesFuture(params: ListConflictingAliasesRequest): Future[ListConflictingAliasesResult] = service.listConflictingAliases(params).promise().toFuture
     @inline def listDistributionsByCachePolicyIdFuture(params: ListDistributionsByCachePolicyIdRequest): Future[ListDistributionsByCachePolicyIdResult] = service.listDistributionsByCachePolicyId(params).promise().toFuture
     @inline def listDistributionsByKeyGroupFuture(params: ListDistributionsByKeyGroupRequest): Future[ListDistributionsByKeyGroupResult] = service.listDistributionsByKeyGroup(params).promise().toFuture
     @inline def listDistributionsByOriginRequestPolicyIdFuture(params: ListDistributionsByOriginRequestPolicyIdRequest): Future[ListDistributionsByOriginRequestPolicyIdResult] = service.listDistributionsByOriginRequestPolicyId(params).promise().toFuture
     @inline def listDistributionsByRealtimeLogConfigFuture(params: ListDistributionsByRealtimeLogConfigRequest): Future[ListDistributionsByRealtimeLogConfigResult] = service.listDistributionsByRealtimeLogConfig(params).promise().toFuture
+    @inline def listDistributionsByResponseHeadersPolicyIdFuture(params: ListDistributionsByResponseHeadersPolicyIdRequest): Future[ListDistributionsByResponseHeadersPolicyIdResult] = service.listDistributionsByResponseHeadersPolicyId(params).promise().toFuture
     @inline def listDistributionsByWebACLIdFuture(params: ListDistributionsByWebACLIdRequest): Future[ListDistributionsByWebACLIdResult] = service.listDistributionsByWebACLId(params).promise().toFuture
     @inline def listDistributionsFuture(params: ListDistributionsRequest): Future[ListDistributionsResult] = service.listDistributions(params).promise().toFuture
     @inline def listFieldLevelEncryptionConfigsFuture(params: ListFieldLevelEncryptionConfigsRequest): Future[ListFieldLevelEncryptionConfigsResult] = service.listFieldLevelEncryptionConfigs(params).promise().toFuture
     @inline def listFieldLevelEncryptionProfilesFuture(params: ListFieldLevelEncryptionProfilesRequest): Future[ListFieldLevelEncryptionProfilesResult] = service.listFieldLevelEncryptionProfiles(params).promise().toFuture
+    @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResult] = service.listFunctions(params).promise().toFuture
     @inline def listInvalidationsFuture(params: ListInvalidationsRequest): Future[ListInvalidationsResult] = service.listInvalidations(params).promise().toFuture
     @inline def listKeyGroupsFuture(params: ListKeyGroupsRequest): Future[ListKeyGroupsResult] = service.listKeyGroups(params).promise().toFuture
     @inline def listOriginRequestPoliciesFuture(params: ListOriginRequestPoliciesRequest): Future[ListOriginRequestPoliciesResult] = service.listOriginRequestPolicies(params).promise().toFuture
     @inline def listPublicKeysFuture(params: ListPublicKeysRequest): Future[ListPublicKeysResult] = service.listPublicKeys(params).promise().toFuture
     @inline def listRealtimeLogConfigsFuture(params: ListRealtimeLogConfigsRequest): Future[ListRealtimeLogConfigsResult] = service.listRealtimeLogConfigs(params).promise().toFuture
+    @inline def listResponseHeadersPoliciesFuture(params: ListResponseHeadersPoliciesRequest): Future[ListResponseHeadersPoliciesResult] = service.listResponseHeadersPolicies(params).promise().toFuture
     @inline def listStreamingDistributionsFuture(params: ListStreamingDistributionsRequest): Future[ListStreamingDistributionsResult] = service.listStreamingDistributions(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResult] = service.listTagsForResource(params).promise().toFuture
+    @inline def publishFunctionFuture(params: PublishFunctionRequest): Future[PublishFunctionResult] = service.publishFunction(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
+    @inline def testFunctionFuture(params: TestFunctionRequest): Future[TestFunctionResult] = service.testFunction(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateCachePolicyFuture(params: UpdateCachePolicyRequest): Future[UpdateCachePolicyResult] = service.updateCachePolicy(params).promise().toFuture
     @inline def updateCloudFrontOriginAccessIdentityFuture(params: UpdateCloudFrontOriginAccessIdentityRequest): Future[UpdateCloudFrontOriginAccessIdentityResult] = service.updateCloudFrontOriginAccessIdentity(params).promise().toFuture
     @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] = service.updateDistribution(params).promise().toFuture
     @inline def updateFieldLevelEncryptionConfigFuture(params: UpdateFieldLevelEncryptionConfigRequest): Future[UpdateFieldLevelEncryptionConfigResult] = service.updateFieldLevelEncryptionConfig(params).promise().toFuture
     @inline def updateFieldLevelEncryptionProfileFuture(params: UpdateFieldLevelEncryptionProfileRequest): Future[UpdateFieldLevelEncryptionProfileResult] = service.updateFieldLevelEncryptionProfile(params).promise().toFuture
+    @inline def updateFunctionFuture(params: UpdateFunctionRequest): Future[UpdateFunctionResult] = service.updateFunction(params).promise().toFuture
     @inline def updateKeyGroupFuture(params: UpdateKeyGroupRequest): Future[UpdateKeyGroupResult] = service.updateKeyGroup(params).promise().toFuture
     @inline def updateOriginRequestPolicyFuture(params: UpdateOriginRequestPolicyRequest): Future[UpdateOriginRequestPolicyResult] = service.updateOriginRequestPolicy(params).promise().toFuture
     @inline def updatePublicKeyFuture(params: UpdatePublicKeyRequest): Future[UpdatePublicKeyResult] = service.updatePublicKey(params).promise().toFuture
     @inline def updateRealtimeLogConfigFuture(params: UpdateRealtimeLogConfigRequest): Future[UpdateRealtimeLogConfigResult] = service.updateRealtimeLogConfig(params).promise().toFuture
+    @inline def updateResponseHeadersPolicyFuture(params: UpdateResponseHeadersPolicyRequest): Future[UpdateResponseHeadersPolicyResult] = service.updateResponseHeadersPolicy(params).promise().toFuture
     @inline def updateStreamingDistributionFuture(params: UpdateStreamingDistributionRequest): Future[UpdateStreamingDistributionResult] = service.updateStreamingDistribution(params).promise().toFuture
 
   }
@@ -145,18 +180,21 @@ package object cloudfront {
   class CloudFront() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateAlias(params: AssociateAliasRequest): Request[js.Object] = js.native
     def createCachePolicy(params: CreateCachePolicyRequest): Request[CreateCachePolicyResult] = js.native
     def createCloudFrontOriginAccessIdentity(params: CreateCloudFrontOriginAccessIdentityRequest): Request[CreateCloudFrontOriginAccessIdentityResult] = js.native
     def createDistribution(params: CreateDistributionRequest): Request[CreateDistributionResult] = js.native
     def createDistributionWithTags(params: CreateDistributionWithTagsRequest): Request[CreateDistributionWithTagsResult] = js.native
     def createFieldLevelEncryptionConfig(params: CreateFieldLevelEncryptionConfigRequest): Request[CreateFieldLevelEncryptionConfigResult] = js.native
     def createFieldLevelEncryptionProfile(params: CreateFieldLevelEncryptionProfileRequest): Request[CreateFieldLevelEncryptionProfileResult] = js.native
+    def createFunction(params: CreateFunctionRequest): Request[CreateFunctionResult] = js.native
     def createInvalidation(params: CreateInvalidationRequest): Request[CreateInvalidationResult] = js.native
     def createKeyGroup(params: CreateKeyGroupRequest): Request[CreateKeyGroupResult] = js.native
     def createMonitoringSubscription(params: CreateMonitoringSubscriptionRequest): Request[CreateMonitoringSubscriptionResult] = js.native
     def createOriginRequestPolicy(params: CreateOriginRequestPolicyRequest): Request[CreateOriginRequestPolicyResult] = js.native
     def createPublicKey(params: CreatePublicKeyRequest): Request[CreatePublicKeyResult] = js.native
     def createRealtimeLogConfig(params: CreateRealtimeLogConfigRequest): Request[CreateRealtimeLogConfigResult] = js.native
+    def createResponseHeadersPolicy(params: CreateResponseHeadersPolicyRequest): Request[CreateResponseHeadersPolicyResult] = js.native
     def createStreamingDistribution(params: CreateStreamingDistributionRequest): Request[CreateStreamingDistributionResult] = js.native
     def createStreamingDistributionWithTags(params: CreateStreamingDistributionWithTagsRequest): Request[CreateStreamingDistributionWithTagsResult] = js.native
     def deleteCachePolicy(params: DeleteCachePolicyRequest): Request[js.Object] = js.native
@@ -164,12 +202,15 @@ package object cloudfront {
     def deleteDistribution(params: DeleteDistributionRequest): Request[js.Object] = js.native
     def deleteFieldLevelEncryptionConfig(params: DeleteFieldLevelEncryptionConfigRequest): Request[js.Object] = js.native
     def deleteFieldLevelEncryptionProfile(params: DeleteFieldLevelEncryptionProfileRequest): Request[js.Object] = js.native
+    def deleteFunction(params: DeleteFunctionRequest): Request[js.Object] = js.native
     def deleteKeyGroup(params: DeleteKeyGroupRequest): Request[js.Object] = js.native
     def deleteMonitoringSubscription(params: DeleteMonitoringSubscriptionRequest): Request[DeleteMonitoringSubscriptionResult] = js.native
     def deleteOriginRequestPolicy(params: DeleteOriginRequestPolicyRequest): Request[js.Object] = js.native
     def deletePublicKey(params: DeletePublicKeyRequest): Request[js.Object] = js.native
     def deleteRealtimeLogConfig(params: DeleteRealtimeLogConfigRequest): Request[js.Object] = js.native
+    def deleteResponseHeadersPolicy(params: DeleteResponseHeadersPolicyRequest): Request[js.Object] = js.native
     def deleteStreamingDistribution(params: DeleteStreamingDistributionRequest): Request[js.Object] = js.native
+    def describeFunction(params: DescribeFunctionRequest): Request[DescribeFunctionResult] = js.native
     def getCachePolicy(params: GetCachePolicyRequest): Request[GetCachePolicyResult] = js.native
     def getCachePolicyConfig(params: GetCachePolicyConfigRequest): Request[GetCachePolicyConfigResult] = js.native
     def getCloudFrontOriginAccessIdentity(params: GetCloudFrontOriginAccessIdentityRequest): Request[GetCloudFrontOriginAccessIdentityResult] = js.native
@@ -180,6 +221,7 @@ package object cloudfront {
     def getFieldLevelEncryptionConfig(params: GetFieldLevelEncryptionConfigRequest): Request[GetFieldLevelEncryptionConfigResult] = js.native
     def getFieldLevelEncryptionProfile(params: GetFieldLevelEncryptionProfileRequest): Request[GetFieldLevelEncryptionProfileResult] = js.native
     def getFieldLevelEncryptionProfileConfig(params: GetFieldLevelEncryptionProfileConfigRequest): Request[GetFieldLevelEncryptionProfileConfigResult] = js.native
+    def getFunction(params: GetFunctionRequest): Request[GetFunctionResult] = js.native
     def getInvalidation(params: GetInvalidationRequest): Request[GetInvalidationResult] = js.native
     def getKeyGroup(params: GetKeyGroupRequest): Request[GetKeyGroupResult] = js.native
     def getKeyGroupConfig(params: GetKeyGroupConfigRequest): Request[GetKeyGroupConfigResult] = js.native
@@ -189,36 +231,46 @@ package object cloudfront {
     def getPublicKey(params: GetPublicKeyRequest): Request[GetPublicKeyResult] = js.native
     def getPublicKeyConfig(params: GetPublicKeyConfigRequest): Request[GetPublicKeyConfigResult] = js.native
     def getRealtimeLogConfig(params: GetRealtimeLogConfigRequest): Request[GetRealtimeLogConfigResult] = js.native
+    def getResponseHeadersPolicy(params: GetResponseHeadersPolicyRequest): Request[GetResponseHeadersPolicyResult] = js.native
+    def getResponseHeadersPolicyConfig(params: GetResponseHeadersPolicyConfigRequest): Request[GetResponseHeadersPolicyConfigResult] = js.native
     def getStreamingDistribution(params: GetStreamingDistributionRequest): Request[GetStreamingDistributionResult] = js.native
     def getStreamingDistributionConfig(params: GetStreamingDistributionConfigRequest): Request[GetStreamingDistributionConfigResult] = js.native
     def listCachePolicies(params: ListCachePoliciesRequest): Request[ListCachePoliciesResult] = js.native
     def listCloudFrontOriginAccessIdentities(params: ListCloudFrontOriginAccessIdentitiesRequest): Request[ListCloudFrontOriginAccessIdentitiesResult] = js.native
+    def listConflictingAliases(params: ListConflictingAliasesRequest): Request[ListConflictingAliasesResult] = js.native
     def listDistributions(params: ListDistributionsRequest): Request[ListDistributionsResult] = js.native
     def listDistributionsByCachePolicyId(params: ListDistributionsByCachePolicyIdRequest): Request[ListDistributionsByCachePolicyIdResult] = js.native
     def listDistributionsByKeyGroup(params: ListDistributionsByKeyGroupRequest): Request[ListDistributionsByKeyGroupResult] = js.native
     def listDistributionsByOriginRequestPolicyId(params: ListDistributionsByOriginRequestPolicyIdRequest): Request[ListDistributionsByOriginRequestPolicyIdResult] = js.native
     def listDistributionsByRealtimeLogConfig(params: ListDistributionsByRealtimeLogConfigRequest): Request[ListDistributionsByRealtimeLogConfigResult] = js.native
+    def listDistributionsByResponseHeadersPolicyId(params: ListDistributionsByResponseHeadersPolicyIdRequest): Request[ListDistributionsByResponseHeadersPolicyIdResult] = js.native
     def listDistributionsByWebACLId(params: ListDistributionsByWebACLIdRequest): Request[ListDistributionsByWebACLIdResult] = js.native
     def listFieldLevelEncryptionConfigs(params: ListFieldLevelEncryptionConfigsRequest): Request[ListFieldLevelEncryptionConfigsResult] = js.native
     def listFieldLevelEncryptionProfiles(params: ListFieldLevelEncryptionProfilesRequest): Request[ListFieldLevelEncryptionProfilesResult] = js.native
+    def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResult] = js.native
     def listInvalidations(params: ListInvalidationsRequest): Request[ListInvalidationsResult] = js.native
     def listKeyGroups(params: ListKeyGroupsRequest): Request[ListKeyGroupsResult] = js.native
     def listOriginRequestPolicies(params: ListOriginRequestPoliciesRequest): Request[ListOriginRequestPoliciesResult] = js.native
     def listPublicKeys(params: ListPublicKeysRequest): Request[ListPublicKeysResult] = js.native
     def listRealtimeLogConfigs(params: ListRealtimeLogConfigsRequest): Request[ListRealtimeLogConfigsResult] = js.native
+    def listResponseHeadersPolicies(params: ListResponseHeadersPoliciesRequest): Request[ListResponseHeadersPoliciesResult] = js.native
     def listStreamingDistributions(params: ListStreamingDistributionsRequest): Request[ListStreamingDistributionsResult] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResult] = js.native
+    def publishFunction(params: PublishFunctionRequest): Request[PublishFunctionResult] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
+    def testFunction(params: TestFunctionRequest): Request[TestFunctionResult] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateCachePolicy(params: UpdateCachePolicyRequest): Request[UpdateCachePolicyResult] = js.native
     def updateCloudFrontOriginAccessIdentity(params: UpdateCloudFrontOriginAccessIdentityRequest): Request[UpdateCloudFrontOriginAccessIdentityResult] = js.native
     def updateDistribution(params: UpdateDistributionRequest): Request[UpdateDistributionResult] = js.native
     def updateFieldLevelEncryptionConfig(params: UpdateFieldLevelEncryptionConfigRequest): Request[UpdateFieldLevelEncryptionConfigResult] = js.native
     def updateFieldLevelEncryptionProfile(params: UpdateFieldLevelEncryptionProfileRequest): Request[UpdateFieldLevelEncryptionProfileResult] = js.native
+    def updateFunction(params: UpdateFunctionRequest): Request[UpdateFunctionResult] = js.native
     def updateKeyGroup(params: UpdateKeyGroupRequest): Request[UpdateKeyGroupResult] = js.native
     def updateOriginRequestPolicy(params: UpdateOriginRequestPolicyRequest): Request[UpdateOriginRequestPolicyResult] = js.native
     def updatePublicKey(params: UpdatePublicKeyRequest): Request[UpdatePublicKeyResult] = js.native
     def updateRealtimeLogConfig(params: UpdateRealtimeLogConfigRequest): Request[UpdateRealtimeLogConfigResult] = js.native
+    def updateResponseHeadersPolicy(params: UpdateResponseHeadersPolicyRequest): Request[UpdateResponseHeadersPolicyResult] = js.native
     def updateStreamingDistribution(params: UpdateStreamingDistributionRequest): Request[UpdateStreamingDistributionResult] = js.native
   }
   object CloudFront {
@@ -253,7 +305,7 @@ package object cloudfront {
     }
   }
 
-  /** A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+  /** A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.
     */
   @js.native
   trait ActiveTrustedSigners extends js.Object {
@@ -279,7 +331,7 @@ package object cloudfront {
     }
   }
 
-  /** AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself. For more information about ICP recordals, see [[https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html| Signup, Accounts, and Credentials]] in <i>Getting Started with AWS services in China</i>.
+  /** Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure it yourself. For more information about ICP recordals, see [[https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html| Signup, Accounts, and Credentials]] in <i>Getting Started with Amazon Web Services services in China</i>.
     */
   @js.native
   trait AliasICPRecordal extends js.Object {
@@ -349,6 +401,26 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait AssociateAliasRequest extends js.Object {
+    var Alias: String
+    var TargetDistributionId: String
+  }
+
+  object AssociateAliasRequest {
+    @inline
+    def apply(
+        Alias: String,
+        TargetDistributionId: String
+    ): AssociateAliasRequest = {
+      val __obj = js.Dynamic.literal(
+        "Alias" -> Alias.asInstanceOf[js.Any],
+        "TargetDistributionId" -> TargetDistributionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateAliasRequest]
+    }
+  }
+
   /** A complex type that describes how CloudFront processes requests. You must create at least as many cache behaviors (including the default cache behavior) as you have origins if you want CloudFront to serve objects from all of the origins. Each cache behavior specifies the one origin from which you want CloudFront to get objects. If you have two origins and only the default cache behavior, the default cache behavior will cause CloudFront to get objects from one of the origins, but the other origin is never used. For the current quota (formerly known as limit) on the number of cache behaviors that you can add to a distribution, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html|Quotas]] in the <i>Amazon CloudFront Developer Guide</i>. If you don’t want to specify any cache behaviors, include only an empty <code>CacheBehaviors</code> element. Don’t include an empty <code>CacheBehavior</code> element because this is invalid. To delete all
     * cache behaviors in an existing distribution, update the distribution configuration and include only an empty <code>CacheBehaviors</code> element. To add, change, or remove one or more cache behaviors, update the distribution configuration and specify all of the cache behaviors that you want to include in the updated distribution. For more information about cache behaviors, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesCacheBehavior|Cache Behavior Settings]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
@@ -363,11 +435,13 @@ package object cloudfront {
     var DefaultTTL: js.UndefOr[Double]
     var FieldLevelEncryptionId: js.UndefOr[String]
     var ForwardedValues: js.UndefOr[ForwardedValues]
+    var FunctionAssociations: js.UndefOr[FunctionAssociations]
     var LambdaFunctionAssociations: js.UndefOr[LambdaFunctionAssociations]
     var MaxTTL: js.UndefOr[Double]
     var MinTTL: js.UndefOr[Double]
     var OriginRequestPolicyId: js.UndefOr[String]
     var RealtimeLogConfigArn: js.UndefOr[String]
+    var ResponseHeadersPolicyId: js.UndefOr[String]
     var SmoothStreaming: js.UndefOr[Boolean]
     var TrustedKeyGroups: js.UndefOr[TrustedKeyGroups]
     var TrustedSigners: js.UndefOr[TrustedSigners]
@@ -385,11 +459,13 @@ package object cloudfront {
         DefaultTTL: js.UndefOr[Double] = js.undefined,
         FieldLevelEncryptionId: js.UndefOr[String] = js.undefined,
         ForwardedValues: js.UndefOr[ForwardedValues] = js.undefined,
+        FunctionAssociations: js.UndefOr[FunctionAssociations] = js.undefined,
         LambdaFunctionAssociations: js.UndefOr[LambdaFunctionAssociations] = js.undefined,
         MaxTTL: js.UndefOr[Double] = js.undefined,
         MinTTL: js.UndefOr[Double] = js.undefined,
         OriginRequestPolicyId: js.UndefOr[String] = js.undefined,
         RealtimeLogConfigArn: js.UndefOr[String] = js.undefined,
+        ResponseHeadersPolicyId: js.UndefOr[String] = js.undefined,
         SmoothStreaming: js.UndefOr[Boolean] = js.undefined,
         TrustedKeyGroups: js.UndefOr[TrustedKeyGroups] = js.undefined,
         TrustedSigners: js.UndefOr[TrustedSigners] = js.undefined
@@ -406,11 +482,13 @@ package object cloudfront {
       DefaultTTL.foreach(__v => __obj.updateDynamic("DefaultTTL")(__v.asInstanceOf[js.Any]))
       FieldLevelEncryptionId.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionId")(__v.asInstanceOf[js.Any]))
       ForwardedValues.foreach(__v => __obj.updateDynamic("ForwardedValues")(__v.asInstanceOf[js.Any]))
+      FunctionAssociations.foreach(__v => __obj.updateDynamic("FunctionAssociations")(__v.asInstanceOf[js.Any]))
       LambdaFunctionAssociations.foreach(__v => __obj.updateDynamic("LambdaFunctionAssociations")(__v.asInstanceOf[js.Any]))
       MaxTTL.foreach(__v => __obj.updateDynamic("MaxTTL")(__v.asInstanceOf[js.Any]))
       MinTTL.foreach(__v => __obj.updateDynamic("MinTTL")(__v.asInstanceOf[js.Any]))
       OriginRequestPolicyId.foreach(__v => __obj.updateDynamic("OriginRequestPolicyId")(__v.asInstanceOf[js.Any]))
       RealtimeLogConfigArn.foreach(__v => __obj.updateDynamic("RealtimeLogConfigArn")(__v.asInstanceOf[js.Any]))
+      ResponseHeadersPolicyId.foreach(__v => __obj.updateDynamic("ResponseHeadersPolicyId")(__v.asInstanceOf[js.Any]))
       SmoothStreaming.foreach(__v => __obj.updateDynamic("SmoothStreaming")(__v.asInstanceOf[js.Any]))
       TrustedKeyGroups.foreach(__v => __obj.updateDynamic("TrustedKeyGroups")(__v.asInstanceOf[js.Any]))
       TrustedSigners.foreach(__v => __obj.updateDynamic("TrustedSigners")(__v.asInstanceOf[js.Any]))
@@ -748,6 +826,57 @@ package object cloudfront {
         "S3CanonicalUserId" -> S3CanonicalUserId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CloudFrontOriginAccessIdentitySummary]
+    }
+  }
+
+  /** An alias (also called a CNAME) and the CloudFront distribution and Amazon Web Services account ID that it’s associated with. The distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don’t own.
+    */
+  @js.native
+  trait ConflictingAlias extends js.Object {
+    var AccountId: js.UndefOr[String]
+    var Alias: js.UndefOr[String]
+    var DistributionId: js.UndefOr[String]
+  }
+
+  object ConflictingAlias {
+    @inline
+    def apply(
+        AccountId: js.UndefOr[String] = js.undefined,
+        Alias: js.UndefOr[String] = js.undefined,
+        DistributionId: js.UndefOr[String] = js.undefined
+    ): ConflictingAlias = {
+      val __obj = js.Dynamic.literal()
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
+      DistributionId.foreach(__v => __obj.updateDynamic("DistributionId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConflictingAlias]
+    }
+  }
+
+  /** A list of aliases (also called CNAMEs) and the CloudFront distributions and Amazon Web Services accounts that they are associated with. In the list, the distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don’t own.
+    */
+  @js.native
+  trait ConflictingAliasesList extends js.Object {
+    var Items: js.UndefOr[ConflictingAliases]
+    var MaxItems: js.UndefOr[Int]
+    var NextMarker: js.UndefOr[String]
+    var Quantity: js.UndefOr[Int]
+  }
+
+  object ConflictingAliasesList {
+    @inline
+    def apply(
+        Items: js.UndefOr[ConflictingAliases] = js.undefined,
+        MaxItems: js.UndefOr[Int] = js.undefined,
+        NextMarker: js.UndefOr[String] = js.undefined,
+        Quantity: js.UndefOr[Int] = js.undefined
+    ): ConflictingAliasesList = {
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      Quantity.foreach(__v => __obj.updateDynamic("Quantity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConflictingAliasesList]
     }
   }
 
@@ -1115,6 +1244,51 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait CreateFunctionRequest extends js.Object {
+    var FunctionCode: FunctionBlob
+    var FunctionConfig: FunctionConfig
+    var Name: FunctionName
+  }
+
+  object CreateFunctionRequest {
+    @inline
+    def apply(
+        FunctionCode: FunctionBlob,
+        FunctionConfig: FunctionConfig,
+        Name: FunctionName
+    ): CreateFunctionRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionCode" -> FunctionCode.asInstanceOf[js.Any],
+        "FunctionConfig" -> FunctionConfig.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFunctionResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var FunctionSummary: js.UndefOr[FunctionSummary]
+    var Location: js.UndefOr[String]
+  }
+
+  object CreateFunctionResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        FunctionSummary: js.UndefOr[FunctionSummary] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined
+    ): CreateFunctionResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      FunctionSummary.foreach(__v => __obj.updateDynamic("FunctionSummary")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFunctionResult]
+    }
+  }
+
   /** The request to create an invalidation.
     */
   @js.native
@@ -1353,6 +1527,45 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait CreateResponseHeadersPolicyRequest extends js.Object {
+    var ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig
+  }
+
+  object CreateResponseHeadersPolicyRequest {
+    @inline
+    def apply(
+        ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig
+    ): CreateResponseHeadersPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResponseHeadersPolicyConfig" -> ResponseHeadersPolicyConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateResponseHeadersPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait CreateResponseHeadersPolicyResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var Location: js.UndefOr[String]
+    var ResponseHeadersPolicy: js.UndefOr[ResponseHeadersPolicy]
+  }
+
+  object CreateResponseHeadersPolicyResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        Location: js.UndefOr[String] = js.undefined,
+        ResponseHeadersPolicy: js.UndefOr[ResponseHeadersPolicy] = js.undefined
+    ): CreateResponseHeadersPolicyResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      Location.foreach(__v => __obj.updateDynamic("Location")(__v.asInstanceOf[js.Any]))
+      ResponseHeadersPolicy.foreach(__v => __obj.updateDynamic("ResponseHeadersPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateResponseHeadersPolicyResult]
+    }
+  }
+
   /** The request to create a new streaming distribution.
     */
   @js.native
@@ -1561,11 +1774,13 @@ package object cloudfront {
     var DefaultTTL: js.UndefOr[Double]
     var FieldLevelEncryptionId: js.UndefOr[String]
     var ForwardedValues: js.UndefOr[ForwardedValues]
+    var FunctionAssociations: js.UndefOr[FunctionAssociations]
     var LambdaFunctionAssociations: js.UndefOr[LambdaFunctionAssociations]
     var MaxTTL: js.UndefOr[Double]
     var MinTTL: js.UndefOr[Double]
     var OriginRequestPolicyId: js.UndefOr[String]
     var RealtimeLogConfigArn: js.UndefOr[String]
+    var ResponseHeadersPolicyId: js.UndefOr[String]
     var SmoothStreaming: js.UndefOr[Boolean]
     var TrustedKeyGroups: js.UndefOr[TrustedKeyGroups]
     var TrustedSigners: js.UndefOr[TrustedSigners]
@@ -1582,11 +1797,13 @@ package object cloudfront {
         DefaultTTL: js.UndefOr[Double] = js.undefined,
         FieldLevelEncryptionId: js.UndefOr[String] = js.undefined,
         ForwardedValues: js.UndefOr[ForwardedValues] = js.undefined,
+        FunctionAssociations: js.UndefOr[FunctionAssociations] = js.undefined,
         LambdaFunctionAssociations: js.UndefOr[LambdaFunctionAssociations] = js.undefined,
         MaxTTL: js.UndefOr[Double] = js.undefined,
         MinTTL: js.UndefOr[Double] = js.undefined,
         OriginRequestPolicyId: js.UndefOr[String] = js.undefined,
         RealtimeLogConfigArn: js.UndefOr[String] = js.undefined,
+        ResponseHeadersPolicyId: js.UndefOr[String] = js.undefined,
         SmoothStreaming: js.UndefOr[Boolean] = js.undefined,
         TrustedKeyGroups: js.UndefOr[TrustedKeyGroups] = js.undefined,
         TrustedSigners: js.UndefOr[TrustedSigners] = js.undefined
@@ -1602,11 +1819,13 @@ package object cloudfront {
       DefaultTTL.foreach(__v => __obj.updateDynamic("DefaultTTL")(__v.asInstanceOf[js.Any]))
       FieldLevelEncryptionId.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionId")(__v.asInstanceOf[js.Any]))
       ForwardedValues.foreach(__v => __obj.updateDynamic("ForwardedValues")(__v.asInstanceOf[js.Any]))
+      FunctionAssociations.foreach(__v => __obj.updateDynamic("FunctionAssociations")(__v.asInstanceOf[js.Any]))
       LambdaFunctionAssociations.foreach(__v => __obj.updateDynamic("LambdaFunctionAssociations")(__v.asInstanceOf[js.Any]))
       MaxTTL.foreach(__v => __obj.updateDynamic("MaxTTL")(__v.asInstanceOf[js.Any]))
       MinTTL.foreach(__v => __obj.updateDynamic("MinTTL")(__v.asInstanceOf[js.Any]))
       OriginRequestPolicyId.foreach(__v => __obj.updateDynamic("OriginRequestPolicyId")(__v.asInstanceOf[js.Any]))
       RealtimeLogConfigArn.foreach(__v => __obj.updateDynamic("RealtimeLogConfigArn")(__v.asInstanceOf[js.Any]))
+      ResponseHeadersPolicyId.foreach(__v => __obj.updateDynamic("ResponseHeadersPolicyId")(__v.asInstanceOf[js.Any]))
       SmoothStreaming.foreach(__v => __obj.updateDynamic("SmoothStreaming")(__v.asInstanceOf[js.Any]))
       TrustedKeyGroups.foreach(__v => __obj.updateDynamic("TrustedKeyGroups")(__v.asInstanceOf[js.Any]))
       TrustedSigners.foreach(__v => __obj.updateDynamic("TrustedSigners")(__v.asInstanceOf[js.Any]))
@@ -1726,6 +1945,26 @@ package object cloudfront {
   }
 
   @js.native
+  trait DeleteFunctionRequest extends js.Object {
+    var IfMatch: String
+    var Name: String
+  }
+
+  object DeleteFunctionRequest {
+    @inline
+    def apply(
+        IfMatch: String,
+        Name: String
+    ): DeleteFunctionRequest = {
+      val __obj = js.Dynamic.literal(
+        "IfMatch" -> IfMatch.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteFunctionRequest]
+    }
+  }
+
+  @js.native
   trait DeleteKeyGroupRequest extends js.Object {
     var Id: String
     var IfMatch: js.UndefOr[String]
@@ -1835,6 +2074,27 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait DeleteResponseHeadersPolicyRequest extends js.Object {
+    var Id: String
+    var IfMatch: js.UndefOr[String]
+  }
+
+  object DeleteResponseHeadersPolicyRequest {
+    @inline
+    def apply(
+        Id: String,
+        IfMatch: js.UndefOr[String] = js.undefined
+    ): DeleteResponseHeadersPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteResponseHeadersPolicyRequest]
+    }
+  }
+
   /** The request to delete a streaming distribution.
     */
   @js.native
@@ -1855,6 +2115,46 @@ package object cloudfront {
 
       IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteStreamingDistributionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFunctionRequest extends js.Object {
+    var Name: String
+    var Stage: js.UndefOr[FunctionStage]
+  }
+
+  object DescribeFunctionRequest {
+    @inline
+    def apply(
+        Name: String,
+        Stage: js.UndefOr[FunctionStage] = js.undefined
+    ): DescribeFunctionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Stage.foreach(__v => __obj.updateDynamic("Stage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeFunctionResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var FunctionSummary: js.UndefOr[FunctionSummary]
+  }
+
+  object DescribeFunctionResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        FunctionSummary: js.UndefOr[FunctionSummary] = js.undefined
+    ): DescribeFunctionResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      FunctionSummary.foreach(__v => __obj.updateDynamic("FunctionSummary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFunctionResult]
     }
   }
 
@@ -2495,6 +2795,160 @@ package object cloudfront {
     }
   }
 
+  /** A CloudFront function that is associated with a cache behavior in a CloudFront distribution.
+    */
+  @js.native
+  trait FunctionAssociation extends js.Object {
+    var EventType: EventType
+    var FunctionARN: FunctionARN
+  }
+
+  object FunctionAssociation {
+    @inline
+    def apply(
+        EventType: EventType,
+        FunctionARN: FunctionARN
+    ): FunctionAssociation = {
+      val __obj = js.Dynamic.literal(
+        "EventType" -> EventType.asInstanceOf[js.Any],
+        "FunctionARN" -> FunctionARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FunctionAssociation]
+    }
+  }
+
+  /** A list of CloudFront functions that are associated with a cache behavior in a CloudFront distribution. CloudFront functions must be published to the <code>LIVE</code> stage to associate them with a cache behavior.
+    */
+  @js.native
+  trait FunctionAssociations extends js.Object {
+    var Quantity: Int
+    var Items: js.UndefOr[FunctionAssociationList]
+  }
+
+  object FunctionAssociations {
+    @inline
+    def apply(
+        Quantity: Int,
+        Items: js.UndefOr[FunctionAssociationList] = js.undefined
+    ): FunctionAssociations = {
+      val __obj = js.Dynamic.literal(
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunctionAssociations]
+    }
+  }
+
+  /** Contains configuration information about a CloudFront function.
+    */
+  @js.native
+  trait FunctionConfig extends js.Object {
+    var Comment: String
+    var Runtime: FunctionRuntime
+  }
+
+  object FunctionConfig {
+    @inline
+    def apply(
+        Comment: String,
+        Runtime: FunctionRuntime
+    ): FunctionConfig = {
+      val __obj = js.Dynamic.literal(
+        "Comment" -> Comment.asInstanceOf[js.Any],
+        "Runtime" -> Runtime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FunctionConfig]
+    }
+  }
+
+  /** A list of CloudFront functions.
+    */
+  @js.native
+  trait FunctionList extends js.Object {
+    var MaxItems: Int
+    var Quantity: Int
+    var Items: js.UndefOr[FunctionSummaryList]
+    var NextMarker: js.UndefOr[String]
+  }
+
+  object FunctionList {
+    @inline
+    def apply(
+        MaxItems: Int,
+        Quantity: Int,
+        Items: js.UndefOr[FunctionSummaryList] = js.undefined,
+        NextMarker: js.UndefOr[String] = js.undefined
+    ): FunctionList = {
+      val __obj = js.Dynamic.literal(
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunctionList]
+    }
+  }
+
+  /** Contains metadata about a CloudFront function.
+    */
+  @js.native
+  trait FunctionMetadata extends js.Object {
+    var FunctionARN: String
+    var LastModifiedTime: timestamp
+    var CreatedTime: js.UndefOr[timestamp]
+    var Stage: js.UndefOr[FunctionStage]
+  }
+
+  object FunctionMetadata {
+    @inline
+    def apply(
+        FunctionARN: String,
+        LastModifiedTime: timestamp,
+        CreatedTime: js.UndefOr[timestamp] = js.undefined,
+        Stage: js.UndefOr[FunctionStage] = js.undefined
+    ): FunctionMetadata = {
+      val __obj = js.Dynamic.literal(
+        "FunctionARN" -> FunctionARN.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
+      )
+
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      Stage.foreach(__v => __obj.updateDynamic("Stage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunctionMetadata]
+    }
+  }
+
+  /** Contains configuration information and metadata about a CloudFront function.
+    */
+  @js.native
+  trait FunctionSummary extends js.Object {
+    var FunctionConfig: FunctionConfig
+    var FunctionMetadata: FunctionMetadata
+    var Name: FunctionName
+    var Status: js.UndefOr[String]
+  }
+
+  object FunctionSummary {
+    @inline
+    def apply(
+        FunctionConfig: FunctionConfig,
+        FunctionMetadata: FunctionMetadata,
+        Name: FunctionName,
+        Status: js.UndefOr[String] = js.undefined
+    ): FunctionSummary = {
+      val __obj = js.Dynamic.literal(
+        "FunctionConfig" -> FunctionConfig.asInstanceOf[js.Any],
+        "FunctionMetadata" -> FunctionMetadata.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FunctionSummary]
+    }
+  }
+
   /** A complex type that controls the countries in which your content is distributed. CloudFront determines the location of your users using <code>MaxMind</code> GeoIP databases.
     */
   @js.native
@@ -2897,6 +3351,49 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait GetFunctionRequest extends js.Object {
+    var Name: String
+    var Stage: js.UndefOr[FunctionStage]
+  }
+
+  object GetFunctionRequest {
+    @inline
+    def apply(
+        Name: String,
+        Stage: js.UndefOr[FunctionStage] = js.undefined
+    ): GetFunctionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Stage.foreach(__v => __obj.updateDynamic("Stage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait GetFunctionResult extends js.Object {
+    var ContentType: js.UndefOr[String]
+    var ETag: js.UndefOr[String]
+    var FunctionCode: js.UndefOr[FunctionBlob]
+  }
+
+  object GetFunctionResult {
+    @inline
+    def apply(
+        ContentType: js.UndefOr[String] = js.undefined,
+        ETag: js.UndefOr[String] = js.undefined,
+        FunctionCode: js.UndefOr[FunctionBlob] = js.undefined
+    ): GetFunctionResult = {
+      val __obj = js.Dynamic.literal()
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      FunctionCode.foreach(__v => __obj.updateDynamic("FunctionCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFunctionResult]
+    }
+  }
+
   /** The request to get an invalidation's information.
     */
   @js.native
@@ -3218,6 +3715,78 @@ package object cloudfront {
       val __obj = js.Dynamic.literal()
       RealtimeLogConfig.foreach(__v => __obj.updateDynamic("RealtimeLogConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRealtimeLogConfigResult]
+    }
+  }
+
+  @js.native
+  trait GetResponseHeadersPolicyConfigRequest extends js.Object {
+    var Id: String
+  }
+
+  object GetResponseHeadersPolicyConfigRequest {
+    @inline
+    def apply(
+        Id: String
+    ): GetResponseHeadersPolicyConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetResponseHeadersPolicyConfigRequest]
+    }
+  }
+
+  @js.native
+  trait GetResponseHeadersPolicyConfigResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var ResponseHeadersPolicyConfig: js.UndefOr[ResponseHeadersPolicyConfig]
+  }
+
+  object GetResponseHeadersPolicyConfigResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        ResponseHeadersPolicyConfig: js.UndefOr[ResponseHeadersPolicyConfig] = js.undefined
+    ): GetResponseHeadersPolicyConfigResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      ResponseHeadersPolicyConfig.foreach(__v => __obj.updateDynamic("ResponseHeadersPolicyConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResponseHeadersPolicyConfigResult]
+    }
+  }
+
+  @js.native
+  trait GetResponseHeadersPolicyRequest extends js.Object {
+    var Id: String
+  }
+
+  object GetResponseHeadersPolicyRequest {
+    @inline
+    def apply(
+        Id: String
+    ): GetResponseHeadersPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetResponseHeadersPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetResponseHeadersPolicyResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var ResponseHeadersPolicy: js.UndefOr[ResponseHeadersPolicy]
+  }
+
+  object GetResponseHeadersPolicyResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        ResponseHeadersPolicy: js.UndefOr[ResponseHeadersPolicy] = js.undefined
+    ): GetResponseHeadersPolicyResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      ResponseHeadersPolicy.foreach(__v => __obj.updateDynamic("ResponseHeadersPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResponseHeadersPolicyResult]
     }
   }
 
@@ -3599,7 +4168,7 @@ package object cloudfront {
     }
   }
 
-  /** A complex type that contains a Lambda function association.
+  /** A complex type that contains a Lambda@Edge function association.
     */
   @js.native
   trait LambdaFunctionAssociation extends js.Object {
@@ -3625,7 +4194,7 @@ package object cloudfront {
     }
   }
 
-  /** A complex type that specifies a list of Lambda functions associations for a cache behavior. If you want to invoke one or more Lambda functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with the Lambda function only once. If you don't want to invoke any Lambda functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>.
+  /** A complex type that specifies a list of Lambda@Edge functions associations for a cache behavior. If you want to invoke one or more Lambda@Edge functions triggered by requests that match the <code>PathPattern</code> of the cache behavior, specify the applicable values for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of <code>EventType</code>) and each <code>EventType</code> can be associated with only one function. If you don't want to invoke any Lambda@Edge functions for the requests that match <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit <code>Items</code>.
     */
   @js.native
   trait LambdaFunctionAssociations extends js.Object {
@@ -3722,6 +4291,49 @@ package object cloudfront {
       val __obj = js.Dynamic.literal()
       CloudFrontOriginAccessIdentityList.foreach(__v => __obj.updateDynamic("CloudFrontOriginAccessIdentityList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCloudFrontOriginAccessIdentitiesResult]
+    }
+  }
+
+  @js.native
+  trait ListConflictingAliasesRequest extends js.Object {
+    var Alias: aliasString
+    var DistributionId: distributionIdString
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[listConflictingAliasesMaxItemsInteger]
+  }
+
+  object ListConflictingAliasesRequest {
+    @inline
+    def apply(
+        Alias: aliasString,
+        DistributionId: distributionIdString,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[listConflictingAliasesMaxItemsInteger] = js.undefined
+    ): ListConflictingAliasesRequest = {
+      val __obj = js.Dynamic.literal(
+        "Alias" -> Alias.asInstanceOf[js.Any],
+        "DistributionId" -> DistributionId.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConflictingAliasesRequest]
+    }
+  }
+
+  @js.native
+  trait ListConflictingAliasesResult extends js.Object {
+    var ConflictingAliasesList: js.UndefOr[ConflictingAliasesList]
+  }
+
+  object ListConflictingAliasesResult {
+    @inline
+    def apply(
+        ConflictingAliasesList: js.UndefOr[ConflictingAliasesList] = js.undefined
+    ): ListConflictingAliasesResult = {
+      val __obj = js.Dynamic.literal()
+      ConflictingAliasesList.foreach(__v => __obj.updateDynamic("ConflictingAliasesList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListConflictingAliasesResult]
     }
   }
 
@@ -3886,7 +4498,47 @@ package object cloudfront {
     }
   }
 
-  /** The request to list distributions that are associated with a specified AWS WAF web ACL.
+  @js.native
+  trait ListDistributionsByResponseHeadersPolicyIdRequest extends js.Object {
+    var ResponseHeadersPolicyId: String
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
+  }
+
+  object ListDistributionsByResponseHeadersPolicyIdRequest {
+    @inline
+    def apply(
+        ResponseHeadersPolicyId: String,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined
+    ): ListDistributionsByResponseHeadersPolicyIdRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResponseHeadersPolicyId" -> ResponseHeadersPolicyId.asInstanceOf[js.Any]
+      )
+
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDistributionsByResponseHeadersPolicyIdRequest]
+    }
+  }
+
+  @js.native
+  trait ListDistributionsByResponseHeadersPolicyIdResult extends js.Object {
+    var DistributionIdList: js.UndefOr[DistributionIdList]
+  }
+
+  object ListDistributionsByResponseHeadersPolicyIdResult {
+    @inline
+    def apply(
+        DistributionIdList: js.UndefOr[DistributionIdList] = js.undefined
+    ): ListDistributionsByResponseHeadersPolicyIdResult = {
+      val __obj = js.Dynamic.literal()
+      DistributionIdList.foreach(__v => __obj.updateDynamic("DistributionIdList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDistributionsByResponseHeadersPolicyIdResult]
+    }
+  }
+
+  /** The request to list distributions that are associated with a specified WAF web ACL.
     */
   @js.native
   trait ListDistributionsByWebACLIdRequest extends js.Object {
@@ -3912,7 +4564,7 @@ package object cloudfront {
     }
   }
 
-  /** The response to a request to list the distributions that are associated with a specified AWS WAF web ACL.
+  /** The response to a request to list the distributions that are associated with a specified WAF web ACL.
     */
   @js.native
   trait ListDistributionsByWebACLIdResult extends js.Object {
@@ -4036,6 +4688,44 @@ package object cloudfront {
       val __obj = js.Dynamic.literal()
       FieldLevelEncryptionProfileList.foreach(__v => __obj.updateDynamic("FieldLevelEncryptionProfileList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListFieldLevelEncryptionProfilesResult]
+    }
+  }
+
+  @js.native
+  trait ListFunctionsRequest extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
+    var Stage: js.UndefOr[FunctionStage]
+  }
+
+  object ListFunctionsRequest {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined,
+        Stage: js.UndefOr[FunctionStage] = js.undefined
+    ): ListFunctionsRequest = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      Stage.foreach(__v => __obj.updateDynamic("Stage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFunctionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFunctionsResult extends js.Object {
+    var FunctionList: js.UndefOr[FunctionList]
+  }
+
+  object ListFunctionsResult {
+    @inline
+    def apply(
+        FunctionList: js.UndefOr[FunctionList] = js.undefined
+    ): ListFunctionsResult = {
+      val __obj = js.Dynamic.literal()
+      FunctionList.foreach(__v => __obj.updateDynamic("FunctionList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFunctionsResult]
     }
   }
 
@@ -4226,6 +4916,44 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait ListResponseHeadersPoliciesRequest extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxItems: js.UndefOr[String]
+    var Type: js.UndefOr[ResponseHeadersPolicyType]
+  }
+
+  object ListResponseHeadersPoliciesRequest {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxItems: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[ResponseHeadersPolicyType] = js.undefined
+    ): ListResponseHeadersPoliciesRequest = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResponseHeadersPoliciesRequest]
+    }
+  }
+
+  @js.native
+  trait ListResponseHeadersPoliciesResult extends js.Object {
+    var ResponseHeadersPolicyList: js.UndefOr[ResponseHeadersPolicyList]
+  }
+
+  object ListResponseHeadersPoliciesResult {
+    @inline
+    def apply(
+        ResponseHeadersPolicyList: js.UndefOr[ResponseHeadersPolicyList] = js.undefined
+    ): ListResponseHeadersPoliciesResult = {
+      val __obj = js.Dynamic.literal()
+      ResponseHeadersPolicyList.foreach(__v => __obj.updateDynamic("ResponseHeadersPolicyList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListResponseHeadersPoliciesResult]
+    }
+  }
+
   /** The request to list your streaming distributions.
     */
   @js.native
@@ -4398,14 +5126,14 @@ package object cloudfront {
   @js.native
   trait OriginCustomHeader extends js.Object {
     var HeaderName: String
-    var HeaderValue: String
+    var HeaderValue: sensitiveStringType
   }
 
   object OriginCustomHeader {
     @inline
     def apply(
         HeaderName: String,
-        HeaderValue: String
+        HeaderValue: sensitiveStringType
     ): OriginCustomHeader = {
       val __obj = js.Dynamic.literal(
         "HeaderName" -> HeaderName.asInstanceOf[js.Any],
@@ -4937,6 +5665,42 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait PublishFunctionRequest extends js.Object {
+    var IfMatch: String
+    var Name: String
+  }
+
+  object PublishFunctionRequest {
+    @inline
+    def apply(
+        IfMatch: String,
+        Name: String
+    ): PublishFunctionRequest = {
+      val __obj = js.Dynamic.literal(
+        "IfMatch" -> IfMatch.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PublishFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait PublishFunctionResult extends js.Object {
+    var FunctionSummary: js.UndefOr[FunctionSummary]
+  }
+
+  object PublishFunctionResult {
+    @inline
+    def apply(
+        FunctionSummary: js.UndefOr[FunctionSummary] = js.undefined
+    ): PublishFunctionResult = {
+      val __obj = js.Dynamic.literal()
+      FunctionSummary.foreach(__v => __obj.updateDynamic("FunctionSummary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PublishFunctionResult]
+    }
+  }
+
   /** Query argument-profile mapping for field-level encryption.
     */
   @js.native
@@ -5133,6 +5897,465 @@ package object cloudfront {
     }
   }
 
+  /** A response headers policy. A response headers policy contains information about a set of HTTP response headers and their values. After you create a response headers policy, you can use its ID to attach it to one or more cache behaviors in a CloudFront distribution. When it’s attached to a cache behavior, CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match the cache behavior. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/adding-response-headers.html|Adding HTTP headers to CloudFront responses]] in the <i>Amazon CloudFront Developer Guide</i>.
+    */
+  @js.native
+  trait ResponseHeadersPolicy extends js.Object {
+    var Id: String
+    var LastModifiedTime: timestamp
+    var ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig
+  }
+
+  object ResponseHeadersPolicy {
+    @inline
+    def apply(
+        Id: String,
+        LastModifiedTime: timestamp,
+        ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig
+    ): ResponseHeadersPolicy = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "ResponseHeadersPolicyConfig" -> ResponseHeadersPolicyConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResponseHeadersPolicy]
+    }
+  }
+
+  /** A list of HTTP header names that CloudFront includes as values for the <code>Access-Control-Allow-Headers</code> HTTP response header. For more information about the <code>Access-Control-Allow-Headers</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers|Access-Control-Allow-Headers]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyAccessControlAllowHeaders extends js.Object {
+    var Items: AccessControlAllowHeadersList
+    var Quantity: Int
+  }
+
+  object ResponseHeadersPolicyAccessControlAllowHeaders {
+    @inline
+    def apply(
+        Items: AccessControlAllowHeadersList,
+        Quantity: Int
+    ): ResponseHeadersPolicyAccessControlAllowHeaders = {
+      val __obj = js.Dynamic.literal(
+        "Items" -> Items.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResponseHeadersPolicyAccessControlAllowHeaders]
+    }
+  }
+
+  /** A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code> HTTP response header. For more information about the <code>Access-Control-Allow-Methods</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods|Access-Control-Allow-Methods]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyAccessControlAllowMethods extends js.Object {
+    var Items: AccessControlAllowMethodsList
+    var Quantity: Int
+  }
+
+  object ResponseHeadersPolicyAccessControlAllowMethods {
+    @inline
+    def apply(
+        Items: AccessControlAllowMethodsList,
+        Quantity: Int
+    ): ResponseHeadersPolicyAccessControlAllowMethods = {
+      val __obj = js.Dynamic.literal(
+        "Items" -> Items.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResponseHeadersPolicyAccessControlAllowMethods]
+    }
+  }
+
+  /** A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code> HTTP response header. For more information about the <code>Access-Control-Allow-Origin</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin|Access-Control-Allow-Origin]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyAccessControlAllowOrigins extends js.Object {
+    var Items: AccessControlAllowOriginsList
+    var Quantity: Int
+  }
+
+  object ResponseHeadersPolicyAccessControlAllowOrigins {
+    @inline
+    def apply(
+        Items: AccessControlAllowOriginsList,
+        Quantity: Int
+    ): ResponseHeadersPolicyAccessControlAllowOrigins = {
+      val __obj = js.Dynamic.literal(
+        "Items" -> Items.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResponseHeadersPolicyAccessControlAllowOrigins]
+    }
+  }
+
+  /** A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code> HTTP response header. For more information about the <code>Access-Control-Expose-Headers</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers|Access-Control-Expose-Headers]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyAccessControlExposeHeaders extends js.Object {
+    var Quantity: Int
+    var Items: js.UndefOr[AccessControlExposeHeadersList]
+  }
+
+  object ResponseHeadersPolicyAccessControlExposeHeaders {
+    @inline
+    def apply(
+        Quantity: Int,
+        Items: js.UndefOr[AccessControlExposeHeadersList] = js.undefined
+    ): ResponseHeadersPolicyAccessControlExposeHeaders = {
+      val __obj = js.Dynamic.literal(
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResponseHeadersPolicyAccessControlExposeHeaders]
+    }
+  }
+
+  /** A response headers policy configuration. A response headers policy configuration contains metadata about the response headers policy, and configurations for sets of HTTP response headers and their values. CloudFront adds the headers in the policy to HTTP responses that it sends for requests that match a cache behavior associated with the policy.
+    */
+  @js.native
+  trait ResponseHeadersPolicyConfig extends js.Object {
+    var Name: String
+    var Comment: js.UndefOr[String]
+    var CorsConfig: js.UndefOr[ResponseHeadersPolicyCorsConfig]
+    var CustomHeadersConfig: js.UndefOr[ResponseHeadersPolicyCustomHeadersConfig]
+    var SecurityHeadersConfig: js.UndefOr[ResponseHeadersPolicySecurityHeadersConfig]
+  }
+
+  object ResponseHeadersPolicyConfig {
+    @inline
+    def apply(
+        Name: String,
+        Comment: js.UndefOr[String] = js.undefined,
+        CorsConfig: js.UndefOr[ResponseHeadersPolicyCorsConfig] = js.undefined,
+        CustomHeadersConfig: js.UndefOr[ResponseHeadersPolicyCustomHeadersConfig] = js.undefined,
+        SecurityHeadersConfig: js.UndefOr[ResponseHeadersPolicySecurityHeadersConfig] = js.undefined
+    ): ResponseHeadersPolicyConfig = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Comment.foreach(__v => __obj.updateDynamic("Comment")(__v.asInstanceOf[js.Any]))
+      CorsConfig.foreach(__v => __obj.updateDynamic("CorsConfig")(__v.asInstanceOf[js.Any]))
+      CustomHeadersConfig.foreach(__v => __obj.updateDynamic("CustomHeadersConfig")(__v.asInstanceOf[js.Any]))
+      SecurityHeadersConfig.foreach(__v => __obj.updateDynamic("SecurityHeadersConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResponseHeadersPolicyConfig]
+    }
+  }
+
+  /** The policy directives and their values that CloudFront includes as values for the <code>Content-Security-Policy</code> HTTP response header. For more information about the <code>Content-Security-Policy</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy|Content-Security-Policy]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyContentSecurityPolicy extends js.Object {
+    var ContentSecurityPolicy: String
+    var Override: Boolean
+  }
+
+  object ResponseHeadersPolicyContentSecurityPolicy {
+    @inline
+    def apply(
+        ContentSecurityPolicy: String,
+        Override: Boolean
+    ): ResponseHeadersPolicyContentSecurityPolicy = {
+      val __obj = js.Dynamic.literal(
+        "ContentSecurityPolicy" -> ContentSecurityPolicy.asInstanceOf[js.Any],
+        "Override" -> Override.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResponseHeadersPolicyContentSecurityPolicy]
+    }
+  }
+
+  /** Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP response header with its value set to <code>nosniff</code>. For more information about the <code>X-Content-Type-Options</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options|X-Content-Type-Options]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyContentTypeOptions extends js.Object {
+    var Override: Boolean
+  }
+
+  object ResponseHeadersPolicyContentTypeOptions {
+    @inline
+    def apply(
+        Override: Boolean
+    ): ResponseHeadersPolicyContentTypeOptions = {
+      val __obj = js.Dynamic.literal(
+        "Override" -> Override.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResponseHeadersPolicyContentTypeOptions]
+    }
+  }
+
+  /** A configuration for a set of HTTP response headers that are used for cross-origin resource sharing (CORS). CloudFront adds these headers to HTTP responses that it sends for CORS requests that match a cache behavior associated with this response headers policy. For more information about CORS, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS|Cross-Origin Resource Sharing (CORS)]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyCorsConfig extends js.Object {
+    var AccessControlAllowCredentials: Boolean
+    var AccessControlAllowHeaders: ResponseHeadersPolicyAccessControlAllowHeaders
+    var AccessControlAllowMethods: ResponseHeadersPolicyAccessControlAllowMethods
+    var AccessControlAllowOrigins: ResponseHeadersPolicyAccessControlAllowOrigins
+    var OriginOverride: Boolean
+    var AccessControlExposeHeaders: js.UndefOr[ResponseHeadersPolicyAccessControlExposeHeaders]
+    var AccessControlMaxAgeSec: js.UndefOr[Int]
+  }
+
+  object ResponseHeadersPolicyCorsConfig {
+    @inline
+    def apply(
+        AccessControlAllowCredentials: Boolean,
+        AccessControlAllowHeaders: ResponseHeadersPolicyAccessControlAllowHeaders,
+        AccessControlAllowMethods: ResponseHeadersPolicyAccessControlAllowMethods,
+        AccessControlAllowOrigins: ResponseHeadersPolicyAccessControlAllowOrigins,
+        OriginOverride: Boolean,
+        AccessControlExposeHeaders: js.UndefOr[ResponseHeadersPolicyAccessControlExposeHeaders] = js.undefined,
+        AccessControlMaxAgeSec: js.UndefOr[Int] = js.undefined
+    ): ResponseHeadersPolicyCorsConfig = {
+      val __obj = js.Dynamic.literal(
+        "AccessControlAllowCredentials" -> AccessControlAllowCredentials.asInstanceOf[js.Any],
+        "AccessControlAllowHeaders" -> AccessControlAllowHeaders.asInstanceOf[js.Any],
+        "AccessControlAllowMethods" -> AccessControlAllowMethods.asInstanceOf[js.Any],
+        "AccessControlAllowOrigins" -> AccessControlAllowOrigins.asInstanceOf[js.Any],
+        "OriginOverride" -> OriginOverride.asInstanceOf[js.Any]
+      )
+
+      AccessControlExposeHeaders.foreach(__v => __obj.updateDynamic("AccessControlExposeHeaders")(__v.asInstanceOf[js.Any]))
+      AccessControlMaxAgeSec.foreach(__v => __obj.updateDynamic("AccessControlMaxAgeSec")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResponseHeadersPolicyCorsConfig]
+    }
+  }
+
+  /** An HTTP response header name and its value. CloudFront includes this header in HTTP responses that it sends for requests that match a cache behavior that’s associated with this response headers policy.
+    */
+  @js.native
+  trait ResponseHeadersPolicyCustomHeader extends js.Object {
+    var Header: String
+    var Override: Boolean
+    var Value: String
+  }
+
+  object ResponseHeadersPolicyCustomHeader {
+    @inline
+    def apply(
+        Header: String,
+        Override: Boolean,
+        Value: String
+    ): ResponseHeadersPolicyCustomHeader = {
+      val __obj = js.Dynamic.literal(
+        "Header" -> Header.asInstanceOf[js.Any],
+        "Override" -> Override.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResponseHeadersPolicyCustomHeader]
+    }
+  }
+
+  /** A list of HTTP response header names and their values. CloudFront includes these headers in HTTP responses that it sends for requests that match a cache behavior that’s associated with this response headers policy.
+    */
+  @js.native
+  trait ResponseHeadersPolicyCustomHeadersConfig extends js.Object {
+    var Quantity: Int
+    var Items: js.UndefOr[ResponseHeadersPolicyCustomHeaderList]
+  }
+
+  object ResponseHeadersPolicyCustomHeadersConfig {
+    @inline
+    def apply(
+        Quantity: Int,
+        Items: js.UndefOr[ResponseHeadersPolicyCustomHeaderList] = js.undefined
+    ): ResponseHeadersPolicyCustomHeadersConfig = {
+      val __obj = js.Dynamic.literal(
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResponseHeadersPolicyCustomHeadersConfig]
+    }
+  }
+
+  /** Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response header and the header’s value. For more information about the <code>X-Frame-Options</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options|X-Frame-Options]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyFrameOptions extends js.Object {
+    var FrameOption: FrameOptionsList
+    var Override: Boolean
+  }
+
+  object ResponseHeadersPolicyFrameOptions {
+    @inline
+    def apply(
+        FrameOption: FrameOptionsList,
+        Override: Boolean
+    ): ResponseHeadersPolicyFrameOptions = {
+      val __obj = js.Dynamic.literal(
+        "FrameOption" -> FrameOption.asInstanceOf[js.Any],
+        "Override" -> Override.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResponseHeadersPolicyFrameOptions]
+    }
+  }
+
+  /** A list of response headers policies.
+    */
+  @js.native
+  trait ResponseHeadersPolicyList extends js.Object {
+    var MaxItems: Int
+    var Quantity: Int
+    var Items: js.UndefOr[ResponseHeadersPolicySummaryList]
+    var NextMarker: js.UndefOr[String]
+  }
+
+  object ResponseHeadersPolicyList {
+    @inline
+    def apply(
+        MaxItems: Int,
+        Quantity: Int,
+        Items: js.UndefOr[ResponseHeadersPolicySummaryList] = js.undefined,
+        NextMarker: js.UndefOr[String] = js.undefined
+    ): ResponseHeadersPolicyList = {
+      val __obj = js.Dynamic.literal(
+        "MaxItems" -> MaxItems.asInstanceOf[js.Any],
+        "Quantity" -> Quantity.asInstanceOf[js.Any]
+      )
+
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResponseHeadersPolicyList]
+    }
+  }
+
+  /** Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response header and the header’s value. For more information about the <code>Referrer-Policy</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy|Referrer-Policy]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyReferrerPolicy extends js.Object {
+    var Override: Boolean
+    var ReferrerPolicy: ReferrerPolicyList
+  }
+
+  object ResponseHeadersPolicyReferrerPolicy {
+    @inline
+    def apply(
+        Override: Boolean,
+        ReferrerPolicy: ReferrerPolicyList
+    ): ResponseHeadersPolicyReferrerPolicy = {
+      val __obj = js.Dynamic.literal(
+        "Override" -> Override.asInstanceOf[js.Any],
+        "ReferrerPolicy" -> ReferrerPolicy.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResponseHeadersPolicyReferrerPolicy]
+    }
+  }
+
+  /** A configuration for a set of security-related HTTP response headers. CloudFront adds these headers to HTTP responses that it sends for requests that match a cache behavior associated with this response headers policy.
+    */
+  @js.native
+  trait ResponseHeadersPolicySecurityHeadersConfig extends js.Object {
+    var ContentSecurityPolicy: js.UndefOr[ResponseHeadersPolicyContentSecurityPolicy]
+    var ContentTypeOptions: js.UndefOr[ResponseHeadersPolicyContentTypeOptions]
+    var FrameOptions: js.UndefOr[ResponseHeadersPolicyFrameOptions]
+    var ReferrerPolicy: js.UndefOr[ResponseHeadersPolicyReferrerPolicy]
+    var StrictTransportSecurity: js.UndefOr[ResponseHeadersPolicyStrictTransportSecurity]
+    var XSSProtection: js.UndefOr[ResponseHeadersPolicyXSSProtection]
+  }
+
+  object ResponseHeadersPolicySecurityHeadersConfig {
+    @inline
+    def apply(
+        ContentSecurityPolicy: js.UndefOr[ResponseHeadersPolicyContentSecurityPolicy] = js.undefined,
+        ContentTypeOptions: js.UndefOr[ResponseHeadersPolicyContentTypeOptions] = js.undefined,
+        FrameOptions: js.UndefOr[ResponseHeadersPolicyFrameOptions] = js.undefined,
+        ReferrerPolicy: js.UndefOr[ResponseHeadersPolicyReferrerPolicy] = js.undefined,
+        StrictTransportSecurity: js.UndefOr[ResponseHeadersPolicyStrictTransportSecurity] = js.undefined,
+        XSSProtection: js.UndefOr[ResponseHeadersPolicyXSSProtection] = js.undefined
+    ): ResponseHeadersPolicySecurityHeadersConfig = {
+      val __obj = js.Dynamic.literal()
+      ContentSecurityPolicy.foreach(__v => __obj.updateDynamic("ContentSecurityPolicy")(__v.asInstanceOf[js.Any]))
+      ContentTypeOptions.foreach(__v => __obj.updateDynamic("ContentTypeOptions")(__v.asInstanceOf[js.Any]))
+      FrameOptions.foreach(__v => __obj.updateDynamic("FrameOptions")(__v.asInstanceOf[js.Any]))
+      ReferrerPolicy.foreach(__v => __obj.updateDynamic("ReferrerPolicy")(__v.asInstanceOf[js.Any]))
+      StrictTransportSecurity.foreach(__v => __obj.updateDynamic("StrictTransportSecurity")(__v.asInstanceOf[js.Any]))
+      XSSProtection.foreach(__v => __obj.updateDynamic("XSSProtection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResponseHeadersPolicySecurityHeadersConfig]
+    }
+  }
+
+  /** Determines whether CloudFront includes the <code>Strict-Transport-Security</code> HTTP response header and the header’s value. For more information about the <code>Strict-Transport-Security</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security|Strict-Transport-Security]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyStrictTransportSecurity extends js.Object {
+    var AccessControlMaxAgeSec: Int
+    var Override: Boolean
+    var IncludeSubdomains: js.UndefOr[Boolean]
+    var Preload: js.UndefOr[Boolean]
+  }
+
+  object ResponseHeadersPolicyStrictTransportSecurity {
+    @inline
+    def apply(
+        AccessControlMaxAgeSec: Int,
+        Override: Boolean,
+        IncludeSubdomains: js.UndefOr[Boolean] = js.undefined,
+        Preload: js.UndefOr[Boolean] = js.undefined
+    ): ResponseHeadersPolicyStrictTransportSecurity = {
+      val __obj = js.Dynamic.literal(
+        "AccessControlMaxAgeSec" -> AccessControlMaxAgeSec.asInstanceOf[js.Any],
+        "Override" -> Override.asInstanceOf[js.Any]
+      )
+
+      IncludeSubdomains.foreach(__v => __obj.updateDynamic("IncludeSubdomains")(__v.asInstanceOf[js.Any]))
+      Preload.foreach(__v => __obj.updateDynamic("Preload")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResponseHeadersPolicyStrictTransportSecurity]
+    }
+  }
+
+  /** Contains a response headers policy.
+    */
+  @js.native
+  trait ResponseHeadersPolicySummary extends js.Object {
+    var ResponseHeadersPolicy: ResponseHeadersPolicy
+    var Type: ResponseHeadersPolicyType
+  }
+
+  object ResponseHeadersPolicySummary {
+    @inline
+    def apply(
+        ResponseHeadersPolicy: ResponseHeadersPolicy,
+        Type: ResponseHeadersPolicyType
+    ): ResponseHeadersPolicySummary = {
+      val __obj = js.Dynamic.literal(
+        "ResponseHeadersPolicy" -> ResponseHeadersPolicy.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResponseHeadersPolicySummary]
+    }
+  }
+
+  /** Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response header and the header’s value. For more information about the <code>X-XSS-Protection</code> HTTP response header, see [[https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection|X-XSS-Protection]] in the MDN Web Docs.
+    */
+  @js.native
+  trait ResponseHeadersPolicyXSSProtection extends js.Object {
+    var Override: Boolean
+    var Protection: Boolean
+    var ModeBlock: js.UndefOr[Boolean]
+    var ReportUri: js.UndefOr[String]
+  }
+
+  object ResponseHeadersPolicyXSSProtection {
+    @inline
+    def apply(
+        Override: Boolean,
+        Protection: Boolean,
+        ModeBlock: js.UndefOr[Boolean] = js.undefined,
+        ReportUri: js.UndefOr[String] = js.undefined
+    ): ResponseHeadersPolicyXSSProtection = {
+      val __obj = js.Dynamic.literal(
+        "Override" -> Override.asInstanceOf[js.Any],
+        "Protection" -> Protection.asInstanceOf[js.Any]
+      )
+
+      ModeBlock.foreach(__v => __obj.updateDynamic("ModeBlock")(__v.asInstanceOf[js.Any]))
+      ReportUri.foreach(__v => __obj.updateDynamic("ReportUri")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResponseHeadersPolicyXSSProtection]
+    }
+  }
+
   /** A complex type that identifies ways in which you want to restrict distribution of your content.
     */
   @js.native
@@ -5193,7 +6416,7 @@ package object cloudfront {
     }
   }
 
-  /** A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.
+  /** A list of Amazon Web Services accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the signatures of signed URLs and signed cookies.
     */
   @js.native
   trait Signer extends js.Object {
@@ -5527,6 +6750,79 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait TestFunctionRequest extends js.Object {
+    var EventObject: FunctionEventObject
+    var IfMatch: String
+    var Name: String
+    var Stage: js.UndefOr[FunctionStage]
+  }
+
+  object TestFunctionRequest {
+    @inline
+    def apply(
+        EventObject: FunctionEventObject,
+        IfMatch: String,
+        Name: String,
+        Stage: js.UndefOr[FunctionStage] = js.undefined
+    ): TestFunctionRequest = {
+      val __obj = js.Dynamic.literal(
+        "EventObject" -> EventObject.asInstanceOf[js.Any],
+        "IfMatch" -> IfMatch.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Stage.foreach(__v => __obj.updateDynamic("Stage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait TestFunctionResult extends js.Object {
+    var TestResult: js.UndefOr[TestResult]
+  }
+
+  object TestFunctionResult {
+    @inline
+    def apply(
+        TestResult: js.UndefOr[TestResult] = js.undefined
+    ): TestFunctionResult = {
+      val __obj = js.Dynamic.literal()
+      TestResult.foreach(__v => __obj.updateDynamic("TestResult")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestFunctionResult]
+    }
+  }
+
+  /** Contains the result of testing a CloudFront function with <code>TestFunction</code>.
+    */
+  @js.native
+  trait TestResult extends js.Object {
+    var ComputeUtilization: js.UndefOr[String]
+    var FunctionErrorMessage: js.UndefOr[sensitiveStringType]
+    var FunctionExecutionLogs: js.UndefOr[FunctionExecutionLogList]
+    var FunctionOutput: js.UndefOr[sensitiveStringType]
+    var FunctionSummary: js.UndefOr[FunctionSummary]
+  }
+
+  object TestResult {
+    @inline
+    def apply(
+        ComputeUtilization: js.UndefOr[String] = js.undefined,
+        FunctionErrorMessage: js.UndefOr[sensitiveStringType] = js.undefined,
+        FunctionExecutionLogs: js.UndefOr[FunctionExecutionLogList] = js.undefined,
+        FunctionOutput: js.UndefOr[sensitiveStringType] = js.undefined,
+        FunctionSummary: js.UndefOr[FunctionSummary] = js.undefined
+    ): TestResult = {
+      val __obj = js.Dynamic.literal()
+      ComputeUtilization.foreach(__v => __obj.updateDynamic("ComputeUtilization")(__v.asInstanceOf[js.Any]))
+      FunctionErrorMessage.foreach(__v => __obj.updateDynamic("FunctionErrorMessage")(__v.asInstanceOf[js.Any]))
+      FunctionExecutionLogs.foreach(__v => __obj.updateDynamic("FunctionExecutionLogs")(__v.asInstanceOf[js.Any]))
+      FunctionOutput.foreach(__v => __obj.updateDynamic("FunctionOutput")(__v.asInstanceOf[js.Any]))
+      FunctionSummary.foreach(__v => __obj.updateDynamic("FunctionSummary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TestResult]
+    }
+  }
+
   /** A list of key groups whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.
     */
   @js.native
@@ -5553,7 +6849,7 @@ package object cloudfront {
     }
   }
 
-  /** A list of AWS accounts whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.
+  /** A list of Amazon Web Services accounts whose public keys CloudFront can use to verify the signatures of signed URLs and signed cookies.
     */
   @js.native
   trait TrustedSigners extends js.Object {
@@ -5825,6 +7121,51 @@ package object cloudfront {
   }
 
   @js.native
+  trait UpdateFunctionRequest extends js.Object {
+    var FunctionCode: FunctionBlob
+    var FunctionConfig: FunctionConfig
+    var IfMatch: String
+    var Name: String
+  }
+
+  object UpdateFunctionRequest {
+    @inline
+    def apply(
+        FunctionCode: FunctionBlob,
+        FunctionConfig: FunctionConfig,
+        IfMatch: String,
+        Name: String
+    ): UpdateFunctionRequest = {
+      val __obj = js.Dynamic.literal(
+        "FunctionCode" -> FunctionCode.asInstanceOf[js.Any],
+        "FunctionConfig" -> FunctionConfig.asInstanceOf[js.Any],
+        "IfMatch" -> IfMatch.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateFunctionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFunctionResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var FunctionSummary: js.UndefOr[FunctionSummary]
+  }
+
+  object UpdateFunctionResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        FunctionSummary: js.UndefOr[FunctionSummary] = js.undefined
+    ): UpdateFunctionResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      FunctionSummary.foreach(__v => __obj.updateDynamic("FunctionSummary")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFunctionResult]
+    }
+  }
+
+  @js.native
   trait UpdateKeyGroupRequest extends js.Object {
     var Id: String
     var KeyGroupConfig: KeyGroupConfig
@@ -5997,6 +7338,49 @@ package object cloudfront {
     }
   }
 
+  @js.native
+  trait UpdateResponseHeadersPolicyRequest extends js.Object {
+    var Id: String
+    var ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig
+    var IfMatch: js.UndefOr[String]
+  }
+
+  object UpdateResponseHeadersPolicyRequest {
+    @inline
+    def apply(
+        Id: String,
+        ResponseHeadersPolicyConfig: ResponseHeadersPolicyConfig,
+        IfMatch: js.UndefOr[String] = js.undefined
+    ): UpdateResponseHeadersPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "ResponseHeadersPolicyConfig" -> ResponseHeadersPolicyConfig.asInstanceOf[js.Any]
+      )
+
+      IfMatch.foreach(__v => __obj.updateDynamic("IfMatch")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateResponseHeadersPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateResponseHeadersPolicyResult extends js.Object {
+    var ETag: js.UndefOr[String]
+    var ResponseHeadersPolicy: js.UndefOr[ResponseHeadersPolicy]
+  }
+
+  object UpdateResponseHeadersPolicyResult {
+    @inline
+    def apply(
+        ETag: js.UndefOr[String] = js.undefined,
+        ResponseHeadersPolicy: js.UndefOr[ResponseHeadersPolicy] = js.undefined
+    ): UpdateResponseHeadersPolicyResult = {
+      val __obj = js.Dynamic.literal()
+      ETag.foreach(__v => __obj.updateDynamic("ETag")(__v.asInstanceOf[js.Any]))
+      ResponseHeadersPolicy.foreach(__v => __obj.updateDynamic("ResponseHeadersPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateResponseHeadersPolicyResult]
+    }
+  }
+
   /** The request to update a streaming distribution.
     */
   @js.native
@@ -6045,8 +7429,8 @@ package object cloudfront {
   }
 
   /** A complex type that determines the distribution’s SSL/TLS configuration for communicating with viewers. If the distribution doesn’t use <code>Aliases</code> (also known as alternate domain names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code> to <code>true</code> and leave all other fields empty. If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), use the fields in this type to specify the following settings: * Which viewers the distribution accepts HTTPS connections from: only viewers that support [[https://en.wikipedia.org/wiki/Server_Name_Indication|server name indication (SNI)]] (recommended), or all viewers including those that don’t support SNI. <li> To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to <code>sni-only</code>. This is recommended. Most browsers and clients support
-    * SNI. * To accept HTTPS connections from all viewers, including those that don’t support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront. </li> * The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy|Security Policy]] in the <i>Amazon CloudFront Developer Guide</i>. * The location of the SSL/TLS certificate, [[https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html|AWS Certificate Manager (ACM)]] (recommended) or [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html|AWS Identity and Access Management (AWS IAM)]]. You specify the location by setting a value
-    * in one of the following fields (not both): <li> <code>ACMCertificateArn</code> * <code>IAMCertificateId</code> </li>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html|Using HTTPS with CloudFront]] and [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html| Using Alternate Domain Names and HTTPS]] in the <i>Amazon CloudFront Developer Guide</i>.
+    * SNI. * To accept HTTPS connections from all viewers, including those that don’t support SNI, set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and results in additional monthly charges from CloudFront. </li> * The minimum SSL/TLS protocol version that the distribution can use to communicate with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy|Security Policy]] in the <i>Amazon CloudFront Developer Guide</i>. * The location of the SSL/TLS certificate, [[https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html|Certificate Manager (ACM)]] (recommended) or [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html|Identity and Access Management (IAM)]]. You specify the location by setting a value in one of the
+    * following fields (not both): <li> <code>ACMCertificateArn</code> * <code>IAMCertificateId</code> </li>All distributions support HTTPS connections from viewers. To require viewers to use HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code> in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>. For more information, see [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https.html|Using HTTPS with CloudFront]] and [[https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/using-https-alternate-domain-names.html| Using Alternate Domain Names and HTTPS]] in the <i>Amazon CloudFront Developer Guide</i>.
     */
   @js.native
   trait ViewerCertificate extends js.Object {

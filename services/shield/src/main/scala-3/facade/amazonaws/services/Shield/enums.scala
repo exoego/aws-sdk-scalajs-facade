@@ -2,6 +2,14 @@ package facade.amazonaws.services.shield
 
 import scalajs.js
 
+type ApplicationLayerAutomaticResponseStatus = "ENABLED" | "DISABLED"
+object ApplicationLayerAutomaticResponseStatus {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[ApplicationLayerAutomaticResponseStatus] = js.Array(ENABLED, DISABLED)
+}
+
 type AttackLayer = "NETWORK" | "APPLICATION"
 object AttackLayer {
   inline val NETWORK: "NETWORK" = "NETWORK"

@@ -13,6 +13,14 @@ object ClusterState {
   inline def values: js.Array[ClusterState] = js.Array(AwaitingQuorum, Pending, InUse, Complete, Cancelled)
 }
 
+type DeviceServiceName = "NFS_ON_DEVICE_SERVICE" | "S3_ON_DEVICE_SERVICE"
+object DeviceServiceName {
+  inline val NFS_ON_DEVICE_SERVICE: "NFS_ON_DEVICE_SERVICE" = "NFS_ON_DEVICE_SERVICE"
+  inline val S3_ON_DEVICE_SERVICE: "S3_ON_DEVICE_SERVICE" = "S3_ON_DEVICE_SERVICE"
+
+  inline def values: js.Array[DeviceServiceName] = js.Array(NFS_ON_DEVICE_SERVICE, S3_ON_DEVICE_SERVICE)
+}
+
 type JobState = "New" | "PreparingAppliance" | "PreparingShipment" | "InTransitToCustomer" | "WithCustomer" | "InTransitToAWS" | "WithAWSSortingFacility" | "WithAWS" | "InProgress" | "Complete" | "Cancelled" | "Listing" | "Pending"
 object JobState {
   inline val New: "New" = "New"
@@ -55,6 +63,22 @@ object JobType {
   inline def values: js.Array[JobType] = js.Array(IMPORT, EXPORT, LOCAL_USE)
 }
 
+type LongTermPricingType = "OneYear" | "ThreeYear"
+object LongTermPricingType {
+  inline val OneYear: "OneYear" = "OneYear"
+  inline val ThreeYear: "ThreeYear" = "ThreeYear"
+
+  inline def values: js.Array[LongTermPricingType] = js.Array(OneYear, ThreeYear)
+}
+
+type RemoteManagement = "INSTALLED_ONLY" | "INSTALLED_AUTOSTART"
+object RemoteManagement {
+  inline val INSTALLED_ONLY: "INSTALLED_ONLY" = "INSTALLED_ONLY"
+  inline val INSTALLED_AUTOSTART: "INSTALLED_AUTOSTART" = "INSTALLED_AUTOSTART"
+
+  inline def values: js.Array[RemoteManagement] = js.Array(INSTALLED_ONLY, INSTALLED_AUTOSTART)
+}
+
 type ShipmentState = "RECEIVED" | "RETURNED"
 object ShipmentState {
   inline val RECEIVED: "RECEIVED" = "RECEIVED"
@@ -83,7 +107,7 @@ object ShippingOption {
   inline def values: js.Array[ShippingOption] = js.Array(SECOND_DAY, NEXT_DAY, EXPRESS, STANDARD)
 }
 
-type SnowballCapacity = "T50" | "T80" | "T100" | "T42" | "T98" | "T8" | "NoPreference"
+type SnowballCapacity = "T50" | "T80" | "T100" | "T42" | "T98" | "T8" | "T14" | "NoPreference"
 object SnowballCapacity {
   inline val T50: "T50" = "T50"
   inline val T80: "T80" = "T80"
@@ -91,12 +115,13 @@ object SnowballCapacity {
   inline val T42: "T42" = "T42"
   inline val T98: "T98" = "T98"
   inline val T8: "T8" = "T8"
+  inline val T14: "T14" = "T14"
   inline val NoPreference: "NoPreference" = "NoPreference"
 
-  inline def values: js.Array[SnowballCapacity] = js.Array(T50, T80, T100, T42, T98, T8, NoPreference)
+  inline def values: js.Array[SnowballCapacity] = js.Array(T50, T80, T100, T42, T98, T8, T14, NoPreference)
 }
 
-type SnowballType = "STANDARD" | "EDGE" | "EDGE_C" | "EDGE_CG" | "EDGE_S" | "SNC1_HDD"
+type SnowballType = "STANDARD" | "EDGE" | "EDGE_C" | "EDGE_CG" | "EDGE_S" | "SNC1_HDD" | "SNC1_SSD"
 object SnowballType {
   inline val STANDARD: "STANDARD" = "STANDARD"
   inline val EDGE: "EDGE" = "EDGE"
@@ -104,6 +129,23 @@ object SnowballType {
   inline val EDGE_CG: "EDGE_CG" = "EDGE_CG"
   inline val EDGE_S: "EDGE_S" = "EDGE_S"
   inline val SNC1_HDD: "SNC1_HDD" = "SNC1_HDD"
+  inline val SNC1_SSD: "SNC1_SSD" = "SNC1_SSD"
 
-  inline def values: js.Array[SnowballType] = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD)
+  inline def values: js.Array[SnowballType] = js.Array(STANDARD, EDGE, EDGE_C, EDGE_CG, EDGE_S, SNC1_HDD, SNC1_SSD)
+}
+
+type StorageUnit = "TB"
+object StorageUnit {
+  inline val TB: "TB" = "TB"
+
+  inline def values: js.Array[StorageUnit] = js.Array(TB)
+}
+
+type TransferOption = "IMPORT" | "EXPORT" | "LOCAL_USE"
+object TransferOption {
+  inline val IMPORT: "IMPORT" = "IMPORT"
+  inline val EXPORT: "EXPORT" = "EXPORT"
+  inline val LOCAL_USE: "LOCAL_USE" = "LOCAL_USE"
+
+  inline def values: js.Array[TransferOption] = js.Array(IMPORT, EXPORT, LOCAL_USE)
 }

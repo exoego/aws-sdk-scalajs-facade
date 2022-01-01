@@ -2,6 +2,36 @@ package facade.amazonaws.services.amp
 
 import scalajs.js
 
+/** State of an alert manager definition.
+  */
+@js.native
+sealed trait AlertManagerDefinitionStatusCode extends js.Any
+object AlertManagerDefinitionStatusCode {
+  val CREATING = "CREATING".asInstanceOf[AlertManagerDefinitionStatusCode]
+  val ACTIVE = "ACTIVE".asInstanceOf[AlertManagerDefinitionStatusCode]
+  val UPDATING = "UPDATING".asInstanceOf[AlertManagerDefinitionStatusCode]
+  val DELETING = "DELETING".asInstanceOf[AlertManagerDefinitionStatusCode]
+  val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[AlertManagerDefinitionStatusCode]
+  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[AlertManagerDefinitionStatusCode]
+
+  @inline def values: js.Array[AlertManagerDefinitionStatusCode] = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATION_FAILED, UPDATE_FAILED)
+}
+
+/** State of a namespace.
+  */
+@js.native
+sealed trait RuleGroupsNamespaceStatusCode extends js.Any
+object RuleGroupsNamespaceStatusCode {
+  val CREATING = "CREATING".asInstanceOf[RuleGroupsNamespaceStatusCode]
+  val ACTIVE = "ACTIVE".asInstanceOf[RuleGroupsNamespaceStatusCode]
+  val UPDATING = "UPDATING".asInstanceOf[RuleGroupsNamespaceStatusCode]
+  val DELETING = "DELETING".asInstanceOf[RuleGroupsNamespaceStatusCode]
+  val CREATION_FAILED = "CREATION_FAILED".asInstanceOf[RuleGroupsNamespaceStatusCode]
+  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[RuleGroupsNamespaceStatusCode]
+
+  @inline def values: js.Array[RuleGroupsNamespaceStatusCode] = js.Array(CREATING, ACTIVE, UPDATING, DELETING, CREATION_FAILED, UPDATE_FAILED)
+}
+
 /** State of a workspace.
   */
 @js.native

@@ -86,6 +86,7 @@ object Locale {
   val `de-DE` = "de-DE".asInstanceOf[Locale]
   val `en-AU` = "en-AU".asInstanceOf[Locale]
   val `en-GB` = "en-GB".asInstanceOf[Locale]
+  val `en-IN` = "en-IN".asInstanceOf[Locale]
   val `en-US` = "en-US".asInstanceOf[Locale]
   val `es-419` = "es-419".asInstanceOf[Locale]
   val `es-ES` = "es-ES".asInstanceOf[Locale]
@@ -94,8 +95,9 @@ object Locale {
   val `fr-CA` = "fr-CA".asInstanceOf[Locale]
   val `it-IT` = "it-IT".asInstanceOf[Locale]
   val `ja-JP` = "ja-JP".asInstanceOf[Locale]
+  val `ko-KR` = "ko-KR".asInstanceOf[Locale]
 
-  @inline def values: js.Array[Locale] = js.Array(`de-DE`, `en-AU`, `en-GB`, `en-US`, `es-419`, `es-ES`, `es-US`, `fr-FR`, `fr-CA`, `it-IT`, `ja-JP`)
+  @inline def values: js.Array[Locale] = js.Array(`de-DE`, `en-AU`, `en-GB`, `en-IN`, `en-US`, `es-419`, `es-ES`, `es-US`, `fr-FR`, `fr-CA`, `it-IT`, `ja-JP`, `ko-KR`)
 }
 
 @js.native
@@ -114,6 +116,43 @@ object MergeStrategy {
   val FAIL_ON_CONFLICT = "FAIL_ON_CONFLICT".asInstanceOf[MergeStrategy]
 
   @inline def values: js.Array[MergeStrategy] = js.Array(OVERWRITE_LATEST, FAIL_ON_CONFLICT)
+}
+
+@js.native
+sealed trait MigrationAlertType extends js.Any
+object MigrationAlertType {
+  val ERROR = "ERROR".asInstanceOf[MigrationAlertType]
+  val WARN = "WARN".asInstanceOf[MigrationAlertType]
+
+  @inline def values: js.Array[MigrationAlertType] = js.Array(ERROR, WARN)
+}
+
+@js.native
+sealed trait MigrationSortAttribute extends js.Any
+object MigrationSortAttribute {
+  val V1_BOT_NAME = "V1_BOT_NAME".asInstanceOf[MigrationSortAttribute]
+  val MIGRATION_DATE_TIME = "MIGRATION_DATE_TIME".asInstanceOf[MigrationSortAttribute]
+
+  @inline def values: js.Array[MigrationSortAttribute] = js.Array(V1_BOT_NAME, MIGRATION_DATE_TIME)
+}
+
+@js.native
+sealed trait MigrationStatus extends js.Any
+object MigrationStatus {
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[MigrationStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[MigrationStatus]
+  val FAILED = "FAILED".asInstanceOf[MigrationStatus]
+
+  @inline def values: js.Array[MigrationStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED)
+}
+
+@js.native
+sealed trait MigrationStrategy extends js.Any
+object MigrationStrategy {
+  val CREATE_NEW = "CREATE_NEW".asInstanceOf[MigrationStrategy]
+  val UPDATE_EXISTING = "UPDATE_EXISTING".asInstanceOf[MigrationStrategy]
+
+  @inline def values: js.Array[MigrationStrategy] = js.Array(CREATE_NEW, UPDATE_EXISTING)
 }
 
 @js.native
@@ -160,6 +199,15 @@ object SlotValueSelectionStrategy {
   val TOP_RESOLUTION = "TOP_RESOLUTION".asInstanceOf[SlotValueSelectionStrategy]
 
   @inline def values: js.Array[SlotValueSelectionStrategy] = js.Array(ORIGINAL_VALUE, TOP_RESOLUTION)
+}
+
+@js.native
+sealed trait SortOrder extends js.Any
+object SortOrder {
+  val ASCENDING = "ASCENDING".asInstanceOf[SortOrder]
+  val DESCENDING = "DESCENDING".asInstanceOf[SortOrder]
+
+  @inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }
 
 @js.native

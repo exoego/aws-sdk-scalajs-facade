@@ -21,6 +21,16 @@ object ActionType {
   @inline def values: js.Array[ActionType] = js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT)
 }
 
+@js.native
+sealed trait AggregationTypeName extends js.Any
+object AggregationTypeName {
+  val Statistics = "Statistics".asInstanceOf[AggregationTypeName]
+  val Percentiles = "Percentiles".asInstanceOf[AggregationTypeName]
+  val Cardinality = "Cardinality".asInstanceOf[AggregationTypeName]
+
+  @inline def values: js.Array[AggregationTypeName] = js.Array(Statistics, Percentiles, Cardinality)
+}
+
 /** The type of alert target: one of "SNS".
   */
 @js.native
@@ -323,6 +333,15 @@ object DeviceCertificateUpdateAction {
 }
 
 @js.native
+sealed trait DeviceDefenderIndexingMode extends js.Any
+object DeviceDefenderIndexingMode {
+  val OFF = "OFF".asInstanceOf[DeviceDefenderIndexingMode]
+  val VIOLATIONS = "VIOLATIONS".asInstanceOf[DeviceDefenderIndexingMode]
+
+  @inline def values: js.Array[DeviceDefenderIndexingMode] = js.Array(OFF, VIOLATIONS)
+}
+
+@js.native
 sealed trait DimensionType extends js.Any
 object DimensionType {
   val TOPIC_FILTER = "TOPIC_FILTER".asInstanceOf[DimensionType]
@@ -403,6 +422,68 @@ object FieldType {
   val Boolean = "Boolean".asInstanceOf[FieldType]
 
   @inline def values: js.Array[FieldType] = js.Array(Number, String, Boolean)
+}
+
+@js.native
+sealed trait FleetMetricUnit extends js.Any
+object FleetMetricUnit {
+  val Seconds = "Seconds".asInstanceOf[FleetMetricUnit]
+  val Microseconds = "Microseconds".asInstanceOf[FleetMetricUnit]
+  val Milliseconds = "Milliseconds".asInstanceOf[FleetMetricUnit]
+  val Bytes = "Bytes".asInstanceOf[FleetMetricUnit]
+  val Kilobytes = "Kilobytes".asInstanceOf[FleetMetricUnit]
+  val Megabytes = "Megabytes".asInstanceOf[FleetMetricUnit]
+  val Gigabytes = "Gigabytes".asInstanceOf[FleetMetricUnit]
+  val Terabytes = "Terabytes".asInstanceOf[FleetMetricUnit]
+  val Bits = "Bits".asInstanceOf[FleetMetricUnit]
+  val Kilobits = "Kilobits".asInstanceOf[FleetMetricUnit]
+  val Megabits = "Megabits".asInstanceOf[FleetMetricUnit]
+  val Gigabits = "Gigabits".asInstanceOf[FleetMetricUnit]
+  val Terabits = "Terabits".asInstanceOf[FleetMetricUnit]
+  val Percent = "Percent".asInstanceOf[FleetMetricUnit]
+  val Count = "Count".asInstanceOf[FleetMetricUnit]
+  val `Bytes/Second` = "Bytes/Second".asInstanceOf[FleetMetricUnit]
+  val `Kilobytes/Second` = "Kilobytes/Second".asInstanceOf[FleetMetricUnit]
+  val `Megabytes/Second` = "Megabytes/Second".asInstanceOf[FleetMetricUnit]
+  val `Gigabytes/Second` = "Gigabytes/Second".asInstanceOf[FleetMetricUnit]
+  val `Terabytes/Second` = "Terabytes/Second".asInstanceOf[FleetMetricUnit]
+  val `Bits/Second` = "Bits/Second".asInstanceOf[FleetMetricUnit]
+  val `Kilobits/Second` = "Kilobits/Second".asInstanceOf[FleetMetricUnit]
+  val `Megabits/Second` = "Megabits/Second".asInstanceOf[FleetMetricUnit]
+  val `Gigabits/Second` = "Gigabits/Second".asInstanceOf[FleetMetricUnit]
+  val `Terabits/Second` = "Terabits/Second".asInstanceOf[FleetMetricUnit]
+  val `Count/Second` = "Count/Second".asInstanceOf[FleetMetricUnit]
+  val None = "None".asInstanceOf[FleetMetricUnit]
+
+  @inline def values: js.Array[FleetMetricUnit] = js.Array(
+    Seconds,
+    Microseconds,
+    Milliseconds,
+    Bytes,
+    Kilobytes,
+    Megabytes,
+    Gigabytes,
+    Terabytes,
+    Bits,
+    Kilobits,
+    Megabits,
+    Gigabits,
+    Terabits,
+    Percent,
+    Count,
+    `Bytes/Second`,
+    `Kilobytes/Second`,
+    `Megabytes/Second`,
+    `Gigabytes/Second`,
+    `Terabytes/Second`,
+    `Bits/Second`,
+    `Kilobits/Second`,
+    `Megabits/Second`,
+    `Gigabits/Second`,
+    `Terabits/Second`,
+    `Count/Second`,
+    None
+  )
 }
 
 @js.native
@@ -503,6 +584,15 @@ object ModelStatus {
   val EXPIRED = "EXPIRED".asInstanceOf[ModelStatus]
 
   @inline def values: js.Array[ModelStatus] = js.Array(PENDING_BUILD, ACTIVE, EXPIRED)
+}
+
+@js.native
+sealed trait NamedShadowIndexingMode extends js.Any
+object NamedShadowIndexingMode {
+  val OFF = "OFF".asInstanceOf[NamedShadowIndexingMode]
+  val ON = "ON".asInstanceOf[NamedShadowIndexingMode]
+
+  @inline def values: js.Array[NamedShadowIndexingMode] = js.Array(OFF, ON)
 }
 
 @js.native
@@ -635,6 +725,17 @@ object TopicRuleDestinationStatus {
   val DELETING = "DELETING".asInstanceOf[TopicRuleDestinationStatus]
 
   @inline def values: js.Array[TopicRuleDestinationStatus] = js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR, DELETING)
+}
+
+@js.native
+sealed trait VerificationState extends js.Any
+object VerificationState {
+  val FALSE_POSITIVE = "FALSE_POSITIVE".asInstanceOf[VerificationState]
+  val BENIGN_POSITIVE = "BENIGN_POSITIVE".asInstanceOf[VerificationState]
+  val TRUE_POSITIVE = "TRUE_POSITIVE".asInstanceOf[VerificationState]
+  val UNKNOWN = "UNKNOWN".asInstanceOf[VerificationState]
+
+  @inline def values: js.Array[VerificationState] = js.Array(FALSE_POSITIVE, BENIGN_POSITIVE, TRUE_POSITIVE, UNKNOWN)
 }
 
 @js.native

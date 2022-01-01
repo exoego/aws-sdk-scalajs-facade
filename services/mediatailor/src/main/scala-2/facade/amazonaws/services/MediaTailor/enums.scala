@@ -6,8 +6,9 @@ import scalajs.js
 sealed trait AccessType extends js.Any
 object AccessType {
   val S3_SIGV4 = "S3_SIGV4".asInstanceOf[AccessType]
+  val SECRETS_MANAGER_ACCESS_TOKEN = "SECRETS_MANAGER_ACCESS_TOKEN".asInstanceOf[AccessType]
 
-  @inline def values: js.Array[AccessType] = js.Array(S3_SIGV4)
+  @inline def values: js.Array[AccessType] = js.Array(S3_SIGV4, SECRETS_MANAGER_ACCESS_TOKEN)
 }
 
 @js.native
@@ -37,6 +38,14 @@ object Mode {
 }
 
 @js.native
+sealed trait Operator extends js.Any
+object Operator {
+  val EQUALS = "EQUALS".asInstanceOf[Operator]
+
+  @inline def values: js.Array[Operator] = js.Array(EQUALS)
+}
+
+@js.native
 sealed trait OriginManifestType extends js.Any
 object OriginManifestType {
   val SINGLE_PERIOD = "SINGLE_PERIOD".asInstanceOf[OriginManifestType]
@@ -49,8 +58,9 @@ object OriginManifestType {
 sealed trait PlaybackMode extends js.Any
 object PlaybackMode {
   val LOOP = "LOOP".asInstanceOf[PlaybackMode]
+  val LINEAR = "LINEAR".asInstanceOf[PlaybackMode]
 
-  @inline def values: js.Array[PlaybackMode] = js.Array(LOOP)
+  @inline def values: js.Array[PlaybackMode] = js.Array(LOOP, LINEAR)
 }
 
 @js.native
@@ -60,6 +70,15 @@ object RelativePosition {
   val AFTER_PROGRAM = "AFTER_PROGRAM".asInstanceOf[RelativePosition]
 
   @inline def values: js.Array[RelativePosition] = js.Array(BEFORE_PROGRAM, AFTER_PROGRAM)
+}
+
+@js.native
+sealed trait ScheduleEntryType extends js.Any
+object ScheduleEntryType {
+  val PROGRAM = "PROGRAM".asInstanceOf[ScheduleEntryType]
+  val FILLER_SLATE = "FILLER_SLATE".asInstanceOf[ScheduleEntryType]
+
+  @inline def values: js.Array[ScheduleEntryType] = js.Array(PROGRAM, FILLER_SLATE)
 }
 
 @js.native

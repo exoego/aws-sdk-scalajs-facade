@@ -46,11 +46,14 @@ package object wafv2 {
   type LogDestinationConfigs = js.Array[ResourceArn]
   type LoggingConfigurations = js.Array[LoggingConfiguration]
   type ManagedRuleGroupSummaries = js.Array[ManagedRuleGroupSummary]
+  type ManagedRuleGroupVersions = js.Array[ManagedRuleGroupVersion]
+  type ManagedRuleSetSummaries = js.Array[ManagedRuleSetSummary]
   type MetricName = String
   type NextMarker = String
   type PaginationLimit = Int
   type PolicyString = String
   type PopulationSize = Double
+  type PublishedVersions = js.Dictionary[ManagedRuleSetVersion]
   type RateLimit = Double
   type RedactedFields = js.Array[FieldToMatch]
   type RegexPatternSetSummaries = js.Array[RegexPatternSetSummary]
@@ -58,6 +61,7 @@ package object wafv2 {
   type RegularExpressionList = js.Array[Regex]
   type ResourceArn = String
   type ResourceArns = js.Array[ResourceArn]
+  type ResponseCode = Int
   type ResponseContent = String
   type ResponseStatusCode = Int
   type RuleGroupSummaries = js.Array[RuleGroupSummary]
@@ -68,6 +72,7 @@ package object wafv2 {
   type SampledHTTPRequests = js.Array[SampledHTTPRequest]
   type SearchString = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type Size = Double
+  type SolveTimestamp = Double
   type Statements = js.Array[Statement]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
@@ -75,9 +80,13 @@ package object wafv2 {
   type TagValue = String
   type TextTransformationPriority = Int
   type TextTransformations = js.Array[TextTransformation]
+  type TimeWindowDay = Int
+  type TimeWindowSecond = Double
   type Timestamp = js.Date
   type URIString = String
   type VendorName = String
+  type VersionKeyString = String
+  type VersionsToPublish = js.Dictionary[VersionToPublish]
   type WebACLSummaries = js.Array[WebACLSummary]
 
   final class WAFv2Ops(private val service: WAFv2) extends AnyVal {
@@ -99,6 +108,7 @@ package object wafv2 {
     @inline def disassociateWebACLFuture(params: DisassociateWebACLRequest): Future[DisassociateWebACLResponse] = service.disassociateWebACL(params).promise().toFuture
     @inline def getIPSetFuture(params: GetIPSetRequest): Future[GetIPSetResponse] = service.getIPSet(params).promise().toFuture
     @inline def getLoggingConfigurationFuture(params: GetLoggingConfigurationRequest): Future[GetLoggingConfigurationResponse] = service.getLoggingConfiguration(params).promise().toFuture
+    @inline def getManagedRuleSetFuture(params: GetManagedRuleSetRequest): Future[GetManagedRuleSetResponse] = service.getManagedRuleSet(params).promise().toFuture
     @inline def getPermissionPolicyFuture(params: GetPermissionPolicyRequest): Future[GetPermissionPolicyResponse] = service.getPermissionPolicy(params).promise().toFuture
     @inline def getRateBasedStatementManagedKeysFuture(params: GetRateBasedStatementManagedKeysRequest): Future[GetRateBasedStatementManagedKeysResponse] = service.getRateBasedStatementManagedKeys(params).promise().toFuture
     @inline def getRegexPatternSetFuture(params: GetRegexPatternSetRequest): Future[GetRegexPatternSetResponse] = service.getRegexPatternSet(params).promise().toFuture
@@ -106,19 +116,23 @@ package object wafv2 {
     @inline def getSampledRequestsFuture(params: GetSampledRequestsRequest): Future[GetSampledRequestsResponse] = service.getSampledRequests(params).promise().toFuture
     @inline def getWebACLForResourceFuture(params: GetWebACLForResourceRequest): Future[GetWebACLForResourceResponse] = service.getWebACLForResource(params).promise().toFuture
     @inline def getWebACLFuture(params: GetWebACLRequest): Future[GetWebACLResponse] = service.getWebACL(params).promise().toFuture
+    @inline def listAvailableManagedRuleGroupVersionsFuture(params: ListAvailableManagedRuleGroupVersionsRequest): Future[ListAvailableManagedRuleGroupVersionsResponse] = service.listAvailableManagedRuleGroupVersions(params).promise().toFuture
     @inline def listAvailableManagedRuleGroupsFuture(params: ListAvailableManagedRuleGroupsRequest): Future[ListAvailableManagedRuleGroupsResponse] = service.listAvailableManagedRuleGroups(params).promise().toFuture
     @inline def listIPSetsFuture(params: ListIPSetsRequest): Future[ListIPSetsResponse] = service.listIPSets(params).promise().toFuture
     @inline def listLoggingConfigurationsFuture(params: ListLoggingConfigurationsRequest): Future[ListLoggingConfigurationsResponse] = service.listLoggingConfigurations(params).promise().toFuture
+    @inline def listManagedRuleSetsFuture(params: ListManagedRuleSetsRequest): Future[ListManagedRuleSetsResponse] = service.listManagedRuleSets(params).promise().toFuture
     @inline def listRegexPatternSetsFuture(params: ListRegexPatternSetsRequest): Future[ListRegexPatternSetsResponse] = service.listRegexPatternSets(params).promise().toFuture
     @inline def listResourcesForWebACLFuture(params: ListResourcesForWebACLRequest): Future[ListResourcesForWebACLResponse] = service.listResourcesForWebACL(params).promise().toFuture
     @inline def listRuleGroupsFuture(params: ListRuleGroupsRequest): Future[ListRuleGroupsResponse] = service.listRuleGroups(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listWebACLsFuture(params: ListWebACLsRequest): Future[ListWebACLsResponse] = service.listWebACLs(params).promise().toFuture
     @inline def putLoggingConfigurationFuture(params: PutLoggingConfigurationRequest): Future[PutLoggingConfigurationResponse] = service.putLoggingConfiguration(params).promise().toFuture
+    @inline def putManagedRuleSetVersionsFuture(params: PutManagedRuleSetVersionsRequest): Future[PutManagedRuleSetVersionsResponse] = service.putManagedRuleSetVersions(params).promise().toFuture
     @inline def putPermissionPolicyFuture(params: PutPermissionPolicyRequest): Future[PutPermissionPolicyResponse] = service.putPermissionPolicy(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateIPSetFuture(params: UpdateIPSetRequest): Future[UpdateIPSetResponse] = service.updateIPSet(params).promise().toFuture
+    @inline def updateManagedRuleSetVersionExpiryDateFuture(params: UpdateManagedRuleSetVersionExpiryDateRequest): Future[UpdateManagedRuleSetVersionExpiryDateResponse] = service.updateManagedRuleSetVersionExpiryDate(params).promise().toFuture
     @inline def updateRegexPatternSetFuture(params: UpdateRegexPatternSetRequest): Future[UpdateRegexPatternSetResponse] = service.updateRegexPatternSet(params).promise().toFuture
     @inline def updateRuleGroupFuture(params: UpdateRuleGroupRequest): Future[UpdateRuleGroupResponse] = service.updateRuleGroup(params).promise().toFuture
     @inline def updateWebACLFuture(params: UpdateWebACLRequest): Future[UpdateWebACLResponse] = service.updateWebACL(params).promise().toFuture
@@ -147,6 +161,7 @@ package object wafv2 {
     def disassociateWebACL(params: DisassociateWebACLRequest): Request[DisassociateWebACLResponse] = js.native
     def getIPSet(params: GetIPSetRequest): Request[GetIPSetResponse] = js.native
     def getLoggingConfiguration(params: GetLoggingConfigurationRequest): Request[GetLoggingConfigurationResponse] = js.native
+    def getManagedRuleSet(params: GetManagedRuleSetRequest): Request[GetManagedRuleSetResponse] = js.native
     def getPermissionPolicy(params: GetPermissionPolicyRequest): Request[GetPermissionPolicyResponse] = js.native
     def getRateBasedStatementManagedKeys(params: GetRateBasedStatementManagedKeysRequest): Request[GetRateBasedStatementManagedKeysResponse] = js.native
     def getRegexPatternSet(params: GetRegexPatternSetRequest): Request[GetRegexPatternSetResponse] = js.native
@@ -154,19 +169,23 @@ package object wafv2 {
     def getSampledRequests(params: GetSampledRequestsRequest): Request[GetSampledRequestsResponse] = js.native
     def getWebACL(params: GetWebACLRequest): Request[GetWebACLResponse] = js.native
     def getWebACLForResource(params: GetWebACLForResourceRequest): Request[GetWebACLForResourceResponse] = js.native
+    def listAvailableManagedRuleGroupVersions(params: ListAvailableManagedRuleGroupVersionsRequest): Request[ListAvailableManagedRuleGroupVersionsResponse] = js.native
     def listAvailableManagedRuleGroups(params: ListAvailableManagedRuleGroupsRequest): Request[ListAvailableManagedRuleGroupsResponse] = js.native
     def listIPSets(params: ListIPSetsRequest): Request[ListIPSetsResponse] = js.native
     def listLoggingConfigurations(params: ListLoggingConfigurationsRequest): Request[ListLoggingConfigurationsResponse] = js.native
+    def listManagedRuleSets(params: ListManagedRuleSetsRequest): Request[ListManagedRuleSetsResponse] = js.native
     def listRegexPatternSets(params: ListRegexPatternSetsRequest): Request[ListRegexPatternSetsResponse] = js.native
     def listResourcesForWebACL(params: ListResourcesForWebACLRequest): Request[ListResourcesForWebACLResponse] = js.native
     def listRuleGroups(params: ListRuleGroupsRequest): Request[ListRuleGroupsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listWebACLs(params: ListWebACLsRequest): Request[ListWebACLsResponse] = js.native
     def putLoggingConfiguration(params: PutLoggingConfigurationRequest): Request[PutLoggingConfigurationResponse] = js.native
+    def putManagedRuleSetVersions(params: PutManagedRuleSetVersionsRequest): Request[PutManagedRuleSetVersionsResponse] = js.native
     def putPermissionPolicy(params: PutPermissionPolicyRequest): Request[PutPermissionPolicyResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateIPSet(params: UpdateIPSetRequest): Request[UpdateIPSetResponse] = js.native
+    def updateManagedRuleSetVersionExpiryDate(params: UpdateManagedRuleSetVersionExpiryDateRequest): Request[UpdateManagedRuleSetVersionExpiryDateResponse] = js.native
     def updateRegexPatternSet(params: UpdateRegexPatternSetRequest): Request[UpdateRegexPatternSetResponse] = js.native
     def updateRuleGroup(params: UpdateRuleGroupRequest): Request[UpdateRuleGroupResponse] = js.native
     def updateWebACL(params: UpdateWebACLRequest): Request[UpdateWebACLResponse] = js.native
@@ -196,7 +215,7 @@ package object wafv2 {
     }
   }
 
-  /** Inspect all of the elements that AWS WAF has parsed and extracted from the web request JSON body that are within the <a>JsonBody</a> <code>MatchScope</code>. This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** Inspect all of the elements that WAF has parsed and extracted from the web request JSON body that are within the <a>JsonBody</a> <code>MatchScope</code>. This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>. This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. JSON specification: <code>"All": {}</code>
     */
   @js.native
   trait All extends js.Object
@@ -209,7 +228,7 @@ package object wafv2 {
     }
   }
 
-  /** All query arguments of a web request. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** All query arguments of a web request. This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. JSON specification: <code>"AllQueryArguments": {}</code>
     */
   @js.native
   trait AllQueryArguments extends js.Object
@@ -222,7 +241,7 @@ package object wafv2 {
     }
   }
 
-  /** Specifies that AWS WAF should allow the request and optionally defines additional custom handling for the request. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** Specifies that WAF should allow the request and optionally defines additional custom handling for the request. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
   trait AllowAction extends js.Object {
@@ -290,7 +309,7 @@ package object wafv2 {
     }
   }
 
-  /** Specifies that AWS WAF should block the request and optionally defines additional custom handling for the response to the web request. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** Specifies that WAF should block the request and optionally defines additional custom handling for the response to the web request. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
   trait BlockAction extends js.Object {
@@ -308,7 +327,7 @@ package object wafv2 {
     }
   }
 
-  /** The body of a web request. This immediately follows the request headers. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** The body of a web request. This immediately follows the request headers. This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. JSON specification: <code>"Body": {}</code>
     */
   @js.native
   trait Body extends js.Object
@@ -321,7 +340,7 @@ package object wafv2 {
     }
   }
 
-  /** A rule statement that defines a string match search for AWS WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want AWS WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the AWS WAF console and the developer guide, this is refered to as a string match statement.
+  /** A rule statement that defines a string match search for WAF to apply to web requests. The byte match statement provides the bytes to search for, the location in requests that you want WAF to search, and other settings. The bytes to search for are typically a string that corresponds with ASCII characters. In the WAF console and the developer guide, this is refered to as a string match statement.
     */
   @js.native
   trait ByteMatchStatement extends js.Object {
@@ -346,6 +365,67 @@ package object wafv2 {
         "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ByteMatchStatement]
+    }
+  }
+
+  /** Specifies that WAF should run a <code>CAPTCHA</code> check against the request: * If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF allows the web request inspection to proceed to the next rule, similar to a <code>CountAction</code>. * If the request doesn't include a valid, unexpired <code>CAPTCHA</code> token, WAF discontinues the web ACL evaluation of the request and blocks it from going to its intended destination. WAF generates a response that it sends back to the client, which includes the following: <li> The header <code>x-amzn-waf-action</code> with a value of <code>captcha</code>. * The HTTP status code <code>405 Method Not Allowed</code>. * If the request contains an <code>Accept</code> header with a value of <code>text/html</code>, the response includes a <code>CAPTCHA</code> challenge. </li>You can configure the expiration time in the <code>CaptchaConfig</code> <code>ImmunityTimeProperty</code> setting at the rule and web ACL level. The rule
+    * setting overrides the web ACL setting. This action option is available for rules. It isn't available for web ACL default actions. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+    */
+  @js.native
+  trait CaptchaAction extends js.Object {
+    var CustomRequestHandling: js.UndefOr[CustomRequestHandling]
+  }
+
+  object CaptchaAction {
+    @inline
+    def apply(
+        CustomRequestHandling: js.UndefOr[CustomRequestHandling] = js.undefined
+    ): CaptchaAction = {
+      val __obj = js.Dynamic.literal()
+      CustomRequestHandling.foreach(__v => __obj.updateDynamic("CustomRequestHandling")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptchaAction]
+    }
+  }
+
+  /** Specifies how WAF should handle <code>CAPTCHA</code> evaluations. This is available at the web ACL level and in each rule.
+    */
+  @js.native
+  trait CaptchaConfig extends js.Object {
+    var ImmunityTimeProperty: js.UndefOr[ImmunityTimeProperty]
+  }
+
+  object CaptchaConfig {
+    @inline
+    def apply(
+        ImmunityTimeProperty: js.UndefOr[ImmunityTimeProperty] = js.undefined
+    ): CaptchaConfig = {
+      val __obj = js.Dynamic.literal()
+      ImmunityTimeProperty.foreach(__v => __obj.updateDynamic("ImmunityTimeProperty")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptchaConfig]
+    }
+  }
+
+  /** The result from the inspection of the web request for a valid <code>CAPTCHA</code> token.
+    */
+  @js.native
+  trait CaptchaResponse extends js.Object {
+    var FailureReason: js.UndefOr[FailureReason]
+    var ResponseCode: js.UndefOr[ResponseCode]
+    var SolveTimestamp: js.UndefOr[SolveTimestamp]
+  }
+
+  object CaptchaResponse {
+    @inline
+    def apply(
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        ResponseCode: js.UndefOr[ResponseCode] = js.undefined,
+        SolveTimestamp: js.UndefOr[SolveTimestamp] = js.undefined
+    ): CaptchaResponse = {
+      val __obj = js.Dynamic.literal()
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      ResponseCode.foreach(__v => __obj.updateDynamic("ResponseCode")(__v.asInstanceOf[js.Any]))
+      SolveTimestamp.foreach(__v => __obj.updateDynamic("SolveTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CaptchaResponse]
     }
   }
 
@@ -406,7 +486,7 @@ package object wafv2 {
     }
   }
 
-  /** Specifies that AWS WAF should count the request. Optionally defines additional custom handling for the request. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** Specifies that WAF should count the request. Optionally defines additional custom handling for the request. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
     */
   @js.native
   trait CountAction extends js.Object {
@@ -580,6 +660,7 @@ package object wafv2 {
     var Name: EntityName
     var Scope: Scope
     var VisibilityConfig: VisibilityConfig
+    var CaptchaConfig: js.UndefOr[CaptchaConfig]
     var CustomResponseBodies: js.UndefOr[CustomResponseBodies]
     var Description: js.UndefOr[EntityDescription]
     var Rules: js.UndefOr[Rules]
@@ -593,6 +674,7 @@ package object wafv2 {
         Name: EntityName,
         Scope: Scope,
         VisibilityConfig: VisibilityConfig,
+        CaptchaConfig: js.UndefOr[CaptchaConfig] = js.undefined,
         CustomResponseBodies: js.UndefOr[CustomResponseBodies] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
         Rules: js.UndefOr[Rules] = js.undefined,
@@ -605,6 +687,7 @@ package object wafv2 {
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
+      CaptchaConfig.foreach(__v => __obj.updateDynamic("CaptchaConfig")(__v.asInstanceOf[js.Any]))
       CustomResponseBodies.foreach(__v => __obj.updateDynamic("CustomResponseBodies")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
@@ -651,7 +734,7 @@ package object wafv2 {
     }
   }
 
-  /** Custom request handling behavior that inserts custom headers into a web request. You can add custom request handling for the rule actions allow and count. For information about customizing web requests and responses, see [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html|Customizing web requests and responses in AWS WAF]] in the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
+  /** Custom request handling behavior that inserts custom headers into a web request. You can add custom request handling for the rule actions allow and count. For information about customizing web requests and responses, see [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html|Customizing web requests and responses in WAF]] in the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|WAF Developer Guide]].
     */
   @js.native
   trait CustomRequestHandling extends js.Object {
@@ -670,7 +753,7 @@ package object wafv2 {
     }
   }
 
-  /** A custom response to send to the client. You can define a custom response for rule actions and default web ACL actions that are set to <a>BlockAction</a>. For information about customizing web requests and responses, see [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html|Customizing web requests and responses in AWS WAF]] in the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF Developer Guide]].
+  /** A custom response to send to the client. You can define a custom response for rule actions and default web ACL actions that are set to <a>BlockAction</a>. For information about customizing web requests and responses, see [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html|Customizing web requests and responses in WAF]] in the [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|WAF Developer Guide]].
     */
   @js.native
   trait CustomResponse extends js.Object {
@@ -718,7 +801,7 @@ package object wafv2 {
     }
   }
 
-  /** In a <a>WebACL</a>, this is the action that you want AWS WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action, so you can't use count.
+  /** In a <a>WebACL</a>, this is the action that you want WAF to perform when a web request doesn't match any of the rules in the <code>WebACL</code>. The default action must be a terminating action, so you can't use count.
     */
   @js.native
   trait DefaultAction extends js.Object {
@@ -984,6 +1067,7 @@ package object wafv2 {
     var Name: EntityName
     var Scope: Scope
     var VendorName: VendorName
+    var VersionName: js.UndefOr[VersionKeyString]
   }
 
   object DescribeManagedRuleGroupRequest {
@@ -991,13 +1075,16 @@ package object wafv2 {
     def apply(
         Name: EntityName,
         Scope: Scope,
-        VendorName: VendorName
+        VendorName: VendorName,
+        VersionName: js.UndefOr[VersionKeyString] = js.undefined
     ): DescribeManagedRuleGroupRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "Scope" -> Scope.asInstanceOf[js.Any],
         "VendorName" -> VendorName.asInstanceOf[js.Any]
       )
+
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeManagedRuleGroupRequest]
     }
   }
@@ -1009,6 +1096,8 @@ package object wafv2 {
     var ConsumedLabels: js.UndefOr[LabelSummaries]
     var LabelNamespace: js.UndefOr[LabelName]
     var Rules: js.UndefOr[RuleSummaries]
+    var SnsTopicArn: js.UndefOr[ResourceArn]
+    var VersionName: js.UndefOr[VersionKeyString]
   }
 
   object DescribeManagedRuleGroupResponse {
@@ -1018,7 +1107,9 @@ package object wafv2 {
         Capacity: js.UndefOr[CapacityUnit] = js.undefined,
         ConsumedLabels: js.UndefOr[LabelSummaries] = js.undefined,
         LabelNamespace: js.UndefOr[LabelName] = js.undefined,
-        Rules: js.UndefOr[RuleSummaries] = js.undefined
+        Rules: js.UndefOr[RuleSummaries] = js.undefined,
+        SnsTopicArn: js.UndefOr[ResourceArn] = js.undefined,
+        VersionName: js.UndefOr[VersionKeyString] = js.undefined
     ): DescribeManagedRuleGroupResponse = {
       val __obj = js.Dynamic.literal()
       AvailableLabels.foreach(__v => __obj.updateDynamic("AvailableLabels")(__v.asInstanceOf[js.Any]))
@@ -1026,6 +1117,8 @@ package object wafv2 {
       ConsumedLabels.foreach(__v => __obj.updateDynamic("ConsumedLabels")(__v.asInstanceOf[js.Any]))
       LabelNamespace.foreach(__v => __obj.updateDynamic("LabelNamespace")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      SnsTopicArn.foreach(__v => __obj.updateDynamic("SnsTopicArn")(__v.asInstanceOf[js.Any]))
+      VersionName.foreach(__v => __obj.updateDynamic("VersionName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeManagedRuleGroupResponse]
     }
   }
@@ -1058,7 +1151,7 @@ package object wafv2 {
     }
   }
 
-  /** Specifies a single rule to exclude from the rule group. Excluding a rule overrides its action setting for the rule group in the web ACL, setting it to <code>COUNT</code>. This effectively excludes the rule from acting on web requests.
+  /** Specifies a single rule in a rule group whose action you want to override to <code>Count</code>. When you exclude a rule, WAF evaluates it exactly as it would if the rule action setting were <code>Count</code>. This is a useful option for testing the rules in a rule group without modifying how they handle your web traffic.
     */
   @js.native
   trait ExcludedRule extends js.Object {
@@ -1077,7 +1170,7 @@ package object wafv2 {
     }
   }
 
-  /** The part of a web request that you want AWS WAF to inspect. Include the single <code>FieldToMatch</code> type that you want to inspect, with additional specifications as needed, according to the type. You specify a single request component in <code>FieldToMatch</code> for each rule statement that requires it. To inspect more than one component of a web request, create a separate rule statement for each component.
+  /** The part of a web request that you want WAF to inspect. Include the single <code>FieldToMatch</code> type that you want to inspect, with additional specifications as needed, according to the type. You specify a single request component in <code>FieldToMatch</code> for each rule statement that requires it. To inspect more than one component of a web request, create a separate rule statement for each component. JSON specification for a <code>QueryString</code> field to match: <code> "FieldToMatch": { "QueryString": {} }</code> Example JSON for a <code>Method</code> field to match specification: <code> "FieldToMatch": { "Method": { "Name": "DELETE" } }</code>
     */
   @js.native
   trait FieldToMatch extends js.Object {
@@ -1141,7 +1234,7 @@ package object wafv2 {
     }
   }
 
-  /** A rule group that's defined for an AWS Firewall Manager WAF policy.
+  /** A rule group that's defined for an Firewall Manager WAF policy.
     */
   @js.native
   trait FirewallManagerRuleGroup extends js.Object {
@@ -1172,7 +1265,7 @@ package object wafv2 {
     }
   }
 
-  /** The processing guidance for an AWS Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can only contain a rule group reference.
+  /** The processing guidance for an Firewall Manager rule. This is like a regular rule <a>Statement</a>, but it can only contain a rule group reference.
     */
   @js.native
   trait FirewallManagerStatement extends js.Object {
@@ -1195,7 +1288,7 @@ package object wafv2 {
 
   /** The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.
     *
-    * '''Note:'''If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all. This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead. AWS WAF only evaluates the first IP address found in the specified HTTP header.
+    * '''Note:'''If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all. This configuration is used for <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>. For <a>IPSetReferenceStatement</a>, use <a>IPSetForwardedIPConfig</a> instead. WAF only evaluates the first IP address found in the specified HTTP header.
     */
   @js.native
   trait ForwardedIPConfig extends js.Object {
@@ -1314,6 +1407,48 @@ package object wafv2 {
   }
 
   @js.native
+  trait GetManagedRuleSetRequest extends js.Object {
+    var Id: EntityId
+    var Name: EntityName
+    var Scope: Scope
+  }
+
+  object GetManagedRuleSetRequest {
+    @inline
+    def apply(
+        Id: EntityId,
+        Name: EntityName,
+        Scope: Scope
+    ): GetManagedRuleSetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetManagedRuleSetRequest]
+    }
+  }
+
+  @js.native
+  trait GetManagedRuleSetResponse extends js.Object {
+    var LockToken: js.UndefOr[LockToken]
+    var ManagedRuleSet: js.UndefOr[ManagedRuleSet]
+  }
+
+  object GetManagedRuleSetResponse {
+    @inline
+    def apply(
+        LockToken: js.UndefOr[LockToken] = js.undefined,
+        ManagedRuleSet: js.UndefOr[ManagedRuleSet] = js.undefined
+    ): GetManagedRuleSetResponse = {
+      val __obj = js.Dynamic.literal()
+      LockToken.foreach(__v => __obj.updateDynamic("LockToken")(__v.asInstanceOf[js.Any]))
+      ManagedRuleSet.foreach(__v => __obj.updateDynamic("ManagedRuleSet")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetManagedRuleSetResponse]
+    }
+  }
+
+  @js.native
   trait GetPermissionPolicyRequest extends js.Object {
     var ResourceArn: ResourceArn
   }
@@ -1352,6 +1487,7 @@ package object wafv2 {
     var Scope: Scope
     var WebACLId: EntityId
     var WebACLName: EntityName
+    var RuleGroupRuleName: js.UndefOr[EntityName]
   }
 
   object GetRateBasedStatementManagedKeysRequest {
@@ -1360,7 +1496,8 @@ package object wafv2 {
         RuleName: EntityName,
         Scope: Scope,
         WebACLId: EntityId,
-        WebACLName: EntityName
+        WebACLName: EntityName,
+        RuleGroupRuleName: js.UndefOr[EntityName] = js.undefined
     ): GetRateBasedStatementManagedKeysRequest = {
       val __obj = js.Dynamic.literal(
         "RuleName" -> RuleName.asInstanceOf[js.Any],
@@ -1368,6 +1505,8 @@ package object wafv2 {
         "WebACLId" -> WebACLId.asInstanceOf[js.Any],
         "WebACLName" -> WebACLName.asInstanceOf[js.Any]
       )
+
+      RuleGroupRuleName.foreach(__v => __obj.updateDynamic("RuleGroupRuleName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRateBasedStatementManagedKeysRequest]
     }
   }
@@ -1435,23 +1574,25 @@ package object wafv2 {
 
   @js.native
   trait GetRuleGroupRequest extends js.Object {
-    var Id: EntityId
-    var Name: EntityName
-    var Scope: Scope
+    var ARN: js.UndefOr[ResourceArn]
+    var Id: js.UndefOr[EntityId]
+    var Name: js.UndefOr[EntityName]
+    var Scope: js.UndefOr[Scope]
   }
 
   object GetRuleGroupRequest {
     @inline
     def apply(
-        Id: EntityId,
-        Name: EntityName,
-        Scope: Scope
+        ARN: js.UndefOr[ResourceArn] = js.undefined,
+        Id: js.UndefOr[EntityId] = js.undefined,
+        Name: js.UndefOr[EntityName] = js.undefined,
+        Scope: js.UndefOr[Scope] = js.undefined
     ): GetRuleGroupRequest = {
-      val __obj = js.Dynamic.literal(
-        "Id" -> Id.asInstanceOf[js.Any],
-        "Name" -> Name.asInstanceOf[js.Any],
-        "Scope" -> Scope.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRuleGroupRequest]
     }
   }
@@ -1655,7 +1796,7 @@ package object wafv2 {
     }
   }
 
-  /** Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the Wikipedia entry [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]]. AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>.
+  /** Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the Wikipedia entry [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]]. WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to the <a>Rule</a> statement <a>IPSetReferenceStatement</a>.
     */
   @js.native
   trait IPSet extends js.Object {
@@ -1692,7 +1833,7 @@ package object wafv2 {
 
   /** The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify any header name.
     *
-    * '''Note:'''If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all. This configuration is used only for <a>IPSetReferenceStatement</a>. For <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>, use <a>ForwardedIPConfig</a> instead.
+    * '''Note:'''If the specified header isn't present in the request, WAF doesn't apply the rule to the web request at all. This configuration is used only for <a>IPSetReferenceStatement</a>. For <a>GeoMatchStatement</a> and <a>RateBasedStatement</a>, use <a>ForwardedIPConfig</a> instead.
     */
   @js.native
   trait IPSetForwardedIPConfig extends js.Object {
@@ -1717,7 +1858,7 @@ package object wafv2 {
     }
   }
 
-  /** A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>. Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.
+  /** A rule statement used to detect web requests coming from particular IP addresses or address ranges. To use this, create an <a>IPSet</a> that specifies the addresses you want to detect, then use the ARN of that set in this statement. To create an IP set, see <a>CreateIPSet</a>. Each IP set rule statement references an IP set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.
     */
   @js.native
   trait IPSetReferenceStatement extends js.Object {
@@ -1770,7 +1911,26 @@ package object wafv2 {
     }
   }
 
-  /** The body of a web request, inspected as JSON. The body immediately follows the request headers. This is used in the <a>FieldToMatch</a> specification. Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection criteria. AWS WAF inspects only the parts of the JSON that result from the matches that you indicate.
+  /** Determines how long a <code>CAPTCHA</code> token remains valid after the client successfully solves a <code>CAPTCHA</code> puzzle.
+    */
+  @js.native
+  trait ImmunityTimeProperty extends js.Object {
+    var ImmunityTime: TimeWindowSecond
+  }
+
+  object ImmunityTimeProperty {
+    @inline
+    def apply(
+        ImmunityTime: TimeWindowSecond
+    ): ImmunityTimeProperty = {
+      val __obj = js.Dynamic.literal(
+        "ImmunityTime" -> ImmunityTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ImmunityTimeProperty]
+    }
+  }
+
+  /** The body of a web request, inspected as JSON. The body immediately follows the request headers. This is used in the <a>FieldToMatch</a> specification. Use the specifications in this object to indicate which parts of the JSON body to inspect using the rule's inspection criteria. WAF inspects only the parts of the JSON that result from the matches that you indicate. Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL" }</code>
     */
   @js.native
   trait JsonBody extends js.Object {
@@ -1796,7 +1956,7 @@ package object wafv2 {
     }
   }
 
-  /** The patterns to look for in the JSON body. AWS WAF inspects the results of these pattern matches against the rule inspection criteria. This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>.
+  /** The patterns to look for in the JSON body. WAF inspects the results of these pattern matches against the rule inspection criteria. This is used with the <a>FieldToMatch</a> option <code>JsonBody</code>.
     */
   @js.native
   trait JsonMatchPattern extends js.Object {
@@ -1836,7 +1996,7 @@ package object wafv2 {
     }
   }
 
-  /** A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, AWS WAF performs the search for labels that were added in the same context as the label match statement.
+  /** A rule statement that defines a string match search against labels that have been added to the web request by rules that have already run in the web ACL. The label match statement provides the label or namespace string to search for. The label string can represent a part or all of the fully qualified label name that had been added to the web request. Fully qualified labels have a prefix, optional namespaces, and label name. The prefix identifies the rule group or web ACL context of the rule that added the label. If you do not provide the fully qualified name in your label match string, WAF performs the search for labels that were added in the same context as the label match statement.
     */
   @js.native
   trait LabelMatchStatement extends js.Object {
@@ -1892,6 +2052,55 @@ package object wafv2 {
       val __obj = js.Dynamic.literal()
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelSummary]
+    }
+  }
+
+  @js.native
+  trait ListAvailableManagedRuleGroupVersionsRequest extends js.Object {
+    var Name: EntityName
+    var Scope: Scope
+    var VendorName: VendorName
+    var Limit: js.UndefOr[PaginationLimit]
+    var NextMarker: js.UndefOr[NextMarker]
+  }
+
+  object ListAvailableManagedRuleGroupVersionsRequest {
+    @inline
+    def apply(
+        Name: EntityName,
+        Scope: Scope,
+        VendorName: VendorName,
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListAvailableManagedRuleGroupVersionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any],
+        "VendorName" -> VendorName.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAvailableManagedRuleGroupVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAvailableManagedRuleGroupVersionsResponse extends js.Object {
+    var NextMarker: js.UndefOr[NextMarker]
+    var Versions: js.UndefOr[ManagedRuleGroupVersions]
+  }
+
+  object ListAvailableManagedRuleGroupVersionsResponse {
+    @inline
+    def apply(
+        NextMarker: js.UndefOr[NextMarker] = js.undefined,
+        Versions: js.UndefOr[ManagedRuleGroupVersions] = js.undefined
+    ): ListAvailableManagedRuleGroupVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      Versions.foreach(__v => __obj.updateDynamic("Versions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAvailableManagedRuleGroupVersionsResponse]
     }
   }
 
@@ -1983,22 +2192,24 @@ package object wafv2 {
 
   @js.native
   trait ListLoggingConfigurationsRequest extends js.Object {
+    var Scope: Scope
     var Limit: js.UndefOr[PaginationLimit]
     var NextMarker: js.UndefOr[NextMarker]
-    var Scope: js.UndefOr[Scope]
   }
 
   object ListLoggingConfigurationsRequest {
     @inline
     def apply(
+        Scope: Scope,
         Limit: js.UndefOr[PaginationLimit] = js.undefined,
-        NextMarker: js.UndefOr[NextMarker] = js.undefined,
-        Scope: js.UndefOr[Scope] = js.undefined
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
     ): ListLoggingConfigurationsRequest = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "Scope" -> Scope.asInstanceOf[js.Any]
+      )
+
       Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
-      Scope.foreach(__v => __obj.updateDynamic("Scope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLoggingConfigurationsRequest]
     }
   }
@@ -2019,6 +2230,49 @@ package object wafv2 {
       LoggingConfigurations.foreach(__v => __obj.updateDynamic("LoggingConfigurations")(__v.asInstanceOf[js.Any]))
       NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLoggingConfigurationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListManagedRuleSetsRequest extends js.Object {
+    var Scope: Scope
+    var Limit: js.UndefOr[PaginationLimit]
+    var NextMarker: js.UndefOr[NextMarker]
+  }
+
+  object ListManagedRuleSetsRequest {
+    @inline
+    def apply(
+        Scope: Scope,
+        Limit: js.UndefOr[PaginationLimit] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListManagedRuleSetsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Scope" -> Scope.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListManagedRuleSetsRequest]
+    }
+  }
+
+  @js.native
+  trait ListManagedRuleSetsResponse extends js.Object {
+    var ManagedRuleSets: js.UndefOr[ManagedRuleSetSummaries]
+    var NextMarker: js.UndefOr[NextMarker]
+  }
+
+  object ListManagedRuleSetsResponse {
+    @inline
+    def apply(
+        ManagedRuleSets: js.UndefOr[ManagedRuleSetSummaries] = js.undefined,
+        NextMarker: js.UndefOr[NextMarker] = js.undefined
+    ): ListManagedRuleSetsResponse = {
+      val __obj = js.Dynamic.literal()
+      ManagedRuleSets.foreach(__v => __obj.updateDynamic("ManagedRuleSets")(__v.asInstanceOf[js.Any]))
+      NextMarker.foreach(__v => __obj.updateDynamic("NextMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListManagedRuleSetsResponse]
     }
   }
 
@@ -2231,7 +2485,7 @@ package object wafv2 {
     }
   }
 
-  /** Defines an association between Amazon Kinesis Data Firehose destinations and a web ACL resource, for logging from AWS WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs and you can specify filters so that you log only a subset of the logging records.
+  /** Defines an association between logging destinations and a web ACL resource, for logging from WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs and you can specify filters so that you log only a subset of the logging records. For information about configuring web ACL logging destinations, see [[https://docs.aws.amazon.com/waf/latest/developerguide/logging.html|Logging web ACL traffic information]] in the <i>WAF Developer Guide</i>.
     */
   @js.native
   trait LoggingConfiguration extends js.Object {
@@ -2285,7 +2539,7 @@ package object wafv2 {
     }
   }
 
-  /** A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>. You can't nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+  /** A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name and the name of the rule group in this statement. You can retrieve the required names by calling <a>ListAvailableManagedRuleGroups</a>. You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
     */
   @js.native
   trait ManagedRuleGroupStatement extends js.Object {
@@ -2293,6 +2547,7 @@ package object wafv2 {
     var VendorName: VendorName
     var ExcludedRules: js.UndefOr[ExcludedRules]
     var ScopeDownStatement: js.UndefOr[Statement]
+    var Version: js.UndefOr[VersionKeyString]
   }
 
   object ManagedRuleGroupStatement {
@@ -2301,7 +2556,8 @@ package object wafv2 {
         Name: EntityName,
         VendorName: VendorName,
         ExcludedRules: js.UndefOr[ExcludedRules] = js.undefined,
-        ScopeDownStatement: js.UndefOr[Statement] = js.undefined
+        ScopeDownStatement: js.UndefOr[Statement] = js.undefined,
+        Version: js.UndefOr[VersionKeyString] = js.undefined
     ): ManagedRuleGroupStatement = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
@@ -2310,11 +2566,12 @@ package object wafv2 {
 
       ExcludedRules.foreach(__v => __obj.updateDynamic("ExcludedRules")(__v.asInstanceOf[js.Any]))
       ScopeDownStatement.foreach(__v => __obj.updateDynamic("ScopeDownStatement")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ManagedRuleGroupStatement]
     }
   }
 
-  /** High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include AWS Managed Rules rule groups, which are free of charge to AWS WAF customers, and AWS Marketplace managed rule groups, which you can subscribe to through AWS Marketplace.
+  /** High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>. This provides information like the name and vendor name, that you provide when you add a <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include Amazon Web Services Managed Rules rule groups, which are free of charge to WAF customers, and Amazon Web Services Marketplace managed rule groups, which you can subscribe to through Amazon Web Services Marketplace.
     */
   @js.native
   trait ManagedRuleGroupSummary extends js.Object {
@@ -2338,7 +2595,138 @@ package object wafv2 {
     }
   }
 
-  /** The HTTP method of a web request. The method indicates the type of operation that the request is asking the origin to perform. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** Describes a single version of a managed rule group.
+    */
+  @js.native
+  trait ManagedRuleGroupVersion extends js.Object {
+    var LastUpdateTimestamp: js.UndefOr[Timestamp]
+    var Name: js.UndefOr[VersionKeyString]
+  }
+
+  object ManagedRuleGroupVersion {
+    @inline
+    def apply(
+        LastUpdateTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        Name: js.UndefOr[VersionKeyString] = js.undefined
+    ): ManagedRuleGroupVersion = {
+      val __obj = js.Dynamic.literal()
+      LastUpdateTimestamp.foreach(__v => __obj.updateDynamic("LastUpdateTimestamp")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedRuleGroupVersion]
+    }
+  }
+
+  /** A set of rules that is managed by Amazon Web Services and Amazon Web Services Marketplace sellers to provide versioned managed rule groups for customers of WAF.
+    *
+    * '''Note:'''This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.
+    */
+  @js.native
+  trait ManagedRuleSet extends js.Object {
+    var ARN: ResourceArn
+    var Id: EntityId
+    var Name: EntityName
+    var Description: js.UndefOr[EntityDescription]
+    var LabelNamespace: js.UndefOr[LabelName]
+    var PublishedVersions: js.UndefOr[PublishedVersions]
+    var RecommendedVersion: js.UndefOr[VersionKeyString]
+  }
+
+  object ManagedRuleSet {
+    @inline
+    def apply(
+        ARN: ResourceArn,
+        Id: EntityId,
+        Name: EntityName,
+        Description: js.UndefOr[EntityDescription] = js.undefined,
+        LabelNamespace: js.UndefOr[LabelName] = js.undefined,
+        PublishedVersions: js.UndefOr[PublishedVersions] = js.undefined,
+        RecommendedVersion: js.UndefOr[VersionKeyString] = js.undefined
+    ): ManagedRuleSet = {
+      val __obj = js.Dynamic.literal(
+        "ARN" -> ARN.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LabelNamespace.foreach(__v => __obj.updateDynamic("LabelNamespace")(__v.asInstanceOf[js.Any]))
+      PublishedVersions.foreach(__v => __obj.updateDynamic("PublishedVersions")(__v.asInstanceOf[js.Any]))
+      RecommendedVersion.foreach(__v => __obj.updateDynamic("RecommendedVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedRuleSet]
+    }
+  }
+
+  /** High-level information for a managed rule set.
+    *
+    * '''Note:'''This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.
+    */
+  @js.native
+  trait ManagedRuleSetSummary extends js.Object {
+    var ARN: js.UndefOr[ResourceArn]
+    var Description: js.UndefOr[EntityDescription]
+    var Id: js.UndefOr[EntityId]
+    var LabelNamespace: js.UndefOr[LabelName]
+    var LockToken: js.UndefOr[LockToken]
+    var Name: js.UndefOr[EntityName]
+  }
+
+  object ManagedRuleSetSummary {
+    @inline
+    def apply(
+        ARN: js.UndefOr[ResourceArn] = js.undefined,
+        Description: js.UndefOr[EntityDescription] = js.undefined,
+        Id: js.UndefOr[EntityId] = js.undefined,
+        LabelNamespace: js.UndefOr[LabelName] = js.undefined,
+        LockToken: js.UndefOr[LockToken] = js.undefined,
+        Name: js.UndefOr[EntityName] = js.undefined
+    ): ManagedRuleSetSummary = {
+      val __obj = js.Dynamic.literal()
+      ARN.foreach(__v => __obj.updateDynamic("ARN")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LabelNamespace.foreach(__v => __obj.updateDynamic("LabelNamespace")(__v.asInstanceOf[js.Any]))
+      LockToken.foreach(__v => __obj.updateDynamic("LockToken")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedRuleSetSummary]
+    }
+  }
+
+  /** Information for a single version of a managed rule set.
+    *
+    * '''Note:'''This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.
+    */
+  @js.native
+  trait ManagedRuleSetVersion extends js.Object {
+    var AssociatedRuleGroupArn: js.UndefOr[ResourceArn]
+    var Capacity: js.UndefOr[CapacityUnit]
+    var ExpiryTimestamp: js.UndefOr[Timestamp]
+    var ForecastedLifetime: js.UndefOr[TimeWindowDay]
+    var LastUpdateTimestamp: js.UndefOr[Timestamp]
+    var PublishTimestamp: js.UndefOr[Timestamp]
+  }
+
+  object ManagedRuleSetVersion {
+    @inline
+    def apply(
+        AssociatedRuleGroupArn: js.UndefOr[ResourceArn] = js.undefined,
+        Capacity: js.UndefOr[CapacityUnit] = js.undefined,
+        ExpiryTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        ForecastedLifetime: js.UndefOr[TimeWindowDay] = js.undefined,
+        LastUpdateTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        PublishTimestamp: js.UndefOr[Timestamp] = js.undefined
+    ): ManagedRuleSetVersion = {
+      val __obj = js.Dynamic.literal()
+      AssociatedRuleGroupArn.foreach(__v => __obj.updateDynamic("AssociatedRuleGroupArn")(__v.asInstanceOf[js.Any]))
+      Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
+      ExpiryTimestamp.foreach(__v => __obj.updateDynamic("ExpiryTimestamp")(__v.asInstanceOf[js.Any]))
+      ForecastedLifetime.foreach(__v => __obj.updateDynamic("ForecastedLifetime")(__v.asInstanceOf[js.Any]))
+      LastUpdateTimestamp.foreach(__v => __obj.updateDynamic("LastUpdateTimestamp")(__v.asInstanceOf[js.Any]))
+      PublishTimestamp.foreach(__v => __obj.updateDynamic("PublishTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ManagedRuleSetVersion]
+    }
+  }
+
+  /** The HTTP method of a web request. The method indicates the type of operation that the request is asking the origin to perform. This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. JSON specification: <code>"Method": {}</code>
     */
   @js.native
   trait Method extends js.Object
@@ -2351,7 +2739,7 @@ package object wafv2 {
     }
   }
 
-  /** Specifies that AWS WAF should do nothing. This is generally used to try out a rule without performing any actions. You set the <code>OverrideAction</code> on the <a>Rule</a>. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>.
+  /** Specifies that WAF should do nothing. This is used for the <code>OverrideAction</code> setting on a <a>Rule</a> when the rule uses a rule group reference statement. This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL <a>DefaultAction</a>. JSON specification: <code>"None": {}</code>
     */
   @js.native
   trait NoneAction extends js.Object
@@ -2402,7 +2790,9 @@ package object wafv2 {
     }
   }
 
-  /** The override action to apply to the rules in a rule group. Used only for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>. Set the override action to none to leave the rule actions in effect. Set it to count to only count matches, regardless of the rule action settings. In a <a>Rule</a>, you must specify either this <code>OverrideAction</code> setting or the rule <code>Action</code> setting, but not both: * If the rule statement references a rule group, use this override action setting and not the action setting. * If the rule statement does not reference a rule group, use the rule action setting and not this rule override action setting.
+  /** The action to use in the place of the action that results from the rule group evaluation. Set the override action to none to leave the result of the rule group alone. Set it to count to override the result to count only. You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+    *
+    * '''Note:'''This option is usually set to none. It does not affect how the rules in the rule group are evaluated. If you want the rules in the rule group to only count matches, do not use this and instead exclude those rules in your rule group reference statement settings.
     */
   @js.native
   trait OverrideAction extends js.Object {
@@ -2457,6 +2847,55 @@ package object wafv2 {
   }
 
   @js.native
+  trait PutManagedRuleSetVersionsRequest extends js.Object {
+    var Id: EntityId
+    var LockToken: LockToken
+    var Name: EntityName
+    var Scope: Scope
+    var RecommendedVersion: js.UndefOr[VersionKeyString]
+    var VersionsToPublish: js.UndefOr[VersionsToPublish]
+  }
+
+  object PutManagedRuleSetVersionsRequest {
+    @inline
+    def apply(
+        Id: EntityId,
+        LockToken: LockToken,
+        Name: EntityName,
+        Scope: Scope,
+        RecommendedVersion: js.UndefOr[VersionKeyString] = js.undefined,
+        VersionsToPublish: js.UndefOr[VersionsToPublish] = js.undefined
+    ): PutManagedRuleSetVersionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "LockToken" -> LockToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any]
+      )
+
+      RecommendedVersion.foreach(__v => __obj.updateDynamic("RecommendedVersion")(__v.asInstanceOf[js.Any]))
+      VersionsToPublish.foreach(__v => __obj.updateDynamic("VersionsToPublish")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutManagedRuleSetVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait PutManagedRuleSetVersionsResponse extends js.Object {
+    var NextLockToken: js.UndefOr[LockToken]
+  }
+
+  object PutManagedRuleSetVersionsResponse {
+    @inline
+    def apply(
+        NextLockToken: js.UndefOr[LockToken] = js.undefined
+    ): PutManagedRuleSetVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextLockToken.foreach(__v => __obj.updateDynamic("NextLockToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutManagedRuleSetVersionsResponse]
+    }
+  }
+
+  @js.native
   trait PutPermissionPolicyRequest extends js.Object {
     var Policy: PolicyString
     var ResourceArn: ResourceArn
@@ -2487,7 +2926,7 @@ package object wafv2 {
     }
   }
 
-  /** The query string of a web request. This is the part of a URL that appears after a <code>?</code> character, if any. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** The query string of a web request. This is the part of a URL that appears after a <code>?</code> character, if any. This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. JSON specification: <code>"QueryString": {}</code>
     */
   @js.native
   trait QueryString extends js.Object
@@ -2500,8 +2939,9 @@ package object wafv2 {
     }
   }
 
-  /** A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests. When the rule action triggers, AWS WAF blocks additional requests from the IP address until the request rate falls below the limit. You can optionally nest another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements: * An IP match statement with an IP set that specified the address 192.0.2.44. * A string match statement that searches in the User-Agent header for the string BadBot. In this
-    * rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule. You cannot nest a <code>RateBasedStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+  /** A rate-based rule tracks the rate of requests for each originating IP address, and triggers the rule action when the rate exceeds a limit that you specify on the number of requests in any 5-minute time span. You can use this to put a temporary block on requests from an IP address that is sending excessive requests. WAF tracks and manages web requests separately for each instance of a rate-based rule that you use. For example, if you provide the same rate-based rule settings in two web ACLs, each of the two rule statements represents a separate instance of the rate-based rule and gets its own tracking and management by WAF. If you define a rate-based rule inside a rule group, and then use that rule group in multiple places, each use creates a separate instance of the rate-based rule that gets its own tracking and management by WAF. When the rule action triggers, WAF blocks additional requests from the IP address until the request rate falls below the limit. You can optionally nest
+    * another statement inside the rate-based statement, to narrow the scope of the rule so that it only counts requests that match the nested statement. For example, based on recent requests that you have seen from an attacker, you might create a rate-based rule with a nested AND rule statement that contains the following nested statements: * An IP match statement with an IP set that specified the address 192.0.2.44. * A string match statement that searches in the User-Agent header for the string BadBot. In this rate-based rule, you also define a rate limit. For this example, the rate limit is 1,000. Requests that meet both of the conditions in the statements are counted. If the count exceeds 1,000 requests per five minutes, the rule action triggers. Requests that do not meet both conditions are not counted towards the rate limit and are not affected by this rule. You cannot nest a <code>RateBasedStatement</code> inside another statement, for example inside a <code>NotStatement</code>
+    * or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code> inside a web ACL and inside a rule group.
     */
   @js.native
   trait RateBasedStatement extends js.Object {
@@ -2530,7 +2970,7 @@ package object wafv2 {
     }
   }
 
-  /** The set of IP addresses that are currently blocked for a rate-based statement.
+  /** The set of IP addresses that are currently blocked for a <a>RateBasedStatement</a>.
     */
   @js.native
   trait RateBasedStatementManagedKeysIPSet extends js.Object {
@@ -2569,7 +3009,32 @@ package object wafv2 {
     }
   }
 
-  /** Contains one or more regular expressions. AWS WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>.
+  /** A rule statement used to search web request components for a match against a single regular expression.
+    */
+  @js.native
+  trait RegexMatchStatement extends js.Object {
+    var FieldToMatch: FieldToMatch
+    var RegexString: RegexPatternString
+    var TextTransformations: TextTransformations
+  }
+
+  object RegexMatchStatement {
+    @inline
+    def apply(
+        FieldToMatch: FieldToMatch,
+        RegexString: RegexPatternString,
+        TextTransformations: TextTransformations
+    ): RegexMatchStatement = {
+      val __obj = js.Dynamic.literal(
+        "FieldToMatch" -> FieldToMatch.asInstanceOf[js.Any],
+        "RegexString" -> RegexString.asInstanceOf[js.Any],
+        "TextTransformations" -> TextTransformations.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RegexMatchStatement]
+    }
+  }
+
+  /** Contains one or more regular expressions. WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>.
     */
   @js.native
   trait RegexPatternSet extends js.Object {
@@ -2599,7 +3064,7 @@ package object wafv2 {
     }
   }
 
-  /** A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>. Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, AWS WAF automatically updates all rules that reference it.
+  /** A rule statement used to search web request components for matches with regular expressions. To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you want to detect, then use the ARN of that set in this statement. A web request matches the pattern set rule statement if the request component matches any of the patterns in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>. Each regex pattern set rule statement references a regex pattern set. You create and maintain the set independent of your rules. This allows you to use the single set in multiple rules. When you update the referenced set, WAF automatically updates all rules that reference it.
     */
   @js.native
   trait RegexPatternSetReferenceStatement extends js.Object {
@@ -2654,7 +3119,7 @@ package object wafv2 {
     }
   }
 
-  /** A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to allow, block, or count. Each rule includes one top-level <a>Statement</a> that AWS WAF uses to identify matching web requests, and parameters that govern how AWS WAF handles them.
+  /** A single rule, which you can use in a <a>WebACL</a> or <a>RuleGroup</a> to identify web requests that you want to allow, block, or count. Each rule includes one top-level <a>Statement</a> that WAF uses to identify matching web requests, and parameters that govern how WAF handles them.
     */
   @js.native
   trait Rule extends js.Object {
@@ -2663,6 +3128,7 @@ package object wafv2 {
     var Statement: Statement
     var VisibilityConfig: VisibilityConfig
     var Action: js.UndefOr[RuleAction]
+    var CaptchaConfig: js.UndefOr[CaptchaConfig]
     var OverrideAction: js.UndefOr[OverrideAction]
     var RuleLabels: js.UndefOr[Labels]
   }
@@ -2675,6 +3141,7 @@ package object wafv2 {
         Statement: Statement,
         VisibilityConfig: VisibilityConfig,
         Action: js.UndefOr[RuleAction] = js.undefined,
+        CaptchaConfig: js.UndefOr[CaptchaConfig] = js.undefined,
         OverrideAction: js.UndefOr[OverrideAction] = js.undefined,
         RuleLabels: js.UndefOr[Labels] = js.undefined
     ): Rule = {
@@ -2686,18 +3153,20 @@ package object wafv2 {
       )
 
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      CaptchaConfig.foreach(__v => __obj.updateDynamic("CaptchaConfig")(__v.asInstanceOf[js.Any]))
       OverrideAction.foreach(__v => __obj.updateDynamic("OverrideAction")(__v.asInstanceOf[js.Any]))
       RuleLabels.foreach(__v => __obj.updateDynamic("RuleLabels")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Rule]
     }
   }
 
-  /** The action that AWS WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting.
+  /** The action that WAF should take on a web request when it matches a rule's statement. Settings at the web ACL level can override the rule action setting.
     */
   @js.native
   trait RuleAction extends js.Object {
     var Allow: js.UndefOr[AllowAction]
     var Block: js.UndefOr[BlockAction]
+    var Captcha: js.UndefOr[CaptchaAction]
     var Count: js.UndefOr[CountAction]
   }
 
@@ -2706,11 +3175,13 @@ package object wafv2 {
     def apply(
         Allow: js.UndefOr[AllowAction] = js.undefined,
         Block: js.UndefOr[BlockAction] = js.undefined,
+        Captcha: js.UndefOr[CaptchaAction] = js.undefined,
         Count: js.UndefOr[CountAction] = js.undefined
     ): RuleAction = {
       val __obj = js.Dynamic.literal()
       Allow.foreach(__v => __obj.updateDynamic("Allow")(__v.asInstanceOf[js.Any]))
       Block.foreach(__v => __obj.updateDynamic("Block")(__v.asInstanceOf[js.Any]))
+      Captcha.foreach(__v => __obj.updateDynamic("Captcha")(__v.asInstanceOf[js.Any]))
       Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RuleAction]
     }
@@ -2766,7 +3237,7 @@ package object wafv2 {
     }
   }
 
-  /** A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement. You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. It can only be referenced as a top-level statement within a rule.
+  /** A rule statement used to run the rules that are defined in a <a>RuleGroup</a>. To use this, create a rule group with your rules, then provide the ARN of the rule group in this statement. You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside a <code>NotStatement</code> or <code>OrStatement</code>. You can only use a rule group reference statement at the top level inside a web ACL.
     */
   @js.native
   trait RuleGroupReferenceStatement extends js.Object {
@@ -2847,6 +3318,7 @@ package object wafv2 {
     var Request: HTTPRequest
     var Weight: SampleWeight
     var Action: js.UndefOr[Action]
+    var CaptchaResponse: js.UndefOr[CaptchaResponse]
     var Labels: js.UndefOr[Labels]
     var RequestHeadersInserted: js.UndefOr[HTTPHeaders]
     var ResponseCodeSent: js.UndefOr[ResponseStatusCode]
@@ -2860,6 +3332,7 @@ package object wafv2 {
         Request: HTTPRequest,
         Weight: SampleWeight,
         Action: js.UndefOr[Action] = js.undefined,
+        CaptchaResponse: js.UndefOr[CaptchaResponse] = js.undefined,
         Labels: js.UndefOr[Labels] = js.undefined,
         RequestHeadersInserted: js.UndefOr[HTTPHeaders] = js.undefined,
         ResponseCodeSent: js.UndefOr[ResponseStatusCode] = js.undefined,
@@ -2872,6 +3345,7 @@ package object wafv2 {
       )
 
       Action.foreach(__v => __obj.updateDynamic("Action")(__v.asInstanceOf[js.Any]))
+      CaptchaResponse.foreach(__v => __obj.updateDynamic("CaptchaResponse")(__v.asInstanceOf[js.Any]))
       Labels.foreach(__v => __obj.updateDynamic("Labels")(__v.asInstanceOf[js.Any]))
       RequestHeadersInserted.foreach(__v => __obj.updateDynamic("RequestHeadersInserted")(__v.asInstanceOf[js.Any]))
       ResponseCodeSent.foreach(__v => __obj.updateDynamic("ResponseCodeSent")(__v.asInstanceOf[js.Any]))
@@ -2881,7 +3355,7 @@ package object wafv2 {
     }
   }
 
-  /** One of the headers in a web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** One of the headers in a web request, identified by name, for example, <code>User-Agent</code> or <code>Referer</code>. This setting isn't case sensitive. This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code>
     */
   @js.native
   trait SingleHeader extends js.Object {
@@ -2900,7 +3374,7 @@ package object wafv2 {
     }
   }
 
-  /** One query argument in a web request, identified by name, for example <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive.
+  /** One query argument in a web request, identified by name, for example <i>UserName</i> or <i>SalesRegion</i>. The name can be up to 30 characters long and isn't case sensitive. Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code>
     */
   @js.native
   trait SingleQueryArgument extends js.Object {
@@ -2919,7 +3393,7 @@ package object wafv2 {
     }
   }
 
-  /** A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. If you configure AWS WAF to inspect the request body, AWS WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes. If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.
+  /** A rule statement that compares a number of bytes against the size of a request component, using a comparison operator, such as greater than (&gt;) or less than (&lt;). For example, you can use a size constraint statement to look for query strings that are longer than 100 bytes. If you configure WAF to inspect the request body, WAF inspects only the first 8192 bytes (8 KB). If the request body for your web requests never exceeds 8192 bytes, you can create a size constraint condition and block requests that have a request body greater than 8192 bytes. If you choose URI for the value of Part of the request to filter on, the slash (/) in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters long.
     */
   @js.native
   trait SizeConstraintStatement extends js.Object {
@@ -2947,7 +3421,7 @@ package object wafv2 {
     }
   }
 
-  /** Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want AWS WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.
+  /** Attackers sometimes insert malicious SQL code into web requests in an effort to extract data from your database. To allow or block web requests that appear to contain malicious SQL code, create one or more SQL injection match conditions. An SQL injection match condition identifies the part of web requests, such as the URI or the query string, that you want WAF to inspect. Later in the process, when you create a web ACL, you specify whether to allow or block requests that appear to contain malicious SQL code.
     */
   @js.native
   trait SqliMatchStatement extends js.Object {
@@ -2969,7 +3443,7 @@ package object wafv2 {
     }
   }
 
-  /** The processing guidance for a <a>Rule</a>, used by AWS WAF to determine whether a web request matches the rule.
+  /** The processing guidance for a <a>Rule</a>, used by WAF to determine whether a web request matches the rule.
     */
   @js.native
   trait Statement extends js.Object {
@@ -2982,6 +3456,7 @@ package object wafv2 {
     var NotStatement: js.UndefOr[NotStatement]
     var OrStatement: js.UndefOr[OrStatement]
     var RateBasedStatement: js.UndefOr[RateBasedStatement]
+    var RegexMatchStatement: js.UndefOr[RegexMatchStatement]
     var RegexPatternSetReferenceStatement: js.UndefOr[RegexPatternSetReferenceStatement]
     var RuleGroupReferenceStatement: js.UndefOr[RuleGroupReferenceStatement]
     var SizeConstraintStatement: js.UndefOr[SizeConstraintStatement]
@@ -3001,6 +3476,7 @@ package object wafv2 {
         NotStatement: js.UndefOr[NotStatement] = js.undefined,
         OrStatement: js.UndefOr[OrStatement] = js.undefined,
         RateBasedStatement: js.UndefOr[RateBasedStatement] = js.undefined,
+        RegexMatchStatement: js.UndefOr[RegexMatchStatement] = js.undefined,
         RegexPatternSetReferenceStatement: js.UndefOr[RegexPatternSetReferenceStatement] = js.undefined,
         RuleGroupReferenceStatement: js.UndefOr[RuleGroupReferenceStatement] = js.undefined,
         SizeConstraintStatement: js.UndefOr[SizeConstraintStatement] = js.undefined,
@@ -3017,6 +3493,7 @@ package object wafv2 {
       NotStatement.foreach(__v => __obj.updateDynamic("NotStatement")(__v.asInstanceOf[js.Any]))
       OrStatement.foreach(__v => __obj.updateDynamic("OrStatement")(__v.asInstanceOf[js.Any]))
       RateBasedStatement.foreach(__v => __obj.updateDynamic("RateBasedStatement")(__v.asInstanceOf[js.Any]))
+      RegexMatchStatement.foreach(__v => __obj.updateDynamic("RegexMatchStatement")(__v.asInstanceOf[js.Any]))
       RegexPatternSetReferenceStatement.foreach(__v => __obj.updateDynamic("RegexPatternSetReferenceStatement")(__v.asInstanceOf[js.Any]))
       RuleGroupReferenceStatement.foreach(__v => __obj.updateDynamic("RuleGroupReferenceStatement")(__v.asInstanceOf[js.Any]))
       SizeConstraintStatement.foreach(__v => __obj.updateDynamic("SizeConstraintStatement")(__v.asInstanceOf[js.Any]))
@@ -3026,7 +3503,7 @@ package object wafv2 {
     }
   }
 
-  /** A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource. You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF console.
+  /** A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource. You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console.
     */
   @js.native
   trait Tag extends js.Object {
@@ -3048,7 +3525,7 @@ package object wafv2 {
     }
   }
 
-  /** The collection of tagging definitions for an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource. You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the AWS WAF console.
+  /** The collection of tagging definitions for an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource. You can tag the Amazon Web Services resources that you manage through WAF: web ACLs, rule groups, IP sets, and regex pattern sets. You can't manage or view tags through the WAF console.
     */
   @js.native
   trait TagInfoForResource extends js.Object {
@@ -3122,7 +3599,7 @@ package object wafv2 {
     }
   }
 
-  /** In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want AWS WAF to return a sample of web requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which AWS WAF actually returned a sample of web requests. AWS WAF gets the specified number of requests from among the first 5,000 requests that your AWS resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, AWS WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS WAF received the 5,000th request.
+  /** In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which you want WAF to return a sample of web requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time range for which WAF actually returned a sample of web requests. WAF gets the specified number of requests from among the first 5,000 requests that your Amazon Web Services resource receives during the specified time period. If your resource receives more than 5,000 requests during that period, WAF stops sampling after the 5,000th request. In that case, <code>EndTime</code> is the time that WAF received the 5,000th request.
     */
   @js.native
   trait TimeWindow extends js.Object {
@@ -3221,6 +3698,60 @@ package object wafv2 {
       val __obj = js.Dynamic.literal()
       NextLockToken.foreach(__v => __obj.updateDynamic("NextLockToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateIPSetResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateManagedRuleSetVersionExpiryDateRequest extends js.Object {
+    var ExpiryTimestamp: Timestamp
+    var Id: EntityId
+    var LockToken: LockToken
+    var Name: EntityName
+    var Scope: Scope
+    var VersionToExpire: VersionKeyString
+  }
+
+  object UpdateManagedRuleSetVersionExpiryDateRequest {
+    @inline
+    def apply(
+        ExpiryTimestamp: Timestamp,
+        Id: EntityId,
+        LockToken: LockToken,
+        Name: EntityName,
+        Scope: Scope,
+        VersionToExpire: VersionKeyString
+    ): UpdateManagedRuleSetVersionExpiryDateRequest = {
+      val __obj = js.Dynamic.literal(
+        "ExpiryTimestamp" -> ExpiryTimestamp.asInstanceOf[js.Any],
+        "Id" -> Id.asInstanceOf[js.Any],
+        "LockToken" -> LockToken.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Scope" -> Scope.asInstanceOf[js.Any],
+        "VersionToExpire" -> VersionToExpire.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateManagedRuleSetVersionExpiryDateRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateManagedRuleSetVersionExpiryDateResponse extends js.Object {
+    var ExpiringVersion: js.UndefOr[VersionKeyString]
+    var ExpiryTimestamp: js.UndefOr[Timestamp]
+    var NextLockToken: js.UndefOr[LockToken]
+  }
+
+  object UpdateManagedRuleSetVersionExpiryDateResponse {
+    @inline
+    def apply(
+        ExpiringVersion: js.UndefOr[VersionKeyString] = js.undefined,
+        ExpiryTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        NextLockToken: js.UndefOr[LockToken] = js.undefined
+    ): UpdateManagedRuleSetVersionExpiryDateResponse = {
+      val __obj = js.Dynamic.literal()
+      ExpiringVersion.foreach(__v => __obj.updateDynamic("ExpiringVersion")(__v.asInstanceOf[js.Any]))
+      ExpiryTimestamp.foreach(__v => __obj.updateDynamic("ExpiryTimestamp")(__v.asInstanceOf[js.Any]))
+      NextLockToken.foreach(__v => __obj.updateDynamic("NextLockToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateManagedRuleSetVersionExpiryDateResponse]
     }
   }
 
@@ -3336,6 +3867,7 @@ package object wafv2 {
     var Name: EntityName
     var Scope: Scope
     var VisibilityConfig: VisibilityConfig
+    var CaptchaConfig: js.UndefOr[CaptchaConfig]
     var CustomResponseBodies: js.UndefOr[CustomResponseBodies]
     var Description: js.UndefOr[EntityDescription]
     var Rules: js.UndefOr[Rules]
@@ -3350,6 +3882,7 @@ package object wafv2 {
         Name: EntityName,
         Scope: Scope,
         VisibilityConfig: VisibilityConfig,
+        CaptchaConfig: js.UndefOr[CaptchaConfig] = js.undefined,
         CustomResponseBodies: js.UndefOr[CustomResponseBodies] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
         Rules: js.UndefOr[Rules] = js.undefined
@@ -3363,6 +3896,7 @@ package object wafv2 {
         "VisibilityConfig" -> VisibilityConfig.asInstanceOf[js.Any]
       )
 
+      CaptchaConfig.foreach(__v => __obj.updateDynamic("CaptchaConfig")(__v.asInstanceOf[js.Any]))
       CustomResponseBodies.foreach(__v => __obj.updateDynamic("CustomResponseBodies")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
@@ -3386,7 +3920,7 @@ package object wafv2 {
     }
   }
 
-  /** The path component of the URI of a web request. This is the part of a web request that identifies a resource, for example, <code>/images/daily-ad.jpg</code>. This is used only to indicate the web request component for AWS WAF to inspect, in the <a>FieldToMatch</a> specification.
+  /** The path component of the URI of a web request. This is the part of a web request that identifies a resource. For example, <code>/images/daily-ad.jpg</code>. This is used only to indicate the web request component for WAF to inspect, in the <a>FieldToMatch</a> specification. JSON specification: <code>"UriPath": {}</code>
     */
   @js.native
   trait UriPath extends js.Object
@@ -3396,6 +3930,29 @@ package object wafv2 {
     def apply(): UriPath = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UriPath]
+    }
+  }
+
+  /** A version of the named managed rule group, that the rule group's vendor publishes for use by customers.
+    *
+    * '''Note:'''This is intended for use only by vendors of managed rule sets. Vendors are Amazon Web Services and Amazon Web Services Marketplace sellers. Vendors, you can use the managed rule set APIs to provide controlled rollout of your versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>, <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.
+    */
+  @js.native
+  trait VersionToPublish extends js.Object {
+    var AssociatedRuleGroupArn: js.UndefOr[ResourceArn]
+    var ForecastedLifetime: js.UndefOr[TimeWindowDay]
+  }
+
+  object VersionToPublish {
+    @inline
+    def apply(
+        AssociatedRuleGroupArn: js.UndefOr[ResourceArn] = js.undefined,
+        ForecastedLifetime: js.UndefOr[TimeWindowDay] = js.undefined
+    ): VersionToPublish = {
+      val __obj = js.Dynamic.literal()
+      AssociatedRuleGroupArn.foreach(__v => __obj.updateDynamic("AssociatedRuleGroupArn")(__v.asInstanceOf[js.Any]))
+      ForecastedLifetime.foreach(__v => __obj.updateDynamic("ForecastedLifetime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VersionToPublish]
     }
   }
 
@@ -3424,7 +3981,7 @@ package object wafv2 {
     }
   }
 
-  /** A Web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the Web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a Web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a Web ACL with one or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API.
+  /** A web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined (allow, block, or count) for requests that match the statement of the rule. In the web ACL, you assign a default action to take (allow, block) for any request that does not match any of the rules. The rules in a web ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one or more Amazon Web Services resources to protect. The resources can be an Amazon CloudFront distribution, an Amazon API Gateway REST API, an Application Load Balancer, or an AppSync GraphQL API.
     */
   @js.native
   trait WebACL extends js.Object {
@@ -3434,6 +3991,7 @@ package object wafv2 {
     var Name: EntityName
     var VisibilityConfig: VisibilityConfig
     var Capacity: js.UndefOr[ConsumedCapacity]
+    var CaptchaConfig: js.UndefOr[CaptchaConfig]
     var CustomResponseBodies: js.UndefOr[CustomResponseBodies]
     var Description: js.UndefOr[EntityDescription]
     var LabelNamespace: js.UndefOr[LabelName]
@@ -3452,6 +4010,7 @@ package object wafv2 {
         Name: EntityName,
         VisibilityConfig: VisibilityConfig,
         Capacity: js.UndefOr[ConsumedCapacity] = js.undefined,
+        CaptchaConfig: js.UndefOr[CaptchaConfig] = js.undefined,
         CustomResponseBodies: js.UndefOr[CustomResponseBodies] = js.undefined,
         Description: js.UndefOr[EntityDescription] = js.undefined,
         LabelNamespace: js.UndefOr[LabelName] = js.undefined,
@@ -3469,6 +4028,7 @@ package object wafv2 {
       )
 
       Capacity.foreach(__v => __obj.updateDynamic("Capacity")(__v.asInstanceOf[js.Any]))
+      CaptchaConfig.foreach(__v => __obj.updateDynamic("CaptchaConfig")(__v.asInstanceOf[js.Any]))
       CustomResponseBodies.foreach(__v => __obj.updateDynamic("CustomResponseBodies")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LabelNamespace.foreach(__v => __obj.updateDynamic("LabelNamespace")(__v.asInstanceOf[js.Any]))
@@ -3510,7 +4070,7 @@ package object wafv2 {
     }
   }
 
-  /** A rule statement that defines a cross-site scripting (XSS) match search for AWS WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want AWS WAF to search and text transformations to use on the search area before AWS WAF searches for character sequences that are likely to be malicious strings.
+  /** A rule statement that defines a cross-site scripting (XSS) match search for WAF to apply to web requests. XSS attacks are those where the attacker uses vulnerabilities in a benign website as a vehicle to inject malicious client-site scripts into other legitimate web browsers. The XSS match statement provides the location in requests that you want WAF to search and text transformations to use on the search area before WAF searches for character sequences that are likely to be malicious strings.
     */
   @js.native
   trait XssMatchStatement extends js.Object {

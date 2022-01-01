@@ -9,11 +9,14 @@ import facade.amazonaws._
 
 package object amplifybackend {
   type ListOfAdditionalConstraintsElement = js.Array[AdditionalConstraintsElement]
+  type ListOfAuthenticatedElement = js.Array[AuthenticatedElement]
   type ListOfBackendAPIAuthType = js.Array[BackendAPIAuthType]
   type ListOfBackendJobRespObj = js.Array[BackendJobRespObj]
   type ListOfMfaTypesElement = js.Array[MfaTypesElement]
   type ListOfOAuthScopesElement = js.Array[OAuthScopesElement]
   type ListOfRequiredSignUpAttributesElement = js.Array[RequiredSignUpAttributesElement]
+  type ListOfS3BucketInfo = js.Array[S3BucketInfo]
+  type ListOfUnAuthenticatedElement = js.Array[UnAuthenticatedElement]
   type ListOf__string = js.Array[__string]
   type __boolean = Boolean
   type __double = Double
@@ -27,10 +30,12 @@ package object amplifybackend {
     @inline def createBackendAuthFuture(params: CreateBackendAuthRequest): Future[CreateBackendAuthResponse] = service.createBackendAuth(params).promise().toFuture
     @inline def createBackendConfigFuture(params: CreateBackendConfigRequest): Future[CreateBackendConfigResponse] = service.createBackendConfig(params).promise().toFuture
     @inline def createBackendFuture(params: CreateBackendRequest): Future[CreateBackendResponse] = service.createBackend(params).promise().toFuture
+    @inline def createBackendStorageFuture(params: CreateBackendStorageRequest): Future[CreateBackendStorageResponse] = service.createBackendStorage(params).promise().toFuture
     @inline def createTokenFuture(params: CreateTokenRequest): Future[CreateTokenResponse] = service.createToken(params).promise().toFuture
     @inline def deleteBackendAPIFuture(params: DeleteBackendAPIRequest): Future[DeleteBackendAPIResponse] = service.deleteBackendAPI(params).promise().toFuture
     @inline def deleteBackendAuthFuture(params: DeleteBackendAuthRequest): Future[DeleteBackendAuthResponse] = service.deleteBackendAuth(params).promise().toFuture
     @inline def deleteBackendFuture(params: DeleteBackendRequest): Future[DeleteBackendResponse] = service.deleteBackend(params).promise().toFuture
+    @inline def deleteBackendStorageFuture(params: DeleteBackendStorageRequest): Future[DeleteBackendStorageResponse] = service.deleteBackendStorage(params).promise().toFuture
     @inline def deleteTokenFuture(params: DeleteTokenRequest): Future[DeleteTokenResponse] = service.deleteToken(params).promise().toFuture
     @inline def generateBackendAPIModelsFuture(params: GenerateBackendAPIModelsRequest): Future[GenerateBackendAPIModelsResponse] = service.generateBackendAPIModels(params).promise().toFuture
     @inline def getBackendAPIFuture(params: GetBackendAPIRequest): Future[GetBackendAPIResponse] = service.getBackendAPI(params).promise().toFuture
@@ -38,14 +43,19 @@ package object amplifybackend {
     @inline def getBackendAuthFuture(params: GetBackendAuthRequest): Future[GetBackendAuthResponse] = service.getBackendAuth(params).promise().toFuture
     @inline def getBackendFuture(params: GetBackendRequest): Future[GetBackendResponse] = service.getBackend(params).promise().toFuture
     @inline def getBackendJobFuture(params: GetBackendJobRequest): Future[GetBackendJobResponse] = service.getBackendJob(params).promise().toFuture
+    @inline def getBackendStorageFuture(params: GetBackendStorageRequest): Future[GetBackendStorageResponse] = service.getBackendStorage(params).promise().toFuture
     @inline def getTokenFuture(params: GetTokenRequest): Future[GetTokenResponse] = service.getToken(params).promise().toFuture
+    @inline def importBackendAuthFuture(params: ImportBackendAuthRequest): Future[ImportBackendAuthResponse] = service.importBackendAuth(params).promise().toFuture
+    @inline def importBackendStorageFuture(params: ImportBackendStorageRequest): Future[ImportBackendStorageResponse] = service.importBackendStorage(params).promise().toFuture
     @inline def listBackendJobsFuture(params: ListBackendJobsRequest): Future[ListBackendJobsResponse] = service.listBackendJobs(params).promise().toFuture
+    @inline def listS3BucketsFuture(params: ListS3BucketsRequest): Future[ListS3BucketsResponse] = service.listS3Buckets(params).promise().toFuture
     @inline def removeAllBackendsFuture(params: RemoveAllBackendsRequest): Future[RemoveAllBackendsResponse] = service.removeAllBackends(params).promise().toFuture
     @inline def removeBackendConfigFuture(params: RemoveBackendConfigRequest): Future[RemoveBackendConfigResponse] = service.removeBackendConfig(params).promise().toFuture
     @inline def updateBackendAPIFuture(params: UpdateBackendAPIRequest): Future[UpdateBackendAPIResponse] = service.updateBackendAPI(params).promise().toFuture
     @inline def updateBackendAuthFuture(params: UpdateBackendAuthRequest): Future[UpdateBackendAuthResponse] = service.updateBackendAuth(params).promise().toFuture
     @inline def updateBackendConfigFuture(params: UpdateBackendConfigRequest): Future[UpdateBackendConfigResponse] = service.updateBackendConfig(params).promise().toFuture
     @inline def updateBackendJobFuture(params: UpdateBackendJobRequest): Future[UpdateBackendJobResponse] = service.updateBackendJob(params).promise().toFuture
+    @inline def updateBackendStorageFuture(params: UpdateBackendStorageRequest): Future[UpdateBackendStorageResponse] = service.updateBackendStorage(params).promise().toFuture
 
   }
 
@@ -59,10 +69,12 @@ package object amplifybackend {
     def createBackendAPI(params: CreateBackendAPIRequest): Request[CreateBackendAPIResponse] = js.native
     def createBackendAuth(params: CreateBackendAuthRequest): Request[CreateBackendAuthResponse] = js.native
     def createBackendConfig(params: CreateBackendConfigRequest): Request[CreateBackendConfigResponse] = js.native
+    def createBackendStorage(params: CreateBackendStorageRequest): Request[CreateBackendStorageResponse] = js.native
     def createToken(params: CreateTokenRequest): Request[CreateTokenResponse] = js.native
     def deleteBackend(params: DeleteBackendRequest): Request[DeleteBackendResponse] = js.native
     def deleteBackendAPI(params: DeleteBackendAPIRequest): Request[DeleteBackendAPIResponse] = js.native
     def deleteBackendAuth(params: DeleteBackendAuthRequest): Request[DeleteBackendAuthResponse] = js.native
+    def deleteBackendStorage(params: DeleteBackendStorageRequest): Request[DeleteBackendStorageResponse] = js.native
     def deleteToken(params: DeleteTokenRequest): Request[DeleteTokenResponse] = js.native
     def generateBackendAPIModels(params: GenerateBackendAPIModelsRequest): Request[GenerateBackendAPIModelsResponse] = js.native
     def getBackend(params: GetBackendRequest): Request[GetBackendResponse] = js.native
@@ -70,14 +82,19 @@ package object amplifybackend {
     def getBackendAPIModels(params: GetBackendAPIModelsRequest): Request[GetBackendAPIModelsResponse] = js.native
     def getBackendAuth(params: GetBackendAuthRequest): Request[GetBackendAuthResponse] = js.native
     def getBackendJob(params: GetBackendJobRequest): Request[GetBackendJobResponse] = js.native
+    def getBackendStorage(params: GetBackendStorageRequest): Request[GetBackendStorageResponse] = js.native
     def getToken(params: GetTokenRequest): Request[GetTokenResponse] = js.native
+    def importBackendAuth(params: ImportBackendAuthRequest): Request[ImportBackendAuthResponse] = js.native
+    def importBackendStorage(params: ImportBackendStorageRequest): Request[ImportBackendStorageResponse] = js.native
     def listBackendJobs(params: ListBackendJobsRequest): Request[ListBackendJobsResponse] = js.native
+    def listS3Buckets(params: ListS3BucketsRequest): Request[ListS3BucketsResponse] = js.native
     def removeAllBackends(params: RemoveAllBackendsRequest): Request[RemoveAllBackendsResponse] = js.native
     def removeBackendConfig(params: RemoveBackendConfigRequest): Request[RemoveBackendConfigResponse] = js.native
     def updateBackendAPI(params: UpdateBackendAPIRequest): Request[UpdateBackendAPIResponse] = js.native
     def updateBackendAuth(params: UpdateBackendAuthRequest): Request[UpdateBackendAuthResponse] = js.native
     def updateBackendConfig(params: UpdateBackendConfigRequest): Request[UpdateBackendConfigResponse] = js.native
     def updateBackendJob(params: UpdateBackendJobRequest): Request[UpdateBackendJobResponse] = js.native
+    def updateBackendStorage(params: UpdateBackendStorageRequest): Request[UpdateBackendStorageResponse] = js.native
   }
   object AmplifyBackend {
     @inline implicit def toOps(service: AmplifyBackend): AmplifyBackendOps = {
@@ -145,7 +162,7 @@ package object amplifybackend {
     }
   }
 
-  /** Describes the conflict resolution configuration for the data model configured in your Amplify project.
+  /** Describes the conflict resolution configuration for your data model configured in your Amplify project.
     */
   @js.native
   trait BackendAPIConflictResolution extends js.Object {
@@ -163,7 +180,7 @@ package object amplifybackend {
     }
   }
 
-  /** The resource configuration for the data model, configured as a part of the Amplify project.
+  /** The resource config for the data model, configured as a part of the Amplify project.
     */
   @js.native
   trait BackendAPIResourceConfig extends js.Object {
@@ -193,6 +210,33 @@ package object amplifybackend {
       Service.foreach(__v => __obj.updateDynamic("Service")(__v.asInstanceOf[js.Any]))
       TransformSchema.foreach(__v => __obj.updateDynamic("TransformSchema")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackendAPIResourceConfig]
+    }
+  }
+
+  /** Describes Apple social federation configurations for allowing your app users to sign in using OAuth.
+    */
+  @js.native
+  trait BackendAuthAppleProviderConfig extends js.Object {
+    var ClientId: js.UndefOr[__string]
+    var KeyId: js.UndefOr[__string]
+    var PrivateKey: js.UndefOr[__string]
+    var TeamId: js.UndefOr[__string]
+  }
+
+  object BackendAuthAppleProviderConfig {
+    @inline
+    def apply(
+        ClientId: js.UndefOr[__string] = js.undefined,
+        KeyId: js.UndefOr[__string] = js.undefined,
+        PrivateKey: js.UndefOr[__string] = js.undefined,
+        TeamId: js.UndefOr[__string] = js.undefined
+    ): BackendAuthAppleProviderConfig = {
+      val __obj = js.Dynamic.literal()
+      ClientId.foreach(__v => __obj.updateDynamic("ClientId")(__v.asInstanceOf[js.Any]))
+      KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      PrivateKey.foreach(__v => __obj.updateDynamic("PrivateKey")(__v.asInstanceOf[js.Any]))
+      TeamId.foreach(__v => __obj.updateDynamic("TeamId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BackendAuthAppleProviderConfig]
     }
   }
 
@@ -255,6 +299,29 @@ package object amplifybackend {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdateTime.foreach(__v => __obj.updateDynamic("UpdateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackendJobRespObj]
+    }
+  }
+
+  /** Describes the read, write, and delete permissions users have against your storage S3 bucket.
+    */
+  @js.native
+  trait BackendStoragePermissions extends js.Object {
+    var Authenticated: ListOfAuthenticatedElement
+    var UnAuthenticated: js.UndefOr[ListOfUnAuthenticatedElement]
+  }
+
+  object BackendStoragePermissions {
+    @inline
+    def apply(
+        Authenticated: ListOfAuthenticatedElement,
+        UnAuthenticated: js.UndefOr[ListOfUnAuthenticatedElement] = js.undefined
+    ): BackendStoragePermissions = {
+      val __obj = js.Dynamic.literal(
+        "Authenticated" -> Authenticated.asInstanceOf[js.Any]
+      )
+
+      UnAuthenticated.foreach(__v => __obj.updateDynamic("UnAuthenticated")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BackendStoragePermissions]
     }
   }
 
@@ -421,7 +488,7 @@ package object amplifybackend {
     }
   }
 
-  /** Describes whether to apply multi-factor authentication (MFA) policies for your Amazon Cognito user pool that's configured as a part of your Amplify project.
+  /** Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.
     */
   @js.native
   trait CreateBackendAuthMFAConfig extends js.Object {
@@ -479,7 +546,7 @@ package object amplifybackend {
     }
   }
 
-  /** The password policy configuration for the backend of your Amplify project.
+  /** The password policy configuration for the backend to your Amplify project.
     */
   @js.native
   trait CreateBackendAuthPasswordPolicyConfig extends js.Object {
@@ -739,6 +806,85 @@ package object amplifybackend {
     }
   }
 
+  /** The request body for CreateBackendStorage.
+    */
+  @js.native
+  trait CreateBackendStorageRequest extends js.Object {
+    var AppId: __string
+    var BackendEnvironmentName: __string
+    var ResourceConfig: CreateBackendStorageResourceConfig
+    var ResourceName: __string
+  }
+
+  object CreateBackendStorageRequest {
+    @inline
+    def apply(
+        AppId: __string,
+        BackendEnvironmentName: __string,
+        ResourceConfig: CreateBackendStorageResourceConfig,
+        ResourceName: __string
+    ): CreateBackendStorageRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppId" -> AppId.asInstanceOf[js.Any],
+        "BackendEnvironmentName" -> BackendEnvironmentName.asInstanceOf[js.Any],
+        "ResourceConfig" -> ResourceConfig.asInstanceOf[js.Any],
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateBackendStorageRequest]
+    }
+  }
+
+  /** The resource configuration for creating backend storage.
+    */
+  @js.native
+  trait CreateBackendStorageResourceConfig extends js.Object {
+    var Permissions: BackendStoragePermissions
+    var ServiceName: ServiceName
+    var BucketName: js.UndefOr[__string]
+  }
+
+  object CreateBackendStorageResourceConfig {
+    @inline
+    def apply(
+        Permissions: BackendStoragePermissions,
+        ServiceName: ServiceName,
+        BucketName: js.UndefOr[__string] = js.undefined
+    ): CreateBackendStorageResourceConfig = {
+      val __obj = js.Dynamic.literal(
+        "Permissions" -> Permissions.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any]
+      )
+
+      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBackendStorageResourceConfig]
+    }
+  }
+
+  @js.native
+  trait CreateBackendStorageResponse extends js.Object {
+    var AppId: js.UndefOr[__string]
+    var BackendEnvironmentName: js.UndefOr[__string]
+    var JobId: js.UndefOr[__string]
+    var Status: js.UndefOr[__string]
+  }
+
+  object CreateBackendStorageResponse {
+    @inline
+    def apply(
+        AppId: js.UndefOr[__string] = js.undefined,
+        BackendEnvironmentName: js.UndefOr[__string] = js.undefined,
+        JobId: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[__string] = js.undefined
+    ): CreateBackendStorageResponse = {
+      val __obj = js.Dynamic.literal()
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
+      BackendEnvironmentName.foreach(__v => __obj.updateDynamic("BackendEnvironmentName")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBackendStorageResponse]
+    }
+  }
+
   @js.native
   trait CreateTokenRequest extends js.Object {
     var AppId: __string
@@ -945,6 +1091,59 @@ package object amplifybackend {
       Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteBackendResponse]
+    }
+  }
+
+  /** The request body for DeleteBackendStorage.
+    */
+  @js.native
+  trait DeleteBackendStorageRequest extends js.Object {
+    var AppId: __string
+    var BackendEnvironmentName: __string
+    var ResourceName: __string
+    var ServiceName: ServiceName
+  }
+
+  object DeleteBackendStorageRequest {
+    @inline
+    def apply(
+        AppId: __string,
+        BackendEnvironmentName: __string,
+        ResourceName: __string,
+        ServiceName: ServiceName
+    ): DeleteBackendStorageRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppId" -> AppId.asInstanceOf[js.Any],
+        "BackendEnvironmentName" -> BackendEnvironmentName.asInstanceOf[js.Any],
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBackendStorageRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBackendStorageResponse extends js.Object {
+    var AppId: js.UndefOr[__string]
+    var BackendEnvironmentName: js.UndefOr[__string]
+    var JobId: js.UndefOr[__string]
+    var Status: js.UndefOr[__string]
+  }
+
+  object DeleteBackendStorageResponse {
+    @inline
+    def apply(
+        AppId: js.UndefOr[__string] = js.undefined,
+        BackendEnvironmentName: js.UndefOr[__string] = js.undefined,
+        JobId: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[__string] = js.undefined
+    ): DeleteBackendStorageResponse = {
+      val __obj = js.Dynamic.literal()
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
+      BackendEnvironmentName.foreach(__v => __obj.updateDynamic("BackendEnvironmentName")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBackendStorageResponse]
     }
   }
 
@@ -1300,6 +1499,7 @@ package object amplifybackend {
 
   @js.native
   trait GetBackendResponse extends js.Object {
+    var AmplifyFeatureFlags: js.UndefOr[__string]
     var AmplifyMetaConfig: js.UndefOr[__string]
     var AppId: js.UndefOr[__string]
     var AppName: js.UndefOr[__string]
@@ -1311,6 +1511,7 @@ package object amplifybackend {
   object GetBackendResponse {
     @inline
     def apply(
+        AmplifyFeatureFlags: js.UndefOr[__string] = js.undefined,
         AmplifyMetaConfig: js.UndefOr[__string] = js.undefined,
         AppId: js.UndefOr[__string] = js.undefined,
         AppName: js.UndefOr[__string] = js.undefined,
@@ -1319,6 +1520,7 @@ package object amplifybackend {
         Error: js.UndefOr[__string] = js.undefined
     ): GetBackendResponse = {
       val __obj = js.Dynamic.literal()
+      AmplifyFeatureFlags.foreach(__v => __obj.updateDynamic("AmplifyFeatureFlags")(__v.asInstanceOf[js.Any]))
       AmplifyMetaConfig.foreach(__v => __obj.updateDynamic("AmplifyMetaConfig")(__v.asInstanceOf[js.Any]))
       AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
       AppName.foreach(__v => __obj.updateDynamic("AppName")(__v.asInstanceOf[js.Any]))
@@ -1326,6 +1528,85 @@ package object amplifybackend {
       BackendEnvironmentName.foreach(__v => __obj.updateDynamic("BackendEnvironmentName")(__v.asInstanceOf[js.Any]))
       Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBackendResponse]
+    }
+  }
+
+  /** The request body for GetBackendStorage.
+    */
+  @js.native
+  trait GetBackendStorageRequest extends js.Object {
+    var AppId: __string
+    var BackendEnvironmentName: __string
+    var ResourceName: __string
+  }
+
+  object GetBackendStorageRequest {
+    @inline
+    def apply(
+        AppId: __string,
+        BackendEnvironmentName: __string,
+        ResourceName: __string
+    ): GetBackendStorageRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppId" -> AppId.asInstanceOf[js.Any],
+        "BackendEnvironmentName" -> BackendEnvironmentName.asInstanceOf[js.Any],
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetBackendStorageRequest]
+    }
+  }
+
+  /** The details for a backend storage resource.
+    */
+  @js.native
+  trait GetBackendStorageResourceConfig extends js.Object {
+    var Imported: __boolean
+    var ServiceName: ServiceName
+    var BucketName: js.UndefOr[__string]
+    var Permissions: js.UndefOr[BackendStoragePermissions]
+  }
+
+  object GetBackendStorageResourceConfig {
+    @inline
+    def apply(
+        Imported: __boolean,
+        ServiceName: ServiceName,
+        BucketName: js.UndefOr[__string] = js.undefined,
+        Permissions: js.UndefOr[BackendStoragePermissions] = js.undefined
+    ): GetBackendStorageResourceConfig = {
+      val __obj = js.Dynamic.literal(
+        "Imported" -> Imported.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any]
+      )
+
+      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
+      Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBackendStorageResourceConfig]
+    }
+  }
+
+  @js.native
+  trait GetBackendStorageResponse extends js.Object {
+    var AppId: js.UndefOr[__string]
+    var BackendEnvironmentName: js.UndefOr[__string]
+    var ResourceConfig: js.UndefOr[GetBackendStorageResourceConfig]
+    var ResourceName: js.UndefOr[__string]
+  }
+
+  object GetBackendStorageResponse {
+    @inline
+    def apply(
+        AppId: js.UndefOr[__string] = js.undefined,
+        BackendEnvironmentName: js.UndefOr[__string] = js.undefined,
+        ResourceConfig: js.UndefOr[GetBackendStorageResourceConfig] = js.undefined,
+        ResourceName: js.UndefOr[__string] = js.undefined
+    ): GetBackendStorageResponse = {
+      val __obj = js.Dynamic.literal()
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
+      BackendEnvironmentName.foreach(__v => __obj.updateDynamic("BackendEnvironmentName")(__v.asInstanceOf[js.Any]))
+      ResourceConfig.foreach(__v => __obj.updateDynamic("ResourceConfig")(__v.asInstanceOf[js.Any]))
+      ResourceName.foreach(__v => __obj.updateDynamic("ResourceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBackendStorageResponse]
     }
   }
 
@@ -1371,6 +1652,126 @@ package object amplifybackend {
       SessionId.foreach(__v => __obj.updateDynamic("SessionId")(__v.asInstanceOf[js.Any]))
       Ttl.foreach(__v => __obj.updateDynamic("Ttl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTokenResponse]
+    }
+  }
+
+  /** The request body for ImportBackendAuth.
+    */
+  @js.native
+  trait ImportBackendAuthRequest extends js.Object {
+    var AppId: __string
+    var BackendEnvironmentName: __string
+    var NativeClientId: __string
+    var UserPoolId: __string
+    var WebClientId: __string
+    var IdentityPoolId: js.UndefOr[__string]
+  }
+
+  object ImportBackendAuthRequest {
+    @inline
+    def apply(
+        AppId: __string,
+        BackendEnvironmentName: __string,
+        NativeClientId: __string,
+        UserPoolId: __string,
+        WebClientId: __string,
+        IdentityPoolId: js.UndefOr[__string] = js.undefined
+    ): ImportBackendAuthRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppId" -> AppId.asInstanceOf[js.Any],
+        "BackendEnvironmentName" -> BackendEnvironmentName.asInstanceOf[js.Any],
+        "NativeClientId" -> NativeClientId.asInstanceOf[js.Any],
+        "UserPoolId" -> UserPoolId.asInstanceOf[js.Any],
+        "WebClientId" -> WebClientId.asInstanceOf[js.Any]
+      )
+
+      IdentityPoolId.foreach(__v => __obj.updateDynamic("IdentityPoolId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportBackendAuthRequest]
+    }
+  }
+
+  @js.native
+  trait ImportBackendAuthResponse extends js.Object {
+    var AppId: js.UndefOr[__string]
+    var BackendEnvironmentName: js.UndefOr[__string]
+    var Error: js.UndefOr[__string]
+    var JobId: js.UndefOr[__string]
+    var Operation: js.UndefOr[__string]
+    var Status: js.UndefOr[__string]
+  }
+
+  object ImportBackendAuthResponse {
+    @inline
+    def apply(
+        AppId: js.UndefOr[__string] = js.undefined,
+        BackendEnvironmentName: js.UndefOr[__string] = js.undefined,
+        Error: js.UndefOr[__string] = js.undefined,
+        JobId: js.UndefOr[__string] = js.undefined,
+        Operation: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[__string] = js.undefined
+    ): ImportBackendAuthResponse = {
+      val __obj = js.Dynamic.literal()
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
+      BackendEnvironmentName.foreach(__v => __obj.updateDynamic("BackendEnvironmentName")(__v.asInstanceOf[js.Any]))
+      Error.foreach(__v => __obj.updateDynamic("Error")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportBackendAuthResponse]
+    }
+  }
+
+  /** The request body for ImportBackendStorage.
+    */
+  @js.native
+  trait ImportBackendStorageRequest extends js.Object {
+    var AppId: __string
+    var BackendEnvironmentName: __string
+    var ServiceName: ServiceName
+    var BucketName: js.UndefOr[__string]
+  }
+
+  object ImportBackendStorageRequest {
+    @inline
+    def apply(
+        AppId: __string,
+        BackendEnvironmentName: __string,
+        ServiceName: ServiceName,
+        BucketName: js.UndefOr[__string] = js.undefined
+    ): ImportBackendStorageRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppId" -> AppId.asInstanceOf[js.Any],
+        "BackendEnvironmentName" -> BackendEnvironmentName.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any]
+      )
+
+      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportBackendStorageRequest]
+    }
+  }
+
+  @js.native
+  trait ImportBackendStorageResponse extends js.Object {
+    var AppId: js.UndefOr[__string]
+    var BackendEnvironmentName: js.UndefOr[__string]
+    var JobId: js.UndefOr[__string]
+    var Status: js.UndefOr[__string]
+  }
+
+  object ImportBackendStorageResponse {
+    @inline
+    def apply(
+        AppId: js.UndefOr[__string] = js.undefined,
+        BackendEnvironmentName: js.UndefOr[__string] = js.undefined,
+        JobId: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[__string] = js.undefined
+    ): ImportBackendStorageResponse = {
+      val __obj = js.Dynamic.literal()
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
+      BackendEnvironmentName.foreach(__v => __obj.updateDynamic("BackendEnvironmentName")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportBackendStorageResponse]
     }
   }
 
@@ -1428,6 +1829,43 @@ package object amplifybackend {
       Jobs.foreach(__v => __obj.updateDynamic("Jobs")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListBackendJobsResponse]
+    }
+  }
+
+  /** The request body for S3Buckets.
+    */
+  @js.native
+  trait ListS3BucketsRequest extends js.Object {
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListS3BucketsRequest {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListS3BucketsRequest = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListS3BucketsRequest]
+    }
+  }
+
+  @js.native
+  trait ListS3BucketsResponse extends js.Object {
+    var Buckets: js.UndefOr[ListOfS3BucketInfo]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListS3BucketsResponse {
+    @inline
+    def apply(
+        Buckets: js.UndefOr[ListOfS3BucketInfo] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListS3BucketsResponse = {
+      val __obj = js.Dynamic.literal()
+      Buckets.foreach(__v => __obj.updateDynamic("Buckets")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListS3BucketsResponse]
     }
   }
 
@@ -1555,6 +1993,27 @@ package object amplifybackend {
     }
   }
 
+  /** Describes the metadata of the S3 bucket.
+    */
+  @js.native
+  trait S3BucketInfo extends js.Object {
+    var CreationDate: js.UndefOr[__string]
+    var Name: js.UndefOr[__string]
+  }
+
+  object S3BucketInfo {
+    @inline
+    def apply(
+        CreationDate: js.UndefOr[__string] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined
+    ): S3BucketInfo = {
+      val __obj = js.Dynamic.literal()
+      CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3BucketInfo]
+    }
+  }
+
   /** The settings of your MFA configuration for the backend of your Amplify project.
     */
   @js.native
@@ -1601,6 +2060,7 @@ package object amplifybackend {
     var Facebook: js.UndefOr[BackendAuthSocialProviderConfig]
     var Google: js.UndefOr[BackendAuthSocialProviderConfig]
     var LoginWithAmazon: js.UndefOr[BackendAuthSocialProviderConfig]
+    var SignInWithApple: js.UndefOr[BackendAuthAppleProviderConfig]
   }
 
   object SocialProviderSettings {
@@ -1608,12 +2068,14 @@ package object amplifybackend {
     def apply(
         Facebook: js.UndefOr[BackendAuthSocialProviderConfig] = js.undefined,
         Google: js.UndefOr[BackendAuthSocialProviderConfig] = js.undefined,
-        LoginWithAmazon: js.UndefOr[BackendAuthSocialProviderConfig] = js.undefined
+        LoginWithAmazon: js.UndefOr[BackendAuthSocialProviderConfig] = js.undefined,
+        SignInWithApple: js.UndefOr[BackendAuthAppleProviderConfig] = js.undefined
     ): SocialProviderSettings = {
       val __obj = js.Dynamic.literal()
       Facebook.foreach(__v => __obj.updateDynamic("Facebook")(__v.asInstanceOf[js.Any]))
       Google.foreach(__v => __obj.updateDynamic("Google")(__v.asInstanceOf[js.Any]))
       LoginWithAmazon.foreach(__v => __obj.updateDynamic("LoginWithAmazon")(__v.asInstanceOf[js.Any]))
+      SignInWithApple.foreach(__v => __obj.updateDynamic("SignInWithApple")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SocialProviderSettings]
     }
   }
@@ -1774,7 +2236,7 @@ package object amplifybackend {
     }
   }
 
-  /** Describes the password policy for your Amazon Cognito user pool that's configured as a part of your Amplify project.
+  /** Describes the password policy for your Amazon Cognito user pool configured as a part of your Amplify project.
     */
   @js.native
   trait UpdateBackendAuthPasswordPolicyConfig extends js.Object {
@@ -1883,7 +2345,7 @@ package object amplifybackend {
     }
   }
 
-  /** Describes the Amazon Cognito user pool configuration to configure the authorization resource for your Amplify project on an update.
+  /** Describes the Amazon Cognito user pool configuration for the authorization resource to be configured for your Amplify project on an update.
     */
   @js.native
   trait UpdateBackendAuthUserPoolConfig extends js.Object {
@@ -2024,6 +2486,81 @@ package object amplifybackend {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       UpdateTime.foreach(__v => __obj.updateDynamic("UpdateTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateBackendJobResponse]
+    }
+  }
+
+  /** The request body for UpdateBackendStorage.
+    */
+  @js.native
+  trait UpdateBackendStorageRequest extends js.Object {
+    var AppId: __string
+    var BackendEnvironmentName: __string
+    var ResourceConfig: UpdateBackendStorageResourceConfig
+    var ResourceName: __string
+  }
+
+  object UpdateBackendStorageRequest {
+    @inline
+    def apply(
+        AppId: __string,
+        BackendEnvironmentName: __string,
+        ResourceConfig: UpdateBackendStorageResourceConfig,
+        ResourceName: __string
+    ): UpdateBackendStorageRequest = {
+      val __obj = js.Dynamic.literal(
+        "AppId" -> AppId.asInstanceOf[js.Any],
+        "BackendEnvironmentName" -> BackendEnvironmentName.asInstanceOf[js.Any],
+        "ResourceConfig" -> ResourceConfig.asInstanceOf[js.Any],
+        "ResourceName" -> ResourceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateBackendStorageRequest]
+    }
+  }
+
+  /** The resource configuration for updating backend storage.
+    */
+  @js.native
+  trait UpdateBackendStorageResourceConfig extends js.Object {
+    var Permissions: BackendStoragePermissions
+    var ServiceName: ServiceName
+  }
+
+  object UpdateBackendStorageResourceConfig {
+    @inline
+    def apply(
+        Permissions: BackendStoragePermissions,
+        ServiceName: ServiceName
+    ): UpdateBackendStorageResourceConfig = {
+      val __obj = js.Dynamic.literal(
+        "Permissions" -> Permissions.asInstanceOf[js.Any],
+        "ServiceName" -> ServiceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateBackendStorageResourceConfig]
+    }
+  }
+
+  @js.native
+  trait UpdateBackendStorageResponse extends js.Object {
+    var AppId: js.UndefOr[__string]
+    var BackendEnvironmentName: js.UndefOr[__string]
+    var JobId: js.UndefOr[__string]
+    var Status: js.UndefOr[__string]
+  }
+
+  object UpdateBackendStorageResponse {
+    @inline
+    def apply(
+        AppId: js.UndefOr[__string] = js.undefined,
+        BackendEnvironmentName: js.UndefOr[__string] = js.undefined,
+        JobId: js.UndefOr[__string] = js.undefined,
+        Status: js.UndefOr[__string] = js.undefined
+    ): UpdateBackendStorageResponse = {
+      val __obj = js.Dynamic.literal()
+      AppId.foreach(__v => __obj.updateDynamic("AppId")(__v.asInstanceOf[js.Any]))
+      BackendEnvironmentName.foreach(__v => __obj.updateDynamic("BackendEnvironmentName")(__v.asInstanceOf[js.Any]))
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBackendStorageResponse]
     }
   }
 }

@@ -12,6 +12,16 @@ object AccessControlRuleEffect {
 }
 
 @js.native
+sealed trait DnsRecordVerificationStatus extends js.Any
+object DnsRecordVerificationStatus {
+  val PENDING = "PENDING".asInstanceOf[DnsRecordVerificationStatus]
+  val VERIFIED = "VERIFIED".asInstanceOf[DnsRecordVerificationStatus]
+  val FAILED = "FAILED".asInstanceOf[DnsRecordVerificationStatus]
+
+  @inline def values: js.Array[DnsRecordVerificationStatus] = js.Array(PENDING, VERIFIED, FAILED)
+}
+
+@js.native
 sealed trait EntityState extends js.Any
 object EntityState {
   val ENABLED = "ENABLED".asInstanceOf[EntityState]

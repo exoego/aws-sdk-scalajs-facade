@@ -391,7 +391,7 @@ package object configservice {
     }
   }
 
-  /** Indicates whether an AWS Config rule is compliant based on account ID, region, compliance, and rule name. A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.
+  /** Indicates whether an Config rule is compliant based on account ID, region, compliance, and rule name. A rule is compliant if all of the resources that the rule evaluated comply with it. It is noncompliant if any of these resources do not comply.
     */
   @js.native
   trait AggregateComplianceByConfigRule extends js.Object {
@@ -583,7 +583,7 @@ package object configservice {
     }
   }
 
-  /** The details of an AWS Config evaluation for an account ID and region in an aggregator. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
+  /** The details of an Config evaluation for an account ID and region in an aggregator. Provides the Amazon Web Services resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
     */
   @js.native
   trait AggregateEvaluationResult extends js.Object {
@@ -619,7 +619,7 @@ package object configservice {
     }
   }
 
-  /** The details that identify a resource that is collected by AWS Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.
+  /** The details that identify a resource that is collected by Config aggregator, including the resource type, ID, (if available) the custom resource name, the source account, and source region.
     */
   @js.native
   trait AggregateResourceIdentifier extends js.Object {
@@ -846,7 +846,7 @@ package object configservice {
     }
   }
 
-  /** Indicates whether an AWS resource or AWS Config rule is compliant and provides the number of contributors that affect the compliance.
+  /** Indicates whether an Amazon Web Services resource or Config rule is compliant and provides the number of contributors that affect the compliance.
     */
   @js.native
   trait Compliance extends js.Object {
@@ -867,7 +867,7 @@ package object configservice {
     }
   }
 
-  /** Indicates whether an AWS Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply.
+  /** Indicates whether an Config rule is compliant. A rule is compliant if all of the resources that the rule evaluated comply with it. A rule is noncompliant if any of these resources do not comply.
     */
   @js.native
   trait ComplianceByConfigRule extends js.Object {
@@ -888,7 +888,7 @@ package object configservice {
     }
   }
 
-  /** Indicates whether an AWS resource that is evaluated according to one or more AWS Config rules is compliant. A resource is compliant if it complies with all of the rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.
+  /** Indicates whether an Amazon Web Services resource that is evaluated according to one or more Config rules is compliant. A resource is compliant if it complies with all of the rules that evaluate it. A resource is noncompliant if it does not comply with one or more of these rules.
     */
   @js.native
   trait ComplianceByResource extends js.Object {
@@ -912,7 +912,7 @@ package object configservice {
     }
   }
 
-  /** The number of AWS resources or AWS Config rules responsible for the current compliance of the item, up to a maximum number.
+  /** The number of Amazon Web Services resources or Config rules responsible for the current compliance of the item, up to a maximum number.
     */
   @js.native
   trait ComplianceContributorCount extends js.Object {
@@ -933,7 +933,7 @@ package object configservice {
     }
   }
 
-  /** The number of AWS Config rules or AWS resources that are compliant and noncompliant.
+  /** The number of Config rules or Amazon Web Services resources that are compliant and noncompliant.
     */
   @js.native
   trait ComplianceSummary extends js.Object {
@@ -957,7 +957,7 @@ package object configservice {
     }
   }
 
-  /** The number of AWS resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each.
+  /** The number of Amazon Web Services resources of a specific type that are compliant or noncompliant, up to a maximum of 100 for each.
     */
   @js.native
   trait ComplianceSummaryByResourceType extends js.Object {
@@ -1011,9 +1011,9 @@ package object configservice {
     }
   }
 
-  /** An AWS Config rule represents an AWS Lambda function that you create for a custom rule or a predefined function for an AWS managed rule. The function evaluates configuration items to assess whether your AWS resources comply with your desired configurations. This function can run when AWS Config detects a configuration change to an AWS resource and at a periodic frequency that you choose (for example, every 24 hours).
+  /** An Config rule represents an Lambda function that you create for a custom rule or a predefined function for an Config managed rule. The function evaluates configuration items to assess whether your Amazon Web Services resources comply with your desired configurations. This function can run when Config detects a configuration change to an Amazon Web Services resource and at a periodic frequency that you choose (for example, every 24 hours).
     *
-    * '''Note:'''You can use the AWS CLI and AWS SDKs if you want to create a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>. For more information about developing and using AWS Config rules, see [[https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html|Evaluating AWS Resource Configurations with AWS Config]] in the <i>AWS Config Developer Guide</i>.
+    * '''Note:'''You can use the Amazon Web Services CLI and Amazon Web Services SDKs if you want to create a rule that triggers evaluations for your resources when Config delivers the configuration snapshot. For more information, see <a>ConfigSnapshotDeliveryProperties</a>. For more information about developing and using Config rules, see [[https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html|Evaluating Amazon Web Services resource Configurations with Config]] in the <i>Config Developer Guide</i>.
     */
   @js.native
   trait ConfigRule extends js.Object {
@@ -1108,7 +1108,7 @@ package object configservice {
     }
   }
 
-  /** Status information for your AWS managed Config rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure. This action does not return status information about custom AWS Config rules.
+  /** Status information for your Config managed rules. The status includes information such as the last time the rule ran, the last time it failed, and the related error for the last failure. This action does not return status information about custom Config rules.
     */
   @js.native
   trait ConfigRuleEvaluationStatus extends js.Object {
@@ -1159,8 +1159,8 @@ package object configservice {
     }
   }
 
-  /** Provides options for how often AWS Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel. The frequency for a rule that triggers evaluations for your resources when AWS Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent: * The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often AWS Config delivers configuration snapshots. This value also sets how often AWS Config invokes evaluations for AWS Config rules. * The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which AWS Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>. If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, AWS Config invokes the rule only as often as the <code>deliveryFrequency</code> value. <ol> *
-    * For example, you want your rule to run evaluations when AWS Config delivers the configuration snapshot. * You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>. * You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>. * Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, AWS Config invokes evaluations for the rule every 24 hours. </ol> You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action. To update the <code>deliveryFrequency</code> with which AWS Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.
+  /** Provides options for how often Config delivers configuration snapshots to the Amazon S3 bucket in your delivery channel. The frequency for a rule that triggers evaluations for your resources when Config delivers the configuration snapshot is set by one of two values, depending on which is less frequent: * The value for the <code>deliveryFrequency</code> parameter within the delivery channel configuration, which sets how often Config delivers configuration snapshots. This value also sets how often Config invokes evaluations for Config rules. * The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the maximum frequency with which Config invokes evaluations for the rule. For more information, see <a>ConfigRule</a>. If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code> value for a rule, Config invokes the rule only as often as the <code>deliveryFrequency</code> value. <ol> * For example, you want your
+    * rule to run evaluations when Config delivers the configuration snapshot. * You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>. * You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>. * Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>, Config invokes evaluations for the rule every 24 hours. </ol> You should set the <code>MaximumExecutionFrequency</code> value to be at least as frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code> value by using the <code>DescribeDeliveryChannnels</code> action. To update the <code>deliveryFrequency</code> with which Config delivers your configuration snapshots, use the <code>PutDeliveryChannel</code> action.
     */
   @js.native
   trait ConfigSnapshotDeliveryProperties extends js.Object {
@@ -1310,7 +1310,7 @@ package object configservice {
     }
   }
 
-  /** An object that represents the recording of configuration changes of an AWS resource.
+  /** An object that represents the recording of configuration changes of an Amazon Web Services resource.
     */
   @js.native
   trait ConfigurationRecorder extends js.Object {
@@ -1373,7 +1373,7 @@ package object configservice {
     }
   }
 
-  /** Filters the conformance pack by compliance types and AWS Config rule names.
+  /** Filters the conformance pack by compliance types and Config rule names.
     */
   @js.native
   trait ConformancePackComplianceFilters extends js.Object {
@@ -1416,7 +1416,7 @@ package object configservice {
     }
   }
 
-  /** Returns details of a conformance pack. A conformance pack is a collection of AWS Config rules and remediation actions that can be easily deployed in an account and a region.
+  /** Returns details of a conformance pack. A conformance pack is a collection of Config rules and remediation actions that can be easily deployed in an account and a region.
     */
   @js.native
   trait ConformancePackDetail extends js.Object {
@@ -1457,7 +1457,7 @@ package object configservice {
     }
   }
 
-  /** Filters a conformance pack by AWS Config rule names, compliance types, AWS resource types, and resource IDs.
+  /** Filters a conformance pack by Config rule names, compliance types, Amazon Web Services resource types, and resource IDs.
     */
   @js.native
   trait ConformancePackEvaluationFilters extends js.Object {
@@ -1484,7 +1484,7 @@ package object configservice {
     }
   }
 
-  /** The details of a conformance pack evaluation. Provides AWS Config rule and AWS resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information.
+  /** The details of a conformance pack evaluation. Provides Config rule and Amazon Web Services resource type that was evaluated, the compliance of the conformance pack, related time stamps, and supplementary information.
     */
   @js.native
   trait ConformancePackEvaluationResult extends js.Object {
@@ -1538,7 +1538,7 @@ package object configservice {
     }
   }
 
-  /** Compliance information of one or more AWS Config rules within a conformance pack. You can filter using AWS Config rule names and compliance types.
+  /** Compliance information of one or more Config rules within a conformance pack. You can filter using Config rule names and compliance types.
     */
   @js.native
   trait ConformancePackRuleCompliance extends js.Object {
@@ -1733,7 +1733,7 @@ package object configservice {
     }
   }
 
-  /** The output when you delete the evaluation results for the specified AWS Config rule.
+  /** The output when you delete the evaluation results for the specified Config rule.
     */
   @js.native
   trait DeleteEvaluationResultsResponse extends js.Object
@@ -1970,7 +1970,7 @@ package object configservice {
     }
   }
 
-  /** The channel through which AWS Config delivers notifications and updated configuration states.
+  /** The channel through which Config delivers notifications and updated configuration states.
     */
   @js.native
   trait DeliveryChannel extends js.Object {
@@ -3072,7 +3072,7 @@ package object configservice {
     }
   }
 
-  /** Identifies an AWS resource and indicates whether it complies with the AWS Config rule that it was evaluated against.
+  /** Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.
     */
   @js.native
   trait Evaluation extends js.Object {
@@ -3104,7 +3104,7 @@ package object configservice {
     }
   }
 
-  /** The details of an AWS Config evaluation. Provides the AWS resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
+  /** The details of an Config evaluation. Provides the Amazon Web Services resource that was evaluated, the compliance of the resource, related time stamps, and supplementary information.
     */
   @js.native
   trait EvaluationResult extends js.Object {
@@ -3158,7 +3158,7 @@ package object configservice {
     }
   }
 
-  /** Identifies an AWS Config rule that evaluated an AWS resource, and provides the type and ID of the resource that the rule evaluated.
+  /** Identifies an Config rule that evaluated an Amazon Web Services resource, and provides the type and ID of the resource that the rule evaluated.
     */
   @js.native
   trait EvaluationResultQualifier extends js.Object {
@@ -3182,7 +3182,7 @@ package object configservice {
     }
   }
 
-  /** The controls that AWS Config uses for executing remediations.
+  /** The controls that Config uses for executing remediations.
     */
   @js.native
   trait ExecutionControls extends js.Object {
@@ -3200,7 +3200,7 @@ package object configservice {
     }
   }
 
-  /** Identifies an AWS resource and indicates whether it complies with the AWS Config rule that it was evaluated against.
+  /** Identifies an Amazon Web Services resource and indicates whether it complies with the Config rule that it was evaluated against.
     */
   @js.native
   trait ExternalEvaluation extends js.Object {
@@ -4310,7 +4310,7 @@ package object configservice {
     }
   }
 
-  /** An organization config rule that has information about config rules that AWS Config creates in member accounts.
+  /** An organization config rule that has information about config rules that Config creates in member accounts.
     */
   @js.native
   trait OrganizationConfigRule extends js.Object {
@@ -4377,7 +4377,7 @@ package object configservice {
     }
   }
 
-  /** An organization conformance pack that has information about conformance packs that AWS Config creates in member accounts.
+  /** An organization conformance pack that has information about conformance packs that Config creates in member accounts.
     */
   @js.native
   trait OrganizationConformancePack extends js.Object {
@@ -4482,7 +4482,7 @@ package object configservice {
     }
   }
 
-  /** An object that specifies organization custom rule metadata such as resource type, resource ID of AWS resource, Lamdba function ARN, and organization trigger types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
+  /** An object that specifies organization custom rule metadata such as resource type, resource ID of Amazon Web Services resource, Lambda function ARN, and organization trigger types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
     */
   @js.native
   trait OrganizationCustomRuleMetadata extends js.Object {
@@ -4526,7 +4526,7 @@ package object configservice {
     }
   }
 
-  /** An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with the rule identifier. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic.
+  /** An object that specifies organization managed rule metadata such as resource type and ID of Amazon Web Services resource along with the rule identifier. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic.
     */
   @js.native
   trait OrganizationManagedRuleMetadata extends js.Object {
@@ -5167,8 +5167,8 @@ package object configservice {
     }
   }
 
-  /** Specifies the types of AWS resource for which AWS Config records configuration changes. In the recording group, you specify whether all supported types or specific types of resources are recorded. By default, AWS Config records configuration changes for all supported types of regional resources that AWS Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes. You can also have AWS Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions. <important> The configuration details for any global resource are the same in all regions. If you customize AWS Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for
-    * each region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing AWS Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions. </important> If you don't want AWS Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter. For a list of supported resource types, see [[https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources|Supported Resource Types]]. For more information, see [[https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html|Selecting Which Resources AWS Config Records]].
+  /** Specifies the types of Amazon Web Services resource for which Config records configuration changes. In the recording group, you specify whether all supported types or specific types of resources are recorded. By default, Config records configuration changes for all supported types of regional resources that Config discovers in the region in which it is running. Regional resources are tied to a region and can be used only in that region. Examples of regional resources are EC2 instances and EBS volumes. You can also have Config record configuration changes for supported types of global resources (for example, IAM resources). Global resources are not tied to an individual region and can be used in all regions. <important> The configuration details for any global resource are the same in all regions. If you customize Config in multiple regions to record global resources, it will create multiple configuration items each time a global resource changes: one configuration item for each
+    * region. These configuration items will contain identical data. To prevent duplicate configuration items, you should consider customizing Config in only one region to record global resources, unless you want the configuration items to be available in multiple regions. </important> If you don't want Config to record all resources, you can specify which types of resources it will record with the <code>resourceTypes</code> parameter. For a list of supported resource types, see [[https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources|Supported Resource Types]]. For more information, see [[https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html|Selecting Which Resources Config Records]].
     */
   @js.native
   trait RecordingGroup extends js.Object {
@@ -5304,7 +5304,7 @@ package object configservice {
     }
   }
 
-  /** The details that identify a resource within AWS Config, including the resource type and resource ID.
+  /** The details that identify a resource within Config, including the resource type and resource ID.
     */
   @js.native
   trait RemediationExceptionResourceKey extends js.Object {
@@ -5478,7 +5478,7 @@ package object configservice {
     }
   }
 
-  /** The details that identify a resource that is discovered by AWS Config, including the resource type, ID, and (if available) the custom resource name.
+  /** The details that identify a resource that is discovered by Config, including the resource type, ID, and (if available) the custom resource name.
     */
   @js.native
   trait ResourceIdentifier extends js.Object {
@@ -5505,7 +5505,7 @@ package object configservice {
     }
   }
 
-  /** The details that identify a resource within AWS Config, including the resource type and resource ID.
+  /** The details that identify a resource within Config, including the resource type and resource ID.
     */
   @js.native
   trait ResourceKey extends js.Object {
@@ -5546,7 +5546,7 @@ package object configservice {
     }
   }
 
-  /** An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in AWS Config.
+  /** An object with the name of the retention configuration and the retention period in days. The object stores the configuration for data retention in Config.
     */
   @js.native
   trait RetentionConfiguration extends js.Object {
@@ -5568,7 +5568,7 @@ package object configservice {
     }
   }
 
-  /** Defines which resources trigger an evaluation for an AWS Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
+  /** Defines which resources trigger an evaluation for an Config rule. The scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. Specify a scope to constrain which resources trigger an evaluation for a rule. Otherwise, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
     */
   @js.native
   trait Scope extends js.Object {
@@ -5693,7 +5693,7 @@ package object configservice {
     }
   }
 
-  /** Provides the AWS Config rule owner (AWS or customer), the rule identifier, and the events that trigger the evaluation of your AWS resources.
+  /** Provides the Config rule owner (Amazon Web Services or customer), the rule identifier, and the events that trigger the evaluation of your Amazon Web Services resources.
     */
   @js.native
   trait Source extends js.Object {
@@ -5719,7 +5719,7 @@ package object configservice {
     }
   }
 
-  /** Provides the source and the message types that trigger AWS Config to evaluate your AWS resources against a rule. It also provides the frequency with which you want AWS Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules.
+  /** Provides the source and the message types that trigger Config to evaluate your Amazon Web Services resources against a rule. It also provides the frequency with which you want Config to run evaluations for the rule if the trigger type is periodic. You can specify the parameter values for <code>SourceDetail</code> only for custom rules.
     */
   @js.native
   trait SourceDetail extends js.Object {
@@ -5743,7 +5743,7 @@ package object configservice {
     }
   }
 
-  /** AWS Systems Manager (SSM) specific remediation controls.
+  /** Amazon Web Services Systems Manager (SSM) specific remediation controls.
     */
   @js.native
   trait SsmControls extends js.Object {
@@ -5782,7 +5782,7 @@ package object configservice {
     }
   }
 
-  /** The output when you start the evaluation for the specified AWS Config rule.
+  /** The output when you start the evaluation for the specified Config rule.
     */
   @js.native
   trait StartConfigRulesEvaluationResponse extends js.Object

@@ -2,7 +2,7 @@ package facade.amazonaws.services.sesv2
 
 import scalajs.js
 
-/** The action that you want to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email. These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
+/** The action to take if the required MX record can't be found when you send an email. When you set this value to <code>UseDefaultValue</code>, the mail is sent using <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>RejectMessage</code>, the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and doesn't attempt to deliver the email. These behaviors are taken when the custom MAIL FROM domain configuration is in the <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
   */
 @js.native
 sealed trait BehaviorOnMxFailure extends js.Any
@@ -101,7 +101,7 @@ object DeliverabilityTestStatus {
   @inline def values: js.Array[DeliverabilityTestStatus] = js.Array(IN_PROGRESS, COMPLETED)
 }
 
-/** The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. If you want to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want to use your own email headers, choose <code>emailHeader</code>. If you want to use link tags, choose <code>linkTags</code>.
+/** The location where the Amazon SES API v2 finds the value of a dimension to publish to Amazon CloudWatch. To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code> or <code>SendRawEmail</code> API, choose <code>messageTag</code>. To use your own email headers, choose <code>emailHeader</code>. To use link tags, choose <code>linkTags</code>.
   */
 @js.native
 sealed trait DimensionValueSource extends js.Any
@@ -120,6 +120,15 @@ object DkimSigningAttributesOrigin {
   val EXTERNAL = "EXTERNAL".asInstanceOf[DkimSigningAttributesOrigin]
 
   @inline def values: js.Array[DkimSigningAttributesOrigin] = js.Array(AWS_SES, EXTERNAL)
+}
+
+@js.native
+sealed trait DkimSigningKeyLength extends js.Any
+object DkimSigningKeyLength {
+  val RSA_1024_BIT = "RSA_1024_BIT".asInstanceOf[DkimSigningKeyLength]
+  val RSA_2048_BIT = "RSA_2048_BIT".asInstanceOf[DkimSigningKeyLength]
+
+  @inline def values: js.Array[DkimSigningKeyLength] = js.Array(RSA_1024_BIT, RSA_2048_BIT)
 }
 
 /** The DKIM authentication status of the identity. The status can be one of the following: * <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't yet detected the DKIM records in the DNS configuration for the domain. * <code>SUCCESS</code> – The verification process completed successfully. * <code>FAILED</code> – The verification process failed. This typically occurs when Amazon SES fails to find the DKIM records in the DNS configuration of the domain. * <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from determining the DKIM authentication status of the domain. * <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for the domain.
@@ -155,8 +164,6 @@ object EventType {
   @inline def values: js.Array[EventType] = js.Array(SEND, REJECT, BOUNCE, COMPLAINT, DELIVERY, OPEN, CLICK, RENDERING_FAILURE, DELIVERY_DELAY, SUBSCRIPTION)
 }
 
-/** The email identity type. The identity type can be one of the following: * <code>EMAIL_ADDRESS</code> – The identity is an email address. * <code>DOMAIN</code> – The identity is a domain.
-  */
 @js.native
 sealed trait IdentityType extends js.Any
 object IdentityType {
@@ -233,7 +240,7 @@ object SubscriptionStatus {
   @inline def values: js.Array[SubscriptionStatus] = js.Array(OPT_IN, OPT_OUT)
 }
 
-/** The type of action that you want to perform on the address. Acceptable values: * PUT: add the addresses to the suppression list. * DELETE: remove the address from the suppression list.
+/** The type of action to perform on the address. The following are possible values: * PUT: add the addresses to the suppression list. * DELETE: remove the address from the suppression list.
   */
 @js.native
 sealed trait SuppressionListImportAction extends js.Any

@@ -2,7 +2,7 @@ package facade.amazonaws.services.mq
 
 import scalajs.js
 
-/** The authentication strategy used to secure the broker.
+/** Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
   */
 type AuthenticationStrategy = "SIMPLE" | "LDAP"
 object AuthenticationStrategy {
@@ -12,7 +12,7 @@ object AuthenticationStrategy {
   inline def values: js.Array[AuthenticationStrategy] = js.Array(SIMPLE, LDAP)
 }
 
-/** The status of the broker.
+/** The broker's status.
   */
 type BrokerState = "CREATION_IN_PROGRESS" | "CREATION_FAILED" | "DELETION_IN_PROGRESS" | "RUNNING" | "REBOOT_IN_PROGRESS"
 object BrokerState {
@@ -25,7 +25,7 @@ object BrokerState {
   inline def values: js.Array[BrokerState] = js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
 }
 
-/** The broker's storage type. <important>EFS is currently not Supported for RabbitMQ engine type.</important>
+/** The broker's storage type. <important>EFS is not supported for RabbitMQ engine type. </important>
   */
 type BrokerStorageType = "EBS" | "EFS"
 object BrokerStorageType {
@@ -59,7 +59,7 @@ object DayOfWeek {
   inline def values: js.Array[DayOfWeek] = js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
 }
 
-/** The deployment mode of the broker.
+/** The broker's deployment mode.
   */
 type DeploymentMode = "SINGLE_INSTANCE" | "ACTIVE_STANDBY_MULTI_AZ" | "CLUSTER_MULTI_AZ"
 object DeploymentMode {
@@ -70,7 +70,7 @@ object DeploymentMode {
   inline def values: js.Array[DeploymentMode] = js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ, CLUSTER_MULTI_AZ)
 }
 
-/** The type of broker engine. Note: Currently, Amazon MQ supports ActiveMQ and RabbitMQ.
+/** The type of broker engine. Amazon MQ supports ActiveMQ and RabbitMQ.
   */
 type EngineType = "ACTIVEMQ" | "RABBITMQ"
 object EngineType {

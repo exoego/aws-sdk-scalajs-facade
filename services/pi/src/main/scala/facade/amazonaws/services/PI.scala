@@ -10,20 +10,26 @@ import facade.amazonaws._
 package object pi {
   type DataPointsList = js.Array[DataPoint]
   type DimensionKeyDescriptionList = js.Array[DimensionKeyDescription]
-  type DimensionMap = js.Dictionary[String]
+  type DimensionKeyDetailList = js.Array[DimensionKeyDetail]
+  type DimensionMap = js.Dictionary[RequestString]
   type ISOTimestamp = js.Date
+  type IdentifierString = String
   type Limit = Int
   type MaxResults = Int
   type MetricKeyDataPointsList = js.Array[MetricKeyDataPoints]
-  type MetricQueryFilterMap = js.Dictionary[String]
+  type MetricQueryFilterMap = js.Dictionary[RequestString]
   type MetricQueryList = js.Array[MetricQuery]
   type MetricValuesList = js.Array[Double]
+  type NextToken = String
+  type RequestString = String
+  type RequestStringList = js.Array[RequestString]
+  type RequestedDimensionList = js.Array[RequestString]
   type ResponsePartitionKeyList = js.Array[ResponsePartitionKey]
-  type StringList = js.Array[String]
 
   final class PIOps(private val service: PI) extends AnyVal {
 
     @inline def describeDimensionKeysFuture(params: DescribeDimensionKeysRequest): Future[DescribeDimensionKeysResponse] = service.describeDimensionKeys(params).promise().toFuture
+    @inline def getDimensionKeyDetailsFuture(params: GetDimensionKeyDetailsRequest): Future[GetDimensionKeyDetailsResponse] = service.getDimensionKeyDetails(params).promise().toFuture
     @inline def getResourceMetricsFuture(params: GetResourceMetricsRequest): Future[GetResourceMetricsResponse] = service.getResourceMetrics(params).promise().toFuture
 
   }
@@ -34,6 +40,7 @@ package object pi {
     def this(config: AWSConfig) = this()
 
     def describeDimensionKeys(params: DescribeDimensionKeysRequest): Request[DescribeDimensionKeysResponse] = js.native
+    def getDimensionKeyDetails(params: GetDimensionKeyDetailsRequest): Request[GetDimensionKeyDetailsResponse] = js.native
     def getResourceMetrics(params: GetResourceMetricsRequest): Request[GetResourceMetricsResponse] = js.native
   }
   object PI {
@@ -68,13 +75,13 @@ package object pi {
   trait DescribeDimensionKeysRequest extends js.Object {
     var EndTime: ISOTimestamp
     var GroupBy: DimensionGroup
-    var Identifier: String
-    var Metric: String
+    var Identifier: RequestString
+    var Metric: RequestString
     var ServiceType: ServiceType
     var StartTime: ISOTimestamp
     var Filter: js.UndefOr[MetricQueryFilterMap]
     var MaxResults: js.UndefOr[MaxResults]
-    var NextToken: js.UndefOr[String]
+    var NextToken: js.UndefOr[NextToken]
     var PartitionBy: js.UndefOr[DimensionGroup]
     var PeriodInSeconds: js.UndefOr[Int]
   }
@@ -84,13 +91,13 @@ package object pi {
     def apply(
         EndTime: ISOTimestamp,
         GroupBy: DimensionGroup,
-        Identifier: String,
-        Metric: String,
+        Identifier: RequestString,
+        Metric: RequestString,
         ServiceType: ServiceType,
         StartTime: ISOTimestamp,
         Filter: js.UndefOr[MetricQueryFilterMap] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
         PartitionBy: js.UndefOr[DimensionGroup] = js.undefined,
         PeriodInSeconds: js.UndefOr[Int] = js.undefined
     ): DescribeDimensionKeysRequest = {
@@ -117,7 +124,7 @@ package object pi {
     var AlignedEndTime: js.UndefOr[ISOTimestamp]
     var AlignedStartTime: js.UndefOr[ISOTimestamp]
     var Keys: js.UndefOr[DimensionKeyDescriptionList]
-    var NextToken: js.UndefOr[String]
+    var NextToken: js.UndefOr[NextToken]
     var PartitionKeys: js.UndefOr[ResponsePartitionKeyList]
   }
 
@@ -127,7 +134,7 @@ package object pi {
         AlignedEndTime: js.UndefOr[ISOTimestamp] = js.undefined,
         AlignedStartTime: js.UndefOr[ISOTimestamp] = js.undefined,
         Keys: js.UndefOr[DimensionKeyDescriptionList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
         PartitionKeys: js.UndefOr[ResponsePartitionKeyList] = js.undefined
     ): DescribeDimensionKeysResponse = {
       val __obj = js.Dynamic.literal()
@@ -146,16 +153,16 @@ package object pi {
     */
   @js.native
   trait DimensionGroup extends js.Object {
-    var Group: String
-    var Dimensions: js.UndefOr[StringList]
+    var Group: RequestString
+    var Dimensions: js.UndefOr[RequestStringList]
     var Limit: js.UndefOr[Limit]
   }
 
   object DimensionGroup {
     @inline
     def apply(
-        Group: String,
-        Dimensions: js.UndefOr[StringList] = js.undefined,
+        Group: RequestString,
+        Dimensions: js.UndefOr[RequestStringList] = js.undefined,
         Limit: js.UndefOr[Limit] = js.undefined
     ): DimensionGroup = {
       val __obj = js.Dynamic.literal(
@@ -192,15 +199,85 @@ package object pi {
     }
   }
 
+  /** An object that describes the details for a specified dimension.
+    */
+  @js.native
+  trait DimensionKeyDetail extends js.Object {
+    var Dimension: js.UndefOr[String]
+    var Status: js.UndefOr[DetailStatus]
+    var Value: js.UndefOr[String]
+  }
+
+  object DimensionKeyDetail {
+    @inline
+    def apply(
+        Dimension: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[DetailStatus] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): DimensionKeyDetail = {
+      val __obj = js.Dynamic.literal()
+      Dimension.foreach(__v => __obj.updateDynamic("Dimension")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DimensionKeyDetail]
+    }
+  }
+
+  @js.native
+  trait GetDimensionKeyDetailsRequest extends js.Object {
+    var Group: RequestString
+    var GroupIdentifier: RequestString
+    var Identifier: IdentifierString
+    var ServiceType: ServiceType
+    var RequestedDimensions: js.UndefOr[RequestedDimensionList]
+  }
+
+  object GetDimensionKeyDetailsRequest {
+    @inline
+    def apply(
+        Group: RequestString,
+        GroupIdentifier: RequestString,
+        Identifier: IdentifierString,
+        ServiceType: ServiceType,
+        RequestedDimensions: js.UndefOr[RequestedDimensionList] = js.undefined
+    ): GetDimensionKeyDetailsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Group" -> Group.asInstanceOf[js.Any],
+        "GroupIdentifier" -> GroupIdentifier.asInstanceOf[js.Any],
+        "Identifier" -> Identifier.asInstanceOf[js.Any],
+        "ServiceType" -> ServiceType.asInstanceOf[js.Any]
+      )
+
+      RequestedDimensions.foreach(__v => __obj.updateDynamic("RequestedDimensions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDimensionKeyDetailsRequest]
+    }
+  }
+
+  @js.native
+  trait GetDimensionKeyDetailsResponse extends js.Object {
+    var Dimensions: js.UndefOr[DimensionKeyDetailList]
+  }
+
+  object GetDimensionKeyDetailsResponse {
+    @inline
+    def apply(
+        Dimensions: js.UndefOr[DimensionKeyDetailList] = js.undefined
+    ): GetDimensionKeyDetailsResponse = {
+      val __obj = js.Dynamic.literal()
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDimensionKeyDetailsResponse]
+    }
+  }
+
   @js.native
   trait GetResourceMetricsRequest extends js.Object {
     var EndTime: ISOTimestamp
-    var Identifier: String
+    var Identifier: RequestString
     var MetricQueries: MetricQueryList
     var ServiceType: ServiceType
     var StartTime: ISOTimestamp
     var MaxResults: js.UndefOr[MaxResults]
-    var NextToken: js.UndefOr[String]
+    var NextToken: js.UndefOr[NextToken]
     var PeriodInSeconds: js.UndefOr[Int]
   }
 
@@ -208,12 +285,12 @@ package object pi {
     @inline
     def apply(
         EndTime: ISOTimestamp,
-        Identifier: String,
+        Identifier: RequestString,
         MetricQueries: MetricQueryList,
         ServiceType: ServiceType,
         StartTime: ISOTimestamp,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
         PeriodInSeconds: js.UndefOr[Int] = js.undefined
     ): GetResourceMetricsRequest = {
       val __obj = js.Dynamic.literal(
@@ -237,7 +314,7 @@ package object pi {
     var AlignedStartTime: js.UndefOr[ISOTimestamp]
     var Identifier: js.UndefOr[String]
     var MetricList: js.UndefOr[MetricKeyDataPointsList]
-    var NextToken: js.UndefOr[String]
+    var NextToken: js.UndefOr[NextToken]
   }
 
   object GetResourceMetricsResponse {
@@ -247,7 +324,7 @@ package object pi {
         AlignedStartTime: js.UndefOr[ISOTimestamp] = js.undefined,
         Identifier: js.UndefOr[String] = js.undefined,
         MetricList: js.UndefOr[MetricKeyDataPointsList] = js.undefined,
-        NextToken: js.UndefOr[String] = js.undefined
+        NextToken: js.UndefOr[NextToken] = js.undefined
     ): GetResourceMetricsResponse = {
       val __obj = js.Dynamic.literal()
       AlignedEndTime.foreach(__v => __obj.updateDynamic("AlignedEndTime")(__v.asInstanceOf[js.Any]))
@@ -284,7 +361,7 @@ package object pi {
     */
   @js.native
   trait MetricQuery extends js.Object {
-    var Metric: String
+    var Metric: RequestString
     var Filter: js.UndefOr[MetricQueryFilterMap]
     var GroupBy: js.UndefOr[DimensionGroup]
   }
@@ -292,7 +369,7 @@ package object pi {
   object MetricQuery {
     @inline
     def apply(
-        Metric: String,
+        Metric: RequestString,
         Filter: js.UndefOr[MetricQueryFilterMap] = js.undefined,
         GroupBy: js.UndefOr[DimensionGroup] = js.undefined
     ): MetricQuery = {

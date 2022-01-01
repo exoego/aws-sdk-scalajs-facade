@@ -216,7 +216,7 @@ package object acmpca {
     }
   }
 
-  /** Contains X.509 certificate information to be placed in an issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. If conflicting or duplicate certificate information is supplied from other sources, ACM Private CA applies [[xxxxx|order of operation rules]] to determine what information is used.
+  /** Contains X.509 certificate information to be placed in an issued certificate. An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant must be selected, or else this parameter is ignored. If conflicting or duplicate certificate information is supplied from other sources, ACM Private CA applies [[https://docs.aws.amazon.com/acm-pca/latest/userguide/UsingTemplates.html#template-order-of-operations|order of operation rules]] to determine what information is used.
     */
   @js.native
   trait ApiPassthrough extends js.Object {
@@ -246,6 +246,7 @@ package object acmpca {
     var CertificateAuthorityConfiguration: js.UndefOr[CertificateAuthorityConfiguration]
     var CreatedAt: js.UndefOr[TStamp]
     var FailureReason: js.UndefOr[FailureReason]
+    var KeyStorageSecurityStandard: js.UndefOr[KeyStorageSecurityStandard]
     var LastStateChangeAt: js.UndefOr[TStamp]
     var NotAfter: js.UndefOr[TStamp]
     var NotBefore: js.UndefOr[TStamp]
@@ -264,6 +265,7 @@ package object acmpca {
         CertificateAuthorityConfiguration: js.UndefOr[CertificateAuthorityConfiguration] = js.undefined,
         CreatedAt: js.UndefOr[TStamp] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        KeyStorageSecurityStandard: js.UndefOr[KeyStorageSecurityStandard] = js.undefined,
         LastStateChangeAt: js.UndefOr[TStamp] = js.undefined,
         NotAfter: js.UndefOr[TStamp] = js.undefined,
         NotBefore: js.UndefOr[TStamp] = js.undefined,
@@ -279,6 +281,7 @@ package object acmpca {
       CertificateAuthorityConfiguration.foreach(__v => __obj.updateDynamic("CertificateAuthorityConfiguration")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      KeyStorageSecurityStandard.foreach(__v => __obj.updateDynamic("KeyStorageSecurityStandard")(__v.asInstanceOf[js.Any]))
       LastStateChangeAt.foreach(__v => __obj.updateDynamic("LastStateChangeAt")(__v.asInstanceOf[js.Any]))
       NotAfter.foreach(__v => __obj.updateDynamic("NotAfter")(__v.asInstanceOf[js.Any]))
       NotBefore.foreach(__v => __obj.updateDynamic("NotBefore")(__v.asInstanceOf[js.Any]))
@@ -368,6 +371,7 @@ package object acmpca {
     var CertificateAuthorityConfiguration: CertificateAuthorityConfiguration
     var CertificateAuthorityType: CertificateAuthorityType
     var IdempotencyToken: js.UndefOr[IdempotencyToken]
+    var KeyStorageSecurityStandard: js.UndefOr[KeyStorageSecurityStandard]
     var RevocationConfiguration: js.UndefOr[RevocationConfiguration]
     var Tags: js.UndefOr[TagList]
   }
@@ -378,6 +382,7 @@ package object acmpca {
         CertificateAuthorityConfiguration: CertificateAuthorityConfiguration,
         CertificateAuthorityType: CertificateAuthorityType,
         IdempotencyToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        KeyStorageSecurityStandard: js.UndefOr[KeyStorageSecurityStandard] = js.undefined,
         RevocationConfiguration: js.UndefOr[RevocationConfiguration] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateCertificateAuthorityRequest = {
@@ -387,6 +392,7 @@ package object acmpca {
       )
 
       IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      KeyStorageSecurityStandard.foreach(__v => __obj.updateDynamic("KeyStorageSecurityStandard")(__v.asInstanceOf[js.Any]))
       RevocationConfiguration.foreach(__v => __obj.updateDynamic("RevocationConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCertificateAuthorityRequest]
@@ -436,9 +442,10 @@ package object acmpca {
     }
   }
 
-  /** Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the ```Enabled``` parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the ```S3BucketName``` parameter. You can hide the name of your bucket by specifying a value for the ```CustomCname``` parameter. Your private CA copies the CNAME or the S3 bucket name to the ```CRL Distribution Points``` extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. ACM Private CAA assets that are stored in Amazon S3 can be protected with encryption. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption|Encrypting Your CRLs]]. Your private CA uses the value in the ```ExpirationInDays``` parameter to calculate the
-    * ```nextUpdate``` field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included. CRLs contain the following fields: * ```Version```: The current version number defined in RFC 5280 is V2. The integer value is 0x1. * ```Signature Algorithm```: The name of the algorithm used to sign the CRL. * ```Issuer```: The X.500 distinguished name of your private CA that issued the CRL. * ```Last Update```: The issue date and time of this CRL. * ```Next Update```: The day and time by which the next CRL will be issued. * ```Revoked Certificates```: List of revoked certificates. Each list item contains the following information. <li> ```Serial Number```: The serial number, in hexadecimal format, of the revoked certificate. * ```Revocation Date```: Date and time
-    * the certificate was revoked. * ```CRL Entry Extensions```: Optional extensions for the CRL entry. <li> ```X509v3 CRL Reason Code```: Reason the certificate was revoked. </li></li> * ```CRL Extensions```: Optional extensions for the CRL. <li> ```X509v3 Authority Key Identifier```: Identifies the public key associated with the private key used to sign the certificate. * ```X509v3 CRL Number:```: Decimal sequence number for the CRL. </li> * ```Signature Algorithm```: Algorithm used by your private CA to sign the CRL. * ```Signature Value```: Signature computed over the CRL. Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL. <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code>
+  /** Contains configuration information for a certificate revocation list (CRL). Your private certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can enable CRLs for your new or an existing private CA by setting the ```Enabled``` parameter to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify in the ```S3BucketName``` parameter. You can hide the name of your bucket by specifying a value for the ```CustomCname``` parameter. Your private CA copies the CNAME or the S3 bucket name to the ```CRL Distribution Points``` extension of each certificate it issues. Your S3 bucket policy must give write permission to ACM Private CA. ACM Private CA assets that are stored in Amazon S3 can be protected with encryption. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/userguide/PcaCreateCa.html#crl-encryption|Encrypting Your CRLs]]. Your private CA uses the value in the ```ExpirationInDays``` parameter to calculate the
+    * ```nextUpdate``` field in the CRL. The CRL is refreshed at 1/2 the age of next update or when a certificate is revoked. When a certificate is revoked, it is recorded in the next CRL that is generated and in the next audit report. Only time valid certificates are listed in the CRL. Expired certificates are not included. A CRL is typically updated approximately 30 minutes after a certificate is revoked. If for any reason a CRL update fails, ACM Private CA makes further attempts every 15 minutes. CRLs contain the following fields: * ```Version```: The current version number defined in RFC 5280 is V2. The integer value is 0x1. * ```Signature Algorithm```: The name of the algorithm used to sign the CRL. * ```Issuer```: The X.500 distinguished name of your private CA that issued the CRL. * ```Last Update```: The issue date and time of this CRL. * ```Next Update```: The day and time by which the next CRL will be issued. * ```Revoked Certificates```: List of revoked certificates. Each
+    * list item contains the following information. <li> ```Serial Number```: The serial number, in hexadecimal format, of the revoked certificate. * ```Revocation Date```: Date and time the certificate was revoked. * ```CRL Entry Extensions```: Optional extensions for the CRL entry. <li> ```X509v3 CRL Reason Code```: Reason the certificate was revoked. </li></li> * ```CRL Extensions```: Optional extensions for the CRL. <li> ```X509v3 Authority Key Identifier```: Identifies the public key associated with the private key used to sign the certificate. * ```X509v3 CRL Number:```: Decimal sequence number for the CRL. </li> * ```Signature Algorithm```: Algorithm used by your private CA to sign the CRL. * ```Signature Value```: Signature computed over the CRL. Certificate revocation lists created by ACM Private CA are DER-encoded. You can use the following OpenSSL command to list a CRL. <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> For more information, see
+    * [[https://docs.aws.amazon.com/acm-pca/latest/userguide/crl-planning.html|Planning a certificate revocation list (CRL)]] in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>
     */
   @js.native
   trait CrlConfiguration extends js.Object {
@@ -446,6 +453,7 @@ package object acmpca {
     var CustomCname: js.UndefOr[String253]
     var ExpirationInDays: js.UndefOr[Integer1To5000]
     var S3BucketName: js.UndefOr[String3To255]
+    var S3ObjectAcl: js.UndefOr[S3ObjectAcl]
   }
 
   object CrlConfiguration {
@@ -454,7 +462,8 @@ package object acmpca {
         Enabled: Boolean,
         CustomCname: js.UndefOr[String253] = js.undefined,
         ExpirationInDays: js.UndefOr[Integer1To5000] = js.undefined,
-        S3BucketName: js.UndefOr[String3To255] = js.undefined
+        S3BucketName: js.UndefOr[String3To255] = js.undefined,
+        S3ObjectAcl: js.UndefOr[S3ObjectAcl] = js.undefined
     ): CrlConfiguration = {
       val __obj = js.Dynamic.literal(
         "Enabled" -> Enabled.asInstanceOf[js.Any]
@@ -463,6 +472,7 @@ package object acmpca {
       CustomCname.foreach(__v => __obj.updateDynamic("CustomCname")(__v.asInstanceOf[js.Any]))
       ExpirationInDays.foreach(__v => __obj.updateDynamic("ExpirationInDays")(__v.asInstanceOf[js.Any]))
       S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
+      S3ObjectAcl.foreach(__v => __obj.updateDynamic("S3ObjectAcl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CrlConfiguration]
     }
   }
@@ -1127,6 +1137,29 @@ package object acmpca {
     }
   }
 
+  /** Contains information to enable and configure Online Certificate Status Protocol (OCSP) for validating certificate revocation status. When you revoke a certificate, OCSP responses may take up to 60 minutes to reflect the new status.
+    */
+  @js.native
+  trait OcspConfiguration extends js.Object {
+    var Enabled: Boolean
+    var OcspCustomCname: js.UndefOr[String253]
+  }
+
+  object OcspConfiguration {
+    @inline
+    def apply(
+        Enabled: Boolean,
+        OcspCustomCname: js.UndefOr[String253] = js.undefined
+    ): OcspConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
+
+      OcspCustomCname.foreach(__v => __obj.updateDynamic("OcspCustomCname")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OcspConfiguration]
+    }
+  }
+
   /** Defines a custom ASN.1 X.400 <code>GeneralName</code> using an object identifier (OID) and value. The OID must satisfy the regular expression shown below. For more information, see NIST's definition of [[https://csrc.nist.gov/glossary/term/Object_Identifier|Object Identifier (OID)]].
     */
   @js.native
@@ -1283,20 +1316,23 @@ package object acmpca {
     }
   }
 
-  /** Certificate revocation information used by the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] and [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html|UpdateCertificateAuthority]] actions. Your private certificate authority (CA) can create and maintain a certificate revocation list (CRL). A CRL contains information about certificates revoked by your CA. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html|RevokeCertificate]].
+  /** Certificate revocation information used by the [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html|CreateCertificateAuthority]] and [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_UpdateCertificateAuthority.html|UpdateCertificateAuthority]] actions. Your private certificate authority (CA) can configure Online Certificate Status Protocol (OCSP) support and/or maintain a certificate revocation list (CRL). OCSP returns validation information about certificates as requested by clients, and a CRL contains an updated list of certificates revoked by your CA. For more information, see [[https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_RevokeCertificate.html|RevokeCertificate]] and [[https://docs.aws.amazon.com/acm-pca/latest/userguide/revocation-setup.html|Setting up a certificate revocation method]] in the <i>AWS Certificate Manager Private Certificate Authority (PCA) User Guide</i>.
     */
   @js.native
   trait RevocationConfiguration extends js.Object {
     var CrlConfiguration: js.UndefOr[CrlConfiguration]
+    var OcspConfiguration: js.UndefOr[OcspConfiguration]
   }
 
   object RevocationConfiguration {
     @inline
     def apply(
-        CrlConfiguration: js.UndefOr[CrlConfiguration] = js.undefined
+        CrlConfiguration: js.UndefOr[CrlConfiguration] = js.undefined,
+        OcspConfiguration: js.UndefOr[OcspConfiguration] = js.undefined
     ): RevocationConfiguration = {
       val __obj = js.Dynamic.literal()
       CrlConfiguration.foreach(__v => __obj.updateDynamic("CrlConfiguration")(__v.asInstanceOf[js.Any]))
+      OcspConfiguration.foreach(__v => __obj.updateDynamic("OcspConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RevocationConfiguration]
     }
   }

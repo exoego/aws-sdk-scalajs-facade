@@ -2,11 +2,12 @@ package facade.amazonaws.services.mediatailor
 
 import scalajs.js
 
-type AccessType = "S3_SIGV4"
+type AccessType = "S3_SIGV4" | "SECRETS_MANAGER_ACCESS_TOKEN"
 object AccessType {
   inline val S3_SIGV4: "S3_SIGV4" = "S3_SIGV4"
+  inline val SECRETS_MANAGER_ACCESS_TOKEN: "SECRETS_MANAGER_ACCESS_TOKEN" = "SECRETS_MANAGER_ACCESS_TOKEN"
 
-  inline def values: js.Array[AccessType] = js.Array(S3_SIGV4)
+  inline def values: js.Array[AccessType] = js.Array(S3_SIGV4, SECRETS_MANAGER_ACCESS_TOKEN)
 }
 
 type ChannelState = "RUNNING" | "STOPPED"
@@ -32,6 +33,13 @@ object Mode {
   inline def values: js.Array[Mode] = js.Array(OFF, BEHIND_LIVE_EDGE)
 }
 
+type Operator = "EQUALS"
+object Operator {
+  inline val EQUALS: "EQUALS" = "EQUALS"
+
+  inline def values: js.Array[Operator] = js.Array(EQUALS)
+}
+
 type OriginManifestType = "SINGLE_PERIOD" | "MULTI_PERIOD"
 object OriginManifestType {
   inline val SINGLE_PERIOD: "SINGLE_PERIOD" = "SINGLE_PERIOD"
@@ -40,11 +48,12 @@ object OriginManifestType {
   inline def values: js.Array[OriginManifestType] = js.Array(SINGLE_PERIOD, MULTI_PERIOD)
 }
 
-type PlaybackMode = "LOOP"
+type PlaybackMode = "LOOP" | "LINEAR"
 object PlaybackMode {
   inline val LOOP: "LOOP" = "LOOP"
+  inline val LINEAR: "LINEAR" = "LINEAR"
 
-  inline def values: js.Array[PlaybackMode] = js.Array(LOOP)
+  inline def values: js.Array[PlaybackMode] = js.Array(LOOP, LINEAR)
 }
 
 type RelativePosition = "BEFORE_PROGRAM" | "AFTER_PROGRAM"
@@ -53,6 +62,14 @@ object RelativePosition {
   inline val AFTER_PROGRAM: "AFTER_PROGRAM" = "AFTER_PROGRAM"
 
   inline def values: js.Array[RelativePosition] = js.Array(BEFORE_PROGRAM, AFTER_PROGRAM)
+}
+
+type ScheduleEntryType = "PROGRAM" | "FILLER_SLATE"
+object ScheduleEntryType {
+  inline val PROGRAM: "PROGRAM" = "PROGRAM"
+  inline val FILLER_SLATE: "FILLER_SLATE" = "FILLER_SLATE"
+
+  inline def values: js.Array[ScheduleEntryType] = js.Array(PROGRAM, FILLER_SLATE)
 }
 
 type Type = "DASH" | "HLS"

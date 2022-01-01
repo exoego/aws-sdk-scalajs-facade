@@ -44,6 +44,34 @@ object Gid {
   inline def values: js.Array[Gid] = js.Array(NONE, INT_VALUE, NAME, BOTH)
 }
 
+type HdfsAuthenticationType = "SIMPLE" | "KERBEROS"
+object HdfsAuthenticationType {
+  inline val SIMPLE: "SIMPLE" = "SIMPLE"
+  inline val KERBEROS: "KERBEROS" = "KERBEROS"
+
+  inline def values: js.Array[HdfsAuthenticationType] = js.Array(SIMPLE, KERBEROS)
+}
+
+type HdfsDataTransferProtection = "DISABLED" | "AUTHENTICATION" | "INTEGRITY" | "PRIVACY"
+object HdfsDataTransferProtection {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val AUTHENTICATION: "AUTHENTICATION" = "AUTHENTICATION"
+  inline val INTEGRITY: "INTEGRITY" = "INTEGRITY"
+  inline val PRIVACY: "PRIVACY" = "PRIVACY"
+
+  inline def values: js.Array[HdfsDataTransferProtection] = js.Array(DISABLED, AUTHENTICATION, INTEGRITY, PRIVACY)
+}
+
+type HdfsRpcProtection = "DISABLED" | "AUTHENTICATION" | "INTEGRITY" | "PRIVACY"
+object HdfsRpcProtection {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val AUTHENTICATION: "AUTHENTICATION" = "AUTHENTICATION"
+  inline val INTEGRITY: "INTEGRITY" = "INTEGRITY"
+  inline val PRIVACY: "PRIVACY" = "PRIVACY"
+
+  inline def values: js.Array[HdfsRpcProtection] = js.Array(DISABLED, AUTHENTICATION, INTEGRITY, PRIVACY)
+}
+
 type LocationFilterName = "LocationUri" | "LocationType" | "CreationTime"
 object LocationFilterName {
   inline val LocationUri: "LocationUri" = "LocationUri"
@@ -156,6 +184,15 @@ object S3StorageClass {
   inline val OUTPOSTS: "OUTPOSTS" = "OUTPOSTS"
 
   inline def values: js.Array[S3StorageClass] = js.Array(STANDARD, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE, OUTPOSTS)
+}
+
+type SmbSecurityDescriptorCopyFlags = "NONE" | "OWNER_DACL" | "OWNER_DACL_SACL"
+object SmbSecurityDescriptorCopyFlags {
+  inline val NONE: "NONE" = "NONE"
+  inline val OWNER_DACL: "OWNER_DACL" = "OWNER_DACL"
+  inline val OWNER_DACL_SACL: "OWNER_DACL_SACL" = "OWNER_DACL_SACL"
+
+  inline def values: js.Array[SmbSecurityDescriptorCopyFlags] = js.Array(NONE, OWNER_DACL, OWNER_DACL_SACL)
 }
 
 type SmbVersion = "AUTOMATIC" | "SMB2" | "SMB3"

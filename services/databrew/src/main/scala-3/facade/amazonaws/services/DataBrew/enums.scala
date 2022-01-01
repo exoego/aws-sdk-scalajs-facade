@@ -2,6 +2,14 @@ package facade.amazonaws.services.databrew
 
 import scalajs.js
 
+type AnalyticsMode = "ENABLE" | "DISABLE"
+object AnalyticsMode {
+  inline val ENABLE: "ENABLE" = "ENABLE"
+  inline val DISABLE: "DISABLE" = "DISABLE"
+
+  inline def values: js.Array[AnalyticsMode] = js.Array(ENABLE, DISABLE)
+}
+
 type CompressionFormat = "GZIP" | "LZ4" | "SNAPPY" | "BZIP2" | "DEFLATE" | "LZO" | "BROTLI" | "ZSTD" | "ZLIB"
 object CompressionFormat {
   inline val GZIP: "GZIP" = "GZIP"
@@ -15,6 +23,13 @@ object CompressionFormat {
   inline val ZLIB: "ZLIB" = "ZLIB"
 
   inline def values: js.Array[CompressionFormat] = js.Array(GZIP, LZ4, SNAPPY, BZIP2, DEFLATE, LZO, BROTLI, ZSTD, ZLIB)
+}
+
+type DatabaseOutputMode = "NEW_TABLE"
+object DatabaseOutputMode {
+  inline val NEW_TABLE: "NEW_TABLE" = "NEW_TABLE"
+
+  inline def values: js.Array[DatabaseOutputMode] = js.Array(NEW_TABLE)
 }
 
 type EncryptionMode = "SSE-KMS" | "SSE-S3"
@@ -79,7 +94,7 @@ object OrderedBy {
   inline def values: js.Array[OrderedBy] = js.Array(LAST_MODIFIED_DATE)
 }
 
-type OutputFormat = "CSV" | "JSON" | "PARQUET" | "GLUEPARQUET" | "AVRO" | "ORC" | "XML"
+type OutputFormat = "CSV" | "JSON" | "PARQUET" | "GLUEPARQUET" | "AVRO" | "ORC" | "XML" | "TABLEAUHYPER"
 object OutputFormat {
   inline val CSV: "CSV" = "CSV"
   inline val JSON: "JSON" = "JSON"
@@ -88,8 +103,9 @@ object OutputFormat {
   inline val AVRO: "AVRO" = "AVRO"
   inline val ORC: "ORC" = "ORC"
   inline val XML: "XML" = "XML"
+  inline val TABLEAUHYPER: "TABLEAUHYPER" = "TABLEAUHYPER"
 
-  inline def values: js.Array[OutputFormat] = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML)
+  inline def values: js.Array[OutputFormat] = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML, TABLEAUHYPER)
 }
 
 type ParameterType = "Datetime" | "Number" | "String"
@@ -141,4 +157,29 @@ object Source {
   inline val DATABASE: "DATABASE" = "DATABASE"
 
   inline def values: js.Array[Source] = js.Array(S3, `DATA-CATALOG`, DATABASE)
+}
+
+type ThresholdType = "GREATER_THAN_OR_EQUAL" | "LESS_THAN_OR_EQUAL" | "GREATER_THAN" | "LESS_THAN"
+object ThresholdType {
+  inline val GREATER_THAN_OR_EQUAL: "GREATER_THAN_OR_EQUAL" = "GREATER_THAN_OR_EQUAL"
+  inline val LESS_THAN_OR_EQUAL: "LESS_THAN_OR_EQUAL" = "LESS_THAN_OR_EQUAL"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+
+  inline def values: js.Array[ThresholdType] = js.Array(GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN)
+}
+
+type ThresholdUnit = "COUNT" | "PERCENTAGE"
+object ThresholdUnit {
+  inline val COUNT: "COUNT" = "COUNT"
+  inline val PERCENTAGE: "PERCENTAGE" = "PERCENTAGE"
+
+  inline def values: js.Array[ThresholdUnit] = js.Array(COUNT, PERCENTAGE)
+}
+
+type ValidationMode = "CHECK_ALL"
+object ValidationMode {
+  inline val CHECK_ALL: "CHECK_ALL" = "CHECK_ALL"
+
+  inline def values: js.Array[ValidationMode] = js.Array(CHECK_ALL)
 }

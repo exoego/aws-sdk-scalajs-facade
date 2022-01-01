@@ -83,12 +83,37 @@ object EventSourceState {
   inline def values: js.Array[EventSourceState] = js.Array(PENDING, ACTIVE, DELETED)
 }
 
-type LaunchType = "EC2" | "FARGATE"
+type LaunchType = "EC2" | "FARGATE" | "EXTERNAL"
 object LaunchType {
   inline val EC2: "EC2" = "EC2"
   inline val FARGATE: "FARGATE" = "FARGATE"
+  inline val EXTERNAL: "EXTERNAL" = "EXTERNAL"
 
-  inline def values: js.Array[LaunchType] = js.Array(EC2, FARGATE)
+  inline def values: js.Array[LaunchType] = js.Array(EC2, FARGATE, EXTERNAL)
+}
+
+type PlacementConstraintType = "distinctInstance" | "memberOf"
+object PlacementConstraintType {
+  inline val distinctInstance: "distinctInstance" = "distinctInstance"
+  inline val memberOf: "memberOf" = "memberOf"
+
+  inline def values: js.Array[PlacementConstraintType] = js.Array(distinctInstance, memberOf)
+}
+
+type PlacementStrategyType = "random" | "spread" | "binpack"
+object PlacementStrategyType {
+  inline val random: "random" = "random"
+  inline val spread: "spread" = "spread"
+  inline val binpack: "binpack" = "binpack"
+
+  inline def values: js.Array[PlacementStrategyType] = js.Array(random, spread, binpack)
+}
+
+type PropagateTags = "TASK_DEFINITION"
+object PropagateTags {
+  inline val TASK_DEFINITION: "TASK_DEFINITION" = "TASK_DEFINITION"
+
+  inline def values: js.Array[PropagateTags] = js.Array(TASK_DEFINITION)
 }
 
 type ReplayState = "STARTING" | "RUNNING" | "CANCELLING" | "COMPLETED" | "CANCELLED" | "FAILED"

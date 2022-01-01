@@ -212,6 +212,27 @@ package object dlm {
     }
   }
 
+  /** Specifies an AMI deprecation rule for cross-Region AMI copies created by a cross-Region copy rule.
+    */
+  @js.native
+  trait CrossRegionCopyDeprecateRule extends js.Object {
+    var Interval: js.UndefOr[Interval]
+    var IntervalUnit: js.UndefOr[RetentionIntervalUnitValues]
+  }
+
+  object CrossRegionCopyDeprecateRule {
+    @inline
+    def apply(
+        Interval: js.UndefOr[Interval] = js.undefined,
+        IntervalUnit: js.UndefOr[RetentionIntervalUnitValues] = js.undefined
+    ): CrossRegionCopyDeprecateRule = {
+      val __obj = js.Dynamic.literal()
+      Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
+      IntervalUnit.foreach(__v => __obj.updateDynamic("IntervalUnit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CrossRegionCopyDeprecateRule]
+    }
+  }
+
   /** Specifies the retention rule for cross-Region snapshot copies.
     */
   @js.native
@@ -240,6 +261,7 @@ package object dlm {
     var Encrypted: Encrypted
     var CmkArn: js.UndefOr[CmkArn]
     var CopyTags: js.UndefOr[CopyTagsNullable]
+    var DeprecateRule: js.UndefOr[CrossRegionCopyDeprecateRule]
     var RetainRule: js.UndefOr[CrossRegionCopyRetainRule]
     var Target: js.UndefOr[Target]
     var TargetRegion: js.UndefOr[TargetRegion]
@@ -251,6 +273,7 @@ package object dlm {
         Encrypted: Encrypted,
         CmkArn: js.UndefOr[CmkArn] = js.undefined,
         CopyTags: js.UndefOr[CopyTagsNullable] = js.undefined,
+        DeprecateRule: js.UndefOr[CrossRegionCopyDeprecateRule] = js.undefined,
         RetainRule: js.UndefOr[CrossRegionCopyRetainRule] = js.undefined,
         Target: js.UndefOr[Target] = js.undefined,
         TargetRegion: js.UndefOr[TargetRegion] = js.undefined
@@ -261,6 +284,7 @@ package object dlm {
 
       CmkArn.foreach(__v => __obj.updateDynamic("CmkArn")(__v.asInstanceOf[js.Any]))
       CopyTags.foreach(__v => __obj.updateDynamic("CopyTags")(__v.asInstanceOf[js.Any]))
+      DeprecateRule.foreach(__v => __obj.updateDynamic("DeprecateRule")(__v.asInstanceOf[js.Any]))
       RetainRule.foreach(__v => __obj.updateDynamic("RetainRule")(__v.asInstanceOf[js.Any]))
       Target.foreach(__v => __obj.updateDynamic("Target")(__v.asInstanceOf[js.Any]))
       TargetRegion.foreach(__v => __obj.updateDynamic("TargetRegion")(__v.asInstanceOf[js.Any]))
@@ -293,6 +317,30 @@ package object dlm {
     def apply(): DeleteLifecyclePolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteLifecyclePolicyResponse]
+    }
+  }
+
+  /** Specifies an AMI deprecation rule for a schedule.
+    */
+  @js.native
+  trait DeprecateRule extends js.Object {
+    var Count: js.UndefOr[Count]
+    var Interval: js.UndefOr[Interval]
+    var IntervalUnit: js.UndefOr[RetentionIntervalUnitValues]
+  }
+
+  object DeprecateRule {
+    @inline
+    def apply(
+        Count: js.UndefOr[Count] = js.undefined,
+        Interval: js.UndefOr[Interval] = js.undefined,
+        IntervalUnit: js.UndefOr[RetentionIntervalUnitValues] = js.undefined
+    ): DeprecateRule = {
+      val __obj = js.Dynamic.literal()
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      Interval.foreach(__v => __obj.updateDynamic("Interval")(__v.asInstanceOf[js.Any]))
+      IntervalUnit.foreach(__v => __obj.updateDynamic("IntervalUnit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeprecateRule]
     }
   }
 
@@ -672,6 +720,7 @@ package object dlm {
     var CopyTags: js.UndefOr[CopyTags]
     var CreateRule: js.UndefOr[CreateRule]
     var CrossRegionCopyRules: js.UndefOr[CrossRegionCopyRules]
+    var DeprecateRule: js.UndefOr[DeprecateRule]
     var FastRestoreRule: js.UndefOr[FastRestoreRule]
     var Name: js.UndefOr[ScheduleName]
     var RetainRule: js.UndefOr[RetainRule]
@@ -686,6 +735,7 @@ package object dlm {
         CopyTags: js.UndefOr[CopyTags] = js.undefined,
         CreateRule: js.UndefOr[CreateRule] = js.undefined,
         CrossRegionCopyRules: js.UndefOr[CrossRegionCopyRules] = js.undefined,
+        DeprecateRule: js.UndefOr[DeprecateRule] = js.undefined,
         FastRestoreRule: js.UndefOr[FastRestoreRule] = js.undefined,
         Name: js.UndefOr[ScheduleName] = js.undefined,
         RetainRule: js.UndefOr[RetainRule] = js.undefined,
@@ -697,6 +747,7 @@ package object dlm {
       CopyTags.foreach(__v => __obj.updateDynamic("CopyTags")(__v.asInstanceOf[js.Any]))
       CreateRule.foreach(__v => __obj.updateDynamic("CreateRule")(__v.asInstanceOf[js.Any]))
       CrossRegionCopyRules.foreach(__v => __obj.updateDynamic("CrossRegionCopyRules")(__v.asInstanceOf[js.Any]))
+      DeprecateRule.foreach(__v => __obj.updateDynamic("DeprecateRule")(__v.asInstanceOf[js.Any]))
       FastRestoreRule.foreach(__v => __obj.updateDynamic("FastRestoreRule")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RetainRule.foreach(__v => __obj.updateDynamic("RetainRule")(__v.asInstanceOf[js.Any]))
@@ -707,7 +758,7 @@ package object dlm {
     }
   }
 
-  /** Specifies a rule for sharing snapshots across AWS accounts.
+  /** Specifies a rule for sharing snapshots across Amazon Web Services accounts.
     */
   @js.native
   trait ShareRule extends js.Object {

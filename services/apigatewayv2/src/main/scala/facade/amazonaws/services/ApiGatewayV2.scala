@@ -1825,6 +1825,7 @@ package object apigatewayv2 {
     var DomainNameStatusMessage: js.UndefOr[__string]
     var EndpointType: js.UndefOr[EndpointType]
     var HostedZoneId: js.UndefOr[__string]
+    var OwnershipVerificationCertificateArn: js.UndefOr[Arn]
     var SecurityPolicy: js.UndefOr[SecurityPolicy]
   }
 
@@ -1839,6 +1840,7 @@ package object apigatewayv2 {
         DomainNameStatusMessage: js.UndefOr[__string] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
         HostedZoneId: js.UndefOr[__string] = js.undefined,
+        OwnershipVerificationCertificateArn: js.UndefOr[Arn] = js.undefined,
         SecurityPolicy: js.UndefOr[SecurityPolicy] = js.undefined
     ): DomainNameConfiguration = {
       val __obj = js.Dynamic.literal()
@@ -1850,6 +1852,7 @@ package object apigatewayv2 {
       DomainNameStatusMessage.foreach(__v => __obj.updateDynamic("DomainNameStatusMessage")(__v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       HostedZoneId.foreach(__v => __obj.updateDynamic("HostedZoneId")(__v.asInstanceOf[js.Any]))
+      OwnershipVerificationCertificateArn.foreach(__v => __obj.updateDynamic("OwnershipVerificationCertificateArn")(__v.asInstanceOf[js.Any]))
       SecurityPolicy.foreach(__v => __obj.updateDynamic("SecurityPolicy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainNameConfiguration]
     }

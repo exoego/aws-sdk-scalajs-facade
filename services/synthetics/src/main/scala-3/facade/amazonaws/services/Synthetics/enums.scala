@@ -40,3 +40,11 @@ object CanaryStateReasonCode {
 
   inline def values: js.Array[CanaryStateReasonCode] = js.Array(INVALID_PERMISSIONS)
 }
+
+type EncryptionMode = "SSE_S3" | "SSE_KMS"
+object EncryptionMode {
+  inline val SSE_S3: "SSE_S3" = "SSE_S3"
+  inline val SSE_KMS: "SSE_KMS" = "SSE_KMS"
+
+  inline def values: js.Array[EncryptionMode] = js.Array(SSE_S3, SSE_KMS)
+}

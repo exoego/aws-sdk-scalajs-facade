@@ -72,11 +72,12 @@ object ImportStatus {
   inline def values: js.Array[ImportStatus] = js.Array(IN_PROGRESS, COMPLETE, FAILED)
 }
 
-type Locale = "de-DE" | "en-AU" | "en-GB" | "en-US" | "es-419" | "es-ES" | "es-US" | "fr-FR" | "fr-CA" | "it-IT" | "ja-JP"
+type Locale = "de-DE" | "en-AU" | "en-GB" | "en-IN" | "en-US" | "es-419" | "es-ES" | "es-US" | "fr-FR" | "fr-CA" | "it-IT" | "ja-JP" | "ko-KR"
 object Locale {
   inline val `de-DE`: "de-DE" = "de-DE"
   inline val `en-AU`: "en-AU" = "en-AU"
   inline val `en-GB`: "en-GB" = "en-GB"
+  inline val `en-IN`: "en-IN" = "en-IN"
   inline val `en-US`: "en-US" = "en-US"
   inline val `es-419`: "es-419" = "es-419"
   inline val `es-ES`: "es-ES" = "es-ES"
@@ -85,8 +86,9 @@ object Locale {
   inline val `fr-CA`: "fr-CA" = "fr-CA"
   inline val `it-IT`: "it-IT" = "it-IT"
   inline val `ja-JP`: "ja-JP" = "ja-JP"
+  inline val `ko-KR`: "ko-KR" = "ko-KR"
 
-  inline def values: js.Array[Locale] = js.Array(`de-DE`, `en-AU`, `en-GB`, `en-US`, `es-419`, `es-ES`, `es-US`, `fr-FR`, `fr-CA`, `it-IT`, `ja-JP`)
+  inline def values: js.Array[Locale] = js.Array(`de-DE`, `en-AU`, `en-GB`, `en-IN`, `en-US`, `es-419`, `es-ES`, `es-US`, `fr-FR`, `fr-CA`, `it-IT`, `ja-JP`, `ko-KR`)
 }
 
 type LogType = "AUDIO" | "TEXT"
@@ -103,6 +105,39 @@ object MergeStrategy {
   inline val FAIL_ON_CONFLICT: "FAIL_ON_CONFLICT" = "FAIL_ON_CONFLICT"
 
   inline def values: js.Array[MergeStrategy] = js.Array(OVERWRITE_LATEST, FAIL_ON_CONFLICT)
+}
+
+type MigrationAlertType = "ERROR" | "WARN"
+object MigrationAlertType {
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val WARN: "WARN" = "WARN"
+
+  inline def values: js.Array[MigrationAlertType] = js.Array(ERROR, WARN)
+}
+
+type MigrationSortAttribute = "V1_BOT_NAME" | "MIGRATION_DATE_TIME"
+object MigrationSortAttribute {
+  inline val V1_BOT_NAME: "V1_BOT_NAME" = "V1_BOT_NAME"
+  inline val MIGRATION_DATE_TIME: "MIGRATION_DATE_TIME" = "MIGRATION_DATE_TIME"
+
+  inline def values: js.Array[MigrationSortAttribute] = js.Array(V1_BOT_NAME, MIGRATION_DATE_TIME)
+}
+
+type MigrationStatus = "IN_PROGRESS" | "COMPLETED" | "FAILED"
+object MigrationStatus {
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[MigrationStatus] = js.Array(IN_PROGRESS, COMPLETED, FAILED)
+}
+
+type MigrationStrategy = "CREATE_NEW" | "UPDATE_EXISTING"
+object MigrationStrategy {
+  inline val CREATE_NEW: "CREATE_NEW" = "CREATE_NEW"
+  inline val UPDATE_EXISTING: "UPDATE_EXISTING" = "UPDATE_EXISTING"
+
+  inline def values: js.Array[MigrationStrategy] = js.Array(CREATE_NEW, UPDATE_EXISTING)
 }
 
 type ObfuscationSetting = "NONE" | "DEFAULT_OBFUSCATION"
@@ -144,6 +179,14 @@ object SlotValueSelectionStrategy {
   inline val TOP_RESOLUTION: "TOP_RESOLUTION" = "TOP_RESOLUTION"
 
   inline def values: js.Array[SlotValueSelectionStrategy] = js.Array(ORIGINAL_VALUE, TOP_RESOLUTION)
+}
+
+type SortOrder = "ASCENDING" | "DESCENDING"
+object SortOrder {
+  inline val ASCENDING: "ASCENDING" = "ASCENDING"
+  inline val DESCENDING: "DESCENDING" = "DESCENDING"
+
+  inline def values: js.Array[SortOrder] = js.Array(ASCENDING, DESCENDING)
 }
 
 type Status = "BUILDING" | "READY" | "READY_BASIC_TESTING" | "FAILED" | "NOT_BUILT"

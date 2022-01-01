@@ -35,6 +35,16 @@ object DependentServiceName {
 }
 
 @js.native
+sealed trait DestinationType extends js.Any
+object DestinationType {
+  val IPV4 = "IPV4".asInstanceOf[DestinationType]
+  val IPV6 = "IPV6".asInstanceOf[DestinationType]
+  val PREFIX_LIST = "PREFIX_LIST".asInstanceOf[DestinationType]
+
+  @inline def values: js.Array[DestinationType] = js.Array(IPV4, IPV6, PREFIX_LIST)
+}
+
+@js.native
 sealed trait PolicyComplianceStatusType extends js.Any
 object PolicyComplianceStatusType {
   val COMPLIANT = "COMPLIANT".asInstanceOf[PolicyComplianceStatusType]
@@ -68,6 +78,34 @@ object SecurityServiceType {
 }
 
 @js.native
+sealed trait TargetType extends js.Any
+object TargetType {
+  val GATEWAY = "GATEWAY".asInstanceOf[TargetType]
+  val CARRIER_GATEWAY = "CARRIER_GATEWAY".asInstanceOf[TargetType]
+  val INSTANCE = "INSTANCE".asInstanceOf[TargetType]
+  val LOCAL_GATEWAY = "LOCAL_GATEWAY".asInstanceOf[TargetType]
+  val NAT_GATEWAY = "NAT_GATEWAY".asInstanceOf[TargetType]
+  val NETWORK_INTERFACE = "NETWORK_INTERFACE".asInstanceOf[TargetType]
+  val VPC_ENDPOINT = "VPC_ENDPOINT".asInstanceOf[TargetType]
+  val VPC_PEERING_CONNECTION = "VPC_PEERING_CONNECTION".asInstanceOf[TargetType]
+  val EGRESS_ONLY_INTERNET_GATEWAY = "EGRESS_ONLY_INTERNET_GATEWAY".asInstanceOf[TargetType]
+  val TRANSIT_GATEWAY = "TRANSIT_GATEWAY".asInstanceOf[TargetType]
+
+  @inline def values: js.Array[TargetType] = js.Array(
+    GATEWAY,
+    CARRIER_GATEWAY,
+    INSTANCE,
+    LOCAL_GATEWAY,
+    NAT_GATEWAY,
+    NETWORK_INTERFACE,
+    VPC_ENDPOINT,
+    VPC_PEERING_CONNECTION,
+    EGRESS_ONLY_INTERNET_GATEWAY,
+    TRANSIT_GATEWAY
+  )
+}
+
+@js.native
 sealed trait ViolationReason extends js.Any
 object ViolationReason {
   val WEB_ACL_MISSING_RULE_GROUP = "WEB_ACL_MISSING_RULE_GROUP".asInstanceOf[ViolationReason]
@@ -84,6 +122,16 @@ object ViolationReason {
   val MISSING_FIREWALL_SUBNET_IN_AZ = "MISSING_FIREWALL_SUBNET_IN_AZ".asInstanceOf[ViolationReason]
   val MISSING_EXPECTED_ROUTE_TABLE = "MISSING_EXPECTED_ROUTE_TABLE".asInstanceOf[ViolationReason]
   val NETWORK_FIREWALL_POLICY_MODIFIED = "NETWORK_FIREWALL_POLICY_MODIFIED".asInstanceOf[ViolationReason]
+  val INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE = "INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE".asInstanceOf[ViolationReason]
+  val FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE = "FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE".asInstanceOf[ViolationReason]
+  val UNEXPECTED_FIREWALL_ROUTES = "UNEXPECTED_FIREWALL_ROUTES".asInstanceOf[ViolationReason]
+  val UNEXPECTED_TARGET_GATEWAY_ROUTES = "UNEXPECTED_TARGET_GATEWAY_ROUTES".asInstanceOf[ViolationReason]
+  val TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY = "TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY".asInstanceOf[ViolationReason]
+  val INVALID_ROUTE_CONFIGURATION = "INVALID_ROUTE_CONFIGURATION".asInstanceOf[ViolationReason]
+  val MISSING_TARGET_GATEWAY = "MISSING_TARGET_GATEWAY".asInstanceOf[ViolationReason]
+  val INTERNET_TRAFFIC_NOT_INSPECTED = "INTERNET_TRAFFIC_NOT_INSPECTED".asInstanceOf[ViolationReason]
+  val BLACK_HOLE_ROUTE_DETECTED = "BLACK_HOLE_ROUTE_DETECTED".asInstanceOf[ViolationReason]
+  val BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET = "BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET".asInstanceOf[ViolationReason]
   val RESOURCE_MISSING_DNS_FIREWALL = "RESOURCE_MISSING_DNS_FIREWALL".asInstanceOf[ViolationReason]
 
   @inline def values: js.Array[ViolationReason] = js.Array(
@@ -101,6 +149,16 @@ object ViolationReason {
     MISSING_FIREWALL_SUBNET_IN_AZ,
     MISSING_EXPECTED_ROUTE_TABLE,
     NETWORK_FIREWALL_POLICY_MODIFIED,
+    INTERNET_GATEWAY_MISSING_EXPECTED_ROUTE,
+    FIREWALL_SUBNET_MISSING_EXPECTED_ROUTE,
+    UNEXPECTED_FIREWALL_ROUTES,
+    UNEXPECTED_TARGET_GATEWAY_ROUTES,
+    TRAFFIC_INSPECTION_CROSSES_AZ_BOUNDARY,
+    INVALID_ROUTE_CONFIGURATION,
+    MISSING_TARGET_GATEWAY,
+    INTERNET_TRAFFIC_NOT_INSPECTED,
+    BLACK_HOLE_ROUTE_DETECTED,
+    BLACK_HOLE_ROUTE_DETECTED_IN_FIREWALL_SUBNET,
     RESOURCE_MISSING_DNS_FIREWALL
   )
 }

@@ -3,6 +3,15 @@ package facade.amazonaws.services.healthlake
 import scalajs.js
 
 @js.native
+sealed trait CmkType extends js.Any
+object CmkType {
+  val CUSTOMER_MANAGED_KMS_KEY = "CUSTOMER_MANAGED_KMS_KEY".asInstanceOf[CmkType]
+  val AWS_OWNED_KMS_KEY = "AWS_OWNED_KMS_KEY".asInstanceOf[CmkType]
+
+  @inline def values: js.Array[CmkType] = js.Array(CUSTOMER_MANAGED_KMS_KEY, AWS_OWNED_KMS_KEY)
+}
+
+@js.native
 sealed trait DatastoreStatus extends js.Any
 object DatastoreStatus {
   val CREATING = "CREATING".asInstanceOf[DatastoreStatus]
@@ -26,10 +35,11 @@ sealed trait JobStatus extends js.Any
 object JobStatus {
   val SUBMITTED = "SUBMITTED".asInstanceOf[JobStatus]
   val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[JobStatus]
+  val COMPLETED_WITH_ERRORS = "COMPLETED_WITH_ERRORS".asInstanceOf[JobStatus]
   val COMPLETED = "COMPLETED".asInstanceOf[JobStatus]
   val FAILED = "FAILED".asInstanceOf[JobStatus]
 
-  @inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED, FAILED)
+  @inline def values: js.Array[JobStatus] = js.Array(SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED)
 }
 
 @js.native

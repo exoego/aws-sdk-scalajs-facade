@@ -2,14 +2,16 @@ package facade.amazonaws.services.dataexchange
 
 import scalajs.js
 
-/** The type of file your data is stored in. Currently, the supported asset type is S3_SNAPSHOT.
+/** The type of asset that is added to a data set.
   */
 @js.native
 sealed trait AssetType extends js.Any
 object AssetType {
   val S3_SNAPSHOT = "S3_SNAPSHOT".asInstanceOf[AssetType]
+  val REDSHIFT_DATA_SHARE = "REDSHIFT_DATA_SHARE".asInstanceOf[AssetType]
+  val API_GATEWAY_API = "API_GATEWAY_API".asInstanceOf[AssetType]
 
-  @inline def values: js.Array[AssetType] = js.Array(S3_SNAPSHOT)
+  @inline def values: js.Array[AssetType] = js.Array(S3_SNAPSHOT, REDSHIFT_DATA_SHARE, API_GATEWAY_API)
 }
 
 @js.native
@@ -41,8 +43,9 @@ sealed trait JobErrorLimitName extends js.Any
 object JobErrorLimitName {
   val `Assets per revision` = "Assets per revision".asInstanceOf[JobErrorLimitName]
   val `Asset size in GB` = "Asset size in GB".asInstanceOf[JobErrorLimitName]
+  val `Amazon Redshift datashare assets per revision` = "Amazon Redshift datashare assets per revision".asInstanceOf[JobErrorLimitName]
 
-  @inline def values: js.Array[JobErrorLimitName] = js.Array(`Assets per revision`, `Asset size in GB`)
+  @inline def values: js.Array[JobErrorLimitName] = js.Array(`Assets per revision`, `Asset size in GB`, `Amazon Redshift datashare assets per revision`)
 }
 
 /** The types of resource which the job error can apply to.
@@ -52,8 +55,9 @@ sealed trait JobErrorResourceTypes extends js.Any
 object JobErrorResourceTypes {
   val REVISION = "REVISION".asInstanceOf[JobErrorResourceTypes]
   val ASSET = "ASSET".asInstanceOf[JobErrorResourceTypes]
+  val DATA_SET = "DATA_SET".asInstanceOf[JobErrorResourceTypes]
 
-  @inline def values: js.Array[JobErrorResourceTypes] = js.Array(REVISION, ASSET)
+  @inline def values: js.Array[JobErrorResourceTypes] = js.Array(REVISION, ASSET, DATA_SET)
 }
 
 /** A property that defines the data set as OWNED by the account (for providers) or ENTITLED to the account (for subscribers). When an owned data set is published in a product, AWS Data Exchange creates a copy of the data set. Subscribers can access that copy of the data set as an entitled data set.
@@ -65,6 +69,14 @@ object Origin {
   val ENTITLED = "ENTITLED".asInstanceOf[Origin]
 
   @inline def values: js.Array[Origin] = js.Array(OWNED, ENTITLED)
+}
+
+@js.native
+sealed trait ProtocolType extends js.Any
+object ProtocolType {
+  val REST = "REST".asInstanceOf[ProtocolType]
+
+  @inline def values: js.Array[ProtocolType] = js.Array(REST)
 }
 
 /** The types of encryption supported in export jobs to Amazon S3.
@@ -99,6 +111,16 @@ object Type {
   val EXPORT_ASSETS_TO_S3 = "EXPORT_ASSETS_TO_S3".asInstanceOf[Type]
   val EXPORT_ASSET_TO_SIGNED_URL = "EXPORT_ASSET_TO_SIGNED_URL".asInstanceOf[Type]
   val EXPORT_REVISIONS_TO_S3 = "EXPORT_REVISIONS_TO_S3".asInstanceOf[Type]
+  val IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES = "IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES".asInstanceOf[Type]
+  val IMPORT_ASSET_FROM_API_GATEWAY_API = "IMPORT_ASSET_FROM_API_GATEWAY_API".asInstanceOf[Type]
 
-  @inline def values: js.Array[Type] = js.Array(IMPORT_ASSETS_FROM_S3, IMPORT_ASSET_FROM_SIGNED_URL, EXPORT_ASSETS_TO_S3, EXPORT_ASSET_TO_SIGNED_URL, EXPORT_REVISIONS_TO_S3)
+  @inline def values: js.Array[Type] = js.Array(
+    IMPORT_ASSETS_FROM_S3,
+    IMPORT_ASSET_FROM_SIGNED_URL,
+    EXPORT_ASSETS_TO_S3,
+    EXPORT_ASSET_TO_SIGNED_URL,
+    EXPORT_REVISIONS_TO_S3,
+    IMPORT_ASSETS_FROM_REDSHIFT_DATA_SHARES,
+    IMPORT_ASSET_FROM_API_GATEWAY_API
+  )
 }

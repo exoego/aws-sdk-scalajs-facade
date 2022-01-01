@@ -66,10 +66,12 @@ package object shield {
     @inline def describeProtectionFuture(params: DescribeProtectionRequest): Future[DescribeProtectionResponse] = service.describeProtection(params).promise().toFuture
     @inline def describeProtectionGroupFuture(params: DescribeProtectionGroupRequest): Future[DescribeProtectionGroupResponse] = service.describeProtectionGroup(params).promise().toFuture
     @inline def describeSubscriptionFuture(params: DescribeSubscriptionRequest): Future[DescribeSubscriptionResponse] = service.describeSubscription(params).promise().toFuture
+    @inline def disableApplicationLayerAutomaticResponseFuture(params: DisableApplicationLayerAutomaticResponseRequest): Future[DisableApplicationLayerAutomaticResponseResponse] = service.disableApplicationLayerAutomaticResponse(params).promise().toFuture
     @inline def disableProactiveEngagementFuture(params: DisableProactiveEngagementRequest): Future[DisableProactiveEngagementResponse] = service.disableProactiveEngagement(params).promise().toFuture
     @inline def disassociateDRTLogBucketFuture(params: DisassociateDRTLogBucketRequest): Future[DisassociateDRTLogBucketResponse] = service.disassociateDRTLogBucket(params).promise().toFuture
     @inline def disassociateDRTRoleFuture(params: DisassociateDRTRoleRequest): Future[DisassociateDRTRoleResponse] = service.disassociateDRTRole(params).promise().toFuture
     @inline def disassociateHealthCheckFuture(params: DisassociateHealthCheckRequest): Future[DisassociateHealthCheckResponse] = service.disassociateHealthCheck(params).promise().toFuture
+    @inline def enableApplicationLayerAutomaticResponseFuture(params: EnableApplicationLayerAutomaticResponseRequest): Future[EnableApplicationLayerAutomaticResponseResponse] = service.enableApplicationLayerAutomaticResponse(params).promise().toFuture
     @inline def enableProactiveEngagementFuture(params: EnableProactiveEngagementRequest): Future[EnableProactiveEngagementResponse] = service.enableProactiveEngagement(params).promise().toFuture
     @inline def getSubscriptionStateFuture(params: GetSubscriptionStateRequest): Future[GetSubscriptionStateResponse] = service.getSubscriptionState(params).promise().toFuture
     @inline def listAttacksFuture(params: ListAttacksRequest): Future[ListAttacksResponse] = service.listAttacks(params).promise().toFuture
@@ -79,6 +81,7 @@ package object shield {
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateApplicationLayerAutomaticResponseFuture(params: UpdateApplicationLayerAutomaticResponseRequest): Future[UpdateApplicationLayerAutomaticResponseResponse] = service.updateApplicationLayerAutomaticResponse(params).promise().toFuture
     @inline def updateEmergencyContactSettingsFuture(params: UpdateEmergencyContactSettingsRequest): Future[UpdateEmergencyContactSettingsResponse] = service.updateEmergencyContactSettings(params).promise().toFuture
     @inline def updateProtectionGroupFuture(params: UpdateProtectionGroupRequest): Future[UpdateProtectionGroupResponse] = service.updateProtectionGroup(params).promise().toFuture
     @inline def updateSubscriptionFuture(params: UpdateSubscriptionRequest): Future[UpdateSubscriptionResponse] = service.updateSubscription(params).promise().toFuture
@@ -107,10 +110,12 @@ package object shield {
     def describeProtection(params: DescribeProtectionRequest): Request[DescribeProtectionResponse] = js.native
     def describeProtectionGroup(params: DescribeProtectionGroupRequest): Request[DescribeProtectionGroupResponse] = js.native
     def describeSubscription(params: DescribeSubscriptionRequest): Request[DescribeSubscriptionResponse] = js.native
+    def disableApplicationLayerAutomaticResponse(params: DisableApplicationLayerAutomaticResponseRequest): Request[DisableApplicationLayerAutomaticResponseResponse] = js.native
     def disableProactiveEngagement(params: DisableProactiveEngagementRequest): Request[DisableProactiveEngagementResponse] = js.native
     def disassociateDRTLogBucket(params: DisassociateDRTLogBucketRequest): Request[DisassociateDRTLogBucketResponse] = js.native
     def disassociateDRTRole(params: DisassociateDRTRoleRequest): Request[DisassociateDRTRoleResponse] = js.native
     def disassociateHealthCheck(params: DisassociateHealthCheckRequest): Request[DisassociateHealthCheckResponse] = js.native
+    def enableApplicationLayerAutomaticResponse(params: EnableApplicationLayerAutomaticResponseRequest): Request[EnableApplicationLayerAutomaticResponseResponse] = js.native
     def enableProactiveEngagement(params: EnableProactiveEngagementRequest): Request[EnableProactiveEngagementResponse] = js.native
     def getSubscriptionState(params: GetSubscriptionStateRequest): Request[GetSubscriptionStateResponse] = js.native
     def listAttacks(params: ListAttacksRequest): Request[ListAttacksResponse] = js.native
@@ -120,6 +125,7 @@ package object shield {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateApplicationLayerAutomaticResponse(params: UpdateApplicationLayerAutomaticResponseRequest): Request[UpdateApplicationLayerAutomaticResponseResponse] = js.native
     def updateEmergencyContactSettings(params: UpdateEmergencyContactSettingsRequest): Request[UpdateEmergencyContactSettingsResponse] = js.native
     def updateProtectionGroup(params: UpdateProtectionGroupRequest): Request[UpdateProtectionGroupResponse] = js.native
     def updateSubscription(params: UpdateSubscriptionRequest): Request[UpdateSubscriptionResponse] = js.native
@@ -127,6 +133,28 @@ package object shield {
   object Shield {
     @inline implicit def toOps(service: Shield): ShieldOps = {
       new ShieldOps(service)
+    }
+  }
+
+  /** The automatic application layer DDoS mitigation settings for a <a>Protection</a>. This configuration determines whether Shield Advanced automatically manages rules in the web ACL in order to respond to application layer events that Shield Advanced determines to be DDoS attacks.
+    */
+  @js.native
+  trait ApplicationLayerAutomaticResponseConfiguration extends js.Object {
+    var Action: ResponseAction
+    var Status: ApplicationLayerAutomaticResponseStatus
+  }
+
+  object ApplicationLayerAutomaticResponseConfiguration {
+    @inline
+    def apply(
+        Action: ResponseAction,
+        Status: ApplicationLayerAutomaticResponseStatus
+    ): ApplicationLayerAutomaticResponseConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ApplicationLayerAutomaticResponseConfiguration]
     }
   }
 
@@ -284,7 +312,7 @@ package object shield {
     }
   }
 
-  /** Details of the described attack.
+  /** Details of a Shield event. This is provided as part of an <a>AttackDetail</a>.
     */
   @js.native
   trait AttackProperty extends js.Object {
@@ -429,6 +457,19 @@ package object shield {
     }
   }
 
+  /** Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Block</code> action. This is only used in the context of the <code>ResponseAction</code> setting. JSON specification: <code>"Block": {}</code>
+    */
+  @js.native
+  trait BlockAction extends js.Object
+
+  object BlockAction {
+    @inline
+    def apply(): BlockAction = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[BlockAction]
+    }
+  }
+
   /** A contributor to the attack and their contribution.
     */
   @js.native
@@ -447,6 +488,19 @@ package object shield {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Contributor]
+    }
+  }
+
+  /** Specifies that Shield Advanced should configure its WAF rules with the WAF <code>Count</code> action. This is only used in the context of the <code>ResponseAction</code> setting. JSON specification: <code>"Count": {}</code>
+    */
+  @js.native
+  trait CountAction extends js.Object
+
+  object CountAction {
+    @inline
+    def apply(): CountAction = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CountAction]
     }
   }
 
@@ -854,6 +908,34 @@ package object shield {
   }
 
   @js.native
+  trait DisableApplicationLayerAutomaticResponseRequest extends js.Object {
+    var ResourceArn: ResourceArn
+  }
+
+  object DisableApplicationLayerAutomaticResponseRequest {
+    @inline
+    def apply(
+        ResourceArn: ResourceArn
+    ): DisableApplicationLayerAutomaticResponseRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisableApplicationLayerAutomaticResponseRequest]
+    }
+  }
+
+  @js.native
+  trait DisableApplicationLayerAutomaticResponseResponse extends js.Object
+
+  object DisableApplicationLayerAutomaticResponseResponse {
+    @inline
+    def apply(): DisableApplicationLayerAutomaticResponseResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisableApplicationLayerAutomaticResponseResponse]
+    }
+  }
+
+  @js.native
   trait DisableProactiveEngagementRequest extends js.Object
 
   object DisableProactiveEngagementRequest {
@@ -956,7 +1038,7 @@ package object shield {
     }
   }
 
-  /** Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
+  /** Contact information that the SRT can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.
     */
   @js.native
   trait EmergencyContact extends js.Object {
@@ -979,6 +1061,37 @@ package object shield {
       ContactNotes.foreach(__v => __obj.updateDynamic("ContactNotes")(__v.asInstanceOf[js.Any]))
       PhoneNumber.foreach(__v => __obj.updateDynamic("PhoneNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EmergencyContact]
+    }
+  }
+
+  @js.native
+  trait EnableApplicationLayerAutomaticResponseRequest extends js.Object {
+    var Action: ResponseAction
+    var ResourceArn: ResourceArn
+  }
+
+  object EnableApplicationLayerAutomaticResponseRequest {
+    @inline
+    def apply(
+        Action: ResponseAction,
+        ResourceArn: ResourceArn
+    ): EnableApplicationLayerAutomaticResponseRequest = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EnableApplicationLayerAutomaticResponseRequest]
+    }
+  }
+
+  @js.native
+  trait EnableApplicationLayerAutomaticResponseResponse extends js.Object
+
+  object EnableApplicationLayerAutomaticResponseResponse {
+    @inline
+    def apply(): EnableApplicationLayerAutomaticResponseResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[EnableApplicationLayerAutomaticResponseResponse]
     }
   }
 
@@ -1278,6 +1391,7 @@ package object shield {
     */
   @js.native
   trait Protection extends js.Object {
+    var ApplicationLayerAutomaticResponseConfiguration: js.UndefOr[ApplicationLayerAutomaticResponseConfiguration]
     var HealthCheckIds: js.UndefOr[HealthCheckIds]
     var Id: js.UndefOr[ProtectionId]
     var Name: js.UndefOr[ProtectionName]
@@ -1288,6 +1402,7 @@ package object shield {
   object Protection {
     @inline
     def apply(
+        ApplicationLayerAutomaticResponseConfiguration: js.UndefOr[ApplicationLayerAutomaticResponseConfiguration] = js.undefined,
         HealthCheckIds: js.UndefOr[HealthCheckIds] = js.undefined,
         Id: js.UndefOr[ProtectionId] = js.undefined,
         Name: js.UndefOr[ProtectionName] = js.undefined,
@@ -1295,6 +1410,7 @@ package object shield {
         ResourceArn: js.UndefOr[ResourceArn] = js.undefined
     ): Protection = {
       val __obj = js.Dynamic.literal()
+      ApplicationLayerAutomaticResponseConfiguration.foreach(__v => __obj.updateDynamic("ApplicationLayerAutomaticResponseConfiguration")(__v.asInstanceOf[js.Any]))
       HealthCheckIds.foreach(__v => __obj.updateDynamic("HealthCheckIds")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -1304,7 +1420,7 @@ package object shield {
     }
   }
 
-  /** A grouping of protected resources that you and AWS Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives.
+  /** A grouping of protected resources that you and Shield Advanced can monitor as a collective. This resource grouping improves the accuracy of detection and reduces false positives.
     */
   @js.native
   trait ProtectionGroup extends js.Object {
@@ -1418,6 +1534,27 @@ package object shield {
     }
   }
 
+  /** Specifies the action setting that Shield Advanced should use in the WAF rules that it creates on behalf of the protected resource in response to DDoS attacks. You specify this as part of the configuration for the automatic application layer DDoS mitigation feature, when you enable or update automatic mitigation. Shield Advanced creates the WAF rules in a Shield Advanced-managed rule group, inside the web ACL that you have associated with the resource.
+    */
+  @js.native
+  trait ResponseAction extends js.Object {
+    var Block: js.UndefOr[BlockAction]
+    var Count: js.UndefOr[CountAction]
+  }
+
+  object ResponseAction {
+    @inline
+    def apply(
+        Block: js.UndefOr[BlockAction] = js.undefined,
+        Count: js.UndefOr[CountAction] = js.undefined
+    ): ResponseAction = {
+      val __obj = js.Dynamic.literal()
+      Block.foreach(__v => __obj.updateDynamic("Block")(__v.asInstanceOf[js.Any]))
+      Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResponseAction]
+    }
+  }
+
   /** The attack information for the specified SubResource.
     */
   @js.native
@@ -1445,7 +1582,7 @@ package object shield {
     }
   }
 
-  /** Information about the AWS Shield Advanced subscription for an account.
+  /** Information about the Shield Advanced subscription for an account.
     */
   @js.native
   trait Subscription extends js.Object {
@@ -1564,7 +1701,7 @@ package object shield {
     }
   }
 
-  /** A tag associated with an AWS resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for a resource.
+  /** A tag associated with an Amazon Web Services resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing or other management. Typically, the tag key represents a category, such as "environment", and the tag value represents a specific value within that category, such as "test," "development," or "production". Or you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1620,15 +1757,15 @@ package object shield {
     */
   @js.native
   trait TimeRange extends js.Object {
-    var FromInclusive: js.UndefOr[AttackTimestamp]
-    var ToExclusive: js.UndefOr[AttackTimestamp]
+    var FromInclusive: js.UndefOr[Timestamp]
+    var ToExclusive: js.UndefOr[Timestamp]
   }
 
   object TimeRange {
     @inline
     def apply(
-        FromInclusive: js.UndefOr[AttackTimestamp] = js.undefined,
-        ToExclusive: js.UndefOr[AttackTimestamp] = js.undefined
+        FromInclusive: js.UndefOr[Timestamp] = js.undefined,
+        ToExclusive: js.UndefOr[Timestamp] = js.undefined
     ): TimeRange = {
       val __obj = js.Dynamic.literal()
       FromInclusive.foreach(__v => __obj.updateDynamic("FromInclusive")(__v.asInstanceOf[js.Any]))
@@ -1665,6 +1802,37 @@ package object shield {
     def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateApplicationLayerAutomaticResponseRequest extends js.Object {
+    var Action: ResponseAction
+    var ResourceArn: ResourceArn
+  }
+
+  object UpdateApplicationLayerAutomaticResponseRequest {
+    @inline
+    def apply(
+        Action: ResponseAction,
+        ResourceArn: ResourceArn
+    ): UpdateApplicationLayerAutomaticResponseRequest = {
+      val __obj = js.Dynamic.literal(
+        "Action" -> Action.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateApplicationLayerAutomaticResponseRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateApplicationLayerAutomaticResponseResponse extends js.Object
+
+  object UpdateApplicationLayerAutomaticResponseResponse {
+    @inline
+    def apply(): UpdateApplicationLayerAutomaticResponseResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateApplicationLayerAutomaticResponseResponse]
     }
   }
 

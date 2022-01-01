@@ -39,10 +39,13 @@ package object iotsitewise {
   type CapabilityConfiguration = String
   type CapabilityNamespace = String
   type ClientToken = String
+  type CoreDeviceThingName = String
   type DashboardDefinition = String
   type DashboardSummaries = js.Array[DashboardSummary]
   type DefaultValue = String
   type Description = String
+  type DetailedErrorMessage = String
+  type DetailedErrors = js.Array[DetailedError]
   type Email = String
   type EntryId = String
   type ErrorMessage = String
@@ -54,13 +57,20 @@ package object iotsitewise {
   type IDs = js.Array[ID]
   type IdentityId = String
   type ImageFileData = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type InterpolatedAssetPropertyValues = js.Array[InterpolatedAssetPropertyValue]
+  type InterpolationType = String
   type Interval = String
+  type IntervalInSeconds = Double
+  type IntervalWindowInSeconds = Double
   type KmsKeyId = String
   type Macro = String
+  type MaxInterpolatedResults = Int
   type MaxResults = Int
   type MonitorErrorMessage = String
   type Name = String
   type NextToken = String
+  type NumberOfDays = Int
+  type Offset = String
   type OffsetInNanos = Int
   type PortalClientId = String
   type PortalSummaries = js.Array[PortalSummary]
@@ -81,14 +91,18 @@ package object iotsitewise {
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
   type TimeInSeconds = Double
+  type TimeSeriesId = String
+  type TimeSeriesSummaries = js.Array[TimeSeriesSummary]
   type Timestamp = js.Date
   type Timestamps = js.Array[TimeInNanos]
+  type Unlimited = Boolean
   type Url = String
   type VariableName = String
 
   final class IoTSiteWiseOps(private val service: IoTSiteWise) extends AnyVal {
 
     @inline def associateAssetsFuture(params: AssociateAssetsRequest): Future[js.Object] = service.associateAssets(params).promise().toFuture
+    @inline def associateTimeSeriesToAssetPropertyFuture(params: AssociateTimeSeriesToAssetPropertyRequest): Future[js.Object] = service.associateTimeSeriesToAssetProperty(params).promise().toFuture
     @inline def batchAssociateProjectAssetsFuture(params: BatchAssociateProjectAssetsRequest): Future[BatchAssociateProjectAssetsResponse] = service.batchAssociateProjectAssets(params).promise().toFuture
     @inline def batchDisassociateProjectAssetsFuture(params: BatchDisassociateProjectAssetsRequest): Future[BatchDisassociateProjectAssetsResponse] = service.batchDisassociateProjectAssets(params).promise().toFuture
     @inline def batchPutAssetPropertyValueFuture(params: BatchPutAssetPropertyValueRequest): Future[BatchPutAssetPropertyValueResponse] = service.batchPutAssetPropertyValue(params).promise().toFuture
@@ -106,6 +120,7 @@ package object iotsitewise {
     @inline def deleteGatewayFuture(params: DeleteGatewayRequest): Future[js.Object] = service.deleteGateway(params).promise().toFuture
     @inline def deletePortalFuture(params: DeletePortalRequest): Future[DeletePortalResponse] = service.deletePortal(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] = service.deleteProject(params).promise().toFuture
+    @inline def deleteTimeSeriesFuture(params: DeleteTimeSeriesRequest): Future[js.Object] = service.deleteTimeSeries(params).promise().toFuture
     @inline def describeAccessPolicyFuture(params: DescribeAccessPolicyRequest): Future[DescribeAccessPolicyResponse] = service.describeAccessPolicy(params).promise().toFuture
     @inline def describeAssetFuture(params: DescribeAssetRequest): Future[DescribeAssetResponse] = service.describeAsset(params).promise().toFuture
     @inline def describeAssetModelFuture(params: DescribeAssetModelRequest): Future[DescribeAssetModelResponse] = service.describeAssetModel(params).promise().toFuture
@@ -117,10 +132,14 @@ package object iotsitewise {
     @inline def describeLoggingOptionsFuture(params: DescribeLoggingOptionsRequest): Future[DescribeLoggingOptionsResponse] = service.describeLoggingOptions(params).promise().toFuture
     @inline def describePortalFuture(params: DescribePortalRequest): Future[DescribePortalResponse] = service.describePortal(params).promise().toFuture
     @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] = service.describeProject(params).promise().toFuture
+    @inline def describeStorageConfigurationFuture(params: DescribeStorageConfigurationRequest): Future[DescribeStorageConfigurationResponse] = service.describeStorageConfiguration(params).promise().toFuture
+    @inline def describeTimeSeriesFuture(params: DescribeTimeSeriesRequest): Future[DescribeTimeSeriesResponse] = service.describeTimeSeries(params).promise().toFuture
     @inline def disassociateAssetsFuture(params: DisassociateAssetsRequest): Future[js.Object] = service.disassociateAssets(params).promise().toFuture
+    @inline def disassociateTimeSeriesFromAssetPropertyFuture(params: DisassociateTimeSeriesFromAssetPropertyRequest): Future[js.Object] = service.disassociateTimeSeriesFromAssetProperty(params).promise().toFuture
     @inline def getAssetPropertyAggregatesFuture(params: GetAssetPropertyAggregatesRequest): Future[GetAssetPropertyAggregatesResponse] = service.getAssetPropertyAggregates(params).promise().toFuture
     @inline def getAssetPropertyValueFuture(params: GetAssetPropertyValueRequest): Future[GetAssetPropertyValueResponse] = service.getAssetPropertyValue(params).promise().toFuture
     @inline def getAssetPropertyValueHistoryFuture(params: GetAssetPropertyValueHistoryRequest): Future[GetAssetPropertyValueHistoryResponse] = service.getAssetPropertyValueHistory(params).promise().toFuture
+    @inline def getInterpolatedAssetPropertyValuesFuture(params: GetInterpolatedAssetPropertyValuesRequest): Future[GetInterpolatedAssetPropertyValuesResponse] = service.getInterpolatedAssetPropertyValues(params).promise().toFuture
     @inline def listAccessPoliciesFuture(params: ListAccessPoliciesRequest): Future[ListAccessPoliciesResponse] = service.listAccessPolicies(params).promise().toFuture
     @inline def listAssetModelsFuture(params: ListAssetModelsRequest): Future[ListAssetModelsResponse] = service.listAssetModels(params).promise().toFuture
     @inline def listAssetRelationshipsFuture(params: ListAssetRelationshipsRequest): Future[ListAssetRelationshipsResponse] = service.listAssetRelationships(params).promise().toFuture
@@ -132,8 +151,10 @@ package object iotsitewise {
     @inline def listProjectAssetsFuture(params: ListProjectAssetsRequest): Future[ListProjectAssetsResponse] = service.listProjectAssets(params).promise().toFuture
     @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] = service.listProjects(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def listTimeSeriesFuture(params: ListTimeSeriesRequest): Future[ListTimeSeriesResponse] = service.listTimeSeries(params).promise().toFuture
     @inline def putDefaultEncryptionConfigurationFuture(params: PutDefaultEncryptionConfigurationRequest): Future[PutDefaultEncryptionConfigurationResponse] = service.putDefaultEncryptionConfiguration(params).promise().toFuture
     @inline def putLoggingOptionsFuture(params: PutLoggingOptionsRequest): Future[PutLoggingOptionsResponse] = service.putLoggingOptions(params).promise().toFuture
+    @inline def putStorageConfigurationFuture(params: PutStorageConfigurationRequest): Future[PutStorageConfigurationResponse] = service.putStorageConfiguration(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAccessPolicyFuture(params: UpdateAccessPolicyRequest): Future[UpdateAccessPolicyResponse] = service.updateAccessPolicy(params).promise().toFuture
@@ -154,6 +175,7 @@ package object iotsitewise {
     def this(config: AWSConfig) = this()
 
     def associateAssets(params: AssociateAssetsRequest): Request[js.Object] = js.native
+    def associateTimeSeriesToAssetProperty(params: AssociateTimeSeriesToAssetPropertyRequest): Request[js.Object] = js.native
     def batchAssociateProjectAssets(params: BatchAssociateProjectAssetsRequest): Request[BatchAssociateProjectAssetsResponse] = js.native
     def batchDisassociateProjectAssets(params: BatchDisassociateProjectAssetsRequest): Request[BatchDisassociateProjectAssetsResponse] = js.native
     def batchPutAssetPropertyValue(params: BatchPutAssetPropertyValueRequest): Request[BatchPutAssetPropertyValueResponse] = js.native
@@ -171,6 +193,7 @@ package object iotsitewise {
     def deleteGateway(params: DeleteGatewayRequest): Request[js.Object] = js.native
     def deletePortal(params: DeletePortalRequest): Request[DeletePortalResponse] = js.native
     def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResponse] = js.native
+    def deleteTimeSeries(params: DeleteTimeSeriesRequest): Request[js.Object] = js.native
     def describeAccessPolicy(params: DescribeAccessPolicyRequest): Request[DescribeAccessPolicyResponse] = js.native
     def describeAsset(params: DescribeAssetRequest): Request[DescribeAssetResponse] = js.native
     def describeAssetModel(params: DescribeAssetModelRequest): Request[DescribeAssetModelResponse] = js.native
@@ -182,10 +205,14 @@ package object iotsitewise {
     def describeLoggingOptions(params: DescribeLoggingOptionsRequest): Request[DescribeLoggingOptionsResponse] = js.native
     def describePortal(params: DescribePortalRequest): Request[DescribePortalResponse] = js.native
     def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResponse] = js.native
+    def describeStorageConfiguration(params: DescribeStorageConfigurationRequest): Request[DescribeStorageConfigurationResponse] = js.native
+    def describeTimeSeries(params: DescribeTimeSeriesRequest): Request[DescribeTimeSeriesResponse] = js.native
     def disassociateAssets(params: DisassociateAssetsRequest): Request[js.Object] = js.native
+    def disassociateTimeSeriesFromAssetProperty(params: DisassociateTimeSeriesFromAssetPropertyRequest): Request[js.Object] = js.native
     def getAssetPropertyAggregates(params: GetAssetPropertyAggregatesRequest): Request[GetAssetPropertyAggregatesResponse] = js.native
     def getAssetPropertyValue(params: GetAssetPropertyValueRequest): Request[GetAssetPropertyValueResponse] = js.native
     def getAssetPropertyValueHistory(params: GetAssetPropertyValueHistoryRequest): Request[GetAssetPropertyValueHistoryResponse] = js.native
+    def getInterpolatedAssetPropertyValues(params: GetInterpolatedAssetPropertyValuesRequest): Request[GetInterpolatedAssetPropertyValuesResponse] = js.native
     def listAccessPolicies(params: ListAccessPoliciesRequest): Request[ListAccessPoliciesResponse] = js.native
     def listAssetModels(params: ListAssetModelsRequest): Request[ListAssetModelsResponse] = js.native
     def listAssetRelationships(params: ListAssetRelationshipsRequest): Request[ListAssetRelationshipsResponse] = js.native
@@ -197,8 +224,10 @@ package object iotsitewise {
     def listProjectAssets(params: ListProjectAssetsRequest): Request[ListProjectAssetsResponse] = js.native
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def listTimeSeries(params: ListTimeSeriesRequest): Request[ListTimeSeriesResponse] = js.native
     def putDefaultEncryptionConfiguration(params: PutDefaultEncryptionConfigurationRequest): Request[PutDefaultEncryptionConfigurationResponse] = js.native
     def putLoggingOptions(params: PutLoggingOptionsRequest): Request[PutLoggingOptionsResponse] = js.native
+    def putStorageConfiguration(params: PutStorageConfigurationRequest): Request[PutStorageConfigurationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAccessPolicy(params: UpdateAccessPolicyRequest): Request[UpdateAccessPolicyResponse] = js.native
@@ -217,7 +246,7 @@ package object iotsitewise {
     }
   }
 
-  /** Contains an access policy that defines an identity's access to an AWS IoT SiteWise Monitor resource.
+  /** Contains an access policy that defines an identity's access to an IoT SiteWise Monitor resource.
     */
   @js.native
   trait AccessPolicySummary extends js.Object {
@@ -308,6 +337,29 @@ package object iotsitewise {
       standardDeviation.foreach(__v => __obj.updateDynamic("standardDeviation")(__v.asInstanceOf[js.Any]))
       sum.foreach(__v => __obj.updateDynamic("sum")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Aggregates]
+    }
+  }
+
+  /** Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal. You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html|Monitoring with alarms]] in the <i>IoT SiteWise Application Guide</i>.
+    */
+  @js.native
+  trait Alarms extends js.Object {
+    var alarmRoleArn: ARN
+    var notificationLambdaArn: js.UndefOr[ARN]
+  }
+
+  object Alarms {
+    @inline
+    def apply(
+        alarmRoleArn: ARN,
+        notificationLambdaArn: js.UndefOr[ARN] = js.undefined
+    ): Alarms = {
+      val __obj = js.Dynamic.literal(
+        "alarmRoleArn" -> alarmRoleArn.asInstanceOf[js.Any]
+      )
+
+      notificationLambdaArn.foreach(__v => __obj.updateDynamic("notificationLambdaArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Alarms]
     }
   }
 
@@ -582,7 +634,7 @@ package object iotsitewise {
     }
   }
 
-  /** Contains current status information for an asset model. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and model states]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains current status information for an asset model. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and model states]] in the <i>IoT SiteWise User Guide</i>.
     */
   @js.native
   trait AssetModelStatus extends js.Object {
@@ -729,7 +781,7 @@ package object iotsitewise {
     }
   }
 
-  /** Contains information about the current status of an asset. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and model states]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains information about the current status of an asset. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-and-model-states.html|Asset and model states]] in the <i>IoT SiteWise User Guide</i>.
     */
   @js.native
   trait AssetStatus extends js.Object {
@@ -819,6 +871,33 @@ package object iotsitewise {
     }
   }
 
+  @js.native
+  trait AssociateTimeSeriesToAssetPropertyRequest extends js.Object {
+    var alias: PropertyAlias
+    var assetId: ID
+    var propertyId: ID
+    var clientToken: js.UndefOr[ClientToken]
+  }
+
+  object AssociateTimeSeriesToAssetPropertyRequest {
+    @inline
+    def apply(
+        alias: PropertyAlias,
+        assetId: ID,
+        propertyId: ID,
+        clientToken: js.UndefOr[ClientToken] = js.undefined
+    ): AssociateTimeSeriesToAssetPropertyRequest = {
+      val __obj = js.Dynamic.literal(
+        "alias" -> alias.asInstanceOf[js.Any],
+        "assetId" -> assetId.asInstanceOf[js.Any],
+        "propertyId" -> propertyId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateTimeSeriesToAssetPropertyRequest]
+    }
+  }
+
   /** Contains a summary of an associated asset.
     */
   @js.native
@@ -859,7 +938,7 @@ package object iotsitewise {
     }
   }
 
-  /** Contains an asset attribute property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes|Attributes]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains an asset attribute property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#attributes|Attributes]] in the <i>IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Attribute extends js.Object {
@@ -1063,7 +1142,7 @@ package object iotsitewise {
     }
   }
 
-  /** Contains the details of an AWS IoT SiteWise configuration error.
+  /** Contains the details of an IoT SiteWise configuration error.
     */
   @js.native
   trait ConfigurationErrorDetails extends js.Object {
@@ -1369,7 +1448,9 @@ package object iotsitewise {
     var portalContactEmail: Email
     var portalName: Name
     var roleArn: ARN
+    var alarms: js.UndefOr[Alarms]
     var clientToken: js.UndefOr[ClientToken]
+    var notificationSenderEmail: js.UndefOr[Email]
     var portalAuthMode: js.UndefOr[AuthMode]
     var portalDescription: js.UndefOr[Description]
     var portalLogoImageFile: js.UndefOr[ImageFile]
@@ -1382,7 +1463,9 @@ package object iotsitewise {
         portalContactEmail: Email,
         portalName: Name,
         roleArn: ARN,
+        alarms: js.UndefOr[Alarms] = js.undefined,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
+        notificationSenderEmail: js.UndefOr[Email] = js.undefined,
         portalAuthMode: js.UndefOr[AuthMode] = js.undefined,
         portalDescription: js.UndefOr[Description] = js.undefined,
         portalLogoImageFile: js.UndefOr[ImageFile] = js.undefined,
@@ -1394,7 +1477,9 @@ package object iotsitewise {
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
+      alarms.foreach(__v => __obj.updateDynamic("alarms")(__v.asInstanceOf[js.Any]))
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      notificationSenderEmail.foreach(__v => __obj.updateDynamic("notificationSenderEmail")(__v.asInstanceOf[js.Any]))
       portalAuthMode.foreach(__v => __obj.updateDynamic("portalAuthMode")(__v.asInstanceOf[js.Any]))
       portalDescription.foreach(__v => __obj.updateDynamic("portalDescription")(__v.asInstanceOf[js.Any]))
       portalLogoImageFile.foreach(__v => __obj.updateDynamic("portalLogoImageFile")(__v.asInstanceOf[js.Any]))
@@ -1479,6 +1564,28 @@ package object iotsitewise {
         "projectId" -> projectId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateProjectResponse]
+    }
+  }
+
+  /** Contains information about a customer managed Amazon S3 bucket.
+    */
+  @js.native
+  trait CustomerManagedS3Storage extends js.Object {
+    var roleArn: ARN
+    var s3ResourceArn: ARN
+  }
+
+  object CustomerManagedS3Storage {
+    @inline
+    def apply(
+        roleArn: ARN,
+        s3ResourceArn: ARN
+    ): CustomerManagedS3Storage = {
+      val __obj = js.Dynamic.literal(
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "s3ResourceArn" -> s3ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CustomerManagedS3Storage]
     }
   }
 
@@ -1738,6 +1845,31 @@ package object iotsitewise {
     def apply(): DeleteProjectResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteProjectResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteTimeSeriesRequest extends js.Object {
+    var alias: js.UndefOr[PropertyAlias]
+    var assetId: js.UndefOr[ID]
+    var clientToken: js.UndefOr[ClientToken]
+    var propertyId: js.UndefOr[ID]
+  }
+
+  object DeleteTimeSeriesRequest {
+    @inline
+    def apply(
+        alias: js.UndefOr[PropertyAlias] = js.undefined,
+        assetId: js.UndefOr[ID] = js.undefined,
+        clientToken: js.UndefOr[ClientToken] = js.undefined,
+        propertyId: js.UndefOr[ID] = js.undefined
+    ): DeleteTimeSeriesRequest = {
+      val __obj = js.Dynamic.literal()
+      alias.foreach(__v => __obj.updateDynamic("alias")(__v.asInstanceOf[js.Any]))
+      assetId.foreach(__v => __obj.updateDynamic("assetId")(__v.asInstanceOf[js.Any]))
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      propertyId.foreach(__v => __obj.updateDynamic("propertyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteTimeSeriesRequest]
     }
   }
 
@@ -2213,6 +2345,8 @@ package object iotsitewise {
     var portalName: Name
     var portalStartUrl: Url
     var portalStatus: PortalStatus
+    var alarms: js.UndefOr[Alarms]
+    var notificationSenderEmail: js.UndefOr[Email]
     var portalAuthMode: js.UndefOr[AuthMode]
     var portalDescription: js.UndefOr[Description]
     var portalLogoImageLocation: js.UndefOr[ImageLocation]
@@ -2231,6 +2365,8 @@ package object iotsitewise {
         portalName: Name,
         portalStartUrl: Url,
         portalStatus: PortalStatus,
+        alarms: js.UndefOr[Alarms] = js.undefined,
+        notificationSenderEmail: js.UndefOr[Email] = js.undefined,
         portalAuthMode: js.UndefOr[AuthMode] = js.undefined,
         portalDescription: js.UndefOr[Description] = js.undefined,
         portalLogoImageLocation: js.UndefOr[ImageLocation] = js.undefined,
@@ -2248,6 +2384,8 @@ package object iotsitewise {
         "portalStatus" -> portalStatus.asInstanceOf[js.Any]
       )
 
+      alarms.foreach(__v => __obj.updateDynamic("alarms")(__v.asInstanceOf[js.Any]))
+      notificationSenderEmail.foreach(__v => __obj.updateDynamic("notificationSenderEmail")(__v.asInstanceOf[js.Any]))
       portalAuthMode.foreach(__v => __obj.updateDynamic("portalAuthMode")(__v.asInstanceOf[js.Any]))
       portalDescription.foreach(__v => __obj.updateDynamic("portalDescription")(__v.asInstanceOf[js.Any]))
       portalLogoImageLocation.foreach(__v => __obj.updateDynamic("portalLogoImageLocation")(__v.asInstanceOf[js.Any]))
@@ -2310,6 +2448,133 @@ package object iotsitewise {
   }
 
   @js.native
+  trait DescribeStorageConfigurationRequest extends js.Object
+
+  object DescribeStorageConfigurationRequest {
+    @inline
+    def apply(): DescribeStorageConfigurationRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DescribeStorageConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeStorageConfigurationResponse extends js.Object {
+    var configurationStatus: ConfigurationStatus
+    var storageType: StorageType
+    var disassociatedDataStorage: js.UndefOr[DisassociatedDataStorageState]
+    var lastUpdateDate: js.UndefOr[Timestamp]
+    var multiLayerStorage: js.UndefOr[MultiLayerStorage]
+    var retentionPeriod: js.UndefOr[RetentionPeriod]
+  }
+
+  object DescribeStorageConfigurationResponse {
+    @inline
+    def apply(
+        configurationStatus: ConfigurationStatus,
+        storageType: StorageType,
+        disassociatedDataStorage: js.UndefOr[DisassociatedDataStorageState] = js.undefined,
+        lastUpdateDate: js.UndefOr[Timestamp] = js.undefined,
+        multiLayerStorage: js.UndefOr[MultiLayerStorage] = js.undefined,
+        retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
+    ): DescribeStorageConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "configurationStatus" -> configurationStatus.asInstanceOf[js.Any],
+        "storageType" -> storageType.asInstanceOf[js.Any]
+      )
+
+      disassociatedDataStorage.foreach(__v => __obj.updateDynamic("disassociatedDataStorage")(__v.asInstanceOf[js.Any]))
+      lastUpdateDate.foreach(__v => __obj.updateDynamic("lastUpdateDate")(__v.asInstanceOf[js.Any]))
+      multiLayerStorage.foreach(__v => __obj.updateDynamic("multiLayerStorage")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStorageConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeTimeSeriesRequest extends js.Object {
+    var alias: js.UndefOr[PropertyAlias]
+    var assetId: js.UndefOr[ID]
+    var propertyId: js.UndefOr[ID]
+  }
+
+  object DescribeTimeSeriesRequest {
+    @inline
+    def apply(
+        alias: js.UndefOr[PropertyAlias] = js.undefined,
+        assetId: js.UndefOr[ID] = js.undefined,
+        propertyId: js.UndefOr[ID] = js.undefined
+    ): DescribeTimeSeriesRequest = {
+      val __obj = js.Dynamic.literal()
+      alias.foreach(__v => __obj.updateDynamic("alias")(__v.asInstanceOf[js.Any]))
+      assetId.foreach(__v => __obj.updateDynamic("assetId")(__v.asInstanceOf[js.Any]))
+      propertyId.foreach(__v => __obj.updateDynamic("propertyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTimeSeriesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeTimeSeriesResponse extends js.Object {
+    var dataType: PropertyDataType
+    var timeSeriesCreationDate: Timestamp
+    var timeSeriesId: TimeSeriesId
+    var timeSeriesLastUpdateDate: Timestamp
+    var alias: js.UndefOr[PropertyAlias]
+    var assetId: js.UndefOr[ID]
+    var dataTypeSpec: js.UndefOr[Name]
+    var propertyId: js.UndefOr[ID]
+  }
+
+  object DescribeTimeSeriesResponse {
+    @inline
+    def apply(
+        dataType: PropertyDataType,
+        timeSeriesCreationDate: Timestamp,
+        timeSeriesId: TimeSeriesId,
+        timeSeriesLastUpdateDate: Timestamp,
+        alias: js.UndefOr[PropertyAlias] = js.undefined,
+        assetId: js.UndefOr[ID] = js.undefined,
+        dataTypeSpec: js.UndefOr[Name] = js.undefined,
+        propertyId: js.UndefOr[ID] = js.undefined
+    ): DescribeTimeSeriesResponse = {
+      val __obj = js.Dynamic.literal(
+        "dataType" -> dataType.asInstanceOf[js.Any],
+        "timeSeriesCreationDate" -> timeSeriesCreationDate.asInstanceOf[js.Any],
+        "timeSeriesId" -> timeSeriesId.asInstanceOf[js.Any],
+        "timeSeriesLastUpdateDate" -> timeSeriesLastUpdateDate.asInstanceOf[js.Any]
+      )
+
+      alias.foreach(__v => __obj.updateDynamic("alias")(__v.asInstanceOf[js.Any]))
+      assetId.foreach(__v => __obj.updateDynamic("assetId")(__v.asInstanceOf[js.Any]))
+      dataTypeSpec.foreach(__v => __obj.updateDynamic("dataTypeSpec")(__v.asInstanceOf[js.Any]))
+      propertyId.foreach(__v => __obj.updateDynamic("propertyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeTimeSeriesResponse]
+    }
+  }
+
+  /** Contains detailed error information.
+    */
+  @js.native
+  trait DetailedError extends js.Object {
+    var code: DetailedErrorCode
+    var message: DetailedErrorMessage
+  }
+
+  object DetailedError {
+    @inline
+    def apply(
+        code: DetailedErrorCode,
+        message: DetailedErrorMessage
+    ): DetailedError = {
+      val __obj = js.Dynamic.literal(
+        "code" -> code.asInstanceOf[js.Any],
+        "message" -> message.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DetailedError]
+    }
+  }
+
+  @js.native
   trait DisassociateAssetsRequest extends js.Object {
     var assetId: ID
     var childAssetId: ID
@@ -2336,24 +2601,55 @@ package object iotsitewise {
     }
   }
 
-  /** Contains the details of an AWS IoT SiteWise error.
+  @js.native
+  trait DisassociateTimeSeriesFromAssetPropertyRequest extends js.Object {
+    var alias: PropertyAlias
+    var assetId: ID
+    var propertyId: ID
+    var clientToken: js.UndefOr[ClientToken]
+  }
+
+  object DisassociateTimeSeriesFromAssetPropertyRequest {
+    @inline
+    def apply(
+        alias: PropertyAlias,
+        assetId: ID,
+        propertyId: ID,
+        clientToken: js.UndefOr[ClientToken] = js.undefined
+    ): DisassociateTimeSeriesFromAssetPropertyRequest = {
+      val __obj = js.Dynamic.literal(
+        "alias" -> alias.asInstanceOf[js.Any],
+        "assetId" -> assetId.asInstanceOf[js.Any],
+        "propertyId" -> propertyId.asInstanceOf[js.Any]
+      )
+
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateTimeSeriesFromAssetPropertyRequest]
+    }
+  }
+
+  /** Contains the details of an IoT SiteWise error.
     */
   @js.native
   trait ErrorDetails extends js.Object {
     var code: ErrorCode
     var message: ErrorMessage
+    var details: js.UndefOr[DetailedErrors]
   }
 
   object ErrorDetails {
     @inline
     def apply(
         code: ErrorCode,
-        message: ErrorMessage
+        message: ErrorMessage,
+        details: js.UndefOr[DetailedErrors] = js.undefined
     ): ErrorDetails = {
       val __obj = js.Dynamic.literal(
         "code" -> code.asInstanceOf[js.Any],
         "message" -> message.asInstanceOf[js.Any]
       )
+
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorDetails]
     }
   }
@@ -2377,6 +2673,25 @@ package object iotsitewise {
         "value" -> value.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ExpressionVariable]
+    }
+  }
+
+  /** The forwarding configuration for a given property.
+    */
+  @js.native
+  trait ForwardingConfig extends js.Object {
+    var state: ForwardingConfigState
+  }
+
+  object ForwardingConfig {
+    @inline
+    def apply(
+        state: ForwardingConfigState
+    ): ForwardingConfig = {
+      val __obj = js.Dynamic.literal(
+        "state" -> state.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ForwardingConfig]
     }
   }
 
@@ -2406,17 +2721,19 @@ package object iotsitewise {
     */
   @js.native
   trait GatewayPlatform extends js.Object {
-    var greengrass: Greengrass
+    var greengrass: js.UndefOr[Greengrass]
+    var greengrassV2: js.UndefOr[GreengrassV2]
   }
 
   object GatewayPlatform {
     @inline
     def apply(
-        greengrass: Greengrass
+        greengrass: js.UndefOr[Greengrass] = js.undefined,
+        greengrassV2: js.UndefOr[GreengrassV2] = js.undefined
     ): GatewayPlatform = {
-      val __obj = js.Dynamic.literal(
-        "greengrass" -> greengrass.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      greengrass.foreach(__v => __obj.updateDynamic("greengrass")(__v.asInstanceOf[js.Any]))
+      greengrassV2.foreach(__v => __obj.updateDynamic("greengrassV2")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GatewayPlatform]
     }
   }
@@ -2430,6 +2747,7 @@ package object iotsitewise {
     var gatewayName: Name
     var lastUpdateDate: Timestamp
     var gatewayCapabilitySummaries: js.UndefOr[GatewayCapabilitySummaries]
+    var gatewayPlatform: js.UndefOr[GatewayPlatform]
   }
 
   object GatewaySummary {
@@ -2439,7 +2757,8 @@ package object iotsitewise {
         gatewayId: ID,
         gatewayName: Name,
         lastUpdateDate: Timestamp,
-        gatewayCapabilitySummaries: js.UndefOr[GatewayCapabilitySummaries] = js.undefined
+        gatewayCapabilitySummaries: js.UndefOr[GatewayCapabilitySummaries] = js.undefined,
+        gatewayPlatform: js.UndefOr[GatewayPlatform] = js.undefined
     ): GatewaySummary = {
       val __obj = js.Dynamic.literal(
         "creationDate" -> creationDate.asInstanceOf[js.Any],
@@ -2449,6 +2768,7 @@ package object iotsitewise {
       )
 
       gatewayCapabilitySummaries.foreach(__v => __obj.updateDynamic("gatewayCapabilitySummaries")(__v.asInstanceOf[js.Any]))
+      gatewayPlatform.foreach(__v => __obj.updateDynamic("gatewayPlatform")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GatewaySummary]
     }
   }
@@ -2621,7 +2941,82 @@ package object iotsitewise {
     }
   }
 
-  /** Contains details for a gateway that runs on AWS IoT Greengrass. To create a gateway that runs on AWS IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to AWS IoT SiteWise. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html|Ingesting data using a gateway]] in the <i>AWS IoT SiteWise User Guide</i>.
+  @js.native
+  trait GetInterpolatedAssetPropertyValuesRequest extends js.Object {
+    var endTimeInSeconds: TimeInSeconds
+    var intervalInSeconds: IntervalInSeconds
+    var quality: Quality
+    var startTimeInSeconds: TimeInSeconds
+    var `type`: InterpolationType
+    var assetId: js.UndefOr[ID]
+    var endTimeOffsetInNanos: js.UndefOr[OffsetInNanos]
+    var intervalWindowInSeconds: js.UndefOr[IntervalWindowInSeconds]
+    var maxResults: js.UndefOr[MaxInterpolatedResults]
+    var nextToken: js.UndefOr[NextToken]
+    var propertyAlias: js.UndefOr[AssetPropertyAlias]
+    var propertyId: js.UndefOr[ID]
+    var startTimeOffsetInNanos: js.UndefOr[OffsetInNanos]
+  }
+
+  object GetInterpolatedAssetPropertyValuesRequest {
+    @inline
+    def apply(
+        endTimeInSeconds: TimeInSeconds,
+        intervalInSeconds: IntervalInSeconds,
+        quality: Quality,
+        startTimeInSeconds: TimeInSeconds,
+        `type`: InterpolationType,
+        assetId: js.UndefOr[ID] = js.undefined,
+        endTimeOffsetInNanos: js.UndefOr[OffsetInNanos] = js.undefined,
+        intervalWindowInSeconds: js.UndefOr[IntervalWindowInSeconds] = js.undefined,
+        maxResults: js.UndefOr[MaxInterpolatedResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        propertyAlias: js.UndefOr[AssetPropertyAlias] = js.undefined,
+        propertyId: js.UndefOr[ID] = js.undefined,
+        startTimeOffsetInNanos: js.UndefOr[OffsetInNanos] = js.undefined
+    ): GetInterpolatedAssetPropertyValuesRequest = {
+      val __obj = js.Dynamic.literal(
+        "endTimeInSeconds" -> endTimeInSeconds.asInstanceOf[js.Any],
+        "intervalInSeconds" -> intervalInSeconds.asInstanceOf[js.Any],
+        "quality" -> quality.asInstanceOf[js.Any],
+        "startTimeInSeconds" -> startTimeInSeconds.asInstanceOf[js.Any],
+        "type" -> `type`.asInstanceOf[js.Any]
+      )
+
+      assetId.foreach(__v => __obj.updateDynamic("assetId")(__v.asInstanceOf[js.Any]))
+      endTimeOffsetInNanos.foreach(__v => __obj.updateDynamic("endTimeOffsetInNanos")(__v.asInstanceOf[js.Any]))
+      intervalWindowInSeconds.foreach(__v => __obj.updateDynamic("intervalWindowInSeconds")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      propertyAlias.foreach(__v => __obj.updateDynamic("propertyAlias")(__v.asInstanceOf[js.Any]))
+      propertyId.foreach(__v => __obj.updateDynamic("propertyId")(__v.asInstanceOf[js.Any]))
+      startTimeOffsetInNanos.foreach(__v => __obj.updateDynamic("startTimeOffsetInNanos")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInterpolatedAssetPropertyValuesRequest]
+    }
+  }
+
+  @js.native
+  trait GetInterpolatedAssetPropertyValuesResponse extends js.Object {
+    var interpolatedAssetPropertyValues: InterpolatedAssetPropertyValues
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object GetInterpolatedAssetPropertyValuesResponse {
+    @inline
+    def apply(
+        interpolatedAssetPropertyValues: InterpolatedAssetPropertyValues,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetInterpolatedAssetPropertyValuesResponse = {
+      val __obj = js.Dynamic.literal(
+        "interpolatedAssetPropertyValues" -> interpolatedAssetPropertyValues.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInterpolatedAssetPropertyValuesResponse]
+    }
+  }
+
+  /** Contains details for a gateway that runs on IoT Greengrass. To create a gateway that runs on IoT Greengrass, you must add the IoT SiteWise connector to a Greengrass group and deploy it. Your Greengrass group must also have permissions to upload data to IoT SiteWise. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html|Ingesting data using a gateway]] in the <i>IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Greengrass extends js.Object {
@@ -2637,6 +3032,25 @@ package object iotsitewise {
         "groupArn" -> groupArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[Greengrass]
+    }
+  }
+
+  /** Contains details for a gateway that runs on IoT Greengrass V2. To create a gateway that runs on IoT Greengrass V2, you must deploy the IoT SiteWise Edge component to your gateway device. Your [[https://docs.aws.amazon.com/greengrass/v2/developerguide/device-service-role.html|Greengrass device role]] must use the <code>AWSIoTSiteWiseEdgeAccess</code> policy. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/sw-gateways.html|Using IoT SiteWise at the edge]] in the <i>IoT SiteWise User Guide</i>.
+    */
+  @js.native
+  trait GreengrassV2 extends js.Object {
+    var coreDeviceThingName: CoreDeviceThingName
+  }
+
+  object GreengrassV2 {
+    @inline
+    def apply(
+        coreDeviceThingName: CoreDeviceThingName
+    ): GreengrassV2 = {
+      val __obj = js.Dynamic.literal(
+        "coreDeviceThingName" -> coreDeviceThingName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GreengrassV2]
     }
   }
 
@@ -2659,7 +3073,7 @@ package object iotsitewise {
     }
   }
 
-  /** Contains information about an AWS Identity and Access Management (IAM) role. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html|IAM roles]] in the <i>IAM User Guide</i>.
+  /** Contains information about an Identity and Access Management role. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html|IAM roles]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait IAMRoleIdentity extends js.Object {
@@ -2678,7 +3092,7 @@ package object iotsitewise {
     }
   }
 
-  /** Contains information about an AWS Identity and Access Management (IAM) user.
+  /** Contains information about an Identity and Access Management user.
     */
   @js.native
   trait IAMUserIdentity extends js.Object {
@@ -2697,9 +3111,9 @@ package object iotsitewise {
     }
   }
 
-  /** Contains an identity that can access an AWS IoT SiteWise Monitor resource.
+  /** Contains an identity that can access an IoT SiteWise Monitor resource.
     *
-    * '''Note:'''Currently, you can't use AWS APIs to retrieve AWS SSO identity IDs. You can find the AWS SSO identity IDs in the URL of user and group pages in the [[https://console.aws.amazon.com/singlesignon|AWS SSO console]].
+    * '''Note:'''Currently, you can't use Amazon Web Services APIs to retrieve Amazon Web Services SSO identity IDs. You can find the Amazon Web Services SSO identity IDs in the URL of user and group pages in the [[https://console.aws.amazon.com/singlesignon|Amazon Web Services SSO console]].
     */
   @js.native
   trait Identity extends js.Object {
@@ -2769,7 +3183,7 @@ package object iotsitewise {
     }
   }
 
-  /** Contains an image that is uploaded to AWS IoT SiteWise and available at a URL.
+  /** Contains an image that is uploaded to IoT SiteWise and available at a URL.
     */
   @js.native
   trait ImageLocation extends js.Object {
@@ -2788,6 +3202,28 @@ package object iotsitewise {
         "url" -> url.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ImageLocation]
+    }
+  }
+
+  /** Contains information about an interpolated asset property value.
+    */
+  @js.native
+  trait InterpolatedAssetPropertyValue extends js.Object {
+    var timestamp: TimeInNanos
+    var value: Variant
+  }
+
+  object InterpolatedAssetPropertyValue {
+    @inline
+    def apply(
+        timestamp: TimeInNanos,
+        value: Variant
+    ): InterpolatedAssetPropertyValue = {
+      val __obj = js.Dynamic.literal(
+        "timestamp" -> timestamp.asInstanceOf[js.Any],
+        "value" -> value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[InterpolatedAssetPropertyValue]
     }
   }
 
@@ -3277,6 +3713,55 @@ package object iotsitewise {
     }
   }
 
+  @js.native
+  trait ListTimeSeriesRequest extends js.Object {
+    var aliasPrefix: js.UndefOr[PropertyAlias]
+    var assetId: js.UndefOr[ID]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var timeSeriesType: js.UndefOr[ListTimeSeriesType]
+  }
+
+  object ListTimeSeriesRequest {
+    @inline
+    def apply(
+        aliasPrefix: js.UndefOr[PropertyAlias] = js.undefined,
+        assetId: js.UndefOr[ID] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        timeSeriesType: js.UndefOr[ListTimeSeriesType] = js.undefined
+    ): ListTimeSeriesRequest = {
+      val __obj = js.Dynamic.literal()
+      aliasPrefix.foreach(__v => __obj.updateDynamic("aliasPrefix")(__v.asInstanceOf[js.Any]))
+      assetId.foreach(__v => __obj.updateDynamic("assetId")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      timeSeriesType.foreach(__v => __obj.updateDynamic("timeSeriesType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTimeSeriesRequest]
+    }
+  }
+
+  @js.native
+  trait ListTimeSeriesResponse extends js.Object {
+    var TimeSeriesSummaries: TimeSeriesSummaries
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListTimeSeriesResponse {
+    @inline
+    def apply(
+        TimeSeriesSummaries: TimeSeriesSummaries,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListTimeSeriesResponse = {
+      val __obj = js.Dynamic.literal(
+        "TimeSeriesSummaries" -> TimeSeriesSummaries.asInstanceOf[js.Any]
+      )
+
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTimeSeriesResponse]
+    }
+  }
+
   /** Contains logging options.
     */
   @js.native
@@ -3296,26 +3781,51 @@ package object iotsitewise {
     }
   }
 
-  /** Contains an asset measurement property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements|Measurements]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains an asset measurement property. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#measurements|Measurements]] in the <i>IoT SiteWise User Guide</i>.
     */
   @js.native
-  trait Measurement extends js.Object
+  trait Measurement extends js.Object {
+    var processingConfig: js.UndefOr[MeasurementProcessingConfig]
+  }
 
   object Measurement {
     @inline
-    def apply(): Measurement = {
+    def apply(
+        processingConfig: js.UndefOr[MeasurementProcessingConfig] = js.undefined
+    ): Measurement = {
       val __obj = js.Dynamic.literal()
+      processingConfig.foreach(__v => __obj.updateDynamic("processingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Measurement]
     }
   }
 
-  /** Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum). The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics|Metrics]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** The processing configuration for the given measurement property. You can configure measurements to be kept at the edge or forwarded to the Amazon Web Services Cloud. By default, measurements are forwarded to the cloud.
+    */
+  @js.native
+  trait MeasurementProcessingConfig extends js.Object {
+    var forwardingConfig: ForwardingConfig
+  }
+
+  object MeasurementProcessingConfig {
+    @inline
+    def apply(
+        forwardingConfig: ForwardingConfig
+    ): MeasurementProcessingConfig = {
+      val __obj = js.Dynamic.literal(
+        "forwardingConfig" -> forwardingConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MeasurementProcessingConfig]
+    }
+  }
+
+  /** Contains an asset metric property. With metrics, you can calculate aggregate functions, such as an average, maximum, or minimum, as specified through an expression. A metric maps several values to a single value (such as a sum). The maximum number of dependent/cascading variables used in any one metric calculation is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its computational dependency tree. Additionally, a metric can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#metrics|Metrics]] in the <i>IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Metric extends js.Object {
     var expression: Expression
     var variables: ExpressionVariables
     var window: MetricWindow
+    var processingConfig: js.UndefOr[MetricProcessingConfig]
   }
 
   object Metric {
@@ -3323,14 +3833,36 @@ package object iotsitewise {
     def apply(
         expression: Expression,
         variables: ExpressionVariables,
-        window: MetricWindow
+        window: MetricWindow,
+        processingConfig: js.UndefOr[MetricProcessingConfig] = js.undefined
     ): Metric = {
       val __obj = js.Dynamic.literal(
         "expression" -> expression.asInstanceOf[js.Any],
         "variables" -> variables.asInstanceOf[js.Any],
         "window" -> window.asInstanceOf[js.Any]
       )
+
+      processingConfig.foreach(__v => __obj.updateDynamic("processingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Metric]
+    }
+  }
+
+  /** The processing configuration for the given metric property. You can configure metrics to be computed at the edge or in the Amazon Web Services Cloud. By default, metrics are forwarded to the cloud.
+    */
+  @js.native
+  trait MetricProcessingConfig extends js.Object {
+    var computeLocation: ComputeLocation
+  }
+
+  object MetricProcessingConfig {
+    @inline
+    def apply(
+        computeLocation: ComputeLocation
+    ): MetricProcessingConfig = {
+      val __obj = js.Dynamic.literal(
+        "computeLocation" -> computeLocation.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MetricProcessingConfig]
     }
   }
 
@@ -3352,7 +3884,7 @@ package object iotsitewise {
     }
   }
 
-  /** Contains AWS IoT SiteWise Monitor error details.
+  /** Contains IoT SiteWise Monitor error details.
     */
   @js.native
   trait MonitorErrorDetails extends js.Object {
@@ -3373,7 +3905,26 @@ package object iotsitewise {
     }
   }
 
-  /** Identifies an AWS IoT SiteWise Monitor portal.
+  /** Contains information about the storage destination.
+    */
+  @js.native
+  trait MultiLayerStorage extends js.Object {
+    var customerManagedS3Storage: CustomerManagedS3Storage
+  }
+
+  object MultiLayerStorage {
+    @inline
+    def apply(
+        customerManagedS3Storage: CustomerManagedS3Storage
+    ): MultiLayerStorage = {
+      val __obj = js.Dynamic.literal(
+        "customerManagedS3Storage" -> customerManagedS3Storage.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MultiLayerStorage]
+    }
+  }
+
+  /** Identifies an IoT SiteWise Monitor portal.
     */
   @js.native
   trait PortalResource extends js.Object {
@@ -3456,7 +4007,7 @@ package object iotsitewise {
     }
   }
 
-  /** Identifies a specific AWS IoT SiteWise Monitor project.
+  /** Identifies a specific IoT SiteWise Monitor project.
     */
   @js.native
   trait ProjectResource extends js.Object {
@@ -3545,7 +4096,7 @@ package object iotsitewise {
     }
   }
 
-  /** Contains asset property value notification information. When the notification state is enabled, AWS IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html|Interacting with other services]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains asset property value notification information. When the notification state is enabled, IoT SiteWise publishes property value updates to a unique MQTT topic. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html|Interacting with other services]] in the <i>IoT SiteWise User Guide</i>.
     */
   @js.native
   trait PropertyNotification extends js.Object {
@@ -3699,7 +4250,64 @@ package object iotsitewise {
     }
   }
 
-  /** Contains an AWS IoT SiteWise Monitor resource ID for a portal or project.
+  @js.native
+  trait PutStorageConfigurationRequest extends js.Object {
+    var storageType: StorageType
+    var disassociatedDataStorage: js.UndefOr[DisassociatedDataStorageState]
+    var multiLayerStorage: js.UndefOr[MultiLayerStorage]
+    var retentionPeriod: js.UndefOr[RetentionPeriod]
+  }
+
+  object PutStorageConfigurationRequest {
+    @inline
+    def apply(
+        storageType: StorageType,
+        disassociatedDataStorage: js.UndefOr[DisassociatedDataStorageState] = js.undefined,
+        multiLayerStorage: js.UndefOr[MultiLayerStorage] = js.undefined,
+        retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
+    ): PutStorageConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "storageType" -> storageType.asInstanceOf[js.Any]
+      )
+
+      disassociatedDataStorage.foreach(__v => __obj.updateDynamic("disassociatedDataStorage")(__v.asInstanceOf[js.Any]))
+      multiLayerStorage.foreach(__v => __obj.updateDynamic("multiLayerStorage")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutStorageConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutStorageConfigurationResponse extends js.Object {
+    var configurationStatus: ConfigurationStatus
+    var storageType: StorageType
+    var disassociatedDataStorage: js.UndefOr[DisassociatedDataStorageState]
+    var multiLayerStorage: js.UndefOr[MultiLayerStorage]
+    var retentionPeriod: js.UndefOr[RetentionPeriod]
+  }
+
+  object PutStorageConfigurationResponse {
+    @inline
+    def apply(
+        configurationStatus: ConfigurationStatus,
+        storageType: StorageType,
+        disassociatedDataStorage: js.UndefOr[DisassociatedDataStorageState] = js.undefined,
+        multiLayerStorage: js.UndefOr[MultiLayerStorage] = js.undefined,
+        retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined
+    ): PutStorageConfigurationResponse = {
+      val __obj = js.Dynamic.literal(
+        "configurationStatus" -> configurationStatus.asInstanceOf[js.Any],
+        "storageType" -> storageType.asInstanceOf[js.Any]
+      )
+
+      disassociatedDataStorage.foreach(__v => __obj.updateDynamic("disassociatedDataStorage")(__v.asInstanceOf[js.Any]))
+      multiLayerStorage.foreach(__v => __obj.updateDynamic("multiLayerStorage")(__v.asInstanceOf[js.Any]))
+      retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutStorageConfigurationResponse]
+    }
+  }
+
+  /** Contains an IoT SiteWise Monitor resource ID for a portal or project.
     */
   @js.native
   trait Resource extends js.Object {
@@ -3717,6 +4325,27 @@ package object iotsitewise {
       portal.foreach(__v => __obj.updateDynamic("portal")(__v.asInstanceOf[js.Any]))
       project.foreach(__v => __obj.updateDynamic("project")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Resource]
+    }
+  }
+
+  /** How many days your data is kept in the hot tier. By default, your data is kept indefinitely in the hot tier.
+    */
+  @js.native
+  trait RetentionPeriod extends js.Object {
+    var numberOfDays: js.UndefOr[NumberOfDays]
+    var unlimited: js.UndefOr[Unlimited]
+  }
+
+  object RetentionPeriod {
+    @inline
+    def apply(
+        numberOfDays: js.UndefOr[NumberOfDays] = js.undefined,
+        unlimited: js.UndefOr[Unlimited] = js.undefined
+    ): RetentionPeriod = {
+      val __obj = js.Dynamic.literal()
+      numberOfDays.foreach(__v => __obj.updateDynamic("numberOfDays")(__v.asInstanceOf[js.Any]))
+      unlimited.foreach(__v => __obj.updateDynamic("unlimited")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetentionPeriod]
     }
   }
 
@@ -3774,43 +4403,115 @@ package object iotsitewise {
     }
   }
 
-  /** Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms|Transforms]] in the <i>AWS IoT SiteWise User Guide</i>.
+  /** Contains a summary of a time series (data stream).
+    */
+  @js.native
+  trait TimeSeriesSummary extends js.Object {
+    var dataType: PropertyDataType
+    var timeSeriesCreationDate: Timestamp
+    var timeSeriesId: TimeSeriesId
+    var timeSeriesLastUpdateDate: Timestamp
+    var alias: js.UndefOr[PropertyAlias]
+    var assetId: js.UndefOr[ID]
+    var dataTypeSpec: js.UndefOr[Name]
+    var propertyId: js.UndefOr[ID]
+  }
+
+  object TimeSeriesSummary {
+    @inline
+    def apply(
+        dataType: PropertyDataType,
+        timeSeriesCreationDate: Timestamp,
+        timeSeriesId: TimeSeriesId,
+        timeSeriesLastUpdateDate: Timestamp,
+        alias: js.UndefOr[PropertyAlias] = js.undefined,
+        assetId: js.UndefOr[ID] = js.undefined,
+        dataTypeSpec: js.UndefOr[Name] = js.undefined,
+        propertyId: js.UndefOr[ID] = js.undefined
+    ): TimeSeriesSummary = {
+      val __obj = js.Dynamic.literal(
+        "dataType" -> dataType.asInstanceOf[js.Any],
+        "timeSeriesCreationDate" -> timeSeriesCreationDate.asInstanceOf[js.Any],
+        "timeSeriesId" -> timeSeriesId.asInstanceOf[js.Any],
+        "timeSeriesLastUpdateDate" -> timeSeriesLastUpdateDate.asInstanceOf[js.Any]
+      )
+
+      alias.foreach(__v => __obj.updateDynamic("alias")(__v.asInstanceOf[js.Any]))
+      assetId.foreach(__v => __obj.updateDynamic("assetId")(__v.asInstanceOf[js.Any]))
+      dataTypeSpec.foreach(__v => __obj.updateDynamic("dataTypeSpec")(__v.asInstanceOf[js.Any]))
+      propertyId.foreach(__v => __obj.updateDynamic("propertyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeSeriesSummary]
+    }
+  }
+
+  /** Contains an asset transform property. A transform is a one-to-one mapping of a property's data points from one form to another. For example, you can use a transform to convert a Celsius data stream to Fahrenheit by applying the transformation expression to each data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>. For more information, see [[https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html#transforms|Transforms]] in the <i>IoT SiteWise User Guide</i>.
     */
   @js.native
   trait Transform extends js.Object {
     var expression: Expression
     var variables: ExpressionVariables
+    var processingConfig: js.UndefOr[TransformProcessingConfig]
   }
 
   object Transform {
     @inline
     def apply(
         expression: Expression,
-        variables: ExpressionVariables
+        variables: ExpressionVariables,
+        processingConfig: js.UndefOr[TransformProcessingConfig] = js.undefined
     ): Transform = {
       val __obj = js.Dynamic.literal(
         "expression" -> expression.asInstanceOf[js.Any],
         "variables" -> variables.asInstanceOf[js.Any]
       )
+
+      processingConfig.foreach(__v => __obj.updateDynamic("processingConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Transform]
     }
   }
 
-  /** Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time interval. This window is used in metric and aggregation computations.
+  /** The processing configuration for the given transform property. You can configure transforms to be kept at the edge or forwarded to the Amazon Web Services Cloud. You can also configure transforms to be computed at the edge or in the cloud.
+    */
+  @js.native
+  trait TransformProcessingConfig extends js.Object {
+    var computeLocation: ComputeLocation
+    var forwardingConfig: js.UndefOr[ForwardingConfig]
+  }
+
+  object TransformProcessingConfig {
+    @inline
+    def apply(
+        computeLocation: ComputeLocation,
+        forwardingConfig: js.UndefOr[ForwardingConfig] = js.undefined
+    ): TransformProcessingConfig = {
+      val __obj = js.Dynamic.literal(
+        "computeLocation" -> computeLocation.asInstanceOf[js.Any]
+      )
+
+      forwardingConfig.foreach(__v => __obj.updateDynamic("forwardingConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TransformProcessingConfig]
+    }
+  }
+
+  /** Contains a tumbling window, which is a repeating fixed-sized, non-overlapping, and contiguous time window. You can use this window in metrics to aggregate data from properties and other assets. You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when you specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code> represents hours, <code>d</code> represents days, and <code>w</code> represents weeks. You can also use <code>s</code> to represent seconds in <code>offset</code>. The <code>interval</code> and <code>offset</code> parameters support the [[https://en.wikipedia.org/wiki/ISO_8601|ISO 8601 format]]. For example, <code>PT5S</code> represents 5 seconds, <code>PT5M</code> represents 5 minutes, and <code>PT5H</code> represents 5 hours.
     */
   @js.native
   trait TumblingWindow extends js.Object {
     var interval: Interval
+    var offset: js.UndefOr[Offset]
   }
 
   object TumblingWindow {
     @inline
     def apply(
-        interval: Interval
+        interval: Interval,
+        offset: js.UndefOr[Offset] = js.undefined
     ): TumblingWindow = {
       val __obj = js.Dynamic.literal(
         "interval" -> interval.asInstanceOf[js.Any]
       )
+
+      offset.foreach(__v => __obj.updateDynamic("offset")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TumblingWindow]
     }
   }
@@ -4121,7 +4822,9 @@ package object iotsitewise {
     var portalId: ID
     var portalName: Name
     var roleArn: ARN
+    var alarms: js.UndefOr[Alarms]
     var clientToken: js.UndefOr[ClientToken]
+    var notificationSenderEmail: js.UndefOr[Email]
     var portalDescription: js.UndefOr[Description]
     var portalLogoImage: js.UndefOr[Image]
   }
@@ -4133,7 +4836,9 @@ package object iotsitewise {
         portalId: ID,
         portalName: Name,
         roleArn: ARN,
+        alarms: js.UndefOr[Alarms] = js.undefined,
         clientToken: js.UndefOr[ClientToken] = js.undefined,
+        notificationSenderEmail: js.UndefOr[Email] = js.undefined,
         portalDescription: js.UndefOr[Description] = js.undefined,
         portalLogoImage: js.UndefOr[Image] = js.undefined
     ): UpdatePortalRequest = {
@@ -4144,7 +4849,9 @@ package object iotsitewise {
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
 
+      alarms.foreach(__v => __obj.updateDynamic("alarms")(__v.asInstanceOf[js.Any]))
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      notificationSenderEmail.foreach(__v => __obj.updateDynamic("notificationSenderEmail")(__v.asInstanceOf[js.Any]))
       portalDescription.foreach(__v => __obj.updateDynamic("portalDescription")(__v.asInstanceOf[js.Any]))
       portalLogoImage.foreach(__v => __obj.updateDynamic("portalLogoImage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePortalRequest]

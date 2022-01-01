@@ -37,9 +37,11 @@ package object lookoutmetrics {
   type HeaderValueList = js.Array[HeaderValue]
   type HistoricalDataPath = String
   type HistoricalDataPathList = js.Array[HistoricalDataPath]
+  type InterMetricImpactList = js.Array[InterMetricImpactDetails]
   type ItemizedMetricStatsList = js.Array[ItemizedMetricStats]
   type KmsKeyArn = String
   type MaxResults = Int
+  type MetricChangePercentage = Double
   type MetricLevelImpactList = js.Array[MetricLevelImpact]
   type MetricList = js.Array[Metric]
   type MetricName = String
@@ -99,6 +101,7 @@ package object lookoutmetrics {
     @inline def getSampleDataFuture(params: GetSampleDataRequest): Future[GetSampleDataResponse] = service.getSampleData(params).promise().toFuture
     @inline def listAlertsFuture(params: ListAlertsRequest): Future[ListAlertsResponse] = service.listAlerts(params).promise().toFuture
     @inline def listAnomalyDetectorsFuture(params: ListAnomalyDetectorsRequest): Future[ListAnomalyDetectorsResponse] = service.listAnomalyDetectors(params).promise().toFuture
+    @inline def listAnomalyGroupRelatedMetricsFuture(params: ListAnomalyGroupRelatedMetricsRequest): Future[ListAnomalyGroupRelatedMetricsResponse] = service.listAnomalyGroupRelatedMetrics(params).promise().toFuture
     @inline def listAnomalyGroupSummariesFuture(params: ListAnomalyGroupSummariesRequest): Future[ListAnomalyGroupSummariesResponse] = service.listAnomalyGroupSummaries(params).promise().toFuture
     @inline def listAnomalyGroupTimeSeriesFuture(params: ListAnomalyGroupTimeSeriesRequest): Future[ListAnomalyGroupTimeSeriesResponse] = service.listAnomalyGroupTimeSeries(params).promise().toFuture
     @inline def listMetricSetsFuture(params: ListMetricSetsRequest): Future[ListMetricSetsResponse] = service.listMetricSets(params).promise().toFuture
@@ -132,6 +135,7 @@ package object lookoutmetrics {
     def getSampleData(params: GetSampleDataRequest): Request[GetSampleDataResponse] = js.native
     def listAlerts(params: ListAlertsRequest): Request[ListAlertsResponse] = js.native
     def listAnomalyDetectors(params: ListAnomalyDetectorsRequest): Request[ListAnomalyDetectorsResponse] = js.native
+    def listAnomalyGroupRelatedMetrics(params: ListAnomalyGroupRelatedMetricsRequest): Request[ListAnomalyGroupRelatedMetricsResponse] = js.native
     def listAnomalyGroupSummaries(params: ListAnomalyGroupSummariesRequest): Request[ListAnomalyGroupSummariesResponse] = js.native
     def listAnomalyGroupTimeSeries(params: ListAnomalyGroupTimeSeriesRequest): Request[ListAnomalyGroupTimeSeriesResponse] = js.native
     def listMetricSets(params: ListMetricSetsRequest): Request[ListMetricSetsResponse] = js.native
@@ -1257,6 +1261,33 @@ package object lookoutmetrics {
     }
   }
 
+  /** Aggregated details about the measures contributing to the anomaly group, and the measures potentially impacted by the anomaly group. <p/>
+    */
+  @js.native
+  trait InterMetricImpactDetails extends js.Object {
+    var AnomalyGroupId: js.UndefOr[UUID]
+    var ContributionPercentage: js.UndefOr[MetricChangePercentage]
+    var MetricName: js.UndefOr[MetricName]
+    var RelationshipType: js.UndefOr[RelationshipType]
+  }
+
+  object InterMetricImpactDetails {
+    @inline
+    def apply(
+        AnomalyGroupId: js.UndefOr[UUID] = js.undefined,
+        ContributionPercentage: js.UndefOr[MetricChangePercentage] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        RelationshipType: js.UndefOr[RelationshipType] = js.undefined
+    ): InterMetricImpactDetails = {
+      val __obj = js.Dynamic.literal()
+      AnomalyGroupId.foreach(__v => __obj.updateDynamic("AnomalyGroupId")(__v.asInstanceOf[js.Any]))
+      ContributionPercentage.foreach(__v => __obj.updateDynamic("ContributionPercentage")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      RelationshipType.foreach(__v => __obj.updateDynamic("RelationshipType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InterMetricImpactDetails]
+    }
+  }
+
   /** Aggregated statistics about a measure affected by an anomaly.
     */
   @js.native
@@ -1397,6 +1428,55 @@ package object lookoutmetrics {
       AnomalyDetectorSummaryList.foreach(__v => __obj.updateDynamic("AnomalyDetectorSummaryList")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListAnomalyDetectorsResponse]
+    }
+  }
+
+  @js.native
+  trait ListAnomalyGroupRelatedMetricsRequest extends js.Object {
+    var AnomalyDetectorArn: Arn
+    var AnomalyGroupId: UUID
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var RelationshipTypeFilter: js.UndefOr[RelationshipType]
+  }
+
+  object ListAnomalyGroupRelatedMetricsRequest {
+    @inline
+    def apply(
+        AnomalyDetectorArn: Arn,
+        AnomalyGroupId: UUID,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        RelationshipTypeFilter: js.UndefOr[RelationshipType] = js.undefined
+    ): ListAnomalyGroupRelatedMetricsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AnomalyDetectorArn" -> AnomalyDetectorArn.asInstanceOf[js.Any],
+        "AnomalyGroupId" -> AnomalyGroupId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      RelationshipTypeFilter.foreach(__v => __obj.updateDynamic("RelationshipTypeFilter")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAnomalyGroupRelatedMetricsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAnomalyGroupRelatedMetricsResponse extends js.Object {
+    var InterMetricImpactList: js.UndefOr[InterMetricImpactList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListAnomalyGroupRelatedMetricsResponse {
+    @inline
+    def apply(
+        InterMetricImpactList: js.UndefOr[InterMetricImpactList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListAnomalyGroupRelatedMetricsResponse = {
+      val __obj = js.Dynamic.literal()
+      InterMetricImpactList.foreach(__v => __obj.updateDynamic("InterMetricImpactList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAnomalyGroupRelatedMetricsResponse]
     }
   }
 

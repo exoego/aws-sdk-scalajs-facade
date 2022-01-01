@@ -8,8 +8,11 @@ object AMITypes {
   val AL2_x86_64 = "AL2_x86_64".asInstanceOf[AMITypes]
   val AL2_x86_64_GPU = "AL2_x86_64_GPU".asInstanceOf[AMITypes]
   val AL2_ARM_64 = "AL2_ARM_64".asInstanceOf[AMITypes]
+  val CUSTOM = "CUSTOM".asInstanceOf[AMITypes]
+  val BOTTLEROCKET_ARM_64 = "BOTTLEROCKET_ARM_64".asInstanceOf[AMITypes]
+  val BOTTLEROCKET_x86_64 = "BOTTLEROCKET_x86_64".asInstanceOf[AMITypes]
 
-  @inline def values: js.Array[AMITypes] = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64)
+  @inline def values: js.Array[AMITypes] = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64, CUSTOM, BOTTLEROCKET_ARM_64, BOTTLEROCKET_x86_64)
 }
 
 @js.native
@@ -21,8 +24,19 @@ object AddonIssueCode {
   val InsufficientNumberOfReplicas = "InsufficientNumberOfReplicas".asInstanceOf[AddonIssueCode]
   val ConfigurationConflict = "ConfigurationConflict".asInstanceOf[AddonIssueCode]
   val AdmissionRequestDenied = "AdmissionRequestDenied".asInstanceOf[AddonIssueCode]
+  val UnsupportedAddonModification = "UnsupportedAddonModification".asInstanceOf[AddonIssueCode]
+  val K8sResourceNotFound = "K8sResourceNotFound".asInstanceOf[AddonIssueCode]
 
-  @inline def values: js.Array[AddonIssueCode] = js.Array(AccessDenied, InternalFailure, ClusterUnreachable, InsufficientNumberOfReplicas, ConfigurationConflict, AdmissionRequestDenied)
+  @inline def values: js.Array[AddonIssueCode] = js.Array(
+    AccessDenied,
+    InternalFailure,
+    ClusterUnreachable,
+    InsufficientNumberOfReplicas,
+    ConfigurationConflict,
+    AdmissionRequestDenied,
+    UnsupportedAddonModification,
+    K8sResourceNotFound
+  )
 }
 
 @js.native
@@ -56,8 +70,25 @@ object ClusterStatus {
   val DELETING = "DELETING".asInstanceOf[ClusterStatus]
   val FAILED = "FAILED".asInstanceOf[ClusterStatus]
   val UPDATING = "UPDATING".asInstanceOf[ClusterStatus]
+  val PENDING = "PENDING".asInstanceOf[ClusterStatus]
 
-  @inline def values: js.Array[ClusterStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING)
+  @inline def values: js.Array[ClusterStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, PENDING)
+}
+
+@js.native
+sealed trait ConnectorConfigProvider extends js.Any
+object ConnectorConfigProvider {
+  val EKS_ANYWHERE = "EKS_ANYWHERE".asInstanceOf[ConnectorConfigProvider]
+  val ANTHOS = "ANTHOS".asInstanceOf[ConnectorConfigProvider]
+  val GKE = "GKE".asInstanceOf[ConnectorConfigProvider]
+  val AKS = "AKS".asInstanceOf[ConnectorConfigProvider]
+  val OPENSHIFT = "OPENSHIFT".asInstanceOf[ConnectorConfigProvider]
+  val TANZU = "TANZU".asInstanceOf[ConnectorConfigProvider]
+  val RANCHER = "RANCHER".asInstanceOf[ConnectorConfigProvider]
+  val EC2 = "EC2".asInstanceOf[ConnectorConfigProvider]
+  val OTHER = "OTHER".asInstanceOf[ConnectorConfigProvider]
+
+  @inline def values: js.Array[ConnectorConfigProvider] = js.Array(EKS_ANYWHERE, ANTHOS, GKE, AKS, OPENSHIFT, TANZU, RANCHER, EC2, OTHER)
 }
 
 @js.native
@@ -78,6 +109,8 @@ object ErrorCode {
   val InsufficientNumberOfReplicas = "InsufficientNumberOfReplicas".asInstanceOf[ErrorCode]
   val ConfigurationConflict = "ConfigurationConflict".asInstanceOf[ErrorCode]
   val AdmissionRequestDenied = "AdmissionRequestDenied".asInstanceOf[ErrorCode]
+  val UnsupportedAddonModification = "UnsupportedAddonModification".asInstanceOf[ErrorCode]
+  val K8sResourceNotFound = "K8sResourceNotFound".asInstanceOf[ErrorCode]
 
   @inline def values: js.Array[ErrorCode] = js.Array(
     SubnetNotFound,
@@ -94,7 +127,9 @@ object ErrorCode {
     ClusterUnreachable,
     InsufficientNumberOfReplicas,
     ConfigurationConflict,
-    AdmissionRequestDenied
+    AdmissionRequestDenied,
+    UnsupportedAddonModification,
+    K8sResourceNotFound
   )
 }
 
@@ -190,6 +225,16 @@ object ResolveConflicts {
 }
 
 @js.native
+sealed trait TaintEffect extends js.Any
+object TaintEffect {
+  val NO_SCHEDULE = "NO_SCHEDULE".asInstanceOf[TaintEffect]
+  val NO_EXECUTE = "NO_EXECUTE".asInstanceOf[TaintEffect]
+  val PREFER_NO_SCHEDULE = "PREFER_NO_SCHEDULE".asInstanceOf[TaintEffect]
+
+  @inline def values: js.Array[TaintEffect] = js.Array(NO_SCHEDULE, NO_EXECUTE, PREFER_NO_SCHEDULE)
+}
+
+@js.native
 sealed trait UpdateParamType extends js.Any
 object UpdateParamType {
   val Version = "Version".asInstanceOf[UpdateParamType]
@@ -200,15 +245,21 @@ object UpdateParamType {
   val DesiredSize = "DesiredSize".asInstanceOf[UpdateParamType]
   val LabelsToAdd = "LabelsToAdd".asInstanceOf[UpdateParamType]
   val LabelsToRemove = "LabelsToRemove".asInstanceOf[UpdateParamType]
+  val TaintsToAdd = "TaintsToAdd".asInstanceOf[UpdateParamType]
+  val TaintsToRemove = "TaintsToRemove".asInstanceOf[UpdateParamType]
   val MaxSize = "MaxSize".asInstanceOf[UpdateParamType]
   val MinSize = "MinSize".asInstanceOf[UpdateParamType]
   val ReleaseVersion = "ReleaseVersion".asInstanceOf[UpdateParamType]
   val PublicAccessCidrs = "PublicAccessCidrs".asInstanceOf[UpdateParamType]
+  val LaunchTemplateName = "LaunchTemplateName".asInstanceOf[UpdateParamType]
+  val LaunchTemplateVersion = "LaunchTemplateVersion".asInstanceOf[UpdateParamType]
   val IdentityProviderConfig = "IdentityProviderConfig".asInstanceOf[UpdateParamType]
   val EncryptionConfig = "EncryptionConfig".asInstanceOf[UpdateParamType]
   val AddonVersion = "AddonVersion".asInstanceOf[UpdateParamType]
   val ServiceAccountRoleArn = "ServiceAccountRoleArn".asInstanceOf[UpdateParamType]
   val ResolveConflicts = "ResolveConflicts".asInstanceOf[UpdateParamType]
+  val MaxUnavailable = "MaxUnavailable".asInstanceOf[UpdateParamType]
+  val MaxUnavailablePercentage = "MaxUnavailablePercentage".asInstanceOf[UpdateParamType]
 
   @inline def values: js.Array[UpdateParamType] = js.Array(
     Version,
@@ -219,15 +270,21 @@ object UpdateParamType {
     DesiredSize,
     LabelsToAdd,
     LabelsToRemove,
+    TaintsToAdd,
+    TaintsToRemove,
     MaxSize,
     MinSize,
     ReleaseVersion,
     PublicAccessCidrs,
+    LaunchTemplateName,
+    LaunchTemplateVersion,
     IdentityProviderConfig,
     EncryptionConfig,
     AddonVersion,
     ServiceAccountRoleArn,
-    ResolveConflicts
+    ResolveConflicts,
+    MaxUnavailable,
+    MaxUnavailablePercentage
   )
 }
 

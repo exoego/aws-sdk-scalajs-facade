@@ -63,6 +63,8 @@ package object iotanalytics {
   type NextToken = String
   type OffsetSeconds = Int
   type OutputFileName = String
+  type PartitionAttributeName = String
+  type Partitions = js.Array[DatastorePartition]
   type PipelineActivities = js.Array[PipelineActivity]
   type PipelineArn = String
   type PipelineName = String
@@ -90,6 +92,7 @@ package object iotanalytics {
   type TagValue = String
   type TimeExpression = String
   type Timestamp = js.Date
+  type TimestampFormat = String
   type UnlimitedRetentionPeriod = Boolean
   type UnlimitedVersioning = Boolean
   type VariableName = String
@@ -399,7 +402,7 @@ package object iotanalytics {
     }
   }
 
-  /** Where channel data is stored. You may choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. This cannot be changed after creation of the channel.
+  /** Where channel data is stored. You may choose one of <code>serviceManagedS3</code>, <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. This can't be changed after creation of the channel.
     */
   @js.native
   trait ChannelStorage extends js.Object {
@@ -675,6 +678,7 @@ package object iotanalytics {
   @js.native
   trait CreateDatastoreRequest extends js.Object {
     var datastoreName: DatastoreName
+    var datastorePartitions: js.UndefOr[DatastorePartitions]
     var datastoreStorage: js.UndefOr[DatastoreStorage]
     var fileFormatConfiguration: js.UndefOr[FileFormatConfiguration]
     var retentionPeriod: js.UndefOr[RetentionPeriod]
@@ -685,6 +689,7 @@ package object iotanalytics {
     @inline
     def apply(
         datastoreName: DatastoreName,
+        datastorePartitions: js.UndefOr[DatastorePartitions] = js.undefined,
         datastoreStorage: js.UndefOr[DatastoreStorage] = js.undefined,
         fileFormatConfiguration: js.UndefOr[FileFormatConfiguration] = js.undefined,
         retentionPeriod: js.UndefOr[RetentionPeriod] = js.undefined,
@@ -694,6 +699,7 @@ package object iotanalytics {
         "datastoreName" -> datastoreName.asInstanceOf[js.Any]
       )
 
+      datastorePartitions.foreach(__v => __obj.updateDynamic("datastorePartitions")(__v.asInstanceOf[js.Any]))
       datastoreStorage.foreach(__v => __obj.updateDynamic("datastoreStorage")(__v.asInstanceOf[js.Any]))
       fileFormatConfiguration.foreach(__v => __obj.updateDynamic("fileFormatConfiguration")(__v.asInstanceOf[js.Any]))
       retentionPeriod.foreach(__v => __obj.updateDynamic("retentionPeriod")(__v.asInstanceOf[js.Any]))
@@ -767,7 +773,7 @@ package object iotanalytics {
     }
   }
 
-  /** Use this to store channel data in an S3 bucket that you manage. If customer managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or customer-managed S3 storage after the channel is created.
+  /** Used to store channel data in an S3 bucket that you manage. If customer-managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of S3 storage after the data store is created.
     */
   @js.native
   trait CustomerManagedChannelS3Storage extends js.Object {
@@ -817,7 +823,7 @@ package object iotanalytics {
     }
   }
 
-  /** Use this to store data store data in an S3 bucket that you manage. When customer-managed storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or customer-managed S3 storage after the data store is created.
+  /** S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created.
     */
   @js.native
   trait CustomerManagedDatastoreS3Storage extends js.Object {
@@ -843,7 +849,7 @@ package object iotanalytics {
     }
   }
 
-  /** Used to store data store data in an S3 bucket that you manage.
+  /** Contains information about the data store that you manage.
     */
   @js.native
   trait CustomerManagedDatastoreS3StorageSummary extends js.Object {
@@ -867,7 +873,7 @@ package object iotanalytics {
     }
   }
 
-  /** Information about a data set.
+  /** Information about a dataset.
     */
   @js.native
   trait Dataset extends js.Object {
@@ -915,7 +921,7 @@ package object iotanalytics {
     }
   }
 
-  /** A <code>DatasetAction</code> object that specifies how data set contents are automatically created.
+  /** A <code>DatasetAction</code> object that specifies how dataset contents are automatically created.
     */
   @js.native
   trait DatasetAction extends js.Object {
@@ -1004,7 +1010,7 @@ package object iotanalytics {
     }
   }
 
-  /** The state of the data set contents and the reason they are in this state.
+  /** The state of the dataset contents and the reason they are in this state.
     */
   @js.native
   trait DatasetContentStatus extends js.Object {
@@ -1074,7 +1080,7 @@ package object iotanalytics {
     }
   }
 
-  /** The reference to a data set entry.
+  /** The reference to a dataset entry.
     */
   @js.native
   trait DatasetEntry extends js.Object {
@@ -1095,7 +1101,7 @@ package object iotanalytics {
     }
   }
 
-  /** A summary of information about a data set.
+  /** A summary of information about a dataset.
     */
   @js.native
   trait DatasetSummary extends js.Object {
@@ -1128,7 +1134,7 @@ package object iotanalytics {
     }
   }
 
-  /** The <code>DatasetTrigger</code> that specifies when the data set is automatically updated.
+  /** The <code>DatasetTrigger</code> that specifies when the dataset is automatically updated.
     */
   @js.native
   trait DatasetTrigger extends js.Object {
@@ -1155,6 +1161,7 @@ package object iotanalytics {
   trait Datastore extends js.Object {
     var arn: js.UndefOr[DatastoreArn]
     var creationTime: js.UndefOr[Timestamp]
+    var datastorePartitions: js.UndefOr[DatastorePartitions]
     var fileFormatConfiguration: js.UndefOr[FileFormatConfiguration]
     var lastMessageArrivalTime: js.UndefOr[Timestamp]
     var lastUpdateTime: js.UndefOr[Timestamp]
@@ -1169,6 +1176,7 @@ package object iotanalytics {
     def apply(
         arn: js.UndefOr[DatastoreArn] = js.undefined,
         creationTime: js.UndefOr[Timestamp] = js.undefined,
+        datastorePartitions: js.UndefOr[DatastorePartitions] = js.undefined,
         fileFormatConfiguration: js.UndefOr[FileFormatConfiguration] = js.undefined,
         lastMessageArrivalTime: js.UndefOr[Timestamp] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1180,6 +1188,7 @@ package object iotanalytics {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
+      datastorePartitions.foreach(__v => __obj.updateDynamic("datastorePartitions")(__v.asInstanceOf[js.Any]))
       fileFormatConfiguration.foreach(__v => __obj.updateDynamic("fileFormatConfiguration")(__v.asInstanceOf[js.Any]))
       lastMessageArrivalTime.foreach(__v => __obj.updateDynamic("lastMessageArrivalTime")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
@@ -1213,6 +1222,82 @@ package object iotanalytics {
     }
   }
 
+  /** Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created.
+    */
+  @js.native
+  trait DatastoreIotSiteWiseMultiLayerStorage extends js.Object {
+    var customerManagedS3Storage: IotSiteWiseCustomerManagedDatastoreS3Storage
+  }
+
+  object DatastoreIotSiteWiseMultiLayerStorage {
+    @inline
+    def apply(
+        customerManagedS3Storage: IotSiteWiseCustomerManagedDatastoreS3Storage
+    ): DatastoreIotSiteWiseMultiLayerStorage = {
+      val __obj = js.Dynamic.literal(
+        "customerManagedS3Storage" -> customerManagedS3Storage.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DatastoreIotSiteWiseMultiLayerStorage]
+    }
+  }
+
+  /** Contains information about the data store that you manage, which stores data used by IoT SiteWise.
+    */
+  @js.native
+  trait DatastoreIotSiteWiseMultiLayerStorageSummary extends js.Object {
+    var customerManagedS3Storage: js.UndefOr[IotSiteWiseCustomerManagedDatastoreS3StorageSummary]
+  }
+
+  object DatastoreIotSiteWiseMultiLayerStorageSummary {
+    @inline
+    def apply(
+        customerManagedS3Storage: js.UndefOr[IotSiteWiseCustomerManagedDatastoreS3StorageSummary] = js.undefined
+    ): DatastoreIotSiteWiseMultiLayerStorageSummary = {
+      val __obj = js.Dynamic.literal()
+      customerManagedS3Storage.foreach(__v => __obj.updateDynamic("customerManagedS3Storage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatastoreIotSiteWiseMultiLayerStorageSummary]
+    }
+  }
+
+  /** A single dimension to partition a data store. The dimension must be an <code>AttributePartition</code> or a <code>TimestampPartition</code>.
+    */
+  @js.native
+  trait DatastorePartition extends js.Object {
+    var attributePartition: js.UndefOr[Partition]
+    var timestampPartition: js.UndefOr[TimestampPartition]
+  }
+
+  object DatastorePartition {
+    @inline
+    def apply(
+        attributePartition: js.UndefOr[Partition] = js.undefined,
+        timestampPartition: js.UndefOr[TimestampPartition] = js.undefined
+    ): DatastorePartition = {
+      val __obj = js.Dynamic.literal()
+      attributePartition.foreach(__v => __obj.updateDynamic("attributePartition")(__v.asInstanceOf[js.Any]))
+      timestampPartition.foreach(__v => __obj.updateDynamic("timestampPartition")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatastorePartition]
+    }
+  }
+
+  /** Contains information about the partition dimensions in a data store.
+    */
+  @js.native
+  trait DatastorePartitions extends js.Object {
+    var partitions: js.UndefOr[Partitions]
+  }
+
+  object DatastorePartitions {
+    @inline
+    def apply(
+        partitions: js.UndefOr[Partitions] = js.undefined
+    ): DatastorePartitions = {
+      val __obj = js.Dynamic.literal()
+      partitions.foreach(__v => __obj.updateDynamic("partitions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatastorePartitions]
+    }
+  }
+
   /** Statistical information about the data store.
     */
   @js.native
@@ -1231,11 +1316,12 @@ package object iotanalytics {
     }
   }
 
-  /** Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You cannot change this storage option after the data store is created.
+  /** Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created.
     */
   @js.native
   trait DatastoreStorage extends js.Object {
     var customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3Storage]
+    var iotSiteWiseMultiLayerStorage: js.UndefOr[DatastoreIotSiteWiseMultiLayerStorage]
     var serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3Storage]
   }
 
@@ -1243,20 +1329,23 @@ package object iotanalytics {
     @inline
     def apply(
         customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3Storage] = js.undefined,
+        iotSiteWiseMultiLayerStorage: js.UndefOr[DatastoreIotSiteWiseMultiLayerStorage] = js.undefined,
         serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3Storage] = js.undefined
     ): DatastoreStorage = {
       val __obj = js.Dynamic.literal()
       customerManagedS3.foreach(__v => __obj.updateDynamic("customerManagedS3")(__v.asInstanceOf[js.Any]))
+      iotSiteWiseMultiLayerStorage.foreach(__v => __obj.updateDynamic("iotSiteWiseMultiLayerStorage")(__v.asInstanceOf[js.Any]))
       serviceManagedS3.foreach(__v => __obj.updateDynamic("serviceManagedS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatastoreStorage]
     }
   }
 
-  /** Where data store data is stored.
+  /** Contains information about your data store.
     */
   @js.native
   trait DatastoreStorageSummary extends js.Object {
     var customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3StorageSummary]
+    var iotSiteWiseMultiLayerStorage: js.UndefOr[DatastoreIotSiteWiseMultiLayerStorageSummary]
     var serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3StorageSummary]
   }
 
@@ -1264,10 +1353,12 @@ package object iotanalytics {
     @inline
     def apply(
         customerManagedS3: js.UndefOr[CustomerManagedDatastoreS3StorageSummary] = js.undefined,
+        iotSiteWiseMultiLayerStorage: js.UndefOr[DatastoreIotSiteWiseMultiLayerStorageSummary] = js.undefined,
         serviceManagedS3: js.UndefOr[ServiceManagedDatastoreS3StorageSummary] = js.undefined
     ): DatastoreStorageSummary = {
       val __obj = js.Dynamic.literal()
       customerManagedS3.foreach(__v => __obj.updateDynamic("customerManagedS3")(__v.asInstanceOf[js.Any]))
+      iotSiteWiseMultiLayerStorage.foreach(__v => __obj.updateDynamic("iotSiteWiseMultiLayerStorage")(__v.asInstanceOf[js.Any]))
       serviceManagedS3.foreach(__v => __obj.updateDynamic("serviceManagedS3")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatastoreStorageSummary]
     }
@@ -1279,6 +1370,7 @@ package object iotanalytics {
   trait DatastoreSummary extends js.Object {
     var creationTime: js.UndefOr[Timestamp]
     var datastoreName: js.UndefOr[DatastoreName]
+    var datastorePartitions: js.UndefOr[DatastorePartitions]
     var datastoreStorage: js.UndefOr[DatastoreStorageSummary]
     var fileFormatType: js.UndefOr[FileFormatType]
     var lastMessageArrivalTime: js.UndefOr[Timestamp]
@@ -1291,6 +1383,7 @@ package object iotanalytics {
     def apply(
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         datastoreName: js.UndefOr[DatastoreName] = js.undefined,
+        datastorePartitions: js.UndefOr[DatastorePartitions] = js.undefined,
         datastoreStorage: js.UndefOr[DatastoreStorageSummary] = js.undefined,
         fileFormatType: js.UndefOr[FileFormatType] = js.undefined,
         lastMessageArrivalTime: js.UndefOr[Timestamp] = js.undefined,
@@ -1300,6 +1393,7 @@ package object iotanalytics {
       val __obj = js.Dynamic.literal()
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       datastoreName.foreach(__v => __obj.updateDynamic("datastoreName")(__v.asInstanceOf[js.Any]))
+      datastorePartitions.foreach(__v => __obj.updateDynamic("datastorePartitions")(__v.asInstanceOf[js.Any]))
       datastoreStorage.foreach(__v => __obj.updateDynamic("datastoreStorage")(__v.asInstanceOf[js.Any]))
       fileFormatType.foreach(__v => __obj.updateDynamic("fileFormatType")(__v.asInstanceOf[js.Any]))
       lastMessageArrivalTime.foreach(__v => __obj.updateDynamic("lastMessageArrivalTime")(__v.asInstanceOf[js.Any]))
@@ -1420,7 +1514,7 @@ package object iotanalytics {
     }
   }
 
-  /** A structure that contains the configuration information of a delta time session window. <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html"> <code>DeltaTime</code> </a> specifies a time interval. You can use <code>DeltaTime</code> to create dataset contents with data that has arrived in the data store since the last execution. For an example of <code>DeltaTime</code>, see [[https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6| Creating a SQL dataset with a delta window (CLI)]] in the <i>AWS IoT Analytics User Guide</i>.
+  /** A structure that contains the configuration information of a delta time session window. <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html"> <code>DeltaTime</code> </a> specifies a time interval. You can use <code>DeltaTime</code> to create dataset contents with data that has arrived in the data store since the last execution. For an example of <code>DeltaTime</code>, see [[https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6| Creating a SQL dataset with a delta window (CLI)]] in the <i>IoT Analytics User Guide</i>.
     */
   @js.native
   trait DeltaTimeSessionWindowConfiguration extends js.Object {
@@ -1612,7 +1706,7 @@ package object iotanalytics {
     }
   }
 
-  /** An activity that adds data from the AWS IoT device registry to your message.
+  /** An activity that adds data from the IoT device registry to your message.
     */
   @js.native
   trait DeviceRegistryEnrichActivity extends js.Object {
@@ -1644,7 +1738,7 @@ package object iotanalytics {
     }
   }
 
-  /** An activity that adds information from the AWS IoT Device Shadow service to a message.
+  /** An activity that adds information from the IoT Device Shadow service to a message.
     */
   @js.native
   trait DeviceShadowEnrichActivity extends js.Object {
@@ -1697,7 +1791,7 @@ package object iotanalytics {
     }
   }
 
-  /** Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and [[https://parquet.apache.org/|Parquet]]. The default file format is JSON. You can specify only one format. You can't change the file format after you create the data store.
+  /** Contains the configuration information of file formats. IoT Analytics data stores support JSON and [[https://parquet.apache.org/|Parquet]]. The default file format is JSON. You can specify only one format. You can't change the file format after you create the data store.
     */
   @js.native
   trait FileFormatConfiguration extends js.Object {
@@ -1787,7 +1881,7 @@ package object iotanalytics {
     }
   }
 
-  /** Configuration information for coordination with AWS Glue, a fully managed extract, transform and load (ETL) service.
+  /** Configuration information for coordination with Glue, a fully managed extract, transform and load (ETL) service.
     */
   @js.native
   trait GlueConfiguration extends js.Object {
@@ -1809,7 +1903,7 @@ package object iotanalytics {
     }
   }
 
-  /** Configuration information for delivery of dataset contents to AWS IoT Events.
+  /** Configuration information for delivery of dataset contents to IoT Events.
     */
   @js.native
   trait IotEventsDestinationConfiguration extends js.Object {
@@ -1828,6 +1922,50 @@ package object iotanalytics {
         "roleArn" -> roleArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[IotEventsDestinationConfiguration]
+    }
+  }
+
+  /** Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created.
+    */
+  @js.native
+  trait IotSiteWiseCustomerManagedDatastoreS3Storage extends js.Object {
+    var bucket: BucketName
+    var keyPrefix: js.UndefOr[S3KeyPrefix]
+  }
+
+  object IotSiteWiseCustomerManagedDatastoreS3Storage {
+    @inline
+    def apply(
+        bucket: BucketName,
+        keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
+    ): IotSiteWiseCustomerManagedDatastoreS3Storage = {
+      val __obj = js.Dynamic.literal(
+        "bucket" -> bucket.asInstanceOf[js.Any]
+      )
+
+      keyPrefix.foreach(__v => __obj.updateDynamic("keyPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IotSiteWiseCustomerManagedDatastoreS3Storage]
+    }
+  }
+
+  /** Contains information about the data store that you manage, which stores data used by IoT SiteWise.
+    */
+  @js.native
+  trait IotSiteWiseCustomerManagedDatastoreS3StorageSummary extends js.Object {
+    var bucket: js.UndefOr[BucketName]
+    var keyPrefix: js.UndefOr[S3KeyPrefix]
+  }
+
+  object IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
+    @inline
+    def apply(
+        bucket: js.UndefOr[BucketName] = js.undefined,
+        keyPrefix: js.UndefOr[S3KeyPrefix] = js.undefined
+    ): IotSiteWiseCustomerManagedDatastoreS3StorageSummary = {
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      keyPrefix.foreach(__v => __obj.updateDynamic("keyPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IotSiteWiseCustomerManagedDatastoreS3StorageSummary]
     }
   }
 
@@ -2261,6 +2399,25 @@ package object iotanalytics {
     }
   }
 
+  /** A partition dimension defined by an attribute.
+    */
+  @js.native
+  trait Partition extends js.Object {
+    var attributeName: PartitionAttributeName
+  }
+
+  object Partition {
+    @inline
+    def apply(
+        attributeName: PartitionAttributeName
+    ): Partition = {
+      val __obj = js.Dynamic.literal(
+        "attributeName" -> attributeName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Partition]
+    }
+  }
+
   /** Contains information about a pipeline.
     */
   @js.native
@@ -2641,7 +2798,7 @@ package object iotanalytics {
     }
   }
 
-  /** Creates a new message using only the specified attributes from the original message.
+  /** Used to create a new message using only the specified attributes from the original message.
     */
   @js.native
   trait SelectAttributesActivity extends js.Object {
@@ -2667,7 +2824,7 @@ package object iotanalytics {
     }
   }
 
-  /** Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of service-managed or customer-managed S3 storage after the channel is created.
+  /** Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice of S3 storage after the data store is created.
     */
   @js.native
   trait ServiceManagedChannelS3Storage extends js.Object
@@ -2680,7 +2837,7 @@ package object iotanalytics {
     }
   }
 
-  /** Used to store channel data in an S3 bucket managed by AWS IoT Analytics.
+  /** Used to store channel data in an S3 bucket managed by IoT Analytics.
     */
   @js.native
   trait ServiceManagedChannelS3StorageSummary extends js.Object
@@ -2693,7 +2850,7 @@ package object iotanalytics {
     }
   }
 
-  /** Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot change the choice of service-managed or customer-managed S3 storage after the data store is created.
+  /** Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created.
     */
   @js.native
   trait ServiceManagedDatastoreS3Storage extends js.Object
@@ -2706,7 +2863,7 @@ package object iotanalytics {
     }
   }
 
-  /** Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
+  /** Contains information about the data store that is managed by IoT Analytics.
     */
   @js.native
   trait ServiceManagedDatastoreS3StorageSummary extends js.Object
@@ -2835,6 +2992,29 @@ package object iotanalytics {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** A partition dimension defined by a timestamp attribute.
+    */
+  @js.native
+  trait TimestampPartition extends js.Object {
+    var attributeName: PartitionAttributeName
+    var timestampFormat: js.UndefOr[TimestampFormat]
+  }
+
+  object TimestampPartition {
+    @inline
+    def apply(
+        attributeName: PartitionAttributeName,
+        timestampFormat: js.UndefOr[TimestampFormat] = js.undefined
+    ): TimestampPartition = {
+      val __obj = js.Dynamic.literal(
+        "attributeName" -> attributeName.asInstanceOf[js.Any]
+      )
+
+      timestampFormat.foreach(__v => __obj.updateDynamic("timestampFormat")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimestampPartition]
     }
   }
 

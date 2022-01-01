@@ -9,12 +9,23 @@ import facade.amazonaws._
 
 package object mediaconnect {
   type MaxResults = Int
+  type __double = Double
   type __integer = Int
+  type __listOfAddMediaStreamRequest = js.Array[AddMediaStreamRequest]
   type __listOfAddOutputRequest = js.Array[AddOutputRequest]
+  type __listOfDestinationConfiguration = js.Array[DestinationConfiguration]
+  type __listOfDestinationConfigurationRequest = js.Array[DestinationConfigurationRequest]
   type __listOfEntitlement = js.Array[Entitlement]
   type __listOfGrantEntitlementRequest = js.Array[GrantEntitlementRequest]
+  type __listOfInputConfiguration = js.Array[InputConfiguration]
+  type __listOfInputConfigurationRequest = js.Array[InputConfigurationRequest]
   type __listOfListedEntitlement = js.Array[ListedEntitlement]
   type __listOfListedFlow = js.Array[ListedFlow]
+  type __listOfMediaStream = js.Array[MediaStream]
+  type __listOfMediaStreamOutputConfiguration = js.Array[MediaStreamOutputConfiguration]
+  type __listOfMediaStreamOutputConfigurationRequest = js.Array[MediaStreamOutputConfigurationRequest]
+  type __listOfMediaStreamSourceConfiguration = js.Array[MediaStreamSourceConfiguration]
+  type __listOfMediaStreamSourceConfigurationRequest = js.Array[MediaStreamSourceConfigurationRequest]
   type __listOfOffering = js.Array[Offering]
   type __listOfOutput = js.Array[Output]
   type __listOfReservation = js.Array[Reservation]
@@ -28,6 +39,7 @@ package object mediaconnect {
 
   final class MediaConnectOps(private val service: MediaConnect) extends AnyVal {
 
+    @inline def addFlowMediaStreamsFuture(params: AddFlowMediaStreamsRequest): Future[AddFlowMediaStreamsResponse] = service.addFlowMediaStreams(params).promise().toFuture
     @inline def addFlowOutputsFuture(params: AddFlowOutputsRequest): Future[AddFlowOutputsResponse] = service.addFlowOutputs(params).promise().toFuture
     @inline def addFlowSourcesFuture(params: AddFlowSourcesRequest): Future[AddFlowSourcesResponse] = service.addFlowSources(params).promise().toFuture
     @inline def addFlowVpcInterfacesFuture(params: AddFlowVpcInterfacesRequest): Future[AddFlowVpcInterfacesResponse] = service.addFlowVpcInterfaces(params).promise().toFuture
@@ -43,6 +55,7 @@ package object mediaconnect {
     @inline def listReservationsFuture(params: ListReservationsRequest): Future[ListReservationsResponse] = service.listReservations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def purchaseOfferingFuture(params: PurchaseOfferingRequest): Future[PurchaseOfferingResponse] = service.purchaseOffering(params).promise().toFuture
+    @inline def removeFlowMediaStreamFuture(params: RemoveFlowMediaStreamRequest): Future[RemoveFlowMediaStreamResponse] = service.removeFlowMediaStream(params).promise().toFuture
     @inline def removeFlowOutputFuture(params: RemoveFlowOutputRequest): Future[RemoveFlowOutputResponse] = service.removeFlowOutput(params).promise().toFuture
     @inline def removeFlowSourceFuture(params: RemoveFlowSourceRequest): Future[RemoveFlowSourceResponse] = service.removeFlowSource(params).promise().toFuture
     @inline def removeFlowVpcInterfaceFuture(params: RemoveFlowVpcInterfaceRequest): Future[RemoveFlowVpcInterfaceResponse] = service.removeFlowVpcInterface(params).promise().toFuture
@@ -53,6 +66,7 @@ package object mediaconnect {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateFlowEntitlementFuture(params: UpdateFlowEntitlementRequest): Future[UpdateFlowEntitlementResponse] = service.updateFlowEntitlement(params).promise().toFuture
     @inline def updateFlowFuture(params: UpdateFlowRequest): Future[UpdateFlowResponse] = service.updateFlow(params).promise().toFuture
+    @inline def updateFlowMediaStreamFuture(params: UpdateFlowMediaStreamRequest): Future[UpdateFlowMediaStreamResponse] = service.updateFlowMediaStream(params).promise().toFuture
     @inline def updateFlowOutputFuture(params: UpdateFlowOutputRequest): Future[UpdateFlowOutputResponse] = service.updateFlowOutput(params).promise().toFuture
     @inline def updateFlowSourceFuture(params: UpdateFlowSourceRequest): Future[UpdateFlowSourceResponse] = service.updateFlowSource(params).promise().toFuture
 
@@ -63,6 +77,7 @@ package object mediaconnect {
   class MediaConnect() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def addFlowMediaStreams(params: AddFlowMediaStreamsRequest): Request[AddFlowMediaStreamsResponse] = js.native
     def addFlowOutputs(params: AddFlowOutputsRequest): Request[AddFlowOutputsResponse] = js.native
     def addFlowSources(params: AddFlowSourcesRequest): Request[AddFlowSourcesResponse] = js.native
     def addFlowVpcInterfaces(params: AddFlowVpcInterfacesRequest): Request[AddFlowVpcInterfacesResponse] = js.native
@@ -78,6 +93,7 @@ package object mediaconnect {
     def listReservations(params: ListReservationsRequest): Request[ListReservationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def purchaseOffering(params: PurchaseOfferingRequest): Request[PurchaseOfferingResponse] = js.native
+    def removeFlowMediaStream(params: RemoveFlowMediaStreamRequest): Request[RemoveFlowMediaStreamResponse] = js.native
     def removeFlowOutput(params: RemoveFlowOutputRequest): Request[RemoveFlowOutputResponse] = js.native
     def removeFlowSource(params: RemoveFlowSourceRequest): Request[RemoveFlowSourceResponse] = js.native
     def removeFlowVpcInterface(params: RemoveFlowVpcInterfaceRequest): Request[RemoveFlowVpcInterfaceResponse] = js.native
@@ -88,12 +104,54 @@ package object mediaconnect {
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
     def updateFlow(params: UpdateFlowRequest): Request[UpdateFlowResponse] = js.native
     def updateFlowEntitlement(params: UpdateFlowEntitlementRequest): Request[UpdateFlowEntitlementResponse] = js.native
+    def updateFlowMediaStream(params: UpdateFlowMediaStreamRequest): Request[UpdateFlowMediaStreamResponse] = js.native
     def updateFlowOutput(params: UpdateFlowOutputRequest): Request[UpdateFlowOutputResponse] = js.native
     def updateFlowSource(params: UpdateFlowSourceRequest): Request[UpdateFlowSourceResponse] = js.native
   }
   object MediaConnect {
     @inline implicit def toOps(service: MediaConnect): MediaConnectOps = {
       new MediaConnectOps(service)
+    }
+  }
+
+  /** A request to add media streams to the flow.
+    */
+  @js.native
+  trait AddFlowMediaStreamsRequest extends js.Object {
+    var FlowArn: __string
+    var MediaStreams: __listOfAddMediaStreamRequest
+  }
+
+  object AddFlowMediaStreamsRequest {
+    @inline
+    def apply(
+        FlowArn: __string,
+        MediaStreams: __listOfAddMediaStreamRequest
+    ): AddFlowMediaStreamsRequest = {
+      val __obj = js.Dynamic.literal(
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
+        "MediaStreams" -> MediaStreams.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AddFlowMediaStreamsRequest]
+    }
+  }
+
+  @js.native
+  trait AddFlowMediaStreamsResponse extends js.Object {
+    var FlowArn: js.UndefOr[__string]
+    var MediaStreams: js.UndefOr[__listOfMediaStream]
+  }
+
+  object AddFlowMediaStreamsResponse {
+    @inline
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined,
+        MediaStreams: js.UndefOr[__listOfMediaStream] = js.undefined
+    ): AddFlowMediaStreamsResponse = {
+      val __obj = js.Dynamic.literal()
+      FlowArn.foreach(__v => __obj.updateDynamic("FlowArn")(__v.asInstanceOf[js.Any]))
+      MediaStreams.foreach(__v => __obj.updateDynamic("MediaStreams")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddFlowMediaStreamsResponse]
     }
   }
 
@@ -220,6 +278,44 @@ package object mediaconnect {
     }
   }
 
+  /** The media stream that you want to add to the flow.
+    */
+  @js.native
+  trait AddMediaStreamRequest extends js.Object {
+    var MediaStreamId: __integer
+    var MediaStreamName: __string
+    var MediaStreamType: MediaStreamType
+    var Attributes: js.UndefOr[MediaStreamAttributesRequest]
+    var ClockRate: js.UndefOr[__integer]
+    var Description: js.UndefOr[__string]
+    var VideoFormat: js.UndefOr[__string]
+  }
+
+  object AddMediaStreamRequest {
+    @inline
+    def apply(
+        MediaStreamId: __integer,
+        MediaStreamName: __string,
+        MediaStreamType: MediaStreamType,
+        Attributes: js.UndefOr[MediaStreamAttributesRequest] = js.undefined,
+        ClockRate: js.UndefOr[__integer] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        VideoFormat: js.UndefOr[__string] = js.undefined
+    ): AddMediaStreamRequest = {
+      val __obj = js.Dynamic.literal(
+        "MediaStreamId" -> MediaStreamId.asInstanceOf[js.Any],
+        "MediaStreamName" -> MediaStreamName.asInstanceOf[js.Any],
+        "MediaStreamType" -> MediaStreamType.asInstanceOf[js.Any]
+      )
+
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ClockRate.foreach(__v => __obj.updateDynamic("ClockRate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      VideoFormat.foreach(__v => __obj.updateDynamic("VideoFormat")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AddMediaStreamRequest]
+    }
+  }
+
   /** The output that you want to add to this flow.
     */
   @js.native
@@ -230,10 +326,12 @@ package object mediaconnect {
     var Destination: js.UndefOr[__string]
     var Encryption: js.UndefOr[Encryption]
     var MaxLatency: js.UndefOr[__integer]
+    var MediaStreamOutputConfigurations: js.UndefOr[__listOfMediaStreamOutputConfigurationRequest]
     var MinLatency: js.UndefOr[__integer]
     var Name: js.UndefOr[__string]
     var Port: js.UndefOr[__integer]
     var RemoteId: js.UndefOr[__string]
+    var SenderControlPort: js.UndefOr[__integer]
     var SmoothingLatency: js.UndefOr[__integer]
     var StreamId: js.UndefOr[__string]
     var VpcInterfaceAttachment: js.UndefOr[VpcInterfaceAttachment]
@@ -248,10 +346,12 @@ package object mediaconnect {
         Destination: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[Encryption] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        MediaStreamOutputConfigurations: js.UndefOr[__listOfMediaStreamOutputConfigurationRequest] = js.undefined,
         MinLatency: js.UndefOr[__integer] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         Port: js.UndefOr[__integer] = js.undefined,
         RemoteId: js.UndefOr[__string] = js.undefined,
+        SenderControlPort: js.UndefOr[__integer] = js.undefined,
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined,
         VpcInterfaceAttachment: js.UndefOr[VpcInterfaceAttachment] = js.undefined
@@ -265,10 +365,12 @@ package object mediaconnect {
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.updateDynamic("MaxLatency")(__v.asInstanceOf[js.Any]))
+      MediaStreamOutputConfigurations.foreach(__v => __obj.updateDynamic("MediaStreamOutputConfigurations")(__v.asInstanceOf[js.Any]))
       MinLatency.foreach(__v => __obj.updateDynamic("MinLatency")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       RemoteId.foreach(__v => __obj.updateDynamic("RemoteId")(__v.asInstanceOf[js.Any]))
+      SenderControlPort.foreach(__v => __obj.updateDynamic("SenderControlPort")(__v.asInstanceOf[js.Any]))
       SmoothingLatency.foreach(__v => __obj.updateDynamic("SmoothingLatency")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
       VpcInterfaceAttachment.foreach(__v => __obj.updateDynamic("VpcInterfaceAttachment")(__v.asInstanceOf[js.Any]))
@@ -283,6 +385,7 @@ package object mediaconnect {
     var Name: __string
     var AvailabilityZone: js.UndefOr[__string]
     var Entitlements: js.UndefOr[__listOfGrantEntitlementRequest]
+    var MediaStreams: js.UndefOr[__listOfAddMediaStreamRequest]
     var Outputs: js.UndefOr[__listOfAddOutputRequest]
     var Source: js.UndefOr[SetSourceRequest]
     var SourceFailoverConfig: js.UndefOr[FailoverConfig]
@@ -296,6 +399,7 @@ package object mediaconnect {
         Name: __string,
         AvailabilityZone: js.UndefOr[__string] = js.undefined,
         Entitlements: js.UndefOr[__listOfGrantEntitlementRequest] = js.undefined,
+        MediaStreams: js.UndefOr[__listOfAddMediaStreamRequest] = js.undefined,
         Outputs: js.UndefOr[__listOfAddOutputRequest] = js.undefined,
         Source: js.UndefOr[SetSourceRequest] = js.undefined,
         SourceFailoverConfig: js.UndefOr[FailoverConfig] = js.undefined,
@@ -308,6 +412,7 @@ package object mediaconnect {
 
       AvailabilityZone.foreach(__v => __obj.updateDynamic("AvailabilityZone")(__v.asInstanceOf[js.Any]))
       Entitlements.foreach(__v => __obj.updateDynamic("Entitlements")(__v.asInstanceOf[js.Any]))
+      MediaStreams.foreach(__v => __obj.updateDynamic("MediaStreams")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       SourceFailoverConfig.foreach(__v => __obj.updateDynamic("SourceFailoverConfig")(__v.asInstanceOf[js.Any]))
@@ -471,6 +576,103 @@ package object mediaconnect {
     }
   }
 
+  /** The transport parameters that are associated with an outbound media stream.
+    */
+  @js.native
+  trait DestinationConfiguration extends js.Object {
+    var DestinationIp: __string
+    var DestinationPort: __integer
+    var Interface: Interface
+    var OutboundIp: __string
+  }
+
+  object DestinationConfiguration {
+    @inline
+    def apply(
+        DestinationIp: __string,
+        DestinationPort: __integer,
+        Interface: Interface,
+        OutboundIp: __string
+    ): DestinationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "DestinationIp" -> DestinationIp.asInstanceOf[js.Any],
+        "DestinationPort" -> DestinationPort.asInstanceOf[js.Any],
+        "Interface" -> Interface.asInstanceOf[js.Any],
+        "OutboundIp" -> OutboundIp.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DestinationConfiguration]
+    }
+  }
+
+  /** The transport parameters that you want to associate with an outbound media stream.
+    */
+  @js.native
+  trait DestinationConfigurationRequest extends js.Object {
+    var DestinationIp: __string
+    var DestinationPort: __integer
+    var Interface: InterfaceRequest
+  }
+
+  object DestinationConfigurationRequest {
+    @inline
+    def apply(
+        DestinationIp: __string,
+        DestinationPort: __integer,
+        Interface: InterfaceRequest
+    ): DestinationConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "DestinationIp" -> DestinationIp.asInstanceOf[js.Any],
+        "DestinationPort" -> DestinationPort.asInstanceOf[js.Any],
+        "Interface" -> Interface.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DestinationConfigurationRequest]
+    }
+  }
+
+  /** A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
+    */
+  @js.native
+  trait EncodingParameters extends js.Object {
+    var CompressionFactor: __double
+    var EncoderProfile: EncoderProfile
+  }
+
+  object EncodingParameters {
+    @inline
+    def apply(
+        CompressionFactor: __double,
+        EncoderProfile: EncoderProfile
+    ): EncodingParameters = {
+      val __obj = js.Dynamic.literal(
+        "CompressionFactor" -> CompressionFactor.asInstanceOf[js.Any],
+        "EncoderProfile" -> EncoderProfile.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EncodingParameters]
+    }
+  }
+
+  /** A collection of parameters that determine how MediaConnect will convert the content. These fields only apply to outputs on flows that have a CDI source.
+    */
+  @js.native
+  trait EncodingParametersRequest extends js.Object {
+    var CompressionFactor: __double
+    var EncoderProfile: EncoderProfile
+  }
+
+  object EncodingParametersRequest {
+    @inline
+    def apply(
+        CompressionFactor: __double,
+        EncoderProfile: EncoderProfile
+    ): EncodingParametersRequest = {
+      val __obj = js.Dynamic.literal(
+        "CompressionFactor" -> CompressionFactor.asInstanceOf[js.Any],
+        "EncoderProfile" -> EncoderProfile.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EncodingParametersRequest]
+    }
+  }
+
   /** Information about the encryption of the flow.
     */
   @js.native
@@ -553,22 +755,28 @@ package object mediaconnect {
     }
   }
 
-  /** The settings for source failover
+  /** The settings for source failover.
     */
   @js.native
   trait FailoverConfig extends js.Object {
+    var FailoverMode: js.UndefOr[FailoverMode]
     var RecoveryWindow: js.UndefOr[__integer]
+    var SourcePriority: js.UndefOr[SourcePriority]
     var State: js.UndefOr[State]
   }
 
   object FailoverConfig {
     @inline
     def apply(
+        FailoverMode: js.UndefOr[FailoverMode] = js.undefined,
         RecoveryWindow: js.UndefOr[__integer] = js.undefined,
+        SourcePriority: js.UndefOr[SourcePriority] = js.undefined,
         State: js.UndefOr[State] = js.undefined
     ): FailoverConfig = {
       val __obj = js.Dynamic.literal()
+      FailoverMode.foreach(__v => __obj.updateDynamic("FailoverMode")(__v.asInstanceOf[js.Any]))
       RecoveryWindow.foreach(__v => __obj.updateDynamic("RecoveryWindow")(__v.asInstanceOf[js.Any]))
+      SourcePriority.foreach(__v => __obj.updateDynamic("SourcePriority")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailoverConfig]
     }
@@ -587,6 +795,7 @@ package object mediaconnect {
     var Status: Status
     var Description: js.UndefOr[__string]
     var EgressIp: js.UndefOr[__string]
+    var MediaStreams: js.UndefOr[__listOfMediaStream]
     var SourceFailoverConfig: js.UndefOr[FailoverConfig]
     var Sources: js.UndefOr[__listOfSource]
     var VpcInterfaces: js.UndefOr[__listOfVpcInterface]
@@ -604,6 +813,7 @@ package object mediaconnect {
         Status: Status,
         Description: js.UndefOr[__string] = js.undefined,
         EgressIp: js.UndefOr[__string] = js.undefined,
+        MediaStreams: js.UndefOr[__listOfMediaStream] = js.undefined,
         SourceFailoverConfig: js.UndefOr[FailoverConfig] = js.undefined,
         Sources: js.UndefOr[__listOfSource] = js.undefined,
         VpcInterfaces: js.UndefOr[__listOfVpcInterface] = js.undefined
@@ -620,10 +830,83 @@ package object mediaconnect {
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EgressIp.foreach(__v => __obj.updateDynamic("EgressIp")(__v.asInstanceOf[js.Any]))
+      MediaStreams.foreach(__v => __obj.updateDynamic("MediaStreams")(__v.asInstanceOf[js.Any]))
       SourceFailoverConfig.foreach(__v => __obj.updateDynamic("SourceFailoverConfig")(__v.asInstanceOf[js.Any]))
       Sources.foreach(__v => __obj.updateDynamic("Sources")(__v.asInstanceOf[js.Any]))
       VpcInterfaces.foreach(__v => __obj.updateDynamic("VpcInterfaces")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Flow]
+    }
+  }
+
+  /** FMTP
+    */
+  @js.native
+  trait Fmtp extends js.Object {
+    var ChannelOrder: js.UndefOr[__string]
+    var Colorimetry: js.UndefOr[Colorimetry]
+    var ExactFramerate: js.UndefOr[__string]
+    var Par: js.UndefOr[__string]
+    var Range: js.UndefOr[Range]
+    var ScanMode: js.UndefOr[ScanMode]
+    var Tcs: js.UndefOr[Tcs]
+  }
+
+  object Fmtp {
+    @inline
+    def apply(
+        ChannelOrder: js.UndefOr[__string] = js.undefined,
+        Colorimetry: js.UndefOr[Colorimetry] = js.undefined,
+        ExactFramerate: js.UndefOr[__string] = js.undefined,
+        Par: js.UndefOr[__string] = js.undefined,
+        Range: js.UndefOr[Range] = js.undefined,
+        ScanMode: js.UndefOr[ScanMode] = js.undefined,
+        Tcs: js.UndefOr[Tcs] = js.undefined
+    ): Fmtp = {
+      val __obj = js.Dynamic.literal()
+      ChannelOrder.foreach(__v => __obj.updateDynamic("ChannelOrder")(__v.asInstanceOf[js.Any]))
+      Colorimetry.foreach(__v => __obj.updateDynamic("Colorimetry")(__v.asInstanceOf[js.Any]))
+      ExactFramerate.foreach(__v => __obj.updateDynamic("ExactFramerate")(__v.asInstanceOf[js.Any]))
+      Par.foreach(__v => __obj.updateDynamic("Par")(__v.asInstanceOf[js.Any]))
+      Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
+      ScanMode.foreach(__v => __obj.updateDynamic("ScanMode")(__v.asInstanceOf[js.Any]))
+      Tcs.foreach(__v => __obj.updateDynamic("Tcs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Fmtp]
+    }
+  }
+
+  /** The settings that you want to use to define the media stream.
+    */
+  @js.native
+  trait FmtpRequest extends js.Object {
+    var ChannelOrder: js.UndefOr[__string]
+    var Colorimetry: js.UndefOr[Colorimetry]
+    var ExactFramerate: js.UndefOr[__string]
+    var Par: js.UndefOr[__string]
+    var Range: js.UndefOr[Range]
+    var ScanMode: js.UndefOr[ScanMode]
+    var Tcs: js.UndefOr[Tcs]
+  }
+
+  object FmtpRequest {
+    @inline
+    def apply(
+        ChannelOrder: js.UndefOr[__string] = js.undefined,
+        Colorimetry: js.UndefOr[Colorimetry] = js.undefined,
+        ExactFramerate: js.UndefOr[__string] = js.undefined,
+        Par: js.UndefOr[__string] = js.undefined,
+        Range: js.UndefOr[Range] = js.undefined,
+        ScanMode: js.UndefOr[ScanMode] = js.undefined,
+        Tcs: js.UndefOr[Tcs] = js.undefined
+    ): FmtpRequest = {
+      val __obj = js.Dynamic.literal()
+      ChannelOrder.foreach(__v => __obj.updateDynamic("ChannelOrder")(__v.asInstanceOf[js.Any]))
+      Colorimetry.foreach(__v => __obj.updateDynamic("Colorimetry")(__v.asInstanceOf[js.Any]))
+      ExactFramerate.foreach(__v => __obj.updateDynamic("ExactFramerate")(__v.asInstanceOf[js.Any]))
+      Par.foreach(__v => __obj.updateDynamic("Par")(__v.asInstanceOf[js.Any]))
+      Range.foreach(__v => __obj.updateDynamic("Range")(__v.asInstanceOf[js.Any]))
+      ScanMode.foreach(__v => __obj.updateDynamic("ScanMode")(__v.asInstanceOf[js.Any]))
+      Tcs.foreach(__v => __obj.updateDynamic("Tcs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FmtpRequest]
     }
   }
 
@@ -700,6 +983,91 @@ package object mediaconnect {
       Entitlements.foreach(__v => __obj.updateDynamic("Entitlements")(__v.asInstanceOf[js.Any]))
       FlowArn.foreach(__v => __obj.updateDynamic("FlowArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrantFlowEntitlementsResponse]
+    }
+  }
+
+  /** The transport parameters that are associated with an incoming media stream.
+    */
+  @js.native
+  trait InputConfiguration extends js.Object {
+    var InputIp: __string
+    var InputPort: __integer
+    var Interface: Interface
+  }
+
+  object InputConfiguration {
+    @inline
+    def apply(
+        InputIp: __string,
+        InputPort: __integer,
+        Interface: Interface
+    ): InputConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "InputIp" -> InputIp.asInstanceOf[js.Any],
+        "InputPort" -> InputPort.asInstanceOf[js.Any],
+        "Interface" -> Interface.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[InputConfiguration]
+    }
+  }
+
+  /** The transport parameters that you want to associate with an incoming media stream.
+    */
+  @js.native
+  trait InputConfigurationRequest extends js.Object {
+    var InputPort: __integer
+    var Interface: InterfaceRequest
+  }
+
+  object InputConfigurationRequest {
+    @inline
+    def apply(
+        InputPort: __integer,
+        Interface: InterfaceRequest
+    ): InputConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "InputPort" -> InputPort.asInstanceOf[js.Any],
+        "Interface" -> Interface.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[InputConfigurationRequest]
+    }
+  }
+
+  /** The VPC interface that is used for the media stream associated with the source or output.
+    */
+  @js.native
+  trait Interface extends js.Object {
+    var Name: __string
+  }
+
+  object Interface {
+    @inline
+    def apply(
+        Name: __string
+    ): Interface = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Interface]
+    }
+  }
+
+  /** The VPC interface that you want to designate where the media stream is coming from or going to.
+    */
+  @js.native
+  trait InterfaceRequest extends js.Object {
+    var Name: __string
+  }
+
+  object InterfaceRequest {
+    @inline
+    def apply(
+        Name: __string
+    ): InterfaceRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[InterfaceRequest]
     }
   }
 
@@ -948,6 +1316,201 @@ package object mediaconnect {
     }
   }
 
+  /** A single track or stream of media that contains video, audio, or ancillary data. After you add a media stream to a flow, you can associate it with sources and outputs on that flow, as long as they use the CDI protocol or the ST 2110 JPEG XS protocol. Each source or output can consist of one or many media streams.
+    */
+  @js.native
+  trait MediaStream extends js.Object {
+    var Fmt: __integer
+    var MediaStreamId: __integer
+    var MediaStreamName: __string
+    var MediaStreamType: MediaStreamType
+    var Attributes: js.UndefOr[MediaStreamAttributes]
+    var ClockRate: js.UndefOr[__integer]
+    var Description: js.UndefOr[__string]
+    var VideoFormat: js.UndefOr[__string]
+  }
+
+  object MediaStream {
+    @inline
+    def apply(
+        Fmt: __integer,
+        MediaStreamId: __integer,
+        MediaStreamName: __string,
+        MediaStreamType: MediaStreamType,
+        Attributes: js.UndefOr[MediaStreamAttributes] = js.undefined,
+        ClockRate: js.UndefOr[__integer] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        VideoFormat: js.UndefOr[__string] = js.undefined
+    ): MediaStream = {
+      val __obj = js.Dynamic.literal(
+        "Fmt" -> Fmt.asInstanceOf[js.Any],
+        "MediaStreamId" -> MediaStreamId.asInstanceOf[js.Any],
+        "MediaStreamName" -> MediaStreamName.asInstanceOf[js.Any],
+        "MediaStreamType" -> MediaStreamType.asInstanceOf[js.Any]
+      )
+
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ClockRate.foreach(__v => __obj.updateDynamic("ClockRate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      VideoFormat.foreach(__v => __obj.updateDynamic("VideoFormat")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MediaStream]
+    }
+  }
+
+  /** Attributes that are related to the media stream.
+    */
+  @js.native
+  trait MediaStreamAttributes extends js.Object {
+    var Fmtp: Fmtp
+    var Lang: js.UndefOr[__string]
+  }
+
+  object MediaStreamAttributes {
+    @inline
+    def apply(
+        Fmtp: Fmtp,
+        Lang: js.UndefOr[__string] = js.undefined
+    ): MediaStreamAttributes = {
+      val __obj = js.Dynamic.literal(
+        "Fmtp" -> Fmtp.asInstanceOf[js.Any]
+      )
+
+      Lang.foreach(__v => __obj.updateDynamic("Lang")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MediaStreamAttributes]
+    }
+  }
+
+  /** Attributes that are related to the media stream.
+    */
+  @js.native
+  trait MediaStreamAttributesRequest extends js.Object {
+    var Fmtp: js.UndefOr[FmtpRequest]
+    var Lang: js.UndefOr[__string]
+  }
+
+  object MediaStreamAttributesRequest {
+    @inline
+    def apply(
+        Fmtp: js.UndefOr[FmtpRequest] = js.undefined,
+        Lang: js.UndefOr[__string] = js.undefined
+    ): MediaStreamAttributesRequest = {
+      val __obj = js.Dynamic.literal()
+      Fmtp.foreach(__v => __obj.updateDynamic("Fmtp")(__v.asInstanceOf[js.Any]))
+      Lang.foreach(__v => __obj.updateDynamic("Lang")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MediaStreamAttributesRequest]
+    }
+  }
+
+  /** The media stream that is associated with the output, and the parameters for that association.
+    */
+  @js.native
+  trait MediaStreamOutputConfiguration extends js.Object {
+    var EncodingName: EncodingName
+    var MediaStreamName: __string
+    var DestinationConfigurations: js.UndefOr[__listOfDestinationConfiguration]
+    var EncodingParameters: js.UndefOr[EncodingParameters]
+  }
+
+  object MediaStreamOutputConfiguration {
+    @inline
+    def apply(
+        EncodingName: EncodingName,
+        MediaStreamName: __string,
+        DestinationConfigurations: js.UndefOr[__listOfDestinationConfiguration] = js.undefined,
+        EncodingParameters: js.UndefOr[EncodingParameters] = js.undefined
+    ): MediaStreamOutputConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "EncodingName" -> EncodingName.asInstanceOf[js.Any],
+        "MediaStreamName" -> MediaStreamName.asInstanceOf[js.Any]
+      )
+
+      DestinationConfigurations.foreach(__v => __obj.updateDynamic("DestinationConfigurations")(__v.asInstanceOf[js.Any]))
+      EncodingParameters.foreach(__v => __obj.updateDynamic("EncodingParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MediaStreamOutputConfiguration]
+    }
+  }
+
+  /** The media stream that you want to associate with the output, and the parameters for that association.
+    */
+  @js.native
+  trait MediaStreamOutputConfigurationRequest extends js.Object {
+    var EncodingName: EncodingName
+    var MediaStreamName: __string
+    var DestinationConfigurations: js.UndefOr[__listOfDestinationConfigurationRequest]
+    var EncodingParameters: js.UndefOr[EncodingParametersRequest]
+  }
+
+  object MediaStreamOutputConfigurationRequest {
+    @inline
+    def apply(
+        EncodingName: EncodingName,
+        MediaStreamName: __string,
+        DestinationConfigurations: js.UndefOr[__listOfDestinationConfigurationRequest] = js.undefined,
+        EncodingParameters: js.UndefOr[EncodingParametersRequest] = js.undefined
+    ): MediaStreamOutputConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "EncodingName" -> EncodingName.asInstanceOf[js.Any],
+        "MediaStreamName" -> MediaStreamName.asInstanceOf[js.Any]
+      )
+
+      DestinationConfigurations.foreach(__v => __obj.updateDynamic("DestinationConfigurations")(__v.asInstanceOf[js.Any]))
+      EncodingParameters.foreach(__v => __obj.updateDynamic("EncodingParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MediaStreamOutputConfigurationRequest]
+    }
+  }
+
+  /** The media stream that is associated with the source, and the parameters for that association.
+    */
+  @js.native
+  trait MediaStreamSourceConfiguration extends js.Object {
+    var EncodingName: EncodingName
+    var MediaStreamName: __string
+    var InputConfigurations: js.UndefOr[__listOfInputConfiguration]
+  }
+
+  object MediaStreamSourceConfiguration {
+    @inline
+    def apply(
+        EncodingName: EncodingName,
+        MediaStreamName: __string,
+        InputConfigurations: js.UndefOr[__listOfInputConfiguration] = js.undefined
+    ): MediaStreamSourceConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "EncodingName" -> EncodingName.asInstanceOf[js.Any],
+        "MediaStreamName" -> MediaStreamName.asInstanceOf[js.Any]
+      )
+
+      InputConfigurations.foreach(__v => __obj.updateDynamic("InputConfigurations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MediaStreamSourceConfiguration]
+    }
+  }
+
+  /** The definition of a media stream that you want to associate with the source.
+    */
+  @js.native
+  trait MediaStreamSourceConfigurationRequest extends js.Object {
+    var EncodingName: EncodingName
+    var MediaStreamName: __string
+    var InputConfigurations: js.UndefOr[__listOfInputConfigurationRequest]
+  }
+
+  object MediaStreamSourceConfigurationRequest {
+    @inline
+    def apply(
+        EncodingName: EncodingName,
+        MediaStreamName: __string,
+        InputConfigurations: js.UndefOr[__listOfInputConfigurationRequest] = js.undefined
+    ): MediaStreamSourceConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "EncodingName" -> EncodingName.asInstanceOf[js.Any],
+        "MediaStreamName" -> MediaStreamName.asInstanceOf[js.Any]
+      )
+
+      InputConfigurations.foreach(__v => __obj.updateDynamic("InputConfigurations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MediaStreamSourceConfigurationRequest]
+    }
+  }
+
   /** Messages that provide the state of the flow.
     */
   @js.native
@@ -1020,6 +1583,7 @@ package object mediaconnect {
     var EntitlementArn: js.UndefOr[__string]
     var ListenerAddress: js.UndefOr[__string]
     var MediaLiveInputArn: js.UndefOr[__string]
+    var MediaStreamOutputConfigurations: js.UndefOr[__listOfMediaStreamOutputConfiguration]
     var Port: js.UndefOr[__integer]
     var Transport: js.UndefOr[Transport]
     var VpcInterfaceAttachment: js.UndefOr[VpcInterfaceAttachment]
@@ -1037,6 +1601,7 @@ package object mediaconnect {
         EntitlementArn: js.UndefOr[__string] = js.undefined,
         ListenerAddress: js.UndefOr[__string] = js.undefined,
         MediaLiveInputArn: js.UndefOr[__string] = js.undefined,
+        MediaStreamOutputConfigurations: js.UndefOr[__listOfMediaStreamOutputConfiguration] = js.undefined,
         Port: js.UndefOr[__integer] = js.undefined,
         Transport: js.UndefOr[Transport] = js.undefined,
         VpcInterfaceAttachment: js.UndefOr[VpcInterfaceAttachment] = js.undefined
@@ -1053,6 +1618,7 @@ package object mediaconnect {
       EntitlementArn.foreach(__v => __obj.updateDynamic("EntitlementArn")(__v.asInstanceOf[js.Any]))
       ListenerAddress.foreach(__v => __obj.updateDynamic("ListenerAddress")(__v.asInstanceOf[js.Any]))
       MediaLiveInputArn.foreach(__v => __obj.updateDynamic("MediaLiveInputArn")(__v.asInstanceOf[js.Any]))
+      MediaStreamOutputConfigurations.foreach(__v => __obj.updateDynamic("MediaStreamOutputConfigurations")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       Transport.foreach(__v => __obj.updateDynamic("Transport")(__v.asInstanceOf[js.Any]))
       VpcInterfaceAttachment.foreach(__v => __obj.updateDynamic("VpcInterfaceAttachment")(__v.asInstanceOf[js.Any]))
@@ -1098,6 +1664,45 @@ package object mediaconnect {
       val __obj = js.Dynamic.literal()
       Reservation.foreach(__v => __obj.updateDynamic("Reservation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PurchaseOfferingResponse]
+    }
+  }
+
+  @js.native
+  trait RemoveFlowMediaStreamRequest extends js.Object {
+    var FlowArn: __string
+    var MediaStreamName: __string
+  }
+
+  object RemoveFlowMediaStreamRequest {
+    @inline
+    def apply(
+        FlowArn: __string,
+        MediaStreamName: __string
+    ): RemoveFlowMediaStreamRequest = {
+      val __obj = js.Dynamic.literal(
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
+        "MediaStreamName" -> MediaStreamName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RemoveFlowMediaStreamRequest]
+    }
+  }
+
+  @js.native
+  trait RemoveFlowMediaStreamResponse extends js.Object {
+    var FlowArn: js.UndefOr[__string]
+    var MediaStreamName: js.UndefOr[__string]
+  }
+
+  object RemoveFlowMediaStreamResponse {
+    @inline
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined,
+        MediaStreamName: js.UndefOr[__string] = js.undefined
+    ): RemoveFlowMediaStreamResponse = {
+      val __obj = js.Dynamic.literal()
+      FlowArn.foreach(__v => __obj.updateDynamic("FlowArn")(__v.asInstanceOf[js.Any]))
+      MediaStreamName.foreach(__v => __obj.updateDynamic("MediaStreamName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveFlowMediaStreamResponse]
     }
   }
 
@@ -1348,9 +1953,13 @@ package object mediaconnect {
     var IngestPort: js.UndefOr[__integer]
     var MaxBitrate: js.UndefOr[__integer]
     var MaxLatency: js.UndefOr[__integer]
+    var MaxSyncBuffer: js.UndefOr[__integer]
+    var MediaStreamSourceConfigurations: js.UndefOr[__listOfMediaStreamSourceConfigurationRequest]
     var MinLatency: js.UndefOr[__integer]
     var Name: js.UndefOr[__string]
     var Protocol: js.UndefOr[Protocol]
+    var SenderControlPort: js.UndefOr[__integer]
+    var SenderIpAddress: js.UndefOr[__string]
     var StreamId: js.UndefOr[__string]
     var VpcInterfaceName: js.UndefOr[__string]
     var WhitelistCidr: js.UndefOr[__string]
@@ -1365,9 +1974,13 @@ package object mediaconnect {
         IngestPort: js.UndefOr[__integer] = js.undefined,
         MaxBitrate: js.UndefOr[__integer] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        MaxSyncBuffer: js.UndefOr[__integer] = js.undefined,
+        MediaStreamSourceConfigurations: js.UndefOr[__listOfMediaStreamSourceConfigurationRequest] = js.undefined,
         MinLatency: js.UndefOr[__integer] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined,
+        SenderControlPort: js.UndefOr[__integer] = js.undefined,
+        SenderIpAddress: js.UndefOr[__string] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined,
         VpcInterfaceName: js.UndefOr[__string] = js.undefined,
         WhitelistCidr: js.UndefOr[__string] = js.undefined
@@ -1379,9 +1992,13 @@ package object mediaconnect {
       IngestPort.foreach(__v => __obj.updateDynamic("IngestPort")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.updateDynamic("MaxLatency")(__v.asInstanceOf[js.Any]))
+      MaxSyncBuffer.foreach(__v => __obj.updateDynamic("MaxSyncBuffer")(__v.asInstanceOf[js.Any]))
+      MediaStreamSourceConfigurations.foreach(__v => __obj.updateDynamic("MediaStreamSourceConfigurations")(__v.asInstanceOf[js.Any]))
       MinLatency.foreach(__v => __obj.updateDynamic("MinLatency")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      SenderControlPort.foreach(__v => __obj.updateDynamic("SenderControlPort")(__v.asInstanceOf[js.Any]))
+      SenderIpAddress.foreach(__v => __obj.updateDynamic("SenderIpAddress")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
       VpcInterfaceName.foreach(__v => __obj.updateDynamic("VpcInterfaceName")(__v.asInstanceOf[js.Any]))
       WhitelistCidr.foreach(__v => __obj.updateDynamic("WhitelistCidr")(__v.asInstanceOf[js.Any]))
@@ -1401,6 +2018,9 @@ package object mediaconnect {
     var EntitlementArn: js.UndefOr[__string]
     var IngestIp: js.UndefOr[__string]
     var IngestPort: js.UndefOr[__integer]
+    var MediaStreamSourceConfigurations: js.UndefOr[__listOfMediaStreamSourceConfiguration]
+    var SenderControlPort: js.UndefOr[__integer]
+    var SenderIpAddress: js.UndefOr[__string]
     var Transport: js.UndefOr[Transport]
     var VpcInterfaceName: js.UndefOr[__string]
     var WhitelistCidr: js.UndefOr[__string]
@@ -1417,6 +2037,9 @@ package object mediaconnect {
         EntitlementArn: js.UndefOr[__string] = js.undefined,
         IngestIp: js.UndefOr[__string] = js.undefined,
         IngestPort: js.UndefOr[__integer] = js.undefined,
+        MediaStreamSourceConfigurations: js.UndefOr[__listOfMediaStreamSourceConfiguration] = js.undefined,
+        SenderControlPort: js.UndefOr[__integer] = js.undefined,
+        SenderIpAddress: js.UndefOr[__string] = js.undefined,
         Transport: js.UndefOr[Transport] = js.undefined,
         VpcInterfaceName: js.UndefOr[__string] = js.undefined,
         WhitelistCidr: js.UndefOr[__string] = js.undefined
@@ -1432,10 +2055,31 @@ package object mediaconnect {
       EntitlementArn.foreach(__v => __obj.updateDynamic("EntitlementArn")(__v.asInstanceOf[js.Any]))
       IngestIp.foreach(__v => __obj.updateDynamic("IngestIp")(__v.asInstanceOf[js.Any]))
       IngestPort.foreach(__v => __obj.updateDynamic("IngestPort")(__v.asInstanceOf[js.Any]))
+      MediaStreamSourceConfigurations.foreach(__v => __obj.updateDynamic("MediaStreamSourceConfigurations")(__v.asInstanceOf[js.Any]))
+      SenderControlPort.foreach(__v => __obj.updateDynamic("SenderControlPort")(__v.asInstanceOf[js.Any]))
+      SenderIpAddress.foreach(__v => __obj.updateDynamic("SenderIpAddress")(__v.asInstanceOf[js.Any]))
       Transport.foreach(__v => __obj.updateDynamic("Transport")(__v.asInstanceOf[js.Any]))
       VpcInterfaceName.foreach(__v => __obj.updateDynamic("VpcInterfaceName")(__v.asInstanceOf[js.Any]))
       WhitelistCidr.foreach(__v => __obj.updateDynamic("WhitelistCidr")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Source]
+    }
+  }
+
+  /** The priority you want to assign to a source. You can have a primary stream and a backup stream or two equally prioritized streams.
+    */
+  @js.native
+  trait SourcePriority extends js.Object {
+    var PrimarySource: js.UndefOr[__string]
+  }
+
+  object SourcePriority {
+    @inline
+    def apply(
+        PrimarySource: js.UndefOr[__string] = js.undefined
+    ): SourcePriority = {
+      val __obj = js.Dynamic.literal()
+      PrimarySource.foreach(__v => __obj.updateDynamic("PrimarySource")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SourcePriority]
     }
   }
 
@@ -1541,8 +2185,11 @@ package object mediaconnect {
     var CidrAllowList: js.UndefOr[__listOf__string]
     var MaxBitrate: js.UndefOr[__integer]
     var MaxLatency: js.UndefOr[__integer]
+    var MaxSyncBuffer: js.UndefOr[__integer]
     var MinLatency: js.UndefOr[__integer]
     var RemoteId: js.UndefOr[__string]
+    var SenderControlPort: js.UndefOr[__integer]
+    var SenderIpAddress: js.UndefOr[__string]
     var SmoothingLatency: js.UndefOr[__integer]
     var StreamId: js.UndefOr[__string]
   }
@@ -1554,8 +2201,11 @@ package object mediaconnect {
         CidrAllowList: js.UndefOr[__listOf__string] = js.undefined,
         MaxBitrate: js.UndefOr[__integer] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        MaxSyncBuffer: js.UndefOr[__integer] = js.undefined,
         MinLatency: js.UndefOr[__integer] = js.undefined,
         RemoteId: js.UndefOr[__string] = js.undefined,
+        SenderControlPort: js.UndefOr[__integer] = js.undefined,
+        SenderIpAddress: js.UndefOr[__string] = js.undefined,
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined
     ): Transport = {
@@ -1566,8 +2216,11 @@ package object mediaconnect {
       CidrAllowList.foreach(__v => __obj.updateDynamic("CidrAllowList")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.updateDynamic("MaxLatency")(__v.asInstanceOf[js.Any]))
+      MaxSyncBuffer.foreach(__v => __obj.updateDynamic("MaxSyncBuffer")(__v.asInstanceOf[js.Any]))
       MinLatency.foreach(__v => __obj.updateDynamic("MinLatency")(__v.asInstanceOf[js.Any]))
       RemoteId.foreach(__v => __obj.updateDynamic("RemoteId")(__v.asInstanceOf[js.Any]))
+      SenderControlPort.foreach(__v => __obj.updateDynamic("SenderControlPort")(__v.asInstanceOf[js.Any]))
+      SenderIpAddress.foreach(__v => __obj.updateDynamic("SenderIpAddress")(__v.asInstanceOf[js.Any]))
       SmoothingLatency.foreach(__v => __obj.updateDynamic("SmoothingLatency")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Transport]
@@ -1636,22 +2289,28 @@ package object mediaconnect {
     }
   }
 
-  /** The settings for source failover
+  /** The settings for source failover.
     */
   @js.native
   trait UpdateFailoverConfig extends js.Object {
+    var FailoverMode: js.UndefOr[FailoverMode]
     var RecoveryWindow: js.UndefOr[__integer]
+    var SourcePriority: js.UndefOr[SourcePriority]
     var State: js.UndefOr[State]
   }
 
   object UpdateFailoverConfig {
     @inline
     def apply(
+        FailoverMode: js.UndefOr[FailoverMode] = js.undefined,
         RecoveryWindow: js.UndefOr[__integer] = js.undefined,
+        SourcePriority: js.UndefOr[SourcePriority] = js.undefined,
         State: js.UndefOr[State] = js.undefined
     ): UpdateFailoverConfig = {
       val __obj = js.Dynamic.literal()
+      FailoverMode.foreach(__v => __obj.updateDynamic("FailoverMode")(__v.asInstanceOf[js.Any]))
       RecoveryWindow.foreach(__v => __obj.updateDynamic("RecoveryWindow")(__v.asInstanceOf[js.Any]))
+      SourcePriority.foreach(__v => __obj.updateDynamic("SourcePriority")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFailoverConfig]
     }
@@ -1711,6 +2370,63 @@ package object mediaconnect {
     }
   }
 
+  /** The fields that you want to update in the media stream.
+    */
+  @js.native
+  trait UpdateFlowMediaStreamRequest extends js.Object {
+    var FlowArn: __string
+    var MediaStreamName: __string
+    var Attributes: js.UndefOr[MediaStreamAttributesRequest]
+    var ClockRate: js.UndefOr[__integer]
+    var Description: js.UndefOr[__string]
+    var MediaStreamType: js.UndefOr[MediaStreamType]
+    var VideoFormat: js.UndefOr[__string]
+  }
+
+  object UpdateFlowMediaStreamRequest {
+    @inline
+    def apply(
+        FlowArn: __string,
+        MediaStreamName: __string,
+        Attributes: js.UndefOr[MediaStreamAttributesRequest] = js.undefined,
+        ClockRate: js.UndefOr[__integer] = js.undefined,
+        Description: js.UndefOr[__string] = js.undefined,
+        MediaStreamType: js.UndefOr[MediaStreamType] = js.undefined,
+        VideoFormat: js.UndefOr[__string] = js.undefined
+    ): UpdateFlowMediaStreamRequest = {
+      val __obj = js.Dynamic.literal(
+        "FlowArn" -> FlowArn.asInstanceOf[js.Any],
+        "MediaStreamName" -> MediaStreamName.asInstanceOf[js.Any]
+      )
+
+      Attributes.foreach(__v => __obj.updateDynamic("Attributes")(__v.asInstanceOf[js.Any]))
+      ClockRate.foreach(__v => __obj.updateDynamic("ClockRate")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      MediaStreamType.foreach(__v => __obj.updateDynamic("MediaStreamType")(__v.asInstanceOf[js.Any]))
+      VideoFormat.foreach(__v => __obj.updateDynamic("VideoFormat")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFlowMediaStreamRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFlowMediaStreamResponse extends js.Object {
+    var FlowArn: js.UndefOr[__string]
+    var MediaStream: js.UndefOr[MediaStream]
+  }
+
+  object UpdateFlowMediaStreamResponse {
+    @inline
+    def apply(
+        FlowArn: js.UndefOr[__string] = js.undefined,
+        MediaStream: js.UndefOr[MediaStream] = js.undefined
+    ): UpdateFlowMediaStreamResponse = {
+      val __obj = js.Dynamic.literal()
+      FlowArn.foreach(__v => __obj.updateDynamic("FlowArn")(__v.asInstanceOf[js.Any]))
+      MediaStream.foreach(__v => __obj.updateDynamic("MediaStream")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFlowMediaStreamResponse]
+    }
+  }
+
   /** The fields that you want to update in the output.
     */
   @js.native
@@ -1722,10 +2438,13 @@ package object mediaconnect {
     var Destination: js.UndefOr[__string]
     var Encryption: js.UndefOr[UpdateEncryption]
     var MaxLatency: js.UndefOr[__integer]
+    var MediaStreamOutputConfigurations: js.UndefOr[__listOfMediaStreamOutputConfigurationRequest]
     var MinLatency: js.UndefOr[__integer]
     var Port: js.UndefOr[__integer]
     var Protocol: js.UndefOr[Protocol]
     var RemoteId: js.UndefOr[__string]
+    var SenderControlPort: js.UndefOr[__integer]
+    var SenderIpAddress: js.UndefOr[__string]
     var SmoothingLatency: js.UndefOr[__integer]
     var StreamId: js.UndefOr[__string]
     var VpcInterfaceAttachment: js.UndefOr[VpcInterfaceAttachment]
@@ -1741,10 +2460,13 @@ package object mediaconnect {
         Destination: js.UndefOr[__string] = js.undefined,
         Encryption: js.UndefOr[UpdateEncryption] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        MediaStreamOutputConfigurations: js.UndefOr[__listOfMediaStreamOutputConfigurationRequest] = js.undefined,
         MinLatency: js.UndefOr[__integer] = js.undefined,
         Port: js.UndefOr[__integer] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined,
         RemoteId: js.UndefOr[__string] = js.undefined,
+        SenderControlPort: js.UndefOr[__integer] = js.undefined,
+        SenderIpAddress: js.UndefOr[__string] = js.undefined,
         SmoothingLatency: js.UndefOr[__integer] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined,
         VpcInterfaceAttachment: js.UndefOr[VpcInterfaceAttachment] = js.undefined
@@ -1759,10 +2481,13 @@ package object mediaconnect {
       Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.updateDynamic("MaxLatency")(__v.asInstanceOf[js.Any]))
+      MediaStreamOutputConfigurations.foreach(__v => __obj.updateDynamic("MediaStreamOutputConfigurations")(__v.asInstanceOf[js.Any]))
       MinLatency.foreach(__v => __obj.updateDynamic("MinLatency")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
       RemoteId.foreach(__v => __obj.updateDynamic("RemoteId")(__v.asInstanceOf[js.Any]))
+      SenderControlPort.foreach(__v => __obj.updateDynamic("SenderControlPort")(__v.asInstanceOf[js.Any]))
+      SenderIpAddress.foreach(__v => __obj.updateDynamic("SenderIpAddress")(__v.asInstanceOf[js.Any]))
       SmoothingLatency.foreach(__v => __obj.updateDynamic("SmoothingLatency")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
       VpcInterfaceAttachment.foreach(__v => __obj.updateDynamic("VpcInterfaceAttachment")(__v.asInstanceOf[js.Any]))
@@ -1840,8 +2565,12 @@ package object mediaconnect {
     var IngestPort: js.UndefOr[__integer]
     var MaxBitrate: js.UndefOr[__integer]
     var MaxLatency: js.UndefOr[__integer]
+    var MaxSyncBuffer: js.UndefOr[__integer]
+    var MediaStreamSourceConfigurations: js.UndefOr[__listOfMediaStreamSourceConfigurationRequest]
     var MinLatency: js.UndefOr[__integer]
     var Protocol: js.UndefOr[Protocol]
+    var SenderControlPort: js.UndefOr[__integer]
+    var SenderIpAddress: js.UndefOr[__string]
     var StreamId: js.UndefOr[__string]
     var VpcInterfaceName: js.UndefOr[__string]
     var WhitelistCidr: js.UndefOr[__string]
@@ -1858,8 +2587,12 @@ package object mediaconnect {
         IngestPort: js.UndefOr[__integer] = js.undefined,
         MaxBitrate: js.UndefOr[__integer] = js.undefined,
         MaxLatency: js.UndefOr[__integer] = js.undefined,
+        MaxSyncBuffer: js.UndefOr[__integer] = js.undefined,
+        MediaStreamSourceConfigurations: js.UndefOr[__listOfMediaStreamSourceConfigurationRequest] = js.undefined,
         MinLatency: js.UndefOr[__integer] = js.undefined,
         Protocol: js.UndefOr[Protocol] = js.undefined,
+        SenderControlPort: js.UndefOr[__integer] = js.undefined,
+        SenderIpAddress: js.UndefOr[__string] = js.undefined,
         StreamId: js.UndefOr[__string] = js.undefined,
         VpcInterfaceName: js.UndefOr[__string] = js.undefined,
         WhitelistCidr: js.UndefOr[__string] = js.undefined
@@ -1875,8 +2608,12 @@ package object mediaconnect {
       IngestPort.foreach(__v => __obj.updateDynamic("IngestPort")(__v.asInstanceOf[js.Any]))
       MaxBitrate.foreach(__v => __obj.updateDynamic("MaxBitrate")(__v.asInstanceOf[js.Any]))
       MaxLatency.foreach(__v => __obj.updateDynamic("MaxLatency")(__v.asInstanceOf[js.Any]))
+      MaxSyncBuffer.foreach(__v => __obj.updateDynamic("MaxSyncBuffer")(__v.asInstanceOf[js.Any]))
+      MediaStreamSourceConfigurations.foreach(__v => __obj.updateDynamic("MediaStreamSourceConfigurations")(__v.asInstanceOf[js.Any]))
       MinLatency.foreach(__v => __obj.updateDynamic("MinLatency")(__v.asInstanceOf[js.Any]))
       Protocol.foreach(__v => __obj.updateDynamic("Protocol")(__v.asInstanceOf[js.Any]))
+      SenderControlPort.foreach(__v => __obj.updateDynamic("SenderControlPort")(__v.asInstanceOf[js.Any]))
+      SenderIpAddress.foreach(__v => __obj.updateDynamic("SenderIpAddress")(__v.asInstanceOf[js.Any]))
       StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
       VpcInterfaceName.foreach(__v => __obj.updateDynamic("VpcInterfaceName")(__v.asInstanceOf[js.Any]))
       WhitelistCidr.foreach(__v => __obj.updateDynamic("WhitelistCidr")(__v.asInstanceOf[js.Any]))
@@ -1909,6 +2646,7 @@ package object mediaconnect {
   trait VpcInterface extends js.Object {
     var Name: __string
     var NetworkInterfaceIds: __listOf__string
+    var NetworkInterfaceType: NetworkInterfaceType
     var RoleArn: __string
     var SecurityGroupIds: __listOf__string
     var SubnetId: __string
@@ -1919,6 +2657,7 @@ package object mediaconnect {
     def apply(
         Name: __string,
         NetworkInterfaceIds: __listOf__string,
+        NetworkInterfaceType: NetworkInterfaceType,
         RoleArn: __string,
         SecurityGroupIds: __listOf__string,
         SubnetId: __string
@@ -1926,6 +2665,7 @@ package object mediaconnect {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
         "NetworkInterfaceIds" -> NetworkInterfaceIds.asInstanceOf[js.Any],
+        "NetworkInterfaceType" -> NetworkInterfaceType.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
         "SubnetId" -> SubnetId.asInstanceOf[js.Any]
@@ -1960,6 +2700,7 @@ package object mediaconnect {
     var RoleArn: __string
     var SecurityGroupIds: __listOf__string
     var SubnetId: __string
+    var NetworkInterfaceType: js.UndefOr[NetworkInterfaceType]
   }
 
   object VpcInterfaceRequest {
@@ -1968,7 +2709,8 @@ package object mediaconnect {
         Name: __string,
         RoleArn: __string,
         SecurityGroupIds: __listOf__string,
-        SubnetId: __string
+        SubnetId: __string,
+        NetworkInterfaceType: js.UndefOr[NetworkInterfaceType] = js.undefined
     ): VpcInterfaceRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
@@ -1976,6 +2718,8 @@ package object mediaconnect {
         "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
         "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
+
+      NetworkInterfaceType.foreach(__v => __obj.updateDynamic("NetworkInterfaceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcInterfaceRequest]
     }
   }

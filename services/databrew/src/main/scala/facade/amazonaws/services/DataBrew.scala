@@ -10,6 +10,7 @@ import facade.amazonaws._
 package object databrew {
   type AccountId = String
   type ActionId = Int
+  type AllowedStatisticList = js.Array[AllowedStatistics]
   type Arn = String
   type AssumeControl = Boolean
   type Attempt = Int
@@ -19,20 +20,27 @@ package object databrew {
   type ColumnName = String
   type ColumnNameList = js.Array[ColumnName]
   type ColumnRange = Int
+  type ColumnSelectorList = js.Array[ColumnSelector]
+  type ColumnStatisticsConfigurationList = js.Array[ColumnStatisticsConfiguration]
   type Condition = String
   type ConditionExpressionList = js.Array[ConditionExpression]
   type ConditionValue = String
   type CreateColumn = Boolean
   type CreatedBy = String
   type CronExpression = String
+  type DataCatalogOutputList = js.Array[DataCatalogOutput]
   type DatabaseName = String
+  type DatabaseOutputList = js.Array[DatabaseOutput]
   type DatabaseTableName = String
   type DatasetList = js.Array[Dataset]
   type DatasetName = String
   type Date = js.Date
   type DatetimeFormat = String
   type Delimiter = String
+  type Disabled = Boolean
   type EncryptionKeyArn = String
+  type EntityType = String
+  type EntityTypeList = js.Array[EntityType]
   type ErrorCode = String
   type ExecutionTime = Int
   type Expression = String
@@ -69,6 +77,7 @@ package object databrew {
   type ProjectList = js.Array[Project]
   type ProjectName = String
   type PublishedBy = String
+  type QueryString = String
   type RecipeDescription = String
   type RecipeErrorList = js.Array[RecipeVersionErrorDetail]
   type RecipeErrorMessage = String
@@ -78,6 +87,13 @@ package object databrew {
   type RecipeVersion = String
   type RecipeVersionList = js.Array[RecipeVersion]
   type Result = String
+  type RowRange = Int
+  type RuleCount = Int
+  type RuleList = js.Array[Rule]
+  type RuleName = String
+  type RulesetDescription = String
+  type RulesetItemList = js.Array[RulesetItem]
+  type RulesetName = String
   type SampleSize = Int
   type ScheduleList = js.Array[Schedule]
   type ScheduleName = String
@@ -86,7 +102,11 @@ package object databrew {
   type SheetName = String
   type SheetNameList = js.Array[SheetName]
   type StartColumnIndex = Int
+  type StartRowIndex = Int
   type StartedBy = String
+  type Statistic = String
+  type StatisticList = js.Array[Statistic]
+  type StatisticOverrideList = js.Array[StatisticOverride]
   type StepIndex = Int
   type TableName = String
   type TagKey = String
@@ -94,8 +114,10 @@ package object databrew {
   type TagMap = js.Dictionary[TagValue]
   type TagValue = String
   type TargetColumn = String
+  type ThresholdValue = Double
   type Timeout = Int
   type TimezoneOffset = String
+  type ValidationConfigurationList = js.Array[ValidationConfiguration]
   type ValueReference = String
   type ValuesMap = js.Dictionary[ConditionValue]
 
@@ -107,17 +129,20 @@ package object databrew {
     @inline def createProjectFuture(params: CreateProjectRequest): Future[CreateProjectResponse] = service.createProject(params).promise().toFuture
     @inline def createRecipeFuture(params: CreateRecipeRequest): Future[CreateRecipeResponse] = service.createRecipe(params).promise().toFuture
     @inline def createRecipeJobFuture(params: CreateRecipeJobRequest): Future[CreateRecipeJobResponse] = service.createRecipeJob(params).promise().toFuture
+    @inline def createRulesetFuture(params: CreateRulesetRequest): Future[CreateRulesetResponse] = service.createRuleset(params).promise().toFuture
     @inline def createScheduleFuture(params: CreateScheduleRequest): Future[CreateScheduleResponse] = service.createSchedule(params).promise().toFuture
     @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[DeleteDatasetResponse] = service.deleteDataset(params).promise().toFuture
     @inline def deleteJobFuture(params: DeleteJobRequest): Future[DeleteJobResponse] = service.deleteJob(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] = service.deleteProject(params).promise().toFuture
     @inline def deleteRecipeVersionFuture(params: DeleteRecipeVersionRequest): Future[DeleteRecipeVersionResponse] = service.deleteRecipeVersion(params).promise().toFuture
+    @inline def deleteRulesetFuture(params: DeleteRulesetRequest): Future[DeleteRulesetResponse] = service.deleteRuleset(params).promise().toFuture
     @inline def deleteScheduleFuture(params: DeleteScheduleRequest): Future[DeleteScheduleResponse] = service.deleteSchedule(params).promise().toFuture
     @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResponse] = service.describeJob(params).promise().toFuture
     @inline def describeJobRunFuture(params: DescribeJobRunRequest): Future[DescribeJobRunResponse] = service.describeJobRun(params).promise().toFuture
     @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] = service.describeProject(params).promise().toFuture
     @inline def describeRecipeFuture(params: DescribeRecipeRequest): Future[DescribeRecipeResponse] = service.describeRecipe(params).promise().toFuture
+    @inline def describeRulesetFuture(params: DescribeRulesetRequest): Future[DescribeRulesetResponse] = service.describeRuleset(params).promise().toFuture
     @inline def describeScheduleFuture(params: DescribeScheduleRequest): Future[DescribeScheduleResponse] = service.describeSchedule(params).promise().toFuture
     @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] = service.listDatasets(params).promise().toFuture
     @inline def listJobRunsFuture(params: ListJobRunsRequest): Future[ListJobRunsResponse] = service.listJobRuns(params).promise().toFuture
@@ -125,6 +150,7 @@ package object databrew {
     @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] = service.listProjects(params).promise().toFuture
     @inline def listRecipeVersionsFuture(params: ListRecipeVersionsRequest): Future[ListRecipeVersionsResponse] = service.listRecipeVersions(params).promise().toFuture
     @inline def listRecipesFuture(params: ListRecipesRequest): Future[ListRecipesResponse] = service.listRecipes(params).promise().toFuture
+    @inline def listRulesetsFuture(params: ListRulesetsRequest): Future[ListRulesetsResponse] = service.listRulesets(params).promise().toFuture
     @inline def listSchedulesFuture(params: ListSchedulesRequest): Future[ListSchedulesResponse] = service.listSchedules(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def publishRecipeFuture(params: PublishRecipeRequest): Future[PublishRecipeResponse] = service.publishRecipe(params).promise().toFuture
@@ -139,6 +165,7 @@ package object databrew {
     @inline def updateProjectFuture(params: UpdateProjectRequest): Future[UpdateProjectResponse] = service.updateProject(params).promise().toFuture
     @inline def updateRecipeFuture(params: UpdateRecipeRequest): Future[UpdateRecipeResponse] = service.updateRecipe(params).promise().toFuture
     @inline def updateRecipeJobFuture(params: UpdateRecipeJobRequest): Future[UpdateRecipeJobResponse] = service.updateRecipeJob(params).promise().toFuture
+    @inline def updateRulesetFuture(params: UpdateRulesetRequest): Future[UpdateRulesetResponse] = service.updateRuleset(params).promise().toFuture
     @inline def updateScheduleFuture(params: UpdateScheduleRequest): Future[UpdateScheduleResponse] = service.updateSchedule(params).promise().toFuture
 
   }
@@ -154,17 +181,20 @@ package object databrew {
     def createProject(params: CreateProjectRequest): Request[CreateProjectResponse] = js.native
     def createRecipe(params: CreateRecipeRequest): Request[CreateRecipeResponse] = js.native
     def createRecipeJob(params: CreateRecipeJobRequest): Request[CreateRecipeJobResponse] = js.native
+    def createRuleset(params: CreateRulesetRequest): Request[CreateRulesetResponse] = js.native
     def createSchedule(params: CreateScheduleRequest): Request[CreateScheduleResponse] = js.native
     def deleteDataset(params: DeleteDatasetRequest): Request[DeleteDatasetResponse] = js.native
     def deleteJob(params: DeleteJobRequest): Request[DeleteJobResponse] = js.native
     def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResponse] = js.native
     def deleteRecipeVersion(params: DeleteRecipeVersionRequest): Request[DeleteRecipeVersionResponse] = js.native
+    def deleteRuleset(params: DeleteRulesetRequest): Request[DeleteRulesetResponse] = js.native
     def deleteSchedule(params: DeleteScheduleRequest): Request[DeleteScheduleResponse] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeJob(params: DescribeJobRequest): Request[DescribeJobResponse] = js.native
     def describeJobRun(params: DescribeJobRunRequest): Request[DescribeJobRunResponse] = js.native
     def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResponse] = js.native
     def describeRecipe(params: DescribeRecipeRequest): Request[DescribeRecipeResponse] = js.native
+    def describeRuleset(params: DescribeRulesetRequest): Request[DescribeRulesetResponse] = js.native
     def describeSchedule(params: DescribeScheduleRequest): Request[DescribeScheduleResponse] = js.native
     def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
     def listJobRuns(params: ListJobRunsRequest): Request[ListJobRunsResponse] = js.native
@@ -172,6 +202,7 @@ package object databrew {
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResponse] = js.native
     def listRecipeVersions(params: ListRecipeVersionsRequest): Request[ListRecipeVersionsResponse] = js.native
     def listRecipes(params: ListRecipesRequest): Request[ListRecipesResponse] = js.native
+    def listRulesets(params: ListRulesetsRequest): Request[ListRulesetsResponse] = js.native
     def listSchedules(params: ListSchedulesRequest): Request[ListSchedulesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def publishRecipe(params: PublishRecipeRequest): Request[PublishRecipeResponse] = js.native
@@ -186,11 +217,31 @@ package object databrew {
     def updateProject(params: UpdateProjectRequest): Request[UpdateProjectResponse] = js.native
     def updateRecipe(params: UpdateRecipeRequest): Request[UpdateRecipeResponse] = js.native
     def updateRecipeJob(params: UpdateRecipeJobRequest): Request[UpdateRecipeJobResponse] = js.native
+    def updateRuleset(params: UpdateRulesetRequest): Request[UpdateRulesetResponse] = js.native
     def updateSchedule(params: UpdateScheduleRequest): Request[UpdateScheduleResponse] = js.native
   }
   object DataBrew {
     @inline implicit def toOps(service: DataBrew): DataBrewOps = {
       new DataBrewOps(service)
+    }
+  }
+
+  /** Configuration of statistics that are allowed to be run on columns that contain detected entities. When undefined, no statistics will be computed on columns that contain detected entities.
+    */
+  @js.native
+  trait AllowedStatistics extends js.Object {
+    var Statistics: StatisticList
+  }
+
+  object AllowedStatistics {
+    @inline
+    def apply(
+        Statistics: StatisticList
+    ): AllowedStatistics = {
+      val __obj = js.Dynamic.literal(
+        "Statistics" -> Statistics.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AllowedStatistics]
     }
   }
 
@@ -232,6 +283,50 @@ package object databrew {
 
       Errors.foreach(__v => __obj.updateDynamic("Errors")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BatchDeleteRecipeVersionResponse]
+    }
+  }
+
+  /** Selector of a column from a dataset for profile job configuration. One selector includes either a column name or a regular expression.
+    */
+  @js.native
+  trait ColumnSelector extends js.Object {
+    var Name: js.UndefOr[ColumnName]
+    var Regex: js.UndefOr[ColumnName]
+  }
+
+  object ColumnSelector {
+    @inline
+    def apply(
+        Name: js.UndefOr[ColumnName] = js.undefined,
+        Regex: js.UndefOr[ColumnName] = js.undefined
+    ): ColumnSelector = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Regex.foreach(__v => __obj.updateDynamic("Regex")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnSelector]
+    }
+  }
+
+  /** Configuration for column evaluations for a profile job. ColumnStatisticsConfiguration can be used to select evaluations and override parameters of evaluations for particular columns.
+    */
+  @js.native
+  trait ColumnStatisticsConfiguration extends js.Object {
+    var Statistics: StatisticsConfiguration
+    var Selectors: js.UndefOr[ColumnSelectorList]
+  }
+
+  object ColumnStatisticsConfiguration {
+    @inline
+    def apply(
+        Statistics: StatisticsConfiguration,
+        Selectors: js.UndefOr[ColumnSelectorList] = js.undefined
+    ): ColumnStatisticsConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Statistics" -> Statistics.asInstanceOf[js.Any]
+      )
+
+      Selectors.foreach(__v => __obj.updateDynamic("Selectors")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ColumnStatisticsConfiguration]
     }
   }
 
@@ -317,6 +412,7 @@ package object databrew {
     var Name: JobName
     var OutputLocation: S3Location
     var RoleArn: Arn
+    var Configuration: js.UndefOr[ProfileConfiguration]
     var EncryptionKeyArn: js.UndefOr[EncryptionKeyArn]
     var EncryptionMode: js.UndefOr[EncryptionMode]
     var JobSample: js.UndefOr[JobSample]
@@ -325,6 +421,7 @@ package object databrew {
     var MaxRetries: js.UndefOr[MaxRetries]
     var Tags: js.UndefOr[TagMap]
     var Timeout: js.UndefOr[Timeout]
+    var ValidationConfigurations: js.UndefOr[ValidationConfigurationList]
   }
 
   object CreateProfileJobRequest {
@@ -334,6 +431,7 @@ package object databrew {
         Name: JobName,
         OutputLocation: S3Location,
         RoleArn: Arn,
+        Configuration: js.UndefOr[ProfileConfiguration] = js.undefined,
         EncryptionKeyArn: js.UndefOr[EncryptionKeyArn] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
         JobSample: js.UndefOr[JobSample] = js.undefined,
@@ -341,7 +439,8 @@ package object databrew {
         MaxCapacity: js.UndefOr[MaxCapacity] = js.undefined,
         MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
-        Timeout: js.UndefOr[Timeout] = js.undefined
+        Timeout: js.UndefOr[Timeout] = js.undefined,
+        ValidationConfigurations: js.UndefOr[ValidationConfigurationList] = js.undefined
     ): CreateProfileJobRequest = {
       val __obj = js.Dynamic.literal(
         "DatasetName" -> DatasetName.asInstanceOf[js.Any],
@@ -350,6 +449,7 @@ package object databrew {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
       JobSample.foreach(__v => __obj.updateDynamic("JobSample")(__v.asInstanceOf[js.Any]))
@@ -358,6 +458,7 @@ package object databrew {
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      ValidationConfigurations.foreach(__v => __obj.updateDynamic("ValidationConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProfileJobRequest]
     }
   }
@@ -432,14 +533,16 @@ package object databrew {
   @js.native
   trait CreateRecipeJobRequest extends js.Object {
     var Name: JobName
-    var Outputs: OutputList
     var RoleArn: Arn
+    var DataCatalogOutputs: js.UndefOr[DataCatalogOutputList]
+    var DatabaseOutputs: js.UndefOr[DatabaseOutputList]
     var DatasetName: js.UndefOr[DatasetName]
     var EncryptionKeyArn: js.UndefOr[EncryptionKeyArn]
     var EncryptionMode: js.UndefOr[EncryptionMode]
     var LogSubscription: js.UndefOr[LogSubscription]
     var MaxCapacity: js.UndefOr[MaxCapacity]
     var MaxRetries: js.UndefOr[MaxRetries]
+    var Outputs: js.UndefOr[OutputList]
     var ProjectName: js.UndefOr[ProjectName]
     var RecipeReference: js.UndefOr[RecipeReference]
     var Tags: js.UndefOr[TagMap]
@@ -450,14 +553,16 @@ package object databrew {
     @inline
     def apply(
         Name: JobName,
-        Outputs: OutputList,
         RoleArn: Arn,
+        DataCatalogOutputs: js.UndefOr[DataCatalogOutputList] = js.undefined,
+        DatabaseOutputs: js.UndefOr[DatabaseOutputList] = js.undefined,
         DatasetName: js.UndefOr[DatasetName] = js.undefined,
         EncryptionKeyArn: js.UndefOr[EncryptionKeyArn] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
         LogSubscription: js.UndefOr[LogSubscription] = js.undefined,
         MaxCapacity: js.UndefOr[MaxCapacity] = js.undefined,
         MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
+        Outputs: js.UndefOr[OutputList] = js.undefined,
         ProjectName: js.UndefOr[ProjectName] = js.undefined,
         RecipeReference: js.UndefOr[RecipeReference] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
@@ -465,16 +570,18 @@ package object databrew {
     ): CreateRecipeJobRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
-        "Outputs" -> Outputs.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
+      DataCatalogOutputs.foreach(__v => __obj.updateDynamic("DataCatalogOutputs")(__v.asInstanceOf[js.Any]))
+      DatabaseOutputs.foreach(__v => __obj.updateDynamic("DatabaseOutputs")(__v.asInstanceOf[js.Any]))
       DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
       LogSubscription.foreach(__v => __obj.updateDynamic("LogSubscription")(__v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       ProjectName.foreach(__v => __obj.updateDynamic("ProjectName")(__v.asInstanceOf[js.Any]))
       RecipeReference.foreach(__v => __obj.updateDynamic("RecipeReference")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -541,6 +648,53 @@ package object databrew {
         "Name" -> Name.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateRecipeResponse]
+    }
+  }
+
+  @js.native
+  trait CreateRulesetRequest extends js.Object {
+    var Name: RulesetName
+    var Rules: RuleList
+    var TargetArn: Arn
+    var Description: js.UndefOr[RulesetDescription]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object CreateRulesetRequest {
+    @inline
+    def apply(
+        Name: RulesetName,
+        Rules: RuleList,
+        TargetArn: Arn,
+        Description: js.UndefOr[RulesetDescription] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateRulesetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Rules" -> Rules.asInstanceOf[js.Any],
+        "TargetArn" -> TargetArn.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRulesetRequest]
+    }
+  }
+
+  @js.native
+  trait CreateRulesetResponse extends js.Object {
+    var Name: RulesetName
+  }
+
+  object CreateRulesetResponse {
+    @inline
+    def apply(
+        Name: RulesetName
+    ): CreateRulesetResponse = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateRulesetResponse]
     }
   }
 
@@ -627,7 +781,7 @@ package object databrew {
     }
   }
 
-  /** Represents how metadata stored in the AWS Glue Data Catalog is defined in a DataBrew dataset.
+  /** Represents how metadata stored in the Glue Data Catalog is defined in a DataBrew dataset.
     */
   @js.native
   trait DataCatalogInputDefinition extends js.Object {
@@ -656,29 +810,116 @@ package object databrew {
     }
   }
 
+  /** Represents options that specify how and where in the Glue Data Catalog DataBrew writes the output generated by recipe jobs.
+    */
+  @js.native
+  trait DataCatalogOutput extends js.Object {
+    var DatabaseName: DatabaseName
+    var TableName: TableName
+    var CatalogId: js.UndefOr[CatalogId]
+    var DatabaseOptions: js.UndefOr[DatabaseTableOutputOptions]
+    var Overwrite: js.UndefOr[OverwriteOutput]
+    var S3Options: js.UndefOr[S3TableOutputOptions]
+  }
+
+  object DataCatalogOutput {
+    @inline
+    def apply(
+        DatabaseName: DatabaseName,
+        TableName: TableName,
+        CatalogId: js.UndefOr[CatalogId] = js.undefined,
+        DatabaseOptions: js.UndefOr[DatabaseTableOutputOptions] = js.undefined,
+        Overwrite: js.UndefOr[OverwriteOutput] = js.undefined,
+        S3Options: js.UndefOr[S3TableOutputOptions] = js.undefined
+    ): DataCatalogOutput = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      CatalogId.foreach(__v => __obj.updateDynamic("CatalogId")(__v.asInstanceOf[js.Any]))
+      DatabaseOptions.foreach(__v => __obj.updateDynamic("DatabaseOptions")(__v.asInstanceOf[js.Any]))
+      Overwrite.foreach(__v => __obj.updateDynamic("Overwrite")(__v.asInstanceOf[js.Any]))
+      S3Options.foreach(__v => __obj.updateDynamic("S3Options")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataCatalogOutput]
+    }
+  }
+
   /** Connection information for dataset input files stored in a database.
     */
   @js.native
   trait DatabaseInputDefinition extends js.Object {
-    var DatabaseTableName: DatabaseTableName
     var GlueConnectionName: GlueConnectionName
+    var DatabaseTableName: js.UndefOr[DatabaseTableName]
+    var QueryString: js.UndefOr[QueryString]
     var TempDirectory: js.UndefOr[S3Location]
   }
 
   object DatabaseInputDefinition {
     @inline
     def apply(
-        DatabaseTableName: DatabaseTableName,
         GlueConnectionName: GlueConnectionName,
+        DatabaseTableName: js.UndefOr[DatabaseTableName] = js.undefined,
+        QueryString: js.UndefOr[QueryString] = js.undefined,
         TempDirectory: js.UndefOr[S3Location] = js.undefined
     ): DatabaseInputDefinition = {
       val __obj = js.Dynamic.literal(
-        "DatabaseTableName" -> DatabaseTableName.asInstanceOf[js.Any],
         "GlueConnectionName" -> GlueConnectionName.asInstanceOf[js.Any]
       )
 
+      DatabaseTableName.foreach(__v => __obj.updateDynamic("DatabaseTableName")(__v.asInstanceOf[js.Any]))
+      QueryString.foreach(__v => __obj.updateDynamic("QueryString")(__v.asInstanceOf[js.Any]))
       TempDirectory.foreach(__v => __obj.updateDynamic("TempDirectory")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatabaseInputDefinition]
+    }
+  }
+
+  /** Represents a JDBC database output object which defines the output destination for a DataBrew recipe job to write into.
+    */
+  @js.native
+  trait DatabaseOutput extends js.Object {
+    var DatabaseOptions: DatabaseTableOutputOptions
+    var GlueConnectionName: GlueConnectionName
+    var DatabaseOutputMode: js.UndefOr[DatabaseOutputMode]
+  }
+
+  object DatabaseOutput {
+    @inline
+    def apply(
+        DatabaseOptions: DatabaseTableOutputOptions,
+        GlueConnectionName: GlueConnectionName,
+        DatabaseOutputMode: js.UndefOr[DatabaseOutputMode] = js.undefined
+    ): DatabaseOutput = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseOptions" -> DatabaseOptions.asInstanceOf[js.Any],
+        "GlueConnectionName" -> GlueConnectionName.asInstanceOf[js.Any]
+      )
+
+      DatabaseOutputMode.foreach(__v => __obj.updateDynamic("DatabaseOutputMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatabaseOutput]
+    }
+  }
+
+  /** Represents options that specify how and where DataBrew writes the database output generated by recipe jobs.
+    */
+  @js.native
+  trait DatabaseTableOutputOptions extends js.Object {
+    var TableName: DatabaseTableName
+    var TempDirectory: js.UndefOr[S3Location]
+  }
+
+  object DatabaseTableOutputOptions {
+    @inline
+    def apply(
+        TableName: DatabaseTableName,
+        TempDirectory: js.UndefOr[S3Location] = js.undefined
+    ): DatabaseTableOutputOptions = {
+      val __obj = js.Dynamic.literal(
+        "TableName" -> TableName.asInstanceOf[js.Any]
+      )
+
+      TempDirectory.foreach(__v => __obj.updateDynamic("TempDirectory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatabaseTableOutputOptions]
     }
   }
 
@@ -738,7 +979,7 @@ package object databrew {
     }
   }
 
-  /** Represents a dataset paramater that defines type and conditions for a parameter in the S3 path of the dataset.
+  /** Represents a dataset paramater that defines type and conditions for a parameter in the Amazon S3 path of the dataset.
     */
   @js.native
   trait DatasetParameter extends js.Object {
@@ -770,7 +1011,7 @@ package object databrew {
     }
   }
 
-  /** Represents additional options for correct interpretation of datetime parameters used in the S3 path of a dataset.
+  /** Represents additional options for correct interpretation of datetime parameters used in the Amazon S3 path of a dataset.
     */
   @js.native
   trait DatetimeOptions extends js.Object {
@@ -939,6 +1180,40 @@ package object databrew {
   }
 
   @js.native
+  trait DeleteRulesetRequest extends js.Object {
+    var Name: RulesetName
+  }
+
+  object DeleteRulesetRequest {
+    @inline
+    def apply(
+        Name: RulesetName
+    ): DeleteRulesetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteRulesetRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteRulesetResponse extends js.Object {
+    var Name: RulesetName
+  }
+
+  object DeleteRulesetResponse {
+    @inline
+    def apply(
+        Name: RulesetName
+    ): DeleteRulesetResponse = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteRulesetResponse]
+    }
+  }
+
+  @js.native
   trait DeleteScheduleRequest extends js.Object {
     var Name: ScheduleName
   }
@@ -1062,6 +1337,8 @@ package object databrew {
     var Name: JobName
     var CreateDate: js.UndefOr[Date]
     var CreatedBy: js.UndefOr[CreatedBy]
+    var DataCatalogOutputs: js.UndefOr[DataCatalogOutputList]
+    var DatabaseOutputs: js.UndefOr[DatabaseOutputList]
     var DatasetName: js.UndefOr[DatasetName]
     var EncryptionKeyArn: js.UndefOr[EncryptionKeyArn]
     var EncryptionMode: js.UndefOr[EncryptionMode]
@@ -1072,6 +1349,7 @@ package object databrew {
     var MaxCapacity: js.UndefOr[MaxCapacity]
     var MaxRetries: js.UndefOr[MaxRetries]
     var Outputs: js.UndefOr[OutputList]
+    var ProfileConfiguration: js.UndefOr[ProfileConfiguration]
     var ProjectName: js.UndefOr[ProjectName]
     var RecipeReference: js.UndefOr[RecipeReference]
     var ResourceArn: js.UndefOr[Arn]
@@ -1079,6 +1357,7 @@ package object databrew {
     var Tags: js.UndefOr[TagMap]
     var Timeout: js.UndefOr[Timeout]
     var Type: js.UndefOr[JobType]
+    var ValidationConfigurations: js.UndefOr[ValidationConfigurationList]
   }
 
   object DescribeJobResponse {
@@ -1087,6 +1366,8 @@ package object databrew {
         Name: JobName,
         CreateDate: js.UndefOr[Date] = js.undefined,
         CreatedBy: js.UndefOr[CreatedBy] = js.undefined,
+        DataCatalogOutputs: js.UndefOr[DataCatalogOutputList] = js.undefined,
+        DatabaseOutputs: js.UndefOr[DatabaseOutputList] = js.undefined,
         DatasetName: js.UndefOr[DatasetName] = js.undefined,
         EncryptionKeyArn: js.UndefOr[EncryptionKeyArn] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
@@ -1097,13 +1378,15 @@ package object databrew {
         MaxCapacity: js.UndefOr[MaxCapacity] = js.undefined,
         MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
         Outputs: js.UndefOr[OutputList] = js.undefined,
+        ProfileConfiguration: js.UndefOr[ProfileConfiguration] = js.undefined,
         ProjectName: js.UndefOr[ProjectName] = js.undefined,
         RecipeReference: js.UndefOr[RecipeReference] = js.undefined,
         ResourceArn: js.UndefOr[Arn] = js.undefined,
         RoleArn: js.UndefOr[Arn] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
-        Type: js.UndefOr[JobType] = js.undefined
+        Type: js.UndefOr[JobType] = js.undefined,
+        ValidationConfigurations: js.UndefOr[ValidationConfigurationList] = js.undefined
     ): DescribeJobResponse = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -1111,6 +1394,8 @@ package object databrew {
 
       CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      DataCatalogOutputs.foreach(__v => __obj.updateDynamic("DataCatalogOutputs")(__v.asInstanceOf[js.Any]))
+      DatabaseOutputs.foreach(__v => __obj.updateDynamic("DatabaseOutputs")(__v.asInstanceOf[js.Any]))
       DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
@@ -1121,6 +1406,7 @@ package object databrew {
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
+      ProfileConfiguration.foreach(__v => __obj.updateDynamic("ProfileConfiguration")(__v.asInstanceOf[js.Any]))
       ProjectName.foreach(__v => __obj.updateDynamic("ProjectName")(__v.asInstanceOf[js.Any]))
       RecipeReference.foreach(__v => __obj.updateDynamic("RecipeReference")(__v.asInstanceOf[js.Any]))
       ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
@@ -1128,6 +1414,7 @@ package object databrew {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      ValidationConfigurations.foreach(__v => __obj.updateDynamic("ValidationConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobResponse]
     }
   }
@@ -1157,6 +1444,8 @@ package object databrew {
     var JobName: JobName
     var Attempt: js.UndefOr[Attempt]
     var CompletedOn: js.UndefOr[Date]
+    var DataCatalogOutputs: js.UndefOr[DataCatalogOutputList]
+    var DatabaseOutputs: js.UndefOr[DatabaseOutputList]
     var DatasetName: js.UndefOr[DatasetName]
     var ErrorMessage: js.UndefOr[JobRunErrorMessage]
     var ExecutionTime: js.UndefOr[ExecutionTime]
@@ -1164,11 +1453,13 @@ package object databrew {
     var LogGroupName: js.UndefOr[LogGroupName]
     var LogSubscription: js.UndefOr[LogSubscription]
     var Outputs: js.UndefOr[OutputList]
+    var ProfileConfiguration: js.UndefOr[ProfileConfiguration]
     var RecipeReference: js.UndefOr[RecipeReference]
     var RunId: js.UndefOr[JobRunId]
     var StartedBy: js.UndefOr[StartedBy]
     var StartedOn: js.UndefOr[Date]
     var State: js.UndefOr[JobRunState]
+    var ValidationConfigurations: js.UndefOr[ValidationConfigurationList]
   }
 
   object DescribeJobRunResponse {
@@ -1177,6 +1468,8 @@ package object databrew {
         JobName: JobName,
         Attempt: js.UndefOr[Attempt] = js.undefined,
         CompletedOn: js.UndefOr[Date] = js.undefined,
+        DataCatalogOutputs: js.UndefOr[DataCatalogOutputList] = js.undefined,
+        DatabaseOutputs: js.UndefOr[DatabaseOutputList] = js.undefined,
         DatasetName: js.UndefOr[DatasetName] = js.undefined,
         ErrorMessage: js.UndefOr[JobRunErrorMessage] = js.undefined,
         ExecutionTime: js.UndefOr[ExecutionTime] = js.undefined,
@@ -1184,11 +1477,13 @@ package object databrew {
         LogGroupName: js.UndefOr[LogGroupName] = js.undefined,
         LogSubscription: js.UndefOr[LogSubscription] = js.undefined,
         Outputs: js.UndefOr[OutputList] = js.undefined,
+        ProfileConfiguration: js.UndefOr[ProfileConfiguration] = js.undefined,
         RecipeReference: js.UndefOr[RecipeReference] = js.undefined,
         RunId: js.UndefOr[JobRunId] = js.undefined,
         StartedBy: js.UndefOr[StartedBy] = js.undefined,
         StartedOn: js.UndefOr[Date] = js.undefined,
-        State: js.UndefOr[JobRunState] = js.undefined
+        State: js.UndefOr[JobRunState] = js.undefined,
+        ValidationConfigurations: js.UndefOr[ValidationConfigurationList] = js.undefined
     ): DescribeJobRunResponse = {
       val __obj = js.Dynamic.literal(
         "JobName" -> JobName.asInstanceOf[js.Any]
@@ -1196,6 +1491,8 @@ package object databrew {
 
       Attempt.foreach(__v => __obj.updateDynamic("Attempt")(__v.asInstanceOf[js.Any]))
       CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      DataCatalogOutputs.foreach(__v => __obj.updateDynamic("DataCatalogOutputs")(__v.asInstanceOf[js.Any]))
+      DatabaseOutputs.foreach(__v => __obj.updateDynamic("DatabaseOutputs")(__v.asInstanceOf[js.Any]))
       DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
@@ -1203,11 +1500,13 @@ package object databrew {
       LogGroupName.foreach(__v => __obj.updateDynamic("LogGroupName")(__v.asInstanceOf[js.Any]))
       LogSubscription.foreach(__v => __obj.updateDynamic("LogSubscription")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
+      ProfileConfiguration.foreach(__v => __obj.updateDynamic("ProfileConfiguration")(__v.asInstanceOf[js.Any]))
       RecipeReference.foreach(__v => __obj.updateDynamic("RecipeReference")(__v.asInstanceOf[js.Any]))
       RunId.foreach(__v => __obj.updateDynamic("RunId")(__v.asInstanceOf[js.Any]))
       StartedBy.foreach(__v => __obj.updateDynamic("StartedBy")(__v.asInstanceOf[js.Any]))
       StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      ValidationConfigurations.foreach(__v => __obj.updateDynamic("ValidationConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobRunResponse]
     }
   }
@@ -1362,6 +1661,68 @@ package object databrew {
   }
 
   @js.native
+  trait DescribeRulesetRequest extends js.Object {
+    var Name: RulesetName
+  }
+
+  object DescribeRulesetRequest {
+    @inline
+    def apply(
+        Name: RulesetName
+    ): DescribeRulesetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeRulesetRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeRulesetResponse extends js.Object {
+    var Name: RulesetName
+    var CreateDate: js.UndefOr[Date]
+    var CreatedBy: js.UndefOr[CreatedBy]
+    var Description: js.UndefOr[RulesetDescription]
+    var LastModifiedBy: js.UndefOr[LastModifiedBy]
+    var LastModifiedDate: js.UndefOr[Date]
+    var ResourceArn: js.UndefOr[Arn]
+    var Rules: js.UndefOr[RuleList]
+    var Tags: js.UndefOr[TagMap]
+    var TargetArn: js.UndefOr[Arn]
+  }
+
+  object DescribeRulesetResponse {
+    @inline
+    def apply(
+        Name: RulesetName,
+        CreateDate: js.UndefOr[Date] = js.undefined,
+        CreatedBy: js.UndefOr[CreatedBy] = js.undefined,
+        Description: js.UndefOr[RulesetDescription] = js.undefined,
+        LastModifiedBy: js.UndefOr[LastModifiedBy] = js.undefined,
+        LastModifiedDate: js.UndefOr[Date] = js.undefined,
+        ResourceArn: js.UndefOr[Arn] = js.undefined,
+        Rules: js.UndefOr[RuleList] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined,
+        TargetArn: js.UndefOr[Arn] = js.undefined
+    ): DescribeRulesetResponse = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      Rules.foreach(__v => __obj.updateDynamic("Rules")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TargetArn.foreach(__v => __obj.updateDynamic("TargetArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRulesetResponse]
+    }
+  }
+
+  @js.native
   trait DescribeScheduleRequest extends js.Object {
     var Name: ScheduleName
   }
@@ -1420,6 +1781,29 @@ package object databrew {
     }
   }
 
+  /** Configuration of entity detection for a profile job. When undefined, entity detection is disabled.
+    */
+  @js.native
+  trait EntityDetectorConfiguration extends js.Object {
+    var EntityTypes: EntityTypeList
+    var AllowedStatistics: js.UndefOr[AllowedStatisticList]
+  }
+
+  object EntityDetectorConfiguration {
+    @inline
+    def apply(
+        EntityTypes: EntityTypeList,
+        AllowedStatistics: js.UndefOr[AllowedStatisticList] = js.undefined
+    ): EntityDetectorConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "EntityTypes" -> EntityTypes.asInstanceOf[js.Any]
+      )
+
+      AllowedStatistics.foreach(__v => __obj.updateDynamic("AllowedStatistics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EntityDetectorConfiguration]
+    }
+  }
+
   /** Represents a set of options that define how DataBrew will interpret a Microsoft Excel file when creating a dataset from that file.
     */
   @js.native
@@ -1444,7 +1828,7 @@ package object databrew {
     }
   }
 
-  /** Represents a limit imposed on number of S3 files that should be selected for a dataset from a connected S3 path.
+  /** Represents a limit imposed on number of Amazon S3 files that should be selected for a dataset from a connected Amazon S3 path.
     */
   @js.native
   trait FilesLimit extends js.Object {
@@ -1470,7 +1854,7 @@ package object databrew {
     }
   }
 
-  /** Represents a structure for defining parameter conditions.
+  /** Represents a structure for defining parameter conditions. Supported conditions are described here: [[https://docs.aws.amazon.com/databrew/latest/dg/datasets.multiple-files.html#conditions.for.dynamic.datasets|Supported conditions for dynamic datasets]] in the <i>Glue DataBrew Developer Guide</i>.
     */
   @js.native
   trait FilterExpression extends js.Object {
@@ -1516,12 +1900,13 @@ package object databrew {
     }
   }
 
-  /** Represents information on how DataBrew can find data, in either the AWS Glue Data Catalog or Amazon S3.
+  /** Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.
     */
   @js.native
   trait Input extends js.Object {
     var DataCatalogInputDefinition: js.UndefOr[DataCatalogInputDefinition]
     var DatabaseInputDefinition: js.UndefOr[DatabaseInputDefinition]
+    var Metadata: js.UndefOr[Metadata]
     var S3InputDefinition: js.UndefOr[S3Location]
   }
 
@@ -1530,11 +1915,13 @@ package object databrew {
     def apply(
         DataCatalogInputDefinition: js.UndefOr[DataCatalogInputDefinition] = js.undefined,
         DatabaseInputDefinition: js.UndefOr[DatabaseInputDefinition] = js.undefined,
+        Metadata: js.UndefOr[Metadata] = js.undefined,
         S3InputDefinition: js.UndefOr[S3Location] = js.undefined
     ): Input = {
       val __obj = js.Dynamic.literal()
       DataCatalogInputDefinition.foreach(__v => __obj.updateDynamic("DataCatalogInputDefinition")(__v.asInstanceOf[js.Any]))
       DatabaseInputDefinition.foreach(__v => __obj.updateDynamic("DatabaseInputDefinition")(__v.asInstanceOf[js.Any]))
+      Metadata.foreach(__v => __obj.updateDynamic("Metadata")(__v.asInstanceOf[js.Any]))
       S3InputDefinition.foreach(__v => __obj.updateDynamic("S3InputDefinition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Input]
     }
@@ -1548,6 +1935,8 @@ package object databrew {
     var AccountId: js.UndefOr[AccountId]
     var CreateDate: js.UndefOr[Date]
     var CreatedBy: js.UndefOr[CreatedBy]
+    var DataCatalogOutputs: js.UndefOr[DataCatalogOutputList]
+    var DatabaseOutputs: js.UndefOr[DatabaseOutputList]
     var DatasetName: js.UndefOr[DatasetName]
     var EncryptionKeyArn: js.UndefOr[EncryptionKeyArn]
     var EncryptionMode: js.UndefOr[EncryptionMode]
@@ -1565,6 +1954,7 @@ package object databrew {
     var Tags: js.UndefOr[TagMap]
     var Timeout: js.UndefOr[Timeout]
     var Type: js.UndefOr[JobType]
+    var ValidationConfigurations: js.UndefOr[ValidationConfigurationList]
   }
 
   object Job {
@@ -1574,6 +1964,8 @@ package object databrew {
         AccountId: js.UndefOr[AccountId] = js.undefined,
         CreateDate: js.UndefOr[Date] = js.undefined,
         CreatedBy: js.UndefOr[CreatedBy] = js.undefined,
+        DataCatalogOutputs: js.UndefOr[DataCatalogOutputList] = js.undefined,
+        DatabaseOutputs: js.UndefOr[DatabaseOutputList] = js.undefined,
         DatasetName: js.UndefOr[DatasetName] = js.undefined,
         EncryptionKeyArn: js.UndefOr[EncryptionKeyArn] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
@@ -1590,7 +1982,8 @@ package object databrew {
         RoleArn: js.UndefOr[Arn] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined,
-        Type: js.UndefOr[JobType] = js.undefined
+        Type: js.UndefOr[JobType] = js.undefined,
+        ValidationConfigurations: js.UndefOr[ValidationConfigurationList] = js.undefined
     ): Job = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
@@ -1599,6 +1992,8 @@ package object databrew {
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      DataCatalogOutputs.foreach(__v => __obj.updateDynamic("DataCatalogOutputs")(__v.asInstanceOf[js.Any]))
+      DatabaseOutputs.foreach(__v => __obj.updateDynamic("DatabaseOutputs")(__v.asInstanceOf[js.Any]))
       DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
@@ -1616,6 +2011,7 @@ package object databrew {
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      ValidationConfigurations.foreach(__v => __obj.updateDynamic("ValidationConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Job]
     }
   }
@@ -1626,6 +2022,8 @@ package object databrew {
   trait JobRun extends js.Object {
     var Attempt: js.UndefOr[Attempt]
     var CompletedOn: js.UndefOr[Date]
+    var DataCatalogOutputs: js.UndefOr[DataCatalogOutputList]
+    var DatabaseOutputs: js.UndefOr[DatabaseOutputList]
     var DatasetName: js.UndefOr[DatasetName]
     var ErrorMessage: js.UndefOr[JobRunErrorMessage]
     var ExecutionTime: js.UndefOr[ExecutionTime]
@@ -1639,6 +2037,7 @@ package object databrew {
     var StartedBy: js.UndefOr[StartedBy]
     var StartedOn: js.UndefOr[Date]
     var State: js.UndefOr[JobRunState]
+    var ValidationConfigurations: js.UndefOr[ValidationConfigurationList]
   }
 
   object JobRun {
@@ -1646,6 +2045,8 @@ package object databrew {
     def apply(
         Attempt: js.UndefOr[Attempt] = js.undefined,
         CompletedOn: js.UndefOr[Date] = js.undefined,
+        DataCatalogOutputs: js.UndefOr[DataCatalogOutputList] = js.undefined,
+        DatabaseOutputs: js.UndefOr[DatabaseOutputList] = js.undefined,
         DatasetName: js.UndefOr[DatasetName] = js.undefined,
         ErrorMessage: js.UndefOr[JobRunErrorMessage] = js.undefined,
         ExecutionTime: js.UndefOr[ExecutionTime] = js.undefined,
@@ -1658,11 +2059,14 @@ package object databrew {
         RunId: js.UndefOr[JobRunId] = js.undefined,
         StartedBy: js.UndefOr[StartedBy] = js.undefined,
         StartedOn: js.UndefOr[Date] = js.undefined,
-        State: js.UndefOr[JobRunState] = js.undefined
+        State: js.UndefOr[JobRunState] = js.undefined,
+        ValidationConfigurations: js.UndefOr[ValidationConfigurationList] = js.undefined
     ): JobRun = {
       val __obj = js.Dynamic.literal()
       Attempt.foreach(__v => __obj.updateDynamic("Attempt")(__v.asInstanceOf[js.Any]))
       CompletedOn.foreach(__v => __obj.updateDynamic("CompletedOn")(__v.asInstanceOf[js.Any]))
+      DataCatalogOutputs.foreach(__v => __obj.updateDynamic("DataCatalogOutputs")(__v.asInstanceOf[js.Any]))
+      DatabaseOutputs.foreach(__v => __obj.updateDynamic("DatabaseOutputs")(__v.asInstanceOf[js.Any]))
       DatasetName.foreach(__v => __obj.updateDynamic("DatasetName")(__v.asInstanceOf[js.Any]))
       ErrorMessage.foreach(__v => __obj.updateDynamic("ErrorMessage")(__v.asInstanceOf[js.Any]))
       ExecutionTime.foreach(__v => __obj.updateDynamic("ExecutionTime")(__v.asInstanceOf[js.Any]))
@@ -1676,6 +2080,7 @@ package object databrew {
       StartedBy.foreach(__v => __obj.updateDynamic("StartedBy")(__v.asInstanceOf[js.Any]))
       StartedOn.foreach(__v => __obj.updateDynamic("StartedOn")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      ValidationConfigurations.foreach(__v => __obj.updateDynamic("ValidationConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JobRun]
     }
   }
@@ -1701,7 +2106,7 @@ package object databrew {
     }
   }
 
-  /** Represents the JSON-specific options that define how input is to be interpreted by AWS Glue DataBrew.
+  /** Represents the JSON-specific options that define how input is to be interpreted by Glue DataBrew.
     */
   @js.native
   trait JsonOptions extends js.Object {
@@ -1979,6 +2384,49 @@ package object databrew {
   }
 
   @js.native
+  trait ListRulesetsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults100]
+    var NextToken: js.UndefOr[NextToken]
+    var TargetArn: js.UndefOr[Arn]
+  }
+
+  object ListRulesetsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults100] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        TargetArn: js.UndefOr[Arn] = js.undefined
+    ): ListRulesetsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      TargetArn.foreach(__v => __obj.updateDynamic("TargetArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRulesetsRequest]
+    }
+  }
+
+  @js.native
+  trait ListRulesetsResponse extends js.Object {
+    var Rulesets: RulesetItemList
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListRulesetsResponse {
+    @inline
+    def apply(
+        Rulesets: RulesetItemList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListRulesetsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Rulesets" -> Rulesets.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRulesetsResponse]
+    }
+  }
+
+  @js.native
   trait ListSchedulesRequest extends js.Object {
     var JobName: js.UndefOr[JobName]
     var MaxResults: js.UndefOr[MaxResults100]
@@ -2054,7 +2502,25 @@ package object databrew {
     }
   }
 
-  /** Represents options that specify how and where DataBrew writes the output generated by recipe jobs or profile jobs.
+  /** Contains additional resource information needed for specific datasets.
+    */
+  @js.native
+  trait Metadata extends js.Object {
+    var SourceArn: js.UndefOr[Arn]
+  }
+
+  object Metadata {
+    @inline
+    def apply(
+        SourceArn: js.UndefOr[Arn] = js.undefined
+    ): Metadata = {
+      val __obj = js.Dynamic.literal()
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Metadata]
+    }
+  }
+
+  /** Represents options that specify how and where in Amazon S3 DataBrew writes the output generated by recipe jobs or profile jobs.
     */
   @js.native
   trait Output extends js.Object {
@@ -2107,7 +2573,7 @@ package object databrew {
     }
   }
 
-  /** Represents a set of options that define how DataBrew selects files for a given S3 path in a dataset.
+  /** Represents a set of options that define how DataBrew selects files for a given Amazon S3 path in a dataset.
     */
   @js.native
   trait PathOptions extends js.Object {
@@ -2128,6 +2594,33 @@ package object databrew {
       LastModifiedDateCondition.foreach(__v => __obj.updateDynamic("LastModifiedDateCondition")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PathOptions]
+    }
+  }
+
+  /** Configuration for profile jobs. Configuration can be used to select columns, do evaluations, and override default parameters of evaluations. When configuration is undefined, the profile job will apply default settings to all supported columns.
+    */
+  @js.native
+  trait ProfileConfiguration extends js.Object {
+    var ColumnStatisticsConfigurations: js.UndefOr[ColumnStatisticsConfigurationList]
+    var DatasetStatisticsConfiguration: js.UndefOr[StatisticsConfiguration]
+    var EntityDetectorConfiguration: js.UndefOr[EntityDetectorConfiguration]
+    var ProfileColumns: js.UndefOr[ColumnSelectorList]
+  }
+
+  object ProfileConfiguration {
+    @inline
+    def apply(
+        ColumnStatisticsConfigurations: js.UndefOr[ColumnStatisticsConfigurationList] = js.undefined,
+        DatasetStatisticsConfiguration: js.UndefOr[StatisticsConfiguration] = js.undefined,
+        EntityDetectorConfiguration: js.UndefOr[EntityDetectorConfiguration] = js.undefined,
+        ProfileColumns: js.UndefOr[ColumnSelectorList] = js.undefined
+    ): ProfileConfiguration = {
+      val __obj = js.Dynamic.literal()
+      ColumnStatisticsConfigurations.foreach(__v => __obj.updateDynamic("ColumnStatisticsConfigurations")(__v.asInstanceOf[js.Any]))
+      DatasetStatisticsConfiguration.foreach(__v => __obj.updateDynamic("DatasetStatisticsConfiguration")(__v.asInstanceOf[js.Any]))
+      EntityDetectorConfiguration.foreach(__v => __obj.updateDynamic("EntityDetectorConfiguration")(__v.asInstanceOf[js.Any]))
+      ProfileColumns.foreach(__v => __obj.updateDynamic("ProfileColumns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProfileConfiguration]
     }
   }
 
@@ -2284,7 +2777,7 @@ package object databrew {
     }
   }
 
-  /** Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see [[https://docs.aws.amazon.com/databrew/latest/dg/recipe-structure.html|Recipe structure]] and [[https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html|Recipe actions reference]].
+  /** Represents a transformation and associated parameters that are used to apply a change to a DataBrew dataset. For more information, see [[https://docs.aws.amazon.com/databrew/latest/dg/recipe-actions-reference.html|Recipe actions reference]].
     */
   @js.native
   trait RecipeAction extends js.Object {
@@ -2377,6 +2870,91 @@ package object databrew {
     }
   }
 
+  /** Represents a single data quality requirement that should be validated in the scope of this dataset.
+    */
+  @js.native
+  trait Rule extends js.Object {
+    var CheckExpression: Expression
+    var Name: RuleName
+    var ColumnSelectors: js.UndefOr[ColumnSelectorList]
+    var Disabled: js.UndefOr[Disabled]
+    var SubstitutionMap: js.UndefOr[ValuesMap]
+    var Threshold: js.UndefOr[Threshold]
+  }
+
+  object Rule {
+    @inline
+    def apply(
+        CheckExpression: Expression,
+        Name: RuleName,
+        ColumnSelectors: js.UndefOr[ColumnSelectorList] = js.undefined,
+        Disabled: js.UndefOr[Disabled] = js.undefined,
+        SubstitutionMap: js.UndefOr[ValuesMap] = js.undefined,
+        Threshold: js.UndefOr[Threshold] = js.undefined
+    ): Rule = {
+      val __obj = js.Dynamic.literal(
+        "CheckExpression" -> CheckExpression.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      ColumnSelectors.foreach(__v => __obj.updateDynamic("ColumnSelectors")(__v.asInstanceOf[js.Any]))
+      Disabled.foreach(__v => __obj.updateDynamic("Disabled")(__v.asInstanceOf[js.Any]))
+      SubstitutionMap.foreach(__v => __obj.updateDynamic("SubstitutionMap")(__v.asInstanceOf[js.Any]))
+      Threshold.foreach(__v => __obj.updateDynamic("Threshold")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Rule]
+    }
+  }
+
+  /** Contains metadata about the ruleset.
+    */
+  @js.native
+  trait RulesetItem extends js.Object {
+    var Name: RulesetName
+    var TargetArn: Arn
+    var AccountId: js.UndefOr[AccountId]
+    var CreateDate: js.UndefOr[Date]
+    var CreatedBy: js.UndefOr[CreatedBy]
+    var Description: js.UndefOr[RulesetDescription]
+    var LastModifiedBy: js.UndefOr[LastModifiedBy]
+    var LastModifiedDate: js.UndefOr[Date]
+    var ResourceArn: js.UndefOr[Arn]
+    var RuleCount: js.UndefOr[RuleCount]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object RulesetItem {
+    @inline
+    def apply(
+        Name: RulesetName,
+        TargetArn: Arn,
+        AccountId: js.UndefOr[AccountId] = js.undefined,
+        CreateDate: js.UndefOr[Date] = js.undefined,
+        CreatedBy: js.UndefOr[CreatedBy] = js.undefined,
+        Description: js.UndefOr[RulesetDescription] = js.undefined,
+        LastModifiedBy: js.UndefOr[LastModifiedBy] = js.undefined,
+        LastModifiedDate: js.UndefOr[Date] = js.undefined,
+        ResourceArn: js.UndefOr[Arn] = js.undefined,
+        RuleCount: js.UndefOr[RuleCount] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): RulesetItem = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "TargetArn" -> TargetArn.asInstanceOf[js.Any]
+      )
+
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
+      CreateDate.foreach(__v => __obj.updateDynamic("CreateDate")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      RuleCount.foreach(__v => __obj.updateDynamic("RuleCount")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RulesetItem]
+    }
+  }
+
   /** Represents an Amazon S3 location (bucket name and object key) where DataBrew can read input data, or write output from a job.
     */
   @js.native
@@ -2397,6 +2975,25 @@ package object databrew {
 
       Key.foreach(__v => __obj.updateDynamic("Key")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
+    }
+  }
+
+  /** Represents options that specify how and where DataBrew writes the Amazon S3 output generated by recipe jobs.
+    */
+  @js.native
+  trait S3TableOutputOptions extends js.Object {
+    var Location: S3Location
+  }
+
+  object S3TableOutputOptions {
+    @inline
+    def apply(
+        Location: S3Location
+    ): S3TableOutputOptions = {
+      val __obj = js.Dynamic.literal(
+        "Location" -> Location.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3TableOutputOptions]
     }
   }
 
@@ -2603,6 +3200,49 @@ package object databrew {
     }
   }
 
+  /** Override of a particular evaluation for a profile job.
+    */
+  @js.native
+  trait StatisticOverride extends js.Object {
+    var Parameters: ParameterMap
+    var Statistic: Statistic
+  }
+
+  object StatisticOverride {
+    @inline
+    def apply(
+        Parameters: ParameterMap,
+        Statistic: Statistic
+    ): StatisticOverride = {
+      val __obj = js.Dynamic.literal(
+        "Parameters" -> Parameters.asInstanceOf[js.Any],
+        "Statistic" -> Statistic.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StatisticOverride]
+    }
+  }
+
+  /** Configuration of evaluations for a profile job. This configuration can be used to select evaluations and override the parameters of selected evaluations.
+    */
+  @js.native
+  trait StatisticsConfiguration extends js.Object {
+    var IncludedStatistics: js.UndefOr[StatisticList]
+    var Overrides: js.UndefOr[StatisticOverrideList]
+  }
+
+  object StatisticsConfiguration {
+    @inline
+    def apply(
+        IncludedStatistics: js.UndefOr[StatisticList] = js.undefined,
+        Overrides: js.UndefOr[StatisticOverrideList] = js.undefined
+    ): StatisticsConfiguration = {
+      val __obj = js.Dynamic.literal()
+      IncludedStatistics.foreach(__v => __obj.updateDynamic("IncludedStatistics")(__v.asInstanceOf[js.Any]))
+      Overrides.foreach(__v => __obj.updateDynamic("Overrides")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StatisticsConfiguration]
+    }
+  }
+
   @js.native
   trait StopJobRunRequest extends js.Object {
     var Name: JobName
@@ -2668,6 +3308,32 @@ package object databrew {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** The threshold used with a non-aggregate check expression. The non-aggregate check expression will be applied to each row in a specific column. Then the threshold will be used to determine whether the validation succeeds.
+    */
+  @js.native
+  trait Threshold extends js.Object {
+    var Value: ThresholdValue
+    var Type: js.UndefOr[ThresholdType]
+    var Unit: js.UndefOr[ThresholdUnit]
+  }
+
+  object Threshold {
+    @inline
+    def apply(
+        Value: ThresholdValue,
+        Type: js.UndefOr[ThresholdType] = js.undefined,
+        Unit: js.UndefOr[ThresholdUnit] = js.undefined
+    ): Threshold = {
+      val __obj = js.Dynamic.literal(
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Threshold]
     }
   }
 
@@ -2754,6 +3420,7 @@ package object databrew {
     var Name: JobName
     var OutputLocation: S3Location
     var RoleArn: Arn
+    var Configuration: js.UndefOr[ProfileConfiguration]
     var EncryptionKeyArn: js.UndefOr[EncryptionKeyArn]
     var EncryptionMode: js.UndefOr[EncryptionMode]
     var JobSample: js.UndefOr[JobSample]
@@ -2761,6 +3428,7 @@ package object databrew {
     var MaxCapacity: js.UndefOr[MaxCapacity]
     var MaxRetries: js.UndefOr[MaxRetries]
     var Timeout: js.UndefOr[Timeout]
+    var ValidationConfigurations: js.UndefOr[ValidationConfigurationList]
   }
 
   object UpdateProfileJobRequest {
@@ -2769,13 +3437,15 @@ package object databrew {
         Name: JobName,
         OutputLocation: S3Location,
         RoleArn: Arn,
+        Configuration: js.UndefOr[ProfileConfiguration] = js.undefined,
         EncryptionKeyArn: js.UndefOr[EncryptionKeyArn] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
         JobSample: js.UndefOr[JobSample] = js.undefined,
         LogSubscription: js.UndefOr[LogSubscription] = js.undefined,
         MaxCapacity: js.UndefOr[MaxCapacity] = js.undefined,
         MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
-        Timeout: js.UndefOr[Timeout] = js.undefined
+        Timeout: js.UndefOr[Timeout] = js.undefined,
+        ValidationConfigurations: js.UndefOr[ValidationConfigurationList] = js.undefined
     ): UpdateProfileJobRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
@@ -2783,6 +3453,7 @@ package object databrew {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
       JobSample.foreach(__v => __obj.updateDynamic("JobSample")(__v.asInstanceOf[js.Any]))
@@ -2790,6 +3461,7 @@ package object databrew {
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
+      ValidationConfigurations.foreach(__v => __obj.updateDynamic("ValidationConfigurations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateProfileJobRequest]
     }
   }
@@ -2859,13 +3531,15 @@ package object databrew {
   @js.native
   trait UpdateRecipeJobRequest extends js.Object {
     var Name: JobName
-    var Outputs: OutputList
     var RoleArn: Arn
+    var DataCatalogOutputs: js.UndefOr[DataCatalogOutputList]
+    var DatabaseOutputs: js.UndefOr[DatabaseOutputList]
     var EncryptionKeyArn: js.UndefOr[EncryptionKeyArn]
     var EncryptionMode: js.UndefOr[EncryptionMode]
     var LogSubscription: js.UndefOr[LogSubscription]
     var MaxCapacity: js.UndefOr[MaxCapacity]
     var MaxRetries: js.UndefOr[MaxRetries]
+    var Outputs: js.UndefOr[OutputList]
     var Timeout: js.UndefOr[Timeout]
   }
 
@@ -2873,26 +3547,30 @@ package object databrew {
     @inline
     def apply(
         Name: JobName,
-        Outputs: OutputList,
         RoleArn: Arn,
+        DataCatalogOutputs: js.UndefOr[DataCatalogOutputList] = js.undefined,
+        DatabaseOutputs: js.UndefOr[DatabaseOutputList] = js.undefined,
         EncryptionKeyArn: js.UndefOr[EncryptionKeyArn] = js.undefined,
         EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
         LogSubscription: js.UndefOr[LogSubscription] = js.undefined,
         MaxCapacity: js.UndefOr[MaxCapacity] = js.undefined,
         MaxRetries: js.UndefOr[MaxRetries] = js.undefined,
+        Outputs: js.UndefOr[OutputList] = js.undefined,
         Timeout: js.UndefOr[Timeout] = js.undefined
     ): UpdateRecipeJobRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
-        "Outputs" -> Outputs.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any]
       )
 
+      DataCatalogOutputs.foreach(__v => __obj.updateDynamic("DataCatalogOutputs")(__v.asInstanceOf[js.Any]))
+      DatabaseOutputs.foreach(__v => __obj.updateDynamic("DatabaseOutputs")(__v.asInstanceOf[js.Any]))
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
       LogSubscription.foreach(__v => __obj.updateDynamic("LogSubscription")(__v.asInstanceOf[js.Any]))
       MaxCapacity.foreach(__v => __obj.updateDynamic("MaxCapacity")(__v.asInstanceOf[js.Any]))
       MaxRetries.foreach(__v => __obj.updateDynamic("MaxRetries")(__v.asInstanceOf[js.Any]))
+      Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       Timeout.foreach(__v => __obj.updateDynamic("Timeout")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRecipeJobRequest]
     }
@@ -2957,6 +3635,47 @@ package object databrew {
   }
 
   @js.native
+  trait UpdateRulesetRequest extends js.Object {
+    var Name: RulesetName
+    var Rules: RuleList
+    var Description: js.UndefOr[RulesetDescription]
+  }
+
+  object UpdateRulesetRequest {
+    @inline
+    def apply(
+        Name: RulesetName,
+        Rules: RuleList,
+        Description: js.UndefOr[RulesetDescription] = js.undefined
+    ): UpdateRulesetRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Rules" -> Rules.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRulesetRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRulesetResponse extends js.Object {
+    var Name: RulesetName
+  }
+
+  object UpdateRulesetResponse {
+    @inline
+    def apply(
+        Name: RulesetName
+    ): UpdateRulesetResponse = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateRulesetResponse]
+    }
+  }
+
+  @js.native
   trait UpdateScheduleRequest extends js.Object {
     var CronExpression: CronExpression
     var Name: ScheduleName
@@ -2997,28 +3716,60 @@ package object databrew {
     }
   }
 
+  /** Configuration for data quality validation. Used to select the Rulesets and Validation Mode to be used in the profile job. When ValidationConfiguration is null, the profile job will run without data quality validation.
+    */
+  @js.native
+  trait ValidationConfiguration extends js.Object {
+    var RulesetArn: Arn
+    var ValidationMode: js.UndefOr[ValidationMode]
+  }
+
+  object ValidationConfiguration {
+    @inline
+    def apply(
+        RulesetArn: Arn,
+        ValidationMode: js.UndefOr[ValidationMode] = js.undefined
+    ): ValidationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "RulesetArn" -> RulesetArn.asInstanceOf[js.Any]
+      )
+
+      ValidationMode.foreach(__v => __obj.updateDynamic("ValidationMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ValidationConfiguration]
+    }
+  }
+
   /** Represents the data being transformed during an action.
     */
   @js.native
   trait ViewFrame extends js.Object {
     var StartColumnIndex: StartColumnIndex
+    var Analytics: js.UndefOr[AnalyticsMode]
     var ColumnRange: js.UndefOr[ColumnRange]
     var HiddenColumns: js.UndefOr[HiddenColumnList]
+    var RowRange: js.UndefOr[RowRange]
+    var StartRowIndex: js.UndefOr[StartRowIndex]
   }
 
   object ViewFrame {
     @inline
     def apply(
         StartColumnIndex: StartColumnIndex,
+        Analytics: js.UndefOr[AnalyticsMode] = js.undefined,
         ColumnRange: js.UndefOr[ColumnRange] = js.undefined,
-        HiddenColumns: js.UndefOr[HiddenColumnList] = js.undefined
+        HiddenColumns: js.UndefOr[HiddenColumnList] = js.undefined,
+        RowRange: js.UndefOr[RowRange] = js.undefined,
+        StartRowIndex: js.UndefOr[StartRowIndex] = js.undefined
     ): ViewFrame = {
       val __obj = js.Dynamic.literal(
         "StartColumnIndex" -> StartColumnIndex.asInstanceOf[js.Any]
       )
 
+      Analytics.foreach(__v => __obj.updateDynamic("Analytics")(__v.asInstanceOf[js.Any]))
       ColumnRange.foreach(__v => __obj.updateDynamic("ColumnRange")(__v.asInstanceOf[js.Any]))
       HiddenColumns.foreach(__v => __obj.updateDynamic("HiddenColumns")(__v.asInstanceOf[js.Any]))
+      RowRange.foreach(__v => __obj.updateDynamic("RowRange")(__v.asInstanceOf[js.Any]))
+      StartRowIndex.foreach(__v => __obj.updateDynamic("StartRowIndex")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ViewFrame]
     }
   }

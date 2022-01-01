@@ -48,6 +48,8 @@ object QueueAttributeName {
   val KmsDataKeyReusePeriodSeconds = "KmsDataKeyReusePeriodSeconds".asInstanceOf[QueueAttributeName]
   val DeduplicationScope = "DeduplicationScope".asInstanceOf[QueueAttributeName]
   val FifoThroughputLimit = "FifoThroughputLimit".asInstanceOf[QueueAttributeName]
+  val RedriveAllowPolicy = "RedriveAllowPolicy".asInstanceOf[QueueAttributeName]
+  val SqsManagedSseEnabled = "SqsManagedSseEnabled".asInstanceOf[QueueAttributeName]
 
   @inline def values: js.Array[QueueAttributeName] = js.Array(
     All,
@@ -69,6 +71,8 @@ object QueueAttributeName {
     KmsMasterKeyId,
     KmsDataKeyReusePeriodSeconds,
     DeduplicationScope,
-    FifoThroughputLimit
+    FifoThroughputLimit,
+    RedriveAllowPolicy,
+    SqsManagedSseEnabled
   )
 }

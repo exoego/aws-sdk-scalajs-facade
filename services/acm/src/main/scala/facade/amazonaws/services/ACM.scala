@@ -344,7 +344,7 @@ package object acm {
     }
   }
 
-  /** Object containing expiration events options associated with an AWS account.
+  /** Object containing expiration events options associated with an Amazon Web Services account.
     */
   @js.native
   trait ExpiryEventsConfiguration extends js.Object {
@@ -807,7 +807,7 @@ package object acm {
     }
   }
 
-  /** Contains a DNS record value that you can use to can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action.
+  /** Contains a DNS record value that you can use to validate ownership or control of a domain. This is used by the <a>DescribeCertificate</a> action.
     */
   @js.native
   trait ResourceRecord extends js.Object {

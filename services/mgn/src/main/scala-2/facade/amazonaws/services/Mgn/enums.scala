@@ -29,6 +29,8 @@ object DataReplicationErrorString {
   val FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT = "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT".asInstanceOf[DataReplicationErrorString]
   val FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER = "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER".asInstanceOf[DataReplicationErrorString]
   val FAILED_TO_START_DATA_TRANSFER = "FAILED_TO_START_DATA_TRANSFER".asInstanceOf[DataReplicationErrorString]
+  val UNSUPPORTED_VM_CONFIGURATION = "UNSUPPORTED_VM_CONFIGURATION".asInstanceOf[DataReplicationErrorString]
+  val LAST_SNAPSHOT_JOB_FAILED = "LAST_SNAPSHOT_JOB_FAILED".asInstanceOf[DataReplicationErrorString]
 
   @inline def values: js.Array[DataReplicationErrorString] = js.Array(
     AGENT_NOT_SEEN,
@@ -44,7 +46,9 @@ object DataReplicationErrorString {
     FAILED_TO_ATTACH_STAGING_DISKS,
     FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT,
     FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER,
-    FAILED_TO_START_DATA_TRANSFER
+    FAILED_TO_START_DATA_TRANSFER,
+    UNSUPPORTED_VM_CONFIGURATION,
+    LAST_SNAPSHOT_JOB_FAILED
   )
 }
 
@@ -103,8 +107,10 @@ object DataReplicationState {
   val RESCAN = "RESCAN".asInstanceOf[DataReplicationState]
   val STALLED = "STALLED".asInstanceOf[DataReplicationState]
   val DISCONNECTED = "DISCONNECTED".asInstanceOf[DataReplicationState]
+  val PENDING_SNAPSHOT_SHIPPING = "PENDING_SNAPSHOT_SHIPPING".asInstanceOf[DataReplicationState]
+  val SHIPPING_SNAPSHOT = "SHIPPING_SNAPSHOT".asInstanceOf[DataReplicationState]
 
-  @inline def values: js.Array[DataReplicationState] = js.Array(STOPPED, INITIATING, INITIAL_SYNC, BACKLOG, CREATING_SNAPSHOT, CONTINUOUS, PAUSED, RESCAN, STALLED, DISCONNECTED)
+  @inline def values: js.Array[DataReplicationState] = js.Array(STOPPED, INITIATING, INITIAL_SYNC, BACKLOG, CREATING_SNAPSHOT, CONTINUOUS, PAUSED, RESCAN, STALLED, DISCONNECTED, PENDING_SNAPSHOT_SHIPPING, SHIPPING_SNAPSHOT)
 }
 
 @js.native
@@ -220,8 +226,9 @@ object LifeCycleState {
   val CUTTING_OVER = "CUTTING_OVER".asInstanceOf[LifeCycleState]
   val CUTOVER = "CUTOVER".asInstanceOf[LifeCycleState]
   val DISCONNECTED = "DISCONNECTED".asInstanceOf[LifeCycleState]
+  val DISCOVERED = "DISCOVERED".asInstanceOf[LifeCycleState]
 
-  @inline def values: js.Array[LifeCycleState] = js.Array(STOPPED, NOT_READY, READY_FOR_TEST, TESTING, READY_FOR_CUTOVER, CUTTING_OVER, CUTOVER, DISCONNECTED)
+  @inline def values: js.Array[LifeCycleState] = js.Array(STOPPED, NOT_READY, READY_FOR_TEST, TESTING, READY_FOR_CUTOVER, CUTTING_OVER, CUTOVER, DISCONNECTED, DISCOVERED)
 }
 
 @js.native
@@ -245,11 +252,10 @@ object ReplicationConfigurationDefaultLargeStagingDiskType {
 @js.native
 sealed trait ReplicationConfigurationEbsEncryption extends js.Any
 object ReplicationConfigurationEbsEncryption {
-  val NONE = "NONE".asInstanceOf[ReplicationConfigurationEbsEncryption]
   val DEFAULT = "DEFAULT".asInstanceOf[ReplicationConfigurationEbsEncryption]
   val CUSTOM = "CUSTOM".asInstanceOf[ReplicationConfigurationEbsEncryption]
 
-  @inline def values: js.Array[ReplicationConfigurationEbsEncryption] = js.Array(NONE, DEFAULT, CUSTOM)
+  @inline def values: js.Array[ReplicationConfigurationEbsEncryption] = js.Array(DEFAULT, CUSTOM)
 }
 
 @js.native
@@ -263,6 +269,15 @@ object ReplicationConfigurationReplicatedDiskStagingDiskType {
   val STANDARD = "STANDARD".asInstanceOf[ReplicationConfigurationReplicatedDiskStagingDiskType]
 
   @inline def values: js.Array[ReplicationConfigurationReplicatedDiskStagingDiskType] = js.Array(AUTO, GP2, IO1, SC1, ST1, STANDARD)
+}
+
+@js.native
+sealed trait ReplicationType extends js.Any
+object ReplicationType {
+  val AGENT_BASED = "AGENT_BASED".asInstanceOf[ReplicationType]
+  val SNAPSHOT_SHIPPING = "SNAPSHOT_SHIPPING".asInstanceOf[ReplicationType]
+
+  @inline def values: js.Array[ReplicationType] = js.Array(AGENT_BASED, SNAPSHOT_SHIPPING)
 }
 
 @js.native

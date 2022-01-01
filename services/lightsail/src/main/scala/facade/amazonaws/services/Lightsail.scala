@@ -8,6 +8,8 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object lightsail {
+  type AccessKeyList = js.Array[AccessKey]
+  type AccessReceiverList = js.Array[ResourceReceivingAccess]
   type AddOnList = js.Array[AddOn]
   type AddOnRequestList = js.Array[AddOnRequest]
   type AlarmsList = js.Array[Alarm]
@@ -18,6 +20,10 @@ package object lightsail {
   type AvailabilityZoneList = js.Array[AvailabilityZone]
   type Base64 = String
   type BlueprintList = js.Array[Blueprint]
+  type BucketAccessLogPrefix = String
+  type BucketBundleList = js.Array[BucketBundle]
+  type BucketList = js.Array[Bucket]
+  type BucketName = String
   type BundleList = js.Array[Bundle]
   type CacheBehaviorList = js.Array[CacheBehaviorPerPath]
   type CertificateName = String
@@ -60,6 +66,7 @@ package object lightsail {
   type ExportSnapshotRecordList = js.Array[ExportSnapshotRecord]
   type HeaderForwardList = js.Array[HeaderEnum]
   type HostKeysList = js.Array[HostKeyAttributes]
+  type IAMAccessKeyId = String
   type InUseResourceCount = Int
   type IncludeCertificateDetails = Boolean
   type InstanceEntryList = js.Array[InstanceEntry]
@@ -89,6 +96,7 @@ package object lightsail {
   type NonEmptyString = String
   type NotificationTriggerList = js.Array[AlarmState]
   type OperationList = js.Array[Operation]
+  type PartnerIdList = js.Array[NonEmptyString]
   type PendingMaintenanceActionList = js.Array[PendingMaintenanceAction]
   type Port = Int
   type PortInfoList = js.Array[PortInfo]
@@ -131,6 +139,8 @@ package object lightsail {
     @inline def attachStaticIpFuture(params: AttachStaticIpRequest): Future[AttachStaticIpResult] = service.attachStaticIp(params).promise().toFuture
     @inline def closeInstancePublicPortsFuture(params: CloseInstancePublicPortsRequest): Future[CloseInstancePublicPortsResult] = service.closeInstancePublicPorts(params).promise().toFuture
     @inline def copySnapshotFuture(params: CopySnapshotRequest): Future[CopySnapshotResult] = service.copySnapshot(params).promise().toFuture
+    @inline def createBucketAccessKeyFuture(params: CreateBucketAccessKeyRequest): Future[CreateBucketAccessKeyResult] = service.createBucketAccessKey(params).promise().toFuture
+    @inline def createBucketFuture(params: CreateBucketRequest): Future[CreateBucketResult] = service.createBucket(params).promise().toFuture
     @inline def createCertificateFuture(params: CreateCertificateRequest): Future[CreateCertificateResult] = service.createCertificate(params).promise().toFuture
     @inline def createCloudFormationStackFuture(params: CreateCloudFormationStackRequest): Future[CreateCloudFormationStackResult] = service.createCloudFormationStack(params).promise().toFuture
     @inline def createContactMethodFuture(params: CreateContactMethodRequest): Future[CreateContactMethodResult] = service.createContactMethod(params).promise().toFuture
@@ -154,6 +164,8 @@ package object lightsail {
     @inline def createRelationalDatabaseSnapshotFuture(params: CreateRelationalDatabaseSnapshotRequest): Future[CreateRelationalDatabaseSnapshotResult] = service.createRelationalDatabaseSnapshot(params).promise().toFuture
     @inline def deleteAlarmFuture(params: DeleteAlarmRequest): Future[DeleteAlarmResult] = service.deleteAlarm(params).promise().toFuture
     @inline def deleteAutoSnapshotFuture(params: DeleteAutoSnapshotRequest): Future[DeleteAutoSnapshotResult] = service.deleteAutoSnapshot(params).promise().toFuture
+    @inline def deleteBucketAccessKeyFuture(params: DeleteBucketAccessKeyRequest): Future[DeleteBucketAccessKeyResult] = service.deleteBucketAccessKey(params).promise().toFuture
+    @inline def deleteBucketFuture(params: DeleteBucketRequest): Future[DeleteBucketResult] = service.deleteBucket(params).promise().toFuture
     @inline def deleteCertificateFuture(params: DeleteCertificateRequest): Future[DeleteCertificateResult] = service.deleteCertificate(params).promise().toFuture
     @inline def deleteContactMethodFuture(params: DeleteContactMethodRequest): Future[DeleteContactMethodResult] = service.deleteContactMethod(params).promise().toFuture
     @inline def deleteContainerImageFuture(params: DeleteContainerImageRequest): Future[DeleteContainerImageResult] = service.deleteContainerImage(params).promise().toFuture
@@ -183,6 +195,10 @@ package object lightsail {
     @inline def getAlarmsFuture(params: GetAlarmsRequest): Future[GetAlarmsResult] = service.getAlarms(params).promise().toFuture
     @inline def getAutoSnapshotsFuture(params: GetAutoSnapshotsRequest): Future[GetAutoSnapshotsResult] = service.getAutoSnapshots(params).promise().toFuture
     @inline def getBlueprintsFuture(params: GetBlueprintsRequest): Future[GetBlueprintsResult] = service.getBlueprints(params).promise().toFuture
+    @inline def getBucketAccessKeysFuture(params: GetBucketAccessKeysRequest): Future[GetBucketAccessKeysResult] = service.getBucketAccessKeys(params).promise().toFuture
+    @inline def getBucketBundlesFuture(params: GetBucketBundlesRequest): Future[GetBucketBundlesResult] = service.getBucketBundles(params).promise().toFuture
+    @inline def getBucketMetricDataFuture(params: GetBucketMetricDataRequest): Future[GetBucketMetricDataResult] = service.getBucketMetricData(params).promise().toFuture
+    @inline def getBucketsFuture(params: GetBucketsRequest): Future[GetBucketsResult] = service.getBuckets(params).promise().toFuture
     @inline def getBundlesFuture(params: GetBundlesRequest): Future[GetBundlesResult] = service.getBundles(params).promise().toFuture
     @inline def getCertificatesFuture(params: GetCertificatesRequest): Future[GetCertificatesResult] = service.getCertificates(params).promise().toFuture
     @inline def getCloudFormationStackRecordsFuture(params: GetCloudFormationStackRecordsRequest): Future[GetCloudFormationStackRecordsResult] = service.getCloudFormationStackRecords(params).promise().toFuture
@@ -250,6 +266,7 @@ package object lightsail {
     @inline def resetDistributionCacheFuture(params: ResetDistributionCacheRequest): Future[ResetDistributionCacheResult] = service.resetDistributionCache(params).promise().toFuture
     @inline def sendContactMethodVerificationFuture(params: SendContactMethodVerificationRequest): Future[SendContactMethodVerificationResult] = service.sendContactMethodVerification(params).promise().toFuture
     @inline def setIpAddressTypeFuture(params: SetIpAddressTypeRequest): Future[SetIpAddressTypeResult] = service.setIpAddressType(params).promise().toFuture
+    @inline def setResourceAccessForBucketFuture(params: SetResourceAccessForBucketRequest): Future[SetResourceAccessForBucketResult] = service.setResourceAccessForBucket(params).promise().toFuture
     @inline def startInstanceFuture(params: StartInstanceRequest): Future[StartInstanceResult] = service.startInstance(params).promise().toFuture
     @inline def startRelationalDatabaseFuture(params: StartRelationalDatabaseRequest): Future[StartRelationalDatabaseResult] = service.startRelationalDatabase(params).promise().toFuture
     @inline def stopInstanceFuture(params: StopInstanceRequest): Future[StopInstanceResult] = service.stopInstance(params).promise().toFuture
@@ -258,6 +275,8 @@ package object lightsail {
     @inline def testAlarmFuture(params: TestAlarmRequest): Future[TestAlarmResult] = service.testAlarm(params).promise().toFuture
     @inline def unpeerVpcFuture(params: UnpeerVpcRequest): Future[UnpeerVpcResult] = service.unpeerVpc(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
+    @inline def updateBucketBundleFuture(params: UpdateBucketBundleRequest): Future[UpdateBucketBundleResult] = service.updateBucketBundle(params).promise().toFuture
+    @inline def updateBucketFuture(params: UpdateBucketRequest): Future[UpdateBucketResult] = service.updateBucket(params).promise().toFuture
     @inline def updateContainerServiceFuture(params: UpdateContainerServiceRequest): Future[UpdateContainerServiceResult] = service.updateContainerService(params).promise().toFuture
     @inline def updateDistributionBundleFuture(params: UpdateDistributionBundleRequest): Future[UpdateDistributionBundleResult] = service.updateDistributionBundle(params).promise().toFuture
     @inline def updateDistributionFuture(params: UpdateDistributionRequest): Future[UpdateDistributionResult] = service.updateDistribution(params).promise().toFuture
@@ -281,6 +300,8 @@ package object lightsail {
     def attachStaticIp(params: AttachStaticIpRequest): Request[AttachStaticIpResult] = js.native
     def closeInstancePublicPorts(params: CloseInstancePublicPortsRequest): Request[CloseInstancePublicPortsResult] = js.native
     def copySnapshot(params: CopySnapshotRequest): Request[CopySnapshotResult] = js.native
+    def createBucket(params: CreateBucketRequest): Request[CreateBucketResult] = js.native
+    def createBucketAccessKey(params: CreateBucketAccessKeyRequest): Request[CreateBucketAccessKeyResult] = js.native
     def createCertificate(params: CreateCertificateRequest): Request[CreateCertificateResult] = js.native
     def createCloudFormationStack(params: CreateCloudFormationStackRequest): Request[CreateCloudFormationStackResult] = js.native
     def createContactMethod(params: CreateContactMethodRequest): Request[CreateContactMethodResult] = js.native
@@ -304,6 +325,8 @@ package object lightsail {
     def createRelationalDatabaseSnapshot(params: CreateRelationalDatabaseSnapshotRequest): Request[CreateRelationalDatabaseSnapshotResult] = js.native
     def deleteAlarm(params: DeleteAlarmRequest): Request[DeleteAlarmResult] = js.native
     def deleteAutoSnapshot(params: DeleteAutoSnapshotRequest): Request[DeleteAutoSnapshotResult] = js.native
+    def deleteBucket(params: DeleteBucketRequest): Request[DeleteBucketResult] = js.native
+    def deleteBucketAccessKey(params: DeleteBucketAccessKeyRequest): Request[DeleteBucketAccessKeyResult] = js.native
     def deleteCertificate(params: DeleteCertificateRequest): Request[DeleteCertificateResult] = js.native
     def deleteContactMethod(params: DeleteContactMethodRequest): Request[DeleteContactMethodResult] = js.native
     def deleteContainerImage(params: DeleteContainerImageRequest): Request[DeleteContainerImageResult] = js.native
@@ -333,6 +356,10 @@ package object lightsail {
     def getAlarms(params: GetAlarmsRequest): Request[GetAlarmsResult] = js.native
     def getAutoSnapshots(params: GetAutoSnapshotsRequest): Request[GetAutoSnapshotsResult] = js.native
     def getBlueprints(params: GetBlueprintsRequest): Request[GetBlueprintsResult] = js.native
+    def getBucketAccessKeys(params: GetBucketAccessKeysRequest): Request[GetBucketAccessKeysResult] = js.native
+    def getBucketBundles(params: GetBucketBundlesRequest): Request[GetBucketBundlesResult] = js.native
+    def getBucketMetricData(params: GetBucketMetricDataRequest): Request[GetBucketMetricDataResult] = js.native
+    def getBuckets(params: GetBucketsRequest): Request[GetBucketsResult] = js.native
     def getBundles(params: GetBundlesRequest): Request[GetBundlesResult] = js.native
     def getCertificates(params: GetCertificatesRequest): Request[GetCertificatesResult] = js.native
     def getCloudFormationStackRecords(params: GetCloudFormationStackRecordsRequest): Request[GetCloudFormationStackRecordsResult] = js.native
@@ -400,6 +427,7 @@ package object lightsail {
     def resetDistributionCache(params: ResetDistributionCacheRequest): Request[ResetDistributionCacheResult] = js.native
     def sendContactMethodVerification(params: SendContactMethodVerificationRequest): Request[SendContactMethodVerificationResult] = js.native
     def setIpAddressType(params: SetIpAddressTypeRequest): Request[SetIpAddressTypeResult] = js.native
+    def setResourceAccessForBucket(params: SetResourceAccessForBucketRequest): Request[SetResourceAccessForBucketResult] = js.native
     def startInstance(params: StartInstanceRequest): Request[StartInstanceResult] = js.native
     def startRelationalDatabase(params: StartRelationalDatabaseRequest): Request[StartRelationalDatabaseResult] = js.native
     def stopInstance(params: StopInstanceRequest): Request[StopInstanceResult] = js.native
@@ -408,6 +436,8 @@ package object lightsail {
     def testAlarm(params: TestAlarmRequest): Request[TestAlarmResult] = js.native
     def unpeerVpc(params: UnpeerVpcRequest): Request[UnpeerVpcResult] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
+    def updateBucket(params: UpdateBucketRequest): Request[UpdateBucketResult] = js.native
+    def updateBucketBundle(params: UpdateBucketBundleRequest): Request[UpdateBucketBundleResult] = js.native
     def updateContainerService(params: UpdateContainerServiceRequest): Request[UpdateContainerServiceResult] = js.native
     def updateDistribution(params: UpdateDistributionRequest): Request[UpdateDistributionResult] = js.native
     def updateDistributionBundle(params: UpdateDistributionBundleRequest): Request[UpdateDistributionBundleResult] = js.native
@@ -419,6 +449,83 @@ package object lightsail {
   object Lightsail {
     @inline implicit def toOps(service: Lightsail): LightsailOps = {
       new LightsailOps(service)
+    }
+  }
+
+  /** Describes an access key for an Amazon Lightsail bucket. Access keys grant full programmatic access to the specified bucket and its objects. You can have a maximum of two access keys per bucket. Use the <a>CreateBucketAccessKey</a> action to create an access key for a specific bucket. For more information about access keys, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys|Creating access keys for a bucket in Amazon Lightsail]] in the <i>Amazon Lightsail Developer Guide</i>. <important> The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you first create an access key; you cannot get the secret access key later. If you lose the secret access key, you must create a new access key. </important>
+    */
+  @js.native
+  trait AccessKey extends js.Object {
+    var accessKeyId: js.UndefOr[IAMAccessKeyId]
+    var createdAt: js.UndefOr[IsoDate]
+    var lastUsed: js.UndefOr[AccessKeyLastUsed]
+    var secretAccessKey: js.UndefOr[NonEmptyString]
+    var status: js.UndefOr[StatusType]
+  }
+
+  object AccessKey {
+    @inline
+    def apply(
+        accessKeyId: js.UndefOr[IAMAccessKeyId] = js.undefined,
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        lastUsed: js.UndefOr[AccessKeyLastUsed] = js.undefined,
+        secretAccessKey: js.UndefOr[NonEmptyString] = js.undefined,
+        status: js.UndefOr[StatusType] = js.undefined
+    ): AccessKey = {
+      val __obj = js.Dynamic.literal()
+      accessKeyId.foreach(__v => __obj.updateDynamic("accessKeyId")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      lastUsed.foreach(__v => __obj.updateDynamic("lastUsed")(__v.asInstanceOf[js.Any]))
+      secretAccessKey.foreach(__v => __obj.updateDynamic("secretAccessKey")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessKey]
+    }
+  }
+
+  /** Describes the last time an access key was used.
+    *
+    * '''Note:'''This object does not include data in the response of a <a>CreateBucketAccessKey</a> action.
+    */
+  @js.native
+  trait AccessKeyLastUsed extends js.Object {
+    var lastUsedDate: js.UndefOr[IsoDate]
+    var region: js.UndefOr[String]
+    var serviceName: js.UndefOr[String]
+  }
+
+  object AccessKeyLastUsed {
+    @inline
+    def apply(
+        lastUsedDate: js.UndefOr[IsoDate] = js.undefined,
+        region: js.UndefOr[String] = js.undefined,
+        serviceName: js.UndefOr[String] = js.undefined
+    ): AccessKeyLastUsed = {
+      val __obj = js.Dynamic.literal()
+      lastUsedDate.foreach(__v => __obj.updateDynamic("lastUsedDate")(__v.asInstanceOf[js.Any]))
+      region.foreach(__v => __obj.updateDynamic("region")(__v.asInstanceOf[js.Any]))
+      serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessKeyLastUsed]
+    }
+  }
+
+  /** Describes the anonymous access permissions for an Amazon Lightsail bucket and its objects. For more information about bucket access permissions, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-understanding-bucket-permissions|Understanding bucket permissions in Amazon Lightsail]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait AccessRules extends js.Object {
+    var allowPublicOverrides: js.UndefOr[Boolean]
+    var getObject: js.UndefOr[AccessType]
+  }
+
+  object AccessRules {
+    @inline
+    def apply(
+        allowPublicOverrides: js.UndefOr[Boolean] = js.undefined,
+        getObject: js.UndefOr[AccessType] = js.undefined
+    ): AccessRules = {
+      val __obj = js.Dynamic.literal()
+      allowPublicOverrides.foreach(__v => __obj.updateDynamic("allowPublicOverrides")(__v.asInstanceOf[js.Any]))
+      getObject.foreach(__v => __obj.updateDynamic("getObject")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccessRules]
     }
   }
 
@@ -474,7 +581,7 @@ package object lightsail {
     }
   }
 
-  /** Describes an alarm. An alarm is a way to monitor your Amazon Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
+  /** Describes an alarm. An alarm is a way to monitor your Lightsail resource metrics. For more information, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-alarms|Alarms in Amazon Lightsail]].
     */
   @js.native
   trait Alarm extends js.Object {
@@ -904,6 +1011,149 @@ package object lightsail {
     }
   }
 
+  /** Describes an Amazon Lightsail bucket.
+    */
+  @js.native
+  trait Bucket extends js.Object {
+    var ableToUpdateBundle: js.UndefOr[Boolean]
+    var accessLogConfig: js.UndefOr[BucketAccessLogConfig]
+    var accessRules: js.UndefOr[AccessRules]
+    var arn: js.UndefOr[NonEmptyString]
+    var bundleId: js.UndefOr[NonEmptyString]
+    var createdAt: js.UndefOr[IsoDate]
+    var location: js.UndefOr[ResourceLocation]
+    var name: js.UndefOr[BucketName]
+    var objectVersioning: js.UndefOr[NonEmptyString]
+    var readonlyAccessAccounts: js.UndefOr[PartnerIdList]
+    var resourceType: js.UndefOr[NonEmptyString]
+    var resourcesReceivingAccess: js.UndefOr[AccessReceiverList]
+    var state: js.UndefOr[BucketState]
+    var supportCode: js.UndefOr[NonEmptyString]
+    var tags: js.UndefOr[TagList]
+    var url: js.UndefOr[NonEmptyString]
+  }
+
+  object Bucket {
+    @inline
+    def apply(
+        ableToUpdateBundle: js.UndefOr[Boolean] = js.undefined,
+        accessLogConfig: js.UndefOr[BucketAccessLogConfig] = js.undefined,
+        accessRules: js.UndefOr[AccessRules] = js.undefined,
+        arn: js.UndefOr[NonEmptyString] = js.undefined,
+        bundleId: js.UndefOr[NonEmptyString] = js.undefined,
+        createdAt: js.UndefOr[IsoDate] = js.undefined,
+        location: js.UndefOr[ResourceLocation] = js.undefined,
+        name: js.UndefOr[BucketName] = js.undefined,
+        objectVersioning: js.UndefOr[NonEmptyString] = js.undefined,
+        readonlyAccessAccounts: js.UndefOr[PartnerIdList] = js.undefined,
+        resourceType: js.UndefOr[NonEmptyString] = js.undefined,
+        resourcesReceivingAccess: js.UndefOr[AccessReceiverList] = js.undefined,
+        state: js.UndefOr[BucketState] = js.undefined,
+        supportCode: js.UndefOr[NonEmptyString] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined,
+        url: js.UndefOr[NonEmptyString] = js.undefined
+    ): Bucket = {
+      val __obj = js.Dynamic.literal()
+      ableToUpdateBundle.foreach(__v => __obj.updateDynamic("ableToUpdateBundle")(__v.asInstanceOf[js.Any]))
+      accessLogConfig.foreach(__v => __obj.updateDynamic("accessLogConfig")(__v.asInstanceOf[js.Any]))
+      accessRules.foreach(__v => __obj.updateDynamic("accessRules")(__v.asInstanceOf[js.Any]))
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
+      createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
+      location.foreach(__v => __obj.updateDynamic("location")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      objectVersioning.foreach(__v => __obj.updateDynamic("objectVersioning")(__v.asInstanceOf[js.Any]))
+      readonlyAccessAccounts.foreach(__v => __obj.updateDynamic("readonlyAccessAccounts")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      resourcesReceivingAccess.foreach(__v => __obj.updateDynamic("resourcesReceivingAccess")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      supportCode.foreach(__v => __obj.updateDynamic("supportCode")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Bucket]
+    }
+  }
+
+  /** Describes the access log configuration for a bucket in the Amazon Lightsail object storage service. For more information about bucket access logs, see [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-bucket-access-logs|Logging bucket requests using access logging in Amazon Lightsail]] in the <i>Amazon Lightsail Developer Guide</i>.
+    */
+  @js.native
+  trait BucketAccessLogConfig extends js.Object {
+    var enabled: Boolean
+    var destination: js.UndefOr[BucketName]
+    var prefix: js.UndefOr[BucketAccessLogPrefix]
+  }
+
+  object BucketAccessLogConfig {
+    @inline
+    def apply(
+        enabled: Boolean,
+        destination: js.UndefOr[BucketName] = js.undefined,
+        prefix: js.UndefOr[BucketAccessLogPrefix] = js.undefined
+    ): BucketAccessLogConfig = {
+      val __obj = js.Dynamic.literal(
+        "enabled" -> enabled.asInstanceOf[js.Any]
+      )
+
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BucketAccessLogConfig]
+    }
+  }
+
+  /** Describes the specifications of a bundle that can be applied to an Amazon Lightsail bucket. A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.
+    */
+  @js.native
+  trait BucketBundle extends js.Object {
+    var bundleId: js.UndefOr[NonEmptyString]
+    var isActive: js.UndefOr[Boolean]
+    var name: js.UndefOr[NonEmptyString]
+    var price: js.UndefOr[Float]
+    var storagePerMonthInGb: js.UndefOr[Int]
+    var transferPerMonthInGb: js.UndefOr[Int]
+  }
+
+  object BucketBundle {
+    @inline
+    def apply(
+        bundleId: js.UndefOr[NonEmptyString] = js.undefined,
+        isActive: js.UndefOr[Boolean] = js.undefined,
+        name: js.UndefOr[NonEmptyString] = js.undefined,
+        price: js.UndefOr[Float] = js.undefined,
+        storagePerMonthInGb: js.UndefOr[Int] = js.undefined,
+        transferPerMonthInGb: js.UndefOr[Int] = js.undefined
+    ): BucketBundle = {
+      val __obj = js.Dynamic.literal()
+      bundleId.foreach(__v => __obj.updateDynamic("bundleId")(__v.asInstanceOf[js.Any]))
+      isActive.foreach(__v => __obj.updateDynamic("isActive")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      price.foreach(__v => __obj.updateDynamic("price")(__v.asInstanceOf[js.Any]))
+      storagePerMonthInGb.foreach(__v => __obj.updateDynamic("storagePerMonthInGb")(__v.asInstanceOf[js.Any]))
+      transferPerMonthInGb.foreach(__v => __obj.updateDynamic("transferPerMonthInGb")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BucketBundle]
+    }
+  }
+
+  /** Describes the state of an Amazon Lightsail bucket.
+    */
+  @js.native
+  trait BucketState extends js.Object {
+    var code: js.UndefOr[NonEmptyString]
+    var message: js.UndefOr[String]
+  }
+
+  object BucketState {
+    @inline
+    def apply(
+        code: js.UndefOr[NonEmptyString] = js.undefined,
+        message: js.UndefOr[String] = js.undefined
+    ): BucketState = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BucketState]
+    }
+  }
+
   /** Describes a bundle, which is a set of specs describing your virtual private server (or <i>instance</i>).
     */
   @js.native
@@ -1176,7 +1426,7 @@ package object lightsail {
     }
   }
 
-  /** Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> operation. A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.
+  /** Describes a CloudFormation stack record created as a result of the <code>create cloud formation stack</code> action. A CloudFormation stack record provides information about the AWS CloudFormation stack used to create a new Amazon Elastic Compute Cloud instance from an exported Lightsail instance snapshot.
     */
   @js.native
   trait CloudFormationStackRecord extends js.Object {
@@ -1694,6 +1944,88 @@ package object lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CopySnapshotResult]
+    }
+  }
+
+  @js.native
+  trait CreateBucketAccessKeyRequest extends js.Object {
+    var bucketName: BucketName
+  }
+
+  object CreateBucketAccessKeyRequest {
+    @inline
+    def apply(
+        bucketName: BucketName
+    ): CreateBucketAccessKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateBucketAccessKeyRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBucketAccessKeyResult extends js.Object {
+    var accessKey: js.UndefOr[AccessKey]
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object CreateBucketAccessKeyResult {
+    @inline
+    def apply(
+        accessKey: js.UndefOr[AccessKey] = js.undefined,
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): CreateBucketAccessKeyResult = {
+      val __obj = js.Dynamic.literal()
+      accessKey.foreach(__v => __obj.updateDynamic("accessKey")(__v.asInstanceOf[js.Any]))
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBucketAccessKeyResult]
+    }
+  }
+
+  @js.native
+  trait CreateBucketRequest extends js.Object {
+    var bucketName: BucketName
+    var bundleId: NonEmptyString
+    var enableObjectVersioning: js.UndefOr[Boolean]
+    var tags: js.UndefOr[TagList]
+  }
+
+  object CreateBucketRequest {
+    @inline
+    def apply(
+        bucketName: BucketName,
+        bundleId: NonEmptyString,
+        enableObjectVersioning: js.UndefOr[Boolean] = js.undefined,
+        tags: js.UndefOr[TagList] = js.undefined
+    ): CreateBucketRequest = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any],
+        "bundleId" -> bundleId.asInstanceOf[js.Any]
+      )
+
+      enableObjectVersioning.foreach(__v => __obj.updateDynamic("enableObjectVersioning")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBucketRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBucketResult extends js.Object {
+    var bucket: js.UndefOr[Bucket]
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object CreateBucketResult {
+    @inline
+    def apply(
+        bucket: js.UndefOr[Bucket] = js.undefined,
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): CreateBucketResult = {
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBucketResult]
     }
   }
 
@@ -2756,6 +3088,79 @@ package object lightsail {
   }
 
   @js.native
+  trait DeleteBucketAccessKeyRequest extends js.Object {
+    var accessKeyId: NonEmptyString
+    var bucketName: BucketName
+  }
+
+  object DeleteBucketAccessKeyRequest {
+    @inline
+    def apply(
+        accessKeyId: NonEmptyString,
+        bucketName: BucketName
+    ): DeleteBucketAccessKeyRequest = {
+      val __obj = js.Dynamic.literal(
+        "accessKeyId" -> accessKeyId.asInstanceOf[js.Any],
+        "bucketName" -> bucketName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBucketAccessKeyRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBucketAccessKeyResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object DeleteBucketAccessKeyResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): DeleteBucketAccessKeyResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBucketAccessKeyResult]
+    }
+  }
+
+  @js.native
+  trait DeleteBucketRequest extends js.Object {
+    var bucketName: BucketName
+    var forceDelete: js.UndefOr[Boolean]
+  }
+
+  object DeleteBucketRequest {
+    @inline
+    def apply(
+        bucketName: BucketName,
+        forceDelete: js.UndefOr[Boolean] = js.undefined
+    ): DeleteBucketRequest = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any]
+      )
+
+      forceDelete.foreach(__v => __obj.updateDynamic("forceDelete")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBucketRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBucketResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object DeleteBucketResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): DeleteBucketResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteBucketResult]
+    }
+  }
+
+  @js.native
   trait DeleteCertificateRequest extends js.Object {
     var certificateName: CertificateName
   }
@@ -3525,7 +3930,7 @@ package object lightsail {
     }
   }
 
-  /** Describes a system disk or a block storage disk.
+  /** Describes a block storage disk.
     */
   @js.native
   trait Disk extends js.Object {
@@ -3747,7 +4152,7 @@ package object lightsail {
     }
   }
 
-  /** Describes a domain where you are storing recordsets in Lightsail.
+  /** Describes a domain where you are storing recordsets.
     */
   @js.native
   trait Domain extends js.Object {
@@ -4193,6 +4598,166 @@ package object lightsail {
       blueprints.foreach(__v => __obj.updateDynamic("blueprints")(__v.asInstanceOf[js.Any]))
       nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBlueprintsResult]
+    }
+  }
+
+  @js.native
+  trait GetBucketAccessKeysRequest extends js.Object {
+    var bucketName: BucketName
+  }
+
+  object GetBucketAccessKeysRequest {
+    @inline
+    def apply(
+        bucketName: BucketName
+    ): GetBucketAccessKeysRequest = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetBucketAccessKeysRequest]
+    }
+  }
+
+  @js.native
+  trait GetBucketAccessKeysResult extends js.Object {
+    var accessKeys: js.UndefOr[AccessKeyList]
+  }
+
+  object GetBucketAccessKeysResult {
+    @inline
+    def apply(
+        accessKeys: js.UndefOr[AccessKeyList] = js.undefined
+    ): GetBucketAccessKeysResult = {
+      val __obj = js.Dynamic.literal()
+      accessKeys.foreach(__v => __obj.updateDynamic("accessKeys")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketAccessKeysResult]
+    }
+  }
+
+  @js.native
+  trait GetBucketBundlesRequest extends js.Object {
+    var includeInactive: js.UndefOr[Boolean]
+  }
+
+  object GetBucketBundlesRequest {
+    @inline
+    def apply(
+        includeInactive: js.UndefOr[Boolean] = js.undefined
+    ): GetBucketBundlesRequest = {
+      val __obj = js.Dynamic.literal()
+      includeInactive.foreach(__v => __obj.updateDynamic("includeInactive")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketBundlesRequest]
+    }
+  }
+
+  @js.native
+  trait GetBucketBundlesResult extends js.Object {
+    var bundles: js.UndefOr[BucketBundleList]
+  }
+
+  object GetBucketBundlesResult {
+    @inline
+    def apply(
+        bundles: js.UndefOr[BucketBundleList] = js.undefined
+    ): GetBucketBundlesResult = {
+      val __obj = js.Dynamic.literal()
+      bundles.foreach(__v => __obj.updateDynamic("bundles")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketBundlesResult]
+    }
+  }
+
+  @js.native
+  trait GetBucketMetricDataRequest extends js.Object {
+    var bucketName: BucketName
+    var endTime: IsoDate
+    var metricName: BucketMetricName
+    var period: MetricPeriod
+    var startTime: IsoDate
+    var statistics: MetricStatisticList
+    var unit: MetricUnit
+  }
+
+  object GetBucketMetricDataRequest {
+    @inline
+    def apply(
+        bucketName: BucketName,
+        endTime: IsoDate,
+        metricName: BucketMetricName,
+        period: MetricPeriod,
+        startTime: IsoDate,
+        statistics: MetricStatisticList,
+        unit: MetricUnit
+    ): GetBucketMetricDataRequest = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any],
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "metricName" -> metricName.asInstanceOf[js.Any],
+        "period" -> period.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any],
+        "statistics" -> statistics.asInstanceOf[js.Any],
+        "unit" -> unit.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetBucketMetricDataRequest]
+    }
+  }
+
+  @js.native
+  trait GetBucketMetricDataResult extends js.Object {
+    var metricData: js.UndefOr[MetricDatapointList]
+    var metricName: js.UndefOr[BucketMetricName]
+  }
+
+  object GetBucketMetricDataResult {
+    @inline
+    def apply(
+        metricData: js.UndefOr[MetricDatapointList] = js.undefined,
+        metricName: js.UndefOr[BucketMetricName] = js.undefined
+    ): GetBucketMetricDataResult = {
+      val __obj = js.Dynamic.literal()
+      metricData.foreach(__v => __obj.updateDynamic("metricData")(__v.asInstanceOf[js.Any]))
+      metricName.foreach(__v => __obj.updateDynamic("metricName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketMetricDataResult]
+    }
+  }
+
+  @js.native
+  trait GetBucketsRequest extends js.Object {
+    var bucketName: js.UndefOr[BucketName]
+    var includeConnectedResources: js.UndefOr[Boolean]
+    var pageToken: js.UndefOr[String]
+  }
+
+  object GetBucketsRequest {
+    @inline
+    def apply(
+        bucketName: js.UndefOr[BucketName] = js.undefined,
+        includeConnectedResources: js.UndefOr[Boolean] = js.undefined,
+        pageToken: js.UndefOr[String] = js.undefined
+    ): GetBucketsRequest = {
+      val __obj = js.Dynamic.literal()
+      bucketName.foreach(__v => __obj.updateDynamic("bucketName")(__v.asInstanceOf[js.Any]))
+      includeConnectedResources.foreach(__v => __obj.updateDynamic("includeConnectedResources")(__v.asInstanceOf[js.Any]))
+      pageToken.foreach(__v => __obj.updateDynamic("pageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketsRequest]
+    }
+  }
+
+  @js.native
+  trait GetBucketsResult extends js.Object {
+    var buckets: js.UndefOr[BucketList]
+    var nextPageToken: js.UndefOr[String]
+  }
+
+  object GetBucketsResult {
+    @inline
+    def apply(
+        buckets: js.UndefOr[BucketList] = js.undefined,
+        nextPageToken: js.UndefOr[String] = js.undefined
+    ): GetBucketsResult = {
+      val __obj = js.Dynamic.literal()
+      buckets.foreach(__v => __obj.updateDynamic("buckets")(__v.asInstanceOf[js.Any]))
+      nextPageToken.foreach(__v => __obj.updateDynamic("nextPageToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBucketsResult]
     }
   }
 
@@ -6729,7 +7294,7 @@ package object lightsail {
     }
   }
 
-  /** Describes the SSH key pair.
+  /** Describes an SSH key pair.
     */
   @js.native
   trait KeyPair extends js.Object {
@@ -6843,7 +7408,7 @@ package object lightsail {
     }
   }
 
-  /** Describes the Lightsail load balancer.
+  /** Describes a load balancer.
     */
   @js.native
   trait LoadBalancer extends js.Object {
@@ -8152,6 +8717,27 @@ package object lightsail {
     }
   }
 
+  /** Describes an Amazon Lightsail instance that has access to a Lightsail bucket.
+    */
+  @js.native
+  trait ResourceReceivingAccess extends js.Object {
+    var name: js.UndefOr[NonEmptyString]
+    var resourceType: js.UndefOr[NonEmptyString]
+  }
+
+  object ResourceReceivingAccess {
+    @inline
+    def apply(
+        name: js.UndefOr[NonEmptyString] = js.undefined,
+        resourceType: js.UndefOr[NonEmptyString] = js.undefined
+    ): ResourceReceivingAccess = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceReceivingAccess]
+    }
+  }
+
   /** Describes the domain name system (DNS) records to add to your domain's DNS to validate it for an Amazon Lightsail certificate.
     */
   @js.native
@@ -8249,6 +8835,45 @@ package object lightsail {
   }
 
   @js.native
+  trait SetResourceAccessForBucketRequest extends js.Object {
+    var access: ResourceBucketAccess
+    var bucketName: BucketName
+    var resourceName: ResourceName
+  }
+
+  object SetResourceAccessForBucketRequest {
+    @inline
+    def apply(
+        access: ResourceBucketAccess,
+        bucketName: BucketName,
+        resourceName: ResourceName
+    ): SetResourceAccessForBucketRequest = {
+      val __obj = js.Dynamic.literal(
+        "access" -> access.asInstanceOf[js.Any],
+        "bucketName" -> bucketName.asInstanceOf[js.Any],
+        "resourceName" -> resourceName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SetResourceAccessForBucketRequest]
+    }
+  }
+
+  @js.native
+  trait SetResourceAccessForBucketResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object SetResourceAccessForBucketResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): SetResourceAccessForBucketResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SetResourceAccessForBucketResult]
+    }
+  }
+
+  @js.native
   trait StartInstanceRequest extends js.Object {
     var instanceName: ResourceName
   }
@@ -8314,7 +8939,7 @@ package object lightsail {
     }
   }
 
-  /** Describes the static IP.
+  /** Describes a static IP.
     */
   @js.native
   trait StaticIp extends js.Object {
@@ -8430,7 +9055,7 @@ package object lightsail {
     }
   }
 
-  /** Describes a tag key and optional value assigned to an Amazon Lightsail resource. For more information about tags in Lightsail, see the [[https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags|Lightsail Dev Guide]].
+  /** Describes a tag key and optional value assigned to an Amazon Lightsail resource. For more information about tags in Lightsail, see the [[https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags|Amazon Lightsail Developer Guide]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -8591,6 +9216,91 @@ package object lightsail {
       val __obj = js.Dynamic.literal()
       operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UntagResourceResult]
+    }
+  }
+
+  @js.native
+  trait UpdateBucketBundleRequest extends js.Object {
+    var bucketName: BucketName
+    var bundleId: NonEmptyString
+  }
+
+  object UpdateBucketBundleRequest {
+    @inline
+    def apply(
+        bucketName: BucketName,
+        bundleId: NonEmptyString
+    ): UpdateBucketBundleRequest = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any],
+        "bundleId" -> bundleId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateBucketBundleRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateBucketBundleResult extends js.Object {
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object UpdateBucketBundleResult {
+    @inline
+    def apply(
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): UpdateBucketBundleResult = {
+      val __obj = js.Dynamic.literal()
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBucketBundleResult]
+    }
+  }
+
+  @js.native
+  trait UpdateBucketRequest extends js.Object {
+    var bucketName: BucketName
+    var accessLogConfig: js.UndefOr[BucketAccessLogConfig]
+    var accessRules: js.UndefOr[AccessRules]
+    var readonlyAccessAccounts: js.UndefOr[PartnerIdList]
+    var versioning: js.UndefOr[NonEmptyString]
+  }
+
+  object UpdateBucketRequest {
+    @inline
+    def apply(
+        bucketName: BucketName,
+        accessLogConfig: js.UndefOr[BucketAccessLogConfig] = js.undefined,
+        accessRules: js.UndefOr[AccessRules] = js.undefined,
+        readonlyAccessAccounts: js.UndefOr[PartnerIdList] = js.undefined,
+        versioning: js.UndefOr[NonEmptyString] = js.undefined
+    ): UpdateBucketRequest = {
+      val __obj = js.Dynamic.literal(
+        "bucketName" -> bucketName.asInstanceOf[js.Any]
+      )
+
+      accessLogConfig.foreach(__v => __obj.updateDynamic("accessLogConfig")(__v.asInstanceOf[js.Any]))
+      accessRules.foreach(__v => __obj.updateDynamic("accessRules")(__v.asInstanceOf[js.Any]))
+      readonlyAccessAccounts.foreach(__v => __obj.updateDynamic("readonlyAccessAccounts")(__v.asInstanceOf[js.Any]))
+      versioning.foreach(__v => __obj.updateDynamic("versioning")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBucketRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateBucketResult extends js.Object {
+    var bucket: js.UndefOr[Bucket]
+    var operations: js.UndefOr[OperationList]
+  }
+
+  object UpdateBucketResult {
+    @inline
+    def apply(
+        bucket: js.UndefOr[Bucket] = js.undefined,
+        operations: js.UndefOr[OperationList] = js.undefined
+    ): UpdateBucketResult = {
+      val __obj = js.Dynamic.literal()
+      bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
+      operations.foreach(__v => __obj.updateDynamic("operations")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateBucketResult]
     }
   }
 

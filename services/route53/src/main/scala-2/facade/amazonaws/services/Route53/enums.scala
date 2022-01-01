@@ -56,6 +56,7 @@ object CloudWatchRegion {
   val `ap-south-1` = "ap-south-1".asInstanceOf[CloudWatchRegion]
   val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[CloudWatchRegion]
   val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[CloudWatchRegion]
+  val `ap-southeast-3` = "ap-southeast-3".asInstanceOf[CloudWatchRegion]
   val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[CloudWatchRegion]
   val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[CloudWatchRegion]
   val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[CloudWatchRegion]
@@ -68,6 +69,7 @@ object CloudWatchRegion {
   val `us-gov-west-1` = "us-gov-west-1".asInstanceOf[CloudWatchRegion]
   val `us-gov-east-1` = "us-gov-east-1".asInstanceOf[CloudWatchRegion]
   val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[CloudWatchRegion]
+  val `us-iso-west-1` = "us-iso-west-1".asInstanceOf[CloudWatchRegion]
   val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[CloudWatchRegion]
 
   @inline def values: js.Array[CloudWatchRegion] = js.Array(
@@ -85,6 +87,7 @@ object CloudWatchRegion {
     `ap-south-1`,
     `ap-southeast-1`,
     `ap-southeast-2`,
+    `ap-southeast-3`,
     `ap-northeast-1`,
     `ap-northeast-2`,
     `ap-northeast-3`,
@@ -97,6 +100,7 @@ object CloudWatchRegion {
     `us-gov-west-1`,
     `us-gov-east-1`,
     `us-iso-east-1`,
+    `us-iso-west-1`,
     `us-isob-east-1`
   )
 }
@@ -137,8 +141,9 @@ object HealthCheckType {
   val TCP = "TCP".asInstanceOf[HealthCheckType]
   val CALCULATED = "CALCULATED".asInstanceOf[HealthCheckType]
   val CLOUDWATCH_METRIC = "CLOUDWATCH_METRIC".asInstanceOf[HealthCheckType]
+  val RECOVERY_CONTROL = "RECOVERY_CONTROL".asInstanceOf[HealthCheckType]
 
-  @inline def values: js.Array[HealthCheckType] = js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC)
+  @inline def values: js.Array[HealthCheckType] = js.Array(HTTP, HTTPS, HTTP_STR_MATCH, HTTPS_STR_MATCH, TCP, CALCULATED, CLOUDWATCH_METRIC, RECOVERY_CONTROL)
 }
 
 @js.native
@@ -214,6 +219,7 @@ object ResourceRecordSetRegion {
   val `eu-central-1` = "eu-central-1".asInstanceOf[ResourceRecordSetRegion]
   val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[ResourceRecordSetRegion]
   val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[ResourceRecordSetRegion]
+  val `ap-southeast-3` = "ap-southeast-3".asInstanceOf[ResourceRecordSetRegion]
   val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[ResourceRecordSetRegion]
   val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[ResourceRecordSetRegion]
   val `ap-northeast-3` = "ap-northeast-3".asInstanceOf[ResourceRecordSetRegion]
@@ -239,6 +245,7 @@ object ResourceRecordSetRegion {
     `eu-central-1`,
     `ap-southeast-1`,
     `ap-southeast-2`,
+    `ap-southeast-3`,
     `ap-northeast-1`,
     `ap-northeast-2`,
     `ap-northeast-3`,
@@ -299,9 +306,11 @@ object VPCRegion {
   val `us-gov-west-1` = "us-gov-west-1".asInstanceOf[VPCRegion]
   val `us-gov-east-1` = "us-gov-east-1".asInstanceOf[VPCRegion]
   val `us-iso-east-1` = "us-iso-east-1".asInstanceOf[VPCRegion]
+  val `us-iso-west-1` = "us-iso-west-1".asInstanceOf[VPCRegion]
   val `us-isob-east-1` = "us-isob-east-1".asInstanceOf[VPCRegion]
   val `ap-southeast-1` = "ap-southeast-1".asInstanceOf[VPCRegion]
   val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[VPCRegion]
+  val `ap-southeast-3` = "ap-southeast-3".asInstanceOf[VPCRegion]
   val `ap-south-1` = "ap-south-1".asInstanceOf[VPCRegion]
   val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[VPCRegion]
   val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[VPCRegion]
@@ -327,9 +336,11 @@ object VPCRegion {
     `us-gov-west-1`,
     `us-gov-east-1`,
     `us-iso-east-1`,
+    `us-iso-west-1`,
     `us-isob-east-1`,
     `ap-southeast-1`,
     `ap-southeast-2`,
+    `ap-southeast-3`,
     `ap-south-1`,
     `ap-northeast-1`,
     `ap-northeast-2`,

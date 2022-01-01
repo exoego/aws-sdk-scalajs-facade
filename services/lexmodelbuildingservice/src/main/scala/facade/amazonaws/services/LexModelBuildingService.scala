@@ -51,6 +51,14 @@ package object lexmodelbuildingservice {
   type MaxResults = Int
   type MessageList = js.Array[Message]
   type MessageVersion = String
+  type MigrationAlertDetail = String
+  type MigrationAlertDetails = js.Array[MigrationAlertDetail]
+  type MigrationAlertMessage = String
+  type MigrationAlertReferenceURL = String
+  type MigrationAlertReferenceURLs = js.Array[MigrationAlertReferenceURL]
+  type MigrationAlerts = js.Array[MigrationAlert]
+  type MigrationId = String
+  type MigrationSummaryList = js.Array[MigrationSummary]
   type Name = String
   type NextToken = String
   type NumericalVersion = String
@@ -82,6 +90,8 @@ package object lexmodelbuildingservice {
   type UserId = String
   type Utterance = String
   type UtteranceString = String
+  type V2BotId = String
+  type V2BotName = String
   type Value = String
   type Version = String
   type roleArn = String
@@ -115,6 +125,8 @@ package object lexmodelbuildingservice {
     @inline def getIntentFuture(params: GetIntentRequest): Future[GetIntentResponse] = service.getIntent(params).promise().toFuture
     @inline def getIntentVersionsFuture(params: GetIntentVersionsRequest): Future[GetIntentVersionsResponse] = service.getIntentVersions(params).promise().toFuture
     @inline def getIntentsFuture(params: GetIntentsRequest): Future[GetIntentsResponse] = service.getIntents(params).promise().toFuture
+    @inline def getMigrationFuture(params: GetMigrationRequest): Future[GetMigrationResponse] = service.getMigration(params).promise().toFuture
+    @inline def getMigrationsFuture(params: GetMigrationsRequest): Future[GetMigrationsResponse] = service.getMigrations(params).promise().toFuture
     @inline def getSlotTypeFuture(params: GetSlotTypeRequest): Future[GetSlotTypeResponse] = service.getSlotType(params).promise().toFuture
     @inline def getSlotTypeVersionsFuture(params: GetSlotTypeVersionsRequest): Future[GetSlotTypeVersionsResponse] = service.getSlotTypeVersions(params).promise().toFuture
     @inline def getSlotTypesFuture(params: GetSlotTypesRequest): Future[GetSlotTypesResponse] = service.getSlotTypes(params).promise().toFuture
@@ -125,6 +137,7 @@ package object lexmodelbuildingservice {
     @inline def putIntentFuture(params: PutIntentRequest): Future[PutIntentResponse] = service.putIntent(params).promise().toFuture
     @inline def putSlotTypeFuture(params: PutSlotTypeRequest): Future[PutSlotTypeResponse] = service.putSlotType(params).promise().toFuture
     @inline def startImportFuture(params: StartImportRequest): Future[StartImportResponse] = service.startImport(params).promise().toFuture
+    @inline def startMigrationFuture(params: StartMigrationRequest): Future[StartMigrationResponse] = service.startMigration(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
@@ -162,6 +175,8 @@ package object lexmodelbuildingservice {
     def getIntent(params: GetIntentRequest): Request[GetIntentResponse] = js.native
     def getIntentVersions(params: GetIntentVersionsRequest): Request[GetIntentVersionsResponse] = js.native
     def getIntents(params: GetIntentsRequest): Request[GetIntentsResponse] = js.native
+    def getMigration(params: GetMigrationRequest): Request[GetMigrationResponse] = js.native
+    def getMigrations(params: GetMigrationsRequest): Request[GetMigrationsResponse] = js.native
     def getSlotType(params: GetSlotTypeRequest): Request[GetSlotTypeResponse] = js.native
     def getSlotTypeVersions(params: GetSlotTypeVersionsRequest): Request[GetSlotTypeVersionsResponse] = js.native
     def getSlotTypes(params: GetSlotTypesRequest): Request[GetSlotTypesResponse] = js.native
@@ -172,6 +187,7 @@ package object lexmodelbuildingservice {
     def putIntent(params: PutIntentRequest): Request[PutIntentResponse] = js.native
     def putSlotType(params: PutSlotTypeRequest): Request[PutSlotTypeResponse] = js.native
     def startImport(params: StartImportRequest): Request[StartImportResponse] = js.native
+    def startMigration(params: StartMigrationRequest): Request[StartMigrationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
@@ -1695,6 +1711,116 @@ package object lexmodelbuildingservice {
   }
 
   @js.native
+  trait GetMigrationRequest extends js.Object {
+    var migrationId: MigrationId
+  }
+
+  object GetMigrationRequest {
+    @inline
+    def apply(
+        migrationId: MigrationId
+    ): GetMigrationRequest = {
+      val __obj = js.Dynamic.literal(
+        "migrationId" -> migrationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMigrationRequest]
+    }
+  }
+
+  @js.native
+  trait GetMigrationResponse extends js.Object {
+    var alerts: js.UndefOr[MigrationAlerts]
+    var migrationId: js.UndefOr[MigrationId]
+    var migrationStatus: js.UndefOr[MigrationStatus]
+    var migrationStrategy: js.UndefOr[MigrationStrategy]
+    var migrationTimestamp: js.UndefOr[Timestamp]
+    var v1BotLocale: js.UndefOr[Locale]
+    var v1BotName: js.UndefOr[BotName]
+    var v1BotVersion: js.UndefOr[Version]
+    var v2BotId: js.UndefOr[V2BotId]
+    var v2BotRole: js.UndefOr[IamRoleArn]
+  }
+
+  object GetMigrationResponse {
+    @inline
+    def apply(
+        alerts: js.UndefOr[MigrationAlerts] = js.undefined,
+        migrationId: js.UndefOr[MigrationId] = js.undefined,
+        migrationStatus: js.UndefOr[MigrationStatus] = js.undefined,
+        migrationStrategy: js.UndefOr[MigrationStrategy] = js.undefined,
+        migrationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        v1BotLocale: js.UndefOr[Locale] = js.undefined,
+        v1BotName: js.UndefOr[BotName] = js.undefined,
+        v1BotVersion: js.UndefOr[Version] = js.undefined,
+        v2BotId: js.UndefOr[V2BotId] = js.undefined,
+        v2BotRole: js.UndefOr[IamRoleArn] = js.undefined
+    ): GetMigrationResponse = {
+      val __obj = js.Dynamic.literal()
+      alerts.foreach(__v => __obj.updateDynamic("alerts")(__v.asInstanceOf[js.Any]))
+      migrationId.foreach(__v => __obj.updateDynamic("migrationId")(__v.asInstanceOf[js.Any]))
+      migrationStatus.foreach(__v => __obj.updateDynamic("migrationStatus")(__v.asInstanceOf[js.Any]))
+      migrationStrategy.foreach(__v => __obj.updateDynamic("migrationStrategy")(__v.asInstanceOf[js.Any]))
+      migrationTimestamp.foreach(__v => __obj.updateDynamic("migrationTimestamp")(__v.asInstanceOf[js.Any]))
+      v1BotLocale.foreach(__v => __obj.updateDynamic("v1BotLocale")(__v.asInstanceOf[js.Any]))
+      v1BotName.foreach(__v => __obj.updateDynamic("v1BotName")(__v.asInstanceOf[js.Any]))
+      v1BotVersion.foreach(__v => __obj.updateDynamic("v1BotVersion")(__v.asInstanceOf[js.Any]))
+      v2BotId.foreach(__v => __obj.updateDynamic("v2BotId")(__v.asInstanceOf[js.Any]))
+      v2BotRole.foreach(__v => __obj.updateDynamic("v2BotRole")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMigrationResponse]
+    }
+  }
+
+  @js.native
+  trait GetMigrationsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var migrationStatusEquals: js.UndefOr[MigrationStatus]
+    var nextToken: js.UndefOr[NextToken]
+    var sortByAttribute: js.UndefOr[MigrationSortAttribute]
+    var sortByOrder: js.UndefOr[SortOrder]
+    var v1BotNameContains: js.UndefOr[BotName]
+  }
+
+  object GetMigrationsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        migrationStatusEquals: js.UndefOr[MigrationStatus] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        sortByAttribute: js.UndefOr[MigrationSortAttribute] = js.undefined,
+        sortByOrder: js.UndefOr[SortOrder] = js.undefined,
+        v1BotNameContains: js.UndefOr[BotName] = js.undefined
+    ): GetMigrationsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      migrationStatusEquals.foreach(__v => __obj.updateDynamic("migrationStatusEquals")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      sortByAttribute.foreach(__v => __obj.updateDynamic("sortByAttribute")(__v.asInstanceOf[js.Any]))
+      sortByOrder.foreach(__v => __obj.updateDynamic("sortByOrder")(__v.asInstanceOf[js.Any]))
+      v1BotNameContains.foreach(__v => __obj.updateDynamic("v1BotNameContains")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMigrationsRequest]
+    }
+  }
+
+  @js.native
+  trait GetMigrationsResponse extends js.Object {
+    var migrationSummaries: js.UndefOr[MigrationSummaryList]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object GetMigrationsResponse {
+    @inline
+    def apply(
+        migrationSummaries: js.UndefOr[MigrationSummaryList] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetMigrationsResponse = {
+      val __obj = js.Dynamic.literal()
+      migrationSummaries.foreach(__v => __obj.updateDynamic("migrationSummaries")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMigrationsResponse]
+    }
+  }
+
+  @js.native
   trait GetSlotTypeRequest extends js.Object {
     var name: SlotTypeName
     var version: Version
@@ -2095,6 +2221,75 @@ package object lexmodelbuildingservice {
 
       groupNumber.foreach(__v => __obj.updateDynamic("groupNumber")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Message]
+    }
+  }
+
+  /** Provides information about alerts and warnings that Amazon Lex sends during a migration. The alerts include information about how to resolve the issue.
+    */
+  @js.native
+  trait MigrationAlert extends js.Object {
+    var details: js.UndefOr[MigrationAlertDetails]
+    var message: js.UndefOr[MigrationAlertMessage]
+    var referenceURLs: js.UndefOr[MigrationAlertReferenceURLs]
+    var `type`: js.UndefOr[MigrationAlertType]
+  }
+
+  object MigrationAlert {
+    @inline
+    def apply(
+        details: js.UndefOr[MigrationAlertDetails] = js.undefined,
+        message: js.UndefOr[MigrationAlertMessage] = js.undefined,
+        referenceURLs: js.UndefOr[MigrationAlertReferenceURLs] = js.undefined,
+        `type`: js.UndefOr[MigrationAlertType] = js.undefined
+    ): MigrationAlert = {
+      val __obj = js.Dynamic.literal()
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      referenceURLs.foreach(__v => __obj.updateDynamic("referenceURLs")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MigrationAlert]
+    }
+  }
+
+  /** Provides information about migrating a bot from Amazon Lex V1 to Amazon Lex V2.
+    */
+  @js.native
+  trait MigrationSummary extends js.Object {
+    var migrationId: js.UndefOr[MigrationId]
+    var migrationStatus: js.UndefOr[MigrationStatus]
+    var migrationStrategy: js.UndefOr[MigrationStrategy]
+    var migrationTimestamp: js.UndefOr[Timestamp]
+    var v1BotLocale: js.UndefOr[Locale]
+    var v1BotName: js.UndefOr[BotName]
+    var v1BotVersion: js.UndefOr[Version]
+    var v2BotId: js.UndefOr[V2BotId]
+    var v2BotRole: js.UndefOr[IamRoleArn]
+  }
+
+  object MigrationSummary {
+    @inline
+    def apply(
+        migrationId: js.UndefOr[MigrationId] = js.undefined,
+        migrationStatus: js.UndefOr[MigrationStatus] = js.undefined,
+        migrationStrategy: js.UndefOr[MigrationStrategy] = js.undefined,
+        migrationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        v1BotLocale: js.UndefOr[Locale] = js.undefined,
+        v1BotName: js.UndefOr[BotName] = js.undefined,
+        v1BotVersion: js.UndefOr[Version] = js.undefined,
+        v2BotId: js.UndefOr[V2BotId] = js.undefined,
+        v2BotRole: js.UndefOr[IamRoleArn] = js.undefined
+    ): MigrationSummary = {
+      val __obj = js.Dynamic.literal()
+      migrationId.foreach(__v => __obj.updateDynamic("migrationId")(__v.asInstanceOf[js.Any]))
+      migrationStatus.foreach(__v => __obj.updateDynamic("migrationStatus")(__v.asInstanceOf[js.Any]))
+      migrationStrategy.foreach(__v => __obj.updateDynamic("migrationStrategy")(__v.asInstanceOf[js.Any]))
+      migrationTimestamp.foreach(__v => __obj.updateDynamic("migrationTimestamp")(__v.asInstanceOf[js.Any]))
+      v1BotLocale.foreach(__v => __obj.updateDynamic("v1BotLocale")(__v.asInstanceOf[js.Any]))
+      v1BotName.foreach(__v => __obj.updateDynamic("v1BotName")(__v.asInstanceOf[js.Any]))
+      v1BotVersion.foreach(__v => __obj.updateDynamic("v1BotVersion")(__v.asInstanceOf[js.Any]))
+      v2BotId.foreach(__v => __obj.updateDynamic("v2BotId")(__v.asInstanceOf[js.Any]))
+      v2BotRole.foreach(__v => __obj.updateDynamic("v2BotRole")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MigrationSummary]
     }
   }
 
@@ -2792,6 +2987,72 @@ package object lexmodelbuildingservice {
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartImportResponse]
+    }
+  }
+
+  @js.native
+  trait StartMigrationRequest extends js.Object {
+    var migrationStrategy: MigrationStrategy
+    var v1BotName: BotName
+    var v1BotVersion: Version
+    var v2BotName: V2BotName
+    var v2BotRole: IamRoleArn
+  }
+
+  object StartMigrationRequest {
+    @inline
+    def apply(
+        migrationStrategy: MigrationStrategy,
+        v1BotName: BotName,
+        v1BotVersion: Version,
+        v2BotName: V2BotName,
+        v2BotRole: IamRoleArn
+    ): StartMigrationRequest = {
+      val __obj = js.Dynamic.literal(
+        "migrationStrategy" -> migrationStrategy.asInstanceOf[js.Any],
+        "v1BotName" -> v1BotName.asInstanceOf[js.Any],
+        "v1BotVersion" -> v1BotVersion.asInstanceOf[js.Any],
+        "v2BotName" -> v2BotName.asInstanceOf[js.Any],
+        "v2BotRole" -> v2BotRole.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartMigrationRequest]
+    }
+  }
+
+  @js.native
+  trait StartMigrationResponse extends js.Object {
+    var migrationId: js.UndefOr[MigrationId]
+    var migrationStrategy: js.UndefOr[MigrationStrategy]
+    var migrationTimestamp: js.UndefOr[Timestamp]
+    var v1BotLocale: js.UndefOr[Locale]
+    var v1BotName: js.UndefOr[BotName]
+    var v1BotVersion: js.UndefOr[Version]
+    var v2BotId: js.UndefOr[V2BotId]
+    var v2BotRole: js.UndefOr[IamRoleArn]
+  }
+
+  object StartMigrationResponse {
+    @inline
+    def apply(
+        migrationId: js.UndefOr[MigrationId] = js.undefined,
+        migrationStrategy: js.UndefOr[MigrationStrategy] = js.undefined,
+        migrationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        v1BotLocale: js.UndefOr[Locale] = js.undefined,
+        v1BotName: js.UndefOr[BotName] = js.undefined,
+        v1BotVersion: js.UndefOr[Version] = js.undefined,
+        v2BotId: js.UndefOr[V2BotId] = js.undefined,
+        v2BotRole: js.UndefOr[IamRoleArn] = js.undefined
+    ): StartMigrationResponse = {
+      val __obj = js.Dynamic.literal()
+      migrationId.foreach(__v => __obj.updateDynamic("migrationId")(__v.asInstanceOf[js.Any]))
+      migrationStrategy.foreach(__v => __obj.updateDynamic("migrationStrategy")(__v.asInstanceOf[js.Any]))
+      migrationTimestamp.foreach(__v => __obj.updateDynamic("migrationTimestamp")(__v.asInstanceOf[js.Any]))
+      v1BotLocale.foreach(__v => __obj.updateDynamic("v1BotLocale")(__v.asInstanceOf[js.Any]))
+      v1BotName.foreach(__v => __obj.updateDynamic("v1BotName")(__v.asInstanceOf[js.Any]))
+      v1BotVersion.foreach(__v => __obj.updateDynamic("v1BotVersion")(__v.asInstanceOf[js.Any]))
+      v2BotId.foreach(__v => __obj.updateDynamic("v2BotId")(__v.asInstanceOf[js.Any]))
+      v2BotRole.foreach(__v => __obj.updateDynamic("v2BotRole")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartMigrationResponse]
     }
   }
 

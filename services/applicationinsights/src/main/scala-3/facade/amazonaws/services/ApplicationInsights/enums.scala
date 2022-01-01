@@ -31,6 +31,14 @@ object ConfigurationEventStatus {
   inline def values: js.Array[ConfigurationEventStatus] = js.Array(INFO, WARN, ERROR)
 }
 
+type DiscoveryType = "RESOURCE_GROUP_BASED" | "ACCOUNT_BASED"
+object DiscoveryType {
+  inline val RESOURCE_GROUP_BASED: "RESOURCE_GROUP_BASED" = "RESOURCE_GROUP_BASED"
+  inline val ACCOUNT_BASED: "ACCOUNT_BASED" = "ACCOUNT_BASED"
+
+  inline def values: js.Array[DiscoveryType] = js.Array(RESOURCE_GROUP_BASED, ACCOUNT_BASED)
+}
+
 type FeedbackKey = "INSIGHTS_FEEDBACK"
 object FeedbackKey {
   inline val INSIGHTS_FEEDBACK: "INSIGHTS_FEEDBACK" = "INSIGHTS_FEEDBACK"
@@ -73,16 +81,17 @@ object SeverityLevel {
   inline def values: js.Array[SeverityLevel] = js.Array(Low, Medium, High)
 }
 
-type Status = "IGNORE" | "RESOLVED" | "PENDING"
+type Status = "IGNORE" | "RESOLVED" | "PENDING" | "RECURRING"
 object Status {
   inline val IGNORE: "IGNORE" = "IGNORE"
   inline val RESOLVED: "RESOLVED" = "RESOLVED"
   inline val PENDING: "PENDING" = "PENDING"
+  inline val RECURRING: "RECURRING" = "RECURRING"
 
-  inline def values: js.Array[Status] = js.Array(IGNORE, RESOLVED, PENDING)
+  inline def values: js.Array[Status] = js.Array(IGNORE, RESOLVED, PENDING, RECURRING)
 }
 
-type Tier = "CUSTOM" | "DEFAULT" | "DOT_NET_CORE" | "DOT_NET_WORKER" | "DOT_NET_WEB_TIER" | "DOT_NET_WEB" | "SQL_SERVER" | "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" | "MYSQL" | "POSTGRESQL" | "JAVA_JMX" | "ORACLE"
+type Tier = "CUSTOM" | "DEFAULT" | "DOT_NET_CORE" | "DOT_NET_WORKER" | "DOT_NET_WEB_TIER" | "DOT_NET_WEB" | "SQL_SERVER" | "SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP" | "MYSQL" | "POSTGRESQL" | "JAVA_JMX" | "ORACLE" | "SAP_HANA_MULTI_NODE" | "SAP_HANA_SINGLE_NODE" | "SAP_HANA_HIGH_AVAILABILITY" | "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"
 object Tier {
   inline val CUSTOM: "CUSTOM" = "CUSTOM"
   inline val DEFAULT: "DEFAULT" = "DEFAULT"
@@ -96,6 +105,10 @@ object Tier {
   inline val POSTGRESQL: "POSTGRESQL" = "POSTGRESQL"
   inline val JAVA_JMX: "JAVA_JMX" = "JAVA_JMX"
   inline val ORACLE: "ORACLE" = "ORACLE"
+  inline val SAP_HANA_MULTI_NODE: "SAP_HANA_MULTI_NODE" = "SAP_HANA_MULTI_NODE"
+  inline val SAP_HANA_SINGLE_NODE: "SAP_HANA_SINGLE_NODE" = "SAP_HANA_SINGLE_NODE"
+  inline val SAP_HANA_HIGH_AVAILABILITY: "SAP_HANA_HIGH_AVAILABILITY" = "SAP_HANA_HIGH_AVAILABILITY"
+  inline val SQL_SERVER_FAILOVER_CLUSTER_INSTANCE: "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE" = "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE"
 
   inline def values: js.Array[Tier] = js.Array(
     CUSTOM,
@@ -109,6 +122,10 @@ object Tier {
     MYSQL,
     POSTGRESQL,
     JAVA_JMX,
-    ORACLE
+    ORACLE,
+    SAP_HANA_MULTI_NODE,
+    SAP_HANA_SINGLE_NODE,
+    SAP_HANA_HIGH_AVAILABILITY,
+    SQL_SERVER_FAILOVER_CLUSTER_INSTANCE
   )
 }

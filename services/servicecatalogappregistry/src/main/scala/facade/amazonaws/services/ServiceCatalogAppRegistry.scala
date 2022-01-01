@@ -45,6 +45,7 @@ package object servicecatalogappregistry {
     @inline def disassociateAttributeGroupFuture(params: DisassociateAttributeGroupRequest): Future[DisassociateAttributeGroupResponse] = service.disassociateAttributeGroup(params).promise().toFuture
     @inline def disassociateResourceFuture(params: DisassociateResourceRequest): Future[DisassociateResourceResponse] = service.disassociateResource(params).promise().toFuture
     @inline def getApplicationFuture(params: GetApplicationRequest): Future[GetApplicationResponse] = service.getApplication(params).promise().toFuture
+    @inline def getAssociatedResourceFuture(params: GetAssociatedResourceRequest): Future[GetAssociatedResourceResponse] = service.getAssociatedResource(params).promise().toFuture
     @inline def getAttributeGroupFuture(params: GetAttributeGroupRequest): Future[GetAttributeGroupResponse] = service.getAttributeGroup(params).promise().toFuture
     @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] = service.listApplications(params).promise().toFuture
     @inline def listAssociatedAttributeGroupsFuture(params: ListAssociatedAttributeGroupsRequest): Future[ListAssociatedAttributeGroupsResponse] = service.listAssociatedAttributeGroups(params).promise().toFuture
@@ -73,6 +74,7 @@ package object servicecatalogappregistry {
     def disassociateAttributeGroup(params: DisassociateAttributeGroupRequest): Request[DisassociateAttributeGroupResponse] = js.native
     def disassociateResource(params: DisassociateResourceRequest): Request[DisassociateResourceResponse] = js.native
     def getApplication(params: GetApplicationRequest): Request[GetApplicationResponse] = js.native
+    def getAssociatedResource(params: GetAssociatedResourceRequest): Request[GetAssociatedResourceResponse] = js.native
     def getAttributeGroup(params: GetAttributeGroupRequest): Request[GetAttributeGroupResponse] = js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
     def listAssociatedAttributeGroups(params: ListAssociatedAttributeGroupsRequest): Request[ListAssociatedAttributeGroupsResponse] = js.native
@@ -91,7 +93,7 @@ package object servicecatalogappregistry {
     }
   }
 
-  /** Represents a Service Catalog AppRegistry application that is the top-level node in a hierarchy of related cloud resource abstractions.
+  /** Represents a Amazon Web Services Service Catalog AppRegistry application that is the top-level node in a hierarchy of related cloud resource abstractions.
     */
   @js.native
   trait Application extends js.Object {
@@ -127,7 +129,7 @@ package object servicecatalogappregistry {
     }
   }
 
-  /** Summary of a Service Catalog AppRegistry application.
+  /** Summary of a Amazon Web Services Service Catalog AppRegistry application.
     */
   @js.native
   trait ApplicationSummary extends js.Object {
@@ -241,7 +243,7 @@ package object servicecatalogappregistry {
     }
   }
 
-  /** Represents a Service Catalog AppRegistry attribute group that is rich metadata which describes an application and its components.
+  /** Represents a Amazon Web Services Service Catalog AppRegistry attribute group that is rich metadata which describes an application and its components.
     */
   @js.native
   trait AttributeGroup extends js.Object {
@@ -277,7 +279,7 @@ package object servicecatalogappregistry {
     }
   }
 
-  /** Summary of a Service Catalog AppRegistry attribute group.
+  /** Summary of a Amazon Web Services Service Catalog AppRegistry attribute group.
     */
   @js.native
   trait AttributeGroupSummary extends js.Object {
@@ -570,6 +572,7 @@ package object servicecatalogappregistry {
     var creationTime: js.UndefOr[Timestamp]
     var description: js.UndefOr[Description]
     var id: js.UndefOr[ApplicationId]
+    var integrations: js.UndefOr[Integrations]
     var lastUpdateTime: js.UndefOr[Timestamp]
     var name: js.UndefOr[Name]
     var tags: js.UndefOr[Tags]
@@ -583,6 +586,7 @@ package object servicecatalogappregistry {
         creationTime: js.UndefOr[Timestamp] = js.undefined,
         description: js.UndefOr[Description] = js.undefined,
         id: js.UndefOr[ApplicationId] = js.undefined,
+        integrations: js.UndefOr[Integrations] = js.undefined,
         lastUpdateTime: js.UndefOr[Timestamp] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined
@@ -593,10 +597,50 @@ package object servicecatalogappregistry {
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
+      integrations.foreach(__v => __obj.updateDynamic("integrations")(__v.asInstanceOf[js.Any]))
       lastUpdateTime.foreach(__v => __obj.updateDynamic("lastUpdateTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetApplicationResponse]
+    }
+  }
+
+  @js.native
+  trait GetAssociatedResourceRequest extends js.Object {
+    var application: ApplicationSpecifier
+    var resource: ResourceSpecifier
+    var resourceType: ResourceType
+  }
+
+  object GetAssociatedResourceRequest {
+    @inline
+    def apply(
+        application: ApplicationSpecifier,
+        resource: ResourceSpecifier,
+        resourceType: ResourceType
+    ): GetAssociatedResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "application" -> application.asInstanceOf[js.Any],
+        "resource" -> resource.asInstanceOf[js.Any],
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAssociatedResourceRequest]
+    }
+  }
+
+  @js.native
+  trait GetAssociatedResourceResponse extends js.Object {
+    var resource: js.UndefOr[Resource]
+  }
+
+  object GetAssociatedResourceResponse {
+    @inline
+    def apply(
+        resource: js.UndefOr[Resource] = js.undefined
+    ): GetAssociatedResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      resource.foreach(__v => __obj.updateDynamic("resource")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAssociatedResourceResponse]
     }
   }
 
@@ -651,6 +695,24 @@ package object servicecatalogappregistry {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAttributeGroupResponse]
+    }
+  }
+
+  /** The information about the service integration.
+    */
+  @js.native
+  trait Integrations extends js.Object {
+    var resourceGroup: js.UndefOr[ResourceGroup]
+  }
+
+  object Integrations {
+    @inline
+    def apply(
+        resourceGroup: js.UndefOr[ResourceGroup] = js.undefined
+    ): Integrations = {
+      val __obj = js.Dynamic.literal()
+      resourceGroup.foreach(__v => __obj.updateDynamic("resourceGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Integrations]
     }
   }
 
@@ -849,7 +911,58 @@ package object servicecatalogappregistry {
     }
   }
 
-  /** Information about the resource.
+  /** The information about the resource.
+    */
+  @js.native
+  trait Resource extends js.Object {
+    var arn: js.UndefOr[StackArn]
+    var associationTime: js.UndefOr[Timestamp]
+    var integrations: js.UndefOr[ResourceIntegrations]
+    var name: js.UndefOr[ResourceSpecifier]
+  }
+
+  object Resource {
+    @inline
+    def apply(
+        arn: js.UndefOr[StackArn] = js.undefined,
+        associationTime: js.UndefOr[Timestamp] = js.undefined,
+        integrations: js.UndefOr[ResourceIntegrations] = js.undefined,
+        name: js.UndefOr[ResourceSpecifier] = js.undefined
+    ): Resource = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      associationTime.foreach(__v => __obj.updateDynamic("associationTime")(__v.asInstanceOf[js.Any]))
+      integrations.foreach(__v => __obj.updateDynamic("integrations")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Resource]
+    }
+  }
+
+  /** The information about the resource group integration.
+    */
+  @js.native
+  trait ResourceGroup extends js.Object {
+    var arn: js.UndefOr[Arn]
+    var errorMessage: js.UndefOr[String]
+    var state: js.UndefOr[ResourceGroupState]
+  }
+
+  object ResourceGroup {
+    @inline
+    def apply(
+        arn: js.UndefOr[Arn] = js.undefined,
+        errorMessage: js.UndefOr[String] = js.undefined,
+        state: js.UndefOr[ResourceGroupState] = js.undefined
+    ): ResourceGroup = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      errorMessage.foreach(__v => __obj.updateDynamic("errorMessage")(__v.asInstanceOf[js.Any]))
+      state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceGroup]
+    }
+  }
+
+  /** The information about the resource.
     */
   @js.native
   trait ResourceInfo extends js.Object {
@@ -867,6 +980,24 @@ package object servicecatalogappregistry {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceInfo]
+    }
+  }
+
+  /** The service integration information about the resource.
+    */
+  @js.native
+  trait ResourceIntegrations extends js.Object {
+    var resourceGroup: js.UndefOr[ResourceGroup]
+  }
+
+  object ResourceIntegrations {
+    @inline
+    def apply(
+        resourceGroup: js.UndefOr[ResourceGroup] = js.undefined
+    ): ResourceIntegrations = {
+      val __obj = js.Dynamic.literal()
+      resourceGroup.foreach(__v => __obj.updateDynamic("resourceGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceIntegrations]
     }
   }
 

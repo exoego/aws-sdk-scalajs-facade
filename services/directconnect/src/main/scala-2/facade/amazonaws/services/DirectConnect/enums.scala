@@ -158,6 +158,16 @@ object LoaContentType {
 }
 
 @js.native
+sealed trait NniPartnerType extends js.Any
+object NniPartnerType {
+  val v1 = "v1".asInstanceOf[NniPartnerType]
+  val v2 = "v2".asInstanceOf[NniPartnerType]
+  val nonPartner = "nonPartner".asInstanceOf[NniPartnerType]
+
+  @inline def values: js.Array[NniPartnerType] = js.Array(v1, v2, nonPartner)
+}
+
+@js.native
 sealed trait VirtualInterfaceState extends js.Any
 object VirtualInterfaceState {
   val confirming = "confirming".asInstanceOf[VirtualInterfaceState]

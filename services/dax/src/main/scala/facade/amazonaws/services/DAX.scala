@@ -97,6 +97,7 @@ package object dax {
     var ActiveNodes: js.UndefOr[IntegerOptional]
     var ClusterArn: js.UndefOr[String]
     var ClusterDiscoveryEndpoint: js.UndefOr[Endpoint]
+    var ClusterEndpointEncryptionType: js.UndefOr[ClusterEndpointEncryptionType]
     var ClusterName: js.UndefOr[String]
     var Description: js.UndefOr[String]
     var IamRoleArn: js.UndefOr[String]
@@ -119,6 +120,7 @@ package object dax {
         ActiveNodes: js.UndefOr[IntegerOptional] = js.undefined,
         ClusterArn: js.UndefOr[String] = js.undefined,
         ClusterDiscoveryEndpoint: js.UndefOr[Endpoint] = js.undefined,
+        ClusterEndpointEncryptionType: js.UndefOr[ClusterEndpointEncryptionType] = js.undefined,
         ClusterName: js.UndefOr[String] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         IamRoleArn: js.UndefOr[String] = js.undefined,
@@ -138,6 +140,7 @@ package object dax {
       ActiveNodes.foreach(__v => __obj.updateDynamic("ActiveNodes")(__v.asInstanceOf[js.Any]))
       ClusterArn.foreach(__v => __obj.updateDynamic("ClusterArn")(__v.asInstanceOf[js.Any]))
       ClusterDiscoveryEndpoint.foreach(__v => __obj.updateDynamic("ClusterDiscoveryEndpoint")(__v.asInstanceOf[js.Any]))
+      ClusterEndpointEncryptionType.foreach(__v => __obj.updateDynamic("ClusterEndpointEncryptionType")(__v.asInstanceOf[js.Any]))
       ClusterName.foreach(__v => __obj.updateDynamic("ClusterName")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       IamRoleArn.foreach(__v => __obj.updateDynamic("IamRoleArn")(__v.asInstanceOf[js.Any]))
@@ -163,6 +166,7 @@ package object dax {
     var NodeType: String
     var ReplicationFactor: Int
     var AvailabilityZones: js.UndefOr[AvailabilityZoneList]
+    var ClusterEndpointEncryptionType: js.UndefOr[ClusterEndpointEncryptionType]
     var Description: js.UndefOr[String]
     var NotificationTopicArn: js.UndefOr[String]
     var ParameterGroupName: js.UndefOr[String]
@@ -181,6 +185,7 @@ package object dax {
         NodeType: String,
         ReplicationFactor: Int,
         AvailabilityZones: js.UndefOr[AvailabilityZoneList] = js.undefined,
+        ClusterEndpointEncryptionType: js.UndefOr[ClusterEndpointEncryptionType] = js.undefined,
         Description: js.UndefOr[String] = js.undefined,
         NotificationTopicArn: js.UndefOr[String] = js.undefined,
         ParameterGroupName: js.UndefOr[String] = js.undefined,
@@ -198,6 +203,7 @@ package object dax {
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      ClusterEndpointEncryptionType.foreach(__v => __obj.updateDynamic("ClusterEndpointEncryptionType")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       NotificationTopicArn.foreach(__v => __obj.updateDynamic("NotificationTopicArn")(__v.asInstanceOf[js.Any]))
       ParameterGroupName.foreach(__v => __obj.updateDynamic("ParameterGroupName")(__v.asInstanceOf[js.Any]))
@@ -705,23 +711,26 @@ package object dax {
     }
   }
 
-  /** Represents the information required for client programs to connect to the configuration endpoint for a DAX cluster, or to an individual node within the cluster.
+  /** Represents the information required for client programs to connect to the endpoint for a DAX cluster.
     */
   @js.native
   trait Endpoint extends js.Object {
     var Address: js.UndefOr[String]
     var Port: js.UndefOr[Int]
+    var URL: js.UndefOr[String]
   }
 
   object Endpoint {
     @inline
     def apply(
         Address: js.UndefOr[String] = js.undefined,
-        Port: js.UndefOr[Int] = js.undefined
+        Port: js.UndefOr[Int] = js.undefined,
+        URL: js.UndefOr[String] = js.undefined
     ): Endpoint = {
       val __obj = js.Dynamic.literal()
       Address.foreach(__v => __obj.updateDynamic("Address")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
+      URL.foreach(__v => __obj.updateDynamic("URL")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Endpoint]
     }
   }

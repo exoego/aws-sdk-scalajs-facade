@@ -2,6 +2,38 @@ package facade.amazonaws.services.ec2
 
 import scalajs.js
 
+type AcceleratorManufacturer = "nvidia" | "amd" | "amazon-web-services" | "xilinx"
+object AcceleratorManufacturer {
+  inline val nvidia: "nvidia" = "nvidia"
+  inline val amd: "amd" = "amd"
+  inline val `amazon-web-services`: "amazon-web-services" = "amazon-web-services"
+  inline val xilinx: "xilinx" = "xilinx"
+
+  inline def values: js.Array[AcceleratorManufacturer] = js.Array(nvidia, amd, `amazon-web-services`, xilinx)
+}
+
+type AcceleratorName = "a100" | "v100" | "k80" | "t4" | "m60" | "radeon-pro-v520" | "vu9p"
+object AcceleratorName {
+  inline val a100: "a100" = "a100"
+  inline val v100: "v100" = "v100"
+  inline val k80: "k80" = "k80"
+  inline val t4: "t4" = "t4"
+  inline val m60: "m60" = "m60"
+  inline val `radeon-pro-v520`: "radeon-pro-v520" = "radeon-pro-v520"
+  inline val vu9p: "vu9p" = "vu9p"
+
+  inline def values: js.Array[AcceleratorName] = js.Array(a100, v100, k80, t4, m60, `radeon-pro-v520`, vu9p)
+}
+
+type AcceleratorType = "gpu" | "fpga" | "inference"
+object AcceleratorType {
+  inline val gpu: "gpu" = "gpu"
+  inline val fpga: "fpga" = "fpga"
+  inline val inference: "inference" = "inference"
+
+  inline def values: js.Array[AcceleratorType] = js.Array(gpu, fpga, inference)
+}
+
 type AccountAttributeName = "supported-platforms" | "default-vpc"
 object AccountAttributeName {
   inline val `supported-platforms`: "supported-platforms" = "supported-platforms"
@@ -25,6 +57,14 @@ object AddressAttributeName {
   inline val `domain-name`: "domain-name" = "domain-name"
 
   inline def values: js.Array[AddressAttributeName] = js.Array(`domain-name`)
+}
+
+type AddressFamily = "ipv4" | "ipv6"
+object AddressFamily {
+  inline val ipv4: "ipv4" = "ipv4"
+  inline val ipv6: "ipv6" = "ipv6"
+
+  inline def values: js.Array[AddressFamily] = js.Array(ipv4, ipv6)
 }
 
 type Affinity = "default" | "host"
@@ -82,22 +122,24 @@ object ApplianceModeSupportValue {
   inline def values: js.Array[ApplianceModeSupportValue] = js.Array(enable, disable)
 }
 
-type ArchitectureType = "i386" | "x86_64" | "arm64"
+type ArchitectureType = "i386" | "x86_64" | "arm64" | "x86_64_mac"
 object ArchitectureType {
   inline val i386: "i386" = "i386"
   inline val x86_64: "x86_64" = "x86_64"
   inline val arm64: "arm64" = "arm64"
+  inline val x86_64_mac: "x86_64_mac" = "x86_64_mac"
 
-  inline def values: js.Array[ArchitectureType] = js.Array(i386, x86_64, arm64)
+  inline def values: js.Array[ArchitectureType] = js.Array(i386, x86_64, arm64, x86_64_mac)
 }
 
-type ArchitectureValues = "i386" | "x86_64" | "arm64"
+type ArchitectureValues = "i386" | "x86_64" | "arm64" | "x86_64_mac"
 object ArchitectureValues {
   inline val i386: "i386" = "i386"
   inline val x86_64: "x86_64" = "x86_64"
   inline val arm64: "arm64" = "arm64"
+  inline val x86_64_mac: "x86_64_mac" = "x86_64_mac"
 
-  inline def values: js.Array[ArchitectureValues] = js.Array(i386, x86_64, arm64)
+  inline def values: js.Array[ArchitectureValues] = js.Array(i386, x86_64, arm64, x86_64_mac)
 }
 
 type AssociatedNetworkType = "vpc"
@@ -171,6 +213,15 @@ object AvailabilityZoneState {
   inline def values: js.Array[AvailabilityZoneState] = js.Array(available, information, impaired, unavailable)
 }
 
+type BareMetal = "included" | "required" | "excluded"
+object BareMetal {
+  inline val included: "included" = "included"
+  inline val required: "required" = "required"
+  inline val excluded: "excluded" = "excluded"
+
+  inline def values: js.Array[BareMetal] = js.Array(included, required, excluded)
+}
+
 type BatchState = "submitted" | "active" | "cancelled" | "failed" | "cancelled_running" | "cancelled_terminating" | "modifying"
 object BatchState {
   inline val submitted: "submitted" = "submitted"
@@ -221,6 +272,15 @@ object BundleTaskState {
   inline def values: js.Array[BundleTaskState] = js.Array(pending, `waiting-for-shutdown`, bundling, storing, cancelling, complete, failed)
 }
 
+type BurstablePerformance = "included" | "required" | "excluded"
+object BurstablePerformance {
+  inline val included: "included" = "included"
+  inline val required: "required" = "required"
+  inline val excluded: "excluded" = "excluded"
+
+  inline def values: js.Array[BurstablePerformance] = js.Array(included, required, excluded)
+}
+
 type ByoipCidrState = "advertised" | "deprovisioned" | "failed-deprovision" | "failed-provision" | "pending-deprovision" | "pending-provision" | "provisioned" | "provisioned-not-publicly-advertisable"
 object ByoipCidrState {
   inline val advertised: "advertised" = "advertised"
@@ -263,6 +323,21 @@ object CancelSpotInstanceRequestState {
   inline val completed: "completed" = "completed"
 
   inline def values: js.Array[CancelSpotInstanceRequestState] = js.Array(active, open, closed, cancelled, completed)
+}
+
+type CapacityReservationFleetState = "submitted" | "modifying" | "active" | "partially_fulfilled" | "expiring" | "expired" | "cancelling" | "cancelled" | "failed"
+object CapacityReservationFleetState {
+  inline val submitted: "submitted" = "submitted"
+  inline val modifying: "modifying" = "modifying"
+  inline val active: "active" = "active"
+  inline val partially_fulfilled: "partially_fulfilled" = "partially_fulfilled"
+  inline val expiring: "expiring" = "expiring"
+  inline val expired: "expired" = "expired"
+  inline val cancelling: "cancelling" = "cancelling"
+  inline val cancelled: "cancelled" = "cancelled"
+  inline val failed: "failed" = "failed"
+
+  inline def values: js.Array[CapacityReservationFleetState] = js.Array(submitted, modifying, active, partially_fulfilled, expiring, expired, cancelling, cancelled, failed)
 }
 
 type CapacityReservationInstancePlatform = "Linux/UNIX" | "Red Hat Enterprise Linux" | "SUSE Linux" | "Windows" | "Windows with SQL Server" | "Windows with SQL Server Enterprise" | "Windows with SQL Server Standard" | "Windows with SQL Server Web" | "Linux with SQL Server Standard" | "Linux with SQL Server Web" | "Linux with SQL Server Enterprise"
@@ -411,6 +486,14 @@ object ConnectionNotificationType {
   inline def values: js.Array[ConnectionNotificationType] = js.Array(Topic)
 }
 
+type ConnectivityType = "private" | "public"
+object ConnectivityType {
+  inline val `private`: "private" = "private"
+  inline val `public`: "public" = "public"
+
+  inline def values: js.Array[ConnectivityType] = js.Array(`private`, `public`)
+}
+
 type ContainerFormat = "ova"
 object ContainerFormat {
   inline val ova: "ova" = "ova"
@@ -433,6 +516,15 @@ object CopyTagsFromSource {
   inline val volume: "volume" = "volume"
 
   inline def values: js.Array[CopyTagsFromSource] = js.Array(volume)
+}
+
+type CpuManufacturer = "intel" | "amd" | "amazon-web-services"
+object CpuManufacturer {
+  inline val intel: "intel" = "intel"
+  inline val amd: "amd" = "amd"
+  inline val `amazon-web-services`: "amazon-web-services" = "amazon-web-services"
+
+  inline def values: js.Array[CpuManufacturer] = js.Array(intel, amd, `amazon-web-services`)
 }
 
 type CurrencyCodeValues = "USD"
@@ -491,6 +583,14 @@ object DeleteQueuedReservedInstancesErrorCode {
   inline val `unexpected-error`: "unexpected-error" = "unexpected-error"
 
   inline def values: js.Array[DeleteQueuedReservedInstancesErrorCode] = js.Array(`reserved-instances-id-invalid`, `reserved-instances-not-in-queued-state`, `unexpected-error`)
+}
+
+type DestinationFileFormat = "plain-text" | "parquet"
+object DestinationFileFormat {
+  inline val `plain-text`: "plain-text" = "plain-text"
+  inline val parquet: "parquet" = "parquet"
+
+  inline def values: js.Array[DestinationFileFormat] = js.Array(`plain-text`, parquet)
 }
 
 type DeviceType = "ebs" | "instance-store"
@@ -669,6 +769,15 @@ object FastSnapshotRestoreStateCode {
   inline def values: js.Array[FastSnapshotRestoreStateCode] = js.Array(enabling, optimizing, enabled, disabling, disabled)
 }
 
+type FindingsFound = "true" | "false" | "unknown"
+object FindingsFound {
+  inline val `true`: "true" = "true"
+  inline val `false`: "false" = "false"
+  inline val unknown: "unknown" = "unknown"
+
+  inline def values: js.Array[FindingsFound] = js.Array(`true`, `false`, unknown)
+}
+
 type FleetActivityStatus = "error" | "pending_fulfillment" | "pending_termination" | "fulfilled"
 object FleetActivityStatus {
   inline val error: "error" = "error"
@@ -677,6 +786,13 @@ object FleetActivityStatus {
   inline val fulfilled: "fulfilled" = "fulfilled"
 
   inline def values: js.Array[FleetActivityStatus] = js.Array(error, pending_fulfillment, pending_termination, fulfilled)
+}
+
+type FleetCapacityReservationTenancy = "default"
+object FleetCapacityReservationTenancy {
+  inline val default: "default" = "default"
+
+  inline def values: js.Array[FleetCapacityReservationTenancy] = js.Array(default)
 }
 
 type FleetCapacityReservationUsageStrategy = "use-capacity-reservations-first"
@@ -703,6 +819,13 @@ object FleetExcessCapacityTerminationPolicy {
   inline def values: js.Array[FleetExcessCapacityTerminationPolicy] = js.Array(`no-termination`, termination)
 }
 
+type FleetInstanceMatchCriteria = "open"
+object FleetInstanceMatchCriteria {
+  inline val open: "open" = "open"
+
+  inline def values: js.Array[FleetInstanceMatchCriteria] = js.Array(open)
+}
+
 type FleetOnDemandAllocationStrategy = "lowest-price" | "prioritized"
 object FleetOnDemandAllocationStrategy {
   inline val `lowest-price`: "lowest-price" = "lowest-price"
@@ -711,11 +834,12 @@ object FleetOnDemandAllocationStrategy {
   inline def values: js.Array[FleetOnDemandAllocationStrategy] = js.Array(`lowest-price`, prioritized)
 }
 
-type FleetReplacementStrategy = "launch"
+type FleetReplacementStrategy = "launch" | "launch-before-terminate"
 object FleetReplacementStrategy {
   inline val launch: "launch" = "launch"
+  inline val `launch-before-terminate`: "launch-before-terminate" = "launch-before-terminate"
 
-  inline def values: js.Array[FleetReplacementStrategy] = js.Array(launch)
+  inline def values: js.Array[FleetReplacementStrategy] = js.Array(launch, `launch-before-terminate`)
 }
 
 type FleetStateCode = "submitted" | "active" | "deleted" | "failed" | "deleted_running" | "deleted_terminating" | "modifying"
@@ -769,6 +893,16 @@ object FpgaImageStateCode {
   inline def values: js.Array[FpgaImageStateCode] = js.Array(pending, failed, available, unavailable)
 }
 
+type GatewayAssociationState = "associated" | "not-associated" | "associating" | "disassociating"
+object GatewayAssociationState {
+  inline val associated: "associated" = "associated"
+  inline val `not-associated`: "not-associated" = "not-associated"
+  inline val associating: "associating" = "associating"
+  inline val disassociating: "disassociating" = "disassociating"
+
+  inline def values: js.Array[GatewayAssociationState] = js.Array(associated, `not-associated`, associating, disassociating)
+}
+
 type GatewayType = "ipsec.1"
 object GatewayType {
   inline val `ipsec.1`: "ipsec.1" = "ipsec.1"
@@ -790,6 +924,14 @@ object HostTenancy {
   inline val host: "host" = "host"
 
   inline def values: js.Array[HostTenancy] = js.Array(dedicated, host)
+}
+
+type HostnameType = "ip-name" | "resource-name"
+object HostnameType {
+  inline val `ip-name`: "ip-name" = "ip-name"
+  inline val `resource-name`: "resource-name" = "resource-name"
+
+  inline def values: js.Array[HostnameType] = js.Array(`ip-name`, `resource-name`)
 }
 
 type HttpTokensState = "optional" | "required"
@@ -899,6 +1041,24 @@ object InstanceAttributeName {
   )
 }
 
+type InstanceEventWindowState = "creating" | "deleting" | "active" | "deleted"
+object InstanceEventWindowState {
+  inline val creating: "creating" = "creating"
+  inline val deleting: "deleting" = "deleting"
+  inline val active: "active" = "active"
+  inline val deleted: "deleted" = "deleted"
+
+  inline def values: js.Array[InstanceEventWindowState] = js.Array(creating, deleting, active, deleted)
+}
+
+type InstanceGeneration = "current" | "previous"
+object InstanceGeneration {
+  inline val current: "current" = "current"
+  inline val previous: "previous" = "previous"
+
+  inline def values: js.Array[InstanceGeneration] = js.Array(current, previous)
+}
+
 type InstanceHealthStatus = "healthy" | "unhealthy"
 object InstanceHealthStatus {
   inline val healthy: "healthy" = "healthy"
@@ -956,6 +1116,14 @@ object InstanceMetadataOptionsState {
   inline def values: js.Array[InstanceMetadataOptionsState] = js.Array(pending, applied)
 }
 
+type InstanceMetadataProtocolState = "disabled" | "enabled"
+object InstanceMetadataProtocolState {
+  inline val disabled: "disabled" = "disabled"
+  inline val enabled: "enabled" = "enabled"
+
+  inline def values: js.Array[InstanceMetadataProtocolState] = js.Array(disabled, enabled)
+}
+
 type InstanceStateName = "pending" | "running" | "shutting-down" | "terminated" | "stopping" | "stopped"
 object InstanceStateName {
   inline val pending: "pending" = "pending"
@@ -968,13 +1136,22 @@ object InstanceStateName {
   inline def values: js.Array[InstanceStateName] = js.Array(pending, running, `shutting-down`, terminated, stopping, stopped)
 }
 
+type InstanceStorageEncryptionSupport = "unsupported" | "required"
+object InstanceStorageEncryptionSupport {
+  inline val unsupported: "unsupported" = "unsupported"
+  inline val required: "required" = "required"
+
+  inline def values: js.Array[InstanceStorageEncryptionSupport] = js.Array(unsupported, required)
+}
+
 type InstanceType = "t1.micro" | "t2.nano" | "t2.micro" | "t2.small" | "t2.medium" | "t2.large" | "t2.xlarge" | "t2.2xlarge" | "t3.nano" | "t3.micro" | "t3.small" | "t3.medium" | "t3.large" | "t3.xlarge" | "t3.2xlarge" | "t3a.nano" | "t3a.micro" | "t3a.small" | "t3a.medium" | "t3a.large" | "t3a.xlarge" | "t3a.2xlarge" | "t4g.nano" | "t4g.micro" | "t4g.small" | "t4g.medium" | "t4g.large" | "t4g.xlarge" | "t4g.2xlarge" | "m1.small" | "m1.medium" | "m1.large" | "m1.xlarge" | "m3.medium" | "m3.large" | "m3.xlarge" | "m3.2xlarge" | "m4.large" | "m4.xlarge" | "m4.2xlarge" | "m4.4xlarge" | "m4.10xlarge" | "m4.16xlarge" | "m2.xlarge" | "m2.2xlarge" | "m2.4xlarge" | "cr1.8xlarge" | "r3.large" | "r3.xlarge" | "r3.2xlarge" | "r3.4xlarge" | "r3.8xlarge" | "r4.large" | "r4.xlarge" | "r4.2xlarge" | "r4.4xlarge" | "r4.8xlarge" | "r4.16xlarge" | "r5.large" | "r5.xlarge" | "r5.2xlarge" | "r5.4xlarge" | "r5.8xlarge" | "r5.12xlarge" | "r5.16xlarge" | "r5.24xlarge" | "r5.metal" | "r5a.large" |
   "r5a.xlarge" | "r5a.2xlarge" | "r5a.4xlarge" | "r5a.8xlarge" | "r5a.12xlarge" | "r5a.16xlarge" | "r5a.24xlarge" | "r5b.large" | "r5b.xlarge" | "r5b.2xlarge" | "r5b.4xlarge" | "r5b.8xlarge" | "r5b.12xlarge" | "r5b.16xlarge" | "r5b.24xlarge" | "r5b.metal" | "r5d.large" | "r5d.xlarge" | "r5d.2xlarge" | "r5d.4xlarge" | "r5d.8xlarge" | "r5d.12xlarge" | "r5d.16xlarge" | "r5d.24xlarge" | "r5d.metal" | "r5ad.large" | "r5ad.xlarge" | "r5ad.2xlarge" | "r5ad.4xlarge" | "r5ad.8xlarge" | "r5ad.12xlarge" | "r5ad.16xlarge" | "r5ad.24xlarge" | "r6g.metal" | "r6g.medium" | "r6g.large" | "r6g.xlarge" | "r6g.2xlarge" | "r6g.4xlarge" | "r6g.8xlarge" | "r6g.12xlarge" | "r6g.16xlarge" | "r6gd.metal" | "r6gd.medium" | "r6gd.large" | "r6gd.xlarge" | "r6gd.2xlarge" | "r6gd.4xlarge" | "r6gd.8xlarge" | "r6gd.12xlarge" | "r6gd.16xlarge" | "x1.16xlarge" | "x1.32xlarge" | "x1e.xlarge" | "x1e.2xlarge" | "x1e.4xlarge" | "x1e.8xlarge" | "x1e.16xlarge" | "x1e.32xlarge" | "i2.xlarge" | "i2.2xlarge" | "i2.4xlarge" |
   "i2.8xlarge" | "i3.large" | "i3.xlarge" | "i3.2xlarge" | "i3.4xlarge" | "i3.8xlarge" | "i3.16xlarge" | "i3.metal" | "i3en.large" | "i3en.xlarge" | "i3en.2xlarge" | "i3en.3xlarge" | "i3en.6xlarge" | "i3en.12xlarge" | "i3en.24xlarge" | "i3en.metal" | "hi1.4xlarge" | "hs1.8xlarge" | "c1.medium" | "c1.xlarge" | "c3.large" | "c3.xlarge" | "c3.2xlarge" | "c3.4xlarge" | "c3.8xlarge" | "c4.large" | "c4.xlarge" | "c4.2xlarge" | "c4.4xlarge" | "c4.8xlarge" | "c5.large" | "c5.xlarge" | "c5.2xlarge" | "c5.4xlarge" | "c5.9xlarge" | "c5.12xlarge" | "c5.18xlarge" | "c5.24xlarge" | "c5.metal" | "c5a.large" | "c5a.xlarge" | "c5a.2xlarge" | "c5a.4xlarge" | "c5a.8xlarge" | "c5a.12xlarge" | "c5a.16xlarge" | "c5a.24xlarge" | "c5ad.large" | "c5ad.xlarge" | "c5ad.2xlarge" | "c5ad.4xlarge" | "c5ad.8xlarge" | "c5ad.12xlarge" | "c5ad.16xlarge" | "c5ad.24xlarge" | "c5d.large" | "c5d.xlarge" | "c5d.2xlarge" | "c5d.4xlarge" | "c5d.9xlarge" | "c5d.12xlarge" | "c5d.18xlarge" | "c5d.24xlarge" | "c5d.metal" |
-  "c5n.large" | "c5n.xlarge" | "c5n.2xlarge" | "c5n.4xlarge" | "c5n.9xlarge" | "c5n.18xlarge" | "c5n.metal" | "c6g.metal" | "c6g.medium" | "c6g.large" | "c6g.xlarge" | "c6g.2xlarge" | "c6g.4xlarge" | "c6g.8xlarge" | "c6g.12xlarge" | "c6g.16xlarge" | "c6gd.metal" | "c6gd.medium" | "c6gd.large" | "c6gd.xlarge" | "c6gd.2xlarge" | "c6gd.4xlarge" | "c6gd.8xlarge" | "c6gd.12xlarge" | "c6gd.16xlarge" | "c6gn.medium" | "c6gn.large" | "c6gn.xlarge" | "c6gn.2xlarge" | "c6gn.4xlarge" | "c6gn.8xlarge" | "c6gn.12xlarge" | "c6gn.16xlarge" | "cc1.4xlarge" | "cc2.8xlarge" | "g2.2xlarge" | "g2.8xlarge" | "g3.4xlarge" | "g3.8xlarge" | "g3.16xlarge" | "g3s.xlarge" | "g4ad.4xlarge" | "g4ad.8xlarge" | "g4ad.16xlarge" | "g4dn.xlarge" | "g4dn.2xlarge" | "g4dn.4xlarge" | "g4dn.8xlarge" | "g4dn.12xlarge" | "g4dn.16xlarge" | "g4dn.metal" | "cg1.4xlarge" | "p2.xlarge" | "p2.8xlarge" | "p2.16xlarge" | "p3.2xlarge" | "p3.8xlarge" | "p3.16xlarge" | "p3dn.24xlarge" | "p4d.24xlarge" | "d2.xlarge" | "d2.2xlarge" |
-  "d2.4xlarge" | "d2.8xlarge" | "d3.xlarge" | "d3.2xlarge" | "d3.4xlarge" | "d3.8xlarge" | "d3en.xlarge" | "d3en.2xlarge" | "d3en.4xlarge" | "d3en.6xlarge" | "d3en.8xlarge" | "d3en.12xlarge" | "f1.2xlarge" | "f1.4xlarge" | "f1.16xlarge" | "m5.large" | "m5.xlarge" | "m5.2xlarge" | "m5.4xlarge" | "m5.8xlarge" | "m5.12xlarge" | "m5.16xlarge" | "m5.24xlarge" | "m5.metal" | "m5a.large" | "m5a.xlarge" | "m5a.2xlarge" | "m5a.4xlarge" | "m5a.8xlarge" | "m5a.12xlarge" | "m5a.16xlarge" | "m5a.24xlarge" | "m5d.large" | "m5d.xlarge" | "m5d.2xlarge" | "m5d.4xlarge" | "m5d.8xlarge" | "m5d.12xlarge" | "m5d.16xlarge" | "m5d.24xlarge" | "m5d.metal" | "m5ad.large" | "m5ad.xlarge" | "m5ad.2xlarge" | "m5ad.4xlarge" | "m5ad.8xlarge" | "m5ad.12xlarge" | "m5ad.16xlarge" | "m5ad.24xlarge" | "m5zn.large" | "m5zn.xlarge" | "m5zn.2xlarge" | "m5zn.3xlarge" | "m5zn.6xlarge" | "m5zn.12xlarge" | "m5zn.metal" | "h1.2xlarge" | "h1.4xlarge" | "h1.8xlarge" | "h1.16xlarge" | "z1d.large" | "z1d.xlarge" | "z1d.2xlarge" |
-  "z1d.3xlarge" | "z1d.6xlarge" | "z1d.12xlarge" | "z1d.metal" | "u-6tb1.metal" | "u-9tb1.metal" | "u-12tb1.metal" | "u-18tb1.metal" | "u-24tb1.metal" | "a1.medium" | "a1.large" | "a1.xlarge" | "a1.2xlarge" | "a1.4xlarge" | "a1.metal" | "m5dn.large" | "m5dn.xlarge" | "m5dn.2xlarge" | "m5dn.4xlarge" | "m5dn.8xlarge" | "m5dn.12xlarge" | "m5dn.16xlarge" | "m5dn.24xlarge" | "m5n.large" | "m5n.xlarge" | "m5n.2xlarge" | "m5n.4xlarge" | "m5n.8xlarge" | "m5n.12xlarge" | "m5n.16xlarge" | "m5n.24xlarge" | "r5dn.large" | "r5dn.xlarge" | "r5dn.2xlarge" | "r5dn.4xlarge" | "r5dn.8xlarge" | "r5dn.12xlarge" | "r5dn.16xlarge" | "r5dn.24xlarge" | "r5n.large" | "r5n.xlarge" | "r5n.2xlarge" | "r5n.4xlarge" | "r5n.8xlarge" | "r5n.12xlarge" | "r5n.16xlarge" | "r5n.24xlarge" | "inf1.xlarge" | "inf1.2xlarge" | "inf1.6xlarge" | "inf1.24xlarge" | "m6g.metal" | "m6g.medium" | "m6g.large" | "m6g.xlarge" | "m6g.2xlarge" | "m6g.4xlarge" | "m6g.8xlarge" | "m6g.12xlarge" | "m6g.16xlarge" | "m6gd.metal" |
-  "m6gd.medium" | "m6gd.large" | "m6gd.xlarge" | "m6gd.2xlarge" | "m6gd.4xlarge" | "m6gd.8xlarge" | "m6gd.12xlarge" | "m6gd.16xlarge" | "mac1.metal" | "x2gd.medium" | "x2gd.large" | "x2gd.xlarge" | "x2gd.2xlarge" | "x2gd.4xlarge" | "x2gd.8xlarge" | "x2gd.12xlarge" | "x2gd.16xlarge" | "x2gd.metal"
+  "c5n.large" | "c5n.xlarge" | "c5n.2xlarge" | "c5n.4xlarge" | "c5n.9xlarge" | "c5n.18xlarge" | "c5n.metal" | "c6g.metal" | "c6g.medium" | "c6g.large" | "c6g.xlarge" | "c6g.2xlarge" | "c6g.4xlarge" | "c6g.8xlarge" | "c6g.12xlarge" | "c6g.16xlarge" | "c6gd.metal" | "c6gd.medium" | "c6gd.large" | "c6gd.xlarge" | "c6gd.2xlarge" | "c6gd.4xlarge" | "c6gd.8xlarge" | "c6gd.12xlarge" | "c6gd.16xlarge" | "c6gn.medium" | "c6gn.large" | "c6gn.xlarge" | "c6gn.2xlarge" | "c6gn.4xlarge" | "c6gn.8xlarge" | "c6gn.12xlarge" | "c6gn.16xlarge" | "c6i.large" | "c6i.xlarge" | "c6i.2xlarge" | "c6i.4xlarge" | "c6i.8xlarge" | "c6i.12xlarge" | "c6i.16xlarge" | "c6i.24xlarge" | "c6i.32xlarge" | "cc1.4xlarge" | "cc2.8xlarge" | "g2.2xlarge" | "g2.8xlarge" | "g3.4xlarge" | "g3.8xlarge" | "g3.16xlarge" | "g3s.xlarge" | "g4ad.xlarge" | "g4ad.2xlarge" | "g4ad.4xlarge" | "g4ad.8xlarge" | "g4ad.16xlarge" | "g4dn.xlarge" | "g4dn.2xlarge" | "g4dn.4xlarge" | "g4dn.8xlarge" | "g4dn.12xlarge" | "g4dn.16xlarge" |
+  "g4dn.metal" | "cg1.4xlarge" | "p2.xlarge" | "p2.8xlarge" | "p2.16xlarge" | "p3.2xlarge" | "p3.8xlarge" | "p3.16xlarge" | "p3dn.24xlarge" | "p4d.24xlarge" | "d2.xlarge" | "d2.2xlarge" | "d2.4xlarge" | "d2.8xlarge" | "d3.xlarge" | "d3.2xlarge" | "d3.4xlarge" | "d3.8xlarge" | "d3en.xlarge" | "d3en.2xlarge" | "d3en.4xlarge" | "d3en.6xlarge" | "d3en.8xlarge" | "d3en.12xlarge" | "dl1.24xlarge" | "f1.2xlarge" | "f1.4xlarge" | "f1.16xlarge" | "m5.large" | "m5.xlarge" | "m5.2xlarge" | "m5.4xlarge" | "m5.8xlarge" | "m5.12xlarge" | "m5.16xlarge" | "m5.24xlarge" | "m5.metal" | "m5a.large" | "m5a.xlarge" | "m5a.2xlarge" | "m5a.4xlarge" | "m5a.8xlarge" | "m5a.12xlarge" | "m5a.16xlarge" | "m5a.24xlarge" | "m5d.large" | "m5d.xlarge" | "m5d.2xlarge" | "m5d.4xlarge" | "m5d.8xlarge" | "m5d.12xlarge" | "m5d.16xlarge" | "m5d.24xlarge" | "m5d.metal" | "m5ad.large" | "m5ad.xlarge" | "m5ad.2xlarge" | "m5ad.4xlarge" | "m5ad.8xlarge" | "m5ad.12xlarge" | "m5ad.16xlarge" | "m5ad.24xlarge" | "m5zn.large" |
+  "m5zn.xlarge" | "m5zn.2xlarge" | "m5zn.3xlarge" | "m5zn.6xlarge" | "m5zn.12xlarge" | "m5zn.metal" | "h1.2xlarge" | "h1.4xlarge" | "h1.8xlarge" | "h1.16xlarge" | "z1d.large" | "z1d.xlarge" | "z1d.2xlarge" | "z1d.3xlarge" | "z1d.6xlarge" | "z1d.12xlarge" | "z1d.metal" | "u-6tb1.56xlarge" | "u-6tb1.112xlarge" | "u-9tb1.112xlarge" | "u-12tb1.112xlarge" | "u-6tb1.metal" | "u-9tb1.metal" | "u-12tb1.metal" | "u-18tb1.metal" | "u-24tb1.metal" | "a1.medium" | "a1.large" | "a1.xlarge" | "a1.2xlarge" | "a1.4xlarge" | "a1.metal" | "m5dn.large" | "m5dn.xlarge" | "m5dn.2xlarge" | "m5dn.4xlarge" | "m5dn.8xlarge" | "m5dn.12xlarge" | "m5dn.16xlarge" | "m5dn.24xlarge" | "m5dn.metal" | "m5n.large" | "m5n.xlarge" | "m5n.2xlarge" | "m5n.4xlarge" | "m5n.8xlarge" | "m5n.12xlarge" | "m5n.16xlarge" | "m5n.24xlarge" | "m5n.metal" | "r5dn.large" | "r5dn.xlarge" | "r5dn.2xlarge" | "r5dn.4xlarge" | "r5dn.8xlarge" | "r5dn.12xlarge" | "r5dn.16xlarge" | "r5dn.24xlarge" | "r5dn.metal" | "r5n.large" | "r5n.xlarge" |
+  "r5n.2xlarge" | "r5n.4xlarge" | "r5n.8xlarge" | "r5n.12xlarge" | "r5n.16xlarge" | "r5n.24xlarge" | "r5n.metal" | "inf1.xlarge" | "inf1.2xlarge" | "inf1.6xlarge" | "inf1.24xlarge" | "m6g.metal" | "m6g.medium" | "m6g.large" | "m6g.xlarge" | "m6g.2xlarge" | "m6g.4xlarge" | "m6g.8xlarge" | "m6g.12xlarge" | "m6g.16xlarge" | "m6gd.metal" | "m6gd.medium" | "m6gd.large" | "m6gd.xlarge" | "m6gd.2xlarge" | "m6gd.4xlarge" | "m6gd.8xlarge" | "m6gd.12xlarge" | "m6gd.16xlarge" | "m6a.large" | "m6a.xlarge" | "m6a.2xlarge" | "m6a.4xlarge" | "m6a.8xlarge" | "m6a.12xlarge" | "m6a.16xlarge" | "m6a.24xlarge" | "m6a.32xlarge" | "m6a.48xlarge" | "m6i.large" | "m6i.xlarge" | "m6i.2xlarge" | "m6i.4xlarge" | "m6i.8xlarge" | "m6i.12xlarge" | "m6i.16xlarge" | "m6i.24xlarge" | "m6i.32xlarge" | "mac1.metal" | "x2gd.medium" | "x2gd.large" | "x2gd.xlarge" | "x2gd.2xlarge" | "x2gd.4xlarge" | "x2gd.8xlarge" | "x2gd.12xlarge" | "x2gd.16xlarge" | "x2gd.metal" | "vt1.3xlarge" | "vt1.6xlarge" | "vt1.24xlarge" |
+  "im4gn.16xlarge" | "im4gn.2xlarge" | "im4gn.4xlarge" | "im4gn.8xlarge" | "im4gn.large" | "im4gn.xlarge" | "is4gen.2xlarge" | "is4gen.4xlarge" | "is4gen.8xlarge" | "is4gen.large" | "is4gen.medium" | "is4gen.xlarge" | "g5g.xlarge" | "g5g.2xlarge" | "g5g.4xlarge" | "g5g.8xlarge" | "g5g.16xlarge" | "g5g.metal" | "g5.xlarge" | "g5.2xlarge" | "g5.4xlarge" | "g5.8xlarge" | "g5.12xlarge" | "g5.16xlarge" | "g5.24xlarge" | "g5.48xlarge"
 object InstanceType {
   inline val `t1.micro`: "t1.micro" = "t1.micro"
   inline val `t2.nano`: "t2.nano" = "t2.nano"
@@ -1203,6 +1380,15 @@ object InstanceType {
   inline val `c6gn.8xlarge`: "c6gn.8xlarge" = "c6gn.8xlarge"
   inline val `c6gn.12xlarge`: "c6gn.12xlarge" = "c6gn.12xlarge"
   inline val `c6gn.16xlarge`: "c6gn.16xlarge" = "c6gn.16xlarge"
+  inline val `c6i.large`: "c6i.large" = "c6i.large"
+  inline val `c6i.xlarge`: "c6i.xlarge" = "c6i.xlarge"
+  inline val `c6i.2xlarge`: "c6i.2xlarge" = "c6i.2xlarge"
+  inline val `c6i.4xlarge`: "c6i.4xlarge" = "c6i.4xlarge"
+  inline val `c6i.8xlarge`: "c6i.8xlarge" = "c6i.8xlarge"
+  inline val `c6i.12xlarge`: "c6i.12xlarge" = "c6i.12xlarge"
+  inline val `c6i.16xlarge`: "c6i.16xlarge" = "c6i.16xlarge"
+  inline val `c6i.24xlarge`: "c6i.24xlarge" = "c6i.24xlarge"
+  inline val `c6i.32xlarge`: "c6i.32xlarge" = "c6i.32xlarge"
   inline val `cc1.4xlarge`: "cc1.4xlarge" = "cc1.4xlarge"
   inline val `cc2.8xlarge`: "cc2.8xlarge" = "cc2.8xlarge"
   inline val `g2.2xlarge`: "g2.2xlarge" = "g2.2xlarge"
@@ -1211,6 +1397,8 @@ object InstanceType {
   inline val `g3.8xlarge`: "g3.8xlarge" = "g3.8xlarge"
   inline val `g3.16xlarge`: "g3.16xlarge" = "g3.16xlarge"
   inline val `g3s.xlarge`: "g3s.xlarge" = "g3s.xlarge"
+  inline val `g4ad.xlarge`: "g4ad.xlarge" = "g4ad.xlarge"
+  inline val `g4ad.2xlarge`: "g4ad.2xlarge" = "g4ad.2xlarge"
   inline val `g4ad.4xlarge`: "g4ad.4xlarge" = "g4ad.4xlarge"
   inline val `g4ad.8xlarge`: "g4ad.8xlarge" = "g4ad.8xlarge"
   inline val `g4ad.16xlarge`: "g4ad.16xlarge" = "g4ad.16xlarge"
@@ -1244,6 +1432,7 @@ object InstanceType {
   inline val `d3en.6xlarge`: "d3en.6xlarge" = "d3en.6xlarge"
   inline val `d3en.8xlarge`: "d3en.8xlarge" = "d3en.8xlarge"
   inline val `d3en.12xlarge`: "d3en.12xlarge" = "d3en.12xlarge"
+  inline val `dl1.24xlarge`: "dl1.24xlarge" = "dl1.24xlarge"
   inline val `f1.2xlarge`: "f1.2xlarge" = "f1.2xlarge"
   inline val `f1.4xlarge`: "f1.4xlarge" = "f1.4xlarge"
   inline val `f1.16xlarge`: "f1.16xlarge" = "f1.16xlarge"
@@ -1299,6 +1488,10 @@ object InstanceType {
   inline val `z1d.6xlarge`: "z1d.6xlarge" = "z1d.6xlarge"
   inline val `z1d.12xlarge`: "z1d.12xlarge" = "z1d.12xlarge"
   inline val `z1d.metal`: "z1d.metal" = "z1d.metal"
+  inline val `u-6tb1.56xlarge`: "u-6tb1.56xlarge" = "u-6tb1.56xlarge"
+  inline val `u-6tb1.112xlarge`: "u-6tb1.112xlarge" = "u-6tb1.112xlarge"
+  inline val `u-9tb1.112xlarge`: "u-9tb1.112xlarge" = "u-9tb1.112xlarge"
+  inline val `u-12tb1.112xlarge`: "u-12tb1.112xlarge" = "u-12tb1.112xlarge"
   inline val `u-6tb1.metal`: "u-6tb1.metal" = "u-6tb1.metal"
   inline val `u-9tb1.metal`: "u-9tb1.metal" = "u-9tb1.metal"
   inline val `u-12tb1.metal`: "u-12tb1.metal" = "u-12tb1.metal"
@@ -1318,6 +1511,7 @@ object InstanceType {
   inline val `m5dn.12xlarge`: "m5dn.12xlarge" = "m5dn.12xlarge"
   inline val `m5dn.16xlarge`: "m5dn.16xlarge" = "m5dn.16xlarge"
   inline val `m5dn.24xlarge`: "m5dn.24xlarge" = "m5dn.24xlarge"
+  inline val `m5dn.metal`: "m5dn.metal" = "m5dn.metal"
   inline val `m5n.large`: "m5n.large" = "m5n.large"
   inline val `m5n.xlarge`: "m5n.xlarge" = "m5n.xlarge"
   inline val `m5n.2xlarge`: "m5n.2xlarge" = "m5n.2xlarge"
@@ -1326,6 +1520,7 @@ object InstanceType {
   inline val `m5n.12xlarge`: "m5n.12xlarge" = "m5n.12xlarge"
   inline val `m5n.16xlarge`: "m5n.16xlarge" = "m5n.16xlarge"
   inline val `m5n.24xlarge`: "m5n.24xlarge" = "m5n.24xlarge"
+  inline val `m5n.metal`: "m5n.metal" = "m5n.metal"
   inline val `r5dn.large`: "r5dn.large" = "r5dn.large"
   inline val `r5dn.xlarge`: "r5dn.xlarge" = "r5dn.xlarge"
   inline val `r5dn.2xlarge`: "r5dn.2xlarge" = "r5dn.2xlarge"
@@ -1334,6 +1529,7 @@ object InstanceType {
   inline val `r5dn.12xlarge`: "r5dn.12xlarge" = "r5dn.12xlarge"
   inline val `r5dn.16xlarge`: "r5dn.16xlarge" = "r5dn.16xlarge"
   inline val `r5dn.24xlarge`: "r5dn.24xlarge" = "r5dn.24xlarge"
+  inline val `r5dn.metal`: "r5dn.metal" = "r5dn.metal"
   inline val `r5n.large`: "r5n.large" = "r5n.large"
   inline val `r5n.xlarge`: "r5n.xlarge" = "r5n.xlarge"
   inline val `r5n.2xlarge`: "r5n.2xlarge" = "r5n.2xlarge"
@@ -1342,6 +1538,7 @@ object InstanceType {
   inline val `r5n.12xlarge`: "r5n.12xlarge" = "r5n.12xlarge"
   inline val `r5n.16xlarge`: "r5n.16xlarge" = "r5n.16xlarge"
   inline val `r5n.24xlarge`: "r5n.24xlarge" = "r5n.24xlarge"
+  inline val `r5n.metal`: "r5n.metal" = "r5n.metal"
   inline val `inf1.xlarge`: "inf1.xlarge" = "inf1.xlarge"
   inline val `inf1.2xlarge`: "inf1.2xlarge" = "inf1.2xlarge"
   inline val `inf1.6xlarge`: "inf1.6xlarge" = "inf1.6xlarge"
@@ -1364,6 +1561,25 @@ object InstanceType {
   inline val `m6gd.8xlarge`: "m6gd.8xlarge" = "m6gd.8xlarge"
   inline val `m6gd.12xlarge`: "m6gd.12xlarge" = "m6gd.12xlarge"
   inline val `m6gd.16xlarge`: "m6gd.16xlarge" = "m6gd.16xlarge"
+  inline val `m6a.large`: "m6a.large" = "m6a.large"
+  inline val `m6a.xlarge`: "m6a.xlarge" = "m6a.xlarge"
+  inline val `m6a.2xlarge`: "m6a.2xlarge" = "m6a.2xlarge"
+  inline val `m6a.4xlarge`: "m6a.4xlarge" = "m6a.4xlarge"
+  inline val `m6a.8xlarge`: "m6a.8xlarge" = "m6a.8xlarge"
+  inline val `m6a.12xlarge`: "m6a.12xlarge" = "m6a.12xlarge"
+  inline val `m6a.16xlarge`: "m6a.16xlarge" = "m6a.16xlarge"
+  inline val `m6a.24xlarge`: "m6a.24xlarge" = "m6a.24xlarge"
+  inline val `m6a.32xlarge`: "m6a.32xlarge" = "m6a.32xlarge"
+  inline val `m6a.48xlarge`: "m6a.48xlarge" = "m6a.48xlarge"
+  inline val `m6i.large`: "m6i.large" = "m6i.large"
+  inline val `m6i.xlarge`: "m6i.xlarge" = "m6i.xlarge"
+  inline val `m6i.2xlarge`: "m6i.2xlarge" = "m6i.2xlarge"
+  inline val `m6i.4xlarge`: "m6i.4xlarge" = "m6i.4xlarge"
+  inline val `m6i.8xlarge`: "m6i.8xlarge" = "m6i.8xlarge"
+  inline val `m6i.12xlarge`: "m6i.12xlarge" = "m6i.12xlarge"
+  inline val `m6i.16xlarge`: "m6i.16xlarge" = "m6i.16xlarge"
+  inline val `m6i.24xlarge`: "m6i.24xlarge" = "m6i.24xlarge"
+  inline val `m6i.32xlarge`: "m6i.32xlarge" = "m6i.32xlarge"
   inline val `mac1.metal`: "mac1.metal" = "mac1.metal"
   inline val `x2gd.medium`: "x2gd.medium" = "x2gd.medium"
   inline val `x2gd.large`: "x2gd.large" = "x2gd.large"
@@ -1374,6 +1590,35 @@ object InstanceType {
   inline val `x2gd.12xlarge`: "x2gd.12xlarge" = "x2gd.12xlarge"
   inline val `x2gd.16xlarge`: "x2gd.16xlarge" = "x2gd.16xlarge"
   inline val `x2gd.metal`: "x2gd.metal" = "x2gd.metal"
+  inline val `vt1.3xlarge`: "vt1.3xlarge" = "vt1.3xlarge"
+  inline val `vt1.6xlarge`: "vt1.6xlarge" = "vt1.6xlarge"
+  inline val `vt1.24xlarge`: "vt1.24xlarge" = "vt1.24xlarge"
+  inline val `im4gn.16xlarge`: "im4gn.16xlarge" = "im4gn.16xlarge"
+  inline val `im4gn.2xlarge`: "im4gn.2xlarge" = "im4gn.2xlarge"
+  inline val `im4gn.4xlarge`: "im4gn.4xlarge" = "im4gn.4xlarge"
+  inline val `im4gn.8xlarge`: "im4gn.8xlarge" = "im4gn.8xlarge"
+  inline val `im4gn.large`: "im4gn.large" = "im4gn.large"
+  inline val `im4gn.xlarge`: "im4gn.xlarge" = "im4gn.xlarge"
+  inline val `is4gen.2xlarge`: "is4gen.2xlarge" = "is4gen.2xlarge"
+  inline val `is4gen.4xlarge`: "is4gen.4xlarge" = "is4gen.4xlarge"
+  inline val `is4gen.8xlarge`: "is4gen.8xlarge" = "is4gen.8xlarge"
+  inline val `is4gen.large`: "is4gen.large" = "is4gen.large"
+  inline val `is4gen.medium`: "is4gen.medium" = "is4gen.medium"
+  inline val `is4gen.xlarge`: "is4gen.xlarge" = "is4gen.xlarge"
+  inline val `g5g.xlarge`: "g5g.xlarge" = "g5g.xlarge"
+  inline val `g5g.2xlarge`: "g5g.2xlarge" = "g5g.2xlarge"
+  inline val `g5g.4xlarge`: "g5g.4xlarge" = "g5g.4xlarge"
+  inline val `g5g.8xlarge`: "g5g.8xlarge" = "g5g.8xlarge"
+  inline val `g5g.16xlarge`: "g5g.16xlarge" = "g5g.16xlarge"
+  inline val `g5g.metal`: "g5g.metal" = "g5g.metal"
+  inline val `g5.xlarge`: "g5.xlarge" = "g5.xlarge"
+  inline val `g5.2xlarge`: "g5.2xlarge" = "g5.2xlarge"
+  inline val `g5.4xlarge`: "g5.4xlarge" = "g5.4xlarge"
+  inline val `g5.8xlarge`: "g5.8xlarge" = "g5.8xlarge"
+  inline val `g5.12xlarge`: "g5.12xlarge" = "g5.12xlarge"
+  inline val `g5.16xlarge`: "g5.16xlarge" = "g5.16xlarge"
+  inline val `g5.24xlarge`: "g5.24xlarge" = "g5.24xlarge"
+  inline val `g5.48xlarge`: "g5.48xlarge" = "g5.48xlarge"
 
   inline def values: js.Array[InstanceType] = js.Array(
     `t1.micro`,
@@ -1603,6 +1848,15 @@ object InstanceType {
     `c6gn.8xlarge`,
     `c6gn.12xlarge`,
     `c6gn.16xlarge`,
+    `c6i.large`,
+    `c6i.xlarge`,
+    `c6i.2xlarge`,
+    `c6i.4xlarge`,
+    `c6i.8xlarge`,
+    `c6i.12xlarge`,
+    `c6i.16xlarge`,
+    `c6i.24xlarge`,
+    `c6i.32xlarge`,
     `cc1.4xlarge`,
     `cc2.8xlarge`,
     `g2.2xlarge`,
@@ -1611,6 +1865,8 @@ object InstanceType {
     `g3.8xlarge`,
     `g3.16xlarge`,
     `g3s.xlarge`,
+    `g4ad.xlarge`,
+    `g4ad.2xlarge`,
     `g4ad.4xlarge`,
     `g4ad.8xlarge`,
     `g4ad.16xlarge`,
@@ -1644,6 +1900,7 @@ object InstanceType {
     `d3en.6xlarge`,
     `d3en.8xlarge`,
     `d3en.12xlarge`,
+    `dl1.24xlarge`,
     `f1.2xlarge`,
     `f1.4xlarge`,
     `f1.16xlarge`,
@@ -1699,6 +1956,10 @@ object InstanceType {
     `z1d.6xlarge`,
     `z1d.12xlarge`,
     `z1d.metal`,
+    `u-6tb1.56xlarge`,
+    `u-6tb1.112xlarge`,
+    `u-9tb1.112xlarge`,
+    `u-12tb1.112xlarge`,
     `u-6tb1.metal`,
     `u-9tb1.metal`,
     `u-12tb1.metal`,
@@ -1718,6 +1979,7 @@ object InstanceType {
     `m5dn.12xlarge`,
     `m5dn.16xlarge`,
     `m5dn.24xlarge`,
+    `m5dn.metal`,
     `m5n.large`,
     `m5n.xlarge`,
     `m5n.2xlarge`,
@@ -1726,6 +1988,7 @@ object InstanceType {
     `m5n.12xlarge`,
     `m5n.16xlarge`,
     `m5n.24xlarge`,
+    `m5n.metal`,
     `r5dn.large`,
     `r5dn.xlarge`,
     `r5dn.2xlarge`,
@@ -1734,6 +1997,7 @@ object InstanceType {
     `r5dn.12xlarge`,
     `r5dn.16xlarge`,
     `r5dn.24xlarge`,
+    `r5dn.metal`,
     `r5n.large`,
     `r5n.xlarge`,
     `r5n.2xlarge`,
@@ -1742,6 +2006,7 @@ object InstanceType {
     `r5n.12xlarge`,
     `r5n.16xlarge`,
     `r5n.24xlarge`,
+    `r5n.metal`,
     `inf1.xlarge`,
     `inf1.2xlarge`,
     `inf1.6xlarge`,
@@ -1764,6 +2029,25 @@ object InstanceType {
     `m6gd.8xlarge`,
     `m6gd.12xlarge`,
     `m6gd.16xlarge`,
+    `m6a.large`,
+    `m6a.xlarge`,
+    `m6a.2xlarge`,
+    `m6a.4xlarge`,
+    `m6a.8xlarge`,
+    `m6a.12xlarge`,
+    `m6a.16xlarge`,
+    `m6a.24xlarge`,
+    `m6a.32xlarge`,
+    `m6a.48xlarge`,
+    `m6i.large`,
+    `m6i.xlarge`,
+    `m6i.2xlarge`,
+    `m6i.4xlarge`,
+    `m6i.8xlarge`,
+    `m6i.12xlarge`,
+    `m6i.16xlarge`,
+    `m6i.24xlarge`,
+    `m6i.32xlarge`,
     `mac1.metal`,
     `x2gd.medium`,
     `x2gd.large`,
@@ -1773,7 +2057,36 @@ object InstanceType {
     `x2gd.8xlarge`,
     `x2gd.12xlarge`,
     `x2gd.16xlarge`,
-    `x2gd.metal`
+    `x2gd.metal`,
+    `vt1.3xlarge`,
+    `vt1.6xlarge`,
+    `vt1.24xlarge`,
+    `im4gn.16xlarge`,
+    `im4gn.2xlarge`,
+    `im4gn.4xlarge`,
+    `im4gn.8xlarge`,
+    `im4gn.large`,
+    `im4gn.xlarge`,
+    `is4gen.2xlarge`,
+    `is4gen.4xlarge`,
+    `is4gen.8xlarge`,
+    `is4gen.large`,
+    `is4gen.medium`,
+    `is4gen.xlarge`,
+    `g5g.xlarge`,
+    `g5g.2xlarge`,
+    `g5g.4xlarge`,
+    `g5g.8xlarge`,
+    `g5g.16xlarge`,
+    `g5g.metal`,
+    `g5.xlarge`,
+    `g5.2xlarge`,
+    `g5.4xlarge`,
+    `g5.8xlarge`,
+    `g5.12xlarge`,
+    `g5.16xlarge`,
+    `g5.24xlarge`,
+    `g5.48xlarge`
   )
 }
 
@@ -1793,12 +2106,199 @@ object InterfacePermissionType {
   inline def values: js.Array[InterfacePermissionType] = js.Array(`INSTANCE-ATTACH`, `EIP-ASSOCIATE`)
 }
 
+type InterfaceProtocolType = "VLAN" | "GRE"
+object InterfaceProtocolType {
+  inline val VLAN: "VLAN" = "VLAN"
+  inline val GRE: "GRE" = "GRE"
+
+  inline def values: js.Array[InterfaceProtocolType] = js.Array(VLAN, GRE)
+}
+
+type IpamAddressHistoryResourceType = "eip" | "vpc" | "subnet" | "network-interface" | "instance"
+object IpamAddressHistoryResourceType {
+  inline val eip: "eip" = "eip"
+  inline val vpc: "vpc" = "vpc"
+  inline val subnet: "subnet" = "subnet"
+  inline val `network-interface`: "network-interface" = "network-interface"
+  inline val instance: "instance" = "instance"
+
+  inline def values: js.Array[IpamAddressHistoryResourceType] = js.Array(eip, vpc, subnet, `network-interface`, instance)
+}
+
+type IpamComplianceStatus = "compliant" | "noncompliant" | "unmanaged" | "ignored"
+object IpamComplianceStatus {
+  inline val compliant: "compliant" = "compliant"
+  inline val noncompliant: "noncompliant" = "noncompliant"
+  inline val unmanaged: "unmanaged" = "unmanaged"
+  inline val ignored: "ignored" = "ignored"
+
+  inline def values: js.Array[IpamComplianceStatus] = js.Array(compliant, noncompliant, unmanaged, ignored)
+}
+
+type IpamManagementState = "managed" | "unmanaged" | "ignored"
+object IpamManagementState {
+  inline val managed: "managed" = "managed"
+  inline val unmanaged: "unmanaged" = "unmanaged"
+  inline val ignored: "ignored" = "ignored"
+
+  inline def values: js.Array[IpamManagementState] = js.Array(managed, unmanaged, ignored)
+}
+
+type IpamOverlapStatus = "overlapping" | "nonoverlapping" | "ignored"
+object IpamOverlapStatus {
+  inline val overlapping: "overlapping" = "overlapping"
+  inline val nonoverlapping: "nonoverlapping" = "nonoverlapping"
+  inline val ignored: "ignored" = "ignored"
+
+  inline def values: js.Array[IpamOverlapStatus] = js.Array(overlapping, nonoverlapping, ignored)
+}
+
+type IpamPoolAllocationResourceType = "ipam-pool" | "vpc" | "ec2-public-ipv4-pool" | "custom"
+object IpamPoolAllocationResourceType {
+  inline val `ipam-pool`: "ipam-pool" = "ipam-pool"
+  inline val vpc: "vpc" = "vpc"
+  inline val `ec2-public-ipv4-pool`: "ec2-public-ipv4-pool" = "ec2-public-ipv4-pool"
+  inline val custom: "custom" = "custom"
+
+  inline def values: js.Array[IpamPoolAllocationResourceType] = js.Array(`ipam-pool`, vpc, `ec2-public-ipv4-pool`, custom)
+}
+
+type IpamPoolAwsService = "ec2"
+object IpamPoolAwsService {
+  inline val ec2: "ec2" = "ec2"
+
+  inline def values: js.Array[IpamPoolAwsService] = js.Array(ec2)
+}
+
+type IpamPoolCidrFailureCode = "cidr-not-available"
+object IpamPoolCidrFailureCode {
+  inline val `cidr-not-available`: "cidr-not-available" = "cidr-not-available"
+
+  inline def values: js.Array[IpamPoolCidrFailureCode] = js.Array(`cidr-not-available`)
+}
+
+type IpamPoolCidrState = "pending-provision" | "provisioned" | "failed-provision" | "pending-deprovision" | "deprovisioned" | "failed-deprovision" | "pending-import" | "failed-import"
+object IpamPoolCidrState {
+  inline val `pending-provision`: "pending-provision" = "pending-provision"
+  inline val provisioned: "provisioned" = "provisioned"
+  inline val `failed-provision`: "failed-provision" = "failed-provision"
+  inline val `pending-deprovision`: "pending-deprovision" = "pending-deprovision"
+  inline val deprovisioned: "deprovisioned" = "deprovisioned"
+  inline val `failed-deprovision`: "failed-deprovision" = "failed-deprovision"
+  inline val `pending-import`: "pending-import" = "pending-import"
+  inline val `failed-import`: "failed-import" = "failed-import"
+
+  inline def values: js.Array[IpamPoolCidrState] = js.Array(`pending-provision`, provisioned, `failed-provision`, `pending-deprovision`, deprovisioned, `failed-deprovision`, `pending-import`, `failed-import`)
+}
+
+type IpamPoolState = "create-in-progress" | "create-complete" | "create-failed" | "modify-in-progress" | "modify-complete" | "modify-failed" | "delete-in-progress" | "delete-complete" | "delete-failed"
+object IpamPoolState {
+  inline val `create-in-progress`: "create-in-progress" = "create-in-progress"
+  inline val `create-complete`: "create-complete" = "create-complete"
+  inline val `create-failed`: "create-failed" = "create-failed"
+  inline val `modify-in-progress`: "modify-in-progress" = "modify-in-progress"
+  inline val `modify-complete`: "modify-complete" = "modify-complete"
+  inline val `modify-failed`: "modify-failed" = "modify-failed"
+  inline val `delete-in-progress`: "delete-in-progress" = "delete-in-progress"
+  inline val `delete-complete`: "delete-complete" = "delete-complete"
+  inline val `delete-failed`: "delete-failed" = "delete-failed"
+
+  inline def values: js.Array[IpamPoolState] = js.Array(
+    `create-in-progress`,
+    `create-complete`,
+    `create-failed`,
+    `modify-in-progress`,
+    `modify-complete`,
+    `modify-failed`,
+    `delete-in-progress`,
+    `delete-complete`,
+    `delete-failed`
+  )
+}
+
+type IpamResourceType = "vpc" | "subnet" | "eip" | "public-ipv4-pool" | "ipv6-pool"
+object IpamResourceType {
+  inline val vpc: "vpc" = "vpc"
+  inline val subnet: "subnet" = "subnet"
+  inline val eip: "eip" = "eip"
+  inline val `public-ipv4-pool`: "public-ipv4-pool" = "public-ipv4-pool"
+  inline val `ipv6-pool`: "ipv6-pool" = "ipv6-pool"
+
+  inline def values: js.Array[IpamResourceType] = js.Array(vpc, subnet, eip, `public-ipv4-pool`, `ipv6-pool`)
+}
+
+type IpamScopeState = "create-in-progress" | "create-complete" | "create-failed" | "modify-in-progress" | "modify-complete" | "modify-failed" | "delete-in-progress" | "delete-complete" | "delete-failed"
+object IpamScopeState {
+  inline val `create-in-progress`: "create-in-progress" = "create-in-progress"
+  inline val `create-complete`: "create-complete" = "create-complete"
+  inline val `create-failed`: "create-failed" = "create-failed"
+  inline val `modify-in-progress`: "modify-in-progress" = "modify-in-progress"
+  inline val `modify-complete`: "modify-complete" = "modify-complete"
+  inline val `modify-failed`: "modify-failed" = "modify-failed"
+  inline val `delete-in-progress`: "delete-in-progress" = "delete-in-progress"
+  inline val `delete-complete`: "delete-complete" = "delete-complete"
+  inline val `delete-failed`: "delete-failed" = "delete-failed"
+
+  inline def values: js.Array[IpamScopeState] = js.Array(
+    `create-in-progress`,
+    `create-complete`,
+    `create-failed`,
+    `modify-in-progress`,
+    `modify-complete`,
+    `modify-failed`,
+    `delete-in-progress`,
+    `delete-complete`,
+    `delete-failed`
+  )
+}
+
+type IpamScopeType = "public" | "private"
+object IpamScopeType {
+  inline val `public`: "public" = "public"
+  inline val `private`: "private" = "private"
+
+  inline def values: js.Array[IpamScopeType] = js.Array(`public`, `private`)
+}
+
+type IpamState = "create-in-progress" | "create-complete" | "create-failed" | "modify-in-progress" | "modify-complete" | "modify-failed" | "delete-in-progress" | "delete-complete" | "delete-failed"
+object IpamState {
+  inline val `create-in-progress`: "create-in-progress" = "create-in-progress"
+  inline val `create-complete`: "create-complete" = "create-complete"
+  inline val `create-failed`: "create-failed" = "create-failed"
+  inline val `modify-in-progress`: "modify-in-progress" = "modify-in-progress"
+  inline val `modify-complete`: "modify-complete" = "modify-complete"
+  inline val `modify-failed`: "modify-failed" = "modify-failed"
+  inline val `delete-in-progress`: "delete-in-progress" = "delete-in-progress"
+  inline val `delete-complete`: "delete-complete" = "delete-complete"
+  inline val `delete-failed`: "delete-failed" = "delete-failed"
+
+  inline def values: js.Array[IpamState] = js.Array(
+    `create-in-progress`,
+    `create-complete`,
+    `create-failed`,
+    `modify-in-progress`,
+    `modify-complete`,
+    `modify-failed`,
+    `delete-in-progress`,
+    `delete-complete`,
+    `delete-failed`
+  )
+}
+
 type Ipv6SupportValue = "enable" | "disable"
 object Ipv6SupportValue {
   inline val enable: "enable" = "enable"
   inline val disable: "disable" = "disable"
 
   inline def values: js.Array[Ipv6SupportValue] = js.Array(enable, disable)
+}
+
+type KeyType = "rsa" | "ed25519"
+object KeyType {
+  inline val rsa: "rsa" = "rsa"
+  inline val ed25519: "ed25519" = "ed25519"
+
+  inline def values: js.Array[KeyType] = js.Array(rsa, ed25519)
 }
 
 type LaunchTemplateErrorCode = "launchTemplateIdDoesNotExist" | "launchTemplateIdMalformed" | "launchTemplateNameDoesNotExist" | "launchTemplateNameMalformed" | "launchTemplateVersionDoesNotExist" | "unexpectedError"
@@ -1844,6 +2344,14 @@ object LaunchTemplateInstanceMetadataOptionsState {
   inline def values: js.Array[LaunchTemplateInstanceMetadataOptionsState] = js.Array(pending, applied)
 }
 
+type LaunchTemplateInstanceMetadataProtocolIpv6 = "disabled" | "enabled"
+object LaunchTemplateInstanceMetadataProtocolIpv6 {
+  inline val disabled: "disabled" = "disabled"
+  inline val enabled: "enabled" = "enabled"
+
+  inline def values: js.Array[LaunchTemplateInstanceMetadataProtocolIpv6] = js.Array(disabled, enabled)
+}
+
 type ListingState = "available" | "sold" | "cancelled" | "pending"
 object ListingState {
   inline val available: "available" = "available"
@@ -1881,6 +2389,23 @@ object LocalGatewayRouteType {
   inline val propagated: "propagated" = "propagated"
 
   inline def values: js.Array[LocalGatewayRouteType] = js.Array(static, propagated)
+}
+
+type LocalStorage = "included" | "required" | "excluded"
+object LocalStorage {
+  inline val included: "included" = "included"
+  inline val required: "required" = "required"
+  inline val excluded: "excluded" = "excluded"
+
+  inline def values: js.Array[LocalStorage] = js.Array(included, required, excluded)
+}
+
+type LocalStorageType = "hdd" | "ssd"
+object LocalStorageType {
+  inline val hdd: "hdd" = "hdd"
+  inline val ssd: "ssd" = "ssd"
+
+  inline def values: js.Array[LocalStorageType] = js.Array(hdd, ssd)
 }
 
 type LocationType = "region" | "availability-zone" | "availability-zone-id"
@@ -1970,11 +2495,13 @@ object NetworkInterfaceAttribute {
   inline def values: js.Array[NetworkInterfaceAttribute] = js.Array(description, groupSet, sourceDestCheck, attachment)
 }
 
-type NetworkInterfaceCreationType = "efa"
+type NetworkInterfaceCreationType = "efa" | "branch" | "trunk"
 object NetworkInterfaceCreationType {
   inline val efa: "efa" = "efa"
+  inline val branch: "branch" = "branch"
+  inline val trunk: "trunk" = "trunk"
 
-  inline def values: js.Array[NetworkInterfaceCreationType] = js.Array(efa)
+  inline def values: js.Array[NetworkInterfaceCreationType] = js.Array(efa, branch, trunk)
 }
 
 type NetworkInterfacePermissionStateCode = "pending" | "granted" | "revoking" | "revoked"
@@ -1998,13 +2525,14 @@ object NetworkInterfaceStatus {
   inline def values: js.Array[NetworkInterfaceStatus] = js.Array(available, associated, attaching, `in-use`, detaching)
 }
 
-type NetworkInterfaceType = "interface" | "natGateway" | "efa"
+type NetworkInterfaceType = "interface" | "natGateway" | "efa" | "trunk"
 object NetworkInterfaceType {
   inline val interface: "interface" = "interface"
   inline val natGateway: "natGateway" = "natGateway"
   inline val efa: "efa" = "efa"
+  inline val trunk: "trunk" = "trunk"
 
-  inline def values: js.Array[NetworkInterfaceType] = js.Array(interface, natGateway, efa)
+  inline def values: js.Array[NetworkInterfaceType] = js.Array(interface, natGateway, efa, trunk)
 }
 
 type OfferingClassType = "standard" | "convertible"
@@ -2199,11 +2727,12 @@ object ReplaceRootVolumeTaskState {
   inline def values: js.Array[ReplaceRootVolumeTaskState] = js.Array(pending, `in-progress`, failing, succeeded, failed, `failed-detached`)
 }
 
-type ReplacementStrategy = "launch"
+type ReplacementStrategy = "launch" | "launch-before-terminate"
 object ReplacementStrategy {
   inline val launch: "launch" = "launch"
+  inline val `launch-before-terminate`: "launch-before-terminate" = "launch-before-terminate"
 
-  inline def values: js.Array[ReplacementStrategy] = js.Array(launch)
+  inline def values: js.Array[ReplacementStrategy] = js.Array(launch, `launch-before-terminate`)
 }
 
 type ReportInstanceReasonCodes = "instance-stuck-in-state" | "unresponsive" | "not-accepting-credentials" | "password-not-available" | "performance-network" | "performance-instance-store" | "performance-ebs-volume" | "performance-other" | "other"
@@ -2275,11 +2804,13 @@ object ResetImageAttributeName {
   inline def values: js.Array[ResetImageAttributeName] = js.Array(launchPermission)
 }
 
-type ResourceType =
-  "client-vpn-endpoint" | "customer-gateway" | "dedicated-host" | "dhcp-options" | "egress-only-internet-gateway" | "elastic-ip" | "elastic-gpu" | "export-image-task" | "export-instance-task" | "fleet" | "fpga-image" | "host-reservation" | "image" | "import-image-task" | "import-snapshot-task" | "instance" | "internet-gateway" | "key-pair" | "launch-template" | "local-gateway-route-table-vpc-association" | "natgateway" | "network-acl" | "network-interface" | "network-insights-analysis" | "network-insights-path" | "placement-group" | "reserved-instances" | "route-table" | "security-group" | "snapshot" | "spot-fleet-request" | "spot-instances-request" | "subnet" | "traffic-mirror-filter" | "traffic-mirror-session" | "traffic-mirror-target" | "transit-gateway" | "transit-gateway-attachment" | "transit-gateway-connect-peer" | "transit-gateway-multicast-domain" | "transit-gateway-route-table" | "volume" | "vpc" | "vpc-peering-connection" | "vpn-connection" | "vpn-gateway" | "vpc-flow-log"
+type ResourceType = "capacity-reservation" | "client-vpn-endpoint" | "customer-gateway" | "carrier-gateway" | "dedicated-host" | "dhcp-options" | "egress-only-internet-gateway" | "elastic-ip" | "elastic-gpu" | "export-image-task" | "export-instance-task" | "fleet" | "fpga-image" | "host-reservation" | "image" | "import-image-task" | "import-snapshot-task" | "instance" | "instance-event-window" | "internet-gateway" | "ipam" | "ipam-pool" | "ipam-scope" | "ipv4pool-ec2" | "ipv6pool-ec2" | "key-pair" | "launch-template" | "local-gateway" | "local-gateway-route-table" | "local-gateway-virtual-interface" | "local-gateway-virtual-interface-group" | "local-gateway-route-table-vpc-association" | "local-gateway-route-table-virtual-interface-group-association" | "natgateway" | "network-acl" | "network-interface" | "network-insights-analysis" | "network-insights-path" | "network-insights-access-scope" | "network-insights-access-scope-analysis" | "placement-group" | "prefix-list" |
+  "replace-root-volume-task" | "reserved-instances" | "route-table" | "security-group" | "security-group-rule" | "snapshot" | "spot-fleet-request" | "spot-instances-request" | "subnet" | "traffic-mirror-filter" | "traffic-mirror-session" | "traffic-mirror-target" | "transit-gateway" | "transit-gateway-attachment" | "transit-gateway-connect-peer" | "transit-gateway-multicast-domain" | "transit-gateway-route-table" | "volume" | "vpc" | "vpc-endpoint" | "vpc-endpoint-service" | "vpc-peering-connection" | "vpn-connection" | "vpn-gateway" | "vpc-flow-log"
 object ResourceType {
+  inline val `capacity-reservation`: "capacity-reservation" = "capacity-reservation"
   inline val `client-vpn-endpoint`: "client-vpn-endpoint" = "client-vpn-endpoint"
   inline val `customer-gateway`: "customer-gateway" = "customer-gateway"
+  inline val `carrier-gateway`: "carrier-gateway" = "carrier-gateway"
   inline val `dedicated-host`: "dedicated-host" = "dedicated-host"
   inline val `dhcp-options`: "dhcp-options" = "dhcp-options"
   inline val `egress-only-internet-gateway`: "egress-only-internet-gateway" = "egress-only-internet-gateway"
@@ -2294,19 +2825,35 @@ object ResourceType {
   inline val `import-image-task`: "import-image-task" = "import-image-task"
   inline val `import-snapshot-task`: "import-snapshot-task" = "import-snapshot-task"
   inline val instance: "instance" = "instance"
+  inline val `instance-event-window`: "instance-event-window" = "instance-event-window"
   inline val `internet-gateway`: "internet-gateway" = "internet-gateway"
+  inline val ipam: "ipam" = "ipam"
+  inline val `ipam-pool`: "ipam-pool" = "ipam-pool"
+  inline val `ipam-scope`: "ipam-scope" = "ipam-scope"
+  inline val `ipv4pool-ec2`: "ipv4pool-ec2" = "ipv4pool-ec2"
+  inline val `ipv6pool-ec2`: "ipv6pool-ec2" = "ipv6pool-ec2"
   inline val `key-pair`: "key-pair" = "key-pair"
   inline val `launch-template`: "launch-template" = "launch-template"
+  inline val `local-gateway`: "local-gateway" = "local-gateway"
+  inline val `local-gateway-route-table`: "local-gateway-route-table" = "local-gateway-route-table"
+  inline val `local-gateway-virtual-interface`: "local-gateway-virtual-interface" = "local-gateway-virtual-interface"
+  inline val `local-gateway-virtual-interface-group`: "local-gateway-virtual-interface-group" = "local-gateway-virtual-interface-group"
   inline val `local-gateway-route-table-vpc-association`: "local-gateway-route-table-vpc-association" = "local-gateway-route-table-vpc-association"
+  inline val `local-gateway-route-table-virtual-interface-group-association`: "local-gateway-route-table-virtual-interface-group-association" = "local-gateway-route-table-virtual-interface-group-association"
   inline val natgateway: "natgateway" = "natgateway"
   inline val `network-acl`: "network-acl" = "network-acl"
   inline val `network-interface`: "network-interface" = "network-interface"
   inline val `network-insights-analysis`: "network-insights-analysis" = "network-insights-analysis"
   inline val `network-insights-path`: "network-insights-path" = "network-insights-path"
+  inline val `network-insights-access-scope`: "network-insights-access-scope" = "network-insights-access-scope"
+  inline val `network-insights-access-scope-analysis`: "network-insights-access-scope-analysis" = "network-insights-access-scope-analysis"
   inline val `placement-group`: "placement-group" = "placement-group"
+  inline val `prefix-list`: "prefix-list" = "prefix-list"
+  inline val `replace-root-volume-task`: "replace-root-volume-task" = "replace-root-volume-task"
   inline val `reserved-instances`: "reserved-instances" = "reserved-instances"
   inline val `route-table`: "route-table" = "route-table"
   inline val `security-group`: "security-group" = "security-group"
+  inline val `security-group-rule`: "security-group-rule" = "security-group-rule"
   inline val snapshot: "snapshot" = "snapshot"
   inline val `spot-fleet-request`: "spot-fleet-request" = "spot-fleet-request"
   inline val `spot-instances-request`: "spot-instances-request" = "spot-instances-request"
@@ -2321,14 +2868,18 @@ object ResourceType {
   inline val `transit-gateway-route-table`: "transit-gateway-route-table" = "transit-gateway-route-table"
   inline val volume: "volume" = "volume"
   inline val vpc: "vpc" = "vpc"
+  inline val `vpc-endpoint`: "vpc-endpoint" = "vpc-endpoint"
+  inline val `vpc-endpoint-service`: "vpc-endpoint-service" = "vpc-endpoint-service"
   inline val `vpc-peering-connection`: "vpc-peering-connection" = "vpc-peering-connection"
   inline val `vpn-connection`: "vpn-connection" = "vpn-connection"
   inline val `vpn-gateway`: "vpn-gateway" = "vpn-gateway"
   inline val `vpc-flow-log`: "vpc-flow-log" = "vpc-flow-log"
 
   inline def values: js.Array[ResourceType] = js.Array(
+    `capacity-reservation`,
     `client-vpn-endpoint`,
     `customer-gateway`,
+    `carrier-gateway`,
     `dedicated-host`,
     `dhcp-options`,
     `egress-only-internet-gateway`,
@@ -2343,19 +2894,35 @@ object ResourceType {
     `import-image-task`,
     `import-snapshot-task`,
     instance,
+    `instance-event-window`,
     `internet-gateway`,
+    ipam,
+    `ipam-pool`,
+    `ipam-scope`,
+    `ipv4pool-ec2`,
+    `ipv6pool-ec2`,
     `key-pair`,
     `launch-template`,
+    `local-gateway`,
+    `local-gateway-route-table`,
+    `local-gateway-virtual-interface`,
+    `local-gateway-virtual-interface-group`,
     `local-gateway-route-table-vpc-association`,
+    `local-gateway-route-table-virtual-interface-group-association`,
     natgateway,
     `network-acl`,
     `network-interface`,
     `network-insights-analysis`,
     `network-insights-path`,
+    `network-insights-access-scope`,
+    `network-insights-access-scope-analysis`,
     `placement-group`,
+    `prefix-list`,
+    `replace-root-volume-task`,
     `reserved-instances`,
     `route-table`,
     `security-group`,
+    `security-group-rule`,
     snapshot,
     `spot-fleet-request`,
     `spot-instances-request`,
@@ -2370,6 +2937,8 @@ object ResourceType {
     `transit-gateway-route-table`,
     volume,
     vpc,
+    `vpc-endpoint`,
+    `vpc-endpoint-service`,
     `vpc-peering-connection`,
     `vpn-connection`,
     `vpn-gateway`,
@@ -2465,13 +3034,15 @@ object SnapshotAttributeName {
   inline def values: js.Array[SnapshotAttributeName] = js.Array(productCodes, createVolumePermission)
 }
 
-type SnapshotState = "pending" | "completed" | "error"
+type SnapshotState = "pending" | "completed" | "error" | "recoverable" | "recovering"
 object SnapshotState {
   inline val pending: "pending" = "pending"
   inline val completed: "completed" = "completed"
   inline val error: "error" = "error"
+  inline val recoverable: "recoverable" = "recoverable"
+  inline val recovering: "recovering" = "recovering"
 
-  inline def values: js.Array[SnapshotState] = js.Array(pending, completed, error)
+  inline def values: js.Array[SnapshotState] = js.Array(pending, completed, error, recoverable, recovering)
 }
 
 type SpotAllocationStrategy = "lowest-price" | "diversified" | "capacity-optimized" | "capacity-optimized-prioritized"
@@ -2560,6 +3131,14 @@ object StatusType {
   inline def values: js.Array[StatusType] = js.Array(passed, failed, `insufficient-data`, initializing)
 }
 
+type StorageTier = "archive" | "standard"
+object StorageTier {
+  inline val archive: "archive" = "archive"
+  inline val standard: "standard" = "standard"
+
+  inline def values: js.Array[StorageTier] = js.Array(archive, standard)
+}
+
 type SubnetCidrBlockStateCode = "associating" | "associated" | "disassociating" | "disassociated" | "failing" | "failed"
 object SubnetCidrBlockStateCode {
   inline val associating: "associating" = "associating"
@@ -2570,6 +3149,14 @@ object SubnetCidrBlockStateCode {
   inline val failed: "failed" = "failed"
 
   inline def values: js.Array[SubnetCidrBlockStateCode] = js.Array(associating, associated, disassociating, disassociated, failing, failed)
+}
+
+type SubnetCidrReservationType = "prefix" | "explicit"
+object SubnetCidrReservationType {
+  inline val prefix: "prefix" = "prefix"
+  inline val explicit: "explicit" = "explicit"
+
+  inline def values: js.Array[SubnetCidrReservationType] = js.Array(prefix, explicit)
 }
 
 type SubnetState = "pending" | "available"
@@ -2591,6 +3178,22 @@ object SummaryStatus {
   inline def values: js.Array[SummaryStatus] = js.Array(ok, impaired, `insufficient-data`, `not-applicable`, initializing)
 }
 
+type TargetCapacityUnitType = "vcpu" | "memory-mib" | "units"
+object TargetCapacityUnitType {
+  inline val vcpu: "vcpu" = "vcpu"
+  inline val `memory-mib`: "memory-mib" = "memory-mib"
+  inline val units: "units" = "units"
+
+  inline def values: js.Array[TargetCapacityUnitType] = js.Array(vcpu, `memory-mib`, units)
+}
+
+type TargetStorageTier = "archive"
+object TargetStorageTier {
+  inline val archive: "archive" = "archive"
+
+  inline def values: js.Array[TargetStorageTier] = js.Array(archive)
+}
+
 type TelemetryStatus = "UP" | "DOWN"
 object TelemetryStatus {
   inline val UP: "UP" = "UP"
@@ -2606,6 +3209,31 @@ object Tenancy {
   inline val host: "host" = "host"
 
   inline def values: js.Array[Tenancy] = js.Array(default, dedicated, host)
+}
+
+type TieringOperationStatus = "archival-in-progress" | "archival-completed" | "archival-failed" | "temporary-restore-in-progress" | "temporary-restore-completed" | "temporary-restore-failed" | "permanent-restore-in-progress" | "permanent-restore-completed" | "permanent-restore-failed"
+object TieringOperationStatus {
+  inline val `archival-in-progress`: "archival-in-progress" = "archival-in-progress"
+  inline val `archival-completed`: "archival-completed" = "archival-completed"
+  inline val `archival-failed`: "archival-failed" = "archival-failed"
+  inline val `temporary-restore-in-progress`: "temporary-restore-in-progress" = "temporary-restore-in-progress"
+  inline val `temporary-restore-completed`: "temporary-restore-completed" = "temporary-restore-completed"
+  inline val `temporary-restore-failed`: "temporary-restore-failed" = "temporary-restore-failed"
+  inline val `permanent-restore-in-progress`: "permanent-restore-in-progress" = "permanent-restore-in-progress"
+  inline val `permanent-restore-completed`: "permanent-restore-completed" = "permanent-restore-completed"
+  inline val `permanent-restore-failed`: "permanent-restore-failed" = "permanent-restore-failed"
+
+  inline def values: js.Array[TieringOperationStatus] = js.Array(
+    `archival-in-progress`,
+    `archival-completed`,
+    `archival-failed`,
+    `temporary-restore-in-progress`,
+    `temporary-restore-completed`,
+    `temporary-restore-failed`,
+    `permanent-restore-in-progress`,
+    `permanent-restore-completed`,
+    `permanent-restore-failed`
+  )
 }
 
 type TrafficDirection = "ingress" | "egress"
@@ -3013,6 +3641,19 @@ object VpnStaticRouteSource {
   inline val Static: "Static" = "Static"
 
   inline def values: js.Array[VpnStaticRouteSource] = js.Array(Static)
+}
+
+type WeekDay = "sunday" | "monday" | "tuesday" | "wednesday" | "thursday" | "friday" | "saturday"
+object WeekDay {
+  inline val sunday: "sunday" = "sunday"
+  inline val monday: "monday" = "monday"
+  inline val tuesday: "tuesday" = "tuesday"
+  inline val wednesday: "wednesday" = "wednesday"
+  inline val thursday: "thursday" = "thursday"
+  inline val friday: "friday" = "friday"
+  inline val saturday: "saturday" = "saturday"
+
+  inline def values: js.Array[WeekDay] = js.Array(sunday, monday, tuesday, wednesday, thursday, friday, saturday)
 }
 
 type scope = "Availability Zone" | "Region"

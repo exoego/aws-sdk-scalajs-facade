@@ -29,6 +29,9 @@ package object docdb {
   type EventSubscriptionsList = js.Array[EventSubscription]
   type FilterList = js.Array[Filter]
   type FilterValueList = js.Array[String]
+  type GlobalClusterIdentifier = String
+  type GlobalClusterList = js.Array[GlobalCluster]
+  type GlobalClusterMemberList = js.Array[GlobalClusterMember]
   type IntegerOptional = Int
   type KeyList = js.Array[String]
   type LogTypeList = js.Array[String]
@@ -36,6 +39,8 @@ package object docdb {
   type ParametersList = js.Array[Parameter]
   type PendingMaintenanceActionDetails = js.Array[PendingMaintenanceAction]
   type PendingMaintenanceActions = js.Array[ResourcePendingMaintenanceActions]
+  type ReadReplicaIdentifierList = js.Array[String]
+  type ReadersArnList = js.Array[String]
   type SourceIdsList = js.Array[String]
   type SubnetIdentifierList = js.Array[String]
   type SubnetList = js.Array[Subnet]
@@ -58,12 +63,14 @@ package object docdb {
     @inline def createDBInstanceFuture(params: CreateDBInstanceMessage): Future[CreateDBInstanceResult] = service.createDBInstance(params).promise().toFuture
     @inline def createDBSubnetGroupFuture(params: CreateDBSubnetGroupMessage): Future[CreateDBSubnetGroupResult] = service.createDBSubnetGroup(params).promise().toFuture
     @inline def createEventSubscriptionFuture(params: CreateEventSubscriptionMessage): Future[CreateEventSubscriptionResult] = service.createEventSubscription(params).promise().toFuture
+    @inline def createGlobalClusterFuture(params: CreateGlobalClusterMessage): Future[CreateGlobalClusterResult] = service.createGlobalCluster(params).promise().toFuture
     @inline def deleteDBClusterFuture(params: DeleteDBClusterMessage): Future[DeleteDBClusterResult] = service.deleteDBCluster(params).promise().toFuture
     @inline def deleteDBClusterParameterGroupFuture(params: DeleteDBClusterParameterGroupMessage): Future[js.Object] = service.deleteDBClusterParameterGroup(params).promise().toFuture
     @inline def deleteDBClusterSnapshotFuture(params: DeleteDBClusterSnapshotMessage): Future[DeleteDBClusterSnapshotResult] = service.deleteDBClusterSnapshot(params).promise().toFuture
     @inline def deleteDBInstanceFuture(params: DeleteDBInstanceMessage): Future[DeleteDBInstanceResult] = service.deleteDBInstance(params).promise().toFuture
     @inline def deleteDBSubnetGroupFuture(params: DeleteDBSubnetGroupMessage): Future[js.Object] = service.deleteDBSubnetGroup(params).promise().toFuture
     @inline def deleteEventSubscriptionFuture(params: DeleteEventSubscriptionMessage): Future[DeleteEventSubscriptionResult] = service.deleteEventSubscription(params).promise().toFuture
+    @inline def deleteGlobalClusterFuture(params: DeleteGlobalClusterMessage): Future[DeleteGlobalClusterResult] = service.deleteGlobalCluster(params).promise().toFuture
     @inline def describeCertificatesFuture(params: DescribeCertificatesMessage): Future[CertificateMessage] = service.describeCertificates(params).promise().toFuture
     @inline def describeDBClusterParameterGroupsFuture(params: DescribeDBClusterParameterGroupsMessage): Future[DBClusterParameterGroupsMessage] = service.describeDBClusterParameterGroups(params).promise().toFuture
     @inline def describeDBClusterParametersFuture(params: DescribeDBClusterParametersMessage): Future[DBClusterParameterGroupDetails] = service.describeDBClusterParameters(params).promise().toFuture
@@ -77,6 +84,7 @@ package object docdb {
     @inline def describeEventCategoriesFuture(params: DescribeEventCategoriesMessage): Future[EventCategoriesMessage] = service.describeEventCategories(params).promise().toFuture
     @inline def describeEventSubscriptionsFuture(params: DescribeEventSubscriptionsMessage): Future[EventSubscriptionsMessage] = service.describeEventSubscriptions(params).promise().toFuture
     @inline def describeEventsFuture(params: DescribeEventsMessage): Future[EventsMessage] = service.describeEvents(params).promise().toFuture
+    @inline def describeGlobalClustersFuture(params: DescribeGlobalClustersMessage): Future[GlobalClustersMessage] = service.describeGlobalClusters(params).promise().toFuture
     @inline def describeOrderableDBInstanceOptionsFuture(params: DescribeOrderableDBInstanceOptionsMessage): Future[OrderableDBInstanceOptionsMessage] = service.describeOrderableDBInstanceOptions(params).promise().toFuture
     @inline def describePendingMaintenanceActionsFuture(params: DescribePendingMaintenanceActionsMessage): Future[PendingMaintenanceActionsMessage] = service.describePendingMaintenanceActions(params).promise().toFuture
     @inline def failoverDBClusterFuture(params: FailoverDBClusterMessage): Future[FailoverDBClusterResult] = service.failoverDBCluster(params).promise().toFuture
@@ -87,7 +95,9 @@ package object docdb {
     @inline def modifyDBInstanceFuture(params: ModifyDBInstanceMessage): Future[ModifyDBInstanceResult] = service.modifyDBInstance(params).promise().toFuture
     @inline def modifyDBSubnetGroupFuture(params: ModifyDBSubnetGroupMessage): Future[ModifyDBSubnetGroupResult] = service.modifyDBSubnetGroup(params).promise().toFuture
     @inline def modifyEventSubscriptionFuture(params: ModifyEventSubscriptionMessage): Future[ModifyEventSubscriptionResult] = service.modifyEventSubscription(params).promise().toFuture
+    @inline def modifyGlobalClusterFuture(params: ModifyGlobalClusterMessage): Future[ModifyGlobalClusterResult] = service.modifyGlobalCluster(params).promise().toFuture
     @inline def rebootDBInstanceFuture(params: RebootDBInstanceMessage): Future[RebootDBInstanceResult] = service.rebootDBInstance(params).promise().toFuture
+    @inline def removeFromGlobalClusterFuture(params: RemoveFromGlobalClusterMessage): Future[RemoveFromGlobalClusterResult] = service.removeFromGlobalCluster(params).promise().toFuture
     @inline def removeSourceIdentifierFromSubscriptionFuture(params: RemoveSourceIdentifierFromSubscriptionMessage): Future[RemoveSourceIdentifierFromSubscriptionResult] = service.removeSourceIdentifierFromSubscription(params).promise().toFuture
     @inline def removeTagsFromResourceFuture(params: RemoveTagsFromResourceMessage): Future[js.Object] = service.removeTagsFromResource(params).promise().toFuture
     @inline def resetDBClusterParameterGroupFuture(params: ResetDBClusterParameterGroupMessage): Future[DBClusterParameterGroupNameMessage] = service.resetDBClusterParameterGroup(params).promise().toFuture
@@ -114,12 +124,14 @@ package object docdb {
     def createDBInstance(params: CreateDBInstanceMessage): Request[CreateDBInstanceResult] = js.native
     def createDBSubnetGroup(params: CreateDBSubnetGroupMessage): Request[CreateDBSubnetGroupResult] = js.native
     def createEventSubscription(params: CreateEventSubscriptionMessage): Request[CreateEventSubscriptionResult] = js.native
+    def createGlobalCluster(params: CreateGlobalClusterMessage): Request[CreateGlobalClusterResult] = js.native
     def deleteDBCluster(params: DeleteDBClusterMessage): Request[DeleteDBClusterResult] = js.native
     def deleteDBClusterParameterGroup(params: DeleteDBClusterParameterGroupMessage): Request[js.Object] = js.native
     def deleteDBClusterSnapshot(params: DeleteDBClusterSnapshotMessage): Request[DeleteDBClusterSnapshotResult] = js.native
     def deleteDBInstance(params: DeleteDBInstanceMessage): Request[DeleteDBInstanceResult] = js.native
     def deleteDBSubnetGroup(params: DeleteDBSubnetGroupMessage): Request[js.Object] = js.native
     def deleteEventSubscription(params: DeleteEventSubscriptionMessage): Request[DeleteEventSubscriptionResult] = js.native
+    def deleteGlobalCluster(params: DeleteGlobalClusterMessage): Request[DeleteGlobalClusterResult] = js.native
     def describeCertificates(params: DescribeCertificatesMessage): Request[CertificateMessage] = js.native
     def describeDBClusterParameterGroups(params: DescribeDBClusterParameterGroupsMessage): Request[DBClusterParameterGroupsMessage] = js.native
     def describeDBClusterParameters(params: DescribeDBClusterParametersMessage): Request[DBClusterParameterGroupDetails] = js.native
@@ -133,6 +145,7 @@ package object docdb {
     def describeEventCategories(params: DescribeEventCategoriesMessage): Request[EventCategoriesMessage] = js.native
     def describeEventSubscriptions(params: DescribeEventSubscriptionsMessage): Request[EventSubscriptionsMessage] = js.native
     def describeEvents(params: DescribeEventsMessage): Request[EventsMessage] = js.native
+    def describeGlobalClusters(params: DescribeGlobalClustersMessage): Request[GlobalClustersMessage] = js.native
     def describeOrderableDBInstanceOptions(params: DescribeOrderableDBInstanceOptionsMessage): Request[OrderableDBInstanceOptionsMessage] = js.native
     def describePendingMaintenanceActions(params: DescribePendingMaintenanceActionsMessage): Request[PendingMaintenanceActionsMessage] = js.native
     def failoverDBCluster(params: FailoverDBClusterMessage): Request[FailoverDBClusterResult] = js.native
@@ -143,7 +156,9 @@ package object docdb {
     def modifyDBInstance(params: ModifyDBInstanceMessage): Request[ModifyDBInstanceResult] = js.native
     def modifyDBSubnetGroup(params: ModifyDBSubnetGroupMessage): Request[ModifyDBSubnetGroupResult] = js.native
     def modifyEventSubscription(params: ModifyEventSubscriptionMessage): Request[ModifyEventSubscriptionResult] = js.native
+    def modifyGlobalCluster(params: ModifyGlobalClusterMessage): Request[ModifyGlobalClusterResult] = js.native
     def rebootDBInstance(params: RebootDBInstanceMessage): Request[RebootDBInstanceResult] = js.native
+    def removeFromGlobalCluster(params: RemoveFromGlobalClusterMessage): Request[RemoveFromGlobalClusterResult] = js.native
     def removeSourceIdentifierFromSubscription(params: RemoveSourceIdentifierFromSubscriptionMessage): Request[RemoveSourceIdentifierFromSubscriptionResult] = js.native
     def removeTagsFromResource(params: RemoveTagsFromResourceMessage): Request[js.Object] = js.native
     def resetDBClusterParameterGroup(params: ResetDBClusterParameterGroupMessage): Request[DBClusterParameterGroupNameMessage] = js.native
@@ -277,7 +292,7 @@ package object docdb {
     }
   }
 
-  /** A certificate authority (CA) certificate for an AWS account.
+  /** A certificate authority (CA) certificate for an account.
     */
   @js.native
   trait Certificate extends js.Object {
@@ -452,8 +467,6 @@ package object docdb {
   trait CreateDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
     var Engine: String
-    var MasterUserPassword: String
-    var MasterUsername: String
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
@@ -461,7 +474,10 @@ package object docdb {
     var DeletionProtection: js.UndefOr[BooleanOptional]
     var EnableCloudwatchLogsExports: js.UndefOr[LogTypeList]
     var EngineVersion: js.UndefOr[String]
+    var GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier]
     var KmsKeyId: js.UndefOr[String]
+    var MasterUserPassword: js.UndefOr[String]
+    var MasterUsername: js.UndefOr[String]
     var Port: js.UndefOr[IntegerOptional]
     var PreSignedUrl: js.UndefOr[String]
     var PreferredBackupWindow: js.UndefOr[String]
@@ -476,8 +492,6 @@ package object docdb {
     def apply(
         DBClusterIdentifier: String,
         Engine: String,
-        MasterUserPassword: String,
-        MasterUsername: String,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
@@ -485,7 +499,10 @@ package object docdb {
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         EnableCloudwatchLogsExports: js.UndefOr[LogTypeList] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier] = js.undefined,
         KmsKeyId: js.UndefOr[String] = js.undefined,
+        MasterUserPassword: js.UndefOr[String] = js.undefined,
+        MasterUsername: js.UndefOr[String] = js.undefined,
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreSignedUrl: js.UndefOr[String] = js.undefined,
         PreferredBackupWindow: js.UndefOr[String] = js.undefined,
@@ -496,9 +513,7 @@ package object docdb {
     ): CreateDBClusterMessage = {
       val __obj = js.Dynamic.literal(
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any],
-        "Engine" -> Engine.asInstanceOf[js.Any],
-        "MasterUserPassword" -> MasterUserPassword.asInstanceOf[js.Any],
-        "MasterUsername" -> MasterUsername.asInstanceOf[js.Any]
+        "Engine" -> Engine.asInstanceOf[js.Any]
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
@@ -508,7 +523,10 @@ package object docdb {
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       EnableCloudwatchLogsExports.foreach(__v => __obj.updateDynamic("EnableCloudwatchLogsExports")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      MasterUserPassword.foreach(__v => __obj.updateDynamic("MasterUserPassword")(__v.asInstanceOf[js.Any]))
+      MasterUsername.foreach(__v => __obj.updateDynamic("MasterUsername")(__v.asInstanceOf[js.Any]))
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreSignedUrl.foreach(__v => __obj.updateDynamic("PreSignedUrl")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
@@ -782,6 +800,60 @@ package object docdb {
     }
   }
 
+  /** Represents the input to <a>CreateGlobalCluster</a>.
+    */
+  @js.native
+  trait CreateGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: GlobalClusterIdentifier
+    var DatabaseName: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
+    var Engine: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var SourceDBClusterIdentifier: js.UndefOr[String]
+    var StorageEncrypted: js.UndefOr[BooleanOptional]
+  }
+
+  object CreateGlobalClusterMessage {
+    @inline
+    def apply(
+        GlobalClusterIdentifier: GlobalClusterIdentifier,
+        DatabaseName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        SourceDBClusterIdentifier: js.UndefOr[String] = js.undefined,
+        StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined
+    ): CreateGlobalClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      SourceDBClusterIdentifier.foreach(__v => __obj.updateDynamic("SourceDBClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait CreateGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object CreateGlobalClusterResult {
+    @inline
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): CreateGlobalClusterResult = {
+      val __obj = js.Dynamic.literal()
+      GlobalCluster.foreach(__v => __obj.updateDynamic("GlobalCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateGlobalClusterResult]
+    }
+  }
+
   /** Detailed information about a cluster.
     */
   @js.native
@@ -811,7 +883,9 @@ package object docdb {
     var Port: js.UndefOr[IntegerOptional]
     var PreferredBackupWindow: js.UndefOr[String]
     var PreferredMaintenanceWindow: js.UndefOr[String]
+    var ReadReplicaIdentifiers: js.UndefOr[ReadReplicaIdentifierList]
     var ReaderEndpoint: js.UndefOr[String]
+    var ReplicationSourceIdentifier: js.UndefOr[String]
     var Status: js.UndefOr[String]
     var StorageEncrypted: js.UndefOr[Boolean]
     var VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList]
@@ -845,7 +919,9 @@ package object docdb {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredBackupWindow: js.UndefOr[String] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
+        ReadReplicaIdentifiers: js.UndefOr[ReadReplicaIdentifierList] = js.undefined,
         ReaderEndpoint: js.UndefOr[String] = js.undefined,
+        ReplicationSourceIdentifier: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[String] = js.undefined,
         StorageEncrypted: js.UndefOr[Boolean] = js.undefined,
         VpcSecurityGroups: js.UndefOr[VpcSecurityGroupMembershipList] = js.undefined
@@ -876,7 +952,9 @@ package object docdb {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredBackupWindow.foreach(__v => __obj.updateDynamic("PreferredBackupWindow")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
+      ReadReplicaIdentifiers.foreach(__v => __obj.updateDynamic("ReadReplicaIdentifiers")(__v.asInstanceOf[js.Any]))
       ReaderEndpoint.foreach(__v => __obj.updateDynamic("ReaderEndpoint")(__v.asInstanceOf[js.Any]))
+      ReplicationSourceIdentifier.foreach(__v => __obj.updateDynamic("ReplicationSourceIdentifier")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroups.foreach(__v => __obj.updateDynamic("VpcSecurityGroups")(__v.asInstanceOf[js.Any]))
@@ -1019,7 +1097,7 @@ package object docdb {
     }
   }
 
-  /** Describes an AWS Identity and Access Management (IAM) role that is associated with a cluster.
+  /** Describes an Identity and Access Management (IAM) role that is associated with a cluster.
     */
   @js.native
   trait DBClusterRole extends js.Object {
@@ -1106,7 +1184,7 @@ package object docdb {
     }
   }
 
-  /** Contains the name and values of a manual cluster snapshot attribute. Manual cluster snapshot attributes are used to authorize other AWS accounts to restore a manual cluster snapshot.
+  /** Contains the name and values of a manual cluster snapshot attribute. Manual cluster snapshot attributes are used to authorize other accounts to restore a manual cluster snapshot.
     */
   @js.native
   trait DBClusterSnapshotAttribute extends js.Object {
@@ -1609,6 +1687,41 @@ package object docdb {
     }
   }
 
+  /** Represents the input to <a>DeleteGlobalCluster</a>.
+    */
+  @js.native
+  trait DeleteGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: GlobalClusterIdentifier
+  }
+
+  object DeleteGlobalClusterMessage {
+    @inline
+    def apply(
+        GlobalClusterIdentifier: GlobalClusterIdentifier
+    ): DeleteGlobalClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait DeleteGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object DeleteGlobalClusterResult {
+    @inline
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): DeleteGlobalClusterResult = {
+      val __obj = js.Dynamic.literal()
+      GlobalCluster.foreach(__v => __obj.updateDynamic("GlobalCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteGlobalClusterResult]
+    }
+  }
+
   @js.native
   trait DescribeCertificatesMessage extends js.Object {
     var CertificateIdentifier: js.UndefOr[String]
@@ -2025,6 +2138,31 @@ package object docdb {
     }
   }
 
+  @js.native
+  trait DescribeGlobalClustersMessage extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+    var GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+  }
+
+  object DescribeGlobalClustersMessage {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeGlobalClustersMessage = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeGlobalClustersMessage]
+    }
+  }
+
   /** Represents the input to <a>DescribeOrderableDBInstanceOptions</a>.
     */
   @js.native
@@ -2359,6 +2497,94 @@ package object docdb {
     }
   }
 
+  /** A data type representing an Amazon DocumentDB global cluster.
+    */
+  @js.native
+  trait GlobalCluster extends js.Object {
+    var DatabaseName: js.UndefOr[String]
+    var DeletionProtection: js.UndefOr[BooleanOptional]
+    var Engine: js.UndefOr[String]
+    var EngineVersion: js.UndefOr[String]
+    var GlobalClusterArn: js.UndefOr[String]
+    var GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier]
+    var GlobalClusterMembers: js.UndefOr[GlobalClusterMemberList]
+    var GlobalClusterResourceId: js.UndefOr[String]
+    var Status: js.UndefOr[String]
+    var StorageEncrypted: js.UndefOr[BooleanOptional]
+  }
+
+  object GlobalCluster {
+    @inline
+    def apply(
+        DatabaseName: js.UndefOr[String] = js.undefined,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        Engine: js.UndefOr[String] = js.undefined,
+        EngineVersion: js.UndefOr[String] = js.undefined,
+        GlobalClusterArn: js.UndefOr[String] = js.undefined,
+        GlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier] = js.undefined,
+        GlobalClusterMembers: js.UndefOr[GlobalClusterMemberList] = js.undefined,
+        GlobalClusterResourceId: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        StorageEncrypted: js.UndefOr[BooleanOptional] = js.undefined
+    ): GlobalCluster = {
+      val __obj = js.Dynamic.literal()
+      DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      Engine.foreach(__v => __obj.updateDynamic("Engine")(__v.asInstanceOf[js.Any]))
+      EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
+      GlobalClusterArn.foreach(__v => __obj.updateDynamic("GlobalClusterArn")(__v.asInstanceOf[js.Any]))
+      GlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("GlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      GlobalClusterMembers.foreach(__v => __obj.updateDynamic("GlobalClusterMembers")(__v.asInstanceOf[js.Any]))
+      GlobalClusterResourceId.foreach(__v => __obj.updateDynamic("GlobalClusterResourceId")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StorageEncrypted.foreach(__v => __obj.updateDynamic("StorageEncrypted")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalCluster]
+    }
+  }
+
+  /** A data structure with information about any primary and secondary clusters associated with an Amazon DocumentDB global clusters.
+    */
+  @js.native
+  trait GlobalClusterMember extends js.Object {
+    var DBClusterArn: js.UndefOr[String]
+    var IsWriter: js.UndefOr[Boolean]
+    var Readers: js.UndefOr[ReadersArnList]
+  }
+
+  object GlobalClusterMember {
+    @inline
+    def apply(
+        DBClusterArn: js.UndefOr[String] = js.undefined,
+        IsWriter: js.UndefOr[Boolean] = js.undefined,
+        Readers: js.UndefOr[ReadersArnList] = js.undefined
+    ): GlobalClusterMember = {
+      val __obj = js.Dynamic.literal()
+      DBClusterArn.foreach(__v => __obj.updateDynamic("DBClusterArn")(__v.asInstanceOf[js.Any]))
+      IsWriter.foreach(__v => __obj.updateDynamic("IsWriter")(__v.asInstanceOf[js.Any]))
+      Readers.foreach(__v => __obj.updateDynamic("Readers")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalClusterMember]
+    }
+  }
+
+  @js.native
+  trait GlobalClustersMessage extends js.Object {
+    var GlobalClusters: js.UndefOr[GlobalClusterList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object GlobalClustersMessage {
+    @inline
+    def apply(
+        GlobalClusters: js.UndefOr[GlobalClusterList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): GlobalClustersMessage = {
+      val __obj = js.Dynamic.literal()
+      GlobalClusters.foreach(__v => __obj.updateDynamic("GlobalClusters")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GlobalClustersMessage]
+    }
+  }
+
   /** Represents the input to <a>ListTagsForResource</a>.
     */
   @js.native
@@ -2668,6 +2894,48 @@ package object docdb {
     }
   }
 
+  /** Represents the input to <a>ModifyGlobalCluster</a>.
+    */
+  @js.native
+  trait ModifyGlobalClusterMessage extends js.Object {
+    var GlobalClusterIdentifier: GlobalClusterIdentifier
+    var DeletionProtection: js.UndefOr[BooleanOptional]
+    var NewGlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier]
+  }
+
+  object ModifyGlobalClusterMessage {
+    @inline
+    def apply(
+        GlobalClusterIdentifier: GlobalClusterIdentifier,
+        DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
+        NewGlobalClusterIdentifier: js.UndefOr[GlobalClusterIdentifier] = js.undefined
+    ): ModifyGlobalClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any]
+      )
+
+      DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      NewGlobalClusterIdentifier.foreach(__v => __obj.updateDynamic("NewGlobalClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object ModifyGlobalClusterResult {
+    @inline
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): ModifyGlobalClusterResult = {
+      val __obj = js.Dynamic.literal()
+      GlobalCluster.foreach(__v => __obj.updateDynamic("GlobalCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyGlobalClusterResult]
+    }
+  }
+
   /** The options that are available for an instance.
     */
   @js.native
@@ -2935,6 +3203,44 @@ package object docdb {
       val __obj = js.Dynamic.literal()
       DBInstance.foreach(__v => __obj.updateDynamic("DBInstance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RebootDBInstanceResult]
+    }
+  }
+
+  /** Represents the input to <a>RemoveFromGlobalCluster</a>.
+    */
+  @js.native
+  trait RemoveFromGlobalClusterMessage extends js.Object {
+    var DbClusterIdentifier: String
+    var GlobalClusterIdentifier: GlobalClusterIdentifier
+  }
+
+  object RemoveFromGlobalClusterMessage {
+    @inline
+    def apply(
+        DbClusterIdentifier: String,
+        GlobalClusterIdentifier: GlobalClusterIdentifier
+    ): RemoveFromGlobalClusterMessage = {
+      val __obj = js.Dynamic.literal(
+        "DbClusterIdentifier" -> DbClusterIdentifier.asInstanceOf[js.Any],
+        "GlobalClusterIdentifier" -> GlobalClusterIdentifier.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RemoveFromGlobalClusterMessage]
+    }
+  }
+
+  @js.native
+  trait RemoveFromGlobalClusterResult extends js.Object {
+    var GlobalCluster: js.UndefOr[GlobalCluster]
+  }
+
+  object RemoveFromGlobalClusterResult {
+    @inline
+    def apply(
+        GlobalCluster: js.UndefOr[GlobalCluster] = js.undefined
+    ): RemoveFromGlobalClusterResult = {
+      val __obj = js.Dynamic.literal()
+      GlobalCluster.foreach(__v => __obj.updateDynamic("GlobalCluster")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RemoveFromGlobalClusterResult]
     }
   }
 

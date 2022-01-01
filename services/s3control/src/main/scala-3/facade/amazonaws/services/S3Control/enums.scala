@@ -2,6 +2,15 @@ package facade.amazonaws.services.s3control
 
 import scalajs.js
 
+type AsyncOperationName = "CreateMultiRegionAccessPoint" | "DeleteMultiRegionAccessPoint" | "PutMultiRegionAccessPointPolicy"
+object AsyncOperationName {
+  inline val CreateMultiRegionAccessPoint: "CreateMultiRegionAccessPoint" = "CreateMultiRegionAccessPoint"
+  inline val DeleteMultiRegionAccessPoint: "DeleteMultiRegionAccessPoint" = "DeleteMultiRegionAccessPoint"
+  inline val PutMultiRegionAccessPointPolicy: "PutMultiRegionAccessPointPolicy" = "PutMultiRegionAccessPointPolicy"
+
+  inline def values: js.Array[AsyncOperationName] = js.Array(CreateMultiRegionAccessPoint, DeleteMultiRegionAccessPoint, PutMultiRegionAccessPointPolicy)
+}
+
 type BucketCannedACL = "private" | "public-read" | "public-read-write" | "authenticated-read"
 object BucketCannedACL {
   inline val `private`: "private" = "private"
@@ -95,6 +104,18 @@ object JobStatus {
   inline val Suspended: "Suspended" = "Suspended"
 
   inline def values: js.Array[JobStatus] = js.Array(Active, Cancelled, Cancelling, Complete, Completing, Failed, Failing, New, Paused, Pausing, Preparing, Ready, Suspended)
+}
+
+type MultiRegionAccessPointStatus = "READY" | "INCONSISTENT_ACROSS_REGIONS" | "CREATING" | "PARTIALLY_CREATED" | "PARTIALLY_DELETED" | "DELETING"
+object MultiRegionAccessPointStatus {
+  inline val READY: "READY" = "READY"
+  inline val INCONSISTENT_ACROSS_REGIONS: "INCONSISTENT_ACROSS_REGIONS" = "INCONSISTENT_ACROSS_REGIONS"
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val PARTIALLY_CREATED: "PARTIALLY_CREATED" = "PARTIALLY_CREATED"
+  inline val PARTIALLY_DELETED: "PARTIALLY_DELETED" = "PARTIALLY_DELETED"
+  inline val DELETING: "DELETING" = "DELETING"
+
+  inline def values: js.Array[MultiRegionAccessPointStatus] = js.Array(READY, INCONSISTENT_ACROSS_REGIONS, CREATING, PARTIALLY_CREATED, PARTIALLY_DELETED, DELETING)
 }
 
 type NetworkOrigin = "Internet" | "VPC"

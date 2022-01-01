@@ -13,6 +13,15 @@ object Action {
 }
 
 @js.native
+sealed trait AutodefinedReverseFlag extends js.Any
+object AutodefinedReverseFlag {
+  val ENABLE = "ENABLE".asInstanceOf[AutodefinedReverseFlag]
+  val DISABLE = "DISABLE".asInstanceOf[AutodefinedReverseFlag]
+
+  @inline def values: js.Array[AutodefinedReverseFlag] = js.Array(ENABLE, DISABLE)
+}
+
+@js.native
 sealed trait BlockOverrideDnsType extends js.Any
 object BlockOverrideDnsType {
   val CNAME = "CNAME".asInstanceOf[BlockOverrideDnsType]
@@ -113,6 +122,17 @@ object MutationProtectionStatus {
   val DISABLED = "DISABLED".asInstanceOf[MutationProtectionStatus]
 
   @inline def values: js.Array[MutationProtectionStatus] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
+sealed trait ResolverAutodefinedReverseStatus extends js.Any
+object ResolverAutodefinedReverseStatus {
+  val ENABLING = "ENABLING".asInstanceOf[ResolverAutodefinedReverseStatus]
+  val ENABLED = "ENABLED".asInstanceOf[ResolverAutodefinedReverseStatus]
+  val DISABLING = "DISABLING".asInstanceOf[ResolverAutodefinedReverseStatus]
+  val DISABLED = "DISABLED".asInstanceOf[ResolverAutodefinedReverseStatus]
+
+  @inline def values: js.Array[ResolverAutodefinedReverseStatus] = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
 }
 
 @js.native

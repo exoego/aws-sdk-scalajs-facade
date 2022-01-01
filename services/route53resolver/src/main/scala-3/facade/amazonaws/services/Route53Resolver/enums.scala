@@ -11,6 +11,14 @@ object Action {
   inline def values: js.Array[Action] = js.Array(ALLOW, BLOCK, ALERT)
 }
 
+type AutodefinedReverseFlag = "ENABLE" | "DISABLE"
+object AutodefinedReverseFlag {
+  inline val ENABLE: "ENABLE" = "ENABLE"
+  inline val DISABLE: "DISABLE" = "DISABLE"
+
+  inline def values: js.Array[AutodefinedReverseFlag] = js.Array(ENABLE, DISABLE)
+}
+
 type BlockOverrideDnsType = "CNAME"
 object BlockOverrideDnsType {
   inline val CNAME: "CNAME" = "CNAME"
@@ -102,6 +110,16 @@ object MutationProtectionStatus {
   inline val DISABLED: "DISABLED" = "DISABLED"
 
   inline def values: js.Array[MutationProtectionStatus] = js.Array(ENABLED, DISABLED)
+}
+
+type ResolverAutodefinedReverseStatus = "ENABLING" | "ENABLED" | "DISABLING" | "DISABLED"
+object ResolverAutodefinedReverseStatus {
+  inline val ENABLING: "ENABLING" = "ENABLING"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLING: "DISABLING" = "DISABLING"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[ResolverAutodefinedReverseStatus] = js.Array(ENABLING, ENABLED, DISABLING, DISABLED)
 }
 
 type ResolverDNSSECValidationStatus = "ENABLING" | "ENABLED" | "DISABLING" | "DISABLED"

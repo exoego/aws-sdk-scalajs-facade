@@ -52,6 +52,7 @@ object ConnectorType {
   val Upsolver = "Upsolver".asInstanceOf[ConnectorType]
   val Honeycode = "Honeycode".asInstanceOf[ConnectorType]
   val CustomerProfiles = "CustomerProfiles".asInstanceOf[ConnectorType]
+  val SAPOData = "SAPOData".asInstanceOf[ConnectorType]
 
   @inline def values: js.Array[ConnectorType] = js.Array(
     Salesforce,
@@ -74,7 +75,8 @@ object ConnectorType {
     LookoutMetrics,
     Upsolver,
     Honeycode,
-    CustomerProfiles
+    CustomerProfiles,
+    SAPOData
   )
 }
 
@@ -350,6 +352,7 @@ object OperatorPropertiesKeys {
   val MATH_OPERATION_FIELDS_ORDER = "MATH_OPERATION_FIELDS_ORDER".asInstanceOf[OperatorPropertiesKeys]
   val CONCAT_FORMAT = "CONCAT_FORMAT".asInstanceOf[OperatorPropertiesKeys]
   val SUBFIELD_CATEGORY_MAP = "SUBFIELD_CATEGORY_MAP".asInstanceOf[OperatorPropertiesKeys]
+  val EXCLUDE_SOURCE_FIELDS_LIST = "EXCLUDE_SOURCE_FIELDS_LIST".asInstanceOf[OperatorPropertiesKeys]
 
   @inline def values: js.Array[OperatorPropertiesKeys] = js.Array(
     VALUE,
@@ -365,7 +368,8 @@ object OperatorPropertiesKeys {
     TRUNCATE_LENGTH,
     MATH_OPERATION_FIELDS_ORDER,
     CONCAT_FORMAT,
-    SUBFIELD_CATEGORY_MAP
+    SUBFIELD_CATEGORY_MAP,
+    EXCLUDE_SOURCE_FIELDS_LIST
   )
 }
 
@@ -389,6 +393,28 @@ object PrefixType {
   val PATH_AND_FILENAME = "PATH_AND_FILENAME".asInstanceOf[PrefixType]
 
   @inline def values: js.Array[PrefixType] = js.Array(FILENAME, PATH, PATH_AND_FILENAME)
+}
+
+@js.native
+sealed trait PrivateConnectionProvisioningFailureCause extends js.Any
+object PrivateConnectionProvisioningFailureCause {
+  val CONNECTOR_AUTHENTICATION = "CONNECTOR_AUTHENTICATION".asInstanceOf[PrivateConnectionProvisioningFailureCause]
+  val CONNECTOR_SERVER = "CONNECTOR_SERVER".asInstanceOf[PrivateConnectionProvisioningFailureCause]
+  val INTERNAL_SERVER = "INTERNAL_SERVER".asInstanceOf[PrivateConnectionProvisioningFailureCause]
+  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[PrivateConnectionProvisioningFailureCause]
+  val VALIDATION = "VALIDATION".asInstanceOf[PrivateConnectionProvisioningFailureCause]
+
+  @inline def values: js.Array[PrivateConnectionProvisioningFailureCause] = js.Array(CONNECTOR_AUTHENTICATION, CONNECTOR_SERVER, INTERNAL_SERVER, ACCESS_DENIED, VALIDATION)
+}
+
+@js.native
+sealed trait PrivateConnectionProvisioningStatus extends js.Any
+object PrivateConnectionProvisioningStatus {
+  val FAILED = "FAILED".asInstanceOf[PrivateConnectionProvisioningStatus]
+  val PENDING = "PENDING".asInstanceOf[PrivateConnectionProvisioningStatus]
+  val CREATED = "CREATED".asInstanceOf[PrivateConnectionProvisioningStatus]
+
+  @inline def values: js.Array[PrivateConnectionProvisioningStatus] = js.Array(FAILED, PENDING, CREATED)
 }
 
 @js.native
@@ -418,6 +444,65 @@ object S3ConnectorOperator {
   @inline def values: js.Array[S3ConnectorOperator] = js.Array(
     PROJECTION,
     LESS_THAN,
+    GREATER_THAN,
+    BETWEEN,
+    LESS_THAN_OR_EQUAL_TO,
+    GREATER_THAN_OR_EQUAL_TO,
+    EQUAL_TO,
+    NOT_EQUAL_TO,
+    ADDITION,
+    MULTIPLICATION,
+    DIVISION,
+    SUBTRACTION,
+    MASK_ALL,
+    MASK_FIRST_N,
+    MASK_LAST_N,
+    VALIDATE_NON_NULL,
+    VALIDATE_NON_ZERO,
+    VALIDATE_NON_NEGATIVE,
+    VALIDATE_NUMERIC,
+    NO_OP
+  )
+}
+
+@js.native
+sealed trait S3InputFileType extends js.Any
+object S3InputFileType {
+  val CSV = "CSV".asInstanceOf[S3InputFileType]
+  val JSON = "JSON".asInstanceOf[S3InputFileType]
+
+  @inline def values: js.Array[S3InputFileType] = js.Array(CSV, JSON)
+}
+
+@js.native
+sealed trait SAPODataConnectorOperator extends js.Any
+object SAPODataConnectorOperator {
+  val PROJECTION = "PROJECTION".asInstanceOf[SAPODataConnectorOperator]
+  val LESS_THAN = "LESS_THAN".asInstanceOf[SAPODataConnectorOperator]
+  val CONTAINS = "CONTAINS".asInstanceOf[SAPODataConnectorOperator]
+  val GREATER_THAN = "GREATER_THAN".asInstanceOf[SAPODataConnectorOperator]
+  val BETWEEN = "BETWEEN".asInstanceOf[SAPODataConnectorOperator]
+  val LESS_THAN_OR_EQUAL_TO = "LESS_THAN_OR_EQUAL_TO".asInstanceOf[SAPODataConnectorOperator]
+  val GREATER_THAN_OR_EQUAL_TO = "GREATER_THAN_OR_EQUAL_TO".asInstanceOf[SAPODataConnectorOperator]
+  val EQUAL_TO = "EQUAL_TO".asInstanceOf[SAPODataConnectorOperator]
+  val NOT_EQUAL_TO = "NOT_EQUAL_TO".asInstanceOf[SAPODataConnectorOperator]
+  val ADDITION = "ADDITION".asInstanceOf[SAPODataConnectorOperator]
+  val MULTIPLICATION = "MULTIPLICATION".asInstanceOf[SAPODataConnectorOperator]
+  val DIVISION = "DIVISION".asInstanceOf[SAPODataConnectorOperator]
+  val SUBTRACTION = "SUBTRACTION".asInstanceOf[SAPODataConnectorOperator]
+  val MASK_ALL = "MASK_ALL".asInstanceOf[SAPODataConnectorOperator]
+  val MASK_FIRST_N = "MASK_FIRST_N".asInstanceOf[SAPODataConnectorOperator]
+  val MASK_LAST_N = "MASK_LAST_N".asInstanceOf[SAPODataConnectorOperator]
+  val VALIDATE_NON_NULL = "VALIDATE_NON_NULL".asInstanceOf[SAPODataConnectorOperator]
+  val VALIDATE_NON_ZERO = "VALIDATE_NON_ZERO".asInstanceOf[SAPODataConnectorOperator]
+  val VALIDATE_NON_NEGATIVE = "VALIDATE_NON_NEGATIVE".asInstanceOf[SAPODataConnectorOperator]
+  val VALIDATE_NUMERIC = "VALIDATE_NUMERIC".asInstanceOf[SAPODataConnectorOperator]
+  val NO_OP = "NO_OP".asInstanceOf[SAPODataConnectorOperator]
+
+  @inline def values: js.Array[SAPODataConnectorOperator] = js.Array(
+    PROJECTION,
+    LESS_THAN,
+    CONTAINS,
     GREATER_THAN,
     BETWEEN,
     LESS_THAN_OR_EQUAL_TO,
@@ -640,12 +725,13 @@ object TaskType {
   val Arithmetic = "Arithmetic".asInstanceOf[TaskType]
   val Filter = "Filter".asInstanceOf[TaskType]
   val Map = "Map".asInstanceOf[TaskType]
+  val Map_all = "Map_all".asInstanceOf[TaskType]
   val Mask = "Mask".asInstanceOf[TaskType]
   val Merge = "Merge".asInstanceOf[TaskType]
   val Truncate = "Truncate".asInstanceOf[TaskType]
   val Validate = "Validate".asInstanceOf[TaskType]
 
-  @inline def values: js.Array[TaskType] = js.Array(Arithmetic, Filter, Map, Mask, Merge, Truncate, Validate)
+  @inline def values: js.Array[TaskType] = js.Array(Arithmetic, Filter, Map, Map_all, Mask, Merge, Truncate, Validate)
 }
 
 @js.native

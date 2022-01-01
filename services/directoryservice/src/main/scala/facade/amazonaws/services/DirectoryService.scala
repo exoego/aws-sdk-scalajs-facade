@@ -26,6 +26,7 @@ package object directoryservice {
   type CertificatesInfo = js.Array[CertificateInfo]
   type CidrIp = String
   type CidrIps = js.Array[CidrIp]
+  type ClientAuthenticationSettingsInfo = js.Array[ClientAuthenticationSettingInfo]
   type CloudOnlyDirectoriesLimitReached = Boolean
   type ComputerName = String
   type ComputerPassword = String
@@ -145,6 +146,7 @@ package object directoryservice {
     @inline def deregisterCertificateFuture(params: DeregisterCertificateRequest): Future[DeregisterCertificateResult] = service.deregisterCertificate(params).promise().toFuture
     @inline def deregisterEventTopicFuture(params: DeregisterEventTopicRequest): Future[DeregisterEventTopicResult] = service.deregisterEventTopic(params).promise().toFuture
     @inline def describeCertificateFuture(params: DescribeCertificateRequest): Future[DescribeCertificateResult] = service.describeCertificate(params).promise().toFuture
+    @inline def describeClientAuthenticationSettingsFuture(params: DescribeClientAuthenticationSettingsRequest): Future[DescribeClientAuthenticationSettingsResult] = service.describeClientAuthenticationSettings(params).promise().toFuture
     @inline def describeConditionalForwardersFuture(params: DescribeConditionalForwardersRequest): Future[DescribeConditionalForwardersResult] = service.describeConditionalForwarders(params).promise().toFuture
     @inline def describeDirectoriesFuture(params: DescribeDirectoriesRequest): Future[DescribeDirectoriesResult] = service.describeDirectories(params).promise().toFuture
     @inline def describeDomainControllersFuture(params: DescribeDomainControllersRequest): Future[DescribeDomainControllersResult] = service.describeDomainControllers(params).promise().toFuture
@@ -215,6 +217,7 @@ package object directoryservice {
     def deregisterCertificate(params: DeregisterCertificateRequest): Request[DeregisterCertificateResult] = js.native
     def deregisterEventTopic(params: DeregisterEventTopicRequest): Request[DeregisterEventTopicResult] = js.native
     def describeCertificate(params: DescribeCertificateRequest): Request[DescribeCertificateResult] = js.native
+    def describeClientAuthenticationSettings(params: DescribeClientAuthenticationSettingsRequest): Request[DescribeClientAuthenticationSettingsResult] = js.native
     def describeConditionalForwarders(params: DescribeConditionalForwardersRequest): Request[DescribeConditionalForwardersResult] = js.native
     def describeDirectories(params: DescribeDirectoriesRequest): Request[DescribeDirectoriesResult] = js.native
     def describeDomainControllers(params: DescribeDomainControllersRequest): Request[DescribeDomainControllersResult] = js.native
@@ -516,6 +519,30 @@ package object directoryservice {
     }
   }
 
+  /** Contains information about a client authentication method for a directory.
+    */
+  @js.native
+  trait ClientAuthenticationSettingInfo extends js.Object {
+    var LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime]
+    var Status: js.UndefOr[ClientAuthenticationStatus]
+    var Type: js.UndefOr[ClientAuthenticationType]
+  }
+
+  object ClientAuthenticationSettingInfo {
+    @inline
+    def apply(
+        LastUpdatedDateTime: js.UndefOr[LastUpdatedDateTime] = js.undefined,
+        Status: js.UndefOr[ClientAuthenticationStatus] = js.undefined,
+        Type: js.UndefOr[ClientAuthenticationType] = js.undefined
+    ): ClientAuthenticationSettingInfo = {
+      val __obj = js.Dynamic.literal()
+      LastUpdatedDateTime.foreach(__v => __obj.updateDynamic("LastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClientAuthenticationSettingInfo]
+    }
+  }
+
   /** Contains information about the client certificate authentication settings for the <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations.
     */
   @js.native
@@ -731,7 +758,7 @@ package object directoryservice {
     }
   }
 
-  /** Initiates the creation of a conditional forwarder for your AWS Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain.
+  /** Initiates the creation of a conditional forwarder for your Directory Service for Microsoft Active Directory. Conditional forwarders are required in order to set up a trust relationship with another domain.
     */
   @js.native
   trait CreateConditionalForwarderRequest extends js.Object {
@@ -856,7 +883,7 @@ package object directoryservice {
     }
   }
 
-  /** Creates an AWS Managed Microsoft AD directory.
+  /** Creates an Managed Microsoft AD directory.
     */
   @js.native
   trait CreateMicrosoftADRequest extends js.Object {
@@ -953,7 +980,7 @@ package object directoryservice {
     }
   }
 
-  /** AWS Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your AWS Managed Microsoft AD directory, and your existing on-premises Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials. This action initiates the creation of the AWS side of a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
+  /** Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Managed Microsoft AD directory, and your existing self-managed Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials. This action initiates the creation of the Amazon Web Services side of a trust relationship between an Managed Microsoft AD directory and an external domain.
     */
   @js.native
   trait CreateTrustRequest extends js.Object {
@@ -1146,7 +1173,7 @@ package object directoryservice {
     }
   }
 
-  /** Deletes the local side of an existing trust relationship between the AWS Managed Microsoft AD directory and the external domain.
+  /** Deletes the local side of an existing trust relationship between the Managed Microsoft AD directory and the external domain.
     */
   @js.native
   trait DeleteTrustRequest extends js.Object {
@@ -1218,7 +1245,7 @@ package object directoryservice {
     }
   }
 
-  /** Removes the specified directory as a publisher to the specified SNS topic.
+  /** Removes the specified directory as a publisher to the specified Amazon SNS topic.
     */
   @js.native
   trait DeregisterEventTopicRequest extends js.Object {
@@ -1286,6 +1313,52 @@ package object directoryservice {
       val __obj = js.Dynamic.literal()
       Certificate.foreach(__v => __obj.updateDynamic("Certificate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCertificateResult]
+    }
+  }
+
+  @js.native
+  trait DescribeClientAuthenticationSettingsRequest extends js.Object {
+    var DirectoryId: DirectoryId
+    var Limit: js.UndefOr[PageLimit]
+    var NextToken: js.UndefOr[NextToken]
+    var Type: js.UndefOr[ClientAuthenticationType]
+  }
+
+  object DescribeClientAuthenticationSettingsRequest {
+    @inline
+    def apply(
+        DirectoryId: DirectoryId,
+        Limit: js.UndefOr[PageLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Type: js.UndefOr[ClientAuthenticationType] = js.undefined
+    ): DescribeClientAuthenticationSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DirectoryId" -> DirectoryId.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClientAuthenticationSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeClientAuthenticationSettingsResult extends js.Object {
+    var ClientAuthenticationSettingsInfo: js.UndefOr[ClientAuthenticationSettingsInfo]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object DescribeClientAuthenticationSettingsResult {
+    @inline
+    def apply(
+        ClientAuthenticationSettingsInfo: js.UndefOr[ClientAuthenticationSettingsInfo] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): DescribeClientAuthenticationSettingsResult = {
+      val __obj = js.Dynamic.literal()
+      ClientAuthenticationSettingsInfo.foreach(__v => __obj.updateDynamic("ClientAuthenticationSettingsInfo")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeClientAuthenticationSettingsResult]
     }
   }
 
@@ -1643,7 +1716,7 @@ package object directoryservice {
     }
   }
 
-  /** Describes the trust relationships for a particular AWS Managed Microsoft AD directory. If no input parameters are are provided, such as directory ID or trust ID, this request describes all the trust relationships.
+  /** Describes the trust relationships for a particular Managed Microsoft AD directory. If no input parameters are provided, such as directory ID or trust ID, this request describes all the trust relationships.
     */
   @js.native
   trait DescribeTrustsRequest extends js.Object {
@@ -1752,7 +1825,7 @@ package object directoryservice {
     }
   }
 
-  /** Contains information about an AWS Directory Service directory.
+  /** Contains information about an Directory Service directory.
     */
   @js.native
   trait DirectoryDescription extends js.Object {
@@ -2247,7 +2320,7 @@ package object directoryservice {
     }
   }
 
-  /** Information about SNS topic and AWS Directory Service directory associations.
+  /** Information about Amazon SNS topic and Directory Service directory associations.
     */
   @js.native
   trait EventTopic extends js.Object {
@@ -2345,7 +2418,7 @@ package object directoryservice {
     }
   }
 
-  /** IP address block. This is often the address block of the DNS server used for your on-premises domain.
+  /** IP address block. This is often the address block of the DNS server used for your self-managed domain.
     */
   @js.native
   trait IpRoute extends js.Object {
@@ -3326,7 +3399,7 @@ package object directoryservice {
     }
   }
 
-  /** Describes a trust relationship between an AWS Managed Microsoft AD directory and an external domain.
+  /** Describes a trust relationship between an Managed Microsoft AD directory and an external domain.
     */
   @js.native
   trait Trust extends js.Object {
@@ -3576,7 +3649,7 @@ package object directoryservice {
     }
   }
 
-  /** Initiates the verification of an existing trust relationship between an AWS Managed Microsoft AD directory and an external domain.
+  /** Initiates the verification of an existing trust relationship between an Managed Microsoft AD directory and an external domain.
     */
   @js.native
   trait VerifyTrustRequest extends js.Object {

@@ -3,6 +3,15 @@ package facade.amazonaws.services.comprehend
 import scalajs.js
 
 @js.native
+sealed trait AugmentedManifestsDocumentTypeFormat extends js.Any
+object AugmentedManifestsDocumentTypeFormat {
+  val PLAIN_TEXT_DOCUMENT = "PLAIN_TEXT_DOCUMENT".asInstanceOf[AugmentedManifestsDocumentTypeFormat]
+  val SEMI_STRUCTURED_DOCUMENT = "SEMI_STRUCTURED_DOCUMENT".asInstanceOf[AugmentedManifestsDocumentTypeFormat]
+
+  @inline def values: js.Array[AugmentedManifestsDocumentTypeFormat] = js.Array(PLAIN_TEXT_DOCUMENT, SEMI_STRUCTURED_DOCUMENT)
+}
+
+@js.native
 sealed trait DocumentClassifierDataFormat extends js.Any
 object DocumentClassifierDataFormat {
   val COMPREHEND_CSV = "COMPREHEND_CSV".asInstanceOf[DocumentClassifierDataFormat]
@@ -18,6 +27,35 @@ object DocumentClassifierMode {
   val MULTI_LABEL = "MULTI_LABEL".asInstanceOf[DocumentClassifierMode]
 
   @inline def values: js.Array[DocumentClassifierMode] = js.Array(MULTI_CLASS, MULTI_LABEL)
+}
+
+@js.native
+sealed trait DocumentReadAction extends js.Any
+object DocumentReadAction {
+  val TEXTRACT_DETECT_DOCUMENT_TEXT = "TEXTRACT_DETECT_DOCUMENT_TEXT".asInstanceOf[DocumentReadAction]
+  val TEXTRACT_ANALYZE_DOCUMENT = "TEXTRACT_ANALYZE_DOCUMENT".asInstanceOf[DocumentReadAction]
+
+  @inline def values: js.Array[DocumentReadAction] = js.Array(TEXTRACT_DETECT_DOCUMENT_TEXT, TEXTRACT_ANALYZE_DOCUMENT)
+}
+
+/** A list of the types of analyses to perform. This field specifies what feature types need to be extracted from the document where entity recognition is expected. * <code>TABLES</code> - Add TABLES to the list to return information about the tables that are detected in the input document. * <code>FORMS</code> - Add FORMS to return detected form data.
+  */
+@js.native
+sealed trait DocumentReadFeatureTypes extends js.Any
+object DocumentReadFeatureTypes {
+  val TABLES = "TABLES".asInstanceOf[DocumentReadFeatureTypes]
+  val FORMS = "FORMS".asInstanceOf[DocumentReadFeatureTypes]
+
+  @inline def values: js.Array[DocumentReadFeatureTypes] = js.Array(TABLES, FORMS)
+}
+
+@js.native
+sealed trait DocumentReadMode extends js.Any
+object DocumentReadMode {
+  val SERVICE_DEFAULT = "SERVICE_DEFAULT".asInstanceOf[DocumentReadMode]
+  val FORCE_DOCUMENT_READ_ACTION = "FORCE_DOCUMENT_READ_ACTION".asInstanceOf[DocumentReadMode]
+
+  @inline def values: js.Array[DocumentReadMode] = js.Array(SERVICE_DEFAULT, FORCE_DOCUMENT_READ_ACTION)
 }
 
 @js.native
@@ -218,6 +256,15 @@ object SentimentType {
   val MIXED = "MIXED".asInstanceOf[SentimentType]
 
   @inline def values: js.Array[SentimentType] = js.Array(POSITIVE, NEGATIVE, NEUTRAL, MIXED)
+}
+
+@js.native
+sealed trait Split extends js.Any
+object Split {
+  val TRAIN = "TRAIN".asInstanceOf[Split]
+  val TEST = "TEST".asInstanceOf[Split]
+
+  @inline def values: js.Array[Split] = js.Array(TRAIN, TEST)
 }
 
 @js.native

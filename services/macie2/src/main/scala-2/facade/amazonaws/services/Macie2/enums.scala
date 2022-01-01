@@ -2,7 +2,7 @@ package facade.amazonaws.services.macie2
 
 import scalajs.js
 
-/** The current status of an account as the delegated Amazon Macie administrator account for an AWS organization. Possible values are:
+/** The current status of an account as the delegated Amazon Macie administrator account for an organization in Organizations. Possible values are:
   */
 @js.native
 sealed trait AdminStatus extends js.Any
@@ -13,6 +13,26 @@ object AdminStatus {
   @inline def values: js.Array[AdminStatus] = js.Array(ENABLED, DISABLING_IN_PROGRESS)
 }
 
+@js.native
+sealed trait AllowsUnencryptedObjectUploads extends js.Any
+object AllowsUnencryptedObjectUploads {
+  val TRUE = "TRUE".asInstanceOf[AllowsUnencryptedObjectUploads]
+  val FALSE = "FALSE".asInstanceOf[AllowsUnencryptedObjectUploads]
+  val UNKNOWN = "UNKNOWN".asInstanceOf[AllowsUnencryptedObjectUploads]
+
+  @inline def values: js.Array[AllowsUnencryptedObjectUploads] = js.Array(TRUE, FALSE, UNKNOWN)
+}
+
+/** The error code for an error that prevented Amazon Macie from retrieving and processing information about an S3 bucket and the bucket's objects.
+  */
+@js.native
+sealed trait BucketMetadataErrorCode extends js.Any
+object BucketMetadataErrorCode {
+  val ACCESS_DENIED = "ACCESS_DENIED".asInstanceOf[BucketMetadataErrorCode]
+
+  @inline def values: js.Array[BucketMetadataErrorCode] = js.Array(ACCESS_DENIED)
+}
+
 /** The type of currency that the data for an Amazon Macie usage metric is reported in. Possible values are:
   */
 @js.native
@@ -21,6 +41,18 @@ object Currency {
   val USD = "USD".asInstanceOf[Currency]
 
   @inline def values: js.Array[Currency] = js.Array(USD)
+}
+
+/** The severity of a finding, ranging from LOW, for least severe, to HIGH, for most severe. Valid values are:
+  */
+@js.native
+sealed trait DataIdentifierSeverity extends js.Any
+object DataIdentifierSeverity {
+  val LOW = "LOW".asInstanceOf[DataIdentifierSeverity]
+  val MEDIUM = "MEDIUM".asInstanceOf[DataIdentifierSeverity]
+  val HIGH = "HIGH".asInstanceOf[DataIdentifierSeverity]
+
+  @inline def values: js.Array[DataIdentifierSeverity] = js.Array(LOW, MEDIUM, HIGH)
 }
 
 @js.native
@@ -92,7 +124,7 @@ object FindingCategory {
   @inline def values: js.Array[FindingCategory] = js.Array(CLASSIFICATION, POLICY)
 }
 
-/** The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). For more information, see [[https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html|Monitoring and processing findings]] in the <i>Amazon Macie User Guide</i>. Valid values are:
+/** The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). For more information, see [[https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html|Monitoring and processing findings]] in the <i>Amazon Macie User Guide</i>. Valid values are:
   */
 @js.native
 sealed trait FindingPublishingFrequency extends js.Any
@@ -278,6 +310,19 @@ object MacieStatus {
   @inline def values: js.Array[MacieStatus] = js.Array(PAUSED, ENABLED)
 }
 
+/** The selection type that determines which managed data identifiers a classification job uses to analyze data. Valid values are:
+  */
+@js.native
+sealed trait ManagedDataIdentifierSelector extends js.Any
+object ManagedDataIdentifierSelector {
+  val ALL = "ALL".asInstanceOf[ManagedDataIdentifierSelector]
+  val EXCLUDE = "EXCLUDE".asInstanceOf[ManagedDataIdentifierSelector]
+  val INCLUDE = "INCLUDE".asInstanceOf[ManagedDataIdentifierSelector]
+  val NONE = "NONE".asInstanceOf[ManagedDataIdentifierSelector]
+
+  @inline def values: js.Array[ManagedDataIdentifierSelector] = js.Array(ALL, EXCLUDE, INCLUDE, NONE)
+}
+
 @js.native
 sealed trait OrderBy extends js.Any
 object OrderBy {
@@ -287,7 +332,7 @@ object OrderBy {
   @inline def values: js.Array[OrderBy] = js.Array(ASC, DESC)
 }
 
-/** The current status of the relationship between an account and an associated Amazon Macie administrator account (<i>inviter account</i>). Possible values are:
+/** The current status of the relationship between an account and an associated Amazon Macie administrator account. Possible values are:
   */
 @js.native
 sealed trait RelationshipStatus extends js.Any
@@ -306,22 +351,57 @@ object RelationshipStatus {
   @inline def values: js.Array[RelationshipStatus] = js.Array(Enabled, Paused, Invited, Created, Removed, Resigned, EmailVerificationInProgress, EmailVerificationFailed, RegionDisabled, AccountSuspended)
 }
 
-/** The property to use in a condition that determines which objects are analyzed by a classification job. Valid values are:
+/** The property to use in a condition that determines whether an S3 object is included or excluded from a classification job. Valid values are:
   */
 @js.native
 sealed trait ScopeFilterKey extends js.Any
 object ScopeFilterKey {
-  val BUCKET_CREATION_DATE = "BUCKET_CREATION_DATE".asInstanceOf[ScopeFilterKey]
   val OBJECT_EXTENSION = "OBJECT_EXTENSION".asInstanceOf[ScopeFilterKey]
   val OBJECT_LAST_MODIFIED_DATE = "OBJECT_LAST_MODIFIED_DATE".asInstanceOf[ScopeFilterKey]
   val OBJECT_SIZE = "OBJECT_SIZE".asInstanceOf[ScopeFilterKey]
-  val TAG = "TAG".asInstanceOf[ScopeFilterKey]
   val OBJECT_KEY = "OBJECT_KEY".asInstanceOf[ScopeFilterKey]
 
-  @inline def values: js.Array[ScopeFilterKey] = js.Array(BUCKET_CREATION_DATE, OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, TAG, OBJECT_KEY)
+  @inline def values: js.Array[ScopeFilterKey] = js.Array(OBJECT_EXTENSION, OBJECT_LAST_MODIFIED_DATE, OBJECT_SIZE, OBJECT_KEY)
 }
 
-/** The category of sensitive data that was detected and produced the finding. Possible values are:
+/** The operator to use in a condition that filters the results of a query. Valid values are:
+  */
+@js.native
+sealed trait SearchResourcesComparator extends js.Any
+object SearchResourcesComparator {
+  val EQ = "EQ".asInstanceOf[SearchResourcesComparator]
+  val NE = "NE".asInstanceOf[SearchResourcesComparator]
+
+  @inline def values: js.Array[SearchResourcesComparator] = js.Array(EQ, NE)
+}
+
+/** The property to use in a condition that filters the query results. Valid values are:
+  */
+@js.native
+sealed trait SearchResourcesSimpleCriterionKey extends js.Any
+object SearchResourcesSimpleCriterionKey {
+  val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[SearchResourcesSimpleCriterionKey]
+  val S3_BUCKET_NAME = "S3_BUCKET_NAME".asInstanceOf[SearchResourcesSimpleCriterionKey]
+  val S3_BUCKET_EFFECTIVE_PERMISSION = "S3_BUCKET_EFFECTIVE_PERMISSION".asInstanceOf[SearchResourcesSimpleCriterionKey]
+  val S3_BUCKET_SHARED_ACCESS = "S3_BUCKET_SHARED_ACCESS".asInstanceOf[SearchResourcesSimpleCriterionKey]
+
+  @inline def values: js.Array[SearchResourcesSimpleCriterionKey] = js.Array(ACCOUNT_ID, S3_BUCKET_NAME, S3_BUCKET_EFFECTIVE_PERMISSION, S3_BUCKET_SHARED_ACCESS)
+}
+
+/** The property to sort the query results by. Valid values are:
+  */
+@js.native
+sealed trait SearchResourcesSortAttributeName extends js.Any
+object SearchResourcesSortAttributeName {
+  val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[SearchResourcesSortAttributeName]
+  val RESOURCE_NAME = "RESOURCE_NAME".asInstanceOf[SearchResourcesSortAttributeName]
+  val S3_CLASSIFIABLE_OBJECT_COUNT = "S3_CLASSIFIABLE_OBJECT_COUNT".asInstanceOf[SearchResourcesSortAttributeName]
+  val S3_CLASSIFIABLE_SIZE_IN_BYTES = "S3_CLASSIFIABLE_SIZE_IN_BYTES".asInstanceOf[SearchResourcesSortAttributeName]
+
+  @inline def values: js.Array[SearchResourcesSortAttributeName] = js.Array(ACCOUNT_ID, RESOURCE_NAME, S3_CLASSIFIABLE_OBJECT_COUNT, S3_CLASSIFIABLE_SIZE_IN_BYTES)
+}
+
+/** For a finding, the category of sensitive data that was detected and produced the finding. For a managed data identifier, the category of sensitive data that the managed data identifier detects. Possible values are:
   */
 @js.native
 sealed trait SensitiveDataItemCategory extends js.Any
@@ -355,6 +435,19 @@ object SharedAccess {
   val UNKNOWN = "UNKNOWN".asInstanceOf[SharedAccess]
 
   @inline def values: js.Array[SharedAccess] = js.Array(EXTERNAL, INTERNAL, NOT_SHARED, UNKNOWN)
+}
+
+/** The property to use in a condition that determines whether an S3 bucket is included or excluded from a classification job. Valid values are:
+  */
+@js.native
+sealed trait SimpleCriterionKeyForJob extends js.Any
+object SimpleCriterionKeyForJob {
+  val ACCOUNT_ID = "ACCOUNT_ID".asInstanceOf[SimpleCriterionKeyForJob]
+  val S3_BUCKET_NAME = "S3_BUCKET_NAME".asInstanceOf[SimpleCriterionKeyForJob]
+  val S3_BUCKET_EFFECTIVE_PERMISSION = "S3_BUCKET_EFFECTIVE_PERMISSION".asInstanceOf[SimpleCriterionKeyForJob]
+  val S3_BUCKET_SHARED_ACCESS = "S3_BUCKET_SHARED_ACCESS".asInstanceOf[SimpleCriterionKeyForJob]
+
+  @inline def values: js.Array[SimpleCriterionKeyForJob] = js.Array(ACCOUNT_ID, S3_BUCKET_NAME, S3_BUCKET_EFFECTIVE_PERMISSION, S3_BUCKET_SHARED_ACCESS)
 }
 
 /** The storage class of the S3 object. Possible values are:

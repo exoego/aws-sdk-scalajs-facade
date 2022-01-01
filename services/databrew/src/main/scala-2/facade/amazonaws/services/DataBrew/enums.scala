@@ -3,6 +3,15 @@ package facade.amazonaws.services.databrew
 import scalajs.js
 
 @js.native
+sealed trait AnalyticsMode extends js.Any
+object AnalyticsMode {
+  val ENABLE = "ENABLE".asInstanceOf[AnalyticsMode]
+  val DISABLE = "DISABLE".asInstanceOf[AnalyticsMode]
+
+  @inline def values: js.Array[AnalyticsMode] = js.Array(ENABLE, DISABLE)
+}
+
+@js.native
 sealed trait CompressionFormat extends js.Any
 object CompressionFormat {
   val GZIP = "GZIP".asInstanceOf[CompressionFormat]
@@ -16,6 +25,14 @@ object CompressionFormat {
   val ZLIB = "ZLIB".asInstanceOf[CompressionFormat]
 
   @inline def values: js.Array[CompressionFormat] = js.Array(GZIP, LZ4, SNAPPY, BZIP2, DEFLATE, LZO, BROTLI, ZSTD, ZLIB)
+}
+
+@js.native
+sealed trait DatabaseOutputMode extends js.Any
+object DatabaseOutputMode {
+  val NEW_TABLE = "NEW_TABLE".asInstanceOf[DatabaseOutputMode]
+
+  @inline def values: js.Array[DatabaseOutputMode] = js.Array(NEW_TABLE)
 }
 
 @js.native
@@ -97,8 +114,9 @@ object OutputFormat {
   val AVRO = "AVRO".asInstanceOf[OutputFormat]
   val ORC = "ORC".asInstanceOf[OutputFormat]
   val XML = "XML".asInstanceOf[OutputFormat]
+  val TABLEAUHYPER = "TABLEAUHYPER".asInstanceOf[OutputFormat]
 
-  @inline def values: js.Array[OutputFormat] = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML)
+  @inline def values: js.Array[OutputFormat] = js.Array(CSV, JSON, PARQUET, GLUEPARQUET, AVRO, ORC, XML, TABLEAUHYPER)
 }
 
 @js.native
@@ -155,4 +173,32 @@ object Source {
   val DATABASE = "DATABASE".asInstanceOf[Source]
 
   @inline def values: js.Array[Source] = js.Array(S3, `DATA-CATALOG`, DATABASE)
+}
+
+@js.native
+sealed trait ThresholdType extends js.Any
+object ThresholdType {
+  val GREATER_THAN_OR_EQUAL = "GREATER_THAN_OR_EQUAL".asInstanceOf[ThresholdType]
+  val LESS_THAN_OR_EQUAL = "LESS_THAN_OR_EQUAL".asInstanceOf[ThresholdType]
+  val GREATER_THAN = "GREATER_THAN".asInstanceOf[ThresholdType]
+  val LESS_THAN = "LESS_THAN".asInstanceOf[ThresholdType]
+
+  @inline def values: js.Array[ThresholdType] = js.Array(GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, GREATER_THAN, LESS_THAN)
+}
+
+@js.native
+sealed trait ThresholdUnit extends js.Any
+object ThresholdUnit {
+  val COUNT = "COUNT".asInstanceOf[ThresholdUnit]
+  val PERCENTAGE = "PERCENTAGE".asInstanceOf[ThresholdUnit]
+
+  @inline def values: js.Array[ThresholdUnit] = js.Array(COUNT, PERCENTAGE)
+}
+
+@js.native
+sealed trait ValidationMode extends js.Any
+object ValidationMode {
+  val CHECK_ALL = "CHECK_ALL".asInstanceOf[ValidationMode]
+
+  @inline def values: js.Array[ValidationMode] = js.Array(CHECK_ALL)
 }

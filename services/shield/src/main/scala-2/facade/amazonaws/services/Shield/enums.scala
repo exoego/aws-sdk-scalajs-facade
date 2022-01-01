@@ -3,6 +3,15 @@ package facade.amazonaws.services.shield
 import scalajs.js
 
 @js.native
+sealed trait ApplicationLayerAutomaticResponseStatus extends js.Any
+object ApplicationLayerAutomaticResponseStatus {
+  val ENABLED = "ENABLED".asInstanceOf[ApplicationLayerAutomaticResponseStatus]
+  val DISABLED = "DISABLED".asInstanceOf[ApplicationLayerAutomaticResponseStatus]
+
+  @inline def values: js.Array[ApplicationLayerAutomaticResponseStatus] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
 sealed trait AttackLayer extends js.Any
 object AttackLayer {
   val NETWORK = "NETWORK".asInstanceOf[AttackLayer]

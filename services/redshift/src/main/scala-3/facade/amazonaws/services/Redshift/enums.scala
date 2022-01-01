@@ -37,6 +37,37 @@ object AuthorizationStatus {
   inline def values: js.Array[AuthorizationStatus] = js.Array(Authorized, Revoking)
 }
 
+type DataShareStatus = "ACTIVE" | "PENDING_AUTHORIZATION" | "AUTHORIZED" | "DEAUTHORIZED" | "REJECTED" | "AVAILABLE"
+object DataShareStatus {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val PENDING_AUTHORIZATION: "PENDING_AUTHORIZATION" = "PENDING_AUTHORIZATION"
+  inline val AUTHORIZED: "AUTHORIZED" = "AUTHORIZED"
+  inline val DEAUTHORIZED: "DEAUTHORIZED" = "DEAUTHORIZED"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+
+  inline def values: js.Array[DataShareStatus] = js.Array(ACTIVE, PENDING_AUTHORIZATION, AUTHORIZED, DEAUTHORIZED, REJECTED, AVAILABLE)
+}
+
+type DataShareStatusForConsumer = "ACTIVE" | "AVAILABLE"
+object DataShareStatusForConsumer {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
+
+  inline def values: js.Array[DataShareStatusForConsumer] = js.Array(ACTIVE, AVAILABLE)
+}
+
+type DataShareStatusForProducer = "ACTIVE" | "AUTHORIZED" | "PENDING_AUTHORIZATION" | "DEAUTHORIZED" | "REJECTED"
+object DataShareStatusForProducer {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val AUTHORIZED: "AUTHORIZED" = "AUTHORIZED"
+  inline val PENDING_AUTHORIZATION: "PENDING_AUTHORIZATION" = "PENDING_AUTHORIZATION"
+  inline val DEAUTHORIZED: "DEAUTHORIZED" = "DEAUTHORIZED"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+
+  inline def values: js.Array[DataShareStatusForProducer] = js.Array(ACTIVE, AUTHORIZED, PENDING_AUTHORIZATION, DEAUTHORIZED, REJECTED)
+}
+
 type Mode = "standard" | "high-performance"
 object Mode {
   inline val standard: "standard" = "standard"
@@ -84,6 +115,26 @@ object PartnerIntegrationStatus {
   inline val ConnectionFailure: "ConnectionFailure" = "ConnectionFailure"
 
   inline def values: js.Array[PartnerIntegrationStatus] = js.Array(Active, Inactive, RuntimeFailure, ConnectionFailure)
+}
+
+type ReservedNodeExchangeActionType = "restore-cluster" | "resize-cluster"
+object ReservedNodeExchangeActionType {
+  inline val `restore-cluster`: "restore-cluster" = "restore-cluster"
+  inline val `resize-cluster`: "resize-cluster" = "resize-cluster"
+
+  inline def values: js.Array[ReservedNodeExchangeActionType] = js.Array(`restore-cluster`, `resize-cluster`)
+}
+
+type ReservedNodeExchangeStatusType = "REQUESTED" | "PENDING" | "IN_PROGRESS" | "RETRYING" | "SUCCEEDED" | "FAILED"
+object ReservedNodeExchangeStatusType {
+  inline val REQUESTED: "REQUESTED" = "REQUESTED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val RETRYING: "RETRYING" = "RETRYING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[ReservedNodeExchangeStatusType] = js.Array(REQUESTED, PENDING, IN_PROGRESS, RETRYING, SUCCEEDED, FAILED)
 }
 
 type ReservedNodeOfferingType = "Regular" | "Upgradable"

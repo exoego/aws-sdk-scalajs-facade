@@ -64,6 +64,29 @@ object Format {
   inline def values: js.Array[Format] = js.Array(URLEncoded)
 }
 
+type FrameOptionsList = "DENY" | "SAMEORIGIN"
+object FrameOptionsList {
+  inline val DENY: "DENY" = "DENY"
+  inline val SAMEORIGIN: "SAMEORIGIN" = "SAMEORIGIN"
+
+  inline def values: js.Array[FrameOptionsList] = js.Array(DENY, SAMEORIGIN)
+}
+
+type FunctionRuntime = "cloudfront-js-1.0"
+object FunctionRuntime {
+  inline val `cloudfront-js-1.0`: "cloudfront-js-1.0" = "cloudfront-js-1.0"
+
+  inline def values: js.Array[FunctionRuntime] = js.Array(`cloudfront-js-1.0`)
+}
+
+type FunctionStage = "DEVELOPMENT" | "LIVE"
+object FunctionStage {
+  inline val DEVELOPMENT: "DEVELOPMENT" = "DEVELOPMENT"
+  inline val LIVE: "LIVE" = "LIVE"
+
+  inline def values: js.Array[FunctionStage] = js.Array(DEVELOPMENT, LIVE)
+}
+
 type GeoRestrictionType = "blacklist" | "whitelist" | "none"
 object GeoRestrictionType {
   inline val blacklist: "blacklist" = "blacklist"
@@ -112,7 +135,7 @@ object Method {
   inline def values: js.Array[Method] = js.Array(GET, HEAD, POST, PUT, PATCH, OPTIONS, DELETE)
 }
 
-type MinimumProtocolVersion = "SSLv3" | "TLSv1" | "TLSv1_2016" | "TLSv1.1_2016" | "TLSv1.2_2018" | "TLSv1.2_2019"
+type MinimumProtocolVersion = "SSLv3" | "TLSv1" | "TLSv1_2016" | "TLSv1.1_2016" | "TLSv1.2_2018" | "TLSv1.2_2019" | "TLSv1.2_2021"
 object MinimumProtocolVersion {
   inline val SSLv3: "SSLv3" = "SSLv3"
   inline val TLSv1: "TLSv1" = "TLSv1"
@@ -120,8 +143,9 @@ object MinimumProtocolVersion {
   inline val `TLSv1.1_2016`: "TLSv1.1_2016" = "TLSv1.1_2016"
   inline val `TLSv1.2_2018`: "TLSv1.2_2018" = "TLSv1.2_2018"
   inline val `TLSv1.2_2019`: "TLSv1.2_2019" = "TLSv1.2_2019"
+  inline val `TLSv1.2_2021`: "TLSv1.2_2021" = "TLSv1.2_2021"
 
-  inline def values: js.Array[MinimumProtocolVersion] = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`)
+  inline def values: js.Array[MinimumProtocolVersion] = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`, `TLSv1.2_2021`)
 }
 
 type OriginProtocolPolicy = "http-only" | "match-viewer" | "https-only"
@@ -184,6 +208,51 @@ object RealtimeMetricsSubscriptionStatus {
   inline val Disabled: "Disabled" = "Disabled"
 
   inline def values: js.Array[RealtimeMetricsSubscriptionStatus] = js.Array(Enabled, Disabled)
+}
+
+type ReferrerPolicyList = "no-referrer" | "no-referrer-when-downgrade" | "origin" | "origin-when-cross-origin" | "same-origin" | "strict-origin" | "strict-origin-when-cross-origin" | "unsafe-url"
+object ReferrerPolicyList {
+  inline val `no-referrer`: "no-referrer" = "no-referrer"
+  inline val `no-referrer-when-downgrade`: "no-referrer-when-downgrade" = "no-referrer-when-downgrade"
+  inline val origin: "origin" = "origin"
+  inline val `origin-when-cross-origin`: "origin-when-cross-origin" = "origin-when-cross-origin"
+  inline val `same-origin`: "same-origin" = "same-origin"
+  inline val `strict-origin`: "strict-origin" = "strict-origin"
+  inline val `strict-origin-when-cross-origin`: "strict-origin-when-cross-origin" = "strict-origin-when-cross-origin"
+  inline val `unsafe-url`: "unsafe-url" = "unsafe-url"
+
+  inline def values: js.Array[ReferrerPolicyList] = js.Array(
+    `no-referrer`,
+    `no-referrer-when-downgrade`,
+    origin,
+    `origin-when-cross-origin`,
+    `same-origin`,
+    `strict-origin`,
+    `strict-origin-when-cross-origin`,
+    `unsafe-url`
+  )
+}
+
+type ResponseHeadersPolicyAccessControlAllowMethodsValues = "GET" | "POST" | "OPTIONS" | "PUT" | "DELETE" | "PATCH" | "HEAD" | "ALL"
+object ResponseHeadersPolicyAccessControlAllowMethodsValues {
+  inline val GET: "GET" = "GET"
+  inline val POST: "POST" = "POST"
+  inline val OPTIONS: "OPTIONS" = "OPTIONS"
+  inline val PUT: "PUT" = "PUT"
+  inline val DELETE: "DELETE" = "DELETE"
+  inline val PATCH: "PATCH" = "PATCH"
+  inline val HEAD: "HEAD" = "HEAD"
+  inline val ALL: "ALL" = "ALL"
+
+  inline def values: js.Array[ResponseHeadersPolicyAccessControlAllowMethodsValues] = js.Array(GET, POST, OPTIONS, PUT, DELETE, PATCH, HEAD, ALL)
+}
+
+type ResponseHeadersPolicyType = "managed" | "custom"
+object ResponseHeadersPolicyType {
+  inline val managed: "managed" = "managed"
+  inline val custom: "custom" = "custom"
+
+  inline def values: js.Array[ResponseHeadersPolicyType] = js.Array(managed, custom)
 }
 
 type SSLSupportMethod = "sni-only" | "vip" | "static-ip"

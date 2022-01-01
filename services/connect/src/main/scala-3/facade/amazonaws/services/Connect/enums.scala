@@ -2,6 +2,23 @@ package facade.amazonaws.services.connect
 
 import scalajs.js
 
+type AgentStatusState = "ENABLED" | "DISABLED"
+object AgentStatusState {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[AgentStatusState] = js.Array(ENABLED, DISABLED)
+}
+
+type AgentStatusType = "ROUTABLE" | "CUSTOM" | "OFFLINE"
+object AgentStatusType {
+  inline val ROUTABLE: "ROUTABLE" = "ROUTABLE"
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
+  inline val OFFLINE: "OFFLINE" = "OFFLINE"
+
+  inline def values: js.Array[AgentStatusType] = js.Array(ROUTABLE, CUSTOM, OFFLINE)
+}
+
 type Channel = "VOICE" | "CHAT" | "TASK"
 object Channel {
   inline val VOICE: "VOICE" = "VOICE"
@@ -18,6 +35,30 @@ object Comparison {
   inline def values: js.Array[Comparison] = js.Array(LT)
 }
 
+type ContactFlowModuleState = "ACTIVE" | "ARCHIVED"
+object ContactFlowModuleState {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val ARCHIVED: "ARCHIVED" = "ARCHIVED"
+
+  inline def values: js.Array[ContactFlowModuleState] = js.Array(ACTIVE, ARCHIVED)
+}
+
+type ContactFlowModuleStatus = "PUBLISHED" | "SAVED"
+object ContactFlowModuleStatus {
+  inline val PUBLISHED: "PUBLISHED" = "PUBLISHED"
+  inline val SAVED: "SAVED" = "SAVED"
+
+  inline def values: js.Array[ContactFlowModuleStatus] = js.Array(PUBLISHED, SAVED)
+}
+
+type ContactFlowState = "ACTIVE" | "ARCHIVED"
+object ContactFlowState {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val ARCHIVED: "ARCHIVED" = "ARCHIVED"
+
+  inline def values: js.Array[ContactFlowState] = js.Array(ACTIVE, ARCHIVED)
+}
+
 type ContactFlowType = "CONTACT_FLOW" | "CUSTOMER_QUEUE" | "CUSTOMER_HOLD" | "CUSTOMER_WHISPER" | "AGENT_HOLD" | "AGENT_WHISPER" | "OUTBOUND_WHISPER" | "AGENT_TRANSFER" | "QUEUE_TRANSFER"
 object ContactFlowType {
   inline val CONTACT_FLOW: "CONTACT_FLOW" = "CONTACT_FLOW"
@@ -31,6 +72,18 @@ object ContactFlowType {
   inline val QUEUE_TRANSFER: "QUEUE_TRANSFER" = "QUEUE_TRANSFER"
 
   inline def values: js.Array[ContactFlowType] = js.Array(CONTACT_FLOW, CUSTOMER_QUEUE, CUSTOMER_HOLD, CUSTOMER_WHISPER, AGENT_HOLD, AGENT_WHISPER, OUTBOUND_WHISPER, AGENT_TRANSFER, QUEUE_TRANSFER)
+}
+
+type ContactInitiationMethod = "INBOUND" | "OUTBOUND" | "TRANSFER" | "QUEUE_TRANSFER" | "CALLBACK" | "API"
+object ContactInitiationMethod {
+  inline val INBOUND: "INBOUND" = "INBOUND"
+  inline val OUTBOUND: "OUTBOUND" = "OUTBOUND"
+  inline val TRANSFER: "TRANSFER" = "TRANSFER"
+  inline val QUEUE_TRANSFER: "QUEUE_TRANSFER" = "QUEUE_TRANSFER"
+  inline val CALLBACK: "CALLBACK" = "CALLBACK"
+  inline val API: "API" = "API"
+
+  inline def values: js.Array[ContactInitiationMethod] = js.Array(INBOUND, OUTBOUND, TRANSFER, QUEUE_TRANSFER, CALLBACK, API)
 }
 
 /** The current metric names.
@@ -198,11 +251,23 @@ object InstanceStorageResourceType {
   inline def values: js.Array[InstanceStorageResourceType] = js.Array(CHAT_TRANSCRIPTS, CALL_RECORDINGS, SCHEDULED_REPORTS, MEDIA_STREAMS, CONTACT_TRACE_RECORDS, AGENT_EVENTS)
 }
 
-type IntegrationType = "EVENT"
+type IntegrationType = "EVENT" | "VOICE_ID" | "PINPOINT_APP" | "WISDOM_ASSISTANT" | "WISDOM_KNOWLEDGE_BASE"
 object IntegrationType {
   inline val EVENT: "EVENT" = "EVENT"
+  inline val VOICE_ID: "VOICE_ID" = "VOICE_ID"
+  inline val PINPOINT_APP: "PINPOINT_APP" = "PINPOINT_APP"
+  inline val WISDOM_ASSISTANT: "WISDOM_ASSISTANT" = "WISDOM_ASSISTANT"
+  inline val WISDOM_KNOWLEDGE_BASE: "WISDOM_KNOWLEDGE_BASE" = "WISDOM_KNOWLEDGE_BASE"
 
-  inline def values: js.Array[IntegrationType] = js.Array(EVENT)
+  inline def values: js.Array[IntegrationType] = js.Array(EVENT, VOICE_ID, PINPOINT_APP, WISDOM_ASSISTANT, WISDOM_KNOWLEDGE_BASE)
+}
+
+type LexVersion = "V1" | "V2"
+object LexVersion {
+  inline val V1: "V1" = "V1"
+  inline val V2: "V2" = "V2"
+
+  inline def values: js.Array[LexVersion] = js.Array(V1, V2)
 }
 
 type PhoneNumberCountryCode = "AF" | "AL" | "DZ" | "AS" | "AD" | "AO" | "AI" | "AQ" | "AG" | "AR" | "AM" | "AW" | "AU" | "AT" | "AZ" | "BS" | "BH" | "BD" | "BB" | "BY" | "BE" | "BZ" | "BJ" | "BM" | "BT" | "BO" | "BA" | "BW" | "BR" | "IO" | "VG" | "BN" | "BG" | "BF" | "BI" | "KH" | "CM" | "CA" | "CV" | "KY" | "CF" | "TD" | "CL" | "CN" | "CX" | "CC" | "CO" | "KM" | "CK" | "CR" | "HR" | "CU" | "CW" | "CY" | "CZ" | "CD" | "DK" | "DJ" | "DM" | "DO" | "TL" | "EC" | "EG" | "SV" | "GQ" | "ER" | "EE" | "ET" | "FK" | "FO" | "FJ" | "FI" | "FR" | "PF" | "GA" | "GM" | "GE" | "DE" | "GH" | "GI" | "GR" | "GL" | "GD" | "GU" | "GT" | "GG" | "GN" | "GW" | "GY" | "HT" | "HN" | "HK" | "HU" | "IS" | "IN" | "ID" | "IR" | "IQ" | "IE" | "IM" | "IL" | "IT" | "CI" | "JM" | "JP" | "JE" | "JO" | "KZ" | "KE" | "KI" | "KW" | "KG" | "LA" | "LV" | "LB" | "LS" | "LR" | "LY" | "LI" | "LT" | "LU" | "MO" | "MK" | "MG" | "MW" | "MY" | "MV" | "ML" | "MT" | "MH" | "MR" | "MU" | "YT" | "MX" | "FM" | "MD" | "MC" | "MN" |
@@ -728,11 +793,20 @@ object QuickConnectType {
   inline def values: js.Array[QuickConnectType] = js.Array(USER, QUEUE, PHONE_NUMBER)
 }
 
-type ReferenceType = "URL"
+type ReferenceStatus = "APPROVED" | "REJECTED"
+object ReferenceStatus {
+  inline val APPROVED: "APPROVED" = "APPROVED"
+  inline val REJECTED: "REJECTED" = "REJECTED"
+
+  inline def values: js.Array[ReferenceStatus] = js.Array(APPROVED, REJECTED)
+}
+
+type ReferenceType = "URL" | "ATTACHMENT"
 object ReferenceType {
   inline val URL: "URL" = "URL"
+  inline val ATTACHMENT: "ATTACHMENT" = "ATTACHMENT"
 
-  inline def values: js.Array[ReferenceType] = js.Array(URL)
+  inline def values: js.Array[ReferenceType] = js.Array(URL, ATTACHMENT)
 }
 
 type SourceType = "SALESFORCE" | "ZENDESK"
@@ -762,6 +836,14 @@ object StorageType {
   inline def values: js.Array[StorageType] = js.Array(S3, KINESIS_VIDEO_STREAM, KINESIS_STREAM, KINESIS_FIREHOSE)
 }
 
+type TrafficType = "GENERAL" | "CAMPAIGN"
+object TrafficType {
+  inline val GENERAL: "GENERAL" = "GENERAL"
+  inline val CAMPAIGN: "CAMPAIGN" = "CAMPAIGN"
+
+  inline def values: js.Array[TrafficType] = js.Array(GENERAL, CAMPAIGN)
+}
+
 type Unit = "SECONDS" | "COUNT" | "PERCENT"
 object Unit {
   inline val SECONDS: "SECONDS" = "SECONDS"
@@ -771,11 +853,12 @@ object Unit {
   inline def values: js.Array[Unit] = js.Array(SECONDS, COUNT, PERCENT)
 }
 
-type UseCaseType = "RULES_EVALUATION"
+type UseCaseType = "RULES_EVALUATION" | "CONNECT_CAMPAIGNS"
 object UseCaseType {
   inline val RULES_EVALUATION: "RULES_EVALUATION" = "RULES_EVALUATION"
+  inline val CONNECT_CAMPAIGNS: "CONNECT_CAMPAIGNS" = "CONNECT_CAMPAIGNS"
 
-  inline def values: js.Array[UseCaseType] = js.Array(RULES_EVALUATION)
+  inline def values: js.Array[UseCaseType] = js.Array(RULES_EVALUATION, CONNECT_CAMPAIGNS)
 }
 
 type VoiceRecordingTrack = "FROM_AGENT" | "TO_AGENT" | "ALL"

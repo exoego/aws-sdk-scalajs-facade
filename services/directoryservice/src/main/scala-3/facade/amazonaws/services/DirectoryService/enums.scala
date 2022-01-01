@@ -22,6 +22,14 @@ object CertificateType {
   inline def values: js.Array[CertificateType] = js.Array(ClientCertAuth, ClientLDAPS)
 }
 
+type ClientAuthenticationStatus = "Enabled" | "Disabled"
+object ClientAuthenticationStatus {
+  inline val Enabled: "Enabled" = "Enabled"
+  inline val Disabled: "Disabled" = "Disabled"
+
+  inline def values: js.Array[ClientAuthenticationStatus] = js.Array(Enabled, Disabled)
+}
+
 type ClientAuthenticationType = "SmartCard"
 object ClientAuthenticationType {
   inline val SmartCard: "SmartCard" = "SmartCard"

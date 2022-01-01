@@ -2,6 +2,16 @@ package facade.amazonaws.services.iotevents
 
 import scalajs.js
 
+type AlarmModelVersionStatus = "ACTIVE" | "ACTIVATING" | "INACTIVE" | "FAILED"
+object AlarmModelVersionStatus {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val ACTIVATING: "ACTIVATING" = "ACTIVATING"
+  inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[AlarmModelVersionStatus] = js.Array(ACTIVE, ACTIVATING, INACTIVE, FAILED)
+}
+
 type AnalysisResultLevel = "INFO" | "WARNING" | "ERROR"
 object AnalysisResultLevel {
   inline val INFO: "INFO" = "INFO"
@@ -18,6 +28,18 @@ object AnalysisStatus {
   inline val FAILED: "FAILED" = "FAILED"
 
   inline def values: js.Array[AnalysisStatus] = js.Array(RUNNING, COMPLETE, FAILED)
+}
+
+type ComparisonOperator = "GREATER" | "GREATER_OR_EQUAL" | "LESS" | "LESS_OR_EQUAL" | "EQUAL" | "NOT_EQUAL"
+object ComparisonOperator {
+  inline val GREATER: "GREATER" = "GREATER"
+  inline val GREATER_OR_EQUAL: "GREATER_OR_EQUAL" = "GREATER_OR_EQUAL"
+  inline val LESS: "LESS" = "LESS"
+  inline val LESS_OR_EQUAL: "LESS_OR_EQUAL" = "LESS_OR_EQUAL"
+  inline val EQUAL: "EQUAL" = "EQUAL"
+  inline val NOT_EQUAL: "NOT_EQUAL" = "NOT_EQUAL"
+
+  inline def values: js.Array[ComparisonOperator] = js.Array(GREATER, GREATER_OR_EQUAL, LESS, LESS_OR_EQUAL, EQUAL, NOT_EQUAL)
 }
 
 type DetectorModelVersionStatus = "ACTIVE" | "ACTIVATING" | "INACTIVE" | "DEPRECATED" | "DRAFT" | "PAUSED" | "FAILED"

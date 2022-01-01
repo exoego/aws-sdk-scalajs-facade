@@ -15,6 +15,15 @@ object AttributeType {
 }
 
 @js.native
+sealed trait AutoMLOverrideStrategy extends js.Any
+object AutoMLOverrideStrategy {
+  val LatencyOptimized = "LatencyOptimized".asInstanceOf[AutoMLOverrideStrategy]
+  val AccuracyOptimized = "AccuracyOptimized".asInstanceOf[AutoMLOverrideStrategy]
+
+  @inline def values: js.Array[AutoMLOverrideStrategy] = js.Array(LatencyOptimized, AccuracyOptimized)
+}
+
+@js.native
 sealed trait DatasetType extends js.Any
 object DatasetType {
   val TARGET_TIME_SERIES = "TARGET_TIME_SERIES".asInstanceOf[DatasetType]
@@ -65,6 +74,18 @@ object FilterConditionString {
 }
 
 @js.native
+sealed trait OptimizationMetric extends js.Any
+object OptimizationMetric {
+  val WAPE = "WAPE".asInstanceOf[OptimizationMetric]
+  val RMSE = "RMSE".asInstanceOf[OptimizationMetric]
+  val AverageWeightedQuantileLoss = "AverageWeightedQuantileLoss".asInstanceOf[OptimizationMetric]
+  val MASE = "MASE".asInstanceOf[OptimizationMetric]
+  val MAPE = "MAPE".asInstanceOf[OptimizationMetric]
+
+  @inline def values: js.Array[OptimizationMetric] = js.Array(WAPE, RMSE, AverageWeightedQuantileLoss, MASE, MAPE)
+}
+
+@js.native
 sealed trait ScalingType extends js.Any
 object ScalingType {
   val Auto = "Auto".asInstanceOf[ScalingType]
@@ -73,4 +94,31 @@ object ScalingType {
   val ReverseLogarithmic = "ReverseLogarithmic".asInstanceOf[ScalingType]
 
   @inline def values: js.Array[ScalingType] = js.Array(Auto, Linear, Logarithmic, ReverseLogarithmic)
+}
+
+@js.native
+sealed trait State extends js.Any
+object State {
+  val Active = "Active".asInstanceOf[State]
+  val Deleted = "Deleted".asInstanceOf[State]
+
+  @inline def values: js.Array[State] = js.Array(Active, Deleted)
+}
+
+@js.native
+sealed trait TimePointGranularity extends js.Any
+object TimePointGranularity {
+  val ALL = "ALL".asInstanceOf[TimePointGranularity]
+  val SPECIFIC = "SPECIFIC".asInstanceOf[TimePointGranularity]
+
+  @inline def values: js.Array[TimePointGranularity] = js.Array(ALL, SPECIFIC)
+}
+
+@js.native
+sealed trait TimeSeriesGranularity extends js.Any
+object TimeSeriesGranularity {
+  val ALL = "ALL".asInstanceOf[TimeSeriesGranularity]
+  val SPECIFIC = "SPECIFIC".asInstanceOf[TimeSeriesGranularity]
+
+  @inline def values: js.Array[TimeSeriesGranularity] = js.Array(ALL, SPECIFIC)
 }

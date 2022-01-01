@@ -33,6 +33,15 @@ object Action {
 }
 
 @js.native
+sealed trait ApplicationAttribute extends js.Any
+object ApplicationAttribute {
+  val LAUNCH_PARAMETERS = "LAUNCH_PARAMETERS".asInstanceOf[ApplicationAttribute]
+  val WORKING_DIRECTORY = "WORKING_DIRECTORY".asInstanceOf[ApplicationAttribute]
+
+  @inline def values: js.Array[ApplicationAttribute] = js.Array(LAUNCH_PARAMETERS, WORKING_DIRECTORY)
+}
+
+@js.native
 sealed trait AuthenticationType extends js.Any
 object AuthenticationType {
   val API = "API".asInstanceOf[AuthenticationType]
@@ -51,8 +60,9 @@ object FleetAttribute {
   val VPC_CONFIGURATION_SECURITY_GROUP_IDS = "VPC_CONFIGURATION_SECURITY_GROUP_IDS".asInstanceOf[FleetAttribute]
   val DOMAIN_JOIN_INFO = "DOMAIN_JOIN_INFO".asInstanceOf[FleetAttribute]
   val IAM_ROLE_ARN = "IAM_ROLE_ARN".asInstanceOf[FleetAttribute]
+  val USB_DEVICE_FILTER_STRINGS = "USB_DEVICE_FILTER_STRINGS".asInstanceOf[FleetAttribute]
 
-  @inline def values: js.Array[FleetAttribute] = js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN)
+  @inline def values: js.Array[FleetAttribute] = js.Array(VPC_CONFIGURATION, VPC_CONFIGURATION_SECURITY_GROUP_IDS, DOMAIN_JOIN_INFO, IAM_ROLE_ARN, USB_DEVICE_FILTER_STRINGS)
 }
 
 @js.native
@@ -139,8 +149,9 @@ sealed trait FleetType extends js.Any
 object FleetType {
   val ALWAYS_ON = "ALWAYS_ON".asInstanceOf[FleetType]
   val ON_DEMAND = "ON_DEMAND".asInstanceOf[FleetType]
+  val ELASTIC = "ELASTIC".asInstanceOf[FleetType]
 
-  @inline def values: js.Array[FleetType] = js.Array(ALWAYS_ON, ON_DEMAND)
+  @inline def values: js.Array[FleetType] = js.Array(ALWAYS_ON, ON_DEMAND, ELASTIC)
 }
 
 @js.native
@@ -218,8 +229,9 @@ object PlatformType {
   val WINDOWS = "WINDOWS".asInstanceOf[PlatformType]
   val WINDOWS_SERVER_2016 = "WINDOWS_SERVER_2016".asInstanceOf[PlatformType]
   val WINDOWS_SERVER_2019 = "WINDOWS_SERVER_2019".asInstanceOf[PlatformType]
+  val AMAZON_LINUX2 = "AMAZON_LINUX2".asInstanceOf[PlatformType]
 
-  @inline def values: js.Array[PlatformType] = js.Array(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019)
+  @inline def values: js.Array[PlatformType] = js.Array(WINDOWS, WINDOWS_SERVER_2016, WINDOWS_SERVER_2019, AMAZON_LINUX2)
 }
 
 @js.native

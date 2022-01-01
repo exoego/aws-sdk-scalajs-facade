@@ -97,6 +97,15 @@ object RedirectActionStatusCodeEnum {
 }
 
 @js.native
+sealed trait TargetGroupIpAddressTypeEnum extends js.Any
+object TargetGroupIpAddressTypeEnum {
+  val ipv4 = "ipv4".asInstanceOf[TargetGroupIpAddressTypeEnum]
+  val ipv6 = "ipv6".asInstanceOf[TargetGroupIpAddressTypeEnum]
+
+  @inline def values: js.Array[TargetGroupIpAddressTypeEnum] = js.Array(ipv4, ipv6)
+}
+
+@js.native
 sealed trait TargetHealthReasonEnum extends js.Any
 object TargetHealthReasonEnum {
   val `Elb.RegistrationInProgress` = "Elb.RegistrationInProgress".asInstanceOf[TargetHealthReasonEnum]
@@ -147,6 +156,7 @@ object TargetTypeEnum {
   val instance = "instance".asInstanceOf[TargetTypeEnum]
   val ip = "ip".asInstanceOf[TargetTypeEnum]
   val lambda = "lambda".asInstanceOf[TargetTypeEnum]
+  val alb = "alb".asInstanceOf[TargetTypeEnum]
 
-  @inline def values: js.Array[TargetTypeEnum] = js.Array(instance, ip, lambda)
+  @inline def values: js.Array[TargetTypeEnum] = js.Array(instance, ip, lambda, alb)
 }

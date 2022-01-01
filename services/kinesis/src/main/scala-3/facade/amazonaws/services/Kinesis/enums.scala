@@ -72,6 +72,14 @@ object ShardIteratorType {
   inline def values: js.Array[ShardIteratorType] = js.Array(AT_SEQUENCE_NUMBER, AFTER_SEQUENCE_NUMBER, TRIM_HORIZON, LATEST, AT_TIMESTAMP)
 }
 
+type StreamMode = "PROVISIONED" | "ON_DEMAND"
+object StreamMode {
+  inline val PROVISIONED: "PROVISIONED" = "PROVISIONED"
+  inline val ON_DEMAND: "ON_DEMAND" = "ON_DEMAND"
+
+  inline def values: js.Array[StreamMode] = js.Array(PROVISIONED, ON_DEMAND)
+}
+
 type StreamStatus = "CREATING" | "DELETING" | "ACTIVE" | "UPDATING"
 object StreamStatus {
   inline val CREATING: "CREATING" = "CREATING"

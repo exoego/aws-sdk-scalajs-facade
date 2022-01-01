@@ -43,6 +43,7 @@ package object efs {
   type Policy = String
   type ProvisionedThroughputInMibps = Double
   type ResourceId = String
+  type Resources = js.Array[Resource]
   type SecondaryGids = js.Array[Gid]
   type SecurityGroup = String
   type SecurityGroups = js.Array[SecurityGroup]
@@ -66,6 +67,7 @@ package object efs {
     @inline def deleteFileSystemPolicyFuture(params: DeleteFileSystemPolicyRequest): Future[js.Object] = service.deleteFileSystemPolicy(params).promise().toFuture
     @inline def deleteMountTargetFuture(params: DeleteMountTargetRequest): Future[js.Object] = service.deleteMountTarget(params).promise().toFuture
     @inline def describeAccessPointsFuture(params: DescribeAccessPointsRequest): Future[DescribeAccessPointsResponse] = service.describeAccessPoints(params).promise().toFuture
+    @inline def describeAccountPreferencesFuture(params: DescribeAccountPreferencesRequest): Future[DescribeAccountPreferencesResponse] = service.describeAccountPreferences(params).promise().toFuture
     @inline def describeBackupPolicyFuture(params: DescribeBackupPolicyRequest): Future[BackupPolicyDescription] = service.describeBackupPolicy(params).promise().toFuture
     @inline def describeFileSystemPolicyFuture(params: DescribeFileSystemPolicyRequest): Future[FileSystemPolicyDescription] = service.describeFileSystemPolicy(params).promise().toFuture
     @inline def describeFileSystemsFuture(params: DescribeFileSystemsRequest): Future[DescribeFileSystemsResponse] = service.describeFileSystems(params).promise().toFuture
@@ -74,6 +76,7 @@ package object efs {
     @inline def describeMountTargetsFuture(params: DescribeMountTargetsRequest): Future[DescribeMountTargetsResponse] = service.describeMountTargets(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def modifyMountTargetSecurityGroupsFuture(params: ModifyMountTargetSecurityGroupsRequest): Future[js.Object] = service.modifyMountTargetSecurityGroups(params).promise().toFuture
+    @inline def putAccountPreferencesFuture(params: PutAccountPreferencesRequest): Future[PutAccountPreferencesResponse] = service.putAccountPreferences(params).promise().toFuture
     @inline def putBackupPolicyFuture(params: PutBackupPolicyRequest): Future[BackupPolicyDescription] = service.putBackupPolicy(params).promise().toFuture
     @inline def putFileSystemPolicyFuture(params: PutFileSystemPolicyRequest): Future[FileSystemPolicyDescription] = service.putFileSystemPolicy(params).promise().toFuture
     @inline def putLifecycleConfigurationFuture(params: PutLifecycleConfigurationRequest): Future[LifecycleConfigurationDescription] = service.putLifecycleConfiguration(params).promise().toFuture
@@ -99,6 +102,7 @@ package object efs {
     def deleteFileSystemPolicy(params: DeleteFileSystemPolicyRequest): Request[js.Object] = js.native
     def deleteMountTarget(params: DeleteMountTargetRequest): Request[js.Object] = js.native
     def describeAccessPoints(params: DescribeAccessPointsRequest): Request[DescribeAccessPointsResponse] = js.native
+    def describeAccountPreferences(params: DescribeAccountPreferencesRequest): Request[DescribeAccountPreferencesResponse] = js.native
     def describeBackupPolicy(params: DescribeBackupPolicyRequest): Request[BackupPolicyDescription] = js.native
     def describeFileSystemPolicy(params: DescribeFileSystemPolicyRequest): Request[FileSystemPolicyDescription] = js.native
     def describeFileSystems(params: DescribeFileSystemsRequest): Request[DescribeFileSystemsResponse] = js.native
@@ -107,6 +111,7 @@ package object efs {
     def describeMountTargets(params: DescribeMountTargetsRequest): Request[DescribeMountTargetsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def modifyMountTargetSecurityGroups(params: ModifyMountTargetSecurityGroupsRequest): Request[js.Object] = js.native
+    def putAccountPreferences(params: PutAccountPreferencesRequest): Request[PutAccountPreferencesResponse] = js.native
     def putBackupPolicy(params: PutBackupPolicyRequest): Request[BackupPolicyDescription] = js.native
     def putFileSystemPolicy(params: PutFileSystemPolicyRequest): Request[FileSystemPolicyDescription] = js.native
     def putLifecycleConfiguration(params: PutLifecycleConfigurationRequest): Request[LifecycleConfigurationDescription] = js.native
@@ -487,6 +492,44 @@ package object efs {
   }
 
   @js.native
+  trait DescribeAccountPreferencesRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object DescribeAccountPreferencesRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): DescribeAccountPreferencesRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountPreferencesRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAccountPreferencesResponse extends js.Object {
+    var NextToken: js.UndefOr[Token]
+    var ResourceIdPreference: js.UndefOr[ResourceIdPreference]
+  }
+
+  object DescribeAccountPreferencesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[Token] = js.undefined,
+        ResourceIdPreference: js.UndefOr[ResourceIdPreference] = js.undefined
+    ): DescribeAccountPreferencesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ResourceIdPreference.foreach(__v => __obj.updateDynamic("ResourceIdPreference")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAccountPreferencesResponse]
+    }
+  }
+
+  @js.native
   trait DescribeBackupPolicyRequest extends js.Object {
     var FileSystemId: FileSystemId
   }
@@ -860,20 +903,25 @@ package object efs {
     }
   }
 
-  /** Describes a policy used by EFS lifecycle management to transition files to the Infrequent Access (IA) storage class.
+  /** Describes a policy used by EFS lifecycle management and EFS intelligent tiering that specifies when to transition files into and out of the file system's Infrequent Access (IA) storage class. For more information, see [[https://docs.aws.amazon.com/efs/latest/ug/lifecycle-management-efs.html|EFS Intelligent‐Tiering and EFS Lifecycle Management]].
+    *
+    * '''Note:'''When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code> API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have only a single transition. This means that in a request body, <code>LifecyclePolicies</code> needs to be structured as an array of <code>LifecyclePolicy</code> objects, one object for each transition, <code>TransitionToIA</code>, <code>TransitionToPrimaryStorageClass</code>. For more information, see the request examples in <a>PutLifecycleConfiguration</a>.
     */
   @js.native
   trait LifecyclePolicy extends js.Object {
     var TransitionToIA: js.UndefOr[TransitionToIARules]
+    var TransitionToPrimaryStorageClass: js.UndefOr[TransitionToPrimaryStorageClassRules]
   }
 
   object LifecyclePolicy {
     @inline
     def apply(
-        TransitionToIA: js.UndefOr[TransitionToIARules] = js.undefined
+        TransitionToIA: js.UndefOr[TransitionToIARules] = js.undefined,
+        TransitionToPrimaryStorageClass: js.UndefOr[TransitionToPrimaryStorageClassRules] = js.undefined
     ): LifecyclePolicy = {
       val __obj = js.Dynamic.literal()
       TransitionToIA.foreach(__v => __obj.updateDynamic("TransitionToIA")(__v.asInstanceOf[js.Any]))
+      TransitionToPrimaryStorageClass.foreach(__v => __obj.updateDynamic("TransitionToPrimaryStorageClass")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecyclePolicy]
     }
   }
@@ -1018,6 +1066,39 @@ package object efs {
   }
 
   @js.native
+  trait PutAccountPreferencesRequest extends js.Object {
+    var ResourceIdType: ResourceIdType
+  }
+
+  object PutAccountPreferencesRequest {
+    @inline
+    def apply(
+        ResourceIdType: ResourceIdType
+    ): PutAccountPreferencesRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceIdType" -> ResourceIdType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutAccountPreferencesRequest]
+    }
+  }
+
+  @js.native
+  trait PutAccountPreferencesResponse extends js.Object {
+    var ResourceIdPreference: js.UndefOr[ResourceIdPreference]
+  }
+
+  object PutAccountPreferencesResponse {
+    @inline
+    def apply(
+        ResourceIdPreference: js.UndefOr[ResourceIdPreference] = js.undefined
+    ): PutAccountPreferencesResponse = {
+      val __obj = js.Dynamic.literal()
+      ResourceIdPreference.foreach(__v => __obj.updateDynamic("ResourceIdPreference")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAccountPreferencesResponse]
+    }
+  }
+
+  @js.native
   trait PutBackupPolicyRequest extends js.Object {
     var BackupPolicy: BackupPolicy
     var FileSystemId: FileSystemId
@@ -1081,6 +1162,27 @@ package object efs {
     }
   }
 
+  /** Describes the resource type and its ID preference for the user's Amazon Web Services account, in the current Amazon Web Services Region.
+    */
+  @js.native
+  trait ResourceIdPreference extends js.Object {
+    var ResourceIdType: js.UndefOr[ResourceIdType]
+    var Resources: js.UndefOr[Resources]
+  }
+
+  object ResourceIdPreference {
+    @inline
+    def apply(
+        ResourceIdType: js.UndefOr[ResourceIdType] = js.undefined,
+        Resources: js.UndefOr[Resources] = js.undefined
+    ): ResourceIdPreference = {
+      val __obj = js.Dynamic.literal()
+      ResourceIdType.foreach(__v => __obj.updateDynamic("ResourceIdType")(__v.asInstanceOf[js.Any]))
+      Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ResourceIdPreference]
+    }
+  }
+
   /** Specifies the directory on the Amazon EFS file system that the access point provides access to. The access point exposes the specified file system path as the root directory of your file system to applications using the access point. NFS clients using the access point can only access data in the access point's <code>RootDirectory</code> and it's subdirectories.
     */
   @js.native
@@ -1102,7 +1204,7 @@ package object efs {
     }
   }
 
-  /** A tag is a key-value pair. Allowed characters are letters, white space, and numbers that can be represented in UTF-8, and the following characters:<code> + - = . _ : /</code>
+  /** A tag is a key-value pair. Allowed characters are letters, white space, and numbers that can be represented in UTF-8, and the following characters:<code> + - = . _ : /</code>.
     */
   @js.native
   trait Tag extends js.Object {

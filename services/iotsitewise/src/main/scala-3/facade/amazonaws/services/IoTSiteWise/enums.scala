@@ -84,13 +84,22 @@ object BatchPutAssetPropertyValueErrorCode {
   )
 }
 
-type CapabilitySyncStatus = "IN_SYNC" | "OUT_OF_SYNC" | "SYNC_FAILED"
+type CapabilitySyncStatus = "IN_SYNC" | "OUT_OF_SYNC" | "SYNC_FAILED" | "UNKNOWN"
 object CapabilitySyncStatus {
   inline val IN_SYNC: "IN_SYNC" = "IN_SYNC"
   inline val OUT_OF_SYNC: "OUT_OF_SYNC" = "OUT_OF_SYNC"
   inline val SYNC_FAILED: "SYNC_FAILED" = "SYNC_FAILED"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
 
-  inline def values: js.Array[CapabilitySyncStatus] = js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED)
+  inline def values: js.Array[CapabilitySyncStatus] = js.Array(IN_SYNC, OUT_OF_SYNC, SYNC_FAILED, UNKNOWN)
+}
+
+type ComputeLocation = "EDGE" | "CLOUD"
+object ComputeLocation {
+  inline val EDGE: "EDGE" = "EDGE"
+  inline val CLOUD: "CLOUD" = "CLOUD"
+
+  inline def values: js.Array[ComputeLocation] = js.Array(EDGE, CLOUD)
 }
 
 type ConfigurationState = "ACTIVE" | "UPDATE_IN_PROGRESS" | "UPDATE_FAILED"
@@ -100,6 +109,22 @@ object ConfigurationState {
   inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
 
   inline def values: js.Array[ConfigurationState] = js.Array(ACTIVE, UPDATE_IN_PROGRESS, UPDATE_FAILED)
+}
+
+type DetailedErrorCode = "INCOMPATIBLE_COMPUTE_LOCATION" | "INCOMPATIBLE_FORWARDING_CONFIGURATION"
+object DetailedErrorCode {
+  inline val INCOMPATIBLE_COMPUTE_LOCATION: "INCOMPATIBLE_COMPUTE_LOCATION" = "INCOMPATIBLE_COMPUTE_LOCATION"
+  inline val INCOMPATIBLE_FORWARDING_CONFIGURATION: "INCOMPATIBLE_FORWARDING_CONFIGURATION" = "INCOMPATIBLE_FORWARDING_CONFIGURATION"
+
+  inline def values: js.Array[DetailedErrorCode] = js.Array(INCOMPATIBLE_COMPUTE_LOCATION, INCOMPATIBLE_FORWARDING_CONFIGURATION)
+}
+
+type DisassociatedDataStorageState = "ENABLED" | "DISABLED"
+object DisassociatedDataStorageState {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[DisassociatedDataStorageState] = js.Array(ENABLED, DISABLED)
 }
 
 type EncryptionType = "SITEWISE_DEFAULT_ENCRYPTION" | "KMS_BASED_ENCRYPTION"
@@ -116,6 +141,14 @@ object ErrorCode {
   inline val INTERNAL_FAILURE: "INTERNAL_FAILURE" = "INTERNAL_FAILURE"
 
   inline def values: js.Array[ErrorCode] = js.Array(VALIDATION_ERROR, INTERNAL_FAILURE)
+}
+
+type ForwardingConfigState = "DISABLED" | "ENABLED"
+object ForwardingConfigState {
+  inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val ENABLED: "ENABLED" = "ENABLED"
+
+  inline def values: js.Array[ForwardingConfigState] = js.Array(DISABLED, ENABLED)
 }
 
 type IdentityType = "USER" | "GROUP" | "IAM"
@@ -140,6 +173,14 @@ object ListAssetsFilter {
   inline val TOP_LEVEL: "TOP_LEVEL" = "TOP_LEVEL"
 
   inline def values: js.Array[ListAssetsFilter] = js.Array(ALL, TOP_LEVEL)
+}
+
+type ListTimeSeriesType = "ASSOCIATED" | "DISASSOCIATED"
+object ListTimeSeriesType {
+  inline val ASSOCIATED: "ASSOCIATED" = "ASSOCIATED"
+  inline val DISASSOCIATED: "DISASSOCIATED" = "DISASSOCIATED"
+
+  inline def values: js.Array[ListTimeSeriesType] = js.Array(ASSOCIATED, DISASSOCIATED)
 }
 
 type LoggingLevel = "ERROR" | "INFO" | "OFF"
@@ -213,6 +254,14 @@ object ResourceType {
   inline val PROJECT: "PROJECT" = "PROJECT"
 
   inline def values: js.Array[ResourceType] = js.Array(PORTAL, PROJECT)
+}
+
+type StorageType = "SITEWISE_DEFAULT_STORAGE" | "MULTI_LAYER_STORAGE"
+object StorageType {
+  inline val SITEWISE_DEFAULT_STORAGE: "SITEWISE_DEFAULT_STORAGE" = "SITEWISE_DEFAULT_STORAGE"
+  inline val MULTI_LAYER_STORAGE: "MULTI_LAYER_STORAGE" = "MULTI_LAYER_STORAGE"
+
+  inline def values: js.Array[StorageType] = js.Array(SITEWISE_DEFAULT_STORAGE, MULTI_LAYER_STORAGE)
 }
 
 type TimeOrdering = "ASCENDING" | "DESCENDING"

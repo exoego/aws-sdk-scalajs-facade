@@ -2,6 +2,37 @@ package facade.amazonaws.services.wellarchitected
 
 import scalajs.js
 
+type AnswerReason = "OUT_OF_SCOPE" | "BUSINESS_PRIORITIES" | "ARCHITECTURE_CONSTRAINTS" | "OTHER" | "NONE"
+object AnswerReason {
+  inline val OUT_OF_SCOPE: "OUT_OF_SCOPE" = "OUT_OF_SCOPE"
+  inline val BUSINESS_PRIORITIES: "BUSINESS_PRIORITIES" = "BUSINESS_PRIORITIES"
+  inline val ARCHITECTURE_CONSTRAINTS: "ARCHITECTURE_CONSTRAINTS" = "ARCHITECTURE_CONSTRAINTS"
+  inline val OTHER: "OTHER" = "OTHER"
+  inline val NONE: "NONE" = "NONE"
+
+  inline def values: js.Array[AnswerReason] = js.Array(OUT_OF_SCOPE, BUSINESS_PRIORITIES, ARCHITECTURE_CONSTRAINTS, OTHER, NONE)
+}
+
+type ChoiceReason = "OUT_OF_SCOPE" | "BUSINESS_PRIORITIES" | "ARCHITECTURE_CONSTRAINTS" | "OTHER" | "NONE"
+object ChoiceReason {
+  inline val OUT_OF_SCOPE: "OUT_OF_SCOPE" = "OUT_OF_SCOPE"
+  inline val BUSINESS_PRIORITIES: "BUSINESS_PRIORITIES" = "BUSINESS_PRIORITIES"
+  inline val ARCHITECTURE_CONSTRAINTS: "ARCHITECTURE_CONSTRAINTS" = "ARCHITECTURE_CONSTRAINTS"
+  inline val OTHER: "OTHER" = "OTHER"
+  inline val NONE: "NONE" = "NONE"
+
+  inline def values: js.Array[ChoiceReason] = js.Array(OUT_OF_SCOPE, BUSINESS_PRIORITIES, ARCHITECTURE_CONSTRAINTS, OTHER, NONE)
+}
+
+type ChoiceStatus = "SELECTED" | "NOT_APPLICABLE" | "UNSELECTED"
+object ChoiceStatus {
+  inline val SELECTED: "SELECTED" = "SELECTED"
+  inline val NOT_APPLICABLE: "NOT_APPLICABLE" = "NOT_APPLICABLE"
+  inline val UNSELECTED: "UNSELECTED" = "UNSELECTED"
+
+  inline def values: js.Array[ChoiceStatus] = js.Array(SELECTED, NOT_APPLICABLE, UNSELECTED)
+}
+
 type DifferenceStatus = "UPDATED" | "NEW" | "DELETED"
 object DifferenceStatus {
   inline val UPDATED: "UPDATED" = "UPDATED"
@@ -11,13 +42,42 @@ object DifferenceStatus {
   inline def values: js.Array[DifferenceStatus] = js.Array(UPDATED, NEW, DELETED)
 }
 
-type LensStatus = "CURRENT" | "NOT_CURRENT" | "DEPRECATED"
+type ImportLensStatus = "IN_PROGRESS" | "COMPLETE" | "ERROR"
+object ImportLensStatus {
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val COMPLETE: "COMPLETE" = "COMPLETE"
+  inline val ERROR: "ERROR" = "ERROR"
+
+  inline def values: js.Array[ImportLensStatus] = js.Array(IN_PROGRESS, COMPLETE, ERROR)
+}
+
+type LensStatus = "CURRENT" | "NOT_CURRENT" | "DEPRECATED" | "DELETED" | "UNSHARED"
 object LensStatus {
   inline val CURRENT: "CURRENT" = "CURRENT"
   inline val NOT_CURRENT: "NOT_CURRENT" = "NOT_CURRENT"
   inline val DEPRECATED: "DEPRECATED" = "DEPRECATED"
+  inline val DELETED: "DELETED" = "DELETED"
+  inline val UNSHARED: "UNSHARED" = "UNSHARED"
 
-  inline def values: js.Array[LensStatus] = js.Array(CURRENT, NOT_CURRENT, DEPRECATED)
+  inline def values: js.Array[LensStatus] = js.Array(CURRENT, NOT_CURRENT, DEPRECATED, DELETED, UNSHARED)
+}
+
+type LensStatusType = "ALL" | "DRAFT" | "PUBLISHED"
+object LensStatusType {
+  inline val ALL: "ALL" = "ALL"
+  inline val DRAFT: "DRAFT" = "DRAFT"
+  inline val PUBLISHED: "PUBLISHED" = "PUBLISHED"
+
+  inline def values: js.Array[LensStatusType] = js.Array(ALL, DRAFT, PUBLISHED)
+}
+
+type LensType = "AWS_OFFICIAL" | "CUSTOM_SHARED" | "CUSTOM_SELF"
+object LensType {
+  inline val AWS_OFFICIAL: "AWS_OFFICIAL" = "AWS_OFFICIAL"
+  inline val CUSTOM_SHARED: "CUSTOM_SHARED" = "CUSTOM_SHARED"
+  inline val CUSTOM_SELF: "CUSTOM_SELF" = "CUSTOM_SELF"
+
+  inline def values: js.Array[LensType] = js.Array(AWS_OFFICIAL, CUSTOM_SHARED, CUSTOM_SELF)
 }
 
 type NotificationType = "LENS_VERSION_UPGRADED" | "LENS_VERSION_DEPRECATED"
@@ -59,6 +119,14 @@ object ShareInvitationAction {
   inline val REJECT: "REJECT" = "REJECT"
 
   inline def values: js.Array[ShareInvitationAction] = js.Array(ACCEPT, REJECT)
+}
+
+type ShareResourceType = "WORKLOAD" | "LENS"
+object ShareResourceType {
+  inline val WORKLOAD: "WORKLOAD" = "WORKLOAD"
+  inline val LENS: "LENS" = "LENS"
+
+  inline def values: js.Array[ShareResourceType] = js.Array(WORKLOAD, LENS)
 }
 
 /** The status of a workload share.

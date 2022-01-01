@@ -98,35 +98,36 @@ package object personalizeruntime {
 
   @js.native
   trait GetRecommendationsRequest extends js.Object {
-    var campaignArn: Arn
+    var campaignArn: js.UndefOr[Arn]
     var context: js.UndefOr[Context]
     var filterArn: js.UndefOr[Arn]
     var filterValues: js.UndefOr[FilterValues]
     var itemId: js.UndefOr[ItemID]
     var numResults: js.UndefOr[NumResults]
+    var recommenderArn: js.UndefOr[Arn]
     var userId: js.UndefOr[UserID]
   }
 
   object GetRecommendationsRequest {
     @inline
     def apply(
-        campaignArn: Arn,
+        campaignArn: js.UndefOr[Arn] = js.undefined,
         context: js.UndefOr[Context] = js.undefined,
         filterArn: js.UndefOr[Arn] = js.undefined,
         filterValues: js.UndefOr[FilterValues] = js.undefined,
         itemId: js.UndefOr[ItemID] = js.undefined,
         numResults: js.UndefOr[NumResults] = js.undefined,
+        recommenderArn: js.UndefOr[Arn] = js.undefined,
         userId: js.UndefOr[UserID] = js.undefined
     ): GetRecommendationsRequest = {
-      val __obj = js.Dynamic.literal(
-        "campaignArn" -> campaignArn.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      campaignArn.foreach(__v => __obj.updateDynamic("campaignArn")(__v.asInstanceOf[js.Any]))
       context.foreach(__v => __obj.updateDynamic("context")(__v.asInstanceOf[js.Any]))
       filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
       filterValues.foreach(__v => __obj.updateDynamic("filterValues")(__v.asInstanceOf[js.Any]))
       itemId.foreach(__v => __obj.updateDynamic("itemId")(__v.asInstanceOf[js.Any]))
       numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
+      recommenderArn.foreach(__v => __obj.updateDynamic("recommenderArn")(__v.asInstanceOf[js.Any]))
       userId.foreach(__v => __obj.updateDynamic("userId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetRecommendationsRequest]
     }

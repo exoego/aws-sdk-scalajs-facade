@@ -14,8 +14,9 @@ object EventCategory {
 sealed trait InsightType extends js.Any
 object InsightType {
   val ApiCallRateInsight = "ApiCallRateInsight".asInstanceOf[InsightType]
+  val ApiErrorRateInsight = "ApiErrorRateInsight".asInstanceOf[InsightType]
 
-  @inline def values: js.Array[InsightType] = js.Array(ApiCallRateInsight)
+  @inline def values: js.Array[InsightType] = js.Array(ApiCallRateInsight, ApiErrorRateInsight)
 }
 
 @js.native

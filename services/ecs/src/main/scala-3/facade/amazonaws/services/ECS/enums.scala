@@ -22,6 +22,14 @@ object AssignPublicIp {
   inline def values: js.Array[AssignPublicIp] = js.Array(ENABLED, DISABLED)
 }
 
+type CPUArchitecture = "X86_64" | "ARM64"
+object CPUArchitecture {
+  inline val X86_64: "X86_64" = "X86_64"
+  inline val ARM64: "ARM64" = "ARM64"
+
+  inline def values: js.Array[CPUArchitecture] = js.Array(X86_64, ARM64)
+}
+
 type CapacityProviderField = "TAGS"
 object CapacityProviderField {
   inline val TAGS: "TAGS" = "TAGS"
@@ -67,12 +75,13 @@ object ClusterSettingName {
   inline def values: js.Array[ClusterSettingName] = js.Array(containerInsights)
 }
 
-type Compatibility = "EC2" | "FARGATE"
+type Compatibility = "EC2" | "FARGATE" | "EXTERNAL"
 object Compatibility {
   inline val EC2: "EC2" = "EC2"
   inline val FARGATE: "FARGATE" = "FARGATE"
+  inline val EXTERNAL: "EXTERNAL" = "EXTERNAL"
 
-  inline def values: js.Array[Compatibility] = js.Array(EC2, FARGATE)
+  inline def values: js.Array[Compatibility] = js.Array(EC2, FARGATE, EXTERNAL)
 }
 
 type Connectivity = "CONNECTED" | "DISCONNECTED"
@@ -93,11 +102,12 @@ object ContainerCondition {
   inline def values: js.Array[ContainerCondition] = js.Array(START, COMPLETE, SUCCESS, HEALTHY)
 }
 
-type ContainerInstanceField = "TAGS"
+type ContainerInstanceField = "TAGS" | "CONTAINER_INSTANCE_HEALTH"
 object ContainerInstanceField {
   inline val TAGS: "TAGS" = "TAGS"
+  inline val CONTAINER_INSTANCE_HEALTH: "CONTAINER_INSTANCE_HEALTH" = "CONTAINER_INSTANCE_HEALTH"
 
-  inline def values: js.Array[ContainerInstanceField] = js.Array(TAGS)
+  inline def values: js.Array[ContainerInstanceField] = js.Array(TAGS, CONTAINER_INSTANCE_HEALTH)
 }
 
 type ContainerInstanceStatus = "ACTIVE" | "DRAINING" | "REGISTERING" | "DEREGISTERING" | "REGISTRATION_FAILED"
@@ -196,6 +206,23 @@ object HealthStatus {
   inline def values: js.Array[HealthStatus] = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
 }
 
+type InstanceHealthCheckState = "OK" | "IMPAIRED" | "INSUFFICIENT_DATA" | "INITIALIZING"
+object InstanceHealthCheckState {
+  inline val OK: "OK" = "OK"
+  inline val IMPAIRED: "IMPAIRED" = "IMPAIRED"
+  inline val INSUFFICIENT_DATA: "INSUFFICIENT_DATA" = "INSUFFICIENT_DATA"
+  inline val INITIALIZING: "INITIALIZING" = "INITIALIZING"
+
+  inline def values: js.Array[InstanceHealthCheckState] = js.Array(OK, IMPAIRED, INSUFFICIENT_DATA, INITIALIZING)
+}
+
+type InstanceHealthCheckType = "CONTAINER_RUNTIME"
+object InstanceHealthCheckType {
+  inline val CONTAINER_RUNTIME: "CONTAINER_RUNTIME" = "CONTAINER_RUNTIME"
+
+  inline def values: js.Array[InstanceHealthCheckType] = js.Array(CONTAINER_RUNTIME)
+}
+
 type IpcMode = "host" | "task" | "none"
 object IpcMode {
   inline val host: "host" = "host"
@@ -205,12 +232,13 @@ object IpcMode {
   inline def values: js.Array[IpcMode] = js.Array(host, task, none)
 }
 
-type LaunchType = "EC2" | "FARGATE"
+type LaunchType = "EC2" | "FARGATE" | "EXTERNAL"
 object LaunchType {
   inline val EC2: "EC2" = "EC2"
   inline val FARGATE: "FARGATE" = "FARGATE"
+  inline val EXTERNAL: "EXTERNAL" = "EXTERNAL"
 
-  inline def values: js.Array[LaunchType] = js.Array(EC2, FARGATE)
+  inline def values: js.Array[LaunchType] = js.Array(EC2, FARGATE, EXTERNAL)
 }
 
 type LogDriver = "json-file" | "syslog" | "journald" | "gelf" | "fluentd" | "awslogs" | "splunk" | "awsfirelens"
@@ -258,6 +286,29 @@ object NetworkMode {
   inline val none: "none" = "none"
 
   inline def values: js.Array[NetworkMode] = js.Array(bridge, host, awsvpc, none)
+}
+
+type OSFamily = "WINDOWS_SERVER_2019_FULL" | "WINDOWS_SERVER_2019_CORE" | "WINDOWS_SERVER_2016_FULL" | "WINDOWS_SERVER_2004_CORE" | "WINDOWS_SERVER_2022_CORE" | "WINDOWS_SERVER_2022_FULL" | "WINDOWS_SERVER_20H2_CORE" | "LINUX"
+object OSFamily {
+  inline val WINDOWS_SERVER_2019_FULL: "WINDOWS_SERVER_2019_FULL" = "WINDOWS_SERVER_2019_FULL"
+  inline val WINDOWS_SERVER_2019_CORE: "WINDOWS_SERVER_2019_CORE" = "WINDOWS_SERVER_2019_CORE"
+  inline val WINDOWS_SERVER_2016_FULL: "WINDOWS_SERVER_2016_FULL" = "WINDOWS_SERVER_2016_FULL"
+  inline val WINDOWS_SERVER_2004_CORE: "WINDOWS_SERVER_2004_CORE" = "WINDOWS_SERVER_2004_CORE"
+  inline val WINDOWS_SERVER_2022_CORE: "WINDOWS_SERVER_2022_CORE" = "WINDOWS_SERVER_2022_CORE"
+  inline val WINDOWS_SERVER_2022_FULL: "WINDOWS_SERVER_2022_FULL" = "WINDOWS_SERVER_2022_FULL"
+  inline val WINDOWS_SERVER_20H2_CORE: "WINDOWS_SERVER_20H2_CORE" = "WINDOWS_SERVER_20H2_CORE"
+  inline val LINUX: "LINUX" = "LINUX"
+
+  inline def values: js.Array[OSFamily] = js.Array(
+    WINDOWS_SERVER_2019_FULL,
+    WINDOWS_SERVER_2019_CORE,
+    WINDOWS_SERVER_2016_FULL,
+    WINDOWS_SERVER_2004_CORE,
+    WINDOWS_SERVER_2022_CORE,
+    WINDOWS_SERVER_2022_FULL,
+    WINDOWS_SERVER_20H2_CORE,
+    LINUX
+  )
 }
 
 type PidMode = "host" | "task"

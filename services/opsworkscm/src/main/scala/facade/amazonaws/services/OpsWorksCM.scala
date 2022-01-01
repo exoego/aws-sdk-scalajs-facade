@@ -803,12 +803,17 @@ package object opsworkscm {
   }
 
   @js.native
-  trait RestoreServerResponse extends js.Object
+  trait RestoreServerResponse extends js.Object {
+    var Server: js.UndefOr[Server]
+  }
 
   object RestoreServerResponse {
     @inline
-    def apply(): RestoreServerResponse = {
+    def apply(
+        Server: js.UndefOr[Server] = js.undefined
+    ): RestoreServerResponse = {
       val __obj = js.Dynamic.literal()
+      Server.foreach(__v => __obj.updateDynamic("Server")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreServerResponse]
     }
   }

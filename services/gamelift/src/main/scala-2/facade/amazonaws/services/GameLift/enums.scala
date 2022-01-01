@@ -398,6 +398,14 @@ object GameServerGroupInstanceType {
   val `c5a.12xlarge` = "c5a.12xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `c5a.16xlarge` = "c5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `c5a.24xlarge` = "c5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `c6g.medium` = "c6g.medium".asInstanceOf[GameServerGroupInstanceType]
+  val `c6g.large` = "c6g.large".asInstanceOf[GameServerGroupInstanceType]
+  val `c6g.xlarge` = "c6g.xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `c6g.2xlarge` = "c6g.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `c6g.4xlarge` = "c6g.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `c6g.8xlarge` = "c6g.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `c6g.12xlarge` = "c6g.12xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `c6g.16xlarge` = "c6g.16xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `r4.large` = "r4.large".asInstanceOf[GameServerGroupInstanceType]
   val `r4.xlarge` = "r4.xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `r4.2xlarge` = "r4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
@@ -420,6 +428,14 @@ object GameServerGroupInstanceType {
   val `r5a.12xlarge` = "r5a.12xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `r5a.16xlarge` = "r5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `r5a.24xlarge` = "r5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `r6g.medium` = "r6g.medium".asInstanceOf[GameServerGroupInstanceType]
+  val `r6g.large` = "r6g.large".asInstanceOf[GameServerGroupInstanceType]
+  val `r6g.xlarge` = "r6g.xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `r6g.2xlarge` = "r6g.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `r6g.4xlarge` = "r6g.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `r6g.8xlarge` = "r6g.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `r6g.12xlarge` = "r6g.12xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `r6g.16xlarge` = "r6g.16xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `m4.large` = "m4.large".asInstanceOf[GameServerGroupInstanceType]
   val `m4.xlarge` = "m4.xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `m4.2xlarge` = "m4.2xlarge".asInstanceOf[GameServerGroupInstanceType]
@@ -441,6 +457,14 @@ object GameServerGroupInstanceType {
   val `m5a.12xlarge` = "m5a.12xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `m5a.16xlarge` = "m5a.16xlarge".asInstanceOf[GameServerGroupInstanceType]
   val `m5a.24xlarge` = "m5a.24xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `m6g.medium` = "m6g.medium".asInstanceOf[GameServerGroupInstanceType]
+  val `m6g.large` = "m6g.large".asInstanceOf[GameServerGroupInstanceType]
+  val `m6g.xlarge` = "m6g.xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `m6g.2xlarge` = "m6g.2xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `m6g.4xlarge` = "m6g.4xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `m6g.8xlarge` = "m6g.8xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `m6g.12xlarge` = "m6g.12xlarge".asInstanceOf[GameServerGroupInstanceType]
+  val `m6g.16xlarge` = "m6g.16xlarge".asInstanceOf[GameServerGroupInstanceType]
 
   @inline def values: js.Array[GameServerGroupInstanceType] = js.Array(
     `c4.large`,
@@ -464,6 +488,14 @@ object GameServerGroupInstanceType {
     `c5a.12xlarge`,
     `c5a.16xlarge`,
     `c5a.24xlarge`,
+    `c6g.medium`,
+    `c6g.large`,
+    `c6g.xlarge`,
+    `c6g.2xlarge`,
+    `c6g.4xlarge`,
+    `c6g.8xlarge`,
+    `c6g.12xlarge`,
+    `c6g.16xlarge`,
     `r4.large`,
     `r4.xlarge`,
     `r4.2xlarge`,
@@ -486,6 +518,14 @@ object GameServerGroupInstanceType {
     `r5a.12xlarge`,
     `r5a.16xlarge`,
     `r5a.24xlarge`,
+    `r6g.medium`,
+    `r6g.large`,
+    `r6g.xlarge`,
+    `r6g.2xlarge`,
+    `r6g.4xlarge`,
+    `r6g.8xlarge`,
+    `r6g.12xlarge`,
+    `r6g.16xlarge`,
     `m4.large`,
     `m4.xlarge`,
     `m4.2xlarge`,
@@ -506,7 +546,15 @@ object GameServerGroupInstanceType {
     `m5a.8xlarge`,
     `m5a.12xlarge`,
     `m5a.16xlarge`,
-    `m5a.24xlarge`
+    `m5a.24xlarge`,
+    `m6g.medium`,
+    `m6g.large`,
+    `m6g.xlarge`,
+    `m6g.2xlarge`,
+    `m6g.4xlarge`,
+    `m6g.8xlarge`,
+    `m6g.12xlarge`,
+    `m6g.16xlarge`
   )
 }
 

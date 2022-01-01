@@ -29,6 +29,8 @@ package object kinesis {
   type MetricsNameList = js.Array[MetricsName]
   type MillisBehindLatest = Double
   type NextToken = String
+  type OnDemandStreamCountLimitObject = Int
+  type OnDemandStreamCountObject = Int
   type PartitionKey = String
   type PositiveIntegerObject = Int
   type PutRecordsRequestEntryList = js.Array[PutRecordsRequestEntry]
@@ -80,6 +82,7 @@ package object kinesis {
     @inline def startStreamEncryptionFuture(params: StartStreamEncryptionInput): Future[js.Object] = service.startStreamEncryption(params).promise().toFuture
     @inline def stopStreamEncryptionFuture(params: StopStreamEncryptionInput): Future[js.Object] = service.stopStreamEncryption(params).promise().toFuture
     @inline def updateShardCountFuture(params: UpdateShardCountInput): Future[UpdateShardCountOutput] = service.updateShardCount(params).promise().toFuture
+    @inline def updateStreamModeFuture(params: UpdateStreamModeInput): Future[js.Object] = service.updateStreamMode(params).promise().toFuture
 
   }
 
@@ -115,6 +118,7 @@ package object kinesis {
     def startStreamEncryption(params: StartStreamEncryptionInput): Request[js.Object] = js.native
     def stopStreamEncryption(params: StopStreamEncryptionInput): Request[js.Object] = js.native
     def updateShardCount(params: UpdateShardCountInput): Request[UpdateShardCountOutput] = js.native
+    def updateStreamMode(params: UpdateStreamModeInput): Request[js.Object] = js.native
   }
   object Kinesis {
     @inline implicit def toOps(service: Kinesis): KinesisOps = {
@@ -144,6 +148,8 @@ package object kinesis {
     }
   }
 
+  /** Output parameter of the GetRecords API. The existing child shard of the current shard.
+    */
   @js.native
   trait ChildShard extends js.Object {
     var HashKeyRange: HashKeyRange
@@ -230,20 +236,24 @@ package object kinesis {
     */
   @js.native
   trait CreateStreamInput extends js.Object {
-    var ShardCount: PositiveIntegerObject
     var StreamName: StreamName
+    var ShardCount: js.UndefOr[PositiveIntegerObject]
+    var StreamModeDetails: js.UndefOr[StreamModeDetails]
   }
 
   object CreateStreamInput {
     @inline
     def apply(
-        ShardCount: PositiveIntegerObject,
-        StreamName: StreamName
+        StreamName: StreamName,
+        ShardCount: js.UndefOr[PositiveIntegerObject] = js.undefined,
+        StreamModeDetails: js.UndefOr[StreamModeDetails] = js.undefined
     ): CreateStreamInput = {
       val __obj = js.Dynamic.literal(
-        "ShardCount" -> ShardCount.asInstanceOf[js.Any],
         "StreamName" -> StreamName.asInstanceOf[js.Any]
       )
+
+      ShardCount.foreach(__v => __obj.updateDynamic("ShardCount")(__v.asInstanceOf[js.Any]))
+      StreamModeDetails.foreach(__v => __obj.updateDynamic("StreamModeDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStreamInput]
     }
   }
@@ -328,6 +338,8 @@ package object kinesis {
 
   @js.native
   trait DescribeLimitsOutput extends js.Object {
+    var OnDemandStreamCount: OnDemandStreamCountObject
+    var OnDemandStreamCountLimit: OnDemandStreamCountLimitObject
     var OpenShardCount: ShardCountObject
     var ShardLimit: ShardCountObject
   }
@@ -335,10 +347,14 @@ package object kinesis {
   object DescribeLimitsOutput {
     @inline
     def apply(
+        OnDemandStreamCount: OnDemandStreamCountObject,
+        OnDemandStreamCountLimit: OnDemandStreamCountLimitObject,
         OpenShardCount: ShardCountObject,
         ShardLimit: ShardCountObject
     ): DescribeLimitsOutput = {
       val __obj = js.Dynamic.literal(
+        "OnDemandStreamCount" -> OnDemandStreamCount.asInstanceOf[js.Any],
+        "OnDemandStreamCountLimit" -> OnDemandStreamCountLimit.asInstanceOf[js.Any],
         "OpenShardCount" -> OpenShardCount.asInstanceOf[js.Any],
         "ShardLimit" -> ShardLimit.asInstanceOf[js.Any]
       )
@@ -1213,6 +1229,8 @@ package object kinesis {
     }
   }
 
+  /** The request parameter used to filter out the response of the <code>ListShards</code> API.
+    */
   @js.native
   trait ShardFilter extends js.Object {
     var Type: ShardFilterType
@@ -1322,6 +1340,7 @@ package object kinesis {
     var StreamStatus: StreamStatus
     var EncryptionType: js.UndefOr[EncryptionType]
     var KeyId: js.UndefOr[KeyId]
+    var StreamModeDetails: js.UndefOr[StreamModeDetails]
   }
 
   object StreamDescription {
@@ -1336,7 +1355,8 @@ package object kinesis {
         StreamName: StreamName,
         StreamStatus: StreamStatus,
         EncryptionType: js.UndefOr[EncryptionType] = js.undefined,
-        KeyId: js.UndefOr[KeyId] = js.undefined
+        KeyId: js.UndefOr[KeyId] = js.undefined,
+        StreamModeDetails: js.UndefOr[StreamModeDetails] = js.undefined
     ): StreamDescription = {
       val __obj = js.Dynamic.literal(
         "EnhancedMonitoring" -> EnhancedMonitoring.asInstanceOf[js.Any],
@@ -1351,6 +1371,7 @@ package object kinesis {
 
       EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      StreamModeDetails.foreach(__v => __obj.updateDynamic("StreamModeDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamDescription]
     }
   }
@@ -1369,6 +1390,7 @@ package object kinesis {
     var ConsumerCount: js.UndefOr[ConsumerCountObject]
     var EncryptionType: js.UndefOr[EncryptionType]
     var KeyId: js.UndefOr[KeyId]
+    var StreamModeDetails: js.UndefOr[StreamModeDetails]
   }
 
   object StreamDescriptionSummary {
@@ -1383,7 +1405,8 @@ package object kinesis {
         StreamStatus: StreamStatus,
         ConsumerCount: js.UndefOr[ConsumerCountObject] = js.undefined,
         EncryptionType: js.UndefOr[EncryptionType] = js.undefined,
-        KeyId: js.UndefOr[KeyId] = js.undefined
+        KeyId: js.UndefOr[KeyId] = js.undefined,
+        StreamModeDetails: js.UndefOr[StreamModeDetails] = js.undefined
     ): StreamDescriptionSummary = {
       val __obj = js.Dynamic.literal(
         "EnhancedMonitoring" -> EnhancedMonitoring.asInstanceOf[js.Any],
@@ -1398,7 +1421,27 @@ package object kinesis {
       ConsumerCount.foreach(__v => __obj.updateDynamic("ConsumerCount")(__v.asInstanceOf[js.Any]))
       EncryptionType.foreach(__v => __obj.updateDynamic("EncryptionType")(__v.asInstanceOf[js.Any]))
       KeyId.foreach(__v => __obj.updateDynamic("KeyId")(__v.asInstanceOf[js.Any]))
+      StreamModeDetails.foreach(__v => __obj.updateDynamic("StreamModeDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StreamDescriptionSummary]
+    }
+  }
+
+  /** Specifies the capacity mode to which you want to set your data stream. Currently, in Kinesis Data Streams, you can choose between an ```on-demand``` capacity mode and a ```provisioned``` capacity mode for your data streams.
+    */
+  @js.native
+  trait StreamModeDetails extends js.Object {
+    var StreamMode: StreamMode
+  }
+
+  object StreamModeDetails {
+    @inline
+    def apply(
+        StreamMode: StreamMode
+    ): StreamModeDetails = {
+      val __obj = js.Dynamic.literal(
+        "StreamMode" -> StreamMode.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StreamModeDetails]
     }
   }
 
@@ -1467,6 +1510,26 @@ package object kinesis {
       StreamName.foreach(__v => __obj.updateDynamic("StreamName")(__v.asInstanceOf[js.Any]))
       TargetShardCount.foreach(__v => __obj.updateDynamic("TargetShardCount")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateShardCountOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateStreamModeInput extends js.Object {
+    var StreamARN: StreamARN
+    var StreamModeDetails: StreamModeDetails
+  }
+
+  object UpdateStreamModeInput {
+    @inline
+    def apply(
+        StreamARN: StreamARN,
+        StreamModeDetails: StreamModeDetails
+    ): UpdateStreamModeInput = {
+      val __obj = js.Dynamic.literal(
+        "StreamARN" -> StreamARN.asInstanceOf[js.Any],
+        "StreamModeDetails" -> StreamModeDetails.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateStreamModeInput]
     }
   }
 }

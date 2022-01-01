@@ -10,17 +10,22 @@ import facade.amazonaws._
 package object marketplacecatalog {
   type ARN = String
   type Catalog = String
+  type ChangeName = String
   type ChangeSetDescription = js.Array[ChangeSummary]
   type ChangeSetName = String
   type ChangeSetSummaryList = js.Array[ChangeSetSummaryListItem]
   type ChangeType = String
   type ClientRequestToken = String
   type DateTimeISO8601 = String
+  type EntityNameString = String
   type EntitySummaryList = js.Array[EntitySummary]
   type EntityType = String
+  type ErrorCodeString = String
   type ErrorDetailList = js.Array[ErrorDetail]
+  type ExceptionMessageContent = String
   type FilterList = js.Array[Filter]
   type FilterName = String
+  type FilterValueContent = String
   type Identifier = String
   type Json = String
   type MaxResultInteger = Int
@@ -29,8 +34,8 @@ package object marketplacecatalog {
   type ResourceId = String
   type ResourceIdList = js.Array[ResourceId]
   type SortBy = String
-  type StringValue = String
-  type ValueList = js.Array[StringValue]
+  type ValueList = js.Array[FilterValueContent]
+  type VisibilityValue = String
 
   final class MarketplaceCatalogOps(private val service: MarketplaceCatalog) extends AnyVal {
 
@@ -107,6 +112,7 @@ package object marketplacecatalog {
     var ChangeType: ChangeType
     var Details: Json
     var Entity: Entity
+    var ChangeName: js.UndefOr[ChangeName]
   }
 
   object Change {
@@ -114,13 +120,16 @@ package object marketplacecatalog {
     def apply(
         ChangeType: ChangeType,
         Details: Json,
-        Entity: Entity
+        Entity: Entity,
+        ChangeName: js.UndefOr[ChangeName] = js.undefined
     ): Change = {
       val __obj = js.Dynamic.literal(
         "ChangeType" -> ChangeType.asInstanceOf[js.Any],
         "Details" -> Details.asInstanceOf[js.Any],
         "Entity" -> Entity.asInstanceOf[js.Any]
       )
+
+      ChangeName.foreach(__v => __obj.updateDynamic("ChangeName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Change]
     }
   }
@@ -168,6 +177,7 @@ package object marketplacecatalog {
     */
   @js.native
   trait ChangeSummary extends js.Object {
+    var ChangeName: js.UndefOr[ChangeName]
     var ChangeType: js.UndefOr[ChangeType]
     var Details: js.UndefOr[Json]
     var Entity: js.UndefOr[Entity]
@@ -177,12 +187,14 @@ package object marketplacecatalog {
   object ChangeSummary {
     @inline
     def apply(
+        ChangeName: js.UndefOr[ChangeName] = js.undefined,
         ChangeType: js.UndefOr[ChangeType] = js.undefined,
         Details: js.UndefOr[Json] = js.undefined,
         Entity: js.UndefOr[Entity] = js.undefined,
         ErrorDetailList: js.UndefOr[ErrorDetailList] = js.undefined
     ): ChangeSummary = {
       val __obj = js.Dynamic.literal()
+      ChangeName.foreach(__v => __obj.updateDynamic("ChangeName")(__v.asInstanceOf[js.Any]))
       ChangeType.foreach(__v => __obj.updateDynamic("ChangeType")(__v.asInstanceOf[js.Any]))
       Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
       Entity.foreach(__v => __obj.updateDynamic("Entity")(__v.asInstanceOf[js.Any]))
@@ -219,7 +231,7 @@ package object marketplacecatalog {
     var ChangeSetName: js.UndefOr[ChangeSetName]
     var EndTime: js.UndefOr[DateTimeISO8601]
     var FailureCode: js.UndefOr[FailureCode]
-    var FailureDescription: js.UndefOr[StringValue]
+    var FailureDescription: js.UndefOr[ExceptionMessageContent]
     var StartTime: js.UndefOr[DateTimeISO8601]
     var Status: js.UndefOr[ChangeStatus]
   }
@@ -233,7 +245,7 @@ package object marketplacecatalog {
         ChangeSetName: js.UndefOr[ChangeSetName] = js.undefined,
         EndTime: js.UndefOr[DateTimeISO8601] = js.undefined,
         FailureCode: js.UndefOr[FailureCode] = js.undefined,
-        FailureDescription: js.UndefOr[StringValue] = js.undefined,
+        FailureDescription: js.UndefOr[ExceptionMessageContent] = js.undefined,
         StartTime: js.UndefOr[DateTimeISO8601] = js.undefined,
         Status: js.UndefOr[ChangeStatus] = js.undefined
     ): DescribeChangeSetResponse = {
@@ -277,7 +289,7 @@ package object marketplacecatalog {
     var EntityArn: js.UndefOr[ARN]
     var EntityIdentifier: js.UndefOr[Identifier]
     var EntityType: js.UndefOr[EntityType]
-    var LastModifiedDate: js.UndefOr[StringValue]
+    var LastModifiedDate: js.UndefOr[DateTimeISO8601]
   }
 
   object DescribeEntityResponse {
@@ -287,7 +299,7 @@ package object marketplacecatalog {
         EntityArn: js.UndefOr[ARN] = js.undefined,
         EntityIdentifier: js.UndefOr[Identifier] = js.undefined,
         EntityType: js.UndefOr[EntityType] = js.undefined,
-        LastModifiedDate: js.UndefOr[StringValue] = js.undefined
+        LastModifiedDate: js.UndefOr[DateTimeISO8601] = js.undefined
     ): DescribeEntityResponse = {
       val __obj = js.Dynamic.literal()
       Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
@@ -299,7 +311,7 @@ package object marketplacecatalog {
     }
   }
 
-  /** A product entity contains data that describes your product, its supported features, and how it can be used or launched by your customer.
+  /** An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer.
     */
   @js.native
   trait Entity extends js.Object {
@@ -329,9 +341,9 @@ package object marketplacecatalog {
     var EntityArn: js.UndefOr[ARN]
     var EntityId: js.UndefOr[ResourceId]
     var EntityType: js.UndefOr[EntityType]
-    var LastModifiedDate: js.UndefOr[StringValue]
-    var Name: js.UndefOr[StringValue]
-    var Visibility: js.UndefOr[StringValue]
+    var LastModifiedDate: js.UndefOr[DateTimeISO8601]
+    var Name: js.UndefOr[EntityNameString]
+    var Visibility: js.UndefOr[VisibilityValue]
   }
 
   object EntitySummary {
@@ -340,9 +352,9 @@ package object marketplacecatalog {
         EntityArn: js.UndefOr[ARN] = js.undefined,
         EntityId: js.UndefOr[ResourceId] = js.undefined,
         EntityType: js.UndefOr[EntityType] = js.undefined,
-        LastModifiedDate: js.UndefOr[StringValue] = js.undefined,
-        Name: js.UndefOr[StringValue] = js.undefined,
-        Visibility: js.UndefOr[StringValue] = js.undefined
+        LastModifiedDate: js.UndefOr[DateTimeISO8601] = js.undefined,
+        Name: js.UndefOr[EntityNameString] = js.undefined,
+        Visibility: js.UndefOr[VisibilityValue] = js.undefined
     ): EntitySummary = {
       val __obj = js.Dynamic.literal()
       EntityArn.foreach(__v => __obj.updateDynamic("EntityArn")(__v.asInstanceOf[js.Any]))
@@ -359,15 +371,15 @@ package object marketplacecatalog {
     */
   @js.native
   trait ErrorDetail extends js.Object {
-    var ErrorCode: js.UndefOr[StringValue]
-    var ErrorMessage: js.UndefOr[StringValue]
+    var ErrorCode: js.UndefOr[ErrorCodeString]
+    var ErrorMessage: js.UndefOr[ExceptionMessageContent]
   }
 
   object ErrorDetail {
     @inline
     def apply(
-        ErrorCode: js.UndefOr[StringValue] = js.undefined,
-        ErrorMessage: js.UndefOr[StringValue] = js.undefined
+        ErrorCode: js.UndefOr[ErrorCodeString] = js.undefined,
+        ErrorMessage: js.UndefOr[ExceptionMessageContent] = js.undefined
     ): ErrorDetail = {
       val __obj = js.Dynamic.literal()
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))

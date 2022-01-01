@@ -44,3 +44,12 @@ object CanaryStateReasonCode {
 
   @inline def values: js.Array[CanaryStateReasonCode] = js.Array(INVALID_PERMISSIONS)
 }
+
+@js.native
+sealed trait EncryptionMode extends js.Any
+object EncryptionMode {
+  val SSE_S3 = "SSE_S3".asInstanceOf[EncryptionMode]
+  val SSE_KMS = "SSE_KMS".asInstanceOf[EncryptionMode]
+
+  @inline def values: js.Array[EncryptionMode] = js.Array(SSE_S3, SSE_KMS)
+}

@@ -8,6 +8,9 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object synthetics {
+  type BaseScreenshotConfigIgnoreCoordinate = String
+  type BaseScreenshotIgnoreCoordinates = js.Array[BaseScreenshotConfigIgnoreCoordinate]
+  type BaseScreenshots = js.Array[BaseScreenshot]
   type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type Canaries = js.Array[Canary]
   type CanariesLastRun = js.Array[CanaryLastRun]
@@ -18,6 +21,7 @@ package object synthetics {
   type EnvironmentVariableValue = String
   type EnvironmentVariablesMap = js.Dictionary[EnvironmentVariableValue]
   type FunctionArn = String
+  type KmsKeyArn = String
   type MaxCanaryResults = Int
   type MaxFifteenMinutesInSeconds = Int
   type MaxOneYearInSeconds = Double
@@ -83,10 +87,70 @@ package object synthetics {
     }
   }
 
+  /** A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.
+    */
+  @js.native
+  trait ArtifactConfigInput extends js.Object {
+    var S3Encryption: js.UndefOr[S3EncryptionConfig]
+  }
+
+  object ArtifactConfigInput {
+    @inline
+    def apply(
+        S3Encryption: js.UndefOr[S3EncryptionConfig] = js.undefined
+    ): ArtifactConfigInput = {
+      val __obj = js.Dynamic.literal()
+      S3Encryption.foreach(__v => __obj.updateDynamic("S3Encryption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArtifactConfigInput]
+    }
+  }
+
+  /** A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.
+    */
+  @js.native
+  trait ArtifactConfigOutput extends js.Object {
+    var S3Encryption: js.UndefOr[S3EncryptionConfig]
+  }
+
+  object ArtifactConfigOutput {
+    @inline
+    def apply(
+        S3Encryption: js.UndefOr[S3EncryptionConfig] = js.undefined
+    ): ArtifactConfigOutput = {
+      val __obj = js.Dynamic.literal()
+      S3Encryption.foreach(__v => __obj.updateDynamic("S3Encryption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ArtifactConfigOutput]
+    }
+  }
+
+  /** A structure representing a screenshot that is used as a baseline during visual monitoring comparisons made by the canary.
+    */
+  @js.native
+  trait BaseScreenshot extends js.Object {
+    var ScreenshotName: String
+    var IgnoreCoordinates: js.UndefOr[BaseScreenshotIgnoreCoordinates]
+  }
+
+  object BaseScreenshot {
+    @inline
+    def apply(
+        ScreenshotName: String,
+        IgnoreCoordinates: js.UndefOr[BaseScreenshotIgnoreCoordinates] = js.undefined
+    ): BaseScreenshot = {
+      val __obj = js.Dynamic.literal(
+        "ScreenshotName" -> ScreenshotName.asInstanceOf[js.Any]
+      )
+
+      IgnoreCoordinates.foreach(__v => __obj.updateDynamic("IgnoreCoordinates")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BaseScreenshot]
+    }
+  }
+
   /** This structure contains all information about one canary in your account.
     */
   @js.native
   trait Canary extends js.Object {
+    var ArtifactConfig: js.UndefOr[ArtifactConfigOutput]
     var ArtifactS3Location: js.UndefOr[String]
     var Code: js.UndefOr[CanaryCodeOutput]
     var EngineArn: js.UndefOr[FunctionArn]
@@ -101,12 +165,14 @@ package object synthetics {
     var SuccessRetentionPeriodInDays: js.UndefOr[MaxSize1024]
     var Tags: js.UndefOr[TagMap]
     var Timeline: js.UndefOr[CanaryTimeline]
+    var VisualReference: js.UndefOr[VisualReferenceOutput]
     var VpcConfig: js.UndefOr[VpcConfigOutput]
   }
 
   object Canary {
     @inline
     def apply(
+        ArtifactConfig: js.UndefOr[ArtifactConfigOutput] = js.undefined,
         ArtifactS3Location: js.UndefOr[String] = js.undefined,
         Code: js.UndefOr[CanaryCodeOutput] = js.undefined,
         EngineArn: js.UndefOr[FunctionArn] = js.undefined,
@@ -121,9 +187,11 @@ package object synthetics {
         SuccessRetentionPeriodInDays: js.UndefOr[MaxSize1024] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         Timeline: js.UndefOr[CanaryTimeline] = js.undefined,
+        VisualReference: js.UndefOr[VisualReferenceOutput] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfigOutput] = js.undefined
     ): Canary = {
       val __obj = js.Dynamic.literal()
+      ArtifactConfig.foreach(__v => __obj.updateDynamic("ArtifactConfig")(__v.asInstanceOf[js.Any]))
       ArtifactS3Location.foreach(__v => __obj.updateDynamic("ArtifactS3Location")(__v.asInstanceOf[js.Any]))
       Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
       EngineArn.foreach(__v => __obj.updateDynamic("EngineArn")(__v.asInstanceOf[js.Any]))
@@ -138,6 +206,7 @@ package object synthetics {
       SuccessRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("SuccessRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       Timeline.foreach(__v => __obj.updateDynamic("Timeline")(__v.asInstanceOf[js.Any]))
+      VisualReference.foreach(__v => __obj.updateDynamic("VisualReference")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Canary]
     }
@@ -446,6 +515,7 @@ package object synthetics {
     var Name: CanaryName
     var RuntimeVersion: String
     var Schedule: CanaryScheduleInput
+    var ArtifactConfig: js.UndefOr[ArtifactConfigInput]
     var FailureRetentionPeriodInDays: js.UndefOr[MaxSize1024]
     var RunConfig: js.UndefOr[CanaryRunConfigInput]
     var SuccessRetentionPeriodInDays: js.UndefOr[MaxSize1024]
@@ -462,6 +532,7 @@ package object synthetics {
         Name: CanaryName,
         RuntimeVersion: String,
         Schedule: CanaryScheduleInput,
+        ArtifactConfig: js.UndefOr[ArtifactConfigInput] = js.undefined,
         FailureRetentionPeriodInDays: js.UndefOr[MaxSize1024] = js.undefined,
         RunConfig: js.UndefOr[CanaryRunConfigInput] = js.undefined,
         SuccessRetentionPeriodInDays: js.UndefOr[MaxSize1024] = js.undefined,
@@ -477,6 +548,7 @@ package object synthetics {
         "Schedule" -> Schedule.asInstanceOf[js.Any]
       )
 
+      ArtifactConfig.foreach(__v => __obj.updateDynamic("ArtifactConfig")(__v.asInstanceOf[js.Any]))
       FailureRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("FailureRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
       RunConfig.foreach(__v => __obj.updateDynamic("RunConfig")(__v.asInstanceOf[js.Any]))
       SuccessRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("SuccessRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
@@ -780,6 +852,27 @@ package object synthetics {
     }
   }
 
+  /** A structure that contains the configuration of encryption-at-rest settings for canary artifacts that the canary uploads to Amazon S3. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_artifact_encryption.html|Encrypting canary artifacts]]
+    */
+  @js.native
+  trait S3EncryptionConfig extends js.Object {
+    var EncryptionMode: js.UndefOr[EncryptionMode]
+    var KmsKeyArn: js.UndefOr[KmsKeyArn]
+  }
+
+  object S3EncryptionConfig {
+    @inline
+    def apply(
+        EncryptionMode: js.UndefOr[EncryptionMode] = js.undefined,
+        KmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined
+    ): S3EncryptionConfig = {
+      val __obj = js.Dynamic.literal()
+      EncryptionMode.foreach(__v => __obj.updateDynamic("EncryptionMode")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3EncryptionConfig]
+    }
+  }
+
   @js.native
   trait StartCanaryRequest extends js.Object {
     var Name: CanaryName
@@ -901,6 +994,8 @@ package object synthetics {
   @js.native
   trait UpdateCanaryRequest extends js.Object {
     var Name: CanaryName
+    var ArtifactConfig: js.UndefOr[ArtifactConfigInput]
+    var ArtifactS3Location: js.UndefOr[String]
     var Code: js.UndefOr[CanaryCodeInput]
     var ExecutionRoleArn: js.UndefOr[RoleArn]
     var FailureRetentionPeriodInDays: js.UndefOr[MaxSize1024]
@@ -908,6 +1003,7 @@ package object synthetics {
     var RuntimeVersion: js.UndefOr[String]
     var Schedule: js.UndefOr[CanaryScheduleInput]
     var SuccessRetentionPeriodInDays: js.UndefOr[MaxSize1024]
+    var VisualReference: js.UndefOr[VisualReferenceInput]
     var VpcConfig: js.UndefOr[VpcConfigInput]
   }
 
@@ -915,6 +1011,8 @@ package object synthetics {
     @inline
     def apply(
         Name: CanaryName,
+        ArtifactConfig: js.UndefOr[ArtifactConfigInput] = js.undefined,
+        ArtifactS3Location: js.UndefOr[String] = js.undefined,
         Code: js.UndefOr[CanaryCodeInput] = js.undefined,
         ExecutionRoleArn: js.UndefOr[RoleArn] = js.undefined,
         FailureRetentionPeriodInDays: js.UndefOr[MaxSize1024] = js.undefined,
@@ -922,12 +1020,15 @@ package object synthetics {
         RuntimeVersion: js.UndefOr[String] = js.undefined,
         Schedule: js.UndefOr[CanaryScheduleInput] = js.undefined,
         SuccessRetentionPeriodInDays: js.UndefOr[MaxSize1024] = js.undefined,
+        VisualReference: js.UndefOr[VisualReferenceInput] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfigInput] = js.undefined
     ): UpdateCanaryRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
+      ArtifactConfig.foreach(__v => __obj.updateDynamic("ArtifactConfig")(__v.asInstanceOf[js.Any]))
+      ArtifactS3Location.foreach(__v => __obj.updateDynamic("ArtifactS3Location")(__v.asInstanceOf[js.Any]))
       Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
       ExecutionRoleArn.foreach(__v => __obj.updateDynamic("ExecutionRoleArn")(__v.asInstanceOf[js.Any]))
       FailureRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("FailureRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
@@ -935,6 +1036,7 @@ package object synthetics {
       RuntimeVersion.foreach(__v => __obj.updateDynamic("RuntimeVersion")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       SuccessRetentionPeriodInDays.foreach(__v => __obj.updateDynamic("SuccessRetentionPeriodInDays")(__v.asInstanceOf[js.Any]))
+      VisualReference.foreach(__v => __obj.updateDynamic("VisualReference")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCanaryRequest]
     }
@@ -948,6 +1050,50 @@ package object synthetics {
     def apply(): UpdateCanaryResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateCanaryResponse]
+    }
+  }
+
+  /** An object that specifies what screenshots to use as a baseline for visual monitoring by this canary, and optionally the parts of the screenshots to ignore during the visual monitoring comparison. Visual monitoring is supported only on canaries running the ```syn-puppeteer-node-3.2``` runtime or later. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Library_SyntheticsLogger_VisualTesting.html| Visual monitoring]] and [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Blueprints_VisualTesting.html| Visual monitoring blueprint]]
+    */
+  @js.native
+  trait VisualReferenceInput extends js.Object {
+    var BaseCanaryRunId: String
+    var BaseScreenshots: js.UndefOr[BaseScreenshots]
+  }
+
+  object VisualReferenceInput {
+    @inline
+    def apply(
+        BaseCanaryRunId: String,
+        BaseScreenshots: js.UndefOr[BaseScreenshots] = js.undefined
+    ): VisualReferenceInput = {
+      val __obj = js.Dynamic.literal(
+        "BaseCanaryRunId" -> BaseCanaryRunId.asInstanceOf[js.Any]
+      )
+
+      BaseScreenshots.foreach(__v => __obj.updateDynamic("BaseScreenshots")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VisualReferenceInput]
+    }
+  }
+
+  /** If this canary performs visual monitoring by comparing screenshots, this structure contains the ID of the canary run that is used as the baseline for screenshots, and the coordinates of any parts of those screenshots that are ignored during visual monitoring comparison. Visual monitoring is supported only on canaries running the ```syn-puppeteer-node-3.2``` runtime or later.
+    */
+  @js.native
+  trait VisualReferenceOutput extends js.Object {
+    var BaseCanaryRunId: js.UndefOr[String]
+    var BaseScreenshots: js.UndefOr[BaseScreenshots]
+  }
+
+  object VisualReferenceOutput {
+    @inline
+    def apply(
+        BaseCanaryRunId: js.UndefOr[String] = js.undefined,
+        BaseScreenshots: js.UndefOr[BaseScreenshots] = js.undefined
+    ): VisualReferenceOutput = {
+      val __obj = js.Dynamic.literal()
+      BaseCanaryRunId.foreach(__v => __obj.updateDynamic("BaseCanaryRunId")(__v.asInstanceOf[js.Any]))
+      BaseScreenshots.foreach(__v => __obj.updateDynamic("BaseScreenshots")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VisualReferenceOutput]
     }
   }
 

@@ -9,11 +9,15 @@ import facade.amazonaws._
 
 package object iotdata {
   type JsonDocument = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type MaxResults = Int
   type NamedShadowList = js.Array[ShadowName]
   type NextToken = String
   type PageSize = Int
   type Payload = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type PayloadSize = Double
   type Qos = Int
+  type Retain = Boolean
+  type RetainedMessageList = js.Array[RetainedMessageSummary]
   type ShadowName = String
   type ThingName = String
   type Timestamp = Double
@@ -22,8 +26,10 @@ package object iotdata {
   final class IotDataOps(private val service: IotData) extends AnyVal {
 
     @inline def deleteThingShadowFuture(params: DeleteThingShadowRequest): Future[DeleteThingShadowResponse] = service.deleteThingShadow(params).promise().toFuture
+    @inline def getRetainedMessageFuture(params: GetRetainedMessageRequest): Future[GetRetainedMessageResponse] = service.getRetainedMessage(params).promise().toFuture
     @inline def getThingShadowFuture(params: GetThingShadowRequest): Future[GetThingShadowResponse] = service.getThingShadow(params).promise().toFuture
     @inline def listNamedShadowsForThingFuture(params: ListNamedShadowsForThingRequest): Future[ListNamedShadowsForThingResponse] = service.listNamedShadowsForThing(params).promise().toFuture
+    @inline def listRetainedMessagesFuture(params: ListRetainedMessagesRequest): Future[ListRetainedMessagesResponse] = service.listRetainedMessages(params).promise().toFuture
     @inline def publishFuture(params: PublishRequest): Future[js.Object] = service.publish(params).promise().toFuture
     @inline def updateThingShadowFuture(params: UpdateThingShadowRequest): Future[UpdateThingShadowResponse] = service.updateThingShadow(params).promise().toFuture
 
@@ -35,8 +41,10 @@ package object iotdata {
     def this(config: AWSConfig) = this()
 
     def deleteThingShadow(params: DeleteThingShadowRequest): Request[DeleteThingShadowResponse] = js.native
+    def getRetainedMessage(params: GetRetainedMessageRequest): Request[GetRetainedMessageResponse] = js.native
     def getThingShadow(params: GetThingShadowRequest): Request[GetThingShadowResponse] = js.native
     def listNamedShadowsForThing(params: ListNamedShadowsForThingRequest): Request[ListNamedShadowsForThingResponse] = js.native
+    def listRetainedMessages(params: ListRetainedMessagesRequest): Request[ListRetainedMessagesResponse] = js.native
     def publish(params: PublishRequest): Request[js.Object] = js.native
     def updateThingShadow(params: UpdateThingShadowRequest): Request[UpdateThingShadowResponse] = js.native
   }
@@ -85,6 +93,52 @@ package object iotdata {
         "payload" -> payload.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteThingShadowResponse]
+    }
+  }
+
+  /** The input for the GetRetainedMessage operation.
+    */
+  @js.native
+  trait GetRetainedMessageRequest extends js.Object {
+    var topic: Topic
+  }
+
+  object GetRetainedMessageRequest {
+    @inline
+    def apply(
+        topic: Topic
+    ): GetRetainedMessageRequest = {
+      val __obj = js.Dynamic.literal(
+        "topic" -> topic.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetRetainedMessageRequest]
+    }
+  }
+
+  /** The output from the GetRetainedMessage operation.
+    */
+  @js.native
+  trait GetRetainedMessageResponse extends js.Object {
+    var lastModifiedTime: js.UndefOr[Timestamp]
+    var payload: js.UndefOr[Payload]
+    var qos: js.UndefOr[Qos]
+    var topic: js.UndefOr[Topic]
+  }
+
+  object GetRetainedMessageResponse {
+    @inline
+    def apply(
+        lastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        payload: js.UndefOr[Payload] = js.undefined,
+        qos: js.UndefOr[Qos] = js.undefined,
+        topic: js.UndefOr[Topic] = js.undefined
+    ): GetRetainedMessageResponse = {
+      val __obj = js.Dynamic.literal()
+      lastModifiedTime.foreach(__v => __obj.updateDynamic("lastModifiedTime")(__v.asInstanceOf[js.Any]))
+      payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
+      qos.foreach(__v => __obj.updateDynamic("qos")(__v.asInstanceOf[js.Any]))
+      topic.foreach(__v => __obj.updateDynamic("topic")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRetainedMessageResponse]
     }
   }
 
@@ -175,6 +229,44 @@ package object iotdata {
     }
   }
 
+  @js.native
+  trait ListRetainedMessagesRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListRetainedMessagesRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListRetainedMessagesRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRetainedMessagesRequest]
+    }
+  }
+
+  @js.native
+  trait ListRetainedMessagesResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var retainedTopics: js.UndefOr[RetainedMessageList]
+  }
+
+  object ListRetainedMessagesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        retainedTopics: js.UndefOr[RetainedMessageList] = js.undefined
+    ): ListRetainedMessagesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      retainedTopics.foreach(__v => __obj.updateDynamic("retainedTopics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRetainedMessagesResponse]
+    }
+  }
+
   /** The input for the Publish operation.
     */
   @js.native
@@ -182,6 +274,7 @@ package object iotdata {
     var topic: Topic
     var payload: js.UndefOr[Payload]
     var qos: js.UndefOr[Qos]
+    var retain: js.UndefOr[Retain]
   }
 
   object PublishRequest {
@@ -189,7 +282,8 @@ package object iotdata {
     def apply(
         topic: Topic,
         payload: js.UndefOr[Payload] = js.undefined,
-        qos: js.UndefOr[Qos] = js.undefined
+        qos: js.UndefOr[Qos] = js.undefined,
+        retain: js.UndefOr[Retain] = js.undefined
     ): PublishRequest = {
       val __obj = js.Dynamic.literal(
         "topic" -> topic.asInstanceOf[js.Any]
@@ -197,7 +291,35 @@ package object iotdata {
 
       payload.foreach(__v => __obj.updateDynamic("payload")(__v.asInstanceOf[js.Any]))
       qos.foreach(__v => __obj.updateDynamic("qos")(__v.asInstanceOf[js.Any]))
+      retain.foreach(__v => __obj.updateDynamic("retain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PublishRequest]
+    }
+  }
+
+  /** Information about a single retained message.
+    */
+  @js.native
+  trait RetainedMessageSummary extends js.Object {
+    var lastModifiedTime: js.UndefOr[Timestamp]
+    var payloadSize: js.UndefOr[PayloadSize]
+    var qos: js.UndefOr[Qos]
+    var topic: js.UndefOr[Topic]
+  }
+
+  object RetainedMessageSummary {
+    @inline
+    def apply(
+        lastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        payloadSize: js.UndefOr[PayloadSize] = js.undefined,
+        qos: js.UndefOr[Qos] = js.undefined,
+        topic: js.UndefOr[Topic] = js.undefined
+    ): RetainedMessageSummary = {
+      val __obj = js.Dynamic.literal()
+      lastModifiedTime.foreach(__v => __obj.updateDynamic("lastModifiedTime")(__v.asInstanceOf[js.Any]))
+      payloadSize.foreach(__v => __obj.updateDynamic("payloadSize")(__v.asInstanceOf[js.Any]))
+      qos.foreach(__v => __obj.updateDynamic("qos")(__v.asInstanceOf[js.Any]))
+      topic.foreach(__v => __obj.updateDynamic("topic")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetainedMessageSummary]
     }
   }
 

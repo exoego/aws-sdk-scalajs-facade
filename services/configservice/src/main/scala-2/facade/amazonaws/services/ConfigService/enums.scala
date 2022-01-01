@@ -417,6 +417,18 @@ object ResourceType {
   val `AWS::SecretsManager::Secret` = "AWS::SecretsManager::Secret".asInstanceOf[ResourceType]
   val `AWS::SNS::Topic` = "AWS::SNS::Topic".asInstanceOf[ResourceType]
   val `AWS::SSM::FileData` = "AWS::SSM::FileData".asInstanceOf[ResourceType]
+  val `AWS::Backup::BackupPlan` = "AWS::Backup::BackupPlan".asInstanceOf[ResourceType]
+  val `AWS::Backup::BackupSelection` = "AWS::Backup::BackupSelection".asInstanceOf[ResourceType]
+  val `AWS::Backup::BackupVault` = "AWS::Backup::BackupVault".asInstanceOf[ResourceType]
+  val `AWS::Backup::RecoveryPoint` = "AWS::Backup::RecoveryPoint".asInstanceOf[ResourceType]
+  val `AWS::ECR::Repository` = "AWS::ECR::Repository".asInstanceOf[ResourceType]
+  val `AWS::ECS::Cluster` = "AWS::ECS::Cluster".asInstanceOf[ResourceType]
+  val `AWS::ECS::Service` = "AWS::ECS::Service".asInstanceOf[ResourceType]
+  val `AWS::ECS::TaskDefinition` = "AWS::ECS::TaskDefinition".asInstanceOf[ResourceType]
+  val `AWS::EFS::AccessPoint` = "AWS::EFS::AccessPoint".asInstanceOf[ResourceType]
+  val `AWS::EFS::FileSystem` = "AWS::EFS::FileSystem".asInstanceOf[ResourceType]
+  val `AWS::EKS::Cluster` = "AWS::EKS::Cluster".asInstanceOf[ResourceType]
+  val `AWS::OpenSearch::Domain` = "AWS::OpenSearch::Domain".asInstanceOf[ResourceType]
 
   @inline def values: js.Array[ResourceType] = js.Array(
     `AWS::EC2::CustomerGateway`,
@@ -515,7 +527,19 @@ object ResourceType {
     `AWS::QLDB::Ledger`,
     `AWS::SecretsManager::Secret`,
     `AWS::SNS::Topic`,
-    `AWS::SSM::FileData`
+    `AWS::SSM::FileData`,
+    `AWS::Backup::BackupPlan`,
+    `AWS::Backup::BackupSelection`,
+    `AWS::Backup::BackupVault`,
+    `AWS::Backup::RecoveryPoint`,
+    `AWS::ECR::Repository`,
+    `AWS::ECS::Cluster`,
+    `AWS::ECS::Service`,
+    `AWS::ECS::TaskDefinition`,
+    `AWS::EFS::AccessPoint`,
+    `AWS::EFS::FileSystem`,
+    `AWS::EKS::Cluster`,
+    `AWS::OpenSearch::Domain`
   )
 }
 

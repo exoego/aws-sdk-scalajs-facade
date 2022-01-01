@@ -2,6 +2,14 @@ package facade.amazonaws.services.customerprofiles
 
 import scalajs.js
 
+type ConflictResolvingModel = "RECENCY" | "SOURCE"
+object ConflictResolvingModel {
+  inline val RECENCY: "RECENCY" = "RECENCY"
+  inline val SOURCE: "SOURCE" = "SOURCE"
+
+  inline def values: js.Array[ConflictResolvingModel] = js.Array(RECENCY, SOURCE)
+}
+
 type DataPullMode = "Incremental" | "Complete"
 object DataPullMode {
   inline val Incremental: "Incremental" = "Incremental"
@@ -28,6 +36,32 @@ object Gender {
   inline val UNSPECIFIED: "UNSPECIFIED" = "UNSPECIFIED"
 
   inline def values: js.Array[Gender] = js.Array(MALE, FEMALE, UNSPECIFIED)
+}
+
+type IdentityResolutionJobStatus = "PENDING" | "PREPROCESSING" | "FIND_MATCHING" | "MERGING" | "COMPLETED" | "PARTIAL_SUCCESS" | "FAILED"
+object IdentityResolutionJobStatus {
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val PREPROCESSING: "PREPROCESSING" = "PREPROCESSING"
+  inline val FIND_MATCHING: "FIND_MATCHING" = "FIND_MATCHING"
+  inline val MERGING: "MERGING" = "MERGING"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val PARTIAL_SUCCESS: "PARTIAL_SUCCESS" = "PARTIAL_SUCCESS"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[IdentityResolutionJobStatus] = js.Array(PENDING, PREPROCESSING, FIND_MATCHING, MERGING, COMPLETED, PARTIAL_SUCCESS, FAILED)
+}
+
+type JobScheduleDayOfTheWeek = "SUNDAY" | "MONDAY" | "TUESDAY" | "WEDNESDAY" | "THURSDAY" | "FRIDAY" | "SATURDAY"
+object JobScheduleDayOfTheWeek {
+  inline val SUNDAY: "SUNDAY" = "SUNDAY"
+  inline val MONDAY: "MONDAY" = "MONDAY"
+  inline val TUESDAY: "TUESDAY" = "TUESDAY"
+  inline val WEDNESDAY: "WEDNESDAY" = "WEDNESDAY"
+  inline val THURSDAY: "THURSDAY" = "THURSDAY"
+  inline val FRIDAY: "FRIDAY" = "FRIDAY"
+  inline val SATURDAY: "SATURDAY" = "SATURDAY"
+
+  inline def values: js.Array[JobScheduleDayOfTheWeek] = js.Array(SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY)
 }
 
 type MarketoConnectorOperator = "PROJECTION" | "LESS_THAN" | "GREATER_THAN" | "BETWEEN" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
@@ -269,15 +303,18 @@ object SourceConnectorType {
   inline def values: js.Array[SourceConnectorType] = js.Array(Salesforce, Marketo, Zendesk, Servicenow, S3)
 }
 
-type StandardIdentifier = "PROFILE" | "UNIQUE" | "SECONDARY" | "LOOKUP_ONLY" | "NEW_ONLY"
+type StandardIdentifier = "PROFILE" | "ASSET" | "CASE" | "UNIQUE" | "SECONDARY" | "LOOKUP_ONLY" | "NEW_ONLY" | "ORDER"
 object StandardIdentifier {
   inline val PROFILE: "PROFILE" = "PROFILE"
+  inline val ASSET: "ASSET" = "ASSET"
+  inline val CASE: "CASE" = "CASE"
   inline val UNIQUE: "UNIQUE" = "UNIQUE"
   inline val SECONDARY: "SECONDARY" = "SECONDARY"
   inline val LOOKUP_ONLY: "LOOKUP_ONLY" = "LOOKUP_ONLY"
   inline val NEW_ONLY: "NEW_ONLY" = "NEW_ONLY"
+  inline val ORDER: "ORDER" = "ORDER"
 
-  inline def values: js.Array[StandardIdentifier] = js.Array(PROFILE, UNIQUE, SECONDARY, LOOKUP_ONLY, NEW_ONLY)
+  inline def values: js.Array[StandardIdentifier] = js.Array(PROFILE, ASSET, CASE, UNIQUE, SECONDARY, LOOKUP_ONLY, NEW_ONLY, ORDER)
 }
 
 type TaskType = "Arithmetic" | "Filter" | "Map" | "Mask" | "Merge" | "Truncate" | "Validate"

@@ -13,7 +13,11 @@ package object appsync {
   type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BooleanValue = Boolean
   type CachingKeys = js.Array[String]
+  type CertificateArn = String
   type DataSources = js.Array[DataSource]
+  type Description = String
+  type DomainName = String
+  type DomainNameConfigs = js.Array[DomainNameConfig]
   type Functions = js.Array[FunctionConfiguration]
   type FunctionsIds = js.Array[String]
   type GraphqlApis = js.Array[GraphqlApi]
@@ -24,6 +28,7 @@ package object appsync {
   type Resolvers = js.Array[Resolver]
   type ResourceArn = String
   type ResourceName = String
+  type TTL = Int
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagMap = js.Dictionary[TagValue]
@@ -32,9 +37,11 @@ package object appsync {
 
   final class AppSyncOps(private val service: AppSync) extends AnyVal {
 
+    @inline def associateApiFuture(params: AssociateApiRequest): Future[AssociateApiResponse] = service.associateApi(params).promise().toFuture
     @inline def createApiCacheFuture(params: CreateApiCacheRequest): Future[CreateApiCacheResponse] = service.createApiCache(params).promise().toFuture
     @inline def createApiKeyFuture(params: CreateApiKeyRequest): Future[CreateApiKeyResponse] = service.createApiKey(params).promise().toFuture
     @inline def createDataSourceFuture(params: CreateDataSourceRequest): Future[CreateDataSourceResponse] = service.createDataSource(params).promise().toFuture
+    @inline def createDomainNameFuture(params: CreateDomainNameRequest): Future[CreateDomainNameResponse] = service.createDomainName(params).promise().toFuture
     @inline def createFunctionFuture(params: CreateFunctionRequest): Future[CreateFunctionResponse] = service.createFunction(params).promise().toFuture
     @inline def createGraphqlApiFuture(params: CreateGraphqlApiRequest): Future[CreateGraphqlApiResponse] = service.createGraphqlApi(params).promise().toFuture
     @inline def createResolverFuture(params: CreateResolverRequest): Future[CreateResolverResponse] = service.createResolver(params).promise().toFuture
@@ -42,13 +49,17 @@ package object appsync {
     @inline def deleteApiCacheFuture(params: DeleteApiCacheRequest): Future[DeleteApiCacheResponse] = service.deleteApiCache(params).promise().toFuture
     @inline def deleteApiKeyFuture(params: DeleteApiKeyRequest): Future[DeleteApiKeyResponse] = service.deleteApiKey(params).promise().toFuture
     @inline def deleteDataSourceFuture(params: DeleteDataSourceRequest): Future[DeleteDataSourceResponse] = service.deleteDataSource(params).promise().toFuture
+    @inline def deleteDomainNameFuture(params: DeleteDomainNameRequest): Future[DeleteDomainNameResponse] = service.deleteDomainName(params).promise().toFuture
     @inline def deleteFunctionFuture(params: DeleteFunctionRequest): Future[DeleteFunctionResponse] = service.deleteFunction(params).promise().toFuture
     @inline def deleteGraphqlApiFuture(params: DeleteGraphqlApiRequest): Future[DeleteGraphqlApiResponse] = service.deleteGraphqlApi(params).promise().toFuture
     @inline def deleteResolverFuture(params: DeleteResolverRequest): Future[DeleteResolverResponse] = service.deleteResolver(params).promise().toFuture
     @inline def deleteTypeFuture(params: DeleteTypeRequest): Future[DeleteTypeResponse] = service.deleteType(params).promise().toFuture
+    @inline def disassociateApiFuture(params: DisassociateApiRequest): Future[DisassociateApiResponse] = service.disassociateApi(params).promise().toFuture
     @inline def flushApiCacheFuture(params: FlushApiCacheRequest): Future[FlushApiCacheResponse] = service.flushApiCache(params).promise().toFuture
+    @inline def getApiAssociationFuture(params: GetApiAssociationRequest): Future[GetApiAssociationResponse] = service.getApiAssociation(params).promise().toFuture
     @inline def getApiCacheFuture(params: GetApiCacheRequest): Future[GetApiCacheResponse] = service.getApiCache(params).promise().toFuture
     @inline def getDataSourceFuture(params: GetDataSourceRequest): Future[GetDataSourceResponse] = service.getDataSource(params).promise().toFuture
+    @inline def getDomainNameFuture(params: GetDomainNameRequest): Future[GetDomainNameResponse] = service.getDomainName(params).promise().toFuture
     @inline def getFunctionFuture(params: GetFunctionRequest): Future[GetFunctionResponse] = service.getFunction(params).promise().toFuture
     @inline def getGraphqlApiFuture(params: GetGraphqlApiRequest): Future[GetGraphqlApiResponse] = service.getGraphqlApi(params).promise().toFuture
     @inline def getIntrospectionSchemaFuture(params: GetIntrospectionSchemaRequest): Future[GetIntrospectionSchemaResponse] = service.getIntrospectionSchema(params).promise().toFuture
@@ -57,6 +68,7 @@ package object appsync {
     @inline def getTypeFuture(params: GetTypeRequest): Future[GetTypeResponse] = service.getType(params).promise().toFuture
     @inline def listApiKeysFuture(params: ListApiKeysRequest): Future[ListApiKeysResponse] = service.listApiKeys(params).promise().toFuture
     @inline def listDataSourcesFuture(params: ListDataSourcesRequest): Future[ListDataSourcesResponse] = service.listDataSources(params).promise().toFuture
+    @inline def listDomainNamesFuture(params: ListDomainNamesRequest): Future[ListDomainNamesResponse] = service.listDomainNames(params).promise().toFuture
     @inline def listFunctionsFuture(params: ListFunctionsRequest): Future[ListFunctionsResponse] = service.listFunctions(params).promise().toFuture
     @inline def listGraphqlApisFuture(params: ListGraphqlApisRequest): Future[ListGraphqlApisResponse] = service.listGraphqlApis(params).promise().toFuture
     @inline def listResolversByFunctionFuture(params: ListResolversByFunctionRequest): Future[ListResolversByFunctionResponse] = service.listResolversByFunction(params).promise().toFuture
@@ -69,6 +81,7 @@ package object appsync {
     @inline def updateApiCacheFuture(params: UpdateApiCacheRequest): Future[UpdateApiCacheResponse] = service.updateApiCache(params).promise().toFuture
     @inline def updateApiKeyFuture(params: UpdateApiKeyRequest): Future[UpdateApiKeyResponse] = service.updateApiKey(params).promise().toFuture
     @inline def updateDataSourceFuture(params: UpdateDataSourceRequest): Future[UpdateDataSourceResponse] = service.updateDataSource(params).promise().toFuture
+    @inline def updateDomainNameFuture(params: UpdateDomainNameRequest): Future[UpdateDomainNameResponse] = service.updateDomainName(params).promise().toFuture
     @inline def updateFunctionFuture(params: UpdateFunctionRequest): Future[UpdateFunctionResponse] = service.updateFunction(params).promise().toFuture
     @inline def updateGraphqlApiFuture(params: UpdateGraphqlApiRequest): Future[UpdateGraphqlApiResponse] = service.updateGraphqlApi(params).promise().toFuture
     @inline def updateResolverFuture(params: UpdateResolverRequest): Future[UpdateResolverResponse] = service.updateResolver(params).promise().toFuture
@@ -81,9 +94,11 @@ package object appsync {
   class AppSync() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def associateApi(params: AssociateApiRequest): Request[AssociateApiResponse] = js.native
     def createApiCache(params: CreateApiCacheRequest): Request[CreateApiCacheResponse] = js.native
     def createApiKey(params: CreateApiKeyRequest): Request[CreateApiKeyResponse] = js.native
     def createDataSource(params: CreateDataSourceRequest): Request[CreateDataSourceResponse] = js.native
+    def createDomainName(params: CreateDomainNameRequest): Request[CreateDomainNameResponse] = js.native
     def createFunction(params: CreateFunctionRequest): Request[CreateFunctionResponse] = js.native
     def createGraphqlApi(params: CreateGraphqlApiRequest): Request[CreateGraphqlApiResponse] = js.native
     def createResolver(params: CreateResolverRequest): Request[CreateResolverResponse] = js.native
@@ -91,13 +106,17 @@ package object appsync {
     def deleteApiCache(params: DeleteApiCacheRequest): Request[DeleteApiCacheResponse] = js.native
     def deleteApiKey(params: DeleteApiKeyRequest): Request[DeleteApiKeyResponse] = js.native
     def deleteDataSource(params: DeleteDataSourceRequest): Request[DeleteDataSourceResponse] = js.native
+    def deleteDomainName(params: DeleteDomainNameRequest): Request[DeleteDomainNameResponse] = js.native
     def deleteFunction(params: DeleteFunctionRequest): Request[DeleteFunctionResponse] = js.native
     def deleteGraphqlApi(params: DeleteGraphqlApiRequest): Request[DeleteGraphqlApiResponse] = js.native
     def deleteResolver(params: DeleteResolverRequest): Request[DeleteResolverResponse] = js.native
     def deleteType(params: DeleteTypeRequest): Request[DeleteTypeResponse] = js.native
+    def disassociateApi(params: DisassociateApiRequest): Request[DisassociateApiResponse] = js.native
     def flushApiCache(params: FlushApiCacheRequest): Request[FlushApiCacheResponse] = js.native
+    def getApiAssociation(params: GetApiAssociationRequest): Request[GetApiAssociationResponse] = js.native
     def getApiCache(params: GetApiCacheRequest): Request[GetApiCacheResponse] = js.native
     def getDataSource(params: GetDataSourceRequest): Request[GetDataSourceResponse] = js.native
+    def getDomainName(params: GetDomainNameRequest): Request[GetDomainNameResponse] = js.native
     def getFunction(params: GetFunctionRequest): Request[GetFunctionResponse] = js.native
     def getGraphqlApi(params: GetGraphqlApiRequest): Request[GetGraphqlApiResponse] = js.native
     def getIntrospectionSchema(params: GetIntrospectionSchemaRequest): Request[GetIntrospectionSchemaResponse] = js.native
@@ -106,6 +125,7 @@ package object appsync {
     def getType(params: GetTypeRequest): Request[GetTypeResponse] = js.native
     def listApiKeys(params: ListApiKeysRequest): Request[ListApiKeysResponse] = js.native
     def listDataSources(params: ListDataSourcesRequest): Request[ListDataSourcesResponse] = js.native
+    def listDomainNames(params: ListDomainNamesRequest): Request[ListDomainNamesResponse] = js.native
     def listFunctions(params: ListFunctionsRequest): Request[ListFunctionsResponse] = js.native
     def listGraphqlApis(params: ListGraphqlApisRequest): Request[ListGraphqlApisResponse] = js.native
     def listResolvers(params: ListResolversRequest): Request[ListResolversResponse] = js.native
@@ -118,6 +138,7 @@ package object appsync {
     def updateApiCache(params: UpdateApiCacheRequest): Request[UpdateApiCacheResponse] = js.native
     def updateApiKey(params: UpdateApiKeyRequest): Request[UpdateApiKeyResponse] = js.native
     def updateDataSource(params: UpdateDataSourceRequest): Request[UpdateDataSourceResponse] = js.native
+    def updateDomainName(params: UpdateDomainNameRequest): Request[UpdateDomainNameResponse] = js.native
     def updateFunction(params: UpdateFunctionRequest): Request[UpdateFunctionResponse] = js.native
     def updateGraphqlApi(params: UpdateGraphqlApiRequest): Request[UpdateGraphqlApiResponse] = js.native
     def updateResolver(params: UpdateResolverRequest): Request[UpdateResolverResponse] = js.native
@@ -134,6 +155,7 @@ package object appsync {
   @js.native
   trait AdditionalAuthenticationProvider extends js.Object {
     var authenticationType: js.UndefOr[AuthenticationType]
+    var lambdaAuthorizerConfig: js.UndefOr[LambdaAuthorizerConfig]
     var openIDConnectConfig: js.UndefOr[OpenIDConnectConfig]
     var userPoolConfig: js.UndefOr[CognitoUserPoolConfig]
   }
@@ -142,14 +164,43 @@ package object appsync {
     @inline
     def apply(
         authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
+        lambdaAuthorizerConfig: js.UndefOr[LambdaAuthorizerConfig] = js.undefined,
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
         userPoolConfig: js.UndefOr[CognitoUserPoolConfig] = js.undefined
     ): AdditionalAuthenticationProvider = {
       val __obj = js.Dynamic.literal()
       authenticationType.foreach(__v => __obj.updateDynamic("authenticationType")(__v.asInstanceOf[js.Any]))
+      lambdaAuthorizerConfig.foreach(__v => __obj.updateDynamic("lambdaAuthorizerConfig")(__v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.updateDynamic("openIDConnectConfig")(__v.asInstanceOf[js.Any]))
       userPoolConfig.foreach(__v => __obj.updateDynamic("userPoolConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdditionalAuthenticationProvider]
+    }
+  }
+
+  /** Describes an <code>ApiAssociation</code> object.
+    */
+  @js.native
+  trait ApiAssociation extends js.Object {
+    var apiId: js.UndefOr[String]
+    var associationStatus: js.UndefOr[AssociationStatus]
+    var deploymentDetail: js.UndefOr[String]
+    var domainName: js.UndefOr[DomainName]
+  }
+
+  object ApiAssociation {
+    @inline
+    def apply(
+        apiId: js.UndefOr[String] = js.undefined,
+        associationStatus: js.UndefOr[AssociationStatus] = js.undefined,
+        deploymentDetail: js.UndefOr[String] = js.undefined,
+        domainName: js.UndefOr[DomainName] = js.undefined
+    ): ApiAssociation = {
+      val __obj = js.Dynamic.literal()
+      apiId.foreach(__v => __obj.updateDynamic("apiId")(__v.asInstanceOf[js.Any]))
+      associationStatus.foreach(__v => __obj.updateDynamic("associationStatus")(__v.asInstanceOf[js.Any]))
+      deploymentDetail.foreach(__v => __obj.updateDynamic("deploymentDetail")(__v.asInstanceOf[js.Any]))
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ApiAssociation]
     }
   }
 
@@ -186,9 +237,9 @@ package object appsync {
     }
   }
 
-  /** Describes an API key. Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:
-    * ```da1```: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date. * <code>ListApiKeys</code> returns the expiration time in milliseconds. * <code>CreateApiKey</code> returns the expiration time in milliseconds. * <code>UpdateApiKey</code> is not available for this key version. * <code>DeleteApiKey</code> deletes the item from the table. * Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.
-    * ```da2```: This version was introduced in February 2018 when AppSync added support to extend key expiration. * <code>ListApiKeys</code> returns the expiration time and deletion time in seconds. * <code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds. * <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. Key expiration time can be updated while the key is not deleted. * <code>DeleteApiKey</code> deletes the item from the table. * Expiration is stored in Amazon DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. But the key can be reinstated before deletion. * Deletion is stored in Amazon DynamoDB as seconds. The key will be deleted after deletion time.
+  /** Describes an API key. Customers invoke AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:
+    * ```da1```: We introduced this version at launch in November 2017. These keys always expire after 7 days. Amazon DynamoDB TTL manages key expiration. These keys ceased to be valid after February 21, 2018, and they should no longer be used. * <code>ListApiKeys</code> returns the expiration time in milliseconds. * <code>CreateApiKey</code> returns the expiration time in milliseconds. * <code>UpdateApiKey</code> is not available for this key version. * <code>DeleteApiKey</code> deletes the item from the table. * Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we deleted these keys from the table on February 21, 2018.
+    * ```da2```: We introduced this version in February 2018 when AppSync added support to extend key expiration. * <code>ListApiKeys</code> returns the expiration time and deletion time in seconds. * <code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds. * <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. You can update the key expiration time as long as the key isn't deleted. * <code>DeleteApiKey</code> deletes the item from the table. * Expiration is stored in DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. However, you can reinstate the key before deletion. * Deletion is stored in DynamoDB as seconds. The key is deleted after deletion time.
     */
   @js.native
   trait ApiKey extends js.Object {
@@ -215,7 +266,43 @@ package object appsync {
     }
   }
 
-  /** The authorization config in case the HTTP endpoint requires authorization.
+  @js.native
+  trait AssociateApiRequest extends js.Object {
+    var apiId: String
+    var domainName: DomainName
+  }
+
+  object AssociateApiRequest {
+    @inline
+    def apply(
+        apiId: String,
+        domainName: DomainName
+    ): AssociateApiRequest = {
+      val __obj = js.Dynamic.literal(
+        "apiId" -> apiId.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateApiRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateApiResponse extends js.Object {
+    var apiAssociation: js.UndefOr[ApiAssociation]
+  }
+
+  object AssociateApiResponse {
+    @inline
+    def apply(
+        apiAssociation: js.UndefOr[ApiAssociation] = js.undefined
+    ): AssociateApiResponse = {
+      val __obj = js.Dynamic.literal()
+      apiAssociation.foreach(__v => __obj.updateDynamic("apiAssociation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateApiResponse]
+    }
+  }
+
+  /** The authorization configuration in case the HTTP endpoint requires authorization.
     */
   @js.native
   trait AuthorizationConfig extends js.Object {
@@ -238,7 +325,7 @@ package object appsync {
     }
   }
 
-  /** The AWS IAM configuration.
+  /** The Identity and Access Management (IAM) configuration.
     */
   @js.native
   trait AwsIamConfig extends js.Object {
@@ -259,7 +346,7 @@ package object appsync {
     }
   }
 
-  /** The caching configuration for a resolver that has caching enabled.
+  /** The caching configuration for a resolver that has caching activated.
     */
   @js.native
   trait CachingConfig extends js.Object {
@@ -409,6 +496,7 @@ package object appsync {
     var elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig]
     var httpConfig: js.UndefOr[HttpDataSourceConfig]
     var lambdaConfig: js.UndefOr[LambdaDataSourceConfig]
+    var openSearchServiceConfig: js.UndefOr[OpenSearchServiceDataSourceConfig]
     var relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig]
     var serviceRoleArn: js.UndefOr[String]
   }
@@ -424,6 +512,7 @@ package object appsync {
         elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig] = js.undefined,
         httpConfig: js.UndefOr[HttpDataSourceConfig] = js.undefined,
         lambdaConfig: js.UndefOr[LambdaDataSourceConfig] = js.undefined,
+        openSearchServiceConfig: js.UndefOr[OpenSearchServiceDataSourceConfig] = js.undefined,
         relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
         serviceRoleArn: js.UndefOr[String] = js.undefined
     ): CreateDataSourceRequest = {
@@ -438,6 +527,7 @@ package object appsync {
       elasticsearchConfig.foreach(__v => __obj.updateDynamic("elasticsearchConfig")(__v.asInstanceOf[js.Any]))
       httpConfig.foreach(__v => __obj.updateDynamic("httpConfig")(__v.asInstanceOf[js.Any]))
       lambdaConfig.foreach(__v => __obj.updateDynamic("lambdaConfig")(__v.asInstanceOf[js.Any]))
+      openSearchServiceConfig.foreach(__v => __obj.updateDynamic("openSearchServiceConfig")(__v.asInstanceOf[js.Any]))
       relationalDatabaseConfig.foreach(__v => __obj.updateDynamic("relationalDatabaseConfig")(__v.asInstanceOf[js.Any]))
       serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDataSourceRequest]
@@ -457,6 +547,46 @@ package object appsync {
       val __obj = js.Dynamic.literal()
       dataSource.foreach(__v => __obj.updateDynamic("dataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDataSourceResponse]
+    }
+  }
+
+  @js.native
+  trait CreateDomainNameRequest extends js.Object {
+    var certificateArn: CertificateArn
+    var domainName: DomainName
+    var description: js.UndefOr[Description]
+  }
+
+  object CreateDomainNameRequest {
+    @inline
+    def apply(
+        certificateArn: CertificateArn,
+        domainName: DomainName,
+        description: js.UndefOr[Description] = js.undefined
+    ): CreateDomainNameRequest = {
+      val __obj = js.Dynamic.literal(
+        "certificateArn" -> certificateArn.asInstanceOf[js.Any],
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDomainNameRequest]
+    }
+  }
+
+  @js.native
+  trait CreateDomainNameResponse extends js.Object {
+    var domainNameConfig: js.UndefOr[DomainNameConfig]
+  }
+
+  object CreateDomainNameResponse {
+    @inline
+    def apply(
+        domainNameConfig: js.UndefOr[DomainNameConfig] = js.undefined
+    ): CreateDomainNameResponse = {
+      val __obj = js.Dynamic.literal()
+      domainNameConfig.foreach(__v => __obj.updateDynamic("domainNameConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDomainNameResponse]
     }
   }
 
@@ -520,6 +650,7 @@ package object appsync {
     var authenticationType: AuthenticationType
     var name: String
     var additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders]
+    var lambdaAuthorizerConfig: js.UndefOr[LambdaAuthorizerConfig]
     var logConfig: js.UndefOr[LogConfig]
     var openIDConnectConfig: js.UndefOr[OpenIDConnectConfig]
     var tags: js.UndefOr[TagMap]
@@ -533,6 +664,7 @@ package object appsync {
         authenticationType: AuthenticationType,
         name: String,
         additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders] = js.undefined,
+        lambdaAuthorizerConfig: js.UndefOr[LambdaAuthorizerConfig] = js.undefined,
         logConfig: js.UndefOr[LogConfig] = js.undefined,
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
@@ -545,6 +677,7 @@ package object appsync {
       )
 
       additionalAuthenticationProviders.foreach(__v => __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any]))
+      lambdaAuthorizerConfig.foreach(__v => __obj.updateDynamic("lambdaAuthorizerConfig")(__v.asInstanceOf[js.Any]))
       logConfig.foreach(__v => __obj.updateDynamic("logConfig")(__v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.updateDynamic("openIDConnectConfig")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -681,6 +814,7 @@ package object appsync {
     var httpConfig: js.UndefOr[HttpDataSourceConfig]
     var lambdaConfig: js.UndefOr[LambdaDataSourceConfig]
     var name: js.UndefOr[ResourceName]
+    var openSearchServiceConfig: js.UndefOr[OpenSearchServiceDataSourceConfig]
     var relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig]
     var serviceRoleArn: js.UndefOr[String]
     var `type`: js.UndefOr[DataSourceType]
@@ -696,6 +830,7 @@ package object appsync {
         httpConfig: js.UndefOr[HttpDataSourceConfig] = js.undefined,
         lambdaConfig: js.UndefOr[LambdaDataSourceConfig] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
+        openSearchServiceConfig: js.UndefOr[OpenSearchServiceDataSourceConfig] = js.undefined,
         relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
         serviceRoleArn: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[DataSourceType] = js.undefined
@@ -708,6 +843,7 @@ package object appsync {
       httpConfig.foreach(__v => __obj.updateDynamic("httpConfig")(__v.asInstanceOf[js.Any]))
       lambdaConfig.foreach(__v => __obj.updateDynamic("lambdaConfig")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      openSearchServiceConfig.foreach(__v => __obj.updateDynamic("openSearchServiceConfig")(__v.asInstanceOf[js.Any]))
       relationalDatabaseConfig.foreach(__v => __obj.updateDynamic("relationalDatabaseConfig")(__v.asInstanceOf[js.Any]))
       serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
@@ -806,6 +942,34 @@ package object appsync {
     def apply(): DeleteDataSourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteDataSourceResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteDomainNameRequest extends js.Object {
+    var domainName: DomainName
+  }
+
+  object DeleteDomainNameRequest {
+    @inline
+    def apply(
+        domainName: DomainName
+    ): DeleteDomainNameRequest = {
+      val __obj = js.Dynamic.literal(
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteDomainNameRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDomainNameResponse extends js.Object
+
+  object DeleteDomainNameResponse {
+    @inline
+    def apply(): DeleteDomainNameResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteDomainNameResponse]
     }
   }
 
@@ -957,6 +1121,64 @@ package object appsync {
     }
   }
 
+  @js.native
+  trait DisassociateApiRequest extends js.Object {
+    var domainName: DomainName
+  }
+
+  object DisassociateApiRequest {
+    @inline
+    def apply(
+        domainName: DomainName
+    ): DisassociateApiRequest = {
+      val __obj = js.Dynamic.literal(
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateApiRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateApiResponse extends js.Object
+
+  object DisassociateApiResponse {
+    @inline
+    def apply(): DisassociateApiResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateApiResponse]
+    }
+  }
+
+  /** Describes a configuration for a custom domain.
+    */
+  @js.native
+  trait DomainNameConfig extends js.Object {
+    var appsyncDomainName: js.UndefOr[String]
+    var certificateArn: js.UndefOr[CertificateArn]
+    var description: js.UndefOr[Description]
+    var domainName: js.UndefOr[DomainName]
+    var hostedZoneId: js.UndefOr[String]
+  }
+
+  object DomainNameConfig {
+    @inline
+    def apply(
+        appsyncDomainName: js.UndefOr[String] = js.undefined,
+        certificateArn: js.UndefOr[CertificateArn] = js.undefined,
+        description: js.UndefOr[Description] = js.undefined,
+        domainName: js.UndefOr[DomainName] = js.undefined,
+        hostedZoneId: js.UndefOr[String] = js.undefined
+    ): DomainNameConfig = {
+      val __obj = js.Dynamic.literal()
+      appsyncDomainName.foreach(__v => __obj.updateDynamic("appsyncDomainName")(__v.asInstanceOf[js.Any]))
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      domainName.foreach(__v => __obj.updateDynamic("domainName")(__v.asInstanceOf[js.Any]))
+      hostedZoneId.foreach(__v => __obj.updateDynamic("hostedZoneId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainNameConfig]
+    }
+  }
+
   /** Describes an Amazon DynamoDB data source configuration.
     */
   @js.native
@@ -989,7 +1211,7 @@ package object appsync {
     }
   }
 
-  /** Describes an Elasticsearch data source configuration.
+  /** Describes an OpenSearch data source configuration. As of September 2021, Amazon Elasticsearch service is Amazon OpenSearch Service. This configuration is deprecated. For new data sources, use <a>OpenSearchServiceDataSourceConfig</a> to specify an OpenSearch data source.
     */
   @js.native
   trait ElasticsearchDataSourceConfig extends js.Object {
@@ -1043,7 +1265,7 @@ package object appsync {
     }
   }
 
-  /** A function is a reusable entity. Multiple functions can be used to compose the resolver logic.
+  /** A function is a reusable entity. You can use multiple functions to compose the resolver logic.
     */
   @js.native
   trait FunctionConfiguration extends js.Object {
@@ -1082,6 +1304,39 @@ package object appsync {
       responseMappingTemplate.foreach(__v => __obj.updateDynamic("responseMappingTemplate")(__v.asInstanceOf[js.Any]))
       syncConfig.foreach(__v => __obj.updateDynamic("syncConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FunctionConfiguration]
+    }
+  }
+
+  @js.native
+  trait GetApiAssociationRequest extends js.Object {
+    var domainName: DomainName
+  }
+
+  object GetApiAssociationRequest {
+    @inline
+    def apply(
+        domainName: DomainName
+    ): GetApiAssociationRequest = {
+      val __obj = js.Dynamic.literal(
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetApiAssociationRequest]
+    }
+  }
+
+  @js.native
+  trait GetApiAssociationResponse extends js.Object {
+    var apiAssociation: js.UndefOr[ApiAssociation]
+  }
+
+  object GetApiAssociationResponse {
+    @inline
+    def apply(
+        apiAssociation: js.UndefOr[ApiAssociation] = js.undefined
+    ): GetApiAssociationResponse = {
+      val __obj = js.Dynamic.literal()
+      apiAssociation.foreach(__v => __obj.updateDynamic("apiAssociation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetApiAssociationResponse]
     }
   }
 
@@ -1155,6 +1410,39 @@ package object appsync {
       val __obj = js.Dynamic.literal()
       dataSource.foreach(__v => __obj.updateDynamic("dataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDataSourceResponse]
+    }
+  }
+
+  @js.native
+  trait GetDomainNameRequest extends js.Object {
+    var domainName: DomainName
+  }
+
+  object GetDomainNameRequest {
+    @inline
+    def apply(
+        domainName: DomainName
+    ): GetDomainNameRequest = {
+      val __obj = js.Dynamic.literal(
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDomainNameRequest]
+    }
+  }
+
+  @js.native
+  trait GetDomainNameResponse extends js.Object {
+    var domainNameConfig: js.UndefOr[DomainNameConfig]
+  }
+
+  object GetDomainNameResponse {
+    @inline
+    def apply(
+        domainNameConfig: js.UndefOr[DomainNameConfig] = js.undefined
+    ): GetDomainNameResponse = {
+      val __obj = js.Dynamic.literal()
+      domainNameConfig.foreach(__v => __obj.updateDynamic("domainNameConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDomainNameResponse]
     }
   }
 
@@ -1389,6 +1677,7 @@ package object appsync {
     var apiId: js.UndefOr[String]
     var arn: js.UndefOr[String]
     var authenticationType: js.UndefOr[AuthenticationType]
+    var lambdaAuthorizerConfig: js.UndefOr[LambdaAuthorizerConfig]
     var logConfig: js.UndefOr[LogConfig]
     var name: js.UndefOr[ResourceName]
     var openIDConnectConfig: js.UndefOr[OpenIDConnectConfig]
@@ -1406,6 +1695,7 @@ package object appsync {
         apiId: js.UndefOr[String] = js.undefined,
         arn: js.UndefOr[String] = js.undefined,
         authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
+        lambdaAuthorizerConfig: js.UndefOr[LambdaAuthorizerConfig] = js.undefined,
         logConfig: js.UndefOr[LogConfig] = js.undefined,
         name: js.UndefOr[ResourceName] = js.undefined,
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
@@ -1420,6 +1710,7 @@ package object appsync {
       apiId.foreach(__v => __obj.updateDynamic("apiId")(__v.asInstanceOf[js.Any]))
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       authenticationType.foreach(__v => __obj.updateDynamic("authenticationType")(__v.asInstanceOf[js.Any]))
+      lambdaAuthorizerConfig.foreach(__v => __obj.updateDynamic("lambdaAuthorizerConfig")(__v.asInstanceOf[js.Any]))
       logConfig.foreach(__v => __obj.updateDynamic("logConfig")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.updateDynamic("openIDConnectConfig")(__v.asInstanceOf[js.Any]))
@@ -1453,7 +1744,33 @@ package object appsync {
     }
   }
 
-  /** The <code>LambdaConflictHandlerConfig</code> object when configuring LAMBDA as the Conflict Handler.
+  /** A <code>LambdaAuthorizerConfig</code> specifies how to authorize AppSync API access when using the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an AppSync API can have only one Lambda authorizer configured at a time.
+    */
+  @js.native
+  trait LambdaAuthorizerConfig extends js.Object {
+    var authorizerUri: String
+    var authorizerResultTtlInSeconds: js.UndefOr[TTL]
+    var identityValidationExpression: js.UndefOr[String]
+  }
+
+  object LambdaAuthorizerConfig {
+    @inline
+    def apply(
+        authorizerUri: String,
+        authorizerResultTtlInSeconds: js.UndefOr[TTL] = js.undefined,
+        identityValidationExpression: js.UndefOr[String] = js.undefined
+    ): LambdaAuthorizerConfig = {
+      val __obj = js.Dynamic.literal(
+        "authorizerUri" -> authorizerUri.asInstanceOf[js.Any]
+      )
+
+      authorizerResultTtlInSeconds.foreach(__v => __obj.updateDynamic("authorizerResultTtlInSeconds")(__v.asInstanceOf[js.Any]))
+      identityValidationExpression.foreach(__v => __obj.updateDynamic("identityValidationExpression")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaAuthorizerConfig]
+    }
+  }
+
+  /** The <code>LambdaConflictHandlerConfig</code> object when configuring <code>LAMBDA</code> as the Conflict Handler.
     */
   @js.native
   trait LambdaConflictHandlerConfig extends js.Object {
@@ -1471,7 +1788,7 @@ package object appsync {
     }
   }
 
-  /** Describes an AWS Lambda data source configuration.
+  /** Describes an Lambda data source configuration.
     */
   @js.native
   trait LambdaDataSourceConfig extends js.Object {
@@ -1573,6 +1890,44 @@ package object appsync {
       dataSources.foreach(__v => __obj.updateDynamic("dataSources")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDataSourcesResponse]
+    }
+  }
+
+  @js.native
+  trait ListDomainNamesRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListDomainNamesRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDomainNamesRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDomainNamesRequest]
+    }
+  }
+
+  @js.native
+  trait ListDomainNamesResponse extends js.Object {
+    var domainNameConfigs: js.UndefOr[DomainNameConfigs]
+    var nextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListDomainNamesResponse {
+    @inline
+    def apply(
+        domainNameConfigs: js.UndefOr[DomainNameConfigs] = js.undefined,
+        nextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListDomainNamesResponse = {
+      val __obj = js.Dynamic.literal()
+      domainNameConfigs.foreach(__v => __obj.updateDynamic("domainNameConfigs")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDomainNamesResponse]
     }
   }
 
@@ -1828,7 +2183,7 @@ package object appsync {
     }
   }
 
-  /** The CloudWatch Logs configuration.
+  /** The Amazon CloudWatch Logs configuration.
     */
   @js.native
   trait LogConfig extends js.Object {
@@ -1854,7 +2209,7 @@ package object appsync {
     }
   }
 
-  /** Describes an OpenID Connect configuration.
+  /** Describes an OpenID Connect (OIDC) configuration.
     */
   @js.native
   trait OpenIDConnectConfig extends js.Object {
@@ -1883,6 +2238,28 @@ package object appsync {
     }
   }
 
+  /** Describes an OpenSearch data source configuration.
+    */
+  @js.native
+  trait OpenSearchServiceDataSourceConfig extends js.Object {
+    var awsRegion: String
+    var endpoint: String
+  }
+
+  object OpenSearchServiceDataSourceConfig {
+    @inline
+    def apply(
+        awsRegion: String,
+        endpoint: String
+    ): OpenSearchServiceDataSourceConfig = {
+      val __obj = js.Dynamic.literal(
+        "awsRegion" -> awsRegion.asInstanceOf[js.Any],
+        "endpoint" -> endpoint.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OpenSearchServiceDataSourceConfig]
+    }
+  }
+
   /** The pipeline configuration for a resolver of kind <code>PIPELINE</code>.
     */
   @js.native
@@ -1901,7 +2278,7 @@ package object appsync {
     }
   }
 
-  /** The Amazon RDS HTTP endpoint configuration.
+  /** The Amazon Relational Database Service (Amazon RDS) HTTP endpoint configuration.
     */
   @js.native
   trait RdsHttpEndpointConfig extends js.Object {
@@ -2033,7 +2410,7 @@ package object appsync {
     }
   }
 
-  /** Describes a Sync configuration for a resolver. Contains information on which Conflict Detection as well as Resolution strategy should be performed when the resolver is invoked.
+  /** Describes a Sync configuration for a resolver. Specifies which Conflict Detection strategy and Resolution strategy to use when the resolver is invoked.
     */
   @js.native
   trait SyncConfig extends js.Object {
@@ -2248,6 +2625,7 @@ package object appsync {
     var elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig]
     var httpConfig: js.UndefOr[HttpDataSourceConfig]
     var lambdaConfig: js.UndefOr[LambdaDataSourceConfig]
+    var openSearchServiceConfig: js.UndefOr[OpenSearchServiceDataSourceConfig]
     var relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig]
     var serviceRoleArn: js.UndefOr[String]
   }
@@ -2263,6 +2641,7 @@ package object appsync {
         elasticsearchConfig: js.UndefOr[ElasticsearchDataSourceConfig] = js.undefined,
         httpConfig: js.UndefOr[HttpDataSourceConfig] = js.undefined,
         lambdaConfig: js.UndefOr[LambdaDataSourceConfig] = js.undefined,
+        openSearchServiceConfig: js.UndefOr[OpenSearchServiceDataSourceConfig] = js.undefined,
         relationalDatabaseConfig: js.UndefOr[RelationalDatabaseDataSourceConfig] = js.undefined,
         serviceRoleArn: js.UndefOr[String] = js.undefined
     ): UpdateDataSourceRequest = {
@@ -2277,6 +2656,7 @@ package object appsync {
       elasticsearchConfig.foreach(__v => __obj.updateDynamic("elasticsearchConfig")(__v.asInstanceOf[js.Any]))
       httpConfig.foreach(__v => __obj.updateDynamic("httpConfig")(__v.asInstanceOf[js.Any]))
       lambdaConfig.foreach(__v => __obj.updateDynamic("lambdaConfig")(__v.asInstanceOf[js.Any]))
+      openSearchServiceConfig.foreach(__v => __obj.updateDynamic("openSearchServiceConfig")(__v.asInstanceOf[js.Any]))
       relationalDatabaseConfig.foreach(__v => __obj.updateDynamic("relationalDatabaseConfig")(__v.asInstanceOf[js.Any]))
       serviceRoleArn.foreach(__v => __obj.updateDynamic("serviceRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDataSourceRequest]
@@ -2296,6 +2676,43 @@ package object appsync {
       val __obj = js.Dynamic.literal()
       dataSource.foreach(__v => __obj.updateDynamic("dataSource")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDataSourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateDomainNameRequest extends js.Object {
+    var domainName: DomainName
+    var description: js.UndefOr[Description]
+  }
+
+  object UpdateDomainNameRequest {
+    @inline
+    def apply(
+        domainName: DomainName,
+        description: js.UndefOr[Description] = js.undefined
+    ): UpdateDomainNameRequest = {
+      val __obj = js.Dynamic.literal(
+        "domainName" -> domainName.asInstanceOf[js.Any]
+      )
+
+      description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDomainNameRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDomainNameResponse extends js.Object {
+    var domainNameConfig: js.UndefOr[DomainNameConfig]
+  }
+
+  object UpdateDomainNameResponse {
+    @inline
+    def apply(
+        domainNameConfig: js.UndefOr[DomainNameConfig] = js.undefined
+    ): UpdateDomainNameResponse = {
+      val __obj = js.Dynamic.literal()
+      domainNameConfig.foreach(__v => __obj.updateDynamic("domainNameConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateDomainNameResponse]
     }
   }
 
@@ -2363,6 +2780,7 @@ package object appsync {
     var name: String
     var additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders]
     var authenticationType: js.UndefOr[AuthenticationType]
+    var lambdaAuthorizerConfig: js.UndefOr[LambdaAuthorizerConfig]
     var logConfig: js.UndefOr[LogConfig]
     var openIDConnectConfig: js.UndefOr[OpenIDConnectConfig]
     var userPoolConfig: js.UndefOr[UserPoolConfig]
@@ -2376,6 +2794,7 @@ package object appsync {
         name: String,
         additionalAuthenticationProviders: js.UndefOr[AdditionalAuthenticationProviders] = js.undefined,
         authenticationType: js.UndefOr[AuthenticationType] = js.undefined,
+        lambdaAuthorizerConfig: js.UndefOr[LambdaAuthorizerConfig] = js.undefined,
         logConfig: js.UndefOr[LogConfig] = js.undefined,
         openIDConnectConfig: js.UndefOr[OpenIDConnectConfig] = js.undefined,
         userPoolConfig: js.UndefOr[UserPoolConfig] = js.undefined,
@@ -2388,6 +2807,7 @@ package object appsync {
 
       additionalAuthenticationProviders.foreach(__v => __obj.updateDynamic("additionalAuthenticationProviders")(__v.asInstanceOf[js.Any]))
       authenticationType.foreach(__v => __obj.updateDynamic("authenticationType")(__v.asInstanceOf[js.Any]))
+      lambdaAuthorizerConfig.foreach(__v => __obj.updateDynamic("lambdaAuthorizerConfig")(__v.asInstanceOf[js.Any]))
       logConfig.foreach(__v => __obj.updateDynamic("logConfig")(__v.asInstanceOf[js.Any]))
       openIDConnectConfig.foreach(__v => __obj.updateDynamic("openIDConnectConfig")(__v.asInstanceOf[js.Any]))
       userPoolConfig.foreach(__v => __obj.updateDynamic("userPoolConfig")(__v.asInstanceOf[js.Any]))

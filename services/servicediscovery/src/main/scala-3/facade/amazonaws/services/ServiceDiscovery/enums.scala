@@ -37,13 +37,14 @@ object HealthStatus {
   inline def values: js.Array[HealthStatus] = js.Array(HEALTHY, UNHEALTHY, UNKNOWN)
 }
 
-type HealthStatusFilter = "HEALTHY" | "UNHEALTHY" | "ALL"
+type HealthStatusFilter = "HEALTHY" | "UNHEALTHY" | "ALL" | "HEALTHY_OR_ELSE_ALL"
 object HealthStatusFilter {
   inline val HEALTHY: "HEALTHY" = "HEALTHY"
   inline val UNHEALTHY: "UNHEALTHY" = "UNHEALTHY"
   inline val ALL: "ALL" = "ALL"
+  inline val HEALTHY_OR_ELSE_ALL: "HEALTHY_OR_ELSE_ALL" = "HEALTHY_OR_ELSE_ALL"
 
-  inline def values: js.Array[HealthStatusFilter] = js.Array(HEALTHY, UNHEALTHY, ALL)
+  inline def values: js.Array[HealthStatusFilter] = js.Array(HEALTHY, UNHEALTHY, ALL, HEALTHY_OR_ELSE_ALL)
 }
 
 type NamespaceFilterName = "TYPE"
@@ -92,15 +93,16 @@ object OperationTargetType {
   inline def values: js.Array[OperationTargetType] = js.Array(NAMESPACE, SERVICE, INSTANCE)
 }
 
-type OperationType = "CREATE_NAMESPACE" | "DELETE_NAMESPACE" | "UPDATE_SERVICE" | "REGISTER_INSTANCE" | "DEREGISTER_INSTANCE"
+type OperationType = "CREATE_NAMESPACE" | "DELETE_NAMESPACE" | "UPDATE_NAMESPACE" | "UPDATE_SERVICE" | "REGISTER_INSTANCE" | "DEREGISTER_INSTANCE"
 object OperationType {
   inline val CREATE_NAMESPACE: "CREATE_NAMESPACE" = "CREATE_NAMESPACE"
   inline val DELETE_NAMESPACE: "DELETE_NAMESPACE" = "DELETE_NAMESPACE"
+  inline val UPDATE_NAMESPACE: "UPDATE_NAMESPACE" = "UPDATE_NAMESPACE"
   inline val UPDATE_SERVICE: "UPDATE_SERVICE" = "UPDATE_SERVICE"
   inline val REGISTER_INSTANCE: "REGISTER_INSTANCE" = "REGISTER_INSTANCE"
   inline val DEREGISTER_INSTANCE: "DEREGISTER_INSTANCE" = "DEREGISTER_INSTANCE"
 
-  inline def values: js.Array[OperationType] = js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
+  inline def values: js.Array[OperationType] = js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
 }
 
 type RecordType = "SRV" | "A" | "AAAA" | "CNAME"

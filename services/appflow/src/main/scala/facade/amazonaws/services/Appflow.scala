@@ -15,12 +15,16 @@ package object appflow {
   type ApiKey = String
   type ApiSecretKey = String
   type ApiToken = String
+  type ApplicationHostUrl = String
   type ApplicationKey = String
+  type ApplicationServicePath = String
   type AuthCode = String
+  type AuthCodeUrl = String
   type BucketName = String
   type BucketPrefix = String
   type ClientCredentialsArn = String
   type ClientId = String
+  type ClientNumber = String
   type ClientSecret = String
   type ConnectorConfigurationsMap = js.Dictionary[ConnectorConfiguration]
   type ConnectorEntityFieldList = js.Array[ConnectorEntityField]
@@ -38,6 +42,7 @@ package object appflow {
   type Description = String
   type DestinationField = String
   type DestinationFlowConfigList = js.Array[DestinationFlowConfig]
+  type DocumentType = String
   type DomainName = String
   type EntitiesPath = String
   type ExecutionId = String
@@ -57,6 +62,7 @@ package object appflow {
   type KMSArn = String
   type Key = String
   type Label = String
+  type LogonLanguage = String
   type MaxResults = Int
   type MostRecentExecutionMessage = String
   type Name = String
@@ -66,6 +72,8 @@ package object appflow {
   type Object = String
   type ObjectTypeName = String
   type Password = String
+  type PortNumber = Int
+  type PrivateConnectionProvisioningFailureMessage = String
   type PrivateLinkServiceName = String
   type Property = String
   type RedirectUri = String
@@ -88,6 +96,7 @@ package object appflow {
   type TaskPropertiesMap = js.Dictionary[Property]
   type Tasks = js.Array[Task]
   type Timezone = String
+  type TokenUrl = String
   type TriggerTypeList = js.Array[TriggerType]
   type UpdatedBy = String
   type UpsolverBucketName = String
@@ -233,6 +242,28 @@ package object appflow {
     }
   }
 
+  /** The basic auth credentials required for basic authentication.
+    */
+  @js.native
+  trait BasicAuthCredentials extends js.Object {
+    var password: Password
+    var username: Username
+  }
+
+  object BasicAuthCredentials {
+    @inline
+    def apply(
+        password: Password,
+        username: Username
+    ): BasicAuthCredentials = {
+      val __obj = js.Dynamic.literal(
+        "password" -> password.asInstanceOf[js.Any],
+        "username" -> username.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BasicAuthCredentials]
+    }
+  }
+
   /** The configuration settings related to a given connector.
     */
   @js.native
@@ -348,6 +379,7 @@ package object appflow {
     var Marketo: js.UndefOr[MarketoMetadata]
     var Redshift: js.UndefOr[RedshiftMetadata]
     var S3: js.UndefOr[S3Metadata]
+    var SAPOData: js.UndefOr[SAPODataMetadata]
     var Salesforce: js.UndefOr[SalesforceMetadata]
     var ServiceNow: js.UndefOr[ServiceNowMetadata]
     var Singular: js.UndefOr[SingularMetadata]
@@ -373,6 +405,7 @@ package object appflow {
         Marketo: js.UndefOr[MarketoMetadata] = js.undefined,
         Redshift: js.UndefOr[RedshiftMetadata] = js.undefined,
         S3: js.UndefOr[S3Metadata] = js.undefined,
+        SAPOData: js.UndefOr[SAPODataMetadata] = js.undefined,
         Salesforce: js.UndefOr[SalesforceMetadata] = js.undefined,
         ServiceNow: js.UndefOr[ServiceNowMetadata] = js.undefined,
         Singular: js.UndefOr[SingularMetadata] = js.undefined,
@@ -395,6 +428,7 @@ package object appflow {
       Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
       Redshift.foreach(__v => __obj.updateDynamic("Redshift")(__v.asInstanceOf[js.Any]))
       S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
+      SAPOData.foreach(__v => __obj.updateDynamic("SAPOData")(__v.asInstanceOf[js.Any]))
       Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
       ServiceNow.foreach(__v => __obj.updateDynamic("ServiceNow")(__v.asInstanceOf[js.Any]))
       Singular.foreach(__v => __obj.updateDynamic("Singular")(__v.asInstanceOf[js.Any]))
@@ -440,6 +474,7 @@ package object appflow {
     var InforNexus: js.UndefOr[InforNexusConnectorOperator]
     var Marketo: js.UndefOr[MarketoConnectorOperator]
     var S3: js.UndefOr[S3ConnectorOperator]
+    var SAPOData: js.UndefOr[SAPODataConnectorOperator]
     var Salesforce: js.UndefOr[SalesforceConnectorOperator]
     var ServiceNow: js.UndefOr[ServiceNowConnectorOperator]
     var Singular: js.UndefOr[SingularConnectorOperator]
@@ -459,6 +494,7 @@ package object appflow {
         InforNexus: js.UndefOr[InforNexusConnectorOperator] = js.undefined,
         Marketo: js.UndefOr[MarketoConnectorOperator] = js.undefined,
         S3: js.UndefOr[S3ConnectorOperator] = js.undefined,
+        SAPOData: js.UndefOr[SAPODataConnectorOperator] = js.undefined,
         Salesforce: js.UndefOr[SalesforceConnectorOperator] = js.undefined,
         ServiceNow: js.UndefOr[ServiceNowConnectorOperator] = js.undefined,
         Singular: js.UndefOr[SingularConnectorOperator] = js.undefined,
@@ -475,6 +511,7 @@ package object appflow {
       InforNexus.foreach(__v => __obj.updateDynamic("InforNexus")(__v.asInstanceOf[js.Any]))
       Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
       S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
+      SAPOData.foreach(__v => __obj.updateDynamic("SAPOData")(__v.asInstanceOf[js.Any]))
       Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
       ServiceNow.foreach(__v => __obj.updateDynamic("ServiceNow")(__v.asInstanceOf[js.Any]))
       Singular.foreach(__v => __obj.updateDynamic("Singular")(__v.asInstanceOf[js.Any]))
@@ -498,6 +535,7 @@ package object appflow {
     var createdAt: js.UndefOr[Date]
     var credentialsArn: js.UndefOr[ARN]
     var lastUpdatedAt: js.UndefOr[Date]
+    var privateConnectionProvisioningState: js.UndefOr[PrivateConnectionProvisioningState]
   }
 
   object ConnectorProfile {
@@ -510,7 +548,8 @@ package object appflow {
         connectorType: js.UndefOr[ConnectorType] = js.undefined,
         createdAt: js.UndefOr[Date] = js.undefined,
         credentialsArn: js.UndefOr[ARN] = js.undefined,
-        lastUpdatedAt: js.UndefOr[Date] = js.undefined
+        lastUpdatedAt: js.UndefOr[Date] = js.undefined,
+        privateConnectionProvisioningState: js.UndefOr[PrivateConnectionProvisioningState] = js.undefined
     ): ConnectorProfile = {
       val __obj = js.Dynamic.literal()
       connectionMode.foreach(__v => __obj.updateDynamic("connectionMode")(__v.asInstanceOf[js.Any]))
@@ -521,6 +560,7 @@ package object appflow {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       credentialsArn.foreach(__v => __obj.updateDynamic("credentialsArn")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      privateConnectionProvisioningState.foreach(__v => __obj.updateDynamic("privateConnectionProvisioningState")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConnectorProfile]
     }
   }
@@ -559,6 +599,7 @@ package object appflow {
     var InforNexus: js.UndefOr[InforNexusConnectorProfileCredentials]
     var Marketo: js.UndefOr[MarketoConnectorProfileCredentials]
     var Redshift: js.UndefOr[RedshiftConnectorProfileCredentials]
+    var SAPOData: js.UndefOr[SAPODataConnectorProfileCredentials]
     var Salesforce: js.UndefOr[SalesforceConnectorProfileCredentials]
     var ServiceNow: js.UndefOr[ServiceNowConnectorProfileCredentials]
     var Singular: js.UndefOr[SingularConnectorProfileCredentials]
@@ -580,6 +621,7 @@ package object appflow {
         InforNexus: js.UndefOr[InforNexusConnectorProfileCredentials] = js.undefined,
         Marketo: js.UndefOr[MarketoConnectorProfileCredentials] = js.undefined,
         Redshift: js.UndefOr[RedshiftConnectorProfileCredentials] = js.undefined,
+        SAPOData: js.UndefOr[SAPODataConnectorProfileCredentials] = js.undefined,
         Salesforce: js.UndefOr[SalesforceConnectorProfileCredentials] = js.undefined,
         ServiceNow: js.UndefOr[ServiceNowConnectorProfileCredentials] = js.undefined,
         Singular: js.UndefOr[SingularConnectorProfileCredentials] = js.undefined,
@@ -598,6 +640,7 @@ package object appflow {
       InforNexus.foreach(__v => __obj.updateDynamic("InforNexus")(__v.asInstanceOf[js.Any]))
       Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
       Redshift.foreach(__v => __obj.updateDynamic("Redshift")(__v.asInstanceOf[js.Any]))
+      SAPOData.foreach(__v => __obj.updateDynamic("SAPOData")(__v.asInstanceOf[js.Any]))
       Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
       ServiceNow.foreach(__v => __obj.updateDynamic("ServiceNow")(__v.asInstanceOf[js.Any]))
       Singular.foreach(__v => __obj.updateDynamic("Singular")(__v.asInstanceOf[js.Any]))
@@ -622,6 +665,7 @@ package object appflow {
     var InforNexus: js.UndefOr[InforNexusConnectorProfileProperties]
     var Marketo: js.UndefOr[MarketoConnectorProfileProperties]
     var Redshift: js.UndefOr[RedshiftConnectorProfileProperties]
+    var SAPOData: js.UndefOr[SAPODataConnectorProfileProperties]
     var Salesforce: js.UndefOr[SalesforceConnectorProfileProperties]
     var ServiceNow: js.UndefOr[ServiceNowConnectorProfileProperties]
     var Singular: js.UndefOr[SingularConnectorProfileProperties]
@@ -643,6 +687,7 @@ package object appflow {
         InforNexus: js.UndefOr[InforNexusConnectorProfileProperties] = js.undefined,
         Marketo: js.UndefOr[MarketoConnectorProfileProperties] = js.undefined,
         Redshift: js.UndefOr[RedshiftConnectorProfileProperties] = js.undefined,
+        SAPOData: js.UndefOr[SAPODataConnectorProfileProperties] = js.undefined,
         Salesforce: js.UndefOr[SalesforceConnectorProfileProperties] = js.undefined,
         ServiceNow: js.UndefOr[ServiceNowConnectorProfileProperties] = js.undefined,
         Singular: js.UndefOr[SingularConnectorProfileProperties] = js.undefined,
@@ -661,6 +706,7 @@ package object appflow {
       InforNexus.foreach(__v => __obj.updateDynamic("InforNexus")(__v.asInstanceOf[js.Any]))
       Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
       Redshift.foreach(__v => __obj.updateDynamic("Redshift")(__v.asInstanceOf[js.Any]))
+      SAPOData.foreach(__v => __obj.updateDynamic("SAPOData")(__v.asInstanceOf[js.Any]))
       Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
       ServiceNow.foreach(__v => __obj.updateDynamic("ServiceNow")(__v.asInstanceOf[js.Any]))
       Singular.foreach(__v => __obj.updateDynamic("Singular")(__v.asInstanceOf[js.Any]))
@@ -2073,6 +2119,63 @@ package object appflow {
     }
   }
 
+  /** The OAuth credentials required for OAuth type authentication.
+    */
+  @js.native
+  trait OAuthCredentials extends js.Object {
+    var clientId: ClientId
+    var clientSecret: ClientSecret
+    var accessToken: js.UndefOr[AccessToken]
+    var oAuthRequest: js.UndefOr[ConnectorOAuthRequest]
+    var refreshToken: js.UndefOr[RefreshToken]
+  }
+
+  object OAuthCredentials {
+    @inline
+    def apply(
+        clientId: ClientId,
+        clientSecret: ClientSecret,
+        accessToken: js.UndefOr[AccessToken] = js.undefined,
+        oAuthRequest: js.UndefOr[ConnectorOAuthRequest] = js.undefined,
+        refreshToken: js.UndefOr[RefreshToken] = js.undefined
+    ): OAuthCredentials = {
+      val __obj = js.Dynamic.literal(
+        "clientId" -> clientId.asInstanceOf[js.Any],
+        "clientSecret" -> clientSecret.asInstanceOf[js.Any]
+      )
+
+      accessToken.foreach(__v => __obj.updateDynamic("accessToken")(__v.asInstanceOf[js.Any]))
+      oAuthRequest.foreach(__v => __obj.updateDynamic("oAuthRequest")(__v.asInstanceOf[js.Any]))
+      refreshToken.foreach(__v => __obj.updateDynamic("refreshToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OAuthCredentials]
+    }
+  }
+
+  /** The OAuth properties required for OAuth type authentication.
+    */
+  @js.native
+  trait OAuthProperties extends js.Object {
+    var authCodeUrl: AuthCodeUrl
+    var oAuthScopes: OAuthScopeList
+    var tokenUrl: TokenUrl
+  }
+
+  object OAuthProperties {
+    @inline
+    def apply(
+        authCodeUrl: AuthCodeUrl,
+        oAuthScopes: OAuthScopeList,
+        tokenUrl: TokenUrl
+    ): OAuthProperties = {
+      val __obj = js.Dynamic.literal(
+        "authCodeUrl" -> authCodeUrl.asInstanceOf[js.Any],
+        "oAuthScopes" -> oAuthScopes.asInstanceOf[js.Any],
+        "tokenUrl" -> tokenUrl.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OAuthProperties]
+    }
+  }
+
   /** Determines the prefix that Amazon AppFlow applies to the destination folder name. You can name your destination folders according to the flow frequency and date.
     */
   @js.native
@@ -2091,6 +2194,30 @@ package object appflow {
       prefixFormat.foreach(__v => __obj.updateDynamic("prefixFormat")(__v.asInstanceOf[js.Any]))
       prefixType.foreach(__v => __obj.updateDynamic("prefixType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PrefixConfig]
+    }
+  }
+
+  /** Specifies the private connection provisioning state.
+    */
+  @js.native
+  trait PrivateConnectionProvisioningState extends js.Object {
+    var failureCause: js.UndefOr[PrivateConnectionProvisioningFailureCause]
+    var failureMessage: js.UndefOr[PrivateConnectionProvisioningFailureMessage]
+    var status: js.UndefOr[PrivateConnectionProvisioningStatus]
+  }
+
+  object PrivateConnectionProvisioningState {
+    @inline
+    def apply(
+        failureCause: js.UndefOr[PrivateConnectionProvisioningFailureCause] = js.undefined,
+        failureMessage: js.UndefOr[PrivateConnectionProvisioningFailureMessage] = js.undefined,
+        status: js.UndefOr[PrivateConnectionProvisioningStatus] = js.undefined
+    ): PrivateConnectionProvisioningState = {
+      val __obj = js.Dynamic.literal()
+      failureCause.foreach(__v => __obj.updateDynamic("failureCause")(__v.asInstanceOf[js.Any]))
+      failureMessage.foreach(__v => __obj.updateDynamic("failureMessage")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrivateConnectionProvisioningState]
     }
   }
 
@@ -2213,6 +2340,24 @@ package object appflow {
     }
   }
 
+  /** When you use Amazon S3 as the source, the configuration format that you provide the flow input data.
+    */
+  @js.native
+  trait S3InputFormatConfig extends js.Object {
+    var s3InputFileType: js.UndefOr[S3InputFileType]
+  }
+
+  object S3InputFormatConfig {
+    @inline
+    def apply(
+        s3InputFileType: js.UndefOr[S3InputFileType] = js.undefined
+    ): S3InputFormatConfig = {
+      val __obj = js.Dynamic.literal()
+      s3InputFileType.foreach(__v => __obj.updateDynamic("s3InputFileType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3InputFormatConfig]
+    }
+  }
+
   /** The connector metadata specific to Amazon S3.
     */
   @js.native
@@ -2256,20 +2401,113 @@ package object appflow {
   trait S3SourceProperties extends js.Object {
     var bucketName: BucketName
     var bucketPrefix: js.UndefOr[BucketPrefix]
+    var s3InputFormatConfig: js.UndefOr[S3InputFormatConfig]
   }
 
   object S3SourceProperties {
     @inline
     def apply(
         bucketName: BucketName,
-        bucketPrefix: js.UndefOr[BucketPrefix] = js.undefined
+        bucketPrefix: js.UndefOr[BucketPrefix] = js.undefined,
+        s3InputFormatConfig: js.UndefOr[S3InputFormatConfig] = js.undefined
     ): S3SourceProperties = {
       val __obj = js.Dynamic.literal(
         "bucketName" -> bucketName.asInstanceOf[js.Any]
       )
 
       bucketPrefix.foreach(__v => __obj.updateDynamic("bucketPrefix")(__v.asInstanceOf[js.Any]))
+      s3InputFormatConfig.foreach(__v => __obj.updateDynamic("s3InputFormatConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3SourceProperties]
+    }
+  }
+
+  /** The connector-specific profile credentials required when using SAPOData.
+    */
+  @js.native
+  trait SAPODataConnectorProfileCredentials extends js.Object {
+    var basicAuthCredentials: js.UndefOr[BasicAuthCredentials]
+    var oAuthCredentials: js.UndefOr[OAuthCredentials]
+  }
+
+  object SAPODataConnectorProfileCredentials {
+    @inline
+    def apply(
+        basicAuthCredentials: js.UndefOr[BasicAuthCredentials] = js.undefined,
+        oAuthCredentials: js.UndefOr[OAuthCredentials] = js.undefined
+    ): SAPODataConnectorProfileCredentials = {
+      val __obj = js.Dynamic.literal()
+      basicAuthCredentials.foreach(__v => __obj.updateDynamic("basicAuthCredentials")(__v.asInstanceOf[js.Any]))
+      oAuthCredentials.foreach(__v => __obj.updateDynamic("oAuthCredentials")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SAPODataConnectorProfileCredentials]
+    }
+  }
+
+  /** The connector-specific profile properties required when using SAPOData.
+    */
+  @js.native
+  trait SAPODataConnectorProfileProperties extends js.Object {
+    var applicationHostUrl: ApplicationHostUrl
+    var applicationServicePath: ApplicationServicePath
+    var clientNumber: ClientNumber
+    var portNumber: PortNumber
+    var logonLanguage: js.UndefOr[LogonLanguage]
+    var oAuthProperties: js.UndefOr[OAuthProperties]
+    var privateLinkServiceName: js.UndefOr[PrivateLinkServiceName]
+  }
+
+  object SAPODataConnectorProfileProperties {
+    @inline
+    def apply(
+        applicationHostUrl: ApplicationHostUrl,
+        applicationServicePath: ApplicationServicePath,
+        clientNumber: ClientNumber,
+        portNumber: PortNumber,
+        logonLanguage: js.UndefOr[LogonLanguage] = js.undefined,
+        oAuthProperties: js.UndefOr[OAuthProperties] = js.undefined,
+        privateLinkServiceName: js.UndefOr[PrivateLinkServiceName] = js.undefined
+    ): SAPODataConnectorProfileProperties = {
+      val __obj = js.Dynamic.literal(
+        "applicationHostUrl" -> applicationHostUrl.asInstanceOf[js.Any],
+        "applicationServicePath" -> applicationServicePath.asInstanceOf[js.Any],
+        "clientNumber" -> clientNumber.asInstanceOf[js.Any],
+        "portNumber" -> portNumber.asInstanceOf[js.Any]
+      )
+
+      logonLanguage.foreach(__v => __obj.updateDynamic("logonLanguage")(__v.asInstanceOf[js.Any]))
+      oAuthProperties.foreach(__v => __obj.updateDynamic("oAuthProperties")(__v.asInstanceOf[js.Any]))
+      privateLinkServiceName.foreach(__v => __obj.updateDynamic("privateLinkServiceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SAPODataConnectorProfileProperties]
+    }
+  }
+
+  /** The connector metadata specific to SAPOData.
+    */
+  @js.native
+  trait SAPODataMetadata extends js.Object
+
+  object SAPODataMetadata {
+    @inline
+    def apply(): SAPODataMetadata = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[SAPODataMetadata]
+    }
+  }
+
+  /** The properties that are applied when using SAPOData as a flow source.
+    */
+  @js.native
+  trait SAPODataSourceProperties extends js.Object {
+    var objectPath: js.UndefOr[Object]
+  }
+
+  object SAPODataSourceProperties {
+    @inline
+    def apply(
+        objectPath: js.UndefOr[Object] = js.undefined
+    ): SAPODataSourceProperties = {
+      val __obj = js.Dynamic.literal()
+      objectPath.foreach(__v => __obj.updateDynamic("objectPath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SAPODataSourceProperties]
     }
   }
 
@@ -2772,6 +3010,7 @@ package object appflow {
     var InforNexus: js.UndefOr[InforNexusSourceProperties]
     var Marketo: js.UndefOr[MarketoSourceProperties]
     var S3: js.UndefOr[S3SourceProperties]
+    var SAPOData: js.UndefOr[SAPODataSourceProperties]
     var Salesforce: js.UndefOr[SalesforceSourceProperties]
     var ServiceNow: js.UndefOr[ServiceNowSourceProperties]
     var Singular: js.UndefOr[SingularSourceProperties]
@@ -2791,6 +3030,7 @@ package object appflow {
         InforNexus: js.UndefOr[InforNexusSourceProperties] = js.undefined,
         Marketo: js.UndefOr[MarketoSourceProperties] = js.undefined,
         S3: js.UndefOr[S3SourceProperties] = js.undefined,
+        SAPOData: js.UndefOr[SAPODataSourceProperties] = js.undefined,
         Salesforce: js.UndefOr[SalesforceSourceProperties] = js.undefined,
         ServiceNow: js.UndefOr[ServiceNowSourceProperties] = js.undefined,
         Singular: js.UndefOr[SingularSourceProperties] = js.undefined,
@@ -2807,6 +3047,7 @@ package object appflow {
       InforNexus.foreach(__v => __obj.updateDynamic("InforNexus")(__v.asInstanceOf[js.Any]))
       Marketo.foreach(__v => __obj.updateDynamic("Marketo")(__v.asInstanceOf[js.Any]))
       S3.foreach(__v => __obj.updateDynamic("S3")(__v.asInstanceOf[js.Any]))
+      SAPOData.foreach(__v => __obj.updateDynamic("SAPOData")(__v.asInstanceOf[js.Any]))
       Salesforce.foreach(__v => __obj.updateDynamic("Salesforce")(__v.asInstanceOf[js.Any]))
       ServiceNow.foreach(__v => __obj.updateDynamic("ServiceNow")(__v.asInstanceOf[js.Any]))
       Singular.foreach(__v => __obj.updateDynamic("Singular")(__v.asInstanceOf[js.Any]))
@@ -3204,10 +3445,10 @@ package object appflow {
   trait UpdateFlowRequest extends js.Object {
     var destinationFlowConfigList: DestinationFlowConfigList
     var flowName: FlowName
+    var sourceFlowConfig: SourceFlowConfig
     var tasks: Tasks
     var triggerConfig: TriggerConfig
     var description: js.UndefOr[FlowDescription]
-    var sourceFlowConfig: js.UndefOr[SourceFlowConfig]
   }
 
   object UpdateFlowRequest {
@@ -3215,20 +3456,20 @@ package object appflow {
     def apply(
         destinationFlowConfigList: DestinationFlowConfigList,
         flowName: FlowName,
+        sourceFlowConfig: SourceFlowConfig,
         tasks: Tasks,
         triggerConfig: TriggerConfig,
-        description: js.UndefOr[FlowDescription] = js.undefined,
-        sourceFlowConfig: js.UndefOr[SourceFlowConfig] = js.undefined
+        description: js.UndefOr[FlowDescription] = js.undefined
     ): UpdateFlowRequest = {
       val __obj = js.Dynamic.literal(
         "destinationFlowConfigList" -> destinationFlowConfigList.asInstanceOf[js.Any],
         "flowName" -> flowName.asInstanceOf[js.Any],
+        "sourceFlowConfig" -> sourceFlowConfig.asInstanceOf[js.Any],
         "tasks" -> tasks.asInstanceOf[js.Any],
         "triggerConfig" -> triggerConfig.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
-      sourceFlowConfig.foreach(__v => __obj.updateDynamic("sourceFlowConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateFlowRequest]
     }
   }
@@ -3373,16 +3614,29 @@ package object appflow {
   @js.native
   trait VeevaSourceProperties extends js.Object {
     var `object`: Object
+    var documentType: js.UndefOr[DocumentType]
+    var includeAllVersions: js.UndefOr[Boolean]
+    var includeRenditions: js.UndefOr[Boolean]
+    var includeSourceFiles: js.UndefOr[Boolean]
   }
 
   object VeevaSourceProperties {
     @inline
     def apply(
-        `object`: Object
+        `object`: Object,
+        documentType: js.UndefOr[DocumentType] = js.undefined,
+        includeAllVersions: js.UndefOr[Boolean] = js.undefined,
+        includeRenditions: js.UndefOr[Boolean] = js.undefined,
+        includeSourceFiles: js.UndefOr[Boolean] = js.undefined
     ): VeevaSourceProperties = {
       val __obj = js.Dynamic.literal(
         "object" -> `object`.asInstanceOf[js.Any]
       )
+
+      documentType.foreach(__v => __obj.updateDynamic("documentType")(__v.asInstanceOf[js.Any]))
+      includeAllVersions.foreach(__v => __obj.updateDynamic("includeAllVersions")(__v.asInstanceOf[js.Any]))
+      includeRenditions.foreach(__v => __obj.updateDynamic("includeRenditions")(__v.asInstanceOf[js.Any]))
+      includeSourceFiles.foreach(__v => __obj.updateDynamic("includeSourceFiles")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VeevaSourceProperties]
     }
   }
@@ -3435,6 +3689,8 @@ package object appflow {
     }
   }
 
+  /** The properties that are applied when Zendesk is used as a destination.
+    */
   @js.native
   trait ZendeskDestinationProperties extends js.Object {
     var `object`: Object

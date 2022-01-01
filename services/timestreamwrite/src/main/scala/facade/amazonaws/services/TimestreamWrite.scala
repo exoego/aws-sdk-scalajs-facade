@@ -14,11 +14,17 @@ package object timestreamwrite {
   type Dimensions = js.Array[Dimension]
   type Endpoints = js.Array[Endpoint]
   type MagneticStoreRetentionPeriodInDays = Double
+  type MeasureValues = js.Array[MeasureValue]
   type MemoryStoreRetentionPeriodInHours = Double
   type PaginationLimit = Int
   type RecordVersion = Double
   type Records = js.Array[Record]
+  type ResourceCreateAPIName = String
   type ResourceName = String
+  type S3BucketName = String
+  type S3ObjectKeyPrefix = String
+  type SchemaName = String
+  type SchemaValue = String
   type StringValue2048 = String
   type StringValue256 = String
   type TableList = js.Array[Table]
@@ -43,7 +49,7 @@ package object timestreamwrite {
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDatabaseFuture(params: UpdateDatabaseRequest): Future[UpdateDatabaseResponse] = service.updateDatabase(params).promise().toFuture
     @inline def updateTableFuture(params: UpdateTableRequest): Future[UpdateTableResponse] = service.updateTable(params).promise().toFuture
-    @inline def writeRecordsFuture(params: WriteRecordsRequest): Future[js.Object] = service.writeRecords(params).promise().toFuture
+    @inline def writeRecordsFuture(params: WriteRecordsRequest): Future[WriteRecordsResponse] = service.writeRecords(params).promise().toFuture
 
   }
 
@@ -66,7 +72,7 @@ package object timestreamwrite {
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDatabase(params: UpdateDatabaseRequest): Request[UpdateDatabaseResponse] = js.native
     def updateTable(params: UpdateTableRequest): Request[UpdateTableResponse] = js.native
-    def writeRecords(params: WriteRecordsRequest): Request[js.Object] = js.native
+    def writeRecords(params: WriteRecordsRequest): Request[WriteRecordsResponse] = js.native
   }
   object TimestreamWrite {
     @inline implicit def toOps(service: TimestreamWrite): TimestreamWriteOps = {
@@ -76,7 +82,7 @@ package object timestreamwrite {
 
   @js.native
   trait CreateDatabaseRequest extends js.Object {
-    var DatabaseName: ResourceName
+    var DatabaseName: ResourceCreateAPIName
     var KmsKeyId: js.UndefOr[StringValue2048]
     var Tags: js.UndefOr[TagList]
   }
@@ -84,7 +90,7 @@ package object timestreamwrite {
   object CreateDatabaseRequest {
     @inline
     def apply(
-        DatabaseName: ResourceName,
+        DatabaseName: ResourceCreateAPIName,
         KmsKeyId: js.UndefOr[StringValue2048] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDatabaseRequest = {
@@ -116,8 +122,9 @@ package object timestreamwrite {
 
   @js.native
   trait CreateTableRequest extends js.Object {
-    var DatabaseName: ResourceName
-    var TableName: ResourceName
+    var DatabaseName: ResourceCreateAPIName
+    var TableName: ResourceCreateAPIName
+    var MagneticStoreWriteProperties: js.UndefOr[MagneticStoreWriteProperties]
     var RetentionProperties: js.UndefOr[RetentionProperties]
     var Tags: js.UndefOr[TagList]
   }
@@ -125,8 +132,9 @@ package object timestreamwrite {
   object CreateTableRequest {
     @inline
     def apply(
-        DatabaseName: ResourceName,
-        TableName: ResourceName,
+        DatabaseName: ResourceCreateAPIName,
+        TableName: ResourceCreateAPIName,
+        MagneticStoreWriteProperties: js.UndefOr[MagneticStoreWriteProperties] = js.undefined,
         RetentionProperties: js.UndefOr[RetentionProperties] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateTableRequest = {
@@ -135,6 +143,7 @@ package object timestreamwrite {
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
 
+      MagneticStoreWriteProperties.foreach(__v => __obj.updateDynamic("MagneticStoreWriteProperties")(__v.asInstanceOf[js.Any]))
       RetentionProperties.foreach(__v => __obj.updateDynamic("RetentionProperties")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTableRequest]
@@ -328,16 +337,16 @@ package object timestreamwrite {
     */
   @js.native
   trait Dimension extends js.Object {
-    var Name: StringValue256
-    var Value: StringValue2048
+    var Name: SchemaName
+    var Value: SchemaValue
     var DimensionValueType: js.UndefOr[DimensionValueType]
   }
 
   object Dimension {
     @inline
     def apply(
-        Name: StringValue256,
-        Value: StringValue2048,
+        Name: SchemaName,
+        Value: SchemaValue,
         DimensionValueType: js.UndefOr[DimensionValueType] = js.undefined
     ): Dimension = {
       val __obj = js.Dynamic.literal(
@@ -484,14 +493,82 @@ package object timestreamwrite {
     }
   }
 
-  /** Record represents a time series data point being written into Timestream. Each record contains an array of dimensions. Dimensions represent the meta data attributes of a time series data point such as the instance name or availability zone of an EC2 instance. A record also contains the measure name which is the name of the measure being collected for example the CPU utilization of an EC2 instance. A record also contains the measure value and the value type which is the data type of the measure value. In addition, the record contains the timestamp when the measure was collected that the timestamp unit which represents the granularity of the timestamp.
+  /** The location to write error reports for records rejected, asynchronously, during magnetic store writes.
+    */
+  @js.native
+  trait MagneticStoreRejectedDataLocation extends js.Object {
+    var S3Configuration: js.UndefOr[S3Configuration]
+  }
+
+  object MagneticStoreRejectedDataLocation {
+    @inline
+    def apply(
+        S3Configuration: js.UndefOr[S3Configuration] = js.undefined
+    ): MagneticStoreRejectedDataLocation = {
+      val __obj = js.Dynamic.literal()
+      S3Configuration.foreach(__v => __obj.updateDynamic("S3Configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MagneticStoreRejectedDataLocation]
+    }
+  }
+
+  /** The set of properties on a table for configuring magnetic store writes.
+    */
+  @js.native
+  trait MagneticStoreWriteProperties extends js.Object {
+    var EnableMagneticStoreWrites: Boolean
+    var MagneticStoreRejectedDataLocation: js.UndefOr[MagneticStoreRejectedDataLocation]
+  }
+
+  object MagneticStoreWriteProperties {
+    @inline
+    def apply(
+        EnableMagneticStoreWrites: Boolean,
+        MagneticStoreRejectedDataLocation: js.UndefOr[MagneticStoreRejectedDataLocation] = js.undefined
+    ): MagneticStoreWriteProperties = {
+      val __obj = js.Dynamic.literal(
+        "EnableMagneticStoreWrites" -> EnableMagneticStoreWrites.asInstanceOf[js.Any]
+      )
+
+      MagneticStoreRejectedDataLocation.foreach(__v => __obj.updateDynamic("MagneticStoreRejectedDataLocation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MagneticStoreWriteProperties]
+    }
+  }
+
+  /** MeasureValue represents the data attribute of the time series. For example, the CPU utilization of an EC2 instance or the RPM of a wind turbine are measures. MeasureValue has both name and value. MeasureValue is only allowed for type <code>MULTI</code>. Using <code>MULTI</code> type, you can pass multiple data attributes associated with the same time series in a single record
+    */
+  @js.native
+  trait MeasureValue extends js.Object {
+    var Name: SchemaName
+    var Type: MeasureValueType
+    var Value: StringValue2048
+  }
+
+  object MeasureValue {
+    @inline
+    def apply(
+        Name: SchemaName,
+        Type: MeasureValueType,
+        Value: StringValue2048
+    ): MeasureValue = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MeasureValue]
+    }
+  }
+
+  /** Record represents a time series data point being written into Timestream. Each record contains an array of dimensions. Dimensions represent the meta data attributes of a time series data point such as the instance name or availability zone of an EC2 instance. A record also contains the measure name which is the name of the measure being collected for example the CPU utilization of an EC2 instance. A record also contains the measure value and the value type which is the data type of the measure value. In addition, the record contains the timestamp when the measure was collected that the timestamp unit which represents the granularity of the timestamp. Records have a <code>Version</code> field, which is a 64-bit <code>long</code> that you can use for updating data points. Writes of a duplicate record with the same dimension, timestamp, and measure name but different measure value will only succeed if the <code>Version</code> attribute of the record in the write request is higher
+    * than that of the existing record. Timestream defaults to a <code>Version</code> of <code>1</code> for records without the <code>Version</code> field.
     */
   @js.native
   trait Record extends js.Object {
     var Dimensions: js.UndefOr[Dimensions]
-    var MeasureName: js.UndefOr[StringValue256]
+    var MeasureName: js.UndefOr[SchemaName]
     var MeasureValue: js.UndefOr[StringValue2048]
     var MeasureValueType: js.UndefOr[MeasureValueType]
+    var MeasureValues: js.UndefOr[MeasureValues]
     var Time: js.UndefOr[StringValue256]
     var TimeUnit: js.UndefOr[TimeUnit]
     var Version: js.UndefOr[RecordVersion]
@@ -501,9 +578,10 @@ package object timestreamwrite {
     @inline
     def apply(
         Dimensions: js.UndefOr[Dimensions] = js.undefined,
-        MeasureName: js.UndefOr[StringValue256] = js.undefined,
+        MeasureName: js.UndefOr[SchemaName] = js.undefined,
         MeasureValue: js.UndefOr[StringValue2048] = js.undefined,
         MeasureValueType: js.UndefOr[MeasureValueType] = js.undefined,
+        MeasureValues: js.UndefOr[MeasureValues] = js.undefined,
         Time: js.UndefOr[StringValue256] = js.undefined,
         TimeUnit: js.UndefOr[TimeUnit] = js.undefined,
         Version: js.UndefOr[RecordVersion] = js.undefined
@@ -513,10 +591,35 @@ package object timestreamwrite {
       MeasureName.foreach(__v => __obj.updateDynamic("MeasureName")(__v.asInstanceOf[js.Any]))
       MeasureValue.foreach(__v => __obj.updateDynamic("MeasureValue")(__v.asInstanceOf[js.Any]))
       MeasureValueType.foreach(__v => __obj.updateDynamic("MeasureValueType")(__v.asInstanceOf[js.Any]))
+      MeasureValues.foreach(__v => __obj.updateDynamic("MeasureValues")(__v.asInstanceOf[js.Any]))
       Time.foreach(__v => __obj.updateDynamic("Time")(__v.asInstanceOf[js.Any]))
       TimeUnit.foreach(__v => __obj.updateDynamic("TimeUnit")(__v.asInstanceOf[js.Any]))
       Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Record]
+    }
+  }
+
+  /** Information on the records ingested by this request.
+    */
+  @js.native
+  trait RecordsIngested extends js.Object {
+    var MagneticStore: js.UndefOr[Int]
+    var MemoryStore: js.UndefOr[Int]
+    var Total: js.UndefOr[Int]
+  }
+
+  object RecordsIngested {
+    @inline
+    def apply(
+        MagneticStore: js.UndefOr[Int] = js.undefined,
+        MemoryStore: js.UndefOr[Int] = js.undefined,
+        Total: js.UndefOr[Int] = js.undefined
+    ): RecordsIngested = {
+      val __obj = js.Dynamic.literal()
+      MagneticStore.foreach(__v => __obj.updateDynamic("MagneticStore")(__v.asInstanceOf[js.Any]))
+      MemoryStore.foreach(__v => __obj.updateDynamic("MemoryStore")(__v.asInstanceOf[js.Any]))
+      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecordsIngested]
     }
   }
 
@@ -542,6 +645,33 @@ package object timestreamwrite {
     }
   }
 
+  /** Configuration specifing an S3 location.
+    */
+  @js.native
+  trait S3Configuration extends js.Object {
+    var BucketName: js.UndefOr[S3BucketName]
+    var EncryptionOption: js.UndefOr[S3EncryptionOption]
+    var KmsKeyId: js.UndefOr[StringValue2048]
+    var ObjectKeyPrefix: js.UndefOr[S3ObjectKeyPrefix]
+  }
+
+  object S3Configuration {
+    @inline
+    def apply(
+        BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        EncryptionOption: js.UndefOr[S3EncryptionOption] = js.undefined,
+        KmsKeyId: js.UndefOr[StringValue2048] = js.undefined,
+        ObjectKeyPrefix: js.UndefOr[S3ObjectKeyPrefix] = js.undefined
+    ): S3Configuration = {
+      val __obj = js.Dynamic.literal()
+      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
+      EncryptionOption.foreach(__v => __obj.updateDynamic("EncryptionOption")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      ObjectKeyPrefix.foreach(__v => __obj.updateDynamic("ObjectKeyPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3Configuration]
+    }
+  }
+
   /** Table represents a database table in Timestream. Tables contain one or more related time series. You can modify the retention duration of the memory store and the magnetic store for a table.
     */
   @js.native
@@ -550,6 +680,7 @@ package object timestreamwrite {
     var CreationTime: js.UndefOr[Date]
     var DatabaseName: js.UndefOr[ResourceName]
     var LastUpdatedTime: js.UndefOr[Date]
+    var MagneticStoreWriteProperties: js.UndefOr[MagneticStoreWriteProperties]
     var RetentionProperties: js.UndefOr[RetentionProperties]
     var TableName: js.UndefOr[ResourceName]
     var TableStatus: js.UndefOr[TableStatus]
@@ -562,6 +693,7 @@ package object timestreamwrite {
         CreationTime: js.UndefOr[Date] = js.undefined,
         DatabaseName: js.UndefOr[ResourceName] = js.undefined,
         LastUpdatedTime: js.UndefOr[Date] = js.undefined,
+        MagneticStoreWriteProperties: js.UndefOr[MagneticStoreWriteProperties] = js.undefined,
         RetentionProperties: js.UndefOr[RetentionProperties] = js.undefined,
         TableName: js.UndefOr[ResourceName] = js.undefined,
         TableStatus: js.UndefOr[TableStatus] = js.undefined
@@ -571,6 +703,7 @@ package object timestreamwrite {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
       LastUpdatedTime.foreach(__v => __obj.updateDynamic("LastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      MagneticStoreWriteProperties.foreach(__v => __obj.updateDynamic("MagneticStoreWriteProperties")(__v.asInstanceOf[js.Any]))
       RetentionProperties.foreach(__v => __obj.updateDynamic("RetentionProperties")(__v.asInstanceOf[js.Any]))
       TableName.foreach(__v => __obj.updateDynamic("TableName")(__v.asInstanceOf[js.Any]))
       TableStatus.foreach(__v => __obj.updateDynamic("TableStatus")(__v.asInstanceOf[js.Any]))
@@ -701,22 +834,26 @@ package object timestreamwrite {
   @js.native
   trait UpdateTableRequest extends js.Object {
     var DatabaseName: ResourceName
-    var RetentionProperties: RetentionProperties
     var TableName: ResourceName
+    var MagneticStoreWriteProperties: js.UndefOr[MagneticStoreWriteProperties]
+    var RetentionProperties: js.UndefOr[RetentionProperties]
   }
 
   object UpdateTableRequest {
     @inline
     def apply(
         DatabaseName: ResourceName,
-        RetentionProperties: RetentionProperties,
-        TableName: ResourceName
+        TableName: ResourceName,
+        MagneticStoreWriteProperties: js.UndefOr[MagneticStoreWriteProperties] = js.undefined,
+        RetentionProperties: js.UndefOr[RetentionProperties] = js.undefined
     ): UpdateTableRequest = {
       val __obj = js.Dynamic.literal(
         "DatabaseName" -> DatabaseName.asInstanceOf[js.Any],
-        "RetentionProperties" -> RetentionProperties.asInstanceOf[js.Any],
         "TableName" -> TableName.asInstanceOf[js.Any]
       )
+
+      MagneticStoreWriteProperties.foreach(__v => __obj.updateDynamic("MagneticStoreWriteProperties")(__v.asInstanceOf[js.Any]))
+      RetentionProperties.foreach(__v => __obj.updateDynamic("RetentionProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTableRequest]
     }
   }
@@ -761,6 +898,22 @@ package object timestreamwrite {
 
       CommonAttributes.foreach(__v => __obj.updateDynamic("CommonAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WriteRecordsRequest]
+    }
+  }
+
+  @js.native
+  trait WriteRecordsResponse extends js.Object {
+    var RecordsIngested: js.UndefOr[RecordsIngested]
+  }
+
+  object WriteRecordsResponse {
+    @inline
+    def apply(
+        RecordsIngested: js.UndefOr[RecordsIngested] = js.undefined
+    ): WriteRecordsResponse = {
+      val __obj = js.Dynamic.literal()
+      RecordsIngested.foreach(__v => __obj.updateDynamic("RecordsIngested")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WriteRecordsResponse]
     }
   }
 }

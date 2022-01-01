@@ -11,6 +11,23 @@ object Architecture {
   inline def values: js.Array[Architecture] = js.Array(X86_64, ARM64, ARMHF)
 }
 
+type ComputeType = "CPU" | "GPU_AND_CPU"
+object ComputeType {
+  inline val CPU: "CPU" = "CPU"
+  inline val GPU_AND_CPU: "GPU_AND_CPU" = "GPU_AND_CPU"
+
+  inline def values: js.Array[ComputeType] = js.Array(CPU, GPU_AND_CPU)
+}
+
+type DataSourceType = "Prefix" | "Archive" | "File"
+object DataSourceType {
+  inline val Prefix: "Prefix" = "Prefix"
+  inline val Archive: "Archive" = "Archive"
+  inline val File: "File" = "File"
+
+  inline def values: js.Array[DataSourceType] = js.Array(Prefix, Archive, File)
+}
+
 type DeploymentJobErrorCode = "ResourceNotFound" | "EnvironmentSetupError" | "EtagMismatch" | "FailureThresholdBreached" | "RobotDeploymentAborted" | "RobotDeploymentNoResponse" | "RobotAgentConnectionTimeout" | "GreengrassDeploymentFailed" | "InvalidGreengrassGroup" | "MissingRobotArchitecture" | "MissingRobotApplicationArchitecture" | "MissingRobotDeploymentResource" | "GreengrassGroupVersionDoesNotExist" | "LambdaDeleted" | "ExtractingBundleFailure" | "PreLaunchFileFailure" | "PostLaunchFileFailure" | "BadPermissionError" | "DownloadConditionFailed" | "BadLambdaAssociated" | "InternalServerError" | "RobotApplicationDoesNotExist" | "DeploymentFleetDoesNotExist" | "FleetDeploymentTimeout"
 object DeploymentJobErrorCode {
   inline val ResourceNotFound: "ResourceNotFound" = "ResourceNotFound"
@@ -114,21 +131,23 @@ object RobotDeploymentStep {
   inline def values: js.Array[RobotDeploymentStep] = js.Array(Validating, DownloadingExtracting, ExecutingDownloadCondition, ExecutingPreLaunch, Launching, ExecutingPostLaunch, Finished)
 }
 
-type RobotSoftwareSuiteType = "ROS" | "ROS2"
+type RobotSoftwareSuiteType = "ROS" | "ROS2" | "General"
 object RobotSoftwareSuiteType {
   inline val ROS: "ROS" = "ROS"
   inline val ROS2: "ROS2" = "ROS2"
+  inline val General: "General" = "General"
 
-  inline def values: js.Array[RobotSoftwareSuiteType] = js.Array(ROS, ROS2)
+  inline def values: js.Array[RobotSoftwareSuiteType] = js.Array(ROS, ROS2, General)
 }
 
-type RobotSoftwareSuiteVersionType = "Kinetic" | "Melodic" | "Dashing"
+type RobotSoftwareSuiteVersionType = "Kinetic" | "Melodic" | "Dashing" | "Foxy"
 object RobotSoftwareSuiteVersionType {
   inline val Kinetic: "Kinetic" = "Kinetic"
   inline val Melodic: "Melodic" = "Melodic"
   inline val Dashing: "Dashing" = "Dashing"
+  inline val Foxy: "Foxy" = "Foxy"
 
-  inline def values: js.Array[RobotSoftwareSuiteVersionType] = js.Array(Kinetic, Melodic, Dashing)
+  inline def values: js.Array[RobotSoftwareSuiteVersionType] = js.Array(Kinetic, Melodic, Dashing, Foxy)
 }
 
 type RobotStatus = "Available" | "Registered" | "PendingNewDeployment" | "Deploying" | "Failed" | "InSync" | "NoResponse"
@@ -251,12 +270,13 @@ object SimulationJobStatus {
   inline def values: js.Array[SimulationJobStatus] = js.Array(Pending, Preparing, Running, Restarting, Completed, Failed, RunningFailed, Terminating, Terminated, Canceled)
 }
 
-type SimulationSoftwareSuiteType = "Gazebo" | "RosbagPlay"
+type SimulationSoftwareSuiteType = "Gazebo" | "RosbagPlay" | "SimulationRuntime"
 object SimulationSoftwareSuiteType {
   inline val Gazebo: "Gazebo" = "Gazebo"
   inline val RosbagPlay: "RosbagPlay" = "RosbagPlay"
+  inline val SimulationRuntime: "SimulationRuntime" = "SimulationRuntime"
 
-  inline def values: js.Array[SimulationSoftwareSuiteType] = js.Array(Gazebo, RosbagPlay)
+  inline def values: js.Array[SimulationSoftwareSuiteType] = js.Array(Gazebo, RosbagPlay, SimulationRuntime)
 }
 
 type UploadBehavior = "UPLOAD_ON_TERMINATE" | "UPLOAD_ROLLING_AUTO_REMOVE"

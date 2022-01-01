@@ -42,6 +42,7 @@ package object ecs {
   type HostEntryList = js.Array[HostEntry]
   type InferenceAcceleratorOverrides = js.Array[InferenceAcceleratorOverride]
   type InferenceAccelerators = js.Array[InferenceAccelerator]
+  type InstanceHealthCheckResultList = js.Array[InstanceHealthCheckResult]
   type LoadBalancers = js.Array[LoadBalancer]
   type LogConfigurationOptionsMap = js.Dictionary[String]
   type ManagedAgentStateChanges = js.Array[ManagedAgentStateChange]
@@ -257,7 +258,7 @@ package object ecs {
     }
   }
 
-  /** An attribute is a name-value pair associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes|Attributes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** An attribute is a name-value pair that's associated with an Amazon ECS object. Attributes enable you to extend the Amazon ECS data model by adding custom metadata to your resources. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes|Attributes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait Attribute extends js.Object {
@@ -359,7 +360,7 @@ package object ecs {
     }
   }
 
-  /** The details of a capacity provider.
+  /** The details for a capacity provider.
     */
   @js.native
   trait CapacityProvider extends js.Object {
@@ -395,8 +396,8 @@ package object ecs {
     }
   }
 
-  /** The details of a capacity provider strategy. A capacity provider strategy can be set when using the <a>RunTask</a> or <a>CreateCluster</a> APIs or as the default capacity provider strategy for a cluster with the <a>CreateCluster</a> API. Only capacity providers that are already associated with a cluster and have an <code>ACTIVE</code> or <code>UPDATING</code> status can be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with a cluster. If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation. To use a AWS Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The AWS Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used in a
-    * capacity provider strategy.
+  /** The details of a capacity provider strategy. A capacity provider strategy can be set when using the <a>RunTask</a> or <a>CreateCluster</a> APIs or as the default capacity provider strategy for a cluster with the <a>CreateCluster</a> API. Only capacity providers that are already associated with a cluster and have an <code>ACTIVE</code> or <code>UPDATING</code> status can be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with a cluster. If specifying a capacity provider that uses an Auto Scaling group, the capacity provider must already be created. New Auto Scaling group capacity providers can be created with the <a>CreateCapacityProvider</a> API operation. To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are available to all accounts and only need to be associated with a cluster to be used in a
+    * capacity provider strategy. A capacity provider strategy may contain a maximum of 6 capacity providers.
     */
   @js.native
   trait CapacityProviderStrategyItem extends js.Object {
@@ -422,7 +423,7 @@ package object ecs {
     }
   }
 
-  /** A regional grouping of one or more container instances on which you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.
+  /** A regional grouping of one or more container instances where you can run task requests. Each account receives a default cluster the first time you use the Amazon ECS service, but you may also create other clusters. Clusters may contain more than one instance type simultaneously.
     */
   @js.native
   trait Cluster extends js.Object {
@@ -521,7 +522,7 @@ package object ecs {
     }
   }
 
-  /** A Docker container that is part of a task.
+  /** A Docker container that's part of a task.
     */
   @js.native
   trait Container extends js.Object {
@@ -719,10 +720,10 @@ package object ecs {
     }
   }
 
-  /** The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed. Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If you are using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more
+  /** The dependencies defined for container startup and shutdown. A container can contain multiple dependencies. When a dependency is defined for container startup, for container shutdown it is reversed. Your Amazon ECS container instances require at least version 1.26.0 of the container agent to enable container dependencies. However, we recommend using the latest container agent version. For information about checking your agent version and updating to the latest version, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container instances are launched from version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more
     * information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
-    * '''Note:'''For tasks using the Fargate launch type, this parameter requires that the task or service uses platform version 1.3.0 or later.
+    * '''Note:'''For tasks that use the Fargate launch type, the task or service requires the following platforms: * Linux platform version <code>1.3.0</code> or later. * Windows platform version <code>1.0.0</code> or later.
     */
   @js.native
   trait ContainerDependency extends js.Object {
@@ -744,7 +745,7 @@ package object ecs {
     }
   }
 
-  /** An EC2 instance that is running the Amazon ECS agent and has been registered with a cluster.
+  /** An EC2 instance that's running the Amazon ECS agent and has been registered with a cluster.
     */
   @js.native
   trait ContainerInstance extends js.Object {
@@ -755,6 +756,7 @@ package object ecs {
     var capacityProviderName: js.UndefOr[String]
     var containerInstanceArn: js.UndefOr[String]
     var ec2InstanceId: js.UndefOr[String]
+    var healthStatus: js.UndefOr[ContainerInstanceHealthStatus]
     var pendingTasksCount: js.UndefOr[Int]
     var registeredAt: js.UndefOr[Timestamp]
     var registeredResources: js.UndefOr[Resources]
@@ -777,6 +779,7 @@ package object ecs {
         capacityProviderName: js.UndefOr[String] = js.undefined,
         containerInstanceArn: js.UndefOr[String] = js.undefined,
         ec2InstanceId: js.UndefOr[String] = js.undefined,
+        healthStatus: js.UndefOr[ContainerInstanceHealthStatus] = js.undefined,
         pendingTasksCount: js.UndefOr[Int] = js.undefined,
         registeredAt: js.UndefOr[Timestamp] = js.undefined,
         registeredResources: js.UndefOr[Resources] = js.undefined,
@@ -796,6 +799,7 @@ package object ecs {
       capacityProviderName.foreach(__v => __obj.updateDynamic("capacityProviderName")(__v.asInstanceOf[js.Any]))
       containerInstanceArn.foreach(__v => __obj.updateDynamic("containerInstanceArn")(__v.asInstanceOf[js.Any]))
       ec2InstanceId.foreach(__v => __obj.updateDynamic("ec2InstanceId")(__v.asInstanceOf[js.Any]))
+      healthStatus.foreach(__v => __obj.updateDynamic("healthStatus")(__v.asInstanceOf[js.Any]))
       pendingTasksCount.foreach(__v => __obj.updateDynamic("pendingTasksCount")(__v.asInstanceOf[js.Any]))
       registeredAt.foreach(__v => __obj.updateDynamic("registeredAt")(__v.asInstanceOf[js.Any]))
       registeredResources.foreach(__v => __obj.updateDynamic("registeredResources")(__v.asInstanceOf[js.Any]))
@@ -810,7 +814,28 @@ package object ecs {
     }
   }
 
-  /** The overrides that should be sent to a container. An empty container override can be passed in. An example of an empty container override would be <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included.
+  /** An object representing the health status of the container instance.
+    */
+  @js.native
+  trait ContainerInstanceHealthStatus extends js.Object {
+    var details: js.UndefOr[InstanceHealthCheckResultList]
+    var overallStatus: js.UndefOr[InstanceHealthCheckState]
+  }
+
+  object ContainerInstanceHealthStatus {
+    @inline
+    def apply(
+        details: js.UndefOr[InstanceHealthCheckResultList] = js.undefined,
+        overallStatus: js.UndefOr[InstanceHealthCheckState] = js.undefined
+    ): ContainerInstanceHealthStatus = {
+      val __obj = js.Dynamic.literal()
+      details.foreach(__v => __obj.updateDynamic("details")(__v.asInstanceOf[js.Any]))
+      overallStatus.foreach(__v => __obj.updateDynamic("overallStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContainerInstanceHealthStatus]
+    }
+  }
+
+  /** The overrides that are sent to a container. An empty container override can be passed in. An example of an empty container override is <code>{"containerOverrides": [ ] }</code>. If a non-empty container override is specified, the <code>name</code> parameter must be included.
     */
   @js.native
   trait ContainerOverride extends js.Object {
@@ -849,7 +874,7 @@ package object ecs {
     }
   }
 
-  /** An object representing a change in state for a container.
+  /** An object that represents a change in state for a container.
     */
   @js.native
   trait ContainerStateChange extends js.Object {
@@ -1374,6 +1399,7 @@ package object ecs {
     var launchType: js.UndefOr[LaunchType]
     var networkConfiguration: js.UndefOr[NetworkConfiguration]
     var pendingCount: js.UndefOr[Int]
+    var platformFamily: js.UndefOr[String]
     var platformVersion: js.UndefOr[String]
     var rolloutState: js.UndefOr[DeploymentRolloutState]
     var rolloutStateReason: js.UndefOr[String]
@@ -1394,6 +1420,7 @@ package object ecs {
         launchType: js.UndefOr[LaunchType] = js.undefined,
         networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
         pendingCount: js.UndefOr[Int] = js.undefined,
+        platformFamily: js.UndefOr[String] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
         rolloutState: js.UndefOr[DeploymentRolloutState] = js.undefined,
         rolloutStateReason: js.UndefOr[String] = js.undefined,
@@ -1411,6 +1438,7 @@ package object ecs {
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
       pendingCount.foreach(__v => __obj.updateDynamic("pendingCount")(__v.asInstanceOf[js.Any]))
+      platformFamily.foreach(__v => __obj.updateDynamic("platformFamily")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
       rolloutState.foreach(__v => __obj.updateDynamic("rolloutState")(__v.asInstanceOf[js.Any]))
       rolloutStateReason.foreach(__v => __obj.updateDynamic("rolloutStateReason")(__v.asInstanceOf[js.Any]))
@@ -1422,7 +1450,7 @@ package object ecs {
     }
   }
 
-  /** '''Note:'''The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type that are not behind a Classic Load Balancer. The ```deployment circuit breaker``` determines whether a service deployment will fail if the service can't reach a steady state. If enabled, a service deployment will transition to a failed state and stop launching new tasks. You can also enable Amazon ECS to roll back your service to the last completed deployment after a failure. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html|Rolling update]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** '''Note:'''The deployment circuit breaker can only be used for services using the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic Load Balancer. The ```deployment circuit breaker``` determines whether a service deployment will fail if the service can't reach a steady state. If enabled, a service deployment will transition to a failed state and stop launching new tasks. You can also enable Amazon ECS to roll back your service to the last completed deployment after a failure. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html|Rolling update]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait DeploymentCircuitBreaker extends js.Object {
@@ -1924,7 +1952,7 @@ package object ecs {
     }
   }
 
-  /** This parameter is specified when you are using Docker volumes. Docker volumes are only supported when you are using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead.
+  /** This parameter is specified when you're using Docker volumes. Docker volumes are only supported when you're using the EC2 launch type. Windows containers only support the use of the <code>local</code> driver. To use bind mounts, specify a <code>host</code> instead.
     */
   @js.native
   trait DockerVolumeConfiguration extends js.Object {
@@ -1975,7 +2003,7 @@ package object ecs {
     }
   }
 
-  /** This parameter is specified when you are using an Amazon Elastic File System file system for task storage. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html|Amazon EFS Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** This parameter is specified when you're using an Amazon Elastic File System file system for task storage. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/efs-volumes.html|Amazon EFS Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait EFSVolumeConfiguration extends js.Object {
@@ -2007,8 +2035,8 @@ package object ecs {
     }
   }
 
-  /** A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information on the environment variable file syntax, see [[https://docs.docker.com/compose/env-file/|Declare default environment variables in file]]. If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they are processed from the top down. It is recommended to use unique variable names. For more information, see
-    * [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html|Specifying environment variables]] in the <i>Amazon Elastic Container Service Developer Guide</i>. This field is only valid for containers in Fargate tasks that use platform version <code>1.4.0</code> or later.
+  /** A list of files containing the environment variables to pass to a container. You can specify up to ten environment files. The file must have a <code>.env</code> file extension. Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code> format. Lines beginning with <code>#</code> are treated as comments and are ignored. For more information about the environment variable file syntax, see [[https://docs.docker.com/compose/env-file/|Declare default environment variables in file]]. If there are environment variables specified using the <code>environment</code> parameter in a container definition, they take precedence over the variables contained within an environment file. If multiple environment files are specified that contain the same variable, they're processed from the top down. We recommend that you use unique variable names. For more information, see
+    * [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/taskdef-envfiles.html|Specifying environment variables]] in the <i>Amazon Elastic Container Service Developer Guide</i>. This parameter is only supported for tasks hosted on Fargate using the following platform versions: * Linux platform version <code>1.4.0</code> or later. * Windows platform version <code>1.0.0</code> or later.
     */
   @js.native
   trait EnvironmentFile extends js.Object {
@@ -2027,6 +2055,27 @@ package object ecs {
         "value" -> value.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[EnvironmentFile]
+    }
+  }
+
+  /** The amount of ephemeral storage to allocate for the task. This parameter is used to expand the total amount of ephemeral storage available, beyond the default amount, for tasks hosted on Fargate. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html|Fargate task storage]] in the <i>Amazon ECS User Guide for Fargate</i>.
+    *
+    * '''Note:'''This parameter is only supported for tasks hosted on Fargate using the following platform versions: * Linux platform version <code>1.4.0</code> or later. * Windows platform version <code>1.0.0</code> or later.
+    */
+  @js.native
+  trait EphemeralStorage extends js.Object {
+    var sizeInGiB: Int
+  }
+
+  object EphemeralStorage {
+    @inline
+    def apply(
+        sizeInGiB: Int
+    ): EphemeralStorage = {
+      val __obj = js.Dynamic.literal(
+        "sizeInGiB" -> sizeInGiB.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EphemeralStorage]
     }
   }
 
@@ -2167,7 +2216,7 @@ package object ecs {
     }
   }
 
-  /** This parameter is specified when you are using [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html|Amazon FSx for Windows File Server]] file system for task storage. For more information and the input format, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html|Amazon FSx for Windows File Server Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** This parameter is specified when you're using [[https://docs.aws.amazon.com/fsx/latest/WindowsGuide/what-is.html|Amazon FSx for Windows File Server]] file system for task storage. For more information and the input format, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/wfsx-volumes.html|Amazon FSx for Windows File Server Volumes]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait FSxWindowsFileServerVolumeConfiguration extends js.Object {
@@ -2239,9 +2288,9 @@ package object ecs {
     }
   }
 
-  /** An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile). You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console. The following describes the possible <code>healthStatus</code> values for a container: * <code>HEALTHY</code>-The container health check has passed successfully. * <code>UNHEALTHY</code>-The container health check has failed. * <code>UNKNOWN</code>-The container health check is being evaluated or there is no container health check defined. The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task. * <code>HEALTHY</code>-All
-    * essential containers within the task have passed their health checks. * <code>UNHEALTHY</code>-One or more essential containers have failed their health check. * <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined. If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it. The following are notes about container health check support: * Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]]. * Container health checks are supported for Fargate tasks if you are using platform version
-    * 1.1.0 or greater. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html|AWS Fargate Platform Versions]]. * Container health checks are not supported for tasks that are part of a service that is configured to use a Classic Load Balancer.
+  /** An object representing a container health check. Health check parameters that are specified in a container definition override any Docker health checks that exist in the container image (such as those specified in a parent image or from the image's Dockerfile). You can view the health status of both individual containers and a task with the DescribeTasks API operation or when viewing the task details in the console. The following describes the possible <code>healthStatus</code> values for a container: * <code>HEALTHY</code>-The container health check has passed successfully. * <code>UNHEALTHY</code>-The container health check has failed. * <code>UNKNOWN</code>-The container health check is being evaluated or there's no container health check defined. The following describes the possible <code>healthStatus</code> values for a task. The container health check status of nonessential containers do not have an effect on the health status of a task. * <code>HEALTHY</code>-All essential
+    * containers within the task have passed their health checks. * <code>UNHEALTHY</code>-One or more essential containers have failed their health check. * <code>UNKNOWN</code>-The essential containers within the task are still having their health checks evaluated or there are no container health checks defined. If a task is run manually, and not as part of a service, the task will continue its lifecycle regardless of its health status. For tasks that are part of a service, if the task reports as unhealthy then the task will be stopped and the service scheduler will replace it. The following are notes about container health check support: * Container health checks require version 1.17.0 or greater of the Amazon ECS container agent. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html|Updating the Amazon ECS Container Agent]]. * Container health checks are supported for Fargate tasks if you're using platform version 1.1.0 or
+    * greater. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html|Fargate Platform Versions]]. * Container health checks aren't supported for tasks that are part of a service that's configured to use a Classic Load Balancer.
     */
   @js.native
   trait HealthCheck extends js.Object {
@@ -2313,7 +2362,7 @@ package object ecs {
     }
   }
 
-  /** Details on a Elastic Inference accelerator. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** Details on an Elastic Inference accelerator. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait InferenceAccelerator extends js.Object {
@@ -2335,7 +2384,7 @@ package object ecs {
     }
   }
 
-  /** Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+  /** Details on an Elastic Inference accelerator task override. This parameter is used to override the Elastic Inference accelerator specified in the task definition. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     */
   @js.native
   trait InferenceAcceleratorOverride extends js.Object {
@@ -2356,7 +2405,34 @@ package object ecs {
     }
   }
 
-  /** The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information on the default capabilities and the non-default available capabilities, see [[https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities|Runtime privilege and Linux capabilities]] in the <i>Docker run reference</i>. For more detailed information on these Linux capabilities, see the [[http://man7.org/linux/man-pages/man7/capabilities.7.html|capabilities(7)]] Linux manual page.
+  /** An object representing the result of a container instance health status check.
+    */
+  @js.native
+  trait InstanceHealthCheckResult extends js.Object {
+    var lastStatusChange: js.UndefOr[Timestamp]
+    var lastUpdated: js.UndefOr[Timestamp]
+    var status: js.UndefOr[InstanceHealthCheckState]
+    var `type`: js.UndefOr[InstanceHealthCheckType]
+  }
+
+  object InstanceHealthCheckResult {
+    @inline
+    def apply(
+        lastStatusChange: js.UndefOr[Timestamp] = js.undefined,
+        lastUpdated: js.UndefOr[Timestamp] = js.undefined,
+        status: js.UndefOr[InstanceHealthCheckState] = js.undefined,
+        `type`: js.UndefOr[InstanceHealthCheckType] = js.undefined
+    ): InstanceHealthCheckResult = {
+      val __obj = js.Dynamic.literal()
+      lastStatusChange.foreach(__v => __obj.updateDynamic("lastStatusChange")(__v.asInstanceOf[js.Any]))
+      lastUpdated.foreach(__v => __obj.updateDynamic("lastUpdated")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceHealthCheckResult]
+    }
+  }
+
+  /** The Linux capabilities for the container that are added to or dropped from the default configuration provided by Docker. For more information about the default capabilities and the non-default available capabilities, see [[https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities|Runtime privilege and Linux capabilities]] in the <i>Docker run reference</i>. For more detailed information about these Linux capabilities, see the [[http://man7.org/linux/man-pages/man7/capabilities.7.html|capabilities(7)]] Linux manual page.
     */
   @js.native
   trait KernelCapabilities extends js.Object {
@@ -2878,9 +2954,9 @@ package object ecs {
     }
   }
 
-  /** The log configuration for the container. This parameter maps to <code>LogConfig</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses; however the container may use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information on the options for different supported log drivers, see [[https://docs.docker.com/engine/admin/logging/overview/|Configure logging drivers]] in the Docker documentation. The following should be noted when specifying a log configuration for your containers: * Amazon ECS currently supports a subset of the logging drivers available to
-    * the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent. * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. * For tasks hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html|Amazon ECS container agent configuration]] in the <i>Amazon Elastic Container Service Developer Guide</i>. * For tasks on AWS Fargate, because you do not have access to the underlying infrastructure your tasks are hosted on, any additional software needed will have to be installed outside of the task. For example, the Fluentd output aggregators or a remote
-    * host running Logstash to send Gelf logs to.
+  /** The log configuration for the container. This parameter maps to <code>LogConfig</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker run</code> </a>. By default, containers use the same logging driver that the Docker daemon uses. However, the container might use a different logging driver than the Docker daemon by specifying a log driver configuration in the container definition. For more information about the options for different supported log drivers, see [[https://docs.docker.com/engine/admin/logging/overview/|Configure logging drivers]] in the Docker documentation. Understand the following when specifying a log configuration for your containers. * Amazon ECS currently supports a subset of the logging drivers available to
+    * the Docker daemon (shown in the valid values below). Additional log drivers may be available in future releases of the Amazon ECS container agent. * This parameter requires version 1.18 of the Docker Remote API or greater on your container instance. * For tasks that are hosted on Amazon EC2 instances, the Amazon ECS container agent must register the available logging drivers with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code> environment variable before containers placed on that instance can use these log configuration options. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html|Amazon ECS container agent configuration]] in the <i>Amazon Elastic Container Service Developer Guide</i>. * For tasks that are on Fargate, because you don't have access to the underlying infrastructure your tasks are hosted on, any additional software needed must be installed outside of the task. For example, the Fluentd output aggregators or a
+    * remote host running Logstash to send Gelf logs to.
     */
   @js.native
   trait LogConfiguration extends js.Object {
@@ -2962,7 +3038,7 @@ package object ecs {
     }
   }
 
-  /** The managed scaling settings for the Auto Scaling group capacity provider. When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS-managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling|Using Managed Scaling]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
+  /** The managed scaling settings for the Auto Scaling group capacity provider. When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using an Amazon ECS managed CloudWatch metric with the specified <code>targetCapacity</code> value as the target value for the metric. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling|Using Managed Scaling]] in the <i>Amazon Elastic Container Service Developer Guide</i>. If managed scaling is disabled, the user must manage the scaling of the Auto Scaling group.
     */
   @js.native
   trait ManagedScaling extends js.Object {
@@ -2992,7 +3068,7 @@ package object ecs {
     }
   }
 
-  /** Details on a volume mount point that is used in a container definition.
+  /** Details for a volume mount point that's used in a container definition.
     */
   @js.native
   trait MountPoint extends js.Object {
@@ -3087,7 +3163,7 @@ package object ecs {
 
   /** An object representing a constraint on task placement. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task Placement Constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
-    * '''Note:'''If you are using the Fargate launch type, task placement constraints are not supported.
+    * '''Note:'''If you're using the Fargate launch type, task placement constraints aren't supported.
     */
   @js.native
   trait PlacementConstraint extends js.Object {
@@ -3151,7 +3227,9 @@ package object ecs {
     }
   }
 
-  /** Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition. If you are using containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, exposed ports should be specified using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
+  /** Port mappings allow containers to access ports on the host container instance to send or receive traffic. Port mappings are specified as part of the container definition. If you use containers in a task with the <code>awsvpc</code> or <code>host</code> network mode, specify the exposed ports using <code>containerPort</code>. The <code>hostPort</code> can be left blank or it must be the same value as the <code>containerPort</code>.
+    *
+    * '''Note:'''You can't expose the same container port for multiple protocols. If you attempt this, an error is returned. After a task reaches the <code>RUNNING</code> status, manual and automatic host and container port assignments are visible in the <code>networkBindings</code> section of <a>DescribeTasks</a> API responses.
     */
   @js.native
   trait PortMapping extends js.Object {
@@ -3175,7 +3253,7 @@ package object ecs {
     }
   }
 
-  /** The configuration details for the App Mesh proxy. For tasks using the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS-optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]]
+  /** The configuration details for the App Mesh proxy. For tasks that use the EC2 launch type, the container instances require at least version 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code> package to enable a proxy configuration. If your container instances are launched from the Amazon ECS optimized AMI version <code>20190301</code> or later, then they contain the required versions of the container agent and <code>ecs-init</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html|Amazon ECS-optimized Linux AMI]]
     */
   @js.native
   trait ProxyConfiguration extends js.Object {
@@ -3414,6 +3492,7 @@ package object ecs {
     var containerDefinitions: ContainerDefinitions
     var family: String
     var cpu: js.UndefOr[String]
+    var ephemeralStorage: js.UndefOr[EphemeralStorage]
     var executionRoleArn: js.UndefOr[String]
     var inferenceAccelerators: js.UndefOr[InferenceAccelerators]
     var ipcMode: js.UndefOr[IpcMode]
@@ -3423,6 +3502,7 @@ package object ecs {
     var placementConstraints: js.UndefOr[TaskDefinitionPlacementConstraints]
     var proxyConfiguration: js.UndefOr[ProxyConfiguration]
     var requiresCompatibilities: js.UndefOr[CompatibilityList]
+    var runtimePlatform: js.UndefOr[RuntimePlatform]
     var tags: js.UndefOr[Tags]
     var taskRoleArn: js.UndefOr[String]
     var volumes: js.UndefOr[VolumeList]
@@ -3434,6 +3514,7 @@ package object ecs {
         containerDefinitions: ContainerDefinitions,
         family: String,
         cpu: js.UndefOr[String] = js.undefined,
+        ephemeralStorage: js.UndefOr[EphemeralStorage] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
         inferenceAccelerators: js.UndefOr[InferenceAccelerators] = js.undefined,
         ipcMode: js.UndefOr[IpcMode] = js.undefined,
@@ -3443,6 +3524,7 @@ package object ecs {
         placementConstraints: js.UndefOr[TaskDefinitionPlacementConstraints] = js.undefined,
         proxyConfiguration: js.UndefOr[ProxyConfiguration] = js.undefined,
         requiresCompatibilities: js.UndefOr[CompatibilityList] = js.undefined,
+        runtimePlatform: js.UndefOr[RuntimePlatform] = js.undefined,
         tags: js.UndefOr[Tags] = js.undefined,
         taskRoleArn: js.UndefOr[String] = js.undefined,
         volumes: js.UndefOr[VolumeList] = js.undefined
@@ -3453,6 +3535,7 @@ package object ecs {
       )
 
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
+      ephemeralStorage.foreach(__v => __obj.updateDynamic("ephemeralStorage")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
       inferenceAccelerators.foreach(__v => __obj.updateDynamic("inferenceAccelerators")(__v.asInstanceOf[js.Any]))
       ipcMode.foreach(__v => __obj.updateDynamic("ipcMode")(__v.asInstanceOf[js.Any]))
@@ -3462,6 +3545,7 @@ package object ecs {
       placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
       proxyConfiguration.foreach(__v => __obj.updateDynamic("proxyConfiguration")(__v.asInstanceOf[js.Any]))
       requiresCompatibilities.foreach(__v => __obj.updateDynamic("requiresCompatibilities")(__v.asInstanceOf[js.Any]))
+      runtimePlatform.foreach(__v => __obj.updateDynamic("runtimePlatform")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       taskRoleArn.foreach(__v => __obj.updateDynamic("taskRoleArn")(__v.asInstanceOf[js.Any]))
       volumes.foreach(__v => __obj.updateDynamic("volumes")(__v.asInstanceOf[js.Any]))
@@ -3540,7 +3624,7 @@ package object ecs {
     }
   }
 
-  /** The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html|Working with GPUs on Amazon ECS]] or [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-eia.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>
+  /** The type and amount of a resource to assign to a container. The supported resource types are GPUs and Elastic Inference accelerators. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html|Working with GPUs on Amazon ECS]] or [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html|Working with Amazon Elastic Inference on Amazon ECS]] in the <i>Amazon Elastic Container Service Developer Guide</i>
     */
   @js.native
   trait ResourceRequirement extends js.Object {
@@ -3647,6 +3731,27 @@ package object ecs {
     }
   }
 
+  /** Information about the platform for the Amazon ECS service or task. For more informataion about <code>RuntimePlatform</code>, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform|RuntimePlatform]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    */
+  @js.native
+  trait RuntimePlatform extends js.Object {
+    var cpuArchitecture: js.UndefOr[CPUArchitecture]
+    var operatingSystemFamily: js.UndefOr[OSFamily]
+  }
+
+  object RuntimePlatform {
+    @inline
+    def apply(
+        cpuArchitecture: js.UndefOr[CPUArchitecture] = js.undefined,
+        operatingSystemFamily: js.UndefOr[OSFamily] = js.undefined
+    ): RuntimePlatform = {
+      val __obj = js.Dynamic.literal()
+      cpuArchitecture.foreach(__v => __obj.updateDynamic("cpuArchitecture")(__v.asInstanceOf[js.Any]))
+      operatingSystemFamily.foreach(__v => __obj.updateDynamic("operatingSystemFamily")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RuntimePlatform]
+    }
+  }
+
   /** A floating-point percentage of the desired number of tasks to place and keep running in the task set.
     */
   @js.native
@@ -3712,6 +3817,7 @@ package object ecs {
     var pendingCount: js.UndefOr[Int]
     var placementConstraints: js.UndefOr[PlacementConstraints]
     var placementStrategy: js.UndefOr[PlacementStrategies]
+    var platformFamily: js.UndefOr[String]
     var platformVersion: js.UndefOr[String]
     var propagateTags: js.UndefOr[PropagateTags]
     var roleArn: js.UndefOr[String]
@@ -3747,6 +3853,7 @@ package object ecs {
         pendingCount: js.UndefOr[Int] = js.undefined,
         placementConstraints: js.UndefOr[PlacementConstraints] = js.undefined,
         placementStrategy: js.UndefOr[PlacementStrategies] = js.undefined,
+        platformFamily: js.UndefOr[String] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
         propagateTags: js.UndefOr[PropagateTags] = js.undefined,
         roleArn: js.UndefOr[String] = js.undefined,
@@ -3779,6 +3886,7 @@ package object ecs {
       pendingCount.foreach(__v => __obj.updateDynamic("pendingCount")(__v.asInstanceOf[js.Any]))
       placementConstraints.foreach(__v => __obj.updateDynamic("placementConstraints")(__v.asInstanceOf[js.Any]))
       placementStrategy.foreach(__v => __obj.updateDynamic("placementStrategy")(__v.asInstanceOf[js.Any]))
+      platformFamily.foreach(__v => __obj.updateDynamic("platformFamily")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
       propagateTags.foreach(__v => __obj.updateDynamic("propagateTags")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
@@ -3795,7 +3903,7 @@ package object ecs {
     }
   }
 
-  /** Details on an event associated with a service.
+  /** The details for an event that's associated with a service.
     */
   @js.native
   trait ServiceEvent extends js.Object {
@@ -3819,7 +3927,7 @@ package object ecs {
     }
   }
 
-  /** Details of the service registry.
+  /** The details for the service registry.
     */
   @js.native
   trait ServiceRegistry extends js.Object {
@@ -3846,7 +3954,7 @@ package object ecs {
     }
   }
 
-  /** The details of the execute command session.
+  /** The details for the execute command session.
     */
   @js.native
   trait Session extends js.Object {
@@ -4153,8 +4261,8 @@ package object ecs {
     }
   }
 
-  /** A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--sysctl</code> option to [[https://docs.docker.com/engine/reference/run/#security-configuration|docker run]]. It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task that also uses either the <code>awsvpc</code> or <code>host</code> network mode for the following reasons: * For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that is started last determines which <code>systemControls</code> take effect.
-    * * For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter as well as that of all containers of any tasks running on that container instance.
+  /** A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the [[https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate|Create a container]] section of the [[https://docs.docker.com/engine/api/v1.35/|Docker Remote API]] and the <code>--sysctl</code> option to [[https://docs.docker.com/engine/reference/run/#security-configuration|docker run]]. We don't recommend that you specify network-related <code>systemControls</code> parameters for multiple containers in a single task. This task also uses either the <code>awsvpc</code> or <code>host</code> network mode. It does it for the following reasons. * For tasks that use the <code>awsvpc</code> network mode, if you set <code>systemControls</code> for any container, it applies to all containers in the task. If you set different <code>systemControls</code> for multiple containers in a single task, the container that's started last determines which
+    * <code>systemControls</code> take effect. * For tasks that use the <code>host</code> network mode, the <code>systemControls</code> parameter applies to the container instance's kernel parameter and that of all containers of any tasks running on that container instance.
     */
   @js.native
   trait SystemControl extends js.Object {
@@ -4175,8 +4283,8 @@ package object ecs {
     }
   }
 
-  /** The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define. The following basic restrictions apply to tags: * Maximum number of tags per resource - 50 * For each resource, each tag key must be unique, and each tag key can have only one value. * Maximum key length - 128 Unicode characters in UTF-8 * Maximum value length - 256 Unicode characters in UTF-8 * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. * Tag keys and values are case-sensitive. * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for AWS use. You cannot edit or delete tag keys or values with
-    * this prefix. Tags with this prefix do not count against your tags per resource limit.
+  /** The metadata that you apply to a resource to help you categorize and organize them. Each tag consists of a key and an optional value. You define them. The following basic restrictions apply to tags: * Maximum number of tags per resource - 50 * For each resource, each tag key must be unique, and each tag key can have only one value. * Maximum key length - 128 Unicode characters in UTF-8 * Maximum value length - 256 Unicode characters in UTF-8 * If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @. * Tag keys and values are case-sensitive. * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or
+    * values with this prefix. Tags with this prefix do not count against your tags per resource limit.
     */
   @js.native
   trait Tag extends js.Object {
@@ -4245,6 +4353,7 @@ package object ecs {
     var createdAt: js.UndefOr[Timestamp]
     var desiredStatus: js.UndefOr[String]
     var enableExecuteCommand: js.UndefOr[Boolean]
+    var ephemeralStorage: js.UndefOr[EphemeralStorage]
     var executionStoppedAt: js.UndefOr[Timestamp]
     var group: js.UndefOr[String]
     var healthStatus: js.UndefOr[HealthStatus]
@@ -4253,6 +4362,7 @@ package object ecs {
     var launchType: js.UndefOr[LaunchType]
     var memory: js.UndefOr[String]
     var overrides: js.UndefOr[TaskOverride]
+    var platformFamily: js.UndefOr[String]
     var platformVersion: js.UndefOr[String]
     var pullStartedAt: js.UndefOr[Timestamp]
     var pullStoppedAt: js.UndefOr[Timestamp]
@@ -4284,6 +4394,7 @@ package object ecs {
         createdAt: js.UndefOr[Timestamp] = js.undefined,
         desiredStatus: js.UndefOr[String] = js.undefined,
         enableExecuteCommand: js.UndefOr[Boolean] = js.undefined,
+        ephemeralStorage: js.UndefOr[EphemeralStorage] = js.undefined,
         executionStoppedAt: js.UndefOr[Timestamp] = js.undefined,
         group: js.UndefOr[String] = js.undefined,
         healthStatus: js.UndefOr[HealthStatus] = js.undefined,
@@ -4292,6 +4403,7 @@ package object ecs {
         launchType: js.UndefOr[LaunchType] = js.undefined,
         memory: js.UndefOr[String] = js.undefined,
         overrides: js.UndefOr[TaskOverride] = js.undefined,
+        platformFamily: js.UndefOr[String] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
         pullStartedAt: js.UndefOr[Timestamp] = js.undefined,
         pullStoppedAt: js.UndefOr[Timestamp] = js.undefined,
@@ -4320,6 +4432,7 @@ package object ecs {
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       desiredStatus.foreach(__v => __obj.updateDynamic("desiredStatus")(__v.asInstanceOf[js.Any]))
       enableExecuteCommand.foreach(__v => __obj.updateDynamic("enableExecuteCommand")(__v.asInstanceOf[js.Any]))
+      ephemeralStorage.foreach(__v => __obj.updateDynamic("ephemeralStorage")(__v.asInstanceOf[js.Any]))
       executionStoppedAt.foreach(__v => __obj.updateDynamic("executionStoppedAt")(__v.asInstanceOf[js.Any]))
       group.foreach(__v => __obj.updateDynamic("group")(__v.asInstanceOf[js.Any]))
       healthStatus.foreach(__v => __obj.updateDynamic("healthStatus")(__v.asInstanceOf[js.Any]))
@@ -4328,6 +4441,7 @@ package object ecs {
       launchType.foreach(__v => __obj.updateDynamic("launchType")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
       overrides.foreach(__v => __obj.updateDynamic("overrides")(__v.asInstanceOf[js.Any]))
+      platformFamily.foreach(__v => __obj.updateDynamic("platformFamily")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
       pullStartedAt.foreach(__v => __obj.updateDynamic("pullStartedAt")(__v.asInstanceOf[js.Any]))
       pullStoppedAt.foreach(__v => __obj.updateDynamic("pullStoppedAt")(__v.asInstanceOf[js.Any]))
@@ -4353,6 +4467,7 @@ package object ecs {
     var containerDefinitions: js.UndefOr[ContainerDefinitions]
     var cpu: js.UndefOr[String]
     var deregisteredAt: js.UndefOr[Timestamp]
+    var ephemeralStorage: js.UndefOr[EphemeralStorage]
     var executionRoleArn: js.UndefOr[String]
     var family: js.UndefOr[String]
     var inferenceAccelerators: js.UndefOr[InferenceAccelerators]
@@ -4367,6 +4482,7 @@ package object ecs {
     var requiresAttributes: js.UndefOr[RequiresAttributes]
     var requiresCompatibilities: js.UndefOr[CompatibilityList]
     var revision: js.UndefOr[Int]
+    var runtimePlatform: js.UndefOr[RuntimePlatform]
     var status: js.UndefOr[TaskDefinitionStatus]
     var taskDefinitionArn: js.UndefOr[String]
     var taskRoleArn: js.UndefOr[String]
@@ -4380,6 +4496,7 @@ package object ecs {
         containerDefinitions: js.UndefOr[ContainerDefinitions] = js.undefined,
         cpu: js.UndefOr[String] = js.undefined,
         deregisteredAt: js.UndefOr[Timestamp] = js.undefined,
+        ephemeralStorage: js.UndefOr[EphemeralStorage] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
         family: js.UndefOr[String] = js.undefined,
         inferenceAccelerators: js.UndefOr[InferenceAccelerators] = js.undefined,
@@ -4394,6 +4511,7 @@ package object ecs {
         requiresAttributes: js.UndefOr[RequiresAttributes] = js.undefined,
         requiresCompatibilities: js.UndefOr[CompatibilityList] = js.undefined,
         revision: js.UndefOr[Int] = js.undefined,
+        runtimePlatform: js.UndefOr[RuntimePlatform] = js.undefined,
         status: js.UndefOr[TaskDefinitionStatus] = js.undefined,
         taskDefinitionArn: js.UndefOr[String] = js.undefined,
         taskRoleArn: js.UndefOr[String] = js.undefined,
@@ -4404,6 +4522,7 @@ package object ecs {
       containerDefinitions.foreach(__v => __obj.updateDynamic("containerDefinitions")(__v.asInstanceOf[js.Any]))
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
       deregisteredAt.foreach(__v => __obj.updateDynamic("deregisteredAt")(__v.asInstanceOf[js.Any]))
+      ephemeralStorage.foreach(__v => __obj.updateDynamic("ephemeralStorage")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
       family.foreach(__v => __obj.updateDynamic("family")(__v.asInstanceOf[js.Any]))
       inferenceAccelerators.foreach(__v => __obj.updateDynamic("inferenceAccelerators")(__v.asInstanceOf[js.Any]))
@@ -4418,6 +4537,7 @@ package object ecs {
       requiresAttributes.foreach(__v => __obj.updateDynamic("requiresAttributes")(__v.asInstanceOf[js.Any]))
       requiresCompatibilities.foreach(__v => __obj.updateDynamic("requiresCompatibilities")(__v.asInstanceOf[js.Any]))
       revision.foreach(__v => __obj.updateDynamic("revision")(__v.asInstanceOf[js.Any]))
+      runtimePlatform.foreach(__v => __obj.updateDynamic("runtimePlatform")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       taskDefinitionArn.foreach(__v => __obj.updateDynamic("taskDefinitionArn")(__v.asInstanceOf[js.Any]))
       taskRoleArn.foreach(__v => __obj.updateDynamic("taskRoleArn")(__v.asInstanceOf[js.Any]))
@@ -4428,7 +4548,7 @@ package object ecs {
 
   /** An object representing a constraint on task placement in the task definition. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html|Task placement constraints]] in the <i>Amazon Elastic Container Service Developer Guide</i>.
     *
-    * '''Note:'''Task placement constraints are not supported for tasks run on AWS Fargate.
+    * '''Note:'''Task placement constraints aren't supported for tasks run on Fargate.
     */
   @js.native
   trait TaskDefinitionPlacementConstraint extends js.Object {
@@ -4449,12 +4569,13 @@ package object ecs {
     }
   }
 
-  /** The overrides associated with a task.
+  /** The overrides that are associated with a task.
     */
   @js.native
   trait TaskOverride extends js.Object {
     var containerOverrides: js.UndefOr[ContainerOverrides]
     var cpu: js.UndefOr[String]
+    var ephemeralStorage: js.UndefOr[EphemeralStorage]
     var executionRoleArn: js.UndefOr[String]
     var inferenceAcceleratorOverrides: js.UndefOr[InferenceAcceleratorOverrides]
     var memory: js.UndefOr[String]
@@ -4466,6 +4587,7 @@ package object ecs {
     def apply(
         containerOverrides: js.UndefOr[ContainerOverrides] = js.undefined,
         cpu: js.UndefOr[String] = js.undefined,
+        ephemeralStorage: js.UndefOr[EphemeralStorage] = js.undefined,
         executionRoleArn: js.UndefOr[String] = js.undefined,
         inferenceAcceleratorOverrides: js.UndefOr[InferenceAcceleratorOverrides] = js.undefined,
         memory: js.UndefOr[String] = js.undefined,
@@ -4474,6 +4596,7 @@ package object ecs {
       val __obj = js.Dynamic.literal()
       containerOverrides.foreach(__v => __obj.updateDynamic("containerOverrides")(__v.asInstanceOf[js.Any]))
       cpu.foreach(__v => __obj.updateDynamic("cpu")(__v.asInstanceOf[js.Any]))
+      ephemeralStorage.foreach(__v => __obj.updateDynamic("ephemeralStorage")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
       inferenceAcceleratorOverrides.foreach(__v => __obj.updateDynamic("inferenceAcceleratorOverrides")(__v.asInstanceOf[js.Any]))
       memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
@@ -4482,7 +4605,7 @@ package object ecs {
     }
   }
 
-  /** Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.
+  /** Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such as the desired number of tasks, how many tasks are running, and whether the task set serves production traffic.
     */
   @js.native
   trait TaskSet extends js.Object {
@@ -4496,6 +4619,7 @@ package object ecs {
     var loadBalancers: js.UndefOr[LoadBalancers]
     var networkConfiguration: js.UndefOr[NetworkConfiguration]
     var pendingCount: js.UndefOr[Int]
+    var platformFamily: js.UndefOr[String]
     var platformVersion: js.UndefOr[String]
     var runningCount: js.UndefOr[Int]
     var scale: js.UndefOr[Scale]
@@ -4524,6 +4648,7 @@ package object ecs {
         loadBalancers: js.UndefOr[LoadBalancers] = js.undefined,
         networkConfiguration: js.UndefOr[NetworkConfiguration] = js.undefined,
         pendingCount: js.UndefOr[Int] = js.undefined,
+        platformFamily: js.UndefOr[String] = js.undefined,
         platformVersion: js.UndefOr[String] = js.undefined,
         runningCount: js.UndefOr[Int] = js.undefined,
         scale: js.UndefOr[Scale] = js.undefined,
@@ -4549,6 +4674,7 @@ package object ecs {
       loadBalancers.foreach(__v => __obj.updateDynamic("loadBalancers")(__v.asInstanceOf[js.Any]))
       networkConfiguration.foreach(__v => __obj.updateDynamic("networkConfiguration")(__v.asInstanceOf[js.Any]))
       pendingCount.foreach(__v => __obj.updateDynamic("pendingCount")(__v.asInstanceOf[js.Any]))
+      platformFamily.foreach(__v => __obj.updateDynamic("platformFamily")(__v.asInstanceOf[js.Any]))
       platformVersion.foreach(__v => __obj.updateDynamic("platformVersion")(__v.asInstanceOf[js.Any]))
       runningCount.foreach(__v => __obj.updateDynamic("runningCount")(__v.asInstanceOf[js.Any]))
       scale.foreach(__v => __obj.updateDynamic("scale")(__v.asInstanceOf[js.Any]))
@@ -4592,7 +4718,7 @@ package object ecs {
     }
   }
 
-  /** The <code>ulimit</code> settings to pass to the container.
+  /** The <code>ulimit</code> settings to pass to the container. Amazon ECS tasks hosted on Fargate use the default resource limit values set by the operating system with the exception of the <code>nofile</code> resource limit parameter which Fargate overrides. The <code>nofile</code> resource limit sets a restriction on the number of open files that a container can use. The default <code>nofile</code> soft limit is <code>1024</code> and hard limit is <code>4096</code>.
     */
   @js.native
   trait Ulimit extends js.Object {
@@ -5015,7 +5141,7 @@ package object ecs {
     }
   }
 
-  /** A data volume used in a task definition. For tasks that use the Amazon Elastic File System (Amazon EFS), specify an <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for Windows File Server file system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html|Using Data Volumes in Tasks]].
+  /** A data volume that's used in a task definition. For tasks that use the Amazon Elastic File System (Amazon EFS), specify an <code>efsVolumeConfiguration</code>. For Windows tasks that use Amazon FSx for Windows File Server file system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>. For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind mount host volume, specify a <code>host</code> and optional <code>sourcePath</code>. For more information, see [[https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html|Using Data Volumes in Tasks]].
     */
   @js.native
   trait Volume extends js.Object {

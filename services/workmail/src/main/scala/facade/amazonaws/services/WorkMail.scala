@@ -16,7 +16,9 @@ package object workmail {
   type ActionsList = js.Array[AccessControlRuleAction]
   type Aliases = js.Array[EmailAddress]
   type AmazonResourceName = String
+  type BooleanObject = Boolean
   type Description = String
+  type DeviceId = String
   type DeviceModel = String
   type DeviceModelList = js.Array[DeviceModel]
   type DeviceOperatingSystem = String
@@ -26,9 +28,11 @@ package object workmail {
   type DeviceUserAgent = String
   type DeviceUserAgentList = js.Array[DeviceUserAgent]
   type DirectoryId = String
+  type DnsRecords = js.Array[DnsRecord]
   type DomainName = String
   type Domains = js.Array[Domain]
   type EmailAddress = String
+  type EntityIdentifier = String
   type FolderConfigurations = js.Array[FolderConfiguration]
   type GroupName = String
   type Groups = js.Array[Group]
@@ -39,6 +43,8 @@ package object workmail {
   type IpRangeList = js.Array[IpRange]
   type Jobs = js.Array[MailboxExportJob]
   type KmsKeyArn = String
+  type LogGroupArn = String
+  type MailDomains = js.Array[MailDomainSummary]
   type MailboxExportErrorInfo = String
   type MailboxExportJobId = String
   type MailboxQuota = Int
@@ -46,6 +52,7 @@ package object workmail {
   type MaxResults = Int
   type Members = js.Array[Member]
   type MobileDeviceAccessMatchedRuleList = js.Array[MobileDeviceAccessMatchedRule]
+  type MobileDeviceAccessOverridesList = js.Array[MobileDeviceAccessOverride]
   type MobileDeviceAccessRuleDescription = String
   type MobileDeviceAccessRuleId = String
   type MobileDeviceAccessRuleName = String
@@ -76,6 +83,7 @@ package object workmail {
   type UserIdList = js.Array[WorkMailIdentifier]
   type UserName = String
   type Users = js.Array[User]
+  type WorkMailDomainName = String
   type WorkMailIdentifier = String
 
   final class WorkMailOps(private val service: WorkMail) extends AnyVal {
@@ -91,15 +99,20 @@ package object workmail {
     @inline def createUserFuture(params: CreateUserRequest): Future[CreateUserResponse] = service.createUser(params).promise().toFuture
     @inline def deleteAccessControlRuleFuture(params: DeleteAccessControlRuleRequest): Future[DeleteAccessControlRuleResponse] = service.deleteAccessControlRule(params).promise().toFuture
     @inline def deleteAliasFuture(params: DeleteAliasRequest): Future[DeleteAliasResponse] = service.deleteAlias(params).promise().toFuture
+    @inline def deleteEmailMonitoringConfigurationFuture(params: DeleteEmailMonitoringConfigurationRequest): Future[DeleteEmailMonitoringConfigurationResponse] = service.deleteEmailMonitoringConfiguration(params).promise().toFuture
     @inline def deleteGroupFuture(params: DeleteGroupRequest): Future[DeleteGroupResponse] = service.deleteGroup(params).promise().toFuture
     @inline def deleteMailboxPermissionsFuture(params: DeleteMailboxPermissionsRequest): Future[DeleteMailboxPermissionsResponse] = service.deleteMailboxPermissions(params).promise().toFuture
+    @inline def deleteMobileDeviceAccessOverrideFuture(params: DeleteMobileDeviceAccessOverrideRequest): Future[DeleteMobileDeviceAccessOverrideResponse] = service.deleteMobileDeviceAccessOverride(params).promise().toFuture
     @inline def deleteMobileDeviceAccessRuleFuture(params: DeleteMobileDeviceAccessRuleRequest): Future[DeleteMobileDeviceAccessRuleResponse] = service.deleteMobileDeviceAccessRule(params).promise().toFuture
     @inline def deleteOrganizationFuture(params: DeleteOrganizationRequest): Future[DeleteOrganizationResponse] = service.deleteOrganization(params).promise().toFuture
     @inline def deleteResourceFuture(params: DeleteResourceRequest): Future[DeleteResourceResponse] = service.deleteResource(params).promise().toFuture
     @inline def deleteRetentionPolicyFuture(params: DeleteRetentionPolicyRequest): Future[DeleteRetentionPolicyResponse] = service.deleteRetentionPolicy(params).promise().toFuture
     @inline def deleteUserFuture(params: DeleteUserRequest): Future[DeleteUserResponse] = service.deleteUser(params).promise().toFuture
     @inline def deregisterFromWorkMailFuture(params: DeregisterFromWorkMailRequest): Future[DeregisterFromWorkMailResponse] = service.deregisterFromWorkMail(params).promise().toFuture
+    @inline def deregisterMailDomainFuture(params: DeregisterMailDomainRequest): Future[DeregisterMailDomainResponse] = service.deregisterMailDomain(params).promise().toFuture
+    @inline def describeEmailMonitoringConfigurationFuture(params: DescribeEmailMonitoringConfigurationRequest): Future[DescribeEmailMonitoringConfigurationResponse] = service.describeEmailMonitoringConfiguration(params).promise().toFuture
     @inline def describeGroupFuture(params: DescribeGroupRequest): Future[DescribeGroupResponse] = service.describeGroup(params).promise().toFuture
+    @inline def describeInboundDmarcSettingsFuture(params: DescribeInboundDmarcSettingsRequest): Future[DescribeInboundDmarcSettingsResponse] = service.describeInboundDmarcSettings(params).promise().toFuture
     @inline def describeMailboxExportJobFuture(params: DescribeMailboxExportJobRequest): Future[DescribeMailboxExportJobResponse] = service.describeMailboxExportJob(params).promise().toFuture
     @inline def describeOrganizationFuture(params: DescribeOrganizationRequest): Future[DescribeOrganizationResponse] = service.describeOrganization(params).promise().toFuture
     @inline def describeResourceFuture(params: DescribeResourceRequest): Future[DescribeResourceResponse] = service.describeResource(params).promise().toFuture
@@ -108,14 +121,18 @@ package object workmail {
     @inline def disassociateMemberFromGroupFuture(params: DisassociateMemberFromGroupRequest): Future[DisassociateMemberFromGroupResponse] = service.disassociateMemberFromGroup(params).promise().toFuture
     @inline def getAccessControlEffectFuture(params: GetAccessControlEffectRequest): Future[GetAccessControlEffectResponse] = service.getAccessControlEffect(params).promise().toFuture
     @inline def getDefaultRetentionPolicyFuture(params: GetDefaultRetentionPolicyRequest): Future[GetDefaultRetentionPolicyResponse] = service.getDefaultRetentionPolicy(params).promise().toFuture
+    @inline def getMailDomainFuture(params: GetMailDomainRequest): Future[GetMailDomainResponse] = service.getMailDomain(params).promise().toFuture
     @inline def getMailboxDetailsFuture(params: GetMailboxDetailsRequest): Future[GetMailboxDetailsResponse] = service.getMailboxDetails(params).promise().toFuture
     @inline def getMobileDeviceAccessEffectFuture(params: GetMobileDeviceAccessEffectRequest): Future[GetMobileDeviceAccessEffectResponse] = service.getMobileDeviceAccessEffect(params).promise().toFuture
+    @inline def getMobileDeviceAccessOverrideFuture(params: GetMobileDeviceAccessOverrideRequest): Future[GetMobileDeviceAccessOverrideResponse] = service.getMobileDeviceAccessOverride(params).promise().toFuture
     @inline def listAccessControlRulesFuture(params: ListAccessControlRulesRequest): Future[ListAccessControlRulesResponse] = service.listAccessControlRules(params).promise().toFuture
     @inline def listAliasesFuture(params: ListAliasesRequest): Future[ListAliasesResponse] = service.listAliases(params).promise().toFuture
     @inline def listGroupMembersFuture(params: ListGroupMembersRequest): Future[ListGroupMembersResponse] = service.listGroupMembers(params).promise().toFuture
     @inline def listGroupsFuture(params: ListGroupsRequest): Future[ListGroupsResponse] = service.listGroups(params).promise().toFuture
+    @inline def listMailDomainsFuture(params: ListMailDomainsRequest): Future[ListMailDomainsResponse] = service.listMailDomains(params).promise().toFuture
     @inline def listMailboxExportJobsFuture(params: ListMailboxExportJobsRequest): Future[ListMailboxExportJobsResponse] = service.listMailboxExportJobs(params).promise().toFuture
     @inline def listMailboxPermissionsFuture(params: ListMailboxPermissionsRequest): Future[ListMailboxPermissionsResponse] = service.listMailboxPermissions(params).promise().toFuture
+    @inline def listMobileDeviceAccessOverridesFuture(params: ListMobileDeviceAccessOverridesRequest): Future[ListMobileDeviceAccessOverridesResponse] = service.listMobileDeviceAccessOverrides(params).promise().toFuture
     @inline def listMobileDeviceAccessRulesFuture(params: ListMobileDeviceAccessRulesRequest): Future[ListMobileDeviceAccessRulesResponse] = service.listMobileDeviceAccessRules(params).promise().toFuture
     @inline def listOrganizationsFuture(params: ListOrganizationsRequest): Future[ListOrganizationsResponse] = service.listOrganizations(params).promise().toFuture
     @inline def listResourceDelegatesFuture(params: ListResourceDelegatesRequest): Future[ListResourceDelegatesResponse] = service.listResourceDelegates(params).promise().toFuture
@@ -123,13 +140,18 @@ package object workmail {
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listUsersFuture(params: ListUsersRequest): Future[ListUsersResponse] = service.listUsers(params).promise().toFuture
     @inline def putAccessControlRuleFuture(params: PutAccessControlRuleRequest): Future[PutAccessControlRuleResponse] = service.putAccessControlRule(params).promise().toFuture
+    @inline def putEmailMonitoringConfigurationFuture(params: PutEmailMonitoringConfigurationRequest): Future[PutEmailMonitoringConfigurationResponse] = service.putEmailMonitoringConfiguration(params).promise().toFuture
+    @inline def putInboundDmarcSettingsFuture(params: PutInboundDmarcSettingsRequest): Future[PutInboundDmarcSettingsResponse] = service.putInboundDmarcSettings(params).promise().toFuture
     @inline def putMailboxPermissionsFuture(params: PutMailboxPermissionsRequest): Future[PutMailboxPermissionsResponse] = service.putMailboxPermissions(params).promise().toFuture
+    @inline def putMobileDeviceAccessOverrideFuture(params: PutMobileDeviceAccessOverrideRequest): Future[PutMobileDeviceAccessOverrideResponse] = service.putMobileDeviceAccessOverride(params).promise().toFuture
     @inline def putRetentionPolicyFuture(params: PutRetentionPolicyRequest): Future[PutRetentionPolicyResponse] = service.putRetentionPolicy(params).promise().toFuture
+    @inline def registerMailDomainFuture(params: RegisterMailDomainRequest): Future[RegisterMailDomainResponse] = service.registerMailDomain(params).promise().toFuture
     @inline def registerToWorkMailFuture(params: RegisterToWorkMailRequest): Future[RegisterToWorkMailResponse] = service.registerToWorkMail(params).promise().toFuture
     @inline def resetPasswordFuture(params: ResetPasswordRequest): Future[ResetPasswordResponse] = service.resetPassword(params).promise().toFuture
     @inline def startMailboxExportJobFuture(params: StartMailboxExportJobRequest): Future[StartMailboxExportJobResponse] = service.startMailboxExportJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateDefaultMailDomainFuture(params: UpdateDefaultMailDomainRequest): Future[UpdateDefaultMailDomainResponse] = service.updateDefaultMailDomain(params).promise().toFuture
     @inline def updateMailboxQuotaFuture(params: UpdateMailboxQuotaRequest): Future[UpdateMailboxQuotaResponse] = service.updateMailboxQuota(params).promise().toFuture
     @inline def updateMobileDeviceAccessRuleFuture(params: UpdateMobileDeviceAccessRuleRequest): Future[UpdateMobileDeviceAccessRuleResponse] = service.updateMobileDeviceAccessRule(params).promise().toFuture
     @inline def updatePrimaryEmailAddressFuture(params: UpdatePrimaryEmailAddressRequest): Future[UpdatePrimaryEmailAddressResponse] = service.updatePrimaryEmailAddress(params).promise().toFuture
@@ -153,15 +175,20 @@ package object workmail {
     def createUser(params: CreateUserRequest): Request[CreateUserResponse] = js.native
     def deleteAccessControlRule(params: DeleteAccessControlRuleRequest): Request[DeleteAccessControlRuleResponse] = js.native
     def deleteAlias(params: DeleteAliasRequest): Request[DeleteAliasResponse] = js.native
+    def deleteEmailMonitoringConfiguration(params: DeleteEmailMonitoringConfigurationRequest): Request[DeleteEmailMonitoringConfigurationResponse] = js.native
     def deleteGroup(params: DeleteGroupRequest): Request[DeleteGroupResponse] = js.native
     def deleteMailboxPermissions(params: DeleteMailboxPermissionsRequest): Request[DeleteMailboxPermissionsResponse] = js.native
+    def deleteMobileDeviceAccessOverride(params: DeleteMobileDeviceAccessOverrideRequest): Request[DeleteMobileDeviceAccessOverrideResponse] = js.native
     def deleteMobileDeviceAccessRule(params: DeleteMobileDeviceAccessRuleRequest): Request[DeleteMobileDeviceAccessRuleResponse] = js.native
     def deleteOrganization(params: DeleteOrganizationRequest): Request[DeleteOrganizationResponse] = js.native
     def deleteResource(params: DeleteResourceRequest): Request[DeleteResourceResponse] = js.native
     def deleteRetentionPolicy(params: DeleteRetentionPolicyRequest): Request[DeleteRetentionPolicyResponse] = js.native
     def deleteUser(params: DeleteUserRequest): Request[DeleteUserResponse] = js.native
     def deregisterFromWorkMail(params: DeregisterFromWorkMailRequest): Request[DeregisterFromWorkMailResponse] = js.native
+    def deregisterMailDomain(params: DeregisterMailDomainRequest): Request[DeregisterMailDomainResponse] = js.native
+    def describeEmailMonitoringConfiguration(params: DescribeEmailMonitoringConfigurationRequest): Request[DescribeEmailMonitoringConfigurationResponse] = js.native
     def describeGroup(params: DescribeGroupRequest): Request[DescribeGroupResponse] = js.native
+    def describeInboundDmarcSettings(params: DescribeInboundDmarcSettingsRequest): Request[DescribeInboundDmarcSettingsResponse] = js.native
     def describeMailboxExportJob(params: DescribeMailboxExportJobRequest): Request[DescribeMailboxExportJobResponse] = js.native
     def describeOrganization(params: DescribeOrganizationRequest): Request[DescribeOrganizationResponse] = js.native
     def describeResource(params: DescribeResourceRequest): Request[DescribeResourceResponse] = js.native
@@ -170,14 +197,18 @@ package object workmail {
     def disassociateMemberFromGroup(params: DisassociateMemberFromGroupRequest): Request[DisassociateMemberFromGroupResponse] = js.native
     def getAccessControlEffect(params: GetAccessControlEffectRequest): Request[GetAccessControlEffectResponse] = js.native
     def getDefaultRetentionPolicy(params: GetDefaultRetentionPolicyRequest): Request[GetDefaultRetentionPolicyResponse] = js.native
+    def getMailDomain(params: GetMailDomainRequest): Request[GetMailDomainResponse] = js.native
     def getMailboxDetails(params: GetMailboxDetailsRequest): Request[GetMailboxDetailsResponse] = js.native
     def getMobileDeviceAccessEffect(params: GetMobileDeviceAccessEffectRequest): Request[GetMobileDeviceAccessEffectResponse] = js.native
+    def getMobileDeviceAccessOverride(params: GetMobileDeviceAccessOverrideRequest): Request[GetMobileDeviceAccessOverrideResponse] = js.native
     def listAccessControlRules(params: ListAccessControlRulesRequest): Request[ListAccessControlRulesResponse] = js.native
     def listAliases(params: ListAliasesRequest): Request[ListAliasesResponse] = js.native
     def listGroupMembers(params: ListGroupMembersRequest): Request[ListGroupMembersResponse] = js.native
     def listGroups(params: ListGroupsRequest): Request[ListGroupsResponse] = js.native
+    def listMailDomains(params: ListMailDomainsRequest): Request[ListMailDomainsResponse] = js.native
     def listMailboxExportJobs(params: ListMailboxExportJobsRequest): Request[ListMailboxExportJobsResponse] = js.native
     def listMailboxPermissions(params: ListMailboxPermissionsRequest): Request[ListMailboxPermissionsResponse] = js.native
+    def listMobileDeviceAccessOverrides(params: ListMobileDeviceAccessOverridesRequest): Request[ListMobileDeviceAccessOverridesResponse] = js.native
     def listMobileDeviceAccessRules(params: ListMobileDeviceAccessRulesRequest): Request[ListMobileDeviceAccessRulesResponse] = js.native
     def listOrganizations(params: ListOrganizationsRequest): Request[ListOrganizationsResponse] = js.native
     def listResourceDelegates(params: ListResourceDelegatesRequest): Request[ListResourceDelegatesResponse] = js.native
@@ -185,13 +216,18 @@ package object workmail {
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listUsers(params: ListUsersRequest): Request[ListUsersResponse] = js.native
     def putAccessControlRule(params: PutAccessControlRuleRequest): Request[PutAccessControlRuleResponse] = js.native
+    def putEmailMonitoringConfiguration(params: PutEmailMonitoringConfigurationRequest): Request[PutEmailMonitoringConfigurationResponse] = js.native
+    def putInboundDmarcSettings(params: PutInboundDmarcSettingsRequest): Request[PutInboundDmarcSettingsResponse] = js.native
     def putMailboxPermissions(params: PutMailboxPermissionsRequest): Request[PutMailboxPermissionsResponse] = js.native
+    def putMobileDeviceAccessOverride(params: PutMobileDeviceAccessOverrideRequest): Request[PutMobileDeviceAccessOverrideResponse] = js.native
     def putRetentionPolicy(params: PutRetentionPolicyRequest): Request[PutRetentionPolicyResponse] = js.native
+    def registerMailDomain(params: RegisterMailDomainRequest): Request[RegisterMailDomainResponse] = js.native
     def registerToWorkMail(params: RegisterToWorkMailRequest): Request[RegisterToWorkMailResponse] = js.native
     def resetPassword(params: ResetPasswordRequest): Request[ResetPasswordResponse] = js.native
     def startMailboxExportJob(params: StartMailboxExportJobRequest): Request[StartMailboxExportJobResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateDefaultMailDomain(params: UpdateDefaultMailDomainRequest): Request[UpdateDefaultMailDomainResponse] = js.native
     def updateMailboxQuota(params: UpdateMailboxQuotaRequest): Request[UpdateMailboxQuotaResponse] = js.native
     def updateMobileDeviceAccessRule(params: UpdateMobileDeviceAccessRuleRequest): Request[UpdateMobileDeviceAccessRuleResponse] = js.native
     def updatePrimaryEmailAddress(params: UpdatePrimaryEmailAddressRequest): Request[UpdatePrimaryEmailAddressResponse] = js.native
@@ -735,6 +771,34 @@ package object workmail {
   }
 
   @js.native
+  trait DeleteEmailMonitoringConfigurationRequest extends js.Object {
+    var OrganizationId: OrganizationId
+  }
+
+  object DeleteEmailMonitoringConfigurationRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId
+    ): DeleteEmailMonitoringConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEmailMonitoringConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteEmailMonitoringConfigurationResponse extends js.Object
+
+  object DeleteEmailMonitoringConfigurationResponse {
+    @inline
+    def apply(): DeleteEmailMonitoringConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteEmailMonitoringConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DeleteGroupRequest extends js.Object {
     var GroupId: WorkMailIdentifier
     var OrganizationId: OrganizationId
@@ -796,6 +860,40 @@ package object workmail {
     def apply(): DeleteMailboxPermissionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteMailboxPermissionsResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteMobileDeviceAccessOverrideRequest extends js.Object {
+    var DeviceId: DeviceId
+    var OrganizationId: OrganizationId
+    var UserId: EntityIdentifier
+  }
+
+  object DeleteMobileDeviceAccessOverrideRequest {
+    @inline
+    def apply(
+        DeviceId: DeviceId,
+        OrganizationId: OrganizationId,
+        UserId: EntityIdentifier
+    ): DeleteMobileDeviceAccessOverrideRequest = {
+      val __obj = js.Dynamic.literal(
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteMobileDeviceAccessOverrideRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteMobileDeviceAccessOverrideResponse extends js.Object
+
+  object DeleteMobileDeviceAccessOverrideResponse {
+    @inline
+    def apply(): DeleteMobileDeviceAccessOverrideResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteMobileDeviceAccessOverrideResponse]
     }
   }
 
@@ -998,6 +1096,73 @@ package object workmail {
   }
 
   @js.native
+  trait DeregisterMailDomainRequest extends js.Object {
+    var DomainName: WorkMailDomainName
+    var OrganizationId: OrganizationId
+  }
+
+  object DeregisterMailDomainRequest {
+    @inline
+    def apply(
+        DomainName: WorkMailDomainName,
+        OrganizationId: OrganizationId
+    ): DeregisterMailDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeregisterMailDomainRequest]
+    }
+  }
+
+  @js.native
+  trait DeregisterMailDomainResponse extends js.Object
+
+  object DeregisterMailDomainResponse {
+    @inline
+    def apply(): DeregisterMailDomainResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeregisterMailDomainResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeEmailMonitoringConfigurationRequest extends js.Object {
+    var OrganizationId: OrganizationId
+  }
+
+  object DescribeEmailMonitoringConfigurationRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId
+    ): DescribeEmailMonitoringConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeEmailMonitoringConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeEmailMonitoringConfigurationResponse extends js.Object {
+    var LogGroupArn: js.UndefOr[LogGroupArn]
+    var RoleArn: js.UndefOr[RoleArn]
+  }
+
+  object DescribeEmailMonitoringConfigurationResponse {
+    @inline
+    def apply(
+        LogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
+        RoleArn: js.UndefOr[RoleArn] = js.undefined
+    ): DescribeEmailMonitoringConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      LogGroupArn.foreach(__v => __obj.updateDynamic("LogGroupArn")(__v.asInstanceOf[js.Any]))
+      RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeEmailMonitoringConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait DescribeGroupRequest extends js.Object {
     var GroupId: WorkMailIdentifier
     var OrganizationId: OrganizationId
@@ -1045,6 +1210,39 @@ package object workmail {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGroupResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeInboundDmarcSettingsRequest extends js.Object {
+    var OrganizationId: OrganizationId
+  }
+
+  object DescribeInboundDmarcSettingsRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId
+    ): DescribeInboundDmarcSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeInboundDmarcSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeInboundDmarcSettingsResponse extends js.Object {
+    var Enforced: js.UndefOr[Boolean]
+  }
+
+  object DescribeInboundDmarcSettingsResponse {
+    @inline
+    def apply(
+        Enforced: js.UndefOr[Boolean] = js.undefined
+    ): DescribeInboundDmarcSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      Enforced.foreach(__v => __obj.updateDynamic("Enforced")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInboundDmarcSettingsResponse]
     }
   }
 
@@ -1356,6 +1554,30 @@ package object workmail {
     }
   }
 
+  /** A DNS record uploaded to your DNS provider.
+    */
+  @js.native
+  trait DnsRecord extends js.Object {
+    var Hostname: js.UndefOr[String]
+    var Type: js.UndefOr[String]
+    var Value: js.UndefOr[String]
+  }
+
+  object DnsRecord {
+    @inline
+    def apply(
+        Hostname: js.UndefOr[String] = js.undefined,
+        Type: js.UndefOr[String] = js.undefined,
+        Value: js.UndefOr[String] = js.undefined
+    ): DnsRecord = {
+      val __obj = js.Dynamic.literal()
+      Hostname.foreach(__v => __obj.updateDynamic("Hostname")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DnsRecord]
+    }
+  }
+
   /** The domain to associate with an Amazon WorkMail organization. When you configure a domain hosted in Amazon Route 53 (Route 53), all recommended DNS records are added to the organization when you create it. For more information, see [[https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html|Adding a domain]] in the <i>Amazon WorkMail Administrator Guide</i>.
     */
   @js.native
@@ -1491,6 +1713,54 @@ package object workmail {
   }
 
   @js.native
+  trait GetMailDomainRequest extends js.Object {
+    var DomainName: WorkMailDomainName
+    var OrganizationId: OrganizationId
+  }
+
+  object GetMailDomainRequest {
+    @inline
+    def apply(
+        DomainName: WorkMailDomainName,
+        OrganizationId: OrganizationId
+    ): GetMailDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMailDomainRequest]
+    }
+  }
+
+  @js.native
+  trait GetMailDomainResponse extends js.Object {
+    var DkimVerificationStatus: js.UndefOr[DnsRecordVerificationStatus]
+    var IsDefault: js.UndefOr[Boolean]
+    var IsTestDomain: js.UndefOr[Boolean]
+    var OwnershipVerificationStatus: js.UndefOr[DnsRecordVerificationStatus]
+    var Records: js.UndefOr[DnsRecords]
+  }
+
+  object GetMailDomainResponse {
+    @inline
+    def apply(
+        DkimVerificationStatus: js.UndefOr[DnsRecordVerificationStatus] = js.undefined,
+        IsDefault: js.UndefOr[Boolean] = js.undefined,
+        IsTestDomain: js.UndefOr[Boolean] = js.undefined,
+        OwnershipVerificationStatus: js.UndefOr[DnsRecordVerificationStatus] = js.undefined,
+        Records: js.UndefOr[DnsRecords] = js.undefined
+    ): GetMailDomainResponse = {
+      val __obj = js.Dynamic.literal()
+      DkimVerificationStatus.foreach(__v => __obj.updateDynamic("DkimVerificationStatus")(__v.asInstanceOf[js.Any]))
+      IsDefault.foreach(__v => __obj.updateDynamic("IsDefault")(__v.asInstanceOf[js.Any]))
+      IsTestDomain.foreach(__v => __obj.updateDynamic("IsTestDomain")(__v.asInstanceOf[js.Any]))
+      OwnershipVerificationStatus.foreach(__v => __obj.updateDynamic("OwnershipVerificationStatus")(__v.asInstanceOf[js.Any]))
+      Records.foreach(__v => __obj.updateDynamic("Records")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMailDomainResponse]
+    }
+  }
+
+  @js.native
   trait GetMailboxDetailsRequest extends js.Object {
     var OrganizationId: OrganizationId
     var UserId: WorkMailIdentifier
@@ -1575,6 +1845,60 @@ package object workmail {
       Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
       MatchedRules.foreach(__v => __obj.updateDynamic("MatchedRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMobileDeviceAccessEffectResponse]
+    }
+  }
+
+  @js.native
+  trait GetMobileDeviceAccessOverrideRequest extends js.Object {
+    var DeviceId: DeviceId
+    var OrganizationId: OrganizationId
+    var UserId: EntityIdentifier
+  }
+
+  object GetMobileDeviceAccessOverrideRequest {
+    @inline
+    def apply(
+        DeviceId: DeviceId,
+        OrganizationId: OrganizationId,
+        UserId: EntityIdentifier
+    ): GetMobileDeviceAccessOverrideRequest = {
+      val __obj = js.Dynamic.literal(
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMobileDeviceAccessOverrideRequest]
+    }
+  }
+
+  @js.native
+  trait GetMobileDeviceAccessOverrideResponse extends js.Object {
+    var DateCreated: js.UndefOr[Timestamp]
+    var DateModified: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[MobileDeviceAccessRuleDescription]
+    var DeviceId: js.UndefOr[DeviceId]
+    var Effect: js.UndefOr[MobileDeviceAccessRuleEffect]
+    var UserId: js.UndefOr[WorkMailIdentifier]
+  }
+
+  object GetMobileDeviceAccessOverrideResponse {
+    @inline
+    def apply(
+        DateCreated: js.UndefOr[Timestamp] = js.undefined,
+        DateModified: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[MobileDeviceAccessRuleDescription] = js.undefined,
+        DeviceId: js.UndefOr[DeviceId] = js.undefined,
+        Effect: js.UndefOr[MobileDeviceAccessRuleEffect] = js.undefined,
+        UserId: js.UndefOr[WorkMailIdentifier] = js.undefined
+    ): GetMobileDeviceAccessOverrideResponse = {
+      val __obj = js.Dynamic.literal()
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateModified.foreach(__v => __obj.updateDynamic("DateModified")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMobileDeviceAccessOverrideResponse]
     }
   }
 
@@ -1780,6 +2104,49 @@ package object workmail {
   }
 
   @js.native
+  trait ListMailDomainsRequest extends js.Object {
+    var OrganizationId: OrganizationId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMailDomainsRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMailDomainsRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMailDomainsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMailDomainsResponse extends js.Object {
+    var MailDomains: js.UndefOr[MailDomains]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMailDomainsResponse {
+    @inline
+    def apply(
+        MailDomains: js.UndefOr[MailDomains] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMailDomainsResponse = {
+      val __obj = js.Dynamic.literal()
+      MailDomains.foreach(__v => __obj.updateDynamic("MailDomains")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMailDomainsResponse]
+    }
+  }
+
+  @js.native
   trait ListMailboxExportJobsRequest extends js.Object {
     var OrganizationId: OrganizationId
     var MaxResults: js.UndefOr[MaxResults]
@@ -1865,6 +2232,55 @@ package object workmail {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       Permissions.foreach(__v => __obj.updateDynamic("Permissions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListMailboxPermissionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListMobileDeviceAccessOverridesRequest extends js.Object {
+    var OrganizationId: OrganizationId
+    var DeviceId: js.UndefOr[DeviceId]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var UserId: js.UndefOr[EntityIdentifier]
+  }
+
+  object ListMobileDeviceAccessOverridesRequest {
+    @inline
+    def apply(
+        OrganizationId: OrganizationId,
+        DeviceId: js.UndefOr[DeviceId] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        UserId: js.UndefOr[EntityIdentifier] = js.undefined
+    ): ListMobileDeviceAccessOverridesRequest = {
+      val __obj = js.Dynamic.literal(
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMobileDeviceAccessOverridesRequest]
+    }
+  }
+
+  @js.native
+  trait ListMobileDeviceAccessOverridesResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var Overrides: js.UndefOr[MobileDeviceAccessOverridesList]
+  }
+
+  object ListMobileDeviceAccessOverridesResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Overrides: js.UndefOr[MobileDeviceAccessOverridesList] = js.undefined
+    ): ListMobileDeviceAccessOverridesResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Overrides.foreach(__v => __obj.updateDynamic("Overrides")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMobileDeviceAccessOverridesResponse]
     }
   }
 
@@ -2104,6 +2520,27 @@ package object workmail {
     }
   }
 
+  /** The data for a given domain.
+    */
+  @js.native
+  trait MailDomainSummary extends js.Object {
+    var DefaultDomain: js.UndefOr[Boolean]
+    var DomainName: js.UndefOr[DomainName]
+  }
+
+  object MailDomainSummary {
+    @inline
+    def apply(
+        DefaultDomain: js.UndefOr[Boolean] = js.undefined,
+        DomainName: js.UndefOr[DomainName] = js.undefined
+    ): MailDomainSummary = {
+      val __obj = js.Dynamic.literal()
+      DefaultDomain.foreach(__v => __obj.updateDynamic("DefaultDomain")(__v.asInstanceOf[js.Any]))
+      DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MailDomainSummary]
+    }
+  }
+
   /** The details of a mailbox export job, including the user or resource ID associated with the mailbox and the S3 bucket that the mailbox contents are exported to.
     */
   @js.native
@@ -2197,6 +2634,39 @@ package object workmail {
       MobileDeviceAccessRuleId.foreach(__v => __obj.updateDynamic("MobileDeviceAccessRuleId")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MobileDeviceAccessMatchedRule]
+    }
+  }
+
+  /** The override object.
+    */
+  @js.native
+  trait MobileDeviceAccessOverride extends js.Object {
+    var DateCreated: js.UndefOr[Timestamp]
+    var DateModified: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[MobileDeviceAccessRuleDescription]
+    var DeviceId: js.UndefOr[DeviceId]
+    var Effect: js.UndefOr[MobileDeviceAccessRuleEffect]
+    var UserId: js.UndefOr[WorkMailIdentifier]
+  }
+
+  object MobileDeviceAccessOverride {
+    @inline
+    def apply(
+        DateCreated: js.UndefOr[Timestamp] = js.undefined,
+        DateModified: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[MobileDeviceAccessRuleDescription] = js.undefined,
+        DeviceId: js.UndefOr[DeviceId] = js.undefined,
+        Effect: js.UndefOr[MobileDeviceAccessRuleEffect] = js.undefined,
+        UserId: js.UndefOr[WorkMailIdentifier] = js.undefined
+    ): MobileDeviceAccessOverride = {
+      val __obj = js.Dynamic.literal()
+      DateCreated.foreach(__v => __obj.updateDynamic("DateCreated")(__v.asInstanceOf[js.Any]))
+      DateModified.foreach(__v => __obj.updateDynamic("DateModified")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      Effect.foreach(__v => __obj.updateDynamic("Effect")(__v.asInstanceOf[js.Any]))
+      UserId.foreach(__v => __obj.updateDynamic("UserId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MobileDeviceAccessOverride]
     }
   }
 
@@ -2369,6 +2839,71 @@ package object workmail {
   }
 
   @js.native
+  trait PutEmailMonitoringConfigurationRequest extends js.Object {
+    var LogGroupArn: LogGroupArn
+    var OrganizationId: OrganizationId
+    var RoleArn: RoleArn
+  }
+
+  object PutEmailMonitoringConfigurationRequest {
+    @inline
+    def apply(
+        LogGroupArn: LogGroupArn,
+        OrganizationId: OrganizationId,
+        RoleArn: RoleArn
+    ): PutEmailMonitoringConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "LogGroupArn" -> LogGroupArn.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutEmailMonitoringConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait PutEmailMonitoringConfigurationResponse extends js.Object
+
+  object PutEmailMonitoringConfigurationResponse {
+    @inline
+    def apply(): PutEmailMonitoringConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutEmailMonitoringConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait PutInboundDmarcSettingsRequest extends js.Object {
+    var Enforced: BooleanObject
+    var OrganizationId: OrganizationId
+  }
+
+  object PutInboundDmarcSettingsRequest {
+    @inline
+    def apply(
+        Enforced: BooleanObject,
+        OrganizationId: OrganizationId
+    ): PutInboundDmarcSettingsRequest = {
+      val __obj = js.Dynamic.literal(
+        "Enforced" -> Enforced.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutInboundDmarcSettingsRequest]
+    }
+  }
+
+  @js.native
+  trait PutInboundDmarcSettingsResponse extends js.Object
+
+  object PutInboundDmarcSettingsResponse {
+    @inline
+    def apply(): PutInboundDmarcSettingsResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutInboundDmarcSettingsResponse]
+    }
+  }
+
+  @js.native
   trait PutMailboxPermissionsRequest extends js.Object {
     var EntityId: WorkMailIdentifier
     var GranteeId: WorkMailIdentifier
@@ -2402,6 +2937,47 @@ package object workmail {
     def apply(): PutMailboxPermissionsResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutMailboxPermissionsResponse]
+    }
+  }
+
+  @js.native
+  trait PutMobileDeviceAccessOverrideRequest extends js.Object {
+    var DeviceId: DeviceId
+    var Effect: MobileDeviceAccessRuleEffect
+    var OrganizationId: OrganizationId
+    var UserId: EntityIdentifier
+    var Description: js.UndefOr[MobileDeviceAccessRuleDescription]
+  }
+
+  object PutMobileDeviceAccessOverrideRequest {
+    @inline
+    def apply(
+        DeviceId: DeviceId,
+        Effect: MobileDeviceAccessRuleEffect,
+        OrganizationId: OrganizationId,
+        UserId: EntityIdentifier,
+        Description: js.UndefOr[MobileDeviceAccessRuleDescription] = js.undefined
+    ): PutMobileDeviceAccessOverrideRequest = {
+      val __obj = js.Dynamic.literal(
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "Effect" -> Effect.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any],
+        "UserId" -> UserId.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutMobileDeviceAccessOverrideRequest]
+    }
+  }
+
+  @js.native
+  trait PutMobileDeviceAccessOverrideResponse extends js.Object
+
+  object PutMobileDeviceAccessOverrideResponse {
+    @inline
+    def apply(): PutMobileDeviceAccessOverrideResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutMobileDeviceAccessOverrideResponse]
     }
   }
 
@@ -2443,6 +3019,41 @@ package object workmail {
     def apply(): PutRetentionPolicyResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutRetentionPolicyResponse]
+    }
+  }
+
+  @js.native
+  trait RegisterMailDomainRequest extends js.Object {
+    var DomainName: WorkMailDomainName
+    var OrganizationId: OrganizationId
+    var ClientToken: js.UndefOr[IdempotencyClientToken]
+  }
+
+  object RegisterMailDomainRequest {
+    @inline
+    def apply(
+        DomainName: WorkMailDomainName,
+        OrganizationId: OrganizationId,
+        ClientToken: js.UndefOr[IdempotencyClientToken] = js.undefined
+    ): RegisterMailDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegisterMailDomainRequest]
+    }
+  }
+
+  @js.native
+  trait RegisterMailDomainResponse extends js.Object
+
+  object RegisterMailDomainResponse {
+    @inline
+    def apply(): RegisterMailDomainResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[RegisterMailDomainResponse]
     }
   }
 
@@ -2686,6 +3297,37 @@ package object workmail {
     def apply(): UntagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateDefaultMailDomainRequest extends js.Object {
+    var DomainName: WorkMailDomainName
+    var OrganizationId: OrganizationId
+  }
+
+  object UpdateDefaultMailDomainRequest {
+    @inline
+    def apply(
+        DomainName: WorkMailDomainName,
+        OrganizationId: OrganizationId
+    ): UpdateDefaultMailDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any],
+        "OrganizationId" -> OrganizationId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateDefaultMailDomainRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateDefaultMailDomainResponse extends js.Object
+
+  object UpdateDefaultMailDomainResponse {
+    @inline
+    def apply(): UpdateDefaultMailDomainResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateDefaultMailDomainResponse]
     }
   }
 

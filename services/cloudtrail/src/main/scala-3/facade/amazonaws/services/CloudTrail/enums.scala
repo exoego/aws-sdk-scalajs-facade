@@ -9,11 +9,12 @@ object EventCategory {
   inline def values: js.Array[EventCategory] = js.Array(insight)
 }
 
-type InsightType = "ApiCallRateInsight"
+type InsightType = "ApiCallRateInsight" | "ApiErrorRateInsight"
 object InsightType {
   inline val ApiCallRateInsight: "ApiCallRateInsight" = "ApiCallRateInsight"
+  inline val ApiErrorRateInsight: "ApiErrorRateInsight" = "ApiErrorRateInsight"
 
-  inline def values: js.Array[InsightType] = js.Array(ApiCallRateInsight)
+  inline def values: js.Array[InsightType] = js.Array(ApiCallRateInsight, ApiErrorRateInsight)
 }
 
 type LookupAttributeKey = "EventId" | "EventName" | "ReadOnly" | "Username" | "ResourceType" | "ResourceName" | "EventSource" | "AccessKeyId"

@@ -415,6 +415,8 @@ object DocumentType {
   val DeploymentStrategy = "DeploymentStrategy".asInstanceOf[DocumentType]
   val ChangeCalendar = "ChangeCalendar".asInstanceOf[DocumentType]
   val `Automation.ChangeTemplate` = "Automation.ChangeTemplate".asInstanceOf[DocumentType]
+  val ProblemAnalysis = "ProblemAnalysis".asInstanceOf[DocumentType]
+  val ProblemAnalysisTemplate = "ProblemAnalysisTemplate".asInstanceOf[DocumentType]
 
   @inline def values: js.Array[DocumentType] = js.Array(
     Command,
@@ -426,7 +428,9 @@ object DocumentType {
     ApplicationConfigurationSchema,
     DeploymentStrategy,
     ChangeCalendar,
-    `Automation.ChangeTemplate`
+    `Automation.ChangeTemplate`,
+    ProblemAnalysis,
+    ProblemAnalysisTemplate
   )
 }
 
@@ -550,6 +554,15 @@ object MaintenanceWindowResourceType {
 }
 
 @js.native
+sealed trait MaintenanceWindowTaskCutoffBehavior extends js.Any
+object MaintenanceWindowTaskCutoffBehavior {
+  val CONTINUE_TASK = "CONTINUE_TASK".asInstanceOf[MaintenanceWindowTaskCutoffBehavior]
+  val CANCEL_TASK = "CANCEL_TASK".asInstanceOf[MaintenanceWindowTaskCutoffBehavior]
+
+  @inline def values: js.Array[MaintenanceWindowTaskCutoffBehavior] = js.Array(CONTINUE_TASK, CANCEL_TASK)
+}
+
+@js.native
 sealed trait MaintenanceWindowTaskType extends js.Any
 object MaintenanceWindowTaskType {
   val RUN_COMMAND = "RUN_COMMAND".asInstanceOf[MaintenanceWindowTaskType]
@@ -595,8 +608,9 @@ object OperatingSystem {
   val ORACLE_LINUX = "ORACLE_LINUX".asInstanceOf[OperatingSystem]
   val DEBIAN = "DEBIAN".asInstanceOf[OperatingSystem]
   val MACOS = "MACOS".asInstanceOf[OperatingSystem]
+  val RASPBIAN = "RASPBIAN".asInstanceOf[OperatingSystem]
 
-  @inline def values: js.Array[OperatingSystem] = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS)
+  @inline def values: js.Array[OperatingSystem] = js.Array(WINDOWS, AMAZON_LINUX, AMAZON_LINUX_2, UBUNTU, REDHAT_ENTERPRISE_LINUX, SUSE, CENTOS, ORACLE_LINUX, DEBIAN, MACOS, RASPBIAN)
 }
 
 @js.native
@@ -666,6 +680,7 @@ object OpsItemFilterKey {
   val ChangeRequestByApproverName = "ChangeRequestByApproverName".asInstanceOf[OpsItemFilterKey]
   val ChangeRequestByTemplate = "ChangeRequestByTemplate".asInstanceOf[OpsItemFilterKey]
   val ChangeRequestByTargetsResourceGroup = "ChangeRequestByTargetsResourceGroup".asInstanceOf[OpsItemFilterKey]
+  val InsightByType = "InsightByType".asInstanceOf[OpsItemFilterKey]
 
   @inline def values: js.Array[OpsItemFilterKey] = js.Array(
     Status,
@@ -693,7 +708,8 @@ object OpsItemFilterKey {
     ChangeRequestByApproverArn,
     ChangeRequestByApproverName,
     ChangeRequestByTemplate,
-    ChangeRequestByTargetsResourceGroup
+    ChangeRequestByTargetsResourceGroup,
+    InsightByType
   )
 }
 
@@ -706,6 +722,24 @@ object OpsItemFilterOperator {
   val LessThan = "LessThan".asInstanceOf[OpsItemFilterOperator]
 
   @inline def values: js.Array[OpsItemFilterOperator] = js.Array(Equal, Contains, GreaterThan, LessThan)
+}
+
+@js.native
+sealed trait OpsItemRelatedItemsFilterKey extends js.Any
+object OpsItemRelatedItemsFilterKey {
+  val ResourceType = "ResourceType".asInstanceOf[OpsItemRelatedItemsFilterKey]
+  val AssociationId = "AssociationId".asInstanceOf[OpsItemRelatedItemsFilterKey]
+  val ResourceUri = "ResourceUri".asInstanceOf[OpsItemRelatedItemsFilterKey]
+
+  @inline def values: js.Array[OpsItemRelatedItemsFilterKey] = js.Array(ResourceType, AssociationId, ResourceUri)
+}
+
+@js.native
+sealed trait OpsItemRelatedItemsFilterOperator extends js.Any
+object OpsItemRelatedItemsFilterOperator {
+  val Equal = "Equal".asInstanceOf[OpsItemRelatedItemsFilterOperator]
+
+  @inline def values: js.Array[OpsItemRelatedItemsFilterOperator] = js.Array(Equal)
 }
 
 @js.native
@@ -729,6 +763,7 @@ object OpsItemStatus {
   val PendingApproval = "PendingApproval".asInstanceOf[OpsItemStatus]
   val Approved = "Approved".asInstanceOf[OpsItemStatus]
   val Rejected = "Rejected".asInstanceOf[OpsItemStatus]
+  val Closed = "Closed".asInstanceOf[OpsItemStatus]
 
   @inline def values: js.Array[OpsItemStatus] = js.Array(
     Open,
@@ -748,7 +783,8 @@ object OpsItemStatus {
     ChangeCalendarOverrideRejected,
     PendingApproval,
     Approved,
-    Rejected
+    Rejected,
+    Closed
   )
 }
 
@@ -921,8 +957,9 @@ sealed trait PlatformType extends js.Any
 object PlatformType {
   val Windows = "Windows".asInstanceOf[PlatformType]
   val Linux = "Linux".asInstanceOf[PlatformType]
+  val MacOS = "MacOS".asInstanceOf[PlatformType]
 
-  @inline def values: js.Array[PlatformType] = js.Array(Windows, Linux)
+  @inline def values: js.Array[PlatformType] = js.Array(Windows, Linux, MacOS)
 }
 
 @js.native
@@ -1022,6 +1059,16 @@ object SignalType {
   val Resume = "Resume".asInstanceOf[SignalType]
 
   @inline def values: js.Array[SignalType] = js.Array(Approve, Reject, StartStep, StopStep, Resume)
+}
+
+@js.native
+sealed trait SourceType extends js.Any
+object SourceType {
+  val `AWS::EC2::Instance` = "AWS::EC2::Instance".asInstanceOf[SourceType]
+  val `AWS::IoT::Thing` = "AWS::IoT::Thing".asInstanceOf[SourceType]
+  val `AWS::SSM::ManagedInstance` = "AWS::SSM::ManagedInstance".asInstanceOf[SourceType]
+
+  @inline def values: js.Array[SourceType] = js.Array(`AWS::EC2::Instance`, `AWS::IoT::Thing`, `AWS::SSM::ManagedInstance`)
 }
 
 @js.native

@@ -26,9 +26,21 @@ package object datasync {
   type FilterValue = String
   type FilterValues = js.Array[FilterAttributeValue]
   type FsxFilesystemArn = String
+  type FsxLustreSubdirectory = String
   type FsxWindowsSubdirectory = String
+  type HdfsBlockSize = Int
+  type HdfsNameNodeList = js.Array[HdfsNameNode]
+  type HdfsReplicationFactor = Int
+  type HdfsServerHostname = String
+  type HdfsServerPort = Int
+  type HdfsSubdirectory = String
+  type HdfsUser = String
   type IamRoleArn = String
   type InputTagList = js.Array[TagListEntry]
+  type KerberosKeytabFile = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type KerberosKrb5ConfFile = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
+  type KerberosPrincipal = String
+  type KmsKeyProviderUri = String
   type LocationArn = String
   type LocationFilters = js.Array[LocationFilter]
   type LocationList = js.Array[LocationListEntry]
@@ -71,7 +83,9 @@ package object datasync {
     @inline def cancelTaskExecutionFuture(params: CancelTaskExecutionRequest): Future[CancelTaskExecutionResponse] = service.cancelTaskExecution(params).promise().toFuture
     @inline def createAgentFuture(params: CreateAgentRequest): Future[CreateAgentResponse] = service.createAgent(params).promise().toFuture
     @inline def createLocationEfsFuture(params: CreateLocationEfsRequest): Future[CreateLocationEfsResponse] = service.createLocationEfs(params).promise().toFuture
+    @inline def createLocationFsxLustreFuture(params: CreateLocationFsxLustreRequest): Future[CreateLocationFsxLustreResponse] = service.createLocationFsxLustre(params).promise().toFuture
     @inline def createLocationFsxWindowsFuture(params: CreateLocationFsxWindowsRequest): Future[CreateLocationFsxWindowsResponse] = service.createLocationFsxWindows(params).promise().toFuture
+    @inline def createLocationHdfsFuture(params: CreateLocationHdfsRequest): Future[CreateLocationHdfsResponse] = service.createLocationHdfs(params).promise().toFuture
     @inline def createLocationNfsFuture(params: CreateLocationNfsRequest): Future[CreateLocationNfsResponse] = service.createLocationNfs(params).promise().toFuture
     @inline def createLocationObjectStorageFuture(params: CreateLocationObjectStorageRequest): Future[CreateLocationObjectStorageResponse] = service.createLocationObjectStorage(params).promise().toFuture
     @inline def createLocationS3Future(params: CreateLocationS3Request): Future[CreateLocationS3Response] = service.createLocationS3(params).promise().toFuture
@@ -82,7 +96,9 @@ package object datasync {
     @inline def deleteTaskFuture(params: DeleteTaskRequest): Future[DeleteTaskResponse] = service.deleteTask(params).promise().toFuture
     @inline def describeAgentFuture(params: DescribeAgentRequest): Future[DescribeAgentResponse] = service.describeAgent(params).promise().toFuture
     @inline def describeLocationEfsFuture(params: DescribeLocationEfsRequest): Future[DescribeLocationEfsResponse] = service.describeLocationEfs(params).promise().toFuture
+    @inline def describeLocationFsxLustreFuture(params: DescribeLocationFsxLustreRequest): Future[DescribeLocationFsxLustreResponse] = service.describeLocationFsxLustre(params).promise().toFuture
     @inline def describeLocationFsxWindowsFuture(params: DescribeLocationFsxWindowsRequest): Future[DescribeLocationFsxWindowsResponse] = service.describeLocationFsxWindows(params).promise().toFuture
+    @inline def describeLocationHdfsFuture(params: DescribeLocationHdfsRequest): Future[DescribeLocationHdfsResponse] = service.describeLocationHdfs(params).promise().toFuture
     @inline def describeLocationNfsFuture(params: DescribeLocationNfsRequest): Future[DescribeLocationNfsResponse] = service.describeLocationNfs(params).promise().toFuture
     @inline def describeLocationObjectStorageFuture(params: DescribeLocationObjectStorageRequest): Future[DescribeLocationObjectStorageResponse] = service.describeLocationObjectStorage(params).promise().toFuture
     @inline def describeLocationS3Future(params: DescribeLocationS3Request): Future[DescribeLocationS3Response] = service.describeLocationS3(params).promise().toFuture
@@ -98,6 +114,7 @@ package object datasync {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateAgentFuture(params: UpdateAgentRequest): Future[UpdateAgentResponse] = service.updateAgent(params).promise().toFuture
+    @inline def updateLocationHdfsFuture(params: UpdateLocationHdfsRequest): Future[UpdateLocationHdfsResponse] = service.updateLocationHdfs(params).promise().toFuture
     @inline def updateLocationNfsFuture(params: UpdateLocationNfsRequest): Future[UpdateLocationNfsResponse] = service.updateLocationNfs(params).promise().toFuture
     @inline def updateLocationObjectStorageFuture(params: UpdateLocationObjectStorageRequest): Future[UpdateLocationObjectStorageResponse] = service.updateLocationObjectStorage(params).promise().toFuture
     @inline def updateLocationSmbFuture(params: UpdateLocationSmbRequest): Future[UpdateLocationSmbResponse] = service.updateLocationSmb(params).promise().toFuture
@@ -114,7 +131,9 @@ package object datasync {
     def cancelTaskExecution(params: CancelTaskExecutionRequest): Request[CancelTaskExecutionResponse] = js.native
     def createAgent(params: CreateAgentRequest): Request[CreateAgentResponse] = js.native
     def createLocationEfs(params: CreateLocationEfsRequest): Request[CreateLocationEfsResponse] = js.native
+    def createLocationFsxLustre(params: CreateLocationFsxLustreRequest): Request[CreateLocationFsxLustreResponse] = js.native
     def createLocationFsxWindows(params: CreateLocationFsxWindowsRequest): Request[CreateLocationFsxWindowsResponse] = js.native
+    def createLocationHdfs(params: CreateLocationHdfsRequest): Request[CreateLocationHdfsResponse] = js.native
     def createLocationNfs(params: CreateLocationNfsRequest): Request[CreateLocationNfsResponse] = js.native
     def createLocationObjectStorage(params: CreateLocationObjectStorageRequest): Request[CreateLocationObjectStorageResponse] = js.native
     def createLocationS3(params: CreateLocationS3Request): Request[CreateLocationS3Response] = js.native
@@ -125,7 +144,9 @@ package object datasync {
     def deleteTask(params: DeleteTaskRequest): Request[DeleteTaskResponse] = js.native
     def describeAgent(params: DescribeAgentRequest): Request[DescribeAgentResponse] = js.native
     def describeLocationEfs(params: DescribeLocationEfsRequest): Request[DescribeLocationEfsResponse] = js.native
+    def describeLocationFsxLustre(params: DescribeLocationFsxLustreRequest): Request[DescribeLocationFsxLustreResponse] = js.native
     def describeLocationFsxWindows(params: DescribeLocationFsxWindowsRequest): Request[DescribeLocationFsxWindowsResponse] = js.native
+    def describeLocationHdfs(params: DescribeLocationHdfsRequest): Request[DescribeLocationHdfsResponse] = js.native
     def describeLocationNfs(params: DescribeLocationNfsRequest): Request[DescribeLocationNfsResponse] = js.native
     def describeLocationObjectStorage(params: DescribeLocationObjectStorageRequest): Request[DescribeLocationObjectStorageResponse] = js.native
     def describeLocationS3(params: DescribeLocationS3Request): Request[DescribeLocationS3Response] = js.native
@@ -141,6 +162,7 @@ package object datasync {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateAgent(params: UpdateAgentRequest): Request[UpdateAgentResponse] = js.native
+    def updateLocationHdfs(params: UpdateLocationHdfsRequest): Request[UpdateLocationHdfsResponse] = js.native
     def updateLocationNfs(params: UpdateLocationNfsRequest): Request[UpdateLocationNfsResponse] = js.native
     def updateLocationObjectStorage(params: UpdateLocationObjectStorageRequest): Request[UpdateLocationObjectStorageResponse] = js.native
     def updateLocationSmb(params: UpdateLocationSmbRequest): Request[UpdateLocationSmbResponse] = js.native
@@ -153,7 +175,7 @@ package object datasync {
     }
   }
 
-  /** Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the <a>ListAgents</a> operation is called.
+  /** Represents a single entry in a list of agents. <code>AgentListEntry</code> returns an array that contains a list of agents when the [[https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html|ListAgents]] operation is called.
     */
   @js.native
   trait AgentListEntry extends js.Object {
@@ -300,6 +322,49 @@ package object datasync {
   }
 
   @js.native
+  trait CreateLocationFsxLustreRequest extends js.Object {
+    var FsxFilesystemArn: FsxFilesystemArn
+    var SecurityGroupArns: Ec2SecurityGroupArnList
+    var Subdirectory: js.UndefOr[FsxLustreSubdirectory]
+    var Tags: js.UndefOr[InputTagList]
+  }
+
+  object CreateLocationFsxLustreRequest {
+    @inline
+    def apply(
+        FsxFilesystemArn: FsxFilesystemArn,
+        SecurityGroupArns: Ec2SecurityGroupArnList,
+        Subdirectory: js.UndefOr[FsxLustreSubdirectory] = js.undefined,
+        Tags: js.UndefOr[InputTagList] = js.undefined
+    ): CreateLocationFsxLustreRequest = {
+      val __obj = js.Dynamic.literal(
+        "FsxFilesystemArn" -> FsxFilesystemArn.asInstanceOf[js.Any],
+        "SecurityGroupArns" -> SecurityGroupArns.asInstanceOf[js.Any]
+      )
+
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationFsxLustreRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLocationFsxLustreResponse extends js.Object {
+    var LocationArn: js.UndefOr[LocationArn]
+  }
+
+  object CreateLocationFsxLustreResponse {
+    @inline
+    def apply(
+        LocationArn: js.UndefOr[LocationArn] = js.undefined
+    ): CreateLocationFsxLustreResponse = {
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationFsxLustreResponse]
+    }
+  }
+
+  @js.native
   trait CreateLocationFsxWindowsRequest extends js.Object {
     var FsxFilesystemArn: FsxFilesystemArn
     var Password: SmbPassword
@@ -348,6 +413,76 @@ package object datasync {
       val __obj = js.Dynamic.literal()
       LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLocationFsxWindowsResponse]
+    }
+  }
+
+  @js.native
+  trait CreateLocationHdfsRequest extends js.Object {
+    var AgentArns: AgentArnList
+    var AuthenticationType: HdfsAuthenticationType
+    var NameNodes: HdfsNameNodeList
+    var BlockSize: js.UndefOr[HdfsBlockSize]
+    var KerberosKeytab: js.UndefOr[KerberosKeytabFile]
+    var KerberosKrb5Conf: js.UndefOr[KerberosKrb5ConfFile]
+    var KerberosPrincipal: js.UndefOr[KerberosPrincipal]
+    var KmsKeyProviderUri: js.UndefOr[KmsKeyProviderUri]
+    var QopConfiguration: js.UndefOr[QopConfiguration]
+    var ReplicationFactor: js.UndefOr[HdfsReplicationFactor]
+    var SimpleUser: js.UndefOr[HdfsUser]
+    var Subdirectory: js.UndefOr[HdfsSubdirectory]
+    var Tags: js.UndefOr[InputTagList]
+  }
+
+  object CreateLocationHdfsRequest {
+    @inline
+    def apply(
+        AgentArns: AgentArnList,
+        AuthenticationType: HdfsAuthenticationType,
+        NameNodes: HdfsNameNodeList,
+        BlockSize: js.UndefOr[HdfsBlockSize] = js.undefined,
+        KerberosKeytab: js.UndefOr[KerberosKeytabFile] = js.undefined,
+        KerberosKrb5Conf: js.UndefOr[KerberosKrb5ConfFile] = js.undefined,
+        KerberosPrincipal: js.UndefOr[KerberosPrincipal] = js.undefined,
+        KmsKeyProviderUri: js.UndefOr[KmsKeyProviderUri] = js.undefined,
+        QopConfiguration: js.UndefOr[QopConfiguration] = js.undefined,
+        ReplicationFactor: js.UndefOr[HdfsReplicationFactor] = js.undefined,
+        SimpleUser: js.UndefOr[HdfsUser] = js.undefined,
+        Subdirectory: js.UndefOr[HdfsSubdirectory] = js.undefined,
+        Tags: js.UndefOr[InputTagList] = js.undefined
+    ): CreateLocationHdfsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AgentArns" -> AgentArns.asInstanceOf[js.Any],
+        "AuthenticationType" -> AuthenticationType.asInstanceOf[js.Any],
+        "NameNodes" -> NameNodes.asInstanceOf[js.Any]
+      )
+
+      BlockSize.foreach(__v => __obj.updateDynamic("BlockSize")(__v.asInstanceOf[js.Any]))
+      KerberosKeytab.foreach(__v => __obj.updateDynamic("KerberosKeytab")(__v.asInstanceOf[js.Any]))
+      KerberosKrb5Conf.foreach(__v => __obj.updateDynamic("KerberosKrb5Conf")(__v.asInstanceOf[js.Any]))
+      KerberosPrincipal.foreach(__v => __obj.updateDynamic("KerberosPrincipal")(__v.asInstanceOf[js.Any]))
+      KmsKeyProviderUri.foreach(__v => __obj.updateDynamic("KmsKeyProviderUri")(__v.asInstanceOf[js.Any]))
+      QopConfiguration.foreach(__v => __obj.updateDynamic("QopConfiguration")(__v.asInstanceOf[js.Any]))
+      ReplicationFactor.foreach(__v => __obj.updateDynamic("ReplicationFactor")(__v.asInstanceOf[js.Any]))
+      SimpleUser.foreach(__v => __obj.updateDynamic("SimpleUser")(__v.asInstanceOf[js.Any]))
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationHdfsRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLocationHdfsResponse extends js.Object {
+    var LocationArn: js.UndefOr[LocationArn]
+  }
+
+  object CreateLocationHdfsResponse {
+    @inline
+    def apply(
+        LocationArn: js.UndefOr[LocationArn] = js.undefined
+    ): CreateLocationHdfsResponse = {
+      val __obj = js.Dynamic.literal()
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLocationHdfsResponse]
     }
   }
 
@@ -565,6 +700,7 @@ package object datasync {
     var SourceLocationArn: LocationArn
     var CloudWatchLogGroupArn: js.UndefOr[LogGroupArn]
     var Excludes: js.UndefOr[FilterList]
+    var Includes: js.UndefOr[FilterList]
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
     var Schedule: js.UndefOr[TaskSchedule]
@@ -578,6 +714,7 @@ package object datasync {
         SourceLocationArn: LocationArn,
         CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
         Excludes: js.UndefOr[FilterList] = js.undefined,
+        Includes: js.UndefOr[FilterList] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
         Schedule: js.UndefOr[TaskSchedule] = js.undefined,
@@ -590,6 +727,7 @@ package object datasync {
 
       CloudWatchLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupArn")(__v.asInstanceOf[js.Any]))
       Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
+      Includes.foreach(__v => __obj.updateDynamic("Includes")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
@@ -798,6 +936,48 @@ package object datasync {
   }
 
   @js.native
+  trait DescribeLocationFsxLustreRequest extends js.Object {
+    var LocationArn: LocationArn
+  }
+
+  object DescribeLocationFsxLustreRequest {
+    @inline
+    def apply(
+        LocationArn: LocationArn
+    ): DescribeLocationFsxLustreRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeLocationFsxLustreRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationFsxLustreResponse extends js.Object {
+    var CreationTime: js.UndefOr[Time]
+    var LocationArn: js.UndefOr[LocationArn]
+    var LocationUri: js.UndefOr[LocationUri]
+    var SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList]
+  }
+
+  object DescribeLocationFsxLustreResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Time] = js.undefined,
+        LocationArn: js.UndefOr[LocationArn] = js.undefined,
+        LocationUri: js.UndefOr[LocationUri] = js.undefined,
+        SecurityGroupArns: js.UndefOr[Ec2SecurityGroupArnList] = js.undefined
+    ): DescribeLocationFsxLustreResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocationFsxLustreResponse]
+    }
+  }
+
+  @js.native
   trait DescribeLocationFsxWindowsRequest extends js.Object {
     var LocationArn: LocationArn
   }
@@ -842,6 +1022,72 @@ package object datasync {
       SecurityGroupArns.foreach(__v => __obj.updateDynamic("SecurityGroupArns")(__v.asInstanceOf[js.Any]))
       User.foreach(__v => __obj.updateDynamic("User")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLocationFsxWindowsResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationHdfsRequest extends js.Object {
+    var LocationArn: LocationArn
+  }
+
+  object DescribeLocationHdfsRequest {
+    @inline
+    def apply(
+        LocationArn: LocationArn
+    ): DescribeLocationHdfsRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeLocationHdfsRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLocationHdfsResponse extends js.Object {
+    var AgentArns: js.UndefOr[AgentArnList]
+    var AuthenticationType: js.UndefOr[HdfsAuthenticationType]
+    var BlockSize: js.UndefOr[HdfsBlockSize]
+    var CreationTime: js.UndefOr[Time]
+    var KerberosPrincipal: js.UndefOr[KerberosPrincipal]
+    var KmsKeyProviderUri: js.UndefOr[KmsKeyProviderUri]
+    var LocationArn: js.UndefOr[LocationArn]
+    var LocationUri: js.UndefOr[LocationUri]
+    var NameNodes: js.UndefOr[HdfsNameNodeList]
+    var QopConfiguration: js.UndefOr[QopConfiguration]
+    var ReplicationFactor: js.UndefOr[HdfsReplicationFactor]
+    var SimpleUser: js.UndefOr[HdfsUser]
+  }
+
+  object DescribeLocationHdfsResponse {
+    @inline
+    def apply(
+        AgentArns: js.UndefOr[AgentArnList] = js.undefined,
+        AuthenticationType: js.UndefOr[HdfsAuthenticationType] = js.undefined,
+        BlockSize: js.UndefOr[HdfsBlockSize] = js.undefined,
+        CreationTime: js.UndefOr[Time] = js.undefined,
+        KerberosPrincipal: js.UndefOr[KerberosPrincipal] = js.undefined,
+        KmsKeyProviderUri: js.UndefOr[KmsKeyProviderUri] = js.undefined,
+        LocationArn: js.UndefOr[LocationArn] = js.undefined,
+        LocationUri: js.UndefOr[LocationUri] = js.undefined,
+        NameNodes: js.UndefOr[HdfsNameNodeList] = js.undefined,
+        QopConfiguration: js.UndefOr[QopConfiguration] = js.undefined,
+        ReplicationFactor: js.UndefOr[HdfsReplicationFactor] = js.undefined,
+        SimpleUser: js.UndefOr[HdfsUser] = js.undefined
+    ): DescribeLocationHdfsResponse = {
+      val __obj = js.Dynamic.literal()
+      AgentArns.foreach(__v => __obj.updateDynamic("AgentArns")(__v.asInstanceOf[js.Any]))
+      AuthenticationType.foreach(__v => __obj.updateDynamic("AuthenticationType")(__v.asInstanceOf[js.Any]))
+      BlockSize.foreach(__v => __obj.updateDynamic("BlockSize")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      KerberosPrincipal.foreach(__v => __obj.updateDynamic("KerberosPrincipal")(__v.asInstanceOf[js.Any]))
+      KmsKeyProviderUri.foreach(__v => __obj.updateDynamic("KmsKeyProviderUri")(__v.asInstanceOf[js.Any]))
+      LocationArn.foreach(__v => __obj.updateDynamic("LocationArn")(__v.asInstanceOf[js.Any]))
+      LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
+      NameNodes.foreach(__v => __obj.updateDynamic("NameNodes")(__v.asInstanceOf[js.Any]))
+      QopConfiguration.foreach(__v => __obj.updateDynamic("QopConfiguration")(__v.asInstanceOf[js.Any]))
+      ReplicationFactor.foreach(__v => __obj.updateDynamic("ReplicationFactor")(__v.asInstanceOf[js.Any]))
+      SimpleUser.foreach(__v => __obj.updateDynamic("SimpleUser")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLocationHdfsResponse]
     }
   }
 
@@ -1133,6 +1379,7 @@ package object datasync {
     var ErrorCode: js.UndefOr[String]
     var ErrorDetail: js.UndefOr[String]
     var Excludes: js.UndefOr[FilterList]
+    var Includes: js.UndefOr[FilterList]
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
     var Schedule: js.UndefOr[TaskSchedule]
@@ -1153,6 +1400,7 @@ package object datasync {
         ErrorCode: js.UndefOr[String] = js.undefined,
         ErrorDetail: js.UndefOr[String] = js.undefined,
         Excludes: js.UndefOr[FilterList] = js.undefined,
+        Includes: js.UndefOr[FilterList] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
         Schedule: js.UndefOr[TaskSchedule] = js.undefined,
@@ -1170,6 +1418,7 @@ package object datasync {
       ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
       ErrorDetail.foreach(__v => __obj.updateDynamic("ErrorDetail")(__v.asInstanceOf[js.Any]))
       Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
+      Includes.foreach(__v => __obj.updateDynamic("Includes")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
@@ -1203,7 +1452,7 @@ package object datasync {
     }
   }
 
-  /** Specifies which files, folders and objects to include or exclude when transferring files from source to destination.
+  /** Specifies which files, folders, and objects to include or exclude when transferring files from source to destination.
     */
   @js.native
   trait FilterRule extends js.Object {
@@ -1221,6 +1470,28 @@ package object datasync {
       FilterType.foreach(__v => __obj.updateDynamic("FilterType")(__v.asInstanceOf[js.Any]))
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FilterRule]
+    }
+  }
+
+  /** The NameNode of the Hadoop Distributed File System (HDFS). The NameNode manages the file system's namespace. The NameNode performs operations such as opening, closing, and renaming files and directories. The NameNode contains the information to map blocks of data to the DataNodes.
+    */
+  @js.native
+  trait HdfsNameNode extends js.Object {
+    var Hostname: HdfsServerHostname
+    var Port: HdfsServerPort
+  }
+
+  object HdfsNameNode {
+    @inline
+    def apply(
+        Hostname: HdfsServerHostname,
+        Port: HdfsServerPort
+    ): HdfsNameNode = {
+      val __obj = js.Dynamic.literal(
+        "Hostname" -> Hostname.asInstanceOf[js.Any],
+        "Port" -> Port.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[HdfsNameNode]
     }
   }
 
@@ -1455,7 +1726,7 @@ package object datasync {
     }
   }
 
-  /** Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the <a>ListLocations</a> operation is called.
+  /** Represents a single entry in a list of locations. <code>LocationListEntry</code> returns an array that contains a list of locations when the [[https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html|ListLocations]] operation is called.
     */
   @js.native
   trait LocationListEntry extends js.Object {
@@ -1513,7 +1784,7 @@ package object datasync {
     }
   }
 
-  /** Represents the options that are available to control the behavior of a <a>StartTaskExecution</a> operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on. A task has a set of default options associated with it. If you don't specify an option in <a>StartTaskExecution</a>, the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to <a>StartTaskExecution</a>.
+  /** Represents the options that are available to control the behavior of a [[https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html|StartTaskExecution]] operation. Behavior includes preserving metadata such as user ID (UID), group ID (GID), and file permissions, and also overwriting files in the destination, data integrity verification, and so on. A task has a set of default options associated with it. If you don't specify an option in [[https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html|StartTaskExecution]], the default value is used. You can override the defaults options on each task execution by specifying an overriding <code>Options</code> value to [[https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html|StartTaskExecution]].
     */
   @js.native
   trait Options extends js.Object {
@@ -1526,6 +1797,7 @@ package object datasync {
     var PosixPermissions: js.UndefOr[PosixPermissions]
     var PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles]
     var PreserveDevices: js.UndefOr[PreserveDevices]
+    var SecurityDescriptorCopyFlags: js.UndefOr[SmbSecurityDescriptorCopyFlags]
     var TaskQueueing: js.UndefOr[TaskQueueing]
     var TransferMode: js.UndefOr[TransferMode]
     var Uid: js.UndefOr[Uid]
@@ -1544,6 +1816,7 @@ package object datasync {
         PosixPermissions: js.UndefOr[PosixPermissions] = js.undefined,
         PreserveDeletedFiles: js.UndefOr[PreserveDeletedFiles] = js.undefined,
         PreserveDevices: js.UndefOr[PreserveDevices] = js.undefined,
+        SecurityDescriptorCopyFlags: js.UndefOr[SmbSecurityDescriptorCopyFlags] = js.undefined,
         TaskQueueing: js.UndefOr[TaskQueueing] = js.undefined,
         TransferMode: js.UndefOr[TransferMode] = js.undefined,
         Uid: js.UndefOr[Uid] = js.undefined,
@@ -1559,6 +1832,7 @@ package object datasync {
       PosixPermissions.foreach(__v => __obj.updateDynamic("PosixPermissions")(__v.asInstanceOf[js.Any]))
       PreserveDeletedFiles.foreach(__v => __obj.updateDynamic("PreserveDeletedFiles")(__v.asInstanceOf[js.Any]))
       PreserveDevices.foreach(__v => __obj.updateDynamic("PreserveDevices")(__v.asInstanceOf[js.Any]))
+      SecurityDescriptorCopyFlags.foreach(__v => __obj.updateDynamic("SecurityDescriptorCopyFlags")(__v.asInstanceOf[js.Any]))
       TaskQueueing.foreach(__v => __obj.updateDynamic("TaskQueueing")(__v.asInstanceOf[js.Any]))
       TransferMode.foreach(__v => __obj.updateDynamic("TransferMode")(__v.asInstanceOf[js.Any]))
       Uid.foreach(__v => __obj.updateDynamic("Uid")(__v.asInstanceOf[js.Any]))
@@ -1594,7 +1868,28 @@ package object datasync {
     }
   }
 
-  /** The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket. For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>AWS DataSync User Guide</i>.
+  /** The Quality of Protection (QOP) configuration specifies the Remote Procedure Call (RPC) and data transfer privacy settings configured on the Hadoop Distributed File System (HDFS) cluster.
+    */
+  @js.native
+  trait QopConfiguration extends js.Object {
+    var DataTransferProtection: js.UndefOr[HdfsDataTransferProtection]
+    var RpcProtection: js.UndefOr[HdfsRpcProtection]
+  }
+
+  object QopConfiguration {
+    @inline
+    def apply(
+        DataTransferProtection: js.UndefOr[HdfsDataTransferProtection] = js.undefined,
+        RpcProtection: js.UndefOr[HdfsRpcProtection] = js.undefined
+    ): QopConfiguration = {
+      val __obj = js.Dynamic.literal()
+      DataTransferProtection.foreach(__v => __obj.updateDynamic("DataTransferProtection")(__v.asInstanceOf[js.Any]))
+      RpcProtection.foreach(__v => __obj.updateDynamic("RpcProtection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QopConfiguration]
+    }
+  }
+
+  /** The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that is used to access an Amazon S3 bucket. For detailed information about using such a role, see Creating a Location for Amazon S3 in the <i>DataSync User Guide</i>.
     */
   @js.native
   trait S3Config extends js.Object {
@@ -1634,6 +1929,7 @@ package object datasync {
   @js.native
   trait StartTaskExecutionRequest extends js.Object {
     var TaskArn: TaskArn
+    var Excludes: js.UndefOr[FilterList]
     var Includes: js.UndefOr[FilterList]
     var OverrideOptions: js.UndefOr[Options]
   }
@@ -1642,6 +1938,7 @@ package object datasync {
     @inline
     def apply(
         TaskArn: TaskArn,
+        Excludes: js.UndefOr[FilterList] = js.undefined,
         Includes: js.UndefOr[FilterList] = js.undefined,
         OverrideOptions: js.UndefOr[Options] = js.undefined
     ): StartTaskExecutionRequest = {
@@ -1649,6 +1946,7 @@ package object datasync {
         "TaskArn" -> TaskArn.asInstanceOf[js.Any]
       )
 
+      Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
       Includes.foreach(__v => __obj.updateDynamic("Includes")(__v.asInstanceOf[js.Any]))
       OverrideOptions.foreach(__v => __obj.updateDynamic("OverrideOptions")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTaskExecutionRequest]
@@ -1671,7 +1969,7 @@ package object datasync {
     }
   }
 
-  /** Represents a single entry in a list of AWS resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the <a>ListTagsForResource</a> operation is called.
+  /** Represents a single entry in a list of Amazon Web Services resource tags. <code>TagListEntry</code> returns an array that contains a list of tasks when the [[https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTagsForResource.html|ListTagsForResource]] operation is called.
     */
   @js.native
   trait TagListEntry extends js.Object {
@@ -1725,7 +2023,7 @@ package object datasync {
     }
   }
 
-  /** Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when <a>ListTaskExecutions</a> operation is called.
+  /** Represents a single entry in a list of task executions. <code>TaskExecutionListEntry</code> returns an array that contains a list of specific invocations of a task when the [[https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTaskExecutions.html|ListTaskExecutions]] operation is called.
     */
   @js.native
   trait TaskExecutionListEntry extends js.Object {
@@ -1813,7 +2111,7 @@ package object datasync {
     }
   }
 
-  /** Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the <a>ListTasks</a> operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.
+  /** Represents a single entry in a list of tasks. <code>TaskListEntry</code> returns an array that contains a list of tasks when the [[https://docs.aws.amazon.com/datasync/latest/userguide/API_ListTasks.html|ListTasks]] operation is called. A task includes the source and destination file systems to sync and the options to use for the tasks.
     */
   @js.native
   trait TaskListEntry extends js.Object {
@@ -1916,6 +2214,71 @@ package object datasync {
     def apply(): UpdateAgentResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdateAgentResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateLocationHdfsRequest extends js.Object {
+    var LocationArn: LocationArn
+    var AgentArns: js.UndefOr[AgentArnList]
+    var AuthenticationType: js.UndefOr[HdfsAuthenticationType]
+    var BlockSize: js.UndefOr[HdfsBlockSize]
+    var KerberosKeytab: js.UndefOr[KerberosKeytabFile]
+    var KerberosKrb5Conf: js.UndefOr[KerberosKrb5ConfFile]
+    var KerberosPrincipal: js.UndefOr[KerberosPrincipal]
+    var KmsKeyProviderUri: js.UndefOr[KmsKeyProviderUri]
+    var NameNodes: js.UndefOr[HdfsNameNodeList]
+    var QopConfiguration: js.UndefOr[QopConfiguration]
+    var ReplicationFactor: js.UndefOr[HdfsReplicationFactor]
+    var SimpleUser: js.UndefOr[HdfsUser]
+    var Subdirectory: js.UndefOr[HdfsSubdirectory]
+  }
+
+  object UpdateLocationHdfsRequest {
+    @inline
+    def apply(
+        LocationArn: LocationArn,
+        AgentArns: js.UndefOr[AgentArnList] = js.undefined,
+        AuthenticationType: js.UndefOr[HdfsAuthenticationType] = js.undefined,
+        BlockSize: js.UndefOr[HdfsBlockSize] = js.undefined,
+        KerberosKeytab: js.UndefOr[KerberosKeytabFile] = js.undefined,
+        KerberosKrb5Conf: js.UndefOr[KerberosKrb5ConfFile] = js.undefined,
+        KerberosPrincipal: js.UndefOr[KerberosPrincipal] = js.undefined,
+        KmsKeyProviderUri: js.UndefOr[KmsKeyProviderUri] = js.undefined,
+        NameNodes: js.UndefOr[HdfsNameNodeList] = js.undefined,
+        QopConfiguration: js.UndefOr[QopConfiguration] = js.undefined,
+        ReplicationFactor: js.UndefOr[HdfsReplicationFactor] = js.undefined,
+        SimpleUser: js.UndefOr[HdfsUser] = js.undefined,
+        Subdirectory: js.UndefOr[HdfsSubdirectory] = js.undefined
+    ): UpdateLocationHdfsRequest = {
+      val __obj = js.Dynamic.literal(
+        "LocationArn" -> LocationArn.asInstanceOf[js.Any]
+      )
+
+      AgentArns.foreach(__v => __obj.updateDynamic("AgentArns")(__v.asInstanceOf[js.Any]))
+      AuthenticationType.foreach(__v => __obj.updateDynamic("AuthenticationType")(__v.asInstanceOf[js.Any]))
+      BlockSize.foreach(__v => __obj.updateDynamic("BlockSize")(__v.asInstanceOf[js.Any]))
+      KerberosKeytab.foreach(__v => __obj.updateDynamic("KerberosKeytab")(__v.asInstanceOf[js.Any]))
+      KerberosKrb5Conf.foreach(__v => __obj.updateDynamic("KerberosKrb5Conf")(__v.asInstanceOf[js.Any]))
+      KerberosPrincipal.foreach(__v => __obj.updateDynamic("KerberosPrincipal")(__v.asInstanceOf[js.Any]))
+      KmsKeyProviderUri.foreach(__v => __obj.updateDynamic("KmsKeyProviderUri")(__v.asInstanceOf[js.Any]))
+      NameNodes.foreach(__v => __obj.updateDynamic("NameNodes")(__v.asInstanceOf[js.Any]))
+      QopConfiguration.foreach(__v => __obj.updateDynamic("QopConfiguration")(__v.asInstanceOf[js.Any]))
+      ReplicationFactor.foreach(__v => __obj.updateDynamic("ReplicationFactor")(__v.asInstanceOf[js.Any]))
+      SimpleUser.foreach(__v => __obj.updateDynamic("SimpleUser")(__v.asInstanceOf[js.Any]))
+      Subdirectory.foreach(__v => __obj.updateDynamic("Subdirectory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateLocationHdfsRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateLocationHdfsResponse extends js.Object
+
+  object UpdateLocationHdfsResponse {
+    @inline
+    def apply(): UpdateLocationHdfsResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateLocationHdfsResponse]
     }
   }
 
@@ -2089,6 +2452,7 @@ package object datasync {
     var TaskArn: TaskArn
     var CloudWatchLogGroupArn: js.UndefOr[LogGroupArn]
     var Excludes: js.UndefOr[FilterList]
+    var Includes: js.UndefOr[FilterList]
     var Name: js.UndefOr[TagValue]
     var Options: js.UndefOr[Options]
     var Schedule: js.UndefOr[TaskSchedule]
@@ -2100,6 +2464,7 @@ package object datasync {
         TaskArn: TaskArn,
         CloudWatchLogGroupArn: js.UndefOr[LogGroupArn] = js.undefined,
         Excludes: js.UndefOr[FilterList] = js.undefined,
+        Includes: js.UndefOr[FilterList] = js.undefined,
         Name: js.UndefOr[TagValue] = js.undefined,
         Options: js.UndefOr[Options] = js.undefined,
         Schedule: js.UndefOr[TaskSchedule] = js.undefined
@@ -2110,6 +2475,7 @@ package object datasync {
 
       CloudWatchLogGroupArn.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupArn")(__v.asInstanceOf[js.Any]))
       Excludes.foreach(__v => __obj.updateDynamic("Excludes")(__v.asInstanceOf[js.Any]))
+      Includes.foreach(__v => __obj.updateDynamic("Includes")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Options.foreach(__v => __obj.updateDynamic("Options")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))

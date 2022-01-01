@@ -10,6 +10,7 @@ import facade.amazonaws._
 package object s3outposts {
   type CidrBlock = String
   type CreationTime = js.Date
+  type CustomerOwnedIpv4Pool = String
   type EndpointArn = String
   type EndpointId = String
   type Endpoints = js.Array[Endpoint]
@@ -20,6 +21,7 @@ package object s3outposts {
   type OutpostId = String
   type SecurityGroupId = String
   type SubnetId = String
+  type VpcId = String
 
   final class S3OutpostsOps(private val service: S3Outposts) extends AnyVal {
 
@@ -49,6 +51,8 @@ package object s3outposts {
     var OutpostId: OutpostId
     var SecurityGroupId: SecurityGroupId
     var SubnetId: SubnetId
+    var AccessType: js.UndefOr[EndpointAccessType]
+    var CustomerOwnedIpv4Pool: js.UndefOr[CustomerOwnedIpv4Pool]
   }
 
   object CreateEndpointRequest {
@@ -56,13 +60,18 @@ package object s3outposts {
     def apply(
         OutpostId: OutpostId,
         SecurityGroupId: SecurityGroupId,
-        SubnetId: SubnetId
+        SubnetId: SubnetId,
+        AccessType: js.UndefOr[EndpointAccessType] = js.undefined,
+        CustomerOwnedIpv4Pool: js.UndefOr[CustomerOwnedIpv4Pool] = js.undefined
     ): CreateEndpointRequest = {
       val __obj = js.Dynamic.literal(
         "OutpostId" -> OutpostId.asInstanceOf[js.Any],
         "SecurityGroupId" -> SecurityGroupId.asInstanceOf[js.Any],
         "SubnetId" -> SubnetId.asInstanceOf[js.Any]
       )
+
+      AccessType.foreach(__v => __obj.updateDynamic("AccessType")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIpv4Pool.foreach(__v => __obj.updateDynamic("CustomerOwnedIpv4Pool")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEndpointRequest]
     }
   }
@@ -103,35 +112,50 @@ package object s3outposts {
     }
   }
 
-  /** S3 on Outposts access points simplify managing data access at scale for shared datasets in Amazon S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC).
+  /** Amazon S3 on Outposts Access Points simplify managing data access at scale for shared datasets in S3 on Outposts. S3 on Outposts uses endpoints to connect to Outposts buckets so that you can perform actions within your virtual private cloud (VPC). For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/AccessingS3Outposts.html| Accessing S3 on Outposts using VPC only access points]].
     */
   @js.native
   trait Endpoint extends js.Object {
+    var AccessType: js.UndefOr[EndpointAccessType]
     var CidrBlock: js.UndefOr[CidrBlock]
     var CreationTime: js.UndefOr[CreationTime]
+    var CustomerOwnedIpv4Pool: js.UndefOr[CustomerOwnedIpv4Pool]
     var EndpointArn: js.UndefOr[EndpointArn]
     var NetworkInterfaces: js.UndefOr[NetworkInterfaces]
     var OutpostsId: js.UndefOr[OutpostId]
+    var SecurityGroupId: js.UndefOr[SecurityGroupId]
     var Status: js.UndefOr[EndpointStatus]
+    var SubnetId: js.UndefOr[SubnetId]
+    var VpcId: js.UndefOr[VpcId]
   }
 
   object Endpoint {
     @inline
     def apply(
+        AccessType: js.UndefOr[EndpointAccessType] = js.undefined,
         CidrBlock: js.UndefOr[CidrBlock] = js.undefined,
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
+        CustomerOwnedIpv4Pool: js.UndefOr[CustomerOwnedIpv4Pool] = js.undefined,
         EndpointArn: js.UndefOr[EndpointArn] = js.undefined,
         NetworkInterfaces: js.UndefOr[NetworkInterfaces] = js.undefined,
         OutpostsId: js.UndefOr[OutpostId] = js.undefined,
-        Status: js.UndefOr[EndpointStatus] = js.undefined
+        SecurityGroupId: js.UndefOr[SecurityGroupId] = js.undefined,
+        Status: js.UndefOr[EndpointStatus] = js.undefined,
+        SubnetId: js.UndefOr[SubnetId] = js.undefined,
+        VpcId: js.UndefOr[VpcId] = js.undefined
     ): Endpoint = {
       val __obj = js.Dynamic.literal()
+      AccessType.foreach(__v => __obj.updateDynamic("AccessType")(__v.asInstanceOf[js.Any]))
       CidrBlock.foreach(__v => __obj.updateDynamic("CidrBlock")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CustomerOwnedIpv4Pool.foreach(__v => __obj.updateDynamic("CustomerOwnedIpv4Pool")(__v.asInstanceOf[js.Any]))
       EndpointArn.foreach(__v => __obj.updateDynamic("EndpointArn")(__v.asInstanceOf[js.Any]))
       NetworkInterfaces.foreach(__v => __obj.updateDynamic("NetworkInterfaces")(__v.asInstanceOf[js.Any]))
       OutpostsId.foreach(__v => __obj.updateDynamic("OutpostsId")(__v.asInstanceOf[js.Any]))
+      SecurityGroupId.foreach(__v => __obj.updateDynamic("SecurityGroupId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
+      VpcId.foreach(__v => __obj.updateDynamic("VpcId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Endpoint]
     }
   }

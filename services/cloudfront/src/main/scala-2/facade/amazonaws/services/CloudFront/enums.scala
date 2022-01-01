@@ -72,6 +72,32 @@ object Format {
 }
 
 @js.native
+sealed trait FrameOptionsList extends js.Any
+object FrameOptionsList {
+  val DENY = "DENY".asInstanceOf[FrameOptionsList]
+  val SAMEORIGIN = "SAMEORIGIN".asInstanceOf[FrameOptionsList]
+
+  @inline def values: js.Array[FrameOptionsList] = js.Array(DENY, SAMEORIGIN)
+}
+
+@js.native
+sealed trait FunctionRuntime extends js.Any
+object FunctionRuntime {
+  val `cloudfront-js-1.0` = "cloudfront-js-1.0".asInstanceOf[FunctionRuntime]
+
+  @inline def values: js.Array[FunctionRuntime] = js.Array(`cloudfront-js-1.0`)
+}
+
+@js.native
+sealed trait FunctionStage extends js.Any
+object FunctionStage {
+  val DEVELOPMENT = "DEVELOPMENT".asInstanceOf[FunctionStage]
+  val LIVE = "LIVE".asInstanceOf[FunctionStage]
+
+  @inline def values: js.Array[FunctionStage] = js.Array(DEVELOPMENT, LIVE)
+}
+
+@js.native
 sealed trait GeoRestrictionType extends js.Any
 object GeoRestrictionType {
   val blacklist = "blacklist".asInstanceOf[GeoRestrictionType]
@@ -133,8 +159,9 @@ object MinimumProtocolVersion {
   val `TLSv1.1_2016` = "TLSv1.1_2016".asInstanceOf[MinimumProtocolVersion]
   val `TLSv1.2_2018` = "TLSv1.2_2018".asInstanceOf[MinimumProtocolVersion]
   val `TLSv1.2_2019` = "TLSv1.2_2019".asInstanceOf[MinimumProtocolVersion]
+  val `TLSv1.2_2021` = "TLSv1.2_2021".asInstanceOf[MinimumProtocolVersion]
 
-  @inline def values: js.Array[MinimumProtocolVersion] = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`)
+  @inline def values: js.Array[MinimumProtocolVersion] = js.Array(SSLv3, TLSv1, TLSv1_2016, `TLSv1.1_2016`, `TLSv1.2_2018`, `TLSv1.2_2019`, `TLSv1.2_2021`)
 }
 
 @js.native
@@ -204,6 +231,54 @@ object RealtimeMetricsSubscriptionStatus {
   val Disabled = "Disabled".asInstanceOf[RealtimeMetricsSubscriptionStatus]
 
   @inline def values: js.Array[RealtimeMetricsSubscriptionStatus] = js.Array(Enabled, Disabled)
+}
+
+@js.native
+sealed trait ReferrerPolicyList extends js.Any
+object ReferrerPolicyList {
+  val `no-referrer` = "no-referrer".asInstanceOf[ReferrerPolicyList]
+  val `no-referrer-when-downgrade` = "no-referrer-when-downgrade".asInstanceOf[ReferrerPolicyList]
+  val origin = "origin".asInstanceOf[ReferrerPolicyList]
+  val `origin-when-cross-origin` = "origin-when-cross-origin".asInstanceOf[ReferrerPolicyList]
+  val `same-origin` = "same-origin".asInstanceOf[ReferrerPolicyList]
+  val `strict-origin` = "strict-origin".asInstanceOf[ReferrerPolicyList]
+  val `strict-origin-when-cross-origin` = "strict-origin-when-cross-origin".asInstanceOf[ReferrerPolicyList]
+  val `unsafe-url` = "unsafe-url".asInstanceOf[ReferrerPolicyList]
+
+  @inline def values: js.Array[ReferrerPolicyList] = js.Array(
+    `no-referrer`,
+    `no-referrer-when-downgrade`,
+    origin,
+    `origin-when-cross-origin`,
+    `same-origin`,
+    `strict-origin`,
+    `strict-origin-when-cross-origin`,
+    `unsafe-url`
+  )
+}
+
+@js.native
+sealed trait ResponseHeadersPolicyAccessControlAllowMethodsValues extends js.Any
+object ResponseHeadersPolicyAccessControlAllowMethodsValues {
+  val GET = "GET".asInstanceOf[ResponseHeadersPolicyAccessControlAllowMethodsValues]
+  val POST = "POST".asInstanceOf[ResponseHeadersPolicyAccessControlAllowMethodsValues]
+  val OPTIONS = "OPTIONS".asInstanceOf[ResponseHeadersPolicyAccessControlAllowMethodsValues]
+  val PUT = "PUT".asInstanceOf[ResponseHeadersPolicyAccessControlAllowMethodsValues]
+  val DELETE = "DELETE".asInstanceOf[ResponseHeadersPolicyAccessControlAllowMethodsValues]
+  val PATCH = "PATCH".asInstanceOf[ResponseHeadersPolicyAccessControlAllowMethodsValues]
+  val HEAD = "HEAD".asInstanceOf[ResponseHeadersPolicyAccessControlAllowMethodsValues]
+  val ALL = "ALL".asInstanceOf[ResponseHeadersPolicyAccessControlAllowMethodsValues]
+
+  @inline def values: js.Array[ResponseHeadersPolicyAccessControlAllowMethodsValues] = js.Array(GET, POST, OPTIONS, PUT, DELETE, PATCH, HEAD, ALL)
+}
+
+@js.native
+sealed trait ResponseHeadersPolicyType extends js.Any
+object ResponseHeadersPolicyType {
+  val managed = "managed".asInstanceOf[ResponseHeadersPolicyType]
+  val custom = "custom".asInstanceOf[ResponseHeadersPolicyType]
+
+  @inline def values: js.Array[ResponseHeadersPolicyType] = js.Array(managed, custom)
 }
 
 @js.native

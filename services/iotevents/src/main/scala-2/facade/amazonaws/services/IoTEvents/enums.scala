@@ -3,6 +3,17 @@ package facade.amazonaws.services.iotevents
 import scalajs.js
 
 @js.native
+sealed trait AlarmModelVersionStatus extends js.Any
+object AlarmModelVersionStatus {
+  val ACTIVE = "ACTIVE".asInstanceOf[AlarmModelVersionStatus]
+  val ACTIVATING = "ACTIVATING".asInstanceOf[AlarmModelVersionStatus]
+  val INACTIVE = "INACTIVE".asInstanceOf[AlarmModelVersionStatus]
+  val FAILED = "FAILED".asInstanceOf[AlarmModelVersionStatus]
+
+  @inline def values: js.Array[AlarmModelVersionStatus] = js.Array(ACTIVE, ACTIVATING, INACTIVE, FAILED)
+}
+
+@js.native
 sealed trait AnalysisResultLevel extends js.Any
 object AnalysisResultLevel {
   val INFO = "INFO".asInstanceOf[AnalysisResultLevel]
@@ -20,6 +31,19 @@ object AnalysisStatus {
   val FAILED = "FAILED".asInstanceOf[AnalysisStatus]
 
   @inline def values: js.Array[AnalysisStatus] = js.Array(RUNNING, COMPLETE, FAILED)
+}
+
+@js.native
+sealed trait ComparisonOperator extends js.Any
+object ComparisonOperator {
+  val GREATER = "GREATER".asInstanceOf[ComparisonOperator]
+  val GREATER_OR_EQUAL = "GREATER_OR_EQUAL".asInstanceOf[ComparisonOperator]
+  val LESS = "LESS".asInstanceOf[ComparisonOperator]
+  val LESS_OR_EQUAL = "LESS_OR_EQUAL".asInstanceOf[ComparisonOperator]
+  val EQUAL = "EQUAL".asInstanceOf[ComparisonOperator]
+  val NOT_EQUAL = "NOT_EQUAL".asInstanceOf[ComparisonOperator]
+
+  @inline def values: js.Array[ComparisonOperator] = js.Array(GREATER, GREATER_OR_EQUAL, LESS, LESS_OR_EQUAL, EQUAL, NOT_EQUAL)
 }
 
 @js.native

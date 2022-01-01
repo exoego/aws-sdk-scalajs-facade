@@ -125,7 +125,7 @@ package object sts {
     }
   }
 
-  /** Contains the response to a successful <a>AssumeRole</a> request, including temporary AWS credentials that can be used to make AWS requests.
+  /** Contains the response to a successful <a>AssumeRole</a> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests.
     */
   @js.native
   trait AssumeRoleResponse extends js.Object {
@@ -185,7 +185,7 @@ package object sts {
     }
   }
 
-  /** Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary AWS credentials that can be used to make AWS requests.
+  /** Contains the response to a successful <a>AssumeRoleWithSAML</a> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests.
     */
   @js.native
   trait AssumeRoleWithSAMLResponse extends js.Object {
@@ -263,7 +263,7 @@ package object sts {
     }
   }
 
-  /** Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary AWS credentials that can be used to make AWS requests.
+  /** Contains the response to a successful <a>AssumeRoleWithWebIdentity</a> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests.
     */
   @js.native
   trait AssumeRoleWithWebIdentityResponse extends js.Object {
@@ -321,7 +321,7 @@ package object sts {
     }
   }
 
-  /** AWS credentials for API authentication.
+  /** Amazon Web Services credentials for API authentication.
     */
   @js.native
   trait Credentials extends js.Object {
@@ -366,7 +366,7 @@ package object sts {
     }
   }
 
-  /** A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an AWS request.
+  /** A document that contains additional information about the authorization status of a request from an encoded message that is returned in response to an Amazon Web Services request.
     */
   @js.native
   trait DecodeAuthorizationMessageResponse extends js.Object {
@@ -504,7 +504,7 @@ package object sts {
     }
   }
 
-  /** Contains the response to a successful <a>GetFederationToken</a> request, including temporary AWS credentials that can be used to make AWS requests.
+  /** Contains the response to a successful <a>GetFederationToken</a> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests.
     */
   @js.native
   trait GetFederationTokenResponse extends js.Object {
@@ -550,7 +550,7 @@ package object sts {
     }
   }
 
-  /** Contains the response to a successful <a>GetSessionToken</a> request, including temporary AWS credentials that can be used to make AWS requests.
+  /** Contains the response to a successful <a>GetSessionToken</a> request, including temporary Amazon Web Services credentials that can be used to make Amazon Web Services requests.
     */
   @js.native
   trait GetSessionTokenResponse extends js.Object {
@@ -586,7 +586,7 @@ package object sts {
     }
   }
 
-  /** You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html|Tagging AWS STS Sessions]] in the <i>IAM User Guide</i>.
+  /** You can pass custom key-value pair attributes when you assume a role or federate a user. These are called session tags. You can then use the session tags to control access to resources. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html|Tagging Amazon Web Services STS Sessions]] in the <i>IAM User Guide</i>.
     */
   @js.native
   trait Tag extends js.Object {

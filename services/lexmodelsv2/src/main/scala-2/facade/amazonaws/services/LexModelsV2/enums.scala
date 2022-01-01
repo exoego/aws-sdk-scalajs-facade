@@ -3,6 +3,41 @@ package facade.amazonaws.services.lexmodelsv2
 import scalajs.js
 
 @js.native
+sealed trait AggregatedUtterancesFilterName extends js.Any
+object AggregatedUtterancesFilterName {
+  val Utterance = "Utterance".asInstanceOf[AggregatedUtterancesFilterName]
+
+  @inline def values: js.Array[AggregatedUtterancesFilterName] = js.Array(Utterance)
+}
+
+@js.native
+sealed trait AggregatedUtterancesFilterOperator extends js.Any
+object AggregatedUtterancesFilterOperator {
+  val CO = "CO".asInstanceOf[AggregatedUtterancesFilterOperator]
+  val EQ = "EQ".asInstanceOf[AggregatedUtterancesFilterOperator]
+
+  @inline def values: js.Array[AggregatedUtterancesFilterOperator] = js.Array(CO, EQ)
+}
+
+@js.native
+sealed trait AggregatedUtterancesSortAttribute extends js.Any
+object AggregatedUtterancesSortAttribute {
+  val HitCount = "HitCount".asInstanceOf[AggregatedUtterancesSortAttribute]
+  val MissedCount = "MissedCount".asInstanceOf[AggregatedUtterancesSortAttribute]
+
+  @inline def values: js.Array[AggregatedUtterancesSortAttribute] = js.Array(HitCount, MissedCount)
+}
+
+@js.native
+sealed trait AssociatedTranscriptFilterName extends js.Any
+object AssociatedTranscriptFilterName {
+  val IntentId = "IntentId".asInstanceOf[AssociatedTranscriptFilterName]
+  val SlotTypeId = "SlotTypeId".asInstanceOf[AssociatedTranscriptFilterName]
+
+  @inline def values: js.Array[AssociatedTranscriptFilterName] = js.Array(IntentId, SlotTypeId)
+}
+
+@js.native
 sealed trait BotAliasStatus extends js.Any
 object BotAliasStatus {
   val Creating = "Creating".asInstanceOf[BotAliasStatus]
@@ -65,8 +100,24 @@ object BotLocaleStatus {
   val Failed = "Failed".asInstanceOf[BotLocaleStatus]
   val Deleting = "Deleting".asInstanceOf[BotLocaleStatus]
   val NotBuilt = "NotBuilt".asInstanceOf[BotLocaleStatus]
+  val Importing = "Importing".asInstanceOf[BotLocaleStatus]
+  val Processing = "Processing".asInstanceOf[BotLocaleStatus]
 
-  @inline def values: js.Array[BotLocaleStatus] = js.Array(Creating, Building, Built, ReadyExpressTesting, Failed, Deleting, NotBuilt)
+  @inline def values: js.Array[BotLocaleStatus] = js.Array(Creating, Building, Built, ReadyExpressTesting, Failed, Deleting, NotBuilt, Importing, Processing)
+}
+
+@js.native
+sealed trait BotRecommendationStatus extends js.Any
+object BotRecommendationStatus {
+  val Processing = "Processing".asInstanceOf[BotRecommendationStatus]
+  val Deleting = "Deleting".asInstanceOf[BotRecommendationStatus]
+  val Deleted = "Deleted".asInstanceOf[BotRecommendationStatus]
+  val Downloading = "Downloading".asInstanceOf[BotRecommendationStatus]
+  val Updating = "Updating".asInstanceOf[BotRecommendationStatus]
+  val Available = "Available".asInstanceOf[BotRecommendationStatus]
+  val Failed = "Failed".asInstanceOf[BotRecommendationStatus]
+
+  @inline def values: js.Array[BotRecommendationStatus] = js.Array(Processing, Deleting, Deleted, Downloading, Updating, Available, Failed)
 }
 
 @js.native
@@ -86,8 +137,9 @@ object BotStatus {
   val Deleting = "Deleting".asInstanceOf[BotStatus]
   val Failed = "Failed".asInstanceOf[BotStatus]
   val Versioning = "Versioning".asInstanceOf[BotStatus]
+  val Importing = "Importing".asInstanceOf[BotStatus]
 
-  @inline def values: js.Array[BotStatus] = js.Array(Creating, Available, Inactive, Deleting, Failed, Versioning)
+  @inline def values: js.Array[BotStatus] = js.Array(Creating, Available, Inactive, Deleting, Failed, Versioning, Importing)
 }
 
 @js.native
@@ -112,6 +164,95 @@ object BuiltInSlotTypeSortAttribute {
   val SlotTypeSignature = "SlotTypeSignature".asInstanceOf[BuiltInSlotTypeSortAttribute]
 
   @inline def values: js.Array[BuiltInSlotTypeSortAttribute] = js.Array(SlotTypeSignature)
+}
+
+@js.native
+sealed trait Effect extends js.Any
+object Effect {
+  val Allow = "Allow".asInstanceOf[Effect]
+  val Deny = "Deny".asInstanceOf[Effect]
+
+  @inline def values: js.Array[Effect] = js.Array(Allow, Deny)
+}
+
+@js.native
+sealed trait ExportFilterName extends js.Any
+object ExportFilterName {
+  val ExportResourceType = "ExportResourceType".asInstanceOf[ExportFilterName]
+
+  @inline def values: js.Array[ExportFilterName] = js.Array(ExportResourceType)
+}
+
+@js.native
+sealed trait ExportFilterOperator extends js.Any
+object ExportFilterOperator {
+  val CO = "CO".asInstanceOf[ExportFilterOperator]
+  val EQ = "EQ".asInstanceOf[ExportFilterOperator]
+
+  @inline def values: js.Array[ExportFilterOperator] = js.Array(CO, EQ)
+}
+
+@js.native
+sealed trait ExportSortAttribute extends js.Any
+object ExportSortAttribute {
+  val LastUpdatedDateTime = "LastUpdatedDateTime".asInstanceOf[ExportSortAttribute]
+
+  @inline def values: js.Array[ExportSortAttribute] = js.Array(LastUpdatedDateTime)
+}
+
+@js.native
+sealed trait ExportStatus extends js.Any
+object ExportStatus {
+  val InProgress = "InProgress".asInstanceOf[ExportStatus]
+  val Completed = "Completed".asInstanceOf[ExportStatus]
+  val Failed = "Failed".asInstanceOf[ExportStatus]
+  val Deleting = "Deleting".asInstanceOf[ExportStatus]
+
+  @inline def values: js.Array[ExportStatus] = js.Array(InProgress, Completed, Failed, Deleting)
+}
+
+@js.native
+sealed trait ImportExportFileFormat extends js.Any
+object ImportExportFileFormat {
+  val LexJson = "LexJson".asInstanceOf[ImportExportFileFormat]
+
+  @inline def values: js.Array[ImportExportFileFormat] = js.Array(LexJson)
+}
+
+@js.native
+sealed trait ImportFilterName extends js.Any
+object ImportFilterName {
+  val ImportResourceType = "ImportResourceType".asInstanceOf[ImportFilterName]
+
+  @inline def values: js.Array[ImportFilterName] = js.Array(ImportResourceType)
+}
+
+@js.native
+sealed trait ImportFilterOperator extends js.Any
+object ImportFilterOperator {
+  val CO = "CO".asInstanceOf[ImportFilterOperator]
+  val EQ = "EQ".asInstanceOf[ImportFilterOperator]
+
+  @inline def values: js.Array[ImportFilterOperator] = js.Array(CO, EQ)
+}
+
+@js.native
+sealed trait ImportSortAttribute extends js.Any
+object ImportSortAttribute {
+  val LastUpdatedDateTime = "LastUpdatedDateTime".asInstanceOf[ImportSortAttribute]
+
+  @inline def values: js.Array[ImportSortAttribute] = js.Array(LastUpdatedDateTime)
+}
+
+@js.native
+sealed trait ImportStatus extends js.Any
+object ImportStatus {
+  val InProgress = "InProgress".asInstanceOf[ImportStatus]
+  val Completed = "Completed".asInstanceOf[ImportStatus]
+  val Failed = "Failed".asInstanceOf[ImportStatus]
+  val Deleting = "Deleting".asInstanceOf[ImportStatus]
+
+  @inline def values: js.Array[ImportStatus] = js.Array(InProgress, Completed, Failed, Deleting)
 }
 
 @js.native
@@ -141,12 +282,31 @@ object IntentSortAttribute {
 }
 
 @js.native
+sealed trait MergeStrategy extends js.Any
+object MergeStrategy {
+  val Overwrite = "Overwrite".asInstanceOf[MergeStrategy]
+  val FailOnConflict = "FailOnConflict".asInstanceOf[MergeStrategy]
+  val Append = "Append".asInstanceOf[MergeStrategy]
+
+  @inline def values: js.Array[MergeStrategy] = js.Array(Overwrite, FailOnConflict, Append)
+}
+
+@js.native
 sealed trait ObfuscationSettingType extends js.Any
 object ObfuscationSettingType {
   val None = "None".asInstanceOf[ObfuscationSettingType]
   val DefaultObfuscation = "DefaultObfuscation".asInstanceOf[ObfuscationSettingType]
 
   @inline def values: js.Array[ObfuscationSettingType] = js.Array(None, DefaultObfuscation)
+}
+
+@js.native
+sealed trait SearchOrder extends js.Any
+object SearchOrder {
+  val Ascending = "Ascending".asInstanceOf[SearchOrder]
+  val Descending = "Descending".asInstanceOf[SearchOrder]
+
+  @inline def values: js.Array[SearchOrder] = js.Array(Ascending, Descending)
 }
 
 @js.native
@@ -185,11 +345,22 @@ object SlotSortAttribute {
 }
 
 @js.native
+sealed trait SlotTypeCategory extends js.Any
+object SlotTypeCategory {
+  val Custom = "Custom".asInstanceOf[SlotTypeCategory]
+  val Extended = "Extended".asInstanceOf[SlotTypeCategory]
+  val ExternalGrammar = "ExternalGrammar".asInstanceOf[SlotTypeCategory]
+
+  @inline def values: js.Array[SlotTypeCategory] = js.Array(Custom, Extended, ExternalGrammar)
+}
+
+@js.native
 sealed trait SlotTypeFilterName extends js.Any
 object SlotTypeFilterName {
   val SlotTypeName = "SlotTypeName".asInstanceOf[SlotTypeFilterName]
+  val ExternalSourceType = "ExternalSourceType".asInstanceOf[SlotTypeFilterName]
 
-  @inline def values: js.Array[SlotTypeFilterName] = js.Array(SlotTypeName)
+  @inline def values: js.Array[SlotTypeFilterName] = js.Array(SlotTypeName, ExternalSourceType)
 }
 
 @js.native
@@ -226,4 +397,31 @@ object SortOrder {
   val Descending = "Descending".asInstanceOf[SortOrder]
 
   @inline def values: js.Array[SortOrder] = js.Array(Ascending, Descending)
+}
+
+@js.native
+sealed trait TimeDimension extends js.Any
+object TimeDimension {
+  val Hours = "Hours".asInstanceOf[TimeDimension]
+  val Days = "Days".asInstanceOf[TimeDimension]
+  val Weeks = "Weeks".asInstanceOf[TimeDimension]
+
+  @inline def values: js.Array[TimeDimension] = js.Array(Hours, Days, Weeks)
+}
+
+@js.native
+sealed trait TranscriptFormat extends js.Any
+object TranscriptFormat {
+  val Lex = "Lex".asInstanceOf[TranscriptFormat]
+
+  @inline def values: js.Array[TranscriptFormat] = js.Array(Lex)
+}
+
+@js.native
+sealed trait VoiceEngine extends js.Any
+object VoiceEngine {
+  val standard = "standard".asInstanceOf[VoiceEngine]
+  val neural = "neural".asInstanceOf[VoiceEngine]
+
+  @inline def values: js.Array[VoiceEngine] = js.Array(standard, neural)
 }

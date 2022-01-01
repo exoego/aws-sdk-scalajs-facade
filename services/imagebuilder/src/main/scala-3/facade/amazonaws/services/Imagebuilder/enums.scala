@@ -2,11 +2,27 @@ package facade.amazonaws.services.imagebuilder
 
 import scalajs.js
 
+type BuildType = "USER_INITIATED" | "SCHEDULED" | "IMPORT"
+object BuildType {
+  inline val USER_INITIATED: "USER_INITIATED" = "USER_INITIATED"
+  inline val SCHEDULED: "SCHEDULED" = "SCHEDULED"
+  inline val IMPORT: "IMPORT" = "IMPORT"
+
+  inline def values: js.Array[BuildType] = js.Array(USER_INITIATED, SCHEDULED, IMPORT)
+}
+
 type ComponentFormat = "SHELL"
 object ComponentFormat {
   inline val SHELL: "SHELL" = "SHELL"
 
   inline def values: js.Array[ComponentFormat] = js.Array(SHELL)
+}
+
+type ComponentStatus = "DEPRECATED"
+object ComponentStatus {
+  inline val DEPRECATED: "DEPRECATED" = "DEPRECATED"
+
+  inline def values: js.Array[ComponentStatus] = js.Array(DEPRECATED)
 }
 
 type ComponentType = "BUILD" | "TEST"
@@ -29,6 +45,15 @@ object ContainerType {
   inline val DOCKER: "DOCKER" = "DOCKER"
 
   inline def values: js.Array[ContainerType] = js.Array(DOCKER)
+}
+
+type DiskImageFormat = "VMDK" | "RAW" | "VHD"
+object DiskImageFormat {
+  inline val VMDK: "VMDK" = "VMDK"
+  inline val RAW: "RAW" = "RAW"
+  inline val VHD: "VHD" = "VHD"
+
+  inline def values: js.Array[DiskImageFormat] = js.Array(VMDK, RAW, VHD)
 }
 
 type EbsVolumeType = "standard" | "io1" | "io2" | "gp2" | "gp3" | "sc1" | "st1"

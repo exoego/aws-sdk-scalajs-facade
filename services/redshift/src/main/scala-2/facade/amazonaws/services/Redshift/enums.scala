@@ -42,6 +42,40 @@ object AuthorizationStatus {
 }
 
 @js.native
+sealed trait DataShareStatus extends js.Any
+object DataShareStatus {
+  val ACTIVE = "ACTIVE".asInstanceOf[DataShareStatus]
+  val PENDING_AUTHORIZATION = "PENDING_AUTHORIZATION".asInstanceOf[DataShareStatus]
+  val AUTHORIZED = "AUTHORIZED".asInstanceOf[DataShareStatus]
+  val DEAUTHORIZED = "DEAUTHORIZED".asInstanceOf[DataShareStatus]
+  val REJECTED = "REJECTED".asInstanceOf[DataShareStatus]
+  val AVAILABLE = "AVAILABLE".asInstanceOf[DataShareStatus]
+
+  @inline def values: js.Array[DataShareStatus] = js.Array(ACTIVE, PENDING_AUTHORIZATION, AUTHORIZED, DEAUTHORIZED, REJECTED, AVAILABLE)
+}
+
+@js.native
+sealed trait DataShareStatusForConsumer extends js.Any
+object DataShareStatusForConsumer {
+  val ACTIVE = "ACTIVE".asInstanceOf[DataShareStatusForConsumer]
+  val AVAILABLE = "AVAILABLE".asInstanceOf[DataShareStatusForConsumer]
+
+  @inline def values: js.Array[DataShareStatusForConsumer] = js.Array(ACTIVE, AVAILABLE)
+}
+
+@js.native
+sealed trait DataShareStatusForProducer extends js.Any
+object DataShareStatusForProducer {
+  val ACTIVE = "ACTIVE".asInstanceOf[DataShareStatusForProducer]
+  val AUTHORIZED = "AUTHORIZED".asInstanceOf[DataShareStatusForProducer]
+  val PENDING_AUTHORIZATION = "PENDING_AUTHORIZATION".asInstanceOf[DataShareStatusForProducer]
+  val DEAUTHORIZED = "DEAUTHORIZED".asInstanceOf[DataShareStatusForProducer]
+  val REJECTED = "REJECTED".asInstanceOf[DataShareStatusForProducer]
+
+  @inline def values: js.Array[DataShareStatusForProducer] = js.Array(ACTIVE, AUTHORIZED, PENDING_AUTHORIZATION, DEAUTHORIZED, REJECTED)
+}
+
+@js.native
 sealed trait Mode extends js.Any
 object Mode {
   val standard = "standard".asInstanceOf[Mode]
@@ -93,6 +127,28 @@ object PartnerIntegrationStatus {
   val ConnectionFailure = "ConnectionFailure".asInstanceOf[PartnerIntegrationStatus]
 
   @inline def values: js.Array[PartnerIntegrationStatus] = js.Array(Active, Inactive, RuntimeFailure, ConnectionFailure)
+}
+
+@js.native
+sealed trait ReservedNodeExchangeActionType extends js.Any
+object ReservedNodeExchangeActionType {
+  val `restore-cluster` = "restore-cluster".asInstanceOf[ReservedNodeExchangeActionType]
+  val `resize-cluster` = "resize-cluster".asInstanceOf[ReservedNodeExchangeActionType]
+
+  @inline def values: js.Array[ReservedNodeExchangeActionType] = js.Array(`restore-cluster`, `resize-cluster`)
+}
+
+@js.native
+sealed trait ReservedNodeExchangeStatusType extends js.Any
+object ReservedNodeExchangeStatusType {
+  val REQUESTED = "REQUESTED".asInstanceOf[ReservedNodeExchangeStatusType]
+  val PENDING = "PENDING".asInstanceOf[ReservedNodeExchangeStatusType]
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[ReservedNodeExchangeStatusType]
+  val RETRYING = "RETRYING".asInstanceOf[ReservedNodeExchangeStatusType]
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[ReservedNodeExchangeStatusType]
+  val FAILED = "FAILED".asInstanceOf[ReservedNodeExchangeStatusType]
+
+  @inline def values: js.Array[ReservedNodeExchangeStatusType] = js.Array(REQUESTED, PENDING, IN_PROGRESS, RETRYING, SUCCEEDED, FAILED)
 }
 
 @js.native

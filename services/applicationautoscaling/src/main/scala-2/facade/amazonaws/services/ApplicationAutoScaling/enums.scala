@@ -54,6 +54,10 @@ object MetricType {
   val CassandraReadCapacityUtilization = "CassandraReadCapacityUtilization".asInstanceOf[MetricType]
   val CassandraWriteCapacityUtilization = "CassandraWriteCapacityUtilization".asInstanceOf[MetricType]
   val KafkaBrokerStorageUtilization = "KafkaBrokerStorageUtilization".asInstanceOf[MetricType]
+  val ElastiCachePrimaryEngineCPUUtilization = "ElastiCachePrimaryEngineCPUUtilization".asInstanceOf[MetricType]
+  val ElastiCacheReplicaEngineCPUUtilization = "ElastiCacheReplicaEngineCPUUtilization".asInstanceOf[MetricType]
+  val ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage = "ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage".asInstanceOf[MetricType]
+  val NeptuneReaderAverageCPUUtilization = "NeptuneReaderAverageCPUUtilization".asInstanceOf[MetricType]
 
   @inline def values: js.Array[MetricType] = js.Array(
     DynamoDBReadCapacityUtilization,
@@ -72,7 +76,11 @@ object MetricType {
     LambdaProvisionedConcurrencyUtilization,
     CassandraReadCapacityUtilization,
     CassandraWriteCapacityUtilization,
-    KafkaBrokerStorageUtilization
+    KafkaBrokerStorageUtilization,
+    ElastiCachePrimaryEngineCPUUtilization,
+    ElastiCacheReplicaEngineCPUUtilization,
+    ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
+    NeptuneReaderAverageCPUUtilization
   )
 }
 
@@ -105,6 +113,9 @@ object ScalableDimension {
   val `cassandra:table:ReadCapacityUnits` = "cassandra:table:ReadCapacityUnits".asInstanceOf[ScalableDimension]
   val `cassandra:table:WriteCapacityUnits` = "cassandra:table:WriteCapacityUnits".asInstanceOf[ScalableDimension]
   val `kafka:broker-storage:VolumeSize` = "kafka:broker-storage:VolumeSize".asInstanceOf[ScalableDimension]
+  val `elasticache:replication-group:NodeGroups` = "elasticache:replication-group:NodeGroups".asInstanceOf[ScalableDimension]
+  val `elasticache:replication-group:Replicas` = "elasticache:replication-group:Replicas".asInstanceOf[ScalableDimension]
+  val `neptune:cluster:ReadReplicaCount` = "neptune:cluster:ReadReplicaCount".asInstanceOf[ScalableDimension]
 
   @inline def values: js.Array[ScalableDimension] = js.Array(
     `ecs:service:DesiredCount`,
@@ -123,7 +134,10 @@ object ScalableDimension {
     `lambda:function:ProvisionedConcurrency`,
     `cassandra:table:ReadCapacityUnits`,
     `cassandra:table:WriteCapacityUnits`,
-    `kafka:broker-storage:VolumeSize`
+    `kafka:broker-storage:VolumeSize`,
+    `elasticache:replication-group:NodeGroups`,
+    `elasticache:replication-group:Replicas`,
+    `neptune:cluster:ReadReplicaCount`
   )
 }
 
@@ -155,6 +169,8 @@ object ServiceNamespace {
   val lambda = "lambda".asInstanceOf[ServiceNamespace]
   val cassandra = "cassandra".asInstanceOf[ServiceNamespace]
   val kafka = "kafka".asInstanceOf[ServiceNamespace]
+  val elasticache = "elasticache".asInstanceOf[ServiceNamespace]
+  val neptune = "neptune".asInstanceOf[ServiceNamespace]
 
-  @inline def values: js.Array[ServiceNamespace] = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka)
+  @inline def values: js.Array[ServiceNamespace] = js.Array(ecs, elasticmapreduce, ec2, appstream, dynamodb, rds, sagemaker, `custom-resource`, comprehend, lambda, cassandra, kafka, elasticache, neptune)
 }

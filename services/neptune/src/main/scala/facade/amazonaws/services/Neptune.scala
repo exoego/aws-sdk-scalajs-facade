@@ -604,6 +604,7 @@ package object neptune {
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var CharacterSetName: js.UndefOr[String]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
@@ -633,6 +634,7 @@ package object neptune {
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         CharacterSetName: js.UndefOr[String] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
@@ -661,6 +663,7 @@ package object neptune {
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CharacterSetName.foreach(__v => __obj.updateDynamic("CharacterSetName")(__v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
       DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))
@@ -1087,11 +1090,14 @@ package object neptune {
   trait DBCluster extends js.Object {
     var AllocatedStorage: js.UndefOr[IntegerOptional]
     var AssociatedRoles: js.UndefOr[DBClusterRoles]
+    var AutomaticRestartTime: js.UndefOr[TStamp]
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var CharacterSetName: js.UndefOr[String]
     var CloneGroupId: js.UndefOr[String]
     var ClusterCreateTime: js.UndefOr[TStamp]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
+    var CrossAccountClone: js.UndefOr[BooleanOptional]
     var DBClusterArn: js.UndefOr[String]
     var DBClusterIdentifier: js.UndefOr[String]
     var DBClusterMembers: js.UndefOr[DBClusterMemberList]
@@ -1129,11 +1135,14 @@ package object neptune {
     def apply(
         AllocatedStorage: js.UndefOr[IntegerOptional] = js.undefined,
         AssociatedRoles: js.UndefOr[DBClusterRoles] = js.undefined,
+        AutomaticRestartTime: js.UndefOr[TStamp] = js.undefined,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         CharacterSetName: js.UndefOr[String] = js.undefined,
         CloneGroupId: js.UndefOr[String] = js.undefined,
         ClusterCreateTime: js.UndefOr[TStamp] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
+        CrossAccountClone: js.UndefOr[BooleanOptional] = js.undefined,
         DBClusterArn: js.UndefOr[String] = js.undefined,
         DBClusterIdentifier: js.UndefOr[String] = js.undefined,
         DBClusterMembers: js.UndefOr[DBClusterMemberList] = js.undefined,
@@ -1168,11 +1177,14 @@ package object neptune {
       val __obj = js.Dynamic.literal()
       AllocatedStorage.foreach(__v => __obj.updateDynamic("AllocatedStorage")(__v.asInstanceOf[js.Any]))
       AssociatedRoles.foreach(__v => __obj.updateDynamic("AssociatedRoles")(__v.asInstanceOf[js.Any]))
+      AutomaticRestartTime.foreach(__v => __obj.updateDynamic("AutomaticRestartTime")(__v.asInstanceOf[js.Any]))
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CharacterSetName.foreach(__v => __obj.updateDynamic("CharacterSetName")(__v.asInstanceOf[js.Any]))
       CloneGroupId.foreach(__v => __obj.updateDynamic("CloneGroupId")(__v.asInstanceOf[js.Any]))
       ClusterCreateTime.foreach(__v => __obj.updateDynamic("ClusterCreateTime")(__v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
+      CrossAccountClone.foreach(__v => __obj.updateDynamic("CrossAccountClone")(__v.asInstanceOf[js.Any]))
       DBClusterArn.foreach(__v => __obj.updateDynamic("DBClusterArn")(__v.asInstanceOf[js.Any]))
       DBClusterIdentifier.foreach(__v => __obj.updateDynamic("DBClusterIdentifier")(__v.asInstanceOf[js.Any]))
       DBClusterMembers.foreach(__v => __obj.updateDynamic("DBClusterMembers")(__v.asInstanceOf[js.Any]))
@@ -1317,7 +1329,7 @@ package object neptune {
     }
   }
 
-  /** Contains status information for a DB cluster option group.
+  /** Not supported by Neptune.
     */
   @js.native
   trait DBClusterOptionGroupStatus extends js.Object {
@@ -1419,7 +1431,7 @@ package object neptune {
     }
   }
 
-  /** Describes an AWS Identity and Access Management (IAM) role that is associated with a DB cluster.
+  /** Describes an Amazon Identity and Access Management (IAM) role that is associated with a DB cluster.
     */
   @js.native
   trait DBClusterRole extends js.Object {
@@ -1518,7 +1530,7 @@ package object neptune {
     }
   }
 
-  /** Contains the name and values of a manual DB cluster snapshot attribute. Manual DB cluster snapshot attributes are used to authorize other AWS accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+  /** Contains the name and values of a manual DB cluster snapshot attribute. Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
     */
   @js.native
   trait DBClusterSnapshotAttribute extends js.Object {
@@ -1539,7 +1551,7 @@ package object neptune {
     }
   }
 
-  /** Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action. Manual DB cluster snapshot attributes are used to authorize other AWS accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
+  /** Contains the results of a successful call to the <a>DescribeDBClusterSnapshotAttributes</a> API action. Manual DB cluster snapshot attributes are used to authorize other Amazon accounts to copy or restore a manual DB cluster snapshot. For more information, see the <a>ModifyDBClusterSnapshotAttribute</a> API action.
     */
   @js.native
   trait DBClusterSnapshotAttributesResult extends js.Object {
@@ -3295,10 +3307,13 @@ package object neptune {
   @js.native
   trait ModifyDBClusterMessage extends js.Object {
     var DBClusterIdentifier: String
+    var AllowMajorVersionUpgrade: js.UndefOr[Boolean]
     var ApplyImmediately: js.UndefOr[Boolean]
     var BackupRetentionPeriod: js.UndefOr[IntegerOptional]
     var CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
+    var DBInstanceParameterGroupName: js.UndefOr[String]
     var DeletionProtection: js.UndefOr[BooleanOptional]
     var EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional]
     var EngineVersion: js.UndefOr[String]
@@ -3315,10 +3330,13 @@ package object neptune {
     @inline
     def apply(
         DBClusterIdentifier: String,
+        AllowMajorVersionUpgrade: js.UndefOr[Boolean] = js.undefined,
         ApplyImmediately: js.UndefOr[Boolean] = js.undefined,
         BackupRetentionPeriod: js.UndefOr[IntegerOptional] = js.undefined,
         CloudwatchLogsExportConfiguration: js.UndefOr[CloudwatchLogsExportConfiguration] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
+        DBInstanceParameterGroupName: js.UndefOr[String] = js.undefined,
         DeletionProtection: js.UndefOr[BooleanOptional] = js.undefined,
         EnableIAMDatabaseAuthentication: js.UndefOr[BooleanOptional] = js.undefined,
         EngineVersion: js.UndefOr[String] = js.undefined,
@@ -3334,10 +3352,13 @@ package object neptune {
         "DBClusterIdentifier" -> DBClusterIdentifier.asInstanceOf[js.Any]
       )
 
+      AllowMajorVersionUpgrade.foreach(__v => __obj.updateDynamic("AllowMajorVersionUpgrade")(__v.asInstanceOf[js.Any]))
       ApplyImmediately.foreach(__v => __obj.updateDynamic("ApplyImmediately")(__v.asInstanceOf[js.Any]))
       BackupRetentionPeriod.foreach(__v => __obj.updateDynamic("BackupRetentionPeriod")(__v.asInstanceOf[js.Any]))
       CloudwatchLogsExportConfiguration.foreach(__v => __obj.updateDynamic("CloudwatchLogsExportConfiguration")(__v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
       DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
+      DBInstanceParameterGroupName.foreach(__v => __obj.updateDynamic("DBInstanceParameterGroupName")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
       EnableIAMDatabaseAuthentication.foreach(__v => __obj.updateDynamic("EnableIAMDatabaseAuthentication")(__v.asInstanceOf[js.Any]))
       EngineVersion.foreach(__v => __obj.updateDynamic("EngineVersion")(__v.asInstanceOf[js.Any]))
@@ -3679,7 +3700,7 @@ package object neptune {
     }
   }
 
-  /** Provides information on the option groups the DB instance is a member of.
+  /** Not supported by Neptune.
     */
   @js.native
   trait OptionGroupMembership extends js.Object {
@@ -4218,6 +4239,7 @@ package object neptune {
     var Engine: String
     var SnapshotIdentifier: String
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
+    var CopyTagsToSnapshot: js.UndefOr[BooleanOptional]
     var DBClusterParameterGroupName: js.UndefOr[String]
     var DBSubnetGroupName: js.UndefOr[String]
     var DatabaseName: js.UndefOr[String]
@@ -4239,6 +4261,7 @@ package object neptune {
         Engine: String,
         SnapshotIdentifier: String,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
+        CopyTagsToSnapshot: js.UndefOr[BooleanOptional] = js.undefined,
         DBClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         DBSubnetGroupName: js.UndefOr[String] = js.undefined,
         DatabaseName: js.UndefOr[String] = js.undefined,
@@ -4259,6 +4282,7 @@ package object neptune {
       )
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
+      CopyTagsToSnapshot.foreach(__v => __obj.updateDynamic("CopyTagsToSnapshot")(__v.asInstanceOf[js.Any]))
       DBClusterParameterGroupName.foreach(__v => __obj.updateDynamic("DBClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       DBSubnetGroupName.foreach(__v => __obj.updateDynamic("DBSubnetGroupName")(__v.asInstanceOf[js.Any]))
       DatabaseName.foreach(__v => __obj.updateDynamic("DatabaseName")(__v.asInstanceOf[js.Any]))

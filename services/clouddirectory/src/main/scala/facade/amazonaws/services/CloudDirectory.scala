@@ -1430,6 +1430,8 @@ package object clouddirectory {
     }
   }
 
+  /** Lists parent objects that are associated with a given object in pagination fashion.
+    */
   @js.native
   trait BatchListObjectParents extends js.Object {
     var ObjectReference: ObjectReference
@@ -1454,6 +1456,8 @@ package object clouddirectory {
     }
   }
 
+  /** Represents the output of a <a>ListObjectParents</a> response operation.
+    */
   @js.native
   trait BatchListObjectParentsResponse extends js.Object {
     var NextToken: js.UndefOr[NextToken]

@@ -79,6 +79,15 @@ object ShardIteratorType {
 }
 
 @js.native
+sealed trait StreamMode extends js.Any
+object StreamMode {
+  val PROVISIONED = "PROVISIONED".asInstanceOf[StreamMode]
+  val ON_DEMAND = "ON_DEMAND".asInstanceOf[StreamMode]
+
+  @inline def values: js.Array[StreamMode] = js.Array(PROVISIONED, ON_DEMAND)
+}
+
+@js.native
 sealed trait StreamStatus extends js.Any
 object StreamStatus {
   val CREATING = "CREATING".asInstanceOf[StreamStatus]

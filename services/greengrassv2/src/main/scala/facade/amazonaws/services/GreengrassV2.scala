@@ -8,6 +8,11 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object greengrassv2 {
+  type AssociateClientDeviceWithCoreDeviceEntryList = js.Array[AssociateClientDeviceWithCoreDeviceEntry]
+  type AssociateClientDeviceWithCoreDeviceErrorList = js.Array[AssociateClientDeviceWithCoreDeviceErrorEntry]
+  type AssociatedClientDeviceList = js.Array[AssociatedClientDevice]
+  type CPU = Double
+  type ClientTokenString = String
   type ComponentARN = String
   type ComponentCandidateList = js.Array[ComponentCandidate]
   type ComponentConfigurationPath = String
@@ -32,6 +37,8 @@ package object greengrassv2 {
   type DeploymentName = String
   type Description = String
   type DescriptionString = String
+  type DisassociateClientDeviceFromCoreDeviceEntryList = js.Array[DisassociateClientDeviceFromCoreDeviceEntry]
+  type DisassociateClientDeviceFromCoreDeviceErrorList = js.Array[DisassociateClientDeviceFromCoreDeviceErrorEntry]
   type EffectiveDeploymentsList = js.Array[EffectiveDeployment]
   type FileSystemPath = String
   type GGCVersion = String
@@ -47,6 +54,7 @@ package object greengrassv2 {
   type IoTJobNumberOfThings = Int
   type IoTJobRolloutBaseRatePerMinute = Int
   type IoTJobRolloutIncrementFactor = Double
+  type IoTThingName = String
   type IsLatestForTarget = Boolean
   type IsRoot = Boolean
   type LambdaDeviceList = js.Array[LambdaDeviceMount]
@@ -57,6 +65,7 @@ package object greengrassv2 {
   type LambdaFunctionARNWithVersionNumber = String
   type LambdaVolumeList = js.Array[LambdaVolumeMount]
   type LifecycleStateDetails = String
+  type Memory = Double
   type NextTokenString = String
   type NonEmptyString = String
   type NullableString = String
@@ -79,6 +88,8 @@ package object greengrassv2 {
 
   final class GreengrassV2Ops(private val service: GreengrassV2) extends AnyVal {
 
+    @inline def batchAssociateClientDeviceWithCoreDeviceFuture(params: BatchAssociateClientDeviceWithCoreDeviceRequest): Future[BatchAssociateClientDeviceWithCoreDeviceResponse] = service.batchAssociateClientDeviceWithCoreDevice(params).promise().toFuture
+    @inline def batchDisassociateClientDeviceFromCoreDeviceFuture(params: BatchDisassociateClientDeviceFromCoreDeviceRequest): Future[BatchDisassociateClientDeviceFromCoreDeviceResponse] = service.batchDisassociateClientDeviceFromCoreDevice(params).promise().toFuture
     @inline def cancelDeploymentFuture(params: CancelDeploymentRequest): Future[CancelDeploymentResponse] = service.cancelDeployment(params).promise().toFuture
     @inline def createComponentVersionFuture(params: CreateComponentVersionRequest): Future[CreateComponentVersionResponse] = service.createComponentVersion(params).promise().toFuture
     @inline def createDeploymentFuture(params: CreateDeploymentRequest): Future[CreateDeploymentResponse] = service.createDeployment(params).promise().toFuture
@@ -89,6 +100,7 @@ package object greengrassv2 {
     @inline def getComponentVersionArtifactFuture(params: GetComponentVersionArtifactRequest): Future[GetComponentVersionArtifactResponse] = service.getComponentVersionArtifact(params).promise().toFuture
     @inline def getCoreDeviceFuture(params: GetCoreDeviceRequest): Future[GetCoreDeviceResponse] = service.getCoreDevice(params).promise().toFuture
     @inline def getDeploymentFuture(params: GetDeploymentRequest): Future[GetDeploymentResponse] = service.getDeployment(params).promise().toFuture
+    @inline def listClientDevicesAssociatedWithCoreDeviceFuture(params: ListClientDevicesAssociatedWithCoreDeviceRequest): Future[ListClientDevicesAssociatedWithCoreDeviceResponse] = service.listClientDevicesAssociatedWithCoreDevice(params).promise().toFuture
     @inline def listComponentVersionsFuture(params: ListComponentVersionsRequest): Future[ListComponentVersionsResponse] = service.listComponentVersions(params).promise().toFuture
     @inline def listComponentsFuture(params: ListComponentsRequest): Future[ListComponentsResponse] = service.listComponents(params).promise().toFuture
     @inline def listCoreDevicesFuture(params: ListCoreDevicesRequest): Future[ListCoreDevicesResponse] = service.listCoreDevices(params).promise().toFuture
@@ -107,6 +119,8 @@ package object greengrassv2 {
   class GreengrassV2() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def batchAssociateClientDeviceWithCoreDevice(params: BatchAssociateClientDeviceWithCoreDeviceRequest): Request[BatchAssociateClientDeviceWithCoreDeviceResponse] = js.native
+    def batchDisassociateClientDeviceFromCoreDevice(params: BatchDisassociateClientDeviceFromCoreDeviceRequest): Request[BatchDisassociateClientDeviceFromCoreDeviceResponse] = js.native
     def cancelDeployment(params: CancelDeploymentRequest): Request[CancelDeploymentResponse] = js.native
     def createComponentVersion(params: CreateComponentVersionRequest): Request[CreateComponentVersionResponse] = js.native
     def createDeployment(params: CreateDeploymentRequest): Request[CreateDeploymentResponse] = js.native
@@ -117,6 +131,7 @@ package object greengrassv2 {
     def getComponentVersionArtifact(params: GetComponentVersionArtifactRequest): Request[GetComponentVersionArtifactResponse] = js.native
     def getCoreDevice(params: GetCoreDeviceRequest): Request[GetCoreDeviceResponse] = js.native
     def getDeployment(params: GetDeploymentRequest): Request[GetDeploymentResponse] = js.native
+    def listClientDevicesAssociatedWithCoreDevice(params: ListClientDevicesAssociatedWithCoreDeviceRequest): Request[ListClientDevicesAssociatedWithCoreDeviceResponse] = js.native
     def listComponentVersions(params: ListComponentVersionsRequest): Request[ListComponentVersionsResponse] = js.native
     def listComponents(params: ListComponentsRequest): Request[ListComponentsResponse] = js.native
     def listCoreDevices(params: ListCoreDevicesRequest): Request[ListCoreDevicesResponse] = js.native
@@ -131,6 +146,144 @@ package object greengrassv2 {
   object GreengrassV2 {
     @inline implicit def toOps(service: GreengrassV2): GreengrassV2Ops = {
       new GreengrassV2Ops(service)
+    }
+  }
+
+  /** Contains a request to associate a client device with a core device. The [[https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html|BatchAssociateClientDeviceWithCoreDevice]] operation consumes a list of these requests.
+    */
+  @js.native
+  trait AssociateClientDeviceWithCoreDeviceEntry extends js.Object {
+    var thingName: IoTThingName
+  }
+
+  object AssociateClientDeviceWithCoreDeviceEntry {
+    @inline
+    def apply(
+        thingName: IoTThingName
+    ): AssociateClientDeviceWithCoreDeviceEntry = {
+      val __obj = js.Dynamic.literal(
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateClientDeviceWithCoreDeviceEntry]
+    }
+  }
+
+  /** Contains an error that occurs from a request to associate a client device with a core device. The [[https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchAssociateClientDeviceWithCoreDevice.html|BatchAssociateClientDeviceWithCoreDevice]] operation returns a list of these errors.
+    */
+  @js.native
+  trait AssociateClientDeviceWithCoreDeviceErrorEntry extends js.Object {
+    var code: js.UndefOr[NonEmptyString]
+    var message: js.UndefOr[NonEmptyString]
+    var thingName: js.UndefOr[IoTThingName]
+  }
+
+  object AssociateClientDeviceWithCoreDeviceErrorEntry {
+    @inline
+    def apply(
+        code: js.UndefOr[NonEmptyString] = js.undefined,
+        message: js.UndefOr[NonEmptyString] = js.undefined,
+        thingName: js.UndefOr[IoTThingName] = js.undefined
+    ): AssociateClientDeviceWithCoreDeviceErrorEntry = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateClientDeviceWithCoreDeviceErrorEntry]
+    }
+  }
+
+  /** Contains information about a client device that is associated to a core device for cloud discovery.
+    */
+  @js.native
+  trait AssociatedClientDevice extends js.Object {
+    var associationTimestamp: js.UndefOr[Timestamp]
+    var thingName: js.UndefOr[IoTThingName]
+  }
+
+  object AssociatedClientDevice {
+    @inline
+    def apply(
+        associationTimestamp: js.UndefOr[Timestamp] = js.undefined,
+        thingName: js.UndefOr[IoTThingName] = js.undefined
+    ): AssociatedClientDevice = {
+      val __obj = js.Dynamic.literal()
+      associationTimestamp.foreach(__v => __obj.updateDynamic("associationTimestamp")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociatedClientDevice]
+    }
+  }
+
+  @js.native
+  trait BatchAssociateClientDeviceWithCoreDeviceRequest extends js.Object {
+    var coreDeviceThingName: IoTThingName
+    var entries: js.UndefOr[AssociateClientDeviceWithCoreDeviceEntryList]
+  }
+
+  object BatchAssociateClientDeviceWithCoreDeviceRequest {
+    @inline
+    def apply(
+        coreDeviceThingName: IoTThingName,
+        entries: js.UndefOr[AssociateClientDeviceWithCoreDeviceEntryList] = js.undefined
+    ): BatchAssociateClientDeviceWithCoreDeviceRequest = {
+      val __obj = js.Dynamic.literal(
+        "coreDeviceThingName" -> coreDeviceThingName.asInstanceOf[js.Any]
+      )
+
+      entries.foreach(__v => __obj.updateDynamic("entries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchAssociateClientDeviceWithCoreDeviceRequest]
+    }
+  }
+
+  @js.native
+  trait BatchAssociateClientDeviceWithCoreDeviceResponse extends js.Object {
+    var errorEntries: js.UndefOr[AssociateClientDeviceWithCoreDeviceErrorList]
+  }
+
+  object BatchAssociateClientDeviceWithCoreDeviceResponse {
+    @inline
+    def apply(
+        errorEntries: js.UndefOr[AssociateClientDeviceWithCoreDeviceErrorList] = js.undefined
+    ): BatchAssociateClientDeviceWithCoreDeviceResponse = {
+      val __obj = js.Dynamic.literal()
+      errorEntries.foreach(__v => __obj.updateDynamic("errorEntries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchAssociateClientDeviceWithCoreDeviceResponse]
+    }
+  }
+
+  @js.native
+  trait BatchDisassociateClientDeviceFromCoreDeviceRequest extends js.Object {
+    var coreDeviceThingName: IoTThingName
+    var entries: js.UndefOr[DisassociateClientDeviceFromCoreDeviceEntryList]
+  }
+
+  object BatchDisassociateClientDeviceFromCoreDeviceRequest {
+    @inline
+    def apply(
+        coreDeviceThingName: IoTThingName,
+        entries: js.UndefOr[DisassociateClientDeviceFromCoreDeviceEntryList] = js.undefined
+    ): BatchDisassociateClientDeviceFromCoreDeviceRequest = {
+      val __obj = js.Dynamic.literal(
+        "coreDeviceThingName" -> coreDeviceThingName.asInstanceOf[js.Any]
+      )
+
+      entries.foreach(__v => __obj.updateDynamic("entries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDisassociateClientDeviceFromCoreDeviceRequest]
+    }
+  }
+
+  @js.native
+  trait BatchDisassociateClientDeviceFromCoreDeviceResponse extends js.Object {
+    var errorEntries: js.UndefOr[DisassociateClientDeviceFromCoreDeviceErrorList]
+  }
+
+  object BatchDisassociateClientDeviceFromCoreDeviceResponse {
+    @inline
+    def apply(
+        errorEntries: js.UndefOr[DisassociateClientDeviceFromCoreDeviceErrorList] = js.undefined
+    ): BatchDisassociateClientDeviceFromCoreDeviceResponse = {
+      val __obj = js.Dynamic.literal()
+      errorEntries.foreach(__v => __obj.updateDynamic("errorEntries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDisassociateClientDeviceFromCoreDeviceResponse]
     }
   }
 
@@ -167,7 +320,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains the status of a component in the AWS IoT Greengrass service.
+  /** Contains the status of a component in the IoT Greengrass service.
     */
   @js.native
   trait CloudComponentStatus extends js.Object {
@@ -215,7 +368,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about a component that is a candidate to deploy to a AWS IoT Greengrass core device.
+  /** Contains information about a component that is a candidate to deploy to a Greengrass core device.
     */
   @js.native
   trait ComponentCandidate extends js.Object {
@@ -239,7 +392,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about a deployment's update to a component's configuration on Greengrass core devices. For more information, see [[https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html|Update component configurations]] in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+  /** Contains information about a deployment's update to a component's configuration on Greengrass core devices. For more information, see [[https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html|Update component configurations]] in the <i>IoT Greengrass V2 Developer Guide</i>.
     */
   @js.native
   trait ComponentConfigurationUpdate extends js.Object {
@@ -359,20 +512,26 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information system user and group that the AWS IoT Greengrass Core software uses to run component processes on the core device. For more information, see [[https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user|Configure the user and group that run components]] in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+  /** Contains information system user and group that the IoT Greengrass Core software uses to run component processes on the core device. For more information, see [[https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-user|Configure the user and group that run components]] in the <i>IoT Greengrass V2 Developer Guide</i>.
     */
   @js.native
   trait ComponentRunWith extends js.Object {
     var posixUser: js.UndefOr[NonEmptyString]
+    var systemResourceLimits: js.UndefOr[SystemResourceLimits]
+    var windowsUser: js.UndefOr[NonEmptyString]
   }
 
   object ComponentRunWith {
     @inline
     def apply(
-        posixUser: js.UndefOr[NonEmptyString] = js.undefined
+        posixUser: js.UndefOr[NonEmptyString] = js.undefined,
+        systemResourceLimits: js.UndefOr[SystemResourceLimits] = js.undefined,
+        windowsUser: js.UndefOr[NonEmptyString] = js.undefined
     ): ComponentRunWith = {
       val __obj = js.Dynamic.literal()
       posixUser.foreach(__v => __obj.updateDynamic("posixUser")(__v.asInstanceOf[js.Any]))
+      systemResourceLimits.foreach(__v => __obj.updateDynamic("systemResourceLimits")(__v.asInstanceOf[js.Any]))
+      windowsUser.foreach(__v => __obj.updateDynamic("windowsUser")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComponentRunWith]
     }
   }
@@ -401,7 +560,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about a AWS IoT Greengrass core device, which is an AWS IoT thing that runs the AWS IoT Greengrass Core software.
+  /** Contains information about a Greengrass core device, which is an IoT thing that runs the IoT Greengrass Core software.
     */
   @js.native
   trait CoreDevice extends js.Object {
@@ -427,6 +586,7 @@ package object greengrassv2 {
 
   @js.native
   trait CreateComponentVersionRequest extends js.Object {
+    var clientToken: js.UndefOr[ClientTokenString]
     var inlineRecipe: js.UndefOr[RecipeBlob]
     var lambdaFunction: js.UndefOr[LambdaFunctionRecipeSource]
     var tags: js.UndefOr[TagMap]
@@ -435,11 +595,13 @@ package object greengrassv2 {
   object CreateComponentVersionRequest {
     @inline
     def apply(
+        clientToken: js.UndefOr[ClientTokenString] = js.undefined,
         inlineRecipe: js.UndefOr[RecipeBlob] = js.undefined,
         lambdaFunction: js.UndefOr[LambdaFunctionRecipeSource] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateComponentVersionRequest = {
       val __obj = js.Dynamic.literal()
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       inlineRecipe.foreach(__v => __obj.updateDynamic("inlineRecipe")(__v.asInstanceOf[js.Any]))
       lambdaFunction.foreach(__v => __obj.updateDynamic("lambdaFunction")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
@@ -480,6 +642,7 @@ package object greengrassv2 {
   @js.native
   trait CreateDeploymentRequest extends js.Object {
     var targetArn: TargetARN
+    var clientToken: js.UndefOr[ClientTokenString]
     var components: js.UndefOr[ComponentDeploymentSpecifications]
     var deploymentName: js.UndefOr[NonEmptyString]
     var deploymentPolicies: js.UndefOr[DeploymentPolicies]
@@ -491,6 +654,7 @@ package object greengrassv2 {
     @inline
     def apply(
         targetArn: TargetARN,
+        clientToken: js.UndefOr[ClientTokenString] = js.undefined,
         components: js.UndefOr[ComponentDeploymentSpecifications] = js.undefined,
         deploymentName: js.UndefOr[NonEmptyString] = js.undefined,
         deploymentPolicies: js.UndefOr[DeploymentPolicies] = js.undefined,
@@ -501,6 +665,7 @@ package object greengrassv2 {
         "targetArn" -> targetArn.asInstanceOf[js.Any]
       )
 
+      clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
       components.foreach(__v => __obj.updateDynamic("components")(__v.asInstanceOf[js.Any]))
       deploymentName.foreach(__v => __obj.updateDynamic("deploymentName")(__v.asInstanceOf[js.Any]))
       deploymentPolicies.foreach(__v => __obj.updateDynamic("deploymentPolicies")(__v.asInstanceOf[js.Any]))
@@ -623,7 +788,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about how long a component on a core device can validate its configuration updates before it times out. Components can use the [[https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetovalidateconfigurationupdates|SubscribeToValidateConfigurationUpdates]] IPC operation to receive notifications when a deployment specifies a configuration update. Then, components can respond with the [[https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-sendconfigurationvalidityreport|SendConfigurationValidityReport]] IPC operation. For more information, see [[https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html|Create deployments]] in the <i>AWS IoT Greengrass V2 Developer Guide</i>.
+  /** Contains information about how long a component on a core device can validate its configuration updates before it times out. Components can use the [[https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-subscribetovalidateconfigurationupdates|SubscribeToValidateConfigurationUpdates]] IPC operation to receive notifications when a deployment specifies a configuration update. Then, components can respond with the [[https://docs.aws.amazon.com/greengrass/v2/developerguide/interprocess-communication.html#ipc-operation-sendconfigurationvalidityreport|SendConfigurationValidityReport]] IPC operation. For more information, see [[https://docs.aws.amazon.com/greengrass/v2/developerguide/create-deployments.html|Create deployments]] in the <i>IoT Greengrass V2 Developer Guide</i>.
     */
   @js.native
   trait DeploymentConfigurationValidationPolicy extends js.Object {
@@ -641,7 +806,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about an AWS IoT job configuration.
+  /** Contains information about an IoT job configuration.
     */
   @js.native
   trait DeploymentIoTJobConfiguration extends js.Object {
@@ -746,7 +911,50 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about a deployment job that AWS IoT Greengrass sends to a AWS IoT Greengrass core device.
+  /** Contains a request to disassociate a client device from a core device. The [[https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceWithCoreDevice.html|BatchDisassociateClientDeviceWithCoreDevice]] operation consumes a list of these requests.
+    */
+  @js.native
+  trait DisassociateClientDeviceFromCoreDeviceEntry extends js.Object {
+    var thingName: IoTThingName
+  }
+
+  object DisassociateClientDeviceFromCoreDeviceEntry {
+    @inline
+    def apply(
+        thingName: IoTThingName
+    ): DisassociateClientDeviceFromCoreDeviceEntry = {
+      val __obj = js.Dynamic.literal(
+        "thingName" -> thingName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateClientDeviceFromCoreDeviceEntry]
+    }
+  }
+
+  /** Contains an error that occurs from a request to disassociate a client device from a core device. The [[https://docs.aws.amazon.com/greengrass/v2/APIReference/API_BatchDisassociateClientDeviceWithCoreDevice.html|BatchDisassociateClientDeviceWithCoreDevice]] operation returns a list of these errors.
+    */
+  @js.native
+  trait DisassociateClientDeviceFromCoreDeviceErrorEntry extends js.Object {
+    var code: js.UndefOr[NonEmptyString]
+    var message: js.UndefOr[NonEmptyString]
+    var thingName: js.UndefOr[IoTThingName]
+  }
+
+  object DisassociateClientDeviceFromCoreDeviceErrorEntry {
+    @inline
+    def apply(
+        code: js.UndefOr[NonEmptyString] = js.undefined,
+        message: js.UndefOr[NonEmptyString] = js.undefined,
+        thingName: js.UndefOr[IoTThingName] = js.undefined
+    ): DisassociateClientDeviceFromCoreDeviceErrorEntry = {
+      val __obj = js.Dynamic.literal()
+      code.foreach(__v => __obj.updateDynamic("code")(__v.asInstanceOf[js.Any]))
+      message.foreach(__v => __obj.updateDynamic("message")(__v.asInstanceOf[js.Any]))
+      thingName.foreach(__v => __obj.updateDynamic("thingName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateClientDeviceFromCoreDeviceErrorEntry]
+    }
+  }
+
+  /** Contains information about a deployment job that IoT Greengrass sends to a Greengrass core device.
     */
   @js.native
   trait EffectiveDeployment extends js.Object {
@@ -995,7 +1203,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about a component on a AWS IoT Greengrass core device.
+  /** Contains information about a component on a Greengrass core device.
     */
   @js.native
   trait InstalledComponent extends js.Object {
@@ -1157,7 +1365,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about a container in which AWS Lambda functions run on AWS IoT Greengrass core devices.
+  /** Contains information about a container in which Lambda functions run on Greengrass core devices.
     */
   @js.native
   trait LambdaContainerParams extends js.Object {
@@ -1210,7 +1418,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about an event source for an AWS Lambda function. The event source defines the topics on which this Lambda function subscribes to receive messages that run the function.
+  /** Contains information about an event source for an Lambda function. The event source defines the topics on which this Lambda function subscribes to receive messages that run the function.
     */
   @js.native
   trait LambdaEventSource extends js.Object {
@@ -1232,7 +1440,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains parameters for a Lambda function that runs on AWS IoT Greengrass.
+  /** Contains parameters for a Lambda function that runs on IoT Greengrass.
     */
   @js.native
   trait LambdaExecutionParameters extends js.Object {
@@ -1280,7 +1488,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about an AWS Lambda function to import to create a component.
+  /** Contains information about an Lambda function to import to create a component.
     */
   @js.native
   trait LambdaFunctionRecipeSource extends js.Object {
@@ -1315,7 +1523,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains parameters for a Linux process that contains an AWS Lambda function.
+  /** Contains parameters for a Linux process that contains an Lambda function.
     */
   @js.native
   trait LambdaLinuxProcessParams extends js.Object {
@@ -1336,7 +1544,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about a volume that Linux processes in a container can access. When you define a volume, the AWS IoT Greengrass Core software mounts the source files to the destination inside the container.
+  /** Contains information about a volume that Linux processes in a container can access. When you define a volume, the IoT Greengrass Core software mounts the source files to the destination inside the container.
     */
   @js.native
   trait LambdaVolumeMount extends js.Object {
@@ -1362,6 +1570,49 @@ package object greengrassv2 {
       addGroupOwner.foreach(__v => __obj.updateDynamic("addGroupOwner")(__v.asInstanceOf[js.Any]))
       permission.foreach(__v => __obj.updateDynamic("permission")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaVolumeMount]
+    }
+  }
+
+  @js.native
+  trait ListClientDevicesAssociatedWithCoreDeviceRequest extends js.Object {
+    var coreDeviceThingName: IoTThingName
+    var maxResults: js.UndefOr[DefaultMaxResults]
+    var nextToken: js.UndefOr[NextTokenString]
+  }
+
+  object ListClientDevicesAssociatedWithCoreDeviceRequest {
+    @inline
+    def apply(
+        coreDeviceThingName: IoTThingName,
+        maxResults: js.UndefOr[DefaultMaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextTokenString] = js.undefined
+    ): ListClientDevicesAssociatedWithCoreDeviceRequest = {
+      val __obj = js.Dynamic.literal(
+        "coreDeviceThingName" -> coreDeviceThingName.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListClientDevicesAssociatedWithCoreDeviceRequest]
+    }
+  }
+
+  @js.native
+  trait ListClientDevicesAssociatedWithCoreDeviceResponse extends js.Object {
+    var associatedClientDevices: js.UndefOr[AssociatedClientDeviceList]
+    var nextToken: js.UndefOr[NextTokenString]
+  }
+
+  object ListClientDevicesAssociatedWithCoreDeviceResponse {
+    @inline
+    def apply(
+        associatedClientDevices: js.UndefOr[AssociatedClientDeviceList] = js.undefined,
+        nextToken: js.UndefOr[NextTokenString] = js.undefined
+    ): ListClientDevicesAssociatedWithCoreDeviceResponse = {
+      val __obj = js.Dynamic.literal()
+      associatedClientDevices.foreach(__v => __obj.updateDynamic("associatedClientDevices")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListClientDevicesAssociatedWithCoreDeviceResponse]
     }
   }
 
@@ -1692,7 +1943,7 @@ package object greengrassv2 {
     }
   }
 
-  /** Contains information about a component version that is compatible to run on a AWS IoT Greengrass core device.
+  /** Contains information about a component version that is compatible to run on a Greengrass core device.
     */
   @js.native
   trait ResolvedComponentVersion extends js.Object {
@@ -1716,6 +1967,27 @@ package object greengrassv2 {
       componentVersion.foreach(__v => __obj.updateDynamic("componentVersion")(__v.asInstanceOf[js.Any]))
       recipe.foreach(__v => __obj.updateDynamic("recipe")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResolvedComponentVersion]
+    }
+  }
+
+  /** Contains information about system resource limits that the IoT Greengrass Core software applies to a component's processes. For more information, see [[https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-greengrass-core-v2.html#configure-component-system-resource-limits|Configure system resource limits for components]].
+    */
+  @js.native
+  trait SystemResourceLimits extends js.Object {
+    var cpus: js.UndefOr[CPU]
+    var memory: js.UndefOr[Memory]
+  }
+
+  object SystemResourceLimits {
+    @inline
+    def apply(
+        cpus: js.UndefOr[CPU] = js.undefined,
+        memory: js.UndefOr[Memory] = js.undefined
+    ): SystemResourceLimits = {
+      val __obj = js.Dynamic.literal()
+      cpus.foreach(__v => __obj.updateDynamic("cpus")(__v.asInstanceOf[js.Any]))
+      memory.foreach(__v => __obj.updateDynamic("memory")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SystemResourceLimits]
     }
   }
 

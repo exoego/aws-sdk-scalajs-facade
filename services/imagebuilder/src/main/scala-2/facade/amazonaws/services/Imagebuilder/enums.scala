@@ -3,11 +3,29 @@ package facade.amazonaws.services.imagebuilder
 import scalajs.js
 
 @js.native
+sealed trait BuildType extends js.Any
+object BuildType {
+  val USER_INITIATED = "USER_INITIATED".asInstanceOf[BuildType]
+  val SCHEDULED = "SCHEDULED".asInstanceOf[BuildType]
+  val IMPORT = "IMPORT".asInstanceOf[BuildType]
+
+  @inline def values: js.Array[BuildType] = js.Array(USER_INITIATED, SCHEDULED, IMPORT)
+}
+
+@js.native
 sealed trait ComponentFormat extends js.Any
 object ComponentFormat {
   val SHELL = "SHELL".asInstanceOf[ComponentFormat]
 
   @inline def values: js.Array[ComponentFormat] = js.Array(SHELL)
+}
+
+@js.native
+sealed trait ComponentStatus extends js.Any
+object ComponentStatus {
+  val DEPRECATED = "DEPRECATED".asInstanceOf[ComponentStatus]
+
+  @inline def values: js.Array[ComponentStatus] = js.Array(DEPRECATED)
 }
 
 @js.native
@@ -33,6 +51,16 @@ object ContainerType {
   val DOCKER = "DOCKER".asInstanceOf[ContainerType]
 
   @inline def values: js.Array[ContainerType] = js.Array(DOCKER)
+}
+
+@js.native
+sealed trait DiskImageFormat extends js.Any
+object DiskImageFormat {
+  val VMDK = "VMDK".asInstanceOf[DiskImageFormat]
+  val RAW = "RAW".asInstanceOf[DiskImageFormat]
+  val VHD = "VHD".asInstanceOf[DiskImageFormat]
+
+  @inline def values: js.Array[DiskImageFormat] = js.Array(VMDK, RAW, VHD)
 }
 
 @js.native

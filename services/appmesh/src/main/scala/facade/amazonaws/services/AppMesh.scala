@@ -17,8 +17,11 @@ package object appmesh {
   type Backends = js.Array[Backend]
   type CertificateAuthorityArns = js.Array[Arn]
   type DurationValue = Double
+  type ExactHostName = String
   type FilePath = String
   type GatewayRouteList = js.Array[GatewayRouteRef]
+  type GatewayRoutePriority = Int
+  type GrpcGatewayRouteMetadataList = js.Array[GrpcGatewayRouteMetadata]
   type GrpcRetryPolicyEvents = js.Array[GrpcRetryPolicyEvent]
   type GrpcRouteMetadataList = js.Array[GrpcRouteMetadata]
   type HeaderMatch = String
@@ -27,6 +30,11 @@ package object appmesh {
   type HealthCheckThreshold = Int
   type HealthCheckTimeoutMillis = Double
   type Hostname = String
+  type HttpGatewayRouteHeaders = js.Array[HttpGatewayRouteHeader]
+  type HttpGatewayRoutePrefix = String
+  type HttpPathExact = String
+  type HttpPathRegex = String
+  type HttpQueryParameters = js.Array[HttpQueryParameter]
   type HttpRetryPolicyEvent = String
   type HttpRetryPolicyEvents = js.Array[HttpRetryPolicyEvent]
   type HttpRouteHeaders = js.Array[HttpRouteHeader]
@@ -49,6 +57,7 @@ package object appmesh {
   type PercentInt = Int
   type PortNumber = Int
   type PortSet = js.Array[PortNumber]
+  type QueryParameterName = String
   type ResourceName = String
   type RouteList = js.Array[RouteRef]
   type RoutePriority = Int
@@ -56,6 +65,7 @@ package object appmesh {
   type ServiceName = String
   type SubjectAlternativeName = String
   type SubjectAlternativeNameList = js.Array[SubjectAlternativeName]
+  type SuffixHostname = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
   type TagList = js.Array[TagRef]
@@ -187,7 +197,7 @@ package object appmesh {
     }
   }
 
-  /** An object that represents the AWS Cloud Map attribute information for your virtual node.
+  /** An object that represents the Cloud Map attribute information for your virtual node.
     *
     * '''Note:'''AWS Cloud Map is not available in the eu-south-1 Region.
     */
@@ -211,9 +221,9 @@ package object appmesh {
     }
   }
 
-  /** An object that represents the AWS Cloud Map service discovery information for your virtual node.
+  /** An object that represents the Cloud Map service discovery information for your virtual node.
     *
-    * '''Note:'''AWS Cloud Map is not available in the eu-south-1 Region.
+    * '''Note:'''Cloud Map is not available in the eu-south-1 Region.
     */
   @js.native
   trait AwsCloudMapServiceDiscovery extends js.Object {
@@ -884,7 +894,7 @@ package object appmesh {
     }
   }
 
-  /** <zonbook></zonbook><xhtml></xhtml>
+  /** Deletes a virtual node input.
     */
   @js.native
   trait DeleteVirtualNodeInput extends js.Object {
@@ -1334,16 +1344,20 @@ package object appmesh {
   @js.native
   trait DnsServiceDiscovery extends js.Object {
     var hostname: Hostname
+    var responseType: js.UndefOr[DnsResponseType]
   }
 
   object DnsServiceDiscovery {
     @inline
     def apply(
-        hostname: Hostname
+        hostname: Hostname,
+        responseType: js.UndefOr[DnsResponseType] = js.undefined
     ): DnsServiceDiscovery = {
       val __obj = js.Dynamic.literal(
         "hostname" -> hostname.asInstanceOf[js.Any]
       )
+
+      responseType.foreach(__v => __obj.updateDynamic("responseType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DnsServiceDiscovery]
     }
   }
@@ -1441,6 +1455,45 @@ package object appmesh {
     }
   }
 
+  /** An object representing the gateway route host name to match.
+    */
+  @js.native
+  trait GatewayRouteHostnameMatch extends js.Object {
+    var exact: js.UndefOr[ExactHostName]
+    var suffix: js.UndefOr[SuffixHostname]
+  }
+
+  object GatewayRouteHostnameMatch {
+    @inline
+    def apply(
+        exact: js.UndefOr[ExactHostName] = js.undefined,
+        suffix: js.UndefOr[SuffixHostname] = js.undefined
+    ): GatewayRouteHostnameMatch = {
+      val __obj = js.Dynamic.literal()
+      exact.foreach(__v => __obj.updateDynamic("exact")(__v.asInstanceOf[js.Any]))
+      suffix.foreach(__v => __obj.updateDynamic("suffix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GatewayRouteHostnameMatch]
+    }
+  }
+
+  /** An object representing the gateway route host name to rewrite.
+    */
+  @js.native
+  trait GatewayRouteHostnameRewrite extends js.Object {
+    var defaultTargetHostname: js.UndefOr[DefaultGatewayRouteRewrite]
+  }
+
+  object GatewayRouteHostnameRewrite {
+    @inline
+    def apply(
+        defaultTargetHostname: js.UndefOr[DefaultGatewayRouteRewrite] = js.undefined
+    ): GatewayRouteHostnameRewrite = {
+      val __obj = js.Dynamic.literal()
+      defaultTargetHostname.foreach(__v => __obj.updateDynamic("defaultTargetHostname")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GatewayRouteHostnameRewrite]
+    }
+  }
+
   /** An object that represents a gateway route returned by a list operation.
     */
   @js.native
@@ -1491,6 +1544,7 @@ package object appmesh {
     var grpcRoute: js.UndefOr[GrpcGatewayRoute]
     var http2Route: js.UndefOr[HttpGatewayRoute]
     var httpRoute: js.UndefOr[HttpGatewayRoute]
+    var priority: js.UndefOr[GatewayRoutePriority]
   }
 
   object GatewayRouteSpec {
@@ -1498,12 +1552,14 @@ package object appmesh {
     def apply(
         grpcRoute: js.UndefOr[GrpcGatewayRoute] = js.undefined,
         http2Route: js.UndefOr[HttpGatewayRoute] = js.undefined,
-        httpRoute: js.UndefOr[HttpGatewayRoute] = js.undefined
+        httpRoute: js.UndefOr[HttpGatewayRoute] = js.undefined,
+        priority: js.UndefOr[GatewayRoutePriority] = js.undefined
     ): GatewayRouteSpec = {
       val __obj = js.Dynamic.literal()
       grpcRoute.foreach(__v => __obj.updateDynamic("grpcRoute")(__v.asInstanceOf[js.Any]))
       http2Route.foreach(__v => __obj.updateDynamic("http2Route")(__v.asInstanceOf[js.Any]))
       httpRoute.foreach(__v => __obj.updateDynamic("httpRoute")(__v.asInstanceOf[js.Any]))
+      priority.foreach(__v => __obj.updateDynamic("priority")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GatewayRouteSpec]
     }
   }
@@ -1592,16 +1648,20 @@ package object appmesh {
   @js.native
   trait GrpcGatewayRouteAction extends js.Object {
     var target: GatewayRouteTarget
+    var rewrite: js.UndefOr[GrpcGatewayRouteRewrite]
   }
 
   object GrpcGatewayRouteAction {
     @inline
     def apply(
-        target: GatewayRouteTarget
+        target: GatewayRouteTarget,
+        rewrite: js.UndefOr[GrpcGatewayRouteRewrite] = js.undefined
     ): GrpcGatewayRouteAction = {
       val __obj = js.Dynamic.literal(
         "target" -> target.asInstanceOf[js.Any]
       )
+
+      rewrite.foreach(__v => __obj.updateDynamic("rewrite")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrpcGatewayRouteAction]
     }
   }
@@ -1610,21 +1670,101 @@ package object appmesh {
     */
   @js.native
   trait GrpcGatewayRouteMatch extends js.Object {
+    var hostname: js.UndefOr[GatewayRouteHostnameMatch]
+    var metadata: js.UndefOr[GrpcGatewayRouteMetadataList]
     var serviceName: js.UndefOr[ServiceName]
   }
 
   object GrpcGatewayRouteMatch {
     @inline
     def apply(
+        hostname: js.UndefOr[GatewayRouteHostnameMatch] = js.undefined,
+        metadata: js.UndefOr[GrpcGatewayRouteMetadataList] = js.undefined,
         serviceName: js.UndefOr[ServiceName] = js.undefined
     ): GrpcGatewayRouteMatch = {
       val __obj = js.Dynamic.literal()
+      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      metadata.foreach(__v => __obj.updateDynamic("metadata")(__v.asInstanceOf[js.Any]))
       serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GrpcGatewayRouteMatch]
     }
   }
 
-  /** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
+  /** An object representing the metadata of the gateway route.
+    */
+  @js.native
+  trait GrpcGatewayRouteMetadata extends js.Object {
+    var name: HeaderName
+    var invert: js.UndefOr[Boolean]
+    var `match`: js.UndefOr[GrpcMetadataMatchMethod]
+  }
+
+  object GrpcGatewayRouteMetadata {
+    @inline
+    def apply(
+        name: HeaderName,
+        invert: js.UndefOr[Boolean] = js.undefined,
+        `match`: js.UndefOr[GrpcMetadataMatchMethod] = js.undefined
+    ): GrpcGatewayRouteMetadata = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      invert.foreach(__v => __obj.updateDynamic("invert")(__v.asInstanceOf[js.Any]))
+      `match`.foreach(__v => __obj.updateDynamic("match")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrpcGatewayRouteMetadata]
+    }
+  }
+
+  /** An object that represents the gateway route to rewrite.
+    */
+  @js.native
+  trait GrpcGatewayRouteRewrite extends js.Object {
+    var hostname: js.UndefOr[GatewayRouteHostnameRewrite]
+  }
+
+  object GrpcGatewayRouteRewrite {
+    @inline
+    def apply(
+        hostname: js.UndefOr[GatewayRouteHostnameRewrite] = js.undefined
+    ): GrpcGatewayRouteRewrite = {
+      val __obj = js.Dynamic.literal()
+      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrpcGatewayRouteRewrite]
+    }
+  }
+
+  /** An object representing the method header to be matched.
+    */
+  @js.native
+  trait GrpcMetadataMatchMethod extends js.Object {
+    var exact: js.UndefOr[HeaderMatch]
+    var prefix: js.UndefOr[HeaderMatch]
+    var range: js.UndefOr[MatchRange]
+    var regex: js.UndefOr[HeaderMatch]
+    var suffix: js.UndefOr[HeaderMatch]
+  }
+
+  object GrpcMetadataMatchMethod {
+    @inline
+    def apply(
+        exact: js.UndefOr[HeaderMatch] = js.undefined,
+        prefix: js.UndefOr[HeaderMatch] = js.undefined,
+        range: js.UndefOr[MatchRange] = js.undefined,
+        regex: js.UndefOr[HeaderMatch] = js.undefined,
+        suffix: js.UndefOr[HeaderMatch] = js.undefined
+    ): GrpcMetadataMatchMethod = {
+      val __obj = js.Dynamic.literal()
+      exact.foreach(__v => __obj.updateDynamic("exact")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      range.foreach(__v => __obj.updateDynamic("range")(__v.asInstanceOf[js.Any]))
+      regex.foreach(__v => __obj.updateDynamic("regex")(__v.asInstanceOf[js.Any]))
+      suffix.foreach(__v => __obj.updateDynamic("suffix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GrpcMetadataMatchMethod]
+    }
+  }
+
+  /** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the [[https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on|Envoy documentation]].
     */
   @js.native
   trait GrpcRetryPolicy extends js.Object {
@@ -1900,17 +2040,47 @@ package object appmesh {
   @js.native
   trait HttpGatewayRouteAction extends js.Object {
     var target: GatewayRouteTarget
+    var rewrite: js.UndefOr[HttpGatewayRouteRewrite]
   }
 
   object HttpGatewayRouteAction {
     @inline
     def apply(
-        target: GatewayRouteTarget
+        target: GatewayRouteTarget,
+        rewrite: js.UndefOr[HttpGatewayRouteRewrite] = js.undefined
     ): HttpGatewayRouteAction = {
       val __obj = js.Dynamic.literal(
         "target" -> target.asInstanceOf[js.Any]
       )
+
+      rewrite.foreach(__v => __obj.updateDynamic("rewrite")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpGatewayRouteAction]
+    }
+  }
+
+  /** An object that represents the HTTP header in the gateway route.
+    */
+  @js.native
+  trait HttpGatewayRouteHeader extends js.Object {
+    var name: HeaderName
+    var invert: js.UndefOr[Boolean]
+    var `match`: js.UndefOr[HeaderMatchMethod]
+  }
+
+  object HttpGatewayRouteHeader {
+    @inline
+    def apply(
+        name: HeaderName,
+        invert: js.UndefOr[Boolean] = js.undefined,
+        `match`: js.UndefOr[HeaderMatchMethod] = js.undefined
+    ): HttpGatewayRouteHeader = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      invert.foreach(__v => __obj.updateDynamic("invert")(__v.asInstanceOf[js.Any]))
+      `match`.foreach(__v => __obj.updateDynamic("match")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpGatewayRouteHeader]
     }
   }
 
@@ -1918,22 +2088,143 @@ package object appmesh {
     */
   @js.native
   trait HttpGatewayRouteMatch extends js.Object {
-    var prefix: String
+    var headers: js.UndefOr[HttpGatewayRouteHeaders]
+    var hostname: js.UndefOr[GatewayRouteHostnameMatch]
+    var method: js.UndefOr[HttpMethod]
+    var path: js.UndefOr[HttpPathMatch]
+    var prefix: js.UndefOr[String]
+    var queryParameters: js.UndefOr[HttpQueryParameters]
   }
 
   object HttpGatewayRouteMatch {
     @inline
     def apply(
-        prefix: String
+        headers: js.UndefOr[HttpGatewayRouteHeaders] = js.undefined,
+        hostname: js.UndefOr[GatewayRouteHostnameMatch] = js.undefined,
+        method: js.UndefOr[HttpMethod] = js.undefined,
+        path: js.UndefOr[HttpPathMatch] = js.undefined,
+        prefix: js.UndefOr[String] = js.undefined,
+        queryParameters: js.UndefOr[HttpQueryParameters] = js.undefined
     ): HttpGatewayRouteMatch = {
-      val __obj = js.Dynamic.literal(
-        "prefix" -> prefix.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      headers.foreach(__v => __obj.updateDynamic("headers")(__v.asInstanceOf[js.Any]))
+      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      method.foreach(__v => __obj.updateDynamic("method")(__v.asInstanceOf[js.Any]))
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      queryParameters.foreach(__v => __obj.updateDynamic("queryParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpGatewayRouteMatch]
     }
   }
 
-  /** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>.
+  /** An object that represents the path to rewrite.
+    */
+  @js.native
+  trait HttpGatewayRoutePathRewrite extends js.Object {
+    var exact: js.UndefOr[HttpPathExact]
+  }
+
+  object HttpGatewayRoutePathRewrite {
+    @inline
+    def apply(
+        exact: js.UndefOr[HttpPathExact] = js.undefined
+    ): HttpGatewayRoutePathRewrite = {
+      val __obj = js.Dynamic.literal()
+      exact.foreach(__v => __obj.updateDynamic("exact")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpGatewayRoutePathRewrite]
+    }
+  }
+
+  /** An object representing the beginning characters of the route to rewrite.
+    */
+  @js.native
+  trait HttpGatewayRoutePrefixRewrite extends js.Object {
+    var defaultPrefix: js.UndefOr[DefaultGatewayRouteRewrite]
+    var value: js.UndefOr[HttpGatewayRoutePrefix]
+  }
+
+  object HttpGatewayRoutePrefixRewrite {
+    @inline
+    def apply(
+        defaultPrefix: js.UndefOr[DefaultGatewayRouteRewrite] = js.undefined,
+        value: js.UndefOr[HttpGatewayRoutePrefix] = js.undefined
+    ): HttpGatewayRoutePrefixRewrite = {
+      val __obj = js.Dynamic.literal()
+      defaultPrefix.foreach(__v => __obj.updateDynamic("defaultPrefix")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpGatewayRoutePrefixRewrite]
+    }
+  }
+
+  /** An object representing the gateway route to rewrite.
+    */
+  @js.native
+  trait HttpGatewayRouteRewrite extends js.Object {
+    var hostname: js.UndefOr[GatewayRouteHostnameRewrite]
+    var path: js.UndefOr[HttpGatewayRoutePathRewrite]
+    var prefix: js.UndefOr[HttpGatewayRoutePrefixRewrite]
+  }
+
+  object HttpGatewayRouteRewrite {
+    @inline
+    def apply(
+        hostname: js.UndefOr[GatewayRouteHostnameRewrite] = js.undefined,
+        path: js.UndefOr[HttpGatewayRoutePathRewrite] = js.undefined,
+        prefix: js.UndefOr[HttpGatewayRoutePrefixRewrite] = js.undefined
+    ): HttpGatewayRouteRewrite = {
+      val __obj = js.Dynamic.literal()
+      hostname.foreach(__v => __obj.updateDynamic("hostname")(__v.asInstanceOf[js.Any]))
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpGatewayRouteRewrite]
+    }
+  }
+
+  /** An object representing the path to match in the request.
+    */
+  @js.native
+  trait HttpPathMatch extends js.Object {
+    var exact: js.UndefOr[HttpPathExact]
+    var regex: js.UndefOr[HttpPathRegex]
+  }
+
+  object HttpPathMatch {
+    @inline
+    def apply(
+        exact: js.UndefOr[HttpPathExact] = js.undefined,
+        regex: js.UndefOr[HttpPathRegex] = js.undefined
+    ): HttpPathMatch = {
+      val __obj = js.Dynamic.literal()
+      exact.foreach(__v => __obj.updateDynamic("exact")(__v.asInstanceOf[js.Any]))
+      regex.foreach(__v => __obj.updateDynamic("regex")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpPathMatch]
+    }
+  }
+
+  /** An object that represents the query parameter in the request.
+    */
+  @js.native
+  trait HttpQueryParameter extends js.Object {
+    var name: QueryParameterName
+    var `match`: js.UndefOr[QueryParameterMatch]
+  }
+
+  object HttpQueryParameter {
+    @inline
+    def apply(
+        name: QueryParameterName,
+        `match`: js.UndefOr[QueryParameterMatch] = js.undefined
+    ): HttpQueryParameter = {
+      val __obj = js.Dynamic.literal(
+        "name" -> name.asInstanceOf[js.Any]
+      )
+
+      `match`.foreach(__v => __obj.updateDynamic("match")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[HttpQueryParameter]
+    }
+  }
+
+  /** An object that represents a retry policy. Specify at least one value for at least one of the types of <code>RetryEvents</code>, a value for <code>maxRetries</code>, and a value for <code>perRetryTimeout</code>. Both <code>server-error</code> and <code>gateway-error</code> under <code>httpRetryEvents</code> include the Envoy <code>reset</code> policy. For more information on the <code>reset</code> policy, see the [[https://www.envoyproxy.io/docs/envoy/latest/configuration/http/http_filters/router_filter#x-envoy-retry-on|Envoy documentation]].
     */
   @js.native
   trait HttpRetryPolicy extends js.Object {
@@ -2040,26 +2331,30 @@ package object appmesh {
     */
   @js.native
   trait HttpRouteMatch extends js.Object {
-    var prefix: String
     var headers: js.UndefOr[HttpRouteHeaders]
     var method: js.UndefOr[HttpMethod]
+    var path: js.UndefOr[HttpPathMatch]
+    var prefix: js.UndefOr[String]
+    var queryParameters: js.UndefOr[HttpQueryParameters]
     var scheme: js.UndefOr[HttpScheme]
   }
 
   object HttpRouteMatch {
     @inline
     def apply(
-        prefix: String,
         headers: js.UndefOr[HttpRouteHeaders] = js.undefined,
         method: js.UndefOr[HttpMethod] = js.undefined,
+        path: js.UndefOr[HttpPathMatch] = js.undefined,
+        prefix: js.UndefOr[String] = js.undefined,
+        queryParameters: js.UndefOr[HttpQueryParameters] = js.undefined,
         scheme: js.UndefOr[HttpScheme] = js.undefined
     ): HttpRouteMatch = {
-      val __obj = js.Dynamic.literal(
-        "prefix" -> prefix.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       headers.foreach(__v => __obj.updateDynamic("headers")(__v.asInstanceOf[js.Any]))
       method.foreach(__v => __obj.updateDynamic("method")(__v.asInstanceOf[js.Any]))
+      path.foreach(__v => __obj.updateDynamic("path")(__v.asInstanceOf[js.Any]))
+      prefix.foreach(__v => __obj.updateDynamic("prefix")(__v.asInstanceOf[js.Any]))
+      queryParameters.foreach(__v => __obj.updateDynamic("queryParameters")(__v.asInstanceOf[js.Any]))
       scheme.foreach(__v => __obj.updateDynamic("scheme")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[HttpRouteMatch]
     }
@@ -2896,6 +3191,24 @@ package object appmesh {
     }
   }
 
+  /** An object representing the query parameter to match.
+    */
+  @js.native
+  trait QueryParameterMatch extends js.Object {
+    var exact: js.UndefOr[String]
+  }
+
+  object QueryParameterMatch {
+    @inline
+    def apply(
+        exact: js.UndefOr[String] = js.undefined
+    ): QueryParameterMatch = {
+      val __obj = js.Dynamic.literal()
+      exact.foreach(__v => __obj.updateDynamic("exact")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryParameterMatch]
+    }
+  }
+
   /** An object that represents metadata for a resource.
     */
   @js.native
@@ -3258,7 +3571,7 @@ package object appmesh {
     }
   }
 
-  /** An object that represents a Transport Layer Security (TLS) validation context trust for an AWS Certicate Manager (ACM) certificate.
+  /** An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.
     */
   @js.native
   trait TlsValidationContextAcmTrust extends js.Object {
@@ -4055,7 +4368,7 @@ package object appmesh {
     }
   }
 
-  /** An object that represents an AWS Certicate Manager (ACM) certificate.
+  /** An object that represents an Certificate Manager certificate.
     */
   @js.native
   trait VirtualGatewayListenerTlsAcmCertificate extends js.Object {
@@ -4120,7 +4433,7 @@ package object appmesh {
     }
   }
 
-  /** An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh [[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html|TLS documentation]] for more info.
+  /** An object that represents the virtual gateway's listener's Secret Discovery Service certificate.The proxy must be configured with a local SDS provider via a Unix Domain Socket. See App Mesh[[https://docs.aws.amazon.com/app-mesh/latest/userguide/tls.html|TLS documentation]] for more info.
     */
   @js.native
   trait VirtualGatewayListenerTlsSdsCertificate extends js.Object {
@@ -4331,7 +4644,7 @@ package object appmesh {
     }
   }
 
-  /** An object that represents a Transport Layer Security (TLS) validation context trust for an AWS Certicate Manager (ACM) certificate.
+  /** An object that represents a Transport Layer Security (TLS) validation context trust for an Certificate Manager certificate.
     */
   @js.native
   trait VirtualGatewayTlsValidationContextAcmTrust extends js.Object {

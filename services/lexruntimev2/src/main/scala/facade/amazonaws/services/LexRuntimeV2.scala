@@ -32,6 +32,7 @@ package object lexruntimev2 {
   type StringList = js.Array[NonEmptyString]
   type StringMap = js.Dictionary[String]
   type Text = String
+  type Values = js.Array[Slot]
 
   final class LexRuntimeV2Ops(private val service: LexRuntimeV2) extends AnyVal {
 
@@ -60,28 +61,27 @@ package object lexruntimev2 {
     }
   }
 
-  /** Contains information about the contexts that a user is using in a session. You can configure Amazon Lex to set a context when an intent is fulfilled, or you can set a context using the , , or operations. Use a context to indicate to Amazon Lex intents that should be used as follow-up intents. For example, if the active context is <code>order-fulfilled</code>, only intents that have <code>order-fulfilled</code> configured as a trigger are considered for follow up.
+  /** Contains information about the contexts that a user is using in a session. You can configure Amazon Lex V2 to set a context when an intent is fulfilled, or you can set a context using the , , or operations. Use a context to indicate to Amazon Lex V2 intents that should be used as follow-up intents. For example, if the active context is <code>order-fulfilled</code>, only intents that have <code>order-fulfilled</code> configured as a trigger are considered for follow up.
     */
   @js.native
   trait ActiveContext extends js.Object {
+    var contextAttributes: ActiveContextParametersMap
     var name: ActiveContextName
     var timeToLive: ActiveContextTimeToLive
-    var contextAttributes: js.UndefOr[ActiveContextParametersMap]
   }
 
   object ActiveContext {
     @inline
     def apply(
+        contextAttributes: ActiveContextParametersMap,
         name: ActiveContextName,
-        timeToLive: ActiveContextTimeToLive,
-        contextAttributes: js.UndefOr[ActiveContextParametersMap] = js.undefined
+        timeToLive: ActiveContextTimeToLive
     ): ActiveContext = {
       val __obj = js.Dynamic.literal(
+        "contextAttributes" -> contextAttributes.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any],
         "timeToLive" -> timeToLive.asInstanceOf[js.Any]
       )
-
-      contextAttributes.foreach(__v => __obj.updateDynamic("contextAttributes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ActiveContext]
     }
   }
@@ -130,7 +130,7 @@ package object lexruntimev2 {
     }
   }
 
-  /** Provides a score that indicates the confidence that Amazon Lex has that an intent is the one that satisfies the user's intent.
+  /** Provides a score that indicates the confidence that Amazon Lex V2 has that an intent is the one that satisfies the user's intent.
     */
   @js.native
   trait ConfidenceScore extends js.Object {
@@ -199,11 +199,12 @@ package object lexruntimev2 {
     }
   }
 
-  /** The next action that Amazon Lex should take.
+  /** The next action that Amazon Lex V2 should take.
     */
   @js.native
   trait DialogAction extends js.Object {
     var `type`: DialogActionType
+    var slotElicitationStyle: js.UndefOr[StyleType]
     var slotToElicit: js.UndefOr[NonEmptyString]
   }
 
@@ -211,12 +212,14 @@ package object lexruntimev2 {
     @inline
     def apply(
         `type`: DialogActionType,
+        slotElicitationStyle: js.UndefOr[StyleType] = js.undefined,
         slotToElicit: js.UndefOr[NonEmptyString] = js.undefined
     ): DialogAction = {
       val __obj = js.Dynamic.literal(
         "type" -> `type`.asInstanceOf[js.Any]
       )
 
+      slotElicitationStyle.foreach(__v => __obj.updateDynamic("slotElicitationStyle")(__v.asInstanceOf[js.Any]))
       slotToElicit.foreach(__v => __obj.updateDynamic("slotToElicit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DialogAction]
     }
@@ -302,7 +305,7 @@ package object lexruntimev2 {
     }
   }
 
-  /** The current intent that Amazon Lex is attempting to fulfill.
+  /** The current intent that Amazon Lex V2 is attempting to fulfill.
     */
   @js.native
   trait Intent extends js.Object {
@@ -331,7 +334,7 @@ package object lexruntimev2 {
     }
   }
 
-  /** An intent that Amazon Lex determined might satisfy the user's utterance. The intents are ordered by the confidence score.
+  /** An intent that Amazon Lex V2 determined might satisfy the user's utterance. The intents are ordered by the confidence score.
     */
   @js.native
   trait Interpretation extends js.Object {
@@ -359,21 +362,23 @@ package object lexruntimev2 {
     */
   @js.native
   trait Message extends js.Object {
+    var contentType: MessageContentType
     var content: js.UndefOr[Text]
-    var contentType: js.UndefOr[MessageContentType]
     var imageResponseCard: js.UndefOr[ImageResponseCard]
   }
 
   object Message {
     @inline
     def apply(
+        contentType: MessageContentType,
         content: js.UndefOr[Text] = js.undefined,
-        contentType: js.UndefOr[MessageContentType] = js.undefined,
         imageResponseCard: js.UndefOr[ImageResponseCard] = js.undefined
     ): Message = {
-      val __obj = js.Dynamic.literal()
+      val __obj = js.Dynamic.literal(
+        "contentType" -> contentType.asInstanceOf[js.Any]
+      )
+
       content.foreach(__v => __obj.updateDynamic("content")(__v.asInstanceOf[js.Any]))
-      contentType.foreach(__v => __obj.updateDynamic("contentType")(__v.asInstanceOf[js.Any]))
       imageResponseCard.foreach(__v => __obj.updateDynamic("imageResponseCard")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Message]
     }
@@ -643,7 +648,7 @@ package object lexruntimev2 {
     }
   }
 
-  /** The state of the user's session with Amazon Lex.
+  /** The state of the user's session with Amazon Lex V2.
     */
   @js.native
   trait SessionState extends js.Object {
@@ -673,20 +678,26 @@ package object lexruntimev2 {
     }
   }
 
-  /** A value that Amazon Lex uses to fulfill an intent.
+  /** A value that Amazon Lex V2 uses to fulfill an intent.
     */
   @js.native
   trait Slot extends js.Object {
+    var shape: js.UndefOr[Shape]
     var value: js.UndefOr[Value]
+    var values: js.UndefOr[Values]
   }
 
   object Slot {
     @inline
     def apply(
-        value: js.UndefOr[Value] = js.undefined
+        shape: js.UndefOr[Shape] = js.undefined,
+        value: js.UndefOr[Value] = js.undefined,
+        values: js.UndefOr[Values] = js.undefined
     ): Slot = {
       val __obj = js.Dynamic.literal()
+      shape.foreach(__v => __obj.updateDynamic("shape")(__v.asInstanceOf[js.Any]))
       value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Slot]
     }
   }

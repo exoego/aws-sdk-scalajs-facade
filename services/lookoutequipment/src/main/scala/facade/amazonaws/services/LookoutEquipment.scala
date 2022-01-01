@@ -35,6 +35,7 @@ package object lookoutequipment {
   type ModelSummaries = js.Array[ModelSummary]
   type NameOrArn = String
   type NextToken = String
+  type OffCondition = String
   type S3Bucket = String
   type S3Key = String
   type S3Prefix = String
@@ -235,6 +236,7 @@ package object lookoutequipment {
     var EvaluationDataEndTime: js.UndefOr[Timestamp]
     var EvaluationDataStartTime: js.UndefOr[Timestamp]
     var LabelsInputConfiguration: js.UndefOr[LabelsInputConfiguration]
+    var OffCondition: js.UndefOr[OffCondition]
     var RoleArn: js.UndefOr[IamRoleArn]
     var ServerSideKmsKeyId: js.UndefOr[NameOrArn]
     var Tags: js.UndefOr[TagList]
@@ -253,6 +255,7 @@ package object lookoutequipment {
         EvaluationDataEndTime: js.UndefOr[Timestamp] = js.undefined,
         EvaluationDataStartTime: js.UndefOr[Timestamp] = js.undefined,
         LabelsInputConfiguration: js.UndefOr[LabelsInputConfiguration] = js.undefined,
+        OffCondition: js.UndefOr[OffCondition] = js.undefined,
         RoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         ServerSideKmsKeyId: js.UndefOr[NameOrArn] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
@@ -270,6 +273,7 @@ package object lookoutequipment {
       EvaluationDataEndTime.foreach(__v => __obj.updateDynamic("EvaluationDataEndTime")(__v.asInstanceOf[js.Any]))
       EvaluationDataStartTime.foreach(__v => __obj.updateDynamic("EvaluationDataStartTime")(__v.asInstanceOf[js.Any]))
       LabelsInputConfiguration.foreach(__v => __obj.updateDynamic("LabelsInputConfiguration")(__v.asInstanceOf[js.Any]))
+      OffCondition.foreach(__v => __obj.updateDynamic("OffCondition")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       ServerSideKmsKeyId.foreach(__v => __obj.updateDynamic("ServerSideKmsKeyId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -647,6 +651,7 @@ package object lookoutequipment {
     var ModelArn: js.UndefOr[ModelArn]
     var ModelMetrics: js.UndefOr[ModelMetrics]
     var ModelName: js.UndefOr[ModelName]
+    var OffCondition: js.UndefOr[OffCondition]
     var RoleArn: js.UndefOr[IamRoleArn]
     var Schema: js.UndefOr[InlineDataSchema]
     var ServerSideKmsKeyId: js.UndefOr[KmsKeyArn]
@@ -672,6 +677,7 @@ package object lookoutequipment {
         ModelArn: js.UndefOr[ModelArn] = js.undefined,
         ModelMetrics: js.UndefOr[ModelMetrics] = js.undefined,
         ModelName: js.UndefOr[ModelName] = js.undefined,
+        OffCondition: js.UndefOr[OffCondition] = js.undefined,
         RoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         Schema: js.UndefOr[InlineDataSchema] = js.undefined,
         ServerSideKmsKeyId: js.UndefOr[KmsKeyArn] = js.undefined,
@@ -694,6 +700,7 @@ package object lookoutequipment {
       ModelArn.foreach(__v => __obj.updateDynamic("ModelArn")(__v.asInstanceOf[js.Any]))
       ModelMetrics.foreach(__v => __obj.updateDynamic("ModelMetrics")(__v.asInstanceOf[js.Any]))
       ModelName.foreach(__v => __obj.updateDynamic("ModelName")(__v.asInstanceOf[js.Any]))
+      OffCondition.foreach(__v => __obj.updateDynamic("OffCondition")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       ServerSideKmsKeyId.foreach(__v => __obj.updateDynamic("ServerSideKmsKeyId")(__v.asInstanceOf[js.Any]))
@@ -757,7 +764,7 @@ package object lookoutequipment {
     }
   }
 
-  /** &gt; Specifies configuration information for the input data for the inference, including S3 location of input data..
+  /** Specifies configuration information for the input data for the inference, including S3 location of input data..
     */
   @js.native
   trait InferenceInputConfiguration extends js.Object {
@@ -781,7 +788,7 @@ package object lookoutequipment {
     }
   }
 
-  /** &gt;&gt; Specifies configuration information for the input data for the inference, including timestamp format and delimiter.
+  /** Specifies configuration information for the input data for the inference, including timestamp format and delimiter.
     */
   @js.native
   trait InferenceInputNameConfiguration extends js.Object {

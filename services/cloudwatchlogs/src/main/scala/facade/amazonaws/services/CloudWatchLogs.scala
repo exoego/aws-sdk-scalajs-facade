@@ -18,6 +18,9 @@ package object cloudwatchlogs {
   type DestinationArn = String
   type DestinationName = String
   type Destinations = js.Array[Destination]
+  type Dimensions = js.Dictionary[DimensionsValue]
+  type DimensionsKey = String
+  type DimensionsValue = String
   type EventId = String
   type EventMessage = String
   type EventNumber = Double
@@ -34,6 +37,7 @@ package object cloudwatchlogs {
   type FilterName = String
   type FilterPattern = String
   type FilteredLogEvents = js.Array[FilteredLogEvent]
+  type ForceUpdate = Boolean
   type InputLogEvents = js.Array[InputLogEvent]
   type InputLogStreamNames = js.Array[LogStreamName]
   type Interleaved = Boolean
@@ -1486,6 +1490,8 @@ package object cloudwatchlogs {
     var metricNamespace: MetricNamespace
     var metricValue: MetricValue
     var defaultValue: js.UndefOr[DefaultValue]
+    var dimensions: js.UndefOr[Dimensions]
+    var unit: js.UndefOr[StandardUnit]
   }
 
   object MetricTransformation {
@@ -1494,7 +1500,9 @@ package object cloudwatchlogs {
         metricName: MetricName,
         metricNamespace: MetricNamespace,
         metricValue: MetricValue,
-        defaultValue: js.UndefOr[DefaultValue] = js.undefined
+        defaultValue: js.UndefOr[DefaultValue] = js.undefined,
+        dimensions: js.UndefOr[Dimensions] = js.undefined,
+        unit: js.UndefOr[StandardUnit] = js.undefined
     ): MetricTransformation = {
       val __obj = js.Dynamic.literal(
         "metricName" -> metricName.asInstanceOf[js.Any],
@@ -1503,6 +1511,8 @@ package object cloudwatchlogs {
       )
 
       defaultValue.foreach(__v => __obj.updateDynamic("defaultValue")(__v.asInstanceOf[js.Any]))
+      dimensions.foreach(__v => __obj.updateDynamic("dimensions")(__v.asInstanceOf[js.Any]))
+      unit.foreach(__v => __obj.updateDynamic("unit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricTransformation]
     }
   }
@@ -1535,18 +1545,22 @@ package object cloudwatchlogs {
   trait PutDestinationPolicyRequest extends js.Object {
     var accessPolicy: AccessPolicy
     var destinationName: DestinationName
+    var forceUpdate: js.UndefOr[ForceUpdate]
   }
 
   object PutDestinationPolicyRequest {
     @inline
     def apply(
         accessPolicy: AccessPolicy,
-        destinationName: DestinationName
+        destinationName: DestinationName,
+        forceUpdate: js.UndefOr[ForceUpdate] = js.undefined
     ): PutDestinationPolicyRequest = {
       val __obj = js.Dynamic.literal(
         "accessPolicy" -> accessPolicy.asInstanceOf[js.Any],
         "destinationName" -> destinationName.asInstanceOf[js.Any]
       )
+
+      forceUpdate.foreach(__v => __obj.updateDynamic("forceUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutDestinationPolicyRequest]
     }
   }

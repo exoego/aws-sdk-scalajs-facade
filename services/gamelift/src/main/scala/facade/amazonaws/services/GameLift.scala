@@ -70,6 +70,8 @@ package object gamelift {
   type IpPermissionsList = js.Array[IpPermission]
   type LargeGameSessionData = String
   type LatencyMap = js.Dictionary[PositiveInteger]
+  type LaunchParametersStringModel = String
+  type LaunchPathStringModel = String
   type LaunchTemplateId = String
   type LaunchTemplateName = String
   type LaunchTemplateVersion = String
@@ -695,8 +697,8 @@ package object gamelift {
     var ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy]
     var RuntimeConfiguration: js.UndefOr[RuntimeConfiguration]
     var ScriptId: js.UndefOr[ScriptIdOrArn]
-    var ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString]
-    var ServerLaunchPath: js.UndefOr[NonZeroAndMaxString]
+    var ServerLaunchParameters: js.UndefOr[LaunchParametersStringModel]
+    var ServerLaunchPath: js.UndefOr[LaunchPathStringModel]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -720,8 +722,8 @@ package object gamelift {
         ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy] = js.undefined,
         RuntimeConfiguration: js.UndefOr[RuntimeConfiguration] = js.undefined,
         ScriptId: js.UndefOr[ScriptIdOrArn] = js.undefined,
-        ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-        ServerLaunchPath: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ServerLaunchParameters: js.UndefOr[LaunchParametersStringModel] = js.undefined,
+        ServerLaunchPath: js.UndefOr[LaunchPathStringModel] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateFleetInput = {
       val __obj = js.Dynamic.literal(
@@ -3085,8 +3087,8 @@ package object gamelift {
     var ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy]
     var ScriptArn: js.UndefOr[ScriptArn]
     var ScriptId: js.UndefOr[ScriptId]
-    var ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString]
-    var ServerLaunchPath: js.UndefOr[NonZeroAndMaxString]
+    var ServerLaunchParameters: js.UndefOr[LaunchParametersStringModel]
+    var ServerLaunchPath: js.UndefOr[LaunchPathStringModel]
     var Status: js.UndefOr[FleetStatus]
     var StoppedActions: js.UndefOr[FleetActionList]
     var TerminationTime: js.UndefOr[Timestamp]
@@ -3113,8 +3115,8 @@ package object gamelift {
         ResourceCreationLimitPolicy: js.UndefOr[ResourceCreationLimitPolicy] = js.undefined,
         ScriptArn: js.UndefOr[ScriptArn] = js.undefined,
         ScriptId: js.UndefOr[ScriptId] = js.undefined,
-        ServerLaunchParameters: js.UndefOr[NonZeroAndMaxString] = js.undefined,
-        ServerLaunchPath: js.UndefOr[NonZeroAndMaxString] = js.undefined,
+        ServerLaunchParameters: js.UndefOr[LaunchParametersStringModel] = js.undefined,
+        ServerLaunchPath: js.UndefOr[LaunchPathStringModel] = js.undefined,
         Status: js.UndefOr[FleetStatus] = js.undefined,
         StoppedActions: js.UndefOr[FleetActionList] = js.undefined,
         TerminationTime: js.UndefOr[Timestamp] = js.undefined
@@ -5070,16 +5072,16 @@ package object gamelift {
   @js.native
   trait ServerProcess extends js.Object {
     var ConcurrentExecutions: PositiveInteger
-    var LaunchPath: NonZeroAndMaxString
-    var Parameters: js.UndefOr[NonZeroAndMaxString]
+    var LaunchPath: LaunchPathStringModel
+    var Parameters: js.UndefOr[LaunchParametersStringModel]
   }
 
   object ServerProcess {
     @inline
     def apply(
         ConcurrentExecutions: PositiveInteger,
-        LaunchPath: NonZeroAndMaxString,
-        Parameters: js.UndefOr[NonZeroAndMaxString] = js.undefined
+        LaunchPath: LaunchPathStringModel,
+        Parameters: js.UndefOr[LaunchParametersStringModel] = js.undefined
     ): ServerProcess = {
       val __obj = js.Dynamic.literal(
         "ConcurrentExecutions" -> ConcurrentExecutions.asInstanceOf[js.Any],
