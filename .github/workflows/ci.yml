@@ -43,19 +43,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: olafurpg/setup-scala@v13
-      - name: Cache Coursier
-        uses: actions/cache@v2.1.7
-        with:
-          path: ~/.cache/coursier
-          key: sbt-coursier-${{ hashFiles('project/*.sbt', 'project/*.scala') }}
-      - name: Cache SBT
-        uses: actions/cache@v2.1.7
-        with:
-          path: ~/.sbt
-          key: sbt-${{ hashFiles('project/build.properties', 'project/plugins.sbt') }}
-      - name: Check Scalafmt
-        env:
-          JAVA_OPTS: -Xss4M -Xms2G -Xmx8G -XX:ReservedCodeCacheSize=512M -XX:MaxMetaspaceSize=8G -XX:+CMSClassUnloadingEnabled -XX:+UseG1GC
-          JVM_OPTS: -Xss4M -Xms2G -Xmx8G -XX:ReservedCodeCacheSize=512M -XX:MaxMetaspaceSize=8G -XX:+CMSClassUnloadingEnabled -XX:+UseG1GC
-        run: sbt scalafmtSbtCheck scalafmtCheck test:scalafmtCheck
+      - name: Install Scalafmt Native
+        shell: bash
+        run: |
+          SCALAFMT_VERSION=$(grep "version" .scalafmt.conf | sed -E "s/version|=|\"|\s*//g")
+          curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | sudo bash -s -- ${SCALAFMT_VERSION}
+      - name: Quick check
+        if: ${{ ! contains(steps.changed-files.outputs.all_modified_files, '.scalafmt.conf') }}
+        run: scalafmt-native --mode diff --list
+      - name: Full check
+        if: ${{ contains(steps.changed-files.outputs.all_modified_files, '.scalafmt.conf') }}
+        run: scalafmt-native --check
