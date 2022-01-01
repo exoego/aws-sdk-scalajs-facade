@@ -2,6 +2,25 @@ package facade.amazonaws.services.firehose
 
 import scalajs.js
 
+type AmazonopensearchserviceIndexRotationPeriod = "NoRotation" | "OneHour" | "OneDay" | "OneWeek" | "OneMonth"
+object AmazonopensearchserviceIndexRotationPeriod {
+  inline val NoRotation: "NoRotation" = "NoRotation"
+  inline val OneHour: "OneHour" = "OneHour"
+  inline val OneDay: "OneDay" = "OneDay"
+  inline val OneWeek: "OneWeek" = "OneWeek"
+  inline val OneMonth: "OneMonth" = "OneMonth"
+
+  inline def values: js.Array[AmazonopensearchserviceIndexRotationPeriod] = js.Array(NoRotation, OneHour, OneDay, OneWeek, OneMonth)
+}
+
+type AmazonopensearchserviceS3BackupMode = "FailedDocumentsOnly" | "AllDocuments"
+object AmazonopensearchserviceS3BackupMode {
+  inline val FailedDocumentsOnly: "FailedDocumentsOnly" = "FailedDocumentsOnly"
+  inline val AllDocuments: "AllDocuments" = "AllDocuments"
+
+  inline def values: js.Array[AmazonopensearchserviceS3BackupMode] = js.Array(FailedDocumentsOnly, AllDocuments)
+}
+
 type CompressionFormat = "UNCOMPRESSED" | "GZIP" | "ZIP" | "Snappy" | "HADOOP_SNAPPY"
 object CompressionFormat {
   inline val UNCOMPRESSED: "UNCOMPRESSED" = "UNCOMPRESSED"
@@ -173,22 +192,29 @@ object ParquetWriterVersion {
   inline def values: js.Array[ParquetWriterVersion] = js.Array(V1, V2)
 }
 
-type ProcessorParameterName = "LambdaArn" | "NumberOfRetries" | "RoleArn" | "BufferSizeInMBs" | "BufferIntervalInSeconds"
+type ProcessorParameterName = "LambdaArn" | "NumberOfRetries" | "MetadataExtractionQuery" | "JsonParsingEngine" | "RoleArn" | "BufferSizeInMBs" | "BufferIntervalInSeconds" | "SubRecordType" | "Delimiter"
 object ProcessorParameterName {
   inline val LambdaArn: "LambdaArn" = "LambdaArn"
   inline val NumberOfRetries: "NumberOfRetries" = "NumberOfRetries"
+  inline val MetadataExtractionQuery: "MetadataExtractionQuery" = "MetadataExtractionQuery"
+  inline val JsonParsingEngine: "JsonParsingEngine" = "JsonParsingEngine"
   inline val RoleArn: "RoleArn" = "RoleArn"
   inline val BufferSizeInMBs: "BufferSizeInMBs" = "BufferSizeInMBs"
   inline val BufferIntervalInSeconds: "BufferIntervalInSeconds" = "BufferIntervalInSeconds"
+  inline val SubRecordType: "SubRecordType" = "SubRecordType"
+  inline val Delimiter: "Delimiter" = "Delimiter"
 
-  inline def values: js.Array[ProcessorParameterName] = js.Array(LambdaArn, NumberOfRetries, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds)
+  inline def values: js.Array[ProcessorParameterName] = js.Array(LambdaArn, NumberOfRetries, MetadataExtractionQuery, JsonParsingEngine, RoleArn, BufferSizeInMBs, BufferIntervalInSeconds, SubRecordType, Delimiter)
 }
 
-type ProcessorType = "Lambda"
+type ProcessorType = "RecordDeAggregation" | "Lambda" | "MetadataExtraction" | "AppendDelimiterToRecord"
 object ProcessorType {
+  inline val RecordDeAggregation: "RecordDeAggregation" = "RecordDeAggregation"
   inline val Lambda: "Lambda" = "Lambda"
+  inline val MetadataExtraction: "MetadataExtraction" = "MetadataExtraction"
+  inline val AppendDelimiterToRecord: "AppendDelimiterToRecord" = "AppendDelimiterToRecord"
 
-  inline def values: js.Array[ProcessorType] = js.Array(Lambda)
+  inline def values: js.Array[ProcessorType] = js.Array(RecordDeAggregation, Lambda, MetadataExtraction, AppendDelimiterToRecord)
 }
 
 type RedshiftS3BackupMode = "Disabled" | "Enabled"

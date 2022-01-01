@@ -40,6 +40,16 @@ object ModelHostingStatus {
   inline def values: js.Array[ModelHostingStatus] = js.Array(STARTING_HOSTING, HOSTED, HOSTING_FAILED, STOPPING_HOSTING, SYSTEM_UPDATING)
 }
 
+type ModelPackagingJobStatus = "CREATED" | "RUNNING" | "SUCCEEDED" | "FAILED"
+object ModelPackagingJobStatus {
+  inline val CREATED: "CREATED" = "CREATED"
+  inline val RUNNING: "RUNNING" = "RUNNING"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[ModelPackagingJobStatus] = js.Array(CREATED, RUNNING, SUCCEEDED, FAILED)
+}
+
 type ModelStatus = "TRAINING" | "TRAINED" | "TRAINING_FAILED" | "STARTING_HOSTING" | "HOSTED" | "HOSTING_FAILED" | "STOPPING_HOSTING" | "SYSTEM_UPDATING" | "DELETING"
 object ModelStatus {
   inline val TRAINING: "TRAINING" = "TRAINING"
@@ -53,4 +63,33 @@ object ModelStatus {
   inline val DELETING: "DELETING" = "DELETING"
 
   inline def values: js.Array[ModelStatus] = js.Array(TRAINING, TRAINED, TRAINING_FAILED, STARTING_HOSTING, HOSTED, HOSTING_FAILED, STOPPING_HOSTING, SYSTEM_UPDATING, DELETING)
+}
+
+type TargetDevice = "jetson_xavier"
+object TargetDevice {
+  inline val jetson_xavier: "jetson_xavier" = "jetson_xavier"
+
+  inline def values: js.Array[TargetDevice] = js.Array(jetson_xavier)
+}
+
+type TargetPlatformAccelerator = "NVIDIA"
+object TargetPlatformAccelerator {
+  inline val NVIDIA: "NVIDIA" = "NVIDIA"
+
+  inline def values: js.Array[TargetPlatformAccelerator] = js.Array(NVIDIA)
+}
+
+type TargetPlatformArch = "ARM64" | "X86_64"
+object TargetPlatformArch {
+  inline val ARM64: "ARM64" = "ARM64"
+  inline val X86_64: "X86_64" = "X86_64"
+
+  inline def values: js.Array[TargetPlatformArch] = js.Array(ARM64, X86_64)
+}
+
+type TargetPlatformOs = "LINUX"
+object TargetPlatformOs {
+  inline val LINUX: "LINUX" = "LINUX"
+
+  inline def values: js.Array[TargetPlatformOs] = js.Array(LINUX)
 }

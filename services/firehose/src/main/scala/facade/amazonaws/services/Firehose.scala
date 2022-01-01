@@ -9,6 +9,13 @@ import facade.amazonaws._
 
 package object firehose {
   type AWSKMSKeyARN = String
+  type AmazonopensearchserviceBufferingIntervalInSeconds = Int
+  type AmazonopensearchserviceBufferingSizeInMBs = Int
+  type AmazonopensearchserviceClusterEndpoint = String
+  type AmazonopensearchserviceDomainARN = String
+  type AmazonopensearchserviceIndexName = String
+  type AmazonopensearchserviceRetryDurationInSeconds = Int
+  type AmazonopensearchserviceTypeName = String
   type BlockSizeBytes = Int
   type BooleanObject = Boolean
   type BucketARN = String
@@ -73,6 +80,7 @@ package object firehose {
   type PutRecordBatchResponseEntryList = js.Array[PutRecordBatchResponseEntry]
   type PutResponseRecordId = String
   type RedshiftRetryDurationInSeconds = Int
+  type RetryDurationInSeconds = Int
   type RoleARN = String
   type SecurityGroupIdList = js.Array[NonEmptyStringWithoutWhitespace]
   type SizeInMBs = Int
@@ -123,6 +131,193 @@ package object firehose {
   object Firehose {
     @inline implicit def toOps(service: Firehose): FirehoseOps = {
       new FirehoseOps(service)
+    }
+  }
+
+  @js.native
+  trait AmazonopensearchserviceBufferingHints extends js.Object {
+    var IntervalInSeconds: js.UndefOr[AmazonopensearchserviceBufferingIntervalInSeconds]
+    var SizeInMBs: js.UndefOr[AmazonopensearchserviceBufferingSizeInMBs]
+  }
+
+  object AmazonopensearchserviceBufferingHints {
+    @inline
+    def apply(
+        IntervalInSeconds: js.UndefOr[AmazonopensearchserviceBufferingIntervalInSeconds] = js.undefined,
+        SizeInMBs: js.UndefOr[AmazonopensearchserviceBufferingSizeInMBs] = js.undefined
+    ): AmazonopensearchserviceBufferingHints = {
+      val __obj = js.Dynamic.literal()
+      IntervalInSeconds.foreach(__v => __obj.updateDynamic("IntervalInSeconds")(__v.asInstanceOf[js.Any]))
+      SizeInMBs.foreach(__v => __obj.updateDynamic("SizeInMBs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AmazonopensearchserviceBufferingHints]
+    }
+  }
+
+  @js.native
+  trait AmazonopensearchserviceDestinationConfiguration extends js.Object {
+    var IndexName: AmazonopensearchserviceIndexName
+    var RoleARN: RoleARN
+    var S3Configuration: S3DestinationConfiguration
+    var BufferingHints: js.UndefOr[AmazonopensearchserviceBufferingHints]
+    var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var ClusterEndpoint: js.UndefOr[AmazonopensearchserviceClusterEndpoint]
+    var DomainARN: js.UndefOr[AmazonopensearchserviceDomainARN]
+    var IndexRotationPeriod: js.UndefOr[AmazonopensearchserviceIndexRotationPeriod]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[AmazonopensearchserviceRetryOptions]
+    var S3BackupMode: js.UndefOr[AmazonopensearchserviceS3BackupMode]
+    var TypeName: js.UndefOr[AmazonopensearchserviceTypeName]
+    var VpcConfiguration: js.UndefOr[VpcConfiguration]
+  }
+
+  object AmazonopensearchserviceDestinationConfiguration {
+    @inline
+    def apply(
+        IndexName: AmazonopensearchserviceIndexName,
+        RoleARN: RoleARN,
+        S3Configuration: S3DestinationConfiguration,
+        BufferingHints: js.UndefOr[AmazonopensearchserviceBufferingHints] = js.undefined,
+        CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+        ClusterEndpoint: js.UndefOr[AmazonopensearchserviceClusterEndpoint] = js.undefined,
+        DomainARN: js.UndefOr[AmazonopensearchserviceDomainARN] = js.undefined,
+        IndexRotationPeriod: js.UndefOr[AmazonopensearchserviceIndexRotationPeriod] = js.undefined,
+        ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+        RetryOptions: js.UndefOr[AmazonopensearchserviceRetryOptions] = js.undefined,
+        S3BackupMode: js.UndefOr[AmazonopensearchserviceS3BackupMode] = js.undefined,
+        TypeName: js.UndefOr[AmazonopensearchserviceTypeName] = js.undefined,
+        VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
+    ): AmazonopensearchserviceDestinationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "RoleARN" -> RoleARN.asInstanceOf[js.Any],
+        "S3Configuration" -> S3Configuration.asInstanceOf[js.Any]
+      )
+
+      BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
+      ClusterEndpoint.foreach(__v => __obj.updateDynamic("ClusterEndpoint")(__v.asInstanceOf[js.Any]))
+      DomainARN.foreach(__v => __obj.updateDynamic("DomainARN")(__v.asInstanceOf[js.Any]))
+      IndexRotationPeriod.foreach(__v => __obj.updateDynamic("IndexRotationPeriod")(__v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.updateDynamic("ProcessingConfiguration")(__v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.updateDynamic("RetryOptions")(__v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.updateDynamic("S3BackupMode")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AmazonopensearchserviceDestinationConfiguration]
+    }
+  }
+
+  @js.native
+  trait AmazonopensearchserviceDestinationDescription extends js.Object {
+    var BufferingHints: js.UndefOr[AmazonopensearchserviceBufferingHints]
+    var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var ClusterEndpoint: js.UndefOr[AmazonopensearchserviceClusterEndpoint]
+    var DomainARN: js.UndefOr[AmazonopensearchserviceDomainARN]
+    var IndexName: js.UndefOr[AmazonopensearchserviceIndexName]
+    var IndexRotationPeriod: js.UndefOr[AmazonopensearchserviceIndexRotationPeriod]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[AmazonopensearchserviceRetryOptions]
+    var RoleARN: js.UndefOr[RoleARN]
+    var S3BackupMode: js.UndefOr[AmazonopensearchserviceS3BackupMode]
+    var S3DestinationDescription: js.UndefOr[S3DestinationDescription]
+    var TypeName: js.UndefOr[AmazonopensearchserviceTypeName]
+    var VpcConfigurationDescription: js.UndefOr[VpcConfigurationDescription]
+  }
+
+  object AmazonopensearchserviceDestinationDescription {
+    @inline
+    def apply(
+        BufferingHints: js.UndefOr[AmazonopensearchserviceBufferingHints] = js.undefined,
+        CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+        ClusterEndpoint: js.UndefOr[AmazonopensearchserviceClusterEndpoint] = js.undefined,
+        DomainARN: js.UndefOr[AmazonopensearchserviceDomainARN] = js.undefined,
+        IndexName: js.UndefOr[AmazonopensearchserviceIndexName] = js.undefined,
+        IndexRotationPeriod: js.UndefOr[AmazonopensearchserviceIndexRotationPeriod] = js.undefined,
+        ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+        RetryOptions: js.UndefOr[AmazonopensearchserviceRetryOptions] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        S3BackupMode: js.UndefOr[AmazonopensearchserviceS3BackupMode] = js.undefined,
+        S3DestinationDescription: js.UndefOr[S3DestinationDescription] = js.undefined,
+        TypeName: js.UndefOr[AmazonopensearchserviceTypeName] = js.undefined,
+        VpcConfigurationDescription: js.UndefOr[VpcConfigurationDescription] = js.undefined
+    ): AmazonopensearchserviceDestinationDescription = {
+      val __obj = js.Dynamic.literal()
+      BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
+      ClusterEndpoint.foreach(__v => __obj.updateDynamic("ClusterEndpoint")(__v.asInstanceOf[js.Any]))
+      DomainARN.foreach(__v => __obj.updateDynamic("DomainARN")(__v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      IndexRotationPeriod.foreach(__v => __obj.updateDynamic("IndexRotationPeriod")(__v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.updateDynamic("ProcessingConfiguration")(__v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.updateDynamic("RetryOptions")(__v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
+      S3BackupMode.foreach(__v => __obj.updateDynamic("S3BackupMode")(__v.asInstanceOf[js.Any]))
+      S3DestinationDescription.foreach(__v => __obj.updateDynamic("S3DestinationDescription")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      VpcConfigurationDescription.foreach(__v => __obj.updateDynamic("VpcConfigurationDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AmazonopensearchserviceDestinationDescription]
+    }
+  }
+
+  @js.native
+  trait AmazonopensearchserviceDestinationUpdate extends js.Object {
+    var BufferingHints: js.UndefOr[AmazonopensearchserviceBufferingHints]
+    var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
+    var ClusterEndpoint: js.UndefOr[AmazonopensearchserviceClusterEndpoint]
+    var DomainARN: js.UndefOr[AmazonopensearchserviceDomainARN]
+    var IndexName: js.UndefOr[AmazonopensearchserviceIndexName]
+    var IndexRotationPeriod: js.UndefOr[AmazonopensearchserviceIndexRotationPeriod]
+    var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
+    var RetryOptions: js.UndefOr[AmazonopensearchserviceRetryOptions]
+    var RoleARN: js.UndefOr[RoleARN]
+    var S3Update: js.UndefOr[S3DestinationUpdate]
+    var TypeName: js.UndefOr[AmazonopensearchserviceTypeName]
+  }
+
+  object AmazonopensearchserviceDestinationUpdate {
+    @inline
+    def apply(
+        BufferingHints: js.UndefOr[AmazonopensearchserviceBufferingHints] = js.undefined,
+        CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
+        ClusterEndpoint: js.UndefOr[AmazonopensearchserviceClusterEndpoint] = js.undefined,
+        DomainARN: js.UndefOr[AmazonopensearchserviceDomainARN] = js.undefined,
+        IndexName: js.UndefOr[AmazonopensearchserviceIndexName] = js.undefined,
+        IndexRotationPeriod: js.UndefOr[AmazonopensearchserviceIndexRotationPeriod] = js.undefined,
+        ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
+        RetryOptions: js.UndefOr[AmazonopensearchserviceRetryOptions] = js.undefined,
+        RoleARN: js.UndefOr[RoleARN] = js.undefined,
+        S3Update: js.UndefOr[S3DestinationUpdate] = js.undefined,
+        TypeName: js.UndefOr[AmazonopensearchserviceTypeName] = js.undefined
+    ): AmazonopensearchserviceDestinationUpdate = {
+      val __obj = js.Dynamic.literal()
+      BufferingHints.foreach(__v => __obj.updateDynamic("BufferingHints")(__v.asInstanceOf[js.Any]))
+      CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
+      ClusterEndpoint.foreach(__v => __obj.updateDynamic("ClusterEndpoint")(__v.asInstanceOf[js.Any]))
+      DomainARN.foreach(__v => __obj.updateDynamic("DomainARN")(__v.asInstanceOf[js.Any]))
+      IndexName.foreach(__v => __obj.updateDynamic("IndexName")(__v.asInstanceOf[js.Any]))
+      IndexRotationPeriod.foreach(__v => __obj.updateDynamic("IndexRotationPeriod")(__v.asInstanceOf[js.Any]))
+      ProcessingConfiguration.foreach(__v => __obj.updateDynamic("ProcessingConfiguration")(__v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.updateDynamic("RetryOptions")(__v.asInstanceOf[js.Any]))
+      RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
+      S3Update.foreach(__v => __obj.updateDynamic("S3Update")(__v.asInstanceOf[js.Any]))
+      TypeName.foreach(__v => __obj.updateDynamic("TypeName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AmazonopensearchserviceDestinationUpdate]
+    }
+  }
+
+  @js.native
+  trait AmazonopensearchserviceRetryOptions extends js.Object {
+    var DurationInSeconds: js.UndefOr[AmazonopensearchserviceRetryDurationInSeconds]
+  }
+
+  object AmazonopensearchserviceRetryOptions {
+    @inline
+    def apply(
+        DurationInSeconds: js.UndefOr[AmazonopensearchserviceRetryDurationInSeconds] = js.undefined
+    ): AmazonopensearchserviceRetryOptions = {
+      val __obj = js.Dynamic.literal()
+      DurationInSeconds.foreach(__v => __obj.updateDynamic("DurationInSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AmazonopensearchserviceRetryOptions]
     }
   }
 
@@ -200,6 +395,7 @@ package object firehose {
   @js.native
   trait CreateDeliveryStreamInput extends js.Object {
     var DeliveryStreamName: DeliveryStreamName
+    var AmazonopensearchserviceDestinationConfiguration: js.UndefOr[AmazonopensearchserviceDestinationConfiguration]
     var DeliveryStreamEncryptionConfigurationInput: js.UndefOr[DeliveryStreamEncryptionConfigurationInput]
     var DeliveryStreamType: js.UndefOr[DeliveryStreamType]
     var ElasticsearchDestinationConfiguration: js.UndefOr[ElasticsearchDestinationConfiguration]
@@ -216,6 +412,7 @@ package object firehose {
     @inline
     def apply(
         DeliveryStreamName: DeliveryStreamName,
+        AmazonopensearchserviceDestinationConfiguration: js.UndefOr[AmazonopensearchserviceDestinationConfiguration] = js.undefined,
         DeliveryStreamEncryptionConfigurationInput: js.UndefOr[DeliveryStreamEncryptionConfigurationInput] = js.undefined,
         DeliveryStreamType: js.UndefOr[DeliveryStreamType] = js.undefined,
         ElasticsearchDestinationConfiguration: js.UndefOr[ElasticsearchDestinationConfiguration] = js.undefined,
@@ -231,6 +428,7 @@ package object firehose {
         "DeliveryStreamName" -> DeliveryStreamName.asInstanceOf[js.Any]
       )
 
+      AmazonopensearchserviceDestinationConfiguration.foreach(__v => __obj.updateDynamic("AmazonopensearchserviceDestinationConfiguration")(__v.asInstanceOf[js.Any]))
       DeliveryStreamEncryptionConfigurationInput.foreach(__v => __obj.updateDynamic("DeliveryStreamEncryptionConfigurationInput")(__v.asInstanceOf[js.Any]))
       DeliveryStreamType.foreach(__v => __obj.updateDynamic("DeliveryStreamType")(__v.asInstanceOf[js.Any]))
       ElasticsearchDestinationConfiguration.foreach(__v => __obj.updateDynamic("ElasticsearchDestinationConfiguration")(__v.asInstanceOf[js.Any]))
@@ -490,6 +688,7 @@ package object firehose {
   @js.native
   trait DestinationDescription extends js.Object {
     var DestinationId: DestinationId
+    var AmazonopensearchserviceDestinationDescription: js.UndefOr[AmazonopensearchserviceDestinationDescription]
     var ElasticsearchDestinationDescription: js.UndefOr[ElasticsearchDestinationDescription]
     var ExtendedS3DestinationDescription: js.UndefOr[ExtendedS3DestinationDescription]
     var HttpEndpointDestinationDescription: js.UndefOr[HttpEndpointDestinationDescription]
@@ -502,6 +701,7 @@ package object firehose {
     @inline
     def apply(
         DestinationId: DestinationId,
+        AmazonopensearchserviceDestinationDescription: js.UndefOr[AmazonopensearchserviceDestinationDescription] = js.undefined,
         ElasticsearchDestinationDescription: js.UndefOr[ElasticsearchDestinationDescription] = js.undefined,
         ExtendedS3DestinationDescription: js.UndefOr[ExtendedS3DestinationDescription] = js.undefined,
         HttpEndpointDestinationDescription: js.UndefOr[HttpEndpointDestinationDescription] = js.undefined,
@@ -513,6 +713,7 @@ package object firehose {
         "DestinationId" -> DestinationId.asInstanceOf[js.Any]
       )
 
+      AmazonopensearchserviceDestinationDescription.foreach(__v => __obj.updateDynamic("AmazonopensearchserviceDestinationDescription")(__v.asInstanceOf[js.Any]))
       ElasticsearchDestinationDescription.foreach(__v => __obj.updateDynamic("ElasticsearchDestinationDescription")(__v.asInstanceOf[js.Any]))
       ExtendedS3DestinationDescription.foreach(__v => __obj.updateDynamic("ExtendedS3DestinationDescription")(__v.asInstanceOf[js.Any]))
       HttpEndpointDestinationDescription.foreach(__v => __obj.updateDynamic("HttpEndpointDestinationDescription")(__v.asInstanceOf[js.Any]))
@@ -520,6 +721,27 @@ package object firehose {
       S3DestinationDescription.foreach(__v => __obj.updateDynamic("S3DestinationDescription")(__v.asInstanceOf[js.Any]))
       SplunkDestinationDescription.foreach(__v => __obj.updateDynamic("SplunkDestinationDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DestinationDescription]
+    }
+  }
+
+  /** The configuration of the dynamic partitioning mechanism that creates smaller data sets from the streaming data by partitioning it based on partition keys. Currently, dynamic partitioning is only supported for Amazon S3 destinations. For more information, see [[https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html|https://docs.aws.amazon.com/firehose/latest/dev/dynamic-partitioning.html]]
+    */
+  @js.native
+  trait DynamicPartitioningConfiguration extends js.Object {
+    var Enabled: js.UndefOr[BooleanObject]
+    var RetryOptions: js.UndefOr[RetryOptions]
+  }
+
+  object DynamicPartitioningConfiguration {
+    @inline
+    def apply(
+        Enabled: js.UndefOr[BooleanObject] = js.undefined,
+        RetryOptions: js.UndefOr[RetryOptions] = js.undefined
+    ): DynamicPartitioningConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      RetryOptions.foreach(__v => __obj.updateDynamic("RetryOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DynamicPartitioningConfiguration]
     }
   }
 
@@ -751,6 +973,7 @@ package object firehose {
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
+    var DynamicPartitioningConfiguration: js.UndefOr[DynamicPartitioningConfiguration]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
@@ -768,6 +991,7 @@ package object firehose {
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
         CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
         DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
+        DynamicPartitioningConfiguration: js.UndefOr[DynamicPartitioningConfiguration] = js.undefined,
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
@@ -784,6 +1008,7 @@ package object firehose {
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
       CompressionFormat.foreach(__v => __obj.updateDynamic("CompressionFormat")(__v.asInstanceOf[js.Any]))
       DataFormatConversionConfiguration.foreach(__v => __obj.updateDynamic("DataFormatConversionConfiguration")(__v.asInstanceOf[js.Any]))
+      DynamicPartitioningConfiguration.foreach(__v => __obj.updateDynamic("DynamicPartitioningConfiguration")(__v.asInstanceOf[js.Any]))
       EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       ErrorOutputPrefix.foreach(__v => __obj.updateDynamic("ErrorOutputPrefix")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
@@ -805,6 +1030,7 @@ package object firehose {
     var RoleARN: RoleARN
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
+    var DynamicPartitioningConfiguration: js.UndefOr[DynamicPartitioningConfiguration]
     var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
     var ProcessingConfiguration: js.UndefOr[ProcessingConfiguration]
@@ -822,6 +1048,7 @@ package object firehose {
         RoleARN: RoleARN,
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
         DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
+        DynamicPartitioningConfiguration: js.UndefOr[DynamicPartitioningConfiguration] = js.undefined,
         ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
         ProcessingConfiguration: js.UndefOr[ProcessingConfiguration] = js.undefined,
@@ -838,6 +1065,7 @@ package object firehose {
 
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
       DataFormatConversionConfiguration.foreach(__v => __obj.updateDynamic("DataFormatConversionConfiguration")(__v.asInstanceOf[js.Any]))
+      DynamicPartitioningConfiguration.foreach(__v => __obj.updateDynamic("DynamicPartitioningConfiguration")(__v.asInstanceOf[js.Any]))
       ErrorOutputPrefix.foreach(__v => __obj.updateDynamic("ErrorOutputPrefix")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       ProcessingConfiguration.foreach(__v => __obj.updateDynamic("ProcessingConfiguration")(__v.asInstanceOf[js.Any]))
@@ -856,6 +1084,7 @@ package object firehose {
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var CompressionFormat: js.UndefOr[CompressionFormat]
     var DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration]
+    var DynamicPartitioningConfiguration: js.UndefOr[DynamicPartitioningConfiguration]
     var EncryptionConfiguration: js.UndefOr[EncryptionConfiguration]
     var ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix]
     var Prefix: js.UndefOr[Prefix]
@@ -873,6 +1102,7 @@ package object firehose {
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
         CompressionFormat: js.UndefOr[CompressionFormat] = js.undefined,
         DataFormatConversionConfiguration: js.UndefOr[DataFormatConversionConfiguration] = js.undefined,
+        DynamicPartitioningConfiguration: js.UndefOr[DynamicPartitioningConfiguration] = js.undefined,
         EncryptionConfiguration: js.UndefOr[EncryptionConfiguration] = js.undefined,
         ErrorOutputPrefix: js.UndefOr[ErrorOutputPrefix] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
@@ -887,6 +1117,7 @@ package object firehose {
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
       CompressionFormat.foreach(__v => __obj.updateDynamic("CompressionFormat")(__v.asInstanceOf[js.Any]))
       DataFormatConversionConfiguration.foreach(__v => __obj.updateDynamic("DataFormatConversionConfiguration")(__v.asInstanceOf[js.Any]))
+      DynamicPartitioningConfiguration.foreach(__v => __obj.updateDynamic("DynamicPartitioningConfiguration")(__v.asInstanceOf[js.Any]))
       EncryptionConfiguration.foreach(__v => __obj.updateDynamic("EncryptionConfiguration")(__v.asInstanceOf[js.Any]))
       ErrorOutputPrefix.foreach(__v => __obj.updateDynamic("ErrorOutputPrefix")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
@@ -1841,6 +2072,24 @@ package object firehose {
     }
   }
 
+  /** The retry behavior in case Kinesis Data Firehose is unable to deliver data to an Amazon S3 prefix.
+    */
+  @js.native
+  trait RetryOptions extends js.Object {
+    var DurationInSeconds: js.UndefOr[RetryDurationInSeconds]
+  }
+
+  object RetryOptions {
+    @inline
+    def apply(
+        DurationInSeconds: js.UndefOr[RetryDurationInSeconds] = js.undefined
+    ): RetryOptions = {
+      val __obj = js.Dynamic.literal()
+      DurationInSeconds.foreach(__v => __obj.updateDynamic("DurationInSeconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetryOptions]
+    }
+  }
+
   /** Describes the configuration of a destination in Amazon S3.
     */
   @js.native
@@ -2330,6 +2579,7 @@ package object firehose {
     var CurrentDeliveryStreamVersionId: DeliveryStreamVersionId
     var DeliveryStreamName: DeliveryStreamName
     var DestinationId: DestinationId
+    var AmazonopensearchserviceDestinationUpdate: js.UndefOr[AmazonopensearchserviceDestinationUpdate]
     var ElasticsearchDestinationUpdate: js.UndefOr[ElasticsearchDestinationUpdate]
     var ExtendedS3DestinationUpdate: js.UndefOr[ExtendedS3DestinationUpdate]
     var HttpEndpointDestinationUpdate: js.UndefOr[HttpEndpointDestinationUpdate]
@@ -2344,6 +2594,7 @@ package object firehose {
         CurrentDeliveryStreamVersionId: DeliveryStreamVersionId,
         DeliveryStreamName: DeliveryStreamName,
         DestinationId: DestinationId,
+        AmazonopensearchserviceDestinationUpdate: js.UndefOr[AmazonopensearchserviceDestinationUpdate] = js.undefined,
         ElasticsearchDestinationUpdate: js.UndefOr[ElasticsearchDestinationUpdate] = js.undefined,
         ExtendedS3DestinationUpdate: js.UndefOr[ExtendedS3DestinationUpdate] = js.undefined,
         HttpEndpointDestinationUpdate: js.UndefOr[HttpEndpointDestinationUpdate] = js.undefined,
@@ -2357,6 +2608,7 @@ package object firehose {
         "DestinationId" -> DestinationId.asInstanceOf[js.Any]
       )
 
+      AmazonopensearchserviceDestinationUpdate.foreach(__v => __obj.updateDynamic("AmazonopensearchserviceDestinationUpdate")(__v.asInstanceOf[js.Any]))
       ElasticsearchDestinationUpdate.foreach(__v => __obj.updateDynamic("ElasticsearchDestinationUpdate")(__v.asInstanceOf[js.Any]))
       ExtendedS3DestinationUpdate.foreach(__v => __obj.updateDynamic("ExtendedS3DestinationUpdate")(__v.asInstanceOf[js.Any]))
       HttpEndpointDestinationUpdate.foreach(__v => __obj.updateDynamic("HttpEndpointDestinationUpdate")(__v.asInstanceOf[js.Any]))

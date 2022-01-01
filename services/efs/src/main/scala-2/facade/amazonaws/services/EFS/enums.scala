@@ -24,6 +24,28 @@ object PerformanceMode {
   @inline def values: js.Array[PerformanceMode] = js.Array(generalPurpose, maxIO)
 }
 
+/** An EFS resource, for example a file system or a mount target.
+  */
+@js.native
+sealed trait Resource extends js.Any
+object Resource {
+  val FILE_SYSTEM = "FILE_SYSTEM".asInstanceOf[Resource]
+  val MOUNT_TARGET = "MOUNT_TARGET".asInstanceOf[Resource]
+
+  @inline def values: js.Array[Resource] = js.Array(FILE_SYSTEM, MOUNT_TARGET)
+}
+
+/** A preference indicating a choice to use 63bit/32bit IDs for all applicable resources.
+  */
+@js.native
+sealed trait ResourceIdType extends js.Any
+object ResourceIdType {
+  val LONG_ID = "LONG_ID".asInstanceOf[ResourceIdType]
+  val SHORT_ID = "SHORT_ID".asInstanceOf[ResourceIdType]
+
+  @inline def values: js.Array[ResourceIdType] = js.Array(LONG_ID, SHORT_ID)
+}
+
 @js.native
 sealed trait Status extends js.Any
 object Status {
@@ -54,4 +76,12 @@ object TransitionToIARules {
   val AFTER_90_DAYS = "AFTER_90_DAYS".asInstanceOf[TransitionToIARules]
 
   @inline def values: js.Array[TransitionToIARules] = js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
+}
+
+@js.native
+sealed trait TransitionToPrimaryStorageClassRules extends js.Any
+object TransitionToPrimaryStorageClassRules {
+  val AFTER_1_ACCESS = "AFTER_1_ACCESS".asInstanceOf[TransitionToPrimaryStorageClassRules]
+
+  @inline def values: js.Array[TransitionToPrimaryStorageClassRules] = js.Array(AFTER_1_ACCESS)
 }

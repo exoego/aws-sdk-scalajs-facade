@@ -2,6 +2,14 @@ package facade.amazonaws.services.comprehend
 
 import scalajs.js
 
+type AugmentedManifestsDocumentTypeFormat = "PLAIN_TEXT_DOCUMENT" | "SEMI_STRUCTURED_DOCUMENT"
+object AugmentedManifestsDocumentTypeFormat {
+  inline val PLAIN_TEXT_DOCUMENT: "PLAIN_TEXT_DOCUMENT" = "PLAIN_TEXT_DOCUMENT"
+  inline val SEMI_STRUCTURED_DOCUMENT: "SEMI_STRUCTURED_DOCUMENT" = "SEMI_STRUCTURED_DOCUMENT"
+
+  inline def values: js.Array[AugmentedManifestsDocumentTypeFormat] = js.Array(PLAIN_TEXT_DOCUMENT, SEMI_STRUCTURED_DOCUMENT)
+}
+
 type DocumentClassifierDataFormat = "COMPREHEND_CSV" | "AUGMENTED_MANIFEST"
 object DocumentClassifierDataFormat {
   inline val COMPREHEND_CSV: "COMPREHEND_CSV" = "COMPREHEND_CSV"
@@ -16,6 +24,32 @@ object DocumentClassifierMode {
   inline val MULTI_LABEL: "MULTI_LABEL" = "MULTI_LABEL"
 
   inline def values: js.Array[DocumentClassifierMode] = js.Array(MULTI_CLASS, MULTI_LABEL)
+}
+
+type DocumentReadAction = "TEXTRACT_DETECT_DOCUMENT_TEXT" | "TEXTRACT_ANALYZE_DOCUMENT"
+object DocumentReadAction {
+  inline val TEXTRACT_DETECT_DOCUMENT_TEXT: "TEXTRACT_DETECT_DOCUMENT_TEXT" = "TEXTRACT_DETECT_DOCUMENT_TEXT"
+  inline val TEXTRACT_ANALYZE_DOCUMENT: "TEXTRACT_ANALYZE_DOCUMENT" = "TEXTRACT_ANALYZE_DOCUMENT"
+
+  inline def values: js.Array[DocumentReadAction] = js.Array(TEXTRACT_DETECT_DOCUMENT_TEXT, TEXTRACT_ANALYZE_DOCUMENT)
+}
+
+/** A list of the types of analyses to perform. This field specifies what feature types need to be extracted from the document where entity recognition is expected. * <code>TABLES</code> - Add TABLES to the list to return information about the tables that are detected in the input document. * <code>FORMS</code> - Add FORMS to return detected form data.
+  */
+type DocumentReadFeatureTypes = "TABLES" | "FORMS"
+object DocumentReadFeatureTypes {
+  inline val TABLES: "TABLES" = "TABLES"
+  inline val FORMS: "FORMS" = "FORMS"
+
+  inline def values: js.Array[DocumentReadFeatureTypes] = js.Array(TABLES, FORMS)
+}
+
+type DocumentReadMode = "SERVICE_DEFAULT" | "FORCE_DOCUMENT_READ_ACTION"
+object DocumentReadMode {
+  inline val SERVICE_DEFAULT: "SERVICE_DEFAULT" = "SERVICE_DEFAULT"
+  inline val FORCE_DOCUMENT_READ_ACTION: "FORCE_DOCUMENT_READ_ACTION" = "FORCE_DOCUMENT_READ_ACTION"
+
+  inline def values: js.Array[DocumentReadMode] = js.Array(SERVICE_DEFAULT, FORCE_DOCUMENT_READ_ACTION)
 }
 
 type EndpointStatus = "CREATING" | "DELETING" | "FAILED" | "IN_SERVICE" | "UPDATING"
@@ -204,6 +238,14 @@ object SentimentType {
   inline val MIXED: "MIXED" = "MIXED"
 
   inline def values: js.Array[SentimentType] = js.Array(POSITIVE, NEGATIVE, NEUTRAL, MIXED)
+}
+
+type Split = "TRAIN" | "TEST"
+object Split {
+  inline val TRAIN: "TRAIN" = "TRAIN"
+  inline val TEST: "TEST" = "TEST"
+
+  inline def values: js.Array[Split] = js.Array(TRAIN, TEST)
 }
 
 type SyntaxLanguageCode = "en" | "es" | "fr" | "de" | "it" | "pt"

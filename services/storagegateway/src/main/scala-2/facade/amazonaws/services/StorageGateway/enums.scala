@@ -47,6 +47,16 @@ object FileShareType {
 }
 
 @js.native
+sealed trait GatewayCapacity extends js.Any
+object GatewayCapacity {
+  val Small = "Small".asInstanceOf[GatewayCapacity]
+  val Medium = "Medium".asInstanceOf[GatewayCapacity]
+  val Large = "Large".asInstanceOf[GatewayCapacity]
+
+  @inline def values: js.Array[GatewayCapacity] = js.Array(Small, Medium, Large)
+}
+
+@js.native
 sealed trait HostEnvironment extends js.Any
 object HostEnvironment {
   val VMWARE = "VMWARE".asInstanceOf[HostEnvironment]
@@ -54,11 +64,12 @@ object HostEnvironment {
   val EC2 = "EC2".asInstanceOf[HostEnvironment]
   val KVM = "KVM".asInstanceOf[HostEnvironment]
   val OTHER = "OTHER".asInstanceOf[HostEnvironment]
+  val SNOWBALL = "SNOWBALL".asInstanceOf[HostEnvironment]
 
-  @inline def values: js.Array[HostEnvironment] = js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER)
+  @inline def values: js.Array[HostEnvironment] = js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER, SNOWBALL)
 }
 
-/** A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts objects into. The default value is <code>private</code>.
+/** A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.
   */
 @js.native
 sealed trait ObjectACL extends js.Any

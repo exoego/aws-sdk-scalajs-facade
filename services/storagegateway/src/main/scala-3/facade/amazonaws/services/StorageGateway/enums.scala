@@ -42,18 +42,28 @@ object FileShareType {
   inline def values: js.Array[FileShareType] = js.Array(NFS, SMB)
 }
 
-type HostEnvironment = "VMWARE" | "HYPER-V" | "EC2" | "KVM" | "OTHER"
+type GatewayCapacity = "Small" | "Medium" | "Large"
+object GatewayCapacity {
+  inline val Small: "Small" = "Small"
+  inline val Medium: "Medium" = "Medium"
+  inline val Large: "Large" = "Large"
+
+  inline def values: js.Array[GatewayCapacity] = js.Array(Small, Medium, Large)
+}
+
+type HostEnvironment = "VMWARE" | "HYPER-V" | "EC2" | "KVM" | "OTHER" | "SNOWBALL"
 object HostEnvironment {
   inline val VMWARE: "VMWARE" = "VMWARE"
   inline val `HYPER-V`: "HYPER-V" = "HYPER-V"
   inline val EC2: "EC2" = "EC2"
   inline val KVM: "KVM" = "KVM"
   inline val OTHER: "OTHER" = "OTHER"
+  inline val SNOWBALL: "SNOWBALL" = "SNOWBALL"
 
-  inline def values: js.Array[HostEnvironment] = js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER)
+  inline def values: js.Array[HostEnvironment] = js.Array(VMWARE, `HYPER-V`, EC2, KVM, OTHER, SNOWBALL)
 }
 
-/** A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts objects into. The default value is <code>private</code>.
+/** A value that sets the access control list (ACL) permission for objects in the S3 bucket that an S3 File Gateway puts objects into. The default value is <code>private</code>.
   */
 type ObjectACL = "private" | "public-read" | "public-read-write" | "authenticated-read" | "bucket-owner-read" | "bucket-owner-full-control" | "aws-exec-read"
 object ObjectACL {

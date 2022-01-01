@@ -47,8 +47,9 @@ object HealthStatusFilter {
   val HEALTHY = "HEALTHY".asInstanceOf[HealthStatusFilter]
   val UNHEALTHY = "UNHEALTHY".asInstanceOf[HealthStatusFilter]
   val ALL = "ALL".asInstanceOf[HealthStatusFilter]
+  val HEALTHY_OR_ELSE_ALL = "HEALTHY_OR_ELSE_ALL".asInstanceOf[HealthStatusFilter]
 
-  @inline def values: js.Array[HealthStatusFilter] = js.Array(HEALTHY, UNHEALTHY, ALL)
+  @inline def values: js.Array[HealthStatusFilter] = js.Array(HEALTHY, UNHEALTHY, ALL, HEALTHY_OR_ELSE_ALL)
 }
 
 @js.native
@@ -107,11 +108,12 @@ sealed trait OperationType extends js.Any
 object OperationType {
   val CREATE_NAMESPACE = "CREATE_NAMESPACE".asInstanceOf[OperationType]
   val DELETE_NAMESPACE = "DELETE_NAMESPACE".asInstanceOf[OperationType]
+  val UPDATE_NAMESPACE = "UPDATE_NAMESPACE".asInstanceOf[OperationType]
   val UPDATE_SERVICE = "UPDATE_SERVICE".asInstanceOf[OperationType]
   val REGISTER_INSTANCE = "REGISTER_INSTANCE".asInstanceOf[OperationType]
   val DEREGISTER_INSTANCE = "DEREGISTER_INSTANCE".asInstanceOf[OperationType]
 
-  @inline def values: js.Array[OperationType] = js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
+  @inline def values: js.Array[OperationType] = js.Array(CREATE_NAMESPACE, DELETE_NAMESPACE, UPDATE_NAMESPACE, UPDATE_SERVICE, REGISTER_INSTANCE, DEREGISTER_INSTANCE)
 }
 
 @js.native

@@ -13,6 +13,16 @@ object Action {
 }
 
 @js.native
+sealed trait Alignment extends js.Any
+object Alignment {
+  val LEFT = "LEFT".asInstanceOf[Alignment]
+  val CENTER = "CENTER".asInstanceOf[Alignment]
+  val RIGHT = "RIGHT".asInstanceOf[Alignment]
+
+  @inline def values: js.Array[Alignment] = js.Array(LEFT, CENTER, RIGHT)
+}
+
+@js.native
 sealed trait AttributeType extends js.Any
 object AttributeType {
   val INCLUSIVE = "INCLUSIVE".asInstanceOf[AttributeType]
@@ -24,6 +34,16 @@ object AttributeType {
   val BETWEEN = "BETWEEN".asInstanceOf[AttributeType]
 
   @inline def values: js.Array[AttributeType] = js.Array(INCLUSIVE, EXCLUSIVE, CONTAINS, BEFORE, AFTER, ON, BETWEEN)
+}
+
+@js.native
+sealed trait ButtonAction extends js.Any
+object ButtonAction {
+  val LINK = "LINK".asInstanceOf[ButtonAction]
+  val DEEP_LINK = "DEEP_LINK".asInstanceOf[ButtonAction]
+  val CLOSE = "CLOSE".asInstanceOf[ButtonAction]
+
+  @inline def values: js.Array[ButtonAction] = js.Array(LINK, DEEP_LINK, CLOSE)
 }
 
 @js.native
@@ -55,8 +75,9 @@ object ChannelType {
   val EMAIL = "EMAIL".asInstanceOf[ChannelType]
   val BAIDU = "BAIDU".asInstanceOf[ChannelType]
   val CUSTOM = "CUSTOM".asInstanceOf[ChannelType]
+  val IN_APP = "IN_APP".asInstanceOf[ChannelType]
 
-  @inline def values: js.Array[ChannelType] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+  @inline def values: js.Array[ChannelType] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM, IN_APP)
 }
 
 @js.native
@@ -120,8 +141,9 @@ object Frequency {
   val WEEKLY = "WEEKLY".asInstanceOf[Frequency]
   val MONTHLY = "MONTHLY".asInstanceOf[Frequency]
   val EVENT = "EVENT".asInstanceOf[Frequency]
+  val IN_APP_EVENT = "IN_APP_EVENT".asInstanceOf[Frequency]
 
-  @inline def values: js.Array[Frequency] = js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT)
+  @inline def values: js.Array[Frequency] = js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT, IN_APP_EVENT)
 }
 
 @js.native
@@ -148,6 +170,19 @@ object JobStatus {
   val FAILED = "FAILED".asInstanceOf[JobStatus]
 
   @inline def values: js.Array[JobStatus] = js.Array(CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED)
+}
+
+@js.native
+sealed trait Layout extends js.Any
+object Layout {
+  val BOTTOM_BANNER = "BOTTOM_BANNER".asInstanceOf[Layout]
+  val TOP_BANNER = "TOP_BANNER".asInstanceOf[Layout]
+  val OVERLAYS = "OVERLAYS".asInstanceOf[Layout]
+  val MOBILE_FEED = "MOBILE_FEED".asInstanceOf[Layout]
+  val MIDDLE_BANNER = "MIDDLE_BANNER".asInstanceOf[Layout]
+  val CAROUSEL = "CAROUSEL".asInstanceOf[Layout]
+
+  @inline def values: js.Array[Layout] = js.Array(BOTTOM_BANNER, TOP_BANNER, OVERLAYS, MOBILE_FEED, MIDDLE_BANNER, CAROUSEL)
 }
 
 @js.native
@@ -225,8 +260,9 @@ object TemplateType {
   val SMS = "SMS".asInstanceOf[TemplateType]
   val VOICE = "VOICE".asInstanceOf[TemplateType]
   val PUSH = "PUSH".asInstanceOf[TemplateType]
+  val INAPP = "INAPP".asInstanceOf[TemplateType]
 
-  @inline def values: js.Array[TemplateType] = js.Array(EMAIL, SMS, VOICE, PUSH)
+  @inline def values: js.Array[TemplateType] = js.Array(EMAIL, SMS, VOICE, PUSH, INAPP)
 }
 
 @js.native
@@ -254,6 +290,7 @@ object __EndpointTypesElement {
   val EMAIL = "EMAIL".asInstanceOf[__EndpointTypesElement]
   val BAIDU = "BAIDU".asInstanceOf[__EndpointTypesElement]
   val CUSTOM = "CUSTOM".asInstanceOf[__EndpointTypesElement]
+  val IN_APP = "IN_APP".asInstanceOf[__EndpointTypesElement]
 
-  @inline def values: js.Array[__EndpointTypesElement] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+  @inline def values: js.Array[__EndpointTypesElement] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM, IN_APP)
 }

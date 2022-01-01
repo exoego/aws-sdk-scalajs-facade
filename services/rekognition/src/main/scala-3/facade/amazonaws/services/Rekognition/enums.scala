@@ -44,6 +44,36 @@ object ContentModerationSortBy {
   inline def values: js.Array[ContentModerationSortBy] = js.Array(NAME, TIMESTAMP)
 }
 
+type DatasetStatus = "CREATE_IN_PROGRESS" | "CREATE_COMPLETE" | "CREATE_FAILED" | "UPDATE_IN_PROGRESS" | "UPDATE_COMPLETE" | "UPDATE_FAILED" | "DELETE_IN_PROGRESS"
+object DatasetStatus {
+  inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
+  inline val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
+  inline val UPDATE_COMPLETE: "UPDATE_COMPLETE" = "UPDATE_COMPLETE"
+  inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
+  inline val DELETE_IN_PROGRESS: "DELETE_IN_PROGRESS" = "DELETE_IN_PROGRESS"
+
+  inline def values: js.Array[DatasetStatus] = js.Array(CREATE_IN_PROGRESS, CREATE_COMPLETE, CREATE_FAILED, UPDATE_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_FAILED, DELETE_IN_PROGRESS)
+}
+
+type DatasetStatusMessageCode = "SUCCESS" | "SERVICE_ERROR" | "CLIENT_ERROR"
+object DatasetStatusMessageCode {
+  inline val SUCCESS: "SUCCESS" = "SUCCESS"
+  inline val SERVICE_ERROR: "SERVICE_ERROR" = "SERVICE_ERROR"
+  inline val CLIENT_ERROR: "CLIENT_ERROR" = "CLIENT_ERROR"
+
+  inline def values: js.Array[DatasetStatusMessageCode] = js.Array(SUCCESS, SERVICE_ERROR, CLIENT_ERROR)
+}
+
+type DatasetType = "TRAIN" | "TEST"
+object DatasetType {
+  inline val TRAIN: "TRAIN" = "TRAIN"
+  inline val TEST: "TEST" = "TEST"
+
+  inline def values: js.Array[DatasetType] = js.Array(TRAIN, TEST)
+}
+
 type EmotionName = "HAPPY" | "SAD" | "ANGRY" | "CONFUSED" | "DISGUSTED" | "SURPRISED" | "CALM" | "UNKNOWN" | "FEAR"
 object EmotionName {
   inline val HAPPY: "HAPPY" = "HAPPY"
@@ -81,6 +111,18 @@ object GenderType {
   inline val Female: "Female" = "Female"
 
   inline def values: js.Array[GenderType] = js.Array(Male, Female)
+}
+
+/** A list of enum string of possible gender values that Celebrity returns.
+  */
+type KnownGenderType = "Male" | "Female" | "Nonbinary" | "Unlisted"
+object KnownGenderType {
+  inline val Male: "Male" = "Male"
+  inline val Female: "Female" = "Female"
+  inline val Nonbinary: "Nonbinary" = "Nonbinary"
+  inline val Unlisted: "Unlisted" = "Unlisted"
+
+  inline def values: js.Array[KnownGenderType] = js.Array(Male, Female, Nonbinary, Unlisted)
 }
 
 type LabelDetectionSortBy = "NAME" | "TIMESTAMP"
@@ -252,13 +294,17 @@ object StreamProcessorStatus {
   inline def values: js.Array[StreamProcessorStatus] = js.Array(STOPPED, STARTING, RUNNING, FAILED, STOPPING)
 }
 
-type TechnicalCueType = "ColorBars" | "EndCredits" | "BlackFrames"
+type TechnicalCueType = "ColorBars" | "EndCredits" | "BlackFrames" | "OpeningCredits" | "StudioLogo" | "Slate" | "Content"
 object TechnicalCueType {
   inline val ColorBars: "ColorBars" = "ColorBars"
   inline val EndCredits: "EndCredits" = "EndCredits"
   inline val BlackFrames: "BlackFrames" = "BlackFrames"
+  inline val OpeningCredits: "OpeningCredits" = "OpeningCredits"
+  inline val StudioLogo: "StudioLogo" = "StudioLogo"
+  inline val Slate: "Slate" = "Slate"
+  inline val Content: "Content" = "Content"
 
-  inline def values: js.Array[TechnicalCueType] = js.Array(ColorBars, EndCredits, BlackFrames)
+  inline def values: js.Array[TechnicalCueType] = js.Array(ColorBars, EndCredits, BlackFrames, OpeningCredits, StudioLogo, Slate, Content)
 }
 
 type TextTypes = "LINE" | "WORD"
@@ -267,6 +313,14 @@ object TextTypes {
   inline val WORD: "WORD" = "WORD"
 
   inline def values: js.Array[TextTypes] = js.Array(LINE, WORD)
+}
+
+type VideoColorRange = "FULL" | "LIMITED"
+object VideoColorRange {
+  inline val FULL: "FULL" = "FULL"
+  inline val LIMITED: "LIMITED" = "LIMITED"
+
+  inline def values: js.Array[VideoColorRange] = js.Array(FULL, LIMITED)
 }
 
 type VideoJobStatus = "IN_PROGRESS" | "SUCCEEDED" | "FAILED"

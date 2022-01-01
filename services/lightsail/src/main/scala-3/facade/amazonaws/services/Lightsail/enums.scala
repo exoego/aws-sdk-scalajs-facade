@@ -10,6 +10,14 @@ object AccessDirection {
   inline def values: js.Array[AccessDirection] = js.Array(inbound, outbound)
 }
 
+type AccessType = "public" | "private"
+object AccessType {
+  inline val `public`: "public" = "public"
+  inline val `private`: "private" = "private"
+
+  inline def values: js.Array[AccessType] = js.Array(`public`, `private`)
+}
+
 type AddOnType = "AutoSnapshot"
 object AddOnType {
   inline val AutoSnapshot: "AutoSnapshot" = "AutoSnapshot"
@@ -50,6 +58,14 @@ object BlueprintType {
   inline val app: "app" = "app"
 
   inline def values: js.Array[BlueprintType] = js.Array(os, app)
+}
+
+type BucketMetricName = "BucketSizeBytes" | "NumberOfObjects"
+object BucketMetricName {
+  inline val BucketSizeBytes: "BucketSizeBytes" = "BucketSizeBytes"
+  inline val NumberOfObjects: "NumberOfObjects" = "NumberOfObjects"
+
+  inline def values: js.Array[BucketMetricName] = js.Array(BucketSizeBytes, NumberOfObjects)
 }
 
 type CertificateStatus = "PENDING_VALIDATION" | "ISSUED" | "INACTIVE" | "EXPIRED" | "VALIDATION_TIMED_OUT" | "REVOKED" | "FAILED"
@@ -640,7 +656,8 @@ object OperationStatus {
 }
 
 type OperationType = "DeleteKnownHostKeys" | "DeleteInstance" | "CreateInstance" | "StopInstance" | "StartInstance" | "RebootInstance" | "OpenInstancePublicPorts" | "PutInstancePublicPorts" | "CloseInstancePublicPorts" | "AllocateStaticIp" | "ReleaseStaticIp" | "AttachStaticIp" | "DetachStaticIp" | "UpdateDomainEntry" | "DeleteDomainEntry" | "CreateDomain" | "DeleteDomain" | "CreateInstanceSnapshot" | "DeleteInstanceSnapshot" | "CreateInstancesFromSnapshot" | "CreateLoadBalancer" | "DeleteLoadBalancer" | "AttachInstancesToLoadBalancer" | "DetachInstancesFromLoadBalancer" | "UpdateLoadBalancerAttribute" | "CreateLoadBalancerTlsCertificate" | "DeleteLoadBalancerTlsCertificate" | "AttachLoadBalancerTlsCertificate" | "CreateDisk" | "DeleteDisk" | "AttachDisk" | "DetachDisk" | "CreateDiskSnapshot" | "DeleteDiskSnapshot" | "CreateDiskFromSnapshot" | "CreateRelationalDatabase" | "UpdateRelationalDatabase" | "DeleteRelationalDatabase" | "CreateRelationalDatabaseFromSnapshot" |
-  "CreateRelationalDatabaseSnapshot" | "DeleteRelationalDatabaseSnapshot" | "UpdateRelationalDatabaseParameters" | "StartRelationalDatabase" | "RebootRelationalDatabase" | "StopRelationalDatabase" | "EnableAddOn" | "DisableAddOn" | "PutAlarm" | "GetAlarms" | "DeleteAlarm" | "TestAlarm" | "CreateContactMethod" | "GetContactMethods" | "SendContactMethodVerification" | "DeleteContactMethod" | "CreateDistribution" | "UpdateDistribution" | "DeleteDistribution" | "ResetDistributionCache" | "AttachCertificateToDistribution" | "DetachCertificateFromDistribution" | "UpdateDistributionBundle" | "SetIpAddressType" | "CreateCertificate" | "DeleteCertificate" | "CreateContainerService" | "UpdateContainerService" | "DeleteContainerService" | "CreateContainerServiceDeployment" | "CreateContainerServiceRegistryLogin" | "RegisterContainerImage" | "DeleteContainerImage"
+  "CreateRelationalDatabaseSnapshot" | "DeleteRelationalDatabaseSnapshot" | "UpdateRelationalDatabaseParameters" | "StartRelationalDatabase" | "RebootRelationalDatabase" | "StopRelationalDatabase" | "EnableAddOn" | "DisableAddOn" | "PutAlarm" | "GetAlarms" | "DeleteAlarm" | "TestAlarm" | "CreateContactMethod" | "GetContactMethods" | "SendContactMethodVerification" | "DeleteContactMethod" | "CreateDistribution" | "UpdateDistribution" | "DeleteDistribution" | "ResetDistributionCache" | "AttachCertificateToDistribution" | "DetachCertificateFromDistribution" | "UpdateDistributionBundle" | "SetIpAddressType" | "CreateCertificate" | "DeleteCertificate" | "CreateContainerService" | "UpdateContainerService" | "DeleteContainerService" | "CreateContainerServiceDeployment" | "CreateContainerServiceRegistryLogin" | "RegisterContainerImage" | "DeleteContainerImage" | "CreateBucket" | "DeleteBucket" | "CreateBucketAccessKey" | "DeleteBucketAccessKey" | "UpdateBucketBundle" | "UpdateBucket" |
+  "SetResourceAccessForBucket"
 object OperationType {
   inline val DeleteKnownHostKeys: "DeleteKnownHostKeys" = "DeleteKnownHostKeys"
   inline val DeleteInstance: "DeleteInstance" = "DeleteInstance"
@@ -714,6 +731,13 @@ object OperationType {
   inline val CreateContainerServiceRegistryLogin: "CreateContainerServiceRegistryLogin" = "CreateContainerServiceRegistryLogin"
   inline val RegisterContainerImage: "RegisterContainerImage" = "RegisterContainerImage"
   inline val DeleteContainerImage: "DeleteContainerImage" = "DeleteContainerImage"
+  inline val CreateBucket: "CreateBucket" = "CreateBucket"
+  inline val DeleteBucket: "DeleteBucket" = "DeleteBucket"
+  inline val CreateBucketAccessKey: "CreateBucketAccessKey" = "CreateBucketAccessKey"
+  inline val DeleteBucketAccessKey: "DeleteBucketAccessKey" = "DeleteBucketAccessKey"
+  inline val UpdateBucketBundle: "UpdateBucketBundle" = "UpdateBucketBundle"
+  inline val UpdateBucket: "UpdateBucket" = "UpdateBucket"
+  inline val SetResourceAccessForBucket: "SetResourceAccessForBucket" = "SetResourceAccessForBucket"
 
   inline def values: js.Array[OperationType] = js.Array(
     DeleteKnownHostKeys,
@@ -787,7 +811,14 @@ object OperationType {
     CreateContainerServiceDeployment,
     CreateContainerServiceRegistryLogin,
     RegisterContainerImage,
-    DeleteContainerImage
+    DeleteContainerImage,
+    CreateBucket,
+    DeleteBucket,
+    CreateBucketAccessKey,
+    DeleteBucketAccessKey,
+    UpdateBucketBundle,
+    UpdateBucket,
+    SetResourceAccessForBucket
   )
 }
 
@@ -834,7 +865,7 @@ object RecordState {
   inline def values: js.Array[RecordState] = js.Array(Started, Succeeded, Failed)
 }
 
-type RegionName = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-central-1" | "ca-central-1" | "ap-south-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-northeast-1" | "ap-northeast-2"
+type RegionName = "us-east-1" | "us-east-2" | "us-west-1" | "us-west-2" | "eu-west-1" | "eu-west-2" | "eu-west-3" | "eu-central-1" | "ca-central-1" | "ap-south-1" | "ap-southeast-1" | "ap-southeast-2" | "ap-northeast-1" | "ap-northeast-2" | "eu-north-1"
 object RegionName {
   inline val `us-east-1`: "us-east-1" = "us-east-1"
   inline val `us-east-2`: "us-east-2" = "us-east-2"
@@ -850,6 +881,7 @@ object RegionName {
   inline val `ap-southeast-2`: "ap-southeast-2" = "ap-southeast-2"
   inline val `ap-northeast-1`: "ap-northeast-1" = "ap-northeast-1"
   inline val `ap-northeast-2`: "ap-northeast-2" = "ap-northeast-2"
+  inline val `eu-north-1`: "eu-north-1" = "eu-north-1"
 
   inline def values: js.Array[RegionName] = js.Array(
     `us-east-1`,
@@ -865,7 +897,8 @@ object RegionName {
     `ap-southeast-1`,
     `ap-southeast-2`,
     `ap-northeast-1`,
-    `ap-northeast-2`
+    `ap-northeast-2`,
+    `eu-north-1`
   )
 }
 
@@ -907,7 +940,15 @@ object RenewalStatus {
   inline def values: js.Array[RenewalStatus] = js.Array(PendingAutoRenewal, PendingValidation, Success, Failed)
 }
 
-type ResourceType = "ContainerService" | "Instance" | "StaticIp" | "KeyPair" | "InstanceSnapshot" | "Domain" | "PeeredVpc" | "LoadBalancer" | "LoadBalancerTlsCertificate" | "Disk" | "DiskSnapshot" | "RelationalDatabase" | "RelationalDatabaseSnapshot" | "ExportSnapshotRecord" | "CloudFormationStackRecord" | "Alarm" | "ContactMethod" | "Distribution" | "Certificate"
+type ResourceBucketAccess = "allow" | "deny"
+object ResourceBucketAccess {
+  inline val allow: "allow" = "allow"
+  inline val deny: "deny" = "deny"
+
+  inline def values: js.Array[ResourceBucketAccess] = js.Array(allow, deny)
+}
+
+type ResourceType = "ContainerService" | "Instance" | "StaticIp" | "KeyPair" | "InstanceSnapshot" | "Domain" | "PeeredVpc" | "LoadBalancer" | "LoadBalancerTlsCertificate" | "Disk" | "DiskSnapshot" | "RelationalDatabase" | "RelationalDatabaseSnapshot" | "ExportSnapshotRecord" | "CloudFormationStackRecord" | "Alarm" | "ContactMethod" | "Distribution" | "Certificate" | "Bucket"
 object ResourceType {
   inline val ContainerService: "ContainerService" = "ContainerService"
   inline val Instance: "Instance" = "Instance"
@@ -928,6 +969,7 @@ object ResourceType {
   inline val ContactMethod: "ContactMethod" = "ContactMethod"
   inline val Distribution: "Distribution" = "Distribution"
   inline val Certificate: "Certificate" = "Certificate"
+  inline val Bucket: "Bucket" = "Bucket"
 
   inline def values: js.Array[ResourceType] = js.Array(
     ContainerService,
@@ -948,8 +990,17 @@ object ResourceType {
     Alarm,
     ContactMethod,
     Distribution,
-    Certificate
+    Certificate,
+    Bucket
   )
+}
+
+type StatusType = "Active" | "Inactive"
+object StatusType {
+  inline val Active: "Active" = "Active"
+  inline val Inactive: "Inactive" = "Inactive"
+
+  inline def values: js.Array[StatusType] = js.Array(Active, Inactive)
 }
 
 type TreatMissingData = "breaching" | "notBreaching" | "ignore" | "missing"

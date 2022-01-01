@@ -122,14 +122,15 @@ object FailureReason {
 @js.native
 sealed trait KeyAlgorithm extends js.Any
 object KeyAlgorithm {
-  val RSA_2048 = "RSA_2048".asInstanceOf[KeyAlgorithm]
   val RSA_1024 = "RSA_1024".asInstanceOf[KeyAlgorithm]
+  val RSA_2048 = "RSA_2048".asInstanceOf[KeyAlgorithm]
+  val RSA_3072 = "RSA_3072".asInstanceOf[KeyAlgorithm]
   val RSA_4096 = "RSA_4096".asInstanceOf[KeyAlgorithm]
   val EC_prime256v1 = "EC_prime256v1".asInstanceOf[KeyAlgorithm]
   val EC_secp384r1 = "EC_secp384r1".asInstanceOf[KeyAlgorithm]
   val EC_secp521r1 = "EC_secp521r1".asInstanceOf[KeyAlgorithm]
 
-  @inline def values: js.Array[KeyAlgorithm] = js.Array(RSA_2048, RSA_1024, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1)
+  @inline def values: js.Array[KeyAlgorithm] = js.Array(RSA_1024, RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1)
 }
 
 @js.native

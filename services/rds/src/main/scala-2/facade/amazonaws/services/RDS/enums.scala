@@ -40,6 +40,25 @@ object AuthScheme {
 }
 
 @js.native
+sealed trait AutomationMode extends js.Any
+object AutomationMode {
+  val full = "full".asInstanceOf[AutomationMode]
+  val `all-paused` = "all-paused".asInstanceOf[AutomationMode]
+
+  @inline def values: js.Array[AutomationMode] = js.Array(full, `all-paused`)
+}
+
+@js.native
+sealed trait CustomEngineVersionStatus extends js.Any
+object CustomEngineVersionStatus {
+  val available = "available".asInstanceOf[CustomEngineVersionStatus]
+  val inactive = "inactive".asInstanceOf[CustomEngineVersionStatus]
+  val `inactive-except-restore` = "inactive-except-restore".asInstanceOf[CustomEngineVersionStatus]
+
+  @inline def values: js.Array[CustomEngineVersionStatus] = js.Array(available, inactive, `inactive-except-restore`)
+}
+
+@js.native
 sealed trait DBProxyEndpointStatus extends js.Any
 object DBProxyEndpointStatus {
   val available = "available".asInstanceOf[DBProxyEndpointStatus]
@@ -123,8 +142,9 @@ object SourceType {
   val `db-snapshot` = "db-snapshot".asInstanceOf[SourceType]
   val `db-cluster` = "db-cluster".asInstanceOf[SourceType]
   val `db-cluster-snapshot` = "db-cluster-snapshot".asInstanceOf[SourceType]
+  val `custom-engine-version` = "custom-engine-version".asInstanceOf[SourceType]
 
-  @inline def values: js.Array[SourceType] = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
+  @inline def values: js.Array[SourceType] = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`, `custom-engine-version`)
 }
 
 @js.native

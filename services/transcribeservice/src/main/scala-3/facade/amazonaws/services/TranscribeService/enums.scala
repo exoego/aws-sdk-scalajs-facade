@@ -21,7 +21,17 @@ object CLMLanguageCode {
   inline def values: js.Array[CLMLanguageCode] = js.Array(`en-US`, `hi-IN`, `es-US`, `en-GB`, `en-AU`)
 }
 
-type LanguageCode = "af-ZA" | "ar-AE" | "ar-SA" | "cy-GB" | "da-DK" | "de-CH" | "de-DE" | "en-AB" | "en-AU" | "en-GB" | "en-IE" | "en-IN" | "en-US" | "en-WL" | "es-ES" | "es-US" | "fa-IR" | "fr-CA" | "fr-FR" | "ga-IE" | "gd-GB" | "he-IL" | "hi-IN" | "id-ID" | "it-IT" | "ja-JP" | "ko-KR" | "ms-MY" | "nl-NL" | "pt-BR" | "pt-PT" | "ru-RU" | "ta-IN" | "te-IN" | "tr-TR" | "zh-CN"
+type CallAnalyticsJobStatus = "QUEUED" | "IN_PROGRESS" | "FAILED" | "COMPLETED"
+object CallAnalyticsJobStatus {
+  inline val QUEUED: "QUEUED" = "QUEUED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+
+  inline def values: js.Array[CallAnalyticsJobStatus] = js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED)
+}
+
+type LanguageCode = "af-ZA" | "ar-AE" | "ar-SA" | "cy-GB" | "da-DK" | "de-CH" | "de-DE" | "en-AB" | "en-AU" | "en-GB" | "en-IE" | "en-IN" | "en-US" | "en-WL" | "es-ES" | "es-US" | "fa-IR" | "fr-CA" | "fr-FR" | "ga-IE" | "gd-GB" | "he-IL" | "hi-IN" | "id-ID" | "it-IT" | "ja-JP" | "ko-KR" | "ms-MY" | "nl-NL" | "pt-BR" | "pt-PT" | "ru-RU" | "ta-IN" | "te-IN" | "tr-TR" | "zh-CN" | "zh-TW" | "th-TH" | "en-ZA" | "en-NZ"
 object LanguageCode {
   inline val `af-ZA`: "af-ZA" = "af-ZA"
   inline val `ar-AE`: "ar-AE" = "ar-AE"
@@ -59,6 +69,10 @@ object LanguageCode {
   inline val `te-IN`: "te-IN" = "te-IN"
   inline val `tr-TR`: "tr-TR" = "tr-TR"
   inline val `zh-CN`: "zh-CN" = "zh-CN"
+  inline val `zh-TW`: "zh-TW" = "zh-TW"
+  inline val `th-TH`: "th-TH" = "th-TH"
+  inline val `en-ZA`: "en-ZA" = "en-ZA"
+  inline val `en-NZ`: "en-NZ" = "en-NZ"
 
   inline def values: js.Array[LanguageCode] = js.Array(
     `af-ZA`,
@@ -96,7 +110,11 @@ object LanguageCode {
     `ta-IN`,
     `te-IN`,
     `tr-TR`,
-    `zh-CN`
+    `zh-CN`,
+    `zh-TW`,
+    `th-TH`,
+    `en-ZA`,
+    `en-NZ`
   )
 }
 
@@ -111,6 +129,13 @@ object MediaFormat {
   inline val webm: "webm" = "webm"
 
   inline def values: js.Array[MediaFormat] = js.Array(mp3, mp4, wav, flac, ogg, amr, webm)
+}
+
+type MedicalContentIdentificationType = "PHI"
+object MedicalContentIdentificationType {
+  inline val PHI: "PHI" = "PHI"
+
+  inline def values: js.Array[MedicalContentIdentificationType] = js.Array(PHI)
 }
 
 type ModelStatus = "IN_PROGRESS" | "FAILED" | "COMPLETED"
@@ -130,6 +155,14 @@ object OutputLocationType {
   inline def values: js.Array[OutputLocationType] = js.Array(CUSTOMER_BUCKET, SERVICE_BUCKET)
 }
 
+type ParticipantRole = "AGENT" | "CUSTOMER"
+object ParticipantRole {
+  inline val AGENT: "AGENT" = "AGENT"
+  inline val CUSTOMER: "CUSTOMER" = "CUSTOMER"
+
+  inline def values: js.Array[ParticipantRole] = js.Array(AGENT, CUSTOMER)
+}
+
 type RedactionOutput = "redacted" | "redacted_and_unredacted"
 object RedactionOutput {
   inline val redacted: "redacted" = "redacted"
@@ -145,11 +178,36 @@ object RedactionType {
   inline def values: js.Array[RedactionType] = js.Array(PII)
 }
 
+type SentimentValue = "POSITIVE" | "NEGATIVE" | "NEUTRAL" | "MIXED"
+object SentimentValue {
+  inline val POSITIVE: "POSITIVE" = "POSITIVE"
+  inline val NEGATIVE: "NEGATIVE" = "NEGATIVE"
+  inline val NEUTRAL: "NEUTRAL" = "NEUTRAL"
+  inline val MIXED: "MIXED" = "MIXED"
+
+  inline def values: js.Array[SentimentValue] = js.Array(POSITIVE, NEGATIVE, NEUTRAL, MIXED)
+}
+
 type Specialty = "PRIMARYCARE"
 object Specialty {
   inline val PRIMARYCARE: "PRIMARYCARE" = "PRIMARYCARE"
 
   inline def values: js.Array[Specialty] = js.Array(PRIMARYCARE)
+}
+
+type SubtitleFormat = "vtt" | "srt"
+object SubtitleFormat {
+  inline val vtt: "vtt" = "vtt"
+  inline val srt: "srt" = "srt"
+
+  inline def values: js.Array[SubtitleFormat] = js.Array(vtt, srt)
+}
+
+type TranscriptFilterType = "EXACT"
+object TranscriptFilterType {
+  inline val EXACT: "EXACT" = "EXACT"
+
+  inline def values: js.Array[TranscriptFilterType] = js.Array(EXACT)
 }
 
 type TranscriptionJobStatus = "QUEUED" | "IN_PROGRESS" | "FAILED" | "COMPLETED"

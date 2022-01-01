@@ -54,12 +54,27 @@ object LogType {
   inline def values: js.Array[LogType] = js.Array(ALERT, FLOW)
 }
 
+type OverrideAction = "DROP_TO_ALERT"
+object OverrideAction {
+  inline val DROP_TO_ALERT: "DROP_TO_ALERT" = "DROP_TO_ALERT"
+
+  inline def values: js.Array[OverrideAction] = js.Array(DROP_TO_ALERT)
+}
+
 type PerObjectSyncStatus = "PENDING" | "IN_SYNC"
 object PerObjectSyncStatus {
   inline val PENDING: "PENDING" = "PENDING"
   inline val IN_SYNC: "IN_SYNC" = "IN_SYNC"
 
   inline def values: js.Array[PerObjectSyncStatus] = js.Array(PENDING, IN_SYNC)
+}
+
+type ResourceManagedStatus = "MANAGED" | "ACCOUNT"
+object ResourceManagedStatus {
+  inline val MANAGED: "MANAGED" = "MANAGED"
+  inline val ACCOUNT: "ACCOUNT" = "ACCOUNT"
+
+  inline def values: js.Array[ResourceManagedStatus] = js.Array(MANAGED, ACCOUNT)
 }
 
 type ResourceStatus = "ACTIVE" | "DELETING"
@@ -76,6 +91,14 @@ object RuleGroupType {
   inline val STATEFUL: "STATEFUL" = "STATEFUL"
 
   inline def values: js.Array[RuleGroupType] = js.Array(STATELESS, STATEFUL)
+}
+
+type RuleOrder = "DEFAULT_ACTION_ORDER" | "STRICT_ORDER"
+object RuleOrder {
+  inline val DEFAULT_ACTION_ORDER: "DEFAULT_ACTION_ORDER" = "DEFAULT_ACTION_ORDER"
+  inline val STRICT_ORDER: "STRICT_ORDER" = "STRICT_ORDER"
+
+  inline def values: js.Array[RuleOrder] = js.Array(DEFAULT_ACTION_ORDER, STRICT_ORDER)
 }
 
 type StatefulAction = "PASS" | "DROP" | "ALERT"

@@ -13,6 +13,8 @@ package object redshift {
   type AttributeList = js.Array[AccountAttribute]
   type AttributeNameList = js.Array[String]
   type AttributeValueList = js.Array[AttributeValueTarget]
+  type AuthenticationProfileList = js.Array[AuthenticationProfile]
+  type AuthenticationProfileNameString = String
   type AvailabilityZoneList = js.Array[AvailabilityZone]
   type BatchSnapshotOperationErrorList = js.Array[SnapshotErrorMessage]
   type BatchSnapshotOperationErrors = js.Array[SnapshotErrorMessage]
@@ -28,6 +30,8 @@ package object redshift {
   type ClusterSecurityGroups = js.Array[ClusterSecurityGroup]
   type ClusterSubnetGroups = js.Array[ClusterSubnetGroup]
   type ClusterVersionList = js.Array[ClusterVersion]
+  type DataShareAssociationList = js.Array[DataShareAssociation]
+  type DataShareList = js.Array[DataShare]
   type DbGroupList = js.Array[String]
   type DeferredMaintenanceWindowsList = js.Array[DeferredMaintenanceWindow]
   type DeleteClusterSnapshotMessageList = js.Array[DeleteClusterSnapshotMessage]
@@ -64,6 +68,8 @@ package object redshift {
   type PartnerIntegrationStatusMessage = String
   type PendingActionsList = js.Array[String]
   type RecurringChargeList = js.Array[RecurringCharge]
+  type ReservedNodeConfigurationOptionList = js.Array[ReservedNodeConfigurationOption]
+  type ReservedNodeExchangeStatusList = js.Array[ReservedNodeExchangeStatus]
   type ReservedNodeList = js.Array[ReservedNode]
   type ReservedNodeOfferingList = js.Array[ReservedNodeOffering]
   type RestorableNodeTypeList = js.Array[String]
@@ -102,13 +108,16 @@ package object redshift {
 
     @inline def acceptReservedNodeExchangeFuture(params: AcceptReservedNodeExchangeInputMessage): Future[AcceptReservedNodeExchangeOutputMessage] = service.acceptReservedNodeExchange(params).promise().toFuture
     @inline def addPartnerFuture(params: PartnerIntegrationInputMessage): Future[PartnerIntegrationOutputMessage] = service.addPartner(params).promise().toFuture
+    @inline def associateDataShareConsumerFuture(params: AssociateDataShareConsumerMessage): Future[DataShare] = service.associateDataShareConsumer(params).promise().toFuture
     @inline def authorizeClusterSecurityGroupIngressFuture(params: AuthorizeClusterSecurityGroupIngressMessage): Future[AuthorizeClusterSecurityGroupIngressResult] = service.authorizeClusterSecurityGroupIngress(params).promise().toFuture
+    @inline def authorizeDataShareFuture(params: AuthorizeDataShareMessage): Future[DataShare] = service.authorizeDataShare(params).promise().toFuture
     @inline def authorizeEndpointAccessFuture(params: AuthorizeEndpointAccessMessage): Future[EndpointAuthorization] = service.authorizeEndpointAccess(params).promise().toFuture
     @inline def authorizeSnapshotAccessFuture(params: AuthorizeSnapshotAccessMessage): Future[AuthorizeSnapshotAccessResult] = service.authorizeSnapshotAccess(params).promise().toFuture
     @inline def batchDeleteClusterSnapshotsFuture(params: BatchDeleteClusterSnapshotsRequest): Future[BatchDeleteClusterSnapshotsResult] = service.batchDeleteClusterSnapshots(params).promise().toFuture
     @inline def batchModifyClusterSnapshotsFuture(params: BatchModifyClusterSnapshotsMessage): Future[BatchModifyClusterSnapshotsOutputMessage] = service.batchModifyClusterSnapshots(params).promise().toFuture
     @inline def cancelResizeFuture(params: CancelResizeMessage): Future[ResizeProgressMessage] = service.cancelResize(params).promise().toFuture
     @inline def copyClusterSnapshotFuture(params: CopyClusterSnapshotMessage): Future[CopyClusterSnapshotResult] = service.copyClusterSnapshot(params).promise().toFuture
+    @inline def createAuthenticationProfileFuture(params: CreateAuthenticationProfileMessage): Future[CreateAuthenticationProfileResult] = service.createAuthenticationProfile(params).promise().toFuture
     @inline def createClusterFuture(params: CreateClusterMessage): Future[CreateClusterResult] = service.createCluster(params).promise().toFuture
     @inline def createClusterParameterGroupFuture(params: CreateClusterParameterGroupMessage): Future[CreateClusterParameterGroupResult] = service.createClusterParameterGroup(params).promise().toFuture
     @inline def createClusterSecurityGroupFuture(params: CreateClusterSecurityGroupMessage): Future[CreateClusterSecurityGroupResult] = service.createClusterSecurityGroup(params).promise().toFuture
@@ -123,6 +132,8 @@ package object redshift {
     @inline def createSnapshotScheduleFuture(params: CreateSnapshotScheduleMessage): Future[SnapshotSchedule] = service.createSnapshotSchedule(params).promise().toFuture
     @inline def createTagsFuture(params: CreateTagsMessage): Future[js.Object] = service.createTags(params).promise().toFuture
     @inline def createUsageLimitFuture(params: CreateUsageLimitMessage): Future[UsageLimit] = service.createUsageLimit(params).promise().toFuture
+    @inline def deauthorizeDataShareFuture(params: DeauthorizeDataShareMessage): Future[DataShare] = service.deauthorizeDataShare(params).promise().toFuture
+    @inline def deleteAuthenticationProfileFuture(params: DeleteAuthenticationProfileMessage): Future[DeleteAuthenticationProfileResult] = service.deleteAuthenticationProfile(params).promise().toFuture
     @inline def deleteClusterFuture(params: DeleteClusterMessage): Future[DeleteClusterResult] = service.deleteCluster(params).promise().toFuture
     @inline def deleteClusterParameterGroupFuture(params: DeleteClusterParameterGroupMessage): Future[js.Object] = service.deleteClusterParameterGroup(params).promise().toFuture
     @inline def deleteClusterSecurityGroupFuture(params: DeleteClusterSecurityGroupMessage): Future[js.Object] = service.deleteClusterSecurityGroup(params).promise().toFuture
@@ -139,6 +150,7 @@ package object redshift {
     @inline def deleteTagsFuture(params: DeleteTagsMessage): Future[js.Object] = service.deleteTags(params).promise().toFuture
     @inline def deleteUsageLimitFuture(params: DeleteUsageLimitMessage): Future[js.Object] = service.deleteUsageLimit(params).promise().toFuture
     @inline def describeAccountAttributesFuture(params: DescribeAccountAttributesMessage): Future[AccountAttributeList] = service.describeAccountAttributes(params).promise().toFuture
+    @inline def describeAuthenticationProfilesFuture(params: DescribeAuthenticationProfilesMessage): Future[DescribeAuthenticationProfilesResult] = service.describeAuthenticationProfiles(params).promise().toFuture
     @inline def describeClusterDbRevisionsFuture(params: DescribeClusterDbRevisionsMessage): Future[ClusterDbRevisionsMessage] = service.describeClusterDbRevisions(params).promise().toFuture
     @inline def describeClusterParameterGroupsFuture(params: DescribeClusterParameterGroupsMessage): Future[ClusterParameterGroupsMessage] = service.describeClusterParameterGroups(params).promise().toFuture
     @inline def describeClusterParametersFuture(params: DescribeClusterParametersMessage): Future[ClusterParameterGroupDetails] = service.describeClusterParameters(params).promise().toFuture
@@ -148,6 +160,9 @@ package object redshift {
     @inline def describeClusterTracksFuture(params: DescribeClusterTracksMessage): Future[TrackListMessage] = service.describeClusterTracks(params).promise().toFuture
     @inline def describeClusterVersionsFuture(params: DescribeClusterVersionsMessage): Future[ClusterVersionsMessage] = service.describeClusterVersions(params).promise().toFuture
     @inline def describeClustersFuture(params: DescribeClustersMessage): Future[ClustersMessage] = service.describeClusters(params).promise().toFuture
+    @inline def describeDataSharesForConsumerFuture(params: DescribeDataSharesForConsumerMessage): Future[DescribeDataSharesForConsumerResult] = service.describeDataSharesForConsumer(params).promise().toFuture
+    @inline def describeDataSharesForProducerFuture(params: DescribeDataSharesForProducerMessage): Future[DescribeDataSharesForProducerResult] = service.describeDataSharesForProducer(params).promise().toFuture
+    @inline def describeDataSharesFuture(params: DescribeDataSharesMessage): Future[DescribeDataSharesResult] = service.describeDataShares(params).promise().toFuture
     @inline def describeDefaultClusterParametersFuture(params: DescribeDefaultClusterParametersMessage): Future[DescribeDefaultClusterParametersResult] = service.describeDefaultClusterParameters(params).promise().toFuture
     @inline def describeEndpointAccessFuture(params: DescribeEndpointAccessMessage): Future[EndpointAccessList] = service.describeEndpointAccess(params).promise().toFuture
     @inline def describeEndpointAuthorizationFuture(params: DescribeEndpointAuthorizationMessage): Future[EndpointAuthorizationList] = service.describeEndpointAuthorization(params).promise().toFuture
@@ -160,6 +175,7 @@ package object redshift {
     @inline def describeNodeConfigurationOptionsFuture(params: DescribeNodeConfigurationOptionsMessage): Future[NodeConfigurationOptionsMessage] = service.describeNodeConfigurationOptions(params).promise().toFuture
     @inline def describeOrderableClusterOptionsFuture(params: DescribeOrderableClusterOptionsMessage): Future[OrderableClusterOptionsMessage] = service.describeOrderableClusterOptions(params).promise().toFuture
     @inline def describePartnersFuture(params: DescribePartnersInputMessage): Future[DescribePartnersOutputMessage] = service.describePartners(params).promise().toFuture
+    @inline def describeReservedNodeExchangeStatusFuture(params: DescribeReservedNodeExchangeStatusInputMessage): Future[DescribeReservedNodeExchangeStatusOutputMessage] = service.describeReservedNodeExchangeStatus(params).promise().toFuture
     @inline def describeReservedNodeOfferingsFuture(params: DescribeReservedNodeOfferingsMessage): Future[ReservedNodeOfferingsMessage] = service.describeReservedNodeOfferings(params).promise().toFuture
     @inline def describeReservedNodesFuture(params: DescribeReservedNodesMessage): Future[ReservedNodesMessage] = service.describeReservedNodes(params).promise().toFuture
     @inline def describeResizeFuture(params: DescribeResizeMessage): Future[ResizeProgressMessage] = service.describeResize(params).promise().toFuture
@@ -172,11 +188,14 @@ package object redshift {
     @inline def describeUsageLimitsFuture(params: DescribeUsageLimitsMessage): Future[UsageLimitList] = service.describeUsageLimits(params).promise().toFuture
     @inline def disableLoggingFuture(params: DisableLoggingMessage): Future[LoggingStatus] = service.disableLogging(params).promise().toFuture
     @inline def disableSnapshotCopyFuture(params: DisableSnapshotCopyMessage): Future[DisableSnapshotCopyResult] = service.disableSnapshotCopy(params).promise().toFuture
+    @inline def disassociateDataShareConsumerFuture(params: DisassociateDataShareConsumerMessage): Future[DataShare] = service.disassociateDataShareConsumer(params).promise().toFuture
     @inline def enableLoggingFuture(params: EnableLoggingMessage): Future[LoggingStatus] = service.enableLogging(params).promise().toFuture
     @inline def enableSnapshotCopyFuture(params: EnableSnapshotCopyMessage): Future[EnableSnapshotCopyResult] = service.enableSnapshotCopy(params).promise().toFuture
     @inline def getClusterCredentialsFuture(params: GetClusterCredentialsMessage): Future[ClusterCredentials] = service.getClusterCredentials(params).promise().toFuture
+    @inline def getReservedNodeExchangeConfigurationOptionsFuture(params: GetReservedNodeExchangeConfigurationOptionsInputMessage): Future[GetReservedNodeExchangeConfigurationOptionsOutputMessage] = service.getReservedNodeExchangeConfigurationOptions(params).promise().toFuture
     @inline def getReservedNodeExchangeOfferingsFuture(params: GetReservedNodeExchangeOfferingsInputMessage): Future[GetReservedNodeExchangeOfferingsOutputMessage] = service.getReservedNodeExchangeOfferings(params).promise().toFuture
     @inline def modifyAquaConfigurationFuture(params: ModifyAquaInputMessage): Future[ModifyAquaOutputMessage] = service.modifyAquaConfiguration(params).promise().toFuture
+    @inline def modifyAuthenticationProfileFuture(params: ModifyAuthenticationProfileMessage): Future[ModifyAuthenticationProfileResult] = service.modifyAuthenticationProfile(params).promise().toFuture
     @inline def modifyClusterDbRevisionFuture(params: ModifyClusterDbRevisionMessage): Future[ModifyClusterDbRevisionResult] = service.modifyClusterDbRevision(params).promise().toFuture
     @inline def modifyClusterFuture(params: ModifyClusterMessage): Future[ModifyClusterResult] = service.modifyCluster(params).promise().toFuture
     @inline def modifyClusterIamRolesFuture(params: ModifyClusterIamRolesMessage): Future[ModifyClusterIamRolesResult] = service.modifyClusterIamRoles(params).promise().toFuture
@@ -194,6 +213,7 @@ package object redshift {
     @inline def pauseClusterFuture(params: PauseClusterMessage): Future[PauseClusterResult] = service.pauseCluster(params).promise().toFuture
     @inline def purchaseReservedNodeOfferingFuture(params: PurchaseReservedNodeOfferingMessage): Future[PurchaseReservedNodeOfferingResult] = service.purchaseReservedNodeOffering(params).promise().toFuture
     @inline def rebootClusterFuture(params: RebootClusterMessage): Future[RebootClusterResult] = service.rebootCluster(params).promise().toFuture
+    @inline def rejectDataShareFuture(params: RejectDataShareMessage): Future[DataShare] = service.rejectDataShare(params).promise().toFuture
     @inline def resetClusterParameterGroupFuture(params: ResetClusterParameterGroupMessage): Future[ClusterParameterGroupNameMessage] = service.resetClusterParameterGroup(params).promise().toFuture
     @inline def resizeClusterFuture(params: ResizeClusterMessage): Future[ResizeClusterResult] = service.resizeCluster(params).promise().toFuture
     @inline def restoreFromClusterSnapshotFuture(params: RestoreFromClusterSnapshotMessage): Future[RestoreFromClusterSnapshotResult] = service.restoreFromClusterSnapshot(params).promise().toFuture
@@ -214,13 +234,16 @@ package object redshift {
 
     def acceptReservedNodeExchange(params: AcceptReservedNodeExchangeInputMessage): Request[AcceptReservedNodeExchangeOutputMessage] = js.native
     def addPartner(params: PartnerIntegrationInputMessage): Request[PartnerIntegrationOutputMessage] = js.native
+    def associateDataShareConsumer(params: AssociateDataShareConsumerMessage): Request[DataShare] = js.native
     def authorizeClusterSecurityGroupIngress(params: AuthorizeClusterSecurityGroupIngressMessage): Request[AuthorizeClusterSecurityGroupIngressResult] = js.native
+    def authorizeDataShare(params: AuthorizeDataShareMessage): Request[DataShare] = js.native
     def authorizeEndpointAccess(params: AuthorizeEndpointAccessMessage): Request[EndpointAuthorization] = js.native
     def authorizeSnapshotAccess(params: AuthorizeSnapshotAccessMessage): Request[AuthorizeSnapshotAccessResult] = js.native
     def batchDeleteClusterSnapshots(params: BatchDeleteClusterSnapshotsRequest): Request[BatchDeleteClusterSnapshotsResult] = js.native
     def batchModifyClusterSnapshots(params: BatchModifyClusterSnapshotsMessage): Request[BatchModifyClusterSnapshotsOutputMessage] = js.native
     def cancelResize(params: CancelResizeMessage): Request[ResizeProgressMessage] = js.native
     def copyClusterSnapshot(params: CopyClusterSnapshotMessage): Request[CopyClusterSnapshotResult] = js.native
+    def createAuthenticationProfile(params: CreateAuthenticationProfileMessage): Request[CreateAuthenticationProfileResult] = js.native
     def createCluster(params: CreateClusterMessage): Request[CreateClusterResult] = js.native
     def createClusterParameterGroup(params: CreateClusterParameterGroupMessage): Request[CreateClusterParameterGroupResult] = js.native
     def createClusterSecurityGroup(params: CreateClusterSecurityGroupMessage): Request[CreateClusterSecurityGroupResult] = js.native
@@ -235,6 +258,8 @@ package object redshift {
     def createSnapshotSchedule(params: CreateSnapshotScheduleMessage): Request[SnapshotSchedule] = js.native
     def createTags(params: CreateTagsMessage): Request[js.Object] = js.native
     def createUsageLimit(params: CreateUsageLimitMessage): Request[UsageLimit] = js.native
+    def deauthorizeDataShare(params: DeauthorizeDataShareMessage): Request[DataShare] = js.native
+    def deleteAuthenticationProfile(params: DeleteAuthenticationProfileMessage): Request[DeleteAuthenticationProfileResult] = js.native
     def deleteCluster(params: DeleteClusterMessage): Request[DeleteClusterResult] = js.native
     def deleteClusterParameterGroup(params: DeleteClusterParameterGroupMessage): Request[js.Object] = js.native
     def deleteClusterSecurityGroup(params: DeleteClusterSecurityGroupMessage): Request[js.Object] = js.native
@@ -251,6 +276,7 @@ package object redshift {
     def deleteTags(params: DeleteTagsMessage): Request[js.Object] = js.native
     def deleteUsageLimit(params: DeleteUsageLimitMessage): Request[js.Object] = js.native
     def describeAccountAttributes(params: DescribeAccountAttributesMessage): Request[AccountAttributeList] = js.native
+    def describeAuthenticationProfiles(params: DescribeAuthenticationProfilesMessage): Request[DescribeAuthenticationProfilesResult] = js.native
     def describeClusterDbRevisions(params: DescribeClusterDbRevisionsMessage): Request[ClusterDbRevisionsMessage] = js.native
     def describeClusterParameterGroups(params: DescribeClusterParameterGroupsMessage): Request[ClusterParameterGroupsMessage] = js.native
     def describeClusterParameters(params: DescribeClusterParametersMessage): Request[ClusterParameterGroupDetails] = js.native
@@ -260,6 +286,9 @@ package object redshift {
     def describeClusterTracks(params: DescribeClusterTracksMessage): Request[TrackListMessage] = js.native
     def describeClusterVersions(params: DescribeClusterVersionsMessage): Request[ClusterVersionsMessage] = js.native
     def describeClusters(params: DescribeClustersMessage): Request[ClustersMessage] = js.native
+    def describeDataShares(params: DescribeDataSharesMessage): Request[DescribeDataSharesResult] = js.native
+    def describeDataSharesForConsumer(params: DescribeDataSharesForConsumerMessage): Request[DescribeDataSharesForConsumerResult] = js.native
+    def describeDataSharesForProducer(params: DescribeDataSharesForProducerMessage): Request[DescribeDataSharesForProducerResult] = js.native
     def describeDefaultClusterParameters(params: DescribeDefaultClusterParametersMessage): Request[DescribeDefaultClusterParametersResult] = js.native
     def describeEndpointAccess(params: DescribeEndpointAccessMessage): Request[EndpointAccessList] = js.native
     def describeEndpointAuthorization(params: DescribeEndpointAuthorizationMessage): Request[EndpointAuthorizationList] = js.native
@@ -272,6 +301,7 @@ package object redshift {
     def describeNodeConfigurationOptions(params: DescribeNodeConfigurationOptionsMessage): Request[NodeConfigurationOptionsMessage] = js.native
     def describeOrderableClusterOptions(params: DescribeOrderableClusterOptionsMessage): Request[OrderableClusterOptionsMessage] = js.native
     def describePartners(params: DescribePartnersInputMessage): Request[DescribePartnersOutputMessage] = js.native
+    def describeReservedNodeExchangeStatus(params: DescribeReservedNodeExchangeStatusInputMessage): Request[DescribeReservedNodeExchangeStatusOutputMessage] = js.native
     def describeReservedNodeOfferings(params: DescribeReservedNodeOfferingsMessage): Request[ReservedNodeOfferingsMessage] = js.native
     def describeReservedNodes(params: DescribeReservedNodesMessage): Request[ReservedNodesMessage] = js.native
     def describeResize(params: DescribeResizeMessage): Request[ResizeProgressMessage] = js.native
@@ -284,11 +314,14 @@ package object redshift {
     def describeUsageLimits(params: DescribeUsageLimitsMessage): Request[UsageLimitList] = js.native
     def disableLogging(params: DisableLoggingMessage): Request[LoggingStatus] = js.native
     def disableSnapshotCopy(params: DisableSnapshotCopyMessage): Request[DisableSnapshotCopyResult] = js.native
+    def disassociateDataShareConsumer(params: DisassociateDataShareConsumerMessage): Request[DataShare] = js.native
     def enableLogging(params: EnableLoggingMessage): Request[LoggingStatus] = js.native
     def enableSnapshotCopy(params: EnableSnapshotCopyMessage): Request[EnableSnapshotCopyResult] = js.native
     def getClusterCredentials(params: GetClusterCredentialsMessage): Request[ClusterCredentials] = js.native
+    def getReservedNodeExchangeConfigurationOptions(params: GetReservedNodeExchangeConfigurationOptionsInputMessage): Request[GetReservedNodeExchangeConfigurationOptionsOutputMessage] = js.native
     def getReservedNodeExchangeOfferings(params: GetReservedNodeExchangeOfferingsInputMessage): Request[GetReservedNodeExchangeOfferingsOutputMessage] = js.native
     def modifyAquaConfiguration(params: ModifyAquaInputMessage): Request[ModifyAquaOutputMessage] = js.native
+    def modifyAuthenticationProfile(params: ModifyAuthenticationProfileMessage): Request[ModifyAuthenticationProfileResult] = js.native
     def modifyCluster(params: ModifyClusterMessage): Request[ModifyClusterResult] = js.native
     def modifyClusterDbRevision(params: ModifyClusterDbRevisionMessage): Request[ModifyClusterDbRevisionResult] = js.native
     def modifyClusterIamRoles(params: ModifyClusterIamRolesMessage): Request[ModifyClusterIamRolesResult] = js.native
@@ -306,6 +339,7 @@ package object redshift {
     def pauseCluster(params: PauseClusterMessage): Request[PauseClusterResult] = js.native
     def purchaseReservedNodeOffering(params: PurchaseReservedNodeOfferingMessage): Request[PurchaseReservedNodeOfferingResult] = js.native
     def rebootCluster(params: RebootClusterMessage): Request[RebootClusterResult] = js.native
+    def rejectDataShare(params: RejectDataShareMessage): Request[DataShare] = js.native
     def resetClusterParameterGroup(params: ResetClusterParameterGroupMessage): Request[ClusterParameterGroupNameMessage] = js.native
     def resizeCluster(params: ResizeClusterMessage): Request[ResizeClusterResult] = js.native
     def restoreFromClusterSnapshot(params: RestoreFromClusterSnapshotMessage): Request[RestoreFromClusterSnapshotResult] = js.native
@@ -396,7 +430,7 @@ package object redshift {
     }
   }
 
-  /** Describes an AWS customer account authorized to restore a snapshot.
+  /** Describes an Amazon Web Services account authorized to restore a snapshot.
     */
   @js.native
   trait AccountWithRestoreAccess extends js.Object {
@@ -438,6 +472,30 @@ package object redshift {
     }
   }
 
+  @js.native
+  trait AssociateDataShareConsumerMessage extends js.Object {
+    var DataShareArn: String
+    var AssociateEntireAccount: js.UndefOr[BooleanOptional]
+    var ConsumerArn: js.UndefOr[String]
+  }
+
+  object AssociateDataShareConsumerMessage {
+    @inline
+    def apply(
+        DataShareArn: String,
+        AssociateEntireAccount: js.UndefOr[BooleanOptional] = js.undefined,
+        ConsumerArn: js.UndefOr[String] = js.undefined
+    ): AssociateDataShareConsumerMessage = {
+      val __obj = js.Dynamic.literal(
+        "DataShareArn" -> DataShareArn.asInstanceOf[js.Any]
+      )
+
+      AssociateEntireAccount.foreach(__v => __obj.updateDynamic("AssociateEntireAccount")(__v.asInstanceOf[js.Any]))
+      ConsumerArn.foreach(__v => __obj.updateDynamic("ConsumerArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateDataShareConsumerMessage]
+    }
+  }
+
   /** Describes an attribute value.
     */
   @js.native
@@ -453,6 +511,27 @@ package object redshift {
       val __obj = js.Dynamic.literal()
       AttributeValue.foreach(__v => __obj.updateDynamic("AttributeValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AttributeValueTarget]
+    }
+  }
+
+  /** Describes an authentication profile.
+    */
+  @js.native
+  trait AuthenticationProfile extends js.Object {
+    var AuthenticationProfileContent: js.UndefOr[String]
+    var AuthenticationProfileName: js.UndefOr[AuthenticationProfileNameString]
+  }
+
+  object AuthenticationProfile {
+    @inline
+    def apply(
+        AuthenticationProfileContent: js.UndefOr[String] = js.undefined,
+        AuthenticationProfileName: js.UndefOr[AuthenticationProfileNameString] = js.undefined
+    ): AuthenticationProfile = {
+      val __obj = js.Dynamic.literal()
+      AuthenticationProfileContent.foreach(__v => __obj.updateDynamic("AuthenticationProfileContent")(__v.asInstanceOf[js.Any]))
+      AuthenticationProfileName.foreach(__v => __obj.updateDynamic("AuthenticationProfileName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AuthenticationProfile]
     }
   }
 
@@ -498,6 +577,26 @@ package object redshift {
       val __obj = js.Dynamic.literal()
       ClusterSecurityGroup.foreach(__v => __obj.updateDynamic("ClusterSecurityGroup")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AuthorizeClusterSecurityGroupIngressResult]
+    }
+  }
+
+  @js.native
+  trait AuthorizeDataShareMessage extends js.Object {
+    var ConsumerIdentifier: String
+    var DataShareArn: String
+  }
+
+  object AuthorizeDataShareMessage {
+    @inline
+    def apply(
+        ConsumerIdentifier: String,
+        DataShareArn: String
+    ): AuthorizeDataShareMessage = {
+      val __obj = js.Dynamic.literal(
+        "ConsumerIdentifier" -> ConsumerIdentifier.asInstanceOf[js.Any],
+        "DataShareArn" -> DataShareArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AuthorizeDataShareMessage]
     }
   }
 
@@ -708,6 +807,7 @@ package object redshift {
     var ClusterVersion: js.UndefOr[String]
     var DBName: js.UndefOr[String]
     var DataTransferProgress: js.UndefOr[DataTransferProgress]
+    var DefaultIamRoleArn: js.UndefOr[String]
     var DeferredMaintenanceWindows: js.UndefOr[DeferredMaintenanceWindowsList]
     var ElasticIpStatus: js.UndefOr[ElasticIpStatus]
     var ElasticResizeNumberOfNodeOptions: js.UndefOr[String]
@@ -730,6 +830,7 @@ package object redshift {
     var PendingModifiedValues: js.UndefOr[PendingModifiedValues]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var PubliclyAccessible: js.UndefOr[Boolean]
+    var ReservedNodeExchangeStatus: js.UndefOr[ReservedNodeExchangeStatus]
     var ResizeInfo: js.UndefOr[ResizeInfo]
     var RestoreStatus: js.UndefOr[RestoreStatus]
     var SnapshotScheduleIdentifier: js.UndefOr[String]
@@ -763,6 +864,7 @@ package object redshift {
         ClusterVersion: js.UndefOr[String] = js.undefined,
         DBName: js.UndefOr[String] = js.undefined,
         DataTransferProgress: js.UndefOr[DataTransferProgress] = js.undefined,
+        DefaultIamRoleArn: js.UndefOr[String] = js.undefined,
         DeferredMaintenanceWindows: js.UndefOr[DeferredMaintenanceWindowsList] = js.undefined,
         ElasticIpStatus: js.UndefOr[ElasticIpStatus] = js.undefined,
         ElasticResizeNumberOfNodeOptions: js.UndefOr[String] = js.undefined,
@@ -785,6 +887,7 @@ package object redshift {
         PendingModifiedValues: js.UndefOr[PendingModifiedValues] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PubliclyAccessible: js.UndefOr[Boolean] = js.undefined,
+        ReservedNodeExchangeStatus: js.UndefOr[ReservedNodeExchangeStatus] = js.undefined,
         ResizeInfo: js.UndefOr[ResizeInfo] = js.undefined,
         RestoreStatus: js.UndefOr[RestoreStatus] = js.undefined,
         SnapshotScheduleIdentifier: js.UndefOr[String] = js.undefined,
@@ -815,6 +918,7 @@ package object redshift {
       ClusterVersion.foreach(__v => __obj.updateDynamic("ClusterVersion")(__v.asInstanceOf[js.Any]))
       DBName.foreach(__v => __obj.updateDynamic("DBName")(__v.asInstanceOf[js.Any]))
       DataTransferProgress.foreach(__v => __obj.updateDynamic("DataTransferProgress")(__v.asInstanceOf[js.Any]))
+      DefaultIamRoleArn.foreach(__v => __obj.updateDynamic("DefaultIamRoleArn")(__v.asInstanceOf[js.Any]))
       DeferredMaintenanceWindows.foreach(__v => __obj.updateDynamic("DeferredMaintenanceWindows")(__v.asInstanceOf[js.Any]))
       ElasticIpStatus.foreach(__v => __obj.updateDynamic("ElasticIpStatus")(__v.asInstanceOf[js.Any]))
       ElasticResizeNumberOfNodeOptions.foreach(__v => __obj.updateDynamic("ElasticResizeNumberOfNodeOptions")(__v.asInstanceOf[js.Any]))
@@ -837,6 +941,7 @@ package object redshift {
       PendingModifiedValues.foreach(__v => __obj.updateDynamic("PendingModifiedValues")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      ReservedNodeExchangeStatus.foreach(__v => __obj.updateDynamic("ReservedNodeExchangeStatus")(__v.asInstanceOf[js.Any]))
       ResizeInfo.foreach(__v => __obj.updateDynamic("ResizeInfo")(__v.asInstanceOf[js.Any]))
       RestoreStatus.foreach(__v => __obj.updateDynamic("RestoreStatus")(__v.asInstanceOf[js.Any]))
       SnapshotScheduleIdentifier.foreach(__v => __obj.updateDynamic("SnapshotScheduleIdentifier")(__v.asInstanceOf[js.Any]))
@@ -940,7 +1045,7 @@ package object redshift {
     }
   }
 
-  /** An AWS Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other AWS services.
+  /** An Identity and Access Management (IAM) role that can be used by the associated Amazon Redshift cluster to access other Amazon Web Services services.
     */
   @js.native
   trait ClusterIamRole extends js.Object {
@@ -1387,6 +1492,45 @@ package object redshift {
     }
   }
 
+  @js.native
+  trait CreateAuthenticationProfileMessage extends js.Object {
+    var AuthenticationProfileContent: String
+    var AuthenticationProfileName: AuthenticationProfileNameString
+  }
+
+  object CreateAuthenticationProfileMessage {
+    @inline
+    def apply(
+        AuthenticationProfileContent: String,
+        AuthenticationProfileName: AuthenticationProfileNameString
+    ): CreateAuthenticationProfileMessage = {
+      val __obj = js.Dynamic.literal(
+        "AuthenticationProfileContent" -> AuthenticationProfileContent.asInstanceOf[js.Any],
+        "AuthenticationProfileName" -> AuthenticationProfileName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateAuthenticationProfileMessage]
+    }
+  }
+
+  @js.native
+  trait CreateAuthenticationProfileResult extends js.Object {
+    var AuthenticationProfileContent: js.UndefOr[String]
+    var AuthenticationProfileName: js.UndefOr[AuthenticationProfileNameString]
+  }
+
+  object CreateAuthenticationProfileResult {
+    @inline
+    def apply(
+        AuthenticationProfileContent: js.UndefOr[String] = js.undefined,
+        AuthenticationProfileName: js.UndefOr[AuthenticationProfileNameString] = js.undefined
+    ): CreateAuthenticationProfileResult = {
+      val __obj = js.Dynamic.literal()
+      AuthenticationProfileContent.foreach(__v => __obj.updateDynamic("AuthenticationProfileContent")(__v.asInstanceOf[js.Any]))
+      AuthenticationProfileName.foreach(__v => __obj.updateDynamic("AuthenticationProfileName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAuthenticationProfileResult]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -1407,6 +1551,7 @@ package object redshift {
     var ClusterType: js.UndefOr[String]
     var ClusterVersion: js.UndefOr[String]
     var DBName: js.UndefOr[String]
+    var DefaultIamRoleArn: js.UndefOr[String]
     var ElasticIp: js.UndefOr[String]
     var Encrypted: js.UndefOr[BooleanOptional]
     var EnhancedVpcRouting: js.UndefOr[BooleanOptional]
@@ -1444,6 +1589,7 @@ package object redshift {
         ClusterType: js.UndefOr[String] = js.undefined,
         ClusterVersion: js.UndefOr[String] = js.undefined,
         DBName: js.UndefOr[String] = js.undefined,
+        DefaultIamRoleArn: js.UndefOr[String] = js.undefined,
         ElasticIp: js.UndefOr[String] = js.undefined,
         Encrypted: js.UndefOr[BooleanOptional] = js.undefined,
         EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
@@ -1480,6 +1626,7 @@ package object redshift {
       ClusterType.foreach(__v => __obj.updateDynamic("ClusterType")(__v.asInstanceOf[js.Any]))
       ClusterVersion.foreach(__v => __obj.updateDynamic("ClusterVersion")(__v.asInstanceOf[js.Any]))
       DBName.foreach(__v => __obj.updateDynamic("DBName")(__v.asInstanceOf[js.Any]))
+      DefaultIamRoleArn.foreach(__v => __obj.updateDynamic("DefaultIamRoleArn")(__v.asInstanceOf[js.Any]))
       ElasticIp.foreach(__v => __obj.updateDynamic("ElasticIp")(__v.asInstanceOf[js.Any]))
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       EnhancedVpcRouting.foreach(__v => __obj.updateDynamic("EnhancedVpcRouting")(__v.asInstanceOf[js.Any]))
@@ -2062,6 +2209,61 @@ package object redshift {
     }
   }
 
+  @js.native
+  trait DataShare extends js.Object {
+    var AllowPubliclyAccessibleConsumers: js.UndefOr[Boolean]
+    var DataShareArn: js.UndefOr[String]
+    var DataShareAssociations: js.UndefOr[DataShareAssociationList]
+    var ManagedBy: js.UndefOr[String]
+    var ProducerArn: js.UndefOr[String]
+  }
+
+  object DataShare {
+    @inline
+    def apply(
+        AllowPubliclyAccessibleConsumers: js.UndefOr[Boolean] = js.undefined,
+        DataShareArn: js.UndefOr[String] = js.undefined,
+        DataShareAssociations: js.UndefOr[DataShareAssociationList] = js.undefined,
+        ManagedBy: js.UndefOr[String] = js.undefined,
+        ProducerArn: js.UndefOr[String] = js.undefined
+    ): DataShare = {
+      val __obj = js.Dynamic.literal()
+      AllowPubliclyAccessibleConsumers.foreach(__v => __obj.updateDynamic("AllowPubliclyAccessibleConsumers")(__v.asInstanceOf[js.Any]))
+      DataShareArn.foreach(__v => __obj.updateDynamic("DataShareArn")(__v.asInstanceOf[js.Any]))
+      DataShareAssociations.foreach(__v => __obj.updateDynamic("DataShareAssociations")(__v.asInstanceOf[js.Any]))
+      ManagedBy.foreach(__v => __obj.updateDynamic("ManagedBy")(__v.asInstanceOf[js.Any]))
+      ProducerArn.foreach(__v => __obj.updateDynamic("ProducerArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataShare]
+    }
+  }
+
+  /** The association of a datashare from a producer account with a data consumer.
+    */
+  @js.native
+  trait DataShareAssociation extends js.Object {
+    var ConsumerIdentifier: js.UndefOr[String]
+    var CreatedDate: js.UndefOr[TStamp]
+    var Status: js.UndefOr[DataShareStatus]
+    var StatusChangeDate: js.UndefOr[TStamp]
+  }
+
+  object DataShareAssociation {
+    @inline
+    def apply(
+        ConsumerIdentifier: js.UndefOr[String] = js.undefined,
+        CreatedDate: js.UndefOr[TStamp] = js.undefined,
+        Status: js.UndefOr[DataShareStatus] = js.undefined,
+        StatusChangeDate: js.UndefOr[TStamp] = js.undefined
+    ): DataShareAssociation = {
+      val __obj = js.Dynamic.literal()
+      ConsumerIdentifier.foreach(__v => __obj.updateDynamic("ConsumerIdentifier")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusChangeDate.foreach(__v => __obj.updateDynamic("StatusChangeDate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataShareAssociation]
+    }
+  }
+
   /** Describes the status of a cluster while it is in the process of resizing with an incremental resize.
     */
   @js.native
@@ -2092,6 +2294,26 @@ package object redshift {
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       TotalDataInMegaBytes.foreach(__v => __obj.updateDynamic("TotalDataInMegaBytes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataTransferProgress]
+    }
+  }
+
+  @js.native
+  trait DeauthorizeDataShareMessage extends js.Object {
+    var ConsumerIdentifier: String
+    var DataShareArn: String
+  }
+
+  object DeauthorizeDataShareMessage {
+    @inline
+    def apply(
+        ConsumerIdentifier: String,
+        DataShareArn: String
+    ): DeauthorizeDataShareMessage = {
+      val __obj = js.Dynamic.literal(
+        "ConsumerIdentifier" -> ConsumerIdentifier.asInstanceOf[js.Any],
+        "DataShareArn" -> DataShareArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeauthorizeDataShareMessage]
     }
   }
 
@@ -2140,6 +2362,39 @@ package object redshift {
       DeferMaintenanceIdentifier.foreach(__v => __obj.updateDynamic("DeferMaintenanceIdentifier")(__v.asInstanceOf[js.Any]))
       DeferMaintenanceStartTime.foreach(__v => __obj.updateDynamic("DeferMaintenanceStartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeferredMaintenanceWindow]
+    }
+  }
+
+  @js.native
+  trait DeleteAuthenticationProfileMessage extends js.Object {
+    var AuthenticationProfileName: AuthenticationProfileNameString
+  }
+
+  object DeleteAuthenticationProfileMessage {
+    @inline
+    def apply(
+        AuthenticationProfileName: AuthenticationProfileNameString
+    ): DeleteAuthenticationProfileMessage = {
+      val __obj = js.Dynamic.literal(
+        "AuthenticationProfileName" -> AuthenticationProfileName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteAuthenticationProfileMessage]
+    }
+  }
+
+  @js.native
+  trait DeleteAuthenticationProfileResult extends js.Object {
+    var AuthenticationProfileName: js.UndefOr[AuthenticationProfileNameString]
+  }
+
+  object DeleteAuthenticationProfileResult {
+    @inline
+    def apply(
+        AuthenticationProfileName: js.UndefOr[AuthenticationProfileNameString] = js.undefined
+    ): DeleteAuthenticationProfileResult = {
+      val __obj = js.Dynamic.literal()
+      AuthenticationProfileName.foreach(__v => __obj.updateDynamic("AuthenticationProfileName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteAuthenticationProfileResult]
     }
   }
 
@@ -2467,6 +2722,38 @@ package object redshift {
   }
 
   @js.native
+  trait DescribeAuthenticationProfilesMessage extends js.Object {
+    var AuthenticationProfileName: js.UndefOr[AuthenticationProfileNameString]
+  }
+
+  object DescribeAuthenticationProfilesMessage {
+    @inline
+    def apply(
+        AuthenticationProfileName: js.UndefOr[AuthenticationProfileNameString] = js.undefined
+    ): DescribeAuthenticationProfilesMessage = {
+      val __obj = js.Dynamic.literal()
+      AuthenticationProfileName.foreach(__v => __obj.updateDynamic("AuthenticationProfileName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAuthenticationProfilesMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeAuthenticationProfilesResult extends js.Object {
+    var AuthenticationProfiles: js.UndefOr[AuthenticationProfileList]
+  }
+
+  object DescribeAuthenticationProfilesResult {
+    @inline
+    def apply(
+        AuthenticationProfiles: js.UndefOr[AuthenticationProfileList] = js.undefined
+    ): DescribeAuthenticationProfilesResult = {
+      val __obj = js.Dynamic.literal()
+      AuthenticationProfiles.foreach(__v => __obj.updateDynamic("AuthenticationProfiles")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAuthenticationProfilesResult]
+    }
+  }
+
+  @js.native
   trait DescribeClusterDbRevisionsMessage extends js.Object {
     var ClusterIdentifier: js.UndefOr[String]
     var Marker: js.UndefOr[String]
@@ -2734,6 +3021,135 @@ package object redshift {
       TagKeys.foreach(__v => __obj.updateDynamic("TagKeys")(__v.asInstanceOf[js.Any]))
       TagValues.foreach(__v => __obj.updateDynamic("TagValues")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeClustersMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeDataSharesForConsumerMessage extends js.Object {
+    var ConsumerArn: js.UndefOr[String]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var Status: js.UndefOr[DataShareStatusForConsumer]
+  }
+
+  object DescribeDataSharesForConsumerMessage {
+    @inline
+    def apply(
+        ConsumerArn: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        Status: js.UndefOr[DataShareStatusForConsumer] = js.undefined
+    ): DescribeDataSharesForConsumerMessage = {
+      val __obj = js.Dynamic.literal()
+      ConsumerArn.foreach(__v => __obj.updateDynamic("ConsumerArn")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDataSharesForConsumerMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeDataSharesForConsumerResult extends js.Object {
+    var DataShares: js.UndefOr[DataShareList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object DescribeDataSharesForConsumerResult {
+    @inline
+    def apply(
+        DataShares: js.UndefOr[DataShareList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DescribeDataSharesForConsumerResult = {
+      val __obj = js.Dynamic.literal()
+      DataShares.foreach(__v => __obj.updateDynamic("DataShares")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDataSharesForConsumerResult]
+    }
+  }
+
+  @js.native
+  trait DescribeDataSharesForProducerMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var ProducerArn: js.UndefOr[String]
+    var Status: js.UndefOr[DataShareStatusForProducer]
+  }
+
+  object DescribeDataSharesForProducerMessage {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ProducerArn: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[DataShareStatusForProducer] = js.undefined
+    ): DescribeDataSharesForProducerMessage = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      ProducerArn.foreach(__v => __obj.updateDynamic("ProducerArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDataSharesForProducerMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeDataSharesForProducerResult extends js.Object {
+    var DataShares: js.UndefOr[DataShareList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object DescribeDataSharesForProducerResult {
+    @inline
+    def apply(
+        DataShares: js.UndefOr[DataShareList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DescribeDataSharesForProducerResult = {
+      val __obj = js.Dynamic.literal()
+      DataShares.foreach(__v => __obj.updateDynamic("DataShares")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDataSharesForProducerResult]
+    }
+  }
+
+  @js.native
+  trait DescribeDataSharesMessage extends js.Object {
+    var DataShareArn: js.UndefOr[String]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+  }
+
+  object DescribeDataSharesMessage {
+    @inline
+    def apply(
+        DataShareArn: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined
+    ): DescribeDataSharesMessage = {
+      val __obj = js.Dynamic.literal()
+      DataShareArn.foreach(__v => __obj.updateDynamic("DataShareArn")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDataSharesMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeDataSharesResult extends js.Object {
+    var DataShares: js.UndefOr[DataShareList]
+    var Marker: js.UndefOr[String]
+  }
+
+  object DescribeDataSharesResult {
+    @inline
+    def apply(
+        DataShares: js.UndefOr[DataShareList] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined
+    ): DescribeDataSharesResult = {
+      val __obj = js.Dynamic.literal()
+      DataShares.foreach(__v => __obj.updateDynamic("DataShares")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDataSharesResult]
     }
   }
 
@@ -3107,6 +3523,50 @@ package object redshift {
     }
   }
 
+  @js.native
+  trait DescribeReservedNodeExchangeStatusInputMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var ReservedNodeExchangeRequestId: js.UndefOr[String]
+    var ReservedNodeId: js.UndefOr[String]
+  }
+
+  object DescribeReservedNodeExchangeStatusInputMessage {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        ReservedNodeExchangeRequestId: js.UndefOr[String] = js.undefined,
+        ReservedNodeId: js.UndefOr[String] = js.undefined
+    ): DescribeReservedNodeExchangeStatusInputMessage = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      ReservedNodeExchangeRequestId.foreach(__v => __obj.updateDynamic("ReservedNodeExchangeRequestId")(__v.asInstanceOf[js.Any]))
+      ReservedNodeId.foreach(__v => __obj.updateDynamic("ReservedNodeId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReservedNodeExchangeStatusInputMessage]
+    }
+  }
+
+  @js.native
+  trait DescribeReservedNodeExchangeStatusOutputMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var ReservedNodeExchangeStatusDetails: js.UndefOr[ReservedNodeExchangeStatusList]
+  }
+
+  object DescribeReservedNodeExchangeStatusOutputMessage {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        ReservedNodeExchangeStatusDetails: js.UndefOr[ReservedNodeExchangeStatusList] = js.undefined
+    ): DescribeReservedNodeExchangeStatusOutputMessage = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      ReservedNodeExchangeStatusDetails.foreach(__v => __obj.updateDynamic("ReservedNodeExchangeStatusDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReservedNodeExchangeStatusOutputMessage]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -3439,6 +3899,30 @@ package object redshift {
     }
   }
 
+  @js.native
+  trait DisassociateDataShareConsumerMessage extends js.Object {
+    var DataShareArn: String
+    var ConsumerArn: js.UndefOr[String]
+    var DisassociateEntireAccount: js.UndefOr[BooleanOptional]
+  }
+
+  object DisassociateDataShareConsumerMessage {
+    @inline
+    def apply(
+        DataShareArn: String,
+        ConsumerArn: js.UndefOr[String] = js.undefined,
+        DisassociateEntireAccount: js.UndefOr[BooleanOptional] = js.undefined
+    ): DisassociateDataShareConsumerMessage = {
+      val __obj = js.Dynamic.literal(
+        "DataShareArn" -> DataShareArn.asInstanceOf[js.Any]
+      )
+
+      ConsumerArn.foreach(__v => __obj.updateDynamic("ConsumerArn")(__v.asInstanceOf[js.Any]))
+      DisassociateEntireAccount.foreach(__v => __obj.updateDynamic("DisassociateEntireAccount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DisassociateDataShareConsumerMessage]
+    }
+  }
+
   /** Describes an Amazon EC2 security group.
     */
   @js.native
@@ -3649,7 +4133,7 @@ package object redshift {
     }
   }
 
-  /** Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across AWS accounts.
+  /** Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.
     */
   @js.native
   trait EndpointAuthorization extends js.Object {
@@ -3937,6 +4421,55 @@ package object redshift {
     }
   }
 
+  @js.native
+  trait GetReservedNodeExchangeConfigurationOptionsInputMessage extends js.Object {
+    var ActionType: ReservedNodeExchangeActionType
+    var ClusterIdentifier: js.UndefOr[String]
+    var Marker: js.UndefOr[String]
+    var MaxRecords: js.UndefOr[IntegerOptional]
+    var SnapshotIdentifier: js.UndefOr[String]
+  }
+
+  object GetReservedNodeExchangeConfigurationOptionsInputMessage {
+    @inline
+    def apply(
+        ActionType: ReservedNodeExchangeActionType,
+        ClusterIdentifier: js.UndefOr[String] = js.undefined,
+        Marker: js.UndefOr[String] = js.undefined,
+        MaxRecords: js.UndefOr[IntegerOptional] = js.undefined,
+        SnapshotIdentifier: js.UndefOr[String] = js.undefined
+    ): GetReservedNodeExchangeConfigurationOptionsInputMessage = {
+      val __obj = js.Dynamic.literal(
+        "ActionType" -> ActionType.asInstanceOf[js.Any]
+      )
+
+      ClusterIdentifier.foreach(__v => __obj.updateDynamic("ClusterIdentifier")(__v.asInstanceOf[js.Any]))
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
+      SnapshotIdentifier.foreach(__v => __obj.updateDynamic("SnapshotIdentifier")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetReservedNodeExchangeConfigurationOptionsInputMessage]
+    }
+  }
+
+  @js.native
+  trait GetReservedNodeExchangeConfigurationOptionsOutputMessage extends js.Object {
+    var Marker: js.UndefOr[String]
+    var ReservedNodeConfigurationOptionList: js.UndefOr[ReservedNodeConfigurationOptionList]
+  }
+
+  object GetReservedNodeExchangeConfigurationOptionsOutputMessage {
+    @inline
+    def apply(
+        Marker: js.UndefOr[String] = js.undefined,
+        ReservedNodeConfigurationOptionList: js.UndefOr[ReservedNodeConfigurationOptionList] = js.undefined
+    ): GetReservedNodeExchangeConfigurationOptionsOutputMessage = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      ReservedNodeConfigurationOptionList.foreach(__v => __obj.updateDynamic("ReservedNodeConfigurationOptionList")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetReservedNodeExchangeConfigurationOptionsOutputMessage]
+    }
+  }
+
   /** <p/>
     */
   @js.native
@@ -4221,6 +4754,45 @@ package object redshift {
   }
 
   @js.native
+  trait ModifyAuthenticationProfileMessage extends js.Object {
+    var AuthenticationProfileContent: String
+    var AuthenticationProfileName: AuthenticationProfileNameString
+  }
+
+  object ModifyAuthenticationProfileMessage {
+    @inline
+    def apply(
+        AuthenticationProfileContent: String,
+        AuthenticationProfileName: AuthenticationProfileNameString
+    ): ModifyAuthenticationProfileMessage = {
+      val __obj = js.Dynamic.literal(
+        "AuthenticationProfileContent" -> AuthenticationProfileContent.asInstanceOf[js.Any],
+        "AuthenticationProfileName" -> AuthenticationProfileName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ModifyAuthenticationProfileMessage]
+    }
+  }
+
+  @js.native
+  trait ModifyAuthenticationProfileResult extends js.Object {
+    var AuthenticationProfileContent: js.UndefOr[String]
+    var AuthenticationProfileName: js.UndefOr[AuthenticationProfileNameString]
+  }
+
+  object ModifyAuthenticationProfileResult {
+    @inline
+    def apply(
+        AuthenticationProfileContent: js.UndefOr[String] = js.undefined,
+        AuthenticationProfileName: js.UndefOr[AuthenticationProfileNameString] = js.undefined
+    ): ModifyAuthenticationProfileResult = {
+      val __obj = js.Dynamic.literal()
+      AuthenticationProfileContent.foreach(__v => __obj.updateDynamic("AuthenticationProfileContent")(__v.asInstanceOf[js.Any]))
+      AuthenticationProfileName.foreach(__v => __obj.updateDynamic("AuthenticationProfileName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModifyAuthenticationProfileResult]
+    }
+  }
+
+  @js.native
   trait ModifyClusterDbRevisionMessage extends js.Object {
     var ClusterIdentifier: String
     var RevisionTarget: String
@@ -4262,6 +4834,7 @@ package object redshift {
   trait ModifyClusterIamRolesMessage extends js.Object {
     var ClusterIdentifier: String
     var AddIamRoles: js.UndefOr[IamRoleArnList]
+    var DefaultIamRoleArn: js.UndefOr[String]
     var RemoveIamRoles: js.UndefOr[IamRoleArnList]
   }
 
@@ -4270,6 +4843,7 @@ package object redshift {
     def apply(
         ClusterIdentifier: String,
         AddIamRoles: js.UndefOr[IamRoleArnList] = js.undefined,
+        DefaultIamRoleArn: js.UndefOr[String] = js.undefined,
         RemoveIamRoles: js.UndefOr[IamRoleArnList] = js.undefined
     ): ModifyClusterIamRolesMessage = {
       val __obj = js.Dynamic.literal(
@@ -4277,6 +4851,7 @@ package object redshift {
       )
 
       AddIamRoles.foreach(__v => __obj.updateDynamic("AddIamRoles")(__v.asInstanceOf[js.Any]))
+      DefaultIamRoleArn.foreach(__v => __obj.updateDynamic("DefaultIamRoleArn")(__v.asInstanceOf[js.Any]))
       RemoveIamRoles.foreach(__v => __obj.updateDynamic("RemoveIamRoles")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModifyClusterIamRolesMessage]
     }
@@ -5226,6 +5801,23 @@ package object redshift {
     }
   }
 
+  @js.native
+  trait RejectDataShareMessage extends js.Object {
+    var DataShareArn: String
+  }
+
+  object RejectDataShareMessage {
+    @inline
+    def apply(
+        DataShareArn: String
+    ): RejectDataShareMessage = {
+      val __obj = js.Dynamic.literal(
+        "DataShareArn" -> DataShareArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RejectDataShareMessage]
+    }
+  }
+
   /** Describes a reserved node. You can call the <a>DescribeReservedNodeOfferings</a> API to obtain the available reserved node offerings.
     */
   @js.native
@@ -5277,6 +5869,72 @@ package object redshift {
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       UsagePrice.foreach(__v => __obj.updateDynamic("UsagePrice")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ReservedNode]
+    }
+  }
+
+  /** Details for a reserved-node exchange. Examples include the node type for a reserved node, the price for a node, the node's state, and other details.
+    */
+  @js.native
+  trait ReservedNodeConfigurationOption extends js.Object {
+    var SourceReservedNode: js.UndefOr[ReservedNode]
+    var TargetReservedNodeCount: js.UndefOr[Int]
+    var TargetReservedNodeOffering: js.UndefOr[ReservedNodeOffering]
+  }
+
+  object ReservedNodeConfigurationOption {
+    @inline
+    def apply(
+        SourceReservedNode: js.UndefOr[ReservedNode] = js.undefined,
+        TargetReservedNodeCount: js.UndefOr[Int] = js.undefined,
+        TargetReservedNodeOffering: js.UndefOr[ReservedNodeOffering] = js.undefined
+    ): ReservedNodeConfigurationOption = {
+      val __obj = js.Dynamic.literal()
+      SourceReservedNode.foreach(__v => __obj.updateDynamic("SourceReservedNode")(__v.asInstanceOf[js.Any]))
+      TargetReservedNodeCount.foreach(__v => __obj.updateDynamic("TargetReservedNodeCount")(__v.asInstanceOf[js.Any]))
+      TargetReservedNodeOffering.foreach(__v => __obj.updateDynamic("TargetReservedNodeOffering")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedNodeConfigurationOption]
+    }
+  }
+
+  /** Reserved-node status details, such as the source reserved-node identifier, the target reserved-node identifier, the node type, the node count, and other details.
+    */
+  @js.native
+  trait ReservedNodeExchangeStatus extends js.Object {
+    var RequestTime: js.UndefOr[TStamp]
+    var ReservedNodeExchangeRequestId: js.UndefOr[String]
+    var SourceReservedNodeCount: js.UndefOr[Int]
+    var SourceReservedNodeId: js.UndefOr[String]
+    var SourceReservedNodeType: js.UndefOr[String]
+    var Status: js.UndefOr[ReservedNodeExchangeStatusType]
+    var TargetReservedNodeCount: js.UndefOr[Int]
+    var TargetReservedNodeOfferingId: js.UndefOr[String]
+    var TargetReservedNodeType: js.UndefOr[String]
+  }
+
+  object ReservedNodeExchangeStatus {
+    @inline
+    def apply(
+        RequestTime: js.UndefOr[TStamp] = js.undefined,
+        ReservedNodeExchangeRequestId: js.UndefOr[String] = js.undefined,
+        SourceReservedNodeCount: js.UndefOr[Int] = js.undefined,
+        SourceReservedNodeId: js.UndefOr[String] = js.undefined,
+        SourceReservedNodeType: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[ReservedNodeExchangeStatusType] = js.undefined,
+        TargetReservedNodeCount: js.UndefOr[Int] = js.undefined,
+        TargetReservedNodeOfferingId: js.UndefOr[String] = js.undefined,
+        TargetReservedNodeType: js.UndefOr[String] = js.undefined
+    ): ReservedNodeExchangeStatus = {
+      val __obj = js.Dynamic.literal()
+      RequestTime.foreach(__v => __obj.updateDynamic("RequestTime")(__v.asInstanceOf[js.Any]))
+      ReservedNodeExchangeRequestId.foreach(__v => __obj.updateDynamic("ReservedNodeExchangeRequestId")(__v.asInstanceOf[js.Any]))
+      SourceReservedNodeCount.foreach(__v => __obj.updateDynamic("SourceReservedNodeCount")(__v.asInstanceOf[js.Any]))
+      SourceReservedNodeId.foreach(__v => __obj.updateDynamic("SourceReservedNodeId")(__v.asInstanceOf[js.Any]))
+      SourceReservedNodeType.foreach(__v => __obj.updateDynamic("SourceReservedNodeType")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      TargetReservedNodeCount.foreach(__v => __obj.updateDynamic("TargetReservedNodeCount")(__v.asInstanceOf[js.Any]))
+      TargetReservedNodeOfferingId.foreach(__v => __obj.updateDynamic("TargetReservedNodeOfferingId")(__v.asInstanceOf[js.Any]))
+      TargetReservedNodeType.foreach(__v => __obj.updateDynamic("TargetReservedNodeType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReservedNodeExchangeStatus]
     }
   }
 
@@ -5399,6 +6057,8 @@ package object redshift {
     var ClusterType: js.UndefOr[String]
     var NodeType: js.UndefOr[String]
     var NumberOfNodes: js.UndefOr[IntegerOptional]
+    var ReservedNodeId: js.UndefOr[String]
+    var TargetReservedNodeOfferingId: js.UndefOr[String]
   }
 
   object ResizeClusterMessage {
@@ -5408,7 +6068,9 @@ package object redshift {
         Classic: js.UndefOr[BooleanOptional] = js.undefined,
         ClusterType: js.UndefOr[String] = js.undefined,
         NodeType: js.UndefOr[String] = js.undefined,
-        NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined
+        NumberOfNodes: js.UndefOr[IntegerOptional] = js.undefined,
+        ReservedNodeId: js.UndefOr[String] = js.undefined,
+        TargetReservedNodeOfferingId: js.UndefOr[String] = js.undefined
     ): ResizeClusterMessage = {
       val __obj = js.Dynamic.literal(
         "ClusterIdentifier" -> ClusterIdentifier.asInstanceOf[js.Any]
@@ -5418,6 +6080,8 @@ package object redshift {
       ClusterType.foreach(__v => __obj.updateDynamic("ClusterType")(__v.asInstanceOf[js.Any]))
       NodeType.foreach(__v => __obj.updateDynamic("NodeType")(__v.asInstanceOf[js.Any]))
       NumberOfNodes.foreach(__v => __obj.updateDynamic("NumberOfNodes")(__v.asInstanceOf[js.Any]))
+      ReservedNodeId.foreach(__v => __obj.updateDynamic("ReservedNodeId")(__v.asInstanceOf[js.Any]))
+      TargetReservedNodeOfferingId.foreach(__v => __obj.updateDynamic("TargetReservedNodeOfferingId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResizeClusterMessage]
     }
   }
@@ -5537,6 +6201,7 @@ package object redshift {
     var ClusterParameterGroupName: js.UndefOr[String]
     var ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList]
     var ClusterSubnetGroupName: js.UndefOr[String]
+    var DefaultIamRoleArn: js.UndefOr[String]
     var ElasticIp: js.UndefOr[String]
     var EnhancedVpcRouting: js.UndefOr[BooleanOptional]
     var HsmClientCertificateIdentifier: js.UndefOr[String]
@@ -5551,8 +6216,10 @@ package object redshift {
     var Port: js.UndefOr[IntegerOptional]
     var PreferredMaintenanceWindow: js.UndefOr[String]
     var PubliclyAccessible: js.UndefOr[BooleanOptional]
+    var ReservedNodeId: js.UndefOr[String]
     var SnapshotClusterIdentifier: js.UndefOr[String]
     var SnapshotScheduleIdentifier: js.UndefOr[String]
+    var TargetReservedNodeOfferingId: js.UndefOr[String]
     var VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList]
   }
 
@@ -5570,6 +6237,7 @@ package object redshift {
         ClusterParameterGroupName: js.UndefOr[String] = js.undefined,
         ClusterSecurityGroups: js.UndefOr[ClusterSecurityGroupNameList] = js.undefined,
         ClusterSubnetGroupName: js.UndefOr[String] = js.undefined,
+        DefaultIamRoleArn: js.UndefOr[String] = js.undefined,
         ElasticIp: js.UndefOr[String] = js.undefined,
         EnhancedVpcRouting: js.UndefOr[BooleanOptional] = js.undefined,
         HsmClientCertificateIdentifier: js.UndefOr[String] = js.undefined,
@@ -5584,8 +6252,10 @@ package object redshift {
         Port: js.UndefOr[IntegerOptional] = js.undefined,
         PreferredMaintenanceWindow: js.UndefOr[String] = js.undefined,
         PubliclyAccessible: js.UndefOr[BooleanOptional] = js.undefined,
+        ReservedNodeId: js.UndefOr[String] = js.undefined,
         SnapshotClusterIdentifier: js.UndefOr[String] = js.undefined,
         SnapshotScheduleIdentifier: js.UndefOr[String] = js.undefined,
+        TargetReservedNodeOfferingId: js.UndefOr[String] = js.undefined,
         VpcSecurityGroupIds: js.UndefOr[VpcSecurityGroupIdList] = js.undefined
     ): RestoreFromClusterSnapshotMessage = {
       val __obj = js.Dynamic.literal(
@@ -5602,6 +6272,7 @@ package object redshift {
       ClusterParameterGroupName.foreach(__v => __obj.updateDynamic("ClusterParameterGroupName")(__v.asInstanceOf[js.Any]))
       ClusterSecurityGroups.foreach(__v => __obj.updateDynamic("ClusterSecurityGroups")(__v.asInstanceOf[js.Any]))
       ClusterSubnetGroupName.foreach(__v => __obj.updateDynamic("ClusterSubnetGroupName")(__v.asInstanceOf[js.Any]))
+      DefaultIamRoleArn.foreach(__v => __obj.updateDynamic("DefaultIamRoleArn")(__v.asInstanceOf[js.Any]))
       ElasticIp.foreach(__v => __obj.updateDynamic("ElasticIp")(__v.asInstanceOf[js.Any]))
       EnhancedVpcRouting.foreach(__v => __obj.updateDynamic("EnhancedVpcRouting")(__v.asInstanceOf[js.Any]))
       HsmClientCertificateIdentifier.foreach(__v => __obj.updateDynamic("HsmClientCertificateIdentifier")(__v.asInstanceOf[js.Any]))
@@ -5616,8 +6287,10 @@ package object redshift {
       Port.foreach(__v => __obj.updateDynamic("Port")(__v.asInstanceOf[js.Any]))
       PreferredMaintenanceWindow.foreach(__v => __obj.updateDynamic("PreferredMaintenanceWindow")(__v.asInstanceOf[js.Any]))
       PubliclyAccessible.foreach(__v => __obj.updateDynamic("PubliclyAccessible")(__v.asInstanceOf[js.Any]))
+      ReservedNodeId.foreach(__v => __obj.updateDynamic("ReservedNodeId")(__v.asInstanceOf[js.Any]))
       SnapshotClusterIdentifier.foreach(__v => __obj.updateDynamic("SnapshotClusterIdentifier")(__v.asInstanceOf[js.Any]))
       SnapshotScheduleIdentifier.foreach(__v => __obj.updateDynamic("SnapshotScheduleIdentifier")(__v.asInstanceOf[js.Any]))
+      TargetReservedNodeOfferingId.foreach(__v => __obj.updateDynamic("TargetReservedNodeOfferingId")(__v.asInstanceOf[js.Any]))
       VpcSecurityGroupIds.foreach(__v => __obj.updateDynamic("VpcSecurityGroupIds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RestoreFromClusterSnapshotMessage]
     }
@@ -6162,7 +6835,7 @@ package object redshift {
     }
   }
 
-  /** The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from AWS KMS in the destination region. For more information about managing snapshot copy grants, go to [[https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html|Amazon Redshift Database Encryption]] in the <i>Amazon Redshift Cluster Management Guide</i>.
+  /** The snapshot copy grant that grants Amazon Redshift permission to encrypt copied snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination region. For more information about managing snapshot copy grants, go to [[https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html|Amazon Redshift Database Encryption]] in the <i>Amazon Redshift Cluster Management Guide</i>.
     */
   @js.native
   trait SnapshotCopyGrant extends js.Object {

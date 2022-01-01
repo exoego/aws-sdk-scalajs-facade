@@ -24,6 +24,7 @@ package object iotwireless {
   type ClassCTimeout = Int
   type ClientRequestToken = String
   type Crc = Double
+  type CreatedAt = js.Date
   type Description = String
   type DestinationArn = String
   type DestinationList = js.Array[Destinations]
@@ -37,6 +38,8 @@ package object iotwireless {
   type DeviceProfileList = js.Array[DeviceProfile]
   type DeviceProfileName = String
   type DlBucketSize = Int
+  type DlDr = Int
+  type DlFreq = Int
   type DlRate = Int
   type DlRatePolicy = String
   type DrMax = Int
@@ -47,21 +50,44 @@ package object iotwireless {
   type FPort = Int
   type FactoryPresetFreqsList = js.Array[PresetFreq]
   type Fingerprint = String
+  type FirmwareUpdateImage = String
+  type FirmwareUpdateRole = String
+  type FuotaTaskArn = String
+  type FuotaTaskId = String
+  type FuotaTaskList = js.Array[FuotaTask]
+  type FuotaTaskName = String
   type GatewayEui = String
+  type GenAppKey = String
   type HrAllowed = Boolean
   type ISODateTimeString = String
   type Identifier = String
   type IotCertificateId = String
   type JoinEui = String
+  type JoinEuiFilters = js.Array[JoinEuiRange]
+  type JoinEuiRange = js.Array[JoinEui]
   type LoRaWANGatewayMetadataList = js.Array[LoRaWANGatewayMetadata]
   type MacVersion = String
   type MaxDutyCycle = Int
   type MaxEirp = Int
   type MaxResults = Int
+  type McGroupId = Int
   type MessageId = String
   type MinGwDiversity = Int
   type Model = String
+  type MulticastDeviceStatus = String
+  type MulticastGroupArn = String
+  type MulticastGroupId = String
+  type MulticastGroupList = js.Array[MulticastGroup]
+  type MulticastGroupListByFuotaTask = js.Array[MulticastGroupByFuotaTask]
+  type MulticastGroupMessageId = String
+  type MulticastGroupName = String
+  type MulticastGroupStatus = String
+  type NetId = String
+  type NetIdFilters = js.Array[NetId]
+  type NetworkAnalyzerConfigurationName = String
   type NextToken = String
+  type NumberOfDevicesInGroup = Int
+  type NumberOfDevicesRequested = Int
   type NwkGeoLoc = Boolean
   type NwkKey = String
   type NwkSEncKey = String
@@ -75,10 +101,13 @@ package object iotwireless {
   type PingSlotPeriod = Int
   type PrAllowed = Boolean
   type PresetFreq = Int
+  type QueryString = String
   type RaAllowed = Boolean
   type RegParamsRevision = String
   type ReportDevStatusBattery = Boolean
   type ReportDevStatusMargin = Boolean
+  type ResourceIdentifier = String
+  type ResourceType = String
   type Result = String
   type RfRegion = String
   type RoleArn = String
@@ -92,10 +121,15 @@ package object iotwireless {
   type ServiceProfileId = String
   type ServiceProfileList = js.Array[ServiceProfile]
   type ServiceProfileName = String
+  type SessionStartTimeTimestamp = js.Date
+  type SessionTimeout = Int
   type SidewalkAccountList = js.Array[SidewalkAccountInfoWithFingerprint]
   type SidewalkId = String
   type SidewalkManufacturingSn = String
+  type StartTime = js.Date
   type Station = String
+  type SubBand = Int
+  type SubBands = js.Array[SubBand]
   type Supports32BitFCnt = Boolean
   type SupportsClassB = Boolean
   type SupportsClassC = Boolean
@@ -114,11 +148,17 @@ package object iotwireless {
   type UpdateDataSource = String
   type UpdateSignature = String
   type WirelessDeviceArn = String
+  type WirelessDeviceEventLogOptionList = js.Array[WirelessDeviceEventLogOption]
   type WirelessDeviceId = String
+  type WirelessDeviceList = js.Array[WirelessDeviceId]
+  type WirelessDeviceLogOptionList = js.Array[WirelessDeviceLogOption]
   type WirelessDeviceName = String
   type WirelessDeviceStatisticsList = js.Array[WirelessDeviceStatistics]
   type WirelessGatewayArn = String
+  type WirelessGatewayEventLogOptionList = js.Array[WirelessGatewayEventLogOption]
   type WirelessGatewayId = String
+  type WirelessGatewayList = js.Array[WirelessGatewayId]
+  type WirelessGatewayLogOptionList = js.Array[WirelessGatewayLogOption]
   type WirelessGatewayName = String
   type WirelessGatewayStatisticsList = js.Array[WirelessGatewayStatistics]
   type WirelessGatewayTaskDefinitionArn = String
@@ -129,11 +169,17 @@ package object iotwireless {
   final class IoTWirelessOps(private val service: IoTWireless) extends AnyVal {
 
     @inline def associateAwsAccountWithPartnerAccountFuture(params: AssociateAwsAccountWithPartnerAccountRequest): Future[AssociateAwsAccountWithPartnerAccountResponse] = service.associateAwsAccountWithPartnerAccount(params).promise().toFuture
+    @inline def associateMulticastGroupWithFuotaTaskFuture(params: AssociateMulticastGroupWithFuotaTaskRequest): Future[AssociateMulticastGroupWithFuotaTaskResponse] = service.associateMulticastGroupWithFuotaTask(params).promise().toFuture
+    @inline def associateWirelessDeviceWithFuotaTaskFuture(params: AssociateWirelessDeviceWithFuotaTaskRequest): Future[AssociateWirelessDeviceWithFuotaTaskResponse] = service.associateWirelessDeviceWithFuotaTask(params).promise().toFuture
+    @inline def associateWirelessDeviceWithMulticastGroupFuture(params: AssociateWirelessDeviceWithMulticastGroupRequest): Future[AssociateWirelessDeviceWithMulticastGroupResponse] = service.associateWirelessDeviceWithMulticastGroup(params).promise().toFuture
     @inline def associateWirelessDeviceWithThingFuture(params: AssociateWirelessDeviceWithThingRequest): Future[AssociateWirelessDeviceWithThingResponse] = service.associateWirelessDeviceWithThing(params).promise().toFuture
     @inline def associateWirelessGatewayWithCertificateFuture(params: AssociateWirelessGatewayWithCertificateRequest): Future[AssociateWirelessGatewayWithCertificateResponse] = service.associateWirelessGatewayWithCertificate(params).promise().toFuture
     @inline def associateWirelessGatewayWithThingFuture(params: AssociateWirelessGatewayWithThingRequest): Future[AssociateWirelessGatewayWithThingResponse] = service.associateWirelessGatewayWithThing(params).promise().toFuture
+    @inline def cancelMulticastGroupSessionFuture(params: CancelMulticastGroupSessionRequest): Future[CancelMulticastGroupSessionResponse] = service.cancelMulticastGroupSession(params).promise().toFuture
     @inline def createDestinationFuture(params: CreateDestinationRequest): Future[CreateDestinationResponse] = service.createDestination(params).promise().toFuture
     @inline def createDeviceProfileFuture(params: CreateDeviceProfileRequest): Future[CreateDeviceProfileResponse] = service.createDeviceProfile(params).promise().toFuture
+    @inline def createFuotaTaskFuture(params: CreateFuotaTaskRequest): Future[CreateFuotaTaskResponse] = service.createFuotaTask(params).promise().toFuture
+    @inline def createMulticastGroupFuture(params: CreateMulticastGroupRequest): Future[CreateMulticastGroupResponse] = service.createMulticastGroup(params).promise().toFuture
     @inline def createServiceProfileFuture(params: CreateServiceProfileRequest): Future[CreateServiceProfileResponse] = service.createServiceProfile(params).promise().toFuture
     @inline def createWirelessDeviceFuture(params: CreateWirelessDeviceRequest): Future[CreateWirelessDeviceResponse] = service.createWirelessDevice(params).promise().toFuture
     @inline def createWirelessGatewayFuture(params: CreateWirelessGatewayRequest): Future[CreateWirelessGatewayResponse] = service.createWirelessGateway(params).promise().toFuture
@@ -141,18 +187,30 @@ package object iotwireless {
     @inline def createWirelessGatewayTaskFuture(params: CreateWirelessGatewayTaskRequest): Future[CreateWirelessGatewayTaskResponse] = service.createWirelessGatewayTask(params).promise().toFuture
     @inline def deleteDestinationFuture(params: DeleteDestinationRequest): Future[DeleteDestinationResponse] = service.deleteDestination(params).promise().toFuture
     @inline def deleteDeviceProfileFuture(params: DeleteDeviceProfileRequest): Future[DeleteDeviceProfileResponse] = service.deleteDeviceProfile(params).promise().toFuture
+    @inline def deleteFuotaTaskFuture(params: DeleteFuotaTaskRequest): Future[DeleteFuotaTaskResponse] = service.deleteFuotaTask(params).promise().toFuture
+    @inline def deleteMulticastGroupFuture(params: DeleteMulticastGroupRequest): Future[DeleteMulticastGroupResponse] = service.deleteMulticastGroup(params).promise().toFuture
     @inline def deleteServiceProfileFuture(params: DeleteServiceProfileRequest): Future[DeleteServiceProfileResponse] = service.deleteServiceProfile(params).promise().toFuture
     @inline def deleteWirelessDeviceFuture(params: DeleteWirelessDeviceRequest): Future[DeleteWirelessDeviceResponse] = service.deleteWirelessDevice(params).promise().toFuture
     @inline def deleteWirelessGatewayFuture(params: DeleteWirelessGatewayRequest): Future[DeleteWirelessGatewayResponse] = service.deleteWirelessGateway(params).promise().toFuture
     @inline def deleteWirelessGatewayTaskDefinitionFuture(params: DeleteWirelessGatewayTaskDefinitionRequest): Future[DeleteWirelessGatewayTaskDefinitionResponse] = service.deleteWirelessGatewayTaskDefinition(params).promise().toFuture
     @inline def deleteWirelessGatewayTaskFuture(params: DeleteWirelessGatewayTaskRequest): Future[DeleteWirelessGatewayTaskResponse] = service.deleteWirelessGatewayTask(params).promise().toFuture
     @inline def disassociateAwsAccountFromPartnerAccountFuture(params: DisassociateAwsAccountFromPartnerAccountRequest): Future[DisassociateAwsAccountFromPartnerAccountResponse] = service.disassociateAwsAccountFromPartnerAccount(params).promise().toFuture
+    @inline def disassociateMulticastGroupFromFuotaTaskFuture(params: DisassociateMulticastGroupFromFuotaTaskRequest): Future[DisassociateMulticastGroupFromFuotaTaskResponse] = service.disassociateMulticastGroupFromFuotaTask(params).promise().toFuture
+    @inline def disassociateWirelessDeviceFromFuotaTaskFuture(params: DisassociateWirelessDeviceFromFuotaTaskRequest): Future[DisassociateWirelessDeviceFromFuotaTaskResponse] = service.disassociateWirelessDeviceFromFuotaTask(params).promise().toFuture
+    @inline def disassociateWirelessDeviceFromMulticastGroupFuture(params: DisassociateWirelessDeviceFromMulticastGroupRequest): Future[DisassociateWirelessDeviceFromMulticastGroupResponse] = service.disassociateWirelessDeviceFromMulticastGroup(params).promise().toFuture
     @inline def disassociateWirelessDeviceFromThingFuture(params: DisassociateWirelessDeviceFromThingRequest): Future[DisassociateWirelessDeviceFromThingResponse] = service.disassociateWirelessDeviceFromThing(params).promise().toFuture
     @inline def disassociateWirelessGatewayFromCertificateFuture(params: DisassociateWirelessGatewayFromCertificateRequest): Future[DisassociateWirelessGatewayFromCertificateResponse] = service.disassociateWirelessGatewayFromCertificate(params).promise().toFuture
     @inline def disassociateWirelessGatewayFromThingFuture(params: DisassociateWirelessGatewayFromThingRequest): Future[DisassociateWirelessGatewayFromThingResponse] = service.disassociateWirelessGatewayFromThing(params).promise().toFuture
     @inline def getDestinationFuture(params: GetDestinationRequest): Future[GetDestinationResponse] = service.getDestination(params).promise().toFuture
     @inline def getDeviceProfileFuture(params: GetDeviceProfileRequest): Future[GetDeviceProfileResponse] = service.getDeviceProfile(params).promise().toFuture
+    @inline def getFuotaTaskFuture(params: GetFuotaTaskRequest): Future[GetFuotaTaskResponse] = service.getFuotaTask(params).promise().toFuture
+    @inline def getLogLevelsByResourceTypesFuture(params: GetLogLevelsByResourceTypesRequest): Future[GetLogLevelsByResourceTypesResponse] = service.getLogLevelsByResourceTypes(params).promise().toFuture
+    @inline def getMulticastGroupFuture(params: GetMulticastGroupRequest): Future[GetMulticastGroupResponse] = service.getMulticastGroup(params).promise().toFuture
+    @inline def getMulticastGroupSessionFuture(params: GetMulticastGroupSessionRequest): Future[GetMulticastGroupSessionResponse] = service.getMulticastGroupSession(params).promise().toFuture
+    @inline def getNetworkAnalyzerConfigurationFuture(params: GetNetworkAnalyzerConfigurationRequest): Future[GetNetworkAnalyzerConfigurationResponse] = service.getNetworkAnalyzerConfiguration(params).promise().toFuture
     @inline def getPartnerAccountFuture(params: GetPartnerAccountRequest): Future[GetPartnerAccountResponse] = service.getPartnerAccount(params).promise().toFuture
+    @inline def getResourceEventConfigurationFuture(params: GetResourceEventConfigurationRequest): Future[GetResourceEventConfigurationResponse] = service.getResourceEventConfiguration(params).promise().toFuture
+    @inline def getResourceLogLevelFuture(params: GetResourceLogLevelRequest): Future[GetResourceLogLevelResponse] = service.getResourceLogLevel(params).promise().toFuture
     @inline def getServiceEndpointFuture(params: GetServiceEndpointRequest): Future[GetServiceEndpointResponse] = service.getServiceEndpoint(params).promise().toFuture
     @inline def getServiceProfileFuture(params: GetServiceProfileRequest): Future[GetServiceProfileResponse] = service.getServiceProfile(params).promise().toFuture
     @inline def getWirelessDeviceFuture(params: GetWirelessDeviceRequest): Future[GetWirelessDeviceResponse] = service.getWirelessDevice(params).promise().toFuture
@@ -165,18 +223,34 @@ package object iotwireless {
     @inline def getWirelessGatewayTaskFuture(params: GetWirelessGatewayTaskRequest): Future[GetWirelessGatewayTaskResponse] = service.getWirelessGatewayTask(params).promise().toFuture
     @inline def listDestinationsFuture(params: ListDestinationsRequest): Future[ListDestinationsResponse] = service.listDestinations(params).promise().toFuture
     @inline def listDeviceProfilesFuture(params: ListDeviceProfilesRequest): Future[ListDeviceProfilesResponse] = service.listDeviceProfiles(params).promise().toFuture
+    @inline def listFuotaTasksFuture(params: ListFuotaTasksRequest): Future[ListFuotaTasksResponse] = service.listFuotaTasks(params).promise().toFuture
+    @inline def listMulticastGroupsByFuotaTaskFuture(params: ListMulticastGroupsByFuotaTaskRequest): Future[ListMulticastGroupsByFuotaTaskResponse] = service.listMulticastGroupsByFuotaTask(params).promise().toFuture
+    @inline def listMulticastGroupsFuture(params: ListMulticastGroupsRequest): Future[ListMulticastGroupsResponse] = service.listMulticastGroups(params).promise().toFuture
     @inline def listPartnerAccountsFuture(params: ListPartnerAccountsRequest): Future[ListPartnerAccountsResponse] = service.listPartnerAccounts(params).promise().toFuture
     @inline def listServiceProfilesFuture(params: ListServiceProfilesRequest): Future[ListServiceProfilesResponse] = service.listServiceProfiles(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listWirelessDevicesFuture(params: ListWirelessDevicesRequest): Future[ListWirelessDevicesResponse] = service.listWirelessDevices(params).promise().toFuture
     @inline def listWirelessGatewayTaskDefinitionsFuture(params: ListWirelessGatewayTaskDefinitionsRequest): Future[ListWirelessGatewayTaskDefinitionsResponse] = service.listWirelessGatewayTaskDefinitions(params).promise().toFuture
     @inline def listWirelessGatewaysFuture(params: ListWirelessGatewaysRequest): Future[ListWirelessGatewaysResponse] = service.listWirelessGateways(params).promise().toFuture
+    @inline def putResourceLogLevelFuture(params: PutResourceLogLevelRequest): Future[PutResourceLogLevelResponse] = service.putResourceLogLevel(params).promise().toFuture
+    @inline def resetAllResourceLogLevelsFuture(params: ResetAllResourceLogLevelsRequest): Future[ResetAllResourceLogLevelsResponse] = service.resetAllResourceLogLevels(params).promise().toFuture
+    @inline def resetResourceLogLevelFuture(params: ResetResourceLogLevelRequest): Future[ResetResourceLogLevelResponse] = service.resetResourceLogLevel(params).promise().toFuture
+    @inline def sendDataToMulticastGroupFuture(params: SendDataToMulticastGroupRequest): Future[SendDataToMulticastGroupResponse] = service.sendDataToMulticastGroup(params).promise().toFuture
     @inline def sendDataToWirelessDeviceFuture(params: SendDataToWirelessDeviceRequest): Future[SendDataToWirelessDeviceResponse] = service.sendDataToWirelessDevice(params).promise().toFuture
+    @inline def startBulkAssociateWirelessDeviceWithMulticastGroupFuture(params: StartBulkAssociateWirelessDeviceWithMulticastGroupRequest): Future[StartBulkAssociateWirelessDeviceWithMulticastGroupResponse] = service.startBulkAssociateWirelessDeviceWithMulticastGroup(params).promise().toFuture
+    @inline def startBulkDisassociateWirelessDeviceFromMulticastGroupFuture(params: StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest): Future[StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse] = service.startBulkDisassociateWirelessDeviceFromMulticastGroup(params).promise().toFuture
+    @inline def startFuotaTaskFuture(params: StartFuotaTaskRequest): Future[StartFuotaTaskResponse] = service.startFuotaTask(params).promise().toFuture
+    @inline def startMulticastGroupSessionFuture(params: StartMulticastGroupSessionRequest): Future[StartMulticastGroupSessionResponse] = service.startMulticastGroupSession(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def testWirelessDeviceFuture(params: TestWirelessDeviceRequest): Future[TestWirelessDeviceResponse] = service.testWirelessDevice(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateDestinationFuture(params: UpdateDestinationRequest): Future[UpdateDestinationResponse] = service.updateDestination(params).promise().toFuture
+    @inline def updateFuotaTaskFuture(params: UpdateFuotaTaskRequest): Future[UpdateFuotaTaskResponse] = service.updateFuotaTask(params).promise().toFuture
+    @inline def updateLogLevelsByResourceTypesFuture(params: UpdateLogLevelsByResourceTypesRequest): Future[UpdateLogLevelsByResourceTypesResponse] = service.updateLogLevelsByResourceTypes(params).promise().toFuture
+    @inline def updateMulticastGroupFuture(params: UpdateMulticastGroupRequest): Future[UpdateMulticastGroupResponse] = service.updateMulticastGroup(params).promise().toFuture
+    @inline def updateNetworkAnalyzerConfigurationFuture(params: UpdateNetworkAnalyzerConfigurationRequest): Future[UpdateNetworkAnalyzerConfigurationResponse] = service.updateNetworkAnalyzerConfiguration(params).promise().toFuture
     @inline def updatePartnerAccountFuture(params: UpdatePartnerAccountRequest): Future[UpdatePartnerAccountResponse] = service.updatePartnerAccount(params).promise().toFuture
+    @inline def updateResourceEventConfigurationFuture(params: UpdateResourceEventConfigurationRequest): Future[UpdateResourceEventConfigurationResponse] = service.updateResourceEventConfiguration(params).promise().toFuture
     @inline def updateWirelessDeviceFuture(params: UpdateWirelessDeviceRequest): Future[UpdateWirelessDeviceResponse] = service.updateWirelessDevice(params).promise().toFuture
     @inline def updateWirelessGatewayFuture(params: UpdateWirelessGatewayRequest): Future[UpdateWirelessGatewayResponse] = service.updateWirelessGateway(params).promise().toFuture
 
@@ -188,11 +262,17 @@ package object iotwireless {
     def this(config: AWSConfig) = this()
 
     def associateAwsAccountWithPartnerAccount(params: AssociateAwsAccountWithPartnerAccountRequest): Request[AssociateAwsAccountWithPartnerAccountResponse] = js.native
+    def associateMulticastGroupWithFuotaTask(params: AssociateMulticastGroupWithFuotaTaskRequest): Request[AssociateMulticastGroupWithFuotaTaskResponse] = js.native
+    def associateWirelessDeviceWithFuotaTask(params: AssociateWirelessDeviceWithFuotaTaskRequest): Request[AssociateWirelessDeviceWithFuotaTaskResponse] = js.native
+    def associateWirelessDeviceWithMulticastGroup(params: AssociateWirelessDeviceWithMulticastGroupRequest): Request[AssociateWirelessDeviceWithMulticastGroupResponse] = js.native
     def associateWirelessDeviceWithThing(params: AssociateWirelessDeviceWithThingRequest): Request[AssociateWirelessDeviceWithThingResponse] = js.native
     def associateWirelessGatewayWithCertificate(params: AssociateWirelessGatewayWithCertificateRequest): Request[AssociateWirelessGatewayWithCertificateResponse] = js.native
     def associateWirelessGatewayWithThing(params: AssociateWirelessGatewayWithThingRequest): Request[AssociateWirelessGatewayWithThingResponse] = js.native
+    def cancelMulticastGroupSession(params: CancelMulticastGroupSessionRequest): Request[CancelMulticastGroupSessionResponse] = js.native
     def createDestination(params: CreateDestinationRequest): Request[CreateDestinationResponse] = js.native
     def createDeviceProfile(params: CreateDeviceProfileRequest): Request[CreateDeviceProfileResponse] = js.native
+    def createFuotaTask(params: CreateFuotaTaskRequest): Request[CreateFuotaTaskResponse] = js.native
+    def createMulticastGroup(params: CreateMulticastGroupRequest): Request[CreateMulticastGroupResponse] = js.native
     def createServiceProfile(params: CreateServiceProfileRequest): Request[CreateServiceProfileResponse] = js.native
     def createWirelessDevice(params: CreateWirelessDeviceRequest): Request[CreateWirelessDeviceResponse] = js.native
     def createWirelessGateway(params: CreateWirelessGatewayRequest): Request[CreateWirelessGatewayResponse] = js.native
@@ -200,18 +280,30 @@ package object iotwireless {
     def createWirelessGatewayTaskDefinition(params: CreateWirelessGatewayTaskDefinitionRequest): Request[CreateWirelessGatewayTaskDefinitionResponse] = js.native
     def deleteDestination(params: DeleteDestinationRequest): Request[DeleteDestinationResponse] = js.native
     def deleteDeviceProfile(params: DeleteDeviceProfileRequest): Request[DeleteDeviceProfileResponse] = js.native
+    def deleteFuotaTask(params: DeleteFuotaTaskRequest): Request[DeleteFuotaTaskResponse] = js.native
+    def deleteMulticastGroup(params: DeleteMulticastGroupRequest): Request[DeleteMulticastGroupResponse] = js.native
     def deleteServiceProfile(params: DeleteServiceProfileRequest): Request[DeleteServiceProfileResponse] = js.native
     def deleteWirelessDevice(params: DeleteWirelessDeviceRequest): Request[DeleteWirelessDeviceResponse] = js.native
     def deleteWirelessGateway(params: DeleteWirelessGatewayRequest): Request[DeleteWirelessGatewayResponse] = js.native
     def deleteWirelessGatewayTask(params: DeleteWirelessGatewayTaskRequest): Request[DeleteWirelessGatewayTaskResponse] = js.native
     def deleteWirelessGatewayTaskDefinition(params: DeleteWirelessGatewayTaskDefinitionRequest): Request[DeleteWirelessGatewayTaskDefinitionResponse] = js.native
     def disassociateAwsAccountFromPartnerAccount(params: DisassociateAwsAccountFromPartnerAccountRequest): Request[DisassociateAwsAccountFromPartnerAccountResponse] = js.native
+    def disassociateMulticastGroupFromFuotaTask(params: DisassociateMulticastGroupFromFuotaTaskRequest): Request[DisassociateMulticastGroupFromFuotaTaskResponse] = js.native
+    def disassociateWirelessDeviceFromFuotaTask(params: DisassociateWirelessDeviceFromFuotaTaskRequest): Request[DisassociateWirelessDeviceFromFuotaTaskResponse] = js.native
+    def disassociateWirelessDeviceFromMulticastGroup(params: DisassociateWirelessDeviceFromMulticastGroupRequest): Request[DisassociateWirelessDeviceFromMulticastGroupResponse] = js.native
     def disassociateWirelessDeviceFromThing(params: DisassociateWirelessDeviceFromThingRequest): Request[DisassociateWirelessDeviceFromThingResponse] = js.native
     def disassociateWirelessGatewayFromCertificate(params: DisassociateWirelessGatewayFromCertificateRequest): Request[DisassociateWirelessGatewayFromCertificateResponse] = js.native
     def disassociateWirelessGatewayFromThing(params: DisassociateWirelessGatewayFromThingRequest): Request[DisassociateWirelessGatewayFromThingResponse] = js.native
     def getDestination(params: GetDestinationRequest): Request[GetDestinationResponse] = js.native
     def getDeviceProfile(params: GetDeviceProfileRequest): Request[GetDeviceProfileResponse] = js.native
+    def getFuotaTask(params: GetFuotaTaskRequest): Request[GetFuotaTaskResponse] = js.native
+    def getLogLevelsByResourceTypes(params: GetLogLevelsByResourceTypesRequest): Request[GetLogLevelsByResourceTypesResponse] = js.native
+    def getMulticastGroup(params: GetMulticastGroupRequest): Request[GetMulticastGroupResponse] = js.native
+    def getMulticastGroupSession(params: GetMulticastGroupSessionRequest): Request[GetMulticastGroupSessionResponse] = js.native
+    def getNetworkAnalyzerConfiguration(params: GetNetworkAnalyzerConfigurationRequest): Request[GetNetworkAnalyzerConfigurationResponse] = js.native
     def getPartnerAccount(params: GetPartnerAccountRequest): Request[GetPartnerAccountResponse] = js.native
+    def getResourceEventConfiguration(params: GetResourceEventConfigurationRequest): Request[GetResourceEventConfigurationResponse] = js.native
+    def getResourceLogLevel(params: GetResourceLogLevelRequest): Request[GetResourceLogLevelResponse] = js.native
     def getServiceEndpoint(params: GetServiceEndpointRequest): Request[GetServiceEndpointResponse] = js.native
     def getServiceProfile(params: GetServiceProfileRequest): Request[GetServiceProfileResponse] = js.native
     def getWirelessDevice(params: GetWirelessDeviceRequest): Request[GetWirelessDeviceResponse] = js.native
@@ -224,18 +316,34 @@ package object iotwireless {
     def getWirelessGatewayTaskDefinition(params: GetWirelessGatewayTaskDefinitionRequest): Request[GetWirelessGatewayTaskDefinitionResponse] = js.native
     def listDestinations(params: ListDestinationsRequest): Request[ListDestinationsResponse] = js.native
     def listDeviceProfiles(params: ListDeviceProfilesRequest): Request[ListDeviceProfilesResponse] = js.native
+    def listFuotaTasks(params: ListFuotaTasksRequest): Request[ListFuotaTasksResponse] = js.native
+    def listMulticastGroups(params: ListMulticastGroupsRequest): Request[ListMulticastGroupsResponse] = js.native
+    def listMulticastGroupsByFuotaTask(params: ListMulticastGroupsByFuotaTaskRequest): Request[ListMulticastGroupsByFuotaTaskResponse] = js.native
     def listPartnerAccounts(params: ListPartnerAccountsRequest): Request[ListPartnerAccountsResponse] = js.native
     def listServiceProfiles(params: ListServiceProfilesRequest): Request[ListServiceProfilesResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listWirelessDevices(params: ListWirelessDevicesRequest): Request[ListWirelessDevicesResponse] = js.native
     def listWirelessGatewayTaskDefinitions(params: ListWirelessGatewayTaskDefinitionsRequest): Request[ListWirelessGatewayTaskDefinitionsResponse] = js.native
     def listWirelessGateways(params: ListWirelessGatewaysRequest): Request[ListWirelessGatewaysResponse] = js.native
+    def putResourceLogLevel(params: PutResourceLogLevelRequest): Request[PutResourceLogLevelResponse] = js.native
+    def resetAllResourceLogLevels(params: ResetAllResourceLogLevelsRequest): Request[ResetAllResourceLogLevelsResponse] = js.native
+    def resetResourceLogLevel(params: ResetResourceLogLevelRequest): Request[ResetResourceLogLevelResponse] = js.native
+    def sendDataToMulticastGroup(params: SendDataToMulticastGroupRequest): Request[SendDataToMulticastGroupResponse] = js.native
     def sendDataToWirelessDevice(params: SendDataToWirelessDeviceRequest): Request[SendDataToWirelessDeviceResponse] = js.native
+    def startBulkAssociateWirelessDeviceWithMulticastGroup(params: StartBulkAssociateWirelessDeviceWithMulticastGroupRequest): Request[StartBulkAssociateWirelessDeviceWithMulticastGroupResponse] = js.native
+    def startBulkDisassociateWirelessDeviceFromMulticastGroup(params: StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest): Request[StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse] = js.native
+    def startFuotaTask(params: StartFuotaTaskRequest): Request[StartFuotaTaskResponse] = js.native
+    def startMulticastGroupSession(params: StartMulticastGroupSessionRequest): Request[StartMulticastGroupSessionResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def testWirelessDevice(params: TestWirelessDeviceRequest): Request[TestWirelessDeviceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateDestination(params: UpdateDestinationRequest): Request[UpdateDestinationResponse] = js.native
+    def updateFuotaTask(params: UpdateFuotaTaskRequest): Request[UpdateFuotaTaskResponse] = js.native
+    def updateLogLevelsByResourceTypes(params: UpdateLogLevelsByResourceTypesRequest): Request[UpdateLogLevelsByResourceTypesResponse] = js.native
+    def updateMulticastGroup(params: UpdateMulticastGroupRequest): Request[UpdateMulticastGroupResponse] = js.native
+    def updateNetworkAnalyzerConfiguration(params: UpdateNetworkAnalyzerConfigurationRequest): Request[UpdateNetworkAnalyzerConfigurationResponse] = js.native
     def updatePartnerAccount(params: UpdatePartnerAccountRequest): Request[UpdatePartnerAccountResponse] = js.native
+    def updateResourceEventConfiguration(params: UpdateResourceEventConfigurationRequest): Request[UpdateResourceEventConfigurationResponse] = js.native
     def updateWirelessDevice(params: UpdateWirelessDeviceRequest): Request[UpdateWirelessDeviceResponse] = js.native
     def updateWirelessGateway(params: UpdateWirelessGatewayRequest): Request[UpdateWirelessGatewayResponse] = js.native
   }
@@ -327,6 +435,99 @@ package object iotwireless {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Sidewalk.foreach(__v => __obj.updateDynamic("Sidewalk")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateAwsAccountWithPartnerAccountResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateMulticastGroupWithFuotaTaskRequest extends js.Object {
+    var Id: FuotaTaskId
+    var MulticastGroupId: MulticastGroupId
+  }
+
+  object AssociateMulticastGroupWithFuotaTaskRequest {
+    @inline
+    def apply(
+        Id: FuotaTaskId,
+        MulticastGroupId: MulticastGroupId
+    ): AssociateMulticastGroupWithFuotaTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "MulticastGroupId" -> MulticastGroupId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateMulticastGroupWithFuotaTaskRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateMulticastGroupWithFuotaTaskResponse extends js.Object
+
+  object AssociateMulticastGroupWithFuotaTaskResponse {
+    @inline
+    def apply(): AssociateMulticastGroupWithFuotaTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[AssociateMulticastGroupWithFuotaTaskResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateWirelessDeviceWithFuotaTaskRequest extends js.Object {
+    var Id: FuotaTaskId
+    var WirelessDeviceId: WirelessDeviceId
+  }
+
+  object AssociateWirelessDeviceWithFuotaTaskRequest {
+    @inline
+    def apply(
+        Id: FuotaTaskId,
+        WirelessDeviceId: WirelessDeviceId
+    ): AssociateWirelessDeviceWithFuotaTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "WirelessDeviceId" -> WirelessDeviceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateWirelessDeviceWithFuotaTaskRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateWirelessDeviceWithFuotaTaskResponse extends js.Object
+
+  object AssociateWirelessDeviceWithFuotaTaskResponse {
+    @inline
+    def apply(): AssociateWirelessDeviceWithFuotaTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[AssociateWirelessDeviceWithFuotaTaskResponse]
+    }
+  }
+
+  @js.native
+  trait AssociateWirelessDeviceWithMulticastGroupRequest extends js.Object {
+    var Id: MulticastGroupId
+    var WirelessDeviceId: WirelessDeviceId
+  }
+
+  object AssociateWirelessDeviceWithMulticastGroupRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId,
+        WirelessDeviceId: WirelessDeviceId
+    ): AssociateWirelessDeviceWithMulticastGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "WirelessDeviceId" -> WirelessDeviceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateWirelessDeviceWithMulticastGroupRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateWirelessDeviceWithMulticastGroupResponse extends js.Object
+
+  object AssociateWirelessDeviceWithMulticastGroupResponse {
+    @inline
+    def apply(): AssociateWirelessDeviceWithMulticastGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[AssociateWirelessDeviceWithMulticastGroupResponse]
     }
   }
 
@@ -425,6 +626,34 @@ package object iotwireless {
     def apply(): AssociateWirelessGatewayWithThingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateWirelessGatewayWithThingResponse]
+    }
+  }
+
+  @js.native
+  trait CancelMulticastGroupSessionRequest extends js.Object {
+    var Id: MulticastGroupId
+  }
+
+  object CancelMulticastGroupSessionRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId
+    ): CancelMulticastGroupSessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelMulticastGroupSessionRequest]
+    }
+  }
+
+  @js.native
+  trait CancelMulticastGroupSessionResponse extends js.Object
+
+  object CancelMulticastGroupSessionResponse {
+    @inline
+    def apply(): CancelMulticastGroupSessionResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CancelMulticastGroupSessionResponse]
     }
   }
 
@@ -546,6 +775,110 @@ package object iotwireless {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeviceProfileResponse]
+    }
+  }
+
+  @js.native
+  trait CreateFuotaTaskRequest extends js.Object {
+    var FirmwareUpdateImage: FirmwareUpdateImage
+    var FirmwareUpdateRole: FirmwareUpdateRole
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var Description: js.UndefOr[Description]
+    var LoRaWAN: js.UndefOr[LoRaWANFuotaTask]
+    var Name: js.UndefOr[FuotaTaskName]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateFuotaTaskRequest {
+    @inline
+    def apply(
+        FirmwareUpdateImage: FirmwareUpdateImage,
+        FirmwareUpdateRole: FirmwareUpdateRole,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        LoRaWAN: js.UndefOr[LoRaWANFuotaTask] = js.undefined,
+        Name: js.UndefOr[FuotaTaskName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateFuotaTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "FirmwareUpdateImage" -> FirmwareUpdateImage.asInstanceOf[js.Any],
+        "FirmwareUpdateRole" -> FirmwareUpdateRole.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFuotaTaskRequest]
+    }
+  }
+
+  @js.native
+  trait CreateFuotaTaskResponse extends js.Object {
+    var Arn: js.UndefOr[FuotaTaskArn]
+    var Id: js.UndefOr[FuotaTaskId]
+  }
+
+  object CreateFuotaTaskResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[FuotaTaskArn] = js.undefined,
+        Id: js.UndefOr[FuotaTaskId] = js.undefined
+    ): CreateFuotaTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFuotaTaskResponse]
+    }
+  }
+
+  @js.native
+  trait CreateMulticastGroupRequest extends js.Object {
+    var LoRaWAN: LoRaWANMulticast
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var Description: js.UndefOr[Description]
+    var Name: js.UndefOr[MulticastGroupName]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateMulticastGroupRequest {
+    @inline
+    def apply(
+        LoRaWAN: LoRaWANMulticast,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        Name: js.UndefOr[MulticastGroupName] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateMulticastGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "LoRaWAN" -> LoRaWAN.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMulticastGroupRequest]
+    }
+  }
+
+  @js.native
+  trait CreateMulticastGroupResponse extends js.Object {
+    var Arn: js.UndefOr[MulticastGroupArn]
+    var Id: js.UndefOr[MulticastGroupId]
+  }
+
+  object CreateMulticastGroupResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[MulticastGroupArn] = js.undefined,
+        Id: js.UndefOr[MulticastGroupId] = js.undefined
+    ): CreateMulticastGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMulticastGroupResponse]
     }
   }
 
@@ -842,6 +1175,62 @@ package object iotwireless {
   }
 
   @js.native
+  trait DeleteFuotaTaskRequest extends js.Object {
+    var Id: FuotaTaskId
+  }
+
+  object DeleteFuotaTaskRequest {
+    @inline
+    def apply(
+        Id: FuotaTaskId
+    ): DeleteFuotaTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteFuotaTaskRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteFuotaTaskResponse extends js.Object
+
+  object DeleteFuotaTaskResponse {
+    @inline
+    def apply(): DeleteFuotaTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteFuotaTaskResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteMulticastGroupRequest extends js.Object {
+    var Id: MulticastGroupId
+  }
+
+  object DeleteMulticastGroupRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId
+    ): DeleteMulticastGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteMulticastGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteMulticastGroupResponse extends js.Object
+
+  object DeleteMulticastGroupResponse {
+    @inline
+    def apply(): DeleteMulticastGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteMulticastGroupResponse]
+    }
+  }
+
+  @js.native
   trait DeleteServiceProfileRequest extends js.Object {
     var Id: ServiceProfileId
   }
@@ -1038,6 +1427,24 @@ package object iotwireless {
     }
   }
 
+  /** Device registration state event configuration object for enabling and disabling relevant topics.
+    */
+  @js.native
+  trait DeviceRegistrationStateEventConfiguration extends js.Object {
+    var Sidewalk: js.UndefOr[SidewalkEventNotificationConfigurations]
+  }
+
+  object DeviceRegistrationStateEventConfiguration {
+    @inline
+    def apply(
+        Sidewalk: js.UndefOr[SidewalkEventNotificationConfigurations] = js.undefined
+    ): DeviceRegistrationStateEventConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Sidewalk.foreach(__v => __obj.updateDynamic("Sidewalk")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeviceRegistrationStateEventConfiguration]
+    }
+  }
+
   @js.native
   trait DisassociateAwsAccountFromPartnerAccountRequest extends js.Object {
     var PartnerAccountId: PartnerAccountId
@@ -1066,6 +1473,99 @@ package object iotwireless {
     def apply(): DisassociateAwsAccountFromPartnerAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateAwsAccountFromPartnerAccountResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateMulticastGroupFromFuotaTaskRequest extends js.Object {
+    var Id: FuotaTaskId
+    var MulticastGroupId: MulticastGroupId
+  }
+
+  object DisassociateMulticastGroupFromFuotaTaskRequest {
+    @inline
+    def apply(
+        Id: FuotaTaskId,
+        MulticastGroupId: MulticastGroupId
+    ): DisassociateMulticastGroupFromFuotaTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "MulticastGroupId" -> MulticastGroupId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateMulticastGroupFromFuotaTaskRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateMulticastGroupFromFuotaTaskResponse extends js.Object
+
+  object DisassociateMulticastGroupFromFuotaTaskResponse {
+    @inline
+    def apply(): DisassociateMulticastGroupFromFuotaTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateMulticastGroupFromFuotaTaskResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateWirelessDeviceFromFuotaTaskRequest extends js.Object {
+    var Id: FuotaTaskId
+    var WirelessDeviceId: WirelessDeviceId
+  }
+
+  object DisassociateWirelessDeviceFromFuotaTaskRequest {
+    @inline
+    def apply(
+        Id: FuotaTaskId,
+        WirelessDeviceId: WirelessDeviceId
+    ): DisassociateWirelessDeviceFromFuotaTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "WirelessDeviceId" -> WirelessDeviceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateWirelessDeviceFromFuotaTaskRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateWirelessDeviceFromFuotaTaskResponse extends js.Object
+
+  object DisassociateWirelessDeviceFromFuotaTaskResponse {
+    @inline
+    def apply(): DisassociateWirelessDeviceFromFuotaTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateWirelessDeviceFromFuotaTaskResponse]
+    }
+  }
+
+  @js.native
+  trait DisassociateWirelessDeviceFromMulticastGroupRequest extends js.Object {
+    var Id: MulticastGroupId
+    var WirelessDeviceId: WirelessDeviceId
+  }
+
+  object DisassociateWirelessDeviceFromMulticastGroupRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId,
+        WirelessDeviceId: WirelessDeviceId
+    ): DisassociateWirelessDeviceFromMulticastGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "WirelessDeviceId" -> WirelessDeviceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateWirelessDeviceFromMulticastGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateWirelessDeviceFromMulticastGroupResponse extends js.Object
+
+  object DisassociateWirelessDeviceFromMulticastGroupResponse {
+    @inline
+    def apply(): DisassociateWirelessDeviceFromMulticastGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateWirelessDeviceFromMulticastGroupResponse]
     }
   }
 
@@ -1150,6 +1650,54 @@ package object iotwireless {
     def apply(): DisassociateWirelessGatewayFromThingResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DisassociateWirelessGatewayFromThingResponse]
+    }
+  }
+
+  /** List of FPort assigned for different LoRaWAN application packages to use
+    */
+  @js.native
+  trait FPorts extends js.Object {
+    var ClockSync: js.UndefOr[FPort]
+    var Fuota: js.UndefOr[FPort]
+    var Multicast: js.UndefOr[FPort]
+  }
+
+  object FPorts {
+    @inline
+    def apply(
+        ClockSync: js.UndefOr[FPort] = js.undefined,
+        Fuota: js.UndefOr[FPort] = js.undefined,
+        Multicast: js.UndefOr[FPort] = js.undefined
+    ): FPorts = {
+      val __obj = js.Dynamic.literal()
+      ClockSync.foreach(__v => __obj.updateDynamic("ClockSync")(__v.asInstanceOf[js.Any]))
+      Fuota.foreach(__v => __obj.updateDynamic("Fuota")(__v.asInstanceOf[js.Any]))
+      Multicast.foreach(__v => __obj.updateDynamic("Multicast")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FPorts]
+    }
+  }
+
+  /** A FUOTA task.
+    */
+  @js.native
+  trait FuotaTask extends js.Object {
+    var Arn: js.UndefOr[FuotaTaskArn]
+    var Id: js.UndefOr[FuotaTaskId]
+    var Name: js.UndefOr[FuotaTaskName]
+  }
+
+  object FuotaTask {
+    @inline
+    def apply(
+        Arn: js.UndefOr[FuotaTaskArn] = js.undefined,
+        Id: js.UndefOr[FuotaTaskId] = js.undefined,
+        Name: js.UndefOr[FuotaTaskName] = js.undefined
+    ): FuotaTask = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FuotaTask]
     }
   }
 
@@ -1244,6 +1792,219 @@ package object iotwireless {
   }
 
   @js.native
+  trait GetFuotaTaskRequest extends js.Object {
+    var Id: FuotaTaskId
+  }
+
+  object GetFuotaTaskRequest {
+    @inline
+    def apply(
+        Id: FuotaTaskId
+    ): GetFuotaTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetFuotaTaskRequest]
+    }
+  }
+
+  @js.native
+  trait GetFuotaTaskResponse extends js.Object {
+    var Arn: js.UndefOr[FuotaTaskArn]
+    var CreatedAt: js.UndefOr[CreatedAt]
+    var Description: js.UndefOr[Description]
+    var FirmwareUpdateImage: js.UndefOr[FirmwareUpdateImage]
+    var FirmwareUpdateRole: js.UndefOr[FirmwareUpdateRole]
+    var Id: js.UndefOr[FuotaTaskId]
+    var LoRaWAN: js.UndefOr[LoRaWANFuotaTaskGetInfo]
+    var Name: js.UndefOr[FuotaTaskName]
+    var Status: js.UndefOr[FuotaTaskStatus]
+  }
+
+  object GetFuotaTaskResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[FuotaTaskArn] = js.undefined,
+        CreatedAt: js.UndefOr[CreatedAt] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        FirmwareUpdateImage: js.UndefOr[FirmwareUpdateImage] = js.undefined,
+        FirmwareUpdateRole: js.UndefOr[FirmwareUpdateRole] = js.undefined,
+        Id: js.UndefOr[FuotaTaskId] = js.undefined,
+        LoRaWAN: js.UndefOr[LoRaWANFuotaTaskGetInfo] = js.undefined,
+        Name: js.UndefOr[FuotaTaskName] = js.undefined,
+        Status: js.UndefOr[FuotaTaskStatus] = js.undefined
+    ): GetFuotaTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FirmwareUpdateImage.foreach(__v => __obj.updateDynamic("FirmwareUpdateImage")(__v.asInstanceOf[js.Any]))
+      FirmwareUpdateRole.foreach(__v => __obj.updateDynamic("FirmwareUpdateRole")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetFuotaTaskResponse]
+    }
+  }
+
+  @js.native
+  trait GetLogLevelsByResourceTypesRequest extends js.Object
+
+  object GetLogLevelsByResourceTypesRequest {
+    @inline
+    def apply(): GetLogLevelsByResourceTypesRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[GetLogLevelsByResourceTypesRequest]
+    }
+  }
+
+  @js.native
+  trait GetLogLevelsByResourceTypesResponse extends js.Object {
+    var DefaultLogLevel: js.UndefOr[LogLevel]
+    var WirelessDeviceLogOptions: js.UndefOr[WirelessDeviceLogOptionList]
+    var WirelessGatewayLogOptions: js.UndefOr[WirelessGatewayLogOptionList]
+  }
+
+  object GetLogLevelsByResourceTypesResponse {
+    @inline
+    def apply(
+        DefaultLogLevel: js.UndefOr[LogLevel] = js.undefined,
+        WirelessDeviceLogOptions: js.UndefOr[WirelessDeviceLogOptionList] = js.undefined,
+        WirelessGatewayLogOptions: js.UndefOr[WirelessGatewayLogOptionList] = js.undefined
+    ): GetLogLevelsByResourceTypesResponse = {
+      val __obj = js.Dynamic.literal()
+      DefaultLogLevel.foreach(__v => __obj.updateDynamic("DefaultLogLevel")(__v.asInstanceOf[js.Any]))
+      WirelessDeviceLogOptions.foreach(__v => __obj.updateDynamic("WirelessDeviceLogOptions")(__v.asInstanceOf[js.Any]))
+      WirelessGatewayLogOptions.foreach(__v => __obj.updateDynamic("WirelessGatewayLogOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLogLevelsByResourceTypesResponse]
+    }
+  }
+
+  @js.native
+  trait GetMulticastGroupRequest extends js.Object {
+    var Id: MulticastGroupId
+  }
+
+  object GetMulticastGroupRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId
+    ): GetMulticastGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMulticastGroupRequest]
+    }
+  }
+
+  @js.native
+  trait GetMulticastGroupResponse extends js.Object {
+    var Arn: js.UndefOr[MulticastGroupArn]
+    var CreatedAt: js.UndefOr[CreatedAt]
+    var Description: js.UndefOr[Description]
+    var Id: js.UndefOr[MulticastGroupId]
+    var LoRaWAN: js.UndefOr[LoRaWANMulticastGet]
+    var Name: js.UndefOr[MulticastGroupName]
+    var Status: js.UndefOr[MulticastGroupStatus]
+  }
+
+  object GetMulticastGroupResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[MulticastGroupArn] = js.undefined,
+        CreatedAt: js.UndefOr[CreatedAt] = js.undefined,
+        Description: js.UndefOr[Description] = js.undefined,
+        Id: js.UndefOr[MulticastGroupId] = js.undefined,
+        LoRaWAN: js.UndefOr[LoRaWANMulticastGet] = js.undefined,
+        Name: js.UndefOr[MulticastGroupName] = js.undefined,
+        Status: js.UndefOr[MulticastGroupStatus] = js.undefined
+    ): GetMulticastGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMulticastGroupResponse]
+    }
+  }
+
+  @js.native
+  trait GetMulticastGroupSessionRequest extends js.Object {
+    var Id: MulticastGroupId
+  }
+
+  object GetMulticastGroupSessionRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId
+    ): GetMulticastGroupSessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMulticastGroupSessionRequest]
+    }
+  }
+
+  @js.native
+  trait GetMulticastGroupSessionResponse extends js.Object {
+    var LoRaWAN: js.UndefOr[LoRaWANMulticastSession]
+  }
+
+  object GetMulticastGroupSessionResponse {
+    @inline
+    def apply(
+        LoRaWAN: js.UndefOr[LoRaWANMulticastSession] = js.undefined
+    ): GetMulticastGroupSessionResponse = {
+      val __obj = js.Dynamic.literal()
+      LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMulticastGroupSessionResponse]
+    }
+  }
+
+  @js.native
+  trait GetNetworkAnalyzerConfigurationRequest extends js.Object {
+    var ConfigurationName: NetworkAnalyzerConfigurationName
+  }
+
+  object GetNetworkAnalyzerConfigurationRequest {
+    @inline
+    def apply(
+        ConfigurationName: NetworkAnalyzerConfigurationName
+    ): GetNetworkAnalyzerConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigurationName" -> ConfigurationName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetNetworkAnalyzerConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetNetworkAnalyzerConfigurationResponse extends js.Object {
+    var TraceContent: js.UndefOr[TraceContent]
+    var WirelessDevices: js.UndefOr[WirelessDeviceList]
+    var WirelessGateways: js.UndefOr[WirelessGatewayList]
+  }
+
+  object GetNetworkAnalyzerConfigurationResponse {
+    @inline
+    def apply(
+        TraceContent: js.UndefOr[TraceContent] = js.undefined,
+        WirelessDevices: js.UndefOr[WirelessDeviceList] = js.undefined,
+        WirelessGateways: js.UndefOr[WirelessGatewayList] = js.undefined
+    ): GetNetworkAnalyzerConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      TraceContent.foreach(__v => __obj.updateDynamic("TraceContent")(__v.asInstanceOf[js.Any]))
+      WirelessDevices.foreach(__v => __obj.updateDynamic("WirelessDevices")(__v.asInstanceOf[js.Any]))
+      WirelessGateways.foreach(__v => __obj.updateDynamic("WirelessGateways")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetNetworkAnalyzerConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait GetPartnerAccountRequest extends js.Object {
     var PartnerAccountId: PartnerAccountId
     var PartnerType: PartnerType
@@ -1279,6 +2040,85 @@ package object iotwireless {
       AccountLinked.foreach(__v => __obj.updateDynamic("AccountLinked")(__v.asInstanceOf[js.Any]))
       Sidewalk.foreach(__v => __obj.updateDynamic("Sidewalk")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPartnerAccountResponse]
+    }
+  }
+
+  @js.native
+  trait GetResourceEventConfigurationRequest extends js.Object {
+    var Identifier: Identifier
+    var IdentifierType: IdentifierType
+    var PartnerType: js.UndefOr[EventNotificationPartnerType]
+  }
+
+  object GetResourceEventConfigurationRequest {
+    @inline
+    def apply(
+        Identifier: Identifier,
+        IdentifierType: IdentifierType,
+        PartnerType: js.UndefOr[EventNotificationPartnerType] = js.undefined
+    ): GetResourceEventConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Identifier" -> Identifier.asInstanceOf[js.Any],
+        "IdentifierType" -> IdentifierType.asInstanceOf[js.Any]
+      )
+
+      PartnerType.foreach(__v => __obj.updateDynamic("PartnerType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourceEventConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait GetResourceEventConfigurationResponse extends js.Object {
+    var DeviceRegistrationState: js.UndefOr[DeviceRegistrationStateEventConfiguration]
+    var Proximity: js.UndefOr[ProximityEventConfiguration]
+  }
+
+  object GetResourceEventConfigurationResponse {
+    @inline
+    def apply(
+        DeviceRegistrationState: js.UndefOr[DeviceRegistrationStateEventConfiguration] = js.undefined,
+        Proximity: js.UndefOr[ProximityEventConfiguration] = js.undefined
+    ): GetResourceEventConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      DeviceRegistrationState.foreach(__v => __obj.updateDynamic("DeviceRegistrationState")(__v.asInstanceOf[js.Any]))
+      Proximity.foreach(__v => __obj.updateDynamic("Proximity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourceEventConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait GetResourceLogLevelRequest extends js.Object {
+    var ResourceIdentifier: ResourceIdentifier
+    var ResourceType: ResourceType
+  }
+
+  object GetResourceLogLevelRequest {
+    @inline
+    def apply(
+        ResourceIdentifier: ResourceIdentifier,
+        ResourceType: ResourceType
+    ): GetResourceLogLevelRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetResourceLogLevelRequest]
+    }
+  }
+
+  @js.native
+  trait GetResourceLogLevelResponse extends js.Object {
+    var LogLevel: js.UndefOr[LogLevel]
+  }
+
+  object GetResourceLogLevelResponse {
+    @inline
+    def apply(
+        LogLevel: js.UndefOr[LogLevel] = js.undefined
+    ): GetResourceLogLevelResponse = {
+      val __obj = js.Dynamic.literal()
+      LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetResourceLogLevelResponse]
     }
   }
 
@@ -1793,6 +2633,125 @@ package object iotwireless {
   }
 
   @js.native
+  trait ListFuotaTasksRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFuotaTasksRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFuotaTasksRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFuotaTasksRequest]
+    }
+  }
+
+  @js.native
+  trait ListFuotaTasksResponse extends js.Object {
+    var FuotaTaskList: js.UndefOr[FuotaTaskList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFuotaTasksResponse {
+    @inline
+    def apply(
+        FuotaTaskList: js.UndefOr[FuotaTaskList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFuotaTasksResponse = {
+      val __obj = js.Dynamic.literal()
+      FuotaTaskList.foreach(__v => __obj.updateDynamic("FuotaTaskList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFuotaTasksResponse]
+    }
+  }
+
+  @js.native
+  trait ListMulticastGroupsByFuotaTaskRequest extends js.Object {
+    var Id: FuotaTaskId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMulticastGroupsByFuotaTaskRequest {
+    @inline
+    def apply(
+        Id: FuotaTaskId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMulticastGroupsByFuotaTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMulticastGroupsByFuotaTaskRequest]
+    }
+  }
+
+  @js.native
+  trait ListMulticastGroupsByFuotaTaskResponse extends js.Object {
+    var MulticastGroupList: js.UndefOr[MulticastGroupListByFuotaTask]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMulticastGroupsByFuotaTaskResponse {
+    @inline
+    def apply(
+        MulticastGroupList: js.UndefOr[MulticastGroupListByFuotaTask] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMulticastGroupsByFuotaTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      MulticastGroupList.foreach(__v => __obj.updateDynamic("MulticastGroupList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMulticastGroupsByFuotaTaskResponse]
+    }
+  }
+
+  @js.native
+  trait ListMulticastGroupsRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMulticastGroupsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMulticastGroupsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMulticastGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMulticastGroupsResponse extends js.Object {
+    var MulticastGroupList: js.UndefOr[MulticastGroupList]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListMulticastGroupsResponse {
+    @inline
+    def apply(
+        MulticastGroupList: js.UndefOr[MulticastGroupList] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListMulticastGroupsResponse = {
+      val __obj = js.Dynamic.literal()
+      MulticastGroupList.foreach(__v => __obj.updateDynamic("MulticastGroupList")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMulticastGroupsResponse]
+    }
+  }
+
+  @js.native
   trait ListPartnerAccountsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
@@ -1905,7 +2864,9 @@ package object iotwireless {
   trait ListWirelessDevicesRequest extends js.Object {
     var DestinationName: js.UndefOr[DestinationName]
     var DeviceProfileId: js.UndefOr[DeviceProfileId]
+    var FuotaTaskId: js.UndefOr[FuotaTaskId]
     var MaxResults: js.UndefOr[MaxResults]
+    var MulticastGroupId: js.UndefOr[MulticastGroupId]
     var NextToken: js.UndefOr[NextToken]
     var ServiceProfileId: js.UndefOr[ServiceProfileId]
     var WirelessDeviceType: js.UndefOr[WirelessDeviceType]
@@ -1916,7 +2877,9 @@ package object iotwireless {
     def apply(
         DestinationName: js.UndefOr[DestinationName] = js.undefined,
         DeviceProfileId: js.UndefOr[DeviceProfileId] = js.undefined,
+        FuotaTaskId: js.UndefOr[FuotaTaskId] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        MulticastGroupId: js.UndefOr[MulticastGroupId] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         ServiceProfileId: js.UndefOr[ServiceProfileId] = js.undefined,
         WirelessDeviceType: js.UndefOr[WirelessDeviceType] = js.undefined
@@ -1924,7 +2887,9 @@ package object iotwireless {
       val __obj = js.Dynamic.literal()
       DestinationName.foreach(__v => __obj.updateDynamic("DestinationName")(__v.asInstanceOf[js.Any]))
       DeviceProfileId.foreach(__v => __obj.updateDynamic("DeviceProfileId")(__v.asInstanceOf[js.Any]))
+      FuotaTaskId.foreach(__v => __obj.updateDynamic("FuotaTaskId")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      MulticastGroupId.foreach(__v => __obj.updateDynamic("MulticastGroupId")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       ServiceProfileId.foreach(__v => __obj.updateDynamic("ServiceProfileId")(__v.asInstanceOf[js.Any]))
       WirelessDeviceType.foreach(__v => __obj.updateDynamic("WirelessDeviceType")(__v.asInstanceOf[js.Any]))
@@ -2038,6 +3003,7 @@ package object iotwireless {
     var AbpV1_1: js.UndefOr[AbpV1_1]
     var DevEui: js.UndefOr[DevEui]
     var DeviceProfileId: js.UndefOr[DeviceProfileId]
+    var FPorts: js.UndefOr[FPorts]
     var OtaaV1_0_x: js.UndefOr[OtaaV1_0_x]
     var OtaaV1_1: js.UndefOr[OtaaV1_1]
     var ServiceProfileId: js.UndefOr[ServiceProfileId]
@@ -2050,6 +3016,7 @@ package object iotwireless {
         AbpV1_1: js.UndefOr[AbpV1_1] = js.undefined,
         DevEui: js.UndefOr[DevEui] = js.undefined,
         DeviceProfileId: js.UndefOr[DeviceProfileId] = js.undefined,
+        FPorts: js.UndefOr[FPorts] = js.undefined,
         OtaaV1_0_x: js.UndefOr[OtaaV1_0_x] = js.undefined,
         OtaaV1_1: js.UndefOr[OtaaV1_1] = js.undefined,
         ServiceProfileId: js.UndefOr[ServiceProfileId] = js.undefined
@@ -2059,6 +3026,7 @@ package object iotwireless {
       AbpV1_1.foreach(__v => __obj.updateDynamic("AbpV1_1")(__v.asInstanceOf[js.Any]))
       DevEui.foreach(__v => __obj.updateDynamic("DevEui")(__v.asInstanceOf[js.Any]))
       DeviceProfileId.foreach(__v => __obj.updateDynamic("DeviceProfileId")(__v.asInstanceOf[js.Any]))
+      FPorts.foreach(__v => __obj.updateDynamic("FPorts")(__v.asInstanceOf[js.Any]))
       OtaaV1_0_x.foreach(__v => __obj.updateDynamic("OtaaV1_0_x")(__v.asInstanceOf[js.Any]))
       OtaaV1_1.foreach(__v => __obj.updateDynamic("OtaaV1_1")(__v.asInstanceOf[js.Any]))
       ServiceProfileId.foreach(__v => __obj.updateDynamic("ServiceProfileId")(__v.asInstanceOf[js.Any]))
@@ -2171,23 +3139,71 @@ package object iotwireless {
     }
   }
 
+  /** The LoRaWAN information used with a FUOTA task.
+    */
+  @js.native
+  trait LoRaWANFuotaTask extends js.Object {
+    var RfRegion: js.UndefOr[SupportedRfRegion]
+  }
+
+  object LoRaWANFuotaTask {
+    @inline
+    def apply(
+        RfRegion: js.UndefOr[SupportedRfRegion] = js.undefined
+    ): LoRaWANFuotaTask = {
+      val __obj = js.Dynamic.literal()
+      RfRegion.foreach(__v => __obj.updateDynamic("RfRegion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoRaWANFuotaTask]
+    }
+  }
+
+  /** The LoRaWAN information returned from getting a FUOTA task.
+    */
+  @js.native
+  trait LoRaWANFuotaTaskGetInfo extends js.Object {
+    var RfRegion: js.UndefOr[RfRegion]
+    var StartTime: js.UndefOr[StartTime]
+  }
+
+  object LoRaWANFuotaTaskGetInfo {
+    @inline
+    def apply(
+        RfRegion: js.UndefOr[RfRegion] = js.undefined,
+        StartTime: js.UndefOr[StartTime] = js.undefined
+    ): LoRaWANFuotaTaskGetInfo = {
+      val __obj = js.Dynamic.literal()
+      RfRegion.foreach(__v => __obj.updateDynamic("RfRegion")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoRaWANFuotaTaskGetInfo]
+    }
+  }
+
   /** LoRaWANGateway object.
     */
   @js.native
   trait LoRaWANGateway extends js.Object {
     var GatewayEui: js.UndefOr[GatewayEui]
+    var JoinEuiFilters: js.UndefOr[JoinEuiFilters]
+    var NetIdFilters: js.UndefOr[NetIdFilters]
     var RfRegion: js.UndefOr[RfRegion]
+    var SubBands: js.UndefOr[SubBands]
   }
 
   object LoRaWANGateway {
     @inline
     def apply(
         GatewayEui: js.UndefOr[GatewayEui] = js.undefined,
-        RfRegion: js.UndefOr[RfRegion] = js.undefined
+        JoinEuiFilters: js.UndefOr[JoinEuiFilters] = js.undefined,
+        NetIdFilters: js.UndefOr[NetIdFilters] = js.undefined,
+        RfRegion: js.UndefOr[RfRegion] = js.undefined,
+        SubBands: js.UndefOr[SubBands] = js.undefined
     ): LoRaWANGateway = {
       val __obj = js.Dynamic.literal()
       GatewayEui.foreach(__v => __obj.updateDynamic("GatewayEui")(__v.asInstanceOf[js.Any]))
+      JoinEuiFilters.foreach(__v => __obj.updateDynamic("JoinEuiFilters")(__v.asInstanceOf[js.Any]))
+      NetIdFilters.foreach(__v => __obj.updateDynamic("NetIdFilters")(__v.asInstanceOf[js.Any]))
       RfRegion.foreach(__v => __obj.updateDynamic("RfRegion")(__v.asInstanceOf[js.Any]))
+      SubBands.foreach(__v => __obj.updateDynamic("SubBands")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoRaWANGateway]
     }
   }
@@ -2348,6 +3364,99 @@ package object iotwireless {
     }
   }
 
+  /** The LoRaWAN information that is to be used with the multicast group.
+    */
+  @js.native
+  trait LoRaWANMulticast extends js.Object {
+    var DlClass: js.UndefOr[DlClass]
+    var RfRegion: js.UndefOr[SupportedRfRegion]
+  }
+
+  object LoRaWANMulticast {
+    @inline
+    def apply(
+        DlClass: js.UndefOr[DlClass] = js.undefined,
+        RfRegion: js.UndefOr[SupportedRfRegion] = js.undefined
+    ): LoRaWANMulticast = {
+      val __obj = js.Dynamic.literal()
+      DlClass.foreach(__v => __obj.updateDynamic("DlClass")(__v.asInstanceOf[js.Any]))
+      RfRegion.foreach(__v => __obj.updateDynamic("RfRegion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoRaWANMulticast]
+    }
+  }
+
+  /** The LoRaWAN information that is to be returned from getting multicast group information.
+    */
+  @js.native
+  trait LoRaWANMulticastGet extends js.Object {
+    var DlClass: js.UndefOr[DlClass]
+    var NumberOfDevicesInGroup: js.UndefOr[NumberOfDevicesInGroup]
+    var NumberOfDevicesRequested: js.UndefOr[NumberOfDevicesRequested]
+    var RfRegion: js.UndefOr[SupportedRfRegion]
+  }
+
+  object LoRaWANMulticastGet {
+    @inline
+    def apply(
+        DlClass: js.UndefOr[DlClass] = js.undefined,
+        NumberOfDevicesInGroup: js.UndefOr[NumberOfDevicesInGroup] = js.undefined,
+        NumberOfDevicesRequested: js.UndefOr[NumberOfDevicesRequested] = js.undefined,
+        RfRegion: js.UndefOr[SupportedRfRegion] = js.undefined
+    ): LoRaWANMulticastGet = {
+      val __obj = js.Dynamic.literal()
+      DlClass.foreach(__v => __obj.updateDynamic("DlClass")(__v.asInstanceOf[js.Any]))
+      NumberOfDevicesInGroup.foreach(__v => __obj.updateDynamic("NumberOfDevicesInGroup")(__v.asInstanceOf[js.Any]))
+      NumberOfDevicesRequested.foreach(__v => __obj.updateDynamic("NumberOfDevicesRequested")(__v.asInstanceOf[js.Any]))
+      RfRegion.foreach(__v => __obj.updateDynamic("RfRegion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoRaWANMulticastGet]
+    }
+  }
+
+  /** The metadata information of the LoRaWAN multicast group.
+    */
+  @js.native
+  trait LoRaWANMulticastMetadata extends js.Object {
+    var FPort: js.UndefOr[FPort]
+  }
+
+  object LoRaWANMulticastMetadata {
+    @inline
+    def apply(
+        FPort: js.UndefOr[FPort] = js.undefined
+    ): LoRaWANMulticastMetadata = {
+      val __obj = js.Dynamic.literal()
+      FPort.foreach(__v => __obj.updateDynamic("FPort")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoRaWANMulticastMetadata]
+    }
+  }
+
+  /** The LoRaWAN information used with the multicast session.
+    */
+  @js.native
+  trait LoRaWANMulticastSession extends js.Object {
+    var DlDr: js.UndefOr[DlDr]
+    var DlFreq: js.UndefOr[DlFreq]
+    var SessionStartTime: js.UndefOr[SessionStartTimeTimestamp]
+    var SessionTimeout: js.UndefOr[SessionTimeout]
+  }
+
+  object LoRaWANMulticastSession {
+    @inline
+    def apply(
+        DlDr: js.UndefOr[DlDr] = js.undefined,
+        DlFreq: js.UndefOr[DlFreq] = js.undefined,
+        SessionStartTime: js.UndefOr[SessionStartTimeTimestamp] = js.undefined,
+        SessionTimeout: js.UndefOr[SessionTimeout] = js.undefined
+    ): LoRaWANMulticastSession = {
+      val __obj = js.Dynamic.literal()
+      DlDr.foreach(__v => __obj.updateDynamic("DlDr")(__v.asInstanceOf[js.Any]))
+      DlFreq.foreach(__v => __obj.updateDynamic("DlFreq")(__v.asInstanceOf[js.Any]))
+      SessionStartTime.foreach(__v => __obj.updateDynamic("SessionStartTime")(__v.asInstanceOf[js.Any]))
+      SessionTimeout.foreach(__v => __obj.updateDynamic("SessionTimeout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoRaWANMulticastSession]
+    }
+  }
+
   /** LoRaWAN router info.
     */
   @js.native
@@ -2381,6 +3490,24 @@ package object iotwireless {
       val __obj = js.Dynamic.literal()
       AddGwMetadata.foreach(__v => __obj.updateDynamic("AddGwMetadata")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LoRaWANServiceProfile]
+    }
+  }
+
+  /** The LoRaWAN information used to start a FUOTA task.
+    */
+  @js.native
+  trait LoRaWANStartFuotaTask extends js.Object {
+    var StartTime: js.UndefOr[StartTime]
+  }
+
+  object LoRaWANStartFuotaTask {
+    @inline
+    def apply(
+        StartTime: js.UndefOr[StartTime] = js.undefined
+    ): LoRaWANStartFuotaTask = {
+      val __obj = js.Dynamic.literal()
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LoRaWANStartFuotaTask]
     }
   }
 
@@ -2453,23 +3580,86 @@ package object iotwireless {
     }
   }
 
+  /** A multicast group.
+    */
+  @js.native
+  trait MulticastGroup extends js.Object {
+    var Arn: js.UndefOr[MulticastGroupArn]
+    var Id: js.UndefOr[MulticastGroupId]
+    var Name: js.UndefOr[MulticastGroupName]
+  }
+
+  object MulticastGroup {
+    @inline
+    def apply(
+        Arn: js.UndefOr[MulticastGroupArn] = js.undefined,
+        Id: js.UndefOr[MulticastGroupId] = js.undefined,
+        Name: js.UndefOr[MulticastGroupName] = js.undefined
+    ): MulticastGroup = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MulticastGroup]
+    }
+  }
+
+  /** A multicast group that is associated with a FUOTA task.
+    */
+  @js.native
+  trait MulticastGroupByFuotaTask extends js.Object {
+    var Id: js.UndefOr[MulticastGroupId]
+  }
+
+  object MulticastGroupByFuotaTask {
+    @inline
+    def apply(
+        Id: js.UndefOr[MulticastGroupId] = js.undefined
+    ): MulticastGroupByFuotaTask = {
+      val __obj = js.Dynamic.literal()
+      Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MulticastGroupByFuotaTask]
+    }
+  }
+
+  /** Wireless metadata that is to be sent to multicast group.
+    */
+  @js.native
+  trait MulticastWirelessMetadata extends js.Object {
+    var LoRaWAN: js.UndefOr[LoRaWANMulticastMetadata]
+  }
+
+  object MulticastWirelessMetadata {
+    @inline
+    def apply(
+        LoRaWAN: js.UndefOr[LoRaWANMulticastMetadata] = js.undefined
+    ): MulticastWirelessMetadata = {
+      val __obj = js.Dynamic.literal()
+      LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MulticastWirelessMetadata]
+    }
+  }
+
   /** OTAA device object for v1.0.x
     */
   @js.native
   trait OtaaV1_0_x extends js.Object {
     var AppEui: js.UndefOr[AppEui]
     var AppKey: js.UndefOr[AppKey]
+    var GenAppKey: js.UndefOr[GenAppKey]
   }
 
   object OtaaV1_0_x {
     @inline
     def apply(
         AppEui: js.UndefOr[AppEui] = js.undefined,
-        AppKey: js.UndefOr[AppKey] = js.undefined
+        AppKey: js.UndefOr[AppKey] = js.undefined,
+        GenAppKey: js.UndefOr[GenAppKey] = js.undefined
     ): OtaaV1_0_x = {
       val __obj = js.Dynamic.literal()
       AppEui.foreach(__v => __obj.updateDynamic("AppEui")(__v.asInstanceOf[js.Any]))
       AppKey.foreach(__v => __obj.updateDynamic("AppKey")(__v.asInstanceOf[js.Any]))
+      GenAppKey.foreach(__v => __obj.updateDynamic("GenAppKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OtaaV1_0_x]
     }
   }
@@ -2495,6 +3685,150 @@ package object iotwireless {
       JoinEui.foreach(__v => __obj.updateDynamic("JoinEui")(__v.asInstanceOf[js.Any]))
       NwkKey.foreach(__v => __obj.updateDynamic("NwkKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OtaaV1_1]
+    }
+  }
+
+  /** Proximity event configuration object for enabling and disabling relevant topics.
+    */
+  @js.native
+  trait ProximityEventConfiguration extends js.Object {
+    var Sidewalk: js.UndefOr[SidewalkEventNotificationConfigurations]
+  }
+
+  object ProximityEventConfiguration {
+    @inline
+    def apply(
+        Sidewalk: js.UndefOr[SidewalkEventNotificationConfigurations] = js.undefined
+    ): ProximityEventConfiguration = {
+      val __obj = js.Dynamic.literal()
+      Sidewalk.foreach(__v => __obj.updateDynamic("Sidewalk")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProximityEventConfiguration]
+    }
+  }
+
+  @js.native
+  trait PutResourceLogLevelRequest extends js.Object {
+    var LogLevel: LogLevel
+    var ResourceIdentifier: ResourceIdentifier
+    var ResourceType: ResourceType
+  }
+
+  object PutResourceLogLevelRequest {
+    @inline
+    def apply(
+        LogLevel: LogLevel,
+        ResourceIdentifier: ResourceIdentifier,
+        ResourceType: ResourceType
+    ): PutResourceLogLevelRequest = {
+      val __obj = js.Dynamic.literal(
+        "LogLevel" -> LogLevel.asInstanceOf[js.Any],
+        "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutResourceLogLevelRequest]
+    }
+  }
+
+  @js.native
+  trait PutResourceLogLevelResponse extends js.Object
+
+  object PutResourceLogLevelResponse {
+    @inline
+    def apply(): PutResourceLogLevelResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutResourceLogLevelResponse]
+    }
+  }
+
+  @js.native
+  trait ResetAllResourceLogLevelsRequest extends js.Object
+
+  object ResetAllResourceLogLevelsRequest {
+    @inline
+    def apply(): ResetAllResourceLogLevelsRequest = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[ResetAllResourceLogLevelsRequest]
+    }
+  }
+
+  @js.native
+  trait ResetAllResourceLogLevelsResponse extends js.Object
+
+  object ResetAllResourceLogLevelsResponse {
+    @inline
+    def apply(): ResetAllResourceLogLevelsResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[ResetAllResourceLogLevelsResponse]
+    }
+  }
+
+  @js.native
+  trait ResetResourceLogLevelRequest extends js.Object {
+    var ResourceIdentifier: ResourceIdentifier
+    var ResourceType: ResourceType
+  }
+
+  object ResetResourceLogLevelRequest {
+    @inline
+    def apply(
+        ResourceIdentifier: ResourceIdentifier,
+        ResourceType: ResourceType
+    ): ResetResourceLogLevelRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceIdentifier" -> ResourceIdentifier.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ResetResourceLogLevelRequest]
+    }
+  }
+
+  @js.native
+  trait ResetResourceLogLevelResponse extends js.Object
+
+  object ResetResourceLogLevelResponse {
+    @inline
+    def apply(): ResetResourceLogLevelResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[ResetResourceLogLevelResponse]
+    }
+  }
+
+  @js.native
+  trait SendDataToMulticastGroupRequest extends js.Object {
+    var Id: MulticastGroupId
+    var PayloadData: PayloadData
+    var WirelessMetadata: MulticastWirelessMetadata
+  }
+
+  object SendDataToMulticastGroupRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId,
+        PayloadData: PayloadData,
+        WirelessMetadata: MulticastWirelessMetadata
+    ): SendDataToMulticastGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "PayloadData" -> PayloadData.asInstanceOf[js.Any],
+        "WirelessMetadata" -> WirelessMetadata.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SendDataToMulticastGroupRequest]
+    }
+  }
+
+  @js.native
+  trait SendDataToMulticastGroupResponse extends js.Object {
+    var MessageId: js.UndefOr[MulticastGroupMessageId]
+  }
+
+  object SendDataToMulticastGroupResponse {
+    @inline
+    def apply(
+        MessageId: js.UndefOr[MulticastGroupMessageId] = js.undefined
+    ): SendDataToMulticastGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      MessageId.foreach(__v => __obj.updateDynamic("MessageId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendDataToMulticastGroupResponse]
     }
   }
 
@@ -2662,6 +3996,7 @@ package object iotwireless {
     */
   @js.native
   trait SidewalkDevice extends js.Object {
+    var AmazonId: js.UndefOr[AmazonId]
     var DeviceCertificates: js.UndefOr[DeviceCertificateList]
     var SidewalkId: js.UndefOr[SidewalkId]
     var SidewalkManufacturingSn: js.UndefOr[SidewalkManufacturingSn]
@@ -2670,11 +4005,13 @@ package object iotwireless {
   object SidewalkDevice {
     @inline
     def apply(
+        AmazonId: js.UndefOr[AmazonId] = js.undefined,
         DeviceCertificates: js.UndefOr[DeviceCertificateList] = js.undefined,
         SidewalkId: js.UndefOr[SidewalkId] = js.undefined,
         SidewalkManufacturingSn: js.UndefOr[SidewalkManufacturingSn] = js.undefined
     ): SidewalkDevice = {
       val __obj = js.Dynamic.literal()
+      AmazonId.foreach(__v => __obj.updateDynamic("AmazonId")(__v.asInstanceOf[js.Any]))
       DeviceCertificates.foreach(__v => __obj.updateDynamic("DeviceCertificates")(__v.asInstanceOf[js.Any]))
       SidewalkId.foreach(__v => __obj.updateDynamic("SidewalkId")(__v.asInstanceOf[js.Any]))
       SidewalkManufacturingSn.foreach(__v => __obj.updateDynamic("SidewalkManufacturingSn")(__v.asInstanceOf[js.Any]))
@@ -2709,6 +4046,24 @@ package object iotwireless {
     }
   }
 
+  /** SidewalkEventNotificationConfigurations object Event configuration object for Sidewalk related event topics.
+    */
+  @js.native
+  trait SidewalkEventNotificationConfigurations extends js.Object {
+    var AmazonIdEventTopic: js.UndefOr[EventNotificationTopicStatus]
+  }
+
+  object SidewalkEventNotificationConfigurations {
+    @inline
+    def apply(
+        AmazonIdEventTopic: js.UndefOr[EventNotificationTopicStatus] = js.undefined
+    ): SidewalkEventNotificationConfigurations = {
+      val __obj = js.Dynamic.literal()
+      AmazonIdEventTopic.foreach(__v => __obj.updateDynamic("AmazonIdEventTopic")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SidewalkEventNotificationConfigurations]
+    }
+  }
+
   /** Sidewalk object used by list functions.
     */
   @js.native
@@ -2740,15 +4095,18 @@ package object iotwireless {
     */
   @js.native
   trait SidewalkSendDataToDevice extends js.Object {
+    var MessageType: js.UndefOr[MessageType]
     var Seq: js.UndefOr[Seq]
   }
 
   object SidewalkSendDataToDevice {
     @inline
     def apply(
+        MessageType: js.UndefOr[MessageType] = js.undefined,
         Seq: js.UndefOr[Seq] = js.undefined
     ): SidewalkSendDataToDevice = {
       val __obj = js.Dynamic.literal()
+      MessageType.foreach(__v => __obj.updateDynamic("MessageType")(__v.asInstanceOf[js.Any]))
       Seq.foreach(__v => __obj.updateDynamic("Seq")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SidewalkSendDataToDevice]
     }
@@ -2769,6 +4127,139 @@ package object iotwireless {
       val __obj = js.Dynamic.literal()
       AppServerPrivateKey.foreach(__v => __obj.updateDynamic("AppServerPrivateKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SidewalkUpdateAccount]
+    }
+  }
+
+  @js.native
+  trait StartBulkAssociateWirelessDeviceWithMulticastGroupRequest extends js.Object {
+    var Id: MulticastGroupId
+    var QueryString: js.UndefOr[QueryString]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object StartBulkAssociateWirelessDeviceWithMulticastGroupRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId,
+        QueryString: js.UndefOr[QueryString] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): StartBulkAssociateWirelessDeviceWithMulticastGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      QueryString.foreach(__v => __obj.updateDynamic("QueryString")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartBulkAssociateWirelessDeviceWithMulticastGroupRequest]
+    }
+  }
+
+  @js.native
+  trait StartBulkAssociateWirelessDeviceWithMulticastGroupResponse extends js.Object
+
+  object StartBulkAssociateWirelessDeviceWithMulticastGroupResponse {
+    @inline
+    def apply(): StartBulkAssociateWirelessDeviceWithMulticastGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[StartBulkAssociateWirelessDeviceWithMulticastGroupResponse]
+    }
+  }
+
+  @js.native
+  trait StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest extends js.Object {
+    var Id: MulticastGroupId
+    var QueryString: js.UndefOr[QueryString]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId,
+        QueryString: js.UndefOr[QueryString] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      QueryString.foreach(__v => __obj.updateDynamic("QueryString")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest]
+    }
+  }
+
+  @js.native
+  trait StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse extends js.Object
+
+  object StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse {
+    @inline
+    def apply(): StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[StartBulkDisassociateWirelessDeviceFromMulticastGroupResponse]
+    }
+  }
+
+  @js.native
+  trait StartFuotaTaskRequest extends js.Object {
+    var Id: FuotaTaskId
+    var LoRaWAN: js.UndefOr[LoRaWANStartFuotaTask]
+  }
+
+  object StartFuotaTaskRequest {
+    @inline
+    def apply(
+        Id: FuotaTaskId,
+        LoRaWAN: js.UndefOr[LoRaWANStartFuotaTask] = js.undefined
+    ): StartFuotaTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartFuotaTaskRequest]
+    }
+  }
+
+  @js.native
+  trait StartFuotaTaskResponse extends js.Object
+
+  object StartFuotaTaskResponse {
+    @inline
+    def apply(): StartFuotaTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[StartFuotaTaskResponse]
+    }
+  }
+
+  @js.native
+  trait StartMulticastGroupSessionRequest extends js.Object {
+    var Id: MulticastGroupId
+    var LoRaWAN: LoRaWANMulticastSession
+  }
+
+  object StartMulticastGroupSessionRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId,
+        LoRaWAN: LoRaWANMulticastSession
+    ): StartMulticastGroupSessionRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any],
+        "LoRaWAN" -> LoRaWAN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StartMulticastGroupSessionRequest]
+    }
+  }
+
+  @js.native
+  trait StartMulticastGroupSessionResponse extends js.Object
+
+  object StartMulticastGroupSessionResponse {
+    @inline
+    def apply(): StartMulticastGroupSessionResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[StartMulticastGroupSessionResponse]
     }
   }
 
@@ -2858,6 +4349,27 @@ package object iotwireless {
     }
   }
 
+  /** Trace Content for resources.
+    */
+  @js.native
+  trait TraceContent extends js.Object {
+    var LogLevel: js.UndefOr[LogLevel]
+    var WirelessDeviceFrameInfo: js.UndefOr[WirelessDeviceFrameInfo]
+  }
+
+  object TraceContent {
+    @inline
+    def apply(
+        LogLevel: js.UndefOr[LogLevel] = js.undefined,
+        WirelessDeviceFrameInfo: js.UndefOr[WirelessDeviceFrameInfo] = js.undefined
+    ): TraceContent = {
+      val __obj = js.Dynamic.literal()
+      LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      WirelessDeviceFrameInfo.foreach(__v => __obj.updateDynamic("WirelessDeviceFrameInfo")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TraceContent]
+    }
+  }
+
   @js.native
   trait UntagResourceRequest extends js.Object {
     var ResourceArn: AmazonResourceName
@@ -2931,6 +4443,165 @@ package object iotwireless {
   }
 
   @js.native
+  trait UpdateFuotaTaskRequest extends js.Object {
+    var Id: FuotaTaskId
+    var Description: js.UndefOr[Description]
+    var FirmwareUpdateImage: js.UndefOr[FirmwareUpdateImage]
+    var FirmwareUpdateRole: js.UndefOr[FirmwareUpdateRole]
+    var LoRaWAN: js.UndefOr[LoRaWANFuotaTask]
+    var Name: js.UndefOr[FuotaTaskName]
+  }
+
+  object UpdateFuotaTaskRequest {
+    @inline
+    def apply(
+        Id: FuotaTaskId,
+        Description: js.UndefOr[Description] = js.undefined,
+        FirmwareUpdateImage: js.UndefOr[FirmwareUpdateImage] = js.undefined,
+        FirmwareUpdateRole: js.UndefOr[FirmwareUpdateRole] = js.undefined,
+        LoRaWAN: js.UndefOr[LoRaWANFuotaTask] = js.undefined,
+        Name: js.UndefOr[FuotaTaskName] = js.undefined
+    ): UpdateFuotaTaskRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      FirmwareUpdateImage.foreach(__v => __obj.updateDynamic("FirmwareUpdateImage")(__v.asInstanceOf[js.Any]))
+      FirmwareUpdateRole.foreach(__v => __obj.updateDynamic("FirmwareUpdateRole")(__v.asInstanceOf[js.Any]))
+      LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFuotaTaskRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateFuotaTaskResponse extends js.Object
+
+  object UpdateFuotaTaskResponse {
+    @inline
+    def apply(): UpdateFuotaTaskResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateFuotaTaskResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateLogLevelsByResourceTypesRequest extends js.Object {
+    var DefaultLogLevel: js.UndefOr[LogLevel]
+    var WirelessDeviceLogOptions: js.UndefOr[WirelessDeviceLogOptionList]
+    var WirelessGatewayLogOptions: js.UndefOr[WirelessGatewayLogOptionList]
+  }
+
+  object UpdateLogLevelsByResourceTypesRequest {
+    @inline
+    def apply(
+        DefaultLogLevel: js.UndefOr[LogLevel] = js.undefined,
+        WirelessDeviceLogOptions: js.UndefOr[WirelessDeviceLogOptionList] = js.undefined,
+        WirelessGatewayLogOptions: js.UndefOr[WirelessGatewayLogOptionList] = js.undefined
+    ): UpdateLogLevelsByResourceTypesRequest = {
+      val __obj = js.Dynamic.literal()
+      DefaultLogLevel.foreach(__v => __obj.updateDynamic("DefaultLogLevel")(__v.asInstanceOf[js.Any]))
+      WirelessDeviceLogOptions.foreach(__v => __obj.updateDynamic("WirelessDeviceLogOptions")(__v.asInstanceOf[js.Any]))
+      WirelessGatewayLogOptions.foreach(__v => __obj.updateDynamic("WirelessGatewayLogOptions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateLogLevelsByResourceTypesRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateLogLevelsByResourceTypesResponse extends js.Object
+
+  object UpdateLogLevelsByResourceTypesResponse {
+    @inline
+    def apply(): UpdateLogLevelsByResourceTypesResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateLogLevelsByResourceTypesResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateMulticastGroupRequest extends js.Object {
+    var Id: MulticastGroupId
+    var Description: js.UndefOr[Description]
+    var LoRaWAN: js.UndefOr[LoRaWANMulticast]
+    var Name: js.UndefOr[MulticastGroupName]
+  }
+
+  object UpdateMulticastGroupRequest {
+    @inline
+    def apply(
+        Id: MulticastGroupId,
+        Description: js.UndefOr[Description] = js.undefined,
+        LoRaWAN: js.UndefOr[LoRaWANMulticast] = js.undefined,
+        Name: js.UndefOr[MulticastGroupName] = js.undefined
+    ): UpdateMulticastGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMulticastGroupRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateMulticastGroupResponse extends js.Object
+
+  object UpdateMulticastGroupResponse {
+    @inline
+    def apply(): UpdateMulticastGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateMulticastGroupResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateNetworkAnalyzerConfigurationRequest extends js.Object {
+    var ConfigurationName: NetworkAnalyzerConfigurationName
+    var TraceContent: js.UndefOr[TraceContent]
+    var WirelessDevicesToAdd: js.UndefOr[WirelessDeviceList]
+    var WirelessDevicesToRemove: js.UndefOr[WirelessDeviceList]
+    var WirelessGatewaysToAdd: js.UndefOr[WirelessGatewayList]
+    var WirelessGatewaysToRemove: js.UndefOr[WirelessGatewayList]
+  }
+
+  object UpdateNetworkAnalyzerConfigurationRequest {
+    @inline
+    def apply(
+        ConfigurationName: NetworkAnalyzerConfigurationName,
+        TraceContent: js.UndefOr[TraceContent] = js.undefined,
+        WirelessDevicesToAdd: js.UndefOr[WirelessDeviceList] = js.undefined,
+        WirelessDevicesToRemove: js.UndefOr[WirelessDeviceList] = js.undefined,
+        WirelessGatewaysToAdd: js.UndefOr[WirelessGatewayList] = js.undefined,
+        WirelessGatewaysToRemove: js.UndefOr[WirelessGatewayList] = js.undefined
+    ): UpdateNetworkAnalyzerConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ConfigurationName" -> ConfigurationName.asInstanceOf[js.Any]
+      )
+
+      TraceContent.foreach(__v => __obj.updateDynamic("TraceContent")(__v.asInstanceOf[js.Any]))
+      WirelessDevicesToAdd.foreach(__v => __obj.updateDynamic("WirelessDevicesToAdd")(__v.asInstanceOf[js.Any]))
+      WirelessDevicesToRemove.foreach(__v => __obj.updateDynamic("WirelessDevicesToRemove")(__v.asInstanceOf[js.Any]))
+      WirelessGatewaysToAdd.foreach(__v => __obj.updateDynamic("WirelessGatewaysToAdd")(__v.asInstanceOf[js.Any]))
+      WirelessGatewaysToRemove.foreach(__v => __obj.updateDynamic("WirelessGatewaysToRemove")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateNetworkAnalyzerConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateNetworkAnalyzerConfigurationResponse extends js.Object
+
+  object UpdateNetworkAnalyzerConfigurationResponse {
+    @inline
+    def apply(): UpdateNetworkAnalyzerConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateNetworkAnalyzerConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait UpdatePartnerAccountRequest extends js.Object {
     var PartnerAccountId: PartnerAccountId
     var PartnerType: PartnerType
@@ -2961,6 +4632,47 @@ package object iotwireless {
     def apply(): UpdatePartnerAccountResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[UpdatePartnerAccountResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateResourceEventConfigurationRequest extends js.Object {
+    var Identifier: Identifier
+    var IdentifierType: IdentifierType
+    var DeviceRegistrationState: js.UndefOr[DeviceRegistrationStateEventConfiguration]
+    var PartnerType: js.UndefOr[EventNotificationPartnerType]
+    var Proximity: js.UndefOr[ProximityEventConfiguration]
+  }
+
+  object UpdateResourceEventConfigurationRequest {
+    @inline
+    def apply(
+        Identifier: Identifier,
+        IdentifierType: IdentifierType,
+        DeviceRegistrationState: js.UndefOr[DeviceRegistrationStateEventConfiguration] = js.undefined,
+        PartnerType: js.UndefOr[EventNotificationPartnerType] = js.undefined,
+        Proximity: js.UndefOr[ProximityEventConfiguration] = js.undefined
+    ): UpdateResourceEventConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "Identifier" -> Identifier.asInstanceOf[js.Any],
+        "IdentifierType" -> IdentifierType.asInstanceOf[js.Any]
+      )
+
+      DeviceRegistrationState.foreach(__v => __obj.updateDynamic("DeviceRegistrationState")(__v.asInstanceOf[js.Any]))
+      PartnerType.foreach(__v => __obj.updateDynamic("PartnerType")(__v.asInstanceOf[js.Any]))
+      Proximity.foreach(__v => __obj.updateDynamic("Proximity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateResourceEventConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateResourceEventConfigurationResponse extends js.Object
+
+  object UpdateResourceEventConfigurationResponse {
+    @inline
+    def apply(): UpdateResourceEventConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateResourceEventConfigurationResponse]
     }
   }
 
@@ -3009,7 +4721,9 @@ package object iotwireless {
   trait UpdateWirelessGatewayRequest extends js.Object {
     var Id: WirelessGatewayId
     var Description: js.UndefOr[Description]
+    var JoinEuiFilters: js.UndefOr[JoinEuiFilters]
     var Name: js.UndefOr[WirelessGatewayName]
+    var NetIdFilters: js.UndefOr[NetIdFilters]
   }
 
   object UpdateWirelessGatewayRequest {
@@ -3017,14 +4731,18 @@ package object iotwireless {
     def apply(
         Id: WirelessGatewayId,
         Description: js.UndefOr[Description] = js.undefined,
-        Name: js.UndefOr[WirelessGatewayName] = js.undefined
+        JoinEuiFilters: js.UndefOr[JoinEuiFilters] = js.undefined,
+        Name: js.UndefOr[WirelessGatewayName] = js.undefined,
+        NetIdFilters: js.UndefOr[NetIdFilters] = js.undefined
     ): UpdateWirelessGatewayRequest = {
       val __obj = js.Dynamic.literal(
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      JoinEuiFilters.foreach(__v => __obj.updateDynamic("JoinEuiFilters")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      NetIdFilters.foreach(__v => __obj.updateDynamic("NetIdFilters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateWirelessGatewayRequest]
     }
   }
@@ -3088,15 +4806,66 @@ package object iotwireless {
     }
   }
 
+  /** The log options for a wireless device event and can be used to set log levels for a specific wireless device event. For a LoRaWAN device, possible events for a log messsage are: <code>Join</code>, <code>Rejoin</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>. For a Sidewalk device, possible events for a log message are <code>Registration</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>.
+    */
+  @js.native
+  trait WirelessDeviceEventLogOption extends js.Object {
+    var Event: WirelessDeviceEvent
+    var LogLevel: LogLevel
+  }
+
+  object WirelessDeviceEventLogOption {
+    @inline
+    def apply(
+        Event: WirelessDeviceEvent,
+        LogLevel: LogLevel
+    ): WirelessDeviceEventLogOption = {
+      val __obj = js.Dynamic.literal(
+        "Event" -> Event.asInstanceOf[js.Any],
+        "LogLevel" -> LogLevel.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[WirelessDeviceEventLogOption]
+    }
+  }
+
+  /** The log options for wireless devices and can be used to set log levels for a specific type of wireless device.
+    */
+  @js.native
+  trait WirelessDeviceLogOption extends js.Object {
+    var LogLevel: LogLevel
+    var Type: WirelessDeviceType
+    var Events: js.UndefOr[WirelessDeviceEventLogOptionList]
+  }
+
+  object WirelessDeviceLogOption {
+    @inline
+    def apply(
+        LogLevel: LogLevel,
+        Type: WirelessDeviceType,
+        Events: js.UndefOr[WirelessDeviceEventLogOptionList] = js.undefined
+    ): WirelessDeviceLogOption = {
+      val __obj = js.Dynamic.literal(
+        "LogLevel" -> LogLevel.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WirelessDeviceLogOption]
+    }
+  }
+
   /** Information about a wireless device's operation.
     */
   @js.native
   trait WirelessDeviceStatistics extends js.Object {
     var Arn: js.UndefOr[WirelessDeviceArn]
     var DestinationName: js.UndefOr[DestinationName]
+    var FuotaDeviceStatus: js.UndefOr[FuotaDeviceStatus]
     var Id: js.UndefOr[WirelessDeviceId]
     var LastUplinkReceivedAt: js.UndefOr[ISODateTimeString]
     var LoRaWAN: js.UndefOr[LoRaWANListDevice]
+    var McGroupId: js.UndefOr[McGroupId]
+    var MulticastDeviceStatus: js.UndefOr[MulticastDeviceStatus]
     var Name: js.UndefOr[WirelessDeviceName]
     var Sidewalk: js.UndefOr[SidewalkListDevice]
     var Type: js.UndefOr[WirelessDeviceType]
@@ -3107,9 +4876,12 @@ package object iotwireless {
     def apply(
         Arn: js.UndefOr[WirelessDeviceArn] = js.undefined,
         DestinationName: js.UndefOr[DestinationName] = js.undefined,
+        FuotaDeviceStatus: js.UndefOr[FuotaDeviceStatus] = js.undefined,
         Id: js.UndefOr[WirelessDeviceId] = js.undefined,
         LastUplinkReceivedAt: js.UndefOr[ISODateTimeString] = js.undefined,
         LoRaWAN: js.UndefOr[LoRaWANListDevice] = js.undefined,
+        McGroupId: js.UndefOr[McGroupId] = js.undefined,
+        MulticastDeviceStatus: js.UndefOr[MulticastDeviceStatus] = js.undefined,
         Name: js.UndefOr[WirelessDeviceName] = js.undefined,
         Sidewalk: js.UndefOr[SidewalkListDevice] = js.undefined,
         Type: js.UndefOr[WirelessDeviceType] = js.undefined
@@ -3117,13 +4889,64 @@ package object iotwireless {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       DestinationName.foreach(__v => __obj.updateDynamic("DestinationName")(__v.asInstanceOf[js.Any]))
+      FuotaDeviceStatus.foreach(__v => __obj.updateDynamic("FuotaDeviceStatus")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       LastUplinkReceivedAt.foreach(__v => __obj.updateDynamic("LastUplinkReceivedAt")(__v.asInstanceOf[js.Any]))
       LoRaWAN.foreach(__v => __obj.updateDynamic("LoRaWAN")(__v.asInstanceOf[js.Any]))
+      McGroupId.foreach(__v => __obj.updateDynamic("McGroupId")(__v.asInstanceOf[js.Any]))
+      MulticastDeviceStatus.foreach(__v => __obj.updateDynamic("MulticastDeviceStatus")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Sidewalk.foreach(__v => __obj.updateDynamic("Sidewalk")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WirelessDeviceStatistics]
+    }
+  }
+
+  /** The log options for a wireless gateway event and can be used to set log levels for a specific wireless gateway event. For a LoRaWAN gateway, possible events for a log message are <code>CUPS_Request</code> and <code>Certificate</code>.
+    */
+  @js.native
+  trait WirelessGatewayEventLogOption extends js.Object {
+    var Event: WirelessGatewayEvent
+    var LogLevel: LogLevel
+  }
+
+  object WirelessGatewayEventLogOption {
+    @inline
+    def apply(
+        Event: WirelessGatewayEvent,
+        LogLevel: LogLevel
+    ): WirelessGatewayEventLogOption = {
+      val __obj = js.Dynamic.literal(
+        "Event" -> Event.asInstanceOf[js.Any],
+        "LogLevel" -> LogLevel.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[WirelessGatewayEventLogOption]
+    }
+  }
+
+  /** The log options for wireless gateways and can be used to set log levels for a specific type of wireless gateway.
+    */
+  @js.native
+  trait WirelessGatewayLogOption extends js.Object {
+    var LogLevel: LogLevel
+    var Type: WirelessGatewayType
+    var Events: js.UndefOr[WirelessGatewayEventLogOptionList]
+  }
+
+  object WirelessGatewayLogOption {
+    @inline
+    def apply(
+        LogLevel: LogLevel,
+        Type: WirelessGatewayType,
+        Events: js.UndefOr[WirelessGatewayEventLogOptionList] = js.undefined
+    ): WirelessGatewayLogOption = {
+      val __obj = js.Dynamic.literal(
+        "LogLevel" -> LogLevel.asInstanceOf[js.Any],
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Events.foreach(__v => __obj.updateDynamic("Events")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[WirelessGatewayLogOption]
     }
   }
 

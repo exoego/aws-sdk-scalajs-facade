@@ -471,7 +471,7 @@ package object iam {
     }
   }
 
-  /** An object that contains details about when a principal in the reported AWS Organizations entity last attempted to access an AWS service. A principal can be an IAM user, an IAM role, or the AWS account root user within the reported Organizations entity. This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.
+  /** An object that contains details about when a principal in the reported Organizations entity last attempted to access an Amazon Web Services service. A principal can be an IAM user, an IAM role, or the Amazon Web Services account root user within the reported Organizations entity. This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.
     */
   @js.native
   trait AccessDetail extends js.Object {
@@ -506,7 +506,7 @@ package object iam {
     }
   }
 
-  /** Contains information about an AWS access key. This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations.
+  /** Contains information about an Amazon Web Services access key. This data type is used as a response element in the <a>CreateAccessKey</a> and <a>ListAccessKeys</a> operations.
     *
     * '''Note:'''The <code>SecretAccessKey</code> value is returned only in response to <a>CreateAccessKey</a>. You can get a secret access key only when you first create an access key; you cannot recover the secret access key later. If you lose a secret access key, you must create a new access key.
     */
@@ -540,7 +540,7 @@ package object iam {
     }
   }
 
-  /** Contains information about the last time an AWS access key was used since IAM began tracking this information on April 22, 2015. This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.
+  /** Contains information about the last time an Amazon Web Services access key was used since IAM began tracking this information on April 22, 2015. This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.
     */
   @js.native
   trait AccessKeyLastUsed extends js.Object {
@@ -565,7 +565,7 @@ package object iam {
     }
   }
 
-  /** Contains information about an AWS access key, without its secret key. This data type is used as a response element in the <a>ListAccessKeys</a> operation.
+  /** Contains information about an Amazon Web Services access key, without its secret key. This data type is used as a response element in the <a>ListAccessKeys</a> operation.
     */
   @js.native
   trait AccessKeyMetadata extends js.Object {
@@ -1923,7 +1923,7 @@ package object iam {
     }
   }
 
-  /** An object that contains details about when the IAM entities (users or roles) were last used in an attempt to access the specified AWS service. This data type is a response element in the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
+  /** An object that contains details about when the IAM entities (users or roles) were last used in an attempt to access the specified Amazon Web Services service. This data type is a response element in the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.
     */
   @js.native
   trait EntityDetails extends js.Object {

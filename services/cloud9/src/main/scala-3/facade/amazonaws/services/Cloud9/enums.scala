@@ -42,6 +42,14 @@ object EnvironmentType {
   inline def values: js.Array[EnvironmentType] = js.Array(ssh, ec2)
 }
 
+type ManagedCredentialsAction = "ENABLE" | "DISABLE"
+object ManagedCredentialsAction {
+  inline val ENABLE: "ENABLE" = "ENABLE"
+  inline val DISABLE: "DISABLE" = "DISABLE"
+
+  inline def values: js.Array[ManagedCredentialsAction] = js.Array(ENABLE, DISABLE)
+}
+
 type ManagedCredentialsStatus = "ENABLED_ON_CREATE" | "ENABLED_BY_OWNER" | "DISABLED_BY_DEFAULT" | "DISABLED_BY_OWNER" | "DISABLED_BY_COLLABORATOR" | "PENDING_REMOVAL_BY_COLLABORATOR" | "PENDING_START_REMOVAL_BY_COLLABORATOR" | "PENDING_REMOVAL_BY_OWNER" | "PENDING_START_REMOVAL_BY_OWNER" | "FAILED_REMOVAL_BY_COLLABORATOR" | "FAILED_REMOVAL_BY_OWNER"
 object ManagedCredentialsStatus {
   inline val ENABLED_ON_CREATE: "ENABLED_ON_CREATE" = "ENABLED_ON_CREATE"

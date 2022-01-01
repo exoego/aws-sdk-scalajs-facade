@@ -11,7 +11,7 @@ object ChangeServerLifeCycleStateSourceServerLifecycleState {
   inline def values: js.Array[ChangeServerLifeCycleStateSourceServerLifecycleState] = js.Array(READY_FOR_TEST, READY_FOR_CUTOVER, CUTOVER)
 }
 
-type DataReplicationErrorString = "AGENT_NOT_SEEN" | "SNAPSHOTS_FAILURE" | "NOT_CONVERGING" | "UNSTABLE_NETWORK" | "FAILED_TO_CREATE_SECURITY_GROUP" | "FAILED_TO_LAUNCH_REPLICATION_SERVER" | "FAILED_TO_BOOT_REPLICATION_SERVER" | "FAILED_TO_AUTHENTICATE_WITH_SERVICE" | "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" | "FAILED_TO_CREATE_STAGING_DISKS" | "FAILED_TO_ATTACH_STAGING_DISKS" | "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" | "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" | "FAILED_TO_START_DATA_TRANSFER"
+type DataReplicationErrorString = "AGENT_NOT_SEEN" | "SNAPSHOTS_FAILURE" | "NOT_CONVERGING" | "UNSTABLE_NETWORK" | "FAILED_TO_CREATE_SECURITY_GROUP" | "FAILED_TO_LAUNCH_REPLICATION_SERVER" | "FAILED_TO_BOOT_REPLICATION_SERVER" | "FAILED_TO_AUTHENTICATE_WITH_SERVICE" | "FAILED_TO_DOWNLOAD_REPLICATION_SOFTWARE" | "FAILED_TO_CREATE_STAGING_DISKS" | "FAILED_TO_ATTACH_STAGING_DISKS" | "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" | "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" | "FAILED_TO_START_DATA_TRANSFER" | "UNSUPPORTED_VM_CONFIGURATION" | "LAST_SNAPSHOT_JOB_FAILED"
 object DataReplicationErrorString {
   inline val AGENT_NOT_SEEN: "AGENT_NOT_SEEN" = "AGENT_NOT_SEEN"
   inline val SNAPSHOTS_FAILURE: "SNAPSHOTS_FAILURE" = "SNAPSHOTS_FAILURE"
@@ -27,6 +27,8 @@ object DataReplicationErrorString {
   inline val FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT: "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT" = "FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT"
   inline val FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER: "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER" = "FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER"
   inline val FAILED_TO_START_DATA_TRANSFER: "FAILED_TO_START_DATA_TRANSFER" = "FAILED_TO_START_DATA_TRANSFER"
+  inline val UNSUPPORTED_VM_CONFIGURATION: "UNSUPPORTED_VM_CONFIGURATION" = "UNSUPPORTED_VM_CONFIGURATION"
+  inline val LAST_SNAPSHOT_JOB_FAILED: "LAST_SNAPSHOT_JOB_FAILED" = "LAST_SNAPSHOT_JOB_FAILED"
 
   inline def values: js.Array[DataReplicationErrorString] = js.Array(
     AGENT_NOT_SEEN,
@@ -42,7 +44,9 @@ object DataReplicationErrorString {
     FAILED_TO_ATTACH_STAGING_DISKS,
     FAILED_TO_PAIR_REPLICATION_SERVER_WITH_AGENT,
     FAILED_TO_CONNECT_AGENT_TO_REPLICATION_SERVER,
-    FAILED_TO_START_DATA_TRANSFER
+    FAILED_TO_START_DATA_TRANSFER,
+    UNSUPPORTED_VM_CONFIGURATION,
+    LAST_SNAPSHOT_JOB_FAILED
   )
 }
 
@@ -86,7 +90,7 @@ object DataReplicationInitiationStepStatus {
   inline def values: js.Array[DataReplicationInitiationStepStatus] = js.Array(NOT_STARTED, IN_PROGRESS, SUCCEEDED, FAILED, SKIPPED)
 }
 
-type DataReplicationState = "STOPPED" | "INITIATING" | "INITIAL_SYNC" | "BACKLOG" | "CREATING_SNAPSHOT" | "CONTINUOUS" | "PAUSED" | "RESCAN" | "STALLED" | "DISCONNECTED"
+type DataReplicationState = "STOPPED" | "INITIATING" | "INITIAL_SYNC" | "BACKLOG" | "CREATING_SNAPSHOT" | "CONTINUOUS" | "PAUSED" | "RESCAN" | "STALLED" | "DISCONNECTED" | "PENDING_SNAPSHOT_SHIPPING" | "SHIPPING_SNAPSHOT"
 object DataReplicationState {
   inline val STOPPED: "STOPPED" = "STOPPED"
   inline val INITIATING: "INITIATING" = "INITIATING"
@@ -98,8 +102,10 @@ object DataReplicationState {
   inline val RESCAN: "RESCAN" = "RESCAN"
   inline val STALLED: "STALLED" = "STALLED"
   inline val DISCONNECTED: "DISCONNECTED" = "DISCONNECTED"
+  inline val PENDING_SNAPSHOT_SHIPPING: "PENDING_SNAPSHOT_SHIPPING" = "PENDING_SNAPSHOT_SHIPPING"
+  inline val SHIPPING_SNAPSHOT: "SHIPPING_SNAPSHOT" = "SHIPPING_SNAPSHOT"
 
-  inline def values: js.Array[DataReplicationState] = js.Array(STOPPED, INITIATING, INITIAL_SYNC, BACKLOG, CREATING_SNAPSHOT, CONTINUOUS, PAUSED, RESCAN, STALLED, DISCONNECTED)
+  inline def values: js.Array[DataReplicationState] = js.Array(STOPPED, INITIATING, INITIAL_SYNC, BACKLOG, CREATING_SNAPSHOT, CONTINUOUS, PAUSED, RESCAN, STALLED, DISCONNECTED, PENDING_SNAPSHOT_SHIPPING, SHIPPING_SNAPSHOT)
 }
 
 type FirstBoot = "WAITING" | "SUCCEEDED" | "UNKNOWN" | "STOPPED"
@@ -197,7 +203,7 @@ object LaunchStatus {
   inline def values: js.Array[LaunchStatus] = js.Array(PENDING, IN_PROGRESS, LAUNCHED, FAILED, TERMINATED)
 }
 
-type LifeCycleState = "STOPPED" | "NOT_READY" | "READY_FOR_TEST" | "TESTING" | "READY_FOR_CUTOVER" | "CUTTING_OVER" | "CUTOVER" | "DISCONNECTED"
+type LifeCycleState = "STOPPED" | "NOT_READY" | "READY_FOR_TEST" | "TESTING" | "READY_FOR_CUTOVER" | "CUTTING_OVER" | "CUTOVER" | "DISCONNECTED" | "DISCOVERED"
 object LifeCycleState {
   inline val STOPPED: "STOPPED" = "STOPPED"
   inline val NOT_READY: "NOT_READY" = "NOT_READY"
@@ -207,8 +213,9 @@ object LifeCycleState {
   inline val CUTTING_OVER: "CUTTING_OVER" = "CUTTING_OVER"
   inline val CUTOVER: "CUTOVER" = "CUTOVER"
   inline val DISCONNECTED: "DISCONNECTED" = "DISCONNECTED"
+  inline val DISCOVERED: "DISCOVERED" = "DISCOVERED"
 
-  inline def values: js.Array[LifeCycleState] = js.Array(STOPPED, NOT_READY, READY_FOR_TEST, TESTING, READY_FOR_CUTOVER, CUTTING_OVER, CUTOVER, DISCONNECTED)
+  inline def values: js.Array[LifeCycleState] = js.Array(STOPPED, NOT_READY, READY_FOR_TEST, TESTING, READY_FOR_CUTOVER, CUTTING_OVER, CUTOVER, DISCONNECTED, DISCOVERED)
 }
 
 type ReplicationConfigurationDataPlaneRouting = "PRIVATE_IP" | "PUBLIC_IP"
@@ -227,13 +234,12 @@ object ReplicationConfigurationDefaultLargeStagingDiskType {
   inline def values: js.Array[ReplicationConfigurationDefaultLargeStagingDiskType] = js.Array(GP2, ST1)
 }
 
-type ReplicationConfigurationEbsEncryption = "NONE" | "DEFAULT" | "CUSTOM"
+type ReplicationConfigurationEbsEncryption = "DEFAULT" | "CUSTOM"
 object ReplicationConfigurationEbsEncryption {
-  inline val NONE: "NONE" = "NONE"
   inline val DEFAULT: "DEFAULT" = "DEFAULT"
   inline val CUSTOM: "CUSTOM" = "CUSTOM"
 
-  inline def values: js.Array[ReplicationConfigurationEbsEncryption] = js.Array(NONE, DEFAULT, CUSTOM)
+  inline def values: js.Array[ReplicationConfigurationEbsEncryption] = js.Array(DEFAULT, CUSTOM)
 }
 
 type ReplicationConfigurationReplicatedDiskStagingDiskType = "AUTO" | "GP2" | "IO1" | "SC1" | "ST1" | "STANDARD"
@@ -246,6 +252,14 @@ object ReplicationConfigurationReplicatedDiskStagingDiskType {
   inline val STANDARD: "STANDARD" = "STANDARD"
 
   inline def values: js.Array[ReplicationConfigurationReplicatedDiskStagingDiskType] = js.Array(AUTO, GP2, IO1, SC1, ST1, STANDARD)
+}
+
+type ReplicationType = "AGENT_BASED" | "SNAPSHOT_SHIPPING"
+object ReplicationType {
+  inline val AGENT_BASED: "AGENT_BASED" = "AGENT_BASED"
+  inline val SNAPSHOT_SHIPPING: "SNAPSHOT_SHIPPING" = "SNAPSHOT_SHIPPING"
+
+  inline def values: js.Array[ReplicationType] = js.Array(AGENT_BASED, SNAPSHOT_SHIPPING)
 }
 
 type TargetInstanceTypeRightSizingMethod = "NONE" | "BASIC"

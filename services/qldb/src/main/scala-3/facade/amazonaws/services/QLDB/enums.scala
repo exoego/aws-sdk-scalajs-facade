@@ -2,6 +2,15 @@ package facade.amazonaws.services.qldb
 
 import scalajs.js
 
+type EncryptionStatus = "ENABLED" | "UPDATING" | "KMS_KEY_INACCESSIBLE"
+object EncryptionStatus {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val KMS_KEY_INACCESSIBLE: "KMS_KEY_INACCESSIBLE" = "KMS_KEY_INACCESSIBLE"
+
+  inline def values: js.Array[EncryptionStatus] = js.Array(ENABLED, UPDATING, KMS_KEY_INACCESSIBLE)
+}
+
 type ErrorCause = "KINESIS_STREAM_NOT_FOUND" | "IAM_PERMISSION_REVOKED"
 object ErrorCause {
   inline val KINESIS_STREAM_NOT_FOUND: "KINESIS_STREAM_NOT_FOUND" = "KINESIS_STREAM_NOT_FOUND"
@@ -29,11 +38,21 @@ object LedgerState {
   inline def values: js.Array[LedgerState] = js.Array(CREATING, ACTIVE, DELETING, DELETED)
 }
 
-type PermissionsMode = "ALLOW_ALL"
+type OutputFormat = "ION_BINARY" | "ION_TEXT" | "JSON"
+object OutputFormat {
+  inline val ION_BINARY: "ION_BINARY" = "ION_BINARY"
+  inline val ION_TEXT: "ION_TEXT" = "ION_TEXT"
+  inline val JSON: "JSON" = "JSON"
+
+  inline def values: js.Array[OutputFormat] = js.Array(ION_BINARY, ION_TEXT, JSON)
+}
+
+type PermissionsMode = "ALLOW_ALL" | "STANDARD"
 object PermissionsMode {
   inline val ALLOW_ALL: "ALLOW_ALL" = "ALLOW_ALL"
+  inline val STANDARD: "STANDARD" = "STANDARD"
 
-  inline def values: js.Array[PermissionsMode] = js.Array(ALLOW_ALL)
+  inline def values: js.Array[PermissionsMode] = js.Array(ALLOW_ALL, STANDARD)
 }
 
 type S3ObjectEncryptionType = "SSE_KMS" | "SSE_S3" | "NO_ENCRYPTION"

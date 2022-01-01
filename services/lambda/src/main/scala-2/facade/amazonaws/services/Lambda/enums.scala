@@ -3,6 +3,15 @@ package facade.amazonaws.services.lambda
 import scalajs.js
 
 @js.native
+sealed trait Architecture extends js.Any
+object Architecture {
+  val x86_64 = "x86_64".asInstanceOf[Architecture]
+  val arm64 = "arm64".asInstanceOf[Architecture]
+
+  @inline def values: js.Array[Architecture] = js.Array(x86_64, arm64)
+}
+
+@js.native
 sealed trait CodeSigningPolicy extends js.Any
 object CodeSigningPolicy {
   val Warn = "Warn".asInstanceOf[CodeSigningPolicy]
@@ -138,6 +147,7 @@ object Runtime {
   val `python3.6` = "python3.6".asInstanceOf[Runtime]
   val `python3.7` = "python3.7".asInstanceOf[Runtime]
   val `python3.8` = "python3.8".asInstanceOf[Runtime]
+  val `python3.9` = "python3.9".asInstanceOf[Runtime]
   val `dotnetcore1.0` = "dotnetcore1.0".asInstanceOf[Runtime]
   val `dotnetcore2.0` = "dotnetcore2.0".asInstanceOf[Runtime]
   val `dotnetcore2.1` = "dotnetcore2.1".asInstanceOf[Runtime]
@@ -164,6 +174,7 @@ object Runtime {
     `python3.6`,
     `python3.7`,
     `python3.8`,
+    `python3.9`,
     `dotnetcore1.0`,
     `dotnetcore2.0`,
     `dotnetcore2.1`,
@@ -185,8 +196,11 @@ object SourceAccessType {
   val VPC_SECURITY_GROUP = "VPC_SECURITY_GROUP".asInstanceOf[SourceAccessType]
   val SASL_SCRAM_512_AUTH = "SASL_SCRAM_512_AUTH".asInstanceOf[SourceAccessType]
   val SASL_SCRAM_256_AUTH = "SASL_SCRAM_256_AUTH".asInstanceOf[SourceAccessType]
+  val VIRTUAL_HOST = "VIRTUAL_HOST".asInstanceOf[SourceAccessType]
+  val CLIENT_CERTIFICATE_TLS_AUTH = "CLIENT_CERTIFICATE_TLS_AUTH".asInstanceOf[SourceAccessType]
+  val SERVER_ROOT_CA_CERTIFICATE = "SERVER_ROOT_CA_CERTIFICATE".asInstanceOf[SourceAccessType]
 
-  @inline def values: js.Array[SourceAccessType] = js.Array(BASIC_AUTH, VPC_SUBNET, VPC_SECURITY_GROUP, SASL_SCRAM_512_AUTH, SASL_SCRAM_256_AUTH)
+  @inline def values: js.Array[SourceAccessType] = js.Array(BASIC_AUTH, VPC_SUBNET, VPC_SECURITY_GROUP, SASL_SCRAM_512_AUTH, SASL_SCRAM_256_AUTH, VIRTUAL_HOST, CLIENT_CERTIFICATE_TLS_AUTH, SERVER_ROOT_CA_CERTIFICATE)
 }
 
 @js.native

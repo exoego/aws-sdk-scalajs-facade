@@ -216,7 +216,7 @@ object ReplicaStatus {
   inline def values: js.Array[ReplicaStatus] = js.Array(CREATING, CREATION_FAILED, UPDATING, DELETING, ACTIVE, REGION_DISABLED, INACCESSIBLE_ENCRYPTION_CREDENTIALS)
 }
 
-/** Determines the level of detail about provisioned throughput consumption that is returned in the response: * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed. Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s). * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation. * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
+/** Determines the level of detail about either provisioned or on-demand throughput consumption that is returned in the response: * <code>INDEXES</code> - The response includes the aggregate <code>ConsumedCapacity</code> for the operation, together with <code>ConsumedCapacity</code> for each table and secondary index that was accessed. Note that some operations, such as <code>GetItem</code> and <code>BatchGetItem</code>, do not access any indexes at all. In these cases, specifying <code>INDEXES</code> will only return <code>ConsumedCapacity</code> information for table(s). * <code>TOTAL</code> - The response includes only the aggregate <code>ConsumedCapacity</code> for the operation. * <code>NONE</code> - No <code>ConsumedCapacity</code> details are included in the response.
   */
 type ReturnConsumedCapacity = "INDEXES" | "TOTAL" | "NONE"
 object ReturnConsumedCapacity {
@@ -308,6 +308,14 @@ object StreamViewType {
   inline val KEYS_ONLY: "KEYS_ONLY" = "KEYS_ONLY"
 
   inline def values: js.Array[StreamViewType] = js.Array(NEW_IMAGE, OLD_IMAGE, NEW_AND_OLD_IMAGES, KEYS_ONLY)
+}
+
+type TableClass = "STANDARD" | "STANDARD_INFREQUENT_ACCESS"
+object TableClass {
+  inline val STANDARD: "STANDARD" = "STANDARD"
+  inline val STANDARD_INFREQUENT_ACCESS: "STANDARD_INFREQUENT_ACCESS" = "STANDARD_INFREQUENT_ACCESS"
+
+  inline def values: js.Array[TableClass] = js.Array(STANDARD, STANDARD_INFREQUENT_ACCESS)
 }
 
 type TableStatus = "CREATING" | "UPDATING" | "DELETING" | "ACTIVE" | "INACCESSIBLE_ENCRYPTION_CREDENTIALS" | "ARCHIVING" | "ARCHIVED"

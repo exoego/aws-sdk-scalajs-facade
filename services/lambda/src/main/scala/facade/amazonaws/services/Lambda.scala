@@ -13,6 +13,7 @@ package object lambda {
   type AdditionalVersionWeights = js.Dictionary[Weight]
   type Alias = String
   type AliasList = js.Array[AliasConfiguration]
+  type ArchitecturesList = js.Array[Architecture]
   type Arn = String
   type BatchSize = Int
   type BisectBatchOnFunctionError = Boolean
@@ -21,6 +22,7 @@ package object lambda {
   type CodeSigningConfigArn = String
   type CodeSigningConfigId = String
   type CodeSigningConfigList = js.Array[CodeSigningConfig]
+  type CompatibleArchitectures = js.Array[Architecture]
   type CompatibleRuntimes = js.Array[Runtime]
   type Date = js.Date
   type Description = String
@@ -36,6 +38,7 @@ package object lambda {
   type EventSourceToken = String
   type FileSystemArn = String
   type FileSystemConfigList = js.Array[FileSystemConfig]
+  type FilterList = js.Array[Filter]
   type FunctionArn = String
   type FunctionArnList = js.Array[FunctionArn]
   type FunctionEventInvokeConfigList = js.Array[FunctionEventInvokeConfig]
@@ -75,6 +78,7 @@ package object lambda {
   type NonNegativeInteger = Int
   type OrganizationId = String
   type ParallelizationFactor = Int
+  type Pattern = String
   type PositiveInteger = Int
   type Principal = String
   type ProvisionedConcurrencyConfigList = js.Array[ProvisionedConcurrencyConfigListItem]
@@ -480,7 +484,7 @@ package object lambda {
     }
   }
 
-  /** Details about a Code signing configuration.
+  /** Details about a [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html|Code signing configuration]].
     */
   @js.native
   trait CodeSigningConfig extends js.Object {
@@ -515,7 +519,7 @@ package object lambda {
     }
   }
 
-  /** Code signing configuration policies specifies the validation failure action for signature mismatch or expiry.
+  /** Code signing configuration [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html#config-codesigning-policies|policies]] specify the validation failure action for signature mismatch or expiry.
     */
   @js.native
   trait CodeSigningPolicies extends js.Object {
@@ -628,6 +632,7 @@ package object lambda {
     var DestinationConfig: js.UndefOr[DestinationConfig]
     var Enabled: js.UndefOr[Enabled]
     var EventSourceArn: js.UndefOr[Arn]
+    var FilterCriteria: js.UndefOr[FilterCriteria]
     var FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList]
     var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
     var MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds]
@@ -651,6 +656,7 @@ package object lambda {
         DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
         Enabled: js.UndefOr[Enabled] = js.undefined,
         EventSourceArn: js.UndefOr[Arn] = js.undefined,
+        FilterCriteria: js.UndefOr[FilterCriteria] = js.undefined,
         FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList] = js.undefined,
         MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
         MaximumRecordAgeInSeconds: js.UndefOr[MaximumRecordAgeInSeconds] = js.undefined,
@@ -673,6 +679,7 @@ package object lambda {
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
+      FilterCriteria.foreach(__v => __obj.updateDynamic("FilterCriteria")(__v.asInstanceOf[js.Any]))
       FunctionResponseTypes.foreach(__v => __obj.updateDynamic("FunctionResponseTypes")(__v.asInstanceOf[js.Any]))
       MaximumBatchingWindowInSeconds.foreach(__v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any]))
       MaximumRecordAgeInSeconds.foreach(__v => __obj.updateDynamic("MaximumRecordAgeInSeconds")(__v.asInstanceOf[js.Any]))
@@ -694,6 +701,7 @@ package object lambda {
     var Code: FunctionCode
     var FunctionName: FunctionName
     var Role: RoleArn
+    var Architectures: js.UndefOr[ArchitecturesList]
     var CodeSigningConfigArn: js.UndefOr[CodeSigningConfigArn]
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
     var Description: js.UndefOr[Description]
@@ -719,6 +727,7 @@ package object lambda {
         Code: FunctionCode,
         FunctionName: FunctionName,
         Role: RoleArn,
+        Architectures: js.UndefOr[ArchitecturesList] = js.undefined,
         CodeSigningConfigArn: js.UndefOr[CodeSigningConfigArn] = js.undefined,
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
@@ -743,6 +752,7 @@ package object lambda {
         "Role" -> Role.asInstanceOf[js.Any]
       )
 
+      Architectures.foreach(__v => __obj.updateDynamic("Architectures")(__v.asInstanceOf[js.Any]))
       CodeSigningConfigArn.foreach(__v => __obj.updateDynamic("CodeSigningConfigArn")(__v.asInstanceOf[js.Any]))
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -984,7 +994,7 @@ package object lambda {
     }
   }
 
-  /** A function's environment variable settings.
+  /** A function's environment variable settings. You can use environment variables to adjust your function's behavior without updating code. An environment variable is a pair of strings that are stored in a function's version-specific configuration.
     */
   @js.native
   trait Environment extends js.Object {
@@ -1044,7 +1054,7 @@ package object lambda {
     }
   }
 
-  /** A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.
+  /** A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.
     */
   @js.native
   trait EventSourceMappingConfiguration extends js.Object {
@@ -1052,6 +1062,7 @@ package object lambda {
     var BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError]
     var DestinationConfig: js.UndefOr[DestinationConfig]
     var EventSourceArn: js.UndefOr[Arn]
+    var FilterCriteria: js.UndefOr[FilterCriteria]
     var FunctionArn: js.UndefOr[FunctionArn]
     var FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList]
     var LastModified: js.UndefOr[Date]
@@ -1079,6 +1090,7 @@ package object lambda {
         BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
         DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
         EventSourceArn: js.UndefOr[Arn] = js.undefined,
+        FilterCriteria: js.UndefOr[FilterCriteria] = js.undefined,
         FunctionArn: js.UndefOr[FunctionArn] = js.undefined,
         FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList] = js.undefined,
         LastModified: js.UndefOr[Date] = js.undefined,
@@ -1103,6 +1115,7 @@ package object lambda {
       BisectBatchOnFunctionError.foreach(__v => __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any]))
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       EventSourceArn.foreach(__v => __obj.updateDynamic("EventSourceArn")(__v.asInstanceOf[js.Any]))
+      FilterCriteria.foreach(__v => __obj.updateDynamic("FilterCriteria")(__v.asInstanceOf[js.Any]))
       FunctionArn.foreach(__v => __obj.updateDynamic("FunctionArn")(__v.asInstanceOf[js.Any]))
       FunctionResponseTypes.foreach(__v => __obj.updateDynamic("FunctionResponseTypes")(__v.asInstanceOf[js.Any]))
       LastModified.foreach(__v => __obj.updateDynamic("LastModified")(__v.asInstanceOf[js.Any]))
@@ -1125,7 +1138,7 @@ package object lambda {
     }
   }
 
-  /** Details about the connection between a Lambda function and an Amazon EFS file system.
+  /** Details about the connection between a Lambda function and an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html|Amazon EFS file system]].
     */
   @js.native
   trait FileSystemConfig extends js.Object {
@@ -1144,6 +1157,42 @@ package object lambda {
         "LocalMountPath" -> LocalMountPath.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[FileSystemConfig]
+    }
+  }
+
+  /** A structure within a <code>FilterCriteria</code> object that defines an event filtering pattern.
+    */
+  @js.native
+  trait Filter extends js.Object {
+    var Pattern: js.UndefOr[Pattern]
+  }
+
+  object Filter {
+    @inline
+    def apply(
+        Pattern: js.UndefOr[Pattern] = js.undefined
+    ): Filter = {
+      val __obj = js.Dynamic.literal()
+      Pattern.foreach(__v => __obj.updateDynamic("Pattern")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Filter]
+    }
+  }
+
+  /** An object that contains the filters for an event source.
+    */
+  @js.native
+  trait FilterCriteria extends js.Object {
+    var Filters: js.UndefOr[FilterList]
+  }
+
+  object FilterCriteria {
+    @inline
+    def apply(
+        Filters: js.UndefOr[FilterList] = js.undefined
+    ): FilterCriteria = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FilterCriteria]
     }
   }
 
@@ -1208,6 +1257,7 @@ package object lambda {
     */
   @js.native
   trait FunctionConfiguration extends js.Object {
+    var Architectures: js.UndefOr[ArchitecturesList]
     var CodeSha256: js.UndefOr[String]
     var CodeSize: js.UndefOr[Double]
     var DeadLetterConfig: js.UndefOr[DeadLetterConfig]
@@ -1244,6 +1294,7 @@ package object lambda {
   object FunctionConfiguration {
     @inline
     def apply(
+        Architectures: js.UndefOr[ArchitecturesList] = js.undefined,
         CodeSha256: js.UndefOr[String] = js.undefined,
         CodeSize: js.UndefOr[Double] = js.undefined,
         DeadLetterConfig: js.UndefOr[DeadLetterConfig] = js.undefined,
@@ -1277,6 +1328,7 @@ package object lambda {
         VpcConfig: js.UndefOr[VpcConfigResponse] = js.undefined
     ): FunctionConfiguration = {
       val __obj = js.Dynamic.literal()
+      Architectures.foreach(__v => __obj.updateDynamic("Architectures")(__v.asInstanceOf[js.Any]))
       CodeSha256.foreach(__v => __obj.updateDynamic("CodeSha256")(__v.asInstanceOf[js.Any]))
       CodeSize.foreach(__v => __obj.updateDynamic("CodeSize")(__v.asInstanceOf[js.Any]))
       DeadLetterConfig.foreach(__v => __obj.updateDynamic("DeadLetterConfig")(__v.asInstanceOf[js.Any]))
@@ -1677,6 +1729,7 @@ package object lambda {
 
   @js.native
   trait GetLayerVersionResponse extends js.Object {
+    var CompatibleArchitectures: js.UndefOr[CompatibleArchitectures]
     var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
     var Content: js.UndefOr[LayerVersionContentOutput]
     var CreatedDate: js.UndefOr[Timestamp]
@@ -1690,6 +1743,7 @@ package object lambda {
   object GetLayerVersionResponse {
     @inline
     def apply(
+        CompatibleArchitectures: js.UndefOr[CompatibleArchitectures] = js.undefined,
         CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
         Content: js.UndefOr[LayerVersionContentOutput] = js.undefined,
         CreatedDate: js.UndefOr[Timestamp] = js.undefined,
@@ -1700,6 +1754,7 @@ package object lambda {
         Version: js.UndefOr[LayerVersionNumber] = js.undefined
     ): GetLayerVersionResponse = {
       val __obj = js.Dynamic.literal()
+      CompatibleArchitectures.foreach(__v => __obj.updateDynamic("CompatibleArchitectures")(__v.asInstanceOf[js.Any]))
       CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
       Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
@@ -1970,7 +2025,7 @@ package object lambda {
     }
   }
 
-  /** An [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
+  /** An [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|Lambda layer]].
     */
   @js.native
   trait Layer extends js.Object {
@@ -1997,7 +2052,7 @@ package object lambda {
     }
   }
 
-  /** A ZIP archive that contains the contents of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]]. You can specify either an Amazon S3 location, or upload a layer archive directly.
+  /** A ZIP archive that contains the contents of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|Lambda layer]]. You can specify either an Amazon S3 location, or upload a layer archive directly.
     */
   @js.native
   trait LayerVersionContentInput extends js.Object {
@@ -2024,7 +2079,7 @@ package object lambda {
     }
   }
 
-  /** Details about a version of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
+  /** Details about a version of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|Lambda layer]].
     */
   @js.native
   trait LayerVersionContentOutput extends js.Object {
@@ -2054,10 +2109,11 @@ package object lambda {
     }
   }
 
-  /** Details about a version of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
+  /** Details about a version of an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|Lambda layer]].
     */
   @js.native
   trait LayerVersionsListItem extends js.Object {
+    var CompatibleArchitectures: js.UndefOr[CompatibleArchitectures]
     var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
     var CreatedDate: js.UndefOr[Timestamp]
     var Description: js.UndefOr[Description]
@@ -2069,6 +2125,7 @@ package object lambda {
   object LayerVersionsListItem {
     @inline
     def apply(
+        CompatibleArchitectures: js.UndefOr[CompatibleArchitectures] = js.undefined,
         CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
         CreatedDate: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
@@ -2077,6 +2134,7 @@ package object lambda {
         Version: js.UndefOr[LayerVersionNumber] = js.undefined
     ): LayerVersionsListItem = {
       val __obj = js.Dynamic.literal()
+      CompatibleArchitectures.foreach(__v => __obj.updateDynamic("CompatibleArchitectures")(__v.asInstanceOf[js.Any]))
       CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
@@ -2087,7 +2145,7 @@ package object lambda {
     }
   }
 
-  /** Details about an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|AWS Lambda layer]].
+  /** Details about an [[https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html|Lambda layer]].
     */
   @js.native
   trait LayersListItem extends js.Object {
@@ -2374,6 +2432,7 @@ package object lambda {
   @js.native
   trait ListLayerVersionsRequest extends js.Object {
     var LayerName: LayerName
+    var CompatibleArchitecture: js.UndefOr[Architecture]
     var CompatibleRuntime: js.UndefOr[Runtime]
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[MaxLayerListItems]
@@ -2383,6 +2442,7 @@ package object lambda {
     @inline
     def apply(
         LayerName: LayerName,
+        CompatibleArchitecture: js.UndefOr[Architecture] = js.undefined,
         CompatibleRuntime: js.UndefOr[Runtime] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[MaxLayerListItems] = js.undefined
@@ -2391,6 +2451,7 @@ package object lambda {
         "LayerName" -> LayerName.asInstanceOf[js.Any]
       )
 
+      CompatibleArchitecture.foreach(__v => __obj.updateDynamic("CompatibleArchitecture")(__v.asInstanceOf[js.Any]))
       CompatibleRuntime.foreach(__v => __obj.updateDynamic("CompatibleRuntime")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
@@ -2419,6 +2480,7 @@ package object lambda {
 
   @js.native
   trait ListLayersRequest extends js.Object {
+    var CompatibleArchitecture: js.UndefOr[Architecture]
     var CompatibleRuntime: js.UndefOr[Runtime]
     var Marker: js.UndefOr[String]
     var MaxItems: js.UndefOr[MaxLayerListItems]
@@ -2427,11 +2489,13 @@ package object lambda {
   object ListLayersRequest {
     @inline
     def apply(
+        CompatibleArchitecture: js.UndefOr[Architecture] = js.undefined,
         CompatibleRuntime: js.UndefOr[Runtime] = js.undefined,
         Marker: js.UndefOr[String] = js.undefined,
         MaxItems: js.UndefOr[MaxLayerListItems] = js.undefined
     ): ListLayersRequest = {
       val __obj = js.Dynamic.literal()
+      CompatibleArchitecture.foreach(__v => __obj.updateDynamic("CompatibleArchitecture")(__v.asInstanceOf[js.Any]))
       CompatibleRuntime.foreach(__v => __obj.updateDynamic("CompatibleRuntime")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
@@ -2653,6 +2717,7 @@ package object lambda {
   trait PublishLayerVersionRequest extends js.Object {
     var Content: LayerVersionContentInput
     var LayerName: LayerName
+    var CompatibleArchitectures: js.UndefOr[CompatibleArchitectures]
     var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
     var Description: js.UndefOr[Description]
     var LicenseInfo: js.UndefOr[LicenseInfo]
@@ -2663,6 +2728,7 @@ package object lambda {
     def apply(
         Content: LayerVersionContentInput,
         LayerName: LayerName,
+        CompatibleArchitectures: js.UndefOr[CompatibleArchitectures] = js.undefined,
         CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
         LicenseInfo: js.UndefOr[LicenseInfo] = js.undefined
@@ -2672,6 +2738,7 @@ package object lambda {
         "LayerName" -> LayerName.asInstanceOf[js.Any]
       )
 
+      CompatibleArchitectures.foreach(__v => __obj.updateDynamic("CompatibleArchitectures")(__v.asInstanceOf[js.Any]))
       CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LicenseInfo.foreach(__v => __obj.updateDynamic("LicenseInfo")(__v.asInstanceOf[js.Any]))
@@ -2681,6 +2748,7 @@ package object lambda {
 
   @js.native
   trait PublishLayerVersionResponse extends js.Object {
+    var CompatibleArchitectures: js.UndefOr[CompatibleArchitectures]
     var CompatibleRuntimes: js.UndefOr[CompatibleRuntimes]
     var Content: js.UndefOr[LayerVersionContentOutput]
     var CreatedDate: js.UndefOr[Timestamp]
@@ -2694,6 +2762,7 @@ package object lambda {
   object PublishLayerVersionResponse {
     @inline
     def apply(
+        CompatibleArchitectures: js.UndefOr[CompatibleArchitectures] = js.undefined,
         CompatibleRuntimes: js.UndefOr[CompatibleRuntimes] = js.undefined,
         Content: js.UndefOr[LayerVersionContentOutput] = js.undefined,
         CreatedDate: js.UndefOr[Timestamp] = js.undefined,
@@ -2704,6 +2773,7 @@ package object lambda {
         Version: js.UndefOr[LayerVersionNumber] = js.undefined
     ): PublishLayerVersionResponse = {
       val __obj = js.Dynamic.literal()
+      CompatibleArchitectures.foreach(__v => __obj.updateDynamic("CompatibleArchitectures")(__v.asInstanceOf[js.Any]))
       CompatibleRuntimes.foreach(__v => __obj.updateDynamic("CompatibleRuntimes")(__v.asInstanceOf[js.Any]))
       Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
@@ -2941,7 +3011,7 @@ package object lambda {
     }
   }
 
-  /** The Self-Managed Apache Kafka cluster for your event source.
+  /** The self-managed Apache Kafka cluster for your event source.
     */
   @js.native
   trait SelfManagedEventSource extends js.Object {
@@ -2959,7 +3029,7 @@ package object lambda {
     }
   }
 
-  /** You can specify the authentication protocol, or the VPC components to secure access to your event source.
+  /** To secure and define access to your event source, you can specify the authentication protocol, VPC components, or virtual host.
     */
   @js.native
   trait SourceAccessConfiguration extends js.Object {
@@ -3000,7 +3070,7 @@ package object lambda {
     }
   }
 
-  /** The function's AWS X-Ray tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.
+  /** The function's [[https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html|X-Ray]] tracing configuration. To sample and record incoming requests, set <code>Mode</code> to <code>Active</code>.
     */
   @js.native
   trait TracingConfig extends js.Object {
@@ -3018,7 +3088,7 @@ package object lambda {
     }
   }
 
-  /** The function's AWS X-Ray tracing configuration.
+  /** The function's X-Ray tracing configuration.
     */
   @js.native
   trait TracingConfigResponse extends js.Object {
@@ -3140,6 +3210,7 @@ package object lambda {
     var BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError]
     var DestinationConfig: js.UndefOr[DestinationConfig]
     var Enabled: js.UndefOr[Enabled]
+    var FilterCriteria: js.UndefOr[FilterCriteria]
     var FunctionName: js.UndefOr[FunctionName]
     var FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList]
     var MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds]
@@ -3158,6 +3229,7 @@ package object lambda {
         BisectBatchOnFunctionError: js.UndefOr[BisectBatchOnFunctionError] = js.undefined,
         DestinationConfig: js.UndefOr[DestinationConfig] = js.undefined,
         Enabled: js.UndefOr[Enabled] = js.undefined,
+        FilterCriteria: js.UndefOr[FilterCriteria] = js.undefined,
         FunctionName: js.UndefOr[FunctionName] = js.undefined,
         FunctionResponseTypes: js.UndefOr[FunctionResponseTypeList] = js.undefined,
         MaximumBatchingWindowInSeconds: js.UndefOr[MaximumBatchingWindowInSeconds] = js.undefined,
@@ -3175,6 +3247,7 @@ package object lambda {
       BisectBatchOnFunctionError.foreach(__v => __obj.updateDynamic("BisectBatchOnFunctionError")(__v.asInstanceOf[js.Any]))
       DestinationConfig.foreach(__v => __obj.updateDynamic("DestinationConfig")(__v.asInstanceOf[js.Any]))
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
+      FilterCriteria.foreach(__v => __obj.updateDynamic("FilterCriteria")(__v.asInstanceOf[js.Any]))
       FunctionName.foreach(__v => __obj.updateDynamic("FunctionName")(__v.asInstanceOf[js.Any]))
       FunctionResponseTypes.foreach(__v => __obj.updateDynamic("FunctionResponseTypes")(__v.asInstanceOf[js.Any]))
       MaximumBatchingWindowInSeconds.foreach(__v => __obj.updateDynamic("MaximumBatchingWindowInSeconds")(__v.asInstanceOf[js.Any]))
@@ -3190,6 +3263,7 @@ package object lambda {
   @js.native
   trait UpdateFunctionCodeRequest extends js.Object {
     var FunctionName: FunctionName
+    var Architectures: js.UndefOr[ArchitecturesList]
     var DryRun: js.UndefOr[Boolean]
     var ImageUri: js.UndefOr[String]
     var Publish: js.UndefOr[Boolean]
@@ -3204,6 +3278,7 @@ package object lambda {
     @inline
     def apply(
         FunctionName: FunctionName,
+        Architectures: js.UndefOr[ArchitecturesList] = js.undefined,
         DryRun: js.UndefOr[Boolean] = js.undefined,
         ImageUri: js.UndefOr[String] = js.undefined,
         Publish: js.UndefOr[Boolean] = js.undefined,
@@ -3217,6 +3292,7 @@ package object lambda {
         "FunctionName" -> FunctionName.asInstanceOf[js.Any]
       )
 
+      Architectures.foreach(__v => __obj.updateDynamic("Architectures")(__v.asInstanceOf[js.Any]))
       DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       ImageUri.foreach(__v => __obj.updateDynamic("ImageUri")(__v.asInstanceOf[js.Any]))
       Publish.foreach(__v => __obj.updateDynamic("Publish")(__v.asInstanceOf[js.Any]))

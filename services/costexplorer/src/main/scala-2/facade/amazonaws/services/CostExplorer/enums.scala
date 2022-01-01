@@ -70,6 +70,24 @@ object CostCategoryRuleVersion {
 }
 
 @js.native
+sealed trait CostCategorySplitChargeMethod extends js.Any
+object CostCategorySplitChargeMethod {
+  val FIXED = "FIXED".asInstanceOf[CostCategorySplitChargeMethod]
+  val PROPORTIONAL = "PROPORTIONAL".asInstanceOf[CostCategorySplitChargeMethod]
+  val EVEN = "EVEN".asInstanceOf[CostCategorySplitChargeMethod]
+
+  @inline def values: js.Array[CostCategorySplitChargeMethod] = js.Array(FIXED, PROPORTIONAL, EVEN)
+}
+
+@js.native
+sealed trait CostCategorySplitChargeRuleParameterType extends js.Any
+object CostCategorySplitChargeRuleParameterType {
+  val ALLOCATION_PERCENTAGES = "ALLOCATION_PERCENTAGES".asInstanceOf[CostCategorySplitChargeRuleParameterType]
+
+  @inline def values: js.Array[CostCategorySplitChargeRuleParameterType] = js.Array(ALLOCATION_PERCENTAGES)
+}
+
+@js.native
 sealed trait CostCategoryStatus extends js.Any
 object CostCategoryStatus {
   val PROCESSING = "PROCESSING".asInstanceOf[CostCategoryStatus]
@@ -153,6 +171,46 @@ object Dimension {
     PAYMENT_OPTION,
     AGREEMENT_END_DATE_TIME_AFTER,
     AGREEMENT_END_DATE_TIME_BEFORE
+  )
+}
+
+@js.native
+sealed trait FindingReasonCode extends js.Any
+object FindingReasonCode {
+  val CPU_OVER_PROVISIONED = "CPU_OVER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val CPU_UNDER_PROVISIONED = "CPU_UNDER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val MEMORY_OVER_PROVISIONED = "MEMORY_OVER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val MEMORY_UNDER_PROVISIONED = "MEMORY_UNDER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val EBS_THROUGHPUT_OVER_PROVISIONED = "EBS_THROUGHPUT_OVER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val EBS_THROUGHPUT_UNDER_PROVISIONED = "EBS_THROUGHPUT_UNDER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val EBS_IOPS_OVER_PROVISIONED = "EBS_IOPS_OVER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val EBS_IOPS_UNDER_PROVISIONED = "EBS_IOPS_UNDER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val NETWORK_BANDWIDTH_OVER_PROVISIONED = "NETWORK_BANDWIDTH_OVER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val NETWORK_BANDWIDTH_UNDER_PROVISIONED = "NETWORK_BANDWIDTH_UNDER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val NETWORK_PPS_OVER_PROVISIONED = "NETWORK_PPS_OVER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val NETWORK_PPS_UNDER_PROVISIONED = "NETWORK_PPS_UNDER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val DISK_IOPS_OVER_PROVISIONED = "DISK_IOPS_OVER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val DISK_IOPS_UNDER_PROVISIONED = "DISK_IOPS_UNDER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val DISK_THROUGHPUT_OVER_PROVISIONED = "DISK_THROUGHPUT_OVER_PROVISIONED".asInstanceOf[FindingReasonCode]
+  val DISK_THROUGHPUT_UNDER_PROVISIONED = "DISK_THROUGHPUT_UNDER_PROVISIONED".asInstanceOf[FindingReasonCode]
+
+  @inline def values: js.Array[FindingReasonCode] = js.Array(
+    CPU_OVER_PROVISIONED,
+    CPU_UNDER_PROVISIONED,
+    MEMORY_OVER_PROVISIONED,
+    MEMORY_UNDER_PROVISIONED,
+    EBS_THROUGHPUT_OVER_PROVISIONED,
+    EBS_THROUGHPUT_UNDER_PROVISIONED,
+    EBS_IOPS_OVER_PROVISIONED,
+    EBS_IOPS_UNDER_PROVISIONED,
+    NETWORK_BANDWIDTH_OVER_PROVISIONED,
+    NETWORK_BANDWIDTH_UNDER_PROVISIONED,
+    NETWORK_PPS_OVER_PROVISIONED,
+    NETWORK_PPS_UNDER_PROVISIONED,
+    DISK_IOPS_OVER_PROVISIONED,
+    DISK_IOPS_UNDER_PROVISIONED,
+    DISK_THROUGHPUT_OVER_PROVISIONED,
+    DISK_THROUGHPUT_UNDER_PROVISIONED
   )
 }
 
@@ -264,6 +322,18 @@ object PaymentOption {
   val HEAVY_UTILIZATION = "HEAVY_UTILIZATION".asInstanceOf[PaymentOption]
 
   @inline def values: js.Array[PaymentOption] = js.Array(NO_UPFRONT, PARTIAL_UPFRONT, ALL_UPFRONT, LIGHT_UTILIZATION, MEDIUM_UTILIZATION, HEAVY_UTILIZATION)
+}
+
+@js.native
+sealed trait PlatformDifference extends js.Any
+object PlatformDifference {
+  val HYPERVISOR = "HYPERVISOR".asInstanceOf[PlatformDifference]
+  val NETWORK_INTERFACE = "NETWORK_INTERFACE".asInstanceOf[PlatformDifference]
+  val STORAGE_INTERFACE = "STORAGE_INTERFACE".asInstanceOf[PlatformDifference]
+  val INSTANCE_STORE_AVAILABILITY = "INSTANCE_STORE_AVAILABILITY".asInstanceOf[PlatformDifference]
+  val VIRTUALIZATION_TYPE = "VIRTUALIZATION_TYPE".asInstanceOf[PlatformDifference]
+
+  @inline def values: js.Array[PlatformDifference] = js.Array(HYPERVISOR, NETWORK_INTERFACE, STORAGE_INTERFACE, INSTANCE_STORE_AVAILABILITY, VIRTUALIZATION_TYPE)
 }
 
 @js.native

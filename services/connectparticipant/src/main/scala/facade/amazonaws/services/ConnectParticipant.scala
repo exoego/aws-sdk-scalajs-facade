@@ -156,18 +156,22 @@ package object connectparticipant {
   trait CreateParticipantConnectionRequest extends js.Object {
     var ParticipantToken: ParticipantToken
     var Type: ConnectionTypeList
+    var ConnectParticipant: js.UndefOr[Boolean]
   }
 
   object CreateParticipantConnectionRequest {
     @inline
     def apply(
         ParticipantToken: ParticipantToken,
-        Type: ConnectionTypeList
+        Type: ConnectionTypeList,
+        ConnectParticipant: js.UndefOr[Boolean] = js.undefined
     ): CreateParticipantConnectionRequest = {
       val __obj = js.Dynamic.literal(
         "ParticipantToken" -> ParticipantToken.asInstanceOf[js.Any],
         "Type" -> Type.asInstanceOf[js.Any]
       )
+
+      ConnectParticipant.foreach(__v => __obj.updateDynamic("ConnectParticipant")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateParticipantConnectionRequest]
     }
   }

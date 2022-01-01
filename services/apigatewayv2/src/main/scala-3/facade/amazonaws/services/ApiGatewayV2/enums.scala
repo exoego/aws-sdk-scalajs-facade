@@ -55,14 +55,16 @@ object DeploymentStatus {
   inline def values: js.Array[DeploymentStatus] = js.Array(PENDING, FAILED, DEPLOYED)
 }
 
-/** The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.
+/** The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.
   */
-type DomainNameStatus = "AVAILABLE" | "UPDATING"
+type DomainNameStatus = "AVAILABLE" | "UPDATING" | "PENDING_CERTIFICATE_REIMPORT" | "PENDING_OWNERSHIP_VERIFICATION"
 object DomainNameStatus {
   inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
   inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val PENDING_CERTIFICATE_REIMPORT: "PENDING_CERTIFICATE_REIMPORT" = "PENDING_CERTIFICATE_REIMPORT"
+  inline val PENDING_OWNERSHIP_VERIFICATION: "PENDING_OWNERSHIP_VERIFICATION" = "PENDING_OWNERSHIP_VERIFICATION"
 
-  inline def values: js.Array[DomainNameStatus] = js.Array(AVAILABLE, UPDATING)
+  inline def values: js.Array[DomainNameStatus] = js.Array(AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, PENDING_OWNERSHIP_VERIFICATION)
 }
 
 /** Represents an endpoint type.

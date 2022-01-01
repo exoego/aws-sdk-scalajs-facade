@@ -11,6 +11,15 @@ object Action {
   inline def values: js.Array[Action] = js.Array(OPEN_APP, DEEP_LINK, URL)
 }
 
+type Alignment = "LEFT" | "CENTER" | "RIGHT"
+object Alignment {
+  inline val LEFT: "LEFT" = "LEFT"
+  inline val CENTER: "CENTER" = "CENTER"
+  inline val RIGHT: "RIGHT" = "RIGHT"
+
+  inline def values: js.Array[Alignment] = js.Array(LEFT, CENTER, RIGHT)
+}
+
 type AttributeType = "INCLUSIVE" | "EXCLUSIVE" | "CONTAINS" | "BEFORE" | "AFTER" | "ON" | "BETWEEN"
 object AttributeType {
   inline val INCLUSIVE: "INCLUSIVE" = "INCLUSIVE"
@@ -22,6 +31,15 @@ object AttributeType {
   inline val BETWEEN: "BETWEEN" = "BETWEEN"
 
   inline def values: js.Array[AttributeType] = js.Array(INCLUSIVE, EXCLUSIVE, CONTAINS, BEFORE, AFTER, ON, BETWEEN)
+}
+
+type ButtonAction = "LINK" | "DEEP_LINK" | "CLOSE"
+object ButtonAction {
+  inline val LINK: "LINK" = "LINK"
+  inline val DEEP_LINK: "DEEP_LINK" = "DEEP_LINK"
+  inline val CLOSE: "CLOSE" = "CLOSE"
+
+  inline def values: js.Array[ButtonAction] = js.Array(LINK, DEEP_LINK, CLOSE)
 }
 
 type CampaignStatus = "SCHEDULED" | "EXECUTING" | "PENDING_NEXT_RUN" | "COMPLETED" | "PAUSED" | "DELETED" | "INVALID"
@@ -37,7 +55,7 @@ object CampaignStatus {
   inline def values: js.Array[CampaignStatus] = js.Array(SCHEDULED, EXECUTING, PENDING_NEXT_RUN, COMPLETED, PAUSED, DELETED, INVALID)
 }
 
-type ChannelType = "PUSH" | "GCM" | "APNS" | "APNS_SANDBOX" | "APNS_VOIP" | "APNS_VOIP_SANDBOX" | "ADM" | "SMS" | "VOICE" | "EMAIL" | "BAIDU" | "CUSTOM"
+type ChannelType = "PUSH" | "GCM" | "APNS" | "APNS_SANDBOX" | "APNS_VOIP" | "APNS_VOIP_SANDBOX" | "ADM" | "SMS" | "VOICE" | "EMAIL" | "BAIDU" | "CUSTOM" | "IN_APP"
 object ChannelType {
   inline val PUSH: "PUSH" = "PUSH"
   inline val GCM: "GCM" = "GCM"
@@ -51,8 +69,9 @@ object ChannelType {
   inline val EMAIL: "EMAIL" = "EMAIL"
   inline val BAIDU: "BAIDU" = "BAIDU"
   inline val CUSTOM: "CUSTOM" = "CUSTOM"
+  inline val IN_APP: "IN_APP" = "IN_APP"
 
-  inline def values: js.Array[ChannelType] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+  inline def values: js.Array[ChannelType] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM, IN_APP)
 }
 
 type DeliveryStatus = "SUCCESSFUL" | "THROTTLED" | "TEMPORARY_FAILURE" | "PERMANENT_FAILURE" | "UNKNOWN_FAILURE" | "OPT_OUT" | "DUPLICATE"
@@ -102,7 +121,7 @@ object Format {
   inline def values: js.Array[Format] = js.Array(CSV, JSON)
 }
 
-type Frequency = "ONCE" | "HOURLY" | "DAILY" | "WEEKLY" | "MONTHLY" | "EVENT"
+type Frequency = "ONCE" | "HOURLY" | "DAILY" | "WEEKLY" | "MONTHLY" | "EVENT" | "IN_APP_EVENT"
 object Frequency {
   inline val ONCE: "ONCE" = "ONCE"
   inline val HOURLY: "HOURLY" = "HOURLY"
@@ -110,8 +129,9 @@ object Frequency {
   inline val WEEKLY: "WEEKLY" = "WEEKLY"
   inline val MONTHLY: "MONTHLY" = "MONTHLY"
   inline val EVENT: "EVENT" = "EVENT"
+  inline val IN_APP_EVENT: "IN_APP_EVENT" = "IN_APP_EVENT"
 
-  inline def values: js.Array[Frequency] = js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT)
+  inline def values: js.Array[Frequency] = js.Array(ONCE, HOURLY, DAILY, WEEKLY, MONTHLY, EVENT, IN_APP_EVENT)
 }
 
 type Include = "ALL" | "ANY" | "NONE"
@@ -136,6 +156,18 @@ object JobStatus {
   inline val FAILED: "FAILED" = "FAILED"
 
   inline def values: js.Array[JobStatus] = js.Array(CREATED, PREPARING_FOR_INITIALIZATION, INITIALIZING, PROCESSING, PENDING_JOB, COMPLETING, COMPLETED, FAILING, FAILED)
+}
+
+type Layout = "BOTTOM_BANNER" | "TOP_BANNER" | "OVERLAYS" | "MOBILE_FEED" | "MIDDLE_BANNER" | "CAROUSEL"
+object Layout {
+  inline val BOTTOM_BANNER: "BOTTOM_BANNER" = "BOTTOM_BANNER"
+  inline val TOP_BANNER: "TOP_BANNER" = "TOP_BANNER"
+  inline val OVERLAYS: "OVERLAYS" = "OVERLAYS"
+  inline val MOBILE_FEED: "MOBILE_FEED" = "MOBILE_FEED"
+  inline val MIDDLE_BANNER: "MIDDLE_BANNER" = "MIDDLE_BANNER"
+  inline val CAROUSEL: "CAROUSEL" = "CAROUSEL"
+
+  inline def values: js.Array[Layout] = js.Array(BOTTOM_BANNER, TOP_BANNER, OVERLAYS, MOBILE_FEED, MIDDLE_BANNER, CAROUSEL)
 }
 
 type MessageType = "TRANSACTIONAL" | "PROMOTIONAL"
@@ -199,14 +231,15 @@ object State {
   inline def values: js.Array[State] = js.Array(DRAFT, ACTIVE, COMPLETED, CANCELLED, CLOSED, PAUSED)
 }
 
-type TemplateType = "EMAIL" | "SMS" | "VOICE" | "PUSH"
+type TemplateType = "EMAIL" | "SMS" | "VOICE" | "PUSH" | "INAPP"
 object TemplateType {
   inline val EMAIL: "EMAIL" = "EMAIL"
   inline val SMS: "SMS" = "SMS"
   inline val VOICE: "VOICE" = "VOICE"
   inline val PUSH: "PUSH" = "PUSH"
+  inline val INAPP: "INAPP" = "INAPP"
 
-  inline def values: js.Array[TemplateType] = js.Array(EMAIL, SMS, VOICE, PUSH)
+  inline def values: js.Array[TemplateType] = js.Array(EMAIL, SMS, VOICE, PUSH, INAPP)
 }
 
 type Type = "ALL" | "ANY" | "NONE"
@@ -218,7 +251,7 @@ object Type {
   inline def values: js.Array[Type] = js.Array(ALL, ANY, NONE)
 }
 
-type __EndpointTypesElement = "PUSH" | "GCM" | "APNS" | "APNS_SANDBOX" | "APNS_VOIP" | "APNS_VOIP_SANDBOX" | "ADM" | "SMS" | "VOICE" | "EMAIL" | "BAIDU" | "CUSTOM"
+type __EndpointTypesElement = "PUSH" | "GCM" | "APNS" | "APNS_SANDBOX" | "APNS_VOIP" | "APNS_VOIP_SANDBOX" | "ADM" | "SMS" | "VOICE" | "EMAIL" | "BAIDU" | "CUSTOM" | "IN_APP"
 object __EndpointTypesElement {
   inline val PUSH: "PUSH" = "PUSH"
   inline val GCM: "GCM" = "GCM"
@@ -232,6 +265,7 @@ object __EndpointTypesElement {
   inline val EMAIL: "EMAIL" = "EMAIL"
   inline val BAIDU: "BAIDU" = "BAIDU"
   inline val CUSTOM: "CUSTOM" = "CUSTOM"
+  inline val IN_APP: "IN_APP" = "IN_APP"
 
-  inline def values: js.Array[__EndpointTypesElement] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM)
+  inline def values: js.Array[__EndpointTypesElement] = js.Array(PUSH, GCM, APNS, APNS_SANDBOX, APNS_VOIP, APNS_VOIP_SANDBOX, ADM, SMS, VOICE, EMAIL, BAIDU, CUSTOM, IN_APP)
 }

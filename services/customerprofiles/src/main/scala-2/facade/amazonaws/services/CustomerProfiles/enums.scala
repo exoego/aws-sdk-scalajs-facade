@@ -3,6 +3,15 @@ package facade.amazonaws.services.customerprofiles
 import scalajs.js
 
 @js.native
+sealed trait ConflictResolvingModel extends js.Any
+object ConflictResolvingModel {
+  val RECENCY = "RECENCY".asInstanceOf[ConflictResolvingModel]
+  val SOURCE = "SOURCE".asInstanceOf[ConflictResolvingModel]
+
+  @inline def values: js.Array[ConflictResolvingModel] = js.Array(RECENCY, SOURCE)
+}
+
+@js.native
 sealed trait DataPullMode extends js.Any
 object DataPullMode {
   val Incremental = "Incremental".asInstanceOf[DataPullMode]
@@ -31,6 +40,34 @@ object Gender {
   val UNSPECIFIED = "UNSPECIFIED".asInstanceOf[Gender]
 
   @inline def values: js.Array[Gender] = js.Array(MALE, FEMALE, UNSPECIFIED)
+}
+
+@js.native
+sealed trait IdentityResolutionJobStatus extends js.Any
+object IdentityResolutionJobStatus {
+  val PENDING = "PENDING".asInstanceOf[IdentityResolutionJobStatus]
+  val PREPROCESSING = "PREPROCESSING".asInstanceOf[IdentityResolutionJobStatus]
+  val FIND_MATCHING = "FIND_MATCHING".asInstanceOf[IdentityResolutionJobStatus]
+  val MERGING = "MERGING".asInstanceOf[IdentityResolutionJobStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[IdentityResolutionJobStatus]
+  val PARTIAL_SUCCESS = "PARTIAL_SUCCESS".asInstanceOf[IdentityResolutionJobStatus]
+  val FAILED = "FAILED".asInstanceOf[IdentityResolutionJobStatus]
+
+  @inline def values: js.Array[IdentityResolutionJobStatus] = js.Array(PENDING, PREPROCESSING, FIND_MATCHING, MERGING, COMPLETED, PARTIAL_SUCCESS, FAILED)
+}
+
+@js.native
+sealed trait JobScheduleDayOfTheWeek extends js.Any
+object JobScheduleDayOfTheWeek {
+  val SUNDAY = "SUNDAY".asInstanceOf[JobScheduleDayOfTheWeek]
+  val MONDAY = "MONDAY".asInstanceOf[JobScheduleDayOfTheWeek]
+  val TUESDAY = "TUESDAY".asInstanceOf[JobScheduleDayOfTheWeek]
+  val WEDNESDAY = "WEDNESDAY".asInstanceOf[JobScheduleDayOfTheWeek]
+  val THURSDAY = "THURSDAY".asInstanceOf[JobScheduleDayOfTheWeek]
+  val FRIDAY = "FRIDAY".asInstanceOf[JobScheduleDayOfTheWeek]
+  val SATURDAY = "SATURDAY".asInstanceOf[JobScheduleDayOfTheWeek]
+
+  @inline def values: js.Array[JobScheduleDayOfTheWeek] = js.Array(SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY)
 }
 
 @js.native
@@ -283,12 +320,15 @@ object SourceConnectorType {
 sealed trait StandardIdentifier extends js.Any
 object StandardIdentifier {
   val PROFILE = "PROFILE".asInstanceOf[StandardIdentifier]
+  val ASSET = "ASSET".asInstanceOf[StandardIdentifier]
+  val CASE = "CASE".asInstanceOf[StandardIdentifier]
   val UNIQUE = "UNIQUE".asInstanceOf[StandardIdentifier]
   val SECONDARY = "SECONDARY".asInstanceOf[StandardIdentifier]
   val LOOKUP_ONLY = "LOOKUP_ONLY".asInstanceOf[StandardIdentifier]
   val NEW_ONLY = "NEW_ONLY".asInstanceOf[StandardIdentifier]
+  val ORDER = "ORDER".asInstanceOf[StandardIdentifier]
 
-  @inline def values: js.Array[StandardIdentifier] = js.Array(PROFILE, UNIQUE, SECONDARY, LOOKUP_ONLY, NEW_ONLY)
+  @inline def values: js.Array[StandardIdentifier] = js.Array(PROFILE, ASSET, CASE, UNIQUE, SECONDARY, LOOKUP_ONLY, NEW_ONLY, ORDER)
 }
 
 @js.native

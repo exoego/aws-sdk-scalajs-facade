@@ -19,6 +19,15 @@ object ActionType {
   inline def values: js.Array[ActionType] = js.Array(PUBLISH, SUBSCRIBE, RECEIVE, CONNECT)
 }
 
+type AggregationTypeName = "Statistics" | "Percentiles" | "Cardinality"
+object AggregationTypeName {
+  inline val Statistics: "Statistics" = "Statistics"
+  inline val Percentiles: "Percentiles" = "Percentiles"
+  inline val Cardinality: "Cardinality" = "Cardinality"
+
+  inline def values: js.Array[AggregationTypeName] = js.Array(Statistics, Percentiles, Cardinality)
+}
+
 /** The type of alert target: one of "SNS".
   */
 type AlertTargetType = "SNS"
@@ -293,6 +302,14 @@ object DeviceCertificateUpdateAction {
   inline def values: js.Array[DeviceCertificateUpdateAction] = js.Array(DEACTIVATE)
 }
 
+type DeviceDefenderIndexingMode = "OFF" | "VIOLATIONS"
+object DeviceDefenderIndexingMode {
+  inline val OFF: "OFF" = "OFF"
+  inline val VIOLATIONS: "VIOLATIONS" = "VIOLATIONS"
+
+  inline def values: js.Array[DeviceDefenderIndexingMode] = js.Array(OFF, VIOLATIONS)
+}
+
 type DimensionType = "TOPIC_FILTER"
 object DimensionType {
   inline val TOPIC_FILTER: "TOPIC_FILTER" = "TOPIC_FILTER"
@@ -366,6 +383,67 @@ object FieldType {
   inline val Boolean: "Boolean" = "Boolean"
 
   inline def values: js.Array[FieldType] = js.Array(Number, String, Boolean)
+}
+
+type FleetMetricUnit = "Seconds" | "Microseconds" | "Milliseconds" | "Bytes" | "Kilobytes" | "Megabytes" | "Gigabytes" | "Terabytes" | "Bits" | "Kilobits" | "Megabits" | "Gigabits" | "Terabits" | "Percent" | "Count" | "Bytes/Second" | "Kilobytes/Second" | "Megabytes/Second" | "Gigabytes/Second" | "Terabytes/Second" | "Bits/Second" | "Kilobits/Second" | "Megabits/Second" | "Gigabits/Second" | "Terabits/Second" | "Count/Second" | "None"
+object FleetMetricUnit {
+  inline val Seconds: "Seconds" = "Seconds"
+  inline val Microseconds: "Microseconds" = "Microseconds"
+  inline val Milliseconds: "Milliseconds" = "Milliseconds"
+  inline val Bytes: "Bytes" = "Bytes"
+  inline val Kilobytes: "Kilobytes" = "Kilobytes"
+  inline val Megabytes: "Megabytes" = "Megabytes"
+  inline val Gigabytes: "Gigabytes" = "Gigabytes"
+  inline val Terabytes: "Terabytes" = "Terabytes"
+  inline val Bits: "Bits" = "Bits"
+  inline val Kilobits: "Kilobits" = "Kilobits"
+  inline val Megabits: "Megabits" = "Megabits"
+  inline val Gigabits: "Gigabits" = "Gigabits"
+  inline val Terabits: "Terabits" = "Terabits"
+  inline val Percent: "Percent" = "Percent"
+  inline val Count: "Count" = "Count"
+  inline val `Bytes/Second`: "Bytes/Second" = "Bytes/Second"
+  inline val `Kilobytes/Second`: "Kilobytes/Second" = "Kilobytes/Second"
+  inline val `Megabytes/Second`: "Megabytes/Second" = "Megabytes/Second"
+  inline val `Gigabytes/Second`: "Gigabytes/Second" = "Gigabytes/Second"
+  inline val `Terabytes/Second`: "Terabytes/Second" = "Terabytes/Second"
+  inline val `Bits/Second`: "Bits/Second" = "Bits/Second"
+  inline val `Kilobits/Second`: "Kilobits/Second" = "Kilobits/Second"
+  inline val `Megabits/Second`: "Megabits/Second" = "Megabits/Second"
+  inline val `Gigabits/Second`: "Gigabits/Second" = "Gigabits/Second"
+  inline val `Terabits/Second`: "Terabits/Second" = "Terabits/Second"
+  inline val `Count/Second`: "Count/Second" = "Count/Second"
+  inline val None: "None" = "None"
+
+  inline def values: js.Array[FleetMetricUnit] = js.Array(
+    Seconds,
+    Microseconds,
+    Milliseconds,
+    Bytes,
+    Kilobytes,
+    Megabytes,
+    Gigabytes,
+    Terabytes,
+    Bits,
+    Kilobits,
+    Megabits,
+    Gigabits,
+    Terabits,
+    Percent,
+    Count,
+    `Bytes/Second`,
+    `Kilobytes/Second`,
+    `Megabytes/Second`,
+    `Gigabytes/Second`,
+    `Terabytes/Second`,
+    `Bits/Second`,
+    `Kilobits/Second`,
+    `Megabits/Second`,
+    `Gigabits/Second`,
+    `Terabits/Second`,
+    `Count/Second`,
+    None
+  )
 }
 
 type IndexStatus = "ACTIVE" | "BUILDING" | "REBUILDING"
@@ -457,6 +535,14 @@ object ModelStatus {
   inline val EXPIRED: "EXPIRED" = "EXPIRED"
 
   inline def values: js.Array[ModelStatus] = js.Array(PENDING_BUILD, ACTIVE, EXPIRED)
+}
+
+type NamedShadowIndexingMode = "OFF" | "ON"
+object NamedShadowIndexingMode {
+  inline val OFF: "OFF" = "OFF"
+  inline val ON: "ON" = "ON"
+
+  inline def values: js.Array[NamedShadowIndexingMode] = js.Array(OFF, ON)
 }
 
 type OTAUpdateStatus = "CREATE_PENDING" | "CREATE_IN_PROGRESS" | "CREATE_COMPLETE" | "CREATE_FAILED"
@@ -576,6 +662,16 @@ object TopicRuleDestinationStatus {
   inline val DELETING: "DELETING" = "DELETING"
 
   inline def values: js.Array[TopicRuleDestinationStatus] = js.Array(ENABLED, IN_PROGRESS, DISABLED, ERROR, DELETING)
+}
+
+type VerificationState = "FALSE_POSITIVE" | "BENIGN_POSITIVE" | "TRUE_POSITIVE" | "UNKNOWN"
+object VerificationState {
+  inline val FALSE_POSITIVE: "FALSE_POSITIVE" = "FALSE_POSITIVE"
+  inline val BENIGN_POSITIVE: "BENIGN_POSITIVE" = "BENIGN_POSITIVE"
+  inline val TRUE_POSITIVE: "TRUE_POSITIVE" = "TRUE_POSITIVE"
+  inline val UNKNOWN: "UNKNOWN" = "UNKNOWN"
+
+  inline def values: js.Array[VerificationState] = js.Array(FALSE_POSITIVE, BENIGN_POSITIVE, TRUE_POSITIVE, UNKNOWN)
 }
 
 type ViolationEventType = "in-alarm" | "alarm-cleared" | "alarm-invalidated"

@@ -25,6 +25,15 @@ object AssignPublicIp {
 }
 
 @js.native
+sealed trait CPUArchitecture extends js.Any
+object CPUArchitecture {
+  val X86_64 = "X86_64".asInstanceOf[CPUArchitecture]
+  val ARM64 = "ARM64".asInstanceOf[CPUArchitecture]
+
+  @inline def values: js.Array[CPUArchitecture] = js.Array(X86_64, ARM64)
+}
+
+@js.native
 sealed trait CapacityProviderField extends js.Any
 object CapacityProviderField {
   val TAGS = "TAGS".asInstanceOf[CapacityProviderField]
@@ -79,8 +88,9 @@ sealed trait Compatibility extends js.Any
 object Compatibility {
   val EC2 = "EC2".asInstanceOf[Compatibility]
   val FARGATE = "FARGATE".asInstanceOf[Compatibility]
+  val EXTERNAL = "EXTERNAL".asInstanceOf[Compatibility]
 
-  @inline def values: js.Array[Compatibility] = js.Array(EC2, FARGATE)
+  @inline def values: js.Array[Compatibility] = js.Array(EC2, FARGATE, EXTERNAL)
 }
 
 @js.native
@@ -107,8 +117,9 @@ object ContainerCondition {
 sealed trait ContainerInstanceField extends js.Any
 object ContainerInstanceField {
   val TAGS = "TAGS".asInstanceOf[ContainerInstanceField]
+  val CONTAINER_INSTANCE_HEALTH = "CONTAINER_INSTANCE_HEALTH".asInstanceOf[ContainerInstanceField]
 
-  @inline def values: js.Array[ContainerInstanceField] = js.Array(TAGS)
+  @inline def values: js.Array[ContainerInstanceField] = js.Array(TAGS, CONTAINER_INSTANCE_HEALTH)
 }
 
 @js.native
@@ -219,6 +230,25 @@ object HealthStatus {
 }
 
 @js.native
+sealed trait InstanceHealthCheckState extends js.Any
+object InstanceHealthCheckState {
+  val OK = "OK".asInstanceOf[InstanceHealthCheckState]
+  val IMPAIRED = "IMPAIRED".asInstanceOf[InstanceHealthCheckState]
+  val INSUFFICIENT_DATA = "INSUFFICIENT_DATA".asInstanceOf[InstanceHealthCheckState]
+  val INITIALIZING = "INITIALIZING".asInstanceOf[InstanceHealthCheckState]
+
+  @inline def values: js.Array[InstanceHealthCheckState] = js.Array(OK, IMPAIRED, INSUFFICIENT_DATA, INITIALIZING)
+}
+
+@js.native
+sealed trait InstanceHealthCheckType extends js.Any
+object InstanceHealthCheckType {
+  val CONTAINER_RUNTIME = "CONTAINER_RUNTIME".asInstanceOf[InstanceHealthCheckType]
+
+  @inline def values: js.Array[InstanceHealthCheckType] = js.Array(CONTAINER_RUNTIME)
+}
+
+@js.native
 sealed trait IpcMode extends js.Any
 object IpcMode {
   val host = "host".asInstanceOf[IpcMode]
@@ -233,8 +263,9 @@ sealed trait LaunchType extends js.Any
 object LaunchType {
   val EC2 = "EC2".asInstanceOf[LaunchType]
   val FARGATE = "FARGATE".asInstanceOf[LaunchType]
+  val EXTERNAL = "EXTERNAL".asInstanceOf[LaunchType]
 
-  @inline def values: js.Array[LaunchType] = js.Array(EC2, FARGATE)
+  @inline def values: js.Array[LaunchType] = js.Array(EC2, FARGATE, EXTERNAL)
 }
 
 @js.native
@@ -287,6 +318,30 @@ object NetworkMode {
   val none = "none".asInstanceOf[NetworkMode]
 
   @inline def values: js.Array[NetworkMode] = js.Array(bridge, host, awsvpc, none)
+}
+
+@js.native
+sealed trait OSFamily extends js.Any
+object OSFamily {
+  val WINDOWS_SERVER_2019_FULL = "WINDOWS_SERVER_2019_FULL".asInstanceOf[OSFamily]
+  val WINDOWS_SERVER_2019_CORE = "WINDOWS_SERVER_2019_CORE".asInstanceOf[OSFamily]
+  val WINDOWS_SERVER_2016_FULL = "WINDOWS_SERVER_2016_FULL".asInstanceOf[OSFamily]
+  val WINDOWS_SERVER_2004_CORE = "WINDOWS_SERVER_2004_CORE".asInstanceOf[OSFamily]
+  val WINDOWS_SERVER_2022_CORE = "WINDOWS_SERVER_2022_CORE".asInstanceOf[OSFamily]
+  val WINDOWS_SERVER_2022_FULL = "WINDOWS_SERVER_2022_FULL".asInstanceOf[OSFamily]
+  val WINDOWS_SERVER_20H2_CORE = "WINDOWS_SERVER_20H2_CORE".asInstanceOf[OSFamily]
+  val LINUX = "LINUX".asInstanceOf[OSFamily]
+
+  @inline def values: js.Array[OSFamily] = js.Array(
+    WINDOWS_SERVER_2019_FULL,
+    WINDOWS_SERVER_2019_CORE,
+    WINDOWS_SERVER_2016_FULL,
+    WINDOWS_SERVER_2004_CORE,
+    WINDOWS_SERVER_2022_CORE,
+    WINDOWS_SERVER_2022_FULL,
+    WINDOWS_SERVER_20H2_CORE,
+    LINUX
+  )
 }
 
 @js.native

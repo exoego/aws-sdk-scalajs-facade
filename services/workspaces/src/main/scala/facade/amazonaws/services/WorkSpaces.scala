@@ -79,6 +79,7 @@ package object workspaces {
   type TagValue = String
   type TerminateWorkspaceRequests = js.Array[TerminateRequest]
   type Timestamp = js.Date
+  type UpdateDescription = String
   type UserName = String
   type UserVolumeSizeGib = Int
   type VolumeEncryptionKey = String
@@ -107,6 +108,7 @@ package object workspaces {
     @inline def createConnectionAliasFuture(params: CreateConnectionAliasRequest): Future[CreateConnectionAliasResult] = service.createConnectionAlias(params).promise().toFuture
     @inline def createIpGroupFuture(params: CreateIpGroupRequest): Future[CreateIpGroupResult] = service.createIpGroup(params).promise().toFuture
     @inline def createTagsFuture(params: CreateTagsRequest): Future[CreateTagsResult] = service.createTags(params).promise().toFuture
+    @inline def createUpdatedWorkspaceImageFuture(params: CreateUpdatedWorkspaceImageRequest): Future[CreateUpdatedWorkspaceImageResult] = service.createUpdatedWorkspaceImage(params).promise().toFuture
     @inline def createWorkspaceBundleFuture(params: CreateWorkspaceBundleRequest): Future[CreateWorkspaceBundleResult] = service.createWorkspaceBundle(params).promise().toFuture
     @inline def createWorkspacesFuture(params: CreateWorkspacesRequest): Future[CreateWorkspacesResult] = service.createWorkspaces(params).promise().toFuture
     @inline def deleteConnectionAliasFuture(params: DeleteConnectionAliasRequest): Future[DeleteConnectionAliasResult] = service.deleteConnectionAlias(params).promise().toFuture
@@ -168,6 +170,7 @@ package object workspaces {
     def createConnectionAlias(params: CreateConnectionAliasRequest): Request[CreateConnectionAliasResult] = js.native
     def createIpGroup(params: CreateIpGroupRequest): Request[CreateIpGroupResult] = js.native
     def createTags(params: CreateTagsRequest): Request[CreateTagsResult] = js.native
+    def createUpdatedWorkspaceImage(params: CreateUpdatedWorkspaceImageRequest): Request[CreateUpdatedWorkspaceImageResult] = js.native
     def createWorkspaceBundle(params: CreateWorkspaceBundleRequest): Request[CreateWorkspaceBundleResult] = js.native
     def createWorkspaces(params: CreateWorkspacesRequest): Request[CreateWorkspacesResult] = js.native
     def deleteConnectionAlias(params: DeleteConnectionAliasRequest): Request[DeleteConnectionAliasResult] = js.native
@@ -642,6 +645,49 @@ package object workspaces {
     def apply(): CreateTagsResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CreateTagsResult]
+    }
+  }
+
+  @js.native
+  trait CreateUpdatedWorkspaceImageRequest extends js.Object {
+    var Description: WorkspaceImageDescription
+    var Name: WorkspaceImageName
+    var SourceImageId: WorkspaceImageId
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateUpdatedWorkspaceImageRequest {
+    @inline
+    def apply(
+        Description: WorkspaceImageDescription,
+        Name: WorkspaceImageName,
+        SourceImageId: WorkspaceImageId,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateUpdatedWorkspaceImageRequest = {
+      val __obj = js.Dynamic.literal(
+        "Description" -> Description.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SourceImageId" -> SourceImageId.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUpdatedWorkspaceImageRequest]
+    }
+  }
+
+  @js.native
+  trait CreateUpdatedWorkspaceImageResult extends js.Object {
+    var ImageId: js.UndefOr[WorkspaceImageId]
+  }
+
+  object CreateUpdatedWorkspaceImageResult {
+    @inline
+    def apply(
+        ImageId: js.UndefOr[WorkspaceImageId] = js.undefined
+    ): CreateUpdatedWorkspaceImageResult = {
+      val __obj = js.Dynamic.literal()
+      ImageId.foreach(__v => __obj.updateDynamic("ImageId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateUpdatedWorkspaceImageResult]
     }
   }
 
@@ -1601,7 +1647,7 @@ package object workspaces {
     }
   }
 
-  /** Describes the AWS accounts that have been granted permission to use a shared image. For more information about sharing images, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html| Share or Unshare a Custom WorkSpaces Image]].
+  /** Describes the Amazon Web Services accounts that have been granted permission to use a shared image. For more information about sharing images, see [[https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html| Share or Unshare a Custom WorkSpaces Image]].
     */
   @js.native
   trait ImagePermission extends js.Object {
@@ -2507,6 +2553,29 @@ package object workspaces {
     }
   }
 
+  /** Describes whether a WorkSpace image needs to be updated with the latest drivers and other components required by Amazon WorkSpaces.
+    *
+    * '''Note:'''Only Windows 10 WorkSpace images can be programmatically updated at this time.
+    */
+  @js.native
+  trait UpdateResult extends js.Object {
+    var Description: js.UndefOr[UpdateDescription]
+    var UpdateAvailable: js.UndefOr[BooleanObject]
+  }
+
+  object UpdateResult {
+    @inline
+    def apply(
+        Description: js.UndefOr[UpdateDescription] = js.undefined,
+        UpdateAvailable: js.UndefOr[BooleanObject] = js.undefined
+    ): UpdateResult = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      UpdateAvailable.foreach(__v => __obj.updateDynamic("UpdateAvailable")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateResult]
+    }
+  }
+
   @js.native
   trait UpdateRulesOfIpGroupRequest extends js.Object {
     var GroupId: IpGroupId
@@ -2687,6 +2756,7 @@ package object workspaces {
     var DeviceTypeAndroid: js.UndefOr[AccessPropertyValue]
     var DeviceTypeChromeOs: js.UndefOr[AccessPropertyValue]
     var DeviceTypeIos: js.UndefOr[AccessPropertyValue]
+    var DeviceTypeLinux: js.UndefOr[AccessPropertyValue]
     var DeviceTypeOsx: js.UndefOr[AccessPropertyValue]
     var DeviceTypeWeb: js.UndefOr[AccessPropertyValue]
     var DeviceTypeWindows: js.UndefOr[AccessPropertyValue]
@@ -2699,6 +2769,7 @@ package object workspaces {
         DeviceTypeAndroid: js.UndefOr[AccessPropertyValue] = js.undefined,
         DeviceTypeChromeOs: js.UndefOr[AccessPropertyValue] = js.undefined,
         DeviceTypeIos: js.UndefOr[AccessPropertyValue] = js.undefined,
+        DeviceTypeLinux: js.UndefOr[AccessPropertyValue] = js.undefined,
         DeviceTypeOsx: js.UndefOr[AccessPropertyValue] = js.undefined,
         DeviceTypeWeb: js.UndefOr[AccessPropertyValue] = js.undefined,
         DeviceTypeWindows: js.UndefOr[AccessPropertyValue] = js.undefined,
@@ -2708,6 +2779,7 @@ package object workspaces {
       DeviceTypeAndroid.foreach(__v => __obj.updateDynamic("DeviceTypeAndroid")(__v.asInstanceOf[js.Any]))
       DeviceTypeChromeOs.foreach(__v => __obj.updateDynamic("DeviceTypeChromeOs")(__v.asInstanceOf[js.Any]))
       DeviceTypeIos.foreach(__v => __obj.updateDynamic("DeviceTypeIos")(__v.asInstanceOf[js.Any]))
+      DeviceTypeLinux.foreach(__v => __obj.updateDynamic("DeviceTypeLinux")(__v.asInstanceOf[js.Any]))
       DeviceTypeOsx.foreach(__v => __obj.updateDynamic("DeviceTypeOsx")(__v.asInstanceOf[js.Any]))
       DeviceTypeWeb.foreach(__v => __obj.updateDynamic("DeviceTypeWeb")(__v.asInstanceOf[js.Any]))
       DeviceTypeWindows.foreach(__v => __obj.updateDynamic("DeviceTypeWindows")(__v.asInstanceOf[js.Any]))
@@ -2898,6 +2970,7 @@ package object workspaces {
     var OwnerAccountId: js.UndefOr[AwsAccount]
     var RequiredTenancy: js.UndefOr[WorkspaceImageRequiredTenancy]
     var State: js.UndefOr[WorkspaceImageState]
+    var Updates: js.UndefOr[UpdateResult]
   }
 
   object WorkspaceImage {
@@ -2912,7 +2985,8 @@ package object workspaces {
         OperatingSystem: js.UndefOr[OperatingSystem] = js.undefined,
         OwnerAccountId: js.UndefOr[AwsAccount] = js.undefined,
         RequiredTenancy: js.UndefOr[WorkspaceImageRequiredTenancy] = js.undefined,
-        State: js.UndefOr[WorkspaceImageState] = js.undefined
+        State: js.UndefOr[WorkspaceImageState] = js.undefined,
+        Updates: js.UndefOr[UpdateResult] = js.undefined
     ): WorkspaceImage = {
       val __obj = js.Dynamic.literal()
       Created.foreach(__v => __obj.updateDynamic("Created")(__v.asInstanceOf[js.Any]))
@@ -2925,6 +2999,7 @@ package object workspaces {
       OwnerAccountId.foreach(__v => __obj.updateDynamic("OwnerAccountId")(__v.asInstanceOf[js.Any]))
       RequiredTenancy.foreach(__v => __obj.updateDynamic("RequiredTenancy")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      Updates.foreach(__v => __obj.updateDynamic("Updates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[WorkspaceImage]
     }
   }

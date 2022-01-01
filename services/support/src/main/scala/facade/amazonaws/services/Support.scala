@@ -228,9 +228,9 @@ package object support {
     }
   }
 
-  /** A JSON-formatted object that contains the metadata for a support case. It is contained in the response from a <a>DescribeCases</a> request. ```CaseDetails``` contains the following fields: * ```caseId.``` The AWS Support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>. * ```categoryCode.``` The category of problem for the AWS Support case. Corresponds to the CategoryCode values returned by a call to <a>DescribeServices</a>. * ```displayId.``` The identifier for the case on pages in the AWS Support Center. * ```language.``` The ISO 639-1 code for the language in which AWS provides support. AWS Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them. * ```nextToken.``` A resumption point for pagination. * ```recentCommunications.``` One or more <a>Communication</a> objects. Fields of
-    * these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>. * ```serviceCode.``` The identifier for the AWS service that corresponds to the service code defined in the call to <a>DescribeServices</a>. * ```severityCode.``` The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>, and <code>critical</code>. * ```status.``` The status of the case in the AWS Support Center. Valid values: <li> <code>opened</code> * <code>pending-customer-action</code> * <code>reopened</code> * <code>resolved</code> * <code>unassigned</code> * <code>work-in-progress</code> </li> * ```subject.``` The subject line of the case. * ```submittedBy.``` The email address of the account that submitted the case. * ```timeCreated.``` The time the case was created, in
-    * ISO-8601 format.
+  /** A JSON-formatted object that contains the metadata for a support case. It is contained in the response from a <a>DescribeCases</a> request. ```CaseDetails``` contains the following fields: * ```caseId``` - The support case ID requested or returned in the call. The case ID is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>. * ```categoryCode``` - The category of problem for the support case. Corresponds to the <code>CategoryCode</code> values returned by a call to <a>DescribeServices</a>. * ```displayId``` - The identifier for the case on pages in the Amazon Web Services Support Center. * ```language``` - The ISO 639-1 code for the language in which Amazon Web Services provides support. Amazon Web Services Support currently supports English ("en") and Japanese ("ja"). Language parameters must be passed explicitly for operations that take them. * ```nextToken``` - A resumption point for pagination. *
+    * ```recentCommunications``` - One or more <a>Communication</a> objects. Fields of these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>, <code>submittedBy</code>, and <code>timeCreated</code>. * ```serviceCode``` - The identifier for the Amazon Web Services service that corresponds to the service code defined in the call to <a>DescribeServices</a>. * ```severityCode``` - The severity code assigned to the case. Contains one of the values returned by the call to <a>DescribeSeverityLevels</a>. The possible values are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>, and <code>critical</code>. * ```status``` - The status of the case in the Amazon Web Services Support Center. Valid values: <li> <code>opened</code> * <code>pending-customer-action</code> * <code>reopened</code> * <code>resolved</code> * <code>unassigned</code> * <code>work-in-progress</code> </li> * ```subject``` - The subject line of the case. *
+    * ```submittedBy``` - The email address of the account that submitted the case. * ```timeCreated``` - The time the case was created, in ISO-8601 format.
     */
   @js.native
   trait CaseDetails extends js.Object {
@@ -281,7 +281,7 @@ package object support {
     }
   }
 
-  /** A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <a>DescribeServices</a> response for each AWS service.
+  /** A JSON-formatted name/value pair that represents the category name and category code of the problem, selected from the <a>DescribeServices</a> response for each Amazon Web Services service.
     */
   @js.native
   trait Category extends js.Object {
@@ -302,7 +302,7 @@ package object support {
     }
   }
 
-  /** A communication associated with an AWS Support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.
+  /** A communication associated with a support case. The communication consists of the case ID, the message body, attachment information, the submitter of the communication, and the date and time of the communication.
     */
   @js.native
   trait Communication extends js.Object {
@@ -374,7 +374,7 @@ package object support {
     }
   }
 
-  /** The AWS Support case ID returned by a successful completion of the <a>CreateCase</a> operation.
+  /** The support case ID returned by a successful completion of the <a>CreateCase</a> operation.
     */
   @js.native
   trait CreateCaseResponse extends js.Object {
@@ -558,7 +558,7 @@ package object support {
     }
   }
 
-  /** The list of AWS services returned by the <a>DescribeServices</a> operation.
+  /** The list of Amazon Web Services services returned by the <a>DescribeServices</a> operation.
     */
   @js.native
   trait DescribeServicesResponse extends js.Object {
@@ -855,7 +855,7 @@ package object support {
     }
   }
 
-  /** Information about an AWS service returned by the <a>DescribeServices</a> operation.
+  /** Information about an Amazon Web Services service returned by the <a>DescribeServices</a> operation.
     */
   @js.native
   trait Service extends js.Object {
@@ -879,7 +879,7 @@ package object support {
     }
   }
 
-  /** A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see [[https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity|Choosing a severity]] in the <i>AWS Support User Guide</i>.
+  /** A code and name pair that represents the severity level of a support case. The available values depend on the support plan for the account. For more information, see [[https://docs.aws.amazon.com/awssupport/latest/user/case-management.html#choosing-severity|Choosing a severity]] in the <i>Amazon Web Services Support User Guide</i>.
     */
   @js.native
   trait SeverityLevel extends js.Object {
@@ -1097,7 +1097,7 @@ package object support {
     }
   }
 
-  /** Details about AWS resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
+  /** Details about Amazon Web Services resources that were analyzed in a call to Trusted Advisor <a>DescribeTrustedAdvisorCheckSummaries</a>.
     */
   @js.native
   trait TrustedAdvisorResourcesSummary extends js.Object {

@@ -108,6 +108,10 @@ object PartitionInstanceType {
   val `search.large` = "search.large".asInstanceOf[PartitionInstanceType]
   val `search.xlarge` = "search.xlarge".asInstanceOf[PartitionInstanceType]
   val `search.2xlarge` = "search.2xlarge".asInstanceOf[PartitionInstanceType]
+  val `search.previousgeneration.small` = "search.previousgeneration.small".asInstanceOf[PartitionInstanceType]
+  val `search.previousgeneration.large` = "search.previousgeneration.large".asInstanceOf[PartitionInstanceType]
+  val `search.previousgeneration.xlarge` = "search.previousgeneration.xlarge".asInstanceOf[PartitionInstanceType]
+  val `search.previousgeneration.2xlarge` = "search.previousgeneration.2xlarge".asInstanceOf[PartitionInstanceType]
 
   @inline def values: js.Array[PartitionInstanceType] = js.Array(
     `search.m1.small`,
@@ -122,7 +126,11 @@ object PartitionInstanceType {
     `search.medium`,
     `search.large`,
     `search.xlarge`,
-    `search.2xlarge`
+    `search.2xlarge`,
+    `search.previousgeneration.small`,
+    `search.previousgeneration.large`,
+    `search.previousgeneration.xlarge`,
+    `search.previousgeneration.2xlarge`
   )
 }
 

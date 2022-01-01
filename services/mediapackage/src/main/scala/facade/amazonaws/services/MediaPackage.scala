@@ -876,7 +876,7 @@ package object mediapackage {
     }
   }
 
-  /** Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
+  /** Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. The encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. To configure the encryption contract, specify which audio and video encryption presets to use. Note the following considerations when using encryptionContractConfiguration: encryptionContractConfiguration can be used for DASH or CMAF endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification. You must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.
     */
   @js.native
   trait EncryptionContractConfiguration extends js.Object {
@@ -1083,6 +1083,7 @@ package object mediapackage {
     var AdTriggers: js.UndefOr[AdTriggers]
     var AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions]
     var Encryption: js.UndefOr[HlsEncryption]
+    var IncludeDvbSubtitles: js.UndefOr[__boolean]
     var IncludeIframeOnlyStream: js.UndefOr[__boolean]
     var PlaylistType: js.UndefOr[PlaylistType]
     var PlaylistWindowSeconds: js.UndefOr[__integer]
@@ -1099,6 +1100,7 @@ package object mediapackage {
         AdTriggers: js.UndefOr[AdTriggers] = js.undefined,
         AdsOnDeliveryRestrictions: js.UndefOr[AdsOnDeliveryRestrictions] = js.undefined,
         Encryption: js.UndefOr[HlsEncryption] = js.undefined,
+        IncludeDvbSubtitles: js.UndefOr[__boolean] = js.undefined,
         IncludeIframeOnlyStream: js.UndefOr[__boolean] = js.undefined,
         PlaylistType: js.UndefOr[PlaylistType] = js.undefined,
         PlaylistWindowSeconds: js.UndefOr[__integer] = js.undefined,
@@ -1112,6 +1114,7 @@ package object mediapackage {
       AdTriggers.foreach(__v => __obj.updateDynamic("AdTriggers")(__v.asInstanceOf[js.Any]))
       AdsOnDeliveryRestrictions.foreach(__v => __obj.updateDynamic("AdsOnDeliveryRestrictions")(__v.asInstanceOf[js.Any]))
       Encryption.foreach(__v => __obj.updateDynamic("Encryption")(__v.asInstanceOf[js.Any]))
+      IncludeDvbSubtitles.foreach(__v => __obj.updateDynamic("IncludeDvbSubtitles")(__v.asInstanceOf[js.Any]))
       IncludeIframeOnlyStream.foreach(__v => __obj.updateDynamic("IncludeIframeOnlyStream")(__v.asInstanceOf[js.Any]))
       PlaylistType.foreach(__v => __obj.updateDynamic("PlaylistType")(__v.asInstanceOf[js.Any]))
       PlaylistWindowSeconds.foreach(__v => __obj.updateDynamic("PlaylistWindowSeconds")(__v.asInstanceOf[js.Any]))

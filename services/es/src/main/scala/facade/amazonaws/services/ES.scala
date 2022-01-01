@@ -23,6 +23,7 @@ package object es {
   type CrossClusterSearchConnectionId = String
   type CrossClusterSearchConnectionStatusMessage = String
   type DeploymentCloseDateTimeStamp = js.Date
+  type DeploymentType = String
   type DescribePackagesFilterList = js.Array[DescribePackagesFilter]
   type DescribePackagesFilterValue = String
   type DescribePackagesFilterValues = js.Array[DescribePackagesFilterValue]
@@ -32,6 +33,7 @@ package object es {
   type DomainNameFqdn = String
   type DomainNameList = js.Array[DomainName]
   type DomainPackageDetailsList = js.Array[DomainPackageDetails]
+  type DryRun = Boolean
   type DurationValue = Double
   type ElasticsearchDomainStatusList = js.Array[ElasticsearchDomainStatus]
   type ElasticsearchInstanceTypeList = js.Array[ESPartitionInstanceType]
@@ -58,6 +60,7 @@ package object es {
   type LogPublishingOptions = js.Dictionary[LogPublishingOption]
   type MaxResults = Int
   type MaximumInstanceCount = Int
+  type Message = String
   type MinimumInstanceCount = Int
   type NextToken = String
   type NonEmptyString = String
@@ -132,7 +135,7 @@ package object es {
     @inline def getPackageVersionHistoryFuture(params: GetPackageVersionHistoryRequest): Future[GetPackageVersionHistoryResponse] = service.getPackageVersionHistory(params).promise().toFuture
     @inline def getUpgradeHistoryFuture(params: GetUpgradeHistoryRequest): Future[GetUpgradeHistoryResponse] = service.getUpgradeHistory(params).promise().toFuture
     @inline def getUpgradeStatusFuture(params: GetUpgradeStatusRequest): Future[GetUpgradeStatusResponse] = service.getUpgradeStatus(params).promise().toFuture
-    @inline def listDomainNamesFuture(): Future[ListDomainNamesResponse] = service.listDomainNames().promise().toFuture
+    @inline def listDomainNamesFuture(params: ListDomainNamesRequest): Future[ListDomainNamesResponse] = service.listDomainNames(params).promise().toFuture
     @inline def listDomainsForPackageFuture(params: ListDomainsForPackageRequest): Future[ListDomainsForPackageResponse] = service.listDomainsForPackage(params).promise().toFuture
     @inline def listElasticsearchInstanceTypesFuture(params: ListElasticsearchInstanceTypesRequest): Future[ListElasticsearchInstanceTypesResponse] = service.listElasticsearchInstanceTypes(params).promise().toFuture
     @inline def listElasticsearchVersionsFuture(params: ListElasticsearchVersionsRequest): Future[ListElasticsearchVersionsResponse] = service.listElasticsearchVersions(params).promise().toFuture
@@ -180,7 +183,7 @@ package object es {
     def getPackageVersionHistory(params: GetPackageVersionHistoryRequest): Request[GetPackageVersionHistoryResponse] = js.native
     def getUpgradeHistory(params: GetUpgradeHistoryRequest): Request[GetUpgradeHistoryResponse] = js.native
     def getUpgradeStatus(params: GetUpgradeStatusRequest): Request[GetUpgradeStatusResponse] = js.native
-    def listDomainNames(): Request[ListDomainNamesResponse] = js.native
+    def listDomainNames(params: ListDomainNamesRequest): Request[ListDomainNamesResponse] = js.native
     def listDomainsForPackage(params: ListDomainsForPackageRequest): Request[ListDomainsForPackageResponse] = js.native
     def listElasticsearchInstanceTypes(params: ListElasticsearchInstanceTypesRequest): Request[ListElasticsearchInstanceTypesResponse] = js.native
     def listElasticsearchVersions(params: ListElasticsearchVersionsRequest): Request[ListElasticsearchVersionsResponse] = js.native
@@ -705,6 +708,25 @@ package object es {
         "Status" -> Status.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CognitoOptionsStatus]
+    }
+  }
+
+  /** Specifies the configuration for cold storage options such as enabled
+    */
+  @js.native
+  trait ColdStorageOptions extends js.Object {
+    var Enabled: Boolean
+  }
+
+  object ColdStorageOptions {
+    @inline
+    def apply(
+        Enabled: Boolean
+    ): ColdStorageOptions = {
+      val __obj = js.Dynamic.literal(
+        "Enabled" -> Enabled.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ColdStorageOptions]
     }
   }
 
@@ -1606,15 +1628,18 @@ package object es {
   @js.native
   trait DomainInfo extends js.Object {
     var DomainName: js.UndefOr[DomainName]
+    var EngineType: js.UndefOr[EngineType]
   }
 
   object DomainInfo {
     @inline
     def apply(
-        DomainName: js.UndefOr[DomainName] = js.undefined
+        DomainName: js.UndefOr[DomainName] = js.undefined,
+        EngineType: js.UndefOr[EngineType] = js.undefined
     ): DomainInfo = {
       val __obj = js.Dynamic.literal()
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainInfo]
     }
   }
@@ -1682,6 +1707,25 @@ package object es {
       PackageVersion.foreach(__v => __obj.updateDynamic("PackageVersion")(__v.asInstanceOf[js.Any]))
       ReferencePath.foreach(__v => __obj.updateDynamic("ReferencePath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DomainPackageDetails]
+    }
+  }
+
+  @js.native
+  trait DryRunResults extends js.Object {
+    var DeploymentType: js.UndefOr[DeploymentType]
+    var Message: js.UndefOr[Message]
+  }
+
+  object DryRunResults {
+    @inline
+    def apply(
+        DeploymentType: js.UndefOr[DeploymentType] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined
+    ): DryRunResults = {
+      val __obj = js.Dynamic.literal()
+      DeploymentType.foreach(__v => __obj.updateDynamic("DeploymentType")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DryRunResults]
     }
   }
 
@@ -1759,6 +1803,7 @@ package object es {
     */
   @js.native
   trait ElasticsearchClusterConfig extends js.Object {
+    var ColdStorageOptions: js.UndefOr[ColdStorageOptions]
     var DedicatedMasterCount: js.UndefOr[IntegerClass]
     var DedicatedMasterEnabled: js.UndefOr[Boolean]
     var DedicatedMasterType: js.UndefOr[ESPartitionInstanceType]
@@ -1774,6 +1819,7 @@ package object es {
   object ElasticsearchClusterConfig {
     @inline
     def apply(
+        ColdStorageOptions: js.UndefOr[ColdStorageOptions] = js.undefined,
         DedicatedMasterCount: js.UndefOr[IntegerClass] = js.undefined,
         DedicatedMasterEnabled: js.UndefOr[Boolean] = js.undefined,
         DedicatedMasterType: js.UndefOr[ESPartitionInstanceType] = js.undefined,
@@ -1786,6 +1832,7 @@ package object es {
         ZoneAwarenessEnabled: js.UndefOr[Boolean] = js.undefined
     ): ElasticsearchClusterConfig = {
       val __obj = js.Dynamic.literal()
+      ColdStorageOptions.foreach(__v => __obj.updateDynamic("ColdStorageOptions")(__v.asInstanceOf[js.Any]))
       DedicatedMasterCount.foreach(__v => __obj.updateDynamic("DedicatedMasterCount")(__v.asInstanceOf[js.Any]))
       DedicatedMasterEnabled.foreach(__v => __obj.updateDynamic("DedicatedMasterEnabled")(__v.asInstanceOf[js.Any]))
       DedicatedMasterType.foreach(__v => __obj.updateDynamic("DedicatedMasterType")(__v.asInstanceOf[js.Any]))
@@ -2360,7 +2407,25 @@ package object es {
     }
   }
 
-  /** The result of a <code>ListDomainNames</code> operation. Contains the names of all Elasticsearch domains owned by this account.
+  /** Container for the parameters to the <code><a>ListDomainNames</a></code> operation.
+    */
+  @js.native
+  trait ListDomainNamesRequest extends js.Object {
+    var EngineType: js.UndefOr[EngineType]
+  }
+
+  object ListDomainNamesRequest {
+    @inline
+    def apply(
+        EngineType: js.UndefOr[EngineType] = js.undefined
+    ): ListDomainNamesRequest = {
+      val __obj = js.Dynamic.literal()
+      EngineType.foreach(__v => __obj.updateDynamic("EngineType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDomainNamesRequest]
+    }
+  }
+
+  /** The result of a <code>ListDomainNames</code> operation. Contains the names of all domains owned by this account and their respective engine types.
     */
   @js.native
   trait ListDomainNamesResponse extends js.Object {
@@ -3406,6 +3471,7 @@ package object es {
     var AutoTuneOptions: js.UndefOr[AutoTuneOptions]
     var CognitoOptions: js.UndefOr[CognitoOptions]
     var DomainEndpointOptions: js.UndefOr[DomainEndpointOptions]
+    var DryRun: js.UndefOr[DryRun]
     var EBSOptions: js.UndefOr[EBSOptions]
     var ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig]
     var EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions]
@@ -3425,6 +3491,7 @@ package object es {
         AutoTuneOptions: js.UndefOr[AutoTuneOptions] = js.undefined,
         CognitoOptions: js.UndefOr[CognitoOptions] = js.undefined,
         DomainEndpointOptions: js.UndefOr[DomainEndpointOptions] = js.undefined,
+        DryRun: js.UndefOr[DryRun] = js.undefined,
         EBSOptions: js.UndefOr[EBSOptions] = js.undefined,
         ElasticsearchClusterConfig: js.UndefOr[ElasticsearchClusterConfig] = js.undefined,
         EncryptionAtRestOptions: js.UndefOr[EncryptionAtRestOptions] = js.undefined,
@@ -3443,6 +3510,7 @@ package object es {
       AutoTuneOptions.foreach(__v => __obj.updateDynamic("AutoTuneOptions")(__v.asInstanceOf[js.Any]))
       CognitoOptions.foreach(__v => __obj.updateDynamic("CognitoOptions")(__v.asInstanceOf[js.Any]))
       DomainEndpointOptions.foreach(__v => __obj.updateDynamic("DomainEndpointOptions")(__v.asInstanceOf[js.Any]))
+      DryRun.foreach(__v => __obj.updateDynamic("DryRun")(__v.asInstanceOf[js.Any]))
       EBSOptions.foreach(__v => __obj.updateDynamic("EBSOptions")(__v.asInstanceOf[js.Any]))
       ElasticsearchClusterConfig.foreach(__v => __obj.updateDynamic("ElasticsearchClusterConfig")(__v.asInstanceOf[js.Any]))
       EncryptionAtRestOptions.foreach(__v => __obj.updateDynamic("EncryptionAtRestOptions")(__v.asInstanceOf[js.Any]))
@@ -3459,16 +3527,20 @@ package object es {
   @js.native
   trait UpdateElasticsearchDomainConfigResponse extends js.Object {
     var DomainConfig: ElasticsearchDomainConfig
+    var DryRunResults: js.UndefOr[DryRunResults]
   }
 
   object UpdateElasticsearchDomainConfigResponse {
     @inline
     def apply(
-        DomainConfig: ElasticsearchDomainConfig
+        DomainConfig: ElasticsearchDomainConfig,
+        DryRunResults: js.UndefOr[DryRunResults] = js.undefined
     ): UpdateElasticsearchDomainConfigResponse = {
       val __obj = js.Dynamic.literal(
         "DomainConfig" -> DomainConfig.asInstanceOf[js.Any]
       )
+
+      DryRunResults.foreach(__v => __obj.updateDynamic("DryRunResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateElasticsearchDomainConfigResponse]
     }
   }

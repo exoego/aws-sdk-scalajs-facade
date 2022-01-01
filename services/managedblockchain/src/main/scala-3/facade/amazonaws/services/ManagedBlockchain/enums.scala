@@ -29,7 +29,7 @@ object InvitationStatus {
   inline def values: js.Array[InvitationStatus] = js.Array(PENDING, ACCEPTED, ACCEPTING, REJECTED, EXPIRED)
 }
 
-type MemberStatus = "CREATING" | "AVAILABLE" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETED"
+type MemberStatus = "CREATING" | "AVAILABLE" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETED" | "INACCESSIBLE_ENCRYPTION_KEY"
 object MemberStatus {
   inline val CREATING: "CREATING" = "CREATING"
   inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
@@ -37,8 +37,9 @@ object MemberStatus {
   inline val UPDATING: "UPDATING" = "UPDATING"
   inline val DELETING: "DELETING" = "DELETING"
   inline val DELETED: "DELETED" = "DELETED"
+  inline val INACCESSIBLE_ENCRYPTION_KEY: "INACCESSIBLE_ENCRYPTION_KEY" = "INACCESSIBLE_ENCRYPTION_KEY"
 
-  inline def values: js.Array[MemberStatus] = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
+  inline def values: js.Array[MemberStatus] = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED, INACCESSIBLE_ENCRYPTION_KEY)
 }
 
 type NetworkStatus = "CREATING" | "AVAILABLE" | "CREATE_FAILED" | "DELETING" | "DELETED"
@@ -52,7 +53,7 @@ object NetworkStatus {
   inline def values: js.Array[NetworkStatus] = js.Array(CREATING, AVAILABLE, CREATE_FAILED, DELETING, DELETED)
 }
 
-type NodeStatus = "CREATING" | "AVAILABLE" | "UNHEALTHY" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETED" | "FAILED"
+type NodeStatus = "CREATING" | "AVAILABLE" | "UNHEALTHY" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETED" | "FAILED" | "INACCESSIBLE_ENCRYPTION_KEY"
 object NodeStatus {
   inline val CREATING: "CREATING" = "CREATING"
   inline val AVAILABLE: "AVAILABLE" = "AVAILABLE"
@@ -62,8 +63,9 @@ object NodeStatus {
   inline val DELETING: "DELETING" = "DELETING"
   inline val DELETED: "DELETED" = "DELETED"
   inline val FAILED: "FAILED" = "FAILED"
+  inline val INACCESSIBLE_ENCRYPTION_KEY: "INACCESSIBLE_ENCRYPTION_KEY" = "INACCESSIBLE_ENCRYPTION_KEY"
 
-  inline def values: js.Array[NodeStatus] = js.Array(CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
+  inline def values: js.Array[NodeStatus] = js.Array(CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED, INACCESSIBLE_ENCRYPTION_KEY)
 }
 
 type ProposalStatus = "IN_PROGRESS" | "APPROVED" | "REJECTED" | "EXPIRED" | "ACTION_FAILED"

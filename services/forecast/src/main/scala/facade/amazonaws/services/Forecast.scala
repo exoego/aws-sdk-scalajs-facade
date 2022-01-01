@@ -8,15 +8,20 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object forecast {
+  type AdditionalDatasets = js.Array[AdditionalDataset]
   type Arn = String
   type ArnList = js.Array[Arn]
+  type AttributeConfigs = js.Array[AttributeConfig]
   type CategoricalParameterRanges = js.Array[CategoricalParameterRange]
+  type Configuration = js.Dictionary[Values]
   type ContinuousParameterRanges = js.Array[ContinuousParameterRange]
   type DatasetGroups = js.Array[DatasetGroupSummary]
   type DatasetImportJobs = js.Array[DatasetImportJobSummary]
   type Datasets = js.Array[DatasetSummary]
   type ErrorMessage = String
   type ErrorMetrics = js.Array[ErrorMetric]
+  type Explainabilities = js.Array[ExplainabilitySummary]
+  type ExplainabilityExports = js.Array[ExplainabilityExportSummary]
   type FeaturizationMethodParameters = js.Dictionary[ParameterValue]
   type FeaturizationPipeline = js.Array[FeaturizationMethod]
   type Featurizations = js.Array[Featurization]
@@ -31,6 +36,7 @@ package object forecast {
   type GeolocationFormat = String
   type IntegerParameterRanges = js.Array[IntegerParameterRange]
   type KMSKeyArn = String
+  type LocalDateTime = String
   type MaxResults = Int
   type Message = String
   type Name = String
@@ -55,6 +61,7 @@ package object forecast {
   type Timestamp = js.Date
   type TimestampFormat = String
   type TrainingParameters = js.Dictionary[ParameterValue]
+  type Transformations = js.Dictionary[Value]
   type UseGeolocationForTimeZone = Boolean
   type Value = String
   type Values = js.Array[Value]
@@ -62,9 +69,12 @@ package object forecast {
 
   final class ForecastOps(private val service: Forecast) extends AnyVal {
 
+    @inline def createAutoPredictorFuture(params: CreateAutoPredictorRequest): Future[CreateAutoPredictorResponse] = service.createAutoPredictor(params).promise().toFuture
     @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
     @inline def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] = service.createDatasetGroup(params).promise().toFuture
     @inline def createDatasetImportJobFuture(params: CreateDatasetImportJobRequest): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise().toFuture
+    @inline def createExplainabilityExportFuture(params: CreateExplainabilityExportRequest): Future[CreateExplainabilityExportResponse] = service.createExplainabilityExport(params).promise().toFuture
+    @inline def createExplainabilityFuture(params: CreateExplainabilityRequest): Future[CreateExplainabilityResponse] = service.createExplainability(params).promise().toFuture
     @inline def createForecastExportJobFuture(params: CreateForecastExportJobRequest): Future[CreateForecastExportJobResponse] = service.createForecastExportJob(params).promise().toFuture
     @inline def createForecastFuture(params: CreateForecastRequest): Future[CreateForecastResponse] = service.createForecast(params).promise().toFuture
     @inline def createPredictorBacktestExportJobFuture(params: CreatePredictorBacktestExportJobRequest): Future[CreatePredictorBacktestExportJobResponse] = service.createPredictorBacktestExportJob(params).promise().toFuture
@@ -72,13 +82,19 @@ package object forecast {
     @inline def deleteDatasetFuture(params: DeleteDatasetRequest): Future[js.Object] = service.deleteDataset(params).promise().toFuture
     @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] = service.deleteDatasetGroup(params).promise().toFuture
     @inline def deleteDatasetImportJobFuture(params: DeleteDatasetImportJobRequest): Future[js.Object] = service.deleteDatasetImportJob(params).promise().toFuture
+    @inline def deleteExplainabilityExportFuture(params: DeleteExplainabilityExportRequest): Future[js.Object] = service.deleteExplainabilityExport(params).promise().toFuture
+    @inline def deleteExplainabilityFuture(params: DeleteExplainabilityRequest): Future[js.Object] = service.deleteExplainability(params).promise().toFuture
     @inline def deleteForecastExportJobFuture(params: DeleteForecastExportJobRequest): Future[js.Object] = service.deleteForecastExportJob(params).promise().toFuture
     @inline def deleteForecastFuture(params: DeleteForecastRequest): Future[js.Object] = service.deleteForecast(params).promise().toFuture
     @inline def deletePredictorBacktestExportJobFuture(params: DeletePredictorBacktestExportJobRequest): Future[js.Object] = service.deletePredictorBacktestExportJob(params).promise().toFuture
     @inline def deletePredictorFuture(params: DeletePredictorRequest): Future[js.Object] = service.deletePredictor(params).promise().toFuture
+    @inline def deleteResourceTreeFuture(params: DeleteResourceTreeRequest): Future[js.Object] = service.deleteResourceTree(params).promise().toFuture
+    @inline def describeAutoPredictorFuture(params: DescribeAutoPredictorRequest): Future[DescribeAutoPredictorResponse] = service.describeAutoPredictor(params).promise().toFuture
     @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
     @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] = service.describeDatasetGroup(params).promise().toFuture
     @inline def describeDatasetImportJobFuture(params: DescribeDatasetImportJobRequest): Future[DescribeDatasetImportJobResponse] = service.describeDatasetImportJob(params).promise().toFuture
+    @inline def describeExplainabilityExportFuture(params: DescribeExplainabilityExportRequest): Future[DescribeExplainabilityExportResponse] = service.describeExplainabilityExport(params).promise().toFuture
+    @inline def describeExplainabilityFuture(params: DescribeExplainabilityRequest): Future[DescribeExplainabilityResponse] = service.describeExplainability(params).promise().toFuture
     @inline def describeForecastExportJobFuture(params: DescribeForecastExportJobRequest): Future[DescribeForecastExportJobResponse] = service.describeForecastExportJob(params).promise().toFuture
     @inline def describeForecastFuture(params: DescribeForecastRequest): Future[DescribeForecastResponse] = service.describeForecast(params).promise().toFuture
     @inline def describePredictorBacktestExportJobFuture(params: DescribePredictorBacktestExportJobRequest): Future[DescribePredictorBacktestExportJobResponse] = service.describePredictorBacktestExportJob(params).promise().toFuture
@@ -87,6 +103,8 @@ package object forecast {
     @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] = service.listDatasetGroups(params).promise().toFuture
     @inline def listDatasetImportJobsFuture(params: ListDatasetImportJobsRequest): Future[ListDatasetImportJobsResponse] = service.listDatasetImportJobs(params).promise().toFuture
     @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] = service.listDatasets(params).promise().toFuture
+    @inline def listExplainabilitiesFuture(params: ListExplainabilitiesRequest): Future[ListExplainabilitiesResponse] = service.listExplainabilities(params).promise().toFuture
+    @inline def listExplainabilityExportsFuture(params: ListExplainabilityExportsRequest): Future[ListExplainabilityExportsResponse] = service.listExplainabilityExports(params).promise().toFuture
     @inline def listForecastExportJobsFuture(params: ListForecastExportJobsRequest): Future[ListForecastExportJobsResponse] = service.listForecastExportJobs(params).promise().toFuture
     @inline def listForecastsFuture(params: ListForecastsRequest): Future[ListForecastsResponse] = service.listForecasts(params).promise().toFuture
     @inline def listPredictorBacktestExportJobsFuture(params: ListPredictorBacktestExportJobsRequest): Future[ListPredictorBacktestExportJobsResponse] = service.listPredictorBacktestExportJobs(params).promise().toFuture
@@ -104,9 +122,12 @@ package object forecast {
   class Forecast() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def createAutoPredictor(params: CreateAutoPredictorRequest): Request[CreateAutoPredictorResponse] = js.native
     def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse] = js.native
     def createDatasetGroup(params: CreateDatasetGroupRequest): Request[CreateDatasetGroupResponse] = js.native
     def createDatasetImportJob(params: CreateDatasetImportJobRequest): Request[CreateDatasetImportJobResponse] = js.native
+    def createExplainability(params: CreateExplainabilityRequest): Request[CreateExplainabilityResponse] = js.native
+    def createExplainabilityExport(params: CreateExplainabilityExportRequest): Request[CreateExplainabilityExportResponse] = js.native
     def createForecast(params: CreateForecastRequest): Request[CreateForecastResponse] = js.native
     def createForecastExportJob(params: CreateForecastExportJobRequest): Request[CreateForecastExportJobResponse] = js.native
     def createPredictor(params: CreatePredictorRequest): Request[CreatePredictorResponse] = js.native
@@ -114,13 +135,19 @@ package object forecast {
     def deleteDataset(params: DeleteDatasetRequest): Request[js.Object] = js.native
     def deleteDatasetGroup(params: DeleteDatasetGroupRequest): Request[js.Object] = js.native
     def deleteDatasetImportJob(params: DeleteDatasetImportJobRequest): Request[js.Object] = js.native
+    def deleteExplainability(params: DeleteExplainabilityRequest): Request[js.Object] = js.native
+    def deleteExplainabilityExport(params: DeleteExplainabilityExportRequest): Request[js.Object] = js.native
     def deleteForecast(params: DeleteForecastRequest): Request[js.Object] = js.native
     def deleteForecastExportJob(params: DeleteForecastExportJobRequest): Request[js.Object] = js.native
     def deletePredictor(params: DeletePredictorRequest): Request[js.Object] = js.native
     def deletePredictorBacktestExportJob(params: DeletePredictorBacktestExportJobRequest): Request[js.Object] = js.native
+    def deleteResourceTree(params: DeleteResourceTreeRequest): Request[js.Object] = js.native
+    def describeAutoPredictor(params: DescribeAutoPredictorRequest): Request[DescribeAutoPredictorResponse] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeDatasetGroup(params: DescribeDatasetGroupRequest): Request[DescribeDatasetGroupResponse] = js.native
     def describeDatasetImportJob(params: DescribeDatasetImportJobRequest): Request[DescribeDatasetImportJobResponse] = js.native
+    def describeExplainability(params: DescribeExplainabilityRequest): Request[DescribeExplainabilityResponse] = js.native
+    def describeExplainabilityExport(params: DescribeExplainabilityExportRequest): Request[DescribeExplainabilityExportResponse] = js.native
     def describeForecast(params: DescribeForecastRequest): Request[DescribeForecastResponse] = js.native
     def describeForecastExportJob(params: DescribeForecastExportJobRequest): Request[DescribeForecastExportJobResponse] = js.native
     def describePredictor(params: DescribePredictorRequest): Request[DescribePredictorResponse] = js.native
@@ -129,6 +156,8 @@ package object forecast {
     def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse] = js.native
     def listDatasetImportJobs(params: ListDatasetImportJobsRequest): Request[ListDatasetImportJobsResponse] = js.native
     def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
+    def listExplainabilities(params: ListExplainabilitiesRequest): Request[ListExplainabilitiesResponse] = js.native
+    def listExplainabilityExports(params: ListExplainabilityExportsRequest): Request[ListExplainabilityExportsResponse] = js.native
     def listForecastExportJobs(params: ListForecastExportJobsRequest): Request[ListForecastExportJobsResponse] = js.native
     def listForecasts(params: ListForecastsRequest): Request[ListForecastsResponse] = js.native
     def listPredictorBacktestExportJobs(params: ListPredictorBacktestExportJobsRequest): Request[ListPredictorBacktestExportJobsResponse] = js.native
@@ -142,6 +171,53 @@ package object forecast {
   object Forecast {
     @inline implicit def toOps(service: Forecast): ForecastOps = {
       new ForecastOps(service)
+    }
+  }
+
+  /** Describes an additional dataset. This object is part of the <a>DataConfig</a> object. Forecast supports the Weather Index and Holidays additional datasets.
+    * ```Weather Index``` The Amazon Forecast Weather Index is a built-in dataset that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/weather.html|Amazon Forecast Weather Index]].
+    * ```Holidays``` Holidays is a built-in dataset that incorporates national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the [[http://jollyday.sourceforge.net/data.html|Jollyday]] library. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/holidays.html|Holidays Featurization]].
+    */
+  @js.native
+  trait AdditionalDataset extends js.Object {
+    var Name: Name
+    var Configuration: js.UndefOr[Configuration]
+  }
+
+  object AdditionalDataset {
+    @inline
+    def apply(
+        Name: Name,
+        Configuration: js.UndefOr[Configuration] = js.undefined
+    ): AdditionalDataset = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdditionalDataset]
+    }
+  }
+
+  /** Provides information about the method used to transform attributes. The following is an example using the RETAIL domain: <code>{</code> <code>"AttributeName": "demand",</code> <code>"Transformations": {"aggregation": "sum", "middlefill": "zero", "backfill": "zero"}</code> <code>}</code>
+    */
+  @js.native
+  trait AttributeConfig extends js.Object {
+    var AttributeName: Name
+    var Transformations: Transformations
+  }
+
+  object AttributeConfig {
+    @inline
+    def apply(
+        AttributeName: Name,
+        Transformations: Transformations
+    ): AttributeConfig = {
+      val __obj = js.Dynamic.literal(
+        "AttributeName" -> AttributeName.asInstanceOf[js.Any],
+        "Transformations" -> Transformations.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AttributeConfig]
     }
   }
 
@@ -193,6 +269,70 @@ package object forecast {
 
       ScalingType.foreach(__v => __obj.updateDynamic("ScalingType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ContinuousParameterRange]
+    }
+  }
+
+  @js.native
+  trait CreateAutoPredictorRequest extends js.Object {
+    var PredictorName: Name
+    var DataConfig: js.UndefOr[DataConfig]
+    var EncryptionConfig: js.UndefOr[EncryptionConfig]
+    var ExplainPredictor: js.UndefOr[Boolean]
+    var ForecastDimensions: js.UndefOr[ForecastDimensions]
+    var ForecastFrequency: js.UndefOr[Frequency]
+    var ForecastHorizon: js.UndefOr[Int]
+    var ForecastTypes: js.UndefOr[ForecastTypes]
+    var OptimizationMetric: js.UndefOr[OptimizationMetric]
+    var ReferencePredictorArn: js.UndefOr[Arn]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateAutoPredictorRequest {
+    @inline
+    def apply(
+        PredictorName: Name,
+        DataConfig: js.UndefOr[DataConfig] = js.undefined,
+        EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined,
+        ExplainPredictor: js.UndefOr[Boolean] = js.undefined,
+        ForecastDimensions: js.UndefOr[ForecastDimensions] = js.undefined,
+        ForecastFrequency: js.UndefOr[Frequency] = js.undefined,
+        ForecastHorizon: js.UndefOr[Int] = js.undefined,
+        ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
+        OptimizationMetric: js.UndefOr[OptimizationMetric] = js.undefined,
+        ReferencePredictorArn: js.UndefOr[Arn] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateAutoPredictorRequest = {
+      val __obj = js.Dynamic.literal(
+        "PredictorName" -> PredictorName.asInstanceOf[js.Any]
+      )
+
+      DataConfig.foreach(__v => __obj.updateDynamic("DataConfig")(__v.asInstanceOf[js.Any]))
+      EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
+      ExplainPredictor.foreach(__v => __obj.updateDynamic("ExplainPredictor")(__v.asInstanceOf[js.Any]))
+      ForecastDimensions.foreach(__v => __obj.updateDynamic("ForecastDimensions")(__v.asInstanceOf[js.Any]))
+      ForecastFrequency.foreach(__v => __obj.updateDynamic("ForecastFrequency")(__v.asInstanceOf[js.Any]))
+      ForecastHorizon.foreach(__v => __obj.updateDynamic("ForecastHorizon")(__v.asInstanceOf[js.Any]))
+      ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
+      OptimizationMetric.foreach(__v => __obj.updateDynamic("OptimizationMetric")(__v.asInstanceOf[js.Any]))
+      ReferencePredictorArn.foreach(__v => __obj.updateDynamic("ReferencePredictorArn")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAutoPredictorRequest]
+    }
+  }
+
+  @js.native
+  trait CreateAutoPredictorResponse extends js.Object {
+    var PredictorArn: js.UndefOr[Arn]
+  }
+
+  object CreateAutoPredictorResponse {
+    @inline
+    def apply(
+        PredictorArn: js.UndefOr[Arn] = js.undefined
+    ): CreateAutoPredictorResponse = {
+      val __obj = js.Dynamic.literal()
+      PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateAutoPredictorResponse]
     }
   }
 
@@ -347,6 +487,107 @@ package object forecast {
   }
 
   @js.native
+  trait CreateExplainabilityExportRequest extends js.Object {
+    var Destination: DataDestination
+    var ExplainabilityArn: Arn
+    var ExplainabilityExportName: Name
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateExplainabilityExportRequest {
+    @inline
+    def apply(
+        Destination: DataDestination,
+        ExplainabilityArn: Arn,
+        ExplainabilityExportName: Name,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateExplainabilityExportRequest = {
+      val __obj = js.Dynamic.literal(
+        "Destination" -> Destination.asInstanceOf[js.Any],
+        "ExplainabilityArn" -> ExplainabilityArn.asInstanceOf[js.Any],
+        "ExplainabilityExportName" -> ExplainabilityExportName.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateExplainabilityExportRequest]
+    }
+  }
+
+  @js.native
+  trait CreateExplainabilityExportResponse extends js.Object {
+    var ExplainabilityExportArn: js.UndefOr[Arn]
+  }
+
+  object CreateExplainabilityExportResponse {
+    @inline
+    def apply(
+        ExplainabilityExportArn: js.UndefOr[Arn] = js.undefined
+    ): CreateExplainabilityExportResponse = {
+      val __obj = js.Dynamic.literal()
+      ExplainabilityExportArn.foreach(__v => __obj.updateDynamic("ExplainabilityExportArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateExplainabilityExportResponse]
+    }
+  }
+
+  @js.native
+  trait CreateExplainabilityRequest extends js.Object {
+    var ExplainabilityConfig: ExplainabilityConfig
+    var ExplainabilityName: Name
+    var ResourceArn: Arn
+    var DataSource: js.UndefOr[DataSource]
+    var EnableVisualization: js.UndefOr[Boolean]
+    var EndDateTime: js.UndefOr[LocalDateTime]
+    var Schema: js.UndefOr[Schema]
+    var StartDateTime: js.UndefOr[LocalDateTime]
+    var Tags: js.UndefOr[Tags]
+  }
+
+  object CreateExplainabilityRequest {
+    @inline
+    def apply(
+        ExplainabilityConfig: ExplainabilityConfig,
+        ExplainabilityName: Name,
+        ResourceArn: Arn,
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        EnableVisualization: js.UndefOr[Boolean] = js.undefined,
+        EndDateTime: js.UndefOr[LocalDateTime] = js.undefined,
+        Schema: js.UndefOr[Schema] = js.undefined,
+        StartDateTime: js.UndefOr[LocalDateTime] = js.undefined,
+        Tags: js.UndefOr[Tags] = js.undefined
+    ): CreateExplainabilityRequest = {
+      val __obj = js.Dynamic.literal(
+        "ExplainabilityConfig" -> ExplainabilityConfig.asInstanceOf[js.Any],
+        "ExplainabilityName" -> ExplainabilityName.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      EnableVisualization.foreach(__v => __obj.updateDynamic("EnableVisualization")(__v.asInstanceOf[js.Any]))
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
+      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateExplainabilityRequest]
+    }
+  }
+
+  @js.native
+  trait CreateExplainabilityResponse extends js.Object {
+    var ExplainabilityArn: js.UndefOr[Arn]
+  }
+
+  object CreateExplainabilityResponse {
+    @inline
+    def apply(
+        ExplainabilityArn: js.UndefOr[Arn] = js.undefined
+    ): CreateExplainabilityResponse = {
+      val __obj = js.Dynamic.literal()
+      ExplainabilityArn.foreach(__v => __obj.updateDynamic("ExplainabilityArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateExplainabilityResponse]
+    }
+  }
+
+  @js.native
   trait CreateForecastExportJobRequest extends js.Object {
     var Destination: DataDestination
     var ForecastArn: Arn
@@ -482,10 +723,12 @@ package object forecast {
     var InputDataConfig: InputDataConfig
     var PredictorName: Name
     var AlgorithmArn: js.UndefOr[Arn]
+    var AutoMLOverrideStrategy: js.UndefOr[AutoMLOverrideStrategy]
     var EncryptionConfig: js.UndefOr[EncryptionConfig]
     var EvaluationParameters: js.UndefOr[EvaluationParameters]
     var ForecastTypes: js.UndefOr[ForecastTypes]
     var HPOConfig: js.UndefOr[HyperParameterTuningJobConfig]
+    var OptimizationMetric: js.UndefOr[OptimizationMetric]
     var PerformAutoML: js.UndefOr[Boolean]
     var PerformHPO: js.UndefOr[Boolean]
     var Tags: js.UndefOr[Tags]
@@ -500,10 +743,12 @@ package object forecast {
         InputDataConfig: InputDataConfig,
         PredictorName: Name,
         AlgorithmArn: js.UndefOr[Arn] = js.undefined,
+        AutoMLOverrideStrategy: js.UndefOr[AutoMLOverrideStrategy] = js.undefined,
         EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined,
         EvaluationParameters: js.UndefOr[EvaluationParameters] = js.undefined,
         ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
         HPOConfig: js.UndefOr[HyperParameterTuningJobConfig] = js.undefined,
+        OptimizationMetric: js.UndefOr[OptimizationMetric] = js.undefined,
         PerformAutoML: js.UndefOr[Boolean] = js.undefined,
         PerformHPO: js.UndefOr[Boolean] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
@@ -517,10 +762,12 @@ package object forecast {
       )
 
       AlgorithmArn.foreach(__v => __obj.updateDynamic("AlgorithmArn")(__v.asInstanceOf[js.Any]))
+      AutoMLOverrideStrategy.foreach(__v => __obj.updateDynamic("AutoMLOverrideStrategy")(__v.asInstanceOf[js.Any]))
       EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
       EvaluationParameters.foreach(__v => __obj.updateDynamic("EvaluationParameters")(__v.asInstanceOf[js.Any]))
       ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
       HPOConfig.foreach(__v => __obj.updateDynamic("HPOConfig")(__v.asInstanceOf[js.Any]))
+      OptimizationMetric.foreach(__v => __obj.updateDynamic("OptimizationMetric")(__v.asInstanceOf[js.Any]))
       PerformAutoML.foreach(__v => __obj.updateDynamic("PerformAutoML")(__v.asInstanceOf[js.Any]))
       PerformHPO.foreach(__v => __obj.updateDynamic("PerformHPO")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -545,6 +792,32 @@ package object forecast {
     }
   }
 
+  /** The data configuration for your dataset group and any additional datasets.
+    */
+  @js.native
+  trait DataConfig extends js.Object {
+    var DatasetGroupArn: Arn
+    var AdditionalDatasets: js.UndefOr[AdditionalDatasets]
+    var AttributeConfigs: js.UndefOr[AttributeConfigs]
+  }
+
+  object DataConfig {
+    @inline
+    def apply(
+        DatasetGroupArn: Arn,
+        AdditionalDatasets: js.UndefOr[AdditionalDatasets] = js.undefined,
+        AttributeConfigs: js.UndefOr[AttributeConfigs] = js.undefined
+    ): DataConfig = {
+      val __obj = js.Dynamic.literal(
+        "DatasetGroupArn" -> DatasetGroupArn.asInstanceOf[js.Any]
+      )
+
+      AdditionalDatasets.foreach(__v => __obj.updateDynamic("AdditionalDatasets")(__v.asInstanceOf[js.Any]))
+      AttributeConfigs.foreach(__v => __obj.updateDynamic("AttributeConfigs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DataConfig]
+    }
+  }
+
   /** The destination for an export job. Provide an S3 path, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an AWS Key Management Service (KMS) key (optional).
     */
   @js.native
@@ -564,7 +837,7 @@ package object forecast {
     }
   }
 
-  /** The source of your training data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key. This object is submitted in the <a>CreateDatasetImportJob</a> request.
+  /** The source of your data, an AWS Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an AWS Key Management Service (KMS) key.
     */
   @js.native
   trait DataSource extends js.Object {
@@ -731,6 +1004,40 @@ package object forecast {
   }
 
   @js.native
+  trait DeleteExplainabilityExportRequest extends js.Object {
+    var ExplainabilityExportArn: Arn
+  }
+
+  object DeleteExplainabilityExportRequest {
+    @inline
+    def apply(
+        ExplainabilityExportArn: Arn
+    ): DeleteExplainabilityExportRequest = {
+      val __obj = js.Dynamic.literal(
+        "ExplainabilityExportArn" -> ExplainabilityExportArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteExplainabilityExportRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteExplainabilityRequest extends js.Object {
+    var ExplainabilityArn: Arn
+  }
+
+  object DeleteExplainabilityRequest {
+    @inline
+    def apply(
+        ExplainabilityArn: Arn
+    ): DeleteExplainabilityRequest = {
+      val __obj = js.Dynamic.literal(
+        "ExplainabilityArn" -> ExplainabilityArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteExplainabilityRequest]
+    }
+  }
+
+  @js.native
   trait DeleteForecastExportJobRequest extends js.Object {
     var ForecastExportJobArn: Arn
   }
@@ -795,6 +1102,104 @@ package object forecast {
         "PredictorArn" -> PredictorArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeletePredictorRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteResourceTreeRequest extends js.Object {
+    var ResourceArn: Arn
+  }
+
+  object DeleteResourceTreeRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn
+    ): DeleteResourceTreeRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteResourceTreeRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAutoPredictorRequest extends js.Object {
+    var PredictorArn: Arn
+  }
+
+  object DescribeAutoPredictorRequest {
+    @inline
+    def apply(
+        PredictorArn: Arn
+    ): DescribeAutoPredictorRequest = {
+      val __obj = js.Dynamic.literal(
+        "PredictorArn" -> PredictorArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeAutoPredictorRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeAutoPredictorResponse extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var DataConfig: js.UndefOr[DataConfig]
+    var DatasetImportJobArns: js.UndefOr[ArnList]
+    var EncryptionConfig: js.UndefOr[EncryptionConfig]
+    var EstimatedTimeRemainingInMinutes: js.UndefOr[Double]
+    var ExplainabilityInfo: js.UndefOr[ExplainabilityInfo]
+    var ForecastDimensions: js.UndefOr[ForecastDimensions]
+    var ForecastFrequency: js.UndefOr[Frequency]
+    var ForecastHorizon: js.UndefOr[Int]
+    var ForecastTypes: js.UndefOr[ForecastTypes]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[Message]
+    var OptimizationMetric: js.UndefOr[OptimizationMetric]
+    var PredictorArn: js.UndefOr[Arn]
+    var PredictorName: js.UndefOr[Name]
+    var ReferencePredictorSummary: js.UndefOr[ReferencePredictorSummary]
+    var Status: js.UndefOr[Status]
+  }
+
+  object DescribeAutoPredictorResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        DataConfig: js.UndefOr[DataConfig] = js.undefined,
+        DatasetImportJobArns: js.UndefOr[ArnList] = js.undefined,
+        EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined,
+        EstimatedTimeRemainingInMinutes: js.UndefOr[Double] = js.undefined,
+        ExplainabilityInfo: js.UndefOr[ExplainabilityInfo] = js.undefined,
+        ForecastDimensions: js.UndefOr[ForecastDimensions] = js.undefined,
+        ForecastFrequency: js.UndefOr[Frequency] = js.undefined,
+        ForecastHorizon: js.UndefOr[Int] = js.undefined,
+        ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined,
+        OptimizationMetric: js.UndefOr[OptimizationMetric] = js.undefined,
+        PredictorArn: js.UndefOr[Arn] = js.undefined,
+        PredictorName: js.UndefOr[Name] = js.undefined,
+        ReferencePredictorSummary: js.UndefOr[ReferencePredictorSummary] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): DescribeAutoPredictorResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DataConfig.foreach(__v => __obj.updateDynamic("DataConfig")(__v.asInstanceOf[js.Any]))
+      DatasetImportJobArns.foreach(__v => __obj.updateDynamic("DatasetImportJobArns")(__v.asInstanceOf[js.Any]))
+      EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
+      EstimatedTimeRemainingInMinutes.foreach(__v => __obj.updateDynamic("EstimatedTimeRemainingInMinutes")(__v.asInstanceOf[js.Any]))
+      ExplainabilityInfo.foreach(__v => __obj.updateDynamic("ExplainabilityInfo")(__v.asInstanceOf[js.Any]))
+      ForecastDimensions.foreach(__v => __obj.updateDynamic("ForecastDimensions")(__v.asInstanceOf[js.Any]))
+      ForecastFrequency.foreach(__v => __obj.updateDynamic("ForecastFrequency")(__v.asInstanceOf[js.Any]))
+      ForecastHorizon.foreach(__v => __obj.updateDynamic("ForecastHorizon")(__v.asInstanceOf[js.Any]))
+      ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      OptimizationMetric.foreach(__v => __obj.updateDynamic("OptimizationMetric")(__v.asInstanceOf[js.Any]))
+      PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
+      PredictorName.foreach(__v => __obj.updateDynamic("PredictorName")(__v.asInstanceOf[js.Any]))
+      ReferencePredictorSummary.foreach(__v => __obj.updateDynamic("ReferencePredictorSummary")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeAutoPredictorResponse]
     }
   }
 
@@ -981,6 +1386,132 @@ package object forecast {
       Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeExplainabilityExportRequest extends js.Object {
+    var ExplainabilityExportArn: Arn
+  }
+
+  object DescribeExplainabilityExportRequest {
+    @inline
+    def apply(
+        ExplainabilityExportArn: Arn
+    ): DescribeExplainabilityExportRequest = {
+      val __obj = js.Dynamic.literal(
+        "ExplainabilityExportArn" -> ExplainabilityExportArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeExplainabilityExportRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeExplainabilityExportResponse extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var Destination: js.UndefOr[DataDestination]
+    var ExplainabilityArn: js.UndefOr[Arn]
+    var ExplainabilityExportArn: js.UndefOr[Arn]
+    var ExplainabilityExportName: js.UndefOr[Name]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[Message]
+    var Status: js.UndefOr[Status]
+  }
+
+  object DescribeExplainabilityExportResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Destination: js.UndefOr[DataDestination] = js.undefined,
+        ExplainabilityArn: js.UndefOr[Arn] = js.undefined,
+        ExplainabilityExportArn: js.UndefOr[Arn] = js.undefined,
+        ExplainabilityExportName: js.UndefOr[Name] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): DescribeExplainabilityExportResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      ExplainabilityArn.foreach(__v => __obj.updateDynamic("ExplainabilityArn")(__v.asInstanceOf[js.Any]))
+      ExplainabilityExportArn.foreach(__v => __obj.updateDynamic("ExplainabilityExportArn")(__v.asInstanceOf[js.Any]))
+      ExplainabilityExportName.foreach(__v => __obj.updateDynamic("ExplainabilityExportName")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeExplainabilityExportResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeExplainabilityRequest extends js.Object {
+    var ExplainabilityArn: Arn
+  }
+
+  object DescribeExplainabilityRequest {
+    @inline
+    def apply(
+        ExplainabilityArn: Arn
+    ): DescribeExplainabilityRequest = {
+      val __obj = js.Dynamic.literal(
+        "ExplainabilityArn" -> ExplainabilityArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeExplainabilityRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeExplainabilityResponse extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var DataSource: js.UndefOr[DataSource]
+    var EnableVisualization: js.UndefOr[Boolean]
+    var EndDateTime: js.UndefOr[LocalDateTime]
+    var EstimatedTimeRemainingInMinutes: js.UndefOr[Double]
+    var ExplainabilityArn: js.UndefOr[Arn]
+    var ExplainabilityConfig: js.UndefOr[ExplainabilityConfig]
+    var ExplainabilityName: js.UndefOr[Name]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[Message]
+    var ResourceArn: js.UndefOr[Arn]
+    var Schema: js.UndefOr[Schema]
+    var StartDateTime: js.UndefOr[LocalDateTime]
+    var Status: js.UndefOr[Status]
+  }
+
+  object DescribeExplainabilityResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        DataSource: js.UndefOr[DataSource] = js.undefined,
+        EnableVisualization: js.UndefOr[Boolean] = js.undefined,
+        EndDateTime: js.UndefOr[LocalDateTime] = js.undefined,
+        EstimatedTimeRemainingInMinutes: js.UndefOr[Double] = js.undefined,
+        ExplainabilityArn: js.UndefOr[Arn] = js.undefined,
+        ExplainabilityConfig: js.UndefOr[ExplainabilityConfig] = js.undefined,
+        ExplainabilityName: js.UndefOr[Name] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined,
+        ResourceArn: js.UndefOr[Arn] = js.undefined,
+        Schema: js.UndefOr[Schema] = js.undefined,
+        StartDateTime: js.UndefOr[LocalDateTime] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): DescribeExplainabilityResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DataSource.foreach(__v => __obj.updateDynamic("DataSource")(__v.asInstanceOf[js.Any]))
+      EnableVisualization.foreach(__v => __obj.updateDynamic("EnableVisualization")(__v.asInstanceOf[js.Any]))
+      EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
+      EstimatedTimeRemainingInMinutes.foreach(__v => __obj.updateDynamic("EstimatedTimeRemainingInMinutes")(__v.asInstanceOf[js.Any]))
+      ExplainabilityArn.foreach(__v => __obj.updateDynamic("ExplainabilityArn")(__v.asInstanceOf[js.Any]))
+      ExplainabilityConfig.foreach(__v => __obj.updateDynamic("ExplainabilityConfig")(__v.asInstanceOf[js.Any]))
+      ExplainabilityName.foreach(__v => __obj.updateDynamic("ExplainabilityName")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      Schema.foreach(__v => __obj.updateDynamic("Schema")(__v.asInstanceOf[js.Any]))
+      StartDateTime.foreach(__v => __obj.updateDynamic("StartDateTime")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeExplainabilityResponse]
     }
   }
 
@@ -1173,6 +1704,7 @@ package object forecast {
   trait DescribePredictorResponse extends js.Object {
     var AlgorithmArn: js.UndefOr[Arn]
     var AutoMLAlgorithmArns: js.UndefOr[ArnList]
+    var AutoMLOverrideStrategy: js.UndefOr[AutoMLOverrideStrategy]
     var CreationTime: js.UndefOr[Timestamp]
     var DatasetImportJobArns: js.UndefOr[ArnList]
     var EncryptionConfig: js.UndefOr[EncryptionConfig]
@@ -1183,8 +1715,10 @@ package object forecast {
     var ForecastTypes: js.UndefOr[ForecastTypes]
     var HPOConfig: js.UndefOr[HyperParameterTuningJobConfig]
     var InputDataConfig: js.UndefOr[InputDataConfig]
+    var IsAutoPredictor: js.UndefOr[Boolean]
     var LastModificationTime: js.UndefOr[Timestamp]
     var Message: js.UndefOr[Message]
+    var OptimizationMetric: js.UndefOr[OptimizationMetric]
     var PerformAutoML: js.UndefOr[Boolean]
     var PerformHPO: js.UndefOr[Boolean]
     var PredictorArn: js.UndefOr[Name]
@@ -1199,6 +1733,7 @@ package object forecast {
     def apply(
         AlgorithmArn: js.UndefOr[Arn] = js.undefined,
         AutoMLAlgorithmArns: js.UndefOr[ArnList] = js.undefined,
+        AutoMLOverrideStrategy: js.UndefOr[AutoMLOverrideStrategy] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetImportJobArns: js.UndefOr[ArnList] = js.undefined,
         EncryptionConfig: js.UndefOr[EncryptionConfig] = js.undefined,
@@ -1209,8 +1744,10 @@ package object forecast {
         ForecastTypes: js.UndefOr[ForecastTypes] = js.undefined,
         HPOConfig: js.UndefOr[HyperParameterTuningJobConfig] = js.undefined,
         InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+        IsAutoPredictor: js.UndefOr[Boolean] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined,
+        OptimizationMetric: js.UndefOr[OptimizationMetric] = js.undefined,
         PerformAutoML: js.UndefOr[Boolean] = js.undefined,
         PerformHPO: js.UndefOr[Boolean] = js.undefined,
         PredictorArn: js.UndefOr[Name] = js.undefined,
@@ -1222,6 +1759,7 @@ package object forecast {
       val __obj = js.Dynamic.literal()
       AlgorithmArn.foreach(__v => __obj.updateDynamic("AlgorithmArn")(__v.asInstanceOf[js.Any]))
       AutoMLAlgorithmArns.foreach(__v => __obj.updateDynamic("AutoMLAlgorithmArns")(__v.asInstanceOf[js.Any]))
+      AutoMLOverrideStrategy.foreach(__v => __obj.updateDynamic("AutoMLOverrideStrategy")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DatasetImportJobArns.foreach(__v => __obj.updateDynamic("DatasetImportJobArns")(__v.asInstanceOf[js.Any]))
       EncryptionConfig.foreach(__v => __obj.updateDynamic("EncryptionConfig")(__v.asInstanceOf[js.Any]))
@@ -1232,8 +1770,10 @@ package object forecast {
       ForecastTypes.foreach(__v => __obj.updateDynamic("ForecastTypes")(__v.asInstanceOf[js.Any]))
       HPOConfig.foreach(__v => __obj.updateDynamic("HPOConfig")(__v.asInstanceOf[js.Any]))
       InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
+      IsAutoPredictor.foreach(__v => __obj.updateDynamic("IsAutoPredictor")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      OptimizationMetric.foreach(__v => __obj.updateDynamic("OptimizationMetric")(__v.asInstanceOf[js.Any]))
       PerformAutoML.foreach(__v => __obj.updateDynamic("PerformAutoML")(__v.asInstanceOf[js.Any]))
       PerformHPO.foreach(__v => __obj.updateDynamic("PerformHPO")(__v.asInstanceOf[js.Any]))
       PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
@@ -1272,6 +1812,8 @@ package object forecast {
   @js.native
   trait ErrorMetric extends js.Object {
     var ForecastType: js.UndefOr[ForecastType]
+    var MAPE: js.UndefOr[Double]
+    var MASE: js.UndefOr[Double]
     var RMSE: js.UndefOr[Double]
     var WAPE: js.UndefOr[Double]
   }
@@ -1280,11 +1822,15 @@ package object forecast {
     @inline
     def apply(
         ForecastType: js.UndefOr[ForecastType] = js.undefined,
+        MAPE: js.UndefOr[Double] = js.undefined,
+        MASE: js.UndefOr[Double] = js.undefined,
         RMSE: js.UndefOr[Double] = js.undefined,
         WAPE: js.UndefOr[Double] = js.undefined
     ): ErrorMetric = {
       val __obj = js.Dynamic.literal()
       ForecastType.foreach(__v => __obj.updateDynamic("ForecastType")(__v.asInstanceOf[js.Any]))
+      MAPE.foreach(__v => __obj.updateDynamic("MAPE")(__v.asInstanceOf[js.Any]))
+      MASE.foreach(__v => __obj.updateDynamic("MASE")(__v.asInstanceOf[js.Any]))
       RMSE.foreach(__v => __obj.updateDynamic("RMSE")(__v.asInstanceOf[js.Any]))
       WAPE.foreach(__v => __obj.updateDynamic("WAPE")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ErrorMetric]
@@ -1333,7 +1879,125 @@ package object forecast {
     }
   }
 
-  /** Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object. For example: <code>{</code> <code>"AttributeName": "demand",</code> <code>FeaturizationPipeline [ {</code> <code>"FeaturizationMethodName": "filling",</code> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> <code>} ]</code> <code>}</code>
+  /** The ExplainabilityConfig data type defines the number of time series and time points included in <a>CreateExplainability</a>. If you provide a predictor ARN for <code>ResourceArn</code>, you must set both <code>TimePointGranularity</code> and <code>TimeSeriesGranularity</code> to “ALL”. When creating Predictor Explainability, Amazon Forecast considers all time series and time points. If you provide a forecast ARN for <code>ResourceArn</code>, you can set <code>TimePointGranularity</code> and <code>TimeSeriesGranularity</code> to either “ALL” or “Specific”.
+    */
+  @js.native
+  trait ExplainabilityConfig extends js.Object {
+    var TimePointGranularity: TimePointGranularity
+    var TimeSeriesGranularity: TimeSeriesGranularity
+  }
+
+  object ExplainabilityConfig {
+    @inline
+    def apply(
+        TimePointGranularity: TimePointGranularity,
+        TimeSeriesGranularity: TimeSeriesGranularity
+    ): ExplainabilityConfig = {
+      val __obj = js.Dynamic.literal(
+        "TimePointGranularity" -> TimePointGranularity.asInstanceOf[js.Any],
+        "TimeSeriesGranularity" -> TimeSeriesGranularity.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ExplainabilityConfig]
+    }
+  }
+
+  /** Provides a summary of the Explainability export properties used in the <a>ListExplainabilityExports</a> operation. To get a complete set of properties, call the <a>DescribeExplainabilityExport</a> operation, and provide the <code>ExplainabilityExportArn</code>.
+    */
+  @js.native
+  trait ExplainabilityExportSummary extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var Destination: js.UndefOr[DataDestination]
+    var ExplainabilityExportArn: js.UndefOr[Arn]
+    var ExplainabilityExportName: js.UndefOr[Name]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[ErrorMessage]
+    var Status: js.UndefOr[Status]
+  }
+
+  object ExplainabilityExportSummary {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Destination: js.UndefOr[DataDestination] = js.undefined,
+        ExplainabilityExportArn: js.UndefOr[Arn] = js.undefined,
+        ExplainabilityExportName: js.UndefOr[Name] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[ErrorMessage] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): ExplainabilityExportSummary = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Destination.foreach(__v => __obj.updateDynamic("Destination")(__v.asInstanceOf[js.Any]))
+      ExplainabilityExportArn.foreach(__v => __obj.updateDynamic("ExplainabilityExportArn")(__v.asInstanceOf[js.Any]))
+      ExplainabilityExportName.foreach(__v => __obj.updateDynamic("ExplainabilityExportName")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExplainabilityExportSummary]
+    }
+  }
+
+  /** Provides information about the Explainability resource.
+    */
+  @js.native
+  trait ExplainabilityInfo extends js.Object {
+    var ExplainabilityArn: js.UndefOr[Arn]
+    var Status: js.UndefOr[Status]
+  }
+
+  object ExplainabilityInfo {
+    @inline
+    def apply(
+        ExplainabilityArn: js.UndefOr[Arn] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): ExplainabilityInfo = {
+      val __obj = js.Dynamic.literal()
+      ExplainabilityArn.foreach(__v => __obj.updateDynamic("ExplainabilityArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExplainabilityInfo]
+    }
+  }
+
+  /** Provides a summary of the Explainability properties used in the <a>ListExplainabilities</a> operation. To get a complete set of properties, call the <a>DescribeExplainability</a> operation, and provide the listed <code>ExplainabilityArn</code>.
+    */
+  @js.native
+  trait ExplainabilitySummary extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var ExplainabilityArn: js.UndefOr[Arn]
+    var ExplainabilityConfig: js.UndefOr[ExplainabilityConfig]
+    var ExplainabilityName: js.UndefOr[Name]
+    var LastModificationTime: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[Message]
+    var ResourceArn: js.UndefOr[Arn]
+    var Status: js.UndefOr[Status]
+  }
+
+  object ExplainabilitySummary {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        ExplainabilityArn: js.UndefOr[Arn] = js.undefined,
+        ExplainabilityConfig: js.UndefOr[ExplainabilityConfig] = js.undefined,
+        ExplainabilityName: js.UndefOr[Name] = js.undefined,
+        LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[Message] = js.undefined,
+        ResourceArn: js.UndefOr[Arn] = js.undefined,
+        Status: js.UndefOr[Status] = js.undefined
+    ): ExplainabilitySummary = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      ExplainabilityArn.foreach(__v => __obj.updateDynamic("ExplainabilityArn")(__v.asInstanceOf[js.Any]))
+      ExplainabilityConfig.foreach(__v => __obj.updateDynamic("ExplainabilityConfig")(__v.asInstanceOf[js.Any]))
+      ExplainabilityName.foreach(__v => __obj.updateDynamic("ExplainabilityName")(__v.asInstanceOf[js.Any]))
+      LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      ResourceArn.foreach(__v => __obj.updateDynamic("ResourceArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExplainabilitySummary]
+    }
+  }
+
+  /** '''Note:'''This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor with <a>CreateAutoPredictor</a>, see <a>AttributeConfig</a>. Provides featurization (transformation) information for a dataset field. This object is part of the <a>FeaturizationConfig</a> object. For example: <code>{</code> <code>"AttributeName": "demand",</code> <code>FeaturizationPipeline [ {</code> <code>"FeaturizationMethodName": "filling",</code> <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code> <code>} ]</code> <code>}</code>
     */
   @js.native
   trait Featurization extends js.Object {
@@ -1356,7 +2020,8 @@ package object forecast {
     }
   }
 
-  /** In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>. You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training. You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying different featurization configurations.
+  /** '''Note:'''This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor with <a>CreateAutoPredictor</a>, see <a>AttributeConfig</a>. In a <a>CreatePredictor</a> operation, the specified algorithm trains a model using the specified dataset group. You can optionally tell the operation to modify data fields prior to training a model. These modifications are referred to as <i>featurization</i>. You define featurization using the <code>FeaturizationConfig</code> object. You specify an array of transformations, one for each field that you want to featurize. You then include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code> request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code> and <code>RELATED_TIME_SERIES</code> datasets before model training. You can create multiple featurization configurations. For example, you might call the <code>CreatePredictor</code> operation twice by specifying
+    * different featurization configurations.
     */
   @js.native
   trait FeaturizationConfig extends js.Object {
@@ -1470,6 +2135,7 @@ package object forecast {
     */
   @js.native
   trait ForecastSummary extends js.Object {
+    var CreatedUsingAutoPredictor: js.UndefOr[Boolean]
     var CreationTime: js.UndefOr[Timestamp]
     var DatasetGroupArn: js.UndefOr[String]
     var ForecastArn: js.UndefOr[Arn]
@@ -1483,6 +2149,7 @@ package object forecast {
   object ForecastSummary {
     @inline
     def apply(
+        CreatedUsingAutoPredictor: js.UndefOr[Boolean] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetGroupArn: js.UndefOr[String] = js.undefined,
         ForecastArn: js.UndefOr[Arn] = js.undefined,
@@ -1493,6 +2160,7 @@ package object forecast {
         Status: js.UndefOr[Status] = js.undefined
     ): ForecastSummary = {
       val __obj = js.Dynamic.literal()
+      CreatedUsingAutoPredictor.foreach(__v => __obj.updateDynamic("CreatedUsingAutoPredictor")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DatasetGroupArn.foreach(__v => __obj.updateDynamic("DatasetGroupArn")(__v.asInstanceOf[js.Any]))
       ForecastArn.foreach(__v => __obj.updateDynamic("ForecastArn")(__v.asInstanceOf[js.Any]))
@@ -1524,15 +2192,24 @@ package object forecast {
 
   @js.native
   trait GetAccuracyMetricsResponse extends js.Object {
+    var AutoMLOverrideStrategy: js.UndefOr[AutoMLOverrideStrategy]
+    var IsAutoPredictor: js.UndefOr[Boolean]
+    var OptimizationMetric: js.UndefOr[OptimizationMetric]
     var PredictorEvaluationResults: js.UndefOr[PredictorEvaluationResults]
   }
 
   object GetAccuracyMetricsResponse {
     @inline
     def apply(
+        AutoMLOverrideStrategy: js.UndefOr[AutoMLOverrideStrategy] = js.undefined,
+        IsAutoPredictor: js.UndefOr[Boolean] = js.undefined,
+        OptimizationMetric: js.UndefOr[OptimizationMetric] = js.undefined,
         PredictorEvaluationResults: js.UndefOr[PredictorEvaluationResults] = js.undefined
     ): GetAccuracyMetricsResponse = {
       val __obj = js.Dynamic.literal()
+      AutoMLOverrideStrategy.foreach(__v => __obj.updateDynamic("AutoMLOverrideStrategy")(__v.asInstanceOf[js.Any]))
+      IsAutoPredictor.foreach(__v => __obj.updateDynamic("IsAutoPredictor")(__v.asInstanceOf[js.Any]))
+      OptimizationMetric.foreach(__v => __obj.updateDynamic("OptimizationMetric")(__v.asInstanceOf[js.Any]))
       PredictorEvaluationResults.foreach(__v => __obj.updateDynamic("PredictorEvaluationResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAccuracyMetricsResponse]
     }
@@ -1556,7 +2233,7 @@ package object forecast {
     }
   }
 
-  /** The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request.
+  /** '''Note:'''This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor with <a>CreateAutoPredictor</a>, see <a>DataConfig</a>. The data used to train a predictor. The data includes a dataset group and any supplementary features. You specify this object in the <a>CreatePredictor</a> request.
     */
   @js.native
   trait InputDataConfig extends js.Object {
@@ -1722,6 +2399,88 @@ package object forecast {
       Datasets.foreach(__v => __obj.updateDynamic("Datasets")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetsResponse]
+    }
+  }
+
+  @js.native
+  trait ListExplainabilitiesRequest extends js.Object {
+    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListExplainabilitiesRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListExplainabilitiesRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListExplainabilitiesRequest]
+    }
+  }
+
+  @js.native
+  trait ListExplainabilitiesResponse extends js.Object {
+    var Explainabilities: js.UndefOr[Explainabilities]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListExplainabilitiesResponse {
+    @inline
+    def apply(
+        Explainabilities: js.UndefOr[Explainabilities] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListExplainabilitiesResponse = {
+      val __obj = js.Dynamic.literal()
+      Explainabilities.foreach(__v => __obj.updateDynamic("Explainabilities")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListExplainabilitiesResponse]
+    }
+  }
+
+  @js.native
+  trait ListExplainabilityExportsRequest extends js.Object {
+    var Filters: js.UndefOr[Filters]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListExplainabilityExportsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[Filters] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListExplainabilityExportsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListExplainabilityExportsRequest]
+    }
+  }
+
+  @js.native
+  trait ListExplainabilityExportsResponse extends js.Object {
+    var ExplainabilityExports: js.UndefOr[ExplainabilityExports]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListExplainabilityExportsResponse {
+    @inline
+    def apply(
+        ExplainabilityExports: js.UndefOr[ExplainabilityExports] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListExplainabilityExportsResponse = {
+      val __obj = js.Dynamic.literal()
+      ExplainabilityExports.foreach(__v => __obj.updateDynamic("ExplainabilityExports")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListExplainabilityExportsResponse]
     }
   }
 
@@ -1926,6 +2685,7 @@ package object forecast {
     */
   @js.native
   trait Metrics extends js.Object {
+    var AverageWeightedQuantileLoss: js.UndefOr[Double]
     var ErrorMetrics: js.UndefOr[ErrorMetrics]
     var RMSE: js.UndefOr[Double]
     var WeightedQuantileLosses: js.UndefOr[WeightedQuantileLosses]
@@ -1934,11 +2694,13 @@ package object forecast {
   object Metrics {
     @inline
     def apply(
+        AverageWeightedQuantileLoss: js.UndefOr[Double] = js.undefined,
         ErrorMetrics: js.UndefOr[ErrorMetrics] = js.undefined,
         RMSE: js.UndefOr[Double] = js.undefined,
         WeightedQuantileLosses: js.UndefOr[WeightedQuantileLosses] = js.undefined
     ): Metrics = {
       val __obj = js.Dynamic.literal()
+      AverageWeightedQuantileLoss.foreach(__v => __obj.updateDynamic("AverageWeightedQuantileLoss")(__v.asInstanceOf[js.Any]))
       ErrorMetrics.foreach(__v => __obj.updateDynamic("ErrorMetrics")(__v.asInstanceOf[js.Any]))
       RMSE.foreach(__v => __obj.updateDynamic("RMSE")(__v.asInstanceOf[js.Any]))
       WeightedQuantileLosses.foreach(__v => __obj.updateDynamic("WeightedQuantileLosses")(__v.asInstanceOf[js.Any]))
@@ -2051,10 +2813,12 @@ package object forecast {
   trait PredictorSummary extends js.Object {
     var CreationTime: js.UndefOr[Timestamp]
     var DatasetGroupArn: js.UndefOr[Arn]
+    var IsAutoPredictor: js.UndefOr[Boolean]
     var LastModificationTime: js.UndefOr[Timestamp]
     var Message: js.UndefOr[ErrorMessage]
     var PredictorArn: js.UndefOr[Arn]
     var PredictorName: js.UndefOr[Name]
+    var ReferencePredictorSummary: js.UndefOr[ReferencePredictorSummary]
     var Status: js.UndefOr[Status]
   }
 
@@ -2063,21 +2827,46 @@ package object forecast {
     def apply(
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         DatasetGroupArn: js.UndefOr[Arn] = js.undefined,
+        IsAutoPredictor: js.UndefOr[Boolean] = js.undefined,
         LastModificationTime: js.UndefOr[Timestamp] = js.undefined,
         Message: js.UndefOr[ErrorMessage] = js.undefined,
         PredictorArn: js.UndefOr[Arn] = js.undefined,
         PredictorName: js.UndefOr[Name] = js.undefined,
+        ReferencePredictorSummary: js.UndefOr[ReferencePredictorSummary] = js.undefined,
         Status: js.UndefOr[Status] = js.undefined
     ): PredictorSummary = {
       val __obj = js.Dynamic.literal()
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DatasetGroupArn.foreach(__v => __obj.updateDynamic("DatasetGroupArn")(__v.asInstanceOf[js.Any]))
+      IsAutoPredictor.foreach(__v => __obj.updateDynamic("IsAutoPredictor")(__v.asInstanceOf[js.Any]))
       LastModificationTime.foreach(__v => __obj.updateDynamic("LastModificationTime")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       PredictorArn.foreach(__v => __obj.updateDynamic("PredictorArn")(__v.asInstanceOf[js.Any]))
       PredictorName.foreach(__v => __obj.updateDynamic("PredictorName")(__v.asInstanceOf[js.Any]))
+      ReferencePredictorSummary.foreach(__v => __obj.updateDynamic("ReferencePredictorSummary")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PredictorSummary]
+    }
+  }
+
+  /** Provides a summary of the reference predictor used when retraining or upgrading a predictor.
+    */
+  @js.native
+  trait ReferencePredictorSummary extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var State: js.UndefOr[State]
+  }
+
+  object ReferencePredictorSummary {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        State: js.UndefOr[State] = js.undefined
+    ): ReferencePredictorSummary = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReferencePredictorSummary]
     }
   }
 
@@ -2107,7 +2896,7 @@ package object forecast {
     }
   }
 
-  /** Defines the fields of a dataset. You specify this object in the <a>CreateDataset</a> request.
+  /** Defines the fields of a dataset.
     */
   @js.native
   trait Schema extends js.Object {
@@ -2153,8 +2942,12 @@ package object forecast {
     var Avg: js.UndefOr[Double]
     var Count: js.UndefOr[Int]
     var CountDistinct: js.UndefOr[Int]
+    var CountDistinctLong: js.UndefOr[Double]
+    var CountLong: js.UndefOr[Double]
     var CountNan: js.UndefOr[Int]
+    var CountNanLong: js.UndefOr[Double]
     var CountNull: js.UndefOr[Int]
+    var CountNullLong: js.UndefOr[Double]
     var Max: js.UndefOr[String]
     var Min: js.UndefOr[String]
     var Stddev: js.UndefOr[Double]
@@ -2166,8 +2959,12 @@ package object forecast {
         Avg: js.UndefOr[Double] = js.undefined,
         Count: js.UndefOr[Int] = js.undefined,
         CountDistinct: js.UndefOr[Int] = js.undefined,
+        CountDistinctLong: js.UndefOr[Double] = js.undefined,
+        CountLong: js.UndefOr[Double] = js.undefined,
         CountNan: js.UndefOr[Int] = js.undefined,
+        CountNanLong: js.UndefOr[Double] = js.undefined,
         CountNull: js.UndefOr[Int] = js.undefined,
+        CountNullLong: js.UndefOr[Double] = js.undefined,
         Max: js.UndefOr[String] = js.undefined,
         Min: js.UndefOr[String] = js.undefined,
         Stddev: js.UndefOr[Double] = js.undefined
@@ -2176,8 +2973,12 @@ package object forecast {
       Avg.foreach(__v => __obj.updateDynamic("Avg")(__v.asInstanceOf[js.Any]))
       Count.foreach(__v => __obj.updateDynamic("Count")(__v.asInstanceOf[js.Any]))
       CountDistinct.foreach(__v => __obj.updateDynamic("CountDistinct")(__v.asInstanceOf[js.Any]))
+      CountDistinctLong.foreach(__v => __obj.updateDynamic("CountDistinctLong")(__v.asInstanceOf[js.Any]))
+      CountLong.foreach(__v => __obj.updateDynamic("CountLong")(__v.asInstanceOf[js.Any]))
       CountNan.foreach(__v => __obj.updateDynamic("CountNan")(__v.asInstanceOf[js.Any]))
+      CountNanLong.foreach(__v => __obj.updateDynamic("CountNanLong")(__v.asInstanceOf[js.Any]))
       CountNull.foreach(__v => __obj.updateDynamic("CountNull")(__v.asInstanceOf[js.Any]))
+      CountNullLong.foreach(__v => __obj.updateDynamic("CountNullLong")(__v.asInstanceOf[js.Any]))
       Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
       Min.foreach(__v => __obj.updateDynamic("Min")(__v.asInstanceOf[js.Any]))
       Stddev.foreach(__v => __obj.updateDynamic("Stddev")(__v.asInstanceOf[js.Any]))
@@ -2202,7 +3003,7 @@ package object forecast {
     }
   }
 
-  /** Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object. Forecast supports the Weather Index and Holidays built-in featurizations.
+  /** '''Note:'''This object belongs to the <a>CreatePredictor</a> operation. If you created your predictor with <a>CreateAutoPredictor</a>, see <a>AdditionalDataset</a>. Describes a supplementary feature of a dataset group. This object is part of the <a>InputDataConfig</a> object. Forecast supports the Weather Index and Holidays built-in featurizations.
     * ```Weather Index``` The Amazon Forecast Weather Index is a built-in featurization that incorporates historical and projected weather information into your model. The Weather Index supplements your datasets with over two years of historical weather data and up to 14 days of projected weather data. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/weather.html|Amazon Forecast Weather Index]].
     * ```Holidays``` Holidays is a built-in featurization that incorporates a feature-engineered dataset of national holiday information into your model. It provides native support for the holiday calendars of 66 countries. To view the holiday calendars, refer to the [[http://jollyday.sourceforge.net/data.html|Jollyday]] library. For more information, see [[https://docs.aws.amazon.com/forecast/latest/dg/holidays.html|Holidays Featurization]].
     */

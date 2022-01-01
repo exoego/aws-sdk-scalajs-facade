@@ -73,3 +73,10 @@ object TextType {
 
   inline def values: js.Array[TextType] = js.Array(HANDWRITING, PRINTED)
 }
+
+type ValueType = "DATE"
+object ValueType {
+  inline val DATE: "DATE" = "DATE"
+
+  inline def values: js.Array[ValueType] = js.Array(DATE)
+}

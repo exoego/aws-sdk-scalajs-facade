@@ -20,6 +20,15 @@ object AuthResources {
   inline def values: js.Array[AuthResources] = js.Array(USER_POOL_ONLY, IDENTITY_POOL_AND_USER_POOL)
 }
 
+type AuthenticatedElement = "READ" | "CREATE_AND_UPDATE" | "DELETE"
+object AuthenticatedElement {
+  inline val READ: "READ" = "READ"
+  inline val CREATE_AND_UPDATE: "CREATE_AND_UPDATE" = "CREATE_AND_UPDATE"
+  inline val DELETE: "DELETE" = "DELETE"
+
+  inline def values: js.Array[AuthenticatedElement] = js.Array(READ, CREATE_AND_UPDATE, DELETE)
+}
+
 type DeliveryMethod = "EMAIL" | "SMS"
 object DeliveryMethod {
   inline val EMAIL: "EMAIL" = "EMAIL"
@@ -132,6 +141,13 @@ object Service {
   inline def values: js.Array[Service] = js.Array(COGNITO)
 }
 
+type ServiceName = "S3"
+object ServiceName {
+  inline val S3: "S3" = "S3"
+
+  inline def values: js.Array[ServiceName] = js.Array(S3)
+}
+
 type SignInMethod = "EMAIL" | "EMAIL_AND_PHONE_NUMBER" | "PHONE_NUMBER" | "USERNAME"
 object SignInMethod {
   inline val EMAIL: "EMAIL" = "EMAIL"
@@ -148,4 +164,13 @@ object Status {
   inline val STALE: "STALE" = "STALE"
 
   inline def values: js.Array[Status] = js.Array(LATEST, STALE)
+}
+
+type UnAuthenticatedElement = "READ" | "CREATE_AND_UPDATE" | "DELETE"
+object UnAuthenticatedElement {
+  inline val READ: "READ" = "READ"
+  inline val CREATE_AND_UPDATE: "CREATE_AND_UPDATE" = "CREATE_AND_UPDATE"
+  inline val DELETE: "DELETE" = "DELETE"
+
+  inline def values: js.Array[UnAuthenticatedElement] = js.Array(READ, CREATE_AND_UPDATE, DELETE)
 }

@@ -137,7 +137,7 @@ object EncodingType {
 
 /** The bucket event for which to send notifications.
   */
-type Event = "s3:ReducedRedundancyLostObject" | "s3:ObjectCreated:*" | "s3:ObjectCreated:Put" | "s3:ObjectCreated:Post" | "s3:ObjectCreated:Copy" | "s3:ObjectCreated:CompleteMultipartUpload" | "s3:ObjectRemoved:*" | "s3:ObjectRemoved:Delete" | "s3:ObjectRemoved:DeleteMarkerCreated" | "s3:ObjectRestore:*" | "s3:ObjectRestore:Post" | "s3:ObjectRestore:Completed" | "s3:Replication:*" | "s3:Replication:OperationFailedReplication" | "s3:Replication:OperationNotTracked" | "s3:Replication:OperationMissedThreshold" | "s3:Replication:OperationReplicatedAfterThreshold"
+type Event = "s3:ReducedRedundancyLostObject" | "s3:ObjectCreated:*" | "s3:ObjectCreated:Put" | "s3:ObjectCreated:Post" | "s3:ObjectCreated:Copy" | "s3:ObjectCreated:CompleteMultipartUpload" | "s3:ObjectRemoved:*" | "s3:ObjectRemoved:Delete" | "s3:ObjectRemoved:DeleteMarkerCreated" | "s3:ObjectRestore:*" | "s3:ObjectRestore:Post" | "s3:ObjectRestore:Completed" | "s3:Replication:*" | "s3:Replication:OperationFailedReplication" | "s3:Replication:OperationNotTracked" | "s3:Replication:OperationMissedThreshold" | "s3:Replication:OperationReplicatedAfterThreshold" | "s3:ObjectRestore:Delete" | "s3:LifecycleTransition" | "s3:IntelligentTiering" | "s3:ObjectAcl:Put" | "s3:LifecycleExpiration:*" | "s3:LifecycleExpiration:Delete" | "s3:LifecycleExpiration:DeleteMarkerCreated" | "s3:ObjectTagging:*" | "s3:ObjectTagging:Put" | "s3:ObjectTagging:Delete"
 object Event {
   inline val `s3:ReducedRedundancyLostObject`: "s3:ReducedRedundancyLostObject" = "s3:ReducedRedundancyLostObject"
   inline val `s3:ObjectCreated:*` : "s3:ObjectCreated:*" = "s3:ObjectCreated:*"
@@ -156,6 +156,16 @@ object Event {
   inline val `s3:Replication:OperationNotTracked`: "s3:Replication:OperationNotTracked" = "s3:Replication:OperationNotTracked"
   inline val `s3:Replication:OperationMissedThreshold`: "s3:Replication:OperationMissedThreshold" = "s3:Replication:OperationMissedThreshold"
   inline val `s3:Replication:OperationReplicatedAfterThreshold`: "s3:Replication:OperationReplicatedAfterThreshold" = "s3:Replication:OperationReplicatedAfterThreshold"
+  inline val `s3:ObjectRestore:Delete`: "s3:ObjectRestore:Delete" = "s3:ObjectRestore:Delete"
+  inline val `s3:LifecycleTransition`: "s3:LifecycleTransition" = "s3:LifecycleTransition"
+  inline val `s3:IntelligentTiering`: "s3:IntelligentTiering" = "s3:IntelligentTiering"
+  inline val `s3:ObjectAcl:Put`: "s3:ObjectAcl:Put" = "s3:ObjectAcl:Put"
+  inline val `s3:LifecycleExpiration:*` : "s3:LifecycleExpiration:*" = "s3:LifecycleExpiration:*"
+  inline val `s3:LifecycleExpiration:Delete`: "s3:LifecycleExpiration:Delete" = "s3:LifecycleExpiration:Delete"
+  inline val `s3:LifecycleExpiration:DeleteMarkerCreated`: "s3:LifecycleExpiration:DeleteMarkerCreated" = "s3:LifecycleExpiration:DeleteMarkerCreated"
+  inline val `s3:ObjectTagging:*` : "s3:ObjectTagging:*" = "s3:ObjectTagging:*"
+  inline val `s3:ObjectTagging:Put`: "s3:ObjectTagging:Put" = "s3:ObjectTagging:Put"
+  inline val `s3:ObjectTagging:Delete`: "s3:ObjectTagging:Delete" = "s3:ObjectTagging:Delete"
 
   inline def values: js.Array[Event] = js.Array(
     `s3:ReducedRedundancyLostObject`,
@@ -174,7 +184,17 @@ object Event {
     `s3:Replication:OperationFailedReplication`,
     `s3:Replication:OperationNotTracked`,
     `s3:Replication:OperationMissedThreshold`,
-    `s3:Replication:OperationReplicatedAfterThreshold`
+    `s3:Replication:OperationReplicatedAfterThreshold`,
+    `s3:ObjectRestore:Delete`,
+    `s3:LifecycleTransition`,
+    `s3:IntelligentTiering`,
+    `s3:ObjectAcl:Put`,
+    `s3:LifecycleExpiration:*`,
+    `s3:LifecycleExpiration:Delete`,
+    `s3:LifecycleExpiration:DeleteMarkerCreated`,
+    `s3:ObjectTagging:*`,
+    `s3:ObjectTagging:Put`,
+    `s3:ObjectTagging:Delete`
   )
 }
 
@@ -259,7 +279,7 @@ object InventoryIncludedObjectVersions {
   inline def values: js.Array[InventoryIncludedObjectVersions] = js.Array(All, Current)
 }
 
-type InventoryOptionalField = "Size" | "LastModifiedDate" | "StorageClass" | "ETag" | "IsMultipartUploaded" | "ReplicationStatus" | "EncryptionStatus" | "ObjectLockRetainUntilDate" | "ObjectLockMode" | "ObjectLockLegalHoldStatus" | "IntelligentTieringAccessTier"
+type InventoryOptionalField = "Size" | "LastModifiedDate" | "StorageClass" | "ETag" | "IsMultipartUploaded" | "ReplicationStatus" | "EncryptionStatus" | "ObjectLockRetainUntilDate" | "ObjectLockMode" | "ObjectLockLegalHoldStatus" | "IntelligentTieringAccessTier" | "BucketKeyStatus"
 object InventoryOptionalField {
   inline val Size: "Size" = "Size"
   inline val LastModifiedDate: "LastModifiedDate" = "LastModifiedDate"
@@ -272,6 +292,7 @@ object InventoryOptionalField {
   inline val ObjectLockMode: "ObjectLockMode" = "ObjectLockMode"
   inline val ObjectLockLegalHoldStatus: "ObjectLockLegalHoldStatus" = "ObjectLockLegalHoldStatus"
   inline val IntelligentTieringAccessTier: "IntelligentTieringAccessTier" = "IntelligentTieringAccessTier"
+  inline val BucketKeyStatus: "BucketKeyStatus" = "BucketKeyStatus"
 
   inline def values: js.Array[InventoryOptionalField] = js.Array(
     Size,
@@ -284,7 +305,8 @@ object InventoryOptionalField {
     ObjectLockRetainUntilDate,
     ObjectLockMode,
     ObjectLockLegalHoldStatus,
-    IntelligentTieringAccessTier
+    IntelligentTieringAccessTier,
+    BucketKeyStatus
   )
 }
 
@@ -372,17 +394,18 @@ object ObjectLockRetentionMode {
   inline def values: js.Array[ObjectLockRetentionMode] = js.Array(GOVERNANCE, COMPLIANCE)
 }
 
-/** The container element for object ownership for a bucket's ownership controls. BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL. ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL.
+/** The container element for object ownership for a bucket's ownership controls. BucketOwnerPreferred - Objects uploaded to the bucket change ownership to the bucket owner if the objects are uploaded with the <code>bucket-owner-full-control</code> canned ACL. ObjectWriter - The uploading account will own the object if the object is uploaded with the <code>bucket-owner-full-control</code> canned ACL. BucketOwnerEnforced - Access control lists (ACLs) are disabled and no longer affect permissions. The bucket owner automatically owns and has full control over every object in the bucket. The bucket only accepts PUT requests that don't specify an ACL or bucket owner full control ACLs, such as the <code>bucket-owner-full-control</code> canned ACL or an equivalent form of this ACL expressed in the XML format.
   */
-type ObjectOwnership = "BucketOwnerPreferred" | "ObjectWriter"
+type ObjectOwnership = "BucketOwnerPreferred" | "ObjectWriter" | "BucketOwnerEnforced"
 object ObjectOwnership {
   inline val BucketOwnerPreferred: "BucketOwnerPreferred" = "BucketOwnerPreferred"
   inline val ObjectWriter: "ObjectWriter" = "ObjectWriter"
+  inline val BucketOwnerEnforced: "BucketOwnerEnforced" = "BucketOwnerEnforced"
 
-  inline def values: js.Array[ObjectOwnership] = js.Array(BucketOwnerPreferred, ObjectWriter)
+  inline def values: js.Array[ObjectOwnership] = js.Array(BucketOwnerPreferred, ObjectWriter, BucketOwnerEnforced)
 }
 
-type ObjectStorageClass = "STANDARD" | "REDUCED_REDUNDANCY" | "GLACIER" | "STANDARD_IA" | "ONEZONE_IA" | "INTELLIGENT_TIERING" | "DEEP_ARCHIVE" | "OUTPOSTS"
+type ObjectStorageClass = "STANDARD" | "REDUCED_REDUNDANCY" | "GLACIER" | "STANDARD_IA" | "ONEZONE_IA" | "INTELLIGENT_TIERING" | "DEEP_ARCHIVE" | "OUTPOSTS" | "GLACIER_IR"
 object ObjectStorageClass {
   inline val STANDARD: "STANDARD" = "STANDARD"
   inline val REDUCED_REDUNDANCY: "REDUCED_REDUNDANCY" = "REDUCED_REDUNDANCY"
@@ -392,8 +415,9 @@ object ObjectStorageClass {
   inline val INTELLIGENT_TIERING: "INTELLIGENT_TIERING" = "INTELLIGENT_TIERING"
   inline val DEEP_ARCHIVE: "DEEP_ARCHIVE" = "DEEP_ARCHIVE"
   inline val OUTPOSTS: "OUTPOSTS" = "OUTPOSTS"
+  inline val GLACIER_IR: "GLACIER_IR" = "GLACIER_IR"
 
-  inline def values: js.Array[ObjectStorageClass] = js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, OUTPOSTS)
+  inline def values: js.Array[ObjectStorageClass] = js.Array(STANDARD, REDUCED_REDUNDANCY, GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, OUTPOSTS, GLACIER_IR)
 }
 
 type ObjectVersionStorageClass = "STANDARD"
@@ -488,7 +512,7 @@ object RequestCharged {
   inline def values: js.Array[RequestCharged] = js.Array(requester)
 }
 
-/** Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html|Downloading Objects in Requestor Pays Buckets]] in the <i>Amazon S3 Developer Guide</i>.
+/** Confirms that the requester knows that they will be charged for the request. Bucket owners need not specify this parameter in their requests. For information about downloading objects from requester pays buckets, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html|Downloading Objects in Requestor Pays Buckets]] in the <i>Amazon S3 User Guide</i>.
   */
 type RequestPayer = "requester"
 object RequestPayer {
@@ -520,7 +544,7 @@ object SseKmsEncryptedObjectsStatus {
   inline def values: js.Array[SseKmsEncryptedObjectsStatus] = js.Array(Enabled, Disabled)
 }
 
-type StorageClass = "STANDARD" | "REDUCED_REDUNDANCY" | "STANDARD_IA" | "ONEZONE_IA" | "INTELLIGENT_TIERING" | "GLACIER" | "DEEP_ARCHIVE" | "OUTPOSTS"
+type StorageClass = "STANDARD" | "REDUCED_REDUNDANCY" | "STANDARD_IA" | "ONEZONE_IA" | "INTELLIGENT_TIERING" | "GLACIER" | "DEEP_ARCHIVE" | "OUTPOSTS" | "GLACIER_IR"
 object StorageClass {
   inline val STANDARD: "STANDARD" = "STANDARD"
   inline val REDUCED_REDUNDANCY: "REDUCED_REDUNDANCY" = "REDUCED_REDUNDANCY"
@@ -530,8 +554,9 @@ object StorageClass {
   inline val GLACIER: "GLACIER" = "GLACIER"
   inline val DEEP_ARCHIVE: "DEEP_ARCHIVE" = "DEEP_ARCHIVE"
   inline val OUTPOSTS: "OUTPOSTS" = "OUTPOSTS"
+  inline val GLACIER_IR: "GLACIER_IR" = "GLACIER_IR"
 
-  inline def values: js.Array[StorageClass] = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE, OUTPOSTS)
+  inline def values: js.Array[StorageClass] = js.Array(STANDARD, REDUCED_REDUNDANCY, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, GLACIER, DEEP_ARCHIVE, OUTPOSTS, GLACIER_IR)
 }
 
 type StorageClassAnalysisSchemaVersion = "V_1"
@@ -558,15 +583,16 @@ object Tier {
   inline def values: js.Array[Tier] = js.Array(Standard, Bulk, Expedited)
 }
 
-type TransitionStorageClass = "GLACIER" | "STANDARD_IA" | "ONEZONE_IA" | "INTELLIGENT_TIERING" | "DEEP_ARCHIVE"
+type TransitionStorageClass = "GLACIER" | "STANDARD_IA" | "ONEZONE_IA" | "INTELLIGENT_TIERING" | "DEEP_ARCHIVE" | "GLACIER_IR"
 object TransitionStorageClass {
   inline val GLACIER: "GLACIER" = "GLACIER"
   inline val STANDARD_IA: "STANDARD_IA" = "STANDARD_IA"
   inline val ONEZONE_IA: "ONEZONE_IA" = "ONEZONE_IA"
   inline val INTELLIGENT_TIERING: "INTELLIGENT_TIERING" = "INTELLIGENT_TIERING"
   inline val DEEP_ARCHIVE: "DEEP_ARCHIVE" = "DEEP_ARCHIVE"
+  inline val GLACIER_IR: "GLACIER_IR" = "GLACIER_IR"
 
-  inline def values: js.Array[TransitionStorageClass] = js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE)
+  inline def values: js.Array[TransitionStorageClass] = js.Array(GLACIER, STANDARD_IA, ONEZONE_IA, INTELLIGENT_TIERING, DEEP_ARCHIVE, GLACIER_IR)
 }
 
 type Type = "CanonicalUser" | "AmazonCustomerByEmail" | "Group"

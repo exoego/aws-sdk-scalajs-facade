@@ -8,8 +8,10 @@ object ActionValue {
   val ALLOW = "ALLOW".asInstanceOf[ActionValue]
   val BLOCK = "BLOCK".asInstanceOf[ActionValue]
   val COUNT = "COUNT".asInstanceOf[ActionValue]
+  val CAPTCHA = "CAPTCHA".asInstanceOf[ActionValue]
+  val EXCLUDED_AS_COUNT = "EXCLUDED_AS_COUNT".asInstanceOf[ActionValue]
 
-  @inline def values: js.Array[ActionValue] = js.Array(ALLOW, BLOCK, COUNT)
+  @inline def values: js.Array[ActionValue] = js.Array(ALLOW, BLOCK, COUNT, CAPTCHA, EXCLUDED_AS_COUNT)
 }
 
 @js.native
@@ -542,6 +544,15 @@ object CountryCode {
 }
 
 @js.native
+sealed trait FailureReason extends js.Any
+object FailureReason {
+  val TOKEN_MISSING = "TOKEN_MISSING".asInstanceOf[FailureReason]
+  val TOKEN_EXPIRED = "TOKEN_EXPIRED".asInstanceOf[FailureReason]
+
+  @inline def values: js.Array[FailureReason] = js.Array(TOKEN_MISSING, TOKEN_EXPIRED)
+}
+
+@js.native
 sealed trait FallbackBehavior extends js.Any
 object FallbackBehavior {
   val MATCH = "MATCH".asInstanceOf[FallbackBehavior]
@@ -665,6 +676,43 @@ object TextTransformationType {
   val LOWERCASE = "LOWERCASE".asInstanceOf[TextTransformationType]
   val CMD_LINE = "CMD_LINE".asInstanceOf[TextTransformationType]
   val URL_DECODE = "URL_DECODE".asInstanceOf[TextTransformationType]
+  val BASE64_DECODE = "BASE64_DECODE".asInstanceOf[TextTransformationType]
+  val HEX_DECODE = "HEX_DECODE".asInstanceOf[TextTransformationType]
+  val MD5 = "MD5".asInstanceOf[TextTransformationType]
+  val REPLACE_COMMENTS = "REPLACE_COMMENTS".asInstanceOf[TextTransformationType]
+  val ESCAPE_SEQ_DECODE = "ESCAPE_SEQ_DECODE".asInstanceOf[TextTransformationType]
+  val SQL_HEX_DECODE = "SQL_HEX_DECODE".asInstanceOf[TextTransformationType]
+  val CSS_DECODE = "CSS_DECODE".asInstanceOf[TextTransformationType]
+  val JS_DECODE = "JS_DECODE".asInstanceOf[TextTransformationType]
+  val NORMALIZE_PATH = "NORMALIZE_PATH".asInstanceOf[TextTransformationType]
+  val NORMALIZE_PATH_WIN = "NORMALIZE_PATH_WIN".asInstanceOf[TextTransformationType]
+  val REMOVE_NULLS = "REMOVE_NULLS".asInstanceOf[TextTransformationType]
+  val REPLACE_NULLS = "REPLACE_NULLS".asInstanceOf[TextTransformationType]
+  val BASE64_DECODE_EXT = "BASE64_DECODE_EXT".asInstanceOf[TextTransformationType]
+  val URL_DECODE_UNI = "URL_DECODE_UNI".asInstanceOf[TextTransformationType]
+  val UTF8_TO_UNICODE = "UTF8_TO_UNICODE".asInstanceOf[TextTransformationType]
 
-  @inline def values: js.Array[TextTransformationType] = js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE)
+  @inline def values: js.Array[TextTransformationType] = js.Array(
+    NONE,
+    COMPRESS_WHITE_SPACE,
+    HTML_ENTITY_DECODE,
+    LOWERCASE,
+    CMD_LINE,
+    URL_DECODE,
+    BASE64_DECODE,
+    HEX_DECODE,
+    MD5,
+    REPLACE_COMMENTS,
+    ESCAPE_SEQ_DECODE,
+    SQL_HEX_DECODE,
+    CSS_DECODE,
+    JS_DECODE,
+    NORMALIZE_PATH,
+    NORMALIZE_PATH_WIN,
+    REMOVE_NULLS,
+    REPLACE_NULLS,
+    BASE64_DECODE_EXT,
+    URL_DECODE_UNI,
+    UTF8_TO_UNICODE
+  )
 }

@@ -35,6 +35,23 @@ object AuthScheme {
   inline def values: js.Array[AuthScheme] = js.Array(SECRETS)
 }
 
+type AutomationMode = "full" | "all-paused"
+object AutomationMode {
+  inline val full: "full" = "full"
+  inline val `all-paused`: "all-paused" = "all-paused"
+
+  inline def values: js.Array[AutomationMode] = js.Array(full, `all-paused`)
+}
+
+type CustomEngineVersionStatus = "available" | "inactive" | "inactive-except-restore"
+object CustomEngineVersionStatus {
+  inline val available: "available" = "available"
+  inline val inactive: "inactive" = "inactive"
+  inline val `inactive-except-restore`: "inactive-except-restore" = "inactive-except-restore"
+
+  inline def values: js.Array[CustomEngineVersionStatus] = js.Array(available, inactive, `inactive-except-restore`)
+}
+
 type DBProxyEndpointStatus = "available" | "modifying" | "incompatible-network" | "insufficient-resource-limits" | "creating" | "deleting"
 object DBProxyEndpointStatus {
   inline val available: "available" = "available"
@@ -103,7 +120,7 @@ object ReplicaMode {
   inline def values: js.Array[ReplicaMode] = js.Array(`open-read-only`, mounted)
 }
 
-type SourceType = "db-instance" | "db-parameter-group" | "db-security-group" | "db-snapshot" | "db-cluster" | "db-cluster-snapshot"
+type SourceType = "db-instance" | "db-parameter-group" | "db-security-group" | "db-snapshot" | "db-cluster" | "db-cluster-snapshot" | "custom-engine-version"
 object SourceType {
   inline val `db-instance`: "db-instance" = "db-instance"
   inline val `db-parameter-group`: "db-parameter-group" = "db-parameter-group"
@@ -111,8 +128,9 @@ object SourceType {
   inline val `db-snapshot`: "db-snapshot" = "db-snapshot"
   inline val `db-cluster`: "db-cluster" = "db-cluster"
   inline val `db-cluster-snapshot`: "db-cluster-snapshot" = "db-cluster-snapshot"
+  inline val `custom-engine-version`: "custom-engine-version" = "custom-engine-version"
 
-  inline def values: js.Array[SourceType] = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`)
+  inline def values: js.Array[SourceType] = js.Array(`db-instance`, `db-parameter-group`, `db-security-group`, `db-snapshot`, `db-cluster`, `db-cluster-snapshot`, `custom-engine-version`)
 }
 
 type TargetHealthReason = "UNREACHABLE" | "CONNECTION_FAILED" | "AUTH_FAILURE" | "PENDING_PROXY_CAPACITY" | "INVALID_REPLICATION_STATE"

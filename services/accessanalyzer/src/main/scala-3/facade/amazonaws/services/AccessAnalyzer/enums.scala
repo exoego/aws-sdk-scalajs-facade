@@ -211,3 +211,13 @@ object ValidatePolicyFindingType {
 
   inline def values: js.Array[ValidatePolicyFindingType] = js.Array(ERROR, SECURITY_WARNING, SUGGESTION, WARNING)
 }
+
+type ValidatePolicyResourceType = "AWS::S3::Bucket" | "AWS::S3::AccessPoint" | "AWS::S3::MultiRegionAccessPoint" | "AWS::S3ObjectLambda::AccessPoint"
+object ValidatePolicyResourceType {
+  inline val `AWS::S3::Bucket`: "AWS::S3::Bucket" = "AWS::S3::Bucket"
+  inline val `AWS::S3::AccessPoint`: "AWS::S3::AccessPoint" = "AWS::S3::AccessPoint"
+  inline val `AWS::S3::MultiRegionAccessPoint`: "AWS::S3::MultiRegionAccessPoint" = "AWS::S3::MultiRegionAccessPoint"
+  inline val `AWS::S3ObjectLambda::AccessPoint`: "AWS::S3ObjectLambda::AccessPoint" = "AWS::S3ObjectLambda::AccessPoint"
+
+  inline def values: js.Array[ValidatePolicyResourceType] = js.Array(`AWS::S3::Bucket`, `AWS::S3::AccessPoint`, `AWS::S3::MultiRegionAccessPoint`, `AWS::S3ObjectLambda::AccessPoint`)
+}

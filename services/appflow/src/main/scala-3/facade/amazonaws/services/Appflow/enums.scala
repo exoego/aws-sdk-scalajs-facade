@@ -25,7 +25,7 @@ object ConnectionMode {
   inline def values: js.Array[ConnectionMode] = js.Array(Public, Private)
 }
 
-type ConnectorType = "Salesforce" | "Singular" | "Slack" | "Redshift" | "S3" | "Marketo" | "Googleanalytics" | "Zendesk" | "Servicenow" | "Datadog" | "Trendmicro" | "Snowflake" | "Dynatrace" | "Infornexus" | "Amplitude" | "Veeva" | "EventBridge" | "LookoutMetrics" | "Upsolver" | "Honeycode" | "CustomerProfiles"
+type ConnectorType = "Salesforce" | "Singular" | "Slack" | "Redshift" | "S3" | "Marketo" | "Googleanalytics" | "Zendesk" | "Servicenow" | "Datadog" | "Trendmicro" | "Snowflake" | "Dynatrace" | "Infornexus" | "Amplitude" | "Veeva" | "EventBridge" | "LookoutMetrics" | "Upsolver" | "Honeycode" | "CustomerProfiles" | "SAPOData"
 object ConnectorType {
   inline val Salesforce: "Salesforce" = "Salesforce"
   inline val Singular: "Singular" = "Singular"
@@ -48,6 +48,7 @@ object ConnectorType {
   inline val Upsolver: "Upsolver" = "Upsolver"
   inline val Honeycode: "Honeycode" = "Honeycode"
   inline val CustomerProfiles: "CustomerProfiles" = "CustomerProfiles"
+  inline val SAPOData: "SAPOData" = "SAPOData"
 
   inline def values: js.Array[ConnectorType] = js.Array(
     Salesforce,
@@ -70,7 +71,8 @@ object ConnectorType {
     LookoutMetrics,
     Upsolver,
     Honeycode,
-    CustomerProfiles
+    CustomerProfiles,
+    SAPOData
   )
 }
 
@@ -319,7 +321,7 @@ object Operator {
   )
 }
 
-type OperatorPropertiesKeys = "VALUE" | "VALUES" | "DATA_TYPE" | "UPPER_BOUND" | "LOWER_BOUND" | "SOURCE_DATA_TYPE" | "DESTINATION_DATA_TYPE" | "VALIDATION_ACTION" | "MASK_VALUE" | "MASK_LENGTH" | "TRUNCATE_LENGTH" | "MATH_OPERATION_FIELDS_ORDER" | "CONCAT_FORMAT" | "SUBFIELD_CATEGORY_MAP"
+type OperatorPropertiesKeys = "VALUE" | "VALUES" | "DATA_TYPE" | "UPPER_BOUND" | "LOWER_BOUND" | "SOURCE_DATA_TYPE" | "DESTINATION_DATA_TYPE" | "VALIDATION_ACTION" | "MASK_VALUE" | "MASK_LENGTH" | "TRUNCATE_LENGTH" | "MATH_OPERATION_FIELDS_ORDER" | "CONCAT_FORMAT" | "SUBFIELD_CATEGORY_MAP" | "EXCLUDE_SOURCE_FIELDS_LIST"
 object OperatorPropertiesKeys {
   inline val VALUE: "VALUE" = "VALUE"
   inline val VALUES: "VALUES" = "VALUES"
@@ -335,6 +337,7 @@ object OperatorPropertiesKeys {
   inline val MATH_OPERATION_FIELDS_ORDER: "MATH_OPERATION_FIELDS_ORDER" = "MATH_OPERATION_FIELDS_ORDER"
   inline val CONCAT_FORMAT: "CONCAT_FORMAT" = "CONCAT_FORMAT"
   inline val SUBFIELD_CATEGORY_MAP: "SUBFIELD_CATEGORY_MAP" = "SUBFIELD_CATEGORY_MAP"
+  inline val EXCLUDE_SOURCE_FIELDS_LIST: "EXCLUDE_SOURCE_FIELDS_LIST" = "EXCLUDE_SOURCE_FIELDS_LIST"
 
   inline def values: js.Array[OperatorPropertiesKeys] = js.Array(
     VALUE,
@@ -350,7 +353,8 @@ object OperatorPropertiesKeys {
     TRUNCATE_LENGTH,
     MATH_OPERATION_FIELDS_ORDER,
     CONCAT_FORMAT,
-    SUBFIELD_CATEGORY_MAP
+    SUBFIELD_CATEGORY_MAP,
+    EXCLUDE_SOURCE_FIELDS_LIST
   )
 }
 
@@ -372,6 +376,26 @@ object PrefixType {
   inline val PATH_AND_FILENAME: "PATH_AND_FILENAME" = "PATH_AND_FILENAME"
 
   inline def values: js.Array[PrefixType] = js.Array(FILENAME, PATH, PATH_AND_FILENAME)
+}
+
+type PrivateConnectionProvisioningFailureCause = "CONNECTOR_AUTHENTICATION" | "CONNECTOR_SERVER" | "INTERNAL_SERVER" | "ACCESS_DENIED" | "VALIDATION"
+object PrivateConnectionProvisioningFailureCause {
+  inline val CONNECTOR_AUTHENTICATION: "CONNECTOR_AUTHENTICATION" = "CONNECTOR_AUTHENTICATION"
+  inline val CONNECTOR_SERVER: "CONNECTOR_SERVER" = "CONNECTOR_SERVER"
+  inline val INTERNAL_SERVER: "INTERNAL_SERVER" = "INTERNAL_SERVER"
+  inline val ACCESS_DENIED: "ACCESS_DENIED" = "ACCESS_DENIED"
+  inline val VALIDATION: "VALIDATION" = "VALIDATION"
+
+  inline def values: js.Array[PrivateConnectionProvisioningFailureCause] = js.Array(CONNECTOR_AUTHENTICATION, CONNECTOR_SERVER, INTERNAL_SERVER, ACCESS_DENIED, VALIDATION)
+}
+
+type PrivateConnectionProvisioningStatus = "FAILED" | "PENDING" | "CREATED"
+object PrivateConnectionProvisioningStatus {
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val CREATED: "CREATED" = "CREATED"
+
+  inline def values: js.Array[PrivateConnectionProvisioningStatus] = js.Array(FAILED, PENDING, CREATED)
 }
 
 type S3ConnectorOperator = "PROJECTION" | "LESS_THAN" | "GREATER_THAN" | "BETWEEN" | "LESS_THAN_OR_EQUAL_TO" | "GREATER_THAN_OR_EQUAL_TO" | "EQUAL_TO" | "NOT_EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
@@ -400,6 +424,63 @@ object S3ConnectorOperator {
   inline def values: js.Array[S3ConnectorOperator] = js.Array(
     PROJECTION,
     LESS_THAN,
+    GREATER_THAN,
+    BETWEEN,
+    LESS_THAN_OR_EQUAL_TO,
+    GREATER_THAN_OR_EQUAL_TO,
+    EQUAL_TO,
+    NOT_EQUAL_TO,
+    ADDITION,
+    MULTIPLICATION,
+    DIVISION,
+    SUBTRACTION,
+    MASK_ALL,
+    MASK_FIRST_N,
+    MASK_LAST_N,
+    VALIDATE_NON_NULL,
+    VALIDATE_NON_ZERO,
+    VALIDATE_NON_NEGATIVE,
+    VALIDATE_NUMERIC,
+    NO_OP
+  )
+}
+
+type S3InputFileType = "CSV" | "JSON"
+object S3InputFileType {
+  inline val CSV: "CSV" = "CSV"
+  inline val JSON: "JSON" = "JSON"
+
+  inline def values: js.Array[S3InputFileType] = js.Array(CSV, JSON)
+}
+
+type SAPODataConnectorOperator = "PROJECTION" | "LESS_THAN" | "CONTAINS" | "GREATER_THAN" | "BETWEEN" | "LESS_THAN_OR_EQUAL_TO" | "GREATER_THAN_OR_EQUAL_TO" | "EQUAL_TO" | "NOT_EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"
+object SAPODataConnectorOperator {
+  inline val PROJECTION: "PROJECTION" = "PROJECTION"
+  inline val LESS_THAN: "LESS_THAN" = "LESS_THAN"
+  inline val CONTAINS: "CONTAINS" = "CONTAINS"
+  inline val GREATER_THAN: "GREATER_THAN" = "GREATER_THAN"
+  inline val BETWEEN: "BETWEEN" = "BETWEEN"
+  inline val LESS_THAN_OR_EQUAL_TO: "LESS_THAN_OR_EQUAL_TO" = "LESS_THAN_OR_EQUAL_TO"
+  inline val GREATER_THAN_OR_EQUAL_TO: "GREATER_THAN_OR_EQUAL_TO" = "GREATER_THAN_OR_EQUAL_TO"
+  inline val EQUAL_TO: "EQUAL_TO" = "EQUAL_TO"
+  inline val NOT_EQUAL_TO: "NOT_EQUAL_TO" = "NOT_EQUAL_TO"
+  inline val ADDITION: "ADDITION" = "ADDITION"
+  inline val MULTIPLICATION: "MULTIPLICATION" = "MULTIPLICATION"
+  inline val DIVISION: "DIVISION" = "DIVISION"
+  inline val SUBTRACTION: "SUBTRACTION" = "SUBTRACTION"
+  inline val MASK_ALL: "MASK_ALL" = "MASK_ALL"
+  inline val MASK_FIRST_N: "MASK_FIRST_N" = "MASK_FIRST_N"
+  inline val MASK_LAST_N: "MASK_LAST_N" = "MASK_LAST_N"
+  inline val VALIDATE_NON_NULL: "VALIDATE_NON_NULL" = "VALIDATE_NON_NULL"
+  inline val VALIDATE_NON_ZERO: "VALIDATE_NON_ZERO" = "VALIDATE_NON_ZERO"
+  inline val VALIDATE_NON_NEGATIVE: "VALIDATE_NON_NEGATIVE" = "VALIDATE_NON_NEGATIVE"
+  inline val VALIDATE_NUMERIC: "VALIDATE_NUMERIC" = "VALIDATE_NUMERIC"
+  inline val NO_OP: "NO_OP" = "NO_OP"
+
+  inline def values: js.Array[SAPODataConnectorOperator] = js.Array(
+    PROJECTION,
+    LESS_THAN,
+    CONTAINS,
     GREATER_THAN,
     BETWEEN,
     LESS_THAN_OR_EQUAL_TO,
@@ -611,17 +692,18 @@ object SlackConnectorOperator {
   )
 }
 
-type TaskType = "Arithmetic" | "Filter" | "Map" | "Mask" | "Merge" | "Truncate" | "Validate"
+type TaskType = "Arithmetic" | "Filter" | "Map" | "Map_all" | "Mask" | "Merge" | "Truncate" | "Validate"
 object TaskType {
   inline val Arithmetic: "Arithmetic" = "Arithmetic"
   inline val Filter: "Filter" = "Filter"
   inline val Map: "Map" = "Map"
+  inline val Map_all: "Map_all" = "Map_all"
   inline val Mask: "Mask" = "Mask"
   inline val Merge: "Merge" = "Merge"
   inline val Truncate: "Truncate" = "Truncate"
   inline val Validate: "Validate" = "Validate"
 
-  inline def values: js.Array[TaskType] = js.Array(Arithmetic, Filter, Map, Mask, Merge, Truncate, Validate)
+  inline def values: js.Array[TaskType] = js.Array(Arithmetic, Filter, Map, Map_all, Mask, Merge, Truncate, Validate)
 }
 
 type TrendmicroConnectorOperator = "PROJECTION" | "EQUAL_TO" | "ADDITION" | "MULTIPLICATION" | "DIVISION" | "SUBTRACTION" | "MASK_ALL" | "MASK_FIRST_N" | "MASK_LAST_N" | "VALIDATE_NON_NULL" | "VALIDATE_NON_ZERO" | "VALIDATE_NON_NEGATIVE" | "VALIDATE_NUMERIC" | "NO_OP"

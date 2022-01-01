@@ -8,19 +8,27 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object healthlake {
+  type AmazonResourceName = String
   type BoundedLengthString = String
   type ClientTokenString = String
   type DatastoreArn = String
   type DatastoreId = String
   type DatastoreName = String
   type DatastorePropertiesList = js.Array[DatastoreProperties]
+  type EncryptionKeyID = String
+  type ExportJobPropertiesList = js.Array[ExportJobProperties]
   type IamRoleArn = String
+  type ImportJobPropertiesList = js.Array[ImportJobProperties]
   type JobId = String
   type JobName = String
   type MaxResultsInteger = Int
   type Message = String
   type NextToken = String
   type S3Uri = String
+  type TagKey = String
+  type TagKeyList = js.Array[TagKey]
+  type TagList = js.Array[Tag]
+  type TagValue = String
   type Timestamp = js.Date
 
   final class HealthLakeOps(private val service: HealthLake) extends AnyVal {
@@ -31,8 +39,13 @@ package object healthlake {
     @inline def describeFHIRExportJobFuture(params: DescribeFHIRExportJobRequest): Future[DescribeFHIRExportJobResponse] = service.describeFHIRExportJob(params).promise().toFuture
     @inline def describeFHIRImportJobFuture(params: DescribeFHIRImportJobRequest): Future[DescribeFHIRImportJobResponse] = service.describeFHIRImportJob(params).promise().toFuture
     @inline def listFHIRDatastoresFuture(params: ListFHIRDatastoresRequest): Future[ListFHIRDatastoresResponse] = service.listFHIRDatastores(params).promise().toFuture
+    @inline def listFHIRExportJobsFuture(params: ListFHIRExportJobsRequest): Future[ListFHIRExportJobsResponse] = service.listFHIRExportJobs(params).promise().toFuture
+    @inline def listFHIRImportJobsFuture(params: ListFHIRImportJobsRequest): Future[ListFHIRImportJobsResponse] = service.listFHIRImportJobs(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def startFHIRExportJobFuture(params: StartFHIRExportJobRequest): Future[StartFHIRExportJobResponse] = service.startFHIRExportJob(params).promise().toFuture
     @inline def startFHIRImportJobFuture(params: StartFHIRImportJobRequest): Future[StartFHIRImportJobResponse] = service.startFHIRImportJob(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
 
   }
 
@@ -47,8 +60,13 @@ package object healthlake {
     def describeFHIRExportJob(params: DescribeFHIRExportJobRequest): Request[DescribeFHIRExportJobResponse] = js.native
     def describeFHIRImportJob(params: DescribeFHIRImportJobRequest): Request[DescribeFHIRImportJobResponse] = js.native
     def listFHIRDatastores(params: ListFHIRDatastoresRequest): Request[ListFHIRDatastoresResponse] = js.native
+    def listFHIRExportJobs(params: ListFHIRExportJobsRequest): Request[ListFHIRExportJobsResponse] = js.native
+    def listFHIRImportJobs(params: ListFHIRImportJobsRequest): Request[ListFHIRImportJobsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def startFHIRExportJob(params: StartFHIRExportJobRequest): Request[StartFHIRExportJobResponse] = js.native
     def startFHIRImportJob(params: StartFHIRImportJobRequest): Request[StartFHIRImportJobResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
   }
   object HealthLake {
     @inline implicit def toOps(service: HealthLake): HealthLakeOps = {
@@ -62,6 +80,8 @@ package object healthlake {
     var ClientToken: js.UndefOr[ClientTokenString]
     var DatastoreName: js.UndefOr[DatastoreName]
     var PreloadDataConfig: js.UndefOr[PreloadDataConfig]
+    var SseConfiguration: js.UndefOr[SseConfiguration]
+    var Tags: js.UndefOr[TagList]
   }
 
   object CreateFHIRDatastoreRequest {
@@ -70,7 +90,9 @@ package object healthlake {
         DatastoreTypeVersion: FHIRVersion,
         ClientToken: js.UndefOr[ClientTokenString] = js.undefined,
         DatastoreName: js.UndefOr[DatastoreName] = js.undefined,
-        PreloadDataConfig: js.UndefOr[PreloadDataConfig] = js.undefined
+        PreloadDataConfig: js.UndefOr[PreloadDataConfig] = js.undefined,
+        SseConfiguration: js.UndefOr[SseConfiguration] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
     ): CreateFHIRDatastoreRequest = {
       val __obj = js.Dynamic.literal(
         "DatastoreTypeVersion" -> DatastoreTypeVersion.asInstanceOf[js.Any]
@@ -79,6 +101,8 @@ package object healthlake {
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
       DatastoreName.foreach(__v => __obj.updateDynamic("DatastoreName")(__v.asInstanceOf[js.Any]))
       PreloadDataConfig.foreach(__v => __obj.updateDynamic("PreloadDataConfig")(__v.asInstanceOf[js.Any]))
+      SseConfiguration.foreach(__v => __obj.updateDynamic("SseConfiguration")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateFHIRDatastoreRequest]
     }
   }
@@ -148,6 +172,7 @@ package object healthlake {
     var CreatedAt: js.UndefOr[Timestamp]
     var DatastoreName: js.UndefOr[DatastoreName]
     var PreloadDataConfig: js.UndefOr[PreloadDataConfig]
+    var SseConfiguration: js.UndefOr[SseConfiguration]
   }
 
   object DatastoreProperties {
@@ -160,7 +185,8 @@ package object healthlake {
         DatastoreTypeVersion: FHIRVersion,
         CreatedAt: js.UndefOr[Timestamp] = js.undefined,
         DatastoreName: js.UndefOr[DatastoreName] = js.undefined,
-        PreloadDataConfig: js.UndefOr[PreloadDataConfig] = js.undefined
+        PreloadDataConfig: js.UndefOr[PreloadDataConfig] = js.undefined,
+        SseConfiguration: js.UndefOr[SseConfiguration] = js.undefined
     ): DatastoreProperties = {
       val __obj = js.Dynamic.literal(
         "DatastoreArn" -> DatastoreArn.asInstanceOf[js.Any],
@@ -173,6 +199,7 @@ package object healthlake {
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       DatastoreName.foreach(__v => __obj.updateDynamic("DatastoreName")(__v.asInstanceOf[js.Any]))
       PreloadDataConfig.foreach(__v => __obj.updateDynamic("PreloadDataConfig")(__v.asInstanceOf[js.Any]))
+      SseConfiguration.foreach(__v => __obj.updateDynamic("SseConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DatastoreProperties]
     }
   }
@@ -382,6 +409,7 @@ package object healthlake {
     var DataAccessRoleArn: js.UndefOr[IamRoleArn]
     var EndTime: js.UndefOr[Timestamp]
     var JobName: js.UndefOr[JobName]
+    var JobOutputDataConfig: js.UndefOr[OutputDataConfig]
     var Message: js.UndefOr[Message]
   }
 
@@ -396,6 +424,7 @@ package object healthlake {
         DataAccessRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
         JobName: js.UndefOr[JobName] = js.undefined,
+        JobOutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
         Message: js.UndefOr[Message] = js.undefined
     ): ImportJobProperties = {
       val __obj = js.Dynamic.literal(
@@ -409,6 +438,7 @@ package object healthlake {
       DataAccessRoleArn.foreach(__v => __obj.updateDynamic("DataAccessRoleArn")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobOutputDataConfig.foreach(__v => __obj.updateDynamic("JobOutputDataConfig")(__v.asInstanceOf[js.Any]))
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportJobProperties]
     }
@@ -429,6 +459,29 @@ package object healthlake {
       val __obj = js.Dynamic.literal()
       S3Uri.foreach(__v => __obj.updateDynamic("S3Uri")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InputDataConfig]
+    }
+  }
+
+  /** The customer-managed-key(CMK) used when creating a Data Store. If a customer owned key is not specified, an AWS owned key will be used for encryption.
+    */
+  @js.native
+  trait KmsEncryptionConfig extends js.Object {
+    var CmkType: CmkType
+    var KmsKeyId: js.UndefOr[EncryptionKeyID]
+  }
+
+  object KmsEncryptionConfig {
+    @inline
+    def apply(
+        CmkType: CmkType,
+        KmsKeyId: js.UndefOr[EncryptionKeyID] = js.undefined
+    ): KmsEncryptionConfig = {
+      val __obj = js.Dynamic.literal(
+        "CmkType" -> CmkType.asInstanceOf[js.Any]
+      )
+
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KmsEncryptionConfig]
     }
   }
 
@@ -475,20 +528,167 @@ package object healthlake {
     }
   }
 
+  @js.native
+  trait ListFHIRExportJobsRequest extends js.Object {
+    var DatastoreId: DatastoreId
+    var JobName: js.UndefOr[JobName]
+    var JobStatus: js.UndefOr[JobStatus]
+    var MaxResults: js.UndefOr[MaxResultsInteger]
+    var NextToken: js.UndefOr[NextToken]
+    var SubmittedAfter: js.UndefOr[Timestamp]
+    var SubmittedBefore: js.UndefOr[Timestamp]
+  }
+
+  object ListFHIRExportJobsRequest {
+    @inline
+    def apply(
+        DatastoreId: DatastoreId,
+        JobName: js.UndefOr[JobName] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SubmittedAfter: js.UndefOr[Timestamp] = js.undefined,
+        SubmittedBefore: js.UndefOr[Timestamp] = js.undefined
+    ): ListFHIRExportJobsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatastoreId" -> DatastoreId.asInstanceOf[js.Any]
+      )
+
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SubmittedAfter.foreach(__v => __obj.updateDynamic("SubmittedAfter")(__v.asInstanceOf[js.Any]))
+      SubmittedBefore.foreach(__v => __obj.updateDynamic("SubmittedBefore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFHIRExportJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFHIRExportJobsResponse extends js.Object {
+    var ExportJobPropertiesList: ExportJobPropertiesList
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFHIRExportJobsResponse {
+    @inline
+    def apply(
+        ExportJobPropertiesList: ExportJobPropertiesList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFHIRExportJobsResponse = {
+      val __obj = js.Dynamic.literal(
+        "ExportJobPropertiesList" -> ExportJobPropertiesList.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFHIRExportJobsResponse]
+    }
+  }
+
+  @js.native
+  trait ListFHIRImportJobsRequest extends js.Object {
+    var DatastoreId: DatastoreId
+    var JobName: js.UndefOr[JobName]
+    var JobStatus: js.UndefOr[JobStatus]
+    var MaxResults: js.UndefOr[MaxResultsInteger]
+    var NextToken: js.UndefOr[NextToken]
+    var SubmittedAfter: js.UndefOr[Timestamp]
+    var SubmittedBefore: js.UndefOr[Timestamp]
+  }
+
+  object ListFHIRImportJobsRequest {
+    @inline
+    def apply(
+        DatastoreId: DatastoreId,
+        JobName: js.UndefOr[JobName] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SubmittedAfter: js.UndefOr[Timestamp] = js.undefined,
+        SubmittedBefore: js.UndefOr[Timestamp] = js.undefined
+    ): ListFHIRImportJobsRequest = {
+      val __obj = js.Dynamic.literal(
+        "DatastoreId" -> DatastoreId.asInstanceOf[js.Any]
+      )
+
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SubmittedAfter.foreach(__v => __obj.updateDynamic("SubmittedAfter")(__v.asInstanceOf[js.Any]))
+      SubmittedBefore.foreach(__v => __obj.updateDynamic("SubmittedBefore")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFHIRImportJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListFHIRImportJobsResponse extends js.Object {
+    var ImportJobPropertiesList: ImportJobPropertiesList
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListFHIRImportJobsResponse {
+    @inline
+    def apply(
+        ImportJobPropertiesList: ImportJobPropertiesList,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListFHIRImportJobsResponse = {
+      val __obj = js.Dynamic.literal(
+        "ImportJobPropertiesList" -> ImportJobPropertiesList.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFHIRImportJobsResponse]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
+    }
+  }
+
   /** The output data configuration that was supplied when the export job was created.
     */
   @js.native
   trait OutputDataConfig extends js.Object {
-    var S3Uri: js.UndefOr[S3Uri]
+    var S3Configuration: js.UndefOr[S3Configuration]
   }
 
   object OutputDataConfig {
     @inline
     def apply(
-        S3Uri: js.UndefOr[S3Uri] = js.undefined
+        S3Configuration: js.UndefOr[S3Configuration] = js.undefined
     ): OutputDataConfig = {
       val __obj = js.Dynamic.literal()
-      S3Uri.foreach(__v => __obj.updateDynamic("S3Uri")(__v.asInstanceOf[js.Any]))
+      S3Configuration.foreach(__v => __obj.updateDynamic("S3Configuration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputDataConfig]
     }
   }
@@ -509,6 +709,47 @@ package object healthlake {
         "PreloadDataType" -> PreloadDataType.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[PreloadDataConfig]
+    }
+  }
+
+  /** The configuration of the S3 bucket for either an import or export job. This includes assigning permissions for access.
+    */
+  @js.native
+  trait S3Configuration extends js.Object {
+    var KmsKeyId: EncryptionKeyID
+    var S3Uri: S3Uri
+  }
+
+  object S3Configuration {
+    @inline
+    def apply(
+        KmsKeyId: EncryptionKeyID,
+        S3Uri: S3Uri
+    ): S3Configuration = {
+      val __obj = js.Dynamic.literal(
+        "KmsKeyId" -> KmsKeyId.asInstanceOf[js.Any],
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3Configuration]
+    }
+  }
+
+  /** The server-side encryption key configuration for a customer provided encryption key.
+    */
+  @js.native
+  trait SseConfiguration extends js.Object {
+    var KmsEncryptionConfig: KmsEncryptionConfig
+  }
+
+  object SseConfiguration {
+    @inline
+    def apply(
+        KmsEncryptionConfig: KmsEncryptionConfig
+    ): SseConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "KmsEncryptionConfig" -> KmsEncryptionConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SseConfiguration]
     }
   }
 
@@ -572,6 +813,7 @@ package object healthlake {
     var DataAccessRoleArn: IamRoleArn
     var DatastoreId: DatastoreId
     var InputDataConfig: InputDataConfig
+    var JobOutputDataConfig: OutputDataConfig
     var JobName: js.UndefOr[JobName]
   }
 
@@ -582,13 +824,15 @@ package object healthlake {
         DataAccessRoleArn: IamRoleArn,
         DatastoreId: DatastoreId,
         InputDataConfig: InputDataConfig,
+        JobOutputDataConfig: OutputDataConfig,
         JobName: js.UndefOr[JobName] = js.undefined
     ): StartFHIRImportJobRequest = {
       val __obj = js.Dynamic.literal(
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
         "DataAccessRoleArn" -> DataAccessRoleArn.asInstanceOf[js.Any],
         "DatastoreId" -> DatastoreId.asInstanceOf[js.Any],
-        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any]
+        "InputDataConfig" -> InputDataConfig.asInstanceOf[js.Any],
+        "JobOutputDataConfig" -> JobOutputDataConfig.asInstanceOf[js.Any]
       )
 
       JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
@@ -617,6 +861,90 @@ package object healthlake {
 
       DatastoreId.foreach(__v => __obj.updateDynamic("DatastoreId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartFHIRImportJobResponse]
+    }
+  }
+
+  /** A tag is a label consisting of a user-defined key and value. The form for tags is {"Key", "Value"}
+    */
+  @js.native
+  trait Tag extends js.Object {
+    var Key: TagKey
+    var Value: TagValue
+  }
+
+  object Tag {
+    @inline
+    def apply(
+        Key: TagKey,
+        Value: TagValue
+    ): Tag = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Tag]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var Tags: TagList
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        Tags: TagList
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceARN: AmazonResourceName
+    var TagKeys: TagKeyList
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceARN: AmazonResourceName,
+        TagKeys: TagKeyList
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceARN" -> ResourceARN.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
     }
   }
 }

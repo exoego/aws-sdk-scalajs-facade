@@ -219,6 +219,15 @@ object ESWarmPartitionInstanceType {
 }
 
 @js.native
+sealed trait EngineType extends js.Any
+object EngineType {
+  val OpenSearch = "OpenSearch".asInstanceOf[EngineType]
+  val Elasticsearch = "Elasticsearch".asInstanceOf[EngineType]
+
+  @inline def values: js.Array[EngineType] = js.Array(OpenSearch, Elasticsearch)
+}
+
+@js.native
 sealed trait InboundCrossClusterSearchConnectionStatusCode extends js.Any
 object InboundCrossClusterSearchConnectionStatusCode {
   val PENDING_ACCEPTANCE = "PENDING_ACCEPTANCE".asInstanceOf[InboundCrossClusterSearchConnectionStatusCode]

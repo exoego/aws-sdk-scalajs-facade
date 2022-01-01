@@ -23,7 +23,7 @@ object MessageSystemAttributeNameForSends {
   inline def values: js.Array[MessageSystemAttributeNameForSends] = js.Array(AWSTraceHeader)
 }
 
-type QueueAttributeName = "All" | "Policy" | "VisibilityTimeout" | "MaximumMessageSize" | "MessageRetentionPeriod" | "ApproximateNumberOfMessages" | "ApproximateNumberOfMessagesNotVisible" | "CreatedTimestamp" | "LastModifiedTimestamp" | "QueueArn" | "ApproximateNumberOfMessagesDelayed" | "DelaySeconds" | "ReceiveMessageWaitTimeSeconds" | "RedrivePolicy" | "FifoQueue" | "ContentBasedDeduplication" | "KmsMasterKeyId" | "KmsDataKeyReusePeriodSeconds" | "DeduplicationScope" | "FifoThroughputLimit"
+type QueueAttributeName = "All" | "Policy" | "VisibilityTimeout" | "MaximumMessageSize" | "MessageRetentionPeriod" | "ApproximateNumberOfMessages" | "ApproximateNumberOfMessagesNotVisible" | "CreatedTimestamp" | "LastModifiedTimestamp" | "QueueArn" | "ApproximateNumberOfMessagesDelayed" | "DelaySeconds" | "ReceiveMessageWaitTimeSeconds" | "RedrivePolicy" | "FifoQueue" | "ContentBasedDeduplication" | "KmsMasterKeyId" | "KmsDataKeyReusePeriodSeconds" | "DeduplicationScope" | "FifoThroughputLimit" | "RedriveAllowPolicy" | "SqsManagedSseEnabled"
 object QueueAttributeName {
   inline val All: "All" = "All"
   inline val Policy: "Policy" = "Policy"
@@ -45,6 +45,8 @@ object QueueAttributeName {
   inline val KmsDataKeyReusePeriodSeconds: "KmsDataKeyReusePeriodSeconds" = "KmsDataKeyReusePeriodSeconds"
   inline val DeduplicationScope: "DeduplicationScope" = "DeduplicationScope"
   inline val FifoThroughputLimit: "FifoThroughputLimit" = "FifoThroughputLimit"
+  inline val RedriveAllowPolicy: "RedriveAllowPolicy" = "RedriveAllowPolicy"
+  inline val SqsManagedSseEnabled: "SqsManagedSseEnabled" = "SqsManagedSseEnabled"
 
   inline def values: js.Array[QueueAttributeName] = js.Array(
     All,
@@ -66,6 +68,8 @@ object QueueAttributeName {
     KmsMasterKeyId,
     KmsDataKeyReusePeriodSeconds,
     DeduplicationScope,
-    FifoThroughputLimit
+    FifoThroughputLimit,
+    RedriveAllowPolicy,
+    SqsManagedSseEnabled
   )
 }

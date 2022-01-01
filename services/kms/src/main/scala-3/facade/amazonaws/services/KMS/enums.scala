@@ -47,6 +47,7 @@ object ConnectionStateType {
   inline def values: js.Array[ConnectionStateType] = js.Array(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING)
 }
 
+@deprecated("This enum has been deprecated. Instead, use the KeySpec enum.", "forever")
 type CustomerMasterKeySpec = "RSA_2048" | "RSA_3072" | "RSA_4096" | "ECC_NIST_P256" | "ECC_NIST_P384" | "ECC_NIST_P521" | "ECC_SECG_P256K1" | "SYMMETRIC_DEFAULT"
 object CustomerMasterKeySpec {
   inline val RSA_2048: "RSA_2048" = "RSA_2048"
@@ -142,15 +143,32 @@ object KeyManagerType {
   inline def values: js.Array[KeyManagerType] = js.Array(AWS, CUSTOMER)
 }
 
-type KeyState = "Enabled" | "Disabled" | "PendingDeletion" | "PendingImport" | "Unavailable"
+type KeySpec = "RSA_2048" | "RSA_3072" | "RSA_4096" | "ECC_NIST_P256" | "ECC_NIST_P384" | "ECC_NIST_P521" | "ECC_SECG_P256K1" | "SYMMETRIC_DEFAULT"
+object KeySpec {
+  inline val RSA_2048: "RSA_2048" = "RSA_2048"
+  inline val RSA_3072: "RSA_3072" = "RSA_3072"
+  inline val RSA_4096: "RSA_4096" = "RSA_4096"
+  inline val ECC_NIST_P256: "ECC_NIST_P256" = "ECC_NIST_P256"
+  inline val ECC_NIST_P384: "ECC_NIST_P384" = "ECC_NIST_P384"
+  inline val ECC_NIST_P521: "ECC_NIST_P521" = "ECC_NIST_P521"
+  inline val ECC_SECG_P256K1: "ECC_SECG_P256K1" = "ECC_SECG_P256K1"
+  inline val SYMMETRIC_DEFAULT: "SYMMETRIC_DEFAULT" = "SYMMETRIC_DEFAULT"
+
+  inline def values: js.Array[KeySpec] = js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1, SYMMETRIC_DEFAULT)
+}
+
+type KeyState = "Creating" | "Enabled" | "Disabled" | "PendingDeletion" | "PendingImport" | "PendingReplicaDeletion" | "Unavailable" | "Updating"
 object KeyState {
+  inline val Creating: "Creating" = "Creating"
   inline val Enabled: "Enabled" = "Enabled"
   inline val Disabled: "Disabled" = "Disabled"
   inline val PendingDeletion: "PendingDeletion" = "PendingDeletion"
   inline val PendingImport: "PendingImport" = "PendingImport"
+  inline val PendingReplicaDeletion: "PendingReplicaDeletion" = "PendingReplicaDeletion"
   inline val Unavailable: "Unavailable" = "Unavailable"
+  inline val Updating: "Updating" = "Updating"
 
-  inline def values: js.Array[KeyState] = js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable)
+  inline def values: js.Array[KeyState] = js.Array(Creating, Enabled, Disabled, PendingDeletion, PendingImport, PendingReplicaDeletion, Unavailable, Updating)
 }
 
 type KeyUsageType = "SIGN_VERIFY" | "ENCRYPT_DECRYPT"
@@ -167,6 +185,14 @@ object MessageType {
   inline val DIGEST: "DIGEST" = "DIGEST"
 
   inline def values: js.Array[MessageType] = js.Array(RAW, DIGEST)
+}
+
+type MultiRegionKeyType = "PRIMARY" | "REPLICA"
+object MultiRegionKeyType {
+  inline val PRIMARY: "PRIMARY" = "PRIMARY"
+  inline val REPLICA: "REPLICA" = "REPLICA"
+
+  inline def values: js.Array[MultiRegionKeyType] = js.Array(PRIMARY, REPLICA)
 }
 
 type OriginType = "AWS_KMS" | "EXTERNAL" | "AWS_CLOUDHSM"

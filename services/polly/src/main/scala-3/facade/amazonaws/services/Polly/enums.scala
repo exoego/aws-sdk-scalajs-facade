@@ -18,7 +18,7 @@ object Gender {
   inline def values: js.Array[Gender] = js.Array(Female, Male)
 }
 
-type LanguageCode = "arb" | "cmn-CN" | "cy-GB" | "da-DK" | "de-DE" | "en-AU" | "en-GB" | "en-GB-WLS" | "en-IN" | "en-US" | "es-ES" | "es-MX" | "es-US" | "fr-CA" | "fr-FR" | "is-IS" | "it-IT" | "ja-JP" | "hi-IN" | "ko-KR" | "nb-NO" | "nl-NL" | "pl-PL" | "pt-BR" | "pt-PT" | "ro-RO" | "ru-RU" | "sv-SE" | "tr-TR"
+type LanguageCode = "arb" | "cmn-CN" | "cy-GB" | "da-DK" | "de-DE" | "en-AU" | "en-GB" | "en-GB-WLS" | "en-IN" | "en-US" | "es-ES" | "es-MX" | "es-US" | "fr-CA" | "fr-FR" | "is-IS" | "it-IT" | "ja-JP" | "hi-IN" | "ko-KR" | "nb-NO" | "nl-NL" | "pl-PL" | "pt-BR" | "pt-PT" | "ro-RO" | "ru-RU" | "sv-SE" | "tr-TR" | "en-NZ" | "en-ZA"
 object LanguageCode {
   inline val arb: "arb" = "arb"
   inline val `cmn-CN`: "cmn-CN" = "cmn-CN"
@@ -49,6 +49,8 @@ object LanguageCode {
   inline val `ru-RU`: "ru-RU" = "ru-RU"
   inline val `sv-SE`: "sv-SE" = "sv-SE"
   inline val `tr-TR`: "tr-TR" = "tr-TR"
+  inline val `en-NZ`: "en-NZ" = "en-NZ"
+  inline val `en-ZA`: "en-ZA" = "en-ZA"
 
   inline def values: js.Array[LanguageCode] = js.Array(
     arb,
@@ -79,7 +81,9 @@ object LanguageCode {
     `ro-RO`,
     `ru-RU`,
     `sv-SE`,
-    `tr-TR`
+    `tr-TR`,
+    `en-NZ`,
+    `en-ZA`
   )
 }
 
@@ -121,7 +125,7 @@ object TextType {
   inline def values: js.Array[TextType] = js.Array(ssml, text)
 }
 
-type VoiceId = "Aditi" | "Amy" | "Astrid" | "Bianca" | "Brian" | "Camila" | "Carla" | "Carmen" | "Celine" | "Chantal" | "Conchita" | "Cristiano" | "Dora" | "Emma" | "Enrique" | "Ewa" | "Filiz" | "Geraint" | "Giorgio" | "Gwyneth" | "Hans" | "Ines" | "Ivy" | "Jacek" | "Jan" | "Joanna" | "Joey" | "Justin" | "Karl" | "Kendra" | "Kevin" | "Kimberly" | "Lea" | "Liv" | "Lotte" | "Lucia" | "Lupe" | "Mads" | "Maja" | "Marlene" | "Mathieu" | "Matthew" | "Maxim" | "Mia" | "Miguel" | "Mizuki" | "Naja" | "Nicole" | "Olivia" | "Penelope" | "Raveena" | "Ricardo" | "Ruben" | "Russell" | "Salli" | "Seoyeon" | "Takumi" | "Tatyana" | "Vicki" | "Vitoria" | "Zeina" | "Zhiyu"
+type VoiceId = "Aditi" | "Amy" | "Astrid" | "Bianca" | "Brian" | "Camila" | "Carla" | "Carmen" | "Celine" | "Chantal" | "Conchita" | "Cristiano" | "Dora" | "Emma" | "Enrique" | "Ewa" | "Filiz" | "Gabrielle" | "Geraint" | "Giorgio" | "Gwyneth" | "Hans" | "Ines" | "Ivy" | "Jacek" | "Jan" | "Joanna" | "Joey" | "Justin" | "Karl" | "Kendra" | "Kevin" | "Kimberly" | "Lea" | "Liv" | "Lotte" | "Lucia" | "Lupe" | "Mads" | "Maja" | "Marlene" | "Mathieu" | "Matthew" | "Maxim" | "Mia" | "Miguel" | "Mizuki" | "Naja" | "Nicole" | "Olivia" | "Penelope" | "Raveena" | "Ricardo" | "Ruben" | "Russell" | "Salli" | "Seoyeon" | "Takumi" | "Tatyana" | "Vicki" | "Vitoria" | "Zeina" | "Zhiyu" | "Aria" | "Ayanda"
 object VoiceId {
   inline val Aditi: "Aditi" = "Aditi"
   inline val Amy: "Amy" = "Amy"
@@ -140,6 +144,7 @@ object VoiceId {
   inline val Enrique: "Enrique" = "Enrique"
   inline val Ewa: "Ewa" = "Ewa"
   inline val Filiz: "Filiz" = "Filiz"
+  inline val Gabrielle: "Gabrielle" = "Gabrielle"
   inline val Geraint: "Geraint" = "Geraint"
   inline val Giorgio: "Giorgio" = "Giorgio"
   inline val Gwyneth: "Gwyneth" = "Gwyneth"
@@ -185,6 +190,8 @@ object VoiceId {
   inline val Vitoria: "Vitoria" = "Vitoria"
   inline val Zeina: "Zeina" = "Zeina"
   inline val Zhiyu: "Zhiyu" = "Zhiyu"
+  inline val Aria: "Aria" = "Aria"
+  inline val Ayanda: "Ayanda" = "Ayanda"
 
   inline def values: js.Array[VoiceId] = js.Array(
     Aditi,
@@ -204,6 +211,7 @@ object VoiceId {
     Enrique,
     Ewa,
     Filiz,
+    Gabrielle,
     Geraint,
     Giorgio,
     Gwyneth,
@@ -248,6 +256,8 @@ object VoiceId {
     Vicki,
     Vitoria,
     Zeina,
-    Zhiyu
+    Zhiyu,
+    Aria,
+    Ayanda
   )
 }

@@ -10,6 +10,23 @@ object ResourceOwner {
   inline def values: js.Array[ResourceOwner] = js.Array(SELF, `OTHER-ACCOUNTS`)
 }
 
+type ResourceRegionScope = "REGIONAL" | "GLOBAL"
+object ResourceRegionScope {
+  inline val REGIONAL: "REGIONAL" = "REGIONAL"
+  inline val GLOBAL: "GLOBAL" = "GLOBAL"
+
+  inline def values: js.Array[ResourceRegionScope] = js.Array(REGIONAL, GLOBAL)
+}
+
+type ResourceRegionScopeFilter = "ALL" | "REGIONAL" | "GLOBAL"
+object ResourceRegionScopeFilter {
+  inline val ALL: "ALL" = "ALL"
+  inline val REGIONAL: "REGIONAL" = "REGIONAL"
+  inline val GLOBAL: "GLOBAL" = "GLOBAL"
+
+  inline def values: js.Array[ResourceRegionScopeFilter] = js.Array(ALL, REGIONAL, GLOBAL)
+}
+
 type ResourceShareAssociationStatus = "ASSOCIATING" | "ASSOCIATED" | "FAILED" | "DISASSOCIATING" | "DISASSOCIATED"
 object ResourceShareAssociationStatus {
   inline val ASSOCIATING: "ASSOCIATING" = "ASSOCIATING"

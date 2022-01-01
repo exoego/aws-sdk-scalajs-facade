@@ -35,6 +35,15 @@ object ConfigurationEventStatus {
 }
 
 @js.native
+sealed trait DiscoveryType extends js.Any
+object DiscoveryType {
+  val RESOURCE_GROUP_BASED = "RESOURCE_GROUP_BASED".asInstanceOf[DiscoveryType]
+  val ACCOUNT_BASED = "ACCOUNT_BASED".asInstanceOf[DiscoveryType]
+
+  @inline def values: js.Array[DiscoveryType] = js.Array(RESOURCE_GROUP_BASED, ACCOUNT_BASED)
+}
+
+@js.native
 sealed trait FeedbackKey extends js.Any
 object FeedbackKey {
   val INSIGHTS_FEEDBACK = "INSIGHTS_FEEDBACK".asInstanceOf[FeedbackKey]
@@ -87,8 +96,9 @@ object Status {
   val IGNORE = "IGNORE".asInstanceOf[Status]
   val RESOLVED = "RESOLVED".asInstanceOf[Status]
   val PENDING = "PENDING".asInstanceOf[Status]
+  val RECURRING = "RECURRING".asInstanceOf[Status]
 
-  @inline def values: js.Array[Status] = js.Array(IGNORE, RESOLVED, PENDING)
+  @inline def values: js.Array[Status] = js.Array(IGNORE, RESOLVED, PENDING, RECURRING)
 }
 
 @js.native
@@ -106,6 +116,10 @@ object Tier {
   val POSTGRESQL = "POSTGRESQL".asInstanceOf[Tier]
   val JAVA_JMX = "JAVA_JMX".asInstanceOf[Tier]
   val ORACLE = "ORACLE".asInstanceOf[Tier]
+  val SAP_HANA_MULTI_NODE = "SAP_HANA_MULTI_NODE".asInstanceOf[Tier]
+  val SAP_HANA_SINGLE_NODE = "SAP_HANA_SINGLE_NODE".asInstanceOf[Tier]
+  val SAP_HANA_HIGH_AVAILABILITY = "SAP_HANA_HIGH_AVAILABILITY".asInstanceOf[Tier]
+  val SQL_SERVER_FAILOVER_CLUSTER_INSTANCE = "SQL_SERVER_FAILOVER_CLUSTER_INSTANCE".asInstanceOf[Tier]
 
   @inline def values: js.Array[Tier] = js.Array(
     CUSTOM,
@@ -119,6 +133,10 @@ object Tier {
     MYSQL,
     POSTGRESQL,
     JAVA_JMX,
-    ORACLE
+    ORACLE,
+    SAP_HANA_MULTI_NODE,
+    SAP_HANA_SINGLE_NODE,
+    SAP_HANA_HIGH_AVAILABILITY,
+    SQL_SERVER_FAILOVER_CLUSTER_INSTANCE
   )
 }

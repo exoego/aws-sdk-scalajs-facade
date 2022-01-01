@@ -2,6 +2,18 @@ package facade.amazonaws.services.servicecatalogappregistry
 
 import scalajs.js
 
+type ResourceGroupState = "CREATING" | "CREATE_COMPLETE" | "CREATE_FAILED" | "UPDATING" | "UPDATE_COMPLETE" | "UPDATE_FAILED"
+object ResourceGroupState {
+  inline val CREATING: "CREATING" = "CREATING"
+  inline val CREATE_COMPLETE: "CREATE_COMPLETE" = "CREATE_COMPLETE"
+  inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
+  inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val UPDATE_COMPLETE: "UPDATE_COMPLETE" = "UPDATE_COMPLETE"
+  inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
+
+  inline def values: js.Array[ResourceGroupState] = js.Array(CREATING, CREATE_COMPLETE, CREATE_FAILED, UPDATING, UPDATE_COMPLETE, UPDATE_FAILED)
+}
+
 type ResourceType = "CFN_STACK"
 object ResourceType {
   inline val CFN_STACK: "CFN_STACK" = "CFN_STACK"

@@ -40,6 +40,7 @@ package object devicefarm {
   type Metadata = String
   type Name = String
   type NetworkProfiles = js.Array[NetworkProfile]
+  type NonEmptyString = String
   type OfferingIdentifier = String
   type OfferingPromotionIdentifier = String
   type OfferingPromotions = js.Array[OfferingPromotion]
@@ -60,9 +61,13 @@ package object devicefarm {
   type Rules = js.Array[Rule]
   type Runs = js.Array[Run]
   type Samples = js.Array[Sample]
+  type SecurityGroupIds = js.Array[NonEmptyString]
+  type SensitiveString = String
+  type SensitiveURL = String
   type ServiceDnsName = String
   type SkipAppResign = Boolean
   type SshPublicKey = String
+  type SubnetIds = js.Array[NonEmptyString]
   type Suites = js.Array[Suite]
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
@@ -686,19 +691,22 @@ package object devicefarm {
   trait CreateTestGridProjectRequest extends js.Object {
     var name: ResourceName
     var description: js.UndefOr[ResourceDescription]
+    var vpcConfig: js.UndefOr[TestGridVpcConfig]
   }
 
   object CreateTestGridProjectRequest {
     @inline
     def apply(
         name: ResourceName,
-        description: js.UndefOr[ResourceDescription] = js.undefined
+        description: js.UndefOr[ResourceDescription] = js.undefined,
+        vpcConfig: js.UndefOr[TestGridVpcConfig] = js.undefined
     ): CreateTestGridProjectRequest = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any]
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTestGridProjectRequest]
     }
   }
@@ -742,14 +750,14 @@ package object devicefarm {
   @js.native
   trait CreateTestGridUrlResult extends js.Object {
     var expires: js.UndefOr[DateTime]
-    var url: js.UndefOr[String]
+    var url: js.UndefOr[SensitiveString]
   }
 
   object CreateTestGridUrlResult {
     @inline
     def apply(
         expires: js.UndefOr[DateTime] = js.undefined,
-        url: js.UndefOr[String] = js.undefined
+        url: js.UndefOr[SensitiveString] = js.undefined
     ): CreateTestGridUrlResult = {
       val __obj = js.Dynamic.literal()
       expires.foreach(__v => __obj.updateDynamic("expires")(__v.asInstanceOf[js.Any]))
@@ -1226,22 +1234,23 @@ package object devicefarm {
     */
   @js.native
   trait DeviceFilter extends js.Object {
-    var attribute: js.UndefOr[DeviceFilterAttribute]
-    var operator: js.UndefOr[RuleOperator]
-    var values: js.UndefOr[DeviceFilterValues]
+    var attribute: DeviceFilterAttribute
+    var operator: RuleOperator
+    var values: DeviceFilterValues
   }
 
   object DeviceFilter {
     @inline
     def apply(
-        attribute: js.UndefOr[DeviceFilterAttribute] = js.undefined,
-        operator: js.UndefOr[RuleOperator] = js.undefined,
-        values: js.UndefOr[DeviceFilterValues] = js.undefined
+        attribute: DeviceFilterAttribute,
+        operator: RuleOperator,
+        values: DeviceFilterValues
     ): DeviceFilter = {
-      val __obj = js.Dynamic.literal()
-      attribute.foreach(__v => __obj.updateDynamic("attribute")(__v.asInstanceOf[js.Any]))
-      operator.foreach(__v => __obj.updateDynamic("operator")(__v.asInstanceOf[js.Any]))
-      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "attribute" -> attribute.asInstanceOf[js.Any],
+        "operator" -> operator.asInstanceOf[js.Any],
+        "values" -> values.asInstanceOf[js.Any]
+      )
       __obj.asInstanceOf[DeviceFilter]
     }
   }
@@ -3566,22 +3575,24 @@ package object devicefarm {
     */
   @js.native
   trait PurchaseOfferingRequest extends js.Object {
-    var offeringId: js.UndefOr[OfferingIdentifier]
+    var offeringId: OfferingIdentifier
+    var quantity: Int
     var offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier]
-    var quantity: js.UndefOr[Int]
   }
 
   object PurchaseOfferingRequest {
     @inline
     def apply(
-        offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
-        offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier] = js.undefined,
-        quantity: js.UndefOr[Int] = js.undefined
+        offeringId: OfferingIdentifier,
+        quantity: Int,
+        offeringPromotionId: js.UndefOr[OfferingPromotionIdentifier] = js.undefined
     ): PurchaseOfferingRequest = {
-      val __obj = js.Dynamic.literal()
-      offeringId.foreach(__v => __obj.updateDynamic("offeringId")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "offeringId" -> offeringId.asInstanceOf[js.Any],
+        "quantity" -> quantity.asInstanceOf[js.Any]
+      )
+
       offeringPromotionId.foreach(__v => __obj.updateDynamic("offeringPromotionId")(__v.asInstanceOf[js.Any]))
-      quantity.foreach(__v => __obj.updateDynamic("quantity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PurchaseOfferingRequest]
     }
   }
@@ -3734,19 +3745,20 @@ package object devicefarm {
     */
   @js.native
   trait RenewOfferingRequest extends js.Object {
-    var offeringId: js.UndefOr[OfferingIdentifier]
-    var quantity: js.UndefOr[Int]
+    var offeringId: OfferingIdentifier
+    var quantity: Int
   }
 
   object RenewOfferingRequest {
     @inline
     def apply(
-        offeringId: js.UndefOr[OfferingIdentifier] = js.undefined,
-        quantity: js.UndefOr[Int] = js.undefined
+        offeringId: OfferingIdentifier,
+        quantity: Int
     ): RenewOfferingRequest = {
-      val __obj = js.Dynamic.literal()
-      offeringId.foreach(__v => __obj.updateDynamic("offeringId")(__v.asInstanceOf[js.Any]))
-      quantity.foreach(__v => __obj.updateDynamic("quantity")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "offeringId" -> offeringId.asInstanceOf[js.Any],
+        "quantity" -> quantity.asInstanceOf[js.Any]
+      )
       __obj.asInstanceOf[RenewOfferingRequest]
     }
   }
@@ -4343,6 +4355,7 @@ package object devicefarm {
     var created: js.UndefOr[DateTime]
     var description: js.UndefOr[String]
     var name: js.UndefOr[String]
+    var vpcConfig: js.UndefOr[TestGridVpcConfig]
   }
 
   object TestGridProject {
@@ -4351,13 +4364,15 @@ package object devicefarm {
         arn: js.UndefOr[DeviceFarmArn] = js.undefined,
         created: js.UndefOr[DateTime] = js.undefined,
         description: js.UndefOr[String] = js.undefined,
-        name: js.UndefOr[String] = js.undefined
+        name: js.UndefOr[String] = js.undefined,
+        vpcConfig: js.UndefOr[TestGridVpcConfig] = js.undefined
     ): TestGridProject = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       created.foreach(__v => __obj.updateDynamic("created")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestGridProject]
     }
   }
@@ -4433,7 +4448,7 @@ package object devicefarm {
   trait TestGridSessionArtifact extends js.Object {
     var filename: js.UndefOr[String]
     var `type`: js.UndefOr[TestGridSessionArtifactType]
-    var url: js.UndefOr[String]
+    var url: js.UndefOr[SensitiveString]
   }
 
   object TestGridSessionArtifact {
@@ -4441,13 +4456,38 @@ package object devicefarm {
     def apply(
         filename: js.UndefOr[String] = js.undefined,
         `type`: js.UndefOr[TestGridSessionArtifactType] = js.undefined,
-        url: js.UndefOr[String] = js.undefined
+        url: js.UndefOr[SensitiveString] = js.undefined
     ): TestGridSessionArtifact = {
       val __obj = js.Dynamic.literal()
       filename.foreach(__v => __obj.updateDynamic("filename")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       url.foreach(__v => __obj.updateDynamic("url")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TestGridSessionArtifact]
+    }
+  }
+
+  /** The VPC security groups and subnets that are attached to a project.
+    */
+  @js.native
+  trait TestGridVpcConfig extends js.Object {
+    var securityGroupIds: SecurityGroupIds
+    var subnetIds: SubnetIds
+    var vpcId: NonEmptyString
+  }
+
+  object TestGridVpcConfig {
+    @inline
+    def apply(
+        securityGroupIds: SecurityGroupIds,
+        subnetIds: SubnetIds,
+        vpcId: NonEmptyString
+    ): TestGridVpcConfig = {
+      val __obj = js.Dynamic.literal(
+        "securityGroupIds" -> securityGroupIds.asInstanceOf[js.Any],
+        "subnetIds" -> subnetIds.asInstanceOf[js.Any],
+        "vpcId" -> vpcId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TestGridVpcConfig]
     }
   }
 
@@ -4782,6 +4822,7 @@ package object devicefarm {
     var projectArn: DeviceFarmArn
     var description: js.UndefOr[ResourceDescription]
     var name: js.UndefOr[ResourceName]
+    var vpcConfig: js.UndefOr[TestGridVpcConfig]
   }
 
   object UpdateTestGridProjectRequest {
@@ -4789,7 +4830,8 @@ package object devicefarm {
     def apply(
         projectArn: DeviceFarmArn,
         description: js.UndefOr[ResourceDescription] = js.undefined,
-        name: js.UndefOr[ResourceName] = js.undefined
+        name: js.UndefOr[ResourceName] = js.undefined,
+        vpcConfig: js.UndefOr[TestGridVpcConfig] = js.undefined
     ): UpdateTestGridProjectRequest = {
       val __obj = js.Dynamic.literal(
         "projectArn" -> projectArn.asInstanceOf[js.Any]
@@ -4797,6 +4839,7 @@ package object devicefarm {
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      vpcConfig.foreach(__v => __obj.updateDynamic("vpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateTestGridProjectRequest]
     }
   }
@@ -4919,7 +4962,7 @@ package object devicefarm {
     var name: js.UndefOr[Name]
     var status: js.UndefOr[UploadStatus]
     var `type`: js.UndefOr[UploadType]
-    var url: js.UndefOr[URL]
+    var url: js.UndefOr[SensitiveURL]
   }
 
   object Upload {
@@ -4934,7 +4977,7 @@ package object devicefarm {
         name: js.UndefOr[Name] = js.undefined,
         status: js.UndefOr[UploadStatus] = js.undefined,
         `type`: js.UndefOr[UploadType] = js.undefined,
-        url: js.UndefOr[URL] = js.undefined
+        url: js.UndefOr[SensitiveURL] = js.undefined
     ): Upload = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))

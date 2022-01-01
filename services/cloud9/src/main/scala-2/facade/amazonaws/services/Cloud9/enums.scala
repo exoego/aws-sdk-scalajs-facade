@@ -47,6 +47,15 @@ object EnvironmentType {
 }
 
 @js.native
+sealed trait ManagedCredentialsAction extends js.Any
+object ManagedCredentialsAction {
+  val ENABLE = "ENABLE".asInstanceOf[ManagedCredentialsAction]
+  val DISABLE = "DISABLE".asInstanceOf[ManagedCredentialsAction]
+
+  @inline def values: js.Array[ManagedCredentialsAction] = js.Array(ENABLE, DISABLE)
+}
+
+@js.native
 sealed trait ManagedCredentialsStatus extends js.Any
 object ManagedCredentialsStatus {
   val ENABLED_ON_CREATE = "ENABLED_ON_CREATE".asInstanceOf[ManagedCredentialsStatus]

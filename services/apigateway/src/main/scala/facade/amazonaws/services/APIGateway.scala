@@ -924,6 +924,7 @@ package object apigateway {
     var certificatePrivateKey: js.UndefOr[String]
     var endpointConfiguration: js.UndefOr[EndpointConfiguration]
     var mutualTlsAuthentication: js.UndefOr[MutualTlsAuthenticationInput]
+    var ownershipVerificationCertificateArn: js.UndefOr[String]
     var regionalCertificateArn: js.UndefOr[String]
     var regionalCertificateName: js.UndefOr[String]
     var securityPolicy: js.UndefOr[SecurityPolicy]
@@ -941,6 +942,7 @@ package object apigateway {
         certificatePrivateKey: js.UndefOr[String] = js.undefined,
         endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
         mutualTlsAuthentication: js.UndefOr[MutualTlsAuthenticationInput] = js.undefined,
+        ownershipVerificationCertificateArn: js.UndefOr[String] = js.undefined,
         regionalCertificateArn: js.UndefOr[String] = js.undefined,
         regionalCertificateName: js.UndefOr[String] = js.undefined,
         securityPolicy: js.UndefOr[SecurityPolicy] = js.undefined,
@@ -957,6 +959,7 @@ package object apigateway {
       certificatePrivateKey.foreach(__v => __obj.updateDynamic("certificatePrivateKey")(__v.asInstanceOf[js.Any]))
       endpointConfiguration.foreach(__v => __obj.updateDynamic("endpointConfiguration")(__v.asInstanceOf[js.Any]))
       mutualTlsAuthentication.foreach(__v => __obj.updateDynamic("mutualTlsAuthentication")(__v.asInstanceOf[js.Any]))
+      ownershipVerificationCertificateArn.foreach(__v => __obj.updateDynamic("ownershipVerificationCertificateArn")(__v.asInstanceOf[js.Any]))
       regionalCertificateArn.foreach(__v => __obj.updateDynamic("regionalCertificateArn")(__v.asInstanceOf[js.Any]))
       regionalCertificateName.foreach(__v => __obj.updateDynamic("regionalCertificateName")(__v.asInstanceOf[js.Any]))
       securityPolicy.foreach(__v => __obj.updateDynamic("securityPolicy")(__v.asInstanceOf[js.Any]))
@@ -1947,6 +1950,7 @@ package object apigateway {
     var domainNameStatusMessage: js.UndefOr[String]
     var endpointConfiguration: js.UndefOr[EndpointConfiguration]
     var mutualTlsAuthentication: js.UndefOr[MutualTlsAuthentication]
+    var ownershipVerificationCertificateArn: js.UndefOr[String]
     var regionalCertificateArn: js.UndefOr[String]
     var regionalCertificateName: js.UndefOr[String]
     var regionalDomainName: js.UndefOr[String]
@@ -1968,6 +1972,7 @@ package object apigateway {
         domainNameStatusMessage: js.UndefOr[String] = js.undefined,
         endpointConfiguration: js.UndefOr[EndpointConfiguration] = js.undefined,
         mutualTlsAuthentication: js.UndefOr[MutualTlsAuthentication] = js.undefined,
+        ownershipVerificationCertificateArn: js.UndefOr[String] = js.undefined,
         regionalCertificateArn: js.UndefOr[String] = js.undefined,
         regionalCertificateName: js.UndefOr[String] = js.undefined,
         regionalDomainName: js.UndefOr[String] = js.undefined,
@@ -1986,6 +1991,7 @@ package object apigateway {
       domainNameStatusMessage.foreach(__v => __obj.updateDynamic("domainNameStatusMessage")(__v.asInstanceOf[js.Any]))
       endpointConfiguration.foreach(__v => __obj.updateDynamic("endpointConfiguration")(__v.asInstanceOf[js.Any]))
       mutualTlsAuthentication.foreach(__v => __obj.updateDynamic("mutualTlsAuthentication")(__v.asInstanceOf[js.Any]))
+      ownershipVerificationCertificateArn.foreach(__v => __obj.updateDynamic("ownershipVerificationCertificateArn")(__v.asInstanceOf[js.Any]))
       regionalCertificateArn.foreach(__v => __obj.updateDynamic("regionalCertificateArn")(__v.asInstanceOf[js.Any]))
       regionalCertificateName.foreach(__v => __obj.updateDynamic("regionalCertificateName")(__v.asInstanceOf[js.Any]))
       regionalDomainName.foreach(__v => __obj.updateDynamic("regionalDomainName")(__v.asInstanceOf[js.Any]))
@@ -5334,7 +5340,7 @@ package object apigateway {
     }
   }
 
-  /** Represents a usage plan than can specify who can assess associated API stages with specified request limits and quotas. <div class="remarks"> In a usage plan, you associate an API by specifying the API's Id and a stage name of the specified API. You add plan customers by adding API keys to the plan. </div>
+  /** Represents a usage plan used to specify who can assess associated API stages. Optionally, target request rate and quota limits can be set. In some cases clients can exceed the targets that you set. Don’t rely on usage plans to control costs. Consider using [[https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html|AWS Budgets]] to monitor costs and [[https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html|AWS WAF]] to manage API requests. <div class="remarks"> In a usage plan, you associate an API by specifying the API's Id and a stage name of the specified API. You add plan customers by adding API keys to the plan. </div>
     * @see
     *   [[https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-api-usage-plans.html|Create and Use Usage Plans]]
     */

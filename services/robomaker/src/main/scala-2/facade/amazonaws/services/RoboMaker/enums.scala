@@ -13,6 +13,25 @@ object Architecture {
 }
 
 @js.native
+sealed trait ComputeType extends js.Any
+object ComputeType {
+  val CPU = "CPU".asInstanceOf[ComputeType]
+  val GPU_AND_CPU = "GPU_AND_CPU".asInstanceOf[ComputeType]
+
+  @inline def values: js.Array[ComputeType] = js.Array(CPU, GPU_AND_CPU)
+}
+
+@js.native
+sealed trait DataSourceType extends js.Any
+object DataSourceType {
+  val Prefix = "Prefix".asInstanceOf[DataSourceType]
+  val Archive = "Archive".asInstanceOf[DataSourceType]
+  val File = "File".asInstanceOf[DataSourceType]
+
+  @inline def values: js.Array[DataSourceType] = js.Array(Prefix, Archive, File)
+}
+
+@js.native
 sealed trait DeploymentJobErrorCode extends js.Any
 object DeploymentJobErrorCode {
   val ResourceNotFound = "ResourceNotFound".asInstanceOf[DeploymentJobErrorCode]
@@ -126,8 +145,9 @@ sealed trait RobotSoftwareSuiteType extends js.Any
 object RobotSoftwareSuiteType {
   val ROS = "ROS".asInstanceOf[RobotSoftwareSuiteType]
   val ROS2 = "ROS2".asInstanceOf[RobotSoftwareSuiteType]
+  val General = "General".asInstanceOf[RobotSoftwareSuiteType]
 
-  @inline def values: js.Array[RobotSoftwareSuiteType] = js.Array(ROS, ROS2)
+  @inline def values: js.Array[RobotSoftwareSuiteType] = js.Array(ROS, ROS2, General)
 }
 
 @js.native
@@ -136,8 +156,9 @@ object RobotSoftwareSuiteVersionType {
   val Kinetic = "Kinetic".asInstanceOf[RobotSoftwareSuiteVersionType]
   val Melodic = "Melodic".asInstanceOf[RobotSoftwareSuiteVersionType]
   val Dashing = "Dashing".asInstanceOf[RobotSoftwareSuiteVersionType]
+  val Foxy = "Foxy".asInstanceOf[RobotSoftwareSuiteVersionType]
 
-  @inline def values: js.Array[RobotSoftwareSuiteVersionType] = js.Array(Kinetic, Melodic, Dashing)
+  @inline def values: js.Array[RobotSoftwareSuiteVersionType] = js.Array(Kinetic, Melodic, Dashing, Foxy)
 }
 
 @js.native
@@ -270,8 +291,9 @@ sealed trait SimulationSoftwareSuiteType extends js.Any
 object SimulationSoftwareSuiteType {
   val Gazebo = "Gazebo".asInstanceOf[SimulationSoftwareSuiteType]
   val RosbagPlay = "RosbagPlay".asInstanceOf[SimulationSoftwareSuiteType]
+  val SimulationRuntime = "SimulationRuntime".asInstanceOf[SimulationSoftwareSuiteType]
 
-  @inline def values: js.Array[SimulationSoftwareSuiteType] = js.Array(Gazebo, RosbagPlay)
+  @inline def values: js.Array[SimulationSoftwareSuiteType] = js.Array(Gazebo, RosbagPlay, SimulationRuntime)
 }
 
 @js.native

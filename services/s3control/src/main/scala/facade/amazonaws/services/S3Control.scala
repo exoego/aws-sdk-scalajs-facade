@@ -11,6 +11,10 @@ package object s3control {
   type AccessPointList = js.Array[AccessPoint]
   type AccessPointName = String
   type AccountId = String
+  type Alias = String
+  type AsyncCreationTimestamp = js.Date
+  type AsyncRequestStatus = String
+  type AsyncRequestTokenARN = String
   type AwsLambdaTransformationPayload = String
   type AwsOrgArn = String
   type BucketName = String
@@ -20,9 +24,11 @@ package object s3control {
   type ConfirmationRequired = Boolean
   type ContinuationToken = String
   type CreationDate = js.Date
+  type CreationTimestamp = js.Date
   type Date = js.Date
   type Days = Int
   type DaysAfterInitiation = Int
+  type Endpoints = js.Dictionary[NonEmptyMaxLength1024String]
   type ExpiredObjectDeleteMarker = Boolean
   type FunctionArnString = String
   type GrantFullControl = String
@@ -55,6 +61,11 @@ package object s3control {
   type MaxLength1024String = String
   type MaxResults = Int
   type MinStorageBytesPercentage = Double
+  type MultiRegionAccessPointAlias = String
+  type MultiRegionAccessPointClientToken = String
+  type MultiRegionAccessPointName = String
+  type MultiRegionAccessPointRegionalResponseList = js.Array[MultiRegionAccessPointRegionalResponse]
+  type MultiRegionAccessPointReportList = js.Array[MultiRegionAccessPointReport]
   type NonEmptyMaxLength1024String = String
   type NonEmptyMaxLength2048String = String
   type NonEmptyMaxLength256String = String
@@ -72,6 +83,9 @@ package object s3control {
   type Policy = String
   type Prefix = String
   type PublicAccessBlockEnabled = Boolean
+  type RegionCreationList = js.Array[Region]
+  type RegionName = String
+  type RegionReportList = js.Array[RegionReport]
   type RegionalBucketList = js.Array[RegionalBucket]
   type Regions = js.Array[S3AWSRegion]
   type ReportPrefixString = String
@@ -108,6 +122,7 @@ package object s3control {
     @inline def createAccessPointFuture(params: CreateAccessPointRequest): Future[CreateAccessPointResult] = service.createAccessPoint(params).promise().toFuture
     @inline def createBucketFuture(params: CreateBucketRequest): Future[CreateBucketResult] = service.createBucket(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise().toFuture
+    @inline def createMultiRegionAccessPointFuture(params: CreateMultiRegionAccessPointRequest): Future[CreateMultiRegionAccessPointResult] = service.createMultiRegionAccessPoint(params).promise().toFuture
     @inline def deleteAccessPointForObjectLambdaFuture(params: DeleteAccessPointForObjectLambdaRequest): Future[js.Object] = service.deleteAccessPointForObjectLambda(params).promise().toFuture
     @inline def deleteAccessPointFuture(params: DeleteAccessPointRequest): Future[js.Object] = service.deleteAccessPoint(params).promise().toFuture
     @inline def deleteAccessPointPolicyForObjectLambdaFuture(params: DeleteAccessPointPolicyForObjectLambdaRequest): Future[js.Object] = service.deleteAccessPointPolicyForObjectLambda(params).promise().toFuture
@@ -117,10 +132,12 @@ package object s3control {
     @inline def deleteBucketPolicyFuture(params: DeleteBucketPolicyRequest): Future[js.Object] = service.deleteBucketPolicy(params).promise().toFuture
     @inline def deleteBucketTaggingFuture(params: DeleteBucketTaggingRequest): Future[js.Object] = service.deleteBucketTagging(params).promise().toFuture
     @inline def deleteJobTaggingFuture(params: DeleteJobTaggingRequest): Future[DeleteJobTaggingResult] = service.deleteJobTagging(params).promise().toFuture
+    @inline def deleteMultiRegionAccessPointFuture(params: DeleteMultiRegionAccessPointRequest): Future[DeleteMultiRegionAccessPointResult] = service.deleteMultiRegionAccessPoint(params).promise().toFuture
     @inline def deletePublicAccessBlockFuture(params: DeletePublicAccessBlockRequest): Future[js.Object] = service.deletePublicAccessBlock(params).promise().toFuture
     @inline def deleteStorageLensConfigurationFuture(params: DeleteStorageLensConfigurationRequest): Future[js.Object] = service.deleteStorageLensConfiguration(params).promise().toFuture
     @inline def deleteStorageLensConfigurationTaggingFuture(params: DeleteStorageLensConfigurationTaggingRequest): Future[DeleteStorageLensConfigurationTaggingResult] = service.deleteStorageLensConfigurationTagging(params).promise().toFuture
     @inline def describeJobFuture(params: DescribeJobRequest): Future[DescribeJobResult] = service.describeJob(params).promise().toFuture
+    @inline def describeMultiRegionAccessPointOperationFuture(params: DescribeMultiRegionAccessPointOperationRequest): Future[DescribeMultiRegionAccessPointOperationResult] = service.describeMultiRegionAccessPointOperation(params).promise().toFuture
     @inline def getAccessPointConfigurationForObjectLambdaFuture(params: GetAccessPointConfigurationForObjectLambdaRequest): Future[GetAccessPointConfigurationForObjectLambdaResult] = service.getAccessPointConfigurationForObjectLambda(params).promise().toFuture
     @inline def getAccessPointForObjectLambdaFuture(params: GetAccessPointForObjectLambdaRequest): Future[GetAccessPointForObjectLambdaResult] = service.getAccessPointForObjectLambda(params).promise().toFuture
     @inline def getAccessPointFuture(params: GetAccessPointRequest): Future[GetAccessPointResult] = service.getAccessPoint(params).promise().toFuture
@@ -133,12 +150,16 @@ package object s3control {
     @inline def getBucketPolicyFuture(params: GetBucketPolicyRequest): Future[GetBucketPolicyResult] = service.getBucketPolicy(params).promise().toFuture
     @inline def getBucketTaggingFuture(params: GetBucketTaggingRequest): Future[GetBucketTaggingResult] = service.getBucketTagging(params).promise().toFuture
     @inline def getJobTaggingFuture(params: GetJobTaggingRequest): Future[GetJobTaggingResult] = service.getJobTagging(params).promise().toFuture
+    @inline def getMultiRegionAccessPointFuture(params: GetMultiRegionAccessPointRequest): Future[GetMultiRegionAccessPointResult] = service.getMultiRegionAccessPoint(params).promise().toFuture
+    @inline def getMultiRegionAccessPointPolicyFuture(params: GetMultiRegionAccessPointPolicyRequest): Future[GetMultiRegionAccessPointPolicyResult] = service.getMultiRegionAccessPointPolicy(params).promise().toFuture
+    @inline def getMultiRegionAccessPointPolicyStatusFuture(params: GetMultiRegionAccessPointPolicyStatusRequest): Future[GetMultiRegionAccessPointPolicyStatusResult] = service.getMultiRegionAccessPointPolicyStatus(params).promise().toFuture
     @inline def getPublicAccessBlockFuture(params: GetPublicAccessBlockRequest): Future[GetPublicAccessBlockOutput] = service.getPublicAccessBlock(params).promise().toFuture
     @inline def getStorageLensConfigurationFuture(params: GetStorageLensConfigurationRequest): Future[GetStorageLensConfigurationResult] = service.getStorageLensConfiguration(params).promise().toFuture
     @inline def getStorageLensConfigurationTaggingFuture(params: GetStorageLensConfigurationTaggingRequest): Future[GetStorageLensConfigurationTaggingResult] = service.getStorageLensConfigurationTagging(params).promise().toFuture
     @inline def listAccessPointsForObjectLambdaFuture(params: ListAccessPointsForObjectLambdaRequest): Future[ListAccessPointsForObjectLambdaResult] = service.listAccessPointsForObjectLambda(params).promise().toFuture
     @inline def listAccessPointsFuture(params: ListAccessPointsRequest): Future[ListAccessPointsResult] = service.listAccessPoints(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise().toFuture
+    @inline def listMultiRegionAccessPointsFuture(params: ListMultiRegionAccessPointsRequest): Future[ListMultiRegionAccessPointsResult] = service.listMultiRegionAccessPoints(params).promise().toFuture
     @inline def listRegionalBucketsFuture(params: ListRegionalBucketsRequest): Future[ListRegionalBucketsResult] = service.listRegionalBuckets(params).promise().toFuture
     @inline def listStorageLensConfigurationsFuture(params: ListStorageLensConfigurationsRequest): Future[ListStorageLensConfigurationsResult] = service.listStorageLensConfigurations(params).promise().toFuture
     @inline def putAccessPointConfigurationForObjectLambdaFuture(params: PutAccessPointConfigurationForObjectLambdaRequest): Future[js.Object] = service.putAccessPointConfigurationForObjectLambda(params).promise().toFuture
@@ -148,6 +169,7 @@ package object s3control {
     @inline def putBucketPolicyFuture(params: PutBucketPolicyRequest): Future[js.Object] = service.putBucketPolicy(params).promise().toFuture
     @inline def putBucketTaggingFuture(params: PutBucketTaggingRequest): Future[js.Object] = service.putBucketTagging(params).promise().toFuture
     @inline def putJobTaggingFuture(params: PutJobTaggingRequest): Future[PutJobTaggingResult] = service.putJobTagging(params).promise().toFuture
+    @inline def putMultiRegionAccessPointPolicyFuture(params: PutMultiRegionAccessPointPolicyRequest): Future[PutMultiRegionAccessPointPolicyResult] = service.putMultiRegionAccessPointPolicy(params).promise().toFuture
     @inline def putPublicAccessBlockFuture(params: PutPublicAccessBlockRequest): Future[js.Object] = service.putPublicAccessBlock(params).promise().toFuture
     @inline def putStorageLensConfigurationFuture(params: PutStorageLensConfigurationRequest): Future[js.Object] = service.putStorageLensConfiguration(params).promise().toFuture
     @inline def putStorageLensConfigurationTaggingFuture(params: PutStorageLensConfigurationTaggingRequest): Future[PutStorageLensConfigurationTaggingResult] = service.putStorageLensConfigurationTagging(params).promise().toFuture
@@ -165,6 +187,7 @@ package object s3control {
     def createAccessPointForObjectLambda(params: CreateAccessPointForObjectLambdaRequest): Request[CreateAccessPointForObjectLambdaResult] = js.native
     def createBucket(params: CreateBucketRequest): Request[CreateBucketResult] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResult] = js.native
+    def createMultiRegionAccessPoint(params: CreateMultiRegionAccessPointRequest): Request[CreateMultiRegionAccessPointResult] = js.native
     def deleteAccessPoint(params: DeleteAccessPointRequest): Request[js.Object] = js.native
     def deleteAccessPointForObjectLambda(params: DeleteAccessPointForObjectLambdaRequest): Request[js.Object] = js.native
     def deleteAccessPointPolicy(params: DeleteAccessPointPolicyRequest): Request[js.Object] = js.native
@@ -174,10 +197,12 @@ package object s3control {
     def deleteBucketPolicy(params: DeleteBucketPolicyRequest): Request[js.Object] = js.native
     def deleteBucketTagging(params: DeleteBucketTaggingRequest): Request[js.Object] = js.native
     def deleteJobTagging(params: DeleteJobTaggingRequest): Request[DeleteJobTaggingResult] = js.native
+    def deleteMultiRegionAccessPoint(params: DeleteMultiRegionAccessPointRequest): Request[DeleteMultiRegionAccessPointResult] = js.native
     def deletePublicAccessBlock(params: DeletePublicAccessBlockRequest): Request[js.Object] = js.native
     def deleteStorageLensConfiguration(params: DeleteStorageLensConfigurationRequest): Request[js.Object] = js.native
     def deleteStorageLensConfigurationTagging(params: DeleteStorageLensConfigurationTaggingRequest): Request[DeleteStorageLensConfigurationTaggingResult] = js.native
     def describeJob(params: DescribeJobRequest): Request[DescribeJobResult] = js.native
+    def describeMultiRegionAccessPointOperation(params: DescribeMultiRegionAccessPointOperationRequest): Request[DescribeMultiRegionAccessPointOperationResult] = js.native
     def getAccessPoint(params: GetAccessPointRequest): Request[GetAccessPointResult] = js.native
     def getAccessPointConfigurationForObjectLambda(params: GetAccessPointConfigurationForObjectLambdaRequest): Request[GetAccessPointConfigurationForObjectLambdaResult] = js.native
     def getAccessPointForObjectLambda(params: GetAccessPointForObjectLambdaRequest): Request[GetAccessPointForObjectLambdaResult] = js.native
@@ -190,12 +215,16 @@ package object s3control {
     def getBucketPolicy(params: GetBucketPolicyRequest): Request[GetBucketPolicyResult] = js.native
     def getBucketTagging(params: GetBucketTaggingRequest): Request[GetBucketTaggingResult] = js.native
     def getJobTagging(params: GetJobTaggingRequest): Request[GetJobTaggingResult] = js.native
+    def getMultiRegionAccessPoint(params: GetMultiRegionAccessPointRequest): Request[GetMultiRegionAccessPointResult] = js.native
+    def getMultiRegionAccessPointPolicy(params: GetMultiRegionAccessPointPolicyRequest): Request[GetMultiRegionAccessPointPolicyResult] = js.native
+    def getMultiRegionAccessPointPolicyStatus(params: GetMultiRegionAccessPointPolicyStatusRequest): Request[GetMultiRegionAccessPointPolicyStatusResult] = js.native
     def getPublicAccessBlock(params: GetPublicAccessBlockRequest): Request[GetPublicAccessBlockOutput] = js.native
     def getStorageLensConfiguration(params: GetStorageLensConfigurationRequest): Request[GetStorageLensConfigurationResult] = js.native
     def getStorageLensConfigurationTagging(params: GetStorageLensConfigurationTaggingRequest): Request[GetStorageLensConfigurationTaggingResult] = js.native
     def listAccessPoints(params: ListAccessPointsRequest): Request[ListAccessPointsResult] = js.native
     def listAccessPointsForObjectLambda(params: ListAccessPointsForObjectLambdaRequest): Request[ListAccessPointsForObjectLambdaResult] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResult] = js.native
+    def listMultiRegionAccessPoints(params: ListMultiRegionAccessPointsRequest): Request[ListMultiRegionAccessPointsResult] = js.native
     def listRegionalBuckets(params: ListRegionalBucketsRequest): Request[ListRegionalBucketsResult] = js.native
     def listStorageLensConfigurations(params: ListStorageLensConfigurationsRequest): Request[ListStorageLensConfigurationsResult] = js.native
     def putAccessPointConfigurationForObjectLambda(params: PutAccessPointConfigurationForObjectLambdaRequest): Request[js.Object] = js.native
@@ -205,6 +234,7 @@ package object s3control {
     def putBucketPolicy(params: PutBucketPolicyRequest): Request[js.Object] = js.native
     def putBucketTagging(params: PutBucketTaggingRequest): Request[js.Object] = js.native
     def putJobTagging(params: PutJobTaggingRequest): Request[PutJobTaggingResult] = js.native
+    def putMultiRegionAccessPointPolicy(params: PutMultiRegionAccessPointPolicyRequest): Request[PutMultiRegionAccessPointPolicyResult] = js.native
     def putPublicAccessBlock(params: PutPublicAccessBlockRequest): Request[js.Object] = js.native
     def putStorageLensConfiguration(params: PutStorageLensConfigurationRequest): Request[js.Object] = js.native
     def putStorageLensConfigurationTagging(params: PutStorageLensConfigurationTaggingRequest): Request[PutStorageLensConfigurationTaggingResult] = js.native
@@ -243,6 +273,7 @@ package object s3control {
     var Name: AccessPointName
     var NetworkOrigin: NetworkOrigin
     var AccessPointArn: js.UndefOr[S3AccessPointArn]
+    var Alias: js.UndefOr[Alias]
     var VpcConfiguration: js.UndefOr[VpcConfiguration]
   }
 
@@ -253,6 +284,7 @@ package object s3control {
         Name: AccessPointName,
         NetworkOrigin: NetworkOrigin,
         AccessPointArn: js.UndefOr[S3AccessPointArn] = js.undefined,
+        Alias: js.UndefOr[Alias] = js.undefined,
         VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
     ): AccessPoint = {
       val __obj = js.Dynamic.literal(
@@ -262,6 +294,7 @@ package object s3control {
       )
 
       AccessPointArn.foreach(__v => __obj.updateDynamic("AccessPointArn")(__v.asInstanceOf[js.Any]))
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
       VpcConfiguration.foreach(__v => __obj.updateDynamic("VpcConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessPoint]
     }
@@ -308,7 +341,112 @@ package object s3control {
     }
   }
 
-  /** AWS Lambda function used to transform objects through an Object Lambda Access Point.
+  /** Error details for the failed asynchronous operation.
+    */
+  @js.native
+  trait AsyncErrorDetails extends js.Object {
+    var Code: js.UndefOr[MaxLength1024String]
+    var Message: js.UndefOr[MaxLength1024String]
+    var RequestId: js.UndefOr[MaxLength1024String]
+    var Resource: js.UndefOr[MaxLength1024String]
+  }
+
+  object AsyncErrorDetails {
+    @inline
+    def apply(
+        Code: js.UndefOr[MaxLength1024String] = js.undefined,
+        Message: js.UndefOr[MaxLength1024String] = js.undefined,
+        RequestId: js.UndefOr[MaxLength1024String] = js.undefined,
+        Resource: js.UndefOr[MaxLength1024String] = js.undefined
+    ): AsyncErrorDetails = {
+      val __obj = js.Dynamic.literal()
+      Code.foreach(__v => __obj.updateDynamic("Code")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Resource.foreach(__v => __obj.updateDynamic("Resource")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AsyncErrorDetails]
+    }
+  }
+
+  /** A container for the information about an asynchronous operation.
+    */
+  @js.native
+  trait AsyncOperation extends js.Object {
+    var CreationTime: js.UndefOr[AsyncCreationTimestamp]
+    var Operation: js.UndefOr[AsyncOperationName]
+    var RequestParameters: js.UndefOr[AsyncRequestParameters]
+    var RequestStatus: js.UndefOr[AsyncRequestStatus]
+    var RequestTokenARN: js.UndefOr[AsyncRequestTokenARN]
+    var ResponseDetails: js.UndefOr[AsyncResponseDetails]
+  }
+
+  object AsyncOperation {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[AsyncCreationTimestamp] = js.undefined,
+        Operation: js.UndefOr[AsyncOperationName] = js.undefined,
+        RequestParameters: js.UndefOr[AsyncRequestParameters] = js.undefined,
+        RequestStatus: js.UndefOr[AsyncRequestStatus] = js.undefined,
+        RequestTokenARN: js.UndefOr[AsyncRequestTokenARN] = js.undefined,
+        ResponseDetails: js.UndefOr[AsyncResponseDetails] = js.undefined
+    ): AsyncOperation = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Operation.foreach(__v => __obj.updateDynamic("Operation")(__v.asInstanceOf[js.Any]))
+      RequestParameters.foreach(__v => __obj.updateDynamic("RequestParameters")(__v.asInstanceOf[js.Any]))
+      RequestStatus.foreach(__v => __obj.updateDynamic("RequestStatus")(__v.asInstanceOf[js.Any]))
+      RequestTokenARN.foreach(__v => __obj.updateDynamic("RequestTokenARN")(__v.asInstanceOf[js.Any]))
+      ResponseDetails.foreach(__v => __obj.updateDynamic("ResponseDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AsyncOperation]
+    }
+  }
+
+  /** A container for the request parameters associated with an asynchronous request.
+    */
+  @js.native
+  trait AsyncRequestParameters extends js.Object {
+    var CreateMultiRegionAccessPointRequest: js.UndefOr[CreateMultiRegionAccessPointInput]
+    var DeleteMultiRegionAccessPointRequest: js.UndefOr[DeleteMultiRegionAccessPointInput]
+    var PutMultiRegionAccessPointPolicyRequest: js.UndefOr[PutMultiRegionAccessPointPolicyInput]
+  }
+
+  object AsyncRequestParameters {
+    @inline
+    def apply(
+        CreateMultiRegionAccessPointRequest: js.UndefOr[CreateMultiRegionAccessPointInput] = js.undefined,
+        DeleteMultiRegionAccessPointRequest: js.UndefOr[DeleteMultiRegionAccessPointInput] = js.undefined,
+        PutMultiRegionAccessPointPolicyRequest: js.UndefOr[PutMultiRegionAccessPointPolicyInput] = js.undefined
+    ): AsyncRequestParameters = {
+      val __obj = js.Dynamic.literal()
+      CreateMultiRegionAccessPointRequest.foreach(__v => __obj.updateDynamic("CreateMultiRegionAccessPointRequest")(__v.asInstanceOf[js.Any]))
+      DeleteMultiRegionAccessPointRequest.foreach(__v => __obj.updateDynamic("DeleteMultiRegionAccessPointRequest")(__v.asInstanceOf[js.Any]))
+      PutMultiRegionAccessPointPolicyRequest.foreach(__v => __obj.updateDynamic("PutMultiRegionAccessPointPolicyRequest")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AsyncRequestParameters]
+    }
+  }
+
+  /** A container for the response details that are returned when querying about an asynchronous request.
+    */
+  @js.native
+  trait AsyncResponseDetails extends js.Object {
+    var ErrorDetails: js.UndefOr[AsyncErrorDetails]
+    var MultiRegionAccessPointDetails: js.UndefOr[MultiRegionAccessPointsAsyncResponse]
+  }
+
+  object AsyncResponseDetails {
+    @inline
+    def apply(
+        ErrorDetails: js.UndefOr[AsyncErrorDetails] = js.undefined,
+        MultiRegionAccessPointDetails: js.UndefOr[MultiRegionAccessPointsAsyncResponse] = js.undefined
+    ): AsyncResponseDetails = {
+      val __obj = js.Dynamic.literal()
+      ErrorDetails.foreach(__v => __obj.updateDynamic("ErrorDetails")(__v.asInstanceOf[js.Any]))
+      MultiRegionAccessPointDetails.foreach(__v => __obj.updateDynamic("MultiRegionAccessPointDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AsyncResponseDetails]
+    }
+  }
+
+  /** Lambda function used to transform objects through an Object Lambda Access Point.
     */
   @js.native
   trait AwsLambdaTransformation extends js.Object {
@@ -349,6 +487,25 @@ package object s3control {
       ActivityMetrics.foreach(__v => __obj.updateDynamic("ActivityMetrics")(__v.asInstanceOf[js.Any]))
       PrefixLevel.foreach(__v => __obj.updateDynamic("PrefixLevel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BucketLevel]
+    }
+  }
+
+  /** A container for enabling Amazon CloudWatch publishing for S3 Storage Lens metrics. For more information about publishing S3 Storage Lens metrics to CloudWatch, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_view_metrics_cloudwatch.html|Monitor S3 Storage Lens metrics in CloudWatch]] in the <i>Amazon S3 User Guide</i>.
+    */
+  @js.native
+  trait CloudWatchMetrics extends js.Object {
+    var IsEnabled: IsEnabled
+  }
+
+  object CloudWatchMetrics {
+    @inline
+    def apply(
+        IsEnabled: IsEnabled
+    ): CloudWatchMetrics = {
+      val __obj = js.Dynamic.literal(
+        "IsEnabled" -> IsEnabled.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CloudWatchMetrics]
     }
   }
 
@@ -424,15 +581,18 @@ package object s3control {
   @js.native
   trait CreateAccessPointResult extends js.Object {
     var AccessPointArn: js.UndefOr[S3AccessPointArn]
+    var Alias: js.UndefOr[Alias]
   }
 
   object CreateAccessPointResult {
     @inline
     def apply(
-        AccessPointArn: js.UndefOr[S3AccessPointArn] = js.undefined
+        AccessPointArn: js.UndefOr[S3AccessPointArn] = js.undefined,
+        Alias: js.UndefOr[Alias] = js.undefined
     ): CreateAccessPointResult = {
       val __obj = js.Dynamic.literal()
       AccessPointArn.foreach(__v => __obj.updateDynamic("AccessPointArn")(__v.asInstanceOf[js.Any]))
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAccessPointResult]
     }
   }
@@ -579,6 +739,71 @@ package object s3control {
       val __obj = js.Dynamic.literal()
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobResult]
+    }
+  }
+
+  /** A container for the information associated with a [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html|CreateMultiRegionAccessPoint]] request.
+    */
+  @js.native
+  trait CreateMultiRegionAccessPointInput extends js.Object {
+    var Name: MultiRegionAccessPointName
+    var Regions: RegionCreationList
+    var PublicAccessBlock: js.UndefOr[PublicAccessBlockConfiguration]
+  }
+
+  object CreateMultiRegionAccessPointInput {
+    @inline
+    def apply(
+        Name: MultiRegionAccessPointName,
+        Regions: RegionCreationList,
+        PublicAccessBlock: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined
+    ): CreateMultiRegionAccessPointInput = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Regions" -> Regions.asInstanceOf[js.Any]
+      )
+
+      PublicAccessBlock.foreach(__v => __obj.updateDynamic("PublicAccessBlock")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMultiRegionAccessPointInput]
+    }
+  }
+
+  @js.native
+  trait CreateMultiRegionAccessPointRequest extends js.Object {
+    var AccountId: AccountId
+    var ClientToken: MultiRegionAccessPointClientToken
+    var Details: CreateMultiRegionAccessPointInput
+  }
+
+  object CreateMultiRegionAccessPointRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ClientToken: MultiRegionAccessPointClientToken,
+        Details: CreateMultiRegionAccessPointInput
+    ): CreateMultiRegionAccessPointRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "Details" -> Details.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateMultiRegionAccessPointRequest]
+    }
+  }
+
+  @js.native
+  trait CreateMultiRegionAccessPointResult extends js.Object {
+    var RequestTokenARN: js.UndefOr[AsyncRequestTokenARN]
+  }
+
+  object CreateMultiRegionAccessPointResult {
+    @inline
+    def apply(
+        RequestTokenARN: js.UndefOr[AsyncRequestTokenARN] = js.undefined
+    ): CreateMultiRegionAccessPointResult = {
+      val __obj = js.Dynamic.literal()
+      RequestTokenARN.foreach(__v => __obj.updateDynamic("RequestTokenARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateMultiRegionAccessPointResult]
     }
   }
 
@@ -773,6 +998,64 @@ package object s3control {
     }
   }
 
+  /** A container for the information associated with a [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html|DeleteMultiRegionAccessPoint]] request.
+    */
+  @js.native
+  trait DeleteMultiRegionAccessPointInput extends js.Object {
+    var Name: MultiRegionAccessPointName
+  }
+
+  object DeleteMultiRegionAccessPointInput {
+    @inline
+    def apply(
+        Name: MultiRegionAccessPointName
+    ): DeleteMultiRegionAccessPointInput = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteMultiRegionAccessPointInput]
+    }
+  }
+
+  @js.native
+  trait DeleteMultiRegionAccessPointRequest extends js.Object {
+    var AccountId: AccountId
+    var ClientToken: MultiRegionAccessPointClientToken
+    var Details: DeleteMultiRegionAccessPointInput
+  }
+
+  object DeleteMultiRegionAccessPointRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ClientToken: MultiRegionAccessPointClientToken,
+        Details: DeleteMultiRegionAccessPointInput
+    ): DeleteMultiRegionAccessPointRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "Details" -> Details.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteMultiRegionAccessPointRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteMultiRegionAccessPointResult extends js.Object {
+    var RequestTokenARN: js.UndefOr[AsyncRequestTokenARN]
+  }
+
+  object DeleteMultiRegionAccessPointResult {
+    @inline
+    def apply(
+        RequestTokenARN: js.UndefOr[AsyncRequestTokenARN] = js.undefined
+    ): DeleteMultiRegionAccessPointResult = {
+      val __obj = js.Dynamic.literal()
+      RequestTokenARN.foreach(__v => __obj.updateDynamic("RequestTokenARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteMultiRegionAccessPointResult]
+    }
+  }
+
   @js.native
   trait DeletePublicAccessBlockRequest extends js.Object {
     var AccountId: AccountId
@@ -874,6 +1157,60 @@ package object s3control {
       val __obj = js.Dynamic.literal()
       Job.foreach(__v => __obj.updateDynamic("Job")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeJobResult]
+    }
+  }
+
+  @js.native
+  trait DescribeMultiRegionAccessPointOperationRequest extends js.Object {
+    var AccountId: AccountId
+    var RequestTokenARN: AsyncRequestTokenARN
+  }
+
+  object DescribeMultiRegionAccessPointOperationRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        RequestTokenARN: AsyncRequestTokenARN
+    ): DescribeMultiRegionAccessPointOperationRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "RequestTokenARN" -> RequestTokenARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeMultiRegionAccessPointOperationRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeMultiRegionAccessPointOperationResult extends js.Object {
+    var AsyncOperation: js.UndefOr[AsyncOperation]
+  }
+
+  object DescribeMultiRegionAccessPointOperationResult {
+    @inline
+    def apply(
+        AsyncOperation: js.UndefOr[AsyncOperation] = js.undefined
+    ): DescribeMultiRegionAccessPointOperationResult = {
+      val __obj = js.Dynamic.literal()
+      AsyncOperation.foreach(__v => __obj.updateDynamic("AsyncOperation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeMultiRegionAccessPointOperationResult]
+    }
+  }
+
+  /** The last established access control policy for a Multi-Region Access Point. When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.
+    */
+  @js.native
+  trait EstablishedMultiRegionAccessPointPolicy extends js.Object {
+    var Policy: js.UndefOr[Policy]
+  }
+
+  object EstablishedMultiRegionAccessPointPolicy {
+    @inline
+    def apply(
+        Policy: js.UndefOr[Policy] = js.undefined
+    ): EstablishedMultiRegionAccessPointPolicy = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EstablishedMultiRegionAccessPointPolicy]
     }
   }
 
@@ -1142,8 +1479,11 @@ package object s3control {
 
   @js.native
   trait GetAccessPointResult extends js.Object {
+    var AccessPointArn: js.UndefOr[S3AccessPointArn]
+    var Alias: js.UndefOr[Alias]
     var Bucket: js.UndefOr[BucketName]
     var CreationDate: js.UndefOr[CreationDate]
+    var Endpoints: js.UndefOr[Endpoints]
     var Name: js.UndefOr[AccessPointName]
     var NetworkOrigin: js.UndefOr[NetworkOrigin]
     var PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration]
@@ -1153,16 +1493,22 @@ package object s3control {
   object GetAccessPointResult {
     @inline
     def apply(
+        AccessPointArn: js.UndefOr[S3AccessPointArn] = js.undefined,
+        Alias: js.UndefOr[Alias] = js.undefined,
         Bucket: js.UndefOr[BucketName] = js.undefined,
         CreationDate: js.UndefOr[CreationDate] = js.undefined,
+        Endpoints: js.UndefOr[Endpoints] = js.undefined,
         Name: js.UndefOr[AccessPointName] = js.undefined,
         NetworkOrigin: js.UndefOr[NetworkOrigin] = js.undefined,
         PublicAccessBlockConfiguration: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined,
         VpcConfiguration: js.UndefOr[VpcConfiguration] = js.undefined
     ): GetAccessPointResult = {
       val __obj = js.Dynamic.literal()
+      AccessPointArn.foreach(__v => __obj.updateDynamic("AccessPointArn")(__v.asInstanceOf[js.Any]))
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
       Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      Endpoints.foreach(__v => __obj.updateDynamic("Endpoints")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       NetworkOrigin.foreach(__v => __obj.updateDynamic("NetworkOrigin")(__v.asInstanceOf[js.Any]))
       PublicAccessBlockConfiguration.foreach(__v => __obj.updateDynamic("PublicAccessBlockConfiguration")(__v.asInstanceOf[js.Any]))
@@ -1355,6 +1701,114 @@ package object s3control {
       val __obj = js.Dynamic.literal()
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetJobTaggingResult]
+    }
+  }
+
+  @js.native
+  trait GetMultiRegionAccessPointPolicyRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: MultiRegionAccessPointName
+  }
+
+  object GetMultiRegionAccessPointPolicyRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: MultiRegionAccessPointName
+    ): GetMultiRegionAccessPointPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMultiRegionAccessPointPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetMultiRegionAccessPointPolicyResult extends js.Object {
+    var Policy: js.UndefOr[MultiRegionAccessPointPolicyDocument]
+  }
+
+  object GetMultiRegionAccessPointPolicyResult {
+    @inline
+    def apply(
+        Policy: js.UndefOr[MultiRegionAccessPointPolicyDocument] = js.undefined
+    ): GetMultiRegionAccessPointPolicyResult = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMultiRegionAccessPointPolicyResult]
+    }
+  }
+
+  @js.native
+  trait GetMultiRegionAccessPointPolicyStatusRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: MultiRegionAccessPointName
+  }
+
+  object GetMultiRegionAccessPointPolicyStatusRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: MultiRegionAccessPointName
+    ): GetMultiRegionAccessPointPolicyStatusRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMultiRegionAccessPointPolicyStatusRequest]
+    }
+  }
+
+  @js.native
+  trait GetMultiRegionAccessPointPolicyStatusResult extends js.Object {
+    var Established: js.UndefOr[PolicyStatus]
+  }
+
+  object GetMultiRegionAccessPointPolicyStatusResult {
+    @inline
+    def apply(
+        Established: js.UndefOr[PolicyStatus] = js.undefined
+    ): GetMultiRegionAccessPointPolicyStatusResult = {
+      val __obj = js.Dynamic.literal()
+      Established.foreach(__v => __obj.updateDynamic("Established")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMultiRegionAccessPointPolicyStatusResult]
+    }
+  }
+
+  @js.native
+  trait GetMultiRegionAccessPointRequest extends js.Object {
+    var AccountId: AccountId
+    var Name: MultiRegionAccessPointName
+  }
+
+  object GetMultiRegionAccessPointRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        Name: MultiRegionAccessPointName
+    ): GetMultiRegionAccessPointRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetMultiRegionAccessPointRequest]
+    }
+  }
+
+  @js.native
+  trait GetMultiRegionAccessPointResult extends js.Object {
+    var AccessPoint: js.UndefOr[MultiRegionAccessPointReport]
+  }
+
+  object GetMultiRegionAccessPointResult {
+    @inline
+    def apply(
+        AccessPoint: js.UndefOr[MultiRegionAccessPointReport] = js.undefined
+    ): GetMultiRegionAccessPointResult = {
+      val __obj = js.Dynamic.literal()
+      AccessPoint.foreach(__v => __obj.updateDynamic("AccessPoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetMultiRegionAccessPointResult]
     }
   }
 
@@ -1681,7 +2135,7 @@ package object s3control {
     }
   }
 
-  /** The operation that you want this job to perform on every object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Operations]] in the <i>Amazon Simple Storage Service User Guide</i>.
+  /** The operation that you want this job to perform on every object listed in the manifest. For more information about the available operations, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-operations.html|Operations]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait JobOperation extends js.Object {
@@ -2058,6 +2512,49 @@ package object s3control {
   }
 
   @js.native
+  trait ListMultiRegionAccessPointsRequest extends js.Object {
+    var AccountId: AccountId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
+  }
+
+  object ListMultiRegionAccessPointsRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
+    ): ListMultiRegionAccessPointsRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMultiRegionAccessPointsRequest]
+    }
+  }
+
+  @js.native
+  trait ListMultiRegionAccessPointsResult extends js.Object {
+    var AccessPoints: js.UndefOr[MultiRegionAccessPointReportList]
+    var NextToken: js.UndefOr[NonEmptyMaxLength1024String]
+  }
+
+  object ListMultiRegionAccessPointsResult {
+    @inline
+    def apply(
+        AccessPoints: js.UndefOr[MultiRegionAccessPointReportList] = js.undefined,
+        NextToken: js.UndefOr[NonEmptyMaxLength1024String] = js.undefined
+    ): ListMultiRegionAccessPointsResult = {
+      val __obj = js.Dynamic.literal()
+      AccessPoints.foreach(__v => __obj.updateDynamic("AccessPoints")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListMultiRegionAccessPointsResult]
+    }
+  }
+
+  @js.native
   trait ListRegionalBucketsRequest extends js.Object {
     var AccountId: AccountId
     var MaxResults: js.UndefOr[MaxResults]
@@ -2172,6 +2669,99 @@ package object s3control {
     }
   }
 
+  /** The Multi-Region Access Point access control policy. When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.
+    */
+  @js.native
+  trait MultiRegionAccessPointPolicyDocument extends js.Object {
+    var Established: js.UndefOr[EstablishedMultiRegionAccessPointPolicy]
+    var Proposed: js.UndefOr[ProposedMultiRegionAccessPointPolicy]
+  }
+
+  object MultiRegionAccessPointPolicyDocument {
+    @inline
+    def apply(
+        Established: js.UndefOr[EstablishedMultiRegionAccessPointPolicy] = js.undefined,
+        Proposed: js.UndefOr[ProposedMultiRegionAccessPointPolicy] = js.undefined
+    ): MultiRegionAccessPointPolicyDocument = {
+      val __obj = js.Dynamic.literal()
+      Established.foreach(__v => __obj.updateDynamic("Established")(__v.asInstanceOf[js.Any]))
+      Proposed.foreach(__v => __obj.updateDynamic("Proposed")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiRegionAccessPointPolicyDocument]
+    }
+  }
+
+  /** Status information for a single Multi-Region Access Point Region.
+    */
+  @js.native
+  trait MultiRegionAccessPointRegionalResponse extends js.Object {
+    var Name: js.UndefOr[RegionName]
+    var RequestStatus: js.UndefOr[AsyncRequestStatus]
+  }
+
+  object MultiRegionAccessPointRegionalResponse {
+    @inline
+    def apply(
+        Name: js.UndefOr[RegionName] = js.undefined,
+        RequestStatus: js.UndefOr[AsyncRequestStatus] = js.undefined
+    ): MultiRegionAccessPointRegionalResponse = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RequestStatus.foreach(__v => __obj.updateDynamic("RequestStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiRegionAccessPointRegionalResponse]
+    }
+  }
+
+  /** A collection of statuses for a Multi-Region Access Point in the various Regions it supports.
+    */
+  @js.native
+  trait MultiRegionAccessPointReport extends js.Object {
+    var Alias: js.UndefOr[MultiRegionAccessPointAlias]
+    var CreatedAt: js.UndefOr[CreationTimestamp]
+    var Name: js.UndefOr[MultiRegionAccessPointName]
+    var PublicAccessBlock: js.UndefOr[PublicAccessBlockConfiguration]
+    var Regions: js.UndefOr[RegionReportList]
+    var Status: js.UndefOr[MultiRegionAccessPointStatus]
+  }
+
+  object MultiRegionAccessPointReport {
+    @inline
+    def apply(
+        Alias: js.UndefOr[MultiRegionAccessPointAlias] = js.undefined,
+        CreatedAt: js.UndefOr[CreationTimestamp] = js.undefined,
+        Name: js.UndefOr[MultiRegionAccessPointName] = js.undefined,
+        PublicAccessBlock: js.UndefOr[PublicAccessBlockConfiguration] = js.undefined,
+        Regions: js.UndefOr[RegionReportList] = js.undefined,
+        Status: js.UndefOr[MultiRegionAccessPointStatus] = js.undefined
+    ): MultiRegionAccessPointReport = {
+      val __obj = js.Dynamic.literal()
+      Alias.foreach(__v => __obj.updateDynamic("Alias")(__v.asInstanceOf[js.Any]))
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PublicAccessBlock.foreach(__v => __obj.updateDynamic("PublicAccessBlock")(__v.asInstanceOf[js.Any]))
+      Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiRegionAccessPointReport]
+    }
+  }
+
+  /** The Multi-Region Access Point details that are returned when querying about an asynchronous request.
+    */
+  @js.native
+  trait MultiRegionAccessPointsAsyncResponse extends js.Object {
+    var Regions: js.UndefOr[MultiRegionAccessPointRegionalResponseList]
+  }
+
+  object MultiRegionAccessPointsAsyncResponse {
+    @inline
+    def apply(
+        Regions: js.UndefOr[MultiRegionAccessPointRegionalResponseList] = js.undefined
+    ): MultiRegionAccessPointsAsyncResponse = {
+      val __obj = js.Dynamic.literal()
+      Regions.foreach(__v => __obj.updateDynamic("Regions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MultiRegionAccessPointsAsyncResponse]
+    }
+  }
+
   /** The container of the noncurrent version expiration.
     */
   @js.native
@@ -2211,7 +2801,7 @@ package object s3control {
     }
   }
 
-  /** An access point with an attached AWS Lambda function used to access transformed data from an Amazon S3 bucket.
+  /** An access point with an attached Lambda function used to access transformed data from an Amazon S3 bucket.
     */
   @js.native
   trait ObjectLambdaAccessPoint extends js.Object {
@@ -2303,7 +2893,7 @@ package object s3control {
     }
   }
 
-  /** Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service User Guide</i>.
+  /** Indicates whether this access point policy is public. For more information about how Amazon S3 evaluates policies to determine whether they are public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait PolicyStatus extends js.Object {
@@ -2361,7 +2951,25 @@ package object s3control {
     }
   }
 
-  /** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon Simple Storage Service Developer Guide</i>. This is not supported for Amazon S3 on Outposts.
+  /** The proposed access control policy for the Multi-Region Access Point. When you update the policy, the update is first listed as the proposed policy. After the update is finished and all Regions have been updated, the proposed policy is listed as the established policy. If both policies have the same version number, the proposed policy is the established policy.
+    */
+  @js.native
+  trait ProposedMultiRegionAccessPointPolicy extends js.Object {
+    var Policy: js.UndefOr[Policy]
+  }
+
+  object ProposedMultiRegionAccessPointPolicy {
+    @inline
+    def apply(
+        Policy: js.UndefOr[Policy] = js.undefined
+    ): ProposedMultiRegionAccessPointPolicy = {
+      val __obj = js.Dynamic.literal()
+      Policy.foreach(__v => __obj.updateDynamic("Policy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProposedMultiRegionAccessPointPolicy]
+    }
+  }
+
+  /** The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account. You can enable the configuration options in any combination. For more information about when Amazon S3 considers a bucket or object public, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status|The Meaning of "Public"]] in the <i>Amazon S3 User Guide</i>. This is not supported for Amazon S3 on Outposts.
     */
   @js.native
   trait PublicAccessBlockConfiguration extends js.Object {
@@ -2565,6 +3173,67 @@ package object s3control {
     }
   }
 
+  /** A container for the information associated with a [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html|PutMultiRegionAccessPoint]] request.
+    */
+  @js.native
+  trait PutMultiRegionAccessPointPolicyInput extends js.Object {
+    var Name: MultiRegionAccessPointName
+    var Policy: Policy
+  }
+
+  object PutMultiRegionAccessPointPolicyInput {
+    @inline
+    def apply(
+        Name: MultiRegionAccessPointName,
+        Policy: Policy
+    ): PutMultiRegionAccessPointPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Policy" -> Policy.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutMultiRegionAccessPointPolicyInput]
+    }
+  }
+
+  @js.native
+  trait PutMultiRegionAccessPointPolicyRequest extends js.Object {
+    var AccountId: AccountId
+    var ClientToken: MultiRegionAccessPointClientToken
+    var Details: PutMultiRegionAccessPointPolicyInput
+  }
+
+  object PutMultiRegionAccessPointPolicyRequest {
+    @inline
+    def apply(
+        AccountId: AccountId,
+        ClientToken: MultiRegionAccessPointClientToken,
+        Details: PutMultiRegionAccessPointPolicyInput
+    ): PutMultiRegionAccessPointPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "AccountId" -> AccountId.asInstanceOf[js.Any],
+        "ClientToken" -> ClientToken.asInstanceOf[js.Any],
+        "Details" -> Details.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PutMultiRegionAccessPointPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait PutMultiRegionAccessPointPolicyResult extends js.Object {
+    var RequestTokenARN: js.UndefOr[AsyncRequestTokenARN]
+  }
+
+  object PutMultiRegionAccessPointPolicyResult {
+    @inline
+    def apply(
+        RequestTokenARN: js.UndefOr[AsyncRequestTokenARN] = js.undefined
+    ): PutMultiRegionAccessPointPolicyResult = {
+      val __obj = js.Dynamic.literal()
+      RequestTokenARN.foreach(__v => __obj.updateDynamic("RequestTokenARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutMultiRegionAccessPointPolicyResult]
+    }
+  }
+
   @js.native
   trait PutPublicAccessBlockRequest extends js.Object {
     var AccountId: AccountId
@@ -2643,6 +3312,46 @@ package object s3control {
     def apply(): PutStorageLensConfigurationTaggingResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[PutStorageLensConfigurationTaggingResult]
+    }
+  }
+
+  /** A Region that supports a Multi-Region Access Point as well as the associated bucket for the Region.
+    */
+  @js.native
+  trait Region extends js.Object {
+    var Bucket: BucketName
+  }
+
+  object Region {
+    @inline
+    def apply(
+        Bucket: BucketName
+    ): Region = {
+      val __obj = js.Dynamic.literal(
+        "Bucket" -> Bucket.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Region]
+    }
+  }
+
+  /** A combination of a bucket and Region that's part of a Multi-Region Access Point.
+    */
+  @js.native
+  trait RegionReport extends js.Object {
+    var Bucket: js.UndefOr[BucketName]
+    var Region: js.UndefOr[RegionName]
+  }
+
+  object RegionReport {
+    @inline
+    def apply(
+        Bucket: js.UndefOr[BucketName] = js.undefined,
+        Region: js.UndefOr[RegionName] = js.undefined
+    ): RegionReport = {
+      val __obj = js.Dynamic.literal()
+      Bucket.foreach(__v => __obj.updateDynamic("Bucket")(__v.asInstanceOf[js.Any]))
+      Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RegionReport]
     }
   }
 
@@ -2762,6 +3471,7 @@ package object s3control {
   @js.native
   trait S3CopyObjectOperation extends js.Object {
     var AccessControlGrants: js.UndefOr[S3GrantList]
+    var BucketKeyEnabled: js.UndefOr[Boolean]
     var CannedAccessControlList: js.UndefOr[S3CannedAccessControlList]
     var MetadataDirective: js.UndefOr[S3MetadataDirective]
     var ModifiedSinceConstraint: js.UndefOr[TimeStamp]
@@ -2783,6 +3493,7 @@ package object s3control {
     @inline
     def apply(
         AccessControlGrants: js.UndefOr[S3GrantList] = js.undefined,
+        BucketKeyEnabled: js.UndefOr[Boolean] = js.undefined,
         CannedAccessControlList: js.UndefOr[S3CannedAccessControlList] = js.undefined,
         MetadataDirective: js.UndefOr[S3MetadataDirective] = js.undefined,
         ModifiedSinceConstraint: js.UndefOr[TimeStamp] = js.undefined,
@@ -2801,6 +3512,7 @@ package object s3control {
     ): S3CopyObjectOperation = {
       val __obj = js.Dynamic.literal()
       AccessControlGrants.foreach(__v => __obj.updateDynamic("AccessControlGrants")(__v.asInstanceOf[js.Any]))
+      BucketKeyEnabled.foreach(__v => __obj.updateDynamic("BucketKeyEnabled")(__v.asInstanceOf[js.Any]))
       CannedAccessControlList.foreach(__v => __obj.updateDynamic("CannedAccessControlList")(__v.asInstanceOf[js.Any]))
       MetadataDirective.foreach(__v => __obj.updateDynamic("MetadataDirective")(__v.asInstanceOf[js.Any]))
       ModifiedSinceConstraint.foreach(__v => __obj.updateDynamic("ModifiedSinceConstraint")(__v.asInstanceOf[js.Any]))
@@ -2987,7 +3699,7 @@ package object s3control {
     }
   }
 
-  /** Contains the S3 Object Lock retention mode to be applied to all objects in the S3 Batch Operations job. If you don't provide <code>Mode</code> and <code>RetainUntilDate</code> data types in your operation, you will remove the retention from your objects. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon Simple Storage Service User Guide</i>.
+  /** Contains the S3 Object Lock retention mode to be applied to all objects in the S3 Batch Operations job. If you don't provide <code>Mode</code> and <code>RetainUntilDate</code> data types in your operation, you will remove the retention from your objects. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait S3Retention extends js.Object {
@@ -3026,7 +3738,7 @@ package object s3control {
     }
   }
 
-  /** Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html|Using S3 Object Lock legal hold with S3 Batch Operations]] in the <i>Amazon Simple Storage Service User Guide</i>.
+  /** Contains the configuration for an S3 Object Lock legal hold operation that an S3 Batch Operations job passes every object to the underlying <code>PutObjectLegalHold</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-legal-hold.html|Using S3 Object Lock legal hold with S3 Batch Operations]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait S3SetObjectLegalHoldOperation extends js.Object {
@@ -3045,7 +3757,7 @@ package object s3control {
     }
   }
 
-  /** Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon Simple Storage Service User Guide</i>.
+  /** Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html|Using S3 Object Lock retention with S3 Batch Operations]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait S3SetObjectRetentionOperation extends js.Object {
@@ -3164,7 +3876,7 @@ package object s3control {
     }
   }
 
-  /** The AWS organization for your S3 Storage Lens.
+  /** The Amazon Web Services organization for your S3 Storage Lens.
     */
   @js.native
   trait StorageLensAwsOrg extends js.Object {
@@ -3228,17 +3940,19 @@ package object s3control {
     */
   @js.native
   trait StorageLensDataExport extends js.Object {
-    var S3BucketDestination: S3BucketDestination
+    var CloudWatchMetrics: js.UndefOr[CloudWatchMetrics]
+    var S3BucketDestination: js.UndefOr[S3BucketDestination]
   }
 
   object StorageLensDataExport {
     @inline
     def apply(
-        S3BucketDestination: S3BucketDestination
+        CloudWatchMetrics: js.UndefOr[CloudWatchMetrics] = js.undefined,
+        S3BucketDestination: js.UndefOr[S3BucketDestination] = js.undefined
     ): StorageLensDataExport = {
-      val __obj = js.Dynamic.literal(
-        "S3BucketDestination" -> S3BucketDestination.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      CloudWatchMetrics.foreach(__v => __obj.updateDynamic("CloudWatchMetrics")(__v.asInstanceOf[js.Any]))
+      S3BucketDestination.foreach(__v => __obj.updateDynamic("S3BucketDestination")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StorageLensDataExport]
     }
   }
@@ -3305,7 +4019,7 @@ package object s3control {
     }
   }
 
-  /** Specifies when an object transitions to a specified storage class. For more information about Amazon S3 Lifecycle configuration rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html| Transitioning objects using Amazon S3 Lifecycle]] in the <i>Amazon Simple Storage Service User Guide</i>.
+  /** Specifies when an object transitions to a specified storage class. For more information about Amazon S3 Lifecycle configuration rules, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-transition-general-considerations.html| Transitioning objects using Amazon S3 Lifecycle]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait Transition extends js.Object {

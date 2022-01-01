@@ -19,6 +19,20 @@ object AuthTypeValue {
   inline def values: js.Array[AuthTypeValue] = js.Array(no, password)
 }
 
+type CannedAclForObjectsValue = "none" | "private" | "public-read" | "public-read-write" | "authenticated-read" | "aws-exec-read" | "bucket-owner-read" | "bucket-owner-full-control"
+object CannedAclForObjectsValue {
+  inline val none: "none" = "none"
+  inline val `private`: "private" = "private"
+  inline val `public-read`: "public-read" = "public-read"
+  inline val `public-read-write`: "public-read-write" = "public-read-write"
+  inline val `authenticated-read`: "authenticated-read" = "authenticated-read"
+  inline val `aws-exec-read`: "aws-exec-read" = "aws-exec-read"
+  inline val `bucket-owner-read`: "bucket-owner-read" = "bucket-owner-read"
+  inline val `bucket-owner-full-control`: "bucket-owner-full-control" = "bucket-owner-full-control"
+
+  inline def values: js.Array[CannedAclForObjectsValue] = js.Array(none, `private`, `public-read`, `public-read-write`, `authenticated-read`, `aws-exec-read`, `bucket-owner-read`, `bucket-owner-full-control`)
+}
+
 type CharLengthSemantics = "default" | "char" | "byte"
 object CharLengthSemantics {
   inline val default: "default" = "default"
@@ -145,6 +159,24 @@ object ParquetVersionValue {
   inline def values: js.Array[ParquetVersionValue] = js.Array(`parquet-1-0`, `parquet-2-0`)
 }
 
+type PluginNameValue = "no-preference" | "test-decoding" | "pglogical"
+object PluginNameValue {
+  inline val `no-preference`: "no-preference" = "no-preference"
+  inline val `test-decoding`: "test-decoding" = "test-decoding"
+  inline val pglogical: "pglogical" = "pglogical"
+
+  inline def values: js.Array[PluginNameValue] = js.Array(`no-preference`, `test-decoding`, pglogical)
+}
+
+type RedisAuthTypeValue = "none" | "auth-role" | "auth-token"
+object RedisAuthTypeValue {
+  inline val none: "none" = "none"
+  inline val `auth-role`: "auth-role" = "auth-role"
+  inline val `auth-token`: "auth-token" = "auth-token"
+
+  inline def values: js.Array[RedisAuthTypeValue] = js.Array(none, `auth-role`, `auth-token`)
+}
+
 type RefreshSchemasStatusTypeValue = "successful" | "failed" | "refreshing"
 object RefreshSchemasStatusTypeValue {
   inline val successful: "successful" = "successful"
@@ -191,6 +223,14 @@ object SourceType {
   inline val `replication-instance`: "replication-instance" = "replication-instance"
 
   inline def values: js.Array[SourceType] = js.Array(`replication-instance`)
+}
+
+type SslSecurityProtocolValue = "plaintext" | "ssl-encryption"
+object SslSecurityProtocolValue {
+  inline val plaintext: "plaintext" = "plaintext"
+  inline val `ssl-encryption`: "ssl-encryption" = "ssl-encryption"
+
+  inline def values: js.Array[SslSecurityProtocolValue] = js.Array(plaintext, `ssl-encryption`)
 }
 
 type StartReplicationTaskTypeValue = "start-replication" | "resume-processing" | "reload-target"

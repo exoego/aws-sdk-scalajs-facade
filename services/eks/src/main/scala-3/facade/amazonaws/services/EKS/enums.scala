@@ -2,16 +2,19 @@ package facade.amazonaws.services.eks
 
 import scalajs.js
 
-type AMITypes = "AL2_x86_64" | "AL2_x86_64_GPU" | "AL2_ARM_64"
+type AMITypes = "AL2_x86_64" | "AL2_x86_64_GPU" | "AL2_ARM_64" | "CUSTOM" | "BOTTLEROCKET_ARM_64" | "BOTTLEROCKET_x86_64"
 object AMITypes {
   inline val AL2_x86_64: "AL2_x86_64" = "AL2_x86_64"
   inline val AL2_x86_64_GPU: "AL2_x86_64_GPU" = "AL2_x86_64_GPU"
   inline val AL2_ARM_64: "AL2_ARM_64" = "AL2_ARM_64"
+  inline val CUSTOM: "CUSTOM" = "CUSTOM"
+  inline val BOTTLEROCKET_ARM_64: "BOTTLEROCKET_ARM_64" = "BOTTLEROCKET_ARM_64"
+  inline val BOTTLEROCKET_x86_64: "BOTTLEROCKET_x86_64" = "BOTTLEROCKET_x86_64"
 
-  inline def values: js.Array[AMITypes] = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64)
+  inline def values: js.Array[AMITypes] = js.Array(AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64, CUSTOM, BOTTLEROCKET_ARM_64, BOTTLEROCKET_x86_64)
 }
 
-type AddonIssueCode = "AccessDenied" | "InternalFailure" | "ClusterUnreachable" | "InsufficientNumberOfReplicas" | "ConfigurationConflict" | "AdmissionRequestDenied"
+type AddonIssueCode = "AccessDenied" | "InternalFailure" | "ClusterUnreachable" | "InsufficientNumberOfReplicas" | "ConfigurationConflict" | "AdmissionRequestDenied" | "UnsupportedAddonModification" | "K8sResourceNotFound"
 object AddonIssueCode {
   inline val AccessDenied: "AccessDenied" = "AccessDenied"
   inline val InternalFailure: "InternalFailure" = "InternalFailure"
@@ -19,8 +22,19 @@ object AddonIssueCode {
   inline val InsufficientNumberOfReplicas: "InsufficientNumberOfReplicas" = "InsufficientNumberOfReplicas"
   inline val ConfigurationConflict: "ConfigurationConflict" = "ConfigurationConflict"
   inline val AdmissionRequestDenied: "AdmissionRequestDenied" = "AdmissionRequestDenied"
+  inline val UnsupportedAddonModification: "UnsupportedAddonModification" = "UnsupportedAddonModification"
+  inline val K8sResourceNotFound: "K8sResourceNotFound" = "K8sResourceNotFound"
 
-  inline def values: js.Array[AddonIssueCode] = js.Array(AccessDenied, InternalFailure, ClusterUnreachable, InsufficientNumberOfReplicas, ConfigurationConflict, AdmissionRequestDenied)
+  inline def values: js.Array[AddonIssueCode] = js.Array(
+    AccessDenied,
+    InternalFailure,
+    ClusterUnreachable,
+    InsufficientNumberOfReplicas,
+    ConfigurationConflict,
+    AdmissionRequestDenied,
+    UnsupportedAddonModification,
+    K8sResourceNotFound
+  )
 }
 
 type AddonStatus = "CREATING" | "ACTIVE" | "CREATE_FAILED" | "UPDATING" | "DELETING" | "DELETE_FAILED" | "DEGRADED"
@@ -44,18 +58,34 @@ object CapacityTypes {
   inline def values: js.Array[CapacityTypes] = js.Array(ON_DEMAND, SPOT)
 }
 
-type ClusterStatus = "CREATING" | "ACTIVE" | "DELETING" | "FAILED" | "UPDATING"
+type ClusterStatus = "CREATING" | "ACTIVE" | "DELETING" | "FAILED" | "UPDATING" | "PENDING"
 object ClusterStatus {
   inline val CREATING: "CREATING" = "CREATING"
   inline val ACTIVE: "ACTIVE" = "ACTIVE"
   inline val DELETING: "DELETING" = "DELETING"
   inline val FAILED: "FAILED" = "FAILED"
   inline val UPDATING: "UPDATING" = "UPDATING"
+  inline val PENDING: "PENDING" = "PENDING"
 
-  inline def values: js.Array[ClusterStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING)
+  inline def values: js.Array[ClusterStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED, UPDATING, PENDING)
 }
 
-type ErrorCode = "SubnetNotFound" | "SecurityGroupNotFound" | "EniLimitReached" | "IpNotAvailable" | "AccessDenied" | "OperationNotPermitted" | "VpcIdNotFound" | "Unknown" | "NodeCreationFailure" | "PodEvictionFailure" | "InsufficientFreeAddresses" | "ClusterUnreachable" | "InsufficientNumberOfReplicas" | "ConfigurationConflict" | "AdmissionRequestDenied"
+type ConnectorConfigProvider = "EKS_ANYWHERE" | "ANTHOS" | "GKE" | "AKS" | "OPENSHIFT" | "TANZU" | "RANCHER" | "EC2" | "OTHER"
+object ConnectorConfigProvider {
+  inline val EKS_ANYWHERE: "EKS_ANYWHERE" = "EKS_ANYWHERE"
+  inline val ANTHOS: "ANTHOS" = "ANTHOS"
+  inline val GKE: "GKE" = "GKE"
+  inline val AKS: "AKS" = "AKS"
+  inline val OPENSHIFT: "OPENSHIFT" = "OPENSHIFT"
+  inline val TANZU: "TANZU" = "TANZU"
+  inline val RANCHER: "RANCHER" = "RANCHER"
+  inline val EC2: "EC2" = "EC2"
+  inline val OTHER: "OTHER" = "OTHER"
+
+  inline def values: js.Array[ConnectorConfigProvider] = js.Array(EKS_ANYWHERE, ANTHOS, GKE, AKS, OPENSHIFT, TANZU, RANCHER, EC2, OTHER)
+}
+
+type ErrorCode = "SubnetNotFound" | "SecurityGroupNotFound" | "EniLimitReached" | "IpNotAvailable" | "AccessDenied" | "OperationNotPermitted" | "VpcIdNotFound" | "Unknown" | "NodeCreationFailure" | "PodEvictionFailure" | "InsufficientFreeAddresses" | "ClusterUnreachable" | "InsufficientNumberOfReplicas" | "ConfigurationConflict" | "AdmissionRequestDenied" | "UnsupportedAddonModification" | "K8sResourceNotFound"
 object ErrorCode {
   inline val SubnetNotFound: "SubnetNotFound" = "SubnetNotFound"
   inline val SecurityGroupNotFound: "SecurityGroupNotFound" = "SecurityGroupNotFound"
@@ -72,6 +102,8 @@ object ErrorCode {
   inline val InsufficientNumberOfReplicas: "InsufficientNumberOfReplicas" = "InsufficientNumberOfReplicas"
   inline val ConfigurationConflict: "ConfigurationConflict" = "ConfigurationConflict"
   inline val AdmissionRequestDenied: "AdmissionRequestDenied" = "AdmissionRequestDenied"
+  inline val UnsupportedAddonModification: "UnsupportedAddonModification" = "UnsupportedAddonModification"
+  inline val K8sResourceNotFound: "K8sResourceNotFound" = "K8sResourceNotFound"
 
   inline def values: js.Array[ErrorCode] = js.Array(
     SubnetNotFound,
@@ -88,7 +120,9 @@ object ErrorCode {
     ClusterUnreachable,
     InsufficientNumberOfReplicas,
     ConfigurationConflict,
-    AdmissionRequestDenied
+    AdmissionRequestDenied,
+    UnsupportedAddonModification,
+    K8sResourceNotFound
   )
 }
 
@@ -178,7 +212,16 @@ object ResolveConflicts {
   inline def values: js.Array[ResolveConflicts] = js.Array(OVERWRITE, NONE)
 }
 
-type UpdateParamType = "Version" | "PlatformVersion" | "EndpointPrivateAccess" | "EndpointPublicAccess" | "ClusterLogging" | "DesiredSize" | "LabelsToAdd" | "LabelsToRemove" | "MaxSize" | "MinSize" | "ReleaseVersion" | "PublicAccessCidrs" | "IdentityProviderConfig" | "EncryptionConfig" | "AddonVersion" | "ServiceAccountRoleArn" | "ResolveConflicts"
+type TaintEffect = "NO_SCHEDULE" | "NO_EXECUTE" | "PREFER_NO_SCHEDULE"
+object TaintEffect {
+  inline val NO_SCHEDULE: "NO_SCHEDULE" = "NO_SCHEDULE"
+  inline val NO_EXECUTE: "NO_EXECUTE" = "NO_EXECUTE"
+  inline val PREFER_NO_SCHEDULE: "PREFER_NO_SCHEDULE" = "PREFER_NO_SCHEDULE"
+
+  inline def values: js.Array[TaintEffect] = js.Array(NO_SCHEDULE, NO_EXECUTE, PREFER_NO_SCHEDULE)
+}
+
+type UpdateParamType = "Version" | "PlatformVersion" | "EndpointPrivateAccess" | "EndpointPublicAccess" | "ClusterLogging" | "DesiredSize" | "LabelsToAdd" | "LabelsToRemove" | "TaintsToAdd" | "TaintsToRemove" | "MaxSize" | "MinSize" | "ReleaseVersion" | "PublicAccessCidrs" | "LaunchTemplateName" | "LaunchTemplateVersion" | "IdentityProviderConfig" | "EncryptionConfig" | "AddonVersion" | "ServiceAccountRoleArn" | "ResolveConflicts" | "MaxUnavailable" | "MaxUnavailablePercentage"
 object UpdateParamType {
   inline val Version: "Version" = "Version"
   inline val PlatformVersion: "PlatformVersion" = "PlatformVersion"
@@ -188,15 +231,21 @@ object UpdateParamType {
   inline val DesiredSize: "DesiredSize" = "DesiredSize"
   inline val LabelsToAdd: "LabelsToAdd" = "LabelsToAdd"
   inline val LabelsToRemove: "LabelsToRemove" = "LabelsToRemove"
+  inline val TaintsToAdd: "TaintsToAdd" = "TaintsToAdd"
+  inline val TaintsToRemove: "TaintsToRemove" = "TaintsToRemove"
   inline val MaxSize: "MaxSize" = "MaxSize"
   inline val MinSize: "MinSize" = "MinSize"
   inline val ReleaseVersion: "ReleaseVersion" = "ReleaseVersion"
   inline val PublicAccessCidrs: "PublicAccessCidrs" = "PublicAccessCidrs"
+  inline val LaunchTemplateName: "LaunchTemplateName" = "LaunchTemplateName"
+  inline val LaunchTemplateVersion: "LaunchTemplateVersion" = "LaunchTemplateVersion"
   inline val IdentityProviderConfig: "IdentityProviderConfig" = "IdentityProviderConfig"
   inline val EncryptionConfig: "EncryptionConfig" = "EncryptionConfig"
   inline val AddonVersion: "AddonVersion" = "AddonVersion"
   inline val ServiceAccountRoleArn: "ServiceAccountRoleArn" = "ServiceAccountRoleArn"
   inline val ResolveConflicts: "ResolveConflicts" = "ResolveConflicts"
+  inline val MaxUnavailable: "MaxUnavailable" = "MaxUnavailable"
+  inline val MaxUnavailablePercentage: "MaxUnavailablePercentage" = "MaxUnavailablePercentage"
 
   inline def values: js.Array[UpdateParamType] = js.Array(
     Version,
@@ -207,15 +256,21 @@ object UpdateParamType {
     DesiredSize,
     LabelsToAdd,
     LabelsToRemove,
+    TaintsToAdd,
+    TaintsToRemove,
     MaxSize,
     MinSize,
     ReleaseVersion,
     PublicAccessCidrs,
+    LaunchTemplateName,
+    LaunchTemplateVersion,
     IdentityProviderConfig,
     EncryptionConfig,
     AddonVersion,
     ServiceAccountRoleArn,
-    ResolveConflicts
+    ResolveConflicts,
+    MaxUnavailable,
+    MaxUnavailablePercentage
   )
 }
 

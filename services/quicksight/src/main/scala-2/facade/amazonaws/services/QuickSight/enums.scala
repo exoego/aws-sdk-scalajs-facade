@@ -60,6 +60,15 @@ object ColumnDataType {
 }
 
 @js.native
+sealed trait ColumnTagName extends js.Any
+object ColumnTagName {
+  val COLUMN_GEOGRAPHIC_ROLE = "COLUMN_GEOGRAPHIC_ROLE".asInstanceOf[ColumnTagName]
+  val COLUMN_DESCRIPTION = "COLUMN_DESCRIPTION".asInstanceOf[ColumnTagName]
+
+  @inline def values: js.Array[ColumnTagName] = js.Array(COLUMN_GEOGRAPHIC_ROLE, COLUMN_DESCRIPTION)
+}
+
+@js.native
 sealed trait DashboardBehavior extends js.Any
 object DashboardBehavior {
   val ENABLED = "ENABLED".asInstanceOf[DashboardBehavior]
@@ -163,6 +172,8 @@ object DataSourceType {
   val TERADATA = "TERADATA".asInstanceOf[DataSourceType]
   val TWITTER = "TWITTER".asInstanceOf[DataSourceType]
   val TIMESTREAM = "TIMESTREAM".asInstanceOf[DataSourceType]
+  val AMAZON_OPENSEARCH = "AMAZON_OPENSEARCH".asInstanceOf[DataSourceType]
+  val EXASOL = "EXASOL".asInstanceOf[DataSourceType]
 
   @inline def values: js.Array[DataSourceType] = js.Array(
     ADOBE_ANALYTICS,
@@ -187,7 +198,9 @@ object DataSourceType {
     SQLSERVER,
     TERADATA,
     TWITTER,
-    TIMESTREAM
+    TIMESTREAM,
+    AMAZON_OPENSEARCH,
+    EXASOL
   )
 }
 
@@ -229,6 +242,22 @@ object FilterOperator {
   val StringEquals = "StringEquals".asInstanceOf[FilterOperator]
 
   @inline def values: js.Array[FilterOperator] = js.Array(StringEquals)
+}
+
+@js.native
+sealed trait FolderFilterAttribute extends js.Any
+object FolderFilterAttribute {
+  val PARENT_FOLDER_ARN = "PARENT_FOLDER_ARN".asInstanceOf[FolderFilterAttribute]
+
+  @inline def values: js.Array[FolderFilterAttribute] = js.Array(PARENT_FOLDER_ARN)
+}
+
+@js.native
+sealed trait FolderType extends js.Any
+object FolderType {
+  val SHARED = "SHARED".asInstanceOf[FolderType]
+
+  @inline def values: js.Array[FolderType] = js.Array(SHARED)
 }
 
 @js.native
@@ -313,6 +342,10 @@ object IngestionErrorType {
   val DATA_SOURCE_CONNECTION_FAILED = "DATA_SOURCE_CONNECTION_FAILED".asInstanceOf[IngestionErrorType]
   val FAILURE_TO_PROCESS_JSON_FILE = "FAILURE_TO_PROCESS_JSON_FILE".asInstanceOf[IngestionErrorType]
   val INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR".asInstanceOf[IngestionErrorType]
+  val REFRESH_SUPPRESSED_BY_EDIT = "REFRESH_SUPPRESSED_BY_EDIT".asInstanceOf[IngestionErrorType]
+  val PERMISSION_NOT_FOUND = "PERMISSION_NOT_FOUND".asInstanceOf[IngestionErrorType]
+  val ELASTICSEARCH_CURSOR_NOT_ENABLED = "ELASTICSEARCH_CURSOR_NOT_ENABLED".asInstanceOf[IngestionErrorType]
+  val CURSOR_NOT_ENABLED = "CURSOR_NOT_ENABLED".asInstanceOf[IngestionErrorType]
 
   @inline def values: js.Array[IngestionErrorType] = js.Array(
     FAILURE_TO_ASSUME_ROLE,
@@ -354,7 +387,11 @@ object IngestionErrorType {
     DATA_SOURCE_AUTH_FAILED,
     DATA_SOURCE_CONNECTION_FAILED,
     FAILURE_TO_PROCESS_JSON_FILE,
-    INTERNAL_SERVICE_ERROR
+    INTERNAL_SERVICE_ERROR,
+    REFRESH_SUPPRESSED_BY_EDIT,
+    PERMISSION_NOT_FOUND,
+    ELASTICSEARCH_CURSOR_NOT_ENABLED,
+    CURSOR_NOT_ENABLED
   )
 }
 
@@ -367,6 +404,8 @@ object IngestionRequestSource {
   @inline def values: js.Array[IngestionRequestSource] = js.Array(MANUAL, SCHEDULED)
 }
 
+/** This defines the type of ingestion request. This is returned as part of create ingestion response.
+  */
 @js.native
 sealed trait IngestionRequestType extends js.Any
 object IngestionRequestType {
@@ -389,6 +428,17 @@ object IngestionStatus {
   val CANCELLED = "CANCELLED".asInstanceOf[IngestionStatus]
 
   @inline def values: js.Array[IngestionStatus] = js.Array(INITIALIZED, QUEUED, RUNNING, FAILED, COMPLETED, CANCELLED)
+}
+
+/** This defines the type of ingestion user wants to trigger. This is part of create ingestion request.
+  */
+@js.native
+sealed trait IngestionType extends js.Any
+object IngestionType {
+  val INCREMENTAL_REFRESH = "INCREMENTAL_REFRESH".asInstanceOf[IngestionType]
+  val FULL_REFRESH = "FULL_REFRESH".asInstanceOf[IngestionType]
+
+  @inline def values: js.Array[IngestionType] = js.Array(INCREMENTAL_REFRESH, FULL_REFRESH)
 }
 
 @js.native
@@ -414,6 +464,16 @@ object JoinType {
   val RIGHT = "RIGHT".asInstanceOf[JoinType]
 
   @inline def values: js.Array[JoinType] = js.Array(INNER, OUTER, LEFT, RIGHT)
+}
+
+@js.native
+sealed trait MemberType extends js.Any
+object MemberType {
+  val DASHBOARD = "DASHBOARD".asInstanceOf[MemberType]
+  val ANALYSIS = "ANALYSIS".asInstanceOf[MemberType]
+  val DATASET = "DATASET".asInstanceOf[MemberType]
+
+  @inline def values: js.Array[MemberType] = js.Array(DASHBOARD, ANALYSIS, DATASET)
 }
 
 @js.native
@@ -452,12 +512,30 @@ object ResourceStatus {
 }
 
 @js.native
+sealed trait RowLevelPermissionFormatVersion extends js.Any
+object RowLevelPermissionFormatVersion {
+  val VERSION_1 = "VERSION_1".asInstanceOf[RowLevelPermissionFormatVersion]
+  val VERSION_2 = "VERSION_2".asInstanceOf[RowLevelPermissionFormatVersion]
+
+  @inline def values: js.Array[RowLevelPermissionFormatVersion] = js.Array(VERSION_1, VERSION_2)
+}
+
+@js.native
 sealed trait RowLevelPermissionPolicy extends js.Any
 object RowLevelPermissionPolicy {
   val GRANT_ACCESS = "GRANT_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
   val DENY_ACCESS = "DENY_ACCESS".asInstanceOf[RowLevelPermissionPolicy]
 
   @inline def values: js.Array[RowLevelPermissionPolicy] = js.Array(GRANT_ACCESS, DENY_ACCESS)
+}
+
+@js.native
+sealed trait Status extends js.Any
+object Status {
+  val ENABLED = "ENABLED".asInstanceOf[Status]
+  val DISABLED = "DISABLED".asInstanceOf[Status]
+
+  @inline def values: js.Array[Status] = js.Array(ENABLED, DISABLED)
 }
 
 @js.native

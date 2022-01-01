@@ -12,22 +12,36 @@ package object wellarchitected {
   type AwsAccountId = String
   type AwsRegion = String
   type Base64String = String
+  type ChoiceAnswerSummaries = js.Array[ChoiceAnswerSummary]
+  type ChoiceAnswers = js.Array[ChoiceAnswer]
+  type ChoiceContentDisplayText = String
+  type ChoiceContentUrl = String
   type ChoiceDescription = String
   type ChoiceId = String
+  type ChoiceImprovementPlans = js.Array[ChoiceImprovementPlan]
+  type ChoiceNotes = String
   type ChoiceTitle = String
+  type ChoiceUpdates = js.Dictionary[ChoiceUpdate]
   type Choices = js.Array[Choice]
   type ClientRequestToken = String
   type Count = Int
+  type DisplayText = String
   type HelpfulResourceUrl = String
   type ImprovementPlanUrl = String
   type ImprovementSummaries = js.Array[ImprovementSummary]
   type IsApplicable = Boolean
+  type IsMajorVersion = Boolean
   type IsReviewOwnerUpdateAcknowledged = Boolean
   type LensAlias = String
   type LensAliases = js.Array[LensAlias]
+  type LensArn = String
   type LensDescription = String
+  type LensJSON = String
   type LensName = String
+  type LensNamePrefix = String
+  type LensOwner = String
   type LensReviewSummaries = js.Array[LensReviewSummary]
+  type LensShareSummaries = js.Array[LensShareSummary]
   type LensSummaries = js.Array[LensSummary]
   type LensVersion = String
   type ListAnswersMaxResults = Int
@@ -85,21 +99,29 @@ package object wellarchitected {
   final class WellArchitectedOps(private val service: WellArchitected) extends AnyVal {
 
     @inline def associateLensesFuture(params: AssociateLensesInput): Future[js.Object] = service.associateLenses(params).promise().toFuture
+    @inline def createLensShareFuture(params: CreateLensShareInput): Future[CreateLensShareOutput] = service.createLensShare(params).promise().toFuture
+    @inline def createLensVersionFuture(params: CreateLensVersionInput): Future[CreateLensVersionOutput] = service.createLensVersion(params).promise().toFuture
     @inline def createMilestoneFuture(params: CreateMilestoneInput): Future[CreateMilestoneOutput] = service.createMilestone(params).promise().toFuture
     @inline def createWorkloadFuture(params: CreateWorkloadInput): Future[CreateWorkloadOutput] = service.createWorkload(params).promise().toFuture
     @inline def createWorkloadShareFuture(params: CreateWorkloadShareInput): Future[CreateWorkloadShareOutput] = service.createWorkloadShare(params).promise().toFuture
+    @inline def deleteLensFuture(params: DeleteLensInput): Future[js.Object] = service.deleteLens(params).promise().toFuture
+    @inline def deleteLensShareFuture(params: DeleteLensShareInput): Future[js.Object] = service.deleteLensShare(params).promise().toFuture
     @inline def deleteWorkloadFuture(params: DeleteWorkloadInput): Future[js.Object] = service.deleteWorkload(params).promise().toFuture
     @inline def deleteWorkloadShareFuture(params: DeleteWorkloadShareInput): Future[js.Object] = service.deleteWorkloadShare(params).promise().toFuture
     @inline def disassociateLensesFuture(params: DisassociateLensesInput): Future[js.Object] = service.disassociateLenses(params).promise().toFuture
+    @inline def exportLensFuture(params: ExportLensInput): Future[ExportLensOutput] = service.exportLens(params).promise().toFuture
     @inline def getAnswerFuture(params: GetAnswerInput): Future[GetAnswerOutput] = service.getAnswer(params).promise().toFuture
+    @inline def getLensFuture(params: GetLensInput): Future[GetLensOutput] = service.getLens(params).promise().toFuture
     @inline def getLensReviewFuture(params: GetLensReviewInput): Future[GetLensReviewOutput] = service.getLensReview(params).promise().toFuture
     @inline def getLensReviewReportFuture(params: GetLensReviewReportInput): Future[GetLensReviewReportOutput] = service.getLensReviewReport(params).promise().toFuture
     @inline def getLensVersionDifferenceFuture(params: GetLensVersionDifferenceInput): Future[GetLensVersionDifferenceOutput] = service.getLensVersionDifference(params).promise().toFuture
     @inline def getMilestoneFuture(params: GetMilestoneInput): Future[GetMilestoneOutput] = service.getMilestone(params).promise().toFuture
     @inline def getWorkloadFuture(params: GetWorkloadInput): Future[GetWorkloadOutput] = service.getWorkload(params).promise().toFuture
+    @inline def importLensFuture(params: ImportLensInput): Future[ImportLensOutput] = service.importLens(params).promise().toFuture
     @inline def listAnswersFuture(params: ListAnswersInput): Future[ListAnswersOutput] = service.listAnswers(params).promise().toFuture
     @inline def listLensReviewImprovementsFuture(params: ListLensReviewImprovementsInput): Future[ListLensReviewImprovementsOutput] = service.listLensReviewImprovements(params).promise().toFuture
     @inline def listLensReviewsFuture(params: ListLensReviewsInput): Future[ListLensReviewsOutput] = service.listLensReviews(params).promise().toFuture
+    @inline def listLensSharesFuture(params: ListLensSharesInput): Future[ListLensSharesOutput] = service.listLensShares(params).promise().toFuture
     @inline def listLensesFuture(params: ListLensesInput): Future[ListLensesOutput] = service.listLenses(params).promise().toFuture
     @inline def listMilestonesFuture(params: ListMilestonesInput): Future[ListMilestonesOutput] = service.listMilestones(params).promise().toFuture
     @inline def listNotificationsFuture(params: ListNotificationsInput): Future[ListNotificationsOutput] = service.listNotifications(params).promise().toFuture
@@ -124,21 +146,29 @@ package object wellarchitected {
     def this(config: AWSConfig) = this()
 
     def associateLenses(params: AssociateLensesInput): Request[js.Object] = js.native
+    def createLensShare(params: CreateLensShareInput): Request[CreateLensShareOutput] = js.native
+    def createLensVersion(params: CreateLensVersionInput): Request[CreateLensVersionOutput] = js.native
     def createMilestone(params: CreateMilestoneInput): Request[CreateMilestoneOutput] = js.native
     def createWorkload(params: CreateWorkloadInput): Request[CreateWorkloadOutput] = js.native
     def createWorkloadShare(params: CreateWorkloadShareInput): Request[CreateWorkloadShareOutput] = js.native
+    def deleteLens(params: DeleteLensInput): Request[js.Object] = js.native
+    def deleteLensShare(params: DeleteLensShareInput): Request[js.Object] = js.native
     def deleteWorkload(params: DeleteWorkloadInput): Request[js.Object] = js.native
     def deleteWorkloadShare(params: DeleteWorkloadShareInput): Request[js.Object] = js.native
     def disassociateLenses(params: DisassociateLensesInput): Request[js.Object] = js.native
+    def exportLens(params: ExportLensInput): Request[ExportLensOutput] = js.native
     def getAnswer(params: GetAnswerInput): Request[GetAnswerOutput] = js.native
+    def getLens(params: GetLensInput): Request[GetLensOutput] = js.native
     def getLensReview(params: GetLensReviewInput): Request[GetLensReviewOutput] = js.native
     def getLensReviewReport(params: GetLensReviewReportInput): Request[GetLensReviewReportOutput] = js.native
     def getLensVersionDifference(params: GetLensVersionDifferenceInput): Request[GetLensVersionDifferenceOutput] = js.native
     def getMilestone(params: GetMilestoneInput): Request[GetMilestoneOutput] = js.native
     def getWorkload(params: GetWorkloadInput): Request[GetWorkloadOutput] = js.native
+    def importLens(params: ImportLensInput): Request[ImportLensOutput] = js.native
     def listAnswers(params: ListAnswersInput): Request[ListAnswersOutput] = js.native
     def listLensReviewImprovements(params: ListLensReviewImprovementsInput): Request[ListLensReviewImprovementsOutput] = js.native
     def listLensReviews(params: ListLensReviewsInput): Request[ListLensReviewsOutput] = js.native
+    def listLensShares(params: ListLensSharesInput): Request[ListLensSharesOutput] = js.native
     def listLenses(params: ListLensesInput): Request[ListLensesOutput] = js.native
     def listMilestones(params: ListMilestonesInput): Request[ListMilestonesOutput] = js.native
     def listNotifications(params: ListNotificationsInput): Request[ListNotificationsOutput] = js.native
@@ -165,7 +195,9 @@ package object wellarchitected {
     */
   @js.native
   trait Answer extends js.Object {
+    var ChoiceAnswers: js.UndefOr[ChoiceAnswers]
     var Choices: js.UndefOr[Choices]
+    var HelpfulResourceDisplayText: js.UndefOr[DisplayText]
     var HelpfulResourceUrl: js.UndefOr[HelpfulResourceUrl]
     var ImprovementPlanUrl: js.UndefOr[ImprovementPlanUrl]
     var IsApplicable: js.UndefOr[IsApplicable]
@@ -174,6 +206,7 @@ package object wellarchitected {
     var QuestionDescription: js.UndefOr[QuestionDescription]
     var QuestionId: js.UndefOr[QuestionId]
     var QuestionTitle: js.UndefOr[QuestionTitle]
+    var Reason: js.UndefOr[AnswerReason]
     var Risk: js.UndefOr[Risk]
     var SelectedChoices: js.UndefOr[SelectedChoices]
   }
@@ -181,7 +214,9 @@ package object wellarchitected {
   object Answer {
     @inline
     def apply(
+        ChoiceAnswers: js.UndefOr[ChoiceAnswers] = js.undefined,
         Choices: js.UndefOr[Choices] = js.undefined,
+        HelpfulResourceDisplayText: js.UndefOr[DisplayText] = js.undefined,
         HelpfulResourceUrl: js.UndefOr[HelpfulResourceUrl] = js.undefined,
         ImprovementPlanUrl: js.UndefOr[ImprovementPlanUrl] = js.undefined,
         IsApplicable: js.UndefOr[IsApplicable] = js.undefined,
@@ -190,11 +225,14 @@ package object wellarchitected {
         QuestionDescription: js.UndefOr[QuestionDescription] = js.undefined,
         QuestionId: js.UndefOr[QuestionId] = js.undefined,
         QuestionTitle: js.UndefOr[QuestionTitle] = js.undefined,
+        Reason: js.UndefOr[AnswerReason] = js.undefined,
         Risk: js.UndefOr[Risk] = js.undefined,
         SelectedChoices: js.UndefOr[SelectedChoices] = js.undefined
     ): Answer = {
       val __obj = js.Dynamic.literal()
+      ChoiceAnswers.foreach(__v => __obj.updateDynamic("ChoiceAnswers")(__v.asInstanceOf[js.Any]))
       Choices.foreach(__v => __obj.updateDynamic("Choices")(__v.asInstanceOf[js.Any]))
+      HelpfulResourceDisplayText.foreach(__v => __obj.updateDynamic("HelpfulResourceDisplayText")(__v.asInstanceOf[js.Any]))
       HelpfulResourceUrl.foreach(__v => __obj.updateDynamic("HelpfulResourceUrl")(__v.asInstanceOf[js.Any]))
       ImprovementPlanUrl.foreach(__v => __obj.updateDynamic("ImprovementPlanUrl")(__v.asInstanceOf[js.Any]))
       IsApplicable.foreach(__v => __obj.updateDynamic("IsApplicable")(__v.asInstanceOf[js.Any]))
@@ -203,6 +241,7 @@ package object wellarchitected {
       QuestionDescription.foreach(__v => __obj.updateDynamic("QuestionDescription")(__v.asInstanceOf[js.Any]))
       QuestionId.foreach(__v => __obj.updateDynamic("QuestionId")(__v.asInstanceOf[js.Any]))
       QuestionTitle.foreach(__v => __obj.updateDynamic("QuestionTitle")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       Risk.foreach(__v => __obj.updateDynamic("Risk")(__v.asInstanceOf[js.Any]))
       SelectedChoices.foreach(__v => __obj.updateDynamic("SelectedChoices")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Answer]
@@ -213,11 +252,13 @@ package object wellarchitected {
     */
   @js.native
   trait AnswerSummary extends js.Object {
+    var ChoiceAnswerSummaries: js.UndefOr[ChoiceAnswerSummaries]
     var Choices: js.UndefOr[Choices]
     var IsApplicable: js.UndefOr[IsApplicable]
     var PillarId: js.UndefOr[PillarId]
     var QuestionId: js.UndefOr[QuestionId]
     var QuestionTitle: js.UndefOr[QuestionTitle]
+    var Reason: js.UndefOr[AnswerReason]
     var Risk: js.UndefOr[Risk]
     var SelectedChoices: js.UndefOr[SelectedChoices]
   }
@@ -225,20 +266,24 @@ package object wellarchitected {
   object AnswerSummary {
     @inline
     def apply(
+        ChoiceAnswerSummaries: js.UndefOr[ChoiceAnswerSummaries] = js.undefined,
         Choices: js.UndefOr[Choices] = js.undefined,
         IsApplicable: js.UndefOr[IsApplicable] = js.undefined,
         PillarId: js.UndefOr[PillarId] = js.undefined,
         QuestionId: js.UndefOr[QuestionId] = js.undefined,
         QuestionTitle: js.UndefOr[QuestionTitle] = js.undefined,
+        Reason: js.UndefOr[AnswerReason] = js.undefined,
         Risk: js.UndefOr[Risk] = js.undefined,
         SelectedChoices: js.UndefOr[SelectedChoices] = js.undefined
     ): AnswerSummary = {
       val __obj = js.Dynamic.literal()
+      ChoiceAnswerSummaries.foreach(__v => __obj.updateDynamic("ChoiceAnswerSummaries")(__v.asInstanceOf[js.Any]))
       Choices.foreach(__v => __obj.updateDynamic("Choices")(__v.asInstanceOf[js.Any]))
       IsApplicable.foreach(__v => __obj.updateDynamic("IsApplicable")(__v.asInstanceOf[js.Any]))
       PillarId.foreach(__v => __obj.updateDynamic("PillarId")(__v.asInstanceOf[js.Any]))
       QuestionId.foreach(__v => __obj.updateDynamic("QuestionId")(__v.asInstanceOf[js.Any]))
       QuestionTitle.foreach(__v => __obj.updateDynamic("QuestionTitle")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       Risk.foreach(__v => __obj.updateDynamic("Risk")(__v.asInstanceOf[js.Any]))
       SelectedChoices.foreach(__v => __obj.updateDynamic("SelectedChoices")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnswerSummary]
@@ -273,6 +318,8 @@ package object wellarchitected {
   trait Choice extends js.Object {
     var ChoiceId: js.UndefOr[ChoiceId]
     var Description: js.UndefOr[ChoiceDescription]
+    var HelpfulResource: js.UndefOr[ChoiceContent]
+    var ImprovementPlan: js.UndefOr[ChoiceContent]
     var Title: js.UndefOr[ChoiceTitle]
   }
 
@@ -281,13 +328,224 @@ package object wellarchitected {
     def apply(
         ChoiceId: js.UndefOr[ChoiceId] = js.undefined,
         Description: js.UndefOr[ChoiceDescription] = js.undefined,
+        HelpfulResource: js.UndefOr[ChoiceContent] = js.undefined,
+        ImprovementPlan: js.UndefOr[ChoiceContent] = js.undefined,
         Title: js.UndefOr[ChoiceTitle] = js.undefined
     ): Choice = {
       val __obj = js.Dynamic.literal()
       ChoiceId.foreach(__v => __obj.updateDynamic("ChoiceId")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      HelpfulResource.foreach(__v => __obj.updateDynamic("HelpfulResource")(__v.asInstanceOf[js.Any]))
+      ImprovementPlan.foreach(__v => __obj.updateDynamic("ImprovementPlan")(__v.asInstanceOf[js.Any]))
       Title.foreach(__v => __obj.updateDynamic("Title")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Choice]
+    }
+  }
+
+  /** A choice that has been answered on a question in your workload.
+    */
+  @js.native
+  trait ChoiceAnswer extends js.Object {
+    var ChoiceId: js.UndefOr[ChoiceId]
+    var Notes: js.UndefOr[ChoiceNotes]
+    var Reason: js.UndefOr[ChoiceReason]
+    var Status: js.UndefOr[ChoiceStatus]
+  }
+
+  object ChoiceAnswer {
+    @inline
+    def apply(
+        ChoiceId: js.UndefOr[ChoiceId] = js.undefined,
+        Notes: js.UndefOr[ChoiceNotes] = js.undefined,
+        Reason: js.UndefOr[ChoiceReason] = js.undefined,
+        Status: js.UndefOr[ChoiceStatus] = js.undefined
+    ): ChoiceAnswer = {
+      val __obj = js.Dynamic.literal()
+      ChoiceId.foreach(__v => __obj.updateDynamic("ChoiceId")(__v.asInstanceOf[js.Any]))
+      Notes.foreach(__v => __obj.updateDynamic("Notes")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChoiceAnswer]
+    }
+  }
+
+  /** A choice summary that has been answered on a question in your workload.
+    */
+  @js.native
+  trait ChoiceAnswerSummary extends js.Object {
+    var ChoiceId: js.UndefOr[ChoiceId]
+    var Reason: js.UndefOr[ChoiceReason]
+    var Status: js.UndefOr[ChoiceStatus]
+  }
+
+  object ChoiceAnswerSummary {
+    @inline
+    def apply(
+        ChoiceId: js.UndefOr[ChoiceId] = js.undefined,
+        Reason: js.UndefOr[ChoiceReason] = js.undefined,
+        Status: js.UndefOr[ChoiceStatus] = js.undefined
+    ): ChoiceAnswerSummary = {
+      val __obj = js.Dynamic.literal()
+      ChoiceId.foreach(__v => __obj.updateDynamic("ChoiceId")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChoiceAnswerSummary]
+    }
+  }
+
+  /** The choice content.
+    */
+  @js.native
+  trait ChoiceContent extends js.Object {
+    var DisplayText: js.UndefOr[ChoiceContentDisplayText]
+    var Url: js.UndefOr[ChoiceContentUrl]
+  }
+
+  object ChoiceContent {
+    @inline
+    def apply(
+        DisplayText: js.UndefOr[ChoiceContentDisplayText] = js.undefined,
+        Url: js.UndefOr[ChoiceContentUrl] = js.undefined
+    ): ChoiceContent = {
+      val __obj = js.Dynamic.literal()
+      DisplayText.foreach(__v => __obj.updateDynamic("DisplayText")(__v.asInstanceOf[js.Any]))
+      Url.foreach(__v => __obj.updateDynamic("Url")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChoiceContent]
+    }
+  }
+
+  /** The choice level improvement plan.
+    */
+  @js.native
+  trait ChoiceImprovementPlan extends js.Object {
+    var ChoiceId: js.UndefOr[ChoiceId]
+    var DisplayText: js.UndefOr[DisplayText]
+    var ImprovementPlanUrl: js.UndefOr[ImprovementPlanUrl]
+  }
+
+  object ChoiceImprovementPlan {
+    @inline
+    def apply(
+        ChoiceId: js.UndefOr[ChoiceId] = js.undefined,
+        DisplayText: js.UndefOr[DisplayText] = js.undefined,
+        ImprovementPlanUrl: js.UndefOr[ImprovementPlanUrl] = js.undefined
+    ): ChoiceImprovementPlan = {
+      val __obj = js.Dynamic.literal()
+      ChoiceId.foreach(__v => __obj.updateDynamic("ChoiceId")(__v.asInstanceOf[js.Any]))
+      DisplayText.foreach(__v => __obj.updateDynamic("DisplayText")(__v.asInstanceOf[js.Any]))
+      ImprovementPlanUrl.foreach(__v => __obj.updateDynamic("ImprovementPlanUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChoiceImprovementPlan]
+    }
+  }
+
+  /** A list of choices to be updated.
+    */
+  @js.native
+  trait ChoiceUpdate extends js.Object {
+    var Status: ChoiceStatus
+    var Notes: js.UndefOr[ChoiceNotes]
+    var Reason: js.UndefOr[ChoiceReason]
+  }
+
+  object ChoiceUpdate {
+    @inline
+    def apply(
+        Status: ChoiceStatus,
+        Notes: js.UndefOr[ChoiceNotes] = js.undefined,
+        Reason: js.UndefOr[ChoiceReason] = js.undefined
+    ): ChoiceUpdate = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      Notes.foreach(__v => __obj.updateDynamic("Notes")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ChoiceUpdate]
+    }
+  }
+
+  @js.native
+  trait CreateLensShareInput extends js.Object {
+    var ClientRequestToken: ClientRequestToken
+    var LensAlias: LensAlias
+    var SharedWith: SharedWith
+  }
+
+  object CreateLensShareInput {
+    @inline
+    def apply(
+        ClientRequestToken: ClientRequestToken,
+        LensAlias: LensAlias,
+        SharedWith: SharedWith
+    ): CreateLensShareInput = {
+      val __obj = js.Dynamic.literal(
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "LensAlias" -> LensAlias.asInstanceOf[js.Any],
+        "SharedWith" -> SharedWith.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateLensShareInput]
+    }
+  }
+
+  @js.native
+  trait CreateLensShareOutput extends js.Object {
+    var ShareId: js.UndefOr[ShareId]
+  }
+
+  object CreateLensShareOutput {
+    @inline
+    def apply(
+        ShareId: js.UndefOr[ShareId] = js.undefined
+    ): CreateLensShareOutput = {
+      val __obj = js.Dynamic.literal()
+      ShareId.foreach(__v => __obj.updateDynamic("ShareId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLensShareOutput]
+    }
+  }
+
+  @js.native
+  trait CreateLensVersionInput extends js.Object {
+    var ClientRequestToken: ClientRequestToken
+    var LensAlias: LensAlias
+    var LensVersion: LensVersion
+    var IsMajorVersion: js.UndefOr[IsMajorVersion]
+  }
+
+  object CreateLensVersionInput {
+    @inline
+    def apply(
+        ClientRequestToken: ClientRequestToken,
+        LensAlias: LensAlias,
+        LensVersion: LensVersion,
+        IsMajorVersion: js.UndefOr[IsMajorVersion] = js.undefined
+    ): CreateLensVersionInput = {
+      val __obj = js.Dynamic.literal(
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "LensAlias" -> LensAlias.asInstanceOf[js.Any],
+        "LensVersion" -> LensVersion.asInstanceOf[js.Any]
+      )
+
+      IsMajorVersion.foreach(__v => __obj.updateDynamic("IsMajorVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLensVersionInput]
+    }
+  }
+
+  @js.native
+  trait CreateLensVersionOutput extends js.Object {
+    var LensArn: js.UndefOr[LensArn]
+    var LensVersion: js.UndefOr[LensVersion]
+  }
+
+  object CreateLensVersionOutput {
+    @inline
+    def apply(
+        LensArn: js.UndefOr[LensArn] = js.undefined,
+        LensVersion: js.UndefOr[LensVersion] = js.undefined
+    ): CreateLensVersionOutput = {
+      val __obj = js.Dynamic.literal()
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
+      LensVersion.foreach(__v => __obj.updateDynamic("LensVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLensVersionOutput]
     }
   }
 
@@ -469,6 +727,52 @@ package object wellarchitected {
     }
   }
 
+  @js.native
+  trait DeleteLensInput extends js.Object {
+    var ClientRequestToken: ClientRequestToken
+    var LensAlias: LensAlias
+    var LensStatus: LensStatusType
+  }
+
+  object DeleteLensInput {
+    @inline
+    def apply(
+        ClientRequestToken: ClientRequestToken,
+        LensAlias: LensAlias,
+        LensStatus: LensStatusType
+    ): DeleteLensInput = {
+      val __obj = js.Dynamic.literal(
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "LensAlias" -> LensAlias.asInstanceOf[js.Any],
+        "LensStatus" -> LensStatus.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteLensInput]
+    }
+  }
+
+  @js.native
+  trait DeleteLensShareInput extends js.Object {
+    var ClientRequestToken: ClientRequestToken
+    var LensAlias: LensAlias
+    var ShareId: ShareId
+  }
+
+  object DeleteLensShareInput {
+    @inline
+    def apply(
+        ClientRequestToken: ClientRequestToken,
+        LensAlias: LensAlias,
+        ShareId: ShareId
+    ): DeleteLensShareInput = {
+      val __obj = js.Dynamic.literal(
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "LensAlias" -> LensAlias.asInstanceOf[js.Any],
+        "ShareId" -> ShareId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteLensShareInput]
+    }
+  }
+
   /** Input for workload deletion.
     */
   @js.native
@@ -538,6 +842,43 @@ package object wellarchitected {
     }
   }
 
+  @js.native
+  trait ExportLensInput extends js.Object {
+    var LensAlias: LensAlias
+    var LensVersion: js.UndefOr[LensVersion]
+  }
+
+  object ExportLensInput {
+    @inline
+    def apply(
+        LensAlias: LensAlias,
+        LensVersion: js.UndefOr[LensVersion] = js.undefined
+    ): ExportLensInput = {
+      val __obj = js.Dynamic.literal(
+        "LensAlias" -> LensAlias.asInstanceOf[js.Any]
+      )
+
+      LensVersion.foreach(__v => __obj.updateDynamic("LensVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportLensInput]
+    }
+  }
+
+  @js.native
+  trait ExportLensOutput extends js.Object {
+    var LensJSON: js.UndefOr[LensJSON]
+  }
+
+  object ExportLensOutput {
+    @inline
+    def apply(
+        LensJSON: js.UndefOr[LensJSON] = js.undefined
+    ): ExportLensOutput = {
+      val __obj = js.Dynamic.literal()
+      LensJSON.foreach(__v => __obj.updateDynamic("LensJSON")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportLensOutput]
+    }
+  }
+
   /** Input to get answer.
     */
   @js.native
@@ -573,6 +914,7 @@ package object wellarchitected {
   trait GetAnswerOutput extends js.Object {
     var Answer: js.UndefOr[Answer]
     var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
     var MilestoneNumber: js.UndefOr[MilestoneNumber]
     var WorkloadId: js.UndefOr[WorkloadId]
   }
@@ -582,15 +924,54 @@ package object wellarchitected {
     def apply(
         Answer: js.UndefOr[Answer] = js.undefined,
         LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
         MilestoneNumber: js.UndefOr[MilestoneNumber] = js.undefined,
         WorkloadId: js.UndefOr[WorkloadId] = js.undefined
     ): GetAnswerOutput = {
       val __obj = js.Dynamic.literal()
       Answer.foreach(__v => __obj.updateDynamic("Answer")(__v.asInstanceOf[js.Any]))
       LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
       MilestoneNumber.foreach(__v => __obj.updateDynamic("MilestoneNumber")(__v.asInstanceOf[js.Any]))
       WorkloadId.foreach(__v => __obj.updateDynamic("WorkloadId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAnswerOutput]
+    }
+  }
+
+  @js.native
+  trait GetLensInput extends js.Object {
+    var LensAlias: LensAlias
+    var LensVersion: js.UndefOr[LensVersion]
+  }
+
+  object GetLensInput {
+    @inline
+    def apply(
+        LensAlias: LensAlias,
+        LensVersion: js.UndefOr[LensVersion] = js.undefined
+    ): GetLensInput = {
+      val __obj = js.Dynamic.literal(
+        "LensAlias" -> LensAlias.asInstanceOf[js.Any]
+      )
+
+      LensVersion.foreach(__v => __obj.updateDynamic("LensVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLensInput]
+    }
+  }
+
+  @js.native
+  trait GetLensOutput extends js.Object {
+    var Lens: js.UndefOr[Lens]
+  }
+
+  object GetLensOutput {
+    @inline
+    def apply(
+        Lens: js.UndefOr[Lens] = js.undefined
+    ): GetLensOutput = {
+      val __obj = js.Dynamic.literal()
+      Lens.foreach(__v => __obj.updateDynamic("Lens")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLensOutput]
     }
   }
 
@@ -696,20 +1077,24 @@ package object wellarchitected {
 
   @js.native
   trait GetLensVersionDifferenceInput extends js.Object {
-    var BaseLensVersion: LensVersion
     var LensAlias: LensAlias
+    var BaseLensVersion: js.UndefOr[LensVersion]
+    var TargetLensVersion: js.UndefOr[LensVersion]
   }
 
   object GetLensVersionDifferenceInput {
     @inline
     def apply(
-        BaseLensVersion: LensVersion,
-        LensAlias: LensAlias
+        LensAlias: LensAlias,
+        BaseLensVersion: js.UndefOr[LensVersion] = js.undefined,
+        TargetLensVersion: js.UndefOr[LensVersion] = js.undefined
     ): GetLensVersionDifferenceInput = {
       val __obj = js.Dynamic.literal(
-        "BaseLensVersion" -> BaseLensVersion.asInstanceOf[js.Any],
         "LensAlias" -> LensAlias.asInstanceOf[js.Any]
       )
+
+      BaseLensVersion.foreach(__v => __obj.updateDynamic("BaseLensVersion")(__v.asInstanceOf[js.Any]))
+      TargetLensVersion.foreach(__v => __obj.updateDynamic("TargetLensVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLensVersionDifferenceInput]
     }
   }
@@ -719,6 +1104,8 @@ package object wellarchitected {
     var BaseLensVersion: js.UndefOr[LensVersion]
     var LatestLensVersion: js.UndefOr[LensVersion]
     var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
+    var TargetLensVersion: js.UndefOr[LensVersion]
     var VersionDifferences: js.UndefOr[VersionDifferences]
   }
 
@@ -728,12 +1115,16 @@ package object wellarchitected {
         BaseLensVersion: js.UndefOr[LensVersion] = js.undefined,
         LatestLensVersion: js.UndefOr[LensVersion] = js.undefined,
         LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
+        TargetLensVersion: js.UndefOr[LensVersion] = js.undefined,
         VersionDifferences: js.UndefOr[VersionDifferences] = js.undefined
     ): GetLensVersionDifferenceOutput = {
       val __obj = js.Dynamic.literal()
       BaseLensVersion.foreach(__v => __obj.updateDynamic("BaseLensVersion")(__v.asInstanceOf[js.Any]))
       LatestLensVersion.foreach(__v => __obj.updateDynamic("LatestLensVersion")(__v.asInstanceOf[js.Any]))
       LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
+      TargetLensVersion.foreach(__v => __obj.updateDynamic("TargetLensVersion")(__v.asInstanceOf[js.Any]))
       VersionDifferences.foreach(__v => __obj.updateDynamic("VersionDifferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetLensVersionDifferenceOutput]
     }
@@ -819,11 +1210,58 @@ package object wellarchitected {
     }
   }
 
+  @js.native
+  trait ImportLensInput extends js.Object {
+    var ClientRequestToken: ClientRequestToken
+    var JSONString: LensJSON
+    var LensAlias: js.UndefOr[LensAlias]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ImportLensInput {
+    @inline
+    def apply(
+        ClientRequestToken: ClientRequestToken,
+        JSONString: LensJSON,
+        LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ImportLensInput = {
+      val __obj = js.Dynamic.literal(
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "JSONString" -> JSONString.asInstanceOf[js.Any]
+      )
+
+      LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportLensInput]
+    }
+  }
+
+  @js.native
+  trait ImportLensOutput extends js.Object {
+    var LensArn: js.UndefOr[LensArn]
+    var Status: js.UndefOr[ImportLensStatus]
+  }
+
+  object ImportLensOutput {
+    @inline
+    def apply(
+        LensArn: js.UndefOr[LensArn] = js.undefined,
+        Status: js.UndefOr[ImportLensStatus] = js.undefined
+    ): ImportLensOutput = {
+      val __obj = js.Dynamic.literal()
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ImportLensOutput]
+    }
+  }
+
   /** An improvement summary of a lens review in a workload.
     */
   @js.native
   trait ImprovementSummary extends js.Object {
     var ImprovementPlanUrl: js.UndefOr[ImprovementPlanUrl]
+    var ImprovementPlans: js.UndefOr[ChoiceImprovementPlans]
     var PillarId: js.UndefOr[PillarId]
     var QuestionId: js.UndefOr[QuestionId]
     var QuestionTitle: js.UndefOr[QuestionTitle]
@@ -834,6 +1272,7 @@ package object wellarchitected {
     @inline
     def apply(
         ImprovementPlanUrl: js.UndefOr[ImprovementPlanUrl] = js.undefined,
+        ImprovementPlans: js.UndefOr[ChoiceImprovementPlans] = js.undefined,
         PillarId: js.UndefOr[PillarId] = js.undefined,
         QuestionId: js.UndefOr[QuestionId] = js.undefined,
         QuestionTitle: js.UndefOr[QuestionTitle] = js.undefined,
@@ -841,6 +1280,7 @@ package object wellarchitected {
     ): ImprovementSummary = {
       val __obj = js.Dynamic.literal()
       ImprovementPlanUrl.foreach(__v => __obj.updateDynamic("ImprovementPlanUrl")(__v.asInstanceOf[js.Any]))
+      ImprovementPlans.foreach(__v => __obj.updateDynamic("ImprovementPlans")(__v.asInstanceOf[js.Any]))
       PillarId.foreach(__v => __obj.updateDynamic("PillarId")(__v.asInstanceOf[js.Any]))
       QuestionId.foreach(__v => __obj.updateDynamic("QuestionId")(__v.asInstanceOf[js.Any]))
       QuestionTitle.foreach(__v => __obj.updateDynamic("QuestionTitle")(__v.asInstanceOf[js.Any]))
@@ -849,11 +1289,45 @@ package object wellarchitected {
     }
   }
 
+  /** A lens return object.
+    */
+  @js.native
+  trait Lens extends js.Object {
+    var Description: js.UndefOr[LensDescription]
+    var LensArn: js.UndefOr[LensArn]
+    var LensVersion: js.UndefOr[LensVersion]
+    var Name: js.UndefOr[LensName]
+    var Owner: js.UndefOr[LensOwner]
+    var ShareInvitationId: js.UndefOr[ShareInvitationId]
+  }
+
+  object Lens {
+    @inline
+    def apply(
+        Description: js.UndefOr[LensDescription] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
+        LensVersion: js.UndefOr[LensVersion] = js.undefined,
+        Name: js.UndefOr[LensName] = js.undefined,
+        Owner: js.UndefOr[LensOwner] = js.undefined,
+        ShareInvitationId: js.UndefOr[ShareInvitationId] = js.undefined
+    ): Lens = {
+      val __obj = js.Dynamic.literal()
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
+      LensVersion.foreach(__v => __obj.updateDynamic("LensVersion")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      ShareInvitationId.foreach(__v => __obj.updateDynamic("ShareInvitationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Lens]
+    }
+  }
+
   /** A lens review of a question.
     */
   @js.native
   trait LensReview extends js.Object {
     var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
     var LensName: js.UndefOr[LensName]
     var LensStatus: js.UndefOr[LensStatus]
     var LensVersion: js.UndefOr[LensVersion]
@@ -868,6 +1342,7 @@ package object wellarchitected {
     @inline
     def apply(
         LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
         LensName: js.UndefOr[LensName] = js.undefined,
         LensStatus: js.UndefOr[LensStatus] = js.undefined,
         LensVersion: js.UndefOr[LensVersion] = js.undefined,
@@ -879,6 +1354,7 @@ package object wellarchitected {
     ): LensReview = {
       val __obj = js.Dynamic.literal()
       LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
       LensName.foreach(__v => __obj.updateDynamic("LensName")(__v.asInstanceOf[js.Any]))
       LensStatus.foreach(__v => __obj.updateDynamic("LensStatus")(__v.asInstanceOf[js.Any]))
       LensVersion.foreach(__v => __obj.updateDynamic("LensVersion")(__v.asInstanceOf[js.Any]))
@@ -897,17 +1373,20 @@ package object wellarchitected {
   trait LensReviewReport extends js.Object {
     var Base64String: js.UndefOr[Base64String]
     var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
   }
 
   object LensReviewReport {
     @inline
     def apply(
         Base64String: js.UndefOr[Base64String] = js.undefined,
-        LensAlias: js.UndefOr[LensAlias] = js.undefined
+        LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined
     ): LensReviewReport = {
       val __obj = js.Dynamic.literal()
       Base64String.foreach(__v => __obj.updateDynamic("Base64String")(__v.asInstanceOf[js.Any]))
       LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LensReviewReport]
     }
   }
@@ -917,6 +1396,7 @@ package object wellarchitected {
   @js.native
   trait LensReviewSummary extends js.Object {
     var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
     var LensName: js.UndefOr[LensName]
     var LensStatus: js.UndefOr[LensStatus]
     var LensVersion: js.UndefOr[LensVersion]
@@ -928,6 +1408,7 @@ package object wellarchitected {
     @inline
     def apply(
         LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
         LensName: js.UndefOr[LensName] = js.undefined,
         LensStatus: js.UndefOr[LensStatus] = js.undefined,
         LensVersion: js.UndefOr[LensVersion] = js.undefined,
@@ -936,6 +1417,7 @@ package object wellarchitected {
     ): LensReviewSummary = {
       val __obj = js.Dynamic.literal()
       LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
       LensName.foreach(__v => __obj.updateDynamic("LensName")(__v.asInstanceOf[js.Any]))
       LensStatus.foreach(__v => __obj.updateDynamic("LensStatus")(__v.asInstanceOf[js.Any]))
       LensVersion.foreach(__v => __obj.updateDynamic("LensVersion")(__v.asInstanceOf[js.Any]))
@@ -945,29 +1427,71 @@ package object wellarchitected {
     }
   }
 
+  /** A lens share summary return object.
+    */
+  @js.native
+  trait LensShareSummary extends js.Object {
+    var ShareId: js.UndefOr[ShareId]
+    var SharedWith: js.UndefOr[SharedWith]
+    var Status: js.UndefOr[ShareStatus]
+  }
+
+  object LensShareSummary {
+    @inline
+    def apply(
+        ShareId: js.UndefOr[ShareId] = js.undefined,
+        SharedWith: js.UndefOr[SharedWith] = js.undefined,
+        Status: js.UndefOr[ShareStatus] = js.undefined
+    ): LensShareSummary = {
+      val __obj = js.Dynamic.literal()
+      ShareId.foreach(__v => __obj.updateDynamic("ShareId")(__v.asInstanceOf[js.Any]))
+      SharedWith.foreach(__v => __obj.updateDynamic("SharedWith")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LensShareSummary]
+    }
+  }
+
   /** A lens summary of a lens.
     */
   @js.native
   trait LensSummary extends js.Object {
+    var CreatedAt: js.UndefOr[Timestamp]
     var Description: js.UndefOr[LensDescription]
     var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
     var LensName: js.UndefOr[LensName]
+    var LensStatus: js.UndefOr[LensStatus]
+    var LensType: js.UndefOr[LensType]
     var LensVersion: js.UndefOr[LensVersion]
+    var Owner: js.UndefOr[AwsAccountId]
+    var UpdatedAt: js.UndefOr[Timestamp]
   }
 
   object LensSummary {
     @inline
     def apply(
+        CreatedAt: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[LensDescription] = js.undefined,
         LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
         LensName: js.UndefOr[LensName] = js.undefined,
-        LensVersion: js.UndefOr[LensVersion] = js.undefined
+        LensStatus: js.UndefOr[LensStatus] = js.undefined,
+        LensType: js.UndefOr[LensType] = js.undefined,
+        LensVersion: js.UndefOr[LensVersion] = js.undefined,
+        Owner: js.UndefOr[AwsAccountId] = js.undefined,
+        UpdatedAt: js.UndefOr[Timestamp] = js.undefined
     ): LensSummary = {
       val __obj = js.Dynamic.literal()
+      CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
       LensName.foreach(__v => __obj.updateDynamic("LensName")(__v.asInstanceOf[js.Any]))
+      LensStatus.foreach(__v => __obj.updateDynamic("LensStatus")(__v.asInstanceOf[js.Any]))
+      LensType.foreach(__v => __obj.updateDynamic("LensType")(__v.asInstanceOf[js.Any]))
       LensVersion.foreach(__v => __obj.updateDynamic("LensVersion")(__v.asInstanceOf[js.Any]))
+      Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      UpdatedAt.foreach(__v => __obj.updateDynamic("UpdatedAt")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LensSummary]
     }
   }
@@ -979,6 +1503,7 @@ package object wellarchitected {
     var CurrentLensVersion: js.UndefOr[LensVersion]
     var LatestLensVersion: js.UndefOr[LensVersion]
     var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
     var WorkloadId: js.UndefOr[WorkloadId]
     var WorkloadName: js.UndefOr[WorkloadName]
   }
@@ -989,6 +1514,7 @@ package object wellarchitected {
         CurrentLensVersion: js.UndefOr[LensVersion] = js.undefined,
         LatestLensVersion: js.UndefOr[LensVersion] = js.undefined,
         LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
         WorkloadId: js.UndefOr[WorkloadId] = js.undefined,
         WorkloadName: js.UndefOr[WorkloadName] = js.undefined
     ): LensUpgradeSummary = {
@@ -996,6 +1522,7 @@ package object wellarchitected {
       CurrentLensVersion.foreach(__v => __obj.updateDynamic("CurrentLensVersion")(__v.asInstanceOf[js.Any]))
       LatestLensVersion.foreach(__v => __obj.updateDynamic("LatestLensVersion")(__v.asInstanceOf[js.Any]))
       LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
       WorkloadId.foreach(__v => __obj.updateDynamic("WorkloadId")(__v.asInstanceOf[js.Any]))
       WorkloadName.foreach(__v => __obj.updateDynamic("WorkloadName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LensUpgradeSummary]
@@ -1043,6 +1570,7 @@ package object wellarchitected {
   trait ListAnswersOutput extends js.Object {
     var AnswerSummaries: js.UndefOr[AnswerSummaries]
     var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
     var MilestoneNumber: js.UndefOr[MilestoneNumber]
     var NextToken: js.UndefOr[NextToken]
     var WorkloadId: js.UndefOr[WorkloadId]
@@ -1053,6 +1581,7 @@ package object wellarchitected {
     def apply(
         AnswerSummaries: js.UndefOr[AnswerSummaries] = js.undefined,
         LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
         MilestoneNumber: js.UndefOr[MilestoneNumber] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WorkloadId: js.UndefOr[WorkloadId] = js.undefined
@@ -1060,6 +1589,7 @@ package object wellarchitected {
       val __obj = js.Dynamic.literal()
       AnswerSummaries.foreach(__v => __obj.updateDynamic("AnswerSummaries")(__v.asInstanceOf[js.Any]))
       LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
       MilestoneNumber.foreach(__v => __obj.updateDynamic("MilestoneNumber")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       WorkloadId.foreach(__v => __obj.updateDynamic("WorkloadId")(__v.asInstanceOf[js.Any]))
@@ -1108,6 +1638,7 @@ package object wellarchitected {
   trait ListLensReviewImprovementsOutput extends js.Object {
     var ImprovementSummaries: js.UndefOr[ImprovementSummaries]
     var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
     var MilestoneNumber: js.UndefOr[MilestoneNumber]
     var NextToken: js.UndefOr[NextToken]
     var WorkloadId: js.UndefOr[WorkloadId]
@@ -1118,6 +1649,7 @@ package object wellarchitected {
     def apply(
         ImprovementSummaries: js.UndefOr[ImprovementSummaries] = js.undefined,
         LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
         MilestoneNumber: js.UndefOr[MilestoneNumber] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
         WorkloadId: js.UndefOr[WorkloadId] = js.undefined
@@ -1125,6 +1657,7 @@ package object wellarchitected {
       val __obj = js.Dynamic.literal()
       ImprovementSummaries.foreach(__v => __obj.updateDynamic("ImprovementSummaries")(__v.asInstanceOf[js.Any]))
       LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
       MilestoneNumber.foreach(__v => __obj.updateDynamic("MilestoneNumber")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       WorkloadId.foreach(__v => __obj.updateDynamic("WorkloadId")(__v.asInstanceOf[js.Any]))
@@ -1188,10 +1721,59 @@ package object wellarchitected {
     }
   }
 
+  @js.native
+  trait ListLensSharesInput extends js.Object {
+    var LensAlias: LensAlias
+    var MaxResults: js.UndefOr[ListWorkloadSharesMaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var SharedWithPrefix: js.UndefOr[SharedWithPrefix]
+  }
+
+  object ListLensSharesInput {
+    @inline
+    def apply(
+        LensAlias: LensAlias,
+        MaxResults: js.UndefOr[ListWorkloadSharesMaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SharedWithPrefix: js.UndefOr[SharedWithPrefix] = js.undefined
+    ): ListLensSharesInput = {
+      val __obj = js.Dynamic.literal(
+        "LensAlias" -> LensAlias.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SharedWithPrefix.foreach(__v => __obj.updateDynamic("SharedWithPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLensSharesInput]
+    }
+  }
+
+  @js.native
+  trait ListLensSharesOutput extends js.Object {
+    var LensShareSummaries: js.UndefOr[LensShareSummaries]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListLensSharesOutput {
+    @inline
+    def apply(
+        LensShareSummaries: js.UndefOr[LensShareSummaries] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLensSharesOutput = {
+      val __obj = js.Dynamic.literal()
+      LensShareSummaries.foreach(__v => __obj.updateDynamic("LensShareSummaries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLensSharesOutput]
+    }
+  }
+
   /** Input to list lenses.
     */
   @js.native
   trait ListLensesInput extends js.Object {
+    var LensName: js.UndefOr[LensName]
+    var LensStatus: js.UndefOr[LensStatusType]
+    var LensType: js.UndefOr[LensType]
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
   }
@@ -1199,10 +1781,16 @@ package object wellarchitected {
   object ListLensesInput {
     @inline
     def apply(
+        LensName: js.UndefOr[LensName] = js.undefined,
+        LensStatus: js.UndefOr[LensStatusType] = js.undefined,
+        LensType: js.UndefOr[LensType] = js.undefined,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): ListLensesInput = {
       val __obj = js.Dynamic.literal()
+      LensName.foreach(__v => __obj.updateDynamic("LensName")(__v.asInstanceOf[js.Any]))
+      LensStatus.foreach(__v => __obj.updateDynamic("LensStatus")(__v.asInstanceOf[js.Any]))
+      LensType.foreach(__v => __obj.updateDynamic("LensType")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListLensesInput]
@@ -1325,21 +1913,27 @@ package object wellarchitected {
     */
   @js.native
   trait ListShareInvitationsInput extends js.Object {
+    var LensNamePrefix: js.UndefOr[LensNamePrefix]
     var MaxResults: js.UndefOr[ListShareInvitationsMaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var ShareResourceType: js.UndefOr[ShareResourceType]
     var WorkloadNamePrefix: js.UndefOr[WorkloadNamePrefix]
   }
 
   object ListShareInvitationsInput {
     @inline
     def apply(
+        LensNamePrefix: js.UndefOr[LensNamePrefix] = js.undefined,
         MaxResults: js.UndefOr[ListShareInvitationsMaxResults] = js.undefined,
         NextToken: js.UndefOr[NextToken] = js.undefined,
+        ShareResourceType: js.UndefOr[ShareResourceType] = js.undefined,
         WorkloadNamePrefix: js.UndefOr[WorkloadNamePrefix] = js.undefined
     ): ListShareInvitationsInput = {
       val __obj = js.Dynamic.literal()
+      LensNamePrefix.foreach(__v => __obj.updateDynamic("LensNamePrefix")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ShareResourceType.foreach(__v => __obj.updateDynamic("ShareResourceType")(__v.asInstanceOf[js.Any]))
       WorkloadNamePrefix.foreach(__v => __obj.updateDynamic("WorkloadNamePrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListShareInvitationsInput]
     }
@@ -1578,6 +2172,7 @@ package object wellarchitected {
   trait PillarDifference extends js.Object {
     var DifferenceStatus: js.UndefOr[DifferenceStatus]
     var PillarId: js.UndefOr[PillarId]
+    var PillarName: js.UndefOr[PillarName]
     var QuestionDifferences: js.UndefOr[QuestionDifferences]
   }
 
@@ -1586,11 +2181,13 @@ package object wellarchitected {
     def apply(
         DifferenceStatus: js.UndefOr[DifferenceStatus] = js.undefined,
         PillarId: js.UndefOr[PillarId] = js.undefined,
+        PillarName: js.UndefOr[PillarName] = js.undefined,
         QuestionDifferences: js.UndefOr[QuestionDifferences] = js.undefined
     ): PillarDifference = {
       val __obj = js.Dynamic.literal()
       DifferenceStatus.foreach(__v => __obj.updateDynamic("DifferenceStatus")(__v.asInstanceOf[js.Any]))
       PillarId.foreach(__v => __obj.updateDynamic("PillarId")(__v.asInstanceOf[js.Any]))
+      PillarName.foreach(__v => __obj.updateDynamic("PillarName")(__v.asInstanceOf[js.Any]))
       QuestionDifferences.foreach(__v => __obj.updateDynamic("QuestionDifferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PillarDifference]
     }
@@ -1651,18 +2248,27 @@ package object wellarchitected {
     */
   @js.native
   trait ShareInvitation extends js.Object {
+    var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
     var ShareInvitationId: js.UndefOr[ShareInvitationId]
+    var ShareResourceType: js.UndefOr[ShareResourceType]
     var WorkloadId: js.UndefOr[WorkloadId]
   }
 
   object ShareInvitation {
     @inline
     def apply(
+        LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
         ShareInvitationId: js.UndefOr[ShareInvitationId] = js.undefined,
+        ShareResourceType: js.UndefOr[ShareResourceType] = js.undefined,
         WorkloadId: js.UndefOr[WorkloadId] = js.undefined
     ): ShareInvitation = {
       val __obj = js.Dynamic.literal()
+      LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
       ShareInvitationId.foreach(__v => __obj.updateDynamic("ShareInvitationId")(__v.asInstanceOf[js.Any]))
+      ShareResourceType.foreach(__v => __obj.updateDynamic("ShareResourceType")(__v.asInstanceOf[js.Any]))
       WorkloadId.foreach(__v => __obj.updateDynamic("WorkloadId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ShareInvitation]
     }
@@ -1672,8 +2278,11 @@ package object wellarchitected {
     */
   @js.native
   trait ShareInvitationSummary extends js.Object {
+    var LensArn: js.UndefOr[LensArn]
+    var LensName: js.UndefOr[LensName]
     var PermissionType: js.UndefOr[PermissionType]
     var ShareInvitationId: js.UndefOr[ShareInvitationId]
+    var ShareResourceType: js.UndefOr[ShareResourceType]
     var SharedBy: js.UndefOr[AwsAccountId]
     var SharedWith: js.UndefOr[SharedWith]
     var WorkloadId: js.UndefOr[WorkloadId]
@@ -1683,16 +2292,22 @@ package object wellarchitected {
   object ShareInvitationSummary {
     @inline
     def apply(
+        LensArn: js.UndefOr[LensArn] = js.undefined,
+        LensName: js.UndefOr[LensName] = js.undefined,
         PermissionType: js.UndefOr[PermissionType] = js.undefined,
         ShareInvitationId: js.UndefOr[ShareInvitationId] = js.undefined,
+        ShareResourceType: js.UndefOr[ShareResourceType] = js.undefined,
         SharedBy: js.UndefOr[AwsAccountId] = js.undefined,
         SharedWith: js.UndefOr[SharedWith] = js.undefined,
         WorkloadId: js.UndefOr[WorkloadId] = js.undefined,
         WorkloadName: js.UndefOr[WorkloadName] = js.undefined
     ): ShareInvitationSummary = {
       val __obj = js.Dynamic.literal()
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
+      LensName.foreach(__v => __obj.updateDynamic("LensName")(__v.asInstanceOf[js.Any]))
       PermissionType.foreach(__v => __obj.updateDynamic("PermissionType")(__v.asInstanceOf[js.Any]))
       ShareInvitationId.foreach(__v => __obj.updateDynamic("ShareInvitationId")(__v.asInstanceOf[js.Any]))
+      ShareResourceType.foreach(__v => __obj.updateDynamic("ShareResourceType")(__v.asInstanceOf[js.Any]))
       SharedBy.foreach(__v => __obj.updateDynamic("SharedBy")(__v.asInstanceOf[js.Any]))
       SharedWith.foreach(__v => __obj.updateDynamic("SharedWith")(__v.asInstanceOf[js.Any]))
       WorkloadId.foreach(__v => __obj.updateDynamic("WorkloadId")(__v.asInstanceOf[js.Any]))
@@ -1770,8 +2385,10 @@ package object wellarchitected {
     var LensAlias: LensAlias
     var QuestionId: QuestionId
     var WorkloadId: WorkloadId
+    var ChoiceUpdates: js.UndefOr[ChoiceUpdates]
     var IsApplicable: js.UndefOr[IsApplicable]
     var Notes: js.UndefOr[Notes]
+    var Reason: js.UndefOr[AnswerReason]
     var SelectedChoices: js.UndefOr[SelectedChoices]
   }
 
@@ -1781,8 +2398,10 @@ package object wellarchitected {
         LensAlias: LensAlias,
         QuestionId: QuestionId,
         WorkloadId: WorkloadId,
+        ChoiceUpdates: js.UndefOr[ChoiceUpdates] = js.undefined,
         IsApplicable: js.UndefOr[IsApplicable] = js.undefined,
         Notes: js.UndefOr[Notes] = js.undefined,
+        Reason: js.UndefOr[AnswerReason] = js.undefined,
         SelectedChoices: js.UndefOr[SelectedChoices] = js.undefined
     ): UpdateAnswerInput = {
       val __obj = js.Dynamic.literal(
@@ -1791,8 +2410,10 @@ package object wellarchitected {
         "WorkloadId" -> WorkloadId.asInstanceOf[js.Any]
       )
 
+      ChoiceUpdates.foreach(__v => __obj.updateDynamic("ChoiceUpdates")(__v.asInstanceOf[js.Any]))
       IsApplicable.foreach(__v => __obj.updateDynamic("IsApplicable")(__v.asInstanceOf[js.Any]))
       Notes.foreach(__v => __obj.updateDynamic("Notes")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       SelectedChoices.foreach(__v => __obj.updateDynamic("SelectedChoices")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAnswerInput]
     }
@@ -1804,6 +2425,7 @@ package object wellarchitected {
   trait UpdateAnswerOutput extends js.Object {
     var Answer: js.UndefOr[Answer]
     var LensAlias: js.UndefOr[LensAlias]
+    var LensArn: js.UndefOr[LensArn]
     var WorkloadId: js.UndefOr[WorkloadId]
   }
 
@@ -1812,11 +2434,13 @@ package object wellarchitected {
     def apply(
         Answer: js.UndefOr[Answer] = js.undefined,
         LensAlias: js.UndefOr[LensAlias] = js.undefined,
+        LensArn: js.UndefOr[LensArn] = js.undefined,
         WorkloadId: js.UndefOr[WorkloadId] = js.undefined
     ): UpdateAnswerOutput = {
       val __obj = js.Dynamic.literal()
       Answer.foreach(__v => __obj.updateDynamic("Answer")(__v.asInstanceOf[js.Any]))
       LensAlias.foreach(__v => __obj.updateDynamic("LensAlias")(__v.asInstanceOf[js.Any]))
+      LensArn.foreach(__v => __obj.updateDynamic("LensArn")(__v.asInstanceOf[js.Any]))
       WorkloadId.foreach(__v => __obj.updateDynamic("WorkloadId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAnswerOutput]
     }

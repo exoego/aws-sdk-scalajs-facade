@@ -2,6 +2,73 @@ package facade.amazonaws.services.autoscaling
 
 import scalajs.js
 
+type AcceleratorManufacturer = "nvidia" | "amd" | "amazon-web-services" | "xilinx"
+object AcceleratorManufacturer {
+  inline val nvidia: "nvidia" = "nvidia"
+  inline val amd: "amd" = "amd"
+  inline val `amazon-web-services`: "amazon-web-services" = "amazon-web-services"
+  inline val xilinx: "xilinx" = "xilinx"
+
+  inline def values: js.Array[AcceleratorManufacturer] = js.Array(nvidia, amd, `amazon-web-services`, xilinx)
+}
+
+type AcceleratorName = "a100" | "v100" | "k80" | "t4" | "m60" | "radeon-pro-v520" | "vu9p"
+object AcceleratorName {
+  inline val a100: "a100" = "a100"
+  inline val v100: "v100" = "v100"
+  inline val k80: "k80" = "k80"
+  inline val t4: "t4" = "t4"
+  inline val m60: "m60" = "m60"
+  inline val `radeon-pro-v520`: "radeon-pro-v520" = "radeon-pro-v520"
+  inline val vu9p: "vu9p" = "vu9p"
+
+  inline def values: js.Array[AcceleratorName] = js.Array(a100, v100, k80, t4, m60, `radeon-pro-v520`, vu9p)
+}
+
+type AcceleratorType = "gpu" | "fpga" | "inference"
+object AcceleratorType {
+  inline val gpu: "gpu" = "gpu"
+  inline val fpga: "fpga" = "fpga"
+  inline val inference: "inference" = "inference"
+
+  inline def values: js.Array[AcceleratorType] = js.Array(gpu, fpga, inference)
+}
+
+type BareMetal = "included" | "excluded" | "required"
+object BareMetal {
+  inline val included: "included" = "included"
+  inline val excluded: "excluded" = "excluded"
+  inline val required: "required" = "required"
+
+  inline def values: js.Array[BareMetal] = js.Array(included, excluded, required)
+}
+
+type BurstablePerformance = "included" | "excluded" | "required"
+object BurstablePerformance {
+  inline val included: "included" = "included"
+  inline val excluded: "excluded" = "excluded"
+  inline val required: "required" = "required"
+
+  inline def values: js.Array[BurstablePerformance] = js.Array(included, excluded, required)
+}
+
+type CpuManufacturer = "intel" | "amd" | "amazon-web-services"
+object CpuManufacturer {
+  inline val intel: "intel" = "intel"
+  inline val amd: "amd" = "amd"
+  inline val `amazon-web-services`: "amazon-web-services" = "amazon-web-services"
+
+  inline def values: js.Array[CpuManufacturer] = js.Array(intel, amd, `amazon-web-services`)
+}
+
+type InstanceGeneration = "current" | "previous"
+object InstanceGeneration {
+  inline val current: "current" = "current"
+  inline val previous: "previous" = "previous"
+
+  inline def values: js.Array[InstanceGeneration] = js.Array(current, previous)
+}
+
 type InstanceMetadataEndpointState = "disabled" | "enabled"
 object InstanceMetadataEndpointState {
   inline val disabled: "disabled" = "disabled"
@@ -81,6 +148,23 @@ object LifecycleState {
   )
 }
 
+type LocalStorage = "included" | "excluded" | "required"
+object LocalStorage {
+  inline val included: "included" = "included"
+  inline val excluded: "excluded" = "excluded"
+  inline val required: "required" = "required"
+
+  inline def values: js.Array[LocalStorage] = js.Array(included, excluded, required)
+}
+
+type LocalStorageType = "hdd" | "ssd"
+object LocalStorageType {
+  inline val hdd: "hdd" = "hdd"
+  inline val ssd: "ssd" = "ssd"
+
+  inline def values: js.Array[LocalStorageType] = js.Array(hdd, ssd)
+}
+
 type MetricStatistic = "Average" | "Minimum" | "Maximum" | "SampleCount" | "Sum"
 object MetricStatistic {
   inline val Average: "Average" = "Average"
@@ -100,6 +184,52 @@ object MetricType {
   inline val ALBRequestCountPerTarget: "ALBRequestCountPerTarget" = "ALBRequestCountPerTarget"
 
   inline def values: js.Array[MetricType] = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
+}
+
+type PredefinedLoadMetricType = "ASGTotalCPUUtilization" | "ASGTotalNetworkIn" | "ASGTotalNetworkOut" | "ALBTargetGroupRequestCount"
+object PredefinedLoadMetricType {
+  inline val ASGTotalCPUUtilization: "ASGTotalCPUUtilization" = "ASGTotalCPUUtilization"
+  inline val ASGTotalNetworkIn: "ASGTotalNetworkIn" = "ASGTotalNetworkIn"
+  inline val ASGTotalNetworkOut: "ASGTotalNetworkOut" = "ASGTotalNetworkOut"
+  inline val ALBTargetGroupRequestCount: "ALBTargetGroupRequestCount" = "ALBTargetGroupRequestCount"
+
+  inline def values: js.Array[PredefinedLoadMetricType] = js.Array(ASGTotalCPUUtilization, ASGTotalNetworkIn, ASGTotalNetworkOut, ALBTargetGroupRequestCount)
+}
+
+type PredefinedMetricPairType = "ASGCPUUtilization" | "ASGNetworkIn" | "ASGNetworkOut" | "ALBRequestCount"
+object PredefinedMetricPairType {
+  inline val ASGCPUUtilization: "ASGCPUUtilization" = "ASGCPUUtilization"
+  inline val ASGNetworkIn: "ASGNetworkIn" = "ASGNetworkIn"
+  inline val ASGNetworkOut: "ASGNetworkOut" = "ASGNetworkOut"
+  inline val ALBRequestCount: "ALBRequestCount" = "ALBRequestCount"
+
+  inline def values: js.Array[PredefinedMetricPairType] = js.Array(ASGCPUUtilization, ASGNetworkIn, ASGNetworkOut, ALBRequestCount)
+}
+
+type PredefinedScalingMetricType = "ASGAverageCPUUtilization" | "ASGAverageNetworkIn" | "ASGAverageNetworkOut" | "ALBRequestCountPerTarget"
+object PredefinedScalingMetricType {
+  inline val ASGAverageCPUUtilization: "ASGAverageCPUUtilization" = "ASGAverageCPUUtilization"
+  inline val ASGAverageNetworkIn: "ASGAverageNetworkIn" = "ASGAverageNetworkIn"
+  inline val ASGAverageNetworkOut: "ASGAverageNetworkOut" = "ASGAverageNetworkOut"
+  inline val ALBRequestCountPerTarget: "ALBRequestCountPerTarget" = "ALBRequestCountPerTarget"
+
+  inline def values: js.Array[PredefinedScalingMetricType] = js.Array(ASGAverageCPUUtilization, ASGAverageNetworkIn, ASGAverageNetworkOut, ALBRequestCountPerTarget)
+}
+
+type PredictiveScalingMaxCapacityBreachBehavior = "HonorMaxCapacity" | "IncreaseMaxCapacity"
+object PredictiveScalingMaxCapacityBreachBehavior {
+  inline val HonorMaxCapacity: "HonorMaxCapacity" = "HonorMaxCapacity"
+  inline val IncreaseMaxCapacity: "IncreaseMaxCapacity" = "IncreaseMaxCapacity"
+
+  inline def values: js.Array[PredictiveScalingMaxCapacityBreachBehavior] = js.Array(HonorMaxCapacity, IncreaseMaxCapacity)
+}
+
+type PredictiveScalingMode = "ForecastAndScale" | "ForecastOnly"
+object PredictiveScalingMode {
+  inline val ForecastAndScale: "ForecastAndScale" = "ForecastAndScale"
+  inline val ForecastOnly: "ForecastOnly" = "ForecastOnly"
+
+  inline def values: js.Array[PredictiveScalingMode] = js.Array(ForecastAndScale, ForecastOnly)
 }
 
 type RefreshStrategy = "Rolling"

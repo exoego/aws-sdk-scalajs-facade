@@ -19,14 +19,18 @@ object ComparisonOperator {
   inline def values: js.Array[ComparisonOperator] = js.Array(EQ, NE, LE, LT, GE, GT, CONTAINS, NOT_CONTAINS, BEGINS_WITH, IN, BETWEEN)
 }
 
-type DataLakeResourceType = "CATALOG" | "DATABASE" | "TABLE" | "DATA_LOCATION"
+type DataLakeResourceType = "CATALOG" | "DATABASE" | "TABLE" | "DATA_LOCATION" | "LF_TAG" | "LF_TAG_POLICY" | "LF_TAG_POLICY_DATABASE" | "LF_TAG_POLICY_TABLE"
 object DataLakeResourceType {
   inline val CATALOG: "CATALOG" = "CATALOG"
   inline val DATABASE: "DATABASE" = "DATABASE"
   inline val TABLE: "TABLE" = "TABLE"
   inline val DATA_LOCATION: "DATA_LOCATION" = "DATA_LOCATION"
+  inline val LF_TAG: "LF_TAG" = "LF_TAG"
+  inline val LF_TAG_POLICY: "LF_TAG_POLICY" = "LF_TAG_POLICY"
+  inline val LF_TAG_POLICY_DATABASE: "LF_TAG_POLICY_DATABASE" = "LF_TAG_POLICY_DATABASE"
+  inline val LF_TAG_POLICY_TABLE: "LF_TAG_POLICY_TABLE" = "LF_TAG_POLICY_TABLE"
 
-  inline def values: js.Array[DataLakeResourceType] = js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION)
+  inline def values: js.Array[DataLakeResourceType] = js.Array(CATALOG, DATABASE, TABLE, DATA_LOCATION, LF_TAG, LF_TAG_POLICY, LF_TAG_POLICY_DATABASE, LF_TAG_POLICY_TABLE)
 }
 
 type FieldNameString = "RESOURCE_ARN" | "ROLE_ARN" | "LAST_MODIFIED"
@@ -38,7 +42,16 @@ object FieldNameString {
   inline def values: js.Array[FieldNameString] = js.Array(RESOURCE_ARN, ROLE_ARN, LAST_MODIFIED)
 }
 
-type Permission = "ALL" | "SELECT" | "ALTER" | "DROP" | "DELETE" | "INSERT" | "DESCRIBE" | "CREATE_DATABASE" | "CREATE_TABLE" | "DATA_LOCATION_ACCESS"
+type OptimizerType = "COMPACTION" | "GARBAGE_COLLECTION" | "ALL"
+object OptimizerType {
+  inline val COMPACTION: "COMPACTION" = "COMPACTION"
+  inline val GARBAGE_COLLECTION: "GARBAGE_COLLECTION" = "GARBAGE_COLLECTION"
+  inline val ALL: "ALL" = "ALL"
+
+  inline def values: js.Array[OptimizerType] = js.Array(COMPACTION, GARBAGE_COLLECTION, ALL)
+}
+
+type Permission = "ALL" | "SELECT" | "ALTER" | "DROP" | "DELETE" | "INSERT" | "DESCRIBE" | "CREATE_DATABASE" | "CREATE_TABLE" | "DATA_LOCATION_ACCESS" | "CREATE_TAG" | "ALTER_TAG" | "DELETE_TAG" | "DESCRIBE_TAG" | "ASSOCIATE_TAG"
 object Permission {
   inline val ALL: "ALL" = "ALL"
   inline val SELECT: "SELECT" = "SELECT"
@@ -50,6 +63,83 @@ object Permission {
   inline val CREATE_DATABASE: "CREATE_DATABASE" = "CREATE_DATABASE"
   inline val CREATE_TABLE: "CREATE_TABLE" = "CREATE_TABLE"
   inline val DATA_LOCATION_ACCESS: "DATA_LOCATION_ACCESS" = "DATA_LOCATION_ACCESS"
+  inline val CREATE_TAG: "CREATE_TAG" = "CREATE_TAG"
+  inline val ALTER_TAG: "ALTER_TAG" = "ALTER_TAG"
+  inline val DELETE_TAG: "DELETE_TAG" = "DELETE_TAG"
+  inline val DESCRIBE_TAG: "DESCRIBE_TAG" = "DESCRIBE_TAG"
+  inline val ASSOCIATE_TAG: "ASSOCIATE_TAG" = "ASSOCIATE_TAG"
 
-  inline def values: js.Array[Permission] = js.Array(ALL, SELECT, ALTER, DROP, DELETE, INSERT, DESCRIBE, CREATE_DATABASE, CREATE_TABLE, DATA_LOCATION_ACCESS)
+  inline def values: js.Array[Permission] = js.Array(
+    ALL,
+    SELECT,
+    ALTER,
+    DROP,
+    DELETE,
+    INSERT,
+    DESCRIBE,
+    CREATE_DATABASE,
+    CREATE_TABLE,
+    DATA_LOCATION_ACCESS,
+    CREATE_TAG,
+    ALTER_TAG,
+    DELETE_TAG,
+    DESCRIBE_TAG,
+    ASSOCIATE_TAG
+  )
+}
+
+type QueryStateString = "PENDING" | "WORKUNITS_AVAILABLE" | "ERROR" | "FINISHED" | "EXPIRED"
+object QueryStateString {
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val WORKUNITS_AVAILABLE: "WORKUNITS_AVAILABLE" = "WORKUNITS_AVAILABLE"
+  inline val ERROR: "ERROR" = "ERROR"
+  inline val FINISHED: "FINISHED" = "FINISHED"
+  inline val EXPIRED: "EXPIRED" = "EXPIRED"
+
+  inline def values: js.Array[QueryStateString] = js.Array(PENDING, WORKUNITS_AVAILABLE, ERROR, FINISHED, EXPIRED)
+}
+
+type ResourceShareType = "FOREIGN" | "ALL"
+object ResourceShareType {
+  inline val FOREIGN: "FOREIGN" = "FOREIGN"
+  inline val ALL: "ALL" = "ALL"
+
+  inline def values: js.Array[ResourceShareType] = js.Array(FOREIGN, ALL)
+}
+
+type ResourceType = "DATABASE" | "TABLE"
+object ResourceType {
+  inline val DATABASE: "DATABASE" = "DATABASE"
+  inline val TABLE: "TABLE" = "TABLE"
+
+  inline def values: js.Array[ResourceType] = js.Array(DATABASE, TABLE)
+}
+
+type TransactionStatus = "ACTIVE" | "COMMITTED" | "ABORTED" | "COMMIT_IN_PROGRESS"
+object TransactionStatus {
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val COMMITTED: "COMMITTED" = "COMMITTED"
+  inline val ABORTED: "ABORTED" = "ABORTED"
+  inline val COMMIT_IN_PROGRESS: "COMMIT_IN_PROGRESS" = "COMMIT_IN_PROGRESS"
+
+  inline def values: js.Array[TransactionStatus] = js.Array(ACTIVE, COMMITTED, ABORTED, COMMIT_IN_PROGRESS)
+}
+
+type TransactionStatusFilter = "ALL" | "COMPLETED" | "ACTIVE" | "COMMITTED" | "ABORTED"
+object TransactionStatusFilter {
+  inline val ALL: "ALL" = "ALL"
+  inline val COMPLETED: "COMPLETED" = "COMPLETED"
+  inline val ACTIVE: "ACTIVE" = "ACTIVE"
+  inline val COMMITTED: "COMMITTED" = "COMMITTED"
+  inline val ABORTED: "ABORTED" = "ABORTED"
+
+  inline def values: js.Array[TransactionStatusFilter] = js.Array(ALL, COMPLETED, ACTIVE, COMMITTED, ABORTED)
+}
+
+type TransactionType = "READ_AND_WRITE" | "READ_ONLY"
+object TransactionType {
+  inline val READ_AND_WRITE: "READ_AND_WRITE" = "READ_AND_WRITE"
+  inline val READ_ONLY: "READ_ONLY" = "READ_ONLY"
+
+  inline def values: js.Array[TransactionType] = js.Array(READ_AND_WRITE, READ_ONLY)
 }

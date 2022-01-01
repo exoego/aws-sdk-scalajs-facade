@@ -143,6 +143,15 @@ object LoaContentType {
   inline def values: js.Array[LoaContentType] = js.Array(`application/pdf`)
 }
 
+type NniPartnerType = "v1" | "v2" | "nonPartner"
+object NniPartnerType {
+  inline val v1: "v1" = "v1"
+  inline val v2: "v2" = "v2"
+  inline val nonPartner: "nonPartner" = "nonPartner"
+
+  inline def values: js.Array[NniPartnerType] = js.Array(v1, v2, nonPartner)
+}
+
 type VirtualInterfaceState = "confirming" | "verifying" | "pending" | "available" | "down" | "deleting" | "deleted" | "rejected" | "unknown"
 object VirtualInterfaceState {
   inline val confirming: "confirming" = "confirming"

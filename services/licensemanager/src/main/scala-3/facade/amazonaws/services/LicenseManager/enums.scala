@@ -15,11 +15,12 @@ object AllowedOperation {
   inline def values: js.Array[AllowedOperation] = js.Array(CreateGrant, CheckoutLicense, CheckoutBorrowLicense, CheckInLicense, ExtendConsumptionLicense, ListPurchasedLicenses, CreateToken)
 }
 
-type CheckoutType = "PROVISIONAL"
+type CheckoutType = "PROVISIONAL" | "PERPETUAL"
 object CheckoutType {
   inline val PROVISIONAL: "PROVISIONAL" = "PROVISIONAL"
+  inline val PERPETUAL: "PERPETUAL" = "PERPETUAL"
 
-  inline def values: js.Array[CheckoutType] = js.Array(PROVISIONAL)
+  inline def values: js.Array[CheckoutType] = js.Array(PROVISIONAL, PERPETUAL)
 }
 
 type DigitalSignatureMethod = "JWT_PS384"
@@ -151,7 +152,7 @@ object EntitlementUnit {
   )
 }
 
-type GrantStatus = "PENDING_WORKFLOW" | "PENDING_ACCEPT" | "REJECTED" | "ACTIVE" | "FAILED_WORKFLOW" | "DELETED" | "PENDING_DELETE" | "DISABLED"
+type GrantStatus = "PENDING_WORKFLOW" | "PENDING_ACCEPT" | "REJECTED" | "ACTIVE" | "FAILED_WORKFLOW" | "DELETED" | "PENDING_DELETE" | "DISABLED" | "WORKFLOW_COMPLETED"
 object GrantStatus {
   inline val PENDING_WORKFLOW: "PENDING_WORKFLOW" = "PENDING_WORKFLOW"
   inline val PENDING_ACCEPT: "PENDING_ACCEPT" = "PENDING_ACCEPT"
@@ -161,8 +162,9 @@ object GrantStatus {
   inline val DELETED: "DELETED" = "DELETED"
   inline val PENDING_DELETE: "PENDING_DELETE" = "PENDING_DELETE"
   inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val WORKFLOW_COMPLETED: "WORKFLOW_COMPLETED" = "WORKFLOW_COMPLETED"
 
-  inline def values: js.Array[GrantStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, PENDING_DELETE, DISABLED)
+  inline def values: js.Array[GrantStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, PENDING_DELETE, DISABLED, WORKFLOW_COMPLETED)
 }
 
 type InventoryFilterCondition = "EQUALS" | "NOT_EQUALS" | "BEGINS_WITH" | "CONTAINS"
@@ -181,6 +183,15 @@ object LicenseConfigurationStatus {
   inline val DISABLED: "DISABLED" = "DISABLED"
 
   inline def values: js.Array[LicenseConfigurationStatus] = js.Array(AVAILABLE, DISABLED)
+}
+
+type LicenseConversionTaskStatus = "IN_PROGRESS" | "SUCCEEDED" | "FAILED"
+object LicenseConversionTaskStatus {
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val SUCCEEDED: "SUCCEEDED" = "SUCCEEDED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[LicenseConversionTaskStatus] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
 }
 
 type LicenseCountingType = "vCPU" | "Instance" | "Core" | "Socket"
@@ -214,7 +225,7 @@ object LicenseStatus {
   inline def values: js.Array[LicenseStatus] = js.Array(AVAILABLE, PENDING_AVAILABLE, DEACTIVATED, SUSPENDED, EXPIRED, PENDING_DELETE, DELETED)
 }
 
-type ReceivedStatus = "PENDING_WORKFLOW" | "PENDING_ACCEPT" | "REJECTED" | "ACTIVE" | "FAILED_WORKFLOW" | "DELETED" | "DISABLED"
+type ReceivedStatus = "PENDING_WORKFLOW" | "PENDING_ACCEPT" | "REJECTED" | "ACTIVE" | "FAILED_WORKFLOW" | "DELETED" | "DISABLED" | "WORKFLOW_COMPLETED"
 object ReceivedStatus {
   inline val PENDING_WORKFLOW: "PENDING_WORKFLOW" = "PENDING_WORKFLOW"
   inline val PENDING_ACCEPT: "PENDING_ACCEPT" = "PENDING_ACCEPT"
@@ -223,8 +234,9 @@ object ReceivedStatus {
   inline val FAILED_WORKFLOW: "FAILED_WORKFLOW" = "FAILED_WORKFLOW"
   inline val DELETED: "DELETED" = "DELETED"
   inline val DISABLED: "DISABLED" = "DISABLED"
+  inline val WORKFLOW_COMPLETED: "WORKFLOW_COMPLETED" = "WORKFLOW_COMPLETED"
 
-  inline def values: js.Array[ReceivedStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, DISABLED)
+  inline def values: js.Array[ReceivedStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, DISABLED, WORKFLOW_COMPLETED)
 }
 
 type RenewType = "None" | "Weekly" | "Monthly"
@@ -234,6 +246,23 @@ object RenewType {
   inline val Monthly: "Monthly" = "Monthly"
 
   inline def values: js.Array[RenewType] = js.Array(None, Weekly, Monthly)
+}
+
+type ReportFrequencyType = "DAY" | "WEEK" | "MONTH"
+object ReportFrequencyType {
+  inline val DAY: "DAY" = "DAY"
+  inline val WEEK: "WEEK" = "WEEK"
+  inline val MONTH: "MONTH" = "MONTH"
+
+  inline def values: js.Array[ReportFrequencyType] = js.Array(DAY, WEEK, MONTH)
+}
+
+type ReportType = "LicenseConfigurationSummaryReport" | "LicenseConfigurationUsageReport"
+object ReportType {
+  inline val LicenseConfigurationSummaryReport: "LicenseConfigurationSummaryReport" = "LicenseConfigurationSummaryReport"
+  inline val LicenseConfigurationUsageReport: "LicenseConfigurationUsageReport" = "LicenseConfigurationUsageReport"
+
+  inline def values: js.Array[ReportType] = js.Array(LicenseConfigurationSummaryReport, LicenseConfigurationUsageReport)
 }
 
 type ResourceType = "EC2_INSTANCE" | "EC2_HOST" | "EC2_AMI" | "RDS" | "SYSTEMS_MANAGER_MANAGED_INSTANCE"

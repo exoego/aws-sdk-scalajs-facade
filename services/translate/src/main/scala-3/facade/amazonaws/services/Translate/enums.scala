@@ -2,6 +2,14 @@ package facade.amazonaws.services.translate
 
 import scalajs.js
 
+type Directionality = "UNI" | "MULTI"
+object Directionality {
+  inline val UNI: "UNI" = "UNI"
+  inline val MULTI: "MULTI" = "MULTI"
+
+  inline def values: js.Array[Directionality] = js.Array(UNI, MULTI)
+}
+
 type EncryptionKeyType = "KMS"
 object EncryptionKeyType {
   inline val KMS: "KMS" = "KMS"
@@ -49,10 +57,18 @@ object ParallelDataStatus {
   inline def values: js.Array[ParallelDataStatus] = js.Array(CREATING, UPDATING, ACTIVE, DELETING, FAILED)
 }
 
-type TerminologyDataFormat = "CSV" | "TMX"
+type Profanity = "MASK"
+object Profanity {
+  inline val MASK: "MASK" = "MASK"
+
+  inline def values: js.Array[Profanity] = js.Array(MASK)
+}
+
+type TerminologyDataFormat = "CSV" | "TMX" | "TSV"
 object TerminologyDataFormat {
   inline val CSV: "CSV" = "CSV"
   inline val TMX: "TMX" = "TMX"
+  inline val TSV: "TSV" = "TSV"
 
-  inline def values: js.Array[TerminologyDataFormat] = js.Array(CSV, TMX)
+  inline def values: js.Array[TerminologyDataFormat] = js.Array(CSV, TMX, TSV)
 }

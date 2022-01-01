@@ -12,6 +12,15 @@ object AccessDirection {
 }
 
 @js.native
+sealed trait AccessType extends js.Any
+object AccessType {
+  val `public` = "public".asInstanceOf[AccessType]
+  val `private` = "private".asInstanceOf[AccessType]
+
+  @inline def values: js.Array[AccessType] = js.Array(`public`, `private`)
+}
+
+@js.native
 sealed trait AddOnType extends js.Any
 object AddOnType {
   val AutoSnapshot = "AutoSnapshot".asInstanceOf[AddOnType]
@@ -56,6 +65,15 @@ object BlueprintType {
   val app = "app".asInstanceOf[BlueprintType]
 
   @inline def values: js.Array[BlueprintType] = js.Array(os, app)
+}
+
+@js.native
+sealed trait BucketMetricName extends js.Any
+object BucketMetricName {
+  val BucketSizeBytes = "BucketSizeBytes".asInstanceOf[BucketMetricName]
+  val NumberOfObjects = "NumberOfObjects".asInstanceOf[BucketMetricName]
+
+  @inline def values: js.Array[BucketMetricName] = js.Array(BucketSizeBytes, NumberOfObjects)
 }
 
 @js.native
@@ -759,6 +777,13 @@ object OperationType {
   val CreateContainerServiceRegistryLogin = "CreateContainerServiceRegistryLogin".asInstanceOf[OperationType]
   val RegisterContainerImage = "RegisterContainerImage".asInstanceOf[OperationType]
   val DeleteContainerImage = "DeleteContainerImage".asInstanceOf[OperationType]
+  val CreateBucket = "CreateBucket".asInstanceOf[OperationType]
+  val DeleteBucket = "DeleteBucket".asInstanceOf[OperationType]
+  val CreateBucketAccessKey = "CreateBucketAccessKey".asInstanceOf[OperationType]
+  val DeleteBucketAccessKey = "DeleteBucketAccessKey".asInstanceOf[OperationType]
+  val UpdateBucketBundle = "UpdateBucketBundle".asInstanceOf[OperationType]
+  val UpdateBucket = "UpdateBucket".asInstanceOf[OperationType]
+  val SetResourceAccessForBucket = "SetResourceAccessForBucket".asInstanceOf[OperationType]
 
   @inline def values: js.Array[OperationType] = js.Array(
     DeleteKnownHostKeys,
@@ -832,7 +857,14 @@ object OperationType {
     CreateContainerServiceDeployment,
     CreateContainerServiceRegistryLogin,
     RegisterContainerImage,
-    DeleteContainerImage
+    DeleteContainerImage,
+    CreateBucket,
+    DeleteBucket,
+    CreateBucketAccessKey,
+    DeleteBucketAccessKey,
+    UpdateBucketBundle,
+    UpdateBucket,
+    SetResourceAccessForBucket
   )
 }
 
@@ -901,6 +933,7 @@ object RegionName {
   val `ap-southeast-2` = "ap-southeast-2".asInstanceOf[RegionName]
   val `ap-northeast-1` = "ap-northeast-1".asInstanceOf[RegionName]
   val `ap-northeast-2` = "ap-northeast-2".asInstanceOf[RegionName]
+  val `eu-north-1` = "eu-north-1".asInstanceOf[RegionName]
 
   @inline def values: js.Array[RegionName] = js.Array(
     `us-east-1`,
@@ -916,7 +949,8 @@ object RegionName {
     `ap-southeast-1`,
     `ap-southeast-2`,
     `ap-northeast-1`,
-    `ap-northeast-2`
+    `ap-northeast-2`,
+    `eu-north-1`
   )
 }
 
@@ -963,6 +997,15 @@ object RenewalStatus {
 }
 
 @js.native
+sealed trait ResourceBucketAccess extends js.Any
+object ResourceBucketAccess {
+  val allow = "allow".asInstanceOf[ResourceBucketAccess]
+  val deny = "deny".asInstanceOf[ResourceBucketAccess]
+
+  @inline def values: js.Array[ResourceBucketAccess] = js.Array(allow, deny)
+}
+
+@js.native
 sealed trait ResourceType extends js.Any
 object ResourceType {
   val ContainerService = "ContainerService".asInstanceOf[ResourceType]
@@ -984,6 +1027,7 @@ object ResourceType {
   val ContactMethod = "ContactMethod".asInstanceOf[ResourceType]
   val Distribution = "Distribution".asInstanceOf[ResourceType]
   val Certificate = "Certificate".asInstanceOf[ResourceType]
+  val Bucket = "Bucket".asInstanceOf[ResourceType]
 
   @inline def values: js.Array[ResourceType] = js.Array(
     ContainerService,
@@ -1004,8 +1048,18 @@ object ResourceType {
     Alarm,
     ContactMethod,
     Distribution,
-    Certificate
+    Certificate,
+    Bucket
   )
+}
+
+@js.native
+sealed trait StatusType extends js.Any
+object StatusType {
+  val Active = "Active".asInstanceOf[StatusType]
+  val Inactive = "Inactive".asInstanceOf[StatusType]
+
+  @inline def values: js.Array[StatusType] = js.Array(Active, Inactive)
 }
 
 @js.native

@@ -141,6 +141,7 @@ package object ram {
     var permissionArn: String
     var resourceShareArn: String
     var clientToken: js.UndefOr[String]
+    var permissionVersion: js.UndefOr[Int]
     var replace: js.UndefOr[Boolean]
   }
 
@@ -150,6 +151,7 @@ package object ram {
         permissionArn: String,
         resourceShareArn: String,
         clientToken: js.UndefOr[String] = js.undefined,
+        permissionVersion: js.UndefOr[Int] = js.undefined,
         replace: js.UndefOr[Boolean] = js.undefined
     ): AssociateResourceSharePermissionRequest = {
       val __obj = js.Dynamic.literal(
@@ -158,6 +160,7 @@ package object ram {
       )
 
       clientToken.foreach(__v => __obj.updateDynamic("clientToken")(__v.asInstanceOf[js.Any]))
+      permissionVersion.foreach(__v => __obj.updateDynamic("permissionVersion")(__v.asInstanceOf[js.Any]))
       replace.foreach(__v => __obj.updateDynamic("replace")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateResourceSharePermissionRequest]
     }
@@ -627,6 +630,7 @@ package object ram {
     var maxResults: js.UndefOr[MaxResults]
     var name: js.UndefOr[String]
     var nextToken: js.UndefOr[String]
+    var permissionArn: js.UndefOr[String]
     var resourceShareArns: js.UndefOr[ResourceShareArnList]
     var resourceShareStatus: js.UndefOr[ResourceShareStatus]
     var tagFilters: js.UndefOr[TagFilters]
@@ -639,6 +643,7 @@ package object ram {
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
         nextToken: js.UndefOr[String] = js.undefined,
+        permissionArn: js.UndefOr[String] = js.undefined,
         resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
         resourceShareStatus: js.UndefOr[ResourceShareStatus] = js.undefined,
         tagFilters: js.UndefOr[TagFilters] = js.undefined
@@ -650,6 +655,7 @@ package object ram {
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      permissionArn.foreach(__v => __obj.updateDynamic("permissionArn")(__v.asInstanceOf[js.Any]))
       resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
       resourceShareStatus.foreach(__v => __obj.updateDynamic("resourceShareStatus")(__v.asInstanceOf[js.Any]))
       tagFilters.foreach(__v => __obj.updateDynamic("tagFilters")(__v.asInstanceOf[js.Any]))
@@ -681,6 +687,7 @@ package object ram {
     var resourceShareInvitationArn: String
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[String]
+    var resourceRegionScope: js.UndefOr[ResourceRegionScopeFilter]
   }
 
   object ListPendingInvitationResourcesRequest {
@@ -688,7 +695,8 @@ package object ram {
     def apply(
         resourceShareInvitationArn: String,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        nextToken: js.UndefOr[String] = js.undefined,
+        resourceRegionScope: js.UndefOr[ResourceRegionScopeFilter] = js.undefined
     ): ListPendingInvitationResourcesRequest = {
       val __obj = js.Dynamic.literal(
         "resourceShareInvitationArn" -> resourceShareInvitationArn.asInstanceOf[js.Any]
@@ -696,6 +704,7 @@ package object ram {
 
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceRegionScope.foreach(__v => __obj.updateDynamic("resourceRegionScope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPendingInvitationResourcesRequest]
     }
   }
@@ -862,17 +871,20 @@ package object ram {
   trait ListResourceTypesRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[String]
+    var resourceRegionScope: js.UndefOr[ResourceRegionScopeFilter]
   }
 
   object ListResourceTypesRequest {
     @inline
     def apply(
         maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[String] = js.undefined
+        nextToken: js.UndefOr[String] = js.undefined,
+        resourceRegionScope: js.UndefOr[ResourceRegionScopeFilter] = js.undefined
     ): ListResourceTypesRequest = {
       val __obj = js.Dynamic.literal()
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      resourceRegionScope.foreach(__v => __obj.updateDynamic("resourceRegionScope")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourceTypesRequest]
     }
   }
@@ -903,6 +915,7 @@ package object ram {
     var nextToken: js.UndefOr[String]
     var principal: js.UndefOr[String]
     var resourceArns: js.UndefOr[ResourceArnList]
+    var resourceRegionScope: js.UndefOr[ResourceRegionScopeFilter]
     var resourceShareArns: js.UndefOr[ResourceShareArnList]
     var resourceType: js.UndefOr[String]
   }
@@ -915,6 +928,7 @@ package object ram {
         nextToken: js.UndefOr[String] = js.undefined,
         principal: js.UndefOr[String] = js.undefined,
         resourceArns: js.UndefOr[ResourceArnList] = js.undefined,
+        resourceRegionScope: js.UndefOr[ResourceRegionScopeFilter] = js.undefined,
         resourceShareArns: js.UndefOr[ResourceShareArnList] = js.undefined,
         resourceType: js.UndefOr[String] = js.undefined
     ): ListResourcesRequest = {
@@ -926,6 +940,7 @@ package object ram {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       principal.foreach(__v => __obj.updateDynamic("principal")(__v.asInstanceOf[js.Any]))
       resourceArns.foreach(__v => __obj.updateDynamic("resourceArns")(__v.asInstanceOf[js.Any]))
+      resourceRegionScope.foreach(__v => __obj.updateDynamic("resourceRegionScope")(__v.asInstanceOf[js.Any]))
       resourceShareArns.foreach(__v => __obj.updateDynamic("resourceShareArns")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListResourcesRequest]
@@ -951,7 +966,7 @@ package object ram {
     }
   }
 
-  /** Describes a principal for use with AWS Resource Access Manager.
+  /** Describes a principal for use with Resource Access Manager.
     */
   @js.native
   trait Principal extends js.Object {
@@ -1054,7 +1069,7 @@ package object ram {
     }
   }
 
-  /** Describes a resource associated with a resource share.
+  /** Describes a resource associated with a resource share in RAM.
     */
   @js.native
   trait Resource extends js.Object {
@@ -1062,6 +1077,7 @@ package object ram {
     var creationTime: js.UndefOr[DateTime]
     var lastUpdatedTime: js.UndefOr[DateTime]
     var resourceGroupArn: js.UndefOr[String]
+    var resourceRegionScope: js.UndefOr[ResourceRegionScope]
     var resourceShareArn: js.UndefOr[String]
     var status: js.UndefOr[ResourceStatus]
     var statusMessage: js.UndefOr[String]
@@ -1075,6 +1091,7 @@ package object ram {
         creationTime: js.UndefOr[DateTime] = js.undefined,
         lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
         resourceGroupArn: js.UndefOr[String] = js.undefined,
+        resourceRegionScope: js.UndefOr[ResourceRegionScope] = js.undefined,
         resourceShareArn: js.UndefOr[String] = js.undefined,
         status: js.UndefOr[ResourceStatus] = js.undefined,
         statusMessage: js.UndefOr[String] = js.undefined,
@@ -1085,6 +1102,7 @@ package object ram {
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       resourceGroupArn.foreach(__v => __obj.updateDynamic("resourceGroupArn")(__v.asInstanceOf[js.Any]))
+      resourceRegionScope.foreach(__v => __obj.updateDynamic("resourceRegionScope")(__v.asInstanceOf[js.Any]))
       resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       statusMessage.foreach(__v => __obj.updateDynamic("statusMessage")(__v.asInstanceOf[js.Any]))
@@ -1093,7 +1111,7 @@ package object ram {
     }
   }
 
-  /** Describes a resource share.
+  /** Describes a resource share in RAM.
     */
   @js.native
   trait ResourceShare extends js.Object {
@@ -1138,7 +1156,7 @@ package object ram {
     }
   }
 
-  /** Describes an association with a resource share.
+  /** Describes an association with a resource share and either a principal or a resource.
     */
   @js.native
   trait ResourceShareAssociation extends js.Object {
@@ -1180,12 +1198,13 @@ package object ram {
     }
   }
 
-  /** Describes an invitation to join a resource share.
+  /** Describes an invitation for an Amazon Web Services account to join a resource share.
     */
   @js.native
   trait ResourceShareInvitation extends js.Object {
     var invitationTimestamp: js.UndefOr[DateTime]
     var receiverAccountId: js.UndefOr[String]
+    var receiverArn: js.UndefOr[String]
     var resourceShareArn: js.UndefOr[String]
     var resourceShareAssociations: js.UndefOr[ResourceShareAssociationList]
     var resourceShareInvitationArn: js.UndefOr[String]
@@ -1199,6 +1218,7 @@ package object ram {
     def apply(
         invitationTimestamp: js.UndefOr[DateTime] = js.undefined,
         receiverAccountId: js.UndefOr[String] = js.undefined,
+        receiverArn: js.UndefOr[String] = js.undefined,
         resourceShareArn: js.UndefOr[String] = js.undefined,
         resourceShareAssociations: js.UndefOr[ResourceShareAssociationList] = js.undefined,
         resourceShareInvitationArn: js.UndefOr[String] = js.undefined,
@@ -1209,6 +1229,7 @@ package object ram {
       val __obj = js.Dynamic.literal()
       invitationTimestamp.foreach(__v => __obj.updateDynamic("invitationTimestamp")(__v.asInstanceOf[js.Any]))
       receiverAccountId.foreach(__v => __obj.updateDynamic("receiverAccountId")(__v.asInstanceOf[js.Any]))
+      receiverArn.foreach(__v => __obj.updateDynamic("receiverArn")(__v.asInstanceOf[js.Any]))
       resourceShareArn.foreach(__v => __obj.updateDynamic("resourceShareArn")(__v.asInstanceOf[js.Any]))
       resourceShareAssociations.foreach(__v => __obj.updateDynamic("resourceShareAssociations")(__v.asInstanceOf[js.Any]))
       resourceShareInvitationArn.foreach(__v => __obj.updateDynamic("resourceShareInvitationArn")(__v.asInstanceOf[js.Any]))
@@ -1219,13 +1240,14 @@ package object ram {
     }
   }
 
-  /** Information about an AWS RAM permission.
+  /** Information about an RAM permission.
     */
   @js.native
   trait ResourceSharePermissionDetail extends js.Object {
     var arn: js.UndefOr[String]
     var creationTime: js.UndefOr[DateTime]
     var defaultVersion: js.UndefOr[Boolean]
+    var isResourceTypeDefault: js.UndefOr[Boolean]
     var lastUpdatedTime: js.UndefOr[DateTime]
     var name: js.UndefOr[String]
     var permission: js.UndefOr[String]
@@ -1239,6 +1261,7 @@ package object ram {
         arn: js.UndefOr[String] = js.undefined,
         creationTime: js.UndefOr[DateTime] = js.undefined,
         defaultVersion: js.UndefOr[Boolean] = js.undefined,
+        isResourceTypeDefault: js.UndefOr[Boolean] = js.undefined,
         lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
         permission: js.UndefOr[String] = js.undefined,
@@ -1249,6 +1272,7 @@ package object ram {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       defaultVersion.foreach(__v => __obj.updateDynamic("defaultVersion")(__v.asInstanceOf[js.Any]))
+      isResourceTypeDefault.foreach(__v => __obj.updateDynamic("isResourceTypeDefault")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       permission.foreach(__v => __obj.updateDynamic("permission")(__v.asInstanceOf[js.Any]))
@@ -1258,13 +1282,14 @@ package object ram {
     }
   }
 
-  /** Information about a permission that is associated with a resource share.
+  /** Information about an RAM permission that is associated with a resource share and any of its resources of a specified type.
     */
   @js.native
   trait ResourceSharePermissionSummary extends js.Object {
     var arn: js.UndefOr[String]
     var creationTime: js.UndefOr[DateTime]
     var defaultVersion: js.UndefOr[Boolean]
+    var isResourceTypeDefault: js.UndefOr[Boolean]
     var lastUpdatedTime: js.UndefOr[DateTime]
     var name: js.UndefOr[String]
     var resourceType: js.UndefOr[String]
@@ -1278,6 +1303,7 @@ package object ram {
         arn: js.UndefOr[String] = js.undefined,
         creationTime: js.UndefOr[DateTime] = js.undefined,
         defaultVersion: js.UndefOr[Boolean] = js.undefined,
+        isResourceTypeDefault: js.UndefOr[Boolean] = js.undefined,
         lastUpdatedTime: js.UndefOr[DateTime] = js.undefined,
         name: js.UndefOr[String] = js.undefined,
         resourceType: js.UndefOr[String] = js.undefined,
@@ -1288,6 +1314,7 @@ package object ram {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       creationTime.foreach(__v => __obj.updateDynamic("creationTime")(__v.asInstanceOf[js.Any]))
       defaultVersion.foreach(__v => __obj.updateDynamic("defaultVersion")(__v.asInstanceOf[js.Any]))
+      isResourceTypeDefault.foreach(__v => __obj.updateDynamic("isResourceTypeDefault")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
@@ -1297,10 +1324,11 @@ package object ram {
     }
   }
 
-  /** Information about the shareable resource types and the AWS services to which they belong.
+  /** Information about a shareable resource type and the Amazon Web Services service to which resources of that type belong.
     */
   @js.native
   trait ServiceNameAndResourceType extends js.Object {
+    var resourceRegionScope: js.UndefOr[ResourceRegionScope]
     var resourceType: js.UndefOr[String]
     var serviceName: js.UndefOr[String]
   }
@@ -1308,17 +1336,19 @@ package object ram {
   object ServiceNameAndResourceType {
     @inline
     def apply(
+        resourceRegionScope: js.UndefOr[ResourceRegionScope] = js.undefined,
         resourceType: js.UndefOr[String] = js.undefined,
         serviceName: js.UndefOr[String] = js.undefined
     ): ServiceNameAndResourceType = {
       val __obj = js.Dynamic.literal()
+      resourceRegionScope.foreach(__v => __obj.updateDynamic("resourceRegionScope")(__v.asInstanceOf[js.Any]))
       resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
       serviceName.foreach(__v => __obj.updateDynamic("serviceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceNameAndResourceType]
     }
   }
 
-  /** Information about a tag.
+  /** A structure containing a tag. A tag is metadata that you can attach to your resources to help organize and categorize them. You can also use them to help you secure your resources. For more information, see [[https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html|Controlling access to Amazon Web Services resources using tags]]. For more information about tags, see [[https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html|Tagging Amazon Web Services resources]] in the <i>Amazon Web Services General Reference Guide</i>.
     */
   @js.native
   trait Tag extends js.Object {
@@ -1339,7 +1369,7 @@ package object ram {
     }
   }
 
-  /** Used to filter information based on tags.
+  /** A tag key and optional list of possible values that you can use to filter results for tagged resources.
     */
   @js.native
   trait TagFilter extends js.Object {

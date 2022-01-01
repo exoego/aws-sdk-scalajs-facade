@@ -37,18 +37,19 @@ object AnomalyDetectionTaskStatus {
   inline def values: js.Array[AnomalyDetectionTaskStatus] = js.Array(PENDING, IN_PROGRESS, COMPLETED, FAILED, FAILED_TO_SCHEDULE)
 }
 
-type AnomalyDetectorStatus = "ACTIVE" | "ACTIVATING" | "DELETING" | "FAILED" | "INACTIVE" | "BACK_TEST_ACTIVATING" | "BACK_TEST_ACTIVE" | "BACK_TEST_COMPLETE"
+type AnomalyDetectorStatus = "ACTIVE" | "ACTIVATING" | "DELETING" | "FAILED" | "INACTIVE" | "LEARNING" | "BACK_TEST_ACTIVATING" | "BACK_TEST_ACTIVE" | "BACK_TEST_COMPLETE"
 object AnomalyDetectorStatus {
   inline val ACTIVE: "ACTIVE" = "ACTIVE"
   inline val ACTIVATING: "ACTIVATING" = "ACTIVATING"
   inline val DELETING: "DELETING" = "DELETING"
   inline val FAILED: "FAILED" = "FAILED"
   inline val INACTIVE: "INACTIVE" = "INACTIVE"
+  inline val LEARNING: "LEARNING" = "LEARNING"
   inline val BACK_TEST_ACTIVATING: "BACK_TEST_ACTIVATING" = "BACK_TEST_ACTIVATING"
   inline val BACK_TEST_ACTIVE: "BACK_TEST_ACTIVE" = "BACK_TEST_ACTIVE"
   inline val BACK_TEST_COMPLETE: "BACK_TEST_COMPLETE" = "BACK_TEST_COMPLETE"
 
-  inline def values: js.Array[AnomalyDetectorStatus] = js.Array(ACTIVE, ACTIVATING, DELETING, FAILED, INACTIVE, BACK_TEST_ACTIVATING, BACK_TEST_ACTIVE, BACK_TEST_COMPLETE)
+  inline def values: js.Array[AnomalyDetectorStatus] = js.Array(ACTIVE, ACTIVATING, DELETING, FAILED, INACTIVE, LEARNING, BACK_TEST_ACTIVATING, BACK_TEST_ACTIVE, BACK_TEST_COMPLETE)
 }
 
 type CSVFileCompression = "NONE" | "GZIP"
@@ -75,4 +76,12 @@ object JsonFileCompression {
   inline val GZIP: "GZIP" = "GZIP"
 
   inline def values: js.Array[JsonFileCompression] = js.Array(NONE, GZIP)
+}
+
+type RelationshipType = "CAUSE_OF_INPUT_ANOMALY_GROUP" | "EFFECT_OF_INPUT_ANOMALY_GROUP"
+object RelationshipType {
+  inline val CAUSE_OF_INPUT_ANOMALY_GROUP: "CAUSE_OF_INPUT_ANOMALY_GROUP" = "CAUSE_OF_INPUT_ANOMALY_GROUP"
+  inline val EFFECT_OF_INPUT_ANOMALY_GROUP: "EFFECT_OF_INPUT_ANOMALY_GROUP" = "EFFECT_OF_INPUT_ANOMALY_GROUP"
+
+  inline def values: js.Array[RelationshipType] = js.Array(CAUSE_OF_INPUT_ANOMALY_GROUP, EFFECT_OF_INPUT_ANOMALY_GROUP)
 }

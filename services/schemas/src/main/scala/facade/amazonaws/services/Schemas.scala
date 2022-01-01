@@ -11,6 +11,7 @@ package object schemas {
   type Body = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type GetDiscoveredSchemaVersionItemInput = String
   type Tags = js.Dictionary[__string]
+  type __boolean = Boolean
   type __integer = Int
   type __listOfDiscovererSummary = js.Array[DiscovererSummary]
   type __listOfGetDiscoveredSchemaVersionItemInput = js.Array[GetDiscoveredSchemaVersionItemInput]
@@ -111,6 +112,7 @@ package object schemas {
   @js.native
   trait CreateDiscovererRequest extends js.Object {
     var SourceArn: __stringMin20Max1600
+    var CrossAccount: js.UndefOr[__boolean]
     var Description: js.UndefOr[__stringMin0Max256]
     var Tags: js.UndefOr[Tags]
   }
@@ -119,6 +121,7 @@ package object schemas {
     @inline
     def apply(
         SourceArn: __stringMin20Max1600,
+        CrossAccount: js.UndefOr[__boolean] = js.undefined,
         Description: js.UndefOr[__stringMin0Max256] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDiscovererRequest = {
@@ -126,6 +129,7 @@ package object schemas {
         "SourceArn" -> SourceArn.asInstanceOf[js.Any]
       )
 
+      CrossAccount.foreach(__v => __obj.updateDynamic("CrossAccount")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDiscovererRequest]
@@ -134,6 +138,7 @@ package object schemas {
 
   @js.native
   trait CreateDiscovererResponse extends js.Object {
+    var CrossAccount: js.UndefOr[__boolean]
     var Description: js.UndefOr[__string]
     var DiscovererArn: js.UndefOr[__string]
     var DiscovererId: js.UndefOr[__string]
@@ -145,6 +150,7 @@ package object schemas {
   object CreateDiscovererResponse {
     @inline
     def apply(
+        CrossAccount: js.UndefOr[__boolean] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         DiscovererArn: js.UndefOr[__string] = js.undefined,
         DiscovererId: js.UndefOr[__string] = js.undefined,
@@ -153,6 +159,7 @@ package object schemas {
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateDiscovererResponse = {
       val __obj = js.Dynamic.literal()
+      CrossAccount.foreach(__v => __obj.updateDynamic("CrossAccount")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DiscovererArn.foreach(__v => __obj.updateDynamic("DiscovererArn")(__v.asInstanceOf[js.Any]))
       DiscovererId.foreach(__v => __obj.updateDynamic("DiscovererId")(__v.asInstanceOf[js.Any]))
@@ -446,6 +453,7 @@ package object schemas {
 
   @js.native
   trait DescribeDiscovererResponse extends js.Object {
+    var CrossAccount: js.UndefOr[__boolean]
     var Description: js.UndefOr[__string]
     var DiscovererArn: js.UndefOr[__string]
     var DiscovererId: js.UndefOr[__string]
@@ -457,6 +465,7 @@ package object schemas {
   object DescribeDiscovererResponse {
     @inline
     def apply(
+        CrossAccount: js.UndefOr[__boolean] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         DiscovererArn: js.UndefOr[__string] = js.undefined,
         DiscovererId: js.UndefOr[__string] = js.undefined,
@@ -465,6 +474,7 @@ package object schemas {
         Tags: js.UndefOr[Tags] = js.undefined
     ): DescribeDiscovererResponse = {
       val __obj = js.Dynamic.literal()
+      CrossAccount.foreach(__v => __obj.updateDynamic("CrossAccount")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DiscovererArn.foreach(__v => __obj.updateDynamic("DiscovererArn")(__v.asInstanceOf[js.Any]))
       DiscovererId.foreach(__v => __obj.updateDynamic("DiscovererId")(__v.asInstanceOf[js.Any]))
@@ -583,6 +593,7 @@ package object schemas {
 
   @js.native
   trait DiscovererSummary extends js.Object {
+    var CrossAccount: js.UndefOr[__boolean]
     var DiscovererArn: js.UndefOr[__string]
     var DiscovererId: js.UndefOr[__string]
     var SourceArn: js.UndefOr[__string]
@@ -593,6 +604,7 @@ package object schemas {
   object DiscovererSummary {
     @inline
     def apply(
+        CrossAccount: js.UndefOr[__boolean] = js.undefined,
         DiscovererArn: js.UndefOr[__string] = js.undefined,
         DiscovererId: js.UndefOr[__string] = js.undefined,
         SourceArn: js.UndefOr[__string] = js.undefined,
@@ -600,6 +612,7 @@ package object schemas {
         Tags: js.UndefOr[Tags] = js.undefined
     ): DiscovererSummary = {
       val __obj = js.Dynamic.literal()
+      CrossAccount.foreach(__v => __obj.updateDynamic("CrossAccount")(__v.asInstanceOf[js.Any]))
       DiscovererArn.foreach(__v => __obj.updateDynamic("DiscovererArn")(__v.asInstanceOf[js.Any]))
       DiscovererId.foreach(__v => __obj.updateDynamic("DiscovererId")(__v.asInstanceOf[js.Any]))
       SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
@@ -1374,6 +1387,7 @@ package object schemas {
   @js.native
   trait UpdateDiscovererRequest extends js.Object {
     var DiscovererId: __string
+    var CrossAccount: js.UndefOr[__boolean]
     var Description: js.UndefOr[__stringMin0Max256]
   }
 
@@ -1381,12 +1395,14 @@ package object schemas {
     @inline
     def apply(
         DiscovererId: __string,
+        CrossAccount: js.UndefOr[__boolean] = js.undefined,
         Description: js.UndefOr[__stringMin0Max256] = js.undefined
     ): UpdateDiscovererRequest = {
       val __obj = js.Dynamic.literal(
         "DiscovererId" -> DiscovererId.asInstanceOf[js.Any]
       )
 
+      CrossAccount.foreach(__v => __obj.updateDynamic("CrossAccount")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDiscovererRequest]
     }
@@ -1394,6 +1410,7 @@ package object schemas {
 
   @js.native
   trait UpdateDiscovererResponse extends js.Object {
+    var CrossAccount: js.UndefOr[__boolean]
     var Description: js.UndefOr[__string]
     var DiscovererArn: js.UndefOr[__string]
     var DiscovererId: js.UndefOr[__string]
@@ -1405,6 +1422,7 @@ package object schemas {
   object UpdateDiscovererResponse {
     @inline
     def apply(
+        CrossAccount: js.UndefOr[__boolean] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         DiscovererArn: js.UndefOr[__string] = js.undefined,
         DiscovererId: js.UndefOr[__string] = js.undefined,
@@ -1413,6 +1431,7 @@ package object schemas {
         Tags: js.UndefOr[Tags] = js.undefined
     ): UpdateDiscovererResponse = {
       val __obj = js.Dynamic.literal()
+      CrossAccount.foreach(__v => __obj.updateDynamic("CrossAccount")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DiscovererArn.foreach(__v => __obj.updateDynamic("DiscovererArn")(__v.asInstanceOf[js.Any]))
       DiscovererId.foreach(__v => __obj.updateDynamic("DiscovererId")(__v.asInstanceOf[js.Any]))

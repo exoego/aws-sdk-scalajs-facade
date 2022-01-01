@@ -8,6 +8,9 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object autoscaling {
+  type AcceleratorManufacturers = js.Array[AcceleratorManufacturer]
+  type AcceleratorNames = js.Array[AcceleratorName]
+  type AcceleratorTypes = js.Array[AcceleratorType]
   type Activities = js.Array[Activity]
   type ActivityIds = js.Array[XmlString]
   type AdjustmentTypes = js.Array[AdjustmentType]
@@ -18,6 +21,7 @@ package object autoscaling {
   type AutoScalingGroupMaxSize = Int
   type AutoScalingGroupMinSize = Int
   type AutoScalingGroupNames = js.Array[XmlStringMaxLen255]
+  type AutoScalingGroupPredictedCapacity = Int
   type AutoScalingGroupState = String
   type AutoScalingGroups = js.Array[AutoScalingGroup]
   type AutoScalingInstances = js.Array[AutoScalingInstanceDetails]
@@ -26,6 +30,7 @@ package object autoscaling {
   type BlockDeviceEbsDeleteOnTermination = Boolean
   type BlockDeviceEbsEncrypted = Boolean
   type BlockDeviceEbsIops = Int
+  type BlockDeviceEbsThroughput = Int
   type BlockDeviceEbsVolumeSize = Int
   type BlockDeviceEbsVolumeType = String
   type BlockDeviceMappings = js.Array[BlockDeviceMapping]
@@ -33,11 +38,15 @@ package object autoscaling {
   type CheckpointDelay = Int
   type CheckpointPercentages = js.Array[NonZeroIntPercent]
   type ClassicLinkVPCSecurityGroups = js.Array[XmlStringMaxLen255]
+  type Context = String
   type Cooldown = Int
+  type CpuManufacturers = js.Array[CpuManufacturer]
   type DisableScaleIn = Boolean
   type EbsOptimized = Boolean
   type EnabledMetrics = js.Array[EnabledMetric]
   type EstimatedInstanceWarmup = Int
+  type ExcludedInstance = String
+  type ExcludedInstanceTypes = js.Array[ExcludedInstance]
   type FailedScheduledUpdateGroupActionRequests = js.Array[FailedScheduledUpdateGroupActionRequest]
   type Filters = js.Array[Filter]
   type ForceDelete = Boolean
@@ -46,6 +55,7 @@ package object autoscaling {
   type HeartbeatTimeout = Int
   type HonorCooldown = Boolean
   type IncludeDeletedGroups = Boolean
+  type InstanceGenerations = js.Array[InstanceGeneration]
   type InstanceIds = js.Array[XmlStringMaxLen19]
   type InstanceMetadataHttpPutResponseHopLimit = Int
   type InstanceProtected = Boolean
@@ -66,12 +76,15 @@ package object autoscaling {
   type LoadBalancerNames = js.Array[XmlStringMaxLen255]
   type LoadBalancerStates = js.Array[LoadBalancerState]
   type LoadBalancerTargetGroupStates = js.Array[LoadBalancerTargetGroupState]
+  type LoadForecasts = js.Array[LoadForecast]
+  type LocalStorageTypes = js.Array[LocalStorageType]
   type MaxGroupPreparedCapacity = Int
   type MaxInstanceLifetime = Int
   type MaxNumberOfAutoScalingGroups = Int
   type MaxNumberOfLaunchConfigurations = Int
   type MaxRecords = Int
   type MetricCollectionTypes = js.Array[MetricCollectionType]
+  type MetricDataQueries = js.Array[MetricDataQuery]
   type MetricDimensionName = String
   type MetricDimensionValue = String
   type MetricDimensions = js.Array[MetricDimension]
@@ -90,6 +103,9 @@ package object autoscaling {
   type NonZeroIntPercent = Int
   type NotificationConfigurations = js.Array[NotificationConfiguration]
   type NotificationTargetResourceName = String
+  type NullableBoolean = Boolean
+  type NullablePositiveDouble = Double
+  type NullablePositiveInteger = Int
   type NumberOfAutoScalingGroups = Int
   type NumberOfLaunchConfigurations = Int
   type OnDemandBaseCapacity = Int
@@ -98,6 +114,11 @@ package object autoscaling {
   type PolicyIncrement = Int
   type PolicyNames = js.Array[ResourceName]
   type PolicyTypes = js.Array[XmlStringMaxLen64]
+  type PredictiveScalingForecastTimestamps = js.Array[TimestampType]
+  type PredictiveScalingForecastValues = js.Array[MetricScale]
+  type PredictiveScalingMaxCapacityBuffer = Int
+  type PredictiveScalingMetricSpecifications = js.Array[PredictiveScalingMetricSpecification]
+  type PredictiveScalingSchedulingBufferTime = Int
   type ProcessNames = js.Array[XmlStringMaxLen255]
   type Processes = js.Array[ProcessType]
   type Progress = Int
@@ -105,6 +126,7 @@ package object autoscaling {
   type ProtectedFromScaleIn = Boolean
   type RefreshInstanceWarmup = Int
   type ResourceName = String
+  type ReturnData = Boolean
   type ScalingPolicies = js.Array[ScalingPolicy]
   type ScalingPolicyEnabled = Boolean
   type ScheduledActionNames = js.Array[XmlStringMaxLen255]
@@ -113,6 +135,7 @@ package object autoscaling {
   type SecurityGroups = js.Array[XmlString]
   type ShouldDecrementDesiredCapacity = Boolean
   type ShouldRespectGracePeriod = Boolean
+  type SkipMatching = Boolean
   type SpotInstancePools = Int
   type SpotPrice = String
   type StepAdjustments = js.Array[StepAdjustment]
@@ -136,6 +159,8 @@ package object autoscaling {
   type XmlStringMaxLen32 = String
   type XmlStringMaxLen511 = String
   type XmlStringMaxLen64 = String
+  type XmlStringMetricLabel = String
+  type XmlStringMetricStat = String
   type XmlStringUserData = String
 
   final class AutoScalingOps(private val service: AutoScaling) extends AnyVal {
@@ -186,6 +211,7 @@ package object autoscaling {
     @inline def enterStandbyFuture(params: EnterStandbyQuery): Future[EnterStandbyAnswer] = service.enterStandby(params).promise().toFuture
     @inline def executePolicyFuture(params: ExecutePolicyType): Future[js.Object] = service.executePolicy(params).promise().toFuture
     @inline def exitStandbyFuture(params: ExitStandbyQuery): Future[ExitStandbyAnswer] = service.exitStandby(params).promise().toFuture
+    @inline def getPredictiveScalingForecastFuture(params: GetPredictiveScalingForecastType): Future[GetPredictiveScalingForecastAnswer] = service.getPredictiveScalingForecast(params).promise().toFuture
     @inline def putLifecycleHookFuture(params: PutLifecycleHookType): Future[PutLifecycleHookAnswer] = service.putLifecycleHook(params).promise().toFuture
     @inline def putNotificationConfigurationFuture(params: PutNotificationConfigurationType): Future[js.Object] = service.putNotificationConfiguration(params).promise().toFuture
     @inline def putScalingPolicyFuture(params: PutScalingPolicyType): Future[PolicyARNType] = service.putScalingPolicy(params).promise().toFuture
@@ -254,6 +280,7 @@ package object autoscaling {
     def enterStandby(params: EnterStandbyQuery): Request[EnterStandbyAnswer] = js.native
     def executePolicy(params: ExecutePolicyType): Request[js.Object] = js.native
     def exitStandby(params: ExitStandbyQuery): Request[ExitStandbyAnswer] = js.native
+    def getPredictiveScalingForecast(params: GetPredictiveScalingForecastType): Request[GetPredictiveScalingForecastAnswer] = js.native
     def putLifecycleHook(params: PutLifecycleHookType): Request[PutLifecycleHookAnswer] = js.native
     def putNotificationConfiguration(params: PutNotificationConfigurationType): Request[js.Object] = js.native
     def putScalingPolicy(params: PutScalingPolicyType): Request[PolicyARNType] = js.native
@@ -272,6 +299,48 @@ package object autoscaling {
   object AutoScaling {
     @inline implicit def toOps(service: AutoScaling): AutoScalingOps = {
       new AutoScalingOps(service)
+    }
+  }
+
+  /** Specifies the minimum and maximum for the <code>AcceleratorCount</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    */
+  @js.native
+  trait AcceleratorCountRequest extends js.Object {
+    var Max: js.UndefOr[NullablePositiveInteger]
+    var Min: js.UndefOr[NullablePositiveInteger]
+  }
+
+  object AcceleratorCountRequest {
+    @inline
+    def apply(
+        Max: js.UndefOr[NullablePositiveInteger] = js.undefined,
+        Min: js.UndefOr[NullablePositiveInteger] = js.undefined
+    ): AcceleratorCountRequest = {
+      val __obj = js.Dynamic.literal()
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      Min.foreach(__v => __obj.updateDynamic("Min")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AcceleratorCountRequest]
+    }
+  }
+
+  /** Specifies the minimum and maximum for the <code>AcceleratorTotalMemoryMiB</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    */
+  @js.native
+  trait AcceleratorTotalMemoryMiBRequest extends js.Object {
+    var Max: js.UndefOr[NullablePositiveInteger]
+    var Min: js.UndefOr[NullablePositiveInteger]
+  }
+
+  object AcceleratorTotalMemoryMiBRequest {
+    @inline
+    def apply(
+        Max: js.UndefOr[NullablePositiveInteger] = js.undefined,
+        Min: js.UndefOr[NullablePositiveInteger] = js.undefined
+    ): AcceleratorTotalMemoryMiBRequest = {
+      val __obj = js.Dynamic.literal()
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      Min.foreach(__v => __obj.updateDynamic("Min")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AcceleratorTotalMemoryMiBRequest]
     }
   }
 
@@ -501,6 +570,8 @@ package object autoscaling {
     var MinSize: AutoScalingGroupMinSize
     var AutoScalingGroupARN: js.UndefOr[ResourceName]
     var CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled]
+    var Context: js.UndefOr[Context]
+    var DesiredCapacityType: js.UndefOr[XmlStringMaxLen255]
     var EnabledMetrics: js.UndefOr[EnabledMetrics]
     var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
     var Instances: js.UndefOr[Instances]
@@ -511,6 +582,7 @@ package object autoscaling {
     var MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy]
     var NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected]
     var PlacementGroup: js.UndefOr[XmlStringMaxLen255]
+    var PredictedCapacity: js.UndefOr[AutoScalingGroupPredictedCapacity]
     var ServiceLinkedRoleARN: js.UndefOr[ResourceName]
     var Status: js.UndefOr[XmlStringMaxLen255]
     var SuspendedProcesses: js.UndefOr[SuspendedProcesses]
@@ -535,6 +607,8 @@ package object autoscaling {
         MinSize: AutoScalingGroupMinSize,
         AutoScalingGroupARN: js.UndefOr[ResourceName] = js.undefined,
         CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled] = js.undefined,
+        Context: js.UndefOr[Context] = js.undefined,
+        DesiredCapacityType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         EnabledMetrics: js.UndefOr[EnabledMetrics] = js.undefined,
         HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
         Instances: js.UndefOr[Instances] = js.undefined,
@@ -545,6 +619,7 @@ package object autoscaling {
         MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined,
         NewInstancesProtectedFromScaleIn: js.UndefOr[InstanceProtected] = js.undefined,
         PlacementGroup: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+        PredictedCapacity: js.UndefOr[AutoScalingGroupPredictedCapacity] = js.undefined,
         ServiceLinkedRoleARN: js.UndefOr[ResourceName] = js.undefined,
         Status: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         SuspendedProcesses: js.UndefOr[SuspendedProcesses] = js.undefined,
@@ -568,6 +643,8 @@ package object autoscaling {
 
       AutoScalingGroupARN.foreach(__v => __obj.updateDynamic("AutoScalingGroupARN")(__v.asInstanceOf[js.Any]))
       CapacityRebalance.foreach(__v => __obj.updateDynamic("CapacityRebalance")(__v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.updateDynamic("Context")(__v.asInstanceOf[js.Any]))
+      DesiredCapacityType.foreach(__v => __obj.updateDynamic("DesiredCapacityType")(__v.asInstanceOf[js.Any]))
       EnabledMetrics.foreach(__v => __obj.updateDynamic("EnabledMetrics")(__v.asInstanceOf[js.Any]))
       HealthCheckGracePeriod.foreach(__v => __obj.updateDynamic("HealthCheckGracePeriod")(__v.asInstanceOf[js.Any]))
       Instances.foreach(__v => __obj.updateDynamic("Instances")(__v.asInstanceOf[js.Any]))
@@ -578,6 +655,7 @@ package object autoscaling {
       MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))
       NewInstancesProtectedFromScaleIn.foreach(__v => __obj.updateDynamic("NewInstancesProtectedFromScaleIn")(__v.asInstanceOf[js.Any]))
       PlacementGroup.foreach(__v => __obj.updateDynamic("PlacementGroup")(__v.asInstanceOf[js.Any]))
+      PredictedCapacity.foreach(__v => __obj.updateDynamic("PredictedCapacity")(__v.asInstanceOf[js.Any]))
       ServiceLinkedRoleARN.foreach(__v => __obj.updateDynamic("ServiceLinkedRoleARN")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SuspendedProcesses.foreach(__v => __obj.updateDynamic("SuspendedProcesses")(__v.asInstanceOf[js.Any]))
@@ -594,6 +672,7 @@ package object autoscaling {
   @js.native
   trait AutoScalingGroupNamesType extends js.Object {
     var AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames]
+    var Filters: js.UndefOr[Filters]
     var MaxRecords: js.UndefOr[MaxRecords]
     var NextToken: js.UndefOr[XmlString]
   }
@@ -602,11 +681,13 @@ package object autoscaling {
     @inline
     def apply(
         AutoScalingGroupNames: js.UndefOr[AutoScalingGroupNames] = js.undefined,
+        Filters: js.UndefOr[Filters] = js.undefined,
         MaxRecords: js.UndefOr[MaxRecords] = js.undefined,
         NextToken: js.UndefOr[XmlString] = js.undefined
     ): AutoScalingGroupNamesType = {
       val __obj = js.Dynamic.literal()
       AutoScalingGroupNames.foreach(__v => __obj.updateDynamic("AutoScalingGroupNames")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
       MaxRecords.foreach(__v => __obj.updateDynamic("MaxRecords")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingGroupNamesType]
@@ -697,6 +778,27 @@ package object autoscaling {
       AutoScalingInstances.foreach(__v => __obj.updateDynamic("AutoScalingInstances")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingInstancesType]
+    }
+  }
+
+  /** Specifies the minimum and maximum for the <code>BaselineEbsBandwidthMbps</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    */
+  @js.native
+  trait BaselineEbsBandwidthMbpsRequest extends js.Object {
+    var Max: js.UndefOr[NullablePositiveInteger]
+    var Min: js.UndefOr[NullablePositiveInteger]
+  }
+
+  object BaselineEbsBandwidthMbpsRequest {
+    @inline
+    def apply(
+        Max: js.UndefOr[NullablePositiveInteger] = js.undefined,
+        Min: js.UndefOr[NullablePositiveInteger] = js.undefined
+    ): BaselineEbsBandwidthMbpsRequest = {
+      val __obj = js.Dynamic.literal()
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      Min.foreach(__v => __obj.updateDynamic("Min")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BaselineEbsBandwidthMbpsRequest]
     }
   }
 
@@ -834,6 +936,28 @@ package object autoscaling {
     }
   }
 
+  /** A <code>GetPredictiveScalingForecast</code> call returns the capacity forecast for a predictive scaling policy. This structure includes the data points for that capacity forecast, along with the timestamps of those data points.
+    */
+  @js.native
+  trait CapacityForecast extends js.Object {
+    var Timestamps: PredictiveScalingForecastTimestamps
+    var Values: PredictiveScalingForecastValues
+  }
+
+  object CapacityForecast {
+    @inline
+    def apply(
+        Timestamps: PredictiveScalingForecastTimestamps,
+        Values: PredictiveScalingForecastValues
+    ): CapacityForecast = {
+      val __obj = js.Dynamic.literal(
+        "Timestamps" -> Timestamps.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CapacityForecast]
+    }
+  }
+
   @js.native
   trait CompleteLifecycleActionAnswer extends js.Object
 
@@ -882,8 +1006,10 @@ package object autoscaling {
     var MinSize: AutoScalingGroupMinSize
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled]
+    var Context: js.UndefOr[Context]
     var DefaultCooldown: js.UndefOr[Cooldown]
     var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
+    var DesiredCapacityType: js.UndefOr[XmlStringMaxLen255]
     var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
     var HealthCheckType: js.UndefOr[XmlStringMaxLen32]
     var InstanceId: js.UndefOr[XmlStringMaxLen19]
@@ -910,8 +1036,10 @@ package object autoscaling {
         MinSize: AutoScalingGroupMinSize,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled] = js.undefined,
+        Context: js.UndefOr[Context] = js.undefined,
         DefaultCooldown: js.UndefOr[Cooldown] = js.undefined,
         DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
+        DesiredCapacityType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
         HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
         InstanceId: js.UndefOr[XmlStringMaxLen19] = js.undefined,
@@ -937,8 +1065,10 @@ package object autoscaling {
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       CapacityRebalance.foreach(__v => __obj.updateDynamic("CapacityRebalance")(__v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.updateDynamic("Context")(__v.asInstanceOf[js.Any]))
       DefaultCooldown.foreach(__v => __obj.updateDynamic("DefaultCooldown")(__v.asInstanceOf[js.Any]))
       DesiredCapacity.foreach(__v => __obj.updateDynamic("DesiredCapacity")(__v.asInstanceOf[js.Any]))
+      DesiredCapacityType.foreach(__v => __obj.updateDynamic("DesiredCapacityType")(__v.asInstanceOf[js.Any]))
       HealthCheckGracePeriod.foreach(__v => __obj.updateDynamic("HealthCheckGracePeriod")(__v.asInstanceOf[js.Any]))
       HealthCheckType.foreach(__v => __obj.updateDynamic("HealthCheckType")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
@@ -1048,7 +1178,9 @@ package object autoscaling {
     }
   }
 
-  /** Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Amazon EC2 Auto Scaling. To create your customized metric specification: * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html|Publish Custom Metrics]] in the <i>Amazon CloudWatch User Guide</i>. * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. For more information about CloudWatch, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch Concepts]].
+  /** Represents a CloudWatch metric of your choosing for a target tracking scaling policy to use with Amazon EC2 Auto Scaling. To create your customized metric specification: * Add values for each required parameter from CloudWatch. You can use an existing metric, or a new metric that you create. To use your own metric, you must first publish the metric to CloudWatch. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html|Publish custom metrics]] in the <i>Amazon CloudWatch User Guide</i>. * Choose a metric that changes proportionally with capacity. The value of the metric should increase or decrease in inverse proportion to the number of capacity units. That is, the value of the metric should decrease when capacity increases. For more information about the CloudWatch terminology below, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch concepts]].
+    *
+    * '''Note:'''Each individual service provides information about the metrics, namespace, and dimensions they use. For more information, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html|Amazon Web Services services that publish CloudWatch metrics]] in the <i>Amazon CloudWatch User Guide</i>.
     */
   @js.native
   trait CustomizedMetricSpecification extends js.Object {
@@ -1739,6 +1871,27 @@ package object autoscaling {
     }
   }
 
+  /** Describes the desired configuration for an instance refresh. If you specify a desired configuration, you must specify either a <code>LaunchTemplate</code> or a <code>MixedInstancesPolicy</code>.
+    */
+  @js.native
+  trait DesiredConfiguration extends js.Object {
+    var LaunchTemplate: js.UndefOr[LaunchTemplateSpecification]
+    var MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy]
+  }
+
+  object DesiredConfiguration {
+    @inline
+    def apply(
+        LaunchTemplate: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
+        MixedInstancesPolicy: js.UndefOr[MixedInstancesPolicy] = js.undefined
+    ): DesiredConfiguration = {
+      val __obj = js.Dynamic.literal()
+      LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
+      MixedInstancesPolicy.foreach(__v => __obj.updateDynamic("MixedInstancesPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DesiredConfiguration]
+    }
+  }
+
   @js.native
   trait DetachInstancesAnswer extends js.Object {
     var Activities: js.UndefOr[Activities]
@@ -1870,6 +2023,7 @@ package object autoscaling {
     var Encrypted: js.UndefOr[BlockDeviceEbsEncrypted]
     var Iops: js.UndefOr[BlockDeviceEbsIops]
     var SnapshotId: js.UndefOr[XmlStringMaxLen255]
+    var Throughput: js.UndefOr[BlockDeviceEbsThroughput]
     var VolumeSize: js.UndefOr[BlockDeviceEbsVolumeSize]
     var VolumeType: js.UndefOr[BlockDeviceEbsVolumeType]
   }
@@ -1881,6 +2035,7 @@ package object autoscaling {
         Encrypted: js.UndefOr[BlockDeviceEbsEncrypted] = js.undefined,
         Iops: js.UndefOr[BlockDeviceEbsIops] = js.undefined,
         SnapshotId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+        Throughput: js.UndefOr[BlockDeviceEbsThroughput] = js.undefined,
         VolumeSize: js.UndefOr[BlockDeviceEbsVolumeSize] = js.undefined,
         VolumeType: js.UndefOr[BlockDeviceEbsVolumeType] = js.undefined
     ): Ebs = {
@@ -1889,6 +2044,7 @@ package object autoscaling {
       Encrypted.foreach(__v => __obj.updateDynamic("Encrypted")(__v.asInstanceOf[js.Any]))
       Iops.foreach(__v => __obj.updateDynamic("Iops")(__v.asInstanceOf[js.Any]))
       SnapshotId.foreach(__v => __obj.updateDynamic("SnapshotId")(__v.asInstanceOf[js.Any]))
+      Throughput.foreach(__v => __obj.updateDynamic("Throughput")(__v.asInstanceOf[js.Any]))
       VolumeSize.foreach(__v => __obj.updateDynamic("VolumeSize")(__v.asInstanceOf[js.Any]))
       VolumeType.foreach(__v => __obj.updateDynamic("VolumeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Ebs]
@@ -2073,7 +2229,7 @@ package object autoscaling {
     }
   }
 
-  /** Describes a filter that is used to return a more specific list of results when describing tags. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html|Tagging Auto Scaling groups and instances]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+  /** Describes a filter that is used to return a more specific list of results from a describe operation. If you specify multiple filters, the filters are automatically logically joined with an <code>AND</code>, and the request returns only the results that match all of the specified filters. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html|Tagging Auto Scaling groups and instances]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait Filter extends js.Object {
@@ -2091,6 +2247,55 @@ package object autoscaling {
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Filter]
+    }
+  }
+
+  @js.native
+  trait GetPredictiveScalingForecastAnswer extends js.Object {
+    var CapacityForecast: CapacityForecast
+    var LoadForecast: LoadForecasts
+    var UpdateTime: TimestampType
+  }
+
+  object GetPredictiveScalingForecastAnswer {
+    @inline
+    def apply(
+        CapacityForecast: CapacityForecast,
+        LoadForecast: LoadForecasts,
+        UpdateTime: TimestampType
+    ): GetPredictiveScalingForecastAnswer = {
+      val __obj = js.Dynamic.literal(
+        "CapacityForecast" -> CapacityForecast.asInstanceOf[js.Any],
+        "LoadForecast" -> LoadForecast.asInstanceOf[js.Any],
+        "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetPredictiveScalingForecastAnswer]
+    }
+  }
+
+  @js.native
+  trait GetPredictiveScalingForecastType extends js.Object {
+    var AutoScalingGroupName: XmlStringMaxLen255
+    var EndTime: TimestampType
+    var PolicyName: XmlStringMaxLen255
+    var StartTime: TimestampType
+  }
+
+  object GetPredictiveScalingForecastType {
+    @inline
+    def apply(
+        AutoScalingGroupName: XmlStringMaxLen255,
+        EndTime: TimestampType,
+        PolicyName: XmlStringMaxLen255,
+        StartTime: TimestampType
+    ): GetPredictiveScalingForecastType = {
+      val __obj = js.Dynamic.literal(
+        "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any],
+        "EndTime" -> EndTime.asInstanceOf[js.Any],
+        "PolicyName" -> PolicyName.asInstanceOf[js.Any],
+        "StartTime" -> StartTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetPredictiveScalingForecastType]
     }
   }
 
@@ -2185,10 +2390,12 @@ package object autoscaling {
   @js.native
   trait InstanceRefresh extends js.Object {
     var AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255]
+    var DesiredConfiguration: js.UndefOr[DesiredConfiguration]
     var EndTime: js.UndefOr[TimestampType]
     var InstanceRefreshId: js.UndefOr[XmlStringMaxLen255]
     var InstancesToUpdate: js.UndefOr[InstancesToUpdate]
     var PercentageComplete: js.UndefOr[IntPercent]
+    var Preferences: js.UndefOr[RefreshPreferences]
     var ProgressDetails: js.UndefOr[InstanceRefreshProgressDetails]
     var StartTime: js.UndefOr[TimestampType]
     var Status: js.UndefOr[InstanceRefreshStatus]
@@ -2199,10 +2406,12 @@ package object autoscaling {
     @inline
     def apply(
         AutoScalingGroupName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
+        DesiredConfiguration: js.UndefOr[DesiredConfiguration] = js.undefined,
         EndTime: js.UndefOr[TimestampType] = js.undefined,
         InstanceRefreshId: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         InstancesToUpdate: js.UndefOr[InstancesToUpdate] = js.undefined,
         PercentageComplete: js.UndefOr[IntPercent] = js.undefined,
+        Preferences: js.UndefOr[RefreshPreferences] = js.undefined,
         ProgressDetails: js.UndefOr[InstanceRefreshProgressDetails] = js.undefined,
         StartTime: js.UndefOr[TimestampType] = js.undefined,
         Status: js.UndefOr[InstanceRefreshStatus] = js.undefined,
@@ -2210,10 +2419,12 @@ package object autoscaling {
     ): InstanceRefresh = {
       val __obj = js.Dynamic.literal()
       AutoScalingGroupName.foreach(__v => __obj.updateDynamic("AutoScalingGroupName")(__v.asInstanceOf[js.Any]))
+      DesiredConfiguration.foreach(__v => __obj.updateDynamic("DesiredConfiguration")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       InstanceRefreshId.foreach(__v => __obj.updateDynamic("InstanceRefreshId")(__v.asInstanceOf[js.Any]))
       InstancesToUpdate.foreach(__v => __obj.updateDynamic("InstancesToUpdate")(__v.asInstanceOf[js.Any]))
       PercentageComplete.foreach(__v => __obj.updateDynamic("PercentageComplete")(__v.asInstanceOf[js.Any]))
+      Preferences.foreach(__v => __obj.updateDynamic("Preferences")(__v.asInstanceOf[js.Any]))
       ProgressDetails.foreach(__v => __obj.updateDynamic("ProgressDetails")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -2222,7 +2433,7 @@ package object autoscaling {
     }
   }
 
-  /** Reports the progress of an instance fresh on instances that are in the Auto Scaling group.
+  /** Reports the progress of an instance refresh on instances that are in the Auto Scaling group.
     */
   @js.native
   trait InstanceRefreshLivePoolProgress extends js.Object {
@@ -2264,7 +2475,7 @@ package object autoscaling {
     }
   }
 
-  /** Reports the progress of an instance fresh on instances that are in the warm pool.
+  /** Reports the progress of an instance refresh on instances that are in the warm pool.
     */
   @js.native
   trait InstanceRefreshWarmPoolProgress extends js.Object {
@@ -2285,7 +2496,87 @@ package object autoscaling {
     }
   }
 
-  /** Describes an instances distribution for an Auto Scaling group with a <a>MixedInstancesPolicy</a>. The instances distribution specifies the distribution of On-Demand Instances and Spot Instances, the maximum price to pay for Spot Instances, and how the Auto Scaling group allocates instance types to fulfill On-Demand and Spot capacities. When you update <code>SpotAllocationStrategy</code>, <code>SpotInstancePools</code>, or <code>SpotMaxPrice</code>, this update action does not deploy any changes across the running Amazon EC2 instances in the group. Your existing Spot Instances continue to run as long as the maximum price for those instances is higher than the current Spot price. When scale out occurs, Amazon EC2 Auto Scaling launches instances based on the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
+  /** When you specify multiple parameters, you get instance types that satisfy all of the specified parameters. If you specify multiple values for a parameter, you get instance types that satisfy any of the specified values. Represents requirements for the types of instances that can be launched. You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>, but all other parameters are optional. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html|Creating an Auto Scaling group using attribute-based instance type selection]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    */
+  @js.native
+  trait InstanceRequirements extends js.Object {
+    var MemoryMiB: MemoryMiBRequest
+    var VCpuCount: VCpuCountRequest
+    var AcceleratorCount: js.UndefOr[AcceleratorCountRequest]
+    var AcceleratorManufacturers: js.UndefOr[AcceleratorManufacturers]
+    var AcceleratorNames: js.UndefOr[AcceleratorNames]
+    var AcceleratorTotalMemoryMiB: js.UndefOr[AcceleratorTotalMemoryMiBRequest]
+    var AcceleratorTypes: js.UndefOr[AcceleratorTypes]
+    var BareMetal: js.UndefOr[BareMetal]
+    var BaselineEbsBandwidthMbps: js.UndefOr[BaselineEbsBandwidthMbpsRequest]
+    var BurstablePerformance: js.UndefOr[BurstablePerformance]
+    var CpuManufacturers: js.UndefOr[CpuManufacturers]
+    var ExcludedInstanceTypes: js.UndefOr[ExcludedInstanceTypes]
+    var InstanceGenerations: js.UndefOr[InstanceGenerations]
+    var LocalStorage: js.UndefOr[LocalStorage]
+    var LocalStorageTypes: js.UndefOr[LocalStorageTypes]
+    var MemoryGiBPerVCpu: js.UndefOr[MemoryGiBPerVCpuRequest]
+    var NetworkInterfaceCount: js.UndefOr[NetworkInterfaceCountRequest]
+    var OnDemandMaxPricePercentageOverLowestPrice: js.UndefOr[NullablePositiveInteger]
+    var RequireHibernateSupport: js.UndefOr[NullableBoolean]
+    var SpotMaxPricePercentageOverLowestPrice: js.UndefOr[NullablePositiveInteger]
+    var TotalLocalStorageGB: js.UndefOr[TotalLocalStorageGBRequest]
+  }
+
+  object InstanceRequirements {
+    @inline
+    def apply(
+        MemoryMiB: MemoryMiBRequest,
+        VCpuCount: VCpuCountRequest,
+        AcceleratorCount: js.UndefOr[AcceleratorCountRequest] = js.undefined,
+        AcceleratorManufacturers: js.UndefOr[AcceleratorManufacturers] = js.undefined,
+        AcceleratorNames: js.UndefOr[AcceleratorNames] = js.undefined,
+        AcceleratorTotalMemoryMiB: js.UndefOr[AcceleratorTotalMemoryMiBRequest] = js.undefined,
+        AcceleratorTypes: js.UndefOr[AcceleratorTypes] = js.undefined,
+        BareMetal: js.UndefOr[BareMetal] = js.undefined,
+        BaselineEbsBandwidthMbps: js.UndefOr[BaselineEbsBandwidthMbpsRequest] = js.undefined,
+        BurstablePerformance: js.UndefOr[BurstablePerformance] = js.undefined,
+        CpuManufacturers: js.UndefOr[CpuManufacturers] = js.undefined,
+        ExcludedInstanceTypes: js.UndefOr[ExcludedInstanceTypes] = js.undefined,
+        InstanceGenerations: js.UndefOr[InstanceGenerations] = js.undefined,
+        LocalStorage: js.UndefOr[LocalStorage] = js.undefined,
+        LocalStorageTypes: js.UndefOr[LocalStorageTypes] = js.undefined,
+        MemoryGiBPerVCpu: js.UndefOr[MemoryGiBPerVCpuRequest] = js.undefined,
+        NetworkInterfaceCount: js.UndefOr[NetworkInterfaceCountRequest] = js.undefined,
+        OnDemandMaxPricePercentageOverLowestPrice: js.UndefOr[NullablePositiveInteger] = js.undefined,
+        RequireHibernateSupport: js.UndefOr[NullableBoolean] = js.undefined,
+        SpotMaxPricePercentageOverLowestPrice: js.UndefOr[NullablePositiveInteger] = js.undefined,
+        TotalLocalStorageGB: js.UndefOr[TotalLocalStorageGBRequest] = js.undefined
+    ): InstanceRequirements = {
+      val __obj = js.Dynamic.literal(
+        "MemoryMiB" -> MemoryMiB.asInstanceOf[js.Any],
+        "VCpuCount" -> VCpuCount.asInstanceOf[js.Any]
+      )
+
+      AcceleratorCount.foreach(__v => __obj.updateDynamic("AcceleratorCount")(__v.asInstanceOf[js.Any]))
+      AcceleratorManufacturers.foreach(__v => __obj.updateDynamic("AcceleratorManufacturers")(__v.asInstanceOf[js.Any]))
+      AcceleratorNames.foreach(__v => __obj.updateDynamic("AcceleratorNames")(__v.asInstanceOf[js.Any]))
+      AcceleratorTotalMemoryMiB.foreach(__v => __obj.updateDynamic("AcceleratorTotalMemoryMiB")(__v.asInstanceOf[js.Any]))
+      AcceleratorTypes.foreach(__v => __obj.updateDynamic("AcceleratorTypes")(__v.asInstanceOf[js.Any]))
+      BareMetal.foreach(__v => __obj.updateDynamic("BareMetal")(__v.asInstanceOf[js.Any]))
+      BaselineEbsBandwidthMbps.foreach(__v => __obj.updateDynamic("BaselineEbsBandwidthMbps")(__v.asInstanceOf[js.Any]))
+      BurstablePerformance.foreach(__v => __obj.updateDynamic("BurstablePerformance")(__v.asInstanceOf[js.Any]))
+      CpuManufacturers.foreach(__v => __obj.updateDynamic("CpuManufacturers")(__v.asInstanceOf[js.Any]))
+      ExcludedInstanceTypes.foreach(__v => __obj.updateDynamic("ExcludedInstanceTypes")(__v.asInstanceOf[js.Any]))
+      InstanceGenerations.foreach(__v => __obj.updateDynamic("InstanceGenerations")(__v.asInstanceOf[js.Any]))
+      LocalStorage.foreach(__v => __obj.updateDynamic("LocalStorage")(__v.asInstanceOf[js.Any]))
+      LocalStorageTypes.foreach(__v => __obj.updateDynamic("LocalStorageTypes")(__v.asInstanceOf[js.Any]))
+      MemoryGiBPerVCpu.foreach(__v => __obj.updateDynamic("MemoryGiBPerVCpu")(__v.asInstanceOf[js.Any]))
+      NetworkInterfaceCount.foreach(__v => __obj.updateDynamic("NetworkInterfaceCount")(__v.asInstanceOf[js.Any]))
+      OnDemandMaxPricePercentageOverLowestPrice.foreach(__v => __obj.updateDynamic("OnDemandMaxPricePercentageOverLowestPrice")(__v.asInstanceOf[js.Any]))
+      RequireHibernateSupport.foreach(__v => __obj.updateDynamic("RequireHibernateSupport")(__v.asInstanceOf[js.Any]))
+      SpotMaxPricePercentageOverLowestPrice.foreach(__v => __obj.updateDynamic("SpotMaxPricePercentageOverLowestPrice")(__v.asInstanceOf[js.Any]))
+      TotalLocalStorageGB.foreach(__v => __obj.updateDynamic("TotalLocalStorageGB")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InstanceRequirements]
+    }
+  }
+
+  /** Describes an instances distribution for an Auto Scaling group.
     */
   @js.native
   trait InstancesDistribution extends js.Object {
@@ -2455,7 +2746,7 @@ package object autoscaling {
     }
   }
 
-  /** Describes a launch template and overrides. You specify these properties as part of a mixed instances policy. When you update the launch template or overrides, existing Amazon EC2 instances continue to run. When scale out occurs, Amazon EC2 Auto Scaling launches instances to match the new settings. When scale in occurs, Amazon EC2 Auto Scaling terminates instances according to the group's termination policies.
+  /** Describes a launch template and overrides. You specify these properties as part of a mixed instances policy.
     */
   @js.native
   trait LaunchTemplate extends js.Object {
@@ -2476,10 +2767,11 @@ package object autoscaling {
     }
   }
 
-  /** Describes an override for a launch template. The maximum number of instance types that can be associated with an Auto Scaling group is 40. The maximum number of distinct launch templates you can define for an Auto Scaling group is 20. For more information about configuring overrides, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-override-options.html|Configuring overrides]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+  /** Describes an override for a launch template. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-configuring-overrides.html|Configuring overrides]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait LaunchTemplateOverrides extends js.Object {
+    var InstanceRequirements: js.UndefOr[InstanceRequirements]
     var InstanceType: js.UndefOr[XmlStringMaxLen255]
     var LaunchTemplateSpecification: js.UndefOr[LaunchTemplateSpecification]
     var WeightedCapacity: js.UndefOr[XmlStringMaxLen32]
@@ -2488,11 +2780,13 @@ package object autoscaling {
   object LaunchTemplateOverrides {
     @inline
     def apply(
+        InstanceRequirements: js.UndefOr[InstanceRequirements] = js.undefined,
         InstanceType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         LaunchTemplateSpecification: js.UndefOr[LaunchTemplateSpecification] = js.undefined,
         WeightedCapacity: js.UndefOr[XmlStringMaxLen32] = js.undefined
     ): LaunchTemplateOverrides = {
       val __obj = js.Dynamic.literal()
+      InstanceRequirements.foreach(__v => __obj.updateDynamic("InstanceRequirements")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
       LaunchTemplateSpecification.foreach(__v => __obj.updateDynamic("LaunchTemplateSpecification")(__v.asInstanceOf[js.Any]))
       WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
@@ -2500,7 +2794,7 @@ package object autoscaling {
     }
   }
 
-  /** Describes the Amazon EC2 launch template and the launch template version that can be used by an Auto Scaling group to configure Amazon EC2 instances. The launch template that is specified must be configured for use with an Auto Scaling group. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-launch-template.html|Creating a launch template for an Auto Scaling group]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+  /** Describes the launch template and the version of the launch template that Amazon EC2 Auto Scaling uses to launch Amazon EC2 instances. For more information about launch templates, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/LaunchTemplates.html|Launch templates]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait LaunchTemplateSpecification extends js.Object {
@@ -2524,7 +2818,7 @@ package object autoscaling {
     }
   }
 
-  /** Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want to perform an action whenever it launches instances or terminates instances.
+  /** Describes a lifecycle hook, which enables an Auto Scaling group to be aware of events in the Auto Scaling instance lifecycle, and then perform a custom action when the corresponding lifecycle event occurs.
     */
   @js.native
   trait LifecycleHook extends js.Object {
@@ -2566,8 +2860,7 @@ package object autoscaling {
     }
   }
 
-  /** Describes information used to specify a lifecycle hook for an Auto Scaling group. A lifecycle hook tells Amazon EC2 Auto Scaling to perform an action on an instance when the instance launches (before it is put into service) or as the instance terminates (before it is fully terminated). This step is a part of the procedure for creating a lifecycle hook for an Auto Scaling group: <ol> * (Optional) Create a Lambda function and a rule that allows CloudWatch Events to invoke your Lambda function when Amazon EC2 Auto Scaling launches or terminates instances. * (Optional) Create a notification target and an IAM role. The target can be either an Amazon SQS queue or an Amazon SNS topic. The role allows Amazon EC2 Auto Scaling to publish lifecycle notifications to the target. * ```Create the lifecycle hook. Specify whether the hook is used when the instances launch or terminate.``` * If you need more time, record the lifecycle action heartbeat to keep the instance in a pending state. * If
-    * you finish before the timeout period ends, complete the lifecycle action. </ol> For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html|Amazon EC2 Auto Scaling lifecycle hooks]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+  /** Describes information used to specify a lifecycle hook for an Auto Scaling group. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html|Amazon EC2 Auto Scaling lifecycle hooks]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait LifecycleHookSpecification extends js.Object {
@@ -2605,7 +2898,7 @@ package object autoscaling {
     }
   }
 
-  /** Describes the state of a Classic Load Balancer. If you specify a load balancer when creating the Auto Scaling group, the state of the load balancer is <code>InService</code>. If you attach a load balancer to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all instances in the group are registered with the load balancer. If Elastic Load Balancing health checks are enabled for the load balancer, the state transitions to <code>InService</code> after at least one instance in the group passes the health check. If EC2 health checks are enabled instead, the load balancer remains in the <code>Added</code> state.
+  /** Describes the state of a Classic Load Balancer.
     */
   @js.native
   trait LoadBalancerState extends js.Object {
@@ -2626,7 +2919,7 @@ package object autoscaling {
     }
   }
 
-  /** Describes the state of a target group. If you attach a target group to an existing Auto Scaling group, the initial state is <code>Adding</code>. The state transitions to <code>Added</code> after all Auto Scaling instances are registered with the target group. If Elastic Load Balancing health checks are enabled, the state transitions to <code>InService</code> after at least one Auto Scaling instance passes the health check. If EC2 health checks are enabled instead, the target group remains in the <code>Added</code> state.
+  /** Describes the state of a target group.
     */
   @js.native
   trait LoadBalancerTargetGroupState extends js.Object {
@@ -2647,6 +2940,101 @@ package object autoscaling {
     }
   }
 
+  /** A <code>GetPredictiveScalingForecast</code> call returns the load forecast for a predictive scaling policy. This structure includes the data points for that load forecast, along with the timestamps of those data points and the metric specification.
+    */
+  @js.native
+  trait LoadForecast extends js.Object {
+    var MetricSpecification: PredictiveScalingMetricSpecification
+    var Timestamps: PredictiveScalingForecastTimestamps
+    var Values: PredictiveScalingForecastValues
+  }
+
+  object LoadForecast {
+    @inline
+    def apply(
+        MetricSpecification: PredictiveScalingMetricSpecification,
+        Timestamps: PredictiveScalingForecastTimestamps,
+        Values: PredictiveScalingForecastValues
+    ): LoadForecast = {
+      val __obj = js.Dynamic.literal(
+        "MetricSpecification" -> MetricSpecification.asInstanceOf[js.Any],
+        "Timestamps" -> Timestamps.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LoadForecast]
+    }
+  }
+
+  /** Specifies the minimum and maximum for the <code>MemoryGiBPerVCpu</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    */
+  @js.native
+  trait MemoryGiBPerVCpuRequest extends js.Object {
+    var Max: js.UndefOr[NullablePositiveDouble]
+    var Min: js.UndefOr[NullablePositiveDouble]
+  }
+
+  object MemoryGiBPerVCpuRequest {
+    @inline
+    def apply(
+        Max: js.UndefOr[NullablePositiveDouble] = js.undefined,
+        Min: js.UndefOr[NullablePositiveDouble] = js.undefined
+    ): MemoryGiBPerVCpuRequest = {
+      val __obj = js.Dynamic.literal()
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      Min.foreach(__v => __obj.updateDynamic("Min")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MemoryGiBPerVCpuRequest]
+    }
+  }
+
+  /** Specifies the minimum and maximum for the <code>MemoryMiB</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    */
+  @js.native
+  trait MemoryMiBRequest extends js.Object {
+    var Min: NullablePositiveInteger
+    var Max: js.UndefOr[NullablePositiveInteger]
+  }
+
+  object MemoryMiBRequest {
+    @inline
+    def apply(
+        Min: NullablePositiveInteger,
+        Max: js.UndefOr[NullablePositiveInteger] = js.undefined
+    ): MemoryMiBRequest = {
+      val __obj = js.Dynamic.literal(
+        "Min" -> Min.asInstanceOf[js.Any]
+      )
+
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MemoryMiBRequest]
+    }
+  }
+
+  /** Represents a specific metric.
+    */
+  @js.native
+  trait Metric extends js.Object {
+    var MetricName: MetricName
+    var Namespace: MetricNamespace
+    var Dimensions: js.UndefOr[MetricDimensions]
+  }
+
+  object Metric {
+    @inline
+    def apply(
+        MetricName: MetricName,
+        Namespace: MetricNamespace,
+        Dimensions: js.UndefOr[MetricDimensions] = js.undefined
+    ): Metric = {
+      val __obj = js.Dynamic.literal(
+        "MetricName" -> MetricName.asInstanceOf[js.Any],
+        "Namespace" -> Namespace.asInstanceOf[js.Any]
+      )
+
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Metric]
+    }
+  }
+
   /** Describes a metric.
     */
   @js.native
@@ -2662,6 +3050,38 @@ package object autoscaling {
       val __obj = js.Dynamic.literal()
       Metric.foreach(__v => __obj.updateDynamic("Metric")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricCollectionType]
+    }
+  }
+
+  /** The metric data to return. Also defines whether this call is returning data for one metric only, or whether it is performing a math expression on the values of returned metric statistics to create a new time series. A time series is a series of data points, each of which is associated with a timestamp. For more information and examples, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html|Advanced predictive scaling policy configurations using custom metrics]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    */
+  @js.native
+  trait MetricDataQuery extends js.Object {
+    var Id: XmlStringMaxLen255
+    var Expression: js.UndefOr[XmlStringMaxLen1023]
+    var Label: js.UndefOr[XmlStringMetricLabel]
+    var MetricStat: js.UndefOr[MetricStat]
+    var ReturnData: js.UndefOr[ReturnData]
+  }
+
+  object MetricDataQuery {
+    @inline
+    def apply(
+        Id: XmlStringMaxLen255,
+        Expression: js.UndefOr[XmlStringMaxLen1023] = js.undefined,
+        Label: js.UndefOr[XmlStringMetricLabel] = js.undefined,
+        MetricStat: js.UndefOr[MetricStat] = js.undefined,
+        ReturnData: js.UndefOr[ReturnData] = js.undefined
+    ): MetricDataQuery = {
+      val __obj = js.Dynamic.literal(
+        "Id" -> Id.asInstanceOf[js.Any]
+      )
+
+      Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
+      Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
+      MetricStat.foreach(__v => __obj.updateDynamic("MetricStat")(__v.asInstanceOf[js.Any]))
+      ReturnData.foreach(__v => __obj.updateDynamic("ReturnData")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricDataQuery]
     }
   }
 
@@ -2705,7 +3125,33 @@ package object autoscaling {
     }
   }
 
-  /** Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html|Auto Scaling groups with multiple instance types and purchase options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>. You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by updating the group to specify <code>MixedInstancesPolicy</code> as the top-level property instead of a launch configuration or launch template.
+  /** This structure defines the CloudWatch metric to return, along with the statistic, period, and unit. For more information about the CloudWatch terminology below, see [[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html|Amazon CloudWatch concepts]] in the <i>Amazon CloudWatch User Guide</i>.
+    */
+  @js.native
+  trait MetricStat extends js.Object {
+    var Metric: Metric
+    var Stat: XmlStringMetricStat
+    var Unit: js.UndefOr[MetricUnit]
+  }
+
+  object MetricStat {
+    @inline
+    def apply(
+        Metric: Metric,
+        Stat: XmlStringMetricStat,
+        Unit: js.UndefOr[MetricUnit] = js.undefined
+    ): MetricStat = {
+      val __obj = js.Dynamic.literal(
+        "Metric" -> Metric.asInstanceOf[js.Any],
+        "Stat" -> Stat.asInstanceOf[js.Any]
+      )
+
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricStat]
+    }
+  }
+
+  /** Describes a mixed instances policy. A mixed instances policy contains the instance types that Amazon EC2 Auto Scaling can launch and other information that Amazon EC2 Auto Scaling can use to launch instances and help optimize your costs. For more information, see [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-mixed-instances-groups.html|Auto Scaling groups with multiple instance types and purchase options]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
     */
   @js.native
   trait MixedInstancesPolicy extends js.Object {
@@ -2723,6 +3169,27 @@ package object autoscaling {
       InstancesDistribution.foreach(__v => __obj.updateDynamic("InstancesDistribution")(__v.asInstanceOf[js.Any]))
       LaunchTemplate.foreach(__v => __obj.updateDynamic("LaunchTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MixedInstancesPolicy]
+    }
+  }
+
+  /** Specifies the minimum and maximum for the <code>NetworkInterfaceCount</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    */
+  @js.native
+  trait NetworkInterfaceCountRequest extends js.Object {
+    var Max: js.UndefOr[NullablePositiveInteger]
+    var Min: js.UndefOr[NullablePositiveInteger]
+  }
+
+  object NetworkInterfaceCountRequest {
+    @inline
+    def apply(
+        Max: js.UndefOr[NullablePositiveInteger] = js.undefined,
+        Min: js.UndefOr[NullablePositiveInteger] = js.undefined
+    ): NetworkInterfaceCountRequest = {
+      val __obj = js.Dynamic.literal()
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      Min.foreach(__v => __obj.updateDynamic("Min")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkInterfaceCountRequest]
     }
   }
 
@@ -2810,6 +3277,204 @@ package object autoscaling {
 
       ResourceLabel.foreach(__v => __obj.updateDynamic("ResourceLabel")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PredefinedMetricSpecification]
+    }
+  }
+
+  /** Represents a predictive scaling policy configuration to use with Amazon EC2 Auto Scaling.
+    */
+  @js.native
+  trait PredictiveScalingConfiguration extends js.Object {
+    var MetricSpecifications: PredictiveScalingMetricSpecifications
+    var MaxCapacityBreachBehavior: js.UndefOr[PredictiveScalingMaxCapacityBreachBehavior]
+    var MaxCapacityBuffer: js.UndefOr[PredictiveScalingMaxCapacityBuffer]
+    var Mode: js.UndefOr[PredictiveScalingMode]
+    var SchedulingBufferTime: js.UndefOr[PredictiveScalingSchedulingBufferTime]
+  }
+
+  object PredictiveScalingConfiguration {
+    @inline
+    def apply(
+        MetricSpecifications: PredictiveScalingMetricSpecifications,
+        MaxCapacityBreachBehavior: js.UndefOr[PredictiveScalingMaxCapacityBreachBehavior] = js.undefined,
+        MaxCapacityBuffer: js.UndefOr[PredictiveScalingMaxCapacityBuffer] = js.undefined,
+        Mode: js.UndefOr[PredictiveScalingMode] = js.undefined,
+        SchedulingBufferTime: js.UndefOr[PredictiveScalingSchedulingBufferTime] = js.undefined
+    ): PredictiveScalingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "MetricSpecifications" -> MetricSpecifications.asInstanceOf[js.Any]
+      )
+
+      MaxCapacityBreachBehavior.foreach(__v => __obj.updateDynamic("MaxCapacityBreachBehavior")(__v.asInstanceOf[js.Any]))
+      MaxCapacityBuffer.foreach(__v => __obj.updateDynamic("MaxCapacityBuffer")(__v.asInstanceOf[js.Any]))
+      Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
+      SchedulingBufferTime.foreach(__v => __obj.updateDynamic("SchedulingBufferTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictiveScalingConfiguration]
+    }
+  }
+
+  /** Describes a customized capacity metric for a predictive scaling policy.
+    */
+  @js.native
+  trait PredictiveScalingCustomizedCapacityMetric extends js.Object {
+    var MetricDataQueries: MetricDataQueries
+  }
+
+  object PredictiveScalingCustomizedCapacityMetric {
+    @inline
+    def apply(
+        MetricDataQueries: MetricDataQueries
+    ): PredictiveScalingCustomizedCapacityMetric = {
+      val __obj = js.Dynamic.literal(
+        "MetricDataQueries" -> MetricDataQueries.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PredictiveScalingCustomizedCapacityMetric]
+    }
+  }
+
+  /** Describes a custom load metric for a predictive scaling policy.
+    */
+  @js.native
+  trait PredictiveScalingCustomizedLoadMetric extends js.Object {
+    var MetricDataQueries: MetricDataQueries
+  }
+
+  object PredictiveScalingCustomizedLoadMetric {
+    @inline
+    def apply(
+        MetricDataQueries: MetricDataQueries
+    ): PredictiveScalingCustomizedLoadMetric = {
+      val __obj = js.Dynamic.literal(
+        "MetricDataQueries" -> MetricDataQueries.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PredictiveScalingCustomizedLoadMetric]
+    }
+  }
+
+  /** Describes a custom scaling metric for a predictive scaling policy.
+    */
+  @js.native
+  trait PredictiveScalingCustomizedScalingMetric extends js.Object {
+    var MetricDataQueries: MetricDataQueries
+  }
+
+  object PredictiveScalingCustomizedScalingMetric {
+    @inline
+    def apply(
+        MetricDataQueries: MetricDataQueries
+    ): PredictiveScalingCustomizedScalingMetric = {
+      val __obj = js.Dynamic.literal(
+        "MetricDataQueries" -> MetricDataQueries.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PredictiveScalingCustomizedScalingMetric]
+    }
+  }
+
+  /** This structure specifies the metrics and target utilization settings for a predictive scaling policy. You must specify either a metric pair, or a load metric and a scaling metric individually. Specifying a metric pair instead of individual metrics provides a simpler way to configure metrics for a scaling policy. You choose the metric pair, and the policy automatically knows the correct sum and average statistics to use for the load metric and the scaling metric. Example * You create a predictive scaling policy and specify <code>ALBRequestCount</code> as the value for the metric pair and <code>1000.0</code> as the target value. For this type of metric, you must provide the metric dimension for the corresponding target group, so you also provide a resource label for the Application Load Balancer target group that is attached to your Auto Scaling group. * The number of requests the target group receives per minute provides the load metric, and the request count averaged between the
+    * members of the target group provides the scaling metric. In CloudWatch, this refers to the <code>RequestCount</code> and <code>RequestCountPerTarget</code> metrics, respectively. * For optimal use of predictive scaling, you adhere to the best practice of using a dynamic scaling policy to automatically scale between the minimum capacity and maximum capacity in response to real-time changes in resource utilization. * Amazon EC2 Auto Scaling consumes data points for the load metric over the last 14 days and creates an hourly load forecast for predictive scaling. (A minimum of 24 hours of data is required.) * After creating the load forecast, Amazon EC2 Auto Scaling determines when to reduce or increase the capacity of your Auto Scaling group in each hour of the forecast period so that the average number of requests received by each instance is as close to 1000 requests per minute as possible at all times. For information about using custom metrics with predictive scaling, see
+    * [[https://docs.aws.amazon.com/autoscaling/ec2/userguide/predictive-scaling-customized-metric-specification.html|Advanced predictive scaling policy configurations using custom metrics]] in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+    */
+  @js.native
+  trait PredictiveScalingMetricSpecification extends js.Object {
+    var TargetValue: MetricScale
+    var CustomizedCapacityMetricSpecification: js.UndefOr[PredictiveScalingCustomizedCapacityMetric]
+    var CustomizedLoadMetricSpecification: js.UndefOr[PredictiveScalingCustomizedLoadMetric]
+    var CustomizedScalingMetricSpecification: js.UndefOr[PredictiveScalingCustomizedScalingMetric]
+    var PredefinedLoadMetricSpecification: js.UndefOr[PredictiveScalingPredefinedLoadMetric]
+    var PredefinedMetricPairSpecification: js.UndefOr[PredictiveScalingPredefinedMetricPair]
+    var PredefinedScalingMetricSpecification: js.UndefOr[PredictiveScalingPredefinedScalingMetric]
+  }
+
+  object PredictiveScalingMetricSpecification {
+    @inline
+    def apply(
+        TargetValue: MetricScale,
+        CustomizedCapacityMetricSpecification: js.UndefOr[PredictiveScalingCustomizedCapacityMetric] = js.undefined,
+        CustomizedLoadMetricSpecification: js.UndefOr[PredictiveScalingCustomizedLoadMetric] = js.undefined,
+        CustomizedScalingMetricSpecification: js.UndefOr[PredictiveScalingCustomizedScalingMetric] = js.undefined,
+        PredefinedLoadMetricSpecification: js.UndefOr[PredictiveScalingPredefinedLoadMetric] = js.undefined,
+        PredefinedMetricPairSpecification: js.UndefOr[PredictiveScalingPredefinedMetricPair] = js.undefined,
+        PredefinedScalingMetricSpecification: js.UndefOr[PredictiveScalingPredefinedScalingMetric] = js.undefined
+    ): PredictiveScalingMetricSpecification = {
+      val __obj = js.Dynamic.literal(
+        "TargetValue" -> TargetValue.asInstanceOf[js.Any]
+      )
+
+      CustomizedCapacityMetricSpecification.foreach(__v => __obj.updateDynamic("CustomizedCapacityMetricSpecification")(__v.asInstanceOf[js.Any]))
+      CustomizedLoadMetricSpecification.foreach(__v => __obj.updateDynamic("CustomizedLoadMetricSpecification")(__v.asInstanceOf[js.Any]))
+      CustomizedScalingMetricSpecification.foreach(__v => __obj.updateDynamic("CustomizedScalingMetricSpecification")(__v.asInstanceOf[js.Any]))
+      PredefinedLoadMetricSpecification.foreach(__v => __obj.updateDynamic("PredefinedLoadMetricSpecification")(__v.asInstanceOf[js.Any]))
+      PredefinedMetricPairSpecification.foreach(__v => __obj.updateDynamic("PredefinedMetricPairSpecification")(__v.asInstanceOf[js.Any]))
+      PredefinedScalingMetricSpecification.foreach(__v => __obj.updateDynamic("PredefinedScalingMetricSpecification")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictiveScalingMetricSpecification]
+    }
+  }
+
+  /** Describes a load metric for a predictive scaling policy. When returned in the output of <code>DescribePolicies</code>, it indicates that a predictive scaling policy uses individually specified load and scaling metrics instead of a metric pair.
+    */
+  @js.native
+  trait PredictiveScalingPredefinedLoadMetric extends js.Object {
+    var PredefinedMetricType: PredefinedLoadMetricType
+    var ResourceLabel: js.UndefOr[XmlStringMaxLen1023]
+  }
+
+  object PredictiveScalingPredefinedLoadMetric {
+    @inline
+    def apply(
+        PredefinedMetricType: PredefinedLoadMetricType,
+        ResourceLabel: js.UndefOr[XmlStringMaxLen1023] = js.undefined
+    ): PredictiveScalingPredefinedLoadMetric = {
+      val __obj = js.Dynamic.literal(
+        "PredefinedMetricType" -> PredefinedMetricType.asInstanceOf[js.Any]
+      )
+
+      ResourceLabel.foreach(__v => __obj.updateDynamic("ResourceLabel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictiveScalingPredefinedLoadMetric]
+    }
+  }
+
+  /** Represents a metric pair for a predictive scaling policy.
+    */
+  @js.native
+  trait PredictiveScalingPredefinedMetricPair extends js.Object {
+    var PredefinedMetricType: PredefinedMetricPairType
+    var ResourceLabel: js.UndefOr[XmlStringMaxLen1023]
+  }
+
+  object PredictiveScalingPredefinedMetricPair {
+    @inline
+    def apply(
+        PredefinedMetricType: PredefinedMetricPairType,
+        ResourceLabel: js.UndefOr[XmlStringMaxLen1023] = js.undefined
+    ): PredictiveScalingPredefinedMetricPair = {
+      val __obj = js.Dynamic.literal(
+        "PredefinedMetricType" -> PredefinedMetricType.asInstanceOf[js.Any]
+      )
+
+      ResourceLabel.foreach(__v => __obj.updateDynamic("ResourceLabel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictiveScalingPredefinedMetricPair]
+    }
+  }
+
+  /** Describes a scaling metric for a predictive scaling policy. When returned in the output of <code>DescribePolicies</code>, it indicates that a predictive scaling policy uses individually specified load and scaling metrics instead of a metric pair.
+    */
+  @js.native
+  trait PredictiveScalingPredefinedScalingMetric extends js.Object {
+    var PredefinedMetricType: PredefinedScalingMetricType
+    var ResourceLabel: js.UndefOr[XmlStringMaxLen1023]
+  }
+
+  object PredictiveScalingPredefinedScalingMetric {
+    @inline
+    def apply(
+        PredefinedMetricType: PredefinedScalingMetricType,
+        ResourceLabel: js.UndefOr[XmlStringMaxLen1023] = js.undefined
+    ): PredictiveScalingPredefinedScalingMetric = {
+      val __obj = js.Dynamic.literal(
+        "PredefinedMetricType" -> PredefinedMetricType.asInstanceOf[js.Any]
+      )
+
+      ResourceLabel.foreach(__v => __obj.updateDynamic("ResourceLabel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PredictiveScalingPredefinedScalingMetric]
     }
   }
 
@@ -2933,6 +3598,7 @@ package object autoscaling {
     var MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude]
     var MinAdjustmentStep: js.UndefOr[MinAdjustmentStep]
     var PolicyType: js.UndefOr[XmlStringMaxLen64]
+    var PredictiveScalingConfiguration: js.UndefOr[PredictiveScalingConfiguration]
     var ScalingAdjustment: js.UndefOr[PolicyIncrement]
     var StepAdjustments: js.UndefOr[StepAdjustments]
     var TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration]
@@ -2951,6 +3617,7 @@ package object autoscaling {
         MinAdjustmentMagnitude: js.UndefOr[MinAdjustmentMagnitude] = js.undefined,
         MinAdjustmentStep: js.UndefOr[MinAdjustmentStep] = js.undefined,
         PolicyType: js.UndefOr[XmlStringMaxLen64] = js.undefined,
+        PredictiveScalingConfiguration: js.UndefOr[PredictiveScalingConfiguration] = js.undefined,
         ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined,
         StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined,
         TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration] = js.undefined
@@ -2968,6 +3635,7 @@ package object autoscaling {
       MinAdjustmentMagnitude.foreach(__v => __obj.updateDynamic("MinAdjustmentMagnitude")(__v.asInstanceOf[js.Any]))
       MinAdjustmentStep.foreach(__v => __obj.updateDynamic("MinAdjustmentStep")(__v.asInstanceOf[js.Any]))
       PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
+      PredictiveScalingConfiguration.foreach(__v => __obj.updateDynamic("PredictiveScalingConfiguration")(__v.asInstanceOf[js.Any]))
       ScalingAdjustment.foreach(__v => __obj.updateDynamic("ScalingAdjustment")(__v.asInstanceOf[js.Any]))
       StepAdjustments.foreach(__v => __obj.updateDynamic("StepAdjustments")(__v.asInstanceOf[js.Any]))
       TargetTrackingConfiguration.foreach(__v => __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any]))
@@ -3096,7 +3764,7 @@ package object autoscaling {
     }
   }
 
-  /** Describes information used to start an instance refresh. All properties are optional. However, if you specify a value for <code>CheckpointDelay</code>, you must also provide a value for <code>CheckpointPercentages</code>.
+  /** Describes the preferences for an instance refresh.
     */
   @js.native
   trait RefreshPreferences extends js.Object {
@@ -3104,6 +3772,7 @@ package object autoscaling {
     var CheckpointPercentages: js.UndefOr[CheckpointPercentages]
     var InstanceWarmup: js.UndefOr[RefreshInstanceWarmup]
     var MinHealthyPercentage: js.UndefOr[IntPercent]
+    var SkipMatching: js.UndefOr[SkipMatching]
   }
 
   object RefreshPreferences {
@@ -3112,13 +3781,15 @@ package object autoscaling {
         CheckpointDelay: js.UndefOr[CheckpointDelay] = js.undefined,
         CheckpointPercentages: js.UndefOr[CheckpointPercentages] = js.undefined,
         InstanceWarmup: js.UndefOr[RefreshInstanceWarmup] = js.undefined,
-        MinHealthyPercentage: js.UndefOr[IntPercent] = js.undefined
+        MinHealthyPercentage: js.UndefOr[IntPercent] = js.undefined,
+        SkipMatching: js.UndefOr[SkipMatching] = js.undefined
     ): RefreshPreferences = {
       val __obj = js.Dynamic.literal()
       CheckpointDelay.foreach(__v => __obj.updateDynamic("CheckpointDelay")(__v.asInstanceOf[js.Any]))
       CheckpointPercentages.foreach(__v => __obj.updateDynamic("CheckpointPercentages")(__v.asInstanceOf[js.Any]))
       InstanceWarmup.foreach(__v => __obj.updateDynamic("InstanceWarmup")(__v.asInstanceOf[js.Any]))
       MinHealthyPercentage.foreach(__v => __obj.updateDynamic("MinHealthyPercentage")(__v.asInstanceOf[js.Any]))
+      SkipMatching.foreach(__v => __obj.updateDynamic("SkipMatching")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RefreshPreferences]
     }
   }
@@ -3139,6 +3810,7 @@ package object autoscaling {
     var PolicyARN: js.UndefOr[ResourceName]
     var PolicyName: js.UndefOr[XmlStringMaxLen255]
     var PolicyType: js.UndefOr[XmlStringMaxLen64]
+    var PredictiveScalingConfiguration: js.UndefOr[PredictiveScalingConfiguration]
     var ScalingAdjustment: js.UndefOr[PolicyIncrement]
     var StepAdjustments: js.UndefOr[StepAdjustments]
     var TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration]
@@ -3159,6 +3831,7 @@ package object autoscaling {
         PolicyARN: js.UndefOr[ResourceName] = js.undefined,
         PolicyName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         PolicyType: js.UndefOr[XmlStringMaxLen64] = js.undefined,
+        PredictiveScalingConfiguration: js.UndefOr[PredictiveScalingConfiguration] = js.undefined,
         ScalingAdjustment: js.UndefOr[PolicyIncrement] = js.undefined,
         StepAdjustments: js.UndefOr[StepAdjustments] = js.undefined,
         TargetTrackingConfiguration: js.UndefOr[TargetTrackingConfiguration] = js.undefined
@@ -3176,6 +3849,7 @@ package object autoscaling {
       PolicyARN.foreach(__v => __obj.updateDynamic("PolicyARN")(__v.asInstanceOf[js.Any]))
       PolicyName.foreach(__v => __obj.updateDynamic("PolicyName")(__v.asInstanceOf[js.Any]))
       PolicyType.foreach(__v => __obj.updateDynamic("PolicyType")(__v.asInstanceOf[js.Any]))
+      PredictiveScalingConfiguration.foreach(__v => __obj.updateDynamic("PredictiveScalingConfiguration")(__v.asInstanceOf[js.Any]))
       ScalingAdjustment.foreach(__v => __obj.updateDynamic("ScalingAdjustment")(__v.asInstanceOf[js.Any]))
       StepAdjustments.foreach(__v => __obj.updateDynamic("StepAdjustments")(__v.asInstanceOf[js.Any]))
       TargetTrackingConfiguration.foreach(__v => __obj.updateDynamic("TargetTrackingConfiguration")(__v.asInstanceOf[js.Any]))
@@ -3413,6 +4087,7 @@ package object autoscaling {
   @js.native
   trait StartInstanceRefreshType extends js.Object {
     var AutoScalingGroupName: XmlStringMaxLen255
+    var DesiredConfiguration: js.UndefOr[DesiredConfiguration]
     var Preferences: js.UndefOr[RefreshPreferences]
     var Strategy: js.UndefOr[RefreshStrategy]
   }
@@ -3421,6 +4096,7 @@ package object autoscaling {
     @inline
     def apply(
         AutoScalingGroupName: XmlStringMaxLen255,
+        DesiredConfiguration: js.UndefOr[DesiredConfiguration] = js.undefined,
         Preferences: js.UndefOr[RefreshPreferences] = js.undefined,
         Strategy: js.UndefOr[RefreshStrategy] = js.undefined
     ): StartInstanceRefreshType = {
@@ -3428,6 +4104,7 @@ package object autoscaling {
         "AutoScalingGroupName" -> AutoScalingGroupName.asInstanceOf[js.Any]
       )
 
+      DesiredConfiguration.foreach(__v => __obj.updateDynamic("DesiredConfiguration")(__v.asInstanceOf[js.Any]))
       Preferences.foreach(__v => __obj.updateDynamic("Preferences")(__v.asInstanceOf[js.Any]))
       Strategy.foreach(__v => __obj.updateDynamic("Strategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartInstanceRefreshType]
@@ -3612,13 +4289,36 @@ package object autoscaling {
     }
   }
 
+  /** Specifies the minimum and maximum for the <code>TotalLocalStorageGB</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    */
+  @js.native
+  trait TotalLocalStorageGBRequest extends js.Object {
+    var Max: js.UndefOr[NullablePositiveDouble]
+    var Min: js.UndefOr[NullablePositiveDouble]
+  }
+
+  object TotalLocalStorageGBRequest {
+    @inline
+    def apply(
+        Max: js.UndefOr[NullablePositiveDouble] = js.undefined,
+        Min: js.UndefOr[NullablePositiveDouble] = js.undefined
+    ): TotalLocalStorageGBRequest = {
+      val __obj = js.Dynamic.literal()
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      Min.foreach(__v => __obj.updateDynamic("Min")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TotalLocalStorageGBRequest]
+    }
+  }
+
   @js.native
   trait UpdateAutoScalingGroupType extends js.Object {
     var AutoScalingGroupName: XmlStringMaxLen255
     var AvailabilityZones: js.UndefOr[AvailabilityZones]
     var CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled]
+    var Context: js.UndefOr[Context]
     var DefaultCooldown: js.UndefOr[Cooldown]
     var DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity]
+    var DesiredCapacityType: js.UndefOr[XmlStringMaxLen255]
     var HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod]
     var HealthCheckType: js.UndefOr[XmlStringMaxLen32]
     var LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255]
@@ -3640,8 +4340,10 @@ package object autoscaling {
         AutoScalingGroupName: XmlStringMaxLen255,
         AvailabilityZones: js.UndefOr[AvailabilityZones] = js.undefined,
         CapacityRebalance: js.UndefOr[CapacityRebalanceEnabled] = js.undefined,
+        Context: js.UndefOr[Context] = js.undefined,
         DefaultCooldown: js.UndefOr[Cooldown] = js.undefined,
         DesiredCapacity: js.UndefOr[AutoScalingGroupDesiredCapacity] = js.undefined,
+        DesiredCapacityType: js.UndefOr[XmlStringMaxLen255] = js.undefined,
         HealthCheckGracePeriod: js.UndefOr[HealthCheckGracePeriod] = js.undefined,
         HealthCheckType: js.UndefOr[XmlStringMaxLen32] = js.undefined,
         LaunchConfigurationName: js.UndefOr[XmlStringMaxLen255] = js.undefined,
@@ -3662,8 +4364,10 @@ package object autoscaling {
 
       AvailabilityZones.foreach(__v => __obj.updateDynamic("AvailabilityZones")(__v.asInstanceOf[js.Any]))
       CapacityRebalance.foreach(__v => __obj.updateDynamic("CapacityRebalance")(__v.asInstanceOf[js.Any]))
+      Context.foreach(__v => __obj.updateDynamic("Context")(__v.asInstanceOf[js.Any]))
       DefaultCooldown.foreach(__v => __obj.updateDynamic("DefaultCooldown")(__v.asInstanceOf[js.Any]))
       DesiredCapacity.foreach(__v => __obj.updateDynamic("DesiredCapacity")(__v.asInstanceOf[js.Any]))
+      DesiredCapacityType.foreach(__v => __obj.updateDynamic("DesiredCapacityType")(__v.asInstanceOf[js.Any]))
       HealthCheckGracePeriod.foreach(__v => __obj.updateDynamic("HealthCheckGracePeriod")(__v.asInstanceOf[js.Any]))
       HealthCheckType.foreach(__v => __obj.updateDynamic("HealthCheckType")(__v.asInstanceOf[js.Any]))
       LaunchConfigurationName.foreach(__v => __obj.updateDynamic("LaunchConfigurationName")(__v.asInstanceOf[js.Any]))
@@ -3678,6 +4382,29 @@ package object autoscaling {
       TerminationPolicies.foreach(__v => __obj.updateDynamic("TerminationPolicies")(__v.asInstanceOf[js.Any]))
       VPCZoneIdentifier.foreach(__v => __obj.updateDynamic("VPCZoneIdentifier")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateAutoScalingGroupType]
+    }
+  }
+
+  /** Specifies the minimum and maximum for the <code>VCpuCount</code> object when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    */
+  @js.native
+  trait VCpuCountRequest extends js.Object {
+    var Min: NullablePositiveInteger
+    var Max: js.UndefOr[NullablePositiveInteger]
+  }
+
+  object VCpuCountRequest {
+    @inline
+    def apply(
+        Min: NullablePositiveInteger,
+        Max: js.UndefOr[NullablePositiveInteger] = js.undefined
+    ): VCpuCountRequest = {
+      val __obj = js.Dynamic.literal(
+        "Min" -> Min.asInstanceOf[js.Any]
+      )
+
+      Max.foreach(__v => __obj.updateDynamic("Max")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VCpuCountRequest]
     }
   }
 

@@ -13,6 +13,7 @@ package object personalize {
   type ArnList = js.Array[Arn]
   type AvroSchema = String
   type BatchInferenceJobs = js.Array[BatchInferenceJobSummary]
+  type BatchSegmentJobs = js.Array[BatchSegmentJobSummary]
   type Campaigns = js.Array[CampaignSummary]
   type CategoricalHyperParameterRanges = js.Array[CategoricalHyperParameterRange]
   type CategoricalValue = String
@@ -20,6 +21,7 @@ package object personalize {
   type ContinuousHyperParameterRanges = js.Array[ContinuousHyperParameterRange]
   type ContinuousMaxValue = Double
   type ContinuousMinValue = Double
+  type DatasetExportJobs = js.Array[DatasetExportJobSummary]
   type DatasetGroups = js.Array[DatasetGroupSummary]
   type DatasetImportJobs = js.Array[DatasetImportJobSummary]
   type DatasetType = String
@@ -44,6 +46,7 @@ package object personalize {
   type IntegerHyperParameterRanges = js.Array[IntegerHyperParameterRange]
   type IntegerMaxValue = Int
   type IntegerMinValue = Int
+  type ItemAttribute = String
   type KmsKeyArn = String
   type MaxResults = Int
   type MetricName = String
@@ -59,6 +62,7 @@ package object personalize {
   type PerformHPO = Boolean
   type RecipeType = String
   type Recipes = js.Array[RecipeSummary]
+  type Recommenders = js.Array[RecommenderSummary]
   type ResourceConfig = js.Dictionary[ParameterValue]
   type RoleArn = String
   type S3Location = String
@@ -75,12 +79,15 @@ package object personalize {
   final class PersonalizeOps(private val service: Personalize) extends AnyVal {
 
     @inline def createBatchInferenceJobFuture(params: CreateBatchInferenceJobRequest): Future[CreateBatchInferenceJobResponse] = service.createBatchInferenceJob(params).promise().toFuture
+    @inline def createBatchSegmentJobFuture(params: CreateBatchSegmentJobRequest): Future[CreateBatchSegmentJobResponse] = service.createBatchSegmentJob(params).promise().toFuture
     @inline def createCampaignFuture(params: CreateCampaignRequest): Future[CreateCampaignResponse] = service.createCampaign(params).promise().toFuture
+    @inline def createDatasetExportJobFuture(params: CreateDatasetExportJobRequest): Future[CreateDatasetExportJobResponse] = service.createDatasetExportJob(params).promise().toFuture
     @inline def createDatasetFuture(params: CreateDatasetRequest): Future[CreateDatasetResponse] = service.createDataset(params).promise().toFuture
     @inline def createDatasetGroupFuture(params: CreateDatasetGroupRequest): Future[CreateDatasetGroupResponse] = service.createDatasetGroup(params).promise().toFuture
     @inline def createDatasetImportJobFuture(params: CreateDatasetImportJobRequest): Future[CreateDatasetImportJobResponse] = service.createDatasetImportJob(params).promise().toFuture
     @inline def createEventTrackerFuture(params: CreateEventTrackerRequest): Future[CreateEventTrackerResponse] = service.createEventTracker(params).promise().toFuture
     @inline def createFilterFuture(params: CreateFilterRequest): Future[CreateFilterResponse] = service.createFilter(params).promise().toFuture
+    @inline def createRecommenderFuture(params: CreateRecommenderRequest): Future[CreateRecommenderResponse] = service.createRecommender(params).promise().toFuture
     @inline def createSchemaFuture(params: CreateSchemaRequest): Future[CreateSchemaResponse] = service.createSchema(params).promise().toFuture
     @inline def createSolutionFuture(params: CreateSolutionRequest): Future[CreateSolutionResponse] = service.createSolution(params).promise().toFuture
     @inline def createSolutionVersionFuture(params: CreateSolutionVersionRequest): Future[CreateSolutionVersionResponse] = service.createSolutionVersion(params).promise().toFuture
@@ -89,11 +96,14 @@ package object personalize {
     @inline def deleteDatasetGroupFuture(params: DeleteDatasetGroupRequest): Future[js.Object] = service.deleteDatasetGroup(params).promise().toFuture
     @inline def deleteEventTrackerFuture(params: DeleteEventTrackerRequest): Future[js.Object] = service.deleteEventTracker(params).promise().toFuture
     @inline def deleteFilterFuture(params: DeleteFilterRequest): Future[js.Object] = service.deleteFilter(params).promise().toFuture
+    @inline def deleteRecommenderFuture(params: DeleteRecommenderRequest): Future[js.Object] = service.deleteRecommender(params).promise().toFuture
     @inline def deleteSchemaFuture(params: DeleteSchemaRequest): Future[js.Object] = service.deleteSchema(params).promise().toFuture
     @inline def deleteSolutionFuture(params: DeleteSolutionRequest): Future[js.Object] = service.deleteSolution(params).promise().toFuture
     @inline def describeAlgorithmFuture(params: DescribeAlgorithmRequest): Future[DescribeAlgorithmResponse] = service.describeAlgorithm(params).promise().toFuture
     @inline def describeBatchInferenceJobFuture(params: DescribeBatchInferenceJobRequest): Future[DescribeBatchInferenceJobResponse] = service.describeBatchInferenceJob(params).promise().toFuture
+    @inline def describeBatchSegmentJobFuture(params: DescribeBatchSegmentJobRequest): Future[DescribeBatchSegmentJobResponse] = service.describeBatchSegmentJob(params).promise().toFuture
     @inline def describeCampaignFuture(params: DescribeCampaignRequest): Future[DescribeCampaignResponse] = service.describeCampaign(params).promise().toFuture
+    @inline def describeDatasetExportJobFuture(params: DescribeDatasetExportJobRequest): Future[DescribeDatasetExportJobResponse] = service.describeDatasetExportJob(params).promise().toFuture
     @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
     @inline def describeDatasetGroupFuture(params: DescribeDatasetGroupRequest): Future[DescribeDatasetGroupResponse] = service.describeDatasetGroup(params).promise().toFuture
     @inline def describeDatasetImportJobFuture(params: DescribeDatasetImportJobRequest): Future[DescribeDatasetImportJobResponse] = service.describeDatasetImportJob(params).promise().toFuture
@@ -101,22 +111,28 @@ package object personalize {
     @inline def describeFeatureTransformationFuture(params: DescribeFeatureTransformationRequest): Future[DescribeFeatureTransformationResponse] = service.describeFeatureTransformation(params).promise().toFuture
     @inline def describeFilterFuture(params: DescribeFilterRequest): Future[DescribeFilterResponse] = service.describeFilter(params).promise().toFuture
     @inline def describeRecipeFuture(params: DescribeRecipeRequest): Future[DescribeRecipeResponse] = service.describeRecipe(params).promise().toFuture
+    @inline def describeRecommenderFuture(params: DescribeRecommenderRequest): Future[DescribeRecommenderResponse] = service.describeRecommender(params).promise().toFuture
     @inline def describeSchemaFuture(params: DescribeSchemaRequest): Future[DescribeSchemaResponse] = service.describeSchema(params).promise().toFuture
     @inline def describeSolutionFuture(params: DescribeSolutionRequest): Future[DescribeSolutionResponse] = service.describeSolution(params).promise().toFuture
     @inline def describeSolutionVersionFuture(params: DescribeSolutionVersionRequest): Future[DescribeSolutionVersionResponse] = service.describeSolutionVersion(params).promise().toFuture
     @inline def getSolutionMetricsFuture(params: GetSolutionMetricsRequest): Future[GetSolutionMetricsResponse] = service.getSolutionMetrics(params).promise().toFuture
     @inline def listBatchInferenceJobsFuture(params: ListBatchInferenceJobsRequest): Future[ListBatchInferenceJobsResponse] = service.listBatchInferenceJobs(params).promise().toFuture
+    @inline def listBatchSegmentJobsFuture(params: ListBatchSegmentJobsRequest): Future[ListBatchSegmentJobsResponse] = service.listBatchSegmentJobs(params).promise().toFuture
     @inline def listCampaignsFuture(params: ListCampaignsRequest): Future[ListCampaignsResponse] = service.listCampaigns(params).promise().toFuture
+    @inline def listDatasetExportJobsFuture(params: ListDatasetExportJobsRequest): Future[ListDatasetExportJobsResponse] = service.listDatasetExportJobs(params).promise().toFuture
     @inline def listDatasetGroupsFuture(params: ListDatasetGroupsRequest): Future[ListDatasetGroupsResponse] = service.listDatasetGroups(params).promise().toFuture
     @inline def listDatasetImportJobsFuture(params: ListDatasetImportJobsRequest): Future[ListDatasetImportJobsResponse] = service.listDatasetImportJobs(params).promise().toFuture
     @inline def listDatasetsFuture(params: ListDatasetsRequest): Future[ListDatasetsResponse] = service.listDatasets(params).promise().toFuture
     @inline def listEventTrackersFuture(params: ListEventTrackersRequest): Future[ListEventTrackersResponse] = service.listEventTrackers(params).promise().toFuture
     @inline def listFiltersFuture(params: ListFiltersRequest): Future[ListFiltersResponse] = service.listFilters(params).promise().toFuture
     @inline def listRecipesFuture(params: ListRecipesRequest): Future[ListRecipesResponse] = service.listRecipes(params).promise().toFuture
+    @inline def listRecommendersFuture(params: ListRecommendersRequest): Future[ListRecommendersResponse] = service.listRecommenders(params).promise().toFuture
     @inline def listSchemasFuture(params: ListSchemasRequest): Future[ListSchemasResponse] = service.listSchemas(params).promise().toFuture
     @inline def listSolutionVersionsFuture(params: ListSolutionVersionsRequest): Future[ListSolutionVersionsResponse] = service.listSolutionVersions(params).promise().toFuture
     @inline def listSolutionsFuture(params: ListSolutionsRequest): Future[ListSolutionsResponse] = service.listSolutions(params).promise().toFuture
+    @inline def stopSolutionVersionCreationFuture(params: StopSolutionVersionCreationRequest): Future[js.Object] = service.stopSolutionVersionCreation(params).promise().toFuture
     @inline def updateCampaignFuture(params: UpdateCampaignRequest): Future[UpdateCampaignResponse] = service.updateCampaign(params).promise().toFuture
+    @inline def updateRecommenderFuture(params: UpdateRecommenderRequest): Future[UpdateRecommenderResponse] = service.updateRecommender(params).promise().toFuture
 
   }
 
@@ -126,12 +142,15 @@ package object personalize {
     def this(config: AWSConfig) = this()
 
     def createBatchInferenceJob(params: CreateBatchInferenceJobRequest): Request[CreateBatchInferenceJobResponse] = js.native
+    def createBatchSegmentJob(params: CreateBatchSegmentJobRequest): Request[CreateBatchSegmentJobResponse] = js.native
     def createCampaign(params: CreateCampaignRequest): Request[CreateCampaignResponse] = js.native
     def createDataset(params: CreateDatasetRequest): Request[CreateDatasetResponse] = js.native
+    def createDatasetExportJob(params: CreateDatasetExportJobRequest): Request[CreateDatasetExportJobResponse] = js.native
     def createDatasetGroup(params: CreateDatasetGroupRequest): Request[CreateDatasetGroupResponse] = js.native
     def createDatasetImportJob(params: CreateDatasetImportJobRequest): Request[CreateDatasetImportJobResponse] = js.native
     def createEventTracker(params: CreateEventTrackerRequest): Request[CreateEventTrackerResponse] = js.native
     def createFilter(params: CreateFilterRequest): Request[CreateFilterResponse] = js.native
+    def createRecommender(params: CreateRecommenderRequest): Request[CreateRecommenderResponse] = js.native
     def createSchema(params: CreateSchemaRequest): Request[CreateSchemaResponse] = js.native
     def createSolution(params: CreateSolutionRequest): Request[CreateSolutionResponse] = js.native
     def createSolutionVersion(params: CreateSolutionVersionRequest): Request[CreateSolutionVersionResponse] = js.native
@@ -140,34 +159,43 @@ package object personalize {
     def deleteDatasetGroup(params: DeleteDatasetGroupRequest): Request[js.Object] = js.native
     def deleteEventTracker(params: DeleteEventTrackerRequest): Request[js.Object] = js.native
     def deleteFilter(params: DeleteFilterRequest): Request[js.Object] = js.native
+    def deleteRecommender(params: DeleteRecommenderRequest): Request[js.Object] = js.native
     def deleteSchema(params: DeleteSchemaRequest): Request[js.Object] = js.native
     def deleteSolution(params: DeleteSolutionRequest): Request[js.Object] = js.native
     def describeAlgorithm(params: DescribeAlgorithmRequest): Request[DescribeAlgorithmResponse] = js.native
     def describeBatchInferenceJob(params: DescribeBatchInferenceJobRequest): Request[DescribeBatchInferenceJobResponse] = js.native
+    def describeBatchSegmentJob(params: DescribeBatchSegmentJobRequest): Request[DescribeBatchSegmentJobResponse] = js.native
     def describeCampaign(params: DescribeCampaignRequest): Request[DescribeCampaignResponse] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
+    def describeDatasetExportJob(params: DescribeDatasetExportJobRequest): Request[DescribeDatasetExportJobResponse] = js.native
     def describeDatasetGroup(params: DescribeDatasetGroupRequest): Request[DescribeDatasetGroupResponse] = js.native
     def describeDatasetImportJob(params: DescribeDatasetImportJobRequest): Request[DescribeDatasetImportJobResponse] = js.native
     def describeEventTracker(params: DescribeEventTrackerRequest): Request[DescribeEventTrackerResponse] = js.native
     def describeFeatureTransformation(params: DescribeFeatureTransformationRequest): Request[DescribeFeatureTransformationResponse] = js.native
     def describeFilter(params: DescribeFilterRequest): Request[DescribeFilterResponse] = js.native
     def describeRecipe(params: DescribeRecipeRequest): Request[DescribeRecipeResponse] = js.native
+    def describeRecommender(params: DescribeRecommenderRequest): Request[DescribeRecommenderResponse] = js.native
     def describeSchema(params: DescribeSchemaRequest): Request[DescribeSchemaResponse] = js.native
     def describeSolution(params: DescribeSolutionRequest): Request[DescribeSolutionResponse] = js.native
     def describeSolutionVersion(params: DescribeSolutionVersionRequest): Request[DescribeSolutionVersionResponse] = js.native
     def getSolutionMetrics(params: GetSolutionMetricsRequest): Request[GetSolutionMetricsResponse] = js.native
     def listBatchInferenceJobs(params: ListBatchInferenceJobsRequest): Request[ListBatchInferenceJobsResponse] = js.native
+    def listBatchSegmentJobs(params: ListBatchSegmentJobsRequest): Request[ListBatchSegmentJobsResponse] = js.native
     def listCampaigns(params: ListCampaignsRequest): Request[ListCampaignsResponse] = js.native
+    def listDatasetExportJobs(params: ListDatasetExportJobsRequest): Request[ListDatasetExportJobsResponse] = js.native
     def listDatasetGroups(params: ListDatasetGroupsRequest): Request[ListDatasetGroupsResponse] = js.native
     def listDatasetImportJobs(params: ListDatasetImportJobsRequest): Request[ListDatasetImportJobsResponse] = js.native
     def listDatasets(params: ListDatasetsRequest): Request[ListDatasetsResponse] = js.native
     def listEventTrackers(params: ListEventTrackersRequest): Request[ListEventTrackersResponse] = js.native
     def listFilters(params: ListFiltersRequest): Request[ListFiltersResponse] = js.native
     def listRecipes(params: ListRecipesRequest): Request[ListRecipesResponse] = js.native
+    def listRecommenders(params: ListRecommendersRequest): Request[ListRecommendersResponse] = js.native
     def listSchemas(params: ListSchemasRequest): Request[ListSchemasResponse] = js.native
     def listSolutionVersions(params: ListSolutionVersionsRequest): Request[ListSolutionVersionsResponse] = js.native
     def listSolutions(params: ListSolutionsRequest): Request[ListSolutionsResponse] = js.native
+    def stopSolutionVersionCreation(params: StopSolutionVersionCreationRequest): Request[js.Object] = js.native
     def updateCampaign(params: UpdateCampaignRequest): Request[UpdateCampaignResponse] = js.native
+    def updateRecommender(params: UpdateRecommenderRequest): Request[UpdateRecommenderResponse] = js.native
   }
   object Personalize {
     @inline implicit def toOps(service: Personalize): PersonalizeOps = {
@@ -428,7 +456,132 @@ package object personalize {
     }
   }
 
-  /** Describes a deployed solution version, otherwise known as a campaign. For more information on campaigns, see <a>CreateCampaign</a>.
+  /** Contains information on a batch segment job.
+    */
+  @js.native
+  trait BatchSegmentJob extends js.Object {
+    var batchSegmentJobArn: js.UndefOr[Arn]
+    var creationDateTime: js.UndefOr[Date]
+    var failureReason: js.UndefOr[FailureReason]
+    var filterArn: js.UndefOr[Arn]
+    var jobInput: js.UndefOr[BatchSegmentJobInput]
+    var jobName: js.UndefOr[Name]
+    var jobOutput: js.UndefOr[BatchSegmentJobOutput]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var numResults: js.UndefOr[NumBatchResults]
+    var roleArn: js.UndefOr[RoleArn]
+    var solutionVersionArn: js.UndefOr[Arn]
+    var status: js.UndefOr[Status]
+  }
+
+  object BatchSegmentJob {
+    @inline
+    def apply(
+        batchSegmentJobArn: js.UndefOr[Arn] = js.undefined,
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        filterArn: js.UndefOr[Arn] = js.undefined,
+        jobInput: js.UndefOr[BatchSegmentJobInput] = js.undefined,
+        jobName: js.UndefOr[Name] = js.undefined,
+        jobOutput: js.UndefOr[BatchSegmentJobOutput] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        numResults: js.UndefOr[NumBatchResults] = js.undefined,
+        roleArn: js.UndefOr[RoleArn] = js.undefined,
+        solutionVersionArn: js.UndefOr[Arn] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): BatchSegmentJob = {
+      val __obj = js.Dynamic.literal()
+      batchSegmentJobArn.foreach(__v => __obj.updateDynamic("batchSegmentJobArn")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
+      jobInput.foreach(__v => __obj.updateDynamic("jobInput")(__v.asInstanceOf[js.Any]))
+      jobName.foreach(__v => __obj.updateDynamic("jobName")(__v.asInstanceOf[js.Any]))
+      jobOutput.foreach(__v => __obj.updateDynamic("jobOutput")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchSegmentJob]
+    }
+  }
+
+  /** The input configuration of a batch segment job.
+    */
+  @js.native
+  trait BatchSegmentJobInput extends js.Object {
+    var s3DataSource: S3DataConfig
+  }
+
+  object BatchSegmentJobInput {
+    @inline
+    def apply(
+        s3DataSource: S3DataConfig
+    ): BatchSegmentJobInput = {
+      val __obj = js.Dynamic.literal(
+        "s3DataSource" -> s3DataSource.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchSegmentJobInput]
+    }
+  }
+
+  /** The output configuration parameters of a batch segment job.
+    */
+  @js.native
+  trait BatchSegmentJobOutput extends js.Object {
+    var s3DataDestination: S3DataConfig
+  }
+
+  object BatchSegmentJobOutput {
+    @inline
+    def apply(
+        s3DataDestination: S3DataConfig
+    ): BatchSegmentJobOutput = {
+      val __obj = js.Dynamic.literal(
+        "s3DataDestination" -> s3DataDestination.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchSegmentJobOutput]
+    }
+  }
+
+  /** A truncated version of the <a>BatchSegmentJob</a> datatype. The <a>ListBatchSegmentJobs</a> operation returns a list of batch segment job summaries.
+    */
+  @js.native
+  trait BatchSegmentJobSummary extends js.Object {
+    var batchSegmentJobArn: js.UndefOr[Arn]
+    var creationDateTime: js.UndefOr[Date]
+    var failureReason: js.UndefOr[FailureReason]
+    var jobName: js.UndefOr[Name]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var solutionVersionArn: js.UndefOr[Arn]
+    var status: js.UndefOr[Status]
+  }
+
+  object BatchSegmentJobSummary {
+    @inline
+    def apply(
+        batchSegmentJobArn: js.UndefOr[Arn] = js.undefined,
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        jobName: js.UndefOr[Name] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        solutionVersionArn: js.UndefOr[Arn] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): BatchSegmentJobSummary = {
+      val __obj = js.Dynamic.literal()
+      batchSegmentJobArn.foreach(__v => __obj.updateDynamic("batchSegmentJobArn")(__v.asInstanceOf[js.Any]))
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      jobName.foreach(__v => __obj.updateDynamic("jobName")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchSegmentJobSummary]
+    }
+  }
+
+  /** An object that describes the deployment of a solution version. For more information on campaigns, see <a>CreateCampaign</a>.
     */
   @js.native
   trait Campaign extends js.Object {
@@ -661,28 +814,80 @@ package object personalize {
   }
 
   @js.native
+  trait CreateBatchSegmentJobRequest extends js.Object {
+    var jobInput: BatchSegmentJobInput
+    var jobName: Name
+    var jobOutput: BatchSegmentJobOutput
+    var roleArn: RoleArn
+    var solutionVersionArn: Arn
+    var filterArn: js.UndefOr[Arn]
+    var numResults: js.UndefOr[NumBatchResults]
+  }
+
+  object CreateBatchSegmentJobRequest {
+    @inline
+    def apply(
+        jobInput: BatchSegmentJobInput,
+        jobName: Name,
+        jobOutput: BatchSegmentJobOutput,
+        roleArn: RoleArn,
+        solutionVersionArn: Arn,
+        filterArn: js.UndefOr[Arn] = js.undefined,
+        numResults: js.UndefOr[NumBatchResults] = js.undefined
+    ): CreateBatchSegmentJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "jobInput" -> jobInput.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "jobOutput" -> jobOutput.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any],
+        "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
+      )
+
+      filterArn.foreach(__v => __obj.updateDynamic("filterArn")(__v.asInstanceOf[js.Any]))
+      numResults.foreach(__v => __obj.updateDynamic("numResults")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBatchSegmentJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBatchSegmentJobResponse extends js.Object {
+    var batchSegmentJobArn: js.UndefOr[Arn]
+  }
+
+  object CreateBatchSegmentJobResponse {
+    @inline
+    def apply(
+        batchSegmentJobArn: js.UndefOr[Arn] = js.undefined
+    ): CreateBatchSegmentJobResponse = {
+      val __obj = js.Dynamic.literal()
+      batchSegmentJobArn.foreach(__v => __obj.updateDynamic("batchSegmentJobArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBatchSegmentJobResponse]
+    }
+  }
+
+  @js.native
   trait CreateCampaignRequest extends js.Object {
-    var minProvisionedTPS: TransactionsPerSecond
     var name: Name
     var solutionVersionArn: Arn
     var campaignConfig: js.UndefOr[CampaignConfig]
+    var minProvisionedTPS: js.UndefOr[TransactionsPerSecond]
   }
 
   object CreateCampaignRequest {
     @inline
     def apply(
-        minProvisionedTPS: TransactionsPerSecond,
         name: Name,
         solutionVersionArn: Arn,
-        campaignConfig: js.UndefOr[CampaignConfig] = js.undefined
+        campaignConfig: js.UndefOr[CampaignConfig] = js.undefined,
+        minProvisionedTPS: js.UndefOr[TransactionsPerSecond] = js.undefined
     ): CreateCampaignRequest = {
       val __obj = js.Dynamic.literal(
-        "minProvisionedTPS" -> minProvisionedTPS.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any],
         "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
       )
 
       campaignConfig.foreach(__v => __obj.updateDynamic("campaignConfig")(__v.asInstanceOf[js.Any]))
+      minProvisionedTPS.foreach(__v => __obj.updateDynamic("minProvisionedTPS")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCampaignRequest]
     }
   }
@@ -704,8 +909,55 @@ package object personalize {
   }
 
   @js.native
+  trait CreateDatasetExportJobRequest extends js.Object {
+    var datasetArn: Arn
+    var jobName: Name
+    var jobOutput: DatasetExportJobOutput
+    var roleArn: RoleArn
+    var ingestionMode: js.UndefOr[IngestionMode]
+  }
+
+  object CreateDatasetExportJobRequest {
+    @inline
+    def apply(
+        datasetArn: Arn,
+        jobName: Name,
+        jobOutput: DatasetExportJobOutput,
+        roleArn: RoleArn,
+        ingestionMode: js.UndefOr[IngestionMode] = js.undefined
+    ): CreateDatasetExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "datasetArn" -> datasetArn.asInstanceOf[js.Any],
+        "jobName" -> jobName.asInstanceOf[js.Any],
+        "jobOutput" -> jobOutput.asInstanceOf[js.Any],
+        "roleArn" -> roleArn.asInstanceOf[js.Any]
+      )
+
+      ingestionMode.foreach(__v => __obj.updateDynamic("ingestionMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDatasetExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateDatasetExportJobResponse extends js.Object {
+    var datasetExportJobArn: js.UndefOr[Arn]
+  }
+
+  object CreateDatasetExportJobResponse {
+    @inline
+    def apply(
+        datasetExportJobArn: js.UndefOr[Arn] = js.undefined
+    ): CreateDatasetExportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      datasetExportJobArn.foreach(__v => __obj.updateDynamic("datasetExportJobArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateDatasetExportJobResponse]
+    }
+  }
+
+  @js.native
   trait CreateDatasetGroupRequest extends js.Object {
     var name: Name
+    var domain: js.UndefOr[Domain]
     var kmsKeyArn: js.UndefOr[KmsKeyArn]
     var roleArn: js.UndefOr[RoleArn]
   }
@@ -714,6 +966,7 @@ package object personalize {
     @inline
     def apply(
         name: Name,
+        domain: js.UndefOr[Domain] = js.undefined,
         kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
         roleArn: js.UndefOr[RoleArn] = js.undefined
     ): CreateDatasetGroupRequest = {
@@ -721,6 +974,7 @@ package object personalize {
         "name" -> name.asInstanceOf[js.Any]
       )
 
+      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
       roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetGroupRequest]
@@ -730,15 +984,18 @@ package object personalize {
   @js.native
   trait CreateDatasetGroupResponse extends js.Object {
     var datasetGroupArn: js.UndefOr[Arn]
+    var domain: js.UndefOr[Domain]
   }
 
   object CreateDatasetGroupResponse {
     @inline
     def apply(
-        datasetGroupArn: js.UndefOr[Arn] = js.undefined
+        datasetGroupArn: js.UndefOr[Arn] = js.undefined,
+        domain: js.UndefOr[Domain] = js.undefined
     ): CreateDatasetGroupResponse = {
       val __obj = js.Dynamic.literal()
       datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDatasetGroupResponse]
     }
   }
@@ -906,21 +1163,68 @@ package object personalize {
   }
 
   @js.native
+  trait CreateRecommenderRequest extends js.Object {
+    var datasetGroupArn: Arn
+    var name: Name
+    var recipeArn: Arn
+    var recommenderConfig: js.UndefOr[RecommenderConfig]
+  }
+
+  object CreateRecommenderRequest {
+    @inline
+    def apply(
+        datasetGroupArn: Arn,
+        name: Name,
+        recipeArn: Arn,
+        recommenderConfig: js.UndefOr[RecommenderConfig] = js.undefined
+    ): CreateRecommenderRequest = {
+      val __obj = js.Dynamic.literal(
+        "datasetGroupArn" -> datasetGroupArn.asInstanceOf[js.Any],
+        "name" -> name.asInstanceOf[js.Any],
+        "recipeArn" -> recipeArn.asInstanceOf[js.Any]
+      )
+
+      recommenderConfig.foreach(__v => __obj.updateDynamic("recommenderConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRecommenderRequest]
+    }
+  }
+
+  @js.native
+  trait CreateRecommenderResponse extends js.Object {
+    var recommenderArn: js.UndefOr[Arn]
+  }
+
+  object CreateRecommenderResponse {
+    @inline
+    def apply(
+        recommenderArn: js.UndefOr[Arn] = js.undefined
+    ): CreateRecommenderResponse = {
+      val __obj = js.Dynamic.literal()
+      recommenderArn.foreach(__v => __obj.updateDynamic("recommenderArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRecommenderResponse]
+    }
+  }
+
+  @js.native
   trait CreateSchemaRequest extends js.Object {
     var name: Name
     var schema: AvroSchema
+    var domain: js.UndefOr[Domain]
   }
 
   object CreateSchemaRequest {
     @inline
     def apply(
         name: Name,
-        schema: AvroSchema
+        schema: AvroSchema,
+        domain: js.UndefOr[Domain] = js.undefined
     ): CreateSchemaRequest = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any],
         "schema" -> schema.asInstanceOf[js.Any]
       )
+
+      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSchemaRequest]
     }
   }
@@ -1087,12 +1391,110 @@ package object personalize {
     }
   }
 
-  /** A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset. You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.
+  /** Describes a job that exports a dataset to an Amazon S3 bucket. For more information, see <a>CreateDatasetExportJob</a>. A dataset export job can be in one of the following states: * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+    */
+  @js.native
+  trait DatasetExportJob extends js.Object {
+    var creationDateTime: js.UndefOr[Date]
+    var datasetArn: js.UndefOr[Arn]
+    var datasetExportJobArn: js.UndefOr[Arn]
+    var failureReason: js.UndefOr[FailureReason]
+    var ingestionMode: js.UndefOr[IngestionMode]
+    var jobName: js.UndefOr[Name]
+    var jobOutput: js.UndefOr[DatasetExportJobOutput]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var roleArn: js.UndefOr[Arn]
+    var status: js.UndefOr[Status]
+  }
+
+  object DatasetExportJob {
+    @inline
+    def apply(
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        datasetArn: js.UndefOr[Arn] = js.undefined,
+        datasetExportJobArn: js.UndefOr[Arn] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        ingestionMode: js.UndefOr[IngestionMode] = js.undefined,
+        jobName: js.UndefOr[Name] = js.undefined,
+        jobOutput: js.UndefOr[DatasetExportJobOutput] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        roleArn: js.UndefOr[Arn] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): DatasetExportJob = {
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetArn.foreach(__v => __obj.updateDynamic("datasetArn")(__v.asInstanceOf[js.Any]))
+      datasetExportJobArn.foreach(__v => __obj.updateDynamic("datasetExportJobArn")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      ingestionMode.foreach(__v => __obj.updateDynamic("ingestionMode")(__v.asInstanceOf[js.Any]))
+      jobName.foreach(__v => __obj.updateDynamic("jobName")(__v.asInstanceOf[js.Any]))
+      jobOutput.foreach(__v => __obj.updateDynamic("jobOutput")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      roleArn.foreach(__v => __obj.updateDynamic("roleArn")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetExportJob]
+    }
+  }
+
+  /** The output configuration parameters of a dataset export job.
+    */
+  @js.native
+  trait DatasetExportJobOutput extends js.Object {
+    var s3DataDestination: S3DataConfig
+  }
+
+  object DatasetExportJobOutput {
+    @inline
+    def apply(
+        s3DataDestination: S3DataConfig
+    ): DatasetExportJobOutput = {
+      val __obj = js.Dynamic.literal(
+        "s3DataDestination" -> s3DataDestination.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DatasetExportJobOutput]
+    }
+  }
+
+  /** Provides a summary of the properties of a dataset export job. For a complete listing, call the <a>DescribeDatasetExportJob</a> API.
+    */
+  @js.native
+  trait DatasetExportJobSummary extends js.Object {
+    var creationDateTime: js.UndefOr[Date]
+    var datasetExportJobArn: js.UndefOr[Arn]
+    var failureReason: js.UndefOr[FailureReason]
+    var jobName: js.UndefOr[Name]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var status: js.UndefOr[Status]
+  }
+
+  object DatasetExportJobSummary {
+    @inline
+    def apply(
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        datasetExportJobArn: js.UndefOr[Arn] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        jobName: js.UndefOr[Name] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): DatasetExportJobSummary = {
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetExportJobArn.foreach(__v => __obj.updateDynamic("datasetExportJobArn")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      jobName.foreach(__v => __obj.updateDynamic("jobName")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DatasetExportJobSummary]
+    }
+  }
+
+  /** A dataset group is a collection of related datasets (Interactions, User, and Item). You create a dataset group by calling <a>CreateDatasetGroup</a>. You then create a dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset group is used to create and train a solution by calling <a>CreateSolution</a>. A dataset group can contain only one of each type of dataset. You can specify an Key Management Service (KMS) key to encrypt the datasets in the group.
     */
   @js.native
   trait DatasetGroup extends js.Object {
     var creationDateTime: js.UndefOr[Date]
     var datasetGroupArn: js.UndefOr[Arn]
+    var domain: js.UndefOr[Domain]
     var failureReason: js.UndefOr[FailureReason]
     var kmsKeyArn: js.UndefOr[KmsKeyArn]
     var lastUpdatedDateTime: js.UndefOr[Date]
@@ -1106,6 +1508,7 @@ package object personalize {
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         datasetGroupArn: js.UndefOr[Arn] = js.undefined,
+        domain: js.UndefOr[Domain] = js.undefined,
         failureReason: js.UndefOr[FailureReason] = js.undefined,
         kmsKeyArn: js.UndefOr[KmsKeyArn] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
@@ -1116,6 +1519,7 @@ package object personalize {
       val __obj = js.Dynamic.literal()
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
       datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       kmsKeyArn.foreach(__v => __obj.updateDynamic("kmsKeyArn")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
@@ -1132,6 +1536,7 @@ package object personalize {
   trait DatasetGroupSummary extends js.Object {
     var creationDateTime: js.UndefOr[Date]
     var datasetGroupArn: js.UndefOr[Arn]
+    var domain: js.UndefOr[Domain]
     var failureReason: js.UndefOr[FailureReason]
     var lastUpdatedDateTime: js.UndefOr[Date]
     var name: js.UndefOr[Name]
@@ -1143,6 +1548,7 @@ package object personalize {
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
         datasetGroupArn: js.UndefOr[Arn] = js.undefined,
+        domain: js.UndefOr[Domain] = js.undefined,
         failureReason: js.UndefOr[FailureReason] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
@@ -1151,6 +1557,7 @@ package object personalize {
       val __obj = js.Dynamic.literal()
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
       datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -1239,6 +1646,7 @@ package object personalize {
   @js.native
   trait DatasetSchema extends js.Object {
     var creationDateTime: js.UndefOr[Date]
+    var domain: js.UndefOr[Domain]
     var lastUpdatedDateTime: js.UndefOr[Date]
     var name: js.UndefOr[Name]
     var schema: js.UndefOr[AvroSchema]
@@ -1249,6 +1657,7 @@ package object personalize {
     @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
+        domain: js.UndefOr[Domain] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         schema: js.UndefOr[AvroSchema] = js.undefined,
@@ -1256,6 +1665,7 @@ package object personalize {
     ): DatasetSchema = {
       val __obj = js.Dynamic.literal()
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       schema.foreach(__v => __obj.updateDynamic("schema")(__v.asInstanceOf[js.Any]))
@@ -1269,6 +1679,7 @@ package object personalize {
   @js.native
   trait DatasetSchemaSummary extends js.Object {
     var creationDateTime: js.UndefOr[Date]
+    var domain: js.UndefOr[Domain]
     var lastUpdatedDateTime: js.UndefOr[Date]
     var name: js.UndefOr[Name]
     var schemaArn: js.UndefOr[Arn]
@@ -1278,12 +1689,14 @@ package object personalize {
     @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
+        domain: js.UndefOr[Domain] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         schemaArn: js.UndefOr[Arn] = js.undefined
     ): DatasetSchemaSummary = {
       val __obj = js.Dynamic.literal()
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       schemaArn.foreach(__v => __obj.updateDynamic("schemaArn")(__v.asInstanceOf[js.Any]))
@@ -1512,6 +1925,23 @@ package object personalize {
   }
 
   @js.native
+  trait DeleteRecommenderRequest extends js.Object {
+    var recommenderArn: Arn
+  }
+
+  object DeleteRecommenderRequest {
+    @inline
+    def apply(
+        recommenderArn: Arn
+    ): DeleteRecommenderRequest = {
+      val __obj = js.Dynamic.literal(
+        "recommenderArn" -> recommenderArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteRecommenderRequest]
+    }
+  }
+
+  @js.native
   trait DeleteSchemaRequest extends js.Object {
     var schemaArn: Arn
   }
@@ -1612,6 +2042,39 @@ package object personalize {
   }
 
   @js.native
+  trait DescribeBatchSegmentJobRequest extends js.Object {
+    var batchSegmentJobArn: Arn
+  }
+
+  object DescribeBatchSegmentJobRequest {
+    @inline
+    def apply(
+        batchSegmentJobArn: Arn
+    ): DescribeBatchSegmentJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "batchSegmentJobArn" -> batchSegmentJobArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeBatchSegmentJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeBatchSegmentJobResponse extends js.Object {
+    var batchSegmentJob: js.UndefOr[BatchSegmentJob]
+  }
+
+  object DescribeBatchSegmentJobResponse {
+    @inline
+    def apply(
+        batchSegmentJob: js.UndefOr[BatchSegmentJob] = js.undefined
+    ): DescribeBatchSegmentJobResponse = {
+      val __obj = js.Dynamic.literal()
+      batchSegmentJob.foreach(__v => __obj.updateDynamic("batchSegmentJob")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeBatchSegmentJobResponse]
+    }
+  }
+
+  @js.native
   trait DescribeCampaignRequest extends js.Object {
     var campaignArn: Arn
   }
@@ -1641,6 +2104,39 @@ package object personalize {
       val __obj = js.Dynamic.literal()
       campaign.foreach(__v => __obj.updateDynamic("campaign")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCampaignResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeDatasetExportJobRequest extends js.Object {
+    var datasetExportJobArn: Arn
+  }
+
+  object DescribeDatasetExportJobRequest {
+    @inline
+    def apply(
+        datasetExportJobArn: Arn
+    ): DescribeDatasetExportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "datasetExportJobArn" -> datasetExportJobArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeDatasetExportJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeDatasetExportJobResponse extends js.Object {
+    var datasetExportJob: js.UndefOr[DatasetExportJob]
+  }
+
+  object DescribeDatasetExportJobResponse {
+    @inline
+    def apply(
+        datasetExportJob: js.UndefOr[DatasetExportJob] = js.undefined
+    ): DescribeDatasetExportJobResponse = {
+      val __obj = js.Dynamic.literal()
+      datasetExportJob.foreach(__v => __obj.updateDynamic("datasetExportJob")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeDatasetExportJobResponse]
     }
   }
 
@@ -1872,6 +2368,39 @@ package object personalize {
       val __obj = js.Dynamic.literal()
       recipe.foreach(__v => __obj.updateDynamic("recipe")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRecipeResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeRecommenderRequest extends js.Object {
+    var recommenderArn: Arn
+  }
+
+  object DescribeRecommenderRequest {
+    @inline
+    def apply(
+        recommenderArn: Arn
+    ): DescribeRecommenderRequest = {
+      val __obj = js.Dynamic.literal(
+        "recommenderArn" -> recommenderArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeRecommenderRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeRecommenderResponse extends js.Object {
+    var recommender: js.UndefOr[Recommender]
+  }
+
+  object DescribeRecommenderResponse {
+    @inline
+    def apply(
+        recommender: js.UndefOr[Recommender] = js.undefined
+    ): DescribeRecommenderResponse = {
+      val __obj = js.Dynamic.literal()
+      recommender.foreach(__v => __obj.updateDynamic("recommender")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRecommenderResponse]
     }
   }
 
@@ -2348,6 +2877,47 @@ package object personalize {
   }
 
   @js.native
+  trait ListBatchSegmentJobsRequest extends js.Object {
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var solutionVersionArn: js.UndefOr[Arn]
+  }
+
+  object ListBatchSegmentJobsRequest {
+    @inline
+    def apply(
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        solutionVersionArn: js.UndefOr[Arn] = js.undefined
+    ): ListBatchSegmentJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      solutionVersionArn.foreach(__v => __obj.updateDynamic("solutionVersionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBatchSegmentJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListBatchSegmentJobsResponse extends js.Object {
+    var batchSegmentJobs: js.UndefOr[BatchSegmentJobs]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListBatchSegmentJobsResponse {
+    @inline
+    def apply(
+        batchSegmentJobs: js.UndefOr[BatchSegmentJobs] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListBatchSegmentJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      batchSegmentJobs.foreach(__v => __obj.updateDynamic("batchSegmentJobs")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListBatchSegmentJobsResponse]
+    }
+  }
+
+  @js.native
   trait ListCampaignsRequest extends js.Object {
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
@@ -2385,6 +2955,47 @@ package object personalize {
       campaigns.foreach(__v => __obj.updateDynamic("campaigns")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListCampaignsResponse]
+    }
+  }
+
+  @js.native
+  trait ListDatasetExportJobsRequest extends js.Object {
+    var datasetArn: js.UndefOr[Arn]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDatasetExportJobsRequest {
+    @inline
+    def apply(
+        datasetArn: js.UndefOr[Arn] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDatasetExportJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      datasetArn.foreach(__v => __obj.updateDynamic("datasetArn")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatasetExportJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListDatasetExportJobsResponse extends js.Object {
+    var datasetExportJobs: js.UndefOr[DatasetExportJobs]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListDatasetExportJobsResponse {
+    @inline
+    def apply(
+        datasetExportJobs: js.UndefOr[DatasetExportJobs] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListDatasetExportJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      datasetExportJobs.foreach(__v => __obj.updateDynamic("datasetExportJobs")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDatasetExportJobsResponse]
     }
   }
 
@@ -2592,6 +3203,7 @@ package object personalize {
 
   @js.native
   trait ListRecipesRequest extends js.Object {
+    var domain: js.UndefOr[Domain]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
     var recipeProvider: js.UndefOr[RecipeProvider]
@@ -2600,11 +3212,13 @@ package object personalize {
   object ListRecipesRequest {
     @inline
     def apply(
+        domain: js.UndefOr[Domain] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
         nextToken: js.UndefOr[NextToken] = js.undefined,
         recipeProvider: js.UndefOr[RecipeProvider] = js.undefined
     ): ListRecipesRequest = {
       val __obj = js.Dynamic.literal()
+      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       recipeProvider.foreach(__v => __obj.updateDynamic("recipeProvider")(__v.asInstanceOf[js.Any]))
@@ -2628,6 +3242,47 @@ package object personalize {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       recipes.foreach(__v => __obj.updateDynamic("recipes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecipesResponse]
+    }
+  }
+
+  @js.native
+  trait ListRecommendersRequest extends js.Object {
+    var datasetGroupArn: js.UndefOr[Arn]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object ListRecommendersRequest {
+    @inline
+    def apply(
+        datasetGroupArn: js.UndefOr[Arn] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListRecommendersRequest = {
+      val __obj = js.Dynamic.literal()
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRecommendersRequest]
+    }
+  }
+
+  @js.native
+  trait ListRecommendersResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var recommenders: js.UndefOr[Recommenders]
+  }
+
+  object ListRecommendersResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        recommenders: js.UndefOr[Recommenders] = js.undefined
+    ): ListRecommendersResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      recommenders.foreach(__v => __obj.updateDynamic("recommenders")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRecommendersResponse]
     }
   }
 
@@ -2751,6 +3406,27 @@ package object personalize {
     }
   }
 
+  /** Describes the additional objective for the solution, such as maximizing streaming minutes or increasing revenue. For more information see [[https://docs.aws.amazon.com/personalize/latest/dg/optimizing-solution-for-objective.html|Optimizing a solution]].
+    */
+  @js.native
+  trait OptimizationObjective extends js.Object {
+    var itemAttribute: js.UndefOr[ItemAttribute]
+    var objectiveSensitivity: js.UndefOr[ObjectiveSensitivity]
+  }
+
+  object OptimizationObjective {
+    @inline
+    def apply(
+        itemAttribute: js.UndefOr[ItemAttribute] = js.undefined,
+        objectiveSensitivity: js.UndefOr[ObjectiveSensitivity] = js.undefined
+    ): OptimizationObjective = {
+      val __obj = js.Dynamic.literal()
+      itemAttribute.foreach(__v => __obj.updateDynamic("itemAttribute")(__v.asInstanceOf[js.Any]))
+      objectiveSensitivity.foreach(__v => __obj.updateDynamic("objectiveSensitivity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OptimizationObjective]
+    }
+  }
+
   /** Provides information about a recipe. Each recipe provides an algorithm that Amazon Personalize uses in model training when you use the <a>CreateSolution</a> operation.
     */
   @js.native
@@ -2798,6 +3474,7 @@ package object personalize {
   @js.native
   trait RecipeSummary extends js.Object {
     var creationDateTime: js.UndefOr[Date]
+    var domain: js.UndefOr[Domain]
     var lastUpdatedDateTime: js.UndefOr[Date]
     var name: js.UndefOr[Name]
     var recipeArn: js.UndefOr[Arn]
@@ -2808,6 +3485,7 @@ package object personalize {
     @inline
     def apply(
         creationDateTime: js.UndefOr[Date] = js.undefined,
+        domain: js.UndefOr[Domain] = js.undefined,
         lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         recipeArn: js.UndefOr[Arn] = js.undefined,
@@ -2815,11 +3493,144 @@ package object personalize {
     ): RecipeSummary = {
       val __obj = js.Dynamic.literal()
       creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      domain.foreach(__v => __obj.updateDynamic("domain")(__v.asInstanceOf[js.Any]))
       lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecipeSummary]
+    }
+  }
+
+  /** Describes a recommendation generator for a Domain dataset group. You create a recommender in a Domain dataset group for a specific domain use case (domain recipe), and specify the recommender in a [[https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html|GetRecommendations]] request.
+    */
+  @js.native
+  trait Recommender extends js.Object {
+    var creationDateTime: js.UndefOr[Date]
+    var datasetGroupArn: js.UndefOr[Arn]
+    var failureReason: js.UndefOr[FailureReason]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var latestRecommenderUpdate: js.UndefOr[RecommenderUpdateSummary]
+    var name: js.UndefOr[Name]
+    var recipeArn: js.UndefOr[Arn]
+    var recommenderArn: js.UndefOr[Arn]
+    var recommenderConfig: js.UndefOr[RecommenderConfig]
+    var status: js.UndefOr[Status]
+  }
+
+  object Recommender {
+    @inline
+    def apply(
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        datasetGroupArn: js.UndefOr[Arn] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        latestRecommenderUpdate: js.UndefOr[RecommenderUpdateSummary] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        recipeArn: js.UndefOr[Arn] = js.undefined,
+        recommenderArn: js.UndefOr[Arn] = js.undefined,
+        recommenderConfig: js.UndefOr[RecommenderConfig] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): Recommender = {
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      latestRecommenderUpdate.foreach(__v => __obj.updateDynamic("latestRecommenderUpdate")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
+      recommenderArn.foreach(__v => __obj.updateDynamic("recommenderArn")(__v.asInstanceOf[js.Any]))
+      recommenderConfig.foreach(__v => __obj.updateDynamic("recommenderConfig")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Recommender]
+    }
+  }
+
+  /** The configuration details of the recommender.
+    */
+  @js.native
+  trait RecommenderConfig extends js.Object {
+    var itemExplorationConfig: js.UndefOr[HyperParameters]
+  }
+
+  object RecommenderConfig {
+    @inline
+    def apply(
+        itemExplorationConfig: js.UndefOr[HyperParameters] = js.undefined
+    ): RecommenderConfig = {
+      val __obj = js.Dynamic.literal()
+      itemExplorationConfig.foreach(__v => __obj.updateDynamic("itemExplorationConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecommenderConfig]
+    }
+  }
+
+  /** Provides a summary of the properties of the recommender.
+    */
+  @js.native
+  trait RecommenderSummary extends js.Object {
+    var creationDateTime: js.UndefOr[Date]
+    var datasetGroupArn: js.UndefOr[Arn]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var name: js.UndefOr[Name]
+    var recipeArn: js.UndefOr[Arn]
+    var recommenderArn: js.UndefOr[Arn]
+    var recommenderConfig: js.UndefOr[RecommenderConfig]
+    var status: js.UndefOr[Status]
+  }
+
+  object RecommenderSummary {
+    @inline
+    def apply(
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        datasetGroupArn: js.UndefOr[Arn] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        name: js.UndefOr[Name] = js.undefined,
+        recipeArn: js.UndefOr[Arn] = js.undefined,
+        recommenderArn: js.UndefOr[Arn] = js.undefined,
+        recommenderConfig: js.UndefOr[RecommenderConfig] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): RecommenderSummary = {
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      datasetGroupArn.foreach(__v => __obj.updateDynamic("datasetGroupArn")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      recipeArn.foreach(__v => __obj.updateDynamic("recipeArn")(__v.asInstanceOf[js.Any]))
+      recommenderArn.foreach(__v => __obj.updateDynamic("recommenderArn")(__v.asInstanceOf[js.Any]))
+      recommenderConfig.foreach(__v => __obj.updateDynamic("recommenderConfig")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecommenderSummary]
+    }
+  }
+
+  /** Provides a summary of the properties of a recommender update. For a complete listing, call the <a>DescribeRecommender</a> API.
+    */
+  @js.native
+  trait RecommenderUpdateSummary extends js.Object {
+    var creationDateTime: js.UndefOr[Date]
+    var failureReason: js.UndefOr[FailureReason]
+    var lastUpdatedDateTime: js.UndefOr[Date]
+    var recommenderConfig: js.UndefOr[RecommenderConfig]
+    var status: js.UndefOr[Status]
+  }
+
+  object RecommenderUpdateSummary {
+    @inline
+    def apply(
+        creationDateTime: js.UndefOr[Date] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
+        lastUpdatedDateTime: js.UndefOr[Date] = js.undefined,
+        recommenderConfig: js.UndefOr[RecommenderConfig] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined
+    ): RecommenderUpdateSummary = {
+      val __obj = js.Dynamic.literal()
+      creationDateTime.foreach(__v => __obj.updateDynamic("creationDateTime")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      lastUpdatedDateTime.foreach(__v => __obj.updateDynamic("lastUpdatedDateTime")(__v.asInstanceOf[js.Any]))
+      recommenderConfig.foreach(__v => __obj.updateDynamic("recommenderConfig")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecommenderUpdateSummary]
     }
   }
 
@@ -2909,6 +3720,7 @@ package object personalize {
     var eventValueThreshold: js.UndefOr[EventValueThreshold]
     var featureTransformationParameters: js.UndefOr[FeatureTransformationParameters]
     var hpoConfig: js.UndefOr[HPOConfig]
+    var optimizationObjective: js.UndefOr[OptimizationObjective]
   }
 
   object SolutionConfig {
@@ -2918,7 +3730,8 @@ package object personalize {
         autoMLConfig: js.UndefOr[AutoMLConfig] = js.undefined,
         eventValueThreshold: js.UndefOr[EventValueThreshold] = js.undefined,
         featureTransformationParameters: js.UndefOr[FeatureTransformationParameters] = js.undefined,
-        hpoConfig: js.UndefOr[HPOConfig] = js.undefined
+        hpoConfig: js.UndefOr[HPOConfig] = js.undefined,
+        optimizationObjective: js.UndefOr[OptimizationObjective] = js.undefined
     ): SolutionConfig = {
       val __obj = js.Dynamic.literal()
       algorithmHyperParameters.foreach(__v => __obj.updateDynamic("algorithmHyperParameters")(__v.asInstanceOf[js.Any]))
@@ -2926,6 +3739,7 @@ package object personalize {
       eventValueThreshold.foreach(__v => __obj.updateDynamic("eventValueThreshold")(__v.asInstanceOf[js.Any]))
       featureTransformationParameters.foreach(__v => __obj.updateDynamic("featureTransformationParameters")(__v.asInstanceOf[js.Any]))
       hpoConfig.foreach(__v => __obj.updateDynamic("hpoConfig")(__v.asInstanceOf[js.Any]))
+      optimizationObjective.foreach(__v => __obj.updateDynamic("optimizationObjective")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SolutionConfig]
     }
   }
@@ -2960,7 +3774,7 @@ package object personalize {
     }
   }
 
-  /** An object that provides information about a specific version of a <a>Solution</a>.
+  /** An object that provides information about a specific version of a <a>Solution</a> in a Custom dataset group.
     */
   @js.native
   trait SolutionVersion extends js.Object {
@@ -3050,6 +3864,23 @@ package object personalize {
     }
   }
 
+  @js.native
+  trait StopSolutionVersionCreationRequest extends js.Object {
+    var solutionVersionArn: Arn
+  }
+
+  object StopSolutionVersionCreationRequest {
+    @inline
+    def apply(
+        solutionVersionArn: Arn
+    ): StopSolutionVersionCreationRequest = {
+      val __obj = js.Dynamic.literal(
+        "solutionVersionArn" -> solutionVersionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopSolutionVersionCreationRequest]
+    }
+  }
+
   /** If hyperparameter optimization (HPO) was performed, contains the hyperparameter values of the best performing model.
     */
   @js.native
@@ -3108,6 +3939,42 @@ package object personalize {
       val __obj = js.Dynamic.literal()
       campaignArn.foreach(__v => __obj.updateDynamic("campaignArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCampaignResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateRecommenderRequest extends js.Object {
+    var recommenderArn: Arn
+    var recommenderConfig: RecommenderConfig
+  }
+
+  object UpdateRecommenderRequest {
+    @inline
+    def apply(
+        recommenderArn: Arn,
+        recommenderConfig: RecommenderConfig
+    ): UpdateRecommenderRequest = {
+      val __obj = js.Dynamic.literal(
+        "recommenderArn" -> recommenderArn.asInstanceOf[js.Any],
+        "recommenderConfig" -> recommenderConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateRecommenderRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRecommenderResponse extends js.Object {
+    var recommenderArn: js.UndefOr[Arn]
+  }
+
+  object UpdateRecommenderResponse {
+    @inline
+    def apply(
+        recommenderArn: js.UndefOr[Arn] = js.undefined
+    ): UpdateRecommenderResponse = {
+      val __obj = js.Dynamic.literal()
+      recommenderArn.foreach(__v => __obj.updateDynamic("recommenderArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRecommenderResponse]
     }
   }
 }

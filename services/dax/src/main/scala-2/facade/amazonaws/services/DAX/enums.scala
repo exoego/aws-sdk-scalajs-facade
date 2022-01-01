@@ -12,6 +12,15 @@ object ChangeType {
 }
 
 @js.native
+sealed trait ClusterEndpointEncryptionType extends js.Any
+object ClusterEndpointEncryptionType {
+  val NONE = "NONE".asInstanceOf[ClusterEndpointEncryptionType]
+  val TLS = "TLS".asInstanceOf[ClusterEndpointEncryptionType]
+
+  @inline def values: js.Array[ClusterEndpointEncryptionType] = js.Array(NONE, TLS)
+}
+
+@js.native
 sealed trait IsModifiable extends js.Any
 object IsModifiable {
   val TRUE = "TRUE".asInstanceOf[IsModifiable]

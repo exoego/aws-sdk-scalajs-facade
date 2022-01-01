@@ -14,10 +14,13 @@ package object route53domains {
   type City = String
   type ContactName = String
   type ContactNumber = String
+  type Currency = String
   type CurrentExpiryYear = Int
   type DNSSec = String
   type DomainAuthCode = String
   type DomainName = String
+  type DomainPriceList = js.Array[DomainPrice]
+  type DomainPriceName = String
   type DomainStatus = String
   type DomainStatusList = js.Array[DomainStatus]
   type DomainSuggestionsList = js.Array[DomainSuggestion]
@@ -28,6 +31,7 @@ package object route53domains {
   type ExtraParamList = js.Array[ExtraParam]
   type ExtraParamValue = String
   type FIAuthKey = String
+  type FilterConditions = js.Array[FilterCondition]
   type GlueIp = String
   type GlueIpList = js.Array[GlueIp]
   type HostName = String
@@ -50,6 +54,9 @@ package object route53domains {
   type TagList = js.Array[Tag]
   type TagValue = String
   type Timestamp = js.Date
+  type TldName = String
+  type Value = String
+  type Values = js.Array[Value]
   type ZipCode = String
 
   final class Route53DomainsOps(private val service: Route53Domains) extends AnyVal {
@@ -58,6 +65,7 @@ package object route53domains {
     @inline def cancelDomainTransferToAnotherAwsAccountFuture(params: CancelDomainTransferToAnotherAwsAccountRequest): Future[CancelDomainTransferToAnotherAwsAccountResponse] = service.cancelDomainTransferToAnotherAwsAccount(params).promise().toFuture
     @inline def checkDomainAvailabilityFuture(params: CheckDomainAvailabilityRequest): Future[CheckDomainAvailabilityResponse] = service.checkDomainAvailability(params).promise().toFuture
     @inline def checkDomainTransferabilityFuture(params: CheckDomainTransferabilityRequest): Future[CheckDomainTransferabilityResponse] = service.checkDomainTransferability(params).promise().toFuture
+    @inline def deleteDomainFuture(params: DeleteDomainRequest): Future[DeleteDomainResponse] = service.deleteDomain(params).promise().toFuture
     @inline def deleteTagsForDomainFuture(params: DeleteTagsForDomainRequest): Future[DeleteTagsForDomainResponse] = service.deleteTagsForDomain(params).promise().toFuture
     @inline def disableDomainAutoRenewFuture(params: DisableDomainAutoRenewRequest): Future[DisableDomainAutoRenewResponse] = service.disableDomainAutoRenew(params).promise().toFuture
     @inline def disableDomainTransferLockFuture(params: DisableDomainTransferLockRequest): Future[DisableDomainTransferLockResponse] = service.disableDomainTransferLock(params).promise().toFuture
@@ -69,6 +77,7 @@ package object route53domains {
     @inline def getOperationDetailFuture(params: GetOperationDetailRequest): Future[GetOperationDetailResponse] = service.getOperationDetail(params).promise().toFuture
     @inline def listDomainsFuture(params: ListDomainsRequest): Future[ListDomainsResponse] = service.listDomains(params).promise().toFuture
     @inline def listOperationsFuture(params: ListOperationsRequest): Future[ListOperationsResponse] = service.listOperations(params).promise().toFuture
+    @inline def listPricesFuture(params: ListPricesRequest): Future[ListPricesResponse] = service.listPrices(params).promise().toFuture
     @inline def listTagsForDomainFuture(params: ListTagsForDomainRequest): Future[ListTagsForDomainResponse] = service.listTagsForDomain(params).promise().toFuture
     @inline def registerDomainFuture(params: RegisterDomainRequest): Future[RegisterDomainResponse] = service.registerDomain(params).promise().toFuture
     @inline def rejectDomainTransferFromAnotherAwsAccountFuture(params: RejectDomainTransferFromAnotherAwsAccountRequest): Future[RejectDomainTransferFromAnotherAwsAccountResponse] = service.rejectDomainTransferFromAnotherAwsAccount(params).promise().toFuture
@@ -94,6 +103,7 @@ package object route53domains {
     def cancelDomainTransferToAnotherAwsAccount(params: CancelDomainTransferToAnotherAwsAccountRequest): Request[CancelDomainTransferToAnotherAwsAccountResponse] = js.native
     def checkDomainAvailability(params: CheckDomainAvailabilityRequest): Request[CheckDomainAvailabilityResponse] = js.native
     def checkDomainTransferability(params: CheckDomainTransferabilityRequest): Request[CheckDomainTransferabilityResponse] = js.native
+    def deleteDomain(params: DeleteDomainRequest): Request[DeleteDomainResponse] = js.native
     def deleteTagsForDomain(params: DeleteTagsForDomainRequest): Request[DeleteTagsForDomainResponse] = js.native
     def disableDomainAutoRenew(params: DisableDomainAutoRenewRequest): Request[DisableDomainAutoRenewResponse] = js.native
     def disableDomainTransferLock(params: DisableDomainTransferLockRequest): Request[DisableDomainTransferLockResponse] = js.native
@@ -105,6 +115,7 @@ package object route53domains {
     def getOperationDetail(params: GetOperationDetailRequest): Request[GetOperationDetailResponse] = js.native
     def listDomains(params: ListDomainsRequest): Request[ListDomainsResponse] = js.native
     def listOperations(params: ListOperationsRequest): Request[ListOperationsResponse] = js.native
+    def listPrices(params: ListPricesRequest): Request[ListPricesResponse] = js.native
     def listTagsForDomain(params: ListTagsForDomainRequest): Request[ListTagsForDomainResponse] = js.native
     def registerDomain(params: RegisterDomainRequest): Request[RegisterDomainResponse] = js.native
     def rejectDomainTransferFromAnotherAwsAccount(params: RejectDomainTransferFromAnotherAwsAccountRequest): Request[RejectDomainTransferFromAnotherAwsAccountResponse] = js.native
@@ -373,6 +384,39 @@ package object route53domains {
     }
   }
 
+  @js.native
+  trait DeleteDomainRequest extends js.Object {
+    var DomainName: DomainName
+  }
+
+  object DeleteDomainRequest {
+    @inline
+    def apply(
+        DomainName: DomainName
+    ): DeleteDomainRequest = {
+      val __obj = js.Dynamic.literal(
+        "DomainName" -> DomainName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteDomainRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteDomainResponse extends js.Object {
+    var OperationId: js.UndefOr[OperationId]
+  }
+
+  object DeleteDomainResponse {
+    @inline
+    def apply(
+        OperationId: js.UndefOr[OperationId] = js.undefined
+    ): DeleteDomainResponse = {
+      val __obj = js.Dynamic.literal()
+      OperationId.foreach(__v => __obj.updateDynamic("OperationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteDomainResponse]
+    }
+  }
+
   /** The DeleteTagsForDomainRequest includes the following elements.
     */
   @js.native
@@ -469,6 +513,39 @@ package object route53domains {
         "OperationId" -> OperationId.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DisableDomainTransferLockResponse]
+    }
+  }
+
+  /** Information about the domain price associated with a TLD.
+    */
+  @js.native
+  trait DomainPrice extends js.Object {
+    var ChangeOwnershipPrice: js.UndefOr[PriceWithCurrency]
+    var Name: js.UndefOr[DomainPriceName]
+    var RegistrationPrice: js.UndefOr[PriceWithCurrency]
+    var RenewalPrice: js.UndefOr[PriceWithCurrency]
+    var RestorationPrice: js.UndefOr[PriceWithCurrency]
+    var TransferPrice: js.UndefOr[PriceWithCurrency]
+  }
+
+  object DomainPrice {
+    @inline
+    def apply(
+        ChangeOwnershipPrice: js.UndefOr[PriceWithCurrency] = js.undefined,
+        Name: js.UndefOr[DomainPriceName] = js.undefined,
+        RegistrationPrice: js.UndefOr[PriceWithCurrency] = js.undefined,
+        RenewalPrice: js.UndefOr[PriceWithCurrency] = js.undefined,
+        RestorationPrice: js.UndefOr[PriceWithCurrency] = js.undefined,
+        TransferPrice: js.UndefOr[PriceWithCurrency] = js.undefined
+    ): DomainPrice = {
+      val __obj = js.Dynamic.literal()
+      ChangeOwnershipPrice.foreach(__v => __obj.updateDynamic("ChangeOwnershipPrice")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      RegistrationPrice.foreach(__v => __obj.updateDynamic("RegistrationPrice")(__v.asInstanceOf[js.Any]))
+      RenewalPrice.foreach(__v => __obj.updateDynamic("RenewalPrice")(__v.asInstanceOf[js.Any]))
+      RestorationPrice.foreach(__v => __obj.updateDynamic("RestorationPrice")(__v.asInstanceOf[js.Any]))
+      TransferPrice.foreach(__v => __obj.updateDynamic("TransferPrice")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainPrice]
     }
   }
 
@@ -625,6 +702,31 @@ package object route53domains {
         "Value" -> Value.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ExtraParam]
+    }
+  }
+
+  /** Information for the filtering of a list of domains returned by [[https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains__ListDomains.html|ListDomains]].
+    */
+  @js.native
+  trait FilterCondition extends js.Object {
+    var Name: ListDomainsAttributeName
+    var Operator: Operator
+    var Values: Values
+  }
+
+  object FilterCondition {
+    @inline
+    def apply(
+        Name: ListDomainsAttributeName,
+        Operator: Operator,
+        Values: Values
+    ): FilterCondition = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[FilterCondition]
     }
   }
 
@@ -857,19 +959,25 @@ package object route53domains {
     */
   @js.native
   trait ListDomainsRequest extends js.Object {
+    var FilterConditions: js.UndefOr[FilterConditions]
     var Marker: js.UndefOr[PageMarker]
     var MaxItems: js.UndefOr[PageMaxItems]
+    var SortCondition: js.UndefOr[SortCondition]
   }
 
   object ListDomainsRequest {
     @inline
     def apply(
+        FilterConditions: js.UndefOr[FilterConditions] = js.undefined,
         Marker: js.UndefOr[PageMarker] = js.undefined,
-        MaxItems: js.UndefOr[PageMaxItems] = js.undefined
+        MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
+        SortCondition: js.UndefOr[SortCondition] = js.undefined
     ): ListDomainsRequest = {
       val __obj = js.Dynamic.literal()
+      FilterConditions.foreach(__v => __obj.updateDynamic("FilterConditions")(__v.asInstanceOf[js.Any]))
       Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
       MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      SortCondition.foreach(__v => __obj.updateDynamic("SortCondition")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDomainsRequest]
     }
   }
@@ -941,6 +1049,49 @@ package object route53domains {
 
       NextPageMarker.foreach(__v => __obj.updateDynamic("NextPageMarker")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListOperationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListPricesRequest extends js.Object {
+    var Marker: js.UndefOr[PageMarker]
+    var MaxItems: js.UndefOr[PageMaxItems]
+    var Tld: js.UndefOr[TldName]
+  }
+
+  object ListPricesRequest {
+    @inline
+    def apply(
+        Marker: js.UndefOr[PageMarker] = js.undefined,
+        MaxItems: js.UndefOr[PageMaxItems] = js.undefined,
+        Tld: js.UndefOr[TldName] = js.undefined
+    ): ListPricesRequest = {
+      val __obj = js.Dynamic.literal()
+      Marker.foreach(__v => __obj.updateDynamic("Marker")(__v.asInstanceOf[js.Any]))
+      MaxItems.foreach(__v => __obj.updateDynamic("MaxItems")(__v.asInstanceOf[js.Any]))
+      Tld.foreach(__v => __obj.updateDynamic("Tld")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPricesRequest]
+    }
+  }
+
+  @js.native
+  trait ListPricesResponse extends js.Object {
+    var Prices: DomainPriceList
+    var NextPageMarker: js.UndefOr[PageMarker]
+  }
+
+  object ListPricesResponse {
+    @inline
+    def apply(
+        Prices: DomainPriceList,
+        NextPageMarker: js.UndefOr[PageMarker] = js.undefined
+    ): ListPricesResponse = {
+      val __obj = js.Dynamic.literal(
+        "Prices" -> Prices.asInstanceOf[js.Any]
+      )
+
+      NextPageMarker.foreach(__v => __obj.updateDynamic("NextPageMarker")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPricesResponse]
     }
   }
 
@@ -1030,6 +1181,28 @@ package object route53domains {
         "Type" -> Type.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[OperationSummary]
+    }
+  }
+
+  /** Currency-specific price information.
+    */
+  @js.native
+  trait PriceWithCurrency extends js.Object {
+    var Currency: Currency
+    var Price: Price
+  }
+
+  object PriceWithCurrency {
+    @inline
+    def apply(
+        Currency: Currency,
+        Price: Price
+    ): PriceWithCurrency = {
+      val __obj = js.Dynamic.literal(
+        "Currency" -> Currency.asInstanceOf[js.Any],
+        "Price" -> Price.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PriceWithCurrency]
     }
   }
 
@@ -1252,6 +1425,28 @@ package object route53domains {
         "AuthCode" -> AuthCode.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[RetrieveDomainAuthCodeResponse]
+    }
+  }
+
+  /** Information for sorting a list of domains.
+    */
+  @js.native
+  trait SortCondition extends js.Object {
+    var Name: ListDomainsAttributeName
+    var SortOrder: SortOrder
+  }
+
+  object SortCondition {
+    @inline
+    def apply(
+        Name: ListDomainsAttributeName,
+        SortOrder: SortOrder
+    ): SortCondition = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "SortOrder" -> SortOrder.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SortCondition]
     }
   }
 

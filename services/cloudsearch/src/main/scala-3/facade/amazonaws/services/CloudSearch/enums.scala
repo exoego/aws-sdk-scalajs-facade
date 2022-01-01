@@ -88,7 +88,7 @@ object OptionState {
 
 /** The instance type (such as <code>search.m1.small</code>) on which an index partition is hosted.
   */
-type PartitionInstanceType = "search.m1.small" | "search.m1.large" | "search.m2.xlarge" | "search.m2.2xlarge" | "search.m3.medium" | "search.m3.large" | "search.m3.xlarge" | "search.m3.2xlarge" | "search.small" | "search.medium" | "search.large" | "search.xlarge" | "search.2xlarge"
+type PartitionInstanceType = "search.m1.small" | "search.m1.large" | "search.m2.xlarge" | "search.m2.2xlarge" | "search.m3.medium" | "search.m3.large" | "search.m3.xlarge" | "search.m3.2xlarge" | "search.small" | "search.medium" | "search.large" | "search.xlarge" | "search.2xlarge" | "search.previousgeneration.small" | "search.previousgeneration.large" | "search.previousgeneration.xlarge" | "search.previousgeneration.2xlarge"
 object PartitionInstanceType {
   inline val `search.m1.small`: "search.m1.small" = "search.m1.small"
   inline val `search.m1.large`: "search.m1.large" = "search.m1.large"
@@ -103,6 +103,10 @@ object PartitionInstanceType {
   inline val `search.large`: "search.large" = "search.large"
   inline val `search.xlarge`: "search.xlarge" = "search.xlarge"
   inline val `search.2xlarge`: "search.2xlarge" = "search.2xlarge"
+  inline val `search.previousgeneration.small`: "search.previousgeneration.small" = "search.previousgeneration.small"
+  inline val `search.previousgeneration.large`: "search.previousgeneration.large" = "search.previousgeneration.large"
+  inline val `search.previousgeneration.xlarge`: "search.previousgeneration.xlarge" = "search.previousgeneration.xlarge"
+  inline val `search.previousgeneration.2xlarge`: "search.previousgeneration.2xlarge" = "search.previousgeneration.2xlarge"
 
   inline def values: js.Array[PartitionInstanceType] = js.Array(
     `search.m1.small`,
@@ -117,7 +121,11 @@ object PartitionInstanceType {
     `search.medium`,
     `search.large`,
     `search.xlarge`,
-    `search.2xlarge`
+    `search.2xlarge`,
+    `search.previousgeneration.small`,
+    `search.previousgeneration.large`,
+    `search.previousgeneration.xlarge`,
+    `search.previousgeneration.2xlarge`
   )
 }
 

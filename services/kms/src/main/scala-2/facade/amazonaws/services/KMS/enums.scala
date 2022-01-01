@@ -50,6 +50,7 @@ object ConnectionStateType {
   @inline def values: js.Array[ConnectionStateType] = js.Array(CONNECTED, CONNECTING, FAILED, DISCONNECTED, DISCONNECTING)
 }
 
+@deprecated("This enum has been deprecated. Instead, use the KeySpec enum.", "forever")
 @js.native
 sealed trait CustomerMasterKeySpec extends js.Any
 object CustomerMasterKeySpec {
@@ -153,15 +154,33 @@ object KeyManagerType {
 }
 
 @js.native
+sealed trait KeySpec extends js.Any
+object KeySpec {
+  val RSA_2048 = "RSA_2048".asInstanceOf[KeySpec]
+  val RSA_3072 = "RSA_3072".asInstanceOf[KeySpec]
+  val RSA_4096 = "RSA_4096".asInstanceOf[KeySpec]
+  val ECC_NIST_P256 = "ECC_NIST_P256".asInstanceOf[KeySpec]
+  val ECC_NIST_P384 = "ECC_NIST_P384".asInstanceOf[KeySpec]
+  val ECC_NIST_P521 = "ECC_NIST_P521".asInstanceOf[KeySpec]
+  val ECC_SECG_P256K1 = "ECC_SECG_P256K1".asInstanceOf[KeySpec]
+  val SYMMETRIC_DEFAULT = "SYMMETRIC_DEFAULT".asInstanceOf[KeySpec]
+
+  @inline def values: js.Array[KeySpec] = js.Array(RSA_2048, RSA_3072, RSA_4096, ECC_NIST_P256, ECC_NIST_P384, ECC_NIST_P521, ECC_SECG_P256K1, SYMMETRIC_DEFAULT)
+}
+
+@js.native
 sealed trait KeyState extends js.Any
 object KeyState {
+  val Creating = "Creating".asInstanceOf[KeyState]
   val Enabled = "Enabled".asInstanceOf[KeyState]
   val Disabled = "Disabled".asInstanceOf[KeyState]
   val PendingDeletion = "PendingDeletion".asInstanceOf[KeyState]
   val PendingImport = "PendingImport".asInstanceOf[KeyState]
+  val PendingReplicaDeletion = "PendingReplicaDeletion".asInstanceOf[KeyState]
   val Unavailable = "Unavailable".asInstanceOf[KeyState]
+  val Updating = "Updating".asInstanceOf[KeyState]
 
-  @inline def values: js.Array[KeyState] = js.Array(Enabled, Disabled, PendingDeletion, PendingImport, Unavailable)
+  @inline def values: js.Array[KeyState] = js.Array(Creating, Enabled, Disabled, PendingDeletion, PendingImport, PendingReplicaDeletion, Unavailable, Updating)
 }
 
 @js.native
@@ -180,6 +199,15 @@ object MessageType {
   val DIGEST = "DIGEST".asInstanceOf[MessageType]
 
   @inline def values: js.Array[MessageType] = js.Array(RAW, DIGEST)
+}
+
+@js.native
+sealed trait MultiRegionKeyType extends js.Any
+object MultiRegionKeyType {
+  val PRIMARY = "PRIMARY".asInstanceOf[MultiRegionKeyType]
+  val REPLICA = "REPLICA".asInstanceOf[MultiRegionKeyType]
+
+  @inline def values: js.Array[MultiRegionKeyType] = js.Array(PRIMARY, REPLICA)
 }
 
 @js.native

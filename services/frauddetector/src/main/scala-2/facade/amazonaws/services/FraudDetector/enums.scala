@@ -47,6 +47,15 @@ object DetectorVersionStatus {
 }
 
 @js.native
+sealed trait EventIngestion extends js.Any
+object EventIngestion {
+  val ENABLED = "ENABLED".asInstanceOf[EventIngestion]
+  val DISABLED = "DISABLED".asInstanceOf[EventIngestion]
+
+  @inline def values: js.Array[EventIngestion] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
 sealed trait Language extends js.Any
 object Language {
   val DETECTORPL = "DETECTORPL".asInstanceOf[Language]
@@ -93,8 +102,9 @@ object ModelSource {
 sealed trait ModelTypeEnum extends js.Any
 object ModelTypeEnum {
   val ONLINE_FRAUD_INSIGHTS = "ONLINE_FRAUD_INSIGHTS".asInstanceOf[ModelTypeEnum]
+  val TRANSACTION_FRAUD_INSIGHTS = "TRANSACTION_FRAUD_INSIGHTS".asInstanceOf[ModelTypeEnum]
 
-  @inline def values: js.Array[ModelTypeEnum] = js.Array(ONLINE_FRAUD_INSIGHTS)
+  @inline def values: js.Array[ModelTypeEnum] = js.Array(ONLINE_FRAUD_INSIGHTS, TRANSACTION_FRAUD_INSIGHTS)
 }
 
 @js.native
@@ -120,6 +130,17 @@ object RuleExecutionMode {
 sealed trait TrainingDataSourceEnum extends js.Any
 object TrainingDataSourceEnum {
   val EXTERNAL_EVENTS = "EXTERNAL_EVENTS".asInstanceOf[TrainingDataSourceEnum]
+  val INGESTED_EVENTS = "INGESTED_EVENTS".asInstanceOf[TrainingDataSourceEnum]
 
-  @inline def values: js.Array[TrainingDataSourceEnum] = js.Array(EXTERNAL_EVENTS)
+  @inline def values: js.Array[TrainingDataSourceEnum] = js.Array(EXTERNAL_EVENTS, INGESTED_EVENTS)
+}
+
+@js.native
+sealed trait UnlabeledEventsTreatment extends js.Any
+object UnlabeledEventsTreatment {
+  val IGNORE = "IGNORE".asInstanceOf[UnlabeledEventsTreatment]
+  val FRAUD = "FRAUD".asInstanceOf[UnlabeledEventsTreatment]
+  val LEGIT = "LEGIT".asInstanceOf[UnlabeledEventsTreatment]
+
+  @inline def values: js.Array[UnlabeledEventsTreatment] = js.Array(IGNORE, FRAUD, LEGIT)
 }

@@ -14,6 +14,7 @@ package object qldb {
   type IonText = String
   type JournalKinesisStreamDescriptionList = js.Array[JournalKinesisStreamDescription]
   type JournalS3ExportList = js.Array[JournalS3ExportDescription]
+  type KmsKey = String
   type LedgerList = js.Array[LedgerSummary]
   type LedgerName = String
   type MaxResults = Int
@@ -49,6 +50,7 @@ package object qldb {
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateLedgerFuture(params: UpdateLedgerRequest): Future[UpdateLedgerResponse] = service.updateLedger(params).promise().toFuture
+    @inline def updateLedgerPermissionsModeFuture(params: UpdateLedgerPermissionsModeRequest): Future[UpdateLedgerPermissionsModeResponse] = service.updateLedgerPermissionsMode(params).promise().toFuture
 
   }
 
@@ -76,6 +78,7 @@ package object qldb {
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateLedger(params: UpdateLedgerRequest): Request[UpdateLedgerResponse] = js.native
+    def updateLedgerPermissionsMode(params: UpdateLedgerPermissionsModeRequest): Request[UpdateLedgerPermissionsModeResponse] = js.native
   }
   object QLDB {
     @inline implicit def toOps(service: QLDB): QLDBOps = {
@@ -124,6 +127,7 @@ package object qldb {
     var Name: LedgerName
     var PermissionsMode: PermissionsMode
     var DeletionProtection: js.UndefOr[DeletionProtection]
+    var KmsKey: js.UndefOr[KmsKey]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -133,6 +137,7 @@ package object qldb {
         Name: LedgerName,
         PermissionsMode: PermissionsMode,
         DeletionProtection: js.UndefOr[DeletionProtection] = js.undefined,
+        KmsKey: js.UndefOr[KmsKey] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateLedgerRequest = {
       val __obj = js.Dynamic.literal(
@@ -141,6 +146,7 @@ package object qldb {
       )
 
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      KmsKey.foreach(__v => __obj.updateDynamic("KmsKey")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLedgerRequest]
     }
@@ -151,7 +157,9 @@ package object qldb {
     var Arn: js.UndefOr[Arn]
     var CreationDateTime: js.UndefOr[Timestamp]
     var DeletionProtection: js.UndefOr[DeletionProtection]
+    var KmsKeyArn: js.UndefOr[Arn]
     var Name: js.UndefOr[LedgerName]
+    var PermissionsMode: js.UndefOr[PermissionsMode]
     var State: js.UndefOr[LedgerState]
   }
 
@@ -161,14 +169,18 @@ package object qldb {
         Arn: js.UndefOr[Arn] = js.undefined,
         CreationDateTime: js.UndefOr[Timestamp] = js.undefined,
         DeletionProtection: js.UndefOr[DeletionProtection] = js.undefined,
+        KmsKeyArn: js.UndefOr[Arn] = js.undefined,
         Name: js.UndefOr[LedgerName] = js.undefined,
+        PermissionsMode: js.UndefOr[PermissionsMode] = js.undefined,
         State: js.UndefOr[LedgerState] = js.undefined
     ): CreateLedgerResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      KmsKeyArn.foreach(__v => __obj.updateDynamic("KmsKeyArn")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PermissionsMode.foreach(__v => __obj.updateDynamic("PermissionsMode")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateLedgerResponse]
     }
@@ -286,7 +298,9 @@ package object qldb {
     var Arn: js.UndefOr[Arn]
     var CreationDateTime: js.UndefOr[Timestamp]
     var DeletionProtection: js.UndefOr[DeletionProtection]
+    var EncryptionDescription: js.UndefOr[LedgerEncryptionDescription]
     var Name: js.UndefOr[LedgerName]
+    var PermissionsMode: js.UndefOr[PermissionsMode]
     var State: js.UndefOr[LedgerState]
   }
 
@@ -296,14 +310,18 @@ package object qldb {
         Arn: js.UndefOr[Arn] = js.undefined,
         CreationDateTime: js.UndefOr[Timestamp] = js.undefined,
         DeletionProtection: js.UndefOr[DeletionProtection] = js.undefined,
+        EncryptionDescription: js.UndefOr[LedgerEncryptionDescription] = js.undefined,
         Name: js.UndefOr[LedgerName] = js.undefined,
+        PermissionsMode: js.UndefOr[PermissionsMode] = js.undefined,
         State: js.UndefOr[LedgerState] = js.undefined
     ): DescribeLedgerResponse = {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      EncryptionDescription.foreach(__v => __obj.updateDynamic("EncryptionDescription")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PermissionsMode.foreach(__v => __obj.updateDynamic("PermissionsMode")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLedgerResponse]
     }
@@ -316,6 +334,7 @@ package object qldb {
     var Name: LedgerName
     var RoleArn: Arn
     var S3ExportConfiguration: S3ExportConfiguration
+    var OutputFormat: js.UndefOr[OutputFormat]
   }
 
   object ExportJournalToS3Request {
@@ -325,7 +344,8 @@ package object qldb {
         InclusiveStartTime: Timestamp,
         Name: LedgerName,
         RoleArn: Arn,
-        S3ExportConfiguration: S3ExportConfiguration
+        S3ExportConfiguration: S3ExportConfiguration,
+        OutputFormat: js.UndefOr[OutputFormat] = js.undefined
     ): ExportJournalToS3Request = {
       val __obj = js.Dynamic.literal(
         "ExclusiveEndTime" -> ExclusiveEndTime.asInstanceOf[js.Any],
@@ -334,6 +354,8 @@ package object qldb {
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "S3ExportConfiguration" -> S3ExportConfiguration.asInstanceOf[js.Any]
       )
+
+      OutputFormat.foreach(__v => __obj.updateDynamic("OutputFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportJournalToS3Request]
     }
   }
@@ -485,7 +507,7 @@ package object qldb {
     }
   }
 
-  /** The information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of your original stream creation request.
+  /** Information about an Amazon QLDB journal stream, including the Amazon Resource Name (ARN), stream name, creation time, current status, and the parameters of the original stream creation request.
     */
   @js.native
   trait JournalKinesisStreamDescription extends js.Object {
@@ -535,7 +557,7 @@ package object qldb {
     }
   }
 
-  /** The information about a journal export job, including the ledger name, export ID, when it was created, current status, and its start and end time export parameters.
+  /** Information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.
     */
   @js.native
   trait JournalS3ExportDescription extends js.Object {
@@ -547,6 +569,7 @@ package object qldb {
     var RoleArn: Arn
     var S3ExportConfiguration: S3ExportConfiguration
     var Status: ExportStatus
+    var OutputFormat: js.UndefOr[OutputFormat]
   }
 
   object JournalS3ExportDescription {
@@ -559,7 +582,8 @@ package object qldb {
         LedgerName: LedgerName,
         RoleArn: Arn,
         S3ExportConfiguration: S3ExportConfiguration,
-        Status: ExportStatus
+        Status: ExportStatus,
+        OutputFormat: js.UndefOr[OutputFormat] = js.undefined
     ): JournalS3ExportDescription = {
       val __obj = js.Dynamic.literal(
         "ExclusiveEndTime" -> ExclusiveEndTime.asInstanceOf[js.Any],
@@ -571,11 +595,13 @@ package object qldb {
         "S3ExportConfiguration" -> S3ExportConfiguration.asInstanceOf[js.Any],
         "Status" -> Status.asInstanceOf[js.Any]
       )
+
+      OutputFormat.foreach(__v => __obj.updateDynamic("OutputFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JournalS3ExportDescription]
     }
   }
 
-  /** The configuration settings of the Amazon Kinesis Data Streams destination for your Amazon QLDB journal stream.
+  /** The configuration settings of the Amazon Kinesis Data Streams destination for an Amazon QLDB journal stream.
     */
   @js.native
   trait KinesisConfiguration extends js.Object {
@@ -595,6 +621,32 @@ package object qldb {
 
       AggregationEnabled.foreach(__v => __obj.updateDynamic("AggregationEnabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KinesisConfiguration]
+    }
+  }
+
+  /** Information about the encryption of data at rest in an Amazon QLDB ledger. This includes the current status, the key in Key Management Service (KMS), and when the key became inaccessible (in the case of an error). For more information, see [[https://docs.aws.amazon.com/qldb/latest/developerguide/encryption-at-rest.html|Encryption at rest]] in the <i>Amazon QLDB Developer Guide</i>.
+    */
+  @js.native
+  trait LedgerEncryptionDescription extends js.Object {
+    var EncryptionStatus: EncryptionStatus
+    var KmsKeyArn: Arn
+    var InaccessibleKmsKeyDateTime: js.UndefOr[Timestamp]
+  }
+
+  object LedgerEncryptionDescription {
+    @inline
+    def apply(
+        EncryptionStatus: EncryptionStatus,
+        KmsKeyArn: Arn,
+        InaccessibleKmsKeyDateTime: js.UndefOr[Timestamp] = js.undefined
+    ): LedgerEncryptionDescription = {
+      val __obj = js.Dynamic.literal(
+        "EncryptionStatus" -> EncryptionStatus.asInstanceOf[js.Any],
+        "KmsKeyArn" -> KmsKeyArn.asInstanceOf[js.Any]
+      )
+
+      InaccessibleKmsKeyDateTime.foreach(__v => __obj.updateDynamic("InaccessibleKmsKeyDateTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LedgerEncryptionDescription]
     }
   }
 
@@ -980,22 +1032,67 @@ package object qldb {
   }
 
   @js.native
+  trait UpdateLedgerPermissionsModeRequest extends js.Object {
+    var Name: LedgerName
+    var PermissionsMode: PermissionsMode
+  }
+
+  object UpdateLedgerPermissionsModeRequest {
+    @inline
+    def apply(
+        Name: LedgerName,
+        PermissionsMode: PermissionsMode
+    ): UpdateLedgerPermissionsModeRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "PermissionsMode" -> PermissionsMode.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateLedgerPermissionsModeRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateLedgerPermissionsModeResponse extends js.Object {
+    var Arn: js.UndefOr[Arn]
+    var Name: js.UndefOr[LedgerName]
+    var PermissionsMode: js.UndefOr[PermissionsMode]
+  }
+
+  object UpdateLedgerPermissionsModeResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[Arn] = js.undefined,
+        Name: js.UndefOr[LedgerName] = js.undefined,
+        PermissionsMode: js.UndefOr[PermissionsMode] = js.undefined
+    ): UpdateLedgerPermissionsModeResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PermissionsMode.foreach(__v => __obj.updateDynamic("PermissionsMode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateLedgerPermissionsModeResponse]
+    }
+  }
+
+  @js.native
   trait UpdateLedgerRequest extends js.Object {
     var Name: LedgerName
     var DeletionProtection: js.UndefOr[DeletionProtection]
+    var KmsKey: js.UndefOr[KmsKey]
   }
 
   object UpdateLedgerRequest {
     @inline
     def apply(
         Name: LedgerName,
-        DeletionProtection: js.UndefOr[DeletionProtection] = js.undefined
+        DeletionProtection: js.UndefOr[DeletionProtection] = js.undefined,
+        KmsKey: js.UndefOr[KmsKey] = js.undefined
     ): UpdateLedgerRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any]
       )
 
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      KmsKey.foreach(__v => __obj.updateDynamic("KmsKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateLedgerRequest]
     }
   }
@@ -1005,6 +1102,7 @@ package object qldb {
     var Arn: js.UndefOr[Arn]
     var CreationDateTime: js.UndefOr[Timestamp]
     var DeletionProtection: js.UndefOr[DeletionProtection]
+    var EncryptionDescription: js.UndefOr[LedgerEncryptionDescription]
     var Name: js.UndefOr[LedgerName]
     var State: js.UndefOr[LedgerState]
   }
@@ -1015,6 +1113,7 @@ package object qldb {
         Arn: js.UndefOr[Arn] = js.undefined,
         CreationDateTime: js.UndefOr[Timestamp] = js.undefined,
         DeletionProtection: js.UndefOr[DeletionProtection] = js.undefined,
+        EncryptionDescription: js.UndefOr[LedgerEncryptionDescription] = js.undefined,
         Name: js.UndefOr[LedgerName] = js.undefined,
         State: js.UndefOr[LedgerState] = js.undefined
     ): UpdateLedgerResponse = {
@@ -1022,6 +1121,7 @@ package object qldb {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CreationDateTime.foreach(__v => __obj.updateDynamic("CreationDateTime")(__v.asInstanceOf[js.Any]))
       DeletionProtection.foreach(__v => __obj.updateDynamic("DeletionProtection")(__v.asInstanceOf[js.Any]))
+      EncryptionDescription.foreach(__v => __obj.updateDynamic("EncryptionDescription")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateLedgerResponse]

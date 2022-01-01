@@ -860,7 +860,7 @@ package object codeartifact {
     }
   }
 
-  /** Information about a domain, including its name, Amazon Resource Name (ARN), and status. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html"> <code>ListDomains</code> </a> operation returns a list of <code>DomainSummary</code> objects.
+  /** Information about a domain, including its name, Amazon Resource Name (ARN), and status. The [[https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListDomains.html|ListDomains]] operation returns a list of <code>DomainSummary</code> objects.
     */
   @js.native
   trait DomainSummary extends js.Object {
@@ -1685,7 +1685,7 @@ package object codeartifact {
     }
   }
 
-  /** Details about a package, including its format, namespace, and name. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html"> <code>ListPackages</code> </a> operation returns a list of <code>PackageSummary</code> objects.
+  /** Details about a package, including its format, namespace, and name. The [[https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackages.html|ListPackages]] operation returns a list of <code>PackageSummary</code> objects.
     */
   @js.native
   trait PackageSummary extends js.Object {
@@ -1781,7 +1781,7 @@ package object codeartifact {
     }
   }
 
-  /** Details about a package version, including its status, version, and revision. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html"> <code>ListPackageVersions</code> </a> operation returns a list of <code>PackageVersionSummary</code> objects.
+  /** Details about a package version, including its status, version, and revision. The [[https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html|ListPackageVersions]] operation returns a list of <code>PackageVersionSummary</code> objects.
     */
   @js.native
   trait PackageVersionSummary extends js.Object {
@@ -1959,7 +1959,7 @@ package object codeartifact {
     }
   }
 
-  /** Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html"> <code>ListRepositories</code> </a> operation returns a list of <code>RepositorySummary</code> objects.
+  /** Details about a repository, including its Amazon Resource Name (ARN), description, and domain information. The [[https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListRepositories.html|ListRepositories]] operation returns a list of <code>RepositorySummary</code> objects.
     */
   @js.native
   trait RepositorySummary extends js.Object {
@@ -2231,7 +2231,7 @@ package object codeartifact {
     }
   }
 
-  /** Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html"> <code>CreateRepository</code> </a> and <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html"> <code>UpdateRepository</code> </a>.
+  /** Information about an upstream repository. A list of <code>UpstreamRepository</code> objects is an input parameter to [[https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_CreateRepository.html|CreateRepository]] and [[https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdateRepository.html|UpdateRepository]].
     */
   @js.native
   trait UpstreamRepository extends js.Object {

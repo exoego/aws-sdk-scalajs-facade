@@ -17,9 +17,14 @@ package object mediatailor {
   type __boolean = Boolean
   type __integer = Int
   type __integerMin1 = Int
+  type __integerMin1Max100 = Int
   type __listOfAdBreak = js.Array[AdBreak]
+  type __listOfAlert = js.Array[Alert]
+  type __listOfAvailMatchingCriteria = js.Array[AvailMatchingCriteria]
   type __listOfChannel = js.Array[Channel]
   type __listOfPlaybackConfiguration = js.Array[PlaybackConfiguration]
+  type __listOfPrefetchSchedule = js.Array[PrefetchSchedule]
+  type __listOfScheduleAdBreak = js.Array[ScheduleAdBreak]
   type __listOfScheduleEntry = js.Array[ScheduleEntry]
   type __listOfSourceLocation = js.Array[SourceLocation]
   type __listOfVodSource = js.Array[VodSource]
@@ -31,13 +36,16 @@ package object mediatailor {
 
   final class MediaTailorOps(private val service: MediaTailor) extends AnyVal {
 
+    @inline def configureLogsForPlaybackConfigurationFuture(params: ConfigureLogsForPlaybackConfigurationRequest): Future[ConfigureLogsForPlaybackConfigurationResponse] = service.configureLogsForPlaybackConfiguration(params).promise().toFuture
     @inline def createChannelFuture(params: CreateChannelRequest): Future[CreateChannelResponse] = service.createChannel(params).promise().toFuture
+    @inline def createPrefetchScheduleFuture(params: CreatePrefetchScheduleRequest): Future[CreatePrefetchScheduleResponse] = service.createPrefetchSchedule(params).promise().toFuture
     @inline def createProgramFuture(params: CreateProgramRequest): Future[CreateProgramResponse] = service.createProgram(params).promise().toFuture
     @inline def createSourceLocationFuture(params: CreateSourceLocationRequest): Future[CreateSourceLocationResponse] = service.createSourceLocation(params).promise().toFuture
     @inline def createVodSourceFuture(params: CreateVodSourceRequest): Future[CreateVodSourceResponse] = service.createVodSource(params).promise().toFuture
     @inline def deleteChannelFuture(params: DeleteChannelRequest): Future[DeleteChannelResponse] = service.deleteChannel(params).promise().toFuture
     @inline def deleteChannelPolicyFuture(params: DeleteChannelPolicyRequest): Future[DeleteChannelPolicyResponse] = service.deleteChannelPolicy(params).promise().toFuture
     @inline def deletePlaybackConfigurationFuture(params: DeletePlaybackConfigurationRequest): Future[DeletePlaybackConfigurationResponse] = service.deletePlaybackConfiguration(params).promise().toFuture
+    @inline def deletePrefetchScheduleFuture(params: DeletePrefetchScheduleRequest): Future[DeletePrefetchScheduleResponse] = service.deletePrefetchSchedule(params).promise().toFuture
     @inline def deleteProgramFuture(params: DeleteProgramRequest): Future[DeleteProgramResponse] = service.deleteProgram(params).promise().toFuture
     @inline def deleteSourceLocationFuture(params: DeleteSourceLocationRequest): Future[DeleteSourceLocationResponse] = service.deleteSourceLocation(params).promise().toFuture
     @inline def deleteVodSourceFuture(params: DeleteVodSourceRequest): Future[DeleteVodSourceResponse] = service.deleteVodSource(params).promise().toFuture
@@ -48,8 +56,11 @@ package object mediatailor {
     @inline def getChannelPolicyFuture(params: GetChannelPolicyRequest): Future[GetChannelPolicyResponse] = service.getChannelPolicy(params).promise().toFuture
     @inline def getChannelScheduleFuture(params: GetChannelScheduleRequest): Future[GetChannelScheduleResponse] = service.getChannelSchedule(params).promise().toFuture
     @inline def getPlaybackConfigurationFuture(params: GetPlaybackConfigurationRequest): Future[GetPlaybackConfigurationResponse] = service.getPlaybackConfiguration(params).promise().toFuture
+    @inline def getPrefetchScheduleFuture(params: GetPrefetchScheduleRequest): Future[GetPrefetchScheduleResponse] = service.getPrefetchSchedule(params).promise().toFuture
+    @inline def listAlertsFuture(params: ListAlertsRequest): Future[ListAlertsResponse] = service.listAlerts(params).promise().toFuture
     @inline def listChannelsFuture(params: ListChannelsRequest): Future[ListChannelsResponse] = service.listChannels(params).promise().toFuture
     @inline def listPlaybackConfigurationsFuture(params: ListPlaybackConfigurationsRequest): Future[ListPlaybackConfigurationsResponse] = service.listPlaybackConfigurations(params).promise().toFuture
+    @inline def listPrefetchSchedulesFuture(params: ListPrefetchSchedulesRequest): Future[ListPrefetchSchedulesResponse] = service.listPrefetchSchedules(params).promise().toFuture
     @inline def listSourceLocationsFuture(params: ListSourceLocationsRequest): Future[ListSourceLocationsResponse] = service.listSourceLocations(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listVodSourcesFuture(params: ListVodSourcesRequest): Future[ListVodSourcesResponse] = service.listVodSources(params).promise().toFuture
@@ -70,13 +81,16 @@ package object mediatailor {
   class MediaTailor() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def configureLogsForPlaybackConfiguration(params: ConfigureLogsForPlaybackConfigurationRequest): Request[ConfigureLogsForPlaybackConfigurationResponse] = js.native
     def createChannel(params: CreateChannelRequest): Request[CreateChannelResponse] = js.native
+    def createPrefetchSchedule(params: CreatePrefetchScheduleRequest): Request[CreatePrefetchScheduleResponse] = js.native
     def createProgram(params: CreateProgramRequest): Request[CreateProgramResponse] = js.native
     def createSourceLocation(params: CreateSourceLocationRequest): Request[CreateSourceLocationResponse] = js.native
     def createVodSource(params: CreateVodSourceRequest): Request[CreateVodSourceResponse] = js.native
     def deleteChannel(params: DeleteChannelRequest): Request[DeleteChannelResponse] = js.native
     def deleteChannelPolicy(params: DeleteChannelPolicyRequest): Request[DeleteChannelPolicyResponse] = js.native
     def deletePlaybackConfiguration(params: DeletePlaybackConfigurationRequest): Request[DeletePlaybackConfigurationResponse] = js.native
+    def deletePrefetchSchedule(params: DeletePrefetchScheduleRequest): Request[DeletePrefetchScheduleResponse] = js.native
     def deleteProgram(params: DeleteProgramRequest): Request[DeleteProgramResponse] = js.native
     def deleteSourceLocation(params: DeleteSourceLocationRequest): Request[DeleteSourceLocationResponse] = js.native
     def deleteVodSource(params: DeleteVodSourceRequest): Request[DeleteVodSourceResponse] = js.native
@@ -87,8 +101,11 @@ package object mediatailor {
     def getChannelPolicy(params: GetChannelPolicyRequest): Request[GetChannelPolicyResponse] = js.native
     def getChannelSchedule(params: GetChannelScheduleRequest): Request[GetChannelScheduleResponse] = js.native
     def getPlaybackConfiguration(params: GetPlaybackConfigurationRequest): Request[GetPlaybackConfigurationResponse] = js.native
+    def getPrefetchSchedule(params: GetPrefetchScheduleRequest): Request[GetPrefetchScheduleResponse] = js.native
+    def listAlerts(params: ListAlertsRequest): Request[ListAlertsResponse] = js.native
     def listChannels(params: ListChannelsRequest): Request[ListChannelsResponse] = js.native
     def listPlaybackConfigurations(params: ListPlaybackConfigurationsRequest): Request[ListPlaybackConfigurationsResponse] = js.native
+    def listPrefetchSchedules(params: ListPrefetchSchedulesRequest): Request[ListPrefetchSchedulesResponse] = js.native
     def listSourceLocations(params: ListSourceLocationsRequest): Request[ListSourceLocationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listVodSources(params: ListVodSourcesRequest): Request[ListVodSourcesResponse] = js.native
@@ -113,15 +130,18 @@ package object mediatailor {
   @js.native
   trait AccessConfiguration extends js.Object {
     var AccessType: js.UndefOr[AccessType]
+    var SecretsManagerAccessTokenConfiguration: js.UndefOr[SecretsManagerAccessTokenConfiguration]
   }
 
   object AccessConfiguration {
     @inline
     def apply(
-        AccessType: js.UndefOr[AccessType] = js.undefined
+        AccessType: js.UndefOr[AccessType] = js.undefined,
+        SecretsManagerAccessTokenConfiguration: js.UndefOr[SecretsManagerAccessTokenConfiguration] = js.undefined
     ): AccessConfiguration = {
       val __obj = js.Dynamic.literal()
       AccessType.foreach(__v => __obj.updateDynamic("AccessType")(__v.asInstanceOf[js.Any]))
+      SecretsManagerAccessTokenConfiguration.foreach(__v => __obj.updateDynamic("SecretsManagerAccessTokenConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AccessConfiguration]
     }
   }
@@ -168,6 +188,60 @@ package object mediatailor {
       val __obj = js.Dynamic.literal()
       Enabled.foreach(__v => __obj.updateDynamic("Enabled")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AdMarkerPassthrough]
+    }
+  }
+
+  /** Alert configuration parameters.
+    */
+  @js.native
+  trait Alert extends js.Object {
+    var AlertCode: __string
+    var AlertMessage: __string
+    var LastModifiedTime: __timestampUnix
+    var RelatedResourceArns: __listOf__string
+    var ResourceArn: __string
+  }
+
+  object Alert {
+    @inline
+    def apply(
+        AlertCode: __string,
+        AlertMessage: __string,
+        LastModifiedTime: __timestampUnix,
+        RelatedResourceArns: __listOf__string,
+        ResourceArn: __string
+    ): Alert = {
+      val __obj = js.Dynamic.literal(
+        "AlertCode" -> AlertCode.asInstanceOf[js.Any],
+        "AlertMessage" -> AlertMessage.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "RelatedResourceArns" -> RelatedResourceArns.asInstanceOf[js.Any],
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[Alert]
+    }
+  }
+
+  /** MediaTailor only places (consumes) prefetched ads if the ad break meets the criteria defined by the dynamic variables. This gives you granular control over which ad break to place the prefetched ads into. As an example, let's say that you set DynamicVariable to scte.event_id and Operator to EQUALS, and your playback configuration has an ADS URL of https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp;duration=[session.avail_duration_secs]. And the prefetch request to the ADS contains these values https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30. MediaTailor will only insert the prefetched ads into the ad break if has a SCTE marker with an event id of my-awesome-event, since it must match the event id that MediaTailor uses to query the ADS. You can specify up to five AvailMatchingCriteria. If you specify multiple AvailMatchingCriteria, MediaTailor combines them to match using a logical AND. You can model
+    * logical OR combinations by creating multiple prefetch schedules.
+    */
+  @js.native
+  trait AvailMatchingCriteria extends js.Object {
+    var DynamicVariable: __string
+    var Operator: Operator
+  }
+
+  object AvailMatchingCriteria {
+    @inline
+    def apply(
+        DynamicVariable: __string,
+        Operator: Operator
+    ): AvailMatchingCriteria = {
+      val __obj = js.Dynamic.literal(
+        "DynamicVariable" -> DynamicVariable.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AvailMatchingCriteria]
     }
   }
 
@@ -244,6 +318,7 @@ package object mediatailor {
     var Outputs: ResponseOutputs
     var PlaybackMode: __string
     var CreationTime: js.UndefOr[__timestampUnix]
+    var FillerSlate: js.UndefOr[SlateSource]
     var LastModifiedTime: js.UndefOr[__timestampUnix]
     var Tags: js.UndefOr[__mapOf__string]
   }
@@ -257,6 +332,7 @@ package object mediatailor {
         Outputs: ResponseOutputs,
         PlaybackMode: __string,
         CreationTime: js.UndefOr[__timestampUnix] = js.undefined,
+        FillerSlate: js.UndefOr[SlateSource] = js.undefined,
         LastModifiedTime: js.UndefOr[__timestampUnix] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): Channel = {
@@ -269,9 +345,51 @@ package object mediatailor {
       )
 
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FillerSlate.foreach(__v => __obj.updateDynamic("FillerSlate")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Channel]
+    }
+  }
+
+  /** Configures Amazon CloudWatch log settings for a playback configuration.
+    */
+  @js.native
+  trait ConfigureLogsForPlaybackConfigurationRequest extends js.Object {
+    var PercentEnabled: __integer
+    var PlaybackConfigurationName: __string
+  }
+
+  object ConfigureLogsForPlaybackConfigurationRequest {
+    @inline
+    def apply(
+        PercentEnabled: __integer,
+        PlaybackConfigurationName: __string
+    ): ConfigureLogsForPlaybackConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "PercentEnabled" -> PercentEnabled.asInstanceOf[js.Any],
+        "PlaybackConfigurationName" -> PlaybackConfigurationName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ConfigureLogsForPlaybackConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait ConfigureLogsForPlaybackConfigurationResponse extends js.Object {
+    var PercentEnabled: js.UndefOr[__integer]
+    var PlaybackConfigurationName: js.UndefOr[__string]
+  }
+
+  object ConfigureLogsForPlaybackConfigurationResponse {
+    @inline
+    def apply(
+        PercentEnabled: js.UndefOr[__integer] = js.undefined,
+        PlaybackConfigurationName: js.UndefOr[__string] = js.undefined
+    ): ConfigureLogsForPlaybackConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      PercentEnabled.foreach(__v => __obj.updateDynamic("PercentEnabled")(__v.asInstanceOf[js.Any]))
+      PlaybackConfigurationName.foreach(__v => __obj.updateDynamic("PlaybackConfigurationName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConfigureLogsForPlaybackConfigurationResponse]
     }
   }
 
@@ -280,6 +398,7 @@ package object mediatailor {
     var ChannelName: __string
     var Outputs: RequestOutputs
     var PlaybackMode: PlaybackMode
+    var FillerSlate: js.UndefOr[SlateSource]
     var Tags: js.UndefOr[__mapOf__string]
   }
 
@@ -289,6 +408,7 @@ package object mediatailor {
         ChannelName: __string,
         Outputs: RequestOutputs,
         PlaybackMode: PlaybackMode,
+        FillerSlate: js.UndefOr[SlateSource] = js.undefined,
         Tags: js.UndefOr[__mapOf__string] = js.undefined
     ): CreateChannelRequest = {
       val __obj = js.Dynamic.literal(
@@ -297,6 +417,7 @@ package object mediatailor {
         "PlaybackMode" -> PlaybackMode.asInstanceOf[js.Any]
       )
 
+      FillerSlate.foreach(__v => __obj.updateDynamic("FillerSlate")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelRequest]
     }
@@ -308,6 +429,7 @@ package object mediatailor {
     var ChannelName: js.UndefOr[__string]
     var ChannelState: js.UndefOr[ChannelState]
     var CreationTime: js.UndefOr[__timestampUnix]
+    var FillerSlate: js.UndefOr[SlateSource]
     var LastModifiedTime: js.UndefOr[__timestampUnix]
     var Outputs: js.UndefOr[ResponseOutputs]
     var PlaybackMode: js.UndefOr[__string]
@@ -321,6 +443,7 @@ package object mediatailor {
         ChannelName: js.UndefOr[__string] = js.undefined,
         ChannelState: js.UndefOr[ChannelState] = js.undefined,
         CreationTime: js.UndefOr[__timestampUnix] = js.undefined,
+        FillerSlate: js.UndefOr[SlateSource] = js.undefined,
         LastModifiedTime: js.UndefOr[__timestampUnix] = js.undefined,
         Outputs: js.UndefOr[ResponseOutputs] = js.undefined,
         PlaybackMode: js.UndefOr[__string] = js.undefined,
@@ -331,11 +454,73 @@ package object mediatailor {
       ChannelName.foreach(__v => __obj.updateDynamic("ChannelName")(__v.asInstanceOf[js.Any]))
       ChannelState.foreach(__v => __obj.updateDynamic("ChannelState")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FillerSlate.foreach(__v => __obj.updateDynamic("FillerSlate")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       PlaybackMode.foreach(__v => __obj.updateDynamic("PlaybackMode")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateChannelResponse]
+    }
+  }
+
+  @js.native
+  trait CreatePrefetchScheduleRequest extends js.Object {
+    var Consumption: PrefetchConsumption
+    var Name: __string
+    var PlaybackConfigurationName: __string
+    var Retrieval: PrefetchRetrieval
+    var StreamId: js.UndefOr[__string]
+  }
+
+  object CreatePrefetchScheduleRequest {
+    @inline
+    def apply(
+        Consumption: PrefetchConsumption,
+        Name: __string,
+        PlaybackConfigurationName: __string,
+        Retrieval: PrefetchRetrieval,
+        StreamId: js.UndefOr[__string] = js.undefined
+    ): CreatePrefetchScheduleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Consumption" -> Consumption.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "PlaybackConfigurationName" -> PlaybackConfigurationName.asInstanceOf[js.Any],
+        "Retrieval" -> Retrieval.asInstanceOf[js.Any]
+      )
+
+      StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePrefetchScheduleRequest]
+    }
+  }
+
+  @js.native
+  trait CreatePrefetchScheduleResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var Consumption: js.UndefOr[PrefetchConsumption]
+    var Name: js.UndefOr[__string]
+    var PlaybackConfigurationName: js.UndefOr[__string]
+    var Retrieval: js.UndefOr[PrefetchRetrieval]
+    var StreamId: js.UndefOr[__string]
+  }
+
+  object CreatePrefetchScheduleResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Consumption: js.UndefOr[PrefetchConsumption] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PlaybackConfigurationName: js.UndefOr[__string] = js.undefined,
+        Retrieval: js.UndefOr[PrefetchRetrieval] = js.undefined,
+        StreamId: js.UndefOr[__string] = js.undefined
+    ): CreatePrefetchScheduleResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Consumption.foreach(__v => __obj.updateDynamic("Consumption")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PlaybackConfigurationName.foreach(__v => __obj.updateDynamic("PlaybackConfigurationName")(__v.asInstanceOf[js.Any]))
+      Retrieval.foreach(__v => __obj.updateDynamic("Retrieval")(__v.asInstanceOf[js.Any]))
+      StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreatePrefetchScheduleResponse]
     }
   }
 
@@ -379,6 +564,7 @@ package object mediatailor {
     var ChannelName: js.UndefOr[__string]
     var CreationTime: js.UndefOr[__timestampUnix]
     var ProgramName: js.UndefOr[__string]
+    var ScheduledStartTime: js.UndefOr[__timestampUnix]
     var SourceLocationName: js.UndefOr[__string]
     var VodSourceName: js.UndefOr[__string]
   }
@@ -391,6 +577,7 @@ package object mediatailor {
         ChannelName: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__timestampUnix] = js.undefined,
         ProgramName: js.UndefOr[__string] = js.undefined,
+        ScheduledStartTime: js.UndefOr[__timestampUnix] = js.undefined,
         SourceLocationName: js.UndefOr[__string] = js.undefined,
         VodSourceName: js.UndefOr[__string] = js.undefined
     ): CreateProgramResponse = {
@@ -400,6 +587,7 @@ package object mediatailor {
       ChannelName.foreach(__v => __obj.updateDynamic("ChannelName")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       ProgramName.foreach(__v => __obj.updateDynamic("ProgramName")(__v.asInstanceOf[js.Any]))
+      ScheduledStartTime.foreach(__v => __obj.updateDynamic("ScheduledStartTime")(__v.asInstanceOf[js.Any]))
       SourceLocationName.foreach(__v => __obj.updateDynamic("SourceLocationName")(__v.asInstanceOf[js.Any]))
       VodSourceName.foreach(__v => __obj.updateDynamic("VodSourceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateProgramResponse]
@@ -709,6 +897,37 @@ package object mediatailor {
   }
 
   @js.native
+  trait DeletePrefetchScheduleRequest extends js.Object {
+    var Name: __string
+    var PlaybackConfigurationName: __string
+  }
+
+  object DeletePrefetchScheduleRequest {
+    @inline
+    def apply(
+        Name: __string,
+        PlaybackConfigurationName: __string
+    ): DeletePrefetchScheduleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "PlaybackConfigurationName" -> PlaybackConfigurationName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeletePrefetchScheduleRequest]
+    }
+  }
+
+  @js.native
+  trait DeletePrefetchScheduleResponse extends js.Object
+
+  object DeletePrefetchScheduleResponse {
+    @inline
+    def apply(): DeletePrefetchScheduleResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeletePrefetchScheduleResponse]
+    }
+  }
+
+  @js.native
   trait DeleteProgramRequest extends js.Object {
     var ChannelName: __string
     var ProgramName: __string
@@ -821,6 +1040,7 @@ package object mediatailor {
     var ChannelName: js.UndefOr[__string]
     var ChannelState: js.UndefOr[ChannelState]
     var CreationTime: js.UndefOr[__timestampUnix]
+    var FillerSlate: js.UndefOr[SlateSource]
     var LastModifiedTime: js.UndefOr[__timestampUnix]
     var Outputs: js.UndefOr[ResponseOutputs]
     var PlaybackMode: js.UndefOr[__string]
@@ -834,6 +1054,7 @@ package object mediatailor {
         ChannelName: js.UndefOr[__string] = js.undefined,
         ChannelState: js.UndefOr[ChannelState] = js.undefined,
         CreationTime: js.UndefOr[__timestampUnix] = js.undefined,
+        FillerSlate: js.UndefOr[SlateSource] = js.undefined,
         LastModifiedTime: js.UndefOr[__timestampUnix] = js.undefined,
         Outputs: js.UndefOr[ResponseOutputs] = js.undefined,
         PlaybackMode: js.UndefOr[__string] = js.undefined,
@@ -844,6 +1065,7 @@ package object mediatailor {
       ChannelName.foreach(__v => __obj.updateDynamic("ChannelName")(__v.asInstanceOf[js.Any]))
       ChannelState.foreach(__v => __obj.updateDynamic("ChannelState")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FillerSlate.foreach(__v => __obj.updateDynamic("FillerSlate")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       PlaybackMode.foreach(__v => __obj.updateDynamic("PlaybackMode")(__v.asInstanceOf[js.Any]))
@@ -879,6 +1101,7 @@ package object mediatailor {
     var ChannelName: js.UndefOr[__string]
     var CreationTime: js.UndefOr[__timestampUnix]
     var ProgramName: js.UndefOr[__string]
+    var ScheduledStartTime: js.UndefOr[__timestampUnix]
     var SourceLocationName: js.UndefOr[__string]
     var VodSourceName: js.UndefOr[__string]
   }
@@ -891,6 +1114,7 @@ package object mediatailor {
         ChannelName: js.UndefOr[__string] = js.undefined,
         CreationTime: js.UndefOr[__timestampUnix] = js.undefined,
         ProgramName: js.UndefOr[__string] = js.undefined,
+        ScheduledStartTime: js.UndefOr[__timestampUnix] = js.undefined,
         SourceLocationName: js.UndefOr[__string] = js.undefined,
         VodSourceName: js.UndefOr[__string] = js.undefined
     ): DescribeProgramResponse = {
@@ -900,6 +1124,7 @@ package object mediatailor {
       ChannelName.foreach(__v => __obj.updateDynamic("ChannelName")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       ProgramName.foreach(__v => __obj.updateDynamic("ProgramName")(__v.asInstanceOf[js.Any]))
+      ScheduledStartTime.foreach(__v => __obj.updateDynamic("ScheduledStartTime")(__v.asInstanceOf[js.Any]))
       SourceLocationName.foreach(__v => __obj.updateDynamic("SourceLocationName")(__v.asInstanceOf[js.Any]))
       VodSourceName.foreach(__v => __obj.updateDynamic("VodSourceName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProgramResponse]
@@ -1120,6 +1345,7 @@ package object mediatailor {
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
     var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
+    var LogConfiguration: js.UndefOr[LogConfiguration]
     var ManifestProcessingRules: js.UndefOr[ManifestProcessingRules]
     var Name: js.UndefOr[__string]
     var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
@@ -1143,6 +1369,7 @@ package object mediatailor {
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
         LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
+        LogConfiguration: js.UndefOr[LogConfiguration] = js.undefined,
         ManifestProcessingRules: js.UndefOr[ManifestProcessingRules] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
@@ -1163,6 +1390,7 @@ package object mediatailor {
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
+      LogConfiguration.foreach(__v => __obj.updateDynamic("LogConfiguration")(__v.asInstanceOf[js.Any]))
       ManifestProcessingRules.foreach(__v => __obj.updateDynamic("ManifestProcessingRules")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
@@ -1174,6 +1402,57 @@ package object mediatailor {
       TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))
       VideoContentSourceUrl.foreach(__v => __obj.updateDynamic("VideoContentSourceUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetPlaybackConfigurationResponse]
+    }
+  }
+
+  @js.native
+  trait GetPrefetchScheduleRequest extends js.Object {
+    var Name: __string
+    var PlaybackConfigurationName: __string
+  }
+
+  object GetPrefetchScheduleRequest {
+    @inline
+    def apply(
+        Name: __string,
+        PlaybackConfigurationName: __string
+    ): GetPrefetchScheduleRequest = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "PlaybackConfigurationName" -> PlaybackConfigurationName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetPrefetchScheduleRequest]
+    }
+  }
+
+  @js.native
+  trait GetPrefetchScheduleResponse extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var Consumption: js.UndefOr[PrefetchConsumption]
+    var Name: js.UndefOr[__string]
+    var PlaybackConfigurationName: js.UndefOr[__string]
+    var Retrieval: js.UndefOr[PrefetchRetrieval]
+    var StreamId: js.UndefOr[__string]
+  }
+
+  object GetPrefetchScheduleResponse {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Consumption: js.UndefOr[PrefetchConsumption] = js.undefined,
+        Name: js.UndefOr[__string] = js.undefined,
+        PlaybackConfigurationName: js.UndefOr[__string] = js.undefined,
+        Retrieval: js.UndefOr[PrefetchRetrieval] = js.undefined,
+        StreamId: js.UndefOr[__string] = js.undefined
+    ): GetPrefetchScheduleResponse = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Consumption.foreach(__v => __obj.updateDynamic("Consumption")(__v.asInstanceOf[js.Any]))
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      PlaybackConfigurationName.foreach(__v => __obj.updateDynamic("PlaybackConfigurationName")(__v.asInstanceOf[js.Any]))
+      Retrieval.foreach(__v => __obj.updateDynamic("Retrieval")(__v.asInstanceOf[js.Any]))
+      StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetPrefetchScheduleResponse]
     }
   }
 
@@ -1258,6 +1537,49 @@ package object mediatailor {
   }
 
   @js.native
+  trait ListAlertsRequest extends js.Object {
+    var ResourceArn: __string
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListAlertsRequest {
+    @inline
+    def apply(
+        ResourceArn: __string,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListAlertsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAlertsRequest]
+    }
+  }
+
+  @js.native
+  trait ListAlertsResponse extends js.Object {
+    var Items: js.UndefOr[__listOfAlert]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListAlertsResponse {
+    @inline
+    def apply(
+        Items: js.UndefOr[__listOfAlert] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListAlertsResponse = {
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListAlertsResponse]
+    }
+  }
+
+  @js.native
   trait ListChannelsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[__string]
@@ -1330,6 +1652,52 @@ package object mediatailor {
       Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListPlaybackConfigurationsResponse]
+    }
+  }
+
+  @js.native
+  trait ListPrefetchSchedulesRequest extends js.Object {
+    var PlaybackConfigurationName: __string
+    var MaxResults: js.UndefOr[__integerMin1Max100]
+    var NextToken: js.UndefOr[__string]
+    var StreamId: js.UndefOr[__string]
+  }
+
+  object ListPrefetchSchedulesRequest {
+    @inline
+    def apply(
+        PlaybackConfigurationName: __string,
+        MaxResults: js.UndefOr[__integerMin1Max100] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined,
+        StreamId: js.UndefOr[__string] = js.undefined
+    ): ListPrefetchSchedulesRequest = {
+      val __obj = js.Dynamic.literal(
+        "PlaybackConfigurationName" -> PlaybackConfigurationName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPrefetchSchedulesRequest]
+    }
+  }
+
+  @js.native
+  trait ListPrefetchSchedulesResponse extends js.Object {
+    var Items: js.UndefOr[__listOfPrefetchSchedule]
+    var NextToken: js.UndefOr[__string]
+  }
+
+  object ListPrefetchSchedulesResponse {
+    @inline
+    def apply(
+        Items: js.UndefOr[__listOfPrefetchSchedule] = js.undefined,
+        NextToken: js.UndefOr[__string] = js.undefined
+    ): ListPrefetchSchedulesResponse = {
+      val __obj = js.Dynamic.literal()
+      Items.foreach(__v => __obj.updateDynamic("Items")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListPrefetchSchedulesResponse]
     }
   }
 
@@ -1468,6 +1836,25 @@ package object mediatailor {
     }
   }
 
+  /** Returns Amazon CloudWatch log settings for a playback configuration.
+    */
+  @js.native
+  trait LogConfiguration extends js.Object {
+    var PercentEnabled: __integer
+  }
+
+  object LogConfiguration {
+    @inline
+    def apply(
+        PercentEnabled: __integer
+    ): LogConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "PercentEnabled" -> PercentEnabled.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LogConfiguration]
+    }
+  }
+
   /** The configuration for manifest processing rules. Manifest processing rules enable customization of the personalized manifests created by MediaTailor.
     */
   @js.native
@@ -1498,6 +1885,7 @@ package object mediatailor {
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
     var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
+    var LogConfiguration: js.UndefOr[LogConfiguration]
     var ManifestProcessingRules: js.UndefOr[ManifestProcessingRules]
     var Name: js.UndefOr[__string]
     var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
@@ -1521,6 +1909,7 @@ package object mediatailor {
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
         LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
+        LogConfiguration: js.UndefOr[LogConfiguration] = js.undefined,
         ManifestProcessingRules: js.UndefOr[ManifestProcessingRules] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
@@ -1541,6 +1930,7 @@ package object mediatailor {
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
+      LogConfiguration.foreach(__v => __obj.updateDynamic("LogConfiguration")(__v.asInstanceOf[js.Any]))
       ManifestProcessingRules.foreach(__v => __obj.updateDynamic("ManifestProcessingRules")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
@@ -1552,6 +1942,93 @@ package object mediatailor {
       TranscodeProfileName.foreach(__v => __obj.updateDynamic("TranscodeProfileName")(__v.asInstanceOf[js.Any]))
       VideoContentSourceUrl.foreach(__v => __obj.updateDynamic("VideoContentSourceUrl")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlaybackConfiguration]
+    }
+  }
+
+  /** A complex type that contains settings that determine how and when that MediaTailor places prefetched ads into upcoming ad breaks.
+    */
+  @js.native
+  trait PrefetchConsumption extends js.Object {
+    var EndTime: __timestampUnix
+    var AvailMatchingCriteria: js.UndefOr[__listOfAvailMatchingCriteria]
+    var StartTime: js.UndefOr[__timestampUnix]
+  }
+
+  object PrefetchConsumption {
+    @inline
+    def apply(
+        EndTime: __timestampUnix,
+        AvailMatchingCriteria: js.UndefOr[__listOfAvailMatchingCriteria] = js.undefined,
+        StartTime: js.UndefOr[__timestampUnix] = js.undefined
+    ): PrefetchConsumption = {
+      val __obj = js.Dynamic.literal(
+        "EndTime" -> EndTime.asInstanceOf[js.Any]
+      )
+
+      AvailMatchingCriteria.foreach(__v => __obj.updateDynamic("AvailMatchingCriteria")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrefetchConsumption]
+    }
+  }
+
+  /** A complex type that contains settings governing when MediaTailor prefetches ads, and which dynamic variables that MediaTailor includes in the request to the ad decision server.
+    */
+  @js.native
+  trait PrefetchRetrieval extends js.Object {
+    var EndTime: __timestampUnix
+    var DynamicVariables: js.UndefOr[__mapOf__string]
+    var StartTime: js.UndefOr[__timestampUnix]
+  }
+
+  object PrefetchRetrieval {
+    @inline
+    def apply(
+        EndTime: __timestampUnix,
+        DynamicVariables: js.UndefOr[__mapOf__string] = js.undefined,
+        StartTime: js.UndefOr[__timestampUnix] = js.undefined
+    ): PrefetchRetrieval = {
+      val __obj = js.Dynamic.literal(
+        "EndTime" -> EndTime.asInstanceOf[js.Any]
+      )
+
+      DynamicVariables.foreach(__v => __obj.updateDynamic("DynamicVariables")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrefetchRetrieval]
+    }
+  }
+
+  /** A complex type that contains prefetch schedule information.
+    */
+  @js.native
+  trait PrefetchSchedule extends js.Object {
+    var Arn: __string
+    var Consumption: PrefetchConsumption
+    var Name: __string
+    var PlaybackConfigurationName: __string
+    var Retrieval: PrefetchRetrieval
+    var StreamId: js.UndefOr[__string]
+  }
+
+  object PrefetchSchedule {
+    @inline
+    def apply(
+        Arn: __string,
+        Consumption: PrefetchConsumption,
+        Name: __string,
+        PlaybackConfigurationName: __string,
+        Retrieval: PrefetchRetrieval,
+        StreamId: js.UndefOr[__string] = js.undefined
+    ): PrefetchSchedule = {
+      val __obj = js.Dynamic.literal(
+        "Arn" -> Arn.asInstanceOf[js.Any],
+        "Consumption" -> Consumption.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any],
+        "PlaybackConfigurationName" -> PlaybackConfigurationName.asInstanceOf[js.Any],
+        "Retrieval" -> Retrieval.asInstanceOf[js.Any]
+      )
+
+      StreamId.foreach(__v => __obj.updateDynamic("StreamId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PrefetchSchedule]
     }
   }
 
@@ -1651,6 +2128,7 @@ package object mediatailor {
     var DashConfiguration: js.UndefOr[DashConfiguration]
     var HlsConfiguration: js.UndefOr[HlsConfiguration]
     var LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration]
+    var LogConfiguration: js.UndefOr[LogConfiguration]
     var ManifestProcessingRules: js.UndefOr[ManifestProcessingRules]
     var Name: js.UndefOr[__string]
     var PersonalizationThresholdSeconds: js.UndefOr[__integerMin1]
@@ -1674,6 +2152,7 @@ package object mediatailor {
         DashConfiguration: js.UndefOr[DashConfiguration] = js.undefined,
         HlsConfiguration: js.UndefOr[HlsConfiguration] = js.undefined,
         LivePreRollConfiguration: js.UndefOr[LivePreRollConfiguration] = js.undefined,
+        LogConfiguration: js.UndefOr[LogConfiguration] = js.undefined,
         ManifestProcessingRules: js.UndefOr[ManifestProcessingRules] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
         PersonalizationThresholdSeconds: js.UndefOr[__integerMin1] = js.undefined,
@@ -1694,6 +2173,7 @@ package object mediatailor {
       DashConfiguration.foreach(__v => __obj.updateDynamic("DashConfiguration")(__v.asInstanceOf[js.Any]))
       HlsConfiguration.foreach(__v => __obj.updateDynamic("HlsConfiguration")(__v.asInstanceOf[js.Any]))
       LivePreRollConfiguration.foreach(__v => __obj.updateDynamic("LivePreRollConfiguration")(__v.asInstanceOf[js.Any]))
+      LogConfiguration.foreach(__v => __obj.updateDynamic("LogConfiguration")(__v.asInstanceOf[js.Any]))
       ManifestProcessingRules.foreach(__v => __obj.updateDynamic("ManifestProcessingRules")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       PersonalizationThresholdSeconds.foreach(__v => __obj.updateDynamic("PersonalizationThresholdSeconds")(__v.asInstanceOf[js.Any]))
@@ -1708,7 +2188,7 @@ package object mediatailor {
     }
   }
 
-  /** The ouput configuration for this channel.
+  /** The output configuration for this channel.
     */
   @js.native
   trait RequestOutputItem extends js.Object {
@@ -1769,6 +2249,33 @@ package object mediatailor {
     }
   }
 
+  /** The schedule's ad break properties.
+    */
+  @js.native
+  trait ScheduleAdBreak extends js.Object {
+    var ApproximateDurationSeconds: js.UndefOr[__long]
+    var ApproximateStartTime: js.UndefOr[__timestampUnix]
+    var SourceLocationName: js.UndefOr[__string]
+    var VodSourceName: js.UndefOr[__string]
+  }
+
+  object ScheduleAdBreak {
+    @inline
+    def apply(
+        ApproximateDurationSeconds: js.UndefOr[__long] = js.undefined,
+        ApproximateStartTime: js.UndefOr[__timestampUnix] = js.undefined,
+        SourceLocationName: js.UndefOr[__string] = js.undefined,
+        VodSourceName: js.UndefOr[__string] = js.undefined
+    ): ScheduleAdBreak = {
+      val __obj = js.Dynamic.literal()
+      ApproximateDurationSeconds.foreach(__v => __obj.updateDynamic("ApproximateDurationSeconds")(__v.asInstanceOf[js.Any]))
+      ApproximateStartTime.foreach(__v => __obj.updateDynamic("ApproximateStartTime")(__v.asInstanceOf[js.Any]))
+      SourceLocationName.foreach(__v => __obj.updateDynamic("SourceLocationName")(__v.asInstanceOf[js.Any]))
+      VodSourceName.foreach(__v => __obj.updateDynamic("VodSourceName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ScheduleAdBreak]
+    }
+  }
+
   /** Schedule configuration parameters. A channel must be stopped before changes can be made to the schedule.
     */
   @js.native
@@ -1799,6 +2306,8 @@ package object mediatailor {
     var VodSourceName: __string
     var ApproximateDurationSeconds: js.UndefOr[__long]
     var ApproximateStartTime: js.UndefOr[__timestampUnix]
+    var ScheduleAdBreaks: js.UndefOr[__listOfScheduleAdBreak]
+    var ScheduleEntryType: js.UndefOr[ScheduleEntryType]
   }
 
   object ScheduleEntry {
@@ -1810,7 +2319,9 @@ package object mediatailor {
         SourceLocationName: __string,
         VodSourceName: __string,
         ApproximateDurationSeconds: js.UndefOr[__long] = js.undefined,
-        ApproximateStartTime: js.UndefOr[__timestampUnix] = js.undefined
+        ApproximateStartTime: js.UndefOr[__timestampUnix] = js.undefined,
+        ScheduleAdBreaks: js.UndefOr[__listOfScheduleAdBreak] = js.undefined,
+        ScheduleEntryType: js.UndefOr[ScheduleEntryType] = js.undefined
     ): ScheduleEntry = {
       val __obj = js.Dynamic.literal(
         "Arn" -> Arn.asInstanceOf[js.Any],
@@ -1822,7 +2333,33 @@ package object mediatailor {
 
       ApproximateDurationSeconds.foreach(__v => __obj.updateDynamic("ApproximateDurationSeconds")(__v.asInstanceOf[js.Any]))
       ApproximateStartTime.foreach(__v => __obj.updateDynamic("ApproximateStartTime")(__v.asInstanceOf[js.Any]))
+      ScheduleAdBreaks.foreach(__v => __obj.updateDynamic("ScheduleAdBreaks")(__v.asInstanceOf[js.Any]))
+      ScheduleEntryType.foreach(__v => __obj.updateDynamic("ScheduleEntryType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ScheduleEntry]
+    }
+  }
+
+  /** AWS Secrets Manager access token configuration parameters. For information about Secrets Manager access token authentication, see [[https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-access-configuration-access-token.html|Working with AWS Secrets Manager access token authentication]].
+    */
+  @js.native
+  trait SecretsManagerAccessTokenConfiguration extends js.Object {
+    var HeaderName: js.UndefOr[__string]
+    var SecretArn: js.UndefOr[__string]
+    var SecretStringKey: js.UndefOr[__string]
+  }
+
+  object SecretsManagerAccessTokenConfiguration {
+    @inline
+    def apply(
+        HeaderName: js.UndefOr[__string] = js.undefined,
+        SecretArn: js.UndefOr[__string] = js.undefined,
+        SecretStringKey: js.UndefOr[__string] = js.undefined
+    ): SecretsManagerAccessTokenConfiguration = {
+      val __obj = js.Dynamic.literal()
+      HeaderName.foreach(__v => __obj.updateDynamic("HeaderName")(__v.asInstanceOf[js.Any]))
+      SecretArn.foreach(__v => __obj.updateDynamic("SecretArn")(__v.asInstanceOf[js.Any]))
+      SecretStringKey.foreach(__v => __obj.updateDynamic("SecretStringKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SecretsManagerAccessTokenConfiguration]
     }
   }
 
@@ -1998,6 +2535,7 @@ package object mediatailor {
     var RelativePosition: RelativePosition
     var Type: __string
     var RelativeProgram: js.UndefOr[__string]
+    var ScheduledStartTimeMillis: js.UndefOr[__long]
   }
 
   object Transition {
@@ -2005,7 +2543,8 @@ package object mediatailor {
     def apply(
         RelativePosition: RelativePosition,
         Type: __string,
-        RelativeProgram: js.UndefOr[__string] = js.undefined
+        RelativeProgram: js.UndefOr[__string] = js.undefined,
+        ScheduledStartTimeMillis: js.UndefOr[__long] = js.undefined
     ): Transition = {
       val __obj = js.Dynamic.literal(
         "RelativePosition" -> RelativePosition.asInstanceOf[js.Any],
@@ -2013,6 +2552,7 @@ package object mediatailor {
       )
 
       RelativeProgram.foreach(__v => __obj.updateDynamic("RelativeProgram")(__v.asInstanceOf[js.Any]))
+      ScheduledStartTimeMillis.foreach(__v => __obj.updateDynamic("ScheduledStartTimeMillis")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Transition]
     }
   }
@@ -2063,6 +2603,7 @@ package object mediatailor {
     var ChannelName: js.UndefOr[__string]
     var ChannelState: js.UndefOr[ChannelState]
     var CreationTime: js.UndefOr[__timestampUnix]
+    var FillerSlate: js.UndefOr[SlateSource]
     var LastModifiedTime: js.UndefOr[__timestampUnix]
     var Outputs: js.UndefOr[ResponseOutputs]
     var PlaybackMode: js.UndefOr[__string]
@@ -2076,6 +2617,7 @@ package object mediatailor {
         ChannelName: js.UndefOr[__string] = js.undefined,
         ChannelState: js.UndefOr[ChannelState] = js.undefined,
         CreationTime: js.UndefOr[__timestampUnix] = js.undefined,
+        FillerSlate: js.UndefOr[SlateSource] = js.undefined,
         LastModifiedTime: js.UndefOr[__timestampUnix] = js.undefined,
         Outputs: js.UndefOr[ResponseOutputs] = js.undefined,
         PlaybackMode: js.UndefOr[__string] = js.undefined,
@@ -2086,6 +2628,7 @@ package object mediatailor {
       ChannelName.foreach(__v => __obj.updateDynamic("ChannelName")(__v.asInstanceOf[js.Any]))
       ChannelState.foreach(__v => __obj.updateDynamic("ChannelState")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FillerSlate.foreach(__v => __obj.updateDynamic("FillerSlate")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       Outputs.foreach(__v => __obj.updateDynamic("Outputs")(__v.asInstanceOf[js.Any]))
       PlaybackMode.foreach(__v => __obj.updateDynamic("PlaybackMode")(__v.asInstanceOf[js.Any]))

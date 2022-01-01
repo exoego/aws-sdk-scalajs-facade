@@ -50,6 +50,7 @@ package object health {
   type healthServiceAccessStatusForOrganization = String
   type locale = String
   type maxResults = Int
+  type maxResultsLowerRange = Int
   type metadataKey = String
   type metadataValue = String
   type nextToken = String
@@ -216,7 +217,7 @@ package object health {
   trait DescribeAffectedEntitiesForOrganizationRequest extends js.Object {
     var organizationEntityFilters: OrganizationEntityFiltersList
     var locale: js.UndefOr[locale]
-    var maxResults: js.UndefOr[maxResults]
+    var maxResults: js.UndefOr[maxResultsLowerRange]
     var nextToken: js.UndefOr[nextToken]
   }
 
@@ -225,7 +226,7 @@ package object health {
     def apply(
         organizationEntityFilters: OrganizationEntityFiltersList,
         locale: js.UndefOr[locale] = js.undefined,
-        maxResults: js.UndefOr[maxResults] = js.undefined,
+        maxResults: js.UndefOr[maxResultsLowerRange] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeAffectedEntitiesForOrganizationRequest = {
       val __obj = js.Dynamic.literal(
@@ -513,7 +514,7 @@ package object health {
   trait DescribeEventsForOrganizationRequest extends js.Object {
     var filter: js.UndefOr[OrganizationEventFilter]
     var locale: js.UndefOr[locale]
-    var maxResults: js.UndefOr[maxResults]
+    var maxResults: js.UndefOr[maxResultsLowerRange]
     var nextToken: js.UndefOr[nextToken]
   }
 
@@ -522,7 +523,7 @@ package object health {
     def apply(
         filter: js.UndefOr[OrganizationEventFilter] = js.undefined,
         locale: js.UndefOr[locale] = js.undefined,
-        maxResults: js.UndefOr[maxResults] = js.undefined,
+        maxResults: js.UndefOr[maxResultsLowerRange] = js.undefined,
         nextToken: js.UndefOr[nextToken] = js.undefined
     ): DescribeEventsForOrganizationRequest = {
       val __obj = js.Dynamic.literal()
@@ -634,7 +635,7 @@ package object health {
     }
   }
 
-  /** The values to use to filter results from the [[https://docs.aws.amazon.com/health/latest/APIReference/API_EntityFilter.html|EntityFilter]] operation.
+  /** The values to use to filter results from the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html|DescribeAffectedEntities]] operation.
     */
   @js.native
   trait EntityFilter extends js.Object {
@@ -669,7 +670,7 @@ package object health {
     }
   }
 
-  /** Summary information about an AWS Health event. AWS Health events can be public or account-specific: * <i>Public events</i> might be service events that are not specific to an AWS account. For example, if there is an issue with an AWS Region, AWS Health provides information about the event, even if you don't use services or resources in that Region. * <i>Account-specific</i> events are specific to either your AWS account or an account in your organization. For example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, AWS Health provides information about the event and the affected resources in the account. You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see [[https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode|eventScopeCode]].
+  /** Summary information about an Health event. Health events can be public or account-specific: * <i>Public events</i> might be service events that are not specific to an Amazon Web Services account. For example, if there is an issue with an Amazon Web Services Region, Health provides information about the event, even if you don't use services or resources in that Region. * <i>Account-specific</i> events are specific to either your Amazon Web Services account or an account in your organization. For example, if there's an issue with Amazon Elastic Compute Cloud in a Region that you use, Health provides information about the event and the affected resources in the account. You can determine if an event is public or account-specific by using the <code>eventScopeCode</code> parameter. For more information, see [[https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode|eventScopeCode]].
     */
   @js.native
   trait Event extends js.Object {
@@ -803,7 +804,7 @@ package object health {
     }
   }
 
-  /** Error information returned when a [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html|DescribeEventDetails]] operation cannot find a specified event.
+  /** Error information returned when a [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetails.html|DescribeEventDetails]] operation can't find a specified event.
     */
   @js.native
   trait EventDetailsErrorItem extends js.Object {
@@ -881,7 +882,7 @@ package object health {
     }
   }
 
-  /** Contains the metadata about a type of event that is reported by AWS Health. The <code>EventType</code> shows the category, service, and the event type code of the event. For example, an <code>issue</code> might be the category, <code>EC2</code> the service, and <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code> the event type code. You can use the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html|DescribeEventTypes]] API operation to return this information about an event. You can also use the Amazon CloudWatch Events console to create a rule so that you can get notified or take action when AWS Health delivers a specific event to your AWS account. For more information, see [[https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html|Monitor for AWS Health events with Amazon CloudWatch Events]] in the <i>AWS Health User Guide</i>.
+  /** Contains the metadata about a type of event that is reported by Health. The <code>EventType</code> shows the category, service, and the event type code of the event. For example, an <code>issue</code> might be the category, <code>EC2</code> the service, and <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code> the event type code. You can use the [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html|DescribeEventTypes]] API operation to return this information about an event. You can also use the Amazon CloudWatch Events console to create a rule so that you can get notified or take action when Health delivers a specific event to your Amazon Web Services account. For more information, see [[https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html|Monitor for Health events with Amazon CloudWatch Events]] in the <i>Health User Guide</i>.
     */
   @js.native
   trait EventType extends js.Object {
@@ -929,7 +930,7 @@ package object health {
     }
   }
 
-  /** Error information returned when a [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html|DescribeAffectedEntitiesForOrganization]] operation cannot find or process a specific entity.
+  /** Error information returned when a [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntitiesForOrganization.html|DescribeAffectedEntitiesForOrganization]] operation can't find or process a specific entity.
     */
   @js.native
   trait OrganizationAffectedEntitiesErrorItem extends js.Object {
@@ -1028,7 +1029,7 @@ package object health {
     }
   }
 
-  /** Error information returned when a [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html|DescribeEventDetailsForOrganization]] operation cannot find a specified event.
+  /** Error information returned when a [[https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html|DescribeEventDetailsForOrganization]] operation can't find a specified event.
     */
   @js.native
   trait OrganizationEventDetailsErrorItem extends js.Object {

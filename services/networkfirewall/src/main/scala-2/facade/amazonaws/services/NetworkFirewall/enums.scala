@@ -61,12 +61,29 @@ object LogType {
 }
 
 @js.native
+sealed trait OverrideAction extends js.Any
+object OverrideAction {
+  val DROP_TO_ALERT = "DROP_TO_ALERT".asInstanceOf[OverrideAction]
+
+  @inline def values: js.Array[OverrideAction] = js.Array(DROP_TO_ALERT)
+}
+
+@js.native
 sealed trait PerObjectSyncStatus extends js.Any
 object PerObjectSyncStatus {
   val PENDING = "PENDING".asInstanceOf[PerObjectSyncStatus]
   val IN_SYNC = "IN_SYNC".asInstanceOf[PerObjectSyncStatus]
 
   @inline def values: js.Array[PerObjectSyncStatus] = js.Array(PENDING, IN_SYNC)
+}
+
+@js.native
+sealed trait ResourceManagedStatus extends js.Any
+object ResourceManagedStatus {
+  val MANAGED = "MANAGED".asInstanceOf[ResourceManagedStatus]
+  val ACCOUNT = "ACCOUNT".asInstanceOf[ResourceManagedStatus]
+
+  @inline def values: js.Array[ResourceManagedStatus] = js.Array(MANAGED, ACCOUNT)
 }
 
 @js.native
@@ -85,6 +102,15 @@ object RuleGroupType {
   val STATEFUL = "STATEFUL".asInstanceOf[RuleGroupType]
 
   @inline def values: js.Array[RuleGroupType] = js.Array(STATELESS, STATEFUL)
+}
+
+@js.native
+sealed trait RuleOrder extends js.Any
+object RuleOrder {
+  val DEFAULT_ACTION_ORDER = "DEFAULT_ACTION_ORDER".asInstanceOf[RuleOrder]
+  val STRICT_ORDER = "STRICT_ORDER".asInstanceOf[RuleOrder]
+
+  @inline def values: js.Array[RuleOrder] = js.Array(DEFAULT_ACTION_ORDER, STRICT_ORDER)
 }
 
 @js.native

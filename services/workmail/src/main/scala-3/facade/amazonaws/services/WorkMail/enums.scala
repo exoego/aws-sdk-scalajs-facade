@@ -10,6 +10,15 @@ object AccessControlRuleEffect {
   inline def values: js.Array[AccessControlRuleEffect] = js.Array(ALLOW, DENY)
 }
 
+type DnsRecordVerificationStatus = "PENDING" | "VERIFIED" | "FAILED"
+object DnsRecordVerificationStatus {
+  inline val PENDING: "PENDING" = "PENDING"
+  inline val VERIFIED: "VERIFIED" = "VERIFIED"
+  inline val FAILED: "FAILED" = "FAILED"
+
+  inline def values: js.Array[DnsRecordVerificationStatus] = js.Array(PENDING, VERIFIED, FAILED)
+}
+
 type EntityState = "ENABLED" | "DISABLED" | "DELETED"
 object EntityState {
   inline val ENABLED: "ENABLED" = "ENABLED"

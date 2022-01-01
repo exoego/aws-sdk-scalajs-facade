@@ -49,11 +49,12 @@ object AnomalyDetectorStatus {
   val DELETING = "DELETING".asInstanceOf[AnomalyDetectorStatus]
   val FAILED = "FAILED".asInstanceOf[AnomalyDetectorStatus]
   val INACTIVE = "INACTIVE".asInstanceOf[AnomalyDetectorStatus]
+  val LEARNING = "LEARNING".asInstanceOf[AnomalyDetectorStatus]
   val BACK_TEST_ACTIVATING = "BACK_TEST_ACTIVATING".asInstanceOf[AnomalyDetectorStatus]
   val BACK_TEST_ACTIVE = "BACK_TEST_ACTIVE".asInstanceOf[AnomalyDetectorStatus]
   val BACK_TEST_COMPLETE = "BACK_TEST_COMPLETE".asInstanceOf[AnomalyDetectorStatus]
 
-  @inline def values: js.Array[AnomalyDetectorStatus] = js.Array(ACTIVE, ACTIVATING, DELETING, FAILED, INACTIVE, BACK_TEST_ACTIVATING, BACK_TEST_ACTIVE, BACK_TEST_COMPLETE)
+  @inline def values: js.Array[AnomalyDetectorStatus] = js.Array(ACTIVE, ACTIVATING, DELETING, FAILED, INACTIVE, LEARNING, BACK_TEST_ACTIVATING, BACK_TEST_ACTIVE, BACK_TEST_COMPLETE)
 }
 
 @js.native
@@ -83,4 +84,13 @@ object JsonFileCompression {
   val GZIP = "GZIP".asInstanceOf[JsonFileCompression]
 
   @inline def values: js.Array[JsonFileCompression] = js.Array(NONE, GZIP)
+}
+
+@js.native
+sealed trait RelationshipType extends js.Any
+object RelationshipType {
+  val CAUSE_OF_INPUT_ANOMALY_GROUP = "CAUSE_OF_INPUT_ANOMALY_GROUP".asInstanceOf[RelationshipType]
+  val EFFECT_OF_INPUT_ANOMALY_GROUP = "EFFECT_OF_INPUT_ANOMALY_GROUP".asInstanceOf[RelationshipType]
+
+  @inline def values: js.Array[RelationshipType] = js.Array(CAUSE_OF_INPUT_ANOMALY_GROUP, EFFECT_OF_INPUT_ANOMALY_GROUP)
 }

@@ -22,6 +22,21 @@ object AuthTypeValue {
 }
 
 @js.native
+sealed trait CannedAclForObjectsValue extends js.Any
+object CannedAclForObjectsValue {
+  val none = "none".asInstanceOf[CannedAclForObjectsValue]
+  val `private` = "private".asInstanceOf[CannedAclForObjectsValue]
+  val `public-read` = "public-read".asInstanceOf[CannedAclForObjectsValue]
+  val `public-read-write` = "public-read-write".asInstanceOf[CannedAclForObjectsValue]
+  val `authenticated-read` = "authenticated-read".asInstanceOf[CannedAclForObjectsValue]
+  val `aws-exec-read` = "aws-exec-read".asInstanceOf[CannedAclForObjectsValue]
+  val `bucket-owner-read` = "bucket-owner-read".asInstanceOf[CannedAclForObjectsValue]
+  val `bucket-owner-full-control` = "bucket-owner-full-control".asInstanceOf[CannedAclForObjectsValue]
+
+  @inline def values: js.Array[CannedAclForObjectsValue] = js.Array(none, `private`, `public-read`, `public-read-write`, `authenticated-read`, `aws-exec-read`, `bucket-owner-read`, `bucket-owner-full-control`)
+}
+
+@js.native
 sealed trait CharLengthSemantics extends js.Any
 object CharLengthSemantics {
   val default = "default".asInstanceOf[CharLengthSemantics]
@@ -162,6 +177,26 @@ object ParquetVersionValue {
 }
 
 @js.native
+sealed trait PluginNameValue extends js.Any
+object PluginNameValue {
+  val `no-preference` = "no-preference".asInstanceOf[PluginNameValue]
+  val `test-decoding` = "test-decoding".asInstanceOf[PluginNameValue]
+  val pglogical = "pglogical".asInstanceOf[PluginNameValue]
+
+  @inline def values: js.Array[PluginNameValue] = js.Array(`no-preference`, `test-decoding`, pglogical)
+}
+
+@js.native
+sealed trait RedisAuthTypeValue extends js.Any
+object RedisAuthTypeValue {
+  val none = "none".asInstanceOf[RedisAuthTypeValue]
+  val `auth-role` = "auth-role".asInstanceOf[RedisAuthTypeValue]
+  val `auth-token` = "auth-token".asInstanceOf[RedisAuthTypeValue]
+
+  @inline def values: js.Array[RedisAuthTypeValue] = js.Array(none, `auth-role`, `auth-token`)
+}
+
+@js.native
 sealed trait RefreshSchemasStatusTypeValue extends js.Any
 object RefreshSchemasStatusTypeValue {
   val successful = "successful".asInstanceOf[RefreshSchemasStatusTypeValue]
@@ -213,6 +248,15 @@ object SourceType {
   val `replication-instance` = "replication-instance".asInstanceOf[SourceType]
 
   @inline def values: js.Array[SourceType] = js.Array(`replication-instance`)
+}
+
+@js.native
+sealed trait SslSecurityProtocolValue extends js.Any
+object SslSecurityProtocolValue {
+  val plaintext = "plaintext".asInstanceOf[SslSecurityProtocolValue]
+  val `ssl-encryption` = "ssl-encryption".asInstanceOf[SslSecurityProtocolValue]
+
+  @inline def values: js.Array[SslSecurityProtocolValue] = js.Array(plaintext, `ssl-encryption`)
 }
 
 @js.native

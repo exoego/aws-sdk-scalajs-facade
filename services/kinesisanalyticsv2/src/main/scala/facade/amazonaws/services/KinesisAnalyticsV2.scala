@@ -9,10 +9,14 @@ import facade.amazonaws._
 
 package object kinesisanalyticsv2 {
   type ApplicationDescription = String
+  type ApplicationMaintenanceWindowEndTime = String
+  type ApplicationMaintenanceWindowStartTime = String
   type ApplicationName = String
   type ApplicationSummaries = js.Array[ApplicationSummary]
   type ApplicationVersionId = Double
+  type ApplicationVersionSummaries = js.Array[ApplicationVersionSummary]
   type AuthorizedUrl = String
+  type BasePath = String
   type BooleanObject = Boolean
   type BucketARN = String
   type CheckpointInterval = Double
@@ -21,6 +25,10 @@ package object kinesisanalyticsv2 {
   type CloudWatchLoggingOptions = js.Array[CloudWatchLoggingOption]
   type CodeMD5 = String
   type CodeSize = Double
+  type ConditionalToken = String
+  type CustomArtifactsConfigurationDescriptionList = js.Array[CustomArtifactConfigurationDescription]
+  type CustomArtifactsConfigurationList = js.Array[CustomArtifactConfiguration]
+  type DatabaseARN = String
   type FileKey = String
   type Id = String
   type InAppStreamName = String
@@ -32,9 +40,13 @@ package object kinesisanalyticsv2 {
   type Inputs = js.Array[Input]
   type JobPlanDescription = String
   type KinesisAnalyticsARN = String
+  type ListApplicationVersionsInputLimit = Int
   type ListApplicationsInputLimit = Int
   type ListSnapshotsInputLimit = Int
   type LogStreamARN = String
+  type MavenArtifactId = String
+  type MavenGroupId = String
+  type MavenVersion = String
   type MinPauseBetweenCheckpoints = Double
   type NextToken = String
   type ObjectVersion = String
@@ -107,15 +119,19 @@ package object kinesisanalyticsv2 {
     @inline def deleteApplicationVpcConfigurationFuture(params: DeleteApplicationVpcConfigurationRequest): Future[DeleteApplicationVpcConfigurationResponse] = service.deleteApplicationVpcConfiguration(params).promise().toFuture
     @inline def describeApplicationFuture(params: DescribeApplicationRequest): Future[DescribeApplicationResponse] = service.describeApplication(params).promise().toFuture
     @inline def describeApplicationSnapshotFuture(params: DescribeApplicationSnapshotRequest): Future[DescribeApplicationSnapshotResponse] = service.describeApplicationSnapshot(params).promise().toFuture
+    @inline def describeApplicationVersionFuture(params: DescribeApplicationVersionRequest): Future[DescribeApplicationVersionResponse] = service.describeApplicationVersion(params).promise().toFuture
     @inline def discoverInputSchemaFuture(params: DiscoverInputSchemaRequest): Future[DiscoverInputSchemaResponse] = service.discoverInputSchema(params).promise().toFuture
     @inline def listApplicationSnapshotsFuture(params: ListApplicationSnapshotsRequest): Future[ListApplicationSnapshotsResponse] = service.listApplicationSnapshots(params).promise().toFuture
+    @inline def listApplicationVersionsFuture(params: ListApplicationVersionsRequest): Future[ListApplicationVersionsResponse] = service.listApplicationVersions(params).promise().toFuture
     @inline def listApplicationsFuture(params: ListApplicationsRequest): Future[ListApplicationsResponse] = service.listApplications(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
+    @inline def rollbackApplicationFuture(params: RollbackApplicationRequest): Future[RollbackApplicationResponse] = service.rollbackApplication(params).promise().toFuture
     @inline def startApplicationFuture(params: StartApplicationRequest): Future[StartApplicationResponse] = service.startApplication(params).promise().toFuture
     @inline def stopApplicationFuture(params: StopApplicationRequest): Future[StopApplicationResponse] = service.stopApplication(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateApplicationFuture(params: UpdateApplicationRequest): Future[UpdateApplicationResponse] = service.updateApplication(params).promise().toFuture
+    @inline def updateApplicationMaintenanceConfigurationFuture(params: UpdateApplicationMaintenanceConfigurationRequest): Future[UpdateApplicationMaintenanceConfigurationResponse] = service.updateApplicationMaintenanceConfiguration(params).promise().toFuture
 
   }
 
@@ -142,15 +158,19 @@ package object kinesisanalyticsv2 {
     def deleteApplicationVpcConfiguration(params: DeleteApplicationVpcConfigurationRequest): Request[DeleteApplicationVpcConfigurationResponse] = js.native
     def describeApplication(params: DescribeApplicationRequest): Request[DescribeApplicationResponse] = js.native
     def describeApplicationSnapshot(params: DescribeApplicationSnapshotRequest): Request[DescribeApplicationSnapshotResponse] = js.native
+    def describeApplicationVersion(params: DescribeApplicationVersionRequest): Request[DescribeApplicationVersionResponse] = js.native
     def discoverInputSchema(params: DiscoverInputSchemaRequest): Request[DiscoverInputSchemaResponse] = js.native
     def listApplicationSnapshots(params: ListApplicationSnapshotsRequest): Request[ListApplicationSnapshotsResponse] = js.native
+    def listApplicationVersions(params: ListApplicationVersionsRequest): Request[ListApplicationVersionsResponse] = js.native
     def listApplications(params: ListApplicationsRequest): Request[ListApplicationsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
+    def rollbackApplication(params: RollbackApplicationRequest): Request[RollbackApplicationResponse] = js.native
     def startApplication(params: StartApplicationRequest): Request[StartApplicationResponse] = js.native
     def stopApplication(params: StopApplicationRequest): Request[StopApplicationResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateApplication(params: UpdateApplicationRequest): Request[UpdateApplicationResponse] = js.native
+    def updateApplicationMaintenanceConfiguration(params: UpdateApplicationMaintenanceConfigurationRequest): Request[UpdateApplicationMaintenanceConfigurationResponse] = js.native
   }
   object KinesisAnalyticsV2 {
     @inline implicit def toOps(service: KinesisAnalyticsV2): KinesisAnalyticsV2Ops = {
@@ -162,7 +182,8 @@ package object kinesisanalyticsv2 {
   trait AddApplicationCloudWatchLoggingOptionRequest extends js.Object {
     var ApplicationName: ApplicationName
     var CloudWatchLoggingOption: CloudWatchLoggingOption
-    var CurrentApplicationVersionId: ApplicationVersionId
+    var ConditionalToken: js.UndefOr[ConditionalToken]
+    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
   }
 
   object AddApplicationCloudWatchLoggingOptionRequest {
@@ -170,13 +191,16 @@ package object kinesisanalyticsv2 {
     def apply(
         ApplicationName: ApplicationName,
         CloudWatchLoggingOption: CloudWatchLoggingOption,
-        CurrentApplicationVersionId: ApplicationVersionId
+        ConditionalToken: js.UndefOr[ConditionalToken] = js.undefined,
+        CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined
     ): AddApplicationCloudWatchLoggingOptionRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "CloudWatchLoggingOption" -> CloudWatchLoggingOption.asInstanceOf[js.Any],
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]
+        "CloudWatchLoggingOption" -> CloudWatchLoggingOption.asInstanceOf[js.Any]
       )
+
+      ConditionalToken.foreach(__v => __obj.updateDynamic("ConditionalToken")(__v.asInstanceOf[js.Any]))
+      CurrentApplicationVersionId.foreach(__v => __obj.updateDynamic("CurrentApplicationVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddApplicationCloudWatchLoggingOptionRequest]
     }
   }
@@ -392,22 +416,26 @@ package object kinesisanalyticsv2 {
   @js.native
   trait AddApplicationVpcConfigurationRequest extends js.Object {
     var ApplicationName: ApplicationName
-    var CurrentApplicationVersionId: ApplicationVersionId
     var VpcConfiguration: VpcConfiguration
+    var ConditionalToken: js.UndefOr[ConditionalToken]
+    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
   }
 
   object AddApplicationVpcConfigurationRequest {
     @inline
     def apply(
         ApplicationName: ApplicationName,
-        CurrentApplicationVersionId: ApplicationVersionId,
-        VpcConfiguration: VpcConfiguration
+        VpcConfiguration: VpcConfiguration,
+        ConditionalToken: js.UndefOr[ConditionalToken] = js.undefined,
+        CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined
     ): AddApplicationVpcConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
         "VpcConfiguration" -> VpcConfiguration.asInstanceOf[js.Any]
       )
+
+      ConditionalToken.foreach(__v => __obj.updateDynamic("ConditionalToken")(__v.asInstanceOf[js.Any]))
+      CurrentApplicationVersionId.foreach(__v => __obj.updateDynamic("CurrentApplicationVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AddApplicationVpcConfigurationRequest]
     }
   }
@@ -434,7 +462,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes code configuration for a Flink-based Kinesis Data Analytics application.
+  /** Describes code configuration for an application.
     */
   @js.native
   trait ApplicationCodeConfiguration extends js.Object {
@@ -457,7 +485,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes code configuration for a Flink-based Kinesis Data Analytics application.
+  /** Describes code configuration for an application.
     */
   @js.native
   trait ApplicationCodeConfigurationDescription extends js.Object {
@@ -480,7 +508,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes code configuration updates to a Flink-based Kinesis Data Analytics application.
+  /** Describes code configuration updates for an application. This is supported for a Flink-based Kinesis Data Analytics application or a SQL-based Kinesis Data Analytics application.
     */
   @js.native
   trait ApplicationCodeConfigurationUpdate extends js.Object {
@@ -505,33 +533,34 @@ package object kinesisanalyticsv2 {
     */
   @js.native
   trait ApplicationConfiguration extends js.Object {
-    var ApplicationCodeConfiguration: ApplicationCodeConfiguration
+    var ApplicationCodeConfiguration: js.UndefOr[ApplicationCodeConfiguration]
     var ApplicationSnapshotConfiguration: js.UndefOr[ApplicationSnapshotConfiguration]
     var EnvironmentProperties: js.UndefOr[EnvironmentProperties]
     var FlinkApplicationConfiguration: js.UndefOr[FlinkApplicationConfiguration]
     var SqlApplicationConfiguration: js.UndefOr[SqlApplicationConfiguration]
     var VpcConfigurations: js.UndefOr[VpcConfigurations]
+    var ZeppelinApplicationConfiguration: js.UndefOr[ZeppelinApplicationConfiguration]
   }
 
   object ApplicationConfiguration {
     @inline
     def apply(
-        ApplicationCodeConfiguration: ApplicationCodeConfiguration,
+        ApplicationCodeConfiguration: js.UndefOr[ApplicationCodeConfiguration] = js.undefined,
         ApplicationSnapshotConfiguration: js.UndefOr[ApplicationSnapshotConfiguration] = js.undefined,
         EnvironmentProperties: js.UndefOr[EnvironmentProperties] = js.undefined,
         FlinkApplicationConfiguration: js.UndefOr[FlinkApplicationConfiguration] = js.undefined,
         SqlApplicationConfiguration: js.UndefOr[SqlApplicationConfiguration] = js.undefined,
-        VpcConfigurations: js.UndefOr[VpcConfigurations] = js.undefined
+        VpcConfigurations: js.UndefOr[VpcConfigurations] = js.undefined,
+        ZeppelinApplicationConfiguration: js.UndefOr[ZeppelinApplicationConfiguration] = js.undefined
     ): ApplicationConfiguration = {
-      val __obj = js.Dynamic.literal(
-        "ApplicationCodeConfiguration" -> ApplicationCodeConfiguration.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      ApplicationCodeConfiguration.foreach(__v => __obj.updateDynamic("ApplicationCodeConfiguration")(__v.asInstanceOf[js.Any]))
       ApplicationSnapshotConfiguration.foreach(__v => __obj.updateDynamic("ApplicationSnapshotConfiguration")(__v.asInstanceOf[js.Any]))
       EnvironmentProperties.foreach(__v => __obj.updateDynamic("EnvironmentProperties")(__v.asInstanceOf[js.Any]))
       FlinkApplicationConfiguration.foreach(__v => __obj.updateDynamic("FlinkApplicationConfiguration")(__v.asInstanceOf[js.Any]))
       SqlApplicationConfiguration.foreach(__v => __obj.updateDynamic("SqlApplicationConfiguration")(__v.asInstanceOf[js.Any]))
       VpcConfigurations.foreach(__v => __obj.updateDynamic("VpcConfigurations")(__v.asInstanceOf[js.Any]))
+      ZeppelinApplicationConfiguration.foreach(__v => __obj.updateDynamic("ZeppelinApplicationConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationConfiguration]
     }
   }
@@ -547,6 +576,7 @@ package object kinesisanalyticsv2 {
     var RunConfigurationDescription: js.UndefOr[RunConfigurationDescription]
     var SqlApplicationConfigurationDescription: js.UndefOr[SqlApplicationConfigurationDescription]
     var VpcConfigurationDescriptions: js.UndefOr[VpcConfigurationDescriptions]
+    var ZeppelinApplicationConfigurationDescription: js.UndefOr[ZeppelinApplicationConfigurationDescription]
   }
 
   object ApplicationConfigurationDescription {
@@ -558,7 +588,8 @@ package object kinesisanalyticsv2 {
         FlinkApplicationConfigurationDescription: js.UndefOr[FlinkApplicationConfigurationDescription] = js.undefined,
         RunConfigurationDescription: js.UndefOr[RunConfigurationDescription] = js.undefined,
         SqlApplicationConfigurationDescription: js.UndefOr[SqlApplicationConfigurationDescription] = js.undefined,
-        VpcConfigurationDescriptions: js.UndefOr[VpcConfigurationDescriptions] = js.undefined
+        VpcConfigurationDescriptions: js.UndefOr[VpcConfigurationDescriptions] = js.undefined,
+        ZeppelinApplicationConfigurationDescription: js.UndefOr[ZeppelinApplicationConfigurationDescription] = js.undefined
     ): ApplicationConfigurationDescription = {
       val __obj = js.Dynamic.literal()
       ApplicationCodeConfigurationDescription.foreach(__v => __obj.updateDynamic("ApplicationCodeConfigurationDescription")(__v.asInstanceOf[js.Any]))
@@ -568,6 +599,7 @@ package object kinesisanalyticsv2 {
       RunConfigurationDescription.foreach(__v => __obj.updateDynamic("RunConfigurationDescription")(__v.asInstanceOf[js.Any]))
       SqlApplicationConfigurationDescription.foreach(__v => __obj.updateDynamic("SqlApplicationConfigurationDescription")(__v.asInstanceOf[js.Any]))
       VpcConfigurationDescriptions.foreach(__v => __obj.updateDynamic("VpcConfigurationDescriptions")(__v.asInstanceOf[js.Any]))
+      ZeppelinApplicationConfigurationDescription.foreach(__v => __obj.updateDynamic("ZeppelinApplicationConfigurationDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationConfigurationDescription]
     }
   }
@@ -582,6 +614,7 @@ package object kinesisanalyticsv2 {
     var FlinkApplicationConfigurationUpdate: js.UndefOr[FlinkApplicationConfigurationUpdate]
     var SqlApplicationConfigurationUpdate: js.UndefOr[SqlApplicationConfigurationUpdate]
     var VpcConfigurationUpdates: js.UndefOr[VpcConfigurationUpdates]
+    var ZeppelinApplicationConfigurationUpdate: js.UndefOr[ZeppelinApplicationConfigurationUpdate]
   }
 
   object ApplicationConfigurationUpdate {
@@ -592,7 +625,8 @@ package object kinesisanalyticsv2 {
         EnvironmentPropertyUpdates: js.UndefOr[EnvironmentPropertyUpdates] = js.undefined,
         FlinkApplicationConfigurationUpdate: js.UndefOr[FlinkApplicationConfigurationUpdate] = js.undefined,
         SqlApplicationConfigurationUpdate: js.UndefOr[SqlApplicationConfigurationUpdate] = js.undefined,
-        VpcConfigurationUpdates: js.UndefOr[VpcConfigurationUpdates] = js.undefined
+        VpcConfigurationUpdates: js.UndefOr[VpcConfigurationUpdates] = js.undefined,
+        ZeppelinApplicationConfigurationUpdate: js.UndefOr[ZeppelinApplicationConfigurationUpdate] = js.undefined
     ): ApplicationConfigurationUpdate = {
       val __obj = js.Dynamic.literal()
       ApplicationCodeConfigurationUpdate.foreach(__v => __obj.updateDynamic("ApplicationCodeConfigurationUpdate")(__v.asInstanceOf[js.Any]))
@@ -601,6 +635,7 @@ package object kinesisanalyticsv2 {
       FlinkApplicationConfigurationUpdate.foreach(__v => __obj.updateDynamic("FlinkApplicationConfigurationUpdate")(__v.asInstanceOf[js.Any]))
       SqlApplicationConfigurationUpdate.foreach(__v => __obj.updateDynamic("SqlApplicationConfigurationUpdate")(__v.asInstanceOf[js.Any]))
       VpcConfigurationUpdates.foreach(__v => __obj.updateDynamic("VpcConfigurationUpdates")(__v.asInstanceOf[js.Any]))
+      ZeppelinApplicationConfigurationUpdate.foreach(__v => __obj.updateDynamic("ZeppelinApplicationConfigurationUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationConfigurationUpdate]
     }
   }
@@ -616,7 +651,13 @@ package object kinesisanalyticsv2 {
     var RuntimeEnvironment: RuntimeEnvironment
     var ApplicationConfigurationDescription: js.UndefOr[ApplicationConfigurationDescription]
     var ApplicationDescription: js.UndefOr[ApplicationDescription]
+    var ApplicationMaintenanceConfigurationDescription: js.UndefOr[ApplicationMaintenanceConfigurationDescription]
+    var ApplicationMode: js.UndefOr[ApplicationMode]
+    var ApplicationVersionRolledBackFrom: js.UndefOr[ApplicationVersionId]
+    var ApplicationVersionRolledBackTo: js.UndefOr[ApplicationVersionId]
+    var ApplicationVersionUpdatedFrom: js.UndefOr[ApplicationVersionId]
     var CloudWatchLoggingOptionDescriptions: js.UndefOr[CloudWatchLoggingOptionDescriptions]
+    var ConditionalToken: js.UndefOr[ConditionalToken]
     var CreateTimestamp: js.UndefOr[Timestamp]
     var LastUpdateTimestamp: js.UndefOr[Timestamp]
     var ServiceExecutionRole: js.UndefOr[RoleARN]
@@ -632,7 +673,13 @@ package object kinesisanalyticsv2 {
         RuntimeEnvironment: RuntimeEnvironment,
         ApplicationConfigurationDescription: js.UndefOr[ApplicationConfigurationDescription] = js.undefined,
         ApplicationDescription: js.UndefOr[ApplicationDescription] = js.undefined,
+        ApplicationMaintenanceConfigurationDescription: js.UndefOr[ApplicationMaintenanceConfigurationDescription] = js.undefined,
+        ApplicationMode: js.UndefOr[ApplicationMode] = js.undefined,
+        ApplicationVersionRolledBackFrom: js.UndefOr[ApplicationVersionId] = js.undefined,
+        ApplicationVersionRolledBackTo: js.UndefOr[ApplicationVersionId] = js.undefined,
+        ApplicationVersionUpdatedFrom: js.UndefOr[ApplicationVersionId] = js.undefined,
         CloudWatchLoggingOptionDescriptions: js.UndefOr[CloudWatchLoggingOptionDescriptions] = js.undefined,
+        ConditionalToken: js.UndefOr[ConditionalToken] = js.undefined,
         CreateTimestamp: js.UndefOr[Timestamp] = js.undefined,
         LastUpdateTimestamp: js.UndefOr[Timestamp] = js.undefined,
         ServiceExecutionRole: js.UndefOr[RoleARN] = js.undefined
@@ -647,11 +694,58 @@ package object kinesisanalyticsv2 {
 
       ApplicationConfigurationDescription.foreach(__v => __obj.updateDynamic("ApplicationConfigurationDescription")(__v.asInstanceOf[js.Any]))
       ApplicationDescription.foreach(__v => __obj.updateDynamic("ApplicationDescription")(__v.asInstanceOf[js.Any]))
+      ApplicationMaintenanceConfigurationDescription.foreach(__v => __obj.updateDynamic("ApplicationMaintenanceConfigurationDescription")(__v.asInstanceOf[js.Any]))
+      ApplicationMode.foreach(__v => __obj.updateDynamic("ApplicationMode")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionRolledBackFrom.foreach(__v => __obj.updateDynamic("ApplicationVersionRolledBackFrom")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionRolledBackTo.foreach(__v => __obj.updateDynamic("ApplicationVersionRolledBackTo")(__v.asInstanceOf[js.Any]))
+      ApplicationVersionUpdatedFrom.foreach(__v => __obj.updateDynamic("ApplicationVersionUpdatedFrom")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptionDescriptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptionDescriptions")(__v.asInstanceOf[js.Any]))
+      ConditionalToken.foreach(__v => __obj.updateDynamic("ConditionalToken")(__v.asInstanceOf[js.Any]))
       CreateTimestamp.foreach(__v => __obj.updateDynamic("CreateTimestamp")(__v.asInstanceOf[js.Any]))
       LastUpdateTimestamp.foreach(__v => __obj.updateDynamic("LastUpdateTimestamp")(__v.asInstanceOf[js.Any]))
       ServiceExecutionRole.foreach(__v => __obj.updateDynamic("ServiceExecutionRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationDetail]
+    }
+  }
+
+  /** The details of the maintenance configuration for the application.
+    */
+  @js.native
+  trait ApplicationMaintenanceConfigurationDescription extends js.Object {
+    var ApplicationMaintenanceWindowEndTime: ApplicationMaintenanceWindowEndTime
+    var ApplicationMaintenanceWindowStartTime: ApplicationMaintenanceWindowStartTime
+  }
+
+  object ApplicationMaintenanceConfigurationDescription {
+    @inline
+    def apply(
+        ApplicationMaintenanceWindowEndTime: ApplicationMaintenanceWindowEndTime,
+        ApplicationMaintenanceWindowStartTime: ApplicationMaintenanceWindowStartTime
+    ): ApplicationMaintenanceConfigurationDescription = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationMaintenanceWindowEndTime" -> ApplicationMaintenanceWindowEndTime.asInstanceOf[js.Any],
+        "ApplicationMaintenanceWindowStartTime" -> ApplicationMaintenanceWindowStartTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ApplicationMaintenanceConfigurationDescription]
+    }
+  }
+
+  /** Describes the updated maintenance configuration for the application.
+    */
+  @js.native
+  trait ApplicationMaintenanceConfigurationUpdate extends js.Object {
+    var ApplicationMaintenanceWindowStartTimeUpdate: ApplicationMaintenanceWindowStartTime
+  }
+
+  object ApplicationMaintenanceConfigurationUpdate {
+    @inline
+    def apply(
+        ApplicationMaintenanceWindowStartTimeUpdate: ApplicationMaintenanceWindowStartTime
+    ): ApplicationMaintenanceConfigurationUpdate = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationMaintenanceWindowStartTimeUpdate" -> ApplicationMaintenanceWindowStartTimeUpdate.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ApplicationMaintenanceConfigurationUpdate]
     }
   }
 
@@ -744,6 +838,7 @@ package object kinesisanalyticsv2 {
     var ApplicationStatus: ApplicationStatus
     var ApplicationVersionId: ApplicationVersionId
     var RuntimeEnvironment: RuntimeEnvironment
+    var ApplicationMode: js.UndefOr[ApplicationMode]
   }
 
   object ApplicationSummary {
@@ -753,7 +848,8 @@ package object kinesisanalyticsv2 {
         ApplicationName: ApplicationName,
         ApplicationStatus: ApplicationStatus,
         ApplicationVersionId: ApplicationVersionId,
-        RuntimeEnvironment: RuntimeEnvironment
+        RuntimeEnvironment: RuntimeEnvironment,
+        ApplicationMode: js.UndefOr[ApplicationMode] = js.undefined
     ): ApplicationSummary = {
       val __obj = js.Dynamic.literal(
         "ApplicationARN" -> ApplicationARN.asInstanceOf[js.Any],
@@ -762,7 +858,31 @@ package object kinesisanalyticsv2 {
         "ApplicationVersionId" -> ApplicationVersionId.asInstanceOf[js.Any],
         "RuntimeEnvironment" -> RuntimeEnvironment.asInstanceOf[js.Any]
       )
+
+      ApplicationMode.foreach(__v => __obj.updateDynamic("ApplicationMode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ApplicationSummary]
+    }
+  }
+
+  /** The summary of the application version.
+    */
+  @js.native
+  trait ApplicationVersionSummary extends js.Object {
+    var ApplicationStatus: ApplicationStatus
+    var ApplicationVersionId: ApplicationVersionId
+  }
+
+  object ApplicationVersionSummary {
+    @inline
+    def apply(
+        ApplicationStatus: ApplicationStatus,
+        ApplicationVersionId: ApplicationVersionId
+    ): ApplicationVersionSummary = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationStatus" -> ApplicationStatus.asInstanceOf[js.Any],
+        "ApplicationVersionId" -> ApplicationVersionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ApplicationVersionSummary]
     }
   }
 
@@ -785,6 +905,63 @@ package object kinesisanalyticsv2 {
         "RecordRowDelimiter" -> RecordRowDelimiter.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CSVMappingParameters]
+    }
+  }
+
+  /** The configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.
+    */
+  @js.native
+  trait CatalogConfiguration extends js.Object {
+    var GlueDataCatalogConfiguration: GlueDataCatalogConfiguration
+  }
+
+  object CatalogConfiguration {
+    @inline
+    def apply(
+        GlueDataCatalogConfiguration: GlueDataCatalogConfiguration
+    ): CatalogConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "GlueDataCatalogConfiguration" -> GlueDataCatalogConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CatalogConfiguration]
+    }
+  }
+
+  /** The configuration parameters for the default Amazon Glue database. You use this database for Apache Flink SQL queries and table API transforms that you write in a Kinesis Data Analytics Studio notebook.
+    */
+  @js.native
+  trait CatalogConfigurationDescription extends js.Object {
+    var GlueDataCatalogConfigurationDescription: GlueDataCatalogConfigurationDescription
+  }
+
+  object CatalogConfigurationDescription {
+    @inline
+    def apply(
+        GlueDataCatalogConfigurationDescription: GlueDataCatalogConfigurationDescription
+    ): CatalogConfigurationDescription = {
+      val __obj = js.Dynamic.literal(
+        "GlueDataCatalogConfigurationDescription" -> GlueDataCatalogConfigurationDescription.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CatalogConfigurationDescription]
+    }
+  }
+
+  /** Updates to the configuration parameters for the default Amazon Glue database. You use this database for SQL queries that you write in a Kinesis Data Analytics Studio notebook.
+    */
+  @js.native
+  trait CatalogConfigurationUpdate extends js.Object {
+    var GlueDataCatalogConfigurationUpdate: GlueDataCatalogConfigurationUpdate
+  }
+
+  object CatalogConfigurationUpdate {
+    @inline
+    def apply(
+        GlueDataCatalogConfigurationUpdate: GlueDataCatalogConfigurationUpdate
+    ): CatalogConfigurationUpdate = {
+      val __obj = js.Dynamic.literal(
+        "GlueDataCatalogConfigurationUpdate" -> GlueDataCatalogConfigurationUpdate.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CatalogConfigurationUpdate]
     }
   }
 
@@ -963,7 +1140,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes details about the application code for a Flink-based Kinesis Data Analytics application.
+  /** Describes details about the code of a Kinesis Data Analytics application.
     */
   @js.native
   trait CodeContentDescription extends js.Object {
@@ -990,7 +1167,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes an update to the code of a Flink-based Kinesis Data Analytics application.
+  /** Describes an update to the code of an application. Not supported for Apache Zeppelin.
     */
   @js.native
   trait CodeContentUpdate extends js.Object {
@@ -1061,6 +1238,7 @@ package object kinesisanalyticsv2 {
     var ServiceExecutionRole: RoleARN
     var ApplicationConfiguration: js.UndefOr[ApplicationConfiguration]
     var ApplicationDescription: js.UndefOr[ApplicationDescription]
+    var ApplicationMode: js.UndefOr[ApplicationMode]
     var CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions]
     var Tags: js.UndefOr[Tags]
   }
@@ -1073,6 +1251,7 @@ package object kinesisanalyticsv2 {
         ServiceExecutionRole: RoleARN,
         ApplicationConfiguration: js.UndefOr[ApplicationConfiguration] = js.undefined,
         ApplicationDescription: js.UndefOr[ApplicationDescription] = js.undefined,
+        ApplicationMode: js.UndefOr[ApplicationMode] = js.undefined,
         CloudWatchLoggingOptions: js.UndefOr[CloudWatchLoggingOptions] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): CreateApplicationRequest = {
@@ -1084,6 +1263,7 @@ package object kinesisanalyticsv2 {
 
       ApplicationConfiguration.foreach(__v => __obj.updateDynamic("ApplicationConfiguration")(__v.asInstanceOf[js.Any]))
       ApplicationDescription.foreach(__v => __obj.updateDynamic("ApplicationDescription")(__v.asInstanceOf[js.Any]))
+      ApplicationMode.foreach(__v => __obj.updateDynamic("ApplicationMode")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptions.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateApplicationRequest]
@@ -1138,11 +1318,62 @@ package object kinesisanalyticsv2 {
     }
   }
 
+  /** Specifies dependency JARs, as well as JAR files that contain user-defined functions (UDF).
+    */
+  @js.native
+  trait CustomArtifactConfiguration extends js.Object {
+    var ArtifactType: ArtifactType
+    var MavenReference: js.UndefOr[MavenReference]
+    var S3ContentLocation: js.UndefOr[S3ContentLocation]
+  }
+
+  object CustomArtifactConfiguration {
+    @inline
+    def apply(
+        ArtifactType: ArtifactType,
+        MavenReference: js.UndefOr[MavenReference] = js.undefined,
+        S3ContentLocation: js.UndefOr[S3ContentLocation] = js.undefined
+    ): CustomArtifactConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "ArtifactType" -> ArtifactType.asInstanceOf[js.Any]
+      )
+
+      MavenReference.foreach(__v => __obj.updateDynamic("MavenReference")(__v.asInstanceOf[js.Any]))
+      S3ContentLocation.foreach(__v => __obj.updateDynamic("S3ContentLocation")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomArtifactConfiguration]
+    }
+  }
+
+  /** Specifies a dependency JAR or a JAR of user-defined functions.
+    */
+  @js.native
+  trait CustomArtifactConfigurationDescription extends js.Object {
+    var ArtifactType: js.UndefOr[ArtifactType]
+    var MavenReferenceDescription: js.UndefOr[MavenReference]
+    var S3ContentLocationDescription: js.UndefOr[S3ContentLocation]
+  }
+
+  object CustomArtifactConfigurationDescription {
+    @inline
+    def apply(
+        ArtifactType: js.UndefOr[ArtifactType] = js.undefined,
+        MavenReferenceDescription: js.UndefOr[MavenReference] = js.undefined,
+        S3ContentLocationDescription: js.UndefOr[S3ContentLocation] = js.undefined
+    ): CustomArtifactConfigurationDescription = {
+      val __obj = js.Dynamic.literal()
+      ArtifactType.foreach(__v => __obj.updateDynamic("ArtifactType")(__v.asInstanceOf[js.Any]))
+      MavenReferenceDescription.foreach(__v => __obj.updateDynamic("MavenReferenceDescription")(__v.asInstanceOf[js.Any]))
+      S3ContentLocationDescription.foreach(__v => __obj.updateDynamic("S3ContentLocationDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CustomArtifactConfigurationDescription]
+    }
+  }
+
   @js.native
   trait DeleteApplicationCloudWatchLoggingOptionRequest extends js.Object {
     var ApplicationName: ApplicationName
     var CloudWatchLoggingOptionId: Id
-    var CurrentApplicationVersionId: ApplicationVersionId
+    var ConditionalToken: js.UndefOr[ConditionalToken]
+    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
   }
 
   object DeleteApplicationCloudWatchLoggingOptionRequest {
@@ -1150,13 +1381,16 @@ package object kinesisanalyticsv2 {
     def apply(
         ApplicationName: ApplicationName,
         CloudWatchLoggingOptionId: Id,
-        CurrentApplicationVersionId: ApplicationVersionId
+        ConditionalToken: js.UndefOr[ConditionalToken] = js.undefined,
+        CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined
     ): DeleteApplicationCloudWatchLoggingOptionRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "CloudWatchLoggingOptionId" -> CloudWatchLoggingOptionId.asInstanceOf[js.Any],
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]
+        "CloudWatchLoggingOptionId" -> CloudWatchLoggingOptionId.asInstanceOf[js.Any]
       )
+
+      ConditionalToken.foreach(__v => __obj.updateDynamic("ConditionalToken")(__v.asInstanceOf[js.Any]))
+      CurrentApplicationVersionId.foreach(__v => __obj.updateDynamic("CurrentApplicationVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteApplicationCloudWatchLoggingOptionRequest]
     }
   }
@@ -1377,22 +1611,26 @@ package object kinesisanalyticsv2 {
   @js.native
   trait DeleteApplicationVpcConfigurationRequest extends js.Object {
     var ApplicationName: ApplicationName
-    var CurrentApplicationVersionId: ApplicationVersionId
     var VpcConfigurationId: Id
+    var ConditionalToken: js.UndefOr[ConditionalToken]
+    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
   }
 
   object DeleteApplicationVpcConfigurationRequest {
     @inline
     def apply(
         ApplicationName: ApplicationName,
-        CurrentApplicationVersionId: ApplicationVersionId,
-        VpcConfigurationId: Id
+        VpcConfigurationId: Id,
+        ConditionalToken: js.UndefOr[ConditionalToken] = js.undefined,
+        CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined
     ): DeleteApplicationVpcConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any],
         "VpcConfigurationId" -> VpcConfigurationId.asInstanceOf[js.Any]
       )
+
+      ConditionalToken.foreach(__v => __obj.updateDynamic("ConditionalToken")(__v.asInstanceOf[js.Any]))
+      CurrentApplicationVersionId.foreach(__v => __obj.updateDynamic("CurrentApplicationVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteApplicationVpcConfigurationRequest]
     }
   }
@@ -1413,6 +1651,62 @@ package object kinesisanalyticsv2 {
       ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
       ApplicationVersionId.foreach(__v => __obj.updateDynamic("ApplicationVersionId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteApplicationVpcConfigurationResponse]
+    }
+  }
+
+  /** The information required to deploy a Kinesis Data Analytics Studio notebook as an application with durable state.
+    */
+  @js.native
+  trait DeployAsApplicationConfiguration extends js.Object {
+    var S3ContentLocation: S3ContentBaseLocation
+  }
+
+  object DeployAsApplicationConfiguration {
+    @inline
+    def apply(
+        S3ContentLocation: S3ContentBaseLocation
+    ): DeployAsApplicationConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "S3ContentLocation" -> S3ContentLocation.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeployAsApplicationConfiguration]
+    }
+  }
+
+  /** The configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.
+    */
+  @js.native
+  trait DeployAsApplicationConfigurationDescription extends js.Object {
+    var S3ContentLocationDescription: S3ContentBaseLocationDescription
+  }
+
+  object DeployAsApplicationConfigurationDescription {
+    @inline
+    def apply(
+        S3ContentLocationDescription: S3ContentBaseLocationDescription
+    ): DeployAsApplicationConfigurationDescription = {
+      val __obj = js.Dynamic.literal(
+        "S3ContentLocationDescription" -> S3ContentLocationDescription.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeployAsApplicationConfigurationDescription]
+    }
+  }
+
+  /** Updates to the configuration information required to deploy an Amazon Data Analytics Studio notebook as an application with durable state.
+    */
+  @js.native
+  trait DeployAsApplicationConfigurationUpdate extends js.Object {
+    var S3ContentLocationUpdate: js.UndefOr[S3ContentBaseLocationUpdate]
+  }
+
+  object DeployAsApplicationConfigurationUpdate {
+    @inline
+    def apply(
+        S3ContentLocationUpdate: js.UndefOr[S3ContentBaseLocationUpdate] = js.undefined
+    ): DeployAsApplicationConfigurationUpdate = {
+      val __obj = js.Dynamic.literal()
+      S3ContentLocationUpdate.foreach(__v => __obj.updateDynamic("S3ContentLocationUpdate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeployAsApplicationConfigurationUpdate]
     }
   }
 
@@ -1488,6 +1782,42 @@ package object kinesisanalyticsv2 {
         "SnapshotDetails" -> SnapshotDetails.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DescribeApplicationSnapshotResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeApplicationVersionRequest extends js.Object {
+    var ApplicationName: ApplicationName
+    var ApplicationVersionId: ApplicationVersionId
+  }
+
+  object DescribeApplicationVersionRequest {
+    @inline
+    def apply(
+        ApplicationName: ApplicationName,
+        ApplicationVersionId: ApplicationVersionId
+    ): DescribeApplicationVersionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "ApplicationVersionId" -> ApplicationVersionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeApplicationVersionRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeApplicationVersionResponse extends js.Object {
+    var ApplicationVersionDetail: js.UndefOr[ApplicationDetail]
+  }
+
+  object DescribeApplicationVersionResponse {
+    @inline
+    def apply(
+        ApplicationVersionDetail: js.UndefOr[ApplicationDetail] = js.undefined
+    ): DescribeApplicationVersionResponse = {
+      val __obj = js.Dynamic.literal()
+      ApplicationVersionDetail.foreach(__v => __obj.updateDynamic("ApplicationVersionDetail")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeApplicationVersionResponse]
     }
   }
 
@@ -1584,7 +1914,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes the execution properties for a Flink-based Kinesis Data Analytics application.
+  /** Describes the execution properties for an Apache Flink runtime.
     */
   @js.native
   trait EnvironmentPropertyDescriptions extends js.Object {
@@ -1602,7 +1932,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to the execution property groups for a Flink-based Kinesis Data Analytics application.
+  /** Describes updates to the execution property groups for a Flink-based Kinesis Data Analytics application or a Studio notebook.
     */
   @js.native
   trait EnvironmentPropertyUpdates extends js.Object {
@@ -1621,7 +1951,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes configuration parameters for a Flink-based Kinesis Data Analytics application.
+  /** Describes configuration parameters for a Flink-based Kinesis Data Analytics application or a Studio notebook.
     */
   @js.native
   trait FlinkApplicationConfiguration extends js.Object {
@@ -1714,6 +2044,63 @@ package object kinesisanalyticsv2 {
     }
   }
 
+  /** The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.
+    */
+  @js.native
+  trait GlueDataCatalogConfiguration extends js.Object {
+    var DatabaseARN: DatabaseARN
+  }
+
+  object GlueDataCatalogConfiguration {
+    @inline
+    def apply(
+        DatabaseARN: DatabaseARN
+    ): GlueDataCatalogConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseARN" -> DatabaseARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GlueDataCatalogConfiguration]
+    }
+  }
+
+  /** The configuration of the Glue Data Catalog that you use for Apache Flink SQL queries and table API transforms that you write in an application.
+    */
+  @js.native
+  trait GlueDataCatalogConfigurationDescription extends js.Object {
+    var DatabaseARN: DatabaseARN
+  }
+
+  object GlueDataCatalogConfigurationDescription {
+    @inline
+    def apply(
+        DatabaseARN: DatabaseARN
+    ): GlueDataCatalogConfigurationDescription = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseARN" -> DatabaseARN.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GlueDataCatalogConfigurationDescription]
+    }
+  }
+
+  /** Updates to the configuration of the Glue Data Catalog that you use for SQL queries that you write in a Kinesis Data Analytics Studio notebook.
+    */
+  @js.native
+  trait GlueDataCatalogConfigurationUpdate extends js.Object {
+    var DatabaseARNUpdate: DatabaseARN
+  }
+
+  object GlueDataCatalogConfigurationUpdate {
+    @inline
+    def apply(
+        DatabaseARNUpdate: DatabaseARN
+    ): GlueDataCatalogConfigurationUpdate = {
+      val __obj = js.Dynamic.literal(
+        "DatabaseARNUpdate" -> DatabaseARNUpdate.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GlueDataCatalogConfigurationUpdate]
+    }
+  }
+
   /** When you configure the application input for a SQL-based Kinesis Data Analytics application, you specify the streaming source, the in-application stream name that is created, and the mapping between the two.
     */
   @js.native
@@ -1791,7 +2178,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** An object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in the stream in a SQL-based Kinesis Data Analytics application.
+  /** An object that contains the Amazon Resource Name (ARN) of the Amazon Lambda function that is used to preprocess records in the stream in a SQL-based Kinesis Data Analytics application.
     */
   @js.native
   trait InputLambdaProcessor extends js.Object {
@@ -1810,7 +2197,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** For a SQL-based Kinesis Data Analytics application, an object that contains the Amazon Resource Name (ARN) of the AWS Lambda function that is used to preprocess records in the stream.
+  /** For a SQL-based Kinesis Data Analytics application, an object that contains the Amazon Resource Name (ARN) of the Amazon Lambda function that is used to preprocess records in the stream.
     */
   @js.native
   trait InputLambdaProcessorDescription extends js.Object {
@@ -1889,7 +2276,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** For a SQL-based Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is [[https://docs.aws.amazon.com/lambda/|AWS Lambda]].
+  /** For a SQL-based Kinesis Data Analytics application, describes a processor that is used to preprocess the records in the stream before being processed by your application code. Currently, the only input processor available is [[https://docs.aws.amazon.com/lambda/|Amazon Lambda]].
     */
   @js.native
   trait InputProcessingConfiguration extends js.Object {
@@ -1908,7 +2295,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** For a SQL-based Kinesis Data Analytics application, provides the configuration information about an input processor. Currently, the only input processor available is [[https://docs.aws.amazon.com/lambda/|AWS Lambda]].
+  /** For a SQL-based Kinesis Data Analytics application, provides the configuration information about an input processor. Currently, the only input processor available is [[https://docs.aws.amazon.com/lambda/|Amazon Lambda]].
     */
   @js.native
   trait InputProcessingConfigurationDescription extends js.Object {
@@ -2288,7 +2675,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** When you configure a SQL-based Kinesis Data Analytics application's output, identifies an AWS Lambda function as the destination. You provide the function Amazon Resource Name (ARN) of the Lambda function.
+  /** When you configure a SQL-based Kinesis Data Analytics application's output, identifies an Amazon Lambda function as the destination. You provide the function Amazon Resource Name (ARN) of the Lambda function.
     */
   @js.native
   trait LambdaOutput extends js.Object {
@@ -2307,7 +2694,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** For a SQL-based Kinesis Data Analytics application's output, describes the AWS Lambda function that is configured as its destination.
+  /** For a SQL-based Kinesis Data Analytics application's output, describes the Amazon Lambda function that is configured as its destination.
     */
   @js.native
   trait LambdaOutputDescription extends js.Object {
@@ -2330,7 +2717,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** When you update an SQL-based Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about an AWS Lambda function that is configured as the destination.
+  /** When you update an SQL-based Kinesis Data Analytics application's output configuration using the <a>UpdateApplication</a> operation, provides information about an Amazon Lambda function that is configured as the destination.
     */
   @js.native
   trait LambdaOutputUpdate extends js.Object {
@@ -2389,6 +2776,49 @@ package object kinesisanalyticsv2 {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       SnapshotSummaries.foreach(__v => __obj.updateDynamic("SnapshotSummaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListApplicationSnapshotsResponse]
+    }
+  }
+
+  @js.native
+  trait ListApplicationVersionsRequest extends js.Object {
+    var ApplicationName: ApplicationName
+    var Limit: js.UndefOr[ListApplicationVersionsInputLimit]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListApplicationVersionsRequest {
+    @inline
+    def apply(
+        ApplicationName: ApplicationName,
+        Limit: js.UndefOr[ListApplicationVersionsInputLimit] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListApplicationVersionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
+      )
+
+      Limit.foreach(__v => __obj.updateDynamic("Limit")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApplicationVersionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListApplicationVersionsResponse extends js.Object {
+    var ApplicationVersionSummaries: js.UndefOr[ApplicationVersionSummaries]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListApplicationVersionsResponse {
+    @inline
+    def apply(
+        ApplicationVersionSummaries: js.UndefOr[ApplicationVersionSummaries] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListApplicationVersionsResponse = {
+      val __obj = js.Dynamic.literal()
+      ApplicationVersionSummaries.foreach(__v => __obj.updateDynamic("ApplicationVersionSummaries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListApplicationVersionsResponse]
     }
   }
 
@@ -2486,7 +2916,32 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes configuration parameters for Amazon CloudWatch logging for a Flink-based Kinesis Data Analytics application. For more information about CloudWatch logging, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html|Monitoring]].
+  /** The information required to specify a Maven reference. You can use Maven references to specify dependency JAR files.
+    */
+  @js.native
+  trait MavenReference extends js.Object {
+    var ArtifactId: MavenArtifactId
+    var GroupId: MavenGroupId
+    var Version: MavenVersion
+  }
+
+  object MavenReference {
+    @inline
+    def apply(
+        ArtifactId: MavenArtifactId,
+        GroupId: MavenGroupId,
+        Version: MavenVersion
+    ): MavenReference = {
+      val __obj = js.Dynamic.literal(
+        "ArtifactId" -> ArtifactId.asInstanceOf[js.Any],
+        "GroupId" -> GroupId.asInstanceOf[js.Any],
+        "Version" -> Version.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[MavenReference]
+    }
+  }
+
+  /** Describes configuration parameters for Amazon CloudWatch logging for an application. For more information about CloudWatch logging, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html|Monitoring]].
     */
   @js.native
   trait MonitoringConfiguration extends js.Object {
@@ -2512,7 +2967,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes configuration parameters for CloudWatch logging for a Flink-based Kinesis Data Analytics application.
+  /** Describes configuration parameters for CloudWatch logging for an application.
     */
   @js.native
   trait MonitoringConfigurationDescription extends js.Object {
@@ -2536,7 +2991,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to configuration parameters for Amazon CloudWatch logging for a Flink-based Kinesis Data Analytics application.
+  /** Describes updates to configuration parameters for Amazon CloudWatch logging for an application.
     */
   @js.native
   trait MonitoringConfigurationUpdate extends js.Object {
@@ -2660,7 +3115,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes parameters for how a Flink-based Kinesis Data Analytics application application executes multiple tasks simultaneously. For more information about parallelism, see [[https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html|Parallel Execution]] in the [[https://ci.apache.org/projects/flink/flink-docs-release-1.8/|Apache Flink Documentation]].
+  /** Describes parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously. For more information about parallelism, see [[https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html|Parallel Execution]] in the [[https://ci.apache.org/projects/flink/flink-docs-release-1.8/|Apache Flink Documentation]].
     */
   @js.native
   trait ParallelismConfiguration extends js.Object {
@@ -2719,7 +3174,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes updates to parameters for how a Flink-based Kinesis Data Analytics application executes multiple tasks simultaneously.
+  /** Describes updates to parameters for how an application executes multiple tasks simultaneously.
     */
   @js.native
   trait ParallelismConfigurationUpdate extends js.Object {
@@ -2746,7 +3201,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Property key-value pairs passed into a Flink-based Kinesis Data Analytics application.
+  /** Property key-value pairs passed into an application.
     */
   @js.native
   trait PropertyGroup extends js.Object {
@@ -2901,6 +3356,43 @@ package object kinesisanalyticsv2 {
     }
   }
 
+  @js.native
+  trait RollbackApplicationRequest extends js.Object {
+    var ApplicationName: ApplicationName
+    var CurrentApplicationVersionId: ApplicationVersionId
+  }
+
+  object RollbackApplicationRequest {
+    @inline
+    def apply(
+        ApplicationName: ApplicationName,
+        CurrentApplicationVersionId: ApplicationVersionId
+    ): RollbackApplicationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
+        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RollbackApplicationRequest]
+    }
+  }
+
+  @js.native
+  trait RollbackApplicationResponse extends js.Object {
+    var ApplicationDetail: ApplicationDetail
+  }
+
+  object RollbackApplicationResponse {
+    @inline
+    def apply(
+        ApplicationDetail: ApplicationDetail
+    ): RollbackApplicationResponse = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationDetail" -> ApplicationDetail.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RollbackApplicationResponse]
+    }
+  }
+
   /** Describes the starting parameters for an Kinesis Data Analytics application.
     */
   @js.native
@@ -2967,7 +3459,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes the location of a Flink-based Kinesis Data Analytics application's code stored in an S3 bucket.
+  /** Describes the location of an application's code stored in an S3 bucket.
     */
   @js.native
   trait S3ApplicationCodeLocationDescription extends js.Object {
@@ -3015,7 +3507,74 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** For a Flink-based Kinesis Data Analytics application, provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.
+  /** The S3 bucket that holds the application information.
+    */
+  @js.native
+  trait S3ContentBaseLocation extends js.Object {
+    var BucketARN: BucketARN
+    var BasePath: js.UndefOr[BasePath]
+  }
+
+  object S3ContentBaseLocation {
+    @inline
+    def apply(
+        BucketARN: BucketARN,
+        BasePath: js.UndefOr[BasePath] = js.undefined
+    ): S3ContentBaseLocation = {
+      val __obj = js.Dynamic.literal(
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any]
+      )
+
+      BasePath.foreach(__v => __obj.updateDynamic("BasePath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3ContentBaseLocation]
+    }
+  }
+
+  /** The description of the S3 base location that holds the application.
+    */
+  @js.native
+  trait S3ContentBaseLocationDescription extends js.Object {
+    var BucketARN: BucketARN
+    var BasePath: js.UndefOr[BasePath]
+  }
+
+  object S3ContentBaseLocationDescription {
+    @inline
+    def apply(
+        BucketARN: BucketARN,
+        BasePath: js.UndefOr[BasePath] = js.undefined
+    ): S3ContentBaseLocationDescription = {
+      val __obj = js.Dynamic.literal(
+        "BucketARN" -> BucketARN.asInstanceOf[js.Any]
+      )
+
+      BasePath.foreach(__v => __obj.updateDynamic("BasePath")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3ContentBaseLocationDescription]
+    }
+  }
+
+  /** The information required to update the S3 base location that holds the application.
+    */
+  @js.native
+  trait S3ContentBaseLocationUpdate extends js.Object {
+    var BasePathUpdate: js.UndefOr[BasePath]
+    var BucketARNUpdate: js.UndefOr[BucketARN]
+  }
+
+  object S3ContentBaseLocationUpdate {
+    @inline
+    def apply(
+        BasePathUpdate: js.UndefOr[BasePath] = js.undefined,
+        BucketARNUpdate: js.UndefOr[BucketARN] = js.undefined
+    ): S3ContentBaseLocationUpdate = {
+      val __obj = js.Dynamic.literal()
+      BasePathUpdate.foreach(__v => __obj.updateDynamic("BasePathUpdate")(__v.asInstanceOf[js.Any]))
+      BucketARNUpdate.foreach(__v => __obj.updateDynamic("BucketARNUpdate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3ContentBaseLocationUpdate]
+    }
+  }
+
+  /** For a Kinesis Data Analytics application provides a description of an Amazon S3 object, including the Amazon Resource Name (ARN) of the S3 bucket, the name of the Amazon S3 object that contains the data, and the version number of the Amazon S3 object that contains the data.
     */
   @js.native
   trait S3ContentLocation extends js.Object {
@@ -3041,7 +3600,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** Describes an update for the Amazon S3 code content location for a Flink-based Kinesis Data Analytics application.
+  /** Describes an update for the Amazon S3 code content location for an application.
     */
   @js.native
   trait S3ContentLocationUpdate extends js.Object {
@@ -3285,19 +3844,20 @@ package object kinesisanalyticsv2 {
   @js.native
   trait StartApplicationRequest extends js.Object {
     var ApplicationName: ApplicationName
-    var RunConfiguration: RunConfiguration
+    var RunConfiguration: js.UndefOr[RunConfiguration]
   }
 
   object StartApplicationRequest {
     @inline
     def apply(
         ApplicationName: ApplicationName,
-        RunConfiguration: RunConfiguration
+        RunConfiguration: js.UndefOr[RunConfiguration] = js.undefined
     ): StartApplicationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "RunConfiguration" -> RunConfiguration.asInstanceOf[js.Any]
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
+
+      RunConfiguration.foreach(__v => __obj.updateDynamic("RunConfiguration")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartApplicationRequest]
     }
   }
@@ -3345,7 +3905,7 @@ package object kinesisanalyticsv2 {
     }
   }
 
-  /** A key-value pair (the value is optional) that you can define and assign to AWS resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html|Using Tagging]].
+  /** A key-value pair (the value is optional) that you can define and assign to Amazon resources. If you specify a tag that already exists, the tag value is replaced with the value that you specify in the request. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html|Using Tagging]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -3431,11 +3991,51 @@ package object kinesisanalyticsv2 {
   }
 
   @js.native
+  trait UpdateApplicationMaintenanceConfigurationRequest extends js.Object {
+    var ApplicationMaintenanceConfigurationUpdate: ApplicationMaintenanceConfigurationUpdate
+    var ApplicationName: ApplicationName
+  }
+
+  object UpdateApplicationMaintenanceConfigurationRequest {
+    @inline
+    def apply(
+        ApplicationMaintenanceConfigurationUpdate: ApplicationMaintenanceConfigurationUpdate,
+        ApplicationName: ApplicationName
+    ): UpdateApplicationMaintenanceConfigurationRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationMaintenanceConfigurationUpdate" -> ApplicationMaintenanceConfigurationUpdate.asInstanceOf[js.Any],
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateApplicationMaintenanceConfigurationRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateApplicationMaintenanceConfigurationResponse extends js.Object {
+    var ApplicationARN: js.UndefOr[ResourceARN]
+    var ApplicationMaintenanceConfigurationDescription: js.UndefOr[ApplicationMaintenanceConfigurationDescription]
+  }
+
+  object UpdateApplicationMaintenanceConfigurationResponse {
+    @inline
+    def apply(
+        ApplicationARN: js.UndefOr[ResourceARN] = js.undefined,
+        ApplicationMaintenanceConfigurationDescription: js.UndefOr[ApplicationMaintenanceConfigurationDescription] = js.undefined
+    ): UpdateApplicationMaintenanceConfigurationResponse = {
+      val __obj = js.Dynamic.literal()
+      ApplicationARN.foreach(__v => __obj.updateDynamic("ApplicationARN")(__v.asInstanceOf[js.Any]))
+      ApplicationMaintenanceConfigurationDescription.foreach(__v => __obj.updateDynamic("ApplicationMaintenanceConfigurationDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateApplicationMaintenanceConfigurationResponse]
+    }
+  }
+
+  @js.native
   trait UpdateApplicationRequest extends js.Object {
     var ApplicationName: ApplicationName
-    var CurrentApplicationVersionId: ApplicationVersionId
     var ApplicationConfigurationUpdate: js.UndefOr[ApplicationConfigurationUpdate]
     var CloudWatchLoggingOptionUpdates: js.UndefOr[CloudWatchLoggingOptionUpdates]
+    var ConditionalToken: js.UndefOr[ConditionalToken]
+    var CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId]
     var RunConfigurationUpdate: js.UndefOr[RunConfigurationUpdate]
     var ServiceExecutionRoleUpdate: js.UndefOr[RoleARN]
   }
@@ -3444,19 +4044,21 @@ package object kinesisanalyticsv2 {
     @inline
     def apply(
         ApplicationName: ApplicationName,
-        CurrentApplicationVersionId: ApplicationVersionId,
         ApplicationConfigurationUpdate: js.UndefOr[ApplicationConfigurationUpdate] = js.undefined,
         CloudWatchLoggingOptionUpdates: js.UndefOr[CloudWatchLoggingOptionUpdates] = js.undefined,
+        ConditionalToken: js.UndefOr[ConditionalToken] = js.undefined,
+        CurrentApplicationVersionId: js.UndefOr[ApplicationVersionId] = js.undefined,
         RunConfigurationUpdate: js.UndefOr[RunConfigurationUpdate] = js.undefined,
         ServiceExecutionRoleUpdate: js.UndefOr[RoleARN] = js.undefined
     ): UpdateApplicationRequest = {
       val __obj = js.Dynamic.literal(
-        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any],
-        "CurrentApplicationVersionId" -> CurrentApplicationVersionId.asInstanceOf[js.Any]
+        "ApplicationName" -> ApplicationName.asInstanceOf[js.Any]
       )
 
       ApplicationConfigurationUpdate.foreach(__v => __obj.updateDynamic("ApplicationConfigurationUpdate")(__v.asInstanceOf[js.Any]))
       CloudWatchLoggingOptionUpdates.foreach(__v => __obj.updateDynamic("CloudWatchLoggingOptionUpdates")(__v.asInstanceOf[js.Any]))
+      ConditionalToken.foreach(__v => __obj.updateDynamic("ConditionalToken")(__v.asInstanceOf[js.Any]))
+      CurrentApplicationVersionId.foreach(__v => __obj.updateDynamic("CurrentApplicationVersionId")(__v.asInstanceOf[js.Any]))
       RunConfigurationUpdate.foreach(__v => __obj.updateDynamic("RunConfigurationUpdate")(__v.asInstanceOf[js.Any]))
       ServiceExecutionRoleUpdate.foreach(__v => __obj.updateDynamic("ServiceExecutionRoleUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateApplicationRequest]
@@ -3553,6 +4155,145 @@ package object kinesisanalyticsv2 {
       SecurityGroupIdUpdates.foreach(__v => __obj.updateDynamic("SecurityGroupIdUpdates")(__v.asInstanceOf[js.Any]))
       SubnetIdUpdates.foreach(__v => __obj.updateDynamic("SubnetIdUpdates")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VpcConfigurationUpdate]
+    }
+  }
+
+  /** The configuration of a Kinesis Data Analytics Studio notebook.
+    */
+  @js.native
+  trait ZeppelinApplicationConfiguration extends js.Object {
+    var CatalogConfiguration: js.UndefOr[CatalogConfiguration]
+    var CustomArtifactsConfiguration: js.UndefOr[CustomArtifactsConfigurationList]
+    var DeployAsApplicationConfiguration: js.UndefOr[DeployAsApplicationConfiguration]
+    var MonitoringConfiguration: js.UndefOr[ZeppelinMonitoringConfiguration]
+  }
+
+  object ZeppelinApplicationConfiguration {
+    @inline
+    def apply(
+        CatalogConfiguration: js.UndefOr[CatalogConfiguration] = js.undefined,
+        CustomArtifactsConfiguration: js.UndefOr[CustomArtifactsConfigurationList] = js.undefined,
+        DeployAsApplicationConfiguration: js.UndefOr[DeployAsApplicationConfiguration] = js.undefined,
+        MonitoringConfiguration: js.UndefOr[ZeppelinMonitoringConfiguration] = js.undefined
+    ): ZeppelinApplicationConfiguration = {
+      val __obj = js.Dynamic.literal()
+      CatalogConfiguration.foreach(__v => __obj.updateDynamic("CatalogConfiguration")(__v.asInstanceOf[js.Any]))
+      CustomArtifactsConfiguration.foreach(__v => __obj.updateDynamic("CustomArtifactsConfiguration")(__v.asInstanceOf[js.Any]))
+      DeployAsApplicationConfiguration.foreach(__v => __obj.updateDynamic("DeployAsApplicationConfiguration")(__v.asInstanceOf[js.Any]))
+      MonitoringConfiguration.foreach(__v => __obj.updateDynamic("MonitoringConfiguration")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ZeppelinApplicationConfiguration]
+    }
+  }
+
+  /** The configuration of a Kinesis Data Analytics Studio notebook.
+    */
+  @js.native
+  trait ZeppelinApplicationConfigurationDescription extends js.Object {
+    var MonitoringConfigurationDescription: ZeppelinMonitoringConfigurationDescription
+    var CatalogConfigurationDescription: js.UndefOr[CatalogConfigurationDescription]
+    var CustomArtifactsConfigurationDescription: js.UndefOr[CustomArtifactsConfigurationDescriptionList]
+    var DeployAsApplicationConfigurationDescription: js.UndefOr[DeployAsApplicationConfigurationDescription]
+  }
+
+  object ZeppelinApplicationConfigurationDescription {
+    @inline
+    def apply(
+        MonitoringConfigurationDescription: ZeppelinMonitoringConfigurationDescription,
+        CatalogConfigurationDescription: js.UndefOr[CatalogConfigurationDescription] = js.undefined,
+        CustomArtifactsConfigurationDescription: js.UndefOr[CustomArtifactsConfigurationDescriptionList] = js.undefined,
+        DeployAsApplicationConfigurationDescription: js.UndefOr[DeployAsApplicationConfigurationDescription] = js.undefined
+    ): ZeppelinApplicationConfigurationDescription = {
+      val __obj = js.Dynamic.literal(
+        "MonitoringConfigurationDescription" -> MonitoringConfigurationDescription.asInstanceOf[js.Any]
+      )
+
+      CatalogConfigurationDescription.foreach(__v => __obj.updateDynamic("CatalogConfigurationDescription")(__v.asInstanceOf[js.Any]))
+      CustomArtifactsConfigurationDescription.foreach(__v => __obj.updateDynamic("CustomArtifactsConfigurationDescription")(__v.asInstanceOf[js.Any]))
+      DeployAsApplicationConfigurationDescription.foreach(__v => __obj.updateDynamic("DeployAsApplicationConfigurationDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ZeppelinApplicationConfigurationDescription]
+    }
+  }
+
+  /** Updates to the configuration of Kinesis Data Analytics Studio notebook.
+    */
+  @js.native
+  trait ZeppelinApplicationConfigurationUpdate extends js.Object {
+    var CatalogConfigurationUpdate: js.UndefOr[CatalogConfigurationUpdate]
+    var CustomArtifactsConfigurationUpdate: js.UndefOr[CustomArtifactsConfigurationList]
+    var DeployAsApplicationConfigurationUpdate: js.UndefOr[DeployAsApplicationConfigurationUpdate]
+    var MonitoringConfigurationUpdate: js.UndefOr[ZeppelinMonitoringConfigurationUpdate]
+  }
+
+  object ZeppelinApplicationConfigurationUpdate {
+    @inline
+    def apply(
+        CatalogConfigurationUpdate: js.UndefOr[CatalogConfigurationUpdate] = js.undefined,
+        CustomArtifactsConfigurationUpdate: js.UndefOr[CustomArtifactsConfigurationList] = js.undefined,
+        DeployAsApplicationConfigurationUpdate: js.UndefOr[DeployAsApplicationConfigurationUpdate] = js.undefined,
+        MonitoringConfigurationUpdate: js.UndefOr[ZeppelinMonitoringConfigurationUpdate] = js.undefined
+    ): ZeppelinApplicationConfigurationUpdate = {
+      val __obj = js.Dynamic.literal()
+      CatalogConfigurationUpdate.foreach(__v => __obj.updateDynamic("CatalogConfigurationUpdate")(__v.asInstanceOf[js.Any]))
+      CustomArtifactsConfigurationUpdate.foreach(__v => __obj.updateDynamic("CustomArtifactsConfigurationUpdate")(__v.asInstanceOf[js.Any]))
+      DeployAsApplicationConfigurationUpdate.foreach(__v => __obj.updateDynamic("DeployAsApplicationConfigurationUpdate")(__v.asInstanceOf[js.Any]))
+      MonitoringConfigurationUpdate.foreach(__v => __obj.updateDynamic("MonitoringConfigurationUpdate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ZeppelinApplicationConfigurationUpdate]
+    }
+  }
+
+  /** Describes configuration parameters for Amazon CloudWatch logging for a Kinesis Data Analytics Studio notebook. For more information about CloudWatch logging, see [[https://docs.aws.amazon.com/kinesisanalytics/latest/java/monitoring-overview.html|Monitoring]].
+    */
+  @js.native
+  trait ZeppelinMonitoringConfiguration extends js.Object {
+    var LogLevel: LogLevel
+  }
+
+  object ZeppelinMonitoringConfiguration {
+    @inline
+    def apply(
+        LogLevel: LogLevel
+    ): ZeppelinMonitoringConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "LogLevel" -> LogLevel.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ZeppelinMonitoringConfiguration]
+    }
+  }
+
+  /** The monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+    */
+  @js.native
+  trait ZeppelinMonitoringConfigurationDescription extends js.Object {
+    var LogLevel: js.UndefOr[LogLevel]
+  }
+
+  object ZeppelinMonitoringConfigurationDescription {
+    @inline
+    def apply(
+        LogLevel: js.UndefOr[LogLevel] = js.undefined
+    ): ZeppelinMonitoringConfigurationDescription = {
+      val __obj = js.Dynamic.literal()
+      LogLevel.foreach(__v => __obj.updateDynamic("LogLevel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ZeppelinMonitoringConfigurationDescription]
+    }
+  }
+
+  /** Updates to the monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio notebook.
+    */
+  @js.native
+  trait ZeppelinMonitoringConfigurationUpdate extends js.Object {
+    var LogLevelUpdate: LogLevel
+  }
+
+  object ZeppelinMonitoringConfigurationUpdate {
+    @inline
+    def apply(
+        LogLevelUpdate: LogLevel
+    ): ZeppelinMonitoringConfigurationUpdate = {
+      val __obj = js.Dynamic.literal(
+        "LogLevelUpdate" -> LogLevelUpdate.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ZeppelinMonitoringConfigurationUpdate]
     }
   }
 }

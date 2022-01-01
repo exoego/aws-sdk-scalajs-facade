@@ -60,6 +60,15 @@ object ChangeType {
 }
 
 @js.native
+sealed trait DataTieringStatus extends js.Any
+object DataTieringStatus {
+  val enabled = "enabled".asInstanceOf[DataTieringStatus]
+  val disabled = "disabled".asInstanceOf[DataTieringStatus]
+
+  @inline def values: js.Array[DataTieringStatus] = js.Array(enabled, disabled)
+}
+
+@js.native
 sealed trait DestinationType extends js.Any
 object DestinationType {
   val `cloudwatch-logs` = "cloudwatch-logs".asInstanceOf[DestinationType]

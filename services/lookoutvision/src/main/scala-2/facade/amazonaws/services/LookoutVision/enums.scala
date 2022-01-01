@@ -43,6 +43,17 @@ object ModelHostingStatus {
 }
 
 @js.native
+sealed trait ModelPackagingJobStatus extends js.Any
+object ModelPackagingJobStatus {
+  val CREATED = "CREATED".asInstanceOf[ModelPackagingJobStatus]
+  val RUNNING = "RUNNING".asInstanceOf[ModelPackagingJobStatus]
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[ModelPackagingJobStatus]
+  val FAILED = "FAILED".asInstanceOf[ModelPackagingJobStatus]
+
+  @inline def values: js.Array[ModelPackagingJobStatus] = js.Array(CREATED, RUNNING, SUCCEEDED, FAILED)
+}
+
+@js.native
 sealed trait ModelStatus extends js.Any
 object ModelStatus {
   val TRAINING = "TRAINING".asInstanceOf[ModelStatus]
@@ -56,4 +67,37 @@ object ModelStatus {
   val DELETING = "DELETING".asInstanceOf[ModelStatus]
 
   @inline def values: js.Array[ModelStatus] = js.Array(TRAINING, TRAINED, TRAINING_FAILED, STARTING_HOSTING, HOSTED, HOSTING_FAILED, STOPPING_HOSTING, SYSTEM_UPDATING, DELETING)
+}
+
+@js.native
+sealed trait TargetDevice extends js.Any
+object TargetDevice {
+  val jetson_xavier = "jetson_xavier".asInstanceOf[TargetDevice]
+
+  @inline def values: js.Array[TargetDevice] = js.Array(jetson_xavier)
+}
+
+@js.native
+sealed trait TargetPlatformAccelerator extends js.Any
+object TargetPlatformAccelerator {
+  val NVIDIA = "NVIDIA".asInstanceOf[TargetPlatformAccelerator]
+
+  @inline def values: js.Array[TargetPlatformAccelerator] = js.Array(NVIDIA)
+}
+
+@js.native
+sealed trait TargetPlatformArch extends js.Any
+object TargetPlatformArch {
+  val ARM64 = "ARM64".asInstanceOf[TargetPlatformArch]
+  val X86_64 = "X86_64".asInstanceOf[TargetPlatformArch]
+
+  @inline def values: js.Array[TargetPlatformArch] = js.Array(ARM64, X86_64)
+}
+
+@js.native
+sealed trait TargetPlatformOs extends js.Any
+object TargetPlatformOs {
+  val LINUX = "LINUX".asInstanceOf[TargetPlatformOs]
+
+  @inline def values: js.Array[TargetPlatformOs] = js.Array(LINUX)
 }

@@ -46,14 +46,25 @@ object ApiCachingBehavior {
 }
 
 @js.native
+sealed trait AssociationStatus extends js.Any
+object AssociationStatus {
+  val PROCESSING = "PROCESSING".asInstanceOf[AssociationStatus]
+  val FAILED = "FAILED".asInstanceOf[AssociationStatus]
+  val SUCCESS = "SUCCESS".asInstanceOf[AssociationStatus]
+
+  @inline def values: js.Array[AssociationStatus] = js.Array(PROCESSING, FAILED, SUCCESS)
+}
+
+@js.native
 sealed trait AuthenticationType extends js.Any
 object AuthenticationType {
   val API_KEY = "API_KEY".asInstanceOf[AuthenticationType]
   val AWS_IAM = "AWS_IAM".asInstanceOf[AuthenticationType]
   val AMAZON_COGNITO_USER_POOLS = "AMAZON_COGNITO_USER_POOLS".asInstanceOf[AuthenticationType]
   val OPENID_CONNECT = "OPENID_CONNECT".asInstanceOf[AuthenticationType]
+  val AWS_LAMBDA = "AWS_LAMBDA".asInstanceOf[AuthenticationType]
 
-  @inline def values: js.Array[AuthenticationType] = js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT)
+  @inline def values: js.Array[AuthenticationType] = js.Array(API_KEY, AWS_IAM, AMAZON_COGNITO_USER_POOLS, OPENID_CONNECT, AWS_LAMBDA)
 }
 
 @js.native
@@ -93,8 +104,9 @@ object DataSourceType {
   val NONE = "NONE".asInstanceOf[DataSourceType]
   val HTTP = "HTTP".asInstanceOf[DataSourceType]
   val RELATIONAL_DATABASE = "RELATIONAL_DATABASE".asInstanceOf[DataSourceType]
+  val AMAZON_OPENSEARCH_SERVICE = "AMAZON_OPENSEARCH_SERVICE".asInstanceOf[DataSourceType]
 
-  @inline def values: js.Array[DataSourceType] = js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE)
+  @inline def values: js.Array[DataSourceType] = js.Array(AWS_LAMBDA, AMAZON_DYNAMODB, AMAZON_ELASTICSEARCH, NONE, HTTP, RELATIONAL_DATABASE, AMAZON_OPENSEARCH_SERVICE)
 }
 
 @js.native

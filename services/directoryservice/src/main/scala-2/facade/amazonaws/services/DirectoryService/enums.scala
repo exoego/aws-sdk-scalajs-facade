@@ -25,6 +25,15 @@ object CertificateType {
 }
 
 @js.native
+sealed trait ClientAuthenticationStatus extends js.Any
+object ClientAuthenticationStatus {
+  val Enabled = "Enabled".asInstanceOf[ClientAuthenticationStatus]
+  val Disabled = "Disabled".asInstanceOf[ClientAuthenticationStatus]
+
+  @inline def values: js.Array[ClientAuthenticationStatus] = js.Array(Enabled, Disabled)
+}
+
+@js.native
 sealed trait ClientAuthenticationType extends js.Any
 object ClientAuthenticationType {
   val SmartCard = "SmartCard".asInstanceOf[ClientAuthenticationType]

@@ -14,6 +14,7 @@ package object robomaker {
   type BoxedBoolean = Boolean
   type ClientRequestToken = String
   type Command = String
+  type CommandList = js.Array[NonEmptyString]
   type CreateSimulationJobRequests = js.Array[SimulationJobRequest]
   type CreatedAt = js.Date
   type DataSourceConfigs = js.Array[DataSourceConfig]
@@ -32,10 +33,12 @@ package object robomaker {
   type Filters = js.Array[Filter]
   type Fleets = js.Array[Fleet]
   type FloorplanCount = Int
+  type GPUUnit = Int
   type GenericInteger = Int
   type GenericString = String
   type IamRole = String
   type Id = String
+  type ImageDigest = String
   type InteriorCountPerFloorplan = Int
   type JobDuration = Double
   type Json = String
@@ -53,6 +56,7 @@ package object robomaker {
   type Port = Int
   type PortMappingList = js.Array[PortMapping]
   type RenderingEngineVersionType = String
+  type RepositoryUrl = String
   type RevisionId = String
   type RobotApplicationConfigs = js.Array[RobotApplicationConfig]
   type RobotApplicationNames = js.Array[Name]
@@ -61,9 +65,11 @@ package object robomaker {
   type Robots = js.Array[Robot]
   type S3Bucket = String
   type S3Etag = String
+  type S3Etags = js.Array[S3Etag]
   type S3Key = String
+  type S3KeyOrPrefix = String
   type S3KeyOutputs = js.Array[S3KeyOutput]
-  type S3Keys = js.Array[S3Key]
+  type S3KeysOrPrefixes = js.Array[S3KeyOrPrefix]
   type SecurityGroups = js.Array[NonEmptyString]
   type SimulationApplicationConfigs = js.Array[SimulationApplicationConfig]
   type SimulationApplicationNames = js.Array[Name]
@@ -459,15 +465,21 @@ package object robomaker {
     */
   @js.native
   trait Compute extends js.Object {
+    var computeType: js.UndefOr[ComputeType]
+    var gpuUnitLimit: js.UndefOr[GPUUnit]
     var simulationUnitLimit: js.UndefOr[SimulationUnit]
   }
 
   object Compute {
     @inline
     def apply(
+        computeType: js.UndefOr[ComputeType] = js.undefined,
+        gpuUnitLimit: js.UndefOr[GPUUnit] = js.undefined,
         simulationUnitLimit: js.UndefOr[SimulationUnit] = js.undefined
     ): Compute = {
       val __obj = js.Dynamic.literal()
+      computeType.foreach(__v => __obj.updateDynamic("computeType")(__v.asInstanceOf[js.Any]))
+      gpuUnitLimit.foreach(__v => __obj.updateDynamic("gpuUnitLimit")(__v.asInstanceOf[js.Any]))
       simulationUnitLimit.foreach(__v => __obj.updateDynamic("simulationUnitLimit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Compute]
     }
@@ -477,15 +489,21 @@ package object robomaker {
     */
   @js.native
   trait ComputeResponse extends js.Object {
+    var computeType: js.UndefOr[ComputeType]
+    var gpuUnitLimit: js.UndefOr[GPUUnit]
     var simulationUnitLimit: js.UndefOr[SimulationUnit]
   }
 
   object ComputeResponse {
     @inline
     def apply(
+        computeType: js.UndefOr[ComputeType] = js.undefined,
+        gpuUnitLimit: js.UndefOr[GPUUnit] = js.undefined,
         simulationUnitLimit: js.UndefOr[SimulationUnit] = js.undefined
     ): ComputeResponse = {
       val __obj = js.Dynamic.literal()
+      computeType.foreach(__v => __obj.updateDynamic("computeType")(__v.asInstanceOf[js.Any]))
+      gpuUnitLimit.foreach(__v => __obj.updateDynamic("gpuUnitLimit")(__v.asInstanceOf[js.Any]))
       simulationUnitLimit.foreach(__v => __obj.updateDynamic("simulationUnitLimit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ComputeResponse]
     }
@@ -611,7 +629,8 @@ package object robomaker {
   trait CreateRobotApplicationRequest extends js.Object {
     var name: Name
     var robotSoftwareSuite: RobotSoftwareSuite
-    var sources: SourceConfigs
+    var environment: js.UndefOr[Environment]
+    var sources: js.UndefOr[SourceConfigs]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -620,15 +639,17 @@ package object robomaker {
     def apply(
         name: Name,
         robotSoftwareSuite: RobotSoftwareSuite,
-        sources: SourceConfigs,
+        environment: js.UndefOr[Environment] = js.undefined,
+        sources: js.UndefOr[SourceConfigs] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateRobotApplicationRequest = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any],
-        "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any],
-        "sources" -> sources.asInstanceOf[js.Any]
+        "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any]
       )
 
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRobotApplicationRequest]
     }
@@ -637,6 +658,7 @@ package object robomaker {
   @js.native
   trait CreateRobotApplicationResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var environment: js.UndefOr[Environment]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var revisionId: js.UndefOr[RevisionId]
@@ -650,6 +672,7 @@ package object robomaker {
     @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
+        environment: js.UndefOr[Environment] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         revisionId: js.UndefOr[RevisionId] = js.undefined,
@@ -660,6 +683,7 @@ package object robomaker {
     ): CreateRobotApplicationResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
@@ -675,19 +699,25 @@ package object robomaker {
   trait CreateRobotApplicationVersionRequest extends js.Object {
     var application: Arn
     var currentRevisionId: js.UndefOr[RevisionId]
+    var imageDigest: js.UndefOr[ImageDigest]
+    var s3Etags: js.UndefOr[S3Etags]
   }
 
   object CreateRobotApplicationVersionRequest {
     @inline
     def apply(
         application: Arn,
-        currentRevisionId: js.UndefOr[RevisionId] = js.undefined
+        currentRevisionId: js.UndefOr[RevisionId] = js.undefined,
+        imageDigest: js.UndefOr[ImageDigest] = js.undefined,
+        s3Etags: js.UndefOr[S3Etags] = js.undefined
     ): CreateRobotApplicationVersionRequest = {
       val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any]
       )
 
       currentRevisionId.foreach(__v => __obj.updateDynamic("currentRevisionId")(__v.asInstanceOf[js.Any]))
+      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
+      s3Etags.foreach(__v => __obj.updateDynamic("s3Etags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateRobotApplicationVersionRequest]
     }
   }
@@ -695,6 +725,7 @@ package object robomaker {
   @js.native
   trait CreateRobotApplicationVersionResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var environment: js.UndefOr[Environment]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var revisionId: js.UndefOr[RevisionId]
@@ -707,6 +738,7 @@ package object robomaker {
     @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
+        environment: js.UndefOr[Environment] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         revisionId: js.UndefOr[RevisionId] = js.undefined,
@@ -716,6 +748,7 @@ package object robomaker {
     ): CreateRobotApplicationVersionResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
@@ -789,8 +822,9 @@ package object robomaker {
     var name: Name
     var robotSoftwareSuite: RobotSoftwareSuite
     var simulationSoftwareSuite: SimulationSoftwareSuite
-    var sources: SourceConfigs
+    var environment: js.UndefOr[Environment]
     var renderingEngine: js.UndefOr[RenderingEngine]
+    var sources: js.UndefOr[SourceConfigs]
     var tags: js.UndefOr[TagMap]
   }
 
@@ -800,18 +834,20 @@ package object robomaker {
         name: Name,
         robotSoftwareSuite: RobotSoftwareSuite,
         simulationSoftwareSuite: SimulationSoftwareSuite,
-        sources: SourceConfigs,
+        environment: js.UndefOr[Environment] = js.undefined,
         renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
+        sources: js.UndefOr[SourceConfigs] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateSimulationApplicationRequest = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any],
         "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any],
-        "simulationSoftwareSuite" -> simulationSoftwareSuite.asInstanceOf[js.Any],
-        "sources" -> sources.asInstanceOf[js.Any]
+        "simulationSoftwareSuite" -> simulationSoftwareSuite.asInstanceOf[js.Any]
       )
 
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSimulationApplicationRequest]
     }
@@ -820,6 +856,7 @@ package object robomaker {
   @js.native
   trait CreateSimulationApplicationResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var environment: js.UndefOr[Environment]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var renderingEngine: js.UndefOr[RenderingEngine]
@@ -835,6 +872,7 @@ package object robomaker {
     @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
+        environment: js.UndefOr[Environment] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
@@ -847,6 +885,7 @@ package object robomaker {
     ): CreateSimulationApplicationResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
@@ -864,19 +903,25 @@ package object robomaker {
   trait CreateSimulationApplicationVersionRequest extends js.Object {
     var application: Arn
     var currentRevisionId: js.UndefOr[RevisionId]
+    var imageDigest: js.UndefOr[ImageDigest]
+    var s3Etags: js.UndefOr[S3Etags]
   }
 
   object CreateSimulationApplicationVersionRequest {
     @inline
     def apply(
         application: Arn,
-        currentRevisionId: js.UndefOr[RevisionId] = js.undefined
+        currentRevisionId: js.UndefOr[RevisionId] = js.undefined,
+        imageDigest: js.UndefOr[ImageDigest] = js.undefined,
+        s3Etags: js.UndefOr[S3Etags] = js.undefined
     ): CreateSimulationApplicationVersionRequest = {
       val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any]
       )
 
       currentRevisionId.foreach(__v => __obj.updateDynamic("currentRevisionId")(__v.asInstanceOf[js.Any]))
+      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
+      s3Etags.foreach(__v => __obj.updateDynamic("s3Etags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSimulationApplicationVersionRequest]
     }
   }
@@ -884,6 +929,7 @@ package object robomaker {
   @js.native
   trait CreateSimulationApplicationVersionResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var environment: js.UndefOr[Environment]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var renderingEngine: js.UndefOr[RenderingEngine]
@@ -898,6 +944,7 @@ package object robomaker {
     @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
+        environment: js.UndefOr[Environment] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
@@ -909,6 +956,7 @@ package object robomaker {
     ): CreateSimulationApplicationVersionResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
@@ -1236,22 +1284,28 @@ package object robomaker {
     */
   @js.native
   trait DataSource extends js.Object {
+    var destination: js.UndefOr[Path]
     var name: js.UndefOr[Name]
     var s3Bucket: js.UndefOr[S3Bucket]
     var s3Keys: js.UndefOr[S3KeyOutputs]
+    var `type`: js.UndefOr[DataSourceType]
   }
 
   object DataSource {
     @inline
     def apply(
+        destination: js.UndefOr[Path] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         s3Bucket: js.UndefOr[S3Bucket] = js.undefined,
-        s3Keys: js.UndefOr[S3KeyOutputs] = js.undefined
+        s3Keys: js.UndefOr[S3KeyOutputs] = js.undefined,
+        `type`: js.UndefOr[DataSourceType] = js.undefined
     ): DataSource = {
       val __obj = js.Dynamic.literal()
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       s3Bucket.foreach(__v => __obj.updateDynamic("s3Bucket")(__v.asInstanceOf[js.Any]))
       s3Keys.foreach(__v => __obj.updateDynamic("s3Keys")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSource]
     }
   }
@@ -1262,7 +1316,9 @@ package object robomaker {
   trait DataSourceConfig extends js.Object {
     var name: Name
     var s3Bucket: S3Bucket
-    var s3Keys: S3Keys
+    var s3Keys: S3KeysOrPrefixes
+    var destination: js.UndefOr[Path]
+    var `type`: js.UndefOr[DataSourceType]
   }
 
   object DataSourceConfig {
@@ -1270,13 +1326,18 @@ package object robomaker {
     def apply(
         name: Name,
         s3Bucket: S3Bucket,
-        s3Keys: S3Keys
+        s3Keys: S3KeysOrPrefixes,
+        destination: js.UndefOr[Path] = js.undefined,
+        `type`: js.UndefOr[DataSourceType] = js.undefined
     ): DataSourceConfig = {
       val __obj = js.Dynamic.literal(
         "name" -> name.asInstanceOf[js.Any],
         "s3Bucket" -> s3Bucket.asInstanceOf[js.Any],
         "s3Keys" -> s3Keys.asInstanceOf[js.Any]
       )
+
+      destination.foreach(__v => __obj.updateDynamic("destination")(__v.asInstanceOf[js.Any]))
+      `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DataSourceConfig]
     }
   }
@@ -1729,6 +1790,8 @@ package object robomaker {
   @js.native
   trait DescribeRobotApplicationResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var environment: js.UndefOr[Environment]
+    var imageDigest: js.UndefOr[ImageDigest]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var revisionId: js.UndefOr[RevisionId]
@@ -1742,6 +1805,8 @@ package object robomaker {
     @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
+        environment: js.UndefOr[Environment] = js.undefined,
+        imageDigest: js.UndefOr[ImageDigest] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         revisionId: js.UndefOr[RevisionId] = js.undefined,
@@ -1752,6 +1817,8 @@ package object robomaker {
     ): DescribeRobotApplicationResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
@@ -1847,6 +1914,8 @@ package object robomaker {
   @js.native
   trait DescribeSimulationApplicationResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var environment: js.UndefOr[Environment]
+    var imageDigest: js.UndefOr[ImageDigest]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var renderingEngine: js.UndefOr[RenderingEngine]
@@ -1862,6 +1931,8 @@ package object robomaker {
     @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
+        environment: js.UndefOr[Environment] = js.undefined,
+        imageDigest: js.UndefOr[ImageDigest] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
@@ -1874,6 +1945,8 @@ package object robomaker {
     ): DescribeSimulationApplicationResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      imageDigest.foreach(__v => __obj.updateDynamic("imageDigest")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
@@ -2193,6 +2266,7 @@ package object robomaker {
     var generationJob: js.UndefOr[Arn]
     var tags: js.UndefOr[TagMap]
     var template: js.UndefOr[Arn]
+    var worldDescriptionBody: js.UndefOr[Json]
   }
 
   object DescribeWorldResponse {
@@ -2202,7 +2276,8 @@ package object robomaker {
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
         generationJob: js.UndefOr[Arn] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
-        template: js.UndefOr[Arn] = js.undefined
+        template: js.UndefOr[Arn] = js.undefined,
+        worldDescriptionBody: js.UndefOr[Json] = js.undefined
     ): DescribeWorldResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -2210,6 +2285,7 @@ package object robomaker {
       generationJob.foreach(__v => __obj.updateDynamic("generationJob")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       template.foreach(__v => __obj.updateDynamic("template")(__v.asInstanceOf[js.Any]))
+      worldDescriptionBody.foreach(__v => __obj.updateDynamic("worldDescriptionBody")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorldResponse]
     }
   }
@@ -2239,6 +2315,7 @@ package object robomaker {
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[TemplateName]
     var tags: js.UndefOr[TagMap]
+    var version: js.UndefOr[GenericString]
   }
 
   object DescribeWorldTemplateResponse {
@@ -2249,7 +2326,8 @@ package object robomaker {
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[TemplateName] = js.undefined,
-        tags: js.UndefOr[TagMap] = js.undefined
+        tags: js.UndefOr[TagMap] = js.undefined,
+        version: js.UndefOr[GenericString] = js.undefined
     ): DescribeWorldTemplateResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
@@ -2258,7 +2336,26 @@ package object robomaker {
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeWorldTemplateResponse]
+    }
+  }
+
+  /** The object that contains the Docker image URI for either your robot or simulation applications.
+    */
+  @js.native
+  trait Environment extends js.Object {
+    var uri: js.UndefOr[RepositoryUrl]
+  }
+
+  object Environment {
+    @inline
+    def apply(
+        uri: js.UndefOr[RepositoryUrl] = js.undefined
+    ): Environment = {
+      val __obj = js.Dynamic.literal()
+      uri.foreach(__v => __obj.updateDynamic("uri")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Environment]
     }
   }
 
@@ -2427,9 +2524,10 @@ package object robomaker {
     */
   @js.native
   trait LaunchConfig extends js.Object {
-    var launchFile: Command
-    var packageName: Command
+    var command: js.UndefOr[CommandList]
     var environmentVariables: js.UndefOr[EnvironmentVariableMap]
+    var launchFile: js.UndefOr[Command]
+    var packageName: js.UndefOr[Command]
     var portForwardingConfig: js.UndefOr[PortForwardingConfig]
     var streamUI: js.UndefOr[Boolean]
   }
@@ -2437,18 +2535,18 @@ package object robomaker {
   object LaunchConfig {
     @inline
     def apply(
-        launchFile: Command,
-        packageName: Command,
+        command: js.UndefOr[CommandList] = js.undefined,
         environmentVariables: js.UndefOr[EnvironmentVariableMap] = js.undefined,
+        launchFile: js.UndefOr[Command] = js.undefined,
+        packageName: js.UndefOr[Command] = js.undefined,
         portForwardingConfig: js.UndefOr[PortForwardingConfig] = js.undefined,
         streamUI: js.UndefOr[Boolean] = js.undefined
     ): LaunchConfig = {
-      val __obj = js.Dynamic.literal(
-        "launchFile" -> launchFile.asInstanceOf[js.Any],
-        "packageName" -> packageName.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
+      command.foreach(__v => __obj.updateDynamic("command")(__v.asInstanceOf[js.Any]))
       environmentVariables.foreach(__v => __obj.updateDynamic("environmentVariables")(__v.asInstanceOf[js.Any]))
+      launchFile.foreach(__v => __obj.updateDynamic("launchFile")(__v.asInstanceOf[js.Any]))
+      packageName.foreach(__v => __obj.updateDynamic("packageName")(__v.asInstanceOf[js.Any]))
       portForwardingConfig.foreach(__v => __obj.updateDynamic("portForwardingConfig")(__v.asInstanceOf[js.Any]))
       streamUI.foreach(__v => __obj.updateDynamic("streamUI")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LaunchConfig]
@@ -3343,14 +3441,14 @@ package object robomaker {
   @js.native
   trait S3KeyOutput extends js.Object {
     var etag: js.UndefOr[S3Etag]
-    var s3Key: js.UndefOr[S3Key]
+    var s3Key: js.UndefOr[S3KeyOrPrefix]
   }
 
   object S3KeyOutput {
     @inline
     def apply(
         etag: js.UndefOr[S3Etag] = js.undefined,
-        s3Key: js.UndefOr[S3Key] = js.undefined
+        s3Key: js.UndefOr[S3KeyOrPrefix] = js.undefined
     ): S3KeyOutput = {
       val __obj = js.Dynamic.literal()
       etag.foreach(__v => __obj.updateDynamic("etag")(__v.asInstanceOf[js.Any]))
@@ -3631,6 +3729,7 @@ package object robomaker {
   @js.native
   trait SimulationJobSummary extends js.Object {
     var arn: js.UndefOr[Arn]
+    var computeType: js.UndefOr[ComputeType]
     var dataSourceNames: js.UndefOr[DataSourceNames]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
@@ -3643,6 +3742,7 @@ package object robomaker {
     @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
+        computeType: js.UndefOr[ComputeType] = js.undefined,
         dataSourceNames: js.UndefOr[DataSourceNames] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
@@ -3652,6 +3752,7 @@ package object robomaker {
     ): SimulationJobSummary = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      computeType.foreach(__v => __obj.updateDynamic("computeType")(__v.asInstanceOf[js.Any]))
       dataSourceNames.foreach(__v => __obj.updateDynamic("dataSourceNames")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -3925,6 +4026,7 @@ package object robomaker {
     var createdAt: js.UndefOr[CreatedAt]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[TemplateName]
+    var version: js.UndefOr[GenericString]
   }
 
   object TemplateSummary {
@@ -3933,13 +4035,15 @@ package object robomaker {
         arn: js.UndefOr[Arn] = js.undefined,
         createdAt: js.UndefOr[CreatedAt] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
-        name: js.UndefOr[TemplateName] = js.undefined
+        name: js.UndefOr[TemplateName] = js.undefined,
+        version: js.UndefOr[GenericString] = js.undefined
     ): TemplateSummary = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      version.foreach(__v => __obj.updateDynamic("version")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TemplateSummary]
     }
   }
@@ -4011,8 +4115,9 @@ package object robomaker {
   trait UpdateRobotApplicationRequest extends js.Object {
     var application: Arn
     var robotSoftwareSuite: RobotSoftwareSuite
-    var sources: SourceConfigs
     var currentRevisionId: js.UndefOr[RevisionId]
+    var environment: js.UndefOr[Environment]
+    var sources: js.UndefOr[SourceConfigs]
   }
 
   object UpdateRobotApplicationRequest {
@@ -4020,16 +4125,18 @@ package object robomaker {
     def apply(
         application: Arn,
         robotSoftwareSuite: RobotSoftwareSuite,
-        sources: SourceConfigs,
-        currentRevisionId: js.UndefOr[RevisionId] = js.undefined
+        currentRevisionId: js.UndefOr[RevisionId] = js.undefined,
+        environment: js.UndefOr[Environment] = js.undefined,
+        sources: js.UndefOr[SourceConfigs] = js.undefined
     ): UpdateRobotApplicationRequest = {
       val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any],
-        "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any],
-        "sources" -> sources.asInstanceOf[js.Any]
+        "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any]
       )
 
       currentRevisionId.foreach(__v => __obj.updateDynamic("currentRevisionId")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRobotApplicationRequest]
     }
   }
@@ -4037,6 +4144,7 @@ package object robomaker {
   @js.native
   trait UpdateRobotApplicationResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var environment: js.UndefOr[Environment]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var revisionId: js.UndefOr[RevisionId]
@@ -4049,6 +4157,7 @@ package object robomaker {
     @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
+        environment: js.UndefOr[Environment] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         revisionId: js.UndefOr[RevisionId] = js.undefined,
@@ -4058,6 +4167,7 @@ package object robomaker {
     ): UpdateRobotApplicationResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       revisionId.foreach(__v => __obj.updateDynamic("revisionId")(__v.asInstanceOf[js.Any]))
@@ -4073,9 +4183,10 @@ package object robomaker {
     var application: Arn
     var robotSoftwareSuite: RobotSoftwareSuite
     var simulationSoftwareSuite: SimulationSoftwareSuite
-    var sources: SourceConfigs
     var currentRevisionId: js.UndefOr[RevisionId]
+    var environment: js.UndefOr[Environment]
     var renderingEngine: js.UndefOr[RenderingEngine]
+    var sources: js.UndefOr[SourceConfigs]
   }
 
   object UpdateSimulationApplicationRequest {
@@ -4084,19 +4195,21 @@ package object robomaker {
         application: Arn,
         robotSoftwareSuite: RobotSoftwareSuite,
         simulationSoftwareSuite: SimulationSoftwareSuite,
-        sources: SourceConfigs,
         currentRevisionId: js.UndefOr[RevisionId] = js.undefined,
-        renderingEngine: js.UndefOr[RenderingEngine] = js.undefined
+        environment: js.UndefOr[Environment] = js.undefined,
+        renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
+        sources: js.UndefOr[SourceConfigs] = js.undefined
     ): UpdateSimulationApplicationRequest = {
       val __obj = js.Dynamic.literal(
         "application" -> application.asInstanceOf[js.Any],
         "robotSoftwareSuite" -> robotSoftwareSuite.asInstanceOf[js.Any],
-        "simulationSoftwareSuite" -> simulationSoftwareSuite.asInstanceOf[js.Any],
-        "sources" -> sources.asInstanceOf[js.Any]
+        "simulationSoftwareSuite" -> simulationSoftwareSuite.asInstanceOf[js.Any]
       )
 
       currentRevisionId.foreach(__v => __obj.updateDynamic("currentRevisionId")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))
+      sources.foreach(__v => __obj.updateDynamic("sources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSimulationApplicationRequest]
     }
   }
@@ -4104,6 +4217,7 @@ package object robomaker {
   @js.native
   trait UpdateSimulationApplicationResponse extends js.Object {
     var arn: js.UndefOr[Arn]
+    var environment: js.UndefOr[Environment]
     var lastUpdatedAt: js.UndefOr[LastUpdatedAt]
     var name: js.UndefOr[Name]
     var renderingEngine: js.UndefOr[RenderingEngine]
@@ -4118,6 +4232,7 @@ package object robomaker {
     @inline
     def apply(
         arn: js.UndefOr[Arn] = js.undefined,
+        environment: js.UndefOr[Environment] = js.undefined,
         lastUpdatedAt: js.UndefOr[LastUpdatedAt] = js.undefined,
         name: js.UndefOr[Name] = js.undefined,
         renderingEngine: js.UndefOr[RenderingEngine] = js.undefined,
@@ -4129,6 +4244,7 @@ package object robomaker {
     ): UpdateSimulationApplicationResponse = {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      environment.foreach(__v => __obj.updateDynamic("environment")(__v.asInstanceOf[js.Any]))
       lastUpdatedAt.foreach(__v => __obj.updateDynamic("lastUpdatedAt")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       renderingEngine.foreach(__v => __obj.updateDynamic("renderingEngine")(__v.asInstanceOf[js.Any]))

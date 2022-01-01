@@ -2,6 +2,22 @@ package facade.amazonaws.services.appmesh
 
 import scalajs.js
 
+type DefaultGatewayRouteRewrite = "ENABLED" | "DISABLED"
+object DefaultGatewayRouteRewrite {
+  inline val ENABLED: "ENABLED" = "ENABLED"
+  inline val DISABLED: "DISABLED" = "DISABLED"
+
+  inline def values: js.Array[DefaultGatewayRouteRewrite] = js.Array(ENABLED, DISABLED)
+}
+
+type DnsResponseType = "LOADBALANCER" | "ENDPOINTS"
+object DnsResponseType {
+  inline val LOADBALANCER: "LOADBALANCER" = "LOADBALANCER"
+  inline val ENDPOINTS: "ENDPOINTS" = "ENDPOINTS"
+
+  inline def values: js.Array[DnsResponseType] = js.Array(LOADBALANCER, ENDPOINTS)
+}
+
 type DurationUnit = "s" | "ms"
 object DurationUnit {
   inline val s: "s" = "s"

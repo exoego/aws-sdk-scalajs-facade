@@ -113,16 +113,17 @@ object FailureReason {
   )
 }
 
-type KeyAlgorithm = "RSA_2048" | "RSA_1024" | "RSA_4096" | "EC_prime256v1" | "EC_secp384r1" | "EC_secp521r1"
+type KeyAlgorithm = "RSA_1024" | "RSA_2048" | "RSA_3072" | "RSA_4096" | "EC_prime256v1" | "EC_secp384r1" | "EC_secp521r1"
 object KeyAlgorithm {
-  inline val RSA_2048: "RSA_2048" = "RSA_2048"
   inline val RSA_1024: "RSA_1024" = "RSA_1024"
+  inline val RSA_2048: "RSA_2048" = "RSA_2048"
+  inline val RSA_3072: "RSA_3072" = "RSA_3072"
   inline val RSA_4096: "RSA_4096" = "RSA_4096"
   inline val EC_prime256v1: "EC_prime256v1" = "EC_prime256v1"
   inline val EC_secp384r1: "EC_secp384r1" = "EC_secp384r1"
   inline val EC_secp521r1: "EC_secp521r1" = "EC_secp521r1"
 
-  inline def values: js.Array[KeyAlgorithm] = js.Array(RSA_2048, RSA_1024, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1)
+  inline def values: js.Array[KeyAlgorithm] = js.Array(RSA_1024, RSA_2048, RSA_3072, RSA_4096, EC_prime256v1, EC_secp384r1, EC_secp521r1)
 }
 
 type KeyUsageName = "DIGITAL_SIGNATURE" | "NON_REPUDIATION" | "KEY_ENCIPHERMENT" | "DATA_ENCIPHERMENT" | "KEY_AGREEMENT" | "CERTIFICATE_SIGNING" | "CRL_SIGNING" | "ENCIPHER_ONLY" | "DECIPHER_ONLY" | "ANY" | "CUSTOM"

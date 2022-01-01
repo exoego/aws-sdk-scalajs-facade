@@ -24,7 +24,7 @@ object ClientBroker {
   @inline def values: js.Array[ClientBroker] = js.Array(TLS, TLS_PLAINTEXT, PLAINTEXT)
 }
 
-/** The state of a Kafka cluster.
+/** The state of the Apache Kafka cluster.
   */
 @js.native
 sealed trait ClusterState extends js.Any
@@ -39,6 +39,17 @@ object ClusterState {
   val UPDATING = "UPDATING".asInstanceOf[ClusterState]
 
   @inline def values: js.Array[ClusterState] = js.Array(ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, UPDATING)
+}
+
+/** The type of cluster.
+  */
+@js.native
+sealed trait ClusterType extends js.Any
+object ClusterType {
+  val PROVISIONED = "PROVISIONED".asInstanceOf[ClusterType]
+  val SERVERLESS = "SERVERLESS".asInstanceOf[ClusterType]
+
+  @inline def values: js.Array[ClusterType] = js.Array(PROVISIONED, SERVERLESS)
 }
 
 /** The state of a configuration.

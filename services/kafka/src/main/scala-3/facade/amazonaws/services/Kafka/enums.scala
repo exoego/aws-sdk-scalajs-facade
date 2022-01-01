@@ -22,7 +22,7 @@ object ClientBroker {
   inline def values: js.Array[ClientBroker] = js.Array(TLS, TLS_PLAINTEXT, PLAINTEXT)
 }
 
-/** The state of a Kafka cluster.
+/** The state of the Apache Kafka cluster.
   */
 type ClusterState = "ACTIVE" | "CREATING" | "DELETING" | "FAILED" | "HEALING" | "MAINTENANCE" | "REBOOTING_BROKER" | "UPDATING"
 object ClusterState {
@@ -36,6 +36,16 @@ object ClusterState {
   inline val UPDATING: "UPDATING" = "UPDATING"
 
   inline def values: js.Array[ClusterState] = js.Array(ACTIVE, CREATING, DELETING, FAILED, HEALING, MAINTENANCE, REBOOTING_BROKER, UPDATING)
+}
+
+/** The type of cluster.
+  */
+type ClusterType = "PROVISIONED" | "SERVERLESS"
+object ClusterType {
+  inline val PROVISIONED: "PROVISIONED" = "PROVISIONED"
+  inline val SERVERLESS: "SERVERLESS" = "SERVERLESS"
+
+  inline def values: js.Array[ClusterType] = js.Array(PROVISIONED, SERVERLESS)
 }
 
 /** The state of a configuration.

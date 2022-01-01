@@ -33,6 +33,7 @@ package object mwaa {
   type RelativePath = String
   type S3BucketArn = String
   type S3ObjectVersion = String
+  type Schedulers = Int
   type SecurityGroupId = String
   type SecurityGroupList = js.Array[SecurityGroupId]
   type SubnetId = String
@@ -145,6 +146,7 @@ package object mwaa {
     var PluginsS3Path: js.UndefOr[RelativePath]
     var RequirementsS3ObjectVersion: js.UndefOr[S3ObjectVersion]
     var RequirementsS3Path: js.UndefOr[RelativePath]
+    var Schedulers: js.UndefOr[Schedulers]
     var Tags: js.UndefOr[TagMap]
     var WebserverAccessMode: js.UndefOr[WebserverAccessMode]
     var WeeklyMaintenanceWindowStart: js.UndefOr[WeeklyMaintenanceWindowStart]
@@ -169,6 +171,7 @@ package object mwaa {
         PluginsS3Path: js.UndefOr[RelativePath] = js.undefined,
         RequirementsS3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
         RequirementsS3Path: js.UndefOr[RelativePath] = js.undefined,
+        Schedulers: js.UndefOr[Schedulers] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
         WebserverAccessMode: js.UndefOr[WebserverAccessMode] = js.undefined,
         WeeklyMaintenanceWindowStart: js.UndefOr[WeeklyMaintenanceWindowStart] = js.undefined
@@ -192,6 +195,7 @@ package object mwaa {
       PluginsS3Path.foreach(__v => __obj.updateDynamic("PluginsS3Path")(__v.asInstanceOf[js.Any]))
       RequirementsS3ObjectVersion.foreach(__v => __obj.updateDynamic("RequirementsS3ObjectVersion")(__v.asInstanceOf[js.Any]))
       RequirementsS3Path.foreach(__v => __obj.updateDynamic("RequirementsS3Path")(__v.asInstanceOf[js.Any]))
+      Schedulers.foreach(__v => __obj.updateDynamic("Schedulers")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       WebserverAccessMode.foreach(__v => __obj.updateDynamic("WebserverAccessMode")(__v.asInstanceOf[js.Any]))
       WeeklyMaintenanceWindowStart.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceWindowStart")(__v.asInstanceOf[js.Any]))
@@ -301,7 +305,7 @@ package object mwaa {
     }
   }
 
-  /** An Amazon MWAA environment.
+  /** The Amazon Managed Workflows for Apache Airflow (MWAA) environment.
     */
   @js.native
   trait Environment extends js.Object {
@@ -323,6 +327,7 @@ package object mwaa {
     var PluginsS3Path: js.UndefOr[RelativePath]
     var RequirementsS3ObjectVersion: js.UndefOr[S3ObjectVersion]
     var RequirementsS3Path: js.UndefOr[RelativePath]
+    var Schedulers: js.UndefOr[Schedulers]
     var ServiceRoleArn: js.UndefOr[IamRoleArn]
     var SourceBucketArn: js.UndefOr[S3BucketArn]
     var Status: js.UndefOr[EnvironmentStatus]
@@ -353,6 +358,7 @@ package object mwaa {
         PluginsS3Path: js.UndefOr[RelativePath] = js.undefined,
         RequirementsS3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
         RequirementsS3Path: js.UndefOr[RelativePath] = js.undefined,
+        Schedulers: js.UndefOr[Schedulers] = js.undefined,
         ServiceRoleArn: js.UndefOr[IamRoleArn] = js.undefined,
         SourceBucketArn: js.UndefOr[S3BucketArn] = js.undefined,
         Status: js.UndefOr[EnvironmentStatus] = js.undefined,
@@ -380,6 +386,7 @@ package object mwaa {
       PluginsS3Path.foreach(__v => __obj.updateDynamic("PluginsS3Path")(__v.asInstanceOf[js.Any]))
       RequirementsS3ObjectVersion.foreach(__v => __obj.updateDynamic("RequirementsS3ObjectVersion")(__v.asInstanceOf[js.Any]))
       RequirementsS3Path.foreach(__v => __obj.updateDynamic("RequirementsS3Path")(__v.asInstanceOf[js.Any]))
+      Schedulers.foreach(__v => __obj.updateDynamic("Schedulers")(__v.asInstanceOf[js.Any]))
       ServiceRoleArn.foreach(__v => __obj.updateDynamic("ServiceRoleArn")(__v.asInstanceOf[js.Any]))
       SourceBucketArn.foreach(__v => __obj.updateDynamic("SourceBucketArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -424,7 +431,7 @@ package object mwaa {
     }
   }
 
-  /** Last update information for the environment.
+  /** The status of the last update on the environment, and any errors that were encountered.
     */
   @js.native
   trait LastUpdate extends js.Object {
@@ -521,7 +528,7 @@ package object mwaa {
     }
   }
 
-  /** The Logging Configuration of your Amazon MWAA environment.
+  /** Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
     */
   @js.native
   trait LoggingConfiguration extends js.Object {
@@ -551,7 +558,7 @@ package object mwaa {
     }
   }
 
-  /** The Logging Configuration of your Amazon MWAA environment.
+  /** Defines the Apache Airflow logs to send to CloudWatch Logs: <code>DagProcessingLogs</code>, <code>SchedulerLogs</code>, <code>TaskLogs</code>, <code>WebserverLogs</code>, <code>WorkerLogs</code>.
     */
   @js.native
   trait LoggingConfigurationInput extends js.Object {
@@ -616,7 +623,7 @@ package object mwaa {
     }
   }
 
-  /** A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+  /** Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.
     */
   @js.native
   trait ModuleLoggingConfiguration extends js.Object {
@@ -640,7 +647,7 @@ package object mwaa {
     }
   }
 
-  /** A JSON blob that provides configuration to use for logging with respect to the various Apache Airflow services: DagProcessingLogs, SchedulerLogs, TaskLogs, WebserverLogs, and WorkerLogs.
+  /** Defines the type of logs to send for the Apache Airflow log type (e.g. <code>DagProcessingLogs</code>). Valid values: <code>CloudWatchLogGroupArn</code>, <code>Enabled</code>, <code>LogLevel</code>.
     */
   @js.native
   trait ModuleLoggingConfigurationInput extends js.Object {
@@ -662,7 +669,7 @@ package object mwaa {
     }
   }
 
-  /** Provide the security group and subnet IDs for the workers and scheduler.
+  /** The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see [[https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html|About networking on Amazon MWAA]].
     */
   @js.native
   trait NetworkConfiguration extends js.Object {
@@ -819,6 +826,7 @@ package object mwaa {
     var PluginsS3Path: js.UndefOr[RelativePath]
     var RequirementsS3ObjectVersion: js.UndefOr[S3ObjectVersion]
     var RequirementsS3Path: js.UndefOr[RelativePath]
+    var Schedulers: js.UndefOr[Schedulers]
     var SourceBucketArn: js.UndefOr[S3BucketArn]
     var WebserverAccessMode: js.UndefOr[WebserverAccessMode]
     var WeeklyMaintenanceWindowStart: js.UndefOr[WeeklyMaintenanceWindowStart]
@@ -841,6 +849,7 @@ package object mwaa {
         PluginsS3Path: js.UndefOr[RelativePath] = js.undefined,
         RequirementsS3ObjectVersion: js.UndefOr[S3ObjectVersion] = js.undefined,
         RequirementsS3Path: js.UndefOr[RelativePath] = js.undefined,
+        Schedulers: js.UndefOr[Schedulers] = js.undefined,
         SourceBucketArn: js.UndefOr[S3BucketArn] = js.undefined,
         WebserverAccessMode: js.UndefOr[WebserverAccessMode] = js.undefined,
         WeeklyMaintenanceWindowStart: js.UndefOr[WeeklyMaintenanceWindowStart] = js.undefined
@@ -862,6 +871,7 @@ package object mwaa {
       PluginsS3Path.foreach(__v => __obj.updateDynamic("PluginsS3Path")(__v.asInstanceOf[js.Any]))
       RequirementsS3ObjectVersion.foreach(__v => __obj.updateDynamic("RequirementsS3ObjectVersion")(__v.asInstanceOf[js.Any]))
       RequirementsS3Path.foreach(__v => __obj.updateDynamic("RequirementsS3Path")(__v.asInstanceOf[js.Any]))
+      Schedulers.foreach(__v => __obj.updateDynamic("Schedulers")(__v.asInstanceOf[js.Any]))
       SourceBucketArn.foreach(__v => __obj.updateDynamic("SourceBucketArn")(__v.asInstanceOf[js.Any]))
       WebserverAccessMode.foreach(__v => __obj.updateDynamic("WebserverAccessMode")(__v.asInstanceOf[js.Any]))
       WeeklyMaintenanceWindowStart.foreach(__v => __obj.updateDynamic("WeeklyMaintenanceWindowStart")(__v.asInstanceOf[js.Any]))
@@ -885,7 +895,7 @@ package object mwaa {
     }
   }
 
-  /** Error information of update, if applicable.
+  /** An object containing the error encountered with the last update: <code>ErrorCode</code>, <code>ErrorMessage</code>.
     */
   @js.native
   trait UpdateError extends js.Object {
@@ -906,7 +916,7 @@ package object mwaa {
     }
   }
 
-  /** Provide the security group and subnet IDs for the workers and scheduler.
+  /** The VPC networking components used to secure and enable network traffic between the AWS resources for your environment. To learn more, see [[https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html|About networking on Amazon MWAA]].
     */
   @js.native
   trait UpdateNetworkConfigurationInput extends js.Object {

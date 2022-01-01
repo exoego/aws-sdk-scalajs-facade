@@ -24,6 +24,17 @@ object CLMLanguageCode {
 }
 
 @js.native
+sealed trait CallAnalyticsJobStatus extends js.Any
+object CallAnalyticsJobStatus {
+  val QUEUED = "QUEUED".asInstanceOf[CallAnalyticsJobStatus]
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[CallAnalyticsJobStatus]
+  val FAILED = "FAILED".asInstanceOf[CallAnalyticsJobStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[CallAnalyticsJobStatus]
+
+  @inline def values: js.Array[CallAnalyticsJobStatus] = js.Array(QUEUED, IN_PROGRESS, FAILED, COMPLETED)
+}
+
+@js.native
 sealed trait LanguageCode extends js.Any
 object LanguageCode {
   val `af-ZA` = "af-ZA".asInstanceOf[LanguageCode]
@@ -62,6 +73,10 @@ object LanguageCode {
   val `te-IN` = "te-IN".asInstanceOf[LanguageCode]
   val `tr-TR` = "tr-TR".asInstanceOf[LanguageCode]
   val `zh-CN` = "zh-CN".asInstanceOf[LanguageCode]
+  val `zh-TW` = "zh-TW".asInstanceOf[LanguageCode]
+  val `th-TH` = "th-TH".asInstanceOf[LanguageCode]
+  val `en-ZA` = "en-ZA".asInstanceOf[LanguageCode]
+  val `en-NZ` = "en-NZ".asInstanceOf[LanguageCode]
 
   @inline def values: js.Array[LanguageCode] = js.Array(
     `af-ZA`,
@@ -99,7 +114,11 @@ object LanguageCode {
     `ta-IN`,
     `te-IN`,
     `tr-TR`,
-    `zh-CN`
+    `zh-CN`,
+    `zh-TW`,
+    `th-TH`,
+    `en-ZA`,
+    `en-NZ`
   )
 }
 
@@ -115,6 +134,14 @@ object MediaFormat {
   val webm = "webm".asInstanceOf[MediaFormat]
 
   @inline def values: js.Array[MediaFormat] = js.Array(mp3, mp4, wav, flac, ogg, amr, webm)
+}
+
+@js.native
+sealed trait MedicalContentIdentificationType extends js.Any
+object MedicalContentIdentificationType {
+  val PHI = "PHI".asInstanceOf[MedicalContentIdentificationType]
+
+  @inline def values: js.Array[MedicalContentIdentificationType] = js.Array(PHI)
 }
 
 @js.native
@@ -137,6 +164,15 @@ object OutputLocationType {
 }
 
 @js.native
+sealed trait ParticipantRole extends js.Any
+object ParticipantRole {
+  val AGENT = "AGENT".asInstanceOf[ParticipantRole]
+  val CUSTOMER = "CUSTOMER".asInstanceOf[ParticipantRole]
+
+  @inline def values: js.Array[ParticipantRole] = js.Array(AGENT, CUSTOMER)
+}
+
+@js.native
 sealed trait RedactionOutput extends js.Any
 object RedactionOutput {
   val redacted = "redacted".asInstanceOf[RedactionOutput]
@@ -154,11 +190,39 @@ object RedactionType {
 }
 
 @js.native
+sealed trait SentimentValue extends js.Any
+object SentimentValue {
+  val POSITIVE = "POSITIVE".asInstanceOf[SentimentValue]
+  val NEGATIVE = "NEGATIVE".asInstanceOf[SentimentValue]
+  val NEUTRAL = "NEUTRAL".asInstanceOf[SentimentValue]
+  val MIXED = "MIXED".asInstanceOf[SentimentValue]
+
+  @inline def values: js.Array[SentimentValue] = js.Array(POSITIVE, NEGATIVE, NEUTRAL, MIXED)
+}
+
+@js.native
 sealed trait Specialty extends js.Any
 object Specialty {
   val PRIMARYCARE = "PRIMARYCARE".asInstanceOf[Specialty]
 
   @inline def values: js.Array[Specialty] = js.Array(PRIMARYCARE)
+}
+
+@js.native
+sealed trait SubtitleFormat extends js.Any
+object SubtitleFormat {
+  val vtt = "vtt".asInstanceOf[SubtitleFormat]
+  val srt = "srt".asInstanceOf[SubtitleFormat]
+
+  @inline def values: js.Array[SubtitleFormat] = js.Array(vtt, srt)
+}
+
+@js.native
+sealed trait TranscriptFilterType extends js.Any
+object TranscriptFilterType {
+  val EXACT = "EXACT".asInstanceOf[TranscriptFilterType]
+
+  @inline def values: js.Array[TranscriptFilterType] = js.Array(EXACT)
 }
 
 @js.native

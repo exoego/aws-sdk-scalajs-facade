@@ -20,8 +20,9 @@ object AllowedOperation {
 sealed trait CheckoutType extends js.Any
 object CheckoutType {
   val PROVISIONAL = "PROVISIONAL".asInstanceOf[CheckoutType]
+  val PERPETUAL = "PERPETUAL".asInstanceOf[CheckoutType]
 
-  @inline def values: js.Array[CheckoutType] = js.Array(PROVISIONAL)
+  @inline def values: js.Array[CheckoutType] = js.Array(PROVISIONAL, PERPETUAL)
 }
 
 @js.native
@@ -167,8 +168,9 @@ object GrantStatus {
   val DELETED = "DELETED".asInstanceOf[GrantStatus]
   val PENDING_DELETE = "PENDING_DELETE".asInstanceOf[GrantStatus]
   val DISABLED = "DISABLED".asInstanceOf[GrantStatus]
+  val WORKFLOW_COMPLETED = "WORKFLOW_COMPLETED".asInstanceOf[GrantStatus]
 
-  @inline def values: js.Array[GrantStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, PENDING_DELETE, DISABLED)
+  @inline def values: js.Array[GrantStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, PENDING_DELETE, DISABLED, WORKFLOW_COMPLETED)
 }
 
 @js.native
@@ -189,6 +191,16 @@ object LicenseConfigurationStatus {
   val DISABLED = "DISABLED".asInstanceOf[LicenseConfigurationStatus]
 
   @inline def values: js.Array[LicenseConfigurationStatus] = js.Array(AVAILABLE, DISABLED)
+}
+
+@js.native
+sealed trait LicenseConversionTaskStatus extends js.Any
+object LicenseConversionTaskStatus {
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[LicenseConversionTaskStatus]
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[LicenseConversionTaskStatus]
+  val FAILED = "FAILED".asInstanceOf[LicenseConversionTaskStatus]
+
+  @inline def values: js.Array[LicenseConversionTaskStatus] = js.Array(IN_PROGRESS, SUCCEEDED, FAILED)
 }
 
 @js.native
@@ -235,8 +247,9 @@ object ReceivedStatus {
   val FAILED_WORKFLOW = "FAILED_WORKFLOW".asInstanceOf[ReceivedStatus]
   val DELETED = "DELETED".asInstanceOf[ReceivedStatus]
   val DISABLED = "DISABLED".asInstanceOf[ReceivedStatus]
+  val WORKFLOW_COMPLETED = "WORKFLOW_COMPLETED".asInstanceOf[ReceivedStatus]
 
-  @inline def values: js.Array[ReceivedStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, DISABLED)
+  @inline def values: js.Array[ReceivedStatus] = js.Array(PENDING_WORKFLOW, PENDING_ACCEPT, REJECTED, ACTIVE, FAILED_WORKFLOW, DELETED, DISABLED, WORKFLOW_COMPLETED)
 }
 
 @js.native
@@ -247,6 +260,25 @@ object RenewType {
   val Monthly = "Monthly".asInstanceOf[RenewType]
 
   @inline def values: js.Array[RenewType] = js.Array(None, Weekly, Monthly)
+}
+
+@js.native
+sealed trait ReportFrequencyType extends js.Any
+object ReportFrequencyType {
+  val DAY = "DAY".asInstanceOf[ReportFrequencyType]
+  val WEEK = "WEEK".asInstanceOf[ReportFrequencyType]
+  val MONTH = "MONTH".asInstanceOf[ReportFrequencyType]
+
+  @inline def values: js.Array[ReportFrequencyType] = js.Array(DAY, WEEK, MONTH)
+}
+
+@js.native
+sealed trait ReportType extends js.Any
+object ReportType {
+  val LicenseConfigurationSummaryReport = "LicenseConfigurationSummaryReport".asInstanceOf[ReportType]
+  val LicenseConfigurationUsageReport = "LicenseConfigurationUsageReport".asInstanceOf[ReportType]
+
+  @inline def values: js.Array[ReportType] = js.Array(LicenseConfigurationSummaryReport, LicenseConfigurationUsageReport)
 }
 
 @js.native

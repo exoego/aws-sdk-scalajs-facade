@@ -2,13 +2,15 @@ package facade.amazonaws.services.wafv2
 
 import scalajs.js
 
-type ActionValue = "ALLOW" | "BLOCK" | "COUNT"
+type ActionValue = "ALLOW" | "BLOCK" | "COUNT" | "CAPTCHA" | "EXCLUDED_AS_COUNT"
 object ActionValue {
   inline val ALLOW: "ALLOW" = "ALLOW"
   inline val BLOCK: "BLOCK" = "BLOCK"
   inline val COUNT: "COUNT" = "COUNT"
+  inline val CAPTCHA: "CAPTCHA" = "CAPTCHA"
+  inline val EXCLUDED_AS_COUNT: "EXCLUDED_AS_COUNT" = "EXCLUDED_AS_COUNT"
 
-  inline def values: js.Array[ActionValue] = js.Array(ALLOW, BLOCK, COUNT)
+  inline def values: js.Array[ActionValue] = js.Array(ALLOW, BLOCK, COUNT, CAPTCHA, EXCLUDED_AS_COUNT)
 }
 
 type BodyParsingFallbackBehavior = "MATCH" | "NO_MATCH" | "EVALUATE_AS_STRING"
@@ -538,6 +540,14 @@ object CountryCode {
   )
 }
 
+type FailureReason = "TOKEN_MISSING" | "TOKEN_EXPIRED"
+object FailureReason {
+  inline val TOKEN_MISSING: "TOKEN_MISSING" = "TOKEN_MISSING"
+  inline val TOKEN_EXPIRED: "TOKEN_EXPIRED" = "TOKEN_EXPIRED"
+
+  inline def values: js.Array[FailureReason] = js.Array(TOKEN_MISSING, TOKEN_EXPIRED)
+}
+
 type FallbackBehavior = "MATCH" | "NO_MATCH"
 object FallbackBehavior {
   inline val MATCH: "MATCH" = "MATCH"
@@ -641,7 +651,7 @@ object Scope {
   inline def values: js.Array[Scope] = js.Array(CLOUDFRONT, REGIONAL)
 }
 
-type TextTransformationType = "NONE" | "COMPRESS_WHITE_SPACE" | "HTML_ENTITY_DECODE" | "LOWERCASE" | "CMD_LINE" | "URL_DECODE"
+type TextTransformationType = "NONE" | "COMPRESS_WHITE_SPACE" | "HTML_ENTITY_DECODE" | "LOWERCASE" | "CMD_LINE" | "URL_DECODE" | "BASE64_DECODE" | "HEX_DECODE" | "MD5" | "REPLACE_COMMENTS" | "ESCAPE_SEQ_DECODE" | "SQL_HEX_DECODE" | "CSS_DECODE" | "JS_DECODE" | "NORMALIZE_PATH" | "NORMALIZE_PATH_WIN" | "REMOVE_NULLS" | "REPLACE_NULLS" | "BASE64_DECODE_EXT" | "URL_DECODE_UNI" | "UTF8_TO_UNICODE"
 object TextTransformationType {
   inline val NONE: "NONE" = "NONE"
   inline val COMPRESS_WHITE_SPACE: "COMPRESS_WHITE_SPACE" = "COMPRESS_WHITE_SPACE"
@@ -649,6 +659,43 @@ object TextTransformationType {
   inline val LOWERCASE: "LOWERCASE" = "LOWERCASE"
   inline val CMD_LINE: "CMD_LINE" = "CMD_LINE"
   inline val URL_DECODE: "URL_DECODE" = "URL_DECODE"
+  inline val BASE64_DECODE: "BASE64_DECODE" = "BASE64_DECODE"
+  inline val HEX_DECODE: "HEX_DECODE" = "HEX_DECODE"
+  inline val MD5: "MD5" = "MD5"
+  inline val REPLACE_COMMENTS: "REPLACE_COMMENTS" = "REPLACE_COMMENTS"
+  inline val ESCAPE_SEQ_DECODE: "ESCAPE_SEQ_DECODE" = "ESCAPE_SEQ_DECODE"
+  inline val SQL_HEX_DECODE: "SQL_HEX_DECODE" = "SQL_HEX_DECODE"
+  inline val CSS_DECODE: "CSS_DECODE" = "CSS_DECODE"
+  inline val JS_DECODE: "JS_DECODE" = "JS_DECODE"
+  inline val NORMALIZE_PATH: "NORMALIZE_PATH" = "NORMALIZE_PATH"
+  inline val NORMALIZE_PATH_WIN: "NORMALIZE_PATH_WIN" = "NORMALIZE_PATH_WIN"
+  inline val REMOVE_NULLS: "REMOVE_NULLS" = "REMOVE_NULLS"
+  inline val REPLACE_NULLS: "REPLACE_NULLS" = "REPLACE_NULLS"
+  inline val BASE64_DECODE_EXT: "BASE64_DECODE_EXT" = "BASE64_DECODE_EXT"
+  inline val URL_DECODE_UNI: "URL_DECODE_UNI" = "URL_DECODE_UNI"
+  inline val UTF8_TO_UNICODE: "UTF8_TO_UNICODE" = "UTF8_TO_UNICODE"
 
-  inline def values: js.Array[TextTransformationType] = js.Array(NONE, COMPRESS_WHITE_SPACE, HTML_ENTITY_DECODE, LOWERCASE, CMD_LINE, URL_DECODE)
+  inline def values: js.Array[TextTransformationType] = js.Array(
+    NONE,
+    COMPRESS_WHITE_SPACE,
+    HTML_ENTITY_DECODE,
+    LOWERCASE,
+    CMD_LINE,
+    URL_DECODE,
+    BASE64_DECODE,
+    HEX_DECODE,
+    MD5,
+    REPLACE_COMMENTS,
+    ESCAPE_SEQ_DECODE,
+    SQL_HEX_DECODE,
+    CSS_DECODE,
+    JS_DECODE,
+    NORMALIZE_PATH,
+    NORMALIZE_PATH_WIN,
+    REMOVE_NULLS,
+    REPLACE_NULLS,
+    BASE64_DECODE_EXT,
+    URL_DECODE_UNI,
+    UTF8_TO_UNICODE
+  )
 }

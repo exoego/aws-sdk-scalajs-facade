@@ -211,6 +211,14 @@ object ESWarmPartitionInstanceType {
   inline def values: js.Array[ESWarmPartitionInstanceType] = js.Array(`ultrawarm1.medium.elasticsearch`, `ultrawarm1.large.elasticsearch`)
 }
 
+type EngineType = "OpenSearch" | "Elasticsearch"
+object EngineType {
+  inline val OpenSearch: "OpenSearch" = "OpenSearch"
+  inline val Elasticsearch: "Elasticsearch" = "Elasticsearch"
+
+  inline def values: js.Array[EngineType] = js.Array(OpenSearch, Elasticsearch)
+}
+
 type InboundCrossClusterSearchConnectionStatusCode = "PENDING_ACCEPTANCE" | "APPROVED" | "REJECTING" | "REJECTED" | "DELETING" | "DELETED"
 object InboundCrossClusterSearchConnectionStatusCode {
   inline val PENDING_ACCEPTANCE: "PENDING_ACCEPTANCE" = "PENDING_ACCEPTANCE"

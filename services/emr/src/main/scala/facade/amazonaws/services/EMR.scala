@@ -45,6 +45,7 @@ package object emr {
   type JobFlowExecutionStateList = js.Array[JobFlowExecutionState]
   type KeyValueList = js.Array[KeyValue]
   type Marker = String
+  type MaxResultsNumber = Int
   type MetricDimensionList = js.Array[MetricDimension]
   type NewSupportedProductsList = js.Array[SupportedProductConfig]
   type NonNegativeDouble = Double
@@ -58,6 +59,7 @@ package object emr {
   type SecurityConfigurationList = js.Array[SecurityConfigurationSummary]
   type SecurityGroupsList = js.Array[XmlStringMaxLen256]
   type SessionMappingSummaryList = js.Array[SessionMappingSummary]
+  type SimplifiedApplicationList = js.Array[SimplifiedApplication]
   type StepConfigList = js.Array[StepConfig]
   type StepDetailList = js.Array[StepDetail]
   type StepId = String
@@ -91,9 +93,11 @@ package object emr {
     @inline def deleteStudioSessionMappingFuture(params: DeleteStudioSessionMappingInput): Future[js.Object] = service.deleteStudioSessionMapping(params).promise().toFuture
     @inline def describeClusterFuture(params: DescribeClusterInput): Future[DescribeClusterOutput] = service.describeCluster(params).promise().toFuture
     @inline def describeNotebookExecutionFuture(params: DescribeNotebookExecutionInput): Future[DescribeNotebookExecutionOutput] = service.describeNotebookExecution(params).promise().toFuture
+    @inline def describeReleaseLabelFuture(params: DescribeReleaseLabelInput): Future[DescribeReleaseLabelOutput] = service.describeReleaseLabel(params).promise().toFuture
     @inline def describeSecurityConfigurationFuture(params: DescribeSecurityConfigurationInput): Future[DescribeSecurityConfigurationOutput] = service.describeSecurityConfiguration(params).promise().toFuture
     @inline def describeStepFuture(params: DescribeStepInput): Future[DescribeStepOutput] = service.describeStep(params).promise().toFuture
     @inline def describeStudioFuture(params: DescribeStudioInput): Future[DescribeStudioOutput] = service.describeStudio(params).promise().toFuture
+    @inline def getAutoTerminationPolicyFuture(params: GetAutoTerminationPolicyInput): Future[GetAutoTerminationPolicyOutput] = service.getAutoTerminationPolicy(params).promise().toFuture
     @inline def getBlockPublicAccessConfigurationFuture(params: GetBlockPublicAccessConfigurationInput): Future[GetBlockPublicAccessConfigurationOutput] = service.getBlockPublicAccessConfiguration(params).promise().toFuture
     @inline def getManagedScalingPolicyFuture(params: GetManagedScalingPolicyInput): Future[GetManagedScalingPolicyOutput] = service.getManagedScalingPolicy(params).promise().toFuture
     @inline def getStudioSessionMappingFuture(params: GetStudioSessionMappingInput): Future[GetStudioSessionMappingOutput] = service.getStudioSessionMapping(params).promise().toFuture
@@ -103,6 +107,7 @@ package object emr {
     @inline def listInstanceGroupsFuture(params: ListInstanceGroupsInput): Future[ListInstanceGroupsOutput] = service.listInstanceGroups(params).promise().toFuture
     @inline def listInstancesFuture(params: ListInstancesInput): Future[ListInstancesOutput] = service.listInstances(params).promise().toFuture
     @inline def listNotebookExecutionsFuture(params: ListNotebookExecutionsInput): Future[ListNotebookExecutionsOutput] = service.listNotebookExecutions(params).promise().toFuture
+    @inline def listReleaseLabelsFuture(params: ListReleaseLabelsInput): Future[ListReleaseLabelsOutput] = service.listReleaseLabels(params).promise().toFuture
     @inline def listSecurityConfigurationsFuture(params: ListSecurityConfigurationsInput): Future[ListSecurityConfigurationsOutput] = service.listSecurityConfigurations(params).promise().toFuture
     @inline def listStepsFuture(params: ListStepsInput): Future[ListStepsOutput] = service.listSteps(params).promise().toFuture
     @inline def listStudioSessionMappingsFuture(params: ListStudioSessionMappingsInput): Future[ListStudioSessionMappingsOutput] = service.listStudioSessionMappings(params).promise().toFuture
@@ -111,9 +116,11 @@ package object emr {
     @inline def modifyInstanceFleetFuture(params: ModifyInstanceFleetInput): Future[js.Object] = service.modifyInstanceFleet(params).promise().toFuture
     @inline def modifyInstanceGroupsFuture(params: ModifyInstanceGroupsInput): Future[js.Object] = service.modifyInstanceGroups(params).promise().toFuture
     @inline def putAutoScalingPolicyFuture(params: PutAutoScalingPolicyInput): Future[PutAutoScalingPolicyOutput] = service.putAutoScalingPolicy(params).promise().toFuture
+    @inline def putAutoTerminationPolicyFuture(params: PutAutoTerminationPolicyInput): Future[PutAutoTerminationPolicyOutput] = service.putAutoTerminationPolicy(params).promise().toFuture
     @inline def putBlockPublicAccessConfigurationFuture(params: PutBlockPublicAccessConfigurationInput): Future[PutBlockPublicAccessConfigurationOutput] = service.putBlockPublicAccessConfiguration(params).promise().toFuture
     @inline def putManagedScalingPolicyFuture(params: PutManagedScalingPolicyInput): Future[PutManagedScalingPolicyOutput] = service.putManagedScalingPolicy(params).promise().toFuture
     @inline def removeAutoScalingPolicyFuture(params: RemoveAutoScalingPolicyInput): Future[RemoveAutoScalingPolicyOutput] = service.removeAutoScalingPolicy(params).promise().toFuture
+    @inline def removeAutoTerminationPolicyFuture(params: RemoveAutoTerminationPolicyInput): Future[RemoveAutoTerminationPolicyOutput] = service.removeAutoTerminationPolicy(params).promise().toFuture
     @inline def removeManagedScalingPolicyFuture(params: RemoveManagedScalingPolicyInput): Future[RemoveManagedScalingPolicyOutput] = service.removeManagedScalingPolicy(params).promise().toFuture
     @inline def removeTagsFuture(params: RemoveTagsInput): Future[RemoveTagsOutput] = service.removeTags(params).promise().toFuture
     @inline def runJobFlowFuture(params: RunJobFlowInput): Future[RunJobFlowOutput] = service.runJobFlow(params).promise().toFuture
@@ -146,9 +153,11 @@ package object emr {
     def deleteStudioSessionMapping(params: DeleteStudioSessionMappingInput): Request[js.Object] = js.native
     def describeCluster(params: DescribeClusterInput): Request[DescribeClusterOutput] = js.native
     def describeNotebookExecution(params: DescribeNotebookExecutionInput): Request[DescribeNotebookExecutionOutput] = js.native
+    def describeReleaseLabel(params: DescribeReleaseLabelInput): Request[DescribeReleaseLabelOutput] = js.native
     def describeSecurityConfiguration(params: DescribeSecurityConfigurationInput): Request[DescribeSecurityConfigurationOutput] = js.native
     def describeStep(params: DescribeStepInput): Request[DescribeStepOutput] = js.native
     def describeStudio(params: DescribeStudioInput): Request[DescribeStudioOutput] = js.native
+    def getAutoTerminationPolicy(params: GetAutoTerminationPolicyInput): Request[GetAutoTerminationPolicyOutput] = js.native
     def getBlockPublicAccessConfiguration(params: GetBlockPublicAccessConfigurationInput): Request[GetBlockPublicAccessConfigurationOutput] = js.native
     def getManagedScalingPolicy(params: GetManagedScalingPolicyInput): Request[GetManagedScalingPolicyOutput] = js.native
     def getStudioSessionMapping(params: GetStudioSessionMappingInput): Request[GetStudioSessionMappingOutput] = js.native
@@ -158,6 +167,7 @@ package object emr {
     def listInstanceGroups(params: ListInstanceGroupsInput): Request[ListInstanceGroupsOutput] = js.native
     def listInstances(params: ListInstancesInput): Request[ListInstancesOutput] = js.native
     def listNotebookExecutions(params: ListNotebookExecutionsInput): Request[ListNotebookExecutionsOutput] = js.native
+    def listReleaseLabels(params: ListReleaseLabelsInput): Request[ListReleaseLabelsOutput] = js.native
     def listSecurityConfigurations(params: ListSecurityConfigurationsInput): Request[ListSecurityConfigurationsOutput] = js.native
     def listSteps(params: ListStepsInput): Request[ListStepsOutput] = js.native
     def listStudioSessionMappings(params: ListStudioSessionMappingsInput): Request[ListStudioSessionMappingsOutput] = js.native
@@ -166,9 +176,11 @@ package object emr {
     def modifyInstanceFleet(params: ModifyInstanceFleetInput): Request[js.Object] = js.native
     def modifyInstanceGroups(params: ModifyInstanceGroupsInput): Request[js.Object] = js.native
     def putAutoScalingPolicy(params: PutAutoScalingPolicyInput): Request[PutAutoScalingPolicyOutput] = js.native
+    def putAutoTerminationPolicy(params: PutAutoTerminationPolicyInput): Request[PutAutoTerminationPolicyOutput] = js.native
     def putBlockPublicAccessConfiguration(params: PutBlockPublicAccessConfigurationInput): Request[PutBlockPublicAccessConfigurationOutput] = js.native
     def putManagedScalingPolicy(params: PutManagedScalingPolicyInput): Request[PutManagedScalingPolicyOutput] = js.native
     def removeAutoScalingPolicy(params: RemoveAutoScalingPolicyInput): Request[RemoveAutoScalingPolicyOutput] = js.native
+    def removeAutoTerminationPolicy(params: RemoveAutoTerminationPolicyInput): Request[RemoveAutoTerminationPolicyOutput] = js.native
     def removeManagedScalingPolicy(params: RemoveManagedScalingPolicyInput): Request[RemoveManagedScalingPolicyOutput] = js.native
     def removeTags(params: RemoveTagsInput): Request[RemoveTagsOutput] = js.native
     def runJobFlow(params: RunJobFlowInput): Request[RunJobFlowOutput] = js.native
@@ -314,7 +326,7 @@ package object emr {
     }
   }
 
-  /** This input identifies a cluster and a list of tags to attach.
+  /** This input identifies an Amazon EMR resource and a list of tags to attach.
     */
   @js.native
   trait AddTagsInput extends js.Object {
@@ -464,6 +476,24 @@ package object emr {
     }
   }
 
+  /** An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html|Control cluster termination]].
+    */
+  @js.native
+  trait AutoTerminationPolicy extends js.Object {
+    var IdleTimeout: js.UndefOr[Double]
+  }
+
+  object AutoTerminationPolicy {
+    @inline
+    def apply(
+        IdleTimeout: js.UndefOr[Double] = js.undefined
+    ): AutoTerminationPolicy = {
+      val __obj = js.Dynamic.literal()
+      IdleTimeout.foreach(__v => __obj.updateDynamic("IdleTimeout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AutoTerminationPolicy]
+    }
+  }
+
   /** A configuration for Amazon EMR block public access. When <code>BlockPublicSecurityGroupRules</code> is set to <code>true</code>, Amazon EMR prevents cluster creation if one of the cluster's security groups has a rule that allows inbound traffic from 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>.
     */
   @js.native
@@ -487,7 +517,7 @@ package object emr {
     }
   }
 
-  /** Properties that describe the AWS principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.
+  /** Properties that describe the Amazon Web Services principal that created the <code>BlockPublicAccessConfiguration</code> using the <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that the configuration was created. Each time a configuration for block public access is updated, Amazon EMR updates this metadata.
     */
   @js.native
   trait BlockPublicAccessConfigurationMetadata extends js.Object {
@@ -996,11 +1026,13 @@ package object emr {
     var Name: XmlStringMaxLen256
     var ServiceRole: XmlString
     var SubnetIds: SubnetIdList
-    var UserRole: XmlString
     var VpcId: XmlStringMaxLen256
     var WorkspaceSecurityGroupId: XmlStringMaxLen256
     var Description: js.UndefOr[XmlStringMaxLen256]
+    var IdpAuthUrl: js.UndefOr[XmlString]
+    var IdpRelayStateParameterName: js.UndefOr[XmlStringMaxLen256]
     var Tags: js.UndefOr[TagList]
+    var UserRole: js.UndefOr[XmlString]
   }
 
   object CreateStudioInput {
@@ -1012,11 +1044,13 @@ package object emr {
         Name: XmlStringMaxLen256,
         ServiceRole: XmlString,
         SubnetIds: SubnetIdList,
-        UserRole: XmlString,
         VpcId: XmlStringMaxLen256,
         WorkspaceSecurityGroupId: XmlStringMaxLen256,
         Description: js.UndefOr[XmlStringMaxLen256] = js.undefined,
-        Tags: js.UndefOr[TagList] = js.undefined
+        IdpAuthUrl: js.UndefOr[XmlString] = js.undefined,
+        IdpRelayStateParameterName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        UserRole: js.UndefOr[XmlString] = js.undefined
     ): CreateStudioInput = {
       val __obj = js.Dynamic.literal(
         "AuthMode" -> AuthMode.asInstanceOf[js.Any],
@@ -1025,13 +1059,15 @@ package object emr {
         "Name" -> Name.asInstanceOf[js.Any],
         "ServiceRole" -> ServiceRole.asInstanceOf[js.Any],
         "SubnetIds" -> SubnetIds.asInstanceOf[js.Any],
-        "UserRole" -> UserRole.asInstanceOf[js.Any],
         "VpcId" -> VpcId.asInstanceOf[js.Any],
         "WorkspaceSecurityGroupId" -> WorkspaceSecurityGroupId.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      IdpAuthUrl.foreach(__v => __obj.updateDynamic("IdpAuthUrl")(__v.asInstanceOf[js.Any]))
+      IdpRelayStateParameterName.foreach(__v => __obj.updateDynamic("IdpRelayStateParameterName")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      UserRole.foreach(__v => __obj.updateDynamic("UserRole")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateStudioInput]
     }
   }
@@ -1269,6 +1305,50 @@ package object emr {
       val __obj = js.Dynamic.literal()
       NotebookExecution.foreach(__v => __obj.updateDynamic("NotebookExecution")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeNotebookExecutionOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeReleaseLabelInput extends js.Object {
+    var MaxResults: js.UndefOr[MaxResultsNumber]
+    var NextToken: js.UndefOr[String]
+    var ReleaseLabel: js.UndefOr[String]
+  }
+
+  object DescribeReleaseLabelInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResultsNumber] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        ReleaseLabel: js.UndefOr[String] = js.undefined
+    ): DescribeReleaseLabelInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReleaseLabelInput]
+    }
+  }
+
+  @js.native
+  trait DescribeReleaseLabelOutput extends js.Object {
+    var Applications: js.UndefOr[SimplifiedApplicationList]
+    var NextToken: js.UndefOr[String]
+    var ReleaseLabel: js.UndefOr[String]
+  }
+
+  object DescribeReleaseLabelOutput {
+    @inline
+    def apply(
+        Applications: js.UndefOr[SimplifiedApplicationList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        ReleaseLabel: js.UndefOr[String] = js.undefined
+    ): DescribeReleaseLabelOutput = {
+      val __obj = js.Dynamic.literal()
+      Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ReleaseLabel.foreach(__v => __obj.updateDynamic("ReleaseLabel")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReleaseLabelOutput]
     }
   }
 
@@ -1565,6 +1645,39 @@ package object emr {
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FailureDetails]
+    }
+  }
+
+  @js.native
+  trait GetAutoTerminationPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+  }
+
+  object GetAutoTerminationPolicyInput {
+    @inline
+    def apply(
+        ClusterId: ClusterId
+    ): GetAutoTerminationPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetAutoTerminationPolicyInput]
+    }
+  }
+
+  @js.native
+  trait GetAutoTerminationPolicyOutput extends js.Object {
+    var AutoTerminationPolicy: js.UndefOr[AutoTerminationPolicy]
+  }
+
+  object GetAutoTerminationPolicyOutput {
+    @inline
+    def apply(
+        AutoTerminationPolicy: js.UndefOr[AutoTerminationPolicy] = js.undefined
+    ): GetAutoTerminationPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+      AutoTerminationPolicy.foreach(__v => __obj.updateDynamic("AutoTerminationPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetAutoTerminationPolicyOutput]
     }
   }
 
@@ -2000,6 +2113,7 @@ package object emr {
     var BidPrice: js.UndefOr[String]
     var Configurations: js.UndefOr[ConfigurationList]
     var ConfigurationsVersion: js.UndefOr[Double]
+    var CustomAmiId: js.UndefOr[XmlStringMaxLen256]
     var EbsBlockDevices: js.UndefOr[EbsBlockDeviceList]
     var EbsOptimized: js.UndefOr[BooleanObject]
     var Id: js.UndefOr[InstanceGroupId]
@@ -2022,6 +2136,7 @@ package object emr {
         BidPrice: js.UndefOr[String] = js.undefined,
         Configurations: js.UndefOr[ConfigurationList] = js.undefined,
         ConfigurationsVersion: js.UndefOr[Double] = js.undefined,
+        CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         EbsBlockDevices: js.UndefOr[EbsBlockDeviceList] = js.undefined,
         EbsOptimized: js.UndefOr[BooleanObject] = js.undefined,
         Id: js.UndefOr[InstanceGroupId] = js.undefined,
@@ -2041,6 +2156,7 @@ package object emr {
       BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
       ConfigurationsVersion.foreach(__v => __obj.updateDynamic("ConfigurationsVersion")(__v.asInstanceOf[js.Any]))
+      CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
       EbsBlockDevices.foreach(__v => __obj.updateDynamic("EbsBlockDevices")(__v.asInstanceOf[js.Any]))
       EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
@@ -2068,6 +2184,7 @@ package object emr {
     var AutoScalingPolicy: js.UndefOr[AutoScalingPolicy]
     var BidPrice: js.UndefOr[XmlStringMaxLen256]
     var Configurations: js.UndefOr[ConfigurationList]
+    var CustomAmiId: js.UndefOr[XmlStringMaxLen256]
     var EbsConfiguration: js.UndefOr[EbsConfiguration]
     var Market: js.UndefOr[MarketType]
     var Name: js.UndefOr[XmlStringMaxLen256]
@@ -2082,6 +2199,7 @@ package object emr {
         AutoScalingPolicy: js.UndefOr[AutoScalingPolicy] = js.undefined,
         BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         EbsConfiguration: js.UndefOr[EbsConfiguration] = js.undefined,
         Market: js.UndefOr[MarketType] = js.undefined,
         Name: js.UndefOr[XmlStringMaxLen256] = js.undefined
@@ -2095,6 +2213,7 @@ package object emr {
       AutoScalingPolicy.foreach(__v => __obj.updateDynamic("AutoScalingPolicy")(__v.asInstanceOf[js.Any]))
       BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
       EbsConfiguration.foreach(__v => __obj.updateDynamic("EbsConfiguration")(__v.asInstanceOf[js.Any]))
       Market.foreach(__v => __obj.updateDynamic("Market")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
@@ -2114,6 +2233,7 @@ package object emr {
     var Market: MarketType
     var State: InstanceGroupState
     var BidPrice: js.UndefOr[XmlStringMaxLen256]
+    var CustomAmiId: js.UndefOr[XmlStringMaxLen256]
     var EndDateTime: js.UndefOr[Date]
     var InstanceGroupId: js.UndefOr[XmlStringMaxLen256]
     var LastStateChangeReason: js.UndefOr[XmlString]
@@ -2133,6 +2253,7 @@ package object emr {
         Market: MarketType,
         State: InstanceGroupState,
         BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         EndDateTime: js.UndefOr[Date] = js.undefined,
         InstanceGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         LastStateChangeReason: js.UndefOr[XmlString] = js.undefined,
@@ -2151,6 +2272,7 @@ package object emr {
       )
 
       BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
+      CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
       EndDateTime.foreach(__v => __obj.updateDynamic("EndDateTime")(__v.asInstanceOf[js.Any]))
       InstanceGroupId.foreach(__v => __obj.updateDynamic("InstanceGroupId")(__v.asInstanceOf[js.Any]))
       LastStateChangeReason.foreach(__v => __obj.updateDynamic("LastStateChangeReason")(__v.asInstanceOf[js.Any]))
@@ -2355,7 +2477,7 @@ package object emr {
     }
   }
 
-  /** An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of five instance type configurations in a fleet.
+  /** An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand and Spot target capacities. When you use an allocation strategy, you can include a maximum of 30 instance type configurations for a fleet. For more information about how to use an allocation strategy, see [[https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html|Configure Instance Fleets]]. Without an allocation strategy, you may specify a maximum of five instance type configurations for a fleet.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
     */
@@ -2365,6 +2487,7 @@ package object emr {
     var BidPrice: js.UndefOr[XmlStringMaxLen256]
     var BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble]
     var Configurations: js.UndefOr[ConfigurationList]
+    var CustomAmiId: js.UndefOr[XmlStringMaxLen256]
     var EbsConfiguration: js.UndefOr[EbsConfiguration]
     var WeightedCapacity: js.UndefOr[WholeNumber]
   }
@@ -2376,6 +2499,7 @@ package object emr {
         BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble] = js.undefined,
         Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         EbsConfiguration: js.UndefOr[EbsConfiguration] = js.undefined,
         WeightedCapacity: js.UndefOr[WholeNumber] = js.undefined
     ): InstanceTypeConfig = {
@@ -2386,6 +2510,7 @@ package object emr {
       BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
       BidPriceAsPercentageOfOnDemandPrice.foreach(__v => __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any]))
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
       EbsConfiguration.foreach(__v => __obj.updateDynamic("EbsConfiguration")(__v.asInstanceOf[js.Any]))
       WeightedCapacity.foreach(__v => __obj.updateDynamic("WeightedCapacity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceTypeConfig]
@@ -2401,6 +2526,7 @@ package object emr {
     var BidPrice: js.UndefOr[XmlStringMaxLen256]
     var BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble]
     var Configurations: js.UndefOr[ConfigurationList]
+    var CustomAmiId: js.UndefOr[XmlStringMaxLen256]
     var EbsBlockDevices: js.UndefOr[EbsBlockDeviceList]
     var EbsOptimized: js.UndefOr[BooleanObject]
     var InstanceType: js.UndefOr[InstanceType]
@@ -2413,6 +2539,7 @@ package object emr {
         BidPrice: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         BidPriceAsPercentageOfOnDemandPrice: js.UndefOr[NonNegativeDouble] = js.undefined,
         Configurations: js.UndefOr[ConfigurationList] = js.undefined,
+        CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         EbsBlockDevices: js.UndefOr[EbsBlockDeviceList] = js.undefined,
         EbsOptimized: js.UndefOr[BooleanObject] = js.undefined,
         InstanceType: js.UndefOr[InstanceType] = js.undefined,
@@ -2422,6 +2549,7 @@ package object emr {
       BidPrice.foreach(__v => __obj.updateDynamic("BidPrice")(__v.asInstanceOf[js.Any]))
       BidPriceAsPercentageOfOnDemandPrice.foreach(__v => __obj.updateDynamic("BidPriceAsPercentageOfOnDemandPrice")(__v.asInstanceOf[js.Any]))
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
+      CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
       EbsBlockDevices.foreach(__v => __obj.updateDynamic("EbsBlockDevices")(__v.asInstanceOf[js.Any]))
       EbsOptimized.foreach(__v => __obj.updateDynamic("EbsOptimized")(__v.asInstanceOf[js.Any]))
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
@@ -2985,6 +3113,47 @@ package object emr {
   }
 
   @js.native
+  trait ListReleaseLabelsInput extends js.Object {
+    var Filters: js.UndefOr[ReleaseLabelFilter]
+    var MaxResults: js.UndefOr[MaxResultsNumber]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListReleaseLabelsInput {
+    @inline
+    def apply(
+        Filters: js.UndefOr[ReleaseLabelFilter] = js.undefined,
+        MaxResults: js.UndefOr[MaxResultsNumber] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListReleaseLabelsInput = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReleaseLabelsInput]
+    }
+  }
+
+  @js.native
+  trait ListReleaseLabelsOutput extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var ReleaseLabels: js.UndefOr[StringList]
+  }
+
+  object ListReleaseLabelsOutput {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        ReleaseLabels: js.UndefOr[StringList] = js.undefined
+    ): ListReleaseLabelsOutput = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ReleaseLabels.foreach(__v => __obj.updateDynamic("ReleaseLabels")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReleaseLabelsOutput]
+    }
+  }
+
+  @js.native
   trait ListSecurityConfigurationsInput extends js.Object {
     var Marker: js.UndefOr[Marker]
   }
@@ -3316,7 +3485,7 @@ package object emr {
     }
   }
 
-  /** <p/>
+  /** Details for a notebook execution. The details include information such as the unique ID and status of the notebook execution.
     */
   @js.native
   trait NotebookExecutionSummary extends js.Object {
@@ -3514,6 +3683,38 @@ package object emr {
   }
 
   @js.native
+  trait PutAutoTerminationPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+    var AutoTerminationPolicy: js.UndefOr[AutoTerminationPolicy]
+  }
+
+  object PutAutoTerminationPolicyInput {
+    @inline
+    def apply(
+        ClusterId: ClusterId,
+        AutoTerminationPolicy: js.UndefOr[AutoTerminationPolicy] = js.undefined
+    ): PutAutoTerminationPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      )
+
+      AutoTerminationPolicy.foreach(__v => __obj.updateDynamic("AutoTerminationPolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutAutoTerminationPolicyInput]
+    }
+  }
+
+  @js.native
+  trait PutAutoTerminationPolicyOutput extends js.Object
+
+  object PutAutoTerminationPolicyOutput {
+    @inline
+    def apply(): PutAutoTerminationPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutAutoTerminationPolicyOutput]
+    }
+  }
+
+  @js.native
   trait PutBlockPublicAccessConfigurationInput extends js.Object {
     var BlockPublicAccessConfiguration: BlockPublicAccessConfiguration
   }
@@ -3572,6 +3773,27 @@ package object emr {
     }
   }
 
+  /** The release label filters by application or version prefix.
+    */
+  @js.native
+  trait ReleaseLabelFilter extends js.Object {
+    var Application: js.UndefOr[String]
+    var Prefix: js.UndefOr[String]
+  }
+
+  object ReleaseLabelFilter {
+    @inline
+    def apply(
+        Application: js.UndefOr[String] = js.undefined,
+        Prefix: js.UndefOr[String] = js.undefined
+    ): ReleaseLabelFilter = {
+      val __obj = js.Dynamic.literal()
+      Application.foreach(__v => __obj.updateDynamic("Application")(__v.asInstanceOf[js.Any]))
+      Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReleaseLabelFilter]
+    }
+  }
+
   @js.native
   trait RemoveAutoScalingPolicyInput extends js.Object {
     var ClusterId: ClusterId
@@ -3604,6 +3826,34 @@ package object emr {
   }
 
   @js.native
+  trait RemoveAutoTerminationPolicyInput extends js.Object {
+    var ClusterId: ClusterId
+  }
+
+  object RemoveAutoTerminationPolicyInput {
+    @inline
+    def apply(
+        ClusterId: ClusterId
+    ): RemoveAutoTerminationPolicyInput = {
+      val __obj = js.Dynamic.literal(
+        "ClusterId" -> ClusterId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RemoveAutoTerminationPolicyInput]
+    }
+  }
+
+  @js.native
+  trait RemoveAutoTerminationPolicyOutput extends js.Object
+
+  object RemoveAutoTerminationPolicyOutput {
+    @inline
+    def apply(): RemoveAutoTerminationPolicyOutput = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[RemoveAutoTerminationPolicyOutput]
+    }
+  }
+
+  @js.native
   trait RemoveManagedScalingPolicyInput extends js.Object {
     var ClusterId: ClusterId
   }
@@ -3631,7 +3881,7 @@ package object emr {
     }
   }
 
-  /** This input identifies a cluster and a list of tags to remove.
+  /** This input identifies an Amazon EMR resource and a list of tags to remove.
     */
   @js.native
   trait RemoveTagsInput extends js.Object {
@@ -3653,7 +3903,7 @@ package object emr {
     }
   }
 
-  /** This output indicates the result of removing tags from a resource.
+  /** This output indicates the result of removing tags from the resource.
     */
   @js.native
   trait RemoveTagsOutput extends js.Object
@@ -3676,6 +3926,7 @@ package object emr {
     var AmiVersion: js.UndefOr[XmlStringMaxLen256]
     var Applications: js.UndefOr[ApplicationList]
     var AutoScalingRole: js.UndefOr[XmlString]
+    var AutoTerminationPolicy: js.UndefOr[AutoTerminationPolicy]
     var BootstrapActions: js.UndefOr[BootstrapActionConfigList]
     var Configurations: js.UndefOr[ConfigurationList]
     var CustomAmiId: js.UndefOr[XmlStringMaxLen256]
@@ -3708,6 +3959,7 @@ package object emr {
         AmiVersion: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         Applications: js.UndefOr[ApplicationList] = js.undefined,
         AutoScalingRole: js.UndefOr[XmlString] = js.undefined,
+        AutoTerminationPolicy: js.UndefOr[AutoTerminationPolicy] = js.undefined,
         BootstrapActions: js.UndefOr[BootstrapActionConfigList] = js.undefined,
         Configurations: js.UndefOr[ConfigurationList] = js.undefined,
         CustomAmiId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
@@ -3739,6 +3991,7 @@ package object emr {
       AmiVersion.foreach(__v => __obj.updateDynamic("AmiVersion")(__v.asInstanceOf[js.Any]))
       Applications.foreach(__v => __obj.updateDynamic("Applications")(__v.asInstanceOf[js.Any]))
       AutoScalingRole.foreach(__v => __obj.updateDynamic("AutoScalingRole")(__v.asInstanceOf[js.Any]))
+      AutoTerminationPolicy.foreach(__v => __obj.updateDynamic("AutoTerminationPolicy")(__v.asInstanceOf[js.Any]))
       BootstrapActions.foreach(__v => __obj.updateDynamic("BootstrapActions")(__v.asInstanceOf[js.Any]))
       Configurations.foreach(__v => __obj.updateDynamic("Configurations")(__v.asInstanceOf[js.Any]))
       CustomAmiId.foreach(__v => __obj.updateDynamic("CustomAmiId")(__v.asInstanceOf[js.Any]))
@@ -4082,6 +4335,27 @@ package object emr {
     }
   }
 
+  /** The returned release label application names or versions.
+    */
+  @js.native
+  trait SimplifiedApplication extends js.Object {
+    var Name: js.UndefOr[String]
+    var Version: js.UndefOr[String]
+  }
+
+  object SimplifiedApplication {
+    @inline
+    def apply(
+        Name: js.UndefOr[String] = js.undefined,
+        Version: js.UndefOr[String] = js.undefined
+    ): SimplifiedApplication = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SimplifiedApplication]
+    }
+  }
+
   /** The launch specification for Spot Instances in the instance fleet, which determines the defined duration, provisioning timeout behavior, and allocation strategy.
     *
     * '''Note:'''The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot Instance allocation strategy is available in Amazon EMR version 5.12.1 and later.
@@ -4198,7 +4472,7 @@ package object emr {
     }
   }
 
-  /** Specification of a cluster (job flow) step.
+  /** Specification for a cluster (job flow) step.
     */
   @js.native
   trait StepConfig extends js.Object {
@@ -4406,6 +4680,8 @@ package object emr {
     var DefaultS3Location: js.UndefOr[XmlString]
     var Description: js.UndefOr[XmlStringMaxLen256]
     var EngineSecurityGroupId: js.UndefOr[XmlStringMaxLen256]
+    var IdpAuthUrl: js.UndefOr[XmlString]
+    var IdpRelayStateParameterName: js.UndefOr[XmlStringMaxLen256]
     var Name: js.UndefOr[XmlStringMaxLen256]
     var ServiceRole: js.UndefOr[XmlString]
     var StudioArn: js.UndefOr[XmlStringMaxLen256]
@@ -4426,6 +4702,8 @@ package object emr {
         DefaultS3Location: js.UndefOr[XmlString] = js.undefined,
         Description: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         EngineSecurityGroupId: js.UndefOr[XmlStringMaxLen256] = js.undefined,
+        IdpAuthUrl: js.UndefOr[XmlString] = js.undefined,
+        IdpRelayStateParameterName: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         ServiceRole: js.UndefOr[XmlString] = js.undefined,
         StudioArn: js.UndefOr[XmlStringMaxLen256] = js.undefined,
@@ -4443,6 +4721,8 @@ package object emr {
       DefaultS3Location.foreach(__v => __obj.updateDynamic("DefaultS3Location")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EngineSecurityGroupId.foreach(__v => __obj.updateDynamic("EngineSecurityGroupId")(__v.asInstanceOf[js.Any]))
+      IdpAuthUrl.foreach(__v => __obj.updateDynamic("IdpAuthUrl")(__v.asInstanceOf[js.Any]))
+      IdpRelayStateParameterName.foreach(__v => __obj.updateDynamic("IdpRelayStateParameterName")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       ServiceRole.foreach(__v => __obj.updateDynamic("ServiceRole")(__v.asInstanceOf[js.Any]))
       StudioArn.foreach(__v => __obj.updateDynamic("StudioArn")(__v.asInstanceOf[js.Any]))
@@ -4461,6 +4741,7 @@ package object emr {
     */
   @js.native
   trait StudioSummary extends js.Object {
+    var AuthMode: js.UndefOr[AuthMode]
     var CreationTime: js.UndefOr[Date]
     var Description: js.UndefOr[XmlStringMaxLen256]
     var Name: js.UndefOr[XmlStringMaxLen256]
@@ -4472,6 +4753,7 @@ package object emr {
   object StudioSummary {
     @inline
     def apply(
+        AuthMode: js.UndefOr[AuthMode] = js.undefined,
         CreationTime: js.UndefOr[Date] = js.undefined,
         Description: js.UndefOr[XmlStringMaxLen256] = js.undefined,
         Name: js.UndefOr[XmlStringMaxLen256] = js.undefined,
@@ -4480,6 +4762,7 @@ package object emr {
         VpcId: js.UndefOr[XmlStringMaxLen256] = js.undefined
     ): StudioSummary = {
       val __obj = js.Dynamic.literal()
+      AuthMode.foreach(__v => __obj.updateDynamic("AuthMode")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))

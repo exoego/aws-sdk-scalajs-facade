@@ -10,6 +10,11 @@ import facade.amazonaws._
 package object lookoutvision {
   type AnomalyClassFilter = String
   type ClientToken = String
+  type CompilerOptions = String
+  type ComponentDescription = String
+  type ComponentName = String
+  type ComponentVersion = String
+  type ComponentVersionArn = String
   type ContentType = String
   type DatasetChanges = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type DatasetEntry = String
@@ -25,8 +30,14 @@ package object lookoutvision {
   type ModelArn = String
   type ModelDescriptionMessage = String
   type ModelMetadataList = js.Array[ModelMetadata]
+  type ModelPackagingJobDescription = String
+  type ModelPackagingJobName = String
+  type ModelPackagingJobsList = js.Array[ModelPackagingJobMetadata]
+  type ModelPackagingMethod = String
+  type ModelPackagingStatusMessage = String
   type ModelStatusMessage = String
   type ModelVersion = String
+  type ModelVersionNoLatest = String
   type PageSize = Int
   type PaginationToken = String
   type ProjectArn = String
@@ -54,13 +65,16 @@ package object lookoutvision {
     @inline def deleteProjectFuture(params: DeleteProjectRequest): Future[DeleteProjectResponse] = service.deleteProject(params).promise().toFuture
     @inline def describeDatasetFuture(params: DescribeDatasetRequest): Future[DescribeDatasetResponse] = service.describeDataset(params).promise().toFuture
     @inline def describeModelFuture(params: DescribeModelRequest): Future[DescribeModelResponse] = service.describeModel(params).promise().toFuture
+    @inline def describeModelPackagingJobFuture(params: DescribeModelPackagingJobRequest): Future[DescribeModelPackagingJobResponse] = service.describeModelPackagingJob(params).promise().toFuture
     @inline def describeProjectFuture(params: DescribeProjectRequest): Future[DescribeProjectResponse] = service.describeProject(params).promise().toFuture
     @inline def detectAnomaliesFuture(params: DetectAnomaliesRequest): Future[DetectAnomaliesResponse] = service.detectAnomalies(params).promise().toFuture
     @inline def listDatasetEntriesFuture(params: ListDatasetEntriesRequest): Future[ListDatasetEntriesResponse] = service.listDatasetEntries(params).promise().toFuture
+    @inline def listModelPackagingJobsFuture(params: ListModelPackagingJobsRequest): Future[ListModelPackagingJobsResponse] = service.listModelPackagingJobs(params).promise().toFuture
     @inline def listModelsFuture(params: ListModelsRequest): Future[ListModelsResponse] = service.listModels(params).promise().toFuture
     @inline def listProjectsFuture(params: ListProjectsRequest): Future[ListProjectsResponse] = service.listProjects(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def startModelFuture(params: StartModelRequest): Future[StartModelResponse] = service.startModel(params).promise().toFuture
+    @inline def startModelPackagingJobFuture(params: StartModelPackagingJobRequest): Future[StartModelPackagingJobResponse] = service.startModelPackagingJob(params).promise().toFuture
     @inline def stopModelFuture(params: StopModelRequest): Future[StopModelResponse] = service.stopModel(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
@@ -81,13 +95,16 @@ package object lookoutvision {
     def deleteProject(params: DeleteProjectRequest): Request[DeleteProjectResponse] = js.native
     def describeDataset(params: DescribeDatasetRequest): Request[DescribeDatasetResponse] = js.native
     def describeModel(params: DescribeModelRequest): Request[DescribeModelResponse] = js.native
+    def describeModelPackagingJob(params: DescribeModelPackagingJobRequest): Request[DescribeModelPackagingJobResponse] = js.native
     def describeProject(params: DescribeProjectRequest): Request[DescribeProjectResponse] = js.native
     def detectAnomalies(params: DetectAnomaliesRequest): Request[DetectAnomaliesResponse] = js.native
     def listDatasetEntries(params: ListDatasetEntriesRequest): Request[ListDatasetEntriesResponse] = js.native
+    def listModelPackagingJobs(params: ListModelPackagingJobsRequest): Request[ListModelPackagingJobsResponse] = js.native
     def listModels(params: ListModelsRequest): Request[ListModelsResponse] = js.native
     def listProjects(params: ListProjectsRequest): Request[ListProjectsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def startModel(params: StartModelRequest): Request[StartModelResponse] = js.native
+    def startModelPackagingJob(params: StartModelPackagingJobRequest): Request[StartModelPackagingJobResponse] = js.native
     def stopModel(params: StopModelRequest): Request[StopModelResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
@@ -309,7 +326,7 @@ package object lookoutvision {
     }
   }
 
-  /** Sumary information for an Amazon Lookout for Vision dataset.
+  /** Summary information for an Amazon Lookout for Vision dataset. For more information, see <a>DescribeDataset</a> and <a>ProjectDescription</a>.
     */
   @js.native
   trait DatasetMetadata extends js.Object {
@@ -391,7 +408,7 @@ package object lookoutvision {
 
   @js.native
   trait DeleteModelRequest extends js.Object {
-    var ModelVersion: ModelVersion
+    var ModelVersion: ModelVersionNoLatest
     var ProjectName: ProjectName
     var ClientToken: js.UndefOr[ClientToken]
   }
@@ -399,7 +416,7 @@ package object lookoutvision {
   object DeleteModelRequest {
     @inline
     def apply(
-        ModelVersion: ModelVersion,
+        ModelVersion: ModelVersionNoLatest,
         ProjectName: ProjectName,
         ClientToken: js.UndefOr[ClientToken] = js.undefined
     ): DeleteModelRequest = {
@@ -499,6 +516,42 @@ package object lookoutvision {
       val __obj = js.Dynamic.literal()
       DatasetDescription.foreach(__v => __obj.updateDynamic("DatasetDescription")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeDatasetResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeModelPackagingJobRequest extends js.Object {
+    var JobName: ModelPackagingJobName
+    var ProjectName: ProjectName
+  }
+
+  object DescribeModelPackagingJobRequest {
+    @inline
+    def apply(
+        JobName: ModelPackagingJobName,
+        ProjectName: ProjectName
+    ): DescribeModelPackagingJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobName" -> JobName.asInstanceOf[js.Any],
+        "ProjectName" -> ProjectName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeModelPackagingJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeModelPackagingJobResponse extends js.Object {
+    var ModelPackagingDescription: js.UndefOr[ModelPackagingDescription]
+  }
+
+  object DescribeModelPackagingJobResponse {
+    @inline
+    def apply(
+        ModelPackagingDescription: js.UndefOr[ModelPackagingDescription] = js.undefined
+    ): DescribeModelPackagingJobResponse = {
+      val __obj = js.Dynamic.literal()
+      ModelPackagingDescription.foreach(__v => __obj.updateDynamic("ModelPackagingDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeModelPackagingJobResponse]
     }
   }
 
@@ -637,6 +690,73 @@ package object lookoutvision {
     }
   }
 
+  /** Configuration information for the AWS IoT Greengrass component created in a model packaging job. For more information, see <a>StartModelPackagingJob</a>.
+    *
+    * '''Note:'''You can't specify a component with the same <code>ComponentName</code> and <code>Componentversion</code> as an existing component with the same component name and component version.
+    */
+  @js.native
+  trait GreengrassConfiguration extends js.Object {
+    var CompilerOptions: CompilerOptions
+    var ComponentName: ComponentName
+    var S3OutputLocation: S3Location
+    var ComponentDescription: js.UndefOr[ComponentDescription]
+    var ComponentVersion: js.UndefOr[ComponentVersion]
+    var Tags: js.UndefOr[TagList]
+    var TargetDevice: js.UndefOr[TargetDevice]
+    var TargetPlatform: js.UndefOr[TargetPlatform]
+  }
+
+  object GreengrassConfiguration {
+    @inline
+    def apply(
+        CompilerOptions: CompilerOptions,
+        ComponentName: ComponentName,
+        S3OutputLocation: S3Location,
+        ComponentDescription: js.UndefOr[ComponentDescription] = js.undefined,
+        ComponentVersion: js.UndefOr[ComponentVersion] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        TargetDevice: js.UndefOr[TargetDevice] = js.undefined,
+        TargetPlatform: js.UndefOr[TargetPlatform] = js.undefined
+    ): GreengrassConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "CompilerOptions" -> CompilerOptions.asInstanceOf[js.Any],
+        "ComponentName" -> ComponentName.asInstanceOf[js.Any],
+        "S3OutputLocation" -> S3OutputLocation.asInstanceOf[js.Any]
+      )
+
+      ComponentDescription.foreach(__v => __obj.updateDynamic("ComponentDescription")(__v.asInstanceOf[js.Any]))
+      ComponentVersion.foreach(__v => __obj.updateDynamic("ComponentVersion")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      TargetDevice.foreach(__v => __obj.updateDynamic("TargetDevice")(__v.asInstanceOf[js.Any]))
+      TargetPlatform.foreach(__v => __obj.updateDynamic("TargetPlatform")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GreengrassConfiguration]
+    }
+  }
+
+  /** Information about the AWS IoT Greengrass component created by a model packaging job.
+    */
+  @js.native
+  trait GreengrassOutputDetails extends js.Object {
+    var ComponentName: js.UndefOr[ComponentName]
+    var ComponentVersion: js.UndefOr[ComponentVersion]
+    var ComponentVersionArn: js.UndefOr[ComponentVersionArn]
+  }
+
+  object GreengrassOutputDetails {
+    @inline
+    def apply(
+        ComponentName: js.UndefOr[ComponentName] = js.undefined,
+        ComponentVersion: js.UndefOr[ComponentVersion] = js.undefined,
+        ComponentVersionArn: js.UndefOr[ComponentVersionArn] = js.undefined
+    ): GreengrassOutputDetails = {
+      val __obj = js.Dynamic.literal()
+      ComponentName.foreach(__v => __obj.updateDynamic("ComponentName")(__v.asInstanceOf[js.Any]))
+      ComponentVersion.foreach(__v => __obj.updateDynamic("ComponentVersion")(__v.asInstanceOf[js.Any]))
+      ComponentVersionArn.foreach(__v => __obj.updateDynamic("ComponentVersionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GreengrassOutputDetails]
+    }
+  }
+
   /** The source for an image.
     */
   @js.native
@@ -739,6 +859,49 @@ package object lookoutvision {
       DatasetEntries.foreach(__v => __obj.updateDynamic("DatasetEntries")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListDatasetEntriesResponse]
+    }
+  }
+
+  @js.native
+  trait ListModelPackagingJobsRequest extends js.Object {
+    var ProjectName: ProjectName
+    var MaxResults: js.UndefOr[PageSize]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListModelPackagingJobsRequest {
+    @inline
+    def apply(
+        ProjectName: ProjectName,
+        MaxResults: js.UndefOr[PageSize] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListModelPackagingJobsRequest = {
+      val __obj = js.Dynamic.literal(
+        "ProjectName" -> ProjectName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListModelPackagingJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListModelPackagingJobsResponse extends js.Object {
+    var ModelPackagingJobs: js.UndefOr[ModelPackagingJobsList]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object ListModelPackagingJobsResponse {
+    @inline
+    def apply(
+        ModelPackagingJobs: js.UndefOr[ModelPackagingJobsList] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): ListModelPackagingJobsResponse = {
+      val __obj = js.Dynamic.literal()
+      ModelPackagingJobs.foreach(__v => __obj.updateDynamic("ModelPackagingJobs")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListModelPackagingJobsResponse]
     }
   }
 
@@ -943,6 +1106,133 @@ package object lookoutvision {
     }
   }
 
+  /** Configuration information for a Amazon Lookout for Vision model packaging job. For more information, see <a>StartModelPackagingJob</a>.
+    */
+  @js.native
+  trait ModelPackagingConfiguration extends js.Object {
+    var Greengrass: GreengrassConfiguration
+  }
+
+  object ModelPackagingConfiguration {
+    @inline
+    def apply(
+        Greengrass: GreengrassConfiguration
+    ): ModelPackagingConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "Greengrass" -> Greengrass.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ModelPackagingConfiguration]
+    }
+  }
+
+  /** Information about a model packaging job. For more information, see <a>DescribeModelPackagingJob</a>.
+    */
+  @js.native
+  trait ModelPackagingDescription extends js.Object {
+    var CreationTimestamp: js.UndefOr[DateTime]
+    var JobName: js.UndefOr[ModelPackagingJobName]
+    var LastUpdatedTimestamp: js.UndefOr[DateTime]
+    var ModelPackagingConfiguration: js.UndefOr[ModelPackagingConfiguration]
+    var ModelPackagingJobDescription: js.UndefOr[ModelPackagingJobDescription]
+    var ModelPackagingMethod: js.UndefOr[ModelPackagingMethod]
+    var ModelPackagingOutputDetails: js.UndefOr[ModelPackagingOutputDetails]
+    var ModelVersion: js.UndefOr[ModelVersion]
+    var ProjectName: js.UndefOr[ProjectName]
+    var Status: js.UndefOr[ModelPackagingJobStatus]
+    var StatusMessage: js.UndefOr[ModelPackagingStatusMessage]
+  }
+
+  object ModelPackagingDescription {
+    @inline
+    def apply(
+        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
+        JobName: js.UndefOr[ModelPackagingJobName] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[DateTime] = js.undefined,
+        ModelPackagingConfiguration: js.UndefOr[ModelPackagingConfiguration] = js.undefined,
+        ModelPackagingJobDescription: js.UndefOr[ModelPackagingJobDescription] = js.undefined,
+        ModelPackagingMethod: js.UndefOr[ModelPackagingMethod] = js.undefined,
+        ModelPackagingOutputDetails: js.UndefOr[ModelPackagingOutputDetails] = js.undefined,
+        ModelVersion: js.UndefOr[ModelVersion] = js.undefined,
+        ProjectName: js.UndefOr[ProjectName] = js.undefined,
+        Status: js.UndefOr[ModelPackagingJobStatus] = js.undefined,
+        StatusMessage: js.UndefOr[ModelPackagingStatusMessage] = js.undefined
+    ): ModelPackagingDescription = {
+      val __obj = js.Dynamic.literal()
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      ModelPackagingConfiguration.foreach(__v => __obj.updateDynamic("ModelPackagingConfiguration")(__v.asInstanceOf[js.Any]))
+      ModelPackagingJobDescription.foreach(__v => __obj.updateDynamic("ModelPackagingJobDescription")(__v.asInstanceOf[js.Any]))
+      ModelPackagingMethod.foreach(__v => __obj.updateDynamic("ModelPackagingMethod")(__v.asInstanceOf[js.Any]))
+      ModelPackagingOutputDetails.foreach(__v => __obj.updateDynamic("ModelPackagingOutputDetails")(__v.asInstanceOf[js.Any]))
+      ModelVersion.foreach(__v => __obj.updateDynamic("ModelVersion")(__v.asInstanceOf[js.Any]))
+      ProjectName.foreach(__v => __obj.updateDynamic("ProjectName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModelPackagingDescription]
+    }
+  }
+
+  /** Metadata for a model packaging job. For more information, see <a>ListModelPackagingJobs</a>.
+    */
+  @js.native
+  trait ModelPackagingJobMetadata extends js.Object {
+    var CreationTimestamp: js.UndefOr[DateTime]
+    var JobName: js.UndefOr[ModelPackagingJobName]
+    var LastUpdatedTimestamp: js.UndefOr[DateTime]
+    var ModelPackagingJobDescription: js.UndefOr[ModelPackagingJobDescription]
+    var ModelPackagingMethod: js.UndefOr[ModelPackagingMethod]
+    var ModelVersion: js.UndefOr[ModelVersion]
+    var ProjectName: js.UndefOr[ProjectName]
+    var Status: js.UndefOr[ModelPackagingJobStatus]
+    var StatusMessage: js.UndefOr[ModelPackagingStatusMessage]
+  }
+
+  object ModelPackagingJobMetadata {
+    @inline
+    def apply(
+        CreationTimestamp: js.UndefOr[DateTime] = js.undefined,
+        JobName: js.UndefOr[ModelPackagingJobName] = js.undefined,
+        LastUpdatedTimestamp: js.UndefOr[DateTime] = js.undefined,
+        ModelPackagingJobDescription: js.UndefOr[ModelPackagingJobDescription] = js.undefined,
+        ModelPackagingMethod: js.UndefOr[ModelPackagingMethod] = js.undefined,
+        ModelVersion: js.UndefOr[ModelVersion] = js.undefined,
+        ProjectName: js.UndefOr[ProjectName] = js.undefined,
+        Status: js.UndefOr[ModelPackagingJobStatus] = js.undefined,
+        StatusMessage: js.UndefOr[ModelPackagingStatusMessage] = js.undefined
+    ): ModelPackagingJobMetadata = {
+      val __obj = js.Dynamic.literal()
+      CreationTimestamp.foreach(__v => __obj.updateDynamic("CreationTimestamp")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      LastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      ModelPackagingJobDescription.foreach(__v => __obj.updateDynamic("ModelPackagingJobDescription")(__v.asInstanceOf[js.Any]))
+      ModelPackagingMethod.foreach(__v => __obj.updateDynamic("ModelPackagingMethod")(__v.asInstanceOf[js.Any]))
+      ModelVersion.foreach(__v => __obj.updateDynamic("ModelVersion")(__v.asInstanceOf[js.Any]))
+      ProjectName.foreach(__v => __obj.updateDynamic("ProjectName")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModelPackagingJobMetadata]
+    }
+  }
+
+  /** Information about the output from a model packaging job.
+    */
+  @js.native
+  trait ModelPackagingOutputDetails extends js.Object {
+    var Greengrass: js.UndefOr[GreengrassOutputDetails]
+  }
+
+  object ModelPackagingOutputDetails {
+    @inline
+    def apply(
+        Greengrass: js.UndefOr[GreengrassOutputDetails] = js.undefined
+    ): ModelPackagingOutputDetails = {
+      val __obj = js.Dynamic.literal()
+      Greengrass.foreach(__v => __obj.updateDynamic("Greengrass")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModelPackagingOutputDetails]
+    }
+  }
+
   /** Information about the evaluation performance of a trained model.
     */
   @js.native
@@ -1059,7 +1349,7 @@ package object lookoutvision {
     }
   }
 
-  /** Information about the location training output.
+  /** Information about the location of training output or the output of a model packaging job.
     */
   @js.native
   trait S3Location extends js.Object {
@@ -1079,6 +1369,55 @@ package object lookoutvision {
 
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Location]
+    }
+  }
+
+  @js.native
+  trait StartModelPackagingJobRequest extends js.Object {
+    var Configuration: ModelPackagingConfiguration
+    var ModelVersion: ModelVersion
+    var ProjectName: ProjectName
+    var ClientToken: js.UndefOr[ClientToken]
+    var Description: js.UndefOr[ModelPackagingJobDescription]
+    var JobName: js.UndefOr[ModelPackagingJobName]
+  }
+
+  object StartModelPackagingJobRequest {
+    @inline
+    def apply(
+        Configuration: ModelPackagingConfiguration,
+        ModelVersion: ModelVersion,
+        ProjectName: ProjectName,
+        ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        Description: js.UndefOr[ModelPackagingJobDescription] = js.undefined,
+        JobName: js.UndefOr[ModelPackagingJobName] = js.undefined
+    ): StartModelPackagingJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "Configuration" -> Configuration.asInstanceOf[js.Any],
+        "ModelVersion" -> ModelVersion.asInstanceOf[js.Any],
+        "ProjectName" -> ProjectName.asInstanceOf[js.Any]
+      )
+
+      ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartModelPackagingJobRequest]
+    }
+  }
+
+  @js.native
+  trait StartModelPackagingJobResponse extends js.Object {
+    var JobName: js.UndefOr[ModelPackagingJobName]
+  }
+
+  object StartModelPackagingJobResponse {
+    @inline
+    def apply(
+        JobName: js.UndefOr[ModelPackagingJobName] = js.undefined
+    ): StartModelPackagingJobResponse = {
+      val __obj = js.Dynamic.literal()
+      JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartModelPackagingJobResponse]
     }
   }
 
@@ -1215,6 +1554,31 @@ package object lookoutvision {
     def apply(): TagResourceResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** The platform on which a model runs on an AWS IoT Greengrass core device.
+    */
+  @js.native
+  trait TargetPlatform extends js.Object {
+    var Accelerator: TargetPlatformAccelerator
+    var Arch: TargetPlatformArch
+    var Os: TargetPlatformOs
+  }
+
+  object TargetPlatform {
+    @inline
+    def apply(
+        Accelerator: TargetPlatformAccelerator,
+        Arch: TargetPlatformArch,
+        Os: TargetPlatformOs
+    ): TargetPlatform = {
+      val __obj = js.Dynamic.literal(
+        "Accelerator" -> Accelerator.asInstanceOf[js.Any],
+        "Arch" -> Arch.asInstanceOf[js.Any],
+        "Os" -> Os.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TargetPlatform]
     }
   }
 

@@ -8,6 +8,7 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object cloudwatch {
+  type AccountId = String
   type ActionPrefix = String
   type ActionsEnabled = Boolean
   type AlarmArn = String
@@ -22,6 +23,7 @@ package object cloudwatch {
   type AnomalyDetectorExcludedTimeRanges = js.Array[Range]
   type AnomalyDetectorMetricStat = String
   type AnomalyDetectorMetricTimezone = String
+  type AnomalyDetectorTypes = js.Array[AnomalyDetectorType]
   type AnomalyDetectors = js.Array[AnomalyDetector]
   type BatchFailures = js.Array[PartialFailure]
   type CompositeAlarms = js.Array[CompositeAlarm]
@@ -245,14 +247,16 @@ package object cloudwatch {
     }
   }
 
-  /** An anomaly detection model associated with a particular CloudWatch metric and statistic. You can use the model to display a band of expected normal values when the metric is graphed.
+  /** An anomaly detection model associated with a particular CloudWatch metric, statistic, or metric math expression. You can use the model to display a band of expected, normal values when the metric is graphed.
     */
   @js.native
   trait AnomalyDetector extends js.Object {
     var Configuration: js.UndefOr[AnomalyDetectorConfiguration]
     var Dimensions: js.UndefOr[Dimensions]
+    var MetricMathAnomalyDetector: js.UndefOr[MetricMathAnomalyDetector]
     var MetricName: js.UndefOr[MetricName]
     var Namespace: js.UndefOr[Namespace]
+    var SingleMetricAnomalyDetector: js.UndefOr[SingleMetricAnomalyDetector]
     var Stat: js.UndefOr[AnomalyDetectorMetricStat]
     var StateValue: js.UndefOr[AnomalyDetectorStateValue]
   }
@@ -262,16 +266,20 @@ package object cloudwatch {
     def apply(
         Configuration: js.UndefOr[AnomalyDetectorConfiguration] = js.undefined,
         Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        MetricMathAnomalyDetector: js.UndefOr[MetricMathAnomalyDetector] = js.undefined,
         MetricName: js.UndefOr[MetricName] = js.undefined,
         Namespace: js.UndefOr[Namespace] = js.undefined,
+        SingleMetricAnomalyDetector: js.UndefOr[SingleMetricAnomalyDetector] = js.undefined,
         Stat: js.UndefOr[AnomalyDetectorMetricStat] = js.undefined,
         StateValue: js.UndefOr[AnomalyDetectorStateValue] = js.undefined
     ): AnomalyDetector = {
       val __obj = js.Dynamic.literal()
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      MetricMathAnomalyDetector.foreach(__v => __obj.updateDynamic("MetricMathAnomalyDetector")(__v.asInstanceOf[js.Any]))
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
       Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      SingleMetricAnomalyDetector.foreach(__v => __obj.updateDynamic("SingleMetricAnomalyDetector")(__v.asInstanceOf[js.Any]))
       Stat.foreach(__v => __obj.updateDynamic("Stat")(__v.asInstanceOf[js.Any]))
       StateValue.foreach(__v => __obj.updateDynamic("StateValue")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnomalyDetector]
@@ -459,27 +467,31 @@ package object cloudwatch {
 
   @js.native
   trait DeleteAnomalyDetectorInput extends js.Object {
-    var MetricName: MetricName
-    var Namespace: Namespace
-    var Stat: AnomalyDetectorMetricStat
     var Dimensions: js.UndefOr[Dimensions]
+    var MetricMathAnomalyDetector: js.UndefOr[MetricMathAnomalyDetector]
+    var MetricName: js.UndefOr[MetricName]
+    var Namespace: js.UndefOr[Namespace]
+    var SingleMetricAnomalyDetector: js.UndefOr[SingleMetricAnomalyDetector]
+    var Stat: js.UndefOr[AnomalyDetectorMetricStat]
   }
 
   object DeleteAnomalyDetectorInput {
     @inline
     def apply(
-        MetricName: MetricName,
-        Namespace: Namespace,
-        Stat: AnomalyDetectorMetricStat,
-        Dimensions: js.UndefOr[Dimensions] = js.undefined
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        MetricMathAnomalyDetector: js.UndefOr[MetricMathAnomalyDetector] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        SingleMetricAnomalyDetector: js.UndefOr[SingleMetricAnomalyDetector] = js.undefined,
+        Stat: js.UndefOr[AnomalyDetectorMetricStat] = js.undefined
     ): DeleteAnomalyDetectorInput = {
-      val __obj = js.Dynamic.literal(
-        "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace" -> Namespace.asInstanceOf[js.Any],
-        "Stat" -> Stat.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      MetricMathAnomalyDetector.foreach(__v => __obj.updateDynamic("MetricMathAnomalyDetector")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      SingleMetricAnomalyDetector.foreach(__v => __obj.updateDynamic("SingleMetricAnomalyDetector")(__v.asInstanceOf[js.Any]))
+      Stat.foreach(__v => __obj.updateDynamic("Stat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteAnomalyDetectorInput]
     }
   }
@@ -756,6 +768,7 @@ package object cloudwatch {
 
   @js.native
   trait DescribeAnomalyDetectorsInput extends js.Object {
+    var AnomalyDetectorTypes: js.UndefOr[AnomalyDetectorTypes]
     var Dimensions: js.UndefOr[Dimensions]
     var MaxResults: js.UndefOr[MaxReturnedResultsCount]
     var MetricName: js.UndefOr[MetricName]
@@ -766,6 +779,7 @@ package object cloudwatch {
   object DescribeAnomalyDetectorsInput {
     @inline
     def apply(
+        AnomalyDetectorTypes: js.UndefOr[AnomalyDetectorTypes] = js.undefined,
         Dimensions: js.UndefOr[Dimensions] = js.undefined,
         MaxResults: js.UndefOr[MaxReturnedResultsCount] = js.undefined,
         MetricName: js.UndefOr[MetricName] = js.undefined,
@@ -773,6 +787,7 @@ package object cloudwatch {
         NextToken: js.UndefOr[NextToken] = js.undefined
     ): DescribeAnomalyDetectorsInput = {
       val __obj = js.Dynamic.literal()
+      AnomalyDetectorTypes.foreach(__v => __obj.updateDynamic("AnomalyDetectorTypes")(__v.asInstanceOf[js.Any]))
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
@@ -1306,7 +1321,7 @@ package object cloudwatch {
     }
   }
 
-  /** This structure contains the definition for a Contributor Insights rule.
+  /** This structure contains the definition for a Contributor Insights rule. For more information about this rule, see[[https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html| Using Constributor Insights to analyze high-cardinality data]] in the <i>Amazon CloudWatch User Guide</i>.
     */
   @js.native
   trait InsightRule extends js.Object {
@@ -1596,7 +1611,7 @@ package object cloudwatch {
     }
   }
 
-  /** A message returned by the <code>GetMetricData</code>API, including a code and a description.
+  /** A message returned by the <code>GetMetricData</code>API, including a code and a description. If a cross-Region <code>GetMetricData</code> operation fails with a code of <code>Forbidden</code> and a value of <code>Authentication too complex to retrieve cross region data</code>, you can correct the problem by running the <code>GetMetricData</code> operation in the same Region where the metric data is.
     */
   @js.native
   trait MessageData extends js.Object {
@@ -1743,6 +1758,7 @@ package object cloudwatch {
   @js.native
   trait MetricDataQuery extends js.Object {
     var Id: MetricId
+    var AccountId: js.UndefOr[AccountId]
     var Expression: js.UndefOr[MetricExpression]
     var Label: js.UndefOr[MetricLabel]
     var MetricStat: js.UndefOr[MetricStat]
@@ -1754,6 +1770,7 @@ package object cloudwatch {
     @inline
     def apply(
         Id: MetricId,
+        AccountId: js.UndefOr[AccountId] = js.undefined,
         Expression: js.UndefOr[MetricExpression] = js.undefined,
         Label: js.UndefOr[MetricLabel] = js.undefined,
         MetricStat: js.UndefOr[MetricStat] = js.undefined,
@@ -1764,6 +1781,7 @@ package object cloudwatch {
         "Id" -> Id.asInstanceOf[js.Any]
       )
 
+      AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       Expression.foreach(__v => __obj.updateDynamic("Expression")(__v.asInstanceOf[js.Any]))
       Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
       MetricStat.foreach(__v => __obj.updateDynamic("MetricStat")(__v.asInstanceOf[js.Any]))
@@ -1847,6 +1865,24 @@ package object cloudwatch {
       Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
       Values.foreach(__v => __obj.updateDynamic("Values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricDatum]
+    }
+  }
+
+  /** Indicates the CloudWatch math expression that provides the time series the anomaly detector uses as input. The designated math expression must return a single time series.
+    */
+  @js.native
+  trait MetricMathAnomalyDetector extends js.Object {
+    var MetricDataQueries: js.UndefOr[MetricDataQueries]
+  }
+
+  object MetricMathAnomalyDetector {
+    @inline
+    def apply(
+        MetricDataQueries: js.UndefOr[MetricDataQueries] = js.undefined
+    ): MetricMathAnomalyDetector = {
+      val __obj = js.Dynamic.literal()
+      MetricDataQueries.foreach(__v => __obj.updateDynamic("MetricDataQueries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricMathAnomalyDetector]
     }
   }
 
@@ -1962,30 +1998,34 @@ package object cloudwatch {
 
   @js.native
   trait PutAnomalyDetectorInput extends js.Object {
-    var MetricName: MetricName
-    var Namespace: Namespace
-    var Stat: AnomalyDetectorMetricStat
     var Configuration: js.UndefOr[AnomalyDetectorConfiguration]
     var Dimensions: js.UndefOr[Dimensions]
+    var MetricMathAnomalyDetector: js.UndefOr[MetricMathAnomalyDetector]
+    var MetricName: js.UndefOr[MetricName]
+    var Namespace: js.UndefOr[Namespace]
+    var SingleMetricAnomalyDetector: js.UndefOr[SingleMetricAnomalyDetector]
+    var Stat: js.UndefOr[AnomalyDetectorMetricStat]
   }
 
   object PutAnomalyDetectorInput {
     @inline
     def apply(
-        MetricName: MetricName,
-        Namespace: Namespace,
-        Stat: AnomalyDetectorMetricStat,
         Configuration: js.UndefOr[AnomalyDetectorConfiguration] = js.undefined,
-        Dimensions: js.UndefOr[Dimensions] = js.undefined
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        MetricMathAnomalyDetector: js.UndefOr[MetricMathAnomalyDetector] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        SingleMetricAnomalyDetector: js.UndefOr[SingleMetricAnomalyDetector] = js.undefined,
+        Stat: js.UndefOr[AnomalyDetectorMetricStat] = js.undefined
     ): PutAnomalyDetectorInput = {
-      val __obj = js.Dynamic.literal(
-        "MetricName" -> MetricName.asInstanceOf[js.Any],
-        "Namespace" -> Namespace.asInstanceOf[js.Any],
-        "Stat" -> Stat.asInstanceOf[js.Any]
-      )
-
+      val __obj = js.Dynamic.literal()
       Configuration.foreach(__v => __obj.updateDynamic("Configuration")(__v.asInstanceOf[js.Any]))
       Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      MetricMathAnomalyDetector.foreach(__v => __obj.updateDynamic("MetricMathAnomalyDetector")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      SingleMetricAnomalyDetector.foreach(__v => __obj.updateDynamic("SingleMetricAnomalyDetector")(__v.asInstanceOf[js.Any]))
+      Stat.foreach(__v => __obj.updateDynamic("Stat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutAnomalyDetectorInput]
     }
   }
@@ -2313,6 +2353,33 @@ package object cloudwatch {
 
       StateReasonData.foreach(__v => __obj.updateDynamic("StateReasonData")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SetAlarmStateInput]
+    }
+  }
+
+  /** Designates the CloudWatch metric and statistic that provides the time series the anomaly detector uses as input.
+    */
+  @js.native
+  trait SingleMetricAnomalyDetector extends js.Object {
+    var Dimensions: js.UndefOr[Dimensions]
+    var MetricName: js.UndefOr[MetricName]
+    var Namespace: js.UndefOr[Namespace]
+    var Stat: js.UndefOr[AnomalyDetectorMetricStat]
+  }
+
+  object SingleMetricAnomalyDetector {
+    @inline
+    def apply(
+        Dimensions: js.UndefOr[Dimensions] = js.undefined,
+        MetricName: js.UndefOr[MetricName] = js.undefined,
+        Namespace: js.UndefOr[Namespace] = js.undefined,
+        Stat: js.UndefOr[AnomalyDetectorMetricStat] = js.undefined
+    ): SingleMetricAnomalyDetector = {
+      val __obj = js.Dynamic.literal()
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Namespace.foreach(__v => __obj.updateDynamic("Namespace")(__v.asInstanceOf[js.Any]))
+      Stat.foreach(__v => __obj.updateDynamic("Stat")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SingleMetricAnomalyDetector]
     }
   }
 

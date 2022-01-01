@@ -117,6 +117,7 @@ package object ssm {
   type DocumentARN = String
   type DocumentAuthor = String
   type DocumentContent = String
+  type DocumentDisplayName = String
   type DocumentFilterList = js.Array[DocumentFilter]
   type DocumentFilterValue = String
   type DocumentHash = String
@@ -267,6 +268,7 @@ package object ssm {
   type MaxErrors = String
   type MaxResults = Int
   type MaxResultsEC2Compatible = Int
+  type MaxSessionDuration = String
   type MetadataKey = String
   type MetadataKeysToDeleteList = js.Array[MetadataKey]
   type MetadataMap = js.Dictionary[MetadataValue]
@@ -311,6 +313,15 @@ package object ssm {
   type OpsItemOperationalData = js.Dictionary[OpsItemDataValue]
   type OpsItemOpsDataKeysList = js.Array[String]
   type OpsItemPriority = Int
+  type OpsItemRelatedItemAssociationId = String
+  type OpsItemRelatedItemAssociationResourceType = String
+  type OpsItemRelatedItemAssociationResourceUri = String
+  type OpsItemRelatedItemAssociationType = String
+  type OpsItemRelatedItemSummaries = js.Array[OpsItemRelatedItemSummary]
+  type OpsItemRelatedItemsFilterValue = String
+  type OpsItemRelatedItemsFilterValues = js.Array[OpsItemRelatedItemsFilterValue]
+  type OpsItemRelatedItemsFilters = js.Array[OpsItemRelatedItemsFilter]
+  type OpsItemRelatedItemsMaxResults = Int
   type OpsItemSeverity = String
   type OpsItemSource = String
   type OpsItemSummaries = js.Array[OpsItemSummary]
@@ -422,6 +433,9 @@ package object ssm {
   type Region = String
   type Regions = js.Array[Region]
   type RegistrationLimit = Int
+  type RegistrationMetadataKey = String
+  type RegistrationMetadataList = js.Array[RegistrationMetadataItem]
+  type RegistrationMetadataValue = String
   type RegistrationsCount = Int
   type RelatedOpsItems = js.Array[RelatedOpsItem]
   type RemainingCount = Int
@@ -474,10 +488,12 @@ package object ssm {
   type SessionManagerS3OutputUrl = String
   type SessionMaxResults = Int
   type SessionOwner = String
+  type SessionReason = String
   type SessionTarget = String
   type SharedDocumentVersion = String
   type SnapshotDownloadUrl = String
   type SnapshotId = String
+  type SourceId = String
   type StandardErrorContent = String
   type StandardOutputContent = String
   type StatusAdditionalInfo = String
@@ -519,6 +535,7 @@ package object ssm {
   final class SSMOps(private val service: SSM) extends AnyVal {
 
     @inline def addTagsToResourceFuture(params: AddTagsToResourceRequest): Future[AddTagsToResourceResult] = service.addTagsToResource(params).promise().toFuture
+    @inline def associateOpsItemRelatedItemFuture(params: AssociateOpsItemRelatedItemRequest): Future[AssociateOpsItemRelatedItemResponse] = service.associateOpsItemRelatedItem(params).promise().toFuture
     @inline def cancelCommandFuture(params: CancelCommandRequest): Future[CancelCommandResult] = service.cancelCommand(params).promise().toFuture
     @inline def cancelMaintenanceWindowExecutionFuture(params: CancelMaintenanceWindowExecutionRequest): Future[CancelMaintenanceWindowExecutionResult] = service.cancelMaintenanceWindowExecution(params).promise().toFuture
     @inline def createActivationFuture(params: CreateActivationRequest): Future[CreateActivationResult] = service.createActivation(params).promise().toFuture
@@ -576,6 +593,7 @@ package object ssm {
     @inline def describePatchGroupsFuture(params: DescribePatchGroupsRequest): Future[DescribePatchGroupsResult] = service.describePatchGroups(params).promise().toFuture
     @inline def describePatchPropertiesFuture(params: DescribePatchPropertiesRequest): Future[DescribePatchPropertiesResult] = service.describePatchProperties(params).promise().toFuture
     @inline def describeSessionsFuture(params: DescribeSessionsRequest): Future[DescribeSessionsResponse] = service.describeSessions(params).promise().toFuture
+    @inline def disassociateOpsItemRelatedItemFuture(params: DisassociateOpsItemRelatedItemRequest): Future[DisassociateOpsItemRelatedItemResponse] = service.disassociateOpsItemRelatedItem(params).promise().toFuture
     @inline def getAutomationExecutionFuture(params: GetAutomationExecutionRequest): Future[GetAutomationExecutionResult] = service.getAutomationExecution(params).promise().toFuture
     @inline def getCalendarStateFuture(params: GetCalendarStateRequest): Future[GetCalendarStateResponse] = service.getCalendarState(params).promise().toFuture
     @inline def getCommandInvocationFuture(params: GetCommandInvocationRequest): Future[GetCommandInvocationResult] = service.getCommandInvocation(params).promise().toFuture
@@ -612,6 +630,7 @@ package object ssm {
     @inline def listDocumentsFuture(params: ListDocumentsRequest): Future[ListDocumentsResult] = service.listDocuments(params).promise().toFuture
     @inline def listInventoryEntriesFuture(params: ListInventoryEntriesRequest): Future[ListInventoryEntriesResult] = service.listInventoryEntries(params).promise().toFuture
     @inline def listOpsItemEventsFuture(params: ListOpsItemEventsRequest): Future[ListOpsItemEventsResponse] = service.listOpsItemEvents(params).promise().toFuture
+    @inline def listOpsItemRelatedItemsFuture(params: ListOpsItemRelatedItemsRequest): Future[ListOpsItemRelatedItemsResponse] = service.listOpsItemRelatedItems(params).promise().toFuture
     @inline def listOpsMetadataFuture(params: ListOpsMetadataRequest): Future[ListOpsMetadataResult] = service.listOpsMetadata(params).promise().toFuture
     @inline def listResourceComplianceSummariesFuture(params: ListResourceComplianceSummariesRequest): Future[ListResourceComplianceSummariesResult] = service.listResourceComplianceSummaries(params).promise().toFuture
     @inline def listResourceDataSyncFuture(params: ListResourceDataSyncRequest): Future[ListResourceDataSyncResult] = service.listResourceDataSync(params).promise().toFuture
@@ -659,6 +678,7 @@ package object ssm {
     def this(config: AWSConfig) = this()
 
     def addTagsToResource(params: AddTagsToResourceRequest): Request[AddTagsToResourceResult] = js.native
+    def associateOpsItemRelatedItem(params: AssociateOpsItemRelatedItemRequest): Request[AssociateOpsItemRelatedItemResponse] = js.native
     def cancelCommand(params: CancelCommandRequest): Request[CancelCommandResult] = js.native
     def cancelMaintenanceWindowExecution(params: CancelMaintenanceWindowExecutionRequest): Request[CancelMaintenanceWindowExecutionResult] = js.native
     def createActivation(params: CreateActivationRequest): Request[CreateActivationResult] = js.native
@@ -716,6 +736,7 @@ package object ssm {
     def describePatchGroups(params: DescribePatchGroupsRequest): Request[DescribePatchGroupsResult] = js.native
     def describePatchProperties(params: DescribePatchPropertiesRequest): Request[DescribePatchPropertiesResult] = js.native
     def describeSessions(params: DescribeSessionsRequest): Request[DescribeSessionsResponse] = js.native
+    def disassociateOpsItemRelatedItem(params: DisassociateOpsItemRelatedItemRequest): Request[DisassociateOpsItemRelatedItemResponse] = js.native
     def getAutomationExecution(params: GetAutomationExecutionRequest): Request[GetAutomationExecutionResult] = js.native
     def getCalendarState(params: GetCalendarStateRequest): Request[GetCalendarStateResponse] = js.native
     def getCommandInvocation(params: GetCommandInvocationRequest): Request[GetCommandInvocationResult] = js.native
@@ -752,6 +773,7 @@ package object ssm {
     def listDocuments(params: ListDocumentsRequest): Request[ListDocumentsResult] = js.native
     def listInventoryEntries(params: ListInventoryEntriesRequest): Request[ListInventoryEntriesResult] = js.native
     def listOpsItemEvents(params: ListOpsItemEventsRequest): Request[ListOpsItemEventsResponse] = js.native
+    def listOpsItemRelatedItems(params: ListOpsItemRelatedItemsRequest): Request[ListOpsItemRelatedItemsResponse] = js.native
     def listOpsMetadata(params: ListOpsMetadataRequest): Request[ListOpsMetadataResult] = js.native
     def listResourceComplianceSummaries(params: ListResourceComplianceSummariesRequest): Request[ListResourceComplianceSummariesResult] = js.native
     def listResourceDataSync(params: ListResourceDataSyncRequest): Request[ListResourceDataSyncResult] = js.native
@@ -797,7 +819,7 @@ package object ssm {
     }
   }
 
-  /** Information includes the AWS account ID where the current document is shared and the version shared with that account.
+  /** Information includes the Amazon Web Services account ID where the current document is shared and the version shared with that account.
     */
   @js.native
   trait AccountSharingInfo extends js.Object {
@@ -818,7 +840,7 @@ package object ssm {
     }
   }
 
-  /** An activation registers one or more on-premises servers or virtual machines (VMs) with AWS so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with AWS is called a managed instance.
+  /** An activation registers one or more on-premises servers or virtual machines (VMs) with Amazon Web Services so that you can configure those servers or VMs using Run Command. A server or VM that has been registered with Amazon Web Services Systems Manager is called a managed node.
     */
   @js.native
   trait Activation extends js.Object {
@@ -897,7 +919,49 @@ package object ssm {
     }
   }
 
-  /** Describes an association of a Systems Manager document and an instance.
+  @js.native
+  trait AssociateOpsItemRelatedItemRequest extends js.Object {
+    var AssociationType: OpsItemRelatedItemAssociationType
+    var OpsItemId: OpsItemId
+    var ResourceType: OpsItemRelatedItemAssociationResourceType
+    var ResourceUri: OpsItemRelatedItemAssociationResourceUri
+  }
+
+  object AssociateOpsItemRelatedItemRequest {
+    @inline
+    def apply(
+        AssociationType: OpsItemRelatedItemAssociationType,
+        OpsItemId: OpsItemId,
+        ResourceType: OpsItemRelatedItemAssociationResourceType,
+        ResourceUri: OpsItemRelatedItemAssociationResourceUri
+    ): AssociateOpsItemRelatedItemRequest = {
+      val __obj = js.Dynamic.literal(
+        "AssociationType" -> AssociationType.asInstanceOf[js.Any],
+        "OpsItemId" -> OpsItemId.asInstanceOf[js.Any],
+        "ResourceType" -> ResourceType.asInstanceOf[js.Any],
+        "ResourceUri" -> ResourceUri.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AssociateOpsItemRelatedItemRequest]
+    }
+  }
+
+  @js.native
+  trait AssociateOpsItemRelatedItemResponse extends js.Object {
+    var AssociationId: js.UndefOr[OpsItemRelatedItemAssociationId]
+  }
+
+  object AssociateOpsItemRelatedItemResponse {
+    @inline
+    def apply(
+        AssociationId: js.UndefOr[OpsItemRelatedItemAssociationId] = js.undefined
+    ): AssociateOpsItemRelatedItemResponse = {
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AssociateOpsItemRelatedItemResponse]
+    }
+  }
+
+  /** Describes an association of a Amazon Web Services Systems Manager document (SSM document) and a managed node.
     */
   @js.native
   trait Association extends js.Object {
@@ -951,6 +1015,7 @@ package object ssm {
     var AssociationName: js.UndefOr[AssociationName]
     var AssociationVersion: js.UndefOr[AssociationVersion]
     var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
+    var CalendarNames: js.UndefOr[CalendarNameOrARNList]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
     var Date: js.UndefOr[DateTime]
     var DocumentVersion: js.UndefOr[DocumentVersion]
@@ -979,6 +1044,7 @@ package object ssm {
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
         AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
+        CalendarNames: js.UndefOr[CalendarNameOrARNList] = js.undefined,
         ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
         Date: js.UndefOr[DateTime] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
@@ -1004,6 +1070,7 @@ package object ssm {
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(__v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any]))
+      CalendarNames.foreach(__v => __obj.updateDynamic("CalendarNames")(__v.asInstanceOf[js.Any]))
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       Date.foreach(__v => __obj.updateDynamic("Date")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
@@ -1237,6 +1304,7 @@ package object ssm {
     var AssociationId: js.UndefOr[AssociationId]
     var AssociationName: js.UndefOr[AssociationName]
     var AssociationVersion: js.UndefOr[AssociationVersion]
+    var CalendarNames: js.UndefOr[CalendarNameOrARNList]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
     var CreatedDate: js.UndefOr[DateTime]
     var DocumentVersion: js.UndefOr[DocumentVersion]
@@ -1258,6 +1326,7 @@ package object ssm {
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
+        CalendarNames: js.UndefOr[CalendarNameOrARNList] = js.undefined,
         ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
         CreatedDate: js.UndefOr[DateTime] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
@@ -1276,6 +1345,7 @@ package object ssm {
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
+      CalendarNames.foreach(__v => __obj.updateDynamic("CalendarNames")(__v.asInstanceOf[js.Any]))
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
@@ -1704,7 +1774,7 @@ package object ssm {
     }
   }
 
-  /** Configuration options for sending command output to CloudWatch Logs.
+  /** Configuration options for sending command output to Amazon CloudWatch Logs.
     */
   @js.native
   trait CloudWatchOutputConfig extends js.Object {
@@ -1814,7 +1884,7 @@ package object ssm {
 
   /** Describes a command filter.
     *
-    * '''Note:'''An instance ID can't be specified when a command status is <code>Pending</code> because the command hasn't run on the instance yet.
+    * '''Note:'''A managed node ID can't be specified when a command status is <code>Pending</code> because the command hasn't run on the node yet.
     */
   @js.native
   trait CommandFilter extends js.Object {
@@ -1836,7 +1906,7 @@ package object ssm {
     }
   }
 
-  /** An invocation is copy of a command sent to a specific instance. A command can apply to one or more instances. A command invocation applies to one instance. For example, if a user runs SendCommand against three instances, then a command invocation is created for each requested instance ID. A command invocation returns status and detail information about a command you ran.
+  /** An invocation is a copy of a command sent to a specific managed node. A command can apply to one or more managed nodes. A command invocation applies to one managed node. For example, if a user runs <code>SendCommand</code> against three managed nodes, then a command invocation is created for each requested managed node ID. A command invocation returns status and detail information about a command you ran.
     */
   @js.native
   trait CommandInvocation extends js.Object {
@@ -2126,6 +2196,7 @@ package object ssm {
     var Description: js.UndefOr[ActivationDescription]
     var ExpirationDate: js.UndefOr[ExpirationDate]
     var RegistrationLimit: js.UndefOr[RegistrationLimit]
+    var RegistrationMetadata: js.UndefOr[RegistrationMetadataList]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -2137,6 +2208,7 @@ package object ssm {
         Description: js.UndefOr[ActivationDescription] = js.undefined,
         ExpirationDate: js.UndefOr[ExpirationDate] = js.undefined,
         RegistrationLimit: js.UndefOr[RegistrationLimit] = js.undefined,
+        RegistrationMetadata: js.UndefOr[RegistrationMetadataList] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateActivationRequest = {
       val __obj = js.Dynamic.literal(
@@ -2147,6 +2219,7 @@ package object ssm {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
       RegistrationLimit.foreach(__v => __obj.updateDynamic("RegistrationLimit")(__v.asInstanceOf[js.Any]))
+      RegistrationMetadata.foreach(__v => __obj.updateDynamic("RegistrationMetadata")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateActivationRequest]
     }
@@ -2188,7 +2261,7 @@ package object ssm {
     }
   }
 
-  /** Describes the association of a Systems Manager SSM document and an instance.
+  /** Describes the association of a Amazon Web Services Systems Manager document (SSM document) and a managed node.
     */
   @js.native
   trait CreateAssociationBatchRequestEntry extends js.Object {
@@ -2196,6 +2269,7 @@ package object ssm {
     var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationName: js.UndefOr[AssociationName]
     var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
+    var CalendarNames: js.UndefOr[CalendarNameOrARNList]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var InstanceId: js.UndefOr[InstanceId]
@@ -2216,6 +2290,7 @@ package object ssm {
         ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
+        CalendarNames: js.UndefOr[CalendarNameOrARNList] = js.undefined,
         ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
@@ -2235,6 +2310,7 @@ package object ssm {
       ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(__v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any]))
+      CalendarNames.foreach(__v => __obj.updateDynamic("CalendarNames")(__v.asInstanceOf[js.Any]))
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
@@ -2275,6 +2351,7 @@ package object ssm {
     var ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval]
     var AssociationName: js.UndefOr[AssociationName]
     var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
+    var CalendarNames: js.UndefOr[CalendarNameOrARNList]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var InstanceId: js.UndefOr[InstanceId]
@@ -2295,6 +2372,7 @@ package object ssm {
         ApplyOnlyAtCronInterval: js.UndefOr[ApplyOnlyAtCronInterval] = js.undefined,
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
+        CalendarNames: js.UndefOr[CalendarNameOrARNList] = js.undefined,
         ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         InstanceId: js.UndefOr[InstanceId] = js.undefined,
@@ -2314,6 +2392,7 @@ package object ssm {
       ApplyOnlyAtCronInterval.foreach(__v => __obj.updateDynamic("ApplyOnlyAtCronInterval")(__v.asInstanceOf[js.Any]))
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(__v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any]))
+      CalendarNames.foreach(__v => __obj.updateDynamic("CalendarNames")(__v.asInstanceOf[js.Any]))
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       InstanceId.foreach(__v => __obj.updateDynamic("InstanceId")(__v.asInstanceOf[js.Any]))
@@ -2350,6 +2429,7 @@ package object ssm {
     var Content: DocumentContent
     var Name: DocumentName
     var Attachments: js.UndefOr[AttachmentsSourceList]
+    var DisplayName: js.UndefOr[DocumentDisplayName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var DocumentType: js.UndefOr[DocumentType]
     var Requires: js.UndefOr[DocumentRequiresList]
@@ -2364,6 +2444,7 @@ package object ssm {
         Content: DocumentContent,
         Name: DocumentName,
         Attachments: js.UndefOr[AttachmentsSourceList] = js.undefined,
+        DisplayName: js.UndefOr[DocumentDisplayName] = js.undefined,
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
         DocumentType: js.UndefOr[DocumentType] = js.undefined,
         Requires: js.UndefOr[DocumentRequiresList] = js.undefined,
@@ -2377,6 +2458,7 @@ package object ssm {
       )
 
       Attachments.foreach(__v => __obj.updateDynamic("Attachments")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
       DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
       Requires.foreach(__v => __obj.updateDynamic("Requires")(__v.asInstanceOf[js.Any]))
@@ -4646,6 +4728,37 @@ package object ssm {
     }
   }
 
+  @js.native
+  trait DisassociateOpsItemRelatedItemRequest extends js.Object {
+    var AssociationId: OpsItemRelatedItemAssociationId
+    var OpsItemId: OpsItemId
+  }
+
+  object DisassociateOpsItemRelatedItemRequest {
+    @inline
+    def apply(
+        AssociationId: OpsItemRelatedItemAssociationId,
+        OpsItemId: OpsItemId
+    ): DisassociateOpsItemRelatedItemRequest = {
+      val __obj = js.Dynamic.literal(
+        "AssociationId" -> AssociationId.asInstanceOf[js.Any],
+        "OpsItemId" -> OpsItemId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DisassociateOpsItemRelatedItemRequest]
+    }
+  }
+
+  @js.native
+  trait DisassociateOpsItemRelatedItemResponse extends js.Object
+
+  object DisassociateOpsItemRelatedItemResponse {
+    @inline
+    def apply(): DisassociateOpsItemRelatedItemResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DisassociateOpsItemRelatedItemResponse]
+    }
+  }
+
   /** A default version of a document.
     */
   @js.native
@@ -4670,7 +4783,7 @@ package object ssm {
     }
   }
 
-  /** Describes a Systems Manager document.
+  /** Describes a Amazon Web Services Systems Manager document (SSM document).
     */
   @js.native
   trait DocumentDescription extends js.Object {
@@ -4680,6 +4793,7 @@ package object ssm {
     var CreatedDate: js.UndefOr[DateTime]
     var DefaultVersion: js.UndefOr[DocumentVersion]
     var Description: js.UndefOr[DescriptionInDocument]
+    var DisplayName: js.UndefOr[DocumentDisplayName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var DocumentType: js.UndefOr[DocumentType]
     var DocumentVersion: js.UndefOr[DocumentVersion]
@@ -4712,6 +4826,7 @@ package object ssm {
         CreatedDate: js.UndefOr[DateTime] = js.undefined,
         DefaultVersion: js.UndefOr[DocumentVersion] = js.undefined,
         Description: js.UndefOr[DescriptionInDocument] = js.undefined,
+        DisplayName: js.UndefOr[DocumentDisplayName] = js.undefined,
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
         DocumentType: js.UndefOr[DocumentType] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
@@ -4741,6 +4856,7 @@ package object ssm {
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
       DefaultVersion.foreach(__v => __obj.updateDynamic("DefaultVersion")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
       DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
@@ -4788,11 +4904,13 @@ package object ssm {
     }
   }
 
-  /** Describes the name of a Systems Manager document.
+  /** Describes the name of a SSM document.
     */
   @js.native
   trait DocumentIdentifier extends js.Object {
     var Author: js.UndefOr[DocumentAuthor]
+    var CreatedDate: js.UndefOr[DateTime]
+    var DisplayName: js.UndefOr[DocumentDisplayName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var DocumentType: js.UndefOr[DocumentType]
     var DocumentVersion: js.UndefOr[DocumentVersion]
@@ -4811,6 +4929,8 @@ package object ssm {
     @inline
     def apply(
         Author: js.UndefOr[DocumentAuthor] = js.undefined,
+        CreatedDate: js.UndefOr[DateTime] = js.undefined,
+        DisplayName: js.UndefOr[DocumentDisplayName] = js.undefined,
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
         DocumentType: js.UndefOr[DocumentType] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
@@ -4826,6 +4946,8 @@ package object ssm {
     ): DocumentIdentifier = {
       val __obj = js.Dynamic.literal()
       Author.foreach(__v => __obj.updateDynamic("Author")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
       DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
@@ -4842,8 +4964,9 @@ package object ssm {
     }
   }
 
-  /** One or more filters. Use a filter to return a more specific list of documents. For keys, you can specify one or more tags that have been applied to a document. You can also use AWS-provided keys, some of which have specific allowed values. These keys and their associated values are as follows: <dl> <dt>DocumentType</dt> <dd>* ApplicationConfiguration * ApplicationConfigurationSchema * Automation * ChangeCalendar * Command * DeploymentStrategy * Package * Policy * Session </dd> <dt>Owner</dt> <dd> Note that only one <code>Owner</code> can be specified in a request. For example: <code>Key=Owner,Values=Self</code>. * Amazon * Private * Public * Self * ThirdParty </dd> <dt>PlatformTypes</dt> <dd>* Linux * Windows </dd> </dl> <code>Name</code> is another AWS-provided key. If you use <code>Name</code> as a key, you can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a list of all documents that begin with <code>Te</code>, run the following
-    * command: <code>aws ssm list-documents --filters Key=Name,Values=Te</code> You can also use the <code>TargetType</code> AWS-provided key. For a list of valid resource type values that can be used with this key, see [[http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html|AWS resource and property types reference]] in the <i>AWS CloudFormation User Guide</i>. If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results. To specify a custom key and value pair, use the format <code>Key=tag:tagName,Values=valueName</code>. For example, if you created a key called region and are using the AWS CLI to call the <code>list-documents</code> command: <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
+  /** One or more filters. Use a filter to return a more specific list of documents. For keys, you can specify one or more tags that have been applied to a document. You can also use Amazon Web Services-provided keys, some of which have specific allowed values. These keys and their associated values are as follows: <dl> <dt>DocumentType</dt> <dd>* <code>ApplicationConfiguration</code> * <code>ApplicationConfigurationSchema</code> * <code>Automation</code> * <code>ChangeCalendar</code> * <code>Command</code> * <code>DeploymentStrategy</code> * <code>Package</code> * <code>Policy</code> * <code>Session</code> </dd> <dt>Owner</dt> <dd> Note that only one <code>Owner</code> can be specified in a request. For example: <code>Key=Owner,Values=Self</code>. * <code>Amazon</code> * <code>Private</code> * <code>Public</code> * <code>Self</code> * <code>ThirdParty</code> </dd> <dt>PlatformTypes</dt> <dd>* <code>Linux</code> * <code>Windows</code> </dd> </dl> <code>Name</code> is another Amazon Web
+    * Services-provided key. If you use <code>Name</code> as a key, you can use a name prefix to return a list of documents. For example, in the Amazon Web Services CLI, to return a list of all documents that begin with <code>Te</code>, run the following command: <code>aws ssm list-documents --filters Key=Name,Values=Te</code> You can also use the <code>TargetType</code> Amazon Web Services-provided key. For a list of valid resource type values that can be used with this key, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html|Amazon Web Services resource and property types reference]] in the <i>CloudFormation User Guide</i>. If you specify more than two keys, only documents that are identified by all the tags are returned in the results. If you specify more than two values for a key, documents that are identified by any of the values are returned in the results. To specify a custom key-value pair, use the format
+    * <code>Key=tag:tagName,Values=valueName</code>. For example, if you created a key called region and are using the Amazon Web Services CLI to call the <code>list-documents</code> command: <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
     */
   @js.native
   trait DocumentKeyValuesFilter extends js.Object {
@@ -5011,6 +5134,7 @@ package object ssm {
   @js.native
   trait DocumentVersionInfo extends js.Object {
     var CreatedDate: js.UndefOr[DateTime]
+    var DisplayName: js.UndefOr[DocumentDisplayName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var IsDefaultVersion: js.UndefOr[Boolean]
@@ -5025,6 +5149,7 @@ package object ssm {
     @inline
     def apply(
         CreatedDate: js.UndefOr[DateTime] = js.undefined,
+        DisplayName: js.UndefOr[DocumentDisplayName] = js.undefined,
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         IsDefaultVersion: js.UndefOr[Boolean] = js.undefined,
@@ -5036,6 +5161,7 @@ package object ssm {
     ): DocumentVersionInfo = {
       val __obj = js.Dynamic.literal()
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       IsDefaultVersion.foreach(__v => __obj.updateDynamic("IsDefaultVersion")(__v.asInstanceOf[js.Any]))
@@ -5048,7 +5174,7 @@ package object ssm {
     }
   }
 
-  /** The EffectivePatch structure defines metadata about a patch along with the approval state of the patch in a particular patch baseline. The approval state includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.
+  /** The <code>EffectivePatch</code> structure defines metadata about a patch along with the approval state of the patch in a particular patch baseline. The approval state includes information about whether the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly rejected and the date the patch was or will be approved.
     */
   @js.native
   trait EffectivePatch extends js.Object {
@@ -5432,6 +5558,8 @@ package object ssm {
   trait GetDocumentResult extends js.Object {
     var AttachmentsContent: js.UndefOr[AttachmentContentList]
     var Content: js.UndefOr[DocumentContent]
+    var CreatedDate: js.UndefOr[DateTime]
+    var DisplayName: js.UndefOr[DocumentDisplayName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var DocumentType: js.UndefOr[DocumentType]
     var DocumentVersion: js.UndefOr[DocumentVersion]
@@ -5448,6 +5576,8 @@ package object ssm {
     def apply(
         AttachmentsContent: js.UndefOr[AttachmentContentList] = js.undefined,
         Content: js.UndefOr[DocumentContent] = js.undefined,
+        CreatedDate: js.UndefOr[DateTime] = js.undefined,
+        DisplayName: js.UndefOr[DocumentDisplayName] = js.undefined,
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
         DocumentType: js.UndefOr[DocumentType] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
@@ -5461,6 +5591,8 @@ package object ssm {
       val __obj = js.Dynamic.literal()
       AttachmentsContent.foreach(__v => __obj.updateDynamic("AttachmentsContent")(__v.asInstanceOf[js.Any]))
       Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
       DocumentType.foreach(__v => __obj.updateDynamic("DocumentType")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
@@ -5857,6 +5989,7 @@ package object ssm {
 
   @js.native
   trait GetMaintenanceWindowTaskResult extends js.Object {
+    var CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var LoggingInfo: js.UndefOr[LoggingInfo]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
@@ -5876,6 +6009,7 @@ package object ssm {
   object GetMaintenanceWindowTaskResult {
     @inline
     def apply(
+        CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
@@ -5892,6 +6026,7 @@ package object ssm {
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): GetMaintenanceWindowTaskResult = {
       val __obj = js.Dynamic.literal()
+      CutoffBehavior.foreach(__v => __obj.updateDynamic("CutoffBehavior")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
@@ -6332,7 +6467,7 @@ package object ssm {
     }
   }
 
-  /** The request body of the GetServiceSetting API action.
+  /** The request body of the GetServiceSetting API operation.
     */
   @js.native
   trait GetServiceSettingRequest extends js.Object {
@@ -6351,7 +6486,7 @@ package object ssm {
     }
   }
 
-  /** The query result body of the GetServiceSetting API action.
+  /** The query result body of the GetServiceSetting API operation.
     */
   @js.native
   trait GetServiceSettingResult extends js.Object {
@@ -6390,7 +6525,7 @@ package object ssm {
     }
   }
 
-  /** One or more association documents on the instance.
+  /** One or more association documents on the managed node.
     */
   @js.native
   trait InstanceAssociation extends js.Object {
@@ -6453,7 +6588,7 @@ package object ssm {
     }
   }
 
-  /** Status information about the instance association.
+  /** Status information about the association.
     */
   @js.native
   trait InstanceAssociationStatusInfo extends js.Object {
@@ -6504,7 +6639,7 @@ package object ssm {
     }
   }
 
-  /** Describes a filter for a specific list of instances.
+  /** Describes a filter for a specific list of managed nodes.
     */
   @js.native
   trait InstanceInformation extends js.Object {
@@ -6527,6 +6662,8 @@ package object ssm {
     var PlatformVersion: js.UndefOr[String]
     var RegistrationDate: js.UndefOr[DateTime]
     var ResourceType: js.UndefOr[ResourceType]
+    var SourceId: js.UndefOr[SourceId]
+    var SourceType: js.UndefOr[SourceType]
   }
 
   object InstanceInformation {
@@ -6550,7 +6687,9 @@ package object ssm {
         PlatformType: js.UndefOr[PlatformType] = js.undefined,
         PlatformVersion: js.UndefOr[String] = js.undefined,
         RegistrationDate: js.UndefOr[DateTime] = js.undefined,
-        ResourceType: js.UndefOr[ResourceType] = js.undefined
+        ResourceType: js.UndefOr[ResourceType] = js.undefined,
+        SourceId: js.UndefOr[SourceId] = js.undefined,
+        SourceType: js.UndefOr[SourceType] = js.undefined
     ): InstanceInformation = {
       val __obj = js.Dynamic.literal()
       ActivationId.foreach(__v => __obj.updateDynamic("ActivationId")(__v.asInstanceOf[js.Any]))
@@ -6572,11 +6711,13 @@ package object ssm {
       PlatformVersion.foreach(__v => __obj.updateDynamic("PlatformVersion")(__v.asInstanceOf[js.Any]))
       RegistrationDate.foreach(__v => __obj.updateDynamic("RegistrationDate")(__v.asInstanceOf[js.Any]))
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      SourceId.foreach(__v => __obj.updateDynamic("SourceId")(__v.asInstanceOf[js.Any]))
+      SourceType.foreach(__v => __obj.updateDynamic("SourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceInformation]
     }
   }
 
-  /** Describes a filter for a specific list of instances. You can filter instances information by using tags. You specify tags by using a key-value mapping. Use this action instead of the [[DescribeInstanceInformationRequest.InstanceInformationFilterList]] method. The <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags.
+  /** Describes a filter for a specific list of managed nodes. You can filter node information by using tags. You specify tags by using a key-value mapping. Use this operation instead of the [[DescribeInstanceInformationRequest.InstanceInformationFilterList]] method. The <code>InstanceInformationFilterList</code> method is a legacy method and doesn't support tags.
     */
   @js.native
   trait InstanceInformationFilter extends js.Object {
@@ -6598,7 +6739,7 @@ package object ssm {
     }
   }
 
-  /** The filters to describe or get information about your managed instances.
+  /** The filters to describe or get information about your managed nodes.
     */
   @js.native
   trait InstanceInformationStringFilter extends js.Object {
@@ -6620,7 +6761,7 @@ package object ssm {
     }
   }
 
-  /** Defines the high-level patch compliance state for a managed instance, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the instance.
+  /** Defines the high-level patch compliance state for a managed node, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the managed node.
     */
   @js.native
   trait InstancePatchState extends js.Object {
@@ -6703,7 +6844,8 @@ package object ssm {
     }
   }
 
-  /** Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> used to scope down the information returned by the API.
+  /** Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> to scope down the information returned by the API.
+    * ```Example```: To filter for all managed nodes in a patch group having more than three patches with a <code>FailedCount</code> status, use the following for the filter: * Value for <code>Key</code>: <code>FailedCount</code> * Value for <code>Type</code>: <code>GreaterThan</code> * Value for <code>Values</code>: <code>3</code>
     */
   @js.native
   trait InstancePatchStateFilter extends js.Object {
@@ -6752,7 +6894,7 @@ package object ssm {
     }
   }
 
-  /** Status information returned by the <code>DeleteInventory</code> action.
+  /** Status information returned by the <code>DeleteInventory</code> operation.
     */
   @js.native
   trait InventoryDeletionStatusItem extends js.Object {
@@ -6884,7 +7026,7 @@ package object ssm {
     }
   }
 
-  /** Information collected from managed instances based on your inventory policy document
+  /** Information collected from managed nodes based on your inventory policy document
     */
   @js.native
   trait InventoryItem extends js.Object {
@@ -7583,6 +7725,50 @@ package object ssm {
   }
 
   @js.native
+  trait ListOpsItemRelatedItemsRequest extends js.Object {
+    var Filters: js.UndefOr[OpsItemRelatedItemsFilters]
+    var MaxResults: js.UndefOr[OpsItemRelatedItemsMaxResults]
+    var NextToken: js.UndefOr[String]
+    var OpsItemId: js.UndefOr[OpsItemId]
+  }
+
+  object ListOpsItemRelatedItemsRequest {
+    @inline
+    def apply(
+        Filters: js.UndefOr[OpsItemRelatedItemsFilters] = js.undefined,
+        MaxResults: js.UndefOr[OpsItemRelatedItemsMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined,
+        OpsItemId: js.UndefOr[OpsItemId] = js.undefined
+    ): ListOpsItemRelatedItemsRequest = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOpsItemRelatedItemsRequest]
+    }
+  }
+
+  @js.native
+  trait ListOpsItemRelatedItemsResponse extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var Summaries: js.UndefOr[OpsItemRelatedItemSummaries]
+  }
+
+  object ListOpsItemRelatedItemsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        Summaries: js.UndefOr[OpsItemRelatedItemSummaries] = js.undefined
+    ): ListOpsItemRelatedItemsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Summaries.foreach(__v => __obj.updateDynamic("Summaries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListOpsItemRelatedItemsResponse]
+    }
+  }
+
+  @js.native
   trait ListOpsMetadataRequest extends js.Object {
     var Filters: js.UndefOr[OpsMetadataFilterList]
     var MaxResults: js.UndefOr[ListOpsMetadataMaxResults]
@@ -7741,9 +7927,9 @@ package object ssm {
     }
   }
 
-  /** Information about an S3 bucket to write instance-level logs to.
+  /** Information about an Amazon Simple Storage Service (Amazon S3) bucket to write managed node-level logs to.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     */
   @js.native
   trait LoggingInfo extends js.Object {
@@ -7769,7 +7955,7 @@ package object ssm {
     }
   }
 
-  /** The parameters for an AUTOMATION task type.
+  /** The parameters for an <code>AUTOMATION</code> task type.
     */
   @js.native
   trait MaintenanceWindowAutomationParameters extends js.Object {
@@ -7913,7 +8099,7 @@ package object ssm {
     }
   }
 
-  /** Filter used in the request. Supported filter keys are Name and Enabled.
+  /** Filter used in the request. Supported filter keys depend on the API operation that includes the filter. API operations that use <code>MaintenanceWindowFilter&gt;</code> include the following: * <a>DescribeMaintenanceWindowExecutions</a> * <a>DescribeMaintenanceWindowExecutionTaskInvocations</a> * <a>DescribeMaintenanceWindowExecutionTasks</a> * <a>DescribeMaintenanceWindows</a> * <a>DescribeMaintenanceWindowTargets</a> * <a>DescribeMaintenanceWindowTasks</a>
     */
   @js.native
   trait MaintenanceWindowFilter extends js.Object {
@@ -8006,9 +8192,9 @@ package object ssm {
     }
   }
 
-  /** The parameters for a LAMBDA task type. For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
+  /** The parameters for a <code>LAMBDA</code> task type. For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. For Lambda tasks, Systems Manager ignores any values specified for TaskParameters and LoggingInfo.
     */
   @js.native
   trait MaintenanceWindowLambdaParameters extends js.Object {
@@ -8032,9 +8218,10 @@ package object ssm {
     }
   }
 
-  /** The parameters for a RUN_COMMAND task type. For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
+  /** The parameters for a <code>RUN_COMMAND</code> task type. For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. For <code>RUN_COMMAND</code> tasks, Systems Manager uses specified values for <code>TaskParameters</code> and <code>LoggingInfo</code> only if no
+    * values are specified for <code>TaskInvocationParameters</code>.
     */
   @js.native
   trait MaintenanceWindowRunCommandParameters extends js.Object {
@@ -8082,9 +8269,9 @@ package object ssm {
     }
   }
 
-  /** The parameters for a STEP_FUNCTIONS task. For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
+  /** The parameters for a <code>STEP_FUNCTIONS</code> task. For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.
     *
-    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.
+    * '''Note:'''<code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information about how Systems Manager handles these options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>. For Step Functions tasks, Systems Manager ignores any values specified for <code>TaskParameters</code> and <code>LoggingInfo</code>.
     */
   @js.native
   trait MaintenanceWindowStepFunctionsParameters extends js.Object {
@@ -8145,6 +8332,7 @@ package object ssm {
     */
   @js.native
   trait MaintenanceWindowTask extends js.Object {
+    var CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var LoggingInfo: js.UndefOr[LoggingInfo]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
@@ -8163,6 +8351,7 @@ package object ssm {
   object MaintenanceWindowTask {
     @inline
     def apply(
+        CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
@@ -8178,6 +8367,7 @@ package object ssm {
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): MaintenanceWindowTask = {
       val __obj = js.Dynamic.literal()
+      CutoffBehavior.foreach(__v => __obj.updateDynamic("CutoffBehavior")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
@@ -8299,7 +8489,7 @@ package object ssm {
     }
   }
 
-  /** A summary of resources that are not compliant. The summary is organized according to resource type.
+  /** A summary of resources that aren't compliant. The summary is organized according to resource type.
     */
   @js.native
   trait NonCompliantSummary extends js.Object {
@@ -8344,7 +8534,7 @@ package object ssm {
     }
   }
 
-  /** One or more aggregators for viewing counts of OpsItems using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few.
+  /** One or more aggregators for viewing counts of OpsData using different dimensions such as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a few.
     */
   @js.native
   trait OpsAggregator extends js.Object {
@@ -8398,7 +8588,7 @@ package object ssm {
     }
   }
 
-  /** The OpsItem summaries result item.
+  /** The OpsData summary.
     */
   @js.native
   trait OpsEntityItem extends js.Object {
@@ -8419,7 +8609,7 @@ package object ssm {
     }
   }
 
-  /** A filter for viewing OpsItem summaries.
+  /** A filter for viewing OpsData summaries.
     */
   @js.native
   trait OpsFilter extends js.Object {
@@ -8445,7 +8635,8 @@ package object ssm {
     }
   }
 
-  /** Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate operational issues impacting the performance and health of their AWS resources. For more information, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html|AWS Systems Manager OpsCenter]] in the <i>AWS Systems Manager User Guide</i>.
+  /** Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and remediate operational work items (OpsItems) impacting the performance and health of their Amazon Web Services resources. OpsCenter is integrated with Amazon EventBridge and Amazon CloudWatch. This means you can configure these services to automatically create an OpsItem in OpsCenter when a CloudWatch alarm enters the ALARM state or when EventBridge processes an event from any Amazon Web Services service that publishes events. Configuring Amazon CloudWatch alarms and EventBridge events to automatically create OpsItems allows you to quickly diagnose and remediate issues with Amazon Web Services resources from a single console. To help you diagnose issues, each OpsItem includes contextually relevant information such as the name and ID of the Amazon Web Services resource that generated the OpsItem, alarm or event details, alarm history, and an alarm timeline graph.
+    * For the Amazon Web Services resource, OpsCenter aggregates information from Config, CloudTrail logs, and EventBridge, so you don't have to navigate across multiple console pages during your investigation. For more information, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html|OpsCenter]] in the <i>Amazon Web Services Systems Manager User Guide</i>.
     */
   @js.native
   trait OpsItem extends js.Object {
@@ -8569,7 +8760,7 @@ package object ssm {
     }
   }
 
-  /** Summary information about an OpsItem event.
+  /** Summary information about an OpsItem event or that associated an OpsItem with a related item.
     */
   @js.native
   trait OpsItemEventSummary extends js.Object {
@@ -8663,6 +8854,73 @@ package object ssm {
       val __obj = js.Dynamic.literal()
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OpsItemNotification]
+    }
+  }
+
+  /** Summary information about related-item resources for an OpsItem.
+    */
+  @js.native
+  trait OpsItemRelatedItemSummary extends js.Object {
+    var AssociationId: js.UndefOr[OpsItemRelatedItemAssociationId]
+    var AssociationType: js.UndefOr[OpsItemRelatedItemAssociationType]
+    var CreatedBy: js.UndefOr[OpsItemIdentity]
+    var CreatedTime: js.UndefOr[DateTime]
+    var LastModifiedBy: js.UndefOr[OpsItemIdentity]
+    var LastModifiedTime: js.UndefOr[DateTime]
+    var OpsItemId: js.UndefOr[OpsItemId]
+    var ResourceType: js.UndefOr[OpsItemRelatedItemAssociationResourceType]
+    var ResourceUri: js.UndefOr[OpsItemRelatedItemAssociationResourceUri]
+  }
+
+  object OpsItemRelatedItemSummary {
+    @inline
+    def apply(
+        AssociationId: js.UndefOr[OpsItemRelatedItemAssociationId] = js.undefined,
+        AssociationType: js.UndefOr[OpsItemRelatedItemAssociationType] = js.undefined,
+        CreatedBy: js.UndefOr[OpsItemIdentity] = js.undefined,
+        CreatedTime: js.UndefOr[DateTime] = js.undefined,
+        LastModifiedBy: js.UndefOr[OpsItemIdentity] = js.undefined,
+        LastModifiedTime: js.UndefOr[DateTime] = js.undefined,
+        OpsItemId: js.UndefOr[OpsItemId] = js.undefined,
+        ResourceType: js.UndefOr[OpsItemRelatedItemAssociationResourceType] = js.undefined,
+        ResourceUri: js.UndefOr[OpsItemRelatedItemAssociationResourceUri] = js.undefined
+    ): OpsItemRelatedItemSummary = {
+      val __obj = js.Dynamic.literal()
+      AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
+      AssociationType.foreach(__v => __obj.updateDynamic("AssociationType")(__v.asInstanceOf[js.Any]))
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreatedTime.foreach(__v => __obj.updateDynamic("CreatedTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      OpsItemId.foreach(__v => __obj.updateDynamic("OpsItemId")(__v.asInstanceOf[js.Any]))
+      ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
+      ResourceUri.foreach(__v => __obj.updateDynamic("ResourceUri")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OpsItemRelatedItemSummary]
+    }
+  }
+
+  /** Describes a filter for a specific list of related-item resources.
+    */
+  @js.native
+  trait OpsItemRelatedItemsFilter extends js.Object {
+    var Key: OpsItemRelatedItemsFilterKey
+    var Operator: OpsItemRelatedItemsFilterOperator
+    var Values: OpsItemRelatedItemsFilterValues
+  }
+
+  object OpsItemRelatedItemsFilter {
+    @inline
+    def apply(
+        Key: OpsItemRelatedItemsFilterKey,
+        Operator: OpsItemRelatedItemsFilterOperator,
+        Values: OpsItemRelatedItemsFilterValues
+    ): OpsItemRelatedItemsFilter = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Operator" -> Operator.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OpsItemRelatedItemsFilter]
     }
   }
 
@@ -8824,7 +9082,7 @@ package object ssm {
     }
   }
 
-  /** An Systems Manager parameter in Parameter Store.
+  /** An Amazon Web Services Systems Manager parameter in Parameter Store.
     */
   @js.native
   trait Parameter extends js.Object {
@@ -9154,7 +9412,7 @@ package object ssm {
     }
   }
 
-  /** Information about the state of a patch on a particular instance as it relates to the patch baseline used to patch the instance.
+  /** Information about the state of a patch on a particular managed node as it relates to the patch baseline used to patch the node.
     */
   @js.native
   trait PatchComplianceData extends js.Object {
@@ -9192,7 +9450,8 @@ package object ssm {
     }
   }
 
-  /** Defines which patches should be included in a patch baseline. A patch filter consists of a key and a set of values. The filter key is a patch property. For example, the available filter keys for WINDOWS are PATCH_SET, PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, and MSRC_SEVERITY. The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is PRODUCT and the filter values are ["Office 2013", "Office 2016"], then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values. You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major operating system, see <a>DescribePatchProperties</a>.
+  /** Defines which patches should be included in a patch baseline. A patch filter consists of a key and a set of values. The filter key is a patch property. For example, the available filter keys for <code>WINDOWS</code> are <code>PATCH_SET</code>, <code>PRODUCT</code>, <code>PRODUCT_FAMILY</code>, <code>CLASSIFICATION</code>, and <code>MSRC_SEVERITY</code>. The filter values define a matching criterion for the patch property indicated by the key. For example, if the filter key is <code>PRODUCT</code> and the filter values are <code>["Office 2013", "Office 2016"]</code>, then the filter accepts all patches where product name is either "Office 2013" or "Office 2016". The filter values can be exact values for the patch property given as a key, or a wildcard (*), which matches all values. You can view lists of valid values for the patch properties by running the <code>DescribePatchProperties</code> command. For information about which patch properties can be used with each major
+    * operating system, see <a>DescribePatchProperties</a>.
     */
   @js.native
   trait PatchFilter extends js.Object {
@@ -9254,7 +9513,7 @@ package object ssm {
     }
   }
 
-  /** Defines a filter used in Patch Manager APIs.
+  /** Defines a filter used in Patch Manager APIs. Supported filter keys depend on the API operation that includes the filter. Patch Manager API operations that use <code>PatchOrchestratorFilter</code> include the following: * <a>DescribeAvailablePatches</a> * <a>DescribeInstancePatches</a> * <a>DescribePatchBaselines</a> * <a>DescribePatchGroups</a>
     */
   @js.native
   trait PatchOrchestratorFilter extends js.Object {
@@ -9326,7 +9585,7 @@ package object ssm {
     }
   }
 
-  /** Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.
+  /** Information about the patches to use to update the managed nodes, including target operating systems and source repository. Applies to Linux managed nodes only.
     */
   @js.native
   trait PatchSource extends js.Object {
@@ -9375,7 +9634,7 @@ package object ssm {
     }
   }
 
-  /** An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and multi-account Automation execution.
+  /** An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a multi-Region and multi-account Automation execution.
     */
   @js.native
   trait ProgressCounters extends js.Object {
@@ -9685,6 +9944,7 @@ package object ssm {
     var TaskType: MaintenanceWindowTaskType
     var WindowId: MaintenanceWindowId
     var ClientToken: js.UndefOr[ClientToken]
+    var CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var LoggingInfo: js.UndefOr[LoggingInfo]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
@@ -9704,6 +9964,7 @@ package object ssm {
         TaskType: MaintenanceWindowTaskType,
         WindowId: MaintenanceWindowId,
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
@@ -9722,6 +9983,7 @@ package object ssm {
       )
 
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      CutoffBehavior.foreach(__v => __obj.updateDynamic("CutoffBehavior")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
@@ -9749,6 +10011,28 @@ package object ssm {
       val __obj = js.Dynamic.literal()
       WindowTaskId.foreach(__v => __obj.updateDynamic("WindowTaskId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RegisterTaskWithMaintenanceWindowResult]
+    }
+  }
+
+  /** Reserved for internal use.
+    */
+  @js.native
+  trait RegistrationMetadataItem extends js.Object {
+    var Key: RegistrationMetadataKey
+    var Value: RegistrationMetadataValue
+  }
+
+  object RegistrationMetadataItem {
+    @inline
+    def apply(
+        Key: RegistrationMetadataKey,
+        Value: RegistrationMetadataValue
+    ): RegistrationMetadataItem = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RegistrationMetadataItem]
     }
   }
 
@@ -9805,7 +10089,7 @@ package object ssm {
     }
   }
 
-  /** The request body of the ResetServiceSetting API action.
+  /** The request body of the ResetServiceSetting API operation.
     */
   @js.native
   trait ResetServiceSettingRequest extends js.Object {
@@ -9824,7 +10108,7 @@ package object ssm {
     }
   }
 
-  /** The result body of the ResetServiceSetting API action.
+  /** The result body of the ResetServiceSetting API operation.
     */
   @js.native
   trait ResetServiceSettingResult extends js.Object {
@@ -9902,7 +10186,7 @@ package object ssm {
     }
   }
 
-  /** Information about the AwsOrganizationsSource resource data sync source. A sync source of this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from multiple AWS Regions.
+  /** Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync source of this type can synchronize data from Organizations or, if an Amazon Web Services organization isn't present, from multiple Amazon Web Services Regions.
     */
   @js.native
   trait ResourceDataSyncAwsOrganizationsSource extends js.Object {
@@ -9925,7 +10209,7 @@ package object ssm {
     }
   }
 
-  /** Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to a centralized S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different AWS account ID.
+  /** Synchronize Amazon Web Services Systems Manager Inventory data from multiple Amazon Web Services accounts defined in Organizations to a centralized Amazon S3 bucket. Data is synchronized to individual key prefixes in the central bucket. Each key prefix represents a different Amazon Web Services account ID.
     */
   @js.native
   trait ResourceDataSyncDestinationDataSharing extends js.Object {
@@ -9943,7 +10227,7 @@ package object ssm {
     }
   }
 
-  /** Information about a Resource Data Sync configuration, including its current status and last successful sync.
+  /** Information about a resource data sync configuration, including its current status and last successful sync.
     */
   @js.native
   trait ResourceDataSyncItem extends js.Object {
@@ -9988,7 +10272,7 @@ package object ssm {
     }
   }
 
-  /** The AWS Organizations organizational unit data source for the sync.
+  /** The Organizations organizational unit data source for the sync.
     */
   @js.native
   trait ResourceDataSyncOrganizationalUnit extends js.Object {
@@ -10006,7 +10290,7 @@ package object ssm {
     }
   }
 
-  /** Information about the target S3 bucket for the Resource Data Sync.
+  /** Information about the target S3 bucket for the resource data sync.
     */
   @js.native
   trait ResourceDataSyncS3Destination extends js.Object {
@@ -10073,7 +10357,7 @@ package object ssm {
     }
   }
 
-  /** The data type name for including resource data sync state. There are four sync states: <code>OrganizationNotExists</code> (Your organization doesn't exist) <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Explorer.) <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.) <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in AWS Organizations.)
+  /** The data type name for including resource data sync state. There are four sync states: <code>OrganizationNotExists</code> (Your organization doesn't exist) <code>NoPermissions</code> (The system can't locate the service-linked role. This role is automatically created when a user creates a resource data sync in Amazon Web Services Systems Manager Explorer.) <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the resource data sync configuration.) <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in Organizations.)
     */
   @js.native
   trait ResourceDataSyncSourceWithState extends js.Object {
@@ -10188,7 +10472,7 @@ package object ssm {
     }
   }
 
-  /** Information about an Automation runbook (Automation document) used in a runbook workflow in Change Manager.
+  /** Information about an Automation runbook used in a runbook workflow in Change Manager.
     *
     * '''Note:'''The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change request have been received.
     */
@@ -10255,7 +10539,7 @@ package object ssm {
     }
   }
 
-  /** A URL for the S3 bucket where you want to store the results of this request.
+  /** A URL for the Amazon Web Services Systems Manager (Systems Manager) bucket where you want to store the results of this request.
     */
   @js.native
   trait S3OutputUrl extends js.Object {
@@ -10414,8 +10698,8 @@ package object ssm {
     }
   }
 
-  /** The service setting data structure. <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an AWS service charges money to the account based on feature or service usage, then the AWS service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature. Services map a <code>SettingId</code> object to a setting value. AWS services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back to the original value defined by the AWS
-    * service team.
+  /** The service setting data structure. <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of "false". This means the user can't use this feature unless they change the setting to "true" and intentionally opt in for a paid feature. Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>, but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a> API operation to change the default setting. Or, use the <a>ResetServiceSetting</a> to
+    * change the value back to the original value defined by the Amazon Web Services service team.
     */
   @js.native
   trait ServiceSetting extends js.Object {
@@ -10448,15 +10732,17 @@ package object ssm {
     }
   }
 
-  /** Information about a Session Manager connection to an instance.
+  /** Information about a Session Manager connection to a managed node.
     */
   @js.native
   trait Session extends js.Object {
     var Details: js.UndefOr[SessionDetails]
     var DocumentName: js.UndefOr[DocumentName]
     var EndDate: js.UndefOr[DateTime]
+    var MaxSessionDuration: js.UndefOr[MaxSessionDuration]
     var OutputUrl: js.UndefOr[SessionManagerOutputUrl]
     var Owner: js.UndefOr[SessionOwner]
+    var Reason: js.UndefOr[SessionReason]
     var SessionId: js.UndefOr[SessionId]
     var StartDate: js.UndefOr[DateTime]
     var Status: js.UndefOr[SessionStatus]
@@ -10469,8 +10755,10 @@ package object ssm {
         Details: js.UndefOr[SessionDetails] = js.undefined,
         DocumentName: js.UndefOr[DocumentName] = js.undefined,
         EndDate: js.UndefOr[DateTime] = js.undefined,
+        MaxSessionDuration: js.UndefOr[MaxSessionDuration] = js.undefined,
         OutputUrl: js.UndefOr[SessionManagerOutputUrl] = js.undefined,
         Owner: js.UndefOr[SessionOwner] = js.undefined,
+        Reason: js.UndefOr[SessionReason] = js.undefined,
         SessionId: js.UndefOr[SessionId] = js.undefined,
         StartDate: js.UndefOr[DateTime] = js.undefined,
         Status: js.UndefOr[SessionStatus] = js.undefined,
@@ -10480,8 +10768,10 @@ package object ssm {
       Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
       DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
       EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      MaxSessionDuration.foreach(__v => __obj.updateDynamic("MaxSessionDuration")(__v.asInstanceOf[js.Any]))
       OutputUrl.foreach(__v => __obj.updateDynamic("OutputUrl")(__v.asInstanceOf[js.Any]))
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       SessionId.foreach(__v => __obj.updateDynamic("SessionId")(__v.asInstanceOf[js.Any]))
       StartDate.foreach(__v => __obj.updateDynamic("StartDate")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
@@ -10533,7 +10823,7 @@ package object ssm {
     }
   }
 
-  /** The number of managed instances found for each patch severity level defined in the request filter.
+  /** The number of managed nodes found for each patch severity level defined in the request filter.
     */
   @js.native
   trait SeveritySummary extends js.Object {
@@ -10665,6 +10955,7 @@ package object ssm {
   trait StartChangeRequestExecutionRequest extends js.Object {
     var DocumentName: DocumentARN
     var Runbooks: Runbooks
+    var AutoApprove: js.UndefOr[Boolean]
     var ChangeDetails: js.UndefOr[ChangeDetailsValue]
     var ChangeRequestName: js.UndefOr[ChangeRequestName]
     var ClientToken: js.UndefOr[IdempotencyToken]
@@ -10680,6 +10971,7 @@ package object ssm {
     def apply(
         DocumentName: DocumentARN,
         Runbooks: Runbooks,
+        AutoApprove: js.UndefOr[Boolean] = js.undefined,
         ChangeDetails: js.UndefOr[ChangeDetailsValue] = js.undefined,
         ChangeRequestName: js.UndefOr[ChangeRequestName] = js.undefined,
         ClientToken: js.UndefOr[IdempotencyToken] = js.undefined,
@@ -10694,6 +10986,7 @@ package object ssm {
         "Runbooks" -> Runbooks.asInstanceOf[js.Any]
       )
 
+      AutoApprove.foreach(__v => __obj.updateDynamic("AutoApprove")(__v.asInstanceOf[js.Any]))
       ChangeDetails.foreach(__v => __obj.updateDynamic("ChangeDetails")(__v.asInstanceOf[js.Any]))
       ChangeRequestName.foreach(__v => __obj.updateDynamic("ChangeRequestName")(__v.asInstanceOf[js.Any]))
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
@@ -10727,6 +11020,7 @@ package object ssm {
     var Target: SessionTarget
     var DocumentName: js.UndefOr[DocumentARN]
     var Parameters: js.UndefOr[SessionManagerParameters]
+    var Reason: js.UndefOr[SessionReason]
   }
 
   object StartSessionRequest {
@@ -10734,7 +11028,8 @@ package object ssm {
     def apply(
         Target: SessionTarget,
         DocumentName: js.UndefOr[DocumentARN] = js.undefined,
-        Parameters: js.UndefOr[SessionManagerParameters] = js.undefined
+        Parameters: js.UndefOr[SessionManagerParameters] = js.undefined,
+        Reason: js.UndefOr[SessionReason] = js.undefined
     ): StartSessionRequest = {
       val __obj = js.Dynamic.literal(
         "Target" -> Target.asInstanceOf[js.Any]
@@ -10742,6 +11037,7 @@ package object ssm {
 
       DocumentName.foreach(__v => __obj.updateDynamic("DocumentName")(__v.asInstanceOf[js.Any]))
       Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      Reason.foreach(__v => __obj.updateDynamic("Reason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartSessionRequest]
     }
   }
@@ -10903,7 +11199,7 @@ package object ssm {
     }
   }
 
-  /** Metadata that you assign to your AWS resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Systems Manager, you can apply tags to documents, managed instances, maintenance windows, Parameter Store parameters, and patch baselines.
+  /** Metadata that you assign to your Amazon Web Services resources. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment. In Amazon Web Services Systems Manager, you can apply tags to Systems Manager documents (SSM documents), managed nodes, maintenance windows, parameters, patch baselines, OpsItems, and OpsMetadata.
     */
   @js.native
   trait Tag extends js.Object {
@@ -10925,11 +11221,11 @@ package object ssm {
     }
   }
 
-  /** An array of search criteria that targets instances using a Key,Value combination that you specify.
+  /** An array of search criteria that targets managed nodes using a key-value pair that you specify.
     *
-    * '''Note:'''One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more information about running tasks that do not specify targets, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html|Registering maintenance window tasks without targets]] in the <i>AWS Systems Manager User Guide</i>. Supported formats include the following. * <code>Key=InstanceIds,Values=<i>instance-id-1</i>,<i>instance-id-2</i>,<i>instance-id-3</i> </code> * <code>Key=tag:<i>my-tag-key</i>,Values=<i>my-tag-value-1</i>,<i>my-tag-value-2</i> </code> * <code>Key=tag-key,Values=<i>my-tag-key-1</i>,<i>my-tag-key-2</i> </code> * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code> * ```Maintenance window targets only```:
-    * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code> * ```Automation targets only```: <code>Key=ResourceGroup;Values=<i>resource-group-name</i> </code> For example: * <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code> * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> * <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code> * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> This example demonstrates how to target all resources in the resource group ```ProductionResourceGroup``` in your maintenance window. * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code> This example demonstrates how to target only EC2 instances and VPCs in your maintenance window. * ```Automation targets
-    * only```: <code>Key=ResourceGroup,Values=MyResourceGroup</code> * ```State Manager association targets only```: <code>Key=InstanceIds,Values=<i>*</i> </code> This example demonstrates how to target all managed instances in the AWS Region where the association was created. For more information about how to send commands that target instances using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Targeting multiple instances]] in the <i>AWS Systems Manager User Guide</i>.
+    * '''Note:'''One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets are optional for other maintenance window task types (Automation, Lambda, and Step Functions). For more information about running tasks that don't specify targets, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html|Registering maintenance window tasks without targets]] in the <i>Amazon Web Services Systems Manager User Guide</i>. Supported formats include the following. * <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;,&lt;instance-id-3&gt;</code> * <code>Key=tag:&lt;my-tag-key&gt;,Values=&lt;my-tag-value-1&gt;,&lt;my-tag-value-2&gt;</code> * <code>Key=tag-key,Values=&lt;my-tag-key-1&gt;,&lt;my-tag-key-2&gt;</code> * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=&lt;resource-group-name&gt;</code> * ```Maintenance window targets
+    * only```: <code>Key=resource-groups:ResourceTypeFilters,Values=&lt;resource-type-1&gt;,&lt;resource-type-2&gt;</code> * ```Automation targets only```: <code>Key=ResourceGroup;Values=&lt;resource-group-name&gt;</code> For example: * <code>Key=InstanceIds,Values=i-02573cafcfEXAMPLE,i-0471e04240EXAMPLE,i-07782c72faEXAMPLE</code> * <code>Key=tag:CostCenter,Values=CostCenter1,CostCenter2,CostCenter3</code> * <code>Key=tag-key,Values=Name,Instance-Type,CostCenter</code> * ```Run Command and Maintenance window targets only```: <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code> This example demonstrates how to target all resources in the resource group ```ProductionResourceGroup``` in your maintenance window. * ```Maintenance window targets only```: <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code> This example demonstrates how to target only Amazon Elastic Compute Cloud (Amazon EC2) instances and VPCs in your maintenance
+    * window. * ```Automation targets only```: <code>Key=ResourceGroup,Values=MyResourceGroup</code> * ```State Manager association targets only```: <code>Key=InstanceIds,Values=*</code> This example demonstrates how to target all managed instances in the Amazon Web Services Region where the association was created. For more information about how to send commands that target managed nodes using <code>Key,Value</code> parameters, see [[https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting|Targeting multiple instances]] in the <i>Amazon Web Services Systems Manager User Guide</i>.
     */
   @js.native
   trait Target extends js.Object {
@@ -10950,7 +11246,7 @@ package object ssm {
     }
   }
 
-  /** The combination of AWS Regions and accounts targeted by the current Automation execution.
+  /** The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation execution.
     */
   @js.native
   trait TargetLocation extends js.Object {
@@ -11062,6 +11358,7 @@ package object ssm {
     var AssociationName: js.UndefOr[AssociationName]
     var AssociationVersion: js.UndefOr[AssociationVersion]
     var AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName]
+    var CalendarNames: js.UndefOr[CalendarNameOrARNList]
     var ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
@@ -11083,6 +11380,7 @@ package object ssm {
         AssociationName: js.UndefOr[AssociationName] = js.undefined,
         AssociationVersion: js.UndefOr[AssociationVersion] = js.undefined,
         AutomationTargetParameterName: js.UndefOr[AutomationTargetParameterName] = js.undefined,
+        CalendarNames: js.UndefOr[CalendarNameOrARNList] = js.undefined,
         ComplianceSeverity: js.UndefOr[AssociationComplianceSeverity] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
@@ -11103,6 +11401,7 @@ package object ssm {
       AssociationName.foreach(__v => __obj.updateDynamic("AssociationName")(__v.asInstanceOf[js.Any]))
       AssociationVersion.foreach(__v => __obj.updateDynamic("AssociationVersion")(__v.asInstanceOf[js.Any]))
       AutomationTargetParameterName.foreach(__v => __obj.updateDynamic("AutomationTargetParameterName")(__v.asInstanceOf[js.Any]))
+      CalendarNames.foreach(__v => __obj.updateDynamic("CalendarNames")(__v.asInstanceOf[js.Any]))
       ComplianceSeverity.foreach(__v => __obj.updateDynamic("ComplianceSeverity")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
@@ -11249,6 +11548,7 @@ package object ssm {
     var Content: DocumentContent
     var Name: DocumentName
     var Attachments: js.UndefOr[AttachmentsSourceList]
+    var DisplayName: js.UndefOr[DocumentDisplayName]
     var DocumentFormat: js.UndefOr[DocumentFormat]
     var DocumentVersion: js.UndefOr[DocumentVersion]
     var TargetType: js.UndefOr[TargetType]
@@ -11261,6 +11561,7 @@ package object ssm {
         Content: DocumentContent,
         Name: DocumentName,
         Attachments: js.UndefOr[AttachmentsSourceList] = js.undefined,
+        DisplayName: js.UndefOr[DocumentDisplayName] = js.undefined,
         DocumentFormat: js.UndefOr[DocumentFormat] = js.undefined,
         DocumentVersion: js.UndefOr[DocumentVersion] = js.undefined,
         TargetType: js.UndefOr[TargetType] = js.undefined,
@@ -11272,6 +11573,7 @@ package object ssm {
       )
 
       Attachments.foreach(__v => __obj.updateDynamic("Attachments")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
       DocumentFormat.foreach(__v => __obj.updateDynamic("DocumentFormat")(__v.asInstanceOf[js.Any]))
       DocumentVersion.foreach(__v => __obj.updateDynamic("DocumentVersion")(__v.asInstanceOf[js.Any]))
       TargetType.foreach(__v => __obj.updateDynamic("TargetType")(__v.asInstanceOf[js.Any]))
@@ -11470,6 +11772,7 @@ package object ssm {
   trait UpdateMaintenanceWindowTaskRequest extends js.Object {
     var WindowId: MaintenanceWindowId
     var WindowTaskId: MaintenanceWindowTaskId
+    var CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var LoggingInfo: js.UndefOr[LoggingInfo]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
@@ -11489,6 +11792,7 @@ package object ssm {
     def apply(
         WindowId: MaintenanceWindowId,
         WindowTaskId: MaintenanceWindowTaskId,
+        CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
@@ -11507,6 +11811,7 @@ package object ssm {
         "WindowTaskId" -> WindowTaskId.asInstanceOf[js.Any]
       )
 
+      CutoffBehavior.foreach(__v => __obj.updateDynamic("CutoffBehavior")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
@@ -11525,6 +11830,7 @@ package object ssm {
 
   @js.native
   trait UpdateMaintenanceWindowTaskResult extends js.Object {
+    var CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior]
     var Description: js.UndefOr[MaintenanceWindowDescription]
     var LoggingInfo: js.UndefOr[LoggingInfo]
     var MaxConcurrency: js.UndefOr[MaxConcurrency]
@@ -11543,6 +11849,7 @@ package object ssm {
   object UpdateMaintenanceWindowTaskResult {
     @inline
     def apply(
+        CutoffBehavior: js.UndefOr[MaintenanceWindowTaskCutoffBehavior] = js.undefined,
         Description: js.UndefOr[MaintenanceWindowDescription] = js.undefined,
         LoggingInfo: js.UndefOr[LoggingInfo] = js.undefined,
         MaxConcurrency: js.UndefOr[MaxConcurrency] = js.undefined,
@@ -11558,6 +11865,7 @@ package object ssm {
         WindowTaskId: js.UndefOr[MaintenanceWindowTaskId] = js.undefined
     ): UpdateMaintenanceWindowTaskResult = {
       val __obj = js.Dynamic.literal()
+      CutoffBehavior.foreach(__v => __obj.updateDynamic("CutoffBehavior")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LoggingInfo.foreach(__v => __obj.updateDynamic("LoggingInfo")(__v.asInstanceOf[js.Any]))
       MaxConcurrency.foreach(__v => __obj.updateDynamic("MaxConcurrency")(__v.asInstanceOf[js.Any]))
@@ -11857,7 +12165,7 @@ package object ssm {
     }
   }
 
-  /** The request body of the UpdateServiceSetting API action.
+  /** The request body of the UpdateServiceSetting API operation.
     */
   @js.native
   trait UpdateServiceSettingRequest extends js.Object {
@@ -11879,7 +12187,7 @@ package object ssm {
     }
   }
 
-  /** The result body of the UpdateServiceSetting API action.
+  /** The result body of the UpdateServiceSetting API operation.
     */
   @js.native
   trait UpdateServiceSettingResult extends js.Object

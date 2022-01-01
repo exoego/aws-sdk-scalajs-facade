@@ -18,6 +18,14 @@ object AwsIamAccessKeyStatus {
   inline def values: js.Array[AwsIamAccessKeyStatus] = js.Array(Active, Inactive)
 }
 
+type AwsS3BucketNotificationConfigurationS3KeyFilterRuleName = "Prefix" | "Suffix"
+object AwsS3BucketNotificationConfigurationS3KeyFilterRuleName {
+  inline val Prefix: "Prefix" = "Prefix"
+  inline val Suffix: "Suffix" = "Suffix"
+
+  inline def values: js.Array[AwsS3BucketNotificationConfigurationS3KeyFilterRuleName] = js.Array(Prefix, Suffix)
+}
+
 type ComplianceStatus = "PASSED" | "WARNING" | "FAILED" | "NOT_AVAILABLE"
 object ComplianceStatus {
   inline val PASSED: "PASSED" = "PASSED"
@@ -171,6 +179,14 @@ object StandardsStatus {
   inline def values: js.Array[StandardsStatus] = js.Array(PENDING, READY, FAILED, DELETING, INCOMPLETE)
 }
 
+type StatusReasonCode = "NO_AVAILABLE_CONFIGURATION_RECORDER" | "INTERNAL_ERROR"
+object StatusReasonCode {
+  inline val NO_AVAILABLE_CONFIGURATION_RECORDER: "NO_AVAILABLE_CONFIGURATION_RECORDER" = "NO_AVAILABLE_CONFIGURATION_RECORDER"
+  inline val INTERNAL_ERROR: "INTERNAL_ERROR" = "INTERNAL_ERROR"
+
+  inline def values: js.Array[StatusReasonCode] = js.Array(NO_AVAILABLE_CONFIGURATION_RECORDER, INTERNAL_ERROR)
+}
+
 type StringFilterComparison = "EQUALS" | "PREFIX" | "NOT_EQUALS" | "PREFIX_NOT_EQUALS"
 object StringFilterComparison {
   inline val EQUALS: "EQUALS" = "EQUALS"
@@ -220,7 +236,7 @@ object VerificationState {
   inline def values: js.Array[VerificationState] = js.Array(UNKNOWN, TRUE_POSITIVE, FALSE_POSITIVE, BENIGN_POSITIVE)
 }
 
-@deprecated("This field is deprecated, use Workflow.Status instead.", "forever")
+@deprecated("This filter is deprecated. Instead, use SeverityLabel or FindingProviderFieldsSeverityLabel.", "forever")
 type WorkflowState = "NEW" | "ASSIGNED" | "IN_PROGRESS" | "DEFERRED" | "RESOLVED"
 object WorkflowState {
   inline val NEW: "NEW" = "NEW"

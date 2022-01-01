@@ -24,6 +24,7 @@ package object storagegateway {
   type ClientToken = String
   type CloudWatchLogGroupARN = String
   type CreatedDate = js.Date
+  type DNSHostName = String
   type DayOfMonth = Int
   type DayOfWeek = Int
   type DaysOfWeek = js.Array[DayOfWeek]
@@ -55,7 +56,9 @@ package object storagegateway {
   type FileSystemAssociationId = String
   type FileSystemAssociationInfoList = js.Array[FileSystemAssociationInfo]
   type FileSystemAssociationStatus = String
+  type FileSystemAssociationStatusDetails = js.Array[FileSystemAssociationStatusDetail]
   type FileSystemAssociationSummaryList = js.Array[FileSystemAssociationSummary]
+  type FileSystemAssociationSyncErrorCode = String
   type FileSystemLocationARN = String
   type Folder = String
   type FolderList = js.Array[Folder]
@@ -69,11 +72,14 @@ package object storagegateway {
   type GatewayType = String
   type Gateways = js.Array[GatewayInfo]
   type Host = String
+  type HostEnvironmentId = String
   type Hosts = js.Array[Host]
   type HourOfDay = Int
+  type IPV4Address = String
   type IPV4AddressCIDR = String
   type Initiator = String
   type Initiators = js.Array[Initiator]
+  type IpAddressList = js.Array[IPV4Address]
   type IqnName = String
   type KMSKey = String
   type LastSoftwareUpdate = String
@@ -112,6 +118,7 @@ package object storagegateway {
   type Squash = String
   type StorageClass = String
   type StorediSCSIVolumes = js.Array[StorediSCSIVolume]
+  type SupportedGatewayCapacities = js.Array[GatewayCapacity]
   type TagKey = String
   type TagKeys = js.Array[TagKey]
   type TagValue = String
@@ -241,6 +248,7 @@ package object storagegateway {
     @inline def updateNFSFileShareFuture(params: UpdateNFSFileShareInput): Future[UpdateNFSFileShareOutput] = service.updateNFSFileShare(params).promise().toFuture
     @inline def updateSMBFileShareFuture(params: UpdateSMBFileShareInput): Future[UpdateSMBFileShareOutput] = service.updateSMBFileShare(params).promise().toFuture
     @inline def updateSMBFileShareVisibilityFuture(params: UpdateSMBFileShareVisibilityInput): Future[UpdateSMBFileShareVisibilityOutput] = service.updateSMBFileShareVisibility(params).promise().toFuture
+    @inline def updateSMBLocalGroupsFuture(params: UpdateSMBLocalGroupsInput): Future[UpdateSMBLocalGroupsOutput] = service.updateSMBLocalGroups(params).promise().toFuture
     @inline def updateSMBSecurityStrategyFuture(params: UpdateSMBSecurityStrategyInput): Future[UpdateSMBSecurityStrategyOutput] = service.updateSMBSecurityStrategy(params).promise().toFuture
     @inline def updateSnapshotScheduleFuture(params: UpdateSnapshotScheduleInput): Future[UpdateSnapshotScheduleOutput] = service.updateSnapshotSchedule(params).promise().toFuture
     @inline def updateVTLDeviceTypeFuture(params: UpdateVTLDeviceTypeInput): Future[UpdateVTLDeviceTypeOutput] = service.updateVTLDeviceType(params).promise().toFuture
@@ -338,6 +346,7 @@ package object storagegateway {
     def updateNFSFileShare(params: UpdateNFSFileShareInput): Request[UpdateNFSFileShareOutput] = js.native
     def updateSMBFileShare(params: UpdateSMBFileShareInput): Request[UpdateSMBFileShareOutput] = js.native
     def updateSMBFileShareVisibility(params: UpdateSMBFileShareVisibilityInput): Request[UpdateSMBFileShareVisibilityOutput] = js.native
+    def updateSMBLocalGroups(params: UpdateSMBLocalGroupsInput): Request[UpdateSMBLocalGroupsOutput] = js.native
     def updateSMBSecurityStrategy(params: UpdateSMBSecurityStrategyInput): Request[UpdateSMBSecurityStrategyOutput] = js.native
     def updateSnapshotSchedule(params: UpdateSnapshotScheduleInput): Request[UpdateSnapshotScheduleOutput] = js.native
     def updateVTLDeviceType(params: UpdateVTLDeviceTypeInput): Request[UpdateVTLDeviceTypeOutput] = js.native
@@ -389,7 +398,7 @@ package object storagegateway {
     }
   }
 
-  /** AWS Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and AWS Region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.
+  /** Storage Gateway returns the Amazon Resource Name (ARN) of the activated gateway. It is a string made of information such as your account, gateway name, and Amazon Web Services Region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.
     *
     * '''Note:'''For gateways activated prior to September 02, 2015, the gateway ARN contains the gateway name rather than the gateway ID. Changing the name of the gateway has no effect on the gateway ARN.
     */
@@ -606,6 +615,7 @@ package object storagegateway {
     var UserName: DomainUserName
     var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var CacheAttributes: js.UndefOr[CacheAttributes]
+    var EndpointNetworkConfiguration: js.UndefOr[EndpointNetworkConfiguration]
     var Tags: js.UndefOr[Tags]
   }
 
@@ -619,6 +629,7 @@ package object storagegateway {
         UserName: DomainUserName,
         AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
+        EndpointNetworkConfiguration: js.UndefOr[EndpointNetworkConfiguration] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
     ): AssociateFileSystemInput = {
       val __obj = js.Dynamic.literal(
@@ -631,6 +642,7 @@ package object storagegateway {
 
       AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
       CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
+      EndpointNetworkConfiguration.foreach(__v => __obj.updateDynamic("EndpointNetworkConfiguration")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateFileSystemInput]
     }
@@ -792,7 +804,7 @@ package object storagegateway {
     }
   }
 
-  /** The refresh cache information for the file share.
+  /** The refresh cache information for the file share or FSx file systems.
     */
   @js.native
   trait CacheAttributes extends js.Object {
@@ -1033,6 +1045,8 @@ package object storagegateway {
     var GatewayARN: GatewayARN
     var LocationARN: LocationARN
     var Role: Role
+    var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
+    var BucketRegion: js.UndefOr[RegionId]
     var CacheAttributes: js.UndefOr[CacheAttributes]
     var ClientList: js.UndefOr[FileShareClientList]
     var DefaultStorageClass: js.UndefOr[StorageClass]
@@ -1047,6 +1061,7 @@ package object storagegateway {
     var RequesterPays: js.UndefOr[Boolean]
     var Squash: js.UndefOr[Squash]
     var Tags: js.UndefOr[Tags]
+    var VPCEndpointDNSName: js.UndefOr[DNSHostName]
   }
 
   object CreateNFSFileShareInput {
@@ -1056,6 +1071,8 @@ package object storagegateway {
         GatewayARN: GatewayARN,
         LocationARN: LocationARN,
         Role: Role,
+        AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
+        BucketRegion: js.UndefOr[RegionId] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
         ClientList: js.UndefOr[FileShareClientList] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
@@ -1069,7 +1086,8 @@ package object storagegateway {
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
         Squash: js.UndefOr[Squash] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VPCEndpointDNSName: js.UndefOr[DNSHostName] = js.undefined
     ): CreateNFSFileShareInput = {
       val __obj = js.Dynamic.literal(
         "ClientToken" -> ClientToken.asInstanceOf[js.Any],
@@ -1078,6 +1096,8 @@ package object storagegateway {
         "Role" -> Role.asInstanceOf[js.Any]
       )
 
+      AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
+      BucketRegion.foreach(__v => __obj.updateDynamic("BucketRegion")(__v.asInstanceOf[js.Any]))
       CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
       ClientList.foreach(__v => __obj.updateDynamic("ClientList")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
@@ -1092,6 +1112,7 @@ package object storagegateway {
       RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
       Squash.foreach(__v => __obj.updateDynamic("Squash")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VPCEndpointDNSName.foreach(__v => __obj.updateDynamic("VPCEndpointDNSName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateNFSFileShareInput]
     }
   }
@@ -1122,6 +1143,7 @@ package object storagegateway {
     var AdminUserList: js.UndefOr[UserList]
     var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var Authentication: js.UndefOr[Authentication]
+    var BucketRegion: js.UndefOr[RegionId]
     var CacheAttributes: js.UndefOr[CacheAttributes]
     var CaseSensitivity: js.UndefOr[CaseSensitivity]
     var DefaultStorageClass: js.UndefOr[StorageClass]
@@ -1132,10 +1154,12 @@ package object storagegateway {
     var KMSKey: js.UndefOr[KMSKey]
     var NotificationPolicy: js.UndefOr[NotificationPolicy]
     var ObjectACL: js.UndefOr[ObjectACL]
+    var OplocksEnabled: js.UndefOr[Boolean]
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
     var SMBACLEnabled: js.UndefOr[Boolean]
     var Tags: js.UndefOr[Tags]
+    var VPCEndpointDNSName: js.UndefOr[DNSHostName]
     var ValidUserList: js.UndefOr[UserList]
   }
 
@@ -1150,6 +1174,7 @@ package object storagegateway {
         AdminUserList: js.UndefOr[UserList] = js.undefined,
         AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
+        BucketRegion: js.UndefOr[RegionId] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
         CaseSensitivity: js.UndefOr[CaseSensitivity] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
@@ -1160,10 +1185,12 @@ package object storagegateway {
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
+        OplocksEnabled: js.UndefOr[Boolean] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
         SMBACLEnabled: js.UndefOr[Boolean] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
+        VPCEndpointDNSName: js.UndefOr[DNSHostName] = js.undefined,
         ValidUserList: js.UndefOr[UserList] = js.undefined
     ): CreateSMBFileShareInput = {
       val __obj = js.Dynamic.literal(
@@ -1177,6 +1204,7 @@ package object storagegateway {
       AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
       AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
       Authentication.foreach(__v => __obj.updateDynamic("Authentication")(__v.asInstanceOf[js.Any]))
+      BucketRegion.foreach(__v => __obj.updateDynamic("BucketRegion")(__v.asInstanceOf[js.Any]))
       CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
       CaseSensitivity.foreach(__v => __obj.updateDynamic("CaseSensitivity")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
@@ -1187,10 +1215,12 @@ package object storagegateway {
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
       NotificationPolicy.foreach(__v => __obj.updateDynamic("NotificationPolicy")(__v.asInstanceOf[js.Any]))
       ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
+      OplocksEnabled.foreach(__v => __obj.updateDynamic("OplocksEnabled")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
       SMBACLEnabled.foreach(__v => __obj.updateDynamic("SMBACLEnabled")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VPCEndpointDNSName.foreach(__v => __obj.updateDynamic("VPCEndpointDNSName")(__v.asInstanceOf[js.Any]))
       ValidUserList.foreach(__v => __obj.updateDynamic("ValidUserList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateSMBFileShareInput]
     }
@@ -2212,6 +2242,7 @@ package object storagegateway {
     var Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion]
     var EndpointType: js.UndefOr[EndpointType]
     var GatewayARN: js.UndefOr[GatewayARN]
+    var GatewayCapacity: js.UndefOr[GatewayCapacity]
     var GatewayId: js.UndefOr[GatewayId]
     var GatewayName: js.UndefOr[String]
     var GatewayNetworkInterfaces: js.UndefOr[GatewayNetworkInterfaces]
@@ -2219,9 +2250,11 @@ package object storagegateway {
     var GatewayTimezone: js.UndefOr[GatewayTimezone]
     var GatewayType: js.UndefOr[GatewayType]
     var HostEnvironment: js.UndefOr[HostEnvironment]
+    var HostEnvironmentId: js.UndefOr[HostEnvironmentId]
     var LastSoftwareUpdate: js.UndefOr[LastSoftwareUpdate]
     var NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate]
     var SoftwareUpdatesEndDate: js.UndefOr[SoftwareUpdatesEndDate]
+    var SupportedGatewayCapacities: js.UndefOr[SupportedGatewayCapacities]
     var Tags: js.UndefOr[Tags]
     var VPCEndpoint: js.UndefOr[String]
   }
@@ -2235,6 +2268,7 @@ package object storagegateway {
         Ec2InstanceRegion: js.UndefOr[Ec2InstanceRegion] = js.undefined,
         EndpointType: js.UndefOr[EndpointType] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
+        GatewayCapacity: js.UndefOr[GatewayCapacity] = js.undefined,
         GatewayId: js.UndefOr[GatewayId] = js.undefined,
         GatewayName: js.UndefOr[String] = js.undefined,
         GatewayNetworkInterfaces: js.UndefOr[GatewayNetworkInterfaces] = js.undefined,
@@ -2242,9 +2276,11 @@ package object storagegateway {
         GatewayTimezone: js.UndefOr[GatewayTimezone] = js.undefined,
         GatewayType: js.UndefOr[GatewayType] = js.undefined,
         HostEnvironment: js.UndefOr[HostEnvironment] = js.undefined,
+        HostEnvironmentId: js.UndefOr[HostEnvironmentId] = js.undefined,
         LastSoftwareUpdate: js.UndefOr[LastSoftwareUpdate] = js.undefined,
         NextUpdateAvailabilityDate: js.UndefOr[NextUpdateAvailabilityDate] = js.undefined,
         SoftwareUpdatesEndDate: js.UndefOr[SoftwareUpdatesEndDate] = js.undefined,
+        SupportedGatewayCapacities: js.UndefOr[SupportedGatewayCapacities] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
         VPCEndpoint: js.UndefOr[String] = js.undefined
     ): DescribeGatewayInformationOutput = {
@@ -2255,6 +2291,7 @@ package object storagegateway {
       Ec2InstanceRegion.foreach(__v => __obj.updateDynamic("Ec2InstanceRegion")(__v.asInstanceOf[js.Any]))
       EndpointType.foreach(__v => __obj.updateDynamic("EndpointType")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      GatewayCapacity.foreach(__v => __obj.updateDynamic("GatewayCapacity")(__v.asInstanceOf[js.Any]))
       GatewayId.foreach(__v => __obj.updateDynamic("GatewayId")(__v.asInstanceOf[js.Any]))
       GatewayName.foreach(__v => __obj.updateDynamic("GatewayName")(__v.asInstanceOf[js.Any]))
       GatewayNetworkInterfaces.foreach(__v => __obj.updateDynamic("GatewayNetworkInterfaces")(__v.asInstanceOf[js.Any]))
@@ -2262,9 +2299,11 @@ package object storagegateway {
       GatewayTimezone.foreach(__v => __obj.updateDynamic("GatewayTimezone")(__v.asInstanceOf[js.Any]))
       GatewayType.foreach(__v => __obj.updateDynamic("GatewayType")(__v.asInstanceOf[js.Any]))
       HostEnvironment.foreach(__v => __obj.updateDynamic("HostEnvironment")(__v.asInstanceOf[js.Any]))
+      HostEnvironmentId.foreach(__v => __obj.updateDynamic("HostEnvironmentId")(__v.asInstanceOf[js.Any]))
       LastSoftwareUpdate.foreach(__v => __obj.updateDynamic("LastSoftwareUpdate")(__v.asInstanceOf[js.Any]))
       NextUpdateAvailabilityDate.foreach(__v => __obj.updateDynamic("NextUpdateAvailabilityDate")(__v.asInstanceOf[js.Any]))
       SoftwareUpdatesEndDate.foreach(__v => __obj.updateDynamic("SoftwareUpdatesEndDate")(__v.asInstanceOf[js.Any]))
+      SupportedGatewayCapacities.foreach(__v => __obj.updateDynamic("SupportedGatewayCapacities")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       VPCEndpoint.foreach(__v => __obj.updateDynamic("VPCEndpoint")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGatewayInformationOutput]
@@ -2413,6 +2452,7 @@ package object storagegateway {
     var FileSharesVisible: js.UndefOr[Boolean]
     var GatewayARN: js.UndefOr[GatewayARN]
     var SMBGuestPasswordSet: js.UndefOr[Boolean]
+    var SMBLocalGroups: js.UndefOr[SMBLocalGroups]
     var SMBSecurityStrategy: js.UndefOr[SMBSecurityStrategy]
   }
 
@@ -2424,6 +2464,7 @@ package object storagegateway {
         FileSharesVisible: js.UndefOr[Boolean] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         SMBGuestPasswordSet: js.UndefOr[Boolean] = js.undefined,
+        SMBLocalGroups: js.UndefOr[SMBLocalGroups] = js.undefined,
         SMBSecurityStrategy: js.UndefOr[SMBSecurityStrategy] = js.undefined
     ): DescribeSMBSettingsOutput = {
       val __obj = js.Dynamic.literal()
@@ -2432,6 +2473,7 @@ package object storagegateway {
       FileSharesVisible.foreach(__v => __obj.updateDynamic("FileSharesVisible")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       SMBGuestPasswordSet.foreach(__v => __obj.updateDynamic("SMBGuestPasswordSet")(__v.asInstanceOf[js.Any]))
+      SMBLocalGroups.foreach(__v => __obj.updateDynamic("SMBLocalGroups")(__v.asInstanceOf[js.Any]))
       SMBSecurityStrategy.foreach(__v => __obj.updateDynamic("SMBSecurityStrategy")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeSMBSettingsOutput]
     }
@@ -2969,7 +3011,25 @@ package object storagegateway {
     }
   }
 
-  /** Describes a file share.
+  /** Specifies network configuration information for the gateway associated with the Amazon FSx file system.
+    */
+  @js.native
+  trait EndpointNetworkConfiguration extends js.Object {
+    var IpAddresses: js.UndefOr[IpAddressList]
+  }
+
+  object EndpointNetworkConfiguration {
+    @inline
+    def apply(
+        IpAddresses: js.UndefOr[IpAddressList] = js.undefined
+    ): EndpointNetworkConfiguration = {
+      val __obj = js.Dynamic.literal()
+      IpAddresses.foreach(__v => __obj.updateDynamic("IpAddresses")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointNetworkConfiguration]
+    }
+  }
+
+  /** Describes a file share. Only supported S3 File Gateway.
     */
   @js.native
   trait FileShareInfo extends js.Object {
@@ -3005,8 +3065,10 @@ package object storagegateway {
   trait FileSystemAssociationInfo extends js.Object {
     var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var CacheAttributes: js.UndefOr[CacheAttributes]
+    var EndpointNetworkConfiguration: js.UndefOr[EndpointNetworkConfiguration]
     var FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN]
     var FileSystemAssociationStatus: js.UndefOr[FileSystemAssociationStatus]
+    var FileSystemAssociationStatusDetails: js.UndefOr[FileSystemAssociationStatusDetails]
     var GatewayARN: js.UndefOr[GatewayARN]
     var LocationARN: js.UndefOr[FileSystemLocationARN]
     var Tags: js.UndefOr[Tags]
@@ -3017,8 +3079,10 @@ package object storagegateway {
     def apply(
         AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
+        EndpointNetworkConfiguration: js.UndefOr[EndpointNetworkConfiguration] = js.undefined,
         FileSystemAssociationARN: js.UndefOr[FileSystemAssociationARN] = js.undefined,
         FileSystemAssociationStatus: js.UndefOr[FileSystemAssociationStatus] = js.undefined,
+        FileSystemAssociationStatusDetails: js.UndefOr[FileSystemAssociationStatusDetails] = js.undefined,
         GatewayARN: js.UndefOr[GatewayARN] = js.undefined,
         LocationARN: js.UndefOr[FileSystemLocationARN] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined
@@ -3026,12 +3090,32 @@ package object storagegateway {
       val __obj = js.Dynamic.literal()
       AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
       CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
+      EndpointNetworkConfiguration.foreach(__v => __obj.updateDynamic("EndpointNetworkConfiguration")(__v.asInstanceOf[js.Any]))
       FileSystemAssociationARN.foreach(__v => __obj.updateDynamic("FileSystemAssociationARN")(__v.asInstanceOf[js.Any]))
       FileSystemAssociationStatus.foreach(__v => __obj.updateDynamic("FileSystemAssociationStatus")(__v.asInstanceOf[js.Any]))
+      FileSystemAssociationStatusDetails.foreach(__v => __obj.updateDynamic("FileSystemAssociationStatusDetails")(__v.asInstanceOf[js.Any]))
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       LocationARN.foreach(__v => __obj.updateDynamic("LocationARN")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[FileSystemAssociationInfo]
+    }
+  }
+
+  /** Detailed information on file system association status.
+    */
+  @js.native
+  trait FileSystemAssociationStatusDetail extends js.Object {
+    var ErrorCode: js.UndefOr[FileSystemAssociationSyncErrorCode]
+  }
+
+  object FileSystemAssociationStatusDetail {
+    @inline
+    def apply(
+        ErrorCode: js.UndefOr[FileSystemAssociationSyncErrorCode] = js.undefined
+    ): FileSystemAssociationStatusDetail = {
+      val __obj = js.Dynamic.literal()
+      ErrorCode.foreach(__v => __obj.updateDynamic("ErrorCode")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileSystemAssociationStatusDetail]
     }
   }
 
@@ -3073,6 +3157,8 @@ package object storagegateway {
     var GatewayName: js.UndefOr[String]
     var GatewayOperationalState: js.UndefOr[GatewayOperationalState]
     var GatewayType: js.UndefOr[GatewayType]
+    var HostEnvironment: js.UndefOr[HostEnvironment]
+    var HostEnvironmentId: js.UndefOr[HostEnvironmentId]
   }
 
   object GatewayInfo {
@@ -3084,7 +3170,9 @@ package object storagegateway {
         GatewayId: js.UndefOr[GatewayId] = js.undefined,
         GatewayName: js.UndefOr[String] = js.undefined,
         GatewayOperationalState: js.UndefOr[GatewayOperationalState] = js.undefined,
-        GatewayType: js.UndefOr[GatewayType] = js.undefined
+        GatewayType: js.UndefOr[GatewayType] = js.undefined,
+        HostEnvironment: js.UndefOr[HostEnvironment] = js.undefined,
+        HostEnvironmentId: js.UndefOr[HostEnvironmentId] = js.undefined
     ): GatewayInfo = {
       val __obj = js.Dynamic.literal()
       Ec2InstanceId.foreach(__v => __obj.updateDynamic("Ec2InstanceId")(__v.asInstanceOf[js.Any]))
@@ -3094,6 +3182,8 @@ package object storagegateway {
       GatewayName.foreach(__v => __obj.updateDynamic("GatewayName")(__v.asInstanceOf[js.Any]))
       GatewayOperationalState.foreach(__v => __obj.updateDynamic("GatewayOperationalState")(__v.asInstanceOf[js.Any]))
       GatewayType.foreach(__v => __obj.updateDynamic("GatewayType")(__v.asInstanceOf[js.Any]))
+      HostEnvironment.foreach(__v => __obj.updateDynamic("HostEnvironment")(__v.asInstanceOf[js.Any]))
+      HostEnvironmentId.foreach(__v => __obj.updateDynamic("HostEnvironmentId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GatewayInfo]
     }
   }
@@ -3604,7 +3694,7 @@ package object storagegateway {
     }
   }
 
-  /** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for file gateways.
+  /** Describes Network File System (NFS) file share default values. Files and folders stored as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that represent files and folders are assigned these default Unix permissions. This operation is only supported for S3 File Gateways.
     */
   @js.native
   trait NFSFileShareDefaults extends js.Object {
@@ -3631,10 +3721,12 @@ package object storagegateway {
     }
   }
 
-  /** The Unix file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported in file gateways.
+  /** The Unix file permissions and ownership information assigned, by default, to native S3 objects when an S3 File Gateway discovers them in S3 buckets. This operation is only supported in S3 File Gateways.
     */
   @js.native
   trait NFSFileShareInfo extends js.Object {
+    var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
+    var BucketRegion: js.UndefOr[RegionId]
     var CacheAttributes: js.UndefOr[CacheAttributes]
     var ClientList: js.UndefOr[FileShareClientList]
     var DefaultStorageClass: js.UndefOr[StorageClass]
@@ -3656,11 +3748,14 @@ package object storagegateway {
     var Role: js.UndefOr[Role]
     var Squash: js.UndefOr[Squash]
     var Tags: js.UndefOr[Tags]
+    var VPCEndpointDNSName: js.UndefOr[DNSHostName]
   }
 
   object NFSFileShareInfo {
     @inline
     def apply(
+        AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
+        BucketRegion: js.UndefOr[RegionId] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
         ClientList: js.UndefOr[FileShareClientList] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
@@ -3681,9 +3776,12 @@ package object storagegateway {
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
         Squash: js.UndefOr[Squash] = js.undefined,
-        Tags: js.UndefOr[Tags] = js.undefined
+        Tags: js.UndefOr[Tags] = js.undefined,
+        VPCEndpointDNSName: js.UndefOr[DNSHostName] = js.undefined
     ): NFSFileShareInfo = {
       val __obj = js.Dynamic.literal()
+      AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
+      BucketRegion.foreach(__v => __obj.updateDynamic("BucketRegion")(__v.asInstanceOf[js.Any]))
       CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
       ClientList.foreach(__v => __obj.updateDynamic("ClientList")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
@@ -3705,6 +3803,7 @@ package object storagegateway {
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       Squash.foreach(__v => __obj.updateDynamic("Squash")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VPCEndpointDNSName.foreach(__v => __obj.updateDynamic("VPCEndpointDNSName")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NFSFileShareInfo]
     }
   }
@@ -3986,7 +4085,7 @@ package object storagegateway {
     }
   }
 
-  /** The Windows file permissions and ownership information assigned, by default, to native S3 objects when file gateway discovers them in S3 buckets. This operation is only supported for file gateways.
+  /** The Windows file permissions and ownership information assigned, by default, to native S3 objects when S3 File Gateway discovers them in S3 buckets. This operation is only supported for S3 File Gateways.
     */
   @js.native
   trait SMBFileShareInfo extends js.Object {
@@ -3994,6 +4093,7 @@ package object storagegateway {
     var AdminUserList: js.UndefOr[UserList]
     var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var Authentication: js.UndefOr[Authentication]
+    var BucketRegion: js.UndefOr[RegionId]
     var CacheAttributes: js.UndefOr[CacheAttributes]
     var CaseSensitivity: js.UndefOr[CaseSensitivity]
     var DefaultStorageClass: js.UndefOr[StorageClass]
@@ -4009,12 +4109,14 @@ package object storagegateway {
     var LocationARN: js.UndefOr[LocationARN]
     var NotificationPolicy: js.UndefOr[NotificationPolicy]
     var ObjectACL: js.UndefOr[ObjectACL]
+    var OplocksEnabled: js.UndefOr[Boolean]
     var Path: js.UndefOr[Path]
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
     var Role: js.UndefOr[Role]
     var SMBACLEnabled: js.UndefOr[Boolean]
     var Tags: js.UndefOr[Tags]
+    var VPCEndpointDNSName: js.UndefOr[DNSHostName]
     var ValidUserList: js.UndefOr[UserList]
   }
 
@@ -4025,6 +4127,7 @@ package object storagegateway {
         AdminUserList: js.UndefOr[UserList] = js.undefined,
         AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         Authentication: js.UndefOr[Authentication] = js.undefined,
+        BucketRegion: js.UndefOr[RegionId] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
         CaseSensitivity: js.UndefOr[CaseSensitivity] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
@@ -4040,12 +4143,14 @@ package object storagegateway {
         LocationARN: js.UndefOr[LocationARN] = js.undefined,
         NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
+        OplocksEnabled: js.UndefOr[Boolean] = js.undefined,
         Path: js.UndefOr[Path] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
         Role: js.UndefOr[Role] = js.undefined,
         SMBACLEnabled: js.UndefOr[Boolean] = js.undefined,
         Tags: js.UndefOr[Tags] = js.undefined,
+        VPCEndpointDNSName: js.UndefOr[DNSHostName] = js.undefined,
         ValidUserList: js.UndefOr[UserList] = js.undefined
     ): SMBFileShareInfo = {
       val __obj = js.Dynamic.literal()
@@ -4053,6 +4158,7 @@ package object storagegateway {
       AdminUserList.foreach(__v => __obj.updateDynamic("AdminUserList")(__v.asInstanceOf[js.Any]))
       AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
       Authentication.foreach(__v => __obj.updateDynamic("Authentication")(__v.asInstanceOf[js.Any]))
+      BucketRegion.foreach(__v => __obj.updateDynamic("BucketRegion")(__v.asInstanceOf[js.Any]))
       CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
       CaseSensitivity.foreach(__v => __obj.updateDynamic("CaseSensitivity")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
@@ -4068,14 +4174,34 @@ package object storagegateway {
       LocationARN.foreach(__v => __obj.updateDynamic("LocationARN")(__v.asInstanceOf[js.Any]))
       NotificationPolicy.foreach(__v => __obj.updateDynamic("NotificationPolicy")(__v.asInstanceOf[js.Any]))
       ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
+      OplocksEnabled.foreach(__v => __obj.updateDynamic("OplocksEnabled")(__v.asInstanceOf[js.Any]))
       Path.foreach(__v => __obj.updateDynamic("Path")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
       Role.foreach(__v => __obj.updateDynamic("Role")(__v.asInstanceOf[js.Any]))
       SMBACLEnabled.foreach(__v => __obj.updateDynamic("SMBACLEnabled")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VPCEndpointDNSName.foreach(__v => __obj.updateDynamic("VPCEndpointDNSName")(__v.asInstanceOf[js.Any]))
       ValidUserList.foreach(__v => __obj.updateDynamic("ValidUserList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SMBFileShareInfo]
+    }
+  }
+
+  /** A list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.
+    */
+  @js.native
+  trait SMBLocalGroups extends js.Object {
+    var GatewayAdmins: js.UndefOr[UserList]
+  }
+
+  object SMBLocalGroups {
+    @inline
+    def apply(
+        GatewayAdmins: js.UndefOr[UserList] = js.undefined
+    ): SMBLocalGroups = {
+      val __obj = js.Dynamic.literal()
+      GatewayAdmins.foreach(__v => __obj.updateDynamic("GatewayAdmins")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SMBLocalGroups]
     }
   }
 
@@ -4730,6 +4856,7 @@ package object storagegateway {
   trait UpdateGatewayInformationInput extends js.Object {
     var GatewayARN: GatewayARN
     var CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN]
+    var GatewayCapacity: js.UndefOr[GatewayCapacity]
     var GatewayName: js.UndefOr[GatewayName]
     var GatewayTimezone: js.UndefOr[GatewayTimezone]
   }
@@ -4739,6 +4866,7 @@ package object storagegateway {
     def apply(
         GatewayARN: GatewayARN,
         CloudWatchLogGroupARN: js.UndefOr[CloudWatchLogGroupARN] = js.undefined,
+        GatewayCapacity: js.UndefOr[GatewayCapacity] = js.undefined,
         GatewayName: js.UndefOr[GatewayName] = js.undefined,
         GatewayTimezone: js.UndefOr[GatewayTimezone] = js.undefined
     ): UpdateGatewayInformationInput = {
@@ -4747,6 +4875,7 @@ package object storagegateway {
       )
 
       CloudWatchLogGroupARN.foreach(__v => __obj.updateDynamic("CloudWatchLogGroupARN")(__v.asInstanceOf[js.Any]))
+      GatewayCapacity.foreach(__v => __obj.updateDynamic("GatewayCapacity")(__v.asInstanceOf[js.Any]))
       GatewayName.foreach(__v => __obj.updateDynamic("GatewayName")(__v.asInstanceOf[js.Any]))
       GatewayTimezone.foreach(__v => __obj.updateDynamic("GatewayTimezone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateGatewayInformationInput]
@@ -4864,6 +4993,7 @@ package object storagegateway {
   @js.native
   trait UpdateNFSFileShareInput extends js.Object {
     var FileShareARN: FileShareARN
+    var AuditDestinationARN: js.UndefOr[AuditDestinationARN]
     var CacheAttributes: js.UndefOr[CacheAttributes]
     var ClientList: js.UndefOr[FileShareClientList]
     var DefaultStorageClass: js.UndefOr[StorageClass]
@@ -4883,6 +5013,7 @@ package object storagegateway {
     @inline
     def apply(
         FileShareARN: FileShareARN,
+        AuditDestinationARN: js.UndefOr[AuditDestinationARN] = js.undefined,
         CacheAttributes: js.UndefOr[CacheAttributes] = js.undefined,
         ClientList: js.UndefOr[FileShareClientList] = js.undefined,
         DefaultStorageClass: js.UndefOr[StorageClass] = js.undefined,
@@ -4901,6 +5032,7 @@ package object storagegateway {
         "FileShareARN" -> FileShareARN.asInstanceOf[js.Any]
       )
 
+      AuditDestinationARN.foreach(__v => __obj.updateDynamic("AuditDestinationARN")(__v.asInstanceOf[js.Any]))
       CacheAttributes.foreach(__v => __obj.updateDynamic("CacheAttributes")(__v.asInstanceOf[js.Any]))
       ClientList.foreach(__v => __obj.updateDynamic("ClientList")(__v.asInstanceOf[js.Any]))
       DefaultStorageClass.foreach(__v => __obj.updateDynamic("DefaultStorageClass")(__v.asInstanceOf[js.Any]))
@@ -4950,6 +5082,7 @@ package object storagegateway {
     var KMSKey: js.UndefOr[KMSKey]
     var NotificationPolicy: js.UndefOr[NotificationPolicy]
     var ObjectACL: js.UndefOr[ObjectACL]
+    var OplocksEnabled: js.UndefOr[Boolean]
     var ReadOnly: js.UndefOr[Boolean]
     var RequesterPays: js.UndefOr[Boolean]
     var SMBACLEnabled: js.UndefOr[Boolean]
@@ -4973,6 +5106,7 @@ package object storagegateway {
         KMSKey: js.UndefOr[KMSKey] = js.undefined,
         NotificationPolicy: js.UndefOr[NotificationPolicy] = js.undefined,
         ObjectACL: js.UndefOr[ObjectACL] = js.undefined,
+        OplocksEnabled: js.UndefOr[Boolean] = js.undefined,
         ReadOnly: js.UndefOr[Boolean] = js.undefined,
         RequesterPays: js.UndefOr[Boolean] = js.undefined,
         SMBACLEnabled: js.UndefOr[Boolean] = js.undefined,
@@ -4995,6 +5129,7 @@ package object storagegateway {
       KMSKey.foreach(__v => __obj.updateDynamic("KMSKey")(__v.asInstanceOf[js.Any]))
       NotificationPolicy.foreach(__v => __obj.updateDynamic("NotificationPolicy")(__v.asInstanceOf[js.Any]))
       ObjectACL.foreach(__v => __obj.updateDynamic("ObjectACL")(__v.asInstanceOf[js.Any]))
+      OplocksEnabled.foreach(__v => __obj.updateDynamic("OplocksEnabled")(__v.asInstanceOf[js.Any]))
       ReadOnly.foreach(__v => __obj.updateDynamic("ReadOnly")(__v.asInstanceOf[js.Any]))
       RequesterPays.foreach(__v => __obj.updateDynamic("RequesterPays")(__v.asInstanceOf[js.Any]))
       SMBACLEnabled.foreach(__v => __obj.updateDynamic("SMBACLEnabled")(__v.asInstanceOf[js.Any]))
@@ -5052,6 +5187,42 @@ package object storagegateway {
       val __obj = js.Dynamic.literal()
       GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateSMBFileShareVisibilityOutput]
+    }
+  }
+
+  @js.native
+  trait UpdateSMBLocalGroupsInput extends js.Object {
+    var GatewayARN: GatewayARN
+    var SMBLocalGroups: SMBLocalGroups
+  }
+
+  object UpdateSMBLocalGroupsInput {
+    @inline
+    def apply(
+        GatewayARN: GatewayARN,
+        SMBLocalGroups: SMBLocalGroups
+    ): UpdateSMBLocalGroupsInput = {
+      val __obj = js.Dynamic.literal(
+        "GatewayARN" -> GatewayARN.asInstanceOf[js.Any],
+        "SMBLocalGroups" -> SMBLocalGroups.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateSMBLocalGroupsInput]
+    }
+  }
+
+  @js.native
+  trait UpdateSMBLocalGroupsOutput extends js.Object {
+    var GatewayARN: js.UndefOr[GatewayARN]
+  }
+
+  object UpdateSMBLocalGroupsOutput {
+    @inline
+    def apply(
+        GatewayARN: js.UndefOr[GatewayARN] = js.undefined
+    ): UpdateSMBLocalGroupsOutput = {
+      val __obj = js.Dynamic.literal()
+      GatewayARN.foreach(__v => __obj.updateDynamic("GatewayARN")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateSMBLocalGroupsOutput]
     }
   }
 

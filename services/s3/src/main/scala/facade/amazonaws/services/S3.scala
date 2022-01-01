@@ -11,6 +11,7 @@ package object s3 {
   type AbortDate = js.Date
   type AbortRuleId = String
   type AcceptRanges = String
+  type AccessPointArn = String
   type AccountId = String
   type AllowQuotedRecordDelimiter = Boolean
   type AllowedHeader = String
@@ -150,6 +151,8 @@ package object s3 {
   type ObjectLockEnabledForBucket = Boolean
   type ObjectLockRetainUntilDate = js.Date
   type ObjectLockToken = String
+  type ObjectSizeGreaterThanBytes = Double
+  type ObjectSizeLessThanBytes = Double
   type ObjectVersionId = String
   type ObjectVersionList = js.Array[ObjectVersion]
   type OwnershipControlsRules = js.Array[OwnershipControlsRule]
@@ -192,6 +195,7 @@ package object s3 {
   type ServerSideEncryptionRules = js.Array[ServerSideEncryptionRule]
   type Setting = Boolean
   type Size = Int
+  type SkipValidation = Boolean
   type Start = Double
   type StartAfter = String
   type Suffix = String
@@ -210,6 +214,7 @@ package object s3 {
   type UploadIdMarker = String
   type UserMetadata = js.Array[MetadataEntry]
   type Value = String
+  type VersionCount = Int
   type VersionIdMarker = String
   type WebsiteRedirectLocation = String
   type Years = Int
@@ -863,7 +868,7 @@ package object s3 {
     }
   }
 
-  /** In terms of implementation, a Bucket is a resource. An Amazon S3 bucket name is globally unique, and the namespace is shared by all AWS accounts.
+  /** In terms of implementation, a Bucket is a resource. An Amazon S3 bucket name is globally unique, and the namespace is shared by all Amazon Web Services accounts.
     */
   @js.native
   trait Bucket extends js.Object {
@@ -1041,7 +1046,7 @@ package object s3 {
     }
   }
 
-  /** Container for specifying the AWS Lambda notification configuration.
+  /** Container for specifying the Lambda notification configuration.
     */
   @js.native
   trait CloudFunctionConfiguration extends js.Object {
@@ -1506,6 +1511,7 @@ package object s3 {
     var GrantWrite: js.UndefOr[GrantWrite]
     var GrantWriteACP: js.UndefOr[GrantWriteACP]
     var ObjectLockEnabledForBucket: js.UndefOr[ObjectLockEnabledForBucket]
+    var ObjectOwnership: js.UndefOr[ObjectOwnership]
   }
 
   object CreateBucketRequest {
@@ -1519,7 +1525,8 @@ package object s3 {
         GrantReadACP: js.UndefOr[GrantReadACP] = js.undefined,
         GrantWrite: js.UndefOr[GrantWrite] = js.undefined,
         GrantWriteACP: js.UndefOr[GrantWriteACP] = js.undefined,
-        ObjectLockEnabledForBucket: js.UndefOr[ObjectLockEnabledForBucket] = js.undefined
+        ObjectLockEnabledForBucket: js.UndefOr[ObjectLockEnabledForBucket] = js.undefined,
+        ObjectOwnership: js.UndefOr[ObjectOwnership] = js.undefined
     ): CreateBucketRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any]
@@ -1533,6 +1540,7 @@ package object s3 {
       GrantWrite.foreach(__v => __obj.updateDynamic("GrantWrite")(__v.asInstanceOf[js.Any]))
       GrantWriteACP.foreach(__v => __obj.updateDynamic("GrantWriteACP")(__v.asInstanceOf[js.Any]))
       ObjectLockEnabledForBucket.foreach(__v => __obj.updateDynamic("ObjectLockEnabledForBucket")(__v.asInstanceOf[js.Any]))
+      ObjectOwnership.foreach(__v => __obj.updateDynamic("ObjectOwnership")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateBucketRequest]
     }
   }
@@ -2413,7 +2421,20 @@ package object s3 {
     }
   }
 
-  /** Optional configuration to replicate existing source bucket objects. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication|Replicating Existing Objects]] in the <i>Amazon S3 Developer Guide</i>.
+  /** A container for specifying the configuration for Amazon EventBridge.
+    */
+  @js.native
+  trait EventBridgeConfiguration extends js.Object
+
+  object EventBridgeConfiguration {
+    @inline
+    def apply(): EventBridgeConfiguration = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[EventBridgeConfiguration]
+    }
+  }
+
+  /** Optional configuration to replicate existing source bucket objects. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication|Replicating Existing Objects]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait ExistingObjectReplication extends js.Object {
@@ -4131,7 +4152,7 @@ package object s3 {
     }
   }
 
-  /** Specifies the inventory configuration for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html|GET Bucket inventory]] in the <i>Amazon Simple Storage Service API Reference</i>.
+  /** Specifies the inventory configuration for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html|GET Bucket inventory]] in the <i>Amazon S3 API Reference</i>.
     */
   @js.native
   trait InventoryConfiguration extends js.Object {
@@ -4315,7 +4336,7 @@ package object s3 {
     }
   }
 
-  /** A container for specifying the configuration for AWS Lambda notifications.
+  /** A container for specifying the configuration for Lambda notifications.
     */
   @js.native
   trait LambdaFunctionConfiguration extends js.Object {
@@ -4435,6 +4456,8 @@ package object s3 {
     */
   @js.native
   trait LifecycleRuleAndOperator extends js.Object {
+    var ObjectSizeGreaterThan: js.UndefOr[ObjectSizeGreaterThanBytes]
+    var ObjectSizeLessThan: js.UndefOr[ObjectSizeLessThanBytes]
     var Prefix: js.UndefOr[Prefix]
     var Tags: js.UndefOr[TagSet]
   }
@@ -4442,10 +4465,14 @@ package object s3 {
   object LifecycleRuleAndOperator {
     @inline
     def apply(
+        ObjectSizeGreaterThan: js.UndefOr[ObjectSizeGreaterThanBytes] = js.undefined,
+        ObjectSizeLessThan: js.UndefOr[ObjectSizeLessThanBytes] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tags: js.UndefOr[TagSet] = js.undefined
     ): LifecycleRuleAndOperator = {
       val __obj = js.Dynamic.literal()
+      ObjectSizeGreaterThan.foreach(__v => __obj.updateDynamic("ObjectSizeGreaterThan")(__v.asInstanceOf[js.Any]))
+      ObjectSizeLessThan.foreach(__v => __obj.updateDynamic("ObjectSizeLessThan")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecycleRuleAndOperator]
@@ -4457,6 +4484,8 @@ package object s3 {
   @js.native
   trait LifecycleRuleFilter extends js.Object {
     var And: js.UndefOr[LifecycleRuleAndOperator]
+    var ObjectSizeGreaterThan: js.UndefOr[ObjectSizeGreaterThanBytes]
+    var ObjectSizeLessThan: js.UndefOr[ObjectSizeLessThanBytes]
     var Prefix: js.UndefOr[Prefix]
     var Tag: js.UndefOr[Tag]
   }
@@ -4465,11 +4494,15 @@ package object s3 {
     @inline
     def apply(
         And: js.UndefOr[LifecycleRuleAndOperator] = js.undefined,
+        ObjectSizeGreaterThan: js.UndefOr[ObjectSizeGreaterThanBytes] = js.undefined,
+        ObjectSizeLessThan: js.UndefOr[ObjectSizeLessThanBytes] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tag: js.UndefOr[Tag] = js.undefined
     ): LifecycleRuleFilter = {
       val __obj = js.Dynamic.literal()
       And.foreach(__v => __obj.updateDynamic("And")(__v.asInstanceOf[js.Any]))
+      ObjectSizeGreaterThan.foreach(__v => __obj.updateDynamic("ObjectSizeGreaterThan")(__v.asInstanceOf[js.Any]))
+      ObjectSizeLessThan.foreach(__v => __obj.updateDynamic("ObjectSizeLessThan")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       Tag.foreach(__v => __obj.updateDynamic("Tag")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LifecycleRuleFilter]
@@ -5134,7 +5167,7 @@ package object s3 {
     }
   }
 
-  /** Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html|PUT Bucket logging]] in the <i>Amazon Simple Storage Service API Reference</i>.
+  /** Describes where logs are stored and the prefix that Amazon S3 assigns to all log object keys for a bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlogging.html|PUT Bucket logging]] in the <i>Amazon S3 API Reference</i>.
     */
   @js.native
   trait LoggingEnabled extends js.Object {
@@ -5208,6 +5241,7 @@ package object s3 {
     */
   @js.native
   trait MetricsAndOperator extends js.Object {
+    var AccessPointArn: js.UndefOr[AccessPointArn]
     var Prefix: js.UndefOr[Prefix]
     var Tags: js.UndefOr[TagSet]
   }
@@ -5215,17 +5249,19 @@ package object s3 {
   object MetricsAndOperator {
     @inline
     def apply(
+        AccessPointArn: js.UndefOr[AccessPointArn] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tags: js.UndefOr[TagSet] = js.undefined
     ): MetricsAndOperator = {
       val __obj = js.Dynamic.literal()
+      AccessPointArn.foreach(__v => __obj.updateDynamic("AccessPointArn")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MetricsAndOperator]
     }
   }
 
-  /** Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html| PUT Bucket metrics]] in the <i>Amazon Simple Storage Service API Reference</i>.
+  /** Specifies a metrics configuration for the CloudWatch request metrics (specified by the metrics configuration ID) from an Amazon S3 bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTMetricConfiguration.html|PutBucketMetricsConfiguration]].
     */
   @js.native
   trait MetricsConfiguration extends js.Object {
@@ -5248,10 +5284,11 @@ package object s3 {
     }
   }
 
-  /** Specifies a metrics configuration filter. The metrics configuration only includes objects that meet the filter's criteria. A filter must be a prefix, a tag, or a conjunction (MetricsAndOperator).
+  /** Specifies a metrics configuration filter. The metrics configuration only includes objects that meet the filter's criteria. A filter must be a prefix, an object tag, an access point ARN, or a conjunction (MetricsAndOperator). For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketMetricsConfiguration.html|PutBucketMetricsConfiguration]].
     */
   @js.native
   trait MetricsFilter extends js.Object {
+    var AccessPointArn: js.UndefOr[AccessPointArn]
     var And: js.UndefOr[MetricsAndOperator]
     var Prefix: js.UndefOr[Prefix]
     var Tag: js.UndefOr[Tag]
@@ -5260,11 +5297,13 @@ package object s3 {
   object MetricsFilter {
     @inline
     def apply(
+        AccessPointArn: js.UndefOr[AccessPointArn] = js.undefined,
         And: js.UndefOr[MetricsAndOperator] = js.undefined,
         Prefix: js.UndefOr[Prefix] = js.undefined,
         Tag: js.UndefOr[Tag] = js.undefined
     ): MetricsFilter = {
       val __obj = js.Dynamic.literal()
+      AccessPointArn.foreach(__v => __obj.updateDynamic("AccessPointArn")(__v.asInstanceOf[js.Any]))
       And.foreach(__v => __obj.updateDynamic("And")(__v.asInstanceOf[js.Any]))
       Prefix.foreach(__v => __obj.updateDynamic("Prefix")(__v.asInstanceOf[js.Any]))
       Tag.foreach(__v => __obj.updateDynamic("Tag")(__v.asInstanceOf[js.Any]))
@@ -5309,24 +5348,28 @@ package object s3 {
     */
   @js.native
   trait NoncurrentVersionExpiration extends js.Object {
+    var NewerNoncurrentVersions: js.UndefOr[VersionCount]
     var NoncurrentDays: js.UndefOr[Days]
   }
 
   object NoncurrentVersionExpiration {
     @inline
     def apply(
+        NewerNoncurrentVersions: js.UndefOr[VersionCount] = js.undefined,
         NoncurrentDays: js.UndefOr[Days] = js.undefined
     ): NoncurrentVersionExpiration = {
       val __obj = js.Dynamic.literal()
+      NewerNoncurrentVersions.foreach(__v => __obj.updateDynamic("NewerNoncurrentVersions")(__v.asInstanceOf[js.Any]))
       NoncurrentDays.foreach(__v => __obj.updateDynamic("NoncurrentDays")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NoncurrentVersionExpiration]
     }
   }
 
-  /** Container for the transition rule that describes when noncurrent objects transition to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's lifetime.
+  /** Container for the transition rule that describes when noncurrent objects transition to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER_IR</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the <code>STANDARD_IA</code>, <code>ONEZONE_IA</code>, <code>INTELLIGENT_TIERING</code>, <code>GLACIER_IR</code>, <code>GLACIER</code>, or <code>DEEP_ARCHIVE</code> storage class at a specific period in the object's lifetime.
     */
   @js.native
   trait NoncurrentVersionTransition extends js.Object {
+    var NewerNoncurrentVersions: js.UndefOr[VersionCount]
     var NoncurrentDays: js.UndefOr[Days]
     var StorageClass: js.UndefOr[TransitionStorageClass]
   }
@@ -5334,10 +5377,12 @@ package object s3 {
   object NoncurrentVersionTransition {
     @inline
     def apply(
+        NewerNoncurrentVersions: js.UndefOr[VersionCount] = js.undefined,
         NoncurrentDays: js.UndefOr[Days] = js.undefined,
         StorageClass: js.UndefOr[TransitionStorageClass] = js.undefined
     ): NoncurrentVersionTransition = {
       val __obj = js.Dynamic.literal()
+      NewerNoncurrentVersions.foreach(__v => __obj.updateDynamic("NewerNoncurrentVersions")(__v.asInstanceOf[js.Any]))
       NoncurrentDays.foreach(__v => __obj.updateDynamic("NoncurrentDays")(__v.asInstanceOf[js.Any]))
       StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NoncurrentVersionTransition]
@@ -5348,6 +5393,7 @@ package object s3 {
     */
   @js.native
   trait NotificationConfiguration extends js.Object {
+    var EventBridgeConfiguration: js.UndefOr[EventBridgeConfiguration]
     var LambdaFunctionConfigurations: js.UndefOr[LambdaFunctionConfigurationList]
     var QueueConfigurations: js.UndefOr[QueueConfigurationList]
     var TopicConfigurations: js.UndefOr[TopicConfigurationList]
@@ -5356,11 +5402,13 @@ package object s3 {
   object NotificationConfiguration {
     @inline
     def apply(
+        EventBridgeConfiguration: js.UndefOr[EventBridgeConfiguration] = js.undefined,
         LambdaFunctionConfigurations: js.UndefOr[LambdaFunctionConfigurationList] = js.undefined,
         QueueConfigurations: js.UndefOr[QueueConfigurationList] = js.undefined,
         TopicConfigurations: js.UndefOr[TopicConfigurationList] = js.undefined
     ): NotificationConfiguration = {
       val __obj = js.Dynamic.literal()
+      EventBridgeConfiguration.foreach(__v => __obj.updateDynamic("EventBridgeConfiguration")(__v.asInstanceOf[js.Any]))
       LambdaFunctionConfigurations.foreach(__v => __obj.updateDynamic("LambdaFunctionConfigurations")(__v.asInstanceOf[js.Any]))
       QueueConfigurations.foreach(__v => __obj.updateDynamic("QueueConfigurations")(__v.asInstanceOf[js.Any]))
       TopicConfigurations.foreach(__v => __obj.updateDynamic("TopicConfigurations")(__v.asInstanceOf[js.Any]))
@@ -6116,6 +6164,7 @@ package object s3 {
     var Bucket: BucketName
     var NotificationConfiguration: NotificationConfiguration
     var ExpectedBucketOwner: js.UndefOr[AccountId]
+    var SkipDestinationValidation: js.UndefOr[SkipValidation]
   }
 
   object PutBucketNotificationConfigurationRequest {
@@ -6123,7 +6172,8 @@ package object s3 {
     def apply(
         Bucket: BucketName,
         NotificationConfiguration: NotificationConfiguration,
-        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined
+        ExpectedBucketOwner: js.UndefOr[AccountId] = js.undefined,
+        SkipDestinationValidation: js.UndefOr[SkipValidation] = js.undefined
     ): PutBucketNotificationConfigurationRequest = {
       val __obj = js.Dynamic.literal(
         "Bucket" -> Bucket.asInstanceOf[js.Any],
@@ -6131,6 +6181,7 @@ package object s3 {
       )
 
       ExpectedBucketOwner.foreach(__v => __obj.updateDynamic("ExpectedBucketOwner")(__v.asInstanceOf[js.Any]))
+      SkipDestinationValidation.foreach(__v => __obj.updateDynamic("SkipDestinationValidation")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutBucketNotificationConfigurationRequest]
     }
   }
@@ -7266,7 +7317,7 @@ package object s3 {
     }
   }
 
-  /** Specifies lifecycle rules for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html|Put Bucket Lifecycle Configuration]] in the <i>Amazon Simple Storage Service API Reference</i>. For examples, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples|Put Bucket Lifecycle Configuration Examples]].
+  /** Specifies lifecycle rules for an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTlifecycle.html|Put Bucket Lifecycle Configuration]] in the <i>Amazon S3 API Reference</i>. For examples, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html#API_PutBucketLifecycleConfiguration_Examples|Put Bucket Lifecycle Configuration Examples]].
     */
   @js.native
   trait Rule extends js.Object {
@@ -7546,7 +7597,7 @@ package object s3 {
     }
   }
 
-  /** Describes the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html|PUT Bucket encryption]] in the <i>Amazon Simple Storage Service API Reference</i>.
+  /** Describes the default server-side encryption to apply to new objects in the bucket. If a PUT Object request doesn't specify any server-side encryption, this default encryption will be applied. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTencryption.html|PUT Bucket encryption]] in the <i>Amazon S3 API Reference</i>.
     */
   @js.native
   trait ServerSideEncryptionByDefault extends js.Object {
@@ -7609,7 +7660,7 @@ package object s3 {
     }
   }
 
-  /** A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer master key (CMK) stored in AWS Key Management Service (SSE-KMS).
+  /** A container that describes additional filters for identifying the source objects that you want to replicate. You can choose to enable or disable the replication of these objects. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using a customer managed key stored in Amazon Web Services Key Management Service (SSE-KMS).
     */
   @js.native
   trait SourceSelectionCriteria extends js.Object {
@@ -7630,7 +7681,7 @@ package object s3 {
     }
   }
 
-  /** A container for filter information for the selection of S3 objects encrypted with AWS KMS.
+  /** A container for filter information for the selection of S3 objects encrypted with Amazon Web Services KMS.
     */
   @js.native
   trait SseKmsEncryptedObjects extends js.Object {
@@ -7772,7 +7823,7 @@ package object s3 {
     }
   }
 
-  /** Container for granting information.
+  /** Container for granting information. Buckets that use the bucket owner enforced setting for Object Ownership don't support target grants. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general|Permissions server access log delivery]] in the <i>Amazon S3 User Guide</i>.
     */
   @js.native
   trait TargetGrant extends js.Object {
@@ -8089,7 +8140,7 @@ package object s3 {
     }
   }
 
-  /** Describes the versioning state of an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html|PUT Bucket versioning]] in the <i>Amazon Simple Storage Service API Reference</i>.
+  /** Describes the versioning state of an Amazon S3 bucket. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketPUTVersioningStatus.html|PUT Bucket versioning]] in the <i>Amazon S3 API Reference</i>.
     */
   @js.native
   trait VersioningConfiguration extends js.Object {

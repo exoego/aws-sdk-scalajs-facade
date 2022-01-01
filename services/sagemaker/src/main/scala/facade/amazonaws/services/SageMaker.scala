@@ -13,6 +13,7 @@ package object sagemaker {
   type ActionArn = String
   type ActionSummaries = js.Array[ActionSummary]
   type AdditionalCodeRepositoryNamesOrUrls = js.Array[CodeRepositoryNameOrUrl]
+  type AdditionalInferenceSpecifications = js.Array[AdditionalInferenceSpecificationDefinition]
   type AgentVersions = js.Array[AgentVersion]
   type AlarmList = js.Array[Alarm]
   type AlarmName = String
@@ -42,6 +43,7 @@ package object sagemaker {
   type AthenaWorkGroup = String
   type AttributeName = String
   type AttributeNames = js.Array[AttributeName]
+  type AutoGenerateEndpointName = Boolean
   type AutoMLCandidates = js.Array[AutoMLCandidate]
   type AutoMLContainerDefinitions = js.Array[AutoMLContainerDefinition]
   type AutoMLFailureReason = String
@@ -52,9 +54,11 @@ package object sagemaker {
   type AutoMLMaxResults = Int
   type AutoMLNameContains = String
   type AutoMLPartialFailureReasons = js.Array[AutoMLPartialFailureReason]
+  type BatchDescribeModelPackageErrorMap = js.Dictionary[BatchDescribeModelPackageError]
   type BillableTimeInSeconds = Int
   type BlockedReason = String
   type Branch = String
+  type CallbackToken = String
   type CandidateDefinitionNotebookLocation = String
   type CandidateName = String
   type CandidateStepArn = String
@@ -63,7 +67,9 @@ package object sagemaker {
   type CapacitySizeValue = Int
   type CaptureOptionList = js.Array[CaptureOption]
   type Catalog = String
+  type CategoricalParameterRangeValues = js.Array[String128]
   type CategoricalParameterRanges = js.Array[CategoricalParameterRange]
+  type CategoricalParameters = js.Array[CategoricalParameter]
   type Cents = Int
   type CertifyForMarketplace = Boolean
   type ChannelName = String
@@ -107,6 +113,10 @@ package object sagemaker {
   type CsvContentType = String
   type CsvContentTypes = js.Array[CsvContentType]
   type CustomImages = js.Array[CustomImage]
+  type CustomerMetadataKey = String
+  type CustomerMetadataKeyList = js.Array[CustomerMetadataKey]
+  type CustomerMetadataMap = js.Dictionary[CustomerMetadataValue]
+  type CustomerMetadataValue = String
   type DataExplorationNotebookLocation = String
   type DataInputConfig = String
   type Database = String
@@ -138,20 +148,25 @@ package object sagemaker {
   type DomainId = String
   type DomainList = js.Array[DomainDetails]
   type DomainName = String
+  type DomainSecurityGroupIds = js.Array[SecurityGroupId]
   type DoubleParameterValue = Double
   type EdgeModelStats = js.Array[EdgeModelStat]
   type EdgeModelSummaries = js.Array[EdgeModelSummary]
   type EdgeModels = js.Array[EdgeModel]
   type EdgePackagingJobArn = String
   type EdgePackagingJobSummaries = js.Array[EdgePackagingJobSummary]
+  type EdgePresetDeploymentArtifact = String
   type EdgeVersion = String
+  type Edges = js.Array[Edge]
   type EfsUid = String
   type EnableCapture = Boolean
+  type EnableIotRoleAlias = Boolean
   type EndpointArn = String
   type EndpointConfigArn = String
   type EndpointConfigName = String
   type EndpointConfigNameContains = String
   type EndpointConfigSummaryList = js.Array[EndpointConfigSummary]
+  type EndpointInputConfigurations = js.Array[EndpointInputConfiguration]
   type EndpointName = String
   type EndpointNameContains = String
   type EndpointSummaryList = js.Array[EndpointSummary]
@@ -159,11 +174,13 @@ package object sagemaker {
   type EntityName = String
   type EnvironmentKey = String
   type EnvironmentMap = js.Dictionary[EnvironmentValue]
+  type EnvironmentParameters = js.Array[EnvironmentParameter]
   type EnvironmentValue = String
   type ExitMessage = String
   type ExperimentArn = String
   type ExperimentDescription = String
   type ExperimentEntityName = String
+  type ExperimentEntityNameOrArn = String
   type ExperimentSourceArn = String
   type ExperimentSummaries = js.Array[ExperimentSummary]
   type ExpiresInSeconds = Int
@@ -227,12 +244,20 @@ package object sagemaker {
   type ImageVersionNumber = Int
   type ImageVersions = js.Array[ImageVersion]
   type Images = js.Array[Image]
+  type InferenceImage = String
+  type InferenceRecommendations = js.Array[InferenceRecommendation]
+  type InferenceRecommendationsJobs = js.Array[InferenceRecommendationsJob]
+  type InferenceSpecificationName = String
+  type InitialNumberOfUsers = Int
+  type InitialTaskCount = Int
   type InputDataConfig = js.Array[Channel]
   type InputModes = js.Array[TrainingInputMode]
   type IntegerParameterRanges = js.Array[IntegerParameterRange]
+  type IntegerValue = Int
   type InvocationsMaxRetries = Int
   type InvocationsTimeoutInSeconds = Int
   type IotRoleAlias = String
+  type JobDurationInSeconds = Int
   type JobReferenceCode = String
   type JobReferenceCodeContains = String
   type JsonContentType = String
@@ -251,17 +276,24 @@ package object sagemaker {
   type LabelingJobSummaryList = js.Array[LabelingJobSummary]
   type LambdaFunctionArn = String
   type LastModifiedTime = js.Date
+  type LifecycleConfigArns = js.Array[StudioLifecycleConfigArn]
   type LineageEntityParameters = js.Dictionary[StringParameterValue]
+  type LineageGroupArn = String
+  type LineageGroupNameOrArn = String
+  type LineageGroupSummaries = js.Array[LineageGroupSummary]
   type ListLineageEntityParameterKey = js.Array[StringParameterValue]
   type ListMaxResults = Int
   type ListTagsMaxResults = Int
   type ListTrialComponentKey256 = js.Array[TrialComponentKey256]
   type MaxAutoMLJobRuntimeInSeconds = Int
   type MaxCandidates = Int
+  type MaxConcurrentInvocationsPerInstance = Int
   type MaxConcurrentTaskCount = Int
   type MaxConcurrentTransforms = Int
   type MaxHumanLabeledObjectCount = Int
+  type MaxNumberOfTests = Int
   type MaxNumberOfTrainingJobs = Int
+  type MaxParallelOfTests = Int
   type MaxParallelTrainingJobs = Int
   type MaxPayloadInMB = Int
   type MaxPercentageOfInputDatasetLabeled = Int
@@ -270,21 +302,28 @@ package object sagemaker {
   type MaxRuntimePerTrainingJobInSeconds = Int
   type MaxWaitTimeInSeconds = Int
   type MaximumExecutionTimeoutInSeconds = Int
+  type MaximumRetryAttempts = Int
   type MediaType = String
   type MemberDefinitions = js.Array[MemberDefinition]
   type MetadataPropertyValue = String
+  type MetricDataList = js.Array[MetricDatum]
   type MetricDefinitionList = js.Array[MetricDefinition]
   type MetricName = String
   type MetricRegex = String
   type MetricValue = Float
   type ModelArn = String
+  type ModelLatencyThresholds = js.Array[ModelLatencyThreshold]
+  type ModelMetadataFilters = js.Array[ModelMetadataFilter]
+  type ModelMetadataSummaries = js.Array[ModelMetadataSummary]
   type ModelName = String
   type ModelNameContains = String
   type ModelPackageArn = String
+  type ModelPackageArnList = js.Array[ModelPackageArn]
   type ModelPackageContainerDefinitionList = js.Array[ModelPackageContainerDefinition]
   type ModelPackageGroupArn = String
   type ModelPackageGroupSummaryList = js.Array[ModelPackageGroupSummary]
   type ModelPackageStatusItemList = js.Array[ModelPackageStatusItem]
+  type ModelPackageSummaries = js.Dictionary[BatchDescribeModelPackageSummary]
   type ModelPackageSummaryList = js.Array[ModelPackageSummary]
   type ModelPackageValidationProfiles = js.Array[ModelPackageValidationProfile]
   type ModelPackageVersion = Int
@@ -306,6 +345,10 @@ package object sagemaker {
   type MonitoringTimeOffsetString = String
   type MountPath = String
   type NameContains = String
+  type NeoVpcSecurityGroupId = String
+  type NeoVpcSecurityGroupIds = js.Array[NeoVpcSecurityGroupId]
+  type NeoVpcSubnetId = String
+  type NeoVpcSubnets = js.Array[NeoVpcSubnetId]
   type NestedFiltersList = js.Array[NestedFilters]
   type NetworkInterfaceId = String
   type NextToken = String
@@ -329,6 +372,7 @@ package object sagemaker {
   type OptionalDouble = Double
   type OptionalInteger = Int
   type OptionalVolumeSizeInGB = Int
+  type OutputParameterList = js.Array[OutputParameter]
   type PaginationToken = String
   type ParameterKey = String
   type ParameterList = js.Array[Parameter]
@@ -337,17 +381,21 @@ package object sagemaker {
   type ParameterValues = js.Array[ParameterValue]
   type ParentHyperParameterTuningJobs = js.Array[ParentHyperParameterTuningJob]
   type Parents = js.Array[Parent]
+  type PendingProductionVariantSummaryList = js.Array[PendingProductionVariantSummary]
+  type Phases = js.Array[Phase]
   type PipelineArn = String
   type PipelineDefinition = String
   type PipelineDescription = String
   type PipelineExecutionArn = String
   type PipelineExecutionDescription = String
+  type PipelineExecutionFailureReason = String
   type PipelineExecutionName = String
   type PipelineExecutionStepList = js.Array[PipelineExecutionStep]
   type PipelineExecutionSummaryList = js.Array[PipelineExecutionSummary]
   type PipelineName = String
   type PipelineParameterName = String
   type PipelineSummaryList = js.Array[PipelineSummary]
+  type PlatformIdentifier = String
   type PolicyString = String
   type PresignedDomainUrl = String
   type ProbabilityThresholdAttribute = Double
@@ -366,6 +414,7 @@ package object sagemaker {
   type ProductId = String
   type ProductListings = js.Array[String]
   type ProductionVariantList = js.Array[ProductionVariant]
+  type ProductionVariantStatusList = js.Array[ProductionVariantStatus]
   type ProductionVariantSummaryList = js.Array[ProductionVariantSummary]
   type ProfilerRuleConfigurations = js.Array[ProfilerRuleConfiguration]
   type ProfilerRuleEvaluationStatuses = js.Array[ProfilerRuleEvaluationStatus]
@@ -381,7 +430,16 @@ package object sagemaker {
   type ProvisioningParameterKey = String
   type ProvisioningParameterValue = String
   type ProvisioningParameters = js.Array[ProvisioningParameter]
+  type QueryLineageMaxDepth = Int
+  type QueryLineageMaxResults = Int
+  type QueryLineageStartArns = js.Array[AssociationEntityArn]
+  type QueryLineageTypes = js.Array[LineageType]
+  type QueryProperties = js.Dictionary[String256]
+  type QueryTypes = js.Array[String40]
   type RealtimeInferenceInstanceTypes = js.Array[ProductionVariantInstanceType]
+  type RecommendationJobArn = String
+  type RecommendationJobDescription = String
+  type RecommendationJobName = String
   type RedshiftClusterId = String
   type RedshiftDatabase = String
   type RedshiftQueryString = String
@@ -390,6 +448,7 @@ package object sagemaker {
   type RepositoryCredentialsProviderArn = String
   type ResourceArn = String
   type ResourceId = String
+  type ResourcePolicyString = String
   type ResourcePropertyName = String
   type ResponseMIMEType = String
   type ResponseMIMETypes = js.Array[ResponseMIMEType]
@@ -406,6 +465,8 @@ package object sagemaker {
   type SecurityGroupId = String
   type SecurityGroupIds = js.Array[SecurityGroupId]
   type Seed = Double
+  type ServerlessMaxConcurrency = Int
+  type ServerlessMemorySizeInMB = Int
   type ServiceCatalogEntityId = String
   type SessionExpirationDurationInSeconds = Int
   type SingleSignOnUserIdentifier = String
@@ -413,15 +474,23 @@ package object sagemaker {
   type SourceAlgorithmList = js.Array[SourceAlgorithm]
   type SourceType = String
   type SourceUri = String
+  type SpawnRate = Int
   type StatusDetails = String
   type StatusMessage = String
   type StepName = String
   type String1024 = String
+  type String128 = String
   type String200 = String
   type String2048 = String
   type String256 = String
+  type String40 = String
   type String64 = String
+  type String8192 = String
   type StringParameterValue = String
+  type StudioLifecycleConfigArn = String
+  type StudioLifecycleConfigContent = String
+  type StudioLifecycleConfigName = String
+  type StudioLifecycleConfigsList = js.Array[StudioLifecycleConfigDetails]
   type SubnetId = String
   type Subnets = js.Array[SubnetId]
   type SubscribedWorkteams = js.Array[SubscribedWorkteam]
@@ -448,6 +517,7 @@ package object sagemaker {
   type TerminationWaitInSeconds = Int
   type ThingName = String
   type Timestamp = js.Date
+  type TrafficDurationInSeconds = Int
   type TrainingEnvironmentKey = String
   type TrainingEnvironmentMap = js.Dictionary[TrainingEnvironmentValue]
   type TrainingEnvironmentValue = String
@@ -486,8 +556,10 @@ package object sagemaker {
   type UserProfileName = String
   type VariantName = String
   type VariantPropertyList = js.Array[VariantProperty]
+  type VariantStatusMessage = String
   type VariantWeight = Float
   type VersionedArnOrName = String
+  type Vertices = js.Array[Vertex]
   type VolumeSizeInGB = Int
   type VpcId = String
   type VpcSecurityGroupIds = js.Array[SecurityGroupId]
@@ -504,6 +576,7 @@ package object sagemaker {
     @inline def addAssociationFuture(params: AddAssociationRequest): Future[AddAssociationResponse] = service.addAssociation(params).promise().toFuture
     @inline def addTagsFuture(params: AddTagsInput): Future[AddTagsOutput] = service.addTags(params).promise().toFuture
     @inline def associateTrialComponentFuture(params: AssociateTrialComponentRequest): Future[AssociateTrialComponentResponse] = service.associateTrialComponent(params).promise().toFuture
+    @inline def batchDescribeModelPackageFuture(params: BatchDescribeModelPackageInput): Future[BatchDescribeModelPackageOutput] = service.batchDescribeModelPackage(params).promise().toFuture
     @inline def createActionFuture(params: CreateActionRequest): Future[CreateActionResponse] = service.createAction(params).promise().toFuture
     @inline def createAlgorithmFuture(params: CreateAlgorithmInput): Future[CreateAlgorithmOutput] = service.createAlgorithm(params).promise().toFuture
     @inline def createAppFuture(params: CreateAppRequest): Future[CreateAppResponse] = service.createApp(params).promise().toFuture
@@ -526,6 +599,7 @@ package object sagemaker {
     @inline def createHyperParameterTuningJobFuture(params: CreateHyperParameterTuningJobRequest): Future[CreateHyperParameterTuningJobResponse] = service.createHyperParameterTuningJob(params).promise().toFuture
     @inline def createImageFuture(params: CreateImageRequest): Future[CreateImageResponse] = service.createImage(params).promise().toFuture
     @inline def createImageVersionFuture(params: CreateImageVersionRequest): Future[CreateImageVersionResponse] = service.createImageVersion(params).promise().toFuture
+    @inline def createInferenceRecommendationsJobFuture(params: CreateInferenceRecommendationsJobRequest): Future[CreateInferenceRecommendationsJobResponse] = service.createInferenceRecommendationsJob(params).promise().toFuture
     @inline def createLabelingJobFuture(params: CreateLabelingJobRequest): Future[CreateLabelingJobResponse] = service.createLabelingJob(params).promise().toFuture
     @inline def createModelBiasJobDefinitionFuture(params: CreateModelBiasJobDefinitionRequest): Future[CreateModelBiasJobDefinitionResponse] = service.createModelBiasJobDefinition(params).promise().toFuture
     @inline def createModelExplainabilityJobDefinitionFuture(params: CreateModelExplainabilityJobDefinitionRequest): Future[CreateModelExplainabilityJobDefinitionResponse] = service.createModelExplainabilityJobDefinition(params).promise().toFuture
@@ -541,6 +615,7 @@ package object sagemaker {
     @inline def createPresignedNotebookInstanceUrlFuture(params: CreatePresignedNotebookInstanceUrlInput): Future[CreatePresignedNotebookInstanceUrlOutput] = service.createPresignedNotebookInstanceUrl(params).promise().toFuture
     @inline def createProcessingJobFuture(params: CreateProcessingJobRequest): Future[CreateProcessingJobResponse] = service.createProcessingJob(params).promise().toFuture
     @inline def createProjectFuture(params: CreateProjectInput): Future[CreateProjectOutput] = service.createProject(params).promise().toFuture
+    @inline def createStudioLifecycleConfigFuture(params: CreateStudioLifecycleConfigRequest): Future[CreateStudioLifecycleConfigResponse] = service.createStudioLifecycleConfig(params).promise().toFuture
     @inline def createTrainingJobFuture(params: CreateTrainingJobRequest): Future[CreateTrainingJobResponse] = service.createTrainingJob(params).promise().toFuture
     @inline def createTransformJobFuture(params: CreateTransformJobRequest): Future[CreateTransformJobResponse] = service.createTransformJob(params).promise().toFuture
     @inline def createTrialComponentFuture(params: CreateTrialComponentRequest): Future[CreateTrialComponentResponse] = service.createTrialComponent(params).promise().toFuture
@@ -579,6 +654,7 @@ package object sagemaker {
     @inline def deleteNotebookInstanceLifecycleConfigFuture(params: DeleteNotebookInstanceLifecycleConfigInput): Future[js.Object] = service.deleteNotebookInstanceLifecycleConfig(params).promise().toFuture
     @inline def deletePipelineFuture(params: DeletePipelineRequest): Future[DeletePipelineResponse] = service.deletePipeline(params).promise().toFuture
     @inline def deleteProjectFuture(params: DeleteProjectInput): Future[js.Object] = service.deleteProject(params).promise().toFuture
+    @inline def deleteStudioLifecycleConfigFuture(params: DeleteStudioLifecycleConfigRequest): Future[js.Object] = service.deleteStudioLifecycleConfig(params).promise().toFuture
     @inline def deleteTagsFuture(params: DeleteTagsInput): Future[DeleteTagsOutput] = service.deleteTags(params).promise().toFuture
     @inline def deleteTrialComponentFuture(params: DeleteTrialComponentRequest): Future[DeleteTrialComponentResponse] = service.deleteTrialComponent(params).promise().toFuture
     @inline def deleteTrialFuture(params: DeleteTrialRequest): Future[DeleteTrialResponse] = service.deleteTrial(params).promise().toFuture
@@ -609,7 +685,9 @@ package object sagemaker {
     @inline def describeHyperParameterTuningJobFuture(params: DescribeHyperParameterTuningJobRequest): Future[DescribeHyperParameterTuningJobResponse] = service.describeHyperParameterTuningJob(params).promise().toFuture
     @inline def describeImageFuture(params: DescribeImageRequest): Future[DescribeImageResponse] = service.describeImage(params).promise().toFuture
     @inline def describeImageVersionFuture(params: DescribeImageVersionRequest): Future[DescribeImageVersionResponse] = service.describeImageVersion(params).promise().toFuture
+    @inline def describeInferenceRecommendationsJobFuture(params: DescribeInferenceRecommendationsJobRequest): Future[DescribeInferenceRecommendationsJobResponse] = service.describeInferenceRecommendationsJob(params).promise().toFuture
     @inline def describeLabelingJobFuture(params: DescribeLabelingJobRequest): Future[DescribeLabelingJobResponse] = service.describeLabelingJob(params).promise().toFuture
+    @inline def describeLineageGroupFuture(params: DescribeLineageGroupRequest): Future[DescribeLineageGroupResponse] = service.describeLineageGroup(params).promise().toFuture
     @inline def describeModelBiasJobDefinitionFuture(params: DescribeModelBiasJobDefinitionRequest): Future[DescribeModelBiasJobDefinitionResponse] = service.describeModelBiasJobDefinition(params).promise().toFuture
     @inline def describeModelExplainabilityJobDefinitionFuture(params: DescribeModelExplainabilityJobDefinitionRequest): Future[DescribeModelExplainabilityJobDefinitionResponse] = service.describeModelExplainabilityJobDefinition(params).promise().toFuture
     @inline def describeModelFuture(params: DescribeModelInput): Future[DescribeModelOutput] = service.describeModel(params).promise().toFuture
@@ -624,6 +702,7 @@ package object sagemaker {
     @inline def describePipelineFuture(params: DescribePipelineRequest): Future[DescribePipelineResponse] = service.describePipeline(params).promise().toFuture
     @inline def describeProcessingJobFuture(params: DescribeProcessingJobRequest): Future[DescribeProcessingJobResponse] = service.describeProcessingJob(params).promise().toFuture
     @inline def describeProjectFuture(params: DescribeProjectInput): Future[DescribeProjectOutput] = service.describeProject(params).promise().toFuture
+    @inline def describeStudioLifecycleConfigFuture(params: DescribeStudioLifecycleConfigRequest): Future[DescribeStudioLifecycleConfigResponse] = service.describeStudioLifecycleConfig(params).promise().toFuture
     @inline def describeSubscribedWorkteamFuture(params: DescribeSubscribedWorkteamRequest): Future[DescribeSubscribedWorkteamResponse] = service.describeSubscribedWorkteam(params).promise().toFuture
     @inline def describeTrainingJobFuture(params: DescribeTrainingJobRequest): Future[DescribeTrainingJobResponse] = service.describeTrainingJob(params).promise().toFuture
     @inline def describeTransformJobFuture(params: DescribeTransformJobRequest): Future[DescribeTransformJobResponse] = service.describeTransformJob(params).promise().toFuture
@@ -636,6 +715,7 @@ package object sagemaker {
     @inline def disassociateTrialComponentFuture(params: DisassociateTrialComponentRequest): Future[DisassociateTrialComponentResponse] = service.disassociateTrialComponent(params).promise().toFuture
     @inline def enableSagemakerServicecatalogPortfolioFuture(params: EnableSagemakerServicecatalogPortfolioInput): Future[EnableSagemakerServicecatalogPortfolioOutput] = service.enableSagemakerServicecatalogPortfolio(params).promise().toFuture
     @inline def getDeviceFleetReportFuture(params: GetDeviceFleetReportRequest): Future[GetDeviceFleetReportResponse] = service.getDeviceFleetReport(params).promise().toFuture
+    @inline def getLineageGroupPolicyFuture(params: GetLineageGroupPolicyRequest): Future[GetLineageGroupPolicyResponse] = service.getLineageGroupPolicy(params).promise().toFuture
     @inline def getModelPackageGroupPolicyFuture(params: GetModelPackageGroupPolicyInput): Future[GetModelPackageGroupPolicyOutput] = service.getModelPackageGroupPolicy(params).promise().toFuture
     @inline def getSagemakerServicecatalogPortfolioStatusFuture(params: GetSagemakerServicecatalogPortfolioStatusInput): Future[GetSagemakerServicecatalogPortfolioStatusOutput] = service.getSagemakerServicecatalogPortfolioStatus(params).promise().toFuture
     @inline def getSearchSuggestionsFuture(params: GetSearchSuggestionsRequest): Future[GetSearchSuggestionsResponse] = service.getSearchSuggestions(params).promise().toFuture
@@ -664,10 +744,13 @@ package object sagemaker {
     @inline def listHyperParameterTuningJobsFuture(params: ListHyperParameterTuningJobsRequest): Future[ListHyperParameterTuningJobsResponse] = service.listHyperParameterTuningJobs(params).promise().toFuture
     @inline def listImageVersionsFuture(params: ListImageVersionsRequest): Future[ListImageVersionsResponse] = service.listImageVersions(params).promise().toFuture
     @inline def listImagesFuture(params: ListImagesRequest): Future[ListImagesResponse] = service.listImages(params).promise().toFuture
+    @inline def listInferenceRecommendationsJobsFuture(params: ListInferenceRecommendationsJobsRequest): Future[ListInferenceRecommendationsJobsResponse] = service.listInferenceRecommendationsJobs(params).promise().toFuture
     @inline def listLabelingJobsForWorkteamFuture(params: ListLabelingJobsForWorkteamRequest): Future[ListLabelingJobsForWorkteamResponse] = service.listLabelingJobsForWorkteam(params).promise().toFuture
     @inline def listLabelingJobsFuture(params: ListLabelingJobsRequest): Future[ListLabelingJobsResponse] = service.listLabelingJobs(params).promise().toFuture
+    @inline def listLineageGroupsFuture(params: ListLineageGroupsRequest): Future[ListLineageGroupsResponse] = service.listLineageGroups(params).promise().toFuture
     @inline def listModelBiasJobDefinitionsFuture(params: ListModelBiasJobDefinitionsRequest): Future[ListModelBiasJobDefinitionsResponse] = service.listModelBiasJobDefinitions(params).promise().toFuture
     @inline def listModelExplainabilityJobDefinitionsFuture(params: ListModelExplainabilityJobDefinitionsRequest): Future[ListModelExplainabilityJobDefinitionsResponse] = service.listModelExplainabilityJobDefinitions(params).promise().toFuture
+    @inline def listModelMetadataFuture(params: ListModelMetadataRequest): Future[ListModelMetadataResponse] = service.listModelMetadata(params).promise().toFuture
     @inline def listModelPackageGroupsFuture(params: ListModelPackageGroupsInput): Future[ListModelPackageGroupsOutput] = service.listModelPackageGroups(params).promise().toFuture
     @inline def listModelPackagesFuture(params: ListModelPackagesInput): Future[ListModelPackagesOutput] = service.listModelPackages(params).promise().toFuture
     @inline def listModelQualityJobDefinitionsFuture(params: ListModelQualityJobDefinitionsRequest): Future[ListModelQualityJobDefinitionsResponse] = service.listModelQualityJobDefinitions(params).promise().toFuture
@@ -682,6 +765,7 @@ package object sagemaker {
     @inline def listPipelinesFuture(params: ListPipelinesRequest): Future[ListPipelinesResponse] = service.listPipelines(params).promise().toFuture
     @inline def listProcessingJobsFuture(params: ListProcessingJobsRequest): Future[ListProcessingJobsResponse] = service.listProcessingJobs(params).promise().toFuture
     @inline def listProjectsFuture(params: ListProjectsInput): Future[ListProjectsOutput] = service.listProjects(params).promise().toFuture
+    @inline def listStudioLifecycleConfigsFuture(params: ListStudioLifecycleConfigsRequest): Future[ListStudioLifecycleConfigsResponse] = service.listStudioLifecycleConfigs(params).promise().toFuture
     @inline def listSubscribedWorkteamsFuture(params: ListSubscribedWorkteamsRequest): Future[ListSubscribedWorkteamsResponse] = service.listSubscribedWorkteams(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsInput): Future[ListTagsOutput] = service.listTags(params).promise().toFuture
     @inline def listTrainingJobsForHyperParameterTuningJobFuture(params: ListTrainingJobsForHyperParameterTuningJobRequest): Future[ListTrainingJobsForHyperParameterTuningJobResponse] = service.listTrainingJobsForHyperParameterTuningJob(params).promise().toFuture
@@ -693,9 +777,13 @@ package object sagemaker {
     @inline def listWorkforcesFuture(params: ListWorkforcesRequest): Future[ListWorkforcesResponse] = service.listWorkforces(params).promise().toFuture
     @inline def listWorkteamsFuture(params: ListWorkteamsRequest): Future[ListWorkteamsResponse] = service.listWorkteams(params).promise().toFuture
     @inline def putModelPackageGroupPolicyFuture(params: PutModelPackageGroupPolicyInput): Future[PutModelPackageGroupPolicyOutput] = service.putModelPackageGroupPolicy(params).promise().toFuture
+    @inline def queryLineageFuture(params: QueryLineageRequest): Future[QueryLineageResponse] = service.queryLineage(params).promise().toFuture
     @inline def registerDevicesFuture(params: RegisterDevicesRequest): Future[js.Object] = service.registerDevices(params).promise().toFuture
     @inline def renderUiTemplateFuture(params: RenderUiTemplateRequest): Future[RenderUiTemplateResponse] = service.renderUiTemplate(params).promise().toFuture
+    @inline def retryPipelineExecutionFuture(params: RetryPipelineExecutionRequest): Future[RetryPipelineExecutionResponse] = service.retryPipelineExecution(params).promise().toFuture
     @inline def searchFuture(params: SearchRequest): Future[SearchResponse] = service.search(params).promise().toFuture
+    @inline def sendPipelineExecutionStepFailureFuture(params: SendPipelineExecutionStepFailureRequest): Future[SendPipelineExecutionStepFailureResponse] = service.sendPipelineExecutionStepFailure(params).promise().toFuture
+    @inline def sendPipelineExecutionStepSuccessFuture(params: SendPipelineExecutionStepSuccessRequest): Future[SendPipelineExecutionStepSuccessResponse] = service.sendPipelineExecutionStepSuccess(params).promise().toFuture
     @inline def startMonitoringScheduleFuture(params: StartMonitoringScheduleRequest): Future[js.Object] = service.startMonitoringSchedule(params).promise().toFuture
     @inline def startNotebookInstanceFuture(params: StartNotebookInstanceInput): Future[js.Object] = service.startNotebookInstance(params).promise().toFuture
     @inline def startPipelineExecutionFuture(params: StartPipelineExecutionRequest): Future[StartPipelineExecutionResponse] = service.startPipelineExecution(params).promise().toFuture
@@ -703,6 +791,7 @@ package object sagemaker {
     @inline def stopCompilationJobFuture(params: StopCompilationJobRequest): Future[js.Object] = service.stopCompilationJob(params).promise().toFuture
     @inline def stopEdgePackagingJobFuture(params: StopEdgePackagingJobRequest): Future[js.Object] = service.stopEdgePackagingJob(params).promise().toFuture
     @inline def stopHyperParameterTuningJobFuture(params: StopHyperParameterTuningJobRequest): Future[js.Object] = service.stopHyperParameterTuningJob(params).promise().toFuture
+    @inline def stopInferenceRecommendationsJobFuture(params: StopInferenceRecommendationsJobRequest): Future[js.Object] = service.stopInferenceRecommendationsJob(params).promise().toFuture
     @inline def stopLabelingJobFuture(params: StopLabelingJobRequest): Future[js.Object] = service.stopLabelingJob(params).promise().toFuture
     @inline def stopMonitoringScheduleFuture(params: StopMonitoringScheduleRequest): Future[js.Object] = service.stopMonitoringSchedule(params).promise().toFuture
     @inline def stopNotebookInstanceFuture(params: StopNotebookInstanceInput): Future[js.Object] = service.stopNotebookInstance(params).promise().toFuture
@@ -728,6 +817,7 @@ package object sagemaker {
     @inline def updateNotebookInstanceLifecycleConfigFuture(params: UpdateNotebookInstanceLifecycleConfigInput): Future[UpdateNotebookInstanceLifecycleConfigOutput] = service.updateNotebookInstanceLifecycleConfig(params).promise().toFuture
     @inline def updatePipelineExecutionFuture(params: UpdatePipelineExecutionRequest): Future[UpdatePipelineExecutionResponse] = service.updatePipelineExecution(params).promise().toFuture
     @inline def updatePipelineFuture(params: UpdatePipelineRequest): Future[UpdatePipelineResponse] = service.updatePipeline(params).promise().toFuture
+    @inline def updateProjectFuture(params: UpdateProjectInput): Future[UpdateProjectOutput] = service.updateProject(params).promise().toFuture
     @inline def updateTrainingJobFuture(params: UpdateTrainingJobRequest): Future[UpdateTrainingJobResponse] = service.updateTrainingJob(params).promise().toFuture
     @inline def updateTrialComponentFuture(params: UpdateTrialComponentRequest): Future[UpdateTrialComponentResponse] = service.updateTrialComponent(params).promise().toFuture
     @inline def updateTrialFuture(params: UpdateTrialRequest): Future[UpdateTrialResponse] = service.updateTrial(params).promise().toFuture
@@ -745,6 +835,7 @@ package object sagemaker {
     def addAssociation(params: AddAssociationRequest): Request[AddAssociationResponse] = js.native
     def addTags(params: AddTagsInput): Request[AddTagsOutput] = js.native
     def associateTrialComponent(params: AssociateTrialComponentRequest): Request[AssociateTrialComponentResponse] = js.native
+    def batchDescribeModelPackage(params: BatchDescribeModelPackageInput): Request[BatchDescribeModelPackageOutput] = js.native
     def createAction(params: CreateActionRequest): Request[CreateActionResponse] = js.native
     def createAlgorithm(params: CreateAlgorithmInput): Request[CreateAlgorithmOutput] = js.native
     def createApp(params: CreateAppRequest): Request[CreateAppResponse] = js.native
@@ -767,6 +858,7 @@ package object sagemaker {
     def createHyperParameterTuningJob(params: CreateHyperParameterTuningJobRequest): Request[CreateHyperParameterTuningJobResponse] = js.native
     def createImage(params: CreateImageRequest): Request[CreateImageResponse] = js.native
     def createImageVersion(params: CreateImageVersionRequest): Request[CreateImageVersionResponse] = js.native
+    def createInferenceRecommendationsJob(params: CreateInferenceRecommendationsJobRequest): Request[CreateInferenceRecommendationsJobResponse] = js.native
     def createLabelingJob(params: CreateLabelingJobRequest): Request[CreateLabelingJobResponse] = js.native
     def createModel(params: CreateModelInput): Request[CreateModelOutput] = js.native
     def createModelBiasJobDefinition(params: CreateModelBiasJobDefinitionRequest): Request[CreateModelBiasJobDefinitionResponse] = js.native
@@ -782,6 +874,7 @@ package object sagemaker {
     def createPresignedNotebookInstanceUrl(params: CreatePresignedNotebookInstanceUrlInput): Request[CreatePresignedNotebookInstanceUrlOutput] = js.native
     def createProcessingJob(params: CreateProcessingJobRequest): Request[CreateProcessingJobResponse] = js.native
     def createProject(params: CreateProjectInput): Request[CreateProjectOutput] = js.native
+    def createStudioLifecycleConfig(params: CreateStudioLifecycleConfigRequest): Request[CreateStudioLifecycleConfigResponse] = js.native
     def createTrainingJob(params: CreateTrainingJobRequest): Request[CreateTrainingJobResponse] = js.native
     def createTransformJob(params: CreateTransformJobRequest): Request[CreateTransformJobResponse] = js.native
     def createTrial(params: CreateTrialRequest): Request[CreateTrialResponse] = js.native
@@ -820,6 +913,7 @@ package object sagemaker {
     def deleteNotebookInstanceLifecycleConfig(params: DeleteNotebookInstanceLifecycleConfigInput): Request[js.Object] = js.native
     def deletePipeline(params: DeletePipelineRequest): Request[DeletePipelineResponse] = js.native
     def deleteProject(params: DeleteProjectInput): Request[js.Object] = js.native
+    def deleteStudioLifecycleConfig(params: DeleteStudioLifecycleConfigRequest): Request[js.Object] = js.native
     def deleteTags(params: DeleteTagsInput): Request[DeleteTagsOutput] = js.native
     def deleteTrial(params: DeleteTrialRequest): Request[DeleteTrialResponse] = js.native
     def deleteTrialComponent(params: DeleteTrialComponentRequest): Request[DeleteTrialComponentResponse] = js.native
@@ -850,7 +944,9 @@ package object sagemaker {
     def describeHyperParameterTuningJob(params: DescribeHyperParameterTuningJobRequest): Request[DescribeHyperParameterTuningJobResponse] = js.native
     def describeImage(params: DescribeImageRequest): Request[DescribeImageResponse] = js.native
     def describeImageVersion(params: DescribeImageVersionRequest): Request[DescribeImageVersionResponse] = js.native
+    def describeInferenceRecommendationsJob(params: DescribeInferenceRecommendationsJobRequest): Request[DescribeInferenceRecommendationsJobResponse] = js.native
     def describeLabelingJob(params: DescribeLabelingJobRequest): Request[DescribeLabelingJobResponse] = js.native
+    def describeLineageGroup(params: DescribeLineageGroupRequest): Request[DescribeLineageGroupResponse] = js.native
     def describeModel(params: DescribeModelInput): Request[DescribeModelOutput] = js.native
     def describeModelBiasJobDefinition(params: DescribeModelBiasJobDefinitionRequest): Request[DescribeModelBiasJobDefinitionResponse] = js.native
     def describeModelExplainabilityJobDefinition(params: DescribeModelExplainabilityJobDefinitionRequest): Request[DescribeModelExplainabilityJobDefinitionResponse] = js.native
@@ -865,6 +961,7 @@ package object sagemaker {
     def describePipelineExecution(params: DescribePipelineExecutionRequest): Request[DescribePipelineExecutionResponse] = js.native
     def describeProcessingJob(params: DescribeProcessingJobRequest): Request[DescribeProcessingJobResponse] = js.native
     def describeProject(params: DescribeProjectInput): Request[DescribeProjectOutput] = js.native
+    def describeStudioLifecycleConfig(params: DescribeStudioLifecycleConfigRequest): Request[DescribeStudioLifecycleConfigResponse] = js.native
     def describeSubscribedWorkteam(params: DescribeSubscribedWorkteamRequest): Request[DescribeSubscribedWorkteamResponse] = js.native
     def describeTrainingJob(params: DescribeTrainingJobRequest): Request[DescribeTrainingJobResponse] = js.native
     def describeTransformJob(params: DescribeTransformJobRequest): Request[DescribeTransformJobResponse] = js.native
@@ -877,6 +974,7 @@ package object sagemaker {
     def disassociateTrialComponent(params: DisassociateTrialComponentRequest): Request[DisassociateTrialComponentResponse] = js.native
     def enableSagemakerServicecatalogPortfolio(params: EnableSagemakerServicecatalogPortfolioInput): Request[EnableSagemakerServicecatalogPortfolioOutput] = js.native
     def getDeviceFleetReport(params: GetDeviceFleetReportRequest): Request[GetDeviceFleetReportResponse] = js.native
+    def getLineageGroupPolicy(params: GetLineageGroupPolicyRequest): Request[GetLineageGroupPolicyResponse] = js.native
     def getModelPackageGroupPolicy(params: GetModelPackageGroupPolicyInput): Request[GetModelPackageGroupPolicyOutput] = js.native
     def getSagemakerServicecatalogPortfolioStatus(params: GetSagemakerServicecatalogPortfolioStatusInput): Request[GetSagemakerServicecatalogPortfolioStatusOutput] = js.native
     def getSearchSuggestions(params: GetSearchSuggestionsRequest): Request[GetSearchSuggestionsResponse] = js.native
@@ -905,10 +1003,13 @@ package object sagemaker {
     def listHyperParameterTuningJobs(params: ListHyperParameterTuningJobsRequest): Request[ListHyperParameterTuningJobsResponse] = js.native
     def listImageVersions(params: ListImageVersionsRequest): Request[ListImageVersionsResponse] = js.native
     def listImages(params: ListImagesRequest): Request[ListImagesResponse] = js.native
+    def listInferenceRecommendationsJobs(params: ListInferenceRecommendationsJobsRequest): Request[ListInferenceRecommendationsJobsResponse] = js.native
     def listLabelingJobs(params: ListLabelingJobsRequest): Request[ListLabelingJobsResponse] = js.native
     def listLabelingJobsForWorkteam(params: ListLabelingJobsForWorkteamRequest): Request[ListLabelingJobsForWorkteamResponse] = js.native
+    def listLineageGroups(params: ListLineageGroupsRequest): Request[ListLineageGroupsResponse] = js.native
     def listModelBiasJobDefinitions(params: ListModelBiasJobDefinitionsRequest): Request[ListModelBiasJobDefinitionsResponse] = js.native
     def listModelExplainabilityJobDefinitions(params: ListModelExplainabilityJobDefinitionsRequest): Request[ListModelExplainabilityJobDefinitionsResponse] = js.native
+    def listModelMetadata(params: ListModelMetadataRequest): Request[ListModelMetadataResponse] = js.native
     def listModelPackageGroups(params: ListModelPackageGroupsInput): Request[ListModelPackageGroupsOutput] = js.native
     def listModelPackages(params: ListModelPackagesInput): Request[ListModelPackagesOutput] = js.native
     def listModelQualityJobDefinitions(params: ListModelQualityJobDefinitionsRequest): Request[ListModelQualityJobDefinitionsResponse] = js.native
@@ -923,6 +1024,7 @@ package object sagemaker {
     def listPipelines(params: ListPipelinesRequest): Request[ListPipelinesResponse] = js.native
     def listProcessingJobs(params: ListProcessingJobsRequest): Request[ListProcessingJobsResponse] = js.native
     def listProjects(params: ListProjectsInput): Request[ListProjectsOutput] = js.native
+    def listStudioLifecycleConfigs(params: ListStudioLifecycleConfigsRequest): Request[ListStudioLifecycleConfigsResponse] = js.native
     def listSubscribedWorkteams(params: ListSubscribedWorkteamsRequest): Request[ListSubscribedWorkteamsResponse] = js.native
     def listTags(params: ListTagsInput): Request[ListTagsOutput] = js.native
     def listTrainingJobs(params: ListTrainingJobsRequest): Request[ListTrainingJobsResponse] = js.native
@@ -934,9 +1036,13 @@ package object sagemaker {
     def listWorkforces(params: ListWorkforcesRequest): Request[ListWorkforcesResponse] = js.native
     def listWorkteams(params: ListWorkteamsRequest): Request[ListWorkteamsResponse] = js.native
     def putModelPackageGroupPolicy(params: PutModelPackageGroupPolicyInput): Request[PutModelPackageGroupPolicyOutput] = js.native
+    def queryLineage(params: QueryLineageRequest): Request[QueryLineageResponse] = js.native
     def registerDevices(params: RegisterDevicesRequest): Request[js.Object] = js.native
     def renderUiTemplate(params: RenderUiTemplateRequest): Request[RenderUiTemplateResponse] = js.native
+    def retryPipelineExecution(params: RetryPipelineExecutionRequest): Request[RetryPipelineExecutionResponse] = js.native
     def search(params: SearchRequest): Request[SearchResponse] = js.native
+    def sendPipelineExecutionStepFailure(params: SendPipelineExecutionStepFailureRequest): Request[SendPipelineExecutionStepFailureResponse] = js.native
+    def sendPipelineExecutionStepSuccess(params: SendPipelineExecutionStepSuccessRequest): Request[SendPipelineExecutionStepSuccessResponse] = js.native
     def startMonitoringSchedule(params: StartMonitoringScheduleRequest): Request[js.Object] = js.native
     def startNotebookInstance(params: StartNotebookInstanceInput): Request[js.Object] = js.native
     def startPipelineExecution(params: StartPipelineExecutionRequest): Request[StartPipelineExecutionResponse] = js.native
@@ -944,6 +1050,7 @@ package object sagemaker {
     def stopCompilationJob(params: StopCompilationJobRequest): Request[js.Object] = js.native
     def stopEdgePackagingJob(params: StopEdgePackagingJobRequest): Request[js.Object] = js.native
     def stopHyperParameterTuningJob(params: StopHyperParameterTuningJobRequest): Request[js.Object] = js.native
+    def stopInferenceRecommendationsJob(params: StopInferenceRecommendationsJobRequest): Request[js.Object] = js.native
     def stopLabelingJob(params: StopLabelingJobRequest): Request[js.Object] = js.native
     def stopMonitoringSchedule(params: StopMonitoringScheduleRequest): Request[js.Object] = js.native
     def stopNotebookInstance(params: StopNotebookInstanceInput): Request[js.Object] = js.native
@@ -969,6 +1076,7 @@ package object sagemaker {
     def updateNotebookInstanceLifecycleConfig(params: UpdateNotebookInstanceLifecycleConfigInput): Request[UpdateNotebookInstanceLifecycleConfigOutput] = js.native
     def updatePipeline(params: UpdatePipelineRequest): Request[UpdatePipelineResponse] = js.native
     def updatePipelineExecution(params: UpdatePipelineExecutionRequest): Request[UpdatePipelineExecutionResponse] = js.native
+    def updateProject(params: UpdateProjectInput): Request[UpdateProjectOutput] = js.native
     def updateTrainingJob(params: UpdateTrainingJobRequest): Request[UpdateTrainingJobResponse] = js.native
     def updateTrial(params: UpdateTrialRequest): Request[UpdateTrialResponse] = js.native
     def updateTrialComponent(params: UpdateTrialComponentRequest): Request[UpdateTrialComponentResponse] = js.native
@@ -1123,6 +1231,44 @@ package object sagemaker {
     }
   }
 
+  /** A structure of additional Inference Specification. Additional Inference Specification specifies details about inference jobs that can be run with models based on this model package
+    */
+  @js.native
+  trait AdditionalInferenceSpecificationDefinition extends js.Object {
+    var Containers: ModelPackageContainerDefinitionList
+    var Name: EntityName
+    var Description: js.UndefOr[EntityDescription]
+    var SupportedContentTypes: js.UndefOr[ContentTypes]
+    var SupportedRealtimeInferenceInstanceTypes: js.UndefOr[RealtimeInferenceInstanceTypes]
+    var SupportedResponseMIMETypes: js.UndefOr[ResponseMIMETypes]
+    var SupportedTransformInstanceTypes: js.UndefOr[TransformInstanceTypes]
+  }
+
+  object AdditionalInferenceSpecificationDefinition {
+    @inline
+    def apply(
+        Containers: ModelPackageContainerDefinitionList,
+        Name: EntityName,
+        Description: js.UndefOr[EntityDescription] = js.undefined,
+        SupportedContentTypes: js.UndefOr[ContentTypes] = js.undefined,
+        SupportedRealtimeInferenceInstanceTypes: js.UndefOr[RealtimeInferenceInstanceTypes] = js.undefined,
+        SupportedResponseMIMETypes: js.UndefOr[ResponseMIMETypes] = js.undefined,
+        SupportedTransformInstanceTypes: js.UndefOr[TransformInstanceTypes] = js.undefined
+    ): AdditionalInferenceSpecificationDefinition = {
+      val __obj = js.Dynamic.literal(
+        "Containers" -> Containers.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      SupportedContentTypes.foreach(__v => __obj.updateDynamic("SupportedContentTypes")(__v.asInstanceOf[js.Any]))
+      SupportedRealtimeInferenceInstanceTypes.foreach(__v => __obj.updateDynamic("SupportedRealtimeInferenceInstanceTypes")(__v.asInstanceOf[js.Any]))
+      SupportedResponseMIMETypes.foreach(__v => __obj.updateDynamic("SupportedResponseMIMETypes")(__v.asInstanceOf[js.Any]))
+      SupportedTransformInstanceTypes.foreach(__v => __obj.updateDynamic("SupportedTransformInstanceTypes")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AdditionalInferenceSpecificationDefinition]
+    }
+  }
+
   /** Edge Manager agent version.
     */
   @js.native
@@ -1145,7 +1291,7 @@ package object sagemaker {
     }
   }
 
-  /** This API is not supported.
+  /** An Amazon CloudWatch alarm configured to monitor metrics on an endpoint.
     */
   @js.native
   trait Alarm extends js.Object {
@@ -1274,7 +1420,7 @@ package object sagemaker {
     }
   }
 
-  /** Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm. The data provided in the validation profile is made available to your buyers on AWS Marketplace.
+  /** Defines a training job and a batch transform job that Amazon SageMaker runs to validate your algorithm. The data provided in the validation profile is made available to your buyers on Amazon Web Services Marketplace.
     */
   @js.native
   trait AlgorithmValidationProfile extends js.Object {
@@ -1589,6 +1735,94 @@ package object sagemaker {
     }
   }
 
+  /** Configures the behavior of the client used by Amazon SageMaker to interact with the model container during asynchronous inference.
+    */
+  @js.native
+  trait AsyncInferenceClientConfig extends js.Object {
+    var MaxConcurrentInvocationsPerInstance: js.UndefOr[MaxConcurrentInvocationsPerInstance]
+  }
+
+  object AsyncInferenceClientConfig {
+    @inline
+    def apply(
+        MaxConcurrentInvocationsPerInstance: js.UndefOr[MaxConcurrentInvocationsPerInstance] = js.undefined
+    ): AsyncInferenceClientConfig = {
+      val __obj = js.Dynamic.literal()
+      MaxConcurrentInvocationsPerInstance.foreach(__v => __obj.updateDynamic("MaxConcurrentInvocationsPerInstance")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AsyncInferenceClientConfig]
+    }
+  }
+
+  /** Specifies configuration for how an endpoint performs asynchronous inference.
+    */
+  @js.native
+  trait AsyncInferenceConfig extends js.Object {
+    var OutputConfig: AsyncInferenceOutputConfig
+    var ClientConfig: js.UndefOr[AsyncInferenceClientConfig]
+  }
+
+  object AsyncInferenceConfig {
+    @inline
+    def apply(
+        OutputConfig: AsyncInferenceOutputConfig,
+        ClientConfig: js.UndefOr[AsyncInferenceClientConfig] = js.undefined
+    ): AsyncInferenceConfig = {
+      val __obj = js.Dynamic.literal(
+        "OutputConfig" -> OutputConfig.asInstanceOf[js.Any]
+      )
+
+      ClientConfig.foreach(__v => __obj.updateDynamic("ClientConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AsyncInferenceConfig]
+    }
+  }
+
+  /** Specifies the configuration for notifications of inference results for asynchronous inference.
+    */
+  @js.native
+  trait AsyncInferenceNotificationConfig extends js.Object {
+    var ErrorTopic: js.UndefOr[SnsTopicArn]
+    var SuccessTopic: js.UndefOr[SnsTopicArn]
+  }
+
+  object AsyncInferenceNotificationConfig {
+    @inline
+    def apply(
+        ErrorTopic: js.UndefOr[SnsTopicArn] = js.undefined,
+        SuccessTopic: js.UndefOr[SnsTopicArn] = js.undefined
+    ): AsyncInferenceNotificationConfig = {
+      val __obj = js.Dynamic.literal()
+      ErrorTopic.foreach(__v => __obj.updateDynamic("ErrorTopic")(__v.asInstanceOf[js.Any]))
+      SuccessTopic.foreach(__v => __obj.updateDynamic("SuccessTopic")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AsyncInferenceNotificationConfig]
+    }
+  }
+
+  /** Specifies the configuration for asynchronous inference invocation outputs.
+    */
+  @js.native
+  trait AsyncInferenceOutputConfig extends js.Object {
+    var S3OutputPath: DestinationS3Uri
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var NotificationConfig: js.UndefOr[AsyncInferenceNotificationConfig]
+  }
+
+  object AsyncInferenceOutputConfig {
+    @inline
+    def apply(
+        S3OutputPath: DestinationS3Uri,
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        NotificationConfig: js.UndefOr[AsyncInferenceNotificationConfig] = js.undefined
+    ): AsyncInferenceOutputConfig = {
+      val __obj = js.Dynamic.literal(
+        "S3OutputPath" -> S3OutputPath.asInstanceOf[js.Any]
+      )
+
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      NotificationConfig.foreach(__v => __obj.updateDynamic("NotificationConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AsyncInferenceOutputConfig]
+    }
+  }
+
   /** Configuration for Athena Dataset Definition input.
     */
   @js.native
@@ -1630,7 +1864,7 @@ package object sagemaker {
     }
   }
 
-  /** An Autopilot job returns recommendations, or candidates. Each candidate has futher details about the steps involed, and the status.
+  /** Information about a candidate produced by an AutoML training job, including its status, steps, and other properties.
     */
   @js.native
   trait AutoMLCandidate extends js.Object {
@@ -1680,7 +1914,7 @@ package object sagemaker {
     }
   }
 
-  /** Information about the steps for a Candidate, and what step it is working on.
+  /** Information about the steps for a candidate and what step it is working on.
     */
   @js.native
   trait AutoMLCandidateStep extends js.Object {
@@ -1712,6 +1946,7 @@ package object sagemaker {
     var DataSource: AutoMLDataSource
     var TargetAttributeName: TargetAttributeName
     var CompressionType: js.UndefOr[CompressionType]
+    var ContentType: js.UndefOr[ContentType]
   }
 
   object AutoMLChannel {
@@ -1719,7 +1954,8 @@ package object sagemaker {
     def apply(
         DataSource: AutoMLDataSource,
         TargetAttributeName: TargetAttributeName,
-        CompressionType: js.UndefOr[CompressionType] = js.undefined
+        CompressionType: js.UndefOr[CompressionType] = js.undefined,
+        ContentType: js.UndefOr[ContentType] = js.undefined
     ): AutoMLChannel = {
       val __obj = js.Dynamic.literal(
         "DataSource" -> DataSource.asInstanceOf[js.Any],
@@ -1727,6 +1963,7 @@ package object sagemaker {
       )
 
       CompressionType.foreach(__v => __obj.updateDynamic("CompressionType")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoMLChannel]
     }
   }
@@ -1776,7 +2013,7 @@ package object sagemaker {
     }
   }
 
-  /** Artifacts that are generation during a job.
+  /** The artifacts that are generated during an AutoML job.
     */
   @js.native
   trait AutoMLJobArtifacts extends js.Object {
@@ -1992,7 +2229,7 @@ package object sagemaker {
     }
   }
 
-  /** Currently, the <code>AutoRollbackConfig</code> API is not supported.
+  /** Automatic rollback configuration for handling endpoint deployment failures and recovery.
     */
   @js.native
   trait AutoRollbackConfig extends js.Object {
@@ -2010,25 +2247,130 @@ package object sagemaker {
     }
   }
 
+  /** The error code and error description associated with the resource.
+    */
+  @js.native
+  trait BatchDescribeModelPackageError extends js.Object {
+    var ErrorCode: String
+    var ErrorResponse: String
+  }
+
+  object BatchDescribeModelPackageError {
+    @inline
+    def apply(
+        ErrorCode: String,
+        ErrorResponse: String
+    ): BatchDescribeModelPackageError = {
+      val __obj = js.Dynamic.literal(
+        "ErrorCode" -> ErrorCode.asInstanceOf[js.Any],
+        "ErrorResponse" -> ErrorResponse.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDescribeModelPackageError]
+    }
+  }
+
+  @js.native
+  trait BatchDescribeModelPackageInput extends js.Object {
+    var ModelPackageArnList: ModelPackageArnList
+  }
+
+  object BatchDescribeModelPackageInput {
+    @inline
+    def apply(
+        ModelPackageArnList: ModelPackageArnList
+    ): BatchDescribeModelPackageInput = {
+      val __obj = js.Dynamic.literal(
+        "ModelPackageArnList" -> ModelPackageArnList.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDescribeModelPackageInput]
+    }
+  }
+
+  @js.native
+  trait BatchDescribeModelPackageOutput extends js.Object {
+    var BatchDescribeModelPackageErrorMap: js.UndefOr[BatchDescribeModelPackageErrorMap]
+    var ModelPackageSummaries: js.UndefOr[ModelPackageSummaries]
+  }
+
+  object BatchDescribeModelPackageOutput {
+    @inline
+    def apply(
+        BatchDescribeModelPackageErrorMap: js.UndefOr[BatchDescribeModelPackageErrorMap] = js.undefined,
+        ModelPackageSummaries: js.UndefOr[ModelPackageSummaries] = js.undefined
+    ): BatchDescribeModelPackageOutput = {
+      val __obj = js.Dynamic.literal()
+      BatchDescribeModelPackageErrorMap.foreach(__v => __obj.updateDynamic("BatchDescribeModelPackageErrorMap")(__v.asInstanceOf[js.Any]))
+      ModelPackageSummaries.foreach(__v => __obj.updateDynamic("ModelPackageSummaries")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDescribeModelPackageOutput]
+    }
+  }
+
+  /** Provides summary information about the model package.
+    */
+  @js.native
+  trait BatchDescribeModelPackageSummary extends js.Object {
+    var CreationTime: CreationTime
+    var InferenceSpecification: InferenceSpecification
+    var ModelPackageArn: ModelPackageArn
+    var ModelPackageGroupName: EntityName
+    var ModelPackageStatus: ModelPackageStatus
+    var ModelApprovalStatus: js.UndefOr[ModelApprovalStatus]
+    var ModelPackageDescription: js.UndefOr[EntityDescription]
+    var ModelPackageVersion: js.UndefOr[ModelPackageVersion]
+  }
+
+  object BatchDescribeModelPackageSummary {
+    @inline
+    def apply(
+        CreationTime: CreationTime,
+        InferenceSpecification: InferenceSpecification,
+        ModelPackageArn: ModelPackageArn,
+        ModelPackageGroupName: EntityName,
+        ModelPackageStatus: ModelPackageStatus,
+        ModelApprovalStatus: js.UndefOr[ModelApprovalStatus] = js.undefined,
+        ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined,
+        ModelPackageVersion: js.UndefOr[ModelPackageVersion] = js.undefined
+    ): BatchDescribeModelPackageSummary = {
+      val __obj = js.Dynamic.literal(
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "InferenceSpecification" -> InferenceSpecification.asInstanceOf[js.Any],
+        "ModelPackageArn" -> ModelPackageArn.asInstanceOf[js.Any],
+        "ModelPackageGroupName" -> ModelPackageGroupName.asInstanceOf[js.Any],
+        "ModelPackageStatus" -> ModelPackageStatus.asInstanceOf[js.Any]
+      )
+
+      ModelApprovalStatus.foreach(__v => __obj.updateDynamic("ModelApprovalStatus")(__v.asInstanceOf[js.Any]))
+      ModelPackageDescription.foreach(__v => __obj.updateDynamic("ModelPackageDescription")(__v.asInstanceOf[js.Any]))
+      ModelPackageVersion.foreach(__v => __obj.updateDynamic("ModelPackageVersion")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchDescribeModelPackageSummary]
+    }
+  }
+
   /** Contains bias metrics for a model.
     */
   @js.native
   trait Bias extends js.Object {
+    var PostTrainingReport: js.UndefOr[MetricsSource]
+    var PreTrainingReport: js.UndefOr[MetricsSource]
     var Report: js.UndefOr[MetricsSource]
   }
 
   object Bias {
     @inline
     def apply(
+        PostTrainingReport: js.UndefOr[MetricsSource] = js.undefined,
+        PreTrainingReport: js.UndefOr[MetricsSource] = js.undefined,
         Report: js.UndefOr[MetricsSource] = js.undefined
     ): Bias = {
       val __obj = js.Dynamic.literal()
+      PostTrainingReport.foreach(__v => __obj.updateDynamic("PostTrainingReport")(__v.asInstanceOf[js.Any]))
+      PreTrainingReport.foreach(__v => __obj.updateDynamic("PreTrainingReport")(__v.asInstanceOf[js.Any]))
       Report.foreach(__v => __obj.updateDynamic("Report")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Bias]
     }
   }
 
-  /** Currently, the <code>BlueGreenUpdatePolicy</code> API is not supported.
+  /** Update policy for a blue/green deployment. If this update policy is specified, SageMaker creates a new fleet during the deployment while maintaining the old fleet. SageMaker flips traffic to the new fleet according to the specified traffic routing configuration. Only one update policy should be used in the deployment configuration. If no update policy is specified, SageMaker uses a blue/green deployment strategy with all at once traffic shifting by default.
     */
   @js.native
   trait BlueGreenUpdatePolicy extends js.Object {
@@ -2072,7 +2414,31 @@ package object sagemaker {
     }
   }
 
-  /** Location of artifacts for an AutoML candidate job.
+  /** Metadata about a callback step.
+    */
+  @js.native
+  trait CallbackStepMetadata extends js.Object {
+    var CallbackToken: js.UndefOr[CallbackToken]
+    var OutputParameters: js.UndefOr[OutputParameterList]
+    var SqsQueueUrl: js.UndefOr[String256]
+  }
+
+  object CallbackStepMetadata {
+    @inline
+    def apply(
+        CallbackToken: js.UndefOr[CallbackToken] = js.undefined,
+        OutputParameters: js.UndefOr[OutputParameterList] = js.undefined,
+        SqsQueueUrl: js.UndefOr[String256] = js.undefined
+    ): CallbackStepMetadata = {
+      val __obj = js.Dynamic.literal()
+      CallbackToken.foreach(__v => __obj.updateDynamic("CallbackToken")(__v.asInstanceOf[js.Any]))
+      OutputParameters.foreach(__v => __obj.updateDynamic("OutputParameters")(__v.asInstanceOf[js.Any]))
+      SqsQueueUrl.foreach(__v => __obj.updateDynamic("SqsQueueUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CallbackStepMetadata]
+    }
+  }
+
+  /** The location of artifacts for an AutoML candidate job.
     */
   @js.native
   trait CandidateArtifactLocations extends js.Object {
@@ -2096,20 +2462,23 @@ package object sagemaker {
   @js.native
   trait CandidateProperties extends js.Object {
     var CandidateArtifactLocations: js.UndefOr[CandidateArtifactLocations]
+    var CandidateMetrics: js.UndefOr[MetricDataList]
   }
 
   object CandidateProperties {
     @inline
     def apply(
-        CandidateArtifactLocations: js.UndefOr[CandidateArtifactLocations] = js.undefined
+        CandidateArtifactLocations: js.UndefOr[CandidateArtifactLocations] = js.undefined,
+        CandidateMetrics: js.UndefOr[MetricDataList] = js.undefined
     ): CandidateProperties = {
       val __obj = js.Dynamic.literal()
       CandidateArtifactLocations.foreach(__v => __obj.updateDynamic("CandidateArtifactLocations")(__v.asInstanceOf[js.Any]))
+      CandidateMetrics.foreach(__v => __obj.updateDynamic("CandidateMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CandidateProperties]
     }
   }
 
-  /** Currently, the <code>CapacitySize</code> API is not supported.
+  /** Specifies the endpoint capacity to activate for production.
     */
   @js.native
   trait CapacitySize extends js.Object {
@@ -2168,6 +2537,28 @@ package object sagemaker {
         "CaptureMode" -> CaptureMode.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CaptureOption]
+    }
+  }
+
+  /** Environment parameters you want to benchmark your load test against.
+    */
+  @js.native
+  trait CategoricalParameter extends js.Object {
+    var Name: String64
+    var Value: CategoricalParameterRangeValues
+  }
+
+  object CategoricalParameter {
+    @inline
+    def apply(
+        Name: String64,
+        Value: CategoricalParameterRangeValues
+    ): CategoricalParameter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CategoricalParameter]
     }
   }
 
@@ -2305,6 +2696,45 @@ package object sagemaker {
 
       LocalPath.foreach(__v => __obj.updateDynamic("LocalPath")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CheckpointConfig]
+    }
+  }
+
+  /** The container for the metadata for the ClarifyCheck step. For more information, see the topic on [[https://docs.aws.amazon.com/sagemaker/latest/dg/build-and-manage-steps.html#step-type-clarify-check|ClarifyCheck step]] in the <i>Amazon SageMaker Developer Guide</i>.
+    */
+  @js.native
+  trait ClarifyCheckStepMetadata extends js.Object {
+    var BaselineUsedForDriftCheckConstraints: js.UndefOr[String1024]
+    var CalculatedBaselineConstraints: js.UndefOr[String1024]
+    var CheckJobArn: js.UndefOr[String256]
+    var CheckType: js.UndefOr[String256]
+    var ModelPackageGroupName: js.UndefOr[String256]
+    var RegisterNewBaseline: js.UndefOr[Boolean]
+    var SkipCheck: js.UndefOr[Boolean]
+    var ViolationReport: js.UndefOr[String1024]
+  }
+
+  object ClarifyCheckStepMetadata {
+    @inline
+    def apply(
+        BaselineUsedForDriftCheckConstraints: js.UndefOr[String1024] = js.undefined,
+        CalculatedBaselineConstraints: js.UndefOr[String1024] = js.undefined,
+        CheckJobArn: js.UndefOr[String256] = js.undefined,
+        CheckType: js.UndefOr[String256] = js.undefined,
+        ModelPackageGroupName: js.UndefOr[String256] = js.undefined,
+        RegisterNewBaseline: js.UndefOr[Boolean] = js.undefined,
+        SkipCheck: js.UndefOr[Boolean] = js.undefined,
+        ViolationReport: js.UndefOr[String1024] = js.undefined
+    ): ClarifyCheckStepMetadata = {
+      val __obj = js.Dynamic.literal()
+      BaselineUsedForDriftCheckConstraints.foreach(__v => __obj.updateDynamic("BaselineUsedForDriftCheckConstraints")(__v.asInstanceOf[js.Any]))
+      CalculatedBaselineConstraints.foreach(__v => __obj.updateDynamic("CalculatedBaselineConstraints")(__v.asInstanceOf[js.Any]))
+      CheckJobArn.foreach(__v => __obj.updateDynamic("CheckJobArn")(__v.asInstanceOf[js.Any]))
+      CheckType.foreach(__v => __obj.updateDynamic("CheckType")(__v.asInstanceOf[js.Any]))
+      ModelPackageGroupName.foreach(__v => __obj.updateDynamic("ModelPackageGroupName")(__v.asInstanceOf[js.Any]))
+      RegisterNewBaseline.foreach(__v => __obj.updateDynamic("RegisterNewBaseline")(__v.asInstanceOf[js.Any]))
+      SkipCheck.foreach(__v => __obj.updateDynamic("SkipCheck")(__v.asInstanceOf[js.Any]))
+      ViolationReport.foreach(__v => __obj.updateDynamic("ViolationReport")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ClarifyCheckStepMetadata]
     }
   }
 
@@ -2484,6 +2914,7 @@ package object sagemaker {
     var Environment: js.UndefOr[EnvironmentMap]
     var Image: js.UndefOr[ContainerImage]
     var ImageConfig: js.UndefOr[ImageConfig]
+    var InferenceSpecificationName: js.UndefOr[InferenceSpecificationName]
     var Mode: js.UndefOr[ContainerMode]
     var ModelDataUrl: js.UndefOr[Url]
     var ModelPackageName: js.UndefOr[VersionedArnOrName]
@@ -2497,6 +2928,7 @@ package object sagemaker {
         Environment: js.UndefOr[EnvironmentMap] = js.undefined,
         Image: js.UndefOr[ContainerImage] = js.undefined,
         ImageConfig: js.UndefOr[ImageConfig] = js.undefined,
+        InferenceSpecificationName: js.UndefOr[InferenceSpecificationName] = js.undefined,
         Mode: js.UndefOr[ContainerMode] = js.undefined,
         ModelDataUrl: js.UndefOr[Url] = js.undefined,
         ModelPackageName: js.UndefOr[VersionedArnOrName] = js.undefined,
@@ -2507,6 +2939,7 @@ package object sagemaker {
       Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
       Image.foreach(__v => __obj.updateDynamic("Image")(__v.asInstanceOf[js.Any]))
       ImageConfig.foreach(__v => __obj.updateDynamic("ImageConfig")(__v.asInstanceOf[js.Any]))
+      InferenceSpecificationName.foreach(__v => __obj.updateDynamic("InferenceSpecificationName")(__v.asInstanceOf[js.Any]))
       Mode.foreach(__v => __obj.updateDynamic("Mode")(__v.asInstanceOf[js.Any]))
       ModelDataUrl.foreach(__v => __obj.updateDynamic("ModelDataUrl")(__v.asInstanceOf[js.Any]))
       ModelPackageName.foreach(__v => __obj.updateDynamic("ModelPackageName")(__v.asInstanceOf[js.Any]))
@@ -2880,6 +3313,7 @@ package object sagemaker {
     var AutoMLJobConfig: js.UndefOr[AutoMLJobConfig]
     var AutoMLJobObjective: js.UndefOr[AutoMLJobObjective]
     var GenerateCandidateDefinitionsOnly: js.UndefOr[GenerateCandidateDefinitionsOnly]
+    var ModelDeployConfig: js.UndefOr[ModelDeployConfig]
     var ProblemType: js.UndefOr[ProblemType]
     var Tags: js.UndefOr[TagList]
   }
@@ -2894,6 +3328,7 @@ package object sagemaker {
         AutoMLJobConfig: js.UndefOr[AutoMLJobConfig] = js.undefined,
         AutoMLJobObjective: js.UndefOr[AutoMLJobObjective] = js.undefined,
         GenerateCandidateDefinitionsOnly: js.UndefOr[GenerateCandidateDefinitionsOnly] = js.undefined,
+        ModelDeployConfig: js.UndefOr[ModelDeployConfig] = js.undefined,
         ProblemType: js.UndefOr[ProblemType] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateAutoMLJobRequest = {
@@ -2907,6 +3342,7 @@ package object sagemaker {
       AutoMLJobConfig.foreach(__v => __obj.updateDynamic("AutoMLJobConfig")(__v.asInstanceOf[js.Any]))
       AutoMLJobObjective.foreach(__v => __obj.updateDynamic("AutoMLJobObjective")(__v.asInstanceOf[js.Any]))
       GenerateCandidateDefinitionsOnly.foreach(__v => __obj.updateDynamic("GenerateCandidateDefinitionsOnly")(__v.asInstanceOf[js.Any]))
+      ModelDeployConfig.foreach(__v => __obj.updateDynamic("ModelDeployConfig")(__v.asInstanceOf[js.Any]))
       ProblemType.foreach(__v => __obj.updateDynamic("ProblemType")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateAutoMLJobRequest]
@@ -2974,32 +3410,38 @@ package object sagemaker {
   @js.native
   trait CreateCompilationJobRequest extends js.Object {
     var CompilationJobName: EntityName
-    var InputConfig: InputConfig
     var OutputConfig: OutputConfig
     var RoleArn: RoleArn
     var StoppingCondition: StoppingCondition
+    var InputConfig: js.UndefOr[InputConfig]
+    var ModelPackageVersionArn: js.UndefOr[ModelPackageArn]
     var Tags: js.UndefOr[TagList]
+    var VpcConfig: js.UndefOr[NeoVpcConfig]
   }
 
   object CreateCompilationJobRequest {
     @inline
     def apply(
         CompilationJobName: EntityName,
-        InputConfig: InputConfig,
         OutputConfig: OutputConfig,
         RoleArn: RoleArn,
         StoppingCondition: StoppingCondition,
-        Tags: js.UndefOr[TagList] = js.undefined
+        InputConfig: js.UndefOr[InputConfig] = js.undefined,
+        ModelPackageVersionArn: js.UndefOr[ModelPackageArn] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined,
+        VpcConfig: js.UndefOr[NeoVpcConfig] = js.undefined
     ): CreateCompilationJobRequest = {
       val __obj = js.Dynamic.literal(
         "CompilationJobName" -> CompilationJobName.asInstanceOf[js.Any],
-        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
         "OutputConfig" -> OutputConfig.asInstanceOf[js.Any],
         "RoleArn" -> RoleArn.asInstanceOf[js.Any],
         "StoppingCondition" -> StoppingCondition.asInstanceOf[js.Any]
       )
 
+      InputConfig.foreach(__v => __obj.updateDynamic("InputConfig")(__v.asInstanceOf[js.Any]))
+      ModelPackageVersionArn.foreach(__v => __obj.updateDynamic("ModelPackageVersionArn")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCompilationJobRequest]
     }
   }
@@ -3137,6 +3579,7 @@ package object sagemaker {
     var DeviceFleetName: EntityName
     var OutputConfig: EdgeOutputConfig
     var Description: js.UndefOr[DeviceFleetDescription]
+    var EnableIotRoleAlias: js.UndefOr[EnableIotRoleAlias]
     var RoleArn: js.UndefOr[RoleArn]
     var Tags: js.UndefOr[TagList]
   }
@@ -3147,6 +3590,7 @@ package object sagemaker {
         DeviceFleetName: EntityName,
         OutputConfig: EdgeOutputConfig,
         Description: js.UndefOr[DeviceFleetDescription] = js.undefined,
+        EnableIotRoleAlias: js.UndefOr[EnableIotRoleAlias] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateDeviceFleetRequest = {
@@ -3156,6 +3600,7 @@ package object sagemaker {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EnableIotRoleAlias.foreach(__v => __obj.updateDynamic("EnableIotRoleAlias")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateDeviceFleetRequest]
@@ -3170,6 +3615,8 @@ package object sagemaker {
     var SubnetIds: Subnets
     var VpcId: VpcId
     var AppNetworkAccessType: js.UndefOr[AppNetworkAccessType]
+    var AppSecurityGroupManagement: js.UndefOr[AppSecurityGroupManagement]
+    var DomainSettings: js.UndefOr[DomainSettings]
     var HomeEfsFileSystemKmsKeyId: js.UndefOr[KmsKeyId]
     var KmsKeyId: js.UndefOr[KmsKeyId]
     var Tags: js.UndefOr[TagList]
@@ -3184,6 +3631,8 @@ package object sagemaker {
         SubnetIds: Subnets,
         VpcId: VpcId,
         AppNetworkAccessType: js.UndefOr[AppNetworkAccessType] = js.undefined,
+        AppSecurityGroupManagement: js.UndefOr[AppSecurityGroupManagement] = js.undefined,
+        DomainSettings: js.UndefOr[DomainSettings] = js.undefined,
         HomeEfsFileSystemKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -3197,6 +3646,8 @@ package object sagemaker {
       )
 
       AppNetworkAccessType.foreach(__v => __obj.updateDynamic("AppNetworkAccessType")(__v.asInstanceOf[js.Any]))
+      AppSecurityGroupManagement.foreach(__v => __obj.updateDynamic("AppSecurityGroupManagement")(__v.asInstanceOf[js.Any]))
+      DomainSettings.foreach(__v => __obj.updateDynamic("DomainSettings")(__v.asInstanceOf[js.Any]))
       HomeEfsFileSystemKmsKeyId.foreach(__v => __obj.updateDynamic("HomeEfsFileSystemKmsKeyId")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -3266,6 +3717,7 @@ package object sagemaker {
   trait CreateEndpointConfigInput extends js.Object {
     var EndpointConfigName: EndpointConfigName
     var ProductionVariants: ProductionVariantList
+    var AsyncInferenceConfig: js.UndefOr[AsyncInferenceConfig]
     var DataCaptureConfig: js.UndefOr[DataCaptureConfig]
     var KmsKeyId: js.UndefOr[KmsKeyId]
     var Tags: js.UndefOr[TagList]
@@ -3276,6 +3728,7 @@ package object sagemaker {
     def apply(
         EndpointConfigName: EndpointConfigName,
         ProductionVariants: ProductionVariantList,
+        AsyncInferenceConfig: js.UndefOr[AsyncInferenceConfig] = js.undefined,
         DataCaptureConfig: js.UndefOr[DataCaptureConfig] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
@@ -3285,6 +3738,7 @@ package object sagemaker {
         "ProductionVariants" -> ProductionVariants.asInstanceOf[js.Any]
       )
 
+      AsyncInferenceConfig.foreach(__v => __obj.updateDynamic("AsyncInferenceConfig")(__v.asInstanceOf[js.Any]))
       DataCaptureConfig.foreach(__v => __obj.updateDynamic("DataCaptureConfig")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
@@ -3313,6 +3767,7 @@ package object sagemaker {
   trait CreateEndpointInput extends js.Object {
     var EndpointConfigName: EndpointConfigName
     var EndpointName: EndpointName
+    var DeploymentConfig: js.UndefOr[DeploymentConfig]
     var Tags: js.UndefOr[TagList]
   }
 
@@ -3321,6 +3776,7 @@ package object sagemaker {
     def apply(
         EndpointConfigName: EndpointConfigName,
         EndpointName: EndpointName,
+        DeploymentConfig: js.UndefOr[DeploymentConfig] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined
     ): CreateEndpointInput = {
       val __obj = js.Dynamic.literal(
@@ -3328,6 +3784,7 @@ package object sagemaker {
         "EndpointName" -> EndpointName.asInstanceOf[js.Any]
       )
 
+      DeploymentConfig.foreach(__v => __obj.updateDynamic("DeploymentConfig")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateEndpointInput]
     }
@@ -3682,6 +4139,59 @@ package object sagemaker {
   }
 
   @js.native
+  trait CreateInferenceRecommendationsJobRequest extends js.Object {
+    var InputConfig: RecommendationJobInputConfig
+    var JobName: RecommendationJobName
+    var JobType: RecommendationJobType
+    var RoleArn: RoleArn
+    var JobDescription: js.UndefOr[RecommendationJobDescription]
+    var StoppingConditions: js.UndefOr[RecommendationJobStoppingConditions]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateInferenceRecommendationsJobRequest {
+    @inline
+    def apply(
+        InputConfig: RecommendationJobInputConfig,
+        JobName: RecommendationJobName,
+        JobType: RecommendationJobType,
+        RoleArn: RoleArn,
+        JobDescription: js.UndefOr[RecommendationJobDescription] = js.undefined,
+        StoppingConditions: js.UndefOr[RecommendationJobStoppingConditions] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateInferenceRecommendationsJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
+        "JobName" -> JobName.asInstanceOf[js.Any],
+        "JobType" -> JobType.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any]
+      )
+
+      JobDescription.foreach(__v => __obj.updateDynamic("JobDescription")(__v.asInstanceOf[js.Any]))
+      StoppingConditions.foreach(__v => __obj.updateDynamic("StoppingConditions")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateInferenceRecommendationsJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateInferenceRecommendationsJobResponse extends js.Object {
+    var JobArn: RecommendationJobArn
+  }
+
+  object CreateInferenceRecommendationsJobResponse {
+    @inline
+    def apply(
+        JobArn: RecommendationJobArn
+    ): CreateInferenceRecommendationsJobResponse = {
+      val __obj = js.Dynamic.literal(
+        "JobArn" -> JobArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateInferenceRecommendationsJobResponse]
+    }
+  }
+
+  @js.native
   trait CreateLabelingJobRequest extends js.Object {
     var HumanTaskConfig: HumanTaskConfig
     var InputConfig: LabelingJobInputConfig
@@ -3966,39 +4476,55 @@ package object sagemaker {
 
   @js.native
   trait CreateModelPackageInput extends js.Object {
+    var AdditionalInferenceSpecifications: js.UndefOr[AdditionalInferenceSpecifications]
     var CertifyForMarketplace: js.UndefOr[CertifyForMarketplace]
     var ClientToken: js.UndefOr[ClientToken]
+    var CustomerMetadataProperties: js.UndefOr[CustomerMetadataMap]
+    var Domain: js.UndefOr[String]
+    var DriftCheckBaselines: js.UndefOr[DriftCheckBaselines]
     var InferenceSpecification: js.UndefOr[InferenceSpecification]
     var MetadataProperties: js.UndefOr[MetadataProperties]
     var ModelApprovalStatus: js.UndefOr[ModelApprovalStatus]
     var ModelMetrics: js.UndefOr[ModelMetrics]
     var ModelPackageDescription: js.UndefOr[EntityDescription]
-    var ModelPackageGroupName: js.UndefOr[EntityName]
+    var ModelPackageGroupName: js.UndefOr[ArnOrName]
     var ModelPackageName: js.UndefOr[EntityName]
+    var SamplePayloadUrl: js.UndefOr[S3Uri]
     var SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification]
     var Tags: js.UndefOr[TagList]
+    var Task: js.UndefOr[String]
     var ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification]
   }
 
   object CreateModelPackageInput {
     @inline
     def apply(
+        AdditionalInferenceSpecifications: js.UndefOr[AdditionalInferenceSpecifications] = js.undefined,
         CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
         ClientToken: js.UndefOr[ClientToken] = js.undefined,
+        CustomerMetadataProperties: js.UndefOr[CustomerMetadataMap] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        DriftCheckBaselines: js.UndefOr[DriftCheckBaselines] = js.undefined,
         InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
         MetadataProperties: js.UndefOr[MetadataProperties] = js.undefined,
         ModelApprovalStatus: js.UndefOr[ModelApprovalStatus] = js.undefined,
         ModelMetrics: js.UndefOr[ModelMetrics] = js.undefined,
         ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined,
-        ModelPackageGroupName: js.UndefOr[EntityName] = js.undefined,
+        ModelPackageGroupName: js.UndefOr[ArnOrName] = js.undefined,
         ModelPackageName: js.UndefOr[EntityName] = js.undefined,
+        SamplePayloadUrl: js.UndefOr[S3Uri] = js.undefined,
         SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
+        Task: js.UndefOr[String] = js.undefined,
         ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification] = js.undefined
     ): CreateModelPackageInput = {
       val __obj = js.Dynamic.literal()
+      AdditionalInferenceSpecifications.foreach(__v => __obj.updateDynamic("AdditionalInferenceSpecifications")(__v.asInstanceOf[js.Any]))
       CertifyForMarketplace.foreach(__v => __obj.updateDynamic("CertifyForMarketplace")(__v.asInstanceOf[js.Any]))
       ClientToken.foreach(__v => __obj.updateDynamic("ClientToken")(__v.asInstanceOf[js.Any]))
+      CustomerMetadataProperties.foreach(__v => __obj.updateDynamic("CustomerMetadataProperties")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      DriftCheckBaselines.foreach(__v => __obj.updateDynamic("DriftCheckBaselines")(__v.asInstanceOf[js.Any]))
       InferenceSpecification.foreach(__v => __obj.updateDynamic("InferenceSpecification")(__v.asInstanceOf[js.Any]))
       MetadataProperties.foreach(__v => __obj.updateDynamic("MetadataProperties")(__v.asInstanceOf[js.Any]))
       ModelApprovalStatus.foreach(__v => __obj.updateDynamic("ModelApprovalStatus")(__v.asInstanceOf[js.Any]))
@@ -4006,8 +4532,10 @@ package object sagemaker {
       ModelPackageDescription.foreach(__v => __obj.updateDynamic("ModelPackageDescription")(__v.asInstanceOf[js.Any]))
       ModelPackageGroupName.foreach(__v => __obj.updateDynamic("ModelPackageGroupName")(__v.asInstanceOf[js.Any]))
       ModelPackageName.foreach(__v => __obj.updateDynamic("ModelPackageName")(__v.asInstanceOf[js.Any]))
+      SamplePayloadUrl.foreach(__v => __obj.updateDynamic("SamplePayloadUrl")(__v.asInstanceOf[js.Any]))
       SourceAlgorithmSpecification.foreach(__v => __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Task.foreach(__v => __obj.updateDynamic("Task")(__v.asInstanceOf[js.Any]))
       ValidationSpecification.foreach(__v => __obj.updateDynamic("ValidationSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateModelPackageInput]
     }
@@ -4144,6 +4672,7 @@ package object sagemaker {
     var DirectInternetAccess: js.UndefOr[DirectInternetAccess]
     var KmsKeyId: js.UndefOr[KmsKeyId]
     var LifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName]
+    var PlatformIdentifier: js.UndefOr[PlatformIdentifier]
     var RootAccess: js.UndefOr[RootAccess]
     var SecurityGroupIds: js.UndefOr[SecurityGroupIds]
     var SubnetId: js.UndefOr[SubnetId]
@@ -4163,6 +4692,7 @@ package object sagemaker {
         DirectInternetAccess: js.UndefOr[DirectInternetAccess] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         LifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
+        PlatformIdentifier: js.UndefOr[PlatformIdentifier] = js.undefined,
         RootAccess: js.UndefOr[RootAccess] = js.undefined,
         SecurityGroupIds: js.UndefOr[SecurityGroupIds] = js.undefined,
         SubnetId: js.UndefOr[SubnetId] = js.undefined,
@@ -4181,6 +4711,7 @@ package object sagemaker {
       DirectInternetAccess.foreach(__v => __obj.updateDynamic("DirectInternetAccess")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       LifecycleConfigName.foreach(__v => __obj.updateDynamic("LifecycleConfigName")(__v.asInstanceOf[js.Any]))
+      PlatformIdentifier.foreach(__v => __obj.updateDynamic("PlatformIdentifier")(__v.asInstanceOf[js.Any]))
       RootAccess.foreach(__v => __obj.updateDynamic("RootAccess")(__v.asInstanceOf[js.Any]))
       SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
       SubnetId.foreach(__v => __obj.updateDynamic("SubnetId")(__v.asInstanceOf[js.Any]))
@@ -4491,6 +5022,49 @@ package object sagemaker {
   }
 
   @js.native
+  trait CreateStudioLifecycleConfigRequest extends js.Object {
+    var StudioLifecycleConfigAppType: StudioLifecycleConfigAppType
+    var StudioLifecycleConfigContent: StudioLifecycleConfigContent
+    var StudioLifecycleConfigName: StudioLifecycleConfigName
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object CreateStudioLifecycleConfigRequest {
+    @inline
+    def apply(
+        StudioLifecycleConfigAppType: StudioLifecycleConfigAppType,
+        StudioLifecycleConfigContent: StudioLifecycleConfigContent,
+        StudioLifecycleConfigName: StudioLifecycleConfigName,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): CreateStudioLifecycleConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "StudioLifecycleConfigAppType" -> StudioLifecycleConfigAppType.asInstanceOf[js.Any],
+        "StudioLifecycleConfigContent" -> StudioLifecycleConfigContent.asInstanceOf[js.Any],
+        "StudioLifecycleConfigName" -> StudioLifecycleConfigName.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStudioLifecycleConfigRequest]
+    }
+  }
+
+  @js.native
+  trait CreateStudioLifecycleConfigResponse extends js.Object {
+    var StudioLifecycleConfigArn: js.UndefOr[StudioLifecycleConfigArn]
+  }
+
+  object CreateStudioLifecycleConfigResponse {
+    @inline
+    def apply(
+        StudioLifecycleConfigArn: js.UndefOr[StudioLifecycleConfigArn] = js.undefined
+    ): CreateStudioLifecycleConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      StudioLifecycleConfigArn.foreach(__v => __obj.updateDynamic("StudioLifecycleConfigArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateStudioLifecycleConfigResponse]
+    }
+  }
+
+  @js.native
   trait CreateTrainingJobRequest extends js.Object {
     var AlgorithmSpecification: AlgorithmSpecification
     var OutputDataConfig: OutputDataConfig
@@ -4510,6 +5084,7 @@ package object sagemaker {
     var InputDataConfig: js.UndefOr[InputDataConfig]
     var ProfilerConfig: js.UndefOr[ProfilerConfig]
     var ProfilerRuleConfigurations: js.UndefOr[ProfilerRuleConfigurations]
+    var RetryStrategy: js.UndefOr[RetryStrategy]
     var Tags: js.UndefOr[TagList]
     var TensorBoardOutputConfig: js.UndefOr[TensorBoardOutputConfig]
     var VpcConfig: js.UndefOr[VpcConfig]
@@ -4536,6 +5111,7 @@ package object sagemaker {
         InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
         ProfilerConfig: js.UndefOr[ProfilerConfig] = js.undefined,
         ProfilerRuleConfigurations: js.UndefOr[ProfilerRuleConfigurations] = js.undefined,
+        RetryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
         TensorBoardOutputConfig: js.UndefOr[TensorBoardOutputConfig] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
@@ -4561,6 +5137,7 @@ package object sagemaker {
       InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
       ProfilerConfig.foreach(__v => __obj.updateDynamic("ProfilerConfig")(__v.asInstanceOf[js.Any]))
       ProfilerRuleConfigurations.foreach(__v => __obj.updateDynamic("ProfilerRuleConfigurations")(__v.asInstanceOf[js.Any]))
+      RetryStrategy.foreach(__v => __obj.updateDynamic("RetryStrategy")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       TensorBoardOutputConfig.foreach(__v => __obj.updateDynamic("TensorBoardOutputConfig")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
@@ -5970,6 +6547,23 @@ package object sagemaker {
   }
 
   @js.native
+  trait DeleteStudioLifecycleConfigRequest extends js.Object {
+    var StudioLifecycleConfigName: StudioLifecycleConfigName
+  }
+
+  object DeleteStudioLifecycleConfigRequest {
+    @inline
+    def apply(
+        StudioLifecycleConfigName: StudioLifecycleConfigName
+    ): DeleteStudioLifecycleConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "StudioLifecycleConfigName" -> StudioLifecycleConfigName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteStudioLifecycleConfigRequest]
+    }
+  }
+
+  @js.native
   trait DeleteTagsInput extends js.Object {
     var ResourceArn: ResourceArn
     var TagKeys: TagKeyList
@@ -6172,7 +6766,7 @@ package object sagemaker {
     }
   }
 
-  /** Currently, the <code>DeploymentConfig</code> API is not supported.
+  /** The deployment configuration for an endpoint, which contains the desired deployment strategy and rollback configurations.
     */
   @js.native
   trait DeploymentConfig extends js.Object {
@@ -6235,13 +6829,14 @@ package object sagemaker {
   @js.native
   trait DescribeActionResponse extends js.Object {
     var ActionArn: js.UndefOr[ActionArn]
-    var ActionName: js.UndefOr[ExperimentEntityName]
+    var ActionName: js.UndefOr[ExperimentEntityNameOrArn]
     var ActionType: js.UndefOr[String256]
     var CreatedBy: js.UndefOr[UserContext]
     var CreationTime: js.UndefOr[Timestamp]
     var Description: js.UndefOr[ExperimentDescription]
     var LastModifiedBy: js.UndefOr[UserContext]
     var LastModifiedTime: js.UndefOr[Timestamp]
+    var LineageGroupArn: js.UndefOr[LineageGroupArn]
     var MetadataProperties: js.UndefOr[MetadataProperties]
     var Properties: js.UndefOr[LineageEntityParameters]
     var Source: js.UndefOr[ActionSource]
@@ -6252,13 +6847,14 @@ package object sagemaker {
     @inline
     def apply(
         ActionArn: js.UndefOr[ActionArn] = js.undefined,
-        ActionName: js.UndefOr[ExperimentEntityName] = js.undefined,
+        ActionName: js.UndefOr[ExperimentEntityNameOrArn] = js.undefined,
         ActionType: js.UndefOr[String256] = js.undefined,
         CreatedBy: js.UndefOr[UserContext] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[ExperimentDescription] = js.undefined,
         LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        LineageGroupArn: js.UndefOr[LineageGroupArn] = js.undefined,
         MetadataProperties: js.UndefOr[MetadataProperties] = js.undefined,
         Properties: js.UndefOr[LineageEntityParameters] = js.undefined,
         Source: js.UndefOr[ActionSource] = js.undefined,
@@ -6273,6 +6869,7 @@ package object sagemaker {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      LineageGroupArn.foreach(__v => __obj.updateDynamic("LineageGroupArn")(__v.asInstanceOf[js.Any]))
       MetadataProperties.foreach(__v => __obj.updateDynamic("MetadataProperties")(__v.asInstanceOf[js.Any]))
       Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
@@ -6483,12 +7080,13 @@ package object sagemaker {
   @js.native
   trait DescribeArtifactResponse extends js.Object {
     var ArtifactArn: js.UndefOr[ArtifactArn]
-    var ArtifactName: js.UndefOr[ExperimentEntityName]
+    var ArtifactName: js.UndefOr[ExperimentEntityNameOrArn]
     var ArtifactType: js.UndefOr[String256]
     var CreatedBy: js.UndefOr[UserContext]
     var CreationTime: js.UndefOr[Timestamp]
     var LastModifiedBy: js.UndefOr[UserContext]
     var LastModifiedTime: js.UndefOr[Timestamp]
+    var LineageGroupArn: js.UndefOr[LineageGroupArn]
     var MetadataProperties: js.UndefOr[MetadataProperties]
     var Properties: js.UndefOr[LineageEntityParameters]
     var Source: js.UndefOr[ArtifactSource]
@@ -6498,12 +7096,13 @@ package object sagemaker {
     @inline
     def apply(
         ArtifactArn: js.UndefOr[ArtifactArn] = js.undefined,
-        ArtifactName: js.UndefOr[ExperimentEntityName] = js.undefined,
+        ArtifactName: js.UndefOr[ExperimentEntityNameOrArn] = js.undefined,
         ArtifactType: js.UndefOr[String256] = js.undefined,
         CreatedBy: js.UndefOr[UserContext] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
         LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        LineageGroupArn: js.UndefOr[LineageGroupArn] = js.undefined,
         MetadataProperties: js.UndefOr[MetadataProperties] = js.undefined,
         Properties: js.UndefOr[LineageEntityParameters] = js.undefined,
         Source: js.UndefOr[ArtifactSource] = js.undefined
@@ -6516,6 +7115,7 @@ package object sagemaker {
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      LineageGroupArn.foreach(__v => __obj.updateDynamic("LineageGroupArn")(__v.asInstanceOf[js.Any]))
       MetadataProperties.foreach(__v => __obj.updateDynamic("MetadataProperties")(__v.asInstanceOf[js.Any]))
       Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
@@ -6558,6 +7158,8 @@ package object sagemaker {
     var EndTime: js.UndefOr[Timestamp]
     var FailureReason: js.UndefOr[AutoMLFailureReason]
     var GenerateCandidateDefinitionsOnly: js.UndefOr[GenerateCandidateDefinitionsOnly]
+    var ModelDeployConfig: js.UndefOr[ModelDeployConfig]
+    var ModelDeployResult: js.UndefOr[ModelDeployResult]
     var PartialFailureReasons: js.UndefOr[AutoMLPartialFailureReasons]
     var ProblemType: js.UndefOr[ProblemType]
     var ResolvedAttributes: js.UndefOr[ResolvedAttributes]
@@ -6582,6 +7184,8 @@ package object sagemaker {
         EndTime: js.UndefOr[Timestamp] = js.undefined,
         FailureReason: js.UndefOr[AutoMLFailureReason] = js.undefined,
         GenerateCandidateDefinitionsOnly: js.UndefOr[GenerateCandidateDefinitionsOnly] = js.undefined,
+        ModelDeployConfig: js.UndefOr[ModelDeployConfig] = js.undefined,
+        ModelDeployResult: js.UndefOr[ModelDeployResult] = js.undefined,
         PartialFailureReasons: js.UndefOr[AutoMLPartialFailureReasons] = js.undefined,
         ProblemType: js.UndefOr[ProblemType] = js.undefined,
         ResolvedAttributes: js.UndefOr[ResolvedAttributes] = js.undefined
@@ -6605,6 +7209,8 @@ package object sagemaker {
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       GenerateCandidateDefinitionsOnly.foreach(__v => __obj.updateDynamic("GenerateCandidateDefinitionsOnly")(__v.asInstanceOf[js.Any]))
+      ModelDeployConfig.foreach(__v => __obj.updateDynamic("ModelDeployConfig")(__v.asInstanceOf[js.Any]))
+      ModelDeployResult.foreach(__v => __obj.updateDynamic("ModelDeployResult")(__v.asInstanceOf[js.Any]))
       PartialFailureReasons.foreach(__v => __obj.updateDynamic("PartialFailureReasons")(__v.asInstanceOf[js.Any]))
       ProblemType.foreach(__v => __obj.updateDynamic("ProblemType")(__v.asInstanceOf[js.Any]))
       ResolvedAttributes.foreach(__v => __obj.updateDynamic("ResolvedAttributes")(__v.asInstanceOf[js.Any]))
@@ -6691,7 +7297,10 @@ package object sagemaker {
     var StoppingCondition: StoppingCondition
     var CompilationEndTime: js.UndefOr[Timestamp]
     var CompilationStartTime: js.UndefOr[Timestamp]
+    var InferenceImage: js.UndefOr[InferenceImage]
     var ModelDigests: js.UndefOr[ModelDigests]
+    var ModelPackageVersionArn: js.UndefOr[ModelPackageArn]
+    var VpcConfig: js.UndefOr[NeoVpcConfig]
   }
 
   object DescribeCompilationJobResponse {
@@ -6710,7 +7319,10 @@ package object sagemaker {
         StoppingCondition: StoppingCondition,
         CompilationEndTime: js.UndefOr[Timestamp] = js.undefined,
         CompilationStartTime: js.UndefOr[Timestamp] = js.undefined,
-        ModelDigests: js.UndefOr[ModelDigests] = js.undefined
+        InferenceImage: js.UndefOr[InferenceImage] = js.undefined,
+        ModelDigests: js.UndefOr[ModelDigests] = js.undefined,
+        ModelPackageVersionArn: js.UndefOr[ModelPackageArn] = js.undefined,
+        VpcConfig: js.UndefOr[NeoVpcConfig] = js.undefined
     ): DescribeCompilationJobResponse = {
       val __obj = js.Dynamic.literal(
         "CompilationJobArn" -> CompilationJobArn.asInstanceOf[js.Any],
@@ -6728,20 +7340,23 @@ package object sagemaker {
 
       CompilationEndTime.foreach(__v => __obj.updateDynamic("CompilationEndTime")(__v.asInstanceOf[js.Any]))
       CompilationStartTime.foreach(__v => __obj.updateDynamic("CompilationStartTime")(__v.asInstanceOf[js.Any]))
+      InferenceImage.foreach(__v => __obj.updateDynamic("InferenceImage")(__v.asInstanceOf[js.Any]))
       ModelDigests.foreach(__v => __obj.updateDynamic("ModelDigests")(__v.asInstanceOf[js.Any]))
+      ModelPackageVersionArn.foreach(__v => __obj.updateDynamic("ModelPackageVersionArn")(__v.asInstanceOf[js.Any]))
+      VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCompilationJobResponse]
     }
   }
 
   @js.native
   trait DescribeContextRequest extends js.Object {
-    var ContextName: ExperimentEntityName
+    var ContextName: ExperimentEntityNameOrArn
   }
 
   object DescribeContextRequest {
     @inline
     def apply(
-        ContextName: ExperimentEntityName
+        ContextName: ExperimentEntityNameOrArn
     ): DescribeContextRequest = {
       val __obj = js.Dynamic.literal(
         "ContextName" -> ContextName.asInstanceOf[js.Any]
@@ -6760,6 +7375,7 @@ package object sagemaker {
     var Description: js.UndefOr[ExperimentDescription]
     var LastModifiedBy: js.UndefOr[UserContext]
     var LastModifiedTime: js.UndefOr[Timestamp]
+    var LineageGroupArn: js.UndefOr[LineageGroupArn]
     var Properties: js.UndefOr[LineageEntityParameters]
     var Source: js.UndefOr[ContextSource]
   }
@@ -6775,6 +7391,7 @@ package object sagemaker {
         Description: js.UndefOr[ExperimentDescription] = js.undefined,
         LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        LineageGroupArn: js.UndefOr[LineageGroupArn] = js.undefined,
         Properties: js.UndefOr[LineageEntityParameters] = js.undefined,
         Source: js.UndefOr[ContextSource] = js.undefined
     ): DescribeContextResponse = {
@@ -6787,6 +7404,7 @@ package object sagemaker {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      LineageGroupArn.foreach(__v => __obj.updateDynamic("LineageGroupArn")(__v.asInstanceOf[js.Any]))
       Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
       Source.foreach(__v => __obj.updateDynamic("Source")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeContextResponse]
@@ -6943,6 +7561,7 @@ package object sagemaker {
     var DeviceFleetName: EntityName
     var DeviceName: EntityName
     var RegistrationTime: Timestamp
+    var AgentVersion: js.UndefOr[EdgeVersion]
     var Description: js.UndefOr[DeviceDescription]
     var DeviceArn: js.UndefOr[DeviceArn]
     var IotThingName: js.UndefOr[ThingName]
@@ -6958,6 +7577,7 @@ package object sagemaker {
         DeviceFleetName: EntityName,
         DeviceName: EntityName,
         RegistrationTime: Timestamp,
+        AgentVersion: js.UndefOr[EdgeVersion] = js.undefined,
         Description: js.UndefOr[DeviceDescription] = js.undefined,
         DeviceArn: js.UndefOr[DeviceArn] = js.undefined,
         IotThingName: js.UndefOr[ThingName] = js.undefined,
@@ -6972,6 +7592,7 @@ package object sagemaker {
         "RegistrationTime" -> RegistrationTime.asInstanceOf[js.Any]
       )
 
+      AgentVersion.foreach(__v => __obj.updateDynamic("AgentVersion")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DeviceArn.foreach(__v => __obj.updateDynamic("DeviceArn")(__v.asInstanceOf[js.Any]))
       IotThingName.foreach(__v => __obj.updateDynamic("IotThingName")(__v.asInstanceOf[js.Any]))
@@ -7003,17 +7624,20 @@ package object sagemaker {
   @js.native
   trait DescribeDomainResponse extends js.Object {
     var AppNetworkAccessType: js.UndefOr[AppNetworkAccessType]
+    var AppSecurityGroupManagement: js.UndefOr[AppSecurityGroupManagement]
     var AuthMode: js.UndefOr[AuthMode]
     var CreationTime: js.UndefOr[CreationTime]
     var DefaultUserSettings: js.UndefOr[UserSettings]
     var DomainArn: js.UndefOr[DomainArn]
     var DomainId: js.UndefOr[DomainId]
     var DomainName: js.UndefOr[DomainName]
+    var DomainSettings: js.UndefOr[DomainSettings]
     var FailureReason: js.UndefOr[FailureReason]
     var HomeEfsFileSystemId: js.UndefOr[ResourceId]
     var HomeEfsFileSystemKmsKeyId: js.UndefOr[KmsKeyId]
     var KmsKeyId: js.UndefOr[KmsKeyId]
     var LastModifiedTime: js.UndefOr[LastModifiedTime]
+    var SecurityGroupIdForDomainBoundary: js.UndefOr[SecurityGroupId]
     var SingleSignOnManagedApplicationInstanceId: js.UndefOr[String256]
     var Status: js.UndefOr[DomainStatus]
     var SubnetIds: js.UndefOr[Subnets]
@@ -7025,17 +7649,20 @@ package object sagemaker {
     @inline
     def apply(
         AppNetworkAccessType: js.UndefOr[AppNetworkAccessType] = js.undefined,
+        AppSecurityGroupManagement: js.UndefOr[AppSecurityGroupManagement] = js.undefined,
         AuthMode: js.UndefOr[AuthMode] = js.undefined,
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
         DefaultUserSettings: js.UndefOr[UserSettings] = js.undefined,
         DomainArn: js.UndefOr[DomainArn] = js.undefined,
         DomainId: js.UndefOr[DomainId] = js.undefined,
         DomainName: js.UndefOr[DomainName] = js.undefined,
+        DomainSettings: js.UndefOr[DomainSettings] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         HomeEfsFileSystemId: js.UndefOr[ResourceId] = js.undefined,
         HomeEfsFileSystemKmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
         LastModifiedTime: js.UndefOr[LastModifiedTime] = js.undefined,
+        SecurityGroupIdForDomainBoundary: js.UndefOr[SecurityGroupId] = js.undefined,
         SingleSignOnManagedApplicationInstanceId: js.UndefOr[String256] = js.undefined,
         Status: js.UndefOr[DomainStatus] = js.undefined,
         SubnetIds: js.UndefOr[Subnets] = js.undefined,
@@ -7044,17 +7671,20 @@ package object sagemaker {
     ): DescribeDomainResponse = {
       val __obj = js.Dynamic.literal()
       AppNetworkAccessType.foreach(__v => __obj.updateDynamic("AppNetworkAccessType")(__v.asInstanceOf[js.Any]))
+      AppSecurityGroupManagement.foreach(__v => __obj.updateDynamic("AppSecurityGroupManagement")(__v.asInstanceOf[js.Any]))
       AuthMode.foreach(__v => __obj.updateDynamic("AuthMode")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
       DefaultUserSettings.foreach(__v => __obj.updateDynamic("DefaultUserSettings")(__v.asInstanceOf[js.Any]))
       DomainArn.foreach(__v => __obj.updateDynamic("DomainArn")(__v.asInstanceOf[js.Any]))
       DomainId.foreach(__v => __obj.updateDynamic("DomainId")(__v.asInstanceOf[js.Any]))
       DomainName.foreach(__v => __obj.updateDynamic("DomainName")(__v.asInstanceOf[js.Any]))
+      DomainSettings.foreach(__v => __obj.updateDynamic("DomainSettings")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       HomeEfsFileSystemId.foreach(__v => __obj.updateDynamic("HomeEfsFileSystemId")(__v.asInstanceOf[js.Any]))
       HomeEfsFileSystemKmsKeyId.foreach(__v => __obj.updateDynamic("HomeEfsFileSystemKmsKeyId")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIdForDomainBoundary.foreach(__v => __obj.updateDynamic("SecurityGroupIdForDomainBoundary")(__v.asInstanceOf[js.Any]))
       SingleSignOnManagedApplicationInstanceId.foreach(__v => __obj.updateDynamic("SingleSignOnManagedApplicationInstanceId")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       SubnetIds.foreach(__v => __obj.updateDynamic("SubnetIds")(__v.asInstanceOf[js.Any]))
@@ -7095,6 +7725,7 @@ package object sagemaker {
     var ModelSignature: js.UndefOr[String]
     var ModelVersion: js.UndefOr[EdgeVersion]
     var OutputConfig: js.UndefOr[EdgeOutputConfig]
+    var PresetDeploymentOutput: js.UndefOr[EdgePresetDeploymentOutput]
     var ResourceKey: js.UndefOr[KmsKeyId]
     var RoleArn: js.UndefOr[RoleArn]
   }
@@ -7114,6 +7745,7 @@ package object sagemaker {
         ModelSignature: js.UndefOr[String] = js.undefined,
         ModelVersion: js.UndefOr[EdgeVersion] = js.undefined,
         OutputConfig: js.UndefOr[EdgeOutputConfig] = js.undefined,
+        PresetDeploymentOutput: js.UndefOr[EdgePresetDeploymentOutput] = js.undefined,
         ResourceKey: js.UndefOr[KmsKeyId] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined
     ): DescribeEdgePackagingJobResponse = {
@@ -7132,6 +7764,7 @@ package object sagemaker {
       ModelSignature.foreach(__v => __obj.updateDynamic("ModelSignature")(__v.asInstanceOf[js.Any]))
       ModelVersion.foreach(__v => __obj.updateDynamic("ModelVersion")(__v.asInstanceOf[js.Any]))
       OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
+      PresetDeploymentOutput.foreach(__v => __obj.updateDynamic("PresetDeploymentOutput")(__v.asInstanceOf[js.Any]))
       ResourceKey.foreach(__v => __obj.updateDynamic("ResourceKey")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEdgePackagingJobResponse]
@@ -7161,6 +7794,7 @@ package object sagemaker {
     var EndpointConfigArn: EndpointConfigArn
     var EndpointConfigName: EndpointConfigName
     var ProductionVariants: ProductionVariantList
+    var AsyncInferenceConfig: js.UndefOr[AsyncInferenceConfig]
     var DataCaptureConfig: js.UndefOr[DataCaptureConfig]
     var KmsKeyId: js.UndefOr[KmsKeyId]
   }
@@ -7172,6 +7806,7 @@ package object sagemaker {
         EndpointConfigArn: EndpointConfigArn,
         EndpointConfigName: EndpointConfigName,
         ProductionVariants: ProductionVariantList,
+        AsyncInferenceConfig: js.UndefOr[AsyncInferenceConfig] = js.undefined,
         DataCaptureConfig: js.UndefOr[DataCaptureConfig] = js.undefined,
         KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
     ): DescribeEndpointConfigOutput = {
@@ -7182,6 +7817,7 @@ package object sagemaker {
         "ProductionVariants" -> ProductionVariants.asInstanceOf[js.Any]
       )
 
+      AsyncInferenceConfig.foreach(__v => __obj.updateDynamic("AsyncInferenceConfig")(__v.asInstanceOf[js.Any]))
       DataCaptureConfig.foreach(__v => __obj.updateDynamic("DataCaptureConfig")(__v.asInstanceOf[js.Any]))
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEndpointConfigOutput]
@@ -7213,9 +7849,11 @@ package object sagemaker {
     var EndpointName: EndpointName
     var EndpointStatus: EndpointStatus
     var LastModifiedTime: Timestamp
+    var AsyncInferenceConfig: js.UndefOr[AsyncInferenceConfig]
     var DataCaptureConfig: js.UndefOr[DataCaptureConfigSummary]
     var FailureReason: js.UndefOr[FailureReason]
     var LastDeploymentConfig: js.UndefOr[DeploymentConfig]
+    var PendingDeploymentSummary: js.UndefOr[PendingDeploymentSummary]
     var ProductionVariants: js.UndefOr[ProductionVariantSummaryList]
   }
 
@@ -7228,9 +7866,11 @@ package object sagemaker {
         EndpointName: EndpointName,
         EndpointStatus: EndpointStatus,
         LastModifiedTime: Timestamp,
+        AsyncInferenceConfig: js.UndefOr[AsyncInferenceConfig] = js.undefined,
         DataCaptureConfig: js.UndefOr[DataCaptureConfigSummary] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
         LastDeploymentConfig: js.UndefOr[DeploymentConfig] = js.undefined,
+        PendingDeploymentSummary: js.UndefOr[PendingDeploymentSummary] = js.undefined,
         ProductionVariants: js.UndefOr[ProductionVariantSummaryList] = js.undefined
     ): DescribeEndpointOutput = {
       val __obj = js.Dynamic.literal(
@@ -7242,9 +7882,11 @@ package object sagemaker {
         "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
 
+      AsyncInferenceConfig.foreach(__v => __obj.updateDynamic("AsyncInferenceConfig")(__v.asInstanceOf[js.Any]))
       DataCaptureConfig.foreach(__v => __obj.updateDynamic("DataCaptureConfig")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       LastDeploymentConfig.foreach(__v => __obj.updateDynamic("LastDeploymentConfig")(__v.asInstanceOf[js.Any]))
+      PendingDeploymentSummary.foreach(__v => __obj.updateDynamic("PendingDeploymentSummary")(__v.asInstanceOf[js.Any]))
       ProductionVariants.foreach(__v => __obj.updateDynamic("ProductionVariants")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeEndpointOutput]
     }
@@ -7690,6 +8332,77 @@ package object sagemaker {
   }
 
   @js.native
+  trait DescribeInferenceRecommendationsJobRequest extends js.Object {
+    var JobName: RecommendationJobName
+  }
+
+  object DescribeInferenceRecommendationsJobRequest {
+    @inline
+    def apply(
+        JobName: RecommendationJobName
+    ): DescribeInferenceRecommendationsJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobName" -> JobName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeInferenceRecommendationsJobRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeInferenceRecommendationsJobResponse extends js.Object {
+    var CreationTime: CreationTime
+    var InputConfig: RecommendationJobInputConfig
+    var JobArn: RecommendationJobArn
+    var JobName: RecommendationJobName
+    var JobType: RecommendationJobType
+    var LastModifiedTime: LastModifiedTime
+    var RoleArn: RoleArn
+    var Status: RecommendationJobStatus
+    var CompletionTime: js.UndefOr[Timestamp]
+    var FailureReason: js.UndefOr[FailureReason]
+    var InferenceRecommendations: js.UndefOr[InferenceRecommendations]
+    var JobDescription: js.UndefOr[RecommendationJobDescription]
+    var StoppingConditions: js.UndefOr[RecommendationJobStoppingConditions]
+  }
+
+  object DescribeInferenceRecommendationsJobResponse {
+    @inline
+    def apply(
+        CreationTime: CreationTime,
+        InputConfig: RecommendationJobInputConfig,
+        JobArn: RecommendationJobArn,
+        JobName: RecommendationJobName,
+        JobType: RecommendationJobType,
+        LastModifiedTime: LastModifiedTime,
+        RoleArn: RoleArn,
+        Status: RecommendationJobStatus,
+        CompletionTime: js.UndefOr[Timestamp] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined,
+        InferenceRecommendations: js.UndefOr[InferenceRecommendations] = js.undefined,
+        JobDescription: js.UndefOr[RecommendationJobDescription] = js.undefined,
+        StoppingConditions: js.UndefOr[RecommendationJobStoppingConditions] = js.undefined
+    ): DescribeInferenceRecommendationsJobResponse = {
+      val __obj = js.Dynamic.literal(
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "InputConfig" -> InputConfig.asInstanceOf[js.Any],
+        "JobArn" -> JobArn.asInstanceOf[js.Any],
+        "JobName" -> JobName.asInstanceOf[js.Any],
+        "JobType" -> JobType.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      CompletionTime.foreach(__v => __obj.updateDynamic("CompletionTime")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      InferenceRecommendations.foreach(__v => __obj.updateDynamic("InferenceRecommendations")(__v.asInstanceOf[js.Any]))
+      JobDescription.foreach(__v => __obj.updateDynamic("JobDescription")(__v.asInstanceOf[js.Any]))
+      StoppingConditions.foreach(__v => __obj.updateDynamic("StoppingConditions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeInferenceRecommendationsJobResponse]
+    }
+  }
+
+  @js.native
   trait DescribeLabelingJobRequest extends js.Object {
     var LabelingJobName: LabelingJobName
   }
@@ -7772,6 +8485,60 @@ package object sagemaker {
       StoppingConditions.foreach(__v => __obj.updateDynamic("StoppingConditions")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeLabelingJobResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeLineageGroupRequest extends js.Object {
+    var LineageGroupName: ExperimentEntityName
+  }
+
+  object DescribeLineageGroupRequest {
+    @inline
+    def apply(
+        LineageGroupName: ExperimentEntityName
+    ): DescribeLineageGroupRequest = {
+      val __obj = js.Dynamic.literal(
+        "LineageGroupName" -> LineageGroupName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeLineageGroupRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeLineageGroupResponse extends js.Object {
+    var CreatedBy: js.UndefOr[UserContext]
+    var CreationTime: js.UndefOr[Timestamp]
+    var Description: js.UndefOr[ExperimentDescription]
+    var DisplayName: js.UndefOr[ExperimentEntityName]
+    var LastModifiedBy: js.UndefOr[UserContext]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var LineageGroupArn: js.UndefOr[LineageGroupArn]
+    var LineageGroupName: js.UndefOr[ExperimentEntityName]
+  }
+
+  object DescribeLineageGroupResponse {
+    @inline
+    def apply(
+        CreatedBy: js.UndefOr[UserContext] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        Description: js.UndefOr[ExperimentDescription] = js.undefined,
+        DisplayName: js.UndefOr[ExperimentEntityName] = js.undefined,
+        LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        LineageGroupArn: js.UndefOr[LineageGroupArn] = js.undefined,
+        LineageGroupName: js.UndefOr[ExperimentEntityName] = js.undefined
+    ): DescribeLineageGroupResponse = {
+      val __obj = js.Dynamic.literal()
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      LineageGroupArn.foreach(__v => __obj.updateDynamic("LineageGroupArn")(__v.asInstanceOf[js.Any]))
+      LineageGroupName.foreach(__v => __obj.updateDynamic("LineageGroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeLineageGroupResponse]
     }
   }
 
@@ -8038,9 +8805,13 @@ package object sagemaker {
     var ModelPackageName: EntityName
     var ModelPackageStatus: ModelPackageStatus
     var ModelPackageStatusDetails: ModelPackageStatusDetails
+    var AdditionalInferenceSpecifications: js.UndefOr[AdditionalInferenceSpecifications]
     var ApprovalDescription: js.UndefOr[ApprovalDescription]
     var CertifyForMarketplace: js.UndefOr[CertifyForMarketplace]
     var CreatedBy: js.UndefOr[UserContext]
+    var CustomerMetadataProperties: js.UndefOr[CustomerMetadataMap]
+    var Domain: js.UndefOr[String]
+    var DriftCheckBaselines: js.UndefOr[DriftCheckBaselines]
     var InferenceSpecification: js.UndefOr[InferenceSpecification]
     var LastModifiedBy: js.UndefOr[UserContext]
     var LastModifiedTime: js.UndefOr[Timestamp]
@@ -8050,7 +8821,9 @@ package object sagemaker {
     var ModelPackageDescription: js.UndefOr[EntityDescription]
     var ModelPackageGroupName: js.UndefOr[EntityName]
     var ModelPackageVersion: js.UndefOr[ModelPackageVersion]
+    var SamplePayloadUrl: js.UndefOr[String]
     var SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification]
+    var Task: js.UndefOr[String]
     var ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification]
   }
 
@@ -8062,9 +8835,13 @@ package object sagemaker {
         ModelPackageName: EntityName,
         ModelPackageStatus: ModelPackageStatus,
         ModelPackageStatusDetails: ModelPackageStatusDetails,
+        AdditionalInferenceSpecifications: js.UndefOr[AdditionalInferenceSpecifications] = js.undefined,
         ApprovalDescription: js.UndefOr[ApprovalDescription] = js.undefined,
         CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
         CreatedBy: js.UndefOr[UserContext] = js.undefined,
+        CustomerMetadataProperties: js.UndefOr[CustomerMetadataMap] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        DriftCheckBaselines: js.UndefOr[DriftCheckBaselines] = js.undefined,
         InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
         LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -8074,7 +8851,9 @@ package object sagemaker {
         ModelPackageDescription: js.UndefOr[EntityDescription] = js.undefined,
         ModelPackageGroupName: js.UndefOr[EntityName] = js.undefined,
         ModelPackageVersion: js.UndefOr[ModelPackageVersion] = js.undefined,
+        SamplePayloadUrl: js.UndefOr[String] = js.undefined,
         SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification] = js.undefined,
+        Task: js.UndefOr[String] = js.undefined,
         ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification] = js.undefined
     ): DescribeModelPackageOutput = {
       val __obj = js.Dynamic.literal(
@@ -8085,9 +8864,13 @@ package object sagemaker {
         "ModelPackageStatusDetails" -> ModelPackageStatusDetails.asInstanceOf[js.Any]
       )
 
+      AdditionalInferenceSpecifications.foreach(__v => __obj.updateDynamic("AdditionalInferenceSpecifications")(__v.asInstanceOf[js.Any]))
       ApprovalDescription.foreach(__v => __obj.updateDynamic("ApprovalDescription")(__v.asInstanceOf[js.Any]))
       CertifyForMarketplace.foreach(__v => __obj.updateDynamic("CertifyForMarketplace")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CustomerMetadataProperties.foreach(__v => __obj.updateDynamic("CustomerMetadataProperties")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      DriftCheckBaselines.foreach(__v => __obj.updateDynamic("DriftCheckBaselines")(__v.asInstanceOf[js.Any]))
       InferenceSpecification.foreach(__v => __obj.updateDynamic("InferenceSpecification")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
@@ -8097,7 +8880,9 @@ package object sagemaker {
       ModelPackageDescription.foreach(__v => __obj.updateDynamic("ModelPackageDescription")(__v.asInstanceOf[js.Any]))
       ModelPackageGroupName.foreach(__v => __obj.updateDynamic("ModelPackageGroupName")(__v.asInstanceOf[js.Any]))
       ModelPackageVersion.foreach(__v => __obj.updateDynamic("ModelPackageVersion")(__v.asInstanceOf[js.Any]))
+      SamplePayloadUrl.foreach(__v => __obj.updateDynamic("SamplePayloadUrl")(__v.asInstanceOf[js.Any]))
       SourceAlgorithmSpecification.foreach(__v => __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any]))
+      Task.foreach(__v => __obj.updateDynamic("Task")(__v.asInstanceOf[js.Any]))
       ValidationSpecification.foreach(__v => __obj.updateDynamic("ValidationSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeModelPackageOutput]
     }
@@ -8311,6 +9096,7 @@ package object sagemaker {
     var NotebookInstanceLifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName]
     var NotebookInstanceName: js.UndefOr[NotebookInstanceName]
     var NotebookInstanceStatus: js.UndefOr[NotebookInstanceStatus]
+    var PlatformIdentifier: js.UndefOr[PlatformIdentifier]
     var RoleArn: js.UndefOr[RoleArn]
     var RootAccess: js.UndefOr[RootAccess]
     var SecurityGroups: js.UndefOr[SecurityGroupIds]
@@ -8336,6 +9122,7 @@ package object sagemaker {
         NotebookInstanceLifecycleConfigName: js.UndefOr[NotebookInstanceLifecycleConfigName] = js.undefined,
         NotebookInstanceName: js.UndefOr[NotebookInstanceName] = js.undefined,
         NotebookInstanceStatus: js.UndefOr[NotebookInstanceStatus] = js.undefined,
+        PlatformIdentifier: js.UndefOr[PlatformIdentifier] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined,
         RootAccess: js.UndefOr[RootAccess] = js.undefined,
         SecurityGroups: js.UndefOr[SecurityGroupIds] = js.undefined,
@@ -8358,6 +9145,7 @@ package object sagemaker {
       NotebookInstanceLifecycleConfigName.foreach(__v => __obj.updateDynamic("NotebookInstanceLifecycleConfigName")(__v.asInstanceOf[js.Any]))
       NotebookInstanceName.foreach(__v => __obj.updateDynamic("NotebookInstanceName")(__v.asInstanceOf[js.Any]))
       NotebookInstanceStatus.foreach(__v => __obj.updateDynamic("NotebookInstanceStatus")(__v.asInstanceOf[js.Any]))
+      PlatformIdentifier.foreach(__v => __obj.updateDynamic("PlatformIdentifier")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       RootAccess.foreach(__v => __obj.updateDynamic("RootAccess")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
@@ -8425,6 +9213,7 @@ package object sagemaker {
   trait DescribePipelineExecutionResponse extends js.Object {
     var CreatedBy: js.UndefOr[UserContext]
     var CreationTime: js.UndefOr[Timestamp]
+    var FailureReason: js.UndefOr[PipelineExecutionFailureReason]
     var LastModifiedBy: js.UndefOr[UserContext]
     var LastModifiedTime: js.UndefOr[Timestamp]
     var PipelineArn: js.UndefOr[PipelineArn]
@@ -8432,6 +9221,7 @@ package object sagemaker {
     var PipelineExecutionDescription: js.UndefOr[PipelineExecutionDescription]
     var PipelineExecutionDisplayName: js.UndefOr[PipelineExecutionName]
     var PipelineExecutionStatus: js.UndefOr[PipelineExecutionStatus]
+    var PipelineExperimentConfig: js.UndefOr[PipelineExperimentConfig]
   }
 
   object DescribePipelineExecutionResponse {
@@ -8439,17 +9229,20 @@ package object sagemaker {
     def apply(
         CreatedBy: js.UndefOr[UserContext] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        FailureReason: js.UndefOr[PipelineExecutionFailureReason] = js.undefined,
         LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
         PipelineArn: js.UndefOr[PipelineArn] = js.undefined,
         PipelineExecutionArn: js.UndefOr[PipelineExecutionArn] = js.undefined,
         PipelineExecutionDescription: js.UndefOr[PipelineExecutionDescription] = js.undefined,
         PipelineExecutionDisplayName: js.UndefOr[PipelineExecutionName] = js.undefined,
-        PipelineExecutionStatus: js.UndefOr[PipelineExecutionStatus] = js.undefined
+        PipelineExecutionStatus: js.UndefOr[PipelineExecutionStatus] = js.undefined,
+        PipelineExperimentConfig: js.UndefOr[PipelineExperimentConfig] = js.undefined
     ): DescribePipelineExecutionResponse = {
       val __obj = js.Dynamic.literal()
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       PipelineArn.foreach(__v => __obj.updateDynamic("PipelineArn")(__v.asInstanceOf[js.Any]))
@@ -8457,6 +9250,7 @@ package object sagemaker {
       PipelineExecutionDescription.foreach(__v => __obj.updateDynamic("PipelineExecutionDescription")(__v.asInstanceOf[js.Any]))
       PipelineExecutionDisplayName.foreach(__v => __obj.updateDynamic("PipelineExecutionDisplayName")(__v.asInstanceOf[js.Any]))
       PipelineExecutionStatus.foreach(__v => __obj.updateDynamic("PipelineExecutionStatus")(__v.asInstanceOf[js.Any]))
+      PipelineExperimentConfig.foreach(__v => __obj.updateDynamic("PipelineExperimentConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePipelineExecutionResponse]
     }
   }
@@ -8648,6 +9442,8 @@ package object sagemaker {
     var ProjectStatus: ProjectStatus
     var ServiceCatalogProvisioningDetails: ServiceCatalogProvisioningDetails
     var CreatedBy: js.UndefOr[UserContext]
+    var LastModifiedBy: js.UndefOr[UserContext]
+    var LastModifiedTime: js.UndefOr[Timestamp]
     var ProjectDescription: js.UndefOr[EntityDescription]
     var ServiceCatalogProvisionedProductDetails: js.UndefOr[ServiceCatalogProvisionedProductDetails]
   }
@@ -8662,6 +9458,8 @@ package object sagemaker {
         ProjectStatus: ProjectStatus,
         ServiceCatalogProvisioningDetails: ServiceCatalogProvisioningDetails,
         CreatedBy: js.UndefOr[UserContext] = js.undefined,
+        LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
         ProjectDescription: js.UndefOr[EntityDescription] = js.undefined,
         ServiceCatalogProvisionedProductDetails: js.UndefOr[ServiceCatalogProvisionedProductDetails] = js.undefined
     ): DescribeProjectOutput = {
@@ -8675,9 +9473,59 @@ package object sagemaker {
       )
 
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       ProjectDescription.foreach(__v => __obj.updateDynamic("ProjectDescription")(__v.asInstanceOf[js.Any]))
       ServiceCatalogProvisionedProductDetails.foreach(__v => __obj.updateDynamic("ServiceCatalogProvisionedProductDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeProjectOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeStudioLifecycleConfigRequest extends js.Object {
+    var StudioLifecycleConfigName: StudioLifecycleConfigName
+  }
+
+  object DescribeStudioLifecycleConfigRequest {
+    @inline
+    def apply(
+        StudioLifecycleConfigName: StudioLifecycleConfigName
+    ): DescribeStudioLifecycleConfigRequest = {
+      val __obj = js.Dynamic.literal(
+        "StudioLifecycleConfigName" -> StudioLifecycleConfigName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeStudioLifecycleConfigRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeStudioLifecycleConfigResponse extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var StudioLifecycleConfigAppType: js.UndefOr[StudioLifecycleConfigAppType]
+    var StudioLifecycleConfigArn: js.UndefOr[StudioLifecycleConfigArn]
+    var StudioLifecycleConfigContent: js.UndefOr[StudioLifecycleConfigContent]
+    var StudioLifecycleConfigName: js.UndefOr[StudioLifecycleConfigName]
+  }
+
+  object DescribeStudioLifecycleConfigResponse {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        StudioLifecycleConfigAppType: js.UndefOr[StudioLifecycleConfigAppType] = js.undefined,
+        StudioLifecycleConfigArn: js.UndefOr[StudioLifecycleConfigArn] = js.undefined,
+        StudioLifecycleConfigContent: js.UndefOr[StudioLifecycleConfigContent] = js.undefined,
+        StudioLifecycleConfigName: js.UndefOr[StudioLifecycleConfigName] = js.undefined
+    ): DescribeStudioLifecycleConfigResponse = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      StudioLifecycleConfigAppType.foreach(__v => __obj.updateDynamic("StudioLifecycleConfigAppType")(__v.asInstanceOf[js.Any]))
+      StudioLifecycleConfigArn.foreach(__v => __obj.updateDynamic("StudioLifecycleConfigArn")(__v.asInstanceOf[js.Any]))
+      StudioLifecycleConfigContent.foreach(__v => __obj.updateDynamic("StudioLifecycleConfigContent")(__v.asInstanceOf[js.Any]))
+      StudioLifecycleConfigName.foreach(__v => __obj.updateDynamic("StudioLifecycleConfigName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeStudioLifecycleConfigResponse]
     }
   }
 
@@ -8765,6 +9613,7 @@ package object sagemaker {
     var ProfilerRuleConfigurations: js.UndefOr[ProfilerRuleConfigurations]
     var ProfilerRuleEvaluationStatuses: js.UndefOr[ProfilerRuleEvaluationStatuses]
     var ProfilingStatus: js.UndefOr[ProfilingStatus]
+    var RetryStrategy: js.UndefOr[RetryStrategy]
     var RoleArn: js.UndefOr[RoleArn]
     var SecondaryStatusTransitions: js.UndefOr[SecondaryStatusTransitions]
     var TensorBoardOutputConfig: js.UndefOr[TensorBoardOutputConfig]
@@ -8809,6 +9658,7 @@ package object sagemaker {
         ProfilerRuleConfigurations: js.UndefOr[ProfilerRuleConfigurations] = js.undefined,
         ProfilerRuleEvaluationStatuses: js.UndefOr[ProfilerRuleEvaluationStatuses] = js.undefined,
         ProfilingStatus: js.UndefOr[ProfilingStatus] = js.undefined,
+        RetryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined,
         SecondaryStatusTransitions: js.UndefOr[SecondaryStatusTransitions] = js.undefined,
         TensorBoardOutputConfig: js.UndefOr[TensorBoardOutputConfig] = js.undefined,
@@ -8852,6 +9702,7 @@ package object sagemaker {
       ProfilerRuleConfigurations.foreach(__v => __obj.updateDynamic("ProfilerRuleConfigurations")(__v.asInstanceOf[js.Any]))
       ProfilerRuleEvaluationStatuses.foreach(__v => __obj.updateDynamic("ProfilerRuleEvaluationStatuses")(__v.asInstanceOf[js.Any]))
       ProfilingStatus.foreach(__v => __obj.updateDynamic("ProfilingStatus")(__v.asInstanceOf[js.Any]))
+      RetryStrategy.foreach(__v => __obj.updateDynamic("RetryStrategy")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       SecondaryStatusTransitions.foreach(__v => __obj.updateDynamic("SecondaryStatusTransitions")(__v.asInstanceOf[js.Any]))
       TensorBoardOutputConfig.foreach(__v => __obj.updateDynamic("TensorBoardOutputConfig")(__v.asInstanceOf[js.Any]))
@@ -8958,13 +9809,13 @@ package object sagemaker {
 
   @js.native
   trait DescribeTrialComponentRequest extends js.Object {
-    var TrialComponentName: ExperimentEntityName
+    var TrialComponentName: ExperimentEntityNameOrArn
   }
 
   object DescribeTrialComponentRequest {
     @inline
     def apply(
-        TrialComponentName: ExperimentEntityName
+        TrialComponentName: ExperimentEntityNameOrArn
     ): DescribeTrialComponentRequest = {
       val __obj = js.Dynamic.literal(
         "TrialComponentName" -> TrialComponentName.asInstanceOf[js.Any]
@@ -8982,6 +9833,7 @@ package object sagemaker {
     var InputArtifacts: js.UndefOr[TrialComponentArtifacts]
     var LastModifiedBy: js.UndefOr[UserContext]
     var LastModifiedTime: js.UndefOr[Timestamp]
+    var LineageGroupArn: js.UndefOr[LineageGroupArn]
     var MetadataProperties: js.UndefOr[MetadataProperties]
     var Metrics: js.UndefOr[TrialComponentMetricSummaries]
     var OutputArtifacts: js.UndefOr[TrialComponentArtifacts]
@@ -9003,6 +9855,7 @@ package object sagemaker {
         InputArtifacts: js.UndefOr[TrialComponentArtifacts] = js.undefined,
         LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        LineageGroupArn: js.UndefOr[LineageGroupArn] = js.undefined,
         MetadataProperties: js.UndefOr[MetadataProperties] = js.undefined,
         Metrics: js.UndefOr[TrialComponentMetricSummaries] = js.undefined,
         OutputArtifacts: js.UndefOr[TrialComponentArtifacts] = js.undefined,
@@ -9021,6 +9874,7 @@ package object sagemaker {
       InputArtifacts.foreach(__v => __obj.updateDynamic("InputArtifacts")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      LineageGroupArn.foreach(__v => __obj.updateDynamic("LineageGroupArn")(__v.asInstanceOf[js.Any]))
       MetadataProperties.foreach(__v => __obj.updateDynamic("MetadataProperties")(__v.asInstanceOf[js.Any]))
       Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
       OutputArtifacts.foreach(__v => __obj.updateDynamic("OutputArtifacts")(__v.asInstanceOf[js.Any]))
@@ -9337,6 +10191,7 @@ package object sagemaker {
   trait DeviceSummary extends js.Object {
     var DeviceArn: DeviceArn
     var DeviceName: EntityName
+    var AgentVersion: js.UndefOr[EdgeVersion]
     var Description: js.UndefOr[DeviceDescription]
     var DeviceFleetName: js.UndefOr[EntityName]
     var IotThingName: js.UndefOr[ThingName]
@@ -9350,6 +10205,7 @@ package object sagemaker {
     def apply(
         DeviceArn: DeviceArn,
         DeviceName: EntityName,
+        AgentVersion: js.UndefOr[EdgeVersion] = js.undefined,
         Description: js.UndefOr[DeviceDescription] = js.undefined,
         DeviceFleetName: js.UndefOr[EntityName] = js.undefined,
         IotThingName: js.UndefOr[ThingName] = js.undefined,
@@ -9362,6 +10218,7 @@ package object sagemaker {
         "DeviceName" -> DeviceName.asInstanceOf[js.Any]
       )
 
+      AgentVersion.foreach(__v => __obj.updateDynamic("AgentVersion")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       DeviceFleetName.foreach(__v => __obj.updateDynamic("DeviceFleetName")(__v.asInstanceOf[js.Any]))
       IotThingName.foreach(__v => __obj.updateDynamic("IotThingName")(__v.asInstanceOf[js.Any]))
@@ -9469,6 +10326,183 @@ package object sagemaker {
     }
   }
 
+  /** A collection of settings that apply to the <code>SageMaker Domain</code>. These settings are specified through the <code>CreateDomain</code> API call.
+    */
+  @js.native
+  trait DomainSettings extends js.Object {
+    var RStudioServerProDomainSettings: js.UndefOr[RStudioServerProDomainSettings]
+    var SecurityGroupIds: js.UndefOr[DomainSecurityGroupIds]
+  }
+
+  object DomainSettings {
+    @inline
+    def apply(
+        RStudioServerProDomainSettings: js.UndefOr[RStudioServerProDomainSettings] = js.undefined,
+        SecurityGroupIds: js.UndefOr[DomainSecurityGroupIds] = js.undefined
+    ): DomainSettings = {
+      val __obj = js.Dynamic.literal()
+      RStudioServerProDomainSettings.foreach(__v => __obj.updateDynamic("RStudioServerProDomainSettings")(__v.asInstanceOf[js.Any]))
+      SecurityGroupIds.foreach(__v => __obj.updateDynamic("SecurityGroupIds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainSettings]
+    }
+  }
+
+  /** A collection of <code>Domain</code> configuration settings to update.
+    */
+  @js.native
+  trait DomainSettingsForUpdate extends js.Object {
+    var RStudioServerProDomainSettingsForUpdate: js.UndefOr[RStudioServerProDomainSettingsForUpdate]
+  }
+
+  object DomainSettingsForUpdate {
+    @inline
+    def apply(
+        RStudioServerProDomainSettingsForUpdate: js.UndefOr[RStudioServerProDomainSettingsForUpdate] = js.undefined
+    ): DomainSettingsForUpdate = {
+      val __obj = js.Dynamic.literal()
+      RStudioServerProDomainSettingsForUpdate.foreach(__v => __obj.updateDynamic("RStudioServerProDomainSettingsForUpdate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DomainSettingsForUpdate]
+    }
+  }
+
+  /** Represents the drift check baselines that can be used when the model monitor is set using the model package.
+    */
+  @js.native
+  trait DriftCheckBaselines extends js.Object {
+    var Bias: js.UndefOr[DriftCheckBias]
+    var Explainability: js.UndefOr[DriftCheckExplainability]
+    var ModelDataQuality: js.UndefOr[DriftCheckModelDataQuality]
+    var ModelQuality: js.UndefOr[DriftCheckModelQuality]
+  }
+
+  object DriftCheckBaselines {
+    @inline
+    def apply(
+        Bias: js.UndefOr[DriftCheckBias] = js.undefined,
+        Explainability: js.UndefOr[DriftCheckExplainability] = js.undefined,
+        ModelDataQuality: js.UndefOr[DriftCheckModelDataQuality] = js.undefined,
+        ModelQuality: js.UndefOr[DriftCheckModelQuality] = js.undefined
+    ): DriftCheckBaselines = {
+      val __obj = js.Dynamic.literal()
+      Bias.foreach(__v => __obj.updateDynamic("Bias")(__v.asInstanceOf[js.Any]))
+      Explainability.foreach(__v => __obj.updateDynamic("Explainability")(__v.asInstanceOf[js.Any]))
+      ModelDataQuality.foreach(__v => __obj.updateDynamic("ModelDataQuality")(__v.asInstanceOf[js.Any]))
+      ModelQuality.foreach(__v => __obj.updateDynamic("ModelQuality")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DriftCheckBaselines]
+    }
+  }
+
+  /** Represents the drift check bias baselines that can be used when the model monitor is set using the model package.
+    */
+  @js.native
+  trait DriftCheckBias extends js.Object {
+    var ConfigFile: js.UndefOr[FileSource]
+    var PostTrainingConstraints: js.UndefOr[MetricsSource]
+    var PreTrainingConstraints: js.UndefOr[MetricsSource]
+  }
+
+  object DriftCheckBias {
+    @inline
+    def apply(
+        ConfigFile: js.UndefOr[FileSource] = js.undefined,
+        PostTrainingConstraints: js.UndefOr[MetricsSource] = js.undefined,
+        PreTrainingConstraints: js.UndefOr[MetricsSource] = js.undefined
+    ): DriftCheckBias = {
+      val __obj = js.Dynamic.literal()
+      ConfigFile.foreach(__v => __obj.updateDynamic("ConfigFile")(__v.asInstanceOf[js.Any]))
+      PostTrainingConstraints.foreach(__v => __obj.updateDynamic("PostTrainingConstraints")(__v.asInstanceOf[js.Any]))
+      PreTrainingConstraints.foreach(__v => __obj.updateDynamic("PreTrainingConstraints")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DriftCheckBias]
+    }
+  }
+
+  /** Represents the drift check explainability baselines that can be used when the model monitor is set using the model package.
+    */
+  @js.native
+  trait DriftCheckExplainability extends js.Object {
+    var ConfigFile: js.UndefOr[FileSource]
+    var Constraints: js.UndefOr[MetricsSource]
+  }
+
+  object DriftCheckExplainability {
+    @inline
+    def apply(
+        ConfigFile: js.UndefOr[FileSource] = js.undefined,
+        Constraints: js.UndefOr[MetricsSource] = js.undefined
+    ): DriftCheckExplainability = {
+      val __obj = js.Dynamic.literal()
+      ConfigFile.foreach(__v => __obj.updateDynamic("ConfigFile")(__v.asInstanceOf[js.Any]))
+      Constraints.foreach(__v => __obj.updateDynamic("Constraints")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DriftCheckExplainability]
+    }
+  }
+
+  /** Represents the drift check data quality baselines that can be used when the model monitor is set using the model package.
+    */
+  @js.native
+  trait DriftCheckModelDataQuality extends js.Object {
+    var Constraints: js.UndefOr[MetricsSource]
+    var Statistics: js.UndefOr[MetricsSource]
+  }
+
+  object DriftCheckModelDataQuality {
+    @inline
+    def apply(
+        Constraints: js.UndefOr[MetricsSource] = js.undefined,
+        Statistics: js.UndefOr[MetricsSource] = js.undefined
+    ): DriftCheckModelDataQuality = {
+      val __obj = js.Dynamic.literal()
+      Constraints.foreach(__v => __obj.updateDynamic("Constraints")(__v.asInstanceOf[js.Any]))
+      Statistics.foreach(__v => __obj.updateDynamic("Statistics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DriftCheckModelDataQuality]
+    }
+  }
+
+  /** Represents the drift check model quality baselines that can be used when the model monitor is set using the model package.
+    */
+  @js.native
+  trait DriftCheckModelQuality extends js.Object {
+    var Constraints: js.UndefOr[MetricsSource]
+    var Statistics: js.UndefOr[MetricsSource]
+  }
+
+  object DriftCheckModelQuality {
+    @inline
+    def apply(
+        Constraints: js.UndefOr[MetricsSource] = js.undefined,
+        Statistics: js.UndefOr[MetricsSource] = js.undefined
+    ): DriftCheckModelQuality = {
+      val __obj = js.Dynamic.literal()
+      Constraints.foreach(__v => __obj.updateDynamic("Constraints")(__v.asInstanceOf[js.Any]))
+      Statistics.foreach(__v => __obj.updateDynamic("Statistics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DriftCheckModelQuality]
+    }
+  }
+
+  /** A directed edge connecting two lineage entities.
+    */
+  @js.native
+  trait Edge extends js.Object {
+    var AssociationType: js.UndefOr[AssociationEdgeType]
+    var DestinationArn: js.UndefOr[AssociationEntityArn]
+    var SourceArn: js.UndefOr[AssociationEntityArn]
+  }
+
+  object Edge {
+    @inline
+    def apply(
+        AssociationType: js.UndefOr[AssociationEdgeType] = js.undefined,
+        DestinationArn: js.UndefOr[AssociationEntityArn] = js.undefined,
+        SourceArn: js.UndefOr[AssociationEntityArn] = js.undefined
+    ): Edge = {
+      val __obj = js.Dynamic.literal()
+      AssociationType.foreach(__v => __obj.updateDynamic("AssociationType")(__v.asInstanceOf[js.Any]))
+      DestinationArn.foreach(__v => __obj.updateDynamic("DestinationArn")(__v.asInstanceOf[js.Any]))
+      SourceArn.foreach(__v => __obj.updateDynamic("SourceArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Edge]
+    }
+  }
+
   /** The model on the edge device.
     */
   @js.native
@@ -9560,19 +10594,25 @@ package object sagemaker {
   trait EdgeOutputConfig extends js.Object {
     var S3OutputLocation: S3Uri
     var KmsKeyId: js.UndefOr[KmsKeyId]
+    var PresetDeploymentConfig: js.UndefOr[String]
+    var PresetDeploymentType: js.UndefOr[EdgePresetDeploymentType]
   }
 
   object EdgeOutputConfig {
     @inline
     def apply(
         S3OutputLocation: S3Uri,
-        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        PresetDeploymentConfig: js.UndefOr[String] = js.undefined,
+        PresetDeploymentType: js.UndefOr[EdgePresetDeploymentType] = js.undefined
     ): EdgeOutputConfig = {
       val __obj = js.Dynamic.literal(
         "S3OutputLocation" -> S3OutputLocation.asInstanceOf[js.Any]
       )
 
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      PresetDeploymentConfig.foreach(__v => __obj.updateDynamic("PresetDeploymentConfig")(__v.asInstanceOf[js.Any]))
+      PresetDeploymentType.foreach(__v => __obj.updateDynamic("PresetDeploymentType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EdgeOutputConfig]
     }
   }
@@ -9615,6 +10655,35 @@ package object sagemaker {
       ModelName.foreach(__v => __obj.updateDynamic("ModelName")(__v.asInstanceOf[js.Any]))
       ModelVersion.foreach(__v => __obj.updateDynamic("ModelVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EdgePackagingJobSummary]
+    }
+  }
+
+  /** The output of a SageMaker Edge Manager deployable resource.
+    */
+  @js.native
+  trait EdgePresetDeploymentOutput extends js.Object {
+    var Type: EdgePresetDeploymentType
+    var Artifact: js.UndefOr[EdgePresetDeploymentArtifact]
+    var Status: js.UndefOr[EdgePresetDeploymentStatus]
+    var StatusMessage: js.UndefOr[String]
+  }
+
+  object EdgePresetDeploymentOutput {
+    @inline
+    def apply(
+        Type: EdgePresetDeploymentType,
+        Artifact: js.UndefOr[EdgePresetDeploymentArtifact] = js.undefined,
+        Status: js.UndefOr[EdgePresetDeploymentStatus] = js.undefined,
+        StatusMessage: js.UndefOr[String] = js.undefined
+    ): EdgePresetDeploymentOutput = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any]
+      )
+
+      Artifact.foreach(__v => __obj.updateDynamic("Artifact")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EdgePresetDeploymentOutput]
     }
   }
 
@@ -9762,6 +10831,60 @@ package object sagemaker {
     }
   }
 
+  /** The endpoint configuration for the load test.
+    */
+  @js.native
+  trait EndpointInputConfiguration extends js.Object {
+    var InstanceType: ProductionVariantInstanceType
+    var EnvironmentParameterRanges: js.UndefOr[EnvironmentParameterRanges]
+    var InferenceSpecificationName: js.UndefOr[InferenceSpecificationName]
+  }
+
+  object EndpointInputConfiguration {
+    @inline
+    def apply(
+        InstanceType: ProductionVariantInstanceType,
+        EnvironmentParameterRanges: js.UndefOr[EnvironmentParameterRanges] = js.undefined,
+        InferenceSpecificationName: js.UndefOr[InferenceSpecificationName] = js.undefined
+    ): EndpointInputConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any]
+      )
+
+      EnvironmentParameterRanges.foreach(__v => __obj.updateDynamic("EnvironmentParameterRanges")(__v.asInstanceOf[js.Any]))
+      InferenceSpecificationName.foreach(__v => __obj.updateDynamic("InferenceSpecificationName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EndpointInputConfiguration]
+    }
+  }
+
+  /** The endpoint configuration made by Inference Recommender during a recommendation job.
+    */
+  @js.native
+  trait EndpointOutputConfiguration extends js.Object {
+    var EndpointName: String
+    var InitialInstanceCount: Int
+    var InstanceType: ProductionVariantInstanceType
+    var VariantName: String
+  }
+
+  object EndpointOutputConfiguration {
+    @inline
+    def apply(
+        EndpointName: String,
+        InitialInstanceCount: Int,
+        InstanceType: ProductionVariantInstanceType,
+        VariantName: String
+    ): EndpointOutputConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "EndpointName" -> EndpointName.asInstanceOf[js.Any],
+        "InitialInstanceCount" -> InitialInstanceCount.asInstanceOf[js.Any],
+        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
+        "VariantName" -> VariantName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EndpointOutputConfiguration]
+    }
+  }
+
   /** Provides summary information for an endpoint.
     */
   @js.native
@@ -9790,6 +10913,49 @@ package object sagemaker {
         "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[EndpointSummary]
+    }
+  }
+
+  /** A list of environment parameters suggested by the Amazon SageMaker Inference Recommender.
+    */
+  @js.native
+  trait EnvironmentParameter extends js.Object {
+    var Key: String
+    var Value: String
+    var ValueType: String
+  }
+
+  object EnvironmentParameter {
+    @inline
+    def apply(
+        Key: String,
+        Value: String,
+        ValueType: String
+    ): EnvironmentParameter = {
+      val __obj = js.Dynamic.literal(
+        "Key" -> Key.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any],
+        "ValueType" -> ValueType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[EnvironmentParameter]
+    }
+  }
+
+  /** Specifies the range of environment parameters
+    */
+  @js.native
+  trait EnvironmentParameterRanges extends js.Object {
+    var CategoricalParameterRanges: js.UndefOr[CategoricalParameters]
+  }
+
+  object EnvironmentParameterRanges {
+    @inline
+    def apply(
+        CategoricalParameterRanges: js.UndefOr[CategoricalParameters] = js.undefined
+    ): EnvironmentParameterRanges = {
+      val __obj = js.Dynamic.literal()
+      CategoricalParameterRanges.foreach(__v => __obj.updateDynamic("CategoricalParameterRanges")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnvironmentParameterRanges]
     }
   }
 
@@ -10046,6 +11212,32 @@ package object sagemaker {
     }
   }
 
+  /** Contains details regarding the file source.
+    */
+  @js.native
+  trait FileSource extends js.Object {
+    var S3Uri: S3Uri
+    var ContentDigest: js.UndefOr[ContentDigest]
+    var ContentType: js.UndefOr[ContentType]
+  }
+
+  object FileSource {
+    @inline
+    def apply(
+        S3Uri: S3Uri,
+        ContentDigest: js.UndefOr[ContentDigest] = js.undefined,
+        ContentType: js.UndefOr[ContentType] = js.undefined
+    ): FileSource = {
+      val __obj = js.Dynamic.literal(
+        "S3Uri" -> S3Uri.asInstanceOf[js.Any]
+      )
+
+      ContentDigest.foreach(__v => __obj.updateDynamic("ContentDigest")(__v.asInstanceOf[js.Any]))
+      ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FileSource]
+    }
+  }
+
   /** The Amazon Elastic File System (EFS) storage configuration for a SageMaker image.
     */
   @js.native
@@ -10289,6 +11481,42 @@ package object sagemaker {
   }
 
   @js.native
+  trait GetLineageGroupPolicyRequest extends js.Object {
+    var LineageGroupName: LineageGroupNameOrArn
+  }
+
+  object GetLineageGroupPolicyRequest {
+    @inline
+    def apply(
+        LineageGroupName: LineageGroupNameOrArn
+    ): GetLineageGroupPolicyRequest = {
+      val __obj = js.Dynamic.literal(
+        "LineageGroupName" -> LineageGroupName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetLineageGroupPolicyRequest]
+    }
+  }
+
+  @js.native
+  trait GetLineageGroupPolicyResponse extends js.Object {
+    var LineageGroupArn: js.UndefOr[LineageGroupArn]
+    var ResourcePolicy: js.UndefOr[ResourcePolicyString]
+  }
+
+  object GetLineageGroupPolicyResponse {
+    @inline
+    def apply(
+        LineageGroupArn: js.UndefOr[LineageGroupArn] = js.undefined,
+        ResourcePolicy: js.UndefOr[ResourcePolicyString] = js.undefined
+    ): GetLineageGroupPolicyResponse = {
+      val __obj = js.Dynamic.literal()
+      LineageGroupArn.foreach(__v => __obj.updateDynamic("LineageGroupArn")(__v.asInstanceOf[js.Any]))
+      ResourcePolicy.foreach(__v => __obj.updateDynamic("ResourcePolicy")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetLineageGroupPolicyResponse]
+    }
+  }
+
+  @js.native
   trait GetModelPackageGroupPolicyInput extends js.Object {
     var ModelPackageGroupName: EntityName
   }
@@ -10386,7 +11614,7 @@ package object sagemaker {
     }
   }
 
-  /** Specifies configuration details for a Git repository in your AWS account.
+  /** Specifies configuration details for a Git repository in your Amazon Web Services account.
     */
   @js.native
   trait GitConfig extends js.Object {
@@ -10692,6 +11920,7 @@ package object sagemaker {
     var EnableNetworkIsolation: js.UndefOr[Boolean]
     var HyperParameterRanges: js.UndefOr[ParameterRanges]
     var InputDataConfig: js.UndefOr[InputDataConfig]
+    var RetryStrategy: js.UndefOr[RetryStrategy]
     var StaticHyperParameters: js.UndefOr[HyperParameters]
     var TuningObjective: js.UndefOr[HyperParameterTuningJobObjective]
     var VpcConfig: js.UndefOr[VpcConfig]
@@ -10712,6 +11941,7 @@ package object sagemaker {
         EnableNetworkIsolation: js.UndefOr[Boolean] = js.undefined,
         HyperParameterRanges: js.UndefOr[ParameterRanges] = js.undefined,
         InputDataConfig: js.UndefOr[InputDataConfig] = js.undefined,
+        RetryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         StaticHyperParameters: js.UndefOr[HyperParameters] = js.undefined,
         TuningObjective: js.UndefOr[HyperParameterTuningJobObjective] = js.undefined,
         VpcConfig: js.UndefOr[VpcConfig] = js.undefined
@@ -10731,6 +11961,7 @@ package object sagemaker {
       EnableNetworkIsolation.foreach(__v => __obj.updateDynamic("EnableNetworkIsolation")(__v.asInstanceOf[js.Any]))
       HyperParameterRanges.foreach(__v => __obj.updateDynamic("HyperParameterRanges")(__v.asInstanceOf[js.Any]))
       InputDataConfig.foreach(__v => __obj.updateDynamic("InputDataConfig")(__v.asInstanceOf[js.Any]))
+      RetryStrategy.foreach(__v => __obj.updateDynamic("RetryStrategy")(__v.asInstanceOf[js.Any]))
       StaticHyperParameters.foreach(__v => __obj.updateDynamic("StaticHyperParameters")(__v.asInstanceOf[js.Any]))
       TuningObjective.foreach(__v => __obj.updateDynamic("TuningObjective")(__v.asInstanceOf[js.Any]))
       VpcConfig.foreach(__v => __obj.updateDynamic("VpcConfig")(__v.asInstanceOf[js.Any]))
@@ -11040,6 +12271,78 @@ package object sagemaker {
     }
   }
 
+  /** A list of recommendations made by Amazon SageMaker Inference Recommender.
+    */
+  @js.native
+  trait InferenceRecommendation extends js.Object {
+    var EndpointConfiguration: EndpointOutputConfiguration
+    var Metrics: RecommendationMetrics
+    var ModelConfiguration: ModelConfiguration
+  }
+
+  object InferenceRecommendation {
+    @inline
+    def apply(
+        EndpointConfiguration: EndpointOutputConfiguration,
+        Metrics: RecommendationMetrics,
+        ModelConfiguration: ModelConfiguration
+    ): InferenceRecommendation = {
+      val __obj = js.Dynamic.literal(
+        "EndpointConfiguration" -> EndpointConfiguration.asInstanceOf[js.Any],
+        "Metrics" -> Metrics.asInstanceOf[js.Any],
+        "ModelConfiguration" -> ModelConfiguration.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[InferenceRecommendation]
+    }
+  }
+
+  /** A structure that contains a list of recommendation jobs.
+    */
+  @js.native
+  trait InferenceRecommendationsJob extends js.Object {
+    var CreationTime: CreationTime
+    var JobArn: RecommendationJobArn
+    var JobDescription: RecommendationJobDescription
+    var JobName: RecommendationJobName
+    var JobType: RecommendationJobType
+    var LastModifiedTime: LastModifiedTime
+    var RoleArn: RoleArn
+    var Status: RecommendationJobStatus
+    var CompletionTime: js.UndefOr[Timestamp]
+    var FailureReason: js.UndefOr[FailureReason]
+  }
+
+  object InferenceRecommendationsJob {
+    @inline
+    def apply(
+        CreationTime: CreationTime,
+        JobArn: RecommendationJobArn,
+        JobDescription: RecommendationJobDescription,
+        JobName: RecommendationJobName,
+        JobType: RecommendationJobType,
+        LastModifiedTime: LastModifiedTime,
+        RoleArn: RoleArn,
+        Status: RecommendationJobStatus,
+        CompletionTime: js.UndefOr[Timestamp] = js.undefined,
+        FailureReason: js.UndefOr[FailureReason] = js.undefined
+    ): InferenceRecommendationsJob = {
+      val __obj = js.Dynamic.literal(
+        "CreationTime" -> CreationTime.asInstanceOf[js.Any],
+        "JobArn" -> JobArn.asInstanceOf[js.Any],
+        "JobDescription" -> JobDescription.asInstanceOf[js.Any],
+        "JobName" -> JobName.asInstanceOf[js.Any],
+        "JobType" -> JobType.asInstanceOf[js.Any],
+        "LastModifiedTime" -> LastModifiedTime.asInstanceOf[js.Any],
+        "RoleArn" -> RoleArn.asInstanceOf[js.Any],
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      CompletionTime.foreach(__v => __obj.updateDynamic("CompletionTime")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InferenceRecommendationsJob]
+    }
+  }
+
   /** Defines how to perform inference generation after a training job is run.
     */
   @js.native
@@ -11157,15 +12460,18 @@ package object sagemaker {
   @js.native
   trait JupyterServerAppSettings extends js.Object {
     var DefaultResourceSpec: js.UndefOr[ResourceSpec]
+    var LifecycleConfigArns: js.UndefOr[LifecycleConfigArns]
   }
 
   object JupyterServerAppSettings {
     @inline
     def apply(
-        DefaultResourceSpec: js.UndefOr[ResourceSpec] = js.undefined
+        DefaultResourceSpec: js.UndefOr[ResourceSpec] = js.undefined,
+        LifecycleConfigArns: js.UndefOr[LifecycleConfigArns] = js.undefined
     ): JupyterServerAppSettings = {
       val __obj = js.Dynamic.literal()
       DefaultResourceSpec.foreach(__v => __obj.updateDynamic("DefaultResourceSpec")(__v.asInstanceOf[js.Any]))
+      LifecycleConfigArns.foreach(__v => __obj.updateDynamic("LifecycleConfigArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[JupyterServerAppSettings]
     }
   }
@@ -11176,17 +12482,20 @@ package object sagemaker {
   trait KernelGatewayAppSettings extends js.Object {
     var CustomImages: js.UndefOr[CustomImages]
     var DefaultResourceSpec: js.UndefOr[ResourceSpec]
+    var LifecycleConfigArns: js.UndefOr[LifecycleConfigArns]
   }
 
   object KernelGatewayAppSettings {
     @inline
     def apply(
         CustomImages: js.UndefOr[CustomImages] = js.undefined,
-        DefaultResourceSpec: js.UndefOr[ResourceSpec] = js.undefined
+        DefaultResourceSpec: js.UndefOr[ResourceSpec] = js.undefined,
+        LifecycleConfigArns: js.UndefOr[LifecycleConfigArns] = js.undefined
     ): KernelGatewayAppSettings = {
       val __obj = js.Dynamic.literal()
       CustomImages.foreach(__v => __obj.updateDynamic("CustomImages")(__v.asInstanceOf[js.Any]))
       DefaultResourceSpec.foreach(__v => __obj.updateDynamic("DefaultResourceSpec")(__v.asInstanceOf[js.Any]))
+      LifecycleConfigArns.foreach(__v => __obj.updateDynamic("LifecycleConfigArns")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[KernelGatewayAppSettings]
     }
   }
@@ -11592,6 +12901,57 @@ package object sagemaker {
       InputConfig.foreach(__v => __obj.updateDynamic("InputConfig")(__v.asInstanceOf[js.Any]))
       LabelingJobOutput.foreach(__v => __obj.updateDynamic("LabelingJobOutput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelingJobSummary]
+    }
+  }
+
+  /** Metadata for a Lambda step.
+    */
+  @js.native
+  trait LambdaStepMetadata extends js.Object {
+    var Arn: js.UndefOr[String256]
+    var OutputParameters: js.UndefOr[OutputParameterList]
+  }
+
+  object LambdaStepMetadata {
+    @inline
+    def apply(
+        Arn: js.UndefOr[String256] = js.undefined,
+        OutputParameters: js.UndefOr[OutputParameterList] = js.undefined
+    ): LambdaStepMetadata = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      OutputParameters.foreach(__v => __obj.updateDynamic("OutputParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LambdaStepMetadata]
+    }
+  }
+
+  /** Lists a summary of the properties of a lineage group. A lineage group provides a group of shareable lineage entity resources.
+    */
+  @js.native
+  trait LineageGroupSummary extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var DisplayName: js.UndefOr[ExperimentEntityName]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var LineageGroupArn: js.UndefOr[LineageGroupArn]
+    var LineageGroupName: js.UndefOr[ExperimentEntityName]
+  }
+
+  object LineageGroupSummary {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        DisplayName: js.UndefOr[ExperimentEntityName] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        LineageGroupArn: js.UndefOr[LineageGroupArn] = js.undefined,
+        LineageGroupName: js.UndefOr[ExperimentEntityName] = js.undefined
+    ): LineageGroupSummary = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DisplayName.foreach(__v => __obj.updateDynamic("DisplayName")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      LineageGroupArn.foreach(__v => __obj.updateDynamic("LineageGroupArn")(__v.asInstanceOf[js.Any]))
+      LineageGroupName.foreach(__v => __obj.updateDynamic("LineageGroupName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineageGroupSummary]
     }
   }
 
@@ -13023,6 +14383,70 @@ package object sagemaker {
   }
 
   @js.native
+  trait ListInferenceRecommendationsJobsRequest extends js.Object {
+    var CreationTimeAfter: js.UndefOr[CreationTime]
+    var CreationTimeBefore: js.UndefOr[CreationTime]
+    var LastModifiedTimeAfter: js.UndefOr[LastModifiedTime]
+    var LastModifiedTimeBefore: js.UndefOr[LastModifiedTime]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NameContains: js.UndefOr[NameContains]
+    var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[ListInferenceRecommendationsJobsSortBy]
+    var SortOrder: js.UndefOr[SortOrder]
+    var StatusEquals: js.UndefOr[RecommendationJobStatus]
+  }
+
+  object ListInferenceRecommendationsJobsRequest {
+    @inline
+    def apply(
+        CreationTimeAfter: js.UndefOr[CreationTime] = js.undefined,
+        CreationTimeBefore: js.UndefOr[CreationTime] = js.undefined,
+        LastModifiedTimeAfter: js.UndefOr[LastModifiedTime] = js.undefined,
+        LastModifiedTimeBefore: js.UndefOr[LastModifiedTime] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NameContains: js.UndefOr[NameContains] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[ListInferenceRecommendationsJobsSortBy] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined,
+        StatusEquals: js.UndefOr[RecommendationJobStatus] = js.undefined
+    ): ListInferenceRecommendationsJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      CreationTimeAfter.foreach(__v => __obj.updateDynamic("CreationTimeAfter")(__v.asInstanceOf[js.Any]))
+      CreationTimeBefore.foreach(__v => __obj.updateDynamic("CreationTimeBefore")(__v.asInstanceOf[js.Any]))
+      LastModifiedTimeAfter.foreach(__v => __obj.updateDynamic("LastModifiedTimeAfter")(__v.asInstanceOf[js.Any]))
+      LastModifiedTimeBefore.foreach(__v => __obj.updateDynamic("LastModifiedTimeBefore")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NameContains.foreach(__v => __obj.updateDynamic("NameContains")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      StatusEquals.foreach(__v => __obj.updateDynamic("StatusEquals")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInferenceRecommendationsJobsRequest]
+    }
+  }
+
+  @js.native
+  trait ListInferenceRecommendationsJobsResponse extends js.Object {
+    var InferenceRecommendationsJobs: InferenceRecommendationsJobs
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListInferenceRecommendationsJobsResponse {
+    @inline
+    def apply(
+        InferenceRecommendationsJobs: InferenceRecommendationsJobs,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListInferenceRecommendationsJobsResponse = {
+      val __obj = js.Dynamic.literal(
+        "InferenceRecommendationsJobs" -> InferenceRecommendationsJobs.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListInferenceRecommendationsJobsResponse]
+    }
+  }
+
+  @js.native
   trait ListLabelingJobsForWorkteamRequest extends js.Object {
     var WorkteamArn: WorkteamArn
     var CreationTimeAfter: js.UndefOr[Timestamp]
@@ -13145,6 +14569,56 @@ package object sagemaker {
   }
 
   @js.native
+  trait ListLineageGroupsRequest extends js.Object {
+    var CreatedAfter: js.UndefOr[Timestamp]
+    var CreatedBefore: js.UndefOr[Timestamp]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[SortLineageGroupsBy]
+    var SortOrder: js.UndefOr[SortOrder]
+  }
+
+  object ListLineageGroupsRequest {
+    @inline
+    def apply(
+        CreatedAfter: js.UndefOr[Timestamp] = js.undefined,
+        CreatedBefore: js.UndefOr[Timestamp] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[SortLineageGroupsBy] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): ListLineageGroupsRequest = {
+      val __obj = js.Dynamic.literal()
+      CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
+      CreatedBefore.foreach(__v => __obj.updateDynamic("CreatedBefore")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLineageGroupsRequest]
+    }
+  }
+
+  @js.native
+  trait ListLineageGroupsResponse extends js.Object {
+    var LineageGroupSummaries: js.UndefOr[LineageGroupSummaries]
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListLineageGroupsResponse {
+    @inline
+    def apply(
+        LineageGroupSummaries: js.UndefOr[LineageGroupSummaries] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListLineageGroupsResponse = {
+      val __obj = js.Dynamic.literal()
+      LineageGroupSummaries.foreach(__v => __obj.updateDynamic("LineageGroupSummaries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLineageGroupsResponse]
+    }
+  }
+
+  @js.native
   trait ListModelBiasJobDefinitionsRequest extends js.Object {
     var CreationTimeAfter: js.UndefOr[Timestamp]
     var CreationTimeBefore: js.UndefOr[Timestamp]
@@ -13257,6 +14731,49 @@ package object sagemaker {
 
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListModelExplainabilityJobDefinitionsResponse]
+    }
+  }
+
+  @js.native
+  trait ListModelMetadataRequest extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[NextToken]
+    var SearchExpression: js.UndefOr[ModelMetadataSearchExpression]
+  }
+
+  object ListModelMetadataRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SearchExpression: js.UndefOr[ModelMetadataSearchExpression] = js.undefined
+    ): ListModelMetadataRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SearchExpression.foreach(__v => __obj.updateDynamic("SearchExpression")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListModelMetadataRequest]
+    }
+  }
+
+  @js.native
+  trait ListModelMetadataResponse extends js.Object {
+    var ModelMetadataSummaries: ModelMetadataSummaries
+    var NextToken: js.UndefOr[NextToken]
+  }
+
+  object ListModelMetadataResponse {
+    @inline
+    def apply(
+        ModelMetadataSummaries: ModelMetadataSummaries,
+        NextToken: js.UndefOr[NextToken] = js.undefined
+    ): ListModelMetadataResponse = {
+      val __obj = js.Dynamic.literal(
+        "ModelMetadataSummaries" -> ModelMetadataSummaries.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListModelMetadataResponse]
     }
   }
 
@@ -14089,6 +15606,68 @@ package object sagemaker {
   }
 
   @js.native
+  trait ListStudioLifecycleConfigsRequest extends js.Object {
+    var AppTypeEquals: js.UndefOr[StudioLifecycleConfigAppType]
+    var CreationTimeAfter: js.UndefOr[Timestamp]
+    var CreationTimeBefore: js.UndefOr[Timestamp]
+    var MaxResults: js.UndefOr[MaxResults]
+    var ModifiedTimeAfter: js.UndefOr[Timestamp]
+    var ModifiedTimeBefore: js.UndefOr[Timestamp]
+    var NameContains: js.UndefOr[StudioLifecycleConfigName]
+    var NextToken: js.UndefOr[NextToken]
+    var SortBy: js.UndefOr[StudioLifecycleConfigSortKey]
+    var SortOrder: js.UndefOr[SortOrder]
+  }
+
+  object ListStudioLifecycleConfigsRequest {
+    @inline
+    def apply(
+        AppTypeEquals: js.UndefOr[StudioLifecycleConfigAppType] = js.undefined,
+        CreationTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        CreationTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        ModifiedTimeAfter: js.UndefOr[Timestamp] = js.undefined,
+        ModifiedTimeBefore: js.UndefOr[Timestamp] = js.undefined,
+        NameContains: js.UndefOr[StudioLifecycleConfigName] = js.undefined,
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        SortBy: js.UndefOr[StudioLifecycleConfigSortKey] = js.undefined,
+        SortOrder: js.UndefOr[SortOrder] = js.undefined
+    ): ListStudioLifecycleConfigsRequest = {
+      val __obj = js.Dynamic.literal()
+      AppTypeEquals.foreach(__v => __obj.updateDynamic("AppTypeEquals")(__v.asInstanceOf[js.Any]))
+      CreationTimeAfter.foreach(__v => __obj.updateDynamic("CreationTimeAfter")(__v.asInstanceOf[js.Any]))
+      CreationTimeBefore.foreach(__v => __obj.updateDynamic("CreationTimeBefore")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      ModifiedTimeAfter.foreach(__v => __obj.updateDynamic("ModifiedTimeAfter")(__v.asInstanceOf[js.Any]))
+      ModifiedTimeBefore.foreach(__v => __obj.updateDynamic("ModifiedTimeBefore")(__v.asInstanceOf[js.Any]))
+      NameContains.foreach(__v => __obj.updateDynamic("NameContains")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      SortBy.foreach(__v => __obj.updateDynamic("SortBy")(__v.asInstanceOf[js.Any]))
+      SortOrder.foreach(__v => __obj.updateDynamic("SortOrder")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStudioLifecycleConfigsRequest]
+    }
+  }
+
+  @js.native
+  trait ListStudioLifecycleConfigsResponse extends js.Object {
+    var NextToken: js.UndefOr[NextToken]
+    var StudioLifecycleConfigs: js.UndefOr[StudioLifecycleConfigsList]
+  }
+
+  object ListStudioLifecycleConfigsResponse {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        StudioLifecycleConfigs: js.UndefOr[StudioLifecycleConfigsList] = js.undefined
+    ): ListStudioLifecycleConfigsResponse = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StudioLifecycleConfigs.foreach(__v => __obj.updateDynamic("StudioLifecycleConfigs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListStudioLifecycleConfigsResponse]
+    }
+  }
+
+  @js.native
   trait ListSubscribedWorkteamsRequest extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NameContains: js.UndefOr[WorkteamName]
@@ -14691,7 +16270,31 @@ package object sagemaker {
     }
   }
 
-  /** Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code> . Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.
+  /** Information about the metric for a candidate produced by an AutoML job.
+    */
+  @js.native
+  trait MetricDatum extends js.Object {
+    var MetricName: js.UndefOr[AutoMLMetricEnum]
+    var Set: js.UndefOr[MetricSetSource]
+    var Value: js.UndefOr[Float]
+  }
+
+  object MetricDatum {
+    @inline
+    def apply(
+        MetricName: js.UndefOr[AutoMLMetricEnum] = js.undefined,
+        Set: js.UndefOr[MetricSetSource] = js.undefined,
+        Value: js.UndefOr[Float] = js.undefined
+    ): MetricDatum = {
+      val __obj = js.Dynamic.literal()
+      MetricName.foreach(__v => __obj.updateDynamic("MetricName")(__v.asInstanceOf[js.Any]))
+      Set.foreach(__v => __obj.updateDynamic("Set")(__v.asInstanceOf[js.Any]))
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[MetricDatum]
+    }
+  }
+
+  /** Specifies a metric that the training algorithm writes to <code>stderr</code> or <code>stdout</code>. Amazon SageMakerhyperparameter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.
     */
   @js.native
   trait MetricDefinition extends js.Object {
@@ -14739,7 +16342,7 @@ package object sagemaker {
     }
   }
 
-  /** Provides information about the location that is configured for storing model artifacts. Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model defintion that desribes how to compute inferences, and other metadata.
+  /** Provides information about the location that is configured for storing model artifacts. Model artifacts are the output that results from training a model, and typically consist of trained parameters, a model definition that describes how to compute inferences, and other metadata.
     */
   @js.native
   trait ModelArtifacts extends js.Object {
@@ -14848,6 +16451,27 @@ package object sagemaker {
     }
   }
 
+  /** Defines the model configuration. Includes the specification name and environment parameters.
+    */
+  @js.native
+  trait ModelConfiguration extends js.Object {
+    var EnvironmentParameters: js.UndefOr[EnvironmentParameters]
+    var InferenceSpecificationName: js.UndefOr[InferenceSpecificationName]
+  }
+
+  object ModelConfiguration {
+    @inline
+    def apply(
+        EnvironmentParameters: js.UndefOr[EnvironmentParameters] = js.undefined,
+        InferenceSpecificationName: js.UndefOr[InferenceSpecificationName] = js.undefined
+    ): ModelConfiguration = {
+      val __obj = js.Dynamic.literal()
+      EnvironmentParameters.foreach(__v => __obj.updateDynamic("EnvironmentParameters")(__v.asInstanceOf[js.Any]))
+      InferenceSpecificationName.foreach(__v => __obj.updateDynamic("InferenceSpecificationName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModelConfiguration]
+    }
+  }
+
   /** Data quality constraints and statistics for a model.
     */
   @js.native
@@ -14866,6 +16490,45 @@ package object sagemaker {
       Constraints.foreach(__v => __obj.updateDynamic("Constraints")(__v.asInstanceOf[js.Any]))
       Statistics.foreach(__v => __obj.updateDynamic("Statistics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModelDataQuality]
+    }
+  }
+
+  /** Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.
+    */
+  @js.native
+  trait ModelDeployConfig extends js.Object {
+    var AutoGenerateEndpointName: js.UndefOr[AutoGenerateEndpointName]
+    var EndpointName: js.UndefOr[EndpointName]
+  }
+
+  object ModelDeployConfig {
+    @inline
+    def apply(
+        AutoGenerateEndpointName: js.UndefOr[AutoGenerateEndpointName] = js.undefined,
+        EndpointName: js.UndefOr[EndpointName] = js.undefined
+    ): ModelDeployConfig = {
+      val __obj = js.Dynamic.literal()
+      AutoGenerateEndpointName.foreach(__v => __obj.updateDynamic("AutoGenerateEndpointName")(__v.asInstanceOf[js.Any]))
+      EndpointName.foreach(__v => __obj.updateDynamic("EndpointName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModelDeployConfig]
+    }
+  }
+
+  /** Provides information about the endpoint of the model deployment.
+    */
+  @js.native
+  trait ModelDeployResult extends js.Object {
+    var EndpointName: js.UndefOr[EndpointName]
+  }
+
+  object ModelDeployResult {
+    @inline
+    def apply(
+        EndpointName: js.UndefOr[EndpointName] = js.undefined
+    ): ModelDeployResult = {
+      val __obj = js.Dynamic.literal()
+      EndpointName.foreach(__v => __obj.updateDynamic("EndpointName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModelDeployResult]
     }
   }
 
@@ -14953,6 +16616,117 @@ package object sagemaker {
     }
   }
 
+  /** Input object for the model.
+    */
+  @js.native
+  trait ModelInput extends js.Object {
+    var DataInputConfig: DataInputConfig
+  }
+
+  object ModelInput {
+    @inline
+    def apply(
+        DataInputConfig: DataInputConfig
+    ): ModelInput = {
+      val __obj = js.Dynamic.literal(
+        "DataInputConfig" -> DataInputConfig.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ModelInput]
+    }
+  }
+
+  /** The model latency threshold.
+    */
+  @js.native
+  trait ModelLatencyThreshold extends js.Object {
+    var Percentile: js.UndefOr[String64]
+    var ValueInMilliseconds: js.UndefOr[Int]
+  }
+
+  object ModelLatencyThreshold {
+    @inline
+    def apply(
+        Percentile: js.UndefOr[String64] = js.undefined,
+        ValueInMilliseconds: js.UndefOr[Int] = js.undefined
+    ): ModelLatencyThreshold = {
+      val __obj = js.Dynamic.literal()
+      Percentile.foreach(__v => __obj.updateDynamic("Percentile")(__v.asInstanceOf[js.Any]))
+      ValueInMilliseconds.foreach(__v => __obj.updateDynamic("ValueInMilliseconds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModelLatencyThreshold]
+    }
+  }
+
+  /** Part of the search expression. You can specify the name and value (domain, task, framework, framework version, task, and model).
+    */
+  @js.native
+  trait ModelMetadataFilter extends js.Object {
+    var Name: ModelMetadataFilterType
+    var Value: String256
+  }
+
+  object ModelMetadataFilter {
+    @inline
+    def apply(
+        Name: ModelMetadataFilterType,
+        Value: String256
+    ): ModelMetadataFilter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ModelMetadataFilter]
+    }
+  }
+
+  /** One or more filters that searches for the specified resource or resources in a search. All resource objects that satisfy the expression's condition are included in the search results
+    */
+  @js.native
+  trait ModelMetadataSearchExpression extends js.Object {
+    var Filters: js.UndefOr[ModelMetadataFilters]
+  }
+
+  object ModelMetadataSearchExpression {
+    @inline
+    def apply(
+        Filters: js.UndefOr[ModelMetadataFilters] = js.undefined
+    ): ModelMetadataSearchExpression = {
+      val __obj = js.Dynamic.literal()
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ModelMetadataSearchExpression]
+    }
+  }
+
+  /** A summary of the model metadata.
+    */
+  @js.native
+  trait ModelMetadataSummary extends js.Object {
+    var Domain: String
+    var Framework: String
+    var FrameworkVersion: String
+    var Model: String
+    var Task: String
+  }
+
+  object ModelMetadataSummary {
+    @inline
+    def apply(
+        Domain: String,
+        Framework: String,
+        FrameworkVersion: String,
+        Model: String,
+        Task: String
+    ): ModelMetadataSummary = {
+      val __obj = js.Dynamic.literal(
+        "Domain" -> Domain.asInstanceOf[js.Any],
+        "Framework" -> Framework.asInstanceOf[js.Any],
+        "FrameworkVersion" -> FrameworkVersion.asInstanceOf[js.Any],
+        "Model" -> Model.asInstanceOf[js.Any],
+        "Task" -> Task.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ModelMetadataSummary]
+    }
+  }
+
   /** Contains metrics captured from a model.
     */
   @js.native
@@ -14984,10 +16758,14 @@ package object sagemaker {
     */
   @js.native
   trait ModelPackage extends js.Object {
+    var AdditionalInferenceSpecifications: js.UndefOr[AdditionalInferenceSpecifications]
     var ApprovalDescription: js.UndefOr[ApprovalDescription]
     var CertifyForMarketplace: js.UndefOr[CertifyForMarketplace]
     var CreatedBy: js.UndefOr[UserContext]
     var CreationTime: js.UndefOr[CreationTime]
+    var CustomerMetadataProperties: js.UndefOr[CustomerMetadataMap]
+    var Domain: js.UndefOr[String]
+    var DriftCheckBaselines: js.UndefOr[DriftCheckBaselines]
     var InferenceSpecification: js.UndefOr[InferenceSpecification]
     var LastModifiedBy: js.UndefOr[UserContext]
     var LastModifiedTime: js.UndefOr[Timestamp]
@@ -15001,18 +16779,24 @@ package object sagemaker {
     var ModelPackageStatus: js.UndefOr[ModelPackageStatus]
     var ModelPackageStatusDetails: js.UndefOr[ModelPackageStatusDetails]
     var ModelPackageVersion: js.UndefOr[ModelPackageVersion]
+    var SamplePayloadUrl: js.UndefOr[String]
     var SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification]
     var Tags: js.UndefOr[TagList]
+    var Task: js.UndefOr[String]
     var ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification]
   }
 
   object ModelPackage {
     @inline
     def apply(
+        AdditionalInferenceSpecifications: js.UndefOr[AdditionalInferenceSpecifications] = js.undefined,
         ApprovalDescription: js.UndefOr[ApprovalDescription] = js.undefined,
         CertifyForMarketplace: js.UndefOr[CertifyForMarketplace] = js.undefined,
         CreatedBy: js.UndefOr[UserContext] = js.undefined,
         CreationTime: js.UndefOr[CreationTime] = js.undefined,
+        CustomerMetadataProperties: js.UndefOr[CustomerMetadataMap] = js.undefined,
+        Domain: js.UndefOr[String] = js.undefined,
+        DriftCheckBaselines: js.UndefOr[DriftCheckBaselines] = js.undefined,
         InferenceSpecification: js.UndefOr[InferenceSpecification] = js.undefined,
         LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
@@ -15026,15 +16810,21 @@ package object sagemaker {
         ModelPackageStatus: js.UndefOr[ModelPackageStatus] = js.undefined,
         ModelPackageStatusDetails: js.UndefOr[ModelPackageStatusDetails] = js.undefined,
         ModelPackageVersion: js.UndefOr[ModelPackageVersion] = js.undefined,
+        SamplePayloadUrl: js.UndefOr[String] = js.undefined,
         SourceAlgorithmSpecification: js.UndefOr[SourceAlgorithmSpecification] = js.undefined,
         Tags: js.UndefOr[TagList] = js.undefined,
+        Task: js.UndefOr[String] = js.undefined,
         ValidationSpecification: js.UndefOr[ModelPackageValidationSpecification] = js.undefined
     ): ModelPackage = {
       val __obj = js.Dynamic.literal()
+      AdditionalInferenceSpecifications.foreach(__v => __obj.updateDynamic("AdditionalInferenceSpecifications")(__v.asInstanceOf[js.Any]))
       ApprovalDescription.foreach(__v => __obj.updateDynamic("ApprovalDescription")(__v.asInstanceOf[js.Any]))
       CertifyForMarketplace.foreach(__v => __obj.updateDynamic("CertifyForMarketplace")(__v.asInstanceOf[js.Any]))
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      CustomerMetadataProperties.foreach(__v => __obj.updateDynamic("CustomerMetadataProperties")(__v.asInstanceOf[js.Any]))
+      Domain.foreach(__v => __obj.updateDynamic("Domain")(__v.asInstanceOf[js.Any]))
+      DriftCheckBaselines.foreach(__v => __obj.updateDynamic("DriftCheckBaselines")(__v.asInstanceOf[js.Any]))
       InferenceSpecification.foreach(__v => __obj.updateDynamic("InferenceSpecification")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
@@ -15048,8 +16838,10 @@ package object sagemaker {
       ModelPackageStatus.foreach(__v => __obj.updateDynamic("ModelPackageStatus")(__v.asInstanceOf[js.Any]))
       ModelPackageStatusDetails.foreach(__v => __obj.updateDynamic("ModelPackageStatusDetails")(__v.asInstanceOf[js.Any]))
       ModelPackageVersion.foreach(__v => __obj.updateDynamic("ModelPackageVersion")(__v.asInstanceOf[js.Any]))
+      SamplePayloadUrl.foreach(__v => __obj.updateDynamic("SamplePayloadUrl")(__v.asInstanceOf[js.Any]))
       SourceAlgorithmSpecification.foreach(__v => __obj.updateDynamic("SourceAlgorithmSpecification")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Task.foreach(__v => __obj.updateDynamic("Task")(__v.asInstanceOf[js.Any]))
       ValidationSpecification.foreach(__v => __obj.updateDynamic("ValidationSpecification")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModelPackage]
     }
@@ -15061,8 +16853,13 @@ package object sagemaker {
   trait ModelPackageContainerDefinition extends js.Object {
     var Image: ContainerImage
     var ContainerHostname: js.UndefOr[ContainerHostname]
+    var Environment: js.UndefOr[EnvironmentMap]
+    var Framework: js.UndefOr[String]
+    var FrameworkVersion: js.UndefOr[FrameworkVersion]
     var ImageDigest: js.UndefOr[ImageDigest]
     var ModelDataUrl: js.UndefOr[Url]
+    var ModelInput: js.UndefOr[ModelInput]
+    var NearestModelName: js.UndefOr[String]
     var ProductId: js.UndefOr[ProductId]
   }
 
@@ -15071,8 +16868,13 @@ package object sagemaker {
     def apply(
         Image: ContainerImage,
         ContainerHostname: js.UndefOr[ContainerHostname] = js.undefined,
+        Environment: js.UndefOr[EnvironmentMap] = js.undefined,
+        Framework: js.UndefOr[String] = js.undefined,
+        FrameworkVersion: js.UndefOr[FrameworkVersion] = js.undefined,
         ImageDigest: js.UndefOr[ImageDigest] = js.undefined,
         ModelDataUrl: js.UndefOr[Url] = js.undefined,
+        ModelInput: js.UndefOr[ModelInput] = js.undefined,
+        NearestModelName: js.UndefOr[String] = js.undefined,
         ProductId: js.UndefOr[ProductId] = js.undefined
     ): ModelPackageContainerDefinition = {
       val __obj = js.Dynamic.literal(
@@ -15080,8 +16882,13 @@ package object sagemaker {
       )
 
       ContainerHostname.foreach(__v => __obj.updateDynamic("ContainerHostname")(__v.asInstanceOf[js.Any]))
+      Environment.foreach(__v => __obj.updateDynamic("Environment")(__v.asInstanceOf[js.Any]))
+      Framework.foreach(__v => __obj.updateDynamic("Framework")(__v.asInstanceOf[js.Any]))
+      FrameworkVersion.foreach(__v => __obj.updateDynamic("FrameworkVersion")(__v.asInstanceOf[js.Any]))
       ImageDigest.foreach(__v => __obj.updateDynamic("ImageDigest")(__v.asInstanceOf[js.Any]))
       ModelDataUrl.foreach(__v => __obj.updateDynamic("ModelDataUrl")(__v.asInstanceOf[js.Any]))
+      ModelInput.foreach(__v => __obj.updateDynamic("ModelInput")(__v.asInstanceOf[js.Any]))
+      NearestModelName.foreach(__v => __obj.updateDynamic("NearestModelName")(__v.asInstanceOf[js.Any]))
       ProductId.foreach(__v => __obj.updateDynamic("ProductId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ModelPackageContainerDefinition]
     }
@@ -15245,7 +17052,7 @@ package object sagemaker {
     }
   }
 
-  /** Contains data, such as the inputs and targeted instance types that are used in the process of validating the model package. The data provided in the validation profile is made available to your buyers on AWS Marketplace.
+  /** Contains data, such as the inputs and targeted instance types that are used in the process of validating the model package. The data provided in the validation profile is made available to your buyers on Amazon Web Services Marketplace.
     */
   @js.native
   trait ModelPackageValidationProfile extends js.Object {
@@ -15975,6 +17782,28 @@ package object sagemaker {
     }
   }
 
+  /** The <a>VpcConfig</a> configuration object that specifies the VPC that you want the compilation jobs to connect to. For more information on controlling access to your Amazon S3 buckets used for compilation job, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html|Give Amazon SageMaker Compilation Jobs Access to Resources in Your Amazon VPC]].
+    */
+  @js.native
+  trait NeoVpcConfig extends js.Object {
+    var SecurityGroupIds: NeoVpcSecurityGroupIds
+    var Subnets: NeoVpcSubnets
+  }
+
+  object NeoVpcConfig {
+    @inline
+    def apply(
+        SecurityGroupIds: NeoVpcSecurityGroupIds,
+        Subnets: NeoVpcSubnets
+    ): NeoVpcConfig = {
+      val __obj = js.Dynamic.literal(
+        "SecurityGroupIds" -> SecurityGroupIds.asInstanceOf[js.Any],
+        "Subnets" -> Subnets.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[NeoVpcConfig]
+    }
+  }
+
   /** A list of nested <a>Filter</a> objects. A resource must satisfy the conditions of all filters to be included in the results returned from the <a>Search</a> API. For example, to filter on a training job's <code>InputDataConfig</code> property with a specific channel name and <code>S3Uri</code> prefix, define the following filters: * <code>'{Name:"InputDataConfig.ChannelName", "Operator":"Equals", "Value":"train"}',</code> * <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"Contains", "Value":"mybucket/catdata"}'</code>
     */
   @js.native
@@ -16115,7 +17944,7 @@ package object sagemaker {
     }
   }
 
-  /** Configures SNS notifications of available or expiring work items for work teams.
+  /** Configures Amazon SNS notifications of available or expiring work items for work teams.
     */
   @js.native
   trait NotificationConfiguration extends js.Object {
@@ -16157,7 +17986,7 @@ package object sagemaker {
     }
   }
 
-  /** The configuration of an <code>OfflineStore</code>. Provide an <code>OfflineStoreConfig</code> in a request to <code>CreateFeatureGroup</code> to create an <code>OfflineStore</code>. To encrypt an <code>OfflineStore</code> using at rest data encryption, specify AWS Key Management Service (KMS) key ID, or <code>KMSKeyId</code>, in <code>S3StorageConfig</code>.
+  /** The configuration of an <code>OfflineStore</code>. Provide an <code>OfflineStoreConfig</code> in a request to <code>CreateFeatureGroup</code> to create an <code>OfflineStore</code>. To encrypt an <code>OfflineStore</code> using at rest data encryption, specify Amazon Web Services Key Management Service (KMS) key ID, or <code>KMSKeyId</code>, in <code>S3StorageConfig</code>.
     */
   @js.native
   trait OfflineStoreConfig extends js.Object {
@@ -16301,7 +18130,7 @@ package object sagemaker {
     }
   }
 
-  /** Use this to specify the AWS Key Management Service (KMS) Key ID, or <code>KMSKeyId</code>, for at rest data encryption. You can turn <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag at General Assembly; the default value is <code>False</code>.
+  /** Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or <code>KMSKeyId</code>, for at rest data encryption. You can turn <code>OnlineStore</code> on or off by specifying the <code>EnableOnlineStore</code> flag at General Assembly; the default value is <code>False</code>.
     */
   @js.native
   trait OnlineStoreConfig extends js.Object {
@@ -16392,6 +18221,28 @@ package object sagemaker {
 
       KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputDataConfig]
+    }
+  }
+
+  /** An output parameter of a pipeline step.
+    */
+  @js.native
+  trait OutputParameter extends js.Object {
+    var Name: String256
+    var Value: String1024
+  }
+
+  object OutputParameter {
+    @inline
+    def apply(
+        Name: String256,
+        Value: String1024
+    ): OutputParameter = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any],
+        "Value" -> Value.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[OutputParameter]
     }
   }
 
@@ -16506,6 +18357,106 @@ package object sagemaker {
     }
   }
 
+  /** The summary of an in-progress deployment when an endpoint is creating or updating with a new endpoint configuration.
+    */
+  @js.native
+  trait PendingDeploymentSummary extends js.Object {
+    var EndpointConfigName: EndpointConfigName
+    var ProductionVariants: js.UndefOr[PendingProductionVariantSummaryList]
+    var StartTime: js.UndefOr[Timestamp]
+  }
+
+  object PendingDeploymentSummary {
+    @inline
+    def apply(
+        EndpointConfigName: EndpointConfigName,
+        ProductionVariants: js.UndefOr[PendingProductionVariantSummaryList] = js.undefined,
+        StartTime: js.UndefOr[Timestamp] = js.undefined
+    ): PendingDeploymentSummary = {
+      val __obj = js.Dynamic.literal(
+        "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any]
+      )
+
+      ProductionVariants.foreach(__v => __obj.updateDynamic("ProductionVariants")(__v.asInstanceOf[js.Any]))
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingDeploymentSummary]
+    }
+  }
+
+  /** The production variant summary for a deployment when an endpoint is creating or updating with the <code> <a>CreateEndpoint</a> </code> or <code> <a>UpdateEndpoint</a> </code> operations. Describes the <code>VariantStatus </code>, weight and capacity for a production variant associated with an endpoint.
+    */
+  @js.native
+  trait PendingProductionVariantSummary extends js.Object {
+    var VariantName: VariantName
+    var AcceleratorType: js.UndefOr[ProductionVariantAcceleratorType]
+    var CurrentInstanceCount: js.UndefOr[TaskCount]
+    var CurrentServerlessConfig: js.UndefOr[ProductionVariantServerlessConfig]
+    var CurrentWeight: js.UndefOr[VariantWeight]
+    var DeployedImages: js.UndefOr[DeployedImages]
+    var DesiredInstanceCount: js.UndefOr[TaskCount]
+    var DesiredServerlessConfig: js.UndefOr[ProductionVariantServerlessConfig]
+    var DesiredWeight: js.UndefOr[VariantWeight]
+    var InstanceType: js.UndefOr[ProductionVariantInstanceType]
+    var VariantStatus: js.UndefOr[ProductionVariantStatusList]
+  }
+
+  object PendingProductionVariantSummary {
+    @inline
+    def apply(
+        VariantName: VariantName,
+        AcceleratorType: js.UndefOr[ProductionVariantAcceleratorType] = js.undefined,
+        CurrentInstanceCount: js.UndefOr[TaskCount] = js.undefined,
+        CurrentServerlessConfig: js.UndefOr[ProductionVariantServerlessConfig] = js.undefined,
+        CurrentWeight: js.UndefOr[VariantWeight] = js.undefined,
+        DeployedImages: js.UndefOr[DeployedImages] = js.undefined,
+        DesiredInstanceCount: js.UndefOr[TaskCount] = js.undefined,
+        DesiredServerlessConfig: js.UndefOr[ProductionVariantServerlessConfig] = js.undefined,
+        DesiredWeight: js.UndefOr[VariantWeight] = js.undefined,
+        InstanceType: js.UndefOr[ProductionVariantInstanceType] = js.undefined,
+        VariantStatus: js.UndefOr[ProductionVariantStatusList] = js.undefined
+    ): PendingProductionVariantSummary = {
+      val __obj = js.Dynamic.literal(
+        "VariantName" -> VariantName.asInstanceOf[js.Any]
+      )
+
+      AcceleratorType.foreach(__v => __obj.updateDynamic("AcceleratorType")(__v.asInstanceOf[js.Any]))
+      CurrentInstanceCount.foreach(__v => __obj.updateDynamic("CurrentInstanceCount")(__v.asInstanceOf[js.Any]))
+      CurrentServerlessConfig.foreach(__v => __obj.updateDynamic("CurrentServerlessConfig")(__v.asInstanceOf[js.Any]))
+      CurrentWeight.foreach(__v => __obj.updateDynamic("CurrentWeight")(__v.asInstanceOf[js.Any]))
+      DeployedImages.foreach(__v => __obj.updateDynamic("DeployedImages")(__v.asInstanceOf[js.Any]))
+      DesiredInstanceCount.foreach(__v => __obj.updateDynamic("DesiredInstanceCount")(__v.asInstanceOf[js.Any]))
+      DesiredServerlessConfig.foreach(__v => __obj.updateDynamic("DesiredServerlessConfig")(__v.asInstanceOf[js.Any]))
+      DesiredWeight.foreach(__v => __obj.updateDynamic("DesiredWeight")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      VariantStatus.foreach(__v => __obj.updateDynamic("VariantStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PendingProductionVariantSummary]
+    }
+  }
+
+  /** Defines the traffic pattern.
+    */
+  @js.native
+  trait Phase extends js.Object {
+    var DurationInSeconds: js.UndefOr[TrafficDurationInSeconds]
+    var InitialNumberOfUsers: js.UndefOr[InitialNumberOfUsers]
+    var SpawnRate: js.UndefOr[SpawnRate]
+  }
+
+  object Phase {
+    @inline
+    def apply(
+        DurationInSeconds: js.UndefOr[TrafficDurationInSeconds] = js.undefined,
+        InitialNumberOfUsers: js.UndefOr[InitialNumberOfUsers] = js.undefined,
+        SpawnRate: js.UndefOr[SpawnRate] = js.undefined
+    ): Phase = {
+      val __obj = js.Dynamic.literal()
+      DurationInSeconds.foreach(__v => __obj.updateDynamic("DurationInSeconds")(__v.asInstanceOf[js.Any]))
+      InitialNumberOfUsers.foreach(__v => __obj.updateDynamic("InitialNumberOfUsers")(__v.asInstanceOf[js.Any]))
+      SpawnRate.foreach(__v => __obj.updateDynamic("SpawnRate")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Phase]
+    }
+  }
+
   /** A SageMaker Model Building Pipeline instance.
     */
   @js.native
@@ -16563,6 +18514,7 @@ package object sagemaker {
   trait PipelineExecution extends js.Object {
     var CreatedBy: js.UndefOr[UserContext]
     var CreationTime: js.UndefOr[Timestamp]
+    var FailureReason: js.UndefOr[PipelineExecutionFailureReason]
     var LastModifiedBy: js.UndefOr[UserContext]
     var LastModifiedTime: js.UndefOr[Timestamp]
     var PipelineArn: js.UndefOr[PipelineArn]
@@ -16570,6 +18522,7 @@ package object sagemaker {
     var PipelineExecutionDescription: js.UndefOr[PipelineExecutionDescription]
     var PipelineExecutionDisplayName: js.UndefOr[PipelineExecutionName]
     var PipelineExecutionStatus: js.UndefOr[PipelineExecutionStatus]
+    var PipelineExperimentConfig: js.UndefOr[PipelineExperimentConfig]
     var PipelineParameters: js.UndefOr[ParameterList]
   }
 
@@ -16578,6 +18531,7 @@ package object sagemaker {
     def apply(
         CreatedBy: js.UndefOr[UserContext] = js.undefined,
         CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        FailureReason: js.UndefOr[PipelineExecutionFailureReason] = js.undefined,
         LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
         PipelineArn: js.UndefOr[PipelineArn] = js.undefined,
@@ -16585,11 +18539,13 @@ package object sagemaker {
         PipelineExecutionDescription: js.UndefOr[PipelineExecutionDescription] = js.undefined,
         PipelineExecutionDisplayName: js.UndefOr[PipelineExecutionName] = js.undefined,
         PipelineExecutionStatus: js.UndefOr[PipelineExecutionStatus] = js.undefined,
+        PipelineExperimentConfig: js.UndefOr[PipelineExperimentConfig] = js.undefined,
         PipelineParameters: js.UndefOr[ParameterList] = js.undefined
     ): PipelineExecution = {
       val __obj = js.Dynamic.literal()
       CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
       CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
       PipelineArn.foreach(__v => __obj.updateDynamic("PipelineArn")(__v.asInstanceOf[js.Any]))
@@ -16597,6 +18553,7 @@ package object sagemaker {
       PipelineExecutionDescription.foreach(__v => __obj.updateDynamic("PipelineExecutionDescription")(__v.asInstanceOf[js.Any]))
       PipelineExecutionDisplayName.foreach(__v => __obj.updateDynamic("PipelineExecutionDisplayName")(__v.asInstanceOf[js.Any]))
       PipelineExecutionStatus.foreach(__v => __obj.updateDynamic("PipelineExecutionStatus")(__v.asInstanceOf[js.Any]))
+      PipelineExperimentConfig.foreach(__v => __obj.updateDynamic("PipelineExperimentConfig")(__v.asInstanceOf[js.Any]))
       PipelineParameters.foreach(__v => __obj.updateDynamic("PipelineParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineExecution]
     }
@@ -16606,6 +18563,7 @@ package object sagemaker {
     */
   @js.native
   trait PipelineExecutionStep extends js.Object {
+    var AttemptCount: js.UndefOr[IntegerValue]
     var CacheHitResult: js.UndefOr[CacheHitResult]
     var EndTime: js.UndefOr[Timestamp]
     var FailureReason: js.UndefOr[FailureReason]
@@ -16618,6 +18576,7 @@ package object sagemaker {
   object PipelineExecutionStep {
     @inline
     def apply(
+        AttemptCount: js.UndefOr[IntegerValue] = js.undefined,
         CacheHitResult: js.UndefOr[CacheHitResult] = js.undefined,
         EndTime: js.UndefOr[Timestamp] = js.undefined,
         FailureReason: js.UndefOr[FailureReason] = js.undefined,
@@ -16627,6 +18586,7 @@ package object sagemaker {
         StepStatus: js.UndefOr[StepStatus] = js.undefined
     ): PipelineExecutionStep = {
       val __obj = js.Dynamic.literal()
+      AttemptCount.foreach(__v => __obj.updateDynamic("AttemptCount")(__v.asInstanceOf[js.Any]))
       CacheHitResult.foreach(__v => __obj.updateDynamic("CacheHitResult")(__v.asInstanceOf[js.Any]))
       EndTime.foreach(__v => __obj.updateDynamic("EndTime")(__v.asInstanceOf[js.Any]))
       FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
@@ -16642,31 +18602,46 @@ package object sagemaker {
     */
   @js.native
   trait PipelineExecutionStepMetadata extends js.Object {
+    var Callback: js.UndefOr[CallbackStepMetadata]
+    var ClarifyCheck: js.UndefOr[ClarifyCheckStepMetadata]
     var Condition: js.UndefOr[ConditionStepMetadata]
+    var Lambda: js.UndefOr[LambdaStepMetadata]
     var Model: js.UndefOr[ModelStepMetadata]
     var ProcessingJob: js.UndefOr[ProcessingJobStepMetadata]
+    var QualityCheck: js.UndefOr[QualityCheckStepMetadata]
     var RegisterModel: js.UndefOr[RegisterModelStepMetadata]
     var TrainingJob: js.UndefOr[TrainingJobStepMetadata]
     var TransformJob: js.UndefOr[TransformJobStepMetadata]
+    var TuningJob: js.UndefOr[TuningJobStepMetaData]
   }
 
   object PipelineExecutionStepMetadata {
     @inline
     def apply(
+        Callback: js.UndefOr[CallbackStepMetadata] = js.undefined,
+        ClarifyCheck: js.UndefOr[ClarifyCheckStepMetadata] = js.undefined,
         Condition: js.UndefOr[ConditionStepMetadata] = js.undefined,
+        Lambda: js.UndefOr[LambdaStepMetadata] = js.undefined,
         Model: js.UndefOr[ModelStepMetadata] = js.undefined,
         ProcessingJob: js.UndefOr[ProcessingJobStepMetadata] = js.undefined,
+        QualityCheck: js.UndefOr[QualityCheckStepMetadata] = js.undefined,
         RegisterModel: js.UndefOr[RegisterModelStepMetadata] = js.undefined,
         TrainingJob: js.UndefOr[TrainingJobStepMetadata] = js.undefined,
-        TransformJob: js.UndefOr[TransformJobStepMetadata] = js.undefined
+        TransformJob: js.UndefOr[TransformJobStepMetadata] = js.undefined,
+        TuningJob: js.UndefOr[TuningJobStepMetaData] = js.undefined
     ): PipelineExecutionStepMetadata = {
       val __obj = js.Dynamic.literal()
+      Callback.foreach(__v => __obj.updateDynamic("Callback")(__v.asInstanceOf[js.Any]))
+      ClarifyCheck.foreach(__v => __obj.updateDynamic("ClarifyCheck")(__v.asInstanceOf[js.Any]))
       Condition.foreach(__v => __obj.updateDynamic("Condition")(__v.asInstanceOf[js.Any]))
+      Lambda.foreach(__v => __obj.updateDynamic("Lambda")(__v.asInstanceOf[js.Any]))
       Model.foreach(__v => __obj.updateDynamic("Model")(__v.asInstanceOf[js.Any]))
       ProcessingJob.foreach(__v => __obj.updateDynamic("ProcessingJob")(__v.asInstanceOf[js.Any]))
+      QualityCheck.foreach(__v => __obj.updateDynamic("QualityCheck")(__v.asInstanceOf[js.Any]))
       RegisterModel.foreach(__v => __obj.updateDynamic("RegisterModel")(__v.asInstanceOf[js.Any]))
       TrainingJob.foreach(__v => __obj.updateDynamic("TrainingJob")(__v.asInstanceOf[js.Any]))
       TransformJob.foreach(__v => __obj.updateDynamic("TransformJob")(__v.asInstanceOf[js.Any]))
+      TuningJob.foreach(__v => __obj.updateDynamic("TuningJob")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineExecutionStepMetadata]
     }
   }
@@ -16698,6 +18673,27 @@ package object sagemaker {
       PipelineExecutionStatus.foreach(__v => __obj.updateDynamic("PipelineExecutionStatus")(__v.asInstanceOf[js.Any]))
       StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PipelineExecutionSummary]
+    }
+  }
+
+  /** Specifies the names of the experiment and trial created by a pipeline.
+    */
+  @js.native
+  trait PipelineExperimentConfig extends js.Object {
+    var ExperimentName: js.UndefOr[ExperimentEntityName]
+    var TrialName: js.UndefOr[ExperimentEntityName]
+  }
+
+  object PipelineExperimentConfig {
+    @inline
+    def apply(
+        ExperimentName: js.UndefOr[ExperimentEntityName] = js.undefined,
+        TrialName: js.UndefOr[ExperimentEntityName] = js.undefined
+    ): PipelineExperimentConfig = {
+      val __obj = js.Dynamic.literal()
+      ExperimentName.foreach(__v => __obj.updateDynamic("ExperimentName")(__v.asInstanceOf[js.Any]))
+      TrialName.foreach(__v => __obj.updateDynamic("TrialName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PipelineExperimentConfig]
     }
   }
 
@@ -17107,40 +19103,43 @@ package object sagemaker {
     }
   }
 
-  /** Identifies a model that you want to host and the resources to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights.
+  /** Identifies a model that you want to host and the resources chosen to deploy for hosting it. If you are deploying multiple models, tell Amazon SageMaker how to distribute traffic among the models by specifying variant weights.
     */
   @js.native
   trait ProductionVariant extends js.Object {
-    var InitialInstanceCount: TaskCount
-    var InstanceType: ProductionVariantInstanceType
     var ModelName: ModelName
     var VariantName: VariantName
     var AcceleratorType: js.UndefOr[ProductionVariantAcceleratorType]
     var CoreDumpConfig: js.UndefOr[ProductionVariantCoreDumpConfig]
+    var InitialInstanceCount: js.UndefOr[InitialTaskCount]
     var InitialVariantWeight: js.UndefOr[VariantWeight]
+    var InstanceType: js.UndefOr[ProductionVariantInstanceType]
+    var ServerlessConfig: js.UndefOr[ProductionVariantServerlessConfig]
   }
 
   object ProductionVariant {
     @inline
     def apply(
-        InitialInstanceCount: TaskCount,
-        InstanceType: ProductionVariantInstanceType,
         ModelName: ModelName,
         VariantName: VariantName,
         AcceleratorType: js.UndefOr[ProductionVariantAcceleratorType] = js.undefined,
         CoreDumpConfig: js.UndefOr[ProductionVariantCoreDumpConfig] = js.undefined,
-        InitialVariantWeight: js.UndefOr[VariantWeight] = js.undefined
+        InitialInstanceCount: js.UndefOr[InitialTaskCount] = js.undefined,
+        InitialVariantWeight: js.UndefOr[VariantWeight] = js.undefined,
+        InstanceType: js.UndefOr[ProductionVariantInstanceType] = js.undefined,
+        ServerlessConfig: js.UndefOr[ProductionVariantServerlessConfig] = js.undefined
     ): ProductionVariant = {
       val __obj = js.Dynamic.literal(
-        "InitialInstanceCount" -> InitialInstanceCount.asInstanceOf[js.Any],
-        "InstanceType" -> InstanceType.asInstanceOf[js.Any],
         "ModelName" -> ModelName.asInstanceOf[js.Any],
         "VariantName" -> VariantName.asInstanceOf[js.Any]
       )
 
       AcceleratorType.foreach(__v => __obj.updateDynamic("AcceleratorType")(__v.asInstanceOf[js.Any]))
       CoreDumpConfig.foreach(__v => __obj.updateDynamic("CoreDumpConfig")(__v.asInstanceOf[js.Any]))
+      InitialInstanceCount.foreach(__v => __obj.updateDynamic("InitialInstanceCount")(__v.asInstanceOf[js.Any]))
       InitialVariantWeight.foreach(__v => __obj.updateDynamic("InitialVariantWeight")(__v.asInstanceOf[js.Any]))
+      InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      ServerlessConfig.foreach(__v => __obj.updateDynamic("ServerlessConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductionVariant]
     }
   }
@@ -17168,16 +19167,67 @@ package object sagemaker {
     }
   }
 
+  /** <important> Serverless Inference is in preview release for Amazon SageMaker and is subject to change. We do not recommend using this feature in production environments. </important> Specifies the serverless configuration for an endpoint variant.
+    */
+  @js.native
+  trait ProductionVariantServerlessConfig extends js.Object {
+    var MaxConcurrency: ServerlessMaxConcurrency
+    var MemorySizeInMB: ServerlessMemorySizeInMB
+  }
+
+  object ProductionVariantServerlessConfig {
+    @inline
+    def apply(
+        MaxConcurrency: ServerlessMaxConcurrency,
+        MemorySizeInMB: ServerlessMemorySizeInMB
+    ): ProductionVariantServerlessConfig = {
+      val __obj = js.Dynamic.literal(
+        "MaxConcurrency" -> MaxConcurrency.asInstanceOf[js.Any],
+        "MemorySizeInMB" -> MemorySizeInMB.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ProductionVariantServerlessConfig]
+    }
+  }
+
+  /** Describes the status of the production variant.
+    */
+  @js.native
+  trait ProductionVariantStatus extends js.Object {
+    var Status: VariantStatus
+    var StartTime: js.UndefOr[Timestamp]
+    var StatusMessage: js.UndefOr[VariantStatusMessage]
+  }
+
+  object ProductionVariantStatus {
+    @inline
+    def apply(
+        Status: VariantStatus,
+        StartTime: js.UndefOr[Timestamp] = js.undefined,
+        StatusMessage: js.UndefOr[VariantStatusMessage] = js.undefined
+    ): ProductionVariantStatus = {
+      val __obj = js.Dynamic.literal(
+        "Status" -> Status.asInstanceOf[js.Any]
+      )
+
+      StartTime.foreach(__v => __obj.updateDynamic("StartTime")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ProductionVariantStatus]
+    }
+  }
+
   /** Describes weight and capacities for a production variant associated with an endpoint. If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and the endpoint status is <code>Updating</code>, you get different desired and current values.
     */
   @js.native
   trait ProductionVariantSummary extends js.Object {
     var VariantName: VariantName
     var CurrentInstanceCount: js.UndefOr[TaskCount]
+    var CurrentServerlessConfig: js.UndefOr[ProductionVariantServerlessConfig]
     var CurrentWeight: js.UndefOr[VariantWeight]
     var DeployedImages: js.UndefOr[DeployedImages]
     var DesiredInstanceCount: js.UndefOr[TaskCount]
+    var DesiredServerlessConfig: js.UndefOr[ProductionVariantServerlessConfig]
     var DesiredWeight: js.UndefOr[VariantWeight]
+    var VariantStatus: js.UndefOr[ProductionVariantStatusList]
   }
 
   object ProductionVariantSummary {
@@ -17185,20 +19235,26 @@ package object sagemaker {
     def apply(
         VariantName: VariantName,
         CurrentInstanceCount: js.UndefOr[TaskCount] = js.undefined,
+        CurrentServerlessConfig: js.UndefOr[ProductionVariantServerlessConfig] = js.undefined,
         CurrentWeight: js.UndefOr[VariantWeight] = js.undefined,
         DeployedImages: js.UndefOr[DeployedImages] = js.undefined,
         DesiredInstanceCount: js.UndefOr[TaskCount] = js.undefined,
-        DesiredWeight: js.UndefOr[VariantWeight] = js.undefined
+        DesiredServerlessConfig: js.UndefOr[ProductionVariantServerlessConfig] = js.undefined,
+        DesiredWeight: js.UndefOr[VariantWeight] = js.undefined,
+        VariantStatus: js.UndefOr[ProductionVariantStatusList] = js.undefined
     ): ProductionVariantSummary = {
       val __obj = js.Dynamic.literal(
         "VariantName" -> VariantName.asInstanceOf[js.Any]
       )
 
       CurrentInstanceCount.foreach(__v => __obj.updateDynamic("CurrentInstanceCount")(__v.asInstanceOf[js.Any]))
+      CurrentServerlessConfig.foreach(__v => __obj.updateDynamic("CurrentServerlessConfig")(__v.asInstanceOf[js.Any]))
       CurrentWeight.foreach(__v => __obj.updateDynamic("CurrentWeight")(__v.asInstanceOf[js.Any]))
       DeployedImages.foreach(__v => __obj.updateDynamic("DeployedImages")(__v.asInstanceOf[js.Any]))
       DesiredInstanceCount.foreach(__v => __obj.updateDynamic("DesiredInstanceCount")(__v.asInstanceOf[js.Any]))
+      DesiredServerlessConfig.foreach(__v => __obj.updateDynamic("DesiredServerlessConfig")(__v.asInstanceOf[js.Any]))
       DesiredWeight.foreach(__v => __obj.updateDynamic("DesiredWeight")(__v.asInstanceOf[js.Any]))
+      VariantStatus.foreach(__v => __obj.updateDynamic("VariantStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProductionVariantSummary]
     }
   }
@@ -17324,6 +19380,57 @@ package object sagemaker {
     }
   }
 
+  /** The properties of a project as returned by the Search API.
+    */
+  @js.native
+  trait Project extends js.Object {
+    var CreatedBy: js.UndefOr[UserContext]
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastModifiedBy: js.UndefOr[UserContext]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var ProjectArn: js.UndefOr[ProjectArn]
+    var ProjectDescription: js.UndefOr[EntityDescription]
+    var ProjectId: js.UndefOr[ProjectId]
+    var ProjectName: js.UndefOr[ProjectEntityName]
+    var ProjectStatus: js.UndefOr[ProjectStatus]
+    var ServiceCatalogProvisionedProductDetails: js.UndefOr[ServiceCatalogProvisionedProductDetails]
+    var ServiceCatalogProvisioningDetails: js.UndefOr[ServiceCatalogProvisioningDetails]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object Project {
+    @inline
+    def apply(
+        CreatedBy: js.UndefOr[UserContext] = js.undefined,
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        ProjectArn: js.UndefOr[ProjectArn] = js.undefined,
+        ProjectDescription: js.UndefOr[EntityDescription] = js.undefined,
+        ProjectId: js.UndefOr[ProjectId] = js.undefined,
+        ProjectName: js.UndefOr[ProjectEntityName] = js.undefined,
+        ProjectStatus: js.UndefOr[ProjectStatus] = js.undefined,
+        ServiceCatalogProvisionedProductDetails: js.UndefOr[ServiceCatalogProvisionedProductDetails] = js.undefined,
+        ServiceCatalogProvisioningDetails: js.UndefOr[ServiceCatalogProvisioningDetails] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): Project = {
+      val __obj = js.Dynamic.literal()
+      CreatedBy.foreach(__v => __obj.updateDynamic("CreatedBy")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      ProjectArn.foreach(__v => __obj.updateDynamic("ProjectArn")(__v.asInstanceOf[js.Any]))
+      ProjectDescription.foreach(__v => __obj.updateDynamic("ProjectDescription")(__v.asInstanceOf[js.Any]))
+      ProjectId.foreach(__v => __obj.updateDynamic("ProjectId")(__v.asInstanceOf[js.Any]))
+      ProjectName.foreach(__v => __obj.updateDynamic("ProjectName")(__v.asInstanceOf[js.Any]))
+      ProjectStatus.foreach(__v => __obj.updateDynamic("ProjectStatus")(__v.asInstanceOf[js.Any]))
+      ServiceCatalogProvisionedProductDetails.foreach(__v => __obj.updateDynamic("ServiceCatalogProvisionedProductDetails")(__v.asInstanceOf[js.Any]))
+      ServiceCatalogProvisioningDetails.foreach(__v => __obj.updateDynamic("ServiceCatalogProvisioningDetails")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Project]
+    }
+  }
+
   /** Information about a project.
     */
   @js.native
@@ -17396,7 +19503,7 @@ package object sagemaker {
     }
   }
 
-  /** A key value pair used when you provision a project as a service catalog product. For information, see [[https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html|What is AWS Service Catalog]].
+  /** A key value pair used when you provision a project as a service catalog product. For information, see [[https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html|What is Amazon Web Services Service Catalog]].
     */
   @js.native
   trait ProvisioningParameter extends js.Object {
@@ -17470,6 +19577,333 @@ package object sagemaker {
         "ModelPackageGroupArn" -> ModelPackageGroupArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[PutModelPackageGroupPolicyOutput]
+    }
+  }
+
+  /** Container for the metadata for a Quality check step. For more information, see the topic on [[https://docs.aws.amazon.com/sagemaker/latest/dg/build-and-manage-steps.html#step-type-quality-check|QualityCheck step]] in the <i>Amazon SageMaker Developer Guide</i>.
+    */
+  @js.native
+  trait QualityCheckStepMetadata extends js.Object {
+    var BaselineUsedForDriftCheckConstraints: js.UndefOr[String1024]
+    var BaselineUsedForDriftCheckStatistics: js.UndefOr[String1024]
+    var CalculatedBaselineConstraints: js.UndefOr[String1024]
+    var CalculatedBaselineStatistics: js.UndefOr[String1024]
+    var CheckJobArn: js.UndefOr[String256]
+    var CheckType: js.UndefOr[String256]
+    var ModelPackageGroupName: js.UndefOr[String256]
+    var RegisterNewBaseline: js.UndefOr[Boolean]
+    var SkipCheck: js.UndefOr[Boolean]
+    var ViolationReport: js.UndefOr[String1024]
+  }
+
+  object QualityCheckStepMetadata {
+    @inline
+    def apply(
+        BaselineUsedForDriftCheckConstraints: js.UndefOr[String1024] = js.undefined,
+        BaselineUsedForDriftCheckStatistics: js.UndefOr[String1024] = js.undefined,
+        CalculatedBaselineConstraints: js.UndefOr[String1024] = js.undefined,
+        CalculatedBaselineStatistics: js.UndefOr[String1024] = js.undefined,
+        CheckJobArn: js.UndefOr[String256] = js.undefined,
+        CheckType: js.UndefOr[String256] = js.undefined,
+        ModelPackageGroupName: js.UndefOr[String256] = js.undefined,
+        RegisterNewBaseline: js.UndefOr[Boolean] = js.undefined,
+        SkipCheck: js.UndefOr[Boolean] = js.undefined,
+        ViolationReport: js.UndefOr[String1024] = js.undefined
+    ): QualityCheckStepMetadata = {
+      val __obj = js.Dynamic.literal()
+      BaselineUsedForDriftCheckConstraints.foreach(__v => __obj.updateDynamic("BaselineUsedForDriftCheckConstraints")(__v.asInstanceOf[js.Any]))
+      BaselineUsedForDriftCheckStatistics.foreach(__v => __obj.updateDynamic("BaselineUsedForDriftCheckStatistics")(__v.asInstanceOf[js.Any]))
+      CalculatedBaselineConstraints.foreach(__v => __obj.updateDynamic("CalculatedBaselineConstraints")(__v.asInstanceOf[js.Any]))
+      CalculatedBaselineStatistics.foreach(__v => __obj.updateDynamic("CalculatedBaselineStatistics")(__v.asInstanceOf[js.Any]))
+      CheckJobArn.foreach(__v => __obj.updateDynamic("CheckJobArn")(__v.asInstanceOf[js.Any]))
+      CheckType.foreach(__v => __obj.updateDynamic("CheckType")(__v.asInstanceOf[js.Any]))
+      ModelPackageGroupName.foreach(__v => __obj.updateDynamic("ModelPackageGroupName")(__v.asInstanceOf[js.Any]))
+      RegisterNewBaseline.foreach(__v => __obj.updateDynamic("RegisterNewBaseline")(__v.asInstanceOf[js.Any]))
+      SkipCheck.foreach(__v => __obj.updateDynamic("SkipCheck")(__v.asInstanceOf[js.Any]))
+      ViolationReport.foreach(__v => __obj.updateDynamic("ViolationReport")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QualityCheckStepMetadata]
+    }
+  }
+
+  /** A set of filters to narrow the set of lineage entities connected to the <code>StartArn</code>(s) returned by the <code>QueryLineage</code> API action.
+    */
+  @js.native
+  trait QueryFilters extends js.Object {
+    var CreatedAfter: js.UndefOr[Timestamp]
+    var CreatedBefore: js.UndefOr[Timestamp]
+    var LineageTypes: js.UndefOr[QueryLineageTypes]
+    var ModifiedAfter: js.UndefOr[Timestamp]
+    var ModifiedBefore: js.UndefOr[Timestamp]
+    var Properties: js.UndefOr[QueryProperties]
+    var Types: js.UndefOr[QueryTypes]
+  }
+
+  object QueryFilters {
+    @inline
+    def apply(
+        CreatedAfter: js.UndefOr[Timestamp] = js.undefined,
+        CreatedBefore: js.UndefOr[Timestamp] = js.undefined,
+        LineageTypes: js.UndefOr[QueryLineageTypes] = js.undefined,
+        ModifiedAfter: js.UndefOr[Timestamp] = js.undefined,
+        ModifiedBefore: js.UndefOr[Timestamp] = js.undefined,
+        Properties: js.UndefOr[QueryProperties] = js.undefined,
+        Types: js.UndefOr[QueryTypes] = js.undefined
+    ): QueryFilters = {
+      val __obj = js.Dynamic.literal()
+      CreatedAfter.foreach(__v => __obj.updateDynamic("CreatedAfter")(__v.asInstanceOf[js.Any]))
+      CreatedBefore.foreach(__v => __obj.updateDynamic("CreatedBefore")(__v.asInstanceOf[js.Any]))
+      LineageTypes.foreach(__v => __obj.updateDynamic("LineageTypes")(__v.asInstanceOf[js.Any]))
+      ModifiedAfter.foreach(__v => __obj.updateDynamic("ModifiedAfter")(__v.asInstanceOf[js.Any]))
+      ModifiedBefore.foreach(__v => __obj.updateDynamic("ModifiedBefore")(__v.asInstanceOf[js.Any]))
+      Properties.foreach(__v => __obj.updateDynamic("Properties")(__v.asInstanceOf[js.Any]))
+      Types.foreach(__v => __obj.updateDynamic("Types")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryFilters]
+    }
+  }
+
+  @js.native
+  trait QueryLineageRequest extends js.Object {
+    var StartArns: QueryLineageStartArns
+    var Direction: js.UndefOr[Direction]
+    var Filters: js.UndefOr[QueryFilters]
+    var IncludeEdges: js.UndefOr[Boolean]
+    var MaxDepth: js.UndefOr[QueryLineageMaxDepth]
+    var MaxResults: js.UndefOr[QueryLineageMaxResults]
+    var NextToken: js.UndefOr[String8192]
+  }
+
+  object QueryLineageRequest {
+    @inline
+    def apply(
+        StartArns: QueryLineageStartArns,
+        Direction: js.UndefOr[Direction] = js.undefined,
+        Filters: js.UndefOr[QueryFilters] = js.undefined,
+        IncludeEdges: js.UndefOr[Boolean] = js.undefined,
+        MaxDepth: js.UndefOr[QueryLineageMaxDepth] = js.undefined,
+        MaxResults: js.UndefOr[QueryLineageMaxResults] = js.undefined,
+        NextToken: js.UndefOr[String8192] = js.undefined
+    ): QueryLineageRequest = {
+      val __obj = js.Dynamic.literal(
+        "StartArns" -> StartArns.asInstanceOf[js.Any]
+      )
+
+      Direction.foreach(__v => __obj.updateDynamic("Direction")(__v.asInstanceOf[js.Any]))
+      Filters.foreach(__v => __obj.updateDynamic("Filters")(__v.asInstanceOf[js.Any]))
+      IncludeEdges.foreach(__v => __obj.updateDynamic("IncludeEdges")(__v.asInstanceOf[js.Any]))
+      MaxDepth.foreach(__v => __obj.updateDynamic("MaxDepth")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryLineageRequest]
+    }
+  }
+
+  @js.native
+  trait QueryLineageResponse extends js.Object {
+    var Edges: js.UndefOr[Edges]
+    var NextToken: js.UndefOr[String8192]
+    var Vertices: js.UndefOr[Vertices]
+  }
+
+  object QueryLineageResponse {
+    @inline
+    def apply(
+        Edges: js.UndefOr[Edges] = js.undefined,
+        NextToken: js.UndefOr[String8192] = js.undefined,
+        Vertices: js.UndefOr[Vertices] = js.undefined
+    ): QueryLineageResponse = {
+      val __obj = js.Dynamic.literal()
+      Edges.foreach(__v => __obj.updateDynamic("Edges")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Vertices.foreach(__v => __obj.updateDynamic("Vertices")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[QueryLineageResponse]
+    }
+  }
+
+  /** A collection of settings that apply to an <code>RSessionGateway</code> app.
+    */
+  @js.native
+  trait RSessionAppSettings extends js.Object
+
+  object RSessionAppSettings {
+    @inline
+    def apply(): RSessionAppSettings = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[RSessionAppSettings]
+    }
+  }
+
+  /** A collection of settings that configure user interaction with the <code>RStudioServerPro</code> app. <code>RStudioServerProAppSettings</code> cannot be updated. The <code>RStudioServerPro</code> app must be deleted and a new one created to make any changes.
+    */
+  @js.native
+  trait RStudioServerProAppSettings extends js.Object {
+    var AccessStatus: js.UndefOr[RStudioServerProAccessStatus]
+    var UserGroup: js.UndefOr[RStudioServerProUserGroup]
+  }
+
+  object RStudioServerProAppSettings {
+    @inline
+    def apply(
+        AccessStatus: js.UndefOr[RStudioServerProAccessStatus] = js.undefined,
+        UserGroup: js.UndefOr[RStudioServerProUserGroup] = js.undefined
+    ): RStudioServerProAppSettings = {
+      val __obj = js.Dynamic.literal()
+      AccessStatus.foreach(__v => __obj.updateDynamic("AccessStatus")(__v.asInstanceOf[js.Any]))
+      UserGroup.foreach(__v => __obj.updateDynamic("UserGroup")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RStudioServerProAppSettings]
+    }
+  }
+
+  /** A collection of settings that configure the <code>RStudioServerPro</code> Domain-level app.
+    */
+  @js.native
+  trait RStudioServerProDomainSettings extends js.Object {
+    var DomainExecutionRoleArn: RoleArn
+    var DefaultResourceSpec: js.UndefOr[ResourceSpec]
+    var RStudioConnectUrl: js.UndefOr[String]
+    var RStudioPackageManagerUrl: js.UndefOr[String]
+  }
+
+  object RStudioServerProDomainSettings {
+    @inline
+    def apply(
+        DomainExecutionRoleArn: RoleArn,
+        DefaultResourceSpec: js.UndefOr[ResourceSpec] = js.undefined,
+        RStudioConnectUrl: js.UndefOr[String] = js.undefined,
+        RStudioPackageManagerUrl: js.UndefOr[String] = js.undefined
+    ): RStudioServerProDomainSettings = {
+      val __obj = js.Dynamic.literal(
+        "DomainExecutionRoleArn" -> DomainExecutionRoleArn.asInstanceOf[js.Any]
+      )
+
+      DefaultResourceSpec.foreach(__v => __obj.updateDynamic("DefaultResourceSpec")(__v.asInstanceOf[js.Any]))
+      RStudioConnectUrl.foreach(__v => __obj.updateDynamic("RStudioConnectUrl")(__v.asInstanceOf[js.Any]))
+      RStudioPackageManagerUrl.foreach(__v => __obj.updateDynamic("RStudioPackageManagerUrl")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RStudioServerProDomainSettings]
+    }
+  }
+
+  /** A collection of settings that update the current configuration for the <code>RStudioServerPro</code> Domain-level app.
+    */
+  @js.native
+  trait RStudioServerProDomainSettingsForUpdate extends js.Object {
+    var DomainExecutionRoleArn: RoleArn
+    var DefaultResourceSpec: js.UndefOr[ResourceSpec]
+  }
+
+  object RStudioServerProDomainSettingsForUpdate {
+    @inline
+    def apply(
+        DomainExecutionRoleArn: RoleArn,
+        DefaultResourceSpec: js.UndefOr[ResourceSpec] = js.undefined
+    ): RStudioServerProDomainSettingsForUpdate = {
+      val __obj = js.Dynamic.literal(
+        "DomainExecutionRoleArn" -> DomainExecutionRoleArn.asInstanceOf[js.Any]
+      )
+
+      DefaultResourceSpec.foreach(__v => __obj.updateDynamic("DefaultResourceSpec")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RStudioServerProDomainSettingsForUpdate]
+    }
+  }
+
+  /** The input configuration of the recommendation job.
+    */
+  @js.native
+  trait RecommendationJobInputConfig extends js.Object {
+    var ModelPackageVersionArn: ModelPackageArn
+    var EndpointConfigurations: js.UndefOr[EndpointInputConfigurations]
+    var JobDurationInSeconds: js.UndefOr[JobDurationInSeconds]
+    var ResourceLimit: js.UndefOr[RecommendationJobResourceLimit]
+    var TrafficPattern: js.UndefOr[TrafficPattern]
+  }
+
+  object RecommendationJobInputConfig {
+    @inline
+    def apply(
+        ModelPackageVersionArn: ModelPackageArn,
+        EndpointConfigurations: js.UndefOr[EndpointInputConfigurations] = js.undefined,
+        JobDurationInSeconds: js.UndefOr[JobDurationInSeconds] = js.undefined,
+        ResourceLimit: js.UndefOr[RecommendationJobResourceLimit] = js.undefined,
+        TrafficPattern: js.UndefOr[TrafficPattern] = js.undefined
+    ): RecommendationJobInputConfig = {
+      val __obj = js.Dynamic.literal(
+        "ModelPackageVersionArn" -> ModelPackageVersionArn.asInstanceOf[js.Any]
+      )
+
+      EndpointConfigurations.foreach(__v => __obj.updateDynamic("EndpointConfigurations")(__v.asInstanceOf[js.Any]))
+      JobDurationInSeconds.foreach(__v => __obj.updateDynamic("JobDurationInSeconds")(__v.asInstanceOf[js.Any]))
+      ResourceLimit.foreach(__v => __obj.updateDynamic("ResourceLimit")(__v.asInstanceOf[js.Any]))
+      TrafficPattern.foreach(__v => __obj.updateDynamic("TrafficPattern")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecommendationJobInputConfig]
+    }
+  }
+
+  /** Specifies the maximum number of jobs that can run in parallel and the maximum number of jobs that can run.
+    */
+  @js.native
+  trait RecommendationJobResourceLimit extends js.Object {
+    var MaxNumberOfTests: js.UndefOr[MaxNumberOfTests]
+    var MaxParallelOfTests: js.UndefOr[MaxParallelOfTests]
+  }
+
+  object RecommendationJobResourceLimit {
+    @inline
+    def apply(
+        MaxNumberOfTests: js.UndefOr[MaxNumberOfTests] = js.undefined,
+        MaxParallelOfTests: js.UndefOr[MaxParallelOfTests] = js.undefined
+    ): RecommendationJobResourceLimit = {
+      val __obj = js.Dynamic.literal()
+      MaxNumberOfTests.foreach(__v => __obj.updateDynamic("MaxNumberOfTests")(__v.asInstanceOf[js.Any]))
+      MaxParallelOfTests.foreach(__v => __obj.updateDynamic("MaxParallelOfTests")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecommendationJobResourceLimit]
+    }
+  }
+
+  /** Specifies conditions for stopping a job. When a job reaches a stopping condition limit, SageMaker ends the job.
+    */
+  @js.native
+  trait RecommendationJobStoppingConditions extends js.Object {
+    var MaxInvocations: js.UndefOr[Int]
+    var ModelLatencyThresholds: js.UndefOr[ModelLatencyThresholds]
+  }
+
+  object RecommendationJobStoppingConditions {
+    @inline
+    def apply(
+        MaxInvocations: js.UndefOr[Int] = js.undefined,
+        ModelLatencyThresholds: js.UndefOr[ModelLatencyThresholds] = js.undefined
+    ): RecommendationJobStoppingConditions = {
+      val __obj = js.Dynamic.literal()
+      MaxInvocations.foreach(__v => __obj.updateDynamic("MaxInvocations")(__v.asInstanceOf[js.Any]))
+      ModelLatencyThresholds.foreach(__v => __obj.updateDynamic("ModelLatencyThresholds")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecommendationJobStoppingConditions]
+    }
+  }
+
+  /** The metrics of recommendations.
+    */
+  @js.native
+  trait RecommendationMetrics extends js.Object {
+    var CostPerHour: Float
+    var CostPerInference: Float
+    var MaxInvocations: Int
+    var ModelLatency: Int
+  }
+
+  object RecommendationMetrics {
+    @inline
+    def apply(
+        CostPerHour: Float,
+        CostPerInference: Float,
+        MaxInvocations: Int,
+        ModelLatency: Int
+    ): RecommendationMetrics = {
+      val __obj = js.Dynamic.literal(
+        "CostPerHour" -> CostPerHour.asInstanceOf[js.Any],
+        "CostPerInference" -> CostPerInference.asInstanceOf[js.Any],
+        "MaxInvocations" -> MaxInvocations.asInstanceOf[js.Any],
+        "ModelLatency" -> ModelLatency.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RecommendationMetrics]
     }
   }
 
@@ -17647,7 +20081,7 @@ package object sagemaker {
     }
   }
 
-  /** Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field of the <code>ImageConfig</code> object that you passed to a call to <a>CreateModel</a> and the private Docker registry where the model image is hosted requires authentication.
+  /** Specifies an authentication configuration for the private docker registry where your model image is hosted. Specify a value for this property only if you specified <code>Vpc</code> as the value for the <code>RepositoryAccessMode</code> field of the <code>ImageConfig</code> object that you passed to a call to <code>CreateModel</code> and the private Docker registry where the model image is hosted requires authentication.
     */
   @js.native
   trait RepositoryAuthConfig extends js.Object {
@@ -17746,6 +20180,7 @@ package object sagemaker {
   @js.native
   trait ResourceSpec extends js.Object {
     var InstanceType: js.UndefOr[AppInstanceType]
+    var LifecycleConfigArn: js.UndefOr[StudioLifecycleConfigArn]
     var SageMakerImageArn: js.UndefOr[ImageArn]
     var SageMakerImageVersionArn: js.UndefOr[ImageVersionArn]
   }
@@ -17754,11 +20189,13 @@ package object sagemaker {
     @inline
     def apply(
         InstanceType: js.UndefOr[AppInstanceType] = js.undefined,
+        LifecycleConfigArn: js.UndefOr[StudioLifecycleConfigArn] = js.undefined,
         SageMakerImageArn: js.UndefOr[ImageArn] = js.undefined,
         SageMakerImageVersionArn: js.UndefOr[ImageVersionArn] = js.undefined
     ): ResourceSpec = {
       val __obj = js.Dynamic.literal()
       InstanceType.foreach(__v => __obj.updateDynamic("InstanceType")(__v.asInstanceOf[js.Any]))
+      LifecycleConfigArn.foreach(__v => __obj.updateDynamic("LifecycleConfigArn")(__v.asInstanceOf[js.Any]))
       SageMakerImageArn.foreach(__v => __obj.updateDynamic("SageMakerImageArn")(__v.asInstanceOf[js.Any]))
       SageMakerImageVersionArn.foreach(__v => __obj.updateDynamic("SageMakerImageVersionArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ResourceSpec]
@@ -17780,6 +20217,61 @@ package object sagemaker {
       val __obj = js.Dynamic.literal()
       HomeEfsFileSystem.foreach(__v => __obj.updateDynamic("HomeEfsFileSystem")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RetentionPolicy]
+    }
+  }
+
+  @js.native
+  trait RetryPipelineExecutionRequest extends js.Object {
+    var ClientRequestToken: IdempotencyToken
+    var PipelineExecutionArn: PipelineExecutionArn
+  }
+
+  object RetryPipelineExecutionRequest {
+    @inline
+    def apply(
+        ClientRequestToken: IdempotencyToken,
+        PipelineExecutionArn: PipelineExecutionArn
+    ): RetryPipelineExecutionRequest = {
+      val __obj = js.Dynamic.literal(
+        "ClientRequestToken" -> ClientRequestToken.asInstanceOf[js.Any],
+        "PipelineExecutionArn" -> PipelineExecutionArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RetryPipelineExecutionRequest]
+    }
+  }
+
+  @js.native
+  trait RetryPipelineExecutionResponse extends js.Object {
+    var PipelineExecutionArn: js.UndefOr[PipelineExecutionArn]
+  }
+
+  object RetryPipelineExecutionResponse {
+    @inline
+    def apply(
+        PipelineExecutionArn: js.UndefOr[PipelineExecutionArn] = js.undefined
+    ): RetryPipelineExecutionResponse = {
+      val __obj = js.Dynamic.literal()
+      PipelineExecutionArn.foreach(__v => __obj.updateDynamic("PipelineExecutionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RetryPipelineExecutionResponse]
+    }
+  }
+
+  /** The retry strategy to use when a training job fails due to an <code>InternalServerError</code>. <code>RetryStrategy</code> is specified as part of the <code>CreateTrainingJob</code> and <code>CreateHyperParameterTuningJob</code> requests. You can add the <code>StoppingCondition</code> parameter to the request to limit the training time for the complete job.
+    */
+  @js.native
+  trait RetryStrategy extends js.Object {
+    var MaximumRetryAttempts: MaximumRetryAttempts
+  }
+
+  object RetryStrategy {
+    @inline
+    def apply(
+        MaximumRetryAttempts: MaximumRetryAttempts
+    ): RetryStrategy = {
+      val __obj = js.Dynamic.literal(
+        "MaximumRetryAttempts" -> MaximumRetryAttempts.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[RetryStrategy]
     }
   }
 
@@ -17895,6 +20387,7 @@ package object sagemaker {
     var ModelPackageGroup: js.UndefOr[ModelPackageGroup]
     var Pipeline: js.UndefOr[Pipeline]
     var PipelineExecution: js.UndefOr[PipelineExecution]
+    var Project: js.UndefOr[Project]
     var TrainingJob: js.UndefOr[TrainingJob]
     var Trial: js.UndefOr[Trial]
     var TrialComponent: js.UndefOr[TrialComponent]
@@ -17910,6 +20403,7 @@ package object sagemaker {
         ModelPackageGroup: js.UndefOr[ModelPackageGroup] = js.undefined,
         Pipeline: js.UndefOr[Pipeline] = js.undefined,
         PipelineExecution: js.UndefOr[PipelineExecution] = js.undefined,
+        Project: js.UndefOr[Project] = js.undefined,
         TrainingJob: js.UndefOr[TrainingJob] = js.undefined,
         Trial: js.UndefOr[Trial] = js.undefined,
         TrialComponent: js.UndefOr[TrialComponent] = js.undefined
@@ -17922,6 +20416,7 @@ package object sagemaker {
       ModelPackageGroup.foreach(__v => __obj.updateDynamic("ModelPackageGroup")(__v.asInstanceOf[js.Any]))
       Pipeline.foreach(__v => __obj.updateDynamic("Pipeline")(__v.asInstanceOf[js.Any]))
       PipelineExecution.foreach(__v => __obj.updateDynamic("PipelineExecution")(__v.asInstanceOf[js.Any]))
+      Project.foreach(__v => __obj.updateDynamic("Project")(__v.asInstanceOf[js.Any]))
       TrainingJob.foreach(__v => __obj.updateDynamic("TrainingJob")(__v.asInstanceOf[js.Any]))
       Trial.foreach(__v => __obj.updateDynamic("Trial")(__v.asInstanceOf[js.Any]))
       TrialComponent.foreach(__v => __obj.updateDynamic("TrialComponent")(__v.asInstanceOf[js.Any]))
@@ -18010,7 +20505,87 @@ package object sagemaker {
     }
   }
 
-  /** Details of a provisioned service catalog product. For information about service catalog, see [[https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html|What is AWS Service Catalog]].
+  @js.native
+  trait SendPipelineExecutionStepFailureRequest extends js.Object {
+    var CallbackToken: CallbackToken
+    var ClientRequestToken: js.UndefOr[IdempotencyToken]
+    var FailureReason: js.UndefOr[String256]
+  }
+
+  object SendPipelineExecutionStepFailureRequest {
+    @inline
+    def apply(
+        CallbackToken: CallbackToken,
+        ClientRequestToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        FailureReason: js.UndefOr[String256] = js.undefined
+    ): SendPipelineExecutionStepFailureRequest = {
+      val __obj = js.Dynamic.literal(
+        "CallbackToken" -> CallbackToken.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      FailureReason.foreach(__v => __obj.updateDynamic("FailureReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendPipelineExecutionStepFailureRequest]
+    }
+  }
+
+  @js.native
+  trait SendPipelineExecutionStepFailureResponse extends js.Object {
+    var PipelineExecutionArn: js.UndefOr[PipelineExecutionArn]
+  }
+
+  object SendPipelineExecutionStepFailureResponse {
+    @inline
+    def apply(
+        PipelineExecutionArn: js.UndefOr[PipelineExecutionArn] = js.undefined
+    ): SendPipelineExecutionStepFailureResponse = {
+      val __obj = js.Dynamic.literal()
+      PipelineExecutionArn.foreach(__v => __obj.updateDynamic("PipelineExecutionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendPipelineExecutionStepFailureResponse]
+    }
+  }
+
+  @js.native
+  trait SendPipelineExecutionStepSuccessRequest extends js.Object {
+    var CallbackToken: CallbackToken
+    var ClientRequestToken: js.UndefOr[IdempotencyToken]
+    var OutputParameters: js.UndefOr[OutputParameterList]
+  }
+
+  object SendPipelineExecutionStepSuccessRequest {
+    @inline
+    def apply(
+        CallbackToken: CallbackToken,
+        ClientRequestToken: js.UndefOr[IdempotencyToken] = js.undefined,
+        OutputParameters: js.UndefOr[OutputParameterList] = js.undefined
+    ): SendPipelineExecutionStepSuccessRequest = {
+      val __obj = js.Dynamic.literal(
+        "CallbackToken" -> CallbackToken.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      OutputParameters.foreach(__v => __obj.updateDynamic("OutputParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendPipelineExecutionStepSuccessRequest]
+    }
+  }
+
+  @js.native
+  trait SendPipelineExecutionStepSuccessResponse extends js.Object {
+    var PipelineExecutionArn: js.UndefOr[PipelineExecutionArn]
+  }
+
+  object SendPipelineExecutionStepSuccessResponse {
+    @inline
+    def apply(
+        PipelineExecutionArn: js.UndefOr[PipelineExecutionArn] = js.undefined
+    ): SendPipelineExecutionStepSuccessResponse = {
+      val __obj = js.Dynamic.literal()
+      PipelineExecutionArn.foreach(__v => __obj.updateDynamic("PipelineExecutionArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendPipelineExecutionStepSuccessResponse]
+    }
+  }
+
+  /** Details of a provisioned service catalog product. For information about service catalog, see [[https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html|What is Amazon Web Services Service Catalog]].
     */
   @js.native
   trait ServiceCatalogProvisionedProductDetails extends js.Object {
@@ -18031,13 +20606,13 @@ package object sagemaker {
     }
   }
 
-  /** Details that you specify to provision a service catalog product. For information about service catalog, see .[[https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html|What is AWS Service Catalog]].
+  /** Details that you specify to provision a service catalog product. For information about service catalog, see [[https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html|What is Amazon Web Services Service Catalog]].
     */
   @js.native
   trait ServiceCatalogProvisioningDetails extends js.Object {
     var ProductId: ServiceCatalogEntityId
-    var ProvisioningArtifactId: ServiceCatalogEntityId
     var PathId: js.UndefOr[ServiceCatalogEntityId]
+    var ProvisioningArtifactId: js.UndefOr[ServiceCatalogEntityId]
     var ProvisioningParameters: js.UndefOr[ProvisioningParameters]
   }
 
@@ -18045,18 +20620,39 @@ package object sagemaker {
     @inline
     def apply(
         ProductId: ServiceCatalogEntityId,
-        ProvisioningArtifactId: ServiceCatalogEntityId,
         PathId: js.UndefOr[ServiceCatalogEntityId] = js.undefined,
+        ProvisioningArtifactId: js.UndefOr[ServiceCatalogEntityId] = js.undefined,
         ProvisioningParameters: js.UndefOr[ProvisioningParameters] = js.undefined
     ): ServiceCatalogProvisioningDetails = {
       val __obj = js.Dynamic.literal(
-        "ProductId" -> ProductId.asInstanceOf[js.Any],
-        "ProvisioningArtifactId" -> ProvisioningArtifactId.asInstanceOf[js.Any]
+        "ProductId" -> ProductId.asInstanceOf[js.Any]
       )
 
       PathId.foreach(__v => __obj.updateDynamic("PathId")(__v.asInstanceOf[js.Any]))
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
       ProvisioningParameters.foreach(__v => __obj.updateDynamic("ProvisioningParameters")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ServiceCatalogProvisioningDetails]
+    }
+  }
+
+  /** Details that you specify to provision a service catalog product. For information about service catalog, see [[https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html|What is Amazon Web Services Service Catalog]].
+    */
+  @js.native
+  trait ServiceCatalogProvisioningUpdateDetails extends js.Object {
+    var ProvisioningArtifactId: js.UndefOr[ServiceCatalogEntityId]
+    var ProvisioningParameters: js.UndefOr[ProvisioningParameters]
+  }
+
+  object ServiceCatalogProvisioningUpdateDetails {
+    @inline
+    def apply(
+        ProvisioningArtifactId: js.UndefOr[ServiceCatalogEntityId] = js.undefined,
+        ProvisioningParameters: js.UndefOr[ProvisioningParameters] = js.undefined
+    ): ServiceCatalogProvisioningUpdateDetails = {
+      val __obj = js.Dynamic.literal()
+      ProvisioningArtifactId.foreach(__v => __obj.updateDynamic("ProvisioningArtifactId")(__v.asInstanceOf[js.Any]))
+      ProvisioningParameters.foreach(__v => __obj.updateDynamic("ProvisioningParameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ServiceCatalogProvisioningUpdateDetails]
     }
   }
 
@@ -18104,7 +20700,7 @@ package object sagemaker {
     }
   }
 
-  /** Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in AWS Marketplace that you are subscribed to.
+  /** Specifies an algorithm that was used to create the model package. The algorithm must be either an algorithm resource in your Amazon SageMaker account or an algorithm in Amazon Web Services Marketplace that you are subscribed to.
     */
   @js.native
   trait SourceAlgorithm extends js.Object {
@@ -18314,6 +20910,23 @@ package object sagemaker {
   }
 
   @js.native
+  trait StopInferenceRecommendationsJobRequest extends js.Object {
+    var JobName: RecommendationJobName
+  }
+
+  object StopInferenceRecommendationsJobRequest {
+    @inline
+    def apply(
+        JobName: RecommendationJobName
+    ): StopInferenceRecommendationsJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobName" -> JobName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopInferenceRecommendationsJobRequest]
+    }
+  }
+
+  @js.native
   trait StopLabelingJobRequest extends js.Object {
     var LabelingJobName: LabelingJobName
   }
@@ -18451,7 +21064,7 @@ package object sagemaker {
     }
   }
 
-  /** Specifies a limit to how long a model training or compilation job can run. It also specifies how long you are willing to wait for a managed spot training job to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs. To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with
+  /** Specifies a limit to how long a model training job or model compilation job can run. It also specifies how long a managed spot training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training or compilation job. Use this API to cap model training costs. To stop a training job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the results of training are not lost. The training algorithms provided by Amazon SageMaker automatically save the intermediate results of a model training job when possible. This attempt to save artifacts is only a best effort case as model might not be in a state from which it can be saved. For example, if training has just started, the model might not be ready to save. When saved, this intermediate data is a valid model artifact. You can use it to create a model with
     * <code>CreateModel</code>.
     *
     * '''Note:'''The Neural Topic Model (NTM) currently does not support saving intermediate model artifacts. When training NTMs, make sure that the maximum runtime is sufficient for the training job to complete.
@@ -18472,6 +21085,36 @@ package object sagemaker {
       MaxRuntimeInSeconds.foreach(__v => __obj.updateDynamic("MaxRuntimeInSeconds")(__v.asInstanceOf[js.Any]))
       MaxWaitTimeInSeconds.foreach(__v => __obj.updateDynamic("MaxWaitTimeInSeconds")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StoppingCondition]
+    }
+  }
+
+  /** Details of the Studio Lifecycle Configuration.
+    */
+  @js.native
+  trait StudioLifecycleConfigDetails extends js.Object {
+    var CreationTime: js.UndefOr[Timestamp]
+    var LastModifiedTime: js.UndefOr[Timestamp]
+    var StudioLifecycleConfigAppType: js.UndefOr[StudioLifecycleConfigAppType]
+    var StudioLifecycleConfigArn: js.UndefOr[StudioLifecycleConfigArn]
+    var StudioLifecycleConfigName: js.UndefOr[StudioLifecycleConfigName]
+  }
+
+  object StudioLifecycleConfigDetails {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[Timestamp] = js.undefined,
+        LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        StudioLifecycleConfigAppType: js.UndefOr[StudioLifecycleConfigAppType] = js.undefined,
+        StudioLifecycleConfigArn: js.UndefOr[StudioLifecycleConfigArn] = js.undefined,
+        StudioLifecycleConfigName: js.UndefOr[StudioLifecycleConfigName] = js.undefined
+    ): StudioLifecycleConfigDetails = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      StudioLifecycleConfigAppType.foreach(__v => __obj.updateDynamic("StudioLifecycleConfigAppType")(__v.asInstanceOf[js.Any]))
+      StudioLifecycleConfigArn.foreach(__v => __obj.updateDynamic("StudioLifecycleConfigArn")(__v.asInstanceOf[js.Any]))
+      StudioLifecycleConfigName.foreach(__v => __obj.updateDynamic("StudioLifecycleConfigName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StudioLifecycleConfigDetails]
     }
   }
 
@@ -18525,7 +21168,7 @@ package object sagemaker {
     }
   }
 
-  /** Describes a tag.
+  /** A tag object that consists of a key and an optional value, used to manage metadata for SageMaker Amazon Web Services resources. You can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints. For more information on adding tags to SageMaker resources, see <a>AddTags</a>. For more information on adding metadata to your Amazon Web Services resources with tagging, see [[https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html|Tagging Amazon Web Services resources]]. For advice on best practices for managing Amazon Web Services resources with tagging, see [[https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf|Tagging Best Practices: Implement an Effective Amazon Web Services Resource Tagging Strategy]].
     */
   @js.native
   trait Tag extends js.Object {
@@ -18614,13 +21257,35 @@ package object sagemaker {
     }
   }
 
-  /** Currently, the <code>TrafficRoutingConfig</code> API is not supported.
+  /** Defines the traffic pattern of the load test.
+    */
+  @js.native
+  trait TrafficPattern extends js.Object {
+    var Phases: js.UndefOr[Phases]
+    var TrafficType: js.UndefOr[TrafficType]
+  }
+
+  object TrafficPattern {
+    @inline
+    def apply(
+        Phases: js.UndefOr[Phases] = js.undefined,
+        TrafficType: js.UndefOr[TrafficType] = js.undefined
+    ): TrafficPattern = {
+      val __obj = js.Dynamic.literal()
+      Phases.foreach(__v => __obj.updateDynamic("Phases")(__v.asInstanceOf[js.Any]))
+      TrafficType.foreach(__v => __obj.updateDynamic("TrafficType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TrafficPattern]
+    }
+  }
+
+  /** Defines the traffic routing strategy during an endpoint deployment to shift traffic from the old fleet to the new fleet.
     */
   @js.native
   trait TrafficRoutingConfig extends js.Object {
     var Type: TrafficRoutingConfigType
     var WaitIntervalInSeconds: WaitIntervalInSeconds
     var CanarySize: js.UndefOr[CapacitySize]
+    var LinearStepSize: js.UndefOr[CapacitySize]
   }
 
   object TrafficRoutingConfig {
@@ -18628,7 +21293,8 @@ package object sagemaker {
     def apply(
         Type: TrafficRoutingConfigType,
         WaitIntervalInSeconds: WaitIntervalInSeconds,
-        CanarySize: js.UndefOr[CapacitySize] = js.undefined
+        CanarySize: js.UndefOr[CapacitySize] = js.undefined,
+        LinearStepSize: js.UndefOr[CapacitySize] = js.undefined
     ): TrafficRoutingConfig = {
       val __obj = js.Dynamic.literal(
         "Type" -> Type.asInstanceOf[js.Any],
@@ -18636,6 +21302,7 @@ package object sagemaker {
       )
 
       CanarySize.foreach(__v => __obj.updateDynamic("CanarySize")(__v.asInstanceOf[js.Any]))
+      LinearStepSize.foreach(__v => __obj.updateDynamic("LinearStepSize")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrafficRoutingConfig]
     }
   }
@@ -18666,6 +21333,7 @@ package object sagemaker {
     var ModelArtifacts: js.UndefOr[ModelArtifacts]
     var OutputDataConfig: js.UndefOr[OutputDataConfig]
     var ResourceConfig: js.UndefOr[ResourceConfig]
+    var RetryStrategy: js.UndefOr[RetryStrategy]
     var RoleArn: js.UndefOr[RoleArn]
     var SecondaryStatus: js.UndefOr[SecondaryStatus]
     var SecondaryStatusTransitions: js.UndefOr[SecondaryStatusTransitions]
@@ -18707,6 +21375,7 @@ package object sagemaker {
         ModelArtifacts: js.UndefOr[ModelArtifacts] = js.undefined,
         OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
         ResourceConfig: js.UndefOr[ResourceConfig] = js.undefined,
+        RetryStrategy: js.UndefOr[RetryStrategy] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined,
         SecondaryStatus: js.UndefOr[SecondaryStatus] = js.undefined,
         SecondaryStatusTransitions: js.UndefOr[SecondaryStatusTransitions] = js.undefined,
@@ -18745,6 +21414,7 @@ package object sagemaker {
       ModelArtifacts.foreach(__v => __obj.updateDynamic("ModelArtifacts")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
       ResourceConfig.foreach(__v => __obj.updateDynamic("ResourceConfig")(__v.asInstanceOf[js.Any]))
+      RetryStrategy.foreach(__v => __obj.updateDynamic("RetryStrategy")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       SecondaryStatus.foreach(__v => __obj.updateDynamic("SecondaryStatus")(__v.asInstanceOf[js.Any]))
       SecondaryStatusTransitions.foreach(__v => __obj.updateDynamic("SecondaryStatusTransitions")(__v.asInstanceOf[js.Any]))
@@ -19281,6 +21951,7 @@ package object sagemaker {
     var InputArtifacts: js.UndefOr[TrialComponentArtifacts]
     var LastModifiedBy: js.UndefOr[UserContext]
     var LastModifiedTime: js.UndefOr[Timestamp]
+    var LineageGroupArn: js.UndefOr[LineageGroupArn]
     var MetadataProperties: js.UndefOr[MetadataProperties]
     var Metrics: js.UndefOr[TrialComponentMetricSummaries]
     var OutputArtifacts: js.UndefOr[TrialComponentArtifacts]
@@ -19305,6 +21976,7 @@ package object sagemaker {
         InputArtifacts: js.UndefOr[TrialComponentArtifacts] = js.undefined,
         LastModifiedBy: js.UndefOr[UserContext] = js.undefined,
         LastModifiedTime: js.UndefOr[Timestamp] = js.undefined,
+        LineageGroupArn: js.UndefOr[LineageGroupArn] = js.undefined,
         MetadataProperties: js.UndefOr[MetadataProperties] = js.undefined,
         Metrics: js.UndefOr[TrialComponentMetricSummaries] = js.undefined,
         OutputArtifacts: js.UndefOr[TrialComponentArtifacts] = js.undefined,
@@ -19326,6 +21998,7 @@ package object sagemaker {
       InputArtifacts.foreach(__v => __obj.updateDynamic("InputArtifacts")(__v.asInstanceOf[js.Any]))
       LastModifiedBy.foreach(__v => __obj.updateDynamic("LastModifiedBy")(__v.asInstanceOf[js.Any]))
       LastModifiedTime.foreach(__v => __obj.updateDynamic("LastModifiedTime")(__v.asInstanceOf[js.Any]))
+      LineageGroupArn.foreach(__v => __obj.updateDynamic("LineageGroupArn")(__v.asInstanceOf[js.Any]))
       MetadataProperties.foreach(__v => __obj.updateDynamic("MetadataProperties")(__v.asInstanceOf[js.Any]))
       Metrics.foreach(__v => __obj.updateDynamic("Metrics")(__v.asInstanceOf[js.Any]))
       OutputArtifacts.foreach(__v => __obj.updateDynamic("OutputArtifacts")(__v.asInstanceOf[js.Any]))
@@ -19652,7 +22325,25 @@ package object sagemaker {
     }
   }
 
-  /** Represents an amount of money in United States dollars/
+  /** Metadata for a tuning step.
+    */
+  @js.native
+  trait TuningJobStepMetaData extends js.Object {
+    var Arn: js.UndefOr[HyperParameterTuningJobArn]
+  }
+
+  object TuningJobStepMetaData {
+    @inline
+    def apply(
+        Arn: js.UndefOr[HyperParameterTuningJobArn] = js.undefined
+    ): TuningJobStepMetaData = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TuningJobStepMetaData]
+    }
+  }
+
+  /** Represents an amount of money in United States dollars.
     */
   @js.native
   trait USD extends js.Object {
@@ -19676,7 +22367,7 @@ package object sagemaker {
     }
   }
 
-  /** Provided configuration information for the worker UI for a labeling job.
+  /** Provided configuration information for the worker UI for a labeling job. Provide either <code>HumanTaskUiArn</code> or <code>UiTemplateS3Uri</code>. For named entity recognition, 3D point cloud and video frame labeling jobs, use <code>HumanTaskUiArn</code>. For all other Ground Truth built-in task types and custom task types, use <code>UiTemplateS3Uri</code> to specify the location of a worker task template in Amazon S3.
     */
   @js.native
   trait UiConfig extends js.Object {
@@ -19949,6 +22640,7 @@ package object sagemaker {
     var DeviceFleetName: EntityName
     var OutputConfig: EdgeOutputConfig
     var Description: js.UndefOr[DeviceFleetDescription]
+    var EnableIotRoleAlias: js.UndefOr[EnableIotRoleAlias]
     var RoleArn: js.UndefOr[RoleArn]
   }
 
@@ -19958,6 +22650,7 @@ package object sagemaker {
         DeviceFleetName: EntityName,
         OutputConfig: EdgeOutputConfig,
         Description: js.UndefOr[DeviceFleetDescription] = js.undefined,
+        EnableIotRoleAlias: js.UndefOr[EnableIotRoleAlias] = js.undefined,
         RoleArn: js.UndefOr[RoleArn] = js.undefined
     ): UpdateDeviceFleetRequest = {
       val __obj = js.Dynamic.literal(
@@ -19966,6 +22659,7 @@ package object sagemaker {
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      EnableIotRoleAlias.foreach(__v => __obj.updateDynamic("EnableIotRoleAlias")(__v.asInstanceOf[js.Any]))
       RoleArn.foreach(__v => __obj.updateDynamic("RoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDeviceFleetRequest]
     }
@@ -19995,19 +22689,22 @@ package object sagemaker {
   trait UpdateDomainRequest extends js.Object {
     var DomainId: DomainId
     var DefaultUserSettings: js.UndefOr[UserSettings]
+    var DomainSettingsForUpdate: js.UndefOr[DomainSettingsForUpdate]
   }
 
   object UpdateDomainRequest {
     @inline
     def apply(
         DomainId: DomainId,
-        DefaultUserSettings: js.UndefOr[UserSettings] = js.undefined
+        DefaultUserSettings: js.UndefOr[UserSettings] = js.undefined,
+        DomainSettingsForUpdate: js.UndefOr[DomainSettingsForUpdate] = js.undefined
     ): UpdateDomainRequest = {
       val __obj = js.Dynamic.literal(
         "DomainId" -> DomainId.asInstanceOf[js.Any]
       )
 
       DefaultUserSettings.foreach(__v => __obj.updateDynamic("DefaultUserSettings")(__v.asInstanceOf[js.Any]))
+      DomainSettingsForUpdate.foreach(__v => __obj.updateDynamic("DomainSettingsForUpdate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateDomainRequest]
     }
   }
@@ -20035,6 +22732,7 @@ package object sagemaker {
     var DeploymentConfig: js.UndefOr[DeploymentConfig]
     var ExcludeRetainedVariantProperties: js.UndefOr[VariantPropertyList]
     var RetainAllVariantProperties: js.UndefOr[Boolean]
+    var RetainDeploymentConfig: js.UndefOr[Boolean]
   }
 
   object UpdateEndpointInput {
@@ -20044,7 +22742,8 @@ package object sagemaker {
         EndpointName: EndpointName,
         DeploymentConfig: js.UndefOr[DeploymentConfig] = js.undefined,
         ExcludeRetainedVariantProperties: js.UndefOr[VariantPropertyList] = js.undefined,
-        RetainAllVariantProperties: js.UndefOr[Boolean] = js.undefined
+        RetainAllVariantProperties: js.UndefOr[Boolean] = js.undefined,
+        RetainDeploymentConfig: js.UndefOr[Boolean] = js.undefined
     ): UpdateEndpointInput = {
       val __obj = js.Dynamic.literal(
         "EndpointConfigName" -> EndpointConfigName.asInstanceOf[js.Any],
@@ -20054,6 +22753,7 @@ package object sagemaker {
       DeploymentConfig.foreach(__v => __obj.updateDynamic("DeploymentConfig")(__v.asInstanceOf[js.Any]))
       ExcludeRetainedVariantProperties.foreach(__v => __obj.updateDynamic("ExcludeRetainedVariantProperties")(__v.asInstanceOf[js.Any]))
       RetainAllVariantProperties.foreach(__v => __obj.updateDynamic("RetainAllVariantProperties")(__v.asInstanceOf[js.Any]))
+      RetainDeploymentConfig.foreach(__v => __obj.updateDynamic("RetainDeploymentConfig")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateEndpointInput]
     }
   }
@@ -20200,24 +22900,33 @@ package object sagemaker {
 
   @js.native
   trait UpdateModelPackageInput extends js.Object {
-    var ModelApprovalStatus: ModelApprovalStatus
     var ModelPackageArn: ModelPackageArn
+    var AdditionalInferenceSpecificationsToAdd: js.UndefOr[AdditionalInferenceSpecifications]
     var ApprovalDescription: js.UndefOr[ApprovalDescription]
+    var CustomerMetadataProperties: js.UndefOr[CustomerMetadataMap]
+    var CustomerMetadataPropertiesToRemove: js.UndefOr[CustomerMetadataKeyList]
+    var ModelApprovalStatus: js.UndefOr[ModelApprovalStatus]
   }
 
   object UpdateModelPackageInput {
     @inline
     def apply(
-        ModelApprovalStatus: ModelApprovalStatus,
         ModelPackageArn: ModelPackageArn,
-        ApprovalDescription: js.UndefOr[ApprovalDescription] = js.undefined
+        AdditionalInferenceSpecificationsToAdd: js.UndefOr[AdditionalInferenceSpecifications] = js.undefined,
+        ApprovalDescription: js.UndefOr[ApprovalDescription] = js.undefined,
+        CustomerMetadataProperties: js.UndefOr[CustomerMetadataMap] = js.undefined,
+        CustomerMetadataPropertiesToRemove: js.UndefOr[CustomerMetadataKeyList] = js.undefined,
+        ModelApprovalStatus: js.UndefOr[ModelApprovalStatus] = js.undefined
     ): UpdateModelPackageInput = {
       val __obj = js.Dynamic.literal(
-        "ModelApprovalStatus" -> ModelApprovalStatus.asInstanceOf[js.Any],
         "ModelPackageArn" -> ModelPackageArn.asInstanceOf[js.Any]
       )
 
+      AdditionalInferenceSpecificationsToAdd.foreach(__v => __obj.updateDynamic("AdditionalInferenceSpecificationsToAdd")(__v.asInstanceOf[js.Any]))
       ApprovalDescription.foreach(__v => __obj.updateDynamic("ApprovalDescription")(__v.asInstanceOf[js.Any]))
+      CustomerMetadataProperties.foreach(__v => __obj.updateDynamic("CustomerMetadataProperties")(__v.asInstanceOf[js.Any]))
+      CustomerMetadataPropertiesToRemove.foreach(__v => __obj.updateDynamic("CustomerMetadataPropertiesToRemove")(__v.asInstanceOf[js.Any]))
+      ModelApprovalStatus.foreach(__v => __obj.updateDynamic("ModelApprovalStatus")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateModelPackageInput]
     }
   }
@@ -20459,6 +23168,50 @@ package object sagemaker {
       val __obj = js.Dynamic.literal()
       PipelineArn.foreach(__v => __obj.updateDynamic("PipelineArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdatePipelineResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateProjectInput extends js.Object {
+    var ProjectName: ProjectEntityName
+    var ProjectDescription: js.UndefOr[EntityDescription]
+    var ServiceCatalogProvisioningUpdateDetails: js.UndefOr[ServiceCatalogProvisioningUpdateDetails]
+    var Tags: js.UndefOr[TagList]
+  }
+
+  object UpdateProjectInput {
+    @inline
+    def apply(
+        ProjectName: ProjectEntityName,
+        ProjectDescription: js.UndefOr[EntityDescription] = js.undefined,
+        ServiceCatalogProvisioningUpdateDetails: js.UndefOr[ServiceCatalogProvisioningUpdateDetails] = js.undefined,
+        Tags: js.UndefOr[TagList] = js.undefined
+    ): UpdateProjectInput = {
+      val __obj = js.Dynamic.literal(
+        "ProjectName" -> ProjectName.asInstanceOf[js.Any]
+      )
+
+      ProjectDescription.foreach(__v => __obj.updateDynamic("ProjectDescription")(__v.asInstanceOf[js.Any]))
+      ServiceCatalogProvisioningUpdateDetails.foreach(__v => __obj.updateDynamic("ServiceCatalogProvisioningUpdateDetails")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateProjectInput]
+    }
+  }
+
+  @js.native
+  trait UpdateProjectOutput extends js.Object {
+    var ProjectArn: ProjectArn
+  }
+
+  object UpdateProjectOutput {
+    @inline
+    def apply(
+        ProjectArn: ProjectArn
+    ): UpdateProjectOutput = {
+      val __obj = js.Dynamic.literal(
+        "ProjectArn" -> ProjectArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateProjectOutput]
     }
   }
 
@@ -20729,7 +23482,7 @@ package object sagemaker {
     }
   }
 
-  /** Information about the user who created or modified an experiment, trial, or trial component.
+  /** Information about the user who created or modified an experiment, trial, trial component, lineage group, or project.
     */
   @js.native
   trait UserContext extends js.Object {
@@ -20790,6 +23543,8 @@ package object sagemaker {
     var ExecutionRole: js.UndefOr[RoleArn]
     var JupyterServerAppSettings: js.UndefOr[JupyterServerAppSettings]
     var KernelGatewayAppSettings: js.UndefOr[KernelGatewayAppSettings]
+    var RSessionAppSettings: js.UndefOr[RSessionAppSettings]
+    var RStudioServerProAppSettings: js.UndefOr[RStudioServerProAppSettings]
     var SecurityGroups: js.UndefOr[SecurityGroupIds]
     var SharingSettings: js.UndefOr[SharingSettings]
     var TensorBoardAppSettings: js.UndefOr[TensorBoardAppSettings]
@@ -20801,6 +23556,8 @@ package object sagemaker {
         ExecutionRole: js.UndefOr[RoleArn] = js.undefined,
         JupyterServerAppSettings: js.UndefOr[JupyterServerAppSettings] = js.undefined,
         KernelGatewayAppSettings: js.UndefOr[KernelGatewayAppSettings] = js.undefined,
+        RSessionAppSettings: js.UndefOr[RSessionAppSettings] = js.undefined,
+        RStudioServerProAppSettings: js.UndefOr[RStudioServerProAppSettings] = js.undefined,
         SecurityGroups: js.UndefOr[SecurityGroupIds] = js.undefined,
         SharingSettings: js.UndefOr[SharingSettings] = js.undefined,
         TensorBoardAppSettings: js.UndefOr[TensorBoardAppSettings] = js.undefined
@@ -20809,6 +23566,8 @@ package object sagemaker {
       ExecutionRole.foreach(__v => __obj.updateDynamic("ExecutionRole")(__v.asInstanceOf[js.Any]))
       JupyterServerAppSettings.foreach(__v => __obj.updateDynamic("JupyterServerAppSettings")(__v.asInstanceOf[js.Any]))
       KernelGatewayAppSettings.foreach(__v => __obj.updateDynamic("KernelGatewayAppSettings")(__v.asInstanceOf[js.Any]))
+      RSessionAppSettings.foreach(__v => __obj.updateDynamic("RSessionAppSettings")(__v.asInstanceOf[js.Any]))
+      RStudioServerProAppSettings.foreach(__v => __obj.updateDynamic("RStudioServerProAppSettings")(__v.asInstanceOf[js.Any]))
       SecurityGroups.foreach(__v => __obj.updateDynamic("SecurityGroups")(__v.asInstanceOf[js.Any]))
       SharingSettings.foreach(__v => __obj.updateDynamic("SharingSettings")(__v.asInstanceOf[js.Any]))
       TensorBoardAppSettings.foreach(__v => __obj.updateDynamic("TensorBoardAppSettings")(__v.asInstanceOf[js.Any]))
@@ -20835,6 +23594,30 @@ package object sagemaker {
     }
   }
 
+  /** A lineage entity connected to the starting entity(ies).
+    */
+  @js.native
+  trait Vertex extends js.Object {
+    var Arn: js.UndefOr[AssociationEntityArn]
+    var LineageType: js.UndefOr[LineageType]
+    var Type: js.UndefOr[String40]
+  }
+
+  object Vertex {
+    @inline
+    def apply(
+        Arn: js.UndefOr[AssociationEntityArn] = js.undefined,
+        LineageType: js.UndefOr[LineageType] = js.undefined,
+        Type: js.UndefOr[String40] = js.undefined
+    ): Vertex = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      LineageType.foreach(__v => __obj.updateDynamic("LineageType")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Vertex]
+    }
+  }
+
   /** Specifies a VPC that your training jobs and hosted models have access to. Control access to and from your training and model containers by configuring the VPC. For more information, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html|Protect Endpoints by Using an Amazon Virtual Private Cloud]] and [[https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html|Protect Training Jobs by Using an Amazon Virtual Private Cloud]].
     */
   @js.native
@@ -20857,7 +23640,7 @@ package object sagemaker {
     }
   }
 
-  /** A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each AWS Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html|Create a Private Workforce]].
+  /** A single private workforce, which is automatically created when you create your first private work team. You can create one private work force in each Amazon Web Services Region. By default, any workforce-related API operation used in a specific region will apply to the workforce created in that region. To learn how to create a private workforce, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html|Create a Private Workforce]].
     */
   @js.native
   trait Workforce extends js.Object {

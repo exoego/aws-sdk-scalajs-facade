@@ -11,6 +11,24 @@ object AdditionalResultAttributeValueType {
 }
 
 @js.native
+sealed trait ConditionOperator extends js.Any
+object ConditionOperator {
+  val GreaterThan = "GreaterThan".asInstanceOf[ConditionOperator]
+  val GreaterThanOrEquals = "GreaterThanOrEquals".asInstanceOf[ConditionOperator]
+  val LessThan = "LessThan".asInstanceOf[ConditionOperator]
+  val LessThanOrEquals = "LessThanOrEquals".asInstanceOf[ConditionOperator]
+  val Equals = "Equals".asInstanceOf[ConditionOperator]
+  val NotEquals = "NotEquals".asInstanceOf[ConditionOperator]
+  val Contains = "Contains".asInstanceOf[ConditionOperator]
+  val NotContains = "NotContains".asInstanceOf[ConditionOperator]
+  val Exists = "Exists".asInstanceOf[ConditionOperator]
+  val NotExists = "NotExists".asInstanceOf[ConditionOperator]
+  val BeginsWith = "BeginsWith".asInstanceOf[ConditionOperator]
+
+  @inline def values: js.Array[ConditionOperator] = js.Array(GreaterThan, GreaterThanOrEquals, LessThan, LessThanOrEquals, Equals, NotEquals, Contains, NotContains, Exists, NotExists, BeginsWith)
+}
+
+@js.native
 sealed trait ConfluenceAttachmentFieldName extends js.Any
 object ConfluenceAttachmentFieldName {
   val AUTHOR = "AUTHOR".asInstanceOf[ConfluenceAttachmentFieldName]
@@ -133,8 +151,10 @@ object DataSourceType {
   val CUSTOM = "CUSTOM".asInstanceOf[DataSourceType]
   val CONFLUENCE = "CONFLUENCE".asInstanceOf[DataSourceType]
   val GOOGLEDRIVE = "GOOGLEDRIVE".asInstanceOf[DataSourceType]
+  val WEBCRAWLER = "WEBCRAWLER".asInstanceOf[DataSourceType]
+  val WORKDOCS = "WORKDOCS".asInstanceOf[DataSourceType]
 
-  @inline def values: js.Array[DataSourceType] = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE)
+  @inline def values: js.Array[DataSourceType] = js.Array(S3, SHAREPOINT, DATABASE, SALESFORCE, ONEDRIVE, SERVICENOW, CUSTOM, CONFLUENCE, GOOGLEDRIVE, WEBCRAWLER, WORKDOCS)
 }
 
 @js.native
@@ -160,12 +180,53 @@ object DocumentAttributeValueType {
 }
 
 @js.native
+sealed trait DocumentStatus extends js.Any
+object DocumentStatus {
+  val NOT_FOUND = "NOT_FOUND".asInstanceOf[DocumentStatus]
+  val PROCESSING = "PROCESSING".asInstanceOf[DocumentStatus]
+  val INDEXED = "INDEXED".asInstanceOf[DocumentStatus]
+  val UPDATED = "UPDATED".asInstanceOf[DocumentStatus]
+  val FAILED = "FAILED".asInstanceOf[DocumentStatus]
+  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[DocumentStatus]
+
+  @inline def values: js.Array[DocumentStatus] = js.Array(NOT_FOUND, PROCESSING, INDEXED, UPDATED, FAILED, UPDATE_FAILED)
+}
+
+@js.native
+sealed trait EndpointType extends js.Any
+object EndpointType {
+  val HOME = "HOME".asInstanceOf[EndpointType]
+
+  @inline def values: js.Array[EndpointType] = js.Array(HOME)
+}
+
+@js.native
+sealed trait EntityType extends js.Any
+object EntityType {
+  val USER = "USER".asInstanceOf[EntityType]
+  val GROUP = "GROUP".asInstanceOf[EntityType]
+
+  @inline def values: js.Array[EntityType] = js.Array(USER, GROUP)
+}
+
+@js.native
 sealed trait ErrorCode extends js.Any
 object ErrorCode {
   val InternalError = "InternalError".asInstanceOf[ErrorCode]
   val InvalidRequest = "InvalidRequest".asInstanceOf[ErrorCode]
 
   @inline def values: js.Array[ErrorCode] = js.Array(InternalError, InvalidRequest)
+}
+
+@js.native
+sealed trait ExperienceStatus extends js.Any
+object ExperienceStatus {
+  val CREATING = "CREATING".asInstanceOf[ExperienceStatus]
+  val ACTIVE = "ACTIVE".asInstanceOf[ExperienceStatus]
+  val DELETING = "DELETING".asInstanceOf[ExperienceStatus]
+  val FAILED = "FAILED".asInstanceOf[ExperienceStatus]
+
+  @inline def values: js.Array[ExperienceStatus] = js.Array(CREATING, ACTIVE, DELETING, FAILED)
 }
 
 @js.native
@@ -222,6 +283,19 @@ object IndexStatus {
 }
 
 @js.native
+sealed trait Interval extends js.Any
+object Interval {
+  val THIS_MONTH = "THIS_MONTH".asInstanceOf[Interval]
+  val THIS_WEEK = "THIS_WEEK".asInstanceOf[Interval]
+  val ONE_WEEK_AGO = "ONE_WEEK_AGO".asInstanceOf[Interval]
+  val TWO_WEEKS_AGO = "TWO_WEEKS_AGO".asInstanceOf[Interval]
+  val ONE_MONTH_AGO = "ONE_MONTH_AGO".asInstanceOf[Interval]
+  val TWO_MONTHS_AGO = "TWO_MONTHS_AGO".asInstanceOf[Interval]
+
+  @inline def values: js.Array[Interval] = js.Array(THIS_MONTH, THIS_WEEK, ONE_WEEK_AGO, TWO_WEEKS_AGO, ONE_MONTH_AGO, TWO_MONTHS_AGO)
+}
+
+@js.native
 sealed trait KeyLocation extends js.Any
 object KeyLocation {
   val URL = "URL".asInstanceOf[KeyLocation]
@@ -231,12 +305,55 @@ object KeyLocation {
 }
 
 @js.native
+sealed trait MetricType extends js.Any
+object MetricType {
+  val QUERIES_BY_COUNT = "QUERIES_BY_COUNT".asInstanceOf[MetricType]
+  val QUERIES_BY_ZERO_CLICK_RATE = "QUERIES_BY_ZERO_CLICK_RATE".asInstanceOf[MetricType]
+  val QUERIES_BY_ZERO_RESULT_RATE = "QUERIES_BY_ZERO_RESULT_RATE".asInstanceOf[MetricType]
+  val DOCS_BY_CLICK_COUNT = "DOCS_BY_CLICK_COUNT".asInstanceOf[MetricType]
+  val AGG_QUERY_DOC_METRICS = "AGG_QUERY_DOC_METRICS".asInstanceOf[MetricType]
+  val TREND_QUERY_DOC_METRICS = "TREND_QUERY_DOC_METRICS".asInstanceOf[MetricType]
+
+  @inline def values: js.Array[MetricType] = js.Array(QUERIES_BY_COUNT, QUERIES_BY_ZERO_CLICK_RATE, QUERIES_BY_ZERO_RESULT_RATE, DOCS_BY_CLICK_COUNT, AGG_QUERY_DOC_METRICS, TREND_QUERY_DOC_METRICS)
+}
+
+@js.native
+sealed trait Mode extends js.Any
+object Mode {
+  val ENABLED = "ENABLED".asInstanceOf[Mode]
+  val LEARN_ONLY = "LEARN_ONLY".asInstanceOf[Mode]
+
+  @inline def values: js.Array[Mode] = js.Array(ENABLED, LEARN_ONLY)
+}
+
+@js.native
 sealed trait Order extends js.Any
 object Order {
   val ASCENDING = "ASCENDING".asInstanceOf[Order]
   val DESCENDING = "DESCENDING".asInstanceOf[Order]
 
   @inline def values: js.Array[Order] = js.Array(ASCENDING, DESCENDING)
+}
+
+@js.native
+sealed trait Persona extends js.Any
+object Persona {
+  val OWNER = "OWNER".asInstanceOf[Persona]
+  val VIEWER = "VIEWER".asInstanceOf[Persona]
+
+  @inline def values: js.Array[Persona] = js.Array(OWNER, VIEWER)
+}
+
+@js.native
+sealed trait PrincipalMappingStatus extends js.Any
+object PrincipalMappingStatus {
+  val FAILED = "FAILED".asInstanceOf[PrincipalMappingStatus]
+  val SUCCEEDED = "SUCCEEDED".asInstanceOf[PrincipalMappingStatus]
+  val PROCESSING = "PROCESSING".asInstanceOf[PrincipalMappingStatus]
+  val DELETING = "DELETING".asInstanceOf[PrincipalMappingStatus]
+  val DELETED = "DELETED".asInstanceOf[PrincipalMappingStatus]
+
+  @inline def values: js.Array[PrincipalMappingStatus] = js.Array(FAILED, SUCCEEDED, PROCESSING, DELETING, DELETED)
 }
 
 @js.native
@@ -265,6 +382,28 @@ object QueryResultType {
   val ANSWER = "ANSWER".asInstanceOf[QueryResultType]
 
   @inline def values: js.Array[QueryResultType] = js.Array(DOCUMENT, QUESTION_ANSWER, ANSWER)
+}
+
+@js.native
+sealed trait QuerySuggestionsBlockListStatus extends js.Any
+object QuerySuggestionsBlockListStatus {
+  val ACTIVE = "ACTIVE".asInstanceOf[QuerySuggestionsBlockListStatus]
+  val CREATING = "CREATING".asInstanceOf[QuerySuggestionsBlockListStatus]
+  val DELETING = "DELETING".asInstanceOf[QuerySuggestionsBlockListStatus]
+  val UPDATING = "UPDATING".asInstanceOf[QuerySuggestionsBlockListStatus]
+  val ACTIVE_BUT_UPDATE_FAILED = "ACTIVE_BUT_UPDATE_FAILED".asInstanceOf[QuerySuggestionsBlockListStatus]
+  val FAILED = "FAILED".asInstanceOf[QuerySuggestionsBlockListStatus]
+
+  @inline def values: js.Array[QuerySuggestionsBlockListStatus] = js.Array(ACTIVE, CREATING, DELETING, UPDATING, ACTIVE_BUT_UPDATE_FAILED, FAILED)
+}
+
+@js.native
+sealed trait QuerySuggestionsStatus extends js.Any
+object QuerySuggestionsStatus {
+  val ACTIVE = "ACTIVE".asInstanceOf[QuerySuggestionsStatus]
+  val UPDATING = "UPDATING".asInstanceOf[QuerySuggestionsStatus]
+
+  @inline def values: js.Array[QuerySuggestionsStatus] = js.Array(ACTIVE, UPDATING)
 }
 
 @js.native
@@ -337,8 +476,9 @@ object ScoreConfidence {
   val HIGH = "HIGH".asInstanceOf[ScoreConfidence]
   val MEDIUM = "MEDIUM".asInstanceOf[ScoreConfidence]
   val LOW = "LOW".asInstanceOf[ScoreConfidence]
+  val NOT_AVAILABLE = "NOT_AVAILABLE".asInstanceOf[ScoreConfidence]
 
-  @inline def values: js.Array[ScoreConfidence] = js.Array(VERY_HIGH, HIGH, MEDIUM, LOW)
+  @inline def values: js.Array[ScoreConfidence] = js.Array(VERY_HIGH, HIGH, MEDIUM, LOW, NOT_AVAILABLE)
 }
 
 @js.native
@@ -362,9 +502,11 @@ object ServiceNowBuildVersionType {
 @js.native
 sealed trait SharePointVersion extends js.Any
 object SharePointVersion {
+  val SHAREPOINT_2013 = "SHAREPOINT_2013".asInstanceOf[SharePointVersion]
+  val SHAREPOINT_2016 = "SHAREPOINT_2016".asInstanceOf[SharePointVersion]
   val SHAREPOINT_ONLINE = "SHAREPOINT_ONLINE".asInstanceOf[SharePointVersion]
 
-  @inline def values: js.Array[SharePointVersion] = js.Array(SHAREPOINT_ONLINE)
+  @inline def values: js.Array[SharePointVersion] = js.Array(SHAREPOINT_2013, SHAREPOINT_2016, SHAREPOINT_ONLINE)
 }
 
 @js.native
@@ -396,4 +538,23 @@ object UserContextPolicy {
   val USER_TOKEN = "USER_TOKEN".asInstanceOf[UserContextPolicy]
 
   @inline def values: js.Array[UserContextPolicy] = js.Array(ATTRIBUTE_FILTER, USER_TOKEN)
+}
+
+@js.native
+sealed trait UserGroupResolutionMode extends js.Any
+object UserGroupResolutionMode {
+  val AWS_SSO = "AWS_SSO".asInstanceOf[UserGroupResolutionMode]
+  val NONE = "NONE".asInstanceOf[UserGroupResolutionMode]
+
+  @inline def values: js.Array[UserGroupResolutionMode] = js.Array(AWS_SSO, NONE)
+}
+
+@js.native
+sealed trait WebCrawlerMode extends js.Any
+object WebCrawlerMode {
+  val HOST_ONLY = "HOST_ONLY".asInstanceOf[WebCrawlerMode]
+  val SUBDOMAINS = "SUBDOMAINS".asInstanceOf[WebCrawlerMode]
+  val EVERYTHING = "EVERYTHING".asInstanceOf[WebCrawlerMode]
+
+  @inline def values: js.Array[WebCrawlerMode] = js.Array(HOST_ONLY, SUBDOMAINS, EVERYTHING)
 }

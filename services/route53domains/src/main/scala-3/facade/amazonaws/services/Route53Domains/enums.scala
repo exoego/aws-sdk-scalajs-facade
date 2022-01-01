@@ -13,9 +13,10 @@ object ContactType {
   inline def values: js.Array[ContactType] = js.Array(PERSON, COMPANY, ASSOCIATION, PUBLIC_BODY, RESELLER)
 }
 
-type CountryCode = "AD" | "AE" | "AF" | "AG" | "AI" | "AL" | "AM" | "AN" | "AO" | "AQ" | "AR" | "AS" | "AT" | "AU" | "AW" | "AZ" | "BA" | "BB" | "BD" | "BE" | "BF" | "BG" | "BH" | "BI" | "BJ" | "BL" | "BM" | "BN" | "BO" | "BR" | "BS" | "BT" | "BW" | "BY" | "BZ" | "CA" | "CC" | "CD" | "CF" | "CG" | "CH" | "CI" | "CK" | "CL" | "CM" | "CN" | "CO" | "CR" | "CU" | "CV" | "CX" | "CY" | "CZ" | "DE" | "DJ" | "DK" | "DM" | "DO" | "DZ" | "EC" | "EE" | "EG" | "ER" | "ES" | "ET" | "FI" | "FJ" | "FK" | "FM" | "FO" | "FR" | "GA" | "GB" | "GD" | "GE" | "GH" | "GI" | "GL" | "GM" | "GN" | "GQ" | "GR" | "GT" | "GU" | "GW" | "GY" | "HK" | "HN" | "HR" | "HT" | "HU" | "ID" | "IE" | "IL" | "IM" | "IN" | "IQ" | "IR" | "IS" | "IT" | "JM" | "JO" | "JP" | "KE" | "KG" | "KH" | "KI" | "KM" | "KN" | "KP" | "KR" | "KW" | "KY" | "KZ" | "LA" | "LB" | "LC" | "LI" | "LK" | "LR" | "LS" | "LT" | "LU" | "LV" | "LY" | "MA" | "MC" | "MD" | "ME" | "MF" | "MG" | "MH" | "MK" | "ML" | "MM" | "MN" | "MO" | "MP" | "MR" | "MS" |
-  "MT" | "MU" | "MV" | "MW" | "MX" | "MY" | "MZ" | "NA" | "NC" | "NE" | "NG" | "NI" | "NL" | "NO" | "NP" | "NR" | "NU" | "NZ" | "OM" | "PA" | "PE" | "PF" | "PG" | "PH" | "PK" | "PL" | "PM" | "PN" | "PR" | "PT" | "PW" | "PY" | "QA" | "RO" | "RS" | "RU" | "RW" | "SA" | "SB" | "SC" | "SD" | "SE" | "SG" | "SH" | "SI" | "SK" | "SL" | "SM" | "SN" | "SO" | "SR" | "ST" | "SV" | "SY" | "SZ" | "TC" | "TD" | "TG" | "TH" | "TJ" | "TK" | "TL" | "TM" | "TN" | "TO" | "TR" | "TT" | "TV" | "TW" | "TZ" | "UA" | "UG" | "US" | "UY" | "UZ" | "VA" | "VC" | "VE" | "VG" | "VI" | "VN" | "VU" | "WF" | "WS" | "YE" | "YT" | "ZA" | "ZM" | "ZW"
+type CountryCode = "AC" | "AD" | "AE" | "AF" | "AG" | "AI" | "AL" | "AM" | "AN" | "AO" | "AQ" | "AR" | "AS" | "AT" | "AU" | "AW" | "AX" | "AZ" | "BA" | "BB" | "BD" | "BE" | "BF" | "BG" | "BH" | "BI" | "BJ" | "BL" | "BM" | "BN" | "BO" | "BQ" | "BR" | "BS" | "BT" | "BV" | "BW" | "BY" | "BZ" | "CA" | "CC" | "CD" | "CF" | "CG" | "CH" | "CI" | "CK" | "CL" | "CM" | "CN" | "CO" | "CR" | "CU" | "CV" | "CW" | "CX" | "CY" | "CZ" | "DE" | "DJ" | "DK" | "DM" | "DO" | "DZ" | "EC" | "EE" | "EG" | "EH" | "ER" | "ES" | "ET" | "FI" | "FJ" | "FK" | "FM" | "FO" | "FR" | "GA" | "GB" | "GD" | "GE" | "GF" | "GG" | "GH" | "GI" | "GL" | "GM" | "GN" | "GP" | "GQ" | "GR" | "GS" | "GT" | "GU" | "GW" | "GY" | "HK" | "HM" | "HN" | "HR" | "HT" | "HU" | "ID" | "IE" | "IL" | "IM" | "IN" | "IO" | "IQ" | "IR" | "IS" | "IT" | "JE" | "JM" | "JO" | "JP" | "KE" | "KG" | "KH" | "KI" | "KM" | "KN" | "KP" | "KR" | "KW" | "KY" | "KZ" | "LA" | "LB" | "LC" | "LI" | "LK" | "LR" | "LS" | "LT" | "LU" | "LV" | "LY" | "MA" | "MC" |
+  "MD" | "ME" | "MF" | "MG" | "MH" | "MK" | "ML" | "MM" | "MN" | "MO" | "MP" | "MQ" | "MR" | "MS" | "MT" | "MU" | "MV" | "MW" | "MX" | "MY" | "MZ" | "NA" | "NC" | "NE" | "NF" | "NG" | "NI" | "NL" | "NO" | "NP" | "NR" | "NU" | "NZ" | "OM" | "PA" | "PE" | "PF" | "PG" | "PH" | "PK" | "PL" | "PM" | "PN" | "PR" | "PS" | "PT" | "PW" | "PY" | "QA" | "RE" | "RO" | "RS" | "RU" | "RW" | "SA" | "SB" | "SC" | "SD" | "SE" | "SG" | "SH" | "SI" | "SJ" | "SK" | "SL" | "SM" | "SN" | "SO" | "SR" | "SS" | "ST" | "SV" | "SX" | "SY" | "SZ" | "TC" | "TD" | "TF" | "TG" | "TH" | "TJ" | "TK" | "TL" | "TM" | "TN" | "TO" | "TP" | "TR" | "TT" | "TV" | "TW" | "TZ" | "UA" | "UG" | "US" | "UY" | "UZ" | "VA" | "VC" | "VE" | "VG" | "VI" | "VN" | "VU" | "WF" | "WS" | "YE" | "YT" | "ZA" | "ZM" | "ZW"
 object CountryCode {
+  inline val AC: "AC" = "AC"
   inline val AD: "AD" = "AD"
   inline val AE: "AE" = "AE"
   inline val AF: "AF" = "AF"
@@ -31,6 +32,7 @@ object CountryCode {
   inline val AT: "AT" = "AT"
   inline val AU: "AU" = "AU"
   inline val AW: "AW" = "AW"
+  inline val AX: "AX" = "AX"
   inline val AZ: "AZ" = "AZ"
   inline val BA: "BA" = "BA"
   inline val BB: "BB" = "BB"
@@ -45,9 +47,11 @@ object CountryCode {
   inline val BM: "BM" = "BM"
   inline val BN: "BN" = "BN"
   inline val BO: "BO" = "BO"
+  inline val BQ: "BQ" = "BQ"
   inline val BR: "BR" = "BR"
   inline val BS: "BS" = "BS"
   inline val BT: "BT" = "BT"
+  inline val BV: "BV" = "BV"
   inline val BW: "BW" = "BW"
   inline val BY: "BY" = "BY"
   inline val BZ: "BZ" = "BZ"
@@ -66,6 +70,7 @@ object CountryCode {
   inline val CR: "CR" = "CR"
   inline val CU: "CU" = "CU"
   inline val CV: "CV" = "CV"
+  inline val CW: "CW" = "CW"
   inline val CX: "CX" = "CX"
   inline val CY: "CY" = "CY"
   inline val CZ: "CZ" = "CZ"
@@ -78,6 +83,7 @@ object CountryCode {
   inline val EC: "EC" = "EC"
   inline val EE: "EE" = "EE"
   inline val EG: "EG" = "EG"
+  inline val EH: "EH" = "EH"
   inline val ER: "ER" = "ER"
   inline val ES: "ES" = "ES"
   inline val ET: "ET" = "ET"
@@ -91,18 +97,23 @@ object CountryCode {
   inline val GB: "GB" = "GB"
   inline val GD: "GD" = "GD"
   inline val GE: "GE" = "GE"
+  inline val GF: "GF" = "GF"
+  inline val GG: "GG" = "GG"
   inline val GH: "GH" = "GH"
   inline val GI: "GI" = "GI"
   inline val GL: "GL" = "GL"
   inline val GM: "GM" = "GM"
   inline val GN: "GN" = "GN"
+  inline val GP: "GP" = "GP"
   inline val GQ: "GQ" = "GQ"
   inline val GR: "GR" = "GR"
+  inline val GS: "GS" = "GS"
   inline val GT: "GT" = "GT"
   inline val GU: "GU" = "GU"
   inline val GW: "GW" = "GW"
   inline val GY: "GY" = "GY"
   inline val HK: "HK" = "HK"
+  inline val HM: "HM" = "HM"
   inline val HN: "HN" = "HN"
   inline val HR: "HR" = "HR"
   inline val HT: "HT" = "HT"
@@ -112,10 +123,12 @@ object CountryCode {
   inline val IL: "IL" = "IL"
   inline val IM: "IM" = "IM"
   inline val IN: "IN" = "IN"
+  inline val IO: "IO" = "IO"
   inline val IQ: "IQ" = "IQ"
   inline val IR: "IR" = "IR"
   inline val IS: "IS" = "IS"
   inline val IT: "IT" = "IT"
+  inline val JE: "JE" = "JE"
   inline val JM: "JM" = "JM"
   inline val JO: "JO" = "JO"
   inline val JP: "JP" = "JP"
@@ -154,6 +167,7 @@ object CountryCode {
   inline val MN: "MN" = "MN"
   inline val MO: "MO" = "MO"
   inline val MP: "MP" = "MP"
+  inline val MQ: "MQ" = "MQ"
   inline val MR: "MR" = "MR"
   inline val MS: "MS" = "MS"
   inline val MT: "MT" = "MT"
@@ -166,6 +180,7 @@ object CountryCode {
   inline val NA: "NA" = "NA"
   inline val NC: "NC" = "NC"
   inline val NE: "NE" = "NE"
+  inline val NF: "NF" = "NF"
   inline val NG: "NG" = "NG"
   inline val NI: "NI" = "NI"
   inline val NL: "NL" = "NL"
@@ -185,10 +200,12 @@ object CountryCode {
   inline val PM: "PM" = "PM"
   inline val PN: "PN" = "PN"
   inline val PR: "PR" = "PR"
+  inline val PS: "PS" = "PS"
   inline val PT: "PT" = "PT"
   inline val PW: "PW" = "PW"
   inline val PY: "PY" = "PY"
   inline val QA: "QA" = "QA"
+  inline val RE: "RE" = "RE"
   inline val RO: "RO" = "RO"
   inline val RS: "RS" = "RS"
   inline val RU: "RU" = "RU"
@@ -201,18 +218,22 @@ object CountryCode {
   inline val SG: "SG" = "SG"
   inline val SH: "SH" = "SH"
   inline val SI: "SI" = "SI"
+  inline val SJ: "SJ" = "SJ"
   inline val SK: "SK" = "SK"
   inline val SL: "SL" = "SL"
   inline val SM: "SM" = "SM"
   inline val SN: "SN" = "SN"
   inline val SO: "SO" = "SO"
   inline val SR: "SR" = "SR"
+  inline val SS: "SS" = "SS"
   inline val ST: "ST" = "ST"
   inline val SV: "SV" = "SV"
+  inline val SX: "SX" = "SX"
   inline val SY: "SY" = "SY"
   inline val SZ: "SZ" = "SZ"
   inline val TC: "TC" = "TC"
   inline val TD: "TD" = "TD"
+  inline val TF: "TF" = "TF"
   inline val TG: "TG" = "TG"
   inline val TH: "TH" = "TH"
   inline val TJ: "TJ" = "TJ"
@@ -221,6 +242,7 @@ object CountryCode {
   inline val TM: "TM" = "TM"
   inline val TN: "TN" = "TN"
   inline val TO: "TO" = "TO"
+  inline val TP: "TP" = "TP"
   inline val TR: "TR" = "TR"
   inline val TT: "TT" = "TT"
   inline val TV: "TV" = "TV"
@@ -247,6 +269,7 @@ object CountryCode {
   inline val ZW: "ZW" = "ZW"
 
   inline def values: js.Array[CountryCode] = js.Array(
+    AC,
     AD,
     AE,
     AF,
@@ -262,6 +285,7 @@ object CountryCode {
     AT,
     AU,
     AW,
+    AX,
     AZ,
     BA,
     BB,
@@ -276,9 +300,11 @@ object CountryCode {
     BM,
     BN,
     BO,
+    BQ,
     BR,
     BS,
     BT,
+    BV,
     BW,
     BY,
     BZ,
@@ -297,6 +323,7 @@ object CountryCode {
     CR,
     CU,
     CV,
+    CW,
     CX,
     CY,
     CZ,
@@ -309,6 +336,7 @@ object CountryCode {
     EC,
     EE,
     EG,
+    EH,
     ER,
     ES,
     ET,
@@ -322,18 +350,23 @@ object CountryCode {
     GB,
     GD,
     GE,
+    GF,
+    GG,
     GH,
     GI,
     GL,
     GM,
     GN,
+    GP,
     GQ,
     GR,
+    GS,
     GT,
     GU,
     GW,
     GY,
     HK,
+    HM,
     HN,
     HR,
     HT,
@@ -343,10 +376,12 @@ object CountryCode {
     IL,
     IM,
     IN,
+    IO,
     IQ,
     IR,
     IS,
     IT,
+    JE,
     JM,
     JO,
     JP,
@@ -385,6 +420,7 @@ object CountryCode {
     MN,
     MO,
     MP,
+    MQ,
     MR,
     MS,
     MT,
@@ -397,6 +433,7 @@ object CountryCode {
     NA,
     NC,
     NE,
+    NF,
     NG,
     NI,
     NL,
@@ -416,10 +453,12 @@ object CountryCode {
     PM,
     PN,
     PR,
+    PS,
     PT,
     PW,
     PY,
     QA,
+    RE,
     RO,
     RS,
     RU,
@@ -432,18 +471,22 @@ object CountryCode {
     SG,
     SH,
     SI,
+    SJ,
     SK,
     SL,
     SM,
     SN,
     SO,
     SR,
+    SS,
     ST,
     SV,
+    SX,
     SY,
     SZ,
     TC,
     TD,
+    TF,
     TG,
     TH,
     TJ,
@@ -452,6 +495,7 @@ object CountryCode {
     TM,
     TN,
     TO,
+    TP,
     TR,
     TT,
     TV,
@@ -493,7 +537,7 @@ object DomainAvailability {
   inline def values: js.Array[DomainAvailability] = js.Array(AVAILABLE, AVAILABLE_RESERVED, AVAILABLE_PREORDER, UNAVAILABLE, UNAVAILABLE_PREMIUM, UNAVAILABLE_RESTRICTED, RESERVED, DONT_KNOW)
 }
 
-type ExtraParamName = "DUNS_NUMBER" | "BRAND_NUMBER" | "BIRTH_DEPARTMENT" | "BIRTH_DATE_IN_YYYY_MM_DD" | "BIRTH_COUNTRY" | "BIRTH_CITY" | "DOCUMENT_NUMBER" | "AU_ID_NUMBER" | "AU_ID_TYPE" | "CA_LEGAL_TYPE" | "CA_BUSINESS_ENTITY_TYPE" | "CA_LEGAL_REPRESENTATIVE" | "CA_LEGAL_REPRESENTATIVE_CAPACITY" | "ES_IDENTIFICATION" | "ES_IDENTIFICATION_TYPE" | "ES_LEGAL_FORM" | "FI_BUSINESS_NUMBER" | "FI_ID_NUMBER" | "FI_NATIONALITY" | "FI_ORGANIZATION_TYPE" | "IT_NATIONALITY" | "IT_PIN" | "IT_REGISTRANT_ENTITY_TYPE" | "RU_PASSPORT_DATA" | "SE_ID_NUMBER" | "SG_ID_NUMBER" | "VAT_NUMBER" | "UK_CONTACT_TYPE" | "UK_COMPANY_NUMBER"
+type ExtraParamName = "DUNS_NUMBER" | "BRAND_NUMBER" | "BIRTH_DEPARTMENT" | "BIRTH_DATE_IN_YYYY_MM_DD" | "BIRTH_COUNTRY" | "BIRTH_CITY" | "DOCUMENT_NUMBER" | "AU_ID_NUMBER" | "AU_ID_TYPE" | "CA_LEGAL_TYPE" | "CA_BUSINESS_ENTITY_TYPE" | "CA_LEGAL_REPRESENTATIVE" | "CA_LEGAL_REPRESENTATIVE_CAPACITY" | "ES_IDENTIFICATION" | "ES_IDENTIFICATION_TYPE" | "ES_LEGAL_FORM" | "FI_BUSINESS_NUMBER" | "FI_ID_NUMBER" | "FI_NATIONALITY" | "FI_ORGANIZATION_TYPE" | "IT_NATIONALITY" | "IT_PIN" | "IT_REGISTRANT_ENTITY_TYPE" | "RU_PASSPORT_DATA" | "SE_ID_NUMBER" | "SG_ID_NUMBER" | "VAT_NUMBER" | "UK_CONTACT_TYPE" | "UK_COMPANY_NUMBER" | "EU_COUNTRY_OF_CITIZENSHIP"
 object ExtraParamName {
   inline val DUNS_NUMBER: "DUNS_NUMBER" = "DUNS_NUMBER"
   inline val BRAND_NUMBER: "BRAND_NUMBER" = "BRAND_NUMBER"
@@ -524,6 +568,7 @@ object ExtraParamName {
   inline val VAT_NUMBER: "VAT_NUMBER" = "VAT_NUMBER"
   inline val UK_CONTACT_TYPE: "UK_CONTACT_TYPE" = "UK_CONTACT_TYPE"
   inline val UK_COMPANY_NUMBER: "UK_COMPANY_NUMBER" = "UK_COMPANY_NUMBER"
+  inline val EU_COUNTRY_OF_CITIZENSHIP: "EU_COUNTRY_OF_CITIZENSHIP" = "EU_COUNTRY_OF_CITIZENSHIP"
 
   inline def values: js.Array[ExtraParamName] = js.Array(
     DUNS_NUMBER,
@@ -554,8 +599,17 @@ object ExtraParamName {
     SG_ID_NUMBER,
     VAT_NUMBER,
     UK_CONTACT_TYPE,
-    UK_COMPANY_NUMBER
+    UK_COMPANY_NUMBER,
+    EU_COUNTRY_OF_CITIZENSHIP
   )
+}
+
+type ListDomainsAttributeName = "DomainName" | "Expiry"
+object ListDomainsAttributeName {
+  inline val DomainName: "DomainName" = "DomainName"
+  inline val Expiry: "Expiry" = "Expiry"
+
+  inline def values: js.Array[ListDomainsAttributeName] = js.Array(DomainName, Expiry)
 }
 
 type OperationStatus = "SUBMITTED" | "IN_PROGRESS" | "ERROR" | "SUCCESSFUL" | "FAILED"
@@ -612,6 +666,15 @@ object OperationType {
   )
 }
 
+type Operator = "LE" | "GE" | "BEGINS_WITH"
+object Operator {
+  inline val LE: "LE" = "LE"
+  inline val GE: "GE" = "GE"
+  inline val BEGINS_WITH: "BEGINS_WITH" = "BEGINS_WITH"
+
+  inline def values: js.Array[Operator] = js.Array(LE, GE, BEGINS_WITH)
+}
+
 type ReachabilityStatus = "PENDING" | "DONE" | "EXPIRED"
 object ReachabilityStatus {
   inline val PENDING: "PENDING" = "PENDING"
@@ -619,6 +682,14 @@ object ReachabilityStatus {
   inline val EXPIRED: "EXPIRED" = "EXPIRED"
 
   inline def values: js.Array[ReachabilityStatus] = js.Array(PENDING, DONE, EXPIRED)
+}
+
+type SortOrder = "ASC" | "DESC"
+object SortOrder {
+  inline val ASC: "ASC" = "ASC"
+  inline val DESC: "DESC" = "DESC"
+
+  inline def values: js.Array[SortOrder] = js.Array(ASC, DESC)
 }
 
 /** Whether the domain name can be transferred to Route 53.

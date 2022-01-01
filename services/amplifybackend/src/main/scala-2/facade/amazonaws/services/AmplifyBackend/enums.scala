@@ -23,6 +23,16 @@ object AuthResources {
 }
 
 @js.native
+sealed trait AuthenticatedElement extends js.Any
+object AuthenticatedElement {
+  val READ = "READ".asInstanceOf[AuthenticatedElement]
+  val CREATE_AND_UPDATE = "CREATE_AND_UPDATE".asInstanceOf[AuthenticatedElement]
+  val DELETE = "DELETE".asInstanceOf[AuthenticatedElement]
+
+  @inline def values: js.Array[AuthenticatedElement] = js.Array(READ, CREATE_AND_UPDATE, DELETE)
+}
+
+@js.native
 sealed trait DeliveryMethod extends js.Any
 object DeliveryMethod {
   val EMAIL = "EMAIL".asInstanceOf[DeliveryMethod]
@@ -144,6 +154,14 @@ object Service {
 }
 
 @js.native
+sealed trait ServiceName extends js.Any
+object ServiceName {
+  val S3 = "S3".asInstanceOf[ServiceName]
+
+  @inline def values: js.Array[ServiceName] = js.Array(S3)
+}
+
+@js.native
 sealed trait SignInMethod extends js.Any
 object SignInMethod {
   val EMAIL = "EMAIL".asInstanceOf[SignInMethod]
@@ -161,4 +179,14 @@ object Status {
   val STALE = "STALE".asInstanceOf[Status]
 
   @inline def values: js.Array[Status] = js.Array(LATEST, STALE)
+}
+
+@js.native
+sealed trait UnAuthenticatedElement extends js.Any
+object UnAuthenticatedElement {
+  val READ = "READ".asInstanceOf[UnAuthenticatedElement]
+  val CREATE_AND_UPDATE = "CREATE_AND_UPDATE".asInstanceOf[UnAuthenticatedElement]
+  val DELETE = "DELETE".asInstanceOf[UnAuthenticatedElement]
+
+  @inline def values: js.Array[UnAuthenticatedElement] = js.Array(READ, CREATE_AND_UPDATE, DELETE)
 }

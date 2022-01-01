@@ -32,6 +32,17 @@ object Capability {
 }
 
 @js.native
+sealed trait Category extends js.Any
+object Category {
+  val REGISTERED = "REGISTERED".asInstanceOf[Category]
+  val ACTIVATED = "ACTIVATED".asInstanceOf[Category]
+  val THIRD_PARTY = "THIRD_PARTY".asInstanceOf[Category]
+  val AWS_TYPES = "AWS_TYPES".asInstanceOf[Category]
+
+  @inline def values: js.Array[Category] = js.Array(REGISTERED, ACTIVATED, THIRD_PARTY, AWS_TYPES)
+}
+
+@js.native
 sealed trait ChangeAction extends js.Any
 object ChangeAction {
   val Add = "Add".asInstanceOf[ChangeAction]
@@ -146,6 +157,7 @@ object HandlerErrorCode {
   val ServiceInternalError = "ServiceInternalError".asInstanceOf[HandlerErrorCode]
   val NetworkFailure = "NetworkFailure".asInstanceOf[HandlerErrorCode]
   val InternalFailure = "InternalFailure".asInstanceOf[HandlerErrorCode]
+  val InvalidTypeConfiguration = "InvalidTypeConfiguration".asInstanceOf[HandlerErrorCode]
 
   @inline def values: js.Array[HandlerErrorCode] = js.Array(
     NotUpdatable,
@@ -161,8 +173,19 @@ object HandlerErrorCode {
     GeneralServiceException,
     ServiceInternalError,
     NetworkFailure,
-    InternalFailure
+    InternalFailure,
+    InvalidTypeConfiguration
   )
+}
+
+@js.native
+sealed trait IdentityProvider extends js.Any
+object IdentityProvider {
+  val AWS_Marketplace = "AWS_Marketplace".asInstanceOf[IdentityProvider]
+  val GitHub = "GitHub".asInstanceOf[IdentityProvider]
+  val Bitbucket = "Bitbucket".asInstanceOf[IdentityProvider]
+
+  @inline def values: js.Array[IdentityProvider] = js.Array(AWS_Marketplace, GitHub, Bitbucket)
 }
 
 @js.native
@@ -203,6 +226,15 @@ object ProvisioningType {
   val FULLY_MUTABLE = "FULLY_MUTABLE".asInstanceOf[ProvisioningType]
 
   @inline def values: js.Array[ProvisioningType] = js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE)
+}
+
+@js.native
+sealed trait PublisherStatus extends js.Any
+object PublisherStatus {
+  val VERIFIED = "VERIFIED".asInstanceOf[PublisherStatus]
+  val UNVERIFIED = "UNVERIFIED".asInstanceOf[PublisherStatus]
+
+  @inline def values: js.Array[PublisherStatus] = js.Array(VERIFIED, UNVERIFIED)
 }
 
 @js.native
@@ -294,6 +326,12 @@ object ResourceStatus {
   val IMPORT_ROLLBACK_IN_PROGRESS = "IMPORT_ROLLBACK_IN_PROGRESS".asInstanceOf[ResourceStatus]
   val IMPORT_ROLLBACK_FAILED = "IMPORT_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
   val IMPORT_ROLLBACK_COMPLETE = "IMPORT_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
+  val UPDATE_ROLLBACK_IN_PROGRESS = "UPDATE_ROLLBACK_IN_PROGRESS".asInstanceOf[ResourceStatus]
+  val UPDATE_ROLLBACK_COMPLETE = "UPDATE_ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
+  val UPDATE_ROLLBACK_FAILED = "UPDATE_ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
+  val ROLLBACK_IN_PROGRESS = "ROLLBACK_IN_PROGRESS".asInstanceOf[ResourceStatus]
+  val ROLLBACK_COMPLETE = "ROLLBACK_COMPLETE".asInstanceOf[ResourceStatus]
+  val ROLLBACK_FAILED = "ROLLBACK_FAILED".asInstanceOf[ResourceStatus]
 
   @inline def values: js.Array[ResourceStatus] = js.Array(
     CREATE_IN_PROGRESS,
@@ -311,7 +349,13 @@ object ResourceStatus {
     IMPORT_IN_PROGRESS,
     IMPORT_ROLLBACK_IN_PROGRESS,
     IMPORT_ROLLBACK_FAILED,
-    IMPORT_ROLLBACK_COMPLETE
+    IMPORT_ROLLBACK_COMPLETE,
+    UPDATE_ROLLBACK_IN_PROGRESS,
+    UPDATE_ROLLBACK_COMPLETE,
+    UPDATE_ROLLBACK_FAILED,
+    ROLLBACK_IN_PROGRESS,
+    ROLLBACK_COMPLETE,
+    ROLLBACK_FAILED
   )
 }
 
@@ -460,6 +504,7 @@ object StackStatus {
   val UPDATE_IN_PROGRESS = "UPDATE_IN_PROGRESS".asInstanceOf[StackStatus]
   val UPDATE_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
   val UPDATE_COMPLETE = "UPDATE_COMPLETE".asInstanceOf[StackStatus]
+  val UPDATE_FAILED = "UPDATE_FAILED".asInstanceOf[StackStatus]
   val UPDATE_ROLLBACK_IN_PROGRESS = "UPDATE_ROLLBACK_IN_PROGRESS".asInstanceOf[StackStatus]
   val UPDATE_ROLLBACK_FAILED = "UPDATE_ROLLBACK_FAILED".asInstanceOf[StackStatus]
   val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS".asInstanceOf[StackStatus]
@@ -484,6 +529,7 @@ object StackStatus {
     UPDATE_IN_PROGRESS,
     UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
     UPDATE_COMPLETE,
+    UPDATE_FAILED,
     UPDATE_ROLLBACK_IN_PROGRESS,
     UPDATE_ROLLBACK_FAILED,
     UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
@@ -504,6 +550,35 @@ object TemplateStage {
   val Processed = "Processed".asInstanceOf[TemplateStage]
 
   @inline def values: js.Array[TemplateStage] = js.Array(Original, Processed)
+}
+
+@js.native
+sealed trait ThirdPartyType extends js.Any
+object ThirdPartyType {
+  val RESOURCE = "RESOURCE".asInstanceOf[ThirdPartyType]
+  val MODULE = "MODULE".asInstanceOf[ThirdPartyType]
+
+  @inline def values: js.Array[ThirdPartyType] = js.Array(RESOURCE, MODULE)
+}
+
+@js.native
+sealed trait TypeTestsStatus extends js.Any
+object TypeTestsStatus {
+  val PASSED = "PASSED".asInstanceOf[TypeTestsStatus]
+  val FAILED = "FAILED".asInstanceOf[TypeTestsStatus]
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[TypeTestsStatus]
+  val NOT_TESTED = "NOT_TESTED".asInstanceOf[TypeTestsStatus]
+
+  @inline def values: js.Array[TypeTestsStatus] = js.Array(PASSED, FAILED, IN_PROGRESS, NOT_TESTED)
+}
+
+@js.native
+sealed trait VersionBump extends js.Any
+object VersionBump {
+  val MAJOR = "MAJOR".asInstanceOf[VersionBump]
+  val MINOR = "MINOR".asInstanceOf[VersionBump]
+
+  @inline def values: js.Array[VersionBump] = js.Array(MAJOR, MINOR)
 }
 
 @js.native

@@ -60,15 +60,17 @@ object DeploymentStatus {
   @inline def values: js.Array[DeploymentStatus] = js.Array(PENDING, FAILED, DEPLOYED)
 }
 
-/** The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.
+/** The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.
   */
 @js.native
 sealed trait DomainNameStatus extends js.Any
 object DomainNameStatus {
   val AVAILABLE = "AVAILABLE".asInstanceOf[DomainNameStatus]
   val UPDATING = "UPDATING".asInstanceOf[DomainNameStatus]
+  val PENDING_CERTIFICATE_REIMPORT = "PENDING_CERTIFICATE_REIMPORT".asInstanceOf[DomainNameStatus]
+  val PENDING_OWNERSHIP_VERIFICATION = "PENDING_OWNERSHIP_VERIFICATION".asInstanceOf[DomainNameStatus]
 
-  @inline def values: js.Array[DomainNameStatus] = js.Array(AVAILABLE, UPDATING)
+  @inline def values: js.Array[DomainNameStatus] = js.Array(AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, PENDING_OWNERSHIP_VERIFICATION)
 }
 
 /** Represents an endpoint type.

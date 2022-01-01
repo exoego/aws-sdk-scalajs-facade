@@ -2,7 +2,7 @@ package facade.amazonaws.services.mq
 
 import scalajs.js
 
-/** The authentication strategy used to secure the broker.
+/** Optional. The authentication strategy used to secure the broker. The default is SIMPLE.
   */
 @js.native
 sealed trait AuthenticationStrategy extends js.Any
@@ -13,7 +13,7 @@ object AuthenticationStrategy {
   @inline def values: js.Array[AuthenticationStrategy] = js.Array(SIMPLE, LDAP)
 }
 
-/** The status of the broker.
+/** The broker's status.
   */
 @js.native
 sealed trait BrokerState extends js.Any
@@ -27,7 +27,7 @@ object BrokerState {
   @inline def values: js.Array[BrokerState] = js.Array(CREATION_IN_PROGRESS, CREATION_FAILED, DELETION_IN_PROGRESS, RUNNING, REBOOT_IN_PROGRESS)
 }
 
-/** The broker's storage type. <important>EFS is currently not Supported for RabbitMQ engine type.</important>
+/** The broker's storage type. <important>EFS is not supported for RabbitMQ engine type. </important>
   */
 @js.native
 sealed trait BrokerStorageType extends js.Any
@@ -64,7 +64,7 @@ object DayOfWeek {
   @inline def values: js.Array[DayOfWeek] = js.Array(MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY)
 }
 
-/** The deployment mode of the broker.
+/** The broker's deployment mode.
   */
 @js.native
 sealed trait DeploymentMode extends js.Any
@@ -76,7 +76,7 @@ object DeploymentMode {
   @inline def values: js.Array[DeploymentMode] = js.Array(SINGLE_INSTANCE, ACTIVE_STANDBY_MULTI_AZ, CLUSTER_MULTI_AZ)
 }
 
-/** The type of broker engine. Note: Currently, Amazon MQ supports ActiveMQ and RabbitMQ.
+/** The type of broker engine. Amazon MQ supports ActiveMQ and RabbitMQ.
   */
 @js.native
 sealed trait EngineType extends js.Any

@@ -27,11 +27,20 @@ package object backup {
   type BackupVaultEvents = js.Array[BackupVaultEvent]
   type BackupVaultList = js.Array[BackupVaultListMember]
   type BackupVaultName = String
+  type ComplianceResourceIdList = js.Array[String]
   type ConditionKey = String
+  type ConditionParameters = js.Array[ConditionParameter]
   type ConditionValue = String
+  type ControlInputParameters = js.Array[ControlInputParameter]
+  type ControlName = String
   type CopyActions = js.Array[CopyAction]
   type CopyJobsList = js.Array[CopyJob]
   type CronExpression = String
+  type FormatList = js.Array[String]
+  type FrameworkControls = js.Array[FrameworkControl]
+  type FrameworkDescription = String
+  type FrameworkList = js.Array[Framework]
+  type FrameworkName = String
   type GlobalSettings = js.Dictionary[GlobalSettingsValue]
   type GlobalSettingsName = String
   type GlobalSettingsValue = String
@@ -39,15 +48,25 @@ package object backup {
   type IAMRoleArn = String
   type IsEnabled = Boolean
   type ListOfTags = js.Array[Condition]
+  type MaxFrameworkInputs = Int
   type MaxResults = Int
   type Metadata = js.Dictionary[MetadataValue]
   type MetadataKey = String
   type MetadataValue = String
+  type ParameterName = String
+  type ParameterValue = String
   type ProtectedResourcesList = js.Array[ProtectedResource]
   type RecoveryPointByBackupVaultList = js.Array[RecoveryPointByBackupVault]
   type RecoveryPointByResourceList = js.Array[RecoveryPointByResource]
+  type ReportJobId = String
+  type ReportJobList = js.Array[ReportJob]
+  type ReportPlanDescription = String
+  type ReportPlanList = js.Array[ReportPlan]
+  type ReportPlanName = String
   type ResourceArns = js.Array[ARN]
   type ResourceType = String
+  type ResourceTypeList = js.Array[ARN]
+  type ResourceTypeManagementPreference = js.Dictionary[IsEnabled]
   type ResourceTypeOptInPreference = js.Dictionary[IsEnabled]
   type ResourceTypes = js.Array[ResourceType]
   type RestoreJobId = String
@@ -57,6 +76,8 @@ package object backup {
   type TagValue = String
   type Tags = js.Dictionary[TagValue]
   type WindowMinutes = Double
+  type stringList = js.Array[String]
+  type stringMap = js.Dictionary[String]
   type timestamp = js.Date
 
   final class BackupOps(private val service: Backup) extends AnyVal {
@@ -64,19 +85,27 @@ package object backup {
     @inline def createBackupPlanFuture(params: CreateBackupPlanInput): Future[CreateBackupPlanOutput] = service.createBackupPlan(params).promise().toFuture
     @inline def createBackupSelectionFuture(params: CreateBackupSelectionInput): Future[CreateBackupSelectionOutput] = service.createBackupSelection(params).promise().toFuture
     @inline def createBackupVaultFuture(params: CreateBackupVaultInput): Future[CreateBackupVaultOutput] = service.createBackupVault(params).promise().toFuture
+    @inline def createFrameworkFuture(params: CreateFrameworkInput): Future[CreateFrameworkOutput] = service.createFramework(params).promise().toFuture
+    @inline def createReportPlanFuture(params: CreateReportPlanInput): Future[CreateReportPlanOutput] = service.createReportPlan(params).promise().toFuture
     @inline def deleteBackupPlanFuture(params: DeleteBackupPlanInput): Future[DeleteBackupPlanOutput] = service.deleteBackupPlan(params).promise().toFuture
     @inline def deleteBackupSelectionFuture(params: DeleteBackupSelectionInput): Future[js.Object] = service.deleteBackupSelection(params).promise().toFuture
     @inline def deleteBackupVaultAccessPolicyFuture(params: DeleteBackupVaultAccessPolicyInput): Future[js.Object] = service.deleteBackupVaultAccessPolicy(params).promise().toFuture
     @inline def deleteBackupVaultFuture(params: DeleteBackupVaultInput): Future[js.Object] = service.deleteBackupVault(params).promise().toFuture
+    @inline def deleteBackupVaultLockConfigurationFuture(params: DeleteBackupVaultLockConfigurationInput): Future[js.Object] = service.deleteBackupVaultLockConfiguration(params).promise().toFuture
     @inline def deleteBackupVaultNotificationsFuture(params: DeleteBackupVaultNotificationsInput): Future[js.Object] = service.deleteBackupVaultNotifications(params).promise().toFuture
+    @inline def deleteFrameworkFuture(params: DeleteFrameworkInput): Future[js.Object] = service.deleteFramework(params).promise().toFuture
     @inline def deleteRecoveryPointFuture(params: DeleteRecoveryPointInput): Future[js.Object] = service.deleteRecoveryPoint(params).promise().toFuture
+    @inline def deleteReportPlanFuture(params: DeleteReportPlanInput): Future[js.Object] = service.deleteReportPlan(params).promise().toFuture
     @inline def describeBackupJobFuture(params: DescribeBackupJobInput): Future[DescribeBackupJobOutput] = service.describeBackupJob(params).promise().toFuture
     @inline def describeBackupVaultFuture(params: DescribeBackupVaultInput): Future[DescribeBackupVaultOutput] = service.describeBackupVault(params).promise().toFuture
     @inline def describeCopyJobFuture(params: DescribeCopyJobInput): Future[DescribeCopyJobOutput] = service.describeCopyJob(params).promise().toFuture
+    @inline def describeFrameworkFuture(params: DescribeFrameworkInput): Future[DescribeFrameworkOutput] = service.describeFramework(params).promise().toFuture
     @inline def describeGlobalSettingsFuture(params: DescribeGlobalSettingsInput): Future[DescribeGlobalSettingsOutput] = service.describeGlobalSettings(params).promise().toFuture
     @inline def describeProtectedResourceFuture(params: DescribeProtectedResourceInput): Future[DescribeProtectedResourceOutput] = service.describeProtectedResource(params).promise().toFuture
     @inline def describeRecoveryPointFuture(params: DescribeRecoveryPointInput): Future[DescribeRecoveryPointOutput] = service.describeRecoveryPoint(params).promise().toFuture
     @inline def describeRegionSettingsFuture(params: DescribeRegionSettingsInput): Future[DescribeRegionSettingsOutput] = service.describeRegionSettings(params).promise().toFuture
+    @inline def describeReportJobFuture(params: DescribeReportJobInput): Future[DescribeReportJobOutput] = service.describeReportJob(params).promise().toFuture
+    @inline def describeReportPlanFuture(params: DescribeReportPlanInput): Future[DescribeReportPlanOutput] = service.describeReportPlan(params).promise().toFuture
     @inline def describeRestoreJobFuture(params: DescribeRestoreJobInput): Future[DescribeRestoreJobOutput] = service.describeRestoreJob(params).promise().toFuture
     @inline def disassociateRecoveryPointFuture(params: DisassociateRecoveryPointInput): Future[js.Object] = service.disassociateRecoveryPoint(params).promise().toFuture
     @inline def exportBackupPlanTemplateFuture(params: ExportBackupPlanTemplateInput): Future[ExportBackupPlanTemplateOutput] = service.exportBackupPlanTemplate(params).promise().toFuture
@@ -95,23 +124,30 @@ package object backup {
     @inline def listBackupSelectionsFuture(params: ListBackupSelectionsInput): Future[ListBackupSelectionsOutput] = service.listBackupSelections(params).promise().toFuture
     @inline def listBackupVaultsFuture(params: ListBackupVaultsInput): Future[ListBackupVaultsOutput] = service.listBackupVaults(params).promise().toFuture
     @inline def listCopyJobsFuture(params: ListCopyJobsInput): Future[ListCopyJobsOutput] = service.listCopyJobs(params).promise().toFuture
+    @inline def listFrameworksFuture(params: ListFrameworksInput): Future[ListFrameworksOutput] = service.listFrameworks(params).promise().toFuture
     @inline def listProtectedResourcesFuture(params: ListProtectedResourcesInput): Future[ListProtectedResourcesOutput] = service.listProtectedResources(params).promise().toFuture
     @inline def listRecoveryPointsByBackupVaultFuture(params: ListRecoveryPointsByBackupVaultInput): Future[ListRecoveryPointsByBackupVaultOutput] = service.listRecoveryPointsByBackupVault(params).promise().toFuture
     @inline def listRecoveryPointsByResourceFuture(params: ListRecoveryPointsByResourceInput): Future[ListRecoveryPointsByResourceOutput] = service.listRecoveryPointsByResource(params).promise().toFuture
+    @inline def listReportJobsFuture(params: ListReportJobsInput): Future[ListReportJobsOutput] = service.listReportJobs(params).promise().toFuture
+    @inline def listReportPlansFuture(params: ListReportPlansInput): Future[ListReportPlansOutput] = service.listReportPlans(params).promise().toFuture
     @inline def listRestoreJobsFuture(params: ListRestoreJobsInput): Future[ListRestoreJobsOutput] = service.listRestoreJobs(params).promise().toFuture
     @inline def listTagsFuture(params: ListTagsInput): Future[ListTagsOutput] = service.listTags(params).promise().toFuture
     @inline def putBackupVaultAccessPolicyFuture(params: PutBackupVaultAccessPolicyInput): Future[js.Object] = service.putBackupVaultAccessPolicy(params).promise().toFuture
+    @inline def putBackupVaultLockConfigurationFuture(params: PutBackupVaultLockConfigurationInput): Future[js.Object] = service.putBackupVaultLockConfiguration(params).promise().toFuture
     @inline def putBackupVaultNotificationsFuture(params: PutBackupVaultNotificationsInput): Future[js.Object] = service.putBackupVaultNotifications(params).promise().toFuture
     @inline def startBackupJobFuture(params: StartBackupJobInput): Future[StartBackupJobOutput] = service.startBackupJob(params).promise().toFuture
     @inline def startCopyJobFuture(params: StartCopyJobInput): Future[StartCopyJobOutput] = service.startCopyJob(params).promise().toFuture
+    @inline def startReportJobFuture(params: StartReportJobInput): Future[StartReportJobOutput] = service.startReportJob(params).promise().toFuture
     @inline def startRestoreJobFuture(params: StartRestoreJobInput): Future[StartRestoreJobOutput] = service.startRestoreJob(params).promise().toFuture
     @inline def stopBackupJobFuture(params: StopBackupJobInput): Future[js.Object] = service.stopBackupJob(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceInput): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceInput): Future[js.Object] = service.untagResource(params).promise().toFuture
     @inline def updateBackupPlanFuture(params: UpdateBackupPlanInput): Future[UpdateBackupPlanOutput] = service.updateBackupPlan(params).promise().toFuture
+    @inline def updateFrameworkFuture(params: UpdateFrameworkInput): Future[UpdateFrameworkOutput] = service.updateFramework(params).promise().toFuture
     @inline def updateGlobalSettingsFuture(params: UpdateGlobalSettingsInput): Future[js.Object] = service.updateGlobalSettings(params).promise().toFuture
     @inline def updateRecoveryPointLifecycleFuture(params: UpdateRecoveryPointLifecycleInput): Future[UpdateRecoveryPointLifecycleOutput] = service.updateRecoveryPointLifecycle(params).promise().toFuture
     @inline def updateRegionSettingsFuture(params: UpdateRegionSettingsInput): Future[js.Object] = service.updateRegionSettings(params).promise().toFuture
+    @inline def updateReportPlanFuture(params: UpdateReportPlanInput): Future[UpdateReportPlanOutput] = service.updateReportPlan(params).promise().toFuture
 
   }
 
@@ -123,19 +159,27 @@ package object backup {
     def createBackupPlan(params: CreateBackupPlanInput): Request[CreateBackupPlanOutput] = js.native
     def createBackupSelection(params: CreateBackupSelectionInput): Request[CreateBackupSelectionOutput] = js.native
     def createBackupVault(params: CreateBackupVaultInput): Request[CreateBackupVaultOutput] = js.native
+    def createFramework(params: CreateFrameworkInput): Request[CreateFrameworkOutput] = js.native
+    def createReportPlan(params: CreateReportPlanInput): Request[CreateReportPlanOutput] = js.native
     def deleteBackupPlan(params: DeleteBackupPlanInput): Request[DeleteBackupPlanOutput] = js.native
     def deleteBackupSelection(params: DeleteBackupSelectionInput): Request[js.Object] = js.native
     def deleteBackupVault(params: DeleteBackupVaultInput): Request[js.Object] = js.native
     def deleteBackupVaultAccessPolicy(params: DeleteBackupVaultAccessPolicyInput): Request[js.Object] = js.native
+    def deleteBackupVaultLockConfiguration(params: DeleteBackupVaultLockConfigurationInput): Request[js.Object] = js.native
     def deleteBackupVaultNotifications(params: DeleteBackupVaultNotificationsInput): Request[js.Object] = js.native
+    def deleteFramework(params: DeleteFrameworkInput): Request[js.Object] = js.native
     def deleteRecoveryPoint(params: DeleteRecoveryPointInput): Request[js.Object] = js.native
+    def deleteReportPlan(params: DeleteReportPlanInput): Request[js.Object] = js.native
     def describeBackupJob(params: DescribeBackupJobInput): Request[DescribeBackupJobOutput] = js.native
     def describeBackupVault(params: DescribeBackupVaultInput): Request[DescribeBackupVaultOutput] = js.native
     def describeCopyJob(params: DescribeCopyJobInput): Request[DescribeCopyJobOutput] = js.native
+    def describeFramework(params: DescribeFrameworkInput): Request[DescribeFrameworkOutput] = js.native
     def describeGlobalSettings(params: DescribeGlobalSettingsInput): Request[DescribeGlobalSettingsOutput] = js.native
     def describeProtectedResource(params: DescribeProtectedResourceInput): Request[DescribeProtectedResourceOutput] = js.native
     def describeRecoveryPoint(params: DescribeRecoveryPointInput): Request[DescribeRecoveryPointOutput] = js.native
     def describeRegionSettings(params: DescribeRegionSettingsInput): Request[DescribeRegionSettingsOutput] = js.native
+    def describeReportJob(params: DescribeReportJobInput): Request[DescribeReportJobOutput] = js.native
+    def describeReportPlan(params: DescribeReportPlanInput): Request[DescribeReportPlanOutput] = js.native
     def describeRestoreJob(params: DescribeRestoreJobInput): Request[DescribeRestoreJobOutput] = js.native
     def disassociateRecoveryPoint(params: DisassociateRecoveryPointInput): Request[js.Object] = js.native
     def exportBackupPlanTemplate(params: ExportBackupPlanTemplateInput): Request[ExportBackupPlanTemplateOutput] = js.native
@@ -154,23 +198,30 @@ package object backup {
     def listBackupSelections(params: ListBackupSelectionsInput): Request[ListBackupSelectionsOutput] = js.native
     def listBackupVaults(params: ListBackupVaultsInput): Request[ListBackupVaultsOutput] = js.native
     def listCopyJobs(params: ListCopyJobsInput): Request[ListCopyJobsOutput] = js.native
+    def listFrameworks(params: ListFrameworksInput): Request[ListFrameworksOutput] = js.native
     def listProtectedResources(params: ListProtectedResourcesInput): Request[ListProtectedResourcesOutput] = js.native
     def listRecoveryPointsByBackupVault(params: ListRecoveryPointsByBackupVaultInput): Request[ListRecoveryPointsByBackupVaultOutput] = js.native
     def listRecoveryPointsByResource(params: ListRecoveryPointsByResourceInput): Request[ListRecoveryPointsByResourceOutput] = js.native
+    def listReportJobs(params: ListReportJobsInput): Request[ListReportJobsOutput] = js.native
+    def listReportPlans(params: ListReportPlansInput): Request[ListReportPlansOutput] = js.native
     def listRestoreJobs(params: ListRestoreJobsInput): Request[ListRestoreJobsOutput] = js.native
     def listTags(params: ListTagsInput): Request[ListTagsOutput] = js.native
     def putBackupVaultAccessPolicy(params: PutBackupVaultAccessPolicyInput): Request[js.Object] = js.native
+    def putBackupVaultLockConfiguration(params: PutBackupVaultLockConfigurationInput): Request[js.Object] = js.native
     def putBackupVaultNotifications(params: PutBackupVaultNotificationsInput): Request[js.Object] = js.native
     def startBackupJob(params: StartBackupJobInput): Request[StartBackupJobOutput] = js.native
     def startCopyJob(params: StartCopyJobInput): Request[StartCopyJobOutput] = js.native
+    def startReportJob(params: StartReportJobInput): Request[StartReportJobOutput] = js.native
     def startRestoreJob(params: StartRestoreJobInput): Request[StartRestoreJobOutput] = js.native
     def stopBackupJob(params: StopBackupJobInput): Request[js.Object] = js.native
     def tagResource(params: TagResourceInput): Request[js.Object] = js.native
     def untagResource(params: UntagResourceInput): Request[js.Object] = js.native
     def updateBackupPlan(params: UpdateBackupPlanInput): Request[UpdateBackupPlanOutput] = js.native
+    def updateFramework(params: UpdateFrameworkInput): Request[UpdateFrameworkOutput] = js.native
     def updateGlobalSettings(params: UpdateGlobalSettingsInput): Request[js.Object] = js.native
     def updateRecoveryPointLifecycle(params: UpdateRecoveryPointLifecycleInput): Request[UpdateRecoveryPointLifecycleOutput] = js.native
     def updateRegionSettings(params: UpdateRegionSettingsInput): Request[js.Object] = js.native
+    def updateReportPlan(params: UpdateReportPlanInput): Request[UpdateReportPlanOutput] = js.native
   }
   object Backup {
     @inline implicit def toOps(service: Backup): BackupOps = {
@@ -274,7 +325,7 @@ package object backup {
     }
   }
 
-  /** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
+  /** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of Amazon Web Services resources.
     */
   @js.native
   trait BackupPlan extends js.Object {
@@ -300,7 +351,7 @@ package object backup {
     }
   }
 
-  /** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task and can back up a different selection of AWS resources.
+  /** Contains an optional backup plan display name and an array of <code>BackupRule</code> objects, each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled task.
     */
   @js.native
   trait BackupPlanInput extends js.Object {
@@ -486,7 +537,9 @@ package object backup {
   trait BackupSelection extends js.Object {
     var IamRoleArn: IAMRoleArn
     var SelectionName: BackupSelectionName
+    var Conditions: js.UndefOr[Conditions]
     var ListOfTags: js.UndefOr[ListOfTags]
+    var NotResources: js.UndefOr[ResourceArns]
     var Resources: js.UndefOr[ResourceArns]
   }
 
@@ -495,7 +548,9 @@ package object backup {
     def apply(
         IamRoleArn: IAMRoleArn,
         SelectionName: BackupSelectionName,
+        Conditions: js.UndefOr[Conditions] = js.undefined,
         ListOfTags: js.UndefOr[ListOfTags] = js.undefined,
+        NotResources: js.UndefOr[ResourceArns] = js.undefined,
         Resources: js.UndefOr[ResourceArns] = js.undefined
     ): BackupSelection = {
       val __obj = js.Dynamic.literal(
@@ -503,7 +558,9 @@ package object backup {
         "SelectionName" -> SelectionName.asInstanceOf[js.Any]
       )
 
+      Conditions.foreach(__v => __obj.updateDynamic("Conditions")(__v.asInstanceOf[js.Any]))
       ListOfTags.foreach(__v => __obj.updateDynamic("ListOfTags")(__v.asInstanceOf[js.Any]))
+      NotResources.foreach(__v => __obj.updateDynamic("NotResources")(__v.asInstanceOf[js.Any]))
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupSelection]
     }
@@ -551,6 +608,10 @@ package object backup {
     var CreationDate: js.UndefOr[timestamp]
     var CreatorRequestId: js.UndefOr[String]
     var EncryptionKeyArn: js.UndefOr[ARN]
+    var LockDate: js.UndefOr[timestamp]
+    var Locked: js.UndefOr[Boolean]
+    var MaxRetentionDays: js.UndefOr[Double]
+    var MinRetentionDays: js.UndefOr[Double]
     var NumberOfRecoveryPoints: js.UndefOr[Double]
   }
 
@@ -562,6 +623,10 @@ package object backup {
         CreationDate: js.UndefOr[timestamp] = js.undefined,
         CreatorRequestId: js.UndefOr[String] = js.undefined,
         EncryptionKeyArn: js.UndefOr[ARN] = js.undefined,
+        LockDate: js.UndefOr[timestamp] = js.undefined,
+        Locked: js.UndefOr[Boolean] = js.undefined,
+        MaxRetentionDays: js.UndefOr[Double] = js.undefined,
+        MinRetentionDays: js.UndefOr[Double] = js.undefined,
         NumberOfRecoveryPoints: js.UndefOr[Double] = js.undefined
     ): BackupVaultListMember = {
       val __obj = js.Dynamic.literal()
@@ -570,12 +635,16 @@ package object backup {
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
+      LockDate.foreach(__v => __obj.updateDynamic("LockDate")(__v.asInstanceOf[js.Any]))
+      Locked.foreach(__v => __obj.updateDynamic("Locked")(__v.asInstanceOf[js.Any]))
+      MaxRetentionDays.foreach(__v => __obj.updateDynamic("MaxRetentionDays")(__v.asInstanceOf[js.Any]))
+      MinRetentionDays.foreach(__v => __obj.updateDynamic("MinRetentionDays")(__v.asInstanceOf[js.Any]))
       NumberOfRecoveryPoints.foreach(__v => __obj.updateDynamic("NumberOfRecoveryPoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[BackupVaultListMember]
     }
   }
 
-  /** Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point. The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS Backup transitions and expires backups automatically according to the lifecycle that you define. Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. Only Amazon EFS file system backups can be transitioned to cold storage.
+  /** Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which are used to specify a lifecycle for a recovery point. The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. Backup transitions and expires backups automatically according to the lifecycle that you define. Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold. Only Amazon EFS file system backups can be transitioned to cold storage.
     */
   @js.native
   trait CalculatedLifecycle extends js.Object {
@@ -596,7 +665,7 @@ package object backup {
     }
   }
 
-  /** Contains an array of triplets made up of a condition type (such as <code>StringEquals</code>), a key, and a value. Conditions are used to filter resources in a selection that is assigned to a backup plan.
+  /** Contains an array of triplets made up of a condition type (such as <code>StringEquals</code>), a key, and a value. Used to filter resources using their tags and assign them to a backup plan. Case sensitive.
     */
   @js.native
   trait Condition extends js.Object {
@@ -618,6 +687,101 @@ package object backup {
         "ConditionValue" -> ConditionValue.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[Condition]
+    }
+  }
+
+  /** Includes information about tags you define to assign tagged resources to a backup plan.
+    */
+  @js.native
+  trait ConditionParameter extends js.Object {
+    var ConditionKey: js.UndefOr[ConditionKey]
+    var ConditionValue: js.UndefOr[ConditionValue]
+  }
+
+  object ConditionParameter {
+    @inline
+    def apply(
+        ConditionKey: js.UndefOr[ConditionKey] = js.undefined,
+        ConditionValue: js.UndefOr[ConditionValue] = js.undefined
+    ): ConditionParameter = {
+      val __obj = js.Dynamic.literal()
+      ConditionKey.foreach(__v => __obj.updateDynamic("ConditionKey")(__v.asInstanceOf[js.Any]))
+      ConditionValue.foreach(__v => __obj.updateDynamic("ConditionValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ConditionParameter]
+    }
+  }
+
+  /** Contains information about which resources to include or exclude from a backup plan using their tags. Conditions are case sensitive.
+    */
+  @js.native
+  trait Conditions extends js.Object {
+    var StringEquals: js.UndefOr[ConditionParameters]
+    var StringLike: js.UndefOr[ConditionParameters]
+    var StringNotEquals: js.UndefOr[ConditionParameters]
+    var StringNotLike: js.UndefOr[ConditionParameters]
+  }
+
+  object Conditions {
+    @inline
+    def apply(
+        StringEquals: js.UndefOr[ConditionParameters] = js.undefined,
+        StringLike: js.UndefOr[ConditionParameters] = js.undefined,
+        StringNotEquals: js.UndefOr[ConditionParameters] = js.undefined,
+        StringNotLike: js.UndefOr[ConditionParameters] = js.undefined
+    ): Conditions = {
+      val __obj = js.Dynamic.literal()
+      StringEquals.foreach(__v => __obj.updateDynamic("StringEquals")(__v.asInstanceOf[js.Any]))
+      StringLike.foreach(__v => __obj.updateDynamic("StringLike")(__v.asInstanceOf[js.Any]))
+      StringNotEquals.foreach(__v => __obj.updateDynamic("StringNotEquals")(__v.asInstanceOf[js.Any]))
+      StringNotLike.foreach(__v => __obj.updateDynamic("StringNotLike")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Conditions]
+    }
+  }
+
+  /** A list of parameters for a control. A control can have zero, one, or more than one parameter. An example of a control with two parameters is: "backup plan frequency is at least <code>daily</code> and the retention period is at least <code>1 year</code>". The first parameter is <code>daily</code>. The second parameter is <code>1 year</code>.
+    */
+  @js.native
+  trait ControlInputParameter extends js.Object {
+    var ParameterName: js.UndefOr[ParameterName]
+    var ParameterValue: js.UndefOr[ParameterValue]
+  }
+
+  object ControlInputParameter {
+    @inline
+    def apply(
+        ParameterName: js.UndefOr[ParameterName] = js.undefined,
+        ParameterValue: js.UndefOr[ParameterValue] = js.undefined
+    ): ControlInputParameter = {
+      val __obj = js.Dynamic.literal()
+      ParameterName.foreach(__v => __obj.updateDynamic("ParameterName")(__v.asInstanceOf[js.Any]))
+      ParameterValue.foreach(__v => __obj.updateDynamic("ParameterValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ControlInputParameter]
+    }
+  }
+
+  /** A framework consists of one or more controls. Each control has its own control scope. The control scope can include one or more resource types, a combination of a tag key and value, or a combination of one resource type and one resource ID. If no scope is specified, evaluations for the rule are triggered when any resource in your recording group changes in configuration.
+    *
+    * '''Note:'''To set a control scope that includes all of a particular resource, leave the <code>ControlScope</code> empty or do not pass it when calling <code>CreateFramework</code>.
+    */
+  @js.native
+  trait ControlScope extends js.Object {
+    var ComplianceResourceIds: js.UndefOr[ComplianceResourceIdList]
+    var ComplianceResourceTypes: js.UndefOr[ResourceTypeList]
+    var Tags: js.UndefOr[stringMap]
+  }
+
+  object ControlScope {
+    @inline
+    def apply(
+        ComplianceResourceIds: js.UndefOr[ComplianceResourceIdList] = js.undefined,
+        ComplianceResourceTypes: js.UndefOr[ResourceTypeList] = js.undefined,
+        Tags: js.UndefOr[stringMap] = js.undefined
+    ): ControlScope = {
+      val __obj = js.Dynamic.literal()
+      ComplianceResourceIds.foreach(__v => __obj.updateDynamic("ComplianceResourceIds")(__v.asInstanceOf[js.Any]))
+      ComplianceResourceTypes.foreach(__v => __obj.updateDynamic("ComplianceResourceTypes")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ControlScope]
     }
   }
 
@@ -852,6 +1016,110 @@ package object backup {
   }
 
   @js.native
+  trait CreateFrameworkInput extends js.Object {
+    var FrameworkControls: FrameworkControls
+    var FrameworkName: FrameworkName
+    var FrameworkDescription: js.UndefOr[FrameworkDescription]
+    var FrameworkTags: js.UndefOr[stringMap]
+    var IdempotencyToken: js.UndefOr[String]
+  }
+
+  object CreateFrameworkInput {
+    @inline
+    def apply(
+        FrameworkControls: FrameworkControls,
+        FrameworkName: FrameworkName,
+        FrameworkDescription: js.UndefOr[FrameworkDescription] = js.undefined,
+        FrameworkTags: js.UndefOr[stringMap] = js.undefined,
+        IdempotencyToken: js.UndefOr[String] = js.undefined
+    ): CreateFrameworkInput = {
+      val __obj = js.Dynamic.literal(
+        "FrameworkControls" -> FrameworkControls.asInstanceOf[js.Any],
+        "FrameworkName" -> FrameworkName.asInstanceOf[js.Any]
+      )
+
+      FrameworkDescription.foreach(__v => __obj.updateDynamic("FrameworkDescription")(__v.asInstanceOf[js.Any]))
+      FrameworkTags.foreach(__v => __obj.updateDynamic("FrameworkTags")(__v.asInstanceOf[js.Any]))
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFrameworkInput]
+    }
+  }
+
+  @js.native
+  trait CreateFrameworkOutput extends js.Object {
+    var FrameworkArn: js.UndefOr[ARN]
+    var FrameworkName: js.UndefOr[FrameworkName]
+  }
+
+  object CreateFrameworkOutput {
+    @inline
+    def apply(
+        FrameworkArn: js.UndefOr[ARN] = js.undefined,
+        FrameworkName: js.UndefOr[FrameworkName] = js.undefined
+    ): CreateFrameworkOutput = {
+      val __obj = js.Dynamic.literal()
+      FrameworkArn.foreach(__v => __obj.updateDynamic("FrameworkArn")(__v.asInstanceOf[js.Any]))
+      FrameworkName.foreach(__v => __obj.updateDynamic("FrameworkName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateFrameworkOutput]
+    }
+  }
+
+  @js.native
+  trait CreateReportPlanInput extends js.Object {
+    var ReportDeliveryChannel: ReportDeliveryChannel
+    var ReportPlanName: ReportPlanName
+    var ReportSetting: ReportSetting
+    var IdempotencyToken: js.UndefOr[String]
+    var ReportPlanDescription: js.UndefOr[ReportPlanDescription]
+    var ReportPlanTags: js.UndefOr[stringMap]
+  }
+
+  object CreateReportPlanInput {
+    @inline
+    def apply(
+        ReportDeliveryChannel: ReportDeliveryChannel,
+        ReportPlanName: ReportPlanName,
+        ReportSetting: ReportSetting,
+        IdempotencyToken: js.UndefOr[String] = js.undefined,
+        ReportPlanDescription: js.UndefOr[ReportPlanDescription] = js.undefined,
+        ReportPlanTags: js.UndefOr[stringMap] = js.undefined
+    ): CreateReportPlanInput = {
+      val __obj = js.Dynamic.literal(
+        "ReportDeliveryChannel" -> ReportDeliveryChannel.asInstanceOf[js.Any],
+        "ReportPlanName" -> ReportPlanName.asInstanceOf[js.Any],
+        "ReportSetting" -> ReportSetting.asInstanceOf[js.Any]
+      )
+
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      ReportPlanDescription.foreach(__v => __obj.updateDynamic("ReportPlanDescription")(__v.asInstanceOf[js.Any]))
+      ReportPlanTags.foreach(__v => __obj.updateDynamic("ReportPlanTags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateReportPlanInput]
+    }
+  }
+
+  @js.native
+  trait CreateReportPlanOutput extends js.Object {
+    var CreationTime: js.UndefOr[timestamp]
+    var ReportPlanArn: js.UndefOr[ARN]
+    var ReportPlanName: js.UndefOr[ReportPlanName]
+  }
+
+  object CreateReportPlanOutput {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[timestamp] = js.undefined,
+        ReportPlanArn: js.UndefOr[ARN] = js.undefined,
+        ReportPlanName: js.UndefOr[ReportPlanName] = js.undefined
+    ): CreateReportPlanOutput = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      ReportPlanArn.foreach(__v => __obj.updateDynamic("ReportPlanArn")(__v.asInstanceOf[js.Any]))
+      ReportPlanName.foreach(__v => __obj.updateDynamic("ReportPlanName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateReportPlanOutput]
+    }
+  }
+
+  @js.native
   trait DeleteBackupPlanInput extends js.Object {
     var BackupPlanId: String
   }
@@ -948,6 +1216,23 @@ package object backup {
   }
 
   @js.native
+  trait DeleteBackupVaultLockConfigurationInput extends js.Object {
+    var BackupVaultName: BackupVaultName
+  }
+
+  object DeleteBackupVaultLockConfigurationInput {
+    @inline
+    def apply(
+        BackupVaultName: BackupVaultName
+    ): DeleteBackupVaultLockConfigurationInput = {
+      val __obj = js.Dynamic.literal(
+        "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBackupVaultLockConfigurationInput]
+    }
+  }
+
+  @js.native
   trait DeleteBackupVaultNotificationsInput extends js.Object {
     var BackupVaultName: BackupVaultName
   }
@@ -961,6 +1246,23 @@ package object backup {
         "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteBackupVaultNotificationsInput]
+    }
+  }
+
+  @js.native
+  trait DeleteFrameworkInput extends js.Object {
+    var FrameworkName: FrameworkName
+  }
+
+  object DeleteFrameworkInput {
+    @inline
+    def apply(
+        FrameworkName: FrameworkName
+    ): DeleteFrameworkInput = {
+      val __obj = js.Dynamic.literal(
+        "FrameworkName" -> FrameworkName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteFrameworkInput]
     }
   }
 
@@ -981,6 +1283,23 @@ package object backup {
         "RecoveryPointArn" -> RecoveryPointArn.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteRecoveryPointInput]
+    }
+  }
+
+  @js.native
+  trait DeleteReportPlanInput extends js.Object {
+    var ReportPlanName: ReportPlanName
+  }
+
+  object DeleteReportPlanInput {
+    @inline
+    def apply(
+        ReportPlanName: ReportPlanName
+    ): DeleteReportPlanInput = {
+      val __obj = js.Dynamic.literal(
+        "ReportPlanName" -> ReportPlanName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteReportPlanInput]
     }
   }
 
@@ -1098,6 +1417,10 @@ package object backup {
     var CreationDate: js.UndefOr[timestamp]
     var CreatorRequestId: js.UndefOr[String]
     var EncryptionKeyArn: js.UndefOr[ARN]
+    var LockDate: js.UndefOr[timestamp]
+    var Locked: js.UndefOr[Boolean]
+    var MaxRetentionDays: js.UndefOr[Double]
+    var MinRetentionDays: js.UndefOr[Double]
     var NumberOfRecoveryPoints: js.UndefOr[Double]
   }
 
@@ -1109,6 +1432,10 @@ package object backup {
         CreationDate: js.UndefOr[timestamp] = js.undefined,
         CreatorRequestId: js.UndefOr[String] = js.undefined,
         EncryptionKeyArn: js.UndefOr[ARN] = js.undefined,
+        LockDate: js.UndefOr[timestamp] = js.undefined,
+        Locked: js.UndefOr[Boolean] = js.undefined,
+        MaxRetentionDays: js.UndefOr[Double] = js.undefined,
+        MinRetentionDays: js.UndefOr[Double] = js.undefined,
         NumberOfRecoveryPoints: js.UndefOr[Double] = js.undefined
     ): DescribeBackupVaultOutput = {
       val __obj = js.Dynamic.literal()
@@ -1117,6 +1444,10 @@ package object backup {
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
       CreatorRequestId.foreach(__v => __obj.updateDynamic("CreatorRequestId")(__v.asInstanceOf[js.Any]))
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
+      LockDate.foreach(__v => __obj.updateDynamic("LockDate")(__v.asInstanceOf[js.Any]))
+      Locked.foreach(__v => __obj.updateDynamic("Locked")(__v.asInstanceOf[js.Any]))
+      MaxRetentionDays.foreach(__v => __obj.updateDynamic("MaxRetentionDays")(__v.asInstanceOf[js.Any]))
+      MinRetentionDays.foreach(__v => __obj.updateDynamic("MinRetentionDays")(__v.asInstanceOf[js.Any]))
       NumberOfRecoveryPoints.foreach(__v => __obj.updateDynamic("NumberOfRecoveryPoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeBackupVaultOutput]
     }
@@ -1152,6 +1483,60 @@ package object backup {
       val __obj = js.Dynamic.literal()
       CopyJob.foreach(__v => __obj.updateDynamic("CopyJob")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeCopyJobOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeFrameworkInput extends js.Object {
+    var FrameworkName: FrameworkName
+  }
+
+  object DescribeFrameworkInput {
+    @inline
+    def apply(
+        FrameworkName: FrameworkName
+    ): DescribeFrameworkInput = {
+      val __obj = js.Dynamic.literal(
+        "FrameworkName" -> FrameworkName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeFrameworkInput]
+    }
+  }
+
+  @js.native
+  trait DescribeFrameworkOutput extends js.Object {
+    var CreationTime: js.UndefOr[timestamp]
+    var DeploymentStatus: js.UndefOr[String]
+    var FrameworkArn: js.UndefOr[ARN]
+    var FrameworkControls: js.UndefOr[FrameworkControls]
+    var FrameworkDescription: js.UndefOr[FrameworkDescription]
+    var FrameworkName: js.UndefOr[FrameworkName]
+    var FrameworkStatus: js.UndefOr[String]
+    var IdempotencyToken: js.UndefOr[String]
+  }
+
+  object DescribeFrameworkOutput {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[timestamp] = js.undefined,
+        DeploymentStatus: js.UndefOr[String] = js.undefined,
+        FrameworkArn: js.UndefOr[ARN] = js.undefined,
+        FrameworkControls: js.UndefOr[FrameworkControls] = js.undefined,
+        FrameworkDescription: js.UndefOr[FrameworkDescription] = js.undefined,
+        FrameworkName: js.UndefOr[FrameworkName] = js.undefined,
+        FrameworkStatus: js.UndefOr[String] = js.undefined,
+        IdempotencyToken: js.UndefOr[String] = js.undefined
+    ): DescribeFrameworkOutput = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
+      FrameworkArn.foreach(__v => __obj.updateDynamic("FrameworkArn")(__v.asInstanceOf[js.Any]))
+      FrameworkControls.foreach(__v => __obj.updateDynamic("FrameworkControls")(__v.asInstanceOf[js.Any]))
+      FrameworkDescription.foreach(__v => __obj.updateDynamic("FrameworkDescription")(__v.asInstanceOf[js.Any]))
+      FrameworkName.foreach(__v => __obj.updateDynamic("FrameworkName")(__v.asInstanceOf[js.Any]))
+      FrameworkStatus.foreach(__v => __obj.updateDynamic("FrameworkStatus")(__v.asInstanceOf[js.Any]))
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeFrameworkOutput]
     }
   }
 
@@ -1263,6 +1648,7 @@ package object backup {
     var ResourceType: js.UndefOr[ResourceType]
     var SourceBackupVaultArn: js.UndefOr[ARN]
     var Status: js.UndefOr[RecoveryPointStatus]
+    var StatusMessage: js.UndefOr[String]
     var StorageClass: js.UndefOr[StorageClass]
   }
 
@@ -1286,6 +1672,7 @@ package object backup {
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         SourceBackupVaultArn: js.UndefOr[ARN] = js.undefined,
         Status: js.UndefOr[RecoveryPointStatus] = js.undefined,
+        StatusMessage: js.UndefOr[String] = js.undefined,
         StorageClass: js.UndefOr[StorageClass] = js.undefined
     ): DescribeRecoveryPointOutput = {
       val __obj = js.Dynamic.literal()
@@ -1306,6 +1693,7 @@ package object backup {
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       SourceBackupVaultArn.foreach(__v => __obj.updateDynamic("SourceBackupVaultArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       StorageClass.foreach(__v => __obj.updateDynamic("StorageClass")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRecoveryPointOutput]
     }
@@ -1324,17 +1712,86 @@ package object backup {
 
   @js.native
   trait DescribeRegionSettingsOutput extends js.Object {
+    var ResourceTypeManagementPreference: js.UndefOr[ResourceTypeManagementPreference]
     var ResourceTypeOptInPreference: js.UndefOr[ResourceTypeOptInPreference]
   }
 
   object DescribeRegionSettingsOutput {
     @inline
     def apply(
+        ResourceTypeManagementPreference: js.UndefOr[ResourceTypeManagementPreference] = js.undefined,
         ResourceTypeOptInPreference: js.UndefOr[ResourceTypeOptInPreference] = js.undefined
     ): DescribeRegionSettingsOutput = {
       val __obj = js.Dynamic.literal()
+      ResourceTypeManagementPreference.foreach(__v => __obj.updateDynamic("ResourceTypeManagementPreference")(__v.asInstanceOf[js.Any]))
       ResourceTypeOptInPreference.foreach(__v => __obj.updateDynamic("ResourceTypeOptInPreference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeRegionSettingsOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeReportJobInput extends js.Object {
+    var ReportJobId: ReportJobId
+  }
+
+  object DescribeReportJobInput {
+    @inline
+    def apply(
+        ReportJobId: ReportJobId
+    ): DescribeReportJobInput = {
+      val __obj = js.Dynamic.literal(
+        "ReportJobId" -> ReportJobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeReportJobInput]
+    }
+  }
+
+  @js.native
+  trait DescribeReportJobOutput extends js.Object {
+    var ReportJob: js.UndefOr[ReportJob]
+  }
+
+  object DescribeReportJobOutput {
+    @inline
+    def apply(
+        ReportJob: js.UndefOr[ReportJob] = js.undefined
+    ): DescribeReportJobOutput = {
+      val __obj = js.Dynamic.literal()
+      ReportJob.foreach(__v => __obj.updateDynamic("ReportJob")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReportJobOutput]
+    }
+  }
+
+  @js.native
+  trait DescribeReportPlanInput extends js.Object {
+    var ReportPlanName: ReportPlanName
+  }
+
+  object DescribeReportPlanInput {
+    @inline
+    def apply(
+        ReportPlanName: ReportPlanName
+    ): DescribeReportPlanInput = {
+      val __obj = js.Dynamic.literal(
+        "ReportPlanName" -> ReportPlanName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeReportPlanInput]
+    }
+  }
+
+  @js.native
+  trait DescribeReportPlanOutput extends js.Object {
+    var ReportPlan: js.UndefOr[ReportPlan]
+  }
+
+  object DescribeReportPlanOutput {
+    @inline
+    def apply(
+        ReportPlan: js.UndefOr[ReportPlan] = js.undefined
+    ): DescribeReportPlanOutput = {
+      val __obj = js.Dynamic.literal()
+      ReportPlan.foreach(__v => __obj.updateDynamic("ReportPlan")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeReportPlanOutput]
     }
   }
 
@@ -1457,6 +1914,65 @@ package object backup {
       val __obj = js.Dynamic.literal()
       BackupPlanTemplateJson.foreach(__v => __obj.updateDynamic("BackupPlanTemplateJson")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportBackupPlanTemplateOutput]
+    }
+  }
+
+  /** Contains detailed information about a framework. Frameworks contain controls, which evaluate and report on your backup events and resources. Frameworks generate daily compliance results.
+    */
+  @js.native
+  trait Framework extends js.Object {
+    var CreationTime: js.UndefOr[timestamp]
+    var DeploymentStatus: js.UndefOr[String]
+    var FrameworkArn: js.UndefOr[ARN]
+    var FrameworkDescription: js.UndefOr[FrameworkDescription]
+    var FrameworkName: js.UndefOr[FrameworkName]
+    var NumberOfControls: js.UndefOr[Int]
+  }
+
+  object Framework {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[timestamp] = js.undefined,
+        DeploymentStatus: js.UndefOr[String] = js.undefined,
+        FrameworkArn: js.UndefOr[ARN] = js.undefined,
+        FrameworkDescription: js.UndefOr[FrameworkDescription] = js.undefined,
+        FrameworkName: js.UndefOr[FrameworkName] = js.undefined,
+        NumberOfControls: js.UndefOr[Int] = js.undefined
+    ): Framework = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
+      FrameworkArn.foreach(__v => __obj.updateDynamic("FrameworkArn")(__v.asInstanceOf[js.Any]))
+      FrameworkDescription.foreach(__v => __obj.updateDynamic("FrameworkDescription")(__v.asInstanceOf[js.Any]))
+      FrameworkName.foreach(__v => __obj.updateDynamic("FrameworkName")(__v.asInstanceOf[js.Any]))
+      NumberOfControls.foreach(__v => __obj.updateDynamic("NumberOfControls")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Framework]
+    }
+  }
+
+  /** Contains detailed information about all of the controls of a framework. Each framework must contain at least one control.
+    */
+  @js.native
+  trait FrameworkControl extends js.Object {
+    var ControlName: ControlName
+    var ControlInputParameters: js.UndefOr[ControlInputParameters]
+    var ControlScope: js.UndefOr[ControlScope]
+  }
+
+  object FrameworkControl {
+    @inline
+    def apply(
+        ControlName: ControlName,
+        ControlInputParameters: js.UndefOr[ControlInputParameters] = js.undefined,
+        ControlScope: js.UndefOr[ControlScope] = js.undefined
+    ): FrameworkControl = {
+      val __obj = js.Dynamic.literal(
+        "ControlName" -> ControlName.asInstanceOf[js.Any]
+      )
+
+      ControlInputParameters.foreach(__v => __obj.updateDynamic("ControlInputParameters")(__v.asInstanceOf[js.Any]))
+      ControlScope.foreach(__v => __obj.updateDynamic("ControlScope")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[FrameworkControl]
     }
   }
 
@@ -2117,6 +2633,44 @@ package object backup {
   }
 
   @js.native
+  trait ListFrameworksInput extends js.Object {
+    var MaxResults: js.UndefOr[MaxFrameworkInputs]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListFrameworksInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxFrameworkInputs] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListFrameworksInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFrameworksInput]
+    }
+  }
+
+  @js.native
+  trait ListFrameworksOutput extends js.Object {
+    var Frameworks: js.UndefOr[FrameworkList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListFrameworksOutput {
+    @inline
+    def apply(
+        Frameworks: js.UndefOr[FrameworkList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListFrameworksOutput = {
+      val __obj = js.Dynamic.literal()
+      Frameworks.foreach(__v => __obj.updateDynamic("Frameworks")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListFrameworksOutput]
+    }
+  }
+
+  @js.native
   trait ListProtectedResourcesInput extends js.Object {
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[String]
@@ -2252,6 +2806,94 @@ package object backup {
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
       RecoveryPoints.foreach(__v => __obj.updateDynamic("RecoveryPoints")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListRecoveryPointsByResourceOutput]
+    }
+  }
+
+  @js.native
+  trait ListReportJobsInput extends js.Object {
+    var ByCreationAfter: js.UndefOr[timestamp]
+    var ByCreationBefore: js.UndefOr[timestamp]
+    var ByReportPlanName: js.UndefOr[ReportPlanName]
+    var ByStatus: js.UndefOr[String]
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListReportJobsInput {
+    @inline
+    def apply(
+        ByCreationAfter: js.UndefOr[timestamp] = js.undefined,
+        ByCreationBefore: js.UndefOr[timestamp] = js.undefined,
+        ByReportPlanName: js.UndefOr[ReportPlanName] = js.undefined,
+        ByStatus: js.UndefOr[String] = js.undefined,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListReportJobsInput = {
+      val __obj = js.Dynamic.literal()
+      ByCreationAfter.foreach(__v => __obj.updateDynamic("ByCreationAfter")(__v.asInstanceOf[js.Any]))
+      ByCreationBefore.foreach(__v => __obj.updateDynamic("ByCreationBefore")(__v.asInstanceOf[js.Any]))
+      ByReportPlanName.foreach(__v => __obj.updateDynamic("ByReportPlanName")(__v.asInstanceOf[js.Any]))
+      ByStatus.foreach(__v => __obj.updateDynamic("ByStatus")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReportJobsInput]
+    }
+  }
+
+  @js.native
+  trait ListReportJobsOutput extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var ReportJobs: js.UndefOr[ReportJobList]
+  }
+
+  object ListReportJobsOutput {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        ReportJobs: js.UndefOr[ReportJobList] = js.undefined
+    ): ListReportJobsOutput = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ReportJobs.foreach(__v => __obj.updateDynamic("ReportJobs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReportJobsOutput]
+    }
+  }
+
+  @js.native
+  trait ListReportPlansInput extends js.Object {
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListReportPlansInput {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListReportPlansInput = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReportPlansInput]
+    }
+  }
+
+  @js.native
+  trait ListReportPlansOutput extends js.Object {
+    var NextToken: js.UndefOr[String]
+    var ReportPlans: js.UndefOr[ReportPlanList]
+  }
+
+  object ListReportPlansOutput {
+    @inline
+    def apply(
+        NextToken: js.UndefOr[String] = js.undefined,
+        ReportPlans: js.UndefOr[ReportPlanList] = js.undefined
+    ): ListReportPlansOutput = {
+      val __obj = js.Dynamic.literal()
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      ReportPlans.foreach(__v => __obj.updateDynamic("ReportPlans")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListReportPlansOutput]
     }
   }
 
@@ -2394,6 +3036,33 @@ package object backup {
   }
 
   @js.native
+  trait PutBackupVaultLockConfigurationInput extends js.Object {
+    var BackupVaultName: BackupVaultName
+    var ChangeableForDays: js.UndefOr[Double]
+    var MaxRetentionDays: js.UndefOr[Double]
+    var MinRetentionDays: js.UndefOr[Double]
+  }
+
+  object PutBackupVaultLockConfigurationInput {
+    @inline
+    def apply(
+        BackupVaultName: BackupVaultName,
+        ChangeableForDays: js.UndefOr[Double] = js.undefined,
+        MaxRetentionDays: js.UndefOr[Double] = js.undefined,
+        MinRetentionDays: js.UndefOr[Double] = js.undefined
+    ): PutBackupVaultLockConfigurationInput = {
+      val __obj = js.Dynamic.literal(
+        "BackupVaultName" -> BackupVaultName.asInstanceOf[js.Any]
+      )
+
+      ChangeableForDays.foreach(__v => __obj.updateDynamic("ChangeableForDays")(__v.asInstanceOf[js.Any]))
+      MaxRetentionDays.foreach(__v => __obj.updateDynamic("MaxRetentionDays")(__v.asInstanceOf[js.Any]))
+      MinRetentionDays.foreach(__v => __obj.updateDynamic("MinRetentionDays")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutBackupVaultLockConfigurationInput]
+    }
+  }
+
+  @js.native
   trait PutBackupVaultNotificationsInput extends js.Object {
     var BackupVaultEvents: BackupVaultEvents
     var BackupVaultName: BackupVaultName
@@ -2437,6 +3106,7 @@ package object backup {
     var ResourceType: js.UndefOr[ResourceType]
     var SourceBackupVaultArn: js.UndefOr[ARN]
     var Status: js.UndefOr[RecoveryPointStatus]
+    var StatusMessage: js.UndefOr[String]
   }
 
   object RecoveryPointByBackupVault {
@@ -2458,7 +3128,8 @@ package object backup {
         ResourceArn: js.UndefOr[ARN] = js.undefined,
         ResourceType: js.UndefOr[ResourceType] = js.undefined,
         SourceBackupVaultArn: js.UndefOr[ARN] = js.undefined,
-        Status: js.UndefOr[RecoveryPointStatus] = js.undefined
+        Status: js.UndefOr[RecoveryPointStatus] = js.undefined,
+        StatusMessage: js.UndefOr[String] = js.undefined
     ): RecoveryPointByBackupVault = {
       val __obj = js.Dynamic.literal()
       BackupSizeInBytes.foreach(__v => __obj.updateDynamic("BackupSizeInBytes")(__v.asInstanceOf[js.Any]))
@@ -2478,6 +3149,7 @@ package object backup {
       ResourceType.foreach(__v => __obj.updateDynamic("ResourceType")(__v.asInstanceOf[js.Any]))
       SourceBackupVaultArn.foreach(__v => __obj.updateDynamic("SourceBackupVaultArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecoveryPointByBackupVault]
     }
   }
@@ -2492,6 +3164,7 @@ package object backup {
     var EncryptionKeyArn: js.UndefOr[ARN]
     var RecoveryPointArn: js.UndefOr[ARN]
     var Status: js.UndefOr[RecoveryPointStatus]
+    var StatusMessage: js.UndefOr[String]
   }
 
   object RecoveryPointByResource {
@@ -2502,7 +3175,8 @@ package object backup {
         CreationDate: js.UndefOr[timestamp] = js.undefined,
         EncryptionKeyArn: js.UndefOr[ARN] = js.undefined,
         RecoveryPointArn: js.UndefOr[ARN] = js.undefined,
-        Status: js.UndefOr[RecoveryPointStatus] = js.undefined
+        Status: js.UndefOr[RecoveryPointStatus] = js.undefined,
+        StatusMessage: js.UndefOr[String] = js.undefined
     ): RecoveryPointByResource = {
       val __obj = js.Dynamic.literal()
       BackupSizeBytes.foreach(__v => __obj.updateDynamic("BackupSizeBytes")(__v.asInstanceOf[js.Any]))
@@ -2511,11 +3185,12 @@ package object backup {
       EncryptionKeyArn.foreach(__v => __obj.updateDynamic("EncryptionKeyArn")(__v.asInstanceOf[js.Any]))
       RecoveryPointArn.foreach(__v => __obj.updateDynamic("RecoveryPointArn")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecoveryPointByResource]
     }
   }
 
-  /** Contains information about the backup plan and rule that AWS Backup used to initiate the recovery point backup.
+  /** Contains information about the backup plan and rule that Backup used to initiate the recovery point backup.
     */
   @js.native
   trait RecoveryPointCreator extends js.Object {
@@ -2539,6 +3214,160 @@ package object backup {
       BackupPlanVersion.foreach(__v => __obj.updateDynamic("BackupPlanVersion")(__v.asInstanceOf[js.Any]))
       BackupRuleId.foreach(__v => __obj.updateDynamic("BackupRuleId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecoveryPointCreator]
+    }
+  }
+
+  /** Contains information from your report plan about where to deliver your reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats of your reports.
+    */
+  @js.native
+  trait ReportDeliveryChannel extends js.Object {
+    var S3BucketName: String
+    var Formats: js.UndefOr[FormatList]
+    var S3KeyPrefix: js.UndefOr[String]
+  }
+
+  object ReportDeliveryChannel {
+    @inline
+    def apply(
+        S3BucketName: String,
+        Formats: js.UndefOr[FormatList] = js.undefined,
+        S3KeyPrefix: js.UndefOr[String] = js.undefined
+    ): ReportDeliveryChannel = {
+      val __obj = js.Dynamic.literal(
+        "S3BucketName" -> S3BucketName.asInstanceOf[js.Any]
+      )
+
+      Formats.foreach(__v => __obj.updateDynamic("Formats")(__v.asInstanceOf[js.Any]))
+      S3KeyPrefix.foreach(__v => __obj.updateDynamic("S3KeyPrefix")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportDeliveryChannel]
+    }
+  }
+
+  /** Contains information from your report job about your report destination.
+    */
+  @js.native
+  trait ReportDestination extends js.Object {
+    var S3BucketName: js.UndefOr[String]
+    var S3Keys: js.UndefOr[stringList]
+  }
+
+  object ReportDestination {
+    @inline
+    def apply(
+        S3BucketName: js.UndefOr[String] = js.undefined,
+        S3Keys: js.UndefOr[stringList] = js.undefined
+    ): ReportDestination = {
+      val __obj = js.Dynamic.literal()
+      S3BucketName.foreach(__v => __obj.updateDynamic("S3BucketName")(__v.asInstanceOf[js.Any]))
+      S3Keys.foreach(__v => __obj.updateDynamic("S3Keys")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportDestination]
+    }
+  }
+
+  /** Contains detailed information about a report job. A report job compiles a report based on a report plan and publishes it to Amazon S3.
+    */
+  @js.native
+  trait ReportJob extends js.Object {
+    var CompletionTime: js.UndefOr[timestamp]
+    var CreationTime: js.UndefOr[timestamp]
+    var ReportDestination: js.UndefOr[ReportDestination]
+    var ReportJobId: js.UndefOr[ReportJobId]
+    var ReportPlanArn: js.UndefOr[ARN]
+    var ReportTemplate: js.UndefOr[String]
+    var Status: js.UndefOr[String]
+    var StatusMessage: js.UndefOr[String]
+  }
+
+  object ReportJob {
+    @inline
+    def apply(
+        CompletionTime: js.UndefOr[timestamp] = js.undefined,
+        CreationTime: js.UndefOr[timestamp] = js.undefined,
+        ReportDestination: js.UndefOr[ReportDestination] = js.undefined,
+        ReportJobId: js.UndefOr[ReportJobId] = js.undefined,
+        ReportPlanArn: js.UndefOr[ARN] = js.undefined,
+        ReportTemplate: js.UndefOr[String] = js.undefined,
+        Status: js.UndefOr[String] = js.undefined,
+        StatusMessage: js.UndefOr[String] = js.undefined
+    ): ReportJob = {
+      val __obj = js.Dynamic.literal()
+      CompletionTime.foreach(__v => __obj.updateDynamic("CompletionTime")(__v.asInstanceOf[js.Any]))
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      ReportDestination.foreach(__v => __obj.updateDynamic("ReportDestination")(__v.asInstanceOf[js.Any]))
+      ReportJobId.foreach(__v => __obj.updateDynamic("ReportJobId")(__v.asInstanceOf[js.Any]))
+      ReportPlanArn.foreach(__v => __obj.updateDynamic("ReportPlanArn")(__v.asInstanceOf[js.Any]))
+      ReportTemplate.foreach(__v => __obj.updateDynamic("ReportTemplate")(__v.asInstanceOf[js.Any]))
+      Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportJob]
+    }
+  }
+
+  /** Contains detailed information about a report plan.
+    */
+  @js.native
+  trait ReportPlan extends js.Object {
+    var CreationTime: js.UndefOr[timestamp]
+    var DeploymentStatus: js.UndefOr[String]
+    var LastAttemptedExecutionTime: js.UndefOr[timestamp]
+    var LastSuccessfulExecutionTime: js.UndefOr[timestamp]
+    var ReportDeliveryChannel: js.UndefOr[ReportDeliveryChannel]
+    var ReportPlanArn: js.UndefOr[ARN]
+    var ReportPlanDescription: js.UndefOr[ReportPlanDescription]
+    var ReportPlanName: js.UndefOr[ReportPlanName]
+    var ReportSetting: js.UndefOr[ReportSetting]
+  }
+
+  object ReportPlan {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[timestamp] = js.undefined,
+        DeploymentStatus: js.UndefOr[String] = js.undefined,
+        LastAttemptedExecutionTime: js.UndefOr[timestamp] = js.undefined,
+        LastSuccessfulExecutionTime: js.UndefOr[timestamp] = js.undefined,
+        ReportDeliveryChannel: js.UndefOr[ReportDeliveryChannel] = js.undefined,
+        ReportPlanArn: js.UndefOr[ARN] = js.undefined,
+        ReportPlanDescription: js.UndefOr[ReportPlanDescription] = js.undefined,
+        ReportPlanName: js.UndefOr[ReportPlanName] = js.undefined,
+        ReportSetting: js.UndefOr[ReportSetting] = js.undefined
+    ): ReportPlan = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      DeploymentStatus.foreach(__v => __obj.updateDynamic("DeploymentStatus")(__v.asInstanceOf[js.Any]))
+      LastAttemptedExecutionTime.foreach(__v => __obj.updateDynamic("LastAttemptedExecutionTime")(__v.asInstanceOf[js.Any]))
+      LastSuccessfulExecutionTime.foreach(__v => __obj.updateDynamic("LastSuccessfulExecutionTime")(__v.asInstanceOf[js.Any]))
+      ReportDeliveryChannel.foreach(__v => __obj.updateDynamic("ReportDeliveryChannel")(__v.asInstanceOf[js.Any]))
+      ReportPlanArn.foreach(__v => __obj.updateDynamic("ReportPlanArn")(__v.asInstanceOf[js.Any]))
+      ReportPlanDescription.foreach(__v => __obj.updateDynamic("ReportPlanDescription")(__v.asInstanceOf[js.Any]))
+      ReportPlanName.foreach(__v => __obj.updateDynamic("ReportPlanName")(__v.asInstanceOf[js.Any]))
+      ReportSetting.foreach(__v => __obj.updateDynamic("ReportSetting")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportPlan]
+    }
+  }
+
+  /** Contains detailed information about a report setting.
+    */
+  @js.native
+  trait ReportSetting extends js.Object {
+    var ReportTemplate: String
+    var FrameworkArns: js.UndefOr[stringList]
+    var NumberOfFrameworks: js.UndefOr[Int]
+  }
+
+  object ReportSetting {
+    @inline
+    def apply(
+        ReportTemplate: String,
+        FrameworkArns: js.UndefOr[stringList] = js.undefined,
+        NumberOfFrameworks: js.UndefOr[Int] = js.undefined
+    ): ReportSetting = {
+      val __obj = js.Dynamic.literal(
+        "ReportTemplate" -> ReportTemplate.asInstanceOf[js.Any]
+      )
+
+      FrameworkArns.foreach(__v => __obj.updateDynamic("FrameworkArns")(__v.asInstanceOf[js.Any]))
+      NumberOfFrameworks.foreach(__v => __obj.updateDynamic("NumberOfFrameworks")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ReportSetting]
     }
   }
 
@@ -2713,6 +3542,43 @@ package object backup {
   }
 
   @js.native
+  trait StartReportJobInput extends js.Object {
+    var ReportPlanName: ReportPlanName
+    var IdempotencyToken: js.UndefOr[String]
+  }
+
+  object StartReportJobInput {
+    @inline
+    def apply(
+        ReportPlanName: ReportPlanName,
+        IdempotencyToken: js.UndefOr[String] = js.undefined
+    ): StartReportJobInput = {
+      val __obj = js.Dynamic.literal(
+        "ReportPlanName" -> ReportPlanName.asInstanceOf[js.Any]
+      )
+
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartReportJobInput]
+    }
+  }
+
+  @js.native
+  trait StartReportJobOutput extends js.Object {
+    var ReportJobId: js.UndefOr[ReportJobId]
+  }
+
+  object StartReportJobOutput {
+    @inline
+    def apply(
+        ReportJobId: js.UndefOr[ReportJobId] = js.undefined
+    ): StartReportJobOutput = {
+      val __obj = js.Dynamic.literal()
+      ReportJobId.foreach(__v => __obj.updateDynamic("ReportJobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartReportJobOutput]
+    }
+  }
+
+  @js.native
   trait StartRestoreJobInput extends js.Object {
     var IamRoleArn: IAMRoleArn
     var Metadata: Metadata
@@ -2864,6 +3730,55 @@ package object backup {
   }
 
   @js.native
+  trait UpdateFrameworkInput extends js.Object {
+    var FrameworkName: FrameworkName
+    var FrameworkControls: js.UndefOr[FrameworkControls]
+    var FrameworkDescription: js.UndefOr[FrameworkDescription]
+    var IdempotencyToken: js.UndefOr[String]
+  }
+
+  object UpdateFrameworkInput {
+    @inline
+    def apply(
+        FrameworkName: FrameworkName,
+        FrameworkControls: js.UndefOr[FrameworkControls] = js.undefined,
+        FrameworkDescription: js.UndefOr[FrameworkDescription] = js.undefined,
+        IdempotencyToken: js.UndefOr[String] = js.undefined
+    ): UpdateFrameworkInput = {
+      val __obj = js.Dynamic.literal(
+        "FrameworkName" -> FrameworkName.asInstanceOf[js.Any]
+      )
+
+      FrameworkControls.foreach(__v => __obj.updateDynamic("FrameworkControls")(__v.asInstanceOf[js.Any]))
+      FrameworkDescription.foreach(__v => __obj.updateDynamic("FrameworkDescription")(__v.asInstanceOf[js.Any]))
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFrameworkInput]
+    }
+  }
+
+  @js.native
+  trait UpdateFrameworkOutput extends js.Object {
+    var CreationTime: js.UndefOr[timestamp]
+    var FrameworkArn: js.UndefOr[ARN]
+    var FrameworkName: js.UndefOr[FrameworkName]
+  }
+
+  object UpdateFrameworkOutput {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[timestamp] = js.undefined,
+        FrameworkArn: js.UndefOr[ARN] = js.undefined,
+        FrameworkName: js.UndefOr[FrameworkName] = js.undefined
+    ): UpdateFrameworkOutput = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      FrameworkArn.foreach(__v => __obj.updateDynamic("FrameworkArn")(__v.asInstanceOf[js.Any]))
+      FrameworkName.foreach(__v => __obj.updateDynamic("FrameworkName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateFrameworkOutput]
+    }
+  }
+
+  @js.native
   trait UpdateGlobalSettingsInput extends js.Object {
     var GlobalSettings: js.UndefOr[GlobalSettings]
   }
@@ -2930,17 +3845,72 @@ package object backup {
 
   @js.native
   trait UpdateRegionSettingsInput extends js.Object {
+    var ResourceTypeManagementPreference: js.UndefOr[ResourceTypeManagementPreference]
     var ResourceTypeOptInPreference: js.UndefOr[ResourceTypeOptInPreference]
   }
 
   object UpdateRegionSettingsInput {
     @inline
     def apply(
+        ResourceTypeManagementPreference: js.UndefOr[ResourceTypeManagementPreference] = js.undefined,
         ResourceTypeOptInPreference: js.UndefOr[ResourceTypeOptInPreference] = js.undefined
     ): UpdateRegionSettingsInput = {
       val __obj = js.Dynamic.literal()
+      ResourceTypeManagementPreference.foreach(__v => __obj.updateDynamic("ResourceTypeManagementPreference")(__v.asInstanceOf[js.Any]))
       ResourceTypeOptInPreference.foreach(__v => __obj.updateDynamic("ResourceTypeOptInPreference")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateRegionSettingsInput]
+    }
+  }
+
+  @js.native
+  trait UpdateReportPlanInput extends js.Object {
+    var ReportPlanName: ReportPlanName
+    var IdempotencyToken: js.UndefOr[String]
+    var ReportDeliveryChannel: js.UndefOr[ReportDeliveryChannel]
+    var ReportPlanDescription: js.UndefOr[ReportPlanDescription]
+    var ReportSetting: js.UndefOr[ReportSetting]
+  }
+
+  object UpdateReportPlanInput {
+    @inline
+    def apply(
+        ReportPlanName: ReportPlanName,
+        IdempotencyToken: js.UndefOr[String] = js.undefined,
+        ReportDeliveryChannel: js.UndefOr[ReportDeliveryChannel] = js.undefined,
+        ReportPlanDescription: js.UndefOr[ReportPlanDescription] = js.undefined,
+        ReportSetting: js.UndefOr[ReportSetting] = js.undefined
+    ): UpdateReportPlanInput = {
+      val __obj = js.Dynamic.literal(
+        "ReportPlanName" -> ReportPlanName.asInstanceOf[js.Any]
+      )
+
+      IdempotencyToken.foreach(__v => __obj.updateDynamic("IdempotencyToken")(__v.asInstanceOf[js.Any]))
+      ReportDeliveryChannel.foreach(__v => __obj.updateDynamic("ReportDeliveryChannel")(__v.asInstanceOf[js.Any]))
+      ReportPlanDescription.foreach(__v => __obj.updateDynamic("ReportPlanDescription")(__v.asInstanceOf[js.Any]))
+      ReportSetting.foreach(__v => __obj.updateDynamic("ReportSetting")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateReportPlanInput]
+    }
+  }
+
+  @js.native
+  trait UpdateReportPlanOutput extends js.Object {
+    var CreationTime: js.UndefOr[timestamp]
+    var ReportPlanArn: js.UndefOr[ARN]
+    var ReportPlanName: js.UndefOr[ReportPlanName]
+  }
+
+  object UpdateReportPlanOutput {
+    @inline
+    def apply(
+        CreationTime: js.UndefOr[timestamp] = js.undefined,
+        ReportPlanArn: js.UndefOr[ARN] = js.undefined,
+        ReportPlanName: js.UndefOr[ReportPlanName] = js.undefined
+    ): UpdateReportPlanOutput = {
+      val __obj = js.Dynamic.literal()
+      CreationTime.foreach(__v => __obj.updateDynamic("CreationTime")(__v.asInstanceOf[js.Any]))
+      ReportPlanArn.foreach(__v => __obj.updateDynamic("ReportPlanArn")(__v.asInstanceOf[js.Any]))
+      ReportPlanName.foreach(__v => __obj.updateDynamic("ReportPlanName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateReportPlanOutput]
     }
   }
 }

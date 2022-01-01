@@ -10,18 +10,24 @@ import facade.amazonaws._
 package object frauddetector {
   type BatchCreateVariableErrorList = js.Array[BatchCreateVariableError]
   type BatchGetVariableErrorList = js.Array[BatchGetVariableError]
+  type BatchImportList = js.Array[BatchImport]
   type BatchPredictionList = js.Array[BatchPrediction]
   type CsvIndexToVariableMap = js.Dictionary[String]
+  type DeleteAuditHistory = Boolean
   type DetectorList = js.Array[Detector]
   type DetectorVersionMaxResults = Int
   type DetectorVersionSummaryList = js.Array[DetectorVersionSummary]
   type DetectorsMaxResults = Int
+  type EventAttributeMap = js.Dictionary[attributeValue]
   type EventVariableMap = js.Dictionary[variableValue]
   type ExternalModelEndpointDataBlobMap = js.Dictionary[ModelEndpointDataBlob]
   type ExternalModelList = js.Array[ExternalModel]
+  type ExternalModelPredictionMap = js.Dictionary[String]
   type ExternalModelsMaxResults = Int
   type JsonKeyToVariableMap = js.Dictionary[String]
   type KmsEncryptionKeyArn = String
+  type ListOfExternalModelOutputs = js.Array[ExternalModelOutputs]
+  type ListOfLogOddsMetrics = js.Array[LogOddsMetric]
   type ListOfModelScores = js.Array[ModelScores]
   type ListOfModelVersions = js.Array[ModelVersion]
   type ListOfRuleResults = js.Array[RuleResult]
@@ -39,10 +45,14 @@ package object frauddetector {
   type VariableEntryList = js.Array[VariableEntry]
   type VariableList = js.Array[Variable]
   type VariablesMaxResults = Int
+  type attributeKey = String
+  type attributeValue = String
+  type batchImportsMaxPageSize = Int
   type batchPredictionsMaxPageSize = Int
   type blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type contentType = String
   type description = String
+  type entityRestrictedString = String
   type entityTypeList = js.Array[EntityType]
   type entityTypesMaxResults = Int
   type eventTypeList = js.Array[EventType]
@@ -54,15 +64,15 @@ package object frauddetector {
   type iamRoleArn = String
   type identifier = String
   type labelList = js.Array[Label]
-  type labelMapper = js.Dictionary[ListOfStrings]
+  type labelMapper = js.Dictionary[NonEmptyListOfStrings]
   type labelsMaxResults = Int
   type listOfEntities = js.Array[Entity]
   type metricDataPointsList = js.Array[MetricDataPoint]
   type modelIdentifier = String
+  type modelInputTemplate = String
   type modelList = js.Array[Model]
   type modelVersionDetailList = js.Array[ModelVersionDetail]
   type modelsMaxPageSize = Int
-  type nonEmptyString = String
   type ruleExpression = String
   type s3BucketLocation = String
   type sageMakerEndpointIdentifier = String
@@ -71,6 +81,7 @@ package object frauddetector {
   type tagList = js.Array[Tag]
   type tagValue = String
   type time = String
+  type utcTimestampISO8601 = String
   type variableName = String
   type variableValue = String
   type wholeNumberVersionString = String
@@ -79,19 +90,23 @@ package object frauddetector {
 
     @inline def batchCreateVariableFuture(params: BatchCreateVariableRequest): Future[BatchCreateVariableResult] = service.batchCreateVariable(params).promise().toFuture
     @inline def batchGetVariableFuture(params: BatchGetVariableRequest): Future[BatchGetVariableResult] = service.batchGetVariable(params).promise().toFuture
+    @inline def cancelBatchImportJobFuture(params: CancelBatchImportJobRequest): Future[CancelBatchImportJobResult] = service.cancelBatchImportJob(params).promise().toFuture
     @inline def cancelBatchPredictionJobFuture(params: CancelBatchPredictionJobRequest): Future[CancelBatchPredictionJobResult] = service.cancelBatchPredictionJob(params).promise().toFuture
+    @inline def createBatchImportJobFuture(params: CreateBatchImportJobRequest): Future[CreateBatchImportJobResult] = service.createBatchImportJob(params).promise().toFuture
     @inline def createBatchPredictionJobFuture(params: CreateBatchPredictionJobRequest): Future[CreateBatchPredictionJobResult] = service.createBatchPredictionJob(params).promise().toFuture
     @inline def createDetectorVersionFuture(params: CreateDetectorVersionRequest): Future[CreateDetectorVersionResult] = service.createDetectorVersion(params).promise().toFuture
     @inline def createModelFuture(params: CreateModelRequest): Future[CreateModelResult] = service.createModel(params).promise().toFuture
     @inline def createModelVersionFuture(params: CreateModelVersionRequest): Future[CreateModelVersionResult] = service.createModelVersion(params).promise().toFuture
     @inline def createRuleFuture(params: CreateRuleRequest): Future[CreateRuleResult] = service.createRule(params).promise().toFuture
     @inline def createVariableFuture(params: CreateVariableRequest): Future[CreateVariableResult] = service.createVariable(params).promise().toFuture
+    @inline def deleteBatchImportJobFuture(params: DeleteBatchImportJobRequest): Future[DeleteBatchImportJobResult] = service.deleteBatchImportJob(params).promise().toFuture
     @inline def deleteBatchPredictionJobFuture(params: DeleteBatchPredictionJobRequest): Future[DeleteBatchPredictionJobResult] = service.deleteBatchPredictionJob(params).promise().toFuture
     @inline def deleteDetectorFuture(params: DeleteDetectorRequest): Future[DeleteDetectorResult] = service.deleteDetector(params).promise().toFuture
     @inline def deleteDetectorVersionFuture(params: DeleteDetectorVersionRequest): Future[DeleteDetectorVersionResult] = service.deleteDetectorVersion(params).promise().toFuture
     @inline def deleteEntityTypeFuture(params: DeleteEntityTypeRequest): Future[DeleteEntityTypeResult] = service.deleteEntityType(params).promise().toFuture
     @inline def deleteEventFuture(params: DeleteEventRequest): Future[DeleteEventResult] = service.deleteEvent(params).promise().toFuture
     @inline def deleteEventTypeFuture(params: DeleteEventTypeRequest): Future[DeleteEventTypeResult] = service.deleteEventType(params).promise().toFuture
+    @inline def deleteEventsByEventTypeFuture(params: DeleteEventsByEventTypeRequest): Future[DeleteEventsByEventTypeResult] = service.deleteEventsByEventType(params).promise().toFuture
     @inline def deleteExternalModelFuture(params: DeleteExternalModelRequest): Future[DeleteExternalModelResult] = service.deleteExternalModel(params).promise().toFuture
     @inline def deleteLabelFuture(params: DeleteLabelRequest): Future[DeleteLabelResult] = service.deleteLabel(params).promise().toFuture
     @inline def deleteModelFuture(params: DeleteModelRequest): Future[DeleteModelResult] = service.deleteModel(params).promise().toFuture
@@ -101,10 +116,13 @@ package object frauddetector {
     @inline def deleteVariableFuture(params: DeleteVariableRequest): Future[DeleteVariableResult] = service.deleteVariable(params).promise().toFuture
     @inline def describeDetectorFuture(params: DescribeDetectorRequest): Future[DescribeDetectorResult] = service.describeDetector(params).promise().toFuture
     @inline def describeModelVersionsFuture(params: DescribeModelVersionsRequest): Future[DescribeModelVersionsResult] = service.describeModelVersions(params).promise().toFuture
+    @inline def getBatchImportJobsFuture(params: GetBatchImportJobsRequest): Future[GetBatchImportJobsResult] = service.getBatchImportJobs(params).promise().toFuture
     @inline def getBatchPredictionJobsFuture(params: GetBatchPredictionJobsRequest): Future[GetBatchPredictionJobsResult] = service.getBatchPredictionJobs(params).promise().toFuture
+    @inline def getDeleteEventsByEventTypeStatusFuture(params: GetDeleteEventsByEventTypeStatusRequest): Future[GetDeleteEventsByEventTypeStatusResult] = service.getDeleteEventsByEventTypeStatus(params).promise().toFuture
     @inline def getDetectorVersionFuture(params: GetDetectorVersionRequest): Future[GetDetectorVersionResult] = service.getDetectorVersion(params).promise().toFuture
     @inline def getDetectorsFuture(params: GetDetectorsRequest): Future[GetDetectorsResult] = service.getDetectors(params).promise().toFuture
     @inline def getEntityTypesFuture(params: GetEntityTypesRequest): Future[GetEntityTypesResult] = service.getEntityTypes(params).promise().toFuture
+    @inline def getEventFuture(params: GetEventRequest): Future[GetEventResult] = service.getEvent(params).promise().toFuture
     @inline def getEventPredictionFuture(params: GetEventPredictionRequest): Future[GetEventPredictionResult] = service.getEventPrediction(params).promise().toFuture
     @inline def getEventTypesFuture(params: GetEventTypesRequest): Future[GetEventTypesResult] = service.getEventTypes(params).promise().toFuture
     @inline def getExternalModelsFuture(params: GetExternalModelsRequest): Future[GetExternalModelsResult] = service.getExternalModels(params).promise().toFuture
@@ -123,11 +141,13 @@ package object frauddetector {
     @inline def putKMSEncryptionKeyFuture(params: PutKMSEncryptionKeyRequest): Future[PutKMSEncryptionKeyResult] = service.putKMSEncryptionKey(params).promise().toFuture
     @inline def putLabelFuture(params: PutLabelRequest): Future[PutLabelResult] = service.putLabel(params).promise().toFuture
     @inline def putOutcomeFuture(params: PutOutcomeRequest): Future[PutOutcomeResult] = service.putOutcome(params).promise().toFuture
+    @inline def sendEventFuture(params: SendEventRequest): Future[SendEventResult] = service.sendEvent(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResult] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResult] = service.untagResource(params).promise().toFuture
     @inline def updateDetectorVersionFuture(params: UpdateDetectorVersionRequest): Future[UpdateDetectorVersionResult] = service.updateDetectorVersion(params).promise().toFuture
     @inline def updateDetectorVersionMetadataFuture(params: UpdateDetectorVersionMetadataRequest): Future[UpdateDetectorVersionMetadataResult] = service.updateDetectorVersionMetadata(params).promise().toFuture
     @inline def updateDetectorVersionStatusFuture(params: UpdateDetectorVersionStatusRequest): Future[UpdateDetectorVersionStatusResult] = service.updateDetectorVersionStatus(params).promise().toFuture
+    @inline def updateEventLabelFuture(params: UpdateEventLabelRequest): Future[UpdateEventLabelResult] = service.updateEventLabel(params).promise().toFuture
     @inline def updateModelFuture(params: UpdateModelRequest): Future[UpdateModelResult] = service.updateModel(params).promise().toFuture
     @inline def updateModelVersionFuture(params: UpdateModelVersionRequest): Future[UpdateModelVersionResult] = service.updateModelVersion(params).promise().toFuture
     @inline def updateModelVersionStatusFuture(params: UpdateModelVersionStatusRequest): Future[UpdateModelVersionStatusResult] = service.updateModelVersionStatus(params).promise().toFuture
@@ -144,19 +164,23 @@ package object frauddetector {
 
     def batchCreateVariable(params: BatchCreateVariableRequest): Request[BatchCreateVariableResult] = js.native
     def batchGetVariable(params: BatchGetVariableRequest): Request[BatchGetVariableResult] = js.native
+    def cancelBatchImportJob(params: CancelBatchImportJobRequest): Request[CancelBatchImportJobResult] = js.native
     def cancelBatchPredictionJob(params: CancelBatchPredictionJobRequest): Request[CancelBatchPredictionJobResult] = js.native
+    def createBatchImportJob(params: CreateBatchImportJobRequest): Request[CreateBatchImportJobResult] = js.native
     def createBatchPredictionJob(params: CreateBatchPredictionJobRequest): Request[CreateBatchPredictionJobResult] = js.native
     def createDetectorVersion(params: CreateDetectorVersionRequest): Request[CreateDetectorVersionResult] = js.native
     def createModel(params: CreateModelRequest): Request[CreateModelResult] = js.native
     def createModelVersion(params: CreateModelVersionRequest): Request[CreateModelVersionResult] = js.native
     def createRule(params: CreateRuleRequest): Request[CreateRuleResult] = js.native
     def createVariable(params: CreateVariableRequest): Request[CreateVariableResult] = js.native
+    def deleteBatchImportJob(params: DeleteBatchImportJobRequest): Request[DeleteBatchImportJobResult] = js.native
     def deleteBatchPredictionJob(params: DeleteBatchPredictionJobRequest): Request[DeleteBatchPredictionJobResult] = js.native
     def deleteDetector(params: DeleteDetectorRequest): Request[DeleteDetectorResult] = js.native
     def deleteDetectorVersion(params: DeleteDetectorVersionRequest): Request[DeleteDetectorVersionResult] = js.native
     def deleteEntityType(params: DeleteEntityTypeRequest): Request[DeleteEntityTypeResult] = js.native
     def deleteEvent(params: DeleteEventRequest): Request[DeleteEventResult] = js.native
     def deleteEventType(params: DeleteEventTypeRequest): Request[DeleteEventTypeResult] = js.native
+    def deleteEventsByEventType(params: DeleteEventsByEventTypeRequest): Request[DeleteEventsByEventTypeResult] = js.native
     def deleteExternalModel(params: DeleteExternalModelRequest): Request[DeleteExternalModelResult] = js.native
     def deleteLabel(params: DeleteLabelRequest): Request[DeleteLabelResult] = js.native
     def deleteModel(params: DeleteModelRequest): Request[DeleteModelResult] = js.native
@@ -166,10 +190,13 @@ package object frauddetector {
     def deleteVariable(params: DeleteVariableRequest): Request[DeleteVariableResult] = js.native
     def describeDetector(params: DescribeDetectorRequest): Request[DescribeDetectorResult] = js.native
     def describeModelVersions(params: DescribeModelVersionsRequest): Request[DescribeModelVersionsResult] = js.native
+    def getBatchImportJobs(params: GetBatchImportJobsRequest): Request[GetBatchImportJobsResult] = js.native
     def getBatchPredictionJobs(params: GetBatchPredictionJobsRequest): Request[GetBatchPredictionJobsResult] = js.native
+    def getDeleteEventsByEventTypeStatus(params: GetDeleteEventsByEventTypeStatusRequest): Request[GetDeleteEventsByEventTypeStatusResult] = js.native
     def getDetectorVersion(params: GetDetectorVersionRequest): Request[GetDetectorVersionResult] = js.native
     def getDetectors(params: GetDetectorsRequest): Request[GetDetectorsResult] = js.native
     def getEntityTypes(params: GetEntityTypesRequest): Request[GetEntityTypesResult] = js.native
+    def getEvent(params: GetEventRequest): Request[GetEventResult] = js.native
     def getEventPrediction(params: GetEventPredictionRequest): Request[GetEventPredictionResult] = js.native
     def getEventTypes(params: GetEventTypesRequest): Request[GetEventTypesResult] = js.native
     def getExternalModels(params: GetExternalModelsRequest): Request[GetExternalModelsResult] = js.native
@@ -188,11 +215,13 @@ package object frauddetector {
     def putKMSEncryptionKey(params: PutKMSEncryptionKeyRequest): Request[PutKMSEncryptionKeyResult] = js.native
     def putLabel(params: PutLabelRequest): Request[PutLabelResult] = js.native
     def putOutcome(params: PutOutcomeRequest): Request[PutOutcomeResult] = js.native
+    def sendEvent(params: SendEventRequest): Request[SendEventResult] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResult] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResult] = js.native
     def updateDetectorVersion(params: UpdateDetectorVersionRequest): Request[UpdateDetectorVersionResult] = js.native
     def updateDetectorVersionMetadata(params: UpdateDetectorVersionMetadataRequest): Request[UpdateDetectorVersionMetadataResult] = js.native
     def updateDetectorVersionStatus(params: UpdateDetectorVersionStatusRequest): Request[UpdateDetectorVersionStatusResult] = js.native
+    def updateEventLabel(params: UpdateEventLabelRequest): Request[UpdateEventLabelResult] = js.native
     def updateModel(params: UpdateModelRequest): Request[UpdateModelResult] = js.native
     def updateModelVersion(params: UpdateModelVersionRequest): Request[UpdateModelVersionResult] = js.native
     def updateModelVersionStatus(params: UpdateModelVersionStatusRequest): Request[UpdateModelVersionStatusResult] = js.native
@@ -327,6 +356,60 @@ package object frauddetector {
     }
   }
 
+  /** The batch import job details.
+    */
+  @js.native
+  trait BatchImport extends js.Object {
+    var arn: js.UndefOr[fraudDetectorArn]
+    var completionTime: js.UndefOr[time]
+    var eventTypeName: js.UndefOr[identifier]
+    var failedRecordsCount: js.UndefOr[Int]
+    var failureReason: js.UndefOr[String]
+    var iamRoleArn: js.UndefOr[iamRoleArn]
+    var inputPath: js.UndefOr[s3BucketLocation]
+    var jobId: js.UndefOr[identifier]
+    var outputPath: js.UndefOr[s3BucketLocation]
+    var processedRecordsCount: js.UndefOr[Int]
+    var startTime: js.UndefOr[time]
+    var status: js.UndefOr[AsyncJobStatus]
+    var totalRecordsCount: js.UndefOr[Int]
+  }
+
+  object BatchImport {
+    @inline
+    def apply(
+        arn: js.UndefOr[fraudDetectorArn] = js.undefined,
+        completionTime: js.UndefOr[time] = js.undefined,
+        eventTypeName: js.UndefOr[identifier] = js.undefined,
+        failedRecordsCount: js.UndefOr[Int] = js.undefined,
+        failureReason: js.UndefOr[String] = js.undefined,
+        iamRoleArn: js.UndefOr[iamRoleArn] = js.undefined,
+        inputPath: js.UndefOr[s3BucketLocation] = js.undefined,
+        jobId: js.UndefOr[identifier] = js.undefined,
+        outputPath: js.UndefOr[s3BucketLocation] = js.undefined,
+        processedRecordsCount: js.UndefOr[Int] = js.undefined,
+        startTime: js.UndefOr[time] = js.undefined,
+        status: js.UndefOr[AsyncJobStatus] = js.undefined,
+        totalRecordsCount: js.UndefOr[Int] = js.undefined
+    ): BatchImport = {
+      val __obj = js.Dynamic.literal()
+      arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
+      completionTime.foreach(__v => __obj.updateDynamic("completionTime")(__v.asInstanceOf[js.Any]))
+      eventTypeName.foreach(__v => __obj.updateDynamic("eventTypeName")(__v.asInstanceOf[js.Any]))
+      failedRecordsCount.foreach(__v => __obj.updateDynamic("failedRecordsCount")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
+      iamRoleArn.foreach(__v => __obj.updateDynamic("iamRoleArn")(__v.asInstanceOf[js.Any]))
+      inputPath.foreach(__v => __obj.updateDynamic("inputPath")(__v.asInstanceOf[js.Any]))
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      outputPath.foreach(__v => __obj.updateDynamic("outputPath")(__v.asInstanceOf[js.Any]))
+      processedRecordsCount.foreach(__v => __obj.updateDynamic("processedRecordsCount")(__v.asInstanceOf[js.Any]))
+      startTime.foreach(__v => __obj.updateDynamic("startTime")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      totalRecordsCount.foreach(__v => __obj.updateDynamic("totalRecordsCount")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[BatchImport]
+    }
+  }
+
   /** The batch prediction details.
     */
   @js.native
@@ -388,6 +471,34 @@ package object frauddetector {
   }
 
   @js.native
+  trait CancelBatchImportJobRequest extends js.Object {
+    var jobId: identifier
+  }
+
+  object CancelBatchImportJobRequest {
+    @inline
+    def apply(
+        jobId: identifier
+    ): CancelBatchImportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CancelBatchImportJobRequest]
+    }
+  }
+
+  @js.native
+  trait CancelBatchImportJobResult extends js.Object
+
+  object CancelBatchImportJobResult {
+    @inline
+    def apply(): CancelBatchImportJobResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CancelBatchImportJobResult]
+    }
+  }
+
+  @js.native
   trait CancelBatchPredictionJobRequest extends js.Object {
     var jobId: identifier
   }
@@ -412,6 +523,50 @@ package object frauddetector {
     def apply(): CancelBatchPredictionJobResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[CancelBatchPredictionJobResult]
+    }
+  }
+
+  @js.native
+  trait CreateBatchImportJobRequest extends js.Object {
+    var eventTypeName: identifier
+    var iamRoleArn: iamRoleArn
+    var inputPath: s3BucketLocation
+    var jobId: identifier
+    var outputPath: s3BucketLocation
+    var tags: js.UndefOr[tagList]
+  }
+
+  object CreateBatchImportJobRequest {
+    @inline
+    def apply(
+        eventTypeName: identifier,
+        iamRoleArn: iamRoleArn,
+        inputPath: s3BucketLocation,
+        jobId: identifier,
+        outputPath: s3BucketLocation,
+        tags: js.UndefOr[tagList] = js.undefined
+    ): CreateBatchImportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any],
+        "iamRoleArn" -> iamRoleArn.asInstanceOf[js.Any],
+        "inputPath" -> inputPath.asInstanceOf[js.Any],
+        "jobId" -> jobId.asInstanceOf[js.Any],
+        "outputPath" -> outputPath.asInstanceOf[js.Any]
+      )
+
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateBatchImportJobRequest]
+    }
+  }
+
+  @js.native
+  trait CreateBatchImportJobResult extends js.Object
+
+  object CreateBatchImportJobResult {
+    @inline
+    def apply(): CreateBatchImportJobResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[CreateBatchImportJobResult]
     }
   }
 
@@ -504,7 +659,7 @@ package object frauddetector {
   @js.native
   trait CreateDetectorVersionResult extends js.Object {
     var detectorId: js.UndefOr[identifier]
-    var detectorVersionId: js.UndefOr[nonEmptyString]
+    var detectorVersionId: js.UndefOr[wholeNumberVersionString]
     var status: js.UndefOr[DetectorVersionStatus]
   }
 
@@ -512,7 +667,7 @@ package object frauddetector {
     @inline
     def apply(
         detectorId: js.UndefOr[identifier] = js.undefined,
-        detectorVersionId: js.UndefOr[nonEmptyString] = js.undefined,
+        detectorVersionId: js.UndefOr[wholeNumberVersionString] = js.undefined,
         status: js.UndefOr[DetectorVersionStatus] = js.undefined
     ): CreateDetectorVersionResult = {
       val __obj = js.Dynamic.literal()
@@ -571,6 +726,7 @@ package object frauddetector {
     var trainingDataSchema: TrainingDataSchema
     var trainingDataSource: TrainingDataSourceEnum
     var externalEventsDetail: js.UndefOr[ExternalEventsDetail]
+    var ingestedEventsDetail: js.UndefOr[IngestedEventsDetail]
     var tags: js.UndefOr[tagList]
   }
 
@@ -582,6 +738,7 @@ package object frauddetector {
         trainingDataSchema: TrainingDataSchema,
         trainingDataSource: TrainingDataSourceEnum,
         externalEventsDetail: js.UndefOr[ExternalEventsDetail] = js.undefined,
+        ingestedEventsDetail: js.UndefOr[IngestedEventsDetail] = js.undefined,
         tags: js.UndefOr[tagList] = js.undefined
     ): CreateModelVersionRequest = {
       val __obj = js.Dynamic.literal(
@@ -592,6 +749,7 @@ package object frauddetector {
       )
 
       externalEventsDetail.foreach(__v => __obj.updateDynamic("externalEventsDetail")(__v.asInstanceOf[js.Any]))
+      ingestedEventsDetail.foreach(__v => __obj.updateDynamic("ingestedEventsDetail")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateModelVersionRequest]
     }
@@ -601,7 +759,7 @@ package object frauddetector {
   trait CreateModelVersionResult extends js.Object {
     var modelId: js.UndefOr[modelIdentifier]
     var modelType: js.UndefOr[ModelTypeEnum]
-    var modelVersionNumber: js.UndefOr[nonEmptyString]
+    var modelVersionNumber: js.UndefOr[floatVersionString]
     var status: js.UndefOr[String]
   }
 
@@ -610,7 +768,7 @@ package object frauddetector {
     def apply(
         modelId: js.UndefOr[modelIdentifier] = js.undefined,
         modelType: js.UndefOr[ModelTypeEnum] = js.undefined,
-        modelVersionNumber: js.UndefOr[nonEmptyString] = js.undefined,
+        modelVersionNumber: js.UndefOr[floatVersionString] = js.undefined,
         status: js.UndefOr[String] = js.undefined
     ): CreateModelVersionResult = {
       val __obj = js.Dynamic.literal()
@@ -743,6 +901,34 @@ package object frauddetector {
   }
 
   @js.native
+  trait DeleteBatchImportJobRequest extends js.Object {
+    var jobId: identifier
+  }
+
+  object DeleteBatchImportJobRequest {
+    @inline
+    def apply(
+        jobId: identifier
+    ): DeleteBatchImportJobRequest = {
+      val __obj = js.Dynamic.literal(
+        "jobId" -> jobId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteBatchImportJobRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteBatchImportJobResult extends js.Object
+
+  object DeleteBatchImportJobResult {
+    @inline
+    def apply(): DeleteBatchImportJobResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteBatchImportJobResult]
+    }
+  }
+
+  @js.native
   trait DeleteBatchPredictionJobRequest extends js.Object {
     var jobId: identifier
   }
@@ -861,18 +1047,22 @@ package object frauddetector {
   trait DeleteEventRequest extends js.Object {
     var eventId: identifier
     var eventTypeName: identifier
+    var deleteAuditHistory: js.UndefOr[DeleteAuditHistory]
   }
 
   object DeleteEventRequest {
     @inline
     def apply(
         eventId: identifier,
-        eventTypeName: identifier
+        eventTypeName: identifier,
+        deleteAuditHistory: js.UndefOr[DeleteAuditHistory] = js.undefined
     ): DeleteEventRequest = {
       val __obj = js.Dynamic.literal(
         "eventId" -> eventId.asInstanceOf[js.Any],
         "eventTypeName" -> eventTypeName.asInstanceOf[js.Any]
       )
+
+      deleteAuditHistory.foreach(__v => __obj.updateDynamic("deleteAuditHistory")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeleteEventRequest]
     }
   }
@@ -913,6 +1103,42 @@ package object frauddetector {
     def apply(): DeleteEventTypeResult = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[DeleteEventTypeResult]
+    }
+  }
+
+  @js.native
+  trait DeleteEventsByEventTypeRequest extends js.Object {
+    var eventTypeName: identifier
+  }
+
+  object DeleteEventsByEventTypeRequest {
+    @inline
+    def apply(
+        eventTypeName: identifier
+    ): DeleteEventsByEventTypeRequest = {
+      val __obj = js.Dynamic.literal(
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteEventsByEventTypeRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteEventsByEventTypeResult extends js.Object {
+    var eventTypeName: js.UndefOr[identifier]
+    var eventsDeletionStatus: js.UndefOr[String]
+  }
+
+  object DeleteEventsByEventTypeResult {
+    @inline
+    def apply(
+        eventTypeName: js.UndefOr[identifier] = js.undefined,
+        eventsDeletionStatus: js.UndefOr[String] = js.undefined
+    ): DeleteEventsByEventTypeResult = {
+      val __obj = js.Dynamic.literal()
+      eventTypeName.foreach(__v => __obj.updateDynamic("eventTypeName")(__v.asInstanceOf[js.Any]))
+      eventsDeletionStatus.foreach(__v => __obj.updateDynamic("eventsDeletionStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteEventsByEventTypeResult]
     }
   }
 
@@ -1255,7 +1481,7 @@ package object frauddetector {
   @js.native
   trait DetectorVersionSummary extends js.Object {
     var description: js.UndefOr[description]
-    var detectorVersionId: js.UndefOr[nonEmptyString]
+    var detectorVersionId: js.UndefOr[wholeNumberVersionString]
     var lastUpdatedTime: js.UndefOr[time]
     var status: js.UndefOr[DetectorVersionStatus]
   }
@@ -1264,7 +1490,7 @@ package object frauddetector {
     @inline
     def apply(
         description: js.UndefOr[description] = js.undefined,
-        detectorVersionId: js.UndefOr[nonEmptyString] = js.undefined,
+        detectorVersionId: js.UndefOr[wholeNumberVersionString] = js.undefined,
         lastUpdatedTime: js.UndefOr[time] = js.undefined,
         status: js.UndefOr[DetectorVersionStatus] = js.undefined
     ): DetectorVersionSummary = {
@@ -1281,14 +1507,14 @@ package object frauddetector {
     */
   @js.native
   trait Entity extends js.Object {
-    var entityId: identifier
+    var entityId: entityRestrictedString
     var entityType: String
   }
 
   object Entity {
     @inline
     def apply(
-        entityId: identifier,
+        entityId: entityRestrictedString,
         entityType: String
     ): Entity = {
       val __obj = js.Dynamic.literal(
@@ -1329,6 +1555,42 @@ package object frauddetector {
     }
   }
 
+  /** The event details.
+    */
+  @js.native
+  trait Event extends js.Object {
+    var currentLabel: js.UndefOr[String]
+    var entities: js.UndefOr[listOfEntities]
+    var eventId: js.UndefOr[String]
+    var eventTimestamp: js.UndefOr[String]
+    var eventTypeName: js.UndefOr[String]
+    var eventVariables: js.UndefOr[EventAttributeMap]
+    var labelTimestamp: js.UndefOr[String]
+  }
+
+  object Event {
+    @inline
+    def apply(
+        currentLabel: js.UndefOr[String] = js.undefined,
+        entities: js.UndefOr[listOfEntities] = js.undefined,
+        eventId: js.UndefOr[String] = js.undefined,
+        eventTimestamp: js.UndefOr[String] = js.undefined,
+        eventTypeName: js.UndefOr[String] = js.undefined,
+        eventVariables: js.UndefOr[EventAttributeMap] = js.undefined,
+        labelTimestamp: js.UndefOr[String] = js.undefined
+    ): Event = {
+      val __obj = js.Dynamic.literal()
+      currentLabel.foreach(__v => __obj.updateDynamic("currentLabel")(__v.asInstanceOf[js.Any]))
+      entities.foreach(__v => __obj.updateDynamic("entities")(__v.asInstanceOf[js.Any]))
+      eventId.foreach(__v => __obj.updateDynamic("eventId")(__v.asInstanceOf[js.Any]))
+      eventTimestamp.foreach(__v => __obj.updateDynamic("eventTimestamp")(__v.asInstanceOf[js.Any]))
+      eventTypeName.foreach(__v => __obj.updateDynamic("eventTypeName")(__v.asInstanceOf[js.Any]))
+      eventVariables.foreach(__v => __obj.updateDynamic("eventVariables")(__v.asInstanceOf[js.Any]))
+      labelTimestamp.foreach(__v => __obj.updateDynamic("labelTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Event]
+    }
+  }
+
   /** The event type details.
     */
   @js.native
@@ -1337,7 +1599,9 @@ package object frauddetector {
     var createdTime: js.UndefOr[time]
     var description: js.UndefOr[description]
     var entityTypes: js.UndefOr[NonEmptyListOfStrings]
+    var eventIngestion: js.UndefOr[EventIngestion]
     var eventVariables: js.UndefOr[ListOfStrings]
+    var ingestedEventStatistics: js.UndefOr[IngestedEventStatistics]
     var labels: js.UndefOr[ListOfStrings]
     var lastUpdatedTime: js.UndefOr[time]
     var name: js.UndefOr[String]
@@ -1350,7 +1614,9 @@ package object frauddetector {
         createdTime: js.UndefOr[time] = js.undefined,
         description: js.UndefOr[description] = js.undefined,
         entityTypes: js.UndefOr[NonEmptyListOfStrings] = js.undefined,
+        eventIngestion: js.UndefOr[EventIngestion] = js.undefined,
         eventVariables: js.UndefOr[ListOfStrings] = js.undefined,
+        ingestedEventStatistics: js.UndefOr[IngestedEventStatistics] = js.undefined,
         labels: js.UndefOr[ListOfStrings] = js.undefined,
         lastUpdatedTime: js.UndefOr[time] = js.undefined,
         name: js.UndefOr[String] = js.undefined
@@ -1360,7 +1626,9 @@ package object frauddetector {
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
       entityTypes.foreach(__v => __obj.updateDynamic("entityTypes")(__v.asInstanceOf[js.Any]))
+      eventIngestion.foreach(__v => __obj.updateDynamic("eventIngestion")(__v.asInstanceOf[js.Any]))
       eventVariables.foreach(__v => __obj.updateDynamic("eventVariables")(__v.asInstanceOf[js.Any]))
+      ingestedEventStatistics.foreach(__v => __obj.updateDynamic("ingestedEventStatistics")(__v.asInstanceOf[js.Any]))
       labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
@@ -1432,6 +1700,48 @@ package object frauddetector {
     }
   }
 
+  /** The fraud prediction scores from Amazon SageMaker model.
+    */
+  @js.native
+  trait ExternalModelOutputs extends js.Object {
+    var externalModel: js.UndefOr[ExternalModelSummary]
+    var outputs: js.UndefOr[ExternalModelPredictionMap]
+  }
+
+  object ExternalModelOutputs {
+    @inline
+    def apply(
+        externalModel: js.UndefOr[ExternalModelSummary] = js.undefined,
+        outputs: js.UndefOr[ExternalModelPredictionMap] = js.undefined
+    ): ExternalModelOutputs = {
+      val __obj = js.Dynamic.literal()
+      externalModel.foreach(__v => __obj.updateDynamic("externalModel")(__v.asInstanceOf[js.Any]))
+      outputs.foreach(__v => __obj.updateDynamic("outputs")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExternalModelOutputs]
+    }
+  }
+
+  /** The Amazon SageMaker model.
+    */
+  @js.native
+  trait ExternalModelSummary extends js.Object {
+    var modelEndpoint: js.UndefOr[String]
+    var modelSource: js.UndefOr[ModelSource]
+  }
+
+  object ExternalModelSummary {
+    @inline
+    def apply(
+        modelEndpoint: js.UndefOr[String] = js.undefined,
+        modelSource: js.UndefOr[ModelSource] = js.undefined
+    ): ExternalModelSummary = {
+      val __obj = js.Dynamic.literal()
+      modelEndpoint.foreach(__v => __obj.updateDynamic("modelEndpoint")(__v.asInstanceOf[js.Any]))
+      modelSource.foreach(__v => __obj.updateDynamic("modelSource")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExternalModelSummary]
+    }
+  }
+
   /** The message details.
     */
   @js.native
@@ -1487,6 +1797,47 @@ package object frauddetector {
   }
 
   @js.native
+  trait GetBatchImportJobsRequest extends js.Object {
+    var jobId: js.UndefOr[identifier]
+    var maxResults: js.UndefOr[batchImportsMaxPageSize]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object GetBatchImportJobsRequest {
+    @inline
+    def apply(
+        jobId: js.UndefOr[identifier] = js.undefined,
+        maxResults: js.UndefOr[batchImportsMaxPageSize] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): GetBatchImportJobsRequest = {
+      val __obj = js.Dynamic.literal()
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBatchImportJobsRequest]
+    }
+  }
+
+  @js.native
+  trait GetBatchImportJobsResult extends js.Object {
+    var batchImports: js.UndefOr[BatchImportList]
+    var nextToken: js.UndefOr[String]
+  }
+
+  object GetBatchImportJobsResult {
+    @inline
+    def apply(
+        batchImports: js.UndefOr[BatchImportList] = js.undefined,
+        nextToken: js.UndefOr[String] = js.undefined
+    ): GetBatchImportJobsResult = {
+      val __obj = js.Dynamic.literal()
+      batchImports.foreach(__v => __obj.updateDynamic("batchImports")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetBatchImportJobsResult]
+    }
+  }
+
+  @js.native
   trait GetBatchPredictionJobsRequest extends js.Object {
     var jobId: js.UndefOr[identifier]
     var maxResults: js.UndefOr[batchPredictionsMaxPageSize]
@@ -1524,6 +1875,42 @@ package object frauddetector {
       batchPredictions.foreach(__v => __obj.updateDynamic("batchPredictions")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetBatchPredictionJobsResult]
+    }
+  }
+
+  @js.native
+  trait GetDeleteEventsByEventTypeStatusRequest extends js.Object {
+    var eventTypeName: identifier
+  }
+
+  object GetDeleteEventsByEventTypeStatusRequest {
+    @inline
+    def apply(
+        eventTypeName: identifier
+    ): GetDeleteEventsByEventTypeStatusRequest = {
+      val __obj = js.Dynamic.literal(
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetDeleteEventsByEventTypeStatusRequest]
+    }
+  }
+
+  @js.native
+  trait GetDeleteEventsByEventTypeStatusResult extends js.Object {
+    var eventTypeName: js.UndefOr[identifier]
+    var eventsDeletionStatus: js.UndefOr[AsyncJobStatus]
+  }
+
+  object GetDeleteEventsByEventTypeStatusResult {
+    @inline
+    def apply(
+        eventTypeName: js.UndefOr[identifier] = js.undefined,
+        eventsDeletionStatus: js.UndefOr[AsyncJobStatus] = js.undefined
+    ): GetDeleteEventsByEventTypeStatusResult = {
+      val __obj = js.Dynamic.literal()
+      eventTypeName.foreach(__v => __obj.updateDynamic("eventTypeName")(__v.asInstanceOf[js.Any]))
+      eventsDeletionStatus.foreach(__v => __obj.updateDynamic("eventsDeletionStatus")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetDeleteEventsByEventTypeStatusResult]
     }
   }
 
@@ -1680,7 +2067,7 @@ package object frauddetector {
     var detectorId: String
     var entities: listOfEntities
     var eventId: String
-    var eventTimestamp: String
+    var eventTimestamp: utcTimestampISO8601
     var eventTypeName: String
     var eventVariables: EventVariableMap
     var detectorVersionId: js.UndefOr[wholeNumberVersionString]
@@ -1693,7 +2080,7 @@ package object frauddetector {
         detectorId: String,
         entities: listOfEntities,
         eventId: String,
-        eventTimestamp: String,
+        eventTimestamp: utcTimestampISO8601,
         eventTypeName: String,
         eventVariables: EventVariableMap,
         detectorVersionId: js.UndefOr[wholeNumberVersionString] = js.undefined,
@@ -1716,6 +2103,7 @@ package object frauddetector {
 
   @js.native
   trait GetEventPredictionResult extends js.Object {
+    var externalModelOutputs: js.UndefOr[ListOfExternalModelOutputs]
     var modelScores: js.UndefOr[ListOfModelScores]
     var ruleResults: js.UndefOr[ListOfRuleResults]
   }
@@ -1723,13 +2111,51 @@ package object frauddetector {
   object GetEventPredictionResult {
     @inline
     def apply(
+        externalModelOutputs: js.UndefOr[ListOfExternalModelOutputs] = js.undefined,
         modelScores: js.UndefOr[ListOfModelScores] = js.undefined,
         ruleResults: js.UndefOr[ListOfRuleResults] = js.undefined
     ): GetEventPredictionResult = {
       val __obj = js.Dynamic.literal()
+      externalModelOutputs.foreach(__v => __obj.updateDynamic("externalModelOutputs")(__v.asInstanceOf[js.Any]))
       modelScores.foreach(__v => __obj.updateDynamic("modelScores")(__v.asInstanceOf[js.Any]))
       ruleResults.foreach(__v => __obj.updateDynamic("ruleResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEventPredictionResult]
+    }
+  }
+
+  @js.native
+  trait GetEventRequest extends js.Object {
+    var eventId: String
+    var eventTypeName: String
+  }
+
+  object GetEventRequest {
+    @inline
+    def apply(
+        eventId: String,
+        eventTypeName: String
+    ): GetEventRequest = {
+      val __obj = js.Dynamic.literal(
+        "eventId" -> eventId.asInstanceOf[js.Any],
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetEventRequest]
+    }
+  }
+
+  @js.native
+  trait GetEventResult extends js.Object {
+    var event: js.UndefOr[Event]
+  }
+
+  object GetEventResult {
+    @inline
+    def apply(
+        event: js.UndefOr[Event] = js.undefined
+    ): GetEventResult = {
+      val __obj = js.Dynamic.literal()
+      event.foreach(__v => __obj.updateDynamic("event")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEventResult]
     }
   }
 
@@ -1899,6 +2325,7 @@ package object frauddetector {
   trait GetModelVersionResult extends js.Object {
     var arn: js.UndefOr[fraudDetectorArn]
     var externalEventsDetail: js.UndefOr[ExternalEventsDetail]
+    var ingestedEventsDetail: js.UndefOr[IngestedEventsDetail]
     var modelId: js.UndefOr[modelIdentifier]
     var modelType: js.UndefOr[ModelTypeEnum]
     var modelVersionNumber: js.UndefOr[floatVersionString]
@@ -1912,6 +2339,7 @@ package object frauddetector {
     def apply(
         arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         externalEventsDetail: js.UndefOr[ExternalEventsDetail] = js.undefined,
+        ingestedEventsDetail: js.UndefOr[IngestedEventsDetail] = js.undefined,
         modelId: js.UndefOr[modelIdentifier] = js.undefined,
         modelType: js.UndefOr[ModelTypeEnum] = js.undefined,
         modelVersionNumber: js.UndefOr[floatVersionString] = js.undefined,
@@ -1922,6 +2350,7 @@ package object frauddetector {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       externalEventsDetail.foreach(__v => __obj.updateDynamic("externalEventsDetail")(__v.asInstanceOf[js.Any]))
+      ingestedEventsDetail.foreach(__v => __obj.updateDynamic("ingestedEventsDetail")(__v.asInstanceOf[js.Any]))
       modelId.foreach(__v => __obj.updateDynamic("modelId")(__v.asInstanceOf[js.Any]))
       modelType.foreach(__v => __obj.updateDynamic("modelType")(__v.asInstanceOf[js.Any]))
       modelVersionNumber.foreach(__v => __obj.updateDynamic("modelVersionNumber")(__v.asInstanceOf[js.Any]))
@@ -2107,6 +2536,77 @@ package object frauddetector {
     }
   }
 
+  /** Data about the stored events.
+    */
+  @js.native
+  trait IngestedEventStatistics extends js.Object {
+    var eventDataSizeInBytes: js.UndefOr[Double]
+    var lastUpdatedTime: js.UndefOr[time]
+    var leastRecentEvent: js.UndefOr[time]
+    var mostRecentEvent: js.UndefOr[time]
+    var numberOfEvents: js.UndefOr[Double]
+  }
+
+  object IngestedEventStatistics {
+    @inline
+    def apply(
+        eventDataSizeInBytes: js.UndefOr[Double] = js.undefined,
+        lastUpdatedTime: js.UndefOr[time] = js.undefined,
+        leastRecentEvent: js.UndefOr[time] = js.undefined,
+        mostRecentEvent: js.UndefOr[time] = js.undefined,
+        numberOfEvents: js.UndefOr[Double] = js.undefined
+    ): IngestedEventStatistics = {
+      val __obj = js.Dynamic.literal()
+      eventDataSizeInBytes.foreach(__v => __obj.updateDynamic("eventDataSizeInBytes")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
+      leastRecentEvent.foreach(__v => __obj.updateDynamic("leastRecentEvent")(__v.asInstanceOf[js.Any]))
+      mostRecentEvent.foreach(__v => __obj.updateDynamic("mostRecentEvent")(__v.asInstanceOf[js.Any]))
+      numberOfEvents.foreach(__v => __obj.updateDynamic("numberOfEvents")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IngestedEventStatistics]
+    }
+  }
+
+  /** The details of the ingested event.
+    */
+  @js.native
+  trait IngestedEventsDetail extends js.Object {
+    var ingestedEventsTimeWindow: IngestedEventsTimeWindow
+  }
+
+  object IngestedEventsDetail {
+    @inline
+    def apply(
+        ingestedEventsTimeWindow: IngestedEventsTimeWindow
+    ): IngestedEventsDetail = {
+      val __obj = js.Dynamic.literal(
+        "ingestedEventsTimeWindow" -> ingestedEventsTimeWindow.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[IngestedEventsDetail]
+    }
+  }
+
+  /** The start and stop time of the ingested events.
+    */
+  @js.native
+  trait IngestedEventsTimeWindow extends js.Object {
+    var endTime: time
+    var startTime: time
+  }
+
+  object IngestedEventsTimeWindow {
+    @inline
+    def apply(
+        endTime: time,
+        startTime: time
+    ): IngestedEventsTimeWindow = {
+      val __obj = js.Dynamic.literal(
+        "endTime" -> endTime.asInstanceOf[js.Any],
+        "startTime" -> startTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[IngestedEventsTimeWindow]
+    }
+  }
+
   /** The KMS key details.
     */
   @js.native
@@ -2160,16 +2660,20 @@ package object frauddetector {
   @js.native
   trait LabelSchema extends js.Object {
     var labelMapper: labelMapper
+    var unlabeledEventsTreatment: js.UndefOr[UnlabeledEventsTreatment]
   }
 
   object LabelSchema {
     @inline
     def apply(
-        labelMapper: labelMapper
+        labelMapper: labelMapper,
+        unlabeledEventsTreatment: js.UndefOr[UnlabeledEventsTreatment] = js.undefined
     ): LabelSchema = {
       val __obj = js.Dynamic.literal(
         "labelMapper" -> labelMapper.asInstanceOf[js.Any]
       )
+
+      unlabeledEventsTreatment.foreach(__v => __obj.updateDynamic("unlabeledEventsTreatment")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LabelSchema]
     }
   }
@@ -2214,6 +2718,31 @@ package object frauddetector {
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListTagsForResourceResult]
+    }
+  }
+
+  /** The log odds metric details.
+    */
+  @js.native
+  trait LogOddsMetric extends js.Object {
+    var variableImportance: Float
+    var variableName: String
+    var variableType: String
+  }
+
+  object LogOddsMetric {
+    @inline
+    def apply(
+        variableImportance: Float,
+        variableName: String,
+        variableType: String
+    ): LogOddsMetric = {
+      val __obj = js.Dynamic.literal(
+        "variableImportance" -> variableImportance.asInstanceOf[js.Any],
+        "variableName" -> variableName.asInstanceOf[js.Any],
+        "variableType" -> variableType.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[LogOddsMetric]
     }
   }
 
@@ -2306,20 +2835,20 @@ package object frauddetector {
   @js.native
   trait ModelInputConfiguration extends js.Object {
     var useEventVariables: UseEventVariables
-    var csvInputTemplate: js.UndefOr[String]
+    var csvInputTemplate: js.UndefOr[modelInputTemplate]
     var eventTypeName: js.UndefOr[identifier]
     var format: js.UndefOr[ModelInputDataFormat]
-    var jsonInputTemplate: js.UndefOr[String]
+    var jsonInputTemplate: js.UndefOr[modelInputTemplate]
   }
 
   object ModelInputConfiguration {
     @inline
     def apply(
         useEventVariables: UseEventVariables,
-        csvInputTemplate: js.UndefOr[String] = js.undefined,
+        csvInputTemplate: js.UndefOr[modelInputTemplate] = js.undefined,
         eventTypeName: js.UndefOr[identifier] = js.undefined,
         format: js.UndefOr[ModelInputDataFormat] = js.undefined,
-        jsonInputTemplate: js.UndefOr[String] = js.undefined
+        jsonInputTemplate: js.UndefOr[modelInputTemplate] = js.undefined
     ): ModelInputConfiguration = {
       val __obj = js.Dynamic.literal(
         "useEventVariables" -> useEventVariables.asInstanceOf[js.Any]
@@ -2386,7 +2915,7 @@ package object frauddetector {
   trait ModelVersion extends js.Object {
     var modelId: modelIdentifier
     var modelType: ModelTypeEnum
-    var modelVersionNumber: nonEmptyString
+    var modelVersionNumber: floatVersionString
     var arn: js.UndefOr[fraudDetectorArn]
   }
 
@@ -2395,7 +2924,7 @@ package object frauddetector {
     def apply(
         modelId: modelIdentifier,
         modelType: ModelTypeEnum,
-        modelVersionNumber: nonEmptyString,
+        modelVersionNumber: floatVersionString,
         arn: js.UndefOr[fraudDetectorArn] = js.undefined
     ): ModelVersion = {
       val __obj = js.Dynamic.literal(
@@ -2416,6 +2945,7 @@ package object frauddetector {
     var arn: js.UndefOr[fraudDetectorArn]
     var createdTime: js.UndefOr[time]
     var externalEventsDetail: js.UndefOr[ExternalEventsDetail]
+    var ingestedEventsDetail: js.UndefOr[IngestedEventsDetail]
     var lastUpdatedTime: js.UndefOr[time]
     var modelId: js.UndefOr[modelIdentifier]
     var modelType: js.UndefOr[ModelTypeEnum]
@@ -2432,6 +2962,7 @@ package object frauddetector {
         arn: js.UndefOr[fraudDetectorArn] = js.undefined,
         createdTime: js.UndefOr[time] = js.undefined,
         externalEventsDetail: js.UndefOr[ExternalEventsDetail] = js.undefined,
+        ingestedEventsDetail: js.UndefOr[IngestedEventsDetail] = js.undefined,
         lastUpdatedTime: js.UndefOr[time] = js.undefined,
         modelId: js.UndefOr[modelIdentifier] = js.undefined,
         modelType: js.UndefOr[ModelTypeEnum] = js.undefined,
@@ -2445,6 +2976,7 @@ package object frauddetector {
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       createdTime.foreach(__v => __obj.updateDynamic("createdTime")(__v.asInstanceOf[js.Any]))
       externalEventsDetail.foreach(__v => __obj.updateDynamic("externalEventsDetail")(__v.asInstanceOf[js.Any]))
+      ingestedEventsDetail.foreach(__v => __obj.updateDynamic("ingestedEventsDetail")(__v.asInstanceOf[js.Any]))
       lastUpdatedTime.foreach(__v => __obj.updateDynamic("lastUpdatedTime")(__v.asInstanceOf[js.Any]))
       modelId.foreach(__v => __obj.updateDynamic("modelId")(__v.asInstanceOf[js.Any]))
       modelType.foreach(__v => __obj.updateDynamic("modelType")(__v.asInstanceOf[js.Any]))
@@ -2566,6 +3098,7 @@ package object frauddetector {
     var eventVariables: NonEmptyListOfStrings
     var name: identifier
     var description: js.UndefOr[description]
+    var eventIngestion: js.UndefOr[EventIngestion]
     var labels: js.UndefOr[ListOfStrings]
     var tags: js.UndefOr[tagList]
   }
@@ -2577,6 +3110,7 @@ package object frauddetector {
         eventVariables: NonEmptyListOfStrings,
         name: identifier,
         description: js.UndefOr[description] = js.undefined,
+        eventIngestion: js.UndefOr[EventIngestion] = js.undefined,
         labels: js.UndefOr[ListOfStrings] = js.undefined,
         tags: js.UndefOr[tagList] = js.undefined
     ): PutEventTypeRequest = {
@@ -2587,6 +3121,7 @@ package object frauddetector {
       )
 
       description.foreach(__v => __obj.updateDynamic("description")(__v.asInstanceOf[js.Any]))
+      eventIngestion.foreach(__v => __obj.updateDynamic("eventIngestion")(__v.asInstanceOf[js.Any]))
       labels.foreach(__v => __obj.updateDynamic("labels")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PutEventTypeRequest]
@@ -2840,6 +3375,53 @@ package object frauddetector {
     }
   }
 
+  @js.native
+  trait SendEventRequest extends js.Object {
+    var entities: listOfEntities
+    var eventId: identifier
+    var eventTimestamp: utcTimestampISO8601
+    var eventTypeName: identifier
+    var eventVariables: EventVariableMap
+    var assignedLabel: js.UndefOr[identifier]
+    var labelTimestamp: js.UndefOr[utcTimestampISO8601]
+  }
+
+  object SendEventRequest {
+    @inline
+    def apply(
+        entities: listOfEntities,
+        eventId: identifier,
+        eventTimestamp: utcTimestampISO8601,
+        eventTypeName: identifier,
+        eventVariables: EventVariableMap,
+        assignedLabel: js.UndefOr[identifier] = js.undefined,
+        labelTimestamp: js.UndefOr[utcTimestampISO8601] = js.undefined
+    ): SendEventRequest = {
+      val __obj = js.Dynamic.literal(
+        "entities" -> entities.asInstanceOf[js.Any],
+        "eventId" -> eventId.asInstanceOf[js.Any],
+        "eventTimestamp" -> eventTimestamp.asInstanceOf[js.Any],
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any],
+        "eventVariables" -> eventVariables.asInstanceOf[js.Any]
+      )
+
+      assignedLabel.foreach(__v => __obj.updateDynamic("assignedLabel")(__v.asInstanceOf[js.Any]))
+      labelTimestamp.foreach(__v => __obj.updateDynamic("labelTimestamp")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendEventRequest]
+    }
+  }
+
+  @js.native
+  trait SendEventResult extends js.Object
+
+  object SendEventResult {
+    @inline
+    def apply(): SendEventResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[SendEventResult]
+    }
+  }
+
   /** A key and value pair.
     */
   @js.native
@@ -2942,17 +3524,20 @@ package object frauddetector {
   trait TrainingResult extends js.Object {
     var dataValidationMetrics: js.UndefOr[DataValidationMetrics]
     var trainingMetrics: js.UndefOr[TrainingMetrics]
+    var variableImportanceMetrics: js.UndefOr[VariableImportanceMetrics]
   }
 
   object TrainingResult {
     @inline
     def apply(
         dataValidationMetrics: js.UndefOr[DataValidationMetrics] = js.undefined,
-        trainingMetrics: js.UndefOr[TrainingMetrics] = js.undefined
+        trainingMetrics: js.UndefOr[TrainingMetrics] = js.undefined,
+        variableImportanceMetrics: js.UndefOr[VariableImportanceMetrics] = js.undefined
     ): TrainingResult = {
       val __obj = js.Dynamic.literal()
       dataValidationMetrics.foreach(__v => __obj.updateDynamic("dataValidationMetrics")(__v.asInstanceOf[js.Any]))
       trainingMetrics.foreach(__v => __obj.updateDynamic("trainingMetrics")(__v.asInstanceOf[js.Any]))
+      variableImportanceMetrics.foreach(__v => __obj.updateDynamic("variableImportanceMetrics")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TrainingResult]
     }
   }
@@ -3104,6 +3689,43 @@ package object frauddetector {
   }
 
   @js.native
+  trait UpdateEventLabelRequest extends js.Object {
+    var assignedLabel: identifier
+    var eventId: identifier
+    var eventTypeName: identifier
+    var labelTimestamp: utcTimestampISO8601
+  }
+
+  object UpdateEventLabelRequest {
+    @inline
+    def apply(
+        assignedLabel: identifier,
+        eventId: identifier,
+        eventTypeName: identifier,
+        labelTimestamp: utcTimestampISO8601
+    ): UpdateEventLabelRequest = {
+      val __obj = js.Dynamic.literal(
+        "assignedLabel" -> assignedLabel.asInstanceOf[js.Any],
+        "eventId" -> eventId.asInstanceOf[js.Any],
+        "eventTypeName" -> eventTypeName.asInstanceOf[js.Any],
+        "labelTimestamp" -> labelTimestamp.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateEventLabelRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateEventLabelResult extends js.Object
+
+  object UpdateEventLabelResult {
+    @inline
+    def apply(): UpdateEventLabelResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateEventLabelResult]
+    }
+  }
+
+  @js.native
   trait UpdateModelRequest extends js.Object {
     var modelId: modelIdentifier
     var modelType: ModelTypeEnum
@@ -3144,6 +3766,7 @@ package object frauddetector {
     var modelId: modelIdentifier
     var modelType: ModelTypeEnum
     var externalEventsDetail: js.UndefOr[ExternalEventsDetail]
+    var ingestedEventsDetail: js.UndefOr[IngestedEventsDetail]
     var tags: js.UndefOr[tagList]
   }
 
@@ -3154,6 +3777,7 @@ package object frauddetector {
         modelId: modelIdentifier,
         modelType: ModelTypeEnum,
         externalEventsDetail: js.UndefOr[ExternalEventsDetail] = js.undefined,
+        ingestedEventsDetail: js.UndefOr[IngestedEventsDetail] = js.undefined,
         tags: js.UndefOr[tagList] = js.undefined
     ): UpdateModelVersionRequest = {
       val __obj = js.Dynamic.literal(
@@ -3163,6 +3787,7 @@ package object frauddetector {
       )
 
       externalEventsDetail.foreach(__v => __obj.updateDynamic("externalEventsDetail")(__v.asInstanceOf[js.Any]))
+      ingestedEventsDetail.foreach(__v => __obj.updateDynamic("ingestedEventsDetail")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateModelVersionRequest]
     }
@@ -3420,6 +4045,24 @@ package object frauddetector {
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       variableType.foreach(__v => __obj.updateDynamic("variableType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VariableEntry]
+    }
+  }
+
+  /** The variable importance metrics details.
+    */
+  @js.native
+  trait VariableImportanceMetrics extends js.Object {
+    var logOddsMetrics: js.UndefOr[ListOfLogOddsMetrics]
+  }
+
+  object VariableImportanceMetrics {
+    @inline
+    def apply(
+        logOddsMetrics: js.UndefOr[ListOfLogOddsMetrics] = js.undefined
+    ): VariableImportanceMetrics = {
+      val __obj = js.Dynamic.literal()
+      logOddsMetrics.foreach(__v => __obj.updateDynamic("logOddsMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VariableImportanceMetrics]
     }
   }
 }

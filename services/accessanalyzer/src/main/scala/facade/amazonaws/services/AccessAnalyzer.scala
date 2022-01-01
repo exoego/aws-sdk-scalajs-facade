@@ -1305,7 +1305,7 @@ package object accessanalyzer {
     }
   }
 
-  /** This configuration sets the Amazon S3 access point network origin to <code>Internet</code>.
+  /** This configuration sets the network origin for the Amazon S3 access point or multi-region access point to <code>Internet</code>.
     */
   @js.native
   trait InternetConfiguration extends js.Object
@@ -1847,7 +1847,7 @@ package object accessanalyzer {
     }
   }
 
-  /** The proposed <code>InternetConfiguration</code> or <code>VpcConfiguration</code> to apply to the Amazon S3 Access point. You can make the access point accessible from the internet, or you can specify that all requests made through that access point must originate from a specific virtual private cloud (VPC). You can specify only one type of network configuration. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html|Creating access points]].
+  /** The proposed <code>InternetConfiguration</code> or <code>VpcConfiguration</code> to apply to the Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region access points. You can make the access point accessible from the internet, or you can specify that all requests made through that access point must originate from a specific virtual private cloud (VPC). You can specify only one type of network configuration. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html|Creating access points]].
     */
   @js.native
   trait NetworkOriginConfiguration extends js.Object {
@@ -1971,7 +1971,7 @@ package object accessanalyzer {
     }
   }
 
-  /** The configuration for an Amazon S3 access point for the bucket. You can propose up to 10 access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see [[https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html|Creating access points]]. For more information about access point policy limits, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html|Access points restrictions and limitations]].
+  /** The configuration for an Amazon S3 access point or multi-region access point for the bucket. You can propose up to 10 access points or multi-region access points per bucket. If the proposed Amazon S3 access point configuration is for an existing bucket, the access preview uses the proposed access point configuration in place of the existing access points. To propose an access point without a policy, you can provide an empty string as the access point policy. For more information, see [[https://docs.aws.amazon.com/https:/docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html|Creating access points]]. For more information about access point policy limits, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/access-points-restrictions-limitations.html|Access points restrictions and limitations]].
     */
   @js.native
   trait S3AccessPointConfiguration extends js.Object {
@@ -2017,7 +2017,7 @@ package object accessanalyzer {
     }
   }
 
-  /** Proposed access control configuration for an Amazon S3 bucket. You can propose a configuration for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own by specifying the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, and Amazon S3 access points attached to the bucket. If the configuration is for an existing Amazon S3 bucket and you do not specify the Amazon S3 bucket policy, the access preview uses the existing policy attached to the bucket. If the access preview is for a new resource and you do not specify the Amazon S3 bucket policy, the access preview assumes a bucket without a policy. To propose deletion of an existing bucket policy, you can specify an empty string. For more information about bucket policy limits, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html|Bucket Policy Examples]].
+  /** Proposed access control configuration for an Amazon S3 bucket. You can propose a configuration for a new Amazon S3 bucket or an existing Amazon S3 bucket that you own by specifying the Amazon S3 bucket policy, bucket ACLs, bucket BPA settings, Amazon S3 access points, and multi-region access points attached to the bucket. If the configuration is for an existing Amazon S3 bucket and you do not specify the Amazon S3 bucket policy, the access preview uses the existing policy attached to the bucket. If the access preview is for a new resource and you do not specify the Amazon S3 bucket policy, the access preview assumes a bucket without a policy. To propose deletion of an existing bucket policy, you can specify an empty string. For more information about bucket policy limits, see [[https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html|Bucket Policy Examples]].
     */
   @js.native
   trait S3BucketConfiguration extends js.Object {
@@ -2044,7 +2044,7 @@ package object accessanalyzer {
     }
   }
 
-  /** The <code>PublicAccessBlock</code> configuration to apply to this Amazon S3 bucket. If the proposed configuration is for an existing Amazon S3 bucket and the configuration is not specified, the access preview uses the existing setting. If the proposed configuration is for a new bucket and the configuration is not specified, the access preview uses <code>false</code>. If the proposed configuration is for a new access point and the access point BPA configuration is not specified, the access preview uses <code>true</code>. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html|PublicAccessBlockConfiguration]].
+  /** The <code>PublicAccessBlock</code> configuration to apply to this Amazon S3 bucket. If the proposed configuration is for an existing Amazon S3 bucket and the configuration is not specified, the access preview uses the existing setting. If the proposed configuration is for a new bucket and the configuration is not specified, the access preview uses <code>false</code>. If the proposed configuration is for a new access point or multi-region access point and the access point BPA configuration is not specified, the access preview uses <code>true</code>. For more information, see [[https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html|PublicAccessBlockConfiguration]].
     */
   @js.native
   trait S3PublicAccessBlockConfiguration extends js.Object {
@@ -2066,8 +2066,8 @@ package object accessanalyzer {
     }
   }
 
-  /** The configuration for a Secrets Manager secret. For more information, see [[https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html|CreateSecret]]. You can propose a configuration for a new secret or an existing secret that you own by specifying the secret policy and optional KMS encryption key. If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy. To propose deletion of an existing policy, you can specify an empty string. If the proposed configuration is for a new secret and you do not specify the KMS key ID, the access preview uses the default CMK of the AWS account. If you specify an empty string for the KMS key ID, the access preview uses the default CMK of the AWS account. For more information about secret policy limits,
-    * see [[https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html|Quotas for AWS Secrets Manager.]].
+  /** The configuration for a Secrets Manager secret. For more information, see [[https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_CreateSecret.html|CreateSecret]]. You can propose a configuration for a new secret or an existing secret that you own by specifying the secret policy and optional KMS encryption key. If the configuration is for an existing secret and you do not specify the secret policy, the access preview uses the existing policy for the secret. If the access preview is for a new resource and you do not specify the policy, the access preview assumes a secret without a policy. To propose deletion of an existing policy, you can specify an empty string. If the proposed configuration is for a new secret and you do not specify the KMS key ID, the access preview uses the Amazon Web Services managed key <code>aws/secretsmanager</code>. If you specify an empty string for the KMS key ID, the access preview uses the Amazon Web Services managed key of the Amazon Web
+    * Services account. For more information about secret policy limits, see [[https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html|Quotas for Secrets Manager.]].
     */
   @js.native
   trait SecretsManagerSecretConfiguration extends js.Object {
@@ -2131,7 +2131,7 @@ package object accessanalyzer {
     }
   }
 
-  /** The proposed access control configuration for an SQS queue. You can propose a configuration for a new SQS queue or an existing SQS queue that you own by specifying the SQS policy. If the configuration is for an existing SQS queue and you do not specify the SQS policy, the access preview uses the existing SQS policy for the queue. If the access preview is for a new resource and you do not specify the policy, the access preview assumes an SQS queue without a policy. To propose deletion of an existing SQS queue policy, you can specify an empty string for the SQS policy. For more information about SQS policy limits, see [[https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html|Quotas related to policies]].
+  /** The proposed access control configuration for an Amazon SQS queue. You can propose a configuration for a new Amazon SQS queue or an existing Amazon SQS queue that you own by specifying the Amazon SQS policy. If the configuration is for an existing Amazon SQS queue and you do not specify the Amazon SQS policy, the access preview uses the existing Amazon SQS policy for the queue. If the access preview is for a new resource and you do not specify the policy, the access preview assumes an Amazon SQS queue without a policy. To propose deletion of an existing Amazon SQS queue policy, you can specify an empty string for the Amazon SQS policy. For more information about Amazon SQS policy limits, see [[https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-policies.html|Quotas related to policies]].
     */
   @js.native
   trait SqsQueueConfiguration extends js.Object {
@@ -2212,7 +2212,7 @@ package object accessanalyzer {
     }
   }
 
-  /** Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the AWS organization.
+  /** Provides more details about the current status of the analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code> status is returned. For an analyzer with organization as the type, this failure can be due to an issue with creating the service-linked roles required in the member accounts of the Amazon Web Services organization.
     */
   @js.native
   trait StatusReason extends js.Object {
@@ -2474,6 +2474,7 @@ package object accessanalyzer {
     var locale: js.UndefOr[Locale]
     var maxResults: js.UndefOr[Int]
     var nextToken: js.UndefOr[Token]
+    var validatePolicyResourceType: js.UndefOr[ValidatePolicyResourceType]
   }
 
   object ValidatePolicyRequest {
@@ -2483,7 +2484,8 @@ package object accessanalyzer {
         policyType: PolicyType,
         locale: js.UndefOr[Locale] = js.undefined,
         maxResults: js.UndefOr[Int] = js.undefined,
-        nextToken: js.UndefOr[Token] = js.undefined
+        nextToken: js.UndefOr[Token] = js.undefined,
+        validatePolicyResourceType: js.UndefOr[ValidatePolicyResourceType] = js.undefined
     ): ValidatePolicyRequest = {
       val __obj = js.Dynamic.literal(
         "policyDocument" -> policyDocument.asInstanceOf[js.Any],
@@ -2493,6 +2495,7 @@ package object accessanalyzer {
       locale.foreach(__v => __obj.updateDynamic("locale")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      validatePolicyResourceType.foreach(__v => __obj.updateDynamic("validatePolicyResourceType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ValidatePolicyRequest]
     }
   }
@@ -2518,7 +2521,7 @@ package object accessanalyzer {
     }
   }
 
-  /** The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html|VpcConfiguration]].
+  /** The proposed virtual private cloud (VPC) configuration for the Amazon S3 access point. VPC configuration does not apply to multi-region access points. For more information, see [[https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_VpcConfiguration.html|VpcConfiguration]].
     */
   @js.native
   trait VpcConfiguration extends js.Object {

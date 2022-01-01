@@ -64,6 +64,14 @@ object AppInstanceType {
   val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[AppInstanceType]
   val `ml.m5.16xlarge` = "ml.m5.16xlarge".asInstanceOf[AppInstanceType]
   val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[AppInstanceType]
+  val `ml.m5d.large` = "ml.m5d.large".asInstanceOf[AppInstanceType]
+  val `ml.m5d.xlarge` = "ml.m5d.xlarge".asInstanceOf[AppInstanceType]
+  val `ml.m5d.2xlarge` = "ml.m5d.2xlarge".asInstanceOf[AppInstanceType]
+  val `ml.m5d.4xlarge` = "ml.m5d.4xlarge".asInstanceOf[AppInstanceType]
+  val `ml.m5d.8xlarge` = "ml.m5d.8xlarge".asInstanceOf[AppInstanceType]
+  val `ml.m5d.12xlarge` = "ml.m5d.12xlarge".asInstanceOf[AppInstanceType]
+  val `ml.m5d.16xlarge` = "ml.m5d.16xlarge".asInstanceOf[AppInstanceType]
+  val `ml.m5d.24xlarge` = "ml.m5d.24xlarge".asInstanceOf[AppInstanceType]
   val `ml.c5.large` = "ml.c5.large".asInstanceOf[AppInstanceType]
   val `ml.c5.xlarge` = "ml.c5.xlarge".asInstanceOf[AppInstanceType]
   val `ml.c5.2xlarge` = "ml.c5.2xlarge".asInstanceOf[AppInstanceType]
@@ -75,12 +83,21 @@ object AppInstanceType {
   val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[AppInstanceType]
   val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[AppInstanceType]
   val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[AppInstanceType]
+  val `ml.p3dn.24xlarge` = "ml.p3dn.24xlarge".asInstanceOf[AppInstanceType]
   val `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[AppInstanceType]
   val `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[AppInstanceType]
   val `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[AppInstanceType]
   val `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[AppInstanceType]
   val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[AppInstanceType]
   val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[AppInstanceType]
+  val `ml.r5.large` = "ml.r5.large".asInstanceOf[AppInstanceType]
+  val `ml.r5.xlarge` = "ml.r5.xlarge".asInstanceOf[AppInstanceType]
+  val `ml.r5.2xlarge` = "ml.r5.2xlarge".asInstanceOf[AppInstanceType]
+  val `ml.r5.4xlarge` = "ml.r5.4xlarge".asInstanceOf[AppInstanceType]
+  val `ml.r5.8xlarge` = "ml.r5.8xlarge".asInstanceOf[AppInstanceType]
+  val `ml.r5.12xlarge` = "ml.r5.12xlarge".asInstanceOf[AppInstanceType]
+  val `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[AppInstanceType]
+  val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[AppInstanceType]
 
   @inline def values: js.Array[AppInstanceType] = js.Array(
     system,
@@ -98,6 +115,14 @@ object AppInstanceType {
     `ml.m5.12xlarge`,
     `ml.m5.16xlarge`,
     `ml.m5.24xlarge`,
+    `ml.m5d.large`,
+    `ml.m5d.xlarge`,
+    `ml.m5d.2xlarge`,
+    `ml.m5d.4xlarge`,
+    `ml.m5d.8xlarge`,
+    `ml.m5d.12xlarge`,
+    `ml.m5d.16xlarge`,
+    `ml.m5d.24xlarge`,
     `ml.c5.large`,
     `ml.c5.xlarge`,
     `ml.c5.2xlarge`,
@@ -109,12 +134,21 @@ object AppInstanceType {
     `ml.p3.2xlarge`,
     `ml.p3.8xlarge`,
     `ml.p3.16xlarge`,
+    `ml.p3dn.24xlarge`,
     `ml.g4dn.xlarge`,
     `ml.g4dn.2xlarge`,
     `ml.g4dn.4xlarge`,
     `ml.g4dn.8xlarge`,
     `ml.g4dn.12xlarge`,
-    `ml.g4dn.16xlarge`
+    `ml.g4dn.16xlarge`,
+    `ml.r5.large`,
+    `ml.r5.xlarge`,
+    `ml.r5.2xlarge`,
+    `ml.r5.4xlarge`,
+    `ml.r5.8xlarge`,
+    `ml.r5.12xlarge`,
+    `ml.r5.16xlarge`,
+    `ml.r5.24xlarge`
   )
 }
 
@@ -125,6 +159,15 @@ object AppNetworkAccessType {
   val VpcOnly = "VpcOnly".asInstanceOf[AppNetworkAccessType]
 
   @inline def values: js.Array[AppNetworkAccessType] = js.Array(PublicInternetOnly, VpcOnly)
+}
+
+@js.native
+sealed trait AppSecurityGroupManagement extends js.Any
+object AppSecurityGroupManagement {
+  val Service = "Service".asInstanceOf[AppSecurityGroupManagement]
+  val Customer = "Customer".asInstanceOf[AppSecurityGroupManagement]
+
+  @inline def values: js.Array[AppSecurityGroupManagement] = js.Array(Service, Customer)
 }
 
 @js.native
@@ -153,8 +196,10 @@ object AppType {
   val JupyterServer = "JupyterServer".asInstanceOf[AppType]
   val KernelGateway = "KernelGateway".asInstanceOf[AppType]
   val TensorBoard = "TensorBoard".asInstanceOf[AppType]
+  val RStudioServerPro = "RStudioServerPro".asInstanceOf[AppType]
+  val RSessionGateway = "RSessionGateway".asInstanceOf[AppType]
 
-  @inline def values: js.Array[AppType] = js.Array(JupyterServer, KernelGateway, TensorBoard)
+  @inline def values: js.Array[AppType] = js.Array(JupyterServer, KernelGateway, TensorBoard, RStudioServerPro, RSessionGateway)
 }
 
 @js.native
@@ -248,6 +293,8 @@ object AutoMLJobSecondaryStatus {
   val GeneratingExplainabilityReport = "GeneratingExplainabilityReport".asInstanceOf[AutoMLJobSecondaryStatus]
   val Completed = "Completed".asInstanceOf[AutoMLJobSecondaryStatus]
   val ExplainabilityError = "ExplainabilityError".asInstanceOf[AutoMLJobSecondaryStatus]
+  val DeployingModel = "DeployingModel".asInstanceOf[AutoMLJobSecondaryStatus]
+  val ModelDeploymentError = "ModelDeploymentError".asInstanceOf[AutoMLJobSecondaryStatus]
 
   @inline def values: js.Array[AutoMLJobSecondaryStatus] = js.Array(
     Starting,
@@ -262,7 +309,9 @@ object AutoMLJobSecondaryStatus {
     CandidateDefinitionsGenerated,
     GeneratingExplainabilityReport,
     Completed,
-    ExplainabilityError
+    ExplainabilityError,
+    DeployingModel,
+    ModelDeploymentError
   )
 }
 
@@ -513,6 +562,16 @@ object DirectInternetAccess {
 }
 
 @js.native
+sealed trait Direction extends js.Any
+object Direction {
+  val Both = "Both".asInstanceOf[Direction]
+  val Ascendants = "Ascendants".asInstanceOf[Direction]
+  val Descendants = "Descendants".asInstanceOf[Direction]
+
+  @inline def values: js.Array[Direction] = js.Array(Both, Ascendants, Descendants)
+}
+
+@js.native
 sealed trait DomainStatus extends js.Any
 object DomainStatus {
   val Deleting = "Deleting".asInstanceOf[DomainStatus]
@@ -537,6 +596,23 @@ object EdgePackagingJobStatus {
   val STOPPED = "STOPPED".asInstanceOf[EdgePackagingJobStatus]
 
   @inline def values: js.Array[EdgePackagingJobStatus] = js.Array(STARTING, INPROGRESS, COMPLETED, FAILED, STOPPING, STOPPED)
+}
+
+@js.native
+sealed trait EdgePresetDeploymentStatus extends js.Any
+object EdgePresetDeploymentStatus {
+  val COMPLETED = "COMPLETED".asInstanceOf[EdgePresetDeploymentStatus]
+  val FAILED = "FAILED".asInstanceOf[EdgePresetDeploymentStatus]
+
+  @inline def values: js.Array[EdgePresetDeploymentStatus] = js.Array(COMPLETED, FAILED)
+}
+
+@js.native
+sealed trait EdgePresetDeploymentType extends js.Any
+object EdgePresetDeploymentType {
+  val GreengrassV2Component = "GreengrassV2Component".asInstanceOf[EdgePresetDeploymentType]
+
+  @inline def values: js.Array[EdgePresetDeploymentType] = js.Array(GreengrassV2Component)
 }
 
 @js.native
@@ -848,6 +924,14 @@ object InstanceType {
   val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[InstanceType]
   val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[InstanceType]
   val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[InstanceType]
+  val `ml.m5d.large` = "ml.m5d.large".asInstanceOf[InstanceType]
+  val `ml.m5d.xlarge` = "ml.m5d.xlarge".asInstanceOf[InstanceType]
+  val `ml.m5d.2xlarge` = "ml.m5d.2xlarge".asInstanceOf[InstanceType]
+  val `ml.m5d.4xlarge` = "ml.m5d.4xlarge".asInstanceOf[InstanceType]
+  val `ml.m5d.8xlarge` = "ml.m5d.8xlarge".asInstanceOf[InstanceType]
+  val `ml.m5d.12xlarge` = "ml.m5d.12xlarge".asInstanceOf[InstanceType]
+  val `ml.m5d.16xlarge` = "ml.m5d.16xlarge".asInstanceOf[InstanceType]
+  val `ml.m5d.24xlarge` = "ml.m5d.24xlarge".asInstanceOf[InstanceType]
   val `ml.c4.xlarge` = "ml.c4.xlarge".asInstanceOf[InstanceType]
   val `ml.c4.2xlarge` = "ml.c4.2xlarge".asInstanceOf[InstanceType]
   val `ml.c4.4xlarge` = "ml.c4.4xlarge".asInstanceOf[InstanceType]
@@ -868,6 +952,21 @@ object InstanceType {
   val `ml.p3.2xlarge` = "ml.p3.2xlarge".asInstanceOf[InstanceType]
   val `ml.p3.8xlarge` = "ml.p3.8xlarge".asInstanceOf[InstanceType]
   val `ml.p3.16xlarge` = "ml.p3.16xlarge".asInstanceOf[InstanceType]
+  val `ml.p3dn.24xlarge` = "ml.p3dn.24xlarge".asInstanceOf[InstanceType]
+  val `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[InstanceType]
+  val `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[InstanceType]
+  val `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[InstanceType]
+  val `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[InstanceType]
+  val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[InstanceType]
+  val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[InstanceType]
+  val `ml.r5.large` = "ml.r5.large".asInstanceOf[InstanceType]
+  val `ml.r5.xlarge` = "ml.r5.xlarge".asInstanceOf[InstanceType]
+  val `ml.r5.2xlarge` = "ml.r5.2xlarge".asInstanceOf[InstanceType]
+  val `ml.r5.4xlarge` = "ml.r5.4xlarge".asInstanceOf[InstanceType]
+  val `ml.r5.8xlarge` = "ml.r5.8xlarge".asInstanceOf[InstanceType]
+  val `ml.r5.12xlarge` = "ml.r5.12xlarge".asInstanceOf[InstanceType]
+  val `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[InstanceType]
+  val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[InstanceType]
 
   @inline def values: js.Array[InstanceType] = js.Array(
     `ml.t2.medium`,
@@ -888,6 +987,14 @@ object InstanceType {
     `ml.m5.4xlarge`,
     `ml.m5.12xlarge`,
     `ml.m5.24xlarge`,
+    `ml.m5d.large`,
+    `ml.m5d.xlarge`,
+    `ml.m5d.2xlarge`,
+    `ml.m5d.4xlarge`,
+    `ml.m5d.8xlarge`,
+    `ml.m5d.12xlarge`,
+    `ml.m5d.16xlarge`,
+    `ml.m5d.24xlarge`,
     `ml.c4.xlarge`,
     `ml.c4.2xlarge`,
     `ml.c4.4xlarge`,
@@ -907,7 +1014,22 @@ object InstanceType {
     `ml.p2.16xlarge`,
     `ml.p3.2xlarge`,
     `ml.p3.8xlarge`,
-    `ml.p3.16xlarge`
+    `ml.p3.16xlarge`,
+    `ml.p3dn.24xlarge`,
+    `ml.g4dn.xlarge`,
+    `ml.g4dn.2xlarge`,
+    `ml.g4dn.4xlarge`,
+    `ml.g4dn.8xlarge`,
+    `ml.g4dn.12xlarge`,
+    `ml.g4dn.16xlarge`,
+    `ml.r5.large`,
+    `ml.r5.xlarge`,
+    `ml.r5.2xlarge`,
+    `ml.r5.4xlarge`,
+    `ml.r5.8xlarge`,
+    `ml.r5.12xlarge`,
+    `ml.r5.16xlarge`,
+    `ml.r5.24xlarge`
   )
 }
 
@@ -931,6 +1053,17 @@ object LabelingJobStatus {
   val Stopped = "Stopped".asInstanceOf[LabelingJobStatus]
 
   @inline def values: js.Array[LabelingJobStatus] = js.Array(Initializing, InProgress, Completed, Failed, Stopping, Stopped)
+}
+
+@js.native
+sealed trait LineageType extends js.Any
+object LineageType {
+  val TrialComponent = "TrialComponent".asInstanceOf[LineageType]
+  val Artifact = "Artifact".asInstanceOf[LineageType]
+  val Context = "Context".asInstanceOf[LineageType]
+  val Action = "Action".asInstanceOf[LineageType]
+
+  @inline def values: js.Array[LineageType] = js.Array(TrialComponent, Artifact, Context, Action)
 }
 
 @js.native
@@ -966,6 +1099,16 @@ object ListEdgePackagingJobsSortBy {
 }
 
 @js.native
+sealed trait ListInferenceRecommendationsJobsSortBy extends js.Any
+object ListInferenceRecommendationsJobsSortBy {
+  val Name = "Name".asInstanceOf[ListInferenceRecommendationsJobsSortBy]
+  val CreationTime = "CreationTime".asInstanceOf[ListInferenceRecommendationsJobsSortBy]
+  val Status = "Status".asInstanceOf[ListInferenceRecommendationsJobsSortBy]
+
+  @inline def values: js.Array[ListInferenceRecommendationsJobsSortBy] = js.Array(Name, CreationTime, Status)
+}
+
+@js.native
 sealed trait ListLabelingJobsForWorkteamSortByOptions extends js.Any
 object ListLabelingJobsForWorkteamSortByOptions {
   val CreationTime = "CreationTime".asInstanceOf[ListLabelingJobsForWorkteamSortByOptions]
@@ -992,6 +1135,16 @@ object ListWorkteamsSortByOptions {
 }
 
 @js.native
+sealed trait MetricSetSource extends js.Any
+object MetricSetSource {
+  val Train = "Train".asInstanceOf[MetricSetSource]
+  val Validation = "Validation".asInstanceOf[MetricSetSource]
+  val Test = "Test".asInstanceOf[MetricSetSource]
+
+  @inline def values: js.Array[MetricSetSource] = js.Array(Train, Validation, Test)
+}
+
+@js.native
 sealed trait ModelApprovalStatus extends js.Any
 object ModelApprovalStatus {
   val Approved = "Approved".asInstanceOf[ModelApprovalStatus]
@@ -1008,6 +1161,17 @@ object ModelCacheSetting {
   val Disabled = "Disabled".asInstanceOf[ModelCacheSetting]
 
   @inline def values: js.Array[ModelCacheSetting] = js.Array(Enabled, Disabled)
+}
+
+@js.native
+sealed trait ModelMetadataFilterType extends js.Any
+object ModelMetadataFilterType {
+  val Domain = "Domain".asInstanceOf[ModelMetadataFilterType]
+  val Framework = "Framework".asInstanceOf[ModelMetadataFilterType]
+  val Task = "Task".asInstanceOf[ModelMetadataFilterType]
+  val FrameworkVersion = "FrameworkVersion".asInstanceOf[ModelMetadataFilterType]
+
+  @inline def values: js.Array[ModelMetadataFilterType] = js.Array(Domain, Framework, Task, FrameworkVersion)
 }
 
 @js.native
@@ -1324,6 +1488,12 @@ object ProcessingInstanceType {
   val `ml.r5.12xlarge` = "ml.r5.12xlarge".asInstanceOf[ProcessingInstanceType]
   val `ml.r5.16xlarge` = "ml.r5.16xlarge".asInstanceOf[ProcessingInstanceType]
   val `ml.r5.24xlarge` = "ml.r5.24xlarge".asInstanceOf[ProcessingInstanceType]
+  val `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[ProcessingInstanceType]
+  val `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[ProcessingInstanceType]
+  val `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[ProcessingInstanceType]
+  val `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[ProcessingInstanceType]
+  val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[ProcessingInstanceType]
+  val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[ProcessingInstanceType]
 
   @inline def values: js.Array[ProcessingInstanceType] = js.Array(
     `ml.t3.medium`,
@@ -1363,7 +1533,13 @@ object ProcessingInstanceType {
     `ml.r5.8xlarge`,
     `ml.r5.12xlarge`,
     `ml.r5.16xlarge`,
-    `ml.r5.24xlarge`
+    `ml.r5.24xlarge`,
+    `ml.g4dn.xlarge`,
+    `ml.g4dn.2xlarge`,
+    `ml.g4dn.4xlarge`,
+    `ml.g4dn.8xlarge`,
+    `ml.g4dn.12xlarge`,
+    `ml.g4dn.16xlarge`
   )
 }
 
@@ -1614,8 +1790,51 @@ object ProjectStatus {
   val DeleteInProgress = "DeleteInProgress".asInstanceOf[ProjectStatus]
   val DeleteFailed = "DeleteFailed".asInstanceOf[ProjectStatus]
   val DeleteCompleted = "DeleteCompleted".asInstanceOf[ProjectStatus]
+  val UpdateInProgress = "UpdateInProgress".asInstanceOf[ProjectStatus]
+  val UpdateCompleted = "UpdateCompleted".asInstanceOf[ProjectStatus]
+  val UpdateFailed = "UpdateFailed".asInstanceOf[ProjectStatus]
 
-  @inline def values: js.Array[ProjectStatus] = js.Array(Pending, CreateInProgress, CreateCompleted, CreateFailed, DeleteInProgress, DeleteFailed, DeleteCompleted)
+  @inline def values: js.Array[ProjectStatus] = js.Array(Pending, CreateInProgress, CreateCompleted, CreateFailed, DeleteInProgress, DeleteFailed, DeleteCompleted, UpdateInProgress, UpdateCompleted, UpdateFailed)
+}
+
+@js.native
+sealed trait RStudioServerProAccessStatus extends js.Any
+object RStudioServerProAccessStatus {
+  val ENABLED = "ENABLED".asInstanceOf[RStudioServerProAccessStatus]
+  val DISABLED = "DISABLED".asInstanceOf[RStudioServerProAccessStatus]
+
+  @inline def values: js.Array[RStudioServerProAccessStatus] = js.Array(ENABLED, DISABLED)
+}
+
+@js.native
+sealed trait RStudioServerProUserGroup extends js.Any
+object RStudioServerProUserGroup {
+  val R_STUDIO_ADMIN = "R_STUDIO_ADMIN".asInstanceOf[RStudioServerProUserGroup]
+  val R_STUDIO_USER = "R_STUDIO_USER".asInstanceOf[RStudioServerProUserGroup]
+
+  @inline def values: js.Array[RStudioServerProUserGroup] = js.Array(R_STUDIO_ADMIN, R_STUDIO_USER)
+}
+
+@js.native
+sealed trait RecommendationJobStatus extends js.Any
+object RecommendationJobStatus {
+  val PENDING = "PENDING".asInstanceOf[RecommendationJobStatus]
+  val IN_PROGRESS = "IN_PROGRESS".asInstanceOf[RecommendationJobStatus]
+  val COMPLETED = "COMPLETED".asInstanceOf[RecommendationJobStatus]
+  val FAILED = "FAILED".asInstanceOf[RecommendationJobStatus]
+  val STOPPING = "STOPPING".asInstanceOf[RecommendationJobStatus]
+  val STOPPED = "STOPPED".asInstanceOf[RecommendationJobStatus]
+
+  @inline def values: js.Array[RecommendationJobStatus] = js.Array(PENDING, IN_PROGRESS, COMPLETED, FAILED, STOPPING, STOPPED)
+}
+
+@js.native
+sealed trait RecommendationJobType extends js.Any
+object RecommendationJobType {
+  val Default = "Default".asInstanceOf[RecommendationJobType]
+  val Advanced = "Advanced".asInstanceOf[RecommendationJobType]
+
+  @inline def values: js.Array[RecommendationJobType] = js.Array(Default, Advanced)
 }
 
 @js.native
@@ -1674,8 +1893,21 @@ object ResourceType {
   val Pipeline = "Pipeline".asInstanceOf[ResourceType]
   val PipelineExecution = "PipelineExecution".asInstanceOf[ResourceType]
   val FeatureGroup = "FeatureGroup".asInstanceOf[ResourceType]
+  val Project = "Project".asInstanceOf[ResourceType]
 
-  @inline def values: js.Array[ResourceType] = js.Array(TrainingJob, Experiment, ExperimentTrial, ExperimentTrialComponent, Endpoint, ModelPackage, ModelPackageGroup, Pipeline, PipelineExecution, FeatureGroup)
+  @inline def values: js.Array[ResourceType] = js.Array(
+    TrainingJob,
+    Experiment,
+    ExperimentTrial,
+    ExperimentTrialComponent,
+    Endpoint,
+    ModelPackage,
+    ModelPackageGroup,
+    Pipeline,
+    PipelineExecution,
+    FeatureGroup,
+    Project
+  )
 }
 
 @js.native
@@ -1775,6 +2007,7 @@ object SecondaryStatus {
   val Interrupted = "Interrupted".asInstanceOf[SecondaryStatus]
   val MaxWaitTimeExceeded = "MaxWaitTimeExceeded".asInstanceOf[SecondaryStatus]
   val Updating = "Updating".asInstanceOf[SecondaryStatus]
+  val Restarting = "Restarting".asInstanceOf[SecondaryStatus]
 
   @inline def values: js.Array[SecondaryStatus] = js.Array(
     Starting,
@@ -1791,7 +2024,8 @@ object SecondaryStatus {
     Failed,
     Interrupted,
     MaxWaitTimeExceeded,
-    Updating
+    Updating,
+    Restarting
   )
 }
 
@@ -1850,6 +2084,15 @@ object SortExperimentsBy {
   val CreationTime = "CreationTime".asInstanceOf[SortExperimentsBy]
 
   @inline def values: js.Array[SortExperimentsBy] = js.Array(Name, CreationTime)
+}
+
+@js.native
+sealed trait SortLineageGroupsBy extends js.Any
+object SortLineageGroupsBy {
+  val Name = "Name".asInstanceOf[SortLineageGroupsBy]
+  val CreationTime = "CreationTime".asInstanceOf[SortLineageGroupsBy]
+
+  @inline def values: js.Array[SortLineageGroupsBy] = js.Array(Name, CreationTime)
 }
 
 @js.native
@@ -1922,6 +2165,25 @@ object StepStatus {
 }
 
 @js.native
+sealed trait StudioLifecycleConfigAppType extends js.Any
+object StudioLifecycleConfigAppType {
+  val JupyterServer = "JupyterServer".asInstanceOf[StudioLifecycleConfigAppType]
+  val KernelGateway = "KernelGateway".asInstanceOf[StudioLifecycleConfigAppType]
+
+  @inline def values: js.Array[StudioLifecycleConfigAppType] = js.Array(JupyterServer, KernelGateway)
+}
+
+@js.native
+sealed trait StudioLifecycleConfigSortKey extends js.Any
+object StudioLifecycleConfigSortKey {
+  val CreationTime = "CreationTime".asInstanceOf[StudioLifecycleConfigSortKey]
+  val LastModifiedTime = "LastModifiedTime".asInstanceOf[StudioLifecycleConfigSortKey]
+  val Name = "Name".asInstanceOf[StudioLifecycleConfigSortKey]
+
+  @inline def values: js.Array[StudioLifecycleConfigSortKey] = js.Array(CreationTime, LastModifiedTime, Name)
+}
+
+@js.native
 sealed trait TargetDevice extends js.Any
 object TargetDevice {
   val lambda = "lambda".asInstanceOf[TargetDevice]
@@ -1948,11 +2210,14 @@ object TargetDevice {
   val qcs605 = "qcs605".asInstanceOf[TargetDevice]
   val qcs603 = "qcs603".asInstanceOf[TargetDevice]
   val sitara_am57x = "sitara_am57x".asInstanceOf[TargetDevice]
+  val amba_cv2 = "amba_cv2".asInstanceOf[TargetDevice]
   val amba_cv22 = "amba_cv22".asInstanceOf[TargetDevice]
+  val amba_cv25 = "amba_cv25".asInstanceOf[TargetDevice]
   val x86_win32 = "x86_win32".asInstanceOf[TargetDevice]
   val x86_win64 = "x86_win64".asInstanceOf[TargetDevice]
   val coreml = "coreml".asInstanceOf[TargetDevice]
   val jacinto_tda4vm = "jacinto_tda4vm".asInstanceOf[TargetDevice]
+  val imx8mplus = "imx8mplus".asInstanceOf[TargetDevice]
 
   @inline def values: js.Array[TargetDevice] = js.Array(
     lambda,
@@ -1979,11 +2244,14 @@ object TargetDevice {
     qcs605,
     qcs603,
     sitara_am57x,
+    amba_cv2,
     amba_cv22,
+    amba_cv25,
     x86_win32,
     x86_win64,
     coreml,
-    jacinto_tda4vm
+    jacinto_tda4vm,
+    imx8mplus
   )
 }
 
@@ -2023,17 +2291,32 @@ sealed trait TrafficRoutingConfigType extends js.Any
 object TrafficRoutingConfigType {
   val ALL_AT_ONCE = "ALL_AT_ONCE".asInstanceOf[TrafficRoutingConfigType]
   val CANARY = "CANARY".asInstanceOf[TrafficRoutingConfigType]
+  val LINEAR = "LINEAR".asInstanceOf[TrafficRoutingConfigType]
 
-  @inline def values: js.Array[TrafficRoutingConfigType] = js.Array(ALL_AT_ONCE, CANARY)
+  @inline def values: js.Array[TrafficRoutingConfigType] = js.Array(ALL_AT_ONCE, CANARY, LINEAR)
 }
 
+@js.native
+sealed trait TrafficType extends js.Any
+object TrafficType {
+  val PHASES = "PHASES".asInstanceOf[TrafficType]
+
+  @inline def values: js.Array[TrafficType] = js.Array(PHASES)
+}
+
+/** The training input mode that the algorithm supports. For more information about input modes, see [[https://docs.aws.amazon.com/sagemaker/latest/dg/algos.html|Algorithms]].
+  * ```Pipe mode``` If an algorithm supports <code>Pipe</code> mode, Amazon SageMaker streams data directly from Amazon S3 to the container.
+  * ```File mode``` If an algorithm supports <code>File</code> mode, SageMaker downloads the training data from S3 to the provisioned ML storage volume, and mounts the directory to the Docker volume for the training container. You must provision the ML storage volume with sufficient capacity to accommodate the data downloaded from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container uses the ML storage volume to also store intermediate information, if any. For distributed algorithms, training data is distributed uniformly. Your training duration is predictable if the input data objects sizes are approximately the same. SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed when one host in a training cluster is overloaded, thus becoming a bottleneck in training.
+  * ```FastFile mode``` If an algorithm supports <code>FastFile</code> mode, SageMaker streams data directly from S3 to the container with no code changes, and provides file system access to the data. Users can author their training script to interact with these files as if they were stored on disk. <code>FastFile</code> mode works best when the data is read sequentially. Augmented manifest files aren't supported. The startup time is lower when there are fewer files in the S3 bucket provided.
+  */
 @js.native
 sealed trait TrainingInputMode extends js.Any
 object TrainingInputMode {
   val Pipe = "Pipe".asInstanceOf[TrainingInputMode]
   val File = "File".asInstanceOf[TrainingInputMode]
+  val FastFile = "FastFile".asInstanceOf[TrainingInputMode]
 
-  @inline def values: js.Array[TrainingInputMode] = js.Array(Pipe, File)
+  @inline def values: js.Array[TrainingInputMode] = js.Array(Pipe, File, FastFile)
 }
 
 @js.native
@@ -2183,6 +2466,12 @@ object TransformInstanceType {
   val `ml.m5.4xlarge` = "ml.m5.4xlarge".asInstanceOf[TransformInstanceType]
   val `ml.m5.12xlarge` = "ml.m5.12xlarge".asInstanceOf[TransformInstanceType]
   val `ml.m5.24xlarge` = "ml.m5.24xlarge".asInstanceOf[TransformInstanceType]
+  val `ml.g4dn.xlarge` = "ml.g4dn.xlarge".asInstanceOf[TransformInstanceType]
+  val `ml.g4dn.2xlarge` = "ml.g4dn.2xlarge".asInstanceOf[TransformInstanceType]
+  val `ml.g4dn.4xlarge` = "ml.g4dn.4xlarge".asInstanceOf[TransformInstanceType]
+  val `ml.g4dn.8xlarge` = "ml.g4dn.8xlarge".asInstanceOf[TransformInstanceType]
+  val `ml.g4dn.12xlarge` = "ml.g4dn.12xlarge".asInstanceOf[TransformInstanceType]
+  val `ml.g4dn.16xlarge` = "ml.g4dn.16xlarge".asInstanceOf[TransformInstanceType]
 
   @inline def values: js.Array[TransformInstanceType] = js.Array(
     `ml.m4.xlarge`,
@@ -2210,7 +2499,13 @@ object TransformInstanceType {
     `ml.m5.2xlarge`,
     `ml.m5.4xlarge`,
     `ml.m5.12xlarge`,
-    `ml.m5.24xlarge`
+    `ml.m5.24xlarge`,
+    `ml.g4dn.xlarge`,
+    `ml.g4dn.2xlarge`,
+    `ml.g4dn.4xlarge`,
+    `ml.g4dn.8xlarge`,
+    `ml.g4dn.12xlarge`,
+    `ml.g4dn.16xlarge`
   )
 }
 
@@ -2269,4 +2564,16 @@ object VariantPropertyType {
   val DataCaptureConfig = "DataCaptureConfig".asInstanceOf[VariantPropertyType]
 
   @inline def values: js.Array[VariantPropertyType] = js.Array(DesiredInstanceCount, DesiredWeight, DataCaptureConfig)
+}
+
+@js.native
+sealed trait VariantStatus extends js.Any
+object VariantStatus {
+  val Creating = "Creating".asInstanceOf[VariantStatus]
+  val Updating = "Updating".asInstanceOf[VariantStatus]
+  val Deleting = "Deleting".asInstanceOf[VariantStatus]
+  val ActivatingTraffic = "ActivatingTraffic".asInstanceOf[VariantStatus]
+  val Baking = "Baking".asInstanceOf[VariantStatus]
+
+  @inline def values: js.Array[VariantStatus] = js.Array(Creating, Updating, Deleting, ActivatingTraffic, Baking)
 }

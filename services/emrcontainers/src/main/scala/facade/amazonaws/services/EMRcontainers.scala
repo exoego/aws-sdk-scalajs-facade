@@ -9,7 +9,9 @@ import facade.amazonaws._
 
 package object emrcontainers {
   type ACMCertArn = String
+  type Base64Encoded = String
   type ClientToken = String
+  type ClusterId = String
   type ConfigurationList = js.Array[Configuration]
   type Date = js.Date
   type EndpointArn = String
@@ -25,6 +27,7 @@ package object emrcontainers {
   type JobArn = String
   type JobRunStates = js.Array[JobRunState]
   type JobRuns = js.Array[JobRun]
+  type KubernetesNamespace = String
   type LogGroupName = String
   type NextToken = String
   type ReleaseLabel = String
@@ -132,6 +135,27 @@ package object emrcontainers {
     }
   }
 
+  /** The entity representing certificate data generated for managed endpoint.
+    */
+  @js.native
+  trait Certificate extends js.Object {
+    var certificateArn: js.UndefOr[ACMCertArn]
+    var certificateData: js.UndefOr[Base64Encoded]
+  }
+
+  object Certificate {
+    @inline
+    def apply(
+        certificateArn: js.UndefOr[ACMCertArn] = js.undefined,
+        certificateData: js.UndefOr[Base64Encoded] = js.undefined
+    ): Certificate = {
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateData.foreach(__v => __obj.updateDynamic("certificateData")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Certificate]
+    }
+  }
+
   /** A configuration for CloudWatch monitoring. You can configure your jobs to send log information to CloudWatch Logs.
     */
   @js.native
@@ -224,7 +248,7 @@ package object emrcontainers {
     */
   @js.native
   trait ContainerProvider extends js.Object {
-    var id: String256
+    var id: ClusterId
     var `type`: ContainerProviderType
     var info: js.UndefOr[ContainerInfo]
   }
@@ -232,7 +256,7 @@ package object emrcontainers {
   object ContainerProvider {
     @inline
     def apply(
-        id: String256,
+        id: ClusterId,
         `type`: ContainerProviderType,
         info: js.UndefOr[ContainerInfo] = js.undefined
     ): ContainerProvider = {
@@ -248,13 +272,13 @@ package object emrcontainers {
 
   @js.native
   trait CreateManagedEndpointRequest extends js.Object {
-    var certificateArn: ACMCertArn
     var clientToken: ClientToken
     var executionRoleArn: IAMRoleArn
     var name: ResourceNameString
     var releaseLabel: ReleaseLabel
     var `type`: EndpointType
     var virtualClusterId: ResourceIdString
+    var certificateArn: js.UndefOr[ACMCertArn]
     var configurationOverrides: js.UndefOr[ConfigurationOverrides]
     var tags: js.UndefOr[TagMap]
   }
@@ -262,18 +286,17 @@ package object emrcontainers {
   object CreateManagedEndpointRequest {
     @inline
     def apply(
-        certificateArn: ACMCertArn,
         clientToken: ClientToken,
         executionRoleArn: IAMRoleArn,
         name: ResourceNameString,
         releaseLabel: ReleaseLabel,
         `type`: EndpointType,
         virtualClusterId: ResourceIdString,
+        certificateArn: js.UndefOr[ACMCertArn] = js.undefined,
         configurationOverrides: js.UndefOr[ConfigurationOverrides] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined
     ): CreateManagedEndpointRequest = {
       val __obj = js.Dynamic.literal(
-        "certificateArn" -> certificateArn.asInstanceOf[js.Any],
         "clientToken" -> clientToken.asInstanceOf[js.Any],
         "executionRoleArn" -> executionRoleArn.asInstanceOf[js.Any],
         "name" -> name.asInstanceOf[js.Any],
@@ -282,6 +305,7 @@ package object emrcontainers {
         "virtualClusterId" -> virtualClusterId.asInstanceOf[js.Any]
       )
 
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
       configurationOverrides.foreach(__v => __obj.updateDynamic("configurationOverrides")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateManagedEndpointRequest]
@@ -543,13 +567,13 @@ package object emrcontainers {
     */
   @js.native
   trait EksInfo extends js.Object {
-    var namespace: js.UndefOr[String256]
+    var namespace: js.UndefOr[KubernetesNamespace]
   }
 
   object EksInfo {
     @inline
     def apply(
-        namespace: js.UndefOr[String256] = js.undefined
+        namespace: js.UndefOr[KubernetesNamespace] = js.undefined
     ): EksInfo = {
       val __obj = js.Dynamic.literal()
       namespace.foreach(__v => __obj.updateDynamic("namespace")(__v.asInstanceOf[js.Any]))
@@ -563,15 +587,18 @@ package object emrcontainers {
   trait Endpoint extends js.Object {
     var arn: js.UndefOr[EndpointArn]
     var certificateArn: js.UndefOr[ACMCertArn]
+    var certificateAuthority: js.UndefOr[Certificate]
     var configurationOverrides: js.UndefOr[ConfigurationOverrides]
     var createdAt: js.UndefOr[Date]
     var executionRoleArn: js.UndefOr[IAMRoleArn]
+    var failureReason: js.UndefOr[FailureReason]
     var id: js.UndefOr[ResourceIdString]
     var name: js.UndefOr[ResourceNameString]
     var releaseLabel: js.UndefOr[ReleaseLabel]
     var securityGroup: js.UndefOr[String256]
     var serverUrl: js.UndefOr[UriString]
     var state: js.UndefOr[EndpointState]
+    var stateDetails: js.UndefOr[String256]
     var subnetIds: js.UndefOr[SubnetIds]
     var tags: js.UndefOr[TagMap]
     var `type`: js.UndefOr[EndpointType]
@@ -583,15 +610,18 @@ package object emrcontainers {
     def apply(
         arn: js.UndefOr[EndpointArn] = js.undefined,
         certificateArn: js.UndefOr[ACMCertArn] = js.undefined,
+        certificateAuthority: js.UndefOr[Certificate] = js.undefined,
         configurationOverrides: js.UndefOr[ConfigurationOverrides] = js.undefined,
         createdAt: js.UndefOr[Date] = js.undefined,
         executionRoleArn: js.UndefOr[IAMRoleArn] = js.undefined,
+        failureReason: js.UndefOr[FailureReason] = js.undefined,
         id: js.UndefOr[ResourceIdString] = js.undefined,
         name: js.UndefOr[ResourceNameString] = js.undefined,
         releaseLabel: js.UndefOr[ReleaseLabel] = js.undefined,
         securityGroup: js.UndefOr[String256] = js.undefined,
         serverUrl: js.UndefOr[UriString] = js.undefined,
         state: js.UndefOr[EndpointState] = js.undefined,
+        stateDetails: js.UndefOr[String256] = js.undefined,
         subnetIds: js.UndefOr[SubnetIds] = js.undefined,
         tags: js.UndefOr[TagMap] = js.undefined,
         `type`: js.UndefOr[EndpointType] = js.undefined,
@@ -600,15 +630,18 @@ package object emrcontainers {
       val __obj = js.Dynamic.literal()
       arn.foreach(__v => __obj.updateDynamic("arn")(__v.asInstanceOf[js.Any]))
       certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      certificateAuthority.foreach(__v => __obj.updateDynamic("certificateAuthority")(__v.asInstanceOf[js.Any]))
       configurationOverrides.foreach(__v => __obj.updateDynamic("configurationOverrides")(__v.asInstanceOf[js.Any]))
       createdAt.foreach(__v => __obj.updateDynamic("createdAt")(__v.asInstanceOf[js.Any]))
       executionRoleArn.foreach(__v => __obj.updateDynamic("executionRoleArn")(__v.asInstanceOf[js.Any]))
+      failureReason.foreach(__v => __obj.updateDynamic("failureReason")(__v.asInstanceOf[js.Any]))
       id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
       name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
       releaseLabel.foreach(__v => __obj.updateDynamic("releaseLabel")(__v.asInstanceOf[js.Any]))
       securityGroup.foreach(__v => __obj.updateDynamic("securityGroup")(__v.asInstanceOf[js.Any]))
       serverUrl.foreach(__v => __obj.updateDynamic("serverUrl")(__v.asInstanceOf[js.Any]))
       state.foreach(__v => __obj.updateDynamic("state")(__v.asInstanceOf[js.Any]))
+      stateDetails.foreach(__v => __obj.updateDynamic("stateDetails")(__v.asInstanceOf[js.Any]))
       subnetIds.foreach(__v => __obj.updateDynamic("subnetIds")(__v.asInstanceOf[js.Any]))
       tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
       `type`.foreach(__v => __obj.updateDynamic("type")(__v.asInstanceOf[js.Any]))

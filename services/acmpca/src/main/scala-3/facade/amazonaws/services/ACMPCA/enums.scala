@@ -92,6 +92,14 @@ object KeyAlgorithm {
   inline def values: js.Array[KeyAlgorithm] = js.Array(RSA_2048, RSA_4096, EC_prime256v1, EC_secp384r1)
 }
 
+type KeyStorageSecurityStandard = "FIPS_140_2_LEVEL_2_OR_HIGHER" | "FIPS_140_2_LEVEL_3_OR_HIGHER"
+object KeyStorageSecurityStandard {
+  inline val FIPS_140_2_LEVEL_2_OR_HIGHER: "FIPS_140_2_LEVEL_2_OR_HIGHER" = "FIPS_140_2_LEVEL_2_OR_HIGHER"
+  inline val FIPS_140_2_LEVEL_3_OR_HIGHER: "FIPS_140_2_LEVEL_3_OR_HIGHER" = "FIPS_140_2_LEVEL_3_OR_HIGHER"
+
+  inline def values: js.Array[KeyStorageSecurityStandard] = js.Array(FIPS_140_2_LEVEL_2_OR_HIGHER, FIPS_140_2_LEVEL_3_OR_HIGHER)
+}
+
 type PolicyQualifierId = "CPS"
 object PolicyQualifierId {
   inline val CPS: "CPS" = "CPS"
@@ -119,6 +127,14 @@ object RevocationReason {
   inline val A_A_COMPROMISE: "A_A_COMPROMISE" = "A_A_COMPROMISE"
 
   inline def values: js.Array[RevocationReason] = js.Array(UNSPECIFIED, KEY_COMPROMISE, CERTIFICATE_AUTHORITY_COMPROMISE, AFFILIATION_CHANGED, SUPERSEDED, CESSATION_OF_OPERATION, PRIVILEGE_WITHDRAWN, A_A_COMPROMISE)
+}
+
+type S3ObjectAcl = "PUBLIC_READ" | "BUCKET_OWNER_FULL_CONTROL"
+object S3ObjectAcl {
+  inline val PUBLIC_READ: "PUBLIC_READ" = "PUBLIC_READ"
+  inline val BUCKET_OWNER_FULL_CONTROL: "BUCKET_OWNER_FULL_CONTROL" = "BUCKET_OWNER_FULL_CONTROL"
+
+  inline def values: js.Array[S3ObjectAcl] = js.Array(PUBLIC_READ, BUCKET_OWNER_FULL_CONTROL)
 }
 
 type SigningAlgorithm = "SHA256WITHECDSA" | "SHA384WITHECDSA" | "SHA512WITHECDSA" | "SHA256WITHRSA" | "SHA384WITHRSA" | "SHA512WITHRSA"

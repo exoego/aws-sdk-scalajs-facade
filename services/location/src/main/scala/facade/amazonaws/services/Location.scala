@@ -10,6 +10,8 @@ import facade.amazonaws._
 package object location {
   type Arn = String
   type ArnList = js.Array[Arn]
+  type BatchDeleteDevicePositionHistoryErrorList = js.Array[BatchDeleteDevicePositionHistoryError]
+  type BatchDeleteDevicePositionHistoryRequestDeviceIdsList = js.Array[Id]
   type BatchDeleteGeofenceErrorList = js.Array[BatchDeleteGeofenceError]
   type BatchDeleteGeofenceRequestGeofenceIdsList = js.Array[Id]
   type BatchEvaluateGeofencesErrorList = js.Array[BatchEvaluateGeofencesError]
@@ -24,6 +26,9 @@ package object location {
   type BatchUpdateDevicePositionRequestUpdatesList = js.Array[DevicePositionUpdate]
   type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type BoundingBox = js.Array[Double]
+  type CalculateRouteRequestWaypointPositionsList = js.Array[Position]
+  type CalculateRouteSummaryDistanceDouble = Double
+  type CalculateRouteSummaryDurationSecondsDouble = Double
   type CountryCode = String
   type CountryCodeList = js.Array[CountryCode]
   type DevicePositionList = js.Array[DevicePosition]
@@ -33,8 +38,16 @@ package object location {
   type GetMapTileRequestYString = String
   type GetMapTileRequestZString = String
   type Id = String
+  type KmsKeyId = String
+  type LanguageTag = String
+  type LegDistanceDouble = Double
+  type LegDurationSecondsDouble = Double
+  type LegList = js.Array[Leg]
+  type LineString = js.Array[Position]
   type LinearRing = js.Array[Position]
   type LinearRings = js.Array[LinearRing]
+  type ListDevicePositionsRequestMaxResultsInteger = Int
+  type ListDevicePositionsResponseEntryList = js.Array[ListDevicePositionsResponseEntry]
   type ListGeofenceCollectionsRequestMaxResultsInteger = Int
   type ListGeofenceCollectionsResponseEntryList = js.Array[ListGeofenceCollectionsResponseEntry]
   type ListGeofenceResponseEntryList = js.Array[ListGeofenceResponseEntry]
@@ -42,40 +55,70 @@ package object location {
   type ListMapsResponseEntryList = js.Array[ListMapsResponseEntry]
   type ListPlaceIndexesRequestMaxResultsInteger = Int
   type ListPlaceIndexesResponseEntryList = js.Array[ListPlaceIndexesResponseEntry]
+  type ListRouteCalculatorsRequestMaxResultsInteger = Int
+  type ListRouteCalculatorsResponseEntryList = js.Array[ListRouteCalculatorsResponseEntry]
   type ListTrackerConsumersRequestMaxResultsInteger = Int
   type ListTrackersRequestMaxResultsInteger = Int
   type ListTrackersResponseEntryList = js.Array[ListTrackersResponseEntry]
   type MapStyle = String
   type PlaceIndexSearchResultLimit = Int
   type Position = js.Array[Double]
+  type PositionalAccuracyHorizontalDouble = Double
+  type PropertyMap = js.Dictionary[PropertyMapValueString]
+  type PropertyMapKeyString = String
+  type PropertyMapValueString = String
   type ResourceDescription = String
   type ResourceName = String
+  type SearchForPositionResultDistanceDouble = Double
   type SearchForPositionResultList = js.Array[SearchForPositionResult]
+  type SearchForSuggestionsResultList = js.Array[SearchForSuggestionsResult]
+  type SearchForTextResultDistanceDouble = Double
   type SearchForTextResultList = js.Array[SearchForTextResult]
+  type SearchForTextResultRelevanceDouble = Double
+  type SearchPlaceIndexForSuggestionsRequestMaxResultsInteger = Int
+  type StepDistanceDouble = Double
+  type StepDurationSecondsDouble = Double
+  type StepGeometryOffsetInteger = Int
+  type StepList = js.Array[Step]
+  type SyntheticSearchPlaceIndexForSuggestionsRequestString = String
+  type SyntheticSearchPlaceIndexForSuggestionsSummaryString = String
   type SyntheticSearchPlaceIndexForTextRequestString = String
   type SyntheticSearchPlaceIndexForTextSummaryString = String
+  type TagKey = String
+  type TagKeys = js.Array[String]
+  type TagMap = js.Dictionary[TagValue]
+  type TagValue = String
   type Timestamp = js.Date
   type Token = String
+  type TruckDimensionsHeightDouble = Double
+  type TruckDimensionsLengthDouble = Double
+  type TruckDimensionsWidthDouble = Double
+  type TruckWeightTotalDouble = Double
 
   final class LocationOps(private val service: Location) extends AnyVal {
 
     @inline def associateTrackerConsumerFuture(params: AssociateTrackerConsumerRequest): Future[AssociateTrackerConsumerResponse] = service.associateTrackerConsumer(params).promise().toFuture
+    @inline def batchDeleteDevicePositionHistoryFuture(params: BatchDeleteDevicePositionHistoryRequest): Future[BatchDeleteDevicePositionHistoryResponse] = service.batchDeleteDevicePositionHistory(params).promise().toFuture
     @inline def batchDeleteGeofenceFuture(params: BatchDeleteGeofenceRequest): Future[BatchDeleteGeofenceResponse] = service.batchDeleteGeofence(params).promise().toFuture
     @inline def batchEvaluateGeofencesFuture(params: BatchEvaluateGeofencesRequest): Future[BatchEvaluateGeofencesResponse] = service.batchEvaluateGeofences(params).promise().toFuture
     @inline def batchGetDevicePositionFuture(params: BatchGetDevicePositionRequest): Future[BatchGetDevicePositionResponse] = service.batchGetDevicePosition(params).promise().toFuture
     @inline def batchPutGeofenceFuture(params: BatchPutGeofenceRequest): Future[BatchPutGeofenceResponse] = service.batchPutGeofence(params).promise().toFuture
     @inline def batchUpdateDevicePositionFuture(params: BatchUpdateDevicePositionRequest): Future[BatchUpdateDevicePositionResponse] = service.batchUpdateDevicePosition(params).promise().toFuture
+    @inline def calculateRouteFuture(params: CalculateRouteRequest): Future[CalculateRouteResponse] = service.calculateRoute(params).promise().toFuture
     @inline def createGeofenceCollectionFuture(params: CreateGeofenceCollectionRequest): Future[CreateGeofenceCollectionResponse] = service.createGeofenceCollection(params).promise().toFuture
     @inline def createMapFuture(params: CreateMapRequest): Future[CreateMapResponse] = service.createMap(params).promise().toFuture
     @inline def createPlaceIndexFuture(params: CreatePlaceIndexRequest): Future[CreatePlaceIndexResponse] = service.createPlaceIndex(params).promise().toFuture
+    @inline def createRouteCalculatorFuture(params: CreateRouteCalculatorRequest): Future[CreateRouteCalculatorResponse] = service.createRouteCalculator(params).promise().toFuture
     @inline def createTrackerFuture(params: CreateTrackerRequest): Future[CreateTrackerResponse] = service.createTracker(params).promise().toFuture
     @inline def deleteGeofenceCollectionFuture(params: DeleteGeofenceCollectionRequest): Future[DeleteGeofenceCollectionResponse] = service.deleteGeofenceCollection(params).promise().toFuture
     @inline def deleteMapFuture(params: DeleteMapRequest): Future[DeleteMapResponse] = service.deleteMap(params).promise().toFuture
     @inline def deletePlaceIndexFuture(params: DeletePlaceIndexRequest): Future[DeletePlaceIndexResponse] = service.deletePlaceIndex(params).promise().toFuture
+    @inline def deleteRouteCalculatorFuture(params: DeleteRouteCalculatorRequest): Future[DeleteRouteCalculatorResponse] = service.deleteRouteCalculator(params).promise().toFuture
     @inline def deleteTrackerFuture(params: DeleteTrackerRequest): Future[DeleteTrackerResponse] = service.deleteTracker(params).promise().toFuture
     @inline def describeGeofenceCollectionFuture(params: DescribeGeofenceCollectionRequest): Future[DescribeGeofenceCollectionResponse] = service.describeGeofenceCollection(params).promise().toFuture
     @inline def describeMapFuture(params: DescribeMapRequest): Future[DescribeMapResponse] = service.describeMap(params).promise().toFuture
     @inline def describePlaceIndexFuture(params: DescribePlaceIndexRequest): Future[DescribePlaceIndexResponse] = service.describePlaceIndex(params).promise().toFuture
+    @inline def describeRouteCalculatorFuture(params: DescribeRouteCalculatorRequest): Future[DescribeRouteCalculatorResponse] = service.describeRouteCalculator(params).promise().toFuture
     @inline def describeTrackerFuture(params: DescribeTrackerRequest): Future[DescribeTrackerResponse] = service.describeTracker(params).promise().toFuture
     @inline def disassociateTrackerConsumerFuture(params: DisassociateTrackerConsumerRequest): Future[DisassociateTrackerConsumerResponse] = service.disassociateTrackerConsumer(params).promise().toFuture
     @inline def getDevicePositionFuture(params: GetDevicePositionRequest): Future[GetDevicePositionResponse] = service.getDevicePosition(params).promise().toFuture
@@ -85,15 +128,26 @@ package object location {
     @inline def getMapSpritesFuture(params: GetMapSpritesRequest): Future[GetMapSpritesResponse] = service.getMapSprites(params).promise().toFuture
     @inline def getMapStyleDescriptorFuture(params: GetMapStyleDescriptorRequest): Future[GetMapStyleDescriptorResponse] = service.getMapStyleDescriptor(params).promise().toFuture
     @inline def getMapTileFuture(params: GetMapTileRequest): Future[GetMapTileResponse] = service.getMapTile(params).promise().toFuture
+    @inline def listDevicePositionsFuture(params: ListDevicePositionsRequest): Future[ListDevicePositionsResponse] = service.listDevicePositions(params).promise().toFuture
     @inline def listGeofenceCollectionsFuture(params: ListGeofenceCollectionsRequest): Future[ListGeofenceCollectionsResponse] = service.listGeofenceCollections(params).promise().toFuture
     @inline def listGeofencesFuture(params: ListGeofencesRequest): Future[ListGeofencesResponse] = service.listGeofences(params).promise().toFuture
     @inline def listMapsFuture(params: ListMapsRequest): Future[ListMapsResponse] = service.listMaps(params).promise().toFuture
     @inline def listPlaceIndexesFuture(params: ListPlaceIndexesRequest): Future[ListPlaceIndexesResponse] = service.listPlaceIndexes(params).promise().toFuture
+    @inline def listRouteCalculatorsFuture(params: ListRouteCalculatorsRequest): Future[ListRouteCalculatorsResponse] = service.listRouteCalculators(params).promise().toFuture
+    @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
     @inline def listTrackerConsumersFuture(params: ListTrackerConsumersRequest): Future[ListTrackerConsumersResponse] = service.listTrackerConsumers(params).promise().toFuture
     @inline def listTrackersFuture(params: ListTrackersRequest): Future[ListTrackersResponse] = service.listTrackers(params).promise().toFuture
     @inline def putGeofenceFuture(params: PutGeofenceRequest): Future[PutGeofenceResponse] = service.putGeofence(params).promise().toFuture
     @inline def searchPlaceIndexForPositionFuture(params: SearchPlaceIndexForPositionRequest): Future[SearchPlaceIndexForPositionResponse] = service.searchPlaceIndexForPosition(params).promise().toFuture
+    @inline def searchPlaceIndexForSuggestionsFuture(params: SearchPlaceIndexForSuggestionsRequest): Future[SearchPlaceIndexForSuggestionsResponse] = service.searchPlaceIndexForSuggestions(params).promise().toFuture
     @inline def searchPlaceIndexForTextFuture(params: SearchPlaceIndexForTextRequest): Future[SearchPlaceIndexForTextResponse] = service.searchPlaceIndexForText(params).promise().toFuture
+    @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
+    @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
+    @inline def updateGeofenceCollectionFuture(params: UpdateGeofenceCollectionRequest): Future[UpdateGeofenceCollectionResponse] = service.updateGeofenceCollection(params).promise().toFuture
+    @inline def updateMapFuture(params: UpdateMapRequest): Future[UpdateMapResponse] = service.updateMap(params).promise().toFuture
+    @inline def updatePlaceIndexFuture(params: UpdatePlaceIndexRequest): Future[UpdatePlaceIndexResponse] = service.updatePlaceIndex(params).promise().toFuture
+    @inline def updateRouteCalculatorFuture(params: UpdateRouteCalculatorRequest): Future[UpdateRouteCalculatorResponse] = service.updateRouteCalculator(params).promise().toFuture
+    @inline def updateTrackerFuture(params: UpdateTrackerRequest): Future[UpdateTrackerResponse] = service.updateTracker(params).promise().toFuture
 
   }
 
@@ -103,22 +157,27 @@ package object location {
     def this(config: AWSConfig) = this()
 
     def associateTrackerConsumer(params: AssociateTrackerConsumerRequest): Request[AssociateTrackerConsumerResponse] = js.native
+    def batchDeleteDevicePositionHistory(params: BatchDeleteDevicePositionHistoryRequest): Request[BatchDeleteDevicePositionHistoryResponse] = js.native
     def batchDeleteGeofence(params: BatchDeleteGeofenceRequest): Request[BatchDeleteGeofenceResponse] = js.native
     def batchEvaluateGeofences(params: BatchEvaluateGeofencesRequest): Request[BatchEvaluateGeofencesResponse] = js.native
     def batchGetDevicePosition(params: BatchGetDevicePositionRequest): Request[BatchGetDevicePositionResponse] = js.native
     def batchPutGeofence(params: BatchPutGeofenceRequest): Request[BatchPutGeofenceResponse] = js.native
     def batchUpdateDevicePosition(params: BatchUpdateDevicePositionRequest): Request[BatchUpdateDevicePositionResponse] = js.native
+    def calculateRoute(params: CalculateRouteRequest): Request[CalculateRouteResponse] = js.native
     def createGeofenceCollection(params: CreateGeofenceCollectionRequest): Request[CreateGeofenceCollectionResponse] = js.native
     def createMap(params: CreateMapRequest): Request[CreateMapResponse] = js.native
     def createPlaceIndex(params: CreatePlaceIndexRequest): Request[CreatePlaceIndexResponse] = js.native
+    def createRouteCalculator(params: CreateRouteCalculatorRequest): Request[CreateRouteCalculatorResponse] = js.native
     def createTracker(params: CreateTrackerRequest): Request[CreateTrackerResponse] = js.native
     def deleteGeofenceCollection(params: DeleteGeofenceCollectionRequest): Request[DeleteGeofenceCollectionResponse] = js.native
     def deleteMap(params: DeleteMapRequest): Request[DeleteMapResponse] = js.native
     def deletePlaceIndex(params: DeletePlaceIndexRequest): Request[DeletePlaceIndexResponse] = js.native
+    def deleteRouteCalculator(params: DeleteRouteCalculatorRequest): Request[DeleteRouteCalculatorResponse] = js.native
     def deleteTracker(params: DeleteTrackerRequest): Request[DeleteTrackerResponse] = js.native
     def describeGeofenceCollection(params: DescribeGeofenceCollectionRequest): Request[DescribeGeofenceCollectionResponse] = js.native
     def describeMap(params: DescribeMapRequest): Request[DescribeMapResponse] = js.native
     def describePlaceIndex(params: DescribePlaceIndexRequest): Request[DescribePlaceIndexResponse] = js.native
+    def describeRouteCalculator(params: DescribeRouteCalculatorRequest): Request[DescribeRouteCalculatorResponse] = js.native
     def describeTracker(params: DescribeTrackerRequest): Request[DescribeTrackerResponse] = js.native
     def disassociateTrackerConsumer(params: DisassociateTrackerConsumerRequest): Request[DisassociateTrackerConsumerResponse] = js.native
     def getDevicePosition(params: GetDevicePositionRequest): Request[GetDevicePositionResponse] = js.native
@@ -128,15 +187,26 @@ package object location {
     def getMapSprites(params: GetMapSpritesRequest): Request[GetMapSpritesResponse] = js.native
     def getMapStyleDescriptor(params: GetMapStyleDescriptorRequest): Request[GetMapStyleDescriptorResponse] = js.native
     def getMapTile(params: GetMapTileRequest): Request[GetMapTileResponse] = js.native
+    def listDevicePositions(params: ListDevicePositionsRequest): Request[ListDevicePositionsResponse] = js.native
     def listGeofenceCollections(params: ListGeofenceCollectionsRequest): Request[ListGeofenceCollectionsResponse] = js.native
     def listGeofences(params: ListGeofencesRequest): Request[ListGeofencesResponse] = js.native
     def listMaps(params: ListMapsRequest): Request[ListMapsResponse] = js.native
     def listPlaceIndexes(params: ListPlaceIndexesRequest): Request[ListPlaceIndexesResponse] = js.native
+    def listRouteCalculators(params: ListRouteCalculatorsRequest): Request[ListRouteCalculatorsResponse] = js.native
+    def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
     def listTrackerConsumers(params: ListTrackerConsumersRequest): Request[ListTrackerConsumersResponse] = js.native
     def listTrackers(params: ListTrackersRequest): Request[ListTrackersResponse] = js.native
     def putGeofence(params: PutGeofenceRequest): Request[PutGeofenceResponse] = js.native
     def searchPlaceIndexForPosition(params: SearchPlaceIndexForPositionRequest): Request[SearchPlaceIndexForPositionResponse] = js.native
+    def searchPlaceIndexForSuggestions(params: SearchPlaceIndexForSuggestionsRequest): Request[SearchPlaceIndexForSuggestionsResponse] = js.native
     def searchPlaceIndexForText(params: SearchPlaceIndexForTextRequest): Request[SearchPlaceIndexForTextResponse] = js.native
+    def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
+    def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
+    def updateGeofenceCollection(params: UpdateGeofenceCollectionRequest): Request[UpdateGeofenceCollectionResponse] = js.native
+    def updateMap(params: UpdateMapRequest): Request[UpdateMapResponse] = js.native
+    def updatePlaceIndex(params: UpdatePlaceIndexRequest): Request[UpdatePlaceIndexResponse] = js.native
+    def updateRouteCalculator(params: UpdateRouteCalculatorRequest): Request[UpdateRouteCalculatorResponse] = js.native
+    def updateTracker(params: UpdateTrackerRequest): Request[UpdateTrackerResponse] = js.native
   }
   object Location {
     @inline implicit def toOps(service: Location): LocationOps = {
@@ -172,6 +242,65 @@ package object location {
     def apply(): AssociateTrackerConsumerResponse = {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[AssociateTrackerConsumerResponse]
+    }
+  }
+
+  /** Contains the tracker resource details.
+    */
+  @js.native
+  trait BatchDeleteDevicePositionHistoryError extends js.Object {
+    var DeviceId: Id
+    var Error: BatchItemError
+  }
+
+  object BatchDeleteDevicePositionHistoryError {
+    @inline
+    def apply(
+        DeviceId: Id,
+        Error: BatchItemError
+    ): BatchDeleteDevicePositionHistoryError = {
+      val __obj = js.Dynamic.literal(
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "Error" -> Error.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDeleteDevicePositionHistoryError]
+    }
+  }
+
+  @js.native
+  trait BatchDeleteDevicePositionHistoryRequest extends js.Object {
+    var DeviceIds: BatchDeleteDevicePositionHistoryRequestDeviceIdsList
+    var TrackerName: ResourceName
+  }
+
+  object BatchDeleteDevicePositionHistoryRequest {
+    @inline
+    def apply(
+        DeviceIds: BatchDeleteDevicePositionHistoryRequestDeviceIdsList,
+        TrackerName: ResourceName
+    ): BatchDeleteDevicePositionHistoryRequest = {
+      val __obj = js.Dynamic.literal(
+        "DeviceIds" -> DeviceIds.asInstanceOf[js.Any],
+        "TrackerName" -> TrackerName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDeleteDevicePositionHistoryRequest]
+    }
+  }
+
+  @js.native
+  trait BatchDeleteDevicePositionHistoryResponse extends js.Object {
+    var Errors: BatchDeleteDevicePositionHistoryErrorList
+  }
+
+  object BatchDeleteDevicePositionHistoryResponse {
+    @inline
+    def apply(
+        Errors: BatchDeleteDevicePositionHistoryErrorList
+    ): BatchDeleteDevicePositionHistoryResponse = {
+      val __obj = js.Dynamic.literal(
+        "Errors" -> Errors.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BatchDeleteDevicePositionHistoryResponse]
     }
   }
 
@@ -550,29 +679,184 @@ package object location {
     }
   }
 
+  /** Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Car</code>.
+    */
+  @js.native
+  trait CalculateRouteCarModeOptions extends js.Object {
+    var AvoidFerries: js.UndefOr[Boolean]
+    var AvoidTolls: js.UndefOr[Boolean]
+  }
+
+  object CalculateRouteCarModeOptions {
+    @inline
+    def apply(
+        AvoidFerries: js.UndefOr[Boolean] = js.undefined,
+        AvoidTolls: js.UndefOr[Boolean] = js.undefined
+    ): CalculateRouteCarModeOptions = {
+      val __obj = js.Dynamic.literal()
+      AvoidFerries.foreach(__v => __obj.updateDynamic("AvoidFerries")(__v.asInstanceOf[js.Any]))
+      AvoidTolls.foreach(__v => __obj.updateDynamic("AvoidTolls")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CalculateRouteCarModeOptions]
+    }
+  }
+
+  @js.native
+  trait CalculateRouteRequest extends js.Object {
+    var CalculatorName: ResourceName
+    var DeparturePosition: Position
+    var DestinationPosition: Position
+    var CarModeOptions: js.UndefOr[CalculateRouteCarModeOptions]
+    var DepartNow: js.UndefOr[Boolean]
+    var DepartureTime: js.UndefOr[Timestamp]
+    var DistanceUnit: js.UndefOr[DistanceUnit]
+    var IncludeLegGeometry: js.UndefOr[Boolean]
+    var TravelMode: js.UndefOr[TravelMode]
+    var TruckModeOptions: js.UndefOr[CalculateRouteTruckModeOptions]
+    var WaypointPositions: js.UndefOr[CalculateRouteRequestWaypointPositionsList]
+  }
+
+  object CalculateRouteRequest {
+    @inline
+    def apply(
+        CalculatorName: ResourceName,
+        DeparturePosition: Position,
+        DestinationPosition: Position,
+        CarModeOptions: js.UndefOr[CalculateRouteCarModeOptions] = js.undefined,
+        DepartNow: js.UndefOr[Boolean] = js.undefined,
+        DepartureTime: js.UndefOr[Timestamp] = js.undefined,
+        DistanceUnit: js.UndefOr[DistanceUnit] = js.undefined,
+        IncludeLegGeometry: js.UndefOr[Boolean] = js.undefined,
+        TravelMode: js.UndefOr[TravelMode] = js.undefined,
+        TruckModeOptions: js.UndefOr[CalculateRouteTruckModeOptions] = js.undefined,
+        WaypointPositions: js.UndefOr[CalculateRouteRequestWaypointPositionsList] = js.undefined
+    ): CalculateRouteRequest = {
+      val __obj = js.Dynamic.literal(
+        "CalculatorName" -> CalculatorName.asInstanceOf[js.Any],
+        "DeparturePosition" -> DeparturePosition.asInstanceOf[js.Any],
+        "DestinationPosition" -> DestinationPosition.asInstanceOf[js.Any]
+      )
+
+      CarModeOptions.foreach(__v => __obj.updateDynamic("CarModeOptions")(__v.asInstanceOf[js.Any]))
+      DepartNow.foreach(__v => __obj.updateDynamic("DepartNow")(__v.asInstanceOf[js.Any]))
+      DepartureTime.foreach(__v => __obj.updateDynamic("DepartureTime")(__v.asInstanceOf[js.Any]))
+      DistanceUnit.foreach(__v => __obj.updateDynamic("DistanceUnit")(__v.asInstanceOf[js.Any]))
+      IncludeLegGeometry.foreach(__v => __obj.updateDynamic("IncludeLegGeometry")(__v.asInstanceOf[js.Any]))
+      TravelMode.foreach(__v => __obj.updateDynamic("TravelMode")(__v.asInstanceOf[js.Any]))
+      TruckModeOptions.foreach(__v => __obj.updateDynamic("TruckModeOptions")(__v.asInstanceOf[js.Any]))
+      WaypointPositions.foreach(__v => __obj.updateDynamic("WaypointPositions")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CalculateRouteRequest]
+    }
+  }
+
+  /** Returns the result of the route calculation. Metadata includes legs and route summary.
+    */
+  @js.native
+  trait CalculateRouteResponse extends js.Object {
+    var Legs: LegList
+    var Summary: CalculateRouteSummary
+  }
+
+  object CalculateRouteResponse {
+    @inline
+    def apply(
+        Legs: LegList,
+        Summary: CalculateRouteSummary
+    ): CalculateRouteResponse = {
+      val __obj = js.Dynamic.literal(
+        "Legs" -> Legs.asInstanceOf[js.Any],
+        "Summary" -> Summary.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CalculateRouteResponse]
+    }
+  }
+
+  /** A summary of the calculated route.
+    */
+  @js.native
+  trait CalculateRouteSummary extends js.Object {
+    var DataSource: String
+    var Distance: CalculateRouteSummaryDistanceDouble
+    var DistanceUnit: DistanceUnit
+    var DurationSeconds: CalculateRouteSummaryDurationSecondsDouble
+    var RouteBBox: BoundingBox
+  }
+
+  object CalculateRouteSummary {
+    @inline
+    def apply(
+        DataSource: String,
+        Distance: CalculateRouteSummaryDistanceDouble,
+        DistanceUnit: DistanceUnit,
+        DurationSeconds: CalculateRouteSummaryDurationSecondsDouble,
+        RouteBBox: BoundingBox
+    ): CalculateRouteSummary = {
+      val __obj = js.Dynamic.literal(
+        "DataSource" -> DataSource.asInstanceOf[js.Any],
+        "Distance" -> Distance.asInstanceOf[js.Any],
+        "DistanceUnit" -> DistanceUnit.asInstanceOf[js.Any],
+        "DurationSeconds" -> DurationSeconds.asInstanceOf[js.Any],
+        "RouteBBox" -> RouteBBox.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CalculateRouteSummary]
+    }
+  }
+
+  /** Contains details about additional route preferences for requests that specify <code>TravelMode</code> as <code>Truck</code>.
+    */
+  @js.native
+  trait CalculateRouteTruckModeOptions extends js.Object {
+    var AvoidFerries: js.UndefOr[Boolean]
+    var AvoidTolls: js.UndefOr[Boolean]
+    var Dimensions: js.UndefOr[TruckDimensions]
+    var Weight: js.UndefOr[TruckWeight]
+  }
+
+  object CalculateRouteTruckModeOptions {
+    @inline
+    def apply(
+        AvoidFerries: js.UndefOr[Boolean] = js.undefined,
+        AvoidTolls: js.UndefOr[Boolean] = js.undefined,
+        Dimensions: js.UndefOr[TruckDimensions] = js.undefined,
+        Weight: js.UndefOr[TruckWeight] = js.undefined
+    ): CalculateRouteTruckModeOptions = {
+      val __obj = js.Dynamic.literal()
+      AvoidFerries.foreach(__v => __obj.updateDynamic("AvoidFerries")(__v.asInstanceOf[js.Any]))
+      AvoidTolls.foreach(__v => __obj.updateDynamic("AvoidTolls")(__v.asInstanceOf[js.Any]))
+      Dimensions.foreach(__v => __obj.updateDynamic("Dimensions")(__v.asInstanceOf[js.Any]))
+      Weight.foreach(__v => __obj.updateDynamic("Weight")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CalculateRouteTruckModeOptions]
+    }
+  }
+
   @js.native
   trait CreateGeofenceCollectionRequest extends js.Object {
     var CollectionName: ResourceName
-    var PricingPlan: PricingPlan
     var Description: js.UndefOr[ResourceDescription]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var PricingPlan: js.UndefOr[PricingPlan]
     var PricingPlanDataSource: js.UndefOr[String]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateGeofenceCollectionRequest {
     @inline
     def apply(
         CollectionName: ResourceName,
-        PricingPlan: PricingPlan,
         Description: js.UndefOr[ResourceDescription] = js.undefined,
-        PricingPlanDataSource: js.UndefOr[String] = js.undefined
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateGeofenceCollectionRequest = {
       val __obj = js.Dynamic.literal(
-        "CollectionName" -> CollectionName.asInstanceOf[js.Any],
-        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any]
+        "CollectionName" -> CollectionName.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
       PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateGeofenceCollectionRequest]
     }
   }
@@ -604,8 +888,9 @@ package object location {
   trait CreateMapRequest extends js.Object {
     var Configuration: MapConfiguration
     var MapName: ResourceName
-    var PricingPlan: PricingPlan
     var Description: js.UndefOr[ResourceDescription]
+    var PricingPlan: js.UndefOr[PricingPlan]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateMapRequest {
@@ -613,16 +898,18 @@ package object location {
     def apply(
         Configuration: MapConfiguration,
         MapName: ResourceName,
-        PricingPlan: PricingPlan,
-        Description: js.UndefOr[ResourceDescription] = js.undefined
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateMapRequest = {
       val __obj = js.Dynamic.literal(
         "Configuration" -> Configuration.asInstanceOf[js.Any],
-        "MapName" -> MapName.asInstanceOf[js.Any],
-        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any]
+        "MapName" -> MapName.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateMapRequest]
     }
   }
@@ -654,9 +941,10 @@ package object location {
   trait CreatePlaceIndexRequest extends js.Object {
     var DataSource: String
     var IndexName: ResourceName
-    var PricingPlan: PricingPlan
     var DataSourceConfiguration: js.UndefOr[DataSourceConfiguration]
     var Description: js.UndefOr[ResourceDescription]
+    var PricingPlan: js.UndefOr[PricingPlan]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreatePlaceIndexRequest {
@@ -664,18 +952,20 @@ package object location {
     def apply(
         DataSource: String,
         IndexName: ResourceName,
-        PricingPlan: PricingPlan,
         DataSourceConfiguration: js.UndefOr[DataSourceConfiguration] = js.undefined,
-        Description: js.UndefOr[ResourceDescription] = js.undefined
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreatePlaceIndexRequest = {
       val __obj = js.Dynamic.literal(
         "DataSource" -> DataSource.asInstanceOf[js.Any],
-        "IndexName" -> IndexName.asInstanceOf[js.Any],
-        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any]
+        "IndexName" -> IndexName.asInstanceOf[js.Any]
       )
 
       DataSourceConfiguration.foreach(__v => __obj.updateDynamic("DataSourceConfiguration")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreatePlaceIndexRequest]
     }
   }
@@ -704,28 +994,90 @@ package object location {
   }
 
   @js.native
+  trait CreateRouteCalculatorRequest extends js.Object {
+    var CalculatorName: ResourceName
+    var DataSource: String
+    var Description: js.UndefOr[ResourceDescription]
+    var PricingPlan: js.UndefOr[PricingPlan]
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object CreateRouteCalculatorRequest {
+    @inline
+    def apply(
+        CalculatorName: ResourceName,
+        DataSource: String,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): CreateRouteCalculatorRequest = {
+      val __obj = js.Dynamic.literal(
+        "CalculatorName" -> CalculatorName.asInstanceOf[js.Any],
+        "DataSource" -> DataSource.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateRouteCalculatorRequest]
+    }
+  }
+
+  @js.native
+  trait CreateRouteCalculatorResponse extends js.Object {
+    var CalculatorArn: Arn
+    var CalculatorName: ResourceName
+    var CreateTime: Timestamp
+  }
+
+  object CreateRouteCalculatorResponse {
+    @inline
+    def apply(
+        CalculatorArn: Arn,
+        CalculatorName: ResourceName,
+        CreateTime: Timestamp
+    ): CreateRouteCalculatorResponse = {
+      val __obj = js.Dynamic.literal(
+        "CalculatorArn" -> CalculatorArn.asInstanceOf[js.Any],
+        "CalculatorName" -> CalculatorName.asInstanceOf[js.Any],
+        "CreateTime" -> CreateTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateRouteCalculatorResponse]
+    }
+  }
+
+  @js.native
   trait CreateTrackerRequest extends js.Object {
-    var PricingPlan: PricingPlan
     var TrackerName: ResourceName
     var Description: js.UndefOr[ResourceDescription]
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var PositionFiltering: js.UndefOr[PositionFiltering]
+    var PricingPlan: js.UndefOr[PricingPlan]
     var PricingPlanDataSource: js.UndefOr[String]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object CreateTrackerRequest {
     @inline
     def apply(
-        PricingPlan: PricingPlan,
         TrackerName: ResourceName,
         Description: js.UndefOr[ResourceDescription] = js.undefined,
-        PricingPlanDataSource: js.UndefOr[String] = js.undefined
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        PositionFiltering: js.UndefOr[PositionFiltering] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): CreateTrackerRequest = {
       val __obj = js.Dynamic.literal(
-        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "TrackerName" -> TrackerName.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      PositionFiltering.foreach(__v => __obj.updateDynamic("PositionFiltering")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
       PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateTrackerRequest]
     }
   }
@@ -753,9 +1105,7 @@ package object location {
     }
   }
 
-  /** Specifies the data storage option chosen for requesting Places.
-    *
-    * '''Note:'''By using Places, you agree that AWS may transmit your API queries to your selected third party provider for processing, which may be outside the AWS region you are currently using. Also, when using HERE as your data provider, you may not (a) use HERE Places for Asset Management, or (b) select the <code>Storage</code> option for the <code>IntendedUse</code> parameter when requesting Places in Japan. For more information, see the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] for Amazon Location Service.
+  /** Specifies the data storage option chosen for requesting Places. <important> When using Amazon Location Places: * If using HERE Technologies as a data provider, you can't store results for locations in Japan by setting <code>IntendedUse</code> to <code>Storage</code>. parameter. * Under the <code>MobileAssetTracking</code> or <code>MobilAssetManagement</code> pricing plan, you can't store results from your place index resources by setting <code>IntendedUse</code> to <code>Storage</code>. This returns a validation exception error. For more information, see the [[https://aws.amazon.com/service-terms/|AWS Service Terms]] for Amazon Location Service. </important>
     */
   @js.native
   trait DataSourceConfiguration extends js.Object {
@@ -858,6 +1208,34 @@ package object location {
   }
 
   @js.native
+  trait DeleteRouteCalculatorRequest extends js.Object {
+    var CalculatorName: ResourceName
+  }
+
+  object DeleteRouteCalculatorRequest {
+    @inline
+    def apply(
+        CalculatorName: ResourceName
+    ): DeleteRouteCalculatorRequest = {
+      val __obj = js.Dynamic.literal(
+        "CalculatorName" -> CalculatorName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteRouteCalculatorRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteRouteCalculatorResponse extends js.Object
+
+  object DeleteRouteCalculatorResponse {
+    @inline
+    def apply(): DeleteRouteCalculatorResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteRouteCalculatorResponse]
+    }
+  }
+
+  @js.native
   trait DeleteTrackerRequest extends js.Object {
     var TrackerName: ResourceName
   }
@@ -910,7 +1288,9 @@ package object location {
     var Description: ResourceDescription
     var PricingPlan: PricingPlan
     var UpdateTime: Timestamp
+    var KmsKeyId: js.UndefOr[KmsKeyId]
     var PricingPlanDataSource: js.UndefOr[String]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object DescribeGeofenceCollectionResponse {
@@ -922,7 +1302,9 @@ package object location {
         Description: ResourceDescription,
         PricingPlan: PricingPlan,
         UpdateTime: Timestamp,
-        PricingPlanDataSource: js.UndefOr[String] = js.undefined
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): DescribeGeofenceCollectionResponse = {
       val __obj = js.Dynamic.literal(
         "CollectionArn" -> CollectionArn.asInstanceOf[js.Any],
@@ -933,7 +1315,9 @@ package object location {
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
 
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
       PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeGeofenceCollectionResponse]
     }
   }
@@ -965,6 +1349,7 @@ package object location {
     var MapName: ResourceName
     var PricingPlan: PricingPlan
     var UpdateTime: Timestamp
+    var Tags: js.UndefOr[TagMap]
   }
 
   object DescribeMapResponse {
@@ -977,7 +1362,8 @@ package object location {
         MapArn: Arn,
         MapName: ResourceName,
         PricingPlan: PricingPlan,
-        UpdateTime: Timestamp
+        UpdateTime: Timestamp,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): DescribeMapResponse = {
       val __obj = js.Dynamic.literal(
         "Configuration" -> Configuration.asInstanceOf[js.Any],
@@ -989,6 +1375,8 @@ package object location {
         "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeMapResponse]
     }
   }
@@ -1020,6 +1408,7 @@ package object location {
     var IndexName: ResourceName
     var PricingPlan: PricingPlan
     var UpdateTime: Timestamp
+    var Tags: js.UndefOr[TagMap]
   }
 
   object DescribePlaceIndexResponse {
@@ -1032,7 +1421,8 @@ package object location {
         IndexArn: Arn,
         IndexName: ResourceName,
         PricingPlan: PricingPlan,
-        UpdateTime: Timestamp
+        UpdateTime: Timestamp,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): DescribePlaceIndexResponse = {
       val __obj = js.Dynamic.literal(
         "CreateTime" -> CreateTime.asInstanceOf[js.Any],
@@ -1044,7 +1434,65 @@ package object location {
         "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribePlaceIndexResponse]
+    }
+  }
+
+  @js.native
+  trait DescribeRouteCalculatorRequest extends js.Object {
+    var CalculatorName: ResourceName
+  }
+
+  object DescribeRouteCalculatorRequest {
+    @inline
+    def apply(
+        CalculatorName: ResourceName
+    ): DescribeRouteCalculatorRequest = {
+      val __obj = js.Dynamic.literal(
+        "CalculatorName" -> CalculatorName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DescribeRouteCalculatorRequest]
+    }
+  }
+
+  @js.native
+  trait DescribeRouteCalculatorResponse extends js.Object {
+    var CalculatorArn: Arn
+    var CalculatorName: ResourceName
+    var CreateTime: Timestamp
+    var DataSource: String
+    var Description: ResourceDescription
+    var PricingPlan: PricingPlan
+    var UpdateTime: Timestamp
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object DescribeRouteCalculatorResponse {
+    @inline
+    def apply(
+        CalculatorArn: Arn,
+        CalculatorName: ResourceName,
+        CreateTime: Timestamp,
+        DataSource: String,
+        Description: ResourceDescription,
+        PricingPlan: PricingPlan,
+        UpdateTime: Timestamp,
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): DescribeRouteCalculatorResponse = {
+      val __obj = js.Dynamic.literal(
+        "CalculatorArn" -> CalculatorArn.asInstanceOf[js.Any],
+        "CalculatorName" -> CalculatorName.asInstanceOf[js.Any],
+        "CreateTime" -> CreateTime.asInstanceOf[js.Any],
+        "DataSource" -> DataSource.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
+        "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
+      )
+
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DescribeRouteCalculatorResponse]
     }
   }
 
@@ -1073,7 +1521,10 @@ package object location {
     var TrackerArn: Arn
     var TrackerName: ResourceName
     var UpdateTime: Timestamp
+    var KmsKeyId: js.UndefOr[KmsKeyId]
+    var PositionFiltering: js.UndefOr[PositionFiltering]
     var PricingPlanDataSource: js.UndefOr[String]
+    var Tags: js.UndefOr[TagMap]
   }
 
   object DescribeTrackerResponse {
@@ -1085,7 +1536,10 @@ package object location {
         TrackerArn: Arn,
         TrackerName: ResourceName,
         UpdateTime: Timestamp,
-        PricingPlanDataSource: js.UndefOr[String] = js.undefined
+        KmsKeyId: js.UndefOr[KmsKeyId] = js.undefined,
+        PositionFiltering: js.UndefOr[PositionFiltering] = js.undefined,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined,
+        Tags: js.UndefOr[TagMap] = js.undefined
     ): DescribeTrackerResponse = {
       val __obj = js.Dynamic.literal(
         "CreateTime" -> CreateTime.asInstanceOf[js.Any],
@@ -1096,7 +1550,10 @@ package object location {
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
 
+      KmsKeyId.foreach(__v => __obj.updateDynamic("KmsKeyId")(__v.asInstanceOf[js.Any]))
+      PositionFiltering.foreach(__v => __obj.updateDynamic("PositionFiltering")(__v.asInstanceOf[js.Any]))
       PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeTrackerResponse]
     }
   }
@@ -1108,7 +1565,9 @@ package object location {
     var Position: Position
     var ReceivedTime: Timestamp
     var SampleTime: Timestamp
+    var Accuracy: js.UndefOr[PositionalAccuracy]
     var DeviceId: js.UndefOr[Id]
+    var PositionProperties: js.UndefOr[PropertyMap]
   }
 
   object DevicePosition {
@@ -1117,7 +1576,9 @@ package object location {
         Position: Position,
         ReceivedTime: Timestamp,
         SampleTime: Timestamp,
-        DeviceId: js.UndefOr[Id] = js.undefined
+        Accuracy: js.UndefOr[PositionalAccuracy] = js.undefined,
+        DeviceId: js.UndefOr[Id] = js.undefined,
+        PositionProperties: js.UndefOr[PropertyMap] = js.undefined
     ): DevicePosition = {
       val __obj = js.Dynamic.literal(
         "Position" -> Position.asInstanceOf[js.Any],
@@ -1125,7 +1586,9 @@ package object location {
         "SampleTime" -> SampleTime.asInstanceOf[js.Any]
       )
 
+      Accuracy.foreach(__v => __obj.updateDynamic("Accuracy")(__v.asInstanceOf[js.Any]))
       DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      PositionProperties.foreach(__v => __obj.updateDynamic("PositionProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DevicePosition]
     }
   }
@@ -1137,6 +1600,8 @@ package object location {
     var DeviceId: Id
     var Position: Position
     var SampleTime: Timestamp
+    var Accuracy: js.UndefOr[PositionalAccuracy]
+    var PositionProperties: js.UndefOr[PropertyMap]
   }
 
   object DevicePositionUpdate {
@@ -1144,13 +1609,18 @@ package object location {
     def apply(
         DeviceId: Id,
         Position: Position,
-        SampleTime: Timestamp
+        SampleTime: Timestamp,
+        Accuracy: js.UndefOr[PositionalAccuracy] = js.undefined,
+        PositionProperties: js.UndefOr[PropertyMap] = js.undefined
     ): DevicePositionUpdate = {
       val __obj = js.Dynamic.literal(
         "DeviceId" -> DeviceId.asInstanceOf[js.Any],
         "Position" -> Position.asInstanceOf[js.Any],
         "SampleTime" -> SampleTime.asInstanceOf[js.Any]
       )
+
+      Accuracy.foreach(__v => __obj.updateDynamic("Accuracy")(__v.asInstanceOf[js.Any]))
+      PositionProperties.foreach(__v => __obj.updateDynamic("PositionProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DevicePositionUpdate]
     }
   }
@@ -1188,7 +1658,7 @@ package object location {
 
   /** Contains the geofence geometry details.
     *
-    * '''Note:'''Amazon Location does not currently support polygons with holes, multipolygons, polygons that are wound clockwise, or that cross the antimeridian.
+    * '''Note:'''Amazon Location doesn't currently support polygons with holes, multipolygons, polygons that are wound clockwise, or that cross the antimeridian.
     */
   @js.native
   trait GeofenceGeometry extends js.Object {
@@ -1282,7 +1752,9 @@ package object location {
     var Position: Position
     var ReceivedTime: Timestamp
     var SampleTime: Timestamp
+    var Accuracy: js.UndefOr[PositionalAccuracy]
     var DeviceId: js.UndefOr[Id]
+    var PositionProperties: js.UndefOr[PropertyMap]
   }
 
   object GetDevicePositionResponse {
@@ -1291,7 +1763,9 @@ package object location {
         Position: Position,
         ReceivedTime: Timestamp,
         SampleTime: Timestamp,
-        DeviceId: js.UndefOr[Id] = js.undefined
+        Accuracy: js.UndefOr[PositionalAccuracy] = js.undefined,
+        DeviceId: js.UndefOr[Id] = js.undefined,
+        PositionProperties: js.UndefOr[PropertyMap] = js.undefined
     ): GetDevicePositionResponse = {
       val __obj = js.Dynamic.literal(
         "Position" -> Position.asInstanceOf[js.Any],
@@ -1299,7 +1773,9 @@ package object location {
         "SampleTime" -> SampleTime.asInstanceOf[js.Any]
       )
 
+      Accuracy.foreach(__v => __obj.updateDynamic("Accuracy")(__v.asInstanceOf[js.Any]))
       DeviceId.foreach(__v => __obj.updateDynamic("DeviceId")(__v.asInstanceOf[js.Any]))
+      PositionProperties.foreach(__v => __obj.updateDynamic("PositionProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetDevicePositionResponse]
     }
   }
@@ -1512,6 +1988,136 @@ package object location {
       Blob.foreach(__v => __obj.updateDynamic("Blob")(__v.asInstanceOf[js.Any]))
       ContentType.foreach(__v => __obj.updateDynamic("ContentType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetMapTileResponse]
+    }
+  }
+
+  /** Contains the calculated route's details for each path between a pair of positions. The number of legs returned corresponds to one fewer than the total number of positions in the request. For example, a route with a departure position and destination position returns one leg with the positions [[https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road|snapped to a nearby road]]: * The <code>StartPosition</code> is the departure position. * The <code>EndPosition</code> is the destination position. A route with a waypoint between the departure and destination position returns two legs with the positions snapped to a nearby road: * Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code> is the waypoint positon. * Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code> is the destination position.
+    */
+  @js.native
+  trait Leg extends js.Object {
+    var Distance: LegDistanceDouble
+    var DurationSeconds: LegDurationSecondsDouble
+    var EndPosition: Position
+    var StartPosition: Position
+    var Steps: StepList
+    var Geometry: js.UndefOr[LegGeometry]
+  }
+
+  object Leg {
+    @inline
+    def apply(
+        Distance: LegDistanceDouble,
+        DurationSeconds: LegDurationSecondsDouble,
+        EndPosition: Position,
+        StartPosition: Position,
+        Steps: StepList,
+        Geometry: js.UndefOr[LegGeometry] = js.undefined
+    ): Leg = {
+      val __obj = js.Dynamic.literal(
+        "Distance" -> Distance.asInstanceOf[js.Any],
+        "DurationSeconds" -> DurationSeconds.asInstanceOf[js.Any],
+        "EndPosition" -> EndPosition.asInstanceOf[js.Any],
+        "StartPosition" -> StartPosition.asInstanceOf[js.Any],
+        "Steps" -> Steps.asInstanceOf[js.Any]
+      )
+
+      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Leg]
+    }
+  }
+
+  /** Contains the geometry details for each path between a pair of positions. Used in plotting a route leg on a map.
+    */
+  @js.native
+  trait LegGeometry extends js.Object {
+    var LineString: js.UndefOr[LineString]
+  }
+
+  object LegGeometry {
+    @inline
+    def apply(
+        LineString: js.UndefOr[LineString] = js.undefined
+    ): LegGeometry = {
+      val __obj = js.Dynamic.literal()
+      LineString.foreach(__v => __obj.updateDynamic("LineString")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LegGeometry]
+    }
+  }
+
+  @js.native
+  trait ListDevicePositionsRequest extends js.Object {
+    var TrackerName: ResourceName
+    var MaxResults: js.UndefOr[ListDevicePositionsRequestMaxResultsInteger]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListDevicePositionsRequest {
+    @inline
+    def apply(
+        TrackerName: ResourceName,
+        MaxResults: js.UndefOr[ListDevicePositionsRequestMaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListDevicePositionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "TrackerName" -> TrackerName.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDevicePositionsRequest]
+    }
+  }
+
+  @js.native
+  trait ListDevicePositionsResponse extends js.Object {
+    var Entries: ListDevicePositionsResponseEntryList
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListDevicePositionsResponse {
+    @inline
+    def apply(
+        Entries: ListDevicePositionsResponseEntryList,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListDevicePositionsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Entries" -> Entries.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDevicePositionsResponse]
+    }
+  }
+
+  /** Contains the tracker resource details.
+    */
+  @js.native
+  trait ListDevicePositionsResponseEntry extends js.Object {
+    var DeviceId: Id
+    var Position: Position
+    var SampleTime: Timestamp
+    var Accuracy: js.UndefOr[PositionalAccuracy]
+    var PositionProperties: js.UndefOr[PropertyMap]
+  }
+
+  object ListDevicePositionsResponseEntry {
+    @inline
+    def apply(
+        DeviceId: Id,
+        Position: Position,
+        SampleTime: Timestamp,
+        Accuracy: js.UndefOr[PositionalAccuracy] = js.undefined,
+        PositionProperties: js.UndefOr[PropertyMap] = js.undefined
+    ): ListDevicePositionsResponseEntry = {
+      val __obj = js.Dynamic.literal(
+        "DeviceId" -> DeviceId.asInstanceOf[js.Any],
+        "Position" -> Position.asInstanceOf[js.Any],
+        "SampleTime" -> SampleTime.asInstanceOf[js.Any]
+      )
+
+      Accuracy.foreach(__v => __obj.updateDynamic("Accuracy")(__v.asInstanceOf[js.Any]))
+      PositionProperties.foreach(__v => __obj.updateDynamic("PositionProperties")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListDevicePositionsResponseEntry]
     }
   }
 
@@ -1777,7 +2383,7 @@ package object location {
     }
   }
 
-  /** A Place index resource listed in your AWS account.
+  /** A place index resource listed in your AWS account.
     */
   @js.native
   trait ListPlaceIndexesResponseEntry extends js.Object {
@@ -1808,6 +2414,113 @@ package object location {
         "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[ListPlaceIndexesResponseEntry]
+    }
+  }
+
+  @js.native
+  trait ListRouteCalculatorsRequest extends js.Object {
+    var MaxResults: js.UndefOr[ListRouteCalculatorsRequestMaxResultsInteger]
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListRouteCalculatorsRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ListRouteCalculatorsRequestMaxResultsInteger] = js.undefined,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListRouteCalculatorsRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRouteCalculatorsRequest]
+    }
+  }
+
+  @js.native
+  trait ListRouteCalculatorsResponse extends js.Object {
+    var Entries: ListRouteCalculatorsResponseEntryList
+    var NextToken: js.UndefOr[Token]
+  }
+
+  object ListRouteCalculatorsResponse {
+    @inline
+    def apply(
+        Entries: ListRouteCalculatorsResponseEntryList,
+        NextToken: js.UndefOr[Token] = js.undefined
+    ): ListRouteCalculatorsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Entries" -> Entries.asInstanceOf[js.Any]
+      )
+
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListRouteCalculatorsResponse]
+    }
+  }
+
+  /** A route calculator resource listed in your AWS account.
+    */
+  @js.native
+  trait ListRouteCalculatorsResponseEntry extends js.Object {
+    var CalculatorName: ResourceName
+    var CreateTime: Timestamp
+    var DataSource: String
+    var Description: ResourceDescription
+    var PricingPlan: PricingPlan
+    var UpdateTime: Timestamp
+  }
+
+  object ListRouteCalculatorsResponseEntry {
+    @inline
+    def apply(
+        CalculatorName: ResourceName,
+        CreateTime: Timestamp,
+        DataSource: String,
+        Description: ResourceDescription,
+        PricingPlan: PricingPlan,
+        UpdateTime: Timestamp
+    ): ListRouteCalculatorsResponseEntry = {
+      val __obj = js.Dynamic.literal(
+        "CalculatorName" -> CalculatorName.asInstanceOf[js.Any],
+        "CreateTime" -> CreateTime.asInstanceOf[js.Any],
+        "DataSource" -> DataSource.asInstanceOf[js.Any],
+        "Description" -> Description.asInstanceOf[js.Any],
+        "PricingPlan" -> PricingPlan.asInstanceOf[js.Any],
+        "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListRouteCalculatorsResponseEntry]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceRequest extends js.Object {
+    var ResourceArn: Arn
+  }
+
+  object ListTagsForResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn
+    ): ListTagsForResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[ListTagsForResourceRequest]
+    }
+  }
+
+  @js.native
+  trait ListTagsForResourceResponse extends js.Object {
+    var Tags: js.UndefOr[TagMap]
+  }
+
+  object ListTagsForResourceResponse {
+    @inline
+    def apply(
+        Tags: js.UndefOr[TagMap] = js.undefined
+    ): ListTagsForResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListTagsForResourceResponse]
     }
   }
 
@@ -1957,6 +2670,7 @@ package object location {
     var Geometry: PlaceGeometry
     var AddressNumber: js.UndefOr[String]
     var Country: js.UndefOr[String]
+    var Interpolated: js.UndefOr[Boolean]
     var Label: js.UndefOr[String]
     var Municipality: js.UndefOr[String]
     var Neighborhood: js.UndefOr[String]
@@ -1964,6 +2678,7 @@ package object location {
     var Region: js.UndefOr[String]
     var Street: js.UndefOr[String]
     var SubRegion: js.UndefOr[String]
+    var TimeZone: js.UndefOr[TimeZone]
   }
 
   object Place {
@@ -1972,13 +2687,15 @@ package object location {
         Geometry: PlaceGeometry,
         AddressNumber: js.UndefOr[String] = js.undefined,
         Country: js.UndefOr[String] = js.undefined,
+        Interpolated: js.UndefOr[Boolean] = js.undefined,
         Label: js.UndefOr[String] = js.undefined,
         Municipality: js.UndefOr[String] = js.undefined,
         Neighborhood: js.UndefOr[String] = js.undefined,
         PostalCode: js.UndefOr[String] = js.undefined,
         Region: js.UndefOr[String] = js.undefined,
         Street: js.UndefOr[String] = js.undefined,
-        SubRegion: js.UndefOr[String] = js.undefined
+        SubRegion: js.UndefOr[String] = js.undefined,
+        TimeZone: js.UndefOr[TimeZone] = js.undefined
     ): Place = {
       val __obj = js.Dynamic.literal(
         "Geometry" -> Geometry.asInstanceOf[js.Any]
@@ -1986,6 +2703,7 @@ package object location {
 
       AddressNumber.foreach(__v => __obj.updateDynamic("AddressNumber")(__v.asInstanceOf[js.Any]))
       Country.foreach(__v => __obj.updateDynamic("Country")(__v.asInstanceOf[js.Any]))
+      Interpolated.foreach(__v => __obj.updateDynamic("Interpolated")(__v.asInstanceOf[js.Any]))
       Label.foreach(__v => __obj.updateDynamic("Label")(__v.asInstanceOf[js.Any]))
       Municipality.foreach(__v => __obj.updateDynamic("Municipality")(__v.asInstanceOf[js.Any]))
       Neighborhood.foreach(__v => __obj.updateDynamic("Neighborhood")(__v.asInstanceOf[js.Any]))
@@ -1993,6 +2711,7 @@ package object location {
       Region.foreach(__v => __obj.updateDynamic("Region")(__v.asInstanceOf[js.Any]))
       Street.foreach(__v => __obj.updateDynamic("Street")(__v.asInstanceOf[js.Any]))
       SubRegion.foreach(__v => __obj.updateDynamic("SubRegion")(__v.asInstanceOf[js.Any]))
+      TimeZone.foreach(__v => __obj.updateDynamic("TimeZone")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Place]
     }
   }
@@ -2012,6 +2731,25 @@ package object location {
       val __obj = js.Dynamic.literal()
       Point.foreach(__v => __obj.updateDynamic("Point")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[PlaceGeometry]
+    }
+  }
+
+  /** Defines the level of certainty of the position.
+    */
+  @js.native
+  trait PositionalAccuracy extends js.Object {
+    var Horizontal: PositionalAccuracyHorizontalDouble
+  }
+
+  object PositionalAccuracy {
+    @inline
+    def apply(
+        Horizontal: PositionalAccuracyHorizontalDouble
+    ): PositionalAccuracy = {
+      val __obj = js.Dynamic.literal(
+        "Horizontal" -> Horizontal.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[PositionalAccuracy]
     }
   }
 
@@ -2061,40 +2799,69 @@ package object location {
     }
   }
 
-  /** Specifies a single point of interest, or Place as a result of a search query obtained from a dataset configured in the Place index Resource.
+  /** Contains a search result from a position search query that is run on a place index resource.
     */
   @js.native
   trait SearchForPositionResult extends js.Object {
+    var Distance: SearchForPositionResultDistanceDouble
     var Place: Place
   }
 
   object SearchForPositionResult {
     @inline
     def apply(
+        Distance: SearchForPositionResultDistanceDouble,
         Place: Place
     ): SearchForPositionResult = {
       val __obj = js.Dynamic.literal(
+        "Distance" -> Distance.asInstanceOf[js.Any],
         "Place" -> Place.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[SearchForPositionResult]
     }
   }
 
-  /** Contains relevant Places returned by calling <code>SearchPlaceIndexForText</code>.
+  /** Contains a place suggestion resulting from a place suggestion query that is run on a place index resource.
+    */
+  @js.native
+  trait SearchForSuggestionsResult extends js.Object {
+    var Text: String
+  }
+
+  object SearchForSuggestionsResult {
+    @inline
+    def apply(
+        Text: String
+    ): SearchForSuggestionsResult = {
+      val __obj = js.Dynamic.literal(
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SearchForSuggestionsResult]
+    }
+  }
+
+  /** Contains a search result from a text search query that is run on a place index resource.
     */
   @js.native
   trait SearchForTextResult extends js.Object {
     var Place: Place
+    var Distance: js.UndefOr[SearchForTextResultDistanceDouble]
+    var Relevance: js.UndefOr[SearchForTextResultRelevanceDouble]
   }
 
   object SearchForTextResult {
     @inline
     def apply(
-        Place: Place
+        Place: Place,
+        Distance: js.UndefOr[SearchForTextResultDistanceDouble] = js.undefined,
+        Relevance: js.UndefOr[SearchForTextResultRelevanceDouble] = js.undefined
     ): SearchForTextResult = {
       val __obj = js.Dynamic.literal(
         "Place" -> Place.asInstanceOf[js.Any]
       )
+
+      Distance.foreach(__v => __obj.updateDynamic("Distance")(__v.asInstanceOf[js.Any]))
+      Relevance.foreach(__v => __obj.updateDynamic("Relevance")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchForTextResult]
     }
   }
@@ -2103,6 +2870,7 @@ package object location {
   trait SearchPlaceIndexForPositionRequest extends js.Object {
     var IndexName: ResourceName
     var Position: Position
+    var Language: js.UndefOr[LanguageTag]
     var MaxResults: js.UndefOr[PlaceIndexSearchResultLimit]
   }
 
@@ -2111,6 +2879,7 @@ package object location {
     def apply(
         IndexName: ResourceName,
         Position: Position,
+        Language: js.UndefOr[LanguageTag] = js.undefined,
         MaxResults: js.UndefOr[PlaceIndexSearchResultLimit] = js.undefined
     ): SearchPlaceIndexForPositionRequest = {
       val __obj = js.Dynamic.literal(
@@ -2118,6 +2887,7 @@ package object location {
         "Position" -> Position.asInstanceOf[js.Any]
       )
 
+      Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchPlaceIndexForPositionRequest]
     }
@@ -2143,12 +2913,13 @@ package object location {
     }
   }
 
-  /** A summary of the reverse geocoding request sent using <code>SearchPlaceIndexForPosition</code>.
+  /** A summary of the request sent by using <code>SearchPlaceIndexForPosition</code>.
     */
   @js.native
   trait SearchPlaceIndexForPositionSummary extends js.Object {
     var DataSource: String
     var Position: Position
+    var Language: js.UndefOr[LanguageTag]
     var MaxResults: js.UndefOr[PlaceIndexSearchResultLimit]
   }
 
@@ -2157,6 +2928,7 @@ package object location {
     def apply(
         DataSource: String,
         Position: Position,
+        Language: js.UndefOr[LanguageTag] = js.undefined,
         MaxResults: js.UndefOr[PlaceIndexSearchResultLimit] = js.undefined
     ): SearchPlaceIndexForPositionSummary = {
       val __obj = js.Dynamic.literal(
@@ -2164,8 +2936,103 @@ package object location {
         "Position" -> Position.asInstanceOf[js.Any]
       )
 
+      Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchPlaceIndexForPositionSummary]
+    }
+  }
+
+  @js.native
+  trait SearchPlaceIndexForSuggestionsRequest extends js.Object {
+    var IndexName: ResourceName
+    var Text: SyntheticSearchPlaceIndexForSuggestionsRequestString
+    var BiasPosition: js.UndefOr[Position]
+    var FilterBBox: js.UndefOr[BoundingBox]
+    var FilterCountries: js.UndefOr[CountryCodeList]
+    var Language: js.UndefOr[LanguageTag]
+    var MaxResults: js.UndefOr[SearchPlaceIndexForSuggestionsRequestMaxResultsInteger]
+  }
+
+  object SearchPlaceIndexForSuggestionsRequest {
+    @inline
+    def apply(
+        IndexName: ResourceName,
+        Text: SyntheticSearchPlaceIndexForSuggestionsRequestString,
+        BiasPosition: js.UndefOr[Position] = js.undefined,
+        FilterBBox: js.UndefOr[BoundingBox] = js.undefined,
+        FilterCountries: js.UndefOr[CountryCodeList] = js.undefined,
+        Language: js.UndefOr[LanguageTag] = js.undefined,
+        MaxResults: js.UndefOr[SearchPlaceIndexForSuggestionsRequestMaxResultsInteger] = js.undefined
+    ): SearchPlaceIndexForSuggestionsRequest = {
+      val __obj = js.Dynamic.literal(
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+
+      BiasPosition.foreach(__v => __obj.updateDynamic("BiasPosition")(__v.asInstanceOf[js.Any]))
+      FilterBBox.foreach(__v => __obj.updateDynamic("FilterBBox")(__v.asInstanceOf[js.Any]))
+      FilterCountries.foreach(__v => __obj.updateDynamic("FilterCountries")(__v.asInstanceOf[js.Any]))
+      Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchPlaceIndexForSuggestionsRequest]
+    }
+  }
+
+  @js.native
+  trait SearchPlaceIndexForSuggestionsResponse extends js.Object {
+    var Results: SearchForSuggestionsResultList
+    var Summary: SearchPlaceIndexForSuggestionsSummary
+  }
+
+  object SearchPlaceIndexForSuggestionsResponse {
+    @inline
+    def apply(
+        Results: SearchForSuggestionsResultList,
+        Summary: SearchPlaceIndexForSuggestionsSummary
+    ): SearchPlaceIndexForSuggestionsResponse = {
+      val __obj = js.Dynamic.literal(
+        "Results" -> Results.asInstanceOf[js.Any],
+        "Summary" -> Summary.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SearchPlaceIndexForSuggestionsResponse]
+    }
+  }
+
+  /** A summary of the request sent by using <code>SearchPlaceIndexForSuggestions</code>.
+    */
+  @js.native
+  trait SearchPlaceIndexForSuggestionsSummary extends js.Object {
+    var DataSource: String
+    var Text: SyntheticSearchPlaceIndexForSuggestionsSummaryString
+    var BiasPosition: js.UndefOr[Position]
+    var FilterBBox: js.UndefOr[BoundingBox]
+    var FilterCountries: js.UndefOr[CountryCodeList]
+    var Language: js.UndefOr[LanguageTag]
+    var MaxResults: js.UndefOr[Int]
+  }
+
+  object SearchPlaceIndexForSuggestionsSummary {
+    @inline
+    def apply(
+        DataSource: String,
+        Text: SyntheticSearchPlaceIndexForSuggestionsSummaryString,
+        BiasPosition: js.UndefOr[Position] = js.undefined,
+        FilterBBox: js.UndefOr[BoundingBox] = js.undefined,
+        FilterCountries: js.UndefOr[CountryCodeList] = js.undefined,
+        Language: js.UndefOr[LanguageTag] = js.undefined,
+        MaxResults: js.UndefOr[Int] = js.undefined
+    ): SearchPlaceIndexForSuggestionsSummary = {
+      val __obj = js.Dynamic.literal(
+        "DataSource" -> DataSource.asInstanceOf[js.Any],
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+
+      BiasPosition.foreach(__v => __obj.updateDynamic("BiasPosition")(__v.asInstanceOf[js.Any]))
+      FilterBBox.foreach(__v => __obj.updateDynamic("FilterBBox")(__v.asInstanceOf[js.Any]))
+      FilterCountries.foreach(__v => __obj.updateDynamic("FilterCountries")(__v.asInstanceOf[js.Any]))
+      Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SearchPlaceIndexForSuggestionsSummary]
     }
   }
 
@@ -2176,6 +3043,7 @@ package object location {
     var BiasPosition: js.UndefOr[Position]
     var FilterBBox: js.UndefOr[BoundingBox]
     var FilterCountries: js.UndefOr[CountryCodeList]
+    var Language: js.UndefOr[LanguageTag]
     var MaxResults: js.UndefOr[PlaceIndexSearchResultLimit]
   }
 
@@ -2187,6 +3055,7 @@ package object location {
         BiasPosition: js.UndefOr[Position] = js.undefined,
         FilterBBox: js.UndefOr[BoundingBox] = js.undefined,
         FilterCountries: js.UndefOr[CountryCodeList] = js.undefined,
+        Language: js.UndefOr[LanguageTag] = js.undefined,
         MaxResults: js.UndefOr[PlaceIndexSearchResultLimit] = js.undefined
     ): SearchPlaceIndexForTextRequest = {
       val __obj = js.Dynamic.literal(
@@ -2197,6 +3066,7 @@ package object location {
       BiasPosition.foreach(__v => __obj.updateDynamic("BiasPosition")(__v.asInstanceOf[js.Any]))
       FilterBBox.foreach(__v => __obj.updateDynamic("FilterBBox")(__v.asInstanceOf[js.Any]))
       FilterCountries.foreach(__v => __obj.updateDynamic("FilterCountries")(__v.asInstanceOf[js.Any]))
+      Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchPlaceIndexForTextRequest]
     }
@@ -2222,7 +3092,7 @@ package object location {
     }
   }
 
-  /** A summary of the geocoding request sent using <code>SearchPlaceIndexForText</code>.
+  /** A summary of the request sent by using <code>SearchPlaceIndexForText</code>.
     */
   @js.native
   trait SearchPlaceIndexForTextSummary extends js.Object {
@@ -2231,6 +3101,7 @@ package object location {
     var BiasPosition: js.UndefOr[Position]
     var FilterBBox: js.UndefOr[BoundingBox]
     var FilterCountries: js.UndefOr[CountryCodeList]
+    var Language: js.UndefOr[LanguageTag]
     var MaxResults: js.UndefOr[PlaceIndexSearchResultLimit]
     var ResultBBox: js.UndefOr[BoundingBox]
   }
@@ -2243,6 +3114,7 @@ package object location {
         BiasPosition: js.UndefOr[Position] = js.undefined,
         FilterBBox: js.UndefOr[BoundingBox] = js.undefined,
         FilterCountries: js.UndefOr[CountryCodeList] = js.undefined,
+        Language: js.UndefOr[LanguageTag] = js.undefined,
         MaxResults: js.UndefOr[PlaceIndexSearchResultLimit] = js.undefined,
         ResultBBox: js.UndefOr[BoundingBox] = js.undefined
     ): SearchPlaceIndexForTextSummary = {
@@ -2254,9 +3126,422 @@ package object location {
       BiasPosition.foreach(__v => __obj.updateDynamic("BiasPosition")(__v.asInstanceOf[js.Any]))
       FilterBBox.foreach(__v => __obj.updateDynamic("FilterBBox")(__v.asInstanceOf[js.Any]))
       FilterCountries.foreach(__v => __obj.updateDynamic("FilterCountries")(__v.asInstanceOf[js.Any]))
+      Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       ResultBBox.foreach(__v => __obj.updateDynamic("ResultBBox")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SearchPlaceIndexForTextSummary]
+    }
+  }
+
+  /** Represents an element of a leg within a route. A step contains instructions for how to move to the next step in the leg.
+    */
+  @js.native
+  trait Step extends js.Object {
+    var Distance: StepDistanceDouble
+    var DurationSeconds: StepDurationSecondsDouble
+    var EndPosition: Position
+    var StartPosition: Position
+    var GeometryOffset: js.UndefOr[StepGeometryOffsetInteger]
+  }
+
+  object Step {
+    @inline
+    def apply(
+        Distance: StepDistanceDouble,
+        DurationSeconds: StepDurationSecondsDouble,
+        EndPosition: Position,
+        StartPosition: Position,
+        GeometryOffset: js.UndefOr[StepGeometryOffsetInteger] = js.undefined
+    ): Step = {
+      val __obj = js.Dynamic.literal(
+        "Distance" -> Distance.asInstanceOf[js.Any],
+        "DurationSeconds" -> DurationSeconds.asInstanceOf[js.Any],
+        "EndPosition" -> EndPosition.asInstanceOf[js.Any],
+        "StartPosition" -> StartPosition.asInstanceOf[js.Any]
+      )
+
+      GeometryOffset.foreach(__v => __obj.updateDynamic("GeometryOffset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Step]
+    }
+  }
+
+  @js.native
+  trait TagResourceRequest extends js.Object {
+    var ResourceArn: Arn
+    var Tags: TagMap
+  }
+
+  object TagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn,
+        Tags: TagMap
+    ): TagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "Tags" -> Tags.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[TagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait TagResourceResponse extends js.Object
+
+  object TagResourceResponse {
+    @inline
+    def apply(): TagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[TagResourceResponse]
+    }
+  }
+
+  /** Information about a time zone. Includes the name of the time zone and the offset from UTC in seconds.
+    */
+  @js.native
+  trait TimeZone extends js.Object {
+    var Name: String
+    var Offset: js.UndefOr[Int]
+  }
+
+  object TimeZone {
+    @inline
+    def apply(
+        Name: String,
+        Offset: js.UndefOr[Int] = js.undefined
+    ): TimeZone = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Offset.foreach(__v => __obj.updateDynamic("Offset")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TimeZone]
+    }
+  }
+
+  /** Contains details about the truck dimensions in the unit of measurement that you specify. Used to filter out roads that can't support or allow the specified dimensions for requests that specify <code>TravelMode</code> as <code>Truck</code>.
+    */
+  @js.native
+  trait TruckDimensions extends js.Object {
+    var Height: js.UndefOr[TruckDimensionsHeightDouble]
+    var Length: js.UndefOr[TruckDimensionsLengthDouble]
+    var Unit: js.UndefOr[DimensionUnit]
+    var Width: js.UndefOr[TruckDimensionsWidthDouble]
+  }
+
+  object TruckDimensions {
+    @inline
+    def apply(
+        Height: js.UndefOr[TruckDimensionsHeightDouble] = js.undefined,
+        Length: js.UndefOr[TruckDimensionsLengthDouble] = js.undefined,
+        Unit: js.UndefOr[DimensionUnit] = js.undefined,
+        Width: js.UndefOr[TruckDimensionsWidthDouble] = js.undefined
+    ): TruckDimensions = {
+      val __obj = js.Dynamic.literal()
+      Height.foreach(__v => __obj.updateDynamic("Height")(__v.asInstanceOf[js.Any]))
+      Length.foreach(__v => __obj.updateDynamic("Length")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
+      Width.foreach(__v => __obj.updateDynamic("Width")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TruckDimensions]
+    }
+  }
+
+  /** Contains details about the truck's weight specifications. Used to avoid roads that can't support or allow the total weight for requests that specify <code>TravelMode</code> as <code>Truck</code>.
+    */
+  @js.native
+  trait TruckWeight extends js.Object {
+    var Total: js.UndefOr[TruckWeightTotalDouble]
+    var Unit: js.UndefOr[VehicleWeightUnit]
+  }
+
+  object TruckWeight {
+    @inline
+    def apply(
+        Total: js.UndefOr[TruckWeightTotalDouble] = js.undefined,
+        Unit: js.UndefOr[VehicleWeightUnit] = js.undefined
+    ): TruckWeight = {
+      val __obj = js.Dynamic.literal()
+      Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
+      Unit.foreach(__v => __obj.updateDynamic("Unit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TruckWeight]
+    }
+  }
+
+  @js.native
+  trait UntagResourceRequest extends js.Object {
+    var ResourceArn: Arn
+    var TagKeys: TagKeys
+  }
+
+  object UntagResourceRequest {
+    @inline
+    def apply(
+        ResourceArn: Arn,
+        TagKeys: TagKeys
+    ): UntagResourceRequest = {
+      val __obj = js.Dynamic.literal(
+        "ResourceArn" -> ResourceArn.asInstanceOf[js.Any],
+        "TagKeys" -> TagKeys.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UntagResourceRequest]
+    }
+  }
+
+  @js.native
+  trait UntagResourceResponse extends js.Object
+
+  object UntagResourceResponse {
+    @inline
+    def apply(): UntagResourceResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UntagResourceResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateGeofenceCollectionRequest extends js.Object {
+    var CollectionName: ResourceName
+    var Description: js.UndefOr[ResourceDescription]
+    var PricingPlan: js.UndefOr[PricingPlan]
+    var PricingPlanDataSource: js.UndefOr[String]
+  }
+
+  object UpdateGeofenceCollectionRequest {
+    @inline
+    def apply(
+        CollectionName: ResourceName,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined
+    ): UpdateGeofenceCollectionRequest = {
+      val __obj = js.Dynamic.literal(
+        "CollectionName" -> CollectionName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
+      PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateGeofenceCollectionRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateGeofenceCollectionResponse extends js.Object {
+    var CollectionArn: Arn
+    var CollectionName: ResourceName
+    var UpdateTime: Timestamp
+  }
+
+  object UpdateGeofenceCollectionResponse {
+    @inline
+    def apply(
+        CollectionArn: Arn,
+        CollectionName: ResourceName,
+        UpdateTime: Timestamp
+    ): UpdateGeofenceCollectionResponse = {
+      val __obj = js.Dynamic.literal(
+        "CollectionArn" -> CollectionArn.asInstanceOf[js.Any],
+        "CollectionName" -> CollectionName.asInstanceOf[js.Any],
+        "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateGeofenceCollectionResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateMapRequest extends js.Object {
+    var MapName: ResourceName
+    var Description: js.UndefOr[ResourceDescription]
+    var PricingPlan: js.UndefOr[PricingPlan]
+  }
+
+  object UpdateMapRequest {
+    @inline
+    def apply(
+        MapName: ResourceName,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined
+    ): UpdateMapRequest = {
+      val __obj = js.Dynamic.literal(
+        "MapName" -> MapName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateMapRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateMapResponse extends js.Object {
+    var MapArn: Arn
+    var MapName: ResourceName
+    var UpdateTime: Timestamp
+  }
+
+  object UpdateMapResponse {
+    @inline
+    def apply(
+        MapArn: Arn,
+        MapName: ResourceName,
+        UpdateTime: Timestamp
+    ): UpdateMapResponse = {
+      val __obj = js.Dynamic.literal(
+        "MapArn" -> MapArn.asInstanceOf[js.Any],
+        "MapName" -> MapName.asInstanceOf[js.Any],
+        "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateMapResponse]
+    }
+  }
+
+  @js.native
+  trait UpdatePlaceIndexRequest extends js.Object {
+    var IndexName: ResourceName
+    var DataSourceConfiguration: js.UndefOr[DataSourceConfiguration]
+    var Description: js.UndefOr[ResourceDescription]
+    var PricingPlan: js.UndefOr[PricingPlan]
+  }
+
+  object UpdatePlaceIndexRequest {
+    @inline
+    def apply(
+        IndexName: ResourceName,
+        DataSourceConfiguration: js.UndefOr[DataSourceConfiguration] = js.undefined,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined
+    ): UpdatePlaceIndexRequest = {
+      val __obj = js.Dynamic.literal(
+        "IndexName" -> IndexName.asInstanceOf[js.Any]
+      )
+
+      DataSourceConfiguration.foreach(__v => __obj.updateDynamic("DataSourceConfiguration")(__v.asInstanceOf[js.Any]))
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdatePlaceIndexRequest]
+    }
+  }
+
+  @js.native
+  trait UpdatePlaceIndexResponse extends js.Object {
+    var IndexArn: Arn
+    var IndexName: ResourceName
+    var UpdateTime: Timestamp
+  }
+
+  object UpdatePlaceIndexResponse {
+    @inline
+    def apply(
+        IndexArn: Arn,
+        IndexName: ResourceName,
+        UpdateTime: Timestamp
+    ): UpdatePlaceIndexResponse = {
+      val __obj = js.Dynamic.literal(
+        "IndexArn" -> IndexArn.asInstanceOf[js.Any],
+        "IndexName" -> IndexName.asInstanceOf[js.Any],
+        "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdatePlaceIndexResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateRouteCalculatorRequest extends js.Object {
+    var CalculatorName: ResourceName
+    var Description: js.UndefOr[ResourceDescription]
+    var PricingPlan: js.UndefOr[PricingPlan]
+  }
+
+  object UpdateRouteCalculatorRequest {
+    @inline
+    def apply(
+        CalculatorName: ResourceName,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined
+    ): UpdateRouteCalculatorRequest = {
+      val __obj = js.Dynamic.literal(
+        "CalculatorName" -> CalculatorName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateRouteCalculatorRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateRouteCalculatorResponse extends js.Object {
+    var CalculatorArn: Arn
+    var CalculatorName: ResourceName
+    var UpdateTime: Timestamp
+  }
+
+  object UpdateRouteCalculatorResponse {
+    @inline
+    def apply(
+        CalculatorArn: Arn,
+        CalculatorName: ResourceName,
+        UpdateTime: Timestamp
+    ): UpdateRouteCalculatorResponse = {
+      val __obj = js.Dynamic.literal(
+        "CalculatorArn" -> CalculatorArn.asInstanceOf[js.Any],
+        "CalculatorName" -> CalculatorName.asInstanceOf[js.Any],
+        "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateRouteCalculatorResponse]
+    }
+  }
+
+  @js.native
+  trait UpdateTrackerRequest extends js.Object {
+    var TrackerName: ResourceName
+    var Description: js.UndefOr[ResourceDescription]
+    var PositionFiltering: js.UndefOr[PositionFiltering]
+    var PricingPlan: js.UndefOr[PricingPlan]
+    var PricingPlanDataSource: js.UndefOr[String]
+  }
+
+  object UpdateTrackerRequest {
+    @inline
+    def apply(
+        TrackerName: ResourceName,
+        Description: js.UndefOr[ResourceDescription] = js.undefined,
+        PositionFiltering: js.UndefOr[PositionFiltering] = js.undefined,
+        PricingPlan: js.UndefOr[PricingPlan] = js.undefined,
+        PricingPlanDataSource: js.UndefOr[String] = js.undefined
+    ): UpdateTrackerRequest = {
+      val __obj = js.Dynamic.literal(
+        "TrackerName" -> TrackerName.asInstanceOf[js.Any]
+      )
+
+      Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      PositionFiltering.foreach(__v => __obj.updateDynamic("PositionFiltering")(__v.asInstanceOf[js.Any]))
+      PricingPlan.foreach(__v => __obj.updateDynamic("PricingPlan")(__v.asInstanceOf[js.Any]))
+      PricingPlanDataSource.foreach(__v => __obj.updateDynamic("PricingPlanDataSource")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateTrackerRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateTrackerResponse extends js.Object {
+    var TrackerArn: Arn
+    var TrackerName: ResourceName
+    var UpdateTime: Timestamp
+  }
+
+  object UpdateTrackerResponse {
+    @inline
+    def apply(
+        TrackerArn: Arn,
+        TrackerName: ResourceName,
+        UpdateTime: Timestamp
+    ): UpdateTrackerResponse = {
+      val __obj = js.Dynamic.literal(
+        "TrackerArn" -> TrackerArn.asInstanceOf[js.Any],
+        "TrackerName" -> TrackerName.asInstanceOf[js.Any],
+        "UpdateTime" -> UpdateTime.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateTrackerResponse]
     }
   }
 }

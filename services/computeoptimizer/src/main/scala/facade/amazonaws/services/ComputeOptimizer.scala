@@ -8,6 +8,7 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object computeoptimizer {
+  type AccountEnrollmentStatuses = js.Array[AccountEnrollmentStatus]
   type AccountId = String
   type AccountIds = js.Array[AccountId]
   type AutoScalingGroupArn = String
@@ -16,6 +17,7 @@ package object computeoptimizer {
   type AutoScalingGroupRecommendationOptions = js.Array[AutoScalingGroupRecommendationOption]
   type AutoScalingGroupRecommendations = js.Array[AutoScalingGroupRecommendation]
   type Code = String
+  type CpuVendorArchitectures = js.Array[CpuVendorArchitecture]
   type CreationTimestamp = js.Date
   type CurrentInstanceType = String
   type DesiredCapacity = Int
@@ -24,8 +26,11 @@ package object computeoptimizer {
   type DestinationKeyPrefix = String
   type EBSFilters = js.Array[EBSFilter]
   type EBSUtilizationMetrics = js.Array[EBSUtilizationMetric]
+  type EnrollmentFilters = js.Array[EnrollmentFilter]
   type ExportableAutoScalingGroupFields = js.Array[ExportableAutoScalingGroupField]
   type ExportableInstanceFields = js.Array[ExportableInstanceField]
+  type ExportableLambdaFunctionFields = js.Array[ExportableLambdaFunctionField]
+  type ExportableVolumeFields = js.Array[ExportableVolumeField]
   type FailureReason = String
   type FilterValue = String
   type FilterValues = js.Array[FilterValue]
@@ -34,11 +39,13 @@ package object computeoptimizer {
   type FunctionArns = js.Array[FunctionArn]
   type FunctionVersion = String
   type GetRecommendationErrors = js.Array[GetRecommendationError]
+  type High = Double
   type Identifier = String
   type IncludeMemberAccounts = Boolean
   type InstanceArn = String
   type InstanceArns = js.Array[InstanceArn]
   type InstanceName = String
+  type InstanceRecommendationFindingReasonCodes = js.Array[InstanceRecommendationFindingReasonCode]
   type InstanceRecommendations = js.Array[InstanceRecommendation]
   type InstanceType = String
   type JobFilters = js.Array[JobFilter]
@@ -53,8 +60,10 @@ package object computeoptimizer {
   type LastRefreshTimestamp = js.Date
   type LastUpdatedTimestamp = js.Date
   type LookBackPeriodInDays = Double
+  type Low = Double
   type MaxResults = Int
   type MaxSize = Int
+  type Medium = Double
   type MemberAccountsEnrolled = Boolean
   type MemorySize = Int
   type Message = String
@@ -64,25 +73,34 @@ package object computeoptimizer {
   type MinSize = Int
   type NextToken = String
   type NumberOfInvocations = Double
+  type NumberOfMemberAccountsOptedIn = Int
   type PerformanceRisk = Double
   type Period = Int
+  type PlatformDifferences = js.Array[PlatformDifference]
   type ProjectedMetrics = js.Array[ProjectedMetric]
   type ProjectedUtilizationMetrics = js.Array[UtilizationMetric]
   type Rank = Int
   type ReasonCodeSummaries = js.Array[ReasonCodeSummary]
   type RecommendationExportJobs = js.Array[RecommendationExportJob]
   type RecommendationOptions = js.Array[InstanceRecommendationOption]
+  type RecommendationPreferenceNames = js.Array[RecommendationPreferenceName]
+  type RecommendationPreferencesDetails = js.Array[RecommendationPreferencesDetail]
   type RecommendationSourceArn = String
   type RecommendationSources = js.Array[RecommendationSource]
   type RecommendationSummaries = js.Array[RecommendationSummary]
   type RecommendedInstanceType = String
   type RecommendedOptionProjectedMetrics = js.Array[RecommendedOptionProjectedMetric]
+  type ResourceArn = String
+  type SavingsOpportunityPercentage = Double
+  type ScopeValue = String
   type StatusReason = String
   type Summaries = js.Array[Summary]
   type SummaryValue = Double
   type Timestamp = js.Date
   type Timestamps = js.Array[Timestamp]
   type UtilizationMetrics = js.Array[UtilizationMetric]
+  type Value = Double
+  type VeryLow = Double
   type VolumeArn = String
   type VolumeArns = js.Array[VolumeArn]
   type VolumeBaselineIOPS = Int
@@ -96,16 +114,23 @@ package object computeoptimizer {
 
   final class ComputeOptimizerOps(private val service: ComputeOptimizer) extends AnyVal {
 
+    @inline def deleteRecommendationPreferencesFuture(params: DeleteRecommendationPreferencesRequest): Future[DeleteRecommendationPreferencesResponse] = service.deleteRecommendationPreferences(params).promise().toFuture
     @inline def describeRecommendationExportJobsFuture(params: DescribeRecommendationExportJobsRequest): Future[DescribeRecommendationExportJobsResponse] = service.describeRecommendationExportJobs(params).promise().toFuture
     @inline def exportAutoScalingGroupRecommendationsFuture(params: ExportAutoScalingGroupRecommendationsRequest): Future[ExportAutoScalingGroupRecommendationsResponse] = service.exportAutoScalingGroupRecommendations(params).promise().toFuture
+    @inline def exportEBSVolumeRecommendationsFuture(params: ExportEBSVolumeRecommendationsRequest): Future[ExportEBSVolumeRecommendationsResponse] = service.exportEBSVolumeRecommendations(params).promise().toFuture
     @inline def exportEC2InstanceRecommendationsFuture(params: ExportEC2InstanceRecommendationsRequest): Future[ExportEC2InstanceRecommendationsResponse] = service.exportEC2InstanceRecommendations(params).promise().toFuture
+    @inline def exportLambdaFunctionRecommendationsFuture(params: ExportLambdaFunctionRecommendationsRequest): Future[ExportLambdaFunctionRecommendationsResponse] = service.exportLambdaFunctionRecommendations(params).promise().toFuture
     @inline def getAutoScalingGroupRecommendationsFuture(params: GetAutoScalingGroupRecommendationsRequest): Future[GetAutoScalingGroupRecommendationsResponse] = service.getAutoScalingGroupRecommendations(params).promise().toFuture
     @inline def getEBSVolumeRecommendationsFuture(params: GetEBSVolumeRecommendationsRequest): Future[GetEBSVolumeRecommendationsResponse] = service.getEBSVolumeRecommendations(params).promise().toFuture
     @inline def getEC2InstanceRecommendationsFuture(params: GetEC2InstanceRecommendationsRequest): Future[GetEC2InstanceRecommendationsResponse] = service.getEC2InstanceRecommendations(params).promise().toFuture
     @inline def getEC2RecommendationProjectedMetricsFuture(params: GetEC2RecommendationProjectedMetricsRequest): Future[GetEC2RecommendationProjectedMetricsResponse] = service.getEC2RecommendationProjectedMetrics(params).promise().toFuture
+    @inline def getEffectiveRecommendationPreferencesFuture(params: GetEffectiveRecommendationPreferencesRequest): Future[GetEffectiveRecommendationPreferencesResponse] = service.getEffectiveRecommendationPreferences(params).promise().toFuture
     @inline def getEnrollmentStatusFuture(params: GetEnrollmentStatusRequest): Future[GetEnrollmentStatusResponse] = service.getEnrollmentStatus(params).promise().toFuture
+    @inline def getEnrollmentStatusesForOrganizationFuture(params: GetEnrollmentStatusesForOrganizationRequest): Future[GetEnrollmentStatusesForOrganizationResponse] = service.getEnrollmentStatusesForOrganization(params).promise().toFuture
     @inline def getLambdaFunctionRecommendationsFuture(params: GetLambdaFunctionRecommendationsRequest): Future[GetLambdaFunctionRecommendationsResponse] = service.getLambdaFunctionRecommendations(params).promise().toFuture
+    @inline def getRecommendationPreferencesFuture(params: GetRecommendationPreferencesRequest): Future[GetRecommendationPreferencesResponse] = service.getRecommendationPreferences(params).promise().toFuture
     @inline def getRecommendationSummariesFuture(params: GetRecommendationSummariesRequest): Future[GetRecommendationSummariesResponse] = service.getRecommendationSummaries(params).promise().toFuture
+    @inline def putRecommendationPreferencesFuture(params: PutRecommendationPreferencesRequest): Future[PutRecommendationPreferencesResponse] = service.putRecommendationPreferences(params).promise().toFuture
     @inline def updateEnrollmentStatusFuture(params: UpdateEnrollmentStatusRequest): Future[UpdateEnrollmentStatusResponse] = service.updateEnrollmentStatus(params).promise().toFuture
 
   }
@@ -115,21 +140,55 @@ package object computeoptimizer {
   class ComputeOptimizer() extends js.Object {
     def this(config: AWSConfig) = this()
 
+    def deleteRecommendationPreferences(params: DeleteRecommendationPreferencesRequest): Request[DeleteRecommendationPreferencesResponse] = js.native
     def describeRecommendationExportJobs(params: DescribeRecommendationExportJobsRequest): Request[DescribeRecommendationExportJobsResponse] = js.native
     def exportAutoScalingGroupRecommendations(params: ExportAutoScalingGroupRecommendationsRequest): Request[ExportAutoScalingGroupRecommendationsResponse] = js.native
+    def exportEBSVolumeRecommendations(params: ExportEBSVolumeRecommendationsRequest): Request[ExportEBSVolumeRecommendationsResponse] = js.native
     def exportEC2InstanceRecommendations(params: ExportEC2InstanceRecommendationsRequest): Request[ExportEC2InstanceRecommendationsResponse] = js.native
+    def exportLambdaFunctionRecommendations(params: ExportLambdaFunctionRecommendationsRequest): Request[ExportLambdaFunctionRecommendationsResponse] = js.native
     def getAutoScalingGroupRecommendations(params: GetAutoScalingGroupRecommendationsRequest): Request[GetAutoScalingGroupRecommendationsResponse] = js.native
     def getEBSVolumeRecommendations(params: GetEBSVolumeRecommendationsRequest): Request[GetEBSVolumeRecommendationsResponse] = js.native
     def getEC2InstanceRecommendations(params: GetEC2InstanceRecommendationsRequest): Request[GetEC2InstanceRecommendationsResponse] = js.native
     def getEC2RecommendationProjectedMetrics(params: GetEC2RecommendationProjectedMetricsRequest): Request[GetEC2RecommendationProjectedMetricsResponse] = js.native
+    def getEffectiveRecommendationPreferences(params: GetEffectiveRecommendationPreferencesRequest): Request[GetEffectiveRecommendationPreferencesResponse] = js.native
     def getEnrollmentStatus(params: GetEnrollmentStatusRequest): Request[GetEnrollmentStatusResponse] = js.native
+    def getEnrollmentStatusesForOrganization(params: GetEnrollmentStatusesForOrganizationRequest): Request[GetEnrollmentStatusesForOrganizationResponse] = js.native
     def getLambdaFunctionRecommendations(params: GetLambdaFunctionRecommendationsRequest): Request[GetLambdaFunctionRecommendationsResponse] = js.native
+    def getRecommendationPreferences(params: GetRecommendationPreferencesRequest): Request[GetRecommendationPreferencesResponse] = js.native
     def getRecommendationSummaries(params: GetRecommendationSummariesRequest): Request[GetRecommendationSummariesResponse] = js.native
+    def putRecommendationPreferences(params: PutRecommendationPreferencesRequest): Request[PutRecommendationPreferencesResponse] = js.native
     def updateEnrollmentStatus(params: UpdateEnrollmentStatusRequest): Request[UpdateEnrollmentStatusResponse] = js.native
   }
   object ComputeOptimizer {
     @inline implicit def toOps(service: ComputeOptimizer): ComputeOptimizerOps = {
       new ComputeOptimizerOps(service)
+    }
+  }
+
+  /** Describes the enrollment status of an organization's member accounts in Compute Optimizer.
+    */
+  @js.native
+  trait AccountEnrollmentStatus extends js.Object {
+    var accountId: js.UndefOr[AccountId]
+    var lastUpdatedTimestamp: js.UndefOr[LastUpdatedTimestamp]
+    var status: js.UndefOr[Status]
+    var statusReason: js.UndefOr[StatusReason]
+  }
+
+  object AccountEnrollmentStatus {
+    @inline
+    def apply(
+        accountId: js.UndefOr[AccountId] = js.undefined,
+        lastUpdatedTimestamp: js.UndefOr[LastUpdatedTimestamp] = js.undefined,
+        status: js.UndefOr[Status] = js.undefined,
+        statusReason: js.UndefOr[StatusReason] = js.undefined
+    ): AccountEnrollmentStatus = {
+      val __obj = js.Dynamic.literal()
+      accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      lastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("lastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
+      status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
+      statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AccountEnrollmentStatus]
     }
   }
 
@@ -168,6 +227,8 @@ package object computeoptimizer {
     var autoScalingGroupArn: js.UndefOr[AutoScalingGroupArn]
     var autoScalingGroupName: js.UndefOr[AutoScalingGroupName]
     var currentConfiguration: js.UndefOr[AutoScalingGroupConfiguration]
+    var currentPerformanceRisk: js.UndefOr[CurrentPerformanceRisk]
+    var effectiveRecommendationPreferences: js.UndefOr[EffectiveRecommendationPreferences]
     var finding: js.UndefOr[Finding]
     var lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp]
     var lookBackPeriodInDays: js.UndefOr[LookBackPeriodInDays]
@@ -182,6 +243,8 @@ package object computeoptimizer {
         autoScalingGroupArn: js.UndefOr[AutoScalingGroupArn] = js.undefined,
         autoScalingGroupName: js.UndefOr[AutoScalingGroupName] = js.undefined,
         currentConfiguration: js.UndefOr[AutoScalingGroupConfiguration] = js.undefined,
+        currentPerformanceRisk: js.UndefOr[CurrentPerformanceRisk] = js.undefined,
+        effectiveRecommendationPreferences: js.UndefOr[EffectiveRecommendationPreferences] = js.undefined,
         finding: js.UndefOr[Finding] = js.undefined,
         lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp] = js.undefined,
         lookBackPeriodInDays: js.UndefOr[LookBackPeriodInDays] = js.undefined,
@@ -193,6 +256,8 @@ package object computeoptimizer {
       autoScalingGroupArn.foreach(__v => __obj.updateDynamic("autoScalingGroupArn")(__v.asInstanceOf[js.Any]))
       autoScalingGroupName.foreach(__v => __obj.updateDynamic("autoScalingGroupName")(__v.asInstanceOf[js.Any]))
       currentConfiguration.foreach(__v => __obj.updateDynamic("currentConfiguration")(__v.asInstanceOf[js.Any]))
+      currentPerformanceRisk.foreach(__v => __obj.updateDynamic("currentPerformanceRisk")(__v.asInstanceOf[js.Any]))
+      effectiveRecommendationPreferences.foreach(__v => __obj.updateDynamic("effectiveRecommendationPreferences")(__v.asInstanceOf[js.Any]))
       finding.foreach(__v => __obj.updateDynamic("finding")(__v.asInstanceOf[js.Any]))
       lastRefreshTimestamp.foreach(__v => __obj.updateDynamic("lastRefreshTimestamp")(__v.asInstanceOf[js.Any]))
       lookBackPeriodInDays.foreach(__v => __obj.updateDynamic("lookBackPeriodInDays")(__v.asInstanceOf[js.Any]))
@@ -210,6 +275,7 @@ package object computeoptimizer {
     var performanceRisk: js.UndefOr[PerformanceRisk]
     var projectedUtilizationMetrics: js.UndefOr[ProjectedUtilizationMetrics]
     var rank: js.UndefOr[Rank]
+    var savingsOpportunity: js.UndefOr[SavingsOpportunity]
   }
 
   object AutoScalingGroupRecommendationOption {
@@ -218,14 +284,78 @@ package object computeoptimizer {
         configuration: js.UndefOr[AutoScalingGroupConfiguration] = js.undefined,
         performanceRisk: js.UndefOr[PerformanceRisk] = js.undefined,
         projectedUtilizationMetrics: js.UndefOr[ProjectedUtilizationMetrics] = js.undefined,
-        rank: js.UndefOr[Rank] = js.undefined
+        rank: js.UndefOr[Rank] = js.undefined,
+        savingsOpportunity: js.UndefOr[SavingsOpportunity] = js.undefined
     ): AutoScalingGroupRecommendationOption = {
       val __obj = js.Dynamic.literal()
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       performanceRisk.foreach(__v => __obj.updateDynamic("performanceRisk")(__v.asInstanceOf[js.Any]))
       projectedUtilizationMetrics.foreach(__v => __obj.updateDynamic("projectedUtilizationMetrics")(__v.asInstanceOf[js.Any]))
       rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
+      savingsOpportunity.foreach(__v => __obj.updateDynamic("savingsOpportunity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AutoScalingGroupRecommendationOption]
+    }
+  }
+
+  /** Describes the performance risk ratings for a given resource type. Resources with a <code>high</code> or <code>medium</code> rating are at risk of not meeting the performance needs of their workloads, while resources with a <code>low</code> rating are performing well in their workloads.
+    */
+  @js.native
+  trait CurrentPerformanceRiskRatings extends js.Object {
+    var high: js.UndefOr[High]
+    var low: js.UndefOr[Low]
+    var medium: js.UndefOr[Medium]
+    var veryLow: js.UndefOr[VeryLow]
+  }
+
+  object CurrentPerformanceRiskRatings {
+    @inline
+    def apply(
+        high: js.UndefOr[High] = js.undefined,
+        low: js.UndefOr[Low] = js.undefined,
+        medium: js.UndefOr[Medium] = js.undefined,
+        veryLow: js.UndefOr[VeryLow] = js.undefined
+    ): CurrentPerformanceRiskRatings = {
+      val __obj = js.Dynamic.literal()
+      high.foreach(__v => __obj.updateDynamic("high")(__v.asInstanceOf[js.Any]))
+      low.foreach(__v => __obj.updateDynamic("low")(__v.asInstanceOf[js.Any]))
+      medium.foreach(__v => __obj.updateDynamic("medium")(__v.asInstanceOf[js.Any]))
+      veryLow.foreach(__v => __obj.updateDynamic("veryLow")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CurrentPerformanceRiskRatings]
+    }
+  }
+
+  @js.native
+  trait DeleteRecommendationPreferencesRequest extends js.Object {
+    var recommendationPreferenceNames: RecommendationPreferenceNames
+    var resourceType: ResourceType
+    var scope: js.UndefOr[Scope]
+  }
+
+  object DeleteRecommendationPreferencesRequest {
+    @inline
+    def apply(
+        recommendationPreferenceNames: RecommendationPreferenceNames,
+        resourceType: ResourceType,
+        scope: js.UndefOr[Scope] = js.undefined
+    ): DeleteRecommendationPreferencesRequest = {
+      val __obj = js.Dynamic.literal(
+        "recommendationPreferenceNames" -> recommendationPreferenceNames.asInstanceOf[js.Any],
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
+      )
+
+      scope.foreach(__v => __obj.updateDynamic("scope")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteRecommendationPreferencesRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteRecommendationPreferencesResponse extends js.Object
+
+  object DeleteRecommendationPreferencesResponse {
+    @inline
+    def apply(): DeleteRecommendationPreferencesResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[DeleteRecommendationPreferencesResponse]
     }
   }
 
@@ -273,7 +403,7 @@ package object computeoptimizer {
     }
   }
 
-  /** Describes a filter that returns a more specific list of Amazon Elastic Block Store (Amazon EBS) volume recommendations. This filter is used with the <code>GetEBSVolumeRecommendations</code> action.
+  /** Describes a filter that returns a more specific list of Amazon Elastic Block Store (Amazon EBS) volume recommendations. Use this filter with the <a>GetEBSVolumeRecommendations</a> action. You can use <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a> action, <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action, and <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.
     */
   @js.native
   trait EBSFilter extends js.Object {
@@ -318,6 +448,69 @@ package object computeoptimizer {
     }
   }
 
+  /** Describes the effective recommendation preferences for a resource.
+    */
+  @js.native
+  trait EffectiveRecommendationPreferences extends js.Object {
+    var cpuVendorArchitectures: js.UndefOr[CpuVendorArchitectures]
+    var enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics]
+  }
+
+  object EffectiveRecommendationPreferences {
+    @inline
+    def apply(
+        cpuVendorArchitectures: js.UndefOr[CpuVendorArchitectures] = js.undefined,
+        enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics] = js.undefined
+    ): EffectiveRecommendationPreferences = {
+      val __obj = js.Dynamic.literal()
+      cpuVendorArchitectures.foreach(__v => __obj.updateDynamic("cpuVendorArchitectures")(__v.asInstanceOf[js.Any]))
+      enhancedInfrastructureMetrics.foreach(__v => __obj.updateDynamic("enhancedInfrastructureMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EffectiveRecommendationPreferences]
+    }
+  }
+
+  /** Describes a filter that returns a more specific list of account enrollment statuses. Use this filter with the <a>GetEnrollmentStatusesForOrganization</a> action.
+    */
+  @js.native
+  trait EnrollmentFilter extends js.Object {
+    var name: js.UndefOr[EnrollmentFilterName]
+    var values: js.UndefOr[FilterValues]
+  }
+
+  object EnrollmentFilter {
+    @inline
+    def apply(
+        name: js.UndefOr[EnrollmentFilterName] = js.undefined,
+        values: js.UndefOr[FilterValues] = js.undefined
+    ): EnrollmentFilter = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EnrollmentFilter]
+    }
+  }
+
+  /** Describes the estimated monthly savings amount possible for a given resource based on On-Demand instance pricing For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/view-ec2-recommendations.html#ec2-savings-calculation|Estimated monthly savings and savings opportunities]] in the <i>Compute Optimizer User Guide</i>.
+    */
+  @js.native
+  trait EstimatedMonthlySavings extends js.Object {
+    var currency: js.UndefOr[Currency]
+    var value: js.UndefOr[Value]
+  }
+
+  object EstimatedMonthlySavings {
+    @inline
+    def apply(
+        currency: js.UndefOr[Currency] = js.undefined,
+        value: js.UndefOr[Value] = js.undefined
+    ): EstimatedMonthlySavings = {
+      val __obj = js.Dynamic.literal()
+      currency.foreach(__v => __obj.updateDynamic("currency")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EstimatedMonthlySavings]
+    }
+  }
+
   @js.native
   trait ExportAutoScalingGroupRecommendationsRequest extends js.Object {
     var s3DestinationConfig: S3DestinationConfig
@@ -326,6 +519,7 @@ package object computeoptimizer {
     var fileFormat: js.UndefOr[FileFormat]
     var filters: js.UndefOr[Filters]
     var includeMemberAccounts: js.UndefOr[IncludeMemberAccounts]
+    var recommendationPreferences: js.UndefOr[RecommendationPreferences]
   }
 
   object ExportAutoScalingGroupRecommendationsRequest {
@@ -336,7 +530,8 @@ package object computeoptimizer {
         fieldsToExport: js.UndefOr[ExportableAutoScalingGroupFields] = js.undefined,
         fileFormat: js.UndefOr[FileFormat] = js.undefined,
         filters: js.UndefOr[Filters] = js.undefined,
-        includeMemberAccounts: js.UndefOr[IncludeMemberAccounts] = js.undefined
+        includeMemberAccounts: js.UndefOr[IncludeMemberAccounts] = js.undefined,
+        recommendationPreferences: js.UndefOr[RecommendationPreferences] = js.undefined
     ): ExportAutoScalingGroupRecommendationsRequest = {
       val __obj = js.Dynamic.literal(
         "s3DestinationConfig" -> s3DestinationConfig.asInstanceOf[js.Any]
@@ -347,6 +542,7 @@ package object computeoptimizer {
       fileFormat.foreach(__v => __obj.updateDynamic("fileFormat")(__v.asInstanceOf[js.Any]))
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
       includeMemberAccounts.foreach(__v => __obj.updateDynamic("includeMemberAccounts")(__v.asInstanceOf[js.Any]))
+      recommendationPreferences.foreach(__v => __obj.updateDynamic("recommendationPreferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportAutoScalingGroupRecommendationsRequest]
     }
   }
@@ -389,6 +585,58 @@ package object computeoptimizer {
   }
 
   @js.native
+  trait ExportEBSVolumeRecommendationsRequest extends js.Object {
+    var s3DestinationConfig: S3DestinationConfig
+    var accountIds: js.UndefOr[AccountIds]
+    var fieldsToExport: js.UndefOr[ExportableVolumeFields]
+    var fileFormat: js.UndefOr[FileFormat]
+    var filters: js.UndefOr[EBSFilters]
+    var includeMemberAccounts: js.UndefOr[IncludeMemberAccounts]
+  }
+
+  object ExportEBSVolumeRecommendationsRequest {
+    @inline
+    def apply(
+        s3DestinationConfig: S3DestinationConfig,
+        accountIds: js.UndefOr[AccountIds] = js.undefined,
+        fieldsToExport: js.UndefOr[ExportableVolumeFields] = js.undefined,
+        fileFormat: js.UndefOr[FileFormat] = js.undefined,
+        filters: js.UndefOr[EBSFilters] = js.undefined,
+        includeMemberAccounts: js.UndefOr[IncludeMemberAccounts] = js.undefined
+    ): ExportEBSVolumeRecommendationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "s3DestinationConfig" -> s3DestinationConfig.asInstanceOf[js.Any]
+      )
+
+      accountIds.foreach(__v => __obj.updateDynamic("accountIds")(__v.asInstanceOf[js.Any]))
+      fieldsToExport.foreach(__v => __obj.updateDynamic("fieldsToExport")(__v.asInstanceOf[js.Any]))
+      fileFormat.foreach(__v => __obj.updateDynamic("fileFormat")(__v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      includeMemberAccounts.foreach(__v => __obj.updateDynamic("includeMemberAccounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportEBSVolumeRecommendationsRequest]
+    }
+  }
+
+  @js.native
+  trait ExportEBSVolumeRecommendationsResponse extends js.Object {
+    var jobId: js.UndefOr[JobId]
+    var s3Destination: js.UndefOr[S3Destination]
+  }
+
+  object ExportEBSVolumeRecommendationsResponse {
+    @inline
+    def apply(
+        jobId: js.UndefOr[JobId] = js.undefined,
+        s3Destination: js.UndefOr[S3Destination] = js.undefined
+    ): ExportEBSVolumeRecommendationsResponse = {
+      val __obj = js.Dynamic.literal()
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      s3Destination.foreach(__v => __obj.updateDynamic("s3Destination")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportEBSVolumeRecommendationsResponse]
+    }
+  }
+
+  @js.native
   trait ExportEC2InstanceRecommendationsRequest extends js.Object {
     var s3DestinationConfig: S3DestinationConfig
     var accountIds: js.UndefOr[AccountIds]
@@ -396,6 +644,7 @@ package object computeoptimizer {
     var fileFormat: js.UndefOr[FileFormat]
     var filters: js.UndefOr[Filters]
     var includeMemberAccounts: js.UndefOr[IncludeMemberAccounts]
+    var recommendationPreferences: js.UndefOr[RecommendationPreferences]
   }
 
   object ExportEC2InstanceRecommendationsRequest {
@@ -406,7 +655,8 @@ package object computeoptimizer {
         fieldsToExport: js.UndefOr[ExportableInstanceFields] = js.undefined,
         fileFormat: js.UndefOr[FileFormat] = js.undefined,
         filters: js.UndefOr[Filters] = js.undefined,
-        includeMemberAccounts: js.UndefOr[IncludeMemberAccounts] = js.undefined
+        includeMemberAccounts: js.UndefOr[IncludeMemberAccounts] = js.undefined,
+        recommendationPreferences: js.UndefOr[RecommendationPreferences] = js.undefined
     ): ExportEC2InstanceRecommendationsRequest = {
       val __obj = js.Dynamic.literal(
         "s3DestinationConfig" -> s3DestinationConfig.asInstanceOf[js.Any]
@@ -417,6 +667,7 @@ package object computeoptimizer {
       fileFormat.foreach(__v => __obj.updateDynamic("fileFormat")(__v.asInstanceOf[js.Any]))
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
       includeMemberAccounts.foreach(__v => __obj.updateDynamic("includeMemberAccounts")(__v.asInstanceOf[js.Any]))
+      recommendationPreferences.foreach(__v => __obj.updateDynamic("recommendationPreferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ExportEC2InstanceRecommendationsRequest]
     }
   }
@@ -440,7 +691,59 @@ package object computeoptimizer {
     }
   }
 
-  /** Describes a filter that returns a more specific list of recommendations. This filter is used with the <code>GetAutoScalingGroupRecommendations</code> and <code>GetEC2InstanceRecommendations</code> actions.
+  @js.native
+  trait ExportLambdaFunctionRecommendationsRequest extends js.Object {
+    var s3DestinationConfig: S3DestinationConfig
+    var accountIds: js.UndefOr[AccountIds]
+    var fieldsToExport: js.UndefOr[ExportableLambdaFunctionFields]
+    var fileFormat: js.UndefOr[FileFormat]
+    var filters: js.UndefOr[LambdaFunctionRecommendationFilters]
+    var includeMemberAccounts: js.UndefOr[IncludeMemberAccounts]
+  }
+
+  object ExportLambdaFunctionRecommendationsRequest {
+    @inline
+    def apply(
+        s3DestinationConfig: S3DestinationConfig,
+        accountIds: js.UndefOr[AccountIds] = js.undefined,
+        fieldsToExport: js.UndefOr[ExportableLambdaFunctionFields] = js.undefined,
+        fileFormat: js.UndefOr[FileFormat] = js.undefined,
+        filters: js.UndefOr[LambdaFunctionRecommendationFilters] = js.undefined,
+        includeMemberAccounts: js.UndefOr[IncludeMemberAccounts] = js.undefined
+    ): ExportLambdaFunctionRecommendationsRequest = {
+      val __obj = js.Dynamic.literal(
+        "s3DestinationConfig" -> s3DestinationConfig.asInstanceOf[js.Any]
+      )
+
+      accountIds.foreach(__v => __obj.updateDynamic("accountIds")(__v.asInstanceOf[js.Any]))
+      fieldsToExport.foreach(__v => __obj.updateDynamic("fieldsToExport")(__v.asInstanceOf[js.Any]))
+      fileFormat.foreach(__v => __obj.updateDynamic("fileFormat")(__v.asInstanceOf[js.Any]))
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      includeMemberAccounts.foreach(__v => __obj.updateDynamic("includeMemberAccounts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportLambdaFunctionRecommendationsRequest]
+    }
+  }
+
+  @js.native
+  trait ExportLambdaFunctionRecommendationsResponse extends js.Object {
+    var jobId: js.UndefOr[JobId]
+    var s3Destination: js.UndefOr[S3Destination]
+  }
+
+  object ExportLambdaFunctionRecommendationsResponse {
+    @inline
+    def apply(
+        jobId: js.UndefOr[JobId] = js.undefined,
+        s3Destination: js.UndefOr[S3Destination] = js.undefined
+    ): ExportLambdaFunctionRecommendationsResponse = {
+      val __obj = js.Dynamic.literal()
+      jobId.foreach(__v => __obj.updateDynamic("jobId")(__v.asInstanceOf[js.Any]))
+      s3Destination.foreach(__v => __obj.updateDynamic("s3Destination")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExportLambdaFunctionRecommendationsResponse]
+    }
+  }
+
+  /** Describes a filter that returns a more specific list of recommendations. Use this filter with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions. You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action, <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a> action, and <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action.
     */
   @js.native
   trait Filter extends js.Object {
@@ -468,6 +771,7 @@ package object computeoptimizer {
     var filters: js.UndefOr[Filters]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
+    var recommendationPreferences: js.UndefOr[RecommendationPreferences]
   }
 
   object GetAutoScalingGroupRecommendationsRequest {
@@ -477,7 +781,8 @@ package object computeoptimizer {
         autoScalingGroupArns: js.UndefOr[AutoScalingGroupArns] = js.undefined,
         filters: js.UndefOr[Filters] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        recommendationPreferences: js.UndefOr[RecommendationPreferences] = js.undefined
     ): GetAutoScalingGroupRecommendationsRequest = {
       val __obj = js.Dynamic.literal()
       accountIds.foreach(__v => __obj.updateDynamic("accountIds")(__v.asInstanceOf[js.Any]))
@@ -485,6 +790,7 @@ package object computeoptimizer {
       filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      recommendationPreferences.foreach(__v => __obj.updateDynamic("recommendationPreferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetAutoScalingGroupRecommendationsRequest]
     }
   }
@@ -568,6 +874,7 @@ package object computeoptimizer {
     var instanceArns: js.UndefOr[InstanceArns]
     var maxResults: js.UndefOr[MaxResults]
     var nextToken: js.UndefOr[NextToken]
+    var recommendationPreferences: js.UndefOr[RecommendationPreferences]
   }
 
   object GetEC2InstanceRecommendationsRequest {
@@ -577,7 +884,8 @@ package object computeoptimizer {
         filters: js.UndefOr[Filters] = js.undefined,
         instanceArns: js.UndefOr[InstanceArns] = js.undefined,
         maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[NextToken] = js.undefined
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        recommendationPreferences: js.UndefOr[RecommendationPreferences] = js.undefined
     ): GetEC2InstanceRecommendationsRequest = {
       val __obj = js.Dynamic.literal()
       accountIds.foreach(__v => __obj.updateDynamic("accountIds")(__v.asInstanceOf[js.Any]))
@@ -585,6 +893,7 @@ package object computeoptimizer {
       instanceArns.foreach(__v => __obj.updateDynamic("instanceArns")(__v.asInstanceOf[js.Any]))
       maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
       nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      recommendationPreferences.foreach(__v => __obj.updateDynamic("recommendationPreferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEC2InstanceRecommendationsRequest]
     }
   }
@@ -618,6 +927,7 @@ package object computeoptimizer {
     var period: Period
     var startTime: Timestamp
     var stat: MetricStatistic
+    var recommendationPreferences: js.UndefOr[RecommendationPreferences]
   }
 
   object GetEC2RecommendationProjectedMetricsRequest {
@@ -627,7 +937,8 @@ package object computeoptimizer {
         instanceArn: InstanceArn,
         period: Period,
         startTime: Timestamp,
-        stat: MetricStatistic
+        stat: MetricStatistic,
+        recommendationPreferences: js.UndefOr[RecommendationPreferences] = js.undefined
     ): GetEC2RecommendationProjectedMetricsRequest = {
       val __obj = js.Dynamic.literal(
         "endTime" -> endTime.asInstanceOf[js.Any],
@@ -636,6 +947,8 @@ package object computeoptimizer {
         "startTime" -> startTime.asInstanceOf[js.Any],
         "stat" -> stat.asInstanceOf[js.Any]
       )
+
+      recommendationPreferences.foreach(__v => __obj.updateDynamic("recommendationPreferences")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEC2RecommendationProjectedMetricsRequest]
     }
   }
@@ -657,6 +970,39 @@ package object computeoptimizer {
   }
 
   @js.native
+  trait GetEffectiveRecommendationPreferencesRequest extends js.Object {
+    var resourceArn: ResourceArn
+  }
+
+  object GetEffectiveRecommendationPreferencesRequest {
+    @inline
+    def apply(
+        resourceArn: ResourceArn
+    ): GetEffectiveRecommendationPreferencesRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceArn" -> resourceArn.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetEffectiveRecommendationPreferencesRequest]
+    }
+  }
+
+  @js.native
+  trait GetEffectiveRecommendationPreferencesResponse extends js.Object {
+    var enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics]
+  }
+
+  object GetEffectiveRecommendationPreferencesResponse {
+    @inline
+    def apply(
+        enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics] = js.undefined
+    ): GetEffectiveRecommendationPreferencesResponse = {
+      val __obj = js.Dynamic.literal()
+      enhancedInfrastructureMetrics.foreach(__v => __obj.updateDynamic("enhancedInfrastructureMetrics")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEffectiveRecommendationPreferencesResponse]
+    }
+  }
+
+  @js.native
   trait GetEnrollmentStatusRequest extends js.Object
 
   object GetEnrollmentStatusRequest {
@@ -669,7 +1015,9 @@ package object computeoptimizer {
 
   @js.native
   trait GetEnrollmentStatusResponse extends js.Object {
+    var lastUpdatedTimestamp: js.UndefOr[LastUpdatedTimestamp]
     var memberAccountsEnrolled: js.UndefOr[MemberAccountsEnrolled]
+    var numberOfMemberAccountsOptedIn: js.UndefOr[NumberOfMemberAccountsOptedIn]
     var status: js.UndefOr[Status]
     var statusReason: js.UndefOr[StatusReason]
   }
@@ -677,15 +1025,60 @@ package object computeoptimizer {
   object GetEnrollmentStatusResponse {
     @inline
     def apply(
+        lastUpdatedTimestamp: js.UndefOr[LastUpdatedTimestamp] = js.undefined,
         memberAccountsEnrolled: js.UndefOr[MemberAccountsEnrolled] = js.undefined,
+        numberOfMemberAccountsOptedIn: js.UndefOr[NumberOfMemberAccountsOptedIn] = js.undefined,
         status: js.UndefOr[Status] = js.undefined,
         statusReason: js.UndefOr[StatusReason] = js.undefined
     ): GetEnrollmentStatusResponse = {
       val __obj = js.Dynamic.literal()
+      lastUpdatedTimestamp.foreach(__v => __obj.updateDynamic("lastUpdatedTimestamp")(__v.asInstanceOf[js.Any]))
       memberAccountsEnrolled.foreach(__v => __obj.updateDynamic("memberAccountsEnrolled")(__v.asInstanceOf[js.Any]))
+      numberOfMemberAccountsOptedIn.foreach(__v => __obj.updateDynamic("numberOfMemberAccountsOptedIn")(__v.asInstanceOf[js.Any]))
       status.foreach(__v => __obj.updateDynamic("status")(__v.asInstanceOf[js.Any]))
       statusReason.foreach(__v => __obj.updateDynamic("statusReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetEnrollmentStatusResponse]
+    }
+  }
+
+  @js.native
+  trait GetEnrollmentStatusesForOrganizationRequest extends js.Object {
+    var filters: js.UndefOr[EnrollmentFilters]
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object GetEnrollmentStatusesForOrganizationRequest {
+    @inline
+    def apply(
+        filters: js.UndefOr[EnrollmentFilters] = js.undefined,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetEnrollmentStatusesForOrganizationRequest = {
+      val __obj = js.Dynamic.literal()
+      filters.foreach(__v => __obj.updateDynamic("filters")(__v.asInstanceOf[js.Any]))
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEnrollmentStatusesForOrganizationRequest]
+    }
+  }
+
+  @js.native
+  trait GetEnrollmentStatusesForOrganizationResponse extends js.Object {
+    var accountEnrollmentStatuses: js.UndefOr[AccountEnrollmentStatuses]
+    var nextToken: js.UndefOr[NextToken]
+  }
+
+  object GetEnrollmentStatusesForOrganizationResponse {
+    @inline
+    def apply(
+        accountEnrollmentStatuses: js.UndefOr[AccountEnrollmentStatuses] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined
+    ): GetEnrollmentStatusesForOrganizationResponse = {
+      val __obj = js.Dynamic.literal()
+      accountEnrollmentStatuses.foreach(__v => __obj.updateDynamic("accountEnrollmentStatuses")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEnrollmentStatusesForOrganizationResponse]
     }
   }
 
@@ -761,6 +1154,52 @@ package object computeoptimizer {
   }
 
   @js.native
+  trait GetRecommendationPreferencesRequest extends js.Object {
+    var resourceType: ResourceType
+    var maxResults: js.UndefOr[MaxResults]
+    var nextToken: js.UndefOr[NextToken]
+    var scope: js.UndefOr[Scope]
+  }
+
+  object GetRecommendationPreferencesRequest {
+    @inline
+    def apply(
+        resourceType: ResourceType,
+        maxResults: js.UndefOr[MaxResults] = js.undefined,
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        scope: js.UndefOr[Scope] = js.undefined
+    ): GetRecommendationPreferencesRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
+      )
+
+      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      scope.foreach(__v => __obj.updateDynamic("scope")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRecommendationPreferencesRequest]
+    }
+  }
+
+  @js.native
+  trait GetRecommendationPreferencesResponse extends js.Object {
+    var nextToken: js.UndefOr[NextToken]
+    var recommendationPreferencesDetails: js.UndefOr[RecommendationPreferencesDetails]
+  }
+
+  object GetRecommendationPreferencesResponse {
+    @inline
+    def apply(
+        nextToken: js.UndefOr[NextToken] = js.undefined,
+        recommendationPreferencesDetails: js.UndefOr[RecommendationPreferencesDetails] = js.undefined
+    ): GetRecommendationPreferencesResponse = {
+      val __obj = js.Dynamic.literal()
+      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
+      recommendationPreferencesDetails.foreach(__v => __obj.updateDynamic("recommendationPreferencesDetails")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetRecommendationPreferencesResponse]
+    }
+  }
+
+  @js.native
   trait GetRecommendationSummariesRequest extends js.Object {
     var accountIds: js.UndefOr[AccountIds]
     var maxResults: js.UndefOr[MaxResults]
@@ -807,7 +1246,10 @@ package object computeoptimizer {
   trait InstanceRecommendation extends js.Object {
     var accountId: js.UndefOr[AccountId]
     var currentInstanceType: js.UndefOr[CurrentInstanceType]
+    var currentPerformanceRisk: js.UndefOr[CurrentPerformanceRisk]
+    var effectiveRecommendationPreferences: js.UndefOr[EffectiveRecommendationPreferences]
     var finding: js.UndefOr[Finding]
+    var findingReasonCodes: js.UndefOr[InstanceRecommendationFindingReasonCodes]
     var instanceArn: js.UndefOr[InstanceArn]
     var instanceName: js.UndefOr[InstanceName]
     var lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp]
@@ -822,7 +1264,10 @@ package object computeoptimizer {
     def apply(
         accountId: js.UndefOr[AccountId] = js.undefined,
         currentInstanceType: js.UndefOr[CurrentInstanceType] = js.undefined,
+        currentPerformanceRisk: js.UndefOr[CurrentPerformanceRisk] = js.undefined,
+        effectiveRecommendationPreferences: js.UndefOr[EffectiveRecommendationPreferences] = js.undefined,
         finding: js.UndefOr[Finding] = js.undefined,
+        findingReasonCodes: js.UndefOr[InstanceRecommendationFindingReasonCodes] = js.undefined,
         instanceArn: js.UndefOr[InstanceArn] = js.undefined,
         instanceName: js.UndefOr[InstanceName] = js.undefined,
         lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp] = js.undefined,
@@ -834,7 +1279,10 @@ package object computeoptimizer {
       val __obj = js.Dynamic.literal()
       accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
       currentInstanceType.foreach(__v => __obj.updateDynamic("currentInstanceType")(__v.asInstanceOf[js.Any]))
+      currentPerformanceRisk.foreach(__v => __obj.updateDynamic("currentPerformanceRisk")(__v.asInstanceOf[js.Any]))
+      effectiveRecommendationPreferences.foreach(__v => __obj.updateDynamic("effectiveRecommendationPreferences")(__v.asInstanceOf[js.Any]))
       finding.foreach(__v => __obj.updateDynamic("finding")(__v.asInstanceOf[js.Any]))
+      findingReasonCodes.foreach(__v => __obj.updateDynamic("findingReasonCodes")(__v.asInstanceOf[js.Any]))
       instanceArn.foreach(__v => __obj.updateDynamic("instanceArn")(__v.asInstanceOf[js.Any]))
       instanceName.foreach(__v => __obj.updateDynamic("instanceName")(__v.asInstanceOf[js.Any]))
       lastRefreshTimestamp.foreach(__v => __obj.updateDynamic("lastRefreshTimestamp")(__v.asInstanceOf[js.Any]))
@@ -852,8 +1300,10 @@ package object computeoptimizer {
   trait InstanceRecommendationOption extends js.Object {
     var instanceType: js.UndefOr[InstanceType]
     var performanceRisk: js.UndefOr[PerformanceRisk]
+    var platformDifferences: js.UndefOr[PlatformDifferences]
     var projectedUtilizationMetrics: js.UndefOr[ProjectedUtilizationMetrics]
     var rank: js.UndefOr[Rank]
+    var savingsOpportunity: js.UndefOr[SavingsOpportunity]
   }
 
   object InstanceRecommendationOption {
@@ -861,19 +1311,23 @@ package object computeoptimizer {
     def apply(
         instanceType: js.UndefOr[InstanceType] = js.undefined,
         performanceRisk: js.UndefOr[PerformanceRisk] = js.undefined,
+        platformDifferences: js.UndefOr[PlatformDifferences] = js.undefined,
         projectedUtilizationMetrics: js.UndefOr[ProjectedUtilizationMetrics] = js.undefined,
-        rank: js.UndefOr[Rank] = js.undefined
+        rank: js.UndefOr[Rank] = js.undefined,
+        savingsOpportunity: js.UndefOr[SavingsOpportunity] = js.undefined
     ): InstanceRecommendationOption = {
       val __obj = js.Dynamic.literal()
       instanceType.foreach(__v => __obj.updateDynamic("instanceType")(__v.asInstanceOf[js.Any]))
       performanceRisk.foreach(__v => __obj.updateDynamic("performanceRisk")(__v.asInstanceOf[js.Any]))
+      platformDifferences.foreach(__v => __obj.updateDynamic("platformDifferences")(__v.asInstanceOf[js.Any]))
       projectedUtilizationMetrics.foreach(__v => __obj.updateDynamic("projectedUtilizationMetrics")(__v.asInstanceOf[js.Any]))
       rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
+      savingsOpportunity.foreach(__v => __obj.updateDynamic("savingsOpportunity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[InstanceRecommendationOption]
     }
   }
 
-  /** Describes a filter that returns a more specific list of recommendation export jobs. This filter is used with the <code>DescribeRecommendationExportJobs</code> action.
+  /** Describes a filter that returns a more specific list of recommendation export jobs. Use this filter with the <a>DescribeRecommendationExportJobs</a> action. You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action, <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a> action, and <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.
     */
   @js.native
   trait JobFilter extends js.Object {
@@ -894,7 +1348,7 @@ package object computeoptimizer {
     }
   }
 
-  /** Describes a projected utilization metric of an AWS Lambda function recommendation option.
+  /** Describes a projected utilization metric of an Lambda function recommendation option.
     */
   @js.native
   trait LambdaFunctionMemoryProjectedMetric extends js.Object {
@@ -918,13 +1372,14 @@ package object computeoptimizer {
     }
   }
 
-  /** Describes a recommendation option for an AWS Lambda function.
+  /** Describes a recommendation option for an Lambda function.
     */
   @js.native
   trait LambdaFunctionMemoryRecommendationOption extends js.Object {
     var memorySize: js.UndefOr[MemorySize]
     var projectedUtilizationMetrics: js.UndefOr[LambdaFunctionMemoryProjectedMetrics]
     var rank: js.UndefOr[Rank]
+    var savingsOpportunity: js.UndefOr[SavingsOpportunity]
   }
 
   object LambdaFunctionMemoryRecommendationOption {
@@ -932,22 +1387,25 @@ package object computeoptimizer {
     def apply(
         memorySize: js.UndefOr[MemorySize] = js.undefined,
         projectedUtilizationMetrics: js.UndefOr[LambdaFunctionMemoryProjectedMetrics] = js.undefined,
-        rank: js.UndefOr[Rank] = js.undefined
+        rank: js.UndefOr[Rank] = js.undefined,
+        savingsOpportunity: js.UndefOr[SavingsOpportunity] = js.undefined
     ): LambdaFunctionMemoryRecommendationOption = {
       val __obj = js.Dynamic.literal()
       memorySize.foreach(__v => __obj.updateDynamic("memorySize")(__v.asInstanceOf[js.Any]))
       projectedUtilizationMetrics.foreach(__v => __obj.updateDynamic("projectedUtilizationMetrics")(__v.asInstanceOf[js.Any]))
       rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
+      savingsOpportunity.foreach(__v => __obj.updateDynamic("savingsOpportunity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[LambdaFunctionMemoryRecommendationOption]
     }
   }
 
-  /** Describes an AWS Lambda function recommendation.
+  /** Describes an Lambda function recommendation.
     */
   @js.native
   trait LambdaFunctionRecommendation extends js.Object {
     var accountId: js.UndefOr[AccountId]
     var currentMemorySize: js.UndefOr[MemorySize]
+    var currentPerformanceRisk: js.UndefOr[CurrentPerformanceRisk]
     var finding: js.UndefOr[LambdaFunctionRecommendationFinding]
     var findingReasonCodes: js.UndefOr[LambdaFunctionRecommendationFindingReasonCodes]
     var functionArn: js.UndefOr[FunctionArn]
@@ -964,6 +1422,7 @@ package object computeoptimizer {
     def apply(
         accountId: js.UndefOr[AccountId] = js.undefined,
         currentMemorySize: js.UndefOr[MemorySize] = js.undefined,
+        currentPerformanceRisk: js.UndefOr[CurrentPerformanceRisk] = js.undefined,
         finding: js.UndefOr[LambdaFunctionRecommendationFinding] = js.undefined,
         findingReasonCodes: js.UndefOr[LambdaFunctionRecommendationFindingReasonCodes] = js.undefined,
         functionArn: js.UndefOr[FunctionArn] = js.undefined,
@@ -977,6 +1436,7 @@ package object computeoptimizer {
       val __obj = js.Dynamic.literal()
       accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
       currentMemorySize.foreach(__v => __obj.updateDynamic("currentMemorySize")(__v.asInstanceOf[js.Any]))
+      currentPerformanceRisk.foreach(__v => __obj.updateDynamic("currentPerformanceRisk")(__v.asInstanceOf[js.Any]))
       finding.foreach(__v => __obj.updateDynamic("finding")(__v.asInstanceOf[js.Any]))
       findingReasonCodes.foreach(__v => __obj.updateDynamic("findingReasonCodes")(__v.asInstanceOf[js.Any]))
       functionArn.foreach(__v => __obj.updateDynamic("functionArn")(__v.asInstanceOf[js.Any]))
@@ -990,7 +1450,7 @@ package object computeoptimizer {
     }
   }
 
-  /** Describes a filter that returns a more specific list of AWS Lambda function recommendations.
+  /** Describes a filter that returns a more specific list of Lambda function recommendations. Use this filter with the <a>GetLambdaFunctionRecommendations</a> action. You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action, <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action, and <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a> actions.
     */
   @js.native
   trait LambdaFunctionRecommendationFilter extends js.Object {
@@ -1011,7 +1471,7 @@ package object computeoptimizer {
     }
   }
 
-  /** Describes a utilization metric of an AWS Lambda function.
+  /** Describes a utilization metric of an Lambda function.
     */
   @js.native
   trait LambdaFunctionUtilizationMetric extends js.Object {
@@ -1037,7 +1497,7 @@ package object computeoptimizer {
 
   /** Describes a projected utilization metric of a recommendation option, such as an Amazon EC2 instance. This represents the projected utilization of a recommendation option had you used that resource during the analyzed period. Compare the utilization metric data of your resource against its projected utilization metric data to determine the performance difference between your current resource and the recommended option.
     *
-    * '''Note:'''The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent|Enabling Memory Utilization with the CloudWatch Agent]].
+    * '''Note:'''The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <a>GetEC2RecommendationProjectedMetrics</a> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent|Enabling Memory Utilization with the CloudWatch Agent]].
     */
   @js.native
   trait ProjectedMetric extends js.Object {
@@ -1058,6 +1518,41 @@ package object computeoptimizer {
       timestamps.foreach(__v => __obj.updateDynamic("timestamps")(__v.asInstanceOf[js.Any]))
       values.foreach(__v => __obj.updateDynamic("values")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ProjectedMetric]
+    }
+  }
+
+  @js.native
+  trait PutRecommendationPreferencesRequest extends js.Object {
+    var resourceType: ResourceType
+    var enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics]
+    var scope: js.UndefOr[Scope]
+  }
+
+  object PutRecommendationPreferencesRequest {
+    @inline
+    def apply(
+        resourceType: ResourceType,
+        enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics] = js.undefined,
+        scope: js.UndefOr[Scope] = js.undefined
+    ): PutRecommendationPreferencesRequest = {
+      val __obj = js.Dynamic.literal(
+        "resourceType" -> resourceType.asInstanceOf[js.Any]
+      )
+
+      enhancedInfrastructureMetrics.foreach(__v => __obj.updateDynamic("enhancedInfrastructureMetrics")(__v.asInstanceOf[js.Any]))
+      scope.foreach(__v => __obj.updateDynamic("scope")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[PutRecommendationPreferencesRequest]
+    }
+  }
+
+  @js.native
+  trait PutRecommendationPreferencesResponse extends js.Object
+
+  object PutRecommendationPreferencesResponse {
+    @inline
+    def apply(): PutRecommendationPreferencesResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[PutRecommendationPreferencesResponse]
     }
   }
 
@@ -1082,7 +1577,7 @@ package object computeoptimizer {
     }
   }
 
-  /** Describes a recommendation export job. Use the <code>DescribeRecommendationExportJobs</code> action to view your recommendation export jobs. Use the <code>ExportAutoScalingGroupRecommendations</code> or <code>ExportEC2InstanceRecommendations</code> actions to request an export of your recommendations.
+  /** Describes a recommendation export job. Use the <a>DescribeRecommendationExportJobs</a> action to view your recommendation export jobs. Use the <a>ExportAutoScalingGroupRecommendations</a> or <a>ExportEC2InstanceRecommendations</a> actions to request an export of your recommendations.
     */
   @js.native
   trait RecommendationExportJob extends js.Object {
@@ -1118,6 +1613,48 @@ package object computeoptimizer {
     }
   }
 
+  /** Describes the recommendation preferences to return in the response of a <a>GetAutoScalingGroupRecommendations</a>, <a>GetEC2InstanceRecommendations</a>, and <a>GetEC2RecommendationProjectedMetrics</a> request.
+    */
+  @js.native
+  trait RecommendationPreferences extends js.Object {
+    var cpuVendorArchitectures: js.UndefOr[CpuVendorArchitectures]
+  }
+
+  object RecommendationPreferences {
+    @inline
+    def apply(
+        cpuVendorArchitectures: js.UndefOr[CpuVendorArchitectures] = js.undefined
+    ): RecommendationPreferences = {
+      val __obj = js.Dynamic.literal()
+      cpuVendorArchitectures.foreach(__v => __obj.updateDynamic("cpuVendorArchitectures")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecommendationPreferences]
+    }
+  }
+
+  /** Describes a recommendation preference.
+    */
+  @js.native
+  trait RecommendationPreferencesDetail extends js.Object {
+    var enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics]
+    var resourceType: js.UndefOr[ResourceType]
+    var scope: js.UndefOr[Scope]
+  }
+
+  object RecommendationPreferencesDetail {
+    @inline
+    def apply(
+        enhancedInfrastructureMetrics: js.UndefOr[EnhancedInfrastructureMetrics] = js.undefined,
+        resourceType: js.UndefOr[ResourceType] = js.undefined,
+        scope: js.UndefOr[Scope] = js.undefined
+    ): RecommendationPreferencesDetail = {
+      val __obj = js.Dynamic.literal()
+      enhancedInfrastructureMetrics.foreach(__v => __obj.updateDynamic("enhancedInfrastructureMetrics")(__v.asInstanceOf[js.Any]))
+      resourceType.foreach(__v => __obj.updateDynamic("resourceType")(__v.asInstanceOf[js.Any]))
+      scope.foreach(__v => __obj.updateDynamic("scope")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RecommendationPreferencesDetail]
+    }
+  }
+
   /** Describes the source of a recommendation, such as an Amazon EC2 instance or Auto Scaling group.
     */
   @js.native
@@ -1144,7 +1681,9 @@ package object computeoptimizer {
   @js.native
   trait RecommendationSummary extends js.Object {
     var accountId: js.UndefOr[AccountId]
+    var currentPerformanceRiskRatings: js.UndefOr[CurrentPerformanceRiskRatings]
     var recommendationResourceType: js.UndefOr[RecommendationSourceType]
+    var savingsOpportunity: js.UndefOr[SavingsOpportunity]
     var summaries: js.UndefOr[Summaries]
   }
 
@@ -1152,12 +1691,16 @@ package object computeoptimizer {
     @inline
     def apply(
         accountId: js.UndefOr[AccountId] = js.undefined,
+        currentPerformanceRiskRatings: js.UndefOr[CurrentPerformanceRiskRatings] = js.undefined,
         recommendationResourceType: js.UndefOr[RecommendationSourceType] = js.undefined,
+        savingsOpportunity: js.UndefOr[SavingsOpportunity] = js.undefined,
         summaries: js.UndefOr[Summaries] = js.undefined
     ): RecommendationSummary = {
       val __obj = js.Dynamic.literal()
       accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
+      currentPerformanceRiskRatings.foreach(__v => __obj.updateDynamic("currentPerformanceRiskRatings")(__v.asInstanceOf[js.Any]))
       recommendationResourceType.foreach(__v => __obj.updateDynamic("recommendationResourceType")(__v.asInstanceOf[js.Any]))
+      savingsOpportunity.foreach(__v => __obj.updateDynamic("savingsOpportunity")(__v.asInstanceOf[js.Any]))
       summaries.foreach(__v => __obj.updateDynamic("summaries")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecommendationSummary]
     }
@@ -1165,7 +1708,7 @@ package object computeoptimizer {
 
   /** Describes a projected utilization metric of a recommendation option.
     *
-    * '''Note:'''The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <code>GetEC2RecommendationProjectedMetrics</code> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent|Enabling Memory Utilization with the CloudWatch Agent]].
+    * '''Note:'''The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization metrics returned when you run the <a>GetEC2RecommendationProjectedMetrics</a> action. Additionally, the <code>Memory</code> metric is returned only for resources that have the unified CloudWatch agent installed on them. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent|Enabling Memory Utilization with the CloudWatch Agent]].
     */
   @js.native
   trait RecommendedOptionProjectedMetric extends js.Object {
@@ -1213,7 +1756,7 @@ package object computeoptimizer {
     }
   }
 
-  /** Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job. You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html|Amazon S3 Bucket Policy for Compute Optimizer]] in the <i>Compute Optimizer user guide</i>.
+  /** Describes the destination Amazon Simple Storage Service (Amazon S3) bucket name and key prefix for a recommendations export job. You must create the destination Amazon S3 bucket for your recommendations export before you create the export job. Compute Optimizer does not create the S3 bucket for you. After you create the S3 bucket, ensure that it has the required permission policy to allow Compute Optimizer to write the export file to it. If you plan to specify an object prefix when you create the export job, you must include the object prefix in the policy that you add to the S3 bucket. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/create-s3-bucket-policy-for-compute-optimizer.html|Amazon S3 Bucket Policy for Compute Optimizer]] in the <i>Compute Optimizer User Guide</i>.
     */
   @js.native
   trait S3DestinationConfig extends js.Object {
@@ -1231,6 +1774,51 @@ package object computeoptimizer {
       bucket.foreach(__v => __obj.updateDynamic("bucket")(__v.asInstanceOf[js.Any]))
       keyPrefix.foreach(__v => __obj.updateDynamic("keyPrefix")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3DestinationConfig]
+    }
+  }
+
+  /** Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource. Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation. <important> Savings opportunity data requires that you opt in to Cost Explorer, as well as activate ```Receive Amazon EC2 resource recommendations``` in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see [[https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html|Enabling Cost Explorer]] and
+    * [[https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html|Optimizing your cost with Rightsizing Recommendations]] in the <i>Cost Management User Guide</i>. </important>
+    */
+  @js.native
+  trait SavingsOpportunity extends js.Object {
+    var estimatedMonthlySavings: js.UndefOr[EstimatedMonthlySavings]
+    var savingsOpportunityPercentage: js.UndefOr[SavingsOpportunityPercentage]
+  }
+
+  object SavingsOpportunity {
+    @inline
+    def apply(
+        estimatedMonthlySavings: js.UndefOr[EstimatedMonthlySavings] = js.undefined,
+        savingsOpportunityPercentage: js.UndefOr[SavingsOpportunityPercentage] = js.undefined
+    ): SavingsOpportunity = {
+      val __obj = js.Dynamic.literal()
+      estimatedMonthlySavings.foreach(__v => __obj.updateDynamic("estimatedMonthlySavings")(__v.asInstanceOf[js.Any]))
+      savingsOpportunityPercentage.foreach(__v => __obj.updateDynamic("savingsOpportunityPercentage")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SavingsOpportunity]
+    }
+  }
+
+  /** Describes the scope of a recommendation preference. Recommendation preferences can be created at the organization level (for management accounts of an organization only), account level, and resource level. For more information, see [[https://docs.aws.amazon.com/compute-optimizer/latest/ug/enhanced-infrastructure-metrics.html|Activating enhanced infrastructure metrics]] in the <i>Compute Optimizer User Guide</i>.
+    *
+    * '''Note:'''You cannot create recommendation preferences for Auto Scaling groups at the organization and account levels. You can create recommendation preferences for Auto Scaling groups only at the resource level by specifying a scope name of <code>ResourceArn</code> and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure the preference for all instances that are part of the specified the Auto Scaling group.
+    */
+  @js.native
+  trait Scope extends js.Object {
+    var name: js.UndefOr[ScopeName]
+    var value: js.UndefOr[ScopeValue]
+  }
+
+  object Scope {
+    @inline
+    def apply(
+        name: js.UndefOr[ScopeName] = js.undefined,
+        value: js.UndefOr[ScopeValue] = js.undefined
+    ): Scope = {
+      val __obj = js.Dynamic.literal()
+      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
+      value.foreach(__v => __obj.updateDynamic("value")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[Scope]
     }
   }
 
@@ -1361,6 +1949,7 @@ package object computeoptimizer {
   trait VolumeRecommendation extends js.Object {
     var accountId: js.UndefOr[AccountId]
     var currentConfiguration: js.UndefOr[VolumeConfiguration]
+    var currentPerformanceRisk: js.UndefOr[CurrentPerformanceRisk]
     var finding: js.UndefOr[EBSFinding]
     var lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp]
     var lookBackPeriodInDays: js.UndefOr[LookBackPeriodInDays]
@@ -1374,6 +1963,7 @@ package object computeoptimizer {
     def apply(
         accountId: js.UndefOr[AccountId] = js.undefined,
         currentConfiguration: js.UndefOr[VolumeConfiguration] = js.undefined,
+        currentPerformanceRisk: js.UndefOr[CurrentPerformanceRisk] = js.undefined,
         finding: js.UndefOr[EBSFinding] = js.undefined,
         lastRefreshTimestamp: js.UndefOr[LastRefreshTimestamp] = js.undefined,
         lookBackPeriodInDays: js.UndefOr[LookBackPeriodInDays] = js.undefined,
@@ -1384,6 +1974,7 @@ package object computeoptimizer {
       val __obj = js.Dynamic.literal()
       accountId.foreach(__v => __obj.updateDynamic("accountId")(__v.asInstanceOf[js.Any]))
       currentConfiguration.foreach(__v => __obj.updateDynamic("currentConfiguration")(__v.asInstanceOf[js.Any]))
+      currentPerformanceRisk.foreach(__v => __obj.updateDynamic("currentPerformanceRisk")(__v.asInstanceOf[js.Any]))
       finding.foreach(__v => __obj.updateDynamic("finding")(__v.asInstanceOf[js.Any]))
       lastRefreshTimestamp.foreach(__v => __obj.updateDynamic("lastRefreshTimestamp")(__v.asInstanceOf[js.Any]))
       lookBackPeriodInDays.foreach(__v => __obj.updateDynamic("lookBackPeriodInDays")(__v.asInstanceOf[js.Any]))
@@ -1401,6 +1992,7 @@ package object computeoptimizer {
     var configuration: js.UndefOr[VolumeConfiguration]
     var performanceRisk: js.UndefOr[PerformanceRisk]
     var rank: js.UndefOr[Rank]
+    var savingsOpportunity: js.UndefOr[SavingsOpportunity]
   }
 
   object VolumeRecommendationOption {
@@ -1408,12 +2000,14 @@ package object computeoptimizer {
     def apply(
         configuration: js.UndefOr[VolumeConfiguration] = js.undefined,
         performanceRisk: js.UndefOr[PerformanceRisk] = js.undefined,
-        rank: js.UndefOr[Rank] = js.undefined
+        rank: js.UndefOr[Rank] = js.undefined,
+        savingsOpportunity: js.UndefOr[SavingsOpportunity] = js.undefined
     ): VolumeRecommendationOption = {
       val __obj = js.Dynamic.literal()
       configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
       performanceRisk.foreach(__v => __obj.updateDynamic("performanceRisk")(__v.asInstanceOf[js.Any]))
       rank.foreach(__v => __obj.updateDynamic("rank")(__v.asInstanceOf[js.Any]))
+      savingsOpportunity.foreach(__v => __obj.updateDynamic("savingsOpportunity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[VolumeRecommendationOption]
     }
   }

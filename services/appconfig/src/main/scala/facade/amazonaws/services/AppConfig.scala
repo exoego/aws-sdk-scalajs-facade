@@ -12,6 +12,7 @@ package object appconfig {
   type Arn = String
   type Blob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type ConfigurationProfileSummaryList = js.Array[ConfigurationProfileSummary]
+  type ConfigurationProfileType = String
   type DeploymentEvents = js.Array[DeploymentEvent]
   type DeploymentList = js.Array[DeploymentSummary]
   type DeploymentStrategyId = String
@@ -30,6 +31,7 @@ package object appconfig {
   type Percentage = Float
   type RoleArn = String
   type StringWithLengthBetween0And32768 = String
+  type StringWithLengthBetween1And2048 = String
   type StringWithLengthBetween1And255 = String
   type StringWithLengthBetween1And64 = String
   type TagKey = String
@@ -195,6 +197,7 @@ package object appconfig {
     var LocationUri: js.UndefOr[Uri]
     var Name: js.UndefOr[Name]
     var RetrievalRoleArn: js.UndefOr[RoleArn]
+    var Type: js.UndefOr[ConfigurationProfileType]
     var Validators: js.UndefOr[ValidatorList]
   }
 
@@ -207,6 +210,7 @@ package object appconfig {
         LocationUri: js.UndefOr[Uri] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined,
         RetrievalRoleArn: js.UndefOr[RoleArn] = js.undefined,
+        Type: js.UndefOr[ConfigurationProfileType] = js.undefined,
         Validators: js.UndefOr[ValidatorList] = js.undefined
     ): ConfigurationProfile = {
       val __obj = js.Dynamic.literal()
@@ -216,6 +220,7 @@ package object appconfig {
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       RetrievalRoleArn.foreach(__v => __obj.updateDynamic("RetrievalRoleArn")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       Validators.foreach(__v => __obj.updateDynamic("Validators")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationProfile]
     }
@@ -229,6 +234,7 @@ package object appconfig {
     var Id: js.UndefOr[Id]
     var LocationUri: js.UndefOr[Uri]
     var Name: js.UndefOr[Name]
+    var Type: js.UndefOr[ConfigurationProfileType]
     var ValidatorTypes: js.UndefOr[ValidatorTypeList]
   }
 
@@ -239,6 +245,7 @@ package object appconfig {
         Id: js.UndefOr[Id] = js.undefined,
         LocationUri: js.UndefOr[Uri] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined,
+        Type: js.UndefOr[ConfigurationProfileType] = js.undefined,
         ValidatorTypes: js.UndefOr[ValidatorTypeList] = js.undefined
     ): ConfigurationProfileSummary = {
       val __obj = js.Dynamic.literal()
@@ -246,6 +253,7 @@ package object appconfig {
       Id.foreach(__v => __obj.updateDynamic("Id")(__v.asInstanceOf[js.Any]))
       LocationUri.foreach(__v => __obj.updateDynamic("LocationUri")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       ValidatorTypes.foreach(__v => __obj.updateDynamic("ValidatorTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConfigurationProfileSummary]
     }
@@ -302,6 +310,7 @@ package object appconfig {
     var Description: js.UndefOr[Description]
     var RetrievalRoleArn: js.UndefOr[RoleArn]
     var Tags: js.UndefOr[TagMap]
+    var Type: js.UndefOr[ConfigurationProfileType]
     var Validators: js.UndefOr[ValidatorList]
   }
 
@@ -314,6 +323,7 @@ package object appconfig {
         Description: js.UndefOr[Description] = js.undefined,
         RetrievalRoleArn: js.UndefOr[RoleArn] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined,
+        Type: js.UndefOr[ConfigurationProfileType] = js.undefined,
         Validators: js.UndefOr[ValidatorList] = js.undefined
     ): CreateConfigurationProfileRequest = {
       val __obj = js.Dynamic.literal(
@@ -325,6 +335,7 @@ package object appconfig {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       RetrievalRoleArn.foreach(__v => __obj.updateDynamic("RetrievalRoleArn")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       Validators.foreach(__v => __obj.updateDynamic("Validators")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateConfigurationProfileRequest]
     }
@@ -1050,6 +1061,7 @@ package object appconfig {
     var ApplicationId: Id
     var MaxResults: js.UndefOr[MaxResults]
     var NextToken: js.UndefOr[NextToken]
+    var Type: js.UndefOr[ConfigurationProfileType]
   }
 
   object ListConfigurationProfilesRequest {
@@ -1057,7 +1069,8 @@ package object appconfig {
     def apply(
         ApplicationId: Id,
         MaxResults: js.UndefOr[MaxResults] = js.undefined,
-        NextToken: js.UndefOr[NextToken] = js.undefined
+        NextToken: js.UndefOr[NextToken] = js.undefined,
+        Type: js.UndefOr[ConfigurationProfileType] = js.undefined
     ): ListConfigurationProfilesRequest = {
       val __obj = js.Dynamic.literal(
         "ApplicationId" -> ApplicationId.asInstanceOf[js.Any]
@@ -1065,6 +1078,7 @@ package object appconfig {
 
       MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
       NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ListConfigurationProfilesRequest]
     }
   }
@@ -1187,18 +1201,20 @@ package object appconfig {
     */
   @js.native
   trait Monitor extends js.Object {
-    var AlarmArn: js.UndefOr[Arn]
+    var AlarmArn: StringWithLengthBetween1And2048
     var AlarmRoleArn: js.UndefOr[RoleArn]
   }
 
   object Monitor {
     @inline
     def apply(
-        AlarmArn: js.UndefOr[Arn] = js.undefined,
+        AlarmArn: StringWithLengthBetween1And2048,
         AlarmRoleArn: js.UndefOr[RoleArn] = js.undefined
     ): Monitor = {
-      val __obj = js.Dynamic.literal()
-      AlarmArn.foreach(__v => __obj.updateDynamic("AlarmArn")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "AlarmArn" -> AlarmArn.asInstanceOf[js.Any]
+      )
+
       AlarmRoleArn.foreach(__v => __obj.updateDynamic("AlarmRoleArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Monitor]
     }
@@ -1462,7 +1478,7 @@ package object appconfig {
     }
   }
 
-  /** A validator provides a syntactic or semantic check to ensure the configuration you want to deploy functions as intended. To validate your application configuration data, you provide a schema or a Lambda function that runs against the configuration. The configuration deployment or update can only proceed when the configuration data is valid.
+  /** A validator provides a syntactic or semantic check to ensure the configuration that you want to deploy functions as intended. To validate your application configuration data, you provide a schema or a Lambda function that runs against the configuration. The configuration deployment or update can only proceed when the configuration data is valid.
     */
   @js.native
   trait Validator extends js.Object {

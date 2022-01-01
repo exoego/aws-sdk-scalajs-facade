@@ -17,8 +17,19 @@ object MeasureValueType {
   val BIGINT = "BIGINT".asInstanceOf[MeasureValueType]
   val VARCHAR = "VARCHAR".asInstanceOf[MeasureValueType]
   val BOOLEAN = "BOOLEAN".asInstanceOf[MeasureValueType]
+  val TIMESTAMP = "TIMESTAMP".asInstanceOf[MeasureValueType]
+  val MULTI = "MULTI".asInstanceOf[MeasureValueType]
 
-  @inline def values: js.Array[MeasureValueType] = js.Array(DOUBLE, BIGINT, VARCHAR, BOOLEAN)
+  @inline def values: js.Array[MeasureValueType] = js.Array(DOUBLE, BIGINT, VARCHAR, BOOLEAN, TIMESTAMP, MULTI)
+}
+
+@js.native
+sealed trait S3EncryptionOption extends js.Any
+object S3EncryptionOption {
+  val SSE_S3 = "SSE_S3".asInstanceOf[S3EncryptionOption]
+  val SSE_KMS = "SSE_KMS".asInstanceOf[S3EncryptionOption]
+
+  @inline def values: js.Array[S3EncryptionOption] = js.Array(SSE_S3, SSE_KMS)
 }
 
 @js.native

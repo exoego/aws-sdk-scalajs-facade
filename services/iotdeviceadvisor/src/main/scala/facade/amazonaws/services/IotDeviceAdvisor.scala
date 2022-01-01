@@ -9,9 +9,8 @@ import facade.amazonaws._
 
 package object iotdeviceadvisor {
   type AmazonResourceName = String
-  type CategoryName = String
-  type ConfigString = String
   type DeviceUnderTestList = js.Array[DeviceUnderTest]
+  type Endpoint = String
   type ErrorReason = String
   type Failure = String
   type GroupName = String
@@ -19,6 +18,7 @@ package object iotdeviceadvisor {
   type IntendedForQualificationBoolean = Boolean
   type LogUrl = String
   type MaxResults = Int
+  type ParallelRun = Boolean
   type QualificationReportDownloadUrl = String
   type RootGroup = String
   type SelectedTestList = js.Array[UUID]
@@ -32,12 +32,7 @@ package object iotdeviceadvisor {
   type TagKeyList = js.Array[String128]
   type TagMap = js.Dictionary[String256]
   type TestCaseDefinitionName = String
-  type TestCaseList = js.Array[TestCase]
-  type TestCaseName = String
   type TestCaseRuns = js.Array[TestCaseRun]
-  type TestCaseVersion = String
-  type TestCategory = js.Array[TestCaseCategory]
-  type TestConfiguration = js.Dictionary[ConfigString]
   type Timestamp = js.Date
   type Token = String
   type UUID = String
@@ -47,14 +42,15 @@ package object iotdeviceadvisor {
 
     @inline def createSuiteDefinitionFuture(params: CreateSuiteDefinitionRequest): Future[CreateSuiteDefinitionResponse] = service.createSuiteDefinition(params).promise().toFuture
     @inline def deleteSuiteDefinitionFuture(params: DeleteSuiteDefinitionRequest): Future[DeleteSuiteDefinitionResponse] = service.deleteSuiteDefinition(params).promise().toFuture
+    @inline def getEndpointFuture(params: GetEndpointRequest): Future[GetEndpointResponse] = service.getEndpoint(params).promise().toFuture
     @inline def getSuiteDefinitionFuture(params: GetSuiteDefinitionRequest): Future[GetSuiteDefinitionResponse] = service.getSuiteDefinition(params).promise().toFuture
     @inline def getSuiteRunFuture(params: GetSuiteRunRequest): Future[GetSuiteRunResponse] = service.getSuiteRun(params).promise().toFuture
     @inline def getSuiteRunReportFuture(params: GetSuiteRunReportRequest): Future[GetSuiteRunReportResponse] = service.getSuiteRunReport(params).promise().toFuture
     @inline def listSuiteDefinitionsFuture(params: ListSuiteDefinitionsRequest): Future[ListSuiteDefinitionsResponse] = service.listSuiteDefinitions(params).promise().toFuture
     @inline def listSuiteRunsFuture(params: ListSuiteRunsRequest): Future[ListSuiteRunsResponse] = service.listSuiteRuns(params).promise().toFuture
     @inline def listTagsForResourceFuture(params: ListTagsForResourceRequest): Future[ListTagsForResourceResponse] = service.listTagsForResource(params).promise().toFuture
-    @inline def listTestCasesFuture(params: ListTestCasesRequest): Future[ListTestCasesResponse] = service.listTestCases(params).promise().toFuture
     @inline def startSuiteRunFuture(params: StartSuiteRunRequest): Future[StartSuiteRunResponse] = service.startSuiteRun(params).promise().toFuture
+    @inline def stopSuiteRunFuture(params: StopSuiteRunRequest): Future[StopSuiteRunResponse] = service.stopSuiteRun(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[TagResourceResponse] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[UntagResourceResponse] = service.untagResource(params).promise().toFuture
     @inline def updateSuiteDefinitionFuture(params: UpdateSuiteDefinitionRequest): Future[UpdateSuiteDefinitionResponse] = service.updateSuiteDefinition(params).promise().toFuture
@@ -68,14 +64,15 @@ package object iotdeviceadvisor {
 
     def createSuiteDefinition(params: CreateSuiteDefinitionRequest): Request[CreateSuiteDefinitionResponse] = js.native
     def deleteSuiteDefinition(params: DeleteSuiteDefinitionRequest): Request[DeleteSuiteDefinitionResponse] = js.native
+    def getEndpoint(params: GetEndpointRequest): Request[GetEndpointResponse] = js.native
     def getSuiteDefinition(params: GetSuiteDefinitionRequest): Request[GetSuiteDefinitionResponse] = js.native
     def getSuiteRun(params: GetSuiteRunRequest): Request[GetSuiteRunResponse] = js.native
     def getSuiteRunReport(params: GetSuiteRunReportRequest): Request[GetSuiteRunReportResponse] = js.native
     def listSuiteDefinitions(params: ListSuiteDefinitionsRequest): Request[ListSuiteDefinitionsResponse] = js.native
     def listSuiteRuns(params: ListSuiteRunsRequest): Request[ListSuiteRunsResponse] = js.native
     def listTagsForResource(params: ListTagsForResourceRequest): Request[ListTagsForResourceResponse] = js.native
-    def listTestCases(params: ListTestCasesRequest): Request[ListTestCasesResponse] = js.native
     def startSuiteRun(params: StartSuiteRunRequest): Request[StartSuiteRunResponse] = js.native
+    def stopSuiteRun(params: StopSuiteRunRequest): Request[StopSuiteRunResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[TagResourceResponse] = js.native
     def untagResource(params: UntagResourceRequest): Request[UntagResourceResponse] = js.native
     def updateSuiteDefinition(params: UpdateSuiteDefinitionRequest): Request[UpdateSuiteDefinitionResponse] = js.native
@@ -158,7 +155,7 @@ package object iotdeviceadvisor {
     }
   }
 
-  /** Lists all the devices under test
+  /** Information of a test device. A thing ARN or a certificate ARN is required.
     */
   @js.native
   trait DeviceUnderTest extends js.Object {
@@ -176,6 +173,41 @@ package object iotdeviceadvisor {
       certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
       thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DeviceUnderTest]
+    }
+  }
+
+  @js.native
+  trait GetEndpointRequest extends js.Object {
+    var certificateArn: js.UndefOr[AmazonResourceName]
+    var thingArn: js.UndefOr[AmazonResourceName]
+  }
+
+  object GetEndpointRequest {
+    @inline
+    def apply(
+        certificateArn: js.UndefOr[AmazonResourceName] = js.undefined,
+        thingArn: js.UndefOr[AmazonResourceName] = js.undefined
+    ): GetEndpointRequest = {
+      val __obj = js.Dynamic.literal()
+      certificateArn.foreach(__v => __obj.updateDynamic("certificateArn")(__v.asInstanceOf[js.Any]))
+      thingArn.foreach(__v => __obj.updateDynamic("thingArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEndpointRequest]
+    }
+  }
+
+  @js.native
+  trait GetEndpointResponse extends js.Object {
+    var endpoint: js.UndefOr[Endpoint]
+  }
+
+  object GetEndpointResponse {
+    @inline
+    def apply(
+        endpoint: js.UndefOr[Endpoint] = js.undefined
+    ): GetEndpointResponse = {
+      val __obj = js.Dynamic.literal()
+      endpoint.foreach(__v => __obj.updateDynamic("endpoint")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetEndpointResponse]
     }
   }
 
@@ -479,53 +511,6 @@ package object iotdeviceadvisor {
   }
 
   @js.native
-  trait ListTestCasesRequest extends js.Object {
-    var intendedForQualification: js.UndefOr[IntendedForQualificationBoolean]
-    var maxResults: js.UndefOr[MaxResults]
-    var nextToken: js.UndefOr[Token]
-  }
-
-  object ListTestCasesRequest {
-    @inline
-    def apply(
-        intendedForQualification: js.UndefOr[IntendedForQualificationBoolean] = js.undefined,
-        maxResults: js.UndefOr[MaxResults] = js.undefined,
-        nextToken: js.UndefOr[Token] = js.undefined
-    ): ListTestCasesRequest = {
-      val __obj = js.Dynamic.literal()
-      intendedForQualification.foreach(__v => __obj.updateDynamic("intendedForQualification")(__v.asInstanceOf[js.Any]))
-      maxResults.foreach(__v => __obj.updateDynamic("maxResults")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestCasesRequest]
-    }
-  }
-
-  @js.native
-  trait ListTestCasesResponse extends js.Object {
-    var categories: js.UndefOr[TestCategory]
-    var groupConfiguration: js.UndefOr[TestConfiguration]
-    var nextToken: js.UndefOr[Token]
-    var rootGroupConfiguration: js.UndefOr[TestConfiguration]
-  }
-
-  object ListTestCasesResponse {
-    @inline
-    def apply(
-        categories: js.UndefOr[TestCategory] = js.undefined,
-        groupConfiguration: js.UndefOr[TestConfiguration] = js.undefined,
-        nextToken: js.UndefOr[Token] = js.undefined,
-        rootGroupConfiguration: js.UndefOr[TestConfiguration] = js.undefined
-    ): ListTestCasesResponse = {
-      val __obj = js.Dynamic.literal()
-      categories.foreach(__v => __obj.updateDynamic("categories")(__v.asInstanceOf[js.Any]))
-      groupConfiguration.foreach(__v => __obj.updateDynamic("groupConfiguration")(__v.asInstanceOf[js.Any]))
-      nextToken.foreach(__v => __obj.updateDynamic("nextToken")(__v.asInstanceOf[js.Any]))
-      rootGroupConfiguration.foreach(__v => __obj.updateDynamic("rootGroupConfiguration")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[ListTestCasesResponse]
-    }
-  }
-
-  @js.native
   trait StartSuiteRunRequest extends js.Object {
     var suiteDefinitionId: UUID
     var suiteDefinitionVersion: js.UndefOr[SuiteDefinitionVersion]
@@ -574,6 +559,37 @@ package object iotdeviceadvisor {
     }
   }
 
+  @js.native
+  trait StopSuiteRunRequest extends js.Object {
+    var suiteDefinitionId: UUID
+    var suiteRunId: UUID
+  }
+
+  object StopSuiteRunRequest {
+    @inline
+    def apply(
+        suiteDefinitionId: UUID,
+        suiteRunId: UUID
+    ): StopSuiteRunRequest = {
+      val __obj = js.Dynamic.literal(
+        "suiteDefinitionId" -> suiteDefinitionId.asInstanceOf[js.Any],
+        "suiteRunId" -> suiteRunId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[StopSuiteRunRequest]
+    }
+  }
+
+  @js.native
+  trait StopSuiteRunResponse extends js.Object
+
+  object StopSuiteRunResponse {
+    @inline
+    def apply(): StopSuiteRunResponse = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[StopSuiteRunResponse]
+    }
+  }
+
   /** Gets Suite Definition Configuration.
     */
   @js.native
@@ -604,7 +620,7 @@ package object iotdeviceadvisor {
     }
   }
 
-  /** Get suite definition information.
+  /** Information about the suite definition.
     */
   @js.native
   trait SuiteDefinitionInformation extends js.Object {
@@ -638,27 +654,27 @@ package object iotdeviceadvisor {
     */
   @js.native
   trait SuiteRunConfiguration extends js.Object {
+    var parallelRun: js.UndefOr[ParallelRun]
     var primaryDevice: js.UndefOr[DeviceUnderTest]
-    var secondaryDevice: js.UndefOr[DeviceUnderTest]
     var selectedTestList: js.UndefOr[SelectedTestList]
   }
 
   object SuiteRunConfiguration {
     @inline
     def apply(
+        parallelRun: js.UndefOr[ParallelRun] = js.undefined,
         primaryDevice: js.UndefOr[DeviceUnderTest] = js.undefined,
-        secondaryDevice: js.UndefOr[DeviceUnderTest] = js.undefined,
         selectedTestList: js.UndefOr[SelectedTestList] = js.undefined
     ): SuiteRunConfiguration = {
       val __obj = js.Dynamic.literal()
+      parallelRun.foreach(__v => __obj.updateDynamic("parallelRun")(__v.asInstanceOf[js.Any]))
       primaryDevice.foreach(__v => __obj.updateDynamic("primaryDevice")(__v.asInstanceOf[js.Any]))
-      secondaryDevice.foreach(__v => __obj.updateDynamic("secondaryDevice")(__v.asInstanceOf[js.Any]))
       selectedTestList.foreach(__v => __obj.updateDynamic("selectedTestList")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SuiteRunConfiguration]
     }
   }
 
-  /** Get suite run information.
+  /** Information about the suite run. Requires permission to access the [[https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions|SuiteRunInformation]] action.
     */
   @js.native
   trait SuiteRunInformation extends js.Object {
@@ -734,73 +750,7 @@ package object iotdeviceadvisor {
     }
   }
 
-  /** Shows tests in a test group.
-    */
-  @js.native
-  trait TestCase extends js.Object {
-    var configuration: js.UndefOr[TestConfiguration]
-    var name: js.UndefOr[TestCaseName]
-    var test: js.UndefOr[TestCaseDefinition]
-  }
-
-  object TestCase {
-    @inline
-    def apply(
-        configuration: js.UndefOr[TestConfiguration] = js.undefined,
-        name: js.UndefOr[TestCaseName] = js.undefined,
-        test: js.UndefOr[TestCaseDefinition] = js.undefined
-    ): TestCase = {
-      val __obj = js.Dynamic.literal()
-      configuration.foreach(__v => __obj.updateDynamic("configuration")(__v.asInstanceOf[js.Any]))
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      test.foreach(__v => __obj.updateDynamic("test")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestCase]
-    }
-  }
-
-  /** Gets the test case category.
-    */
-  @js.native
-  trait TestCaseCategory extends js.Object {
-    var name: js.UndefOr[CategoryName]
-    var tests: js.UndefOr[TestCaseList]
-  }
-
-  object TestCaseCategory {
-    @inline
-    def apply(
-        name: js.UndefOr[CategoryName] = js.undefined,
-        tests: js.UndefOr[TestCaseList] = js.undefined
-    ): TestCaseCategory = {
-      val __obj = js.Dynamic.literal()
-      name.foreach(__v => __obj.updateDynamic("name")(__v.asInstanceOf[js.Any]))
-      tests.foreach(__v => __obj.updateDynamic("tests")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestCaseCategory]
-    }
-  }
-
-  /** Provides test case definition.
-    */
-  @js.native
-  trait TestCaseDefinition extends js.Object {
-    var id: js.UndefOr[TestCaseName]
-    var testCaseVersion: js.UndefOr[TestCaseVersion]
-  }
-
-  object TestCaseDefinition {
-    @inline
-    def apply(
-        id: js.UndefOr[TestCaseName] = js.undefined,
-        testCaseVersion: js.UndefOr[TestCaseVersion] = js.undefined
-    ): TestCaseDefinition = {
-      val __obj = js.Dynamic.literal()
-      id.foreach(__v => __obj.updateDynamic("id")(__v.asInstanceOf[js.Any]))
-      testCaseVersion.foreach(__v => __obj.updateDynamic("testCaseVersion")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[TestCaseDefinition]
-    }
-  }
-
-  /** Provides test case run.
+  /** Provides the test case run.
     */
   @js.native
   trait TestCaseRun extends js.Object {

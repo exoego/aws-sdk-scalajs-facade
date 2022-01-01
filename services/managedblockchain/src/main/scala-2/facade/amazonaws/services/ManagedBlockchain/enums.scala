@@ -41,8 +41,9 @@ object MemberStatus {
   val UPDATING = "UPDATING".asInstanceOf[MemberStatus]
   val DELETING = "DELETING".asInstanceOf[MemberStatus]
   val DELETED = "DELETED".asInstanceOf[MemberStatus]
+  val INACCESSIBLE_ENCRYPTION_KEY = "INACCESSIBLE_ENCRYPTION_KEY".asInstanceOf[MemberStatus]
 
-  @inline def values: js.Array[MemberStatus] = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED)
+  @inline def values: js.Array[MemberStatus] = js.Array(CREATING, AVAILABLE, CREATE_FAILED, UPDATING, DELETING, DELETED, INACCESSIBLE_ENCRYPTION_KEY)
 }
 
 @js.native
@@ -68,8 +69,9 @@ object NodeStatus {
   val DELETING = "DELETING".asInstanceOf[NodeStatus]
   val DELETED = "DELETED".asInstanceOf[NodeStatus]
   val FAILED = "FAILED".asInstanceOf[NodeStatus]
+  val INACCESSIBLE_ENCRYPTION_KEY = "INACCESSIBLE_ENCRYPTION_KEY".asInstanceOf[NodeStatus]
 
-  @inline def values: js.Array[NodeStatus] = js.Array(CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED)
+  @inline def values: js.Array[NodeStatus] = js.Array(CREATING, AVAILABLE, UNHEALTHY, CREATE_FAILED, UPDATING, DELETING, DELETED, FAILED, INACCESSIBLE_ENCRYPTION_KEY)
 }
 
 @js.native

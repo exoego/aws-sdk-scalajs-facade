@@ -23,6 +23,10 @@ package object costexplorer {
   type CostCategoryProcessingStatusList = js.Array[CostCategoryProcessingStatus]
   type CostCategoryReferencesList = js.Array[CostCategoryReference]
   type CostCategoryRulesList = js.Array[CostCategoryRule]
+  type CostCategorySplitChargeRuleParameterValuesList = js.Array[GenericString]
+  type CostCategorySplitChargeRuleParametersList = js.Array[CostCategorySplitChargeRuleParameter]
+  type CostCategorySplitChargeRuleTargetsList = js.Array[GenericString]
+  type CostCategorySplitChargeRulesList = js.Array[CostCategorySplitChargeRule]
   type CostCategoryValue = String
   type CostCategoryValuesList = js.Array[CostCategoryValue]
   type CoverageHoursPercentage = String
@@ -32,6 +36,7 @@ package object costexplorer {
   type Entity = String
   type Estimated = Boolean
   type Expressions = js.Array[Expression]
+  type FindingReasonCodes = js.Array[FindingReasonCode]
   type ForecastResultsByTime = js.Array[ForecastResult]
   type GenericBoolean = Boolean
   type GenericDouble = Double
@@ -58,6 +63,7 @@ package object costexplorer {
   type OnDemandHours = String
   type OnDemandNormalizedUnits = String
   type PageSize = Int
+  type PlatformDifferences = js.Array[PlatformDifference]
   type PredictionIntervalLevel = Int
   type PurchasedHours = String
   type PurchasedUnits = String
@@ -250,7 +256,7 @@ package object costexplorer {
     }
   }
 
-  /** This object continuously inspects your account's cost data for anomalies, based on <code>MonitorType</code> and <code>MonitorSpecification</code>. The content consists of detailed metadata and the current status of the monitor object.
+  /** This object continuously inspects your account's cost data for anomalies. It's based on <code>MonitorType</code> and <code>MonitorSpecification</code>. The content consists of detailed metadata and the current status of the monitor object.
     */
   @js.native
   trait AnomalyMonitor extends js.Object {
@@ -294,7 +300,7 @@ package object costexplorer {
     }
   }
 
-  /** Quantifies the anomaly. The higher score means that it is more anomalous.
+  /** Quantifies the anomaly. The higher score means that it's more anomalous.
     */
   @js.native
   trait AnomalyScore extends js.Object {
@@ -366,6 +372,7 @@ package object costexplorer {
     var DefaultValue: js.UndefOr[CostCategoryValue]
     var EffectiveEnd: js.UndefOr[ZonedDateTime]
     var ProcessingStatus: js.UndefOr[CostCategoryProcessingStatusList]
+    var SplitChargeRules: js.UndefOr[CostCategorySplitChargeRulesList]
   }
 
   object CostCategory {
@@ -378,7 +385,8 @@ package object costexplorer {
         Rules: CostCategoryRulesList,
         DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined,
         EffectiveEnd: js.UndefOr[ZonedDateTime] = js.undefined,
-        ProcessingStatus: js.UndefOr[CostCategoryProcessingStatusList] = js.undefined
+        ProcessingStatus: js.UndefOr[CostCategoryProcessingStatusList] = js.undefined,
+        SplitChargeRules: js.UndefOr[CostCategorySplitChargeRulesList] = js.undefined
     ): CostCategory = {
       val __obj = js.Dynamic.literal(
         "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any],
@@ -391,11 +399,12 @@ package object costexplorer {
       DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
       EffectiveEnd.foreach(__v => __obj.updateDynamic("EffectiveEnd")(__v.asInstanceOf[js.Any]))
       ProcessingStatus.foreach(__v => __obj.updateDynamic("ProcessingStatus")(__v.asInstanceOf[js.Any]))
+      SplitChargeRules.foreach(__v => __obj.updateDynamic("SplitChargeRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CostCategory]
     }
   }
 
-  /** When creating or updating a cost category, you can define the <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility of defining a rule that dynamically inherits the cost category value from the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you wanted to dynamically group costs based on the value of a specific tag key, you would first choose an inherited value rule type, then choose the tag dimension and specify the tag key to use.
+  /** When creating or updating a cost category, you can define the <code>CostCategoryRule</code> rule type as <code>INHERITED_VALUE</code>. This rule type adds the flexibility of defining a rule that dynamically inherits the cost category value from the dimension value defined by <code>CostCategoryInheritedValueDimension</code>. For example, if you want to dynamically group costs that are based on the value of a specific tag key, first choose an inherited value rule type, then choose the tag dimension and specify the tag key to use.
     */
   @js.native
   trait CostCategoryInheritedValueDimension extends js.Object {
@@ -503,7 +512,58 @@ package object costexplorer {
     }
   }
 
-  /** The Cost Categories values used for filtering the costs. If <code>Values</code> and <code>Key</code> are not specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all Cost Categories. That is, filtering on resources that are not mapped to any Cost Categories. If <code>Values</code> is provided and <code>Key</code> is not specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the Cost Categories <code>Key</code> only. That is, filtering on resources without the given Cost Categories key.
+  /** Use the split charge rule to split the cost of one Cost Category value across several other target values.
+    */
+  @js.native
+  trait CostCategorySplitChargeRule extends js.Object {
+    var Method: CostCategorySplitChargeMethod
+    var Source: GenericString
+    var Targets: CostCategorySplitChargeRuleTargetsList
+    var Parameters: js.UndefOr[CostCategorySplitChargeRuleParametersList]
+  }
+
+  object CostCategorySplitChargeRule {
+    @inline
+    def apply(
+        Method: CostCategorySplitChargeMethod,
+        Source: GenericString,
+        Targets: CostCategorySplitChargeRuleTargetsList,
+        Parameters: js.UndefOr[CostCategorySplitChargeRuleParametersList] = js.undefined
+    ): CostCategorySplitChargeRule = {
+      val __obj = js.Dynamic.literal(
+        "Method" -> Method.asInstanceOf[js.Any],
+        "Source" -> Source.asInstanceOf[js.Any],
+        "Targets" -> Targets.asInstanceOf[js.Any]
+      )
+
+      Parameters.foreach(__v => __obj.updateDynamic("Parameters")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CostCategorySplitChargeRule]
+    }
+  }
+
+  /** The parameters for a split charge method.
+    */
+  @js.native
+  trait CostCategorySplitChargeRuleParameter extends js.Object {
+    var Type: CostCategorySplitChargeRuleParameterType
+    var Values: CostCategorySplitChargeRuleParameterValuesList
+  }
+
+  object CostCategorySplitChargeRuleParameter {
+    @inline
+    def apply(
+        Type: CostCategorySplitChargeRuleParameterType,
+        Values: CostCategorySplitChargeRuleParameterValuesList
+    ): CostCategorySplitChargeRuleParameter = {
+      val __obj = js.Dynamic.literal(
+        "Type" -> Type.asInstanceOf[js.Any],
+        "Values" -> Values.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CostCategorySplitChargeRuleParameter]
+    }
+  }
+
+  /** The Cost Categories values used for filtering the costs. If <code>Values</code> and <code>Key</code> are not specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all Cost Categories. That is, it filters on resources that aren't mapped to any Cost Categories. If <code>Values</code> is provided and <code>Key</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the Cost Categories <code>Key</code> only. That is, it filters on resources without the given Cost Categories key.
     */
   @js.native
   trait CostCategoryValues extends js.Object {
@@ -620,7 +680,7 @@ package object costexplorer {
     }
   }
 
-  /** The amount of instance usage, in normalized units. Normalized units enable you to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. Using normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html|Modifying Reserved Instances]] in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
+  /** The amount of instance usage, in normalized units. You can use normalized units to see your EC2 usage for multiple sizes of instances in a uniform way. For example, suppose that you run an xlarge instance and a 2xlarge instance. If you run both instances for the same amount of time, the 2xlarge instance uses twice as much of your reservation as the xlarge instance, even though both instances show only one instance-hour. When you use normalized units instead of instance-hours, the xlarge instance used 8 normalized units, and the 2xlarge instance used 16 normalized units. For more information, see [[https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html|Modifying Reserved Instances]] in the <i>Amazon Elastic Compute Cloud User Guide for Linux Instances</i>.
     */
   @js.native
   trait CoverageNormalizedUnits extends js.Object {
@@ -721,6 +781,7 @@ package object costexplorer {
     var RuleVersion: CostCategoryRuleVersion
     var Rules: CostCategoryRulesList
     var DefaultValue: js.UndefOr[CostCategoryValue]
+    var SplitChargeRules: js.UndefOr[CostCategorySplitChargeRulesList]
   }
 
   object CreateCostCategoryDefinitionRequest {
@@ -729,7 +790,8 @@ package object costexplorer {
         Name: CostCategoryName,
         RuleVersion: CostCategoryRuleVersion,
         Rules: CostCategoryRulesList,
-        DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined
+        DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined,
+        SplitChargeRules: js.UndefOr[CostCategorySplitChargeRulesList] = js.undefined
     ): CreateCostCategoryDefinitionRequest = {
       val __obj = js.Dynamic.literal(
         "Name" -> Name.asInstanceOf[js.Any],
@@ -738,6 +800,7 @@ package object costexplorer {
       )
 
       DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      SplitChargeRules.foreach(__v => __obj.updateDynamic("SplitChargeRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateCostCategoryDefinitionRequest]
     }
   }
@@ -1005,7 +1068,34 @@ package object costexplorer {
     }
   }
 
-  /** The EBS field that contains a list of EBS metrics associated with the current instance.
+  /** The field that contains a list of disk (local storage) metrics that are associated with the current instance.
+    */
+  @js.native
+  trait DiskResourceUtilization extends js.Object {
+    var DiskReadBytesPerSecond: js.UndefOr[GenericString]
+    var DiskReadOpsPerSecond: js.UndefOr[GenericString]
+    var DiskWriteBytesPerSecond: js.UndefOr[GenericString]
+    var DiskWriteOpsPerSecond: js.UndefOr[GenericString]
+  }
+
+  object DiskResourceUtilization {
+    @inline
+    def apply(
+        DiskReadBytesPerSecond: js.UndefOr[GenericString] = js.undefined,
+        DiskReadOpsPerSecond: js.UndefOr[GenericString] = js.undefined,
+        DiskWriteBytesPerSecond: js.UndefOr[GenericString] = js.undefined,
+        DiskWriteOpsPerSecond: js.UndefOr[GenericString] = js.undefined
+    ): DiskResourceUtilization = {
+      val __obj = js.Dynamic.literal()
+      DiskReadBytesPerSecond.foreach(__v => __obj.updateDynamic("DiskReadBytesPerSecond")(__v.asInstanceOf[js.Any]))
+      DiskReadOpsPerSecond.foreach(__v => __obj.updateDynamic("DiskReadOpsPerSecond")(__v.asInstanceOf[js.Any]))
+      DiskWriteBytesPerSecond.foreach(__v => __obj.updateDynamic("DiskWriteBytesPerSecond")(__v.asInstanceOf[js.Any]))
+      DiskWriteOpsPerSecond.foreach(__v => __obj.updateDynamic("DiskWriteOpsPerSecond")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DiskResourceUtilization]
+    }
+  }
+
+  /** The EBS field that contains a list of EBS metrics that are associated with the current instance.
     */
   @js.native
   trait EBSResourceUtilization extends js.Object {
@@ -1032,7 +1122,7 @@ package object costexplorer {
     }
   }
 
-  /** Details about the Amazon EC2 instances that AWS recommends that you purchase.
+  /** Details about the Amazon EC2 instances that Amazon Web Services recommends that you purchase.
     */
   @js.native
   trait EC2InstanceDetails extends js.Object {
@@ -1117,30 +1207,36 @@ package object costexplorer {
     */
   @js.native
   trait EC2ResourceUtilization extends js.Object {
+    var DiskResourceUtilization: js.UndefOr[DiskResourceUtilization]
     var EBSResourceUtilization: js.UndefOr[EBSResourceUtilization]
     var MaxCpuUtilizationPercentage: js.UndefOr[GenericString]
     var MaxMemoryUtilizationPercentage: js.UndefOr[GenericString]
     var MaxStorageUtilizationPercentage: js.UndefOr[GenericString]
+    var NetworkResourceUtilization: js.UndefOr[NetworkResourceUtilization]
   }
 
   object EC2ResourceUtilization {
     @inline
     def apply(
+        DiskResourceUtilization: js.UndefOr[DiskResourceUtilization] = js.undefined,
         EBSResourceUtilization: js.UndefOr[EBSResourceUtilization] = js.undefined,
         MaxCpuUtilizationPercentage: js.UndefOr[GenericString] = js.undefined,
         MaxMemoryUtilizationPercentage: js.UndefOr[GenericString] = js.undefined,
-        MaxStorageUtilizationPercentage: js.UndefOr[GenericString] = js.undefined
+        MaxStorageUtilizationPercentage: js.UndefOr[GenericString] = js.undefined,
+        NetworkResourceUtilization: js.UndefOr[NetworkResourceUtilization] = js.undefined
     ): EC2ResourceUtilization = {
       val __obj = js.Dynamic.literal()
+      DiskResourceUtilization.foreach(__v => __obj.updateDynamic("DiskResourceUtilization")(__v.asInstanceOf[js.Any]))
       EBSResourceUtilization.foreach(__v => __obj.updateDynamic("EBSResourceUtilization")(__v.asInstanceOf[js.Any]))
       MaxCpuUtilizationPercentage.foreach(__v => __obj.updateDynamic("MaxCpuUtilizationPercentage")(__v.asInstanceOf[js.Any]))
       MaxMemoryUtilizationPercentage.foreach(__v => __obj.updateDynamic("MaxMemoryUtilizationPercentage")(__v.asInstanceOf[js.Any]))
       MaxStorageUtilizationPercentage.foreach(__v => __obj.updateDynamic("MaxStorageUtilizationPercentage")(__v.asInstanceOf[js.Any]))
+      NetworkResourceUtilization.foreach(__v => __obj.updateDynamic("NetworkResourceUtilization")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[EC2ResourceUtilization]
     }
   }
 
-  /** The Amazon EC2 hardware specifications that you want AWS to provide recommendations for.
+  /** The Amazon EC2 hardware specifications that you want Amazon Web Services to provide recommendations for.
     */
   @js.native
   trait EC2Specification extends js.Object {
@@ -1158,7 +1254,7 @@ package object costexplorer {
     }
   }
 
-  /** Details about the Amazon ES instances that AWS recommends that you purchase.
+  /** Details about the Amazon ES instances that Amazon Web Services recommends that you purchase.
     */
   @js.native
   trait ESInstanceDetails extends js.Object {
@@ -1188,7 +1284,7 @@ package object costexplorer {
     }
   }
 
-  /** Details about the Amazon ElastiCache instances that AWS recommends that you purchase.
+  /** Details about the Amazon ElastiCache instances that Amazon Web Services recommends that you purchase.
     */
   @js.native
   trait ElastiCacheInstanceDetails extends js.Object {
@@ -1221,10 +1317,10 @@ package object costexplorer {
     }
   }
 
-  /** Use <code>Expression</code> to filter by cost or by usage. There are two patterns: * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example looks like: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. <li> Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more
-    * <code>Expression</code> objects. This allows you to filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that looks like this: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code>
+  /** Use <code>Expression</code> to filter by cost or by usage. There are two patterns: * Simple dimension values - You can set the dimension name and values for the filters that you plan to use. For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code> example is as follows: <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ] } }</code> The list of dimension values are OR'd together to retrieve cost or usage data. You can create <code>Expression</code> and <code>DimensionValues</code> objects using either <code>with*</code> methods or <code>set*</code> methods in multiple lines. <li> Compound dimension values with logical operations - You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code> to create a list of one or more
+    * <code>Expression</code> objects. By doing this, you can filter on more advanced options. For example, you can filter on <code>((REGION == us-east-1 OR REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>. The <code>Expression</code> for that is as follows: <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code>
     *
-    * '''Note:'''Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error. <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </li>'''Note:'''For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not supported. OR is not supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>. For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.
+    * '''Note:'''Because each <code>Expression</code> can have only one operator, the service returns an error if more than one is specified. The following example shows an <code>Expression</code> object that creates an error. <code> { "And": [ ... ], "DimensionValues": { "Dimension": "USAGE_TYPE", "Values": [ "DataTransfer" ] } } </code> </li>'''Note:'''For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT isn't supported. OR isn't supported between different dimensions, or dimensions and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>. For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.
     */
   @js.native
   trait Expression extends js.Object {
@@ -1257,7 +1353,7 @@ package object costexplorer {
     }
   }
 
-  /** The forecast created for your query.
+  /** The forecast that's created for your query.
     */
   @js.native
   trait ForecastResult extends js.Object {
@@ -2357,7 +2453,7 @@ package object costexplorer {
     }
   }
 
-  /** The anomaly's dollar value.
+  /** The dollar value of the anomaly.
     */
   @js.native
   trait Impact extends js.Object {
@@ -2380,7 +2476,7 @@ package object costexplorer {
     }
   }
 
-  /** Details about the instances that AWS recommends that you purchase.
+  /** Details about the instances that Amazon Web Services recommends that you purchase.
     */
   @js.native
   trait InstanceDetails extends js.Object {
@@ -2490,6 +2586,33 @@ package object costexplorer {
     }
   }
 
+  /** The network field that contains a list of network metrics that are associated with the current instance.
+    */
+  @js.native
+  trait NetworkResourceUtilization extends js.Object {
+    var NetworkInBytesPerSecond: js.UndefOr[GenericString]
+    var NetworkOutBytesPerSecond: js.UndefOr[GenericString]
+    var NetworkPacketsInPerSecond: js.UndefOr[GenericString]
+    var NetworkPacketsOutPerSecond: js.UndefOr[GenericString]
+  }
+
+  object NetworkResourceUtilization {
+    @inline
+    def apply(
+        NetworkInBytesPerSecond: js.UndefOr[GenericString] = js.undefined,
+        NetworkOutBytesPerSecond: js.UndefOr[GenericString] = js.undefined,
+        NetworkPacketsInPerSecond: js.UndefOr[GenericString] = js.undefined,
+        NetworkPacketsOutPerSecond: js.UndefOr[GenericString] = js.undefined
+    ): NetworkResourceUtilization = {
+      val __obj = js.Dynamic.literal()
+      NetworkInBytesPerSecond.foreach(__v => __obj.updateDynamic("NetworkInBytesPerSecond")(__v.asInstanceOf[js.Any]))
+      NetworkOutBytesPerSecond.foreach(__v => __obj.updateDynamic("NetworkOutBytesPerSecond")(__v.asInstanceOf[js.Any]))
+      NetworkPacketsInPerSecond.foreach(__v => __obj.updateDynamic("NetworkPacketsInPerSecond")(__v.asInstanceOf[js.Any]))
+      NetworkPacketsOutPerSecond.foreach(__v => __obj.updateDynamic("NetworkPacketsOutPerSecond")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NetworkResourceUtilization]
+    }
+  }
+
   @js.native
   trait ProvideAnomalyFeedbackRequest extends js.Object {
     var AnomalyId: GenericString
@@ -2527,7 +2650,7 @@ package object costexplorer {
     }
   }
 
-  /** Details about the Amazon RDS instances that AWS recommends that you purchase.
+  /** Details about the Amazon RDS instances that Amazon Web Services recommends that you purchase.
     */
   @js.native
   trait RDSInstanceDetails extends js.Object {
@@ -2569,7 +2692,7 @@ package object costexplorer {
     }
   }
 
-  /** Details about the Amazon Redshift instances that AWS recommends that you purchase.
+  /** Details about the Amazon Redshift instances that Amazon Web Services recommends that you purchase.
     */
   @js.native
   trait RedshiftInstanceDetails extends js.Object {
@@ -2686,7 +2809,7 @@ package object costexplorer {
     }
   }
 
-  /** A specific reservation that AWS recommends for purchase.
+  /** A specific reservation that Amazon Web Services recommends for purchase.
     */
   @js.native
   trait ReservationPurchaseRecommendation extends js.Object {
@@ -2794,7 +2917,7 @@ package object costexplorer {
     }
   }
 
-  /** Information about this specific recommendation, such as the timestamp for when AWS made a specific recommendation.
+  /** Information about this specific recommendation, such as the timestamp for when Amazon Web Services made a specific recommendation.
     */
   @js.native
   trait ReservationPurchaseRecommendationMetadata extends js.Object {
@@ -2815,7 +2938,7 @@ package object costexplorer {
     }
   }
 
-  /** A summary about this recommendation, such as the currency code, the amount that AWS estimates that you could save, and the total amount of reservation to purchase.
+  /** A summary about this recommendation, such as the currency code, the amount that Amazon Web Services estimates that you could save, and the total amount of reservation to purchase.
     */
   @js.native
   trait ReservationPurchaseRecommendationSummary extends js.Object {
@@ -2902,7 +3025,7 @@ package object costexplorer {
     }
   }
 
-  /** The result that is associated with a time period.
+  /** The result that's associated with a time period.
     */
   @js.native
   trait ResultByTime extends js.Object {
@@ -2935,6 +3058,7 @@ package object costexplorer {
   trait RightsizingRecommendation extends js.Object {
     var AccountId: js.UndefOr[GenericString]
     var CurrentInstance: js.UndefOr[CurrentInstance]
+    var FindingReasonCodes: js.UndefOr[FindingReasonCodes]
     var ModifyRecommendationDetail: js.UndefOr[ModifyRecommendationDetail]
     var RightsizingType: js.UndefOr[RightsizingType]
     var TerminateRecommendationDetail: js.UndefOr[TerminateRecommendationDetail]
@@ -2945,6 +3069,7 @@ package object costexplorer {
     def apply(
         AccountId: js.UndefOr[GenericString] = js.undefined,
         CurrentInstance: js.UndefOr[CurrentInstance] = js.undefined,
+        FindingReasonCodes: js.UndefOr[FindingReasonCodes] = js.undefined,
         ModifyRecommendationDetail: js.UndefOr[ModifyRecommendationDetail] = js.undefined,
         RightsizingType: js.UndefOr[RightsizingType] = js.undefined,
         TerminateRecommendationDetail: js.UndefOr[TerminateRecommendationDetail] = js.undefined
@@ -2952,6 +3077,7 @@ package object costexplorer {
       val __obj = js.Dynamic.literal()
       AccountId.foreach(__v => __obj.updateDynamic("AccountId")(__v.asInstanceOf[js.Any]))
       CurrentInstance.foreach(__v => __obj.updateDynamic("CurrentInstance")(__v.asInstanceOf[js.Any]))
+      FindingReasonCodes.foreach(__v => __obj.updateDynamic("FindingReasonCodes")(__v.asInstanceOf[js.Any]))
       ModifyRecommendationDetail.foreach(__v => __obj.updateDynamic("ModifyRecommendationDetail")(__v.asInstanceOf[js.Any]))
       RightsizingType.foreach(__v => __obj.updateDynamic("RightsizingType")(__v.asInstanceOf[js.Any]))
       TerminateRecommendationDetail.foreach(__v => __obj.updateDynamic("TerminateRecommendationDetail")(__v.asInstanceOf[js.Any]))
@@ -2959,7 +3085,7 @@ package object costexplorer {
     }
   }
 
-  /** Enables you to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.
+  /** You can use <code>RightsizingRecommendationConfiguration</code> to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither.
     */
   @js.native
   trait RightsizingRecommendationConfiguration extends js.Object {
@@ -3008,7 +3134,7 @@ package object costexplorer {
     }
   }
 
-  /** Summary of rightsizing recommendations
+  /** The summary of rightsizing recommendations
     */
   @js.native
   trait RightsizingRecommendationSummary extends js.Object {
@@ -3035,7 +3161,7 @@ package object costexplorer {
     }
   }
 
-  /** The combination of AWS service, linked account, Region, and usage type where a cost anomaly is observed.
+  /** The combination of Amazon Web Services service, linked account, Region, and usage type where a cost anomaly is observed.
     */
   @js.native
   trait RootCause extends js.Object {
@@ -3137,7 +3263,7 @@ package object costexplorer {
     }
   }
 
-  /** Attribute details on a specific Savings Plan.
+  /** The attribute details on a specific Savings Plan.
     */
   @js.native
   trait SavingsPlansDetails extends js.Object {
@@ -3332,7 +3458,7 @@ package object costexplorer {
     }
   }
 
-  /** The amount of savings you're accumulating, against the public On-Demand rate of the usage accrued in an account.
+  /** The amount of savings that you're accumulating, against the public On-Demand rate of the usage accrued in an account.
     */
   @js.native
   trait SavingsPlansSavings extends js.Object {
@@ -3353,7 +3479,7 @@ package object costexplorer {
     }
   }
 
-  /** The measurement of how well you are using your existing Savings Plans.
+  /** The measurement of how well you're using your existing Savings Plans.
     */
   @js.native
   trait SavingsPlansUtilization extends js.Object {
@@ -3530,7 +3656,7 @@ package object costexplorer {
     }
   }
 
-  /** The values that are available for a tag. If <code>Values</code> and <code>Key</code> are not specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, filtering on resources with no tags. If <code>Values</code> is provided and <code>Key</code> is not specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, filtering on resources without the given tag key.
+  /** The values that are available for a tag. If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources with no tags. If <code>Values</code> is provided and <code>Key</code> isn't specified, the <code>ABSENT</code> <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's filtered on resources without the given tag key.
     */
   @js.native
   trait TagValues extends js.Object {
@@ -3563,6 +3689,7 @@ package object costexplorer {
     var EstimatedMonthlyCost: js.UndefOr[GenericString]
     var EstimatedMonthlySavings: js.UndefOr[GenericString]
     var ExpectedResourceUtilization: js.UndefOr[ResourceUtilization]
+    var PlatformDifferences: js.UndefOr[PlatformDifferences]
     var ResourceDetails: js.UndefOr[ResourceDetails]
   }
 
@@ -3574,6 +3701,7 @@ package object costexplorer {
         EstimatedMonthlyCost: js.UndefOr[GenericString] = js.undefined,
         EstimatedMonthlySavings: js.UndefOr[GenericString] = js.undefined,
         ExpectedResourceUtilization: js.UndefOr[ResourceUtilization] = js.undefined,
+        PlatformDifferences: js.UndefOr[PlatformDifferences] = js.undefined,
         ResourceDetails: js.UndefOr[ResourceDetails] = js.undefined
     ): TargetInstance = {
       val __obj = js.Dynamic.literal()
@@ -3582,6 +3710,7 @@ package object costexplorer {
       EstimatedMonthlyCost.foreach(__v => __obj.updateDynamic("EstimatedMonthlyCost")(__v.asInstanceOf[js.Any]))
       EstimatedMonthlySavings.foreach(__v => __obj.updateDynamic("EstimatedMonthlySavings")(__v.asInstanceOf[js.Any]))
       ExpectedResourceUtilization.foreach(__v => __obj.updateDynamic("ExpectedResourceUtilization")(__v.asInstanceOf[js.Any]))
+      PlatformDifferences.foreach(__v => __obj.updateDynamic("PlatformDifferences")(__v.asInstanceOf[js.Any]))
       ResourceDetails.foreach(__v => __obj.updateDynamic("ResourceDetails")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TargetInstance]
     }
@@ -3728,6 +3857,7 @@ package object costexplorer {
     var RuleVersion: CostCategoryRuleVersion
     var Rules: CostCategoryRulesList
     var DefaultValue: js.UndefOr[CostCategoryValue]
+    var SplitChargeRules: js.UndefOr[CostCategorySplitChargeRulesList]
   }
 
   object UpdateCostCategoryDefinitionRequest {
@@ -3736,7 +3866,8 @@ package object costexplorer {
         CostCategoryArn: Arn,
         RuleVersion: CostCategoryRuleVersion,
         Rules: CostCategoryRulesList,
-        DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined
+        DefaultValue: js.UndefOr[CostCategoryValue] = js.undefined,
+        SplitChargeRules: js.UndefOr[CostCategorySplitChargeRulesList] = js.undefined
     ): UpdateCostCategoryDefinitionRequest = {
       val __obj = js.Dynamic.literal(
         "CostCategoryArn" -> CostCategoryArn.asInstanceOf[js.Any],
@@ -3745,6 +3876,7 @@ package object costexplorer {
       )
 
       DefaultValue.foreach(__v => __obj.updateDynamic("DefaultValue")(__v.asInstanceOf[js.Any]))
+      SplitChargeRules.foreach(__v => __obj.updateDynamic("SplitChargeRules")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[UpdateCostCategoryDefinitionRequest]
     }
   }

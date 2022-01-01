@@ -3,6 +3,16 @@ package facade.amazonaws.services.s3control
 import scalajs.js
 
 @js.native
+sealed trait AsyncOperationName extends js.Any
+object AsyncOperationName {
+  val CreateMultiRegionAccessPoint = "CreateMultiRegionAccessPoint".asInstanceOf[AsyncOperationName]
+  val DeleteMultiRegionAccessPoint = "DeleteMultiRegionAccessPoint".asInstanceOf[AsyncOperationName]
+  val PutMultiRegionAccessPointPolicy = "PutMultiRegionAccessPointPolicy".asInstanceOf[AsyncOperationName]
+
+  @inline def values: js.Array[AsyncOperationName] = js.Array(CreateMultiRegionAccessPoint, DeleteMultiRegionAccessPoint, PutMultiRegionAccessPointPolicy)
+}
+
+@js.native
 sealed trait BucketCannedACL extends js.Any
 object BucketCannedACL {
   val `private` = "private".asInstanceOf[BucketCannedACL]
@@ -104,6 +114,19 @@ object JobStatus {
   val Suspended = "Suspended".asInstanceOf[JobStatus]
 
   @inline def values: js.Array[JobStatus] = js.Array(Active, Cancelled, Cancelling, Complete, Completing, Failed, Failing, New, Paused, Pausing, Preparing, Ready, Suspended)
+}
+
+@js.native
+sealed trait MultiRegionAccessPointStatus extends js.Any
+object MultiRegionAccessPointStatus {
+  val READY = "READY".asInstanceOf[MultiRegionAccessPointStatus]
+  val INCONSISTENT_ACROSS_REGIONS = "INCONSISTENT_ACROSS_REGIONS".asInstanceOf[MultiRegionAccessPointStatus]
+  val CREATING = "CREATING".asInstanceOf[MultiRegionAccessPointStatus]
+  val PARTIALLY_CREATED = "PARTIALLY_CREATED".asInstanceOf[MultiRegionAccessPointStatus]
+  val PARTIALLY_DELETED = "PARTIALLY_DELETED".asInstanceOf[MultiRegionAccessPointStatus]
+  val DELETING = "DELETING".asInstanceOf[MultiRegionAccessPointStatus]
+
+  @inline def values: js.Array[MultiRegionAccessPointStatus] = js.Array(READY, INCONSISTENT_ACROSS_REGIONS, CREATING, PARTIALLY_CREATED, PARTIALLY_DELETED, DELETING)
 }
 
 @js.native

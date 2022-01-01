@@ -2,6 +2,14 @@ package facade.amazonaws.services.lambda
 
 import scalajs.js
 
+type Architecture = "x86_64" | "arm64"
+object Architecture {
+  inline val x86_64: "x86_64" = "x86_64"
+  inline val arm64: "arm64" = "arm64"
+
+  inline def values: js.Array[Architecture] = js.Array(x86_64, arm64)
+}
+
 type CodeSigningPolicy = "Warn" | "Enforce"
 object CodeSigningPolicy {
   inline val Warn: "Warn" = "Warn"
@@ -110,7 +118,7 @@ object ProvisionedConcurrencyStatusEnum {
   inline def values: js.Array[ProvisionedConcurrencyStatusEnum] = js.Array(IN_PROGRESS, READY, FAILED)
 }
 
-type Runtime = "nodejs" | "nodejs4.3" | "nodejs6.10" | "nodejs8.10" | "nodejs10.x" | "nodejs12.x" | "nodejs14.x" | "java8" | "java8.al2" | "java11" | "python2.7" | "python3.6" | "python3.7" | "python3.8" | "dotnetcore1.0" | "dotnetcore2.0" | "dotnetcore2.1" | "dotnetcore3.1" | "nodejs4.3-edge" | "go1.x" | "ruby2.5" | "ruby2.7" | "provided" | "provided.al2"
+type Runtime = "nodejs" | "nodejs4.3" | "nodejs6.10" | "nodejs8.10" | "nodejs10.x" | "nodejs12.x" | "nodejs14.x" | "java8" | "java8.al2" | "java11" | "python2.7" | "python3.6" | "python3.7" | "python3.8" | "python3.9" | "dotnetcore1.0" | "dotnetcore2.0" | "dotnetcore2.1" | "dotnetcore3.1" | "nodejs4.3-edge" | "go1.x" | "ruby2.5" | "ruby2.7" | "provided" | "provided.al2"
 object Runtime {
   inline val nodejs: "nodejs" = "nodejs"
   inline val `nodejs4.3`: "nodejs4.3" = "nodejs4.3"
@@ -126,6 +134,7 @@ object Runtime {
   inline val `python3.6`: "python3.6" = "python3.6"
   inline val `python3.7`: "python3.7" = "python3.7"
   inline val `python3.8`: "python3.8" = "python3.8"
+  inline val `python3.9`: "python3.9" = "python3.9"
   inline val `dotnetcore1.0`: "dotnetcore1.0" = "dotnetcore1.0"
   inline val `dotnetcore2.0`: "dotnetcore2.0" = "dotnetcore2.0"
   inline val `dotnetcore2.1`: "dotnetcore2.1" = "dotnetcore2.1"
@@ -152,6 +161,7 @@ object Runtime {
     `python3.6`,
     `python3.7`,
     `python3.8`,
+    `python3.9`,
     `dotnetcore1.0`,
     `dotnetcore2.0`,
     `dotnetcore2.1`,
@@ -165,15 +175,18 @@ object Runtime {
   )
 }
 
-type SourceAccessType = "BASIC_AUTH" | "VPC_SUBNET" | "VPC_SECURITY_GROUP" | "SASL_SCRAM_512_AUTH" | "SASL_SCRAM_256_AUTH"
+type SourceAccessType = "BASIC_AUTH" | "VPC_SUBNET" | "VPC_SECURITY_GROUP" | "SASL_SCRAM_512_AUTH" | "SASL_SCRAM_256_AUTH" | "VIRTUAL_HOST" | "CLIENT_CERTIFICATE_TLS_AUTH" | "SERVER_ROOT_CA_CERTIFICATE"
 object SourceAccessType {
   inline val BASIC_AUTH: "BASIC_AUTH" = "BASIC_AUTH"
   inline val VPC_SUBNET: "VPC_SUBNET" = "VPC_SUBNET"
   inline val VPC_SECURITY_GROUP: "VPC_SECURITY_GROUP" = "VPC_SECURITY_GROUP"
   inline val SASL_SCRAM_512_AUTH: "SASL_SCRAM_512_AUTH" = "SASL_SCRAM_512_AUTH"
   inline val SASL_SCRAM_256_AUTH: "SASL_SCRAM_256_AUTH" = "SASL_SCRAM_256_AUTH"
+  inline val VIRTUAL_HOST: "VIRTUAL_HOST" = "VIRTUAL_HOST"
+  inline val CLIENT_CERTIFICATE_TLS_AUTH: "CLIENT_CERTIFICATE_TLS_AUTH" = "CLIENT_CERTIFICATE_TLS_AUTH"
+  inline val SERVER_ROOT_CA_CERTIFICATE: "SERVER_ROOT_CA_CERTIFICATE" = "SERVER_ROOT_CA_CERTIFICATE"
 
-  inline def values: js.Array[SourceAccessType] = js.Array(BASIC_AUTH, VPC_SUBNET, VPC_SECURITY_GROUP, SASL_SCRAM_512_AUTH, SASL_SCRAM_256_AUTH)
+  inline def values: js.Array[SourceAccessType] = js.Array(BASIC_AUTH, VPC_SUBNET, VPC_SECURITY_GROUP, SASL_SCRAM_512_AUTH, SASL_SCRAM_256_AUTH, VIRTUAL_HOST, CLIENT_CERTIFICATE_TLS_AUTH, SERVER_ROOT_CA_CERTIFICATE)
 }
 
 type State = "Pending" | "Active" | "Inactive" | "Failed"

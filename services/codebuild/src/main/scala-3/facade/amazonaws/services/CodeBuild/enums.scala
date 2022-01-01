@@ -36,7 +36,17 @@ object AuthType {
   inline def values: js.Array[AuthType] = js.Array(OAUTH, BASIC_AUTH, PERSONAL_ACCESS_TOKEN)
 }
 
-/** Specifies the access for objects that are uploaded to an Amazon S3 bucket that is owned by another account. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects. <dl> <dt>NONE</dt> <dd> The bucket owner does not have access to the objects. This is the default. </dd> <dt>READ_ONLY</dt> <dd> The bucket owner has read only access to the objects. The uploading account retains ownership of the objects. </dd> <dt>FULL</dt> <dd> The bucket owner has full access to the objects. Object ownership is determined by the following criteria: * If the bucket is configured with the ```Bucket owner preferred``` setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy. * Otherwise, the uploading account retains ownership of the objects. For more information about Amazon S3 object ownership, see
+type BatchReportModeType = "REPORT_INDIVIDUAL_BUILDS" | "REPORT_AGGREGATED_BATCH"
+object BatchReportModeType {
+  inline val REPORT_INDIVIDUAL_BUILDS: "REPORT_INDIVIDUAL_BUILDS" = "REPORT_INDIVIDUAL_BUILDS"
+  inline val REPORT_AGGREGATED_BATCH: "REPORT_AGGREGATED_BATCH" = "REPORT_AGGREGATED_BATCH"
+
+  inline def values: js.Array[BatchReportModeType] = js.Array(REPORT_INDIVIDUAL_BUILDS, REPORT_AGGREGATED_BATCH)
+}
+
+/** Specifies the bucket owner's access for objects that another account uploads to their Amazon S3 bucket. By default, only the account that uploads the objects to the bucket has access to these objects. This property allows you to give the bucket owner access to these objects.
+  *
+  * '''Note:'''To use this property, your CodeBuild service role must have the <code>s3:PutBucketAcl</code> permission. This permission allows CodeBuild to modify the access control list for the bucket. This property can be one of the following values: <dl> <dt>NONE</dt> <dd> The bucket owner does not have access to the objects. This is the default. </dd> <dt>READ_ONLY</dt> <dd> The bucket owner has read-only access to the objects. The uploading account retains ownership of the objects. </dd> <dt>FULL</dt> <dd> The bucket owner has full access to the objects. Object ownership is determined by the following criteria: * If the bucket is configured with the ```Bucket owner preferred``` setting, the bucket owner owns the objects. The uploading account will have object access as specified by the bucket's policy. * Otherwise, the uploading account retains ownership of the objects. For more information about Amazon S3 object ownership, see
   * [[https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html|Controlling ownership of uploaded objects using S3 Object Ownership]] in the <i>Amazon Simple Storage Service User Guide</i>. </dd> </dl>
   */
 type BucketOwnerAccess = "NONE" | "READ_ONLY" | "FULL"
@@ -189,6 +199,16 @@ object ProjectSortByType {
   inline val LAST_MODIFIED_TIME: "LAST_MODIFIED_TIME" = "LAST_MODIFIED_TIME"
 
   inline def values: js.Array[ProjectSortByType] = js.Array(NAME, CREATED_TIME, LAST_MODIFIED_TIME)
+}
+
+/** Specifies the visibility of the project's builds. Possible values are: <dl> <dt>PUBLIC_READ</dt> <dd> The project builds are visible to the public. </dd> <dt>PRIVATE</dt> <dd> The project builds are not visible to the public. </dd> </dl>
+  */
+type ProjectVisibilityType = "PUBLIC_READ" | "PRIVATE"
+object ProjectVisibilityType {
+  inline val PUBLIC_READ: "PUBLIC_READ" = "PUBLIC_READ"
+  inline val PRIVATE: "PRIVATE" = "PRIVATE"
+
+  inline def values: js.Array[ProjectVisibilityType] = js.Array(PUBLIC_READ, PRIVATE)
 }
 
 type ReportCodeCoverageSortByType = "LINE_COVERAGE_PERCENTAGE" | "FILE_PATH"

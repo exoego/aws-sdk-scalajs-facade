@@ -17,6 +17,7 @@ package object snowball {
   type Ec2AmiResourceList = js.Array[Ec2AmiResource]
   type EventTriggerDefinitionList = js.Array[EventTriggerDefinition]
   type GSTIN = String
+  type JavaBoolean = Boolean
   type JobId = String
   type JobListEntryList = js.Array[JobListEntry]
   type JobMetadataList = js.Array[JobMetadata]
@@ -24,10 +25,15 @@ package object snowball {
   type KmsKeyARN = String
   type LambdaResourceList = js.Array[LambdaResource]
   type ListLimit = Int
+  type LongTermPricingAssociatedJobIdList = js.Array[JobId]
+  type LongTermPricingEntryList = js.Array[LongTermPricingListEntry]
+  type LongTermPricingId = String
   type ResourceARN = String
   type RoleARN = String
   type S3ResourceList = js.Array[S3Resource]
   type SnsTopicARN = String
+  type StorageLimit = Int
+  type TargetOnDeviceServiceList = js.Array[TargetOnDeviceService]
   type Timestamp = js.Date
 
   final class SnowballOps(private val service: Snowball) extends AnyVal {
@@ -37,6 +43,7 @@ package object snowball {
     @inline def createAddressFuture(params: CreateAddressRequest): Future[CreateAddressResult] = service.createAddress(params).promise().toFuture
     @inline def createClusterFuture(params: CreateClusterRequest): Future[CreateClusterResult] = service.createCluster(params).promise().toFuture
     @inline def createJobFuture(params: CreateJobRequest): Future[CreateJobResult] = service.createJob(params).promise().toFuture
+    @inline def createLongTermPricingFuture(params: CreateLongTermPricingRequest): Future[CreateLongTermPricingResult] = service.createLongTermPricing(params).promise().toFuture
     @inline def createReturnShippingLabelFuture(params: CreateReturnShippingLabelRequest): Future[CreateReturnShippingLabelResult] = service.createReturnShippingLabel(params).promise().toFuture
     @inline def describeAddressFuture(params: DescribeAddressRequest): Future[DescribeAddressResult] = service.describeAddress(params).promise().toFuture
     @inline def describeAddressesFuture(params: DescribeAddressesRequest): Future[DescribeAddressesResult] = service.describeAddresses(params).promise().toFuture
@@ -51,9 +58,11 @@ package object snowball {
     @inline def listClustersFuture(params: ListClustersRequest): Future[ListClustersResult] = service.listClusters(params).promise().toFuture
     @inline def listCompatibleImagesFuture(params: ListCompatibleImagesRequest): Future[ListCompatibleImagesResult] = service.listCompatibleImages(params).promise().toFuture
     @inline def listJobsFuture(params: ListJobsRequest): Future[ListJobsResult] = service.listJobs(params).promise().toFuture
+    @inline def listLongTermPricingFuture(params: ListLongTermPricingRequest): Future[ListLongTermPricingResult] = service.listLongTermPricing(params).promise().toFuture
     @inline def updateClusterFuture(params: UpdateClusterRequest): Future[UpdateClusterResult] = service.updateCluster(params).promise().toFuture
     @inline def updateJobFuture(params: UpdateJobRequest): Future[UpdateJobResult] = service.updateJob(params).promise().toFuture
     @inline def updateJobShipmentStateFuture(params: UpdateJobShipmentStateRequest): Future[UpdateJobShipmentStateResult] = service.updateJobShipmentState(params).promise().toFuture
+    @inline def updateLongTermPricingFuture(params: UpdateLongTermPricingRequest): Future[UpdateLongTermPricingResult] = service.updateLongTermPricing(params).promise().toFuture
 
   }
 
@@ -67,6 +76,7 @@ package object snowball {
     def createAddress(params: CreateAddressRequest): Request[CreateAddressResult] = js.native
     def createCluster(params: CreateClusterRequest): Request[CreateClusterResult] = js.native
     def createJob(params: CreateJobRequest): Request[CreateJobResult] = js.native
+    def createLongTermPricing(params: CreateLongTermPricingRequest): Request[CreateLongTermPricingResult] = js.native
     def createReturnShippingLabel(params: CreateReturnShippingLabelRequest): Request[CreateReturnShippingLabelResult] = js.native
     def describeAddress(params: DescribeAddressRequest): Request[DescribeAddressResult] = js.native
     def describeAddresses(params: DescribeAddressesRequest): Request[DescribeAddressesResult] = js.native
@@ -81,9 +91,11 @@ package object snowball {
     def listClusters(params: ListClustersRequest): Request[ListClustersResult] = js.native
     def listCompatibleImages(params: ListCompatibleImagesRequest): Request[ListCompatibleImagesResult] = js.native
     def listJobs(params: ListJobsRequest): Request[ListJobsResult] = js.native
+    def listLongTermPricing(params: ListLongTermPricingRequest): Request[ListLongTermPricingResult] = js.native
     def updateCluster(params: UpdateClusterRequest): Request[UpdateClusterResult] = js.native
     def updateJob(params: UpdateJobRequest): Request[UpdateJobResult] = js.native
     def updateJobShipmentState(params: UpdateJobShipmentStateRequest): Request[UpdateJobShipmentStateResult] = js.native
+    def updateLongTermPricing(params: UpdateLongTermPricingRequest): Request[UpdateLongTermPricingResult] = js.native
   }
   object Snowball {
     @inline implicit def toOps(service: Snowball): SnowballOps = {
@@ -244,6 +256,7 @@ package object snowball {
     var JobType: js.UndefOr[JobType]
     var KmsKeyARN: js.UndefOr[KmsKeyARN]
     var Notification: js.UndefOr[Notification]
+    var OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration]
     var Resources: js.UndefOr[JobResource]
     var RoleARN: js.UndefOr[RoleARN]
     var ShippingOption: js.UndefOr[ShippingOption]
@@ -263,6 +276,7 @@ package object snowball {
         JobType: js.UndefOr[JobType] = js.undefined,
         KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
         Notification: js.UndefOr[Notification] = js.undefined,
+        OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration] = js.undefined,
         Resources: js.UndefOr[JobResource] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined,
         ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
@@ -279,6 +293,7 @@ package object snowball {
       JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
       KmsKeyARN.foreach(__v => __obj.updateDynamic("KmsKeyARN")(__v.asInstanceOf[js.Any]))
       Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
+      OnDeviceServiceConfiguration.foreach(__v => __obj.updateDynamic("OnDeviceServiceConfiguration")(__v.asInstanceOf[js.Any]))
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
@@ -349,11 +364,13 @@ package object snowball {
     var Resources: JobResource
     var RoleARN: RoleARN
     var ShippingOption: ShippingOption
+    var SnowballType: SnowballType
     var Description: js.UndefOr[String]
     var ForwardingAddressId: js.UndefOr[AddressId]
     var KmsKeyARN: js.UndefOr[KmsKeyARN]
     var Notification: js.UndefOr[Notification]
-    var SnowballType: js.UndefOr[SnowballType]
+    var OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration]
+    var RemoteManagement: js.UndefOr[RemoteManagement]
     var TaxDocuments: js.UndefOr[TaxDocuments]
   }
 
@@ -365,11 +382,13 @@ package object snowball {
         Resources: JobResource,
         RoleARN: RoleARN,
         ShippingOption: ShippingOption,
+        SnowballType: SnowballType,
         Description: js.UndefOr[String] = js.undefined,
         ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
         KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
         Notification: js.UndefOr[Notification] = js.undefined,
-        SnowballType: js.UndefOr[SnowballType] = js.undefined,
+        OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration] = js.undefined,
+        RemoteManagement: js.UndefOr[RemoteManagement] = js.undefined,
         TaxDocuments: js.UndefOr[TaxDocuments] = js.undefined
     ): CreateClusterRequest = {
       val __obj = js.Dynamic.literal(
@@ -377,14 +396,16 @@ package object snowball {
         "JobType" -> JobType.asInstanceOf[js.Any],
         "Resources" -> Resources.asInstanceOf[js.Any],
         "RoleARN" -> RoleARN.asInstanceOf[js.Any],
-        "ShippingOption" -> ShippingOption.asInstanceOf[js.Any]
+        "ShippingOption" -> ShippingOption.asInstanceOf[js.Any],
+        "SnowballType" -> SnowballType.asInstanceOf[js.Any]
       )
 
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
       KmsKeyARN.foreach(__v => __obj.updateDynamic("KmsKeyARN")(__v.asInstanceOf[js.Any]))
       Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
-      SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
+      OnDeviceServiceConfiguration.foreach(__v => __obj.updateDynamic("OnDeviceServiceConfiguration")(__v.asInstanceOf[js.Any]))
+      RemoteManagement.foreach(__v => __obj.updateDynamic("RemoteManagement")(__v.asInstanceOf[js.Any]))
       TaxDocuments.foreach(__v => __obj.updateDynamic("TaxDocuments")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateClusterRequest]
     }
@@ -415,7 +436,10 @@ package object snowball {
     var ForwardingAddressId: js.UndefOr[AddressId]
     var JobType: js.UndefOr[JobType]
     var KmsKeyARN: js.UndefOr[KmsKeyARN]
+    var LongTermPricingId: js.UndefOr[LongTermPricingId]
     var Notification: js.UndefOr[Notification]
+    var OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration]
+    var RemoteManagement: js.UndefOr[RemoteManagement]
     var Resources: js.UndefOr[JobResource]
     var RoleARN: js.UndefOr[RoleARN]
     var ShippingOption: js.UndefOr[ShippingOption]
@@ -434,7 +458,10 @@ package object snowball {
         ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
         JobType: js.UndefOr[JobType] = js.undefined,
         KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
+        LongTermPricingId: js.UndefOr[LongTermPricingId] = js.undefined,
         Notification: js.UndefOr[Notification] = js.undefined,
+        OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration] = js.undefined,
+        RemoteManagement: js.UndefOr[RemoteManagement] = js.undefined,
         Resources: js.UndefOr[JobResource] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined,
         ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
@@ -450,7 +477,10 @@ package object snowball {
       ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
       JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
       KmsKeyARN.foreach(__v => __obj.updateDynamic("KmsKeyARN")(__v.asInstanceOf[js.Any]))
+      LongTermPricingId.foreach(__v => __obj.updateDynamic("LongTermPricingId")(__v.asInstanceOf[js.Any]))
       Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
+      OnDeviceServiceConfiguration.foreach(__v => __obj.updateDynamic("OnDeviceServiceConfiguration")(__v.asInstanceOf[js.Any]))
+      RemoteManagement.foreach(__v => __obj.updateDynamic("RemoteManagement")(__v.asInstanceOf[js.Any]))
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
@@ -474,6 +504,46 @@ package object snowball {
       val __obj = js.Dynamic.literal()
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CreateJobResult]
+    }
+  }
+
+  @js.native
+  trait CreateLongTermPricingRequest extends js.Object {
+    var LongTermPricingType: LongTermPricingType
+    var IsLongTermPricingAutoRenew: js.UndefOr[JavaBoolean]
+    var SnowballType: js.UndefOr[SnowballType]
+  }
+
+  object CreateLongTermPricingRequest {
+    @inline
+    def apply(
+        LongTermPricingType: LongTermPricingType,
+        IsLongTermPricingAutoRenew: js.UndefOr[JavaBoolean] = js.undefined,
+        SnowballType: js.UndefOr[SnowballType] = js.undefined
+    ): CreateLongTermPricingRequest = {
+      val __obj = js.Dynamic.literal(
+        "LongTermPricingType" -> LongTermPricingType.asInstanceOf[js.Any]
+      )
+
+      IsLongTermPricingAutoRenew.foreach(__v => __obj.updateDynamic("IsLongTermPricingAutoRenew")(__v.asInstanceOf[js.Any]))
+      SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLongTermPricingRequest]
+    }
+  }
+
+  @js.native
+  trait CreateLongTermPricingResult extends js.Object {
+    var LongTermPricingId: js.UndefOr[LongTermPricingId]
+  }
+
+  object CreateLongTermPricingResult {
+    @inline
+    def apply(
+        LongTermPricingId: js.UndefOr[LongTermPricingId] = js.undefined
+    ): CreateLongTermPricingResult = {
+      val __obj = js.Dynamic.literal()
+      LongTermPricingId.foreach(__v => __obj.updateDynamic("LongTermPricingId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CreateLongTermPricingResult]
     }
   }
 
@@ -514,7 +584,7 @@ package object snowball {
     }
   }
 
-  /** Defines the real-time status of a Snow device's data transfer while the device is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
+  /** Defines the real-time status of a Snow device's data transfer while the device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.
     */
   @js.native
   trait DataTransfer extends js.Object {
@@ -683,16 +753,17 @@ package object snowball {
 
   @js.native
   trait DescribeReturnShippingLabelRequest extends js.Object {
-    var JobId: js.UndefOr[JobId]
+    var JobId: JobId
   }
 
   object DescribeReturnShippingLabelRequest {
     @inline
     def apply(
-        JobId: js.UndefOr[JobId] = js.undefined
+        JobId: JobId
     ): DescribeReturnShippingLabelRequest = {
-      val __obj = js.Dynamic.literal()
-      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
       __obj.asInstanceOf[DescribeReturnShippingLabelRequest]
     }
   }
@@ -700,6 +771,7 @@ package object snowball {
   @js.native
   trait DescribeReturnShippingLabelResult extends js.Object {
     var ExpirationDate: js.UndefOr[Timestamp]
+    var ReturnShippingLabelURI: js.UndefOr[String]
     var Status: js.UndefOr[ShippingLabelStatus]
   }
 
@@ -707,10 +779,12 @@ package object snowball {
     @inline
     def apply(
         ExpirationDate: js.UndefOr[Timestamp] = js.undefined,
+        ReturnShippingLabelURI: js.UndefOr[String] = js.undefined,
         Status: js.UndefOr[ShippingLabelStatus] = js.undefined
     ): DescribeReturnShippingLabelResult = {
       val __obj = js.Dynamic.literal()
       ExpirationDate.foreach(__v => __obj.updateDynamic("ExpirationDate")(__v.asInstanceOf[js.Any]))
+      ReturnShippingLabelURI.foreach(__v => __obj.updateDynamic("ReturnShippingLabelURI")(__v.asInstanceOf[js.Any]))
       Status.foreach(__v => __obj.updateDynamic("Status")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DescribeReturnShippingLabelResult]
     }
@@ -734,7 +808,7 @@ package object snowball {
     }
   }
 
-  /** A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the AWS Cloud and on the device.
+  /** A JSON-formatted object that contains the IDs for an Amazon Machine Image (AMI), including the Amazon EC2 AMI ID and the Snow device AMI ID. Each AMI has these two IDs to simplify identifying the AMI in both the Amazon Web Services Cloud and on the device.
     */
   @js.native
   trait Ec2AmiResource extends js.Object {
@@ -904,7 +978,7 @@ package object snowball {
     }
   }
 
-  /** The tax documents required in AWS Regions in India.
+  /** The tax documents required in Amazon Web Services Region in India.
     */
   @js.native
   trait INDTaxDocuments extends js.Object {
@@ -999,7 +1073,10 @@ package object snowball {
     var JobState: js.UndefOr[JobState]
     var JobType: js.UndefOr[JobType]
     var KmsKeyARN: js.UndefOr[KmsKeyARN]
+    var LongTermPricingId: js.UndefOr[LongTermPricingId]
     var Notification: js.UndefOr[Notification]
+    var OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration]
+    var RemoteManagement: js.UndefOr[RemoteManagement]
     var Resources: js.UndefOr[JobResource]
     var RoleARN: js.UndefOr[RoleARN]
     var ShippingDetails: js.UndefOr[ShippingDetails]
@@ -1023,7 +1100,10 @@ package object snowball {
         JobState: js.UndefOr[JobState] = js.undefined,
         JobType: js.UndefOr[JobType] = js.undefined,
         KmsKeyARN: js.UndefOr[KmsKeyARN] = js.undefined,
+        LongTermPricingId: js.UndefOr[LongTermPricingId] = js.undefined,
         Notification: js.UndefOr[Notification] = js.undefined,
+        OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration] = js.undefined,
+        RemoteManagement: js.UndefOr[RemoteManagement] = js.undefined,
         Resources: js.UndefOr[JobResource] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined,
         ShippingDetails: js.UndefOr[ShippingDetails] = js.undefined,
@@ -1044,7 +1124,10 @@ package object snowball {
       JobState.foreach(__v => __obj.updateDynamic("JobState")(__v.asInstanceOf[js.Any]))
       JobType.foreach(__v => __obj.updateDynamic("JobType")(__v.asInstanceOf[js.Any]))
       KmsKeyARN.foreach(__v => __obj.updateDynamic("KmsKeyARN")(__v.asInstanceOf[js.Any]))
+      LongTermPricingId.foreach(__v => __obj.updateDynamic("LongTermPricingId")(__v.asInstanceOf[js.Any]))
       Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
+      OnDeviceServiceConfiguration.foreach(__v => __obj.updateDynamic("OnDeviceServiceConfiguration")(__v.asInstanceOf[js.Any]))
+      RemoteManagement.foreach(__v => __obj.updateDynamic("RemoteManagement")(__v.asInstanceOf[js.Any]))
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingDetails.foreach(__v => __obj.updateDynamic("ShippingDetails")(__v.asInstanceOf[js.Any]))
@@ -1055,7 +1138,7 @@ package object snowball {
     }
   }
 
-  /** Contains an array of AWS resource objects. Each object represents an Amazon S3 bucket, an AWS Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
+  /** Contains an array of Amazon Web Services resource objects. Each object represents an Amazon S3 bucket, an Lambda function, or an Amazon Machine Image (AMI) based on Amazon EC2 that is associated with a particular job.
     */
   @js.native
   trait JobResource extends js.Object {
@@ -1278,6 +1361,110 @@ package object snowball {
     }
   }
 
+  @js.native
+  trait ListLongTermPricingRequest extends js.Object {
+    var MaxResults: js.UndefOr[ListLimit]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListLongTermPricingRequest {
+    @inline
+    def apply(
+        MaxResults: js.UndefOr[ListLimit] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListLongTermPricingRequest = {
+      val __obj = js.Dynamic.literal()
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLongTermPricingRequest]
+    }
+  }
+
+  @js.native
+  trait ListLongTermPricingResult extends js.Object {
+    var LongTermPricingEntries: js.UndefOr[LongTermPricingEntryList]
+    var NextToken: js.UndefOr[String]
+  }
+
+  object ListLongTermPricingResult {
+    @inline
+    def apply(
+        LongTermPricingEntries: js.UndefOr[LongTermPricingEntryList] = js.undefined,
+        NextToken: js.UndefOr[String] = js.undefined
+    ): ListLongTermPricingResult = {
+      val __obj = js.Dynamic.literal()
+      LongTermPricingEntries.foreach(__v => __obj.updateDynamic("LongTermPricingEntries")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ListLongTermPricingResult]
+    }
+  }
+
+  /** Each <code>LongTermPricingListEntry</code> object contains information about a long-term pricing type.
+    */
+  @js.native
+  trait LongTermPricingListEntry extends js.Object {
+    var CurrentActiveJob: js.UndefOr[JobId]
+    var IsLongTermPricingAutoRenew: js.UndefOr[JavaBoolean]
+    var JobIds: js.UndefOr[LongTermPricingAssociatedJobIdList]
+    var LongTermPricingEndDate: js.UndefOr[Timestamp]
+    var LongTermPricingId: js.UndefOr[LongTermPricingId]
+    var LongTermPricingStartDate: js.UndefOr[Timestamp]
+    var LongTermPricingStatus: js.UndefOr[String]
+    var LongTermPricingType: js.UndefOr[LongTermPricingType]
+    var ReplacementJob: js.UndefOr[JobId]
+    var SnowballType: js.UndefOr[SnowballType]
+  }
+
+  object LongTermPricingListEntry {
+    @inline
+    def apply(
+        CurrentActiveJob: js.UndefOr[JobId] = js.undefined,
+        IsLongTermPricingAutoRenew: js.UndefOr[JavaBoolean] = js.undefined,
+        JobIds: js.UndefOr[LongTermPricingAssociatedJobIdList] = js.undefined,
+        LongTermPricingEndDate: js.UndefOr[Timestamp] = js.undefined,
+        LongTermPricingId: js.UndefOr[LongTermPricingId] = js.undefined,
+        LongTermPricingStartDate: js.UndefOr[Timestamp] = js.undefined,
+        LongTermPricingStatus: js.UndefOr[String] = js.undefined,
+        LongTermPricingType: js.UndefOr[LongTermPricingType] = js.undefined,
+        ReplacementJob: js.UndefOr[JobId] = js.undefined,
+        SnowballType: js.UndefOr[SnowballType] = js.undefined
+    ): LongTermPricingListEntry = {
+      val __obj = js.Dynamic.literal()
+      CurrentActiveJob.foreach(__v => __obj.updateDynamic("CurrentActiveJob")(__v.asInstanceOf[js.Any]))
+      IsLongTermPricingAutoRenew.foreach(__v => __obj.updateDynamic("IsLongTermPricingAutoRenew")(__v.asInstanceOf[js.Any]))
+      JobIds.foreach(__v => __obj.updateDynamic("JobIds")(__v.asInstanceOf[js.Any]))
+      LongTermPricingEndDate.foreach(__v => __obj.updateDynamic("LongTermPricingEndDate")(__v.asInstanceOf[js.Any]))
+      LongTermPricingId.foreach(__v => __obj.updateDynamic("LongTermPricingId")(__v.asInstanceOf[js.Any]))
+      LongTermPricingStartDate.foreach(__v => __obj.updateDynamic("LongTermPricingStartDate")(__v.asInstanceOf[js.Any]))
+      LongTermPricingStatus.foreach(__v => __obj.updateDynamic("LongTermPricingStatus")(__v.asInstanceOf[js.Any]))
+      LongTermPricingType.foreach(__v => __obj.updateDynamic("LongTermPricingType")(__v.asInstanceOf[js.Any]))
+      ReplacementJob.foreach(__v => __obj.updateDynamic("ReplacementJob")(__v.asInstanceOf[js.Any]))
+      SnowballType.foreach(__v => __obj.updateDynamic("SnowballType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LongTermPricingListEntry]
+    }
+  }
+
+  /** An object that represents the metadata and configuration settings for the NFS (Network File System) service on an Amazon Web Services Snow Family device.
+    */
+  @js.native
+  trait NFSOnDeviceServiceConfiguration extends js.Object {
+    var StorageLimit: js.UndefOr[StorageLimit]
+    var StorageUnit: js.UndefOr[StorageUnit]
+  }
+
+  object NFSOnDeviceServiceConfiguration {
+    @inline
+    def apply(
+        StorageLimit: js.UndefOr[StorageLimit] = js.undefined,
+        StorageUnit: js.UndefOr[StorageUnit] = js.undefined
+    ): NFSOnDeviceServiceConfiguration = {
+      val __obj = js.Dynamic.literal()
+      StorageLimit.foreach(__v => __obj.updateDynamic("StorageLimit")(__v.asInstanceOf[js.Any]))
+      StorageUnit.foreach(__v => __obj.updateDynamic("StorageUnit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NFSOnDeviceServiceConfiguration]
+    }
+  }
+
   /** The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.
     */
   @js.native
@@ -1302,23 +1489,47 @@ package object snowball {
     }
   }
 
+  /** An object that represents the metadata and configuration settings for services on an Amazon Web Services Snow Family device.
+    */
+  @js.native
+  trait OnDeviceServiceConfiguration extends js.Object {
+    var NFSOnDeviceService: js.UndefOr[NFSOnDeviceServiceConfiguration]
+    var TGWOnDeviceService: js.UndefOr[TGWOnDeviceServiceConfiguration]
+  }
+
+  object OnDeviceServiceConfiguration {
+    @inline
+    def apply(
+        NFSOnDeviceService: js.UndefOr[NFSOnDeviceServiceConfiguration] = js.undefined,
+        TGWOnDeviceService: js.UndefOr[TGWOnDeviceServiceConfiguration] = js.undefined
+    ): OnDeviceServiceConfiguration = {
+      val __obj = js.Dynamic.literal()
+      NFSOnDeviceService.foreach(__v => __obj.updateDynamic("NFSOnDeviceService")(__v.asInstanceOf[js.Any]))
+      TGWOnDeviceService.foreach(__v => __obj.updateDynamic("TGWOnDeviceService")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OnDeviceServiceConfiguration]
+    }
+  }
+
   /** Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.
     */
   @js.native
   trait S3Resource extends js.Object {
     var BucketArn: js.UndefOr[ResourceARN]
     var KeyRange: js.UndefOr[KeyRange]
+    var TargetOnDeviceServices: js.UndefOr[TargetOnDeviceServiceList]
   }
 
   object S3Resource {
     @inline
     def apply(
         BucketArn: js.UndefOr[ResourceARN] = js.undefined,
-        KeyRange: js.UndefOr[KeyRange] = js.undefined
+        KeyRange: js.UndefOr[KeyRange] = js.undefined,
+        TargetOnDeviceServices: js.UndefOr[TargetOnDeviceServiceList] = js.undefined
     ): S3Resource = {
       val __obj = js.Dynamic.literal()
       BucketArn.foreach(__v => __obj.updateDynamic("BucketArn")(__v.asInstanceOf[js.Any]))
       KeyRange.foreach(__v => __obj.updateDynamic("KeyRange")(__v.asInstanceOf[js.Any]))
+      TargetOnDeviceServices.foreach(__v => __obj.updateDynamic("TargetOnDeviceServices")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[S3Resource]
     }
   }
@@ -1368,7 +1579,7 @@ package object snowball {
     }
   }
 
-  /** Specifies the device configuration for an AWS Snowcone job.
+  /** Specifies the device configuration for an Snowcone job.
     */
   @js.native
   trait SnowconeDeviceConfiguration extends js.Object {
@@ -1386,7 +1597,49 @@ package object snowball {
     }
   }
 
-  /** The tax documents required in your AWS Region.
+  /** An object that represents the metadata and configuration settings for the Storage Gateway service Tape Gateway type on an Amazon Web Services Snow Family device.
+    */
+  @js.native
+  trait TGWOnDeviceServiceConfiguration extends js.Object {
+    var StorageLimit: js.UndefOr[StorageLimit]
+    var StorageUnit: js.UndefOr[StorageUnit]
+  }
+
+  object TGWOnDeviceServiceConfiguration {
+    @inline
+    def apply(
+        StorageLimit: js.UndefOr[StorageLimit] = js.undefined,
+        StorageUnit: js.UndefOr[StorageUnit] = js.undefined
+    ): TGWOnDeviceServiceConfiguration = {
+      val __obj = js.Dynamic.literal()
+      StorageLimit.foreach(__v => __obj.updateDynamic("StorageLimit")(__v.asInstanceOf[js.Any]))
+      StorageUnit.foreach(__v => __obj.updateDynamic("StorageUnit")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TGWOnDeviceServiceConfiguration]
+    }
+  }
+
+  /** An object that represents the service or services on the Snow Family device that your transferred data will be exported from or imported into. Amazon Web Services Snow Family supports Amazon S3 and NFS (Network File System).
+    */
+  @js.native
+  trait TargetOnDeviceService extends js.Object {
+    var ServiceName: js.UndefOr[DeviceServiceName]
+    var TransferOption: js.UndefOr[TransferOption]
+  }
+
+  object TargetOnDeviceService {
+    @inline
+    def apply(
+        ServiceName: js.UndefOr[DeviceServiceName] = js.undefined,
+        TransferOption: js.UndefOr[TransferOption] = js.undefined
+    ): TargetOnDeviceService = {
+      val __obj = js.Dynamic.literal()
+      ServiceName.foreach(__v => __obj.updateDynamic("ServiceName")(__v.asInstanceOf[js.Any]))
+      TransferOption.foreach(__v => __obj.updateDynamic("TransferOption")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TargetOnDeviceService]
+    }
+  }
+
+  /** The tax documents required in your Amazon Web Services Region.
     */
   @js.native
   trait TaxDocuments extends js.Object {
@@ -1411,6 +1664,7 @@ package object snowball {
     var Description: js.UndefOr[String]
     var ForwardingAddressId: js.UndefOr[AddressId]
     var Notification: js.UndefOr[Notification]
+    var OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration]
     var Resources: js.UndefOr[JobResource]
     var RoleARN: js.UndefOr[RoleARN]
     var ShippingOption: js.UndefOr[ShippingOption]
@@ -1424,6 +1678,7 @@ package object snowball {
         Description: js.UndefOr[String] = js.undefined,
         ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
         Notification: js.UndefOr[Notification] = js.undefined,
+        OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration] = js.undefined,
         Resources: js.UndefOr[JobResource] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined,
         ShippingOption: js.UndefOr[ShippingOption] = js.undefined
@@ -1436,6 +1691,7 @@ package object snowball {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
       Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
+      OnDeviceServiceConfiguration.foreach(__v => __obj.updateDynamic("OnDeviceServiceConfiguration")(__v.asInstanceOf[js.Any]))
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
@@ -1461,6 +1717,7 @@ package object snowball {
     var Description: js.UndefOr[String]
     var ForwardingAddressId: js.UndefOr[AddressId]
     var Notification: js.UndefOr[Notification]
+    var OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration]
     var Resources: js.UndefOr[JobResource]
     var RoleARN: js.UndefOr[RoleARN]
     var ShippingOption: js.UndefOr[ShippingOption]
@@ -1475,6 +1732,7 @@ package object snowball {
         Description: js.UndefOr[String] = js.undefined,
         ForwardingAddressId: js.UndefOr[AddressId] = js.undefined,
         Notification: js.UndefOr[Notification] = js.undefined,
+        OnDeviceServiceConfiguration: js.UndefOr[OnDeviceServiceConfiguration] = js.undefined,
         Resources: js.UndefOr[JobResource] = js.undefined,
         RoleARN: js.UndefOr[RoleARN] = js.undefined,
         ShippingOption: js.UndefOr[ShippingOption] = js.undefined,
@@ -1488,6 +1746,7 @@ package object snowball {
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       ForwardingAddressId.foreach(__v => __obj.updateDynamic("ForwardingAddressId")(__v.asInstanceOf[js.Any]))
       Notification.foreach(__v => __obj.updateDynamic("Notification")(__v.asInstanceOf[js.Any]))
+      OnDeviceServiceConfiguration.foreach(__v => __obj.updateDynamic("OnDeviceServiceConfiguration")(__v.asInstanceOf[js.Any]))
       Resources.foreach(__v => __obj.updateDynamic("Resources")(__v.asInstanceOf[js.Any]))
       RoleARN.foreach(__v => __obj.updateDynamic("RoleARN")(__v.asInstanceOf[js.Any]))
       ShippingOption.foreach(__v => __obj.updateDynamic("ShippingOption")(__v.asInstanceOf[js.Any]))
@@ -1538,7 +1797,42 @@ package object snowball {
     }
   }
 
-  /** Configures the wireless connection on an AWS Snowcone device.
+  @js.native
+  trait UpdateLongTermPricingRequest extends js.Object {
+    var LongTermPricingId: LongTermPricingId
+    var IsLongTermPricingAutoRenew: js.UndefOr[JavaBoolean]
+    var ReplacementJob: js.UndefOr[JobId]
+  }
+
+  object UpdateLongTermPricingRequest {
+    @inline
+    def apply(
+        LongTermPricingId: LongTermPricingId,
+        IsLongTermPricingAutoRenew: js.UndefOr[JavaBoolean] = js.undefined,
+        ReplacementJob: js.UndefOr[JobId] = js.undefined
+    ): UpdateLongTermPricingRequest = {
+      val __obj = js.Dynamic.literal(
+        "LongTermPricingId" -> LongTermPricingId.asInstanceOf[js.Any]
+      )
+
+      IsLongTermPricingAutoRenew.foreach(__v => __obj.updateDynamic("IsLongTermPricingAutoRenew")(__v.asInstanceOf[js.Any]))
+      ReplacementJob.foreach(__v => __obj.updateDynamic("ReplacementJob")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateLongTermPricingRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateLongTermPricingResult extends js.Object
+
+  object UpdateLongTermPricingResult {
+    @inline
+    def apply(): UpdateLongTermPricingResult = {
+      val __obj = js.Dynamic.literal()
+      __obj.asInstanceOf[UpdateLongTermPricingResult]
+    }
+  }
+
+  /** Configures the wireless connection on an Snowcone device.
     */
   @js.native
   trait WirelessConnection extends js.Object {

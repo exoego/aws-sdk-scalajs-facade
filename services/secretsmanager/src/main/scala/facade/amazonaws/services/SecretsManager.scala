@@ -26,6 +26,7 @@ package object secretsmanager {
   type FilterValuesStringList = js.Array[FilterValueStringType]
   type FiltersListType = js.Array[Filter]
   type IncludeSpaceType = Boolean
+  type KmsKeyIdListType = js.Array[KmsKeyIdType]
   type KmsKeyIdType = String
   type LastAccessedDateType = js.Date
   type LastChangedDateType = js.Date
@@ -393,7 +394,7 @@ package object secretsmanager {
     }
   }
 
-  /** Allows you to add filters when you use the search function in Secrets Manager.
+  /** Allows you to add filters when you use the search function in Secrets Manager. For more information, see [[https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_search-secret.html|Find secrets in Secrets Manager]].
     */
   @js.native
   trait Filter extends js.Object {
@@ -797,7 +798,7 @@ package object secretsmanager {
     }
   }
 
-  /** (Optional) Custom type consisting of a <code>Region</code> (required) and the <code>KmsKeyId</code> which can be an <code>ARN</code>, <code>Key ID</code>, or <code>Alias</code>.
+  /** A custom type that specifies a <code>Region</code> and the <code>KmsKeyId</code> for a replica secret.
     */
   @js.native
   trait ReplicaRegionType extends js.Object {
@@ -1062,6 +1063,7 @@ package object secretsmanager {
   @js.native
   trait SecretVersionsListEntry extends js.Object {
     var CreatedDate: js.UndefOr[CreatedDateType]
+    var KmsKeyIds: js.UndefOr[KmsKeyIdListType]
     var LastAccessedDate: js.UndefOr[LastAccessedDateType]
     var VersionId: js.UndefOr[SecretVersionIdType]
     var VersionStages: js.UndefOr[SecretVersionStagesType]
@@ -1071,12 +1073,14 @@ package object secretsmanager {
     @inline
     def apply(
         CreatedDate: js.UndefOr[CreatedDateType] = js.undefined,
+        KmsKeyIds: js.UndefOr[KmsKeyIdListType] = js.undefined,
         LastAccessedDate: js.UndefOr[LastAccessedDateType] = js.undefined,
         VersionId: js.UndefOr[SecretVersionIdType] = js.undefined,
         VersionStages: js.UndefOr[SecretVersionStagesType] = js.undefined
     ): SecretVersionsListEntry = {
       val __obj = js.Dynamic.literal()
       CreatedDate.foreach(__v => __obj.updateDynamic("CreatedDate")(__v.asInstanceOf[js.Any]))
+      KmsKeyIds.foreach(__v => __obj.updateDynamic("KmsKeyIds")(__v.asInstanceOf[js.Any]))
       LastAccessedDate.foreach(__v => __obj.updateDynamic("LastAccessedDate")(__v.asInstanceOf[js.Any]))
       VersionId.foreach(__v => __obj.updateDynamic("VersionId")(__v.asInstanceOf[js.Any]))
       VersionStages.foreach(__v => __obj.updateDynamic("VersionStages")(__v.asInstanceOf[js.Any]))

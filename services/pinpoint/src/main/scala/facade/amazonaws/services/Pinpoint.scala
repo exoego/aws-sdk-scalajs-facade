@@ -15,6 +15,8 @@ package object pinpoint {
   type ListOfEndpointResponse = js.Array[EndpointResponse]
   type ListOfExportJobResponse = js.Array[ExportJobResponse]
   type ListOfImportJobResponse = js.Array[ImportJobResponse]
+  type ListOfInAppMessageCampaign = js.Array[InAppMessageCampaign]
+  type ListOfInAppMessageContent = js.Array[InAppMessageContent]
   type ListOfJourneyResponse = js.Array[JourneyResponse]
   type ListOfMultiConditionalBranch = js.Array[MultiConditionalBranch]
   type ListOfRandomSplitEntry = js.Array[RandomSplitEntry]
@@ -63,6 +65,7 @@ package object pinpoint {
     @inline def createEmailTemplateFuture(params: CreateEmailTemplateRequest): Future[CreateEmailTemplateResponse] = service.createEmailTemplate(params).promise().toFuture
     @inline def createExportJobFuture(params: CreateExportJobRequest): Future[CreateExportJobResponse] = service.createExportJob(params).promise().toFuture
     @inline def createImportJobFuture(params: CreateImportJobRequest): Future[CreateImportJobResponse] = service.createImportJob(params).promise().toFuture
+    @inline def createInAppTemplateFuture(params: CreateInAppTemplateRequest): Future[CreateInAppTemplateResponse] = service.createInAppTemplate(params).promise().toFuture
     @inline def createJourneyFuture(params: CreateJourneyRequest): Future[CreateJourneyResponse] = service.createJourney(params).promise().toFuture
     @inline def createPushTemplateFuture(params: CreatePushTemplateRequest): Future[CreatePushTemplateResponse] = service.createPushTemplate(params).promise().toFuture
     @inline def createRecommenderConfigurationFuture(params: CreateRecommenderConfigurationRequest): Future[CreateRecommenderConfigurationResponse] = service.createRecommenderConfiguration(params).promise().toFuture
@@ -82,6 +85,7 @@ package object pinpoint {
     @inline def deleteEndpointFuture(params: DeleteEndpointRequest): Future[DeleteEndpointResponse] = service.deleteEndpoint(params).promise().toFuture
     @inline def deleteEventStreamFuture(params: DeleteEventStreamRequest): Future[DeleteEventStreamResponse] = service.deleteEventStream(params).promise().toFuture
     @inline def deleteGcmChannelFuture(params: DeleteGcmChannelRequest): Future[DeleteGcmChannelResponse] = service.deleteGcmChannel(params).promise().toFuture
+    @inline def deleteInAppTemplateFuture(params: DeleteInAppTemplateRequest): Future[DeleteInAppTemplateResponse] = service.deleteInAppTemplate(params).promise().toFuture
     @inline def deleteJourneyFuture(params: DeleteJourneyRequest): Future[DeleteJourneyResponse] = service.deleteJourney(params).promise().toFuture
     @inline def deletePushTemplateFuture(params: DeletePushTemplateRequest): Future[DeletePushTemplateResponse] = service.deletePushTemplate(params).promise().toFuture
     @inline def deleteRecommenderConfigurationFuture(params: DeleteRecommenderConfigurationRequest): Future[DeleteRecommenderConfigurationResponse] = service.deleteRecommenderConfiguration(params).promise().toFuture
@@ -117,6 +121,8 @@ package object pinpoint {
     @inline def getGcmChannelFuture(params: GetGcmChannelRequest): Future[GetGcmChannelResponse] = service.getGcmChannel(params).promise().toFuture
     @inline def getImportJobFuture(params: GetImportJobRequest): Future[GetImportJobResponse] = service.getImportJob(params).promise().toFuture
     @inline def getImportJobsFuture(params: GetImportJobsRequest): Future[GetImportJobsResponse] = service.getImportJobs(params).promise().toFuture
+    @inline def getInAppMessagesFuture(params: GetInAppMessagesRequest): Future[GetInAppMessagesResponse] = service.getInAppMessages(params).promise().toFuture
+    @inline def getInAppTemplateFuture(params: GetInAppTemplateRequest): Future[GetInAppTemplateResponse] = service.getInAppTemplate(params).promise().toFuture
     @inline def getJourneyDateRangeKpiFuture(params: GetJourneyDateRangeKpiRequest): Future[GetJourneyDateRangeKpiResponse] = service.getJourneyDateRangeKpi(params).promise().toFuture
     @inline def getJourneyExecutionActivityMetricsFuture(params: GetJourneyExecutionActivityMetricsRequest): Future[GetJourneyExecutionActivityMetricsResponse] = service.getJourneyExecutionActivityMetrics(params).promise().toFuture
     @inline def getJourneyExecutionMetricsFuture(params: GetJourneyExecutionMetricsRequest): Future[GetJourneyExecutionMetricsResponse] = service.getJourneyExecutionMetrics(params).promise().toFuture
@@ -144,6 +150,7 @@ package object pinpoint {
     @inline def putEventsFuture(params: PutEventsRequest): Future[PutEventsResponse] = service.putEvents(params).promise().toFuture
     @inline def removeAttributesFuture(params: RemoveAttributesRequest): Future[RemoveAttributesResponse] = service.removeAttributes(params).promise().toFuture
     @inline def sendMessagesFuture(params: SendMessagesRequest): Future[SendMessagesResponse] = service.sendMessages(params).promise().toFuture
+    @inline def sendOTPMessageFuture(params: SendOTPMessageRequest): Future[SendOTPMessageResponse] = service.sendOTPMessage(params).promise().toFuture
     @inline def sendUsersMessagesFuture(params: SendUsersMessagesRequest): Future[SendUsersMessagesResponse] = service.sendUsersMessages(params).promise().toFuture
     @inline def tagResourceFuture(params: TagResourceRequest): Future[js.Object] = service.tagResource(params).promise().toFuture
     @inline def untagResourceFuture(params: UntagResourceRequest): Future[js.Object] = service.untagResource(params).promise().toFuture
@@ -160,6 +167,7 @@ package object pinpoint {
     @inline def updateEndpointFuture(params: UpdateEndpointRequest): Future[UpdateEndpointResponse] = service.updateEndpoint(params).promise().toFuture
     @inline def updateEndpointsBatchFuture(params: UpdateEndpointsBatchRequest): Future[UpdateEndpointsBatchResponse] = service.updateEndpointsBatch(params).promise().toFuture
     @inline def updateGcmChannelFuture(params: UpdateGcmChannelRequest): Future[UpdateGcmChannelResponse] = service.updateGcmChannel(params).promise().toFuture
+    @inline def updateInAppTemplateFuture(params: UpdateInAppTemplateRequest): Future[UpdateInAppTemplateResponse] = service.updateInAppTemplate(params).promise().toFuture
     @inline def updateJourneyFuture(params: UpdateJourneyRequest): Future[UpdateJourneyResponse] = service.updateJourney(params).promise().toFuture
     @inline def updateJourneyStateFuture(params: UpdateJourneyStateRequest): Future[UpdateJourneyStateResponse] = service.updateJourneyState(params).promise().toFuture
     @inline def updatePushTemplateFuture(params: UpdatePushTemplateRequest): Future[UpdatePushTemplateResponse] = service.updatePushTemplate(params).promise().toFuture
@@ -170,6 +178,7 @@ package object pinpoint {
     @inline def updateTemplateActiveVersionFuture(params: UpdateTemplateActiveVersionRequest): Future[UpdateTemplateActiveVersionResponse] = service.updateTemplateActiveVersion(params).promise().toFuture
     @inline def updateVoiceChannelFuture(params: UpdateVoiceChannelRequest): Future[UpdateVoiceChannelResponse] = service.updateVoiceChannel(params).promise().toFuture
     @inline def updateVoiceTemplateFuture(params: UpdateVoiceTemplateRequest): Future[UpdateVoiceTemplateResponse] = service.updateVoiceTemplate(params).promise().toFuture
+    @inline def verifyOTPMessageFuture(params: VerifyOTPMessageRequest): Future[VerifyOTPMessageResponse] = service.verifyOTPMessage(params).promise().toFuture
 
   }
 
@@ -183,6 +192,7 @@ package object pinpoint {
     def createEmailTemplate(params: CreateEmailTemplateRequest): Request[CreateEmailTemplateResponse] = js.native
     def createExportJob(params: CreateExportJobRequest): Request[CreateExportJobResponse] = js.native
     def createImportJob(params: CreateImportJobRequest): Request[CreateImportJobResponse] = js.native
+    def createInAppTemplate(params: CreateInAppTemplateRequest): Request[CreateInAppTemplateResponse] = js.native
     def createJourney(params: CreateJourneyRequest): Request[CreateJourneyResponse] = js.native
     def createPushTemplate(params: CreatePushTemplateRequest): Request[CreatePushTemplateResponse] = js.native
     def createRecommenderConfiguration(params: CreateRecommenderConfigurationRequest): Request[CreateRecommenderConfigurationResponse] = js.native
@@ -202,6 +212,7 @@ package object pinpoint {
     def deleteEndpoint(params: DeleteEndpointRequest): Request[DeleteEndpointResponse] = js.native
     def deleteEventStream(params: DeleteEventStreamRequest): Request[DeleteEventStreamResponse] = js.native
     def deleteGcmChannel(params: DeleteGcmChannelRequest): Request[DeleteGcmChannelResponse] = js.native
+    def deleteInAppTemplate(params: DeleteInAppTemplateRequest): Request[DeleteInAppTemplateResponse] = js.native
     def deleteJourney(params: DeleteJourneyRequest): Request[DeleteJourneyResponse] = js.native
     def deletePushTemplate(params: DeletePushTemplateRequest): Request[DeletePushTemplateResponse] = js.native
     def deleteRecommenderConfiguration(params: DeleteRecommenderConfigurationRequest): Request[DeleteRecommenderConfigurationResponse] = js.native
@@ -237,6 +248,8 @@ package object pinpoint {
     def getGcmChannel(params: GetGcmChannelRequest): Request[GetGcmChannelResponse] = js.native
     def getImportJob(params: GetImportJobRequest): Request[GetImportJobResponse] = js.native
     def getImportJobs(params: GetImportJobsRequest): Request[GetImportJobsResponse] = js.native
+    def getInAppMessages(params: GetInAppMessagesRequest): Request[GetInAppMessagesResponse] = js.native
+    def getInAppTemplate(params: GetInAppTemplateRequest): Request[GetInAppTemplateResponse] = js.native
     def getJourney(params: GetJourneyRequest): Request[GetJourneyResponse] = js.native
     def getJourneyDateRangeKpi(params: GetJourneyDateRangeKpiRequest): Request[GetJourneyDateRangeKpiResponse] = js.native
     def getJourneyExecutionActivityMetrics(params: GetJourneyExecutionActivityMetricsRequest): Request[GetJourneyExecutionActivityMetricsResponse] = js.native
@@ -264,6 +277,7 @@ package object pinpoint {
     def putEvents(params: PutEventsRequest): Request[PutEventsResponse] = js.native
     def removeAttributes(params: RemoveAttributesRequest): Request[RemoveAttributesResponse] = js.native
     def sendMessages(params: SendMessagesRequest): Request[SendMessagesResponse] = js.native
+    def sendOTPMessage(params: SendOTPMessageRequest): Request[SendOTPMessageResponse] = js.native
     def sendUsersMessages(params: SendUsersMessagesRequest): Request[SendUsersMessagesResponse] = js.native
     def tagResource(params: TagResourceRequest): Request[js.Object] = js.native
     def untagResource(params: UntagResourceRequest): Request[js.Object] = js.native
@@ -280,6 +294,7 @@ package object pinpoint {
     def updateEndpoint(params: UpdateEndpointRequest): Request[UpdateEndpointResponse] = js.native
     def updateEndpointsBatch(params: UpdateEndpointsBatchRequest): Request[UpdateEndpointsBatchResponse] = js.native
     def updateGcmChannel(params: UpdateGcmChannelRequest): Request[UpdateGcmChannelResponse] = js.native
+    def updateInAppTemplate(params: UpdateInAppTemplateRequest): Request[UpdateInAppTemplateResponse] = js.native
     def updateJourney(params: UpdateJourneyRequest): Request[UpdateJourneyResponse] = js.native
     def updateJourneyState(params: UpdateJourneyStateRequest): Request[UpdateJourneyStateResponse] = js.native
     def updatePushTemplate(params: UpdatePushTemplateRequest): Request[UpdatePushTemplateResponse] = js.native
@@ -290,6 +305,7 @@ package object pinpoint {
     def updateTemplateActiveVersion(params: UpdateTemplateActiveVersionRequest): Request[UpdateTemplateActiveVersionResponse] = js.native
     def updateVoiceChannel(params: UpdateVoiceChannelRequest): Request[UpdateVoiceChannelResponse] = js.native
     def updateVoiceTemplate(params: UpdateVoiceTemplateRequest): Request[UpdateVoiceTemplateResponse] = js.native
+    def verifyOTPMessage(params: VerifyOTPMessageRequest): Request[VerifyOTPMessageResponse] = js.native
   }
   object Pinpoint {
     @inline implicit def toOps(service: Pinpoint): PinpointOps = {
@@ -935,6 +951,7 @@ package object pinpoint {
   trait Activity extends js.Object {
     var CUSTOM: js.UndefOr[CustomMessageActivity]
     var ConditionalSplit: js.UndefOr[ConditionalSplitActivity]
+    var ContactCenter: js.UndefOr[ContactCenterActivity]
     var Description: js.UndefOr[__string]
     var EMAIL: js.UndefOr[EmailMessageActivity]
     var Holdout: js.UndefOr[HoldoutActivity]
@@ -950,6 +967,7 @@ package object pinpoint {
     def apply(
         CUSTOM: js.UndefOr[CustomMessageActivity] = js.undefined,
         ConditionalSplit: js.UndefOr[ConditionalSplitActivity] = js.undefined,
+        ContactCenter: js.UndefOr[ContactCenterActivity] = js.undefined,
         Description: js.UndefOr[__string] = js.undefined,
         EMAIL: js.UndefOr[EmailMessageActivity] = js.undefined,
         Holdout: js.UndefOr[HoldoutActivity] = js.undefined,
@@ -962,6 +980,7 @@ package object pinpoint {
       val __obj = js.Dynamic.literal()
       CUSTOM.foreach(__v => __obj.updateDynamic("CUSTOM")(__v.asInstanceOf[js.Any]))
       ConditionalSplit.foreach(__v => __obj.updateDynamic("ConditionalSplit")(__v.asInstanceOf[js.Any]))
+      ContactCenter.foreach(__v => __obj.updateDynamic("ContactCenter")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EMAIL.foreach(__v => __obj.updateDynamic("EMAIL")(__v.asInstanceOf[js.Any]))
       Holdout.foreach(__v => __obj.updateDynamic("Holdout")(__v.asInstanceOf[js.Any]))
@@ -1552,6 +1571,33 @@ package object pinpoint {
     }
   }
 
+  /** In-app message configuration.
+    */
+  @js.native
+  trait CampaignInAppMessage extends js.Object {
+    var Body: js.UndefOr[__string]
+    var Content: js.UndefOr[ListOfInAppMessageContent]
+    var CustomConfig: js.UndefOr[MapOf__string]
+    var Layout: js.UndefOr[Layout]
+  }
+
+  object CampaignInAppMessage {
+    @inline
+    def apply(
+        Body: js.UndefOr[__string] = js.undefined,
+        Content: js.UndefOr[ListOfInAppMessageContent] = js.undefined,
+        CustomConfig: js.UndefOr[MapOf__string] = js.undefined,
+        Layout: js.UndefOr[Layout] = js.undefined
+    ): CampaignInAppMessage = {
+      val __obj = js.Dynamic.literal()
+      Body.foreach(__v => __obj.updateDynamic("Body")(__v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      CustomConfig.foreach(__v => __obj.updateDynamic("CustomConfig")(__v.asInstanceOf[js.Any]))
+      Layout.foreach(__v => __obj.updateDynamic("Layout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CampaignInAppMessage]
+    }
+  }
+
   /** For a campaign, specifies limits on the messages that the campaign can send. For an application, specifies the default limits for messages that campaigns in the application can send.
     */
   @js.native
@@ -1559,6 +1605,7 @@ package object pinpoint {
     var Daily: js.UndefOr[__integer]
     var MaximumDuration: js.UndefOr[__integer]
     var MessagesPerSecond: js.UndefOr[__integer]
+    var Session: js.UndefOr[__integer]
     var Total: js.UndefOr[__integer]
   }
 
@@ -1568,12 +1615,14 @@ package object pinpoint {
         Daily: js.UndefOr[__integer] = js.undefined,
         MaximumDuration: js.UndefOr[__integer] = js.undefined,
         MessagesPerSecond: js.UndefOr[__integer] = js.undefined,
+        Session: js.UndefOr[__integer] = js.undefined,
         Total: js.UndefOr[__integer] = js.undefined
     ): CampaignLimits = {
       val __obj = js.Dynamic.literal()
       Daily.foreach(__v => __obj.updateDynamic("Daily")(__v.asInstanceOf[js.Any]))
       MaximumDuration.foreach(__v => __obj.updateDynamic("MaximumDuration")(__v.asInstanceOf[js.Any]))
       MessagesPerSecond.foreach(__v => __obj.updateDynamic("MessagesPerSecond")(__v.asInstanceOf[js.Any]))
+      Session.foreach(__v => __obj.updateDynamic("Session")(__v.asInstanceOf[js.Any]))
       Total.foreach(__v => __obj.updateDynamic("Total")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CampaignLimits]
     }
@@ -1600,6 +1649,7 @@ package object pinpoint {
     var Limits: js.UndefOr[CampaignLimits]
     var MessageConfiguration: js.UndefOr[MessageConfiguration]
     var Name: js.UndefOr[__string]
+    var Priority: js.UndefOr[__integer]
     var Schedule: js.UndefOr[Schedule]
     var State: js.UndefOr[CampaignState]
     var TemplateConfiguration: js.UndefOr[TemplateConfiguration]
@@ -1629,6 +1679,7 @@ package object pinpoint {
         Limits: js.UndefOr[CampaignLimits] = js.undefined,
         MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        Priority: js.UndefOr[__integer] = js.undefined,
         Schedule: js.UndefOr[Schedule] = js.undefined,
         State: js.UndefOr[CampaignState] = js.undefined,
         TemplateConfiguration: js.UndefOr[TemplateConfiguration] = js.undefined,
@@ -1657,6 +1708,7 @@ package object pinpoint {
       Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
       MessageConfiguration.foreach(__v => __obj.updateDynamic("MessageConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       TemplateConfiguration.foreach(__v => __obj.updateDynamic("TemplateConfiguration")(__v.asInstanceOf[js.Any]))
@@ -1850,6 +1902,22 @@ package object pinpoint {
       FalseActivity.foreach(__v => __obj.updateDynamic("FalseActivity")(__v.asInstanceOf[js.Any]))
       TrueActivity.foreach(__v => __obj.updateDynamic("TrueActivity")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ConditionalSplitActivity]
+    }
+  }
+
+  @js.native
+  trait ContactCenterActivity extends js.Object {
+    var NextActivity: js.UndefOr[__string]
+  }
+
+  object ContactCenterActivity {
+    @inline
+    def apply(
+        NextActivity: js.UndefOr[__string] = js.undefined
+    ): ContactCenterActivity = {
+      val __obj = js.Dynamic.literal()
+      NextActivity.foreach(__v => __obj.updateDynamic("NextActivity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ContactCenterActivity]
     }
   }
 
@@ -2055,6 +2123,43 @@ package object pinpoint {
         "ImportJobResponse" -> ImportJobResponse.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[CreateImportJobResponse]
+    }
+  }
+
+  @js.native
+  trait CreateInAppTemplateRequest extends js.Object {
+    var InAppTemplateRequest: InAppTemplateRequest
+    var TemplateName: __string
+  }
+
+  object CreateInAppTemplateRequest {
+    @inline
+    def apply(
+        InAppTemplateRequest: InAppTemplateRequest,
+        TemplateName: __string
+    ): CreateInAppTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "InAppTemplateRequest" -> InAppTemplateRequest.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateInAppTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait CreateInAppTemplateResponse extends js.Object {
+    var TemplateCreateMessageBody: TemplateCreateMessageBody
+  }
+
+  object CreateInAppTemplateResponse {
+    @inline
+    def apply(
+        TemplateCreateMessageBody: TemplateCreateMessageBody
+    ): CreateInAppTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "TemplateCreateMessageBody" -> TemplateCreateMessageBody.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[CreateInAppTemplateResponse]
     }
   }
 
@@ -2398,6 +2503,41 @@ package object pinpoint {
       TemplateName.foreach(__v => __obj.updateDynamic("TemplateName")(__v.asInstanceOf[js.Any]))
       TemplateVersion.foreach(__v => __obj.updateDynamic("TemplateVersion")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CustomMessageActivity]
+    }
+  }
+
+  /** Default button configuration.
+    */
+  @js.native
+  trait DefaultButtonConfiguration extends js.Object {
+    var ButtonAction: ButtonAction
+    var Text: __string
+    var BackgroundColor: js.UndefOr[__string]
+    var BorderRadius: js.UndefOr[__integer]
+    var Link: js.UndefOr[__string]
+    var TextColor: js.UndefOr[__string]
+  }
+
+  object DefaultButtonConfiguration {
+    @inline
+    def apply(
+        ButtonAction: ButtonAction,
+        Text: __string,
+        BackgroundColor: js.UndefOr[__string] = js.undefined,
+        BorderRadius: js.UndefOr[__integer] = js.undefined,
+        Link: js.UndefOr[__string] = js.undefined,
+        TextColor: js.UndefOr[__string] = js.undefined
+    ): DefaultButtonConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "ButtonAction" -> ButtonAction.asInstanceOf[js.Any],
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+
+      BackgroundColor.foreach(__v => __obj.updateDynamic("BackgroundColor")(__v.asInstanceOf[js.Any]))
+      BorderRadius.foreach(__v => __obj.updateDynamic("BorderRadius")(__v.asInstanceOf[js.Any]))
+      Link.foreach(__v => __obj.updateDynamic("Link")(__v.asInstanceOf[js.Any]))
+      TextColor.foreach(__v => __obj.updateDynamic("TextColor")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DefaultButtonConfiguration]
     }
   }
 
@@ -2937,6 +3077,44 @@ package object pinpoint {
         "GCMChannelResponse" -> GCMChannelResponse.asInstanceOf[js.Any]
       )
       __obj.asInstanceOf[DeleteGcmChannelResponse]
+    }
+  }
+
+  @js.native
+  trait DeleteInAppTemplateRequest extends js.Object {
+    var TemplateName: __string
+    var Version: js.UndefOr[__string]
+  }
+
+  object DeleteInAppTemplateRequest {
+    @inline
+    def apply(
+        TemplateName: __string,
+        Version: js.UndefOr[__string] = js.undefined
+    ): DeleteInAppTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[DeleteInAppTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait DeleteInAppTemplateResponse extends js.Object {
+    var MessageBody: MessageBody
+  }
+
+  object DeleteInAppTemplateResponse {
+    @inline
+    def apply(
+        MessageBody: MessageBody
+    ): DeleteInAppTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "MessageBody" -> MessageBody.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[DeleteInAppTemplateResponse]
     }
   }
 
@@ -5490,6 +5668,81 @@ package object pinpoint {
   }
 
   @js.native
+  trait GetInAppMessagesRequest extends js.Object {
+    var ApplicationId: __string
+    var EndpointId: __string
+  }
+
+  object GetInAppMessagesRequest {
+    @inline
+    def apply(
+        ApplicationId: __string,
+        EndpointId: __string
+    ): GetInAppMessagesRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "EndpointId" -> EndpointId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetInAppMessagesRequest]
+    }
+  }
+
+  @js.native
+  trait GetInAppMessagesResponse extends js.Object {
+    var InAppMessagesResponse: InAppMessagesResponse
+  }
+
+  object GetInAppMessagesResponse {
+    @inline
+    def apply(
+        InAppMessagesResponse: InAppMessagesResponse
+    ): GetInAppMessagesResponse = {
+      val __obj = js.Dynamic.literal(
+        "InAppMessagesResponse" -> InAppMessagesResponse.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetInAppMessagesResponse]
+    }
+  }
+
+  @js.native
+  trait GetInAppTemplateRequest extends js.Object {
+    var TemplateName: __string
+    var Version: js.UndefOr[__string]
+  }
+
+  object GetInAppTemplateRequest {
+    @inline
+    def apply(
+        TemplateName: __string,
+        Version: js.UndefOr[__string] = js.undefined
+    ): GetInAppTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetInAppTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait GetInAppTemplateResponse extends js.Object {
+    var InAppTemplateResponse: InAppTemplateResponse
+  }
+
+  object GetInAppTemplateResponse {
+    @inline
+    def apply(
+        InAppTemplateResponse: InAppTemplateResponse
+    ): GetInAppTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "InAppTemplateResponse" -> InAppTemplateResponse.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[GetInAppTemplateResponse]
+    }
+  }
+
+  @js.native
   trait GetJourneyDateRangeKpiRequest extends js.Object {
     var ApplicationId: __string
     var JourneyId: __string
@@ -6393,6 +6646,301 @@ package object pinpoint {
     }
   }
 
+  /** Schedule of the campaign.
+    */
+  @js.native
+  trait InAppCampaignSchedule extends js.Object {
+    var EndDate: js.UndefOr[__string]
+    var EventFilter: js.UndefOr[CampaignEventFilter]
+    var QuietTime: js.UndefOr[QuietTime]
+  }
+
+  object InAppCampaignSchedule {
+    @inline
+    def apply(
+        EndDate: js.UndefOr[__string] = js.undefined,
+        EventFilter: js.UndefOr[CampaignEventFilter] = js.undefined,
+        QuietTime: js.UndefOr[QuietTime] = js.undefined
+    ): InAppCampaignSchedule = {
+      val __obj = js.Dynamic.literal()
+      EndDate.foreach(__v => __obj.updateDynamic("EndDate")(__v.asInstanceOf[js.Any]))
+      EventFilter.foreach(__v => __obj.updateDynamic("EventFilter")(__v.asInstanceOf[js.Any]))
+      QuietTime.foreach(__v => __obj.updateDynamic("QuietTime")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InAppCampaignSchedule]
+    }
+  }
+
+  /** Provides all fields required for building an in-app message.
+    */
+  @js.native
+  trait InAppMessage extends js.Object {
+    var Content: js.UndefOr[ListOfInAppMessageContent]
+    var CustomConfig: js.UndefOr[MapOf__string]
+    var Layout: js.UndefOr[Layout]
+  }
+
+  object InAppMessage {
+    @inline
+    def apply(
+        Content: js.UndefOr[ListOfInAppMessageContent] = js.undefined,
+        CustomConfig: js.UndefOr[MapOf__string] = js.undefined,
+        Layout: js.UndefOr[Layout] = js.undefined
+    ): InAppMessage = {
+      val __obj = js.Dynamic.literal()
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      CustomConfig.foreach(__v => __obj.updateDynamic("CustomConfig")(__v.asInstanceOf[js.Any]))
+      Layout.foreach(__v => __obj.updateDynamic("Layout")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InAppMessage]
+    }
+  }
+
+  /** Text config for Message Body.
+    */
+  @js.native
+  trait InAppMessageBodyConfig extends js.Object {
+    var Alignment: Alignment
+    var Body: __string
+    var TextColor: __string
+  }
+
+  object InAppMessageBodyConfig {
+    @inline
+    def apply(
+        Alignment: Alignment,
+        Body: __string,
+        TextColor: __string
+    ): InAppMessageBodyConfig = {
+      val __obj = js.Dynamic.literal(
+        "Alignment" -> Alignment.asInstanceOf[js.Any],
+        "Body" -> Body.asInstanceOf[js.Any],
+        "TextColor" -> TextColor.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[InAppMessageBodyConfig]
+    }
+  }
+
+  /** Button Config for an in-app message.
+    */
+  @js.native
+  trait InAppMessageButton extends js.Object {
+    var Android: js.UndefOr[OverrideButtonConfiguration]
+    var DefaultConfig: js.UndefOr[DefaultButtonConfiguration]
+    var IOS: js.UndefOr[OverrideButtonConfiguration]
+    var Web: js.UndefOr[OverrideButtonConfiguration]
+  }
+
+  object InAppMessageButton {
+    @inline
+    def apply(
+        Android: js.UndefOr[OverrideButtonConfiguration] = js.undefined,
+        DefaultConfig: js.UndefOr[DefaultButtonConfiguration] = js.undefined,
+        IOS: js.UndefOr[OverrideButtonConfiguration] = js.undefined,
+        Web: js.UndefOr[OverrideButtonConfiguration] = js.undefined
+    ): InAppMessageButton = {
+      val __obj = js.Dynamic.literal()
+      Android.foreach(__v => __obj.updateDynamic("Android")(__v.asInstanceOf[js.Any]))
+      DefaultConfig.foreach(__v => __obj.updateDynamic("DefaultConfig")(__v.asInstanceOf[js.Any]))
+      IOS.foreach(__v => __obj.updateDynamic("IOS")(__v.asInstanceOf[js.Any]))
+      Web.foreach(__v => __obj.updateDynamic("Web")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InAppMessageButton]
+    }
+  }
+
+  /** Targeted in-app message campaign.
+    */
+  @js.native
+  trait InAppMessageCampaign extends js.Object {
+    var CampaignId: js.UndefOr[__string]
+    var DailyCap: js.UndefOr[__integer]
+    var InAppMessage: js.UndefOr[InAppMessage]
+    var Priority: js.UndefOr[__integer]
+    var Schedule: js.UndefOr[InAppCampaignSchedule]
+    var SessionCap: js.UndefOr[__integer]
+    var TotalCap: js.UndefOr[__integer]
+    var TreatmentId: js.UndefOr[__string]
+  }
+
+  object InAppMessageCampaign {
+    @inline
+    def apply(
+        CampaignId: js.UndefOr[__string] = js.undefined,
+        DailyCap: js.UndefOr[__integer] = js.undefined,
+        InAppMessage: js.UndefOr[InAppMessage] = js.undefined,
+        Priority: js.UndefOr[__integer] = js.undefined,
+        Schedule: js.UndefOr[InAppCampaignSchedule] = js.undefined,
+        SessionCap: js.UndefOr[__integer] = js.undefined,
+        TotalCap: js.UndefOr[__integer] = js.undefined,
+        TreatmentId: js.UndefOr[__string] = js.undefined
+    ): InAppMessageCampaign = {
+      val __obj = js.Dynamic.literal()
+      CampaignId.foreach(__v => __obj.updateDynamic("CampaignId")(__v.asInstanceOf[js.Any]))
+      DailyCap.foreach(__v => __obj.updateDynamic("DailyCap")(__v.asInstanceOf[js.Any]))
+      InAppMessage.foreach(__v => __obj.updateDynamic("InAppMessage")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
+      Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
+      SessionCap.foreach(__v => __obj.updateDynamic("SessionCap")(__v.asInstanceOf[js.Any]))
+      TotalCap.foreach(__v => __obj.updateDynamic("TotalCap")(__v.asInstanceOf[js.Any]))
+      TreatmentId.foreach(__v => __obj.updateDynamic("TreatmentId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InAppMessageCampaign]
+    }
+  }
+
+  /** The configuration for the message content.
+    */
+  @js.native
+  trait InAppMessageContent extends js.Object {
+    var BackgroundColor: js.UndefOr[__string]
+    var BodyConfig: js.UndefOr[InAppMessageBodyConfig]
+    var HeaderConfig: js.UndefOr[InAppMessageHeaderConfig]
+    var ImageUrl: js.UndefOr[__string]
+    var PrimaryBtn: js.UndefOr[InAppMessageButton]
+    var SecondaryBtn: js.UndefOr[InAppMessageButton]
+  }
+
+  object InAppMessageContent {
+    @inline
+    def apply(
+        BackgroundColor: js.UndefOr[__string] = js.undefined,
+        BodyConfig: js.UndefOr[InAppMessageBodyConfig] = js.undefined,
+        HeaderConfig: js.UndefOr[InAppMessageHeaderConfig] = js.undefined,
+        ImageUrl: js.UndefOr[__string] = js.undefined,
+        PrimaryBtn: js.UndefOr[InAppMessageButton] = js.undefined,
+        SecondaryBtn: js.UndefOr[InAppMessageButton] = js.undefined
+    ): InAppMessageContent = {
+      val __obj = js.Dynamic.literal()
+      BackgroundColor.foreach(__v => __obj.updateDynamic("BackgroundColor")(__v.asInstanceOf[js.Any]))
+      BodyConfig.foreach(__v => __obj.updateDynamic("BodyConfig")(__v.asInstanceOf[js.Any]))
+      HeaderConfig.foreach(__v => __obj.updateDynamic("HeaderConfig")(__v.asInstanceOf[js.Any]))
+      ImageUrl.foreach(__v => __obj.updateDynamic("ImageUrl")(__v.asInstanceOf[js.Any]))
+      PrimaryBtn.foreach(__v => __obj.updateDynamic("PrimaryBtn")(__v.asInstanceOf[js.Any]))
+      SecondaryBtn.foreach(__v => __obj.updateDynamic("SecondaryBtn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InAppMessageContent]
+    }
+  }
+
+  /** Text config for Message Header.
+    */
+  @js.native
+  trait InAppMessageHeaderConfig extends js.Object {
+    var Alignment: Alignment
+    var Header: __string
+    var TextColor: __string
+  }
+
+  object InAppMessageHeaderConfig {
+    @inline
+    def apply(
+        Alignment: Alignment,
+        Header: __string,
+        TextColor: __string
+    ): InAppMessageHeaderConfig = {
+      val __obj = js.Dynamic.literal(
+        "Alignment" -> Alignment.asInstanceOf[js.Any],
+        "Header" -> Header.asInstanceOf[js.Any],
+        "TextColor" -> TextColor.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[InAppMessageHeaderConfig]
+    }
+  }
+
+  /** Get in-app messages response object.
+    */
+  @js.native
+  trait InAppMessagesResponse extends js.Object {
+    var InAppMessageCampaigns: js.UndefOr[ListOfInAppMessageCampaign]
+  }
+
+  object InAppMessagesResponse {
+    @inline
+    def apply(
+        InAppMessageCampaigns: js.UndefOr[ListOfInAppMessageCampaign] = js.undefined
+    ): InAppMessagesResponse = {
+      val __obj = js.Dynamic.literal()
+      InAppMessageCampaigns.foreach(__v => __obj.updateDynamic("InAppMessageCampaigns")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InAppMessagesResponse]
+    }
+  }
+
+  /** InApp Template Request.
+    */
+  @js.native
+  trait InAppTemplateRequest extends js.Object {
+    var Content: js.UndefOr[ListOfInAppMessageContent]
+    var CustomConfig: js.UndefOr[MapOf__string]
+    var Layout: js.UndefOr[Layout]
+    var TemplateDescription: js.UndefOr[__string]
+    var tags: js.UndefOr[MapOf__string]
+  }
+
+  object InAppTemplateRequest {
+    @inline
+    def apply(
+        Content: js.UndefOr[ListOfInAppMessageContent] = js.undefined,
+        CustomConfig: js.UndefOr[MapOf__string] = js.undefined,
+        Layout: js.UndefOr[Layout] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
+        tags: js.UndefOr[MapOf__string] = js.undefined
+    ): InAppTemplateRequest = {
+      val __obj = js.Dynamic.literal()
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      CustomConfig.foreach(__v => __obj.updateDynamic("CustomConfig")(__v.asInstanceOf[js.Any]))
+      Layout.foreach(__v => __obj.updateDynamic("Layout")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InAppTemplateRequest]
+    }
+  }
+
+  /** In-App Template Response.
+    */
+  @js.native
+  trait InAppTemplateResponse extends js.Object {
+    var CreationDate: __string
+    var LastModifiedDate: __string
+    var TemplateName: __string
+    var TemplateType: TemplateType
+    var Arn: js.UndefOr[__string]
+    var Content: js.UndefOr[ListOfInAppMessageContent]
+    var CustomConfig: js.UndefOr[MapOf__string]
+    var Layout: js.UndefOr[Layout]
+    var TemplateDescription: js.UndefOr[__string]
+    var Version: js.UndefOr[__string]
+    var tags: js.UndefOr[MapOf__string]
+  }
+
+  object InAppTemplateResponse {
+    @inline
+    def apply(
+        CreationDate: __string,
+        LastModifiedDate: __string,
+        TemplateName: __string,
+        TemplateType: TemplateType,
+        Arn: js.UndefOr[__string] = js.undefined,
+        Content: js.UndefOr[ListOfInAppMessageContent] = js.undefined,
+        CustomConfig: js.UndefOr[MapOf__string] = js.undefined,
+        Layout: js.UndefOr[Layout] = js.undefined,
+        TemplateDescription: js.UndefOr[__string] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined,
+        tags: js.UndefOr[MapOf__string] = js.undefined
+    ): InAppTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "CreationDate" -> CreationDate.asInstanceOf[js.Any],
+        "LastModifiedDate" -> LastModifiedDate.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any],
+        "TemplateType" -> TemplateType.asInstanceOf[js.Any]
+      )
+
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Content.foreach(__v => __obj.updateDynamic("Content")(__v.asInstanceOf[js.Any]))
+      CustomConfig.foreach(__v => __obj.updateDynamic("CustomConfig")(__v.asInstanceOf[js.Any]))
+      Layout.foreach(__v => __obj.updateDynamic("Layout")(__v.asInstanceOf[js.Any]))
+      TemplateDescription.foreach(__v => __obj.updateDynamic("TemplateDescription")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      tags.foreach(__v => __obj.updateDynamic("tags")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[InAppTemplateResponse]
+    }
+  }
+
   /** Provides information about the results of a request to create or update an endpoint that's associated with an event.
     */
   @js.native
@@ -6411,6 +6959,27 @@ package object pinpoint {
       EndpointItemResponse.foreach(__v => __obj.updateDynamic("EndpointItemResponse")(__v.asInstanceOf[js.Any]))
       EventsItemResponse.foreach(__v => __obj.updateDynamic("EventsItemResponse")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ItemResponse]
+    }
+  }
+
+  /** The channel-specific configurations for the journey.
+    */
+  @js.native
+  trait JourneyChannelSettings extends js.Object {
+    var ConnectCampaignArn: js.UndefOr[__string]
+    var ConnectCampaignExecutionRoleArn: js.UndefOr[__string]
+  }
+
+  object JourneyChannelSettings {
+    @inline
+    def apply(
+        ConnectCampaignArn: js.UndefOr[__string] = js.undefined,
+        ConnectCampaignExecutionRoleArn: js.UndefOr[__string] = js.undefined
+    ): JourneyChannelSettings = {
+      val __obj = js.Dynamic.literal()
+      ConnectCampaignArn.foreach(__v => __obj.updateDynamic("ConnectCampaignArn")(__v.asInstanceOf[js.Any]))
+      ConnectCampaignExecutionRoleArn.foreach(__v => __obj.updateDynamic("ConnectCampaignExecutionRoleArn")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[JourneyChannelSettings]
     }
   }
 
@@ -6604,6 +7173,7 @@ package object pinpoint {
     var Name: __string
     var Activities: js.UndefOr[MapOfActivity]
     var CreationDate: js.UndefOr[__string]
+    var JourneyChannelSettings: js.UndefOr[JourneyChannelSettings]
     var LastModifiedDate: js.UndefOr[__string]
     var Limits: js.UndefOr[JourneyLimits]
     var LocalTime: js.UndefOr[__boolean]
@@ -6626,6 +7196,7 @@ package object pinpoint {
         Name: __string,
         Activities: js.UndefOr[MapOfActivity] = js.undefined,
         CreationDate: js.UndefOr[__string] = js.undefined,
+        JourneyChannelSettings: js.UndefOr[JourneyChannelSettings] = js.undefined,
         LastModifiedDate: js.UndefOr[__string] = js.undefined,
         Limits: js.UndefOr[JourneyLimits] = js.undefined,
         LocalTime: js.UndefOr[__boolean] = js.undefined,
@@ -6647,6 +7218,7 @@ package object pinpoint {
 
       Activities.foreach(__v => __obj.updateDynamic("Activities")(__v.asInstanceOf[js.Any]))
       CreationDate.foreach(__v => __obj.updateDynamic("CreationDate")(__v.asInstanceOf[js.Any]))
+      JourneyChannelSettings.foreach(__v => __obj.updateDynamic("JourneyChannelSettings")(__v.asInstanceOf[js.Any]))
       LastModifiedDate.foreach(__v => __obj.updateDynamic("LastModifiedDate")(__v.asInstanceOf[js.Any]))
       Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
       LocalTime.foreach(__v => __obj.updateDynamic("LocalTime")(__v.asInstanceOf[js.Any]))
@@ -7025,6 +7597,7 @@ package object pinpoint {
     var DefaultMessage: js.UndefOr[Message]
     var EmailMessage: js.UndefOr[CampaignEmailMessage]
     var GCMMessage: js.UndefOr[Message]
+    var InAppMessage: js.UndefOr[CampaignInAppMessage]
     var SMSMessage: js.UndefOr[CampaignSmsMessage]
   }
 
@@ -7038,6 +7611,7 @@ package object pinpoint {
         DefaultMessage: js.UndefOr[Message] = js.undefined,
         EmailMessage: js.UndefOr[CampaignEmailMessage] = js.undefined,
         GCMMessage: js.UndefOr[Message] = js.undefined,
+        InAppMessage: js.UndefOr[CampaignInAppMessage] = js.undefined,
         SMSMessage: js.UndefOr[CampaignSmsMessage] = js.undefined
     ): MessageConfiguration = {
       val __obj = js.Dynamic.literal()
@@ -7048,6 +7622,7 @@ package object pinpoint {
       DefaultMessage.foreach(__v => __obj.updateDynamic("DefaultMessage")(__v.asInstanceOf[js.Any]))
       EmailMessage.foreach(__v => __obj.updateDynamic("EmailMessage")(__v.asInstanceOf[js.Any]))
       GCMMessage.foreach(__v => __obj.updateDynamic("GCMMessage")(__v.asInstanceOf[js.Any]))
+      InAppMessage.foreach(__v => __obj.updateDynamic("InAppMessage")(__v.asInstanceOf[js.Any]))
       SMSMessage.foreach(__v => __obj.updateDynamic("SMSMessage")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[MessageConfiguration]
     }
@@ -7293,6 +7868,29 @@ package object pinpoint {
       Timezone.foreach(__v => __obj.updateDynamic("Timezone")(__v.asInstanceOf[js.Any]))
       ZipCode.foreach(__v => __obj.updateDynamic("ZipCode")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[NumberValidateResponse]
+    }
+  }
+
+  /** Override button configuration.
+    */
+  @js.native
+  trait OverrideButtonConfiguration extends js.Object {
+    var ButtonAction: ButtonAction
+    var Link: js.UndefOr[__string]
+  }
+
+  object OverrideButtonConfiguration {
+    @inline
+    def apply(
+        ButtonAction: ButtonAction,
+        Link: js.UndefOr[__string] = js.undefined
+    ): OverrideButtonConfiguration = {
+      val __obj = js.Dynamic.literal(
+        "ButtonAction" -> ButtonAction.asInstanceOf[js.Any]
+      )
+
+      Link.foreach(__v => __obj.updateDynamic("Link")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[OverrideButtonConfiguration]
     }
   }
 
@@ -8436,6 +9034,93 @@ package object pinpoint {
     }
   }
 
+  @js.native
+  trait SendOTPMessageRequest extends js.Object {
+    var ApplicationId: __string
+    var SendOTPMessageRequestParameters: SendOTPMessageRequestParameters
+  }
+
+  object SendOTPMessageRequest {
+    @inline
+    def apply(
+        ApplicationId: __string,
+        SendOTPMessageRequestParameters: SendOTPMessageRequestParameters
+    ): SendOTPMessageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "SendOTPMessageRequestParameters" -> SendOTPMessageRequestParameters.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SendOTPMessageRequest]
+    }
+  }
+
+  /** Send OTP message request parameters.
+    */
+  @js.native
+  trait SendOTPMessageRequestParameters extends js.Object {
+    var BrandName: __string
+    var Channel: __string
+    var DestinationIdentity: __string
+    var OriginationIdentity: __string
+    var ReferenceId: __string
+    var AllowedAttempts: js.UndefOr[__integer]
+    var CodeLength: js.UndefOr[__integer]
+    var EntityId: js.UndefOr[__string]
+    var Language: js.UndefOr[__string]
+    var TemplateId: js.UndefOr[__string]
+    var ValidityPeriod: js.UndefOr[__integer]
+  }
+
+  object SendOTPMessageRequestParameters {
+    @inline
+    def apply(
+        BrandName: __string,
+        Channel: __string,
+        DestinationIdentity: __string,
+        OriginationIdentity: __string,
+        ReferenceId: __string,
+        AllowedAttempts: js.UndefOr[__integer] = js.undefined,
+        CodeLength: js.UndefOr[__integer] = js.undefined,
+        EntityId: js.UndefOr[__string] = js.undefined,
+        Language: js.UndefOr[__string] = js.undefined,
+        TemplateId: js.UndefOr[__string] = js.undefined,
+        ValidityPeriod: js.UndefOr[__integer] = js.undefined
+    ): SendOTPMessageRequestParameters = {
+      val __obj = js.Dynamic.literal(
+        "BrandName" -> BrandName.asInstanceOf[js.Any],
+        "Channel" -> Channel.asInstanceOf[js.Any],
+        "DestinationIdentity" -> DestinationIdentity.asInstanceOf[js.Any],
+        "OriginationIdentity" -> OriginationIdentity.asInstanceOf[js.Any],
+        "ReferenceId" -> ReferenceId.asInstanceOf[js.Any]
+      )
+
+      AllowedAttempts.foreach(__v => __obj.updateDynamic("AllowedAttempts")(__v.asInstanceOf[js.Any]))
+      CodeLength.foreach(__v => __obj.updateDynamic("CodeLength")(__v.asInstanceOf[js.Any]))
+      EntityId.foreach(__v => __obj.updateDynamic("EntityId")(__v.asInstanceOf[js.Any]))
+      Language.foreach(__v => __obj.updateDynamic("Language")(__v.asInstanceOf[js.Any]))
+      TemplateId.foreach(__v => __obj.updateDynamic("TemplateId")(__v.asInstanceOf[js.Any]))
+      ValidityPeriod.foreach(__v => __obj.updateDynamic("ValidityPeriod")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[SendOTPMessageRequestParameters]
+    }
+  }
+
+  @js.native
+  trait SendOTPMessageResponse extends js.Object {
+    var MessageResponse: MessageResponse
+  }
+
+  object SendOTPMessageResponse {
+    @inline
+    def apply(
+        MessageResponse: MessageResponse
+    ): SendOTPMessageResponse = {
+      val __obj = js.Dynamic.literal(
+        "MessageResponse" -> MessageResponse.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[SendOTPMessageResponse]
+    }
+  }
+
   /** Specifies the configuration and other settings for a message to send to all the endpoints that are associated with a list of users.
     */
   @js.native
@@ -8778,6 +9463,30 @@ package object pinpoint {
       SMSTemplate.foreach(__v => __obj.updateDynamic("SMSTemplate")(__v.asInstanceOf[js.Any]))
       VoiceTemplate.foreach(__v => __obj.updateDynamic("VoiceTemplate")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TemplateConfiguration]
+    }
+  }
+
+  /** Provides information about a request to create a message template.
+    */
+  @js.native
+  trait TemplateCreateMessageBody extends js.Object {
+    var Arn: js.UndefOr[__string]
+    var Message: js.UndefOr[__string]
+    var RequestID: js.UndefOr[__string]
+  }
+
+  object TemplateCreateMessageBody {
+    @inline
+    def apply(
+        Arn: js.UndefOr[__string] = js.undefined,
+        Message: js.UndefOr[__string] = js.undefined,
+        RequestID: js.UndefOr[__string] = js.undefined
+    ): TemplateCreateMessageBody = {
+      val __obj = js.Dynamic.literal()
+      Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
+      RequestID.foreach(__v => __obj.updateDynamic("RequestID")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TemplateCreateMessageBody]
     }
   }
 
@@ -9492,6 +10201,50 @@ package object pinpoint {
   }
 
   @js.native
+  trait UpdateInAppTemplateRequest extends js.Object {
+    var InAppTemplateRequest: InAppTemplateRequest
+    var TemplateName: __string
+    var CreateNewVersion: js.UndefOr[__boolean]
+    var Version: js.UndefOr[__string]
+  }
+
+  object UpdateInAppTemplateRequest {
+    @inline
+    def apply(
+        InAppTemplateRequest: InAppTemplateRequest,
+        TemplateName: __string,
+        CreateNewVersion: js.UndefOr[__boolean] = js.undefined,
+        Version: js.UndefOr[__string] = js.undefined
+    ): UpdateInAppTemplateRequest = {
+      val __obj = js.Dynamic.literal(
+        "InAppTemplateRequest" -> InAppTemplateRequest.asInstanceOf[js.Any],
+        "TemplateName" -> TemplateName.asInstanceOf[js.Any]
+      )
+
+      CreateNewVersion.foreach(__v => __obj.updateDynamic("CreateNewVersion")(__v.asInstanceOf[js.Any]))
+      Version.foreach(__v => __obj.updateDynamic("Version")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[UpdateInAppTemplateRequest]
+    }
+  }
+
+  @js.native
+  trait UpdateInAppTemplateResponse extends js.Object {
+    var MessageBody: MessageBody
+  }
+
+  object UpdateInAppTemplateResponse {
+    @inline
+    def apply(
+        MessageBody: MessageBody
+    ): UpdateInAppTemplateResponse = {
+      val __obj = js.Dynamic.literal(
+        "MessageBody" -> MessageBody.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[UpdateInAppTemplateResponse]
+    }
+  }
+
+  @js.native
   trait UpdateJourneyRequest extends js.Object {
     var ApplicationId: __string
     var JourneyId: __string
@@ -9938,6 +10691,86 @@ package object pinpoint {
     }
   }
 
+  /** Verify OTP Message Response.
+    */
+  @js.native
+  trait VerificationResponse extends js.Object {
+    var Valid: js.UndefOr[__boolean]
+  }
+
+  object VerificationResponse {
+    @inline
+    def apply(
+        Valid: js.UndefOr[__boolean] = js.undefined
+    ): VerificationResponse = {
+      val __obj = js.Dynamic.literal()
+      Valid.foreach(__v => __obj.updateDynamic("Valid")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[VerificationResponse]
+    }
+  }
+
+  @js.native
+  trait VerifyOTPMessageRequest extends js.Object {
+    var ApplicationId: __string
+    var VerifyOTPMessageRequestParameters: VerifyOTPMessageRequestParameters
+  }
+
+  object VerifyOTPMessageRequest {
+    @inline
+    def apply(
+        ApplicationId: __string,
+        VerifyOTPMessageRequestParameters: VerifyOTPMessageRequestParameters
+    ): VerifyOTPMessageRequest = {
+      val __obj = js.Dynamic.literal(
+        "ApplicationId" -> ApplicationId.asInstanceOf[js.Any],
+        "VerifyOTPMessageRequestParameters" -> VerifyOTPMessageRequestParameters.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VerifyOTPMessageRequest]
+    }
+  }
+
+  /** Verify OTP message request.
+    */
+  @js.native
+  trait VerifyOTPMessageRequestParameters extends js.Object {
+    var DestinationIdentity: __string
+    var Otp: __string
+    var ReferenceId: __string
+  }
+
+  object VerifyOTPMessageRequestParameters {
+    @inline
+    def apply(
+        DestinationIdentity: __string,
+        Otp: __string,
+        ReferenceId: __string
+    ): VerifyOTPMessageRequestParameters = {
+      val __obj = js.Dynamic.literal(
+        "DestinationIdentity" -> DestinationIdentity.asInstanceOf[js.Any],
+        "Otp" -> Otp.asInstanceOf[js.Any],
+        "ReferenceId" -> ReferenceId.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VerifyOTPMessageRequestParameters]
+    }
+  }
+
+  @js.native
+  trait VerifyOTPMessageResponse extends js.Object {
+    var VerificationResponse: VerificationResponse
+  }
+
+  object VerifyOTPMessageResponse {
+    @inline
+    def apply(
+        VerificationResponse: VerificationResponse
+    ): VerifyOTPMessageResponse = {
+      val __obj = js.Dynamic.literal(
+        "VerificationResponse" -> VerificationResponse.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[VerifyOTPMessageResponse]
+    }
+  }
+
   /** Specifies the status and settings of the voice channel for an application.
     */
   @js.native
@@ -10204,6 +11037,7 @@ package object pinpoint {
     var Limits: js.UndefOr[CampaignLimits]
     var MessageConfiguration: js.UndefOr[MessageConfiguration]
     var Name: js.UndefOr[__string]
+    var Priority: js.UndefOr[__integer]
     var Schedule: js.UndefOr[Schedule]
     var SegmentId: js.UndefOr[__string]
     var SegmentVersion: js.UndefOr[__integer]
@@ -10225,6 +11059,7 @@ package object pinpoint {
         Limits: js.UndefOr[CampaignLimits] = js.undefined,
         MessageConfiguration: js.UndefOr[MessageConfiguration] = js.undefined,
         Name: js.UndefOr[__string] = js.undefined,
+        Priority: js.UndefOr[__integer] = js.undefined,
         Schedule: js.UndefOr[Schedule] = js.undefined,
         SegmentId: js.UndefOr[__string] = js.undefined,
         SegmentVersion: js.UndefOr[__integer] = js.undefined,
@@ -10243,6 +11078,7 @@ package object pinpoint {
       Limits.foreach(__v => __obj.updateDynamic("Limits")(__v.asInstanceOf[js.Any]))
       MessageConfiguration.foreach(__v => __obj.updateDynamic("MessageConfiguration")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      Priority.foreach(__v => __obj.updateDynamic("Priority")(__v.asInstanceOf[js.Any]))
       Schedule.foreach(__v => __obj.updateDynamic("Schedule")(__v.asInstanceOf[js.Any]))
       SegmentId.foreach(__v => __obj.updateDynamic("SegmentId")(__v.asInstanceOf[js.Any]))
       SegmentVersion.foreach(__v => __obj.updateDynamic("SegmentVersion")(__v.asInstanceOf[js.Any]))

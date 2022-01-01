@@ -22,6 +22,26 @@ object PerformanceMode {
   inline def values: js.Array[PerformanceMode] = js.Array(generalPurpose, maxIO)
 }
 
+/** An EFS resource, for example a file system or a mount target.
+  */
+type Resource = "FILE_SYSTEM" | "MOUNT_TARGET"
+object Resource {
+  inline val FILE_SYSTEM: "FILE_SYSTEM" = "FILE_SYSTEM"
+  inline val MOUNT_TARGET: "MOUNT_TARGET" = "MOUNT_TARGET"
+
+  inline def values: js.Array[Resource] = js.Array(FILE_SYSTEM, MOUNT_TARGET)
+}
+
+/** A preference indicating a choice to use 63bit/32bit IDs for all applicable resources.
+  */
+type ResourceIdType = "LONG_ID" | "SHORT_ID"
+object ResourceIdType {
+  inline val LONG_ID: "LONG_ID" = "LONG_ID"
+  inline val SHORT_ID: "SHORT_ID" = "SHORT_ID"
+
+  inline def values: js.Array[ResourceIdType] = js.Array(LONG_ID, SHORT_ID)
+}
+
 type Status = "ENABLED" | "ENABLING" | "DISABLED" | "DISABLING"
 object Status {
   inline val ENABLED: "ENABLED" = "ENABLED"
@@ -49,4 +69,11 @@ object TransitionToIARules {
   inline val AFTER_90_DAYS: "AFTER_90_DAYS" = "AFTER_90_DAYS"
 
   inline def values: js.Array[TransitionToIARules] = js.Array(AFTER_7_DAYS, AFTER_14_DAYS, AFTER_30_DAYS, AFTER_60_DAYS, AFTER_90_DAYS)
+}
+
+type TransitionToPrimaryStorageClassRules = "AFTER_1_ACCESS"
+object TransitionToPrimaryStorageClassRules {
+  inline val AFTER_1_ACCESS: "AFTER_1_ACCESS" = "AFTER_1_ACCESS"
+
+  inline def values: js.Array[TransitionToPrimaryStorageClassRules] = js.Array(AFTER_1_ACCESS)
 }

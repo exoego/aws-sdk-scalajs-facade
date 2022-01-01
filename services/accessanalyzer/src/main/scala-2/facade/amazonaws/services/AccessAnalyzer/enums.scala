@@ -229,3 +229,14 @@ object ValidatePolicyFindingType {
 
   @inline def values: js.Array[ValidatePolicyFindingType] = js.Array(ERROR, SECURITY_WARNING, SUGGESTION, WARNING)
 }
+
+@js.native
+sealed trait ValidatePolicyResourceType extends js.Any
+object ValidatePolicyResourceType {
+  val `AWS::S3::Bucket` = "AWS::S3::Bucket".asInstanceOf[ValidatePolicyResourceType]
+  val `AWS::S3::AccessPoint` = "AWS::S3::AccessPoint".asInstanceOf[ValidatePolicyResourceType]
+  val `AWS::S3::MultiRegionAccessPoint` = "AWS::S3::MultiRegionAccessPoint".asInstanceOf[ValidatePolicyResourceType]
+  val `AWS::S3ObjectLambda::AccessPoint` = "AWS::S3ObjectLambda::AccessPoint".asInstanceOf[ValidatePolicyResourceType]
+
+  @inline def values: js.Array[ValidatePolicyResourceType] = js.Array(`AWS::S3::Bucket`, `AWS::S3::AccessPoint`, `AWS::S3::MultiRegionAccessPoint`, `AWS::S3ObjectLambda::AccessPoint`)
+}

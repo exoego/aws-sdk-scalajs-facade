@@ -28,6 +28,16 @@ object Capability {
   inline def values: js.Array[Capability] = js.Array(CAPABILITY_IAM, CAPABILITY_NAMED_IAM, CAPABILITY_AUTO_EXPAND)
 }
 
+type Category = "REGISTERED" | "ACTIVATED" | "THIRD_PARTY" | "AWS_TYPES"
+object Category {
+  inline val REGISTERED: "REGISTERED" = "REGISTERED"
+  inline val ACTIVATED: "ACTIVATED" = "ACTIVATED"
+  inline val THIRD_PARTY: "THIRD_PARTY" = "THIRD_PARTY"
+  inline val AWS_TYPES: "AWS_TYPES" = "AWS_TYPES"
+
+  inline def values: js.Array[Category] = js.Array(REGISTERED, ACTIVATED, THIRD_PARTY, AWS_TYPES)
+}
+
 type ChangeAction = "Add" | "Modify" | "Remove" | "Import" | "Dynamic"
 object ChangeAction {
   inline val Add: "Add" = "Add"
@@ -117,7 +127,7 @@ object ExecutionStatus {
   inline def values: js.Array[ExecutionStatus] = js.Array(UNAVAILABLE, AVAILABLE, EXECUTE_IN_PROGRESS, EXECUTE_COMPLETE, EXECUTE_FAILED, OBSOLETE)
 }
 
-type HandlerErrorCode = "NotUpdatable" | "InvalidRequest" | "AccessDenied" | "InvalidCredentials" | "AlreadyExists" | "NotFound" | "ResourceConflict" | "Throttling" | "ServiceLimitExceeded" | "NotStabilized" | "GeneralServiceException" | "ServiceInternalError" | "NetworkFailure" | "InternalFailure"
+type HandlerErrorCode = "NotUpdatable" | "InvalidRequest" | "AccessDenied" | "InvalidCredentials" | "AlreadyExists" | "NotFound" | "ResourceConflict" | "Throttling" | "ServiceLimitExceeded" | "NotStabilized" | "GeneralServiceException" | "ServiceInternalError" | "NetworkFailure" | "InternalFailure" | "InvalidTypeConfiguration"
 object HandlerErrorCode {
   inline val NotUpdatable: "NotUpdatable" = "NotUpdatable"
   inline val InvalidRequest: "InvalidRequest" = "InvalidRequest"
@@ -133,6 +143,7 @@ object HandlerErrorCode {
   inline val ServiceInternalError: "ServiceInternalError" = "ServiceInternalError"
   inline val NetworkFailure: "NetworkFailure" = "NetworkFailure"
   inline val InternalFailure: "InternalFailure" = "InternalFailure"
+  inline val InvalidTypeConfiguration: "InvalidTypeConfiguration" = "InvalidTypeConfiguration"
 
   inline def values: js.Array[HandlerErrorCode] = js.Array(
     NotUpdatable,
@@ -148,8 +159,18 @@ object HandlerErrorCode {
     GeneralServiceException,
     ServiceInternalError,
     NetworkFailure,
-    InternalFailure
+    InternalFailure,
+    InvalidTypeConfiguration
   )
+}
+
+type IdentityProvider = "AWS_Marketplace" | "GitHub" | "Bitbucket"
+object IdentityProvider {
+  inline val AWS_Marketplace: "AWS_Marketplace" = "AWS_Marketplace"
+  inline val GitHub: "GitHub" = "GitHub"
+  inline val Bitbucket: "Bitbucket" = "Bitbucket"
+
+  inline def values: js.Array[IdentityProvider] = js.Array(AWS_Marketplace, GitHub, Bitbucket)
 }
 
 type OnFailure = "DO_NOTHING" | "ROLLBACK" | "DELETE"
@@ -186,6 +207,14 @@ object ProvisioningType {
   inline val FULLY_MUTABLE: "FULLY_MUTABLE" = "FULLY_MUTABLE"
 
   inline def values: js.Array[ProvisioningType] = js.Array(NON_PROVISIONABLE, IMMUTABLE, FULLY_MUTABLE)
+}
+
+type PublisherStatus = "VERIFIED" | "UNVERIFIED"
+object PublisherStatus {
+  inline val VERIFIED: "VERIFIED" = "VERIFIED"
+  inline val UNVERIFIED: "UNVERIFIED" = "UNVERIFIED"
+
+  inline def values: js.Array[PublisherStatus] = js.Array(VERIFIED, UNVERIFIED)
 }
 
 type RegionConcurrencyType = "SEQUENTIAL" | "PARALLEL"
@@ -251,7 +280,7 @@ object ResourceSignalStatus {
   inline def values: js.Array[ResourceSignalStatus] = js.Array(SUCCESS, FAILURE)
 }
 
-type ResourceStatus = "CREATE_IN_PROGRESS" | "CREATE_FAILED" | "CREATE_COMPLETE" | "DELETE_IN_PROGRESS" | "DELETE_FAILED" | "DELETE_COMPLETE" | "DELETE_SKIPPED" | "UPDATE_IN_PROGRESS" | "UPDATE_FAILED" | "UPDATE_COMPLETE" | "IMPORT_FAILED" | "IMPORT_COMPLETE" | "IMPORT_IN_PROGRESS" | "IMPORT_ROLLBACK_IN_PROGRESS" | "IMPORT_ROLLBACK_FAILED" | "IMPORT_ROLLBACK_COMPLETE"
+type ResourceStatus = "CREATE_IN_PROGRESS" | "CREATE_FAILED" | "CREATE_COMPLETE" | "DELETE_IN_PROGRESS" | "DELETE_FAILED" | "DELETE_COMPLETE" | "DELETE_SKIPPED" | "UPDATE_IN_PROGRESS" | "UPDATE_FAILED" | "UPDATE_COMPLETE" | "IMPORT_FAILED" | "IMPORT_COMPLETE" | "IMPORT_IN_PROGRESS" | "IMPORT_ROLLBACK_IN_PROGRESS" | "IMPORT_ROLLBACK_FAILED" | "IMPORT_ROLLBACK_COMPLETE" | "UPDATE_ROLLBACK_IN_PROGRESS" | "UPDATE_ROLLBACK_COMPLETE" | "UPDATE_ROLLBACK_FAILED" | "ROLLBACK_IN_PROGRESS" | "ROLLBACK_COMPLETE" | "ROLLBACK_FAILED"
 object ResourceStatus {
   inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
   inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
@@ -269,6 +298,12 @@ object ResourceStatus {
   inline val IMPORT_ROLLBACK_IN_PROGRESS: "IMPORT_ROLLBACK_IN_PROGRESS" = "IMPORT_ROLLBACK_IN_PROGRESS"
   inline val IMPORT_ROLLBACK_FAILED: "IMPORT_ROLLBACK_FAILED" = "IMPORT_ROLLBACK_FAILED"
   inline val IMPORT_ROLLBACK_COMPLETE: "IMPORT_ROLLBACK_COMPLETE" = "IMPORT_ROLLBACK_COMPLETE"
+  inline val UPDATE_ROLLBACK_IN_PROGRESS: "UPDATE_ROLLBACK_IN_PROGRESS" = "UPDATE_ROLLBACK_IN_PROGRESS"
+  inline val UPDATE_ROLLBACK_COMPLETE: "UPDATE_ROLLBACK_COMPLETE" = "UPDATE_ROLLBACK_COMPLETE"
+  inline val UPDATE_ROLLBACK_FAILED: "UPDATE_ROLLBACK_FAILED" = "UPDATE_ROLLBACK_FAILED"
+  inline val ROLLBACK_IN_PROGRESS: "ROLLBACK_IN_PROGRESS" = "ROLLBACK_IN_PROGRESS"
+  inline val ROLLBACK_COMPLETE: "ROLLBACK_COMPLETE" = "ROLLBACK_COMPLETE"
+  inline val ROLLBACK_FAILED: "ROLLBACK_FAILED" = "ROLLBACK_FAILED"
 
   inline def values: js.Array[ResourceStatus] = js.Array(
     CREATE_IN_PROGRESS,
@@ -286,7 +321,13 @@ object ResourceStatus {
     IMPORT_IN_PROGRESS,
     IMPORT_ROLLBACK_IN_PROGRESS,
     IMPORT_ROLLBACK_FAILED,
-    IMPORT_ROLLBACK_COMPLETE
+    IMPORT_ROLLBACK_COMPLETE,
+    UPDATE_ROLLBACK_IN_PROGRESS,
+    UPDATE_ROLLBACK_COMPLETE,
+    UPDATE_ROLLBACK_FAILED,
+    ROLLBACK_IN_PROGRESS,
+    ROLLBACK_COMPLETE,
+    ROLLBACK_FAILED
   )
 }
 
@@ -408,7 +449,7 @@ object StackSetStatus {
   inline def values: js.Array[StackSetStatus] = js.Array(ACTIVE, DELETED)
 }
 
-type StackStatus = "CREATE_IN_PROGRESS" | "CREATE_FAILED" | "CREATE_COMPLETE" | "ROLLBACK_IN_PROGRESS" | "ROLLBACK_FAILED" | "ROLLBACK_COMPLETE" | "DELETE_IN_PROGRESS" | "DELETE_FAILED" | "DELETE_COMPLETE" | "UPDATE_IN_PROGRESS" | "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS" | "UPDATE_COMPLETE" | "UPDATE_ROLLBACK_IN_PROGRESS" | "UPDATE_ROLLBACK_FAILED" | "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" | "UPDATE_ROLLBACK_COMPLETE" | "REVIEW_IN_PROGRESS" | "IMPORT_IN_PROGRESS" | "IMPORT_COMPLETE" | "IMPORT_ROLLBACK_IN_PROGRESS" | "IMPORT_ROLLBACK_FAILED" | "IMPORT_ROLLBACK_COMPLETE"
+type StackStatus = "CREATE_IN_PROGRESS" | "CREATE_FAILED" | "CREATE_COMPLETE" | "ROLLBACK_IN_PROGRESS" | "ROLLBACK_FAILED" | "ROLLBACK_COMPLETE" | "DELETE_IN_PROGRESS" | "DELETE_FAILED" | "DELETE_COMPLETE" | "UPDATE_IN_PROGRESS" | "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS" | "UPDATE_COMPLETE" | "UPDATE_FAILED" | "UPDATE_ROLLBACK_IN_PROGRESS" | "UPDATE_ROLLBACK_FAILED" | "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" | "UPDATE_ROLLBACK_COMPLETE" | "REVIEW_IN_PROGRESS" | "IMPORT_IN_PROGRESS" | "IMPORT_COMPLETE" | "IMPORT_ROLLBACK_IN_PROGRESS" | "IMPORT_ROLLBACK_FAILED" | "IMPORT_ROLLBACK_COMPLETE"
 object StackStatus {
   inline val CREATE_IN_PROGRESS: "CREATE_IN_PROGRESS" = "CREATE_IN_PROGRESS"
   inline val CREATE_FAILED: "CREATE_FAILED" = "CREATE_FAILED"
@@ -422,6 +463,7 @@ object StackStatus {
   inline val UPDATE_IN_PROGRESS: "UPDATE_IN_PROGRESS" = "UPDATE_IN_PROGRESS"
   inline val UPDATE_COMPLETE_CLEANUP_IN_PROGRESS: "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS" = "UPDATE_COMPLETE_CLEANUP_IN_PROGRESS"
   inline val UPDATE_COMPLETE: "UPDATE_COMPLETE" = "UPDATE_COMPLETE"
+  inline val UPDATE_FAILED: "UPDATE_FAILED" = "UPDATE_FAILED"
   inline val UPDATE_ROLLBACK_IN_PROGRESS: "UPDATE_ROLLBACK_IN_PROGRESS" = "UPDATE_ROLLBACK_IN_PROGRESS"
   inline val UPDATE_ROLLBACK_FAILED: "UPDATE_ROLLBACK_FAILED" = "UPDATE_ROLLBACK_FAILED"
   inline val UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS: "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS" = "UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS"
@@ -446,6 +488,7 @@ object StackStatus {
     UPDATE_IN_PROGRESS,
     UPDATE_COMPLETE_CLEANUP_IN_PROGRESS,
     UPDATE_COMPLETE,
+    UPDATE_FAILED,
     UPDATE_ROLLBACK_IN_PROGRESS,
     UPDATE_ROLLBACK_FAILED,
     UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS,
@@ -465,6 +508,32 @@ object TemplateStage {
   inline val Processed: "Processed" = "Processed"
 
   inline def values: js.Array[TemplateStage] = js.Array(Original, Processed)
+}
+
+type ThirdPartyType = "RESOURCE" | "MODULE"
+object ThirdPartyType {
+  inline val RESOURCE: "RESOURCE" = "RESOURCE"
+  inline val MODULE: "MODULE" = "MODULE"
+
+  inline def values: js.Array[ThirdPartyType] = js.Array(RESOURCE, MODULE)
+}
+
+type TypeTestsStatus = "PASSED" | "FAILED" | "IN_PROGRESS" | "NOT_TESTED"
+object TypeTestsStatus {
+  inline val PASSED: "PASSED" = "PASSED"
+  inline val FAILED: "FAILED" = "FAILED"
+  inline val IN_PROGRESS: "IN_PROGRESS" = "IN_PROGRESS"
+  inline val NOT_TESTED: "NOT_TESTED" = "NOT_TESTED"
+
+  inline def values: js.Array[TypeTestsStatus] = js.Array(PASSED, FAILED, IN_PROGRESS, NOT_TESTED)
+}
+
+type VersionBump = "MAJOR" | "MINOR"
+object VersionBump {
+  inline val MAJOR: "MAJOR" = "MAJOR"
+  inline val MINOR: "MINOR" = "MINOR"
+
+  inline def values: js.Array[VersionBump] = js.Array(MAJOR, MINOR)
 }
 
 type Visibility = "PUBLIC" | "PRIVATE"

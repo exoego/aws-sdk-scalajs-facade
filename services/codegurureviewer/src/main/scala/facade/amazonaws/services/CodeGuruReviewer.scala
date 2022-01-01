@@ -8,20 +8,26 @@ import scala.language.implicitConversions
 import facade.amazonaws._
 
 package object codegurureviewer {
+  type AnalysisTypes = js.Array[AnalysisType]
   type Arn = String
   type AssociationArn = String
   type AssociationId = String
   type BranchName = String
+  type BuildArtifactsObjectKey = String
   type ClientRequestToken = String
   type CodeReviewName = String
   type CodeReviewSummaries = js.Array[CodeReviewSummary]
   type CommitId = String
   type ConnectionArn = String
+  type EventName = String
+  type EventState = String
   type FilePath = String
   type FindingsCount = Double
   type JobStates = js.Array[JobState]
+  type KMSKeyId = String
   type LineNumber = Int
   type ListCodeReviewsMaxResults = Int
+  type LongDescription = String
   type MaxResults = Int
   type MeteredLinesOfCodeCount = Double
   type Name = String
@@ -39,6 +45,15 @@ package object codegurureviewer {
   type RepositoryAssociationStates = js.Array[RepositoryAssociationState]
   type RepositoryAssociationSummaries = js.Array[RepositoryAssociationSummary]
   type RepositoryNames = js.Array[Name]
+  type RequestId = String
+  type Requester = String
+  type RuleId = String
+  type RuleName = String
+  type RuleTag = String
+  type RuleTags = js.Array[RuleTag]
+  type S3BucketName = String
+  type ShortDescription = String
+  type SourceCodeArtifactsObjectKey = String
   type StateReason = String
   type TagKey = String
   type TagKeyList = js.Array[TagKey]
@@ -98,6 +113,7 @@ package object codegurureviewer {
   trait AssociateRepositoryRequest extends js.Object {
     var Repository: Repository
     var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var KMSKeyDetails: js.UndefOr[KMSKeyDetails]
     var Tags: js.UndefOr[TagMap]
   }
 
@@ -106,6 +122,7 @@ package object codegurureviewer {
     def apply(
         Repository: Repository,
         ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        KMSKeyDetails: js.UndefOr[KMSKeyDetails] = js.undefined,
         Tags: js.UndefOr[TagMap] = js.undefined
     ): AssociateRepositoryRequest = {
       val __obj = js.Dynamic.literal(
@@ -113,6 +130,7 @@ package object codegurureviewer {
       )
 
       ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      KMSKeyDetails.foreach(__v => __obj.updateDynamic("KMSKeyDetails")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AssociateRepositoryRequest]
     }
@@ -137,7 +155,52 @@ package object codegurureviewer {
     }
   }
 
-  /** Information about an AWS CodeCommit repository. The CodeCommit repository must be in the same AWS Region and AWS account where its CodeGuru Reviewer code reviews are configured.
+  /** A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies a code diff between a source and destination branch in an associated repository.
+    */
+  @js.native
+  trait BranchDiffSourceCodeType extends js.Object {
+    var DestinationBranchName: BranchName
+    var SourceBranchName: BranchName
+  }
+
+  object BranchDiffSourceCodeType {
+    @inline
+    def apply(
+        DestinationBranchName: BranchName,
+        SourceBranchName: BranchName
+    ): BranchDiffSourceCodeType = {
+      val __obj = js.Dynamic.literal(
+        "DestinationBranchName" -> DestinationBranchName.asInstanceOf[js.Any],
+        "SourceBranchName" -> SourceBranchName.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[BranchDiffSourceCodeType]
+    }
+  }
+
+  /** Code artifacts are source code artifacts and build artifacts used in a repository analysis or a pull request review. * Source code artifacts are source code files in a Git repository that are compressed into a .zip file. * Build artifacts are .jar or .class files that are compressed in a .zip file.
+    */
+  @js.native
+  trait CodeArtifacts extends js.Object {
+    var SourceCodeArtifactsObjectKey: SourceCodeArtifactsObjectKey
+    var BuildArtifactsObjectKey: js.UndefOr[BuildArtifactsObjectKey]
+  }
+
+  object CodeArtifacts {
+    @inline
+    def apply(
+        SourceCodeArtifactsObjectKey: SourceCodeArtifactsObjectKey,
+        BuildArtifactsObjectKey: js.UndefOr[BuildArtifactsObjectKey] = js.undefined
+    ): CodeArtifacts = {
+      val __obj = js.Dynamic.literal(
+        "SourceCodeArtifactsObjectKey" -> SourceCodeArtifactsObjectKey.asInstanceOf[js.Any]
+      )
+
+      BuildArtifactsObjectKey.foreach(__v => __obj.updateDynamic("BuildArtifactsObjectKey")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[CodeArtifacts]
+    }
+  }
+
+  /** Information about an Amazon Web Services CodeCommit repository. The CodeCommit repository must be in the same Amazon Web Services Region and Amazon Web Services account where its CodeGuru Reviewer code reviews are configured.
     */
   @js.native
   trait CodeCommitRepository extends js.Object {
@@ -160,6 +223,7 @@ package object codegurureviewer {
     */
   @js.native
   trait CodeReview extends js.Object {
+    var AnalysisTypes: js.UndefOr[AnalysisTypes]
     var AssociationArn: js.UndefOr[AssociationArn]
     var CodeReviewArn: js.UndefOr[Arn]
     var CreatedTimeStamp: js.UndefOr[TimeStamp]
@@ -179,6 +243,7 @@ package object codegurureviewer {
   object CodeReview {
     @inline
     def apply(
+        AnalysisTypes: js.UndefOr[AnalysisTypes] = js.undefined,
         AssociationArn: js.UndefOr[AssociationArn] = js.undefined,
         CodeReviewArn: js.UndefOr[Arn] = js.undefined,
         CreatedTimeStamp: js.UndefOr[TimeStamp] = js.undefined,
@@ -195,6 +260,7 @@ package object codegurureviewer {
         Type: js.UndefOr[Type] = js.undefined
     ): CodeReview = {
       val __obj = js.Dynamic.literal()
+      AnalysisTypes.foreach(__v => __obj.updateDynamic("AnalysisTypes")(__v.asInstanceOf[js.Any]))
       AssociationArn.foreach(__v => __obj.updateDynamic("AssociationArn")(__v.asInstanceOf[js.Any]))
       CodeReviewArn.foreach(__v => __obj.updateDynamic("CodeReviewArn")(__v.asInstanceOf[js.Any]))
       CreatedTimeStamp.foreach(__v => __obj.updateDynamic("CreatedTimeStamp")(__v.asInstanceOf[js.Any]))
@@ -226,6 +292,7 @@ package object codegurureviewer {
     var ProviderType: js.UndefOr[ProviderType]
     var PullRequestId: js.UndefOr[PullRequestId]
     var RepositoryName: js.UndefOr[Name]
+    var SourceCodeType: js.UndefOr[SourceCodeType]
     var State: js.UndefOr[JobState]
     var Type: js.UndefOr[Type]
   }
@@ -242,6 +309,7 @@ package object codegurureviewer {
         ProviderType: js.UndefOr[ProviderType] = js.undefined,
         PullRequestId: js.UndefOr[PullRequestId] = js.undefined,
         RepositoryName: js.UndefOr[Name] = js.undefined,
+        SourceCodeType: js.UndefOr[SourceCodeType] = js.undefined,
         State: js.UndefOr[JobState] = js.undefined,
         Type: js.UndefOr[Type] = js.undefined
     ): CodeReviewSummary = {
@@ -255,36 +323,42 @@ package object codegurureviewer {
       ProviderType.foreach(__v => __obj.updateDynamic("ProviderType")(__v.asInstanceOf[js.Any]))
       PullRequestId.foreach(__v => __obj.updateDynamic("PullRequestId")(__v.asInstanceOf[js.Any]))
       RepositoryName.foreach(__v => __obj.updateDynamic("RepositoryName")(__v.asInstanceOf[js.Any]))
+      SourceCodeType.foreach(__v => __obj.updateDynamic("SourceCodeType")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeReviewSummary]
     }
   }
 
-  /** The type of a code review. There are two code review types: * <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an assocaited repository. Because this type of code review is automatically generated, you cannot specify this code review type using <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>. * <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated respository. The assocated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>.
+  /** The type of a code review. There are two code review types: * <code>PullRequest</code> - A code review that is automatically triggered by a pull request on an associated repository. * <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>.
     */
   @js.native
   trait CodeReviewType extends js.Object {
     var RepositoryAnalysis: RepositoryAnalysis
+    var AnalysisTypes: js.UndefOr[AnalysisTypes]
   }
 
   object CodeReviewType {
     @inline
     def apply(
-        RepositoryAnalysis: RepositoryAnalysis
+        RepositoryAnalysis: RepositoryAnalysis,
+        AnalysisTypes: js.UndefOr[AnalysisTypes] = js.undefined
     ): CodeReviewType = {
       val __obj = js.Dynamic.literal(
         "RepositoryAnalysis" -> RepositoryAnalysis.asInstanceOf[js.Any]
       )
+
+      AnalysisTypes.foreach(__v => __obj.updateDynamic("AnalysisTypes")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CodeReviewType]
     }
   }
 
-  /** A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request on an associated repository.
+  /** A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType"> <code>SourceCodeType</code> </a> that specifies the commit diff for a pull request on an associated repository. The <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to do a pull request code review.
     */
   @js.native
   trait CommitDiffSourceCodeType extends js.Object {
     var DestinationCommit: js.UndefOr[CommitId]
+    var MergeBaseCommit: js.UndefOr[CommitId]
     var SourceCommit: js.UndefOr[CommitId]
   }
 
@@ -292,10 +366,12 @@ package object codegurureviewer {
     @inline
     def apply(
         DestinationCommit: js.UndefOr[CommitId] = js.undefined,
+        MergeBaseCommit: js.UndefOr[CommitId] = js.undefined,
         SourceCommit: js.UndefOr[CommitId] = js.undefined
     ): CommitDiffSourceCodeType = {
       val __obj = js.Dynamic.literal()
       DestinationCommit.foreach(__v => __obj.updateDynamic("DestinationCommit")(__v.asInstanceOf[js.Any]))
+      MergeBaseCommit.foreach(__v => __obj.updateDynamic("MergeBaseCommit")(__v.asInstanceOf[js.Any]))
       SourceCommit.foreach(__v => __obj.updateDynamic("SourceCommit")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[CommitDiffSourceCodeType]
     }
@@ -486,6 +562,48 @@ package object codegurureviewer {
       RepositoryAssociation.foreach(__v => __obj.updateDynamic("RepositoryAssociation")(__v.asInstanceOf[js.Any]))
       Tags.foreach(__v => __obj.updateDynamic("Tags")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[DisassociateRepositoryResponse]
+    }
+  }
+
+  /** Information about an event. The event might be a push, pull request, scheduled request, or another type of event.
+    */
+  @js.native
+  trait EventInfo extends js.Object {
+    var Name: js.UndefOr[EventName]
+    var State: js.UndefOr[EventState]
+  }
+
+  object EventInfo {
+    @inline
+    def apply(
+        Name: js.UndefOr[EventName] = js.undefined,
+        State: js.UndefOr[EventState] = js.undefined
+    ): EventInfo = {
+      val __obj = js.Dynamic.literal()
+      Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
+      State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[EventInfo]
+    }
+  }
+
+  /** An object that contains: * The encryption option for a repository association. It is either owned by Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>). * The ID of the Amazon Web Services KMS key that is associated with a respository association.
+    */
+  @js.native
+  trait KMSKeyDetails extends js.Object {
+    var EncryptionOption: js.UndefOr[EncryptionOption]
+    var KMSKeyId: js.UndefOr[KMSKeyId]
+  }
+
+  object KMSKeyDetails {
+    @inline
+    def apply(
+        EncryptionOption: js.UndefOr[EncryptionOption] = js.undefined,
+        KMSKeyId: js.UndefOr[KMSKeyId] = js.undefined
+    ): KMSKeyDetails = {
+      val __obj = js.Dynamic.literal()
+      EncryptionOption.foreach(__v => __obj.updateDynamic("EncryptionOption")(__v.asInstanceOf[js.Any]))
+      KMSKeyId.foreach(__v => __obj.updateDynamic("KMSKeyId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[KMSKeyDetails]
     }
   }
 
@@ -856,7 +974,10 @@ package object codegurureviewer {
     var Description: js.UndefOr[Text]
     var EndLine: js.UndefOr[LineNumber]
     var FilePath: js.UndefOr[FilePath]
+    var RecommendationCategory: js.UndefOr[RecommendationCategory]
     var RecommendationId: js.UndefOr[RecommendationId]
+    var RuleMetadata: js.UndefOr[RuleMetadata]
+    var Severity: js.UndefOr[Severity]
     var StartLine: js.UndefOr[LineNumber]
   }
 
@@ -866,26 +987,33 @@ package object codegurureviewer {
         Description: js.UndefOr[Text] = js.undefined,
         EndLine: js.UndefOr[LineNumber] = js.undefined,
         FilePath: js.UndefOr[FilePath] = js.undefined,
+        RecommendationCategory: js.UndefOr[RecommendationCategory] = js.undefined,
         RecommendationId: js.UndefOr[RecommendationId] = js.undefined,
+        RuleMetadata: js.UndefOr[RuleMetadata] = js.undefined,
+        Severity: js.UndefOr[Severity] = js.undefined,
         StartLine: js.UndefOr[LineNumber] = js.undefined
     ): RecommendationSummary = {
       val __obj = js.Dynamic.literal()
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
       EndLine.foreach(__v => __obj.updateDynamic("EndLine")(__v.asInstanceOf[js.Any]))
       FilePath.foreach(__v => __obj.updateDynamic("FilePath")(__v.asInstanceOf[js.Any]))
+      RecommendationCategory.foreach(__v => __obj.updateDynamic("RecommendationCategory")(__v.asInstanceOf[js.Any]))
       RecommendationId.foreach(__v => __obj.updateDynamic("RecommendationId")(__v.asInstanceOf[js.Any]))
+      RuleMetadata.foreach(__v => __obj.updateDynamic("RuleMetadata")(__v.asInstanceOf[js.Any]))
+      Severity.foreach(__v => __obj.updateDynamic("Severity")(__v.asInstanceOf[js.Any]))
       StartLine.foreach(__v => __obj.updateDynamic("StartLine")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RecommendationSummary]
     }
   }
 
-  /** Information about an associated AWS CodeCommit repository or an associated repository that is managed by AWS CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository.
+  /** Information about an associated Amazon Web Services CodeCommit repository or an associated repository that is managed by Amazon Web Services CodeStar Connections (for example, Bitbucket). This <code>Repository</code> object is not used if your source code is in an associated GitHub repository.
     */
   @js.native
   trait Repository extends js.Object {
     var Bitbucket: js.UndefOr[ThirdPartySourceRepository]
     var CodeCommit: js.UndefOr[CodeCommitRepository]
     var GitHubEnterpriseServer: js.UndefOr[ThirdPartySourceRepository]
+    var S3Bucket: js.UndefOr[S3Repository]
   }
 
   object Repository {
@@ -893,31 +1021,35 @@ package object codegurureviewer {
     def apply(
         Bitbucket: js.UndefOr[ThirdPartySourceRepository] = js.undefined,
         CodeCommit: js.UndefOr[CodeCommitRepository] = js.undefined,
-        GitHubEnterpriseServer: js.UndefOr[ThirdPartySourceRepository] = js.undefined
+        GitHubEnterpriseServer: js.UndefOr[ThirdPartySourceRepository] = js.undefined,
+        S3Bucket: js.UndefOr[S3Repository] = js.undefined
     ): Repository = {
       val __obj = js.Dynamic.literal()
       Bitbucket.foreach(__v => __obj.updateDynamic("Bitbucket")(__v.asInstanceOf[js.Any]))
       CodeCommit.foreach(__v => __obj.updateDynamic("CodeCommit")(__v.asInstanceOf[js.Any]))
       GitHubEnterpriseServer.foreach(__v => __obj.updateDynamic("GitHubEnterpriseServer")(__v.asInstanceOf[js.Any]))
+      S3Bucket.foreach(__v => __obj.updateDynamic("S3Bucket")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[Repository]
     }
   }
 
-  /** A code review type that analyzes all code under a specified branch in an associated respository. The assocated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>.
+  /** A code review type that analyzes all code under a specified branch in an associated repository. The associated repository is specified using its ARN when you call <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview"> <code>CreateCodeReview</code> </a>.
     */
   @js.native
   trait RepositoryAnalysis extends js.Object {
-    var RepositoryHead: RepositoryHeadSourceCodeType
+    var RepositoryHead: js.UndefOr[RepositoryHeadSourceCodeType]
+    var SourceCodeType: js.UndefOr[SourceCodeType]
   }
 
   object RepositoryAnalysis {
     @inline
     def apply(
-        RepositoryHead: RepositoryHeadSourceCodeType
+        RepositoryHead: js.UndefOr[RepositoryHeadSourceCodeType] = js.undefined,
+        SourceCodeType: js.UndefOr[SourceCodeType] = js.undefined
     ): RepositoryAnalysis = {
-      val __obj = js.Dynamic.literal(
-        "RepositoryHead" -> RepositoryHead.asInstanceOf[js.Any]
-      )
+      val __obj = js.Dynamic.literal()
+      RepositoryHead.foreach(__v => __obj.updateDynamic("RepositoryHead")(__v.asInstanceOf[js.Any]))
+      SourceCodeType.foreach(__v => __obj.updateDynamic("SourceCodeType")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RepositoryAnalysis]
     }
   }
@@ -930,10 +1062,12 @@ package object codegurureviewer {
     var AssociationId: js.UndefOr[AssociationId]
     var ConnectionArn: js.UndefOr[ConnectionArn]
     var CreatedTimeStamp: js.UndefOr[TimeStamp]
+    var KMSKeyDetails: js.UndefOr[KMSKeyDetails]
     var LastUpdatedTimeStamp: js.UndefOr[TimeStamp]
     var Name: js.UndefOr[Name]
     var Owner: js.UndefOr[Owner]
     var ProviderType: js.UndefOr[ProviderType]
+    var S3RepositoryDetails: js.UndefOr[S3RepositoryDetails]
     var State: js.UndefOr[RepositoryAssociationState]
     var StateReason: js.UndefOr[StateReason]
   }
@@ -945,10 +1079,12 @@ package object codegurureviewer {
         AssociationId: js.UndefOr[AssociationId] = js.undefined,
         ConnectionArn: js.UndefOr[ConnectionArn] = js.undefined,
         CreatedTimeStamp: js.UndefOr[TimeStamp] = js.undefined,
+        KMSKeyDetails: js.UndefOr[KMSKeyDetails] = js.undefined,
         LastUpdatedTimeStamp: js.UndefOr[TimeStamp] = js.undefined,
         Name: js.UndefOr[Name] = js.undefined,
         Owner: js.UndefOr[Owner] = js.undefined,
         ProviderType: js.UndefOr[ProviderType] = js.undefined,
+        S3RepositoryDetails: js.UndefOr[S3RepositoryDetails] = js.undefined,
         State: js.UndefOr[RepositoryAssociationState] = js.undefined,
         StateReason: js.UndefOr[StateReason] = js.undefined
     ): RepositoryAssociation = {
@@ -957,10 +1093,12 @@ package object codegurureviewer {
       AssociationId.foreach(__v => __obj.updateDynamic("AssociationId")(__v.asInstanceOf[js.Any]))
       ConnectionArn.foreach(__v => __obj.updateDynamic("ConnectionArn")(__v.asInstanceOf[js.Any]))
       CreatedTimeStamp.foreach(__v => __obj.updateDynamic("CreatedTimeStamp")(__v.asInstanceOf[js.Any]))
+      KMSKeyDetails.foreach(__v => __obj.updateDynamic("KMSKeyDetails")(__v.asInstanceOf[js.Any]))
       LastUpdatedTimeStamp.foreach(__v => __obj.updateDynamic("LastUpdatedTimeStamp")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       Owner.foreach(__v => __obj.updateDynamic("Owner")(__v.asInstanceOf[js.Any]))
       ProviderType.foreach(__v => __obj.updateDynamic("ProviderType")(__v.asInstanceOf[js.Any]))
+      S3RepositoryDetails.foreach(__v => __obj.updateDynamic("S3RepositoryDetails")(__v.asInstanceOf[js.Any]))
       State.foreach(__v => __obj.updateDynamic("State")(__v.asInstanceOf[js.Any]))
       StateReason.foreach(__v => __obj.updateDynamic("StateReason")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[RepositoryAssociation]
@@ -1025,23 +1163,155 @@ package object codegurureviewer {
     }
   }
 
-  /** Specifies the source code that is analyzed in a code review. A code review can analyze the source code that is specified using a pull request diff or a branch in an associated repository.
+  /** Metadata that is associated with a code review. This applies to both pull request and repository analysis code reviews.
+    */
+  @js.native
+  trait RequestMetadata extends js.Object {
+    var EventInfo: js.UndefOr[EventInfo]
+    var RequestId: js.UndefOr[RequestId]
+    var Requester: js.UndefOr[Requester]
+    var VendorName: js.UndefOr[VendorName]
+  }
+
+  object RequestMetadata {
+    @inline
+    def apply(
+        EventInfo: js.UndefOr[EventInfo] = js.undefined,
+        RequestId: js.UndefOr[RequestId] = js.undefined,
+        Requester: js.UndefOr[Requester] = js.undefined,
+        VendorName: js.UndefOr[VendorName] = js.undefined
+    ): RequestMetadata = {
+      val __obj = js.Dynamic.literal()
+      EventInfo.foreach(__v => __obj.updateDynamic("EventInfo")(__v.asInstanceOf[js.Any]))
+      RequestId.foreach(__v => __obj.updateDynamic("RequestId")(__v.asInstanceOf[js.Any]))
+      Requester.foreach(__v => __obj.updateDynamic("Requester")(__v.asInstanceOf[js.Any]))
+      VendorName.foreach(__v => __obj.updateDynamic("VendorName")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RequestMetadata]
+    }
+  }
+
+  /** Metadata about a rule. Rule metadata includes an ID, a name, a list of tags, and a short and long description. CodeGuru Reviewer uses rules to analyze code. A rule's recommendation is included in analysis results if code is detected that violates the rule.
+    */
+  @js.native
+  trait RuleMetadata extends js.Object {
+    var LongDescription: js.UndefOr[LongDescription]
+    var RuleId: js.UndefOr[RuleId]
+    var RuleName: js.UndefOr[RuleName]
+    var RuleTags: js.UndefOr[RuleTags]
+    var ShortDescription: js.UndefOr[ShortDescription]
+  }
+
+  object RuleMetadata {
+    @inline
+    def apply(
+        LongDescription: js.UndefOr[LongDescription] = js.undefined,
+        RuleId: js.UndefOr[RuleId] = js.undefined,
+        RuleName: js.UndefOr[RuleName] = js.undefined,
+        RuleTags: js.UndefOr[RuleTags] = js.undefined,
+        ShortDescription: js.UndefOr[ShortDescription] = js.undefined
+    ): RuleMetadata = {
+      val __obj = js.Dynamic.literal()
+      LongDescription.foreach(__v => __obj.updateDynamic("LongDescription")(__v.asInstanceOf[js.Any]))
+      RuleId.foreach(__v => __obj.updateDynamic("RuleId")(__v.asInstanceOf[js.Any]))
+      RuleName.foreach(__v => __obj.updateDynamic("RuleName")(__v.asInstanceOf[js.Any]))
+      RuleTags.foreach(__v => __obj.updateDynamic("RuleTags")(__v.asInstanceOf[js.Any]))
+      ShortDescription.foreach(__v => __obj.updateDynamic("ShortDescription")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[RuleMetadata]
+    }
+  }
+
+  /** Information about an associated repository in an S3 bucket. The associated repository contains a source code .zip file and a build artifacts .zip file that contains .jar or .class files.
+    */
+  @js.native
+  trait S3BucketRepository extends js.Object {
+    var Name: Name
+    var Details: js.UndefOr[S3RepositoryDetails]
+  }
+
+  object S3BucketRepository {
+    @inline
+    def apply(
+        Name: Name,
+        Details: js.UndefOr[S3RepositoryDetails] = js.undefined
+    ): S3BucketRepository = {
+      val __obj = js.Dynamic.literal(
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+
+      Details.foreach(__v => __obj.updateDynamic("Details")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3BucketRepository]
+    }
+  }
+
+  /** Information about a repository in an S3 bucket.
+    */
+  @js.native
+  trait S3Repository extends js.Object {
+    var BucketName: S3BucketName
+    var Name: Name
+  }
+
+  object S3Repository {
+    @inline
+    def apply(
+        BucketName: S3BucketName,
+        Name: Name
+    ): S3Repository = {
+      val __obj = js.Dynamic.literal(
+        "BucketName" -> BucketName.asInstanceOf[js.Any],
+        "Name" -> Name.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[S3Repository]
+    }
+  }
+
+  /** Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains the S3 object keys for a source code .zip file and for a build artifacts .zip file that contains .jar or .class files.
+    */
+  @js.native
+  trait S3RepositoryDetails extends js.Object {
+    var BucketName: js.UndefOr[S3BucketName]
+    var CodeArtifacts: js.UndefOr[CodeArtifacts]
+  }
+
+  object S3RepositoryDetails {
+    @inline
+    def apply(
+        BucketName: js.UndefOr[S3BucketName] = js.undefined,
+        CodeArtifacts: js.UndefOr[CodeArtifacts] = js.undefined
+    ): S3RepositoryDetails = {
+      val __obj = js.Dynamic.literal()
+      BucketName.foreach(__v => __obj.updateDynamic("BucketName")(__v.asInstanceOf[js.Any]))
+      CodeArtifacts.foreach(__v => __obj.updateDynamic("CodeArtifacts")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[S3RepositoryDetails]
+    }
+  }
+
+  /** Specifies the source code that is analyzed in a code review.
     */
   @js.native
   trait SourceCodeType extends js.Object {
+    var BranchDiff: js.UndefOr[BranchDiffSourceCodeType]
     var CommitDiff: js.UndefOr[CommitDiffSourceCodeType]
     var RepositoryHead: js.UndefOr[RepositoryHeadSourceCodeType]
+    var RequestMetadata: js.UndefOr[RequestMetadata]
+    var S3BucketRepository: js.UndefOr[S3BucketRepository]
   }
 
   object SourceCodeType {
     @inline
     def apply(
+        BranchDiff: js.UndefOr[BranchDiffSourceCodeType] = js.undefined,
         CommitDiff: js.UndefOr[CommitDiffSourceCodeType] = js.undefined,
-        RepositoryHead: js.UndefOr[RepositoryHeadSourceCodeType] = js.undefined
+        RepositoryHead: js.UndefOr[RepositoryHeadSourceCodeType] = js.undefined,
+        RequestMetadata: js.UndefOr[RequestMetadata] = js.undefined,
+        S3BucketRepository: js.UndefOr[S3BucketRepository] = js.undefined
     ): SourceCodeType = {
       val __obj = js.Dynamic.literal()
+      BranchDiff.foreach(__v => __obj.updateDynamic("BranchDiff")(__v.asInstanceOf[js.Any]))
       CommitDiff.foreach(__v => __obj.updateDynamic("CommitDiff")(__v.asInstanceOf[js.Any]))
       RepositoryHead.foreach(__v => __obj.updateDynamic("RepositoryHead")(__v.asInstanceOf[js.Any]))
+      RequestMetadata.foreach(__v => __obj.updateDynamic("RequestMetadata")(__v.asInstanceOf[js.Any]))
+      S3BucketRepository.foreach(__v => __obj.updateDynamic("S3BucketRepository")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[SourceCodeType]
     }
   }

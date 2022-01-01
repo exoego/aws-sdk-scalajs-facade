@@ -11,8 +11,11 @@ package object textract {
   type BlockList = js.Array[Block]
   type ClientRequestToken = String
   type ContentClassifiers = js.Array[ContentClassifier]
+  type DocumentPages = js.Array[Document]
   type EntityTypes = js.Array[EntityType]
   type ErrorCode = String
+  type ExpenseDocumentList = js.Array[ExpenseDocument]
+  type ExpenseFieldList = js.Array[ExpenseField]
   type FeatureTypes = js.Array[FeatureType]
   type FlowDefinitionArn = String
   type HumanLoopActivationConditionsEvaluationResults = String
@@ -21,10 +24,14 @@ package object textract {
   type HumanLoopArn = String
   type HumanLoopName = String
   type IdList = js.Array[NonEmptyString]
+  type IdentityDocumentFieldList = js.Array[IdentityDocumentField]
+  type IdentityDocumentList = js.Array[IdentityDocument]
   type ImageBlob = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
   type JobId = String
   type JobTag = String
   type KMSKeyId = String
+  type LineItemGroupList = js.Array[LineItemGroup]
+  type LineItemList = js.Array[LineItemFields]
   type MaxResults = Int
   type NonEmptyString = String
   type Pages = js.Array[UInteger]
@@ -44,11 +51,15 @@ package object textract {
   final class TextractOps(private val service: Textract) extends AnyVal {
 
     @inline def analyzeDocumentFuture(params: AnalyzeDocumentRequest): Future[AnalyzeDocumentResponse] = service.analyzeDocument(params).promise().toFuture
+    @inline def analyzeExpenseFuture(params: AnalyzeExpenseRequest): Future[AnalyzeExpenseResponse] = service.analyzeExpense(params).promise().toFuture
+    @inline def analyzeIDFuture(params: AnalyzeIDRequest): Future[AnalyzeIDResponse] = service.analyzeID(params).promise().toFuture
     @inline def detectDocumentTextFuture(params: DetectDocumentTextRequest): Future[DetectDocumentTextResponse] = service.detectDocumentText(params).promise().toFuture
     @inline def getDocumentAnalysisFuture(params: GetDocumentAnalysisRequest): Future[GetDocumentAnalysisResponse] = service.getDocumentAnalysis(params).promise().toFuture
     @inline def getDocumentTextDetectionFuture(params: GetDocumentTextDetectionRequest): Future[GetDocumentTextDetectionResponse] = service.getDocumentTextDetection(params).promise().toFuture
+    @inline def getExpenseAnalysisFuture(params: GetExpenseAnalysisRequest): Future[GetExpenseAnalysisResponse] = service.getExpenseAnalysis(params).promise().toFuture
     @inline def startDocumentAnalysisFuture(params: StartDocumentAnalysisRequest): Future[StartDocumentAnalysisResponse] = service.startDocumentAnalysis(params).promise().toFuture
     @inline def startDocumentTextDetectionFuture(params: StartDocumentTextDetectionRequest): Future[StartDocumentTextDetectionResponse] = service.startDocumentTextDetection(params).promise().toFuture
+    @inline def startExpenseAnalysisFuture(params: StartExpenseAnalysisRequest): Future[StartExpenseAnalysisResponse] = service.startExpenseAnalysis(params).promise().toFuture
 
   }
 
@@ -58,11 +69,15 @@ package object textract {
     def this(config: AWSConfig) = this()
 
     def analyzeDocument(params: AnalyzeDocumentRequest): Request[AnalyzeDocumentResponse] = js.native
+    def analyzeExpense(params: AnalyzeExpenseRequest): Request[AnalyzeExpenseResponse] = js.native
+    def analyzeID(params: AnalyzeIDRequest): Request[AnalyzeIDResponse] = js.native
     def detectDocumentText(params: DetectDocumentTextRequest): Request[DetectDocumentTextResponse] = js.native
     def getDocumentAnalysis(params: GetDocumentAnalysisRequest): Request[GetDocumentAnalysisResponse] = js.native
     def getDocumentTextDetection(params: GetDocumentTextDetectionRequest): Request[GetDocumentTextDetectionResponse] = js.native
+    def getExpenseAnalysis(params: GetExpenseAnalysisRequest): Request[GetExpenseAnalysisResponse] = js.native
     def startDocumentAnalysis(params: StartDocumentAnalysisRequest): Request[StartDocumentAnalysisResponse] = js.native
     def startDocumentTextDetection(params: StartDocumentTextDetectionRequest): Request[StartDocumentTextDetectionResponse] = js.native
+    def startExpenseAnalysis(params: StartExpenseAnalysisRequest): Request[StartExpenseAnalysisResponse] = js.native
   }
   object Textract {
     @inline implicit def toOps(service: Textract): TextractOps = {
@@ -116,6 +131,107 @@ package object textract {
       DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
       HumanLoopActivationOutput.foreach(__v => __obj.updateDynamic("HumanLoopActivationOutput")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[AnalyzeDocumentResponse]
+    }
+  }
+
+  @js.native
+  trait AnalyzeExpenseRequest extends js.Object {
+    var Document: Document
+  }
+
+  object AnalyzeExpenseRequest {
+    @inline
+    def apply(
+        Document: Document
+    ): AnalyzeExpenseRequest = {
+      val __obj = js.Dynamic.literal(
+        "Document" -> Document.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AnalyzeExpenseRequest]
+    }
+  }
+
+  @js.native
+  trait AnalyzeExpenseResponse extends js.Object {
+    var DocumentMetadata: js.UndefOr[DocumentMetadata]
+    var ExpenseDocuments: js.UndefOr[ExpenseDocumentList]
+  }
+
+  object AnalyzeExpenseResponse {
+    @inline
+    def apply(
+        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
+        ExpenseDocuments: js.UndefOr[ExpenseDocumentList] = js.undefined
+    ): AnalyzeExpenseResponse = {
+      val __obj = js.Dynamic.literal()
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
+      ExpenseDocuments.foreach(__v => __obj.updateDynamic("ExpenseDocuments")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnalyzeExpenseResponse]
+    }
+  }
+
+  /** Used to contain the information detected by an AnalyzeID operation.
+    */
+  @js.native
+  trait AnalyzeIDDetections extends js.Object {
+    var Text: String
+    var Confidence: js.UndefOr[Percent]
+    var NormalizedValue: js.UndefOr[NormalizedValue]
+  }
+
+  object AnalyzeIDDetections {
+    @inline
+    def apply(
+        Text: String,
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        NormalizedValue: js.UndefOr[NormalizedValue] = js.undefined
+    ): AnalyzeIDDetections = {
+      val __obj = js.Dynamic.literal(
+        "Text" -> Text.asInstanceOf[js.Any]
+      )
+
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      NormalizedValue.foreach(__v => __obj.updateDynamic("NormalizedValue")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnalyzeIDDetections]
+    }
+  }
+
+  @js.native
+  trait AnalyzeIDRequest extends js.Object {
+    var DocumentPages: DocumentPages
+  }
+
+  object AnalyzeIDRequest {
+    @inline
+    def apply(
+        DocumentPages: DocumentPages
+    ): AnalyzeIDRequest = {
+      val __obj = js.Dynamic.literal(
+        "DocumentPages" -> DocumentPages.asInstanceOf[js.Any]
+      )
+      __obj.asInstanceOf[AnalyzeIDRequest]
+    }
+  }
+
+  @js.native
+  trait AnalyzeIDResponse extends js.Object {
+    var AnalyzeIDModelVersion: js.UndefOr[String]
+    var DocumentMetadata: js.UndefOr[DocumentMetadata]
+    var IdentityDocuments: js.UndefOr[IdentityDocumentList]
+  }
+
+  object AnalyzeIDResponse {
+    @inline
+    def apply(
+        AnalyzeIDModelVersion: js.UndefOr[String] = js.undefined,
+        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
+        IdentityDocuments: js.UndefOr[IdentityDocumentList] = js.undefined
+    ): AnalyzeIDResponse = {
+      val __obj = js.Dynamic.literal()
+      AnalyzeIDModelVersion.foreach(__v => __obj.updateDynamic("AnalyzeIDModelVersion")(__v.asInstanceOf[js.Any]))
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
+      IdentityDocuments.foreach(__v => __obj.updateDynamic("IdentityDocuments")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[AnalyzeIDResponse]
     }
   }
 
@@ -300,6 +416,102 @@ package object textract {
     }
   }
 
+  /** An object used to store information about the Value or Label detected by Amazon Textract.
+    */
+  @js.native
+  trait ExpenseDetection extends js.Object {
+    var Confidence: js.UndefOr[Percent]
+    var Geometry: js.UndefOr[Geometry]
+    var Text: js.UndefOr[String]
+  }
+
+  object ExpenseDetection {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        Geometry: js.UndefOr[Geometry] = js.undefined,
+        Text: js.UndefOr[String] = js.undefined
+    ): ExpenseDetection = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Geometry.foreach(__v => __obj.updateDynamic("Geometry")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExpenseDetection]
+    }
+  }
+
+  /** The structure holding all the information returned by AnalyzeExpense
+    */
+  @js.native
+  trait ExpenseDocument extends js.Object {
+    var ExpenseIndex: js.UndefOr[UInteger]
+    var LineItemGroups: js.UndefOr[LineItemGroupList]
+    var SummaryFields: js.UndefOr[ExpenseFieldList]
+  }
+
+  object ExpenseDocument {
+    @inline
+    def apply(
+        ExpenseIndex: js.UndefOr[UInteger] = js.undefined,
+        LineItemGroups: js.UndefOr[LineItemGroupList] = js.undefined,
+        SummaryFields: js.UndefOr[ExpenseFieldList] = js.undefined
+    ): ExpenseDocument = {
+      val __obj = js.Dynamic.literal()
+      ExpenseIndex.foreach(__v => __obj.updateDynamic("ExpenseIndex")(__v.asInstanceOf[js.Any]))
+      LineItemGroups.foreach(__v => __obj.updateDynamic("LineItemGroups")(__v.asInstanceOf[js.Any]))
+      SummaryFields.foreach(__v => __obj.updateDynamic("SummaryFields")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExpenseDocument]
+    }
+  }
+
+  /** Breakdown of detected information, seperated into the catagories Type, LabelDetection, and ValueDetection
+    */
+  @js.native
+  trait ExpenseField extends js.Object {
+    var LabelDetection: js.UndefOr[ExpenseDetection]
+    var PageNumber: js.UndefOr[UInteger]
+    var Type: js.UndefOr[ExpenseType]
+    var ValueDetection: js.UndefOr[ExpenseDetection]
+  }
+
+  object ExpenseField {
+    @inline
+    def apply(
+        LabelDetection: js.UndefOr[ExpenseDetection] = js.undefined,
+        PageNumber: js.UndefOr[UInteger] = js.undefined,
+        Type: js.UndefOr[ExpenseType] = js.undefined,
+        ValueDetection: js.UndefOr[ExpenseDetection] = js.undefined
+    ): ExpenseField = {
+      val __obj = js.Dynamic.literal()
+      LabelDetection.foreach(__v => __obj.updateDynamic("LabelDetection")(__v.asInstanceOf[js.Any]))
+      PageNumber.foreach(__v => __obj.updateDynamic("PageNumber")(__v.asInstanceOf[js.Any]))
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      ValueDetection.foreach(__v => __obj.updateDynamic("ValueDetection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExpenseField]
+    }
+  }
+
+  /** An object used to store information about the Type detected by Amazon Textract.
+    */
+  @js.native
+  trait ExpenseType extends js.Object {
+    var Confidence: js.UndefOr[Percent]
+    var Text: js.UndefOr[String]
+  }
+
+  object ExpenseType {
+    @inline
+    def apply(
+        Confidence: js.UndefOr[Percent] = js.undefined,
+        Text: js.UndefOr[String] = js.undefined
+    ): ExpenseType = {
+      val __obj = js.Dynamic.literal()
+      Confidence.foreach(__v => __obj.updateDynamic("Confidence")(__v.asInstanceOf[js.Any]))
+      Text.foreach(__v => __obj.updateDynamic("Text")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[ExpenseType]
+    }
+  }
+
   /** Information about where the following items are located on a document page: detected page, text, key-value pairs, tables, table cells, and selection elements.
     */
   @js.native
@@ -437,6 +649,64 @@ package object textract {
     }
   }
 
+  @js.native
+  trait GetExpenseAnalysisRequest extends js.Object {
+    var JobId: JobId
+    var MaxResults: js.UndefOr[MaxResults]
+    var NextToken: js.UndefOr[PaginationToken]
+  }
+
+  object GetExpenseAnalysisRequest {
+    @inline
+    def apply(
+        JobId: JobId,
+        MaxResults: js.UndefOr[MaxResults] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined
+    ): GetExpenseAnalysisRequest = {
+      val __obj = js.Dynamic.literal(
+        "JobId" -> JobId.asInstanceOf[js.Any]
+      )
+
+      MaxResults.foreach(__v => __obj.updateDynamic("MaxResults")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetExpenseAnalysisRequest]
+    }
+  }
+
+  @js.native
+  trait GetExpenseAnalysisResponse extends js.Object {
+    var AnalyzeExpenseModelVersion: js.UndefOr[String]
+    var DocumentMetadata: js.UndefOr[DocumentMetadata]
+    var ExpenseDocuments: js.UndefOr[ExpenseDocumentList]
+    var JobStatus: js.UndefOr[JobStatus]
+    var NextToken: js.UndefOr[PaginationToken]
+    var StatusMessage: js.UndefOr[StatusMessage]
+    var Warnings: js.UndefOr[Warnings]
+  }
+
+  object GetExpenseAnalysisResponse {
+    @inline
+    def apply(
+        AnalyzeExpenseModelVersion: js.UndefOr[String] = js.undefined,
+        DocumentMetadata: js.UndefOr[DocumentMetadata] = js.undefined,
+        ExpenseDocuments: js.UndefOr[ExpenseDocumentList] = js.undefined,
+        JobStatus: js.UndefOr[JobStatus] = js.undefined,
+        NextToken: js.UndefOr[PaginationToken] = js.undefined,
+        StatusMessage: js.UndefOr[StatusMessage] = js.undefined,
+        Warnings: js.UndefOr[Warnings] = js.undefined
+    ): GetExpenseAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      AnalyzeExpenseModelVersion.foreach(__v => __obj.updateDynamic("AnalyzeExpenseModelVersion")(__v.asInstanceOf[js.Any]))
+      DocumentMetadata.foreach(__v => __obj.updateDynamic("DocumentMetadata")(__v.asInstanceOf[js.Any]))
+      ExpenseDocuments.foreach(__v => __obj.updateDynamic("ExpenseDocuments")(__v.asInstanceOf[js.Any]))
+      JobStatus.foreach(__v => __obj.updateDynamic("JobStatus")(__v.asInstanceOf[js.Any]))
+      NextToken.foreach(__v => __obj.updateDynamic("NextToken")(__v.asInstanceOf[js.Any]))
+      StatusMessage.foreach(__v => __obj.updateDynamic("StatusMessage")(__v.asInstanceOf[js.Any]))
+      Warnings.foreach(__v => __obj.updateDynamic("Warnings")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[GetExpenseAnalysisResponse]
+    }
+  }
+
   /** Shows the results of the human in the loop evaluation. If there is no HumanLoopArn, the input did not trigger human review.
     */
   @js.native
@@ -505,6 +775,108 @@ package object textract {
     }
   }
 
+  /** The structure that lists each document processed in an AnalyzeID operation.
+    */
+  @js.native
+  trait IdentityDocument extends js.Object {
+    var DocumentIndex: js.UndefOr[UInteger]
+    var IdentityDocumentFields: js.UndefOr[IdentityDocumentFieldList]
+  }
+
+  object IdentityDocument {
+    @inline
+    def apply(
+        DocumentIndex: js.UndefOr[UInteger] = js.undefined,
+        IdentityDocumentFields: js.UndefOr[IdentityDocumentFieldList] = js.undefined
+    ): IdentityDocument = {
+      val __obj = js.Dynamic.literal()
+      DocumentIndex.foreach(__v => __obj.updateDynamic("DocumentIndex")(__v.asInstanceOf[js.Any]))
+      IdentityDocumentFields.foreach(__v => __obj.updateDynamic("IdentityDocumentFields")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IdentityDocument]
+    }
+  }
+
+  /** Structure containing both the normalized type of the extracted information and the text associated with it. These are extracted as Type and Value respectively.
+    */
+  @js.native
+  trait IdentityDocumentField extends js.Object {
+    var Type: js.UndefOr[AnalyzeIDDetections]
+    var ValueDetection: js.UndefOr[AnalyzeIDDetections]
+  }
+
+  object IdentityDocumentField {
+    @inline
+    def apply(
+        Type: js.UndefOr[AnalyzeIDDetections] = js.undefined,
+        ValueDetection: js.UndefOr[AnalyzeIDDetections] = js.undefined
+    ): IdentityDocumentField = {
+      val __obj = js.Dynamic.literal()
+      Type.foreach(__v => __obj.updateDynamic("Type")(__v.asInstanceOf[js.Any]))
+      ValueDetection.foreach(__v => __obj.updateDynamic("ValueDetection")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[IdentityDocumentField]
+    }
+  }
+
+  /** A structure that holds information about the different lines found in a document's tables.
+    */
+  @js.native
+  trait LineItemFields extends js.Object {
+    var LineItemExpenseFields: js.UndefOr[ExpenseFieldList]
+  }
+
+  object LineItemFields {
+    @inline
+    def apply(
+        LineItemExpenseFields: js.UndefOr[ExpenseFieldList] = js.undefined
+    ): LineItemFields = {
+      val __obj = js.Dynamic.literal()
+      LineItemExpenseFields.foreach(__v => __obj.updateDynamic("LineItemExpenseFields")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineItemFields]
+    }
+  }
+
+  /** A grouping of tables which contain LineItems, with each table identified by the table's <code>LineItemGroupIndex</code>.
+    */
+  @js.native
+  trait LineItemGroup extends js.Object {
+    var LineItemGroupIndex: js.UndefOr[UInteger]
+    var LineItems: js.UndefOr[LineItemList]
+  }
+
+  object LineItemGroup {
+    @inline
+    def apply(
+        LineItemGroupIndex: js.UndefOr[UInteger] = js.undefined,
+        LineItems: js.UndefOr[LineItemList] = js.undefined
+    ): LineItemGroup = {
+      val __obj = js.Dynamic.literal()
+      LineItemGroupIndex.foreach(__v => __obj.updateDynamic("LineItemGroupIndex")(__v.asInstanceOf[js.Any]))
+      LineItems.foreach(__v => __obj.updateDynamic("LineItems")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[LineItemGroup]
+    }
+  }
+
+  /** Contains information relating to dates in a document, including the type of value, and the value.
+    */
+  @js.native
+  trait NormalizedValue extends js.Object {
+    var Value: js.UndefOr[String]
+    var ValueType: js.UndefOr[ValueType]
+  }
+
+  object NormalizedValue {
+    @inline
+    def apply(
+        Value: js.UndefOr[String] = js.undefined,
+        ValueType: js.UndefOr[ValueType] = js.undefined
+    ): NormalizedValue = {
+      val __obj = js.Dynamic.literal()
+      Value.foreach(__v => __obj.updateDynamic("Value")(__v.asInstanceOf[js.Any]))
+      ValueType.foreach(__v => __obj.updateDynamic("ValueType")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[NormalizedValue]
+    }
+  }
+
   /** The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation, such as <a>StartDocumentTextDetection</a>.
     */
   @js.native
@@ -527,7 +899,8 @@ package object textract {
     }
   }
 
-  /** Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.
+  /** Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file. <code>OutputConfig</code> is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With OutputConfig enabled, you can set the name of the bucket the output will be sent to and the file prefix of the results where you can download your results. Additionally, you can set the <code>KMSKeyID</code> parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3. Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the
+    * Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see [[https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html| Managing AI services opt-out policy.]] For more information on data privacy, see the [[https://aws.amazon.com/compliance/data-privacy-faq/|Data Privacy FAQ]].
     */
   @js.native
   trait OutputConfig extends js.Object {
@@ -714,6 +1087,55 @@ package object textract {
       val __obj = js.Dynamic.literal()
       JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartDocumentTextDetectionResponse]
+    }
+  }
+
+  @js.native
+  trait StartExpenseAnalysisRequest extends js.Object {
+    var DocumentLocation: DocumentLocation
+    var ClientRequestToken: js.UndefOr[ClientRequestToken]
+    var JobTag: js.UndefOr[JobTag]
+    var KMSKeyId: js.UndefOr[KMSKeyId]
+    var NotificationChannel: js.UndefOr[NotificationChannel]
+    var OutputConfig: js.UndefOr[OutputConfig]
+  }
+
+  object StartExpenseAnalysisRequest {
+    @inline
+    def apply(
+        DocumentLocation: DocumentLocation,
+        ClientRequestToken: js.UndefOr[ClientRequestToken] = js.undefined,
+        JobTag: js.UndefOr[JobTag] = js.undefined,
+        KMSKeyId: js.UndefOr[KMSKeyId] = js.undefined,
+        NotificationChannel: js.UndefOr[NotificationChannel] = js.undefined,
+        OutputConfig: js.UndefOr[OutputConfig] = js.undefined
+    ): StartExpenseAnalysisRequest = {
+      val __obj = js.Dynamic.literal(
+        "DocumentLocation" -> DocumentLocation.asInstanceOf[js.Any]
+      )
+
+      ClientRequestToken.foreach(__v => __obj.updateDynamic("ClientRequestToken")(__v.asInstanceOf[js.Any]))
+      JobTag.foreach(__v => __obj.updateDynamic("JobTag")(__v.asInstanceOf[js.Any]))
+      KMSKeyId.foreach(__v => __obj.updateDynamic("KMSKeyId")(__v.asInstanceOf[js.Any]))
+      NotificationChannel.foreach(__v => __obj.updateDynamic("NotificationChannel")(__v.asInstanceOf[js.Any]))
+      OutputConfig.foreach(__v => __obj.updateDynamic("OutputConfig")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartExpenseAnalysisRequest]
+    }
+  }
+
+  @js.native
+  trait StartExpenseAnalysisResponse extends js.Object {
+    var JobId: js.UndefOr[JobId]
+  }
+
+  object StartExpenseAnalysisResponse {
+    @inline
+    def apply(
+        JobId: js.UndefOr[JobId] = js.undefined
+    ): StartExpenseAnalysisResponse = {
+      val __obj = js.Dynamic.literal()
+      JobId.foreach(__v => __obj.updateDynamic("JobId")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[StartExpenseAnalysisResponse]
     }
   }
 

@@ -303,25 +303,27 @@ package object translate {
   @js.native
   trait GetTerminologyRequest extends js.Object {
     var Name: ResourceName
-    var TerminologyDataFormat: TerminologyDataFormat
+    var TerminologyDataFormat: js.UndefOr[TerminologyDataFormat]
   }
 
   object GetTerminologyRequest {
     @inline
     def apply(
         Name: ResourceName,
-        TerminologyDataFormat: TerminologyDataFormat
+        TerminologyDataFormat: js.UndefOr[TerminologyDataFormat] = js.undefined
     ): GetTerminologyRequest = {
       val __obj = js.Dynamic.literal(
-        "Name" -> Name.asInstanceOf[js.Any],
-        "TerminologyDataFormat" -> TerminologyDataFormat.asInstanceOf[js.Any]
+        "Name" -> Name.asInstanceOf[js.Any]
       )
+
+      TerminologyDataFormat.foreach(__v => __obj.updateDynamic("TerminologyDataFormat")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTerminologyRequest]
     }
   }
 
   @js.native
   trait GetTerminologyResponse extends js.Object {
+    var AuxiliaryDataLocation: js.UndefOr[TerminologyDataLocation]
     var TerminologyDataLocation: js.UndefOr[TerminologyDataLocation]
     var TerminologyProperties: js.UndefOr[TerminologyProperties]
   }
@@ -329,10 +331,12 @@ package object translate {
   object GetTerminologyResponse {
     @inline
     def apply(
+        AuxiliaryDataLocation: js.UndefOr[TerminologyDataLocation] = js.undefined,
         TerminologyDataLocation: js.UndefOr[TerminologyDataLocation] = js.undefined,
         TerminologyProperties: js.UndefOr[TerminologyProperties] = js.undefined
     ): GetTerminologyResponse = {
       val __obj = js.Dynamic.literal()
+      AuxiliaryDataLocation.foreach(__v => __obj.updateDynamic("AuxiliaryDataLocation")(__v.asInstanceOf[js.Any]))
       TerminologyDataLocation.foreach(__v => __obj.updateDynamic("TerminologyDataLocation")(__v.asInstanceOf[js.Any]))
       TerminologyProperties.foreach(__v => __obj.updateDynamic("TerminologyProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[GetTerminologyResponse]
@@ -371,15 +375,18 @@ package object translate {
 
   @js.native
   trait ImportTerminologyResponse extends js.Object {
+    var AuxiliaryDataLocation: js.UndefOr[TerminologyDataLocation]
     var TerminologyProperties: js.UndefOr[TerminologyProperties]
   }
 
   object ImportTerminologyResponse {
     @inline
     def apply(
+        AuxiliaryDataLocation: js.UndefOr[TerminologyDataLocation] = js.undefined,
         TerminologyProperties: js.UndefOr[TerminologyProperties] = js.undefined
     ): ImportTerminologyResponse = {
       val __obj = js.Dynamic.literal()
+      AuxiliaryDataLocation.foreach(__v => __obj.updateDynamic("AuxiliaryDataLocation")(__v.asInstanceOf[js.Any]))
       TerminologyProperties.foreach(__v => __obj.updateDynamic("TerminologyProperties")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[ImportTerminologyResponse]
     }
@@ -553,16 +560,20 @@ package object translate {
   @js.native
   trait OutputDataConfig extends js.Object {
     var S3Uri: S3Uri
+    var EncryptionKey: js.UndefOr[EncryptionKey]
   }
 
   object OutputDataConfig {
     @inline
     def apply(
-        S3Uri: S3Uri
+        S3Uri: S3Uri,
+        EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined
     ): OutputDataConfig = {
       val __obj = js.Dynamic.literal(
         "S3Uri" -> S3Uri.asInstanceOf[js.Any]
       )
+
+      EncryptionKey.foreach(__v => __obj.updateDynamic("EncryptionKey")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[OutputDataConfig]
     }
   }
@@ -687,6 +698,7 @@ package object translate {
     var TargetLanguageCodes: TargetLanguageCodeStringList
     var JobName: js.UndefOr[JobName]
     var ParallelDataNames: js.UndefOr[ResourceNameList]
+    var Settings: js.UndefOr[TranslationSettings]
     var TerminologyNames: js.UndefOr[ResourceNameList]
   }
 
@@ -701,6 +713,7 @@ package object translate {
         TargetLanguageCodes: TargetLanguageCodeStringList,
         JobName: js.UndefOr[JobName] = js.undefined,
         ParallelDataNames: js.UndefOr[ResourceNameList] = js.undefined,
+        Settings: js.UndefOr[TranslationSettings] = js.undefined,
         TerminologyNames: js.UndefOr[ResourceNameList] = js.undefined
     ): StartTextTranslationJobRequest = {
       val __obj = js.Dynamic.literal(
@@ -714,6 +727,7 @@ package object translate {
 
       JobName.foreach(__v => __obj.updateDynamic("JobName")(__v.asInstanceOf[js.Any]))
       ParallelDataNames.foreach(__v => __obj.updateDynamic("ParallelDataNames")(__v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       TerminologyNames.foreach(__v => __obj.updateDynamic("TerminologyNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[StartTextTranslationJobRequest]
     }
@@ -801,18 +815,22 @@ package object translate {
   trait TerminologyData extends js.Object {
     var File: TerminologyFile
     var Format: TerminologyDataFormat
+    var Directionality: js.UndefOr[Directionality]
   }
 
   object TerminologyData {
     @inline
     def apply(
         File: TerminologyFile,
-        Format: TerminologyDataFormat
+        Format: TerminologyDataFormat,
+        Directionality: js.UndefOr[Directionality] = js.undefined
     ): TerminologyData = {
       val __obj = js.Dynamic.literal(
         "File" -> File.asInstanceOf[js.Any],
         "Format" -> Format.asInstanceOf[js.Any]
       )
+
+      Directionality.foreach(__v => __obj.updateDynamic("Directionality")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TerminologyData]
     }
   }
@@ -846,10 +864,14 @@ package object translate {
     var Arn: js.UndefOr[TerminologyArn]
     var CreatedAt: js.UndefOr[Timestamp]
     var Description: js.UndefOr[Description]
+    var Directionality: js.UndefOr[Directionality]
     var EncryptionKey: js.UndefOr[EncryptionKey]
+    var Format: js.UndefOr[TerminologyDataFormat]
     var LastUpdatedAt: js.UndefOr[Timestamp]
+    var Message: js.UndefOr[UnboundedLengthString]
     var Name: js.UndefOr[ResourceName]
     var SizeBytes: js.UndefOr[Int]
+    var SkippedTermCount: js.UndefOr[Int]
     var SourceLanguageCode: js.UndefOr[LanguageCodeString]
     var TargetLanguageCodes: js.UndefOr[LanguageCodeStringList]
     var TermCount: js.UndefOr[Int]
@@ -861,10 +883,14 @@ package object translate {
         Arn: js.UndefOr[TerminologyArn] = js.undefined,
         CreatedAt: js.UndefOr[Timestamp] = js.undefined,
         Description: js.UndefOr[Description] = js.undefined,
+        Directionality: js.UndefOr[Directionality] = js.undefined,
         EncryptionKey: js.UndefOr[EncryptionKey] = js.undefined,
+        Format: js.UndefOr[TerminologyDataFormat] = js.undefined,
         LastUpdatedAt: js.UndefOr[Timestamp] = js.undefined,
+        Message: js.UndefOr[UnboundedLengthString] = js.undefined,
         Name: js.UndefOr[ResourceName] = js.undefined,
         SizeBytes: js.UndefOr[Int] = js.undefined,
+        SkippedTermCount: js.UndefOr[Int] = js.undefined,
         SourceLanguageCode: js.UndefOr[LanguageCodeString] = js.undefined,
         TargetLanguageCodes: js.UndefOr[LanguageCodeStringList] = js.undefined,
         TermCount: js.UndefOr[Int] = js.undefined
@@ -873,10 +899,14 @@ package object translate {
       Arn.foreach(__v => __obj.updateDynamic("Arn")(__v.asInstanceOf[js.Any]))
       CreatedAt.foreach(__v => __obj.updateDynamic("CreatedAt")(__v.asInstanceOf[js.Any]))
       Description.foreach(__v => __obj.updateDynamic("Description")(__v.asInstanceOf[js.Any]))
+      Directionality.foreach(__v => __obj.updateDynamic("Directionality")(__v.asInstanceOf[js.Any]))
       EncryptionKey.foreach(__v => __obj.updateDynamic("EncryptionKey")(__v.asInstanceOf[js.Any]))
+      Format.foreach(__v => __obj.updateDynamic("Format")(__v.asInstanceOf[js.Any]))
       LastUpdatedAt.foreach(__v => __obj.updateDynamic("LastUpdatedAt")(__v.asInstanceOf[js.Any]))
+      Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       Name.foreach(__v => __obj.updateDynamic("Name")(__v.asInstanceOf[js.Any]))
       SizeBytes.foreach(__v => __obj.updateDynamic("SizeBytes")(__v.asInstanceOf[js.Any]))
+      SkippedTermCount.foreach(__v => __obj.updateDynamic("SkippedTermCount")(__v.asInstanceOf[js.Any]))
       SourceLanguageCode.foreach(__v => __obj.updateDynamic("SourceLanguageCode")(__v.asInstanceOf[js.Any]))
       TargetLanguageCodes.foreach(__v => __obj.updateDynamic("TargetLanguageCodes")(__v.asInstanceOf[js.Any]))
       TermCount.foreach(__v => __obj.updateDynamic("TermCount")(__v.asInstanceOf[js.Any]))
@@ -925,6 +955,7 @@ package object translate {
     var Message: js.UndefOr[UnboundedLengthString]
     var OutputDataConfig: js.UndefOr[OutputDataConfig]
     var ParallelDataNames: js.UndefOr[ResourceNameList]
+    var Settings: js.UndefOr[TranslationSettings]
     var SourceLanguageCode: js.UndefOr[LanguageCodeString]
     var SubmittedTime: js.UndefOr[Timestamp]
     var TargetLanguageCodes: js.UndefOr[TargetLanguageCodeStringList]
@@ -944,6 +975,7 @@ package object translate {
         Message: js.UndefOr[UnboundedLengthString] = js.undefined,
         OutputDataConfig: js.UndefOr[OutputDataConfig] = js.undefined,
         ParallelDataNames: js.UndefOr[ResourceNameList] = js.undefined,
+        Settings: js.UndefOr[TranslationSettings] = js.undefined,
         SourceLanguageCode: js.UndefOr[LanguageCodeString] = js.undefined,
         SubmittedTime: js.UndefOr[Timestamp] = js.undefined,
         TargetLanguageCodes: js.UndefOr[TargetLanguageCodeStringList] = js.undefined,
@@ -960,6 +992,7 @@ package object translate {
       Message.foreach(__v => __obj.updateDynamic("Message")(__v.asInstanceOf[js.Any]))
       OutputDataConfig.foreach(__v => __obj.updateDynamic("OutputDataConfig")(__v.asInstanceOf[js.Any]))
       ParallelDataNames.foreach(__v => __obj.updateDynamic("ParallelDataNames")(__v.asInstanceOf[js.Any]))
+      Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       SourceLanguageCode.foreach(__v => __obj.updateDynamic("SourceLanguageCode")(__v.asInstanceOf[js.Any]))
       SubmittedTime.foreach(__v => __obj.updateDynamic("SubmittedTime")(__v.asInstanceOf[js.Any]))
       TargetLanguageCodes.foreach(__v => __obj.updateDynamic("TargetLanguageCodes")(__v.asInstanceOf[js.Any]))
@@ -973,6 +1006,7 @@ package object translate {
     var SourceLanguageCode: LanguageCodeString
     var TargetLanguageCode: LanguageCodeString
     var Text: BoundedLengthString
+    var Settings: js.UndefOr[TranslationSettings]
     var TerminologyNames: js.UndefOr[ResourceNameList]
   }
 
@@ -982,6 +1016,7 @@ package object translate {
         SourceLanguageCode: LanguageCodeString,
         TargetLanguageCode: LanguageCodeString,
         Text: BoundedLengthString,
+        Settings: js.UndefOr[TranslationSettings] = js.undefined,
         TerminologyNames: js.UndefOr[ResourceNameList] = js.undefined
     ): TranslateTextRequest = {
       val __obj = js.Dynamic.literal(
@@ -990,6 +1025,7 @@ package object translate {
         "Text" -> Text.asInstanceOf[js.Any]
       )
 
+      Settings.foreach(__v => __obj.updateDynamic("Settings")(__v.asInstanceOf[js.Any]))
       TerminologyNames.foreach(__v => __obj.updateDynamic("TerminologyNames")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TranslateTextRequest]
     }
@@ -1000,6 +1036,7 @@ package object translate {
     var SourceLanguageCode: LanguageCodeString
     var TargetLanguageCode: LanguageCodeString
     var TranslatedText: String
+    var AppliedSettings: js.UndefOr[TranslationSettings]
     var AppliedTerminologies: js.UndefOr[AppliedTerminologyList]
   }
 
@@ -1009,6 +1046,7 @@ package object translate {
         SourceLanguageCode: LanguageCodeString,
         TargetLanguageCode: LanguageCodeString,
         TranslatedText: String,
+        AppliedSettings: js.UndefOr[TranslationSettings] = js.undefined,
         AppliedTerminologies: js.UndefOr[AppliedTerminologyList] = js.undefined
     ): TranslateTextResponse = {
       val __obj = js.Dynamic.literal(
@@ -1017,8 +1055,27 @@ package object translate {
         "TranslatedText" -> TranslatedText.asInstanceOf[js.Any]
       )
 
+      AppliedSettings.foreach(__v => __obj.updateDynamic("AppliedSettings")(__v.asInstanceOf[js.Any]))
       AppliedTerminologies.foreach(__v => __obj.updateDynamic("AppliedTerminologies")(__v.asInstanceOf[js.Any]))
       __obj.asInstanceOf[TranslateTextResponse]
+    }
+  }
+
+  /** Settings that configure the translation output.
+    */
+  @js.native
+  trait TranslationSettings extends js.Object {
+    var Profanity: js.UndefOr[Profanity]
+  }
+
+  object TranslationSettings {
+    @inline
+    def apply(
+        Profanity: js.UndefOr[Profanity] = js.undefined
+    ): TranslationSettings = {
+      val __obj = js.Dynamic.literal()
+      Profanity.foreach(__v => __obj.updateDynamic("Profanity")(__v.asInstanceOf[js.Any]))
+      __obj.asInstanceOf[TranslationSettings]
     }
   }
 

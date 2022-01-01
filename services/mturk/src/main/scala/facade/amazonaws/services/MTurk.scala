@@ -17,7 +17,6 @@ package object mturk {
   type CustomerIdList = js.Array[CustomerId]
   type EntityId = String
   type EventTypeList = js.Array[EventType]
-  type ExceptionMessage = String
   type HITLayoutParameterList = js.Array[HITLayoutParameter]
   type HITList = js.Array[HIT]
   type IdempotencyToken = String
@@ -37,7 +36,6 @@ package object mturk {
   type ReviewResultDetailList = js.Array[ReviewResultDetail]
   type StringList = js.Array[String]
   type Timestamp = js.Date
-  type TurkErrorCode = String
   type WorkerBlockList = js.Array[WorkerBlock]
 
   final class MTurkOps(private val service: MTurk) extends AnyVal {
@@ -1924,14 +1922,6 @@ package object mturk {
     }
   }
 
-  /** Your request is invalid.
-    */
-  @js.native
-  trait RequestErrorException extends js.Object {
-    val Message: ExceptionMessage
-    val TurkErrorCode: TurkErrorCode
-  }
-
   /** Both the AssignmentReviewReport and the HITReviewReport elements contains the ReviewActionDetail data structure. This structure is returned multiple times for each action specified in the Review Policy.
     */
   @js.native
@@ -2118,14 +2108,6 @@ package object mturk {
       val __obj = js.Dynamic.literal()
       __obj.asInstanceOf[SendTestEventNotificationResponse]
     }
-  }
-
-  /** Amazon Mechanical Turk is temporarily unable to process your request. Try your call again.
-    */
-  @js.native
-  trait ServiceFaultException extends js.Object {
-    val Message: ExceptionMessage
-    val TurkErrorCode: TurkErrorCode
   }
 
   @js.native
