@@ -9,6 +9,8 @@ ThisBuild / concurrentRestrictions += Tags.limit(
 )
 Global / excludeLintKeys += publishArtifact
 
+addCommandAlias("fmt", s";scalafmtSbt;++${SharedConfig.scala213Version};scalafmtAll;++${SharedConfig.scala3Version};scalafmtAll")
+
 lazy val core = (project in file("core"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
