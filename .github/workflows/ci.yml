@@ -50,7 +50,7 @@ jobs:
           curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | sudo bash -s -- ${SCALAFMT_VERSION}
       - name: Quick check
         if: ${{ ! contains(steps.changed-files.outputs.all_modified_files, '.scalafmt.conf') }}
-        run: scalafmt-native --mode diff --list
+        run: scalafmt-native --diff-branch ${{ github.event.pull_request.base.sha }} --list
       - name: Full check
         if: ${{ contains(steps.changed-files.outputs.all_modified_files, '.scalafmt.conf') }}
         run: scalafmt-native --check
