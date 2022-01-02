@@ -1,4 +1,4 @@
-package facade.amazonaws.services.dynamodb
+package facade.amazonaws.services.dynamodb.shared
 
 import scala.scalajs.js
 

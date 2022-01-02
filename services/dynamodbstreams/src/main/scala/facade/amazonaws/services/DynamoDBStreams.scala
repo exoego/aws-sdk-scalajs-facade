@@ -10,17 +10,17 @@ import facade.amazonaws._
 package object dynamodbstreams {
   type AttributeMap = js.Dictionary[AttributeValue]
   type AttributeName = String
-  type BinaryAttributeValue = js.typedarray.TypedArray[_, _] | js.Array[Byte] | String
-  type BinarySetAttributeValue = js.Array[BinaryAttributeValue]
-  type BooleanAttributeValue = Boolean
+  type BinaryAttributeValue = dynamodb.shared.BinaryAttributeValue
+  type BinarySetAttributeValue = dynamodb.shared.BinarySetAttributeValue
+  type BooleanAttributeValue = dynamodb.shared.BooleanAttributeValue
   type Date = js.Date
   type KeySchema = js.Array[KeySchemaElement]
   type KeySchemaAttributeName = String
-  type ListAttributeValue = js.Array[AttributeValue]
-  type MapAttributeValue = js.Dictionary[AttributeValue]
-  type NullAttributeValue = Boolean
-  type NumberAttributeValue = String
-  type NumberSetAttributeValue = js.Array[NumberAttributeValue]
+  type ListAttributeValue = dynamodb.shared.ListAttributeValue
+  type MapAttributeValue = dynamodb.shared.MapAttributeValue
+  type NullAttributeValue = dynamodb.shared.NullAttributeValue
+  type NumberAttributeValue = dynamodb.shared.NumberAttributeValue
+  type NumberSetAttributeValue = dynamodb.shared.NumberSetAttributeValue
   type PositiveIntegerObject = Int
   type PositiveLongObject = Double
   type RecordList = js.Array[Record]
@@ -30,8 +30,8 @@ package object dynamodbstreams {
   type ShardIterator = String
   type StreamArn = String
   type StreamList = js.Array[Stream]
-  type StringAttributeValue = String
-  type StringSetAttributeValue = js.Array[StringAttributeValue]
+  type StringAttributeValue = dynamodb.shared.StringAttributeValue
+  type StringSetAttributeValue = dynamodb.shared.StringSetAttributeValue
   type TableName = String
 
   final class DynamoDBStreamsOps(private val service: DynamoDBStreams) extends AnyVal {
@@ -59,50 +59,10 @@ package object dynamodbstreams {
     }
   }
 
-  /** Represents the data for an attribute. Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself. For more information, see [[https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes|Data Types]] in the <i>Amazon DynamoDB Developer Guide</i>.
-    */
-  @js.native
-  trait AttributeValue extends js.Object {
-    var B: js.UndefOr[BinaryAttributeValue]
-    var BOOL: js.UndefOr[BooleanAttributeValue]
-    var BS: js.UndefOr[BinarySetAttributeValue]
-    var L: js.UndefOr[ListAttributeValue]
-    var M: js.UndefOr[MapAttributeValue]
-    var N: js.UndefOr[NumberAttributeValue]
-    var NS: js.UndefOr[NumberSetAttributeValue]
-    var NULL: js.UndefOr[NullAttributeValue]
-    var S: js.UndefOr[StringAttributeValue]
-    var SS: js.UndefOr[StringSetAttributeValue]
-  }
-
-  object AttributeValue {
-    @inline
-    def apply(
-        B: js.UndefOr[BinaryAttributeValue] = js.undefined,
-        BOOL: js.UndefOr[BooleanAttributeValue] = js.undefined,
-        BS: js.UndefOr[BinarySetAttributeValue] = js.undefined,
-        L: js.UndefOr[ListAttributeValue] = js.undefined,
-        M: js.UndefOr[MapAttributeValue] = js.undefined,
-        N: js.UndefOr[NumberAttributeValue] = js.undefined,
-        NS: js.UndefOr[NumberSetAttributeValue] = js.undefined,
-        NULL: js.UndefOr[NullAttributeValue] = js.undefined,
-        S: js.UndefOr[StringAttributeValue] = js.undefined,
-        SS: js.UndefOr[StringSetAttributeValue] = js.undefined
-    ): AttributeValue = {
-      val __obj = js.Dynamic.literal()
-      B.foreach(__v => __obj.updateDynamic("B")(__v.asInstanceOf[js.Any]))
-      BOOL.foreach(__v => __obj.updateDynamic("BOOL")(__v.asInstanceOf[js.Any]))
-      BS.foreach(__v => __obj.updateDynamic("BS")(__v.asInstanceOf[js.Any]))
-      L.foreach(__v => __obj.updateDynamic("L")(__v.asInstanceOf[js.Any]))
-      M.foreach(__v => __obj.updateDynamic("M")(__v.asInstanceOf[js.Any]))
-      N.foreach(__v => __obj.updateDynamic("N")(__v.asInstanceOf[js.Any]))
-      NS.foreach(__v => __obj.updateDynamic("NS")(__v.asInstanceOf[js.Any]))
-      NULL.foreach(__v => __obj.updateDynamic("NULL")(__v.asInstanceOf[js.Any]))
-      S.foreach(__v => __obj.updateDynamic("S")(__v.asInstanceOf[js.Any]))
-      SS.foreach(__v => __obj.updateDynamic("SS")(__v.asInstanceOf[js.Any]))
-      __obj.asInstanceOf[AttributeValue]
-    }
-  }
+  type AttributeValue = dynamodb.shared.AttributeValue
+  val AttributeValue = dynamodb.shared.AttributeValue
+  type AttributeValueMapper[T] = dynamodb.shared.AttributeValueMapper[T]
+  val AttributeValueMapper = dynamodb.shared.AttributeValueMapper
 
   /** Represents the input of a <code>DescribeStream</code> operation.
     */
