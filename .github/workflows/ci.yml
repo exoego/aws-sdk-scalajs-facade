@@ -43,14 +43,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 2
       - name: Install Scalafmt Native
         shell: bash
         run: |
           SCALAFMT_VERSION=$(grep "version" .scalafmt.conf | sed -E "s/version|=|\"|\s*//g")
           curl https://raw.githubusercontent.com/scalameta/scalafmt/master/bin/install-scalafmt-native.sh | sudo bash -s -- ${SCALAFMT_VERSION}
-      - name: Quick check
-        if: ${{ ! contains(steps.changed-files.outputs.all_modified_files, '.scalafmt.conf') }}
-        run: scalafmt-native --diff-branch ${{ github.event.pull_request.base.sha }} --list
       - name: Full check
-        if: ${{ contains(steps.changed-files.outputs.all_modified_files, '.scalafmt.conf') }}
         run: scalafmt-native --check
