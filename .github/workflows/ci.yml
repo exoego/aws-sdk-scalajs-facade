@@ -17,9 +17,10 @@ jobs:
         scala: [3.1.0, 2.13.7, 2.12.15]
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: olafurpg/setup-scala@v13
+      - uses: actions/setup-java@v2
         with:
-          java-version: adopt@1.11
+          distribution: 'temurin'
+          java-version: '11'
       - name: Cache Coursier
         uses: actions/cache@v2.1.7
         with:
@@ -43,7 +44,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.4.0
-      - uses: olafurpg/setup-scala@v13
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '11'
       - name: Cache Coursier
         uses: actions/cache@v2.1.7
         with:
