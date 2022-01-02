@@ -19,6 +19,15 @@ lazy val core = (project in file("core"))
   )
   .enablePlugins(ScalaJSPlugin)
 
+lazy val dynamodbShared = (project in file("dynamodb-shared"))
+  .settings(SharedConfig.settings)
+  .settings(SharedConfig.publishSetting)
+  .settings(
+    libraryDependencies += Dependencies.shared.compat.value,
+    name := s"${SharedConfig.libraryName}-dynamodb-shared"
+  )
+  .enablePlugins(ScalaJSPlugin)
+
 lazy val credentials = (project in file("credentials"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
@@ -58,7 +67,8 @@ lazy val all = (project in file("all"))
   .enablePlugins(ScalaJSPlugin)
   .dependsOn(subProjects.map(p => ClasspathDependency(p, None)): _*)
 
-lazy val awsDynamoDB = defineAwsProject("DynamoDB").settings(libraryDependencies += Dependencies.shared.compat.value)
+lazy val awsDynamoDB = defineAwsProject("DynamoDB").dependsOn(dynamodbShared)
+lazy val awsDynamoDBStreams = defineAwsProject("DynamoDBStreams").dependsOn(dynamodbShared)
 lazy val awsCloudFrontSigner = defineAwsProject("CloudFrontSigner")
 
 //AUTO-GENERATED
@@ -150,7 +160,6 @@ lazy val awsDeviceFarm = defineAwsProject("DeviceFarm")
 lazy val awsDirectConnect = defineAwsProject("DirectConnect")
 lazy val awsDirectoryService = defineAwsProject("DirectoryService")
 lazy val awsDocDB = defineAwsProject("DocDB")
-lazy val awsDynamoDBStreams = defineAwsProject("DynamoDBStreams")
 lazy val awsEBS = defineAwsProject("EBS")
 lazy val awsEC2 = defineAwsProject("EC2")
 lazy val awsEC2InstanceConnect = defineAwsProject("EC2InstanceConnect")
@@ -364,6 +373,7 @@ lazy val awsXRay = defineAwsProject("XRay")
 lazy val subProjects: Seq[Project] = Seq(
   core,
   credentials,
+  dynamodbShared,
   awsACM,
   awsACMPCA,
   awsAPIGateway,
