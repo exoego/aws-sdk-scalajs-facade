@@ -11,7 +11,7 @@ Global / excludeLintKeys += publishArtifact
 
 addCommandAlias("fmt", s";scalafmtSbt;++${SharedConfig.scala213Version};scalafmtAll;++${SharedConfig.scala3Version};scalafmtAll")
 
-lazy val core = (project in file("core"))
+lazy val core = (project in file("aws-sdk-v2/core"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
   .settings(
@@ -19,7 +19,7 @@ lazy val core = (project in file("core"))
   )
   .enablePlugins(ScalaJSPlugin)
 
-lazy val dynamodbShared = (project in file("dynamodb-shared"))
+lazy val dynamodbShared = (project in file("aws-sdk-v2/dynamodb-shared"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
   .settings(
@@ -28,7 +28,7 @@ lazy val dynamodbShared = (project in file("dynamodb-shared"))
   )
   .enablePlugins(ScalaJSPlugin)
 
-lazy val credentials = (project in file("credentials"))
+lazy val credentials = (project in file("aws-sdk-v2/credentials"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
   .settings(
@@ -39,7 +39,7 @@ lazy val credentials = (project in file("credentials"))
 
 def defineAwsProject(service: String): Project = {
   val lowerServiceName = service.toLowerCase
-  Project(id = s"aws$service", base = file("services") / lowerServiceName)
+  Project(id = s"aws$service", base = file("aws-sdk-v2/services") / lowerServiceName)
     .dependsOn(core)
     .settings(SharedConfig.settings)
     .settings(SharedConfig.publishSetting)
@@ -58,7 +58,7 @@ lazy val root = (project in file("."))
   .aggregate(subProjects.map(_.project): _*)
   .aggregate(all)
 
-lazy val all = (project in file("all"))
+lazy val all = (project in file("aws-sdk-v2/all"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
   .settings(
