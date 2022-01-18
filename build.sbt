@@ -19,15 +19,6 @@ lazy val core = (project in file("aws-sdk-v2/core"))
   )
   .enablePlugins(ScalaJSPlugin)
 
-lazy val dynamodbShared = (project in file("aws-sdk-v2/dynamodb-shared"))
-  .settings(SharedConfig.settings)
-  .settings(SharedConfig.publishSetting)
-  .settings(
-    libraryDependencies += Dependencies.shared.compat.value,
-    name := s"${SharedConfig.libraryName}-dynamodb-shared"
-  )
-  .enablePlugins(ScalaJSPlugin)
-
 lazy val credentials = (project in file("aws-sdk-v2/credentials"))
   .settings(SharedConfig.settings)
   .settings(SharedConfig.publishSetting)
@@ -67,8 +58,8 @@ lazy val all = (project in file("aws-sdk-v2/all"))
   .enablePlugins(ScalaJSPlugin)
   .dependsOn(subProjects.map(p => ClasspathDependency(p, None)): _*)
 
-lazy val awsDynamoDB = defineAwsProject("DynamoDB").dependsOn(dynamodbShared)
-lazy val awsDynamoDBStreams = defineAwsProject("DynamoDBStreams").dependsOn(dynamodbShared)
+lazy val awsDynamoDB = defineAwsProject("DynamoDB").settings(SharedConfig.dynamodbSharedSettings)
+lazy val awsDynamoDBStreams = defineAwsProject("DynamoDBStreams").settings(SharedConfig.dynamodbSharedSettings)
 lazy val awsCloudFrontSigner = defineAwsProject("CloudFrontSigner")
 
 //AUTO-GENERATED
@@ -373,7 +364,6 @@ lazy val awsXRay = defineAwsProject("XRay")
 lazy val subProjects: Seq[Project] = Seq(
   core,
   credentials,
-  dynamodbShared,
   awsACM,
   awsACMPCA,
   awsAPIGateway,
