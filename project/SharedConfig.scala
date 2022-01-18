@@ -43,6 +43,10 @@ object SharedConfig {
     )
   )
 
+  lazy val dynamodbSharedSettings = Seq(
+    libraryDependencies += Dependencies.shared.dynamodbShared.value
+  )
+
   val publishSetting = Seq(
     ThisBuild / publishTo := sonatypePublishToBundle.value,
     publishMavenStyle := true,
