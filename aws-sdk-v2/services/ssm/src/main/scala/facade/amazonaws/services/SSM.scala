@@ -6845,7 +6845,7 @@ package object ssm {
   }
 
   /** Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> to scope down the information returned by the API.
-    * ```Example```: To filter for all managed nodes in a patch group having more than three patches with a <code>FailedCount</code> status, use the following for the filter: * Value for <code>Key</code>: <code>FailedCount</code> * Value for <code>Type</code>: <code>GreaterThan</code> * Value for <code>Values</code>: <code>3</code>
+    * \```Example```: To filter for all managed nodes in a patch group having more than three patches with a <code>FailedCount</code> status, use the following for the filter: * Value for <code>Key</code>: <code>FailedCount</code> * Value for <code>Type</code>: <code>GreaterThan</code> * Value for <code>Values</code>: <code>3</code>
     */
   @js.native
   trait InstancePatchStateFilter extends js.Object {

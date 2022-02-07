@@ -28,7 +28,7 @@ object BatchPredictionFilterVariable {
 }
 
 /** A list of the variables to use in searching or filtering <code>DataSource</code>. * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation date. * <code>Status</code> - Sets the search criteria to <code>DataSource</code> status. * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>. * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory. * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code> creation.
-  * ```Note:``` The variable names should match the variable names in the <code>DataSource</code>.
+  * \```Note:``` The variable names should match the variable names in the <code>DataSource</code>.
   */
 type DataSourceFilterVariable = "CreatedAt" | "LastUpdatedAt" | "Status" | "Name" | "DataLocationS3" | "IAMUser"
 object DataSourceFilterVariable {
