@@ -10,7 +10,7 @@ object SharedConfig {
   val libraryName = "aws-sdk-scalajs-facade"
 
   val scala3Version = "3.1.1"
-  val scala213Version = "2.13.7"
+  val scala213Version = "2.13.8"
   val scala212Version = "2.12.15"
 
   val settings = Seq(
