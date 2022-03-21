@@ -22,12 +22,12 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
       - name: Cache Coursier
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3
         with:
           path: ~/.cache/coursier
           key: sbt-coursier-${{ hashFiles('project/*.sbt', 'project/*.scala') }}
       - name: Cache SBT
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3
         with:
           path: ~/.sbt
           key: sbt-${{ hashFiles('project/build.properties', 'project/plugins.sbt') }}
@@ -49,12 +49,12 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
       - name: Cache Coursier
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3
         with:
           path: ~/.cache/coursier
           key: sbt-coursier-${{ hashFiles('project/*.sbt', 'project/*.scala') }}
       - name: Cache SBT
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v3
         with:
           path: ~/.sbt
           key: sbt-${{ hashFiles('project/build.properties', 'project/plugins.sbt') }}
