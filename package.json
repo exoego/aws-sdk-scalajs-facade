@@ -4,7 +4,7 @@
   "description": "A complete set of [Scala.js](https://www.scala-js.org/) type facade for [aws/aws-sdk-js](https://github.com/aws/aws-sdk-js/).",
   "main": "index.js",
   "dependencies": {
-    "aws-sdk": "2.1048.0"
+    "aws-sdk": "2.1272.0"
   },
   "devDependencies": {},
   "scripts": {
